@@ -1,0 +1,593 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"prevent",
+				"preventDefault"
+			],
+			[
+				"native",
+				"nativeEvent"
+			],
+			[
+				"flash",
+				"flashBinTargetNode"
+			],
+			[
+				"help",
+				"helpCopyNode"
+			],
+			[
+				"dialog",
+				"dialogDelayed"
+			],
+			[
+				"update",
+				"updateBinNode"
+			],
+			[
+				"sera",
+				"serializedStyles"
+			],
+			[
+				"merge",
+				"mergeStyles"
+			],
+			[
+				"back",
+				"backgroundColor"
+			],
+			[
+				"tiny",
+				"tinyMCE"
+			],
+			[
+				"setAtt",
+				"setAttrib"
+			],
+			[
+				"style",
+				"style_table_by_css"
+			],
+			[
+				"document",
+				"document_base_url"
+			],
+			[
+				"docu",
+				"document_base_url"
+			],
+			[
+				"edit",
+				"editor"
+			],
+			[
+				"this",
+				"thisURL"
+			],
+			[
+				"get",
+				"getBody"
+			],
+			[
+				"ed",
+				"editor"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"find",
+				"FindKeyConflicts: All Conflicts"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"UPDA",
+				"Package Control: Upgrade/Overwrite All Packages"
+			]
+		],
+		"width": 476.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/work/jekyll/tinymce-documentation"
+	],
+	"file_history":
+	[
+		"/home/josh/work/cement/src/main/js/ephox/cement/flash/Flash.js",
+		"/work/cement/dist/deploy/module/ephox.cement.pastiche.Pastiche.js",
+		"/work/cement/src/main/js/ephox/cement/images/ImagePaste.js",
+		"/home/josh/work/cement/src/main/js/ephox/cement/flash/Flashbin.js",
+		"/work/cement/src/main/js/ephox/cement/api/Cement.js",
+		"/work/cement/src/main/js/ephox/cement/flash/Flashbin.js",
+		"/work/cement/src/main/js/ephox/cement/html/HtmlPaste.js",
+		"/work/cement/src/main/js/ephox/cement/smartpaste/MergeSettings.js",
+		"/work/cement/src/main/js/ephox/cement/pastiche/Pastiche.js",
+		"/work/cement/src/main/js/ephox/cement/smartpaste/PasteHandlers.js",
+		"/work/cement/src/main/js/ephox/cement/flash/FlashDialog.js",
+		"/work/cement/src/main/flash/textboxpaste.as",
+		"/work/cement/src/demo/js/ephox/cement/demo/Demo.js",
+		"/home/josh/work/cement/src/main/js/ephox/cement/pastiche/IeBlob.js",
+		"/home/josh/work/cement/src/main/js/ephox/cement/flash/FlashDialog.js",
+		"/work/cement/src/main/js/ephox/cement/flash/Flash.js",
+		"/home/josh/work/cement/src/main/js/ephox/cement/pastiche/Pastiche.js",
+		"/work/cement/src/main/js/ephox/cement/flash/FlashInfo.js",
+		"/work/cement/src/main/js/ephox/cement/flash/Correlation.js",
+		"/home/josh/work/cement/src/main/js/ephox/cement/html/HtmlPaste.js",
+		"/work/cement/src/main/js/ephox/cement/smartpaste/PasteBroker.js",
+		"/home/josh/work/cement/src/main/js/ephox/cement/api/Cement.js",
+		"/home/josh/work/cement/node_modules/jshint/node_modules/htmlparser2/node_modules/readable-stream/node_modules/isarray/build/build.js",
+		"/home/josh/work/cement/node_modules/jshint/node_modules/htmlparser2/.travis.yml",
+		"/home/josh/work/cement/src/demo/js/ephox/cement/demo/Demo.js",
+		"/work/cement/lib/run/depend/ephox.pastiche.engine.Pipeless.js",
+		"/home/josh/work/cement/lib/run/depend/ephox.numerosity.api.URL.js",
+		"/home/josh/work/cement/lib/run/depend/ephox.numerosity.api.Blob.js",
+		"/home/josh/work/cement/lib/run/depend/ephox.numerosity.api.HTMLElement.js",
+		"/home/josh/work/cement/lib/run/depend/ephox.numerosity.api.FormData.js",
+		"/home/josh/work/cement/node_modules/jshint/LICENSE",
+		"/home/josh/work/cement/node_modules/jshint/node_modules/cli/index.js",
+		"/home/josh/work/cement/node_modules/jshint/node_modules/htmlparser2/test/Events/11-script_in_script.json",
+		"/home/josh/work/cement/node_modules/jshint/node_modules/cli/node_modules/glob/node_modules/inherits/inherits_browser.js",
+		"/home/josh/work/cement/node_modules/jshint/node_modules/shelljs/scripts/run-tests.js",
+		"/home/josh/work/cement/node_modules/jshint/node_modules/htmlparser2/node_modules/readable-stream/lib/_stream_transform.js",
+		"/home/josh/work/cement/node_modules/jshint/node_modules/htmlparser2/node_modules/domutils/node_modules/dom-serializer/node_modules/entities/.travis.yml",
+		"/home/josh/work/cement/Makefile",
+		"/home/josh/work/cement/lib/run/depend/ephox.numerosity.api.Uint8Array.js",
+		"/home/josh/work/cement/lib/run/depend/ephox.numerosity.api.XMLHttpRequest.js",
+		"/home/josh/work/cement/lib/run/depend/ephox.numerosity.api.FileReader.js",
+		"/home/josh/work/cement/node_modules/jshint/node_modules/htmlparser2/node_modules/readable-stream/passthrough.js",
+		"/home/josh/work/cement/node_modules/jshint/package.json",
+		"/home/josh/work/cement/config/bolt/prod.js",
+		"/home/josh/work/cement/src/main/js/ephox/cement/images/ImagePaste.js",
+		"/home/josh/work/cement/config/dent/depend.js",
+		"/work/cement/src/main/js/ephox/cement/flash/HelpCopy.js",
+		"/home/josh/work/cement/src/main/js/ephox/cement/smartpaste/PasteBroker.js",
+		"/home/josh/work/cement/lib/run/depend/ephox.sugar.api.Class.js",
+		"/home/josh/work/cement/src/main/flash/textboxpaste.as",
+		"/home/josh/work/cement/node_modules/jshint/src/cli.js",
+		"/home/josh/work/cement/src/main/js/ephox/cement/flash/HelpCopy.js",
+		"/home/josh/work/cement/lib/run/depend/ephox.plumber.tap.wrap.Tapped.js",
+		"/home/josh/work/cement/src/main/js/ephox/cement/flash/FlashInfo.js",
+		"/home/josh/work/cement/src/main/js/ephox/cement/smartpaste/MergeSettings.js",
+		"/home/josh/work/cement/src/demo/html/demo.html",
+		"/home/josh/work/cement/lib/run/depend/ephox.fussy.api.Point.js",
+		"/work/cement/src/demo/html/cement.css",
+		"/work/cement/src/main/js/ephox/cement/api/CementConstants.js",
+		"/home/josh/work/tinymce/tiny4.html",
+		"/work/index.html",
+		"/work/tinymce/powerpaste/test.js",
+		"/work/cement/cement.sublime-project",
+		"/work/sudopaste/config/bolt/bootstrap-demo.js",
+		"/work/sudopaste/config/bolt/bootstrap-browser.js",
+		"/work/sudopaste/src/test/qunit/Paste.test.js",
+		"/work/sudopaste/sudoPaste.sublime-project",
+		"/work/sudopaste/package.json",
+		"/work/Cement/src/main/js/ephox/cement/pastiche/Pastiche.js",
+		"/home/josh/.config/sublime-text-3/Packages/Default/Default (Linux).sublime-keymap",
+		"/work/Cement/src/demo/html/cement.css",
+		"/work/Cement/cement.sublime-project",
+		"/work/Bolt/gen/image/bolt-local/bin/jsc",
+		"/work/Bolt/gen/image/bolt-local/bin/bolt",
+		"/home/josh/Downloads/quickstart/demo/html/demo.html",
+		"/work/tinymce/tiny4/js/tinymce/tinymce.jquery.js",
+		"/work/tinymce/tiny4/js/tinymce/classes/ui/Window.js",
+		"/work/tinymce/tiny4/js/tinymce/plugins/wordcount/plugin.js",
+		"/work/tinymce/tiny4/js/tinymce/plugins/searchreplace/plugin.js",
+		"/work/tinymce/tiny4/js/tinymce/plugins/link/plugin.js",
+		"/work/tinymce/sudopaste/lib/test/tinymce/plugins/link/plugin.js",
+		"/work/tinymce/tiny4/js/tinymce/plugins/hr/plugin.js",
+		"/work/tinymce/sudopaste/dependency/tinymce-enterprise/tinymce/classes/html/Schema.js",
+		"/work/tinymce/sudopaste/dependency/tinymce-enterprise/tinymce/classes/html/Entities.js",
+		"/work/tinymce/tiny4.html",
+		"/work/tinymce/sudopaste/dependency/tinymce-enterprise/tinymce/plugins/link/plugin.js",
+		"/work/tinymce/tiny4/js/tinymce/plugins/pagebreak/plugin.js",
+		"/work/tinymce/tiny4/tests/plugins/table.js",
+		"/work/tinymce/tiny4/js/tinymce/classes/Editor.js",
+		"/work/tinymce/tiny4/js/tinymce/plugins/table/classes/Dialogs.js",
+		"/work/tinymce/tiny4/js/tinymce/classes/dom/DOMUtils.js",
+		"/work/tinymce/tiny4/js/tinymce/classes/html/Styles.js",
+		"/work/tinymce/tiny3/changelog.txt.save",
+		"/work/tinymce/tiny4/.eslintrc",
+		"/work/tinymce/tiny4/js/tinymce/plugins/image/plugin.js",
+		"/work/tinymce/tiny4/js/tinymce/classes/html/Serializer.js",
+		"/work/tinymce/tiny4/js/tinymce/classes/html/Writer.js",
+		"/work/tinymce/tiny4/js/tinymce/classes/Formatter.js",
+		"/work/tinymce/tiny4/js/tinymce/plugins/table/plugin.js",
+		"/work/tinymce/tiny4/js/tinymce/plugins/autoresize/plugin.js",
+		"/work/tinymce/tiny4/tests/js/utils.js",
+		"/work/tinymce/tiny4/tests/tinymce/EditorCommands.js",
+		"/work/tinymce/tiny4/tests/tinymce/util/EventDispatcher.js",
+		"/work/tinymce/tiny3/jscripts/tiny_mce/plugins/table/js/table.js",
+		"/work/tinymce/tiny3/jscripts/tiny_mce/plugins/table/js/cell.js",
+		"/work/tinymce/tiny3/jscripts/tiny_mce/plugins/table/table.htm",
+		"/home/josh/.config/sublime-text-3/Packages/User/Default (Linux).sublime-keymap",
+		"/work/tinymce/tiny4/node_modules/grunt/node_modules/underscore.string/test/strings.js",
+		"/work/tinymce/sudopaste/node_modules/grunt/node_modules/underscore.string/test/strings.js",
+		"/work/tinymce/sudopaste/node_modules/grunt-jsbeautifier/.idea/scopes/scope_settings.xml",
+		"/work/tinymce/sudopaste/node_modules/jasmine-core/setup.py",
+		"/work/tinymce/tiny3/jscripts/tiny_mce/themes/advanced/source_editor.htm",
+		"/work/tinymce/tiny3/examples/simple.html",
+		"/work/tinymce/tiny4/js/tinymce/classes/html/Schema.js",
+		"/work/tinymce/tiny4/tests/tinymce/EnterKey.js",
+		"/work/tinymce/tiny4/tests/tinymce/html/Schema.js",
+		"/work/tinymce/tiny4/js/tinymce/classes/html/DomParser.js",
+		"/work/tinymce/tiny4/js/tinymce/classes/EnterKey.js",
+		"/work/tinymce/tiny4/js/tinymce/classes/EditorCommands.js",
+		"/home/josh/.config/sublime-text-3/Packages/FindKeyConflicts/README.md",
+		"/home/josh/.config/sublime-text-3/Packages/HTML-CSS-JS Prettify/Default (Linux).sublime-keymap",
+		"/home/josh/.config/sublime-text-3/Packages/SideBarEnhancements/Default (Linux).sublime-keymap",
+		"/work/tinymce/tiny4/tests/tinymce/Editor.js",
+		"/work/tinymce/sudopaste/dependency/exhibition/exhibition.js",
+		"/work/tinymce/tiny4/js/tinymce/plugins/paste/plugin.js",
+		"/work/tinymce/tiny4/js/tinymce/classes/ui/FieldSet.js",
+		"/work/tinymce/tiny4/js/tinymce/classes/ui/Widget.js",
+		"/work/tinymce/tiny4/js/tinymce/tinymce.js"
+	],
+	"find":
+	{
+		"height": 25.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			"/work/cement/",
+			"/work/cement/src",
+			"/work/cement/",
+			"/work/cement/src/",
+			"/work/cement/",
+			"/work/cement/src/",
+			"/work/cement/",
+			"/work/cement/src/",
+			"/work/cement/",
+			"/work/cement/src/",
+			"/work/cement/",
+			"/work/cement/src",
+			"/work/cement",
+			"/work/sudopaste",
+			"/work/tinymce/tiny4/",
+			"/work/tinymce/tiny4/classes/",
+			"/work/tinymce/tiny4/classes",
+			"/work/tinymce/",
+			"/work/tinymce/tiny4/tests/",
+			"/work/tinymce/tiny4/",
+			"/work/tinymce/tiny4/tests/",
+			"/work/tinymce/tiny4/",
+			"/work/tinymce/tiny3/",
+			"/work/tinymce/tiny3/js/",
+			"/work/tinymce/tiny4/js/",
+			"/work/tinymce/tiny4/js/tinymce/plugins/table/classes",
+			"/work/tinymce/tiny4/js/",
+			"/work/tinymce/tiny4/tests/",
+			"/work/tinymce/tiny4/js/",
+			"/work/tinymce/tiny4/tests/",
+			"/work/tinymce/tiny4/js/",
+			"/work/tinymce/tiny4/tests/",
+			"/work/tinymce/tiny4/",
+			"/work/tinymce/tiny4/tests",
+			"/work/tinymce/tiny4",
+			"/work/tinymce/tiny4/tests"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"mergeinlinestyles",
+			"mergeInlineStyles",
+			"png",
+			"jpg",
+			"bowerbird",
+			"bowerbir",
+			"ephox.bowerbird.api.Rtf",
+			"ephox.bowerbird.core.Rtf",
+			"firefox",
+			"proxypaste.events",
+			"ephox.sloth.api.ProxyPaste",
+			"ephox.sloth.api.Offscreen",
+			"offscreen",
+			".play",
+			"cleaner =",
+			"event.assets",
+			"paste.bind",
+			"assets",
+			"blob",
+			"assets =",
+			"assets",
+			"imageextract",
+			"assets",
+			"cancel",
+			"destroy",
+			"flash dialog",
+			"rtf",
+			"keurig",
+			"flash.clipboard.no.rtf",
+			".handler",
+			"pastiche.handler",
+			"raw",
+			"ieblob",
+			"onload",
+			"waiting",
+			"waitforflash",
+			"waiting",
+			"smartpaste-eph-bin",
+			"errors.",
+			"transla",
+			"translate",
+			"errors.",
+			"error",
+			"safari.imagepaste",
+			"safari-imagepaste",
+			"flash.clipboard.no.rtf",
+			"safari.imagepaste",
+			"safari",
+			"support",
+			"error",
+			"process",
+			"response",
+			"pastecallback",
+			"clipboard",
+			"hide",
+			"insert",
+			"clean",
+			"prompt",
+			"default",
+			"1000",
+			"-1000",
+			"compass",
+			"prepastefilter",
+			"allowlocalimages",
+			".get",
+			"result",
+			"'unwrappin'",
+			"unwrappin",
+			"console",
+			"trim",
+			"class",
+			"selector",
+			"selectors.is",
+			"selector",
+			"fallback",
+			"selector",
+			"ephox.sugar.api.css",
+			"global",
+			"globalat",
+			"globalator",
+			"class.",
+			"sugar.api.class",
+			"imagepaste",
+			"fallback",
+			"pastiche",
+			"selector",
+			"sugar.api.class",
+			"global",
+			"close",
+			"trigger('close",
+			"isblocked",
+			"tord",
+			"insert",
+			"prePasteFilter",
+			"pre",
+			"preprocess",
+			"process",
+			"prePasteFilter",
+			"pre",
+			"process",
+			"preprocess",
+			"paste",
+			"result",
+			"paste",
+			"captured",
+			"createhandler",
+			"paste",
+			"prePasteFilter",
+			"pastebroker",
+			"mergesettings",
+			"callback",
+			"result",
+			"error",
+			"errorcallback",
+			"globaliser",
+			"setfocus",
+			"spinCallback",
+			"flow",
+			"focus",
+			"pasteTap",
+			"gwt",
+			"pasteListener",
+			"pastecallback",
+			"bin",
+			"blocktap",
+			"pastetap",
+			"paste",
+			"pastebroker"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 25.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "tinymce-documentation.sublime-project",
+	"replace":
+	{
+		"height": 46.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"pastiche",
+				"src/main/js/ephox/cement/pastiche/Pastiche.js"
+			],
+			[
+				"class",
+				"lib/run/depend/ephox.sugar.api.Class.js"
+			],
+			[
+				"paste.js",
+				"src/main/js/ephox/sudoPaste/api/iePaste.js"
+			],
+			[
+				"cement",
+				"src/main/js/ephox/cement/api/Cement.js"
+			],
+			[
+				"edit",
+				"tiny4/js/tinymce/classes/Editor.js"
+			],
+			[
+				"editorcom",
+				"tiny4/tests/tinymce/EditorCommands.js"
+			],
+			[
+				"field",
+				"tiny4/js/tinymce/classes/ui/FieldSet.js"
+			],
+			[
+				"combobox",
+				"tiny4/js/tinymce/classes/ui/ComboBox.js"
+			],
+			[
+				"filepicker",
+				"tiny4/js/tinymce/classes/ui/FilePicker.js"
+			],
+			[
+				"uri",
+				"tiny3/jscripts/tiny_mce/classes/util/URI.js"
+			],
+			[
+				"filepic",
+				"tiny4/js/tinymce/classes/ui/FilePicker.js"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 375.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

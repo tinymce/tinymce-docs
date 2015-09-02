@@ -1,22 +1,26 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
-<head>
-   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-   <title>{{ page.title }}</title>
-   <meta name="author" content="Joshua Haines" />
-</head>
-<body>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<title>{{ page.title }}</title>
+		<meta name="author" content="Joshua Haines" />
+		<link rel="stylesheet" href="/css/default.css">
+		<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+	</head>
+	<body>
 
-<div class="site">
-  <div class="title">
-    <a href="/">TinyMCE Documentation</a>
-  </div>
-
-  {{ content }}
-
-  <div class="footer">
-
-  </div>
-</div>
-</body>
+		<div class="site">
+			<div class="title">
+				<a href="/">TinyMCE Documentation</a>
+			</div>
+			<div class="content">
+				{{ content }}
+			</div>
+			<div class="sidebar">
+				{% include navigation.html %}
+			</div>
+			<div class="footer">
+			</div>
+		</div>
+	</body>
 </html>

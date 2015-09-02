@@ -79,6 +79,41 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "_layouts/default.html",
+			"settings":
+			{
+				"buffer_size": 433,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "_config.yml",
+			"settings":
+			{
+				"buffer_size": 90,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "",
+			"file": "2015-09-01-configuration-auto-focus.html",
+			"file_size": 0,
+			"file_write_time": 130855516176372890,
+			"settings":
+			{
+				"buffer_size": 0,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "_posts/configuration/2015-09-01-auto-focus.html",
+			"settings":
+			{
+				"buffer_size": 419,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -129,10 +164,16 @@
 	},
 	"expanded_folders":
 	[
-		"/work/jekyll/tinymce-documentation"
+		"/work/jekyll/tinymce-documentation",
+		"/work/jekyll/tinymce-documentation/_includes",
+		"/work/jekyll/tinymce-documentation/_layouts",
+		"/work/jekyll/tinymce-documentation/_posts",
+		"/work/jekyll/tinymce-documentation/_site"
 	],
 	"file_history":
 	[
+		"/work/jekyll/tinymce-documentation/_config.yml",
+		"/work/jekyll/tinymce-documentation/.gitignore",
 		"/home/josh/work/cement/src/main/js/ephox/cement/flash/Flash.js",
 		"/work/cement/dist/deploy/module/ephox.cement.pastiche.Pastiche.js",
 		"/work/cement/src/main/js/ephox/cement/images/ImagePaste.js",
@@ -258,9 +299,7 @@
 		"/work/tinymce/tiny4/tests/tinymce/Editor.js",
 		"/work/tinymce/sudopaste/dependency/exhibition/exhibition.js",
 		"/work/tinymce/tiny4/js/tinymce/plugins/paste/plugin.js",
-		"/work/tinymce/tiny4/js/tinymce/classes/ui/FieldSet.js",
-		"/work/tinymce/tiny4/js/tinymce/classes/ui/Widget.js",
-		"/work/tinymce/tiny4/js/tinymce/tinymce.js"
+		"/work/tinymce/tiny4/js/tinymce/classes/ui/FieldSet.js"
 	],
 	"find":
 	{
@@ -459,8 +498,125 @@
 	"groups":
 	[
 		{
+			"selected": 1,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "_layouts/default.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 433,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								401,
+								401
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "_config.yml",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 90,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								48,
+								48
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/YAML/YAML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "2015-09-01-configuration-auto-focus.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 0,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"open_with_edit": true,
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "_posts/configuration/2015-09-01-auto-focus.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 419,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								399,
+								399
+							]
+						],
+						"settings":
+						{
+							"open_with_edit": true,
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				}
 			]
 		}
 	],

@@ -4,10 +4,14 @@ title: Configuration
 ---
 
 <p>
-	<div class="main">
-		{% include content.html nav=site.data.configurationmenu headinglevel=1 %}
-	</div>
-	<div class="navigation">
-		{% include nav.html nav=site.data.configurationmenu %}
+	<div class="row">
+		<div class="col-xs-9">
+			{% include content.html nav=site.data.configurationmenu headinglevel=1 %}
+		</div>
+		<div class="col-xs-3">
+			<div style="position: fixed">
+				{% include nav.html nav=site.data.configurationmenu %}
+			</div>
+		</div>
 	</div>
 </p>

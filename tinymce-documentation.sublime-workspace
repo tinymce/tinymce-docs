@@ -83,7 +83,7 @@
 			"file": "_layouts/default.html",
 			"settings":
 			{
-				"buffer_size": 433,
+				"buffer_size": 634,
 				"line_ending": "Unix"
 			}
 		},
@@ -91,26 +91,7 @@
 			"file": "_config.yml",
 			"settings":
 			{
-				"buffer_size": 90,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"contents": "",
-			"file": "2015-09-01-configuration-auto-focus.html",
-			"file_size": 0,
-			"file_write_time": 130855516176372890,
-			"settings":
-			{
-				"buffer_size": 0,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "_posts/configuration/2015-09-01-auto-focus.html",
-			"settings":
-			{
-				"buffer_size": 419,
+				"buffer_size": 89,
 				"line_ending": "Unix"
 			}
 		}
@@ -168,10 +149,14 @@
 		"/work/jekyll/tinymce-documentation/_includes",
 		"/work/jekyll/tinymce-documentation/_layouts",
 		"/work/jekyll/tinymce-documentation/_posts",
-		"/work/jekyll/tinymce-documentation/_site"
+		"/work/jekyll/tinymce-documentation/_site",
+		"/work/jekyll/tinymce-documentation/_site/js",
+		"/work/jekyll/tinymce-documentation/css"
 	],
 	"file_history":
 	[
+		"/work/jekyll/tinymce-documentation/2015-09-01-configuration-auto-focus.html",
+		"/work/jekyll/tinymce-documentation/_posts/configuration/2015-09-01-auto-focus.html",
 		"/work/jekyll/tinymce-documentation/_config.yml",
 		"/work/jekyll/tinymce-documentation/.gitignore",
 		"/home/josh/work/cement/src/main/js/ephox/cement/flash/Flash.js",
@@ -297,9 +282,7 @@
 		"/home/josh/.config/sublime-text-3/Packages/HTML-CSS-JS Prettify/Default (Linux).sublime-keymap",
 		"/home/josh/.config/sublime-text-3/Packages/SideBarEnhancements/Default (Linux).sublime-keymap",
 		"/work/tinymce/tiny4/tests/tinymce/Editor.js",
-		"/work/tinymce/sudopaste/dependency/exhibition/exhibition.js",
-		"/work/tinymce/tiny4/js/tinymce/plugins/paste/plugin.js",
-		"/work/tinymce/tiny4/js/tinymce/classes/ui/FieldSet.js"
+		"/work/tinymce/sudopaste/dependency/exhibition/exhibition.js"
 	],
 	"find":
 	{
@@ -507,22 +490,22 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 433,
+						"buffer_size": 634,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								401,
-								401
+								0,
+								0
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/HTML/HTML.tmLanguage",
 							"tab_size": 2,
-							"translate_tabs_to_spaces": true
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -537,15 +520,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 90,
+						"buffer_size": 89,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								48,
-								48
+								89,
+								89
 							]
 						],
 						"settings":
@@ -557,64 +540,6 @@
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "2015-09-01-configuration-auto-focus.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 0,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"open_with_edit": true,
-							"syntax": "Packages/HTML/HTML.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "_posts/configuration/2015-09-01-auto-focus.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 419,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								399,
-								399
-							]
-						],
-						"settings":
-						{
-							"open_with_edit": true,
-							"syntax": "Packages/HTML/HTML.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
 					"type": "text"
 				}
 			]

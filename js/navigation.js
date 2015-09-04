@@ -3,7 +3,7 @@ $(document).ready(function(){
 
 	function clickEvent(event) {
 		$('html, body').animate({
-			scrollTop: $('#' + event.data).offset().top
+			scrollTop: $('#' + event.data).offset().top + 70
 		}, 2000);
 	}
 

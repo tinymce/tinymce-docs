@@ -2,6 +2,13 @@
 layout: default
 title: Getting Started
 ---
-
-<p>
-</p>
+<div class="row">
+	<div class="col-xs-9">
+		{% include content.html nav=site.data.gettingstartedmenu headinglevel=1 %}
+	</div>
+	<div class="col-xs-3">
+		<div style="position: fixed">
+			{% include nav.html nav=site.data.gettingstartedmenu %}
+		</div>
+	</div>
+</div>

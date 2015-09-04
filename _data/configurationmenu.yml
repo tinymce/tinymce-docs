@@ -1,0 +1,28 @@
+- text: Getting Started
+  url: /getting-started/
+  ignorecontent: true
+- text: Configuration
+  id: configuration
+  url: /configuration/
+  subitems:
+    - text: General
+      id: general
+      subitems:
+        - text: auto_focus
+          id: general_auto-focus
+          include: configuration/general/auto_focus.html
+        - text: br_in_pre
+          id: general_br_in_pre
+          include: configuration/general/br_in_pre.html
+        - text: directionality
+          id: general_directionality
+          include: configuration/general/directionality.html
+    - text: Cleanup/Output
+      id: cleanup_output
+      subitems:
+        - text: allow_conditional_comments
+          id: general_allow-conditional-comments
+          include: configuration/cleanup_output/allow_conditional_comments.html
+        - text: allow_html_in_named_anchor
+          id: cleanup_output_allow-html-in-named-anchor
+          include: configuration/cleanup_output/allow_html_in_named_anchor.html

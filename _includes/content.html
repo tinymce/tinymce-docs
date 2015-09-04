@@ -1,0 +1,15 @@
+{% for item in include.nav %}
+    {% if item.ignorecontent != true %}
+        <div class=".tiny-docs-section">
+            <h{{ include.headinglevel }} id="{{ item.id }}">{{ item.text }}</h{{ include.headinglevel }}>
+            {% if item.include %}
+                {% capture includename %}{{ item.include }}{% endcapture %}
+                {% include {{ includename }} %}
+            {% endif %}
+            {% if item.subitems %}
+                {% assign nextheadinglevel = include.headinglevel | plus:1 %}
+                {% include content.html nav=item.subitems headinglevel=nextheadinglevel %}
+            {% endif %}
+        </div>
+    {% endif %}
+{% endfor %}

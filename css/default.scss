@@ -3,12 +3,12 @@
 # only Main files contain this front matter, not partials.
 ---
 
-.content {
+.content .main {
 	width: 650px;
 	float: left;
 }
 
-.navigation {
+.content .navigation {
 	width: 150px;
 	float: left;
 }

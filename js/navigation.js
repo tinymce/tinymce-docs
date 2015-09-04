@@ -1,4 +1,4 @@
-(function(){
+$(document).ready(function(){
 	var items = $('.navigationlink');
 
 	function clickEvent(event) {
@@ -11,4 +11,4 @@
 		var selector = $(items[i]).attr('data-id');
 		$(items[i]).click(selector, clickEvent);
 	}
-})();
+});

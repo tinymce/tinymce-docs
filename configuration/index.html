@@ -7,8 +7,9 @@ title: Configuration
 		{% include content.html nav=site.data.configurationmenu headinglevel=1 %}
 	</div>
 	<div class="col-xs-3">
-		<div style="position: fixed">
+		<div style="position: fixed" id="sidebar">
 			{% include nav.html nav=site.data.configurationmenu %}
 		</div>
 	</div>
+	{% include navigationscript.html %}
 </div>

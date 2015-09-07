@@ -5,8 +5,38 @@
   url: ../configuration/
   ignorecontent: true
 - text: Using TinyMCE
-  url: ../using-tinymce/
   id: using-tinymce
+  subitems:
+  - text: Advanced Configuration
+    id: using-tinymce_advanced-configuration
+    include: using-tinymce/advanced-configuration.html
+  - text: Creating a Plugin
+    id: using-tinymce_creating-a-plugin
+    include: using-tinymce/creating-a-plugin.html
+  - text: Creating a Skin
+    id: using-tinymce_creating-a-skin
+    include: using-tinymce/creating-a-skin.html
+  - text: Creating Custom Dialogs
+    id: using-tinymce_creating-custom-dialogs
+    include: using-tinymce/creating-custom-dialogs.html
+  - text: Handling Asynchronous Image Uploads
+    id: using-tinymce_handling-asynchronous-image-uploads
+    include: using-tinymce/handling-asynchronous-image-uploads.html
+  - text: Migration Guide From 3.x
+    id: using-tinymce_migration-guide-from-3x
+    include: using-tinymce/migration-guide-from-3x.html
+  - text: TinyMCE in a Bootstrap Dialog
+    id: using-tinymce_tinymce-in-a-bootstrap-dialog
+    include: using-tinymce/tinymce-in-a-bootstrap-dialog.html
+  - text: TinyMCE in a jQuery UI Dialog
+    id: using-tinymce_tinymce-in-a-jquery-ui-dialog
+    include: using-tinymce/tinymce-in-a-jquery-ui-dialog.html
+  - text: Using CDN
+    id: using-tinymce_using-cdn
+    include: using-tinymce/using-cdn.html
+  - text: Using the Gzip Compressors
+    id: using-tinymce_using-the-gzip-compressors
+    include: using-tinymce/using-the-gzip-compressors.html
 - text: Javascript API
   url: ../javascript-api/
   ignorecontent: true

@@ -1,0 +1,93 @@
+---
+categories:
+- tinymce
+- util
+- Color
+---
+
+<div class="api classdetails">
+
+	<div class="description">This class lets you parse/serialize colors and convert rgb/hsb.</div>
+
+		<div class="examples">
+		<h2>Examples</h2>
+<pre class="js prettyprint"><span class="kwd">var</span><span class="pln"> white </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> tinymce</span><span class="pun">.</span><span class="pln">util</span><span class="pun">.</span><span class="typ">Color</span><span class="pun">({</span><span class="pln">r</span><span class="pun">:</span><span class="pln"> </span><span class="lit">255</span><span class="pun">,</span><span class="pln"> g</span><span class="pun">:</span><span class="pln"> </span><span class="lit">255</span><span class="pun">,</span><span class="pln"> b</span><span class="pun">:</span><span class="pln"> </span><span class="lit">255</span><span class="pun">});</span><span class="pln"><br></span><span class="kwd">var</span><span class="pln"> red </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> tinymce</span><span class="pun">.</span><span class="pln">util</span><span class="pun">.</span><span class="typ">Color</span><span class="pun">(</span><span class="str">'#FF0000'</span><span class="pun">);</span><span class="pln"><br><br>console</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="pln">white</span><span class="pun">.</span><span class="pln">toHex</span><span class="pun">(),</span><span class="pln"> red</span><span class="pun">.</span><span class="pln">toHsv</span><span class="pun">());</span></pre>
+		</div>
+
+
+
+
+	<div class="constructors">
+		<h2>Constructors</h2>
+		<table>
+			<thead class="small">
+				<tr>
+					<th class="first">Method</th>
+					<th class="last">Defined By</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="first">
+							<div><a href="/wiki.php/api4:constructor.tinymce.util.Color.Color" class="member">Color</a></div>
+						<div>Constructs a new color instance</div>
+					</td>
+					<td class="last">
+							tinymce.util.Color
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+	<div class="methods">
+		<h2>Methods</h2>
+		<table>
+			<thead class="small">
+				<tr>
+					<th class="first">Method</th>
+					<th class="last">Defined By</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="first">
+							<div><a href="/wiki.php/api4:method.tinymce.util.Color.parse" class="member">parse</a></div>
+						<div>Parses the specified value and populates the color instance</div>
+					</td>
+					<td class="last">
+							tinymce.util.Color
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/wiki.php/api4:method.tinymce.util.Color.toHex" class="member">toHex</a></div>
+						<div>Returns the hex string of the current color</div>
+					</td>
+					<td class="last">
+							tinymce.util.Color
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/wiki.php/api4:method.tinymce.util.Color.toHsv" class="member">toHsv</a></div>
+						<div>Returns the h, s, v values of the color</div>
+					</td>
+					<td class="last">
+							tinymce.util.Color
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/wiki.php/api4:method.tinymce.util.Color.toRgb" class="member">toRgb</a></div>
+						<div>Returns the r, g, b values of the color</div>
+					</td>
+					<td class="last">
+							tinymce.util.Color
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+</div>

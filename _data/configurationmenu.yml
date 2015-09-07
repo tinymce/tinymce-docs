@@ -2,7 +2,6 @@
   url: ../getting-started/
   ignorecontent: true
 - text: Configuration
-  url: ../configuration/
   id: configuration
   subitems:
     - text: General
@@ -21,7 +20,7 @@
       id: cleanup_output
       subitems:
         - text: allow_conditional_comments
-          id: general_allow-conditional-comments
+          id: cleanup_output_allow-conditional-comments
           include: configuration/cleanup_output/allow_conditional_comments.html
         - text: allow_html_in_named_anchor
           id: cleanup_output_allow-html-in-named-anchor

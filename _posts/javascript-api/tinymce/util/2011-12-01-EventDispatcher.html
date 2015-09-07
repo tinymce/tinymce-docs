@@ -1,0 +1,91 @@
+---
+categories:
+- tinymce
+- util
+- EventDispatcher
+---
+
+<div class="api classdetails">
+
+	<div class="description">This class lets you add/remove and fire events by name on the specified scope. This makes
+it easy to add event listener logic to any class.</div>
+
+		<div class="examples">
+		<h2>Examples</h2>
+<pre class="js prettyprint"><span class="kwd">var</span><span class="pln"> eventDispatcher </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">EventDispatcher</span><span class="pun">();</span><span class="pln"><br><br>&nbsp;eventDispatcher</span><span class="pun">.</span><span class="pln">on</span><span class="pun">(</span><span class="str">'click'</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">console</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="str">'data'</span><span class="pun">);});</span><span class="pln"><br>&nbsp;eventDispatcher</span><span class="pun">.</span><span class="pln">fire</span><span class="pun">(</span><span class="str">'click'</span><span class="pun">,</span><span class="pln"> </span><span class="pun">{</span><span class="pln">data</span><span class="pun">:</span><span class="pln"> </span><span class="lit">123</span><span class="pun">});</span></pre>
+		</div>
+
+
+
+
+
+	<div class="methods">
+		<h2>Methods</h2>
+		<table>
+			<thead class="small">
+				<tr>
+					<th class="first">Method</th>
+					<th class="last">Defined By</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="first">
+							<div><a href="/wiki.php/api4:method.tinymce.util.EventDispatcher.fire" class="member">fire</a></div>
+						<div>Fires the specified event by name</div>
+					</td>
+					<td class="last">
+							tinymce.util.EventDispatcher
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/wiki.php/api4:method.tinymce.util.EventDispatcher.has" class="member">has</a></div>
+						<div>Returns true/false if the dispatcher has a event of the specified name</div>
+					</td>
+					<td class="last">
+							tinymce.util.EventDispatcher
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/wiki.php/api4:method.tinymce.util.EventDispatcher.isNative.static" class="member">isNative</a> <span class="static">static</span></div>
+						<div>Returns true/false if the specified event name is a native browser event or not</div>
+					</td>
+					<td class="last">
+							tinymce.util.EventDispatcher
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/wiki.php/api4:method.tinymce.util.EventDispatcher.off" class="member">off</a></div>
+						<div>Unbinds an event listener to a specific event by name</div>
+					</td>
+					<td class="last">
+							tinymce.util.EventDispatcher
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/wiki.php/api4:method.tinymce.util.EventDispatcher.on" class="member">on</a></div>
+						<div>Binds an event listener to a specific event by name</div>
+					</td>
+					<td class="last">
+							tinymce.util.EventDispatcher
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/wiki.php/api4:method.tinymce.util.EventDispatcher.once" class="member">once</a></div>
+						<div>Binds an event listener to a specific event by name
+and automatically unbind the event once the call</div>
+					</td>
+					<td class="last">
+							tinymce.util.EventDispatcher
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+</div>

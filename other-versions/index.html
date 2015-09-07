@@ -3,7 +3,23 @@ layout: default
 title: Older Versions
 ---
 
-<p>
-	<h3>Other Versions</h3>
-	<p>Content goes here!</p>
-</p>
+<div class="row">
+	<div class="col-xs-9">
+		<h1>Other Versions</h1>
+		<p><a href="#">Version 3.x</a></p>
+		<p><a href="#">Version 4.0</a></p>
+		<p><a href="#">Version 4.1</a></p>
+		<p><a href="#">Version 4.2</a></p>
+	</div>
+	<div class="col-xs-3">
+		<div style="position: fixed" id="sidebar">
+			{% include nav.html nav=site.data.otherversions %}
+		</div>
+	</div>
+	<script>
+		$('#sidebar a[data-url]').click(function(e) {
+			$('#javascript-api-namespace').text($(e.target).data('text'));
+			$('#javascript-api-content').load($(e.target).data('url'));
+		});
+	</script>
+</div>

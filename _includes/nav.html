@@ -1,4 +1,8 @@
-<ul>
+{% if include.subsection %}
+    <ul class="nav nav-stacked navsubsection">
+{% else %}
+    <ul class="nav nav-stacked navsection">
+{% endif %}
 {% for item in include.nav %}
     <li>
         {% if item.url %}
@@ -12,7 +16,7 @@
         {% endif %}
     </li>
     {% if item.subitems %}
-        {% include nav.html nav=item.subitems %}
+        {% include nav.html nav=item.subitems subsection="true" %}
     {% endif %}
 {% endfor %}
 </ul>

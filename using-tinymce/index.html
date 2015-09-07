@@ -7,8 +7,9 @@ title: Using TinyMCE
 		{% include content.html nav=site.data.usingtinymcemenu headinglevel=1 %}
 	</div>
 	<div class="col-xs-3">
-		<div style="position: fixed">
+		<div style="position: fixed" id="sidebar">
 			{% include nav.html nav=site.data.usingtinymcemenu %}
 		</div>
 	</div>
+	{% include navigationscript.html %}
 </div>

@@ -2,7 +2,28 @@
 layout: default
 title: Javascript API
 ---
-<p>
-	<h3>Javascript API</h3>
-	<p>Content goes here!</p>
-</p>
+<div class="row">
+	<div class="col-xs-9">
+		<h1 id="javascript-api-namespace">Javascript API</h1>
+		<div id="javascript-api-content">
+			<p>Content goes here!</p>
+		</div>
+	</div>
+	<div class="col-xs-3">
+		<div style="position: fixed" id="sidebar">
+			{% include api-nav.html nav=site.data.javascriptapimenu %}
+		</div>
+	</div>
+	<script>
+		$('#sidebar a[data-url]').click(function(e) {
+			$('#sidebar li.active').removeClass('active');
+			$(this).parent().addClass('active');
+			$('#javascript-api-namespace').text($(e.target).data('text'));
+			$('#javascript-api-content').load($(e.target).data('url'));
+		});
+		$('.collapser').click(function() {
+			var parent = $(this).parent();
+			parent.next('ul').toggleClass('collapsed');
+		});
+	</script>
+</div>

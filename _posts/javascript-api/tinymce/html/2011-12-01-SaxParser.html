@@ -1,0 +1,68 @@
+---
+categories:
+- tinymce
+- html
+- SaxParser
+---
+
+<div class="api classdetails">
+
+	<div class="description">This class parses HTML code using pure JavaScript and executes various events for each item it finds. It will
+always execute the events in the right order for tag soup code like &lt;b&gt;&lt;p&gt;&lt;/b&gt;&lt;/p&gt;. It will also remove elements
+and attributes that doesn't fit the schema if the validate setting is enabled.</div>
+
+		<div class="examples">
+		<h2>Examples</h2>
+<pre class="js prettyprint"><span class="kwd">var</span><span class="pln"> parser </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> tinymce</span><span class="pun">.</span><span class="pln">html</span><span class="pun">.</span><span class="typ">SaxParser</span><span class="pun">({</span><span class="pln"><br>&nbsp; &nbsp; validate</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">true</span><span class="pun">,</span><span class="pln"><br><br>&nbsp; &nbsp; comment</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">text</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; console</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="str">'Comment:'</span><span class="pun">,</span><span class="pln"> text</span><span class="pun">);</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="pun">},</span><span class="pln"><br><br>&nbsp; &nbsp; cdata</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">text</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; console</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="str">'CDATA:'</span><span class="pun">,</span><span class="pln"> text</span><span class="pun">);</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="pun">},</span><span class="pln"><br><br>&nbsp; &nbsp; text</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">text</span><span class="pun">,</span><span class="pln"> raw</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; console</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="str">'Text:'</span><span class="pun">,</span><span class="pln"> text</span><span class="pun">,</span><span class="pln"> </span><span class="str">'Raw:'</span><span class="pun">,</span><span class="pln"> raw</span><span class="pun">);</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="pun">},</span><span class="pln"><br><br>&nbsp; &nbsp; start</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">name</span><span class="pun">,</span><span class="pln"> attrs</span><span class="pun">,</span><span class="pln"> empty</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; console</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="str">'Start:'</span><span class="pun">,</span><span class="pln"> name</span><span class="pun">,</span><span class="pln"> attrs</span><span class="pun">,</span><span class="pln"> empty</span><span class="pun">);</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="pun">},</span><span class="pln"><br><br>&nbsp; &nbsp; </span><span class="kwd">end</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">name</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; console</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="str">'End:'</span><span class="pun">,</span><span class="pln"> name</span><span class="pun">);</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="pun">},</span><span class="pln"><br><br>&nbsp; &nbsp; pi</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">name</span><span class="pun">,</span><span class="pln"> text</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; console</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="str">'PI:'</span><span class="pun">,</span><span class="pln"> name</span><span class="pun">,</span><span class="pln"> text</span><span class="pun">);</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="pun">},</span><span class="pln"><br><br>&nbsp; &nbsp; doctype</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">text</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; console</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="str">'DocType:'</span><span class="pun">,</span><span class="pln"> text</span><span class="pun">);</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="pun">}</span><span class="pln"><br></span><span class="pun">},</span><span class="pln"> schema</span><span class="pun">);</span></pre>
+		</div>
+
+
+
+
+	<div class="constructors">
+		<h2>Constructors</h2>
+		<table>
+			<thead class="small">
+				<tr>
+					<th class="first">Method</th>
+					<th class="last">Defined By</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="first">
+							<div><a href="/wiki.php/api4:constructor.tinymce.html.SaxParser.SaxParser" class="member">SaxParser</a></div>
+						<div>Constructs a new SaxParser instance</div>
+					</td>
+					<td class="last">
+							tinymce.html.SaxParser
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+	<div class="methods">
+		<h2>Methods</h2>
+		<table>
+			<thead class="small">
+				<tr>
+					<th class="first">Method</th>
+					<th class="last">Defined By</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="first">
+							<div><a href="/wiki.php/api4:method.tinymce.html.SaxParser.parse" class="member">parse</a></div>
+						<div>Parses the specified HTML string and executes the callbacks for each item it finds</div>
+					</td>
+					<td class="last">
+							tinymce.html.SaxParser
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+</div>

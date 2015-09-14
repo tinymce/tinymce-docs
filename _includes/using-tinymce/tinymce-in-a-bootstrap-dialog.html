@@ -1,3 +1,0 @@
-<p>You need to override the built in block on focusin in bootstrap dialogs when using TinyMCE inside it. See this <a href="http://fiddle.tinymce.com/oxdaab">working example</a> for details.</p>
-<p>Bootstrap blocks all focus events on contents within the dialog. Add this script to your page and it will allow users to click inside the editor.</p>
-<pre class="js">// Prevent bootstrap dialog from blocking focusin<br />$(document).on('focusin', function(e) {<br />    if ($(e.target).closest(".mce-window").length) {<br />        e.stopImmediatePropagation();<br />    }<br />});</pre>

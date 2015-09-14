@@ -5,11 +5,11 @@
 		<title>TinyMCE - {{ page.title }}</title>
 		<meta name="author" content="Joshua Haines" />
 		<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
-		<link href="../assets/css/theme.css" rel="stylesheet">
+		<link href="/assets/css/theme.css" rel="stylesheet">
 		<!-- Bootstrap -->
-    	<link href="../assets/bootstrap-3.3.5-dist/css/bootstrap.min.css" rel="stylesheet">
+    	<link href="/assets/bootstrap-3.3.5-dist/css/bootstrap.min.css" rel="stylesheet">
     	<!-- Optional theme -->
-		<link href="../assets/bootstrap-3.3.5-dist/css/bootstrap-theme.min.css" rel="stylesheet" >
+		<link href="/assets/bootstrap-3.3.5-dist/css/bootstrap-theme.min.css" rel="stylesheet" >
 	</head>
 	<body role="document">
 		<!-- Fixed navbar -->
@@ -34,10 +34,18 @@
 		</nav>
 
 		<div class="container theme-showcase" role="main">
-			{{ content }}
+
+			<div class="col-xs-9">
+				{{ content }}
+			</div>
+			<div class="col-xs-3">
+				<div style="position: fixed" id="sidebar">
+					{% include nav.html pages=site.data.nav precedingaddress="/"%}
+				</div>
+			</div>
 		</div>
 
 		<!-- Include all compiled plugins (below), or include individual files as needed -->
-    	<script src="../assets/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+    	<script src="/assets/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
 	</body>
 </html>

@@ -1,2 +1,5 @@
 exclude: [tinymce-documentation.sublime-project, tinymce-documentation.sublime-workspace]
-permalink: /javascript-api/:categories/index.html
+permalink: pretty
+
+gems:
+  - jekyll-redirect-from

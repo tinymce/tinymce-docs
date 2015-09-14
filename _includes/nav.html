@@ -1,22 +1,26 @@
-{% if include.subsection %}
-    <ul class="nav nav-stacked navsubsection">
-{% else %}
-    <ul class="nav nav-stacked navsection">
-{% endif %}
-{% for item in include.nav %}
-    <li>
-        {% if item.url %}
-            <a href="{{ item.url }}">
-                {{ item.text }}
-            </a>
-        {% else %}
-            <a href="#{{ item.id }}">
-                {{ item.text }}
-            </a>
-        {% endif %}
+<ul class="nav nav-stacked">
+{% for item in include.pages %}
+
+	{% assign slug = item.title | downcase | replace: ' ', '-' | replace:'-&-','-' %}
+
+	{% capture endslashslug %}{{ slug }}/{% endcapture %}
+	{% capture bothslashslug %}/{{ slug }}/{% endcapture %}
+
+    {% if page.url contains bothslashslug %}
+    	{% assign active = 'active' %}
+    {% else %}
+    	{% assign active = nil %}
+    {% endif %}
+
+	{% capture address %}{{ include.precedingaddress }}{{ endslashslug }}{% endcapture %}
+
+    <li class="{{ active }}">
+      <a href="{{ site.baseurl }}{{ address }}">
+        {{ item.title }}
+      </a>
     </li>
-    {% if item.subitems %}
-        {% include nav.html nav=item.subitems subsection="true" %}
+    {% if item.pages %}
+        {% include nav.html pages=item.pages precedingaddress=address%}
     {% endif %}
 {% endfor %}
 </ul>

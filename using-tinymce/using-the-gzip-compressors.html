@@ -1,0 +1,10 @@
+---
+layout: default
+title: Using the GZip Compressors
+---
+
+<p>The <a href="/download/compressors.php">TinyMCE gzip compressors</a>&nbsp;helps you to dynamically combine and compress the different parts of TinyMCE to reduce the loading time. These compressors are very easy to use as of 4.x just drop the script into the tinymce folder change the path to the script from tinymce.min.js to tinymce.gzip.js and it will compress for you automatically when you call tinymce.init to create editor instances.</p>
+<h3>Example using the tinymce.gzip.js</h3>
+<pre class="js">&lt;script src="/js/tinymce/tinymce.gzip.js"&gt;&lt;/script&gt;<br />&lt;script&gt;<br />tinymce.init({<br />&nbsp;&nbsp;&nbsp;&nbsp;selector: 'textarea',<br />&nbsp;&nbsp;&nbsp;&nbsp;plugins: 'image link'<br />});<br />&lt;/script&gt;</pre>
+<h3>Example using the jQuery plugin</h3>
+<pre class="js">&lt;script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"&gt;&lt;/script&gt;<br />&lt;script src="js/tinymce/jquery.tinymce.min.js"&gt;&lt;/script&gt;<br />&lt;script&gt;<br /> $(function() {<br />     $('textarea.tinymce').tinymce({<br />         script_url: 'js/tinymce/tinymce.gzip.php',<br />         plugins: 'media,code'<br />     });<br /> });<br />&lt;/script&gt;</pre>

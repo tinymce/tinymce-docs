@@ -6,12 +6,29 @@
 
 - title: Configuration
   pages:
+    - title: General
+      pages:
+        - title: selector
+        - title: auto_focus
+        - title: br_in_pre
+        - title: directionality
     - title: Cleanup & Output
       pages:
-        - title: Allow Conditional Comments
-        - title: Allow HTML in Named Anchor
+        - title: allow_conditional_comments
+        - title: allow_html_in_named_anchor
 
 - title: Using TinyMCE
+  pages:
+    - title: Advanced Configuration
+    - title: Creating a Plugin
+    - title: Creating a Skin
+    - title: Creating Custom Dialogs
+    - title: Handling Asynchronoush Image Uploads
+    - title: Migration Guide From 3x
+    - title: TinyMCE in a Bootstrap Dialog
+    - title: TinyMCE in a jQuery UI Dialog
+    - title: Using CDN
+    - title: Using the Gzip Compressors
 
 - title: JavaScript API
 

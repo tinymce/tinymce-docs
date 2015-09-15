@@ -1,5 +1,6 @@
-exclude: [tinymce-documentation.sublime-project, tinymce-documentation.sublime-workspace]
+exclude: [Gemfile, Gemfile.lock]
 permalink: pretty
+baseurl: /docs
 
 gems:
   - jekyll-redirect-from

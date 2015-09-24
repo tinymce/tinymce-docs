@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<title>TinyMCE - tinymce.EditorManager</title>
+		<meta name="author" content="Joshua Haines" />
+		<link href="/docs/assets/css/theme.css" rel="stylesheet">
+    <link href="/docs/assets/bootstrap-3.3.5-dist/css/bootstrap.min.css" rel="stylesheet">
+		<link href="/docs/assets/bootstrap-3.3.5-dist/css/bootstrap-theme.min.css" rel="stylesheet" >
+	</head>
+	<body role="document">
+
+		<!-- Fixed navbar -->
+		<nav class="navbar navbar-inverse navbar-fixed-top">
+		    <div class="container">
+		        <div class="navbar-header">
+		            <a class="navbar-brand" href="#">TinyMCE</a>
+		        </div>
+		        <div id="navbar" class="navbar-collapse collapse">
+		            <ul class="nav navbar-nav">
+		                <li><a href="#">Home</a></li>
+		                <li><a href="#">Try It</a></li>
+		                <li><a href="#">Download</a></li>
+		                <li class="active"><a href="#">Documentation</a></li>
+		                <li><a href="#">Enterprise</a></li>
+		                <li><a href="#">Develop</a></li>
+		                <li><a href="#">Forum</a></li>
+		            </ul>
+		        </div>
+		        <!--/.nav-collapse -->
+		    </div>
+		</nav>
+
+		<div class="container theme-showcase" role="main">
+
+			<div class="col-xs-9">
+				<h1>tinymce.EditorManager</h1>
+				<div class="api classdetails">
+
+	<div class="description">This class used as a factory for manager for tinymce.Editor instances.</div>
+
+		<div class="examples">
+		<h2>Examples</h2>
+<pre class="js">tinymce.EditorManager.init({});</pre>
+		</div>
+
+
+	<div class="properties">
+		<h2>Properties</h2>
+		<table>
+			<thead class="small">
+				<tr>
+					<th class="first">Property</th>
+					<th class="last">Defined By</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/editormanager/$/static/" class="member">$</a> <span class="static">static</span></div>
+						<div>Dom query instance</div>
+					</td>
+					<td class="last">
+							tinymce.EditorManager
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/editormanager/activeeditor/static/" class="member">activeEditor</a> <span class="static">static</span></div>
+						<div>Currently active editor instance</div>
+					</td>
+					<td class="last">
+							tinymce.EditorManager
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/editormanager/baseuri/static/" class="member">baseURI</a> <span class="static">static</span></div>
+						<div>Absolute baseURI for the installation path of TinyMCE</div>
+					</td>
+					<td class="last">
+							tinymce.EditorManager
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/editormanager/baseurl/static/" class="member">baseURL</a> <span class="static">static</span></div>
+						<div>Base URL where the root directory if TinyMCE is located</div>
+					</td>
+					<td class="last">
+							tinymce.EditorManager
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/editormanager/documentbaseurl/static/" class="member">documentBaseURL</a> <span class="static">static</span></div>
+						<div>Document base URL where the current document is located</div>
+					</td>
+					<td class="last">
+							tinymce.EditorManager
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/editormanager/editors/static/" class="member">editors</a> <span class="static">static</span></div>
+						<div>Collection of editor instances</div>
+					</td>
+					<td class="last">
+							tinymce.EditorManager
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/editormanager/i18n/static/" class="member">i18n</a> <span class="static">static</span></div>
+						<div>Collection of language pack data</div>
+					</td>
+					<td class="last">
+							tinymce.EditorManager
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/editormanager/majorversion/static/" class="member">majorVersion</a> <span class="static">static</span></div>
+						<div>Major version of TinyMCE build</div>
+					</td>
+					<td class="last">
+							tinymce.EditorManager
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/editormanager/minorversion/static/" class="member">minorVersion</a> <span class="static">static</span></div>
+						<div>Minor version of TinyMCE build</div>
+					</td>
+					<td class="last">
+							tinymce.EditorManager
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/editormanager/releasedate/static/" class="member">releaseDate</a> <span class="static">static</span></div>
+						<div>Release date of TinyMCE build</div>
+					</td>
+					<td class="last">
+							tinymce.EditorManager
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/editormanager/suffix/static/" class="member">suffix</a> <span class="static">static</span></div>
+						<div>Current suffix to add to each plugin/theme that gets loaded for example &quot;</div>
+					</td>
+					<td class="last">
+							tinymce.EditorManager
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+	<div class="events">
+		<h2>Events</h2>
+		<table>
+			<thead class="small">
+				<tr>
+					<th class="first">Event</th>
+					<th class="last">Defined By</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/editormanager/addeditor/static/" class="member">AddEditor</a> <span class="static">static</span></div>
+						<div>Fires when an editor is added to the EditorManager collection</div>
+					</td>
+					<td class="last">
+							tinymce.EditorManager
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/editormanager/removeeditor/static/" class="member">RemoveEditor</a> <span class="static">static</span></div>
+						<div>Fires when an editor is removed from EditorManager collection</div>
+					</td>
+					<td class="last">
+							tinymce.EditorManager
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+
+	<div class="methods">
+		<h2>Methods</h2>
+		<table>
+			<thead class="small">
+				<tr>
+					<th class="first">Method</th>
+					<th class="last">Defined By</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/editormanager/add/static/" class="member">add</a> <span class="static">static</span></div>
+						<div>Adds an editor instance to the editor collection</div>
+					</td>
+					<td class="last">
+							tinymce.EditorManager
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/editormanager/addi18n/static/" class="member">addI18n</a> <span class="static">static</span></div>
+						<div>Adds a language pack, this gets called by the loaded language files like en</div>
+					</td>
+					<td class="last">
+							tinymce.EditorManager
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/editormanager/createeditor/static/" class="member">createEditor</a> <span class="static">static</span></div>
+						<div>Creates an editor instance and adds it to the EditorManager collection</div>
+					</td>
+					<td class="last">
+							tinymce.EditorManager
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/editormanager/execcommand/static/" class="member">execCommand</a> <span class="static">static</span></div>
+						<div>Executes a specific command on the currently active editor</div>
+					</td>
+					<td class="last">
+							tinymce.EditorManager
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/util/observable/fire/" class="member">fire</a> <span class="static">static</span></div>
+						<div>Fires the specified event by name</div>
+					</td>
+					<td class="last">
+							<a href="/docs/v4.2.5/api/tinymce/util/observable/">tinymce.util.Observable</a>
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/editormanager/get/static/" class="member">get</a> <span class="static">static</span></div>
+						<div>Returns a editor instance by id</div>
+					</td>
+					<td class="last">
+							tinymce.EditorManager
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/util/observable/haseventlisteners/" class="member">hasEventListeners</a> <span class="static">static</span></div>
+						<div>Returns true/false if the object has a event of the specified name</div>
+					</td>
+					<td class="last">
+							<a href="/docs/v4.2.5/api/tinymce/util/observable/">tinymce.util.Observable</a>
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/editormanager/init/static/" class="member">init</a> <span class="static">static</span></div>
+						<div>Initializes a set of editors</div>
+					</td>
+					<td class="last">
+							tinymce.EditorManager
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/util/observable/off/" class="member">off</a> <span class="static">static</span></div>
+						<div>Unbinds an event listener to a specific event by name</div>
+					</td>
+					<td class="last">
+							<a href="/docs/v4.2.5/api/tinymce/util/observable/">tinymce.util.Observable</a>
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/util/observable/on/" class="member">on</a> <span class="static">static</span></div>
+						<div>Binds an event listener to a specific event by name</div>
+					</td>
+					<td class="last">
+							<a href="/docs/v4.2.5/api/tinymce/util/observable/">tinymce.util.Observable</a>
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/util/observable/once/" class="member">once</a> <span class="static">static</span></div>
+						<div>Bind the event callback and once it fires the callback is removed</div>
+					</td>
+					<td class="last">
+							<a href="/docs/v4.2.5/api/tinymce/util/observable/">tinymce.util.Observable</a>
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/editormanager/remove/static/" class="member">remove</a> <span class="static">static</span></div>
+						<div>Removes a editor or editors form page</div>
+					</td>
+					<td class="last">
+							tinymce.EditorManager
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/editormanager/setactive/static/" class="member">setActive</a> <span class="static">static</span></div>
+						<div>Sets the active editor instance and fires the deactivate/activate events</div>
+					</td>
+					<td class="last">
+							tinymce.EditorManager
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/editormanager/translate/static/" class="member">translate</a> <span class="static">static</span></div>
+						<div>Translates the specified string using the language pack items</div>
+					</td>
+					<td class="last">
+							tinymce.EditorManager
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/editormanager/triggersave/static/" class="member">triggerSave</a> <span class="static">static</span></div>
+						<div>Calls the save method on all editor instances in the collection</div>
+					</td>
+					<td class="last">
+							tinymce.EditorManager
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+</div>
+
+			</div>
+			<div class="col-xs-3">
+				<div style="position: fixed" id="sidebar">
+					<ul class="nav nav-stacked">
+
+	
+	
+	
+    
+    	
+    
+	
+    <li class="">
+        <a href="/docs/getting-started/">Getting Started</a>
+    </li>
+    
+        <ul class="nav nav-stacked">
+
+	
+	
+	
+    
+    	
+    
+	
+    <li class="">
+        <a href="/docs/getting-started/installation/">Installation</a>
+    </li>
+    
+
+	
+	
+	
+    
+    	
+    
+	
+    <li class="">
+        <a href="/docs/getting-started/basic-configuration/">Basic Configuration</a>
+    </li>
+    
+
+	
+	
+	
+    
+    	
+    
+	
+    <li class="">
+        <a href="/docs/getting-started/inline/">Inline</a>
+    </li>
+    
+
+</ul>
+    
+
+	
+	
+	
+    
+    	
+    
+	
+    <li class="">
+        <a href="/docs/configuration/">Configuration</a>
+    </li>
+    
+        <ul class="nav nav-stacked">
+
+	
+	
+	
+    
+    	
+    
+	
+    <li class="">
+        <a href="/docs/configuration/general/">General</a>
+    </li>
+    
+        <ul class="nav nav-stacked">
+
+	
+	
+	
+    
+    	
+    
+	
+    <li class="">
+        <a href="/docs/configuration/general/selector/">selector</a>
+    </li>
+    
+
+	
+	
+	
+    
+    	
+    
+	
+    <li class="">
+        <a href="/docs/configuration/general/auto_focus/">auto_focus</a>
+    </li>
+    
+
+	
+	
+	
+    
+    	
+    
+	
+    <li class="">
+        <a href="/docs/configuration/general/br_in_pre/">br_in_pre</a>
+    </li>
+    
+
+	
+	
+	
+    
+    	
+    
+	
+    <li class="">
+        <a href="/docs/configuration/general/directionality/">directionality</a>
+    </li>
+    
+
+</ul>
+    
+
+	
+	
+	
+    
+    	
+    
+	
+    <li class="">
+        <a href="/docs/configuration/cleanup-output/">Cleanup & Output</a>
+    </li>
+    
+        <ul class="nav nav-stacked">
+
+	
+	
+	
+    
+    	
+    
+	
+    <li class="">
+        <a href="/docs/configuration/cleanup-output/allow_conditional_comments/">allow_conditional_comments</a>
+    </li>
+    
+
+	
+	
+	
+    
+    	
+    
+	
+    <li class="">
+        <a href="/docs/configuration/cleanup-output/allow_html_in_named_anchor/">allow_html_in_named_anchor</a>
+    </li>
+    
+
+</ul>
+    
+
+</ul>
+    
+
+	
+	
+	
+    
+    	
+    
+	
+    <li class="">
+        <a href="/docs/using-tinymce/">Using TinyMCE</a>
+    </li>
+    
+        <ul class="nav nav-stacked">
+
+	
+	
+	
+    
+    	
+    
+	
+    <li class="">
+        <a href="/docs/using-tinymce/advanced-configuration/">Advanced Configuration</a>
+    </li>
+    
+
+	
+	
+	
+    
+    	
+    
+	
+    <li class="">
+        <a href="/docs/using-tinymce/creating-a-plugin/">Creating a Plugin</a>
+    </li>
+    
+
+	
+	
+	
+    
+    	
+    
+	
+    <li class="">
+        <a href="/docs/using-tinymce/creating-a-skin/">Creating a Skin</a>
+    </li>
+    
+
+	
+	
+	
+    
+    	
+    
+	
+    <li class="">
+        <a href="/docs/using-tinymce/creating-custom-dialogs/">Creating Custom Dialogs</a>
+    </li>
+    
+
+	
+	
+	
+    
+    	
+    
+	
+    <li class="">
+        <a href="/docs/using-tinymce/handling-asynchronous-image-uploads/">Handling Asynchronous Image Uploads</a>
+    </li>
+    
+
+	
+	
+	
+    
+    	
+    
+	
+    <li class="">
+        <a href="/docs/using-tinymce/migration-guide-from-3x/">Migration Guide From 3x</a>
+    </li>
+    
+
+	
+	
+	
+    
+    	
+    
+	
+    <li class="">
+        <a href="/docs/using-tinymce/tinymce-in-a-bootstrap-dialog/">TinyMCE in a Bootstrap Dialog</a>
+    </li>
+    
+
+	
+	
+	
+    
+    	
+    
+	
+    <li class="">
+        <a href="/docs/using-tinymce/tinymce-in-a-jquery-ui-dialog/">TinyMCE in a jQuery UI Dialog</a>
+    </li>
+    
+
+	
+	
+	
+    
+    	
+    
+	
+    <li class="">
+        <a href="/docs/using-tinymce/using-cdn/">Using CDN</a>
+    </li>
+    
+
+	
+	
+	
+    
+    	
+    
+	
+    <li class="">
+        <a href="/docs/using-tinymce/using-the-gzip-compressors/">Using the Gzip Compressors</a>
+    </li>
+    
+
+</ul>
+    
+
+	
+	
+	
+    
+    	
+    
+	
+    <li class="">
+        <a href="/docs/javascript-api/">JavaScript API</a>
+    </li>
+    
+
+</ul>
+				</div>
+			</div>
+		</div>
+
+		<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+  	<script src="/docs/assets/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+	</body>
+</html>

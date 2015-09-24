@@ -1,0 +1,64 @@
+---
+layout: default
+title: tinymce.Editor.getParam
+---
+
+<div class="api methoddetails">
+	<div class="syntax"><span>public function getParam(name:String, defaultVal:String, type:String):String</span></div>
+	<div class="details">Returns a configuration parameter by name.</div>
+
+		<div class="examples">
+		<h2>Examples</h2>
+			<pre class="js">// Returns a specific config value from the currently active editor
+var someval &#x3D; tinymce.activeEditor.getParam(&#x27;myvalue&#x27;);
+
+// Returns a specific config value from a specific editor instance by id
+var someval2 &#x3D; tinymce.get(&#x27;my_editor&#x27;).getParam(&#x27;myvalue&#x27;);</pre>
+		</div>
+
+	<div class="params">
+		<h2>Params</h2>
+		<table>
+			<thead class="small">
+				<tr>
+					<th class="first">Name</th>
+					<th>Type</th>
+					<th class="last">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="first">name</td>
+					<td>
+								String
+					</td>
+					<td class="last">Configruation parameter to retrive.</td>
+				</tr>
+				<tr>
+					<td class="first">defaultVal</td>
+					<td>
+								String
+					</td>
+					<td class="last">Optional default value to return.</td>
+				</tr>
+				<tr>
+					<td class="first">type</td>
+					<td>
+								String
+					</td>
+					<td class="last">Optional type parameter.</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+	<div class="returns">
+		<h2>Returns</h2>
+		<div>
+						String
+
+				Configuration parameter value or default value.
+		</div>
+	</div>
+
+</div>

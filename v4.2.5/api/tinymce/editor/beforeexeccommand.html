@@ -1,0 +1,46 @@
+---
+layout: default
+title: tinymce.Editor.BeforeExecCommand
+---
+
+<div class="api eventdetails">
+	<div class="syntax"><span>public event BeforeExecCommand(e:tinymce.CommandEvent)</span></div>
+	<div class="details">Fires before a execCommand call is made. This enables you to prevent it and replace the logic
+with custom logic.</div>
+
+		<div class="examples">
+		<h2>Examples</h2>
+			<pre class="js">tinymce.init({
+    ...
+    setup: function(editor) {
+        editor.on(&#x27;BeforeExecCommand&#x27;, function(e) {
+            console.log(&#x27;BeforeExecCommand event&#x27;, e);
+        });
+    }
+});</pre>
+		</div>
+
+	<div class="params">
+		<h2>Params</h2>
+		<table>
+			<thead class="small">
+				<tr>
+					<th class="first">Name</th>
+					<th>Type</th>
+					<th class="last">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="first">e</td>
+					<td>
+								<a href="/docs/v4.2.5/api/tinymce/commandevent/">tinymce.CommandEvent</a>
+					</td>
+					<td class="last">Event arguments.</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+
+</div>

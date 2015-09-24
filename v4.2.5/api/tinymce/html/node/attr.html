@@ -1,0 +1,56 @@
+---
+layout: default
+title: tinymce.html.Node.attr
+---
+
+<div class="api methoddetails">
+	<div class="syntax"><span>public function attr(name:String, value:String):String/tinymce.html.Node</span></div>
+	<div class="details">Gets/sets or removes an attribute by name.</div>
+
+		<div class="examples">
+		<h2>Examples</h2>
+			<pre class="js">someNode.attr(&quot;name&quot;, &quot;value&quot;); // Sets an attribute
+console.log(someNode.attr(&quot;name&quot;)); // Gets an attribute
+someNode.attr(&quot;name&quot;, null); // Removes an attribute</pre>
+		</div>
+
+	<div class="params">
+		<h2>Params</h2>
+		<table>
+			<thead class="small">
+				<tr>
+					<th class="first">Name</th>
+					<th>Type</th>
+					<th class="last">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="first">name</td>
+					<td>
+								String
+					</td>
+					<td class="last">Attribute name to set or get.</td>
+				</tr>
+				<tr>
+					<td class="first">value</td>
+					<td>
+								String
+					</td>
+					<td class="last">Optional value to set.</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+	<div class="returns">
+		<h2>Returns</h2>
+		<div>
+						String
+						<a href="/docs/v4.2.5/api/tinymce/html/node/">tinymce.html.Node</a>
+
+				String or undefined on a get operation or the current node on a set operation.
+		</div>
+	</div>
+
+</div>

@@ -1,0 +1,61 @@
+---
+layout: default
+title: tinymce.Editor.setProgressState
+---
+
+<div class="api methoddetails">
+	<div class="syntax"><span>public function setProgressState(state:Boolean, time:Number):Boolean</span></div>
+	<div class="details">Sets the progress state, this will display a throbber/progess for the editor.
+This is ideal for asynchronous operations like an AJAX save call.</div>
+
+		<div class="examples">
+		<h2>Examples</h2>
+			<pre class="js">// Show progress for the active editor
+tinymce.activeEditor.setProgressState(true);
+
+// Hide progress for the active editor
+tinymce.activeEditor.setProgressState(false);
+
+// Show progress after 3 seconds
+tinymce.activeEditor.setProgressState(true, 3000);</pre>
+		</div>
+
+	<div class="params">
+		<h2>Params</h2>
+		<table>
+			<thead class="small">
+				<tr>
+					<th class="first">Name</th>
+					<th>Type</th>
+					<th class="last">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="first">state</td>
+					<td>
+								Boolean
+					</td>
+					<td class="last">Boolean state if the progress should be shown or hidden.</td>
+				</tr>
+				<tr>
+					<td class="first">time</td>
+					<td>
+								Number
+					</td>
+					<td class="last">Optional time to wait before the progress gets shown.</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+	<div class="returns">
+		<h2>Returns</h2>
+		<div>
+						Boolean
+
+				Same as the input state.
+		</div>
+	</div>
+
+</div>

@@ -1,0 +1,30 @@
+---
+layout: default
+title: tinymce.Editor.isNotDirty
+---
+
+<div class="api propertydetails">
+	<div class="syntax"><span>public isNotDirty : Boolean</span></div>
+	<div class="details">State to force the editor to return false on a isDirty call.</div>
+
+		<div class="examples">
+		<h2>Examples</h2>
+			<pre class="js">function ajaxSave() {
+    var ed &#x3D; tinymce.get(&#x27;elm1&#x27;);
+
+    // Save contents using some XHR call
+    alert(ed.getContent());
+
+    ed.isNotDirty &#x3D; true; // Force not dirty state
+}</pre>
+		</div>
+
+
+
+	<div class="types">
+		<h2>Type</h2>
+		<div>
+					Boolean
+		</div>
+	</div>
+</div>

@@ -1,0 +1,44 @@
+---
+layout: default
+title: tinymce.util.URI.isSameOrigin
+---
+
+<div class="api methoddetails">
+	<div class="syntax"><span>public function isSameOrigin(uri:tinymce.util.URI):Boolean</span></div>
+	<div class="details">Determine whether the given URI has the same origin as this URI.  Based on RFC-6454.
+Supports default ports for protocols listed in DEFAULT_PORTS.  Unsupported protocols will fail safe: they
+won&#x27;t match, if the port specifications differ.</div>
+
+
+	<div class="params">
+		<h2>Params</h2>
+		<table>
+			<thead class="small">
+				<tr>
+					<th class="first">Name</th>
+					<th>Type</th>
+					<th class="last">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="first">uri</td>
+					<td>
+								<a href="/docs/v4.2.5/api/tinymce/util/uri/">tinymce.util.URI</a>
+					</td>
+					<td class="last">Uri instance to compare.</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+	<div class="returns">
+		<h2>Returns</h2>
+		<div>
+						Boolean
+
+				True if the origins are the same.
+		</div>
+	</div>
+
+</div>

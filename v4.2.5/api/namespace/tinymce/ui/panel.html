@@ -1,0 +1,633 @@
+---
+layout: default
+title: tinymce.ui.Panel
+---
+
+<div class="api classdetails">
+		<div class="classinfo">
+			<table>
+				<tbody>
+					<tr>
+						<td class="first">Inheritance</td>
+						<td class="last">
+							<ul class="inherits">
+								<li class="first">Panel</li>
+								<li><a href="/docs/v4.2.5/api/tinymce/ui/container/">Container</a></li>
+								<li><a href="/docs/v4.2.5/api/tinymce/ui/control/">Control</a></li>
+							</ul>
+						</td>
+					</tr>
+
+					<tr>
+						<td class="first">Mixes</td>
+						<td class="last">
+							<a href="/docs/v4.2.5/api/tinymce/ui/scrollable/">Scrollable</a>
+						</td>
+					</tr>
+
+
+					<tr>
+						<td class="first">Subclasses</td>
+						<td class="last">
+							<a href="/docs/v4.2.5/api/tinymce/ui/floatpanel/">FloatPanel</a>
+							<a href="/docs/v4.2.5/api/tinymce/ui/tabpanel/">TabPanel</a>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+	<div class="description">Creates a new panel.</div>
+
+
+	<div class="settings">
+		<h2>Settings</h2>
+		<table>
+			<thead class="small">
+				<tr>
+					<th class="first">Setting</th>
+					<th class="last">Defined By</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/ui/control/border/" class="member">border</a></div>
+						<div> Border box values example: 1 1 1 1</div>
+					</td>
+					<td class="last">
+							<a href="/docs/v4.2.5/api/tinymce/ui/control/">tinymce.ui.Control</a>
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/ui/control/classes/" class="member">classes</a></div>
+						<div> Space separated list of classes to add</div>
+					</td>
+					<td class="last">
+							<a href="/docs/v4.2.5/api/tinymce/ui/control/">tinymce.ui.Control</a>
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/ui/container/defaults/" class="member">defaults</a></div>
+						<div> Default settings to apply to all items</div>
+					</td>
+					<td class="last">
+							<a href="/docs/v4.2.5/api/tinymce/ui/container/">tinymce.ui.Container</a>
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/ui/control/disabled/" class="member">disabled</a></div>
+						<div> Is the control disabled by default</div>
+					</td>
+					<td class="last">
+							<a href="/docs/v4.2.5/api/tinymce/ui/control/">tinymce.ui.Control</a>
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/ui/control/hidden/" class="member">hidden</a></div>
+						<div> Is the control hidden by default</div>
+					</td>
+					<td class="last">
+							<a href="/docs/v4.2.5/api/tinymce/ui/control/">tinymce.ui.Control</a>
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/ui/container/items/" class="member">items</a></div>
+						<div> Items to add to container in JSON format or control instances</div>
+					</td>
+					<td class="last">
+							<a href="/docs/v4.2.5/api/tinymce/ui/container/">tinymce.ui.Container</a>
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/ui/container/layout/" class="member">layout</a></div>
+						<div> Layout manager by name to use</div>
+					</td>
+					<td class="last">
+							<a href="/docs/v4.2.5/api/tinymce/ui/container/">tinymce.ui.Container</a>
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/ui/control/margin/" class="member">margin</a></div>
+						<div> Margin box values example: 1 1 1 1</div>
+					</td>
+					<td class="last">
+							<a href="/docs/v4.2.5/api/tinymce/ui/control/">tinymce.ui.Control</a>
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/ui/control/minheight/" class="member">minHeight</a></div>
+						<div> Minimal height for the control</div>
+					</td>
+					<td class="last">
+							<a href="/docs/v4.2.5/api/tinymce/ui/control/">tinymce.ui.Control</a>
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/ui/control/minwidth/" class="member">minWidth</a></div>
+						<div> Minimal width for the control</div>
+					</td>
+					<td class="last">
+							<a href="/docs/v4.2.5/api/tinymce/ui/control/">tinymce.ui.Control</a>
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/ui/control/name/" class="member">name</a></div>
+						<div> Name of the control instance</div>
+					</td>
+					<td class="last">
+							<a href="/docs/v4.2.5/api/tinymce/ui/control/">tinymce.ui.Control</a>
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/ui/control/padding/" class="member">padding</a></div>
+						<div> Padding box values example: 1 1 1 1</div>
+					</td>
+					<td class="last">
+							<a href="/docs/v4.2.5/api/tinymce/ui/control/">tinymce.ui.Control</a>
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/ui/control/role/" class="member">role</a></div>
+						<div> WAI-ARIA role to use for control</div>
+					</td>
+					<td class="last">
+							<a href="/docs/v4.2.5/api/tinymce/ui/control/">tinymce.ui.Control</a>
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/ui/control/style/" class="member">style</a></div>
+						<div> Style CSS properties to add</div>
+					</td>
+					<td class="last">
+							<a href="/docs/v4.2.5/api/tinymce/ui/control/">tinymce.ui.Control</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+
+
+
+	<div class="methods">
+		<h2>Methods</h2>
+		<table>
+			<thead class="small">
+				<tr>
+					<th class="first">Method</th>
+					<th class="last">Defined By</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/ui/control/active/" class="member">active</a></div>
+						<div>Sets/gets the active for the control</div>
+					</td>
+					<td class="last">
+							<a href="/docs/v4.2.5/api/tinymce/ui/control/">tinymce.ui.Control</a>
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/ui/container/add/" class="member">add</a></div>
+						<div>Adds one or many items to the current container</div>
+					</td>
+					<td class="last">
+							<a href="/docs/v4.2.5/api/tinymce/ui/container/">tinymce.ui.Container</a>
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/ui/control/after/" class="member">after</a></div>
+						<div>Adds items after the current control</div>
+					</td>
+					<td class="last">
+							<a href="/docs/v4.2.5/api/tinymce/ui/control/">tinymce.ui.Control</a>
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/ui/container/append/" class="member">append</a></div>
+						<div>Appends new instances to the current container</div>
+					</td>
+					<td class="last">
+							<a href="/docs/v4.2.5/api/tinymce/ui/container/">tinymce.ui.Container</a>
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/ui/control/aria/" class="member">aria</a></div>
+						<div>Sets the specified aria property</div>
+					</td>
+					<td class="last">
+							<a href="/docs/v4.2.5/api/tinymce/ui/control/">tinymce.ui.Control</a>
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/ui/control/before/" class="member">before</a></div>
+						<div>Adds items before the current control</div>
+					</td>
+					<td class="last">
+							<a href="/docs/v4.2.5/api/tinymce/ui/control/">tinymce.ui.Control</a>
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/ui/control/blur/" class="member">blur</a></div>
+						<div>Blurs the current control</div>
+					</td>
+					<td class="last">
+							<a href="/docs/v4.2.5/api/tinymce/ui/control/">tinymce.ui.Control</a>
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/ui/container/create/" class="member">create</a></div>
+						<div>Creates the specified items</div>
+					</td>
+					<td class="last">
+							<a href="/docs/v4.2.5/api/tinymce/ui/container/">tinymce.ui.Container</a>
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/ui/control/disabled/" class="member">disabled</a></div>
+						<div>Sets/gets the disabled state on the control</div>
+					</td>
+					<td class="last">
+							<a href="/docs/v4.2.5/api/tinymce/ui/control/">tinymce.ui.Control</a>
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/ui/control/encode/" class="member">encode</a></div>
+						<div>Encodes the specified string with HTML entities</div>
+					</td>
+					<td class="last">
+							<a href="/docs/v4.2.5/api/tinymce/ui/control/">tinymce.ui.Control</a>
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/ui/container/find/" class="member">find</a></div>
+						<div>Find child controls by selector</div>
+					</td>
+					<td class="last">
+							<a href="/docs/v4.2.5/api/tinymce/ui/container/">tinymce.ui.Container</a>
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/ui/control/fire/" class="member">fire</a></div>
+						<div>Fires the specified event by name and arguments on the control</div>
+					</td>
+					<td class="last">
+							<a href="/docs/v4.2.5/api/tinymce/ui/control/">tinymce.ui.Control</a>
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/ui/container/focus/" class="member">focus</a></div>
+						<div>Focuses the current container instance</div>
+					</td>
+					<td class="last">
+							<a href="/docs/v4.2.5/api/tinymce/ui/container/">tinymce.ui.Container</a>
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/ui/container/fromjson/" class="member">fromJSON</a></div>
+						<div>Populates the form fields from the specified JSON data object</div>
+					</td>
+					<td class="last">
+							<a href="/docs/v4.2.5/api/tinymce/ui/container/">tinymce.ui.Container</a>
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/ui/control/getcontainerelm/" class="member">getContainerElm</a></div>
+						<div>Returns the root element to render controls into</div>
+					</td>
+					<td class="last">
+							<a href="/docs/v4.2.5/api/tinymce/ui/control/">tinymce.ui.Control</a>
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/ui/control/getel/" class="member">getEl</a></div>
+						<div>Returns the control DOM element or sub element</div>
+					</td>
+					<td class="last">
+							<a href="/docs/v4.2.5/api/tinymce/ui/control/">tinymce.ui.Control</a>
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/ui/control/getparentctrl/" class="member">getParentCtrl</a></div>
+						<div>Returns a control instance for the current DOM element</div>
+					</td>
+					<td class="last">
+							<a href="/docs/v4.2.5/api/tinymce/ui/control/">tinymce.ui.Control</a>
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/ui/control/haseventlisteners/" class="member">hasEventListeners</a></div>
+						<div>Returns true/false if the specified event has any listeners</div>
+					</td>
+					<td class="last">
+							<a href="/docs/v4.2.5/api/tinymce/ui/control/">tinymce.ui.Control</a>
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/ui/control/hide/" class="member">hide</a></div>
+						<div>Sets the visible state to false</div>
+					</td>
+					<td class="last">
+							<a href="/docs/v4.2.5/api/tinymce/ui/control/">tinymce.ui.Control</a>
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/ui/container/initlayoutrect/" class="member">initLayoutRect</a></div>
+						<div>Initializes the current controls layout rect</div>
+					</td>
+					<td class="last">
+							<a href="/docs/v4.2.5/api/tinymce/ui/container/">tinymce.ui.Container</a>
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/ui/control/innerhtml/" class="member">innerHtml</a></div>
+						<div>Sets the inner HTML of the control element</div>
+					</td>
+					<td class="last">
+							<a href="/docs/v4.2.5/api/tinymce/ui/control/">tinymce.ui.Control</a>
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/ui/container/insert/" class="member">insert</a></div>
+						<div>Inserts an control at a specific index</div>
+					</td>
+					<td class="last">
+							<a href="/docs/v4.2.5/api/tinymce/ui/container/">tinymce.ui.Container</a>
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/ui/container/items/" class="member">items</a></div>
+						<div>Returns a collection of child items that the container currently have</div>
+					</td>
+					<td class="last">
+							<a href="/docs/v4.2.5/api/tinymce/ui/container/">tinymce.ui.Container</a>
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/ui/control/layoutrect/" class="member">layoutRect</a></div>
+						<div>Getter/setter for the current layout rect</div>
+					</td>
+					<td class="last">
+							<a href="/docs/v4.2.5/api/tinymce/ui/control/">tinymce.ui.Control</a>
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/ui/control/name/" class="member">name</a></div>
+						<div>Sets/gets the name for the control</div>
+					</td>
+					<td class="last">
+							<a href="/docs/v4.2.5/api/tinymce/ui/control/">tinymce.ui.Control</a>
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/ui/control/next/" class="member">next</a></div>
+						<div>Returns the control next to the current control</div>
+					</td>
+					<td class="last">
+							<a href="/docs/v4.2.5/api/tinymce/ui/control/">tinymce.ui.Control</a>
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/ui/control/off/" class="member">off</a></div>
+						<div>Unbinds the specified event and optionally a specific callback</div>
+					</td>
+					<td class="last">
+							<a href="/docs/v4.2.5/api/tinymce/ui/control/">tinymce.ui.Control</a>
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/ui/control/on/" class="member">on</a></div>
+						<div>Binds a callback to the specified event</div>
+					</td>
+					<td class="last">
+							<a href="/docs/v4.2.5/api/tinymce/ui/control/">tinymce.ui.Control</a>
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/ui/control/parent/" class="member">parent</a></div>
+						<div>Sets/gets the parent container for the control</div>
+					</td>
+					<td class="last">
+							<a href="/docs/v4.2.5/api/tinymce/ui/control/">tinymce.ui.Control</a>
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/ui/control/parents/" class="member">parents</a></div>
+						<div>Returns a control collection with all parent controls</div>
+					</td>
+					<td class="last">
+							<a href="/docs/v4.2.5/api/tinymce/ui/control/">tinymce.ui.Control</a>
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/ui/control/parentsandself/" class="member">parentsAndSelf</a></div>
+						<div>Returns the current control and it&#x27;s parents</div>
+					</td>
+					<td class="last">
+							<a href="/docs/v4.2.5/api/tinymce/ui/control/">tinymce.ui.Control</a>
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/ui/container/postrender/" class="member">postRender</a></div>
+						<div>Post render method</div>
+					</td>
+					<td class="last">
+							<a href="/docs/v4.2.5/api/tinymce/ui/container/">tinymce.ui.Container</a>
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/ui/container/prepend/" class="member">prepend</a></div>
+						<div>Prepends new instances to the current container</div>
+					</td>
+					<td class="last">
+							<a href="/docs/v4.2.5/api/tinymce/ui/container/">tinymce.ui.Container</a>
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/ui/control/prev/" class="member">prev</a></div>
+						<div>Returns the control previous to the current control</div>
+					</td>
+					<td class="last">
+							<a href="/docs/v4.2.5/api/tinymce/ui/control/">tinymce.ui.Control</a>
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/ui/container/recalc/" class="member">recalc</a></div>
+						<div>Recalculates the positions of the controls in the current container</div>
+					</td>
+					<td class="last">
+							<a href="/docs/v4.2.5/api/tinymce/ui/container/">tinymce.ui.Container</a>
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/ui/container/reflow/" class="member">reflow</a></div>
+						<div>Reflows the current container and it&#x27;s children and possible parents</div>
+					</td>
+					<td class="last">
+							<a href="/docs/v4.2.5/api/tinymce/ui/container/">tinymce.ui.Container</a>
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/ui/control/remove/" class="member">remove</a></div>
+						<div>Removes the current control from DOM and from UI collections</div>
+					</td>
+					<td class="last">
+							<a href="/docs/v4.2.5/api/tinymce/ui/control/">tinymce.ui.Control</a>
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/ui/control/renderbefore/" class="member">renderBefore</a></div>
+						<div>Renders the control to the specified element</div>
+					</td>
+					<td class="last">
+							<a href="/docs/v4.2.5/api/tinymce/ui/control/">tinymce.ui.Control</a>
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/ui/panel/renderhtml/" class="member">renderHtml</a></div>
+						<div>Renders the control as a HTML string</div>
+					</td>
+					<td class="last">
+							tinymce.ui.Panel
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/ui/control/repaint/" class="member">repaint</a></div>
+						<div>Repaints the control after a layout operation</div>
+					</td>
+					<td class="last">
+							<a href="/docs/v4.2.5/api/tinymce/ui/control/">tinymce.ui.Control</a>
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/ui/container/replace/" class="member">replace</a></div>
+						<div>Replaces the specified child control with a new control</div>
+					</td>
+					<td class="last">
+							<a href="/docs/v4.2.5/api/tinymce/ui/container/">tinymce.ui.Container</a>
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/ui/control/scrollintoview/" class="member">scrollIntoView</a></div>
+						<div>Scrolls the current control into view</div>
+					</td>
+					<td class="last">
+							<a href="/docs/v4.2.5/api/tinymce/ui/control/">tinymce.ui.Control</a>
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/ui/control/show/" class="member">show</a></div>
+						<div>Sets the visible state to true</div>
+					</td>
+					<td class="last">
+							<a href="/docs/v4.2.5/api/tinymce/ui/control/">tinymce.ui.Control</a>
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/ui/control/text/" class="member">text</a></div>
+						<div>Sets/gets the text for the control</div>
+					</td>
+					<td class="last">
+							<a href="/docs/v4.2.5/api/tinymce/ui/control/">tinymce.ui.Control</a>
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/ui/control/title/" class="member">title</a></div>
+						<div>Sets/gets the title for the control</div>
+					</td>
+					<td class="last">
+							<a href="/docs/v4.2.5/api/tinymce/ui/control/">tinymce.ui.Control</a>
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/ui/container/tojson/" class="member">toJSON</a></div>
+						<div>Serializes the form into a JSON object by getting all items
+that has a name and a value</div>
+					</td>
+					<td class="last">
+							<a href="/docs/v4.2.5/api/tinymce/ui/container/">tinymce.ui.Container</a>
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/ui/control/translate/" class="member">translate</a></div>
+						<div>Returns the translated string</div>
+					</td>
+					<td class="last">
+							<a href="/docs/v4.2.5/api/tinymce/ui/control/">tinymce.ui.Control</a>
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/ui/control/visible/" class="member">visible</a></div>
+						<div>Sets/gets the visible for the control</div>
+					</td>
+					<td class="last">
+							<a href="/docs/v4.2.5/api/tinymce/ui/control/">tinymce.ui.Control</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+</div>

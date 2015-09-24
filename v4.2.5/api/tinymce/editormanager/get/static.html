@@ -1,0 +1,55 @@
+---
+layout: default
+title: tinymce.EditorManager.get
+---
+
+<div class="api methoddetails">
+	<div class="syntax"><span>public function get(id:String/Number):tinymce.Editor</span></div>
+	<div class="details">Returns a editor instance by id.</div>
+
+		<div class="examples">
+		<h2>Examples</h2>
+			<pre class="js">// Adds an onclick event to an editor by id (shorter version)
+tinymce.get(&#x27;mytextbox&#x27;).on(&#x27;click&#x27;, function(e) {
+   ed.windowManager.alert(&#x27;Hello world!&#x27;);
+});
+
+// Adds an onclick event to an editor by id (longer version)
+tinymce.EditorManager.get(&#x27;mytextbox&#x27;).on(&#x27;click&#x27;, function(e) {
+   ed.windowManager.alert(&#x27;Hello world!&#x27;);
+});</pre>
+		</div>
+
+	<div class="params">
+		<h2>Params</h2>
+		<table>
+			<thead class="small">
+				<tr>
+					<th class="first">Name</th>
+					<th>Type</th>
+					<th class="last">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="first">id</td>
+					<td>
+								String
+								Number
+					</td>
+					<td class="last">Editor instance id or index to return.</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+	<div class="returns">
+		<h2>Returns</h2>
+		<div>
+						<a href="/docs/v4.2.5/api/tinymce/editor/">tinymce.Editor</a>
+
+				Editor instance to return.
+		</div>
+	</div>
+
+</div>

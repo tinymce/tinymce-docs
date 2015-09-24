@@ -1,0 +1,54 @@
+---
+layout: default
+title: tinymce.dom.Selection.select
+---
+
+<div class="api methoddetails">
+	<div class="syntax"><span>public function select(node:Element, content:Boolean):Element</span></div>
+	<div class="details">Selects the specified element. This will place the start and end of the selection range around the element.</div>
+
+		<div class="examples">
+		<h2>Examples</h2>
+			<pre class="js">// Select the first paragraph in the active editor
+tinymce.activeEditor.selection.select(tinymce.activeEditor.dom.select(&#x27;p&#x27;)[0]);</pre>
+		</div>
+
+	<div class="params">
+		<h2>Params</h2>
+		<table>
+			<thead class="small">
+				<tr>
+					<th class="first">Name</th>
+					<th>Type</th>
+					<th class="last">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="first">node</td>
+					<td>
+								Element
+					</td>
+					<td class="last">HMTL DOM element to select.</td>
+				</tr>
+				<tr>
+					<td class="first">content</td>
+					<td>
+								Boolean
+					</td>
+					<td class="last">Optional bool state if the contents should be selected or not on non IE browser.</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+	<div class="returns">
+		<h2>Returns</h2>
+		<div>
+						Element
+
+				Selected element the same element as the one that got passed in.
+		</div>
+	</div>
+
+</div>

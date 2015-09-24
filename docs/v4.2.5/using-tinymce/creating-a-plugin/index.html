@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<title>TinyMCE - Creating a Plugin</title>
+		<meta name="author" content="Joshua Haines" />
+		<link href="/docs/assets/css/theme.css" rel="stylesheet">
+    <link href="/docs/assets/bootstrap-3.3.5-dist/css/bootstrap.min.css" rel="stylesheet">
+		<link href="/docs/assets/bootstrap-3.3.5-dist/css/bootstrap-theme.min.css" rel="stylesheet" >
+	</head>
+	<body role="document">
+
+		<!-- Fixed navbar -->
+		<nav class="navbar navbar-inverse navbar-fixed-top">
+		    <div class="container">
+		        <div class="navbar-header">
+		            <a class="navbar-brand" href="#">TinyMCE</a>
+		        </div>
+		        <div id="navbar" class="navbar-collapse collapse">
+		            <ul class="nav navbar-nav">
+		                <li><a href="#">Home</a></li>
+		                <li><a href="#">Try It</a></li>
+		                <li><a href="#">Download</a></li>
+		                <li class="active"><a href="#">Documentation</a></li>
+		                <li><a href="#">Enterprise</a></li>
+		                <li><a href="#">Develop</a></li>
+		                <li><a href="#">Forum</a></li>
+		            </ul>
+		        </div>
+		        <!--/.nav-collapse -->
+		    </div>
+		</nav>
+
+		<div class="container theme-showcase" role="main">
+
+			<div class="col-xs-9">
+				<h1>Creating a Plugin</h1>
+				<p>Creating plugins in TinyMCE is pretty simple this tutorial tries to outline some of the basic concepts of creating a plugin. For more details consult the API documentation and check the existing plugins we ship with the core.</p>
+<h2>File Structure</h2>
+<p>To create a plugin you need to create a directory in the tinymce plugins directory. TinyMCE will load the plugin.js file if you use the tinymce.js file in your page. If you use the tinymce.min.js file it will load the plugin.min.js file. It's recommended to use the tinymce.js file while developing then have a build script minifying the plugin.js into plugin.min.js for production usage.</p>
+<p>The build scripts that comes with the dev package of TinyMCE will automatically build all plugins including your custom ones.</p>
+<h3>Example of the plugin file structure</h3>
+<pre class="js">/tinymce/plugins/example/plugin.js<br />/tinymce/plugins/example/plugin.min.js</pre>
+<p>This new example plugin can now be loaded using the tinymce.init plugins option.</p>
+<pre class="js">tinymce.init({<br />    selector: 'textarea',<br />    plugins: 'example'<br />});</pre>
+<p>You can also have the plugin in any location you want by loading the plugin.js/plugin.min.js files directrly after the tinymce.js/tinymce.min.js.</p>
+<h3>Example of loading the plugin from another url</h3>
+<pre class="js">&lt;script src="/tinymce/js/tinymce.min.js"&gt;&lt;/script&gt;<br />&lt;script src="/scripts/my.tinymce.plugin.js"&gt;&lt;/script&gt;<br />&lt;script&gt;<br />tinymce.init({..});<br />&lt;/script&gt;</pre>
+<h2>Example plugin</h2>
+<p>Here is an <a href="http://fiddle.tinymce.com/ngdaab/0">example</a> plugin showing how you add a simple toolbar button and menu item. The button opens a dialog that lets you type in a title that gets inserted into the editor. The menu item will open the tinymce site in a dialog.</p>
+<pre class="js">tinymce.PluginManager.add('example', function(editor, url) {
+&nbsp; &nbsp; // Add a button that opens a window
+&nbsp; &nbsp; editor.addButton('example', {
+&nbsp; &nbsp; &nbsp; &nbsp; text: 'My button',
+&nbsp; &nbsp; &nbsp; &nbsp; icon: false,
+&nbsp; &nbsp; &nbsp; &nbsp; onclick: function() {
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // Open window
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; editor.windowManager.open({
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; title: 'Example plugin',
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; body: [
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {type: 'textbox', name: 'title', label: 'Title'}
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ],
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; onsubmit: function(e) {
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // Insert content when the window form is submitted
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; editor.insertContent('Title: ' + e.data.title);
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; });
+&nbsp; &nbsp; &nbsp; &nbsp; }
+&nbsp; &nbsp; });
+
+&nbsp; &nbsp; // Adds a menu item to the tools menu
+&nbsp; &nbsp; editor.addMenuItem('example', {
+&nbsp; &nbsp; &nbsp; &nbsp; text: 'Example plugin',
+&nbsp; &nbsp; &nbsp; &nbsp; context: 'tools',
+&nbsp; &nbsp; &nbsp; &nbsp; onclick: function() {
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // Open window with a specific url
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; editor.windowManager.open({
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; title: 'TinyMCE site',
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; url: 'http://www.tinymce.com',
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; width: 800,
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; height: 600,
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; buttons: [{
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; text: 'Close',
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; onclick: 'close'
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }]
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; });
+&nbsp; &nbsp; &nbsp; &nbsp; }
+&nbsp; &nbsp; });
+});</pre>
+<h2>Example init</h2>
+<p>Here is a example on how to use the new toolbar button.</p>
+<pre class="js">tinymce.init({<br />&nbsp;&nbsp;&nbsp;&nbsp;selector: 'textarea',<br />&nbsp;&nbsp;&nbsp;&nbsp;plugins: 'example',<br />&nbsp;&nbsp;&nbsp;&nbsp;toolbar: 'example'<br />});</pre>
+<h2>Internationalization</h2>
+<p>If you want to have custom translations for your plugin you need to create a "langs" directory in your plugin directory. TinyMCE will then try to load language files based on the specified language core for example if the language is "sv_SE" it will try to load "&lt;your plugin&gt;/langs/sv_SE.js".</p>
+<p>This file is similar to .po files it has the English string on the left side and the translated string on the right side.</p>
+<h3>Example of a Swedish translation for the dialog title</h3>
+<pre class="js">tinymce.addI18n('sv_SE', {<br />    "Example plugin": "Exempel plugin"<br />});</pre>
+<p>Some times you don't have all the translations that the full TinyMCE package has this would result in a 404 error while loading the non existing file. This can be avoided by adding this line to the top of your plugin file.</p>
+<pre class="js">tinymce.PluginManager.requireLangPack('example', 'sv_SE,de_AT');</pre>
+			</div>
+			<div class="col-xs-3">
+				<div style="position: fixed" id="sidebar">
+					<ul class="nav nav-stacked">
+
+	
+	
+	
+    
+    	
+    
+	
+    <li class="">
+        <a href="/docs/getting-started/">Getting Started</a>
+    </li>
+    
+        <ul class="nav nav-stacked">
+
+	
+	
+	
+    
+    	
+    
+	
+    <li class="">
+        <a href="/docs/getting-started/installation/">Installation</a>
+    </li>
+    
+
+	
+	
+	
+    
+    	
+    
+	
+    <li class="">
+        <a href="/docs/getting-started/basic-configuration/">Basic Configuration</a>
+    </li>
+    
+
+	
+	
+	
+    
+    	
+    
+	
+    <li class="">
+        <a href="/docs/getting-started/inline/">Inline</a>
+    </li>
+    
+
+</ul>
+    
+
+	
+	
+	
+    
+    	
+    
+	
+    <li class="">
+        <a href="/docs/configuration/">Configuration</a>
+    </li>
+    
+        <ul class="nav nav-stacked">
+
+	
+	
+	
+    
+    	
+    
+	
+    <li class="">
+        <a href="/docs/configuration/general/">General</a>
+    </li>
+    
+        <ul class="nav nav-stacked">
+
+	
+	
+	
+    
+    	
+    
+	
+    <li class="">
+        <a href="/docs/configuration/general/selector/">selector</a>
+    </li>
+    
+
+	
+	
+	
+    
+    	
+    
+	
+    <li class="">
+        <a href="/docs/configuration/general/auto_focus/">auto_focus</a>
+    </li>
+    
+
+	
+	
+	
+    
+    	
+    
+	
+    <li class="">
+        <a href="/docs/configuration/general/br_in_pre/">br_in_pre</a>
+    </li>
+    
+
+	
+	
+	
+    
+    	
+    
+	
+    <li class="">
+        <a href="/docs/configuration/general/directionality/">directionality</a>
+    </li>
+    
+
+</ul>
+    
+
+	
+	
+	
+    
+    	
+    
+	
+    <li class="">
+        <a href="/docs/configuration/cleanup-output/">Cleanup & Output</a>
+    </li>
+    
+        <ul class="nav nav-stacked">
+
+	
+	
+	
+    
+    	
+    
+	
+    <li class="">
+        <a href="/docs/configuration/cleanup-output/allow_conditional_comments/">allow_conditional_comments</a>
+    </li>
+    
+
+	
+	
+	
+    
+    	
+    
+	
+    <li class="">
+        <a href="/docs/configuration/cleanup-output/allow_html_in_named_anchor/">allow_html_in_named_anchor</a>
+    </li>
+    
+
+</ul>
+    
+
+</ul>
+    
+
+	
+	
+	
+    
+    	
+    
+	
+    <li class="active">
+        <a href="/docs/using-tinymce/">Using TinyMCE</a>
+    </li>
+    
+        <ul class="nav nav-stacked">
+
+	
+	
+	
+    
+    	
+    
+	
+    <li class="">
+        <a href="/docs/using-tinymce/advanced-configuration/">Advanced Configuration</a>
+    </li>
+    
+
+	
+	
+	
+    
+    	
+    
+	
+    <li class="active">
+        <a href="/docs/using-tinymce/creating-a-plugin/">Creating a Plugin</a>
+    </li>
+    
+
+	
+	
+	
+    
+    	
+    
+	
+    <li class="">
+        <a href="/docs/using-tinymce/creating-a-skin/">Creating a Skin</a>
+    </li>
+    
+
+	
+	
+	
+    
+    	
+    
+	
+    <li class="">
+        <a href="/docs/using-tinymce/creating-custom-dialogs/">Creating Custom Dialogs</a>
+    </li>
+    
+
+	
+	
+	
+    
+    	
+    
+	
+    <li class="">
+        <a href="/docs/using-tinymce/handling-asynchronous-image-uploads/">Handling Asynchronous Image Uploads</a>
+    </li>
+    
+
+	
+	
+	
+    
+    	
+    
+	
+    <li class="">
+        <a href="/docs/using-tinymce/migration-guide-from-3x/">Migration Guide From 3x</a>
+    </li>
+    
+
+	
+	
+	
+    
+    	
+    
+	
+    <li class="">
+        <a href="/docs/using-tinymce/tinymce-in-a-bootstrap-dialog/">TinyMCE in a Bootstrap Dialog</a>
+    </li>
+    
+
+	
+	
+	
+    
+    	
+    
+	
+    <li class="">
+        <a href="/docs/using-tinymce/tinymce-in-a-jquery-ui-dialog/">TinyMCE in a jQuery UI Dialog</a>
+    </li>
+    
+
+	
+	
+	
+    
+    	
+    
+	
+    <li class="">
+        <a href="/docs/using-tinymce/using-cdn/">Using CDN</a>
+    </li>
+    
+
+	
+	
+	
+    
+    	
+    
+	
+    <li class="">
+        <a href="/docs/using-tinymce/using-the-gzip-compressors/">Using the Gzip Compressors</a>
+    </li>
+    
+
+</ul>
+    
+
+	
+	
+	
+    
+    	
+    
+	
+    <li class="">
+        <a href="/docs/javascript-api/">JavaScript API</a>
+    </li>
+    
+
+</ul>
+				</div>
+			</div>
+		</div>
+
+		<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+  	<script src="/docs/assets/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+	</body>
+</html>

@@ -1,0 +1,71 @@
+---
+layout: default
+title: tinymce.AddOnManager.add
+---
+
+<div class="api methoddetails">
+	<div class="syntax"><span>public function add(id:String, addOn:tinymce.Theme/tinymce.Plugin):tinymce.Theme/tinymce.Plugin</span></div>
+	<div class="details">Adds a instance of the add-on by it&#x27;s short name.</div>
+
+		<div class="examples">
+		<h2>Examples</h2>
+			<pre class="js">// Create a simple plugin
+tinymce.create(&#x27;tinymce.plugins.TestPlugin&#x27;, {
+  TestPlugin: function(ed, url) {
+  ed.on(&#x27;click&#x27;, function(e) {
+     ed.windowManager.alert(&#x27;Hello World!&#x27;);
+  });
+  }
+});
+
+// Register plugin using the add method
+tinymce.PluginManager.add(&#x27;test&#x27;, tinymce.plugins.TestPlugin);
+
+// Initialize TinyMCE
+tinymce.init({
+ ...
+ plugins: &#x27;-test&#x27; // Init the plugin but don&#x27;t try to load it
+});</pre>
+		</div>
+
+	<div class="params">
+		<h2>Params</h2>
+		<table>
+			<thead class="small">
+				<tr>
+					<th class="first">Name</th>
+					<th>Type</th>
+					<th class="last">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="first">id</td>
+					<td>
+								String
+					</td>
+					<td class="last">Short name/id for the add-on.</td>
+				</tr>
+				<tr>
+					<td class="first">addOn</td>
+					<td>
+								<a href="/docs/v4.2.5/api/tinymce/theme/">tinymce.Theme</a>
+								<a href="/docs/v4.2.5/api/tinymce/plugin/">tinymce.Plugin</a>
+					</td>
+					<td class="last">Theme or plugin to add.</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+	<div class="returns">
+		<h2>Returns</h2>
+		<div>
+						<a href="/docs/v4.2.5/api/tinymce/theme/">tinymce.Theme</a>
+						<a href="/docs/v4.2.5/api/tinymce/plugin/">tinymce.Plugin</a>
+
+				The same theme or plugin instance that got passed in.
+		</div>
+	</div>
+
+</div>

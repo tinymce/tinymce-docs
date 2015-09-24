@@ -1,0 +1,54 @@
+---
+layout: default
+title: tinymce.Editor.getContent
+---
+
+<div class="api methoddetails">
+	<div class="syntax"><span>public function getContent(args:Object):String</span></div>
+	<div class="details">Gets the content from the editor instance, this will cleanup the content before it gets returned using
+the different cleanup rules options.</div>
+
+		<div class="examples">
+		<h2>Examples</h2>
+			<pre class="js">// Get the HTML contents of the currently active editor
+console.debug(tinymce.activeEditor.getContent());
+
+// Get the raw contents of the currently active editor
+tinymce.activeEditor.getContent({format: &#x27;raw&#x27;});
+
+// Get content of a specific editor:
+tinymce.get(&#x27;content id&#x27;).getContent()</pre>
+		</div>
+
+	<div class="params">
+		<h2>Params</h2>
+		<table>
+			<thead class="small">
+				<tr>
+					<th class="first">Name</th>
+					<th>Type</th>
+					<th class="last">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="first">args</td>
+					<td>
+								Object
+					</td>
+					<td class="last">Optional content object, this gets passed around through the whole get process.</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+	<div class="returns">
+		<h2>Returns</h2>
+		<div>
+						String
+
+				Cleaned content string, normally HTML contents.
+		</div>
+	</div>
+
+</div>

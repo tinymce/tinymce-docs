@@ -1,0 +1,52 @@
+---
+layout: default
+title: tinymce.dom.Selection.moveToBookmark
+---
+
+<div class="api methoddetails">
+	<div class="syntax"><span>public function moveToBookmark(bookmark:Object):Boolean</span></div>
+	<div class="details">Restores the selection to the specified bookmark.</div>
+
+		<div class="examples">
+		<h2>Examples</h2>
+			<pre class="js">// Stores a bookmark of the current selection
+var bm &#x3D; tinymce.activeEditor.selection.getBookmark();
+
+tinymce.activeEditor.setContent(tinymce.activeEditor.getContent() + &#x27;Some new content&#x27;);
+
+// Restore the selection bookmark
+tinymce.activeEditor.selection.moveToBookmark(bm);</pre>
+		</div>
+
+	<div class="params">
+		<h2>Params</h2>
+		<table>
+			<thead class="small">
+				<tr>
+					<th class="first">Name</th>
+					<th>Type</th>
+					<th class="last">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="first">bookmark</td>
+					<td>
+								Object
+					</td>
+					<td class="last">Bookmark to restore selection from.</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+	<div class="returns">
+		<h2>Returns</h2>
+		<div>
+						Boolean
+
+				true/false if it was successful or not.
+		</div>
+	</div>
+
+</div>

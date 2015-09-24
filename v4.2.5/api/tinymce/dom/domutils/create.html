@@ -1,0 +1,62 @@
+---
+layout: default
+title: tinymce.dom.DOMUtils.create
+---
+
+<div class="api methoddetails">
+	<div class="syntax"><span>public function create(name:String, attrs:Object, html:String):Element</span></div>
+	<div class="details">Creates a new element.</div>
+
+		<div class="examples">
+		<h2>Examples</h2>
+			<pre class="js">// Adds an element where the caret/selection is in the active editor
+var el &#x3D; tinymce.activeEditor.dom.create(&#x27;div&#x27;, {id: &#x27;test&#x27;, &#x27;class&#x27;: &#x27;myclass&#x27;}, &#x27;some content&#x27;);
+tinymce.activeEditor.selection.setNode(el);</pre>
+		</div>
+
+	<div class="params">
+		<h2>Params</h2>
+		<table>
+			<thead class="small">
+				<tr>
+					<th class="first">Name</th>
+					<th>Type</th>
+					<th class="last">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="first">name</td>
+					<td>
+								String
+					</td>
+					<td class="last">Name of new element.</td>
+				</tr>
+				<tr>
+					<td class="first">attrs</td>
+					<td>
+								Object
+					</td>
+					<td class="last">Optional object name/value collection with element attributes.</td>
+				</tr>
+				<tr>
+					<td class="first">html</td>
+					<td>
+								String
+					</td>
+					<td class="last">Optional HTML string to set as inner HTML of the element.</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+	<div class="returns">
+		<h2>Returns</h2>
+		<div>
+						Element
+
+				HTML DOM node element that got created.
+		</div>
+	</div>
+
+</div>

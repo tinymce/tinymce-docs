@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<title>TinyMCE - tinymce.dom.ScriptLoader</title>
+		<meta name="author" content="Joshua Haines" />
+		<link href="/docs/assets/css/theme.css" rel="stylesheet">
+    <link href="/docs/assets/bootstrap-3.3.5-dist/css/bootstrap.min.css" rel="stylesheet">
+		<link href="/docs/assets/bootstrap-3.3.5-dist/css/bootstrap-theme.min.css" rel="stylesheet" >
+	</head>
+	<body role="document">
+
+		<!-- Fixed navbar -->
+		<nav class="navbar navbar-inverse navbar-fixed-top">
+		    <div class="container">
+		        <div class="navbar-header">
+		            <a class="navbar-brand" href="#">TinyMCE</a>
+		        </div>
+		        <div id="navbar" class="navbar-collapse collapse">
+		            <ul class="nav navbar-nav">
+		                <li><a href="#">Home</a></li>
+		                <li><a href="#">Try It</a></li>
+		                <li><a href="#">Download</a></li>
+		                <li class="active"><a href="#">Documentation</a></li>
+		                <li><a href="#">Enterprise</a></li>
+		                <li><a href="#">Develop</a></li>
+		                <li><a href="#">Forum</a></li>
+		            </ul>
+		        </div>
+		        <!--/.nav-collapse -->
+		    </div>
+		</nav>
+
+		<div class="container theme-showcase" role="main">
+
+			<div class="col-xs-9">
+				<h1>tinymce.dom.ScriptLoader</h1>
+				<div class="api classdetails">
+
+	<div class="description">This class handles asynchronous/synchronous loading of JavaScript files it will execute callbacks
+when various items gets loaded. This class is useful to load external JavaScript files.</div>
+
+		<div class="examples">
+		<h2>Examples</h2>
+<pre class="js">// Load a script from a specific URL using the global script loader
+tinymce.ScriptLoader.load(&#x27;somescript.js&#x27;);
+
+// Load a script using a unique instance of the script loader
+var scriptLoader &#x3D; new tinymce.dom.ScriptLoader();
+
+scriptLoader.load(&#x27;somescript.js&#x27;);
+
+// Load multiple scripts
+var scriptLoader &#x3D; new tinymce.dom.ScriptLoader();
+
+scriptLoader.add(&#x27;somescript1.js&#x27;);
+scriptLoader.add(&#x27;somescript2.js&#x27;);
+scriptLoader.add(&#x27;somescript3.js&#x27;);
+
+scriptLoader.loadQueue(function() {
+   alert(&#x27;All scripts are now loaded.&#x27;);
+});</pre>
+		</div>
+
+
+
+
+
+	<div class="methods">
+		<h2>Methods</h2>
+		<table>
+			<thead class="small">
+				<tr>
+					<th class="first">Method</th>
+					<th class="last">Defined By</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/dom/scriptloader/add/" class="member">add</a></div>
+						<div>Adds a specific script to the load queue of the script loader</div>
+					</td>
+					<td class="last">
+							tinymce.dom.ScriptLoader
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/dom/scriptloader/isdone/" class="member">isDone</a></div>
+						<div>Returns true/false if a script has been loaded or not</div>
+					</td>
+					<td class="last">
+							tinymce.dom.ScriptLoader
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/dom/scriptloader/load/" class="member">load</a></div>
+						<div>Loads a specific script directly without adding it to the load queue</div>
+					</td>
+					<td class="last">
+							tinymce.dom.ScriptLoader
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/dom/scriptloader/loadqueue/" class="member">loadQueue</a></div>
+						<div>Starts the loading of the queue</div>
+					</td>
+					<td class="last">
+							tinymce.dom.ScriptLoader
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/dom/scriptloader/loadscripts/" class="member">loadScripts</a></div>
+						<div>Loads the specified queue of files and executes the callback ones they are loaded</div>
+					</td>
+					<td class="last">
+							tinymce.dom.ScriptLoader
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/dom/scriptloader/markdone/" class="member">markDone</a></div>
+						<div>Marks a specific script to be loaded</div>
+					</td>
+					<td class="last">
+							tinymce.dom.ScriptLoader
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+</div>
+
+			</div>
+			<div class="col-xs-3">
+				<div style="position: fixed" id="sidebar">
+					<ul class="nav nav-stacked">
+
+	
+	
+	
+    
+    	
+    
+	
+    <li class="">
+        <a href="/docs/getting-started/">Getting Started</a>
+    </li>
+    
+        <ul class="nav nav-stacked">
+
+	
+	
+	
+    
+    	
+    
+	
+    <li class="">
+        <a href="/docs/getting-started/installation/">Installation</a>
+    </li>
+    
+
+	
+	
+	
+    
+    	
+    
+	
+    <li class="">
+        <a href="/docs/getting-started/basic-configuration/">Basic Configuration</a>
+    </li>
+    
+
+	
+	
+	
+    
+    	
+    
+	
+    <li class="">
+        <a href="/docs/getting-started/inline/">Inline</a>
+    </li>
+    
+
+</ul>
+    
+
+	
+	
+	
+    
+    	
+    
+	
+    <li class="">
+        <a href="/docs/configuration/">Configuration</a>
+    </li>
+    
+        <ul class="nav nav-stacked">
+
+	
+	
+	
+    
+    	
+    
+	
+    <li class="">
+        <a href="/docs/configuration/general/">General</a>
+    </li>
+    
+        <ul class="nav nav-stacked">
+
+	
+	
+	
+    
+    	
+    
+	
+    <li class="">
+        <a href="/docs/configuration/general/selector/">selector</a>
+    </li>
+    
+
+	
+	
+	
+    
+    	
+    
+	
+    <li class="">
+        <a href="/docs/configuration/general/auto_focus/">auto_focus</a>
+    </li>
+    
+
+	
+	
+	
+    
+    	
+    
+	
+    <li class="">
+        <a href="/docs/configuration/general/br_in_pre/">br_in_pre</a>
+    </li>
+    
+
+	
+	
+	
+    
+    	
+    
+	
+    <li class="">
+        <a href="/docs/configuration/general/directionality/">directionality</a>
+    </li>
+    
+
+</ul>
+    
+
+	
+	
+	
+    
+    	
+    
+	
+    <li class="">
+        <a href="/docs/configuration/cleanup-output/">Cleanup & Output</a>
+    </li>
+    
+        <ul class="nav nav-stacked">
+
+	
+	
+	
+    
+    	
+    
+	
+    <li class="">
+        <a href="/docs/configuration/cleanup-output/allow_conditional_comments/">allow_conditional_comments</a>
+    </li>
+    
+
+	
+	
+	
+    
+    	
+    
+	
+    <li class="">
+        <a href="/docs/configuration/cleanup-output/allow_html_in_named_anchor/">allow_html_in_named_anchor</a>
+    </li>
+    
+
+</ul>
+    
+
+</ul>
+    
+
+	
+	
+	
+    
+    	
+    
+	
+    <li class="">
+        <a href="/docs/using-tinymce/">Using TinyMCE</a>
+    </li>
+    
+        <ul class="nav nav-stacked">
+
+	
+	
+	
+    
+    	
+    
+	
+    <li class="">
+        <a href="/docs/using-tinymce/advanced-configuration/">Advanced Configuration</a>
+    </li>
+    
+
+	
+	
+	
+    
+    	
+    
+	
+    <li class="">
+        <a href="/docs/using-tinymce/creating-a-plugin/">Creating a Plugin</a>
+    </li>
+    
+
+	
+	
+	
+    
+    	
+    
+	
+    <li class="">
+        <a href="/docs/using-tinymce/creating-a-skin/">Creating a Skin</a>
+    </li>
+    
+
+	
+	
+	
+    
+    	
+    
+	
+    <li class="">
+        <a href="/docs/using-tinymce/creating-custom-dialogs/">Creating Custom Dialogs</a>
+    </li>
+    
+
+	
+	
+	
+    
+    	
+    
+	
+    <li class="">
+        <a href="/docs/using-tinymce/handling-asynchronous-image-uploads/">Handling Asynchronous Image Uploads</a>
+    </li>
+    
+
+	
+	
+	
+    
+    	
+    
+	
+    <li class="">
+        <a href="/docs/using-tinymce/migration-guide-from-3x/">Migration Guide From 3x</a>
+    </li>
+    
+
+	
+	
+	
+    
+    	
+    
+	
+    <li class="">
+        <a href="/docs/using-tinymce/tinymce-in-a-bootstrap-dialog/">TinyMCE in a Bootstrap Dialog</a>
+    </li>
+    
+
+	
+	
+	
+    
+    	
+    
+	
+    <li class="">
+        <a href="/docs/using-tinymce/tinymce-in-a-jquery-ui-dialog/">TinyMCE in a jQuery UI Dialog</a>
+    </li>
+    
+
+	
+	
+	
+    
+    	
+    
+	
+    <li class="">
+        <a href="/docs/using-tinymce/using-cdn/">Using CDN</a>
+    </li>
+    
+
+	
+	
+	
+    
+    	
+    
+	
+    <li class="">
+        <a href="/docs/using-tinymce/using-the-gzip-compressors/">Using the Gzip Compressors</a>
+    </li>
+    
+
+</ul>
+    
+
+	
+	
+	
+    
+    	
+    
+	
+    <li class="">
+        <a href="/docs/javascript-api/">JavaScript API</a>
+    </li>
+    
+
+</ul>
+				</div>
+			</div>
+		</div>
+
+		<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+  	<script src="/docs/assets/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+	</body>
+</html>

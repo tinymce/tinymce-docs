@@ -1,0 +1,27 @@
+---
+layout: default
+title: tinymce.dom.DOMUtils.createRng
+---
+
+<div class="api methoddetails">
+	<div class="syntax"><span>public function createRng():DOMRange</span></div>
+	<div class="details">Creates a new DOM Range object. This will use the native DOM Range API if it&#x27;s
+available. If it&#x27;s not, it will fall back to the custom TinyMCE implementation.</div>
+
+		<div class="examples">
+		<h2>Examples</h2>
+			<pre class="js">var rng &#x3D; tinymce.DOM.createRng();
+alert(rng.startContainer + &quot;,&quot; + rng.startOffset);</pre>
+		</div>
+
+
+	<div class="returns">
+		<h2>Returns</h2>
+		<div>
+						DOMRange
+
+				DOM Range object.
+		</div>
+	</div>
+
+</div>

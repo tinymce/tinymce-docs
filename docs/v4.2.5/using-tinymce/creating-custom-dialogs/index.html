@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<title>TinyMCE - Creating Custom Dialogs</title>
+		<meta name="author" content="Joshua Haines" />
+		<link href="/docs/assets/css/theme.css" rel="stylesheet">
+    <link href="/docs/assets/bootstrap-3.3.5-dist/css/bootstrap.min.css" rel="stylesheet">
+		<link href="/docs/assets/bootstrap-3.3.5-dist/css/bootstrap-theme.min.css" rel="stylesheet" >
+	</head>
+	<body role="document">
+
+		<!-- Fixed navbar -->
+		<nav class="navbar navbar-inverse navbar-fixed-top">
+		    <div class="container">
+		        <div class="navbar-header">
+		            <a class="navbar-brand" href="#">TinyMCE</a>
+		        </div>
+		        <div id="navbar" class="navbar-collapse collapse">
+		            <ul class="nav navbar-nav">
+		                <li><a href="#">Home</a></li>
+		                <li><a href="#">Try It</a></li>
+		                <li><a href="#">Download</a></li>
+		                <li class="active"><a href="#">Documentation</a></li>
+		                <li><a href="#">Enterprise</a></li>
+		                <li><a href="#">Develop</a></li>
+		                <li><a href="#">Forum</a></li>
+		            </ul>
+		        </div>
+		        <!--/.nav-collapse -->
+		    </div>
+		</nav>
+
+		<div class="container theme-showcase" role="main">
+
+			<div class="col-xs-9">
+				<h1>Creating Custom Dialogs</h1>
+				<h3>Dialogs as HTML pages</h3>
+<p>In TinyMCE 3.x all dialogs where HTML pages that got loaded into a iframe or window. This was changed in TinyMCE 4 to make it easier to make plugins and fully support CDN:s. But you can still load HTML based pages into TinyMCE dialogs by using the WindowManager.</p>
+<pre class="js">// Opens a HTML page inside a TinyMCE dialog<br />editor.windowManager.open({<br />    title: "My html dialog",<br />    url: 'mydialog.html',<br />    width: 700,<br />    height: 600<br />});</pre>
+<p>You can also pass in parameters to the dialog just as you could in 3.x by using the second parameter of the WindowManager.open.</p>
+<pre class="js">// Opens a HTML page inside a TinyMCE dialog and pass in two parameters<br />editor.windowManager.open({<br />    title: "My html dialog",<br />    url: 'mydialog.html',<br />    width: 700,<br />    height: 600<br />}, {<br />    arg1: 42,<br />    arg2: "Hello world"<br />});</pre>
+<p>You can access these parameters from your mydialog.html page by using this code:</p>
+<pre class="js">// Get the parameters passed into the window from the top frame<br />var args = top.tinymce.activeEditor.windowManager.getParams();<br />console.log(args.arg1, args.arg2);</pre>
+<p>You can also close the current window by calling:</p>
+<pre class="js">// Close the front most window (mydialog.html)<br />top.tinymce.activeEditor.windowManager.close();</pre>
+			</div>
+			<div class="col-xs-3">
+				<div style="position: fixed" id="sidebar">
+					<ul class="nav nav-stacked">
+
+	
+	
+	
+    
+    	
+    
+	
+    <li class="">
+        <a href="/docs/getting-started/">Getting Started</a>
+    </li>
+    
+        <ul class="nav nav-stacked">
+
+	
+	
+	
+    
+    	
+    
+	
+    <li class="">
+        <a href="/docs/getting-started/installation/">Installation</a>
+    </li>
+    
+
+	
+	
+	
+    
+    	
+    
+	
+    <li class="">
+        <a href="/docs/getting-started/basic-configuration/">Basic Configuration</a>
+    </li>
+    
+
+	
+	
+	
+    
+    	
+    
+	
+    <li class="">
+        <a href="/docs/getting-started/inline/">Inline</a>
+    </li>
+    
+
+</ul>
+    
+
+	
+	
+	
+    
+    	
+    
+	
+    <li class="">
+        <a href="/docs/configuration/">Configuration</a>
+    </li>
+    
+        <ul class="nav nav-stacked">
+
+	
+	
+	
+    
+    	
+    
+	
+    <li class="">
+        <a href="/docs/configuration/general/">General</a>
+    </li>
+    
+        <ul class="nav nav-stacked">
+
+	
+	
+	
+    
+    	
+    
+	
+    <li class="">
+        <a href="/docs/configuration/general/selector/">selector</a>
+    </li>
+    
+
+	
+	
+	
+    
+    	
+    
+	
+    <li class="">
+        <a href="/docs/configuration/general/auto_focus/">auto_focus</a>
+    </li>
+    
+
+	
+	
+	
+    
+    	
+    
+	
+    <li class="">
+        <a href="/docs/configuration/general/br_in_pre/">br_in_pre</a>
+    </li>
+    
+
+	
+	
+	
+    
+    	
+    
+	
+    <li class="">
+        <a href="/docs/configuration/general/directionality/">directionality</a>
+    </li>
+    
+
+</ul>
+    
+
+	
+	
+	
+    
+    	
+    
+	
+    <li class="">
+        <a href="/docs/configuration/cleanup-output/">Cleanup & Output</a>
+    </li>
+    
+        <ul class="nav nav-stacked">
+
+	
+	
+	
+    
+    	
+    
+	
+    <li class="">
+        <a href="/docs/configuration/cleanup-output/allow_conditional_comments/">allow_conditional_comments</a>
+    </li>
+    
+
+	
+	
+	
+    
+    	
+    
+	
+    <li class="">
+        <a href="/docs/configuration/cleanup-output/allow_html_in_named_anchor/">allow_html_in_named_anchor</a>
+    </li>
+    
+
+</ul>
+    
+
+</ul>
+    
+
+	
+	
+	
+    
+    	
+    
+	
+    <li class="active">
+        <a href="/docs/using-tinymce/">Using TinyMCE</a>
+    </li>
+    
+        <ul class="nav nav-stacked">
+
+	
+	
+	
+    
+    	
+    
+	
+    <li class="">
+        <a href="/docs/using-tinymce/advanced-configuration/">Advanced Configuration</a>
+    </li>
+    
+
+	
+	
+	
+    
+    	
+    
+	
+    <li class="">
+        <a href="/docs/using-tinymce/creating-a-plugin/">Creating a Plugin</a>
+    </li>
+    
+
+	
+	
+	
+    
+    	
+    
+	
+    <li class="">
+        <a href="/docs/using-tinymce/creating-a-skin/">Creating a Skin</a>
+    </li>
+    
+
+	
+	
+	
+    
+    	
+    
+	
+    <li class="active">
+        <a href="/docs/using-tinymce/creating-custom-dialogs/">Creating Custom Dialogs</a>
+    </li>
+    
+
+	
+	
+	
+    
+    	
+    
+	
+    <li class="">
+        <a href="/docs/using-tinymce/handling-asynchronous-image-uploads/">Handling Asynchronous Image Uploads</a>
+    </li>
+    
+
+	
+	
+	
+    
+    	
+    
+	
+    <li class="">
+        <a href="/docs/using-tinymce/migration-guide-from-3x/">Migration Guide From 3x</a>
+    </li>
+    
+
+	
+	
+	
+    
+    	
+    
+	
+    <li class="">
+        <a href="/docs/using-tinymce/tinymce-in-a-bootstrap-dialog/">TinyMCE in a Bootstrap Dialog</a>
+    </li>
+    
+
+	
+	
+	
+    
+    	
+    
+	
+    <li class="">
+        <a href="/docs/using-tinymce/tinymce-in-a-jquery-ui-dialog/">TinyMCE in a jQuery UI Dialog</a>
+    </li>
+    
+
+	
+	
+	
+    
+    	
+    
+	
+    <li class="">
+        <a href="/docs/using-tinymce/using-cdn/">Using CDN</a>
+    </li>
+    
+
+	
+	
+	
+    
+    	
+    
+	
+    <li class="">
+        <a href="/docs/using-tinymce/using-the-gzip-compressors/">Using the Gzip Compressors</a>
+    </li>
+    
+
+</ul>
+    
+
+	
+	
+	
+    
+    	
+    
+	
+    <li class="">
+        <a href="/docs/javascript-api/">JavaScript API</a>
+    </li>
+    
+
+</ul>
+				</div>
+			</div>
+		</div>
+
+		<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+  	<script src="/docs/assets/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+	</body>
+</html>

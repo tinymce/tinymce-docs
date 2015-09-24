@@ -1,0 +1,67 @@
+---
+layout: default
+title: tinymce.dom.DOMUtils.bind
+---
+
+<div class="api methoddetails">
+	<div class="syntax"><span>public function bind(target:Element/Document/Window/Array, name:String, func:function, scope:Object):function</span></div>
+	<div class="details">Adds an event handler to the specified object.</div>
+
+
+	<div class="params">
+		<h2>Params</h2>
+		<table>
+			<thead class="small">
+				<tr>
+					<th class="first">Name</th>
+					<th>Type</th>
+					<th class="last">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="first">target</td>
+					<td>
+								Element
+								Document
+								Window
+								Array
+					</td>
+					<td class="last">Target element to bind events to.
+handler to or an array of elements/ids/documents.</td>
+				</tr>
+				<tr>
+					<td class="first">name</td>
+					<td>
+								String
+					</td>
+					<td class="last">Name of event handler to add, for example: click.</td>
+				</tr>
+				<tr>
+					<td class="first">func</td>
+					<td>
+								function
+					</td>
+					<td class="last">Function to execute when the event occurs.</td>
+				</tr>
+				<tr>
+					<td class="first">scope</td>
+					<td>
+								Object
+					</td>
+					<td class="last">Optional scope to execute the function in.</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+	<div class="returns">
+		<h2>Returns</h2>
+		<div>
+						function
+
+				Function callback handler the same as the one passed in.
+		</div>
+	</div>
+
+</div>

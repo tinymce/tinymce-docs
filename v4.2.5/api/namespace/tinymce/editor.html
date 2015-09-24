@@ -1,0 +1,955 @@
+---
+layout: default
+title: tinymce.Editor
+---
+
+<div class="api classdetails">
+
+	<div class="description">This class contains the core logic for a TinyMCE editor.</div>
+
+		<div class="examples">
+		<h2>Examples</h2>
+<pre class="js">// Add a class to all paragraphs in the editor.
+tinymce.activeEditor.dom.addClass(tinymce.activeEditor.dom.select(&#x27;p&#x27;), &#x27;someclass&#x27;);
+
+// Gets the current editors selection as text
+tinymce.activeEditor.selection.getContent({format: &#x27;text&#x27;});
+
+// Creates a new editor instance
+var ed &#x3D; new tinymce.Editor(&#x27;textareaid&#x27;, {
+    some_setting: 1
+}, tinymce.EditorManager);
+
+// Select each item the user clicks on
+ed.on(&#x27;click&#x27;, function(e) {
+    ed.selection.select(e.target);
+});
+
+ed.render();</pre>
+		</div>
+
+
+	<div class="properties">
+		<h2>Properties</h2>
+		<table>
+			<thead class="small">
+				<tr>
+					<th class="first">Property</th>
+					<th class="last">Defined By</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/editor/$/" class="member">$</a></div>
+						<div>Dom query instance with default scope to the editor document and default element is the body of the </div>
+					</td>
+					<td class="last">
+							tinymce.Editor
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/editor/baseuri/" class="member">baseURI</a></div>
+						<div>URI object to current document that holds the TinyMCE editor instance</div>
+					</td>
+					<td class="last">
+							tinymce.Editor
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/editor/contentcss/" class="member">contentCSS</a></div>
+						<div>Array with CSS files to load into the iframe</div>
+					</td>
+					<td class="last">
+							tinymce.Editor
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/editor/contentstyles/" class="member">contentStyles</a></div>
+						<div>Array of CSS styles to add to head of document when the editor loads</div>
+					</td>
+					<td class="last">
+							tinymce.Editor
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/editor/documentbaseuri/" class="member">documentBaseURI</a></div>
+						<div>URI object to document configured for the TinyMCE instance</div>
+					</td>
+					<td class="last">
+							tinymce.Editor
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/editor/dom/" class="member">dom</a></div>
+						<div>DOM instance for the editor</div>
+					</td>
+					<td class="last">
+							tinymce.Editor
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/editor/formatter/" class="member">formatter</a></div>
+						<div>Formatter instance</div>
+					</td>
+					<td class="last">
+							tinymce.Editor
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/editor/id/" class="member">id</a></div>
+						<div>Editor instance id, normally the same as the div/textarea that was replaced</div>
+					</td>
+					<td class="last">
+							tinymce.Editor
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/editor/initialized/" class="member">initialized</a></div>
+						<div>Is set to true after the editor instance has been initialized</div>
+					</td>
+					<td class="last">
+							tinymce.Editor
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/editor/isnotdirty/" class="member">isNotDirty</a></div>
+						<div>State to force the editor to return false on a isDirty call</div>
+					</td>
+					<td class="last">
+							tinymce.Editor
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/editor/parser/" class="member">parser</a></div>
+						<div>HTML parser will be used when contents is inserted into the editor</div>
+					</td>
+					<td class="last">
+							tinymce.Editor
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/editor/plugins/" class="member">plugins</a></div>
+						<div>Name/Value object containting plugin instances</div>
+					</td>
+					<td class="last">
+							tinymce.Editor
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/editor/schema/" class="member">schema</a></div>
+						<div>Schema instance, enables you to validate elements and its children</div>
+					</td>
+					<td class="last">
+							tinymce.Editor
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/editor/selection/" class="member">selection</a></div>
+						<div>Selection instance for the editor</div>
+					</td>
+					<td class="last">
+							tinymce.Editor
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/editor/serializer/" class="member">serializer</a></div>
+						<div>DOM serializer for the editor</div>
+					</td>
+					<td class="last">
+							tinymce.Editor
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/editor/settings/" class="member">settings</a></div>
+						<div>Name/value collection with editor settings</div>
+					</td>
+					<td class="last">
+							tinymce.Editor
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/editor/theme/" class="member">theme</a></div>
+						<div>Reference to the theme instance that was used to generate the UI</div>
+					</td>
+					<td class="last">
+							tinymce.Editor
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/editor/undomanager/" class="member">undoManager</a></div>
+						<div>Undo manager instance, responsible for handling undo levels</div>
+					</td>
+					<td class="last">
+							tinymce.Editor
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/editor/windowmanager/" class="member">windowManager</a></div>
+						<div>Window manager reference, use this to open new windows and dialogs</div>
+					</td>
+					<td class="last">
+							tinymce.Editor
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+	<div class="events">
+		<h2>Events</h2>
+		<table>
+			<thead class="small">
+				<tr>
+					<th class="first">Event</th>
+					<th class="last">Defined By</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/editor/addundo/" class="member">AddUndo</a></div>
+						<div>Fires after an undo level has been added to the editor</div>
+					</td>
+					<td class="last">
+							tinymce.Editor
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/editor/beforeaddundo/" class="member">BeforeAddUndo</a></div>
+						<div>Fires before an undo level is added to the editor</div>
+					</td>
+					<td class="last">
+							tinymce.Editor
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/editor/beforeexeccommand/" class="member">BeforeExecCommand</a></div>
+						<div>Fires before a execCommand call is made</div>
+					</td>
+					<td class="last">
+							tinymce.Editor
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/editor/beforerenderui/" class="member">BeforeRenderUI</a></div>
+						<div>Fires before the UI gets rendered</div>
+					</td>
+					<td class="last">
+							tinymce.Editor
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/editor/beforesetcontent/" class="member">BeforeSetContent</a></div>
+						<div>Fires before contents is inserted into the editor</div>
+					</td>
+					<td class="last">
+							tinymce.Editor
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/editor/execcommand/" class="member">ExecCommand</a></div>
+						<div>Fires after a execCommand call has been made</div>
+					</td>
+					<td class="last">
+							tinymce.Editor
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/editor/getcontent/" class="member">GetContent</a></div>
+						<div>Fires after contents has been extracted from the editor</div>
+					</td>
+					<td class="last">
+							tinymce.Editor
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/editor/loadcontent/" class="member">LoadContent</a></div>
+						<div>Fires after contents has been loaded into the editor</div>
+					</td>
+					<td class="last">
+							tinymce.Editor
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/editor/nodechange/" class="member">NodeChange</a></div>
+						<div>Fires when the selection is moved to a new location or is the DOM is updated by some command</div>
+					</td>
+					<td class="last">
+							tinymce.Editor
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/editor/objectresizestart/" class="member">ObjectResizeStart</a></div>
+						<div>Fires when a resize of an object like an image is about to start</div>
+					</td>
+					<td class="last">
+							tinymce.Editor
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/editor/objectresized/" class="member">ObjectResized</a></div>
+						<div>Fires after an object like an image is resized</div>
+					</td>
+					<td class="last">
+							tinymce.Editor
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/editor/objectselected/" class="member">ObjectSelected</a></div>
+						<div>Fires when an object is selected such as an image</div>
+					</td>
+					<td class="last">
+							tinymce.Editor
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/editor/postprocess/" class="member">PostProcess</a></div>
+						<div>Fires after the contents has been processed</div>
+					</td>
+					<td class="last">
+							tinymce.Editor
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/editor/preinit/" class="member">PreInit</a></div>
+						<div>Fires before the editor has been initialized</div>
+					</td>
+					<td class="last">
+							tinymce.Editor
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/editor/preprocess/" class="member">PreProcess</a></div>
+						<div>Fires before the contents is processed</div>
+					</td>
+					<td class="last">
+							tinymce.Editor
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/editor/progressstate/" class="member">ProgressState</a></div>
+						<div>Fires when a progress event is made</div>
+					</td>
+					<td class="last">
+							tinymce.Editor
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/editor/savecontent/" class="member">SaveContent</a></div>
+						<div>Fires after contents has been saved/extracted from the editor</div>
+					</td>
+					<td class="last">
+							tinymce.Editor
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/editor/setattrib/" class="member">SetAttrib</a></div>
+						<div>Fires when attributes are updated on DOM elements</div>
+					</td>
+					<td class="last">
+							tinymce.Editor
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/editor/activate/" class="member">activate</a></div>
+						<div>Fires when the focus is moved from one editor to another editor</div>
+					</td>
+					<td class="last">
+							tinymce.Editor
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/editor/blur/" class="member">blur</a></div>
+						<div>Fires when the editor is blurred</div>
+					</td>
+					<td class="last">
+							tinymce.Editor
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/editor/change/" class="member">change</a></div>
+						<div>Fires when contents is modified in the editor</div>
+					</td>
+					<td class="last">
+							tinymce.Editor
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/editor/deactivate/" class="member">deactivate</a></div>
+						<div>Fires when the focus is moved from one editor to another editor</div>
+					</td>
+					<td class="last">
+							tinymce.Editor
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/editor/focus/" class="member">focus</a></div>
+						<div>Fires when the editor gets focused</div>
+					</td>
+					<td class="last">
+							tinymce.Editor
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/editor/hide/" class="member">hide</a></div>
+						<div>Fires when the editor is hidden</div>
+					</td>
+					<td class="last">
+							tinymce.Editor
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/editor/init/" class="member">init</a></div>
+						<div>Fires after the editor has been initialized</div>
+					</td>
+					<td class="last">
+							tinymce.Editor
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/editor/redo/" class="member">redo</a></div>
+						<div>Fires when an redo operation is executed</div>
+					</td>
+					<td class="last">
+							tinymce.Editor
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/editor/remove/" class="member">remove</a></div>
+						<div>Fires when the editor instance is removed</div>
+					</td>
+					<td class="last">
+							tinymce.Editor
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/editor/reset/" class="member">reset</a></div>
+						<div>Fires when the form containing the editor is resetted</div>
+					</td>
+					<td class="last">
+							tinymce.Editor
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/editor/show/" class="member">show</a></div>
+						<div>Fires when the editor is shown</div>
+					</td>
+					<td class="last">
+							tinymce.Editor
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/editor/submit/" class="member">submit</a></div>
+						<div>Fires when the form containing the editor is submitted</div>
+					</td>
+					<td class="last">
+							tinymce.Editor
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/editor/undo/" class="member">undo</a></div>
+						<div>Fires when an undo operation is executed</div>
+					</td>
+					<td class="last">
+							tinymce.Editor
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+	<div class="constructors">
+		<h2>Constructors</h2>
+		<table>
+			<thead class="small">
+				<tr>
+					<th class="first">Method</th>
+					<th class="last">Defined By</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/editor/editor/" class="member">Editor</a></div>
+						<div>Constructs a editor instance by id</div>
+					</td>
+					<td class="last">
+							tinymce.Editor
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+	<div class="methods">
+		<h2>Methods</h2>
+		<table>
+			<thead class="small">
+				<tr>
+					<th class="first">Method</th>
+					<th class="last">Defined By</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/editor/addbutton/" class="member">addButton</a></div>
+						<div>Adds a button that later gets created by the theme in the editors toolbars</div>
+					</td>
+					<td class="last">
+							tinymce.Editor
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/editor/addcommand/" class="member">addCommand</a></div>
+						<div>Adds a custom command to the editor, you can also override existing commands with this method</div>
+					</td>
+					<td class="last">
+							tinymce.Editor
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/editor/addcontexttoolbar/" class="member">addContextToolbar</a></div>
+						<div>Adds a contextual toolbar to be rendered when the selector matches</div>
+					</td>
+					<td class="last">
+							tinymce.Editor
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/editor/addmenuitem/" class="member">addMenuItem</a></div>
+						<div>Adds a menu item to be used in the menus of the theme</div>
+					</td>
+					<td class="last">
+							tinymce.Editor
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/editor/addquerystatehandler/" class="member">addQueryStateHandler</a></div>
+						<div>Adds a custom query state command to the editor, you can also override existing commands with this m</div>
+					</td>
+					<td class="last">
+							tinymce.Editor
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/editor/addqueryvaluehandler/" class="member">addQueryValueHandler</a></div>
+						<div>Adds a custom query value command to the editor, you can also override existing commands with this m</div>
+					</td>
+					<td class="last">
+							tinymce.Editor
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/editor/addshortcut/" class="member">addShortcut</a></div>
+						<div>Adds a keyboard shortcut for some command or function</div>
+					</td>
+					<td class="last">
+							tinymce.Editor
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/editor/addvisual/" class="member">addVisual</a></div>
+						<div>Adds visual aid for tables, anchors etc so they can be more easily edited inside the editor</div>
+					</td>
+					<td class="last">
+							tinymce.Editor
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/editor/converturl/" class="member">convertURL</a></div>
+						<div>URL converter function this gets executed each time a user adds an img, a or
+any other element that </div>
+					</td>
+					<td class="last">
+							tinymce.Editor
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/editor/destroy/" class="member">destroy</a></div>
+						<div>Destroys the editor instance by removing all events, element references or other resources
+that coul</div>
+					</td>
+					<td class="last">
+							tinymce.Editor
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/editor/execcallback/" class="member">execCallback</a></div>
+						<div>Executes a legacy callback</div>
+					</td>
+					<td class="last">
+							tinymce.Editor
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/editor/execcommand/" class="member">execCommand</a></div>
+						<div>Executes a command on the current instance</div>
+					</td>
+					<td class="last">
+							tinymce.Editor
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/util/observable/fire/" class="member">fire</a></div>
+						<div>Fires the specified event by name</div>
+					</td>
+					<td class="last">
+							<a href="/docs/v4.2.5/api/tinymce/util/observable/">tinymce.util.Observable</a>
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/editor/focus/" class="member">focus</a></div>
+						<div>Focuses/activates the editor</div>
+					</td>
+					<td class="last">
+							tinymce.Editor
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/editor/getbody/" class="member">getBody</a></div>
+						<div>Returns the root element of the editable area</div>
+					</td>
+					<td class="last">
+							tinymce.Editor
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/editor/getcontainer/" class="member">getContainer</a></div>
+						<div>Returns the editors container element</div>
+					</td>
+					<td class="last">
+							tinymce.Editor
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/editor/getcontent/" class="member">getContent</a></div>
+						<div>Gets the content from the editor instance, this will cleanup the content before it gets returned usi</div>
+					</td>
+					<td class="last">
+							tinymce.Editor
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/editor/getcontentareacontainer/" class="member">getContentAreaContainer</a></div>
+						<div>Returns the editors content area container element</div>
+					</td>
+					<td class="last">
+							tinymce.Editor
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/editor/getdoc/" class="member">getDoc</a></div>
+						<div>Returns the iframes document object</div>
+					</td>
+					<td class="last">
+							tinymce.Editor
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/editor/getelement/" class="member">getElement</a></div>
+						<div>Returns the target element/textarea that got replaced with a TinyMCE editor instance</div>
+					</td>
+					<td class="last">
+							tinymce.Editor
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/editor/getlang/" class="member">getLang</a></div>
+						<div>Returns a language pack item by name/key</div>
+					</td>
+					<td class="last">
+							tinymce.Editor
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/editor/getparam/" class="member">getParam</a></div>
+						<div>Returns a configuration parameter by name</div>
+					</td>
+					<td class="last">
+							tinymce.Editor
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/editor/getwin/" class="member">getWin</a></div>
+						<div>Returns the iframes window object</div>
+					</td>
+					<td class="last">
+							tinymce.Editor
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/util/observable/haseventlisteners/" class="member">hasEventListeners</a></div>
+						<div>Returns true/false if the object has a event of the specified name</div>
+					</td>
+					<td class="last">
+							<a href="/docs/v4.2.5/api/tinymce/util/observable/">tinymce.util.Observable</a>
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/editor/hide/" class="member">hide</a></div>
+						<div>Hides the editor and shows any textarea/div that the editor is supposed to replace</div>
+					</td>
+					<td class="last">
+							tinymce.Editor
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/editor/init/" class="member">init</a></div>
+						<div>Initializes the editor this will be called automatically when
+all plugins/themes and language packs </div>
+					</td>
+					<td class="last">
+							tinymce.Editor
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/editor/insertcontent/" class="member">insertContent</a></div>
+						<div>Inserts content at caret position</div>
+					</td>
+					<td class="last">
+							tinymce.Editor
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/editor/isdirty/" class="member">isDirty</a></div>
+						<div>Returns true/false if the editor is dirty or not</div>
+					</td>
+					<td class="last">
+							tinymce.Editor
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/editor/ishidden/" class="member">isHidden</a></div>
+						<div>Returns true/false if the editor is hidden or not</div>
+					</td>
+					<td class="last">
+							tinymce.Editor
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/editor/load/" class="member">load</a></div>
+						<div>Loads contents from the textarea or div element that got converted into an editor instance</div>
+					</td>
+					<td class="last">
+							tinymce.Editor
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/editor/nodechanged/" class="member">nodeChanged</a></div>
+						<div>Dispatches out a onNodeChange event to all observers</div>
+					</td>
+					<td class="last">
+							tinymce.Editor
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/util/observable/off/" class="member">off</a></div>
+						<div>Unbinds an event listener to a specific event by name</div>
+					</td>
+					<td class="last">
+							<a href="/docs/v4.2.5/api/tinymce/util/observable/">tinymce.util.Observable</a>
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/util/observable/on/" class="member">on</a></div>
+						<div>Binds an event listener to a specific event by name</div>
+					</td>
+					<td class="last">
+							<a href="/docs/v4.2.5/api/tinymce/util/observable/">tinymce.util.Observable</a>
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/util/observable/once/" class="member">once</a></div>
+						<div>Bind the event callback and once it fires the callback is removed</div>
+					</td>
+					<td class="last">
+							<a href="/docs/v4.2.5/api/tinymce/util/observable/">tinymce.util.Observable</a>
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/editor/querycommandstate/" class="member">queryCommandState</a></div>
+						<div>Returns a command specific state, for example if bold is enabled or not</div>
+					</td>
+					<td class="last">
+							tinymce.Editor
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/editor/querycommandsupported/" class="member">queryCommandSupported</a></div>
+						<div>Returns true/false if the command is supported or not</div>
+					</td>
+					<td class="last">
+							tinymce.Editor
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/editor/querycommandvalue/" class="member">queryCommandValue</a></div>
+						<div>Returns a command specific value, for example the current font size</div>
+					</td>
+					<td class="last">
+							tinymce.Editor
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/editor/remove/" class="member">remove</a></div>
+						<div>Removes the editor from the dom and tinymce collection</div>
+					</td>
+					<td class="last">
+							tinymce.Editor
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/editor/render/" class="member">render</a></div>
+						<div>Renderes the editor/adds it to the page</div>
+					</td>
+					<td class="last">
+							tinymce.Editor
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/editor/save/" class="member">save</a></div>
+						<div>Saves the contents from a editor out to the textarea or div element that got converted into an edito</div>
+					</td>
+					<td class="last">
+							tinymce.Editor
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/editor/setcontent/" class="member">setContent</a></div>
+						<div>Sets the specified content to the editor instance, this will cleanup the content before it gets set </div>
+					</td>
+					<td class="last">
+							tinymce.Editor
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/editor/setprogressstate/" class="member">setProgressState</a></div>
+						<div>Sets the progress state, this will display a throbber/progess for the editor</div>
+					</td>
+					<td class="last">
+							tinymce.Editor
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/editor/show/" class="member">show</a></div>
+						<div>Shows the editor and hides any textarea/div that the editor is supposed to replace</div>
+					</td>
+					<td class="last">
+							tinymce.Editor
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/editor/translate/" class="member">translate</a></div>
+						<div>Translates the specified string by replacing variables with language pack items it will also check i</div>
+					</td>
+					<td class="last">
+							tinymce.Editor
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/editor/uploadimages/" class="member">uploadImages</a></div>
+						<div>Uploads all data uri/blob uri images in the editor contents to server</div>
+					</td>
+					<td class="last">
+							tinymce.Editor
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+</div>

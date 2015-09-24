@@ -1,0 +1,30 @@
+---
+layout: default
+title: tinymce.Editor.selection
+---
+
+<div class="api propertydetails">
+	<div class="syntax"><span>public selection : tinymce.dom.Selection</span></div>
+	<div class="details">Selection instance for the editor.</div>
+
+		<div class="examples">
+		<h2>Examples</h2>
+			<pre class="js">// Sets some contents to the current selection in the editor
+tinymce.activeEditor.selection.setContent(&#x27;Some contents&#x27;);
+
+// Gets the current selection
+alert(tinymce.activeEditor.selection.getContent());
+
+// Selects the first paragraph found
+tinymce.activeEditor.selection.select(tinymce.activeEditor.dom.select(&#x27;p&#x27;)[0]);</pre>
+		</div>
+
+
+
+	<div class="types">
+		<h2>Type</h2>
+		<div>
+					<a href="/docs/v4.2.5/api/tinymce/dom/selection/">tinymce.dom.Selection</a>
+		</div>
+	</div>
+</div>

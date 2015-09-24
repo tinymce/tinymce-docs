@@ -1,0 +1,52 @@
+---
+layout: default
+title: tinymce.ui.Factory.create
+---
+
+<div class="api methoddetails">
+	<div class="syntax"><span>public function create(settings:Object/String):tinymce.ui.Control</span></div>
+	<div class="details">Creates a new control instance based on the settings provided. The instance created will be
+based on the specified type property it can also create whole structures of components out of
+the specified JSON object.</div>
+
+		<div class="examples">
+		<h2>Examples</h2>
+			<pre class="js">tinymce.ui.Factory.create({
+    type: &#x27;button&#x27;,
+    text: &#x27;Hello world!&#x27;
+});</pre>
+		</div>
+
+	<div class="params">
+		<h2>Params</h2>
+		<table>
+			<thead class="small">
+				<tr>
+					<th class="first">Name</th>
+					<th>Type</th>
+					<th class="last">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="first">settings</td>
+					<td>
+								Object
+								String
+					</td>
+					<td class="last">Name/Value object with items used to create the type.</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+	<div class="returns">
+		<h2>Returns</h2>
+		<div>
+						<a href="/docs/v4.2.5/api/tinymce/ui/control/">tinymce.ui.Control</a>
+
+				Control instance based on the specified type.
+		</div>
+	</div>
+
+</div>

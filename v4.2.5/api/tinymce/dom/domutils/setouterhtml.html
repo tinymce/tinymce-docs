@@ -1,0 +1,58 @@
+---
+layout: default
+title: tinymce.dom.DOMUtils.setOuterHTML
+---
+
+<div class="api methoddetails">
+	<div class="syntax"><span>public function setOuterHTML(elm:Element/String/Array, html:Object, doc:Document):void</span></div>
+	<div class="details">Sets the specified outer HTML on an element or elements.</div>
+
+		<div class="examples">
+		<h2>Examples</h2>
+			<pre class="js">// Sets the outer HTML of all paragraphs in the active editor
+tinymce.activeEditor.dom.setOuterHTML(tinymce.activeEditor.dom.select(&#x27;p&#x27;), &#x27;&lt;div&gt;some html&lt;/div&gt;&#x27;);
+
+// Sets the outer HTML of an element by id in the document
+tinymce.DOM.setOuterHTML(&#x27;mydiv&#x27;, &#x27;&lt;div&gt;some html&lt;/div&gt;&#x27;);</pre>
+		</div>
+
+	<div class="params">
+		<h2>Params</h2>
+		<table>
+			<thead class="small">
+				<tr>
+					<th class="first">Name</th>
+					<th>Type</th>
+					<th class="last">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="first">elm</td>
+					<td>
+								Element
+								String
+								Array
+					</td>
+					<td class="last">DOM element, element id string or array of elements/ids to set outer HTML on.</td>
+				</tr>
+				<tr>
+					<td class="first">html</td>
+					<td>
+								Object
+					</td>
+					<td class="last">HTML code to set as outer value for the element.</td>
+				</tr>
+				<tr>
+					<td class="first">doc</td>
+					<td>
+								Document
+					</td>
+					<td class="last">Optional document scope to use in this process - defaults to the document of the DOM class.</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+
+</div>

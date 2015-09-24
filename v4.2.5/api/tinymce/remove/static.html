@@ -1,0 +1,58 @@
+---
+layout: default
+title: tinymce.remove
+---
+
+<div class="api methoddetails">
+	<div class="syntax"><span>public function remove(selector:tinymce.Editor/String/Object):tinymce.Editor</span></div>
+	<div class="details">Removes a editor or editors form page.</div>
+
+		<div class="examples">
+		<h2>Examples</h2>
+			<pre class="js">// Remove all editors bound to divs
+tinymce.remove(&#x27;div&#x27;);
+
+// Remove all editors bound to textareas
+tinymce.remove(&#x27;textarea&#x27;);
+
+// Remove all editors
+tinymce.remove();
+
+// Remove specific instance by id
+tinymce.remove(&#x27;#id&#x27;);</pre>
+		</div>
+
+	<div class="params">
+		<h2>Params</h2>
+		<table>
+			<thead class="small">
+				<tr>
+					<th class="first">Name</th>
+					<th>Type</th>
+					<th class="last">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="first">selector</td>
+					<td>
+								<a href="/docs/v4.2.5/api/tinymce/editor/">tinymce.Editor</a>
+								String
+								Object
+					</td>
+					<td class="last">CSS selector or editor instance to remove.</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+	<div class="returns">
+		<h2>Returns</h2>
+		<div>
+						<a href="/docs/v4.2.5/api/tinymce/editor/">tinymce.Editor</a>
+
+				The editor that got passed in will be return if it was found otherwise null.
+		</div>
+	</div>
+
+</div>

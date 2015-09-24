@@ -1,0 +1,69 @@
+---
+layout: default
+title: tinymce.html.Styles
+---
+
+<div class="api classdetails">
+
+	<div class="description">This class is used to parse CSS styles it also compresses styles to reduce the output size.</div>
+
+		<div class="examples">
+		<h2>Examples</h2>
+<pre class="js">var Styles &#x3D; new tinymce.html.Styles({
+   url_converter: function(url) {
+      return url;
+   }
+});
+
+styles &#x3D; Styles.parse(&#x27;border: 1px solid red&#x27;);
+styles.color &#x3D; &#x27;red&#x27;;
+
+console.log(new tinymce.html.StyleSerializer().serialize(styles));</pre>
+		</div>
+
+
+
+
+
+	<div class="methods">
+		<h2>Methods</h2>
+		<table>
+			<thead class="small">
+				<tr>
+					<th class="first">Method</th>
+					<th class="last">Defined By</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/html/styles/parse/" class="member">parse</a></div>
+						<div>Parses the specified style value into an object collection</div>
+					</td>
+					<td class="last">
+							tinymce.html.Styles
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/html/styles/serialize/" class="member">serialize</a></div>
+						<div>Serializes the specified style object into a string</div>
+					</td>
+					<td class="last">
+							tinymce.html.Styles
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/html/styles/tohex/" class="member">toHex</a></div>
+						<div>Parses the specified RGB color value and returns a hex version of that color</div>
+					</td>
+					<td class="last">
+							tinymce.html.Styles
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+</div>

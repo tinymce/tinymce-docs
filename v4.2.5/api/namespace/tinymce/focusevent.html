@@ -1,0 +1,151 @@
+---
+layout: default
+title: tinymce.FocusEvent
+---
+
+<div class="api classdetails">
+		<div class="classinfo">
+			<table>
+				<tbody>
+					<tr>
+						<td class="first">Inheritance</td>
+						<td class="last">
+							<ul class="inherits">
+								<li class="first">FocusEvent</li>
+								<li><a href="/docs/v4.2.5/api/tinymce/event/">Event</a></li>
+							</ul>
+						</td>
+					</tr>
+
+
+
+				</tbody>
+			</table>
+		</div>
+
+	<div class="description">This class is the event object sent when editors are focused/blurred.</div>
+
+		<div class="examples">
+		<h2>Examples</h2>
+<pre class="js">tinymce.activeEditor.on(&#x27;focus&#x27;, function(e) {
+    console.log(e.blurredEditor);
+});
+
+tinymce.activeEditor.on(&#x27;blur&#x27;, function(e) {
+    console.log(e.focusedEditor);
+});</pre>
+		</div>
+
+
+	<div class="properties">
+		<h2>Properties</h2>
+		<table>
+			<thead class="small">
+				<tr>
+					<th class="first">Property</th>
+					<th class="last">Defined By</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/focusevent/blurrededitor/" class="member">blurredEditor</a></div>
+						<div>Optional editor instance that got blurred when the focus event occurs</div>
+					</td>
+					<td class="last">
+							tinymce.FocusEvent
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/focusevent/focusededitor/" class="member">focusedEditor</a></div>
+						<div>Optional editor instance that got the focus when the blur event occurs</div>
+					</td>
+					<td class="last">
+							tinymce.FocusEvent
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/event/type/" class="member">type</a></div>
+						<div>The event type name for example &quot;click&quot;</div>
+					</td>
+					<td class="last">
+							<a href="/docs/v4.2.5/api/tinymce/event/">tinymce.Event</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+
+
+	<div class="methods">
+		<h2>Methods</h2>
+		<table>
+			<thead class="small">
+				<tr>
+					<th class="first">Method</th>
+					<th class="last">Defined By</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/event/isdefaultprevented/" class="member">isDefaultPrevented</a></div>
+						<div>Returns true/false if the default action is to be prevented or not</div>
+					</td>
+					<td class="last">
+							<a href="/docs/v4.2.5/api/tinymce/event/">tinymce.Event</a>
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/event/isimmediatepropagationstopped/" class="member">isImmediatePropagationStopped</a></div>
+						<div>Returns true/false if the event immediate propagation is stopped or not</div>
+					</td>
+					<td class="last">
+							<a href="/docs/v4.2.5/api/tinymce/event/">tinymce.Event</a>
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/event/ispropagationstopped/" class="member">isPropagationStopped</a></div>
+						<div>Returns true/false if the event propagation is stopped or not</div>
+					</td>
+					<td class="last">
+							<a href="/docs/v4.2.5/api/tinymce/event/">tinymce.Event</a>
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/event/preventdefault/" class="member">preventDefault</a></div>
+						<div>Prevents the default action of an event to be executed</div>
+					</td>
+					<td class="last">
+							<a href="/docs/v4.2.5/api/tinymce/event/">tinymce.Event</a>
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/event/stopimmediatepropagation/" class="member">stopImmediatePropagation</a></div>
+						<div>Prevents the event from propagating to listeners on the same object</div>
+					</td>
+					<td class="last">
+							<a href="/docs/v4.2.5/api/tinymce/event/">tinymce.Event</a>
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/event/stoppropagation/" class="member">stopPropagation</a></div>
+						<div>Stops the event from propagating up to listeners on parent objects</div>
+					</td>
+					<td class="last">
+							<a href="/docs/v4.2.5/api/tinymce/event/">tinymce.Event</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+</div>

@@ -1,0 +1,110 @@
+---
+layout: default
+title: tinymce.util.LocalStorage
+---
+
+<div class="api classdetails">
+
+	<div class="description">This class will simulate LocalStorage on IE 7 and return the native version on modern browsers.
+Storage is done using userData on IE 7 and a special serialization format. The format is designed
+to be as small as possible by making sure that the keys and values doesn&#x27;t need to be encoded. This
+makes it possible to store for example HTML data.
+
+Storage format for userData:
+&lt;base 32 key length&gt;,&lt;key string&gt;,&lt;base 32 value length&gt;,&lt;value&gt;,...
+
+For example this data key1&#x3D;value1,key2&#x3D;value2 would be:
+4,key1,6,value1,4,key2,6,value2</div>
+
+		<div class="examples">
+		<h2>Examples</h2>
+<pre class="js">tinymce.util.LocalStorage.setItem(&#x27;key&#x27;, &#x27;value&#x27;);
+var value &#x3D; tinymce.util.LocalStorage.getItem(&#x27;key&#x27;);</pre>
+		</div>
+
+
+	<div class="properties">
+		<h2>Properties</h2>
+		<table>
+			<thead class="small">
+				<tr>
+					<th class="first">Property</th>
+					<th class="last">Defined By</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/util/localstorage/length/static/" class="member">length</a> <span class="static">static</span></div>
+						<div>Length of the number of items in storage</div>
+					</td>
+					<td class="last">
+							tinymce.util.LocalStorage
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+
+
+	<div class="methods">
+		<h2>Methods</h2>
+		<table>
+			<thead class="small">
+				<tr>
+					<th class="first">Method</th>
+					<th class="last">Defined By</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/util/localstorage/clear/static/" class="member">clear</a> <span class="static">static</span></div>
+						<div>Removes all items</div>
+					</td>
+					<td class="last">
+							tinymce.util.LocalStorage
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/util/localstorage/getitem/static/" class="member">getItem</a> <span class="static">static</span></div>
+						<div>Returns the value if the specified key or null if it wasn&#x27;t found</div>
+					</td>
+					<td class="last">
+							tinymce.util.LocalStorage
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/util/localstorage/key/static/" class="member">key</a> <span class="static">static</span></div>
+						<div>Returns the key name by index</div>
+					</td>
+					<td class="last">
+							tinymce.util.LocalStorage
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/util/localstorage/removeitem/static/" class="member">removeItem</a> <span class="static">static</span></div>
+						<div>Removes the specified item by key</div>
+					</td>
+					<td class="last">
+							tinymce.util.LocalStorage
+					</td>
+				</tr>
+				<tr>
+					<td class="first">
+							<div><a href="/docs/v4.2.5/api/tinymce/util/localstorage/setitem/static/" class="member">setItem</a> <span class="static">static</span></div>
+						<div>Sets the value of the specified item by it&#x27;s key</div>
+					</td>
+					<td class="last">
+							tinymce.util.LocalStorage
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+</div>

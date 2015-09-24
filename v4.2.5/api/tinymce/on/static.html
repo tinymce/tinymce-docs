@@ -1,0 +1,62 @@
+---
+layout: default
+title: tinymce.on
+---
+
+<div class="api methoddetails">
+	<div class="syntax"><span>public function on(name:String, callback:callback, first:Boolean):Object</span></div>
+	<div class="details">Binds an event listener to a specific event by name.</div>
+
+		<div class="examples">
+		<h2>Examples</h2>
+			<pre class="js">instance.on(&#x27;event&#x27;, function(e) {
+    // Callback logic
+});</pre>
+		</div>
+
+	<div class="params">
+		<h2>Params</h2>
+		<table>
+			<thead class="small">
+				<tr>
+					<th class="first">Name</th>
+					<th>Type</th>
+					<th class="last">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="first">name</td>
+					<td>
+								String
+					</td>
+					<td class="last">Event name or space separated list of events to bind.</td>
+				</tr>
+				<tr>
+					<td class="first">callback</td>
+					<td>
+								callback
+					</td>
+					<td class="last">Callback to be executed when the event occurs.</td>
+				</tr>
+				<tr>
+					<td class="first">first</td>
+					<td>
+								Boolean
+					</td>
+					<td class="last">Optional flag if the event should be prepended. Use this with care.</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+	<div class="returns">
+		<h2>Returns</h2>
+		<div>
+						Object
+
+				Current class instance.
+		</div>
+	</div>
+
+</div>

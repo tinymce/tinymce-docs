@@ -1,35 +1,33 @@
-- title: Getting Started
-  pages:
-    - title: Installation
-    - title: Basic Configuration
-    - title: Inline
+  - title: Getting Started
+    pages:
+      - title: Installation
+      - title: Basic Configuration
+      - title: Inline
 
-- title: Configuration
-  pages:
-    - title: General
-      pages:
-        - title: selector
-        - title: auto_focus
-        - title: br_in_pre
-        - title: directionality
-    - title: Cleanup & Output
-      pages:
-        - title: allow_conditional_comments
-        - title: allow_html_in_named_anchor
+  - title: Configuration
+    pages:
+      - title: General
+        pages:
+          - title: selector
+          - title: auto_focus
+          - title: br_in_pre
+          - title: directionality
+      - title: Cleanup & Output
+        pages:
+          - title: allow_conditional_comments
+          - title: allow_html_in_named_anchor
 
-- title: Using TinyMCE
-  pages:
-    - title: Advanced Configuration
-    - title: Creating a Plugin
-    - title: Creating a Skin
-    - title: Creating Custom Dialogs
-    - title: Handling Asynchronous Image Uploads
-    - title: Migration Guide From 3x
-    - title: TinyMCE in a Bootstrap Dialog
-    - title: TinyMCE in a jQuery UI Dialog
-    - title: Using CDN
-    - title: Using the Gzip Compressors
+  - title: Using TinyMCE
+    pages:
+      - title: Advanced Configuration
+      - title: Creating a Plugin
+      - title: Creating a Skin
+      - title: Creating Custom Dialogs
+      - title: Handling Asynchronous Image Uploads
+      - title: Migration Guide From 3x
+      - title: TinyMCE in a Bootstrap Dialog
+      - title: TinyMCE in a jQuery UI Dialog
+      - title: Using CDN
+      - title: Using the Gzip Compressors
 
-- title: JavaScript API
-
-- title: Other Versions
+  - title: JavaScript API

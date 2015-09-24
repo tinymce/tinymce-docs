@@ -1,0 +1,50 @@
+---
+layout: default
+title: tinymce.dom.Selection.getContent
+---
+
+<div class="api methoddetails">
+	<div class="syntax"><span>public function getContent(s:Object):String</span></div>
+	<div class="details">Returns the selected contents using the DOM serializer passed in to this class.</div>
+
+		<div class="examples">
+		<h2>Examples</h2>
+			<pre class="js">// Alerts the currently selected contents
+alert(tinymce.activeEditor.selection.getContent());
+
+// Alerts the currently selected contents as plain text
+alert(tinymce.activeEditor.selection.getContent({format: &#x27;text&#x27;}));</pre>
+		</div>
+
+	<div class="params">
+		<h2>Params</h2>
+		<table>
+			<thead class="small">
+				<tr>
+					<th class="first">Name</th>
+					<th>Type</th>
+					<th class="last">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="first">s</td>
+					<td>
+								Object
+					</td>
+					<td class="last">Optional settings class with for example output format text or html.</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+	<div class="returns">
+		<h2>Returns</h2>
+		<div>
+						String
+
+				Selected contents in for example HTML format.
+		</div>
+	</div>
+
+</div>

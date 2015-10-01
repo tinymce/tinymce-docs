@@ -1,7 +1,8 @@
 ## TinyMCE documentation
 
-    $ gem install jekyll -v 2.4.0
-    $ ./build.sh v4.2.5
+    $ gem install bundle
+    $ bundle install
+    $ ./build.sh
 
 For local development:
 

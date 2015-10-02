@@ -1,50 +1,56 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
-	<head>
-		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-		<title>TinyMCE - {{ page.title }}</title>
-		<meta name="author" content="Joshua Haines" />
-		<link href="{{site.baseurl}}/assets/css/theme.css" rel="stylesheet">
-    <link href="{{site.baseurl}}/assets/bootstrap-3.3.5-dist/css/bootstrap.min.css" rel="stylesheet">
-		<link href="{{site.baseurl}}/assets/bootstrap-3.3.5-dist/css/bootstrap-theme.min.css" rel="stylesheet" >
-	</head>
-	<body role="document">
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>TinyMCE - {{ page.title }}</title>
+  <link href="https://bootswatch.com/readable/bootstrap.min.css" rel="stylesheet">
+  <link href="{{site.baseurl}}/css/main.css" rel="stylesheet">
+  {{ if page.css }}
+  <link href="{{page.css}}/css/{{page.css}}" rel="stylesheet">
+  {{ endif }}
+</head>
+<body role="document">
 
-		<!-- Fixed navbar -->
-		<nav class="navbar navbar-inverse navbar-fixed-top">
-		    <div class="container">
-		        <div class="navbar-header">
-		            <a class="navbar-brand" href="#">TinyMCE</a>
-		        </div>
-		        <div id="navbar" class="navbar-collapse collapse">
-		            <ul class="nav navbar-nav">
-		                <li><a href="#">Home</a></li>
-		                <li><a href="#">Try It</a></li>
-		                <li><a href="#">Download</a></li>
-		                <li class="active"><a href="#">Documentation</a></li>
-		                <li><a href="#">Enterprise</a></li>
-		                <li><a href="#">Develop</a></li>
-		                <li><a href="#">Forum</a></li>
-		            </ul>
-		        </div>
-		        <!--/.nav-collapse -->
-		    </div>
-		</nav>
+  <nav class="navbar navbar-inverse">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">TinyMCE</a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Try It</a></li>
+          <li><a href="#">Download</a></li>
+          <li class="active"><a href="#">Documentation</a></li>
+          <li><a href="#">Enterprise</a></li>
+          <li><a href="#">Develop</a></li>
+          <li><a href="#">Forum</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
-		<div class="container theme-showcase" role="main">
+  <div class="container theme-showcase" role="main">
+    <div class="col-xs-9">
+      <h1>{{ page.title }}</h1>
+      {{ content }}
+    </div>
+    <div class="col-xs-3">
+      <div style="position: fixed" id="sidebar">
+        {% include nav.html pages=site.data.nav precedingaddress="/" %}
+      </div>
+    </div>
 
-			<div class="col-xs-9">
-				<h1>{{ page.title }}</h1>
-				{{ content }}
-			</div>
-			<div class="col-xs-3">
-				<div style="position: fixed" id="sidebar">
-					{% include nav.html pages=site.data.nav precedingaddress="/"%}
-				</div>
-			</div>
-		</div>
+		<footer class="col-xs-12">
+			<h4>Footer</h4>
+			<ul>
+				<li>Disqus</li>
+				<li>footer</li>
+				<li>github</li>
+				<li>helpful (YES/NO) -> NO -> Github Issue</li>
+			<ul>
+		</footer>
 
-		<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
-  	<script src="{{site.baseurl}}/assets/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
-	</body>
+  </div>
+</body>
 </html>

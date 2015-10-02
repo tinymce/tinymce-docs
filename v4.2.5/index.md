@@ -9,7 +9,7 @@ redirect_from:
 Drop in replacemant for your text area
 
 > Step 4: Saving Content with a <form> POST
-> When the form is submitted, the TinyMCE editor mimics the behaviour of a normal HTML <textarea> during a form POST.  No additional configuration is required.
+> When the form is submitted, the TinyMCE editor mimics the behaviour of a normal HTML &lt;textarea> during a form POST.  No additional configuration is required.
 
 # Download link
 
@@ -18,9 +18,3 @@ Drop in replacemant for your text area
 * API Reference
 * Examples
 * Tutorials ?? Maybe in the future? If we find a consistent problem on forums for example!
-
-Footer:
-* Disqus
-* footer
-* github
-* helpful (YES/NO) -> NO -> Github Issue

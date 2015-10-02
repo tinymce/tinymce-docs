@@ -1,7 +1,7 @@
 exclude: [Gemfile, Gemfile.lock]
 permalink: pretty
 baseurl: /docs
-exclude: [docs, README.md, Gemfile, Gemfile.lock, build.sh]
+exclude: [docs, README.md, Gemfile, Gemfile.lock, build.sh, v*/nav.yml]
 
 gems:
   - jekyll-redirect-from

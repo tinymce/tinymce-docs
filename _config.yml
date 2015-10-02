@@ -2,6 +2,8 @@ exclude: [Gemfile, Gemfile.lock]
 permalink: pretty
 baseurl: /docs
 exclude: [docs, README.md, Gemfile, Gemfile.lock, build.sh, v*/nav.yml]
+env: production
 
 gems:
   - jekyll-redirect-from
+  - octopress-minify-html

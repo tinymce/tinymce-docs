@@ -5,8 +5,9 @@
   <title>TinyMCE - {{ page.title }}</title>
   <link href="https://bootswatch.com/readable/bootstrap.min.css" rel="stylesheet">
   <link href="{{site.baseurl}}/css/main.css" rel="stylesheet">
+  <link href="{{site.baseurl}}/css/syntax.css" rel="stylesheet">
   {{ if page.css }}
-  <link href="{{page.css}}/css/{{page.css}}" rel="stylesheet">
+  <link href="{{site.baseurl}}/css/{{page.css}}" rel="stylesheet">
   {{ endif }}
 </head>
 <body role="document">

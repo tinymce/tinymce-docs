@@ -6,6 +6,6 @@
 
 For local development:
 
-    $ jekyll serve --destination docs
+    $ ./build.sh --serve
 
 Navigate to http://127.0.0.1:4000/docs/

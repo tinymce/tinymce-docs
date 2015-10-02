@@ -3,59 +3,36 @@ layout: default
 title: General
 ---
 
-{% highlight javascript %}
-/*!
- * webapp.js
- * Created by Kilian Ciuffolo on Nov 11, 2014
- * (c) 2014-2015
- */
+## auto_focus
 
-'use strict'
+http://jekyllrb.com/docs/configuration/#redcarpet
 
-const debug = require('debug')('rtail:webapp')
-const get = require('request').defaults({ encoding: null })
+> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
-// serve frontend from s3
-module.exports = function webapp(opts) {
-  let cache = Object.create(null)
-  let cacheTTL = opts.ttl
-  let s3 = opts.s3
+```js
+var foo = "bar";
 
-  /*!
-   * wipes out cache every cacheTTL ms
-   */
-  setInterval(function () {
-    cache = Object.create(null)
-    debug('cleared cache')
-  }, cacheTTL)
-
-  /*!
-   * middleware
-   */
-  return function (req, res) {
-    if (cache[req.path]) {
-      return serveCache(req, res)
-    }
-
-    debug('caching %s', req.path)
-
-    get(s3 + req.path, function (err, s3res, body) {
-      cache[req.path] = {
-        headers: s3res.headers,
-        body: body
-      }
-
-      serveCache(req, res)
-    })
-  }
-
-  /*!
-   * serves req from cache
-   */
-  function serveCache(req, res) {
-    debug('serving from cache %s', req.path)
-    res.writeHead(200, cache[req.path].headers)
-    res.end(cache[req.path].body)
-  }
+for (var i = 0; i < array.length; i++) {
+  array[i]
 }
-{% endhighlight %}
+
+const FOO = new Foo()
+
+tinymce.init({
+    selector: "textarea",
+    plugins: [
+        "advlist autolink lists link image charmap print preview anchor",
+        "searchreplace visualblocks code fullscreen",
+        "insertdatetime media table contextmenu paste"
+    ],
+    toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
+});
+```
+
+## br_in_pre
+
+> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+![](http://i.giphy.com/WCwFvyeb6WJna.gif)
+
+<script src="https://gist.github.com/kilianc/3f623f1b311d57c42fd3.js"></script>

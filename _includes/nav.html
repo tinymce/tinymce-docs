@@ -1,19 +1,24 @@
 <ul class="nav nav-stacked">
 {% for item in include.pages %}
-	{% assign slug = item.title | downcase | replace: ' ', '-' | replace:'-&-','-' %}
-	{% capture endslashslug %}{{ slug }}/{% endcapture %}
-	{% capture bothslashslug %}/{{ slug }}/{% endcapture %}
-    {% if page.url contains bothslashslug %}
-    	{% assign active = 'active' %}
-    {% else %}
-    	{% assign active = nil %}
-    {% endif %}
-	{% capture address %}{{ include.precedingaddress }}{{ endslashslug }}{% endcapture %}
-    <li class="{{ active }}">
-        <a href="{{ site.baseurl }}{{ address }}">{{ item.title }}</a>
-    </li>
-    {% if item.pages %}
-        {% include nav.html pages=item.pages precedingaddress=address%}
-    {% endif %}
+	{% assign slug = item.title | downcase | replace: ' ', '-' | replace:'-&-','-' | replace:'/','-' %}
+	{% assign slug_slash = slug | append:'/' %}
+	{% assign slash_slug_slash = slug_slash | prepend:'/' %}
+
+  {% if page.url contains slash_slug_slash %}
+  <li class="active">
+  {% else %}
+  <li>
+  {% endif %}
+		{% if slug contains '#' %}
+			{% capture address %}{{ include.preceding_address }}{{ slug }}{% endcapture %}
+		{% else %}
+			{% capture address %}{{ include.preceding_address }}{{ slug_slash }}{% endcapture %}
+		{% endif %}
+    <a url="{{page.url}}" href="{{ site.baseurl }}{{ address }}">{{ item.title | remove:'#' }}</a>
+  </li>
+
+  {% if item.pages %}
+    {% include nav.html pages=item.pages preceding_address=address %}
+  {% endif %}
 {% endfor %}
 </ul>

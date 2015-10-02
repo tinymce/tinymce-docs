@@ -1,8 +1,24 @@
-exclude: [Gemfile, Gemfile.lock]
 permalink: pretty
 baseurl: /docs
-exclude: [docs, README.md, Gemfile, Gemfile.lock, build.sh, v*/nav.yml]
-env: production
+exclude:
+  - docs
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - build.sh
+  - v*/nav.yml
+
+markdown: redcarpet
+
+kramdown:
+  input: GFM
+
+redcarpet:
+  extensions:
+    - autolink
+    - highlighter
+    - no_intra_emphasis
+    - tables
 
 gems:
   - jekyll-redirect-from

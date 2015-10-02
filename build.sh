@@ -10,7 +10,7 @@ DESTINATION="docs"
 rm -rf $DESTINATION
 cat v*/nav.yml > _data/nav.yml
 
-if [ $1 == "--serve" ]; then
+if [[ $1 == "--serve" ]]; then
   jekyll serve --destination $DESTINATION
 else
   jekyll build --destination $DESTINATION

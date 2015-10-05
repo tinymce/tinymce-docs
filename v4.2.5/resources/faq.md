@@ -3,8 +3,8 @@ layout: default
 title: FAQ
 ---
 
-* See http://www.tinymce.com/wiki.php/FAQ.
-* We should look into the forums and research for most common problems or search queries.
+// See http://www.tinymce.com/wiki.php/FAQ.
+// We should look into the forums and research for most common problems or search queries.
 
 ## Q: How do I convert my URLs to relative, absolute, or absolute with domain?
 
@@ -50,11 +50,11 @@ Use the Style Formats option instead, which is much more powerful.
 ```
 style_formats: [
     {title: 'Image Left', selector: 'img', styles: {
-        'float' : 'left', 
+        'float' : 'left',
         'margin': '0 10px 0 10px'
     }},
     {title: 'Image Right', selector: 'img', styles: {
-        'float' : 'right', 
+        'float' : 'right',
         'margin': '0 10px 0 10px'
     }}
 ]
@@ -80,4 +80,3 @@ Protection against XSS attacks needs to be done on the server since if you can s
 ## Q: Why do Buttons/selectboxes have incorrect size?
 
 You are probably using an old DOCTYPE as of TinyMCE 4 a proper HTML5 doctype is required. All web developers should use a standards rendering mode on their web pages. So use a HTML5 doctype like <!DOCTYPE html> to properly render the page and the TinyMCE UI.
-

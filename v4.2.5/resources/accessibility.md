@@ -3,8 +3,8 @@ layout: default
 title: Accessibility
 ---
 
-* See http://www.tinymce.com/wiki.php/Accessibility
-* We should expand this content more.
+// See http://www.tinymce.com/wiki.php/Accessibility
+// We should expand this content more.
 
 As of version 4.0.17 of TinyMCE, we now follow the WAI-ARIA specification, making it compatible with screen readers such as JAWS and NVDA. At the time of writing, we would HIGHLY recommend the use of [NVDA](http://www.nvaccess.org/) together with [Firefox](https://www.mozilla.org/en-US/firefox/products/) for the best Accessibility experience with TinyMCE.
 

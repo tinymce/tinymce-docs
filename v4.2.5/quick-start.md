@@ -16,7 +16,7 @@ title: Quick Start
 
 ## SDK
 
-* http://www.tinymce.com/wiki.php/Installation
+// http://www.tinymce.com/wiki.php/Installation
 
 Getting started with TinyMCE is really easy. In this guide you will initialize TinyMCE on a `<textarea>` as part of an HTML `<form>`. When the `<form>` is submitted, the contents of the TinyMCE editor will be submitted as part of the `<form>` POST.  
 

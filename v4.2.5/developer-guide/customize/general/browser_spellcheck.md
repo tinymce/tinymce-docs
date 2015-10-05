@@ -1,6 +1,6 @@
 ---
 layout: default
-title: broswer_spellcheck
+title: browser_spellcheck
 ---
 
 // http://www.tinymce.com/wiki.php/Configuration:browser_spellcheck

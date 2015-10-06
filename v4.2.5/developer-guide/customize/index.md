@@ -134,7 +134,7 @@ Select what buttons you might want in your toolbar, you can use comma or space a
     ],
 ```
 
-Very powerfull styles configuration, for example, "Bold text" simply makes a <b> tag, "Red Text" makes a span with a style coloring it RED.
+Very powerfull styles configuration, for example, "Bold text" simply makes a &lt;b&gt; tag, "Red Text" makes a span with a style coloring it RED.
 
 The "Table row" can only be applied to a table row (tr).
 
@@ -160,15 +160,15 @@ When using TinyMCE in inline mode it will inherit the CSS stylesheet from the pa
 
 If you had a class like this:
 
-```js
-h1 strong{
+```css
+h1 strong {
     color:orange;
 }
 ```
 
 This would make the phrase "bold text" bold and orange in the structure:
 
-```js
+```html
 <h1>This text is <strong>bold text</strong> in a heading</h1>
 ```
 
@@ -178,11 +178,11 @@ If the user changed the heading to a paragraph or a different heading level then
 
 Enabling inline editing mode is quite simple. Setting the "inline" configuration property to true is all that's needed in combination with a normal selector. An example of this is as follows:
 
-```js
+```html
 <!DOCTYPE html>
 <html>
 <head>
-    <script type="text/javascript" src="<your installation path>/tinymce/tinymce.min.js"></script>
+  <script type="text/javascript" src="<your installation path>/tinymce/tinymce.min.js"></script>
     <script type="text/javascript">
         tinymce.init({
             selector: "#myeditablediv",

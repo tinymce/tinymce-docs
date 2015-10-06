@@ -43,7 +43,7 @@ The full list of configuration options is available here.
 
 Some advanced installation configurations are shown here.
 
-```js
+```html
 <!-- place in header of your html document -->
 <script>
 tinymce.init({

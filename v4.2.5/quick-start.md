@@ -31,7 +31,7 @@ Unzip the package and move the "tinymce/js/tinymce" directory into a web accessi
 
 With TinyMCE accessible via your web server (http://localhost/tinymce/), you can now include the TinyMCE script anywhere you would like to use the TinyMCE editor.
 
-To add the script, add the following inside your page's <head> tag.
+To add the script, add the following inside your page's `<head>` tag.
 
 ```
 <script type="text/javascript" src="<your installation path>/tinymce/tinymce.min.js"></script>
@@ -43,7 +43,7 @@ With the script included, you may then initialize TinyMCE on any element (or ele
 
 TinyMCE lets you identify elements to replace via a CSS3 selector.  To add TinyMCE to a page you pass an object that contains a selector to tinymce.init().
 
-In this example, you will replace <textarea id="mytextarea"> with a TinyMCE editor by passing the selector '#mytextarea' to tinymce.init().
+In this example, you will replace `<textarea id="mytextarea">` with a TinyMCE editor by passing the selector '#mytextarea' to tinymce.init().
 
 ```
 <!DOCTYPE html>
@@ -73,7 +73,7 @@ Next, we'll look at retrieving content as part of a <form> POST.
 
 ### Step 4: Saving Content with a <form> POST
 
-When the form is submitted, the TinyMCE editor mimics the behaviour of a normal HTML <textarea> during a form POST.  No additional configuration is required.
+When the form is submitted, the TinyMCE editor mimics the behaviour of a normal HTML `<textarea>` during a form POST.  No additional configuration is required.
 
 
 ## Bower

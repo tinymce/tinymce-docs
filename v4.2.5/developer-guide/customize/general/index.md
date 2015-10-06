@@ -5,36 +5,29 @@ title: General
 
 ## auto_focus
 
-http://jekyllrb.com/docs/configuration/#redcarpet
+// http://www.tinymce.com/wiki.php/Configuration:auto_focus
 
-> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+> This option enables you to auto focus an editor instance. The value of this option should be an editor instance id. The editor instance id is the id for the original textarea or div element that got replaced.
+
+Example of usage of the auto_focus option:
 
 ```js
-var foo = "bar";
-
-for (var i = 0; i < array.length; i++) {
-  array[i]
-}
-
-const FOO = new Foo()
-
 tinymce.init({
-  selector: "textarea",
-  plugins: [
-    "advlist autolink lists link image charmap print preview anchor",
-    "searchreplace visualblocks code fullscreen",
-    "insertdatetime media table contextmenu paste"
-  ],
-  toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
+  ...
+  auto_focus: "elm1"
 });
 ```
 
-<a name="br_in_pre"></a>
-
 ## br_in_pre
 
-> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+// http://www.tinymce.com/wiki.php/Configuration:br_in_pre
 
-![](http://i.giphy.com/WCwFvyeb6WJna.gif)
+This option allows you to disable TinyMCE's default behaviour when pressing enter within a PRE tag. Pressing enter within a PRE tag will produce a BR tag and will only split PRE tags upon pressing shift+enter when this setting is enabled.
 
-<script src="https://gist.github.com/kilianc/3f623f1b311d57c42fd3.js"></script>
+An example that disables this setting is as follows:
+
+```js
+tinymce.init({
+    br_in_pre: false
+});
+```

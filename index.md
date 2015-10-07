@@ -1,8 +1,6 @@
 ---
 layout: default
 title: Documentation
-redirect_from:
-  - "/"
 ---
 
 # What's TinyMCE

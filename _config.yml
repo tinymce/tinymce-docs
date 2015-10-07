@@ -1,5 +1,5 @@
 permalink: pretty
-baseurl: /docs
+baseurl: ""
 exclude:
   - docs
   - README.md
@@ -7,6 +7,7 @@ exclude:
   - Gemfile.lock
   - build.sh
   - v*/nav.yml
+  - vendor
 
 markdown: redcarpet
 

@@ -355,3 +355,117 @@ tinymce.init({
 ```
 
 For more information on the differences between regular and inline editing modes please see this page [here](http://www.tinymce.com/wiki.php/Inline).
+
+## skin
+
+This option allows you to specify the skin that TinyMCE should use. The default skin included with TinyMCE is named "lightgray".
+
+The name of the skin should match the name of the folder within the skins directory of TinyMCE. If the specified skin is not found, TinyMCE will not load.
+
+```js
+tinymce.init({
+    ...
+    skin: "lightgray",
+    ...
+});
+```
+
+If you would like to create your own skin, please see the guide [here](http://www.tinymce.com/wiki.php/Tutorials:Creating_a_skin).
+
+## skin_url
+
+This option enables you to specify location of the current skin. Enables you to load TinyMCE from one URL for example a CDN then load a local skin on the current server.
+
+Example of usage
+
+```js
+tinymce.init({
+        ...
+        skin_url: '/css/mytinymceskin'
+});
+```
+## theme
+This option allows you to specify the theme that TinyMCE should use. The default theme included with TinyMCE is named "modern".
+
+The name of the theme should match the name of the folder within the themes directory of TinyMCE. If the specified theme is not found, TinyMCE will not load.
+
+```js
+tinymce.init({
+    ...
+    theme: "modern",
+    ...
+});
+```
+
+## theme_url
+
+This option enables you to specify location of the current theme. Enables you to load TinyMCE from one URL for example a CDN then load a local theme on the current server.
+
+Example of usage
+
+```js
+tinymce.init({
+        ...
+        theme_url: '/mytheme/mytheme.js'
+});
+```
+
+## inline
+
+This option allows you to specify whether TinyMCE should work in inline mode.
+
+TinyMCE has two main integration modes - a "traditional" forms based mode and an inline editing mode. The inline editing mode is useful when creating user experiences where you want the editing view of the page to be merged with the reading view of the page. This creates a seamless editing experience and true WYSIWYG behaviour. From a technical perspective, in inline mode, the editor does not replace the selected element with it's own iframe, but instead edits the element's content in place instead.
+
+This option is set through a boolean value, which by default is false.
+
+An example of this setting is as follows:
+
+```js
+tinymce.init({
+    ...
+    inline: true,
+    ...
+});
+```
+
+For more information on the differences between regular and inline editing modes please see this page [here](http://www.tinymce.com/wiki.php/Inline).
+
+## hidden_input
+
+This option gives you the ability to disable the auto generation of hidden input fields for inline editing elements. By default all inline editors gets an hidden input element that contents gets saved to when you do editor.save() or tinymce.triggerSave(); this can be disabled if you don't need these controls.
+
+Example
+
+```js
+tinymce.init({
+    selector: ".editable",
+    inline: true,
+    hidden_input: false
+});
+```
+
+## cache_suffix
+
+This option lets you add a custom cache buster url part at the end of each request tinymce makes to load CSS, scripts etc. Just add the query string part you want to append to each URL request for example "?v=4.1.6"
+
+Example of usage
+
+```js
+tinymce.init({
+    ...
+    cache_suffix: "?v=4.1.6"
+});
+```
+
+## automatic_uploads
+
+This option allows you to disable TinyMCE from automatically uploading local images. This option is set true by default.
+
+An example that disables this setting is as follows:
+
+```js
+tinymce.init({
+        ...
+        automatic_uploads: false
+});
+```

@@ -4,6 +4,7 @@ title: Customize
 ---
 
 // Explanation of how config/customization works, how plugins/control work and some example
+
 // Maybe the index as well?
 
 // Replicate Wiki content on this page: basic configuration, advanced, inline  

@@ -227,3 +227,91 @@ The available language codes for use with this option are as follows:
 |Welsh                         |cy      |
 
 If a language you need is not available, you may wish to translate it yourself. To join in on translating TinyMCE, go to our [Transifex translation](https://www.transifex.com/projects/p/tinymce/) page and sign up, then request to join a team or create a new team if your language are not listed.
+
+
+##language_url
+
+A simple URL to where the language file to use.
+
+We recommend using a site absolute URL, for example:
+
+```js
+language_url : '/languages/fi.js'
+```
+
+You can find and download languages [here](http://www.tinymce.com/i18n/).
+
+## nowrap
+
+This option will make the editable are behave like very much like a &lt;pre&gt; tag, and add a scroll instead of wrapping text.
+
+```js
+tinymce.init({
+...
+nowrap : true
+});
+```
+
+Boolean value, default **false**.
+
+## object_resizing
+This options allows you to turn on/off the resizing handles on images, tables or media objects. This option is enabled by default and allows you to resize table and images. You can also specify a CSS3 selector of what you want to enable resizing on.
+
+Disable all resizing of images/tables
+
+```js
+tinymce.init({
+        ...
+        object_resizing : false
+});
+```
+
+Enable resizing on images only
+
+```js
+tinymce.init({
+        ...
+        object_resizing : "img"
+});
+```
+
+## plugins
+
+This option allows you to specify which plugins TinyMCE will attempt to load when starting up.
+
+By default, TinyMCE will not load any plugins.
+
+[Check this documentation page for a list of available plugins.](http://www.tinymce.com/wiki.php/Plugins)
+
+This should be a space separated string.
+
+An example of this setting is as follows:
+
+```js
+tinymce.init({
+    ...
+    plugins : 'advlist autolink link image lists charmap print preview'
+    ...
+});
+```
+
+## external_plugins
+
+This option allows you to specify a URL based location of plugins outside of the normal TinyMCE plugins directory.
+
+TinyMCE will attempt to load these as per regular plugins when starting up.  This option is useful when loading TinyMCE from a CDN or when you want to have the TinyMCE directory separate from your custom plugins.
+
+This value should be set as a javascript object that contains a property for each TinyMCE plugin to be loaded. This property should be named after the plugin and should have a value that contains the location that the plugin that will be loaded from.
+
+An example of this setting is as follows:
+
+```js
+tinymce.init({
+    ...
+    external_plugins: {
+        "testing": "http://www.testing.com/plugin.min.js",
+        "maths": "http://www.maths.com/plugin.min.js"
+    },
+    ...
+});
+```

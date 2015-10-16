@@ -288,9 +288,9 @@ tinymce.init({
 
 // This plugin adds the following controls:
 
-// toolbar
+// toolbar controls
 
-// menu
+// menu controls
 
 This plugin adds a charmap menu item and button that enables you to insert special characters.
 
@@ -308,9 +308,9 @@ tinymce.init({
 
 // This plugin adds the following controls:
 
-// toolbar
+// toolbar controls
 
-// menu
+// menu controls
 
 This plugin adds a core menu item or button that allows you to edit the HTML code.
 
@@ -443,7 +443,7 @@ tinymce.init({
 
 // This plugin adds the following controls:
 
-// toolbar
+// toolbar controls
 
 This plugin adds directionality icons to TinyMCE that enables TinyMCE to better handle languages that written from right to left.
 
@@ -467,7 +467,7 @@ tinymce.init({
 
 // This plugin adds the following controls:
 
-// toolbar
+// toolbar controls
 
 The emoticons plugin is able to insert smiley images into the TinyMCE editable area.
 
@@ -644,9 +644,9 @@ tinymce.init({
 
 // This plugin adds the following controls:
 
-// toolbar
+// toolbar controls
 
-// menu
+// menu controls
 
 This plugin adds fullscreen editing mode to TinyMCE.
 
@@ -665,9 +665,9 @@ tinymce.init({
 
 // This plugin adds the following controls:
 
-// toolbar
+// toolbar controls
 
-// menu
+// menu controls
 
 This plugin adds a menu item and button control that allows you to insert a horizontal ruler on page.
 
@@ -685,9 +685,9 @@ tinymce.init({
 
 // This plugin adds the following controls:
 
-// toolbar
+// toolbar controls
 
-// menu
+// menu controls
 
 This plugin adds a insert image button and menu item.
 
@@ -1096,9 +1096,9 @@ tinymce.init({
 
 // This plugin adds the following controls:
 
-// toolbar
+// toolbar controls
 
-// menu
+// menu controls
 
 Initialization Example
 
@@ -1219,9 +1219,9 @@ tinymce.init({
 
 // This plugin adds the following controls:
 
-// toolbar
+// toolbar controls
 
-// menu
+// menu controls
 
 These settings affect the execution of the Link plugin. Predefined links, targets and more can be specified here.
 
@@ -1403,6 +1403,12 @@ tinymce.init({
 
 # media Plugin
 
+// This plugin adds the following controls:
+
+// toolbar controls
+
+// menu controls
+
 This plugin adds the ability to add HTML5 video and audio elements to TinyMCE.
 
 Initialization Example
@@ -1526,8 +1532,23 @@ tinymce.init({
 
 
 
+# moxiemanager Control
+
+The moxiemanager Control enables users to insert files located externally to the editor (e.g. on their client desktop) into their document.
+
+Important note: moxiemanager is an application separate from TinyMCE and not a "plugin". However, being built by the team behind TinyMCE it has tight integration with TinyMCE as a toolbar control.
+
+moxiemanager is a paid addition to TinyMCE. You can learn more at [http://www.moxiemanager.com/](http://www.moxiemanager.com/)
+
+
 
 # nonbreaking Plugin
+
+// This plugin adds the following controls:
+
+// toolbar controls
+
+// menu controls
 
 This plugin adds a button for inserting nonbreaking space entities `&nbsp;` at the current caret location.
 
@@ -1663,6 +1684,12 @@ tinymce.init({
 
 # pagebreak Plugin
 
+// This plugin adds the following controls:
+
+// toolbar controls
+
+// menu controls
+
 Adds pagebreak support, some CMS systems uses a special separator to break the contents into pages. This plugin enables you to insert such page breaks in the editor.
 
 Initialization Example
@@ -1708,6 +1735,12 @@ tinymce.init({
 
 
 # paste Plugin
+
+// This plugin adds the following controls:
+
+// toolbar controls
+
+// menu controls
 
 This plugin will filter/cleanup contents pasted from Word.
 
@@ -1878,6 +1911,12 @@ tinymce.init({
 
 # preview Plugin
 
+// This plugin adds the following controls:
+
+// toolbar controls
+
+// menu controls
+
 This plugin adds a preview button to TinyMCE, pressing the button opens a popup showing the current content. Installation Instructions
 
 Initialization Example
@@ -1923,6 +1962,12 @@ tinymce.init({
 
 # print Plugin
 
+// This plugin adds the following controls:
+
+// toolbar controls
+
+// menu controls
+
 This plugin adds a print button to TinyMCE. Installation Instructions
 
 Initialization Example
@@ -1937,6 +1982,10 @@ tinymce.init({
 
 
 # save Plugin
+
+// This plugin adds the following controls:
+
+// toolbar controls
 
 This plugin adds a save button to TinyMCE this save button will submit the form that the editor is within.
 
@@ -2012,6 +2061,12 @@ tinymce.init({
 
 # searchreplace Plugin
 
+// This plugin adds the following controls:
+
+// toolbar controls
+
+// menu controls
+
 This plugin adds search/replace dialogs to TinyMCE.
 
 Initialization Example
@@ -2026,6 +2081,12 @@ tinymce.init({
 
 
 # spellchecker Plugin
+
+// This plugin adds the following controls:
+
+// toolbar controls
+
+// menu controls
 
 This plugin adds a spellchecker icon and menu item.
 
@@ -2213,6 +2274,12 @@ tinymce.init({
 
 # table Plugin
 
+// This plugin adds the following controls:
+
+// toolbar controls
+
+// menu controls
+
 This plugin adds table management functionality to TinyMCE.
 
 Initialization Example
@@ -2393,7 +2460,9 @@ tinymce.init({
 
 
 
-# template Plugin
+# template Control
+
+// Template is a Toolbar Control not a plugin.
 
 This plugin adds support for custom templates. There are two types of files this plugin supports: templates and snippets.
 
@@ -2673,6 +2742,10 @@ Template dialog height, defaults to 500.
 
 # textcolor Plugin
 
+// This plugin adds the following controls:
+
+// toolbar controls
+
 This plugin adds the forecolor/backcolor button controls that enable you to pick colors from a color picker and apply these to text.
 
 Initialization Example
@@ -2779,6 +2852,13 @@ tinymce.init({
 
 
 # visualblocks Plugin
+
+// This plugin adds the following controls:
+
+// toolbar controls
+
+// menu controls
+
 This plugin adds a button and menu item that allows you to see block elements in the editor.
 
 Initialization Example
@@ -2810,6 +2890,12 @@ tinymce.init({
 
 
 # visualchars Plugin
+
+// This plugin adds the following controls:
+
+// toolbar controls
+
+// menu controls
 
 This plugin adds the possibility to see invisible characters like `&nbsp;`.
 

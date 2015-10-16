@@ -36,9 +36,11 @@ If you're using TinyMCE with Bootstrap you'll override the built in block on `fo
 ## TinyMCE in a jQuery UI dialog
 You need to add some custom logic when rendering TinyMCE instances inside jQuery UI dialogs since it blocks all focus in calls of elements outside the dialog. [Check this fiddle out](tinymce_in_a_jquery_ui_dialog) for a working example.
 
+// [Link to page, embed external fiddle into this page](tinymce_in_a_jquery_ui_dialog)
+
 
 ## Using CDN
-This is a tutorial on the old site. Move to install pages/section.
+// This is a tutorial on the old site. Move to install pages/section. [Here's content anyway](using_cdn)
 
 
 ## Using the gzip compressors

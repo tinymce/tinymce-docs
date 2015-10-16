@@ -5,13 +5,13 @@ title: Creating a Plugin
 
 Creating plugins in TinyMCE is pretty simple this tutorial tries to outline some of the basic concepts of creating a plugin. For more details consult the API documentation and check the existing plugins we ship with the core.
 
-## File Structure
+#### File Structure
 
 To create a plugin you need to create a directory in the tinymce plugins directory. TinyMCE will load the plugin.js file if you use the tinymce.js file in your page. If you use the tinymce.min.js file it will load the plugin.min.js file. It's recommended to use the tinymce.js file while developing then have a build script minifying the plugin.js into plugin.min.js for production usage.
 
 The build scripts that comes with the dev package of TinyMCE will automatically build all plugins including your custom ones.
 
-## Example of the plugin file structure
+#### Example of the plugin file structure
 
 ```
 /tinymce/plugins/example/plugin.js
@@ -20,7 +20,7 @@ The build scripts that comes with the dev package of TinyMCE will automatically 
 
 This new example plugin can now be loaded using the tinymce.init plugins option.
 
-```
+```js
 tinymce.init({
     selector: 'textarea',
     plugins: 'example'
@@ -29,9 +29,9 @@ tinymce.init({
 
 You can also have the plugin in any location you want by loading the plugin.js/plugin.min.js files directly after the tinymce.js/tinymce.min.js.
 
-## Example of loading the plugin from another url
+#### Example of loading the plugin from another url
 
-```
+```html
 <script src="/tinymce/js/tinymce.min.js"></script>
 <script src="/scripts/my.tinymce.plugin.js"></script>
 <script>
@@ -39,11 +39,11 @@ tinymce.init({..});
 </script>
 ```
 
-## Example plugin
+#### Example plugin
 
 Here is an example plugin showing how you add a simple toolbar button and menu item. The button opens a dialog that lets you type in a title that gets inserted into the editor. The menu item will open the tinymce site in a dialog.
 
-```
+```js
 tinymce.PluginManager.add('example', function(editor, url) {
     // Add a button that opens a window
     editor.addButton('example', {
@@ -85,11 +85,11 @@ tinymce.PluginManager.add('example', function(editor, url) {
 });
 ```
 
-## Example init
+#### Example init
 
 Here is a example on how to use the new toolbar button.
 
-```
+```js
 tinymce.init({
     selector: 'textarea',
     plugins: 'example',
@@ -97,15 +97,15 @@ tinymce.init({
 });
 ```
 
-## Internationalization
+#### Internationalization
 
 If you want to have custom translations for your plugin you need to create a "langs" directory in your plugin directory. TinyMCE will then try to load language files based on the specified language core for example if the language is "sv_SE" it will try to load "<your plugin>/langs/sv_SE.js".
 
 This file is similar to .po files it has the English string on the left side and the translated string on the right side.
 
-## Example of a Swedish translation for the dialog title
+#### Example of a Swedish translation for the dialog title
 
-```
+```js
 tinymce.addI18n('sv_SE', {
     "Example plugin": "Exempel plugin"
 });
@@ -113,6 +113,6 @@ tinymce.addI18n('sv_SE', {
 
 Sometimes you don't have all the translations that the full TinyMCE package has this would result in a 404 error while loading the non existing file. This can be avoided by adding this line to the top of your plugin file.
 
-```
+```js
 tinymce.PluginManager.requireLangPack('example', 'sv_SE,de_AT');
 ```

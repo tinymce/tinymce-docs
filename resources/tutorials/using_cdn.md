@@ -3,11 +3,15 @@ layout: default
 title: Using CDN
 ---
 
-Cachefly is sponsoring the CDN hosting of TinyMCE, to use it, simply include this line of code into your HTML page.
+The easiest way to get started with TinyMCE is to use our CDN. Simply include this line of code in your HTML page to get started.
 
 ```html
 <script src="//tinymce.cachefly.net/4.0/tinymce.min.js"></script>
 ```
+
+While we're at it a big shout out to [Cachefly](http://www.cachefly.com/) who sponsors the CDN hosting of TinyMCE.
+
+#### Additional Information About Using the CDN
 
 There are a few special things you need to take in consideration when using the CDN version, first of all, if you wish to use any local plugins (like [MoxieManager](http://www.moxiemanager.com/?_ga=1.50414505.1485359142.1444845779) for example) you need to load them using the new option called:
 

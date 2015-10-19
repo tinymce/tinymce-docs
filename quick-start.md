@@ -6,7 +6,16 @@ title: Quick Start
 # Step 1
 
 ## CDN
-// todo
+
+The easiest way to get started with TinyMCE is to use our CDN. Simply include this line of code in your HTML page to get started&#42;.
+
+```html
+<script src="//tinymce.cachefly.net/4.0/tinymce.min.js"></script>
+```
+
+&#42; See the [Install Guide] for more information about using the CDN.
+
+While we're at it a big shout out to [Cachefly](http://www.cachefly.com/) who sponsors the CDN hosting of TinyMCE.
 
 ## NPM
 // todo
@@ -22,12 +31,12 @@ Getting started with TinyMCE is really easy. In this guide you will initialize T
 
 To complete this guide, you will need access to a web server. This guide assumes a web server is running on port 80 of localhost.
 
-### Step 1: Download a copy of TinyMCE and put it on a web server.
+#### Step 1: Download a copy of TinyMCE and put it on a web server.
 
 Download a copy of the TinyMCE package from TinyMCE Downloads.
 Unzip the package and move the "tinymce/js/tinymce" directory into a web accessible location on your web server (for example, localhost).
 
-### Step 2: Add TinyMCE to a page.
+#### Step 2: Add TinyMCE to a page.
 
 With TinyMCE accessible via your web server (http://localhost/tinymce/), you can now include the TinyMCE script anywhere you would like to use the TinyMCE editor.
 
@@ -37,7 +46,7 @@ To add the script, add the following inside your page's `<head>` tag.
 <script type="text/javascript" src="<your installation path>/tinymce/tinymce.min.js"></script>
 ```
 
-### Step 3: Initialize TinyMCE as Part of a Web Form
+#### Step 3: Initialize TinyMCE as Part of a Web Form
 
 With the script included, you may then initialize TinyMCE on any element (or elements) in your webpage.
 
@@ -71,7 +80,7 @@ You’ve added TinyMCE to the page - that's all there is to it!
 
 Next, we'll look at retrieving content as part of a <form> POST.
 
-### Step 4: Saving Content with a <form> POST
+#### Step 4: Saving Content with a <form> POST
 
 When the form is submitted, the TinyMCE editor mimics the behaviour of a normal HTML `<textarea>` during a form POST.  No additional configuration is required.
 

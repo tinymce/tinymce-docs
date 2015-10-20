@@ -153,6 +153,12 @@ In this example, let's replace `<textarea id="mytextarea">` with a TinyMCE edito
 
 That's all there is to it!
 
-## Note: Saving Content with a `<form>` `post`
+## Step 3: Saving Content with a `<form>` `post`
 
 When the `form` is submitted the TinyMCE editor mimics the behaviour of a normal HTML `<textarea>` during a form `post`. No additional configuration is required.
+
+
+
+# Next Steps
+
+At this point, you've seen how to create TinyMCE instances on a page using `tinymce.init()`, and you've seen how to retrieve content from TinyMCE as part of an `html` `<form>` `post`. There's way more under the hood if you're feeling adventurous: return to the [Developer Guide](../) to explore TinyMCE's [configuration](../configure/) and [customization](../customize/) options.

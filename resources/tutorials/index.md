@@ -39,9 +39,6 @@ You need to add some custom logic when rendering TinyMCE instances inside jQuery
 // [Link to page, embed external fiddle into this page](tinymce_in_a_jquery_ui_dialog)
 
 
-## Using CDN
-// This is a tutorial on the old site. Move to install pages/section. [Here's content anyway](using_cdn)
-
 
 ## Using the gzip compressors
 The TinyMCE gzip compressors helps you to dynamically combine and compress the different parts of TinyMCE to reduce the loading time. [Here's how to do it.](using_the_gzip_compressors)

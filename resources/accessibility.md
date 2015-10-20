@@ -12,7 +12,8 @@ As of version 4.0.17 of TinyMCE, we now follow the WAI-ARIA specification, makin
 
 The ALT+key shortcut assumes that you are currently in the content area of the editor.
 
-| :------------- | :------------- |
+| ALT Key   | Result      |
+|-----------|-------------|
 | ALT + F9  | Focus/jump to menu bar |
 | ALT + F10 | Focus/jump to toolbar |
 | ALT + F11 | Focus/jump to element path |

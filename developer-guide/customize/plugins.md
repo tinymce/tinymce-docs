@@ -2460,9 +2460,9 @@ tinymce.init({
 
 
 
-# template Control
+# template
 
-// Template is a Toolbar Control not a plugin.
+
 
 This plugin adds support for custom templates. There are two types of files this plugin supports: templates and snippets.
 

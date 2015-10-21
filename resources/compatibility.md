@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Compatibility
+title: Browser Compatibility
 ---
 
 // See http://caniuse.com/#search=padd

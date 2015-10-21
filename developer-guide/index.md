@@ -3,24 +3,24 @@ layout: default
 title: Developer Guide
 ---
 
-# Install
+# Installation
 
 Detailed guide to installing and setting up TinyMCE. [link](./install/)
 
 
 
-# Configure
+# Basic Configuration
 
-Basic and advanced TinyMCE configuration options. [link](./configure/)
-
-
-
-# Customize
-
-Advanced editor customization. [link](./customize/)
+Introduction to basic editor configuration options. [link](./configure/)
 
 
 
-# Plugin Options
+# Advanced Configuration
 
-Detailed guide to (optional) plugins, their options and associated menu/toolbar controls. [link](./customize/plugins/)
+Advanced editor configuration and customization. [link](./customize/)
+
+
+
+# Plugins & Toolbar/Menu Controls
+
+Advanced guide to TinyMCE plugins, plugin options and associated menu/toolbar controls. [link](./customize/plugins/)

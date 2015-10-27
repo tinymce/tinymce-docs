@@ -25,11 +25,22 @@ For a list of versions supported by the CacheFly CDN, check this text document: 
 
 While we're at it a big shout out to [Cachefly](http://www.cachefly.com/) who sponsors the CDN hosting of TinyMCE. If you haven't tried CacheFly now is the perfect time. Use promo code `TINYMCE` to get exclusive pay-as-you-go pricing. They also have a risk-free 2TB 14-day trial with no credit card required. Sign up at [www.cachefly.com](http://www.cachefly.com/).
 
+For next steps see the [Developer Guide](../developer-guide/).
+
 
 
 # Package Manager Installation
 
 If you've already installed TinyMCE [learn how to add it to a page].
+
+
+## NPM
+
+```
+npm install tinymce
+```
+
+## Bower
 
 ```
 bower install tinymce
@@ -73,6 +84,8 @@ tinymce.init({
 });
 ```
 
+For next steps see the [Developer Guide](../developer-guide/).
+
 
 
 # SDK / Download Installation
@@ -85,9 +98,11 @@ To add the script, simply include this line of code in the `<head>` of your page
 <script type="text/javascript" src="<your installation path>/tinymce/tinymce.min.js"></script>
 ```
 
+For next steps see the [Developer Guide](../developer-guide/).
 
 
-## jQuery
+
+# jQuery
 
 We have a jQuery plugin [available here] if you'd rather install TinyMCE using this method. As with the SDK option, unzip the package and move the `"tinymce/js/tinymce"` directory into a web accessible location on your web server (for example, `localhost`).
 
@@ -98,13 +113,17 @@ To add the script, simply include these lines of code in the `<head>` of your pa
 <script type="text/javascript" src="/<your installation path>/tinymce/jquery.tinymce.min.js"></script>
 ```
 
+For next steps see the [Developer Guide](../developer-guide/).
 
 
-## Custom Build Download
+
+# Custom Build Download
 
 TinyMCE tries to be as flexible to your project's needs as possible. We have a customized package downloader [available here](http://www.tinymce.com/download/custom_package.php) where you can select the core, plugins, skins, themes and compression options you'd like to include in the download.
 
 If you selected the standalone core option in your custom download follow the [SDK](#SDK) install instructions; if the jQuery core option follow the [jQuery](#jQuery) instructions.
+
+For next steps see the [Developer Guide](../developer-guide/).
 
 
 

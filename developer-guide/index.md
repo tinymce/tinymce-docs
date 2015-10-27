@@ -5,7 +5,7 @@ title: Developer Guide
 
 # [Installation](./install/)
 
-# [Configuration Quick Start]((./configure/))
+# [Configuration Quick Start](./configuration-quick-start/)
 
 # [Configuration Reference](./customize/)
 

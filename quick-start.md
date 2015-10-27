@@ -3,97 +3,65 @@ layout: default
 title: Quick Start
 ---
 
-This Quick Start will help you download TinyMCE.
+This Quick Start will help you download and install TinyMCE using the CDN (the easiest and quickest way to get a TinyMCE instance up and running).
 
-If you're familiar with this step move on to the [Developer Guide](../developer-guide/), which will help you [install](../developer-guide/install/), [configure](../developer-guide/configure/) and [customize](../developer-guide/customize/) your editor. You'll also find information on [Plugin & Toolbar/Menu Control](../developer-guide/customize/plugins/) options.
+If you're familiar with this step move on to the [Developer Guide](../developer-guide/), which will help you [install*](../developer-guide/install/), [configure](../developer-guide/configure/) and [customize](../developer-guide/customize/) your editor instance/s. You'll also find information on [Plugin & Toolbar/Menu Control](../developer-guide/customize/plugins/) options.
 
-# CDN
-
-The easiest way to get started is to use our CDN. Simply include this line of code in the `<head>` of your page:
-
-```html
-<script src="//tinymce.cachefly.net/4.2/tinymce.min.js"></script>
-```
-
-For next steps see the [Developer Guide](../developer-guide/).
-
-A big shout out to [Cachefly](http://www.cachefly.com/) who sponsors the CDN hosting of TinyMCE. Thank you!
+`*` The [install](../developer-guide/install/) section of the [Developer Guide](../developer-guide/) can help you if you'd rather install using package manager, SDK, jQuery and custom options.  
 
 
 
-# Package Managers
+# Step 1: Include the TinyMCE Script
 
-We have several package manager install options available.
-
-## NPM
-
-```
-npm install tinymce
-```
-
-## Bower
-
-```
-bower install tinymce
-```
-
-## Composer
-
-If you're using Composer package manager, add the following to `composer.json`.
-
-```
-php composer.phar require "tinymce/tinymce" ">= 4"
-```
-
-## NuGet
-
-```
-Install-Package TinyMCE
-```
-
-For next steps see the [Developer Guide](../developer-guide/).
-
-
-
-# SDK
-
-If you'd rather download and install the script manually, get the package from [TinyMCE Downloads](http://tinymce.com/download). Unzip the package and move the `"tinymce/js/tinymce"` directory into a web accessible location on your web server (for example, `localhost`).
-
-To add the script, simply include this line of code in the `<head>` of your page:
+Include this line of code in the `<head>` of your page:
 
 ```html
-<script type="text/javascript" src="<your installation path>/tinymce/tinymce.min.js"></script>
+<script src="//tinymce.cachefly.net/4.3/tinymce.min.js"></script>
 ```
 
-For next steps see the [Developer Guide](../developer-guide/).
 
 
+# Step 2: Initialize TinyMCE as Part of a Web Form
 
-## jQuery
+With the script included, initialize TinyMCE on any element (or elements) in your webpage.
 
-We have a jQuery plugin available from our [downloads page](http://tinymce.com/download) if you'd rather install TinyMCE using this method. As with the SDK option, unzip the package and move the `"tinymce/js/tinymce"` directory into a web accessible location on your web server (for example, `localhost`).
+Since TinyMCE lets you identify replaceable elements via a CSS selector all you need do is pass an object that contains a selector to `tinymce.init()`.
 
-To add the script, simply include these lines of code in the `<head>` of your page:
+In this example, let's replace `<textarea id="mytextarea">` with a TinyMCE editor instance by passing the selector `'#mytextarea'` to `tinymce.init()`.
 
 ```html
-<script type="text/javascript" src="/<your installation path>/tinymce/tinymce.min.js"></script>
-<script type="text/javascript" src="/<your installation path>/tinymce/jquery.tinymce.min.js"></script>
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="//tinymce.cachefly.net/4.3/tinymce.min.js"></script>
+  <script type="text/javascript">
+    tinymce.init({
+      selector: "#mytextarea"
+    });
+  </script>
+</head>
+
+<body>
+  <h1>TinyMCE Getting Started Guide</h1>
+  <form method="post">
+    <textarea id="mytextarea"></textarea>
+  </form>
+</body>
+</html>
 ```
 
-For next steps see the [Developer Guide](../developer-guide/).
 
 
+# Step 3: Saving Content with a `<form>` `post`
 
-## Custom Build Download
+When the `form` is submitted the TinyMCE editor mimics the behavior of a normal HTML `<textarea>` during a form `post`. No additional configuration is required.
 
-TinyMCE tries to be as flexible to your project's needs as possible. We have a customized package downloader [available here](http://www.tinymce.com/download/custom_package.php) where you can select the core, plugins, skins, themes and compression options you'd like to include in the download.
+Adn that's all there is to it!
 
-If you selected the standalone core option in your custom download follow the [SDK](#SDK) install instructions; if the jQuery core option follow the [jQuery](#jQuery) instructions.
-
-For next steps see the [Developer Guide](../developer-guide/).
+`*` If you are using our CDN install [see these notes] about using external plugins, custom languages and TinyMCE versions available via the CDN.
 
 
 
 # Next Steps
 
-* It's now time to move on to the [Developer Guide](../developer-guide) where you'll find detailed [installation](../developer-guide/install/), [configuration](../developer-guide/configure/) and [customization](../developer-guide/customize/) guides.
+It's now time to move on to the [Developer Guide](../developer-guide) where you'll find more information on  [installation](../developer-guide/install/) options, our [Configuration Quick Start](../developer-guide/configure/) and [Advanced Configuration](../developer-guide/customize/) guides. You'll also find information on [Plugin & Toolbar/Menu Control](../developer-guide/customize/plugins/) options.

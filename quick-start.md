@@ -56,7 +56,7 @@ In this example, let's replace `<textarea id="mytextarea">` with a TinyMCE edito
 
 When the `form` is submitted the TinyMCE editor mimics the behavior of a normal HTML `<textarea>` during a form `post`. No additional configuration is required.
 
-Adn that's all there is to it!
+And that's all there is to it!
 
 `*` If you are using our CDN install [see these notes] about using external plugins, custom languages and TinyMCE versions available via the CDN.
 

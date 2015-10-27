@@ -9,4 +9,4 @@ title: Developer Guide
 
 # [Configuration Reference](./configuration-reference/)
 
-# [Plugins & Toolbar/Menu Controls](./customize/plugins/)
+# [Plugins & Toolbar/Menu Controls](./configuration-reference/plugins/)

@@ -7,6 +7,6 @@ title: Developer Guide
 
 # [Configuration Quick Start](./configuration-quick-start/)
 
-# [Configuration Reference](./customize/)
+# [Configuration Reference](./configuration-reference/)
 
 # [Plugins & Toolbar/Menu Controls](./customize/plugins/)

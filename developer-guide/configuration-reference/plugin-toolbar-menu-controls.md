@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Plugins
+title: plugin-toolbar-menu-controls
 ---
 
 // This is where we will put all the information relevant to plugin keys passed to init

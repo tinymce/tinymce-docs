@@ -3,27 +3,29 @@ layout: default
 title: Configuration Quick Start
 ---
 
-It's now time to configure the editor. Here we'll introduce some basic and slightly more advanced configuration options (which you'd typically use in traditional forms based layouts) along with examples of how to use TinyMCE as an inline editor (which is useful when creating user experiences where you want the editing view of the page to be merged with the reading view of the page).
+TinyMCE provides a number of configuration options enabling you to integrate it tightly with your application.
+
+In this Quick Start we will introduce the basic configuration options typically used in traditional forms based layouts, along with examples of how to use TinyMCE as an inline editor (which is very useful when creating user experiences where the editing view of the page is merged with the reading view of the page).
 
 
 
 # Basic Configuration
-TinyMCE provides a number of configuration options enabling you to integrate it tightly with your application.  This guide will explore the most commonly used configuration options to help you get the most out of your new TinyMCE installation.
 
-Once you've added the TinyMCE script to your page, there are three main aspects of configuration you need to consider:
-* selector
-* plugins
-* toolbar configuration
+Once you've added the TinyMCE script to your page there are three configuration aspects you need to consider:
 
-## Selector Configuration Option
+* Selector Configuration
+* Plugin Configuration
+* Toolbar Configuration
 
-Possibly the most important configuration option for your TinyMCE integration.  The selector configuration option allows you to use CSS selector syntax to determine which elements on the page should be editable through TinyMCE.
+## Selector Configuration
 
-This option allows you to specify a CSS selector for the areas that TinyMCE should make editable.
+This is possibly the most important configuration option for your TinyMCE integration. Selector configuration allows you to use CSS selector syntax to determine which elements on the page should be editable through TinyMCE.
 
-When using this option in TinyMCE's regular editing mode, the element will be replaced with an `iframe` that TinyMCE will perform all operations within.
+In other words, this is where you specify a CSS selector for the areas TinyMCE will make editable.
 
-An example of this setting that will replace all `textarea` elements on the page is as follows:
+When using this option in TinyMCE's regular editing mode the selected element will be replaced with an `iframe` and TinyMCE will perform all operations within this context.
+
+Here's an example that will replace all `textarea` elements on the page:
 
 ```js
 tinymce.init({
@@ -33,7 +35,7 @@ tinymce.init({
 });
 ```
 
-An example of this setting that will replace a `textarea` element with `id` `"editable"` on the page is as follows:
+You can also match an ID attribute. The following example will replace a `textarea` element with `id` `"editable"` on the page:
 
 ```js
 tinymce.init({
@@ -43,9 +45,9 @@ tinymce.init({
 });
 ```
 
-When using this option in TinyMCE's inline editing mode, the selector can be used on any block element and will edit the content in place instead of replacing the element with an iframe.
+When using this option in TinyMCE's inline editing mode the selector can be used on any block element, which will edit the content in place instead of replacing the element with an `iframe`.
 
-An example of this setting being used in inline editing mode on a `div` element with `id` `"editable"` is as follows:
+Here's an example of this setting being used in inline editing mode on a `div` element with `id` `"editable"`:
 
 ```js
 tinymce.init({
@@ -56,15 +58,15 @@ tinymce.init({
 });
 ```
 
-For more information on the differences between regular and inline editing modes please see the [inline section] on this page.
+For more information on the differences between regular and inline editing modes see the Inline Configuration section on this page.
 
-## Plugins Configuration Option
+## Plugins Configuration
 
-The plugins configuration option allows you to enable functionality within the editor. By default, **no** plugins are loaded. As there are several significant TinyMCE plugins that provide key features it is important that you consider which plugins you wish to include.
+The plugins configuration option allows you to enable functionality within the editor. By default, **no** plugins are loaded.
 
-Specify which plugins you would like to use by providing this configuration option a comma or space separated string, or an array of strings.
+However, there are several significant TinyMCE plugins that provide key features. It is important to not only consider which plugins you wish to include but to also understand how to include them.
 
-An example of this setting is as follows:
+Fortunately this is easy. Simply add `plugins` to `tinymce.init()` and provide a comma or space separated string, or an array of strings. Here's an example:
 
 ```js
 tinymce.init({
@@ -74,15 +76,15 @@ tinymce.init({
 });
 ```
 
-The full list of plugins, their options and control reference is [available here].
+The full list of plugins, their options and control associations is [available here](../plugin-toolbar-menu-controls/).
 
-## Toolbar Configuration Option
+## Toolbar Configuration
 
-In most TinyMCE integrations it's desirable to change the toolbar configuration to suit your needs.  By default TinyMCE provides a basic set of editing tools on the toolbar and it is recommended that you adapt the toolbar configuration to match your requirements.
+In most TinyMCE integrations it's desirable to change the toolbar configuration to suit your needs. By default TinyMCE provides a basic set of editing tools on the toolbar and it is recommended that you adapt the toolbar configuration to match your requirements.
 
 The toolbar configuration option allows you to choose which items appear on the toolbar as well as the order and grouping of toolbar items.
 
-Alternatively, multiple toolbars can be used by specifying multiple toolbar options suffixed with a number ie. "toolbar1", "toolbar2", "toolbar3" etc.  If multiple toolbars are used, the original toolbar option will be ignored.
+Additionally, multiple toolbars can be used by specifying multiple toolbar options suffixed with a number i.e. "toolbar1", "toolbar2", "toolbar3", etc. If multiple toolbars are used, the original toolbar option will be ignored.
 
 To specify the controls that should appear on TinyMCE's toolbar, the toolbar option should be provided with a space separated list of toolbar controls. To create groups within this list, please add `"|"` pipe characters between the groups of controls that you would like to create.
 
@@ -96,9 +98,7 @@ tinymce.init({
 });
 ```
 
-To disable the toolbar, the toolbar option should be provided a boolean value of false.
-
-An example of a disabled toolbar is as follows:
+To disable the toolbar, the toolbar option should be provided a boolean value of `false`, like this:
 
 ```js
 tinymce.init({
@@ -110,7 +110,7 @@ tinymce.init({
 
 To specify multiple toolbars, the toolbar option should be provided with an array of space separated strings.
 
-An example of multiple toolbars is as follows:
+Here's example creating multiple toolbars:
 
 ```js
 tinymce.init({
@@ -127,13 +127,13 @@ Alternatively, you may specify multiple toolbars through the use of the [toolbar
 
 
 
-# Digging Deeper into Configuration Options
+# A helpful example
 
 Using the configuration options above you'll be able to instantiate TinyMCE and perform the initial customizations to match your editor requirements. TinyMCE has many many other configuration options available that enable further customization and extension of the editor.
 
-The full list of configuration options is [available here].
+You will find full list of [configuration options here](../configuration-reference/). Plugins, their options and control associations are [available here](../plugin-toolbar-menu-controls/).
 
-Some advanced installation configurations are shown here.
+To help get you started, let's walk through an (advanced) TinyMCE configuration example.
 
 ```html
 <!-- place in header of your html document -->
@@ -166,35 +166,35 @@ tinymce.init({
 <textarea id="elm1" name="area"></textarea>
 ```
 
-## Breakdown of the above example
+#### Breakdown of the above example
 
-Select only the textarea with ID elm1
+First we want to select only the `textarea` with `ID` `elm1`:
 
-```js
+> ```js
 selector: "textarea#elm1",
 ```
 
-Set the modern theme (default, not needed).
+We next chose a theme, in this case the modern theme (default, not needed).
 
-```js
+> ```js
 theme: "modern",
 ```
 
-Width of editor in pixels, integer value.
+Here we set the width of the editor in pixels. This must be an integer value.
 
-```js
+> ```js
 width: 300,
 ```
 
-Height of editor in pixels, integer value.
+And this adjusts the height of editor in pixels. Again, an integer value.
 
-```js
+> ```js
 height: 300,
 ```
 
-A list of plugins that should be included on load.
+Here we select the plugins that should be included on load. Note we'll have 3 toolbars in this example.
 
-```js
+> ```js
 plugins: [
          "advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker",
          "searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking",
@@ -202,23 +202,23 @@ plugins: [
 ],
 ```
 
-Set a css to use inside the editor window, should be a stripped down version of your website CSS, with things such as styles for headers (H1-H6), table layouts, margins, paddings around elements (images, paragraphs etc).
+`content_css` is important as it let's you style the content inside the editor window. This should be a (very) stripped down version of your website CSS, with things such as styles for headers (H1-H6), table layouts, margins, paddings around elements (images, paragraphs), and so on.
 
-```js
+> ```js
 content_css: "css/content.css",
 ```
 
-Select what buttons you might want in your toolbar, you can use comma or space as a seperator.
+Next select the buttons you want in your toolbar. You can use comma or space as a separator.
 
-```js
+> ```js
 toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | print preview media fullpage | forecolor backcolor emoticons",
 ```
 
-Very powerful styles configuration, for example, "Bold text" simply makes a `<b>` tag, "Red Text" makes a span with a style coloring it RED.
+Lastly we have implemented a very powerful styles configuration. For example, "Bold text" simply makes a `<b>` tag, "Red text" makes a span with a style coloring it RED.
 
 The "Table row" can only be applied to a table row `<tr>`.
 
-```js
+> ```js
     style_formats: [
         {title: 'Bold text', inline: 'b'},
         {title: 'Red text', inline: 'span', styles: {color: '#ff0000'}},
@@ -236,7 +236,11 @@ Check out the [formats options] for more information on how to bend these option
 
 # Inline Configuration
 
-TinyMCE has two main integration modes: a "traditional" forms based mode, and an inline editing mode. The inline editing mode is useful when creating user experiences where you want the editing view of the page to be merged with the reading view of the page. This creates a seamless editing experience and true WYSIWYG behaviour.  From a technical perspective, in inline mode, the editor does not replace the selected element with it's own iframe, but instead edits the element's content in place instead.
+TinyMCE has two main integration modes: a "traditional" forms based mode, and an inline editing mode.
+
+The inline editing mode is useful when creating user experiences where you want the editing view of the page to be merged with the reading view of the page. This creates a seamless editing experience and true WYSIWYG behavior.
+
+From a technical perspective, in inline mode, the editor does not replace the selected element with it's own iframe, but instead edits the element's content in place instead.
 
 ## Forms-based Editing vs Inline Editing
 
@@ -250,9 +254,11 @@ Since the editor is not sandboxed in an iframe in inline editing mode, CSS style
 
 ## Inline Editing and Complex Stylesheets
 
-When using TinyMCE in inline mode it will inherit the CSS stylesheet from the page it is embedded in. While this is advantageous in providing a true WYSIWYG view of the content it can result in user confusion when working with complex CSS. This is because your site's CSS is now applying directly to the editor and may result in behaviour that the user doesn't expect. When using the editor in inline mode care should be taken when using styling that depends on structures within the editor. For example:
+When using TinyMCE in inline mode it will inherit the CSS stylesheet from the page it is embedded in.
 
-If you had a class like this:
+While this is advantageous in providing a true WYSIWYG view of the content it can result in user confusion when working with complex CSS. This is because your site's CSS is now applying directly to the editor and may result in behaviour that the user doesn't expect.
+
+When using the editor in inline mode care should be taken when using styling that depends on structures within the editor. For example, if you had a class like this:
 
 ```css
 h1 strong {
@@ -266,7 +272,7 @@ This would make the phrase "bold text" bold and orange in the structure:
 <h1>This text is <strong>bold text</strong> in a heading</h1>
 ```
 
-If the user changed the heading to a paragraph or a different heading level then the text color of the bold text would, unexpectedly, change for the user. While this is entirely correct behaviour according to the stylesheet it is entirely unexpected from the user's perspective.
+If the user changed the heading to a paragraph or a different heading level then the text color of the bold text would, unexpectedly, change for the user. While this is entirely correct behavior according to the stylesheet it is entirely unexpected from the user's perspective.
 
 ## Enabling Inline Editing Mode
 
@@ -297,4 +303,4 @@ Enabling inline editing mode is quite simple. Setting the "inline" configuration
 
 # Next steps
 
-* Become a TinyMCE editor ninja. Learn more about [advanced configuration options](./customize/).
+Become a TinyMCE editor ninja. Learn more about [advanced configuration options](../configuration-reference/) and [plugins, their options and control associations](../plugin-toolbar-menu-controls/).

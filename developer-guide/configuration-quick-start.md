@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Configure
+title: Configuration Quick Start
 ---
 
 It's now time to configure the editor. Here we'll introduce some basic and slightly more advanced configuration options (which you'd typically use in traditional forms based layouts) along with examples of how to use TinyMCE as an inline editor (which is useful when creating user experiences where you want the editing view of the page to be merged with the reading view of the page).

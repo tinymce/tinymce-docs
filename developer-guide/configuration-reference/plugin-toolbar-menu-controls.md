@@ -12,7 +12,7 @@ title: plugin-toolbar-menu-controls
 // Controls always reference plugins, comment added to any plugin that has an associated menu/toolbar control
 
 
-# advlist Plugin
+# advlist
 
 This plugin adds more advanced options to the ordered and unordered list buttons. It enables you to set number formats and bullet types.
 
@@ -23,7 +23,7 @@ tinymce.init({
 });
 ```
 
-## advlist Plugin Options
+## advlist Options
 
 These settings affect the execution of the Advlist plugin. The bullet list and numbered list styles may be changed through these options.
 
@@ -55,7 +55,7 @@ tinymce.init({
 
 
 
-# anchor Plugin
+# anchor
 
 // This plugin adds the following controls:
 
@@ -76,7 +76,7 @@ tinymce.init({
 
 
 
-# autolink Plugin
+# autolink
 
 Normalizes behaviour with IE that produces links when you simply type links in the content window.
 
@@ -90,7 +90,7 @@ tinymce.init({
 
 
 
-# autoresize Plugin
+# autoresize
 
 This is a plugin which automatically resizes the editor to the content inside it.
 
@@ -104,7 +104,7 @@ tinymce.init({
 });
 ```
 
-## autoresize Plugin Options
+## autoresize Options
 
 These settings affect the execution of the autoresize plugin. The minimum width, height and other settings related to autoresizing the editor are available here.
 
@@ -173,7 +173,7 @@ tinymce.init({
 
 
 
-# autosave Plugin
+# autosave
 
 This plugin gives the user a warning if they made modifications to a editor instance but didn't submit them. This plugin will most likely be extended in the future to provide AJAX auto save support.
 
@@ -185,7 +185,7 @@ tinymce.init({
 });
 ```
 
-# autosave Plugin Options
+# autosave Options
 
 These settings affect the execution of the AutoSave plugin. The settings here will affect the interval, duration and behaviour of locally stored drafts of the current editor instance.
 
@@ -253,7 +253,7 @@ tinymce.init({
 
 
 
-# bbcode Plugin
+# bbcode
 
 This plugin adds basic BBCode input/output to TinyMCE.
 
@@ -265,7 +265,7 @@ tinymce.init({
 });
 ```
 
-## bbcode Plugin Options
+## bbcode Options
 
 This setting affects the execution of the BBCode plugin. You may set the bbcode dialect here.
 
@@ -284,7 +284,7 @@ tinymce.init({
 
 
 
-# charmap Plugin
+# charmap
 
 // This plugin adds the following controls:
 
@@ -304,7 +304,7 @@ tinymce.init({
 
 
 
-# code Plugin
+# code
 
 // This plugin adds the following controls:
 
@@ -322,7 +322,7 @@ tinymce.init({
 });
 ```
 
-## code Plugin Options
+## code Options
 
 ### code_dialog_width
 
@@ -352,7 +352,7 @@ tinymce.init({
 
 
 
-# compat3x Plugin
+# compat3x
 
 This plugin contains a few compatibility files for the old 3.x branch. This enables you to run most old 3.x plugins with out any modifications. You need to take a few steps to enable this plugin:
 
@@ -391,7 +391,7 @@ tinymce.init({
 
 
 
-# contextmenu Plugin
+# contextmenu
 
 This plugin adds a configurable context menu.
 
@@ -404,7 +404,7 @@ tinymce.init({
 });
 ```
 
-## contextmenu Plugin Options
+## contextmenu Options
 
 These settings affect the execution of the Contextmenu plugin. The settings in this section allow direct control over how the contextmenu appears and what is included inside the contextmenu.
 
@@ -439,7 +439,7 @@ tinymce.init({
 
 
 
-# directionality Plugin
+# directionality
 
 // This plugin adds the following controls:
 
@@ -463,7 +463,7 @@ tinymce.init({
 
 
 
-# emoticons Plugin
+# emoticons
 
 // This plugin adds the following controls:
 
@@ -482,7 +482,7 @@ tinymce.init({
 
 
 
-# example Plugin
+# example
 
 This plugin is an example plugin that you can use as a template for your custom plugin.
 
@@ -496,7 +496,7 @@ tinymce.init({
 
 
 
-# example_dependency Plugin
+# example_dependency
 
 This plugin is an example plugin with a dependecy on another plugin.
 
@@ -508,7 +508,7 @@ tinymce.init({
 
 
 
-# fullpage Plugin
+# fullpage
 
 This plugin adds fullpage editing support. This enables you to edit whole documents with both head and body.
 
@@ -521,7 +521,7 @@ tinymce.init({
 });
 ```
 
-## fullpage Plugin Options
+## fullpage Options
 
 These settings affect the execution of the Fullpage plugin. Many of the settings here allow you to specify default values for the full page editing process.
 
@@ -640,7 +640,7 @@ tinymce.init({
 
 
 
-# fullscreen Plugin
+# fullscreen
 
 // This plugin adds the following controls:
 
@@ -661,7 +661,7 @@ tinymce.init({
 
 
 
-# hr Plugin
+# hr
 
 // This plugin adds the following controls:
 
@@ -681,7 +681,7 @@ tinymce.init({
 
 
 
-# image Plugin
+# image
 
 // This plugin adds the following controls:
 
@@ -704,7 +704,7 @@ tinymce.init({
 
 ```
 
-## image Plugin Options
+## image Options
 
 These settings affect the execution of the Image plugin. Many of the settings here will disable features of the dialog box used to insert or edit images. A predefined list of images can also be provided to enable quick insertion of these images.
 
@@ -842,7 +842,7 @@ tinymce.init({
 
 
 
-# imagetools Plugin
+# imagetools
 
 This plugin adds a contextual image editing toolbar on modern browsers that lets you edit images inline. Notice this feature at least requires IE 10 since it uses the HTML5 File API.
 
@@ -854,7 +854,7 @@ tinymce.init({
 });
 ```
 
-## imagetools Plugin Options
+## imagetools Options
 
 These settings affect the execution of the Imagetools plugin. This plugin's cross-origin resource sharing, proxy and toolbar settings can be modified here.
 
@@ -940,7 +940,7 @@ tinymce.init({
 
 
 
-# importcss Plugin
+# importcss
 
 This plugin adds the ability to automatically import CSS classes from the CSS file specified in content_css. By default selectors like ".my-class", ".my-class1.my-class2" and "p.my-class" gets imported as format rules.
 
@@ -952,7 +952,7 @@ tinymce.init({
 });
 ```
 
-## importcss Plugin Options
+## importcss Options
 
 These settings affect the execution of the ImportCSS plugin. This plugin adds the ability to import CSS classes from the file specified in the content_css configuration setting. The settings below affect the way that these operations are handled.
 
@@ -1092,7 +1092,7 @@ tinymce.init({
 
 
 
-# insertdatetime Plugin
+# insertdatetime
 
 // This plugin adds the following controls:
 
@@ -1110,7 +1110,7 @@ tinymce.init({
 });
 ```
 
-## insertdatetime Plugin Options
+## insertdatetime Options
 
 These settings affect the execution of the Insertdatetime plugin. Formats for both dates and times can be set here.
 
@@ -1185,7 +1185,7 @@ tinymce.init({
 
 
 
-# layer Plugin
+# layer
 
 This plugin adds some layer controls. Only works on some browsers. Will probably be removed in the future.
 
@@ -1199,7 +1199,7 @@ tinymce.init({
 
 
 
-# legacyoutput Plugin
+# legacyoutput
 
 This plugin will change the output for TinyMCE to produce legacy elements such as font, b, i, u, strike and use align attributes. This plugin can be useful if you want to use TinyMCE as a HTML mail client or to render contents to Flash.
 
@@ -1215,7 +1215,7 @@ tinymce.init({
 
 
 
-# link Plugin
+# link
 
 // This plugin adds the following controls:
 
@@ -1225,7 +1225,7 @@ tinymce.init({
 
 These settings affect the execution of the Link plugin. Predefined links, targets and more can be specified here.
 
-## link Plugin Options
+## link Options
 
 ### default_link_target
 
@@ -1401,7 +1401,7 @@ tinymce.init({
 
 
 
-# media Plugin
+# media
 
 // This plugin adds the following controls:
 
@@ -1419,7 +1419,7 @@ tinymce.init({
 });
 ```
 
-## media Plugin Options
+## media Options
 
 These settings affect the execution of the Media plugin. You may disable parts of the media dialog box when inserting/editing media items through these settings. In addition, the user may disable the cross-site scripting sanitation filter for video/object elements here.
 
@@ -1542,7 +1542,7 @@ moxiemanager is a paid addition to TinyMCE. You can learn more at [http://www.mo
 
 
 
-# nonbreaking Plugin
+# nonbreaking
 
 // This plugin adds the following controls:
 
@@ -1562,7 +1562,7 @@ tinymce.init({
 });
 ```
 
-## nonbreaking Plugin Options
+## nonbreaking Options
 
 This setting affects the execution of the Nonbreaking plugin. You may choose whether to force the editor to insert three `&nbsp;` entities when the user presses the tab key here.
 
@@ -1591,7 +1591,7 @@ tinymce.init({
 
 
 
-# noneditable Plugin
+# noneditable
 
 Adds non editable elements support for any element with the "mceNonEditable" class. These elements with be wont be editable by the user. This class name is configurable using the "noneditable_noneditable_class".
 
@@ -1631,7 +1631,7 @@ Nested editable elements are not currently supported. You would not be able to e
 </table>
 ```
 
-## noneditable Plugin Options
+## noneditable Options
 
 These settings affect the execution of the Noneditable plugin. These settings help determine which areas of the editor's editable area will remain editable and which will be converted to non-editable status.
 
@@ -1682,7 +1682,7 @@ tinymce.init({
 
 
 
-# pagebreak Plugin
+# pagebreak
 
 // This plugin adds the following controls:
 
@@ -1701,7 +1701,7 @@ tinymce.init({
 });
 ```
 
-## pagebreak Plugin Options
+## pagebreak Options
 
 These settings affect the execution of the Pagebreak plugin. These will allow you to specify the HTML to use as a page separator and determine whether the page break element(s) should be wrapped in <p> tags.</p>
 
@@ -1734,7 +1734,7 @@ tinymce.init({
 
 
 
-# paste Plugin
+# paste
 
 // This plugin adds the following controls:
 
@@ -1752,7 +1752,7 @@ tinymce.init({
 });
 ```
 
-## paste Plugin Options
+## paste Options
 
 These settings affect the execution of the Paste plugin. These settings affect the way content is eliminated or preserved when being pasted. In addition, callbacks are available prior to and after content filtration.
 
@@ -1909,7 +1909,7 @@ tinymce.init({
 
 
 
-# preview Plugin
+# preview
 
 // This plugin adds the following controls:
 
@@ -1928,7 +1928,7 @@ tinymce.init({
 });
 ```
 
-## preview Plugin Options
+## preview Options
 
 These settings affect the execution of the Preview plugin. The height and width of the preview dialog box may be set here.
 
@@ -1960,7 +1960,7 @@ tinymce.init({
 
 
 
-# print Plugin
+# print
 
 // This plugin adds the following controls:
 
@@ -1981,7 +1981,7 @@ tinymce.init({
 
 
 
-# save Plugin
+# save
 
 // This plugin adds the following controls:
 
@@ -2059,7 +2059,7 @@ tinymce.init({
 
 
 
-# searchreplace Plugin
+# searchreplace
 
 // This plugin adds the following controls:
 
@@ -2080,7 +2080,7 @@ tinymce.init({
 
 
 
-# spellchecker Plugin
+# spellchecker
 
 // This plugin adds the following controls:
 
@@ -2099,7 +2099,7 @@ tinymce.init({
 });
 ```
 
-## spellchecker Plugin Options
+## spellchecker Options
 
 These settings affect the execution of the Wordcount plugin. You may modify how spellchecking is handled here.
 
@@ -2234,7 +2234,7 @@ tinymce.init({
 
 
 
-# tabfocus Plugin
+# tabfocus
 
 This plugin adds the possibility to tab in/out of TinyMCE.
 
@@ -2246,7 +2246,7 @@ tinymce.init({
 });
 ```
 
-## tabfocus Plugin Options
+## tabfocus Options
 
 This setting affects the execution of the Tabfocus plugin. This setting can be used to change the focus behaviour of the editor when the tab key has been pressed inside the editable area.
 
@@ -2272,7 +2272,7 @@ tinymce.init({
 
 
 
-# table Plugin
+# table
 
 // This plugin adds the following controls:
 
@@ -2291,7 +2291,7 @@ tinymce.init({
 });
 ```
 
-## table Plugin Options
+## table Options
 
 These settings affect the execution of the Table plugin. Default styles and attributes for tables, preset class lists and table behaviour can be modified here.
 
@@ -2462,9 +2462,7 @@ tinymce.init({
 
 # template
 
-
-
-This plugin adds support for custom templates. There are two types of files this plugin supports: templates and snippets.
+This plugin adds support for custom templates. There are two types of files this plugin supports: *templates* and *snippets*.
 
 Initialization Example
 
@@ -2740,7 +2738,7 @@ Template dialog height, defaults to 500.
 
 
 
-# textcolor Plugin
+# textcolor
 
 // This plugin adds the following controls:
 
@@ -2757,7 +2755,7 @@ tinymce.init({
 });
 ```
 
-## textcolor Plugin Options
+## textcolor Options
 
 These settings affect the execution of the Textcolor plugin. The dimensions and mapping of the grid of textcolors may be set here.
 
@@ -2808,7 +2806,7 @@ tinymce.init({
 
 
 
-# textpattern Plugin
+# textpattern
 
 This plugin matches special patterns in the text and applies formats or executed commands on these text patterns. The default patterns is similar to markdown syntax so you can type "# text" to produce a header or "**text** to make something bold.
 
@@ -2820,7 +2818,7 @@ tinymce.init({
 });
 ```
 
-## textpattern Plugin Options
+## textpattern Options
 
 This setting affects the execution of the Textpattern plugin. Text patterns that are matched by the editor can be changed here.
 
@@ -2851,7 +2849,7 @@ tinymce.init({
 
 
 
-# visualblocks Plugin
+# visualblocks
 
 // This plugin adds the following controls:
 
@@ -2869,7 +2867,7 @@ tinymce.init({
 });
 ```
 
-## visualblocks Plugin Options
+## visualblocks Options
 
 This setting affects the execution of the Visualblocks plugin. You may specify whether blocks are visible by default here.
 
@@ -2889,7 +2887,7 @@ tinymce.init({
 
 
 
-# visualchars Plugin
+# visualchars
 
 // This plugin adds the following controls:
 
@@ -2910,7 +2908,7 @@ tinymce.init({
 
 
 
-# wordcount Plugin
+# wordcount
 
 This plugin adds word count functionality to TinyMCE.
 
@@ -2922,7 +2920,7 @@ tinymce.init({
 });
 ```
 
-## wordcount Plugin Options
+## wordcount Options
 
 These settings affect the execution of the Wordcount plugin. The regex values that determine how words are cleaned and counted may be set here.
 

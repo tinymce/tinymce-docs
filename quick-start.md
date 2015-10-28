@@ -3,11 +3,9 @@ layout: default
 title: Quick Start
 ---
 
-This Quick Start will help you download and install TinyMCE using the CDN (the easiest and quickest way to get a TinyMCE instance up and running).
+This Quick Start will help you download and install TinyMCE using the CDN (the easiest and quickest way to get up and running).
 
-If you're familiar with this step move on to the [Developer Guide](../developer-guide/), which will help you [install*](../developer-guide/install/), [configure](../developer-guide/configure/) and [customize](../developer-guide/customize/) your editor instance/s. You'll also find information on [Plugin & Toolbar/Menu Control](../developer-guide/customize/plugins/) options.
-
-`*` The [install](../developer-guide/install/) section of the [Developer Guide](../developer-guide/) can help you if you'd rather install using package manager, SDK, jQuery and custom options.  
+If you're familiar with this step move on to the [Developer Guide](../developer-guide) where you'll find additional [installation options](../developer-guide/install/), a [Configuration Quick Start](../developer-guide/configuration-quick-start/), the advanced [Configuration Reference](../developer-guide/configuration-reference/) and [Plugin & Toolbar/Menu Control](../developer-guide/customize/plugins/) options.
 
 
 
@@ -25,7 +23,7 @@ Include this line of code in the `<head>` of your page:
 
 With the script included, initialize TinyMCE on any element (or elements) in your webpage.
 
-Since TinyMCE lets you identify replaceable elements via a CSS selector all you need do is pass an object that contains a selector to `tinymce.init()`.
+Since TinyMCE lets you identify replaceable elements via a CSS selector, all you need do is pass an object that contains a selector to `tinymce.init()`.
 
 In this example, let's replace `<textarea id="mytextarea">` with a TinyMCE editor instance by passing the selector `'#mytextarea'` to `tinymce.init()`.
 
@@ -58,10 +56,10 @@ When the `form` is submitted the TinyMCE editor mimics the behavior of a normal 
 
 And that's all there is to it!
 
-`*` If you are using our CDN install [see these notes] about using external plugins, custom languages and TinyMCE versions available via the CDN.
-
 
 
 # Next Steps
 
-It's now time to move on to the [Developer Guide](../developer-guide) where you'll find more information on  [installation](../developer-guide/install/) options, our [Configuration Quick Start](../developer-guide/configure/) and [Advanced Configuration](../developer-guide/customize/) guides. You'll also find information on [Plugin & Toolbar/Menu Control](../developer-guide/customize/plugins/) options.
+If you're familiar with this step move on to the [Developer Guide](../developer-guide) where you'll find additional [installation options](../developer-guide/install/), a [Configuration Quick Start](../developer-guide/configuration-quick-start/), the advanced [Configuration Reference](../developer-guide/configuration-reference/) and [Plugin & Toolbar/Menu Control](../developer-guide/customize/plugins/) options.
+
+`*` If you are using our CDN install [see these notes](../developer-guide/install/#CDN Installation) about using external plugins, custom languages and TinyMCE CDN versions.

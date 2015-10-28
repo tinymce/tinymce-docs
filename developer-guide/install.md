@@ -4,7 +4,8 @@ title: Install
 css: foo.css
 ---
 
-If you've already installed TinyMCE you can skip the installation steps and move on to configuring the editor. The [Configuration Quick Start](../developer-guide/configuration-quick-start.md/) is a great place to learn the basics and when you're ready to "deep dive" into advanced configuration options move on to the [Configuration Reference](../developer-guide/configuration-reference/) and [Plugin & Toolbar/Menu Control](../developer-guide/customize/plugins/) options.
+If you've already installed TinyMCE you can skip the installation steps and move on to configuring the editor. The [Configuration Quick Start](../developer-guide/configuration-quick-start.md/) is a great place to learn the basics and when you're ready to learn more about advanced configuration of the editor move on to the [Configuration Reference](../developer-guide/configuration-reference/) and [Plugin & Toolbar/Menu Control](../developer-guide/customize/plugins/) options.
+
 
 
 # CDN Installation

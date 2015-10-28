@@ -1,4 +1,4 @@
-<ul class="nav nav-stacked">
+<ul>
 {% for item in include.pages %}
 	{% assign slug = item.title | downcase | replace: ' ', '-' | replace:'-&-','-' | replace:'/','-' %}
 	{% assign slug_slash = slug | append:'/' %}
@@ -10,15 +10,17 @@
   <li>
   {% endif %}
 		{% if slug contains '#' %}
+			{% assign type = 'anchor' %}
 			{% capture address %}{{ include.preceding_address }}{{ slug }}{% endcapture %}
 		{% else %}
+			{% assign type = '' %}
 			{% capture address %}{{ include.preceding_address }}{{ slug_slash }}{% endcapture %}
 		{% endif %}
-    <a url="{{page.url}}" href="{{ site.baseurl }}{{ address }}">{{ item.title | remove:'#' }}</a>
-  </li>
+    <a class="{{ type }}" url="{{page.url}}" href="{{ site.baseurl }}{{ address }}">{{ item.title | remove:'#' }}</a>
 
-  {% if item.pages %}
-    {% include nav.html pages=item.pages preceding_address=address %}
-  {% endif %}
+	  {% if item.pages %}
+	    {% include nav.html pages=item.pages preceding_address=address %}
+	  {% endif %}
+  </li>
 {% endfor %}
 </ul>

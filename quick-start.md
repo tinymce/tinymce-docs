@@ -48,18 +48,24 @@ In this example, let's replace `<textarea id="mytextarea">` with a TinyMCE edito
 </html>
 ```
 
+And that's all there is to it! Read on as we have two more tips for you.
+
 
 
 # Step 3: Saving Content with a `<form>` `post`
 
 When the `form` is submitted the TinyMCE editor mimics the behavior of a normal HTML `<textarea>` during a form `post`. No additional configuration is required.
 
-And that's all there is to it!
+
+
+# Step 4: Editor Configuration
+
+For first time TinyMCE developers we strongly encourage you to read our [Configuration Quick Start](../developer-guide/configuration-quick-start/), where we introduce Selector, Plugin and Toolbar configuration options. There also an "advanced" example of a TinyMCE instance and we explain TinyMCE's inline configuration.
 
 
 
-# Next Steps
+# Next Steps for TinyMCE Pros
 
-If you're familiar with this step move on to the [Developer Guide](../developer-guide) where you'll find additional [installation options](../developer-guide/install/), a [Configuration Quick Start](../developer-guide/configuration-quick-start/), the advanced [Configuration Reference](../developer-guide/configuration-reference/) and [Plugin & Toolbar/Menu Control](../developer-guide/plugin-toolbar-menu-controls/) options.
+If you are a TinyMCE pro and don't need a [configuration refresher](../developer-guide/configuration-quick-start/), move on to the [Developer Guide](../developer-guide) where you'll find additional [install options](../developer-guide/install/), the advanced [Configuration Reference](../developer-guide/configuration-reference/) and [Plugin & Toolbar/Menu Control](../developer-guide/plugin-toolbar-menu-controls/) options.
 
 `*` If you are using our CDN see the [detailed install page](../developer-guide/install/) for information about using external plugins, custom languages and the TinyMCE versions available via the CDN.

@@ -4,7 +4,9 @@ title: Install
 css: foo.css
 ---
 
-If you've already installed TinyMCE you can skip the installation steps and move on to configuring the editor. The [Configuration Quick Start](../developer-guide/configuration-quick-start.md/) is a great place to learn the basics and when you're ready to learn more about advanced configuration of the editor move on to the [Configuration Reference](../developer-guide/configuration-reference/) and [Plugin & Toolbar/Menu Control](../developer-guide/customize/plugins/) options.
+If you've already installed TinyMCE you can skip these installation steps and move on to configuring the editor.
+
+Otherwise, the [Configuration Quick Start](../configuration-quick-start/) is a great place to learn about basic editor configuration. When you're ready to deep dive into advanced configuration options you'll find the [Configuration Reference](../configuration-reference/) and [Plugin & Toolbar/Menu Control](../plugin-toolbar-menu-controls/) resources extremely helpful.
 
 
 
@@ -54,8 +56,6 @@ In this example, let's replace `<textarea id="mytextarea">` with a TinyMCE edito
 When the `form` is submitted the TinyMCE editor mimics the behavior of a normal HTML `<textarea>` during a form `post`. No additional configuration is required.
 
 And that's all there is to it!
-
-`*` If you are using our CDN install [see these notes] about using external plugins, custom languages and TinyMCE versions available via the CDN.
 
 #### Additional information about using the CDN
 
@@ -222,4 +222,6 @@ When the `form` is submitted the TinyMCE editor mimics the behaviour of a normal
 
 # Next Steps
 
-At this point, you've seen how to create TinyMCE instances on a page using `tinymce.init()`, and you've seen how to retrieve content from TinyMCE as part of an `html` `<form>` `post`. There's way more under the hood if you're feeling adventurous: return to the [Developer Guide](../) to explore TinyMCE's [configuration](../configure/) and [customization](../customize/) options.
+At this point, you've seen how to create TinyMCE instances on a page using `tinymce.init()`, and you've seen how to retrieve content from TinyMCE as part of an `html` `<form>` `post`.
+
+There's way more under the hood if you're feeling adventurous: return to the [Developer Guide](../) to explore TinyMCE's advanced configuration settings in the [Configuration Reference](../configuration-reference/) and also learn more about [Plugin & Toolbar/Menu Control](../plugin-toolbar-menu-controls/) options.

@@ -5,7 +5,7 @@ title: Quick Start
 
 This Quick Start will help you download and install TinyMCE using the CDN (the easiest and quickest way to get up and running).
 
-If you're familiar with this step move on to the [Developer Guide](../developer-guide) where you'll find additional [installation options](../developer-guide/install/), a [Configuration Quick Start](../developer-guide/configuration-quick-start/), the advanced [Configuration Reference](../developer-guide/configuration-reference/) and [Plugin & Toolbar/Menu Control](../developer-guide/customize/plugins/) options.
+If you're familiar with this step move on to the [Developer Guide](../developer-guide) where you'll find additional [installation options](../developer-guide/install/), a [Configuration Quick Start](../developer-guide/configuration-quick-start/), the advanced [Configuration Reference](../developer-guide/configuration-reference/) and [Plugin & Toolbar/Menu Control](../developer-guide/plugin-toolbar-menu-controls/) options.
 
 
 
@@ -60,6 +60,6 @@ And that's all there is to it!
 
 # Next Steps
 
-If you're familiar with this step move on to the [Developer Guide](../developer-guide) where you'll find additional [installation options](../developer-guide/install/), a [Configuration Quick Start](../developer-guide/configuration-quick-start/), the advanced [Configuration Reference](../developer-guide/configuration-reference/) and [Plugin & Toolbar/Menu Control](../developer-guide/customize/plugins/) options.
+If you're familiar with this step move on to the [Developer Guide](../developer-guide) where you'll find additional [installation options](../developer-guide/install/), a [Configuration Quick Start](../developer-guide/configuration-quick-start/), the advanced [Configuration Reference](../developer-guide/configuration-reference/) and [Plugin & Toolbar/Menu Control](../developer-guide/plugin-toolbar-menu-controls/) options.
 
-`*` If you are using our CDN install [see these notes](../developer-guide/install/#CDN Installation) about using external plugins, custom languages and TinyMCE CDN versions.
+`*` If you are using our CDN see the [detailed install page](../developer-guide/install/) for information about using external plugins, custom languages and the TinyMCE versions available via the CDN.

@@ -40,7 +40,7 @@ In this example, let's replace `<textarea id="mytextarea">` with a TinyMCE edito
 </head>
 
 <body>
-  <h1>TinyMCE Getting Started Guide</h1>
+<h1>TinyMCE Quick Start Guide</h1>
   <form method="post">
     <textarea id="mytextarea"></textarea>
   </form>

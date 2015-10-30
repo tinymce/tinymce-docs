@@ -14,7 +14,7 @@ If you're familiar with this step move on to the [Developer Guide](../developer-
 Include this line of code in the `<head>` of your page:
 
 ```html
-<script src="//tinymce.cachefly.net/4.3/tinymce.min.js"></script>
+<script src="https://tinymce.cachefly.net/4.2/tinymce.min.js"></script>
 ```
 
 
@@ -31,7 +31,7 @@ In this example, let's replace `<textarea id="mytextarea">` with a TinyMCE edito
 <!DOCTYPE html>
 <html>
 <head>
-  <script src="//tinymce.cachefly.net/4.3/tinymce.min.js"></script>
+  <script src="https://tinymce.cachefly.net/4.2/tinymce.min.js"></script>
   <script type="text/javascript">
     tinymce.init({
       selector: "#mytextarea"

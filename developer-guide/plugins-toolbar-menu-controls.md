@@ -1,15 +1,50 @@
 ---
 layout: default
-title: Plugin Toolbar Menu Controls
+title: Plugins & Toolbar/Menu Controls
 ---
 
-// This is where we will put all the information relevant to plugin keys passed to init
+TinyMCE is an incredibly powerful and flexible rich text editor. This section will help you customize and extend your editor instance. We'll first look at the default core toolbar and menubar control before moving on to TinyMCE's real power: plugins.
 
-// Content source is the "Plugin options" section under http://www.tinymce.com/wiki.php/Configuration
+# Core Controls
 
-// This may be better placed under "customize" rather than "general"
+TinyMCE contains a set of core toolbar and menubar controls, things such as bold, italic, underline and so on. Basically the core settings you would typically find in any WYSIWYG editor.
 
-// Controls always reference plugins, comment added to any plugin that has an associated menu/toolbar control
+Here is the complete list of available core **Toolbar Controls**, in space separated format.
+
+```
+newdocument bold italic underline strikethrough alignleft aligncenter alignright alignjustify styleselect formatselect fontselect fontsizeselect cut copy paste bullist numlist outdent indent blockquote undo redo removeformat subscript superscript
+```
+
+And here are the **Menubar Controls**, again in space separated format.
+
+```
+newdocument undo redo visualaid cut copy paste selectall bold italic underline strikethrough subscript superscript removeformat formats
+```
+
+> Important! If a toolbar or menubar control is associated with plugin functionality, we highlight that relationship under its respective plugin entry below. Look for the icons.
+
+A note for first time users: TinyMCE instantiates a set of default toolbar and menubar controls if no controls are declared. See the example in the [Quick Start](/quick-start).
+
+If you wish to excluding either of these controls pass `"none"` to `menubar` or `toolbar` respectively:
+
+```js
+tinymce.init({
+    menubar: "none"
+});
+```
+
+Or,
+
+```js
+tinymce.init({
+    toolbar: "none"
+});
+```
+
+# Plugins
+The real power of TinyMCE's functionality is in its (so-called) plugins. The plugins listed below are included in the standard TinyMCE package, such as the one served via the CDN.
+
+It's important to note that some plugins have advanced options requiring a little more configuration than simply including the plugin name in the "plugins" space separated list.
 
 
 # advlist
@@ -17,6 +52,7 @@ title: Plugin Toolbar Menu Controls
 This plugin adds more advanced options to the ordered and unordered list buttons. It enables you to set number formats and bullet types.
 
 Initialization Example
+
 ```js
 tinymce.init({
     plugins: "advlist"
@@ -2005,11 +2041,13 @@ tinymce.init({
 The "Error: Form submit field collision." error message will appear if you call the submit button of your form "submit" this causes a collision with the JS form submit function and makes it impossible to submit the form using code. This can easily be avoided by naming the submit button "submitbtn" or similar.
 
 So replace this:
+
 ```html
 <form><button name="submit"></button></form>
 ```
 
 With this:
+
 ```html
 <form><button name="submitbtn"></button></form>
 ```

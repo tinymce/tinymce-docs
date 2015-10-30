@@ -25,67 +25,92 @@ newdocument undo redo visualaid cut copy paste selectall bold italic underline s
 
 A note for first time users: TinyMCE instantiates a set of default toolbar and menubar controls if no controls are declared. See the example in the [Quick Start](/quick-start).
 
-If you wish to excluding either of these controls pass `"none"` to `menubar` or `toolbar` respectively:
+If you wish to exclude either of these controls the value of `menubar` and/or `toolbar` should be `"none"`. To remove the toolbar and menu bar completely:
 
 ```js
 tinymce.init({
-    menubar: "none"
-});
-```
-
-Or,
-
-```js
-tinymce.init({
+    menubar: "none",
     toolbar: "none"
 });
 ```
 
+
+
 # Plugins
 The real power of TinyMCE's functionality is in its (so-called) plugins. The plugins listed below are included in the standard TinyMCE package, such as the one served via the CDN.
 
-It's important to note that some plugins have advanced options requiring a little more configuration than simply including the plugin name in the "plugins" space separated list.
+It's important to note that some plugins have advanced options requiring a little more configuration than simply including the plugin name as a value in the `plugins` key. An example of this is the Advanced List plugin `advlist` below. So let's get to it.
 
 
-# advlist
 
-This plugin adds more advanced options to the ordered and unordered list buttons. It enables you to set number formats and bullet types.
+## advlist
 
-Initialization Example
+The `advlist` plugin adds CSS `list-style-type` style number formats and bullet types to the editor's default list controls.
+
+By default all list options within the plugin are included. If you want to include specific list values (and exclude the default values) use the `advlist_bullet_styles` and `advlist_number_styles` options.
+
+**Default Value**: `"default,circle,disc,square"` and `"default,lower-alpha,lower-greek,lower-roman,upper-alpha,upper-roman"`
+
+**Example**
 
 ```js
 tinymce.init({
+    selector: "textarea", // change this value according to your html
     plugins: "advlist"
 });
 ```
 
-## advlist Options
+### Options
 
-These settings affect the execution of the Advlist plugin. The bullet list and numbered list styles may be changed through these options.
+These settings affect the execution of the Advlist Plugin by providing more granular control of `advlist` default settings.
 
-### advlist_bullet_styles
+### `advlist_bullet_styles`
 
 This option allows you to specify the style of unordered list item markers.
 
-An example showing the default value for this setting is as follows:
+**Type**: `String`
+
+**Default Value**: `"default,circle,disc,square"`
+
+**Possible Values**:
+
+  * `circle`: a filled circle
+  * `disc`: a hollow circle
+  * `square`: a filled square
+
+**Example**
 
 ```js
 tinymce.init({
+    selector: "textarea",  // change this value according to your html
     plugins: "advlist",
-    advlist_bullet_styles: "default,circle,disc,square"
+    advlist_bullet_styles: "square"  // your list will only include a square bullet option
 });
 ```
 
-### advlist_number_styles
+### `advlist_number_styles`
 
 This option allows you to specify the style of ordered list item markers.
 
-An example showing the default value for this setting is as follows:
+**Type**: `String`
+
+**Default Value**: `"default,lower-alpha,lower-greek,lower-roman,upper-alpha,upper-roman"`
+
+**Possible Values**:
+
+  * `lower-alpha`: lowercase ASCII letters, e.g. a, b, c, ... z
+  * `lower-greek`: lowercase classical Greek (alpha, beta, gamma), e.g. α, β, γ ...
+  * `lower-roman`: lowercase roman numerals, e.g. i, ii, iii, iv, v ...
+  * `upper-alpha`: uppercase ASCII letters, e.g. A, B, C, ... Z
+  * `upper-roman`: uppercase roman numerals, e.g. I, II, III, IV, V ...
+
+**Example**
 
 ```js
 tinymce.init({
+    selector: "textarea",  // change this value according to your html
     plugins: "advlist",
-    advlist_number_styles: "default,lower-alpha,lower-greek,lower-roman,upper-alpha,upper-roman"
+    advlist_number_styles: "lower-alpha"  // your list will only include a lower alpha letter option
 });
 ```
 

@@ -42,7 +42,7 @@ In this example, let's replace `<textarea id="mytextarea">` with a TinyMCE edito
 <body>
 <h1>TinyMCE Quick Start Guide</h1>
   <form method="post">
-    <textarea id="mytextarea"></textarea>
+    <textarea id="mytextarea">Hello, World!</textarea>
   </form>
 </body>
 </html>

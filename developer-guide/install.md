@@ -14,6 +14,7 @@ Otherwise, the [Configuration Quick Start](../configuration-quick-start/) is a g
 
 The easiest way to get started is to use our CDN.
 
+
 ## Step 1: Include the TinyMCE Script
 
 Include this line of code in the `<head>` of your page:
@@ -26,7 +27,7 @@ Include this line of code in the `<head>` of your page:
 
 With the script included, initialize TinyMCE on any element (or elements) in your webpage.
 
-Since TinyMCE lets you identify replaceable elements via a CSS selector all you need do is pass an object that contains a selector to `tinymce.init()`.
+Since TinyMCE lets you identify replaceable elements via a CSS selector all you need do is pass a configuration object that contains a selector to `tinymce.init()`.
 
 In this example, let's replace `<textarea id="mytextarea">` with a TinyMCE editor instance by passing the selector `'#mytextarea'` to `tinymce.init()`.
 
@@ -56,6 +57,7 @@ In this example, let's replace `<textarea id="mytextarea">` with a TinyMCE edito
 When the `form` is submitted the TinyMCE editor mimics the behavior of a normal HTML `<textarea>` during a form `post`. No additional configuration is required.
 
 And that's all there is to it!
+
 
 #### Additional information about using the CDN
 
@@ -222,6 +224,6 @@ When the `form` is submitted the TinyMCE editor mimics the behaviour of a normal
 
 # Next Steps
 
-At this point, you've seen how to create TinyMCE instances on a page using `tinymce.init()`, and you've seen how to retrieve content from TinyMCE as part of an `html` `<form>` `post`.
+At this point, you've seen how to create TinyMCE instances on a page using `tinymce.init()`, and you've seen how to retrieve content from TinyMCE as part of an HTML `<form>` `post`.
 
 There's way more under the hood if you're feeling adventurous: return to the [Developer Guide](../) to explore TinyMCE's advanced configuration settings in the [Configuration Reference](../configuration-reference/) and also learn more about [Plugin & Toolbar/Menu Control](../plugin-toolbar-menu-controls/) options.

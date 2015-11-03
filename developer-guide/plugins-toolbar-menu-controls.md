@@ -2106,9 +2106,7 @@ tinymce.init({
 
 ## noneditable
 
-The `noneditable` plugin adds non-editable support for any element assigned the `mceNonEditable` class. In other words, users won't be able to edit content within elements containing the class `noneditable`.
-
-This class name is configurable using the `noneditable_noneditable_class` option (see below).
+This plugin enables you to prevent users from being able to change (i.e. edit) content within elements assigned the `mceNonEditable` class.
 
 **Type:** `String`
 
@@ -2120,8 +2118,6 @@ tinymce.init({
     plugins: "noneditable"
 });
 ```
-
-**HTML contents examples**
 
 When you have existing classes that cannot be removed, you may combine MCE classes with the existing class in the following manner:
 
@@ -2137,7 +2133,7 @@ When you have existing classes that cannot be removed, you may combine MCE class
 <div class="myclass mceEditable">Contents</div>
 ```
 
-Nested editable elements are not currently supported. You would not be able to edit the cell contents in the following table:
+Nested editable elements are not currently supported. For example, you would not be able to edit the cell contents in the following table:
 
 ```html
 <table class="mceNonEditable">
@@ -2282,51 +2278,75 @@ tinymce.init({
 
 ## paste
 
-// This plugin adds the following controls:
+// adds menu control (under Edit menu)
 
-// toolbar controls
+// adds toolbar controls
 
-// menu controls
+This plugin will filter/cleanup content pasted from Microsoft Word. The power of the plugin is in its options, so please take the time to learn more about these below.
 
-This plugin will filter/cleanup contents pasted from Word.
+Note that the toolbar button won't work in browsers that don't support direct access to the clipboard. In such cases the user will be presented with a modal advising them of this along with a reminder of standard keyboard shortcuts.
 
 **Type:** `String`
-
-**Default Value:**
 
 **Example:**
 
 ```js
 tinymce.init({
-    plugins: "paste"
+    selector: "textarea",  // change this value according to your html
+    plugins: "paste",
+    menubar: "edit",
+    toolbar: "paste"
 });
 ```
 
 ### Options
 
-These settings affect the execution of the Paste plugin. These settings affect the way content is eliminated or preserved when being pasted. In addition, callbacks are available prior to and after content filtration.
+These settings affect the way content is eliminated or preserved when being pasted. In addition, callbacks are available prior to and after content filtration.
 
 ### `paste_data_images`
 
-This option specifies whether data:url images (inline images) should be removed or not from the pasted contents. Setting this to "true" will allow the pasted images, and setting this to "false" will disallow pasted images.  For example, Firefox enables you to paste images directly into any contentEditable field. This is normally not something people want, so this option is "false" by default since say a 600kb embedded image blocks page loads and prevents it form being cached on multiple pages.
+This option specifies whether `data:url` images (inline images) should be removed or not from the pasted contents.
 
-Example of usage of the paste_data_images option
+Setting `paste_data_images` to `"true"` will allow the pasted images, while setting it to `"false"` will disallow pasted images.
+
+For example, Firefox enables you to paste images directly into any `contentEditable` field. This is normally not something people want, so this option is `"false"` by default since, say, a 600kb embedded image blocks page loads and prevents it form being cached on multiple pages.
+
+**Type:** `Boolean`
+
+**Default Value:** `false`
+
+**Possbile Values:** `true`, `false`
+
+**Example:**
 
 ```js
 tinymce.init({
-    ...
+    selector: "textarea",  // change this value according to your html
+    plugins: "paste",
+    menubar: "edit",
+    toolbar: "paste"
     paste_data_images: true
 });
 ```
 
 ### `paste_as_text`
 
-This option enables you to set the default state of the "paste as text" edit menu option. It's disabled by default but can be forced on by default.
+This option enables you to set the default state of the `Paste as text` menu item, which is added by the `paste` plugin under the `Edit` menu dropdown. It's disabled by default.
 
-Example of usage
+**Type:** `Boolean`
+
+**Default Value:** `false`
+
+**Possbile Values:** `true`, `false`
+
+**Example:**
 
 ```js
 tinymce.init({
+    selector: "textarea",  // change this value according to your html
+    plugins: "paste",
+    menubar: "edit",
+    toolbar: "paste"
     paste_as_text: true
 });
 ```
@@ -2335,29 +2355,42 @@ tinymce.init({
 
 This option allows you to disable TinyMCE's default paste filters when set to false.
 
-An example of this setting is as follows:
+**Type:** `Boolean`
+
+**Default Value:** `true`
+
+**Possbile Values:** `true`, `false`
+
+**Example:**
 
 ```js
 tinymce.init({
+    selector: "textarea",  // change this value according to your html
     plugins: "paste",
+    menubar: "edit",
+    toolbar: "paste",
     paste_enable_default_filters: false
 });
 ```
 
 ### `paste_filter_drop`
 
-// YOU DON'T HAVE PERMISSIONS TO EDIT THIS PAGE
-
-// You need to be an Wiki Member to be able to edit the wiki. Send a mail to info@moxiecode.com to request access.
+// From current Wiki: "You don't have permissions to edit this page. You need to be an Wiki Member to be able to edit the wiki. Send a mail to info@moxiecode.com to request access."
 
 ### `paste_preprocess`
 
 This option enables you to modify the pasted content before it gets inserted into the editor.
 
-Example of usage
+**Type:** `String`
+
+**Example:**
 
 ```js
 tinymce.init({
+    selector: "textarea",  // change this value according to your html
+    plugins: "paste",
+    menubar: "edit",
+    toolbar: "paste",
     paste_preprocess: function(plugin, args) {
         console.log(args.content);
         args.content += ' preprocess';
@@ -2369,10 +2402,16 @@ tinymce.init({
 
 This option enables you to modify the pasted content before it gets inserted into the editor but after it's been parsed into a DOM structure.
 
-Example of usage
+**Type:** `String`
+
+**Example:**
 
 ```js
 tinymce.init({
+    selector: "textarea",  // change this value according to your html
+    plugins: "paste",
+    menubar: "edit",
+    toolbar: "paste",
     paste_postprocess: function(plugin, args) {
         console.log(args.node);
         args.node.setAttribute('id', '42');
@@ -2382,52 +2421,77 @@ tinymce.init({
 
 ### `paste_word_valid_elements`
 
-This option enables you to configure the valid_elements specific to MS Office. Word produces a lot of junk HTML so when users paste things from Word we do extra restrictive filtering on it to remove as much of this as possible. This option enables you to specify what elements and attributes you want to include when Word contents intercepted.
+This option enables you to configure the `valid_elements` specific to MS Office. Word produces a lot of junk HTML so when users paste things from Word we do extra restrictive filtering on it to remove as much of this as possible. This option enables you to specify which elements and attributes you want to include when Word contents are intercepted.
 
-Example of usage
+**Type:** `String`
+
+**Example:**
 
 ```js
 tinymce.init({
+    selector: "textarea",  // change this value according to your html
+    plugins: "paste",
+    menubar: "edit",
+    toolbar: "paste",
     paste_word_valid_elements: "b,strong,i,em,h1,h2"
 });
 ```
 
 ### `paste_webkit_styles`
 
-This option enables you to configure the valid_elements specific to MS Office. Word produces a lot of junk HTML so when users paste things from Word we do extra restrictive filtering on it to remove as much of this as possible. This option enables you to specify what elements and attributes you want to include when Word contents intercepted.
+This options allows you to specify styles you want to keep when pasting in WebKit. WebKit has a (nasty) bug where it will take all the computed CSS properties for an element and add them to spans within the editor. Since most users don't want random spans added all over their document, we need to manually clean that up until the bug is fixed. This option defaults to `"none"` but can be set to `"all"` or a specific list of styles to retain.
 
-Example of usage
+**Type:** `String`
+
+**Example:**
 
 ```js
 tinymce.init({
-    paste_word_valid_elements: "b,strong,i,em,h1,h2"
+    selector: "textarea",  // change this value according to your html
+    plugins: "paste",
+    menubar: "edit",
+    toolbar: "paste",
+    paste_webkit_styles: "color font-size"
 });
 ```
 
 ### `paste_retain_style_properties`
 
-This options allows you to specify styles you want to keep when pasting in WebKit. WebKit has a nasty bug where it will take all the computed CSS properties for an element and add them to spans within the editor since most users don't want to have a bunch of random spans added all over the document we need to manually clean that mess up until this bug is fixed. This option defaults to "none" but can be set to "all" or a specific list of styles to retain.
+This options allows you to specify which styles you want to retain when pasting contents from MS Word and similar Office suite products. This option can be set to a space separated list of css style names, or `"all"` if you want all styles to be retained.
 
-Example of usage
+**Type:** `String`
+
+**Example:**
 
 ```js
 tinymce.init({
-    ...
-    plugins: "paste"
-    paste_webkit_styles: "color font-size"
+    selector: "textarea",  // change this value according to your html
+    plugins: "paste",
+    menubar: "edit",
+    toolbar: "paste",
+    paste_retain_style_properties: "color font-size"
 });
 ```
 
 ### `paste_merge_formats`
 
-This option enables the merge format feature of the paste plugin. This merges similar text formats to reduce the number of HTML elements produced. For example this "`<b>abc <b>bold</b> 123</b>`" becomes "`<b>abc bold 123</b>`" since the inner format is basically redundant. This option is enabled by default but can be disabled it the retaining of nesting of similar formats is important.
+This option enables the merge format feature of the paste plugin. This merges similar text formats to reduce the number of HTML elements produced. For example this `<b>abc <b>bold</b> 123</b>` becomes `<b>abc bold 123</b>` since the inner format is basically redundant. This option is enabled by default but can be disabled if retaining nesting or similar formats is important.
 
-Example of usage
+**Type:** `Boolean`
+
+**Default Value:** `true`
+
+**Possible Values:** `true`, `false`
+
+**Example:**
 
 ```js
 tinymce.init({
-        ...
-        paste_merge_formats: false
+    selector: "textarea",  // change this value according to your html
+    plugins: "paste",
+    menubar: "edit",
+    toolbar: "paste",
+    paste_merge_formats: false
 });
 ```
 
@@ -2435,11 +2499,20 @@ tinymce.init({
 
 This option lets you disable the logic that converts list like paragraph structures into real semantic HTML lists.
 
-Example of usage
+**Type:** `Boolean`
+
+**Default Value:** `true`
+
+**Possible Values:** `true`, `false`
+
+**Example:**
 
 ```js
 tinymce.init({
-    ...
+    selector: "textarea",  // change this value according to your html
+    plugins: "paste",
+    menubar: "edit",
+    toolbar: "paste",
     paste_convert_word_fake_lists: false
 });
 ```
@@ -2448,11 +2521,20 @@ tinymce.init({
 
 This option allows you to disable TinyMCE's default paste filters for webkit styles.
 
-An example of this setting is as follows:
+**Type:** `Boolean`
+
+**Default Value:** `true`
+
+**Possible Values:** `true`, `false`
+
+**Example:**
 
 ```js
 tinymce.init({
+    selector: "textarea",  // change this value according to your html
     plugins: "paste",
+    menubar: "edit",
+    toolbar: "paste",
     paste_remove_styles_if_webkit: false
 });
 ```
@@ -2461,13 +2543,11 @@ tinymce.init({
 
 ## preview
 
-// This plugin adds the following controls:
+// adds menu control (under View menu)
 
-// toolbar controls
+// adds toolbar control
 
-// menu controls
-
-This plugin adds a preview button to TinyMCE, pressing the button opens a popup showing the current content. Installation Instructions
+This plugin adds a preview button to TinyMCE. Pressing the button opens a popup showing the current content.
 
 **Type:** `String`
 
@@ -2475,41 +2555,55 @@ This plugin adds a preview button to TinyMCE, pressing the button opens a popup 
 
 **Example:**
 
-Initialization Example
-
 ```js
 tinymce.init({
+    selector: "textarea",  // change this value according to your html
     plugins: "preview",
-    toolbar: "preview",
+    menubar: "view",
+    toolbar: "preview"
 });
 ```
 
 ### Options
 
-These settings affect the execution of the Preview plugin. The height and width of the preview dialog box may be set here.
+These settings affect the execution of the `preview` plugin. The height and width of the preview dialog box may be set here.
 
 ### `plugin_preview_height`
 
-This option allows you to set the height of the preview window that appears when using the preview plugin.
+This option allows you to set the height of the preview window that appears when using the `preview` plugin.
 
-An example of the default setting is as follows:
+**Type:** `Integer`
+
+**Default Value:** `"500"`
+
+**Example:**
 
 ```js
 tinymce.init({
+    selector: "textarea",  // change this value according to your html
     plugins: "preview",
+    menubar: "view",
+    toolbar: "preview",
     plugin_preview_height: "500"
 });
 ```
 
 ### `plugin_preview_width`
 
-This option allows you to set the width of the preview window that appears when using the preview plugin.
+This option allows you to set the width of the preview window that appears when using the `preview` plugin.
 
-An example of the default setting is as follows:
+**Type:** `Integer`
+
+**Default Value:** `"650"`
+
+**Example:**
 
 ```js
 tinymce.init({
+    selector: "textarea",  // change this value according to your html
     plugins: "preview",
+    menubar: "view",
+    toolbar: "preview",
     plugin_preview_width: "650"
 });
 ```
@@ -2518,25 +2612,21 @@ tinymce.init({
 
 ## print
 
-// This plugin adds the following controls:
+// adds menu control (under File menu)
 
-// toolbar controls
+// adds toolbar control
 
-// menu controls
-
-This plugin adds a print button to TinyMCE. Installation Instructions
+This plugin adds a print button to TinyMCE's toolbar. It also adds a `Print` item to the File menu dropdown.
 
 **Type:** `String`
 
-**Default Value:**
-
 **Example:**
-
-Initialization Example
 
 ```js
 tinymce.init({
+    selector: "textarea",  // change this value according to your html
     plugins: "print",
+    menubar: "file",
     toolbar: "print"
 });
 ```
@@ -2545,32 +2635,25 @@ tinymce.init({
 
 ## save
 
-// This plugin adds the following controls:
+// adds toolbar control
 
-// toolbar controls
-
-This plugin adds a save button to TinyMCE this save button will submit the form that the editor is within.
+This plugin adds a save button to the TinyMCE toolbar, which will submit the form that the editor is within.
 
 **Type:** `String`
 
-**Default Value:**
-
 **Example:**
-
-Initialization Example
 
 ```js
 tinymce.init({
+    selector: "textarea",  // change this value according to your html
     plugins: "save",
-    toolbar: "save",
-    save_enablewhendirty: true,
-    save_onsavecallback: function() {console.log("Save");}
+    toolbar: "save"
 });
 ```
 
 **Error messages**
 
-The "Error: Form submit field collision." error message will appear if you call the submit button of your form "submit" this causes a collision with the JS form submit function and makes it impossible to submit the form using code. This can easily be avoided by naming the submit button "submitbtn" or similar.
+The `"Error: Form submit field collision."` error message will appear if you call the submit button of your form "submit", which causes a collision with the JS form `submit` function and makes it impossible to submit the form using code. This can easily be avoided by naming the submit button `"submitbtn"` or similar.
 
 So replace this:
 
@@ -2586,17 +2669,21 @@ With this:
 
 ### Options
 
-These settings affect the execution of the Save plugin. Callbacks that will execute after saving the content, or cancelling saving the content are included in this section. In addition, a setting that will disable the save button when no modifications have been made to the content is available here.
+These settings affect the execution of the `save` plugin. Callbacks that will execute after saving the content or cancelling saving the content are included in this section. In addition, a setting that will disable the save button when no modifications have been made to the content is available here.
 
 ### `save_enablewhendirty`
 
 This option allows you to disable the save button until modifications have been made to the content of the editor. This option is enabled by default.
 
-An example of this setting is as follows:
+**Type:** `Boolean`
+
+**Example:**
 
 ```js
 tinymce.init({
+    selector: "textarea",  // change this value according to your html
     plugins: "save",
+    toolbar: "save",
     save_enablewhendirty: true
 });
 ```
@@ -2605,11 +2692,15 @@ tinymce.init({
 
 This option allows you to specify the function that will be executed when the cancel button/command is invoked.
 
-An example of this setting is as follows:
+**Type:** `String`
+
+**Example:**
 
 ```js
 tinymce.init({
+    selector: "textarea",  // change this value according to your html
     plugins: "save",
+    toolbar: "save",
     save_oncancelcallback: function () { console.log('Save cancelled'); }
 });
 ```
@@ -2618,11 +2709,15 @@ tinymce.init({
 
 This option allows you to specify the function that will be executed when the save button/command is invoked.
 
-An example of this setting is as follows:
+**Type:** `String`
+
+**Example:**
 
 ```js
 tinymce.init({
+    selector: "textarea",  // change this value according to your html
     plugins: "save",
+    toolbar: "save",
     save_onsavecallback: function () { console.log('Saved'); }
 });
 ```
@@ -2631,25 +2726,21 @@ tinymce.init({
 
 ## searchreplace
 
-// This plugin adds the following controls:
+// adds menu control (under Edit menu)
 
-// toolbar controls
+// adds toolbar control
 
-// menu controls
-
-This plugin adds search/replace dialogs to TinyMCE.
+This plugin adds search/replace dialogs to TinyMCE. It also adds a toolbar control and the menu item `Find and replace` under the `Edit` menu dropdown.
 
 **Type:** `String`
 
-**Default Value:**
-
 **Example:**
-
-Initialization Example
 
 ```js
 tinymce.init({
+    selector: "textarea",  // change this value according to your html
     plugins: "searchreplace",
+    menubar: "edit",
     toolbar: "searchreplace"
 });
 ```
@@ -2658,55 +2749,49 @@ tinymce.init({
 
 ## spellchecker
 
-// This plugin adds the following controls:
+// adds menu control (under Tools menu)
 
-// toolbar controls
+// adds toolbar control
 
-// menu controls
-
-This plugin adds a spellchecker icon and menu item.
+This plugin enables TinyMCE's spell check functionality. It also adds a toolbar control and the menu item `Spellcheck` under the `Tools` menu dropdown.
 
 **Type:** `String`
 
-**Default Value:**
-
 **Example:**
-
-Initialization Example
 
 ```js
 tinymce.init({
-  plugins: "spellchecker",
-  toolbar: "spellchecker"
+    selector: "textarea",  // change this value according to your html
+    plugins: "spellchecker",
+    menubar: "tools",
+    toolbar: "spellchecker"
 });
 ```
 
 ## Options
 
-These settings affect the execution of the Wordcount plugin. You may modify how spellchecking is handled here.
+These settings affect the execution of the `spellchecker` plugin by modifying how spellchecking is handled.
 
 ### `spellchecker_callback`
 
-Lets you override the server request logic for the spellchecker.
-
-This option lets you override the default server side communication logic.
+This option lets you override the default server side request/communication logic for the spellchecker.
 
 **Example of a basic override without using a server**
 
 ```js
 tinymce.init({
-  ...
-  spellchecker_callback: function(method, text, success, failure) {
-    var words = text.match(this.getWordCharPattern());
-
-    if (method == "spellcheck") {
-      var suggestions = {};
-
-      for (var i = 0; i < words.length; i++) {
+    selector: "textarea",  // change this value according to your html
+    plugins: "spellchecker",
+    menubar: "tools",
+    toolbar: "spellchecker",
+    spellchecker_callback: function(method, text, success, failure) {
+      var words = text.match(this.getWordCharPattern());
+      if (method == "spellcheck") {
+        var suggestions = {};
+        for (var i = 0; i < words.length; i++) {
         suggestions[words[i]] = ["First", "Second"];
       }
-
-        success(suggestions);
+      success(suggestions);
       }
  }
 ```
@@ -2715,44 +2800,66 @@ tinymce.init({
 
 ```js
 tinymce.init({
-  ...
-    spellchecker_callback: function(method, text, success, failure) {
-       tinymce.util.JSONRequest.sendRPC({
-         url: "/tinymce/spellchecker.php",
-         method: "spellcheck",
-         params: {
-           lang: this.getLanguage(),
-           words: text.match(this.getWordCharPattern())
-         },
-         success: function(result) {
-           success(result);
-         },
-         error: function(error, xhr) {
-           failure("Spellcheck error:" + xhr.status);
-         }
-    });
-  }
+    selector: "textarea",  // change this value according to your html
+    plugins: "spellchecker",
+    menubar: "tools",
+    toolbar: "spellchecker",
+      spellchecker_callback: function(method, text, success, failure) {
+        tinymce.util.JSONRequest.sendRPC({
+            url: "/tinymce/spellchecker.php",
+            method: "spellcheck",
+            params: {
+              lang: this.getLanguage(),
+              words: text.match(this.getWordCharPattern())
+            },
+            success: function(result) {
+              success(result);
+            },
+            error: function(error, xhr) {
+              failure("Spellcheck error:" + xhr.status);
+            }
+      });
+    }
 });
 ```
 
 ### `spellchecker_language`
 
-This config option lets you set the default language code for the spellchecker. This defaults to "en".
+This configuration option lets you set the default language code for the spellchecker. This defaults to "en".
+
+**Type:** `String`
+
+**Default Value:**  `en`
+
+**Example:**
 
 ```js
 tinymce.init({
-    ...
+    selector: "textarea",  // change this value according to your html
+    plugins: "spellchecker",
+    menubar: "tools",
+    toolbar: "spellchecker",
     spellchecker_language: 'sv_SE'
 });
 ```
 
 ### `spellchecker_languages`
 
-This option lets you specify a list of languages for the user to select from. The format is based on the 3.x spellchecker format.
+This option lets you specify a list of languages for the user to select from. The list is added to the spell check toolbar icon. The format is based on the 3.x `spellchecker` format.
+
+**Type:** `String`
+
+**Default Value:** `'English=en,Danish=da,Dutch=nl,Finnish=fi,French=fr_FR,' +
+    'German=de,Italian=it,Polish=pl,Portuguese=pt_BR,Spanish=es,Swedish=sv'`
+
+**Example:**
 
 ```js
 tinymce.init({
-    ...
+    selector: "textarea",  // change this value according to your html
+    plugins: "spellchecker",
+    menubar: "tools",
+    toolbar: "spellchecker",
     spellchecker_language: 'English=en,Danish=da,Dutch=nl,Finnish=fi,French=fr_FR,' +
         'German=de,Italian=it,Polish=pl,Portuguese=pt_BR,Spanish=es,Swedish=sv'
 });
@@ -2760,18 +2867,23 @@ tinymce.init({
 
 ### `spellchecker_rpc_url`
 
-This options enables you to specify a custom URL to be used for the spellchecker. This can be the spellchecker url provided by the TinyMCE spellchecker packages or an url to a page that you have in your system. The URL is relative to the spellchecker plugin.
+This options enables you to specify a custom URL to be used for the spell checker. This can be the `spellchecker` url provided by the TinyMCE `spellchecker` packages or a url to a page that you have in your system. The URL is **relative** to the `spellchecker` plugin.
 
-Example of configuration
+**Type:** `String`
+
+**Example:**
 
 ```js
 tinymce.init({
-    ...
+    selector: "textarea",  // change this value according to your html
+    plugins: "spellchecker",
+    menubar: "tools",
+    toolbar: "spellchecker",
     spellchecker_rpc_url: 'spellchecker.php'
 });
 ```
 
-#### Spellchecker request format
+### Spellchecker request format
 
 The request is a HTTP POST with URL encoded parameters described below.
 
@@ -2781,11 +2893,11 @@ The request is a HTTP POST with URL encoded parameters described below.
 | text      | Text to spellcheck this will contain a plain text version of the current editor contents. |
 | lang      | The currently selected language code for example "en" or "sv_SE". |
 
-#### Spellchecker response format
+### Spellchecker response format
 
 The response of a successful spellcheck request should like this:
 
-```
+```js
 {
     "words": {
          "misspelled1": ["suggestion1", "suggestion2"],
@@ -2796,7 +2908,7 @@ The response of a successful spellcheck request should like this:
 
 And if there was an error:
 
-```
+```js
 {
     "error": "Error message"
 }
@@ -2804,12 +2916,18 @@ And if there was an error:
 
 ### `spellchecker_wordchar_pattern`
 
-This option enables you to override the matching of characters that are parts of words. By default it will treat anything that isn't a space, comma, dot, dash, quote etc etc as parts of a word. For some languages or environments it might be useful to override this behavior.
+This option enables you to override the matching of characters that are parts of words. By default it will treat anything that isn't a space, comma, dot, dash, quote, etc, as parts of a word. For some languages or environments it might be useful to override this behavior.
 
-Example of usage
+**Type:** `String`
+
+**Example:**
 
 ```js
 tinymce.init({
+    selector: "textarea",  // change this value according to your html
+    plugins: "spellchecker",
+    menubar: "tools",
+    toolbar: "spellchecker",
     spellchecker_wordchar_pattern: /[^\s,\.]+/g
 });
 ```
@@ -2822,27 +2940,26 @@ This plugin adds the possibility to tab in/out of TinyMCE.
 
 **Type:** `String`
 
-**Default Value:**
-
 **Example:**
-
-Initialization Example
 
 ```js
 tinymce.init({
+    selector: "textarea",  // change this value according to your html
     plugins: "tabfocus"
 });
 ```
 
 ### Options
 
-This setting affects the execution of the Tabfocus plugin. This setting can be used to change the focus behaviour of the editor when the tab key has been pressed inside the editable area.
+This setting affects the execution of the `tabfocus` plugin. This setting can be used to change the focus behaviour of the editor when the tab key has been pressed inside the editable area.
 
 ### `tabfocus_elements`
 
-This option enables you to specify an element ID to focus, when the user pressed the tab key inside the editor. You can also use the special ":prev" and ":next" values. It will then places the focus on either the previous or next input element placed before/after the TinyMCE instance in the DOM.
+This option enables you to specify an element `ID` to focus, when the user pressed the tab key inside the editor. You can also use the special `":prev"` and `":next"` values. It will then place the focus on either the previous or next input element placed before/after the TinyMCE instance in the DOM.
 
-Example of usage of the tab_focus option
+**Type:** `String`
+
+**Example:**
 
 ```js
 // Move focus to specific element
@@ -2850,7 +2967,9 @@ tinymce.init({
         ...
         tabfocus_elements: "somebutton"
 });
+```
 
+```js
 // Move focus to next element in DOM
 tinymce.init({
         ...
@@ -2862,75 +2981,90 @@ tinymce.init({
 
 ## table
 
-// This plugin adds the following controls:
+// adds menu control (new Table menu)
 
-// toolbar controls
+// adds toolbar control
 
-// menu controls
-
-This plugin adds table management functionality to TinyMCE.
+The `table` plugin adds table management functionality to TinyMCE. It also adds a toolbar control and a new menu item `Table`.
 
 **Type:** `String`
 
-**Default Value:**
-
 **Example:**
-
-Initialization Example
 
 ```js
 tinymce.init({
     plugins: "table",
-    tools: "inserttable"
+    menubar: "table",
+    toolbar: "table"
+    // tools: "inserttable"
 });
 ```
 
 ### Options
 
-These settings affect the execution of the Table plugin. Default styles and attributes for tables, preset class lists and table behaviour can be modified here.
+These settings affect the execution of the `table` plugin and let you modify the default styles and attributes for tables, preset class lists and table behavior.
 
 ### `table_appearance_options`
 
-// YOU DON'T HAVE PERMISSIONS TO EDIT THIS PAGE
-
-// You need to be an Wiki Member to be able to edit the wiki. Send a mail to info@moxiecode.com to request access.
+// From current Wiki: "You don't have permissions to edit this page. You need to be an Wiki Member to be able to edit the wiki. Send a mail to info@moxiecode.com to request access."
 
 ### `table_clone_elements`
 
-This option enables you to specify what elements should be cloned as empty children when inserting rows/columns to a table. By default it will clone these "strong em b i span font h1 h2 h3 h4 h5 h6 p div" into new cells.
+This option enables you to specify which elements should be cloned as empty children when inserting rows/columns to a table. By default it will clone these "`strong` `em` `b` `i` `span` `font` `h1` `h2` `h3` `h4` `h5` `h6` `p` `div`" into new cells.
 
-Example
+**Type:** `String`
+
+**Example:**
 
 ```js
 tinymce.init({
-    ...
+    selector: "textarea",  // change this value according to your html
     table_clone_elements: "strong em a"
 });
 ```
 
 ### `table_grid`
 
-This options allows you disable the table grid feature of the table menu. This feature is enabled by default but if you set this option to false a table dialog will appear letting you enter the table size you want to insert.
+This option allows you disable the table grid feature of the table menu. The grid feature (which is enabled by default) consists of a dragable matrix that a user can interact with to automatically create a table of x-rows by x-columns based upon their input.
 
-Example of usage
+However, if you set this option to `false` the dragable matrix will be replaced with a table dialog box into which a user can enter various parameters to create a table (e.g. cols, rows, width, height, cell spacing, cell padding, border, caption and alignment). There are also advanced style options available in the dialog.
+
+**Type:** `Boolean`
+
+**Default Value:** `true`
+
+**Possible Values:**  `true`, `false`
+
+**Example:**
 
 ```js
 tinymce.init({
-    ...
-    plugins: "table"
+    selector: "textarea",  // change this value according to your html
+    plugins: "table",
+    menubar: "table",
+    toolbar: "table",
     table_grid: false
 });
 ```
 
 ### `table_tab_navigation`
 
-This option enables you to disable the default tab between table cells feature.
+This option enables you to disable the default tab between table cells feature. By default, when a user presses tab the cursor will move between cells within the table. By setting the `table_tab_navigation` value to `false` the cursor will tab between browser elements (such as the url bar or form fields, etc).
 
-Example of usage
+**Type:** `Boolean`
+
+**Default Value:** `true`
+
+**Possible Values:** `true`, `false`
+
+**Example:**
 
 ```js
 tinymce.init({
+    selector: "textarea",  // change this value according to your html
     plugins: "table",
+    menubar: "table",
+    toolbar: "table",
     table_tab_navigation: false
 });
 ```
@@ -2939,11 +3073,16 @@ tinymce.init({
 
 This option enables you to specify default attributes for inserted tables.
 
-Example of usage
+**Type:** `String`
+
+**Example:**
 
 ```js
 tinymce.init({
+    selector: "textarea",  // change this value according to your html
     plugins: "table",
+    menubar: "table",
+    toolbar: "table",
     table_default_attributes: {
         title: 'My table'
     }
@@ -2954,11 +3093,16 @@ tinymce.init({
 
 This option enables you to specify default styles for inserted tables.
 
-Example of usage
+**Type:** `String`
+
+**Example:**
 
 ```js
 tinymce.init({
+    selector: "textarea",  // change this value according to your html
     plugins: "table",
+    menubar: "table",
+    toolbar: "table",
     table_default_styles: {
         fontWeight: 'bold'
     }
@@ -2967,13 +3111,18 @@ tinymce.init({
 
 ### `table_class_list`
 
-This option enables you to specify a list of classes to present in the table options dialog.
+This option enables you to specify a list of classes to present in the table options dialog box. This is useful if you want users to assign predefined classes to table elements.
 
-Example of usage
+**Type:** `String`
+
+**Example:**
 
 ```js
 tinymce.init({
+    selector: "textarea",  // change this value according to your html
     plugins: "table",
+    menubar: "table",
+    toolbar: "table",
     table_class_list: [
         {title: 'None', value: ''},
         {title: 'Dog', value: 'dog'},
@@ -2984,13 +3133,18 @@ tinymce.init({
 
 ### `table_cell_class_list`
 
-This option enables you to specify a list of classes to present in the table cell options dialog.
+This option enables you to specify a list of classes to present in the table cell options dialog box. This is useful if you want users to assign predefined classes to table cells.
 
-Example of usage
+**Type:** `String`
+
+**Example:**
 
 ```js
 tinymce.init({
+    selector: "textarea",  // change this value according to your html
     plugins: "table",
+    menubar: "table",
+    toolbar: "table",
     table_cell_class_list: [
         {title: 'None', value: ''},
         {title: 'Dog', value: 'dog'},
@@ -3001,13 +3155,18 @@ tinymce.init({
 
 ### `table_row_class_list`
 
-This option enables you to specify a list of classes to present in the table row options dialog.
+This option enables you to specify a list of classes to present in the table row options dialog. This is useful if you want users to assign predefined classes to table rows.
 
-Example of usage
+**Type:** `String`
+
+**Example:**
 
 ```js
 tinymce.init({
+    selector: "textarea",  // change this value according to your html
     plugins: "table",
+    menubar: "table",
+    toolbar: "table",
     table_row_class_list: [
         {title: 'None', value: ''},
         {title: 'Dog', value: 'dog'},
@@ -3018,36 +3177,66 @@ tinymce.init({
 
 ### `table_advtab`
 
-This option makes it possible to disable the table dialog advanced tab.
+This option makes it possible to disable the advanced tab in the table dialog box. The advanced tab allows a user to input `style`, `border color` and `background color` values.
 
-Example of usage
+**Type:** `Boolean`
+
+**Default Value:** `true`
+
+**Possible Values:** `true`, `false`
+
+**Example:**
 
 ```js
 tinymce.init({
+    selector: "textarea",  // change this value according to your html
+    plugins: "table",
+    menubar: "table",
+    toolbar: "table",
     table_advtab: false
 });
 ```
 
 ### `table_cell_advtab`
 
-This option makes it possible to disable the table cell dialog advanced tab.
+This option makes it possible to disable the advanced tab in the table cell dialog box. The advanced tab allows a user to input `style`, `border color` and `background color` values.
 
-Example of usage
+**Type:** `Boolean`
+
+**Default Value:** `true`
+
+**Possible Values:** `true`, `false`
+
+**Example:**
 
 ```js
 tinymce.init({
+    selector: "textarea",  // change this value according to your html
+    plugins: "table",
+    menubar: "table",
+    toolbar: "table",
     table_cell_advtab: false
 });
 ```
 
 ### `table_row_advtab`
 
-This option makes it possible to disable the table row dialog advanced tab.
+This option makes it possible to disable the advanced tab in the table row dialog box. The advanced tab allows a user to input `style`, `border color` and `background color` values.
 
-Example of usage
+**Type:** `Boolean`
+
+**Default Value:** `true`
+
+**Possible Values:** `true`, `false`
+
+**Example:**
 
 ```js
 tinymce.init({
+    selector: "textarea",  // change this value according to your html
+    plugins: "table",
+    menubar: "table",
+    toolbar: "table",
     table_row_advtab: false
 });
 ```
@@ -3056,19 +3245,265 @@ tinymce.init({
 
 ## template
 
-This plugin adds support for custom templates. There are two types of files this plugin supports: *templates* and *snippets*.
+// adds menu control (under Insert menu)
+
+// adds toolbar control
+
+The `template` plugin adds support for custom templates. It also adds a menu item `Insert template` under the `Insert` menu and a toolbar control.
 
 **Type:** `String`
 
-**Default Value:**
+**Example:**
+
+```js
+tinymce.init({
+    selector: "textarea",  // change this value according to your html
+    plugins: "template",
+    menubar: "insert",
+    toolbar: "template"
+});
+```
+
+There are two types of files the `template` plugin supports: *templates* and *snippets*. We will first review the plugin options before moving on to some examples.
+
+### Options
+
+These settings affect the execution of the `template` plugin. Predefined templates for items such as created dates and modified dates can be set here.
+
+### `templates`
+
+This option lets you specify a predefined list of templates to be inserted by the user into the editable area. It is structured as an array with each item having a `title`, `description` and `content`/`url`.
+
+If this option is a string then it will be requested as a URL that should produce a JSON output in the same format the option accepts.
+
+Each item in the list can either be inline using a `content` property or a whole file using the `url` property.
+
+**Example using templates object:**
+
+```js
+tinymce.init({
+    selector: "textarea",  // change this value according to your html
+    plugins: "template",
+    menubar: "insert",
+    toolbar: "template"
+    templates: [
+        {title: 'Some title 1', description: 'Some desc 1', content: 'My content'},
+        {title: 'Some title 2', description: 'Some desc 2', url: 'development.html'}
+    ]
+});
+```
+
+**Example using templates url**
+
+```js
+tinymce.init({
+    selector: "textarea",  // change this value according to your html
+    plugins: "template",
+    menubar: "insert",
+    toolbar: "template"
+    templates: "/dir/templates.php"
+});
+```
+
+**Example JSON output of templates.php**
+
+```json
+[
+    {"title": "Some title 1", "description": "Some desc 1", "content": "My content"},
+    {"title": "Some title 2", "description": "Some desc 2", "url": "development.html"}
+]
+```
+
+### `template_cdate_classes`
+
+This option allows you to provide a list of class names (separated by spaces) whereby any template element with one of the classes will have its content replaced by the 'creation' date (`creationdate`), formatted according to the `template_cdate_format` option.
+
+A creation date is one that is set if no previous date existed within the element. Once set, the original date is stored inside the element in a HTML comment and is designed not to change even with a template change.
+
+**Type:** `String`
 
 **Example:**
 
-Initialization Example
+```js
+tinymce.init({
+    selector: "textarea",  // change this value according to your html
+    plugins: "template",
+    menubar: "insert",
+    toolbar: "template"
+    template_cdate_classes: "cdate creationdate"
+});
+```
+
+### `template_cdate_format`
+
+This option allows you to provide a date format that all 'creation' date templates will be replaced by.
+
+**Type:** `String`
+
+**Example:**
+
+```js
+tinymce.init({
+    selector: "textarea",  // change this value according to your html
+    plugins: "template",
+    menubar: "insert",
+    toolbar: "template"
+    template_cdate_format: "%m/%d/%Y : %H:%M:%S"
+});
+```
+
+### `template_mdate_classes`
+
+This option allows you to provide TinyMCE with a list of class names (separated by spaces) whereby any template element with one of the classes will have its content replaced by the 'modified' date (`modifieddate`), formatted according to the `template_mdate_format` option.
+
+A modified date is one that is updated with each edit.
+
+**Type:** `String`
+
+**Example:**
+
+```js
+tinymce.init({
+    selector: "textarea",  // change this value according to your html
+    plugins: "template",
+    menubar: "insert",
+    toolbar: "template"
+    template_mdate_classes: "mdate modifieddate"
+});
+```
+
+### `template_mdate_format`
+
+This option allows you to provide TinyMCE with a date/time format that all 'modified' date templates will be replaced with.
+
+**Type:** `String`
+
+**Example:**
+
+```js
+tinymce.init({
+    selector: "textarea",  // change this value according to your html
+    plugins: "template",
+    menubar: "insert",
+    toolbar: "template"
+    template_mdate_format: "%m/%d/%Y : %H:%M:%S"
+});
+```
+
+### `template_popup_height`
+
+This option allows you to specify the height of the template dialog box.
+
+**Type:** `String`
+
+**Default Value:** `"500"`
+
+**Example:**
+
+```js
+tinymce.init({
+    selector: "textarea",  // change this value according to your html
+    plugins: "template",
+    menubar: "insert",
+    toolbar: "template"
+    template_popup_height: "400"
+});
+```
+
+### `template_popup_width`
+
+This option allows you to specify the width of the template dialog box.
+
+**Type:** `String`
+
+**Default Value:** `"600"`
+
+**Example:**
+
+```js
+tinymce.init({
+    selector: "textarea",  // change this value according to your html
+    plugins: "template",
+    menubar: "insert",
+    toolbar: "template"
+    template_popup_width: "300"
+});
+```
+
+### `template_replace_values`
+
+This is an array of items that controls content replacement in the inserted templates. The array keys equal the classnames used in the template. If a template element matches a classname in this array its contents will be replaced by the array value.
+
+**Type:** `String`
+
+**Example:**
+
+```js
+tinymce.init({
+    selector: "textarea",  // change this value according to your html
+    plugins: "template",
+    menubar: "insert",
+    toolbar: "template"
+    template_replace_values: {
+        username: "Jack Black",
+        staffid: "991234"
+    }
+```
+
+**Replace values example**
+
+Class names are used for *templates* and variable names are used for *snippets*.
+
+```js
+template_replace_values : {
+    className : "Replace with this content",
+    anotherClassName: "Replacement content"
+}
+```
+
+**Replace values (functions) example**
+
+`template_replace_values` array values can also be functions. If a template element has a classname matching and where the value is a fuction, the function is called and the element passed as an argument.
+
+```js
+template_replace_values : {
+    className : function(element) {
+      // do something and then:
+      // element.innerHTML = something
+  }
+}
+```
+
+### `template_selected_content_classes`
+
+This option allows you to provide a list of class names (separated by spaces) whereby any template element with one of the classes will have its content replaced by the selected editor content when first inserted.
+
+
+**Example:**
 
 ```js
 tinymce.init({
     plugins: "template",
+    template_selected_content_classes: "selcontent selectedcontent"
+});
+```
+
+### `template_preview_replace_values`
+
+// This key is not linked in the source docs, i.e. no content.
+
+
+### Template Plugin Examples
+
+**Type:** `String`
+
+**Example:**
+
+```js
+tinymce.init({
+    selector: "textarea",  // change this value according to your html
+    plugins: "template",
+    menubar: "insert",
     toolbar: "template",
     template_cdate_classes: "cdate creationdate",
     template_mdate_classes: "mdate modifieddate",
@@ -3079,6 +3514,8 @@ tinymce.init({
         username : "Jack Black",
         staffid : "991234"
     },
+    template_popup_height: "400",
+    template_popup_width: "320",
     templates : [
         {
             title: "Editor Details",
@@ -3094,23 +3531,23 @@ tinymce.init({
 });
 ```
 
-**Templates example**
+**Templates example:**
 
 ```js
-templates : [
-  {
-    title: "Editor Details",
-      url: "editor_details.htm",
-      description: "Adds Editors Name and Staff ID"
-  }
-]
+    templates : [
+      {
+        title: "Editor Details",
+        url: "editor_details.htm",
+        description: "Adds Editors Name and Staff ID"
+      }
+    ]
 ```
 
-**Example of an external list**
+**Example of an external list:**
 
 This is the contents your backend page should return if you specify a URL in the templates option. A simple array containing each template to present. This URL can be a backend page, for example a PHP file.
 
-```js
+```json
 [
   {"title": "Some title 1", "description": "Some desc 1", "content": "My content"},
   {"title": "Some title 2", "description": "Some desc 2", "url": "development.html"}
@@ -3119,243 +3556,51 @@ This is the contents your backend page should return if you specify a URL in the
 
 ### Making Templates
 
-A template is a file with DIV containing the template data. All HTML outside the DIV will simply be presented to the user in the preview frame. A template has more capabilities than a simple snippet, a template can have dynamic content/smart content that gets updated by functions located in the template_replace_values. These functions will continue to be executed each time a cleanup procedure is performed.
+A template is a file with a `div` containing the template data. All `html` outside the `div` will simply be presented to the user in the preview frame.
+
+A template has more capabilities than a simple snippet, for example, a template can have dynamic content/smart content that gets updated by functions located in the `template_replace_values` key. These functions will continue to be executed each time a cleanup procedure is performed.
 
 Each template needs to use the following base HTML:
 
 ```html
 <!-- This will not be inserted -->
 <div class="mceTmpl">
-<table width="98%%"  border="0" cellspacing="0" cellpadding="0">
-  <tr>
-    <th scope="col"> </th>
-    <th scope="col"> </th>
-  </tr>
-  <tr>
-    <td> </td>
-    <td> </td>
-  </tr>
-</table></div>
+    <table width="98%%"  border="0" cellspacing="0" cellpadding="0">
+        <tr>
+            <th scope="col"> </th>
+            <th scope="col"> </th>
+        </tr>
+        <tr>
+            <td> </td>
+            <td> </td>
+        </tr>
+    </table>
+</div>
 ```
 
 ### Making Snippets
 
-Snippets are HTML code chunks that can be inserted. Replace variables will only be executed upon insert, without being wrapped in a template DIV element. So if you define somevar1 in template_replace_values array it will be replaced on preview and insert.
+Snippets are `html` code chunks that can be inserted. Replace variables will only be executed upon insert, without being wrapped in a template `div` element. So if you define `somevar1` in `template_replace_values` array it will be replaced on preview and insert.
 
 ```html
 This is a simple <strong>snippet</strong>. Will be replaced: {$somevar1}.
 ```
 
-### Options
-
-These settings affect the execution of the Template plugin. Predefined templates for items such as created dates and modified dates can be set here.
-
-### `templates`
-
-Array with template items each having a title, description and content/url. If this option is a string then it will be requested as an URL that should produce a JSON output in the same format as the option accepts.
-
-This option lets you specify a predefined list of templates to be inserted. Each item in the list can either be inline using a content property or a whole file using the url property see the example below for details.
-
-Example using templates object
-
-```js
-tinymce.init({
-    plugins: "template",
-    templates: [
-        {title: 'Some title 1', description: 'Some desc 1', content: 'My content'},
-        {title: 'Some title 2', description: 'Some desc 2', url: 'development.html'}
-    ]
-});
-```
-
-**Example using templates url**
-
-```js
-tinymce.init({
-    plugins: "template",
-    templates: "/dir/templates.php"
-});
-```
-Example JSON output of templates.php
-
-```javascript
-[
-    {"title": "Some title 1", "description": "Some desc 1", "content": "My content"},
-    {"title": "Some title 2", "description": "Some desc 2", "url": "development.html"}
-```
-
-### `template_cdate_classes`
-
-A list of class names separated by spaces. Any template element with one of the classes will have its content replaced by the 'creation' date, formatted according to the 'template_cdate_format' option. A creation date is one that is set if no previous date existed within the element. Once set the original date is stored inside the element in a HTML comment and is designed not to change even with a template change.
-
-This option allows you to provide TinyMCE with a list of class names separated by spaces. Any template element with one of the classes will have its content replaced by the 'creation' date, formatted according to the 'template_cdate_format' option. A creation date is one that is set if no previous date existed within the element. Once set the original date is stored inside the element in a HTML comment and is designed not to change even with a template change.
-
-An example of this setting is as follows:
-
-```js
-tinymce.init({
-    plugins: "template",
-    template_cdate_classes: "cdate creationdate"
-});
-```
-
-### `template_cdate_format`
-
-A date format string for the creation date see below for options.
-
-This option allows you to provide TinyMCE with a format that all 'creation' date templates will be replaced by. An example of this setting is as follows:
-
-```js
-tinymce.init({
-    plugins: "template",
-    template_cdate_format: "%m/%d/%Y : %H:%M:%S"
-});
-```
-
-### `template_mdate_classes`
-
-A list of class names separated by spaces. Any template element with one of the classes will have its content replaced by the 'modified' date, formatted according to the 'template_mdate_format' option. A modified date is one that is updated with each edit.
-
-This option allows you to provide TinyMCE with a list of class names separated by spaces. Any template element with one of the classes will have its content replaced by the 'modified' date, formatted according to the 'template_mdate_format' option. A modified date is one that is updated with each edit.
-
-An example of this setting is a follows:
-
-```js
-tinymce.init({
-    plugins: "template",
-    template_mdate_classes: "mdate modifieddate"
-});
-```
-
-### `template_mdate_format`
-
-A date format string for the modified date see below for options.
-
-This option allows you to provide TinyMCE with a format that all 'modified' date templates will be replaced by.
-
-An example of this setting is a follows:
-
-```js
-tinymce.init({
-    plugins: "template",
-    template_mdate_format: "%m/%d/%Y : %H:%M:%S"
-});
-```
-
-### `template_popup_height`
-
-This option allows you to specify the height of the template dialog.
-
-An example of this setting is as follows:
-
-```js
-tinymce.init({
-    plugins: "template",
-    template_popup_height: 500
-});
-```
-
-### `template_popup_width`
-
-This option allows you to specify the width of the template dialog.
-
-An example of this setting is as follows:
-
-```js
-tinymce.init({
-    plugins: "template",
-    template_popup_width: 600
-});
-```
-
-### `template_replace_values`
-
-This is an array of items that control content replacement in the inserted templates. The array keys equal the classnames used in the template. If a template element has a classname matching any in this array its contents will be replaced by the array value. See examples below.
-
-This option allows you to provide TinyMCE with an array of items that control content replacement in the inserted templates. The array keys equal the classnames used in the template. If a template element has a classname matching any in this array its contents will be replaced by the array value.
-
-An example of this setting is as follows:
-
-```js
-tinymce.init({
-    plugins: "template",
-    template_replace_values: {
-        username : "Jack Black",
-        staffid : "991234"
-    }
-```
-
-**Replace values example**
-
-Class names are used for templates and variable names are used for snippets.
-
-```js
-template_replace_values : {
-  className : "Replace with this content",
-  anotherClassName: "Replacement content"
-}
-```
-
-**Replace values (functions) example**
-
-Replace content array values can also be functions. If a template element has a classname matching and the value is a fuction the function is called and the element passed as an argument.
-
-```js
-template_replace_values : {
-  className : function(element) {
-    // do something and then:
-    // element.innerHTML = something
-  }
-}
-```
-
-### `template_selected_content_classes`
-
-A list of class names separated by spaces. Any template element with one of the classes will have its content replaced by the selected editor content when first inserted.
-
-This option allows you to provide tinymce with a list of class names separated by spaces. Any template element with one of the classes will have its content replaced by the selected editor content when first inserted.
-
-An example of this setting is as follows:
-
-```js
-tinymce.init({
-    plugins: "template",
-    template_selected_content_classes: "selcontent selectedcontent"
-});
-```
-
-### `template_popup_width`
-
-Template dialog width, defaults to 600.
-
-### `template_popup_height`
-
-Template dialog height, defaults to 500.
-
-### `template_preview_replace_values`
-
-// This is not linked in the source
-
 
 
 ## textcolor
 
-// This plugin adds the following controls:
-
-// toolbar controls
+// adds toolbar control
 
 This plugin adds the forecolor/backcolor button controls that enable you to pick colors from a color picker and apply these to text.
 
 **Type:** `String`
 
-**Default Value:**
-
 **Example:**
-
-Initialization Example
 
 ```js
 tinymce.init({
+    selector: "textarea",  // change this value according to your html
     plugins: "textcolor",
     toolbar: "forecolor backcolor"
 });
@@ -3363,18 +3608,43 @@ tinymce.init({
 
 ### Options
 
-These settings affect the execution of the Textcolor plugin. The dimensions and mapping of the grid of textcolors may be set here.
+These settings affect the execution of the `textcolor` plugin. The dimensions and mapping of the grid of text colors may be set here.
 
 ### `textcolor_cols`
 
 This option allows you to specify how many columns appear on the grid of text colors.
 
-An example of this setting is as follows:
+**Type:** `String`
+
+**Default Value:** `"8"`
+
+**Example:**
 
 ```js
 tinymce.init({
+    selector: "textarea",  // change this value according to your html
     plugins: "textcolor",
-    textcolor_cols: 8
+    toolbar: "forecolor backcolor",
+    textcolor_cols: "5"
+});
+```
+
+### `textcolor_rows`
+
+This option allows you to specify how many rows appear on the grid of text colors.
+
+**Type:** `String`
+
+**Default Value:** `"5"`
+
+**Example:**
+
+```js
+tinymce.init({
+    selector: "textarea",  // change this value according to your html
+    plugins: "textcolor",
+    toolbar: "forecolor backcolor",
+    textcolor_rows: "4"
 });
 ```
 
@@ -3382,11 +3652,15 @@ tinymce.init({
 
 This option allows you to specify a map of the text colors that will appear in the grid.
 
-An example of this setting is as follows:
+**Type:** `String`
+
+**Example:**
 
 ```js
 tinymce.init({
+    selector: "textarea",  // change this value according to your html
     plugins: "textcolor",
+    toolbar: "forecolor backcolor",
     textcolor_map: [
     "000000", "Black",
     "993300", "Burnt orange",
@@ -3431,32 +3705,17 @@ tinymce.init({
 });
 ```
 
-### `textcolor_rows`
-
-This option allows you to specify how many rows appear on the grid of text colors.
-
-An example of this setting is as follows:
-
-```js
-tinymce.init({
-    plugins: "textcolor",
-    textcolor_rows: 5
-});
-```
-
 
 
 ## textpattern
 
-This plugin matches special patterns in the text and applies formats or executed commands on these text patterns. The default patterns is similar to markdown syntax so you can type "# text" to produce a header or "**text** to make something bold.
+This plugin matches special patterns in the text and applies formats or executed commands on these patterns.
+
+The default pattern is similar to markdown syntax, so you can type `# text` to produce a header or `**text**` to make text **bold**.
 
 **Type:** `String`
 
-**Default Value:**
-
 **Example:**
-
-Initialization Example
 
 ```js
 tinymce.init({
@@ -3466,13 +3725,15 @@ tinymce.init({
 
 ### Options
 
-This setting affects the execution of the Textpattern plugin. Text patterns that are matched by the editor can be changed here.
+This setting affects the execution of the `textpattern` plugin. Text patterns that are matched by the editor can be changed here.
 
 ### `textpattern_patterns`
 
-This option lets you configure the text patterns that gets matched by the textpattern plugin. By default it has basic markdown patterns. There are two types of patterns inline and block patterns. Inline patterns have a start and end where the block based patterns only have a start. You can specify formats to be applied to the selection or commands to be executed.
+This option lets you configure the text patterns that get matched by the `textpattern` plugin. By default it has basic markdown patterns.
 
-Example of usage
+There are two types of patterns: inline and block patterns. Inline patterns have a start and end whereas the block-based patterns only have a start. You can specify formats to be applied to the selection or commands to be executed.
+
+**Example:**
 
 ```js
 tinymce.init({
@@ -3497,42 +3758,47 @@ tinymce.init({
 
 ## visualblocks
 
-// This plugin adds the following controls:
+// adds menu control (under View menu)
 
-// toolbar controls
+// adds toolbar control
 
-// menu controls
+This plugin allows a user to see block level elements in the editable area. It is similar to WYSIWYG hidden character functionality but, of course, at block level. It also adds a toolbar control and a menu item `Show blocks` under the `View` menu.
 
-This plugin adds a button and menu item that allows you to see block elements in the editor.
+It's worth noting that at present the toolbar button icon is the same for both `visualblocks` and `visualchars`.
 
 **Type:** `String`
 
-**Default Value:**
-
 **Example:**
-
-Initialization Example
 
 ```js
 tinymce.init({
-    plugins: "visualblocks"
+    selector: "textarea",  // change this value according to your html
+    plugins: "visualblocks",
+    menubar: "view",
+    toolbar: "visualblocks"
 });
 ```
 
 ### Options
 
-This setting affects the execution of the Visualblocks plugin. You may specify whether blocks are visible by default here.
+This setting affects the execution of the `visualblocks` plugin. You may specify whether blocks are visible by default here.
 
 ### `visualblocks_default_state`
 
 This option enables you to specify the default state of the visualblocks plugin.
 
-Example of usage of the visualblocks option
+**Type:** `Boolean`
+
+**Default Value:** `false`
+
+**Possible Values:** `true`, `false`
 
 ```js
 tinymce.init({
-    ...
+    selector: "textarea",  // change this value according to your html
     plugins: "visualblocks",
+    menubar: "view",
+    toolbar: "visualblocks"
     visualblocks_default_state: true
 });
 ```
@@ -3541,25 +3807,23 @@ tinymce.init({
 
 ## visualchars
 
-// This plugin adds the following controls:
+// adds menu control (under View menu)
 
-// toolbar controls
+// adds toolbar control
 
-// menu controls
+This plugin adds the ability for users to see invisible characters like `&nbsp;` displayed in the editable area. It also adds a toolbar control and a menu item `Show invisible characters` under the `View` menu.
 
-This plugin adds the possibility to see invisible characters like `&nbsp;`.
+It's worth noting that at present the toolbar button icon is the same for both `visualblocks` and `visualchars`.
 
 **Type:** `String`
 
-**Default Value:**
-
 **Example:**
-
-Initialization Example
 
 ```js
 tinymce.init({
+    selector: "textarea",  // change this value according to your html
     plugins: "visualchars",
+    menubar: "view",
     toolbar: "visualchars"
 });
 ```
@@ -3568,34 +3832,34 @@ tinymce.init({
 
 ## wordcount
 
-This plugin adds word count functionality to TinyMCE.
+This plugin adds word count functionality to TinyMCE, placing a counter in the bottom right of the editor instance (outside the editable area).
 
 **Type:** `String`
 
-**Default Value:**
-
 **Example:**
-
-Initialization Example
 
 ```js
 tinymce.init({
+    selector: "textarea",  // change this value according to your html
     plugins: "wordcount"
 });
 ```
 
 ### Options
 
-These settings affect the execution of the Wordcount plugin. The regex values that determine how words are cleaned and counted may be set here.
+These settings affect the execution of the `wordcount` plugin. The regex values that determine how words are cleaned and counted may be set here.
 
 ### `wordcount_cleanregex`
 
-This option allows you to specify the regex that will be used to strip punctuation and numbers from the word count.
+This option allows you to specify the regex that will be used to *strip punctuation and numbers* from the word count.
 
-An example of this setting is as follows:
+**Type:** `String`
+
+**Example:**
 
 ```js
 tinymce.init({
+    selector: "textarea",  // change this value according to your html
     plugins: "wordcount",
     wordcount_cleanregex: /[0-9.(),;:!?%#$?\x27\x22_+=\\\/\-]*/g
 });
@@ -3603,9 +3867,11 @@ tinymce.init({
 
 ### `wordcount_countregex`
 
-This option allows you to specify the regex that will be used to count the words for the word count.
+This option allows you to specify the regex that will be used to *count the words* for the word count.
 
-An example of this setting is as follows:
+**Type:** `String`
+
+**Example:**
 
 ```js
 tinymce.init({

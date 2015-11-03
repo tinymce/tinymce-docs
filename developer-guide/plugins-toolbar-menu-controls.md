@@ -3,6 +3,9 @@ layout: default
 title: Plugins & Toolbar/Menu Controls
 ---
 
+
+
+
 TinyMCE is an incredibly powerful, flexible and customizable rich text editor. This section will help you configure and extend your editor instance. We'll first look at the default core toolbar and menu controls before moving on to TinyMCE's real power: [**plugins**](#plugins).
 
 # Core Controls
@@ -58,119 +61,12 @@ The plugins listed below are included in the standard TinyMCE package, such as t
 It's important to note that some plugins have advanced configuration requirements, in addition to including the plugin name as a value in the `plugins` key. A good example of this is the Advanced List plugin `advlist` below, so let's get to it.
 
 
-
-## advlist
-
-The `advlist` plugin extends the core `bullist` and `numlist` toolbar controls by adding CSS `list-style-type` styled number formats and bullet types to the controls.
-
-**Type:** `String`
-
-**Example:**
-
-```js
-tinymce.init({
-    selector: "textarea", // change this value according to your html
-    plugins: "advlist"
-});
-```
-
-### Options
-
-These settings affect the execution of the `advlist` plugin by providing more granular control of list styles.
-
-### `advlist_bullet_styles`
-
-This option allows you to include specific unordered list item markers in the default `bullist` toolbar control.
-
-**Type:** `String`
-
-**Default Value:** `"default,circle,disc,square"`
-
-**Possible Values:**
-
-  * `circle`: a filled circle
-  * `disc`: a hollow circle
-  * `square`: a filled square
-
-**Example:**
-
-```js
-tinymce.init({
-    selector: "textarea",  // change this value according to your html
-    plugins: "advlist",
-    advlist_bullet_styles: "square"  // only include square bullets in list
-});
-```
-
-### `advlist_number_styles`
-
-This option allows you to include specific ordered list item markers in the default `numlist` toolbar control.
-
-**Type:** `String`
-
-**Default Value:** `"default,lower-alpha,lower-greek,lower-roman,upper-alpha,upper-roman"`
-
-**Possible Values:**
-
-  * `lower-alpha`: lowercase ASCII letters, e.g. a, b, c, ... z
-  * `lower-greek`: lowercase classical Greek (alpha, beta, gamma), e.g. α, β, γ ...
-  * `lower-roman`: lowercase roman numerals, e.g. i, ii, iii, iv, v ...
-  * `upper-alpha`: uppercase ASCII letters, e.g. A, B, C, ... Z
-  * `upper-roman`: uppercase roman numerals, e.g. I, II, III, IV, V ...
-
-**Example:**
-
-```js
-tinymce.init({
-    selector: "textarea",  // change this value according to your html
-    plugins: "advlist",
-    advlist_number_styles: "lower-alpha"  // only include lower alpha in list
-});
-```
+{% include plugins/advlist.md %}
+{% include plugins/anchor.md %}
+{% include plugins/autolink.md %}
 
 
 
-## anchor
-
-// adds menu control (under Insert menu)
-
-// adds toolbar control
-
-This plugin adds an anchor/bookmark button to the toolbar that inserts an anchor at the editor's cursor insertion point. It also adds the menu item `anchor` under the `Insert` menu.
-
-The HTML inserted takes the form of an anchor id, for example, `<p><a id="start"></a>Hello, World!</p>`. In this example the user creates the id's value "start" via a dialog input.
-
-**Type:** `String`
-
-**Example:**
-
-```js
-tinymce.init({
-    selector: "textarea",  // change this value according to your html
-    plugins: "anchor",
-    toolbar: "anchor",
-    menubar: "insert"
-});
-```
-
-
-
-## autolink
-
-The `autolink` plugin automatically creates hyperlinks when a user inputs a valid, complete url, e.g `www.example.com`, which would be converted to `http://www.example.com`.
-
-Note that this option won't convert incomplete urls, for example `example.com` would remain as unlinked text. i.e. urls must include `www` to be automatically converted.
-
-**Type:** `String`
-
-**Example:**
-
-```js
-tinymce.init({
-    selector: "textarea",  // change this value according to your html
-    plugins: "autolink"
-});
-```
 
 
 

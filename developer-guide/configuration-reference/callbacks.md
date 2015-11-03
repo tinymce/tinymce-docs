@@ -5,6 +5,22 @@ title: Callbacks
 
 These settings allow the execution of callbacks after specific events have occurred in the editor.
 
+## color_picker_callback
+
+This option enables you to provide your own color picker.
+
+Example of usage
+
+```js
+tinymce.init({
+    color_picker_callback: function(callback, value) {
+        callback('#FF00FF');
+    }
+});
+```
+
+
+
 ## file_browser_callback
 
 This option enables you to add your own file browser/image browser to TinyMCE. If this option is set with a value a browse button will appear in different dialogues such as "insert/edit link" or "insert/edit image". If this option hasn't got a value set (or equals to false or null) the dialogues in question won't show any browse button.
@@ -76,19 +92,7 @@ tinymce.init({
 });
 ```
 
-## color_picker_callback
 
-This option enables you to provide your own color picker.
-
-Example of usage
-
-```js
-tinymce.init({
-    color_picker_callback: function(callback, value) {
-        callback('#FF00FF');
-    }
-});
-```
 
 ## init_instance_callback
 

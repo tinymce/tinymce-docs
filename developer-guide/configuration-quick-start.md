@@ -309,4 +309,4 @@ Enabling inline editing mode is simple. Setting the "inline" configuration prope
 
 # Next Steps
 
-Become a TinyMCE editor ninja. Learn more about [advanced configuration options](../configuration-reference/) and [plugins, their options and control associations](../plugin-toolbar-menu-controls/).
+Become a TinyMCE editor ninja. Learn more about [advanced configuration options](../configuration-reference/) and [plugins, their options and control associations](../plugins-toolbar-menu-controls/).

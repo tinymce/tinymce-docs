@@ -20,12 +20,12 @@ The easiest way to get started is to use our CDN.
 Include this line of code in the `<head>` of your page:
 
 ```html
-<script src="https://tinymce.cachefly.net/4.2/tinymce.min.js"></script>
+<script src="//tinymce.cachefly.net/4.2/tinymce.min.js"></script>
 ```
 
 ## Step 2: Initialize TinyMCE as Part of a Web Form
 
-With the script included, initialize TinyMCE on any element (or elements) in your webpage.
+With the script included, initialize TinyMCE on any element (or elements) in your web page.
 
 Since TinyMCE lets you identify replaceable elements via a CSS selector all you need do is pass a configuration object that contains a selector to `tinymce.init()`.
 
@@ -35,7 +35,7 @@ In this example, let's replace `<textarea id="mytextarea">` with a TinyMCE edito
 <!DOCTYPE html>
 <html>
 <head>
-  <script src="https://tinymce.cachefly.net/4.2/tinymce.min.js"></script>
+  <script src="//tinymce.cachefly.net/4.2/tinymce.min.js"></script>
   <script type="text/javascript">
     tinymce.init({
       selector: "#mytextarea"

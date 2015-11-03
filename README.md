@@ -1,6 +1,6 @@
 ## TinyMCE documentation
 
-    $ gem install bundle
+    $ sudo gem install bundle
     $ bundle install
     $ jekyll build
 

@@ -2,12 +2,13 @@
 
 // http://www.tinymce.com/wiki.php/Configuration:browser_spellcheck
 
-This is a true/false value if the usage of the browsers internal spellchecker should be used.
+This is a true/false value if the usage of the browser's internal spellchecker should be used.
 
 ```js
 tinymce.init({
   ...
-  browser_spellcheck : true
+  browser_spellcheck : true,
+  ...
 });
 ```
 

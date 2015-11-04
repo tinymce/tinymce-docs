@@ -23,6 +23,8 @@ An example that disables this setting is as follows:
 
 ```js
 tinymce.init({
-    br_in_pre: false
+	...
+    br_in_pre: false,
+    ...
 });
 ```

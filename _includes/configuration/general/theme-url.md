@@ -1,8 +1,8 @@
 ## theme_url
 
-This option enables you to specify location of the current theme. Enables you to load TinyMCE from one URL for example a CDN then load a local theme on the current server.
+This option enables you to specify location of the current theme. Enables you to load TinyMCE from one URL, for example a CDN, then load a local theme on the current server.
 
-Example of usage
+### Example of usage
 
 ```js
 tinymce.init({

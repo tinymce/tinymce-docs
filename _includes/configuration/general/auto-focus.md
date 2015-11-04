@@ -6,7 +6,9 @@ This option enables you to auto focus an editor instance. The value of this opti
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
-  auto_focus: "elm1"
+	...
+	selector: "textarea",  // change this value according to your HTML
+	auto_focus: "elm1",
+	...
 });
 ```

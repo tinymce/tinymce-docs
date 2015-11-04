@@ -8,6 +8,8 @@ An example of this setting is as follows:
 
 ```js
 tinymce.init({
-    gecko_spellcheck: false
+	...
+    gecko_spellcheck: false,
+    ...
 });
 ```

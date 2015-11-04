@@ -3,6 +3,8 @@ layout: default
 title: Image Upload
 ---
 
+# Image Upload Configuration
+
 These settings affect the image upload facility of the editor. The location, path and credentials of the image uploader can be set here.
 
 {% include configuration/image-upload/images-uploads-url.md %}

@@ -1,10 +1,12 @@
 ---
 layout: default
-title: Developer Documentation
+title: TinyMCE Developer Documentation
 ---
 
-# [Quick Start](./quick-start/)
-# [Developer Guide](./developer-guide/)
-# [Resources](./resources/)
-# [API Reference](./api/)
-# [Support](./support/)
+# TinyMCE Developer Documentation
+
+## [Quick Start Tutorial](./quick-start-tutorial/)
+## [Developer Guide](./developer-guide/)
+## [Resources](./resources/)
+## [Advanced API Reference](./api/)
+## [Support](./support/)

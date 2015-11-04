@@ -4,23 +4,18 @@ title: Install
 css: foo.css
 ---
 
-# Installing TinyMCE
-
 If you've already installed TinyMCE you can skip these installation steps and move on to configuring the editor.
 
 Otherwise, the [Configuration Quick Start](../configuration-quick-start/) is a great place to learn about basic editor configuration. When you're ready to deep dive into advanced configuration options you'll find the [Configuration Reference](../configuration-reference/) and [Plugin & Toolbar/Menu Control](../plugin-toolbar-menu-controls/) resources extremely helpful.
 
 
 
-## CDN Installation
+# CDN Installation
 
-<<<<<<< HEAD:developer-guide/install.md
-{% include install/cdn.md %}
-=======
 The easiest way to get started is to use our CDN.
 
 
-### Step 1: Include the TinyMCE Script
+## Step 1: Include the TinyMCE Script
 
 Include this line of code in the `<head>` of your page:
 
@@ -28,7 +23,7 @@ Include this line of code in the `<head>` of your page:
 <script src="//tinymce.cachefly.net/4.2/tinymce.min.js"></script>
 ```
 
-### Step 2: Initialize TinyMCE as Part of a Web Form
+## Step 2: Initialize TinyMCE as Part of a Web Form
 
 With the script included, initialize TinyMCE on any element (or elements) in your web page.
 
@@ -57,7 +52,7 @@ In this example, let's replace `<textarea id="mytextarea">` with a TinyMCE edito
 </html>
 ```
 
-### Step 3: Saving Content with a `<form>` `post`
+## Step 3: Saving Content with a `<form>` `post`
 
 When the `form` is submitted the TinyMCE editor mimics the behavior of a normal HTML `<textarea>` during a form `post`. No additional configuration is required.
 
@@ -77,29 +72,48 @@ While we're at it a big shout out to [Cachefly](http://www.cachefly.com/) who sp
 For next steps see the [Developer Guide](../developer-guide/).
 
 
->>>>>>> v4.2.6-dev:developer-guide/installing-tinymce.md
 
-## Package Manager Installation
+# Package Manager Installation
 
-We have several package manager install options available. Chose your flavor.
+If you've already installed TinyMCE [learn how to add it to a page].
 
-### NPM
 
-{% include install/npm.md %}
+## NPM
 
-### Bower
+```
+npm install tinymce
+```
 
-{% include install/bower.md %}
+## Bower
 
-### Composer
+```
+bower install tinymce
+```
 
-{% include install/composer.md %}
+If you'd like to install and build the source manually with Bower use these steps. This approach can be used when debugging or building custom plugins.
 
-### NuGet
+```
+bower install tinymce-src=git://github.com/tinymce/tinymce
+cd bower_components/tinymce-src
+npm i
+jake
+```
 
-{% include install/nuget.md %}
+## Composer
 
-### Use of local plugins/language packs when installing via Package Managers
+If you're using Composer package manager, add the following to `composer.json`.
+
+```
+php composer.phar require "tinymce/tinymce" ">= 4"
+```
+
+## NuGet
+
+```
+Install-Package TinyMCE
+```
+
+#### Use of local plugins/language packs when installing via Package Managers
 
 When using package managers you might have local TinyMCE addons in your project such as plugins or language packs. Load these from your project location rather than from inside the package using these config options:
 
@@ -118,39 +132,52 @@ For next steps see the [Developer Guide](../developer-guide/).
 
 
 
-## SDK / Download Installation
+# SDK / Download Installation
 
-{% include install/sdk.md %}
+If you'd rather download and install the script manually, get the package from [TinyMCE Downloads]. Unzip the package and move the `"tinymce/js/tinymce"` directory into a web accessible location on your web server (for example, `localhost`).
 
-For next steps see the [Developer Guide](../developer-guide/).
+To add the script, simply include this line of code in the `<head>` of your page:
 
-
-
-## jQuery
-
-{% include install/jquery.md %}
+```html
+<script type="text/javascript" src="<your installation path>/tinymce/tinymce.min.js"></script>
+```
 
 For next steps see the [Developer Guide](../developer-guide/).
 
 
 
-## Custom Build Download
+# jQuery
 
-{% include install/custom.md %}
+We have a jQuery plugin [available here] if you'd rather install TinyMCE using this method. As with the SDK option, unzip the package and move the `"tinymce/js/tinymce"` directory into a web accessible location on your web server (for example, `localhost`).
+
+To add the script, simply include these lines of code in the `<head>` of your page:
+
+```html
+<script type="text/javascript" src="/<your installation path>/tinymce/tinymce.min.js"></script>
+<script type="text/javascript" src="/<your installation path>/tinymce/jquery.tinymce.min.js"></script>
+```
 
 For next steps see the [Developer Guide](../developer-guide/).
 
 
 
-<<<<<<< HEAD:developer-guide/install.md
-=======
-## Adding TinyMCE to a Page
+# Custom Build Download
+
+TinyMCE tries to be as flexible to your project's needs as possible. We have a customized package downloader [available here](http://www.tinymce.com/download/custom_package.php) where you can select the core, plugins, skins, themes and compression options you'd like to include in the download.
+
+If you selected the standalone core option in your custom download follow the [SDK](#SDK) install instructions; if the jQuery core option follow the [jQuery](#jQuery) instructions.
+
+For next steps see the [Developer Guide](../developer-guide/).
+
+
+
+# Adding TinyMCE to a Page
 
 Adding TinyMCE to a page is as simple as initializing the script on a `<textarea>` as part of an HTML `<form>`. When the `<form>` is submitted the contents of the editor will be submitted as part of the `<form>` `post`.
 
 Here's how to do it using the CDN option as an example.
 
-### Step 1: Installation
+## Step 1: Installation
 
 Include this line of code in the `<head>` of your page:
 
@@ -158,7 +185,7 @@ Include this line of code in the `<head>` of your page:
 <script src="//tinymce.cachefly.net/4.2/tinymce.min.js"></script>
 ```
 
-### Step 2: Initialize TinyMCE as Part of a Web Form
+## Step 2: Initialize TinyMCE as Part of a Web Form
 
 With the script included, initialize TinyMCE on any element (or elements) in your webpage.
 
@@ -195,7 +222,6 @@ When the `form` is submitted the TinyMCE editor mimics the behaviour of a normal
 
 
 
->>>>>>> v4.2.6-dev:developer-guide/installing-tinymce.md
 # Next Steps
 
 At this point, you've seen how to create TinyMCE instances on a page using `tinymce.init()`, and you've seen how to retrieve content from TinyMCE as part of an HTML `<form>` `post`.

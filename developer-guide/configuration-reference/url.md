@@ -3,6 +3,8 @@ layout: default
 title: URL
 ---
 
+# URL Handling Configuration
+
 These settings affect the way URLs are handled by the editor.
 
 {% include configuration/url/convert-urls.md %}

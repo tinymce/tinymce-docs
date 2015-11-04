@@ -3,6 +3,8 @@ layout: default
 title: Callbacks
 ---
 
+# Callback Configuration
+
 TinyMCE's callback settings allow the execution of callbacks after specific events have occurred in the editor.
 
 {% include configuration/callbacks/color-picker-callback.md %}

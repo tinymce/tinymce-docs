@@ -8,6 +8,8 @@ An example of this setting is as follows:
 
 ```js
 tinymce.init({
-    end_container_on_empty_block: true
+	...
+    end_container_on_empty_block: true,
+    ...
 });
 ```

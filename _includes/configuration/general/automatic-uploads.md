@@ -1,6 +1,6 @@
 ## automatic_uploads
 
-This option allows you to disable TinyMCE from automatically uploading local images.
+Enable or disable TinyMCE from automatically uploading local images.
 
 **Type:** `Boolean`
 
@@ -12,7 +12,9 @@ This option allows you to disable TinyMCE from automatically uploading local ima
 
 ```js
 tinymce.init({
-        selector: "textarea",  // change this value according to your html
-        automatic_uploads: false
+	...
+	selector: "textarea",  // change this value according to your HTML
+	automatic_uploads: false,
+	...
 });
 ```

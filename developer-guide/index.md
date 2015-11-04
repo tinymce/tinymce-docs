@@ -3,10 +3,12 @@ layout: default
 title: Developer Guide
 ---
 
-# [Install](./install/)
+# TinyMCE Developer Guide
 
-# [Configuration Quick Start](./configuration-quick-start/)
+## [Installing TinyMCE](./installing-tinymce/)
 
-# [Configuration Reference](./configuration-reference/)
+## [Getting Started with TinyMCE Configuration](./basic-configuration/)
 
-# [Plugins & Toolbar/Menu Controls](./plugins-toolbar-menu-controls/)
+## [Configuration Reference](./configuration-reference/)
+
+## [Plugins & Toolbar/Menu Controls](./plugins-toolbar-menu-controls/)

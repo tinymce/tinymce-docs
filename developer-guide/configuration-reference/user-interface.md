@@ -3,6 +3,8 @@ layout: default
 title: User Interface
 ---
 
+# User Interface Configuration
+
 These settings affect the user interface. Settings that control toolbars, menus, buttons and more are available here.
 
 {% include configuration/user-interface/elementpath.md %}

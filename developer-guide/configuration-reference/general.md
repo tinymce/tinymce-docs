@@ -3,7 +3,9 @@ layout: default
 title: General
 ---
 
-All configuration options below are to be placed within the `tinyMCE.init()` JavaScript call. This call will usually be made from outside of TinyMCE.
+# General Configuration
+
+All configuration options below are to be placed within the `tinyMCE.init()` JavaScript call. 
 
 
 {% include configuration/general/auto-focus.md %}

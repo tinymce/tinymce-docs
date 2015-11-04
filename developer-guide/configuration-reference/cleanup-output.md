@@ -3,6 +3,8 @@ layout: default
 title: Cleanup/Output
 ---
 
+# Cleanup and Output Configuration
+
 These settings change the way the editor handles the input and output of content. They will help you to create clean, maintainable and readable content by removing extraneous HTML elements and styles.
 
 {% include configuration/cleanup-output/allow-conditional-comments.md %}

@@ -1,6 +1,6 @@
 ## automatic_uploads
 
-This option allows you to disable TinyMCE from automatically uploading local images.
+Enable or disable TinyMCE from automatically uploading local images.
 
 **Type:** `Boolean`
 

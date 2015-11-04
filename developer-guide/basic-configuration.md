@@ -1,7 +1,10 @@
 ---
 layout: default
-title: Configuration Quick Start
+title: Getting Started with TinyMCE Configuration
 ---
+
+# Getting Started with TinyMCE Configuration
+
 
 TinyMCE provides a wide range of configuration options that enable you to integrate it tightly with your application.
 
@@ -9,7 +12,7 @@ In this Configuration Quick Start we will introduce the basic configuration opti
 
 
 
-# Basic Configuration
+## Basic Configuration
 
 Once you've added the TinyMCE script to your page there are three configuration aspects you need to consider:
 
@@ -18,7 +21,7 @@ Once you've added the TinyMCE script to your page there are three configuration 
 * Toolbar Configuration
 
 
-## Selector Configuration
+### Selector Configuration
 
 This is the most important configuration option for your TinyMCE integration. Selector configuration allows you to use CSS selector syntax to determine which elements on the page should be editable through TinyMCE.
 
@@ -62,7 +65,7 @@ tinymce.init({
 For more information on the differences between regular and inline editing modes see the Inline Configuration section on this page.
 
 
-## Plugins Configuration
+### Plugins Configuration
 
 The `plugins` configuration option allows you to enable functionality within the editor. By default, **no** plugins are loaded.
 
@@ -81,7 +84,7 @@ tinymce.init({
 The full list of plugins, their options and control associations is [available here](../plugin-toolbar-menu-controls/).
 
 
-## Toolbar Configuration
+### Toolbar Configuration
 
 In most TinyMCE integrations it's desirable to change the toolbar configuration to suit your needs. By default TinyMCE provides a basic set of editing tools on the toolbar and it is recommended that you adapt the toolbar configuration to match your requirements.
 
@@ -130,7 +133,7 @@ Alternatively, you may specify multiple toolbars through the use of the [toolbar
 
 
 
-# Basic Configuration Example
+## Basic Configuration Example
 
 Using the configuration options above you'll be able to instantiate TinyMCE and perform the initial customizations to match your editor requirements. TinyMCE has many many other configuration options available that enable further customization and extension of the editor.
 

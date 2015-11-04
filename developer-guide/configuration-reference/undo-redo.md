@@ -3,17 +3,6 @@ layout: default
 title: Undo/Redo
 ---
 
-These settings change the behaviour of undo and redo.
+These settings change the behavior of undo and redo.
 
-## custom_undo_redo_levels
-
-This option should contain the number of undo levels to keep in memory. By default is set to use an unlimited number of undo levels. But this steals lots of memory so for low end systems a value of 10 may be better.
-
-Example of usage of the custom_undo_redo_levels option:
-
-```js
-tinymce.init({
-        ...
-        custom_undo_redo_levels: 10
-});
-```
+{% include configuration/undo-redo/custom-undo-redo-levels.md %}

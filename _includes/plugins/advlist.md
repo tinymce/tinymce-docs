@@ -1,4 +1,6 @@
-## advlist plugin
+
+
+## advlist
 
 The `advlist` plugin extends the core `bullist` and `numlist` toolbar controls by adding CSS `list-style-type` styled number formats and bullet types to the controls.
 
@@ -66,4 +68,3 @@ tinymce.init({
     advlist_number_styles: "lower-alpha"  // only include lower alpha in list
 });
 ```
-

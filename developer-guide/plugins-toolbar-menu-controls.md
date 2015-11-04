@@ -4,8 +4,6 @@ title: Plugins & Toolbar/Menu Controls
 ---
 
 
-
-
 TinyMCE is an incredibly powerful, flexible and customizable rich text editor. This section will help you configure and extend your editor instance. We'll first look at the default core toolbar and menu controls before moving on to TinyMCE's real power: [**plugins**](#plugins).
 
 # Core Controls
@@ -54,7 +52,7 @@ Two notes for first time users:
 
 # Plugins
 
-The real power of TinyMCE's functionality is in its (so-called) plugins. Plugins typically extend the default editor functionality or add new functionality. For example, `advlist` add extra options to the toolbar's existing list controls, while `code` adds an entirely new control.
+The real power of TinyMCE's functionality is in its (so-called) plugins. Plugins typically extend the default editor functionality or add new functionality. For example, the Advanced List (advlist) plugin add extra options to the toolbar's existing list controls, while the Code plugin adds an entirely new control.
 
 The plugins listed below are included in the standard TinyMCE package, such as the one served via the CDN, but they are not activated.
 

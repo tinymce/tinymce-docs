@@ -14,9 +14,9 @@ In this Configuration Quick Start we will introduce the basic configuration opti
 
 Once you've added the TinyMCE script to your page there are three configuration aspects you need to consider:
 
-* Selector Configuration
-* Plugin Configuration
-* Toolbar Configuration
+1. Selector Configuration
+2. Plugin Configuration
+3. Toolbar Configuration
 
 
 ### Selector Configuration
@@ -79,7 +79,7 @@ tinymce.init({
 });
 ```
 
-The full list of plugins, their options and control associations is [available here](../plugin-toolbar-menu-controls/).
+The full list of plugins, their options and control associations is [available here](/plugins/).
 
 
 ### Toolbar Configuration
@@ -168,15 +168,15 @@ tinymce.init({
 
 Two notes for first time users:
 
-1. If controls are not expressly declared, TinyMCE instantiates its default, **core** menu and toolbar controls. See the code example in the [Quick Start](/quick-start).
-2. The `key` passed to the `.init` method for menu functionality is `menubar`, not menu.
+1. If controls are not expressly declared, TinyMCE instantiates its default, **core** menu and toolbar controls. See the code example in the [First Steps](../first-steps/).
+2. The `key` passed to the `.init` method for menu functionality can be either [`menu`](/editor-configuration-settings/editor-appearance/#menu) or [`menubar`](/editor-configuration-settings/editor-appearance/#menubar), but note that they operate differently.
 
 
 ## Basic Configuration Example
 
 Using the configuration options above you'll be able to instantiate TinyMCE and perform the initial customizations to match your editor requirements. TinyMCE has many many other configuration options available that enable further customization and extension of the editor.
 
-You will find full list of [configuration options here](../configuration-reference/). Plugins, their options and control associations are [available here](../plugin-toolbar-menu-controls/).
+You will find full list of [configuration options here](/editor-configuration-settings/). Plugins, their options and control associations are [available here](/plugins/).
 
 To help get you started, let's walk through an (advanced) TinyMCE configuration example.
 
@@ -281,4 +281,4 @@ Check out the [formats options] for more information on how to bend these option
 
 # Next Steps
 
-Become a TinyMCE editor ninja. Learn more about [advanced configuration options](../configuration-reference/) and [plugins, their options and control associations](../plugins-toolbar-menu-controls/).
+In the next step you'll learn about TinyMCE's [inline mode](../using-tinymce-inline/).

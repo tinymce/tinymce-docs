@@ -1,7 +1,5 @@
 ## language
 
-// http://www.tinymce.com/wiki.php/Configuration:language
-
 This option allows you to specify the language that TinyMCE's user interface will appear in.
 
 By default, TinyMCE will use US English as the language of the interface.

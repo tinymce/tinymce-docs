@@ -12,4 +12,4 @@ tinymce.init({
 });
 ```
 
-If you would like to create your own skin, please see the guide [here](http://www.tinymce.com/wiki.php/Tutorials:Creating_a_skin).
+If you would like to create your own skin, please see the guide [here](/advanced-development-topics/creating-a-skin/).

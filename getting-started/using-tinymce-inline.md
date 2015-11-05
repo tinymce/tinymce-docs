@@ -68,3 +68,9 @@ Enabling inline editing mode is simple. Setting the "inline" configuration prope
 </body>
 </html>
 ```
+
+
+
+# Next Steps
+
+In the next step you'll learn about TinyMCE's [advanced installation options](../advanced-installation-options/) including package managers, downloading the SDK and the custom build option.

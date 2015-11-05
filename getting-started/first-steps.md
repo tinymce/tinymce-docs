@@ -1,11 +1,20 @@
 ---
 layout: default
 title: First Steps with TinyMCE
-description: This Quick Start Tutorial will help you download and install TinyMCE using our content delivery network (the easiest and quickest way to get up and running.)
+description: This Quick Start Tutorial will teach you everything you need to know about getting started with TinyMCE.
 ---
 
-If you're familiar with this step move on to the [Developer Guide](../developer-guide) where you'll find additional [installation options](../developer-guide/installing-tinymce/), a [Configuration Quick Start](../developer-guide/configuration-quick-start/), the advanced [Configuration Reference](../developer-guide/configuration-reference/) and [Plugin & Toolbar/Menu Control](../developer-guide/plugins-toolbar-menu-controls/) options.
+From getting a local editor instance up and running in less than 5 minutes (via our content delivery network) to advanced installation options, working with plugins and learning about content filtering and spell checking, this is the place to start for developers new to TinyMCE.
 
+If you're an advanced TinyMCE developer you may find these resources more interesting:
+
+* [Advanced Installation Options](../advanced-installation-options/) (such as package managers)
+* [Editor Configuration Settings](/editor-configuration-settings/)
+* [Plugins and their options](/plugins/)
+* [Integrations](/integrations/) (such as Bootstrap, jQuery)
+* [Advanced Development Topics](/advanced-development-topics/)
+
+So let's get to it. In the next 4 steps and in less than 5 minutes you'll have a basic, local editor instance up and running.
 
 ## Step 1: Include the TinyMCE Script
 
@@ -14,6 +23,8 @@ Include this line of code in the `<head>` of your HTML page:
 ```html
 <script src="//tinymce.cachefly.net/4.2/tinymce.min.js"></script>
 ```
+
+Tip: cut and paste the code in Step 2
 
 
 ## Step 2: Initialize TinyMCE as Part of a Web Form
@@ -55,11 +66,4 @@ When the `<form>` is submitted the TinyMCE editor mimics the behavior of a norma
 
 ## Step 4: Editor Configuration
 
-For first time TinyMCE developers we strongly encourage you to read our [Configuration Quick Start](../developer-guide/configuration-quick-start/), where we introduce selector, toolbar and plugin configuration options. There is also an "advanced" example of a TinyMCE instance and we explain TinyMCE's inline mode.
-
-
-## Next Steps for Advanced TinyMCE Developers
-
-If you are familiar with integrating TinyMCE and don't need a [configuration refresher](../developer-guide/configuration-quick-start/), move on to the [Developer Guide](../developer-guide) where you'll find additional [installation options](../developer-guide/install/), the advanced [configuration reference](../developer-guide/configuration-reference/) and [plugin & toolbar/menu control](../developer-guide/plugins-toolbar-menu-controls/) options.
-
-`*` If you are using our CDN see the [detailed installation page](../developer-guide/install/) for information about using external plugins, custom languages and the TinyMCE versions available via the CDN.
+For first-time TinyMCE developers the next step is to learn about [Basic Configuration](../basic-configuration/), where we introduce selector, toolbar and plugin configuration options. We also provide a line-by-line breakdown of a basic configuration example.

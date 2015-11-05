@@ -4,8 +4,8 @@ If you set this option to true, TinyMCE will convert all font elements to span e
 
 ```js
 tinymce.init({
-        ...
-        convert_fonts_to_spans : false
+    ...
+    convert_fonts_to_spans : false
 });
 ```
 

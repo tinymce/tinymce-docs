@@ -1,181 +1,191 @@
-- title: Quick Start Tutorial
-- title: Developer Guide
+
+- title: Getting Started
   pages:
-    - title: Installing TinyMCE
-    - title: Basic Configuration
-    - title: Configuration Reference
-      pages:
-        - title: General
+  - title: First Steps
+  - title: Basic Customization
+  - title: Using TinyMCE Inline
+  - title: Advanced Installation Options
+  - title: Working with Plugins
+  - title: Themes and UI Customizations
+  - title: Image and File Management
+  - title: Spell Checking in TinyMCE
+  - title: Content Filtering
+  - title: TinyMCE in Your language
+  - title: System Requirements
+  - title: Getting Support
+- title: Editor Configuration Settings
+  pages:
+        - title: Integration and Setup
           pages:
             - title: "#auto_focus"
             - title: "#automatic_uploads"
-            - title: "#br_in_pre"
-            - title: "#browser_spellcheck"
             - title: "#cache_suffix"
-            - title: "#content_style"
-            - title: "#directionality"
-            - title: "#end_container_on_empty_block"
+            - title: "#content_security_policy"
             - title: "#external_plugins"
-            - title: "#gecko_spellcheck"
             - title: "#hidden_input"
-            - title: "#inline"
-            - title: "#language_url"
-            - title: "#language"
-            - title: "#nowrap"
-            - title: "#object_resizing"
+            - title: "#init_instance_callback"
             - title: "#plugins"
             - title: "#selector"
+            - title: "#setup"
+        - title: Editor Appearance
+          pages:
+            - title: "#color_picker_callback"
+            - title: "#elementpath"
+            - title: "#event_root"
+            - title: "#fixed_toolbar_container"
+            - title: "#height"
+            - title: "#inline"
+            - title: "#max_height"
+            - title: "#max_width"
+            - title: "#menu"
+            - title: "#menubar"
+            - title: "#min_height"
+            - title: "#min_width"
+            - title: "#preview_styles"
+            - title: "#removed_menuitems"
+            - title: "#resize"
             - title: "#skin_url"
             - title: "#skin"
+            - title: "#statusbar"
             - title: "#theme_url"
             - title: "#theme"
-        - title: Callbacks
+            - title: "#toolbar"
+            - title: "#toolbar<N>"
+            - title: "#width"
+        - title: Content Appearance
           pages:
-          - title: "#color_picker_callback"
-          - title: "#file_browser_callback_types"
+            - title: "#body_class"
+            - title: "#body_id"
+            - title: "#content_css"
+            - title: "#content_style"
+            - title: "#visual_anchor_class"
+            - title: "#visual_table_class"
+            - title: "#visual"
+        - title: Content Filtering
+          pages:
+            - title: "#allow_conditional_comments"
+            - title: "#allow_html_in_named_anchor"
+            - title: "#block_formats"
+            - title: "#convert_fonts_to_spans"
+            - title: "#custom_elements"
+            - title: "#doctype"
+            - title: "#element_format"
+            - title: "#encoding"
+            - title: "#entities"
+            - title: "#entity_encoding"
+            - title: "#extended_valid_elements"
+            - title: "#fix_list_elements"
+            - title: "#font_formats"
+            - title: "#fontsize_formats"
+            - title: "#force_hex_style_colors"
+            - title: "#force_p_newlines (deprecated)"
+            - title: "#forced_root_block"
+            - title: "#forced_root_block_attrs"
+            - title: "#formats"
+            - title: "#indentation"
+            - title: "#invalid_elements"
+            - title: "#invalid_styles"
+            - title: "#keep_styles"
+            - title: "#protect"
+            - title: "#remove_trailing_brs"
+            - title: "#schema"
+            - title: "#style_formats_merge"
+            - title: "#style_formats"
+            - title: "#valid_children"
+            - title: "#valid_classes"
+            - title: "#valid_elements"
+            - title: "#valid_styles"
+        - title: Spelling
+          pages:
+            - title: "#browser_spellcheck"
+            - title: "#gecko_spellcheck"
+        - title: File and Image Upload
+          pages:
           - title: "#file_browser_callback"
+          - title: "#file_browser_callback_types"
           - title: "#file_picker_callback"
           - title: "#file_picker_types"
-          - title: "#init_instance_callback"
-          - title: "#setup"
-          - title: "#urlconverter_callback"
-        - title: Cleanup Output
-          pages:
-          - title: "#allow_conditional_comments"
-          - title: "#allow_html_in_named_anchor"
-          - title: "#block_formats"
-          - title: "#convert_fonts_to_spans"
-          - title: "#custom_elements"
-          - title: "#doctype"
-          - title: "#element_format"
-          - title: "#encoding"
-          - title: "#entities"
-          - title: "#entity_encoding"
-          - title: "#extended_valid_elements"
-          - title: "#fix_list_elements"
-          - title: "#font_formats"
-          - title: "#fontsize_formats"
-          - title: "#force_hex_style_colors"
-          - title: "#force_p_newlines (deprecated)"
-          - title: "#forced_root_block_attrs"
-          - title: "#forced_root_block"
-          - title: "#formats"
-          - title: "#indentation"
-          - title: "#invalid_elements"
-          - title: "#invalid_styles"
-          - title: "#keep_styles"
-          - title: "#protect"
-          - title: "#remove_trailing_brs"
-          - title: "#schema"
-          - title: "#style_formats_merge"
-          - title: "#style_formats"
-          - title: "#valid_children"
-          - title: "#valid_classes"
-          - title: "#valid_elements"
-          - title: "#valid_styles"
-        - title: Content Style
-          pages:
-           - title: "#body_class"
-           - title: "#body_id"
-           - title: "#content_css"
-        - title: Image Upload
-          pages:
           - title: "#images_upload_base_path"
           - title: "#images_upload_credentials"
           - title: "#images_upload_handler"
           - title: "#images_upload_url"
-        - title: Security
+        - title: Internationalization
           pages:
-          - title: "#content_security_policy"
-        - title: Undo Redo
+            - title: "#directionality"
+            - title: "#language"
+            - title: "#language_url"
+        - title: URL Handling
           pages:
-          - title: "#custom_undo_redo_levels"
-        - title: URL
+            - title: "#allow_script_urls"
+            - title: "#convert_urls"
+            - title: "#document_base_url"
+            - title: "#relative_urls"
+            - title: "#remove_script_host"
+            - title: "#urlconverter_callback"
+        - title: Advanced Editing Behaviors
           pages:
-          - title: "#allow_script_urls"
-          - title: "#convert_urls"
-          - title: "#document_base_url"
-          - title: "#relative_urls"
-          - title: "#remove_script_host"
-        - title: User Interface
-          pages:
-          - title: "#elementpath"
-          - title: "#event_root"
-          - title: "#fixed_toolbar_container"
-          - title: "#height"
-          - title: "#max_height"
-          - title: "#max_width"
-          - title: "#menu"
-          - title: "#menubar"
-          - title: "#min_height"
-          - title: "#min_width"
-          - title: "#preview_styles"
-          - title: "#removed_menuitems"
-          - title: "#resize"
-          - title: "#statusbar"
-          - title: "#toolbar"
-          - title: "#toolbar<N>"
-          - title: "#width"
-        - title: Visual aids
-          pages:
-          - title: "#visual_anchor_class"
-          - title: "#visual_table_class"
-          - title: "#visual"
-    - title: Plugins & Toolbar/Menu Controls
-      pages:
-        - title: "#advlist"
-        - title: "#anchor"
-        - title: "#autolink"
-        - title: "#autoresize"
-        - title: "#autosave"
-        - title: "#autosave"
-        - title: "#bbcode"
-        - title: "#charmap"
-        - title: "#code"
-        - title: "#colorpicker"
-        - title: "#compat3x"
-        - title: "#contextmenu"
-        - title: "#directionality"
-        - title: "#emoticons"
-        - title: "#example"
-        - title: "#example_dependency"
-        - title: "#fullpage"
-        - title: "#fullscreen"
-        - title: "#hr"
-        - title: "#image"
-        - title: "#imagetools"
-        - title: "#importcss"
-        - title: "#insertdatetime"
-        - title: "#layer"
-        - title: "#legacyoutput"
-        - title: "#link"
-        - title: "#media"
-        - title: "#moxiemanager"
-        - title: "#nonbreaking"
-        - title: "#noneditable"
-        - title: "#pagebreak"
-        - title: "#paste"
-        - title: "#preview"
-        - title: "#print"
-        - title: "#save"
-        - title: "#searchreplace"
-        - title: "#spellchecker"
-        - title: "#tabfocus"
-        - title: "#table"
-        - title: "#template"
-        - title: "#textcolor"
-        - title: "#textpattern"
-        - title: "#visualblocks"
-        - title: "#visualchars"
-        - title: "#wordcount"
-    - title: Cloud
-    - title: Spellcheck
-- title: Resources
+            - title: "#br_in_pre"
+            - title: "#custom_undo_redo_levels"
+            - title: "#end_container_on_empty_block"
+            - title: "#nowrap"
+            - title: "#object_resizing"
+- title: Standard Plugins
   pages:
-    - title: Accessibility
-    - title: Compatibility
-    - title: FAQ
-    - title: Tutorials
-    - title: Code Examples
-- title: API Reference
-- title: Support
+      - title: "#advlist"
+      - title: "#anchor"
+      - title: "#autolink"
+      - title: "#autoresize"
+      - title: "#autosave"
+      - title: "#bbcode"
+      - title: "#charmap"
+      - title: "#code"
+      - title: "#colorpicker"
+      - title: "#compat3x"
+      - title: "#contextmenu"
+      - title: "#directionality"
+      - title: "#emoticons"
+      - title: "#fullpage"
+      - title: "#fullscreen"
+      - title: "#hr"
+      - title: "#image"
+      - title: "#imagetools"
+      - title: "#importcss"
+      - title: "#insertdatetime"
+      - title: "#layer"
+      - title: "#legacyoutput"
+      - title: "#link"
+      - title: "#media"
+      - title: "#nonbreaking"
+      - title: "#noneditable"
+      - title: "#pagebreak"
+      - title: "#paste"
+      - title: "#preview"
+      - title: "#print"
+      - title: "#save"
+      - title: "#searchreplace"
+      - title: "#spellchecker"
+      - title: "#tabfocus"
+      - title: "#table"
+      - title: "#template"
+      - title: "#textcolor"
+      - title: "#textpattern"
+      - title: "#visualblocks"
+      - title: "#visualchars"
+      - title: "#wordcount"
+- title: Premium Plugins
+  pages:
+      - title: "#moxiemanager"
+      - title: "#powerpaste"
+      - title: "#tinymcespellchecker"
+- title: Advanced Development Topics
+  pages:
+      - title: Contributing to the Open Source Project
+      - title: Accessibility
+      - title: Security
+      - title: Using TinyMCE in a Dialog
+      - title: Creating a Skin for TinyMCE
+      - title: Using the gzip Compressors
+      - title: How to Create Your Own Plugin
+      - title: Editor Commands
+      - title: Migration guide from 3.x
+- title: Advanced API Reference

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Getting Started with TinyMCE Configuration
+title: Basic Customization
 ---
 
 # Getting Started with TinyMCE Configuration

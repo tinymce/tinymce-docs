@@ -5,7 +5,8 @@ title: TinyMCE Developer Documentation
 
 # TinyMCE Developer Documentation
 
-## [Quick Start Tutorial](./quick-start-tutorial/)
+## [Getting Started](./getting-started/)
+
 ## [Developer Guide](./developer-guide/)
 ## [Resources](./resources/)
 ## [Advanced API Reference](./api/)

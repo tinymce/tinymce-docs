@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Plugins & Toolbar/Menu Controls
+title: Working With Plugins
 ---
 
 

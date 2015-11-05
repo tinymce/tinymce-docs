@@ -59,48 +59,4 @@ The plugins listed below are included in the standard TinyMCE package, such as t
 It's important to note that some plugins have advanced configuration requirements, in addition to including the plugin name as a value in the `plugins` key. A good example of this is the Advanced List plugin `advlist` below, so let's get to it.
 
 
-{% include plugins/advlist.md %}
-{% include plugins/anchor.md %}
-{% include plugins/autolink.md %}
-{% include plugins/autoresize.md %}
-{% include plugins/autosave.md %}
-{% include plugins/bbcode.md %}
-{% include plugins/charmap.md %}
-{% include plugins/code.md %}
-{% include plugins/colorpicker.md %}
-{% include plugins/compat3x.md %}
-{% include plugins/contextmenu.md %}
-{% include plugins/directionality.md %}
-{% include plugins/emoticons.md %}
-{% include plugins/example.md %}
-{% include plugins/example_dependency.md %}
-{% include plugins/fullpage.md %}
-{% include plugins/fullscreen.md %}
-{% include plugins/hr.md %}
-{% include plugins/image.md %}
-{% include plugins/imagetools.md %}
-{% include plugins/importcss.md %}
-{% include plugins/insertdatetime.md %}
-{% include plugins/layer.md %}
-{% include plugins/link.md %}
-{% include plugins/media.md %}
-{% include plugins/moxiemanager.md %}
-{% include plugins/nonbreaking.md %}
-{% include plugins/noneditable.md %}
-{% include plugins/pagebreak.md %}
-{% include plugins/paste.md %}
-{% include plugins/preview.md %}
-{% include plugins/print.md %}
-{% include plugins/save.md %}
-{% include plugins/searchreplace.md %}
-{% include plugins/spellchecker.md %}
-{% include plugins/tabfocus.md %}
-{% include plugins/table.md %}
-{% include plugins/template.md %}
-{% include plugins/textcolor.md %}
-{% include plugins/textpattern.md %}
-{% include plugins/visualblocks.md %}
-{% include plugins/visualchars.md %}
-{% include plugins/wordcount.md %}
-
 

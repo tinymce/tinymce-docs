@@ -1,9 +1,7 @@
 ---
 layout: default
-title: character-map
+title: Character Map Plugin (`charmap`)
 ---
-
-# Character Map Plugin (`charmap`)
 
 // adds menu control (under Insert menu)
 

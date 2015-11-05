@@ -1,9 +1,8 @@
 ---
 layout: default
-title: text-color
+title: Text Color Plugin (`textcolor`)
 ---
 
-# Text Color Plugin (`textcolor`)
 
 // adds toolbar control
 

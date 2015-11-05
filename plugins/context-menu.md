@@ -1,9 +1,8 @@
 ---
 layout: default
-title: context-menu
+title: Context Menu Plugin (`contextmenu`) 
 ---
 
-## Context Menu Plugin (`contextmenu`) 
 
 This plugin adds a configurable context menu that appears when a user (typically) right clicks in the editable area.
 

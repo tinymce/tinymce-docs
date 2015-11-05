@@ -3,8 +3,6 @@ layout: default
 title: Basic Customization
 ---
 
-# Getting Started with TinyMCE Configuration
-
 
 TinyMCE provides a wide range of configuration options that enable you to integrate it tightly with your application.
 

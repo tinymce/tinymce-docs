@@ -1,9 +1,8 @@
 ---
 layout: default
-title: color-picker
+title: Color Picker Plugin (`colorpicker`)
 ---
 
-# colorpicker Plugin
 
 The `colorpicker` plugin adds a full-blown color picker to the editor by setting the [`color_picker_callback`](./configuration-reference/callbacks/#color_picker_callback).
 

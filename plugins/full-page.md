@@ -1,9 +1,7 @@
 ---
 layout: default
-title: full-page
+title: Full Page Plugin (`fullpage`)
 ---
-
-## Full Page Plugin (`fullpage`)
 
 // adds menu control (under File menu)
 

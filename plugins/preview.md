@@ -1,9 +1,7 @@
 ---
 layout: default
-title: preview
+title: Preview Plugin
 ---
-
-# Preview Plugin
 
 // adds menu control (under View menu)
 

@@ -1,11 +1,9 @@
 ---
 layout: default
-title: image-tools
+title: Image Tools Plugin (`imagetools`)
 ---
 
-# Image Tools Plugin (`imagetools`)
-
-The `imagetools` plugin adds a contextual image editing toolbar to images inserted into the editable area. This works on modern browsers that let you edit images inline.
+The Image Tools (`imagetools`) plugin adds a contextual image editing toolbar to images inserted into the editable area. This works on modern browsers that let you edit images inline.
 
 Note that this feature requires at least IE10 since it uses the `HTML5 File API`. Also note that if the `imagetools` inline toolbar isn't appearing you may need to enable `imagetools_cors_hosts` or `imagetools_proxy`.
 

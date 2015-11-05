@@ -1,9 +1,7 @@
 ---
 layout: default
-title: insert-date-time
+title: Insert Date Time Plugin (`insertdatetime`)
 ---
-
-# Insert Date Time Plugin (`insertdatetime`)
 
 // adds menu control (under Insert menu)
 

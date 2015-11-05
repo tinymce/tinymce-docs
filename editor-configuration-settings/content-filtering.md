@@ -3,7 +3,6 @@ layout: default
 title: Content Filtering
 ---
 
-# Content Filtering
 
 This will be about Content Filtering. We will need to include links to `-includes` spelling folder/files.
 

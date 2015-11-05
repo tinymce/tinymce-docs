@@ -3,7 +3,7 @@ layout: default
 title: Creating Custom Dialogs
 ---
 
-#### Dialogs as HTML pages
+## Dialogs as HTML pages
 
 In TinyMCE 3.x all dialogs where HTML pages that got loaded into a iframe or window. This was changed in TinyMCE 4 to make it easier to make plugins and fully support CDN:s. But you can still load HTML based pages into TinyMCE dialogs by using the WindowManager.
 

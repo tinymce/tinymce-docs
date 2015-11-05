@@ -1,9 +1,7 @@
 ---
 layout: default
-title: autosave
+title: Autosave Plugin
 ---
-
-# Autosave Plugin
 
 // adds menu control (under File menu)
 

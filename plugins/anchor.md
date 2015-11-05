@@ -1,9 +1,7 @@
 ---
 layout: default
-title: anchor
+title: Anchor Plugin
 ---
-
-# Anchor Plugin
 
 // adds menu control (under Insert menu)
 

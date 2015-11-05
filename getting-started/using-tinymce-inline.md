@@ -3,8 +3,6 @@ layout: default
 title: Using TinyMCE Inline
 ---
 
-# Using TinyMCE Inline
-
 TinyMCE has two main integration modes: a "classic" form-based mode, and an inline editing mode.
 
 The inline editing mode is useful when creating user experiences where you want the editing view of the page to be merged with the reading view of the page. This creates a seamless editing experience and true WYSIWYG behavior.

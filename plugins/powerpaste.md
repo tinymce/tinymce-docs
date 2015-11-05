@@ -1,8 +1,6 @@
 ---
 layout: default
-title: paste-pro
+title: PowerPaste Plugin (`powerpaste`)
 ---
-
-# PowerPaste Plugin (`powerpaste`)
 
 Coming soon

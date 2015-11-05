@@ -1,9 +1,7 @@
 ---
 layout: default
-title: save
+title: Save Plugin
 ---
-
-# Save Plugin
 
 // adds toolbar control
 

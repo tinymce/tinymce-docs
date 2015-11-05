@@ -1,9 +1,8 @@
 ---
 layout: default
-title: advanced-list
+title: Advanced List Plugin (`advlist`)
 ---
-
-# Advanced List Plugin (`advlist`)
+ 
 
 The `advlist` plugin extends the core `bullist` and `numlist` toolbar controls by adding CSS `list-style-type` styled number formats and bullet types to the controls.
 

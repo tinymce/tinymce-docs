@@ -1,9 +1,8 @@
 ---
 layout: default
-title: visual-blocks
+title: Visual Blocks Plugin (`visualblocks`)
 ---
 
-# Visual Blocks Plugin (`visualblocks`)
 
 // adds menu control (under View menu)
 

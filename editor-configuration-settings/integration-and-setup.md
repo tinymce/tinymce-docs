@@ -3,7 +3,6 @@ layout: default
 title: Integration and Setup
 ---
 
-# Integration and Setup
 
 This will be about Integration and Setup. We will need to include links to `_includes` spelling folder/files.
 

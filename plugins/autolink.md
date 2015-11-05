@@ -1,9 +1,8 @@
 ---
 layout: default
-title: autolink
+title: Autolink Plugin
 ---
 
-# Autolink Plugin
 
 The `autolink` plugin automatically creates hyperlinks when a user inputs a valid, complete url, e.g `www.example.com`, which would be converted to `http://www.example.com`.
 

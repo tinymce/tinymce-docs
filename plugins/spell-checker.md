@@ -1,9 +1,7 @@
 ---
 layout: default
-title: spell-checker
+title: Spell Checker Plugin (`spellchecker`)
 ---
-
-## Spell Checker Plugin (`spellchecker`)
 
 // adds menu control (under Tools menu)
 

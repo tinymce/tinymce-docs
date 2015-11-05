@@ -3,8 +3,6 @@ layout: default
 title: Using TinyMCE in JQuery
 ---
 
-# Using TinyMCE in JQuery
-
 More here
 
 # TinyMCE in a jQuery UI Dialog

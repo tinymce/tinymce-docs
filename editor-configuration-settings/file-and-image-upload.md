@@ -3,8 +3,6 @@ layout: default
 title: File and Image Upload
 ---
 
-# File and Image Upload
-
 This will be about File and Image Upload. We will need to include links to `-includes` spelling folder/files.
 
 {% include configuration/file-browser-callback.md %}

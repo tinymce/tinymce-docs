@@ -1,9 +1,7 @@
 ---
 layout: default
-title: full-screen
+title: Full Screen Plugin (`fullscreen`)
 ---
-
-# Full Screen Plugin (`fullscreen`)
 
 // adds menu control (under View menu)
 

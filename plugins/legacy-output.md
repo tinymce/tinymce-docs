@@ -1,9 +1,7 @@
 ---
 layout: default
-title: legacy-output
+title: Legacy Output Plugin (`legacyoutput`)
 ---
-
-# Legacy Output Plugin (`legacyoutput`)
 
 The `legacyoutput` plugin changes TinyMCE's output, producing legacy elements such as `font`, `b`, `i`, `u`, `strike` and use `align` attributes.
 

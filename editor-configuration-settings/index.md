@@ -3,7 +3,6 @@ layout: default
 title: Configuration Settings
 ---
 
-# Configuration Reference
 
 TinyMCE is not only the most advanced rich text editor it's also the most customizable. We have placed the many customization options into logical groups.
 

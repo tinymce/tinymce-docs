@@ -3,7 +3,6 @@ layout: default
 title: Editor Appearance
 ---
 
-# Editor Appearance
 
 This will be about Editor Appearance. We will need to include links to `_includes` spelling folder/files.
 

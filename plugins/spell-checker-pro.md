@@ -1,8 +1,6 @@
 ---
 layout: default
-title: tinymcespellchecker
+title: TinyMCE Premium Spell Checker Plugin (`tinymcespellchecker`)
 ---
-
-# TinyMCE Spell Checker Plugin (`tinymcespellchecker`)
 
 Coming soon.

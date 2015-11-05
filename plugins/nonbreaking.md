@@ -1,9 +1,7 @@
 ---
 layout: default
-title: nonbreaking
+title: Nonbreaking Plugin
 ---
-
-# Nonbreaking Plugin
 
 // adds menu control (under Insert menu)
 

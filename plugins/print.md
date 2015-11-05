@@ -1,9 +1,7 @@
 ---
 layout: default
-title: print
+title: Print Plugin
 ---
-
-# Print Plugin
 
 // adds menu control (under File menu)
 

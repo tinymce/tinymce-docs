@@ -1,9 +1,7 @@
 ---
 layout: default
-title: example
+title: Example Plugin
 ---
-
-# Example Plugin
 
 The `example` plugin is an example plugin that you can use as a template for your custom plugins.
 

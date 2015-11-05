@@ -1,9 +1,7 @@
 ---
 layout: default
-title: word-count
+title: Word Count Plugin (`wordcount`)
 ---
-
-# Word Count Plugin (`wordcount`)
 
 This plugin adds word count functionality to TinyMCE, placing a counter in the bottom right of the editor instance (outside the editable area).
 

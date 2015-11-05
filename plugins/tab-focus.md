@@ -1,9 +1,7 @@
 ---
 layout: default
-title: tab-focus
+title: Tab Focus Plugin (`tabfocus`)
 ---
-
-## Tab Focus Plugin (`tabfocus`)
 
 This plugin adds the possibility to tab in/out of TinyMCE.
 

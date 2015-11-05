@@ -1,9 +1,7 @@
 ---
 layout: default
-title: layer
+title: Layer Plugin
 ---
-
-# Layer Plugin
 
 This plugin adds some layer controls. It only works on some browsers and will probably be removed in the future.
 

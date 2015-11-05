@@ -1,9 +1,7 @@
 ---
 layout: default
-title: media
+title: Media Plugin
 ---
-
-# Media Plugin
 
 // adds menu control (under Insert menu)
 

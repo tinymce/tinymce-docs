@@ -3,7 +3,7 @@ layout: default
 title: Migration Guide from 3.x
 ---
 
-#### File structure
+## File structure
 
 The file structure was changed in the 4.0 release to more closely match other JavaScript projects. All minified files are suffixed with `.min.js` and `editor_plugin` and `editor_theme` was replaced with `plugin` and `theme`.
 
@@ -16,23 +16,23 @@ The file structure was changed in the 4.0 release to more closely match other Ja
 /tiny_mce/theme/<plugin>/editor_template_src.js -> /tinymce/plugins/<plugin>/theme.js
 ```
 
-#### Removed plugins
+## Removed plugins
 
 These plugins where removed in 4.0: [advhr](http://www.tinymce.com/wiki.php/Plugin3x:advhr), [advimage](http://www.tinymce.com/wiki.php/Plugin3x:advimage), [advlink](http://www.tinymce.com/wiki.php/Plugin3x:advlink), [iespell](http://www.tinymce.com/wiki.php/Plugin3x:iespell), [inlinepopups](http://www.tinymce.com/wiki.php/Plugin3x:inlinepopups), [style](http://www.tinymce.com/wiki.php/Plugin3x:style), [emotions](http://www.tinymce.com/wiki.php/Plugin3x:emotions) and [xhtmlxtras](http://www.tinymce.com/wiki.php/Plugin3x:xhtmlxtras).
 
-#### New plugins
+## New plugins
 
 These are the new plugins in 4.0: [anchor], [charmap], [compat3x], [hr], [image], [link], [emoticons], [code] and [textcolor].
 
-#### Removed themes
+## Removed themes
 
 The "simple" and "advanced" themes where removed in 4.0.
 
-#### New themes
+## New themes
 
 The new "modern" theme was introduced in 4.0. More themes will be added in the future.
 
-#### Event handling
+## Event handling
 
 TinyMCE 4.0 has a new way of binding events. Instead of the old dispatcher method it uses the more common "on" and "off" like for example jQuery. It also allows you to bind multiple events and cancel events using the more common preventDefault and stopPropagation. Check the [API documentation](http://www.tinymce.com/wiki.php/api4:class.tinymce.Editor) for a full list of events.
 
@@ -48,11 +48,11 @@ editor.on('init', function(args) {
 });
 ```
 
-#### User interface
+## User interface
 
 The user interface logic has been changed compleatly in 4.0. Though the more easier methods of adding buttons and windows are the same more complex controls or dialogs needs to be written in the new API style.
 
-#### Control states
+## Control states
 
 Each control in TinyMCE 4 is supposed to be an self contained unit. This enables controls to be created at multiple locations in the UI. So the old controlManager with fixed names has been removed.
 
@@ -82,7 +82,7 @@ editor.addButton('SomeButton', {
 });
 ```
 
-#### Dialogs/Windows
+## Dialogs/Windows
 
 In TinyMCE 3.x all dialogs where HTML files loaded in iframes or separate windows. In 4.x all windows are DIV elements placed onto the same page as the editor. You can however still load pages into iframe based windows.
 
@@ -108,10 +108,10 @@ var someArg = top.tinymce.activeEditor.windowManager.getParams().someArg;
 top.tinymce.activeEditor.windowManager.close();
 ```
 
-#### HTML5 output
+## HTML5 output
 
 TinyMCE produces HTML5 loose output as of 4.0. This means it can handle all new HTML5 elements and also allow the deprecated HTML4 attributes and elements. If you want to use html4 or html5-strict output check the [schema](http://www.tinymce.com/wiki.php/Configuration:schema) option for details.
 
-#### Using the compat3x plugin
+## Using the compat3x plugin
 
 As a last resort one can use the [compat3x plugin](http://www.tinymce.com/wiki.php/Configuration:schema) it mimic parts of the 3.x API contains a few files removed from 4.x. We only recommend this as a last resort and it won't work for all plugins. But most plugins should work right out of the box we tested it with some of our own old 3.x plugins.

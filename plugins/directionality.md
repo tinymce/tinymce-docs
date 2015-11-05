@@ -1,9 +1,7 @@
 ---
 layout: default
-title: directionality
+title: Directionality Plugin
 ---
-
-# Directionality Plugin
 
 // adds toolbar control
 

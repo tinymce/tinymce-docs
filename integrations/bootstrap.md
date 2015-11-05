@@ -3,7 +3,6 @@ layout: default
 title: Using TinyMCE in Bootstrap
 ---
 
-# Using TinyMCE in Bootstrap
 
 More here
 ...

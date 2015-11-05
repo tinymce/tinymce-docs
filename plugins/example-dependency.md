@@ -1,9 +1,7 @@
 ---
 layout: default
-title: example-dependency
+title: Example with Dependency Plugin (`example_dependency`)
 ---
-
-## Example with Dependency Plugin (`example_dependency`)
 
 The `example_dependency` plugin is an example plugin with a dependency on another plugin.
 

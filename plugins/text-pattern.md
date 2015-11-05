@@ -1,9 +1,8 @@
 ---
 layout: default
-title: text-pattern
+title: Text Pattern Plugin (`textpattern`)
 ---
 
-# Text Pattern Plugin (`textpattern`)
 
 This plugin matches special patterns in the text and applies formats or executed commands on these patterns.
 

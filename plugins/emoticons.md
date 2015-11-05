@@ -1,9 +1,7 @@
 ---
 layout: default
-title: emoticons
+title: Emoticons Plugin
 ---
-
-# Emoticons Plugin
 
 // adds toolbar control
 

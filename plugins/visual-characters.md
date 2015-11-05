@@ -1,9 +1,7 @@
 ---
 layout: default
-title: visual-chars
+title: Visual Characters Plugin (`visualchars`)
 ---
-
-## Visual Characters Plugin (`visualchars`)
 
 // adds menu control (under View menu)
 

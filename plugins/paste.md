@@ -1,10 +1,8 @@
 ---
 layout: default
-title: paste
+title: Paste Plugin
 ---
 
-
-[# Paste Plugin
 
 // adds menu control (under Edit menu)
 

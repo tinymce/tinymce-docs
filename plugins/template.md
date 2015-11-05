@@ -1,9 +1,7 @@
 ---
 layout: default
-title: template
+title: Template Plugin
 ---
-
-# Template Plugin
 
 // adds menu control (under Insert menu)
 

@@ -1,9 +1,7 @@
 ---
 layout: default
-title: noneditable
+title: Noneditable Plugin
 ---
-
-# Noneditable Plugin
 
 This plugin enables you to prevent users from being able to change (i.e. edit) content within elements assigned the `mceNonEditable` class.
 

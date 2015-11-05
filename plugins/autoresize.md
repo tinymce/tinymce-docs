@@ -1,9 +1,8 @@
 ---
 layout: default
-title: autoresize
+title: Autoresize Plugin
 ---
 
-# Autoresize Plugin
 
 `autoresize` automatically resizes the editor to the content inside it.
 

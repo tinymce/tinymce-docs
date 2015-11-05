@@ -1,9 +1,8 @@
 ---
 layout: default
-title: First Steps
+title: First Steps with TinyMCE
 ---
 
-# First Steps with TinyMCE
 
 This Quick Start Tutorial will help you download and install TinyMCE using our content delivery network (the easiest and quickest way to get up and running.)
 

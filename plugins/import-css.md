@@ -1,9 +1,7 @@
 ---
 layout: default
-title: import-css
+title: Import CSS Plugin (`importcss`)
 ---
-
-# Import CSS Plugin (`importcss`)
 
 The `importcss` plugin adds the ability to automatically import CSS classes from the CSS file specified in the [`content_css`](./configuration-reference/content-style/#content_css) configuration setting.
 

@@ -1,9 +1,7 @@
 ---
 layout: default
-title: bbcode
+title: BBCode Plugin
 ---
-
-# bbcode Plugin
 
 This plugin adds basic BBCode input/output to TinyMCE.
 

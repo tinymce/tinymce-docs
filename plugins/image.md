@@ -1,10 +1,11 @@
 ---
 layout: default
-title: image
+title: Image Plugin
 ---
 
 
-## Image Plugin
+
+
 
 // adds menu control (under Insert menu)
 
@@ -37,6 +38,26 @@ tinymce.init({
 ### Options
 
 These configuration options affect the execution of the `image` plugin. Many of the settings here will disable dialog box features used to insert or edit images. A predefined list of images can also be provided to enable quick insertion of those images.
+
+
+#### Q: Where are the advanced image options?
+
+Use the Style Formats option instead, which is much more powerful.
+
+```
+style_formats: [
+    {title: 'Image Left', selector: 'img', styles: {
+        'float' : 'left',
+        'margin': '0 10px 0 10px'
+    }},
+    {title: 'Image Right', selector: 'img', styles: {
+        'float' : 'right',
+        'margin': '0 10px 0 10px'
+    }}
+]
+```
+
+If you wish to align the image, you can also just use the text align buttons when having images selected.
 
 ### `image_list`
 

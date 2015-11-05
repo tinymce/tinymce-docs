@@ -1,9 +1,7 @@
 ---
 layout: default
-title: table
+title: Table Plugin
 ---
-
-# Table Plugin
 
 // adds menu control (new Table menu)
 

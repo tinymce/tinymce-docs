@@ -3,8 +3,6 @@ layout: default
 title: System Requirements
 ---
 
-# System Requirements
-
 
 ## Browser Compatibility
 

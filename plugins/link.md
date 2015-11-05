@@ -1,9 +1,7 @@
 ---
 layout: default
-title: link
+title: Link plugin
 ---
-
-# Link plugin
 
 // adds menu control (under Insert menu)
 

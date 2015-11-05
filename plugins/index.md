@@ -1,9 +1,9 @@
 ---
 layout: default
-title: Standard Plugins
+title: Plugins
 ---
 
-# Standard Plugins
+Plugins list here.
 
 
 

@@ -1,9 +1,7 @@
 ---
 layout: default
-title: search-and-replace
+title: Search and Replace Plugin (`searchreplace`)
 ---
-
-# Search and Replace Plugin (`searchreplace`)
 
 // adds menu control (under Edit menu)
 

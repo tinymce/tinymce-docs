@@ -1,9 +1,7 @@
 ---
 layout: default
-title: page-break
+title: Page Break Plugin (`pagebreak`)
 ---
-
-# Page Break Plugin (`pagebreak`)
 
 // adds menu control (under Insert menu)
 

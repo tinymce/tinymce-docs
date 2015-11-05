@@ -3,7 +3,6 @@ layout: default
 title: TinyMCE Developer Documentation
 ---
 
-# TinyMCE Developer Documentation
 
 ## [Getting Started](./getting-started/)
 

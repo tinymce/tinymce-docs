@@ -1,6 +1,6 @@
 permalink: pretty
 baseurl: ""
-shared_css_url: "/css/shared.css"
+shared_baseurl: ""
 exclude:
   - docs
   - README.md
@@ -21,7 +21,7 @@ redcarpet:
     - highlighter
     - no_intra_emphasis
     - tables
-    - with_toc_data
+    - prettify
 
 gems:
   - jekyll-redirect-from

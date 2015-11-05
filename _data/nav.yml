@@ -7,7 +7,7 @@
   - title: Advanced Installation Options
   - title: Working with Plugins
   - title: Themes and UI Customizations
-  - title: Image and File Management
+  - title: Image Uploading
   - title: Spell Checking in TinyMCE
   - title: Content Filtering
   - title: TinyMCE in Your language
@@ -175,15 +175,18 @@
       - title: "Visual Blocks"
       - title: "Visual Characters"
       - title: "Word Count"
+- title: Integrations
+  pages:
+      - title: Bootstrap
+      - title: JQuery
 - title: Advanced Development Topics
   pages:
-      - title: Contributing to the Open Source Project
+      - title: Using the gzip Compressors
+      - title: Contributing to Open Source
+      - title: Creating a Skin
+      - title: Creating a Plugin
       - title: Accessibility
       - title: Security
-      - title: Using TinyMCE in a Dialog
-      - title: Creating a Skin for TinyMCE
-      - title: Using the gzip Compressors
-      - title: How to Create Your Own Plugin
-      - title: Editor Commands
+      - title: Editor Command Identifiers
       - title: Migration guide from 3.x
 - title: Advanced API Reference

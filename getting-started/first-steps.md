@@ -1,10 +1,8 @@
 ---
 layout: default
 title: First Steps with TinyMCE
+description: This Quick Start Tutorial will help you download and install TinyMCE using our content delivery network (the easiest and quickest way to get up and running.)
 ---
-
-
-This Quick Start Tutorial will help you download and install TinyMCE using our content delivery network (the easiest and quickest way to get up and running.)
 
 If you're familiar with this step move on to the [Developer Guide](../developer-guide) where you'll find additional [installation options](../developer-guide/installing-tinymce/), a [Configuration Quick Start](../developer-guide/configuration-quick-start/), the advanced [Configuration Reference](../developer-guide/configuration-reference/) and [Plugin & Toolbar/Menu Control](../developer-guide/plugins-toolbar-menu-controls/) options.
 

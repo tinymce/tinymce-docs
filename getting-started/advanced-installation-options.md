@@ -1,4 +1,8 @@
 ---
 layout: default
-title: Using TinyMCE Inline
+title: Advanced Installation Options
 ---
+
+# Advanced Installation Options
+
+More coming soon.

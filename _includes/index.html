@@ -11,7 +11,7 @@
     {% assign description = link_data.description %}
   {% endif %}
 <div>
-  <h2><a href="{{url}}">{{ title }}</a></h2>
+  <h2><a href="{{ site.baseurl }}{{ url }}">{{ title }}</a></h2>
   <p>{{ description }}</p>
 </div>
 {% endfor %}

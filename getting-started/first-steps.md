@@ -16,7 +16,7 @@ If you're an advanced TinyMCE developer you may find these resources more intere
 
 So let's get to it. In the next 4 steps and in less than 5 minutes you'll have a basic, local editor instance up and running.
 
-## Step 1: Include the TinyMCE Script
+## Step 1: Include the TinyMCE script
 
 Include this line of code in the `<head>` of your HTML page:
 
@@ -24,14 +24,14 @@ Include this line of code in the `<head>` of your HTML page:
 <script src="//tinymce.cachefly.net/4.2/tinymce.min.js"></script>
 ```
 
-Tip: cut and paste the code in Step 2
+Tip: we give you a complete html snippet in Step 2.
 
 
-## Step 2: Initialize TinyMCE as Part of a Web Form
+## Step 2: Initialize TinyMCE as part of a web form
 
 With the script included, initialize TinyMCE on any element (or elements) in your web page.
 
-Since TinyMCE lets you identify replaceable elements via a CSS selector, all you need do is pass an object that contains a **selector** to `tinymce.init()`.
+Since TinyMCE lets you identify replaceable elements via a CSS selector, all you need do is pass an object that contains a `selector` to `tinymce.init()`.
 
 In this example, let's replace `<textarea id="mytextarea">` with a TinyMCE editor instance by passing the selector `'#mytextarea'` to `tinymce.init()`.
 
@@ -56,14 +56,14 @@ In this example, let's replace `<textarea id="mytextarea">` with a TinyMCE edito
 </html>
 ```
 
-And that's all there is to it! Read on as we have two more tips for you.
+And that's all there is to it! Read on as we have two more notes for you.
 
 
-## Step 3: Saving Content with a `<form>` POST
+## Step 3: Saving content with a `<form>` POST
 
-When the `<form>` is submitted the TinyMCE editor mimics the behavior of a normal HTML `<textarea>` during a form `POST`. In your form handler you can process the content submited as if it had come from a regular `<textarea>`.
+When the `<form>` is submitted the TinyMCE editor mimics the behavior of a normal HTML `<textarea>` during a form `post`. In your form handler you can process the content submitted as if it had come from a regular `<textarea>`.
 
 
-## Step 4: Editor Configuration
+## Next steps
 
 For first-time TinyMCE developers the next step is to learn about [Basic Configuration](../basic-configuration/), where we introduce selector, toolbar and plugin configuration options. We also provide a line-by-line breakdown of a basic configuration example.

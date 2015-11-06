@@ -1,10 +1,10 @@
 ---
 layout: default
 title: Image Uploading
+description: Extend TinyMCE with powerful image uploading capabilities.
 ---
 
-
-Please note, this image upload feature is available for TinyMCE version 4.2 and above. Alternatively, the Ephox Power Paste plugin is capable of this functionality in versions of TinyMCE 4.0 and above.  
+> Please note, this image upload feature is available for TinyMCE version 4.2 and above. Alternatively, the Ephox Power Paste plugin is capable of this functionality in versions of TinyMCE 4.0 and above.  
 
 The image uploader is designed to complement the new image editing functionality of TinyMCE 4.2. Images that are edited within TinyMCE can be uploaded using this function. Local images that are added through other means - for example drag and drop when using the [paste_data_images](/plugins/paste/#paste_data_images) configuration property or using Ephox's Power Paste Plugin - can also be uploaded using this functionality.
 

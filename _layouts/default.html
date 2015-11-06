@@ -13,9 +13,9 @@
 
   </div>
 
-  <div class="main">
+  <div class="main {{ page.type }}">
     <aside class="side-nav">
-      {% include nav.html pages=site.data.nav preceding_address="/" %}
+      {% include nav.html links=site.data.nav preceding_address="/" %}
     </aside>
 
     <div class="heading">

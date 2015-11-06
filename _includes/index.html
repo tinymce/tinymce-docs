@@ -1,0 +1,17 @@
+{% for link in include.links %}
+  {% if link.is_folder %}
+    {% assign title = link.title %}
+    {% assign description = link.description %}
+    {% capture url %}{{page.url}}{{link.url}}/{{link.pages[0].url}}/{% endcapture %}
+  {% else %}
+    {% capture url %}{{page.url}}{{link.url}}/{% endcapture %}
+    {% capture path %}{{url}}index.html{% endcapture %}
+    {% assign_page link_data = path %}
+    {% assign title = link_data.title %}
+    {% assign description = link_data.description %}
+  {% endif %}
+<div>
+  <h2><a href="{{url}}">{{ title }}</a></h2>
+  <p>{{ description }}</p>
+</div>
+{% endfor %}

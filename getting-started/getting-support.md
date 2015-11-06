@@ -4,9 +4,9 @@ title: Getting Support & FAQ
 description: Extensive community and pro-grade support options.
 ---
 
-> If you landed here having worked through the [Getting Started guide](/getting-started/first-steps), congratulations, you are on you way to TinyMCE ninjahood!
+> If you landed here having worked through the [Getting Started guide]({{ site.baseurl }}/getting-started/first-steps), congratulations, you are on you way to TinyMCE ninjahood!
 
-> It's now time to deep-dive into the [editor configuration settings](/editor-configuration-settings/) and [plugin options](/plugins/). Good luck and if you get stuck a great place to start is the [TinyMCE Forum](http://www.tinymce.com/forum/).
+> It's now time to deep-dive into the [editor configuration settings]({{ site.baseurl }}/editor-configuration-settings/) and [plugin options]({{ site.baseurl }}/plugins/). Good luck and if you get stuck a great place to start is the [TinyMCE Forum](http://www.tinymce.com/forum/).
 
 ## Forums
 Users of the open source Community Edition have free access to the [TinyMCE Forum](http://www.tinymce.com/forum/). Sign up [here](http://www.tinymce.com/forum/register.php).

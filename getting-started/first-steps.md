@@ -9,10 +9,10 @@ From getting a local editor instance up and running in less than 5 minutes (via 
 If you're an advanced TinyMCE developer you may find these resources more interesting:
 
 * [Advanced Installation Options](../advanced-installation-options/) (such as package managers)
-* [Editor Configuration Settings](/editor-configuration-settings/)
-* [Plugins and their options](/plugins/)
-* [Integrations](/integrations/) (such as Bootstrap, jQuery)
-* [Advanced Development Topics](/advanced-development-topics/)
+* [Editor Configuration Settings]({{ site.baseurl }}/editor-configuration-settings/)
+* [Plugins and their options]({{ site.baseurl }}/plugins/)
+* [Integrations]({{ site.baseurl }}/integrations/) (such as Bootstrap, jQuery)
+* [Advanced Development Topics]({{ site.baseurl }}/advanced-development-topics/)
 
 So let's get to it. In the next 4 steps and in less than 5 minutes you'll have a basic, local editor instance up and running.
 

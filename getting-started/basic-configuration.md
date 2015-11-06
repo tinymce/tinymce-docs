@@ -68,7 +68,7 @@ tinymce.init({
 });
 ```
 
-The full list of plugins, their options and control associations is [available here](/plugins/).
+The full list of plugins, their options and control associations is [available here]({{ site.baseurl }}/plugins/).
 
 
 ### Toolbar configuration
@@ -127,7 +127,7 @@ tinymce.init({
 });
 ```
 
-Alternatively, you may specify multiple toolbars through the use of the [`toolbar<N>`](/editor-configuration-settings/editor-appearance/#toolbar) option.
+Alternatively, you may specify multiple toolbars through the use of the [`toolbar<N>`]({{ site.baseurl }}/editor-configuration-settings/editor-appearance/#toolbar) option.
 
 #### A quick look at menu and menubar controls
 
@@ -184,7 +184,7 @@ tinymce.init({
 
 Using the configuration options above you'll be able to instantiate TinyMCE and perform the initial customizations to match your editor requirements. TinyMCE has many many other configuration options available that enable further customization and extension of the editor.
 
-You will find full list of [configuration options here](/editor-configuration-settings/). Plugins, their options and control associations are [available here](/plugins/).
+You will find full list of [configuration options here]({{ site.baseurl }}/editor-configuration-settings/). Plugins, their options and control associations are [available here]({{ site.baseurl }}/plugins/).
 
 To help get you started, let's walk through an (advanced) TinyMCE configuration example.
 

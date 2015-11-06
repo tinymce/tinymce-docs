@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Advanced Installation Options
+description: Learn how to install TinyMCE via CDN, package managers, SDK, jQuery and custom builds.
 ---
 
 

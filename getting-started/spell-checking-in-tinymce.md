@@ -1,8 +1,8 @@
 ---
 layout: default
 title: Spell Checking in TinyMCE
+description: Bring spell checking to your users.
 ---
-
 
 More coming soon.
 

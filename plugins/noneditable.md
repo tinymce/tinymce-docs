@@ -82,7 +82,7 @@ Note that classes with the `mceItem` prefix is invisible within TinyMCE.
 tinymce.init({
     selector: "textarea",  // change this value according to your html
     plugins: "noneditable",
-    noneditable_editable_class: "mceEditable"
+    noneditable_noneditable_class: "mceNonEditable"
 });
 ```
 

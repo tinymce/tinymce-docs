@@ -49,7 +49,7 @@ In this example, let's replace `<textarea id="mytextarea">` with a TinyMCE edito
 </html>
 ```
 
-And that's all there is to it! Read on as we have two more notes for you.
+And that's all there is to it!
 
 
 ## Step 3: Saving content with a `<form>` POST

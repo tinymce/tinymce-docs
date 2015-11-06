@@ -10,7 +10,7 @@ The inline editing mode is useful when creating user experiences where you want 
 From a technical perspective, when in inline editing mode the editor does not replace the selected element with it's own iframe, but instead edits the element's content in place instead.
 
 
-## Forms-based Editing vs Inline Editing
+## Forms-based editing vs inline editing
 
 Most common TinyMCE integrations use the editor in its classic form-based mode.  In this integration mode the editor usage is as a form field that is filled out to provide content.  The editor is always visible as part of the form to be edited.
 
@@ -21,7 +21,7 @@ Most significantly, when using inline editing TinyMCE is not isolated from the p
 Since the editor is not sandboxed in an iframe in inline editing mode, CSS styles for the editor's content will be inherited from the page that the editor is on.  This allows you to edit content exactly as it appears within the context of the page, providing a true WYSIWYG editing experience.
 
 
-## Inline Editing and Complex Stylesheets
+## Inline editing and complex stylesheets
 
 When using TinyMCE in inline mode it will inherit the CSS stylesheet from the page it is embedded in.
 
@@ -44,7 +44,7 @@ This would make the phrase "bold text" bold and orange in the content:
 If the user changed the heading to a paragraph or a different heading level then the text color of the bold text would, unexpectedly, change for the user. While this is entirely correct behavior according to the stylesheet it is entirely unexpected from the user's perspective.
 
 
-## Enabling Inline Editing Mode
+## Enabling inline editing mode
 
 Enabling inline editing mode is simple. Setting the "inline" configuration property to true is all that's needed in combination with a normal selector. An example of this is as follows:
 
@@ -71,6 +71,6 @@ Enabling inline editing mode is simple. Setting the "inline" configuration prope
 
 
 
-# Next Steps
+## Next steps
 
 In the next step you'll learn about TinyMCE's [advanced installation options](../advanced-installation-options/) including package managers, downloading the SDK and the custom build option.

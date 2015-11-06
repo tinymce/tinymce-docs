@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Advanced Developer Topics
+title: Advanced Development Topics
 description: Information and guides for developers wanting to build advanced capabilities into TinyMCE.
 ---
 

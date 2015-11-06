@@ -12,20 +12,19 @@ So far we've been using the CDN version of TinyMCE and while it's the easiest wa
 
 The easiest way to get started is to use our CDN.
 
+## Step 1: Include the TinyMCE script
 
-### Step 1: Include the TinyMCE Script
-
-Include this line of code in the `<head>` of your page:
+Include this line of code in the `<head>` of your HTML page:
 
 ```html
 <script src="//tinymce.cachefly.net/4.2/tinymce.min.js"></script>
 ```
 
-### Step 2: Initialize TinyMCE as Part of a Web Form
+## Step 2: Initialize TinyMCE as part of a web form
 
 With the script included, initialize TinyMCE on any element (or elements) in your web page.
 
-Since TinyMCE lets you identify replaceable elements via a CSS selector all you need do is pass a configuration object that contains a selector to `tinymce.init()`.
+Since TinyMCE lets you identify replaceable elements via a CSS selector, all you need do is pass an object that contains a `selector` to `tinymce.init()`.
 
 In this example, let's replace `<textarea id="mytextarea">` with a TinyMCE editor instance by passing the selector `'#mytextarea'` to `tinymce.init()`.
 
@@ -42,17 +41,20 @@ In this example, let's replace `<textarea id="mytextarea">` with a TinyMCE edito
 </head>
 
 <body>
-  <h1>TinyMCE Getting Started Guide</h1>
+<h1>TinyMCE Quick Start Guide</h1>
   <form method="post">
-    <textarea id="mytextarea"></textarea>
+    <textarea id="mytextarea">Hello, World!</textarea>
   </form>
 </body>
 </html>
 ```
 
-### Step 3: Saving Content with a `<form>` `post`
+And that's all there is to it! Read on as we have two more notes for you.
 
-When the `form` is submitted the TinyMCE editor mimics the behavior of a normal HTML `<textarea>` during a form `post`. No additional configuration is required.
+
+## Step 3: Saving content with a `<form>` POST
+
+When the `<form>` is submitted the TinyMCE editor mimics the behavior of a normal HTML `<textarea>` during a form `post`. In your form handler you can process the content submitted as if it had come from a regular `<textarea>`.
 
 And that's all there is to it!
 

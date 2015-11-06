@@ -1,11 +1,8 @@
 ---
 layout: default
 title: Advanced Developer Topics
+description: Information and guides for developers wanting to build advanced capabilities into TinyMCE.
 ---
-
-TOC to be generated
-
-* Get something from http://www.tinymce.com/wiki.php/Tutorials
 
 ## Command identifiers
 Here is a list of the currently [exposed editor commands](command_identifiers).

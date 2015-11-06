@@ -6,7 +6,7 @@ Example of usage of the visual_anchor_class option:
 
 ```js
 tinymce.init({
-        ...
-        visual_anchor_class: "my-custom-class"
+    ...
+    visual_anchor_class: "my-custom-class"
 });
 ```

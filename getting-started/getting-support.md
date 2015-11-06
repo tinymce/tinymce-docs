@@ -3,6 +3,8 @@ layout: default
 title: Getting Support & FAQ
 ---
 
+> If you landed here from the [Getting Started guide](/getting-started/), congratulations! You are on you way to TinyMCE ninjahood. It's now time to deep-dive into the [editor configuration settings](/editor-configuration-settings/) and [plugin options](/plugins/). Good luck and if you get stuck check out the support.
+
 
 TinyMCE provides various support options to the community.
 

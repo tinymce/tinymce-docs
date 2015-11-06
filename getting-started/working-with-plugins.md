@@ -14,3 +14,7 @@ The real power of TinyMCE's functionality is in its (so-called) plugins. Plugins
 The plugins listed below are included in the standard TinyMCE package, such as the one served via the CDN, but they are not activated.
 
 It's important to note that some plugins have advanced configuration requirements, in addition to including the plugin name as a value in the `plugins` key. A good example of this is the Advanced List plugin `advlist` below, so let's get to it.
+
+# Next Steps
+
+In the next step you'll learn about TinyMCE's [theme and UI customization](../themes-and-ui-customizations/) options.

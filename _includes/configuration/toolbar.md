@@ -4,8 +4,6 @@ This option allows you to specify the buttons and the order that they will appea
 
 To specify the controls that should appear on TinyMCE's toolbar, the toolbar option should be provided with a space separated list of toolbar controls. To create groups within this list, please add "|" pipe characters between the groups of controls that you would like to create.
 
-You can find a [complete list of toolbar controls here](http://www.tinymce.com/wiki.php/Controls).
-
 An example of such a grouped toolbar is as follows:
 
 ```js

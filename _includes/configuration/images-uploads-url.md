@@ -11,4 +11,4 @@ tinymce.init({
 });
 ```
 
-The [postAcceptor.php](http://www.tinymce.com/wiki.php/PHP_Upload_Handler) file should return an URL for the image that got uploaded there is a [reference implementation](http://www.tinymce.com/wiki.php/PHP_Upload_Handler) that you can look at.
+The `postAcceptor.php` file should return an URL for the image that got uploaded there is a [reference implementation](/advanced-development-topics/php-upload-handler/) that you can look at.

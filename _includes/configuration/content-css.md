@@ -11,8 +11,8 @@ Absolute path:
 // File: http://domain.mine/mysite/index.html
 
 tinyMCE.init({
-        ...
-        content_css : "/mycontent.css"    // resolved to http://domain.mine/mycontent.css
+    ...
+    content_css : "/mycontent.css"  // resolved to http://domain.mine/mycontent.css
 });
 ```
 
@@ -22,8 +22,8 @@ Relative path:
 // File: http://domain.mine/mysite/index.html
 
 tinyMCE.init({
-        ...
-        content_css : "mycontent.css"    // resolved to http://domain.mine/mysite/mycontent.css
+    ...
+    content_css : "mycontent.css"  // resolved to http://domain.mine/mysite/mycontent.css
 });
 ```
 
@@ -32,7 +32,7 @@ Using multiple stylesheets:
 ```js
 tinyMCE.init({
         ...
-        content_css : "mycontent.css,mycontent2.css"    // includes both css files in header
+    content_css : "mycontent.css,mycontent2.css"  // includes both css files in header
 });
 ```
 
@@ -40,8 +40,8 @@ Using multiple stylesheets as array:
 
 ```js
 tinyMCE.init({
-        ...
-        content_css : ["mycontent.css","mycontent2.css"]    // includes both css files in header, ability to have CSS with , in URL
+    ...
+          content_css : ["mycontent.css","mycontent2.css"]  // includes both css files in header, ability to have CSS with , in URL
 });
 ```
 

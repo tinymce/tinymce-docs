@@ -4,9 +4,7 @@ title: Advanced Installation Options
 ---
 
 
-If you've already installed TinyMCE you can skip these installation steps and move on to configuring the editor.
-
-Otherwise, the [Configuration Quick Start](../configuration-quick-start/) is a great place to learn about basic editor configuration. When you're ready to deep dive into advanced configuration options you'll find the [Configuration Reference](../configuration-reference/) and [Plugin & Toolbar/Menu Control](../plugin-toolbar-menu-controls/) resources extremely helpful.
+So far we've been using the CDN version of TinyMCE and while it's the easiest way to instantiate the editor it may not always be the best way. In this section we will explain some of TinyMCE's advanced installation options, including package managers, downloading the SDK and the custom build option.
 
 
 
@@ -14,20 +12,19 @@ Otherwise, the [Configuration Quick Start](../configuration-quick-start/) is a g
 
 The easiest way to get started is to use our CDN.
 
+## Step 1: Include the TinyMCE script
 
-### Step 1: Include the TinyMCE Script
-
-Include this line of code in the `<head>` of your page:
+Include this line of code in the `<head>` of your HTML page:
 
 ```html
 <script src="//tinymce.cachefly.net/4.2/tinymce.min.js"></script>
 ```
 
-### Step 2: Initialize TinyMCE as Part of a Web Form
+## Step 2: Initialize TinyMCE as part of a web form
 
 With the script included, initialize TinyMCE on any element (or elements) in your web page.
 
-Since TinyMCE lets you identify replaceable elements via a CSS selector all you need do is pass a configuration object that contains a selector to `tinymce.init()`.
+Since TinyMCE lets you identify replaceable elements via a CSS selector, all you need do is pass an object that contains a `selector` to `tinymce.init()`.
 
 In this example, let's replace `<textarea id="mytextarea">` with a TinyMCE editor instance by passing the selector `'#mytextarea'` to `tinymce.init()`.
 
@@ -44,32 +41,35 @@ In this example, let's replace `<textarea id="mytextarea">` with a TinyMCE edito
 </head>
 
 <body>
-  <h1>TinyMCE Getting Started Guide</h1>
+<h1>TinyMCE Quick Start Guide</h1>
   <form method="post">
-    <textarea id="mytextarea"></textarea>
+    <textarea id="mytextarea">Hello, World!</textarea>
   </form>
 </body>
 </html>
 ```
 
-### Step 3: Saving Content with a `<form>` `post`
+And that's all there is to it!
 
-When the `form` is submitted the TinyMCE editor mimics the behavior of a normal HTML `<textarea>` during a form `post`. No additional configuration is required.
+
+## Step 3: Saving content with a `<form>` POST
+
+When the `<form>` is submitted the TinyMCE editor mimics the behavior of a normal HTML `<textarea>` during a form `post`. In your form handler you can process the content submitted as if it had come from a regular `<textarea>`.
 
 And that's all there is to it!
 
 
 ### Additional information about using the CDN
 
-There are a few things you need to consider when using the CDN version. If you wish to use any local plugins (like [MoxieManager](http://www.moxiemanager.com) for example) you need to load them using the new [`external_plugins`](http://www.tinymce.com/wiki.php/Configuration:external_plugins) option.
+There are a few things you need to consider when using the CDN version. If you wish to use any local plugins (like [MoxieManager](http://www.moxiemanager.com) for example) you need to load them using the new [`external_plugins`](/editor-configuration-settings/integration-and-setup/#external_plugins) option.
 
-Also, if you wish to use a custom language, you need to enter the location of the language file into the new [`language_url`](http://www.tinymce.com/wiki.php/Configuration:language_url) option.
+Also, if you wish to use a custom language, you need to enter the location of the language file into the new [`language_url`](/editor-configuration-settings/internationalization/#language_url) option.
 
 For a list of versions supported by the CacheFly CDN, check this text document: [http://tinymce.cachefly.net/index.txt](http://tinymce.cachefly.net/index.txt)
 
 While we're at it a big shout out to [Cachefly](http://www.cachefly.com/) who sponsors the CDN hosting of TinyMCE. If you haven't tried CacheFly now is the perfect time. Use promo code `TINYMCE` to get exclusive pay-as-you-go pricing. They also have a risk-free 2TB 14-day trial with no credit card required. Sign up at [www.cachefly.com](http://www.cachefly.com/).
 
-For next steps see the [Developer Guide](../developer-guide/).
+In the next step you'll learn how to unleash TinyMCE's power by [working with plugins](../working-with-plugins/).
 
 
 
@@ -83,6 +83,8 @@ If you've already installed TinyMCE [learn how to add it to a page].
 ```
 npm install tinymce
 ```
+
+In the next step you'll learn how to unleash TinyMCE's power by [working with plugins](../working-with-plugins/).
 
 ### Bower
 
@@ -99,6 +101,8 @@ npm i
 jake
 ```
 
+In the next step you'll learn how to unleash TinyMCE's power by [working with plugins](../working-with-plugins/).
+
 ### Composer
 
 If you're using Composer package manager, add the following to `composer.json`.
@@ -106,6 +110,8 @@ If you're using Composer package manager, add the following to `composer.json`.
 ```
 php composer.phar require "tinymce/tinymce" ">= 4"
 ```
+
+In the next step you'll learn how to unleash TinyMCE's power by [working with plugins](../working-with-plugins/).
 
 ### NuGet
 
@@ -128,7 +134,7 @@ tinymce.init({
 });
 ```
 
-For next steps see the [Developer Guide](../developer-guide/).
+In the next step you'll learn how to unleash TinyMCE's power by [working with plugins](../working-with-plugins/).
 
 
 
@@ -142,7 +148,7 @@ To add the script, simply include this line of code in the `<head>` of your page
 <script type="text/javascript" src="<your installation path>/tinymce/tinymce.min.js"></script>
 ```
 
-For next steps see the [Developer Guide](../developer-guide/).
+In the next step you'll learn how to unleash TinyMCE's power by [working with plugins](../working-with-plugins/).
 
 
 
@@ -157,7 +163,7 @@ To add the script, simply include these lines of code in the `<head>` of your pa
 <script type="text/javascript" src="/<your installation path>/tinymce/jquery.tinymce.min.js"></script>
 ```
 
-For next steps see the [Developer Guide](../developer-guide/).
+In the next step you'll learn how to unleash TinyMCE's power by [working with plugins](../working-with-plugins/).
 
 
 
@@ -165,9 +171,9 @@ For next steps see the [Developer Guide](../developer-guide/).
 
 TinyMCE tries to be as flexible to your project's needs as possible. We have a customized package downloader [available here](http://www.tinymce.com/download/custom_package.php) where you can select the core, plugins, skins, themes and compression options you'd like to include in the download.
 
-If you selected the standalone core option in your custom download follow the [SDK](#SDK) install instructions; if the jQuery core option follow the [jQuery](#jQuery) instructions.
+If you selected the standalone core option in your custom download follow the SDK install instructions; if the jQuery core option follow the jQuery instructions. Both in this section.
 
-For next steps see the [Developer Guide](../developer-guide/).
+In the next step you'll learn how to unleash TinyMCE's power by [working with plugins](../working-with-plugins/).
 
 
 
@@ -224,6 +230,4 @@ When the `form` is submitted the TinyMCE editor mimics the behaviour of a normal
 
 ## Next Steps
 
-At this point, you've seen how to create TinyMCE instances on a page using `tinymce.init()`, and you've seen how to retrieve content from TinyMCE as part of an HTML `<form>` `post`.
-
-There's way more under the hood if you're feeling adventurous: return to the [Developer Guide](../) to explore TinyMCE's advanced configuration settings in the [Configuration Reference](../configuration-reference/) and also learn more about [Plugin & Toolbar/Menu Control](../plugin-toolbar-menu-controls/) options.
+In the next step you'll learn how to unleash TinyMCE's power by [working with plugins](../working-with-plugins/).

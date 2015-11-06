@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Using TinyMCE Inline
+description: Introducing forms-based editing v inline editing.
 ---
 
 TinyMCE has two main integration modes: a "classic" form-based mode, and an inline editing mode.

@@ -1,12 +1,8 @@
 ---
 layout: default
 title: URL Handling
+description: These settings affect the way URLs are handled by the editor.
 ---
-
-
-This will be about URL Handling. We will need to include links to `-includes` spelling folder/files.
-
-
 
 ## Q: How do I convert my URLs to relative, absolute, or absolute with domain?
 

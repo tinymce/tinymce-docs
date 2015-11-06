@@ -1,11 +1,8 @@
 ---
 layout: default
 title: Working With Plugins
+description: TinyMCE is an incredibly powerful, flexible and customizable rich text editor. This section will help you configure and extend your editor instance.
 ---
-
-
-TinyMCE is an incredibly powerful, flexible and customizable rich text editor. This section will help you configure and extend your editor instance.
-
 
 # Plugins
 

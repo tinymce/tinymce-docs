@@ -1,6 +1,7 @@
 permalink: pretty
 baseurl: ""
 shared_baseurl: ""
+syntax_highlight_theme: "tomorrow-night"
 exclude:
   - docs
   - README.md
@@ -12,13 +13,9 @@ exclude:
 
 markdown: redcarpet
 
-kramdown:
-  input: GFM
-
 redcarpet:
   extensions:
     - autolink
-    - highlighter
     - no_intra_emphasis
     - tables
     - prettify

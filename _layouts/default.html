@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <title>TinyMCE - {{ page.title }}</title>
-  <link href="{{site.shared_css_url}}" rel="stylesheet">
-  <link href="/css/docs.css" rel="stylesheet">
+  <link href="{{site.shared_baseurl}}/css/shared.css" rel="stylesheet">
+  <link href="{{site.shared_baseurl}}/css/docs.css" rel="stylesheet">
 </head>
 <body role="document">
   {% include top-menu.html %}
@@ -18,11 +18,18 @@
       {% include nav.html pages=site.data.nav preceding_address="/" %}
     </aside>
 
+    <div class="heading">
+      <h1 class="light">{{ page.title }}</h1>
+      <h2 class="light">{{ page.description }}</h2>
+    </div>
+
     <div class="content">
       {{ content }}
     </div>
   </div>
 
   {% include footer.html %}
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script src="{{site.shared_baseurl}}/scripts/docs.js"></script>
 </body>
 </html>

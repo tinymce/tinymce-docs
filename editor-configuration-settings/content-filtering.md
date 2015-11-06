@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Content Filtering
-description: These settings change the way the editor handles the input and output of content. This will help you to create clean, maintainable and readable content by removing extraneous HTML elements and styles.
+description: These settings change the way the editor handles the input and output of content. This will help you to create clean, maintainable and readable content.
 ---
 
 {% include configuration/allow-conditional-comments.md %}

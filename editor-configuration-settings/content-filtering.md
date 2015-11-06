@@ -1,40 +1,69 @@
 ---
 layout: default
 title: Content Filtering
+description: These settings change the way the editor handles the input and output of content. This will help you to create clean, maintainable and readable content by removing extraneous HTML elements and styles.
 ---
 
-
-This will be about Content Filtering. We will need to include links to `-includes` spelling folder/files.
-
 {% include configuration/allow-conditional-comments.md %}
+
 {% include configuration/allow-html-in-named-anchor.md %}
+
 {% include configuration/block-formats.md %}
+
 {% include configuration/convert-fonts-to-spans.md %}
+
 {% include configuration/custom-elements.md %}
+
 {% include configuration/doctype.md %}
+
 {% include configuration/element-format.md %}
+
 {% include configuration/encoding.md %}
+
 {% include configuration/entities.md %}
+
 {% include configuration/entity-encoding.md %}
+
 {% include configuration/extended-valid-elements.md %}
+
 {% include configuration/fix-list-elements.md %}
+
 {% include configuration/font-formats.md %}
+
 {% include configuration/fontsize-formats.md %}
+
 {% include configuration/force-hex-style-colors.md %}
+
 {% include configuration/force-p-newlines.md %}
+
 {% include configuration/forced-root-block.md %}
+
 {% include configuration/forced-root-block-attrs.md %}
+
 {% include configuration/formats.md %}
+
 {% include configuration/indentation.md %}
+
 {% include configuration/invalid-elements.md %}
+
 {% include configuration/invalid-styles.md %}
+
 {% include configuration/keep-styles.md %}
+
 {% include configuration/protect.md %}
+
 {% include configuration/remove-trailing-brs.md %}
+
 {% include configuration/schema.md %}
+
 {% include configuration/style-formats-merge.md %}
+
 {% include configuration/style-formats.md %}
+
 {% include configuration/valid-children.md %}
+
 {% include configuration/valid-classes.md %}
+
 {% include configuration/valid-elements.md %}
+
 {% include configuration/valid-styles.md %}

@@ -8,7 +8,7 @@
     $ bundle install
     $ cp _config-local.sample.yml _config-local.yml
 
-Edit `_config-local.yml` accordingly with your workflow, you may want to set `shared_baseurl: "https://tinymce.com" for example in order to use the correct styles and CSS.
+Edit `_config-local.yml` accordingly with your workflow, you may want to set `shared_baseurl: "https://tinymce.com"` for example in order to use the correct styles and CSS.
 
 ### Run development version
 

@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Content Filtering
+description: // coming soon
 ---
 
 More coming soon.

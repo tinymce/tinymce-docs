@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Advanced Installation Options
+description: Learn how to install TinyMCE via CDN, package managers, SDK, jQuery and custom builds.
 ---
 
 
@@ -12,7 +13,7 @@ So far we've been using the CDN version of TinyMCE and while it's the easiest wa
 
 The easiest way to get started is to use our CDN.
 
-## Step 1: Include the TinyMCE script
+### Step 1: Include the TinyMCE script
 
 Include this line of code in the `<head>` of your HTML page:
 
@@ -20,7 +21,7 @@ Include this line of code in the `<head>` of your HTML page:
 <script src="//tinymce.cachefly.net/4.2/tinymce.min.js"></script>
 ```
 
-## Step 2: Initialize TinyMCE as part of a web form
+### Step 2: Initialize TinyMCE as part of a web form
 
 With the script included, initialize TinyMCE on any element (or elements) in your web page.
 
@@ -52,7 +53,7 @@ In this example, let's replace `<textarea id="mytextarea">` with a TinyMCE edito
 And that's all there is to it!
 
 
-## Step 3: Saving content with a `<form>` POST
+### Step 3: Saving content with a `<form>` POST
 
 When the `<form>` is submitted the TinyMCE editor mimics the behavior of a normal HTML `<textarea>` during a form `post`. In your form handler you can process the content submitted as if it had come from a regular `<textarea>`.
 
@@ -61,9 +62,9 @@ And that's all there is to it!
 
 ### Additional information about using the CDN
 
-There are a few things you need to consider when using the CDN version. If you wish to use any local plugins (like [MoxieManager](http://www.moxiemanager.com) for example) you need to load them using the new [`external_plugins`](/editor-configuration-settings/integration-and-setup/#external_plugins) option.
+There are a few things you need to consider when using the CDN version. If you wish to use any local plugins (like [MoxieManager](http://www.moxiemanager.com) for example) you need to load them using the new [`external_plugins`]({{ site.baseurl }}/editor-configuration-settings/integration-and-setup/#external_plugins) option.
 
-Also, if you wish to use a custom language, you need to enter the location of the language file into the new [`language_url`](/editor-configuration-settings/internationalization/#language_url) option.
+Also, if you wish to use a custom language, you need to enter the location of the language file into the new [`language_url`]({{ site.baseurl }}/editor-configuration-settings/internationalization/#language_url) option.
 
 For a list of versions supported by the CacheFly CDN, check this text document: [http://tinymce.cachefly.net/index.txt](http://tinymce.cachefly.net/index.txt)
 

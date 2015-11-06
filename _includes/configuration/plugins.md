@@ -4,7 +4,7 @@ This option allows you to specify which plugins TinyMCE will attempt to load whe
 
 By default, TinyMCE will not load any plugins.
 
-[Check this documentation page for a list of available plugins](/plugins/).
+[Check this documentation page for a list of available plugins]({{ site.baseurl }}/plugins/).
 
 This should be a space separated string.
 

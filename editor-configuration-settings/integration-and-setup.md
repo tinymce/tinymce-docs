@@ -1,10 +1,8 @@
 ---
 layout: default
 title: Integration and Setup
+description: Essential editor configuration, including `selector` and `plugins` keys. 
 ---
-
-
-This will be about Integration and Setup. We will need to include links to `_includes` spelling folder/files.
 
 {% include configuration/auto-focus.md %}
 

@@ -1,6 +1,7 @@
 ---
 layout: default
 title: TinyMCE In Your Language
+description: Internationalize TinyMCE with global language capabilities.
 ---
 
 More coming soon.

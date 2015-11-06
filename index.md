@@ -1,12 +1,7 @@
 ---
 layout: default
 title: TinyMCE Developer Documentation
+type: index
 ---
 
-
-## [Getting Started](./getting-started/)
-
-## [Developer Guide](./developer-guide/)
-## [Resources](./resources/)
-## [Advanced API Reference](./api/)
-## [Support](./support/)
+{% include index.html links=site.data.nav %}

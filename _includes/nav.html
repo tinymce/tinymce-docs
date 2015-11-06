@@ -1,40 +1,25 @@
 <ul>
-{% for item in include.pages %}
-	{% assign slug = item.title | downcase | replace:' ','-' | replace:'-&-','-' | replace:'/','-' %}
-	{% assign slug_slash = slug | append:'/' %}
-	{% assign slash_slug_slash = slug_slash | prepend:'/' %}
-
-	{% if slug contains '+' %}
-		{% assign is_folder = true %}
-		{% assign slug = slug | remove:'+' %}
-		{% assign slug_slash = slug_slash | remove:'+' %}
-		{% assign slash_slug_slash = slash_slug_slash | remove:'+' %}
-	{% else %}
-		{% assign is_folder = false %}
-	{% endif %}
-
-  {% if page.url contains slash_slug_slash %}
-  <li class="active">
+{% for link in include.links %}
+  {% if page.url contains link.url %}
+  	<li class="active">
   {% else %}
-  <li>
+  	<li>
   {% endif %}
-		{% if is_folder %}
-			{% assign type = '' %}
-			{% capture address %}{{ include.preceding_address }}{{ slug_slash }}{% endcapture %}
-			<span class="folder">{{ item.title | remove:'+' }}</span>
+		{% if link.is_folder %}
+			{% capture address %}{{ include.preceding_address }}{{ link.url }}/{% endcapture %}
+			<span class="folder">{{ link.title }}</span>
+		{% elsif link.url contains '#' %}
+			{% capture address %}{{ include.preceding_address }}{{ link.url }}{% endcapture %}
+			<a class="anchor" href="{{ site.baseurl }}{{ address }}">{{ link.url | remove:'#' }}</a>
 		{% else %}
-			{% if slug contains '#' %}
-				{% assign type = 'anchor' %}
-				{% capture address %}{{ include.preceding_address }}{{ slug | remove:'_' }}{% endcapture %}
-			{% else %}
-				{% assign type = '' %}
-				{% capture address %}{{ include.preceding_address }}{{ slug_slash }}{% endcapture %}
-			{% endif %}
-			<a class="{{ type }}"href="{{ site.baseurl }}{{ address }}">{{ item.title | remove:'#' }}</a>
+			{% capture address %}{{ include.preceding_address }}{{ link.url }}/{% endcapture %}
+			{% capture address_index %}{{ address }}index.html{% endcapture %}
+			{% assign_page link_data = address_index %}
+			<a href="{{ site.baseurl }}{{ address }}">{{ link_data.title }}</a>
 		{% endif %}
 
-	  {% if item.pages %}
-	    {% include nav.html pages=item.pages preceding_address=address %}
+	  {% if link.pages %}
+	    {% include nav.html links=link.pages preceding_address=address %}
 	  {% endif %}
   </li>
 {% endfor %}

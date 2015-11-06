@@ -12,4 +12,4 @@ tinymce.init({
 });
 ```
 
-If you would like to create your own skin, please see the guide [here](/advanced-development-topics/creating-a-skin/).
+If you would like to create your own skin, please see the guide [here]({{ site.baseurl }}/advanced-development-topics/creating-a-skin/).

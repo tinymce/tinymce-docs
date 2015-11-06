@@ -1,6 +1,6 @@
 ## valid_children
 
-The valid_children enables you to control what child elements can exists within what parent elements. TinyMCE will remove/split any non HTML5 or HTML transitional contents by default. So for example a P can't be a child of another P element. The default value for this option is controlled by the current [schema](/editor-configuration-settings/content-filtering/#schema).
+The valid_children enables you to control what child elements can exists within what parent elements. TinyMCE will remove/split any non HTML5 or HTML transitional contents by default. So for example a P can't be a child of another P element. The default value for this option is controlled by the current [schema]({{ site.baseurl }}/editor-configuration-settings/content-filtering/#schema).
 
 The syntax for this option is a comma separated list of parents with elements that should be added/removed as valid children for that element. So for example "+body[style]" would add style as a valid child of body.
 

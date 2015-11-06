@@ -23,7 +23,7 @@ Please use the Tracker system to submit bugs on the listed browsers only.
 
 ### Notes
 
-`*` TinyMCE's image upload feature and the [imagetools](/plugins/image-tools/) plugin are not compatible with IE8 and IE9.
+`*` TinyMCE's image upload feature and the [imagetools]({{ site.baseurl }}/plugins/image-tools/) plugin are not compatible with IE8 and IE9.
 
 
 # Next Steps

@@ -3,9 +3,13 @@ We have a jQuery plugin [available here] if you'd rather install TinyMCE using t
 To add the script, simply include these lines of code in the `<head>` of your page:
 
 ```html
-<script type="text/javascript" src="/<your installation path>/tinymce/tinymce.min.js"></script>
-<script type="text/javascript" src="/<your installation path>/tinymce/jquery.tinymce.min.js"></script>
+<script type="text/javascript" src="/path/to/tinymce/tinymce.min.js"></script>
+<script type="text/javascript" src="/path/to/tinymce/jquery.tinymce.min.js"></script>
 ```
+
+In the next step you'll learn how to unleash TinyMCE's power by [working with plugins](../working-with-plugins/).
+
+
 
 # Adding TinyMCE to a Page
 
@@ -55,3 +59,5 @@ That's all there is to it!
 ## Step 3: Saving Content with a `<form>` `post`
 
 When the `form` is submitted the TinyMCE editor mimics the behaviour of a normal HTML `<textarea>` during a form `post`. No additional configuration is required.
+
+> In the next step you'll learn how to unleash TinyMCE's power by [working with plugins](../working-with-plugins/).

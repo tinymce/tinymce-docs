@@ -50,3 +50,6 @@ That's all there is to it!
 ## Step 3: Saving Content with a `<form>` `post`
 
 When the `form` is submitted the TinyMCE editor mimics the behaviour of a normal HTML `<textarea>` during a form `post`. No additional configuration is required.
+
+
+In the next step you'll learn how to unleash TinyMCE's power by [working with plugins](../working-with-plugins/).

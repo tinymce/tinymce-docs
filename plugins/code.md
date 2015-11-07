@@ -1,8 +1,7 @@
 ---
 layout: default
-title: Code plugin
+title: Code Plugin
 ---
-
 
 // adds menu control (under Tools menu)
 

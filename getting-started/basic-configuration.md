@@ -4,15 +4,13 @@ title: Basic Configuration
 description: TinyMCE provides a wide range of configuration options that enable you to integrate it tightly with your application.
 ---
 
-In this **Configuration Quick Start** we will introduce the basic configuration options typically used in traditional form-based layouts, along with examples of how to use TinyMCE as an inline editor (which is very useful when creating user experiences where the editing view of the page is merged with the reading view of the page.)
-
-
+In this introduction to TinyMCE configuration we will discuss the most important options typically used in traditional form-based layouts, along with examples of how to use TinyMCE as an inline editor (which is very useful when creating user experiences where the editing view of the page is merged with the reading view of the page.)
 
 Once you've added the TinyMCE script to your page there are three configuration aspects you need to consider:
 
-1. Selector Configuration
-2. Plugin Configuration
-3. Toolbar Configuration
+1. Selector configuration
+2. Plugin configuration
+3. Toolbar configuration
 
 
 ### Selector configuration
@@ -27,7 +25,7 @@ Here's an example that will replace all `textarea` elements on the page:
 
 ```js
 tinymce.init({
-    selector: "textarea",
+  selector: "textarea",
 });
 ```
 
@@ -35,7 +33,7 @@ You can also match an ID attribute. The following example will replace a `textar
 
 ```js
 tinymce.init({
-    selector: "textarea#editable",
+  selector: "textarea#editable",
 });
 ```
 
@@ -45,12 +43,12 @@ Here's an example of this setting being used in inline editing mode on a `div` e
 
 ```js
 tinymce.init({
-    selector: "div#editable",
-    inline: true
+  selector: "div#editable",
+  inline: true
 });
 ```
 
-For more information on the differences between regular and inline editing modes see the [Using TinyMCE Inline](../using-tinymce-inline/) page. (It's the next step in this guide, so we'll get to that next.)
+> For more information on the differences between regular and inline editing modes see the [Using TinyMCE Inline](../using-tinymce-inline/) page. (It's the next step in this guide, so hang in there and we'll get to that in a moment.)
 
 
 ### Plugins configuration
@@ -63,8 +61,8 @@ Fortunately this is easy. Add `plugins` to `tinymce.init()` and provide a comma 
 
 ```js
 tinymce.init({
-    selector: "textarea",
-    plugins : "advlist autolink link image lists charmap print preview"
+  selector: "textarea",
+  plugins : "advlist autolink link image lists charmap print preview"
 });
 ```
 
@@ -73,7 +71,7 @@ The full list of plugins, their options and control associations is [available h
 
 ### Toolbar configuration
 
-TinyMCE comes with a core set of toolbar controls out of the box, things such as bold, italic and text alignment. Basically, the type of settings you would expect to find in any WYSIWYG editor. However, in most integrations it's desirable to change the toolbar configuration to suit your needs. Fortunately that's quite easy to do.
+TinyMCE comes with a core set of toolbar controls out of the box, things such as bold, italic and text alignment. Basically, the type of settings you would expect to find in any WYSIWYG editor. However, in most integrations it's desirable to change the toolbar configuration to suit your needs. Fortunately that's quite easy to do too.
 
 But before we get to configuring the toolbar, let's have a look at the **core** menu and toolbar controls.
 
@@ -93,14 +91,14 @@ The toolbar configuration option allows you to choose which items appear on the 
 
 Additionally, multiple toolbars can be used by specifying multiple toolbar options suffixed with a number i.e. "toolbar1", "toolbar2", "toolbar3", etc. If multiple toolbars are used, the original toolbar option will be ignored.
 
-To specify the controls that should appear on TinyMCE's toolbar, the toolbar option should be provided with a space separated list of toolbar controls. To create groups within this list, please add `"|"` pipe characters between the groups of controls that you would like to create.
+To specify the controls that should appear on TinyMCE's toolbar, the toolbar option should be provided with a space separated list of toolbar controls. To create groups within this list, add `"|"` pipe characters between the groups of controls that you would like to create.
 
 An example of such a grouped toolbar is as follows:
 
 ```js
 tinymce.init({
-    selector: "textarea",
-    toolbar: "undo redo | styleselect | bold italic | link image"
+  selector: "textarea",
+  toolbar: "undo redo | styleselect | bold italic | link image"
 });
 ```
 
@@ -108,8 +106,8 @@ To disable the toolbar entirely, the toolbar option should be provided a boolean
 
 ```js
 tinymce.init({
-    selector: "textarea",
-    toolbar: false
+  selector: "textarea",
+  toolbar: false
 });
 ```
 
@@ -119,15 +117,15 @@ Here is an example creating multiple toolbars:
 
 ```js
 tinymce.init({
-    selector: "textarea",
-    toolbar: [
-        "undo redo | styleselect | bold italic | link image",
-        "alignleft aligncenter alignright"
-    ]
+  selector: "textarea",
+  toolbar: [
+    "undo redo | styleselect | bold italic | link image",
+    "alignleft aligncenter alignright"
+  ]
 });
 ```
 
-Alternatively, you may specify multiple toolbars through the use of the [`toolbar<N>`]({{ site.baseurl }}/editor-configuration-settings/editor-appearance/#toolbar) option.
+Alternatively, you may specify multiple toolbars through the use of the [`toolbar<N>`]({{ site.baseurl }}/editor-configuration-settings/editor-appearance/#toolbar-n) option.
 
 #### A quick look at menu and menubar controls
 
@@ -139,40 +137,40 @@ In the snippet below our menubar will include only the menu items `File`, `Edit`
 
 ```js
 tinymce.init({
-    selector: "textarea",  // change this value according to your html
-    menubar: "file edit view"
+  selector: "textarea",  // change this value according to your html
+  menubar: "file edit view"
 });
 ```
 
-If you wanted to create an `Edit` menu and only include Cut, Copy, Paste items you would use `menu` instead. Like this:
+If you wanted to create an `Edit` menu and include only Cut, Copy, Paste items you would use `menu` instead. Like this:
 
 ```js
 tinymce.init({
-    selector: "textarea",  // change this value according to your html
-    menu: {
-      view: {title: 'Edit', items: 'cut, copy, paste'}
-      }
+  selector: "textarea",  // change this value according to your html
+  menu: {
+    view: {title: 'Edit', items: 'cut, copy, paste'}
+  }
 });
 ```
 
-And for a little bit of fun, you can even create your own menu titles. In the snippet below we will create a menu with the title Happy and include the Source code item.
+And for a little bit of fun, you can even create your own menu titles. In the snippet below we will create a menu with the title "Happy" and include the "Source code" item.
 
 ```js
 tinymce.init({
-    selector: "textarea",  // change this value according to your html
-    menu: {
-      view: {title: 'Happy', items: 'code'}
-      }
+  selector: "textarea",  // change this value according to your html
+  menu: {
+    view: {title: 'Happy', items: 'code'}
+  }
 });
 ```
 
-If you wish to exclude `menubar` and/or `toolbar` controls set their value to a boolean value of `false`. To remove the toolbar and menu completely you would do this:
+If you wish to exclude `menubar` and/or `toolbar` controls set their value to `false`. For example, to remove the toolbar and menu completely you would do this:
 
 ```js
 tinymce.init({
-    selector: "textarea",  // change this value according to your html
-    menubar: false,  // removes the menubar
-    toolbar: false  // removes the toolbar
+  selector: "textarea",  // change this value according to your html
+  menubar: false,  // removes the menubar
+  toolbar: false  // removes the toolbar
 });
 ```
 
@@ -192,47 +190,48 @@ To help get you started, let's walk through an (advanced) TinyMCE configuration 
 <!DOCTYPE html>
 <html>
 <head>
-    <script type="text/javascript" src="<your installation path>/tinymce.min.js"></script>
-    <script type="text/javascript">
+  <script type="text/javascript" src="//tinymce.cachefly.net/4.2/tinymce.min.js"></script>
+  <script type="text/javascript">
     tinymce.init({
-        selector: "#myTextarea",
-        theme: "modern",
-        width: 300,
-        height: 300,
-        plugins: [
-             "advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker",
-             "searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking",
-             "save table contextmenu directionality emoticons template paste textcolor"
-       ],
-       content_css: "css/content.css",
-       toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | print preview media fullpage | forecolor backcolor emoticons",
-       style_formats: [
-            {title: 'Bold text', inline: 'b'},
-            {title: 'Red text', inline: 'span', styles: {color: '#ff0000'}},
-            {title: 'Red header', block: 'h1', styles: {color: '#ff0000'}},
-            {title: 'Example 1', inline: 'span', classes: 'example1'},
-            {title: 'Example 2', inline: 'span', classes: 'example2'},
-            {title: 'Table styles'},
-            {title: 'Table row 1', selector: 'tr', classes: 'tablerow1'}
-        ]
-     });
-    </script>
+      selector: "#myTextarea",
+      theme: "modern",
+      width: 300,
+      height: 300,
+      plugins: [
+        "advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker",
+        "searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking",
+        "save table contextmenu directionality emoticons template paste textcolor"
+      ],
+      content_css: "css/content.css",
+      toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | print preview media fullpage | forecolor backcolor emoticons",
+      style_formats: [
+        {title: 'Bold text', inline: 'b'},
+        {title: 'Red text', inline: 'span', styles: {color: '#ff0000'}},
+        {title: 'Red header', block: 'h1', styles: {color: '#ff0000'}},
+        {title: 'Example 1', inline: 'span', classes: 'example1'},
+        {title: 'Example 2', inline: 'span', classes: 'example2'},
+        {title: 'Table styles'},
+        {title: 'Table row 1', selector: 'tr', classes: 'tablerow1'}
+      ]
+    });
+  </script>
 </head>
+
 <body>
-    <textarea id="myTextarea"></textarea>
+  <textarea id="myTextarea"></textarea>
 </body>
 </html>
 ```
 
 #### Breakdown of the above example
 
-First we want to select only the `textarea` with id `myTextarea`:
+First we want to select only the `textarea` with the id `myTextarea`.
 
 > ```js
 selector: "#myTextarea",
 ```
 
-We next choose a theme, in this case the modern theme (default, not needed.)
+We next choose a theme, in this case the modern theme (which is the default theme, so this isn't needed. You can however create your own themes using the [TinyMCE Skin Creator](http://skin.tinymce.com/)).
 
 > ```js
 theme: "modern",
@@ -249,41 +248,41 @@ Here we select the plugins that should be included on load.
 
 > ```js
 plugins: [
-         "advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker",
-         "searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking",
-         "save table contextmenu directionality emoticons template paste textcolor"
+  "advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker",
+  "searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking",
+  "save table contextmenu directionality emoticons template paste textcolor"
 ],
 ```
 
-`content_css` is important as it let's you style the content inside the editor window. This should be a (very) stripped down version of your website CSS, with things such as styles for headers (H1-H6), table layouts, margins, paddings around elements (images, paragraphs), and so on.
+Next we set the styling of the editable area using `content_css`. This should be a (very) stripped down version of your website CSS, with things such as styles for headers (H1-H6), table layouts, margins, paddings around elements (images, paragraphs), and so on.
 
 > ```js
 content_css: "css/content.css",
 ```
 
-Next select the buttons you want in your toolbar. You can use a comma or space as a separator.
+In this step we select the toolbar buttons we want to expose to the user. You can use a comma or space as a separator.
 
 > ```js
 toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | print preview media fullpage | forecolor backcolor emoticons",
 ```
 
-Lastly we have implemented a powerful styles configuration. For example, "Bold text" simply makes a `<b>` tag, "Red text" makes a span with a style coloring it RED.
+Lastly we have implemented a powerful styles configuration. For example, "Bold text" simply makes a `<b>` tag, "Red text" makes a span with a style coloring it `red`.
 
 The "Table row" can only be applied to a table row `<tr>`.
 
 > ```js
-    style_formats: [
-        {title: 'Bold text', inline: 'b'},
-        {title: 'Red text', inline: 'span', styles: {color: '#ff0000'}},
-        {title: 'Red header', block: 'h1', styles: {color: '#ff0000'}},
-        {title: 'Example 1', inline: 'span', classes: 'example1'},
-        {title: 'Example 2', inline: 'span', classes: 'example2'},
-        {title: 'Table styles'},
-        {title: 'Table row 1', selector: 'tr', classes: 'tablerow1'}
-    ],
+style_formats: [
+  {title: 'Bold text', inline: 'b'},
+  {title: 'Red text', inline: 'span', styles: {color: '#ff0000'}},
+  {title: 'Red header', block: 'h1', styles: {color: '#ff0000'}},
+  {title: 'Example 1', inline: 'span', classes: 'example1'},
+  {title: 'Example 2', inline: 'span', classes: 'example2'},
+  {title: 'Table styles'},
+  {title: 'Table row 1', selector: 'tr', classes: 'tablerow1'}
+],
 ```
 
-Check out the [formats options] for more information on how to bend these options to your will.
+Check out the [formats configuration](/editor-configuration-settings/content-filtering/#formats) for more information on how to bend these options to your will.
 
 
 

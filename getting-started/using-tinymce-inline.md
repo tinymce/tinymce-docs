@@ -13,26 +13,26 @@ From a technical perspective, when in inline editing mode the editor does not re
 
 ## Forms-based editing vs inline editing
 
-Most common TinyMCE integrations use the editor in its classic form-based mode.  In this integration mode the editor usage is as a form field that is filled out to provide content.  The editor is always visible as part of the form to be edited.
+Most common TinyMCE integrations use the editor in its classic form-based mode. In this integration mode the editor usage is as a form field that is filled out to provide content. The editor is always visible as part of the form to be edited.
 
-Inline editing mode blends the editable view with the readable view of the page.  Elements are replaced inline with an editor once clicked rather than the editor always being visible.
+Inline editing mode blends the editable view with the readable view of the page. Elements are replaced inline with an editor once clicked rather than the editor always being visible.
 
-Most significantly, when using inline editing TinyMCE is not isolated from the page by virtue of being encapsulated within an iframe.  This has the advantage of ensuring that the content within the editor inherits the surrounding page's styles when presenting the content.
+Most significantly, when using inline editing TinyMCE is not isolated from the page by virtue of being encapsulated within an iframe. This has the advantage of ensuring that the content within the editor inherits the surrounding page's styles when presenting the content.
 
-Since the editor is not sandboxed in an iframe in inline editing mode, CSS styles for the editor's content will be inherited from the page that the editor is on.  This allows you to edit content exactly as it appears within the context of the page, providing a true WYSIWYG editing experience.
+Since the editor is not sandboxed in an iframe in inline editing mode, CSS styles for the editor's content will be inherited from the page that the editor is on. This allows you to edit content exactly as it appears within the context of the page, providing a true WYSIWYG editing experience.
 
 
 ## Inline editing and complex stylesheets
 
 When using TinyMCE in inline mode it will inherit the CSS stylesheet from the page it is embedded in.
 
-While this is advantageous in providing a true WYSIWYG view of the content it can result in user confusion when working with complex CSS. This is because your site's CSS is now applying directly to the editor and may result in behaviour that the user doesn't expect.
+While this is advantageous in providing a true WYSIWYG view of the content it can result in user confusion when working with complex CSS. This is because your site's CSS is now being applied directly to the editor and may result in behavior that the user doesn't expect.
 
-When using the editor in inline mode care should be taken when using styling that depends on structures within the editor. For example, if you had a class like this:
+If you are going to use the editor in inline mode care should be taken when using styling that depends on structures within the editor. For example, if you had a class like this:
 
 ```css
 h1 strong {
-    color:orange;
+  color: orange;
 }
 ```
 
@@ -47,25 +47,26 @@ If the user changed the heading to a paragraph or a different heading level then
 
 ## Enabling inline editing mode
 
-Enabling inline editing mode is simple. Setting the "inline" configuration property to true is all that's needed in combination with a normal selector. An example of this is as follows:
+Enabling inline editing mode is simple. Setting the `inline` configuration property to `true` is all that's needed, in combination with a normal `selector`. An example of this is as follows:
 
 ```html
 <!DOCTYPE html>
 <html>
 <head>
-  <script type="text/javascript" src="<your installation path>/tinymce/tinymce.min.js"></script>
-    <script type="text/javascript">
-        tinymce.init({
-            selector: "#myeditablediv",
-            inline: true
-        });
-    </script>
+  <script type="text/javascript" src="//tinymce.cachefly.net/4.2/tinymce.min.js"></script>
+  <script type="text/javascript">
+    tinymce.init({
+      selector: "#myeditablediv",
+      inline: true
+    });
+  </script>
 </head>
+
 <body>
-    <h1>TinyMCE Inline Editing Mode Guide</h1>
-    <form method="post">
-        <div id="myeditablediv">Click here to edit!</div>
-    </form>
+  <h1>TinyMCE Inline Editing Mode Guide</h1>
+  <form method="post">
+    <div id="myeditablediv">Click here to edit!</div>
+  </form>
 </body>
 </html>
 ```

@@ -1,0 +1,8 @@
+---
+layout: empty
+---
+
+{
+  {% include search-db.json links=site.data.nav preceding_address="/" %}
+  "": ""
+}

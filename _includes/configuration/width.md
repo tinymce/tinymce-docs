@@ -1,7 +1,11 @@
 ## width
 
-Set the width of the editor.
+Set the width of the editor in pixels.
 
 ```js
-width : 300
+tinymce.init({
+    ...
+    width : 300,
+    ...
+});
 ```

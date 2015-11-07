@@ -1,30 +1,22 @@
-If you'd rather download and install the script manually, get the package from [TinyMCE Downloads]. Unzip the package and move the `"tinymce/js/tinymce"` directory into a web accessible location on your web server (for example, `localhost`).
+If you'd rather download and install the script manually, get the package from [TinyMCE Downloads](http://www.tinymce.com/download). Unzip the package and move the `"tinymce/js/tinymce"` directory into a web accessible location on your web server (for example, `localhost`).
 
 To add the script, simply include this line of code in the `<head>` of your page:
 
-```html
-<script type="text/javascript" src="<your installation path>/tinymce/tinymce.min.js"></script>
-```
+### Step 1: Include the TinyMCE script
 
-# Adding TinyMCE to a Page
-
-Adding TinyMCE to a page is as simple as initializing the script on a `<textarea>` as part of an HTML `<form>`. When the `<form>` is submitted the contents of the editor will be submitted as part of the `<form>` `post`.
-
-Here's how to do it using the CDN option as an example.
-
-## Step 1: Installation
-
-Include this line of code in the `<head>` of your page:
+Include this line of code in the `<head>` of your HTML page:
 
 ```html
-<script src="//tinymce.cachefly.net/4.2/tinymce.min.js"></script>
+<script type="text/javascript" src="<path/to/tinymce/tinymce.min.js"></script>
 ```
 
-## Step 2: Initialize TinyMCE as Part of a Web Form
+> Tip: we give you a complete html snippet in Step 2.
 
-With the script included, initialize TinyMCE on any element (or elements) in your webpage.
+### Step 2: Initialize TinyMCE as part of a web form
 
-Since TinyMCE lets you identify replaceable elements via a CSS3 selector all you need do is pass an object that contains a selector to `tinymce.init()`.
+With the script included, initialize TinyMCE on any element (or elements) in your web page.
+
+Since TinyMCE lets you identify replaceable elements via a CSS selector, all you need do is pass an object that contains a `selector` to `tinymce.init()`.
 
 In this example, let's replace `<textarea id="mytextarea">` with a TinyMCE editor instance by passing the selector `'#mytextarea'` to `tinymce.init()`.
 
@@ -32,7 +24,7 @@ In this example, let's replace `<textarea id="mytextarea">` with a TinyMCE edito
 <!DOCTYPE html>
 <html>
 <head>
-  <script src="//tinymce.cachefly.net/4.2/tinymce.min.js"></script>
+  <script src="/path/to/tinymce/tinymce.min.js"></script>
   <script type="text/javascript">
     tinymce.init({
       selector: "#mytextarea"
@@ -41,16 +33,18 @@ In this example, let's replace `<textarea id="mytextarea">` with a TinyMCE edito
 </head>
 
 <body>
-  <h1>TinyMCE Getting Started Guide</h1>
+<h1>TinyMCE Quick Start Guide</h1>
   <form method="post">
-    <textarea id="mytextarea"></textarea>
+    <textarea id="mytextarea">Hello, World!</textarea>
   </form>
 </body>
 </html>
 ```
 
-That's all there is to it!
+And that's all there is to it!
 
-## Step 3: Saving Content with a `<form>` `post`
+### Step 3: Saving content with a `<form>` POST
 
-When the `form` is submitted the TinyMCE editor mimics the behaviour of a normal HTML `<textarea>` during a form `post`. No additional configuration is required.
+When the `<form>` is submitted the TinyMCE editor mimics the behavior of a normal HTML `<textarea>` during the `post`. In your form handler you can process the content submitted as if it had come from a regular `<textarea>`.
+
+> In the next step you'll learn how to unleash TinyMCE's power by [working with plugins](../working-with-plugins/).

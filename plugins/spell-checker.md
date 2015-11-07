@@ -34,20 +34,21 @@ This option lets you override the default server side request/communication logi
 
 ```js
 tinymce.init({
-    selector: "textarea",  // change this value according to your html
-    plugins: "spellchecker",
-    menubar: "tools",
-    toolbar: "spellchecker",
-    spellchecker_callback: function(method, text, success, failure) {
-      var words = text.match(this.getWordCharPattern());
-      if (method == "spellcheck") {
-        var suggestions = {};
-        for (var i = 0; i < words.length; i++) {
+  selector: "textarea",  // change this value according to your html
+  plugins: "spellchecker",
+  menubar: "tools",
+  toolbar: "spellchecker",
+  spellchecker_callback: function(method, text, success, failure) {
+    var words = text.match(this.getWordCharPattern());
+    if (method == "spellcheck") {
+      var suggestions = {};
+      for (var i = 0; i < words.length; i++) {
         suggestions[words[i]] = ["First", "Second"];
       }
       success(suggestions);
-      }
- }
+    }
+  }
+ });
 ```
 
 **Example of fallback for the older JSON-RPC based format**
@@ -185,4 +186,3 @@ tinymce.init({
     spellchecker_wordchar_pattern: /[^\s,\.]+/g
 });
 ```
-

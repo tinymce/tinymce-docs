@@ -65,7 +65,7 @@ tinymce.init({
 });
 ```
 
-Awesome, we now have a button on the toolbar users can click to get into source code mode. But we also lost our default toolbar controls ... We explained why this happens back in the [Basic Configuration](../basic-configuration/) section, so if this behavior surprises you re-read that section.
+Awesome, we now have a button on the toolbar users can click to get into source code mode. But we also lost our default toolbar controls ... We explained why this happens back in [Basic Configuration](../basic-configuration/), so if this behavior surprises you re-read that section.
 
 Let's quickly take our minimal design one step further by removing the menubar completely.
 
@@ -101,7 +101,7 @@ Save the file, refresh your browser and when you next click the "Source code" to
 
 ## Time for one more example
 
-Even if you found the above example quite easy, hang with us we'll show you how to easily extend TinyMCE's default ordered and unordered lists. We'll keep the chatter to a minimum, promise.
+Even if you found the above example quite easy, hang with us we'll show you how to extend TinyMCE's default ordered and unordered lists. (We'll keep the chatter to a minimum, promise.) If on the other hand that was all a bit new, let's look at another example to help your understanding.
 
 ### Advanced Lists
 
@@ -141,11 +141,15 @@ tinymce.init({
 });
 ```
 
+So, in the above example we learned how to remove the menubar, add specific list controls to the toolbar while removing others, activate a plugin and customize the plugin's behavior by controlling which options we wanted activated. In 5 lines of code.
+
+As we noted at the start, TinyMCE is an incredibly powerful, flexible and customizable rich text editor. Once you've finished the Getting Started guide, deep dive into the [plugins](/plugins/) and [advanced configuration settings](/editor-configuration-settings/) and become a TinyMCE developer ninja.
+
 
 
 ## Top 10 plugins
 
-Customizing TinyMCE with the default plugins is that easy. And there are 40 of them available to developers. Let's take a look at the top 10 most popular plugins.
+Customizing TinyMCE with the default plugins is that easy. And there are 40 of them available to developers. Let's take a look at the 10 most popular plugins (by documentation page views).
 
 | Position | Plugin Name   | Plugin Value |
 |----------|---------------|--------------|

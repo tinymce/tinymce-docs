@@ -26,6 +26,6 @@ Please use the Tracker system to submit bugs on the listed browsers only.
 `*` TinyMCE's image upload feature and the [imagetools]({{ site.baseurl }}/plugins/image-tools/) plugin are not compatible with IE8 and IE9.
 
 
-# Next Steps
+## Next Steps
 
 We're almost done. Last, but certainly not least, are TinyMCE's [developer support options](../getting-support).

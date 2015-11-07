@@ -138,6 +138,6 @@ The [PHP Upload Handler Script]({{ site.baseurl }}/advanced-development-topics/p
 
 
 
-# Next Steps
+## Next Steps
 
 In the next step you'll learn about [spell checking in TinyMCE](../spell-checking-in-tinymce/).

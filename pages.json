@@ -1,0 +1,13 @@
+---
+layout: empty
+---
+
+{
+{% for page in site.pages %}
+  "{{ page.url }}": {
+    "title": "{{ page.title }}",
+    "description": "{{ page.description }}",
+    "url": "{{ page.url }}"
+  }{% unless forloop.last %},{% endunless %}
+{% endfor %}
+}

@@ -1,0 +1,34 @@
+{% for link in include.links %}
+  {% capture preceding_address %}{{ include.preceding_address }}{{ link.url }}{% endcapture %}
+
+  {% if link.url contains '#' %}
+    {% capture page_path %}{{ include.preceding_address }}index.html{% endcapture %}
+    {% capture url %}{{ include.preceding_address }}{% endcapture %}
+  {% else %}
+    {% capture preceding_address %}{{ preceding_address }}/{% endcapture %}
+    {% capture page_path %}{{ preceding_address }}index.html{% endcapture %}
+    {% assign url = preceding_address %}
+  {% endif %}
+
+  {% assign_page page_data = page_path %}
+
+  {% if page_data.type != 'index' and page_data.type != 'folder' %}
+    "{{ page_data.title | downcase | replace_regex:'[^a-zA-Z0-9]','-' }}": "{{ url }}",
+
+    {% if page_data.description %}
+      "{{ page_data.description | downcase | replace_regex:'[^a-zA-Z0-9]','-' }}": "{{ url }}",
+    {% endif %}
+
+    {% if link.url contains '#' %}
+      "{{ link.url | remove:'#' | downcase | replace_regex:'[^a-zA-Z0-9]','-' }}": "{{ url }}{{ link.url }}",
+    {% endif %}
+
+    {% if page_data.keywords %}
+      "{{ page_data.keywords }}": "{{ url }}",
+    {% endif %}
+  {% endif %}
+
+  {% if link.pages %}
+    {% include search-db.json links=link.pages preceding_address=preceding_address %}
+  {% endif %}
+{% endfor %}

@@ -11,7 +11,7 @@ In the next step you'll learn how to unleash TinyMCE's power by [working with pl
 
 
 
-# Adding TinyMCE to a Page
+# Adding TinyMCE to a page
 
 Adding TinyMCE to a page is as simple as initializing the script on a `<textarea>` as part of an HTML `<form>`. When the `<form>` is submitted the contents of the editor will be submitted as part of the `<form>` `post`.
 
@@ -25,7 +25,7 @@ Include this line of code in the `<head>` of your page:
 <script src="//tinymce.cachefly.net/4.2/tinymce.min.js"></script>
 ```
 
-## Step 2: Initialize TinyMCE as Part of a Web Form
+## Step 2: Initialize TinyMCE as part of a web form
 
 With the script included, initialize TinyMCE on any element (or elements) in your webpage.
 
@@ -56,7 +56,7 @@ In this example, let's replace `<textarea id="mytextarea">` with a TinyMCE edito
 
 That's all there is to it!
 
-## Step 3: Saving Content with a `<form>` `post`
+## Step 3: Saving Content with a form POST
 
 When the `form` is submitted the TinyMCE editor mimics the behaviour of a normal HTML `<textarea>` during a form `post`. No additional configuration is required.
 

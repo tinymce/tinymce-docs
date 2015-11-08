@@ -43,7 +43,7 @@ And that's all there is to it!
 
 > Note: if you're testing this locally, you will need to prepend `https://` to urls in the `script` tag. For example, `<script src="https://tinymce.cachefly.net/4.2/tinymce.min.js"></script>`.
 
-### Step 3: Saving content with a `<form>` POST
+### Step 3: Saving content with a form POST
 
 When the `<form>` is submitted the TinyMCE editor mimics the behavior of a normal HTML `<textarea>` during the `post`. In your form handler you can process the content submitted as if it had come from a regular `<textarea>`.
 

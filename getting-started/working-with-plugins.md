@@ -10,7 +10,9 @@ Because most people install TinyMCE via the CDN or by downloading a package, the
 
 In this section of the Getting Started guide we'll show you how easy it is to activate a plugin (assuming you included it in your download package) by highlighting two of the more popular plugins.
 
-Let's start with a simple code snippet you can paste into an empty `html` file (call it whatever you like, `tinymce.html` works). Open the file in your web browser and you'll have a basic TinyMCE instance up and running.
+Let's start with a simple code snippet you can paste into an empty `html` file (call it whatever you like, `tinymce.html` works). Save the file locally, open it with your web browser and you'll have a basic, local TinyMCE instance up and running.
+
+> Pro tip: we included the `https://` protocol in the example below because the file is running locally – and not on a server either. If you were running this example on a server the script would omit the protocol, like so: `<script src="//tinymce.cachefly.net/4.2/tinymce.min.js"></script>`.
 
 ```html
 <!DOCTYPE html>

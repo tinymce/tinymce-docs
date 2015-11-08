@@ -44,11 +44,11 @@ In this example, let's replace `<textarea id="mytextarea">` with a TinyMCE edito
 
 And that's all there is to it!
 
-### Step 3: Saving content with a `<form>` POST
+### Step 3: Saving content with a form POST
 
 When the `<form>` is submitted the TinyMCE editor mimics the behavior of a normal HTML `<textarea>` during the `post`. In your form handler you can process the content submitted as if it had come from a regular `<textarea>`.
 
-#### Use of local plugins/language packs when installing via Package Managers
+#### Use of local plugins & language packs when installing via package managers
 
 When using package managers you might have local TinyMCE addons in your project such as plugins or language packs. Load these from your project location rather than from inside the package using these config options:
 

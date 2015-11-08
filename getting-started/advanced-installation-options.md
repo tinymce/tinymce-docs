@@ -8,23 +8,23 @@ So far we've been using the CDN version of TinyMCE and while it's the easiest wa
 
 On this page you'll find a detailed guide to our installation options:
 
-* [CDN](#cdn)
+* [Content Delivery Network](#cdninstall)
 * [NPM](#npm)
 * [Bower](#bower)
 * [Composer](#composer)
 * [NuGet](#nuget)
-* [SDK / Download](#sdk)
-* [jQuery](#jquery)
-* [Custom Build](#custom build)
+* [SDK / Download](#sdkinstall)
+* [jQuery](#jqueryinstall)
+* [Custom Build](#custombuildinstall)
 
 
-## CDN
+## CDN Install
 
 {% include install/cdn.md %}
 
 
 
-## Package Manager Installation
+## Package Manager Install
 
 ### NPM
 
@@ -44,19 +44,19 @@ On this page you'll find a detailed guide to our installation options:
 
 
 
-## SDK / Download Installation
+## SDK Install
 
 {% include install/sdk.md %}
 
 
 
-## jQuery Installation
+## jQuery Install
 
 {% include install/jquery.md %}
 
 
 
-## Custom Build Download Installation
+## Custom Build Install
 
 {% include install/custom.md %}
 

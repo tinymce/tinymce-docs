@@ -12,8 +12,8 @@ The `colorpicker` plugin adds a full-blown color picker to the editor by setting
 
 ```js
 tinymce.init({
-    selector: "textarea",  // change this value according to your html
-    plugins: "colorpicker"
+  selector: "textarea",  // change this value according to your html
+  plugins: "colorpicker"
 });
 ```
 
@@ -25,11 +25,10 @@ This option enables you to provide your own color picker.
 
 ```js
 tinymce.init({
-    selector: "textarea",  // change this value according to your html
-    plugins: "colorpicker",
-    color_picker_callback: function(callback, value) {
-        callback('#FF00FF');
-    }
+  selector: "textarea",  // change this value according to your html
+  plugins: "colorpicker",
+  color_picker_callback: function(callback, value) {
+    callback('#FF00FF');
+  }
 });
 ```
-

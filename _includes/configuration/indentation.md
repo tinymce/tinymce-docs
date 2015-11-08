@@ -6,7 +6,7 @@ This defaults to 30px but can be any value.
 
 ```js
 tinymce.init({
-        ...
-        indentation : '20pt'
+  selector: "textarea",  // change this value according to your html
+  indentation : '20pt'
 });
 ```

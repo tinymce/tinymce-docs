@@ -15,9 +15,9 @@ This plugin adds a `charmap` button that enables users to insert special charact
 
 ```js
 tinymce.init({
-    selector: "textarea",  // change this value according to your html
-    plugins: "charmap",
-    toolbar: "charmap",
-    menubar: "insert"
+  selector: "textarea",  // change this value according to your html
+  plugins: "charmap",
+  toolbar: "charmap",
+  menubar: "insert"
 });
 ```

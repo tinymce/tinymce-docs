@@ -6,6 +6,7 @@ An example of this setting is as follows:
 
 ```js
 tinymce.init({
-    max_width: 500
+  selector: "textarea",  // change this value according to your html
+  max_width: 500
 });
 ```

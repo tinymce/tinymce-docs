@@ -15,10 +15,10 @@ The `template` plugin adds support for custom templates. It also adds a menu ite
 
 ```js
 tinymce.init({
-    selector: "textarea",  // change this value according to your html
-    plugins: "template",
-    menubar: "insert",
-    toolbar: "template"
+  selector: "textarea",  // change this value according to your html
+  plugins: "template",
+  menubar: "insert",
+  toolbar: "template"
 });
 ```
 
@@ -40,14 +40,14 @@ Each item in the list can either be inline using a `content` property or a whole
 
 ```js
 tinymce.init({
-    selector: "textarea",  // change this value according to your html
-    plugins: "template",
-    menubar: "insert",
-    toolbar: "template"
-    templates: [
-        {title: 'Some title 1', description: 'Some desc 1', content: 'My content'},
-        {title: 'Some title 2', description: 'Some desc 2', url: 'development.html'}
-    ]
+  selector: "textarea",  // change this value according to your html
+  plugins: "template",
+  menubar: "insert",
+  toolbar: "template"
+  templates: [
+    {title: 'Some title 1', description: 'Some desc 1', content: 'My content'},
+    {title: 'Some title 2', description: 'Some desc 2', url: 'development.html'}
+  ]
 });
 ```
 
@@ -55,11 +55,11 @@ tinymce.init({
 
 ```js
 tinymce.init({
-    selector: "textarea",  // change this value according to your html
-    plugins: "template",
-    menubar: "insert",
-    toolbar: "template"
-    templates: "/dir/templates.php"
+  selector: "textarea",  // change this value according to your html
+  plugins: "template",
+  menubar: "insert",
+  toolbar: "template"
+  templates: "/dir/templates.php"
 });
 ```
 
@@ -67,8 +67,8 @@ tinymce.init({
 
 ```json
 [
-    {"title": "Some title 1", "description": "Some desc 1", "content": "My content"},
-    {"title": "Some title 2", "description": "Some desc 2", "url": "development.html"}
+  {"title": "Some title 1", "description": "Some desc 1", "content": "My content"},
+  {"title": "Some title 2", "description": "Some desc 2", "url": "development.html"}
 ]
 ```
 
@@ -84,11 +84,11 @@ A creation date is one that is set if no previous date existed within the elemen
 
 ```js
 tinymce.init({
-    selector: "textarea",  // change this value according to your html
-    plugins: "template",
-    menubar: "insert",
-    toolbar: "template"
-    template_cdate_classes: "cdate creationdate"
+  selector: "textarea",  // change this value according to your html
+  plugins: "template",
+  menubar: "insert",
+  toolbar: "template"
+  template_cdate_classes: "cdate creationdate"
 });
 ```
 
@@ -102,11 +102,11 @@ This option allows you to provide a date format that all 'creation' date templat
 
 ```js
 tinymce.init({
-    selector: "textarea",  // change this value according to your html
-    plugins: "template",
-    menubar: "insert",
-    toolbar: "template"
-    template_cdate_format: "%m/%d/%Y : %H:%M:%S"
+  selector: "textarea",  // change this value according to your html
+  plugins: "template",
+  menubar: "insert",
+  toolbar: "template"
+  template_cdate_format: "%m/%d/%Y : %H:%M:%S"
 });
 ```
 
@@ -122,11 +122,11 @@ A modified date is one that is updated with each edit.
 
 ```js
 tinymce.init({
-    selector: "textarea",  // change this value according to your html
-    plugins: "template",
-    menubar: "insert",
-    toolbar: "template"
-    template_mdate_classes: "mdate modifieddate"
+  selector: "textarea",  // change this value according to your html
+  plugins: "template",
+  menubar: "insert",
+  toolbar: "template"
+  template_mdate_classes: "mdate modifieddate"
 });
 ```
 
@@ -140,11 +140,11 @@ This option allows you to provide TinyMCE with a date/time format that all 'modi
 
 ```js
 tinymce.init({
-    selector: "textarea",  // change this value according to your html
-    plugins: "template",
-    menubar: "insert",
-    toolbar: "template"
-    template_mdate_format: "%m/%d/%Y : %H:%M:%S"
+  selector: "textarea",  // change this value according to your html
+  plugins: "template",
+  menubar: "insert",
+  toolbar: "template"
+  template_mdate_format: "%m/%d/%Y : %H:%M:%S"
 });
 ```
 
@@ -160,11 +160,11 @@ This option allows you to specify the height of the template dialog box.
 
 ```js
 tinymce.init({
-    selector: "textarea",  // change this value according to your html
-    plugins: "template",
-    menubar: "insert",
-    toolbar: "template"
-    template_popup_height: "400"
+  selector: "textarea",  // change this value according to your html
+  plugins: "template",
+  menubar: "insert",
+  toolbar: "template"
+  template_popup_height: "400"
 });
 ```
 
@@ -180,11 +180,11 @@ This option allows you to specify the width of the template dialog box.
 
 ```js
 tinymce.init({
-    selector: "textarea",  // change this value according to your html
-    plugins: "template",
-    menubar: "insert",
-    toolbar: "template"
-    template_popup_width: "300"
+  selector: "textarea",  // change this value according to your html
+  plugins: "template",
+  menubar: "insert",
+  toolbar: "template"
+  template_popup_width: 300
 });
 ```
 
@@ -198,14 +198,14 @@ This is an array of items that controls content replacement in the inserted temp
 
 ```js
 tinymce.init({
-    selector: "textarea",  // change this value according to your html
-    plugins: "template",
-    menubar: "insert",
-    toolbar: "template"
-    template_replace_values: {
-        username: "Jack Black",
-        staffid: "991234"
-    }
+  selector: "textarea",  // change this value according to your html
+  plugins: "template",
+  menubar: "insert",
+  toolbar: "template"
+  template_replace_values: {
+    username: "Jack Black",
+    staffid: "991234"
+  }
 ```
 
 **Replace values example**
@@ -214,8 +214,8 @@ Class names are used for *templates* and variable names are used for *snippets*.
 
 ```js
 template_replace_values : {
-    className : "Replace with this content",
-    anotherClassName: "Replacement content"
+  className : "Replace with this content",
+  anotherClassName: "Replacement content"
 }
 ```
 
@@ -225,9 +225,9 @@ template_replace_values : {
 
 ```js
 template_replace_values : {
-    className : function(element) {
-      // do something and then:
-      // element.innerHTML = something
+  className : function(element) {
+    // do something and then:
+    // element.innerHTML = something
   }
 }
 ```
@@ -241,8 +241,9 @@ This option allows you to provide a list of class names (separated by spaces) wh
 
 ```js
 tinymce.init({
-    plugins: "template",
-    template_selected_content_classes: "selcontent selectedcontent"
+  selector: "textarea",  // change this value according to your html
+  plugins: "template",
+  template_selected_content_classes: "selcontent selectedcontent"
 });
 ```
 
@@ -259,46 +260,49 @@ tinymce.init({
 
 ```js
 tinymce.init({
-    selector: "textarea",  // change this value according to your html
-    plugins: "template",
-    menubar: "insert",
-    toolbar: "template",
-    template_cdate_classes: "cdate creationdate",
-    template_mdate_classes: "mdate modifieddate",
-    template_selected_content_classes: "selcontent",
-    template_cdate_format: "%m/%d/%Y : %H:%M:%S",
-    template_mdate_format: "%m/%d/%Y : %H:%M:%S",
-    template_replace_values: {
-        username : "Jack Black",
-        staffid : "991234"
+  selector: "textarea",  // change this value according to your html
+  plugins: "template",
+  menubar: "insert",
+  toolbar: "template",
+  template_cdate_classes: "cdate creationdate",
+  template_mdate_classes: "mdate modifieddate",
+  template_selected_content_classes: "selcontent",
+  template_cdate_format: "%m/%d/%Y : %H:%M:%S",
+  template_mdate_format: "%m/%d/%Y : %H:%M:%S",
+  template_replace_values: {
+    username : "Jack Black",
+    staffid : "991234"
+  },
+  template_popup_height: "400",
+  template_popup_width: "320",
+  templates : [
+    {
+      title: "Editor Details",
+      url: "editor_details.htm",
+      description: "Adds Editor Name and Staff ID"
     },
-    template_popup_height: "400",
-    template_popup_width: "320",
-    templates : [
-        {
-            title: "Editor Details",
-            url: "editor_details.htm",
-            description: "Adds Editor Name and Staff ID"
-        },
-        {
-            title: "Timestamp",
-            url: "time.htm",
-            description: "Adds an editing timestamp."
-        }
-    ]
+      {
+        title: "Timestamp",
+        url: "time.htm",
+        description: "Adds an editing timestamp."
+      }
+  ]
 });
 ```
 
 **Templates example:**
 
 ```js
-    templates : [
-      {
-        title: "Editor Details",
-        url: "editor_details.htm",
-        description: "Adds Editors Name and Staff ID"
-      }
-    ]
+tinymce.init({
+  selector: "textarea",  // change this value according to your html
+  templates : [
+    {
+      title: "Editor Details",
+      url: "editor_details.htm",
+      description: "Adds Editors Name and Staff ID"
+    }
+  ]
+});
 ```
 
 **Example of an external list:**
@@ -323,16 +327,16 @@ Each template needs to use the following base HTML:
 ```html
 <!-- This will not be inserted -->
 <div class="mceTmpl">
-    <table width="98%%"  border="0" cellspacing="0" cellpadding="0">
-        <tr>
-            <th scope="col"> </th>
-            <th scope="col"> </th>
-        </tr>
-        <tr>
-            <td> </td>
-            <td> </td>
-        </tr>
-    </table>
+  <table width="98%%"  border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <th scope="col"> </th>
+      <th scope="col"> </th>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </table>
 </div>
 ```
 
@@ -343,4 +347,3 @@ Snippets are `html` code chunks that can be inserted. Replace variables will onl
 ```html
 This is a simple <strong>snippet</strong>. Will be replaced: {$somevar1}.
 ```
-

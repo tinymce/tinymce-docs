@@ -6,6 +6,7 @@ An example of this setting is as follows:
 
 ```js
 tinymce.init({
-    encoding: 'xml'
+  selector: "textarea",  // change this value according to your html
+  encoding: 'xml'
 });
 ```

@@ -6,7 +6,7 @@ Example of usage of the document_base_url option:
 
 ```js
 tinymce.init({
-    ...
-    document_base_url: "http://www.site.com/path1/"
+  selector: "textarea",  // change this value according to your html
+  document_base_url: "http://www.site.com/path1/"
 });
 ```

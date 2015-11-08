@@ -6,6 +6,7 @@ An example of this setting is as follows:
 
 ```js
 tinymce.init({
-    remove_trailing_brs: false
+  selector: "textarea",  // change this value according to your html
+  remove_trailing_brs: false
 });
 ```

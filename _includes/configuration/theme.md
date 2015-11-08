@@ -6,8 +6,7 @@ The name of the theme should match the name of the folder within the themes dire
 
 ```js
 tinymce.init({
-    ...
-    theme: "modern",
-    ...
+  selector: "textarea",  // change this value according to your html
+  theme: "modern"
 });
 ```

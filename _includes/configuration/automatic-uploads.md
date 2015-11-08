@@ -12,9 +12,7 @@ Enable or disable TinyMCE from automatically uploading local images.
 
 ```js
 tinymce.init({
-	...
-	selector: "textarea",  // change this value according to your HTML
-	automatic_uploads: false,
-	...
+  selector: "textarea",  // change this value according to your HTML
+  automatic_uploads: false
 });
 ```

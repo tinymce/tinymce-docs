@@ -11,8 +11,8 @@ Absolute path:
 // File: http://domain.mine/mysite/index.html
 
 tinyMCE.init({
-    ...
-    content_css : "/mycontent.css"  // resolved to http://domain.mine/mycontent.css
+  selector: "textarea",  // change this value according to your html
+  content_css : "/mycontent.css"  // resolved to http://domain.mine/mycontent.css
 });
 ```
 
@@ -22,8 +22,8 @@ Relative path:
 // File: http://domain.mine/mysite/index.html
 
 tinyMCE.init({
-    ...
-    content_css : "mycontent.css"  // resolved to http://domain.mine/mysite/mycontent.css
+  selector: "textarea",  // change this value according to your html
+  content_css : "mycontent.css"  // resolved to http://domain.mine/mysite/mycontent.css
 });
 ```
 
@@ -31,8 +31,8 @@ Using multiple stylesheets:
 
 ```js
 tinyMCE.init({
-        ...
-    content_css : "mycontent.css,mycontent2.css"  // includes both css files in header
+  selector: "textarea",  // change this value according to your html
+  content_css : "mycontent.css,mycontent2.css"  // includes both css files in header
 });
 ```
 
@@ -40,8 +40,8 @@ Using multiple stylesheets as array:
 
 ```js
 tinyMCE.init({
-    ...
-          content_css : ["mycontent.css","mycontent2.css"]  // includes both css files in header, ability to have CSS with , in URL
+  selector: "textarea",  // change this value according to your html
+  content_css : ["mycontent.css","mycontent2.css"]  // includes both css files in header, ability to have CSS with , in URL
 });
 ```
 
@@ -52,11 +52,17 @@ Browser caching might cause TinyMCE to not read the contents of a changed CSS fi
 One solution is to manually clear the browser cache when the file for content_css or editor_css has changed. Another solution is to use an old hack which adds a bogus parameter to the URL containing a present timestamp like "myFile.css?bogus=10023561235". Possible solutions could look like this:
 
 ```js
-content_css : "path/myfile.css?" + new Date().getTime(),
+tinymce.init({
+  selector: "textarea",  // change this value according to your html
+  content_css : "path/myfile.css?" + new Date().getTime()
+});
 ```
 
 ```js
-content_css : "path/myscript.php?myParam=myValue&bogus=" + new Date().getTime(),
+tinymce.init({
+  selector: "textarea",  // change this value according to your html
+  content_css : "path/myscript.php?myParam=myValue&bogus=" + new Date().getTime()
+});
 ```
 
 What is this good for?

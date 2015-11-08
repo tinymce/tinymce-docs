@@ -15,9 +15,9 @@ This plugin adds full screen editing capabilities to TinyMCE. When the toolbar c
 
 ```js
 tinymce.init({
-    selector: "textarea",  // change this value according to your html
-    plugins: "fullscreen",
-    menubar: "view",
-    toolbar: "fullscreen"
+  selector: "textarea",  // change this value according to your html
+  plugins: "fullscreen",
+  menubar: "view",
+  toolbar: "fullscreen"
 });
 ```

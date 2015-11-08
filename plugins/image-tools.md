@@ -13,9 +13,9 @@ Note that this feature requires at least IE10 since it uses the `HTML5 File API`
 
 ```js
 tinymce.init({
-    selector: "textarea",  // change this value according to your html
-    toolbar: "image",
-    plugins: "image imagetools"
+  selector: "textarea",  // change this value according to your html
+  toolbar: "image",
+  plugins: "image imagetools"
 });
 ```
 
@@ -33,10 +33,10 @@ This option lets you specify an array of domains that allow cors. If cors header
 
 ```js
 tinymce.init({
-    selector: "textarea",  // change this value according to your html
-    toolbar: "image",
-    plugins: "image imagetools",
-    imagetools_cors_hosts: ['mydomain.com', 'otherdomain.com']
+  selector: "textarea",  // change this value according to your html
+  toolbar: "image",
+  plugins: "image imagetools",
+  imagetools_cors_hosts: ['mydomain.com', 'otherdomain.com']
 });
 ```
 
@@ -50,10 +50,10 @@ This option lets you specify a local proxy script to use when loading images fro
 
 ```js
 tinymce.init({
-    selector: "textarea",  // change this value according to your html
-    toolbar: "image",
-    plugins: "image imagetools",
-    imagetools_proxy: 'proxy.php'
+  selector: "textarea",  // change this value according to your html
+  toolbar: "image",
+  plugins: "image imagetools",
+  imagetools_proxy: 'proxy.php'
 });
 ```
 
@@ -110,9 +110,9 @@ This option lets select which toolbar items you want to display in the `imagetoo
 
 ```js
 tinymce.init({
-    selector: "textarea",  // change this value according to your html
-    toolbar: "image",
-    plugins: "image imagetools",
-    imagetools_toolbar: "rotateleft rotateright | flipv fliph | editimage imageoptions"
+  selector: "textarea",  // change this value according to your html
+  toolbar: "image",
+  plugins: "image imagetools",
+  imagetools_toolbar: "rotateleft rotateright | flipv fliph | editimage imageoptions"
 });
 ```

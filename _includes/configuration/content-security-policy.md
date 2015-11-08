@@ -6,6 +6,7 @@ An example of this setting is as follows:
 
 ```js
 tinymce.init({
-    content_security_policy: "default-src 'self'"
+  selector: "textarea",  // change this value according to your html
+  content_security_policy: "default-src 'self'"
 });
 ```

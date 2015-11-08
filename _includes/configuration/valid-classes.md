@@ -6,10 +6,10 @@ Example of usage of the auto_focus option:
 
 ```js
 tinymce.init({
-    ...
-    valid_styles: {
-        "*": "border,font-size",
-        "div": "width,height"
-    }
+  selector: "textarea",  // change this value according to your html
+  valid_styles: {
+    "*": "border,font-size",
+    "div": "width,height"
+  }
 });
 ```

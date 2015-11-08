@@ -6,7 +6,7 @@ Example of usage
 
 ```js
 tinymce.init({
-    ...
-    skin_url: '/css/mytinymceskin'
+  selector: "textarea",  // change this value according to your html
+  skin_url: '/css/mytinymceskin'
 });
 ```

@@ -15,15 +15,15 @@ Example of usage of the urlconverter_callback option:
 
 ```js
 function myCustomURLConverter(url, node, on_save, name) {
-        // Do some custom URL convertion
-        url = url.substring(3);
+  // Do some custom URL conversion
+  url = url.substring(3);
 
-        // Return new URL
-        return url;
+  // Return new URL
+  return url;
 }
 
 tinyMCE.init({
-        ...
-        urlconverter_callback : "myCustomURLConverter"
+  selector: "textarea",  // change this value according to your html
+  urlconverter_callback : "myCustomURLConverter"
 });
 ```

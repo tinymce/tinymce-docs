@@ -6,7 +6,8 @@ Example of usage
 
 ```js
 tinyMCE.init({
-   mode: "textareas",
-   preview_styles: false
+  selector: "textarea",  // change this value according to your html
+  mode: "textareas",
+  preview_styles: false
 });
 ```

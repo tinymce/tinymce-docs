@@ -14,7 +14,7 @@ The default pattern is similar to markdown syntax, so you can type `# text` to p
 
 ```js
 tinymce.init({
-    plugins: "textpattern"
+  plugins: "textpattern"
 });
 ```
 
@@ -32,19 +32,20 @@ There are two types of patterns: inline and block patterns. Inline patterns have
 
 ```js
 tinymce.init({
-     plugin: 'textpattern',
-     textpattern_patterns: [
-         {start: '*', end: '*', format: 'italic'},
-         {start: '**', end: '**', format: 'bold'},
-         {start: '#', format: 'h1'},
-         {start: '##', format: 'h2'},
-         {start: '###', format: 'h3'},
-         {start: '####', format: 'h4'},
-         {start: '#####', format: 'h5'},
-         {start: '######', format: 'h6'},
-         {start: '1. ', cmd: 'InsertOrderedList'},
-         {start: '* ', cmd: 'InsertUnorderedList'},
-         {start: '- ', cmd: 'InsertUnorderedList'}
-    ]
+  selector: "textarea",  // change this value according to your html
+  plugin: 'textpattern',
+  textpattern_patterns: [
+     {start: '*', end: '*', format: 'italic'},
+     {start: '**', end: '**', format: 'bold'},
+     {start: '#', format: 'h1'},
+     {start: '##', format: 'h2'},
+     {start: '###', format: 'h3'},
+     {start: '####', format: 'h4'},
+     {start: '#####', format: 'h5'},
+     {start: '######', format: 'h6'},
+     {start: '1. ', cmd: 'InsertOrderedList'},
+     {start: '* ', cmd: 'InsertUnorderedList'},
+     {start: '- ', cmd: 'InsertUnorderedList'}
+  ]
 });
 ```

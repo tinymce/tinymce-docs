@@ -8,8 +8,7 @@ An example of this setting is as follows:
 
 ```js
 tinymce.init({
-    ...
-    statusbar: false,
-    ...
+  selector: "textarea",  // change this value according to your html
+  statusbar: false
 });
 ```

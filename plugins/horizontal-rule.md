@@ -15,9 +15,7 @@ The Horizontal Rule (`hr`) plugin allows a user to insert a horizontal rule on t
 
 ```js
 tinymce.init({
-    selector: "textarea",  // change this value according to your html
-    plugins: "hr"
+  selector: "textarea",  // change this value according to your html
+  plugins: "hr"
 });
 ```
-
-

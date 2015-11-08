@@ -8,7 +8,7 @@ This option enables you to make sure that any non block elements or text nodes a
 
 ```js
 tinymce.init({
-        ...
-        forced_root_block : 'p'
+  selector: "textarea",  // change this value according to your html
+  forced_root_block : 'p'
 });
 ```

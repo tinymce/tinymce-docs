@@ -6,8 +6,8 @@ Elements in this list will be removed when TinyMCE executes a cleanup.
 
 ```js
 tinymce.init({
-        ...
-        invalid_elements : "strong,em"
+  selector: "textarea",  // change this value according to your html
+  invalid_elements : "strong,em"
 });
 ```
 

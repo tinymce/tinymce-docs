@@ -8,8 +8,7 @@ An example of this setting is as follows:
 
 ```js
 tinymce.init({
-    ...
-    content_style: "div {margin: 10px; border: 5px solid red; padding: 3px}",
-    ...
+  selector: "textarea",  // change this value according to your html
+  content_style: "div {margin: 10px; border: 5px solid red; padding: 3px}"
 });
 ```

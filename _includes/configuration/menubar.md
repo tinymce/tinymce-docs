@@ -8,9 +8,8 @@ An example of this setting is as follows:
 
 ```js
 tinymce.init({
-    ...
-    menubar: "file edit insert view format table tools",
-    ...
+  selector: "textarea",  // change this value according to your html
+  menubar: "file edit insert view format table tools"
 });
 ```
 
@@ -20,9 +19,8 @@ An example of a disabled menubar is as follows:
 
 ```js
 tinymce.init({
-    ...
-    menubar: false,
-    ...
+  selector: "textarea",  // change this value according to your html
+  menubar: false
 });
 ```
 

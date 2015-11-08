@@ -14,7 +14,7 @@ The base entities < > & ' and " will always be entity encoded into their named e
 
 ```js
 tinymce.init({
-        ...
-        entity_encoding : "raw"
+  selector: "textarea",  // change this value according to your html
+  entity_encoding : "raw"
 });
 ```

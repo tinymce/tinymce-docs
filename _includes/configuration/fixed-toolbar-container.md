@@ -6,7 +6,8 @@ Example
 
 ```js
 tinymce.init({
-    inline: true,
-    fixed_toolbar_container: "#mytoolbar"
+  selector: "textarea",  // change this value according to your html
+  inline: true,
+  fixed_toolbar_container: "#mytoolbar"
 });
 ```

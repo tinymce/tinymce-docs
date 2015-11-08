@@ -15,8 +15,8 @@ This plugin adds directionality controls to the toolbar, enabling TinyMCE to bet
 
 ```js
 tinymce.init({
-    selector: "textarea",  // change this value according to your html
-    plugins: "directionality",
-    toolbar: "ltr rtl"
+  selector: "textarea",  // change this value according to your html
+  plugins: "directionality",
+  toolbar: "ltr rtl"
 });
 ```

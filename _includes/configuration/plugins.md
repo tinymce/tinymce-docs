@@ -12,8 +12,7 @@ An example of this setting is as follows:
 
 ```js
 tinymce.init({
-    ...
-    plugins : 'advlist autolink link image lists charmap print preview'
-    ...
+  selector: "textarea",  // change this value according to your html
+  plugins : 'advlist autolink link image lists charmap print preview'
 });
 ```

@@ -17,14 +17,11 @@ When set to `false` the user would need to press `shift+enter` to insert a `br` 
 
 **Type:** `Boolean`
 
-
-
 An example that disables this setting is as follows:
 
 ```js
 tinymce.init({
-	...
-    br_in_pre: false,
-    ...
+	selector: "textarea",  // change this value according to your html
+  br_in_pre: false
 });
 ```

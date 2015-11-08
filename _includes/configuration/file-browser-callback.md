@@ -8,10 +8,10 @@ Example of usage of the file_browser_callback option:
 
 ```js
 tinymce.init({
-    ...
-    file_browser_callback: function(field_name, url, type, win) {
-        win.document.getElementById(field_name).value = 'my browser value';
-    }
+  selector: "textarea",  // change this value according to your html
+  file_browser_callback: function(field_name, url, type, win) {
+    win.document.getElementById(field_name).value = 'my browser value';
+  }
 });
 ```
 

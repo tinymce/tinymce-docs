@@ -41,8 +41,8 @@ This example string tells TinyMCE to remove all elements that are not a "a, stro
 
 ```js
 tinyMCE.init({
-        ...
-        valid_elements : "a[href|target=_blank],strong/b,div[align],br"
+  selector: "textarea",  // change this value according to your html
+  valid_elements : "a[href|target=_blank],strong/b,div[align],br"
 });
 ```
 
@@ -51,11 +51,10 @@ tinyMCE.init({
 Be careful not to duplicate attributes in the definitions as this may cause tinyMCE to render duplicate attributes in the output. For example, if you have
 
 ```js
- ... //bad code: dir and style listed twice
+ //bad code: dir and style listed twice
  "blockquote[dir|style|cite|class|dir<ltr?rtl|id|lang|onclick|ondblclick"
   +"|onkeydown|onkeypress|onkeyup|onmousedown|onmousemove|onmouseout"
   +"|onmouseover|onmouseup|style|title]"
- ...
  ```
 
 then if you happen to have a `<blockquote>` element in your code with style= or dir= attributes, the editor will cause each of those attributes to be duplicated in the output, which will result in invalid XHTML.

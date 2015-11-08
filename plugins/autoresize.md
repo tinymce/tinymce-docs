@@ -12,8 +12,8 @@ title: Autoresize Plugin
 
 ```js
 tinymce.init({
-    selector: "textarea",  // change this value according to your html
-    plugins: "autoresize"
+  selector: "textarea",  // change this value according to your html
+  plugins: "autoresize"
 });
 ```
 
@@ -31,9 +31,9 @@ This option allows you to specify the size of the `padding` at the bottom of the
 
 ```js
 tinymce.init({
-    selector: "textarea",  // change this value according to your html
-    plugins: "autoresize",
-    autoresize_bottom_margin: "50"
+  selector: "textarea",  // change this value according to your html
+  plugins: "autoresize",
+  autoresize_bottom_margin: "50"
 });
 ```
 
@@ -47,8 +47,8 @@ This option enables you to specify the **maximum** `height` that the editor will
 
 ```js
 tinymce.init({
-    selector: "textarea",  // change this value according to your html
-    autoresize_max_height: "500"
+  selector: "textarea",  // change this value according to your html
+  autoresize_max_height: "500"
 });
 ```
 
@@ -62,8 +62,8 @@ This option enables you to specify the **minimum** `height` of the editor when i
 
 ```js
 tinymce.init({
-    selector: "textarea",  // change this value according to your html
-    autoresize_min_height: "350"
+  selector: "textarea",  // change this value according to your html
+  autoresize_min_height: "350"
 });
 ```
 
@@ -81,9 +81,9 @@ This option allows you to set whether the editor will attempt to resize itself u
 
 ```js
 tinymce.init({
-    selector: "textarea",  // change this value according to your html
-    plugins: "autoresize",
-    autoresize_on_init: false
+  selector: "textarea",  // change this value according to your html
+  plugins: "autoresize",
+  autoresize_on_init: false
 });
 ```
 
@@ -97,8 +97,8 @@ This option allows you to specify the size of the `padding` at the sides of the 
 
 ```js
 tinymce.init({
-    selector: "textarea",  // change this value according to your html
-    plugins: "autoresize",
-    autoresize_overflow_padding: "50"
+  selector: "textarea",  // change this value according to your html
+  plugins: "autoresize",
+  autoresize_overflow_padding: "50"
 });
 ```

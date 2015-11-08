@@ -11,8 +11,8 @@ This plugin enables you to prevent users from being able to change (i.e. edit) c
 
 ```js
 tinymce.init({
-    selector: "textarea",  // change this value according to your html
-    plugins: "noneditable"
+  selector: "textarea",  // change this value according to your html
+  plugins: "noneditable"
 });
 ```
 
@@ -60,9 +60,9 @@ Note that classes with the `mceItem` prefix are invisible within TinyMCE.
 
 ```js
 tinymce.init({
-    selector: "textarea",  // change this value according to your html
-    plugins: "noneditable",
-    noneditable_editable_class: "mceEditable"
+  selector: "textarea",  // change this value according to your html
+  plugins: "noneditable",
+  noneditable_editable_class: "mceEditable"
 });
 ```
 
@@ -80,9 +80,9 @@ Note that classes with the `mceItem` prefix is invisible within TinyMCE.
 
 ```js
 tinymce.init({
-    selector: "textarea",  // change this value according to your html
-    plugins: "noneditable",
-    noneditable_noneditable_class: "mceNonEditable"
+  selector: "textarea",  // change this value according to your html
+  plugins: "noneditable",
+  noneditable_noneditable_class: "mceNonEditable"
 });
 ```
 
@@ -96,8 +96,8 @@ This option allows you to specify a regular expression or array of regular expre
 
 ```js
 tinymce.init({
-    selector: "textarea",  // change this value according to your html
-    plugins: "noneditable",
-    noneditable_regexp: "<a href=\"(.*?)\"></a>"
+  selector: "textarea",  // change this value according to your html
+  plugins: "noneditable",
+  noneditable_regexp: "<a href=\"(.*?)\"></a>"
 });
 ```

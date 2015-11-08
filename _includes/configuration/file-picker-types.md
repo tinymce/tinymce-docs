@@ -6,6 +6,7 @@ Example of usage
 
 ```js
 tinymce.init({
-    file_picker_types: 'file image media'
+  selector: "textarea",  // change this value according to your html
+  file_picker_types: 'file image media'
 });
 ```

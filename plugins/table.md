@@ -15,10 +15,10 @@ The `table` plugin adds table management functionality to TinyMCE. It also adds 
 
 ```js
 tinymce.init({
-    plugins: "table",
-    menubar: "table",
-    toolbar: "table"
-    // tools: "inserttable"
+  plugins: "table",
+  menubar: "table",
+  toolbar: "table"
+  // tools: "inserttable"
 });
 ```
 
@@ -40,8 +40,8 @@ This option enables you to specify which elements should be cloned as empty chil
 
 ```js
 tinymce.init({
-    selector: "textarea",  // change this value according to your html
-    table_clone_elements: "strong em a"
+  selector: "textarea",  // change this value according to your html
+  table_clone_elements: "strong em a"
 });
 ```
 
@@ -61,11 +61,11 @@ However, if you set this option to `false` the dragable matrix will be replaced 
 
 ```js
 tinymce.init({
-    selector: "textarea",  // change this value according to your html
-    plugins: "table",
-    menubar: "table",
-    toolbar: "table",
-    table_grid: false
+  selector: "textarea",  // change this value according to your html
+  plugins: "table",
+  menubar: "table",
+  toolbar: "table",
+  table_grid: false
 });
 ```
 
@@ -83,11 +83,11 @@ This option enables you to disable the default tab between table cells feature. 
 
 ```js
 tinymce.init({
-    selector: "textarea",  // change this value according to your html
-    plugins: "table",
-    menubar: "table",
-    toolbar: "table",
-    table_tab_navigation: false
+  selector: "textarea",  // change this value according to your html
+  plugins: "table",
+  menubar: "table",
+  toolbar: "table",
+  table_tab_navigation: false
 });
 ```
 
@@ -101,13 +101,13 @@ This option enables you to specify default attributes for inserted tables.
 
 ```js
 tinymce.init({
-    selector: "textarea",  // change this value according to your html
-    plugins: "table",
-    menubar: "table",
-    toolbar: "table",
-    table_default_attributes: {
-        title: 'My table'
-    }
+  selector: "textarea",  // change this value according to your html
+  plugins: "table",
+  menubar: "table",
+  toolbar: "table",
+  table_default_attributes: {
+    title: 'My table'
+  }
 });
 ```
 
@@ -121,13 +121,13 @@ This option enables you to specify default styles for inserted tables.
 
 ```js
 tinymce.init({
-    selector: "textarea",  // change this value according to your html
-    plugins: "table",
-    menubar: "table",
-    toolbar: "table",
-    table_default_styles: {
-        fontWeight: 'bold'
-    }
+  selector: "textarea",  // change this value according to your html
+  plugins: "table",
+  menubar: "table",
+  toolbar: "table",
+  table_default_styles: {
+    fontWeight: 'bold'
+  }
 });
 ```
 
@@ -141,15 +141,15 @@ This option enables you to specify a list of classes to present in the table opt
 
 ```js
 tinymce.init({
-    selector: "textarea",  // change this value according to your html
-    plugins: "table",
-    menubar: "table",
-    toolbar: "table",
-    table_class_list: [
-        {title: 'None', value: ''},
-        {title: 'Dog', value: 'dog'},
-        {title: 'Cat', value: 'cat'}
-    ]
+  selector: "textarea",  // change this value according to your html
+  plugins: "table",
+  menubar: "table",
+  toolbar: "table",
+  table_class_list: [
+    {title: 'None', value: ''},
+    {title: 'Dog', value: 'dog'},
+    {title: 'Cat', value: 'cat'}
+  ]
 });
 ```
 
@@ -163,15 +163,15 @@ This option enables you to specify a list of classes to present in the table cel
 
 ```js
 tinymce.init({
-    selector: "textarea",  // change this value according to your html
-    plugins: "table",
-    menubar: "table",
-    toolbar: "table",
-    table_cell_class_list: [
-        {title: 'None', value: ''},
-        {title: 'Dog', value: 'dog'},
-        {title: 'Cat', value: 'cat'}
-    ]
+  selector: "textarea",  // change this value according to your html
+  plugins: "table",
+  menubar: "table",
+  toolbar: "table",
+  table_cell_class_list: [
+    {title: 'None', value: ''},
+    {title: 'Dog', value: 'dog'},
+    {title: 'Cat', value: 'cat'}
+  ]
 });
 ```
 
@@ -185,15 +185,15 @@ This option enables you to specify a list of classes to present in the table row
 
 ```js
 tinymce.init({
-    selector: "textarea",  // change this value according to your html
-    plugins: "table",
-    menubar: "table",
-    toolbar: "table",
-    table_row_class_list: [
-        {title: 'None', value: ''},
-        {title: 'Dog', value: 'dog'},
-        {title: 'Cat', value: 'cat'}
-    ]
+  selector: "textarea",  // change this value according to your html
+  plugins: "table",
+  menubar: "table",
+  toolbar: "table",
+  table_row_class_list: [
+    {title: 'None', value: ''},
+    {title: 'Dog', value: 'dog'},
+    {title: 'Cat', value: 'cat'}
+  ]
 });
 ```
 
@@ -211,11 +211,11 @@ This option makes it possible to disable the advanced tab in the table dialog bo
 
 ```js
 tinymce.init({
-    selector: "textarea",  // change this value according to your html
-    plugins: "table",
-    menubar: "table",
-    toolbar: "table",
-    table_advtab: false
+  selector: "textarea",  // change this value according to your html
+  plugins: "table",
+  menubar: "table",
+  toolbar: "table",
+  table_advtab: false
 });
 ```
 
@@ -233,11 +233,11 @@ This option makes it possible to disable the advanced tab in the table cell dial
 
 ```js
 tinymce.init({
-    selector: "textarea",  // change this value according to your html
-    plugins: "table",
-    menubar: "table",
-    toolbar: "table",
-    table_cell_advtab: false
+  selector: "textarea",  // change this value according to your html
+  plugins: "table",
+  menubar: "table",
+  toolbar: "table",
+  table_cell_advtab: false
 });
 ```
 
@@ -255,11 +255,10 @@ This option makes it possible to disable the advanced tab in the table row dialo
 
 ```js
 tinymce.init({
-    selector: "textarea",  // change this value according to your html
-    plugins: "table",
-    menubar: "table",
-    toolbar: "table",
-    table_row_advtab: false
+  selector: "textarea",  // change this value according to your html
+  plugins: "table",
+  menubar: "table",
+  toolbar: "table",
+  table_row_advtab: false
 });
 ```
-

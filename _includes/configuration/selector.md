@@ -8,19 +8,14 @@ An example of this setting that will replace all `textarea` elements on the page
 
 ```js
 tinymce.init({
-    ...
-    selector: "textarea",
-    ...
-});
+  selector: "textarea"  // change this value according to your html});
 ```
 
 An example of this setting that will replace a `textarea` element with id "editable" on the page is as follows:
 
 ```js
 tinymce.init({
-    ...
-    selector: "textarea#editable",
-    ...
+    selector: "textarea#editable"
 });
 ```
 
@@ -30,10 +25,8 @@ An example of this setting being used in inline editing mode on a div element wi
 
 ```js
 tinymce.init({
-    ...
     selector: "div#editable",
-    inline: true,
-    ...
+    inline: true
 });
 ```
 

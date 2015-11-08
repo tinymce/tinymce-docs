@@ -15,10 +15,10 @@ This plugin enables TinyMCE's spell check functionality. It also adds a toolbar 
 
 ```js
 tinymce.init({
-    selector: "textarea",  // change this value according to your html
-    plugins: "spellchecker",
-    menubar: "tools",
-    toolbar: "spellchecker"
+  selector: "textarea",  // change this value according to your html
+  plugins: "spellchecker",
+  menubar: "tools",
+  toolbar: "spellchecker"
 });
 ```
 
@@ -48,33 +48,33 @@ tinymce.init({
       success(suggestions);
     }
   }
- });
+});
 ```
 
 **Example of fallback for the older JSON-RPC based format**
 
 ```js
 tinymce.init({
-    selector: "textarea",  // change this value according to your html
-    plugins: "spellchecker",
-    menubar: "tools",
-    toolbar: "spellchecker",
-      spellchecker_callback: function(method, text, success, failure) {
-        tinymce.util.JSONRequest.sendRPC({
-            url: "/tinymce/spellchecker.php",
-            method: "spellcheck",
-            params: {
-              lang: this.getLanguage(),
-              words: text.match(this.getWordCharPattern())
-            },
-            success: function(result) {
-              success(result);
-            },
-            error: function(error, xhr) {
-              failure("Spellcheck error:" + xhr.status);
-            }
-      });
-    }
+  selector: "textarea",  // change this value according to your html
+  plugins: "spellchecker",
+  menubar: "tools",
+  toolbar: "spellchecker",
+    spellchecker_callback: function(method, text, success, failure) {
+      tinymce.util.JSONRequest.sendRPC({
+        url: "/tinymce/spellchecker.php",
+        method: "spellcheck",
+        params: {
+          lang: this.getLanguage(),
+          words: text.match(this.getWordCharPattern())
+        },
+        success: function(result) {
+          success(result);
+        },
+        error: function(error, xhr) {
+          failure("Spellcheck error:" + xhr.status);
+        }
+    });
+  }
 });
 ```
 
@@ -90,11 +90,11 @@ This configuration option lets you set the default language code for the spellch
 
 ```js
 tinymce.init({
-    selector: "textarea",  // change this value according to your html
-    plugins: "spellchecker",
-    menubar: "tools",
-    toolbar: "spellchecker",
-    spellchecker_language: 'sv_SE'
+  selector: "textarea",  // change this value according to your html
+  plugins: "spellchecker",
+  menubar: "tools",
+  toolbar: "spellchecker",
+  spellchecker_language: 'sv_SE'
 });
 ```
 
@@ -111,12 +111,11 @@ This option lets you specify a list of languages for the user to select from. Th
 
 ```js
 tinymce.init({
-    selector: "textarea",  // change this value according to your html
-    plugins: "spellchecker",
-    menubar: "tools",
-    toolbar: "spellchecker",
-    spellchecker_language: 'English=en,Danish=da,Dutch=nl,Finnish=fi,French=fr_FR,' +
-        'German=de,Italian=it,Polish=pl,Portuguese=pt_BR,Spanish=es,Swedish=sv'
+  selector: "textarea",  // change this value according to your html
+  plugins: "spellchecker",
+  menubar: "tools",
+  toolbar: "spellchecker",
+  spellchecker_language: 'English=en,Danish=da,Dutch=nl,Finnish=fi,French=fr_FR,' + 'German=de,Italian=it,Polish=pl,Portuguese=pt_BR,Spanish=es,Swedish=sv'
 });
 ```
 
@@ -130,11 +129,11 @@ This options enables you to specify a custom URL to be used for the spell checke
 
 ```js
 tinymce.init({
-    selector: "textarea",  // change this value according to your html
-    plugins: "spellchecker",
-    menubar: "tools",
-    toolbar: "spellchecker",
-    spellchecker_rpc_url: 'spellchecker.php'
+  selector: "textarea",  // change this value according to your html
+  plugins: "spellchecker",
+  menubar: "tools",
+  toolbar: "spellchecker",
+  spellchecker_rpc_url: 'spellchecker.php'
 });
 ```
 
@@ -154,10 +153,10 @@ The response of a successful spellcheck request should like this:
 
 ```js
 {
-    "words": {
-         "misspelled1": ["suggestion1", "suggestion2"],
-         "misspelled2": ["suggestion1", "suggestion2"]
-    }
+  "words": {
+     "misspelled1": ["suggestion1", "suggestion2"],
+     "misspelled2": ["suggestion1", "suggestion2"]
+  }
 }
 ```
 
@@ -165,7 +164,7 @@ And if there was an error:
 
 ```js
 {
-    "error": "Error message"
+  "error": "Error message"
 }
 ```
 
@@ -179,10 +178,10 @@ This option enables you to override the matching of characters that are parts of
 
 ```js
 tinymce.init({
-    selector: "textarea",  // change this value according to your html
-    plugins: "spellchecker",
-    menubar: "tools",
-    toolbar: "spellchecker",
-    spellchecker_wordchar_pattern: /[^\s,\.]+/g
+  selector: "textarea",  // change this value according to your html
+  plugins: "spellchecker",
+  menubar: "tools",
+  toolbar: "spellchecker",
+  spellchecker_wordchar_pattern: /[^\s,\.]+/g
 });
 ```

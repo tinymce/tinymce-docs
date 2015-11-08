@@ -6,8 +6,7 @@ An example of this setting is as follows:
 
 ```js
 tinymce.init({
-	...
-    end_container_on_empty_block: true,
-    ...
+  selector: "textarea",  // change this value according to your html
+  end_container_on_empty_block: true
 });
 ```

@@ -6,8 +6,8 @@ Example of disabling the resize
 
 ```js
 tinymce.init({
-    ...
-    resize: false
+  selector: "textarea",  // change this value according to your html
+  resize: false
 });
 ```
 
@@ -15,7 +15,7 @@ Example of enabling both vertical and horizontal resize
 
 ```js
 tinymce.init({
-    ...
-    resize: "both"
+  selector: "textarea",  // change this value according to your html
+  resize: "both"
 });
 ```

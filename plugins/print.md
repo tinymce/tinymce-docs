@@ -15,9 +15,9 @@ This plugin adds a print button to TinyMCE's toolbar. It also adds a `Print` ite
 
 ```js
 tinymce.init({
-    selector: "textarea",  // change this value according to your html
-    plugins: "print",
-    menubar: "file",
-    toolbar: "print"
+  selector: "textarea",  // change this value according to your html
+  plugins: "print",
+  menubar: "file",
+  toolbar: "print"
 });
 ```

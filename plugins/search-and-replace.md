@@ -15,9 +15,9 @@ This plugin adds search/replace dialogs to TinyMCE. It also adds a toolbar contr
 
 ```js
 tinymce.init({
-    selector: "textarea",  // change this value according to your html
-    plugins: "searchreplace",
-    menubar: "edit",
-    toolbar: "searchreplace"
+  selector: "textarea",  // change this value according to your html
+  plugins: "searchreplace",
+  menubar: "edit",
+  toolbar: "searchreplace"
 });
 ```

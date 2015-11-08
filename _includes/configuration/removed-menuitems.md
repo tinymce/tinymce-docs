@@ -6,6 +6,7 @@ An example of this setting is as follows:
 
 ```js
 tinymce.init({
-    removed_menuitems: "undo,redo"
+  selector: "textarea",  // change this value according to your html
+  removed_menuitems: "undo,redo"
 });
 ```

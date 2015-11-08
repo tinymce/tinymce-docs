@@ -6,6 +6,7 @@ An example of this setting is as follows:
 
 ```js
 tinymce.init({
-    allow_conditional_comments: false
+  selector: "textarea",  // change this value according to your html
+  allow_conditional_comments: false
 });
 ```

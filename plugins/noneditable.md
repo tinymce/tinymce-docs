@@ -3,6 +3,8 @@ layout: default
 title: Noneditable Plugin
 ---
 
+> **Updated in 4.3!** The noneditable plugin has been rewritten from scratch to use the contentEditable=false features of 4.3. This rewrite means that it is more reliable and has less browser-specific quirks.
+
 This plugin enables you to prevent users from being able to change (i.e. edit) content within elements assigned the `mceNonEditable` class.
 
 **Type:** `String`

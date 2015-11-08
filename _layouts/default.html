@@ -5,6 +5,41 @@
   <title>TinyMCE - {{ page.title }}</title>
   <link href="{{ site.shared_baseurl }}/css/shared.css" rel="stylesheet">
   <link href="{{ site.shared_baseurl }}/css/docs.css" rel="stylesheet">
+  <script type="text/javascript">
+    //Google Analytics
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-692197-1', 'auto', {'allowLinker':true,'allowAnchor':true});
+
+    // load linkid plugin as per https://support.google.com/analytics/answer/2558867?hl=en
+    ga('require','linkid');
+    
+    ga('send', 'pageview', { 'page': location.pathname + location.search + location.hash});
+
+    // Load the plugin.
+    ga('require', 'linker');
+
+    // Define which domains to autoLink.
+    ga('linker:autoLink', ['plupload.com', 'moxiemanager.com','ephox.com', 'textbox.io', 'tinymce.com']);
+
+
+    //Pardot
+    piAId = '3202';
+    piCId = '30767';
+
+    (function() {
+      function async_load(){
+      var s = document.createElement('script'); s.type = 'text/javascript';
+      s.src = ('https:' == document.location.protocol ? 'https://pi' : 'http://cdn') + '.pardot.com/pd.js';
+      var c = document.getElementsByTagName('script')[0]; c.parentNode.insertBefore(s, c);
+    }
+    if(window.attachEvent) { window.attachEvent('onload', async_load); }
+    else { window.addEventListener('load', async_load, false); }
+    })();
+</script>
 </head>
 <body role="document" data-shared-baseurl="{{ site.shared_baseurl }}" data-baseurl="{{ site.baseurl }}">
   {% include top-menu.html %}
@@ -56,5 +91,13 @@
   <script src="{{ site.shared_baseurl }}/scripts/docs.js"></script>
   <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
   <link href="http://jmblog.github.io/color-themes-for-google-code-prettify/css/themes/{{site.syntax_highlight_theme}}.css" rel="stylesheet">
+  <script type="text/javascript">
+  jQuery(document).ready(function () {
+    jQuery('.side-nav a').click(function(){
+      var match = jQuery(this).attr('href').match(/#\S+/);
+      ga('send', 'pageview', location.pathname + match[0]);
+    });
+  });
+  </script>
 </body>
 </html>

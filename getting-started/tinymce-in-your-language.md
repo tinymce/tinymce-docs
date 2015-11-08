@@ -6,10 +6,9 @@ description: Internationalize TinyMCE with global language capabilities.
 
 As developers we all hope our projects reach a wide audience, and for many of us they do. Which is why it is important that TinyMCE is easy to internationalize.
 
-In this section of the Getting Started guide we will help you take your editor instance to the world with language internationalization in only 5 steps.
+In this section of the Getting Started guide we will help you take your editor instance to the world with language internationalization in only 4 steps.
 
 > Pro tip: language settings can be controlled in these configuration options: [directionality](/editor-configuration-settings/internationalization/#directionality), [language](/editor-configuration-settings/internationalization/#language) and  [language_url](/editor-configuration-settings/internationalization/#language_url).
-
 
 ### Step 1
 
@@ -29,9 +28,11 @@ Set the language option in your TinyMCE configuration to the language code in th
 
 Confirm that the language has been set successfully by loading TinyMCE.
 
-### Step 5
 
-In this step you'll find a code snippet that would set TinyMCE's language to Chinese and text directionality to right-to-left. If you want to try it for yourself, [click here to download](http://www.tinymce.com/i18n/download.php?download=zh_CN) the Chinese language pack. You'll also need a local instance of TinyMCE, which you can grab from our [downloads page](http://www.tinymce.com/download/).
+
+## A working example
+
+We have prepared a code snippet below that would set TinyMCE's language to Chinese and text directionality right-to-left. If you want to try it for yourself, [click here to directly download](http://www.tinymce.com/i18n/download.php?download=zh_CN) the Chinese language pack. You'll also need a *local instance* of TinyMCE, which you can grab from our [downloads page](http://www.tinymce.com/download/). Follow the [SDK install instructions](/getting-started/advanced-installation-options/#sdkdownloadinstallation) if you're not familiar with setting up TinyMCE locally.
 
 ```html
 <!DOCTYPE html>

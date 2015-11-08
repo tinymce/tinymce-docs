@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Context Menu Plugin (`contextmenu`) 
+title: Context Menu Plugin (`contextmenu`)
 ---
 
 
@@ -14,9 +14,9 @@ Note that by default `contextmenu` does not disable the operating system's nativ
 
 ```js
 tinymce.init({
-    selector: "textarea",  // change this value according to your html
-    plugins: "contextmenu",
-    contextmenu: "link image inserttable | cell row column deletetable"
+  selector: "textarea",  // change this value according to your html
+  plugins: "contextmenu",
+  contextmenu: "link image inserttable | cell row column deletetable"
 });
 ```
 
@@ -36,9 +36,9 @@ To specify the menu items that should appear on TinyMCE's context menu, the `con
 
 ```js
 tinymce.init({
-    selector: "textarea",  // change this value according to your html
-    plugins: "contextmenu",
-    contextmenu: "link image inserttable | cell row column deletetable"
+  selector: "textarea",  // change this value according to your html
+  plugins: "contextmenu",
+  contextmenu: "link image inserttable | cell row column deletetable"
 });
 ```
 
@@ -56,8 +56,8 @@ We advise you give some thought about whether you really want to do this. Many u
 
 ```js
 tinymce.init({
-    selector: "textarea",  // change this value according to your html
-    plugins: "contextmenu",
-    contextmenu_never_use_native: true
+  selector: "textarea",  // change this value according to your html
+  plugins: "contextmenu",
+  contextmenu_never_use_native: true
 });
 ```

@@ -6,10 +6,11 @@ An example of this setting is as follows:
 
 ```js
 tinymce.init({
-    style_formats: [
-        {title: 'Bold text', inline: 'b'},
-        {title: 'Red text', inline: 'span', styles: {color: '#ff0000'}}
-    ],
-    style_formats_merge: true
+  selector: "textarea",  // change this value according to your html
+  style_formats: [
+    {title: 'Bold text', inline: 'b'},
+    {title: 'Red text', inline: 'span', styles: {color: '#ff0000'}}
+  ],
+  style_formats_merge: true
 });
 ```

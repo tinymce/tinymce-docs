@@ -6,10 +6,10 @@ Example of usage of the init_instance_callback option:
 
 ```js
 tinymce.init({
-    ...
-    init_instance_callback : function(editor) {
-        console.log("Editor: " + editor.id + " is now initialized.");
-    }
+  selector: "textarea",  // change this value according to your html
+  init_instance_callback : function(editor) {
+    console.log("Editor: " + editor.id + " is now initialized.");
+  }
 });
 ```
 

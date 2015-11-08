@@ -6,8 +6,7 @@ Example of usage
 
 ```js
 tinymce.init({
-    ...
-    cache_suffix: "?v=4.1.6",
-    ...
+  selector: "textarea",  // change this value according to your html
+  cache_suffix: "?v=4.1.6"
 });
 ```

@@ -17,9 +17,9 @@ The HTML inserted takes the form of an anchor id, for example, `<p><a id="start"
 
 ```js
 tinymce.init({
-    selector: "textarea",  // change this value according to your html
-    plugins: "anchor",
-    toolbar: "anchor",
-    menubar: "insert"
+  selector: "textarea",  // change this value according to your html
+  plugins: "anchor",
+  toolbar: "anchor",
+  menubar: "insert"
 });
 ```

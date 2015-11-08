@@ -4,9 +4,8 @@ This is a true/false value if the usage of the browser's internal spellchecker s
 
 ```js
 tinymce.init({
-    ...
-    browser_spellcheck : true,
-    ...
+  selector: "textarea",  // change this value according to your html
+  browser_spellcheck : true
 });
 ```
 

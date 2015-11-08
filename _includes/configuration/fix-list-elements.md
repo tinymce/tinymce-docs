@@ -33,7 +33,7 @@ Example of usage of the fix_list_elements option:
 
 ```js
 tinymce.init({
-        ...
-        fix_list_elements : true
+  selector: "textarea",  // change this value according to your html
+  fix_list_elements : true
 });
 ```

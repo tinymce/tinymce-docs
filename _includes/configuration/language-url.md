@@ -6,9 +6,8 @@ We recommend using a site absolute URL, for example:
 
 ```js
 tinymce.init({
-    ...
-    language_url : '/languages/fi.js',
-    ...
+  selector: "textarea",  // change this value according to your html
+  language_url : '/languages/fi.js'
 });
 ```
 

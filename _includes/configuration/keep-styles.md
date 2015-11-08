@@ -6,7 +6,7 @@ Example of usage of the keep_styles option
 
 ```js
 tinymce.init({
-    ...
-    keep_styles: false
+  selector: "textarea",  // change this value according to your html
+  keep_styles: false
 });
 ```

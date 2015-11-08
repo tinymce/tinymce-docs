@@ -11,8 +11,8 @@ This plugin adds word count functionality to TinyMCE, placing a counter in the b
 
 ```js
 tinymce.init({
-    selector: "textarea",  // change this value according to your html
-    plugins: "wordcount"
+  selector: "textarea",  // change this value according to your html
+  plugins: "wordcount"
 });
 ```
 
@@ -30,9 +30,9 @@ This option allows you to specify the regex that will be used to *strip punctuat
 
 ```js
 tinymce.init({
-    selector: "textarea",  // change this value according to your html
-    plugins: "wordcount",
-    wordcount_cleanregex: /[0-9.(),;:!?%#$?\x27\x22_+=\\\/\-]*/g
+  selector: "textarea",  // change this value according to your html
+  plugins: "wordcount",
+  wordcount_cleanregex: /[0-9.(),;:!?%#$?\x27\x22_+=\\\/\-]*/g
 });
 ```
 
@@ -46,7 +46,8 @@ This option allows you to specify the regex that will be used to *count the word
 
 ```js
 tinymce.init({
-    plugins: "wordcount",
-    wordcount_countregex: /[\w\u2019\x27\-\u00C0-\u1FFF]+/g
+  selector: "textarea",  // change this value according to your html
+  plugins: "wordcount",
+  wordcount_countregex: /[\w\u2019\x27\-\u00C0-\u1FFF]+/g
 });
 ```

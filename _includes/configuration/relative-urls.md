@@ -6,7 +6,7 @@ Example of usage of the relative_urls option:
 
 ```js
 tinymce.init({
-        ...
-        relative_urls: false
+  selector: "textarea",  // change this value according to your html
+  relative_urls: false
 });
 ```

@@ -1,8 +1,8 @@
 ---
 layout: default
-title: Advanced List Plugin (`advlist`)
+title: Advanced List Plugin (advlist)
 ---
- 
+
 
 The `advlist` plugin extends the core `bullist` and `numlist` toolbar controls by adding CSS `list-style-type` styled number formats and bullet types to the controls.
 
@@ -12,8 +12,8 @@ The `advlist` plugin extends the core `bullist` and `numlist` toolbar controls b
 
 ```js
 tinymce.init({
-    selector: "textarea", // change this value according to your html
-    plugins: "advlist"
+  selector: "textarea", // change this value according to your html
+  plugins: "advlist"
 });
 ```
 
@@ -65,8 +65,8 @@ This option allows you to include specific ordered list item markers in the defa
 
 ```js
 tinymce.init({
-    selector: "textarea",  // change this value according to your html
-    plugins: "advlist",
-    advlist_number_styles: "lower-alpha"  // only include lower alpha in list
+  selector: "textarea",  // change this value according to your html
+  plugins: "advlist",
+  advlist_number_styles: "lower-alpha"  // only include lower alpha in list
 });
 ```

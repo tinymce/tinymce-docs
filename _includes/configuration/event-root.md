@@ -6,7 +6,8 @@ Example
 
 ```js
 tinymce.init({
-    inline: true,
-    event_root: "#root"
+  selector: "textarea",  // change this value according to your html
+  inline: true,
+  event_root: "#root"
 });
 ```

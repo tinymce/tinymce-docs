@@ -6,7 +6,7 @@ Example of usage of the convert_urls option:
 
 ```js
 tinymce.init({
-        ...
-        convert_urls: false
+  selector: "textarea",  // change this value according to your html
+  convert_urls: false
 });
 ```

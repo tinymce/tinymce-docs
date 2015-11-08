@@ -6,9 +6,8 @@ Disable all resizing of images/tables
 
 ```js
 tinymce.init({
-    ...
-    object_resizing : false
-    ...
+  selector: "textarea",  // change this value according to your html
+  object_resizing : false
 });
 ```
 
@@ -16,8 +15,7 @@ Enable resizing on images only
 
 ```js
 tinymce.init({
-    ...
-    object_resizing : "img"
-    ...
+  selector: "textarea",  // change this value according to your html
+  object_resizing : "img"
 });
 ```

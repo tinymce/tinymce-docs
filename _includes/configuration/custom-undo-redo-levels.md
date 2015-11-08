@@ -7,7 +7,7 @@ Example of usage of the custom_undo_redo_levels option:
 
 ```js
 tinymce.init({
-        ...
-        custom_undo_redo_levels: 10
+  selector: "textarea",  // change this value according to your html
+  custom_undo_redo_levels: 10
 });
 ```

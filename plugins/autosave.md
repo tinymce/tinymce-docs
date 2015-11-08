@@ -13,8 +13,8 @@ This plugin gives the user a warning if they made modifications to a editor inst
 
 ```js
 tinymce.init({
-    selector: "textarea",  // change this value according to your html
-    plugins: "autosave"
+  selector: "textarea",  // change this value according to your html
+  plugins: "autosave"
 });
 ```
 
@@ -36,9 +36,9 @@ This option allows you to set whether the editor should prompt the user to advis
 
 ```js
 tinymce.init({
-    selector: "textarea",  // change this value according to your html
-    plugins: "autosave",
-    autosave_ask_before_unload: false
+  selector: "textarea",  // change this value according to your html
+  plugins: "autosave",
+  autosave_ask_before_unload: false
 });
 ```
 
@@ -54,8 +54,8 @@ This option enables you to specify the time it should wait between making snapsh
 
 ```js
 tinymce.init({
-    selector: "textarea",  // change this value according to your html
-    autosave_interval: "20s"
+  selector: "textarea",  // change this value according to your html
+  autosave_interval: "20s"
 });
 ```
 
@@ -71,9 +71,9 @@ This option allows you to set the prefix that is used for local storage keys.
 
 ```js
 tinymce.init({
-    selector: "textarea",  // change this value according to your html
-    plugins: "autosave",
-    autosave_prefix: "tinymce-autosave-{path}{query}-{id}-"
+  selector: "textarea",  // change this value according to your html
+  plugins: "autosave",
+  autosave_prefix: "tinymce-autosave-{path}{query}-{id}-"
 });
 ```
 
@@ -91,9 +91,9 @@ This option enables you to specify if TinyMCE should automatically restore the c
 
 ```js
 tinymce.init({
-    selector: "textarea",  // change this value according to your html
-    plugins: "autosave",
-    autosave_restore_when_empty: false
+  selector: "textarea",  // change this value according to your html
+  plugins: "autosave",
+  autosave_restore_when_empty: false
 });
 ```
 
@@ -109,9 +109,8 @@ This option lets you to specify the duration editor content should remain in loc
 
 ```js
 tinymce.init({
-    selector: "textarea",  // change this value according to your html
-    plugins: "autosave",
-    autosave_retention: "30m"
+  selector: "textarea",  // change this value according to your html
+  plugins: "autosave",
+  autosave_retention: "30m"
 });
 ```
-

@@ -4,7 +4,7 @@ This option enables you to control TinyMCE to force the color format to use hexa
 
 ```js
 tinymce.init({
-        ...
-        force_hex_style_colors : false
+  selector: "textarea",  // change this value according to your html
+  force_hex_style_colors : false
 });
 ```

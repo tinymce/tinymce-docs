@@ -8,7 +8,7 @@ Example of usage of the remove_script_host option:
 
 ```js
 tinymce.init({
-        ...
-        remove_script_host: false
+  selector: "textarea",  // change this value according to your html
+  remove_script_host: false
 });
 ```

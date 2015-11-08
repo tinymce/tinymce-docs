@@ -10,12 +10,11 @@ An example of this setting is as follows:
 
 ```js
 tinymce.init({
-    ...
-    setup: function(editor) {
-        editor.on('click', function(e) {
-            console.log('Editor was clicked');
-        });
-    },
-    ...
+  selector: "textarea",  // change this value according to your html
+  setup: function(editor) {
+    editor.on('click', function(e) {
+      console.log('Editor was clicked');
+    });
+  }
 });
 ```

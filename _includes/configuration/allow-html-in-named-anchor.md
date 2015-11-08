@@ -6,6 +6,7 @@ An example of this setting is as follows:
 
 ```js
 tinymce.init({
-    allow_html_in_named_anchor: true
+  selector: "textarea",  // change this value according to your html
+  allow_html_in_named_anchor: true
 });
 ```

@@ -62,20 +62,20 @@ This example overrides some of the built in formats and tells TinyMCE to apply c
 ```js
 // Output elements in HTML style
 tinymce.init({
-        ...
-        formats : {
-                alignleft : {selector : 'p,h1,h2,h3,h4,h5,h6,td,th,div,ul,ol,li,table,img', classes : 'left'},
-                aligncenter : {selector : 'p,h1,h2,h3,h4,h5,h6,td,th,div,ul,ol,li,table,img', classes : 'center'},
-                alignright : {selector : 'p,h1,h2,h3,h4,h5,h6,td,th,div,ul,ol,li,table,img', classes : 'right'},
-                alignfull : {selector : 'p,h1,h2,h3,h4,h5,h6,td,th,div,ul,ol,li,table,img', classes : 'full'},
-                bold : {inline : 'span', 'classes' : 'bold'},
-                italic : {inline : 'span', 'classes' : 'italic'},
-                underline : {inline : 'span', 'classes' : 'underline', exact : true},
-                strikethrough : {inline : 'del'},
-                forecolor : {inline : 'span', classes : 'forecolor', styles : {color : '%value'}},
-                hilitecolor : {inline : 'span', classes : 'hilitecolor', styles : {backgroundColor : '%value'}},
-                custom_format : {block : 'h1', attributes : {title : "Header"}, styles : {color : red}}
-        }
+  selector: "textarea",  // change this value according to your html
+  formats : {
+    alignleft : {selector : 'p,h1,h2,h3,h4,h5,h6,td,th,div,ul,ol,li,table,img', classes : 'left'},
+    aligncenter : {selector : 'p,h1,h2,h3,h4,h5,h6,td,th,div,ul,ol,li,table,img', classes : 'center'},
+    alignright : {selector : 'p,h1,h2,h3,h4,h5,h6,td,th,div,ul,ol,li,table,img', classes : 'right'},
+    alignfull : {selector : 'p,h1,h2,h3,h4,h5,h6,td,th,div,ul,ol,li,table,img', classes : 'full'},
+    bold : {inline : 'span', 'classes' : 'bold'},
+    italic : {inline : 'span', 'classes' : 'italic'},
+    underline : {inline : 'span', 'classes' : 'underline', exact : true},
+    strikethrough : {inline : 'del'},
+    forecolor : {inline : 'span', classes : 'forecolor', styles : {color : '%value'}},
+    hilitecolor : {inline : 'span', classes : 'hilitecolor', styles : {backgroundColor : '%value'}},
+    custom_format : {block : 'h1', attributes : {title : "Header"}, styles : {color : red}}
+  }
 });
 ```
 
@@ -105,12 +105,15 @@ tinymce.activeEditor.formatter.apply('custom_format', {value : 'red'});
 
 ### Remove format
 
-The remove format behavior can be modifed by setting the removeformat see the example below:
+The remove format behavior can be modified by setting the `removeformat` see the example below:
 
 ```js
-removeformat : [
+tinymce.init({
+  selector: "textarea",  // change this value according to your html
+  removeformat : [
     {selector : 'b,strong,em,i,font,u,strike', remove : 'all', split : true, expand : false, block_expand : true, deep : true},
     {selector : 'span', attributes : ['style', 'class'], remove : 'empty', split : true, expand : false, deep : true},
     {selector : '*', attributes : ['style', 'class'], split : false, expand : false, deep : true}
-]
+  ]
+});
 ```

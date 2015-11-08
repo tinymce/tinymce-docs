@@ -6,9 +6,8 @@ The name of the skin should match the name of the folder within the skins direct
 
 ```js
 tinymce.init({
-    ...
-    skin: "lightgray",
-    ...
+  selector: "textarea",  // change this value according to your html
+  skin: "lightgray"
 });
 ```
 

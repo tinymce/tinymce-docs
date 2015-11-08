@@ -6,7 +6,8 @@ Example simple global classes
 
 ```js
 tinymce.init({
-    invalid_styles: 'color font-size'
+  selector: "textarea",  // change this value according to your html
+  invalid_styles: 'color font-size'
 });
 ```
 
@@ -14,9 +15,10 @@ Example of element specific classes
 
 ```js
 tinymce.init({
-    invalid_styles: {
-        '*': 'color font-size', // Global invalid styles
-        'a': 'background' // Link specific invalid styles
-    }
+  selector: "textarea",  // change this value according to your html
+  invalid_styles: {
+    '*': 'color font-size', // Global invalid styles
+    'a': 'background' // Link specific invalid styles
+  }
 });
 ```

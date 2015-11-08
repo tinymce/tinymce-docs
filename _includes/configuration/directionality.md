@@ -15,7 +15,6 @@ In this example we will set the editor language to `Chinese (China)` and the tex
 ```js
 tinymce.init({
   selector: "textarea",  // change this value according to your html
-  directionality : "rtl",
-  language: "zh_CN"
+  directionality : 'ltr'
 });
 ```

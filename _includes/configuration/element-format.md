@@ -5,7 +5,7 @@ This option controls whether elements are output in the HTML or XHTML mode. "**x
 ```js
 // Output elements in HTML style
 tinymce.init({
-        ...
-        element_format : "html"
+  selector: "textarea",  // change this value according to your html
+  element_format : "html"
 });
 ```

@@ -6,7 +6,7 @@ Example of usage of the visual option:
 
 ```js
 tinymce.init({
-    ...
-    visual: false
+  selector: "textarea",  // change this value according to your html
+  visual: false
 });
 ```

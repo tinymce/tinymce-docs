@@ -4,10 +4,10 @@ This option enables you specify attributes for the [forced_root_block](#forced_r
 
 ```js
 tinymce.init({
-    ...
-    forced_root_block_attrs: {
-         "class": "myclass",
-         "data-something": "my data"
-    }
+  selector: "textarea",  // change this value according to your html
+  forced_root_block_attrs: {
+    "class": "myclass",
+    "data-something": "my data"
+  }
 });
 ```

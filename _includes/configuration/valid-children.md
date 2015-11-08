@@ -15,8 +15,8 @@ This example shows you how to add style as a valid child of body and remove div 
 
 ```js
 tinymce.init({
-    ...
-    valid_children : "+body[style],-body[div],p[strong|a|#text]"
+  selector: "textarea",  // change this value according to your html
+  valid_children : "+body[style],-body[div],p[strong|a|#text]"
 });
 ```
 

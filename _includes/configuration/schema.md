@@ -10,7 +10,7 @@ Example of usage
 
 ```js
 tinymce.init({
-   ...
-   schema: "html5"
+  selector: "textarea",  // change this value according to your html
+  schema: "html5"
 });
 ```

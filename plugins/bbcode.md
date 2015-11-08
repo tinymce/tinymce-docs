@@ -11,8 +11,8 @@ This plugin adds basic BBCode input/output to TinyMCE.
 
 ```js
 tinymce.init({
-    selector: "textarea",  // change this value according to your html
-    plugins: "bbcode"
+  selector: "textarea",  // change this value according to your html
+  plugins: "bbcode"
 });
 ```
 
@@ -30,9 +30,8 @@ This option allows you to specify the BBCode dialect. We only support [PunBB](ht
 
 ```js
 tinymce.init({
-    selector: "textarea",  // change this value according to your html
-    plugins: "bbcode",
-    bbcode_dialect: "punbb"
+  selector: "textarea",  // change this value according to your html
+  plugins: "bbcode",
+  bbcode_dialect: "punbb"
 });
 ```
-

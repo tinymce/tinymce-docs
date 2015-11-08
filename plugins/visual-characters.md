@@ -17,9 +17,9 @@ It's worth noting that at present the toolbar button icon is the same for both `
 
 ```js
 tinymce.init({
-    selector: "textarea",  // change this value according to your html
-    plugins: "visualchars",
-    menubar: "view",
-    toolbar: "visualchars"
+  selector: "textarea",  // change this value according to your html
+  plugins: "visualchars",
+  menubar: "view",
+  toolbar: "visualchars"
 });
 ```

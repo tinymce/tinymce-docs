@@ -6,7 +6,7 @@ Example
 
 ```js
 tinymce.init({
-    ...
-    allow_script_urls: true
+  selector: "textarea",  // change this value according to your html
+  allow_script_urls: true
 });
 ```

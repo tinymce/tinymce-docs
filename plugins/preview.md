@@ -17,10 +17,10 @@ This plugin adds a preview button to TinyMCE. Pressing the button opens a popup 
 
 ```js
 tinymce.init({
-    selector: "textarea",  // change this value according to your html
-    plugins: "preview",
-    menubar: "view",
-    toolbar: "preview"
+  selector: "textarea",  // change this value according to your html
+  plugins: "preview",
+  menubar: "view",
+  toolbar: "preview"
 });
 ```
 
@@ -34,17 +34,17 @@ This option allows you to set the height of the preview window that appears when
 
 **Type:** `Integer`
 
-**Default Value:** `"500"`
+**Default Value:** `500`
 
 **Example:**
 
 ```js
 tinymce.init({
-    selector: "textarea",  // change this value according to your html
-    plugins: "preview",
-    menubar: "view",
-    toolbar: "preview",
-    plugin_preview_height: "500"
+  selector: "textarea",  // change this value according to your html
+  plugins: "preview",
+  menubar: "view",
+  toolbar: "preview",
+  plugin_preview_height: 500
 });
 ```
 
@@ -54,7 +54,7 @@ This option allows you to set the width of the preview window that appears when 
 
 **Type:** `Integer`
 
-**Default Value:** `"650"`
+**Default Value:** `650`
 
 **Example:**
 
@@ -64,7 +64,6 @@ tinymce.init({
     plugins: "preview",
     menubar: "view",
     toolbar: "preview",
-    plugin_preview_width: "650"
+    plugin_preview_width: 650
 });
 ```
-

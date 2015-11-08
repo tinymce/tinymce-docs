@@ -8,9 +8,8 @@ An example of such a grouped toolbar is as follows:
 
 ```js
 tinymce.init({
-    ...
-    toolbar: "undo redo | styleselect | bold italic | link image",
-    ...
+  selector: "textarea",  // change this value according to your html
+  toolbar: "undo redo | styleselect | bold italic | link image"
 });
 ```
 
@@ -20,9 +19,8 @@ An example of a disabled toolbar is as follows:
 
 ```js
 tinymce.init({
-    ...
-    toolbar: false,
-    ...
+  selector: "textarea",  // change this value according to your html
+    toolbar: false
 });
 ```
 
@@ -32,13 +30,12 @@ An example of multiple toolbars is as follows:
 
 ```js
 tinymce.init({
-    ...
-    toolbar: [
-        "undo redo | styleselect | bold italic | link image",
-        "alignleft aligncenter alignright"
-    ]
-    ...
+  selector: "textarea",  // change this value according to your html
+  toolbar: [
+    "undo redo | styleselect | bold italic | link image",
+    "alignleft aligncenter alignright"
+  ]
 });
 ```
 
-Alternatively, you may specify multiple toolbars through the use of the [toolbar&lt;N&gt;](#toolbar<N>) option.
+Alternatively, you may specify multiple toolbars through the use of the [toolbar&lt;N&gt;](#toolbar-N) option.

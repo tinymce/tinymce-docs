@@ -3,7 +3,6 @@ layout: default
 title: Visual Blocks Plugin (`visualblocks`)
 ---
 
-
 // adds menu control (under View menu)
 
 // adds toolbar control
@@ -18,10 +17,10 @@ It's worth noting that at present the toolbar button icon is the same for both `
 
 ```js
 tinymce.init({
-    selector: "textarea",  // change this value according to your html
-    plugins: "visualblocks",
-    menubar: "view",
-    toolbar: "visualblocks"
+  selector: "textarea",  // change this value according to your html
+  plugins: "visualblocks",
+  menubar: "view",
+  toolbar: "visualblocks"
 });
 ```
 
@@ -41,12 +40,10 @@ This option enables you to specify the default state of the visualblocks plugin.
 
 ```js
 tinymce.init({
-    selector: "textarea",  // change this value according to your html
-    plugins: "visualblocks",
-    menubar: "view",
-    toolbar: "visualblocks"
-    visualblocks_default_state: true
+  selector: "textarea",  // change this value according to your html
+  plugins: "visualblocks",
+  menubar: "view",
+  toolbar: "visualblocks"
+  visualblocks_default_state: true
 });
 ```
-
-

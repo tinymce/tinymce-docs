@@ -8,10 +8,11 @@ Example of usage:
 
 ```js
 tinymce.init({
-    protect: [
-        /\<\/?(if|endif)\>/g, // Protect <if> & </endif>
-        /\<xsl\:[^>]+\>/g, // Protect <xsl:...>
-        /<\?php.*?\?>/g // Protect php code
-    ]
+  selector: "textarea",  // change this value according to your html
+  protect: [
+    /\<\/?(if|endif)\>/g, // Protect <if> & </endif>
+    /\<xsl\:[^>]+\>/g, // Protect <xsl:...>
+    /<\?php.*?\?>/g // Protect php code
+  ]
 });
 ```

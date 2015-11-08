@@ -4,8 +4,7 @@ Set the width of the editor in pixels.
 
 ```js
 tinymce.init({
-    ...
-    width : 300,
-    ...
+  selector: "textarea",  // change this value according to your html
+  width : 300
 });
 ```

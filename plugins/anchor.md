@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Anchor Plugin
+description: Insert anchors (sometimes referred to as a bookmarks.)
 ---
 
 // adds menu control (under Insert menu)
@@ -13,13 +14,15 @@ The HTML inserted takes the form of an anchor id, for example, `<p><a id="start"
 
 **Type:** `String`
 
-**Example:**
+
+## Anchor plugin example
 
 ```js
 tinymce.init({
   selector: "textarea",  // change this value according to your html
   plugins: "anchor",
   toolbar: "anchor",
-  menubar: "insert"
+  menubar: "insert",
+  ...
 });
 ```

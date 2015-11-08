@@ -1,6 +1,8 @@
 ---
 layout: default
-title: Spell Checker Plugin (`spellchecker`)
+title: Spell Checker Plugin
+description: Enables TinyMCE's spell check functionality.
+keywords: spellchecker
 ---
 
 // adds menu control (under Tools menu)

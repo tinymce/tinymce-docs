@@ -1,11 +1,13 @@
 ---
 layout: default
-title: Image Tools Plugin (`imagetools`)
+title: Image Tools Plugin
+description: Image editing features for TinyMCE.
+keywords: imagetools, rotate, rotateleft, rotateright, flip, flipv, fliph, editimage, imageoptions
 ---
 
 The Image Tools (`imagetools`) plugin adds a contextual image editing toolbar to images inserted into the editable area. This works on modern browsers that let you edit images inline.
 
-Note that this feature requires at least IE10 since it uses the `HTML5 File API`. Also note that if the `imagetools` inline toolbar isn't appearing you may need to enable `imagetools_cors_hosts` or `imagetools_proxy`.
+Note that this feature requires at least Internet Explorer 10 as it uses the `HTML5 File API`. Also note that if the `imagetools` inline toolbar isn't appearing you may need to enable `imagetools_cors_hosts` or `imagetools_proxy`.
 
 **Type:** `String`
 
@@ -21,7 +23,7 @@ tinymce.init({
 
 ### Options
 
-These settings affect the execution of the Imagetools plugin. This plugin's cross-origin resource sharing, proxy and toolbar settings can be modified here.
+These settings affect the execution of the Image Tools plugin. This plugin's cross-origin resource sharing, proxy and toolbar settings can be modified here.
 
 ### `imagetools_cors_hosts`
 

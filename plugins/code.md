@@ -1,6 +1,8 @@
 ---
 layout: default
 title: Code Plugin
+description: Edit your content's HTML source.
+keywords: WYSIWYG
 ---
 
 // adds menu control (under Tools menu)

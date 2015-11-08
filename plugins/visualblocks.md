@@ -1,6 +1,8 @@
 ---
 layout: default
-title: Visual Blocks Plugin (`visualblocks`)
+title: Visual Blocks Plugin
+description: Allows a user to see block level elements such as paragraphs.
+keywords: visualblocks
 ---
 
 // adds menu control (under View menu)

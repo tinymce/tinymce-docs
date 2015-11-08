@@ -1,6 +1,8 @@
 ---
 layout: default
-title: Context Menu Plugin (`contextmenu`)
+title: Context Menu Plugin
+description: Right-click to perform actions in TinyMCE
+keywords: contextmenu
 ---
 
 

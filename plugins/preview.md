@@ -1,6 +1,8 @@
 ---
 layout: default
 title: Preview Plugin
+description: Shows a popup of the curent content in read-only format.
+keywords: view, preview
 ---
 
 // adds menu control (under View menu)

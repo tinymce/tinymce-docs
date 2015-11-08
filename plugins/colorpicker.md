@@ -1,6 +1,8 @@
 ---
 layout: default
-title: Color Picker Plugin (`colorpicker`)
+title: Color Picker Plugin
+description: Select a color from a pallete.
+keywords: colorpicker, colour
 ---
 
 

@@ -1,9 +1,11 @@
 ---
 layout: default
-title: Example with Dependency Plugin (`example_dependency`)
+title: Example_dependency Plugin
+description: How to build a plugin that depends on another plugin.
+keywords: example_dependency
 ---
 
-The `example_dependency` plugin is an example plugin with a dependency on another plugin.
+The Example_dependency plugin is an example plugin with a dependency on another plugin.
 
 **Type:** `String`
 

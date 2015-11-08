@@ -1,7 +1,12 @@
 ---
 layout: default
 title: Paste Plugin
+description: Standard version of features for copying-and-pasting content from Microsoft Word.
+keywords: Microsoft Word, Excel
 ---
+
+
+> Looking for more advanced Microsoft Word importing and pasting? Try the [PowerPaste](../powerpaste/) plugin.
 
 
 // adds menu control (under Edit menu)

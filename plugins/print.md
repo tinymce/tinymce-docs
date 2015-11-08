@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Print Plugin
+description: Print the content in TinyMCE.
 ---
 
 // adds menu control (under File menu)

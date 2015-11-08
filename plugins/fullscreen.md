@@ -1,6 +1,8 @@
 ---
 layout: default
-title: Full Screen Plugin (`fullscreen`)
+title: Full Screen Plugin
+description: Zoom TinyMCE up to the whole screen.
+keywords: fullscreen
 ---
 
 // adds menu control (under View menu)

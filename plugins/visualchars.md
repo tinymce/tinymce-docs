@@ -1,6 +1,8 @@
 ---
 layout: default
-title: Visual Characters Plugin (`visualchars`)
+title: Visual Characters Plugin
+description: See invisible characters like `&nbsp;`
+keywords: visualchars
 ---
 
 // adds menu control (under View menu)

@@ -1,20 +1,23 @@
 ---
 layout: default
 title: Autolink Plugin
+description: Automatically create hyperlinks.
+keywords: URL, link, URLs
 ---
 
 
-The `autolink` plugin automatically creates hyperlinks when a user inputs a valid, complete url, e.g `www.example.com`, which would be converted to `http://www.example.com`.
+The Autolink plugin automatically creates hyperlinks when a user inputs a valid, complete url. For example `www.example.com` is converted to `http://www.example.com`.
 
 Note that this option won't convert incomplete urls, for example `example.com` would remain as unlinked text. i.e. urls must include `www` to be automatically converted.
 
 **Type:** `String`
 
-**Example:**
+## Autolink plugin example
 
 ```js
 tinymce.init({
   selector: "textarea",  // change this value according to your html
-  plugins: "autolink"
+  plugins: "autolink",
+  ...
 });
 ```

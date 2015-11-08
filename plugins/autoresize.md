@@ -1,25 +1,25 @@
 ---
 layout: default
 title: Autoresize Plugin
+description: Automatically resize TinyMCE to fit content.
+keywords: height, width
 ---
-
-
-`autoresize` automatically resizes the editor to the content inside it.
 
 **Type:** `String`
 
-**Example:**
+## Autoresize plugin example
 
 ```js
 tinymce.init({
   selector: "textarea",  // change this value according to your html
-  plugins: "autoresize"
+  plugins: "autoresize",
+  ...
 });
 ```
 
-### Options
+## Options
 
-These settings affect the execution of the `autoresize` plugin, including changes to the minimum width, height, bottom margin and default initialization state.
+These settings affect the execution of the Autoresize plugin, including changes to the minimum width, height, bottom margin and default initialization state.
 
 ### `autoresize_bottom_margin`
 

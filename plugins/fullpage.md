@@ -1,6 +1,8 @@
 ---
 layout: default
-title: Full Page Plugin (`fullpage`)
+title: Full Page Plugin
+description: Edit all document properties such as title, keywords and description.
+keywords: fullpage
 ---
 
 // adds menu control (under File menu)

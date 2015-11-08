@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Template Plugin
+description: Custom templates for your content.
 ---
 
 // adds menu control (under Insert menu)

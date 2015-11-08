@@ -1,6 +1,8 @@
 ---
 layout: default
-title: Insert Date Time Plugin (`insertdatetime`)
+title: Insert Date/Time Plugin
+description: Insert the current date and/or time into TinyMCE.
+keywords: insertdatetime
 ---
 
 // adds menu control (under Insert menu)

@@ -1,6 +1,8 @@
 ---
 layout: default
 title: Noneditable Plugin
+description: Prevent users from changing content within elements. Ideal for templates.
+keywords: noneditable, contenteditable, editable
 ---
 
 > **Updated in 4.3!** The noneditable plugin has been rewritten from scratch to use the contentEditable=false features of 4.3. This rewrite means that it is more reliable and has less browser-specific quirks.

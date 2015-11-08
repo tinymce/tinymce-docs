@@ -1,6 +1,8 @@
 ---
 layout: default
 title: Media Plugin
+description: Add HTML5 video and audio elements.
+keywords: video, Youtube, Vimeo, MP3, film
 ---
 
 // adds menu control (under Insert menu)

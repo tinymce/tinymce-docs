@@ -1,6 +1,8 @@
 ---
 layout: default
-title: Nonbreaking Plugin
+title: Nonbreaking Space Plugin
+description: Insert a nonbreaking space.
+keywords: nonbreaking
 ---
 
 // adds menu control (under Insert menu)

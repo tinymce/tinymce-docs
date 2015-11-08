@@ -1,9 +1,11 @@
 ---
 layout: default
 title: 3.x Compatibility Plugin
+description: Run old plugins on version 4.
+keywords: compat3x
 ---
 
-This plugin contains a few compatibility files for the old 3.x branch. This enables you to run most old 3.x plugins with out any modifications. You need to take a few steps to enable this plugin:
+This plugin contains a few compatibility files for the old 3.x branch. This enables you to run most old 3.x plugins without any modifications. You need to take a few steps to enable this plugin:
 
 **Installation Instructions**
 

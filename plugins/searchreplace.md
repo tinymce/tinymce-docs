@@ -1,6 +1,8 @@
 ---
 layout: default
-title: Search and Replace Plugin (`searchreplace`)
+title: Search and Replace Plugin
+description: Find and replace content in TinyMCE.
+keywords: searchreplace
 ---
 
 // adds menu control (under Edit menu)

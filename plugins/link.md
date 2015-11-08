@@ -1,6 +1,8 @@
 ---
 layout: default
 title: Link plugin
+description: Add hyperlinks to content.
+keywords: URL, URLs
 ---
 
 // adds menu control (under Insert menu)

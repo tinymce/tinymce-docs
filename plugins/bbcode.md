@@ -1,9 +1,8 @@
 ---
 layout: default
 title: BBCode Plugin
+description: Add basic BBCode input/output to TinyMCE.
 ---
-
-This plugin adds basic BBCode input/output to TinyMCE.
 
 **Type:** `String`
 
@@ -11,8 +10,9 @@ This plugin adds basic BBCode input/output to TinyMCE.
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
-  plugins: "bbcode"
+  selector: "textarea",  // change this value according to your HTML
+  plugins: "bbcode",
+  ...
 });
 ```
 

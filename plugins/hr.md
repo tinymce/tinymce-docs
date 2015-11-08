@@ -1,6 +1,8 @@
 ---
 layout: default
-title: Horizontal Rule Plugin (`hr`)
+title: Horizontal Rule Plugin
+description: Insert a horizontal line.
+keywords: hr
 ---
 
 // adds menu control (under Insert menu)

@@ -1,6 +1,8 @@
 ---
 layout: default
-title: Import CSS Plugin (`importcss`)
+title: Import CSS Plugin
+description: Automatically populate CSS class names into the Format dropdown.
+keywords: importcss
 ---
 
 The `importcss` plugin adds the ability to automatically import CSS classes from the CSS file specified in the [`content_css`](./configuration-reference/content-style/#content_css) configuration setting.

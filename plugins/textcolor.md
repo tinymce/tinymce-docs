@@ -1,6 +1,7 @@
 ---
 layout: default
-title: Text Color Plugin (`textcolor`)
+title: Text Color Plugin
+keywords: textcolor
 ---
 
 

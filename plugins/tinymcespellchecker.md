@@ -1,7 +1,8 @@
 ---
 layout: default
-title: Spell Checker Pro Plugin (`tinymcespellchecker`)
+title: Spell Checker Pro Plugin
 description: Check spelling as-you-type in TinyMCE.
+keywords: tinymcespellchecker
 ---
 
 **Spell Checker Pro** adds spell check as-you-type capabilities to TinyMCE.

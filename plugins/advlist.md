@@ -1,23 +1,26 @@
 ---
 layout: default
-title: Advanced List Plugin (advlist)
+title: Advanced List Plugin
+description: Create styled number and bulleted lists.
+keywords: advlist, advlist_bullet_styles, advlist_number_styles
 ---
-
 
 The `advlist` plugin extends the core `bullist` and `numlist` toolbar controls by adding CSS `list-style-type` styled number formats and bullet types to the controls.
 
+
 **Type:** `String`
 
-**Example:**
+## Advanced List plugin example
 
 ```js
 tinymce.init({
   selector: "textarea", // change this value according to your html
-  plugins: "advlist"
+  plugins: "advlist",
+  ...
 });
 ```
 
-### Options
+## Options
 
 These settings affect the execution of the `advlist` plugin by providing more granular control of list styles.
 
@@ -35,13 +38,14 @@ This option allows you to include specific unordered list item markers in the de
   * `disc`: a hollow circle
   * `square`: a filled square
 
-**Example:**
+#### Example:
 
 ```js
 tinymce.init({
     selector: "textarea",  // change this value according to your html
     plugins: "advlist",
-    advlist_bullet_styles: "square"  // only include square bullets in list
+    advlist_bullet_styles: "square",  // only include square bullets in list
+    ...
 });
 ```
 
@@ -61,12 +65,13 @@ This option allows you to include specific ordered list item markers in the defa
   * `upper-alpha`: uppercase ASCII letters, e.g. A, B, C, ... Z
   * `upper-roman`: uppercase roman numerals, e.g. I, II, III, IV, V ...
 
-**Example:**
+#### Example:
 
 ```js
 tinymce.init({
   selector: "textarea",  // change this value according to your html
   plugins: "advlist",
-  advlist_number_styles: "lower-alpha"  // only include lower alpha in list
+  advlist_number_styles: "lower-alpha",  // only include lower alpha in list
+  ...
 });
 ```

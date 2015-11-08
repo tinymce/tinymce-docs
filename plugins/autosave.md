@@ -1,11 +1,12 @@
 ---
 layout: default
 title: Autosave Plugin
+description: Automatically save content in your local browser.
 ---
 
 // adds menu control (under File menu)
 
-This plugin gives the user a warning if they made modifications to a editor instance but didn't submit them. (This plugin will most likely be extended in the future to provide AJAX auto save support.) It also adds a menu item `Restore last draft` under the `File` menu.
+This plugin gives the user a warning if they made modifications to a editor instance but didn't submit them. It also adds a menu item **Restore last draft** under the **File** menu.
 
 **Type:** `String`
 

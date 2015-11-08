@@ -1,11 +1,13 @@
 ---
 layout: default
 title: Emoticons Plugin
+description: Bring a smiley to your content.
+keywords: smiley, happy, smiling face
 ---
 
 // adds toolbar control
 
-The `emoticons` plugin adds a toolbar control that let's users insert smiley images into TinyMCE's editable area.
+The Emoticons plugin adds a toolbar control that let's users insert smiley images into TinyMCE's editable area.
 
 **Type:** `String`
 

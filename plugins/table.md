@@ -1,6 +1,8 @@
 ---
 layout: default
 title: Table Plugin
+description: Table editing features.
+keywords: row, cell, column
 ---
 
 // adds menu control (new Table menu)

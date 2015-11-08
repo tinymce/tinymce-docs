@@ -1,13 +1,14 @@
 ---
 layout: default
 title: Example Plugin
+description: A template for your own custom plugins.
 ---
 
-The `example` plugin is an example plugin that you can use as a template for your custom plugins.
+The Example plugin is some code that you can use as a template for your custom plugins.
 
 **Type:** `String`
 
-**Example:**
+## Example:
 
 ```js
 tinymce.init({

@@ -4,7 +4,7 @@ title: Spell Checking in TinyMCE
 description: Bring spell checking to your users.
 ---
 
-In the past TinyMCE relied on (a bit of a hack to access) Google's spellcheck API, which has since been deprecated. As a result the [`spellchecker`](/plugins/spell-checker.md) plugin is not currently working.
+In the past TinyMCE relied on Google's spellcheck API, which has since been deprecated. As a result the [`spellchecker`](/plugins/spell-checker.md) plugin, which enabled native spell checking within TinyMCE, no longer works.
 
 However you do have options. The first is to utilize the browser's native spellcheck functionality by assigning the [`browser_spellcheck`](/editor-configuration-settings/spelling/#browser_spellcheck) configuration option the value of `true`. You *may* need to enable the [`contextmenu`](/plugins/context-menu/) plugin.
 

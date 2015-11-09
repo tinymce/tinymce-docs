@@ -4,7 +4,11 @@ This option is very similar to [`valid_elements`]({{ site.baseurl }}/editor-conf
 
 When adding a new attribute by specifying an existing element rule (e.g. `img`), the entire rule for that element is over-ridden so be sure to include all valid attributes not just the one you wish to add. See [`valid_elements`]({{ site.baseurl }}/editor-configuration-settings/content-filtering/#valid_elements) for default rules.
 
-The below example replaces the current `img` rule (including the global element rules)
+The below example replaces the current `img` rule (including the global element rules).
+
+**Type:**
+
+**Example:**
 
 ```js
 tinymce.init({

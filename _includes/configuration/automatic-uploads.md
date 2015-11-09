@@ -4,7 +4,7 @@ Enable or disable TinyMCE from automatically uploading local images.
 
 **Type:** `Boolean`
 
-**Default Value:** `true`
+**Default Value:** `true`  // confirmation required
 
 **Possible Values:** `true`, `false`
 

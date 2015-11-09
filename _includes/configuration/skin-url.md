@@ -1,12 +1,14 @@
 ## skin_url
 
-This option enables you to specify location of the current skin. Enables you to load TinyMCE from one URL, for example a CDN, then load a local skin on the current server.
+If you are using TinyMCE skins, this option enables you to specify the location of the skin file. This is useful if you are loading TinyMCE from one URL, for example a CDN, while loading a skin on, say, a local server.
 
-Example of usage
+**Type:** `String`
+
+**Example:**
 
 ```js
 tinymce.init({
   selector: "textarea",  // change this value according to your html
-  skin_url: '/css/mytinymceskin'
+  skin_url: "/css/mytinymceskin"
 });
 ```

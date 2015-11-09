@@ -1,8 +1,14 @@
 ## keep_styles
 
-This option enables keeping the current text style when you press enter/return. This feature is enabled by default but can be disabled by setting the value to false.
+This option will keep the editor's current text style when a user presses enter/return.
 
-Example of usage of the keep_styles option
+**Type:** `Boolean`
+
+**Default Value:** `true`
+
+**Possible Values:** `true`, `false`
+
+**Example:**
 
 ```js
 tinymce.init({

@@ -2,7 +2,13 @@
 
 This option allows you to to split the current container block element if the enter key is pressed inside an empty inner block element.
 
-An example of this setting is as follows:
+**Type:** `Boolean`
+
+**Default Value:** `false`  // confirmation required
+
+**Possible Values:** `true`, `false`
+
+**Example:**
 
 ```js
 tinymce.init({

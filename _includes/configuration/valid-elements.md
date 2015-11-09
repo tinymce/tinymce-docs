@@ -29,7 +29,7 @@ If you just want to add or change some behavior for a few items, use the [extend
 
 Wildcards such as `*,+,?` may be used in element or attribute name matching.
 
-### Special variables:
+### Special variables
 
 | Name     |Summary          |
 |----------|-----------------|
@@ -39,6 +39,10 @@ Use `*[*]` to include all elements and all attributes. This can be very useful w
 
 This example string tells TinyMCE to remove all elements that are not a "a, strong, div or br" element, convert "b" elements to "strong" elements, default "`target`" to "`_blank`" and keep the "`href`", "`target`" and "`align`" attributes of the elements.
 
+**Type:** `String`
+
+**Example:**
+
 ```js
 tinyMCE.init({
   selector: "textarea",  // change this value according to your html
@@ -46,15 +50,15 @@ tinyMCE.init({
 });
 ```
 
-### Duplicate Attribute Warning
+### Duplicate attribute warning
 
-Be careful not to duplicate attributes in the definitions as this may cause tinyMCE to render duplicate attributes in the output. For example, if you have
+Be careful not to duplicate attributes in the definitions as this may cause tinyMCE to render duplicate attributes in the output. For example, if you have:
 
-```js
+> ```js
  //bad code: dir and style listed twice
  "blockquote[dir|style|cite|class|dir<ltr?rtl|id|lang|onclick|ondblclick"
   +"|onkeydown|onkeypress|onkeyup|onmousedown|onmousemove|onmouseout"
   +"|onmouseover|onmouseup|style|title]"
  ```
 
-then if you happen to have a `<blockquote>` element in your code with style= or dir= attributes, the editor will cause each of those attributes to be duplicated in the output, which will result in invalid XHTML.
+then if you happen to have a `<blockquote>` element in your code with `style=` or `dir=` attributes, the editor will cause each of those attributes to be duplicated in the output, which will result in invalid XHTML.

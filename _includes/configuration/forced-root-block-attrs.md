@@ -2,6 +2,10 @@
 
 This option enables you specify attributes for the [forced_root_block](#forced_root_block).
 
+**Type:** `Object`
+
+**Example:**
+
 ```js
 tinymce.init({
   selector: "textarea",  // change this value according to your html

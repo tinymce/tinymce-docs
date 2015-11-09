@@ -2,9 +2,13 @@
 
 This option allows you to specify the buttons and the order that they will appear on TinyMCE's toolbar.
 
-To specify the controls that should appear on TinyMCE's toolbar, the toolbar option should be provided with a space separated list of toolbar controls. To create groups within this list, please add "|" pipe characters between the groups of controls that you would like to create.
+### Grouping toolbar controls
 
-An example of such a grouped toolbar is as follows:
+To specify the controls that should appear on TinyMCE's toolbar, the `toolbar` option should be provided with a space separated list of toolbar controls. To create groups within this list, please add `|` pipe characters between the groups of controls that you would like to create.
+
+**Type:** `String`
+
+**Example:** grouped toolbar
 
 ```js
 tinymce.init({
@@ -13,9 +17,17 @@ tinymce.init({
 });
 ```
 
-To disable the toolbar, the toolbar option should be provided a boolean value of false.
+### Disabling the toolbar
 
-An example of a disabled toolbar is as follows:
+To disable the toolbar, the toolbar option should be provided a boolean value of `false`.
+
+**Type:** `Boolean`
+
+**Default Value:** `true`
+
+**Possible Values:** `true`, `false`
+
+**Example:**
 
 ```js
 tinymce.init({
@@ -24,9 +36,13 @@ tinymce.init({
 });
 ```
 
+### Using multiple toolbars
+
 To specify multiple toolbars, the toolbar option should be provided with an array of space separated strings.
 
-An example of multiple toolbars is as follows:
+**Type:** `Array`
+
+**Example:**
 
 ```js
 tinymce.init({

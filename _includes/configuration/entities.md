@@ -4,7 +4,9 @@ This option contains a comma separated list of entity names that is used instead
 
 The base entities `<` `>` `&` `'` and `"` will always be entity encoded into their named equivalents. Though `'` and `"` will only be encoded within attribute values and `<` `>` will only be encoded within text nodes. This is correct according to the HTML and XML specifications.
 
-Example of usage of the entities option:
+**Type:** `String`
+
+**Example:**
 
 ```js
 tinyMCE.init({

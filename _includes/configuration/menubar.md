@@ -4,7 +4,9 @@ This option allows you to specify which menus should appear and the order that t
 
 To specify the menus that should appear on TinyMCE's menu bar, the menubar option should be provided with a space separated list of menus.
 
-An example of this setting is as follows:
+**Type:** `String`
+
+**Example:**
 
 ```js
 tinymce.init({
@@ -13,9 +15,13 @@ tinymce.init({
 });
 ```
 
-To disable the menu bar, the menubar option should be provided a boolean value of false.
+To disable the menu bar, the menubar option should be provided a boolean value of `false`.
 
-An example of a disabled menubar is as follows:
+**Type:** `Boolean`
+
+**Default Value:** `true`
+
+**Possible Values:** `true`, `false`
 
 ```js
 tinymce.init({

@@ -2,7 +2,9 @@
 
 This option enables you add your own file picker for various dialog fields. This replaces the old [file_browser_callback]({{ site.baseurl }}/editor-configuration-settings/file-and-image-upload/#file_browser_callback). This new callback option has the ability to update meta data inside the dialogs.
 
-Example of usage of the file_picker_callback option:
+**Type:** `JavaScript Function`
+
+**Example:**
 
 ```js
 tinymce.init({

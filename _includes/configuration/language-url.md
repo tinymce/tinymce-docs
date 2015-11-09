@@ -1,13 +1,15 @@
 ##language_url
 
-A simple URL to where the language file to use.
+When using the [`language`](#language) option to set the user interface language you may choose to place any language pack(s) in a directory other than the default. If you do this you need to provide a simple URL to where the language file is located. We recommend using a site absolute URL.
 
-We recommend using a site absolute URL, for example:
+**Type:** `String`
+
+**Example:**
 
 ```js
 tinymce.init({
   selector: "textarea",  // change this value according to your html
-  language_url : '/languages/fi.js'
+  language_url : "/languages/fi.js"  // site absolute URL
 });
 ```
 

@@ -1,10 +1,8 @@
 ## language
 
-This option allows you to specify the language that TinyMCE's user interface will appear in.
+This option allows you to specify the language that TinyMCE's user interface will appear in. That is, the toolbar buttons and menu items. By default, TinyMCE will use US English as the language of the interface.
 
-By default, TinyMCE will use US English as the language of the interface.
-
-If you wish to use a language other than english, please follow these steps:
+If you wish to use a language other than English, please follow these steps:
 
 1. Download the language pack you wish to use [from here](http://www.tinymce.com/i18n/index.php).
 2. Unpack the language file into your `tinymce/js/langs` folder.
@@ -12,6 +10,10 @@ If you wish to use a language other than english, please follow these steps:
 4. Confirm that the language has been set successfully by loading TinyMCE.
 
 Please note, the language code you set in your TinyMCE configuration must match the filename of the language file. If the language file is not found, TinyMCE will not load.
+
+**Type:** `String`
+
+**Default Value:** `en_US`
 
 **Example:**
 

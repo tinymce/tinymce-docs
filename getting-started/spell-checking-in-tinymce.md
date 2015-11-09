@@ -9,7 +9,7 @@ No-one likes bad spelling and being able to help your users create error free co
 
 ## Browser-based spell checking
 
-The first option (and easiest to implement) is to utilize the browser's native spellcheck functionality by assigning the [`browser_spellcheck`](/editor-configuration-settings/spelling/#browser_spellcheck) configuration option the value of `true`. Depending on the right click / context behavior you want, you *may* need to enable the [`contextmenu`](/plugins/context-menu/) plugin.
+The first option (and easiest to implement) is to utilize the browser's native spellcheck functionality by assigning the [`browser_spellcheck`]({{ site.baseurl }}/editor-configuration-settings/spelling/#browser_spellcheck) configuration option the value of `true`. Depending on the right click / context behavior you want, you *may* need to enable the [`contextmenu`]({{ site.baseurl }}/plugins/context-menu/) plugin.
 
 ```js
 tinymce.init({
@@ -47,7 +47,7 @@ tinymce.init({
 
 ## TinyMCE Spellchecker Pro plugin
 
-For developers requiring robust, enterprise-grade, spell check as-you-type functionality, you need the [Spellchecker Pro plugin](/plugins/tinymcespellchecker/). Spell Checker Pro requires both a client-side plugin to be configured and a server-side component to be installed and configured.
+For developers requiring robust, enterprise-grade, spell check as-you-type functionality, you need the [Spellchecker Pro plugin]({{ site.baseurl }}/plugins/tinymcespellchecker/). Spell Checker Pro requires both a client-side plugin to be configured and a server-side component to be installed and configured.
 
 Full documentation can be found in the TinyMCE Enterprise [documentation for Spelling](http://docs.ephox.com/display/TinyMCEEnterprise/Spell+Checking). Learn more about [TinyMCE Enterprise here](http://www.tinymce.com/enterprise/).
 

@@ -11,6 +11,8 @@ keywords: video, Youtube, Vimeo, MP3, film
 
 The `media` plugin adds the ability for users to be able to add HTML5 video and audio elements to the editable area. It also adds the menu item `Insert/edit video` under the `Insert` menu as well as a toolbar control.
 
+**Type:** `String`
+
 **Example:**
 
 ```js
@@ -25,6 +27,32 @@ tinymce.init({
 ### Options
 
 These settings affect the execution of the `media` plugin, namely the ability to disable parts of the media dialog box when inserting/editing media items. In addition, the user may disable the cross-site scripting sanitation filter for video/object elements here.
+
+### `media_live_embeds`
+
+> New in 4.3
+
+When you enable this option users will see a live preview of embedded video content within the editable area, rather than a placeholder image. This means that users can play a video clip, such as YouTube, within the editor.
+
+This option is enabled by default and accepts urls input into the source field or embed field in the dialog box by the user.
+
+**Type:** `Boolean`
+
+**Default Value:** `true`
+
+**Possible Values:** `true`, `false`
+
+**Example:**
+
+```js
+tinymce.init({
+  selector: "textarea",  // change this value according to your html
+  plugins: "media",
+  menubar: "insert",
+  toolbar: "media",
+  media_live_embeds: true
+});
+```
 
 ### `audio_template_callback`
 
@@ -133,6 +161,7 @@ tinymce.init({
   media_filter_html: false
 });
 ```
+
 ### `media_scripts`
 
 This option allows you to embed videos using script elements.

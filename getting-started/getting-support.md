@@ -20,10 +20,6 @@ If you are a TinyMCE Enteprise customer please [review what to gather](http://do
 Users of the open source Community Edition have free access to the [TinyMCE Forum](http://www.tinymce.com/forum/). Sign up [here](http://www.tinymce.com/forum/register.php).
 
 
-## Stack Overflow
-There is a vibrant community of TinyMCE developers on [Stack Overflow](http://stackoverflow.com/search?tab=newest&q=tinymce).
-
-
 ## FAQ & Troubleshooting
 
 ### Q: The icons are missing when installed on my server?

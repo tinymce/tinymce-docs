@@ -1,7 +1,7 @@
 ---
 layout: default
 title: First Steps with TinyMCE
-description: This Quick Start Tutorial will teach you everything you need to know about getting started with TinyMCE.
+description: This Quick Start Tutorial will teach you everything you need to know about TinyMCE.
 ---
 
 From getting a local editor instance up and running in less than 5 minutes (via our content delivery network) to advanced installation options, working with plugins and learning about content filtering and spell checking, this is the place to start for developers new to TinyMCE.

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Getting Started
-description: Lorem ipsum dolor sit amet, consectetur adipisicing elit laborum.
+description: If you are new to TinyMCE, this is the place to start.
 type: folder
 ---
 

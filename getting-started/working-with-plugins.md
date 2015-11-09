@@ -4,7 +4,7 @@ title: Working With Plugins
 description: TinyMCE is an incredibly powerful, flexible and customizable rich text editor. In this section we will show you the power of plugins.
 ---
 
-The real power of TinyMCE's functionality is in its plugins. [Plugins](/plugins/) typically extend the default editor functionality or add new functionality. For example, the Advanced List (`advlist`) plugin adds extra options to the toolbar's existing list controls, while the Code (`code`) plugin adds an entirely new control.
+The real power of TinyMCE's functionality is in its plugins. [Plugins]({{ site.baseurl }}/plugins/) typically extend the default editor functionality or add new functionality. For example, the Advanced List (`advlist`) plugin adds extra options to the toolbar's existing list controls, while the Code (`code`) plugin adds an entirely new control.
 
 Because most people install TinyMCE via the CDN or by downloading a package, they mistakenly think plugins are part of the TinyMCE "core". They're not. In fact, if you use the [custom package](http://www.tinymce.com/download/custom_package.php) download option you're able to exclude all of the free plugins built by the TinyMCE team.
 
@@ -126,7 +126,7 @@ The `advlist` plugin has two options which provide more granular control of list
 
 Many plugin options have more than one possible value. The `advlist_bullet_styles` option has possible values of `circle`, `disc` and `square` and `advlist_number_styles` has possible values of `lower-alpha`, `lower-greek`, `lower-roman`, `upper-alpha` and `upper-roman`.
 
-Don't worry if you can't remember all these values. You don't need to. The [plugins section](/plugins/) goes into great detail explaining all the plugins, their options and toolbar and menu controls.
+Don't worry if you can't remember all these values. You don't need to. The [plugins section]({{ site.baseurl }}/plugins/) goes into great detail explaining all the plugins, their options and toolbar and menu controls.
 
 Let's add the Advanced List options and give them some of the available options (but not all).
 
@@ -143,7 +143,7 @@ tinymce.init({
 
 So, in the above example we learned how to remove the menubar, add specific list controls to the toolbar while removing others, activate a plugin and customize the plugin's behavior by controlling which options we wanted activated. In 5 lines of code.
 
-As we noted at the start, TinyMCE is an incredibly powerful, flexible and customizable rich text editor. Once you've finished the Getting Started guide, deep dive into the [plugins](/plugins/) and [advanced configuration settings](/editor-configuration-settings/) and become a TinyMCE developer ninja.
+As we noted at the start, TinyMCE is an incredibly powerful, flexible and customizable rich text editor. Once you've finished the Getting Started guide, deep dive into the [plugins]({{ site.baseurl }}/plugins/) and [advanced configuration settings]({{ site.baseurl }}/editor-configuration-settings/) and become a TinyMCE developer ninja.
 
 
 

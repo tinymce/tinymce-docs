@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Link plugin
+title: Link Plugin
 description: Add hyperlinks to content.
 keywords: URL, URLs
 ---

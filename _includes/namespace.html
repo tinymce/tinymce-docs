@@ -1,0 +1,47 @@
+{% if include.data.borrows.size %}
+## Extends
+{% for item in include.data.borrows %}
+[{{ item }}]({{ site.baseurl }}/api/class/{{ item | api_url }})
+{% endfor %}
+{% endif %}
+
+{% if include.data.properties.size > 0 %}
+## Properties
+link | summary
+--- | ---
+{% for item in include.data.properties %}[{{ item.name }}]({{ site.baseurl }}/api/{{ item.dataTypes[0] | api_url }}) | {{ item.summary | no_nl }}
+{% endfor %}
+{% endif %}
+
+{% if include.data.methods.size > 0 %}
+## Methods
+{% for item in include.data.methods %}
+
+### {{ item.name }}
+{{ item.summary | no_nl }}
+
+#### Signature
+`{{ item.signature }}`
+
+{% if item.params.size > 0 %}
+#### Parameters
+
+Name | Type | Description
+--- | --- | ---
+{% for param in item.params %}{{ param.name }} | {{ param.types }} | {{ param.desc | no_nl }}
+{% endfor %}
+{% endif %}
+
+#### Return type
+{% for type in item.return.types %}[{{ type }}]({{ site.baseurl}}/api/class/{{ type | api_url }}), {% endfor %}: {{ item.return.desc }}
+
+{% endfor %}
+{% endif %}
+
+{% if include.data.events.size > 0 %}
+## Events
+link | summary
+--- | ---
+{% for item in include.data.events %}[{{ item.name }}]({{ site.baseurl }}/api/{{ item.dataTypes[0] | api_url }}) | {{ item.summary | no_nl }}
+{% endfor %}
+{% endif %}

@@ -37,7 +37,8 @@
 
   <div class="main {{ page.type }}">
     <aside class="side-nav">
-      {% include nav.html links=site.data.nav preceding_address="/" %}
+      {% assign nav = site.data.nav | array_concat:site.data.nav_api %}
+      {% include nav.html links=nav preceding_address="/" %}
     </aside>
 
     <div class="heading">

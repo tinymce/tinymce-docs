@@ -24,11 +24,11 @@ The following languages are supported:
 
 ## Downloading Spell Checker Pro
 
-A [TinyMCE Enterprise](http://www.tinymce.com/pricing/) subscription includes the ability to download and install a spell check as-you-type feature for the editor.
+A [TinyMCE Enterprise](http://www.tinymce.com/enterprise/) subscription includes the ability to download and install a spell check as-you-type feature for the editor.
 
 Spell Checker Pro requires both a client-side plugin to be configured and a server-side component to be installed and configured.
 
 
 ## Documentation
 
-Full documentation can be found in the TinyMCE Enteprise [documentation for Spelling](http://docs.ephox.com/display/TinyMCEEnterprise/Spell+Checking).
+Full documentation can be found in the TinyMCE Enterprise [documentation for Spelling](http://docs.ephox.com/display/TinyMCEEnterprise/Spell+Checking).

@@ -1,9 +1,13 @@
 
 ## style_formats
 
-This option enables you to add more advanced style formats for text and other elements to the editor. The value of this option will be rendered as styles in the Formats dropdown.
+This option enables you to add more advanced style formats for text and other elements to the editor. The value of this option will be rendered as styles in the `Formats` dropdown.
 
-The format of the option is very similar to the formats option the only difference is the title name that is used for presentation in the drop list.
+The format of the option is very similar to the formats option, the only difference is the title name that is used for presentation in the drop list.
+
+**Type:** `Array`
+
+**Example:**
 
 ```js
 tinymce.init({
@@ -21,6 +25,10 @@ tinymce.init({
 ```
 
 Another example, this will add two options to the Formats dropdown, one for aligning an image left and adding a margin, one for putting it on the right side and setting a margin.
+
+**Type:** `Array`
+
+**Example:**
 
 ```js
 tinymce.init({})
@@ -46,9 +54,17 @@ tinymce.init({})
 });
 ```
 
-A live demo of this option can be found in the [Custom formats](#custom_formats) example.
+A live demo of this option can be found in the [custom formats](#custom_formats) example.
 
-If you want to merge your styles to the default styles_format, you can use the style_formats_merge settings:
+If you want to merge your styles to the default `styles_format`, you can use the `style_formats_merge` settings:
+
+**Type:** `Boolean`
+
+**Default Value:** `false`
+
+**Possible Values:** `true`, `false`
+
+**Example:**
 
 ```js
 tinymce.init({
@@ -61,6 +77,10 @@ tinymce.init({
 ```
 
 The default is very similar to the following:
+
+**Type:** `Array`
+
+**Example:**
 
 ```js
 tinymce.init({

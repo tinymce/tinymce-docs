@@ -2,7 +2,13 @@
 
 This option allows you to specify whether the editor should parse and keep conditional comments.
 
-An example of this setting is as follows:
+**Type:** `Boolean`
+
+**Default Value:** `true`  // confirmation required
+
+**Possible Values:** `true`, `false`
+
+**Example:**
 
 ```js
 tinymce.init({

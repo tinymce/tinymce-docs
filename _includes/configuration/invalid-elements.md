@@ -1,8 +1,10 @@
 ## invalid_elements
 
-This option should contain a comma separated list of element names to exclude from the content.
+This options permits the editor to remove specific elements with TinyMCE executes a cleanup. This option should contain a comma separated list of element names to exclude from the content.
 
-Elements in this list will be removed when TinyMCE executes a cleanup.
+**Type:** `String`
+
+**Example:**
 
 ```js
 tinymce.init({
@@ -11,6 +13,6 @@ tinymce.init({
 });
 ```
 
-Caution: This option doesn't accept attributes in the list, only elements
+> Caution: This option doesn't accept attributes in the list, only elements
 
 Also see [valid_elements](#valid_elements) and [extended_valid_elements](#extended_valid_elements) for more configuration options.

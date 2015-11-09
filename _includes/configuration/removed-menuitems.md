@@ -1,12 +1,14 @@
 ## removed_menuitems
 
-This option allows you to remove items from TinyMCE's drop down menus.
+This option allows you to remove items from TinyMCE's drop down menus. This is useful if you are using the [menubar](#menubar) option to set your menus rather than the more specific [menu](#menu) option.
 
-An example of this setting is as follows:
+**Type:** `String`
+
+**Example:**
 
 ```js
 tinymce.init({
   selector: "textarea",  // change this value according to your html
-  removed_menuitems: "undo,redo"
+  removed_menuitems: "undo, redo"
 });
 ```

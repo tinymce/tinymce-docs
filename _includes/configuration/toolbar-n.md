@@ -1,10 +1,10 @@
 ## toolbar&lt;N&gt;
 
-This option allows you to specify the buttons and the order that they will appear on multiple of TinyMCE's toolbars.
+This option allows you to specify the buttons and the order that they will appear on instances of multiple toolbars.
 
-Please see the [toolbar](#toolbar) configuration option for details.
+**Type:** `String`
 
-An example of this setting is as follows:
+**Example:**
 
 ```js
 tinymce.init({
@@ -13,3 +13,5 @@ tinymce.init({
   toolbar2: "alignleft aligncenter alignright"
 });
 ```
+
+Please see the [toolbar](#toolbar) configuration option for details.

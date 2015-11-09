@@ -1,11 +1,13 @@
 
 ## content_css
 
-This option enables you to specify a custom CSS file that extends the theme content CSS. This CSS file is the one used within the editor (the editable area). This option can also be a comma separated list of URLs.
+This option enables you to specify a custom CSS file that extends the theme content CSS. This CSS file is the one used within the editor's editable area. This option can also be a comma separated list of URLs.
 
-If you specify a relative path, it is resolved in relation to the URL of the (HTML) file that includes TinyMCE, NOT relative to TinyMCE itself.
+If you specify a relative path, it is resolved in relation to the URL of the (HTML) file that includes TinyMCE, **not** relative to TinyMCE itself.
 
-Absolute path:
+**Type:** `String`
+
+**Absolute path example:**
 
 ```js
 // File: http://domain.mine/mysite/index.html
@@ -16,7 +18,7 @@ tinyMCE.init({
 });
 ```
 
-Relative path:
+**Relative path example:**
 
 ```js
 // File: http://domain.mine/mysite/index.html
@@ -27,7 +29,7 @@ tinyMCE.init({
 });
 ```
 
-Using multiple stylesheets:
+**Using multiple stylesheets example:**
 
 ```js
 tinyMCE.init({
@@ -36,20 +38,20 @@ tinyMCE.init({
 });
 ```
 
-Using multiple stylesheets as array:
+**Using multiple stylesheets as array example:**
 
 ```js
 tinyMCE.init({
   selector: "textarea",  // change this value according to your html
-  content_css : ["mycontent.css","mycontent2.css"]  // includes both css files in header, ability to have CSS with , in URL
+  content_css : ["mycontent.css", "mycontent2.css"]  // includes both css files in header, ability to have CSS with `,` in URL
 });
 ```
 
-Note:
+#### A note regarding browser caching
 
 Browser caching might cause TinyMCE to not read the contents of a changed CSS file. You'll see "old" colors & styles.
 
-One solution is to manually clear the browser cache when the file for content_css or editor_css has changed. Another solution is to use an old hack which adds a bogus parameter to the URL containing a present timestamp like "myFile.css?bogus=10023561235". Possible solutions could look like this:
+One solution is to manually clear the browser cache when the file for `content_css` or `editor_css` has changed. Another solution is to use an old hack which adds a bogus parameter to the URL containing a present timestamp like "myFile.css?bogus=10023561235". Possible solutions could look like this:
 
 ```js
 tinymce.init({
@@ -65,6 +67,6 @@ tinymce.init({
 });
 ```
 
-What is this good for?
+**What is this good for?**
 
-The CSS file in this setting should be the very CSS file that controls the looks (or "layout") of all your pages! So, let's say you include a file "myLayout.css" in all your pages in order to control your site's global looks then this file must be set as your content_css option, because then the contents in the editor will also have the looks of your site.
+The CSS file in this setting should be the very CSS file that controls the looks (or "layout") of all your pages! So, let's say you include a file `"myLayout.css"` in all your pages, in order to control your site's global looks then this file must be set as your `content_css` option, because then the content in the editor's editable area will also have your site's style.

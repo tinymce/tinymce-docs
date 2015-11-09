@@ -2,7 +2,9 @@
 
 This option enables you to configure a custom class to be added to anchors with names since these are invisible by default.
 
-Example of usage of the visual_anchor_class option:
+**Type:** `String`
+
+**Example:**
 
 ```js
 tinymce.init({

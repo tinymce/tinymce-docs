@@ -4,6 +4,12 @@ This option allows specification of the indentation level for indent/outdent but
 
 This defaults to 30px but can be any value.
 
+**Type:** `String`
+
+**Default Value:** `30px`
+
+**Example:**
+
 ```js
 tinymce.init({
   selector: "textarea",  // change this value according to your html

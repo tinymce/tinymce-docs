@@ -1,18 +1,18 @@
 ## formats
 
-This option enables you to override and add custom formats. A format is the style that get applied when you press the bold button inside the editor. TinyMCE is equipped with a text formatter engine that enables you to specify exactly what it should produce when the user clicks the bold button.
+This option enables you to override and add custom "formats" to the editor.
+
+A format is the style that get applied to text when you press, for example, the bold button inside the editor. TinyMCE is equipped with a text formatter engine that enables you to specify exactly what it should produce when the user clicks the bold button (in this example).
 
 Check out the [custom formats example](http://www.tinymce.com/tryit/custom_formats.php) for a demonstration of this option.
 
 ### Style merging
 
-Similar elements and styles will be merged by default to reduce the output HTML size. So for example if you select a word and select a font size and font face for it. It will merge these to styles into one span element instead of one span for each format type.
+Similar elements and styles will be merged by default to reduce the output HTML size. So for example, if you select a word and select a font size and font face for it, it will merge these two styles into one `span` element instead of one `span` for **each format type**.
 
 ### Built in formats
 
-TinyMCE has some built in formats that you can override.
-
-These are:
+TinyMCE has some built in formats that you can override. These are:
 
 * alignleft
 * aligncenter
@@ -38,7 +38,7 @@ These are:
 * dt, dd
 * samp
 
-Some built in formats fontsize, fontname, forecolor, hilitecolor uses a variable in their definition named %value. This one gets replaced with the user selected item such as a color value. Check the variable substitution section below for details.
+Some built in formats `fontsize`, `fontname`, `forecolor`, `hilitecolor` uses a variable in their definition named `%value`. This one gets replaced with the user selected item such as a color value. Check the variable substitution section below for details.
 
 ### Format parameters
 
@@ -57,24 +57,28 @@ Each format has a set of parameters that you can specify.
 
 ### Example of usage of the formats option
 
-This example overrides some of the built in formats and tells TinyMCE to apply classes instead of inline styles. It also includes a custom format that produced h1 elements with a title attribute and a red css style.
+This example overrides some of the built in formats and tells TinyMCE to apply classes instead of inline styles. It also includes a custom format that produced `h1` elements with a title attribute and a `red` css style.
+
+**Type:** `Object`
+
+**Example:**
 
 ```js
 // Output elements in HTML style
 tinymce.init({
   selector: "textarea",  // change this value according to your html
-  formats : {
-    alignleft : {selector : 'p,h1,h2,h3,h4,h5,h6,td,th,div,ul,ol,li,table,img', classes : 'left'},
-    aligncenter : {selector : 'p,h1,h2,h3,h4,h5,h6,td,th,div,ul,ol,li,table,img', classes : 'center'},
-    alignright : {selector : 'p,h1,h2,h3,h4,h5,h6,td,th,div,ul,ol,li,table,img', classes : 'right'},
-    alignfull : {selector : 'p,h1,h2,h3,h4,h5,h6,td,th,div,ul,ol,li,table,img', classes : 'full'},
-    bold : {inline : 'span', 'classes' : 'bold'},
-    italic : {inline : 'span', 'classes' : 'italic'},
-    underline : {inline : 'span', 'classes' : 'underline', exact : true},
-    strikethrough : {inline : 'del'},
-    forecolor : {inline : 'span', classes : 'forecolor', styles : {color : '%value'}},
-    hilitecolor : {inline : 'span', classes : 'hilitecolor', styles : {backgroundColor : '%value'}},
-    custom_format : {block : 'h1', attributes : {title : "Header"}, styles : {color : red}}
+  formats: {
+    alignleft: {selector : 'p,h1,h2,h3,h4,h5,h6,td,th,div,ul,ol,li,table,img', classes : 'left'},
+    aligncenter: {selector : 'p,h1,h2,h3,h4,h5,h6,td,th,div,ul,ol,li,table,img', classes : 'center'},
+    alignright: {selector : 'p,h1,h2,h3,h4,h5,h6,td,th,div,ul,ol,li,table,img', classes : 'right'},
+    alignfull: {selector : 'p,h1,h2,h3,h4,h5,h6,td,th,div,ul,ol,li,table,img', classes : 'full'},
+    bold: {inline : 'span', 'classes' : 'bold'},
+    italic: {inline : 'span', 'classes' : 'italic'},
+    underline: {inline : 'span', 'classes' : 'underline', exact : true},
+    strikethrough: {inline : 'del'},
+    forecolor: {inline : 'span', classes : 'forecolor', styles : {color : '%value'}},
+    hilitecolor: {inline : 'span', classes : 'hilitecolor', styles : {backgroundColor : '%value'}},
+    custom_format: {block : 'h1', attributes : {title : "Header"}, styles : {color : red}}
   }
 });
 ```
@@ -103,17 +107,21 @@ tinymce.activeEditor.formatter.register('custom_format', {inline : 'span', style
 tinymce.activeEditor.formatter.apply('custom_format', {value : 'red'});
 ```
 
-### Remove format
+### Removing a format
 
-The remove format behavior can be modified by setting the `removeformat` see the example below:
+It is possible to remove formats via the `removeformat` option.
+
+**Type:** `Array`
+
+**Example:**
 
 ```js
 tinymce.init({
   selector: "textarea",  // change this value according to your html
-  removeformat : [
-    {selector : 'b,strong,em,i,font,u,strike', remove : 'all', split : true, expand : false, block_expand : true, deep : true},
-    {selector : 'span', attributes : ['style', 'class'], remove : 'empty', split : true, expand : false, deep : true},
-    {selector : '*', attributes : ['style', 'class'], split : false, expand : false, deep : true}
+  removeformat: [
+    {selector: 'b,strong,em,i,font,u,strike', remove : 'all', split : true, expand : false, block_expand: true, deep : true},
+    {selector: 'span', attributes : ['style', 'class'], remove : 'empty', split : true, expand : false, deep : true},
+    {selector: '*', attributes : ['style', 'class'], split : false, expand : false, deep : true}
   ]
 });
 ```

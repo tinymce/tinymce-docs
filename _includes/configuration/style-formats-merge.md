@@ -1,8 +1,10 @@
 ## style_formats_merge
 
-This option allows you to set whether TinyMCE should append the styles in the style_formats setting to the default style formats or completely replace them.
+This option allows you to set whether TinyMCE should append the styles in the [`style_formats`](#style_formats) setting to the default style formats or completely replace them.
 
-An example of this setting is as follows:
+**Type:** `Array`
+
+**Example:**
 
 ```js
 tinymce.init({

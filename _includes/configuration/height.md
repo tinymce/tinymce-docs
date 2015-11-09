@@ -1,8 +1,12 @@
 ## height
 
-Set the height of the editor in pixels.
+Set the height of the editable area in pixels.
 
 Note that this sets the height of the editable area only. It does not include the space required for the menubar, toolbars or status bar.
+
+**Type:** `Number`
+
+**Example:**
 
 ```js
 tinymce.init({

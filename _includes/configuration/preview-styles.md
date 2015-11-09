@@ -1,8 +1,14 @@
 ## preview_styles
 
-The enables you to turn of the preview of styles in format/style listboxes. It's turned on by default.
+This option enables you to turn off the preview of styles in format/style listboxes.
 
-Example of usage
+**Type:** `Boolean`
+
+**Default Value:** `true`
+
+**Possible Values:** `true`, `false`
+
+**Example:**
 
 ```js
 tinyMCE.init({

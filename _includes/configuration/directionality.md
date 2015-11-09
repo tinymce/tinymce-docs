@@ -1,6 +1,6 @@
 ## directionality
 
-This option allows you to set the base direction of directionally neutral text (i.e., text that doesn't have inherent directionality as defined in Unicode) within the editor. This is similar to the use of the "dir" attribute when using content editable elements by themselves.
+This option allows you to set the base direction of directionally neutral text (i.e., text that doesn't have inherent directionality as defined in Unicode) within the editor. This is similar to the use of the `"dir"` attribute when using content editable elements by themselves.
 
 **Type:** `String`
 
@@ -10,11 +10,9 @@ This option allows you to set the base direction of directionally neutral text (
 
 **Example:**
 
-In this example we will set the editor language to `Chinese (China)` and the text direction to right-to-left.
-
 ```js
 tinymce.init({
   selector: "textarea",  // change this value according to your html
-  directionality : 'ltr'
+  directionality : "ltr"
 });
 ```

@@ -4,7 +4,13 @@ This option gives you the ability to disable the auto generation of hidden input
 
 This can be disabled if you don't need these controls.
 
-Example
+**Type:** `Boolean`
+
+**Default Value:** `true`
+
+**Possible Values:** `true`, `false`
+
+**Example:**
 
 ```js
 tinymce.init({

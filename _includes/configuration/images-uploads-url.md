@@ -1,8 +1,10 @@
 ## images_upload_url
 
-This option lets you specify a URL to where you want images to be uploaded when you call `editor.uploadImages`.
+This option lets you specify a URL where you want images to be uploaded when you call `editor.uploadImages`.
 
-Example of usage of the images_upload_url option:
+**Type:** `String`
+
+**Example:**
 
 ```js
 tinymce.init({

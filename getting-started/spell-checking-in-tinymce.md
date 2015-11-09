@@ -2,11 +2,14 @@
 layout: default
 title: Spell Checking in TinyMCE
 description: Bring spell checking to your users.
+keywords: spellchecker, spelling, browser_spellcheck, gecko_spellcheck
 ---
 
-In the past TinyMCE relied on Google's spellcheck API, which has since been deprecated. As a result the [`spellchecker`](/plugins/spell-checker.md) plugin, which enabled native spell checking within TinyMCE, no longer works.
+No-one likes bad spelling and being able to help your users create error free content is important to the entire TinyMCE team. Which is why we have several options to help you bring spell checking capabilities to your users.
 
-However you do have options. The first is to utilize the browser's native spellcheck functionality by assigning the [`browser_spellcheck`](/editor-configuration-settings/spelling/#browser_spellcheck) configuration option the value of `true`. You *may* need to enable the [`contextmenu`](/plugins/context-menu/) plugin.
+## Browser-based spell checking
+
+The first option (and easiest to implement) is to utilize the browser's native spellcheck functionality by assigning the [`browser_spellcheck`](/editor-configuration-settings/spelling/#browser_spellcheck) configuration option the value of `true`. Depending on the right click / context behavior you want, you *may* need to enable the [`contextmenu`](/plugins/context-menu/) plugin.
 
 ```js
 tinymce.init({
@@ -16,13 +19,39 @@ tinymce.init({
 });
 ```
 
-### Other options
+## PHP Spellchecker component
 
-For developers who don't mind writing their own plugins, the TinyMCE team recommend the Open Source project [After the Deadline](http://afterthedeadline.com/).
+You can also use TinyMCE's PHP Spellchecker component, which you can [download here](http://www.tinymce.com/download). Being a server-side script this requires a little more work than the browser-based option.
 
-The [nanospell spellchecker](http://tinymcespellcheck.com/) plugin is a better alternative for developers who'd rather buy a plugin. Note that TinyMCE doesn't endorse this project.
+This plugin enables you to use Enchant or PSpell on the backend of your server to spellcheck contents within the TinyMCE editor.
 
-For developers requiring a robust, enterprise grade spellchecker, consider [TinyMCE Enterprise](http://www.tinymce.com/enterprise), which contains pro grade spell checking. Check out the [documentation](http://docs.ephox.com/display/TinyMCEEnterprise/Spell+Checking) if you'd like to learn more about the [client-side plugin](http://docs.ephox.com/display/TinyMCEEnterprise/Spellchecking+Client-Side+TinyMCE+Plugin) and [server-side component](http://docs.ephox.com/display/TinyMCEEnterprise/Spellchecking+Server-Side+Components).
+**Installation steps for the default Enchant engine:**
+
+1. Make sure you enable Enchant in your PHP.
+2. Download the TinyMCE Spellchecker for PHP package [(direct download)](http://download.moxiecode.com/spellcheckers/tinymce_spellchecker_php_4.0.zip).
+3. Unpack the package in the your/path/to/tinymce/plugins/spellchecker directory.
+4. Configure TinyMCE to use the spellchecker by enabling the `spellchecker` plugin.
+5. Configure the `spellchecker_rpc_url` to `"spellchecker.php"`.
+6. Download word lists and place them in the dicts directory for example "sv_SE.dic, sv_SE.aff".
+
+**Example:**
+
+```js
+tinymce.init({
+  selector: "textarea",  // change this value according to your html
+  plugins: "spellchecker",
+  toolbar: "spellchecker",
+  spellchecker_rpc_url: "spellchecker.php"
+});
+```
+
+## TinyMCE Spellchecker Pro plugin
+
+For developers requiring robust, enterprise-grade, spell check as-you-type functionality, you need the [Spellchecker Pro plugin](/plugins/tinymcespellchecker/). Spell Checker Pro requires both a client-side plugin to be configured and a server-side component to be installed and configured.
+
+Full documentation can be found in the TinyMCE Enterprise [documentation for Spelling](http://docs.ephox.com/display/TinyMCEEnterprise/Spell+Checking). Learn more about [TinyMCE Enterprise here](http://www.tinymce.com/enterprise/).
+
+
 
 ## Next Steps
 

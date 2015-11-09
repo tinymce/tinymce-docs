@@ -8,7 +8,7 @@
   {% endif %}
 		{% if link.url contains '#' %}
 			{% capture address %}{{ include.preceding_address }}{{ link.url }}{% endcapture %}
-			<a class="anchor" href="{{ site.baseurl }}{{ address }}">{{ link.url | remove:'#' }}</a>
+			<a class="anchor" href="{{ site.baseurl }}{{ address }}">{{ link.url | remove:'#' | replace:'<','&lt;' }}</a>
 		{% else %}
 			{% capture address %}{{ include.preceding_address }}{{ link.url }}/{% endcapture %}
 			{% capture address_index %}{{ address }}index.html{% endcapture %}

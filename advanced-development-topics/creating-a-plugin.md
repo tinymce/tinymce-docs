@@ -1,6 +1,7 @@
 ---
 layout: default
-title: Creating a Plugin
+title: Create a Plugin for TinyMCE
+title_nav: Create a Plugin
 ---
 
 Creating plugins in TinyMCE is pretty simple this tutorial tries to outline some of the basic concepts of creating a plugin. For more details consult the API documentation and check the existing plugins we ship with the core.

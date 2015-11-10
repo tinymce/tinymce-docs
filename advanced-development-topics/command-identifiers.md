@@ -1,6 +1,7 @@
 ---
 layout: default
-title: Command Identifiers
+title: Editor Command Identifiers
+title_nav: Editor Commands
 ---
 
 Here is a list of the currently exposed editor commands. All these commands are provided by tinymce and not by the browsers internal commands. These commands can be executed using the [execCommand](http://www.tinymce.com/wiki.php/api4:method.tinymce.Editor.execCommand) function.

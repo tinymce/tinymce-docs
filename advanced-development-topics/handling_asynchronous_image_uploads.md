@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Handling Asynchronous Image Uploads
+title: Handle Asynchronous Image Uploads
 ---
 
 Please note, this image upload feature is available for TinyMCE version 4.2 and above. Alternatively, the Ephox Power Paste plugin is capable of this functionality in versions of TinyMCE 4.0 and above.  

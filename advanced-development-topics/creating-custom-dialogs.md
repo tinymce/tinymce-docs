@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Creating Custom Dialogs
+title: Create Custom Dialogs
 ---
 
 ## Dialogs as HTML pages

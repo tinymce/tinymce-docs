@@ -13,18 +13,18 @@
   {% assign_page page_data = page_path %}
 
   {% if page_data.type != 'index' and page_data.type != 'folder' %}
-    "{{ page_data.title | downcase | replace_regex:'[^a-zA-Z0-9]','-' }}": "{{ url }}",
+    "{{ page_data.title | search_index }}": "{{ url }}",
 
     {% if page_data.description %}
-      "{{ page_data.description | downcase | replace_regex:'[^a-zA-Z0-9]','-' }}": "{{ url }}",
+      "{{ page_data.description | search_index }}": "{{ url }}",
     {% endif %}
 
     {% if link.url contains '#' %}
-      "{{ link.url | remove:'#' | downcase | replace_regex:'[^a-zA-Z0-9]','-' }}": "{{ url }}{{ link.url }}",
+      "{{ link.url | search_index }}": "{{ url }}{{ link.url }}",
     {% endif %}
 
     {% if page_data.keywords %}
-      "{{ page_data.keywords }}": "{{ url }}",
+      "{{ page_data.keywords | search_index }}": "{{ url }}",
     {% endif %}
   {% endif %}
 

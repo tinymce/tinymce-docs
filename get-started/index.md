@@ -2,7 +2,7 @@
 layout: default
 title: Get Started
 description: If you are new to TinyMCE, this is the place to start.
-type: folder
+type: index
 ---
 
 {% assign links = site.data.nav[0].pages %}

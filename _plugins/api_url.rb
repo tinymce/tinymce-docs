@@ -1,7 +1,7 @@
 module Jekyll
   module APIURLFilter
     def api_url(input)
-      input.gsub(/\./, "/").downcase if !input.nil?
+      input.downcase if !input.nil?
     end
   end
 end

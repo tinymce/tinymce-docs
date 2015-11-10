@@ -1,6 +1,6 @@
 ---
 layout: default
-title: System Requirements
+title: 11. System Requirements
 description: Official TinyMCE browser support.
 ---
 

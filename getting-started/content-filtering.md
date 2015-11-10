@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Content Filtering
+title: 9. Content Filtering
 description: // coming soon
 ---
 

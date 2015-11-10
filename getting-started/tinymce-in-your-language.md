@@ -1,6 +1,6 @@
 ---
 layout: default
-title: TinyMCE In Your Language
+title: 10. Localization
 description: Localize TinyMCE with global language capabilities.
 ---
 

@@ -2,6 +2,7 @@
 layout: default
 title: Integrations Directory
 description: Faster development with integrations of TinyMCE into your favorite framework or CMS.
+type: folder
 ---
-
-> Have you created an integration for TinyMCE? We'd love to hear from you. If your integration is accepted we'll send you all sorts of awesome swag. 
+{% assign links = site.data.nav[3].pages %}
+{% include index.html links=links %}

@@ -14,9 +14,9 @@
 			{% capture address_index %}{{ address }}index.html{% endcapture %}
 			{% assign_page link_data = address_index %}
       {% if link_data.type == 'folder' %}
-        <span class="folder">{{ link_data.title }}</span>
+        <span class="folder">{{ link_data.title_nav | or:link_data.title }}</span>
       {% else %}
-			  <a href="{{ site.baseurl }}{{ address }}">{{ link_data.title }}</a>
+			  <a href="{{ site.baseurl }}{{ address }}">{{ link_data.title_nav | or:link_data.title }}</a>
       {% endif %}
 		{% endif %}
 

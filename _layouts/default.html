@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <title>TinyMCE - {{ page.title }}</title>
-  <link href="{{ site.shared_baseurl }}/css/shared.css" rel="stylesheet">
-  <link href="{{ site.shared_baseurl }}/css/docs.css" rel="stylesheet">
+  <link href="{{ site.shared_baseurl }}/css/common.min.css" rel="stylesheet">
+  <link href="{{ site.shared_baseurl }}/css/docs.min.css" rel="stylesheet">
 </head>
 <body role="document" data-shared-baseurl="{{ site.shared_baseurl }}" data-baseurl="{{ site.baseurl }}">
   {% include top-menu.html %}
@@ -52,9 +52,7 @@
   </div>
 
   {% include footer.html %}
-  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-  <script src="{{ site.shared_baseurl }}/scripts/docs.js"></script>
-  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
-  <link href="http://jmblog.github.io/color-themes-for-google-code-prettify/css/themes/{{site.syntax_highlight_theme}}.css" rel="stylesheet">
+  <script src="{{ site.shared_baseurl }}/scripts/common.min.js"></script>
+  <script src="{{ site.shared_baseurl }}/scripts/docs.min.js"></script>
 </body>
 </html>

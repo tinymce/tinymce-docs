@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Install Server
+title: Install Spelling Server
 description: Spell Checker Pro is a premium plugin and server to check spelling as-you-type.
 keywords: tinymcespellchecker
 ---
@@ -111,7 +111,7 @@ ephox{
  
 Ensure that you have the right protocol specified, and for more examples see the section below. If you experience issues, please use the Troubleshooting guide (in the Tip below) and you should be able to see if the browser sends a different origin to the one that you have specified. Both must match for the services to work.
 
-#### Troubleshooting
+##### Troubleshooting Origins
 
 Depending on your configuration and the browser you use, you may need to specify the port number as well when listing the origin. If you observe that requests are failing with services not being available, it may be because the port number is required. Refer to troubleshooting guide - section titled Investigating Using the Browser's Network Tools.
 

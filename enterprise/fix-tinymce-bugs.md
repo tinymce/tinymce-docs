@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Fix TinyMCE Bugs
+title: Get TinyMCE Bugs Fixed
 description: TinyMCE Enterprise customers get priority fixes of bugs.
 ---
 

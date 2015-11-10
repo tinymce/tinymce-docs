@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Plugin Directory
+title: Add Plugins
 description: TinyMCE is an incredibly powerful, flexible and customizable rich text editor. This section will help you configure and extend your editor instance.
 type: folder
 ---

@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Bootstrap Integration
+title_nav: Bootstrap
 ---
 
 

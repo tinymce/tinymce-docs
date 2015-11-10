@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Layer Plugin
+title_nav: Layer
 ---
 
 This plugin adds some layer controls. It only works on some browsers and will probably be removed in the future.

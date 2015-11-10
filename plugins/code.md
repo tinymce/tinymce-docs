@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Code Plugin
+title_nav: Code
 description: Edit your content's HTML source.
 keywords: WYSIWYG
 ---

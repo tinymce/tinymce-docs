@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Directionality Plugin
+title_nav: Directionality
 description: Toolbar buttons for setting the left-to-right or right-to-left direction of content.
 keywords: rtl, ltr, internationalization, internationalisation, localization, localisation, international
 ---

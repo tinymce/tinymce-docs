@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Autosave Plugin
+title_nav: Autosave
 description: Automatically save content in your local browser.
 ---
 

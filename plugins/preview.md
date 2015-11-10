@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Preview Plugin
+title_nav: Preview
 description: Shows a popup of the curent content in read-only format.
 keywords: view, preview
 ---

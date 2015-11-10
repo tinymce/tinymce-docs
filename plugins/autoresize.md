@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Autoresize Plugin
+title_nav: Autoresize
 description: Automatically resize TinyMCE to fit content.
 keywords: height, width
 ---

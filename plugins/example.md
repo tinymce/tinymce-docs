@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Example Plugin
+title_nav: Example
 description: A template for your own custom plugins.
 ---
 

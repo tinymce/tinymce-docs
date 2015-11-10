@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Table Plugin
+title_nav: Table
 description: Table editing features.
 keywords: row, cell, column
 ---

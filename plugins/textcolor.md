@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Text Color Plugin
+title_nav: Text Color
 keywords: textcolor
 ---
 

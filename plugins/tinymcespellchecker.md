@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Spell Checker Pro Plugin
+title_nav: Spell Checker Pro
 description: Check spelling as-you-type in TinyMCE.
 keywords: tinymcespellchecker
 ---

@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Visual Characters Plugin
+title_nav: Visual Characters
 description: See invisible characters like `&nbsp;`
 keywords: visualchars
 ---

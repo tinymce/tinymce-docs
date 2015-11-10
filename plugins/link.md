@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Link Plugin
+title_nav: Link
 description: Add hyperlinks to content.
 keywords: URL, URLs
 ---
@@ -113,7 +114,7 @@ tinymce.init({
 
 **Example of an array with links and sub-menu**
 
-Since [TinyMCE 4.0.27](http://www.tinymce.com/develop/changelog/?ctrl=version&act=view&pr_id=1&vr_id=867) it is now possible to have sub-menus within the link list. A TinyMCE Fiddle [example of nested sub-menus](http://fiddle.tinymce.com/wleaab) is available.
+Since TinyMCE 4.0.27 it is now possible to have sub-menus within the link list. A TinyMCE Fiddle [example of nested sub-menus](http://fiddle.tinymce.com/wleaab) is available.
 
 ```js
 tinymce.init({

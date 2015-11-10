@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Color Picker Plugin
+title_nav: Color Picker
 description: Select a color from a pallete.
 keywords: colorpicker, colour
 ---

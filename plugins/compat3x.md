@@ -1,6 +1,7 @@
 ---
 layout: default
 title: 3.x Compatibility Plugin
+title_nav: 3.x Compatibility
 description: Run old plugins on version 4.
 keywords: compat3x
 ---

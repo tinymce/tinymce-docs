@@ -1,6 +1,7 @@
 ---
 layout: default
 title: BBCode Plugin
+title_nav: BBCode
 description: Add basic BBCode input/output to TinyMCE.
 ---
 

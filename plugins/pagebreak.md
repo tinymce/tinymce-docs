@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Page Break Plugin
+title_nav: Page Break
 description: Add a page break.
 keywords: pagebreak
 ---

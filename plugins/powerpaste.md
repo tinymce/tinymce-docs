@@ -1,6 +1,7 @@
 ---
 layout: default
 title: PowerPaste Plugin
+title_nav: PowerPaste
 description: Upgrade the Microsoft Word copy-and-paste capabilities of TinyMCE.
 keywords: Excel, powerpaste
 ---

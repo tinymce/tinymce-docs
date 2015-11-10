@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Nonbreaking Space Plugin
+title_nav: Nonbreaking
 description: Insert a nonbreaking space.
 keywords: nonbreaking
 ---

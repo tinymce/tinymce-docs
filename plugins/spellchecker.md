@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Spell Checker Plugin
+title_nav: Spell Checker
 description: Enables TinyMCE's spell check functionality.
 keywords: spellchecker
 ---

@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Tab Focus Plugin 
+title_nav: Tab Focus
 description: Tab into and out of the TinyMCE control in your web form.
 keywords: tabfocus
 ---

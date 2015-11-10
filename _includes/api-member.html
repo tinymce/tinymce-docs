@@ -7,7 +7,7 @@
 
 {% if include.data.properties.size > 0 %}
 ## Properties
-link | type | summary
+name | type | summary
 --- | --- | ---
 {% for item in include.data.properties %}{{ item.name }} | {% if item.dataTypes[0] contains 'tinymce' %}[`{{ item.dataTypes[0] }}`]({{ site.baseurl }}/api/class/{{ item.dataTypes[0] | api_url }}){% else %}`{{ item.dataTypes[0] }}`{% endif %}| {{ item.summary | no_nl }}
 {% endfor %}
@@ -15,7 +15,7 @@ link | type | summary
 
 {% if include.data.methods.size > 0 %}
 ## Methods
-link | summary
+name | summary
 --- | ---
 {% for item in include.data.methods %}[{{ item.name }}()](#{{ item.name | anchor }}) | {{ item.summary | no_nl }}
 {% endfor %}
@@ -23,7 +23,7 @@ link | summary
 
 {% if include.data.events.size > 0 %}
 ## Events
-link | summary
+name | summary
 --- | ---
 {% for item in include.data.events %}[{{ item.name }}](#{{ item.name | anchor }}) | {{ item.summary | no_nl }}
 {% endfor %}
@@ -47,13 +47,11 @@ link | summary
 {% endfor %}
 {% endif %}
 
+{% if item.return.types.size > 0 %}
 ##### Return value
 
-{% if item.return.types.size > 0 %}
 {% for type in item.return.types %}* {% if type contains 'tinymce' %}[`{{ type }}`]({{ site.baseurl }}/api/class/{{ type | api_url }}){% else %}`{{ type }}`{% endif %} - {{ item.return.desc | no_nl }}
 {% endfor %}
-{% else %}
-* `undefined` - No return value
 {% endif %}
 
 {% endfor %}
@@ -69,7 +67,7 @@ link | summary
 {% if item.params.size > 0 %}
 ##### Parameters
 
-Name | Type | Description
+name | type | description
 --- | --- | ---
 {% for param in item.params %}{{ param.name }} | {% if param.types[0] contains 'tinymce' %}[`{{ param.types[0] }}`]({{ site.baseurl }}/api/class/{{ param.types[0] | api_url }}){% else %}`{{ param.types[0] }}`{% endif %} | {{ param.desc | no_nl }}
 {% endfor %}

@@ -1,7 +1,8 @@
 ---
 layout: default
-title: 12. Getting Support & FAQ
-description: Extensive community and pro-grade support options.
+title: 12. Get Support & FAQ
+description: Community and pro-grade support options.
+keywords: forum, forums, absolute url, relative url, security, xss
 ---
 
 > If you landed here having worked through the [Getting Started guide]({{ site.baseurl }}/getting-started/first-steps), congratulations, you are on you way to TinyMCE ninjahood!

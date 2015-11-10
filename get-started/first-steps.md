@@ -1,7 +1,8 @@
 ---
 layout: default
-title: 1. First Steps with TinyMCE
+title: 1. Your First Steps
 description: Get started in less than 5 minutes.
+keywords: tinymce, script, textarea
 ---
 
 From getting a local editor instance up and running in less than 5 minutes (via our content delivery network) to advanced installation options, working with plugins and learning about content filtering and spell checking, this is the place to start for developers new to TinyMCE.

@@ -2,6 +2,7 @@
 layout: default
 title: 11. System Requirements
 description: Official TinyMCE browser support.
+keywords: browser compatibility, compatibility, windows, mac, linux
 ---
 
 ## Browser Compatibility
@@ -25,6 +26,8 @@ Please use the Tracker system to submit bugs on the listed browsers only.
 
 > TinyMCE's [image upload feature]({{ site.baseurl }}/getting-started/image-uploading/) and the [imagetools]({{ site.baseurl }}/plugins/image-tools/) plugin are not compatible with IE8 and IE9.
 
-## Next Steps
+
+
+## Next steps
 
 We're almost done. Last, but certainly not least, are TinyMCE's [developer support options](../getting-support).

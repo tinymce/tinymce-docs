@@ -1,7 +1,8 @@
 ---
 layout: default
-title: 10. Localization
+title: 10. Localize Your Language
 description: Localize TinyMCE with global language capabilities.
+keywords: internationalization, localization, languages
 ---
 
 As developers we all hope our projects reach a wide audience, and for many of us they do. Which is why it is important that TinyMCE is easy to localize.
@@ -61,6 +62,6 @@ We have prepared a code snippet below that would set TinyMCE's language to Chine
 
 
 
-## Next Steps
+## Next steps
 
 By now you'll have a good idea that TinyMCE is an incredibly powerful, rich text editor. It's also compliant with a wide range of web browsers. Let's check out TinyMCE's [system requirements](../system-requirements/).

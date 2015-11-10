@@ -1,7 +1,8 @@
 ---
 layout: default
-title: 7. Image Uploading
+title: 7. Upload Images
 description: Extend TinyMCE with powerful image uploading capabilities.
+keywords: uploader, uploadImages, image handler
 ---
 
 > Please note, this image upload feature is available for TinyMCE version 4.2 and above. Alternatively, the Ephox Power Paste plugin is capable of this functionality in versions of TinyMCE 4.0 and above.  
@@ -16,7 +17,7 @@ To avoid this situation, it is recommended that the `editor.uploadImages()` func
 
 Examples of this function are below:
 
-#### Using uploadImages With jQuery
+#### Using uploadImages with jQuery
 
 ```js
 tinymce.activeEditor.uploadImages(function(success) {
@@ -26,7 +27,7 @@ tinymce.activeEditor.uploadImages(function(success) {
 });
 ```
 
-#### Using uploadImages and Then Posting a Form
+#### Using uploadImages and then posting a form
 
 ```js
 tinymce.activeEditor.uploadImages(function(success) {
@@ -34,7 +35,7 @@ tinymce.activeEditor.uploadImages(function(success) {
 });
 ```
 
-#### Image Uploader Requirements
+#### Image uploader requirements
 
 In order to upload local images to the remote server, you will need a server-side upload handler script that accepts the images on the server, stores them appropriately, and returns a JSON object containing the location that they were uploaded to.
 
@@ -46,7 +47,7 @@ This server-side upload handler must return a JSON object that contains a "locat
 { location : '/uploaded/image/path/image.png' }
 ```
 
-#### Image Uploader Options
+#### Image uploader options
 
 There are multiple configuration options that will affect the operation of this feature.  These options are detailed below.
 
@@ -70,7 +71,7 @@ tinymce.init({
 });
 ```
 
-#### Rolling Your Own Image Handler
+#### Rolling your own image handler
 
 If the default behaviour of TinyMCE's image upload logic is not right for you, you may set your own behaviour by using the images_upload_handler configuration property.
 
@@ -114,7 +115,7 @@ tinymce.init({
 });
 ```
 
-#### CORS Considerations
+#### CORS considerations
 
 You may choose for your web application to upload image data to a separate domain. If so, you will need to configure [Cross-origin resource sharing (CORS)](http://en.wikipedia.org/wiki/Cross-origin_resource_sharing) for your application to comply with JavaScript "same origin" restrictions.
 
@@ -130,7 +131,7 @@ All supported browsers will print a message to the JavaScript console if there i
 
 The [PHP Upload Handler Script]({{ site.baseurl }}/advanced-development-topics/php-upload-handler/) provided here configures CORS in the `$accepted_origins` variable. You may choose to configure CORS at the [web application layer](http://www.w3.org/wiki/CORS_Enabled#At_the_Web_Application_level...) or the [HTTP server layer](http://www.w3.org/wiki/CORS_Enabled#At_the_HTTP_Server_level...).
 
-#### Further Reading on CORS
+#### Further reading on CORS
 
 * [W3C Wiki - CORS Enabled](http://www.w3.org/wiki/CORS_Enabled)
 * [MDN - HTTP access control (CORS)](https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS)
@@ -138,6 +139,6 @@ The [PHP Upload Handler Script]({{ site.baseurl }}/advanced-development-topics/p
 
 
 
-## Next Steps
+## Next steps
 
 In the next step you'll learn about [spell checking in TinyMCE](../spell-checking-in-tinymce/).

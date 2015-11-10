@@ -1,8 +1,9 @@
 ---
 layout: default
-title: 2. Basic Configuration
-description: TinyMCE provides a wide range of configuration options that enable you to integrate it tightly with your application.
+title: 2. Basic Setup
 description_short: The 3 most important config settings, with examples.
+description: TinyMCE provides a wide range of configuration options that enable you to integrate it tightly with your application.
+keywords: selector, plugin, toolbar, configuration, configure
 ---
 
 In this introduction to TinyMCE configuration we will discuss the most important options typically used in traditional form-based layouts, along with examples of how to use TinyMCE as an inline editor (which is very useful when creating user experiences where the editing view of the page is merged with the reading view of the page.)

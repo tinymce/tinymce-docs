@@ -12,9 +12,9 @@ The option takes an array of regexps that it will match the contents against and
 tinymce.init({
   selector: "textarea",  // change this value according to your html
   protect: [
-    /\<\/?(if|endif)\>/g, // Protect <if> & </endif>
-    /\<xsl\:[^>]+\>/g, // Protect <xsl:...>
-    /<\?php.*?\?>/g // Protect php code
+    /\<\/?(if|endif)\>/g,  // Protect <if> & </endif>
+    /\<xsl\:[^>]+\>/g,  // Protect <xsl:...>
+    /<\?php.*?\?>/g  // Protect php code
   ]
 });
 ```

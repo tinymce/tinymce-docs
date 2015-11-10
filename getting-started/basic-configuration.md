@@ -72,21 +72,14 @@ The full list of plugins, their options and control associations is [available h
 
 ### Toolbar configuration
 
-TinyMCE comes with a core set of toolbar controls out of the box, things such as bold, italic and text alignment. Basically, the type of settings you would expect to find in any WYSIWYG editor. However, in most integrations it's desirable to change the toolbar configuration to suit your needs. Fortunately that's quite easy to do too.
+TinyMCE comes with a default set of toolbar controls out of the box, things such as bold, italic and text alignment. Basically, the type of settings you would expect to find in any WYSIWYG editor. However, in most integrations it's desirable to change the toolbar configuration to suit your needs. Fortunately that's quite easy to do too.
 
-But before we get to configuring the toolbar, let's have a look at the **core** menu and toolbar controls.
+But before we get to configuring the toolbar, let's have a look at the default menu items and toolbar buttons. You'll see us use some of these in the examples below.
 
-**Core Menu Controls**
+**Default Toolbar Controls**
 
-```
-newdocument undo redo visualaid cut copy paste selectall bold italic underline strikethrough subscript superscript removeformat formats
-```
+> newdocument bold italic underline strikethrough alignleft aligncenter alignright alignjustify styleselect formatselect fontselect fontsizeselect cut copy paste bullist numlist outdent indent blockquote undo redo removeformat subscript superscript
 
-**Core Toolbar Controls**
-
-```
-newdocument bold italic underline strikethrough alignleft aligncenter alignright alignjustify styleselect formatselect fontselect fontsizeselect cut copy paste bullist numlist outdent indent blockquote undo redo removeformat subscript superscript
-```
 
 The toolbar configuration option allows you to choose which items appear on the toolbar, as well as the order and grouping of those toolbar items.
 
@@ -130,9 +123,13 @@ Alternatively, you may specify multiple toolbars through the use of the [`toolba
 
 #### A quick look at menu and menubar controls
 
-Just as there is a `toolbar` option, there is also a `menu` option. In fact, there are two menu related options: `menu` and `menubar`.
+Just as there is a `toolbar` option, there is also a `menu` option. In fact, there are two menu related options: `menu` and `menubar`. Let's take a quick look at the default menu items, which you'll see us use in the examples below.
 
-The difference between the two options is that `menubar` affects the menu "bar" itself where `menu` affects individual menu items. `menu` will give you much more granular control (e.g. you can create your own titles for menu items). This is easier to understand with an example.
+**Default Menu Controls**
+
+> newdocument undo redo visualaid cut copy paste selectall bold italic underline strikethrough subscript superscript removeformat formats
+
+The difference between the two options is that `menubar` affects the items placed on the menu "bar" itself where `menu` affects individual items appearing on a menu's dropdown. Additionally, `menu` will give you much more granular control (e.g. you can create your own titles for menu items). This is easier to understand with an example.
 
 In the snippet below our menubar will include only the menu items `File`, `Edit` and `View`. However, this will also load the default items included in each respective menu. For example, `Edit` will load Undo, Redo, Cut, Copy, Paste, Select all.
 

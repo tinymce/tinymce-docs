@@ -1,7 +1,8 @@
 ---
 layout: default
 title: 3. Use TinyMCE Inline
-description: Forms-based editing v inline editing.
+description_short: Learn about forms-based editing v. inline editing.
+description: Understand the difference between traditional forms-based editing and advanced inline editing.
 keywords: form, inline, edit, stylesheet,
 ---
 

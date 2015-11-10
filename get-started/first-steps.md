@@ -1,7 +1,8 @@
 ---
 layout: default
 title: 1. Your First Steps
-description: Get started in less than 5 minutes.
+description_short: Setup TinyMCE in less than 5 minutes (on your desktop).
+description: Get a local instance of TinyMCE up and running in less than 5 minutes.
 keywords: tinymce, script, textarea
 ---
 
@@ -68,4 +69,4 @@ When the `<form>` is submitted the TinyMCE editor mimics the behavior of a norma
 
 ## Next steps
 
-For first-time TinyMCE developers the next step is to learn about [Basic Configuration](../basic-configuration/), where we introduce selector, toolbar and plugin configuration options. We also provide a line-by-line breakdown of a basic configuration example.
+For first-time TinyMCE developers the next step is to learn about [Basic Setup](../basic-setup/), where we introduce selector, toolbar and plugin configuration options. We also provide a line-by-line breakdown of a basic configuration example.

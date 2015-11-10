@@ -1,7 +1,7 @@
 ---
 layout: default
 title: 2. Basic Setup
-description_short: The 3 most important config settings, with examples.
+description_short: The 3 most important configuration settings, with examples.
 description: TinyMCE provides a wide range of configuration options that enable you to integrate it tightly with your application.
 keywords: selector, plugin, toolbar, configuration, configure
 ---
@@ -10,12 +10,29 @@ In this introduction to TinyMCE configuration we will discuss the most important
 
 Once you've added the TinyMCE script to your page there are three configuration aspects you need to consider:
 
-1. Selector configuration
-2. Plugin configuration
-3. Toolbar configuration
+1. [Selector configuration](#selectorconfiguration)
+2. [Plugin configuration](#pluginconfiguration)
+3. [Toolbar configuration](#toolbarconfiguration)
+
+## A note about code snippet examples
+
+Through the reference documentation, including this Get Started guide, we use snippets of code to show you example implementation of the topic being discussed. We'd like to take a moment to explain how we've done this to help you use the examples.
+
+Snippets will (almost always) look like this example:
+
+```js
+tinymce.init({
+  selector: "textarea"  // change this value according to your html
+  plugin: "a_tinymce_plugin",
+  a_plugin_option: true,
+  a_configuration_option: 400
+});
+```
 
 
-### Selector configuration
+
+
+## Selector configuration
 
 This is the most important configuration option for your TinyMCE integration. Selector configuration allows you to use CSS `selector` syntax to determine which elements on the page should be editable through TinyMCE.
 
@@ -53,7 +70,7 @@ tinymce.init({
 > For more information on the differences between regular and inline editing modes see the [Using TinyMCE Inline](../using-tinymce-inline/) page. (It's the next step in this guide, so hang in there and we'll get to that in a moment.)
 
 
-### Plugins configuration
+## Plugin configuration
 
 The `plugins` configuration option allows you to enable functionality within the editor. By default, **no** plugins are loaded.
 
@@ -63,7 +80,7 @@ Fortunately this is easy. Add `plugins` to `tinymce.init()` and provide a comma 
 
 ```js
 tinymce.init({
-  selector: "textarea",
+  selector: "textarea",  // change this value according to your html
   plugins : "advlist autolink link image lists charmap print preview"
 });
 ```
@@ -71,7 +88,7 @@ tinymce.init({
 The full list of plugins, their options and control associations is [available here]({{ site.baseurl }}/plugins/).
 
 
-### Toolbar configuration
+## Toolbar configuration
 
 TinyMCE comes with a default set of toolbar controls out of the box, things such as bold, italic and text alignment. Basically, the type of settings you would expect to find in any WYSIWYG editor. However, in most integrations it's desirable to change the toolbar configuration to suit your needs. Fortunately that's quite easy to do too.
 
@@ -88,11 +105,11 @@ Additionally, multiple toolbars can be used by specifying multiple toolbar optio
 
 To specify the controls that should appear on TinyMCE's toolbar, the toolbar option should be provided with a space separated list of toolbar controls. To create groups within this list, add `"|"` pipe characters between the groups of controls that you would like to create.
 
-An example of such a grouped toolbar is as follows:
+**Example:**
 
 ```js
 tinymce.init({
-  selector: "textarea",
+  selector: "textarea",  // change this value according to your html
   toolbar: "undo redo | styleselect | bold italic | link image"
 });
 ```
@@ -101,18 +118,18 @@ To disable the toolbar entirely, the toolbar option should be provided a boolean
 
 ```js
 tinymce.init({
-  selector: "textarea",
+  selector: "textarea",  // change this value according to your html
   toolbar: false
 });
 ```
 
 To specify multiple toolbars, the toolbar option should be provided with an array of space separated strings.
 
-Here is an example creating multiple toolbars:
+**Example:**
 
 ```js
 tinymce.init({
-  selector: "textarea",
+  selector: "textarea",  // change this value according to your html
   toolbar: [
     "undo redo | styleselect | bold italic | link image",
     "alignleft aligncenter alignright"

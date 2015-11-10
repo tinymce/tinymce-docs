@@ -1,7 +1,8 @@
 ---
 layout: default
-title: 4. Advanced Install Options
-description: CDN, package managers, SDK, jQuery and custom builds.
+title: 4. Advanced Install
+description_short: CDN, package managers, SDK, jQuery and custom builds.
+description: Learn how to install TinyMCE via our CDN, package manager options, SDK, jQuery and custom build options.
 keywords: npm, bower, composer, nuget
 ---
 

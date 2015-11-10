@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Contributing
+title: Contributing to TinyMCE
 description: Contributing to the open source project.
 keywords: opensource, OSS
 ---

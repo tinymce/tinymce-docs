@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Get Professional Support
+title: Access Professional Support
 description: Find how to contact Ephox support.
 ---
 

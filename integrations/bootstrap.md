@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Using TinyMCE in Bootstrap
+title: Bootstrap Integration
 ---
 
 

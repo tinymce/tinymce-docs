@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Spell Checking in TinyMCE
+title: 8. Spell Checking
 description: Bring spell checking to your users.
 keywords: spellchecker, spelling, browser_spellcheck, gecko_spellcheck
 ---

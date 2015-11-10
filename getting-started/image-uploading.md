@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Image Uploading
+title: 7. Image Uploading
 description: Extend TinyMCE with powerful image uploading capabilities.
 ---
 

@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Advanced Installation Options
-description: Learn how to install TinyMCE via CDN, package managers, SDK, jQuery and custom builds.
+title: 4. Advanced Install Options
+description: CDN, package managers, SDK, jQuery and custom builds.
 ---
 
 So far we've been using the CDN version of TinyMCE and while it's the easiest way to instantiate the editor it may not always be the best way. In this section we will explain some of TinyMCE's other installation options, including package managers, downloading the SDK and the custom build option.

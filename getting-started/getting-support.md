@@ -1,9 +1,8 @@
 ---
 layout: default
-title: Getting Support & FAQ
+title: 12. Getting Support & FAQ
 description: Extensive community and pro-grade support options.
 ---
-
 
 > If you landed here having worked through the [Getting Started guide]({{ site.baseurl }}/getting-started/first-steps), congratulations, you are on you way to TinyMCE ninjahood!
 
@@ -11,9 +10,9 @@ description: Extensive community and pro-grade support options.
 
 
 ## Premium Support
-If your support requirements included guaranteed responses, in-time bug fixes (and so on) premium support is available as part of [TinyMCE Enterprise](http://www.tinymce.com/enterprise/).
+If your support requirements included guaranteed responses, in-time bug fixes (and so on), **paid** premium support is available as part of [TinyMCE Enterprise](http://www.tinymce.com/enterprise/).
 
-If you are a TinyMCE Enteprise customer please [review what to gather](http://docs.ephox.com/pages/viewpage.action?pageId=19760628) to submit a case.
+If you are a TinyMCE Enterprise customer in good standing please [review what information you need to gather](http://docs.ephox.com/pages/viewpage.action?pageId=19760628) to submit a case.
 
 
 ## Forums

@@ -1,8 +1,8 @@
 ---
 layout: default
-title: Basic Configuration
+title: 2. Basic Configuration
 description: TinyMCE provides a wide range of configuration options that enable you to integrate it tightly with your application.
-description_short: Test short desc.
+description_short: The 3 most important config settings, with examples.
 ---
 
 In this introduction to TinyMCE configuration we will discuss the most important options typically used in traditional form-based layouts, along with examples of how to use TinyMCE as an inline editor (which is very useful when creating user experiences where the editing view of the page is merged with the reading view of the page.)
@@ -72,21 +72,14 @@ The full list of plugins, their options and control associations is [available h
 
 ### Toolbar configuration
 
-TinyMCE comes with a core set of toolbar controls out of the box, things such as bold, italic and text alignment. Basically, the type of settings you would expect to find in any WYSIWYG editor. However, in most integrations it's desirable to change the toolbar configuration to suit your needs. Fortunately that's quite easy to do too.
+TinyMCE comes with a default set of toolbar controls out of the box, things such as bold, italic and text alignment. Basically, the type of settings you would expect to find in any WYSIWYG editor. However, in most integrations it's desirable to change the toolbar configuration to suit your needs. Fortunately that's quite easy to do too.
 
-But before we get to configuring the toolbar, let's have a look at the **core** menu and toolbar controls.
+But before we get to configuring the toolbar, let's have a look at the default menu items and toolbar buttons. You'll see us use some of these in the examples below and you can probably work out what they do from their names.
 
-**Core Menu Controls**
+**Default Toolbar Controls**
 
-```
-newdocument undo redo visualaid cut copy paste selectall bold italic underline strikethrough subscript superscript removeformat formats
-```
+> newdocument bold italic underline strikethrough alignleft aligncenter alignright alignjustify styleselect formatselect fontselect fontsizeselect cut copy paste bullist numlist outdent indent blockquote undo redo removeformat subscript superscript
 
-**Core Toolbar Controls**
-
-```
-newdocument bold italic underline strikethrough alignleft aligncenter alignright alignjustify styleselect formatselect fontselect fontsizeselect cut copy paste bullist numlist outdent indent blockquote undo redo removeformat subscript superscript
-```
 
 The toolbar configuration option allows you to choose which items appear on the toolbar, as well as the order and grouping of those toolbar items.
 
@@ -130,9 +123,13 @@ Alternatively, you may specify multiple toolbars through the use of the [`toolba
 
 #### A quick look at menu and menubar controls
 
-Just as there is a `toolbar` option, there is also a `menu` option. In fact, there are two menu related options: `menu` and `menubar`.
+Just as there is a `toolbar` option, there is also a `menu` option. In fact, there are two menu related options: `menu` and `menubar`. Let's take a quick look at the default menu items, which you'll see us use in the examples below.
 
-The difference between the two options is that `menubar` affects the menu "bar" itself where `menu` affects individual menu items. `menu` will give you much more granular control (e.g. you can create your own titles for menu items). This is easier to understand with an example.
+**Default Menu Controls**
+
+> newdocument undo redo visualaid cut copy paste selectall bold italic underline strikethrough subscript superscript removeformat formats
+
+The difference between the two options is that `menubar` affects the items placed on the menu "bar" itself where `menu` affects individual items appearing on a menu's dropdown. Additionally, `menu` will give you much more granular control (e.g. you can create your own titles for menu items). This is easier to understand with an example.
 
 In the snippet below our menubar will include only the menu items `File`, `Edit` and `View`. However, this will also load the default items included in each respective menu. For example, `Edit` will load Undo, Redo, Cut, Copy, Paste, Select all.
 
@@ -185,7 +182,7 @@ Using the configuration options above you'll be able to instantiate TinyMCE and 
 
 You will find full list of [configuration options here]({{ site.baseurl }}/editor-configuration-settings/). Plugins, their options and control associations are [available here]({{ site.baseurl }}/plugins/).
 
-To help get you started, let's walk through an (advanced) TinyMCE configuration example.
+To help get you started, let's walk through an example of a basic TinyMCE configuration.
 
 ```html
 <!DOCTYPE html>
@@ -204,16 +201,7 @@ To help get you started, let's walk through an (advanced) TinyMCE configuration 
         "save table contextmenu directionality emoticons template paste textcolor"
       ],
       content_css: "css/content.css",
-      toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | print preview media fullpage | forecolor backcolor emoticons",
-      style_formats: [
-        {title: 'Bold text', inline: 'b'},
-        {title: 'Red text', inline: 'span', styles: {color: '#ff0000'}},
-        {title: 'Red header', block: 'h1', styles: {color: '#ff0000'}},
-        {title: 'Example 1', inline: 'span', classes: 'example1'},
-        {title: 'Example 2', inline: 'span', classes: 'example2'},
-        {title: 'Table styles'},
-        {title: 'Table row 1', selector: 'tr', classes: 'tablerow1'}
-      ]
+      toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | print preview media fullpage | forecolor backcolor emoticons"
     });
   </script>
 </head>
@@ -261,29 +249,13 @@ Next we set the styling of the editable area using `content_css`. This should be
 content_css: "css/content.css",
 ```
 
-In this step we select the toolbar buttons we want to expose to the user. You can use a comma or space as a separator.
+Lastly we want to select the toolbar buttons exposed to the user. You can use a comma or space as a separator.
 
 > ```js
 toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | print preview media fullpage | forecolor backcolor emoticons",
 ```
 
-Lastly we have implemented a powerful styles configuration. For example, "Bold text" simply makes a `<b>` tag, "Red text" makes a span with a style coloring it `red`.
-
-The "Table row" can only be applied to a table row `<tr>`.
-
-> ```js
-style_formats: [
-  {title: 'Bold text', inline: 'b'},
-  {title: 'Red text', inline: 'span', styles: {color: '#ff0000'}},
-  {title: 'Red header', block: 'h1', styles: {color: '#ff0000'}},
-  {title: 'Example 1', inline: 'span', classes: 'example1'},
-  {title: 'Example 2', inline: 'span', classes: 'example2'},
-  {title: 'Table styles'},
-  {title: 'Table row 1', selector: 'tr', classes: 'tablerow1'}
-],
-```
-
-Check out the [formats configuration](/editor-configuration-settings/content-filtering/#formats) for more information on how to bend these options to your will.
+And we are done. We hope you found the above example helpful in showing not only how powerful TinyMCE is but also how easy it is to customize.
 
 
 

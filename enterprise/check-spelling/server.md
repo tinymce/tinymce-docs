@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Install Spelling Server
+title: Install Spell Checker Pro Server
 description: Spell Checker Pro is a premium plugin and server to check spelling as-you-type.
 keywords: tinymcespellchecker
 ---

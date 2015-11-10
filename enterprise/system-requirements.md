@@ -12,20 +12,20 @@ TinyMCE Enterprise is based on HTML, JavaScript and CSS standards and will opera
 ### Supported Browsers by Platform
 
 The following platforms are fully supported for TinyMCE Enterprise.
-Platform
-Browsers
-Windows	
-Internet Explorer 8+
-Chrome* 
-Firefox*
-Firefox ESR*
-OS X	Safari 6.1+
-Chrome*
-Firefox*
-Firefox ESR*
-Linux	Chrome*
-Firefox*
-Firefox ESR*
+
+| Platform | Browser    |
+|----------|---------------|
+| Windows  | Internet Explorer 8+ |
+|          | Chrome* |
+|          | Firefox* |
+|          | Firefox ESR* |
+| OS X     | Safari 6.1+ |
+|          | Chrome* |
+|          | Firefox* |
+|          | Firefox ESR* |
+| Linux	   | Chrome* |
+|          | Firefox* |
+|          | Firefox ESR* |
 
 * Current stable channel version.
 
@@ -36,13 +36,14 @@ Word copy and paste is supported on all the browsers supported by TinyMCE Enterp
 ### Feature Matrix and Browser Support
 
  
-HTML Cleaning	Improved HTML Cleaning	Image Import
-Internet Explorer 8	X	 	 
-Internet Explorer 9	X	 	 
-Internet Explorer 10 +	X	X	X
-Chrome Current	X	X	X
-Firefox Current	X	X	X
-Safari 6.1 +	X	X	X
+|                      | HTML Cleaning | Improved HTML Cleaning | Image Import |
+|----------------------| ------------- | ---------------------- | ------------ |
+| Internet Explorer 8  | X |   |   |
+| Internet Explorer 9  | X |   |   |
+| Internet Explorer 10+| X | X | X | 
+| Chrome Current       | X | X | X |
+| Firefox Current      | X | X | X |
+| Safari 6.1+          | X | X | X |
  
 #### HTML Cleaning
  
@@ -93,4 +94,4 @@ JDK 7 update 55+
 
 #### Need more?
 
-Ephox is committed to broadening support for various application servers / platforms. If you have a requirement to support an application server that is not listed here, please contact [support@ephox.com].
+Ephox is committed to broadening support for various application servers / platforms. If you have a requirement to support an application server that is not listed here, please contact support@ephox.com.

@@ -1,7 +1,8 @@
 ---
 layout: default
-title: 6. UI Customizations
-description: // coming soon
+title: 6. Customize UI
+description: Learn how to change to look of TinyMCE.
+keywords: themes, skins, statusbar
 ---
 
 By now it should be clear that TinyMCE is incredibly powerful and at the same time extremely flexible. This is also true for user interface customizations. In this section we will look at skinning the editor UI, adding a useful toolbar button not included in the default theme and hiding the status bar.
@@ -77,6 +78,6 @@ tinymce.init({
 > `*` There are ways to restrict whether the resize handle can be dragged and by how much, which you'll discover when deep diving into  plugins and advanced configuration options.
 
 
-## Next Steps
+## Next steps
 
 In the next step you'll learn how to [upload images](../image-uploading/) with TinyMCE.

@@ -1,19 +1,19 @@
-- url: "getting-started"
+- url: "get-started"
   pages:
   - url: "first-steps"
-  - url: "basic-configuration"
-  - url: "using-tinymce-inline"
-  - url: "advanced-installation-options"
-  - url: "working-with-plugins"
-  - url: "ui-customizations"
-  - url: "image-uploading"
-  - url: "spell-checking-in-tinymce"
-  - url: "content-filtering"
-  - url: "tinymce-in-your-language"
+  - url: "basic-setup"
+  - url: "use-tinymce-inline"
+  - url: "advanced-install"
+  - url: "work-with-plugins"
+  - url: "customize-ui"
+  - url: "upload-images"
+  - url: "spell-checking"
+  - url: "filter-content"
+  - url: "localize-your-language"
   - url: "system-requirements"
-  - url: "getting-support"
+  - url: "get-support"
 
-- url: "editor-configuration-settings"
+- url: "configure"
   pages:
   - url: "integration-and-setup"
     pages:
@@ -99,7 +99,7 @@
     pages:
     - url: "#browser_spellcheck"
     - url: "#gecko_spellcheck"
-  - url: "file-and-image-upload"
+  - url: "file-image-upload"
     pages:
     - url: "#file_browser_callback"
     - url: "#file_browser_callback_types"
@@ -109,7 +109,7 @@
     - url: "#images_upload_credentials"
     - url: "#images_upload_handler"
     - url: "#images_upload_url"
-  - url: "internationalization"
+  - url: "localization"
     pages:
     - url: "#directionality"
     - url: "#language"
@@ -122,7 +122,7 @@
     - url: "#relative_urls"
     - url: "#remove_script_host"
     - url: "#urlconverter_callback"
-  - url: "advanced-editing-behaviors"
+  - url: "advanced-editing-behavior"
     pages:
     - url: "#br_in_pre"
     - url: "#custom_undo_redo_levels"

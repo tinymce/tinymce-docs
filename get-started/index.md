@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Getting Started
+title: Get Started
 description: If you are new to TinyMCE, this is the place to start.
 type: folder
 ---

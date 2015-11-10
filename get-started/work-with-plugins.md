@@ -1,7 +1,9 @@
 ---
 layout: default
-title: 5. Working With Plugins
+title: 5. Work With Plugins
+description_short: Adding plugins.
 description: TinyMCE is an incredibly powerful, flexible and customizable rich text editor. In this section we will show you the power of plugins.
+keywords: plugin, top 10
 ---
 
 The real power of TinyMCE's functionality is in its plugins. [Plugins]({{ site.baseurl }}/plugins/) typically extend the default editor functionality or add new functionality. For example, the Advanced List (`advlist`) plugin adds extra options to the toolbar's existing list controls, while the Code (`code`) plugin adds an entirely new control.

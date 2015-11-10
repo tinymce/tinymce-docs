@@ -74,7 +74,7 @@ The full list of plugins, their options and control associations is [available h
 
 TinyMCE comes with a default set of toolbar controls out of the box, things such as bold, italic and text alignment. Basically, the type of settings you would expect to find in any WYSIWYG editor. However, in most integrations it's desirable to change the toolbar configuration to suit your needs. Fortunately that's quite easy to do too.
 
-But before we get to configuring the toolbar, let's have a look at the default menu items and toolbar buttons. You'll see us use some of these in the examples below.
+But before we get to configuring the toolbar, let's have a look at the default menu items and toolbar buttons. You'll see us use some of these in the examples below and you can probably work out what they do from their names.
 
 **Default Toolbar Controls**
 

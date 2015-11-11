@@ -4,13 +4,10 @@ title: Character Map Plugin
 title_nav: Character Map
 description: Insert special characters into TinyMCE.
 keywords: charmap, symbols
+controls: toolbar button, menu item
 ---
 
-// adds menu control (under Insert menu)
-
-// adds toolbar control
-
-This plugin adds a `charmap` button that enables users to insert special characters into their text. It also adds the menu item `Special character` under the `Insert` menu.
+This plugin adds a `charmap` toolbar button that enables users to insert special characters into their text. It also adds the menu item `Special character` under the `Insert` menu.
 
 **Type:** `String`
 

@@ -4,15 +4,12 @@ title: Visual Characters Plugin
 title_nav: Visual Characters
 description: See invisible characters like `&nbsp;`
 keywords: visualchars
+controls: toolbar button, menu item
 ---
-
-// adds menu control (under View menu)
-
-// adds toolbar control
 
 This plugin adds the ability for users to see invisible characters like `&nbsp;` displayed in the editable area. It also adds a toolbar control and a menu item `Show invisible characters` under the `View` menu.
 
-It's worth noting that at present the toolbar button icon is the same for both `visualblocks` and `visualchars`.
+> It's worth noting that at present the toolbar button icon is the same for both `visualblocks` and `visualchars`.
 
 **Type:** `String`
 

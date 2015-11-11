@@ -4,13 +4,10 @@ title: Visual Blocks Plugin
 title_nav: Visual Blocks
 description: Allows a user to see block level elements such as paragraphs.
 keywords: visualblocks
+controls: toolbar button, menu item
 ---
 
-// adds menu control (under View menu)
-
-// adds toolbar control
-
-This plugin allows a user to see block level elements in the editable area. It is similar to WYSIWYG hidden character functionality but, of course, at block level. It also adds a toolbar control and a menu item `Show blocks` under the `View` menu.
+This plugin allows a user to see block level elements in the editable area. It is similar to WYSIWYG hidden character functionality but (of course) at block level. It also adds a toolbar button and a menu item `Show blocks` under the `View` menu dropdown.
 
 It's worth noting that at present the toolbar button icon is the same for both `visualblocks` and `visualchars`.
 

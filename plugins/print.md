@@ -3,13 +3,10 @@ layout: default
 title: Print Plugin
 title_nav: Print
 description: Print the content in TinyMCE.
+controls: toolbar button, menu item
 ---
 
-// adds menu control (under File menu)
-
-// adds toolbar control
-
-This plugin adds a print button to TinyMCE's toolbar. It also adds a `Print` item to the File menu dropdown.
+This plugin adds a print button to the toolbar. It also adds a `Print` item to the `File` menu dropdown.
 
 **Type:** `String`
 

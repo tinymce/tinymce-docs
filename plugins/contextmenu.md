@@ -6,7 +6,6 @@ description: Right-click to perform actions in TinyMCE
 keywords: contextmenu
 ---
 
-
 This plugin adds a configurable context menu that appears when a user (typically) right clicks in the editable area.
 
 Note that by default `contextmenu` does not disable the operating system's native context menu.

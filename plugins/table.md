@@ -4,13 +4,10 @@ title: Table Plugin
 title_nav: Table
 description: Table editing features.
 keywords: row, cell, column
+controls: toolbar button, menu item
 ---
 
-// adds menu control (new Table menu)
-
-// adds toolbar control
-
-The `table` plugin adds table management functionality to TinyMCE. It also adds a toolbar control and a new menu item `Table`.
+The `table` plugin adds table management functionality to TinyMCE. It also adds a new menubar item `Table` with various options in its dropdown including `Insert table` and options to modify cells, rows and columns, and a toolbar button with the same functionality.
 
 **Type:** `String`
 
@@ -21,7 +18,6 @@ tinymce.init({
   plugins: "table",
   menubar: "table",
   toolbar: "table"
-  // tools: "inserttable"
 });
 ```
 

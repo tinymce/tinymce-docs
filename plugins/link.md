@@ -4,15 +4,12 @@ title: Link Plugin
 title_nav: Link
 description: Add hyperlinks to content.
 keywords: URL, URLs
+controls: toolbar button, menu item
 ---
-
-// adds menu control (under Insert menu)
-
-// adds toolbar control
 
 The `link` plugin allows a user to link external resources, such as website URLs, to selected text in their document.
 
-It also adds a toolbar control and a menu item `Insert/edit link` under the `Insert` menu dropdown.
+It also adds a toolbar button and a menu item `Insert/edit link` under the `Insert` menu dropdown.
 
 **Type:** `String`
 
@@ -77,7 +74,7 @@ The `link_class_list` plugin adds a predefined `class` dropdown to the `link` di
 
 **Type:** `String`
 
-**Example**
+##### Example
 
 ```js
 tinymce.init({
@@ -207,7 +204,7 @@ This option lets you specify a predefined list of values for the `link` dialog. 
 
 **Type:** `String`
 
-**Example**
+##### Example
 
 ```js
 tinymce.init({
@@ -232,7 +229,7 @@ This options allows you disable the link `title` input field in the `link` dialo
 
 **Possible Values:** `true`, `false`
 
-**Example**
+##### Example
 
 ```js
 tinymce.init({

@@ -49,7 +49,7 @@ This option lets you specify a local proxy script to use when loading images fro
 
 **Type:** `String`
 
-**Example**
+##### Example
 
 ```js
 tinymce.init({

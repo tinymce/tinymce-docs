@@ -71,7 +71,7 @@ tinymce.init({
 
 #### Rolling Your Own Image Handler
 
-If the default behaviour of TinyMCE's image upload logic is not right for you, you may set your own behaviour by using the images_upload_handler configuration property.
+If the default behavior of TinyMCE's image upload logic is not right for you, you may set your own behavior by using the images_upload_handler configuration property.
 
 Please note that while using this option, no other image uploader options are necessary.  Additionally, if you would like TinyMCE to replace the <image> tag's src attribute with the remote location, please use the success callback defined in the image_upload_handler function with the returned JSON object's location property.
 

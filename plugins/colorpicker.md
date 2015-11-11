@@ -6,7 +6,6 @@ description: Select a color from a pallete.
 keywords: colorpicker, colour
 ---
 
-
 The `colorpicker` plugin adds a full-blown color picker to the editor by setting the [`color_picker_callback`](./configuration-reference/callbacks/#color_picker_callback).
 
 **Type:** `String`

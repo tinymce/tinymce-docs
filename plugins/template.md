@@ -3,13 +3,10 @@ layout: default
 title: Template Plugin
 title_nav: Template
 description: Custom templates for your content.
+controls: toolbar button, menu item
 ---
 
-// adds menu control (under Insert menu)
-
-// adds toolbar control
-
-The `template` plugin adds support for custom templates. It also adds a menu item `Insert template` under the `Insert` menu and a toolbar control.
+The `template` plugin adds support for custom templates. It also adds a menu item `Insert template` under the `Insert` menu and a toolbar button.
 
 **Type:** `String`
 

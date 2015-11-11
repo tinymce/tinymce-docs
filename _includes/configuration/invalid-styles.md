@@ -6,7 +6,7 @@ This option enables you to restrict the styles that are valid for specific eleme
 
 **Type:** `String`, `Object`
 
-**Example**
+##### Example
 
 ```js
 tinymce.init({
@@ -19,7 +19,7 @@ tinymce.init({
 
 **Type:** `String`, `Object`
 
-**Example**
+##### Example
 
 ```js
 tinymce.init({

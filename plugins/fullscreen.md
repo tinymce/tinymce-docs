@@ -4,13 +4,10 @@ title: Full Screen Plugin
 title_nav: Full Screen
 description: Zoom TinyMCE up to the whole screen.
 keywords: fullscreen
+controls: toolbar button, menu item
 ---
 
-// adds menu control (under View menu)
-
-// adds toolbar control
-
-This plugin adds full screen editing capabilities to TinyMCE. When the toolbar control is pressed the editable area will fill the browser's viewport.
+This plugin adds full screen editing capabilities to TinyMCE. When the toolbar button is pressed the editable area will fill the browser's viewport. The plugin adds a toolbar button and a menu item `Fullscreen` under the `View` menu.
 
 **Type:** `String`
 

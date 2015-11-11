@@ -4,13 +4,10 @@ title: Horizontal Rule Plugin
 title_nav: Horizontal Rule
 description: Insert a horizontal line.
 keywords: hr
+controls: toolbar button, menu item
 ---
 
-// adds menu control (under Insert menu)
-
-// adds toolbar control
-
-The Horizontal Rule (`hr`) plugin allows a user to insert a horizontal rule on the page at the cursor insertion point. It also adds a toolbar control and a menu item `Horizontal line` under the `Insert` menu.
+The Horizontal Rule (`hr`) plugin allows a user to insert a horizontal rule on the page at the cursor insertion point. It also adds a toolbar button and a menu item `Horizontal line` under the `Insert` menu.
 
 **Type:** `String`
 

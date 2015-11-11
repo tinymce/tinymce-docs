@@ -18,7 +18,6 @@ Note that this option won't convert incomplete urls, for example `example.com` w
 ```js
 tinymce.init({
   selector: "textarea",  // change this value according to your html
-  plugins: "autolink",
-  ...
+  plugins: "autolink"
 });
 ```

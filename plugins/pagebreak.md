@@ -4,15 +4,12 @@ title: Page Break Plugin
 title_nav: Page Break
 description: Add a page break.
 keywords: pagebreak
+controls: toolbar button, menu item
 ---
-
-// adds menu control (under Insert menu)
-
-// adds toolbar control
 
 This plugin adds page break support and enables a user to insert page breaks in the editable area. This is useful where a CMS uses a special separator to break content into pages.
 
-It also adds a toolbar control and a menu item `Page break` under the `Insert` menu dropdown.
+It also adds a toolbar button and a menu item `Page break` under the `Insert` menu dropdown.
 
 **Type:** `String`
 

@@ -3,12 +3,10 @@ layout: default
 title: Text Color Plugin
 title_nav: Text Color
 keywords: textcolor
+controls: toolbar button
 ---
 
-
-// adds toolbar control
-
-This plugin adds the forecolor/backcolor button controls that enable you to pick colors from a color picker and apply these to text.
+This plugin adds the forecolor/backcolor button controls that enable you to pick colors from a color picker and apply these to text. It adds a toolbar button to enable this functionality.
 
 **Type:** `String`
 

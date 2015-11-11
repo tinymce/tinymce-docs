@@ -4,11 +4,10 @@ title: Directionality Plugin
 title_nav: Directionality
 description: Toolbar buttons for setting the left-to-right or right-to-left direction of content.
 keywords: rtl, ltr, internationalization, internationalisation, localization, localisation, international
+controls: toolbar button
 ---
 
-// adds toolbar control
-
-This plugin adds directionality controls to the toolbar, enabling TinyMCE to better handle languages written from right to left.
+This plugin adds directionality controls to the toolbar, enabling TinyMCE to better handle languages written from right to left. It also adds a toolbar button for each of its values, `ltr` for left-to-right text and `rtl` for right-to-left text.
 
 **Type:** `String`
 

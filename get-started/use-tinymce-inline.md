@@ -49,7 +49,7 @@ If the user changed the heading to a paragraph or a different heading level then
 
 ## Enabling inline editing mode
 
-Enabling inline editing mode is simple. Setting the `inline` configuration property to `true` is all that's needed, in combination with a normal `selector`. An example of this is as follows:
+Enabling inline editing mode is simple. Setting the `inline` configuration property to `true` is all that's needed, in combination with a normal `selector`. It is improtant to keep in mind that, unlike the classic form-based mode, inline only works with content that is within a block element (e.g. `div`, `h1`). An example of using inline editing mode with a div is as follows:
 
 ```html
 <!DOCTYPE html>

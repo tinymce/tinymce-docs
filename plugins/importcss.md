@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Import CSS Plugin
+title_nav: Import CSS
 description: Automatically populate CSS class names into the Format dropdown.
 keywords: importcss
 ---

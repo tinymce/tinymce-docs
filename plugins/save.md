@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Save Plugin
+title_nav: Save
 description: Adds a save button to the TinyMCE toolbar.
 keywords: submit
 ---

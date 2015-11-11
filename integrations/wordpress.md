@@ -1,6 +1,7 @@
 ---
 layout: default
 title: WordPress Integration
+title_nav: WordPress
 description: WordPress powers 25% of the web and TinyMCE is proud to be the default editor.
 ---
 

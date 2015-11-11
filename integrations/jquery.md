@@ -1,6 +1,7 @@
 ---
 layout: default
 title: JQuery Integration
+title_nav: JQuery
 ---
 
 More here

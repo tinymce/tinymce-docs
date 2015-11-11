@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Image Plugin
+title_nav: Image
 description: Insert an image into TinyMCE.
 keywords: photo
 ---

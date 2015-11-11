@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Full Page Plugin
+title_nav: Full Page
 description: Edit all document properties such as title, keywords and description.
 keywords: fullpage
 ---

@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Paste Plugin
+title_nav: Paste
 description: Standard version of features for copying-and-pasting content from Microsoft Word.
 keywords: Microsoft Word, Excel
 ---

@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Character Map Plugin
+title_nav: Character Map
 description: Insert special characters into TinyMCE.
 keywords: charmap, symbols
 ---

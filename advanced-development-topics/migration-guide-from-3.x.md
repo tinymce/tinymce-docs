@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Migration Guide from 3.x
+title: Migrate from 3.x
 ---
 
 ## File structure

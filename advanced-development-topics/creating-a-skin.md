@@ -1,6 +1,7 @@
 ---
 layout: default
-title: Creating a Skin for TinyMCE
+title: Create a Skin for TinyMCE
+title_nav: Create a Skin
 ---
 
 There are two ways of creating skins for TinyMCE one of them using the [TinyMCE Skin Creator](http://skin.tinymce.com/) tool the other one is to manually modify less files and build them using the node js build process. Since the skin creator is pretty self explanatory we will focus on the manual process in this tutorial.

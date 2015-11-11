@@ -1,6 +1,7 @@
 ---
 layout: default
 title: MoxieManager Plugin
+title_nav: MoxieManager
 description: File and image management plugin and service
 keywords: Amazon, Azure
 ---

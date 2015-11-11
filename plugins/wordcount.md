@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Word Count Plugin
+title_nav: Word Count
 description: Show a word count in the TinyMCE status bar.
 keywords: wordcount
 ---

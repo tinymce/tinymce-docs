@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Template Plugin
+title_nav: Template
 description: Custom templates for your content.
 ---
 

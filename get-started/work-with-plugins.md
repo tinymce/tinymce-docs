@@ -1,20 +1,20 @@
 ---
 layout: default
-title: 5. Work With Plugins
+title: 05. Work With Plugins
 description_short: Learn about TinyMCE's plugin functionality and discover our Top 10 plugins.
 description: TinyMCE is an incredibly powerful, flexible and customizable rich text editor. In this section we will show you the power of plugins with several working examples.
-keywords: plugin, top 10
+keywords: plugin
 ---
 
-The real power of TinyMCE's functionality is in its plugins. [Plugins]({{ site.baseurl }}/plugins/) typically extend the default editor functionality or add new functionality. For example, the Advanced List (`advlist`) plugin adds extra options to the toolbar's existing list controls, while the Code (`code`) plugin adds an entirely new control.
+For most developers, the real power of TinyMCE's functionality is found in its plugins. [Plugins]({{ site.baseurl }}/plugins/) either extend default editor functionality or add new functionality. For example, the [Advanced List]({{ site.baseurl }}/plugins/advlist/) plugin adds extra options to the toolbar's existing list controls, while the [Code]({{ site.baseurl }}/plugins/code/) plugin adds entirely new functionality.
 
-Because most people install TinyMCE via the CDN or by downloading a package, they mistakenly think plugins are part of the TinyMCE "core". They're not. In fact, if you use the [custom package](http://www.tinymce.com/download/custom_package.php) download option you're able to exclude all of the free plugins built by the TinyMCE team.
+Because most people install TinyMCE via the CDN or by downloading a package, they mistakenly think plugins are part of the TinyMCE "core". They're not. In fact, if you use the [custom package](http://www.tinymce.com/download/custom_package.php) download option you're able to select only the plugins you want or even exclude all of the plugins built by the TinyMCE team.
 
-In this section of the Getting Started guide we'll show you how easy it is to activate a plugin (assuming you included it in your download package) by highlighting two of the more popular plugins.
+In this section of the Get Started guide we'll show you how easy it is to activate a plugin (assuming you included it in your download package) by highlighting two of the more popular plugins.
 
 Let's start with a simple code snippet you can paste into an empty `html` file (call it whatever you like, `tinymce.html` works). Save the file locally, open it with your web browser and you'll have a basic, local TinyMCE instance up and running.
 
-> Pro tip: we included the `https://` protocol in the example below because the file is running locally – and not on a server either. If you were running this example on a server the script would omit the protocol, like so: `<script src="//tinymce.cachefly.net/4.2/tinymce.min.js"></script>`.
+> Pro tip: we included the `https://` protocol in the example below because the file is running locally and not on a server. If you were running this example on a server the script would omit the protocol, like so: `<script src="//tinymce.cachefly.net/4.2/tinymce.min.js"></script>`.
 
 ```html
 <!DOCTYPE html>
@@ -44,7 +44,7 @@ The code we want to work with is in the second `<script>` element, specifically 
 
 ### Code plugin
 
-The `code` plugin is one of the more popular plugins because it can expose the editable area's raw `html` to the user. It also provides a great example because it adds controls to the menubar and toolbar as well as having advanced customization options.
+The [Code]({{ site.baseurl }}/plugins/code/) plugin is one of the more popular plugins because it can expose the editable area's raw `html` to the user. It also provides a great example because it adds a menu item and toolbar button as well as having advanced customization options.
 
 Obviously the first thing we need to do is include the actual `plugins` key and assign it a value. Since we're starting with the `code` plugin that value is by happy coincidence `"code"`.
 
@@ -67,7 +67,7 @@ tinymce.init({
 });
 ```
 
-Awesome, we now have a button on the toolbar users can click to get into source code mode. But we also lost our default toolbar controls ... We explained why this happens back in [Basic Configuration](../basic-configuration/), so if this behavior surprises you re-read that section.
+Awesome, we now have a button on the toolbar users can click to get into source code mode. But we also lost our default toolbar controls ... We explained why this happens back in [Basic Configuration](../basic-setup/), so if this behavior surprises you re-read that section.
 
 Let's quickly take our minimal design one step further by removing the menubar completely.
 
@@ -82,7 +82,7 @@ tinymce.init({
 
 ### Plugin customization easy as 1-2 ...
 
-Many plugins have customization options that give developers granular control of the editor. The code plugin is no exception and it has two options available two us, which respectively change the height and width of the dialog box's *internal, editable area*. These are `code_dialog_height` and `code_dialog_width`.
+Many plugins have customization options that give developers granular control of the editor. The `code` plugin is no exception and it has two options available to us, which respectively change the height and width of the dialog box's (internal) **editable area**. These are `code_dialog_height` and `code_dialog_width`.
 
 Let's add them as values to our `tinymce.init()` object/method.
 
@@ -103,11 +103,11 @@ Save the file, refresh your browser and when you next click the "Source code" to
 
 ## Time for one more example
 
-Even if you found the above example quite easy, hang with us we'll show you how to extend TinyMCE's default ordered and unordered lists. (We'll keep the chatter to a minimum, promise.) If on the other hand that was all a bit new, let's look at another example to help your understanding.
+Even if you found the above example quite easy, hang with us we'll show you how to extend TinyMCE's default ordered and unordered lists. (We'll keep the chatter to a minimum, promise.) If on the other hand that was all a bit new, read this example to help your understanding.
 
 ### Advanced Lists
 
-The Advanced List (`advlist`) plugin extends the core unordered and ordered list toolbar controls by adding CSS `list-style-type` styled number formats and bullet types to the controls.
+The [Advanced List]({{ site.baseurl }}/plugins/advlist/) plugin extends the default unordered and ordered list toolbar controls by adding CSS `list-style-type` styled number formats and bullet types to the controls.
 
 As before, let's start by adding the `plugins` key and giving it the Advanced List value of `"advlist"`.
 
@@ -143,9 +143,9 @@ tinymce.init({
 });
 ```
 
-So, in the above example we learned how to remove the menubar, add specific list controls to the toolbar while removing others, activate a plugin and customize the plugin's behavior by controlling which options we wanted activated. In 5 lines of code.
+So, in the above example we learned how to remove the menubar, add specific list controls to the toolbar while removing others, activate a plugin and customize the plugin's behavior by controlling which options we wanted activated. In 5 lines of code (excluding the `selector` key, which has to be included for TinyMCE to work).
 
-As we noted at the start, TinyMCE is an incredibly powerful, flexible and customizable rich text editor. Once you've finished the Getting Started guide, deep dive into the [plugins]({{ site.baseurl }}/plugins/) and [advanced configuration settings]({{ site.baseurl }}/editor-configuration-settings/) and become a TinyMCE developer ninja.
+As we noted at the start, TinyMCE is an incredibly powerful, flexible and customizable rich text editor. Once you've finished the Getting Started guide, deep dive into the [plugins]({{ site.baseurl }}/plugins/) and [configuration options]({{ site.baseurl }}/configure/).
 
 
 
@@ -168,4 +168,4 @@ Customizing TinyMCE with the default plugins is that easy. And there are 40 of t
 
 ## Next Steps
 
-In the next step you'll learn about TinyMCE's [theme and UI customization](../themes-and-ui-customizations/) options.
+In the next step you'll learn how to [customize TinyMCE's UI](../customize-ui/).

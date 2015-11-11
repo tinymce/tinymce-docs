@@ -1,8 +1,8 @@
 ---
 layout: default
-title: 7. Upload Images
+title: 07. Upload Images
 description: Extend TinyMCE with powerful image uploading capabilities.
-keywords: uploader, uploadImages, image handler
+keywords: uploader uploadImages image handler
 ---
 
 > Please note, this image upload feature is available for TinyMCE version 4.2 and above. Alternatively, the Ephox Power Paste plugin is capable of this functionality in versions of TinyMCE 4.0 and above.  
@@ -15,9 +15,7 @@ Local images can be uploaded to TinyMCE through the use of the new `editor.uploa
 
 To avoid this situation, it is recommended that the `editor.uploadImages()` function be executed prior to submitting the editor contents to the server. Once all images have been uploaded, a success callback can be utilized to execute code.  This success callback can be used to save the editor's content to the server through a `POST`, again helping to prevent the above situation.
 
-Examples of this function are below:
-
-#### Using uploadImages with jQuery
+##### Using uploadImages with jQuery
 
 ```js
 tinymce.activeEditor.uploadImages(function(success) {
@@ -27,7 +25,7 @@ tinymce.activeEditor.uploadImages(function(success) {
 });
 ```
 
-#### Using uploadImages and then posting a form
+##### Using uploadImages and then posting a form
 
 ```js
 tinymce.activeEditor.uploadImages(function(success) {
@@ -35,7 +33,7 @@ tinymce.activeEditor.uploadImages(function(success) {
 });
 ```
 
-#### Image uploader requirements
+## Image uploader requirements
 
 In order to upload local images to the remote server, you will need a server-side upload handler script that accepts the images on the server, stores them appropriately, and returns a JSON object containing the location that they were uploaded to.
 
@@ -47,7 +45,7 @@ This server-side upload handler must return a JSON object that contains a "locat
 { location : '/uploaded/image/path/image.png' }
 ```
 
-#### Image uploader options
+## Image uploader options
 
 There are multiple configuration options that will affect the operation of this feature.  These options are detailed below.
 
@@ -55,40 +53,38 @@ There are multiple configuration options that will affect the operation of this 
 
 | Image Upload Handling Option     | Description          |
 |----------------------------------|----------------------|
-| [images_upload_url]({{ site.baseurl }}/editor-configuration-settings/file-and-image-upload/#images_upload_url)                 | This option lets you specify a URL to where you want images to be uploaded when you call editor.uploadImages. |
-| [images_upload_base_path]({{ site.baseurl }}/editor-configuration-settings/file-and-image-upload/#images_upload_base_path)     | This option lets you specify a basepath to prepend to urls returned from the configured images_upload_url page. |
+| [images_upload_url]({{ site.baseurl }}/editor-configuration-settings/file-and-image-upload/#images_upload_url) | This option lets you specify a URL to where you want images to be uploaded when you call editor.uploadImages. |
+| [images_upload_base_path]({{ site.baseurl }}/editor-configuration-settings/file-and-image-upload/#images_upload_base_path) | This option lets you specify a basepath to prepend to urls returned from the configured images_upload_url page. |
 | [images_upload_credentials]({{ site.baseurl }}/editor-configuration-settings/file-and-image-upload/#images_upload_credentials) | This option lets you specify if calls to the configured images_upload_url should pass along credentials like cookies etc cross domain. This is disabled by default. |
-| [images_upload_handler]({{ site.baseurl }}/editor-configuration-settings/file-and-image-upload/#images_upload_handler)         | This option lets you replace TinyMCE's default javascript upload handler function with custom logic. The upload handler function takes three arguments, blobInfo, a success callback and a failure callback. When this option is not set, TinyMCE utilizes an XMLHttpRequest to upload images one at a time to the server, and calls the success callback with the location of the remote image. |
+| [images_upload_handler]({{ site.baseurl }}/editor-configuration-settings/file-and-image-upload/#images_upload_handler) | This option lets you replace TinyMCE's default javascript upload handler function with custom logic. The upload handler function takes three arguments, blobInfo, a success callback and a failure callback. When this option is not set, TinyMCE utilizes an XMLHttpRequest to upload images one at a time to the server, and calls the success callback with the location of the remote image. |
 
-An example of a typical setup is below:
+##### Example of typical setup
 
 ```js
 tinymce.init({
-    ...
+    selector: "textarea",  // change this value according to your html
     images_upload_url: "postAcceptor.php",
     images_upload_base_path: "/some/basepath",
     images_upload_credentials: true
 });
 ```
 
-#### Rolling your own image handler
+## Rolling your own image handler
 
 If the default behaviour of TinyMCE's image upload logic is not right for you, you may set your own behaviour by using the images_upload_handler configuration property.
 
 Please note that while using this option, no other image uploader options are necessary.  Additionally, if you would like TinyMCE to replace the <image> tag's src attribute with the remote location, please use the success callback defined in the image_upload_handler function with the returned JSON object's location property.
 
-An example of this setup is below:
+##### Example
 
 ```js
 tinymce.init({
-    ...
+    selector: "textarea",  // change this value according to your html
     images_upload_handler: function (blobInfo, success, failure) {
         var xhr, formData;
-
         xhr = new XMLHttpRequest();
         xhr.withCredentials = false;
         xhr.open('POST', "postAcceptor.php");
-
         xhr.onload = function() {
             var json;
 
@@ -96,26 +92,22 @@ tinymce.init({
                 failure("HTTP Error: " + xhr.status);
                 return;
             }
-
             json = JSON.parse(xhr.responseText);
 
             if (!json || typeof json.location != "string") {
                 failure("Invalid JSON: " + xhr.responseText);
                 return;
             }
-
             success(json.location);
         };
-
         formData = new FormData();
         formData.append('file', blobInfo.blob(), fileName(blobInfo));
-
         xhr.send(formData);
     }
 });
 ```
 
-#### CORS considerations
+## CORS considerations
 
 You may choose for your web application to upload image data to a separate domain. If so, you will need to configure [Cross-origin resource sharing (CORS)](http://en.wikipedia.org/wiki/Cross-origin_resource_sharing) for your application to comply with JavaScript "same origin" restrictions.
 
@@ -131,7 +123,7 @@ All supported browsers will print a message to the JavaScript console if there i
 
 The [PHP Upload Handler Script]({{ site.baseurl }}/advanced-development-topics/php-upload-handler/) provided here configures CORS in the `$accepted_origins` variable. You may choose to configure CORS at the [web application layer](http://www.w3.org/wiki/CORS_Enabled#At_the_Web_Application_level...) or the [HTTP server layer](http://www.w3.org/wiki/CORS_Enabled#At_the_HTTP_Server_level...).
 
-#### Further reading on CORS
+### Further reading on CORS
 
 * [W3C Wiki - CORS Enabled](http://www.w3.org/wiki/CORS_Enabled)
 * [MDN - HTTP access control (CORS)](https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS)
@@ -141,4 +133,4 @@ The [PHP Upload Handler Script]({{ site.baseurl }}/advanced-development-topics/p
 
 ## Next steps
 
-In the next step you'll learn about [spell checking in TinyMCE](../spell-checking-in-tinymce/).
+In the next step you'll learn about [spell checking in TinyMCE](../spell-checking/).

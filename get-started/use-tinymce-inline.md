@@ -1,16 +1,16 @@
 ---
 layout: default
-title: 3. Use TinyMCE Inline
+title: 03. Use TinyMCE Inline
 description_short: Learn about forms-based editing v. inline editing.
 description: Understand the difference between traditional forms-based editing and advanced inline editing.
-keywords: form, inline, edit, stylesheet,
+keywords: form inline edit stylesheet
 ---
 
-TinyMCE has two main integration modes: a "classic" form-based mode, and an inline editing mode.
+TinyMCE has two main integration modes: a "classic" form-based mode and an inline editing mode.
 
 The inline editing mode is useful when creating user experiences where you want the editing view of the page to be merged with the reading view of the page. This creates a seamless editing experience and true WYSIWYG behavior.
 
-From a technical perspective, when in inline editing mode the editor does not replace the selected element with it's own iframe, but instead edits the element's content in place instead.
+When in inline editing mode the editor does not replace the selected element with it's own iframe, but instead edits the element's content in place instead.
 
 
 ## Forms-based editing vs inline editing
@@ -55,8 +55,8 @@ Enabling inline editing mode is simple. Setting the `inline` configuration prope
 <!DOCTYPE html>
 <html>
 <head>
-  <script type="text/javascript" src="//tinymce.cachefly.net/4.2/tinymce.min.js"></script>
-  <script type="text/javascript">
+  <script src="//tinymce.cachefly.net/4.2/tinymce.min.js"></script>
+  <script>
     tinymce.init({
       selector: "#myeditablediv",
       inline: true
@@ -77,4 +77,4 @@ Enabling inline editing mode is simple. Setting the `inline` configuration prope
 
 ## Next steps
 
-In the next step you'll learn about TinyMCE's [advanced installation options](../advanced-installation-options/) including package managers, downloading the SDK and the custom build option.
+In the next step you'll learn about TinyMCE's [advanced installation options](../advanced-install/) including package managers, downloading the SDK and the custom build option.

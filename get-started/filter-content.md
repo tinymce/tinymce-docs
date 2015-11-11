@@ -1,11 +1,11 @@
 ---
 layout: default
-title: 9. Filter Content
-description: // coming soon
+title: 09. Filter Content
+description: Learn how to create clean, maintainable and readable content.
 ---
 
-More coming soon.
+TinyMCE has comprehensive content filtering capabilities. These settings change the way the editor handles the input and output of content, helping your users create clean, maintainable and readable content.
 
 ## Next Steps
 
-In the next step you'll learn about taking TinyMCE global with its [language](../tinymce-in-your-language/) capabilities.
+In the next step you'll learn about taking TinyMCE global with its [language localization](../localize-your-language/) capabilities.

@@ -129,7 +129,5 @@ The [PHP Upload Handler Script]({{ site.baseurl }}/advanced-development-topics/p
 * [MDN - HTTP access control (CORS)](https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS)
 * [W3C - Cross-Origin Resource Sharing Specification](http://www.w3.org/TR/cors/)
 
-
-## Next step
-
-In the next step you'll learn about [spell checking in TinyMCE](../spell-checking/).
+{% assign_page next_page = "/get-started/spell-checking/index.html" %}
+{% include next-step.html next=next_page %}

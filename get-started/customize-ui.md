@@ -150,7 +150,5 @@ We realize we covered toolbars in an earlier step but they're such an integral p
 
 > `*` There are ways to restrict whether the resize handle can be dragged and by how much, which you'll discover when deep diving into  plugins and advanced configuration options.
 
-
-## Next step
-
-In the next step you'll learn how to [upload images](../upload-images/) with TinyMCE.
+{% assign_page next_page = "/get-started/upload-images/index.html" %}
+{% include next-step.html next=next_page %}

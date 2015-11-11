@@ -73,7 +73,5 @@ Enabling inline editing mode is simple. Setting the `inline` configuration prope
 </html>
 ```
 
-
-## Next step
-
-In the next step you'll learn about TinyMCE's [advanced installation options](../advanced-install/) including package managers, downloading the SDK and the custom build option.
+{% assign_page next_page = "/get-started/advanced-install/index.html" %}
+{% include next-step.html next=next_page %}

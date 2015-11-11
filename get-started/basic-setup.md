@@ -45,7 +45,7 @@ Here's an example that will replace all `textarea` elements on the page:
 
 ```js
 tinymce.init({
-  selector: "textarea",
+  selector: "textarea"
 });
 ```
 
@@ -53,17 +53,17 @@ You can also match an `id` attribute. The following example will replace a `text
 
 ```js
 tinymce.init({
-  selector: "textarea#editable",
+  selector: "textarea#editable"
 });
 ```
 
 When using this option in TinyMCE's [inline editing mode](../use-tinymce-inline/) the selector can be used on any block element, which will edit the content in place instead of replacing the element with an `iframe`.
 
-Here's an example of this setting being used in inline editing mode on a `div` element with `id` `"editable"`:
+Here, `selector` is being used in inline editing mode on a `div` element with `id` `"editable"`:
 
 ```js
 tinymce.init({
-  selector: "div#editable",
+  selector: "div#editable"
   inline: true
 });
 ```

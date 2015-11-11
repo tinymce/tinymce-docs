@@ -8,14 +8,14 @@ keywords: tinymcespellchecker
 ## Server-Side Component Installation
 
 
-Spell checking requires the deployment of several server-side components onto a J2EE compatible application server (e.g. Jetty, or Apache Tomcat).  
+Spellchecking requires the deployment of several server-side components onto a J2EE compatible application server (e.g. Jetty, or Apache Tomcat).  
 
-The following server-side components are required to enable spell checking:
+The following server-side components are required to enable spellchecking:
 
 |Component                      | File							| Description |
 |:-----------------------------	|:-------						|:----------|
 | Allowed Origins				| ephox-allowed-origins.war 	| Supplies configuration for server components to communicate with your application.|
-| Spell checking 				| ephox-spelling.war			|Spell checking service for TinyMCE Enterprise.|
+| Spellchecking 				| ephox-spelling.war			|Spellchecking service for TinyMCE Enterprise.|
 
 
 This guide will help you set up the Spelling server-side components, and show you how to use them in conjunction with editor clients. The steps required are:

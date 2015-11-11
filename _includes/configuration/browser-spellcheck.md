@@ -15,4 +15,4 @@ tinymce.init({
 });
 ```
 
-For more information about spell checking in TinyMCE see [this page]({{ site.baseurl }}/get-started/spell-checking/) in the Getting Started guide.
+For more information about spellchecking in TinyMCE see [this page]({{ site.baseurl }}/get-started/spell-checking/) in the Getting Started guide.

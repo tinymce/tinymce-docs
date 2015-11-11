@@ -1,13 +1,13 @@
 ---
 layout: default
 title: 08. Check Spelling
-description: Take spell checking to your users.
+description: Take spellchecking to your users.
 keywords: spellchecker spelling browser_spellcheck gecko_spellcheck
 ---
 
-No-one likes bad spelling and being able to help your users create error free content is important to the entire TinyMCE team. Which is why we have several options to help you bring spell checking capabilities to your users.
+No-one likes bad spelling and being able to help your users create error free content is important to the entire TinyMCE team. Which is why we have several options to help you bring spellchecking capabilities to your users.
 
-## Browser-based spell checking
+## Browser-based spellchecking
 
 The first option (and easiest to implement) is to utilize the browser's native spellcheck functionality by assigning the [`browser_spellcheck`]({{ site.baseurl }}/configure/spelling/#browser_spellcheck) configuration option the value of `true`. Depending on the right click / context behavior you want, you *may* need to enable the [`contextmenu`]({{ site.baseurl }}/plugins/context-menu/) plugin.
 
@@ -47,7 +47,7 @@ tinymce.init({
 
 ## TinyMCE Spellchecker Pro plugin
 
-For developers requiring robust, enterprise-grade, spell check as-you-type functionality, you need the [Spellchecker Pro plugin]({{ site.baseurl }}/plugins/tinymcespellchecker/). Spell Checker Pro requires both a client-side plugin to be configured and a server-side component to be installed and configured.
+For developers requiring robust, enterprise-grade, spellcheck as-you-type functionality, you need the [Spellchecker Pro plugin]({{ site.baseurl }}/plugins/tinymcespellchecker/). Spell Checker Pro requires both a client-side plugin to be configured and a server-side component to be installed and configured.
 
 Full documentation can be found in the TinyMCE Enterprise [documentation for Spelling](http://docs.ephox.com/display/TinyMCEEnterprise/Spell+Checking). Learn more about [TinyMCE Enterprise here](http://www.tinymce.com/enterprise/).
 

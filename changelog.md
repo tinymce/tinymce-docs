@@ -289,7 +289,7 @@ class: changelog
 * Fixed bug where resizing images inside tables on older IE versions would sometimes fail depending mouse position.
 * Fixed bug where editor.insertContent would produce an exception when inserting select/option elements.
 * Fixed bug where extra empty paragraphs would be produced if block elements where inserted inside span elements.
-* Fixed bug where the spellchecker menu item wouldn't be properly checked if spell checking was started before it was rendered.
+* Fixed bug where the spellchecker menu item wouldn't be properly checked if spellchecking was started before it was rendered.
 * Fixed bug where the DomQuery filter function wouldn't remove non elements from collection.
 * Fixed bug where document with custom document.domain wouldn't properly render the editor.
 * Fixed bug where IE 8 would throw exception when trying to enter invalid color values into colorboxes.

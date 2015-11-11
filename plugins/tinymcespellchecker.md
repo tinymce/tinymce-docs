@@ -6,7 +6,7 @@ description: Check spelling as-you-type in TinyMCE.
 keywords: tinymcespellchecker
 ---
 
-**Spell Checker Pro** adds spell check as-you-type capabilities to TinyMCE.
+**Spell Checker Pro** adds spellcheck as-you-type capabilities to TinyMCE.
 
 The following languages are supported:
 
@@ -25,7 +25,7 @@ The following languages are supported:
 
 ## Downloading Spell Checker Pro
 
-A [TinyMCE Enterprise](http://www.tinymce.com/enterprise/) subscription includes the ability to download and install a spell check as-you-type feature for the editor.
+A [TinyMCE Enterprise](http://www.tinymce.com/enterprise/) subscription includes the ability to download and install a spellcheck as-you-type feature for the editor.
 
 Spell Checker Pro requires both a client-side plugin to be configured and a server-side component to be installed and configured.
 

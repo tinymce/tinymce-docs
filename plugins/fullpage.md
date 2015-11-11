@@ -4,13 +4,12 @@ title: Full Page Plugin
 title_nav: Full Page
 description: Edit all document properties such as title, keywords and description.
 keywords: fullpage
+controls: toolbar button, menu item
 ---
 
-// adds menu control (under File menu)
+This plugin allows a user to edit certain document properties (such as `title`, `keywords`, `description`) via a dialog box after pressing a control added to the toolbar. If the `code` plugin is enabled `fullpage` exposes `<head>`, `<body>` and various `meta` tags in source code view.
 
-// adds toolbar control
-
-This plugin allows a user to edit certain document properties (such as `title`, `keywords`, `description`) via a dialog box after pressing a control added to the toolbar. If the `code` plugin is enabled `fullpage` exposes `<head>`, `<body>` and various `meta` tags in source code view. It also adds a `Document properties` menu under the File menu and button to the toolbar.
+The plugin also adds a `Document properties` menu under the `File` menu and button to the toolbar.
 
 **Type:** `String`
 

@@ -3,20 +3,17 @@ layout: default
 title: Paste Plugin
 title_nav: Paste
 description: Standard version of features for copying-and-pasting content from Microsoft Word.
-keywords: Microsoft Word, Excel
+keywords: Microsoft Word, Excel, cut, copy
+controls: toolbar button, menu item
 ---
-
 
 > Looking for more advanced Microsoft Word importing and pasting? Try the [PowerPaste](../powerpaste/) plugin.
 
-
-// adds menu control (under Edit menu)
-
-// adds toolbar controls
-
 This plugin will filter/cleanup content pasted from Microsoft Word. The power of the plugin is in its options, so please take the time to learn more about these below.
 
-Note that the toolbar button won't work in browsers that don't support direct access to the clipboard. In such cases the user will be presented with a modal advising them of this along with a reminder of standard keyboard shortcuts.
+The plugin also adds a menu item `Paste as text` under the `Edit` menu dropdown and a toolbar button.
+
+> Note that the toolbar button won't work in browsers that don't support direct access to the clipboard. In such cases the user will be presented with a modal/dialog box advising them of this along with a reminder of standard keyboard shortcuts.
 
 **Type:** `String`
 

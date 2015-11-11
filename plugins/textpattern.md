@@ -6,7 +6,6 @@ description: Matches special patterns in the text and applies formats or execute
 keywords: textpattern
 ---
 
-
 This plugin matches special patterns in the text and applies formats or executed commands on these patterns.
 
 The default pattern is similar to markdown syntax, so you can type `# text` to produce a header or `**text**` to make text **bold**.
@@ -17,6 +16,7 @@ The default pattern is similar to markdown syntax, so you can type `# text` to p
 
 ```js
 tinymce.init({
+  selector: "textarea",
   plugins: "textpattern"
 });
 ```

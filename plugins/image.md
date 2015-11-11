@@ -6,15 +6,11 @@ description: Insert an image into TinyMCE.
 keywords: photo
 ---
 
-// adds menu control (under Insert menu)
-
-// adds toolbar control
-
 This plugin enables the user to insert an image into TinyMCE's editable area.
 
-Note that this is not drag-drop functionality and the user is required to enter the path to the image (and optionally the image description, dimensions and whether image proportions should be constrained (via a checkbox)). Some of these settings can be preset using the plugin's configuration options.
+> Note that this is not drag-drop functionality and the user is required to enter the path to the image (and optionally the image description, dimensions and whether image proportions should be constrained (via a checkbox)). Some of these settings can be preset using the plugin's configuration options.
 
-The `image` plugin also adds a toolbar control and an `Insert/edit image` menu item under the `Insert` menu.
+The plugin also adds a toolbar button and an `Insert/edit image` menu item under the `Insert` menu.
 
 **Type:** `String`
 

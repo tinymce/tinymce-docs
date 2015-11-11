@@ -4,9 +4,8 @@ title: Save Plugin
 title_nav: Save
 description: Adds a save button to the TinyMCE toolbar.
 keywords: submit
+controls: toolbar button
 ---
-
-// adds toolbar control
 
 This plugin adds a save button to the TinyMCE toolbar, which will submit the form that the editor is within.
 

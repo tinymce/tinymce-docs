@@ -6,7 +6,7 @@ description: Show a word count in the TinyMCE status bar.
 keywords: wordcount
 ---
 
-This plugin adds word count functionality to TinyMCE, placing a counter in the bottom right of the editor instance (outside the editable area).
+This plugin adds word count functionality to TinyMCE, placing a counter on the right edge of the status bar.
 
 **Type:** `String`
 

@@ -4,13 +4,10 @@ title: Spell Checker Plugin
 title_nav: Spell Checker
 description: Enables TinyMCE's spell check functionality.
 keywords: spellchecker
+controls: toolbar button, menu item
 ---
 
-// adds menu control (under Tools menu)
-
-// adds toolbar control
-
-This plugin enables TinyMCE's spell check functionality. It also adds a toolbar control and the menu item `Spellcheck` under the `Tools` menu dropdown.
+This plugin enables TinyMCE's spell check functionality. It also adds a toolbar button and the menu item `Spellcheck` under the `Tools` menu dropdown.
 
 **Type:** `String`
 

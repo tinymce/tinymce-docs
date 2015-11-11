@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Tab Focus Plugin 
+title: Tab Focus Plugin
 title_nav: Tab Focus
 description: Tab into and out of the TinyMCE control in your web form.
 keywords: tabfocus
@@ -21,7 +21,7 @@ tinymce.init({
 
 ### Options
 
-This setting affects the execution of the `tabfocus` plugin. This setting can be used to change the focus behaviour of the editor when the tab key has been pressed inside the editable area.
+This setting affects the execution of the `tabfocus` plugin. This setting can be used to change the focus behavior of the editor when the tab key has been pressed inside the editable area.
 
 ### `tabfocus_elements`
 

@@ -4,13 +4,10 @@ title: Nonbreaking Space Plugin
 title_nav: Nonbreaking
 description: Insert a nonbreaking space.
 keywords: nonbreaking
+controls: toolbar button, menu item
 ---
 
-// adds menu control (under Insert menu)
-
-// adds toolbar control
-
-This plugin adds a button for inserting nonbreaking space entities `&nbsp;` at the current caret location (cursor insert point). It also adds a menu item `Nonbreaking space` under the Insert menu dropdown and a toolbar control.
+This plugin adds a button for inserting nonbreaking space entities `&nbsp;` at the current caret location (cursor insert point). It also adds a menu item `Nonbreaking space` under the `Insert` menu dropdown and a toolbar button.
 
 **Type:** `String`
 
@@ -41,7 +38,7 @@ However, the `true` condition does capture the tab key and contain it within the
 
 **Possible Values:** `true`, `false`
 
-**Example**
+##### Example
 
 ```js
 tinymce.init({

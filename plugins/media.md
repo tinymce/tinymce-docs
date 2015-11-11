@@ -4,13 +4,10 @@ title: Media Plugin
 title_nav: Media
 description: Add HTML5 video and audio elements.
 keywords: video, Youtube, Vimeo, MP3, film
+controls: toolbar button, menu item
 ---
 
-// adds menu control (under Insert menu)
-
-// toolbar control
-
-The `media` plugin adds the ability for users to be able to add HTML5 video and audio elements to the editable area. It also adds the menu item `Insert/edit video` under the `Insert` menu as well as a toolbar control.
+The `media` plugin adds the ability for users to be able to add HTML5 video and audio elements to the editable area. It also adds the menu item `Insert/edit video` under the `Insert` menu as well as a toolbar button.
 
 **Type:** `String`
 

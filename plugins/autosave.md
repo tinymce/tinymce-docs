@@ -3,11 +3,10 @@ layout: default
 title: Autosave Plugin
 title_nav: Autosave
 description: Automatically save content in your local browser.
+controls: menu item
 ---
 
-// adds menu control (under File menu)
-
-This plugin gives the user a warning if they made modifications to a editor instance but didn't submit them. It also adds a menu item **Restore last draft** under the **File** menu.
+This plugin gives the user a warning if they made modifications to a editor instance but didn't submit them. It also adds a menu item `Restore last draft` under the `File` menu.
 
 **Type:** `String`
 
@@ -52,7 +51,7 @@ This option enables you to specify the time it should wait between making snapsh
 
 **Default Value:** `"30s"`
 
-**Example**:
+##### Example:
 
 ```js
 tinymce.init({
@@ -69,7 +68,7 @@ This option allows you to set the prefix that is used for local storage keys.
 
 **Default Value**: `"tinymce-autosave-{path}{query}-{id}-"`
 
-**Example**:
+##### Example:
 
 ```js
 tinymce.init({
@@ -89,7 +88,7 @@ This option enables you to specify if TinyMCE should automatically restore the c
 
 **Possible Values**: `true`, `false`
 
-**Example**:
+##### Example:
 
 ```js
 tinymce.init({
@@ -107,7 +106,7 @@ This option lets you to specify the duration editor content should remain in loc
 
 **Default Value**: "20m"
 
-**Example**:
+##### Example:
 
 ```js
 tinymce.init({

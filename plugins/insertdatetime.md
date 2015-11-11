@@ -4,13 +4,10 @@ title: Insert Date/Time Plugin
 title_nav: Insert Date/Time
 description: Insert the current date and/or time into TinyMCE.
 keywords: insertdatetime
+controls: toolbar button, menu item
 ---
 
-// adds menu control (under Insert menu)
-
-// adds toolbar control
-
-The `insertdatetime` plugin provides a toolbar control and menu item `Insert date/time` (under the `Insert` menu) that lets a user easily insert the current date and/or time into the editable area at the cursors insertion point.
+The `insertdatetime` plugin provides a toolbar control and menu item `Insert date/time` (under the `Insert` menu) that lets a user easily insert the current date and/or time into the editable area at the cursor insertion point.
 
 **Type:** `String`
 

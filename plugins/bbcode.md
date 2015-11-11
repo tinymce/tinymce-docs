@@ -12,8 +12,7 @@ description: Add basic BBCode input/output to TinyMCE.
 ```js
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
-  plugins: "bbcode",
-  ...
+  plugins: "bbcode"
 });
 ```
 

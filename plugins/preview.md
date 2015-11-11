@@ -4,17 +4,12 @@ title: Preview Plugin
 title_nav: Preview
 description: Shows a popup of the curent content in read-only format.
 keywords: view, preview
+controls: toolbar button, menu item
 ---
 
-// adds menu control (under View menu)
-
-// adds toolbar control
-
-This plugin adds a preview button to TinyMCE. Pressing the button opens a popup showing the current content.
+This plugin adds a preview button to the toolbar. Pressing the button opens a dialog box showing the current content in a preview mode. It also adds a menu item `Preview` under the `View` menu dropdown.
 
 **Type:** `String`
-
-**Default Value:**
 
 ##### Example
 
@@ -35,7 +30,7 @@ These settings affect the execution of the `preview` plugin. The height and widt
 
 This option allows you to set the height of the preview window that appears when using the `preview` plugin.
 
-**Type:** `Integer`
+**Type:** `Number`
 
 **Default Value:** `500`
 
@@ -55,7 +50,7 @@ tinymce.init({
 
 This option allows you to set the width of the preview window that appears when using the `preview` plugin.
 
-**Type:** `Integer`
+**Type:** `Number`
 
 **Default Value:** `650`
 

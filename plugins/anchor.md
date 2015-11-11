@@ -3,7 +3,7 @@ layout: default
 title: Anchor Plugin
 title_nav: Anchor
 description: Insert anchors (sometimes referred to as a bookmarks.)
-controls: toolbar menu
+controls: toolbar button, menu item
 ---
 
 This plugin adds an anchor/bookmark button to the toolbar that inserts an anchor at the editor's cursor insertion point. It also adds the menu item `anchor` under the `Insert` menu.

@@ -4,7 +4,7 @@ This option allows you to specify the buttons and the order that they will appea
 
 **Type:** `String`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({

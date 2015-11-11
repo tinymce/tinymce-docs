@@ -4,7 +4,7 @@ This option should contain a function name to be executed each time a editor ins
 
 **Type:** `JavaScript Function`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({

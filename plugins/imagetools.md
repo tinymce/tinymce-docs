@@ -12,7 +12,7 @@ Note that this feature requires at least Internet Explorer 10 as it uses the `HT
 
 **Type:** `String`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({
@@ -32,7 +32,7 @@ This option lets you specify an array of domains that allow cors. If cors header
 
 **Type:** `String`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({
@@ -109,7 +109,7 @@ This option lets select which toolbar items you want to display in the `imagetoo
 * `editimage`
 * `imageoptions`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({

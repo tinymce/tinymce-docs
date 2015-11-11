@@ -14,7 +14,7 @@ This plugin adds search/replace dialogs to TinyMCE. It also adds a toolbar contr
 
 **Type:** `String`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({

@@ -24,7 +24,7 @@ This option should contain a semicolon separated list of font titles and font fa
   "Webdings=webdings;"+
   "Wingdings=wingdings,zapf dingbats"
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({

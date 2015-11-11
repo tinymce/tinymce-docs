@@ -10,7 +10,7 @@ This plugin adds word count functionality to TinyMCE, placing a counter in the b
 
 **Type:** `String`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({
@@ -29,7 +29,7 @@ This option allows you to specify the regex that will be used to *strip punctuat
 
 **Type:** `String`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({
@@ -45,7 +45,7 @@ This option allows you to specify the regex that will be used to *count the word
 
 **Type:** `String`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({

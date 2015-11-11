@@ -4,7 +4,7 @@ This option allows you to set a custom content security policy for the editor's 
 
 **Type:** `String`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({

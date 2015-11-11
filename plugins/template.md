@@ -13,7 +13,7 @@ The `template` plugin adds support for custom templates. It also adds a menu ite
 
 **Type:** `String`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({
@@ -82,7 +82,7 @@ A creation date is one that is set if no previous date existed within the elemen
 
 **Type:** `String`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({
@@ -100,7 +100,7 @@ This option allows you to provide a date format that all 'creation' date templat
 
 **Type:** `String`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({
@@ -120,7 +120,7 @@ A modified date is one that is updated with each edit.
 
 **Type:** `String`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({
@@ -138,7 +138,7 @@ This option allows you to provide TinyMCE with a date/time format that all 'modi
 
 **Type:** `String`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({
@@ -158,7 +158,7 @@ This option allows you to specify the height of the template dialog box.
 
 **Default Value:** `"500"`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({
@@ -178,7 +178,7 @@ This option allows you to specify the width of the template dialog box.
 
 **Default Value:** `"600"`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({
@@ -196,7 +196,7 @@ This is an array of items that controls content replacement in the inserted temp
 
 **Type:** `String`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({
@@ -239,7 +239,7 @@ template_replace_values : {
 This option allows you to provide a list of class names (separated by spaces) whereby any template element with one of the classes will have its content replaced by the selected editor content when first inserted.
 
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({
@@ -258,7 +258,7 @@ tinymce.init({
 
 **Type:** `String`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({

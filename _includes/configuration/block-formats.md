@@ -4,7 +4,7 @@ The enables you to specify a list of block formats for the block listbox. The fo
 
 **Type:** `String`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({

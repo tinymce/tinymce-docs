@@ -14,7 +14,7 @@ This plugin adds full screen editing capabilities to TinyMCE. When the toolbar c
 
 **Type:** `String`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({

@@ -4,7 +4,7 @@ This option lets you add a custom cache buster URL part at the end of each reque
 
 **Type:** `String`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({

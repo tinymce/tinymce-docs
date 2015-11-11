@@ -11,7 +11,7 @@ The `colorpicker` plugin adds a full-blown color picker to the editor by setting
 
 **Type:** `String`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({
@@ -24,7 +24,7 @@ tinymce.init({
 
 This option enables you to provide your own color picker.
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({

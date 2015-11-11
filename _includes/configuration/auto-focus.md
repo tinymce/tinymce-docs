@@ -4,7 +4,7 @@ Automatically set the focus to an editor instance. The value of this option shou
 
 **Type:** `String`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({

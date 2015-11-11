@@ -10,7 +10,7 @@ This can be disabled if you don't need these controls.
 
 **Possible Values:** `true`, `false`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({

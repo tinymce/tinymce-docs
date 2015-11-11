@@ -4,7 +4,7 @@ This option allows you to set whether TinyMCE should append the styles in the [`
 
 **Type:** `Array`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({

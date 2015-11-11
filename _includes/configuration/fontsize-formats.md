@@ -6,7 +6,7 @@ This option allows you to override the font sizes displayed in the font size sel
 
 **Default Value:** `"8pt 10pt 12pt 14pt 18pt 24pt 36pt"`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({

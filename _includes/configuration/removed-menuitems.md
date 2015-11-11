@@ -4,7 +4,7 @@ This option allows you to remove items from TinyMCE's drop down menus. This is u
 
 **Type:** `String`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({

@@ -16,7 +16,7 @@ It also adds a toolbar control and a menu item `Insert/edit link` under the `Ins
 
 **Type:** `String`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({
@@ -37,7 +37,7 @@ This option allows you to set a default target for links when inserting/editing 
 
 **Type:** `String`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({
@@ -59,7 +59,7 @@ This option allows you to set whether TinyMCE will prompt the user to prepend a 
 
 **Possible Values:** `true`, `false`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({
@@ -189,7 +189,7 @@ tinymce.init({
 
 To disable the option dialog set `target_list` to `false`.
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({

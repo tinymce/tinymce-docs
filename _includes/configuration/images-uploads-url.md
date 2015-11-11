@@ -4,7 +4,7 @@ This option lets you specify a URL where you want images to be uploaded when you
 
 **Type:** `String`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({

@@ -61,7 +61,7 @@ Note that classes with the `mceItem` prefix are invisible within TinyMCE.
 
 **Default Value:** `"mceEditable"`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({

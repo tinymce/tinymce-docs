@@ -4,7 +4,7 @@ If you are using TinyMCE themes, this option enables you to specify the location
 
 **Type:** `String`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({

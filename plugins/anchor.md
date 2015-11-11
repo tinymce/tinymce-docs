@@ -13,7 +13,7 @@ The HTML inserted takes the form of an anchor id, for example, `<p><a id="start"
 **Type:** `String`
 
 
-## Anchor plugin example
+##### Anchor plugin example
 
 ```js
 tinymce.init({

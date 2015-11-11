@@ -8,7 +8,7 @@ If this option is set to true, all URLs returned from the MCFileManager will be 
 
 **Possible Values:** `true`, `false`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({

@@ -8,7 +8,7 @@ This option allows you to specify whether the editor should parse and keep condi
 
 **Possible Values:** `true`, `false`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({

@@ -53,10 +53,10 @@ There are multiple configuration options that will affect the operation of this 
 
 | Image Upload Handling Option     | Description          |
 |----------------------------------|----------------------|
-| [images_upload_url]({{ site.baseurl }}/editor-configuration-settings/file-and-image-upload/#images_upload_url) | This option lets you specify a URL to where you want images to be uploaded when you call editor.uploadImages. |
-| [images_upload_base_path]({{ site.baseurl }}/editor-configuration-settings/file-and-image-upload/#images_upload_base_path) | This option lets you specify a basepath to prepend to urls returned from the configured images_upload_url page. |
-| [images_upload_credentials]({{ site.baseurl }}/editor-configuration-settings/file-and-image-upload/#images_upload_credentials) | This option lets you specify if calls to the configured images_upload_url should pass along credentials like cookies etc cross domain. This is disabled by default. |
-| [images_upload_handler]({{ site.baseurl }}/editor-configuration-settings/file-and-image-upload/#images_upload_handler) | This option lets you replace TinyMCE's default javascript upload handler function with custom logic. The upload handler function takes three arguments, blobInfo, a success callback and a failure callback. When this option is not set, TinyMCE utilizes an XMLHttpRequest to upload images one at a time to the server, and calls the success callback with the location of the remote image. |
+| [images_upload_url]({{ site.baseurl }}/configure/file-image-upload/#images_upload_url) | This option lets you specify a URL to where you want images to be uploaded when you call editor.uploadImages. |
+| [images_upload_base_path]({{ site.baseurl }}/configure/file-image-upload/#images_upload_base_path) | This option lets you specify a basepath to prepend to urls returned from the configured images_upload_url page. |
+| [images_upload_credentials]({{ site.baseurl }}/configure/file-image-upload/#images_upload_credentials) | This option lets you specify if calls to the configured images_upload_url should pass along credentials like cookies etc cross domain. This is disabled by default. |
+| [images_upload_handler]({{ site.baseurl }}/configure/file-image-upload/#images_upload_handler) | This option lets you replace TinyMCE's default javascript upload handler function with custom logic. The upload handler function takes three arguments, blobInfo, a success callback and a failure callback. When this option is not set, TinyMCE utilizes an XMLHttpRequest to upload images one at a time to the server, and calls the success callback with the location of the remote image. |
 
 ##### Example of typical setup
 

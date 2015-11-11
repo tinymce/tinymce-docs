@@ -8,7 +8,7 @@ This option allows you to to split the current container block element if the en
 
 **Possible Values:** `true`, `false`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({

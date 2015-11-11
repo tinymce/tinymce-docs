@@ -14,7 +14,7 @@ However, this is **not** intended for use in producing normal web content such a
 
 **Type:** `String`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({

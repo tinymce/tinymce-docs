@@ -4,7 +4,7 @@ This option enables you to provide your own color picker.
 
 **Type:** `JavaScript Function`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({

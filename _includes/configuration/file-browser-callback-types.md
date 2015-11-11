@@ -6,7 +6,7 @@ This option enables you to specify what types of file pickers you need by using 
 
 **Possible Values:** `file`, `image`, `media`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({

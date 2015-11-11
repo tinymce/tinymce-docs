@@ -12,7 +12,7 @@ This plugin adds a save button to the TinyMCE toolbar, which will submit the for
 
 **Type:** `String`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({
@@ -48,7 +48,7 @@ This option allows you to disable the save button until modifications have been 
 
 **Type:** `Boolean`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({
@@ -65,7 +65,7 @@ This option allows you to specify the function that will be executed when the ca
 
 **Type:** `String`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({
@@ -82,7 +82,7 @@ This option allows you to specify the function that will be executed when the sa
 
 **Type:** `String`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({

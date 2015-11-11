@@ -14,7 +14,7 @@ This plugin adds directionality controls to the toolbar, enabling TinyMCE to bet
 
 **Possible Values:** `ltr`, `rtl`
 
-## Directionality plugin example:
+##### Directionality plugin example
 
 ```js
 tinymce.init({

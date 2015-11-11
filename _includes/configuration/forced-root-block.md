@@ -8,7 +8,7 @@ If you set this option to `false` it will never produce `p` tags on enter, or, a
 
 **Type:** `String`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({

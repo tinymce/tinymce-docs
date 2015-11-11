@@ -12,7 +12,7 @@ The Emoticons plugin adds a toolbar control that let's users insert smiley image
 
 **Type:** `String`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({

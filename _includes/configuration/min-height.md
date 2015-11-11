@@ -6,7 +6,7 @@ This option allows you to set the minimum height that a user can stretch the ent
 
 **Type:** `Number`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({

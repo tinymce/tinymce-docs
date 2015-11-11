@@ -14,7 +14,7 @@ This plugin allows a user to edit certain document properties (such as `title`, 
 
 **Type:** `String`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({
@@ -35,7 +35,7 @@ This option enables you to specify the default `doctype` for the output HTML.
 
 **Type:** `String`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({
@@ -51,7 +51,7 @@ This option enables you to specify the default encoding for the output HTML.
 
 **Type:** `String`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({
@@ -67,7 +67,7 @@ This option enables you to specify the default font **size** for the `body` elem
 
 **Type:** `String`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({
@@ -83,7 +83,7 @@ This option enables you to specify the default font **family** for the `body` el
 
 **Type:** `String`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({
@@ -99,7 +99,7 @@ This option enables you to specify the default language codes for the output HTM
 
 **Type:** `String`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({
@@ -115,7 +115,7 @@ This option enables you to specify the default `title` for the output HTML.
 
 **Type:** `String`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({
@@ -131,7 +131,7 @@ This option enables you to specify the default text color for the `body` element
 
 **Type:** `String`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({
@@ -149,7 +149,7 @@ This option enables you to specify if a XML declaration should be added or not t
 
 **Possible Values:** `true`, `false`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({
@@ -167,7 +167,7 @@ This option allows you to specify whether TinyMCE should hide the non `body` con
 
 **Possible Values:** `true`, `false`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({

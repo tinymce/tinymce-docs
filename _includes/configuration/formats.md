@@ -61,7 +61,7 @@ This example overrides some of the built in formats and tells TinyMCE to apply c
 
 **Type:** `Object`
 
-**Example:**
+##### Example
 
 ```js
 // Output elements in HTML style
@@ -113,7 +113,7 @@ It is possible to remove formats via the `removeformat` option.
 
 **Type:** `Array`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({

@@ -4,7 +4,7 @@ This options permits the editor to remove specific elements with TinyMCE execute
 
 **Type:** `String`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({

@@ -8,7 +8,7 @@ Please note that when using this option, no other image uploader options are nec
 
 **Type:** `JavaScript Function`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({

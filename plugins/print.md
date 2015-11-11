@@ -13,7 +13,7 @@ This plugin adds a print button to TinyMCE's toolbar. It also adds a `Print` ite
 
 **Type:** `String`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({

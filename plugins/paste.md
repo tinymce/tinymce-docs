@@ -20,7 +20,7 @@ Note that the toolbar button won't work in browsers that don't support direct ac
 
 **Type:** `String`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({
@@ -49,7 +49,7 @@ For example, Firefox enables you to paste images directly into any `contentEdita
 
 **Possbile Values:** `true`, `false`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({
@@ -71,7 +71,7 @@ This option enables you to set the default state of the `Paste as text` menu ite
 
 **Possbile Values:** `true`, `false`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({
@@ -93,7 +93,7 @@ This option allows you to disable TinyMCE's default paste filters when set to fa
 
 **Possbile Values:** `true`, `false`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({
@@ -115,7 +115,7 @@ This option enables you to modify the pasted content before it gets inserted int
 
 **Type:** `String`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({
@@ -136,7 +136,7 @@ This option enables you to modify the pasted content before it gets inserted int
 
 **Type:** `String`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({
@@ -157,7 +157,7 @@ This option enables you to configure the `valid_elements` specific to MS Office.
 
 **Type:** `String`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({
@@ -175,7 +175,7 @@ This options allows you to specify styles you want to keep when pasting in WebKi
 
 **Type:** `String`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({
@@ -193,7 +193,7 @@ This options allows you to specify which styles you want to retain when pasting 
 
 **Type:** `String`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({
@@ -215,7 +215,7 @@ This option enables the merge format feature of the paste plugin. This merges si
 
 **Possible Values:** `true`, `false`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({
@@ -237,7 +237,7 @@ This option lets you disable the logic that converts list like paragraph structu
 
 **Possible Values:** `true`, `false`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({
@@ -259,7 +259,7 @@ This option allows you to disable TinyMCE's default paste filters for webkit sty
 
 **Possible Values:** `true`, `false`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({

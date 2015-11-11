@@ -8,7 +8,7 @@ This option allows you to set the base direction of directionally neutral text (
 
 **Possible Values:** `"ltr"`, `"rtl"`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({

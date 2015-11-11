@@ -8,7 +8,7 @@ To specify the controls that should appear on TinyMCE's toolbar, the `toolbar` o
 
 **Type:** `String`
 
-**Example:** grouped toolbar
+##### Example grouped toolbar
 
 ```js
 tinymce.init({
@@ -27,7 +27,7 @@ To disable the toolbar, the toolbar option should be provided a boolean value of
 
 **Possible Values:** `true`, `false`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({
@@ -42,7 +42,7 @@ To specify multiple toolbars, the toolbar option should be provided with an arra
 
 **Type:** `Array`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({

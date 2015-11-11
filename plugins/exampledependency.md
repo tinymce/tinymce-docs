@@ -10,7 +10,7 @@ The Example_dependency plugin is an example plugin with a dependency on another 
 
 **Type:** `String`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({

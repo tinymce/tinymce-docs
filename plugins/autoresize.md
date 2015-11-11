@@ -8,7 +8,7 @@ keywords: height, width
 
 **Type:** `String`
 
-## Autoresize plugin example
+##### Autoresize plugin example
 
 ```js
 tinymce.init({
@@ -28,7 +28,7 @@ This option allows you to specify the size of the `padding` at the bottom of the
 
 **Type:** `Integer`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({
@@ -44,7 +44,7 @@ This option enables you to specify the **maximum** `height` that the editor will
 
 **Type:** `Integer`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({
@@ -59,7 +59,7 @@ This option enables you to specify the **minimum** `height` of the editor when i
 
 **Type:** `Integer`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({
@@ -78,7 +78,7 @@ This option allows you to set whether the editor will attempt to resize itself u
 
 **Possible Values:** `true`, `false`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({
@@ -94,7 +94,7 @@ This option allows you to specify the size of the `padding` at the sides of the 
 
 **Type:** `Integer`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({

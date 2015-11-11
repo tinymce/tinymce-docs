@@ -6,7 +6,7 @@ The base entities `<` `>` `&` `'` and `"` will always be entity encoded into the
 
 **Type:** `String`
 
-**Example:**
+##### Example
 
 ```js
 tinyMCE.init({

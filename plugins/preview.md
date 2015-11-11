@@ -16,7 +16,7 @@ This plugin adds a preview button to TinyMCE. Pressing the button opens a popup 
 
 **Default Value:**
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({
@@ -39,7 +39,7 @@ This option allows you to set the height of the preview window that appears when
 
 **Default Value:** `500`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({
@@ -59,7 +59,7 @@ This option allows you to set the width of the preview window that appears when 
 
 **Default Value:** `650`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({

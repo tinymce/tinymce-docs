@@ -8,7 +8,7 @@ This defaults to 30px but can be any value.
 
 **Default Value:** `30px`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({

@@ -10,7 +10,7 @@ This option allows you to disable TinyMCE's default behavior of removing `<br>` 
 
 **Possible Values:** `true`, `false`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({

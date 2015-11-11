@@ -8,14 +8,14 @@ keywords: tinymcespellchecker
 ## Server-Side Component Installation
 
 
-Spellchecking requires the deployment of several server-side components onto a J2EE compatible application server (e.g. Jetty, or Apache Tomcat).  
+Spell checking requires the deployment of several server-side components onto a J2EE compatible application server (e.g. Jetty, or Apache Tomcat).  
 
 The following server-side components are required to enable spellchecking:
 
 |Component                      | File							| Description |
 |:-----------------------------	|:-------						|:----------|
 | Allowed Origins				| ephox-allowed-origins.war 	| Supplies configuration for server components to communicate with your application.|
-| Spellchecking 				| ephox-spelling.war			|Spellchecking service for TinyMCE Enterprise.|
+| Spellchecking 				| ephox-spelling.war			|Spell checking service for TinyMCE Enterprise.|
 
 
 This guide will help you set up the Spelling server-side components, and show you how to use them in conjunction with editor clients. The steps required are:
@@ -48,7 +48,7 @@ The easiest way to deploy these files is to simply drag and drop them into the w
 
 More information on deploying components/applications:
 * [Deploying applications with Tomcat 6.0](https://tomcat.apache.org/tomcat-6.0-doc/deployer-howto.html)
-* [Deploying applications with Jetty](https://wiki.eclipse.org/Jetty/Howto/Deploy_Web_Applications) 
+* [Deploying applications with Jetty](https://wiki.eclipse.org/Jetty/Howto/Deploy_Web_Applications)
 
 
 ### Step 3. Create a configuration file and configure the allowed origins service
@@ -62,11 +62,11 @@ The SDK comes packaged with an example configuration file (`examples/sample_appl
 The `allowed-origins` configuration element will need to be specified in order for the spelling server-side component to work.
 
 
-#### allowed-origins 
+#### allowed-origins
 
 This element configures the allowed-origins service which allows all server-side components to communicate with specified domains.  
 
-The `origins` attribute must list all the domains that instances of the editor will be hosted on.  Only requests from the listed origins will be processed by the server-side components. Requests from any other domains will be rejected. An array of strings representing the domains allowed to communicate with the services. 
+The `origins` attribute must list all the domains that instances of the editor will be hosted on.  Only requests from the listed origins will be processed by the server-side components. Requests from any other domains will be rejected. An array of strings representing the domains allowed to communicate with the services.
 
 > Note: Be sure to include the protocol (https or http) and any required port number (eg:8080) in the string.
 
@@ -88,7 +88,7 @@ ephox {
 #### Entering Origins
 
 The origins are matched by protocol, hostname and port. So you may need a combination of all three, depending on which browser /s  you use. If you are serving the editor and services from http://localhost & port 80, then the list of origins should have an entry for "http://localhost" and any other servers with ports, like so:
- 
+
 ````
 ephox{
    allowed-origins{
@@ -108,7 +108,7 @@ ephox{
   }
 }
 ````
- 
+
 Ensure that you have the right protocol specified, and for more examples see the section below. If you experience issues, please use the Troubleshooting guide (in the Tip below) and you should be able to see if the browser sends a different origin to the one that you have specified. Both must match for the services to work.
 
 ##### Troubleshooting Origins
@@ -199,7 +199,7 @@ For compartmentalization of logs in your environment or to provide Ephox with mo
 
 To write the spelling-service specific logs to a specific file, you’ll need to perform the following steps:
 
-#### Create a logging configuration XML file 
+#### Create a logging configuration XML file
 
 The spelling service use the [Logback](http://logback.qos.ch/manual/configuration.html) logging format.
 
@@ -207,33 +207,33 @@ For easy implementation, here is a sample XML configuration with a tokenized val
 
 ````
 <configuration>
- 
+
   <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
     <encoder>
       <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
     </encoder>
   </appender>
- 
+
   <appender name="FILE" class="ch.qos.logback.core.FileAppender">
     <file>{$LOG_LOCATION}</file>
     <encoder>
       <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
     </encoder>
   </appender>
- 
+
   <!-- This results in all ephox logging going to file.
        Change/uncomment this part here if spellchecking specific logging is required -->
   <logger name="com.ephox" level="INFO"/>
   <!-- <logger name="com.ephox.ironbark" level="INFO"/> -->
- 
+
   <root level="INFO">
     <appender-ref ref="FILE" />
     <!-- If you want logging to go to the container as well uncomment
     the following line -->
     <!-- <appender-ref ref="STDOUT" /> -->
   </root>
- 
-</configuration> 
+
+</configuration>
 ````
 
 #### Add the logging configuration to your classpath
@@ -243,6 +243,3 @@ Much like how your `application.conf` services configuration file is added to th
 ````
 -Dlogback.configurationFile={$LOG_LOCATION}
 ````
-
-
-

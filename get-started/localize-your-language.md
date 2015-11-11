@@ -7,7 +7,7 @@ keywords: internationalization localization languages
 
 As developers we all hope our projects reach a wide audience, and for many of us they do. Which is why it is important that TinyMCE is easy to localize.
 
-In this section of the Getting Started guide we will show you how to change TinyMCE's user interface to suit your users' preferred language. The settings discussed in this section change the language that toolbar and menubar items, along with tooltips, are rendered in.
+In this section of the Get Started guide we will show you how to change TinyMCE's user interface to suit your users' preferred language. The settings discussed in this section change the language that toolbar and menubar items, along with tooltips, are rendered in.
 
 
 > Pro tip: language settings can be controlled in these configuration options: [directionality]({{ site.baseurl }}/configure/localization/#directionality), [language]({{ site.baseurl }}/configure/localization/#language) and  [language_url]({{ site.baseurl }}/configure/localization/#language_url). There is also a [Directionality Plugin]({{ site.baseurl }}/plugins/directionality/) that adds a toolbar button to control ltr-rtl behavior.

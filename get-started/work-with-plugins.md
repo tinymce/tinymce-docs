@@ -166,6 +166,7 @@ Customizing TinyMCE with the default plugins is that easy. And there are 40 of t
 | **9**    | Table         | [table](/plugins/table/) |
 | **10**   | Text Color    | [textcolor](/plugins/text-color) |
 
-## Next Steps
+
+## Next step
 
 In the next step you'll learn how to [customize TinyMCE's UI](../customize-ui/).

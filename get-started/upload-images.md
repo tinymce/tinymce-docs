@@ -130,7 +130,6 @@ The [PHP Upload Handler Script]({{ site.baseurl }}/advanced-development-topics/p
 * [W3C - Cross-Origin Resource Sharing Specification](http://www.w3.org/TR/cors/)
 
 
-
-## Next steps
+## Next step
 
 In the next step you'll learn about [spell checking in TinyMCE](../spell-checking/).

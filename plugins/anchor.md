@@ -8,7 +8,7 @@ controls: toolbar button, menu item
 
 This plugin adds an anchor/bookmark button to the toolbar that inserts an anchor at the editor's cursor insertion point. It also adds the menu item `anchor` under the `Insert` menu.
 
-The HTML inserted takes the form of an anchor id, for example, `<p><a id="start"></a>Hello, World!</p>`. In this example the user creates the id's value "start" via a dialog input.
+When a user clicks on the anchor button or menu item they will be prompted via a dialog box to enter a string. The string will be inserted into the HTML as an anchor id at the location of the cursor. For example, a user places their cursor at the beginning of "Hello World" and clicks on the anchor button and enters "start" in the dialog box. The resulting HTML will take the form of `<p><a id="start"></a>Hello, World!</p>`. 
 
 **Type:** `String`
 

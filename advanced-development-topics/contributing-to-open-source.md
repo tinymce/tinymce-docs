@@ -13,9 +13,9 @@ Contributed code will be licensed under the LGPL license but not limited to LGPL
 
 Copyright notices will be changed to Ephox Corporation. But contributors will get credit for their work.
 
-All third party code will be reviewed, tested and possible modified before being released.
+All third party code will be reviewed, tested and possibly modified before being released.
 
-These basic rules makes it possible for us to earn a living of the TinyMCE project but it also ensures that the code remains open source and under the LGPL license.
+These basic rules make it possible for us to earn a living from the TinyMCE project but it also ensures that the code remains open source and under the LGPL license.
 
 
 ## How to Contribute

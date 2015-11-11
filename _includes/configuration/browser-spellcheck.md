@@ -1,6 +1,6 @@
 ## browser_spellcheck
 
-One of the several spellchecking options developers have available is to use the browser's native spellchecker. `browser_spellcheck` handles this behavior.
+One of the several spell checking options developers have available is to use the browser's native spell checker. `browser_spellcheck` handles this behavior.
 
 **Type:** `Boolean`
 
@@ -15,4 +15,4 @@ tinymce.init({
 });
 ```
 
-For more information about spellchecking in TinyMCE see [this page]({{ site.baseurl }}/get-started/spell-checking/) in the Getting Started guide.
+For more information about spell checking in TinyMCE see [this page]({{ site.baseurl }}/get-started/spell-checking/) in the Get Started guide.

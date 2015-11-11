@@ -42,5 +42,4 @@ This optional setting allows you to specify the language code that will be used 
 ### Toolbar Buttons
 
 #### spellchecker
-This button allows the user to perform a spellcheck on the entire document.  In addition, the drop down menu attached to this button allows you to specify the language that is currently used when spellchecking.
-
+This button allows the user to perform a spell check on the entire document.  In addition, the drop down menu attached to this button allows you to specify the language that is currently used when spell checking.

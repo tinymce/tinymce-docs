@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Troubleshoot
-description: Debug problems with the premium spellchecker.
+description: Debug problems with the premium spell checker.
 keywords: tinymcespellchecker
 ---
 
@@ -19,11 +19,11 @@ If the server is not running on a standard HTTP or HTTPS port (80 or 443) then C
 
 ## Debug Server Configuration
 
-If spellchecking does not appear to be working, this is generally caused by the following reasons. This guide will walk you through the debugging process to identify the specific problem and how to remedy the issue.
+If spell checking does not appear to be working, this is generally caused by the following reasons. This guide will walk you through the debugging process to identify the specific problem and how to remedy the issue.
 
 1. The application.conf file is incorrect. Please go back and follow the steps listed in the installation guide. This is the most common problem - often the origins are specified without the port numbers and this can cause things to fail, eg: use 'http://localhost:8080' instead of 'http://localhost'. After making changes to the application.conf file, please restart your Java web server (e.g. Jetty or Tomcat).
 2. The application.conf file is correct, but something is wrong with one of the services. See the section below to debug the services.
-3. The application.conf file is correct, and the services are working, but the URL's that editor uses are not quite right. Refer to the Spellchecking Client-Side TinyMCE Plugin page for help.
+3. The application.conf file is correct, and the services are working, but the URL's that editor uses are not quite right. Refer to the Spell checking Client-Side TinyMCE Plugin page for help.
 4. All of the above are correct, but the browser sends back a different origin. See step 6. of  Using Browser Tooling to Investigate Services Issues  and add the origin value to the list of origins. Restart Tomcat and then refresh the editor page in a browser and things should work.
 
 ### Check/Debug the Server Configuration
@@ -62,8 +62,8 @@ Sometimes the 'Origin' header is never sent to the services, which results in th
 
 1. Try accessing the editor web page using your machine's fully qualified domain name (FQDN) rather than 'localhost'; and keep the network tools open so you can see if the 'Origin' header is sent back to the services.
 	So open a browser window and try (replace the path to match your setup): `http://myhost:myport/tinymce/index.html`
-2. If you now see an 'Origin' header being sent across, please alter your application.conf and replace all instances of 'localhost' with the domain name of your machine 
-3. Restart the Tomcat / Jetty service 
+2. If you now see an 'Origin' header being sent across, please alter your application.conf and replace all instances of 'localhost' with the domain name of your machine
+3. Restart the Tomcat / Jetty service
 4. Reload the browser page and all should work well
 
 If you are still experiencing problems, please contact [Ephox Support](http://support.ephox.com).
@@ -110,13 +110,13 @@ Then, restart the server and go to a browser and open the default tomcat page ht
 #### Tomcat :
 
 Edit the setenv.sh (Unix) or setenv.bat (Windows) to read as follows:
- 
+
 On Windows, please prefix each line with 'set' and remove the quotes . So the configuration would look like:
- 
+
 ```
-set CATALINA_OPTS= -Dconfig.file=/config/file/location/application.conf 
+set CATALINA_OPTS= -Dconfig.file=/config/file/location/application.conf
 set JAVA_OPTS= -Xms2048m -Xmx2048m -XX:PermSize=64m -XX:MaxPermSize=512m -Dfile.encoding=utf-8 -Djava.awt.headless-true -XX:+UseParallelGC -XX:MaxGCPauseMillis=100
-  
+
 CATALINA_OPTS=" -Dconfig.file=/config/file/location/application.conf
 JAVA_OPTS=" -Xms2048m -Xmx2048m -XX:PermSize=64m -XX:MaxPermSize=512m -Dfile.encoding=utf-8 -Djava.awt.headless-true -XX:+UseParallelGC -XX:MaxGCPauseMillis=100"
 
@@ -157,7 +157,7 @@ Download and install the curl package based on your environment:
   x64: http://curl.haxx.se/dlwiz/?type=bin&os=Win64&flav=MinGW64
   x86: http://curl.haxx.se/dlwiz/?type=bin&os=Win32&flav=-&ver=2000%2FXP and select either of the curl version: 7.39.0 - SSL enabled SSH enabled packages
 
-Once downloaded: 
+Once downloaded:
 
 1. Unzip the package like so:
 

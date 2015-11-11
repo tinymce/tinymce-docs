@@ -1,6 +1,6 @@
 ## gecko_spellcheck
 
-This option allows you to disable [Gecko](https://en.wikipedia.org/wiki/Gecko_(software)) based browsers' internal spellchecker from being used in TinyMCE.
+This option allows you to disable [Gecko](https://en.wikipedia.org/wiki/Gecko_(software)) based browsers' internal spell checker from being used in TinyMCE.
 
 **Type:** `Boolean`
 

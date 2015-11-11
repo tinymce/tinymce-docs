@@ -1,6 +1,6 @@
 ---
 layout: default
-title: TinyMCE Developer Documentation
+title: TinyMCE Documentation
 type: index
 ---
 

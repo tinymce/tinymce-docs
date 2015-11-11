@@ -62,3 +62,6 @@ When the `<form>` is submitted the TinyMCE editor mimics the behavior of a norma
 ## Next steps
 
 For first-time TinyMCE developers the next step is to learn about [Basic Setup](../basic-setup/), where we introduce selector, toolbar and plugin configuration options. We also provide a line-by-line breakdown of a basic configuration example.
+
+{% assign_page next_page = "/get-started/basic-setup/index.html" %}
+{% include next-step.html next=next_page %}

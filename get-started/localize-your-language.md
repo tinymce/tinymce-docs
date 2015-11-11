@@ -63,7 +63,6 @@ If you want to try it for yourself, [click here to directly download](http://www
 ```
 
 
-
-## Next steps
+## Next step
 
 By now you'll have a good idea that TinyMCE is an incredibly powerful, rich text editor. It's also compliant with a wide range of web browsers. Let's check out TinyMCE's [system requirements](../system-requirements/).

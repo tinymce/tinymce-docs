@@ -29,7 +29,6 @@ Please use the [issues tracker on GitHub](https://github.com/tinymce/tinymce/iss
 > TinyMCE's [image upload feature]({{ site.baseurl }}/configure/file-image-upload//) and the [imagetools]({{ site.baseurl }}/plugins/image-tools/) plugin are not compatible with IE8 and IE9.
 
 
-
-## Next steps
+## Next step
 
 We're almost done. Last, but certainly not least, are TinyMCE's [developer support options](../get-support).

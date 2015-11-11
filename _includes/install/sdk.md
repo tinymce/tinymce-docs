@@ -1,18 +1,18 @@
-If you'd rather download and install the script manually, get the package from [TinyMCE Downloads](http://www.tinymce.com/download). Unzip the package and move the `"tinymce/js/tinymce"` directory into a web accessible location on your web server (for example, `localhost`).
+### Step 1: Download the SDK
 
-To add the script, simply include this line of code in the `<head>` of your page:
+If you'd rather download and install the script manually, get the package from [TinyMCE Downloads](http://www.tinymce.com/download).
 
-### Step 1: Include the TinyMCE script
+Unzip the package and move the `"path/to/tinymce/"` directory into a web accessible location on your web server (for example, `localhost`).
+
+### Step 2: Include the TinyMCE script
 
 Include this line of code in the `<head>` of your HTML page:
 
 ```html
-<script type="text/javascript" src="<path/to/tinymce/tinymce.min.js"></script>
+<script src="<path/to/tinymce/js/tinymce.min.js"></script>
 ```
 
-> Tip: we give you a complete html snippet in Step 2.
-
-### Step 2: Initialize TinyMCE as part of a web form
+### Step 3: Initialize TinyMCE as part of a web form
 
 With the script included, initialize TinyMCE on any element (or elements) in your web page.
 
@@ -41,10 +41,8 @@ In this example, let's replace `<textarea id="mytextarea">` with a TinyMCE edito
 </html>
 ```
 
-And that's all there is to it!
-
-### Step 3: Saving content with a form POST
+### Step 4: Saving content with a form POST
 
 When the `<form>` is submitted the TinyMCE editor mimics the behavior of a normal HTML `<textarea>` during the `post`. In your form handler you can process the content submitted as if it had come from a regular `<textarea>`.
 
-> In the next step you'll learn how to unleash TinyMCE's power by [working with plugins](../working-with-plugins/).
+> If you have decided the use the SDK, move on to the next step [working with plugins](../work-with-plugins/), where you'll start customizing TinyMCE. If you'd like to learn about other install options please keep reading.

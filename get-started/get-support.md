@@ -2,16 +2,14 @@
 layout: default
 title: 12. Get Support & FAQ
 description: Community and pro-grade support options.
-keywords: forum, forums, absolute url, relative url, security, xss
+keywords: forum forums url absolute relative security xss
 ---
 
-> If you landed here having worked through the [Getting Started guide]({{ site.baseurl }}/getting-started/first-steps), congratulations, you are on you way to TinyMCE ninjahood!
-
-> It's now time to deep-dive into the [editor configuration settings]({{ site.baseurl }}/editor-configuration-settings/) and [plugin options]({{ site.baseurl }}/plugins/). Good luck and if you get stuck a great place to start is the [TinyMCE Forum](http://www.tinymce.com/forum/).
+> If you landed here having worked through the [Get Started Guide]({{ site.baseurl }}/get-started/first-steps), congratulations, you are on you way to TinyMCE ninjahood :-) It's now time to deep-dive into [configuring the editor]({{ site.baseurl }}/configure/) and exploring [plugin options]({{ site.baseurl }}/plugins/). Wishing you well, welcome to TinyMCE and if you get stuck a great place to start is the [TinyMCE Forum](http://www.tinymce.com/forum/).
 
 
 ## Premium Support
-If your support requirements included guaranteed responses, in-time bug fixes (and so on), **paid** premium support is available as part of [TinyMCE Enterprise](http://www.tinymce.com/enterprise/).
+If your support requirements included guaranteed responses from the TinyMCE Support Team, in-time bug fixes (and so on), **paid** premium support is available as part of [TinyMCE Enterprise](http://www.tinymce.com/enterprise/).
 
 If you are a TinyMCE Enterprise customer in good standing please [review what information you need to gather](http://docs.ephox.com/pages/viewpage.action?pageId=19760628) to submit a case.
 
@@ -58,7 +56,7 @@ tinymce.init({
 });
 ```
 
-**Example:**
+##### Example
 
 `http://www.site.com/path1/path2/file.htm >> path2/file.htm`
 
@@ -75,11 +73,11 @@ tinymce.init({
 });
 ```
 
-**Example:**
+##### Example
 
 `path2/file.htm >> /path1/path2/file.htm`
 
-#### Domain Absolute URLs
+#### Domain absolute URLs
 
 This will convert all relative URLs to absolute URLs. The URLs will be absolute based on the `document_base_url` with domain.
 
@@ -92,7 +90,7 @@ tinymce.init({
 });
 ```
 
-**Example:**
+##### Example
 
 `path2/file.htm >> http://www.site.com/path1/path2/file.htm`
 

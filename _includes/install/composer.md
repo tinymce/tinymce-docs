@@ -12,8 +12,6 @@ Include this line of code in the `<head>` of your HTML page:
 <script src="/path/to/tinymce.min.js"></script>
 ```
 
-> Tip: we give you a complete html snippet in Step 2.
-
 ### Step 2: Initialize TinyMCE as part of a web form
 
 With the script included, initialize TinyMCE on any element (or elements) in your web page.
@@ -43,8 +41,6 @@ In this example, let's replace `<textarea id="mytextarea">` with a TinyMCE edito
 </html>
 ```
 
-And that's all there is to it! Read on as we have two more notes for you.
-
 ### Step 3: Saving content with a form POST
 
 When the `<form>` is submitted the TinyMCE editor mimics the behavior of a normal HTML `<textarea>` during the `post`. In your form handler you can process the content submitted as if it had come from a regular `<textarea>`.
@@ -64,4 +60,4 @@ tinymce.init({
 });
 ```
 
-> In the next step you'll learn how to unleash TinyMCE's power by [working with plugins](../working-with-plugins/).
+> If you have decided the use a package manager, move on to the next step [working with plugins](../work-with-plugins/), where you'll start customizing TinyMCE. If you'd like to learn about other install options please keep reading.

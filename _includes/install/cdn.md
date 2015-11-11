@@ -1,5 +1,3 @@
-The easiest way to get started is to use our CDN.
-
 ### Step 1: Include the TinyMCE script
 
 Include this line of code in the `<head>` of your HTML page:
@@ -7,8 +5,6 @@ Include this line of code in the `<head>` of your HTML page:
 ```html
 <script src="//tinymce.cachefly.net/4.2/tinymce.min.js"></script>
 ```
-
-> Tip: we give you a complete html snippet in Step 2.
 
 ### Step 2: Initialize TinyMCE as part of a web form
 
@@ -39,10 +35,6 @@ In this example, let's replace `<textarea id="mytextarea">` with a TinyMCE edito
 </html>
 ```
 
-And that's all there is to it!
-
-> Note: if you're testing this locally, you will need to prepend `https://` to urls in the `script` tag. For example, `<script src="https://tinymce.cachefly.net/4.2/tinymce.min.js"></script>`.
-
 ### Step 3: Saving content with a form POST
 
 When the `<form>` is submitted the TinyMCE editor mimics the behavior of a normal HTML `<textarea>` during the `post`. In your form handler you can process the content submitted as if it had come from a regular `<textarea>`.
@@ -57,4 +49,4 @@ For a list of versions supported by the CacheFly CDN, check this text document: 
 
 While we're at it a big shout out to [Cachefly](http://www.cachefly.com/) who sponsors the CDN hosting of TinyMCE. If you haven't tried CacheFly now is the perfect time. Use promo code `TINYMCE` to get exclusive pay-as-you-go pricing. They also have a risk-free 2TB 14-day trial with no credit card required. Sign up at [www.cachefly.com](http://www.cachefly.com/).
 
-> In the next step you'll learn how to unleash TinyMCE's power by [working with plugins](../working-with-plugins/).
+> If you have decided the use the CDN, move on to the next step [working with plugins](../work-with-plugins/), where you'll start customizing TinyMCE. If you'd like to learn about other install options please keep reading.

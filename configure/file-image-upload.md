@@ -1,6 +1,6 @@
 ---
 layout: default
-title: File and Image Upload
+title: File & Image Upload
 description: These settings affect TinyMCE's image and file upload capabilities.
 ---
 

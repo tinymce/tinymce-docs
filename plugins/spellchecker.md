@@ -2,12 +2,12 @@
 layout: default
 title: Spell Checker Plugin
 title_nav: Spell Checker
-description: Enables TinyMCE's spell check functionality.
+description: Enables TinyMCE's spellcheck functionality.
 keywords: spellchecker
 controls: toolbar button, menu item
 ---
 
-This plugin enables TinyMCE's spell check functionality. It also adds a toolbar button and the menu item `Spellcheck` under the `Tools` menu dropdown.
+This plugin enables TinyMCE's spellcheck functionality. It also adds a toolbar button and the menu item `Spellcheck` under the `Tools` menu dropdown.
 
 **Type:** `String`
 
@@ -100,7 +100,7 @@ tinymce.init({
 
 ### `spellchecker_languages`
 
-This option lets you specify a list of languages for the user to select from. The list is added to the spell check toolbar icon. The format is based on the 3.x `spellchecker` format.
+This option lets you specify a list of languages for the user to select from. The list is added to the spellcheck toolbar icon. The format is based on the 3.x `spellchecker` format.
 
 **Type:** `String`
 
@@ -121,7 +121,7 @@ tinymce.init({
 
 ### `spellchecker_rpc_url`
 
-This options enables you to specify a custom URL to be used for the spell checker. This can be the `spellchecker` url provided by the TinyMCE `spellchecker` packages or a url to a page that you have in your system. The URL is **relative** to the `spellchecker` plugin.
+This options enables you to specify a custom URL to be used for the spellchecker. This can be the `spellchecker` url provided by the TinyMCE `spellchecker` packages or a url to a page that you have in your system. The URL is **relative** to the `spellchecker` plugin.
 
 **Type:** `String`
 

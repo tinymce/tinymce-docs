@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Troubleshoot
-description: Debug problems with the premium spell checker.
+description: Debug problems with the premium spellchecker.
 keywords: tinymcespellchecker
 ---
 

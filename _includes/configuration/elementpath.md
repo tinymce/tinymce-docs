@@ -8,7 +8,7 @@ This option allows you to disable the element path within the status bar at the 
 
 **Possible Values:** `true`, `false`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({

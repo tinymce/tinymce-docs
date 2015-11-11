@@ -16,7 +16,7 @@ This plugin adds a toolbar button that allows a user to edit the HTML code hidde
 
 **Default Value:**
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({
@@ -37,7 +37,7 @@ Note that the external dimensions of the actual modal will be slightly larger th
 
 **Type:** `String`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({
@@ -57,7 +57,7 @@ Note that the external dimensions of the actual modal will be slightly larger th
 
 **Type:** `String`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({

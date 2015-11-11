@@ -13,7 +13,7 @@ Note that by default `contextmenu` does not disable the operating system's nativ
 
 **Type:** `String`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({
@@ -35,7 +35,7 @@ To specify the menu items that should appear on TinyMCE's context menu, the `con
 
 **Type:** `String`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({
@@ -55,7 +55,7 @@ We advise you give some thought about whether you really want to do this. Many u
 
 **Default Value:** `false`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({

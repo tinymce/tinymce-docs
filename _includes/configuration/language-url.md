@@ -4,7 +4,7 @@ When using the [`language`](#language) option to set the user interface language
 
 **Type:** `String`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({

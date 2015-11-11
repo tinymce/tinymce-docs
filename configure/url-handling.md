@@ -8,7 +8,7 @@ description: These settings affect the way URLs are handled by the editor.
 
 ### Relative URLs
 
-This will convert all URLs within the same domain to relative URLs. The URLs will be relative from the [document_base_url].
+This will convert all URLs within the same domain to relative URLs. The URLs will be relative from the [document_base_url](#document_base_url).
 
 ```
 relative_urls : true,

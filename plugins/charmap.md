@@ -14,7 +14,7 @@ This plugin adds a `charmap` button that enables users to insert special charact
 
 **Type:** `String`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({

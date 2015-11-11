@@ -6,7 +6,7 @@ These styles are useful for previewing content as it will appear outside the edi
 
 **Type:** `Object`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({

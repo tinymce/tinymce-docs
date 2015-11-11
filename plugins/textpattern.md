@@ -13,7 +13,7 @@ The default pattern is similar to markdown syntax, so you can type `# text` to p
 
 **Type:** `String`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({
@@ -31,7 +31,7 @@ This option lets you configure the text patterns that get matched by the `textpa
 
 There are two types of patterns: inline and block patterns. Inline patterns have a start and end whereas the block-based patterns only have a start. You can specify formats to be applied to the selection or commands to be executed.
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({

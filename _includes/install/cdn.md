@@ -41,9 +41,9 @@ When the `<form>` is submitted the TinyMCE editor mimics the behavior of a norma
 
 ### Additional information about using the CDN
 
-There are a few things you need to consider when using the CDN version. If you wish to use any local plugins (like [MoxieManager](http://www.moxiemanager.com) for example) you need to load them using the new [`external_plugins`]({{ site.baseurl }}/editor-configuration-settings/integration-and-setup/#external_plugins) option.
+There are a few things you need to consider when using the CDN version. If you wish to use any local plugins (like [MoxieManager](http://www.moxiemanager.com) for example) you need to load them using the new [`external_plugins`]({{ site.baseurl }}/configure/integration-and-setup/#external_plugins) option.
 
-Also, if you wish to use a custom language, you need to enter the location of the language file into the new [`language_url`]({{ site.baseurl }}/editor-configuration-settings/internationalization/#language_url) option.
+Also, if you wish to use a custom language, you need to enter the location of the language file into the new [`language_url`]({{ site.baseurl }}/configure/localization/#language_url) option.
 
 For a list of versions supported by the CacheFly CDN, check this text document: [http://tinymce.cachefly.net/index.txt](http://tinymce.cachefly.net/index.txt)
 

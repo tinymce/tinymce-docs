@@ -13,7 +13,7 @@ This function should return the converted URL as a string. This option is set to
 
 **Type:** `Javascript Function`
 
-**Example:**
+##### Example
 
 ```js
 function myCustomURLConverter(url, node, on_save, name) {

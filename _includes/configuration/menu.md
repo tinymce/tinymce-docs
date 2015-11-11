@@ -10,7 +10,7 @@ If you would like to group these menu items, please insert a `|` pipe character 
 
 **Type:** `Object`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({

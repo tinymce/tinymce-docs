@@ -10,7 +10,7 @@ This option gives you the ability to disable the resize handle or set it to resi
 
 **Possible Values:** `true`, `false`, `"both"`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({
@@ -27,7 +27,7 @@ tinymce.init({
 
 **Possible Values:** `true`, `false`, `"both"`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({

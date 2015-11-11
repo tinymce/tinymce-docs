@@ -8,7 +8,7 @@ This function is executed each time a user clicks on the "browse" buttons in var
 
 **Type:** `JavaScript Function`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({

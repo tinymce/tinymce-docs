@@ -16,7 +16,7 @@ It's worth noting that at present the toolbar button icon is the same for both `
 
 **Type:** `String`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({

@@ -11,7 +11,7 @@ The `advlist` plugin extends the core `bullist` and `numlist` toolbar controls b
 
 **Type:** `String`
 
-## Advanced List plugin example
+##### Advanced List plugin example
 
 ```js
 tinymce.init({

@@ -8,7 +8,7 @@ This true/false option gives you the ability to turn on/off the visual aid for b
 
 **Possible Values:** `true`, `false`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({

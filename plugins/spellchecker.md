@@ -14,7 +14,7 @@ This plugin enables TinyMCE's spell check functionality. It also adds a toolbar 
 
 **Type:** `String`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({
@@ -89,7 +89,7 @@ This configuration option lets you set the default language code for the spellch
 
 **Default Value:**  `en`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({
@@ -110,7 +110,7 @@ This option lets you specify a list of languages for the user to select from. Th
 **Default Value:** `'English=en,Danish=da,Dutch=nl,Finnish=fi,French=fr_FR,' +
     'German=de,Italian=it,Polish=pl,Portuguese=pt_BR,Spanish=es,Swedish=sv'`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({
@@ -128,7 +128,7 @@ This options enables you to specify a custom URL to be used for the spell checke
 
 **Type:** `String`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({
@@ -177,7 +177,7 @@ This option enables you to override the matching of characters that are parts of
 
 **Type:** `String`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({

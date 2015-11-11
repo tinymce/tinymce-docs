@@ -4,7 +4,7 @@ This option allows you to specify which plugins TinyMCE will attempt to load whe
 
 **Type:** `String`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({

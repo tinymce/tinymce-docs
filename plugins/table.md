@@ -14,7 +14,7 @@ The `table` plugin adds table management functionality to TinyMCE. It also adds 
 
 **Type:** `String`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({
@@ -39,7 +39,7 @@ This option enables you to specify which elements should be cloned as empty chil
 
 **Type:** `String`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({
@@ -60,7 +60,7 @@ However, if you set this option to `false` the dragable matrix will be replaced 
 
 **Possible Values:**  `true`, `false`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({
@@ -82,7 +82,7 @@ This option enables you to disable the default tab between table cells feature. 
 
 **Possible Values:** `true`, `false`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({
@@ -100,7 +100,7 @@ This option enables you to specify default attributes for inserted tables.
 
 **Type:** `String`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({
@@ -120,7 +120,7 @@ This option enables you to specify default styles for inserted tables.
 
 **Type:** `String`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({
@@ -140,7 +140,7 @@ This option enables you to specify a list of classes to present in the table opt
 
 **Type:** `String`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({
@@ -162,7 +162,7 @@ This option enables you to specify a list of classes to present in the table cel
 
 **Type:** `String`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({
@@ -184,7 +184,7 @@ This option enables you to specify a list of classes to present in the table row
 
 **Type:** `String`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({
@@ -210,7 +210,7 @@ This option makes it possible to disable the advanced tab in the table dialog bo
 
 **Possible Values:** `true`, `false`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({
@@ -232,7 +232,7 @@ This option makes it possible to disable the advanced tab in the table cell dial
 
 **Possible Values:** `true`, `false`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({
@@ -254,7 +254,7 @@ This option makes it possible to disable the advanced tab in the table row dialo
 
 **Possible Values:** `true`, `false`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({

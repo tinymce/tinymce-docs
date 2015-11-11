@@ -8,7 +8,7 @@ This option allows you to specify whether or not TinyMCE should display the stat
 
 **Possible Values:** `true`, `false`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({

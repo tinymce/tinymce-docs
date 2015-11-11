@@ -10,7 +10,7 @@ This options allows you to turn on/off the resizing handles on images, tables or
 
 **Possible Values:** `true`, `false`, `img`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({
@@ -27,7 +27,7 @@ tinymce.init({
 
 **Possible Values:** `true`, `false`, `img`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({

@@ -7,7 +7,7 @@ The format of the option is very similar to the formats option, the only differe
 
 **Type:** `Array`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({
@@ -28,7 +28,7 @@ Another example, this will add two options to the Formats dropdown, one for alig
 
 **Type:** `Array`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({})
@@ -64,7 +64,7 @@ If you want to merge your styles to the default `styles_format`, you can use the
 
 **Possible Values:** `true`, `false`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({
@@ -80,7 +80,7 @@ The default is very similar to the following:
 
 **Type:** `Array`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({

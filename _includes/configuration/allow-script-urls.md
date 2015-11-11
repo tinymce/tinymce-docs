@@ -8,7 +8,7 @@ Enabling this option will allow `javascript: urls` in links and images. This is 
 
 **Possible Values:** `true`, `false`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({

@@ -8,7 +8,7 @@ This option enables you to control TinyMCE to force the color format to use hexa
 
 **Possible Values:** `true`, `false`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({

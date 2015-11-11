@@ -11,7 +11,7 @@ This plugin gives the user a warning if they made modifications to a editor inst
 
 **Type:** `String`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({
@@ -34,7 +34,7 @@ This option allows you to set whether the editor should prompt the user to advis
 
 **Possible Values:** `true`, `false`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({

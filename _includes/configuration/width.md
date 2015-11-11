@@ -4,7 +4,7 @@ Set the width of the editor in pixels.
 
 **Type:** `Number`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({

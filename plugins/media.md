@@ -14,7 +14,7 @@ The `media` plugin adds the ability for users to be able to add HTML5 video and 
 
 **Type:** `String`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({
@@ -43,7 +43,7 @@ This option is enabled by default and accepts urls input into the source field o
 
 **Possible Values:** `true`, `false`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({
@@ -61,7 +61,7 @@ This option allows you to specify the function that will return the html embed c
 
 **Type:** `String`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({
@@ -85,7 +85,7 @@ This options allows you disable the `Alternative source` input field in the medi
 
 **Possible Values:** `true`, `false`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({
@@ -107,7 +107,7 @@ This options allows you disable the `Poster` input field in the media dialog.
 
 **Possible Values:** `true`, `false`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({
@@ -129,7 +129,7 @@ This options allows you disable the `Dimensions` input fields in the media dialo
 
 **Possible Values:** `true`, `false`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({
@@ -151,7 +151,7 @@ This option allows you disable the XSS sanitation filter for video/object elemen
 
 **Possible Values:** `true`, `false`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({
@@ -169,7 +169,7 @@ This option allows you to embed videos using script elements.
 
 **Type:** `String`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({
@@ -190,7 +190,7 @@ This option allows you to specify the function that will return the html embed c
 
 **Type:** `String`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({

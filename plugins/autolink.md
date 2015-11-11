@@ -13,7 +13,7 @@ Note that this option won't convert incomplete urls, for example `example.com` w
 
 **Type:** `String`
 
-## Autolink plugin example
+##### Autolink plugin example
 
 ```js
 tinymce.init({

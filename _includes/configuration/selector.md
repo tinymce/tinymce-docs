@@ -8,18 +8,19 @@ When using this option in TinyMCE's regular editing mode, the element will be re
 
 **Type:** `String`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({
-  selector: "textarea"  // change this value according to your html});
+  selector: "textarea"  // change this value according to your html
+});
 ```
 
 ### Replace a textarea element with id "editable"
 
 **Type:** `String`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({
@@ -33,7 +34,7 @@ When using this option in TinyMCE's inline editing mode, the selector can be use
 
 **Type:** `String`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({
@@ -42,4 +43,4 @@ tinymce.init({
 });
 ```
 
-For more information on the differences between regular and inline editing modes please see this page [here]({{ site.baseurl }}/getting-started/using-tinymce-inline/).
+For more information on the differences between regular and inline editing modes please see this page [here]({{ site.baseurl }}/get-started/use-tinymce-inline/).

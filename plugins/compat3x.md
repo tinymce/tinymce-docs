@@ -18,7 +18,7 @@ This plugin contains a few compatibility files for the old 3.x branch. This enab
 
 **Type:** `String`
 
-**Example:**
+##### Example
 
 Example of usage **in** `tinymce.init`:
 

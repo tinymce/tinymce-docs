@@ -10,7 +10,7 @@ This plugin adds the possibility to tab in/out of TinyMCE.
 
 **Type:** `String`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({
@@ -29,7 +29,7 @@ This option enables you to specify an element `ID` to focus, when the user press
 
 **Type:** `String`
 
-**Example:**
+##### Example
 
 ```js
 // Move focus to specific element

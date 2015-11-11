@@ -14,7 +14,7 @@ This plugin adds a button for inserting nonbreaking space entities `&nbsp;` at t
 
 **Type:** `String`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({

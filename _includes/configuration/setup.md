@@ -8,7 +8,7 @@ A common use case for this setting is to add editor events to TinyMCE. For insta
 
 **Type:** `Javascript Function`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({

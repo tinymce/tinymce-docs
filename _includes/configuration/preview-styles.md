@@ -8,7 +8,7 @@ This option enables you to turn off the preview of styles in format/style listbo
 
 **Possible Values:** `true`, `false`
 
-**Example:**
+##### Example
 
 ```js
 tinyMCE.init({

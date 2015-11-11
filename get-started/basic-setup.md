@@ -196,7 +196,7 @@ tinymce.init({
 
 Using the configuration options above you'll be able to instantiate TinyMCE and perform the initial customizations to match your editor requirements. TinyMCE has many many other configuration options available that enable further customization and extension of the editor.
 
-You will find full list of [configuration options here]({{ site.baseurl }}/editor-configuration-settings/). Plugins, their options and control associations are [available here]({{ site.baseurl }}/plugins/).
+You will find full list of [configuration options here]({{ site.baseurl }}/configure/). Plugins, their options and control associations are [available here]({{ site.baseurl }}/plugins/).
 
 To help get you started, let's walk through an example of a basic TinyMCE configuration.
 

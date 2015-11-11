@@ -22,11 +22,11 @@ If you want to use one language only, click the download link on the far right o
 
 ### Step 2
 
-Unpack the language `js` file(s) into your `path/to/tinymce/js/langs/` folder. Important: if you don't put the language pack in `js/langs/` the language settings will not work, unless you use the [language_url]({{ site.baseurl }}/configure/internationalization/#language_url) configuration option.
+Unpack the language `js` file(s) into your `path/to/tinymce/js/langs/` folder. Important: if you don't put the language pack in `js/langs/` the language settings will not work, unless you use the [language_url]({{ site.baseurl }}/configure/localization/#language_url) configuration option.
 
 ### Step 3
 
-Set the language option in your TinyMCE configuration to the language code in the list on [this page]({{ site.baseurl }}/configurate/internationalization/#language).
+Set the language option in your TinyMCE configuration to the language code in the list on [this page]({{ site.baseurl }}/configure/localization/#language).
 
 ### Step 4
 

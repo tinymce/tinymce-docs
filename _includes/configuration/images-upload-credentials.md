@@ -8,7 +8,7 @@ This option lets you specify if calls to the configured [`images_upload_url`](im
 
 **Possible Values:** `true`, `false`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({

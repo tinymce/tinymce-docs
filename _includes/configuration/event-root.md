@@ -6,7 +6,7 @@ By default all events gets bound to the editable area. But in some implementatio
 
 **Type:** `String`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({

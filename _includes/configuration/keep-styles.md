@@ -8,7 +8,7 @@ This option will keep the editor's current text style when a user presses enter/
 
 **Possible Values:** `true`, `false`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({

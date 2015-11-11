@@ -6,7 +6,7 @@ If you wish to use a language other than English, please follow these steps:
 
 1. Download the language pack you wish to use [from here](http://www.tinymce.com/i18n/index.php).
 2. Unpack the language file into your `tinymce/js/langs` folder.
-3. Set the [`language`](/editor-configuration-settings/internationalization/#language) option in your TinyMCE configuration to the language code in the list below (which you'll also find on the language pack [download page](http://www.tinymce.com/i18n/index.php).
+3. Set the [`language`](/configure/localization/#language) option in your TinyMCE configuration to the language code in the list below (which you'll also find on the language pack [download page](http://www.tinymce.com/i18n/index.php).
 4. Confirm that the language has been set successfully by loading TinyMCE.
 
 Please note, the language code you set in your TinyMCE configuration must match the filename of the language file. If the language file is not found, TinyMCE will not load.
@@ -15,7 +15,7 @@ Please note, the language code you set in your TinyMCE configuration must match 
 
 **Default Value:** `en_US`
 
-**Example:**
+##### Example
 
 In this example we will set the editor language to Swedish.
 

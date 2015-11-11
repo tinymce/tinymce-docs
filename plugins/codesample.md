@@ -12,11 +12,11 @@ The Code Sample plugin (`codesample`) lets a user insert and embed code snippets
 
 This plugin demonstrates the support for the new block based `contenteditable=false` elements available in version 4.3.
 
-By default `codesample` uses http://prismjs.com/ to embed the code samples within the editor and works "out of the box". That is, when a user copies valid code syntax into the editable area the code will be automatically formatted according to Prism default css rules.
+By default `codesample` uses http://prismjs.com/ to embed the code samples within the editor and works out of the box. That is, when a user copies valid code syntax into the editable area the code will be automatically formatted according to Prism default css rules.
 
 Of course, you could also use other client side syntax highlighters if you prefer.
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({

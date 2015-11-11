@@ -6,7 +6,7 @@ This option is disabled by default.
 
 **Type:** `String`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({

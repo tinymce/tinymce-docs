@@ -8,7 +8,7 @@ Enable or disable TinyMCE from automatically uploading local images.
 
 **Possible Values:** `true`, `false`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({

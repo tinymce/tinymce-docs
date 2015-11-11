@@ -8,7 +8,7 @@ This plugin adds some layer controls. It only works on some browsers and will pr
 
 **Type:** `String`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({

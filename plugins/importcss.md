@@ -12,7 +12,7 @@ By default selectors like `".my-class"`, `".my-class1.my-class2"` and `"p.my-cla
 
 **Type:** `String`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({
@@ -34,7 +34,7 @@ If set to `true` this option will append the imported styles to the end of the `
 
 **Default Value:** `false`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({
@@ -51,7 +51,7 @@ This option enables you to add the CSS files that should be used for populating 
 
 **Type:** `String`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({
@@ -128,7 +128,7 @@ This option is used in cases where the class attribute should be replaced or mer
 
 **Type:** `Boolean`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({
@@ -145,7 +145,7 @@ This option allows you to override the default selector to format converter func
 
 **Type:** `String`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({

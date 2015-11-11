@@ -6,7 +6,7 @@ To specify the menus that should appear on TinyMCE's menu bar, the menubar optio
 
 **Type:** `String`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({

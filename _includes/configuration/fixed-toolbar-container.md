@@ -4,7 +4,7 @@ Use this option to render the inline toolbar into a fixed positioned HTML elemen
 
 **Type:** `String`
 
-**Example::**
+##### Example
 
 ```js
 tinymce.init({

@@ -1,24 +1,26 @@
 
 ## content_css
 
-This option enables you to specify a custom CSS file that extends the theme content CSS. This CSS file is the one used within the editor's editable area. This option can also be a comma separated list of URLs.
+It is usually desirable that TinyMCE's editable area has the same styling as the surrounding content. This can be achieved with the `content_css` option, which enables you to extend external `css` into the editable area.
 
-If you specify a relative path, it is resolved in relation to the URL of the (HTML) file that includes TinyMCE, **not** relative to TinyMCE itself.
+The `css` file used in this setting should be the same `css` file that controls the look/style of all your pages. So, let's say you include a file `myLayout.css` in all your pages to control your site's global appearance, then this file must be set as your `content_css` value. Doing this will ensure the content in the editable area will also have your site's style.
+
+> Note: if you specify a relative path, it is resolved in relation to the url of the (HTML) file that includes TinyMCE, **not** relative to TinyMCE itself.
 
 **Type:** `String`
 
-**Absolute path example:**
+##### Absolute path example
 
 ```js
 // File: http://domain.mine/mysite/index.html
 
 tinyMCE.init({
   selector: "textarea",  // change this value according to your html
-  content_css : "/mycontent.css"  // resolved to http://domain.mine/mycontent.css
+  content_css : "/myLayout.css"  // resolved to http://domain.mine/myLayout.css
 });
 ```
 
-**Relative path example:**
+##### Relative path example
 
 ```js
 // File: http://domain.mine/mysite/index.html
@@ -29,7 +31,7 @@ tinyMCE.init({
 });
 ```
 
-**Using multiple stylesheets example:**
+##### Using multiple stylesheets example
 
 ```js
 tinyMCE.init({
@@ -38,7 +40,7 @@ tinyMCE.init({
 });
 ```
 
-**Using multiple stylesheets as array example:**
+##### Using multiple stylesheets as array example
 
 ```js
 tinyMCE.init({
@@ -66,7 +68,3 @@ tinymce.init({
   content_css : "path/myscript.php?myParam=myValue&bogus=" + new Date().getTime()
 });
 ```
-
-**What is this good for?**
-
-The CSS file in this setting should be the very CSS file that controls the looks (or "layout") of all your pages! So, let's say you include a file `"myLayout.css"` in all your pages, in order to control your site's global looks then this file must be set as your `content_css` option, because then the content in the editor's editable area will also have your site's style.

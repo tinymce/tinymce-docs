@@ -7,7 +7,7 @@ description: Add basic BBCode input/output to TinyMCE.
 
 **Type:** `String`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({
@@ -27,7 +27,7 @@ This option allows you to specify the BBCode dialect. We only support [PunBB](ht
 
 **Default Value:** `"punbb"`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({

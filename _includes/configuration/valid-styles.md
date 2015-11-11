@@ -4,7 +4,7 @@ This option enables you specify the available styles for each element. This mean
 
 **Type:** `Object`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({

@@ -17,7 +17,7 @@ However, when `br_in_pre` is set to `false`, rather than inserting a `br` tag Ti
 
 **Possible Values:** `true`, `false`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({

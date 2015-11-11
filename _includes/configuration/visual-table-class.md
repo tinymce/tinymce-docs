@@ -4,7 +4,7 @@ This option enables you to configure a custom class to be added to tables that h
 
 **Type:** `String`
 
-**Example:**
+##### Example
 
 ```js
 tinymce.init({

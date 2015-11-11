@@ -37,7 +37,6 @@ Let's start with a simple code snippet you can paste into an empty `html` file (
 ```
 
 
-
 ## Let's play with plugins
 
 The code we want to work with is in the second `<script>` element, specifically they `key` and its `value`, which we pass as `JSON` to the `tinymce` object `.init` method. In the example above `selector` is the key and `"textarea"` is its value.
@@ -100,7 +99,6 @@ tinymce.init({
 Save the file, refresh your browser and when you next click the "Source code" toolbar button you'll have resized the dialog box.
 
 
-
 ## Time for one more example
 
 Even if you found the above example quite easy, hang with us we'll show you how to extend TinyMCE's default ordered and unordered lists. (We'll keep the chatter to a minimum, promise.) If on the other hand that was all a bit new, read this example to help your understanding.
@@ -148,7 +146,6 @@ So, in the above example we learned how to remove the menubar, add specific list
 As we noted at the start, TinyMCE is an incredibly powerful, flexible and customizable rich text editor. Once you've finished the Getting Started guide, deep dive into the [plugins]({{ site.baseurl }}/plugins/) and [configuration options]({{ site.baseurl }}/configure/).
 
 
-
 ## Top 10 plugins
 
 Customizing TinyMCE with the default plugins is that easy. And there are 40 of them available to developers. Let's take a look at the 10 most popular plugins (by documentation page views).
@@ -166,7 +163,5 @@ Customizing TinyMCE with the default plugins is that easy. And there are 40 of t
 | **9**    | Table         | [table](/plugins/table/) |
 | **10**   | Text Color    | [textcolor](/plugins/text-color) |
 
-
-## Next step
-
-In the next step you'll learn how to [customize TinyMCE's UI](../customize-ui/).
+{% assign_page next_page = "/get-started/customize-ui/index.html" %}
+{% include next-step.html next=next_page %}

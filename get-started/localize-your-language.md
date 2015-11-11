@@ -62,7 +62,5 @@ If you want to try it for yourself, [click here to directly download](http://www
 </html>
 ```
 
-
-## Next step
-
-By now you'll have a good idea that TinyMCE is an incredibly powerful, rich text editor. It's also compliant with a wide range of web browsers. Let's check out TinyMCE's [system requirements](../system-requirements/).
+{% assign_page next_page = "/get-started/system-requirements/index.html" %}
+{% include next-step.html next=next_page %}

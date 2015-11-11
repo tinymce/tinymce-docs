@@ -3,14 +3,11 @@ layout: default
 title: Accessibility
 ---
 
-// See http://www.tinymce.com/wiki.php/Accessibility
-// We should expand this content more.
-
-As of version 4.0.17 of TinyMCE, we now follow the WAI-ARIA specification, making it compatible with screen readers such as JAWS and NVDA. At the time of writing, we would HIGHLY recommend the use of [NVDA](http://www.nvaccess.org/) together with [Firefox](https://www.mozilla.org/en-US/firefox/products/) for the best Accessibility experience with TinyMCE.
+As of version 4.0.17 of TinyMCE, we now follow the WAI-ARIA specification, making it compatible with screen readers such as JAWS and NVDA. At the time of writing, we would **highly** recommend the use of [NVDA](http://www.nvaccess.org/) together with [Firefox](https://www.mozilla.org/en-US/firefox/products/) for the best Accessibility experience with TinyMCE.
 
 ## Keyboard shortcuts
 
-The ALT+key shortcut assumes that you are currently in the content area of the editor.
+The `ALT+key` shortcut assumes that you are currently in the content area of the editor.
 
 | ALT Key   | Result      |
 |-----------|-------------|
@@ -23,11 +20,11 @@ The ALT+key shortcut assumes that you are currently in the content area of the e
 
 ## How to work with the editor
 
-When you navigate into an editor instance, you’ll land in the content area. Arrowing up and down will give you paragraphs, headings and other items such as links. Note that NVDA and Firefox treat links as embedded characters, you have to actually navigate into them to read their texts, but they are accessible.
+When you navigate into an editor instance, you will land in the content area. Arrowing up and down will give you paragraphs, headings and other items such as links. Note that NVDA and Firefox treat links as embedded characters, you have to actually navigate into them to read their texts, but they are accessible.
 
 From the content, you can press Alt+F9 to move focus to the menu bar. Left and Right arrow navigate through the top menu items like in your average desktop app, and Down Arrow will actually open a menu. Note that from there, you cannot go Right or Left through the various drop-down menus, you first have to press Escape once to go back to the top level. When on sub menus, Right Arrow will walk into them, escape will back up.
 
-Alternatively, you can press Alt+F10 to focus toolbars. You’ll land on the first tool bar and can tab or arrow through the items. Sub menu items will have the sub menus or panels opened via Down Arrow, and closed via Escape. When you reach the end of one toolbar, Right Arrow and LeftArrow wrap to the next and previous tool bars respectively. Escape will bring you back into the main content area.
+Alternatively, you can press `Alt+F10` to focus toolbars. You’ll land on the first toolbar and can tab or arrow through the items. Submenu items will have the sub menus or panels opened via Down Arrow, and closed via Escape. When you reach the end of one toolbar, Right Arrow and LeftArrow wrap to the next and previous tool bars respectively. Escape will bring you back into the main content area.
 
 From either the menus or toolbars, you can open dialogs such as Insert/Edit Image/Video. These are multi-page dialogs with at least two tabs at the top. When in the tab list, Right and Left arrow will move between the tabs, Space will make the current tab active. Tab moves into the panel and through the controls. OK will accept changes, Escape or Cancel will discard.
 

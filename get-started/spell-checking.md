@@ -51,7 +51,5 @@ For developers requiring robust, enterprise-grade, spell check as-you-type funct
 
 Full documentation can be found in the TinyMCE Enterprise [documentation for Spelling](http://docs.ephox.com/display/TinyMCEEnterprise/Spell+Checking). Learn more about [TinyMCE Enterprise here](http://www.tinymce.com/enterprise/).
 
-
-## Next step
-
-In the next step you'll learn about TinyMCE's [content filtering](../filter-content/) capabilities.
+{% assign_page next_page = "/get-started/filter-content/index.html" %}
+{% include next-step.html next=next_page %}

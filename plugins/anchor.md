@@ -2,7 +2,7 @@
 layout: default
 title: Anchor Plugin
 title_nav: Anchor
-description: Insert anchors (sometimes referred to as a bookmarks.)
+description: Insert anchors (sometimes referred to as a bookmarks).
 controls: toolbar button, menu item
 ---
 

@@ -58,10 +58,5 @@ And that's all there is to it! Read on as we have two more notes for you.
 
 When the `<form>` is submitted the TinyMCE editor mimics the behavior of a normal HTML `<textarea>` during the `post`. In your form handler you can process the content submitted as if it had come from a regular `<textarea>`.
 
-
-## Next step
-
-For first-time TinyMCE developers the next step is to learn about [Basic Setup](../basic-setup/), where we introduce selector, toolbar and plugin configuration options. We also provide a line-by-line breakdown of a basic configuration example.
-
 {% assign_page next_page = "/get-started/basic-setup/index.html" %}
 {% include next-step.html next=next_page %}

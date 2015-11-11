@@ -106,7 +106,5 @@ tinymce.init({
 });
 ```
 
-
-## Next step
-
-In the next step you'll learn about taking TinyMCE global with its [language localization](../localize-your-language/) capabilities.
+{% assign_page next_page = "/get-started/localize-your-language/index.html" %}
+{% include next-step.html next=next_page %}

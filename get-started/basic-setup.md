@@ -273,7 +273,5 @@ toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncent
 
 And we are done. We hope you found the above example helpful in showing not only how powerful TinyMCE is but also how easy it is to customize.
 
-
-## Next step
-
-In the next step you'll learn about TinyMCE's [inline mode](../use-tinymce-inline/).
+{% assign_page next_page = "/get-started/use-tinymce-inline/index.html" %}
+{% include next-step.html next=next_page %}

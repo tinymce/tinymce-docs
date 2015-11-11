@@ -60,7 +60,5 @@ On this page you'll find a detailed guide to our installation options:
 
 {% include install/custom.md %}
 
-
-## Next step
-
-In the next step you'll learn how to unleash TinyMCE's power by [working with plugins](../working-with-plugins/).
+{% assign_page next_page = "/get-started/work-with-plugins/index.html" %}
+{% include next-step.html next=next_page %}

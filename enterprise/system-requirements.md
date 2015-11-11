@@ -13,19 +13,19 @@ TinyMCE Enterprise is based on HTML, JavaScript and CSS standards and will opera
 
 The following platforms are fully supported for TinyMCE Enterprise.
 
-| Platform | Browser    |
-|----------|---------------|
-| Windows  | Internet Explorer 8+ |
-|          | Chrome* |
-|          | Firefox* |
-|          | Firefox ESR* |
-| OS X     | Safari 6.1+ |
-|          | Chrome* |
-|          | Firefox* |
-|          | Firefox ESR* |
-| Linux	   | Chrome* |
-|          | Firefox* |
-|          | Firefox ESR* |
+| Platform    | Browser    |
+|-------------|---------------|
+| **Windows** | Internet Explorer 8+ |
+|             | Chrome* |
+|             | Firefox* |
+|             | Firefox ESR* |
+| **OS X**    | Safari 6.1+ |
+|             | Chrome* |
+|             | Firefox* |
+|             | Firefox ESR* |
+| **Linux**   | Chrome* |
+|             | Firefox* |
+|             | Firefox ESR* |
 
 * Current stable channel version.
 
@@ -37,7 +37,7 @@ Word copy and paste is supported on all the browsers supported by TinyMCE Enterp
 
  
 |                      | HTML Cleaning | Improved HTML Cleaning | Image Import |
-|----------------------| ------------- | ---------------------- | ------------ |
+|----------------------| :-------------: | :----------------------: | :------------: |
 | Internet Explorer 8  | X |   |   |
 | Internet Explorer 9  | X |   |   |
 | Internet Explorer 10+| X | X | X | 

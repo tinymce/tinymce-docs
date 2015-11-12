@@ -15,16 +15,16 @@
 
 - url: "try-tinymce"
   pages:
-    - url: "common-setup"
-    - url: "full-featured"
-    - url: "inline"
-    - url: "image-tools"
-    - url: "format-custom"
-    - url: "format-html5"
-    - url: "url-conversion"
-    - url: "valid-elements"
-    - url: "custom-toolbar-button"
-    - url: "custom-toolbar-listbox"
+  - url: "basic-example"
+  - url: "full-featured"
+  - url: "inline"
+  - url: "image-tools"
+  - url: "format-custom"
+  - url: "format-html5"
+  - url: "url-conversion"
+  - url: "valid-elements"
+  - url: "custom-toolbar-button"
+  - url: "custom-toolbar-listbox"
 
 - url: "configure"
   pages:
@@ -207,7 +207,7 @@
   - url: "system-requirements"
 
 
-- url: "advanced-development-topics"
+- url: "advanced"
   pages:
   - url: "contributing-to-open-source"
   - url: "creating-a-skin"
@@ -223,7 +223,6 @@
   - url: "angularjs"
   - url: "bootstrap"
   - url: "jquery"
-  - url: "knockout"
   - url: "react"
   - url: "wordpress"
 

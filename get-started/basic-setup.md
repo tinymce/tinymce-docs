@@ -31,7 +31,7 @@ tinymce.init({
 
 Snippets will always include a `selector` with the value `"textarea"`. You will need to change this value according to your html, but otherwise the snippet will be a working code block.
 
-Cut and paste the snippet into your html document, replacing everything between the `<script>` tags. If the setting makes a visual change to the editor, for example, adds a toolbar button or enables code syntax formatting, you'll see the changes in the editor. We hope that helps.
+Cut and paste the snippet into your html document, replacing everything between the `<script>` tags containing the `tinymce` object (`tinymce.init({})`). If the setting makes a visual change to the editor, for example, adds a toolbar button or menu item, you'll see the changes in the editor. We hope that helps.
 
 ## Selector configuration
 

@@ -1,6 +1,6 @@
 ## hidden_input
 
-This option gives you the ability to disable the auto generation of hidden input fields for inline editing elements. By default all inline editors get a hidden input element that content gets saved to when you do `editor.save()` or `tinymce.triggerSave()`.
+This option gives you the ability to disable the auto generation of hidden input fields for inline editing elements. By default all inline editors have a hidden input element in which content gets saved when an `editor.save()` or `tinymce.triggerSave()` is executed.
 
 This can be disabled if you don't need these controls.
 

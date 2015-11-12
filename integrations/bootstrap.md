@@ -2,12 +2,10 @@
 layout: default
 title: Bootstrap Integration
 title_nav: Bootstrap
+keywords: integration integrate bootstrap
 ---
 
-
-More here
-...
-
+// this article is a work-in-progress
 
 ## Using TinyMCE in a Bootstrap Dialog
 

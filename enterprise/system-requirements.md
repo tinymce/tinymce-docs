@@ -58,17 +58,17 @@ On browsers that support HTML5 APIs PowerPaste is able to use improved HTML clea
 On browsers that support HTML5 PowerPaste is able to import images embedded in the content (e.g. from Microsoft Word) into the editor.  These images can then be uploaded via a HTTP post as required.
 
 
-### Spell Checking
+## Spell Checking
 
 Spell checking is supported on all the browsers supported by TinyMCE Enterprise.  
 
-#### Internet Explorer 8 and 9 Limitations
+### Internet Explorer 8 and 9 Limitations
 
 Cross Origin Requests (CORS) are not supported in Internet Explorer 8 and 9. For spell checking to work, the ephox-seplling service must be located on the same domain as the TinyMCE client. The domain is considered to be the combination of the protocol (HTTP vs HTTPS), server name and the port as it appears in the browser's address bar.
 
 Internet Explorer 8 will not highlight misspelt words as you type due to browser limitations. Misspelt words are highlighted after the current HTML node is changed (e.g. when the Enter key is pressed and the cursor enters a new paragraph).
 
-#### Supported Application Servers
+### Supported Application Servers
 
 The TinyMCE spell checking server-side component requires a Java Web Application Server that supports Servlet Implementation API 3.0.
 

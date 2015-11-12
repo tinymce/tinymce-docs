@@ -1,11 +1,14 @@
 ---
 layout: default
-title: Handle Asynchronous Image Uploads
+title: Handle Async Image Uploads
+description_short:
+description:
+keywords: asynchronous async paste_data_images image cors
 ---
 
 Please note, this image upload feature is available for TinyMCE version 4.2 and above. Alternatively, the Ephox PowerPaste plugin is capable of this functionality in versions of TinyMCE 4.0 and above.  
 
-The image uploader is designed to complement the new image editing functionality of TinyMCE 4.2. Images that are edited within TinyMCE can be uploaded using this function. Local images that are added through other means - for example drag and drop when using the [paste_data_images](http://www.tinymce.com/wiki.php/Configuration:paste_data_images) configuration property or using Ephox's PowerPaste Plugin - can also be uploaded using this functionality.
+The image uploader is designed to complement the new image editing functionality of TinyMCE 4.2. Images that are edited within TinyMCE can be uploaded using this function. Local images that are added through other means - for example drag and drop when using the [paste_data_images]({{ site.baseurl }}/plugins/paste/#paste_data_images) configuration property or using Ephox's PowerPaste Plugin - can also be uploaded using this functionality.
 
 Once uploaded, TinyMCE will automatically update the `<image>` src attribute with the new path to the remote image.  
 
@@ -19,9 +22,9 @@ Examples of this function are below:
 
 ```js
 tinymce.activeEditor.uploadImages(function(success) {
-    $.post("ajax/post.php", tinymce.activeEditor.getContent()).done(function() {
-        console.log("Uploaded images and posted content as an ajax request.");
-    });
+  $.post("ajax/post.php", tinymce.activeEditor.getContent()).done(function() {
+    console.log("Uploaded images and posted content as an ajax request.");
+  });
 });
 ```
 
@@ -29,7 +32,7 @@ tinymce.activeEditor.uploadImages(function(success) {
 
 ```js
 tinymce.activeEditor.uploadImages(function(success) {
-     document.forms[0].submit();
+  document.forms[0].submit();
 });
 ```
 
@@ -37,7 +40,7 @@ tinymce.activeEditor.uploadImages(function(success) {
 
 In order to upload local images to the remote server, you will need a server-side upload handler script that accepts the images on the server, stores them appropriately, and returns a JSON object containing the location that they were uploaded to.
 
-An example PHP upload handler implementation is available [here](http://www.tinymce.com/wiki.php/PHP_Upload_Handler).
+An example PHP upload handler implementation is available [here](../php-upload-handler/).
 
 This server-side upload handler must return a JSON object that contains a "location" property. This property should represent the remote location or filename of the newly uploaded image.
 
@@ -62,7 +65,7 @@ An example of a typical setup is below:
 
 ```js
 tinymce.init({
-    ...
+    selector: "textarea",  // change this value according to your html
     images_upload_url: "postAcceptor.php",
     images_upload_base_path: "/some/basepath",
     images_upload_credentials: true
@@ -79,37 +82,37 @@ An example of this setup is below:
 
 ```js
 tinymce.init({
-    ...
-    images_upload_handler: function (blobInfo, success, failure) {
-        var xhr, formData;
+  selector: "textarea",  // change this value according to your html
+  images_upload_handler: function (blobInfo, success, failure) {
+    var xhr, formData;
 
-        xhr = new XMLHttpRequest();
-        xhr.withCredentials = false;
-        xhr.open('POST', "postAcceptor.php");
+    xhr = new XMLHttpRequest();
+    xhr.withCredentials = false;
+    xhr.open('POST', "postAcceptor.php");
 
-        xhr.onload = function() {
-            var json;
+    xhr.onload = function() {
+      var json;
 
-            if (xhr.status != 200) {
-                failure("HTTP Error: " + xhr.status);
-                return;
-            }
+      if (xhr.status != 200) {
+        failure("HTTP Error: " + xhr.status);
+        return;
+      }
 
-            json = JSON.parse(xhr.responseText);
+      json = JSON.parse(xhr.responseText);
 
-            if (!json || typeof json.location != "string") {
-                failure("Invalid JSON: " + xhr.responseText);
-                return;
-            }
+      if (!json || typeof json.location != "string") {
+        failure("Invalid JSON: " + xhr.responseText);
+        return;
+      }
 
-            success(json.location);
-        };
+      success(json.location);
+    };
 
-        formData = new FormData();
-        formData.append('file', blobInfo.blob(), fileName(blobInfo));
+    formData = new FormData();
+    formData.append('file', blobInfo.blob(), fileName(blobInfo));
 
-        xhr.send(formData);
-    }
+    xhr.send(formData);
+  }
 });
 ```
 
@@ -127,7 +130,7 @@ The upload script URL origin must exactly match the origin of the URL in the add
 
 All supported browsers will print a message to the JavaScript console if there is a CORS error.
 
-The [PHP Upload Handler Script](http://www.tinymce.com/wiki.php/PHP_Upload_Handler) provided here configures CORS in the `$accepted_origins` variable. You may choose to configure CORS at the [web application layer](http://www.w3.org/wiki/CORS_Enabled#At_the_Web_Application_level...) or the [HTTP server layer](http://www.w3.org/wiki/CORS_Enabled#At_the_HTTP_Server_level...).
+The [PHP Upload Handler Script](./php-upload-handler/) provided here configures CORS in the `$accepted_origins` variable. You may choose to configure CORS at the [web application layer](http://www.w3.org/wiki/CORS_Enabled#At_the_Web_Application_level...) or the [HTTP server layer](http://www.w3.org/wiki/CORS_Enabled#At_the_HTTP_Server_level...).
 
 #### Further Reading on CORS
 

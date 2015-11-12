@@ -1,6 +1,6 @@
 ---
 layout: default
-title: View Examples
+title: Try TinyMCE
 description: Working examples of TinyMCE's popular functionality.
 type: folder
 ---

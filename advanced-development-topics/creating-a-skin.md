@@ -8,7 +8,7 @@ There are two ways of creating skins for TinyMCE one of them using the [TinyMCE 
 
 ## Preparation
 
-In order to manually build the less files you will have to download the [TinyMCE development package](http://www.tinymce.com/download/download.php). This package contains the source code for the whole TinyMCE project and the less files needed to skin the editor. You will also need to install node js and the NPM node module dependencies needed for the build process. This [readme.md](https://github.com/tinymce/tinymce/blob/master/readme.md) file explains how to manually build TinyMCE.
+In order to manually build the less files you will have to download the [TinyMCE development package](http://archive.tinymce.com/download/download.php). This package contains the source code for the whole TinyMCE project and the less files needed to skin the editor. You will also need to install node js and the NPM node module dependencies needed for the build process. This [readme.md](https://github.com/tinymce/tinymce/blob/master/readme.md) file explains how to manually build TinyMCE.
 
 ## Building skin.min.css from less files
 

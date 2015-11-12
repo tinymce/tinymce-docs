@@ -11,3 +11,5 @@ There is an excellent and actively maintained [React project on GitHub](https://
 Repo: https://github.com/instructure-react/react-tinymce
 
 Demo: http://instructure-react.github.io/react-tinymce/basic/
+
+> This document is a work in progress. Click the contribute button (in the blue area above) to improve this page.

@@ -8,7 +8,7 @@ keywords: integration integrate angular angularjs
 
 ## ui-tinymce directive
 
-There is an excellent and actively maintained [AngularJS project on GitHub](https://github.com/angular-ui/ui-tinymce). Here's the [contribute.md](https://github.com/angular-ui/ui-tinymce/blob/master/CONTRIBUTING.md) if you would like contribute to the project.
+There is an excellent and actively maintained [AngularJS project on GitHub](https://github.com/angular-ui/ui-tinymce).
 
 > The ui-tinymce directive plays nicely with the ng-model directive such as ng-required.
 
@@ -20,4 +20,6 @@ Repo: https://github.com/angular-ui/ui-tinymce
 
 ### Other resources
 
-// This article is a work in progress. Click the contribute button (in the blue area above) if you would like to contribute to this article.
+Repo [contribute.md](https://github.com/angular-ui/ui-tinymce/blob/master/CONTRIBUTING.md)
+
+> This document is a work in progress. Click the contribute button (in the blue area above) to improve this page.

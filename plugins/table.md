@@ -27,7 +27,23 @@ These settings affect the execution of the `table` plugin and let you modify the
 
 ### `table_appearance_options`
 
-// From current Wiki: "You don't have permissions to edit this page. You need to be an Wiki Member to be able to edit the wiki. Send a mail to info@moxiecode.com to request access."
+This option allows you to disable some of the options available to a user when inserting or editing a table. When set to `false` the following fields will not appear: Cell spacing, Cell padding, Border and Caption.
+
+**Type:** `Boolean`
+
+**Default Value:** `true`
+
+**Possible Values:**  `true`, `false`
+
+##### Example
+
+```js
+tinymce.init({
+  selector: "textarea",  // change this value according to your html
+  plugins: "table",
+  table_appearance_options: false
+});
+```
 
 ### `table_clone_elements`
 

@@ -2,7 +2,7 @@
 layout: default
 title: Lists Plugin
 title_nav: Lists
-description: Create styled number and bulleted lists.
+description: Normalizes list behavior between browsers.
 keywords: list lists browser
 ---
 

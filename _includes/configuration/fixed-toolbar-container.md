@@ -1,8 +1,10 @@
 ## fixed_toolbar_container
 
-Use this option to render the inline toolbar into a fixed positioned HTML element for example a top positioned toolbar. This option takes a CSS 3 selector for example `"#mytoolbar"` and renders any inline toolbars into this element.
+Use this option to render the inline toolbar into a fixed positioned HTML element. For example, you could fix the toolbar to the top of the browser viewport. 
 
 **Type:** `String`
+
+This example takes a CSS 3 selector named `"#mytoolbar"` and renders any inline toolbars into this element.
 
 ##### Example
 

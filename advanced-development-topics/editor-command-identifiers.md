@@ -4,7 +4,7 @@ title: Editor Command Identifiers
 keywords: EditorCommands EditorCommand
 ---
 
-Here is a list of the currently exposed editor commands. All these commands are provided by tinymce and not by the browsers internal commands. These commands can be executed using the [execCommand](http://www.tinymce.com/wiki.php/api4:method.tinymce.Editor.execCommand) function.
+Here is a list of the currently exposed editor commands. All these commands are provided by tinymce and not by the browsers internal commands. These commands can be executed using the [execCommand]({{ site.baseurl }}/api/class/tinymce.editorcommands/#execcommand) function.
 
 | Command     | Core/Plugin      | Description   |
 |-------------|------------------|---------------|

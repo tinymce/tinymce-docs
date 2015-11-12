@@ -14,11 +14,11 @@ In this section of the Get Started guide we will show you how to change TinyMCE'
 
 ### Step 1
 
-Go to our [language download page](http://www.tinymce.com/i18n/index.php) (i18n), where you'll see a list of language packs for TinyMCE 4.
+Go to our [language download page](http://archive.tinymce.com/i18n/index.php) (i18n), where you'll see a list of language packs for TinyMCE 4.
 
 If you want to use one language only, click the download link on the far right of the table and you're done. If however you want to download multiple language packs, first check the box beside each language you need and then click the download button at the bottom of the table.
 
-> Important note: the language packs provided via our language download page are translated by the TinyMCE community. We greatly appreciate their contribution! If your product requires professionally translated, QA assured, supported language localization, this is available as part of [TinyMCE Enterprise](http://www.tinymce.com/enterprise).
+> Important note: the language packs provided via our language download page are translated by the TinyMCE community. We greatly appreciate their contribution! If your product requires professionally translated, QA assured, supported language localization, this is available as part of [TinyMCE Enterprise](http://www.tinymce.com/pricing).
 
 ### Step 2
 
@@ -38,7 +38,7 @@ Confirm that the language has been set successfully by loading TinyMCE.
 
 We have prepared a code snippet below that would set TinyMCE's language to Chinese and text directionality right-to-left.
 
-If you want to try it for yourself, [click here to directly download](http://www.tinymce.com/i18n/download.php?download=zh_CN) the Chinese language pack. You'll also need a *local instance* of TinyMCE, which you can grab from our [downloads page](http://www.tinymce.com/download/). Follow the [SDK install instructions]({{ site.baseurl }}/get-started/advanced-install/#sdkdownloadinstallation) if you're not familiar with setting up TinyMCE locally.
+If you want to try it for yourself, [click here to directly download](http://archive.tinymce.com/i18n/download.php?download=zh_CN) the Chinese language pack. You'll also need a *local instance* of TinyMCE, which you can grab from our [downloads page](http://www.tinymce.com/download/). Follow the [SDK install instructions]({{ site.baseurl }}/get-started/advanced-install/#sdkdownloadinstallation) if you're not familiar with setting up TinyMCE locally.
 
 ```html
 <!DOCTYPE html>

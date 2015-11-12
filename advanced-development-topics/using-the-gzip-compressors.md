@@ -3,7 +3,7 @@ layout: default
 title: Use the GZIP Compressors
 ---
 
-The [TinyMCE gzip compressors](http://www.tinymce.com/download/compressors.php) helps you to dynamically combine and compress the different parts of TinyMCE to reduce the loading time. These compressors are very easy to use as of 4.x just drop the script into the tinymce folder change the path to the script from `tinymce.min.js` to `tinymce.gzip.js` and it will compress for you automatically when you call `tinymce.init` to create editor instances.
+The [TinyMCE gzip compressors](http://archive.tinymce.com/download/compressors.php) helps you to dynamically combine and compress the different parts of TinyMCE to reduce the loading time. These compressors are very easy to use as of 4.x just drop the script into the tinymce folder change the path to the script from `tinymce.min.js` to `tinymce.gzip.js` and it will compress for you automatically when you call `tinymce.init` to create editor instances.
 
 #### Example using the tinymce.gzip.js
 

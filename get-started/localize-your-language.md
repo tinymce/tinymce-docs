@@ -1,6 +1,6 @@
 ---
 layout: default
-title: 10. Localize Languages
+title: 10. Localize TinyMCE
 description: Localize TinyMCE with global language capabilities.
 keywords: internationalization localization languages
 ---
@@ -18,7 +18,7 @@ Go to our [language download page](http://archive.tinymce.com/i18n/index.php) (i
 
 If you want to use one language only, click the download link on the far right of the table and you're done. If however you want to download multiple language packs, first check the box beside each language you need and then click the download button at the bottom of the table.
 
-> Important note: the language packs provided via our language download page are translated by the TinyMCE community. We greatly appreciate their contribution! If your product requires professionally translated, QA assured, supported language localization, this is available as part of [TinyMCE Enterprise](http://www.tinymce.com/pricing).
+> Important note: the language packs provided via our language download page are translated by the TinyMCE community. We greatly appreciate their contribution! 
 
 ### Step 2
 

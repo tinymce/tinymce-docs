@@ -1,6 +1,9 @@
 ---
 layout: default
 title: PHP Upload Handler
+description_short:
+description:
+keywords: php_upload_handler php async image upload
 ---
 
 
@@ -8,7 +11,7 @@ The following script creates a server-side upload handler in PHP suitable for us
 
 Please note that this script is provided for your reference - you'll need to update this as necessary for your application.
 
-**Example postAcceptor.php**
+##### Example postAcceptor.php
 
 ```php
 <?php

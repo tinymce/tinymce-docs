@@ -104,7 +104,23 @@ tinymce.init({
 
 ### `paste_filter_drop`
 
-// From current Wiki: "You don't have permissions to edit this page. You need to be an Wiki Member to be able to edit the wiki. Send a mail to info@moxiecode.com to request access."
+This options allows developers to disable the default drop filters when set to `false`.
+
+**Type:** `Boolean`
+
+**Default Value:** `true`
+
+**Possible Values:**  `true`, `false`
+
+##### Example
+
+```js
+tinymce.init({
+  selector: "textarea",  // change this value according to your html
+  plugins: "paste",
+  paste_filter_drop: false
+});
+```
 
 ### `paste_preprocess`
 

@@ -6,6 +6,4 @@ description: This example shows you the inline editing capabilities of TinyMCE. 
 keywords: example custom inline
 ---
 
-// working example to come
-
-// http://www.tinymce.com/tryit/inline.php
+{% include codepen.html id="YydQoj" %}

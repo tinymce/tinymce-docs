@@ -6,6 +6,4 @@ description: This example contains the plugins needed for the most common use ca
 keywords: example custom imagetools
 ---
 
-// working example to come
-
-// http://www.tinymce.com/tryit/imagetools.php
+{% include codepen.html id="epbRwB" %}

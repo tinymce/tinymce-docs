@@ -6,6 +6,4 @@ description: This example shows you how to use the extended_valid_elements optio
 keywords: example custom valid elements valid_elements
 ---
 
-// working example to come
-
-// http://www.tinymce.com/tryit/valid_elements.php
+{% include codepen.html id="LpMLwQ" %}

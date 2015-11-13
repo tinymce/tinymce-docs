@@ -6,6 +6,4 @@ description: This example shows you how to add a simple listbox to the toolbar o
 keywords: example custom toolbar listbox
 ---
 
-// working example to come
-
-// http://www.tinymce.com/tryit/listbox.php
+{% include codepen.html id="JYwJVr" %}

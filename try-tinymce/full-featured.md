@@ -6,6 +6,4 @@ description: This example displays all plugins that comes with the TinyMCE packa
 keywords: example custom wysiwyg full-power full-featured
 ---
 
-// working example to come
-
-// http://www.tinymce.com/tryit/full.php
+{% include codepen.html id="NGegZK" %}

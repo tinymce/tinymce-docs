@@ -6,6 +6,4 @@ description: This example shows you how to setup TinyMCE to produce different re
 keywords: example custom url conversion absolute relative url urls
 ---
 
-// working example to come
-
-// http://www.tinymce.com/tryit/url_conversion.php
+{% include codepen.html id="Qjzgew" height="1700" %}

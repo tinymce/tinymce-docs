@@ -6,6 +6,4 @@ description: This example shows you how to override the built in style formats a
 keywords: example custom format formats
 ---
 
-// working example to come
-
-// http://www.tinymce.com/tryit/custom_formats.php
+{% include codepen.html id="QjzgRW" %}

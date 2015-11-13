@@ -50,7 +50,7 @@
       {% if page.controls %}
       {% assign controls = page.controls | split:',' %}
       <div class="badges">
-        {% for control in controls %}<div class="badge-naan lg">+ {{ control }}</div> {% endfor %}
+        {% for control in controls %}<span class="badge-naan lg">+ {{ control }}</span> {% endfor %}
       </div>
       {% endif %}
     </div>

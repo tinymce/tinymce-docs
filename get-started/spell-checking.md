@@ -1,6 +1,6 @@
 ---
 layout: default
-title: 08. Check Spelling
+title: 09. Check Spelling
 description: Take spell checking to your users.
 keywords: spell checker spelling browser_spellcheck gecko_spellcheck
 ---

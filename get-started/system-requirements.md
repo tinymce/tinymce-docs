@@ -1,6 +1,6 @@
 ---
 layout: default
-title: 11. System Requirements
+title: 12. System Requirements
 description: Official TinyMCE browser support.
 keywords: browser compatibility explorer ie safari firefox chrome edge
 ---

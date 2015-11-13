@@ -73,5 +73,5 @@ Enabling inline editing mode is simple. Setting the `inline` configuration prope
 </html>
 ```
 
-{% assign_page next_page = "/get-started/advanced-install/index.html" %}
+{% assign_page next_page = "/get-started/multiple-editors/index.html" %}
 {% include next-step.html next=next_page %}

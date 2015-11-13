@@ -1,6 +1,6 @@
 ---
 layout: default
-title: 09. Filter Content
+title: 10. Filter Content
 description: Learn how to create clean, maintainable and readable content.
 ---
 

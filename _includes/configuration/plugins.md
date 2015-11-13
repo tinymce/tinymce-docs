@@ -13,6 +13,6 @@ tinymce.init({
 });
 ```
 
-> Note that the plugin entries should be separated by a blank.
+> Note that the plugin entries should be separated by a blank space.
 
 [Check this documentation page for a list of available plugins]({{ site.baseurl }}/plugins/).

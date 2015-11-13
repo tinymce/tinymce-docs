@@ -1,6 +1,6 @@
 ---
 layout: default
-title: 06. Customize UI
+title: 07. Customize UI
 description: Learn how to change to appearance of the editor.
 keywords: themes skins statusbar
 ---

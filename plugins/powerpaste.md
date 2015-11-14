@@ -3,7 +3,7 @@ layout: default
 title: PowerPaste Plugin
 title_nav: PowerPaste
 description: Upgrade the Microsoft Word copy-and-paste capabilities of TinyMCE.
-keywords: Excel, powerpaste
+keywords: microsoft word excel powerpaste paste
 ---
 
 The TinyMCE PowerPaste plugin automatically cleans up content from Microsoft Word and other HTML sources to ensure clean, compliant content that matches the look and feel of the site.

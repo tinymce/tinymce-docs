@@ -3,6 +3,7 @@ layout: default
 title: Print Plugin
 title_nav: Print
 description: Print the content in TinyMCE.
+keywords: file
 controls: toolbar button, menu item
 ---
 

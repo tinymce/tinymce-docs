@@ -3,7 +3,7 @@ layout: default
 title: 3.x Compatibility Plugin
 title_nav: 3.x Compatibility
 description: Run old plugins on version 4.
-keywords: compat3x
+keywords: compat3x utils tiny_mce_popup editor_plugin
 ---
 
 This plugin contains a few compatibility files for the old 3.x branch. This enables you to run most old 3.x plugins without any modifications. You need to take a few steps to enable this plugin:

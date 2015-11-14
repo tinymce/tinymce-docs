@@ -3,7 +3,7 @@ layout: default
 title: Link Plugin
 title_nav: Link
 description: Add hyperlinks to content.
-keywords: URL, URLs
+keywords: url urls insert edit default_link_target link_assume_external_targets link_class_list link_list target_list rel_list link_title
 controls: toolbar button, menu item
 ---
 

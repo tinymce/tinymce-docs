@@ -3,7 +3,7 @@ layout: default
 title: Visual Blocks Plugin
 title_nav: Visual Blocks
 description: Allows a user to see block level elements such as paragraphs.
-keywords: visualblocks
+keywords: visualblocks wysiwyg hidden view visualblocks_default_state
 controls: toolbar button, menu item
 ---
 

@@ -3,7 +3,7 @@ layout: default
 title: Legacy Output Plugin
 title_nav: Legacy Output
 description: Changes HTML output to old HTML syntax such as font, b and i
-keywords: legacyoutput, filter, content
+keywords: legacyoutput filter content cms email flash
 ---
 
 The `legacyoutput` plugin changes TinyMCE's output, producing legacy elements such as `font`, `b`, `i`, `u`, `strike` and use `align` attributes.

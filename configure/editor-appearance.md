@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Editor Appearance
+description_short:
 description: Configure the editor's appearance, including menu and toolbar controls.
 ---
 

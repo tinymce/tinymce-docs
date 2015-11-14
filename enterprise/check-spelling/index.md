@@ -2,7 +2,7 @@
 layout: default
 title: Check Spelling As-You-Type
 description: Spell Checker Pro is a premium plugin and server to check spelling as-you-type.
-keywords: tinymcespellchecker
+keywords: enterprise tinymcespellchecker spell check checker pro pricing
 ---
 
 **Spell Checker Pro** adds spell check as-you-type capabilities to TinyMCE.
@@ -18,7 +18,7 @@ The following languages are supported:
 | Finnish                      | fi     |
 | French                       | fr     |
 | German                       | de     |
-| Italian	                   | it     |
+| Italian	                     | it     |
 | Norwegian	                   | nb     |
 | Portuguese (Brazil)          | pt     |
 | Portuguese (Europe)          | pt_PT  |

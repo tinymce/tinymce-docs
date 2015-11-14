@@ -1,7 +1,9 @@
 ---
 layout: default
 title: Contribute to TinyMCE
-description: Contribute to the open source project.
+title_nav: Contribute to TinyMCE
+description_short: Contribute to the open source project.
+description: Contribute to the open source project. Help build the core, plugins or even write the documentation.
 keywords: opensource OSS contributors
 ---
 
@@ -84,11 +86,30 @@ hello, [text to link](http://www.example.com) to the URL example.com.
 
 We will provide the internal linking structure shortly. Otherwise clone and branch the repo and explore for yourself (it's a test of skill).
 
+##### Adding meta to a pages
+
+Every page should have a meta section starting at line 1 containing information that is both informative and system critical. If you are creating a page, or editing one that currently has inadequate meta information, please read the comments next to the default meta fields below.
+
+```
+---                // Three dashes at start and end of the meta section, must be included.
+layout: default    // In most cases leave this as 'default'.
+title:             // The nav.yml references this so it must be included and it should be short.
+title_nav:         // Descriptive title for the navigation bar, if omitted nav defaults to title field.
+description_short: // Short description for the grid layouts.
+description:       // Detailed description at page level for the header section under the title.
+keywords:          // Space separated list of key words in the content.
+---
+```
+
 ### Style Guide
 
 ##### TinyMCE v. tinymce
 
 Use the capitalized version of TinyMCE when referring to the open source project or the editor as an all encompassing whole. Use lowercase when referring to the `tinymce` JavaScript object.
+
+##### Title capitalization
+
+For H1 titles use "Title Case Capitalization". For H2-H6 titles use "Sentence case capitalization". Sentence case capitalization is typically easier to read in technical documentation like ours.
 
 ##### Spelling
 

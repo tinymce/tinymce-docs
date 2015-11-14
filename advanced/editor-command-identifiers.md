@@ -1,10 +1,13 @@
 ---
 layout: default
 title: Editor Command Identifiers
-keywords: EditorCommands EditorCommand
+title_nav: Editor Command Identifiers
+description_short: Complete list of editor commands.
+description: The complete list of exposed editor commands.
+keywords: editorcommands editorcommand execcommand
 ---
 
-Here is a list of the currently exposed editor commands. All these commands are provided by tinymce and not by the browsers internal commands. These commands can be executed using the [execCommand]({{ site.baseurl }}/api/class/tinymce.editorcommands/#execcommand) function.
+Here is a list of the currently exposed editor commands. All these commands are provided by `tinymce` and not by the browser's internal commands. These commands can be executed using the [execCommand]({{ site.baseurl }}/api/class/tinymce.editorcommands/#execcommand) function.
 
 | Command     | Core/Plugin      | Description   |
 |-------------|------------------|---------------|

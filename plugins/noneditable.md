@@ -3,7 +3,7 @@ layout: default
 title: Noneditable Plugin
 title_nav: Noneditable
 description: Prevent users from changing content within elements. Ideal for templates.
-keywords: noneditable, contenteditable, editable
+keywords: noneditable contenteditable editable mceNonEditable noneditable_editable_class noneditable_noneditable_class noneditable_regexp
 ---
 
 > **Updated in 4.3!** The `noneditable` plugin has been rewritten from scratch to use the `contentEditable=false` features of 4.3. This rewrite means that it is more reliable and has less browser-specific quirks.

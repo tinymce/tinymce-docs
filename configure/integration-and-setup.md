@@ -1,7 +1,8 @@
 ---
 layout: default
 title: Integration and Setup
-description: Essential editor configuration, including `selector` and `plugins` keys. 
+description_short:
+description: Essential editor configuration, including `selector` and `plugins` keys.
 ---
 
 {% include configuration/auto-focus.md %}

@@ -1,6 +1,10 @@
 ---
 layout: default
 title: Accessibility
+title_nav: Accessibility
+description_short: Learn how TinyMCE works with screen readers and how screen readers work with TinyMCE.
+description: Learn how TinyMCE works with screen readers and how screen readers work with TinyMCE.
+keywords: accessibility wai aria jaws nvda
 ---
 
 As of version 4.0.17 of TinyMCE, we now follow the WAI-ARIA specification, making it compatible with screen readers such as JAWS and NVDA. At the time of writing, we would **highly** recommend the use of [NVDA](http://www.nvaccess.org/) together with [Firefox](https://www.mozilla.org/en-US/firefox/products/) for the best Accessibility experience with TinyMCE.

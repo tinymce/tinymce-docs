@@ -3,7 +3,7 @@ layout: default
 title: Image Plugin
 title_nav: Image
 description: Insert an image into TinyMCE.
-keywords: photo
+keywords: photo insert edit style format image_caption image_list image_advtab image_title image_class_list image_prepend_url image_description image_dimensions image_title image_prepend_url
 ---
 
 This plugin enables the user to insert an image into TinyMCE's editable area.

@@ -3,7 +3,7 @@ layout: default
 title: Codesample Plugin
 title_nav: Code Sample
 description: Insert and embed syntax highlighted code snippets.
-keywords: syntax, highlight, codesample
+keywords: syntax highlight codesample code contenteditable
 controls: toolbar button
 ---
 

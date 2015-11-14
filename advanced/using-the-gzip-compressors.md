@@ -1,9 +1,13 @@
 ---
 layout: default
 title: Use the GZIP Compressors
+title_nav: Use the GZIP Compressors
+description_short: A primer on spinning up gzip in TinyMCE.
+description: A primer on spinning up gzip in TinyMCE.
+keywords: gzip compressor js
 ---
 
-The [TinyMCE gzip compressors](http://archive.tinymce.com/download/compressors.php) helps you to dynamically combine and compress the different parts of TinyMCE to reduce the loading time. These compressors are very easy to use as of 4.x just drop the script into the tinymce folder change the path to the script from `tinymce.min.js` to `tinymce.gzip.js` and it will compress for you automatically when you call `tinymce.init` to create editor instances.
+The [TinyMCE gzip compressors](http://archive.tinymce.com/download/compressors.php) helps you to dynamically combine and compress the different parts of TinyMCE to reduce the loading time. These compressors are very easy to use as of 4.x: just drop the script into the `tinymce` folder, change the path to the script from `tinymce.min.js` to `tinymce.gzip.js` and it will automatically compress when you call `tinymce.init` to create editor instances.
 
 #### Example using the tinymce.gzip.js
 

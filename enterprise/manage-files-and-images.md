@@ -2,6 +2,7 @@
 layout: default
 title: Manage Files & Images
 description: MoxieManager. A premium plugin from the makers of TinyMCE to manage files & images.
+keywords: moxiemanager .net php relative_urls
 ---
 
 MoxieManager is a premium TinyMCE plugin and server system from Ephox, the makers of TinyMCE. It enables users to insert files located externally to the editor (e.g. on their client desktop) into their document.

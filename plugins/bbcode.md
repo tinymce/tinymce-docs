@@ -5,6 +5,10 @@ title_nav: BBCode
 description: Add basic BBCode input/output to TinyMCE.
 ---
 
+This plugin makes it possible for TinyMCE to edit BBCode syntax in a WYSIWYG form by converting tags like `[b]` into `<strong>` and then `<strong>` back to `[b]` when the user submits the content.
+
+> You will need to remove a lot of TinyMCE's functionality in order to use this plugin successfully, since the BBCode format doesn't support the whole HTML specification. The BBCode plugin also requires you to set some specific TinyMCE options in order to function.
+
 **Type:** `String`
 
 ##### Example

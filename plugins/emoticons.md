@@ -3,7 +3,7 @@ layout: default
 title: Emoticons Plugin
 title_nav: Emoticons
 description: Bring a smiley to your content.
-keywords: smiley, happy, smiling face
+keywords: smiley happy smiling emoji
 controls: toolbar button
 ---
 

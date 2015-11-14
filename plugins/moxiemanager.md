@@ -3,7 +3,7 @@ layout: default
 title: MoxieManager Plugin
 title_nav: MoxieManager
 description: File and image management plugin and service
-keywords: Amazon, Azure
+keywords: amazon azure premium pro enterprise ephox relative_urls
 ---
 
 MoxieManager is a premium TinyMCE plugin and server system from Ephox, the makers of TinyMCE. It enables users to insert files located externally to the editor (e.g. on their client desktop) into their document.

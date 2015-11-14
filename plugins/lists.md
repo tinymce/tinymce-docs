@@ -3,7 +3,7 @@ layout: default
 title: Lists Plugin
 title_nav: Lists
 description: Normalizes list behavior between browsers.
-keywords: list lists browser
+keywords: list lists browser normalize
 ---
 
 This list plugin normalizes list behavior between browsers. Enable it if you have problems with consistency making lists.

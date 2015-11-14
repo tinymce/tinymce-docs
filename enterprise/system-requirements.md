@@ -2,8 +2,8 @@
 layout: default
 title: System Requirements
 description: Consolidated system requirements for TinyMCE Enterprise features.
+keywords: support supported browser browsers windows osx linux ie8 chrome firefox safari
 ---
-
 
 ## Supported Browsers
 

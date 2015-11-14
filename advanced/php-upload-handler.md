@@ -1,11 +1,11 @@
 ---
 layout: default
 title: PHP Upload Handler
-description_short:
-description:
+title_nav: PHP Upload Handler
+description_short: A server-side upload hander PHP script.
+description: A server-side upload hander PHP script suiteable for TinyMCE.
 keywords: php_upload_handler php async image upload
 ---
-
 
 The following script creates a server-side upload handler in PHP suitable for use with TinyMCE.
 

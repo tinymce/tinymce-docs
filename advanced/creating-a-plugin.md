@@ -2,6 +2,9 @@
 layout: default
 title: Create a Plugin for TinyMCE
 title_nav: Create a Plugin
+description_short: Introducing plugin creation, with an example.
+description: A short introduction to creating plugins for TinyMCE along with an example plugin.
+keywords: plugin js
 ---
 
 Creating plugins in TinyMCE is pretty simple this tutorial tries to outline some of the basic concepts of creating a plugin. For more details consult the API documentation and check the existing plugins we ship with the core.
@@ -23,8 +26,8 @@ This new example plugin can now be loaded using the tinymce.init plugins option.
 
 ```js
 tinymce.init({
-    selector: 'textarea',
-    plugins: 'example'
+  selector: 'textarea',
+  plugins: 'example'
 });
 ```
 
@@ -46,43 +49,43 @@ Here is an example plugin showing how you add a simple toolbar button and menu i
 
 ```js
 tinymce.PluginManager.add('example', function(editor, url) {
-    // Add a button that opens a window
-    editor.addButton('example', {
-        text: 'My button',
-        icon: false,
-        onclick: function() {
-            // Open window
-            editor.windowManager.open({
-                title: 'Example plugin',
-                body: [
-                    {type: 'textbox', name: 'title', label: 'Title'}
-                ],
-                onsubmit: function(e) {
-                    // Insert content when the window form is submitted
-                    editor.insertContent('Title: ' + e.data.title);
-                }
-            });
+  // Add a button that opens a window
+  editor.addButton('example', {
+    text: 'My button',
+    icon: false,
+    onclick: function() {
+      // Open window
+      editor.windowManager.open({
+        title: 'Example plugin',
+        body: [
+          {type: 'textbox', name: 'title', label: 'Title'}
+        ],
+        onsubmit: function(e) {
+          // Insert content when the window form is submitted
+          editor.insertContent('Title: ' + e.data.title);
         }
-    });
+      });
+    }
+  });
 
-    // Adds a menu item to the tools menu
-    editor.addMenuItem('example', {
-        text: 'Example plugin',
-        context: 'tools',
-        onclick: function() {
-            // Open window with a specific url
-            editor.windowManager.open({
-                title: 'TinyMCE site',
-                url: 'http://www.tinymce.com',
-                width: 800,
-                height: 600,
-                buttons: [{
-                    text: 'Close',
-                    onclick: 'close'
-                }]
-            });
-        }
-    });
+  // Adds a menu item to the tools menu
+  editor.addMenuItem('example', {
+    text: 'Example plugin',
+    context: 'tools',
+    onclick: function() {
+      // Open window with a specific url
+      editor.windowManager.open({
+        title: 'TinyMCE site',
+        url: 'http://www.tinymce.com',
+        width: 800,
+        height: 600,
+        buttons: [{
+          text: 'Close',
+          onclick: 'close'
+        }]
+      });
+    }
+  });
 });
 ```
 
@@ -92,9 +95,9 @@ Here is a example on how to use the new toolbar button.
 
 ```js
 tinymce.init({
-    selector: 'textarea',
-    plugins: 'example',
-    toolbar: 'example'
+  selector: 'textarea',
+  plugins: 'example',
+  toolbar: 'example'
 });
 ```
 
@@ -108,7 +111,7 @@ This file is similar to .po files it has the English string on the left side and
 
 ```js
 tinymce.addI18n('sv_SE', {
-    "Example plugin": "Exempel plugin"
+  "Example plugin": "Exempel plugin"
 });
 ```
 

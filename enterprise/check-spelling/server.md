@@ -2,7 +2,7 @@
 layout: default
 title: Install Spell Checker Pro Server
 description: Spell Checker Pro is a premium plugin and server to check spelling as-you-type.
-keywords: tinymcespellchecker
+keywords: enterprise tinymcespellchecker spell check checker pro pricing
 ---
 
 ## Server-Side Component Installation

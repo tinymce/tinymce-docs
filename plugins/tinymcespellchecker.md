@@ -3,7 +3,7 @@ layout: default
 title: Spell Checker Pro Plugin
 title_nav: Spell Checker Pro
 description: Check spelling as-you-type in TinyMCE.
-keywords: tinymcespellchecker
+keywords: tinymcespellchecker ephox English US UK Danish Dutch Finnish French German Italian Norwegian Portuguese Brazilian European Spanish Swedish
 ---
 
 **Spell Checker Pro** adds spell check as-you-type capabilities to TinyMCE.
@@ -18,7 +18,7 @@ The following languages are supported:
 * German
 * Italian
 * Norwegian
-* Portuguese (Brazillian and European)
+* Portuguese (Brazilian and European)
 * Spanish
 * Swedish
 

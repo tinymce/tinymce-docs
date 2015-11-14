@@ -2,7 +2,7 @@
 layout: default
 title: Troubleshoot
 description: Debug problems with the premium spell checker.
-keywords: tinymcespellchecker
+keywords: enterprise tinymcespellchecker spell check checker pro pricing
 ---
 
 

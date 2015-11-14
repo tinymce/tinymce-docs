@@ -1,6 +1,10 @@
 ---
 layout: default
 title: Migrate from 3.x
+title_nav: Migrate from 3.x
+description_short: Everything you need to start migrating from 3.x to 4 and beyond.
+description: Everything you need to start migrating from 3.x to 4 and beyond.
+keywords: migrate migration 3x themes event handling new removed
 ---
 
 ## File structure

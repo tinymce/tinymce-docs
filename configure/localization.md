@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Localization
-description_short: Localize TinyMCE for your language.
+description_short: Localize TinyMCE for your language, including directionality.
 description: These settings configure TinyMCE's language capabilities, including right-to-left support and language Localization.
 ---
 

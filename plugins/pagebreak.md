@@ -3,7 +3,7 @@ layout: default
 title: Page Break Plugin
 title_nav: Page Break
 description: Add a page break.
-keywords: pagebreak
+keywords: pagebreak insert pagebreak_separator pagebreak_split_block
 controls: toolbar button, menu item
 ---
 

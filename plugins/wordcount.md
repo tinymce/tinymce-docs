@@ -3,7 +3,7 @@ layout: default
 title: Word Count Plugin
 title_nav: Word Count
 description: Show a word count in the TinyMCE status bar.
-keywords: wordcount
+keywords: wordcount wordcount_cleanregex wordcount_countregex
 ---
 
 This plugin adds word count functionality to TinyMCE, placing a counter on the right edge of the status bar.

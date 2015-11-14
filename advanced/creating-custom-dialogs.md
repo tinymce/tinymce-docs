@@ -1,19 +1,23 @@
 ---
 layout: default
 title: Create Custom Dialogs
+title_nav: Create Custom Dialogs
+description_short: Learn how to make custom dialogs with WindowManager.
+description: Learn how to make custom dialogs with WindowManager.
+keywords: custom dialog dialogs cdn windowmanager
 ---
 
 ## Dialogs as HTML pages
 
-In TinyMCE 3.x all dialogs where HTML pages that got loaded into a iframe or window. This was changed in TinyMCE 4 to make it easier to make plugins and fully support CDN:s. But you can still load HTML based pages into TinyMCE dialogs by using the WindowManager.
+In TinyMCE 3.x all dialogs where HTML pages that got loaded into a iframe or window. This was changed in TinyMCE 4 to make it easier to make plugins and fully support CDNs. But you can still load HTML based pages into TinyMCE dialogs by using the WindowManager.
 
 ```js
 // Opens a HTML page inside a TinyMCE dialog
 editor.windowManager.open({
-    title: "My html dialog",
-    url: 'mydialog.html',
-    width: 700,
-    height: 600
+  title: "My html dialog",
+  url: 'mydialog.html',
+  width: 700,
+  height: 600
 });
 ```
 
@@ -22,13 +26,13 @@ You can also pass in parameters to the dialog just as you could in 3.x by using 
 ```js
 // Opens a HTML page inside a TinyMCE dialog and pass in two parameters
 editor.windowManager.open({
-    title: "My html dialog",
-    url: 'mydialog.html',
-    width: 700,
-    height: 600
+  title: "My html dialog",
+  url: 'mydialog.html',
+  width: 700,
+  height: 600
 }, {
-    arg1: 42,
-    arg2: "Hello world"
+  arg1: 42,
+  arg2: "Hello world"
 });
 ```
 

@@ -2,6 +2,7 @@
 layout: default
 title: Access Professional Support
 description: Find how to contact Ephox support.
+keywords: support ephox enterprise client services
 ---
 
 ## Overview
@@ -12,7 +13,7 @@ Prior to opening a support ticket, we require all users to register with a valid
 
 ### Creating a support ticket
 
-Once you are registered on the site you will be able to interact with the Ephox support team via our support site.  To create a new ticket simply go to the following URL: http://ephox.com/support/ticket. 
+Once you are registered on the site you will be able to interact with the Ephox support team via our support site.  To create a new ticket simply go to the following URL: http://ephox.com/support/ticket.
 
 Note that Ephox support requires that you provide the following information along with your ticket:
 
@@ -26,4 +27,3 @@ Note that Ephox support requires that you provide the following information alon
 
 * Server type and version (eg. Jetty, Tomcat)
 * Server log - This will be available either on the system.out log for the server or in a separate file if you've configured the optional logging parameters for TinyMCE Enterprise on you server(s).
-

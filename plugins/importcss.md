@@ -3,7 +3,7 @@ layout: default
 title: Import CSS Plugin
 title_nav: Import CSS
 description: Automatically populate CSS class names into the Format dropdown.
-keywords: importcss content_css
+keywords: importcss content_css importcss_append importcss_file_filter importcss_selector_filter importcss_groups importcss_merge_classes importcss_selector_converter
 ---
 
 The `importcss` plugin adds the ability to automatically import CSS classes from the CSS file specified in the [`content_css`]({{ site.baseurl }}/configure/content-appearance/#content_css) configuration setting.

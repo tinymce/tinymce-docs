@@ -1,7 +1,8 @@
 ---
 layout: default
 title: Advanced Editing Behaviors
-description: // coming soon
+description_short:
+description: Learn about some edge case editor behavior.
 ---
 
 {% include configuration/br-in-pre.md %}

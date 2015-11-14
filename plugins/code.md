@@ -3,7 +3,7 @@ layout: default
 title: Code Plugin
 title_nav: Code
 description: Edit your content's HTML source.
-keywords: WYSIWYG
+keywords: wysiwyg source html edit code_dialog_height code_dialog_width
 controls: toolbar button, menu item
 ---
 

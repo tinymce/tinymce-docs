@@ -2,7 +2,9 @@
 layout: default
 title: BBCode Plugin
 title_nav: BBCode
-description: Add basic BBCode input/output to TinyMCE.
+description_short: Add basic BBCode input/output to TinyMCE.
+description: Add basic BBCode input/output support to TinyMCE.
+keywords: punbb informer
 ---
 
 This plugin makes it possible for TinyMCE to edit BBCode syntax in a WYSIWYG form by converting tags like `[b]` into `<strong>` and then `<strong>` back to `[b]` when the user submits the content.

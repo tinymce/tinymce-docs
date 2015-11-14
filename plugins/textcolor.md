@@ -2,7 +2,7 @@
 layout: default
 title: Text Color Plugin
 title_nav: Text Color
-keywords: textcolor
+keywords: textcolor textcolor_cols textcolor_map textcolor_rows
 controls: toolbar button
 ---
 

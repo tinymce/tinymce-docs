@@ -2,13 +2,12 @@
 layout: default
 title: Paste from Word
 description: PowerPaste is a premium plugin from the makers of TinyMCE for clean Word copy-and-paste.
+keywords: enterprise powerpaste power paste powerpaste_word_import powerpaste_html_import powerpaste_block_drop powerpaste_allow_local_images
 ---
-
 
 The TinyMCE PowerPaste plugin automatically cleans up content from Microsoft Word and other HTML sources to ensure clean, compliant content that matches the look and feel of the site.
 
-TinyMCE PowerPaste is included in the TinyMCE Enteprise download.
-
+TinyMCE PowerPaste is included in the TinyMCE Enterprise download.
 
 
 ## Usage
@@ -28,16 +27,14 @@ To enable the TinyMCE PowerPaste plugin:
 
 Example TinyMCE configuration:
 
-````
+```js
 tinymce.init({
-    selector: 'textarea',
-    plugins: 'powerpaste',
-    ...
+  selector: 'textarea',  // change this value according to your html
+  plugins: 'powerpaste'
 });
-````
+```
 
 ## Configuration Options
-
 
 ### powerpaste_word_import
 
@@ -47,7 +44,6 @@ This setting controls how content being pasted from Microsoft Word is filtered. 
 * `merge` - Preserve the inline formatting and structure of the original document. Invalid and proprietary styles, tags and attributes are still removed ensuring that the HTML is valid while more closely matching the original document formatting.
 * `prompt` (Default) - Prompt the user to choose between the clean and merge options after attempting to paste word content.
 
-
 ### powerpaste_html_import
 
 This setting controls how content being pasted from sources other than Microsoft Word is filtered. Note that this includes content copied from TinyMCE itself. The supported values are:
@@ -56,13 +52,11 @@ This setting controls how content being pasted from sources other than Microsoft
 merge (Default) - Preserve the inline formatting and structure of the original document. Invalid and proprietary styles, tags and attributes are still removed ensuring that the HTML is valid while more closely matching the original document formatting.
 * `prompt` - Prompt the user to choose between the clean and merge options after attempting to paste HTML content.
 
-
 ### powerpaste_block_drop
 
 Due to browser limitations, it is not possible to filter content that is dragged and dropped into the editor. When powerpaste_block_drop is set to true the plugin will disable drag and dropping content into the editor. This prevents the unfiltered content from being introduced. Copy and paste is still enabled.
 
-The default is false.
-
+The default is `false`.
 
 ### powerpaste_allow_local_images
 
@@ -70,14 +64,13 @@ When set to true base64 encoded images using a data URI in the copied content wi
 
 The default is false.
 
-Example configuration:
+##### Example
 
-````
+```js
 tinymce.init({
-	selector: 'textarea',
-	plugins: 'powerpaste',
-	powerpaste_word_import: 'clean',
-	powerpaste_html_import: 'merge',
-	...
+  selector: 'textarea',  // change this value according to your html
+  plugins: 'powerpaste',
+  powerpaste_word_import: 'clean',
+  powerpaste_html_import: 'merge'
 });
-````
+```

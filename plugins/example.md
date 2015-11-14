@@ -3,6 +3,7 @@ layout: default
 title: Example Plugin
 title_nav: Example
 description: A template for your own custom plugins.
+keywords: example template custom
 ---
 
 The Example plugin is some code that you can use as a template for your custom plugins.

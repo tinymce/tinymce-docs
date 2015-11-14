@@ -3,6 +3,7 @@ layout: default
 title: Template Plugin
 title_nav: Template
 description: Custom templates for your content.
+keywords: insert template_cdate_classes template_cdate_format template_mdate_classes template_mdate_format template_popup_height template_popup_width template_replace_values template_selected_content_classes template_preview_replace_values
 controls: toolbar button, menu item
 ---
 

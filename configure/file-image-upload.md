@@ -1,6 +1,7 @@
 ---
 layout: default
 title: File & Image Upload
+description_short:
 description: These settings affect TinyMCE's image and file upload capabilities.
 ---
 

@@ -3,7 +3,7 @@ layout: default
 title: Text Pattern Plugin
 title_nav: Text Pattern
 description: Matches special patterns in the text and applies formats or executed commands on these patterns.
-keywords: textpattern
+keywords: textpattern textpattern_patterns format cmd
 ---
 
 This plugin matches special patterns in the text and applies formats or executed commands on these patterns.

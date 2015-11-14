@@ -6,6 +6,8 @@ description: Automatically resize TinyMCE to fit content.
 keywords: height, width
 ---
 
+This plugin automatically resizes the editor to the content inside it. It is typically used to prevent the editor from expanding infinitely as a user types into the editable area. For example, by giving the `autoresize_max_height` option a value the editor will stop resizing when the set value is reached.
+
 **Type:** `String`
 
 ##### Autoresize plugin example

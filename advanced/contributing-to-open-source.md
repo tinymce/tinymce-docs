@@ -2,7 +2,7 @@
 layout: default
 title: Contribute to TinyMCE
 description: Contribute to the open source project.
-keywords: opensource, OSS
+keywords: opensource OSS contributors
 ---
 
 TinyMCE is an open source software project and we encourage developers to contribute patches and code for us to include in the main package of TinyMCE. However there are a few rules and limitations when doing so and this page list them.
@@ -15,7 +15,7 @@ Copyright notices will be changed to Ephox Corporation but contributors will get
 
 All third party code will be reviewed, tested and possibly modified before being released.
 
-In order for contributions to be accepted, a Contributors License Agreement Agrreement must be completed.  
+In order for contributions to be accepted, a Contributors License Agreement must be completed.  
 
 These basic rules make it possible for us to properly manage the TinyMCE project and to ensure that the code remains open source and under the LGPL license.
 
@@ -23,3 +23,100 @@ These basic rules make it possible for us to properly manage the TinyMCE project
 ## How to Contribute
 
 The TinyMCE source code is [hosted on Github](https://github.com/tinymce/tinymce). Through Github you can submit pull requests and log new bugs and feature requests.
+
+
+## Contribute to TinyMCE's Documentation
+
+### How can you help?
+
+We welcome people with technical writing experience to help make TinyMCE's docs as useful to our community as possible. You don't need to be an expert developer to contribute but a basic understand of software development is helpful.
+
+What is more important is your ability to articulate complex ideas simply. Our goal is to help developers understand TinyMCE functionality as quickly as possible so that they can get back to building great stuff.
+
+If that sounds like something you'd be into, branch the [docs GitHub repository](https://github.com/tinymce/tinymce-docs) and submit a PR, or reach out to the [TinyMCE docs team](marketing@ephox.com) if you have a specific question.
+
+### TinyMCE docs tech stack
+
+The documentation is built with Jekyll. Text files are written in [Markdown](https://help.github.com/articles/markdown-basics/) and published on [GitHub](https://github.com/tinymce/tinymce-docs). You'll find the [repo here](https://github.com/tinymce/tinymce-docs).
+
+### Markdown & code syntax
+
+As we mentioned above, we write using [GitHub Flavored Markdown](https://help.github.com/articles/github-flavored-markdown/). If you're not familiar with Markdown [read this](https://help.github.com/articles/markdown-basics/).
+
+##### Highlighting
+
+We highlight code language syntax and associated elements within an open and closing backtick. For example, this `object` is actually enclosed with backticks like this: \`object\`.
+
+We cannot cover every use case here and contributors need to use their best judgement. As as rule, words relating specifically to executable parts of software languages, keys and their values when related to objects and methods (particularly the case with TinyMCE) should be backticked.
+
+##### Code snippets
+
+Code snippets should always be complete, executable code blocks starting with the `tinymce` object. We write code snippets by enclosing the example code within three opening and closing back ticks. The first set of backticks is immediately followed by the code's language, which helps correct syntax highlighting: typically, html, css, js, php.
+
+Include any key values pairs and method options that are required to enable a user to test the snippet in a local HTML file. You do not need to include the `html` surrounding the `tinymce` object that would be required to make the snippet work. For example, this is good:
+
+```js
+tinymce.init({
+  selector: "textarea",  // change this value according to your html
+  plugins: "codesample",
+  toolbar: "codesample"
+});
+```
+
+This is not:
+
+```js
+tinymce.init({
+  ...
+  plugins: "codesample",
+  toolbar: "codesample"
+  ...
+});
+```
+
+##### URLs and links
+
+Resources to be linked take the form of placing the linked text between brackets and the URL between parenthesis. Linking an external resource looks like this:
+
+```html
+hello, [text to link](http://www.example.com) to the URL example.com.
+```
+
+We will provide the internal linking structure shortly. Otherwise clone and branch the repo and explore for yourself (it's a test of skill).
+
+### Style Guide
+
+##### TinyMCE v. tinymce
+
+Use the capitalized version of TinyMCE when referring to the open source project or the editor as an all encompassing whole. Use lowercase when referring to the `tinymce` JavaScript object.
+
+##### Spelling
+
+Use United States English. For example, behavior rather than behaviour, referring rather than refering.
+
+##### Proper names
+
+When referring to the name of a development language we use the proper name or the industry convention. For example, HTML, CSS, JavaScript, jQuery, React, AngularJS (not html, css, Jquery, React-js).
+
+## Contributor Code of Conduct
+
+As contributors and maintainers of this project, and in the interest of fostering an open and welcoming community, we pledge to respect all people who contribute through reporting issues, posting feature requests, updating documentation, submitting pull requests or patches, and other activities.
+
+We are committed to making participation in this project a harassment-free experience for everyone, regardless of level of experience, gender, gender identity and expression, sexual orientation, disability, personal appearance, body size, race, ethnicity, age, religion, or nationality.
+
+Examples of unacceptable behavior by participants include:
+
+* The use of sexualized language or imagery
+* Personal attacks
+* Trolling or insulting/derogatory comments
+* Public or private harassment
+* Publishing other's private information, such as physical or electronic addresses, without explicit permission
+* Other unethical or unprofessional conduct
+
+Project maintainers have the right and responsibility to remove, edit, or reject comments, commits, code, wiki edits, issues, and other contributions that are not aligned to this Code of Conduct. By adopting this Code of Conduct, project maintainers commit themselves to fairly and consistently applying these principles to every aspect of managing this project. Project maintainers who do not follow or enforce the Code of Conduct may be permanently removed from the project team.
+
+This code of conduct applies both within project spaces and in public spaces when an individual is representing the project or its community.
+
+Instances of abusive, harassing, or otherwise unacceptable behavior may be reported by opening an issue or contacting one or more of the project maintainers.
+
+This Code of Conduct is adapted from the Contributor Covenant, version 1.2.0, available from http://contributor-covenant.org/version/1/2/0/

@@ -66,7 +66,7 @@ An example of a typical setup is below:
 
 ```js
 tinymce.init({
-    selector: "textarea",  // change this value according to your html
+    selector: "textarea",  // change this value according to your HTML
     images_upload_url: "postAcceptor.php",
     images_upload_base_path: "/some/basepath",
     images_upload_credentials: true
@@ -83,7 +83,7 @@ An example of this setup is below:
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   images_upload_handler: function (blobInfo, success, failure) {
     var xhr, formData;
 

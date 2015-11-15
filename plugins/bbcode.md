@@ -36,7 +36,7 @@ This option allows you to specify the BBCode dialect. We only support [PunBB](ht
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   plugins: "bbcode",
   bbcode_dialect: "punbb"
 });

@@ -14,7 +14,7 @@ The Example_dependency plugin is an example plugin with a dependency on another 
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   plugins: "example_dependency"
 });
 ```

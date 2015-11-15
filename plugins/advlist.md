@@ -15,7 +15,7 @@ The `advlist` plugin extends the core `bullist` and `numlist` toolbar controls b
 
 ```js
 tinymce.init({
-  selector: "textarea", // change this value according to your html
+  selector: "textarea", // change this value according to your HTML
   plugins: "advlist"
 });
 ```
@@ -68,7 +68,7 @@ This option allows you to include specific ordered list item markers in the defa
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   plugins: "advlist",
   advlist_number_styles: "lower-alpha"  // only include lower alpha in list
 });

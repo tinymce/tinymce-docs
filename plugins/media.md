@@ -15,7 +15,7 @@ The `media` plugin adds the ability for users to be able to add HTML5 video and 
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   plugins: "media",
   menubar: "insert",
   toolbar: "media"
@@ -32,7 +32,7 @@ These settings affect the execution of the `media` plugin, namely the ability to
 
 When you enable this option users will see a live preview of embedded video content within the editable area, rather than a placeholder image. This means that users can play a video clip, such as YouTube, within the editor.
 
-This option is enabled by default and accepts urls input into the source field or embed field in the dialog box by the user.
+This option is enabled by default and accepts URLs input into the source field or embed field in the dialog box by the user.
 
 **Type:** `Boolean`
 
@@ -44,7 +44,7 @@ This option is enabled by default and accepts urls input into the source field o
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   plugins: "media",
   menubar: "insert",
   toolbar: "media",
@@ -54,7 +54,7 @@ tinymce.init({
 
 ### `audio_template_callback`
 
-This option allows you to specify the function that will return the html embed code of the audio media that you are attempting to insert into tinymce.
+This option allows you to specify the function that will return the HTML embed code of the audio media that you are attempting to insert into TinyMCE.
 
 **Type:** `String`
 
@@ -62,7 +62,7 @@ This option allows you to specify the function that will return the html embed c
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   plugins: "media",
   menubar: "insert",
   toolbar: "media",
@@ -86,7 +86,7 @@ This options allows you disable the `Alternative source` input field in the medi
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   plugins: "media",
   menubar: "insert",
   toolbar: "media",
@@ -108,7 +108,7 @@ This options allows you disable the `Poster` input field in the media dialog.
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   plugins: "media",
   menubar: "insert",
   toolbar: "media",
@@ -130,7 +130,7 @@ This options allows you disable the `Dimensions` input fields in the media dialo
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   plugins: "media",
   menubar: "insert",
   toolbar: "media",
@@ -152,7 +152,7 @@ This option allows you disable the XSS sanitation filter for video/object elemen
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   plugins: "media",
   menubar: "insert",
   toolbar: "media",
@@ -170,7 +170,7 @@ This option allows you to embed videos using script elements.
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   plugins: "media",
   menubar: "insert",
   toolbar: "media",
@@ -183,7 +183,7 @@ tinymce.init({
 
 ### `video_template_callback`
 
-This option allows you to specify the function that will return the html embed code of the video media that you are attempting to insert into tinymce.
+This option allows you to specify the function that will return the HTML embed code of the video media that you are attempting to insert into TinyMCE.
 
 **Type:** `String`
 
@@ -191,7 +191,7 @@ This option allows you to specify the function that will return the html embed c
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   plugins: "media",
   menubar: "insert",
   toolbar: "media",

@@ -36,7 +36,7 @@ This option allows you to specify how many columns appear on the grid of text co
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   plugins: "textcolor",
   toolbar: "forecolor backcolor",
   textcolor_cols: "5"
@@ -55,7 +55,7 @@ This option allows you to specify how many rows appear on the grid of text color
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   plugins: "textcolor",
   toolbar: "forecolor backcolor",
   textcolor_rows: "4"
@@ -72,7 +72,7 @@ This option allows you to specify a map of the text colors that will appear in t
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   plugins: "textcolor",
   toolbar: "forecolor backcolor",
   textcolor_map: [

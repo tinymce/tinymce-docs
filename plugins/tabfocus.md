@@ -14,7 +14,7 @@ This plugin adds the possibility to tab in/out of TinyMCE.
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   plugins: "tabfocus"
 });
 ```
@@ -34,7 +34,7 @@ This option enables you to specify an element `ID` to focus, when the user press
 ```js
 // Move focus to specific element
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   tabfocus_elements: "somebutton"
 });
 ```
@@ -42,7 +42,7 @@ tinymce.init({
 ```js
 // Move focus to next element in DOM
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   tabfocus_elements: ":prev,:next"
 });
 ```

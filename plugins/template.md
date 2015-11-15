@@ -15,7 +15,7 @@ The `template` plugin adds support for custom templates. It also adds a menu ite
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   plugins: "template",
   menubar: "insert",
   toolbar: "template"
@@ -40,7 +40,7 @@ Each item in the list can either be inline using a `content` property or a whole
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   plugins: "template",
   menubar: "insert",
   toolbar: "template"
@@ -51,11 +51,11 @@ tinymce.init({
 });
 ```
 
-**Example using templates url**
+**Example using templates URL**
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   plugins: "template",
   menubar: "insert",
   toolbar: "template"
@@ -84,7 +84,7 @@ A creation date is one that is set if no previous date existed within the elemen
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   plugins: "template",
   menubar: "insert",
   toolbar: "template"
@@ -102,7 +102,7 @@ This option allows you to provide a date format that all 'creation' date templat
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   plugins: "template",
   menubar: "insert",
   toolbar: "template"
@@ -122,7 +122,7 @@ A modified date is one that is updated with each edit.
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   plugins: "template",
   menubar: "insert",
   toolbar: "template"
@@ -140,7 +140,7 @@ This option allows you to provide TinyMCE with a date/time format that all 'modi
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   plugins: "template",
   menubar: "insert",
   toolbar: "template"
@@ -160,7 +160,7 @@ This option allows you to specify the height of the template dialog box.
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   plugins: "template",
   menubar: "insert",
   toolbar: "template"
@@ -180,7 +180,7 @@ This option allows you to specify the width of the template dialog box.
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   plugins: "template",
   menubar: "insert",
   toolbar: "template"
@@ -198,7 +198,7 @@ This is an array of items that controls content replacement in the inserted temp
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   plugins: "template",
   menubar: "insert",
   toolbar: "template"
@@ -221,7 +221,7 @@ template_replace_values : {
 
 **Replace values (functions) example**
 
-`template_replace_values` array values can also be functions. If a template element has a classname matching and where the value is a fuction, the function is called and the element passed as an argument.
+`template_replace_values` array values can also be functions. If a template element has a classname matching and where the value is a function, the function is called and the element passed as an argument.
 
 ```js
 template_replace_values : {
@@ -241,7 +241,7 @@ This option allows you to provide a list of class names (separated by spaces) wh
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   plugins: "template",
   template_selected_content_classes: "selcontent selectedcontent"
 });
@@ -260,7 +260,7 @@ tinymce.init({
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   plugins: "template",
   menubar: "insert",
   toolbar: "template",
@@ -294,7 +294,7 @@ tinymce.init({
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   templates : [
     {
       title: "Editor Details",

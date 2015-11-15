@@ -16,7 +16,7 @@ Note that by default `contextmenu` does not disable the operating system's nativ
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   plugins: "contextmenu",
   contextmenu: "link image inserttable | cell row column deletetable"
 });
@@ -58,7 +58,7 @@ We advise you give some thought about whether you really want to do this. Many u
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   plugins: "contextmenu",
   contextmenu_never_use_native: true
 });

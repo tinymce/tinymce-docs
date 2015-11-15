@@ -17,7 +17,7 @@ It's worth noting that at present the toolbar button icon is the same for both `
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   plugins: "visualblocks",
   menubar: "view",
   toolbar: "visualblocks"
@@ -30,7 +30,7 @@ This setting affects the execution of the `visualblocks` plugin. You may specify
 
 ### `visualblocks_default_state`
 
-This option enables you to specify the default state of the visualblocks plugin.
+This option enables you to specify the default state of the Visual Blocks plugin.
 
 **Type:** `Boolean`
 
@@ -40,7 +40,7 @@ This option enables you to specify the default state of the visualblocks plugin.
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   plugins: "visualblocks",
   menubar: "view",
   toolbar: "visualblocks"

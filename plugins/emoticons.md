@@ -17,7 +17,7 @@ The Emoticons plugin adds a toolbar control that lets users insert smiley images
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   plugins: "emoticons",
   toolbar: "emoticons"
 });

@@ -16,7 +16,7 @@ By default selectors like `".my-class"`, `".my-class1.my-class2"` and `"p.my-cla
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   plugins: "importcss",
   menubar: "format"
 });
@@ -38,7 +38,7 @@ If set to `true` this option will append the imported styles to the end of the `
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   plugins: "importcss",
   menubar: "format",
   importcss_append: true
@@ -55,7 +55,7 @@ This option enables you to add the CSS files that should be used for populating 
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   plugins: "importcss",
   menubar: "format",
   importcss_file_filter: "my-styles.css"
@@ -72,7 +72,7 @@ This option enables you to only import classes from selectors matching the filte
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   plugins: "importcss",
   menubar: "format",
   importcss_selector_filter: ".my-prefix-"
@@ -83,7 +83,7 @@ tinymce.init({
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   plugins: "importcss",
   menubar: "format",
   importcss_selector_filter: /\.prefix|\.otherprefix/
@@ -94,7 +94,7 @@ tinymce.init({
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   plugins: "importcss"
   menubar: "format",
   importcss_selector_filter: function(selector) {
@@ -111,7 +111,7 @@ This option enables group matching selectors into submenus in the `Formats` menu
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   plugins: "importcss"
   menubar: "format",
   importcss_groups: [
@@ -141,7 +141,7 @@ tinymce.init({
 
 ### `importcss_selector_converter`
 
-This option allows you to override the default selector to format converter function. This allows you to parse the CSS selectors manually and produce format objects out of them. If the converter returns falsy value the selector is ignored from import.
+This option allows you to override the default selector to format converter function. This allows you to parse the CSS selectors manually and produce format objects out of them. If the converter returns a `false` value the selector is ignored from import.
 
 **Type:** `String`
 
@@ -149,7 +149,7 @@ This option allows you to override the default selector to format converter func
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   plugins: "importcss"
   menubar: "format",
   importcss_selector_converter: function(selector) {

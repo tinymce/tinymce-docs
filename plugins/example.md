@@ -14,7 +14,7 @@ The Example plugin is some code that you can use as a template for your custom p
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   plugins: "example"
 });
 ```

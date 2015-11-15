@@ -18,7 +18,7 @@ The plugin also adds a toolbar button and an `Insert/edit image` menu item under
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   plugins: "image",
   menubar: "insert",
   toolbar: "image",
@@ -52,7 +52,7 @@ This option lets users enable captions for images. When this option is enabled t
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   plugins: "image",
   menubar: "insert",
   toolbar: "image",
@@ -107,7 +107,7 @@ This option lets you specify a predefined list of sources for images. `image_lis
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   plugins: "image",
   menubar: "insert",
   toolbar: "image",
@@ -118,13 +118,13 @@ tinymce.init({
 });
 ```
 
-**Example of JSON url with images**
+**Example of JSON URL with images**
 
 You can also configure a URL with JSON data. The format of that list is the same as above.
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   plugins: "image",
   menubar: "insert",
   toolbar: "image",
@@ -136,7 +136,7 @@ tinymce.init({
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   plugins: "image",
   menubar: "insert",
   toolbar: "image",
@@ -163,7 +163,7 @@ This option adds an "Advanced" tab to the image dialog allowing you to add custo
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   plugins: "image",
   menubar: "insert",
   toolbar: "image",
@@ -181,7 +181,7 @@ This option lets you specify a predefined list of classes to add to an image. It
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   plugins: "image",
   menubar: "insert",
   toolbar: "image",
@@ -207,7 +207,7 @@ This options allows you disable the image description input field in the image d
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   plugins: "image",
   menubar: "insert",
   toolbar: "image",
@@ -229,7 +229,7 @@ This options allows you disable the image dimensions input field in the image di
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   plugins: "image",
   menubar: "insert",
   toolbar: "image",
@@ -251,7 +251,7 @@ This options allows you enable the image title input field in the image dialog.
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   plugins: "image",
   menubar: "insert",
   toolbar: "image",
@@ -269,7 +269,7 @@ This option allows you to specify a URL prefix that will be applied to images wh
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   plugins: "image",
   menubar: "insert",
   toolbar: "image",

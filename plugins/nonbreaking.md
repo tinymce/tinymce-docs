@@ -15,7 +15,7 @@ This plugin adds a button for inserting nonbreaking space entities `&nbsp;` at t
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   plugins: "nonbreaking",
   menubar: "insert",
   toolbar: "nonbreaking"
@@ -42,7 +42,7 @@ However, the `true` condition does capture the tab key and contain it within the
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   plugins: "nonbreaking",
   mewnubar: "insert",
   toolbar: "nonbreaking",

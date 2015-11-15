@@ -45,7 +45,7 @@ When the `<form>` is submitted the TinyMCE editor mimics the behavior of a norma
 
 #### Use of local plugins & language packs when installing via package managers
 
-When using package managers you might have local TinyMCE addons in your project such as plugins or language packs. Load these from your project location rather than from inside the package using these config options:
+When using package managers you might have local TinyMCE add-ons in your project such as plugins or language packs. Load these from your project location rather than from inside the package using these configuration options:
 
 ```js
 tinymce.init({

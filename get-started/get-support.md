@@ -40,7 +40,7 @@ You are probably using an old `DOCTYPE` as of TinyMCE 4 a proper HTML5 doctype i
 
 ### Q: Is TinyMCE protected against XSS vulnerabilities?
 
-Protection against XSS attacks needs to be done on the server since if you can submit contents in a form using TinyMCE one could as easily disable all javascript and therefore bypass TinyMCE filtering and still submit HTML code with insecure content. You need to properly filter the HTML input on the server using things like [HTMLPurifier](http://htmlpurifier.org/).
+Protection against XSS attacks needs to be done on the server since if you can submit contents in a form using TinyMCE one could as easily disable all JavaScript and therefore bypass TinyMCE filtering and still submit HTML code with insecure content. You need to properly filter the HTML input on the server using things like [HTMLPurifier](http://htmlpurifier.org/).
 
 ### Q: How do I convert my URLs to relative, absolute, or absolute with domain?
 
@@ -50,7 +50,7 @@ This will convert all URLs within the same domain to relative URLs. The URLs wil
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   relative_urls : true,
   document_base_url : "http://www.site.com/path1/"
 });
@@ -66,7 +66,7 @@ This will convert all relative URLs to absolute URLs. The URLs will be absolute 
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   relative_urls : false,
   remove_script_host : true,
   document_base_url : "http://www.site.com/path1/"
@@ -83,7 +83,7 @@ This will convert all relative URLs to absolute URLs. The URLs will be absolute 
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   relative_urls : false,
   remove_script_host : false,
   document_base_url : "http://www.site.com/path1/"
@@ -100,7 +100,7 @@ Use the [`Style Formats`](/configure/content-filtering/#style_formats) option in
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   style_formats: [
     {title: 'Image Left', selector: 'img', styles: {
       'float' : 'left',

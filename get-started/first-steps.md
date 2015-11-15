@@ -6,7 +6,7 @@ description: Get a local instance of TinyMCE up and running in less than 5 minut
 keywords: tinymce script textarea
 ---
 
-From getting a local editor instance up and running in less than 5 minutes (via our content delivery network) to advanced installation options, working with plugins and learning about content filtering and spellchecking, this is the place to start for developers new to TinyMCE.
+From getting a local editor instance up and running in less than 5 minutes (via our content delivery network) to advanced installation options, working with plugins and learning about content filtering and spell checking, this is the place to start for developers new to TinyMCE.
 
 So let's get to it. In the next 4 steps and in less than 5 minutes you'll have a basic, local editor instance up and running.
 

@@ -22,16 +22,16 @@ Snippets will (almost always) look like this:
 
 ```js
 tinymce.init({
-  selector: "textarea"  // change this value according to your html
+  selector: "textarea"  // change this value according to your HTML
   plugin: "a_tinymce_plugin",
   a_plugin_option: true,
   a_configuration_option: 400
 });
 ```
 
-Snippets will always include a `selector` with the value `"textarea"`. You will need to change this value according to your html, but otherwise the snippet will be a working code block.
+Snippets will always include a `selector` with the value `"textarea"`. You will need to change this value according to your HTML, but otherwise the snippet will be a working code block.
 
-Cut and paste the snippet into your html document, replacing everything between the `<script>` tags containing the `tinymce` object (`tinymce.init({})`). If the setting makes a visual change to the editor, for example, adds a toolbar button or menu item, you'll see the changes in the editor. We hope that helps.
+Cut and paste the snippet into your HTML document, replacing everything between the `<script>` tags containing the `tinymce` object (`tinymce.init({})`). If the setting makes a visual change to the editor, for example, adds a toolbar button or menu item, you'll see the changes in the editor. We hope that helps.
 
 ## Selector configuration
 
@@ -79,7 +79,7 @@ Fortunately it is easy to enable plugin functionality. All you need to do is add
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   plugins : "advlist autolink link image lists charmap print preview"
 });
 ```
@@ -111,7 +111,7 @@ To specify the controls that should appear on TinyMCE's toolbar, the toolbar opt
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   toolbar: "undo redo | styleselect | bold italic | link image",
 });
 ```
@@ -120,7 +120,7 @@ To disable the toolbar entirely, the toolbar option should be provided a boolean
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   toolbar: false
 });
 ```
@@ -131,7 +131,7 @@ To specify multiple toolbars, the `toolbar` option should be provided with an `a
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   toolbar: [
     "undo redo | styleselect | bold italic | link image",
     "alignleft aligncenter alignright"
@@ -153,7 +153,7 @@ In the snippet below our menubar will include only the menu items `File`, `Edit`
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   menubar: "file edit view"
 });
 ```
@@ -162,7 +162,7 @@ If you wanted to create an `Edit` menu and include only Cut, Copy, Paste items y
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   menu: {
     view: {title: 'Edit', items: 'cut, copy, paste'}
   }
@@ -173,7 +173,7 @@ And for a little bit of fun, you can even create your own menu titles. In the sn
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   menu: {
     view: {title: 'Happy', items: 'code'}
   },
@@ -185,7 +185,7 @@ If you wish to exclude `menubar` and/or `toolbar` controls set their value to `f
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   menubar: false,  // removes the menubar
   toolbar: false  // removes the toolbar
 });

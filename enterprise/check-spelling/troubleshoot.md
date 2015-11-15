@@ -50,7 +50,7 @@ To test the services, we will start with the following:
 	* Take the service URL displayed as erroneous (example: http://YOUR_SERVER:YOUR_PORT/ephox-spelling/1/autocorrect).
 	* Remove everything from the ‘1’ onwards (including the ‘1’) and replace it with /version. (example: Change http://YOUR_SERVER:YOUR_PORT/ephox-spelling/1/correction to http://YOUR_SERVER:YOUT_PORT/ephox-spelling/version). The response code should be 200 and the body should display the version number.
 5. If the response for the version URL is still 404, it means the service has not been started or installed correctly.
-6. To check the "Origin" value that the browser uses, open the network tools (chrome in this screenshot) and refresh the page. Then enter a couple of words in the editor and select one of the requests on the bottom left ('correction' in the screen shot) and select the 'Headers' section. Look for the 'Origin' header value.
+6. To check the "Origin" value that the browser uses, open the network tools (Chrome in this screenshot) and refresh the page. Then enter a couple of words in the editor and select one of the requests on the bottom left ('correction' in the screen shot) and select the 'Headers' section. Look for the 'Origin' header value.
 
 ![Using Browser Tools to Investigate Services Issues](/images/spell-checking-browser-tools.png)
 

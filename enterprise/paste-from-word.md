@@ -29,7 +29,7 @@ Example TinyMCE configuration:
 
 ```js
 tinymce.init({
-  selector: 'textarea',  // change this value according to your html
+  selector: 'textarea',  // change this value according to your HTML
   plugins: 'powerpaste'
 });
 ```
@@ -60,7 +60,7 @@ The default is `false`.
 
 ### powerpaste_allow_local_images
 
-When set to true base64 encoded images using a data URI in the copied content will not be removed after pasting.
+When set to true Base 64 encoded images using a data URI in the copied content will not be removed after pasting.
 
 The default is false.
 
@@ -68,7 +68,7 @@ The default is false.
 
 ```js
 tinymce.init({
-  selector: 'textarea',  // change this value according to your html
+  selector: 'textarea',  // change this value according to your HTML
   plugins: 'powerpaste',
   powerpaste_word_import: 'clean',
   powerpaste_html_import: 'merge'

@@ -1,6 +1,6 @@
 ## visual
 
-This true/false option gives you the ability to turn on/off the visual aid for borderless tables. If the border of a table is set to `0`, then TinyMCE adds a dotted line around the table by default.
+This true/false option gives you the ability to turn on/off the visual aid for tables with no borders. If the border of a table is set to `0`, then TinyMCE adds a dotted line around the table by default.
 
 **Type:** `Boolean`
 
@@ -12,7 +12,7 @@ This true/false option gives you the ability to turn on/off the visual aid for b
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HRML
   visual: false
 });
 ```

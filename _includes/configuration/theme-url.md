@@ -8,7 +8,7 @@ If you are using TinyMCE themes, this option enables you to specify the location
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   theme_url: "/mytheme/mytheme.js"
 });
 ```

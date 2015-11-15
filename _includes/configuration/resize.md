@@ -14,7 +14,7 @@ This option gives you the ability to disable the resize handle or set it to resi
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   resize: false
 });
 ```
@@ -31,7 +31,7 @@ tinymce.init({
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   resize: "both"
 });
 ```

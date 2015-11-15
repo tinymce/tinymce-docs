@@ -10,7 +10,7 @@ If you set this option to `true`, TinyMCE will convert all `font` elements to `s
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   convert_fonts_to_spans : false
 });
 ```

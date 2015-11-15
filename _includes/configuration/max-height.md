@@ -1,6 +1,6 @@
 ## max_height
 
-This option allows you to set the maximum height that a user can stretch the entire TinyMCE interface (by grabbing the draggable area in the bottom right of the editor interface) when using the modern theme.
+This option allows you to set the maximum height that a user can stretch the entire TinyMCE interface (by grabbing the dragable area in the bottom right of the editor interface) when using the modern theme.
 
 > Note that this behavior is different than the [`autoresize`](/plugins/autoresize) plugin, which controls the resizing of the editable area only, not the entire editor.
 
@@ -10,7 +10,7 @@ This option allows you to set the maximum height that a user can stretch the ent
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   max_height: 500
 });
 ```

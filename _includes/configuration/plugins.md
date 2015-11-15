@@ -8,7 +8,7 @@ This option allows you to specify which plugins TinyMCE will attempt to load whe
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   plugins : 'advlist autolink link image lists charmap print preview'
 });
 ```

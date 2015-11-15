@@ -14,7 +14,7 @@ This option allows you to disable TinyMCE's default behavior of removing `<br>` 
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   remove_trailing_brs: false
 });
 ```

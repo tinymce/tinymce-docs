@@ -12,7 +12,7 @@ This option allows you to specify whether or not TinyMCE should display the stat
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   statusbar: false
 });
 ```

@@ -21,7 +21,7 @@ However, when `br_in_pre` is set to `false`, rather than inserting a `br` tag Ti
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   br_in_pre: false
 });
 ```

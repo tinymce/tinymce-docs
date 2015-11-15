@@ -12,7 +12,7 @@ This option enables you to turn off the preview of styles in format/style listbo
 
 ```js
 tinyMCE.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   mode: "textareas",
   preview_styles: false
 });

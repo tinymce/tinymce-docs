@@ -10,7 +10,7 @@ By default all events gets bound to the editable area. But in some implementatio
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   inline: true,
   event_root: "#root"
 });

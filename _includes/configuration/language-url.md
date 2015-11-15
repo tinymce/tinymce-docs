@@ -8,7 +8,7 @@ When using the [`language`](#language) option to set the user interface language
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   language_url : "/languages/fi.js"  // site absolute URL
 });
 ```

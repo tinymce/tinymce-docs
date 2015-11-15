@@ -10,7 +10,7 @@ This option enables you to control whether TinyMCE is to be clever and restore U
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   convert_urls: false
 });
 ```

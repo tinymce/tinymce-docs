@@ -10,7 +10,7 @@ This option enables you to specify what types of file pickers you need by using 
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   file_browser_callback_types: "file image media"
 });
 ```

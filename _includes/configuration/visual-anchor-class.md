@@ -8,7 +8,7 @@ This option enables you to configure a custom class to be added to anchors with 
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   visual_anchor_class: "my-custom-class"
 });
 ```

@@ -45,14 +45,14 @@ This example string tells TinyMCE to remove all elements that are not a "a, stro
 
 ```js
 tinyMCE.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   valid_elements : "a[href|target=_blank],strong/b,div[align],br"
 });
 ```
 
 ### Duplicate attribute warning
 
-Be careful not to duplicate attributes in the definitions as this may cause tinyMCE to render duplicate attributes in the output. For example, if you have:
+Be careful not to duplicate attributes in the definitions as this may cause TinyMCE to render duplicate attributes in the output. For example, if you have:
 
 > ```js
  //bad code: dir and style listed twice

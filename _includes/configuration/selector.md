@@ -12,7 +12,7 @@ When using this option in TinyMCE's regular editing mode, the element will be re
 
 ```js
 tinymce.init({
-  selector: "textarea"  // change this value according to your html
+  selector: "textarea"  // change this value according to your HTML
 });
 ```
 

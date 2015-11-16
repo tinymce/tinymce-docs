@@ -4,7 +4,7 @@ title: Create a Plugin for TinyMCE
 title_nav: Create a Plugin
 description_short: Introducing plugin creation, with an example.
 description: A short introduction to creating plugins for TinyMCE along with an example plugin.
-keywords: plugin js
+keywords: plugin plugin.js plugin.min.js tinymce.js
 ---
 
 Creating plugins in TinyMCE is pretty simple this tutorial tries to outline some of the basic concepts of creating a plugin. For more details consult the API documentation and check the existing plugins we ship with the core.
@@ -101,7 +101,7 @@ tinymce.init({
 });
 ```
 
-## Internationalization
+## Language localization
 
 If you want to have custom translations for your plugin you need to create a "langs" directory in your plugin directory. TinyMCE will then try to load language files based on the specified language core for example if the language is "sv_SE" it will try to load "<your plugin>/langs/sv_SE.js".
 

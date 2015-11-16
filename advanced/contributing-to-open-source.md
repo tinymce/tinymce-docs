@@ -4,20 +4,18 @@ title: Contribute to TinyMCE
 title_nav: Contribute to TinyMCE
 description_short: Contribute to the open source project.
 description: Contribute to the open source project. Help build the core, plugins or even write the documentation.
-keywords: opensource OSS contributors
+keywords: opensource oss contributors lgpl
 ---
 
 TinyMCE is an open source software project and we encourage developers to contribute patches and code for us to include in the main package of TinyMCE. However there are a few rules and limitations when doing so and this page list them.
 
+
 ## Basic Rules
 
-Contributed code will be licensed under the LGPL license, but not limited to LGPL.
-
-Copyright notices will be changed to Ephox Corporation but contributors will get credit for their work.
-
-All third party code will be reviewed, tested and possibly modified before being released.
-
-In order for contributions to be accepted, a Contributors License Agreement must be completed.  
+* Contributed code will be licensed under the LGPL license, but not limited to LGPL.
+* Copyright notices will be changed to Ephox Corporation but contributors will get credit for their work.
+* All third party code will be reviewed, tested and possibly modified before being released.
+* In order for contributions to be accepted, a Contributors License Agreement must be completed.  
 
 These basic rules make it possible for us to properly manage the TinyMCE project and to ensure that the code remains open source and under the LGPL license.
 
@@ -31,11 +29,11 @@ The TinyMCE source code is [hosted on Github](https://github.com/tinymce/tinymce
 
 ### How can you help?
 
-We welcome people with technical writing experience to help make TinyMCE's docs as useful to our community as possible. You don't need to be an expert developer to contribute but a basic understand of software development is helpful.
+We welcome people with technical writing experience to help make TinyMCE's docs as useful to our community as possible. You don't need to be an expert developer to contribute, but a basic understanding of software development is helpful.
 
 What is more important is your ability to articulate complex ideas simply. Our goal is to help developers understand TinyMCE functionality as quickly as possible so that they can get back to building great stuff.
 
-If that sounds like something you'd be into, branch the [docs GitHub repository](https://github.com/tinymce/tinymce-docs) and submit a PR, or reach out to the [TinyMCE docs team](marketing@ephox.com) if you have a specific question.
+If that sounds like something you are into, branch the [docs GitHub repository](https://github.com/tinymce/tinymce-docs) and submit a PR, or reach out to the [TinyMCE docs team](marketing@ephox.com) if you have a specific question.
 
 ### TinyMCE docs tech stack
 
@@ -118,6 +116,8 @@ Use United States English. For example, behavior rather than behaviour, referrin
 ##### Proper names
 
 When referring to the name of a development language we use the proper name or the industry convention. For example, HTML, CSS, JavaScript, jQuery, React, AngularJS (not html, css, Jquery, React-js).
+
+The exception to this rule is when we are talking about the code itself (see the note above about TinyMCE v. tinymce). For example, we would say, "HTML is great" when talking about the HTML language, but we would say, "escape your `html`" when talking about an action with/within a codebase. We realize this can be a little confusing, so do what you think makes sense and we will review it with your PR.
 
 ## Contributor Code of Conduct
 

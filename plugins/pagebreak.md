@@ -38,7 +38,7 @@ These settings affect the execution of the `pagebreak` plugin. They enable you t
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   plugins: "pagebreak",
   menubar: "insert",
   toolbar: "pagebreak"
@@ -60,7 +60,7 @@ When enabled this option makes it easier to split block elements with a page bre
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   plugins: "pagebreak",
   menubar: "insert",
   toolbar: "pagebreak"

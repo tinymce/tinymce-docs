@@ -18,7 +18,7 @@ In this example you'll note that we have also activated the `textcolor` plugin. 
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   plugins: "textcolor colorpicker",
   toolbar: "forecolor backcolor"
 });
@@ -32,7 +32,7 @@ This option enables you to provide your own color picker.
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   plugins: "textcolor colorpicker",
   toolbar: "forecolor backcolor"
   color_picker_callback: function(callback, value) {

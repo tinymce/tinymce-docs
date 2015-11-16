@@ -18,7 +18,7 @@ However, this is **not** intended for use in producing normal web content such a
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   plugins: "legacyoutput"
 });
 ```

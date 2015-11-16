@@ -12,7 +12,7 @@ If this option is enabled the protocol and host part of the URLs returned from t
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   remove_script_host: false
 });
 ```

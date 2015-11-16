@@ -15,7 +15,7 @@ This plugin adds a save button to the TinyMCE toolbar, which will submit the for
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   plugins: "save",
   toolbar: "save"
 });
@@ -39,7 +39,7 @@ With this:
 
 ### Options
 
-These settings affect the execution of the `save` plugin. Callbacks that will execute after saving the content or cancelling saving the content are included in this section. In addition, a setting that will disable the save button when no modifications have been made to the content is available here.
+These settings affect the execution of the `save` plugin. Callbacks that will execute after saving the content or canceling saving the content are included in this section. In addition, a setting that will disable the save button when no modifications have been made to the content is available here.
 
 ### `save_enablewhendirty`
 
@@ -51,7 +51,7 @@ This option allows you to disable the save button until modifications have been 
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   plugins: "save",
   toolbar: "save",
   save_enablewhendirty: true
@@ -68,10 +68,10 @@ This option allows you to specify the function that will be executed when the ca
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   plugins: "save",
   toolbar: "save",
-  save_oncancelcallback: function () { console.log('Save cancelled'); }
+  save_oncancelcallback: function () { console.log('Save canceled'); }
 });
 ```
 
@@ -85,7 +85,7 @@ This option allows you to specify the function that will be executed when the sa
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   plugins: "save",
   toolbar: "save",
   save_onsavecallback: function () { console.log('Saved'); }

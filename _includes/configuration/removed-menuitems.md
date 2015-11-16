@@ -8,7 +8,7 @@ This option allows you to remove items from TinyMCE's drop down menus. This is u
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   removed_menuitems: "undo, redo"
 });
 ```

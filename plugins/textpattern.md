@@ -35,7 +35,7 @@ There are two types of patterns: inline and block patterns. Inline patterns have
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   plugin: 'textpattern',
   textpattern_patterns: [
      {start: '*', end: '*', format: 'italic'},

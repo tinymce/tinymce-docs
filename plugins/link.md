@@ -17,7 +17,7 @@ It also adds a toolbar button and a menu item `Insert/edit link` under the `Inse
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   plugins: "link",
   menubar: "insert",
   toolbar: "link"
@@ -38,7 +38,7 @@ This option allows you to set a default target for links when inserting/editing 
 
 ```js
 tinymce.init({
-    selector: "textarea",  // change this value according to your html
+    selector: "textarea",  // change this value according to your HTML
     plugins: "link",
     menubar: "insert",
     toolbar: "link"
@@ -60,7 +60,7 @@ This option allows you to set whether TinyMCE will prompt the user to prepend a 
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   plugins: "link",
   menubar: "insert",
   toolbar: "link"
@@ -78,7 +78,7 @@ The `link_class_list` plugin adds a predefined `class` dropdown to the `link` di
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   plugins: "link",
   menubar: "insert",
   toolbar: "link",
@@ -98,13 +98,13 @@ This option lets you specify a predefined list of links for the link dialog. Thi
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   plugins: "link",
   menubar: "insert",
   toolbar: "link",
   link_list: [
     {title: 'My page 1', value: 'http://www.tinymce.com'},
-    {title: 'My page 2', value: 'http://www.moxiecode.com'}
+    {title: 'My page 2', value: 'http://www.ephox.com'}
   ]
 });
 ```
@@ -115,16 +115,16 @@ Since TinyMCE 4.0.27 it is now possible to have sub-menus within the link list. 
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   plugins: "link",
   menubar: "insert",
   toolbar: "link",
   link_list: [
     {title: 'TinyMCE', value: 'http://www.tinymce.com'},
-    {title: 'Moxiecode', value: 'http://www.moxiecode.com'},
+    {title: 'Moxiecode', value: 'http://www.ephox.com'},
     {title: 'TinyMCE resources', menu: [
-      {title: 'TinyMCE documentation', value: 'http://www.tinymce.com/wiki.php'},
-      {title: 'TinyMCE forum', value: 'http://www.tinymce.com/forum/index.php'}
+      {title: 'TinyMCE documentation', value: 'http://www.tinymce.com/docs/'},
+      {title: 'TinyMCE forum', value: 'http://www.tinymce.com/forum/'}
     ]}
   ]
 });
@@ -136,7 +136,7 @@ You can also configure a URL with JSON data. The format of that list is the same
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   plugins: "link",
   menubar: "insert",
   toolbar: "link",
@@ -144,18 +144,18 @@ tinymce.init({
 });
 ```
 
-**Example of a custom async function**
+**Example of a custom asynchronous function**
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   plugins: "link",
   menubar: "insert",
   toolbar: "link",
   link_list: function(success) {
     success([
        {title: 'My page 1', value: 'http://www.tinymce.com'},
-       {title: 'My page 2', value: 'http://www.moxiecode.com'}
+       {title: 'My page 2', value: 'http://www.ephox.com'}
     ]);
   }
 });
@@ -171,7 +171,7 @@ The `target_list` lets you specify a predefined list of targets for the `link` d
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   plugins: "link",
   menubar: "insert",
   toolbar: "link",
@@ -190,7 +190,7 @@ To disable the option dialog set `target_list` to `false`.
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   plugins: "link",
   menubar: "insert",
   toolbar: "link",
@@ -208,7 +208,7 @@ This option lets you specify a predefined list of values for the `link` dialog. 
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   plugins: "link",
   menubar: "insert",
   toolbar: "link",
@@ -233,7 +233,7 @@ This options allows you disable the link `title` input field in the `link` dialo
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   plugins: "link",
   menubar: "insert",
   toolbar: "link",

@@ -25,7 +25,7 @@ function myCustomURLConverter(url, node, on_save, name) {
 }
 
 tinyMCE.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   urlconverter_callback : "myCustomURLConverter"
 });
 ```

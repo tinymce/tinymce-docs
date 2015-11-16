@@ -57,7 +57,7 @@ Each format has a set of parameters that you can specify.
 
 ### Example of usage of the formats option
 
-This example overrides some of the built in formats and tells TinyMCE to apply classes instead of inline styles. It also includes a custom format that produced `h1` elements with a title attribute and a `red` css style.
+This example overrides some of the built in formats and tells TinyMCE to apply classes instead of inline styles. It also includes a custom format that produced `h1` elements with a title attribute and a `red` CSS style.
 
 **Type:** `Object`
 
@@ -117,7 +117,7 @@ It is possible to remove formats via the `removeformat` option.
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   removeformat: [
     {selector: 'b,strong,em,i,font,u,strike', remove : 'all', split : true, expand : false, block_expand: true, deep : true},
     {selector: 'span', attributes : ['style', 'class'], remove : 'empty', split : true, expand : false, deep : true},

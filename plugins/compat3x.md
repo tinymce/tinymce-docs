@@ -24,7 +24,7 @@ Example of usage **in** `tinymce.init`:
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   plugins: "compat3x",
   external_plugins: {
     "myoldplugin": "/tinymce/plugins/myoldplugin/editor_plugin.js"
@@ -39,7 +39,7 @@ Example of loading the compat3x **before** `tinymce.init`:
 <script src="/tinymce/plugins/compat3x/plugin.min.js"></script>
 <script>
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   external_plugins: {
     "myoldplugin": "/tinymce/plugins/myoldplugin/editor_plugin.js"
   }

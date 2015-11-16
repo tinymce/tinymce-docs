@@ -12,7 +12,7 @@ This option will keep the editor's current text style when a user presses enter/
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   keep_styles: false
 });
 ```

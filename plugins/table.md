@@ -39,7 +39,7 @@ This option allows you to disable some of the options available to a user when i
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   plugins: "table",
   table_appearance_options: false
 });
@@ -55,7 +55,7 @@ This option enables you to specify which elements should be cloned as empty chil
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   table_clone_elements: "strong em a"
 });
 ```
@@ -76,7 +76,7 @@ However, if you set this option to `false` the dragable matrix will be replaced 
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   plugins: "table",
   menubar: "table",
   toolbar: "table",
@@ -86,7 +86,7 @@ tinymce.init({
 
 ### `table_tab_navigation`
 
-This option enables you to disable the default tab between table cells feature. By default, when a user presses tab the cursor will move between cells within the table. By setting the `table_tab_navigation` value to `false` the cursor will tab between browser elements (such as the url bar or form fields, etc).
+This option enables you to disable the default tab between table cells feature. By default, when a user presses tab the cursor will move between cells within the table. By setting the `table_tab_navigation` value to `false` the cursor will tab between browser elements (such as the URL bar or form fields, etc).
 
 **Type:** `Boolean`
 
@@ -98,7 +98,7 @@ This option enables you to disable the default tab between table cells feature. 
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   plugins: "table",
   menubar: "table",
   toolbar: "table",
@@ -116,7 +116,7 @@ This option enables you to specify default attributes for inserted tables.
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   plugins: "table",
   menubar: "table",
   toolbar: "table",
@@ -136,7 +136,7 @@ This option enables you to specify default styles for inserted tables.
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   plugins: "table",
   menubar: "table",
   toolbar: "table",
@@ -156,7 +156,7 @@ This option enables you to specify a list of classes to present in the table opt
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   plugins: "table",
   menubar: "table",
   toolbar: "table",
@@ -178,7 +178,7 @@ This option enables you to specify a list of classes to present in the table cel
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   plugins: "table",
   menubar: "table",
   toolbar: "table",
@@ -200,7 +200,7 @@ This option enables you to specify a list of classes to present in the table row
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   plugins: "table",
   menubar: "table",
   toolbar: "table",
@@ -226,7 +226,7 @@ This option makes it possible to disable the advanced tab in the table dialog bo
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   plugins: "table",
   menubar: "table",
   toolbar: "table",
@@ -248,7 +248,7 @@ This option makes it possible to disable the advanced tab in the table cell dial
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   plugins: "table",
   menubar: "table",
   toolbar: "table",
@@ -270,7 +270,7 @@ This option makes it possible to disable the advanced tab in the table row dialo
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   plugins: "table",
   menubar: "table",
   toolbar: "table",

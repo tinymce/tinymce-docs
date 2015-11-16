@@ -14,7 +14,7 @@ This options allows you to turn on/off the resizing handles on images, tables or
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   object_resizing : false
 });
 ```
@@ -31,7 +31,7 @@ tinymce.init({
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   object_resizing : "img"
 });
 ```

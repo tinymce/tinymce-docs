@@ -12,7 +12,7 @@ This list plugin normalizes list behavior between browsers. Enable it if you hav
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   plugins: "lists"
 });
 ```

@@ -15,7 +15,7 @@ Include this line of code in the `<head>` of your page:
 
 ### Step 2: Initialize TinyMCE as part of a web form
 
-With the script included, initialize TinyMCE on any element (or elements) in your webpage.
+With the script included, initialize TinyMCE on any element (or elements) in your web page.
 
 Since TinyMCE lets you identify replaceable elements via a CSS3 selector all you need do is pass an object that contains a selector to `tinymce.init()`.
 

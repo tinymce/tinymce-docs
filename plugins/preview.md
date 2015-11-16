@@ -15,7 +15,7 @@ This plugin adds a preview button to the toolbar. Pressing the button opens a di
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   plugins: "preview",
   menubar: "view",
   toolbar: "preview"
@@ -38,7 +38,7 @@ This option allows you to set the height of the preview window that appears when
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   plugins: "preview",
   menubar: "view",
   toolbar: "preview",
@@ -58,7 +58,7 @@ This option allows you to set the width of the preview window that appears when 
 
 ```js
 tinymce.init({
-    selector: "textarea",  // change this value according to your html
+    selector: "textarea",  // change this value according to your HTML
     plugins: "preview",
     menubar: "view",
     toolbar: "preview",

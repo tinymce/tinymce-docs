@@ -1,6 +1,6 @@
 ## images_upload_handler
 
-This option allows you to specify a function that will be used to replace TinyMCE's default javascript upload handler function with custom logic.
+This option allows you to specify a function that will be used to replace TinyMCE's default JavaScript upload handler function with custom logic.
 
 The upload handler function takes three arguments: `blobInfo`, a `success` callback and a `failure` callback. When this option is not set, TinyMCE utilizes an XMLHttpRequest to upload images one at a time to the server, and calls the success callback with the location of the remote image.
 
@@ -12,7 +12,7 @@ Please note that when using this option, no other image uploader options are nec
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   images_upload_handler: function (blobInfo, success, failure) {
     var xhr, formData;
 

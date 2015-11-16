@@ -14,7 +14,7 @@ This can be disabled if you don't need these controls.
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   inline: true,
   hidden_input: false
 });

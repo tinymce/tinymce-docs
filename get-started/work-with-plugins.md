@@ -54,7 +54,7 @@ tinymce.init({
 });
 ```
 
-Add `plugins: "code"` to your `tinymce.html` file, save the file, refresh your browser and you'll see some magic. A "Tools" menu will automatically appear in the menubar and it will have a "Source code" item in the dropdown. Click it and *voila*, you can now edit the html hidden by the WYSIWGY interface.
+Add `plugins: "code"` to your `tinymce.html` file, save the file, refresh your browser and you'll see some magic. A "Tools" menu will automatically appear in the menubar and it will have a "Source code" item in the dropdown. Click it and *voila*, you can now edit the HTML hidden by the WYSIWYG interface.
 
 Let's also add a toolbar control so that our users can more easily activate this functionality.
 
@@ -111,7 +111,7 @@ As before, let's start by adding the `plugins` key and giving it the Advanced Li
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   plugins: "advlist"
 });
 ```
@@ -132,7 +132,7 @@ Let's add the Advanced List options and give them some of the available options 
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   menubar: false,
   toolbar: "bullist, numlist",
   plugins: "advlist",

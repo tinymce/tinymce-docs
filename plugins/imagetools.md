@@ -16,7 +16,7 @@ Note that this feature requires at least Internet Explorer 10 as it uses the `HT
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   toolbar: "image",
   plugins: "image imagetools"
 });
@@ -24,11 +24,11 @@ tinymce.init({
 
 ### Options
 
-These settings affect the execution of the Image Tools plugin. This plugin's cross-origin resource sharing, proxy and toolbar settings can be modified here.
+These settings affect the execution of the Image Tools plugin. This plugin's cross-origin resource sharing (CORS), proxy and toolbar settings can be modified here.
 
 ### `imagetools_cors_hosts`
 
-This option lets you specify an array of domains that allow cors. If cors headers are enabled remote image editing is possible.
+This option lets you specify an array of domains that allow CORS. If CORS headers are enabled remote image editing is possible.
 
 **Type:** `String`
 
@@ -36,7 +36,7 @@ This option lets you specify an array of domains that allow cors. If cors header
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   toolbar: "image",
   plugins: "image imagetools",
   imagetools_cors_hosts: ['mydomain.com', 'otherdomain.com']
@@ -53,7 +53,7 @@ This option lets you specify a local proxy script to use when loading images fro
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   toolbar: "image",
   plugins: "image imagetools",
   imagetools_proxy: 'proxy.php'
@@ -113,7 +113,7 @@ This option lets select which toolbar items you want to display in the `imagetoo
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   toolbar: "image",
   plugins: "image imagetools",
   imagetools_toolbar: "rotateleft rotateright | flipv fliph | editimage imageoptions"

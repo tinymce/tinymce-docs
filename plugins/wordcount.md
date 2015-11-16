@@ -14,18 +14,18 @@ This plugin adds word count functionality to TinyMCE, placing a counter on the r
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   plugins: "wordcount"
 });
 ```
 
 ### Options
 
-These settings affect the execution of the `wordcount` plugin. The regex values that determine how words are cleaned and counted may be set here.
+These settings affect the execution of the `wordcount` plugin. The regular expression values that determine how words are cleaned and counted may be set here.
 
 ### `wordcount_cleanregex`
 
-This option allows you to specify the regex that will be used to *strip punctuation and numbers* from the word count.
+This option allows you to specify the regular expression that will be used to *strip punctuation and numbers* from the word count.
 
 **Type:** `String`
 
@@ -33,7 +33,7 @@ This option allows you to specify the regex that will be used to *strip punctuat
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   plugins: "wordcount",
   wordcount_cleanregex: /[0-9.(),;:!?%#$?\x27\x22_+=\\\/\-]*/g
 });
@@ -41,7 +41,7 @@ tinymce.init({
 
 ### `wordcount_countregex`
 
-This option allows you to specify the regex that will be used to *count the words* for the word count.
+This option allows you to specify the regular expression that will be used to *count the words* for the word count.
 
 **Type:** `String`
 
@@ -49,7 +49,7 @@ This option allows you to specify the regex that will be used to *count the word
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   plugins: "wordcount",
   wordcount_countregex: /[\w\u2019\x27\-\u00C0-\u1FFF]+/g
 });

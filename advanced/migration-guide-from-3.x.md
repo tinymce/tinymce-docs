@@ -54,7 +54,7 @@ editor.on('init', function(args) {
 
 ## User interface
 
-The user interface logic has been changed compleatly in 4.0. Though the more easier methods of adding buttons and windows are the same more complex controls or dialogs needs to be written in the new API style.
+The user interface logic has been changed completely in 4.0. Though the more easier methods of adding buttons and windows are the same more complex controls or dialogs needs to be written in the new API style.
 
 ## Control states
 

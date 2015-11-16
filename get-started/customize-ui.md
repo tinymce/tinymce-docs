@@ -46,7 +46,7 @@ One of the most frequent UI customizations is changing the height and width of t
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   height : 300
 });
 ```
@@ -59,7 +59,7 @@ See the [height option]({{ site.baseurl }}/configure/editor-appearance/#width) f
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   width : 300
 });
 ```
@@ -73,7 +73,7 @@ By now you're fast becoming a TinyMCE pro, so we're going to include several opt
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   max_height: 500,
   max_width: 500,
   min_height: 100,
@@ -97,7 +97,7 @@ The `css` file used in this setting should be the same `css` file that controls 
 // File: http://domain.mine/mysite/index.html
 
 tinyMCE.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   content_css : "/mycontent.css"  // resolved to http://domain.mine/mycontent.css
 });
 ```
@@ -106,7 +106,7 @@ Refer to the [content_css]({{ site.baseurl }}configure/content-appearance/#conte
 
 ### Hiding the status bar
 
-In this step we're going to remove a UI element entirely. Say hello and goodby to the status bar.
+In this step we're going to remove a UI element entirely. Say hello and goodbye to the status bar.
 
 The status bar is a gray bar stuck to the bottom of the editor's editable area containing the path information and the resize handle. Sometimes we don't want users to be able to change the size of the editable area (by dragging the resize handle*) and so removing the status bar achieves this objective.
 
@@ -122,7 +122,7 @@ tinymce.init({
 
 If you're struggling with menus, menu items and toolbars from the previous sections, we'll quickly revisit this for you with another example.
 
-There is one popular toolbar button not loaded with the default theme "modern" and that's the `code` button. Clicking it presents the user with a dialog box containing the raw html hidden by TinyMCE's interface.
+There is one popular toolbar button not loaded with the default theme "modern" and that's the `code` button. Clicking it presents the user with a dialog box containing the raw HTML hidden by TinyMCE's interface.
 
 It's also a good example for the Get Started guide because it reminds us that some functionality requires the inclusion of a plugin.
 
@@ -134,7 +134,7 @@ tinymce.init({
 });
 ```
 
-If you tried this snippet you'll have noticed that although you added the `code` button to the toolbar and created a new menu called `Tools` with the menu item `Source code`, everything else on the toolbar disappeared. (See [this page](./first-steps/) if you need a basic html code block.)
+If you tried this snippet you'll have noticed that although you added the `code` button to the toolbar and created a new menu called `Tools` with the menu item `Source code`, everything else on the toolbar disappeared. (See [this page](./first-steps/) if you need a basic HTML code block.)
 
 If you wanted the default toolbar *plus* the `code` functionality you'd need this:
 

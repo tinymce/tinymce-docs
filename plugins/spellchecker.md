@@ -15,7 +15,7 @@ This plugin enables TinyMCE's spellcheck functionality. It also adds a toolbar b
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   plugins: "spellchecker",
   menubar: "tools",
   toolbar: "spellchecker"
@@ -34,7 +34,7 @@ This option lets you override the default server side request/communication logi
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   plugins: "spellchecker",
   menubar: "tools",
   toolbar: "spellchecker",
@@ -55,7 +55,7 @@ tinymce.init({
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   plugins: "spellchecker",
   menubar: "tools",
   toolbar: "spellchecker",
@@ -90,7 +90,7 @@ This configuration option lets you set the default language code for the spellch
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   plugins: "spellchecker",
   menubar: "tools",
   toolbar: "spellchecker",
@@ -121,7 +121,7 @@ tinymce.init({
 
 ### `spellchecker_rpc_url`
 
-This options enables you to specify a custom URL to be used for the spellchecker. This can be the `spellchecker` url provided by the TinyMCE `spellchecker` packages or a url to a page that you have in your system. The URL is **relative** to the `spellchecker` plugin.
+This options enables you to specify a custom URL to be used for the spellchecker. This can be the `spellchecker` URL provided by the TinyMCE `spellchecker` packages or a URL to a page that you have in your system. The URL is **relative** to the `spellchecker` plugin.
 
 **Type:** `String`
 
@@ -129,7 +129,7 @@ This options enables you to specify a custom URL to be used for the spellchecker
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   plugins: "spellchecker",
   menubar: "tools",
   toolbar: "spellchecker",
@@ -178,7 +178,7 @@ This option enables you to override the matching of characters that are parts of
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   plugins: "spellchecker",
   menubar: "tools",
   toolbar: "spellchecker",

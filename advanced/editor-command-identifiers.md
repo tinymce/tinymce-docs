@@ -42,14 +42,14 @@ Here is a list of the currently exposed editor commands. All these commands are 
 | Outdent | Core  | Outdents the current selection. |
 | InsertHorizontalRule | Core  | Inserts a horizontal ruler. |
 | mceToggleVisualAid | Core  | Toggles the visual aids for tables without borders etc. |
-| mceInsertLink | Core  | Inserts a link at the current selection. The value is the url to add to the link(s). |
+| mceInsertLink | Core  | Inserts a link at the current selection. The value is the URL to add to the link(s). |
 | selectAll | Core  | Selects all contents in the editor. |
 | delete | Core  | Deletes the current selection from the editor. |
 | mceNewDocument | Core  | Removes all contents of the editor. |
 | Undo | Core  | Undoes the last change to the editor. |
 | Redo | Core  | Redoes the last change to the editor. |
 | mceAutoResize | [autoresize]({{ site.baseurl }}/plugins/autoresize/) | Auto resizes the editor to the contents. |
-| mceShowCharmap | [charmap]({{ site.baseurl }}/plugins/charmap/) | Opens the charmap dialog. |
+| mceShowCharmap | [charmap]({{ site.baseurl }}/plugins/charmap/) | Opens the character map dialog. |
 | mceCodeEditor | [code]({{ site.baseurl }}/plugins/code/) | Opens the code editor dialog. |
 | mceDirectionLTR | [directionality]({{ site.baseurl }}/plugins/directionality/) | Changes the directionality to LTR. |
 | mceDirectionRTL | [directionality]({{ site.baseurl }}/plugins/directionality/) | Changes the directionality to RTL. |
@@ -70,7 +70,7 @@ Here is a list of the currently exposed editor commands. All these commands are 
 | mceVisualBlocks | [visualblocks]({{ site.baseurl }}/plugins/visualblocks/) | Toggles visual blocks on/off. |
 | mceVisualChars | [visualchars]({{ site.baseurl }}/plugins/visualchars/) | Toggles visual characters on/off. |
 | mceMedia | [media]({{ site.baseurl }}/plugins/media/) | Opens the insert/edit media dialog. |
-| mceAnchor | [anchor]({{ site.baseurl }}/plugins/anchor/) | Opens the insert/edit anchor edialog. |
+| mceAnchor | [anchor]({{ site.baseurl }}/plugins/anchor/) | Opens the insert/edit anchor dialog. |
 | mceTableSplitCells | [table]({{ site.baseurl }}/plugins/table/) | Splits the current merge table cell. |
 | mceTableMergeCells | [table]({{ site.baseurl }}/plugins/table/) | Merges the selected cells or opens a dialog if there is no cell selection. |
 | mceTableInsertRowBefore| [table]({{ site.baseurl }}/plugins/table) | Inserts a row before the current row. |

@@ -32,7 +32,7 @@ Another example, this will add two options to the Formats dropdown, one for alig
 
 ```js
 tinymce.init({})
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   style_formats: [
     {
       title: 'Image Left',
@@ -68,7 +68,7 @@ If you want to merge your styles to the default `styles_format`, you can use the
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   style_formats_merge: true,
   style_formats: [
       // Your format as described on this page
@@ -84,7 +84,7 @@ The default is very similar to the following:
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   style_formats: [
     {title: "Headers", items: [
       {title: "Header 1", format: "h1"},

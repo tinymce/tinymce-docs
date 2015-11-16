@@ -7,9 +7,9 @@ keywords: link url urls
 ---
 
 
-The Autolink plugin automatically creates hyperlinks when a user inputs a valid, complete url. For example `www.example.com` is converted to `http://www.example.com`.
+The Autolink plugin automatically creates hyperlinks when a user inputs a valid, complete URL. For example `www.example.com` is converted to `http://www.example.com`.
 
-Note that this option won't convert incomplete urls, for example `example.com` would remain as unlinked text. i.e. urls must include `www` to be automatically converted.
+Note that this option won't convert incomplete URLs, for example `example.com` would remain as unlinked text. i.e. URLs must include `www` to be automatically converted.
 
 **Type:** `String`
 
@@ -17,7 +17,7 @@ Note that this option won't convert incomplete urls, for example `example.com` w
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   plugins: "autolink"
 });
 ```

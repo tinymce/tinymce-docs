@@ -12,7 +12,7 @@ If this option is set to true, all URLs returned from the MCFileManager will be 
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   relative_urls: false
 });
 ```

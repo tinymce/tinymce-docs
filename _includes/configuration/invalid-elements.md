@@ -8,7 +8,7 @@ This options permits the editor to remove specific elements with TinyMCE execute
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   invalid_elements : "strong,em"
 });
 ```

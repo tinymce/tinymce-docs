@@ -10,7 +10,7 @@ keywords: enterprise tinymcespellchecker spell check checker pro pricing
 
 Spell checking requires the deployment of several server-side components onto a J2EE compatible application server (e.g. Jetty, or Apache Tomcat).  
 
-The following server-side components are required to enable spellchecking:
+The following server-side components are required to enable spell checking:
 
 |Component                      | File							| Description |
 |:-----------------------------	|:-------						|:----------|
@@ -87,7 +87,7 @@ ephox {
 
 #### Entering Origins
 
-The origins are matched by protocol, hostname and port. So you may need a combination of all three, depending on which browser /s  you use. If you are serving the editor and services from http://localhost & port 80, then the list of origins should have an entry for "http://localhost" and any other servers with ports, like so:
+The origins are matched by protocol, host name and port. So you may need a combination of all three, depending on which browser /s  you use. If you are serving the editor and services from http://localhost & port 80, then the list of origins should have an entry for "http://localhost" and any other servers with ports, like so:
 
 ````
 ephox{
@@ -98,7 +98,7 @@ ephox{
 }
 ````
 
-This only applies to port 80 because this being the default http port, browsers omit it when talking to the server. For every other port and hostname, the recommended setting is to make one entry with the port and one without the port. This is because different browsers behave differently with regards to the Origin header. So the config file should resemble:
+This only applies to port 80 because this being the default HTTP port, browsers omit it when talking to the server. For every other port and host name, the recommended setting is to make one entry with the port and one without the port. This is because different browsers behave differently with regards to the Origin header. So the config file should resemble:
 
 ````
 ephox{

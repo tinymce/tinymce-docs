@@ -10,7 +10,7 @@ This will add the same id to all editors that gets created by the `init` call.
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   body_id: "my_id"
 });
 ```
@@ -19,7 +19,7 @@ This will set specific ids on the bodies of specific editors.
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   body_id: "elm1=my_id, elm2=my_id2"
 });
 ```

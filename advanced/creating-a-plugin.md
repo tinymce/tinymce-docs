@@ -11,9 +11,9 @@ Creating plugins in TinyMCE is pretty simple this tutorial tries to outline some
 
 ## File Structure
 
-To create a plugin you need to create a directory in the tinymce plugins directory. TinyMCE will load the plugin.js file if you use the tinymce.js file in your page. If you use the tinymce.min.js file it will load the plugin.min.js file. It's recommended to use the tinymce.js file while developing then have a build script minifying the plugin.js into plugin.min.js for production usage.
+To create a plugin you need to create a directory in the TinyMCE plugins directory. TinyMCE will load the plugin.js file if you use the tinymce.js file in your page. If you use the tinymce.min.js file it will load the plugin.min.js file. It's recommended to use the tinymce.js file while developing then have a build script minifying the plugin.js into plugin.min.js for production usage.
 
-The build scripts that comes with the dev package of TinyMCE will automatically build all plugins including your custom ones.
+The build scripts that comes with the development package of TinyMCE will automatically build all plugins including your custom ones.
 
 ## Example of the plugin file structure
 
@@ -33,7 +33,7 @@ tinymce.init({
 
 You can also have the plugin in any location you want by loading the plugin.js/plugin.min.js files directly after the tinymce.js/tinymce.min.js.
 
-## Example of loading the plugin from another url
+## Example of loading the plugin from another URL
 
 ```html
 <script src="/tinymce/js/tinymce.min.js"></script>
@@ -45,7 +45,7 @@ tinymce.init({..});
 
 ## Example plugin
 
-Here is an example plugin showing how you add a simple toolbar button and menu item. The button opens a dialog that lets you type in a title that gets inserted into the editor. The menu item will open the tinymce site in a dialog.
+Here is an example plugin showing how you add a simple toolbar button and menu item. The button opens a dialog that lets you type in a title that gets inserted into the editor. The menu item will open the TinyMCE site in a dialog.
 
 ```js
 tinymce.PluginManager.add('example', function(editor, url) {

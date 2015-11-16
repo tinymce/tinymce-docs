@@ -47,7 +47,7 @@ As we mentioned above, we write using [GitHub Flavored Markdown](https://help.gi
 
 We highlight code language syntax and associated elements within an open and closing backtick. For example, this `object` is actually enclosed with backticks like this: \`object\`.
 
-We cannot cover every use case here and contributors need to use their best judgement. As as rule, words relating specifically to executable parts of software languages, keys and their values when related to objects and methods (particularly the case with TinyMCE) should be backticked.
+We cannot cover every use case here and contributors need to use their best judgment. As as rule, words relating specifically to executable parts of software languages, keys and their values when related to objects and methods (particularly the case with TinyMCE) should be backticked.
 
 ##### Code snippets
 
@@ -57,7 +57,7 @@ Include any key values pairs and method options that are required to enable a us
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   plugins: "codesample",
   toolbar: "codesample"
 });
@@ -115,7 +115,7 @@ Use United States English. For example, behavior rather than behaviour, referrin
 
 ##### Proper names
 
-When referring to the name of a development language we use the proper name or the industry convention. For example, HTML, CSS, JavaScript, jQuery, React, AngularJS (not html, css, Jquery, React-js).
+When referring to the name of a development language we use the proper name or the industry convention. For example, HTML, CSS, JavaScript, jQuery, React, AngularJS (not html, css, Jquery or React-js.)
 
 The exception to this rule is when we are talking about the code itself (see the note above about TinyMCE v. tinymce). For example, we would say, "HTML is great" when talking about the HTML language, but we would say, "escape your `html`" when talking about an action with/within a codebase. We realize this can be a little confusing, so do what you think makes sense and we will review it with your PR.
 

@@ -17,7 +17,7 @@ When a user clicks on the anchor button or menu item they will be prompted via a
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   plugins: "anchor",
   toolbar: "anchor",
   menubar: "insert"

@@ -15,7 +15,7 @@ TinyMCE has two main integration modes - a "classic" form-based mode and an inli
 
 ```js
 tinymce.init({
-  selector: "#myeditablediv",  // change this value according to your html
+  selector: "#myeditablediv",  // change this value according to your HTML
   inline: true
 });
 ```

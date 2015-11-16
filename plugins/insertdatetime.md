@@ -15,7 +15,7 @@ The `insertdatetime` plugin provides a toolbar control and menu item `Insert dat
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   plugins: "insertdatetime",
   menubar: "insert",
   toolbar: "insertdatetime"
@@ -34,7 +34,7 @@ This option allows you to override the default formatting rule for date formats 
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   plugins: "insertdatetime",
   menubar: "insert",
   toolbar: "insertdatetime"
@@ -50,7 +50,7 @@ Allows you to specify a list of date/time formats to be used in the date menu or
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   plugins: "insertdatetime",
   menubar: "insert",
   toolbar: "insertdatetime"
@@ -66,7 +66,7 @@ This option allows you to override the default formatting rule for times inserte
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   plugins: "insertdatetime",
   menubar: "insert",
   toolbar: "insertdatetime"
@@ -86,7 +86,7 @@ When this option is enabled HTML5 time elements gets generated when you insert d
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   plugins: "insertdatetime",
   menubar: "insert",
   toolbar: "insertdatetime"
@@ -105,11 +105,11 @@ tinymce.init({
 | %y   | year as a decimal number without a century (range 00 to 99) |
 | %Y   | year as a decimal number including the century |
 | %m   | month as a decimal number (range 01 to 12) |
-| %B   | full localised month name (e.g. "January") |
-| %b   | abbreviated localised month name (e.g. "Jan") |
+| %B   | full localized month name (e.g. "January") |
+| %b   | abbreviated localized month name (e.g. "Jan") |
 | %d   | day of the month as a decimal number (range 01 to 31) |
-| %A   | full localised weekday name (e.g. "Monday") |
-| %a   | abbreviated localised weekday name (e.g. "Mon") |
+| %A   | full localized weekday name (e.g. "Monday") |
+| %a   | abbreviated localized weekday name (e.g. "Mon") |
 | %H   | hour as a decimal number using a 24-hour clock (range 00 to 23) |
 | %I   | hour as a decimal number using a 12-hour clock (range 01 to 12) |
 | %M   | minute as a decimal number (range 00-59) |

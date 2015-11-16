@@ -10,7 +10,7 @@ Note that this sets the height of the editable area only. It does not include th
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   height : 300
 });
 ```

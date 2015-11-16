@@ -13,7 +13,7 @@ The first option (and easiest to implement) is to utilize the browser's native s
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   browser_spellcheck: true,
   contextmenu: false
 });
@@ -38,7 +38,7 @@ This plugin enables you to use Enchant or PSpell on the backend of your server t
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   plugins: "spellchecker",
   toolbar: "spellchecker",
   spellchecker_rpc_url: "spellchecker.php"

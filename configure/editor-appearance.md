@@ -41,6 +41,8 @@ description: Configure the editor's appearance, including menu and toolbar contr
 
 {% include configuration/statusbar.md %}
 
+{% include configuration/table_toolbar.md %}
+
 {% include configuration/theme-url.md %}
 
 {% include configuration/theme.md %}

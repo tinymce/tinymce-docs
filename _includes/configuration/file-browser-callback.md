@@ -1,6 +1,6 @@
 ## file_browser_callback
 
-This option enables you to add your own file browser/image browser to TinyMCE.
+This option enables you to add your own file or image browser browser to TinyMCE.
 
 If this option is set with a value a browse button will appear in different dialogs such as "insert/edit link" or "insert/edit image". If this option hasn't got a value set (or equals to false or null) the dialogs in question won't show any browse button.
 

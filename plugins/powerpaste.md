@@ -10,4 +10,4 @@ The TinyMCE PowerPaste plugin automatically cleans up content from Microsoft Wor
 
 PowerPaste is a premium upgrade from the makers of TinyMCE that is included in paid subscription plans of TinyMCE including TinyMCE Enterprise.
 
-Visit the PowerPaste page for [full documentation](/enterprise/paste-from-word/) of how to install and configure PowerPaste.
+Visit the PowerPaste page for [full documentation]({{ site.baseurl }}/enterprise/paste-from-word/) of how to install and configure PowerPaste.

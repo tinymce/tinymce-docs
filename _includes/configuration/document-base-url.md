@@ -11,6 +11,6 @@ This option also interacts with the [relative_urls](#relative_urls), [remove_scr
 ```js
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
-  document_base_url: "http://www.site.com/path1/"
+  document_base_url: "http://www.example.com/path1/"
 });
 ```

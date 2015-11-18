@@ -33,7 +33,7 @@ We welcome people with technical writing experience to help make TinyMCE's docs 
 
 What is more important is your ability to articulate complex ideas simply. Our goal is to help developers understand TinyMCE functionality as quickly as possible so that they can get back to building great stuff.
 
-If that sounds like something you are into, branch the [docs GitHub repository](https://github.com/tinymce/tinymce-docs) and submit a PR, or reach out to the [TinyMCE docs team](marketing@ephox.com) if you have a specific question.
+If that sounds like something you are into, branch the [docs GitHub repository](https://github.com/tinymce/tinymce-docs) and submit a PR, or reach out to the [TinyMCE docs team](mailto:marketing@ephox.com) if you have a specific question.
 
 ### TinyMCE docs tech stack
 

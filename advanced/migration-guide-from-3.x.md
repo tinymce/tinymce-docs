@@ -26,7 +26,7 @@ These plugins where removed in 4.0: [advhr](http://archive.tinymce.com/wiki.php/
 
 ## New plugins
 
-These are the new plugins in 4.0: [anchor], [charmap], [compat3x], [hr], [image], [link], [emoticons], [code] and [textcolor].
+These are the new plugins in 4.0: [anchor]({{ site.baseurl }}/plugins/anchor), [charmap]({{ site.baseurl }}/plugins/charmap), [compat3x]({{ site.baseurl }}/plugins/compat3x), [hr]({{ site.baseurl }}/plugins/hr), [image]({{ site.baseurl }}/plugins/image), [link]({{ site.baseurl }}/plugins/link), [emoticons]({{ site.baseurl }}/plugins/emoticons), [code]({{ site.baseurl }}/plugins/code) and [textcolor]({{ site.baseurl }}/plugins/textcolor).
 
 ## Removed themes
 
@@ -118,4 +118,4 @@ TinyMCE produces HTML5 loose output as of 4.0. This means it can handle all new 
 
 ## Using the compat3x plugin
 
-As a last resort one can use the [compat3x plugin]({{ site.baseurl }}/configure/content-filtering/#schema) it mimic parts of the 3.x API contains a few files removed from 4.x. We only recommend this as a last resort and it won't work for all plugins. But most plugins should work right out of the box we tested it with some of our own old 3.x plugins.
+As a last resort one can use the [compat3x plugin]({{ site.baseurl }}/plugins/compat3x) it mimic parts of the 3.x API contains a few files removed from 4.x. We only recommend this as a last resort and it won't work for all plugins. But most plugins should work right out of the box we tested it with some of our own old 3.x plugins.

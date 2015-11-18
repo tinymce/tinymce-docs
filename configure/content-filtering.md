@@ -9,8 +9,6 @@ description: These settings change the way the editor handles the input and outp
 
 {% include configuration/allow-html-in-named-anchor.md %}
 
-{% include configuration/block-formats.md %}
-
 {% include configuration/convert-fonts-to-spans.md %}
 
 {% include configuration/custom-elements.md %}
@@ -29,10 +27,6 @@ description: These settings change the way the editor handles the input and outp
 
 {% include configuration/fix-list-elements.md %}
 
-{% include configuration/font-formats.md %}
-
-{% include configuration/fontsize-formats.md %}
-
 {% include configuration/force-hex-style-colors.md %}
 
 {% include configuration/force-p-newlines.md %}
@@ -40,10 +34,6 @@ description: These settings change the way the editor handles the input and outp
 {% include configuration/forced-root-block.md %}
 
 {% include configuration/forced-root-block-attrs.md %}
-
-{% include configuration/formats.md %}
-
-{% include configuration/indentation.md %}
 
 {% include configuration/invalid-elements.md %}
 
@@ -56,10 +46,6 @@ description: These settings change the way the editor handles the input and outp
 {% include configuration/remove-trailing-brs.md %}
 
 {% include configuration/schema.md %}
-
-{% include configuration/style-formats-merge.md %}
-
-{% include configuration/style-formats.md %}
 
 {% include configuration/valid-children.md %}
 

@@ -10,7 +10,7 @@ This plugin contains a few compatibility files for the old 3.x branch. This enab
 
 **Installation Instructions**
 
-1. Download the TinyMCE [development package](http://beta.tinymce.com/download).
+1. Download the TinyMCE [development package](http://beta.tinymce.com/download/).
 2. Copy the `compat3x` plugin to your site.
 3. Copy `utils` and `tiny_mce_popup.js` to the root directory, if `tinymce` where the `tinymce.min.js` file is located.
 4. Add the `compat3x` plugin as your first plugin in the plugins `init` option or load it after the TinyMCE core.

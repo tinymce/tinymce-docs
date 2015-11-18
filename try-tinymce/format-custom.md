@@ -7,4 +7,6 @@ description: This example shows you how to override the built in style formats a
 keywords: example demo custom format formats
 ---
 
+This example shows you how to override the built in formats and add a few custom ones to the Formats menu.
+
 {% include codepen.html id="QjzgRW" %}

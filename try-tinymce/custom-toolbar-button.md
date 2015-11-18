@@ -7,4 +7,6 @@ description: This example shows you how to add a custom button to the toolbar.
 keywords: example demo custom toolbar button
 ---
 
-{% include codepen.html id="NGegeZ" %}
+This example shows you how to add a custom button to the toolbar.
+
+{% include codepen.html id="wKReOb" %}

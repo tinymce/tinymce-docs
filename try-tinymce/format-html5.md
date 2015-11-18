@@ -7,4 +7,6 @@ description: This example shows you how to edit HTML5 contents such as sections 
 keywords: example custom format formats html5
 ---
 
+This example shows you how to edit HTML5 content such as sections and articles.
+
 {% include codepen.html id="dYwREe" %}

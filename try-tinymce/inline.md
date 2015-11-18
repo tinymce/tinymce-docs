@@ -7,4 +7,6 @@ description: This example shows you the inline editing capabilities of TinyMCE. 
 keywords: example demo custom inline
 ---
 
+This example shows you the inline editing capabilities of TinyMCE. Click on the "editable header" or "editable div element" below.
+
 {% include codepen.html id="YydQoj" %}

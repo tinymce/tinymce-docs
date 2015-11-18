@@ -7,4 +7,6 @@ description: This example shows you how to add a simple listbox to the toolbar o
 keywords: example demo custom toolbar listbox
 ---
 
+This example shows you how to add a simple [listbox]({{ site.baseurl }}/docs/api/class/tinymce.ui.listbox/) to the toolbar.
+
 {% include codepen.html id="JYwJVr" %}

@@ -12,7 +12,7 @@ Once you've added the TinyMCE script to your page there are three configuration 
 
 1. [Selector configuration](#selectorconfiguration)
 2. [Plugin configuration](#pluginconfiguration)
-3. [Toolbar & menu configuration](#toolbarconfiguration)
+3. [Toolbar & menu configuration](#toolbarmenuconfiguration)
 
 ## A note about code snippet examples
 

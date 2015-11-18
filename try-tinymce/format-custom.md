@@ -1,9 +1,10 @@
 ---
 layout: default
-title: Custom Formats
+title: Custom Formats Example
+title_nav: Custom Formats
 description_short: See how easy it is to add custom styles to the Formats menu.
 description: This example shows you how to override the built in style formats and add a few custom ones to the Formats menu.
-keywords: example custom format formats
+keywords: example demo custom format formats
 ---
 
 {% include codepen.html id="QjzgRW" %}

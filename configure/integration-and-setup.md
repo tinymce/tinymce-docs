@@ -7,8 +7,6 @@ description: Essential editor configuration, including `selector` and `plugins` 
 
 {% include configuration/auto-focus.md %}
 
-{% include configuration/automatic-uploads.md %}
-
 {% include configuration/cache-suffix.md %}
 
 {% include configuration/content-security-policy.md %}

@@ -152,16 +152,16 @@ Customizing TinyMCE with the default plugins is that easy. And there are 40 of t
 
 | Position | Plugin Name   | Plugin Value |
 |----------|---------------|--------------|
-| **1**    | Image         | [image](/plugins/image/) |
-| **2**    | Image Tools   | [imagetools](/plugins/image-tools/) |
-| **3**    | Advanced List | [advlist](/plugins/advanced-list/) |
-| **4**    | Code          | [code](/plugins/code/) |
-| **5**    | Media         | [media](/plugins/media/) |
-| **6**    | Link          | [link](/plugins/link) |
-| **7**    | Color Picker  | [colorpicker](/plugins/color-picker/) |
-| **8**    | Paste         | [paste](/plugins/paste/) |
-| **9**    | Table         | [table](/plugins/table/) |
-| **10**   | Text Color    | [textcolor](/plugins/text-color) |
+| **1**    | Image         | [image]({{ site.baseurl }}/plugins/image/) |
+| **2**    | Image Tools   | [imagetools]({{ site.baseurl }}/plugins/imagetools/) |
+| **3**    | Advanced List | [advlist]({{ site.baseurl }}/plugins/advlist/) |
+| **4**    | Code          | [code]({{ site.baseurl }}/plugins/code/) |
+| **5**    | Media         | [media]({{ site.baseurl }}/plugins/media/) |
+| **6**    | Link          | [link]({{ site.baseurl }}/plugins/link) |
+| **7**    | Color Picker  | [colorpicker]({{ site.baseurl }}/plugins/colorpicker/) |
+| **8**    | Paste         | [paste]({{ site.baseurl }}/plugins/paste/) |
+| **9**    | Table         | [table]({{ site.baseurl }}/plugins/table/) |
+| **10**   | Text Color    | [textcolor]({{ site.baseurl }}/plugins/textcolor) |
 
 {% assign_page next_page = "/get-started/customize-ui/index.html" %}
 {% include next-step.html next=next_page %}

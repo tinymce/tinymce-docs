@@ -19,4 +19,4 @@ tinymce.init({
 });
 ```
 
-You can fiddle with this example at the [fiddle.tinymce.com](fiddle.tinymce.com) site.
+You can fiddle with this example at the [fiddle.tinymce.com](http://fiddle.tinymce.com) site.

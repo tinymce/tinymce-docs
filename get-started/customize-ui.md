@@ -51,7 +51,7 @@ tinymce.init({
 });
 ```
 
-See the [height option]({{ site.baseurl }}/configure/editor-appearance/#width) for customization details.
+See the [height option]({{ site.baseurl }}/configure/editor-appearance/#height) for customization details.
 
 ##### Set the editable area width
 
@@ -87,7 +87,7 @@ But that's not the end of your options when it comes to customizing TinyMCE's he
 
 ### Customizing the editable area with content_css
 
-It is usually desirable that TinyMCE's editable area has the same styling as the surrounding content. This can be achieved with the [`content_css`]({{ site.baseurl }}configure/content-appearance/#content_css) customization option.
+It is usually desirable that TinyMCE's editable area has the same styling as the surrounding content. This can be achieved with the [`content_css`]({{ site.baseurl }}/configure/content-appearance/#content_css) customization option.
 
 The `css` file used in this setting should be the same `css` file that controls the look/style of all your pages! So, let's say you include a file `myLayout.css` in all your pages to control your site's global appearance, then this file must be set as your `content_css` value. Doing this will ensure the content in the editable area will also have your site's style.
 
@@ -102,7 +102,7 @@ tinyMCE.init({
 });
 ```
 
-Refer to the [content_css]({{ site.baseurl }}configure/content-appearance/#content_css) customization page if you want to learn more about the use of absolute and relative paths and multiple stylesheets.
+Refer to the [content_css]({{ site.baseurl }}/configure/content-appearance/#content_css) customization page if you want to learn more about the use of absolute and relative paths and multiple stylesheets.
 
 ### Hiding the status bar
 
@@ -134,7 +134,7 @@ tinymce.init({
 });
 ```
 
-If you tried this snippet you'll have noticed that although you added the `code` button to the toolbar and created a new menu called `Tools` with the menu item `Source code`, everything else on the toolbar disappeared. (See [this page](./first-steps/) if you need a basic HTML code block.)
+If you tried this snippet you'll have noticed that although you added the `code` button to the toolbar and created a new menu called `Tools` with the menu item `Source code`, everything else on the toolbar disappeared. (See [this page](../first-steps/) if you need a basic HTML code block.)
 
 If you wanted the default toolbar *plus* the `code` functionality you'd need this:
 

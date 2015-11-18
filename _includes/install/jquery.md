@@ -1,6 +1,8 @@
 ### Step 1: Download the jQuery package
 
-We have a jQuery plugin [available here](http://tinymce.com/downloads) if you'd rather install TinyMCE using this method.
+We have a jQuery plugin [available here](http://archive.tinymce.com/download/custom_package.php) if you'd rather install TinyMCE using this method.
+
+> Note: the above link will take you to the custom package download page. When building your jQuery package, select "TinyMCE core (jQuery) under the "Core Elements" section.
 
 As with the [SDK](#sdkinstall) option, unzip the package and move the `"path/to/tinymce/"` directory into a web accessible location on your web server (for example, `localhost`).
 
@@ -47,4 +49,4 @@ In this example, let's replace `<textarea id="mytextarea">` with a TinyMCE edito
 
 When the `form` is submitted the TinyMCE editor mimics the behavior of a normal HTML `<textarea>` during a form `post`. No additional configuration is required.
 
-> If you have decided the use the jQuery version, move on to the next step [working with plugins](../work-with-plugins/), where you'll start customizing TinyMCE. If you'd like to learn about other install options please keep reading.
+> If you have decided the use the jQuery version, move on to the next step [Work with Plugins](../work-with-plugins/), where you'll start customizing TinyMCE. If you'd like to learn about other install options please keep reading.

@@ -2,7 +2,7 @@
 layout: default
 title: Create Custom Dialogs
 title_nav: Create Custom Dialogs
-description_short: Learn how to make custom dialogs with WindowManager.
+description_short: Learn how to make custom dialogs.
 description: Learn how to make custom dialogs with WindowManager.
 keywords: custom dialog dialogs cdn windowmanager
 ---

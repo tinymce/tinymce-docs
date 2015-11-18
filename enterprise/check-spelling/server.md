@@ -87,7 +87,7 @@ ephox {
 
 #### Entering Origins
 
-The origins are matched by protocol, host name and port. So you may need a combination of all three, depending on which browser /s  you use. If you are serving the editor and services from http://localhost & port 80, then the list of origins should have an entry for "http://localhost" and any other servers with ports, like so:
+The origins are matched by protocol, host name and port. So you may need a combination of all three, depending on which browser /s  you use. If you are serving the editor and services from `http://localhost` & port 80, then the list of origins should have an entry for `http://localhost` and any other servers with ports, like so:
 
 ````
 ephox{

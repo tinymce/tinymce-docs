@@ -32,7 +32,6 @@
   - url: "integration-and-setup"
     pages:
     - url: "#auto_focus"
-    - url: "#automatic_uploads"
     - url: "#cache_suffix"
     - url: "#content_security_policy"
     - url: "#external_plugins"
@@ -116,6 +115,7 @@
     - url: "#gecko_spellcheck"
   - url: "file-image-upload"
     pages:
+    - url: "#automatic_uploads"
     - url: "#file_browser_callback"
     - url: "#file_browser_callback_types"
     - url: "#file_picker_callback"
@@ -214,6 +214,7 @@
   - url: "contributing-to-open-source"
   - url: "creating-a-skin"
   - url: "creating-a-plugin"
+  - url: "creating-custom-dialogs"
   - url: "accessibility"
   - url: "security"
   - url: "editor-command-identifiers"

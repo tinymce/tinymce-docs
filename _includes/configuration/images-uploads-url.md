@@ -13,4 +13,4 @@ tinymce.init({
 });
 ```
 
-The `postAcceptor.php` file should return an URL for the image that got uploaded there is a [reference implementation]({{ site.baseurl }}/advanced-development-topics/php-upload-handler/) that you can look at.
+The `postAcceptor.php` file should return an URL for the image that got uploaded there is a [reference implementation]({{ site.baseurl }}/advanced/php-upload-handler/) that you can look at.

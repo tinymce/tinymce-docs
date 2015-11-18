@@ -5,6 +5,8 @@ description_short:
 description: These settings affect TinyMCE's image and file upload capabilities.
 ---
 
+{% include configuration/automatic-uploads.md %}
+
 {% include configuration/file-browser-callback.md %}
 
 {% include configuration/file-browser-callback-types.md %}

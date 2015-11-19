@@ -14,7 +14,7 @@
   - url: "system-requirements"
   - url: "get-support"
 
-- url: "try-tinymce"
+- url: "example-tutorial"
   pages:
   - url: "basic-example"
   - url: "full-featured"
@@ -26,6 +26,14 @@
   - url: "valid-elements"
   - url: "custom-toolbar-button"
   - url: "custom-toolbar-listbox"
+  - url: "creating-a-skin"
+  - url: "creating-a-plugin"
+  - url: "creating-custom-dialogs"
+  - url: "creating-custom-notifications"
+  - url: "handle-async-image-uploads"
+  - url: "php-upload-handler"
+  - url: "using-the-gzip-compressors"
+  - url: "migration-guide-from-3.x"
 
 - url: "configure"
   pages:
@@ -213,15 +221,9 @@
 - url: "advanced"
   pages:
   - url: "contributing-to-open-source"
-  - url: "creating-a-skin"
-  - url: "creating-a-plugin"
-  - url: "creating-custom-dialogs"
-  - url: "creating-custom-notifications"
   - url: "accessibility"
   - url: "security"
   - url: "editor-command-identifiers"
-  - url: "migration-guide-from-3.x"
-  - url: "using-the-gzip-compressors"
 
 - url: "integrations"
   pages:

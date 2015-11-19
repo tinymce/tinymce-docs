@@ -1,6 +1,7 @@
 ---
 layout: default
-title: Try TinyMCE
+title: Examples & Tutorials
+title_nav: Examples & Tutorials
 description: Working examples of TinyMCE's popular functionality.
 type: folder
 ---

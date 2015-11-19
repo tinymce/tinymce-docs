@@ -9,4 +9,4 @@ keywords: example demo custom wysiwyg full-power full-featured
 
 This example displays all plugins available to TinyMCE and includes those delivered via the CDN.
 
-{% include codepen.html id="NGegZK" %}
+{% include codepen.html id="NGegZK" height="750" %}

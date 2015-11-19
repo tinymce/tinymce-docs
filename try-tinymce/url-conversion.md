@@ -9,22 +9,22 @@ keywords: example demo custom url conversion absolute relative url urls
 
 This example shows you how to setup TinyMCE to produce different results for its URLs in images and links. You can read more about these config options in the [TinyMCE FAQ]({{ site.baseurl }}/get-started/get-support/).
 
-## Absolute URLs on links and images
+### Absolute URLs on links and images
 
 {% include codepen.html id="YydxYg" height="400" %}
 
-## Absolute URLs and including domain on links and images
+### Absolute URLs and including domain on links and images
 
 {% include codepen.html id="jbXLzy" height="400" %}
 
-## Relative URLs on links and images
+### Relative URLs on links and images
 
 {% include codepen.html id="VvqzXR" height="400" %}
 
-## Relative URLs on links and images to a specific page
+### Relative URLs on links and images to a specific page
 
 {% include codepen.html id="GpPvdK" height="400" %}
 
-## No url conversion
+### No URL conversion
 
 {% include codepen.html id="XmoaqZ" height="400" %}

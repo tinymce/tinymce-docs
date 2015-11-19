@@ -25,6 +25,23 @@ tinymce.init({
 
 These settings affect the execution of the `table` plugin and let you modify the default styles and attributes for tables, preset class lists and table behavior.
 
+### `table_toolbar`
+
+This option allows you to specify the buttons and the order that they will appear on TinyMCE's inline contextual toolbar for tables.  To specify the controls that should appear on TinyMCE's table toolbar, the `table_toolbar` option should be provided with a space separated list of toolbar controls. To create groups within this list, please add `|` pipe characters between the groups of controls that you would like to create.
+
+**Type:** `String`
+
+**Default Value:** `"tableprops tabledelete | tableinsertrowbefore tableinsertrowafter tabledeleterow | tableinsertcolbefore tableinsertcolafter tabledeletecol"`
+
+##### Example
+
+```js
+tinymce.init({
+  selector: "textarea",  // change this value according to your HTML
+  table_toolbar: "tableprops tabledelete | tableinsertrowbefore tableinsertrowafter tabledeleterow | tableinsertcolbefore tableinsertcolafter tabledeletecol"
+});
+```
+
 ### `table_appearance_options`
 
 This option allows you to disable some of the options available to a user when inserting or editing a table. When set to `false` the following fields will not appear: Cell spacing, Cell padding, Border and Caption.

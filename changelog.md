@@ -7,7 +7,7 @@ class: changelog
 ---
 
 
-## Version 4.3.0 - November XX, 2015
+## Version 4.3.0 - November 23, 2015
 
 * Added new table column/row resize support. Makes it a lot more easy to resize the columns/rows in a table.
 * Added new table inline toolbar. Makes it easier to for example add new rows or columns to a table.

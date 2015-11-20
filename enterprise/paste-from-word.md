@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Paste from Word
-description: PowerPaste is a premium plugin from the makers of TinyMCE for clean Word copy-and-paste.
+description: PowerPaste is a premium plugin for clean Word copy-and-paste.
 keywords: enterprise powerpaste power paste powerpaste_word_import powerpaste_html_import powerpaste_block_drop powerpaste_allow_local_images
 ---
 

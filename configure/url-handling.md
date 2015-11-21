@@ -17,7 +17,7 @@ relative_urls : true,
 document_base_url : "http://www.example.com/path1/"
 ```
 
-Example: http://www.example.com/path1/path2/file.htm >> path2/file.htm
+Example: `http://www.example.com/path1/path2/file.htm` >> `path2/file.htm`
 
 ### Absolute URLs
 

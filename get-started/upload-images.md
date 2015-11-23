@@ -37,7 +37,7 @@ tinymce.activeEditor.uploadImages(function(success) {
 
 In order to upload local images to the remote server, you will need a server-side upload handler script that accepts the images on the server, stores them appropriately, and returns a JSON object containing the location that they were uploaded to.
 
-An example PHP upload handler implementation is available [here]({{ site.baseurl }}/learn/php-upload-handler/).
+An example PHP upload handler implementation is available [here]({{ site.baseurl }}/demo/php-upload-handler/).
 
 This server-side upload handler must return a JSON object that contains a "location" property. This property should represent the remote location or filename of the newly uploaded image.
 
@@ -121,7 +121,7 @@ The upload script URL origin must exactly match the origin of the URL in the add
 
 All supported browsers will print a message to the JavaScript console if there is a CORS error.
 
-The [PHP Upload Handler Script]({{ site.baseurl }}/learn/php-upload-handler/) provided here configures CORS in the `$accepted_origins` variable. You may choose to configure CORS at the [web application layer](http://www.w3.org/wiki/CORS_Enabled#At_the_Web_Application_level...) or the [HTTP server layer](http://www.w3.org/wiki/CORS_Enabled#At_the_HTTP_Server_level...).
+The [PHP Upload Handler Script]({{ site.baseurl }}/demo/php-upload-handler/) provided here configures CORS in the `$accepted_origins` variable. You may choose to configure CORS at the [web application layer](http://www.w3.org/wiki/CORS_Enabled#At_the_Web_Application_level...) or the [HTTP server layer](http://www.w3.org/wiki/CORS_Enabled#At_the_HTTP_Server_level...).
 
 ### Further reading on CORS
 

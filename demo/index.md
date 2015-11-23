@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Examples & Tutorials
-title_nav: Examples & Tutorials
+title: Examples & Demos
+title_nav: Examples & Demos
 description: Working examples of TinyMCE's popular functionality.
 type: folder
 redirect_from:

@@ -54,7 +54,7 @@ tinymce.init({})
 });
 ```
 
-A live demo of this option can be found in the [custom formats]({{ site.baseurl }}/learn/format-custom/) example.
+A live demo of this option can be found in the [custom formats]({{ site.baseurl }}/demo/format-custom/) example.
 
 If you want to merge your styles to the default `styles_format`, you can use the `style_formats_merge` settings:
 

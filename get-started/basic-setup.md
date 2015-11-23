@@ -211,7 +211,7 @@ To help get you started, let's walk through an example of a basic TinyMCE config
 <!DOCTYPE html>
 <html>
 <head>
-  <script type="text/javascript" src="//tinymce.cachefly.net/4.2/tinymce.min.js"></script>
+  <script type="text/javascript" src="//tinymce.cachefly.net/4.3/tinymce.min.js"></script>
   <script type="text/javascript">
     tinymce.init({
       selector: "#myTextarea",

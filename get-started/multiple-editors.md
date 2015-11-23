@@ -18,7 +18,7 @@ In the following example, the page is broken into two separate editable areas, e
 <!DOCTYPE html>
 <html>
 <head>
-  <script src="//tinymce.cachefly.net/4.2/tinymce.min.js"></script>
+  <script src="//tinymce.cachefly.net/4.3/tinymce.min.js"></script>
   <script>
     tinymce.init({
       selector: ".myeditablediv",
@@ -50,7 +50,7 @@ In this next example each editable area will be loaded with an instance of TinyM
 <!DOCTYPE html>
 <html>
 <head>
-  <script src="//tinymce.cachefly.net/4.2/tinymce.min.js"></script>
+  <script src="//tinymce.cachefly.net/4.3/tinymce.min.js"></script>
   <script>
     tinymce.init({
       selector: "#myeditable-h1",

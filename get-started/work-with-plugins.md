@@ -14,13 +14,13 @@ In this section of the Get Started guide we'll show you how easy it is to activa
 
 Let's start with a simple code snippet you can paste into an empty `html` file (call it whatever you like, `tinymce.html` works). Save the file locally, open it with your web browser and you'll have a basic, local TinyMCE instance up and running.
 
-> Pro tip: we included the `https://` protocol in the example below because the file is running locally and not on a server. If you were running this example on a server the script would omit the protocol, like so: `<script src="//tinymce.cachefly.net/4.2/tinymce.min.js"></script>`.
+> Pro tip: we included the `https://` protocol in the example below because the file is running locally and not on a server. If you were running this example on a server the script would omit the protocol, like so: `<script src="//tinymce.cachefly.net/4.3/tinymce.min.js"></script>`.
 
 ```html
 <!DOCTYPE html>
 <html>
 <head>
-  <script src="https://tinymce.cachefly.net/4.2/tinymce.min.js"></script>
+  <script src="https://tinymce.cachefly.net/4.3/tinymce.min.js"></script>
   <script>
     tinymce.init({
       selector: "textarea"

@@ -55,7 +55,7 @@ Enabling inline editing mode is simple. Setting the `inline` configuration prope
 <!DOCTYPE html>
 <html>
 <head>
-  <script src="//tinymce.cachefly.net/4.2/tinymce.min.js"></script>
+  <script src="//tinymce.cachefly.net/4.3/tinymce.min.js"></script>
   <script>
     tinymce.init({
       selector: "#myeditablediv",

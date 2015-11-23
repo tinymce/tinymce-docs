@@ -3,7 +3,7 @@
 Include this line of code in the `<head>` of your HTML page:
 
 ```html
-<script src="//tinymce.cachefly.net/4.2/tinymce.min.js"></script>
+<script src="//tinymce.cachefly.net/4.3/tinymce.min.js"></script>
 ```
 
 ### Step 2: Initialize TinyMCE as part of a web form
@@ -18,7 +18,7 @@ In this example, let's replace `<textarea id="mytextarea">` with a TinyMCE edito
 <!DOCTYPE html>
 <html>
 <head>
-  <script src="//tinymce.cachefly.net/4.2/tinymce.min.js"></script>
+  <script src="//tinymce.cachefly.net/4.3/tinymce.min.js"></script>
   <script type="text/javascript">
     tinymce.init({
       selector: "#mytextarea"

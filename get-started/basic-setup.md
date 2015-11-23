@@ -95,9 +95,11 @@ However, in most integrations it's desirable to change the toolbar configuration
 
 #### Default toolbar controls
 
-Before we get to configuring the toolbar, let's have a look at the default toolbar buttons. You will see some of these settings used in the examples throughout the Get Started guide and all of them within the plugins and customization documentation. You can probably work out what they do from their name.
+Before we get to configuring the toolbar, let's have a look at the default toolbar buttons (presented in the code snippet below). You will see some of these settings used in the examples throughout the Get Started guide and all of them within the plugins and customization documentation. You can probably work out what they do from their name.
 
->newdocument, bold, italic, underline, strikethrough, alignleft, aligncenter, alignright, alignjustify, styleselect, formatselect, fontselect, fontsizeselect, cut, copy, paste, bullist, numlist, outdent, indent, blockquote, undo, redo, removeformat, subscript, superscript
+```js
+newdocument, bold, italic, underline, strikethrough, alignleft, aligncenter, alignright, alignjustify, styleselect, formatselect, fontselect, fontsizeselect, cut, copy, paste, bullist, numlist, outdent, indent, blockquote, undo, redo, removeformat, subscript, superscript
+```
 
 ![TinyMCE Default Toolbar & Menubar State]({{ site.baseurl }}/images/tinymce-default-state.png)
 
@@ -141,11 +143,13 @@ tinymce.init({
 
 ### A quick look at menu and menubar controls
 
-Just as there is a `toolbar` option, there is also a `menu` option. In fact, there are two menu related options: `menu` and `menubar`. Let's take a quick look at the default menu items. You will see some of these settings used in the examples throughout the Get Started guide and all of them within the plugins and customization documentation.
+Just as there is a `toolbar` option, there is also a `menu` option. In fact, there are two menu related options: `menu` and `menubar`. Let's take a quick look at the default menu items (presented in the code snippet below). You will see some of these settings used in the examples throughout the Get Started guide and all of them within the plugins and customization documentation.
 
 #### Default menu controls
 
-> newdocument, undo, redo, visualaid, cut, copy, paste, selectall, bold, italic, underline, strikethrough, subscript, superscript, removeformat, formats
+```js
+newdocument, undo, redo, visualaid, cut, copy, paste, selectall, bold, italic, underline, strikethrough, subscript, superscript, removeformat, formats
+```
 
 The difference between the two options is that `menubar` affects the items placed on the menu "bar" itself where `menu` affects individual items appearing on a menu's dropdown. Additionally, `menu` will give you much more granular control of your menus (e.g. you can create your own titles for menu items). This is easier to understand with an example.
 
@@ -207,7 +211,7 @@ To help get you started, let's walk through an example of a basic TinyMCE config
 <!DOCTYPE html>
 <html>
 <head>
-  <script type="text/javascript" src="//tinymce.cachefly.net/4.2/tinymce.min.js"></script>
+  <script type="text/javascript" src="//tinymce.cachefly.net/4.3/tinymce.min.js"></script>
   <script type="text/javascript">
     tinymce.init({
       selector: "#myTextarea",

@@ -17,7 +17,7 @@ Now, back to the CDN. In the next 4 steps – and in less than 5 minutes – you
 Include this line of code in the `<head>` of your HTML page:
 
 ```html
-<script src="//tinymce.cachefly.net/4.2/tinymce.min.js"></script>
+<script src="//tinymce.cachefly.net/4.3/tinymce.min.js"></script>
 ```
 
 > Tip: we give you a complete html snippet in Step 2.
@@ -35,7 +35,7 @@ In this example, let's replace `<textarea id="mytextarea">` with a TinyMCE edito
 <!DOCTYPE html>
 <html>
 <head>
-  <script src="//tinymce.cachefly.net/4.2/tinymce.min.js"></script>
+  <script src="//tinymce.cachefly.net/4.3/tinymce.min.js"></script>
   <script>
     tinymce.init({
       selector: "#mytextarea"
@@ -54,7 +54,7 @@ In this example, let's replace `<textarea id="mytextarea">` with a TinyMCE edito
 
 And that's all there is to it! Read on as we have two more notes for you.
 
-> Note: if you're testing this locally, you will need to prepend `https://` to urls in the `script` tag. For example, `<script src="https://tinymce.cachefly.net/4.2/tinymce.min.js"></script>`.
+> Note: if you're testing this locally, you will need to prepend `https://` to urls in the `script` tag. For example, `<script src="https://tinymce.cachefly.net/4.3/tinymce.min.js"></script>`.
 
 ## Step 3: Saving content with a form POST
 

@@ -1,6 +1,9 @@
 ---
 layout: default
 title: API Reference
-description: Lorem ipsum dolor sit amet, consectetur adipisicing elit laborum.
+description: JavaScript API reference for TinyMCE
 type: folder
 ---
+
+{% assign links = site.data.nav_api %}
+{% include index.html links=links %}

@@ -9,6 +9,6 @@ keywords: example demo custom common standard normal typical
 
 ## Live example
 
-This example contains the plugins needed for the most common use cases.
+In this example we highlight new features in the 4.3 release, including the image caption option, media embeds and code snippets. For more information on the 4.3 release please see our [blog post](http://blog.tinymce.com/).
 
 {% include codepen.html id="Madpwx" %}

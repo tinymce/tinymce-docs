@@ -5,5 +5,5 @@ description: JavaScript API reference for TinyMCE
 type: folder
 ---
 
-{% assign links = site.data.nav_api.pages %}
+{% assign links = site.data.nav_api %}
 {% include index.html links=links %}

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: API Reference
-description: Lorem ipsum dolor sit amet, consectetur adipisicing elit laborum.
+description: JavaScript API reference for TinyMCE
 type: folder
 ---
 

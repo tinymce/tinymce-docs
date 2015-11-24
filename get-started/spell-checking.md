@@ -21,7 +21,7 @@ tinymce.init({
 
 ## PHP Spellchecker component
 
-You can also use TinyMCE's PHP Spellchecker component, which you can [download here](http://www.tinymce.com/download). Being a server-side script this requires a little more work than the browser-based option.
+You can also use TinyMCE's PHP Spellchecker component, which you can [download here](http://download.moxiecode.com/spellcheckers/tinymce_spellchecker_php_4.0.zip), changelog [here](http://archive.tinymce.com/develop/changelog/?type=phpspell). Being a server-side script this requires a little more work than the browser-based option.
 
 This plugin enables you to use Enchant or PSpell on the backend of your server to spell check contents within the TinyMCE editor.
 
@@ -44,6 +44,8 @@ tinymce.init({
   spellchecker_rpc_url: "spellchecker.php"
 });
 ```
+
+Please see the [Spell Checker Plugin]({{ site.baseurl }}/plugins/spellchecker/) for advanced configuration options.
 
 ## TinyMCE Spellchecker Pro plugin
 

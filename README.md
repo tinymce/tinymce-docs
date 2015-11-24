@@ -8,6 +8,7 @@
     $ bundle install
     $ cp _config-local.sample.yml _config-local.yml
     $ curl http://beta.tinymce.com/_docs/menu.html > _includes/menu.html
+    $ curl http://beta.tinymce.com/_docs/menu_demo.html > _includes/menu_demo.html
     $ curl http://beta.tinymce.com/_docs/footer.html > _includes/footer.html
     $ curl http://beta.tinymce.com/_docs/favicons.html > _includes/favicons.html
     $ echo [] > _data/nav_api.json

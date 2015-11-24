@@ -11,7 +11,11 @@
   {% include favicons.html %}
 </head>
 <body role="document" data-shared-baseurl="{{ site.shared_baseurl }}" data-baseurl="{{ site.baseurl }}">
-  {% include menu.html %}
+  {% if page.url contains '/demo/' %}
+    {% include menu_demo.html %}
+  {% else %}
+    {% include menu.html %}
+  {% endif %}
 
   <div class="top-bar">
     <div>

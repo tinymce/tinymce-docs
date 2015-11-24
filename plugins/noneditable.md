@@ -6,7 +6,7 @@ description: Prevent users from changing content within elements. Ideal for temp
 keywords: noneditable contenteditable editable mceNonEditable noneditable_editable_class noneditable_noneditable_class noneditable_regexp
 ---
 
-> **Updated in 4.3!** The `noneditable` plugin has been rewritten from scratch to use the `contentEditable=false` features of 4.3. This rewrite means that it is more reliable and has less browser-specific quirks.
+> **Updated in 4.3!** The `noneditable` plugin has been rewritten from scratch to use stability improvements to the TinyMCE core released in version 4.3. It is now more reliable and has fewer browser-specific quirks.
 
 This plugin enables you to prevent users from being able to change (i.e. edit) content within elements assigned the `mceNonEditable` class.
 

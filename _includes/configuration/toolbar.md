@@ -54,4 +54,4 @@ tinymce.init({
 });
 ```
 
-Alternatively, you may specify multiple toolbars through the use of the [toolbar&lt;N&gt;](#toolbar-N) option.
+Alternatively, you may specify multiple toolbars through the use of the [toolbar(n)](#toolbarn) option.

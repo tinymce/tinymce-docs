@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Mixins
-description: Lorem ipsum dolor sit amet, consectetur adipisicing elit laborum.
+description: List of available mixins within tinymce namespace.
 type: folder
 ---
 

@@ -28,7 +28,7 @@ These settings affect the execution of the `media` plugin, namely the ability to
 
 ### `media_live_embeds`
 
-> New in 4.3
+> New in 4.3!
 
 When you enable this option users will see a live preview of embedded video content within the editable area, rather than a placeholder image. This means that users can play a video clip, such as YouTube, within the editor.
 

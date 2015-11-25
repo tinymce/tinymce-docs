@@ -45,7 +45,7 @@ tinyMCE.init({
 ```js
 tinyMCE.init({
   selector: "textarea",  // change this value according to your HTML
-  content_css : ["mycontent.css", "mycontent2.css"]  // includes both CSS files in header, ability to have CSS with `,` in URL
+  content_css: ["mycontent.css", "mycontent2.css"]  // includes both CSS files in header, ability to have CSS with `,` in URL
 });
 ```
 
@@ -58,13 +58,13 @@ One solution is to manually clear the browser cache when the file for `content_c
 ```js
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
-  content_css : "path/myfile.css?" + new Date().getTime()
+  content_css: "path/myfile.css?" + new Date().getTime()
 });
 ```
 
 ```js
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
-  content_css : "path/myscript.php?myParam=myValue&bogus=" + new Date().getTime()
+  content_css: "path/myscript.php?myParam=myValue&bogus=" + new Date().getTime()
 });
 ```

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Codesample Plugin
-title_nav: Codesample
+title_nav: Code Sample
 description: Insert and embed syntax highlighted code snippets.
 keywords: syntax highlight codesample code contenteditable
 controls: toolbar button
@@ -9,7 +9,7 @@ controls: toolbar button
 
 > New in 4.3!
 
-The Codesample plugin (`codesample`) lets a user insert and embed syntax color highlighted code snippets into the editable area. It also adds a button to the toolbar which on click will open a dialog box to accept raw code input.
+The Code Sample plugin (`codesample`) lets a user insert and embed syntax color highlighted code snippets into the editable area. It also adds a button to the toolbar which on click will open a dialog box to accept raw code input.
 
 This plugin demonstrates the support for the new block based `contenteditable=false` elements available in version TinyMCE 4.3.
 
@@ -19,10 +19,6 @@ By default `codesample` uses http://prismjs.com/ to embed the code samples withi
 
 ```js
 tinymce.init({
-  selector: 'textarea',  // change this value according to your HTML
-  plugins: 'codesample',
-  toolbar: 'codesample'
+  selector: "textarea",  // change this value according to your HTML
+  plugins: "codesample"
 });
-```
-
-> Note that the dialog box/model does not currently have a resize option.

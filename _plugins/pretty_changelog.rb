@@ -1,7 +1,3 @@
-# {% assign changelog = changelog | replace_regexp:'* fixed','<span class="fixed">fixed</span>' %}
-# {% assign changelog = changelog | replace_regexp:'^added','<span class="added">added</span>' %}
-# {% assign changelog = changelog | replace_regexp:'^removed','<span class="removed">removed</span>' %}
-# {% assign changelog = changelog | replace_regexp:'^rewrote','<span class="rewrote">rewrote</span>' %}
 module Jekyll
   module PrettyChangelog
     def pretty_changelog(input)

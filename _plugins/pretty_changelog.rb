@@ -6,7 +6,6 @@ module Jekyll
       lines = lines.map { |line| line.sub(/\* added/i, "* <span class=\"added\">added</span>") }
       lines = lines.map { |line| line.sub(/\* removed/i, "* <span class=\"removed\">removed</span>") }
       lines = lines.map { |line| line.sub(/\* rewrote/i, "* <span class=\"rewrote\">rewrote</span>") }
-      # input.gsub(re, repl_str) if !input.nil?
       input = lines.join("\n")
     end
   end

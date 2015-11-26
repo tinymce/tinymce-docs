@@ -1068,8 +1068,4 @@ class: changelog
 
 {% endcapture %}
 
-{% assign changelog = changelog | replace_regexp:'/^fixed/i', '<span class="fixed">fixed</span>' %}
-{% assign changelog = changelog | replace_regexp:'/^added/i', '<span class="added">added</span>' %}
-{% assign changelog = changelog | replace_regexp:'/^removed/i', '<span class="removed">removed</span>' %}
-{% assign changelog = changelog | replace_regexp:'/^rewrote/i', '<span class="rewrote">rewrote</span>' %}
-{{ changelog }}
+{{ changelog | pretty_changelog }}

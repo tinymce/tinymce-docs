@@ -4,12 +4,9 @@ shared_baseurl: ""
 syntax_highlight_theme: "tomorrow-night"
 cdnurl: "//cdn.tinymce.com/4/tinymce.min.js"
 exclude:
-  - docs
   - README.md
   - Gemfile
   - Gemfile.lock
-  - build.sh
-  - v*/nav.yml
   - vendor
 
 markdown: redcarpet

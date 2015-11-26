@@ -8,7 +8,7 @@ keywords: tinymce script textarea
 
 From getting a local editor instance up and running in less than 5 minutes (via our content delivery network) to advanced installation options, working with plugins and learning about content filtering and spell checking, this is the place to start for developers new to TinyMCE.
 
-Before we get to it, if you prefer to download TinyMCE and install it locally the [Advanced Install](../advanced-install/#sdkinstall) page in the Get Started guide has instructions. 
+Before we get to it, if you prefer to download TinyMCE and install it locally the [Advanced Install](../advanced-install/#sdkinstall) page in the Get Started guide has instructions.
 
 Now, back to the CDN. In the next 4 steps – and in less than 5 minutes – you'll have a basic, local editor instance up and running.
 
@@ -17,7 +17,7 @@ Now, back to the CDN. In the next 4 steps – and in less than 5 minutes – you
 Include this line of code in the `<head>` of your HTML page:
 
 ```html
-<script src="//tinymce.cachefly.net/4.3/tinymce.min.js"></script>
+<script src="{{ site.cdnurl }}"></script>
 ```
 
 > Tip: we give you a complete html snippet in Step 2.
@@ -35,7 +35,7 @@ In this example, let's replace `<textarea id="mytextarea">` with a TinyMCE edito
 <!DOCTYPE html>
 <html>
 <head>
-  <script src="//tinymce.cachefly.net/4.3/tinymce.min.js"></script>
+  <script src="{{ site.cdnurl }}"></script>
   <script>
     tinymce.init({
       selector: "#mytextarea"
@@ -54,7 +54,7 @@ In this example, let's replace `<textarea id="mytextarea">` with a TinyMCE edito
 
 And that's all there is to it! Read on as we have two more notes for you.
 
-> Note: if you're testing this locally, you will need to prepend `https://` to urls in the `script` tag. For example, `<script src="https://tinymce.cachefly.net/4.3/tinymce.min.js"></script>`.
+> Note: if you're testing this locally, you will need to prepend `https://` to urls in the `script` tag. For example, `<script src="https:{{ site.cdnurl }}"></script>`.
 
 ## Step 3: Saving content with a form POST
 

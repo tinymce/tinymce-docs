@@ -6,6 +6,7 @@ keywords: changelog
 class: changelog
 ---
 
+{% capture changelog %}
 
 ## Version 4.3.0 - November 23, 2015
 
@@ -1064,3 +1065,11 @@ class: changelog
 * Removed "simple" theme and added new "modern" theme.
 * Removed advhr, advimage, advlink, iespell, inlinepopups, xhtmlxtras and style plugins.
 * Updated Sizzle to the latest version.
+
+{% endcapture %}
+
+{% assign changelog = changelog | replace_regexp:'/^fixed/i', '<span class="fixed">fixed</span>' %}
+{% assign changelog = changelog | replace_regexp:'/^added/i', '<span class="added">added</span>' %}
+{% assign changelog = changelog | replace_regexp:'/^removed/i', '<span class="removed">removed</span>' %}
+{% assign changelog = changelog | replace_regexp:'/^rewrote/i', '<span class="rewrote">rewrote</span>' %}
+{{ changelog }}

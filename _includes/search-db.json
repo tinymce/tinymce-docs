@@ -20,7 +20,7 @@
     {% endif %}
 
     {% if link.url contains '#' %}
-      "{{ link.url | search_index }}": "{{ url }}{{ link.url }}",
+      "{{ link.url | search_index }}": "{{ url }}#{{ link.url | anchor }}",
     {% endif %}
 
     {% if page_data.keywords %}

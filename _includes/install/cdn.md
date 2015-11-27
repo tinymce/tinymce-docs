@@ -3,7 +3,7 @@
 Include this line of code in the `<head>` of your HTML page:
 
 ```html
-<script src="{{ site.cdnurl }}"></script>
+<script src='{{ site.cdnurl }}'></script>
 ```
 
 ### Step 2: Initialize TinyMCE as part of a web form
@@ -12,16 +12,16 @@ With the script included, initialize TinyMCE on any element (or elements) in you
 
 Since TinyMCE lets you identify replaceable elements via a CSS selector, all you need do is pass an object that contains a `selector` to `tinymce.init()`.
 
-In this example, let's replace `<textarea id="mytextarea">` with a TinyMCE editor instance by passing the selector `'#mytextarea'` to `tinymce.init()`.
+In this example, let's replace `<textarea id='mytextarea'>` with a TinyMCE editor instance by passing the selector `'#mytextarea'` to `tinymce.init()`.
 
 ```html
 <!DOCTYPE html>
 <html>
 <head>
-  <script src="{{ site.cdnurl }}"></script>
-  <script type="text/javascript">
+  <script src='{{ site.cdnurl }}'></script>
+  <script type='text/javascript'>
     tinymce.init({
-      selector: "#mytextarea"
+      selector: '#mytextarea'
     });
   </script>
 </head>

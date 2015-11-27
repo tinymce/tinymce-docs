@@ -17,7 +17,7 @@ Now, back to the CDN. In the next 4 steps – and in less than 5 minutes – you
 Include this line of code in the `<head>` of your HTML page:
 
 ```html
-<script src="{{ site.cdnurl }}"></script>
+<script src='{{ site.cdnurl }}'></script>
 ```
 
 > Tip: we give you a complete html snippet in Step 2.
@@ -29,16 +29,16 @@ With the script included, initialize TinyMCE on any element (or elements) in you
 
 Since TinyMCE lets you identify replaceable elements via a CSS selector, all you need do is pass an object that contains a `selector` to `tinymce.init()`.
 
-In this example, let's replace `<textarea id="mytextarea">` with a TinyMCE editor instance by passing the selector `'#mytextarea'` to `tinymce.init()`.
+In this example, let's replace `<textarea id='mytextarea'>` with a TinyMCE editor instance by passing the selector `'#mytextarea'` to `tinymce.init()`.
 
 ```html
 <!DOCTYPE html>
 <html>
 <head>
-  <script src="{{ site.cdnurl }}"></script>
+  <script src='{{ site.cdnurl }}'></script>
   <script>
     tinymce.init({
-      selector: "#mytextarea"
+      selector: '#mytextarea'
     });
   </script>
 </head>
@@ -54,7 +54,7 @@ In this example, let's replace `<textarea id="mytextarea">` with a TinyMCE edito
 
 And that's all there is to it! Read on as we have two more notes for you.
 
-> Note: if you're testing this locally, you will need to prepend `https://` to urls in the `script` tag. For example, `<script src="https:{{ site.cdnurl }}"></script>`.
+> Note: if you're testing this locally, you will need to prepend `https://` to urls in the `script` tag. For example, `<script src='https:{{ site.cdnurl }}'></script>`.
 
 ## Step 3: Saving content with a form POST
 

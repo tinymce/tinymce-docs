@@ -25,8 +25,8 @@ Once you've created your skin, download it, unzip the file, place it in the `js/
 
 ```js
 tinymce.init({
-  selector: "textarea"  // change this value according to your HTML
-  skin: "lightgray"  // use the name of your skin, not lightgray
+  selector: 'textarea'  // change this value according to your HTML
+  skin: 'lightgray'  // use the name of your skin, not lightgray
 });
 ```
 
@@ -46,7 +46,7 @@ One of the most frequent UI customizations is changing the height and width of t
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
+  selector: 'textarea',  // change this value according to your HTML
   height : 300
 });
 ```
@@ -59,7 +59,7 @@ See the [height option]({{ site.baseurl }}/configure/editor-appearance/#height) 
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
+  selector: 'textarea',  // change this value according to your HTML
   width : 300
 });
 ```
@@ -73,7 +73,7 @@ By now you're fast becoming a TinyMCE pro, so we're going to include several opt
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
+  selector: 'textarea',  // change this value according to your HTML
   max_height: 500,
   max_width: 500,
   min_height: 100,
@@ -97,8 +97,8 @@ The `css` file used in this setting should be the same `css` file that controls 
 // File: http://domain.mine/mysite/index.html
 
 tinyMCE.init({
-  selector: "textarea",  // change this value according to your HTML
-  content_css : "/mycontent.css"  // resolved to http://domain.mine/mycontent.css
+  selector: 'textarea',  // change this value according to your HTML
+  content_css : '/mycontent.css'  // resolved to http://domain.mine/mycontent.css
 });
 ```
 
@@ -112,7 +112,7 @@ The status bar is a gray bar stuck to the bottom of the editor's editable area c
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
+  selector: 'textarea',  // change this value according to your HTML
   statusbar: false
 });
 ```
@@ -128,9 +128,9 @@ It's also a good example for the Get Started guide because it reminds us that so
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "code",
-  toolbar: "code"
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'code',
+  toolbar: 'code'
 });
 ```
 
@@ -140,9 +140,9 @@ If you wanted the default toolbar *plus* the `code` functionality you'd need thi
 
 ```js
 tinymce.init({
-  selector: "textarea",
-  toolbar: "undo redo styleselect bold italic alignleft aligncenter alignright bullist numlist outdent indent code",
-  plugins: "code"
+  selector: 'textarea',
+  toolbar: 'undo redo styleselect bold italic alignleft aligncenter alignright bullist numlist outdent indent code',
+  plugins: 'code'
   });
 ```
 

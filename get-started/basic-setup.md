@@ -22,14 +22,14 @@ Snippets will (almost always) look like this:
 
 ```js
 tinymce.init({
-  selector: "textarea"  // change this value according to your HTML
-  plugin: "a_tinymce_plugin",
+  selector: 'textarea'  // change this value according to your HTML
+  plugin: 'a_tinymce_plugin',
   a_plugin_option: true,
   a_configuration_option: 400
 });
 ```
 
-Snippets will always include a `selector` with the value `"textarea"`. You will need to change this value according to your HTML, but otherwise the snippet will be a working code block.
+Snippets will always include a `selector` with the value `'textarea'`. You will need to change this value according to your HTML, but otherwise the snippet will be a working code block.
 
 Cut and paste the snippet into your HTML document, replacing everything between the `<script>` tags containing the `tinymce` object (`tinymce.init({})`). If the setting makes a visual change to the editor, for example, adds a toolbar button or menu item, you'll see the changes in the editor. We hope that helps.
 
@@ -45,25 +45,25 @@ Here's an example that will replace all `textarea` elements on the page:
 
 ```js
 tinymce.init({
-  selector: "textarea"
+  selector: 'textarea'
 });
 ```
 
-You can also match an `id` attribute. The following example will replace a `textarea` element with `id` `"editable"` on the page:
+You can also match an `id` attribute. The following example will replace a `textarea` element with `id` `'editable'` on the page:
 
 ```js
 tinymce.init({
-  selector: "textarea#editable"
+  selector: 'textarea#editable'
 });
 ```
 
 When using this option in TinyMCE's [inline editing mode](../use-tinymce-inline/) the selector can be used on any block element, which will edit the content in place instead of replacing the element with an `iframe`.
 
-Here, `selector` is being used in inline editing mode on a `div` element with `id` `"editable"`:
+Here, `selector` is being used in inline editing mode on a `div` element with `id` `'editable'`:
 
 ```js
 tinymce.init({
-  selector: "div#editable"
+  selector: 'div#editable'
   inline: true
 });
 ```
@@ -79,8 +79,8 @@ Fortunately it is easy to enable plugin functionality. All you need to do is add
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins : "advlist autolink link image lists charmap print preview"
+  selector: 'textarea',  // change this value according to your HTML
+  plugins : 'advlist autolink link image lists charmap print preview'
 });
 ```
 
@@ -113,8 +113,8 @@ To specify the controls that should appear on TinyMCE's toolbar, the toolbar opt
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  toolbar: "undo redo | styleselect | bold italic | link image",
+  selector: 'textarea',  // change this value according to your HTML
+  toolbar: 'undo redo | styleselect | bold italic | link image',
 });
 ```
 
@@ -122,7 +122,7 @@ To disable the toolbar entirely, the toolbar option should be provided a boolean
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
+  selector: 'textarea',  // change this value according to your HTML
   toolbar: false
 });
 ```
@@ -133,10 +133,10 @@ To specify multiple toolbars, the `toolbar` option should be provided with an `a
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
+  selector: 'textarea',  // change this value according to your HTML
   toolbar: [
-    "undo redo | styleselect | bold italic | link image",
-    "alignleft aligncenter alignright"
+    'undo redo | styleselect | bold italic | link image',
+    'alignleft aligncenter alignright'
   ]
 });
 ```
@@ -157,8 +157,8 @@ In the snippet below our menubar will include only the menu items `File`, `Edit`
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  menubar: "file edit view"
+  selector: 'textarea',  // change this value according to your HTML
+  menubar: 'file edit view'
 });
 ```
 
@@ -166,7 +166,7 @@ If you wanted to create an `Edit` menu and include only Cut, Copy, Paste items y
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
+  selector: 'textarea',  // change this value according to your HTML
   menu: {
     view: {title: 'Edit', items: 'cut, copy, paste'}
   }
@@ -177,11 +177,11 @@ And for a little bit of fun, you can even create your own menu titles. In the sn
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
+  selector: 'textarea',  // change this value according to your HTML
   menu: {
     view: {title: 'Happy', items: 'code'}
   },
-  plugins: "code"  // required by the code menu item
+  plugins: 'code'  // required by the code menu item
 });
 ```
 
@@ -189,7 +189,7 @@ If you wish to exclude `menubar` and/or `toolbar` controls set their value to `f
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
+  selector: 'textarea',  // change this value according to your HTML
   menubar: false,  // removes the menubar
   toolbar: false  // removes the toolbar
 });
@@ -211,20 +211,20 @@ To help get you started, let's walk through an example of a basic TinyMCE config
 <!DOCTYPE html>
 <html>
 <head>
-  <script type="text/javascript" src="{{ site.cdnurl }}"></script>
-  <script type="text/javascript">
+  <script type='text/javascript' src='{{ site.cdnurl }}'></script>
+  <script type='text/javascript'>
     tinymce.init({
-      selector: "#myTextarea",
-      theme: "modern",
+      selector: '#myTextarea',
+      theme: 'modern',
       width: 600,
       height: 300,
       plugins: [
-        "advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker",
-        "searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking",
-        "save table contextmenu directionality emoticons template paste textcolor"
+        'advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker',
+        'searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking',
+        'save table contextmenu directionality emoticons template paste textcolor'
       ],
-      content_css: "css/content.css",
-      toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | print preview media fullpage | forecolor backcolor emoticons"
+      content_css: 'css/content.css',
+      toolbar: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | print preview media fullpage | forecolor backcolor emoticons'
     });
   </script>
 </head>
@@ -240,13 +240,13 @@ To help get you started, let's walk through an example of a basic TinyMCE config
 First we want to select only the `textarea` with the id `myTextarea`.
 
 > ```js
-selector: "#myTextarea",
+selector: '#myTextarea',
 ```
 
 We next choose a theme, in this case the modern theme (which is the default theme, so this isn't needed. You can however create your own themes using the [TinyMCE Skin Creator](http://skin.tinymce.com/)).
 
 > ```js
-theme: "modern",
+theme: 'modern',
 ```
 
 Here we set the width and height of the editable area in pixels. These must be number values.
@@ -260,22 +260,22 @@ Here we select the plugins that should be included on load.
 
 > ```js
 plugins: [
-  "advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker",
-  "searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking",
-  "save table contextmenu directionality emoticons template paste textcolor"
+  'advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker',
+  'searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking',
+  'save table contextmenu directionality emoticons template paste textcolor'
 ],
 ```
 
 Next we set the styling of the editable area using `content_css`. This should be a (very) stripped down version of your website CSS, with things such as styles for headers (H1-H6), table layouts, margins, paddings around elements (images, paragraphs), and so on.
 
 > ```js
-content_css: "css/content.css",
+content_css: 'css/content.css',
 ```
 
 Lastly we want to select the toolbar buttons exposed to the user. You can use a comma or space as a separator.
 
 > ```js
-toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | print preview media fullpage | forecolor backcolor emoticons",
+toolbar: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | print preview media fullpage | forecolor backcolor emoticons',
 ```
 
 And we are done. We hope you found the above example helpful in showing not only how powerful TinyMCE is but also how easy it is to customize.

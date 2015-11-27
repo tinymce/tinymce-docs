@@ -14,13 +14,13 @@ In this section of the Get Started guide we'll show you how easy it is to activa
 
 Let's start with a simple code snippet you can paste into an empty `html` file (call it whatever you like, `tinymce.html` works). Save the file locally, open it with your web browser and you'll have a basic, local TinyMCE instance up and running.
 
-> Pro tip: we included the `https://` protocol in the example below because the file is running locally and not on a server. If you were running this example on a server the script would omit the protocol, like so: `<script src="{{ site.cdnurl }}"></script>`.
+> Pro tip: we included the `https://` protocol in the example below because the file is running locally and not on a server. If you were running this example on a server the script would omit the protocol, like so: `<script src='{{ site.cdnurl }}'></script>`.
 
 ```html
 <!DOCTYPE html>
 <html>
 <head>
-  <script src="https:{{ site.cdnurl }}"></script>
+  <script src='https:{{ site.cdnurl }}'></script>
   <script>tinymce.init({ selector: 'textarea' });</script>
 </head>
 
@@ -35,30 +35,30 @@ Let's start with a simple code snippet you can paste into an empty `html` file (
 
 ## Let's play with plugins
 
-The code we want to work with is in the second `<script>` element, specifically they `key` and its `value`, which we pass as `JSON` to the `tinymce` object `.init` method. In the example above `selector` is the key and `"textarea"` is its value.
+The code we want to work with is in the second `<script>` element, specifically they `key` and its `value`, which we pass as `JSON` to the `tinymce` object `.init` method. In the example above `selector` is the key and `'textarea'` is its value.
 
 ### Code plugin
 
 The [Code]({{ site.baseurl }}/plugins/code/) plugin is one of the more popular plugins because it can expose the editable area's raw `html` to the user. It also provides a great example because it adds a menu item and toolbar button as well as having advanced customization options.
 
-Obviously the first thing we need to do is include the actual `plugins` key and assign it a value. Since we're starting with the `code` plugin that value is by happy coincidence `"code"`.
+Obviously the first thing we need to do is include the actual `plugins` key and assign it a value. Since we're starting with the `code` plugin that value is by happy coincidence `'code'`.
 
 ```js
 tinymce.init({
-  selector: "textarea",  // note the comma at the end of the line!
-  plugins: "code"
+  selector: 'textarea',  // note the comma at the end of the line!
+  plugins: 'code'
 });
 ```
 
-Add `plugins: "code"` to your `tinymce.html` file, save the file, refresh your browser and you'll see some magic. A "Tools" menu will automatically appear in the menubar and it will have a "Source code" item in the dropdown. Click it and *voila*, you can now edit the HTML hidden by the WYSIWYG interface.
+Add `plugins: 'code'` to your `tinymce.html` file, save the file, refresh your browser and you'll see some magic. A "Tools" menu will automatically appear in the menubar and it will have a "Source code" item in the dropdown. Click it and *voila*, you can now edit the HTML hidden by the WYSIWYG interface.
 
 Let's also add a toolbar control so that our users can more easily activate this functionality.
 
 ```js
 tinymce.init({
-  selector: "textarea",  // note the comma at the end of the line!
-  plugins: "code",  // note the comma at the end of the line!
-  toolbar: "code"
+  selector: 'textarea',  // note the comma at the end of the line!
+  plugins: 'code',  // note the comma at the end of the line!
+  toolbar: 'code'
 });
 ```
 
@@ -68,9 +68,9 @@ Let's quickly take our minimal design one step further by removing the menubar c
 
 ```js
 tinymce.init({
-  selector: "textarea",  // note the comma at the end of the line!
-  plugins: "code",  // note the comma at the end of the line!
-  toolbar: "code",  // last reminder, note the comma!
+  selector: 'textarea',  // note the comma at the end of the line!
+  plugins: 'code',  // note the comma at the end of the line!
+  toolbar: 'code',  // last reminder, note the comma!
   menubar: false
 });
 ```
@@ -83,9 +83,9 @@ Let's add them as values to our `tinymce.init()` object/method.
 
 ```js
 tinymce.init({
-  selector: "textarea",  // note the comma at the end of the line!
-  plugins: "code",  // note the comma at the end of the line!
-  toolbar: "code",  // last reminder, note the comma!
+  selector: 'textarea',  // note the comma at the end of the line!
+  plugins: 'code',  // note the comma at the end of the line!
+  toolbar: 'code',  // last reminder, note the comma!
   menubar: false,
   code_dialog_height: 300,
   code_dialog_width: 350
@@ -103,12 +103,12 @@ Even if you found the above example quite easy, hang with us we'll show you how 
 
 The [Advanced List]({{ site.baseurl }}/plugins/advlist/) plugin extends the default unordered and ordered list toolbar controls by adding CSS `list-style-type` styled number formats and bullet types to the controls.
 
-As before, let's start by adding the `plugins` key and giving it the Advanced List value of `"advlist"`.
+As before, let's start by adding the `plugins` key and giving it the Advanced List value of `'advlist'`.
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "advlist"
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'advlist'
 });
 ```
 
@@ -128,12 +128,12 @@ Let's add the Advanced List options and give them some of the available options 
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
+  selector: 'textarea',  // change this value according to your HTML
   menubar: false,
-  toolbar: "bullist, numlist",
-  plugins: "advlist",
-  advlist_bullet_styles: "square",
-  advlist_number_styles: "lower-alpha,lower-roman,upper-alpha,upper-roman"
+  toolbar: 'bullist, numlist',
+  plugins: 'advlist',
+  advlist_bullet_styles: 'square',
+  advlist_number_styles: 'lower-alpha,lower-roman,upper-alpha,upper-roman'
 });
 ```
 

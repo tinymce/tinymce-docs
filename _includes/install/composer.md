@@ -9,7 +9,7 @@ php composer.phar require "tinymce/tinymce" ">= 4"
 Include this line of code in the `<head>` of your HTML page:
 
 ```html
-<script src="/path/to/tinymce.min.js"></script>
+<script src='/path/to/tinymce.min.js'></script>
 ```
 
 ### Step 2: Initialize TinyMCE as part of a web form
@@ -18,16 +18,16 @@ With the script included, initialize TinyMCE on any element (or elements) in you
 
 Since TinyMCE lets you identify replaceable elements via a CSS selector, all you need do is pass an object that contains a `selector` to `tinymce.init()`.
 
-In this example, let's replace `<textarea id="mytextarea">` with a TinyMCE editor instance by passing the selector `'#mytextarea'` to `tinymce.init()`.
+In this example, let's replace `<textarea id='mytextarea'>` with a TinyMCE editor instance by passing the selector `'#mytextarea'` to `tinymce.init()`.
 
 ```html
 <!DOCTYPE html>
 <html>
 <head>
-  <script src="/path/to/tinymce.min.js"></script>
-  <script type="text/javascript">
+  <script src='/path/to/tinymce.min.js'></script>
+  <script type='text/javascript'>
     tinymce.init({
-      selector: "#mytextarea"
+      selector: '#mytextarea'
     });
   </script>
 </head>
@@ -51,11 +51,12 @@ When using package managers you might have local TinyMCE add-ons in your project
 
 ```js
 tinymce.init({
-  language: "sv",
-  language_url: "/js/sv.js",
-  plugins: "myplugin",
+  selector: 'textarea',
+  language: 'sv',
+  language_url: '/js/sv.js',
+  plugins: 'myplugin',
   external_plugins: {
-    "myplugin": "/js/myplugin/plugin.min.js"
+    'myplugin': '/js/myplugin/plugin.min.js'
   }
 });
 ```

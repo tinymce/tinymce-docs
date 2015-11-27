@@ -13,7 +13,7 @@ The first option (and easiest to implement) is to utilize the browser's native s
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
+  selector: 'textarea',  // change this value according to your HTML
   browser_spellcheck: true,
   contextmenu: false
 });
@@ -31,17 +31,17 @@ This plugin enables you to use Enchant or PSpell on the backend of your server t
 2. Download the TinyMCE Spellchecker for PHP package [(direct download)](http://download.moxiecode.com/spellcheckers/tinymce_spellchecker_php_4.0.zip).
 3. Unpack the package in the your/path/to/tinymce/plugins/spellchecker directory.
 4. Configure TinyMCE to use the spell checker by enabling the `spellchecker` plugin.
-5. Configure the `spellchecker_rpc_url` to `"spellchecker.php"`.
+5. Configure the `spellchecker_rpc_url` to `'spellchecker.php'`.
 6. Download word lists and place them in the dicts directory for example "sv_SE.dic, sv_SE.aff".
 
 ##### Example
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "spellchecker",
-  toolbar: "spellchecker",
-  spellchecker_rpc_url: "spellchecker.php"
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'spellchecker',
+  toolbar: 'spellchecker',
+  spellchecker_rpc_url: 'spellchecker.php'
 });
 ```
 

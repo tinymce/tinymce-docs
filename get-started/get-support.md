@@ -50,9 +50,9 @@ This will convert all URLs within the same domain to relative URLs. The URLs wil
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
+  selector: 'textarea',  // change this value according to your HTML
   relative_urls : true,
-  document_base_url : "http://www.site.com/path1/"
+  document_base_url : 'http://www.site.com/path1/'
 });
 ```
 
@@ -66,10 +66,10 @@ This will convert all relative URLs to absolute URLs. The URLs will be absolute 
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
+  selector: 'textarea',  // change this value according to your HTML
   relative_urls : false,
   remove_script_host : true,
-  document_base_url : "http://www.site.com/path1/"
+  document_base_url : 'http://www.site.com/path1/'
 });
 ```
 
@@ -83,10 +83,10 @@ This will convert all relative URLs to absolute URLs. The URLs will be absolute 
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
+  selector: 'textarea',  // change this value according to your HTML
   relative_urls : false,
   remove_script_host : false,
-  document_base_url : "http://www.site.com/path1/"
+  document_base_url : 'http://www.site.com/path1/'
 });
 ```
 
@@ -100,7 +100,7 @@ Use the [`Style Formats`](/configure/content-filtering/#style_formats) option in
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
+  selector: 'textarea',  // change this value according to your HTML
   style_formats: [
     {title: 'Image Left', selector: 'img', styles: {
       'float' : 'left',

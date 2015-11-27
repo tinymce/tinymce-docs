@@ -55,10 +55,10 @@ Enabling inline editing mode is simple. Setting the `inline` configuration prope
 <!DOCTYPE html>
 <html>
 <head>
-  <script src="{{ site.cdnurl }}"></script>
+  <script src='{{ site.cdnurl }}'></script>
   <script>
     tinymce.init({
-      selector: "#myeditablediv",
+      selector: '#myeditablediv',
       inline: true
     });
   </script>

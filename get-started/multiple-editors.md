@@ -18,10 +18,10 @@ In the following example, the page is broken into two separate editable areas, e
 <!DOCTYPE html>
 <html>
 <head>
-  <script src="{{ site.cdnurl }}"></script>
+  <script src='{{ site.cdnurl }}'></script>
   <script>
     tinymce.init({
-      selector: ".myeditablediv",
+      selector: '.myeditablediv',
       inline: true
     });
   </script>
@@ -50,18 +50,18 @@ In this next example each editable area will be loaded with an instance of TinyM
 <!DOCTYPE html>
 <html>
 <head>
-  <script src="{{ site.cdnurl }}"></script>
+  <script src='{{ site.cdnurl }}'></script>
   <script>
     tinymce.init({
-      selector: "#myeditable-h1",
+      selector: '#myeditable-h1',
       inline: true,
       menubar: false,
-      toolbar: "undo redo"
+      toolbar: 'undo redo'
     });
   </script>
   <script>
     tinymce.init({
-      selector: "#myeditable-div",
+      selector: '#myeditable-div',
       inline: true
     });
   </script>

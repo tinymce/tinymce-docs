@@ -4,15 +4,15 @@ We have a jQuery plugin [available here](http://archive.tinymce.com/download/cus
 
 > Note: the above link will take you to the custom package download page. When building your jQuery package, select "TinyMCE core (jQuery) under the "Core Elements" section.
 
-As with the [SDK](#sdkinstall) option, unzip the package and move the `"path/to/tinymce/"` directory into a web accessible location on your web server (for example, `localhost`).
+As with the [SDK](#sdkinstall) option, unzip the package and move the `'path/to/tinymce/'` directory into a web accessible location on your web server (for example, `localhost`).
 
 ### Step 2: Installation
 
 Include this line of code in the `<head>` of your page:
 
 ```html
-<script src="/path/to/tinymce/tinymce.min.js"></script>
-<script src="/path/to/tinymce/jquery.tinymce.min.js"></script>
+<script src='/path/to/tinymce/tinymce.min.js'></script>
+<script src='/path/to/tinymce/jquery.tinymce.min.js'></script>
 ```
 
 ### Step 2: Initialize TinyMCE as part of a web form
@@ -21,17 +21,17 @@ With the script included, initialize TinyMCE on any element (or elements) in you
 
 Since TinyMCE lets you identify replaceable elements via a CSS3 selector all you need do is pass an object that contains a selector to `tinymce.init()`.
 
-In this example, let's replace `<textarea id="mytextarea">` with a TinyMCE editor instance by passing the selector `'#mytextarea'` to `tinymce.init()`.
+In this example, let's replace `<textarea id='mytextarea'>` with a TinyMCE editor instance by passing the selector `'#mytextarea'` to `tinymce.init()`.
 
 ```html
 <!DOCTYPE html>
 <html>
 <head>
-  <script src="/path/to/tinymce/tinymce.min.js"></script>
-  <script src="/path/to/tinymce/jquery.tinymce.min.js"></script>
+  <script src='/path/to/tinymce/tinymce.min.js'></script>
+  <script src='/path/to/tinymce/jquery.tinymce.min.js'></script>
   <script>
     tinymce.init({
-      selector: "#mytextarea"
+      selector: '#mytextarea'
     });
   </script>
 </head>

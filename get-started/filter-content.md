@@ -57,8 +57,8 @@ Before we move on to the table of format parameters below, we want to acknowledg
 
 | Name       | Summary          |
 |------------|------------------|
-| inline     | Name of the inline element to produce for example "span". The current text selection will be wrapped in this inline element.
-| block      | Name of the block element to produce for example "h1". Existing block elements within the selection gets replaced with the new block element. |
+| inline     | Name of the inline element to produce, for example, `span`. The current text selection will be wrapped in this inline element.
+| block      | Name of the block element to produce for example `h1`. Existing block elements within the selection gets replaced with the new block element. |
 | selector   | CSS 3 selector pattern to find elements within the selection by. This can be used to apply classes to specific elements or complex things like odd rows in a table. |
 | classes    | Space separated list of classes to apply the the selected elements or the new inline/block element. |
 | styles     | Name/value object with CSS style items to apply such as color etc. |
@@ -73,7 +73,7 @@ This example overrides some of the built in formats and tells TinyMCE to apply c
 ```js
 // Output elements in HTML style
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: 'textarea',  // change this value according to your html
   formats: {
     alignleft: {selector : 'p,h1,h2,h3,h4,h5,h6,td,th,div,ul,ol,li,table,img', classes : 'left'},
     aligncenter: {selector : 'p,h1,h2,h3,h4,h5,h6,td,th,div,ul,ol,li,table,img', classes : 'center'},
@@ -85,7 +85,7 @@ tinymce.init({
     strikethrough: {inline : 'del'},
     forecolor: {inline : 'span', classes : 'forecolor', styles : {color : '%value'}},
     hilitecolor: {inline : 'span', classes : 'hilitecolor', styles : {backgroundColor : '%value'}},
-    custom_format: {block : 'h1', attributes : {title : "Header"}, styles : {color : red}}
+    custom_format: {block : 'h1', attributes : {title : 'Header'}, styles : {color : red}}
   }
 });
 ```
@@ -101,8 +101,8 @@ The `html5` schema is the full HTML5 specification including the older HTML4 ele
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
-  schema: "html5"
+  selector: 'textarea',  // change this value according to your html
+  schema: 'html5'
 });
 ```
 

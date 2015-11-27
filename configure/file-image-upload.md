@@ -15,6 +15,8 @@ description: These settings affect TinyMCE's image and file upload capabilities.
 
 {% include configuration/file-picker-types.md %}
 
+{% include configuration/images-dataimg-filter.md %}
+
 {% include configuration/images-upload-base-path.md %}
 
 {% include configuration/images-upload-credentials.md %}

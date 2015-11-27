@@ -19,9 +19,9 @@ To avoid this situation, it is recommended that the `editor.uploadImages()` func
 
 ```js
 tinymce.activeEditor.uploadImages(function(success) {
-    $.post("ajax/post.php", tinymce.activeEditor.getContent()).done(function() {
-        console.log("Uploaded images and posted content as an ajax request.");
-    });
+  $.post('ajax/post.php', tinymce.activeEditor.getContent()).done(function() {
+    console.log("Uploaded images and posted content as an ajax request.");
+  });
 });
 ```
 
@@ -29,7 +29,7 @@ tinymce.activeEditor.uploadImages(function(success) {
 
 ```js
 tinymce.activeEditor.uploadImages(function(success) {
-     document.forms[0].submit();
+   document.forms[0].submit();
 });
 ```
 
@@ -62,10 +62,10 @@ There are multiple configuration options that will affect the operation of this 
 
 ```js
 tinymce.init({
-    selector: "textarea",  // change this value according to your html
-    images_upload_url: "postAcceptor.php",
-    images_upload_base_path: "/some/basepath",
-    images_upload_credentials: true
+  selector: 'textarea',  // change this value according to your html
+  images_upload_url: 'postAcceptor.php',
+  images_upload_base_path: '/some/basepath',
+  images_upload_credentials: true
 });
 ```
 
@@ -79,31 +79,31 @@ Please note that while using this option, no other image uploader options are ne
 
 ```js
 tinymce.init({
-    selector: "textarea",  // change this value according to your HTML
-    images_upload_handler: function (blobInfo, success, failure) {
-        var xhr, formData;
-        xhr = new XMLHttpRequest();
-        xhr.withCredentials = false;
-        xhr.open('POST', "postAcceptor.php");
-        xhr.onload = function() {
-            var json;
+  selector: 'textarea',  // change this value according to your HTML
+  images_upload_handler: function (blobInfo, success, failure) {
+    var xhr, formData;
+    xhr = new XMLHttpRequest();
+    xhr.withCredentials = false;
+    xhr.open('POST', 'postAcceptor.php');
+    xhr.onload = function() {
+      var json;
 
-            if (xhr.status != 200) {
-                failure("HTTP Error: " + xhr.status);
-                return;
-            }
-            json = JSON.parse(xhr.responseText);
+      if (xhr.status != 200) {
+        failure('HTTP Error: ' + xhr.status);
+        return;
+      }
+      json = JSON.parse(xhr.responseText);
 
-            if (!json || typeof json.location != "string") {
-                failure("Invalid JSON: " + xhr.responseText);
-                return;
-            }
-            success(json.location);
-        };
-        formData = new FormData();
-        formData.append('file', blobInfo.blob(), fileName(blobInfo));
-        xhr.send(formData);
-    }
+      if (!json || typeof json.location != 'string') {
+        failure('Invalid JSON: ' + xhr.responseText);
+        return;
+      }
+      success(json.location);
+    };
+    formData = new FormData();
+    formData.append('file', blobInfo.blob(), fileName(blobInfo));
+    xhr.send(formData);
+  }
 });
 ```
 

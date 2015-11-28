@@ -12,11 +12,11 @@ When using this option in TinyMCE's regular editing mode, the element will be re
 
 ```js
 tinymce.init({
-  selector: "textarea"  // change this value according to your HTML
+  selector: 'textarea'  // change this value according to your HTML
 });
 ```
 
-### Replace a textarea element with id "editable"
+### Replace a textarea element with id 'editable'
 
 **Type:** `String`
 
@@ -24,13 +24,13 @@ tinymce.init({
 
 ```js
 tinymce.init({
-    selector: "textarea#editable"
+    selector: 'textarea#editable'
 });
 ```
 
 When using this option in TinyMCE's inline editing mode, the selector can be used on any block element and will edit the content in place instead of replacing the element with an `iframe`.
 
-### Inline editing mode on a `div` element with `id` `"editable"`
+### Inline editing mode on a div element with id 'editable'
 
 **Type:** `String`
 
@@ -38,7 +38,7 @@ When using this option in TinyMCE's inline editing mode, the selector can be use
 
 ```js
 tinymce.init({
-    selector: "div#editable",
+    selector: 'div#editable',
     inline: true
 });
 ```

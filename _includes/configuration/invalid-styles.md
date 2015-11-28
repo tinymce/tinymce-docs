@@ -10,8 +10,8 @@ This option enables you to restrict the styles that are valid for specific eleme
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  invalid_styles: "color font-size"
+  selector: 'textarea',  // change this value according to your HTML
+  invalid_styles: 'color font-size'
 });
 ```
 
@@ -23,10 +23,10 @@ tinymce.init({
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
+  selector: 'textarea',  // change this value according to your HTML
   invalid_styles: {
-    "*": "color font-size", // Global invalid styles
-    "a": "background" // Link specific invalid styles
+    '*': 'color font-size', // Global invalid styles
+    'a': 'background' // Link specific invalid styles
   }
 });
 ```

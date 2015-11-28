@@ -8,7 +8,7 @@ This option enables you add your own file picker for various dialog fields. This
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
+  selector: 'textarea',  // change this value according to your HTML
   file_picker_callback: function(callback, value, meta) {
     // Provide file and text for the link dialog
     if (meta.filetype == 'file') {

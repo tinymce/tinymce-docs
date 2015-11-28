@@ -12,8 +12,8 @@ The below example replaces the current `img` rule (including the global element 
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  extended_valid_elements : "img[class|src|border=0|alt|title|hspace|vspace|width|height|align|onmouseover|onmouseout|name]"
+  selector: 'textarea',  // change this value according to your HTML
+  extended_valid_elements : 'img[class|src|border=0|alt|title|hspace|vspace|width|height|align|onmouseover|onmouseout|name]'
 });
 ```
 

@@ -8,7 +8,7 @@ This option allows you to set whether TinyMCE should append the styles in the [`
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
+  selector: 'textarea',  // change this value according to your HTML
   style_formats: [
     {title: 'Bold text', inline: 'b'},
     {title: 'Red text', inline: 'span', styles: {color: '#ff0000'}}

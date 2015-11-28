@@ -12,7 +12,7 @@ This option enables you to control TinyMCE to force the color format to use hexa
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
+  selector: 'textarea',  // change this value according to your HTML
   force_hex_style_colors : false
 });
 ```

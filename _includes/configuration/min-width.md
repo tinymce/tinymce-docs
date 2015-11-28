@@ -10,7 +10,7 @@ This option allows you to set the minimum width that a user can stretch the enti
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
+  selector: 'textarea',  // change this value according to your HTML
   min_width: 400
 });
 ```

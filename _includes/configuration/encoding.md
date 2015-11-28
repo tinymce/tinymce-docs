@@ -10,7 +10,7 @@ This option is disabled by default.
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  encoding: "xml"
+  selector: 'textarea',  // change this value according to your HTML
+  encoding: 'xml'
 });
 ```

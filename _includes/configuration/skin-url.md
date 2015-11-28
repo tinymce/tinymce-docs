@@ -8,7 +8,7 @@ If you are using TinyMCE skins, this option enables you to specify the location 
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  skin_url: "/css/mytinymceskin"
+  selector: 'textarea',  // change this value according to your HTML
+  skin_url: '/css/mytinymceskin'
 });
 ```

@@ -8,9 +8,9 @@ This option allows you to specify the buttons and the order that they will appea
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
-  toolbar1: "undo redo | styleselect | bold italic | link image",
-  toolbar2: "alignleft aligncenter alignright"
+  selector: 'textarea',  // change this value according to your html
+  toolbar1: 'undo redo | styleselect | bold italic | link image',
+  toolbar2: 'alignleft aligncenter alignright'
 });
 ```
 

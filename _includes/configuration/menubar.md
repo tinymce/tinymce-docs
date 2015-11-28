@@ -10,8 +10,8 @@ To specify the menus that should appear on TinyMCE's menu bar, the menubar optio
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  menubar: "file edit insert view format table tools"
+  selector: 'textarea',  // change this value according to your HTML
+  menubar: 'file edit insert view format table tools'
 });
 ```
 
@@ -25,7 +25,7 @@ To disable the menu bar, the menubar option should be provided a boolean value o
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
+  selector: 'textarea',  // change this value according to your HTML
   menubar: false
 });
 ```

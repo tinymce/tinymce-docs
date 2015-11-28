@@ -16,7 +16,7 @@ Also note that all event attributes are excluded by default since it's a bad pra
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  schema: "html5"
+  selector: 'textarea',  // change this value according to your HTML
+  schema: 'html5'
 });
 ```

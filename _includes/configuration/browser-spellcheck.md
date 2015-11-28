@@ -10,7 +10,7 @@ One of the several spell checking options developers have available is to use th
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
+  selector: 'textarea',  // change this value according to your HTML
   browser_spellcheck: true
 });
 ```

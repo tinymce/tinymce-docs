@@ -15,8 +15,8 @@ The `css` file used in this setting should be the same `css` file that controls 
 // File: http://domain.mine/mysite/index.html
 
 tinyMCE.init({
-  selector: "textarea",  // change this value according to your HTML
-  content_css : "/myLayout.css"  // resolved to http://domain.mine/myLayout.css
+  selector: 'textarea',  // change this value according to your HTML
+  content_css : '/myLayout.css'  // resolved to http://domain.mine/myLayout.css
 });
 ```
 
@@ -26,8 +26,8 @@ tinyMCE.init({
 // File: http://domain.mine/mysite/index.html
 
 tinyMCE.init({
-  selector: "textarea",  // change this value according to your HTML
-  content_css : "mycontent.css"  // resolved to http://domain.mine/mysite/mycontent.css
+  selector: 'textarea',  // change this value according to your HTML
+  content_css : 'mycontent.css'  // resolved to http://domain.mine/mysite/mycontent.css
 });
 ```
 
@@ -35,8 +35,8 @@ tinyMCE.init({
 
 ```js
 tinyMCE.init({
-  selector: "textarea",  // change this value according to your HTML
-  content_css : "mycontent.css,mycontent2.css"  // includes both CSS files in header
+  selector: 'textarea',  // change this value according to your HTML
+  content_css : 'mycontent.css,mycontent2.css'  // includes both CSS files in header
 });
 ```
 
@@ -44,8 +44,8 @@ tinyMCE.init({
 
 ```js
 tinyMCE.init({
-  selector: "textarea",  // change this value according to your HTML
-  content_css: ["mycontent.css", "mycontent2.css"]  // includes both CSS files in header, ability to have CSS with `,` in URL
+  selector: 'textarea',  // change this value according to your HTML
+  content_css: ['mycontent.css', 'mycontent2.css']  // includes both CSS files in header, ability to have CSS with `,` in URL
 });
 ```
 
@@ -57,14 +57,14 @@ One solution is to manually clear the browser cache when the file for `content_c
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  content_css: "path/myfile.css?" + new Date().getTime()
+  selector: 'textarea',  // change this value according to your HTML
+  content_css: 'path/myfile.css?' + new Date().getTime()
 });
 ```
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  content_css: "path/myscript.php?myParam=myValue&bogus=" + new Date().getTime()
+  selector: 'textarea',  // change this value according to your HTML
+  content_css: 'path/myscript.php?myParam=myValue&bogus=' + new Date().getTime()
 });
 ```

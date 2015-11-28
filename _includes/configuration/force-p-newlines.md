@@ -12,7 +12,7 @@ This option enables you to disable/enable the creation of paragraphs on return/e
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
+  selector: 'textarea',  // change this value according to your HTML
   force_p_newlines : true
 });
 ```

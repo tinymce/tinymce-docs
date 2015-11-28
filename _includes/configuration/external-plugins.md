@@ -12,10 +12,10 @@ This value should be set as a JavaScript object that contains a property for eac
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
+  selector: 'textarea',  // change this value according to your HTML
   external_plugins: {
-    "testing": "http://www.testing.com/plugin.min.js",
-    "maths": "http://www.maths.com/plugin.min.js"
+    'testing': 'http://www.testing.com/plugin.min.js',
+    'maths': 'http://www.maths.com/plugin.min.js'
   }
 });
 ```

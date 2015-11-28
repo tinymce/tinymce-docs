@@ -12,26 +12,26 @@ Please note that when using this option, no other image uploader options are nec
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
+  selector: 'textarea',  // change this value according to your HTML
   images_upload_handler: function (blobInfo, success, failure) {
     var xhr, formData;
 
     xhr = new XMLHttpRequest();
     xhr.withCredentials = false;
-    xhr.open('POST', "postAcceptor.php");
+    xhr.open('POST', 'postAcceptor.php');
 
     xhr.onload = function() {
       var json;
 
       if (xhr.status != 200) {
-        failure("HTTP Error: " + xhr.status);
+        failure('HTTP Error: ' + xhr.status);
         return;
       }
 
       json = JSON.parse(xhr.responseText);
 
-      if (!json || typeof json.location != "string") {
-        failure("Invalid JSON: " + xhr.responseText);
+      if (!json || typeof json.location != 'string') {
+        failure('Invalid JSON: ' + xhr.responseText);
         return;
       }
 

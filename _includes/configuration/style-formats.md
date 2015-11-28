@@ -11,7 +11,7 @@ The format of the option is very similar to the formats option, the only differe
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: 'textarea',  // change this value according to your html
   style_formats: [
     {title: 'Bold text', inline: 'b'},
     {title: 'Red text', inline: 'span', styles: {color: '#ff0000'}},
@@ -32,7 +32,7 @@ Another example, this will add two options to the Formats dropdown, one for alig
 
 ```js
 tinymce.init({})
-  selector: "textarea",  // change this value according to your HTML
+  selector: 'textarea',  // change this value according to your HTML
   style_formats: [
     {
       title: 'Image Left',
@@ -68,7 +68,7 @@ If you want to merge your styles to the default `styles_format`, you can use the
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
+  selector: 'textarea',  // change this value according to your HTML
   style_formats_merge: true,
   style_formats: [
       // Your format as described on this page
@@ -84,36 +84,36 @@ The default is very similar to the following:
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
+  selector: 'textarea',  // change this value according to your HTML
   style_formats: [
-    {title: "Headers", items: [
-      {title: "Header 1", format: "h1"},
-      {title: "Header 2", format: "h2"},
-      {title: "Header 3", format: "h3"},
-      {title: "Header 4", format: "h4"},
-      {title: "Header 5", format: "h5"},
-      {title: "Header 6", format: "h6"}
+    {title: 'Headers', items: [
+      {title: 'Header 1', format: 'h1'},
+      {title: 'Header 2', format: 'h2'},
+      {title: 'Header 3', format: 'h3'},
+      {title: 'Header 4', format: 'h4'},
+      {title: 'Header 5', format: 'h5'},
+      {title: 'Header 6', format: 'h6'}
     ]},
-    {title: "Inline", items: [
-      {title: "Bold", icon: "bold", format: "bold"},
-      {title: "Italic", icon: "italic", format: "italic"},
-      {title: "Underline", icon: "underline", format: "underline"},
-      {title: "Strikethrough", icon: "strikethrough", format: "strikethrough"},
-      {title: "Superscript", icon: "superscript", format: "superscript"},
-      {title: "Subscript", icon: "subscript", format: "subscript"},
-      {title: "Code", icon: "code", format: "code"}
+    {title: 'Inline', items: [
+      {title: 'Bold', icon: 'bold', format: 'bold'},
+      {title: 'Italic', icon: 'italic', format: 'italic'},
+      {title: 'Underline', icon: 'underline', format: 'underline'},
+      {title: 'Strikethrough', icon: 'strikethrough', format: 'strikethrough'},
+      {title: 'Superscript', icon: 'superscript', format: 'superscript'},
+      {title: 'Subscript', icon: 'subscript', format: 'subscript'},
+      {title: 'Code', icon: 'code', format: 'code'}
     ]},
-    {title: "Blocks", items: [
-      {title: "Paragraph", format: "p"},
-      {title: "Blockquote", format: "blockquote"},
-      {title: "Div", format: "div"},
-      {title: "Pre", format: "pre"}
+    {title: 'Blocks', items: [
+      {title: 'Paragraph', format: 'p'},
+      {title: 'Blockquote', format: 'blockquote'},
+      {title: 'Div', format: 'div'},
+      {title: 'Pre', format: 'pre'}
     ]},
-    {title: "Alignment", items: [
-      {title: "Left", icon: "alignleft", format: "alignleft"},
-      {title: "Center", icon: "aligncenter", format: "aligncenter"},
-      {title: "Right", icon: "alignright", format: "alignright"},
-      {title: "Justify", icon: "alignjustify", format: "alignjustify"}
+    {title: 'Alignment', items: [
+      {title: 'Left', icon: 'alignleft', format: 'alignleft'},
+      {title: 'Center', icon: 'aligncenter', format: 'aligncenter'},
+      {title: 'Right', icon: 'alignright', format: 'alignright'},
+      {title: 'Justify', icon: 'alignjustify', format: 'alignjustify'}
     ]}
   ]
 });

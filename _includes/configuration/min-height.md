@@ -10,7 +10,7 @@ This option allows you to set the minimum height that a user can stretch the ent
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
+  selector: 'textarea',  // change this value according to your HTML
   min_height: 100
 });
 ```

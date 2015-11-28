@@ -12,7 +12,7 @@ If you set this option to `false` it will never produce `p` tags on enter, or, a
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  forced_root_block : "p"
+  selector: 'textarea',  // change this value according to your HTML
+  forced_root_block : 'p'
 });
 ```

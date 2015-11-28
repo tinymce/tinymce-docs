@@ -8,7 +8,7 @@ This option allows you to set a custom content security policy for the editor's 
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  content_security_policy: "default-src 'self'"
+  selector: 'textarea',  // change this value according to your HTML
+  content_security_policy: 'default-src 'self''
 });
 ```

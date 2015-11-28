@@ -12,7 +12,7 @@ A common use case for this setting is to add editor events to TinyMCE. For insta
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
+  selector: 'textarea',  // change this value according to your HTML
   setup: function(editor) {
     editor.on('click', function(e) {
       console.log('Editor was clicked');

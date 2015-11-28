@@ -12,7 +12,7 @@ This true/false option gives you the ability to turn on/off the visual aid for t
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HRML
+  selector: 'textarea',  // change this value according to your HRML
   visual: false
 });
 ```

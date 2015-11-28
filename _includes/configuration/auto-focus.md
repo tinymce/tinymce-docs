@@ -8,7 +8,7 @@ Automatically set the focus to an editor instance. The value of this option shou
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  auto_focus: "element1"
+  selector: 'textarea',  // change this value according to your HTML
+  auto_focus: 'element1'
 });
 ```

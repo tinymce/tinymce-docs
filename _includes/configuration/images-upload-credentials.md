@@ -12,7 +12,7 @@ This option lets you specify if calls to the configured [`images_upload_url`](im
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
+  selector: 'textarea',  // change this value according to your HTML
   images_upload_credentials: true
 });
 ```

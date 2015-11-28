@@ -12,7 +12,7 @@ This function is executed each time a user clicks on the "browse" buttons in var
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
+  selector: 'textarea',  // change this value according to your HTML
   file_browser_callback: function(field_name, url, type, win) {
     win.document.getElementById(field_name).value = 'my browser value';
   }

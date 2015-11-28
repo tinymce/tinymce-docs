@@ -10,7 +10,7 @@ The option takes an array of regular expression that it will match the contents 
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
+  selector: 'textarea',  // change this value according to your HTML
   protect: [
     /\<\/?(if|endif)\>/g,  // Protect <if> & </endif>
     /\<xsl\:[^>]+\>/g,  // Protect <xsl:...>

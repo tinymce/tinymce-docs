@@ -12,7 +12,7 @@ This option allows you to to split the current container block element if the en
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
+  selector: 'textarea',  // change this value according to your HTML
   end_container_on_empty_block: true
 });
 ```

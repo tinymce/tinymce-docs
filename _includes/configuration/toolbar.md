@@ -12,8 +12,8 @@ To specify the controls that should appear on TinyMCE's toolbar, the `toolbar` o
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  toolbar: "undo redo | styleselect | bold italic | link image"
+  selector: 'textarea',  // change this value according to your HTML
+  toolbar: 'undo redo | styleselect | bold italic | link image'
 });
 ```
 
@@ -31,7 +31,7 @@ To disable the toolbar, the toolbar option should be provided a boolean value of
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
+  selector: 'textarea',  // change this value according to your HTML
     toolbar: false
 });
 ```
@@ -46,10 +46,10 @@ To specify multiple toolbars, the toolbar option should be provided with an arra
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
+  selector: 'textarea',  // change this value according to your HTML
   toolbar: [
-    "undo redo | styleselect | bold italic | link image",
-    "alignleft aligncenter alignright"
+    'undo redo | styleselect | bold italic | link image',
+    'alignleft aligncenter alignright'
   ]
 });
 ```

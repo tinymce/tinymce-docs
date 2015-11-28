@@ -12,7 +12,7 @@ Enabling this option will allow `javascript: urls` in links and images. This is 
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
+  selector: 'textarea',  // change this value according to your HTML
   allow_script_urls: true
 });
 ```

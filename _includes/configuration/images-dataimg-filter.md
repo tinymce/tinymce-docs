@@ -8,9 +8,9 @@ This option lets you specify a filter predicate function for disabling the logic
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
+  selector: 'textarea',  // change this value according to your HTML
   images_dataimg_filter: function(img) {
-    return img.hasAttribute("internal-blob");
+    return img.hasAttribute('internal-blob');
   }
 });
 ```

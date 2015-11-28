@@ -11,7 +11,7 @@ This option should contain the number of undo levels to keep in memory. By defau
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
+  selector: 'textarea',  // change this value according to your HTML
   custom_undo_redo_levels: 10
 });
 ```

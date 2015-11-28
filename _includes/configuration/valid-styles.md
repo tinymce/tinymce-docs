@@ -8,10 +8,10 @@ This option enables you specify the available styles for each element. This mean
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
+  selector: 'textarea',  // change this value according to your HTML
   valid_styles: {
-    "*": "border,font-size",
-    "div": "width,height"
+    '*': 'border,font-size',
+    'div': 'width,height'
   }
 });
 ```

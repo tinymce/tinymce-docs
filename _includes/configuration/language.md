@@ -21,8 +21,8 @@ In this example we will set the editor language to Swedish.
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  language: "sv_SE"
+  selector: 'textarea',  // change this value according to your HTML
+  language: 'sv_SE'
 });
 ```
 

@@ -8,7 +8,7 @@ This option lets you add a custom cache buster URL part at the end of each reque
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  cache_suffix: "?v=4.1.6"
+  selector: 'textarea',  // change this value according to your HTML
+  cache_suffix: '?v=4.1.6'
 });
 ```

@@ -12,7 +12,7 @@ This option allows you to specify whether the editor should parse and keep condi
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
+  selector: 'textarea',  // change this value according to your HTML
   allow_conditional_comments: false
 });
 ```

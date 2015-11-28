@@ -39,7 +39,7 @@ Gets converted into this valid list:
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
+  selector: 'textarea',  // change this value according to your HTML
   fix_list_elements : true
 });
 ```

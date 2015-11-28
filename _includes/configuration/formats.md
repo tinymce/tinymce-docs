@@ -66,7 +66,7 @@ This example overrides some of the built in formats and tells TinyMCE to apply c
 ```js
 // Output elements in HTML style
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: 'textarea',  // change this value according to your html
   formats: {
     alignleft: {selector : 'p,h1,h2,h3,h4,h5,h6,td,th,div,ul,ol,li,table,img', classes : 'left'},
     aligncenter: {selector : 'p,h1,h2,h3,h4,h5,h6,td,th,div,ul,ol,li,table,img', classes : 'center'},
@@ -78,7 +78,7 @@ tinymce.init({
     strikethrough: {inline : 'del'},
     forecolor: {inline : 'span', classes : 'forecolor', styles : {color : '%value'}},
     hilitecolor: {inline : 'span', classes : 'hilitecolor', styles : {backgroundColor : '%value'}},
-    custom_format: {block : 'h1', attributes : {title : "Header"}, styles : {color : red}}
+    custom_format: {block : 'h1', attributes : {title : 'Header'}, styles : {color : red}}
   }
 });
 ```
@@ -117,7 +117,7 @@ It is possible to remove formats via the `removeformat` option.
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
+  selector: 'textarea',  // change this value according to your HTML
   removeformat: [
     {selector: 'b,strong,em,i,font,u,strike', remove : 'all', split : true, expand : false, block_expand: true, deep : true},
     {selector: 'span', attributes : ['style', 'class'], remove : 'empty', split : true, expand : false, deep : true},

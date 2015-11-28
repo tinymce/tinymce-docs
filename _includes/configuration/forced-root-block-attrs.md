@@ -8,10 +8,10 @@ This option enables you specify attributes for the [forced_root_block](#forced_r
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
+  selector: 'textarea',  // change this value according to your HTML
   forced_root_block_attrs: {
-    "class": "myclass",
-    "data-something": "my data"
+    'class': 'myclass',
+    'data-something': 'my data'
   }
 });
 ```

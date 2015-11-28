@@ -8,8 +8,8 @@ This option lets you specify a URL where you want images to be uploaded when you
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  images_upload_url: "postAcceptor.php"
+  selector: 'textarea',  // change this value according to your HTML
+  images_upload_url: 'postAcceptor.php'
 });
 ```
 

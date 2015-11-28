@@ -12,9 +12,9 @@ If this option is enabled the protocol and host part of the URLs returned from t
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
+  selector: 'textarea',  // change this value according to your HTML
   remove_script_host: false
 });
 ```
 
-> If disabled, URLs will be returned in this format: `"http://www.example.com/somedir/somefile.htm"` instead of the default format: `"/somedir/somefile.htm"`.
+> If disabled, URLs will be returned in this format: `'http://www.example.com/somedir/somefile.htm'` instead of the default format: `'/somedir/somefile.htm'`.

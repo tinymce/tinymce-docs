@@ -23,7 +23,7 @@ Examples of this function are below:
 
 ```js
 tinymce.activeEditor.uploadImages(function(success) {
-  $.post("ajax/post.php", tinymce.activeEditor.getContent()).done(function() {
+  $.post('ajax/post.php', tinymce.activeEditor.getContent()).done(function() {
     console.log("Uploaded images and posted content as an ajax request.");
   });
 });
@@ -66,9 +66,9 @@ An example of a typical setup is below:
 
 ```js
 tinymce.init({
-    selector: "textarea",  // change this value according to your HTML
-    images_upload_url: "postAcceptor.php",
-    images_upload_base_path: "/some/basepath",
+    selector: 'textarea',  // change this value according to your HTML
+    images_upload_url: 'postAcceptor.php',
+    images_upload_base_path: '/some/basepath',
     images_upload_credentials: true
 });
 ```
@@ -83,26 +83,26 @@ An example of this setup is below:
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
+  selector: 'textarea',  // change this value according to your HTML
   images_upload_handler: function (blobInfo, success, failure) {
     var xhr, formData;
 
     xhr = new XMLHttpRequest();
     xhr.withCredentials = false;
-    xhr.open('POST', "postAcceptor.php");
+    xhr.open('POST', 'postAcceptor.php');
 
     xhr.onload = function() {
       var json;
 
       if (xhr.status != 200) {
-        failure("HTTP Error: " + xhr.status);
+        failure('HTTP Error: ' + xhr.status);
         return;
       }
 
       json = JSON.parse(xhr.responseText);
 
-      if (!json || typeof json.location != "string") {
-        failure("Invalid JSON: " + xhr.responseText);
+      if (!json || typeof json.location != 'string') {
+        failure('Invalid JSON: ' + xhr.responseText);
         return;
       }
 

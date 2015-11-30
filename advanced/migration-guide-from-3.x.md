@@ -93,12 +93,12 @@ In TinyMCE 3.x all dialogs where HTML files loaded in iframes or separate window
 ```js
 // Open URL based window
 editor.windowManager.open({
-    title: "My dialog",
+    title: 'My dialog',
     width: 500,
     height: 400,
-    url: "somepage.html"
+    url: 'somepage.html'
 }, {
-    someArg: "someValue"
+    someArg: 'someValue'
 });
 ```
 

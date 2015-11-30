@@ -15,7 +15,7 @@ By far the most important setting when opening a notification, the "text" proper
 
 ```js
 editor.notificationManager.open({
-  text: "A test informational notification."
+  text: 'A test informational notification.'
 });
 ```
 
@@ -32,8 +32,8 @@ To set a notification type, set the "type" property when opening the notificatio
 
 ```js
 editor.notificationManager.open({
-  text: "A test informational notification.",
-  type: "info"
+  text: 'A test informational notification.',
+  type: 'info'
 });
 ```
 
@@ -43,7 +43,7 @@ By setting the "timeout" property, the notification will automatically close aft
 
 ```js
 editor.notificationManager.open({
-  text: "A test notification that will close automatically after 5 seconds.",
+  text: 'A test notification that will close automatically after 5 seconds.',
   timeout: 5000
 });
 ```
@@ -54,7 +54,7 @@ By setting the "closeButton" property to false in conjunction with a non-zero ti
 
 ```js
 editor.notificationManager.open({
-  text: "A test notification that will close automatically after 5 seconds and has the close button disabled.",
+  text: 'A test notification that will close automatically after 5 seconds and has the close button disabled.',
   timeout: 5000,
   closeButton: false
 });
@@ -66,8 +66,8 @@ By setting the "icon" property, the notification will display an icon to the lef
 
 ```js
 editor.notificationManager.open({
-  text: "A test notification that contains a bold icon.",
-  icon: "bold"
+  text: 'A test notification that contains a bold icon.',
+  icon: 'bold'
 });
 ```
 
@@ -77,7 +77,7 @@ By setting the "progressBar" property to true, the notification will display a p
 
 ```js
 var notification = editor.notificationManager.open({
-  text: "A test notification that contains a progress bar.",
+  text: 'A test notification that contains a progress bar.',
   progressBar: true
 });
 ```

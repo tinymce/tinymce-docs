@@ -14,7 +14,7 @@ In TinyMCE 3.x all dialogs where HTML pages that got loaded into a iframe or win
 ```js
 // Opens a HTML page inside a TinyMCE dialog
 editor.windowManager.open({
-  title: "My html dialog",
+  title: 'My html dialog',
   url: 'mydialog.html',
   width: 700,
   height: 600
@@ -26,13 +26,13 @@ You can also pass in parameters to the dialog just as you could in 3.x by using 
 ```js
 // Opens a HTML page inside a TinyMCE dialog and pass in two parameters
 editor.windowManager.open({
-  title: "My html dialog",
+  title: 'My html dialog',
   url: 'mydialog.html',
   width: 700,
   height: 600
 }, {
   arg1: 42,
-  arg2: "Hello world"
+  arg2: 'Hello world'
 });
 ```
 

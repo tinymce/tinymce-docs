@@ -57,9 +57,9 @@ Include any key values pairs and method options that are required to enable a us
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "codesample",
-  toolbar: "codesample"
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'codesample',
+  toolbar: 'codesample'
 });
 ```
 
@@ -68,8 +68,8 @@ This is not:
 ```js
 tinymce.init({
   ...
-  plugins: "codesample",
-  toolbar: "codesample"
+  plugins: 'codesample',
+  toolbar: 'codesample'
   ...
 });
 ```

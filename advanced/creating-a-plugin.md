@@ -36,8 +36,8 @@ You can also have the plugin in any location you want by loading the plugin.js/p
 ## Example of loading the plugin from another URL
 
 ```html
-<script src="/tinymce/js/tinymce.min.js"></script>
-<script src="/scripts/my.tinymce.plugin.js"></script>
+<script src='/tinymce/js/tinymce.min.js'></script>
+<script src='/scripts/my.tinymce.plugin.js'></script>
 <script>
 tinymce.init({..});
 </script>
@@ -103,7 +103,7 @@ tinymce.init({
 
 ## Language localization
 
-If you want to have custom translations for your plugin you need to create a "langs" directory in your plugin directory. TinyMCE will then try to load language files based on the specified language core for example if the language is "sv_SE" it will try to load "<your plugin>/langs/sv_SE.js".
+If you want to have custom translations for your plugin you need to create a "langs" directory in your plugin directory. TinyMCE will then try to load language files based on the specified language core for example if the language is "sv_SE" it will try to load ```'<your plugin>/langs/sv_SE.js'```.
 
 This file is similar to .po files it has the English string on the left side and the translated string on the right side.
 
@@ -111,7 +111,7 @@ This file is similar to .po files it has the English string on the left side and
 
 ```js
 tinymce.addI18n('sv_SE', {
-  "Example plugin": "Exempel plugin"
+  'Example plugin': 'Example plugin'
 });
 ```
 

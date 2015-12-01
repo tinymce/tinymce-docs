@@ -8,6 +8,15 @@ class: changelog
 
 {% capture changelog %}
 
+## Version 4.3.1 - November 26, 2015
+
+* Fixed so it's possible to disable the table inline toolbar by setting it to false or an empty string.
+* Fixed bug where it wasn't possible to resize some tables using the drag handles.
+* Fixed bug where unique id:s would clash for multiple editor instances and cE=false selections.
+* Fixed bug where the same plugin could be initialized multiple times.
+* Fixed bug where the table inline toolbars would be displayed at the same time as the image toolbars.
+* Fixed bug where the table selection rect wouldn't be removed when selecting another control element.
+
 ## Version 4.3.0 - November 23, 2015
 
 * Added new table column/row resize support. Makes it a lot more easy to resize the columns/rows in a table.

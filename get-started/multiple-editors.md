@@ -18,12 +18,12 @@ In the following example, the page is broken into two separate editable areas, e
 <!DOCTYPE html>
 <html>
 <head>
-  <script src='{{ site.cdnurl }}'></script>
-  <script>
-    tinymce.init({
-      selector: '.myeditablediv',
-      inline: true
-    });
+  <script src="{{ site.cdnurl }}"></script>
+  <script type="text/javascript">
+  tinymce.init({
+    selector: '.myeditablediv',
+    inline: true
+  });
   </script>
 </head>
 
@@ -50,33 +50,33 @@ In this next example each editable area will be loaded with an instance of TinyM
 <!DOCTYPE html>
 <html>
 <head>
-  <script src='{{ site.cdnurl }}'></script>
-  <script>
-    tinymce.init({
-      selector: '#myeditable-h1',
-      inline: true,
-      menubar: false,
-      toolbar: 'undo redo'
-    });
+  <script src="{{ site.cdnurl }}"></script>
+  <script type="text/javascript">
+  tinymce.init({
+    selector: '#myeditable-h1',
+    inline: true,
+    menubar: false,
+    toolbar: 'undo redo'
+  });
   </script>
   <script>
-    tinymce.init({
-      selector: '#myeditable-div',
-      inline: true
-    });
+  tinymce.init({
+    selector: '#myeditable-div',
+    inline: true
+  });
   </script>
 </head>
 
 <body>
-    <form method="post">
-     <h1 id="myeditable-h1">This Title Can Be Edited If You Click Here</h1>
-    </form>
+  <form method="post">
+    <h1 id="myeditable-h1">This Title Can Be Edited If You Click Here</h1>
+  </form>
 
-    <form method="post">
-      <div id="myeditable-div">
-        <p>This section of content can be edited. Click here to see how.</p>
-      </div>
-    </form>
+  <form method="post">
+    <div id="myeditable-div">
+      <p>This section of content can be edited. Click here to see how.</p>
+    </div>
+  </form>
 </body>
 </html>
 ```

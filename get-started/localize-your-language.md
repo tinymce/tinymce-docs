@@ -44,9 +44,9 @@ If you want to try it for yourself, [click here to directly download](http://arc
 <!DOCTYPE html>
 <html>
 <head>
-  <script src='js/tinymce.min.js'></script>
-  <script>
-    tinymce.init({
+  <script src="js/tinymce.min.js"></script>
+  <script type="text/javascript">
+  tinymce.init({
     selector: 'textarea',
     language: 'zh_CN',
     directionality: 'rtl'

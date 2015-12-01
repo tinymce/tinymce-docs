@@ -1,0 +1,29 @@
+box: kilianciuffolo/tinymce-docs:latest
+no-response-timeout: 30
+
+build:
+  steps:
+    - add-to-known_hosts:
+        hostname: github.com
+    - add-ssh-key:
+        keyname: SSH_KEY
+    - script:
+        name: install moxiedoc
+        code: npm i -g ephox/moxiedoc#feature/tinymcenext
+    - script:
+        name: build
+        code: _scripts/build.sh
+
+deploy:
+  steps:
+    - script:
+        name: set $S3_BUCKET env
+        code: export S3_BUCKET="$S3_BUCKET/$WERCKER_GIT_BRANCH/"
+    - s3sync:
+        key-id: $S3_KEY
+        key-secret: $S3_SECRET
+        bucket-url: $S3_BUCKET
+        source-dir: $S3_SOURCE
+  after-steps:
+    - slack-notifier:
+        url: $SLACK_WEBHOOK_URL

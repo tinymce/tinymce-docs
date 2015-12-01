@@ -37,7 +37,7 @@ Example of loading the compat3x **before** `tinymce.init`:
 ```html
 <script src="/tinymce/tinymce.min.js"></script>
 <script src="/tinymce/plugins/compat3x/plugin.min.js"></script>
-<script>
+<script type="text/javascript">
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   external_plugins: {

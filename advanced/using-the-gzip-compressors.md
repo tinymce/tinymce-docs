@@ -12,8 +12,8 @@ The [TinyMCE gzip compressors](http://archive.tinymce.com/download/compressors.p
 #### Example using the tinymce.gzip.js
 
 ```html
-<script src='/js/tinymce/tinymce.gzip.js'></script>
-<script>
+<script src="/js/tinymce/tinymce.gzip.js"></script>
+<script type="text/javascript">
 tinymce.init({
     selector: 'textarea',
     plugins: 'image link'
@@ -24,8 +24,8 @@ tinymce.init({
 #### Example using the jQuery plugin
 
 ```html
-<script src='//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js'></script>
-<script src='js/tinymce/jquery.tinymce.min.js'></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script src="js/tinymce/jquery.tinymce.min.js"></script>
 <script>
  $(function() {
      $('textarea.tinymce').tinymce({

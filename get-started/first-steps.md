@@ -37,9 +37,9 @@ In this example, let's replace `<textarea id='mytextarea'>` with a TinyMCE edito
 <head>
   <script src='{{ site.cdnurl }}'></script>
   <script>
-    tinymce.init({
-      selector: '#mytextarea'
-    });
+  tinymce.init({
+    selector: '#mytextarea'
+  });
   </script>
 </head>
 

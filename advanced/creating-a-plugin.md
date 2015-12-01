@@ -36,11 +36,8 @@ You can also have the plugin in any location you want by loading the plugin.js/p
 ## Example of loading the plugin from another URL
 
 ```html
-<script src='/tinymce/js/tinymce.min.js'></script>
-<script src='/scripts/my.tinymce.plugin.js'></script>
-<script>
-tinymce.init({..});
-</script>
+<script src="/tinymce/js/tinymce.min.js"></script>
+<script src="/scripts/my.tinymce.plugin.js"></script>
 ```
 
 ## Example plugin

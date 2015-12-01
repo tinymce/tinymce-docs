@@ -20,8 +20,12 @@ Let's start with a simple code snippet you can paste into an empty `html` file (
 <!DOCTYPE html>
 <html>
 <head>
-  <script src='https:{{ site.cdnurl }}'></script>
-  <script>tinymce.init({ selector: 'textarea' });</script>
+  <script src="https:{{ site.cdnurl }}"></script>
+  <script type="text/javascript">
+  tinymce.init({
+    selector: 'textarea'
+  });
+  </script>
 </head>
 
 <body>

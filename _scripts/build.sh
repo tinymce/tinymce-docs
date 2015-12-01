@@ -12,7 +12,7 @@ echo ""
 echo " > exporting data files for tinymce: $API_VERSION"
 
 mkdir "$API_TMPDIR"
-curl -s $TARBALL_URL | tar xzf - -C "$API_TMPDIR" --strip-components 1
+curl -s "$TARBALL_URL" | tar xzf - -C "$API_TMPDIR" --strip-components 1
 moxiedoc "$API_TMPDIR/js/tinymce/classes" -t tinymcenext -o "$API_TMPDIR/tinymce-api-reference.zip"
 unzip -q -o "$API_TMPDIR/tinymce-api-reference.zip"
 

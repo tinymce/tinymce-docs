@@ -5,11 +5,11 @@
     $ git clone git@github.com:tinymce/tinymce-docs.git
     $ cd tinymce-docs
     $ sudo gem install bundle
-    $ ./init.sh
+    $ ./_scripts/init.sh
 
 ### Run development version
 
-    $ ./serve.sh
+    $ ./_scripts/serve.sh
 
 Navigate to http://127.0.0.1:4000/
 

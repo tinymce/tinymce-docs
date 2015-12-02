@@ -4,8 +4,7 @@ set -e
 
 BASEURL="$(_scripts/get-baseurl.sh)"
 
-echo ""
-echo " > setting baseurl to: $BASEURL"
+echo -e "\n > setting baseurl to: $BASEURL"
 echo "baseurl: \"$BASEURL\"" > _config-prod.yml
 
 echo -e " > builidng documentation\n"

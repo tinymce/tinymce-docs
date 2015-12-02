@@ -1,5 +1,7 @@
 ## TinyMCE documentation
 
+[![wercker status](https://app.wercker.com/status/4d4c743635332430f9d25acae1be5218/s/master "wercker status")](https://app.wercker.com/project/bykey/4d4c743635332430f9d25acae1be5218)
+
 ### First time setup
 
     $ git clone git@github.com:tinymce/tinymce-docs.git

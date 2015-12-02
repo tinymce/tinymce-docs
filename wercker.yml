@@ -22,17 +22,16 @@ build:
 
 deploy:
   steps:
-    - script:
-        name: set $S3_BUCKET env
-        code: export S3_BUCKET="$S3_BUCKET/$WERCKER_GIT_BRANCH/"
     - s3sync:
         key-id: $S3_KEY
         key-secret: $S3_SECRET
-        bucket-url: $S3_BUCKET
+        bucket-url: $S3_BUCKET/$WERCKER_GIT_BRANCH/
         source-dir: $S3_SOURCE
-  after-steps:
+        opts: --delete-removed
     - script:
         name: s3 cleanup
         code: _scripts/s3-cleanup.sh
+
+  after-steps:
     - slack-notifier:
         url: $SLACK_WEBHOOK_URL

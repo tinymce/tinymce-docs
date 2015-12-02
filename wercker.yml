@@ -10,6 +10,9 @@ build:
     - script:
         name: install moxiedoc
         code: npm i -g ephox/moxiedoc#feature/tinymcenext
+    - bundle-install:
+        deployment: true
+        jobs: 10
     - script:
         name: build
         code: _scripts/build.sh

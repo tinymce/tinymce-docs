@@ -16,9 +16,6 @@ curl -s "$TARBALL_URL" | tar xzf - -C "$API_TMPDIR" --strip-components 1
 moxiedoc "$API_TMPDIR/js/tinymce/classes" -t tinymcenext -o "$API_TMPDIR/tinymce-api-reference.zip"
 unzip -q -o "$API_TMPDIR/tinymce-api-reference.zip"
 
-echo " > installing gems"
-bundle install --deployment --quiet --jobs=10
-
 echo " > setting baseurl to: $BASEURL"
 echo "baseurl: \"$BASEURL\"" > _config-prod.yml
 

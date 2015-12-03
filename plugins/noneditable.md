@@ -93,7 +93,7 @@ tinymce.init({
 
 ### `noneditable_regexp`
 
-This option allows you to specify a regular expression or array of regular expressions that TinyMCE will use to determine which areas of content are noneditable when using the `noneditable` plugin.
+This option allows you to specify a regular expression or array of regular expressions that TinyMCE will use to determine which areas of content are noneditable when using the `noneditable` plugin. Remember the regexps needs to be global so that all of the matches within the document gets converted.
 
 **Type:** `String`
 
@@ -103,6 +103,6 @@ This option allows you to specify a regular expression or array of regular expre
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "noneditable",
-  noneditable_regexp: "<a href=\"(.*?)\"></a>"
+  noneditable_regexp: [/<custom-token>/g]
 });
 ```

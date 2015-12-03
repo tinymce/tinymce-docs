@@ -8,6 +8,7 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN \
   apt-get update && \
   apt-get install --no-install-recommends -y -q \
+    awscli \
     ruby \
     ruby-dev \
     rubygems \
@@ -21,9 +22,3 @@ RUN \
   rm -rf /var/lib/{apt,dpkg,cache,log}/
 
 RUN gem install bundle
-
-WORKDIR /tinymce-docs
-COPY Gemfile ./
-COPY Gemfile.lock ./
-
-RUN bundle install --deployment

@@ -17,5 +17,4 @@ fi
 echo " > creating dummy API ref data file"
 echo [] > _data/nav_api.json
 
-echo " > done"
-echo ""
+echo -e " > done\n"

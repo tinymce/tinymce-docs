@@ -11,7 +11,9 @@ If helping developers build great stuff by getting them in and out of technical 
 
 ## How to contribute to TinyMCE's documentation
 
-### Firstly, how can you help?
+**tl;dr** Here's a quick way to improve the docs if you find an error or would like to suggest an improvement: in the footer of every page you'll see the text "Was this article helpful?" Click "no", click the "opening an issue" link and voila you can submit a GitHub issue.
+
+### So, how can you help?
 
 We welcome people with technical writing experience to help make TinyMCE's docs as useful to our community as possible. You don't need to be an expert developer to contribute, but a basic understanding of software development is helpful.
 

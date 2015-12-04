@@ -17,7 +17,7 @@ Here is a list of the toolbar/menu controls that the core and plugins provides. 
 | bold | core | Applies the bold format to the current selection. |
 | italic | core |Applies the italic format to the current selection. |
 | underline | core | Applies the underline format to the current selection. |
-| strikethrough | core | Applies strikethough format to the current selection. |
+| strikethrough | core | Applies strike though format to the current selection. |
 | alignleft | core | Left aligns the current block or image. |
 | aligncenter | core | Left aligns the current block or image. |
 | alignright | core | Right aligns the current block or image. |
@@ -44,7 +44,7 @@ Here is a list of the toolbar/menu controls that the core and plugins provides. 
 | unlink | [link]({{ site.baseurl }}/plugins/link/) | Removes links from the current selection. |
 | image | [image]({{ site.baseurl }}/plugins/image/) | Creates/Edits images within the editor. |
 | charmap | [charmap]({{ site.baseurl }}/plugins/charmap/) | Inserts custom characters into the editor. |
-| pastetext | [paste]({{ site.baseurl }}/plugins/paste/) | Toggles plain text pasting mode on/off. | 
+| pastetext | [paste]({{ site.baseurl }}/plugins/paste/) | Toggles plain text pasting mode on/off. |
 | print | [print]({{ site.baseurl }}/plugins/print/) | Prints the current editor contents. |
 | preview | [preview]({{ site.baseurl }}/plugins/preview/) | Previews the current editor contents. |
 | anchor | [anchor]({{ site.baseurl }}/plugins/anchor/) | Creates/Edits anchor elements. |
@@ -76,17 +76,17 @@ Here is a list of the toolbar/menu controls that the core and plugins provides. 
 | newdocument | core | Creates a new document. |
 | undo | core | Undoes the last operation. |
 | redo | core | Redoes the last undoed operation. |
-| visualaid | core | Toogles visual aids on/off. |
+| visualaid | core | Toggles visual aids on/off. |
 | cut | core | Cuts the current selection into clipboard. |
 | copy | core | Copies the current selection into clipboard. |
 | paste | core | Pastes the current clipboard contents into editor. |
 | selectall | core | Selects all the editor contents. |
 | bold | core | Applies bold format to current selection. |
-| italic | core | Applies bold format to current selection. |
-| underline | core | Applies bold format to current selection. |
-| strikethrough | core | Applies bold format to current selection. |
-| subscript | core | Applies bold format to current selection. |
-| superscript | core | Applies bold format to current selection. |
+| italic | core | Applies italic format to current selection. |
+| underline | core | Applies underline format to current selection. |
+| strikethrough | core | Applies strikethrough format to current selection. |
+| subscript | core | Applies subscript format to current selection. |
+| superscript | core | Applies superscript format to current selection. |
 | removeformat | core | Removes all formats form the current selection. |
 | formats | core | Menu of all available formats. |
 | link | [link]({{ site.baseurl }}/plugins/link/) | Opens the link dialog. |

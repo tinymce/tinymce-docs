@@ -20,4 +20,4 @@ Navigate to http://127.0.0.1:4000/
 ### Contribute to TinyMCE
 
 If you would like to contribute to the TinyMCE project please read our contributor's guide:
-http://www.tinymce.com/docs/advanced/contributing-to-open-source/
+https://www.tinymce.com/docs/advanced/contributing-docs/

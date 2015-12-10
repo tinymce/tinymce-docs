@@ -2,8 +2,8 @@
 layout: default
 title: ASP.NET MVC Upload Handler
 title_nav: ASP.NET MVC Upload Handler
-description_short: A server-side upload hander ASP.NET MVC script.
-description: A server-side upload hander ASP.NET MVC script suiteable for TinyMCE.
+description_short: A server-side upload handler ASP.NET MVC script.
+description: A server-side upload hander ASP.NET MVC script suitable for TinyMCE.
 keywords: asp_net_mvc_upload_handler async image upload
 ---
 

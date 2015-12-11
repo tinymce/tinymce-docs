@@ -27,7 +27,7 @@ These settings affect the execution of the `table` plugin and let you modify the
 
 ### `table_toolbar`
 
-This option allows you to specify the buttons and the order that they will appear on TinyMCE's inline contextual toolbar for tables.  To specify the controls that should appear on TinyMCE's table toolbar, the `table_toolbar` option should be provided with a space separated list of toolbar controls. To create groups within this list, please add `|` pipe characters between the groups of controls that you would like to create.
+This option allows you to specify the buttons and the order that they will appear on TinyMCE's inline contextual toolbar for tables.  To specify the controls that should appear on TinyMCE's table toolbar, the `table_toolbar` option should be provided with a space separated list of toolbar controls. To create groups within this list, please add `|` pipe characters between the groups of controls that you would like to create. If you want to disable this toolbar simply set the value to an empty string.
 
 **Type:** `String`
 

@@ -51,7 +51,7 @@ Please see the [Spell Checker Plugin]({{ site.baseurl }}/plugins/spellchecker/) 
 
 For developers requiring robust, enterprise-grade, spell check as-you-type functionality, you need the [Spell Checker Pro plugin]({{ site.baseurl }}/plugins/tinymcespellchecker/). Spell Checker Pro requires both a client-side plugin to be configured and a server-side component to be installed and configured.
 
-Full documentation can be found in the TinyMCE Enterprise [documentation for Spelling](http://docs.ephox.com/display/TinyMCEEnterprise/Spell+Checking). Learn more about [TinyMCE Enterprise here](http://beta.tinymce.com/pricing/).
+Full documentation can be found in the TinyMCE Enterprise [documentation for Spelling](http://docs.ephox.com/display/TinyMCEEnterprise/Spell+Checking). Learn more about [TinyMCE Enterprise here](http://www.tinymce.com/pricing/).
 
 {% assign_page next_page = "/get-started/filter-content/index.html" %}
 {% include next-step.html next=next_page %}

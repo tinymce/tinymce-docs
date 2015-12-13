@@ -38,7 +38,7 @@ Confirm that the language has been set successfully by loading TinyMCE.
 
 We have prepared a code snippet below that would set TinyMCE's language to Chinese and text directionality right-to-left.
 
-If you want to try it for yourself, [click here to directly download](http://archive.tinymce.com/i18n/download.php?download=zh_CN) the Chinese language pack. You'll also need a *local instance* of TinyMCE, which you can grab from our [downloads page](http://beta.tinymce.com/download/). Follow the [SDK install instructions]({{ site.baseurl }}/get-started/advanced-install/#sdkinstall) if you're not familiar with setting up TinyMCE locally.
+If you want to try it for yourself, [click here to directly download](http://archive.tinymce.com/i18n/download.php?download=zh_CN) the Chinese language pack. You'll also need a *local instance* of TinyMCE, which you can grab from our [downloads page](http://www.tinymce.com/download/). Follow the [SDK install instructions]({{ site.baseurl }}/get-started/advanced-install/#sdkinstall) if you're not familiar with setting up TinyMCE locally.
 
 ```html
 <!DOCTYPE html>

@@ -1,6 +1,6 @@
 # boilerplate
-FROM kilianciuffolo/node:4.2.2
-MAINTAINER kilian@lukibear.com
+FROM ephox/node:4.2.2
+MAINTAINER ephoxServices, ops@textbox.io
 
 ENV DEBIAN_FRONTEND noninteractive
 

@@ -27,4 +27,4 @@ tinymce.init({
 });
 ```
 
-If all you need is to control which menus are available and/or in what order, see the [menubar parameter](#menu_bar).
+If all you need is to control which menus are available and/or in what order, see the [menubar parameter](#menubar).

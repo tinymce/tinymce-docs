@@ -11,13 +11,13 @@ Creating a new skin will allow you to alter the appearance of TinyMCE. If you wo
 
 ## Preparation
 
-In order to manually build the `less` files you will have to download the [TinyMCE development package](http://archive.tinymce.com/download/download.php). This package contains the source code for the entire TinyMCE project and the `less` files needed to skin the editor. You will also need to install node js and the NPM node module dependencies needed for the build process. This [readme.md](https://github.com/tinymce/tinymce/blob/master/readme.md) file explains how to manually build TinyMCE.
+In order to manually build the `less` files you will have to download the [TinyMCE development package](https://www.tinymce.com/download/). This package contains the source code for the entire TinyMCE project and the `less` files needed to skin the editor or use the [GitHub version](https://github.com/tinymce/tinymce/). You will also need to install [Node.js](https://nodejs.org) and the NPM node module dependencies needed for the build process. This [readme.md](https://github.com/tinymce/tinymce/blob/master/readme.md) file explains how to manually build TinyMCE.
 
 ## Building skin.min.css from less files
 
-Start by making a copy of the default skin "lightgray" and place it in the skins directory (i.e. the same directory that contains the "lightgray" skin). The next step is to issue the "jake less" command from your console, ensuring you are in the root directory of TinyMCE. This command will automatically build CSS files out of the `less` files contained in the skins directories.
+Start by making a copy of the default skin "lightgray" and place it in the skins directory (i.e. the same directory that contains the "lightgray" skin). The next step is to issue the `grunt less` command from your console. This command will automatically build CSS files out of the `less` files contained in the skins directories. You can also use `grunt watch` and it will automatically build the skin when changes are made to the less files. 
 
-The build process will produce four CSS files: skin.min.css, skin.ie7.min.css, content.min.css and content.inline.min.css. The ones prefixed with content are the ones used for the content inside the editor. These files contain CSS for normalizing editing behavior and the appearance for things like video placeholders. The skin.min.css is used for the UI and the skin.ie7.min.css is used for IE7 users. This is a separate file since this will be removed when we drop IE 7 support in the future.
+The build process will produce four CSS files: skin.min.css, skin.ie7.min.css, content.min.css and content.inline.min.css. The ones prefixed with content are the ones used for the content inside the editor. These files contain CSS for normalizing editing behavior and the appearance for things like video placeholders. The ones prefixed with skin are the files used to render the UI.
 
 ## Modifying the less files
 
@@ -27,6 +27,6 @@ Most things can be modified by altering the Variables.less file as it contains v
 
 The icons shipped with the default skin are created by the [IcoMoon](http://icomoon.io/) project and are embedded as web fonts, making them retina ready and easy to skin. If you need different icons you can further explore what they offer.
 
-You can import the existing TinyMCE icons by uploading the "icomoon.dev.svg" file and then adding and/or changing the icons that are provided. Adding more icons requires you to alter the Icons.less file and Icons.ie7.less file.
+You can import the existing TinyMCE icons by uploading the "icomoon.dev.svg" file and then adding and/or changing the icons that are provided. Adding more icons requires you to alter the Icons.less file.
 
 There are a few images that are used for placeholders within the contents of the editor.

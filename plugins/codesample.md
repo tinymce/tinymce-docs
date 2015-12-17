@@ -20,13 +20,14 @@ By default `codesample` uses http://prismjs.com/ to embed the code samples withi
 ```js
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
-  plugins: "codesample"
+  plugins: "codesample",
+  toolbar: "codesample"
 });
 ```
 
 ##### Using Prism.js on your web page
 
-You need to add prism.js and prism.css to you page in order to get syntax highlighted code samples on your webpage created by the codesample plugin. The codesample plugin uses the following languages markup, javascript, css, php, ruby, python, java, c, csharp and cpp. You can generate the prism.js and prism.css files on the [download](http://prismjs.com/download.html) page at the prism website.
+You need to add prism.js and prism.css to you page in order to get syntax highlighted code samples on your webpage created by the Code Sample plugin. The Code Sample plugin uses the following languages markup, javascript, css, php, ruby, python, java, c, csharp and cpp. You can generate the prism.js and prism.css files on the [download](http://prismjs.com/download.html) page at the prism website.
 
 ##### Example of using the Prism.js script
 

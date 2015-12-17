@@ -15,18 +15,21 @@ This plugin demonstrates the support for the new block based `contenteditable=fa
 
 By default `codesample` uses http://prismjs.com/ to embed the code samples within the editor and works out of the box. That is, when a user copies valid code syntax into the editable area the code will be automatically formatted according to Prism default CSS rules.
 
+> Note: you do need to add prism.js and prism.css to a page for syntax highlighting to work. See the instructions below to learn how to do this.
+
 ##### Example
 
 ```js
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
-  plugins: "codesample"
+  plugins: "codesample",
+  toolbar: "codesample"
 });
 ```
 
 ##### Using Prism.js on your web page
 
-You need to add prism.js and prism.css to you page in order to get syntax highlighted code samples on your webpage created by the codesample plugin. The codesample plugin uses the following languages markup, javascript, css, php, ruby, python, java, c, csharp and cpp. You can generate the prism.js and prism.css files on the [download](http://prismjs.com/download.html) page at the prism website.
+You need to add `prism.js` and `prism.css` to your page in order to get the syntax highlighted code samples on your webpage (as created by the Code Sample plugin). The Code Sample plugin uses the following languages: markup, javascript, css, php, ruby, python, java, c, csharp and cpp. You can generate the `prism.js` and `prism.css` files on the [download](http://prismjs.com/download.html) page at the Prism website.
 
 ##### Example of using the Prism.js script
 

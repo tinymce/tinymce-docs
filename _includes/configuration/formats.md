@@ -2,7 +2,7 @@
 
 This option enables you to override and add custom "formats" to the editor.
 
-A format is the style that get applied to text when you press, for example, the bold button inside the editor. TinyMCE is equipped with a text formatter engine that enables you to specify exactly what it should produce when the user clicks (in this example) the bold button.
+A format is the style that gets applied to text when you press, for example, the bold button inside the editor. TinyMCE is equipped with a text formatter engine that enables you to specify exactly what it should produce when the user clicks (in this example) the bold button.
 
 Check out the [custom formats example]({{ site.baseurl }}/demo/format-custom/) for a demonstration of this option.
 

@@ -63,7 +63,7 @@ Here, `selector` is being used in inline editing mode on a `div` element with `i
 
 ```js
 tinymce.init({
-  selector: 'div#editable'
+  selector: 'div#editable',
   inline: true
 });
 ```

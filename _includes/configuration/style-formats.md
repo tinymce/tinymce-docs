@@ -31,7 +31,7 @@ Another example, this will add two options to the Formats dropdown, one for alig
 ##### Example
 
 ```js
-tinymce.init({})
+tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   style_formats: [
     {

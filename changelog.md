@@ -16,7 +16,7 @@ class: changelog
 * Added new charmap option that lets you override the default charmap of the charmap plugin.
 * Added new charmap_append option that lets you add new characters to the default charmap of the charmap plugin.
 * Added new insertCustomChar event that gets fired when a character is inserted by the charmap plugin.
-* Fixed bug where table cells started with a superfluous &nbsp; in IE10+.
+* Fixed bug where table cells started with a superfluous `&nbsp;` in IE10+.
 * Fixed bug where table plugin would retain all BR tags when cells were merged.
 * Fixed bug where media plugin would strip underscores from youtube urls.
 * Fixed bug where IME input would fail on IE 11 if you typed within a table.

@@ -121,7 +121,7 @@ The upload script URL origin must exactly match the origin of the URL in the add
 
 All supported browsers will print a message to the JavaScript console if there is a CORS error.
 
-The [PHP Upload Handler Script]({{ site.baseurl }}/demo/php-upload-handler/) provided here configures CORS in the `$accepted_origins` variable. You may choose to configure CORS at the [web application layer](http://www.w3.org/wiki/CORS_Enabled#At_the_Web_Application_level...) or the [HTTP server layer](http://www.w3.org/wiki/CORS_Enabled#At_the_HTTP_Server_level...).
+The [PHP Upload Handler Script]({{ site.baseurl }}/advanced/php-upload-handler/) provided here configures CORS in the `$accepted_origins` variable. You may choose to configure CORS at the [web application layer](http://www.w3.org/wiki/CORS_Enabled#At_the_Web_Application_level...) or the [HTTP server layer](http://www.w3.org/wiki/CORS_Enabled#At_the_HTTP_Server_level...).
 
 ### Further reading on CORS
 

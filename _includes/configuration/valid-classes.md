@@ -1,17 +1,26 @@
 ## valid_classes
 
-This option enables you specify the available styles for each element. This means you can force ordering and only specific styles will be valid within style attribute values. Specify the element name, then it's styles or `*` for all elements.
+This option enables you to restrict the classes that are valid for specific elements. This option takes two formats: one string format that is a simple list of allowed global classes, and a more complex object format where you can specify classes for individual elements.
 
-**Type:** `Object`
+**Type:** `String`, `Object`
 
-##### Example
+##### Example simple global classes
 
 ```js
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  valid_styles: {
-    '*': 'border,font-size',
-    'div': 'width,height'
+  valid_classes: 'class1 class2 class3'
+});
+```
+
+##### Example element specific classes
+
+```js
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  valid_classes: {
+    '*': 'class1 class2 class3', // Global classes
+    'a': 'class4 class5' // Link specific classes
   }
 });
 ```

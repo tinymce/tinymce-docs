@@ -8,6 +8,27 @@ class: changelog
 
 {% capture changelog %}
 
+## Version 4.3.4 - February 11, 2016
+* Added new OpenWindow/CloseWindow events that gets fired when windows open/close.
+* Added new NewCell/NewRow events that gets fired when table cells/rows are created.
+* Added new Promise return value to tinymce.init makes it easier to handle initialization.
+* Removed the jQuery version the jQuery plugin is now moved into the main package.
+* Removed jscs from build process since eslint can now handle code style checking.
+* Fixed various bugs with drag/drop of contentEditable:false elements.
+* Fixed bug where deleting of very specific nested list items would result in an odd list.
+* Fixed bug where lists would get merged with adjacent lists outside the editable inline root.
+* Fixed bug where MS Edge would crash when closing a dialog then clicking a menu item.
+* Fixed bug where table cell selection would add undo levels.
+* Fixed bug where table cell selection wasn't removed when inline editor where removed.
+* Fixed bug where table cell selection wouldn't work properly on nested tables.
+* Fixed bug where table merge menu would be available when merging between thead and tbody.
+* Fixed bug where table row/column resize wouldn't get properly removed when the editor was removed.
+* Fixed bug where Chrome would scroll to the editor if there where a empty hash value in document url.
+* Fixed bug where the cache suffix wouldn't work correctly with the importcss plugin.
+* Fixed bug where selection wouldn't work properly on MS Edge on Windows Phone 10.
+* Fixed so adjacent pre blocks gets joined into one pre block since that seems like the user intent.
+* Fixed so events gets properly dispatched in shadow dom. Patch provided by Nazar Mokrynskyi.
+
 ## Version 4.3.3 - January 14, 2016
 
 * Added new table_resize_bars configuration setting. This setting allows you to disable the table resize bars.

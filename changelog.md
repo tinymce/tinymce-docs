@@ -8,6 +8,11 @@ class: changelog
 
 {% capture changelog %}
 
+## Version 4.3.7 - March 2, 2016
+* Fixed bug where incorrect icons would be rendered for imagetools edit and color levels.
+* Fixed bug where navigation using arrow keys inside a SelectBox didn't move up/down.
+* Fixed bug where the visualblocks plugin would render borders round internal UI elements.
+
 ## Version 4.3.6 - March 1, 2016
 * Added new paste_remember_plaintext_info option to allow a global disable of the plain text mode notification.
 * Added new PastePlainTextToggle event that fires when plain text mode toggles on/off.

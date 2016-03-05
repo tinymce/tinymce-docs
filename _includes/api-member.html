@@ -9,7 +9,7 @@
 ## Properties
 name | type | summary
 --- | --- | ---
-{% for item in include.data.properties %}{{ item.name }} | {% if item.dataTypes[0] contains 'tinymce' %}[`{{ item.dataTypes[0] }}`]({{ site.baseurl }}/api/class/{{ item.dataTypes[0] | api_url }}){% else %}`{{ item.dataTypes[0] }}`{% endif %}| {{ item.summary | no_nl }}
+{% for item in include.data.properties %}{{ item.name }} | {% if item.dataTypes[0] contains 'tinymce' %}[`{{ item.dataTypes[0] }}`]({{ site.baseurl }}/api/class/{{ item.dataTypes[0] | api_url }}){% else %}`{{ item.dataTypes[0] }}`{% endif %}| {{ item.desc | no_nl }}
 {% endfor %}
 {% endif %}
 
@@ -17,7 +17,7 @@ name | type | summary
 ## Methods
 name | summary
 --- | ---
-{% for item in include.data.methods %}[{{ item.name }}()](#{{ item.name | anchor }}) | {{ item.summary | no_nl }}
+{% for item in include.data.methods %}[{{ item.name }}()](#{{ item.name | anchor }}) | {{ item.desc | no_nl }}
 {% endfor %}
 {% endif %}
 
@@ -25,7 +25,7 @@ name | summary
 ## Events
 name | summary
 --- | ---
-{% for item in include.data.events %}[{{ item.name }}](#{{ item.name | anchor }}) | {{ item.summary | no_nl }}
+{% for item in include.data.events %}[{{ item.name }}](#{{ item.name | anchor }}) | {{ item.desc | no_nl }}
 {% endfor %}
 {% endif %}
 
@@ -38,7 +38,7 @@ name | summary
 {{ include.data.name }}#{{ item.signature }}
 ```
 
-{{ item.summary | no_nl }}
+{{ item.desc | no_nl }}
 
 {% if item.params.size > 0 %}
 ##### Parameters
@@ -62,7 +62,7 @@ name | summary
 
 {% for item in include.data.events %}
 ### {{ item.name }}
-{{ item.summary | no_nl }}
+{{ item.desc | no_nl }}
 
 {% if item.params.size > 0 %}
 ##### Parameters

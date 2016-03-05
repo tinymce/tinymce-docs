@@ -8,7 +8,6 @@ This project serves as the documentation for TinyMCE, as you see on tinymce.com,
 
     $ git clone git@github.com:tinymce/tinymce-docs.git
     $ cd tinymce-docs
-    $ sudo gem install bundle
     $ ./_scripts/init.sh
 
 ### Run development version

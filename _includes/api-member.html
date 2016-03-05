@@ -40,6 +40,16 @@ name | summary
 
 {{ item.desc | no_nl }}
 
+{% if item.examples.size > 0 %}
+##### Examples
+
+{% for example in item.examples %}
+```js
+{{example.content}}
+```
+{% endfor %}
+{% endif %}
+
 {% if item.params.size > 0 %}
 ##### Parameters
 

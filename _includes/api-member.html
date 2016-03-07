@@ -7,25 +7,25 @@
 
 {% if include.data.properties.size > 0 %}
 ## Properties
-name | type | summary
---- | --- | ---
-{% for item in include.data.properties %}{{ item.name }} | {% if item.dataTypes[0] contains 'tinymce' %}[`{{ item.dataTypes[0] }}`]({{ site.baseurl }}/api/class/{{ item.dataTypes[0] | api_url }}){% else %}`{{ item.dataTypes[0] }}`{% endif %}| {{ item.summary | no_nl }}
+name | type | summary | defined by
+--- | --- | --- | ---
+{% for item in include.data.properties %}{{ item.name }} | {% if item.dataTypes[0] contains 'tinymce' %}[`{{ item.dataTypes[0] }}`]({{ site.baseurl }}/api/class/{{ item.dataTypes[0] | api_url }}){% else %}`{{ item.dataTypes[0] }}`{% endif %}| {{ item.desc | no_nl }} | [{{ item.definedBy }}]({{ site.baseurl }}/api/class/{{ item.definedBy | api_url }})
 {% endfor %}
 {% endif %}
 
 {% if include.data.methods.size > 0 %}
 ## Methods
-name | summary
---- | ---
-{% for item in include.data.methods %}[{{ item.name }}()](#{{ item.name | anchor }}) | {{ item.summary | no_nl }}
+name | summary | defined by
+--- | --- | ---
+{% for item in include.data.methods %}[{{ item.name }}()](#{{ item.name | anchor }}) | {{ item.desc | no_nl }} | [{{ item.definedBy }}]({{ site.baseurl }}/api/class/{{ item.definedBy | api_url }})
 {% endfor %}
 {% endif %}
 
 {% if include.data.events.size > 0 %}
 ## Events
-name | summary
---- | ---
-{% for item in include.data.events %}[{{ item.name }}](#{{ item.name | anchor }}) | {{ item.summary | no_nl }}
+name | summary | defined by
+--- | --- | ---
+{% for item in include.data.events %}[{{ item.name }}](#{{ item.name | anchor }}) | {{ item.desc | no_nl }} | [{{ item.definedBy }}]({{ site.baseurl }}/api/class/{{ item.definedBy | api_url }})
 {% endfor %}
 {% endif %}
 
@@ -38,7 +38,17 @@ name | summary
 {{ include.data.name }}#{{ item.signature }}
 ```
 
-{{ item.summary | no_nl }}
+{{ item.desc | no_nl }}
+
+{% if item.examples.size > 0 %}
+##### Examples
+
+{% for example in item.examples %}
+```js
+{{example.content}}
+```
+{% endfor %}
+{% endif %}
 
 {% if item.params.size > 0 %}
 ##### Parameters
@@ -62,7 +72,7 @@ name | summary
 
 {% for item in include.data.events %}
 ### {{ item.name }}
-{{ item.summary | no_nl }}
+{{ item.desc | no_nl }}
 
 {% if item.params.size > 0 %}
 ##### Parameters

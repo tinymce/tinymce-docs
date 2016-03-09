@@ -85,7 +85,7 @@ tinymce.init({
     strikethrough: {inline : 'del'},
     forecolor: {inline : 'span', classes : 'forecolor', styles : {color : '%value'}},
     hilitecolor: {inline : 'span', classes : 'hilitecolor', styles : {backgroundColor : '%value'}},
-    custom_format: {block : 'h1', attributes : {title : 'Header'}, styles : {color : red}}
+    custom_format: {block : 'h1', attributes : {title : 'Header'}, styles : {color : 'red'}}
   }
 });
 ```

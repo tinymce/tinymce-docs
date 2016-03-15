@@ -17,6 +17,26 @@ tinymce.init({
     toolbar: "a11ycheck"
 });
 ```
+
+#### Rules
+
+These are the various rules that are being checked:
+
+* Usage of paragraphs as headings
+* Sequential headings
+* Adjacent links
+* Ordered list structure
+* Unordered list structure
+* Contrast ratio of the text.
+* Image alt text
+* Alt text filename
+* Table caption
+* Complex table summary
+* Table Caption and summary
+* Table heading scope
+* Table markup
+* Table Headers
+
 ## Downloading Accessibility Checker
 
 A [TinyMCE Enterprise](http://www.tinymce.com/pricing/) subscription includes the ability to download and install the accessibility checker feature for the editor.

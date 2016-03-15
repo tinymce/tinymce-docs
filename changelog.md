@@ -8,6 +8,15 @@ class: changelog
 
 {% capture changelog %}
 
+## Version 4.3.8 - March 15, 2016
+* Fixed bug where inserting HR at the end of a block element would produce an extra empty block.
+* Fixed bug where links would be clickable when readonly mode was enabled.
+* Fixed bug where the formatter would normalize to the wrong node on very specific content.
+* Fixed bug where some nested list items couldn't be indented properly.
+* Fixed bug where links where clickable in the preview dialog.
+* Fixed so the alt attribute doesn't get padded with an empty value by default.
+* Fixed so nested alignment works more correctly. You will now alter the alignment to the closest block parent.
+
 ## Version 4.3.7 - March 2, 2016
 * Fixed bug where incorrect icons would be rendered for imagetools edit and color levels.
 * Fixed bug where navigation using arrow keys inside a SelectBox didn't move up/down.

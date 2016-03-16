@@ -6,12 +6,12 @@ description: Enables @mention functionality.
 keywords: mentions atmentions
 ---
 
-The mentions plugin will present a list of users when you type a "@" and beginnings of a user name after it. It will then query the backend using the `mentions_fetch` callback.
+The mentions plugin will present a list of users when a user types the "@" symbol followed by the beginnings of a username after it. It will then query your server using the `mentions_fetch` callback.
 
 ##### Example
 ```javascript
 tinymce.init({
-  ...
+  selector: "textarea",
   plugins: "mentions",
   mentions_fetch: function (query, success) {
     // Fake a server call by using a setTimeout
@@ -33,9 +33,7 @@ These configuration options affect the execution of the `mentions` plugin. The m
 
 ### `mentions_fetch`
 
-This option lets you do request the backend for a list of uses matching the search query. The callback gets passed two parameters one is the
-search query object the other one is the success callback to execute with the results. The query object has a term property that contains what the user has typed
-after the "@" sign. The success call should contain an array of users with the required properties "id", "name" and "fullName".
+This option lets you request your server for a list of uses matching a search query. The callback gets passed two parameters: one is the search query object and the other is the success callback to execute with the results. The query object has a term property that contains what the user has typed after the "@" sign. The success call should contain an array of users with the required properties "id", "name" and "fullName".
 
 **Type:** `function`
 
@@ -63,8 +61,7 @@ tinymce.init({
 
 ### `mentions_menu_complete`
 
-This option enables you to provide override the default logic for inserting the at mention into the editor. The callback should return an editor created
-using the editors document.
+This option overrides the default logic for inserting the mention into the editor. The callback should return an editor created using the editor's document.
 
 **Type:** `function`
 
@@ -88,7 +85,7 @@ tinymce.init({
 
 ### `mentions_menu_hover`
 
-This option enables you to provide an element to be presented next to the menu item being hovered. This lets you do custom UI:s for presenting user information.
+This option enables you to provide an element to present next to the menu item being hovered. This lets you do custom UI:s for presenting user information.
 
 **Type:** `function`
 
@@ -119,7 +116,7 @@ tinymce.init({
 
 ### `mentions_selector`
 
-This option enables you to provide a custom css selector that should match the element created using `mentions_menu_complete` a warning will be logged to console unless they match. This enables the plugin to find existing mentions. The callback takes two parameters the editor instance and the userinfo object.
+This option enables you to provide a custom CSS selector that should match the element created using `mentions_menu_complete`. This enables the plugin to find existing mentions. The callback takes two parameters: the editor instance and the userinfo object. A warning will be logged to console unless they match.
 
 **Type:** `function`
 
@@ -143,7 +140,7 @@ tinymce.init({
 
 ### `mentions_select`
 
-This option enables you to provide a element to be presented next to a selected mention on page. This can include more details about the user.
+This option enables you to provide an element to be presented next to a selected mention on page. This could include more details about the user.
 
 **Type:** `function`
 
@@ -174,7 +171,7 @@ tinymce.init({
 
 ### `getUsers`
 
-You can retrieve the inserted users by calling getUsers on the plugin instance object of an editor. This will return an array of users inserted by the user but only the ones currently present in the content. It will also exclude duplicate inserts by using the userinfo objects id property.
+You can retrieve the inserted users by calling `getUsers` on the plugin instance object of an editor. This will return an array of users that the author `@mentioned` in the content, but only the ones currently present in the content (i.e. not any existing before the content was created). It will also exclude duplicate inserts by using the `userinfo` objects id property.
 
 ##### Example
 

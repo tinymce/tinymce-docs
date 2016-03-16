@@ -2,7 +2,7 @@
 layout: default
 title: AtMention
 description: AtMentions bring social sharing to TinyMCE.
-keywords: @mention
+keywords: atmention
 ---
 
 It is now possible for users of your application to send notifications to other users through an `@mention` in the document. AtMentions are of course incredibly commonplace in social software such as Twitter and Facebook along with social enterprise applications such as IBM’s Connections suite.

@@ -170,9 +170,9 @@ article, aside, footer, header, main, nav, section {display: block;}
 .ui-helper-hidden { display: none; }
 
 /* Custom Styles */
-.myCustomStyleStart {display:none;}
+.myCustomStyleStart {-custom-noop: noop;}
        // INCLUDE ALL MY CLASSES HERE IN THE Formats menu!
-.myCustomStyleEnd {display:none;}
+.myCustomStyleEnd {-custom-noop: noop;}
 
 /* Any other possible styles afterward ... */
 ```

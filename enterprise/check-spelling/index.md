@@ -5,7 +5,7 @@ description: Spell Checker Pro is a premium plugin and server to check spelling 
 keywords: enterprise tinymcespellchecker spell check checker pro pricing
 ---
 
-**Spell Checker Pro** adds spell check as-you-type capabilities to TinyMCE.
+**Spell Checker Pro** adds spell check as-you-type capabilities to TinyMCE. This includes inline spell checking and a dialog mode that steps a user through each error offering a list of suggested corrections.
 
 The following languages are supported:
 

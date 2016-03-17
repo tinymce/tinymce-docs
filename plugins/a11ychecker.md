@@ -2,13 +2,13 @@
 layout: default
 title: Accessibility Checker
 title_nav: Accessibility Checker
-description: Checks the contents for Accessibility problems.
-keywords: a11y accessibility
+description: Checks the contents of the editor for WCAG & Section 508 accessibility problems.
+keywords: a11y accessibility WCAG
 ---
 
-The `a11ychecker` plugin enables you to check the HTML for various accessibility problems. It has an auto repair feature that lets you fix the found problems.
+The `a11ychecker` plugin enables you to check the HTML for various WCAG & Section 508 accessibility problems. It has an auto repair feature that lets a user fix identified problems.
 
-#### Example:
+##### Example:
 
 ```js
 tinymce.init({
@@ -18,25 +18,27 @@ tinymce.init({
 });
 ```
 
-#### Rules
+### Rules
 
-These are the various rules that are being checked:
+These are the various rules that are checked:
 
 * Usage of paragraphs as headings
 * Sequential headings
 * Adjacent links
 * Ordered list structure
 * Unordered list structure
-* Contrast ratio of the text.
-* Image alt text
+* Contrast ratio of the text
+* Image ALT text
 * Alt text filename
 * Table caption
 * Complex table summary
-* Table Caption and summary
+* Table caption and summary
 * Table heading scope
 * Table markup
-* Table Headers
+* Table headers
 
 ## Downloading Accessibility Checker
 
 A [TinyMCE Enterprise](http://www.tinymce.com/pricing/) subscription includes the ability to download and install the accessibility checker feature for the editor.
+
+You will find a [live demo of the accessibility checker here](https://www.tinymce.com/pricing/). For more information about the accessibility checker [see this blog post](http://www.ephox.com/blog/tinymce-enterprise-update-benefits-accessibility-users-brings-atmentions/).

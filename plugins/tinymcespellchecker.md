@@ -58,14 +58,14 @@ This optional setting allows you to specify the languages that are available to 
 This optional setting allows you to specify the language code that will be used by default. This defaults to "en".
 
 ### `spellchecker_dialog`
-This optional setting allows you to specify the mode of operation of the spellchecker.  When set to true, the spellchecker will open a dialog that will check all of the document's contents at once.  If the spellchecker dialog is enabled, the default as-you-type spellchecking will be disabled.
+This optional setting allows you to specify the mode of operation of the spellchecker. When set to true, the spellchecker will open a dialog that will check all of the document's contents at once. This also allows a user to step through each error, to ignore errors and accept recommended fixes. If the spellchecker dialog is enabled, the default as-you-type spellchecking will be disabled.
 
 
 ## Toolbar Buttons
 
 ### `spellchecker`
 
-This button allows the user to perform a spellcheck on the entire document.  In addition, the drop down menu attached to this button allows you to specify the language that is currently used when spellchecking.  For more information on how to customize the toolbar, please see the official documentation here: http://www.tinymce.com/wiki.php/Configuration:toolbar
+This button allows the user to perform a spellcheck on the entire document. In addition, the drop down menu attached to this button allows you to specify the language that is currently used when spellchecking. For more information on how to customize the toolbar, please see the official documentation here: http://www.tinymce.com/wiki.php/Configuration:toolbar
 
 
 ## Downloading Spell Checker Pro
@@ -73,4 +73,3 @@ This button allows the user to perform a spellcheck on the entire document.  In 
 A [TinyMCE Enterprise](http://www.tinymce.com/pricing/) subscription includes the ability to download and install a spell check as-you-type feature for the editor.
 
 Spell Checker Pro requires both a client-side plugin to be configured and a server-side component to be installed and configured.
-

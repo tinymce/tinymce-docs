@@ -6,20 +6,72 @@ description: This directive allows you to add a TinyMCE editor to your form elem
 keywords: integration integrate angular angularjs
 ---
 
-## ui-tinymce directive
+Integration with AngularJS is currently done through [angular-ui-tinymce](https://github.com/angular-ui/ui-tinymce) a third party module. This how-to shows you how to setup a project using [AngularJS](https://angularjs.org/), [tinymce](/docs/demo/basic-example/) and [webpack](https://webpack.github.io/).
 
-There is an excellent and actively maintained [AngularJS project on GitHub](https://github.com/angular-ui/ui-tinymce).
+## 1. Setting up the project directory
 
-> The ui-tinymce directive plays nicely with the ng-model directive such as ng-required.
+First we create a directory for the project called "tinymce-angular-demo". After that we run "bower init" inside the new directory, this will setup a new empty bower project.
 
-> If you add the ng-model directive to same the element as ui-tinymce then the text in the editor is automatically synchronized with the model value.
+```
+$ mkdir tinymce-angular-demo
+$ cd tinymce-angular-demo
+$ bower init
+```
 
-> The ui-tinymce directive stores the configuration options as specified in the TinyMCE documentation and expects the model value to be a html string or raw text, depending on whether raw is true (default value is false).
+## 2. Installation of angular, ui-tinymce and tinymce
 
-Repo: https://github.com/angular-ui/ui-tinymce
+We now install the angular-ui-tinymce package this will automatically install angular and tinymce.
 
-### Other resources
+```
+$ bower install angular-ui-tinymce --save-dev
+```
 
-Repo [contribute.md](https://github.com/angular-ui/ui-tinymce/blob/master/CONTRIBUTING.md)
+## 3. Creating the demo.html file
 
-> This document is a work in progress. Click the contribute button (in the blue area above) to improve this page.
+This **demo.html** file has angular properties and a two calls to the controller.
+
+```html
+<!DOCTYPE html>
+<head>
+  <script type="text/javascript" src="bower_components/tinymce-dist/tinymce.js"></script>
+  <script type="text/javascript" src="bower_components/angular/angular.js"></script>
+  <script type="text/javascript" src="bower_components/angular-ui-tinymce/src/tinymce.js"></script>
+  <script type="text/javascript" src="app.js"></script>
+</head>
+<body ng-app="myApp">
+  <form method="post" ng-controller="TinyMceController">
+    <textarea ui-tinymce="tinymceOptions" ng-model="tinymceModel"></textarea>
+    <button ng-click="getContent()">Get content</button>
+    <button ng-click="setContent()">Set content</button>
+  </form>
+</body>
+```
+
+## 4. Creating the app.js file
+
+The **app.js** file shows you how to work with the model that automatically updates tinymce.
+
+```js
+var myAppModule = angular.module('myApp', ['ui.tinymce']);
+
+myAppModule.controller('TinyMceController', function($scope) {
+  $scope.tinymceModel = 'Initial content';
+
+  $scope.getContent = function() {
+    console.log('Editor content:', $scope.tinymceModel);
+  };
+
+  $scope.setContent = function() {
+    $scope.tinymceModel = 'Time: ' + (new Date());
+  };
+
+  $scope.tinymceOptions = {
+    plugins: 'link image code',
+    toolbar: 'undo redo | bold italic | alignleft aligncenter alignright | code'
+  };
+});
+```
+
+## 5. Testing the application
+
+You can now test the application by running the demo.html page in your favorite browser.

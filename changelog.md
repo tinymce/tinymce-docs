@@ -8,6 +8,24 @@ class: changelog
 
 {% capture changelog %}
 
+## Version 4.3.9 - April 12, 2016
+* Added support for focusing the contextual toolbars using keyboard.
+* Added keyboard support for slider UI controls. You can no increase/decrease using arrow keys.
+* Added url pattern matching for Dailymotion to media plugin. Patch contributed by Bertrand Darbon.
+* Added body_class to template plugin preview. Patch contributed by Milen Petrinski.
+* Added options to better override textcolor pickers with custom colors. Patch contributed by Xavier Boubert.
+* Added visual arrows to inline contextual toolbars so that they point to the element being active.
+* Fixed so toolbars for tables or other larger elements get better positioned below the scrollable viewport.
+* Fixed bug where it was possible to click links inside cE=false blocks.
+* Fixed bug where event targets wasn't properly handled in Safari Technical Preview.
+* Fixed bug where drag/drop text in FF 45 would make the editor caret invisible.
+* Fixed bug where the remove state wasn't properly set on editor instances when detected as clobbered.
+* Fixed bug where offscreen selection of some cE=false elements would render onscreen. Patch contributed by Steven Bufton
+* Fixed bug where enter would clone styles out side the root on editors inside a span. Patch contributed by ChristophKaser.
+* Fixed bug where drag/drop of images into the editor didn't work correctly in FF.
+* Fixed so the first item in panels for the imagetools dialog gets proper keyboard focus.
+* Changed the Meta+Shift+F shortcut to Ctrl+Shift+F since Czech, Slovak, Polish languages used the first one for input.
+
 ## Version 4.3.8 - March 15, 2016
 * Fixed bug where inserting HR at the end of a block element would produce an extra empty block.
 * Fixed bug where links would be clickable when readonly mode was enabled.

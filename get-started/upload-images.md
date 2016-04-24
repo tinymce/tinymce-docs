@@ -5,11 +5,11 @@ description: Extend TinyMCE with powerful image uploading capabilities.
 keywords: uploader uploadImages image handler
 ---
 
-> Please note, this image upload feature is available for TinyMCE version 4.3 and above. Alternatively, the [PowerPaste plugin]({{ site.baseurl }}/plugins/powerpaste/) is capable of this functionality in versions of TinyMCE 4.0 and above.  
+> Please note, this image upload feature is available for TinyMCE version 4.3 and above. Alternatively, the [PowerPaste plugin]({{ site.baseurl }}/plugins/powerpaste/) is capable of this functionality in versions of TinyMCE 4.0 and above.
 
 The image uploader is designed to complement the new image editing functionality of TinyMCE 4.3. Images that are edited within TinyMCE can be uploaded using this function. Local images that are added through other means - for example drag and drop when using the [paste_data_images]({{ site.baseurl }}/plugins/paste/#paste_data_images) configuration property or using Ephox's PowerPaste Plugin - can also be uploaded using this functionality.
 
-Once uploaded, TinyMCE will automatically update the `<image>` src attribute with the new path to the remote image.  
+Once uploaded, TinyMCE will automatically update the `<image>` src attribute with the new path to the remote image.
 
 Local images can be uploaded to TinyMCE through the use of the new `editor.uploadImages()` function.  This functionality is handled asynchronously, meaning that it is possible for users to save their content before all images have completed uploading.  If this occurs, no server path to the remote image will be available and the images will be stored as Base 64.
 
@@ -20,7 +20,7 @@ To avoid this situation, it is recommended that the `editor.uploadImages()` func
 ```js
 tinymce.activeEditor.uploadImages(function(success) {
   $.post('ajax/post.php', tinymce.activeEditor.getContent()).done(function() {
-    console.log("Uploaded images and posted content as an ajax request.");
+	console.log("Uploaded images and posted content as an ajax request.");
   });
 });
 ```
@@ -37,7 +37,22 @@ tinymce.activeEditor.uploadImages(function(success) {
 
 In order to upload local images to the remote server, you will need a server-side upload handler script that accepts the images on the server, stores them appropriately, and returns a JSON object containing the location that they were uploaded to.
 
-An example PHP upload handler implementation is available [here]({{ site.baseurl }}/advanced/php-upload-handler/).
+An example PHP upload handler implementation is available [here](../php-upload-handler/).
+
+Images will be sent to the Image Uploader via HTTP POST with each post containing a single image. The image handler at the URL referenced in the `images_upload_url` has to do whatever needs to be done to "store" the image in your application. Some examples would include:
+
+ * Store the item in a folder on your web server
+ * Store the item on a CDN server
+ * Store the item in a database
+ * Store the item in an asset management system
+
+When the image is uploaded it will have a standardized name in the post (e.g. `blobid0`, `blobid1`, `imagetools0`, `imagetools1`).
+
+*You will need to ensure that your upload handler script takes each uploaded file and generates a unique name prior to storing the image*.
+
+For example, you could append the current time (in milliseconds) to the end of the file name which would lead to file names like `blobid0-1458428901092` or `blobid0-1460405299-0114.png`.  Take care to make sure that the file name is unique as you don't want to accidentally overwrite a previously uploaded image!
+
+
 
 This server-side upload handler must return a JSON object that contains a "location" property. This property should represent the remote location or filename of the newly uploaded image.
 
@@ -81,28 +96,28 @@ Please note that while using this option, no other image uploader options are ne
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   images_upload_handler: function (blobInfo, success, failure) {
-    var xhr, formData;
-    xhr = new XMLHttpRequest();
-    xhr.withCredentials = false;
-    xhr.open('POST', 'postAcceptor.php');
-    xhr.onload = function() {
-      var json;
+	var xhr, formData;
+	xhr = new XMLHttpRequest();
+	xhr.withCredentials = false;
+	xhr.open('POST', 'postAcceptor.php');
+	xhr.onload = function() {
+	  var json;
 
-      if (xhr.status != 200) {
-        failure('HTTP Error: ' + xhr.status);
-        return;
-      }
-      json = JSON.parse(xhr.responseText);
+	  if (xhr.status != 200) {
+		failure('HTTP Error: ' + xhr.status);
+		return;
+	  }
+	  json = JSON.parse(xhr.responseText);
 
-      if (!json || typeof json.location != 'string') {
-        failure('Invalid JSON: ' + xhr.responseText);
-        return;
-      }
-      success(json.location);
-    };
-    formData = new FormData();
-    formData.append('file', blobInfo.blob(), fileName(blobInfo));
-    xhr.send(formData);
+	  if (!json || typeof json.location != 'string') {
+		failure('Invalid JSON: ' + xhr.responseText);
+		return;
+	  }
+	  success(json.location);
+	};
+	formData = new FormData();
+	formData.append('file', blobInfo.blob(), fileName(blobInfo));
+	xhr.send(formData);
   }
 });
 ```

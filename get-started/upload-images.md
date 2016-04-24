@@ -50,7 +50,7 @@ When the image is uploaded it will have a standardized name in the post (e.g. `b
 
 *You will need to ensure that your upload handler script takes each uploaded file and generates a unique name prior to storing the image*.
 
-For example, you could append the current time (in milliseconds) to the end of the file name which would lead to file names like `blobid0-1458428901092` or `blobid0-1460405299-0114.png`.  Take care to make sure that the file name is unique as you don't want to accidentally overwrite a previously uploaded image!
+For example, you could append the current time (in milliseconds) to the end of the file name which would lead to file names like `blobid0-1458428901092.png` or `blobid0-1460405299-0114.png`.  Take care to make sure that the file name is unique as you don't want to accidentally overwrite a previously uploaded image!
 
 
 

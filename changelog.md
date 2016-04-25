@@ -8,6 +8,17 @@ class: changelog
 
 {% capture changelog %}
 
+## Version 4.3.11 - April 25, 2016
+* Fixed bug where it wasn't possible to insert empty blocks though the API unless they where padded.
+* Fixed bug where you couldn't type the Euro character on Windows.
+* Fixed bug where backspace/delete from a cE=false element to a text block didn't work properly.
+* Fixed bug where the text color default grid would render incorrectly.
+* Fixed bug where the codesample plugin wouldn't load the css in the editor for multiple editors.
+* Fixed so the codesample plugin textarea gets focused by default.
+
+## Version 4.3.10 - April 12, 2016
+* Fixed bug where the key "y" on WebKit couldn't be entered due to conflict with keycode for F10 on keypress.
+
 ## Version 4.3.9 - April 12, 2016
 * Added support for focusing the contextual toolbars using keyboard.
 * Added keyboard support for slider UI controls. You can no increase/decrease using arrow keys.

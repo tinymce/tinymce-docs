@@ -39,6 +39,12 @@ This optional setting allows you to specify the languages that are available to 
 #### spellchecker_language
 This optional setting allows you to specify the language code that will be used by default. This defaults to "en".
 
+### spellchecker_dialog
+This optional setting allows you to specify the mode of operation of the spellchecker. When set to true, the spellchecker will open a dialog that will check all of the document's contents at once. This also allows a user to step through each error, to ignore errors and accept recommended fixes. If the spellchecker dialog is enabled, the default as-you-type spellchecking will be disabled.
+
+### spellchecker_whitelist
+This option lets you specify an array of words that you want to ignore this can for example be the current company name or internal products. You can populate this field from a file by just getting the white list array from an external JS file.
+
 ### Toolbar Buttons
 
 #### spellchecker

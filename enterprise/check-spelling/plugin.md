@@ -20,7 +20,7 @@ tinymce.init({
 	selector: 'textarea',
 	plugins: 'tinymcespellchecker',
 	spellchecker_rpc_url: 'localhost/ephox-spelling',
-	spellchecker_language: 'en',
+	spellchecker_language: 'en'
 });
 ````
 
@@ -48,4 +48,38 @@ This option lets you specify an array of words that you want to ignore this can 
 ### Toolbar Buttons
 
 #### spellchecker
-This button allows the user to perform a spell check on the entire document.  In addition, the drop down menu attached to this button allows you to specify the language that is currently used when spell checking.
+This button allows the user to perform a spell check on the entire document. In addition, the drop down menu attached to this button allows you to specify the language that is currently used when spell checking.
+
+Example TinyMCE Configuration:
+
+````
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'tinymcespellchecker',
+  toolbar: 'spellchecker',
+  spellchecker_rpc_url: 'localhost/ephox-spelling',
+  spellchecker_language: 'en'
+});
+````
+
+### Menu items
+
+#### spellchecker
+This menu item allows the user to perform a spell check on the entire document.
+
+#### spellcheckerlanguage
+This menu item allows you to change the current language for the spell checking process.
+
+Example TinyMCE Configuration:
+
+````
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'tinymcespellchecker',
+  menu: {
+    tools: {title: 'Tools', items: 'spellchecker spellcheckerlanguage'}
+  },
+  spellchecker_rpc_url: 'localhost/ephox-spelling',
+  spellchecker_language: 'en'
+});
+````

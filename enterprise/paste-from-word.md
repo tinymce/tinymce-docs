@@ -74,3 +74,36 @@ tinymce.init({
   powerpaste_html_import: 'merge'
 });
 ```
+
+## Toolbar Buttons
+
+#### pastetext
+This button allows you to toggle paste as plain text mode on/off. When in plain text mode all rich formatted contents gets converted into plain text.
+
+Example TinyMCE Configuration:
+
+````
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'powerpaste',
+  toolbar: 'pastetext'
+});
+````
+
+## Menu Items
+
+#### pastetext
+This menu item allows you to toggle paste as plain text mode on/off. When in plain text mode all rich formatted contents gets converted into plain text.
+
+Example TinyMCE Configuration:
+
+````
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'powerpaste',
+  menu: {
+    edit: {title: 'edit', items: 'pastetext'}
+  }
+});
+````
+

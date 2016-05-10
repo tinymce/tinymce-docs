@@ -8,6 +8,17 @@ class: changelog
 
 {% capture changelog %}
 
+## Version 4.3.12 - Maj 10, 2016
+* Fixed bug where focus calls couldn't be made inside the editors PostRender event handler.
+* Fixed bug where some translations wouldn't work as expected due to a bug in editor.translate.
+* Fixed bug where the node change event could fire with a node out side the root of the editor.
+* Fixed bug where Chrome wouldn't properly present the keyboard paste clipboard details when paste was clicked.
+* Fixed bug where merged cells in tables couldn't be selected from right to left.
+* Fixed bug where insert row wouldn't properly update a merged cells rowspan property.
+* Fixed bug where the color input boxes preview field wasn't properly set on initialization.
+* Fixed bug where IME composition inside table cells wouldn't work as expected on IE 11.
+* Fixed so all shadow dom support is under and experimental flag due to flaky browser support.
+
 ## Version 4.3.11 - April 25, 2016
 * Fixed bug where it wasn't possible to insert empty blocks though the API unless they where padded.
 * Fixed bug where you couldn't type the Euro character on Windows.

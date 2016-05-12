@@ -68,6 +68,7 @@ Here is a list of the toolbar/menu controls that the core and plugins provides. 
 | forecolor | [textcolor]({{ site.baseurl }}/plugins/textcolor/) | Applies foreground/text color to selection. |
 | backcolor | [textcolor]({{ site.baseurl }}/plugins/textcolor/) | Applies background color to selection. |
 | insertfile | [moxiemanager]({{ site.baseurl }}/plugins/moxiemanager/) | Opens the MoxieManager dialog. |
+| a11ycheck | [a11ychecker]({{ site.baseurl }}/plugins/a11ychecker/) | Opens the accessibility checker dialog. |
 
 ## Menu controls
 

@@ -67,7 +67,7 @@ This option lets you specify an array of words that you want to ignore this can 
 
 ### `spellchecker`
 
-This button allows the user to perform a spellcheck on the entire document. In addition, the drop down menu attached to this button allows you to specify the language that is currently used when spellchecking. For more information on how to customize the toolbar, please see the official documentation here: http://www.tinymce.com/wiki.php/Configuration:toolbar
+This button allows the user to perform a spellcheck on the entire document. In addition, the drop down menu attached to this button allows you to specify the language that is currently used when spellchecking. You'll find more information about customizing the toolbar in the [Editor Appearance section of the documentation]({{ site.baseurl }}/configure/editor-appearance/#toolbar).
 
 Example TinyMCE Configuration:
 

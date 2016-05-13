@@ -16,6 +16,8 @@ The  PowerPaste plugin activates automatically when users paste content into the
 
 To paste clipboard content as plain text, removing all forms of formatting, user's can click the "Paste As Text" toolbar button and then paste the content normally. The TinyMCE PowerPaste plugin will convert the HTML on the clipboard into plain text.
 
+***Note:*** *PowerPaste (when configured to allow local images) will import images from pasted Microsoft Word/Excel content.  When doing this, PowerPaste extracts Base64 encoded images from the clipboard.  Images larger than approximately 8.5MB may fail to import based on technical limitations of web browsers.*
+
 
 ## Installation
 
@@ -102,7 +104,7 @@ tinymce.init({
   selector: 'textarea',
   plugins: 'powerpaste',
   menu: {
-    edit: {title: 'edit', items: 'pastetext'}
+	edit: {title: 'edit', items: 'pastetext'}
   }
 });
 ````

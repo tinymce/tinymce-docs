@@ -28,7 +28,7 @@ To enable the TinyMCE Enterprise Spellchecking plugin:
 1. If you are currently using the 'spellchecker' plugin provided with TinyMCE, disable it by removing it from the 'plugins' list.
 2. Add 'tinymcespellchecker' to the 'plugins' list.
 
-For information on installing the server-side component for spell checking, please see the [server-side component installation guide](http://docs.ephox.com/display/TinyMCEEnterprise/Spellchecking+Server-Side+Components).
+For information on installing the server-side component for spell checking, please see the [server-side component installation guide](https://www.tinymce.com/docs/enterprise/check-spelling/server/).
 
 ##### Example TinyMCE Configuration
 
@@ -49,7 +49,7 @@ The TinyMCE Enterprise Spellchecking plugin activates automatically when users t
 ## Configuration Options
 
 ### `spellchecker_rpc_url`
-This setting enables you to specify the URL to be used for the server side ephox-spelling service. Check the [server-side component installation guide](http://docs.ephox.com/display/TinyMCEEnterprise/Spellchecking+Server-Side+Components) for details on how to setup your own spellchecker server.
+This setting enables you to specify the URL to be used for the server side ephox-spelling service. Check the [server-side component installation guide](https://www.tinymce.com/docs/enterprise/check-spelling/server/) for details on how to setup your own spellchecker server.
 
 ### `spellchecker_languages`
 This optional setting allows you to specify the languages that are available to the user, provided as a comma delimited string. The default value for this setting is: 'US English=en,UK English=en_GB,Danish=da,Dutch=nl,Finnish=fi,French=fr,German=de,Italian=it,Norwegian=nb,Brazilian Portuguese=pt_BR,Iberian Portuguese=pt_PT,Spanish=es,Swedish=sv'
@@ -96,7 +96,7 @@ tinymce.init({
   selector: 'textarea',
   plugins: 'tinymcespellchecker',
   menu: {
-    tools: {title: 'Tools', items: 'spellchecker spellcheckerlanguage'}
+	tools: {title: 'Tools', items: 'spellchecker spellcheckerlanguage'}
   },
   spellchecker_rpc_url: 'localhost/ephox-spelling',
   spellchecker_language: 'en'

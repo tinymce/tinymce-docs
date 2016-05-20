@@ -8,7 +8,7 @@ class: changelog
 
 {% capture changelog %}
 
-## Version 4.3.12 - Maj 10, 2016
+## Version 4.3.12 - May 10, 2016
 * Fixed bug where focus calls couldn't be made inside the editors PostRender event handler.
 * Fixed bug where some translations wouldn't work as expected due to a bug in editor.translate.
 * Fixed bug where the node change event could fire with a node out side the root of the editor.

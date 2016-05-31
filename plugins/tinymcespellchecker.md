@@ -11,6 +11,7 @@ keywords: tinymcespellchecker spellchecker_language spellchecker_languages spell
 The following languages are supported:
 
 * English (US & UK)
+* English - with additional medical terms (US & UK)
 * Danish
 * Dutch
 * Finnish

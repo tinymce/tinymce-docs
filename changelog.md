@@ -8,6 +8,16 @@ class: changelog
 
 {% capture changelog %}
 
+## Version 4.3.13 - June 8, 2016
+* Added characters with a diacritical mark to charmap plugin. Patch contributed by Dominik Schilling.
+* Added better error handling if the image proxy service would produce errors.
+* Fixed issue with pasting list items into list items would produce nested list rather than a merged list.
+* Fixed bug where table selection could get stuck in selection mode for inline editors.
+* Fixed bug where it was possible to place the caret inside the resize grid elements.
+* Fixed bug where it wasn't possible to place in elements horizontally adjacent cE=false blocks.
+* Fixed bug where multiple notifications wouldn't be properly placed on screen.
+* Fixed bug where multiple editor instance of the same id could be produces in some specific integrations.
+
 ## Version 4.3.12 - May 10, 2016
 * Fixed bug where focus calls couldn't be made inside the editors PostRender event handler.
 * Fixed bug where some translations wouldn't work as expected due to a bug in editor.translate.

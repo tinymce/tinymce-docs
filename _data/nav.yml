@@ -53,6 +53,7 @@
     - url: "#fixed_toolbar_container"
     - url: "#height"
     - url: "#inline"
+    - url: "#insert_toolbar"
     - url: "#max_height"
     - url: "#max_width"
     - url: "#menu"
@@ -62,6 +63,7 @@
     - url: "#preview_styles"
     - url: "#removed_menuitems"
     - url: "#resize"
+    - url: "#selection_toolbar"
     - url: "#skin_url"
     - url: "#skin"
     - url: "#statusbar"
@@ -357,6 +359,11 @@
     pages:
     - url: "#wordcount_cleanregex"
     - url: "#wordcount_countregex"
+
+- url: "themes"
+  pages:
+  - url: "inlight"
+  - url: "modern"
 
 - url: "enterprise"
   pages:

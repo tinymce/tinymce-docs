@@ -67,8 +67,12 @@ Here is a list of the toolbar/menu controls that the core and plugins provides. 
 | template | [template]({{ site.baseurl }}/plugins/template/) | Inserts templates into the editor. |
 | forecolor | [textcolor]({{ site.baseurl }}/plugins/textcolor/) | Applies foreground/text color to selection. |
 | backcolor | [textcolor]({{ site.baseurl }}/plugins/textcolor/) | Applies background color to selection. |
+| restoredraft | [restoredraft]({{ site.baseurl }}/plugins/autosave/) | Restores to the latest auto saved draft. |
 | insertfile | [moxiemanager]({{ site.baseurl }}/plugins/moxiemanager/) | Opens the MoxieManager dialog. |
 | a11ycheck | [a11ychecker]({{ site.baseurl }}/plugins/a11ychecker/) | Opens the accessibility checker dialog. |
+| quickimage | [quickimage]({{ site.baseurl }}/themes/inlight/) | Inserts an image from the local machine. |
+| quicktable | [quicktable]({{ site.baseurl }}/themes/inlight/) | Inserts an table 2x2. |
+| quicklink | [quicklink]({{ site.baseurl }}/themes/inlight/) | Inserts an link in a quicker way. |
 
 ## Menu controls
 
@@ -114,3 +118,4 @@ Here is a list of the toolbar/menu controls that the core and plugins provides. 
 | cell | [table]({{ site.baseurl }}/plugins/table/) | Cell menu item with related controls. |
 | row | [table]({{ site.baseurl }}/plugins/table/) | Row menu item with related controls. |
 | column | [table]({{ site.baseurl }}/plugins/table/) | Column menu item with related controls. |
+| restoredraft | [autosave]({{ site.baseurl }}/plugins/autosave/) | Restores to the latest auto saved draft. |

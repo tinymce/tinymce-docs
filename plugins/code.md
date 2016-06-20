@@ -32,7 +32,7 @@ This configuration option sets the *internal, editable area* height of the `code
 
 Note that the external dimensions of the actual modal will be slightly larger than the value set.
 
-**Type:** `String`
+**Type:** `Number`
 
 ##### Example
 
@@ -52,7 +52,7 @@ This configuration option sets the *internal, editable area* width of the `code`
 
 Note that the external dimensions of the actual modal will be slightly larger than the value set.
 
-**Type:** `String`
+**Type:** `Number`
 
 ##### Example
 

@@ -6,11 +6,13 @@ description: Get a local instance of TinyMCE up and running in less than 5 minut
 keywords: tinymce script textarea
 ---
 
-From getting a local editor instance up and running in less than 5 minutes (via our content delivery network) to advanced installation options, working with plugins and learning about content filtering and spell checking, this is the place to start for developers new to TinyMCE.
+Welcome to the tinymce documentation. In this first section we will be installing TinyMCE and providing some background on what it does.
 
-Before we get to it, if you prefer to download TinyMCE and install it locally the [Advanced Install](../advanced-install/#sdkinstall) page in the Get Started guide has instructions.
+We will start by getting a local editor up and running using our content delivery network(CDN). This should take about 5 minutes and is a good starting point for developers who are new to tinymce.
 
-Now, back to the CDN. In the next 4 steps – and in less than 5 minutes – you'll have a basic, local editor instance up and running.
+To get started download TinyMCE and install it locally the [Advanced Install](../advanced-install/#sdkinstall) by following the instructions in the "Get Started" section.
+
+Once you have completed this we will get started using the CDN. The next four steps will take you through setting up your local editor instance.
 
 ## Step 1: Include the TinyMCE script
 
@@ -20,7 +22,6 @@ Include this line of code in the `<head>` of your HTML page:
 <script src='{{ site.cdnurl }}'></script>
 ```
 
-> Tip: we give you a complete html snippet in Step 2.
 
 
 ## Step 2: Initialize TinyMCE as part of a web form
@@ -58,7 +59,7 @@ And that's all there is to it! Read on as we have two more notes for you.
 
 ## Step 3: Saving content with a form POST
 
-When the `<form>` is submitted the TinyMCE editor mimics the behavior of a normal HTML `<textarea>` during the `post`. In your form handler you can process the content submitted as if it had come from a regular `<textarea>`.
+When the `<form>` section is submitted the TinyMCE editor mimics the behavior of a normal HTML `<textarea>` during the `post` operation. In your form handler you can process the content submitted as if it had come from a regular `<textarea>`.
 
 {% assign_page next_page = "/get-started/basic-setup/index.html" %}
 {% include next-step.html next=next_page %}

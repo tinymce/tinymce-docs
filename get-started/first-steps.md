@@ -6,9 +6,9 @@ description: Get a local instance of TinyMCE up and running in less than 5 minut
 keywords: tinymce script textarea
 ---
 
-Welcome to the tinymce documentaiton. In this first section we will be installing tinmce and providing some background on what it does.
+Welcome to the tinymce documentation. In this first section we will be installing tinmce and providing some background on what it does.
 
-We will start by getting a local editor up and running using our content delivery network(CDN). This should take about 5 minutes and is a good stating point for developers who are new to tinymce.
+We will start by getting a local editor up and running using our content delivery network(CDN). This should take about 5 minutes and is a good starting point for developers who are new to tinymce.
 
 To get started download TinyMCE and install it locally the [Advanced Install](../advanced-install/#sdkinstall) by following the instructions in the "Get Started" section.
 

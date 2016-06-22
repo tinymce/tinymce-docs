@@ -1,19 +1,19 @@
 ---
 layout: default
-title: Inlight theme
-title_nav: Inlight
+title: Inlite theme
+title_nav: Inlite
 description: Theme that renders a light weight UI for inline editing.
-keywords: theme inlight
+keywords: theme inlite
 ---
 
-The `inlight` theme is responsible for rendering the editor lightweight inline mode. The current default theme is called [modern]({{ site.baseurl }}/themes/modern/) this is an optional more light weight distraction free UI for the editor.
+The `inlite` theme is responsible for rendering the editor lightweight inline mode. The current default theme is called [modern]({{ site.baseurl }}/themes/modern/) this is an optional more light weight distraction free UI for the editor.
 
 ##### Example:
 
 ```js
 tinymce.init({
     selector: "div.tinymce",
-    themes: "inlight",
+    themes: "inlite",
     inline: true
 });
 ```
@@ -28,7 +28,7 @@ Lets you quickly insert/edit links inline.
 ```js
 tinymce.init({
     selector: "div.tinymce",
-    themes: "inlight",
+    themes: "inlite",
     inline: true,
     selection_toolbar: 'bold italic | quicklink h2 h3 blockquote'
 });
@@ -43,7 +43,7 @@ Lets you quickly insert images from the local machine into the editor. These can
 ```js
 tinymce.init({
     selector: "div.tinymce",
-    themes: "inlight",
+    themes: "inlite",
     inline: true,
     insert_toolbar: 'quickimage quicktable'
 });
@@ -58,7 +58,7 @@ Lets you quickly insert a table 2x2 with 100% width.
 ```js
 tinymce.init({
     selector: "div.tinymce",
-    themes: "inlight",
+    themes: "inlite",
     inline: true,
     insert_toolbar: 'quickimage quicktable'
 });

@@ -70,9 +70,9 @@ Here is a list of the toolbar/menu controls that the core and plugins provides. 
 | restoredraft | [restoredraft]({{ site.baseurl }}/plugins/autosave/) | Restores to the latest auto saved draft. |
 | insertfile | [moxiemanager]({{ site.baseurl }}/plugins/moxiemanager/) | Opens the MoxieManager dialog. |
 | a11ycheck | [a11ychecker]({{ site.baseurl }}/plugins/a11ychecker/) | Opens the accessibility checker dialog. |
-| quickimage | [quickimage]({{ site.baseurl }}/themes/inlight/) | Inserts an image from the local machine. |
-| quicktable | [quicktable]({{ site.baseurl }}/themes/inlight/) | Inserts an table 2x2. |
-| quicklink | [quicklink]({{ site.baseurl }}/themes/inlight/) | Inserts an link in a quicker way. |
+| quickimage | [quickimage]({{ site.baseurl }}/themes/inlite/) | Inserts an image from the local machine. |
+| quicktable | [quicktable]({{ site.baseurl }}/themes/inlite/) | Inserts an table 2x2. |
+| quicklink | [quicklink]({{ site.baseurl }}/themes/inlite/) | Inserts an link in a quicker way. |
 
 ## Menu controls
 

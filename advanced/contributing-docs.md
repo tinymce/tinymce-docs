@@ -7,17 +7,17 @@ description: Contribute to TinyMCE's developer documentation.
 keywords: opensource oss contributors lgpl docs dox
 ---
 
-If helping developers build great stuff by getting them in and out of technical documentation as quickly as possible makes you excited, this page is for you.
+This page outlines how you can contribute to this documentation and help developers build great stuff!
 
 ## How to contribute to TinyMCE's documentation
 
-**tl;dr** Here's a quick way to improve the docs if you find an error or would like to suggest an improvement: in the footer of every page you'll see the text "Was this article helpful?" Click "no", click the "opening an issue" link and voila you can submit a GitHub issue.
+**TL;DR** A quick way to improve the docs is to click the "Was this article helpful?" and select "no". Then if you want to help more click the "opening an issue" link and submit a GitHub issue.
 
 ### So, how can you help?
 
 We welcome people with technical writing experience to help make TinyMCE's docs as useful to our community as possible. You don't need to be an expert developer to contribute, but a basic understanding of software development is helpful.
 
-What is more important is your ability to articulate complex ideas simply. Our goal is to help developers understand TinyMCE functionality as quickly as possible so that they can get back to building great stuff.
+What is more important is your ability to articulate complex ideas simply. Our goal is to help developers understand TinyMCE functionality as quickly as possible, so that they can build great stuff.
 
 If that sounds like something you are into, branch the [docs GitHub repository](https://github.com/tinymce/tinymce-docs) and submit a PR, or reach out to the [TinyMCE docs team](mailto:marketing@ephox.com) if you have a specific question.
 
@@ -39,7 +39,9 @@ We cannot cover every use case here and contributors need to use their best judg
 
 Code snippets should always be complete, executable code blocks starting with the `tinymce` object. We write code snippets by enclosing the example code within three opening and closing back ticks. The first set of backticks is immediately followed by the code's language, which helps correct syntax highlighting: typically, html, css, js (and sometimes php).
 
-Include any key values pairs and method options that are required to enable a user to test the snippet in a local HTML file. You do not need to include the `html` surrounding the `tinymce` object that would be required to make the snippet work. For example, this is good:
+Include any key values pairs and method options that are required to enable a user to test the snippet in a local HTML file. You do not need to include the `html` surrounding the `tinymce` object that would be required to make the snippet work. 
+
+For example, this is good:
 
 ```js
 tinymce.init({

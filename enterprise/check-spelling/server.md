@@ -87,7 +87,7 @@ ephox {
 
 #### Entering Origins
 
-The origins are matched by protocol, host name and port. So you may need a combination of all three, depending on which browser /s  you use. If you are serving the editor and services from `http://localhost` & port 80, then the list of origins should have an entry for `http://localhost` and any other servers with ports, like so:
+The origins are matched by protocol, host name, and port. You may need a combination of all three, depending on which browser you use. If you are serving the editor and services from `http://localhost:80`, then the list of origins should have an entry for `http://localhost:80` and any other servers with ports, like so:
 
 ````
 ephox{
@@ -98,7 +98,7 @@ ephox{
 }
 ````
 
-This only applies to port 80 because this being the default HTTP port, browsers omit it when talking to the server. For every other port and host name, the recommended setting is to make one entry with the port and one without the port. This is because different browsers behave differently with regards to the Origin header. So the config file should resemble:
+This only applies to port 80 because this is the default HTTP port, and browsers omit it when talking to the server. For every other port and host name, the recommended setting is to make one entry with the port and one without the port. This is because different browsers behave differently with regards to the Origin header. So the config file should resemble:
 
 ````
 ephox{
@@ -130,7 +130,7 @@ The following examples demonstrate how to reference application.conf for Tomcat 
 
 Make/edit a script at `/tomcat/install/directory/bin/setenv.sh`
 
-Ensure the file contains a single line, like (this must be the absolute path as before):
+Ensure the file contains a single line:
 
 `CATALINA_OPTS=" -Dconfig.file=/config/file/location/application.conf"`
 

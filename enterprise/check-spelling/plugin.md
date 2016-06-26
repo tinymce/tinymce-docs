@@ -34,7 +34,7 @@ The TinyMCE Spell Checker Pro plugin activates automatically when users type con
 This setting enables you to specify the URL to be used for the server side ephox-spelling service.
 
 #### spellchecker_languages
-This optional setting allows you to specify the languages that are available to the user, provided as a comma delimited string. The default value for this setting is: 'US English=en,UK English=en_GB,Danish=da,Dutch=nl,Finnish=fi,French=fr,German=de,Italian=it,Norwegian=nb,Brazilian Portuguese=pt_BR,Iberian Portuguese=pt_PT,Spanish=es,Swedish=sv'
+This optional setting allows you to specify the languages that are available to the user, provided as a comma delimited string. The default value for this setting is: 'US English=en,UK English=en_GB,Danish=da,Dutch=nl,Finnish=fi,French=fr,German=de,Italian=it,Norwegian=nb,Brazilian Portuguese=pt_BR,Iberian Portuguese=pt_PT,Spanish=es,Swedish=sv'.
 
 #### spellchecker_language
 This optional setting allows you to specify the language code that will be used by default. This defaults to "en".
@@ -43,7 +43,7 @@ This optional setting allows you to specify the language code that will be used 
 This optional setting allows you to specify the mode of operation of the spellchecker. When set to true, the spellchecker will open a dialog that will check all of the document's contents at once. This also allows a user to step through each error, to ignore errors and accept recommended fixes. If the spellchecker dialog is enabled, the default as-you-type spellchecking will be disabled.
 
 ### spellchecker_whitelist
-This option lets you specify an array of words that you want to ignore this can for example be the current company name or internal products. You can populate this field from a file by just getting the white list array from an external JS file.
+This option lets you specify an array of words that you want to ignore. For example, this could be the current company name or internal products. You can populate this field from a file by just getting the white list array from an external JS file.
 
 ### Toolbar Buttons
 

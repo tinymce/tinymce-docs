@@ -7,7 +7,7 @@ keywords: url urls insert edit default_link_target link_assume_external_targets 
 controls: toolbar button, menu item
 ---
 
-The `link` plugin allows a user to link external resources, such as website URLs, to selected text in their document.
+The `link` plugin allows a user to link external resources such as website URLs, to selected text in their document.
 
 It also adds a toolbar button and a menu item `Insert/edit link` under the `Insert` menu dropdown.
 
@@ -26,7 +26,7 @@ tinymce.init({
 
 ## Options
 
-These settings affect the execution of the `link` plugin. Predefined links, targets and more can be specified here.
+These settings affect the execution of the `link` plugin. Predefined links, targets, and more can be specified here.
 
 ### `default_link_target`
 

@@ -9,7 +9,7 @@ controls: toolbar button, menu item
 
 > Looking for more advanced Microsoft Word importing and pasting? Try the [PowerPaste](../powerpaste/) plugin.
 
-This plugin will filter/cleanup content pasted from Microsoft Word. The power of the plugin is in its options, so please take the time to learn more about these below.
+This plugin will filter/cleanup content pasted from Microsoft Word. The power of the plugin is in its options, so please take the time to learn more about them below.
 
 The plugin also adds a menu item `Paste as text` under the `Edit` menu dropdown and a toolbar button.
 
@@ -38,7 +38,7 @@ This option specifies whether `data:url` images (inline images) should be remove
 
 Setting `paste_data_images` to `"true"` will allow the pasted images, while setting it to `"false"` will disallow pasted images.
 
-For example, Firefox enables you to paste images directly into any `contentEditable` field. This is normally not something people want, so this option is `"false"` by default since, say, a 600kb embedded image blocks page loads and prevents it form being cached on multiple pages.
+For example, Firefox enables you to paste images directly into any `contentEditable` field. This is normally not something people want, so this option is `"false"` by default. For example, a 600kb embedded image would block page loads and prevents it form being cached on multiple pages.
 
 **Type:** `Boolean`
 
@@ -166,7 +166,7 @@ tinymce.init({
 
 ### `paste_word_valid_elements`
 
-This option enables you to configure the `valid_elements` specific to MS Office. Word produces a lot of junk HTML so when users paste things from Word we do extra restrictive filtering on it to remove as much of this as possible. This option enables you to specify which elements and attributes you want to include when Word contents are intercepted.
+This option enables you to configure the `valid_elements` specific to MS Office. Word produces a lot of junk HTML, so when users paste things from Word we do extra restrictive filtering on it to remove as much of this as possible. This option enables you to specify which elements and attributes you want to include when Word contents are intercepted.
 
 **Type:** `String`
 

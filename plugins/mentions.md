@@ -33,7 +33,7 @@ These configuration options affect the execution of the `mentions` plugin. The m
 
 ### `mentions_fetch`
 
-This option lets you request your server for a list of uses matching a search query. The callback gets passed two parameters: one is the search query object and the other is the success callback to execute with the results. The query object has a term property that contains what the user has typed after the "@" sign. The success call should contain an array of users with the required properties "id", "name" and "fullName".
+This option lets you request a list of uses from your server that match a search query. The callback gets passed two parameters: one is the search query object, the other is the success callback to execute with the results. The query object has a term property that contains what the user has typed after the "@" sign. The success call should contain an array of users with the required properties "id", "name" and "fullName".
 
 **Type:** `function`
 
@@ -171,7 +171,7 @@ tinymce.init({
 
 ### `getUsers`
 
-You can retrieve the inserted users by calling `getUsers` on the plugin instance object of an editor. This will return an array of users that the author `@mentioned` in the content, but only the ones currently present in the content (i.e. not any existing before the content was created). It will also exclude duplicate inserts by using the `userinfo` objects id property.
+You can retrieve the inserted users by calling `getUsers` on the plugin instance object of an editor. This will return an array of users that the author `@mentioned` in the content, but only the ones currently present in the content and will exclude any existing before the content was created. It will also exclude duplicate inserts by using the `userinfo` objects id property.
 
 ##### Example
 

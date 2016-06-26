@@ -6,7 +6,7 @@ description: Learn how to create clean, maintainable and readable content.
 
 TinyMCE has comprehensive content filtering capabilities. These settings change the way the editor handles the input and output of content, helping your users create clean, maintainable and readable content.
 
-The settings also enable developers to control certain content styling features available to users, such as font formats, font sizes and text indentation. It is these type of customizations we will focus on here by looking at 1 of the 32 (!) content filtering options available to developers.
+These settings enable developers to control content styling features that are available to users such as font formats, font sizes, and text indentation. It is these type of customizations we will focus on here by looking at 1 of the 32 content filtering options available to developers.
 
 There are of course many configuration options dealing with complex parsing of text. However, most of these are quite advanced and outside the scope of this Get Started guide. Check out the [Content Filtering]({{ site.baseurl }}/configure/content-filtering/) section to learn more.
 
@@ -15,7 +15,7 @@ There are of course many configuration options dealing with complex parsing of t
 
 In this section of the guide we will look at the [formats]({{ site.baseurl }}/configure/content-filtering/#font_formats) configuration option, which enables developers to override TinyMCE defaults and add custom "formats" to the editor.
 
-A format is the style that get applied to text when a user presses, for example, the bold button inside the editor. TinyMCE is equipped with a text formatter engine that enables you to specify exactly what it should produce when a user clicks (in this example) the bold button.
+A format is the style that gets applied to text when a user presses the bold button inside the editor. TinyMCE is equipped with a text formatter engine that enables you to specify exactly what it should produce when a user clicks the bold button for example.
 
 ### Style merging
 
@@ -49,11 +49,11 @@ TinyMCE has some built in formats that you can override. You may recall some of 
 * dt, dd
 * samp
 
-Some built in formats `fontsize`, `fontname`, `forecolor`, `hilitecolor` uses a variable in their definition named `%value`. This one gets replaced with the user selected item such as a color value. Check the variable substitution section below for details.
+Some built in formats `fontsize`, `fontname`, `forecolor`, `hilitecolor` use a variable in their definition named `%value`. This one gets replaced with the user selected item such as a color value. Check the variable substitution section below for details.
 
 ### Format parameters
 
-Before we move on to the table of format parameters below, we want to acknowledge that this content is starting to get a little more advanced. You've made it this far and we think you can handle it.
+Before we move on to the table of format parameters below, we want to acknowledge that this content is starting to get a little more advanced. Since you've made it this far and we think you can handle it.
 
 | Name       | Summary          |
 |------------|------------------|

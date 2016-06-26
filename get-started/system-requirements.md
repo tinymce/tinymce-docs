@@ -9,7 +9,7 @@ keywords: browser compatibility explorer ie safari firefox chrome edge
 
 TinyMCE uses advanced JavaScript and tries to be as smart as possible when it comes to different browsers. The main focus is on Chrome, Firefox, Internet Explorer and Safari.
 
-If a browser is not listed on this page it doesn't mean TinyMCE won't work, it does mean however that TinyMCE may not have been fully tested on the unlisted browser. To determine compatibility with an unlisted browser, try out the examples on our website.
+If a browser is not listed on this page it doesn't mean TinyMCE won't work, but it does mean that TinyMCE may not have been fully tested on that browser. To determine compatibility with an unlisted browser, try out the examples on our website.
 
 Please use the [issues tracker on GitHub](https://github.com/tinymce/tinymce/issues) to submit bugs on the listed browsers only.
 

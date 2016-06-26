@@ -5,11 +5,11 @@ description: Community and pro-grade support options.
 keywords: forum forums url absolute relative security xss
 ---
 
-> If you landed here having worked through the [Get Started Guide]({{ site.baseurl }}/get-started/first-steps), congratulations, you are on you way to TinyMCE ninjahood :-) It's now time to deep-dive into [configuring the editor]({{ site.baseurl }}/configure/) and exploring [plugin options]({{ site.baseurl }}/plugins/). Wishing you well, welcome to TinyMCE and if you get stuck a great place to start is the [TinyMCE Forum](http://www.tinymce.com/forum/).
+> If you landed here having worked through the [Get Started Guide]({{ site.baseurl }}/get-started/first-steps), congratulations, you are on you way to TinyMCE ninjahood :-) It's now time to deep-dive into [configuring the editor]({{ site.baseurl }}/configure/) and explor [plugin options]({{ site.baseurl }}/plugins/). We wish you well, and welcome you to TinyMCE. If you get stuck a great place to start is the [TinyMCE Forum](http://www.tinymce.com/forum/).
 
 
 ## Premium Support
-If your support requirements included guaranteed responses from the TinyMCE Support Team, in-time bug fixes (and so on), **paid** premium support is available as part of [TinyMCE Enterprise](http://www.tinymce.com/pricing/).
+If your support requirements included guaranteed responses from the TinyMCE Support Team or in-time bug fixes, **paid** premium support is available as part of [TinyMCE Enterprise](http://www.tinymce.com/pricing/).
 
 If you are a TinyMCE Enterprise customer in good standing please [review what information you need to gather]({{ site.baseurl }}/enterprise/support/) to submit a case.
 
@@ -36,7 +36,7 @@ TinyMCE 4 uses Web fonts for it's icons. Some web servers doesn't support the mi
 
 ### Q: Why do buttons/selectboxes have the incorrect size?
 
-You are probably using an old `DOCTYPE` as of TinyMCE 4 a proper HTML5 doctype is required. All web developers should use a standards rendering mode on their web pages. So use a HTML5 doctype like `<!DOCTYPE html>` to properly render the page and the TinyMCE UI.
+You are probably using an old `DOCTYPE` as of TinyMCE 4 a proper HTML5 doctype is required. All web developers should use a standards rendering mode on their web pages. Use a HTML5 doctype like `<!DOCTYPE html>` to properly render the page and the TinyMCE UI.
 
 ### Q: Is TinyMCE protected against XSS vulnerabilities?
 

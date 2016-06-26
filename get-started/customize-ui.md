@@ -9,11 +9,11 @@ By now it should be clear that TinyMCE is incredibly powerful and at the same ti
 
 ### Themes
 
-TinyMCE comes with a beautiful, lightweight theme out of the box called "modern". Enabled by default there's nothing you need to do to enable it and since you can easily customize the menubar and toolbar there's usually no need to edit the theme either.
+TinyMCE comes with a beautiful, lightweight theme out of the box called "modern". This theme is enabled by default and you can easily customize the menubar or toolbar without having to edit the theme.
 
-Although any developer can create their own themes it does require skill and a deeper knowledge of TinyMCE's API. It's definitely beyond the scope of this Get Started guide.
+Although any developer can create their own themes it does require a deeper knowledge of TinyMCE's API and is beyond the scope of this Get Started guide.
 
-TinyMCE skins, on the other hand, are much easier to make thanks to the TinyMCE Skin Creator.
+However, TinyMCE skins are much easier to make thanks to the TinyMCE Skin Creator.
 
 ### Skins
 
@@ -21,7 +21,7 @@ Unlike TinyMCE themes, which affect much more than just the editor's user interf
 
 If you would like to create your own skins the best (and easiest) place to start is the [TinyMCE Skin Creator](http://skin.tinymce.com/).
 
-Once you've created your skin, download it, unzip the file, place it in the `js/skins `folder of your TinyMCE install and activate it using code similar to this:
+Once you've created your skin, download it, unzip the file, and place it in the `js/skins `folder of your TinyMCE install. Then activate it using code similar to this:
 
 ```js
 tinymce.init({
@@ -32,7 +32,7 @@ tinymce.init({
 
 If you are going to roll your own skins, the name of the skin should match the name of the folder within the skins directory (typically `tinymce/js/skins`). If the specified skin is not found, TinyMCE will not load.
 
-> Pro tip. A lot of developers confuse the difference between TinyMCE themes and skins. You'll often see the term "theme" used when they really mean "skin". So in the wild some TinyMCE themes are really skins. Confused ..?
+> Pro tip. A lot of developers confuse the difference between TinyMCE themes and skins. You'll often see the term "theme" used by developers when they really mean "skin". In the wild some TinyMCE themes are really skins.
 
 ### Changing editor height and width
 
@@ -69,7 +69,7 @@ See the [width option]({{ site.baseurl }}/configure/editor-appearance/#width) fo
 
 ##### Set maximum and minimum heights and widths
 
-By now you're fast becoming a TinyMCE pro, so we're going to include several options in this snippet to set the maximum and minimum heights and widths of the editable area. See if you can work out what's going on.
+By now you're fast becoming a TinyMCE pro, so we're going to include several options in this snippet to set the maximum and minimum values for heights and widths of the editable area. See if you can work out what's going on.
 
 ```js
 tinymce.init({
@@ -89,7 +89,7 @@ But that's not the end of your options when it comes to customizing TinyMCE's he
 
 It is usually desirable that TinyMCE's editable area has the same styling as the surrounding content. This can be achieved with the [`content_css`]({{ site.baseurl }}/configure/content-appearance/#content_css) customization option.
 
-The `css` file used in this setting should be the same `css` file that controls the look/style of all your pages! So, let's say you include a file `myLayout.css` in all your pages to control your site's global appearance, then this file must be set as your `content_css` value. Doing this will ensure the content in the editable area will also have your site's style.
+The `css` file used in this setting should be the same `css` file that controls the look/style of all your pages. Let's say you include a file `myLayout.css` in all your pages to control your site's global appearance, then this file must be set as your `content_css` value. Doing this will ensure the content in the editable area will also have your site's style.
 
 ##### Example using an absolute path
 
@@ -106,7 +106,7 @@ Refer to the [content_css]({{ site.baseurl }}/configure/content-appearance/#cont
 
 ### Hiding the status bar
 
-In this step we're going to remove a UI element entirely. Say hello and goodbye to the status bar.
+In this step we're going to remove a UI element entirely and for this example we will be saying hello and goodbye to the status bar.
 
 The status bar is a gray bar stuck to the bottom of the editor's editable area containing the path information and the resize handle. Sometimes we don't want users to be able to change the size of the editable area (by dragging the resize handle*) and so removing the status bar achieves this objective.
 
@@ -148,7 +148,7 @@ tinymce.init({
 
 We realize we covered toolbars in an earlier step but they're such an integral part of the experience your users have with the TinyMCE editor that the more practice the better.
 
-> `*` There are ways to restrict whether the resize handle can be dragged and by how much, which you'll discover when deep diving into  plugins and advanced configuration options.
+> `*` There are ways to restrict whether the resize handle can be dragged, which you'll discover when deep diving into plugins and advanced configuration options.
 
 {% assign_page next_page = "/get-started/upload-images/index.html" %}
 {% include next-step.html next=next_page %}

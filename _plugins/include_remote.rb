@@ -44,6 +44,7 @@ eos
     if ! html = @@remote_cache["#{@url}_#{xpath}_#{css}"]
       # fetch remote file
       page = Nokogiri::HTML(open(@url))
+      # puts @url
 
       # parse extract xpath/css fragments if necessary
       node = page.at_xpath(xpath) if xpath
@@ -53,7 +54,7 @@ eos
       raise IOError.new "Error while parsing remote file '#{@url}': '#{xpath||css}' not found" if !node
 
       # cache result
-      html = @@remote_cache["#{@url}_#{xpath}"] = node.to_s
+      html = @@remote_cache["#{@url}_#{xpath}_#{css}"] = node.to_s
     end
 
     begin

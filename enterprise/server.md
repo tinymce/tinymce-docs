@@ -16,7 +16,7 @@ The following server-side components are required to enable spell checking:
 |:-----------------------------	|:-------						|:----------- |
 | Allowed Origins				| ephox-allowed-origins.war 	| Supplies configuration for server components to communicate with your application.|
 | Spellchecking 				| ephox-spelling.war		|Spell checking service for TinyMCE Enterprise.|
-| Imgae Tools Proxy				| ephox-image-proxy.war		|Image proxy service for the Image Tools plugin.|
+| Image Tools Proxy				| ephox-image-proxy.war		|Image proxy service for the Image Tools plugin.|
 
 
 This guide will help you set up the Spelling server-side components, and show you how to use them in conjunction with editor clients. The steps required are:

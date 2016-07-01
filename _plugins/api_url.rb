@@ -1,7 +1,14 @@
 module Jekyll
   module APIURLFilter
     def api_url(input)
-      input.downcase if !input.nil?
+      fullName = input.downcase
+
+      if fullName == "tinymce"
+        "tinymce/root_tinymce"
+      else
+        namespace = fullName.gsub(/\.[^.]+$/, "")
+        namespace + "/" + fullName if !input.nil?
+      end
     end
   end
 end

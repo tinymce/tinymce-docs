@@ -1,4 +1,4 @@
-{% if include.data.borrows.size %}
+{% if include.data.borrows.size > 0 %}
 ## Extends
 {% for item in include.data.borrows %}
 [{{ item }}]({{ site.baseurl }}/api/class/{{ item | api_url }})

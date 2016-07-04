@@ -1,0 +1,29 @@
+permalink: pretty
+origin: "https://www.tinymce.com"
+baseurl: ""
+shared_baseurl: ""
+syntax_highlight_theme: "tomorrow-night"
+cdnurl: "//cdn.tinymce.com/4/tinymce.min.js"
+default_meta_keywords: tinymce, documentation, docs, plugins, customizable skins, configuration, examples, html, php, java, javascript, image editor
+
+exclude:
+  - Dockerfile
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor
+  - wercker.yml
+
+markdown: redcarpet
+
+redcarpet:
+  extensions:
+    - autolink
+    - no_intra_emphasis
+    - tables
+    - prettify
+
+gems:
+  - jekyll-redirect-from
+  - octopress-minify-html
+  - jekyll-sitemap

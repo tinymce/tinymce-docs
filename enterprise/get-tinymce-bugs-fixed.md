@@ -5,7 +5,7 @@ description: TinyMCE Enterprise customers get priority fixes of bugs.
 keywords: enterprise bug bugs patch patches
 ---
 
-TinyMCE is an open source project that relies on you, the community, to report and fix bugs through our [Github project](https://github.com/tinymce/tinymce).
+TinyMCE is an open source project that relies on the community, to report and fix bugs. You can do this through our [Github project](https://github.com/tinymce/tinymce).
 
 The team behind TinyMCE invests a lot of time in fixing community-reported bugs - particularly high priority issues. Just check out our [changelog]({{ site.baseurl }}/changelog/) and I am sure you will agree!
 

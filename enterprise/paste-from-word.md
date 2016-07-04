@@ -5,16 +5,16 @@ description: PowerPaste is a premium plugin for clean Word copy-and-paste.
 keywords: enterprise powerpaste power paste powerpaste_word_import powerpaste_html_import powerpaste_block_drop powerpaste_allow_local_images
 ---
 
-The TinyMCE PowerPaste plugin automatically cleans up content from Microsoft Word and other HTML sources to ensure clean, compliant content that matches the look and feel of the site.
+The TinyMCE PowerPaste plugin automatically cleans up content from Microsoft Word and HTML sources to ensure clean, compliant content that matches the look and feel of the site.
 
 TinyMCE PowerPaste is included in the TinyMCE Enterprise download.
 
 
 ## Usage
 
-The  PowerPaste plugin activates automatically when users paste content into the editor. For basic usage, users are not required to take any action - simply copy and paste content normally using keyboard shortcuts, the browser's "Paste" menu item (including from the context menu) or the TinyMCE "Paste" toolbar button.
+The PowerPaste plugin activates automatically when users paste content into the editor. For basic usage, users are not required to take any action - simply copy and paste content normally using keyboard shortcuts, the browser's "Paste" menu item (including from the context menu) or the TinyMCE "Paste" toolbar button.
 
-To paste clipboard content as plain text, removing all forms of formatting, user's can click the "Paste As Text" toolbar button and then paste the content normally. The TinyMCE PowerPaste plugin will convert the HTML on the clipboard into plain text.
+To paste clipboard content as plain text, user's can click the "Paste As Text" toolbar button and then paste the content normally. The TinyMCE PowerPaste plugin will convert the HTML on the clipboard into plain text.
 
 ***Note:*** *PowerPaste (when configured to allow local images) will import images from pasted Microsoft Word/Excel content.  When doing this, PowerPaste extracts Base64 encoded images from the clipboard.  Images larger than approximately 8.5MB may fail to import based on technical limitations of web browsers.*
 

@@ -7,7 +7,7 @@ description: Contribute to the open source project. Help build the core, plugins
 keywords: opensource oss contributors lgpl
 ---
 
-TinyMCE is an open source software project and we encourage developers to contribute patches and code for us to include in the main package of TinyMCE. However there are a few rules and limitations when doing so and this page list them.
+TinyMCE is an open source software project and we encourage developers to contribute patches and code for us to include in the main package of TinyMCE. However, there are a few rules and limitations when doing so and this page list them.
 
 
 ## Basic rules

@@ -81,22 +81,22 @@ Example:
 
 ````
 ephox {
-    allowed-origins {
-        origins = [ "http://myserver", "http://myserver:8080", "http://myotherserver", "http://myotherserver:9090", "https://mysecureserver" ]
-        url = "http://myserver:8080/ephox-allowed-origins/cors"
-    }
+	allowed-origins {
+		origins = [ "http://myserver", "http://myserver:8080", "http://myotherserver", "http://myotherserver:9090", "https://mysecureserver" ]
+		url = "http://myserver:8080/ephox-allowed-origins/cors"
+	}
 }
 ````
 
 #### Entering Origins
 
-The origins are matched by protocol, host name and port. So you may need a combination of all three, depending on which browser /s  you use. If you are serving the editor and services from `http://localhost` & port 80, then the list of origins should have an entry for `http://localhost` and any other servers with ports, like so:
+The origins are matched by protocol, host name and port. So you may need a combination of all three, depending on which browsers you use. If you are serving the editor and services from `http://localhost` & port 80, then the list of origins should have an entry for `http://localhost` and any other servers with ports, like so:
 
 ````
 ephox{
    allowed-origins{
-       origins=["http://localhost", "http://any-other-servers:port"]
-       url = "http://localhost/ephox-allowed-origins/cors"
+	   origins=["http://localhost", "http://any-other-servers:port"]
+	   url = "http://localhost/ephox-allowed-origins/cors"
   }
 }
 ````
@@ -106,8 +106,8 @@ This only applies to port 80 because this being the default HTTP port, browsers 
 ````
 ephox{
    allowed-origins{
-       origins=["http://hostname", "http://hostname:1234"]
-       url = "http://hostname:1234/ephox-allowed-origins/cors"
+	   origins=["http://hostname", "http://hostname:1234"]
+	   url = "http://hostname:1234/ephox-allowed-origins/cors"
   }
 }
 ````
@@ -190,11 +190,11 @@ Example of TinyMCE client configuration:
 
 ````
 tinymce.init({
-    selector: 'textarea', // change this value according to your HTML
-    toolbar: 'image',
-    plugins: 'tinymcespellchecker image imagetools',
-    spellchecker_rpc_url: 'http://yourspelling.server.com/ephox-spelling/',
-    imagetools_proxy: 'http://yourproxy.server.com/ephox-image-proxy/image'
+	selector: 'textarea', // change this value according to your HTML
+	toolbar: 'image',
+	plugins: 'tinymcespellchecker image imagetools',
+	spellchecker_rpc_url: 'http://yourspelling.server.com/ephox-spelling/',
+	imagetools_proxy: 'http://yourproxy.server.com/ephox-image-proxy/image'
 });
 ````
 
@@ -215,28 +215,28 @@ For easy implementation, here is a sample XML configuration with a tokenized val
 <configuration>
 
   <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
-    <encoder>
-      <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
-    </encoder>
+	<encoder>
+	  <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+	</encoder>
   </appender>
 
   <appender name="FILE" class="ch.qos.logback.core.FileAppender">
-    <file>{$LOG_LOCATION}</file>
-    <encoder>
-      <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
-    </encoder>
+	<file>{$LOG_LOCATION}</file>
+	<encoder>
+	  <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+	</encoder>
   </appender>
 
   <!-- This results in all ephox logging going to file.
-       Change/uncomment this part here if spellchecking specific logging is required -->
+	   Change/uncomment this part here if spellchecking specific logging is required -->
   <logger name="com.ephox" level="INFO"/>
   <!-- <logger name="com.ephox.ironbark" level="INFO"/> -->
 
   <root level="INFO">
-    <appender-ref ref="FILE" />
-    <!-- If you want logging to go to the container as well uncomment
-    the following line -->
-    <!-- <appender-ref ref="STDOUT" /> -->
+	<appender-ref ref="FILE" />
+	<!-- If you want logging to go to the container as well uncomment
+	the following line -->
+	<!-- <appender-ref ref="STDOUT" /> -->
   </root>
 
 </configuration>

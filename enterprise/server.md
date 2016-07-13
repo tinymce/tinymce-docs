@@ -8,25 +8,25 @@ keywords: enterprise tinymcespellchecker spell check checker pro pricing imageto
 ## Server-Side Component Installation
 
 
-Spell checking and web image insertion require the deployment of several server-side components onto a J2EE compatible application server (e.g. Jetty, or Apache Tomcat).
+*Spell checking* and *image tools* require the deployment of several server-side components onto a J2EE compatible application server (e.g. Jetty, or Apache Tomcat).
 
-The following server-side components are required to enable spell checking:
+The following server-side components are packaged with the TinyMCE SDK::
 
 |Component                      | File							| Description |
 |:-----------------------------	|:-------						|:----------- |
-| Allowed Origins				| ephox-allowed-origins.war 	| Supplies configuration for server components to communicate with your application.|
-| Spellchecking 				| ephox-spelling.war		|Spell checking service for TinyMCE Enterprise.|
-| Image Tools Proxy				| ephox-image-proxy.war		|Image proxy service for the Image Tools plugin.|
+| Allowed Origins				| ephox-allowed-origins.war 	| Supplies configuration for server components to communicate with your application. In order to use the *Spellchecking* or *Image Tools Proxy* features, you **must** install and configure this component.|
+| [Spellchecking]({{ site.baseurl }}/enterprise/check-spelling/) 				| ephox-spelling.war		|Spell checking service for TinyMCE Enterprise.|
+| [Image Tools Proxy]({{ site.baseurl }}/plugins/imagetools/)				| ephox-image-proxy.war		|Image proxy service for the Image Tools plugin.|
 
 
-This guide will help you set up the Spelling server-side components, and show you how to use them in conjunction with editor clients. The steps required are:
+This guide will help you set up the server-side components for the above mentioned features, and show you how to use them in conjunction with editor clients. The steps required are:
 
 1. Install a Java application server (or use existing)
 2. Deploy server-side components
 3. Create a configuration file and configure the allowed origins service
 4. Pass the configuration file to the Java application server
 5. Restart the Java application server
-6. Set up editor client instances to use the spelling service
+6. Set up editor client instances to use the server-side functionality
 
 
 ### Step 1. Install a Java Application Server
@@ -180,6 +180,8 @@ The first new lines of the file should read:
 ### Step 5: Restart the Java application server
 
 Once you have created a configuration file, configured the allowed origins service, and passed the configuration file to the Java application server you must restart the Java application server.
+
+### Step 6: Set up editor client instances to use the server-side functionality
 
 With the above steps completed you can now direct TinyMCE instances to use the image editing and server-side spelling components.
 

@@ -19,6 +19,7 @@
   - url: "whats-new"
   - url: "basic-example"
   - url: "full-featured"
+  - url: "inlite"
   - url: "inline"
   - url: "classic"
   - url: "image-tools"
@@ -53,6 +54,7 @@
     - url: "#fixed_toolbar_container"
     - url: "#height"
     - url: "#inline"
+    - url: "#insert_toolbar"
     - url: "#max_height"
     - url: "#max_width"
     - url: "#menu"
@@ -62,6 +64,7 @@
     - url: "#preview_styles"
     - url: "#removed_menuitems"
     - url: "#resize"
+    - url: "#selection_toolbar"
     - url: "#skin_url"
     - url: "#skin"
     - url: "#statusbar"
@@ -156,6 +159,7 @@
   pages:
   - url: "compat3x"
   - url: "a11ychecker"
+  - url: "advcode"
   - url: "advlist"
     pages:
     - url: "#advlist_bullet_styles"
@@ -357,6 +361,11 @@
     - url: "#wordcount_cleanregex"
     - url: "#wordcount_countregex"
 
+- url: "themes"
+  pages:
+  - url: "inlite"
+  - url: "modern"
+
 - url: "enterprise"
   pages:
   - url: "manage-files-and-images"
@@ -364,11 +373,12 @@
   - url: "check-spelling"
     pages:
     - url: "plugin"
-    - url: "server"
     - url: "troubleshoot"
     - url: "modifying"
   - url: "accessibility"
   - url: "mentions"
+  - url: "server"
+  - url: "advcode"
   - url: "support"
   - url: "get-tinymce-bugs-fixed"
   - url: "system-requirements"

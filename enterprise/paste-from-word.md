@@ -16,6 +16,8 @@ The  PowerPaste plugin activates automatically when users paste content into the
 
 To paste clipboard content as plain text, removing all forms of formatting, user's can click the "Paste As Text" toolbar button and then paste the content normally. The TinyMCE PowerPaste plugin will convert the HTML on the clipboard into plain text.
 
+***Note:*** *PowerPaste (when configured to allow local images) will import images from pasted Microsoft Word/Excel content.  When doing this, PowerPaste extracts Base64 encoded images from the clipboard.  Images larger than approximately 8.5MB may fail to import based on technical limitations of web browsers.*
+
 
 ## Installation
 
@@ -49,7 +51,7 @@ This setting controls how content being pasted from Microsoft Word is filtered. 
 This setting controls how content being pasted from sources other than Microsoft Word is filtered. Note that this includes content copied from TinyMCE itself. The supported values are:
 
 * `clean` - Preserve the structure of the content such as headings, tables and lists but remove inline styles and classes. This results in simple content that uses the site's CSS stylesheet while retaining the semantic structure from the original document.
-merge (Default) - Preserve the inline formatting and structure of the original document. Invalid and proprietary styles, tags and attributes are still removed ensuring that the HTML is valid while more closely matching the original document formatting.
+* `merge` (Default) - Preserve the inline formatting and structure of the original document. Invalid and proprietary styles, tags and attributes are still removed ensuring that the HTML is valid while more closely matching the original document formatting.
 * `prompt` - Prompt the user to choose between the clean and merge options after attempting to paste HTML content.
 
 ### powerpaste_block_drop
@@ -102,7 +104,7 @@ tinymce.init({
   selector: 'textarea',
   plugins: 'powerpaste',
   menu: {
-    edit: {title: 'edit', items: 'pastetext'}
+	edit: {title: 'edit', items: 'pastetext'}
   }
 });
 ````

@@ -47,6 +47,9 @@ tinymce.init({
 
 This option lets you specify a local proxy script to use when loading images from remote domains.
 
+A [TinyMCE Enterprise](http://www.tinymce.com/pricing/) subscription includes the ability to download and install a Java image proxy service you can use.
+Check the [server-side component installation guide]({{ site.baseurl }}/enterprise/server/) for details.
+
 **Type:** `String`
 
 ##### Example

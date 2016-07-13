@@ -4,7 +4,7 @@ title: Editor Control Identifiers
 title_nav: Editor Control Identifiers
 description_short: Complete list of control identifiers.
 description: Complete list of control identifiers.
-keywords: controls toolbar
+keywords: aligncenter alignjustify alignleft alignright anchor backcolor blockquote bold bullist cancel cell charmap code column controls copy cut deletetable emoticons fontselect fontsizeselect forecolor formats formatselect  fullscreen hr image indent insertdatetime insertfile inserttable italic link ltr media newdocument nonbreaking numlist outdent pagebreak paste pastetext preview print redo removeformat row rtl save searchreplace selectall spellchecker strikethrough styleselect subscript superscript table tableprops template toolbar underline undo unlink visualaid visualblocks visualchars a11ycheck
 ---
 
 Here is a list of the toolbar/menu controls that the core and plugins provides. These controls can be configured using the [toolbar]({{ site.baseurl }}/configure/editor-appearance/#toolbar) or the [menu]({{ site.baseurl }}/configure/editor-appearance/#menu) config options.
@@ -67,7 +67,12 @@ Here is a list of the toolbar/menu controls that the core and plugins provides. 
 | template | [template]({{ site.baseurl }}/plugins/template/) | Inserts templates into the editor. |
 | forecolor | [textcolor]({{ site.baseurl }}/plugins/textcolor/) | Applies foreground/text color to selection. |
 | backcolor | [textcolor]({{ site.baseurl }}/plugins/textcolor/) | Applies background color to selection. |
+| restoredraft | [restoredraft]({{ site.baseurl }}/plugins/autosave/) | Restores to the latest auto saved draft. |
 | insertfile | [moxiemanager]({{ site.baseurl }}/plugins/moxiemanager/) | Opens the MoxieManager dialog. |
+| a11ycheck | [a11ychecker]({{ site.baseurl }}/plugins/a11ychecker/) | Opens the accessibility checker dialog. |
+| quickimage | [quickimage]({{ site.baseurl }}/themes/inlite/) | Inserts an image from the local machine. |
+| quicktable | [quicktable]({{ site.baseurl }}/themes/inlite/) | Inserts an table 2x2. |
+| quicklink | [quicklink]({{ site.baseurl }}/themes/inlite/) | Inserts an link in a quicker way. |
 
 ## Menu controls
 
@@ -113,3 +118,4 @@ Here is a list of the toolbar/menu controls that the core and plugins provides. 
 | cell | [table]({{ site.baseurl }}/plugins/table/) | Cell menu item with related controls. |
 | row | [table]({{ site.baseurl }}/plugins/table/) | Row menu item with related controls. |
 | column | [table]({{ site.baseurl }}/plugins/table/) | Column menu item with related controls. |
+| restoredraft | [autosave]({{ site.baseurl }}/plugins/autosave/) | Restores to the latest auto saved draft. |

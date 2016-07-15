@@ -30,4 +30,4 @@ The following languages are supported:
 
 A [TinyMCE Enterprise](http://www.tinymce.com/pricing/) subscription includes the ability to download and install a spell check as-you-type feature for the editor.
 
-Spell Checker Pro requires both a client-side plugin to be configured and a server-side component to be installed and configured.
+Spell Checker Pro requires both a client-side plugin to be configured and a [server-side component]({{ site.baseurl }}/enterprise/server/) to be installed and configured.

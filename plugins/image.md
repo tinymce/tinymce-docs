@@ -44,7 +44,7 @@ This option lets users enable captions for images. When this option is enabled t
 
 **Type:** `Boolean`
 
-**Default Value:** `true`
+**Default Value:** `false`
 
 **Possible Values:** `true`, `false`
 

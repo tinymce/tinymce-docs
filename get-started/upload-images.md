@@ -37,7 +37,7 @@ tinymce.activeEditor.uploadImages(function(success) {
 
 In order to upload local images to the remote server, you will need a server-side upload handler script that accepts the images on the server, stores them appropriately, and returns a JSON object containing the location that they were uploaded to.
 
-An example PHP upload handler implementation is available [here](../../advanced/php-upload-handler/).
+An example PHP upload handler implementation is available [here](/advanced/php-upload-handler/).
 
 Images will be sent to the Image Uploader via HTTP POST with each post containing a single image. The image handler at the URL referenced in the `images_upload_url` has to do whatever needs to be done to "store" the image in your application. Some examples would include:
 

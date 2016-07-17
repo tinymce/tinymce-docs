@@ -5,15 +5,15 @@ title: Installation
 
 Installing TinyMCE is very simple; follow the instructions here. We give a few examples of how to integrate TinyMCE. You should also take a look at TinyMCE's extensive configuration options.
 
-Recently added is the [For Dummies section](/wiki.php/TinyMCE3x:"For_Dummies").
+Recently added is the [For Dummies section](/reference/for-dummies/).
 
 ## Requirements
 
-TinyMCE has no direct requirements except for browser compatibility (see [TinyMCE:compatibility](/wiki.php/TinyMCE3x:Browser_compatiblity)) and, of course, having JavaScript enabled.
+TinyMCE has no direct requirements except for browser compatibility (see [TinyMCE:compatibility](/extras/TinyMCE3x@Browser_compatiblity/) and, of course, having JavaScript enabled.
 
 There is NO back-end code distributed with TinyMCE.
 
-TinyMCE can be set up to use textareas in an HTML form as a workspace. When the form is submitted you can have your system do something with the content of the textarea such as save the HTML code to a database or file. Your frontend can also be set up to read in existing content so you can make changes to it. Refer to Configuration Options, General, [Mode](../configuration/Configuration3x@mode) for more information.
+TinyMCE can be set up to use textareas in an HTML form as a workspace. When the form is submitted you can have your system do something with the content of the textarea such as save the HTML code to a database or file. Your frontend can also be set up to read in existing content so you can make changes to it. Refer to Configuration Options, General, [Mode](/reference/configuration/Configuration3x@mode/) for more information.
 
 ## Windows specific Apache configuration
 
@@ -27,22 +27,25 @@ Side note: tinyMCE is not defined or missing } after property list may also occu
 
 ## Downloading
 
-For download instructions check our [TinyMCE Website](/).
+For download instructions check our [TinyMCE Website](https://www.tinymce.com).
 
 ## Extracting the archives
 
 On Windows you could use WinZip or something similar, and on other operating systems such as Linux you simply extract the archive with the tar command. You can find an example on how to extract the archived file on Linux below.
 
-You should extract TinyMCE in your wwwroot or site domain root folder.
+You should extract TinyMCE in your `wwwroot` or site domain root folder.
 
 ## Extract example using a shell
 
+```
 <pre>$ cd wwwroot
 $ gzip -d tinymce_1_44.tar.gz
 $ tar xvf tinymce_1_44.tar</pre>
+```
 
 ## A folder structure looking like this is created
 
+```
 <pre>/tinymce/
 /tinymce/docs/
 /tinymce/docs/zh_cn/
@@ -57,38 +60,40 @@ $ tar xvf tinymce_1_44.tar</pre>
 /tinymce/jscripts/tiny_mce/themes/advanced/
 /tinymce/jscripts/tiny_mce/themes/default/
 /tinymce/jscripts/tiny_mce/themes/simple/</pre>
+```
 
 ## Making changes on your web site
 
 Once you have extracted the archive you will need to edit the pages to include the configuration and javascript for TinyMCE. Please note that you should probably only include the TinyMCE javascript on the pages that need it, not all the pages of the web site. Remember to change the URL to the .js below to match your installation path.
 
-## The most basic page integration XHTML 1.1\. valid (converts all textarea elements into editors)
+## The most basic page integration XHTML 1.1. valid (converts all textarea elements into editors)
 
-Make sure you read the 2 html comments (starting with <!-- ) before trying this code :
+Make sure you read the 2 html comments (starting with `<!--` ) before trying this code:
 
 ```html
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr">
 <head>
-<title>TinyMCE Test</title>
-<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  <title>TinyMCE Test</title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
 
-<!-- OF COURSE YOU NEED TO ADAPT NEXT LINE TO YOUR tiny_mce.js PATH -->
-<script type="text/javascript" src="../jscripts/tiny_mce/tiny_mce.js"></script>
+  <!-- OF COURSE YOU NEED TO ADAPT NEXT LINE TO YOUR tiny_mce.js PATH -->
+  <script type="text/javascript" src="../jscripts/tiny_mce/tiny_mce.js"></script>
 
-<script type="text/javascript">
-tinyMCE.init({
-	mode : "textareas"
-});
-</script>
+  <script type="text/javascript">
+    tinyMCE.init({
+      mode : "textareas"
+    });
+    </script>
 </head>
 <body>
-<!-- OF COURSE YOU NEED TO ADAPT ACTION TO WHAT PAGE YOU WANT TO LOAD WHEN HITTING "SAVE" -->
-<form method="post" action="show.php">
-	<p>	
-		<textarea name="content" cols="50" rows="15">This is some content that will be editable with TinyMCE.</textarea>
-		<input type="submit" value="Save" />
-	</p>
+
+  <!-- OF COURSE YOU NEED TO ADAPT ACTION TO WHAT PAGE YOU WANT TO LOAD WHEN HITTING "SAVE" -->
+  <form method="post" action="show.php">
+    <p>
+      <textarea name="content" cols="50" rows="15">This is some content that will be editable with TinyMCE.</textarea>
+      <input type="submit" value="Save" />
+    </p>
 </form>
 
 </body>
@@ -97,10 +102,9 @@ tinyMCE.init({
 
 The Save button in this example sends the content of the textarea to the show.php page that will simply display it to you if you make it like this (of course you can adapt it to your needs to write the content to a file or database) :
 
-```html
+```php
 <?php
 /* post.php : this page shows what insert.php has sent */
-
 echo(stripslashes($_POST['content']));
 ?>
 ```
@@ -111,9 +115,9 @@ Just change the following code :
 
 ```html
 <script type="text/javascript">
-tinyMCE.init({
-	mode : "textareas"
-});
+  tinyMCE.init({
+    mode : "textareas"
+  });
 </script>
 ```
 
@@ -121,19 +125,19 @@ which should be turned into :
 
 ```html
 <script type="text/javascript">
-tinyMCE.init({
-	theme : "advanced",
-	mode : "textareas",
-	plugins : "fullpage",
-	theme_advanced_buttons3_add : "fullpage"
-});
+  tinyMCE.init({
+    theme : "advanced",
+    mode : "textareas",
+    plugins : "fullpage",
+    theme_advanced_buttons3_add : "fullpage"
+  });
 </script>
 ```
 
-Conclusion: this part will control the editor's look and functionalities. You can adapt it to your needs according to [TinyMCE:Configuration](/wiki.php/Configuration3x).
+Conclusion: this part will control the editor's look and functionalities. You can adapt it to your needs according to [TinyMCE:Configuration](/reference/Configuration3x/).
 
 ## Examples
 
-Go here to check out the [examples](/tryit/full.php) of different ways you can implement TinyMCE.
+Go here to check out the [examples](https://www.tinymce.com/docs/demo/full-featured/) of different ways you can implement TinyMCE.
 
-If you have any problems, you should check the [forum](/forum).
+If you have any problems, you should check the [forum](https://community.tinymce.com).

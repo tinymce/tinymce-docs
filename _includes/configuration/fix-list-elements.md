@@ -4,7 +4,7 @@ This option enables you to specify that list elements (`ul`, `ol`) should be con
 
 This invalid list:
 
-> ```html
+```html
 <ol>
   <li>a</li>
     <ol>
@@ -17,7 +17,7 @@ This invalid list:
 
 Gets converted into this valid list:
 
-> ```html
+```html
 <ol>
   <li>a
     <ol>

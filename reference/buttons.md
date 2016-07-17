@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Buttons/controls
+title: Buttons/Controls
 ---
 
 This is a list of all the available buttons that you can configure, the requirements are also listed as some buttons require you to include the plugin first. Check each plugin for more information, some plugins have separate configurations.

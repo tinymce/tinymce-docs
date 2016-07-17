@@ -9,7 +9,7 @@ This plugin handles embedded media such as QuickTime, Flash, ShockWave, RealPlay
 
 1.  Add plugin to TinyMCE plugin option list example: plugins : "media".
 2.  Add the button control name to a toolbar row in the theme.
-3.  Verify init option [cleanup](/wiki.php/Configuration3x:cleanup) is omitted or set to true.
+3.  Verify init option [cleanup](/reference/configuration/Configuration3x@cleanup/) is omitted or set to true.
 
 ## Initialization Example
 
@@ -26,19 +26,19 @@ tinyMCE.init({
 
 Object/embed tags are output to the HTML code by default when using this plugin but there is an alternative JS output method. This enables you to workaround the issue with IE not being able to "seamlessly embed" media objects in a HTML page due to a lawsuit.
 
-You will have to add a specific media embed script to your page in order to use this output method. This script includes the functions needed to output the various media types using a document.write method. This script is located at this path "tiny_mce/plugins/media/jscripts/embed.js". Add this script to your page header.
+You will have to add a specific media embed script to your page in order to use this output method. This script includes the functions needed to output the various media types using a document.write method. This script is located at this path `"tiny_mce/plugins/media/jscripts/embed.js"`. Add this script to your page header.
 
-We recommend that you copy the script from the TinyMCE directory to your sites/systems script directory since deeplinking into TinyMCE from pagelevel isn't recommended since files such as this might be moved in the future.
+We recommend that you copy the script from the TinyMCE directory to your sites/systems script directory since deep linking into TinyMCE from page level isn't recommended since files such as this might be moved in the future.
 
 ## Example on how to add the script to your page header:
 
 ```html
 <html>
 <head>
-	<script type="text/javascript" src="embed.js"></script>
+  <script type="text/javascript" src="embed.js"></script>
 </head>
 <body>
-	Some page with a TinyMCE instance.
+  Some page with a TinyMCE instance.
 </body>
 </html>
 ```

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: How-to implement TinyMCE in PHP
+title: Implement TinyMCE in PHP
 ---
 
 Embedding the editor on a web page form is simple, but handling the content is what makes it useful.

@@ -7,7 +7,7 @@ Creating your own themes for the TinyMCE application is fairly easy if you know 
 
 ## Theme options
 
-If you want you may add theme specific options and settings, but remember to prefix them in the following format in order to provide a unique name space: "<your theme>_<option>" ("mytheme_someoption", for example). Use [tinyMCE.getParam](/wiki.php/API3:method.tinymce.Editor.getParam) to retrieve a custom theme option value.
+If you want you may add theme specific options and settings, but remember to prefix them in the following format in order to provide a unique name space: `"<your theme>_<option>"` ("mytheme_someoption", for example). Use [tinyMCE.getParam](/api/class_tinymce.Editor.html/#getparam) to retrieve a custom theme option value.
 
 ## Theme directory structure
 
@@ -35,7 +35,7 @@ var TinyMCE_SomeNameTheme = {
 	 * The current keys are longname, author, authorurl, infourl and version.
 	 *
 	 * @returns Name/value array containing information about the theme.
-	 * @type Array 
+	 * @type Array
 	 */
 	getInfo : function() {
 		return {
@@ -50,7 +50,7 @@ var TinyMCE_SomeNameTheme = {
 	/**
 	 * Gets executed when a TinyMCE editor instance is initialized.
 	 *
-	 * @param {TinyMCE_Control} Initialized TinyMCE editor control instance. 
+	 * @param {TinyMCE_Control} Initialized TinyMCE editor control instance.
 	 */
 	initInstance : function(inst) {
 		// You can take out theme specific parameters
@@ -63,7 +63,7 @@ var TinyMCE_SomeNameTheme = {
 	/**
 	 * Gets executed when a TinyMCE editor instance is displayed using for example mceToggleEditor command.
 	 *
-	 * @param {TinyMCE_Control} Visible TinyMCE editor control instance. 
+	 * @param {TinyMCE_Control} Visible TinyMCE editor control instance.
 	 */
 	showInstance : function(inst) {
 		// Show instance resources
@@ -72,7 +72,7 @@ var TinyMCE_SomeNameTheme = {
 	/**
 	 * Gets executed when a TinyMCE editor instance is hidden using for example mceToggleEditor command.
 	 *
-	 * @param {TinyMCE_Control} Hidden TinyMCE editor control instance. 
+	 * @param {TinyMCE_Control} Hidden TinyMCE editor control instance.
 	 */
 	hideInstance : function(inst) {
 		// Hide instance resources
@@ -81,7 +81,7 @@ var TinyMCE_SomeNameTheme = {
 	/**
 	 * Gets executed when a TinyMCE editor instance is removed.
 	 *
-	 * @param {TinyMCE_Control} Removed TinyMCE editor control instance. 
+	 * @param {TinyMCE_Control} Removed TinyMCE editor control instance.
 	 */
 	removeInstance : function(inst) {
 		// Cleanup instance resources
@@ -261,7 +261,6 @@ When creating a popup you need to include the "tiny_mce_popup.js" this enables y
 <body>
      <strong>{$lang_theme_sample_desc}</strong>
 </body>
-
 ```
 
 ## Troubleshooting

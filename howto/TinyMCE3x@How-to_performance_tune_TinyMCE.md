@@ -1,6 +1,6 @@
 ---
 layout: default
-title: How-to performance tune TinyMCE
+title: Performance tune TinyMCE
 ---
 
 This page contains some ways to boost over all performance of TinyMCE by reconfiguration.
@@ -11,7 +11,7 @@ Warning: We are focusing on raw performance here and some options might produce 
 
 Here are some actions to take to boost initialization/loading time of TinyMCE.
 
-Use and install the [TinyMCE Compressor](/wiki.php/Compressors3x).
+Use and install the [TinyMCE Compressor](/compressor/about/).
 This will bundle all JavaScript HTTP requests into one big request and also gzip compress them by 75%.
 
 Enable the button_tile_map option (should be enabled by default if you have a newer version of TinyMCE).
@@ -40,5 +40,5 @@ These options are not recommended, they will disable any of the above cleanup/sa
 Switch to the somewhat experimental XML serializer by setting cleanup_serializer to "xml".
 This will switch the serialization engine to one based on a XML document DOM tree. Sometimes this is a lot faster but most of the cleanup options doesn't apply to this engine. It will always produce a parsable XML output.
 
-Disable the cleanup by setting [cleanup](/wiki.php/Configuration3x:cleanup) option to false.
+Disable the cleanup by setting [cleanup](/configuration/Configuration3x@cleanup) option to false.
 This will make it faster to save but IE will produce invalid HTML code. So you should clean that up by using some other method like a server side Tidy cleanup or [HTML Purifier](http://htmlpurifier.org/).

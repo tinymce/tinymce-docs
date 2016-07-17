@@ -5,7 +5,7 @@ title: Creating a plugin
 
 ## Creating a plugin for TinyMCE (3.x)
 
-NOTE: Still using TinyMCE version 2.x? Update!
+NOTE: Still using TinyMCE version 3.x? [Update to 4.x](https://tinymce.com/docs/). More features, easier deployment and better support!
 
 ## Creating your own plugins
 
@@ -13,19 +13,19 @@ Creating your own plugins for the TinyMCE application is fairly easy if you know
 
 ## Migration from the 2.x API to the new 3.x API
 
-There have been lots of changes to the API for the 3.x version of TinyMCE. The new API is more robust and clean than the old 2.x API and it's also well documented. Check the [TinyMCE API](/wiki.php/API3:tinymce.api.3.x) for details on different methods and classes. One of the big changes to plugin creation from the 2.x API is that it now uses the observer pattern instead of an event interface pattern, so you need to register listener functions in the "init" method of the plugin instead of simply implementing different event callback methods. The new approach has its advantages from the older method. You can read more about the changes API changes in the [Migration guide](/wiki.php/TinyMCE3x:How-to_migrate_from_TinyMCE_2.x_to_3.x).
+There have been lots of changes to the API for the 3.x version of TinyMCE. The new API is more robust and clean than the old 2.x API and it's also well documented. Check the [TinyMCE API](/api) for details on different methods and classes. One of the big changes to plugin creation from the 2.x API is that it now uses the observer pattern instead of an event interface pattern, so you need to register listener functions in the "init" method of the plugin instead of simply implementing different event callback methods. The new approach has its advantages from the older method. You can read more about the changes API changes in the [Migration guide](/howto/TinyMCE3x@How-to_migrate_from_TinyMCE_2.x_to_3.x/).
 
 ## Plugin options
 
-If you want, you may add plugin specific options and settings, but remember to prefix their names in the following format in order to create a unique name space: "<your plugin>_<option>" ("yourplugin_someoption", for example). Use [getParam](/wiki.php/API3:method.tinymce.Editor.getParam) to retrieve a custom plugin option value.
+If you want, you may add plugin specific options and settings, but remember to prefix their names in the following format in order to create a unique name space: `"<your plugin>_<option>"` ("yourplugin_someoption", for example). Use [getParam](/api/class_tinymce.Editor.html/#getparam) to retrieve a custom plugin option value.
 
 ## Plugin directory structure
 
-/css Plugin specific CSS files. /img Plugin specific images. /js Plugin specific javascripts for HTML dialogs etc. /langs Plugin specific language files. These will be two files namely: 1\. en.js which contains only the description of the plugin when the mouse cursor hovers over the plugin's button in the UI 2\. en_dlg.js which contains all the dialogue strings you want to display in the plugin's pop-up window. /editor_plugin.js Editor plugin file (compressed) gets loaded when tiny_mce.js is used. /editor_plugin_src.js Editor plugin file (source) gets loaded when tiny_mce_src.js or tiny_mce_dev.js is used. /somedialog.htm Plugin specific dialog HTML file.
+`/css` Plugin specific CSS files. `/img` Plugin specific images. `/js` Plugin specific javascripts for HTML dialogs etc. `/langs` Plugin specific language files. These will be two files namely: 1. `en.js` which contains only the description of the plugin when the mouse cursor hovers over the plugin's button in the UI 2. `en_dlg.js` which contains all the dialogue strings you want to display in the plugin's pop-up window. `/editor_plugin.js` Editor plugin file (compressed) gets loaded when `tiny_mce.js` is used. `/editor_plugin_src.js` Editor plugin file (source) gets loaded when `tiny_mce_src.js` or `tiny_mce_dev.js` is used. `/somedialog.htm` Plugin specific dialog HTML file.
 
 ## Compiling JavaScript (editor_plugin_src.js -> editor_plugin.js)
 
-TinyMCE doesn't care about editor_plugin_src.js. You need to use [jstrim](http://javascriptcompressor.com/) to convert it to editor_plugin.js, which is essentially a version of editor_plugin_src.js with all the comments and whitespace stripped out.
+TinyMCE doesn't care about `editor_plugin_src.js`. You need to use [jstrim](http://javascriptcompressor.com/) to convert it to `editor_plugin.js`, which is essentially a version of `editor_plugin_src.js` with all the comments and whitespace stripped out.
 
 ## Plugin example source
 

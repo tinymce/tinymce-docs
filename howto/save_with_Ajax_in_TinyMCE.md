@@ -1,6 +1,6 @@
 ---
 layout: default
-title: How-to load/save with Ajax in TinyMCE
+title: Load/Save with Ajax in TinyMCE
 ---
 
 Saving and loading data with TinyMCE and Ajax is fairly simple.

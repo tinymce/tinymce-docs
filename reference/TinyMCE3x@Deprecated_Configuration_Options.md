@@ -9,7 +9,7 @@ This page contains a list of deprecated and old configuration options none of th
 *   auto_reset_designmode
 *   auto_resize
 *   button_tile_map
-*   [cleanup](/wiki.php/Configuration3x:cleanup)
+*   cleanup
 *   [cleanup_on_startup](../configuration/Configuration3x@cleanup_on_startup)
 *   cleanup_serializer
 *   debug

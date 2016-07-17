@@ -14,30 +14,30 @@ title: "For Dummies"
 
 ##### 1. Include the following with the `<script>` calls within the `<head>` tags.
 
-```
+```html
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr">
 
 <head>
-<script type="text/javascript" src="insertYourPath/tinymce/jscripts/tiny_mce/tiny_mce.js" ></script >
-<script type="text/javascript" >
-tinyMCE.init({
-        mode : "textareas",
-        theme : "simple"   //(n.b. no trailing comma, this will be critical as you experiment later)
-});
-</script >
+  <script type="text/javascript" src="insertYourPath/tinymce/jscripts/tiny_mce/tiny_mce.js"></script >
+  <script type="text/javascript">
+    tinyMCE.init({
+      mode : "textareas",
+      theme : "simple"   //(n.b. no trailing comma, this will be critical as you experiment later)
+    });
+  </script >
 </head>
 ```
 
 ##### 2. Create a form with a `<textarea>`
 
-```
+```html
 <body>
-        <form>  
-        <textarea name="content" cols="50" rows="15" >
-        This is some content that will be editable with TinyMCE.
-        </textarea>
-        </form>
+  <form>  
+    <textarea name="content" cols="50" rows="15" >
+      This is some content that will be editable with TinyMCE.
+    </textarea>
+  </form>
 </body>
 ```
 
@@ -54,33 +54,33 @@ OK so let's move on to become a more advanced Dummy.
 1. Take your example above
 2. Substitute
 
-```
+```html
 <script type="text/javascript">
-tinyMCE.init({
-        mode : "textareas",
-        theme : "simple"    //(n.b. no trailing comma, this will be critical as you experiment later)
-});
+  tinyMCE.init({
+    mode : "textareas",
+    theme : "simple"    //(n.b. no trailing comma, this will be critical as you experiment later)
+  });
 </script>
 ```
 
 With:
 
-```
+```html
 <script type="text/javascript">
-tinyMCE.init({
-        mode : "textareas",
-        theme : "advanced",
-        plugins : "emotions,spellchecker,advhr,insertdatetime,preview",
+  tinyMCE.init({
+    mode : "textareas",
+    theme : "advanced",
+    plugins : "emotions,spellchecker,advhr,insertdatetime,preview",
 
-        // Theme options - button# indicated the row# only
-        theme_advanced_buttons1 : "newdocument,|,bold,italic,underline,|,justifyleft,justifycenter,justifyright,fontselect,fontsizeselect,formatselect",
-        theme_advanced_buttons2 : "cut,copy,paste,|,bullist,numlist,|,outdent,indent,|,undo,redo,|,link,unlink,anchor,image,|,code,preview,|,forecolor,backcolor",
-        theme_advanced_buttons3 : "insertdate,inserttime,|,spellchecker,advhr,,removeformat,|,sub,sup,|,charmap,emotions",      
-        theme_advanced_toolbar_location : "top",
-        theme_advanced_toolbar_align : "left",
-        theme_advanced_statusbar_location : "bottom",
-        theme_advanced_resizing : true
-});
+    // Theme options - button# indicated the row# only
+    theme_advanced_buttons1 : "newdocument,|,bold,italic,underline,|,justifyleft,justifycenter,justifyright,fontselect,fontsizeselect,formatselect",
+    theme_advanced_buttons2 : "cut,copy,paste,|,bullist,numlist,|,outdent,indent,|,undo,redo,|,link,unlink,anchor,image,|,code,preview,|,forecolor,backcolor",
+    theme_advanced_buttons3 : "insertdate,inserttime,|,spellchecker,advhr,,removeformat,|,sub,sup,|,charmap,emotions",      
+    theme_advanced_toolbar_location : "top",
+    theme_advanced_toolbar_align : "left",
+    theme_advanced_statusbar_location : "bottom",
+      theme_advanced_resizing : true
+    });
 </script>
 ```
 

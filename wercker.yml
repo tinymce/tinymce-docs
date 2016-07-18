@@ -11,6 +11,9 @@ build:
         deployment: true
         jobs: 10
     - script:
+        name: init
+        code: _scripts/init.sh
+    - script:
         name: build
         code: _scripts/build.sh
 

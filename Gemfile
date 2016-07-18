@@ -4,7 +4,7 @@
 source 'https://rubygems.org'
 
 group :development, :test do
-  gem 'jekyll', '3.1.6'
+  gem 'jekyll', '~> 2.5.3'
   gem 'jekyll-redirect-from', '~> 0.8.0'
   gem 'jekyll-sitemap', '~> 0.10.0'
   gem 'nokogiri', '1.6.6.4'

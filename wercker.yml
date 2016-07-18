@@ -7,6 +7,9 @@ build:
         hostname: github.com
     - add-ssh-key:
         keyname: SSH_KEY
+      - bundle-install:
+        deployment: true
+        jobs: 10
     - script:
         name: build
         code: _scripts/build.sh

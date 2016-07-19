@@ -5,7 +5,7 @@ title: Compressors
 
 ## TinyMCE Compressor
 
-The TinyMCE compressor is a backend for reducing the overall download and initialization time for TinyMCE it consists of a JavaScript loader that requests a php/aspx/jsp/cfm page that compresses the specified resources using GZip. This method makes the overall download 75% smaller and the number of requests will also be reduced. The overall initialization time for TinyMCE will be reduced dramatically if you use this script for loading TinyMCE.
+The TinyMCE compressor is a backend for reducing the overall download & initialization time for TinyMCE it consists of a JavaScript loader that requests a php/aspx/jsp/cfm page that compresses the specified resources using GZip. This method makes the overall download 75% smaller and the number of requests will also be reduced. The overall initialization time for TinyMCE will be reduced dramatically if you use this script for loading TinyMCE.
 
 ## What is GZip?
 

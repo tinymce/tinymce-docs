@@ -56,11 +56,11 @@ More information on deploying components/applications:
 
 ### Step 3. Create a configuration file and configure the allowed origins service
 
-> **Note:** It is recommended that you use a plain text editor (eg: gedit, vim, emacs, notepad etc) when creating or editing the application.conf file. Do not use editors like Evernote as there is a good chance of smart quotes being used where plain quotes should be used and this will cause the services to fail.
+> **Note:** It is recommended that you use a plain text editor (eg: gedit, vim, emacs, notepad etc) when creating or editing the ephox.conf file. Do not use editors like Evernote as there is a good chance of smart quotes being used where plain quotes should be used and this will cause the services to fail.
 
-Services requires a configuration file named `application.conf` to be referenced by the application server.
+Services requires a configuration file named `ephox.conf` to be referenced by the application server.
 
-The SDK comes packaged with an example configuration file (`examples/sample_application.conf`) that can be used as a reference guide. You can use this example file (after modifying it with your settings).  We recommend that you make a backup of the file before editing it.
+The SDK comes packaged with an example configuration file (`examples/ephox.conf`) that can be used as a reference guide. You can use this example file (after modifying it with your settings).  We recommend that you make a backup of the file before editing it.
 
 The `allowed-origins` configuration element will need to be specified in order for the spelling server-side component to work.
 
@@ -124,45 +124,45 @@ Depending on your configuration and the browser you use, you may need to specify
 
 You’ll need to reference the configuration file created in Step 3 as a parameter passed to the JVM running the services. Once the server has been configured to use the file, restart the server.
 
-> **Note:** If the path to your application.conf file has spaces in it, you must ensure you prefix each white space with an escape character (\). Example: ` -Dconfig.file=/config/file/location/with/white\ space/application.conf`
+> **Note:** If the path to your ephox.conf file has spaces in it, you must ensure you prefix each white space with an escape character (\). Example: ` -Dconfig.file=/config/file/location/with/white\ space/ephox.conf`
 
-The following examples demonstrate how to reference application.conf for Tomcat or Jetty instances.
+The following examples demonstrate how to reference ephox.conf for Tomcat or Jetty instances.
 
 
 #### Tomcat Unix example:
 
-Make/edit a script at `/tomcat/install/directory/bin/setenv.sh`
+Make/edit a script at `/tomcat/install/directory/bin/setenv.sh` (This file might not exist for some versions of tomcat, create it in `bin` folder)
 
 Ensure the file contains a single line, like (this must be the absolute path as before):
 
-`CATALINA_OPTS=" -Dconfig.file=/config/file/location/application.conf"`
+`CATALINA_OPTS=" -Dconfig.file=/config/file/location/ephox.conf"`
 
 
 #### Tomcat (Windows) example:
 
-Make/edit a script at `DRIVE:\tomcat\install\directory\bin\setenv.bat`
+Make/edit a script at `DRIVE:\tomcat\install\directory\bin\setenv.bat` (This file might not exist for some versions of tomcat, create it in `bin` folder)
 
 The file should contain a single line:
 
-`set CATALINA_OPTS= -Dconfig.file=DRIVE:\config\file\location\application.conf`
+`set CATALINA_OPTS= -Dconfig.file=DRIVE:\config\file\location\ephox.conf`
 
 
 #### Jetty (simple configuration):
 
-You can specify your `application.conf` as a parameter to this command, along with other JVM parameters:
+You can specify your `ephox.conf` as a parameter to this command, along with other JVM parameters:
 
-`java -jar /jetty/install/directory/start.jar -Dconfig.file="/config/file/location/application.conf"`
+`java -jar /jetty/install/directory/start.jar -Dconfig.file="/config/file/location/ephox.conf"`
 
 
 #### Jetty (automatic configuration for services launching on system start-up):
 
 Edit `/etc/default/jetty` and add the line:
 
-`JETTY_OPTS=" -Dconfig.file=/config/file/location/application.conf"`
+`JETTY_OPTS=" -Dconfig.file=/config/file/location/ephox.conf"`
 
 Edit `/opt/jetty/start.ini` and add the line:
 
-`" -Dconfig.file=/config/file/location/application.conf"`
+`" -Dconfig.file=/config/file/location/ephox.conf"`
 
 The first new lines of the file should read:
 
@@ -173,7 +173,7 @@ The first new lines of the file should read:
 # arguments # of a call to:
 # java -jar start.jar [arg...]
 #===========================================================
-" -Dconfig.file=/config/file/location/application.conf"
+" -Dconfig.file=/config/file/location/ephox.conf"
 ````
 
 
@@ -246,7 +246,7 @@ For easy implementation, here is a sample XML configuration with a tokenized val
 
 #### Add the logging configuration to your classpath
 
-Much like how your `application.conf` services configuration file is added to the classpath (see Step 3 above), you’ll need to follow a similar pattern to add your logging configuration XML to the classpath.
+Much like how your `ephox.conf` services configuration file is added to the classpath (see Step 3 above), you’ll need to follow a similar pattern to add your logging configuration XML to the classpath.
 
 ````
 -Dlogback.configurationFile={$LOG_LOCATION}

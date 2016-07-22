@@ -7,28 +7,26 @@ This option should contain a comma separated list of button/control names to ins
 
 Since these rows have items in them by default you need to set them to empty strings "" if you want to completely remove rows. Check the example below.
 
-You may only use theme_advanced_buttons<1-n> once for each value of n where n is a whole number starting with 1 with step 1\. If you use the same value for n more than once, the previous lines will be overwritten with the most recent declaration. It should also be noted that a button can oonly be used once in a TinyMCE instance, ie trying to put bold on rows 1 _and_ 2 will cause an error.
+You may only use theme_advanced_buttons<1-n> once for each value of n where n is a whole number starting with 1 with step 1\. If you use the same value for n more than once, the previous lines will be overwritten with the most recent declaration. It should also be noted that a button can only be used once in a TinyMCE instance, i.e. trying to put bold on rows 1 _and_ 2 will cause an error.
 
-A complete reference of all built in buttons and controls can be found in the [button/control reference](/wiki.php/TinyMCE3x:Buttons/controls) page.
+A complete reference of all built in buttons and controls can be found in the [button/control reference](/reference/buttons/) page.
 
 ## Example of usage of the theme_advanced_buttons<1-n> option:
 
-```html
+```js
 tinyMCE.init({
-	...
-	theme_advanced_buttons1 : "separator,insertdate,inserttime,preview,zoom,separator,forecolor,backcolor",
-	theme_advanced_buttons2 : "bullist,numlist,separator,outdent,indent,separator,undo,redo,separator",
-	theme_advanced_buttons3 : "hr,removeformat,visualaid,separator,sub,sup,separator,charmap"
+  theme_advanced_buttons1 : "separator,insertdate,inserttime,preview,zoom,separator,forecolor,backcolor",
+  theme_advanced_buttons2 : "bullist,numlist,separator,outdent,indent,separator,undo,redo,separator",
+  theme_advanced_buttons3 : "hr,removeformat,visualaid,separator,sub,sup,separator,charmap"
 });
 ```
 
 ## Example of how to remove default rows 2 and 3
 
-```html
+```JS
 tinyMCE.init({
-	...
-	theme_advanced_buttons1 : "bold,italic,underline",
-	theme_advanced_buttons2 : "",
-	theme_advanced_buttons3 : ""
+  theme_advanced_buttons1 : "bold,italic,underline",
+  theme_advanced_buttons2 : "",
+  theme_advanced_buttons3 : ""
 });
 ```

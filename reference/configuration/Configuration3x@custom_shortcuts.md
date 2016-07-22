@@ -7,11 +7,10 @@ This option enables you to disable/enable the custom keyboard shortcuts, which p
 
 ## Example of usage of the custom_shortcuts option:
 
-```html
+```js
 tinyMCE.init({
-	...
-	custom_shortcuts : false
+  custom_shortcuts : false
 });
 ```
 
-In case you'd like to register custom shortcuts you'll need <editor>.[addShortcut()](/wiki.php/API3:method.tinymce.Editor.addShortcut).
+In case you'd like to register custom shortcuts you'll need <editor>.[addShortcut()](/api/class_tinymce.Editor.html/#addshortcut).

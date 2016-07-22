@@ -1,6 +1,9 @@
 ---
 layout: default
-title: Compressors
+title: About Compressors
+title_nav: About Compressors
+description_short: An introduction to TinyMCE 3.x compressors
+description:
 ---
 
 ## TinyMCE Compressor
@@ -15,10 +18,10 @@ gzipis short for GNU zip, a GNU free software file compression program. It was c
 
 There are currently 4 different compressors written by MoxieCode based on various server technologies:
 
-*   [PHP](/wiki.php/Compressors3x:PHP)
-*   [ASPX / Microsoft .NET](/wiki.php/Compressors3x:.NET)
-*   [JSP / Tomcat or compatible application servers](/wiki.php/Compressors3x:JSP)
-*   [CFM / Coldfusion](/wiki.php/Compressors3x:Coldfusion)
+*   [PHP](../Compressors3x@PHP)
+*   [ASPX / Microsoft .NET](../Compressors3x@.NET)
+*   [JSP / Tomcat or compatible application servers](../Compressors3x@JSP)
+*   [CFM / Coldfusion](../Compressors3x@Coldfusion)
 
 They can be downloaded from our [Download page](/download/download.php).
 

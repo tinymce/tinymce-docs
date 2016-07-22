@@ -1,6 +1,6 @@
 ---
 layout: default
-title: How-to load TinyMCE crossdomain
+title: Load TinyMCE crossdomain
 ---
 
 **Please note that it is not possible to load TinyMCE crossdomain, only crosssubdomain.**
@@ -22,7 +22,7 @@ tinyMCE.init({
 And then change the value in: tiny_mce_popup.js to:
 
 ```html
-document.domain = 'mydomain.com'; 
+document.domain = 'mydomain.com';
 
 ```
 

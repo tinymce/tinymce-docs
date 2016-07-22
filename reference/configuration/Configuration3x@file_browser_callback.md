@@ -9,18 +9,17 @@ This function is executed each time a user clicks on the "browse" buttons in var
 
 ## Example of usage of the file_browser_callback option:
 
-```html
+```js
 function myCustomFileBrowser(field_name, url, type, win) {
-	// Do custom browser logic
-	win.document.forms[0].elements[field_name].value = 'my browser value';
+  // Do custom browser logic
+  win.document.forms[0].elements[field_name].value = 'my browser value';
 }
 
 tinyMCE.init({
-	...
-	file_browser_callback : "myCustomFileBrowser"
+  file_browser_callback : "myCustomFileBrowser"
 });
 ```
 
 ## HowTo for this Option
 
-There is a HowTo article for this option which also provides a working example (without a server-side counterpart yet): [Custom FileBrowser Implementation](/wiki.php/TinyMCE3x:How-to_implement_a_custom_file_browser)
+There is a HowTo article for this option which also provides a working example (without a server-side counterpart yet): [Custom FileBrowser Implementation](/howto/TinyMCE3x@How-to_implement_a_custom_file_browser/)

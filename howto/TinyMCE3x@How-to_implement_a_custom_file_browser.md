@@ -1,6 +1,6 @@
 ---
 layout: default
-title: How-to implement a custom file browser
+title: Implement a custom file browser
 ---
 
 With TinyMCE you can implement your own file browser functionality. When the [file_browser_callback](../configuration/Configuration3x@file_browser_callback) setting is defined, a browse button will appear in the dialogue windows where you can add a link or an image. Clicking this button will execute the function defined in this setting.
@@ -324,8 +324,8 @@ If you use the [inlinepopups plugin](../plugins/Plugin3x@inlinepopups) then your
     <script type="text/javascript">
         myInitFunction = function () {
             // ensure window title in inlinepopups
-            var obj; 
-            var inlinepopups = false; 
+            var obj;
+            var inlinepopups = false;
             for (obj in tinyMCE.selectedInstance.plugins)
                 if (tinyMCE.selectedInstance.plugins[obj] == "inlinepopups")
                     inlinepopups = true;

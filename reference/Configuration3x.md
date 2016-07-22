@@ -3,13 +3,11 @@ layout: default
 title: Configuration
 ---
 
-This document is the index/reference page for all available core configuration options in TinyMCE. There is also a list of old and [deprecated config options](/wiki.php/TinyMCE3x:Deprecated_Configuration_Options) for older versions of TinyMCE.
+This document is the index/reference page for all available core configuration options in TinyMCE. There is also a list of old and [deprecated config options](../TinyMCE3x@Deprecated_Configuration_Options/) for older versions of TinyMCE.
 
 ### Configuration options
 
-All configuration options below are to be placed within the tinyMCE.init() JavaScript call. This call will usually be made from outside of TinyMCE.
-
-| 
+All configuration options below are to be placed within the `tinyMCE.init()` JavaScript call. This call will usually be made from outside of TinyMCE.
 
 ## General
 
@@ -23,7 +21,7 @@ All configuration options below are to be placed within the tinyMCE.init() JavaS
 *   [editor_deselector](../configuration/Configuration3x@editor_deselector)
 *   [editor_selector](../configuration/Configuration3x@editor_selector)
 *   [elements](../configuration/Configuration3x@elements)
-*   [gecko_spellcheck](/wiki.php/Configuration3x:gecko_spellcheck)
+*   [gecko_spellcheck](https://www.tinymce.com/docs/configure/spelling/#gecko_spellcheck)
 *   [keep_styles](../configuration/Configuration3x@keep_styles)
 *   [language](../configuration/Configuration3x@language)
 *   [mode](../configuration/Configuration3x@mode)
@@ -36,7 +34,7 @@ All configuration options below are to be placed within the tinyMCE.init() JavaS
 *   [skin_variant](../configuration/Configuration3x@skin_variant)
 *   [table_inline_editing](../configuration/Configuration3x@table_inline_editing)
 *   [theme](../configuration/Configuration3x@theme)
-*   [imagemanager_contextmenu](/wiki.php/MCImageManager:imagemanager_contextmenu)
+*   imagemanager_contextmenu
 
 ## Callbacks
 
@@ -89,7 +87,7 @@ All configuration options below are to be placed within the tinyMCE.init() JavaS
 *   [verify_html](../configuration/Configuration3x@verify_html)
 *   [removeformat_selector](../configuration/Configuration3x@removeformat_selector)
 
- | 
+ |
 
 ## URL
 
@@ -173,8 +171,6 @@ All configuration options below are to be placed within the tinyMCE.init() JavaS
 *   [theme_advanced_default_foreground_color](../configuration/Configuration3x@theme_advanced_default_foreground_color)
 *   [theme_advanced_default_background_color](../configuration/Configuration3x@theme_advanced_default_background_color)
 *   [theme_advanced_more_colors](../configuration/Configuration3x@theme_advanced_more_colors)
-
- |
 
 ## Initialization of TinyMCE
 

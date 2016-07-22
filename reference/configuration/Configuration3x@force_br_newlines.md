@@ -3,18 +3,17 @@ layout: default
 title: force_br_newlines
 ---
 
-**This option is deprecated as of 3.5 use forced_root_blocks: false instead to control p vs br behavior.**
+**This option is deprecated as of 3.5 use `forced_root_blocks: false` instead to control `p` vs `br` behavior.**
 
 If you set this option to true, TinyMCE will force BR elements on newlines instead of inserting paragraphs. This option is set to false by default since paragraphs is a much better concept. BR elements should only be used when you really have to (mostly never). Also as of 3.x the [forced_root_block](../configuration/Configuration3x@forced_root_block) option is enabled by default so if you really want to disable paragraphs disable that one as well.
 
 ## Example of usage of the force_br_newlines option:
 
-```html
+```js
 tinyMCE.init({
-	...
-	force_br_newlines : true,
-	force_p_newlines : false,
-        forced_root_block : '' // Needed for 3.x
+  force_br_newlines : true,
+  force_p_newlines : false,
+  forced_root_block : '' // Needed for 3.x
 });
 ```
 
@@ -22,19 +21,19 @@ tinyMCE.init({
 
 This CSS will reduce the space between (lines) paragraphs to zero. It will look more like the default line spacing in popular Word processors.
 
-```html
+```css
 p {margin: 0; padding: 0;}
 ```
 
 ## Post processing away P tags before output to Flash/E-mail
 
-See also: [Reasons why not to use BR elements for linebreaks](/wiki.php/TinyMCE3x:TinyMCE_FAQ)
+See also: [Reasons why not to use BR elements for linebreaks](/extras/TinyMCE3x@TinyMCE_FAQ/)
 
 ## Perl Example
 
 Note that this code does not rely upon regular expressions for processing the HTML, since you really cannot rely upon them to do the job. For a detailed discussion, see How do I remove HTML from a string? in perlfaq9; at the terminal of a machine with Perl, type perldoc -q html.
 
-```html
+```perl
 #!/usr/bin/perl
 use strict;
 use warnings;
@@ -79,7 +78,7 @@ __END__
 
 ## PHP Example
 
-```html
+```php
 // Get content from TinyMCE
 $content = $_REQUEST['content'];
 $content = preg_replace('/<p[^>]*>/', '', $content); // Remove the start <p> or <p attr="">

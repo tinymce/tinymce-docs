@@ -137,25 +137,22 @@ Ensure the file contains a single line, like (this must be the absolute path as 
 
 `CATALINA_OPTS=" -Dephox.config.file=/config/file/location/application.conf"`
 
-
 #### Tomcat (Windows) example:
 Setting configuration varies based on installation of tomcat. You can choose one of following options to complete configuration setting.
 
-### Option A. Installation though Windows Command line (CMD) with tomcat.zip file:
-
+###### Option A. Installation though Windows Command line (CMD) with tomcat binary file:
 Make/edit a script at `DRIVE:\tomcat\install\directory\bin\setenv.bat` (This file might not exist for some versions of tomcat, create it in `bin` folder)
-
 The file should contain a single line:
-
 `set CATALINA_OPTS= -Dephox.config.file=DRIVE:\config\file\location\application.conf`
 
-### Option B. Windows Service Installer:
 
+###### Option B. Windows Service Installer:
 1. From start menu, open Monitor Tomcat and see popping up window.
 2. Go to Java tab and see Java Options.
 3. In Java Options, insert new line, which is
 `-Dephox.config.file=DRIVE:\config\file\location\application.conf`
-4. 
+4. Then you can go to General tab to start Tomcat.
+
 
 #### Jetty (simple configuration):
 

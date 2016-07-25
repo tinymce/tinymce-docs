@@ -8,9 +8,9 @@ keywords: enterprise tinymcespellchecker spell check checker pro pricing imageto
 ## Server-Side Component Installation
 
 
-*Spell checking* and *image tools* require the deployment of several server-side components onto a J2EE compatible application server (e.g. Jetty, or Apache Tomcat).
+*Spell checking* and *image tools proxy* require the deployment of several server-side components onto a J2EE compatible application server.  We currently support Jetty, Apache Tomcat, and WebSphere Application Server.  To discuss support for additional Java application servers, please contact us: <mailto:sales@ephox.com>
 
-The following server-side components are packaged with the TinyMCE SDK::
+The following server-side components are packaged with the TinyMCE SDK:
 
 |Component                      | File							| Description |
 |:-----------------------------	|:-------						|:----------- |

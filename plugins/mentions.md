@@ -33,7 +33,7 @@ These configuration options affect the execution of the `mentions` plugin. The m
 
 ### `mentions_fetch`
 
-This option lets you request your server for a list of uses matching a search query. The callback gets passed two parameters: one is the search query object and the other is the success callback to execute with the results. The query object has a term property that contains what the user has typed after the "@" sign. The success call should contain an array of users with the required properties "id", "name" and "fullName".
+This option lets you request your server for a list of users matching a search query. The callback gets passed two parameters: one is the search query object and the other is the success callback to execute with the results. The query object has a term property that contains what the user has typed after the "@" sign. The success call should contain an array of users with the required properties "id", "name" and "fullName".
 
 **Type:** `function`
 

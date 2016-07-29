@@ -36,4 +36,4 @@ On the tool bars and in the formatting menu, you can insert emoticons or change 
 
 ## Credits
 
-Most of this text was written by Marco, who is working as a Accessibility QA Engineer and Evangelist at Mozilla. We would like to extend our thanks for the help with the WAI-ARIA implementation, could not have done it without him. [Visit Marco's excellent blog!](http://www.marcozehe.de/)
+Most of this text was written by Marco, who is working as an Accessibility QA Engineer and Evangelist at Mozilla. We would like to extend our thanks for the help with the WAI-ARIA implementation, could not have done it without him. [Visit Marco's excellent blog!](http://www.marcozehe.de/)

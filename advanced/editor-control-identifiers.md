@@ -33,7 +33,7 @@ Here is a list of the toolbar/menu controls that the core and plugins provides. 
 | numlist | core | Formats the current selection as a numbered list. |
 | outdent | core | Outdents the current list item or block element. |
 | indent | core | Indents the current list item or block element. |
-| blockquote | core | Applies block quote format to the current selection. |
+| blockquote | core | Applies block quote format to the current block level element. |
 | undo | core | Undoes the last operation. |
 | redo | core | Redoes the last undoed operation. |
 | removeformat | core | Removes the formatting from the current selection. |

@@ -11,7 +11,7 @@ By now it should be clear that TinyMCE is incredibly powerful and at the same ti
 
 TinyMCE comes with a beautiful, lightweight theme out of the box called "modern". Enabled by default there's nothing you need to do to enable it and since you can easily customize the menubar and toolbar there's usually no need to edit the theme either.
 
-Although any developer can create their own themes it does require skill and a deeper knowledge of TinyMCE's API. It's definitely beyond the scope of this Get Started guide.
+Although any developer can create their own themes, it does require skill and a deeper knowledge of TinyMCE's API. It's definitely beyond the scope of this Get Started guide.
 
 TinyMCE skins, on the other hand, are much easier to make thanks to the TinyMCE Skin Creator.
 
@@ -19,7 +19,7 @@ TinyMCE skins, on the other hand, are much easier to make thanks to the TinyMCE 
 
 Unlike TinyMCE themes, which affect much more than just the editor's user interface, skins only change the editor's appearance.
 
-If you would like to create your own skins the best (and easiest) place to start is the [TinyMCE Skin Creator](http://skin.tinymce.com/).
+If you would like to create your own skins, the best (and easiest) place to start is the [TinyMCE Skin Creator](http://skin.tinymce.com/).
 
 Once you've created your skin, download it, unzip the file, place it in the `js/skins `folder of your TinyMCE install and activate it using code similar to this:
 
@@ -32,7 +32,7 @@ tinymce.init({
 
 If you are going to roll your own skins, the name of the skin should match the name of the folder within the skins directory (typically `tinymce/js/skins`). If the specified skin is not found, TinyMCE will not load.
 
-> Pro tip. A lot of developers confuse the difference between TinyMCE themes and skins. You'll often see the term "theme" used when they really mean "skin". So in the wild some TinyMCE themes are really skins. Confused ..?
+> Pro tip. A lot of developers confuse the difference between TinyMCE themes and skins. You'll often see the term "theme" used when they really mean "skin". So in the wild, some TinyMCE themes are really skins. Confused ..?
 
 ### Changing editor height and width
 
@@ -42,7 +42,7 @@ One of the most frequent UI customizations is changing the height and width of t
 
 ##### Set the editable area height
 
-> Reminder, the "editable area" is the box users type into. Which is different from the "editor".
+> Reminder, the "editable area" is the box users type into. It is different from the "editor".
 
 ```js
 tinymce.init({
@@ -134,7 +134,7 @@ tinymce.init({
 });
 ```
 
-If you tried this snippet you'll have noticed that although you added the `code` button to the toolbar and created a new menu called `Tools` with the menu item `Source code`, everything else on the toolbar disappeared. (See [this page](../first-steps/) if you need a basic HTML code block.)
+If you tried this snippet you would have noticed that although you added the `code` button to the toolbar and created a new menu called `Tools` with the menu item `Source code`, everything else on the toolbar disappeared. (See [this page](../first-steps/) if you need a basic HTML code block.)
 
 If you wanted the default toolbar *plus* the `code` functionality you'd need this:
 

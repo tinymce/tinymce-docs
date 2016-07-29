@@ -141,7 +141,7 @@ tinymce.init({
 });
 ```
 
-So, in the above example we learned how to remove the menubar, add specific list controls to the toolbar while removing others, activate a plugin and customize the plugin's behavior by controlling which options we wanted activated. In 5 lines of code (excluding the `selector` key, which has to be included for TinyMCE to work).
+So, in the above example, we learned how to remove the menubar, add specific list controls to the toolbar while removing others, activate a plugin and customize the plugin's behavior by controlling which options we wanted to activate. In 5 lines of code (excluding the `selector` key, which has to be included for TinyMCE to work).
 
 As we noted at the start, TinyMCE is an incredibly powerful, flexible and customizable rich text editor. Once you've finished the Get Started guide, deep dive into the [plugins]({{ site.baseurl }}/plugins/) and [configuration options]({{ site.baseurl }}/configure/).
 

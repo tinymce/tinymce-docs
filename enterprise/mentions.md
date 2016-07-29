@@ -13,4 +13,4 @@ The value to developers building modern enterprise solutions is obvious. Your us
 
 A [TinyMCE Enterprise](https://www.tinymce.com/pricing/) subscription includes the ability to download and install the AtMentions feature for the editor.
 
-Please note that this feature requires a backend integration with a system to handle listing of users, as well as sending the notification. This is [explained in our example code](https://www.tinymce.com/docs/plugins/mentions/), but basically, there are two integration points: getting a userlist when `@abc...` is typed, and on submitting the form, sending a notification to the `@mentions` in the document.
+Please note that this feature requires a backend integration with a system to handle listing of users, as well as sending the notification. This is [explained in our example code](https://www.tinymce.com/docs/plugins/mentions/), but basically, there are two integration points: getting a user list when `@abc...` is typed, and on submitting the form, sending a notification to the `@mentions` in the document.

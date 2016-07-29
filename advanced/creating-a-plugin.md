@@ -88,7 +88,7 @@ tinymce.PluginManager.add('example', function(editor, url) {
 
 ## Example init
 
-Here is a example on how to use the new toolbar button.
+Here is an example on how to use the new toolbar button.
 
 ```js
 tinymce.init({
@@ -112,7 +112,7 @@ tinymce.addI18n('sv_SE', {
 });
 ```
 
-Sometimes you don't have all the translations that the full TinyMCE package has this would result in a 404 error while loading the non existing file. This can be avoided by adding this line to the top of your plugin file.
+Sometimes you don't have all the translations that the full TinyMCE package has this would result in a 404 error while loading the non-existing file. This can be avoided by adding this line to the top of your plugin file.
 
 ```js
 tinymce.PluginManager.requireLangPack('example', 'sv_SE,de_AT');

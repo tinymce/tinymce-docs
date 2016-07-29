@@ -50,7 +50,7 @@ editor.notificationManager.open({
 
 ## Close Button
 
-By setting the "closeButton" property to false in conjunction with a non-zero timeout, you may disable the the close button to the right of the notification.
+By setting the "closeButton" property to false in conjunction with a non-zero timeout, you may disable the close button to the right of the notification.
 
 ```js
 editor.notificationManager.open({

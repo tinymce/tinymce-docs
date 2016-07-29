@@ -168,7 +168,7 @@ Once downloaded:
 
 	![Curl on Windows step 2]({{ site.baseurl }}/images/spell-checking-curl-windows-2.png)
 
-3. Open a cmd prompt. Start -> Programs -> Accessories -> cmd (or command prompt). Then change to that directory to the fodler where the 'curl.exe' is found.Enter 'cd' (without quotes) and then paste in the path from step 2.
+3. Open a cmd prompt. Start -> Programs -> Accessories -> cmd (or command prompt). Then change to that directory to the folder where the 'curl.exe' is found.Enter 'cd' (without quotes) and then paste in the path from step 2.
 
 	![Curl on Windows step 3]({{ site.baseurl }}/images/spell-checking-curl-windows-3.png)
 

@@ -54,11 +54,11 @@ editor.on('init', function(args) {
 
 ## User interface
 
-The user interface logic has been changed completely in 4.0. Though the more easier methods of adding buttons and windows are the same more complex controls or dialogs needs to be written in the new API style.
+The user interface logic has been changed completely in 4.0. Though the easier methods of adding buttons and windows are the same, more complex controls or dialogs needs to be written in the new API style.
 
 ## Control states
 
-Each control in TinyMCE 4 is supposed to be an self contained unit. This enables controls to be created at multiple locations in the UI. So the old controlManager with fixed names has been removed.
+Each control in TinyMCE 4 is supposed to be a self-contained unit. This enables controls to be created at multiple locations in the UI. So the old controlManager with fixed names has been removed.
 
 ```js
 // This is how control states used to function in the 3.x UI API

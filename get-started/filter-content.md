@@ -68,7 +68,7 @@ Before we move on to the table of format parameters below, we want to acknowledg
 
 ### Example of usage of the formats option
 
-This example overrides some of the built in formats and tells TinyMCE to apply classes instead of inline styles. It also includes a custom format that produced `h1` elements with a title attribute and a `red` `css` style.
+This example overrides some of the built-in formats and tells TinyMCE to apply classes instead of inline styles. It also includes a custom format that produced `h1` elements with a title attribute and a `red` `css` style.
 
 ```js
 // Output elements in HTML style

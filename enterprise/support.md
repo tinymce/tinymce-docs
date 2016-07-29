@@ -7,9 +7,9 @@ keywords: support ephox enterprise client services
 
 ## Overview
 
-Support for TinyMCE Enterprise, is provided online via the Ephox support site.  You can access the support site at: https://support.ephox.com.
+Support for TinyMCE Enterprise is provided online via the Ephox support site.  You can access the support site at: https://support.ephox.com.
 
-Prior to opening a support ticket, we require all users to register with a valid business email address.  You can register on the support site at: https://support.ephox.com/registration. Upon registration you will receive an email requesting that you validate your registration.  If you don't receive such a request within 5 minutes please check your spam folder to see if the email ended up there in error.  If you never receive the validation email please contact the [Ephox Client Services team via email](mailto:clientservices@ephox.com).
+Prior to opening a support ticket, we require all users to register with a valid business email address.  You can register on the support site at: https://support.ephox.com/registration. Upon registration, you will receive an email requesting that you validate your registration.  If you don't receive such a request within 5 minutes please check your spam folder to see if the email ended up there in error.  If you never receive the validation email please contact the [Ephox Client Services team via email](mailto:clientservices@ephox.com).
 
 ### Creating a support ticket
 

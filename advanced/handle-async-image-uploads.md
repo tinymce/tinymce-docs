@@ -3,7 +3,7 @@ layout: default
 title: Handle Async Image Uploads
 title_nav: Handle Async Image Uploads
 description_short: How to manage asynchronous image uploads.
-description: How to manage asynchronous image uploads wtih jQuery, CORS.
+description: How to manage asynchronous image uploads with jQuery, CORS.
 keywords: asynchronous async paste_data_images image cors
 ---
 
@@ -15,7 +15,7 @@ Once uploaded, TinyMCE will automatically update the `<image>` src attribute wit
 
 Local images can be uploaded to TinyMCE through the use of the new `editor.uploadImages()` function.  This functionality is handled asynchronously, meaning that it is possible for users to save their content before all images have completed uploading.  If this occurs, no server path to the remote image will be available and the images will be stored as Base64.
 
-To avoid this situation, it is recommended that the `editor.uploadImages()` function be executed prior to submitting the editor contents to the server. Once all images have been uploaded, a success callback can be utilized to execute code.  This success callback can be used to save the editor's content to the server through a `POST`, again helping to prevent the above situation.
+To avoid this situation, it is recommended that the `editor.uploadImages()` function be executed before submitting the editor contents to the server. Once all images have been uploaded, a success callback can be utilized to execute code.  This success callback can be used to save the editor's content to the server through a `POST`, again helping to prevent the above situation.
 
 Examples of this function are below:
 
@@ -52,7 +52,7 @@ Images will be sent to the Image Uploader via HTTP POST with each post containin
 
 When the image is uploaded it will have a standardized name in the post (e.g. `blobid0`, `blobid1`, `imagetools0`, `imagetools1`).
 
-*You will need to ensure that your upload handler script takes each uploaded file and generates a unique name prior to storing the image*.
+*You will need to ensure that your upload handler script takes each uploaded file and generates a unique name before storing the image*.
 
 For example, you could append the current time (in milliseconds) to the end of the file name which would lead to file names like `blobid0-1458428901092.png` or `blobid0-1460405299-0114.png`.  Take care to make sure that the file name is unique as you don't want to accidentally overwrite a previously uploaded image!
 

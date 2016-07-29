@@ -5,7 +5,7 @@ description: Take spell checking to your users.
 keywords: spell checker spelling browser_spellcheck gecko_spellcheck
 ---
 
-No-one likes bad spelling and being able to help your users create error free content is important to the entire TinyMCE team. Which is why we have several options to help you bring spell checking capabilities to your users.
+No-one likes bad spelling and being able to help your users create error-free content is important to the entire TinyMCE team. Which is why we have several options to help you bring spell checking capabilities to your users.
 
 ## Browser-based spell checking
 

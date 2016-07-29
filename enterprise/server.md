@@ -19,7 +19,7 @@ The following server-side components are packaged with the TinyMCE SDK::
 | [Image Tools Proxy]({{ site.baseurl }}/plugins/imagetools/)				| ephox-image-proxy.war		|Image proxy service for the Image Tools plugin.|
 
 
-This guide will help you set up the server-side components for the above mentioned features, and show you how to use them in conjunction with editor clients. The steps required are:
+This guide will help you set up the server-side components for the above-mentioned features, and show you how to use them in conjunction with editor clients. The steps required are:
 
 1. Install a Java application server (or use existing)
 2. Deploy server-side components
@@ -58,7 +58,7 @@ More information on deploying components/applications:
 
 > **Note:** It is recommended that you use a plain text editor (eg: gedit, vim, emacs, notepad etc) when creating or editing the application.conf file. Do not use editors like Evernote as there is a good chance of smart quotes being used where plain quotes should be used and this will cause the services to fail.
 
-Services requires a configuration file named `application.conf` to be referenced by the application server.
+Services require a configuration file named `application.conf` to be referenced by the application server.
 
 The SDK comes packaged with an example configuration file (`examples/sample_application.conf`) that can be used as a reference guide. You can use this example file (after modifying it with your settings).  We recommend that you make a backup of the file before editing it.
 
@@ -90,7 +90,7 @@ ephox {
 
 #### Entering Origins
 
-The origins are matched by protocol, host name and port. So you may need a combination of all three, depending on which browsers you use. If you are serving the editor and services from `http://localhost` & port 80, then the list of origins should have an entry for `http://localhost` and any other servers with ports, like so:
+The origins are matched by protocol, host name, and port. So you may need a combination of all three, depending on which browsers you use. If you are serving the editor and services from `http://localhost` & port 80, then the list of origins should have an entry for `http://localhost` and any other servers with ports, like so:
 
 ````
 ephox{
@@ -186,7 +186,7 @@ Once you have created a configuration file, configured the allowed origins servi
 With the above steps completed you can now direct TinyMCE instances to use the image editing and server-side spelling components.
 
 Set the TinyMCE `spellchecker_rpc_url` configuration property to the URL of the deployed server side spelling component. This URL is provided to you by your Java application server.
-Set the TinyMCE `imagetools_proxy` configuration property to the URL of the deployed server side image proxy component.
+Set the TinyMCE `imagetools_proxy` configuration property to the URL of the deployed server-side image proxy component.
 
 Example of TinyMCE client configuration:
 
@@ -209,7 +209,7 @@ To write the spelling-service specific logs to a specific file, you’ll need to
 
 #### Create a logging configuration XML file
 
-The spelling service use the [Logback](http://logback.qos.ch/manual/configuration.html) logging format.
+The spelling service uses the [Logback](http://logback.qos.ch/manual/configuration.html) logging format.
 
 For easy implementation, here is a sample XML configuration with a tokenized value you can populate where {$LOG_LOCATION} is the location and name of the file you would like to write the logs to (e.g. /tmp/tinymce_services.log).
 

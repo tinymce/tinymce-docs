@@ -104,7 +104,7 @@ module.exports = {
 
 ## 6. Building the project
 
-You are now ready to build the project just run "webpack" inside the tinymce-react-demo page and it will load the webpack.config.js file and it's dependencies and bundle that up into the **bundle.js** file.
+You are now ready to build the project. Just run "webpack" inside the tinymce-react-demo page and it will load the webpack.config.js file and it's dependencies and bundle that up into the **bundle.js** file.
 
 ```
 $ webpack

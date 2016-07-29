@@ -72,7 +72,7 @@ We will provide the internal linking structure shortly. Otherwise clone and bran
 
 ##### Adding meta to a pages
 
-Every page should have a meta section starting at line 1 containing information that is both informative and system critical. If you are creating a page, or editing one that currently has inadequate meta information, please read the comments next to the default meta fields below.
+Every page should have a meta section starting at line 1 containing information that is both informative and system critical. If you are creating a page or editing one that currently has inadequate meta information, please read the comments next to the default meta fields below.
 
 ```
 ---                // Three dashes at start and end of the meta section, must be included.
@@ -89,7 +89,7 @@ keywords:          // Space separated list of key words in the content.
 
 ##### TinyMCE v. tinymce
 
-Use the capitalized version of TinyMCE when referring to the open source project or the editor as an all encompassing whole. Use lowercase when referring to the `tinymce` JavaScript object.
+Use the capitalized version of TinyMCE when referring to the open source project or the editor as an all-encompassing whole. Use lowercase when referring to the `tinymce` JavaScript object.
 
 ##### Title capitalization
 

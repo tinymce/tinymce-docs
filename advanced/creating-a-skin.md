@@ -7,7 +7,7 @@ description: Introducing skin creation, less and icon modification.
 keywords: create creator skin icomoon
 ---
 
-Creating a new skin will allow you to alter the appearance of TinyMCE. If you would like to create your own skin there are two ways of doing so. The simplest way is to use the [TinyMCE Skin Creator](http://skin.tinymce.com/) tool. The other option is to manually modify `less` files and build them using the node js build process. Since the skin creator is pretty self explanatory we will focus on the manual process in this tutorial.
+Creating a new skin will allow you to alter the appearance of TinyMCE. If you would like to create your own skin there are two ways of doing so. The simplest way is to use the [TinyMCE Skin Creator](http://skin.tinymce.com/) tool. The other option is to manually modify `less` files and build them using the node js build process. Since the skin creator is pretty self-explanatory we will focus on the manual process in this tutorial.
 
 ## Preparation
 

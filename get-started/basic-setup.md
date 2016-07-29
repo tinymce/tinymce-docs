@@ -91,7 +91,7 @@ We will show you how to configure plugins throughout this Get Started guide. If 
 
 TinyMCE comes with a default set of toolbar controls out of the box, things such as bold, italic and text alignment buttons. Basically, the type of settings you would expect to find in any WYSIWYG editor.
 
-However, in most integrations it's desirable to change the toolbar configuration to suit your needs. Fortunately that's quite easy to do too.
+However, in most integrations, it's desirable to change the toolbar configuration to suit your needs. Fortunately, that's quite easy to do too.
 
 #### Default toolbar controls
 
@@ -237,7 +237,7 @@ To help get you started, let's walk through an example of a basic TinyMCE config
 
 #### Breakdown of the above example
 
-First we want to select only the `textarea` with the id `myTextarea`.
+First, we want to select only the `textarea` with the id `myTextarea`.
 
 > ```js
 selector: '#myTextarea',
@@ -272,7 +272,7 @@ Next we set the styling of the editable area using `content_css`. This should be
 content_css: 'css/content.css',
 ```
 
-Lastly we want to select the toolbar buttons exposed to the user. You can use a comma or space as a separator.
+Lastly, we want to select the toolbar buttons exposed to the user. You can use a comma or space as a separator.
 
 > ```js
 toolbar: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | print preview media fullpage | forecolor backcolor emoticons',

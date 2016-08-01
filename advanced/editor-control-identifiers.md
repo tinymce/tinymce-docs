@@ -22,6 +22,7 @@ Here is a list of the toolbar/menu controls that the core and plugins provides. 
 | aligncenter | core | Left aligns the current block or image. |
 | alignright | core | Right aligns the current block or image. |
 | alignjustify | core | Full aligns the current block or image. |
+| alignnone | core | Removes the alignment of the current block or image. |
 | styleselect | core | Dropdown list with styles to apply to selection. |
 | formatselect | core | Dropdown list with block formats to apply to selection. |
 | fontselect | core | Dropdown list with font families to apply to selection. |
@@ -39,6 +40,7 @@ Here is a list of the toolbar/menu controls that the core and plugins provides. 
 | removeformat | core | Removes the formatting from the current selection. |
 | subscript | core | Applies subscript format to the current selection. |
 | superscript | core | Applies superscript format to the current selection. |
+| visualaid | core | Toggles the visual aids for invisible elements. |
 | hr | [hr]({{ site.baseurl }}/plugins/hr/) | Inserts a horizontal rule into the editor. |
 | link | [link]({{ site.baseurl }}/plugins/link/) | Creates/Edits links within the editor. |
 | unlink | [link]({{ site.baseurl }}/plugins/link/) | Removes links from the current selection. |
@@ -61,6 +63,28 @@ Here is a list of the toolbar/menu controls that the core and plugins provides. 
 | save | [save]({{ site.baseurl }}/plugins/save/) | Saves the current editor contents to a form or ajax call. |
 | cancel | [save]({{ site.baseurl }}/plugins/save/) | Cancels/Resets the editor contents to it's initial state. |
 | table | [table]({{ site.baseurl }}/plugins/table/) | Create/Edit table elements. |
+| tabledelete | [table]({{ site.baseurl }}/plugins/table/) | Delete table. |
+| tablecellprops | [table]({{ site.baseurl }}/plugins/table/) | Opens the Cell properties dialog. |
+| tablemergecells | [table]({{ site.baseurl }}/plugins/table/) | Merge the selected cells. |
+| tablesplitcells | [table]({{ site.baseurl }}/plugins/table/) | Split the current merged cell. |
+| tableinsertrowbefore | [table]({{ site.baseurl }}/plugins/table/) | Insert a new row before the current one. |
+| tableinsertrowafter | [table]({{ site.baseurl }}/plugins/table/) | Insert a new row after the current one. |
+| tabledeleterow | [table]({{ site.baseurl }}/plugins/table/) | Delete the current row row. |
+| tablerowprops | [table]({{ site.baseurl }}/plugins/table/) | Opens the Row properties dialog. |
+| tablecutrow | [table]({{ site.baseurl }}/plugins/table/) | Cut the selected rows. |
+| tablecopyrow | [table]({{ site.baseurl }}/plugins/table/) | Copies the selected rows. |
+| tablepasterowbefore | [table]({{ site.baseurl }}/plugins/table/) | Paste rows before the current one. |
+| tablepasterowafter | [table]({{ site.baseurl }}/plugins/table/) | Paste rows after the current one. |
+| tableinsertcolbefore | [table]({{ site.baseurl }}/plugins/table/) | Inserts a column before the current one. |
+| tableinsertcolafter | [table]({{ site.baseurl }}/plugins/table/) | Inserts column after the current one. |
+| tabledeletecol | [table]({{ site.baseurl }}/plugins/table/) | Deletes the selected column. |
+| rotateleft | [imagetools]({{ site.baseurl }}/plugins/imagetools/) | Rotate the current image counterclockwise. |
+| rotateright | [imagetools]({{ site.baseurl }}/plugins/imagetools/) | Rotate the current image clockwise. |
+| flipv | [imagetools]({{ site.baseurl }}/plugins/imagetools/) | Flip the current image vertically. |
+| fliph | [imagetools]({{ site.baseurl }}/plugins/imagetools/) | Flip the current image horizontally. |
+| editimage | [imagetools]({{ site.baseurl }}/plugins/imagetools/) | Edit the current image in the image dialog. |
+| imageoptions | [imagetools]({{ site.baseurl }}/plugins/imagetools/) | Opens the image options dialog. |
+| fullpage | [fullpage]({{ site.baseurl }}/plugins/fullpage/) | Document properties for the full page. |
 | ltr | [directionality]({{ site.baseurl }}/plugins/directionality/) | Sets the directionality of contents to ltr. |
 | rtl | [directionality]({{ site.baseurl }}/plugins/directionality/) | Sets the directionality of contents to rtl. |
 | emoticons | [emoticons]({{ site.baseurl }}/plugins/emoticons/) | Opens the emoticons dialog. |
@@ -119,3 +143,4 @@ Here is a list of the toolbar/menu controls that the core and plugins provides. 
 | row | [table]({{ site.baseurl }}/plugins/table/) | Row menu item with related controls. |
 | column | [table]({{ site.baseurl }}/plugins/table/) | Column menu item with related controls. |
 | restoredraft | [autosave]({{ site.baseurl }}/plugins/autosave/) | Restores to the latest auto saved draft. |
+| fullpage | [fullpage]({{ site.baseurl }}/plugins/fullpage/) | Document properties for the full page. |

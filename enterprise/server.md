@@ -60,7 +60,7 @@ More information on deploying components/applications:
 
 Services require a configuration file named `application.conf` to be referenced by the application server.
 
-The SDK comes packaged with an example configuration file (`examples/sample_application.conf`) that can be used as a reference guide. You can use this example file (after modifying it with your settings).  We recommend that you make a backup of the file before editing it.
+The SDK comes packaged with an example configuration file (`examples/application.conf`) that can be used as a reference guide. You can use this example file (after modifying it with your settings).  We recommend that you make a backup of the file before editing it.
 
 The `allowed-origins` configuration element will need to be specified in order for the spelling server-side component to work.
 
@@ -124,45 +124,52 @@ Depending on your configuration and the browser you use, you may need to specify
 
 You’ll need to reference the configuration file created in Step 3 as a parameter passed to the JVM running the services. Once the server has been configured to use the file, restart the server.
 
-> **Note:** If the path to your application.conf file has spaces in it, you must ensure you prefix each white space with an escape character (\). Example: ` -Dconfig.file=/config/file/location/with/white\ space/application.conf`
+> **Note:** If the path to your application.conf file has spaces in it, you must ensure you prefix each white space with an escape character (\). Example: ` -Dephox.config.file=/config/file/location/with/white\ space/application.conf`
 
 The following examples demonstrate how to reference application.conf for Tomcat or Jetty instances.
 
 
 #### Tomcat Unix example:
 
-Make/edit a script at `/tomcat/install/directory/bin/setenv.sh`
+Make/edit a script at `/tomcat/install/directory/bin/setenv.sh` (This file might not exist for some versions of tomcat, create it in `bin` folder)
 
 Ensure the file contains a single line, like (this must be the absolute path as before):
 
-`CATALINA_OPTS=" -Dconfig.file=/config/file/location/application.conf"`
-
+`CATALINA_OPTS=" -Dephox.config.file=/config/file/location/application.conf"`
 
 #### Tomcat (Windows) example:
+Setting configuration varies based on installation of tomcat. You can choose one of following options to complete configuration setting.
 
-Make/edit a script at `DRIVE:\tomcat\install\directory\bin\setenv.bat`
-
+###### Option A. Installation though Windows Command line (CMD) with tomcat binary file:
+Make/edit a script at `DRIVE:\tomcat\install\directory\bin\setenv.bat` (This file might not exist for some versions of tomcat, create it in `bin` folder)
 The file should contain a single line:
+`set CATALINA_OPTS= -Dephox.config.file=DRIVE:\config\file\location\application.conf`
 
-`set CATALINA_OPTS= -Dconfig.file=DRIVE:\config\file\location\application.conf`
+
+###### Option B. Windows Service Installer:
+1. From start menu, open Monitor Tomcat and see popping up window.
+2. Go to Java tab and see Java Options.
+3. In Java Options, insert new line, which is
+`-Dephox.config.file=DRIVE:\config\file\location\application.conf`
+4. Then you can go to General tab to start Tomcat.
 
 
 #### Jetty (simple configuration):
 
 You can specify your `application.conf` as a parameter to this command, along with other JVM parameters:
 
-`java -jar /jetty/install/directory/start.jar -Dconfig.file="/config/file/location/application.conf"`
+`java -jar /jetty/install/directory/start.jar -Dephox.config.file="/config/file/location/application.conf"`
 
 
 #### Jetty (automatic configuration for services launching on system start-up):
 
 Edit `/etc/default/jetty` and add the line:
 
-`JETTY_OPTS=" -Dconfig.file=/config/file/location/application.conf"`
+`JETTY_OPTS=" -Dephox.config.file=/config/file/location/application.conf"`
 
 Edit `/opt/jetty/start.ini` and add the line:
 
-`" -Dconfig.file=/config/file/location/application.conf"`
+`" -Dephox.config.file=/config/file/location/application.conf"`
 
 The first new lines of the file should read:
 
@@ -173,7 +180,7 @@ The first new lines of the file should read:
 # arguments # of a call to:
 # java -jar start.jar [arg...]
 #===========================================================
-" -Dconfig.file=/config/file/location/application.conf"
+" -Dephox.config.file=/config/file/location/application.conf"
 ````
 
 

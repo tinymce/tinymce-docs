@@ -3,13 +3,13 @@ layout: default
 title: Paste Plugin
 title_nav: Paste
 description: Standard version of features for copying-and-pasting content from Microsoft Word.
-keywords: microsoft word excel cut copy paste_data_images paste_as_text paste_enable_default_filters paste_filter_drop paste_preprocess paste_postprocess paste_word_valid_elements paste_webkit_styles paste_retain_style_properties paste_merge_formats paste_convert_word_fake_lists paste_remove_styles_if_webkit
+keywords: microsoft word excel cut copy paste_data_images paste_as_text paste_enable_default_filters paste_filter_drop paste_preprocess paste_postprocess paste_word_valid_elements paste_webkit_styles paste_retain_style_properties paste_merge_formats paste_convert_word_fake_lists paste_remove_styles_if_webkit smart_paste
 controls: toolbar button, menu item
 ---
 
 > Looking for more advanced Microsoft Word importing and pasting? Try the [PowerPaste](../powerpaste/) plugin.
 
-This plugin will filter/cleanup content pasted from Microsoft Word. The power of the plugin is in its options, so please take the time to learn more about these below.
+This plugin will do basic filtering/cleanup of content pasted from Microsoft Word. It also has a feature called smart paste that auto detects urls in the clipboard and inserts them as links or images. The power of the plugin is in its options, so please take the time to learn more about these below.
 
 The plugin also adds a menu item `Paste as text` under the `Edit` menu dropdown and a toolbar button.
 
@@ -161,6 +161,28 @@ tinymce.init({
     console.log(args.node);
     args.node.setAttribute('id', '42');
   }
+});
+```
+
+### `smart_paste`
+
+This option specifies whether the smart paste feature is enabled or not. Smartpaste will auto detect urls in the clipboard and insert links to selected text and images as urls.
+
+So if you make a text selection and paste an url it will convert that selection into an url if you paste an url that looks like an image url it will insert it as an image into the document. Both of these actions can be reverted by using undo and then the content would be presented as it would have been a normal paste.
+
+**Type:** `Boolean`
+
+**Default Value:** `true`
+
+**Possible Values:** `true`, `false`
+
+##### Example
+
+```js
+tinymce.init({
+  selector: "textarea",
+  plugins: "paste",
+  smart_paste: false
 });
 ```
 

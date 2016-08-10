@@ -9,7 +9,7 @@ controls: toolbar button, menu item
 
 This plugin adds a toolbar button that allows a user to edit the HTML code using a more advanced [code editor]({{ site.baseurl }}/enterprise/advcode/) than the default textarea.
 
-Please note: If you use Advanced Code plugin, make sure you disable the standard Code plugin.
+If you are using Advanced Code `advcode` plugin, make sure you do not use Code `code` plugin.
 
 ##### Example
 

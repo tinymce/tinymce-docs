@@ -24,9 +24,14 @@ Please use the [issues tracker on GitHub](https://github.com/tinymce/tinymce/iss
 |IE 8    | OK *    | N/A | N/A |
 |Safari  | N/A     | OK  | N/A |
 
-### Notes
+### Features that require a modern browser
 
-> TinyMCE's [image upload feature]({{ site.baseurl }}/configure/file-image-upload//) and the [imagetools]({{ site.baseurl }}/plugins/imagetools/) plugin are not compatible with IE8 and IE9.
+Some features require modern browser API:s to function here is a list of the features that require IE 10+.
+
+* [Image Upload Feature]({{ site.baseurl }}/configure/file-image-upload/)
+* [Image Tools Plugin]({{ site.baseurl }}/plugins/imagetools/)
+* [InLite Theme]({{ site.baseurl }}/themes/inlite/)
+* [Non Editable Plugin]({{ site.baseurl }}/plugins/noneditable/) as of TinyMCE 4.3
 
 {% assign_page next_page = "/get-started/get-support/index.html" %}
 {% include next-step.html next=next_page %}

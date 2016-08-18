@@ -64,6 +64,9 @@ This optional setting allows you to specify the mode of operation of the spellch
 ### `spellchecker_whitelist`
 This option lets you specify an array of words that you want to ignore this can for example be the current company name or internal products. You can populate this field from a file by just getting the white list array from an external JS file.
 
+### `spellchecker_on_load`
+This option lets run the spellchecker when the contents is loaded into the editor. This option defaults to "false" so it's disabled by default.
+
 ## Toolbar Buttons
 
 ### `spellchecker`

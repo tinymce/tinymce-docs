@@ -1,9 +1,4 @@
 #!/bin/bash
 
-set -e
+echo "/docs-3x/"
 
-if [[ "master" == $WERCKER_GIT_BRANCH ]]; then
-  echo "/docs-3x"
-else
-  echo "/docs/pr/$WERCKER_GIT_BRANCH"
-fi

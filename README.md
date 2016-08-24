@@ -1,4 +1,5 @@
 # TinyMCE Docs - V3
+
 ### Overview
 This is the repo for TinyMCE V4 docs which live on the tinymce website [here](tinymce/docs-v3).
 It uses jekyll with pages written in markdown to generate a static website. 

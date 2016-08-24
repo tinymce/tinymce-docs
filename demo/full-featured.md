@@ -3,7 +3,7 @@ layout: default
 title: Full Featured Example
 title_nav: Full Featured
 description_short: Every TinyMCE plugin in action.
-description: This example displays all plugins that come with the TinyMCE package.
+description: This example displays all plugins that come with the default TinyMCE package.
 keywords: example demo custom wysiwyg full-power full-featured
 ---
 

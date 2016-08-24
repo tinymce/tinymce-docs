@@ -91,13 +91,13 @@ This button allows you to toggle paste as plain text mode on/off. When in plain 
 
 Example TinyMCE Configuration:
 
-````
+```js
 tinymce.init({
   selector: 'textarea',
   plugins: 'powerpaste',
   toolbar: 'pastetext'
 });
-````
+```
 
 ## Menu Items
 
@@ -106,7 +106,7 @@ This menu item allows you to toggle paste as plain text mode on/off. When in pla
 
 Example TinyMCE Configuration:
 
-````
+```js
 tinymce.init({
   selector: 'textarea',
   plugins: 'powerpaste',
@@ -114,5 +114,32 @@ tinymce.init({
 	edit: {title: 'edit', items: 'pastetext'}
   }
 });
-````
+```
 
+## Advanced Config Options
+
+### Post filter callback
+
+Developers can add customer filtering after PowerPaste filters are run using the post filter callback. This can be added as an init option or at runtime by adding the event listener.
+
+##### Using the init option
+
+```js
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'powerpaste',
+  paste_postprocess: function(editor, fragment) {
+    // Fragment is a DocumentFragment node containing the DOM structure of the pasted content,
+    // after it has been filtered by the PowerPaste plugin.
+  }
+});
+```
+
+##### Using an event listener
+
+```js
+tinymce.get('editorID').('PastePostProcess', function(fragment) {
+  // Fragment is a DocumentFragment node containing the DOM structure of the pasted content,
+  // after it has been filtered by the PowerPaste plugin.
+});
+```

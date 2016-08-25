@@ -3,7 +3,7 @@ layout: default
 title: Code Sample Plugin
 title_nav: Code Sample
 description: Insert and embed syntax highlighted code snippets.
-keywords: syntax highlight codesample code contenteditable
+keywords: syntax highlight codesample code contenteditable codesample_dialog_width codesample_dialog_height codesample_languages
 controls: toolbar button
 ---
 
@@ -23,6 +23,44 @@ By default `codesample` uses http://prismjs.com/ to embed the code samples withi
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "codesample",
+  toolbar: "codesample"
+});
+```
+### Options
+
+### `codesample_dialog_width`
+
+This configuration option sets the *internal, editable area* width of the `codesample` dialog box.
+
+Note that the external dimensions of the actual modal will be slightly larger than the value set.
+
+### `codesample_dialog_height`
+
+This configuration option sets the *internal, editable area* height of the `codesample` dialog box.
+
+Note that the external dimensions of the actual modal will be slightly larger than the value set.
+
+### `codesample_languages`
+
+This configuration option enables you to set a list of languages to be displayed in the languages drop down.
+
+##### Example
+
+```js
+tinymce.init({
+  selector: "textarea",
+  codesample_languages: [
+		{text: 'HTML/XML', value: 'markup'},
+		{text: 'JavaScript', value: 'javascript'},
+		{text: 'CSS', value: 'css'},
+		{text: 'PHP', value: 'php'},
+		{text: 'Ruby', value: 'ruby'},
+		{text: 'Python', value: 'python'},
+		{text: 'Java', value: 'java'},
+		{text: 'C', value: 'c'},
+		{text: 'C#', value: 'csharp'},
+		{text: 'C++', value: 'cpp'}
+	],
   toolbar: "codesample"
 });
 ```

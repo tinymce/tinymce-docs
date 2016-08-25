@@ -3,7 +3,7 @@ layout: default
 title: Import CSS Plugin
 title_nav: Import CSS
 description: Automatically populate CSS class names into the Format dropdown.
-keywords: importcss content_css importcss_append importcss_file_filter importcss_selector_filter importcss_groups importcss_merge_classes importcss_selector_converter
+keywords: importcss content_css importcss_append importcss_file_filter importcss_selector_filter importcss_groups importcss_merge_classes importcss_selector_converter importcss_exclusive
 ---
 
 The `importcss` plugin adds the ability to automatically import CSS classes from the CSS file specified in the [`content_css`]({{ site.baseurl }}/configure/content-appearance/#content_css) configuration setting.
@@ -105,7 +105,7 @@ tinymce.init({
 
 ### `importcss_groups`
 
-This option enables group matching selectors into submenus in the `Formats` menu dropdown. You can use a `string`, `regexp` or a `function` to filter selectors. You can also omit the filter to get all non-matching ones into a specific group.
+This option enables group matching selectors into submenus in the `Formats` menu dropdown. You can use a `string`, `regexp` or a `function` to filter selectors. You can also omit the filter to get all non-matching ones into a specific group. You can also specify a group specific `selector_converter` so that formats for a specific group are produced by that converter.
 
 **Example of usage with string filter**
 
@@ -158,7 +158,13 @@ tinymce.init({
 });
 ```
 
-**Example filtering compressed stylesheet using plugin callback**
+### `importcss_exclusive`
+
+If set to `false` then selectors will not be globally exclusive meaning they can exist in two separate groups. This can be useful for scenarios where you want to have a ".class" imported as a paragraph selector and as a span format selector.
+
+**Type:** `Boolean`
+
+**Default Value:** `true`
 
 ```
 // Sample compressed stylesheet:

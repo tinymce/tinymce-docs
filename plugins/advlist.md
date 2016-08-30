@@ -34,8 +34,8 @@ This option allows you to include specific unordered list item markers in the de
 
 **Possible Values:**
 
-  * `circle`: a filled circle
-  * `disc`: a hollow circle
+  * `circle`: a hollow circle
+  * `disc`: a filled circle
   * `square`: a filled square
 
 #### Example:

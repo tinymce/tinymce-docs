@@ -5,7 +5,7 @@ set -e
 echo ""
 
 echo " > installing gems into ./vendor/bundle"
-bundle install --path vendor/bundle
+bundle install --path vendor/bundle --verbose
 
 if [[ -e "_config-local.yml" ]]; then
   echo " > _config-local.yml present, skipping creation"

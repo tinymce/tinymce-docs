@@ -4,6 +4,8 @@
 
 This project serves as the documentation for TinyMCE, as you see on tinymce.com, if you have any modifications you wish to contribute, fork this project, make the changes and submit a pull request. You will need to sign a contributors license agreement, a link will be sent via email.
 
+We use [Jekyll](https://jekyllrb.com). Here's a [quick way](https://jekyllrb.com/docs/quickstart/) to start it.
+
 ### First time setup
 
     $ git clone git@github.com:tinymce/tinymce-docs.git

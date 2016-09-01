@@ -8,6 +8,11 @@ class: changelog
 
 {% capture changelog %}
 
+## Version 4.4.3 - September 1, 2016
+* Fixed bug where copy would produce an exception on Chrome.
+* Fixed bug where deleting lists on IE 11 would merge in correct text nodes.
+* Fixed bug where deleting partial lists with indentation wouldn't cause proper normalization.
+
 ## Version 4.4.2 - August 25, 2016
 * Added new importcss_exclusive option to disable unique selectors per group.
 * Added new group specific selector_converter option to importcss plugin.

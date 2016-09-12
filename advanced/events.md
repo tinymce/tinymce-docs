@@ -1,10 +1,10 @@
 ---
 layout: default
-title: Events
-title_nav: Events
-description_short: Complete list of keyboard shortcuts.
-description: Complete list of keyboard shortcuts.
-keywords: events BeforeSetContent SetContent GetContent NodeChange
+title: Editor Events
+title_nav: Editor Events
+description_short: List of common editor events
+description: List of common editor events
+keywords: Click DblClick MouseDown MouseUp MouseMove MouseOver MouseOut MouseEnter MouseLeave KeyDown KeyPress KeyUp ContextMenu Paste Init Focus Blur BeforeSetContent SetContent GetContent PreProcess PostProcess NodeChange Undo Redo Change Dirty Remove ExecCommand PastePreProcess PastePostProcess
 ---
 
 ## Editor Events
@@ -401,6 +401,9 @@ tinymce.on('AddEditor', function (e) {
 
 This event gets fired when editor instances gets created and added to the EditorManager collection.
 
+#### Parameters
+**editor** `tinymce.Editor` - Editor instance being added.
+
 Here is an example on how to listen for editor instances being created.
 
 ```js
@@ -412,6 +415,9 @@ tinymce.on('AddEditor', function (e) {
 ### RemoveEditor
 
 This event gets fired when editor instances are removed from the target textarea/div.
+
+#### Parameters
+**editor** `tinymce.Editor` - Editor instance being removed.
 
 Here is an example on how to listen for editor instances being removed.
 

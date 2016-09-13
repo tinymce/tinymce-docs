@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Get Started
-description: If you are new to TinyMCE, this is the place to start.
+title: SDK Get Started
+description: If you are new to the TinyMCE SDK, this is the place to start.
 type: folder
 ---
 

@@ -13,5 +13,5 @@ redirect_from:
   - /try-tinymce/
 ---
 
-{% assign links = site.data.nav[1].pages %}
+{% assign links = site.data.nav[2].pages %}
 {% include index.html links=links %}

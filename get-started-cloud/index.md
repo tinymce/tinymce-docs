@@ -54,4 +54,4 @@ Now you just need to extend your TinyMCE [configuration]({{ site.baseurl }}/conf
 * Accessibility-as-you-type
 * Advanced Code View
 
-That’s all there is to it. If you have any questions about [TinyMCE Cloud](http://go.tinymce.com/cloud) please contact our sales team via our [feature comparison and pricing page](https://www.tinymce.com/pricing/). If you’re already a Cloud customer and have any queries, please contact your support representative.
+That’s all there is to it. If you have any questions about [TinyMCE Cloud](http://go.tinymce.com/cloud) please contact our sales team via our [feature comparison and pricing page](https://www.tinymce.com/pricing/). If you are already a Cloud customer and have any queries, please contact your support representative.

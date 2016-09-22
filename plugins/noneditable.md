@@ -8,7 +8,7 @@ keywords: noneditable contenteditable editable mceNonEditable noneditable_editab
 
 > **Updated in 4.3!** The `noneditable` plugin has been rewritten from scratch to use stability improvements to the TinyMCE core released in version 4.3. It is now more reliable and has fewer browser-specific quirks.
 
-This plugin enables you to prevent users from being able to change (i.e. edit) content within elements assigned the `mceNonEditable` class.
+This plugin enables you to prevent users from being able to edit content within elements assigned the `mceNonEditable` class.
 
 **Type:** `String`
 

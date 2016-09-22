@@ -7,7 +7,7 @@ keywords: video youtube vimeo mp3 mp4 mov movie clip film media_live_embeds audi
 controls: toolbar button, menu item
 ---
 
-The `media` plugin adds the ability for users to be able to add HTML5 video and audio elements to the editable area. It also adds the menu item `Insert/edit video` under the `Insert` menu as well as a toolbar button.
+The `media` plugin adds the ability for users to be able to add HTML5 video and audio elements to the editable area. It also adds the item `Insert/edit video` under the `Insert` menu as well as a toolbar button.
 
 **Type:** `String`
 
@@ -24,7 +24,7 @@ tinymce.init({
 
 ### Options
 
-These settings affect the execution of the `media` plugin, namely the ability to disable parts of the media dialog box when inserting/editing media items. In addition, the user may disable the cross-site scripting sanitation filter for video/object elements here.
+These settings affect the execution of the `media` plugin. Namely the ability to disable parts of the media dialog box when inserting/editing media items. In addition, the user may disable the cross-site scripting sanitation filter for video/object elements here.
 
 ### `media_live_embeds`
 
@@ -140,7 +140,7 @@ tinymce.init({
 
 ### `media_filter_html`
 
-This option allows you disable the XSS sanitation filter for video/object elements. Scripts, conditional comments, etc, can't be used within these elements by default for security reasons. If you want to include that and have server side sanitizers, or you trust your users, then you can disable this feature.
+This option allows you disable the XSS sanitation filter for video/object elements. Scripts, conditional comments, etc, can't be used within these elements by default for security reasons. If you want to include that and have server side sanitizers or if you trust your users, then you can disable this feature.
 
 **Type:** `Boolean`
 

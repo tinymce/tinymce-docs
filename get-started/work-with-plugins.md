@@ -8,9 +8,9 @@ keywords: plugin
 
 For most developers, the real power of TinyMCE's functionality is found in its plugins. [Plugins]({{ site.baseurl }}/plugins/) either extend default editor functionality or add new functionality. For example, the [Advanced List]({{ site.baseurl }}/plugins/advlist/) plugin adds extra options to the toolbar's existing list controls, while the [Code]({{ site.baseurl }}/plugins/code/) plugin adds entirely new functionality.
 
-Because most people install TinyMCE via the CDN or by downloading a package, they mistakenly think plugins are part of the TinyMCE "core". While all of the plugins, excluding the professional features, are included in those packages, each plugin is in a separate .js file. In fact, if you use the [custom package](http://archive.tinymce.com/download/custom_package.php) download option you're able to select only the plugins you want included or even exclude all of the plugins built by the TinyMCE team.
+Because most people install TinyMCE via the CDN or by downloading a package, they mistakenly think plugins are part of the TinyMCE "core". While all of the plugins (excluding the professional features) are included in those packages, each plugin is in a separate .js file. In fact, if you use the [custom package](http://archive.tinymce.com/download/custom_package.php) download option you're able to select only the plugins you want included, or you can exclude all of the plugins built by the TinyMCE team.
 
-In this section of the Get Started guide we'll show you how easy it is to activate a plugin (assuming you included it in your download package) by highlighting two of the more popular plugins.
+In this section of the Get Started guide we'll show you how easy it is to activate a plugin by highlighting two of the more popular plugins. Please note that you must include the plugin in your download options in order to activate it.
 
 Let's start with a simple code snippet you can paste into an empty `html` file (call it whatever you like, `tinymce.html` works). Save the file locally, open it with your web browser and you'll have a basic, local TinyMCE instance up and running.
 
@@ -39,13 +39,13 @@ Let's start with a simple code snippet you can paste into an empty `html` file (
 
 ## Let's play with plugins
 
-The code we want to work with is in the second `<script>` element, specifically they `key` and its `value`, which we pass as `JSON` to the `tinymce` object `.init` method. In the example above `selector` is the key and `'textarea'` is its value.
+The code we want to work with is in the second `<script>` element. Specifically the `key` and its `value`, which we will pass as `JSON` to the `tinymce` object `.init` method. In the example above `selector` is the key and `'textarea'` is its value.
 
 ### Code plugin
 
 The [Code]({{ site.baseurl }}/plugins/code/) plugin is one of the more popular plugins because it can expose the editable area's raw `html` to the user. It also provides a great example because it adds a menu item and toolbar button as well as having advanced customization options.
 
-Obviously the first thing we need to do is include the actual `plugins` key and assign it a value. Since we're starting with the `code` plugin that value is by happy coincidence `'code'`.
+Obviously the first thing we need to do is include the actual `plugins` key and assign it a value. Since we're starting with the `code` plugin that value is going to be `'code'`for this example.
 
 ```js
 tinymce.init({
@@ -66,7 +66,7 @@ tinymce.init({
 });
 ```
 
-Awesome, we now have a button on the toolbar users can click to get into source code mode. But we also lost our default toolbar controls ... We explained why this happens back in [Basic Configuration](../basic-setup/), so if this behavior surprises you re-read that section.
+Awesome, we now have a button on the toolbar users can click to get into source code mode, but we lost our default toolbar controls. We explained why this happens back in [Basic Configuration](../basic-setup/), so if this behavior surprises you please re-read that section.
 
 Let's quickly take our minimal design one step further by removing the menubar completely.
 
@@ -101,7 +101,7 @@ Save the file, refresh your browser and when you next click the "Source code" to
 
 ## Time for one more example
 
-Even if you found the above example quite easy, hang with us we'll show you how to extend TinyMCE's default ordered and unordered lists. (We'll keep the chatter to a minimum, promise.) If on the other hand that was all a bit new, read this example to help your understanding.
+Even if you found the above example quite easy, hang with us we'll show you how to extend TinyMCE's default ordered and unordered lists. If on the other hand that was all a bit new, read this example to help your understanding.
 
 ### Advanced Lists
 
@@ -124,11 +124,11 @@ But what if we don't want all of those list options available to the user? Optio
 
 The `advlist` plugin has two options which provide more granular control of list styles. These are `advlist_bullet_styles` and `advlist_number_styles`.
 
-Many plugin options have more than one possible value. The `advlist_bullet_styles` option has possible values of `circle`, `disc` and `square` and `advlist_number_styles` has possible values of `lower-alpha`, `lower-greek`, `lower-roman`, `upper-alpha` and `upper-roman`.
+Many plugin options have more than one possible value. The `advlist_bullet_styles` option has possible values of `circle`, `disc`, and `square`. While the `advlist_number_styles` has possible values of `lower-alpha`, `lower-greek`, `lower-roman`, `upper-alpha`, and `upper-roman`.
 
-Don't worry if you can't remember all these values. You don't need to. The [plugins section]({{ site.baseurl }}/plugins/) goes into great detail explaining all the plugins, their options and toolbar and menu controls.
+Don't worry if you can't remember all these values. The [plugins section]({{ site.baseurl }}/plugins/) goes into great detail explaining all the plugins options, toolbars, and menu controls.
 
-Let's add the Advanced List options and give them some of the available options (but not all).
+Let's add the Advanced List options and give them some of the available options.
 
 ```js
 tinymce.init({
@@ -141,9 +141,9 @@ tinymce.init({
 });
 ```
 
-So, in the above example, we learned how to remove the menubar, add specific list controls to the toolbar while removing others, activate a plugin and customize the plugin's behavior by controlling which options we wanted to activate. In 5 lines of code (excluding the `selector` key, which has to be included for TinyMCE to work).
+In the above example we learned how to remove the menubar, add specific list controls to the toolbar while removing others, activate a plugin, and customize the plugin's behavior by controlling which options we wanted activated. In 5 lines of code (excluding the `selector` key, which has to be included for TinyMCE to work).
 
-As we noted at the start, TinyMCE is an incredibly powerful, flexible and customizable rich text editor. Once you've finished the Get Started guide, deep dive into the [plugins]({{ site.baseurl }}/plugins/) and [configuration options]({{ site.baseurl }}/configure/).
+As we noted at the start TinyMCE is an incredibly powerful, flexible, and customizable rich text editor. Once you've finished the Get Started guide, deep dive into the [plugins]({{ site.baseurl }}/plugins/) and [configuration options]({{ site.baseurl }}/configure/).
 
 
 ## Top 10 plugins

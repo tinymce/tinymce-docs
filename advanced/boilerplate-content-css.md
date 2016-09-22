@@ -7,7 +7,7 @@ description: Learn how to setup CSS for your site to integrate TinyMCE.
 keywords: css content_css
 ---
 
-There are a few advanced features in TinyMCE that requires some CSS to be added to the page that displays the contents produced by the editor. In general, you want to get as clean output as possible from a rich text editor and some of the more advanced features like captioned images uses CSS rather than inline styles to render properly.
+There are a few advanced features in TinyMCE that require some CSS to be added to the page that displays the contents produced by the editor. In general you want to get as clean output as possible from a rich text editor and some of the more advanced features like captioned images uses CSS rather than inline styles to render properly.
 
 This Boilerplate CSS can be used to style these advanced elements. This CSS file can be used within the editor using the [content_css](/configure/content-appearance/#content_css) option and also on your page where the saved content is presented.
 

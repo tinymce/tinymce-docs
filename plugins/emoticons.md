@@ -9,7 +9,7 @@ controls: toolbar button
 
 The Emoticons plugin adds a toolbar control that lets users insert smiley images into TinyMCE's editable area.
 
-> Note: it doesn't (automatically) convert text emoticons into graphical smilies.
+> Note: it doesn't automatically convert text emoticons into graphical smilies.
 
 **Type:** `String`
 

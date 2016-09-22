@@ -6,7 +6,7 @@ description: Changes HTML output to old HTML syntax such as font, b and i
 keywords: legacyoutput filter content cms email flash
 ---
 
-The `legacyoutput` plugin changes TinyMCE's output, producing legacy elements such as `font`, `b`, `i`, `u`, `strike` and use `align` attributes.
+The `legacyoutput` plugin changes TinyMCE's output, producing legacy elements such as `font`, `b`, `i`, `u`, `strike`, and use `align` attributes.
 
 This plugin can be useful if you want to use TinyMCE in an HTML mail client or to render contents to Flash.
 

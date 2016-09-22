@@ -13,7 +13,7 @@ A slimmed down version of TinyMCE is the default "Visual Editor" in WordPress.
 
 ## TinyMCE Advanced
 
-[TinyMCE Advanced](https://wordpress.org/plugins/tinymce-advanced/) is a WordPress plugin built by [Andrew Ozz](https://profiles.wordpress.org/azaozz/) that will let you add, remove and arrange the buttons that are shown on the Visual Editor toolbar. It includes 15 plugins for TinyMCE that are automatically enabled or disabled depending on what buttons are chosen.
+[TinyMCE Advanced](https://wordpress.org/plugins/tinymce-advanced/) is a WordPress plugin built by [Andrew Ozz](https://profiles.wordpress.org/azaozz/) that will let you add, remove, and arrange the buttons that are shown on the Visual Editor toolbar. It includes 15 plugins for TinyMCE that are automatically enabled or disabled depending on what buttons are chosen.
 
 **Some of the features added by this plugin**
 

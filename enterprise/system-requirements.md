@@ -7,7 +7,7 @@ keywords: support supported browser browsers windows osx linux ie8 chrome firefo
 
 ## Supported Browsers
 
-TinyMCE Enterprise is based on HTML, JavaScript and CSS standards and will operate on most web browsers that support these standards.
+TinyMCE Enterprise is based on HTML, JavaScript, and CSS standards and will operate on most web browsers that support these standards.
 
 ### Supported Browsers by Platform
 
@@ -31,7 +31,7 @@ The following platforms are fully supported for TinyMCE Enterprise.
 
 ## Word Copy/Paste
 
-Word copy and paste is supported on all the browsers supported by TinyMCE Enterprise.  There is some variance of functionality for different browsers.  Please see the information below for more details.
+Word copy and paste is supported on all the browsers supported by TinyMCE Enterprise. There is some variances of functionality for different browsers. Please see the information below for more details.
 
 ### Feature Matrix and Browser Support
 
@@ -47,11 +47,11 @@ Word copy and paste is supported on all the browsers supported by TinyMCE Enterp
 
 #### HTML Cleaning
 
-On all browsers PowerPaste provides basic HTML cleaning.  For browsers where HTML5 support is not available PowerPaste uses the browser DOM to import and clean HTML.  This mechanism is the primary cleaning method on browsers where HTML5 clipboard APIs are not available. While the resulting content is clean HTML the direct conversion to a browser DOM can result in some loss of content structure and/or formatting information.
+On all browsers PowerPaste provides basic HTML cleaning. For browsers where HTML5 support is not available PowerPaste uses the browser DOM to import and clean HTML. This mechanism is the primary cleaning method on browsers where HTML5 clipboard APIs are not available. While the resulting content is clean HTML the direct conversion to a browser DOM can result in some loss of content structure and/or formatting information.
 
 #### Improved HTML Cleaning
 
-On browsers that support HTML5 APIs PowerPaste is able to use improved HTML cleaning techniques.  Improved HTML cleaning uses HTML5 clipboard APIs to access the clipboard directly.  It can perform more complex and intelligent cleaning of the HTML than the basic HTML cleaning approach.  This better preserves the original document structure and formatting (when importing formatting).  Where available this approach gives the highest fidelity copy and paste possible from Microsoft Word and HTML.
+On browsers that support HTML5 APIs PowerPaste is able to use improved HTML cleaning techniques.  Improved HTML cleaning uses HTML5 clipboard APIs to access the clipboard directly. It can perform more complex and intelligent cleaning of the HTML than the basic HTML cleaning approach.  This better preserves the original document structure and formatting (when importing formatting). Where available this approach gives the highest fidelity copy and paste possible from Microsoft Word and HTML.
 
 #### Image Import
 

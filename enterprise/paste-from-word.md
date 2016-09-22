@@ -5,7 +5,7 @@ description: PowerPaste is a premium plugin for clean Word copy-and-paste.
 keywords: enterprise powerpaste power paste powerpaste_word_import powerpaste_html_import powerpaste_block_drop powerpaste_allow_local_images
 ---
 
-The TinyMCE PowerPaste plugin automatically cleans up content from Microsoft Word and other HTML sources to ensure clean, compliant content that matches the look and feel of the site.
+The TinyMCE PowerPaste plugin automatically cleans up content from Microsoft Word and HTML sources to ensure clean, compliant content that matches the look and feel of the site.
 
 TinyMCE PowerPaste is included in the TinyMCE Enterprise download.
 
@@ -14,7 +14,7 @@ TinyMCE PowerPaste is included in the TinyMCE Enterprise download.
 
 The PowerPaste plugin activates automatically when users paste content into the editor. For basic usage, users are not required to take any action - simply copy and paste content normally using keyboard shortcuts, the browser's "Paste" menu item (including from the context menu) or the TinyMCE "Paste" toolbar button.
 
-To paste clipboard content as plain text, removing all forms of formatting, user's can click the "Paste As Text" toolbar button and then paste the content normally. The TinyMCE PowerPaste plugin will convert the HTML on the clipboard into plain text.
+To paste clipboard content as plain text, user's can click the "Paste As Text" toolbar button and then paste the content normally. The TinyMCE PowerPaste plugin will convert the HTML on the clipboard into plain text.
 
 If you configure PowerPaste to allow local images (see the `powerpaste_allow_local_images` setting below) then images pasted from Microsoft Word and other sources will appear in TinyMCE as Base64 encoded images.  You can have TinyMCE automatically upload Base64 encoded images for conversion back to a standard image as documented on the following page:
 

@@ -22,7 +22,7 @@ tinymce.init({
 
 ## Options
 
-These settings affect the execution of the Autoresize plugin, including changes to the minimum width, height, bottom margin and default initialization state.
+These settings affect the execution of the Autoresize plugin, including changes to the minimum width, height, bottom margin, and default initialization state.
 
 ### `autoresize_bottom_margin`
 

@@ -30,7 +30,7 @@ From the content, you can press Alt+F9 to move focus to the menu bar. Left and R
 
 Alternatively, you can press `Alt+F10` to focus toolbars. You’ll land on the first toolbar and can tab or arrow through the items. Submenu items will have the sub menus or panels opened via Down Arrow, and closed via Escape. When you reach the end of one toolbar, Right Arrow and LeftArrow wrap to the next and previous tool bars respectively. Escape will bring you back into the main content area.
 
-From either the menus or toolbars, you can open dialogs such as Insert/Edit Image/Video. These are multi-page dialogs with at least two tabs at the top. When in the tab list, Right and Left arrow will move between the tabs, Space will make the current tab active. Tab moves into the panel and through the controls. OK will accept changes, Escape or Cancel will discard.
+From either the menus or toolbars, you can open dialogs such as Insert/Edit or Image/Video. These are multi-page dialogs with at least two tabs at the top. When in the tab list, Right and Left arrow will move between the tabs, Space will make the current tab active. Tab moves into the panel and through the controls. OK will accept changes, Escape or Cancel will discard.
 
 On the tool bars and in the formatting menu, you can insert emoticons or change the text and background colors. These are panels you open by pressing DownArrow or Enter on their respective menu/toolbar items, and then use the arrow keys to select the actual item you want applied/inserted. All of these items are also made to talk, so a blind person can change the text color as well and know what they’re doing.
 

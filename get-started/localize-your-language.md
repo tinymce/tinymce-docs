@@ -5,7 +5,7 @@ description: Localize TinyMCE with global language capabilities.
 keywords: internationalization localization languages
 ---
 
-As developers we all hope our projects reach a wide audience, and for many of us they do. Which is why it is important that TinyMCE is easy to localize.
+As developers we all hope our projects reach a wide audience, and for many of us they do. This is why it is important that TinyMCE is easy to localize its language.
 
 In this section of the Get Started guide we will show you how to change TinyMCE's user interface to suit your users' preferred language. The settings discussed in this section change the language that toolbar and menubar items, along with tooltips, are rendered in.
 
@@ -16,7 +16,7 @@ In this section of the Get Started guide we will show you how to change TinyMCE'
 
 Go to our [language download page](http://archive.tinymce.com/i18n/index.php) (i18n), where you'll see a list of language packs for TinyMCE 4.
 
-If you want to use one language only, click the download link on the far right of the table and you're done. However, if you want to download multiple language packs, first check the box beside each language you need and then click the download button at the bottom of the table.
+If you want to use one language only, click the download link on the far right of the table. However, if you want to download multiple language packs, first check the box beside each language you need and then click the download button at the bottom of the table.
 
 > Important note: the language packs provided via our language download page are translated by the TinyMCE community. We greatly appreciate their contribution!
 

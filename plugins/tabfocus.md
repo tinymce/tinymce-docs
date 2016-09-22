@@ -25,7 +25,7 @@ This setting affects the execution of the `tabfocus` plugin. This setting can be
 
 ### `tabfocus_elements`
 
-This option enables you to specify an element `ID` to focus, when the user pressed the tab key inside the editor. You can also use the special `":prev"` and `":next"` values. It will then place the focus on either the previous or next input element placed before/after the TinyMCE instance in the DOM.
+This option enables you to specify an element `ID` to focus when the user presses the tab key inside the editor. You can also use the special `":prev"` and `":next"` values. It will then place the focus on either the previous or next input element placed before/after the TinyMCE instance in the DOM.
 
 **Type:** `String`
 

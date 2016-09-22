@@ -3,13 +3,13 @@ layout: default
 title: Paste Plugin
 title_nav: Paste
 description: Standard version of features for copying-and-pasting content from Microsoft Word.
-keywords: microsoft word excel cut copy paste_data_images paste_as_text paste_enable_default_filters paste_filter_drop paste_preprocess paste_postprocess paste_word_valid_elements paste_webkit_styles paste_retain_style_properties paste_merge_formats paste_convert_word_fake_lists paste_remove_styles_if_webkit smart_paste
+keywords: microsoft word excel cut copy paste_data_images paste_as_text paste_enable_default_filters paste_filter_drop paste_preprocess paste_postprocess paste_word_valid_elements paste_webkit_styles paste_retain_style_properties paste_merge_formats paste_convert_word_fake_lists paste_remove_styles_if_webkit
 controls: toolbar button, menu item
 ---
 
 > Looking for more advanced Microsoft Word importing and pasting? Try the [PowerPaste](../powerpaste/) plugin.
 
-This plugin will do basic filtering/cleanup of content pasted from Microsoft Word. It also has a feature called smart paste that auto detects urls in the clipboard and inserts them as links or images. The power of the plugin is in its options, so please take the time to learn more about these below.
+This plugin will filter/cleanup content pasted from Microsoft Word. The power of the plugin is in its options, so please take the time to learn more about them below.
 
 The plugin also adds a menu item `Paste as text` under the `Edit` menu dropdown and a toolbar button.
 
@@ -38,7 +38,7 @@ This option specifies whether `data:url` images (inline images) should be remove
 
 Setting `paste_data_images` to `"true"` will allow the pasted images, while setting it to `"false"` will disallow pasted images.
 
-For example, Firefox enables you to paste images directly into any `contentEditable` field. This is normally not something people want, so this option is `"false"` by default since, say, a 600kb embedded image blocks page loads and prevents it form being cached on multiple pages.
+For example, Firefox enables you to paste images directly into any `contentEditable` field. This is normally not something people want, so this option is `"false"` by default. For example, a 600kb embedded image would block page loads and prevents it form being cached on multiple pages.
 
 **Type:** `Boolean`
 
@@ -164,31 +164,9 @@ tinymce.init({
 });
 ```
 
-### `smart_paste`
-
-This option specifies whether the smart paste feature is enabled or not. Smartpaste will auto detect urls in the clipboard and insert links to selected text and images as urls.
-
-So if you make a text selection and paste an url it will convert that selection into an url if you paste an url that looks like an image url it will insert it as an image into the document. Both of these actions can be reverted by using undo and then the content would be presented as it would have been a normal paste.
-
-**Type:** `Boolean`
-
-**Default Value:** `true`
-
-**Possible Values:** `true`, `false`
-
-##### Example
-
-```js
-tinymce.init({
-  selector: "textarea",
-  plugins: "paste",
-  smart_paste: false
-});
-```
-
 ### `paste_word_valid_elements`
 
-This option enables you to configure the `valid_elements` specific to MS Office. Word produces a lot of junk HTML so when users paste things from Word we do extra restrictive filtering on it to remove as much of this as possible. This option enables you to specify which elements and attributes you want to include when Word contents are intercepted.
+This option enables you to configure the `valid_elements` specific to MS Office. Word produces a lot of junk HTML, so when users paste things from Word we do extra restrictive filtering on it to remove as much of this as possible. This option enables you to specify which elements and attributes you want to include when Word contents are intercepted.
 
 **Type:** `String`
 

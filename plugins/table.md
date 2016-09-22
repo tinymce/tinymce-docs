@@ -23,11 +23,11 @@ tinymce.init({
 
 ### Options
 
-These settings affect the execution of the `table` plugin and let you modify the default styles and attributes for tables, preset class lists and table behavior.
+These settings affect the execution of the `table` plugin and let you modify the default styles and attributes for tables, preset class lists, and table behavior.
 
 ### `table_toolbar`
 
-This option allows you to specify the buttons and the order that they will appear on TinyMCE's inline contextual toolbar for tables.  To specify the controls that should appear on TinyMCE's table toolbar, the `table_toolbar` option should be provided with a space separated list of toolbar controls. To create groups within this list, please add `|` pipe characters between the groups of controls that you would like to create. If you want to disable this toolbar simply set the value to an empty string.
+This option allows you to specify the buttons and the order that they will appear on within TinyMCE's inline contextual toolbar for tables. To specify the controls that should appear on TinyMCE's table toolbar, the `table_toolbar` option should be provided with a space separated list of toolbar controls. To create groups within this list, please add `|` pipe characters between the groups of controls that you would like to create. If you want to disable this toolbar simply set the value to an empty string.
 
 **Type:** `String`
 
@@ -81,7 +81,7 @@ tinymce.init({
 
 This option allows you disable the table grid feature of the table menu. The grid feature (which is enabled by default) consists of a dragable matrix that a user can interact with to automatically create a table of x-rows by x-columns based upon their input.
 
-However, if you set this option to `false` the dragable matrix will be replaced with a table dialog box into which a user can enter various parameters to create a table (e.g. cols, rows, width, height, cell spacing, cell padding, border, caption and alignment). There are also advanced style options available in the dialog.
+However, if you set this option to `false` the dragable matrix will be replaced with a table dialog box into which a user can enter various parameters to create a table cols, rows, width, height, cell spacing, cell padding, border, caption and alignment). There are also advanced style options available in the dialog.
 
 **Type:** `Boolean`
 

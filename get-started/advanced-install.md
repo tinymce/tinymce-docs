@@ -6,7 +6,7 @@ description: Learn how to install TinyMCE via our CDN, package manager options, 
 keywords: npm bower composer nuget
 ---
 
-So far we've been using the CDN version of TinyMCE and while it's the easiest way to instantiate the editor it may not always be the best way. In this section we will explain some of TinyMCE's other installation options, including package managers, downloading the SDK and the custom build option.
+So far we've been using the CDN version of TinyMCE and while it's the easiest way to instantiate the editor it may not always be the best way. In this section we will explain some of TinyMCE's other installation options including package managers, downloading the SDK, and the custom build option.
 
 On this page you'll find a detailed guide to our installation options:
 

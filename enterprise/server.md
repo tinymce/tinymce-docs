@@ -43,15 +43,17 @@ These are both simple, open source Java application servers and they're easy to 
 ### Step 2. Deploy Server-side Components
 
 You’ll need to ensure you deploy the following WAR files packaged with the TinyMCE Enterprise SDK:
-* ephox-allowed-origins.war
-* ephox-spelling.war
-* ephox-image-proxy.war
+
+- ephox-allowed-origins.war
+- ephox-spelling.war
+- ephox-image-proxy.war
 
 The easiest way to deploy these files is to simply drag and drop them into the webapps directory of your Tomcat/Jetty server (or equivalent folder of another Java application server), and then restart the server.
 
 More information on deploying components/applications:
-* [Deploying applications with Tomcat 6.0](https://tomcat.apache.org/tomcat-6.0-doc/deployer-howto.html)
-* [Deploying applications with Jetty](https://wiki.eclipse.org/Jetty/Howto/Deploy_Web_Applications)
+
+- [Deploying applications with Tomcat 6.0](https://tomcat.apache.org/tomcat-6.0-doc/deployer-howto.html)
+- [Deploying applications with Jetty](https://wiki.eclipse.org/Jetty/Howto/Deploy_Web_Applications)
 
 
 ### Step 3. Create a configuration file and configure the allowed origins service
@@ -60,10 +62,10 @@ More information on deploying components/applications:
 
 Services require a configuration file named `application.conf` to be referenced by the application server.
 
-The SDK comes packaged with an example configuration file (`examples/sample_application.conf`) that can be used as a reference guide. You can use this example file (after modifying it with your settings).  We recommend that you make a backup of the file before editing it.
+This configuration file will require you to enter two pieces of information:
 
-The `allowed-origins` configuration element will need to be specified in order for the spelling server-side component to work.
-
+- `origins` - which domains are allowed to communicate with the server-side editor features.
+- `url` - the location of the allowed-origins checking service itself.
 
 #### allowed-origins
 
@@ -74,8 +76,9 @@ The `origins` attribute must list all the domains that instances of the editor w
 > Note: Be sure to include the protocol (https or http) and any required port number (eg:8080) in the string.
 
 The `url` attribute defines the location of the allowed-origins service. This string is a concatenation of two values:
-* String 1: The URL location of the allowed-origins service
-* String 2: The API to access in the service (/cors).
+
+- String 1: The URL location of the allowed-origins service
+- String 2: The API to access in the service (/cors).
 
 Example:
 
@@ -88,7 +91,7 @@ ephox {
 }
 ````
 
-#### Entering Origins
+##### Additional Information Around Entering Origins
 
 The origins are matched by protocol, host name, and port. So you may need a combination of all three, depending on which browsers you use. If you are serving the editor and services from `http://localhost` & port 80, then the list of origins should have an entry for `http://localhost` and any other servers with ports, like so:
 
@@ -118,7 +121,28 @@ Ensure that you have the right protocol specified, and for more examples see the
 
 Depending on your configuration and the browser you use, you may need to specify the port number as well when listing the origin. If you observe that requests are failing with services not being available, it may be because the port number is required. Refer to troubleshooting guide - section titled Investigating Using the Browser's Network Tools.
 
+##### Example application.conf
 
+TinyMCE is deployed to an environment and displayed to end users on the following domains:
+
+- http://myCMS
+- https://myCMS
+- http://myCMS:4141
+
+The `allowed-origins` service has been installed and is accessible via the following URL:
+
+- http://myCMS:8080/ephox-allowed-origins
+
+For this example, here is what the contents of `application.conf` should look like:
+
+````
+ephox{
+   allowed-origins{
+           origins=["http://myCMS", "https://myCMS", "http://myCMS:4141"]
+           url = "http://myCMS:8080/ephox-allowed-origins/cors"
+  }
+}
+````
 
 ### Step 4. Pass the configuration file to the Java application server
 

@@ -7,7 +7,7 @@ module Jekyll
         reg = context.registers
         site = reg[:site]
         if reg[:page_hash].nil?
-          reg[:page_hash] = Hash[ (site.posts + site.pages).collect {
+          reg[:page_hash] = Hash[ (site.posts.docs + site.pages).collect {
             |x| [x.url.sub(TrailingIndex, ''), x]}]
         end
         return reg[:page_hash]

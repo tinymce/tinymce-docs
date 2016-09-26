@@ -4,9 +4,10 @@
 source 'https://rubygems.org'
 
 group :development, :test do
-  gem 'jekyll', '~> 2.5.3'
-  gem 'jekyll-redirect-from', '~> 0.8.0'
+  gem 'jekyll', '~> 3'
+  gem 'jekyll-redirect-from', '~> 0.11'
   gem 'jekyll-sitemap', '~> 0.10.0'
+  gem 'redcarpet', '~> 3'
   gem 'nokogiri', '1.6.6.4'
   gem 'octopress-minify-html', '1.3.0'
 end

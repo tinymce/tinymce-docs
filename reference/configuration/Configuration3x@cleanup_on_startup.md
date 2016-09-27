@@ -9,7 +9,7 @@ If you set this option to true, TinyMCE will perform a HTML cleanup call when th
 
 ## Example of usage of the cleanup_on_startup option:
 
-```html
+```js
 tinyMCE.init({
 	...
 	cleanup_on_startup : true
@@ -18,4 +18,4 @@ tinyMCE.init({
 
 ## See also
 
-[cleanup](/Configuration:cleanup)
+The [cleanup](https://www.tinymce.com/docs-3x/reference/configuration/Configuration3x@cleanup/) configuration option.

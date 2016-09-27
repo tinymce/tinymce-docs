@@ -7,7 +7,7 @@ This option enables you to specify a function name to be executed when the page 
 
 ## Example of usage of the onpageload option:
 
-```html
+```js
 function myCustomOnPageLoad() {
 	alert("We are nearly ready to rumble!!");
 }
@@ -16,5 +16,4 @@ tinyMCE.init({
 	...
 	onpageload : "myCustomOnPageLoad"
 });
-
 ```

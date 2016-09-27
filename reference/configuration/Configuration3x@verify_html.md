@@ -7,10 +7,9 @@ This option enables or disables the element cleanup functionality. If you set th
 
 ## Example of usage of the verify_html option:
 
-```html
+```js
 tinyMCE.init({
 	...
 	verify_html : false
 });
-
 ```

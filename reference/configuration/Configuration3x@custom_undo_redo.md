@@ -7,10 +7,9 @@ This option is a true/false option that enables you to disable/enable the custom
 
 ## Example of usage of the custom_undo_redo option:
 
-```html
+```js
 tinyMCE.init({
 	...
 	custom_undo_redo : false
 });
-
 ```

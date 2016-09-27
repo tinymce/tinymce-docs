@@ -7,10 +7,9 @@ If this option is set to true some accessibility warnings will be presented to t
 
 ## Example of usage of the accessibility_warnings option:
 
-```html
+```js
 tinyMCE.init({
 	...
 	accessibility_warnings : false
 });
-
 ```

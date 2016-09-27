@@ -7,8 +7,8 @@ This plugin adds fullpage editing support. This enables you to edit whole docume
 
 ## Installation Instructions
 
-1.  Add plugin to TinyMCE plugin option list example: plugins : "fullpage".
-2.  Add the fullpage button name to button list, example: theme_advanced_buttons3_add : "fullpage".
+1.  Add plugin to TinyMCE plugin option list example: `plugins : "fullpage"`.
+2.  Add the fullpage button name to button list, example: `theme_advanced_buttons3_add : "fullpage"`.
 
 ## Plugin options
 
@@ -32,16 +32,16 @@ XHTML 1.0 Transitional=<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional
 
 ## Initialization Example
 
-```html
+```js
 tinyMCE.init({
-	theme : "advanced",
-	mode : "textareas",
-	plugins : "fullpage",
-	theme_advanced_buttons3_add : "fullpage",
-	fullpage_fontsizes : '13px,14px,15px,18pt,xx-large',
-	fullpage_default_xml_pi : false,
-	fullpage_default_langcode : 'en',
-	fullpage_default_title : "My document title"
+  theme : "advanced",
+  mode : "textareas",
+  plugins : "fullpage",
+  theme_advanced_buttons3_add : "fullpage",
+  fullpage_fontsizes : '13px,14px,15px,18pt,xx-large',
+  fullpage_default_xml_pi : false,
+  fullpage_default_langcode : 'en',
+  fullpage_default_title : "My document title"
 });
 
 ```

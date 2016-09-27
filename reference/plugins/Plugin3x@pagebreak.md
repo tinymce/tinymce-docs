@@ -9,14 +9,13 @@ Adds pagebreak support, some CMS systems uses a special separator to break the c
 
 ## Initialization Example
 
-```html
+```js
 tinyMCE.init({
-	theme : "advanced",
-	mode : "textareas",
-	plugins : "pagebreak",
-	pagebreak_separator : "<!-- my page break -->"
+  theme : "advanced",
+  mode : "textareas",
+  plugins : "pagebreak",
+  pagebreak_separator : "<!-- my page break -->"
 });
-
 ```
 
 ## Plugin options
@@ -29,7 +28,7 @@ tinyMCE.init({
 
 You must allow your img tags to have the class attribute in order for this plugin to work correctly. If you are overriding the default valid_elements, make sure you include something like:
 
-```html
+```
 img[src|border|alt=|title|width|height|align|class]
 
 ```

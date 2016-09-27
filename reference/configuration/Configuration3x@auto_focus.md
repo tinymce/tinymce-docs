@@ -7,10 +7,9 @@ This option enables you to auto focus an editor instance. The value of this opti
 
 ## Example of usage of the auto_focus option:
 
-```html
+```js
 tinyMCE.init({
 	...
 	auto_focus : "elm1"
 });
-
 ```

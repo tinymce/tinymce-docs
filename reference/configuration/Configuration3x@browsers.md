@@ -7,7 +7,7 @@ This option should contain a comma separated list of supported browsers. This en
 
 ## Example of usage of the browsers option:
 
-```html
+```js
 tinyMCE.init({
 	...
 	browsers : "msie,gecko,opera"

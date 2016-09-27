@@ -5,7 +5,7 @@ title: Buttons/Controls
 
 This is a list of all the available buttons that you can configure, the requirements are also listed as some buttons require you to include the plugin first. Check each plugin for more information, some plugins have separate configurations.
 
-Use the [theme_advanced_disable](../configuration/Configuration3x@theme_advanced_buttons_1_n) option.
+Use the [theme_advanced_disable](https://www.tinymce.com/docs-3x/reference/configuration/Configuration3x@theme_advanced_buttons_1_n/) option.
 
 ## Default buttons available in the advanced theme
 
@@ -34,7 +34,7 @@ Use the [theme_advanced_disable](../configuration/Configuration3x@theme_advanced
 *   code
 *   hr
 *   removeformat
-*   [formatselect](../configuration/Configuration3x@theme_advanced_blockformats)
+*   [formatselect](https://www.tinymce.com/docs-3x/reference/configuration/Configuration3x@theme_advanced_blockformats/)
 *   fontselect
 *   fontsizeselect
 *   styleselect
@@ -49,40 +49,40 @@ Use the [theme_advanced_disable](../configuration/Configuration3x@theme_advanced
 *   anchor
 *   newdocument
 *   blockquote
-*   separator ( | is possible as separator, too)
+*   separator ( | is possible as separator, too/)
 
 ## Plugins with the button name same as plugin name
 
-*   [advhr](../plugins/Plugin3x@advhr)
-*   [emotions](../plugins/Plugin3x@emotions)
-*   [fullpage](../plugins/Plugin3x@fullpage)
-*   [fullscreen](../plugins/Plugin3x@fullscreen)
-*   [iespell](../plugins/Plugin3x@iespell)
-*   [media](../plugins/Plugin3x@media)
-*   [nonbreaking](../plugins/Plugin3x@nonbreaking)
-*   [pagebreak](../plugins/Plugin3x@pagebreak)
-*   [preview](../plugins/Plugin3x@preview)
-*   [print](../plugins/Plugin3x@print)
-*   [spellchecker](../plugins/Plugin3x@spellchecker)
-*   [visualchars](../plugins/Plugin3x@visualchars)
+*   [advhr](https://www.tinymce.com/docs-3x/reference/plugins/Plugin3x@advhr/)
+*   [emotions](https://www.tinymce.com/docs-3x/reference/plugins/Plugin3x@emotions/)
+*   [fullpage](https://www.tinymce.com/docs-3x/reference/plugins/Plugin3x@fullpage/)
+*   [fullscreen](https://www.tinymce.com/docs-3x/reference/plugins/Plugin3x@fullscreen/)
+*   [iespell](https://www.tinymce.com/docs-3x/reference/plugins/Plugin3x@iespell/)
+*   [media](https://www.tinymce.com/docs-3x/reference/plugins/Plugin3x@media/)
+*   [nonbreaking](https://www.tinymce.com/docs-3x/reference/plugins/Plugin3x@nonbreaking/)
+*   [pagebreak](https://www.tinymce.com/docs-3x/reference/plugins/Plugin3x@pagebreak/)
+*   [preview](https://www.tinymce.com/docs-3x/reference/plugins/Plugin3x@preview/)
+*   [print](https://www.tinymce.com/docs-3x/reference/plugins/Plugin3x@print/)
+*   [spellchecker](https://www.tinymce.com/docs-3x/reference/plugins/Plugin3x@spellchecker/)
+*   [visualchars](https://www.tinymce.com/docs-3x/reference/plugins/Plugin3x@visualchars/)
 
 ## Plugins with custom buttons
 
-*   [advlink](../plugins/Plugin3x@advlink)
+*   [advlink](https://www.tinymce.com/docs-3x/reference/plugins/Plugin3x@advlink/)
     *   Will override the "link" button
-*   [advimage](../plugins/Plugin3x@advimage)
+*   [advimage](https://www.tinymce.com/docs-3x/reference/plugins/Plugin3x@advimage/)
     *   Will override the "image" button
-*   [paste](../plugins/Plugin3x@paste)
+*   [paste](https://www.tinymce.com/docs-3x/reference/plugins/Plugin3x@paste/)
     *   pastetext
     *   pasteword
     *   selectall
-*   [searchreplace](../plugins/Plugin3x@searchreplace)
+*   [searchreplace](https://www.tinymce.com/docs-3x/reference/plugins/Plugin3x@searchreplace/)
     *   search
     *   replace
-*   [insertdatetime](../plugins/Plugin3x@insertdatetime)
+*   [insertdatetime](https://www.tinymce.com/docs-3x/reference/plugins/Plugin3x@insertdatetime/)
     *   insertdate
     *   inserttime
-*   [table](../plugins/Plugin3x@table)
+*   [table](https://www.tinymce.com/docs-3x/reference/plugins/Plugin3x@table/)
     *   tablecontrols
     *   table
     *   row_props
@@ -95,25 +95,25 @@ Use the [theme_advanced_disable](../configuration/Configuration3x@theme_advanced
     *   row_before
     *   split_cells
     *   merge_cells
-*   [directionality](../plugins/Plugin3x@directionality)
+*   [directionality](https://www.tinymce.com/docs-3x/reference/plugins/Plugin3x@directionality/)
     *   ltr
     *   rtl
-*   [layer](../plugins/Plugin3x@layer)
+*   [layer](https://www.tinymce.com/docs-3x/reference/plugins/Plugin3x@layer/)
     *   moveforward
     *   movebackward
     *   absolute
     *   insertlayer
-*   [save](../plugins/Plugin3x@save)
+*   [save](https://www.tinymce.com/docs-3x/reference/plugins/Plugin3x@save/)
     *   save
     *   cancel
-*   [style](../plugins/Plugin3x@style)
+*   [style](https://www.tinymce.com/docs-3x/reference/plugins/Plugin3x@style/)
     *   styleprops
-*   [xhtmlxtras](../plugins/Plugin3x@xhtmlxtras)
+*   [xhtmlxtras](https://www.tinymce.com/docs-3x/reference/plugins/Plugin3x@xhtmlxtras/)
     *   cite
     *   abbr
     *   acronym
     *   ins
     *   del
     *   attribs
-*   [template](../plugins/Plugin3x@template)
+*   [template](https://www.tinymce.com/docs-3x/reference/plugins/Plugin3x@template/)
     *   template

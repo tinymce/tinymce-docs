@@ -20,10 +20,10 @@ Installation Instructions
 
 ## Initialization Example
 
-```html
+```js
 tinyMCE.init({
-	theme : "advanced",
-	mode : "textareas",
-	plugins : "advimage"
+  theme : "advanced",
+  mode : "textareas",
+  plugins : "advimage"
 });
 ```

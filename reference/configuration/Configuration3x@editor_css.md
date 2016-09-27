@@ -7,10 +7,9 @@ This option enables you to specify the CSS file to be used for the editor toolba
 
 ## Example of usage of the editor_css option:
 
-```html
+```js
 tinyMCE.init({
 	...
 	editor_css : "/myeditor.css"
 });
-
 ```

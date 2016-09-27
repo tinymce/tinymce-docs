@@ -7,7 +7,7 @@ This plugin adds the possibility to tab in/out of TinyMCE.
 
 ## Initialization Example
 
-```html
+```js
 tinyMCE.init({
   theme : "advanced",
   mode : "textareas",

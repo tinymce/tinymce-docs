@@ -9,7 +9,7 @@ Embedding the editor on a web page form is simple, but handling the content is w
 
 More or less useless for a CMS in reality, but good enough to play around with. The sample file – explained below:
 
-```html
+```
 <?php
  $allowedTags='<p><strong><em><u><h1><h2><h3><h4><h5><h6><img>';
  $allowedTags.='<li><ol><ul><span><div><br><ins><del>';  
@@ -57,17 +57,16 @@ More or less useless for a CMS in reality, but good enough to play around with. 
 </form>
 </body>
 </html>
-
 ```
 
 Save the code above into a file ending with .php, upload it to your webserver and test/modify it yourself.
 
 ## The tinyMCE.init section
 
-A few words on the JavaScript tinyMCE.init({...} part in the example.
+A few words on the JavaScript `tinyMCE.init({...}` part in the example.
 
-*   theme : advanced  tells TinyMCE to use the "advanced" theme, which enables us to configure a lot of customizations. → [theme](../configuration/Configuration3x@theme) in the TinyMCE documentation
+*   theme : advanced  tells TinyMCE to use the "advanced" theme, which enables us to configure a lot of customizations. → [theme](https://www.tinymce.com/docs-3x/reference/configuration/Configuration3x@theme/) in the TinyMCE documentation
 
-*   mode : exact  commands TinyMCE to not convert all the textareas on the page, but only those we tell it to (see below) → [mode](../configuration/Configuration3x@mode) in the TinyMCE documentation
+*   mode : exact  commands TinyMCE to not convert all the textareas on the page, but only those we tell it to (see below) → [mode](https://www.tinymce.com/docs-3x/reference/configuration/Configuration3x@mode/) in the TinyMCE documentation
 
-*   elements : "elm1"  related to the option "mode" above, tells TinyMCE which textareas are converted. The value should contain the id attributes of all textareas you would like to convert. → [elements](../configuration/Configuration3x@elements) in the TinyMCE documentation.
+*   elements : "elm1"  related to the option "mode" above, tells TinyMCE which textareas are converted. The value should contain the id attributes of all textareas you would like to convert. → [elements](https://www.tinymce.com/docs-3x/reference/configuration/Configuration3x@elements/) in the TinyMCE documentation.

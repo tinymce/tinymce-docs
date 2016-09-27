@@ -42,6 +42,6 @@ tinyMCE.init({
 
 *   The GZip compressor can fail to load if the server has odd settings or is missing the required support for it to function. To see compilation errors or other problems we suggest that you use HTTP debugging tools like [Fiddler](http://www.fiddlertool.com/fiddler/) or [Firebug](http://www.getfirebug.com/) you can also point your browser directly to the GZip file.
 *   Consult the changelog of this script and make sure that you use the latest version of TinyMCE. These two parts are pretty much tied together so there is no guarantee that it will work with older versions of TinyMCE.
-*   Visit the [TinyMCE forum](http://tinymce.moxiecode.com/forum) for help with the TinyMCE Gzip Compressor.
+*   Visit the [TinyMCE Community forum](https://community.tinymce.com) for help with the TinyMCE Gzip Compressor.
 *   To remove a plugin, remember to remove it both from tinyMCE_GZ.init and TinyMCE.init.
 *   To add a plugin, remember to add it both to the tinyMCE_GZ.init and the tinyMCE.init calls.

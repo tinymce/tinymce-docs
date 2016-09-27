@@ -9,7 +9,7 @@ This option is available since MSIE has a serious bug where the DOM tree sometim
 
 ## Example of usage of the fix_content_duplication option:
 
-```html
+```js
 tinyMCE.init({
 	...
 	fix_content_duplication : false

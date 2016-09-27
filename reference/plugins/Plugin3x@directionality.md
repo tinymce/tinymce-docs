@@ -10,12 +10,12 @@ This plugin adds directionality icons to TinyMCE that enables TinyMCE to better 
 
 ## Initialization Example
 
-```html
+```js
 tinyMCE.init({
-	theme : "advanced",
-	mode : "textareas",
-	plugins : "directionality",
-	theme_advanced_buttons3_add : "ltr,rtl"
+  theme : "advanced",
+  mode : "textareas",
+  plugins : "directionality",
+  theme_advanced_buttons3_add : "ltr,rtl"
 });
 
 ```

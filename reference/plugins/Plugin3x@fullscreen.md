@@ -19,16 +19,16 @@ This plugin adds fullscreen editing mode to TinyMCE.
 
 ## Initialization Example
 
-```html
+```js
 tinyMCE.init({
-	theme : "advanced",
-	mode : "textareas",
-	plugins : "fullscreen",
-	theme_advanced_buttons3_add : "fullscreen",
-	fullscreen_new_window : true,
-	fullscreen_settings : {
-		theme_advanced_path_location : "top"
-	}
+  theme : "advanced",
+  mode : "textareas",
+  plugins : "fullscreen",
+  theme_advanced_buttons3_add : "fullscreen",
+  fullscreen_new_window : true,
+  fullscreen_settings : {
+    theme_advanced_path_location : "top"
+  }
 });
 
 ```

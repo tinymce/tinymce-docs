@@ -7,11 +7,10 @@ This plugin will change the output for TinyMCE to produce legacy elements such a
 
 ## Initialization Example
 
-```html
+```js
 tinyMCE.init({
-	theme : "advanced",
-	mode : "textareas",
-	plugins : "legacyoutput"
+  theme : "advanced",
+  mode : "textareas",
+  plugins : "legacyoutput"
 });
-
 ```

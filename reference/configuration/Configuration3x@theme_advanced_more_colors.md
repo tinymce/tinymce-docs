@@ -7,10 +7,9 @@ This option enables you to disable the "more colors" link for the text and backg
 
 ## Example of usage of the theme_advanced_more_colors option
 
-```html
+```js
 tinyMCE.init({
 	...
 	theme_advanced_more_colors : false
 });
-
 ```

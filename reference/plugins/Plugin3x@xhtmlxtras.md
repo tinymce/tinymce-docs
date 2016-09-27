@@ -3,7 +3,7 @@ layout: default
 title: xhtmlxtras
 ---
 
-This plugin adds support for some XHTML elements these include cite, ins, del, abbr, and acronym.
+This plugin adds support for some XHTML elements these include `cite`, `ins`, `del`, `abbr`, and `acronym`.
 
 ## xhtmlxtras controls/buttons
 
@@ -23,12 +23,11 @@ This plugin adds support for some XHTML elements these include cite, ins, del, a
 
 ## Initialization Example
 
-```html
+```js
 tinyMCE.init({
-	theme : "advanced",
-	mode : "textareas",
-	plugins : "xhtmlxtras",
-	theme_advanced_buttons3_add : "cite,ins,del,abbr,acronym"
+  theme : "advanced",
+  mode : "textareas",
+  plugins : "xhtmlxtras",
+  theme_advanced_buttons3_add : "cite,ins,del,abbr,acronym"
 });
-
 ```

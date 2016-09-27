@@ -11,7 +11,7 @@ This option enables you to specify a class for the body of each editor instance.
 
 This will add the same class to all editors that gets created by the init call.
 
-```html
+```js
 tinyMCE.init({
 	...
 	body_class : "my_class"
@@ -20,7 +20,7 @@ tinyMCE.init({
 
 This will set specific classes on the bodies of specific editors.
 
-```html
+```js
 tinyMCE.init({
 	...
 	body_class : "elm1=my_class,elm2=my_class"

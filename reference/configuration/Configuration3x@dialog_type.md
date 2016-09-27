@@ -9,10 +9,9 @@ Note that this currently only has an effect in Internet Explorer (in other brows
 
 ## Example of usage of the dialog_type option:
 
-```html
+```js
 tinyMCE.init({
 	...
 	dialog_type : "modal"
 });
-
 ```

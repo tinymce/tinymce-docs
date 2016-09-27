@@ -7,10 +7,9 @@ This option should contain the default container/panel alignment and can be a va
 
 ## Example of usage of the theme_advanced_containers_default_align option:
 
-```html
+```js
 tinyMCE.init({
 	...
 	theme_advanced_containers_default_align : "left"
 });
-
 ```

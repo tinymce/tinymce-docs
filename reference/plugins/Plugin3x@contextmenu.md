@@ -10,11 +10,11 @@ title: contextmenu
 
 ## Initialization Example
 
-```html
+```js
 tinyMCE.init({
-	theme : "advanced",
-	mode : "textareas",
-	plugins : "contextmenu"
+  theme : "advanced",
+  mode : "textareas",
+  plugins : "contextmenu"
 });
 
 ```

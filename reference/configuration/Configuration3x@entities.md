@@ -5,11 +5,11 @@ title: entities
 
 This option contains a comma separated list of entity names that is used instead of characters. Odd items are the character code and even items are the name of the character code. Part of the default value of this option is placed in the example below.
 
-The base entities < > & ' and " will always be entity encoded into their named equivalents. Though ' and " will only be encoded within attribute values and < > will only be encoded within text nodes. This is correct according too the HTML and XML specs.
+The base entities `<` `>` `&` `'` and `"` will always be entity encoded into their named equivalents. Though `'` and `"` will only be encoded within attribute values and `<` `>` will only be encoded within text nodes. This is correct according too the HTML and XML specs.
 
 ## Example of usage of the entities option / default value:
 
-```html
+```js
 tinyMCE.init({
 	...
 	entities : "160,nbsp,38,amp,34,quot,162,cent,8364,euro,163,pound,165,yen,169,copy,174,reg,8482,trade,8240,permil,60,lt,62,gt,8804,le,8805,ge,176,deg,8722,minus"
@@ -18,7 +18,7 @@ tinyMCE.init({
 
 ## Version: 3.3.8 / default value:
 
-```html
+```js
 tinyMCE.init({
         ...
         entities : '160,nbsp,161,iexcl,162,cent,163,pound,164,curren,165,yen,166,brvbar,167,sect,168,uml,169,copy,170,ordf,'

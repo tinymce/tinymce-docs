@@ -5,7 +5,7 @@ title: entity_encoding
 
 This option controls how entities/characters get processed by TinyMCE. The value can be set as shown in Encoding Types below.
 
-The base entities < > & ' and " will always be entity encoded into their named equivalents. Though ' and " will only be encoded within attribute values and < > will only be encoded within text nodes. This is correct according too the HTML and XML specs.
+The base entities `<` `>` `&` `'` and `"` will always be entity encoded into their named equivalents. Though `'` and `"` will only be encoded within attribute values and `<` `>` will only be encoded within text nodes. This is correct according too the HTML and XML specs.
 
 ## Encoding Types
 
@@ -17,7 +17,7 @@ The base entities < > & ' and " will always be entity encoded into their named e
 
 ## Example of usage of the entity_encoding option:
 
-```html
+```js
 tinyMCE.init({
 	...
 	entity_encoding : "raw"

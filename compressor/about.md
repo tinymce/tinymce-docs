@@ -18,12 +18,12 @@ gzipis short for GNU zip, a GNU free software file compression program. It was c
 
 There are currently 4 different compressors written by MoxieCode based on various server technologies:
 
-*   [PHP](../Compressors3x@PHP)
-*   [ASPX / Microsoft .NET](../Compressors3x@.NET)
-*   [JSP / Tomcat or compatible application servers](../Compressors3x@JSP)
-*   [CFM / Coldfusion](../Compressors3x@Coldfusion)
+*   [PHP](https://www.tinymce.com/docs-3x/compressor/Compressors3x@PHP/)
+*   [ASPX / Microsoft .NET](https://www.tinymce.com/docs-3x/compressor/Compressors3x@.NET/)
+*   [JSP / Tomcat or compatible application servers](https://www.tinymce.com/docs-3x/compressor/Compressors3x@JSP/)
+*   [CFM / Coldfusion](https://www.tinymce.com/docs-3x/compressor/Compressors3x@Coldfusion/)
 
-They can be downloaded from our [Download page](/download/download.php).
+They can be downloaded from our [Download page](https://www.tinymce.com/download/).
 
 ## Third-party Compressors
 

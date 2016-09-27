@@ -13,12 +13,12 @@ This plugin handles embedded media such as QuickTime, Flash, ShockWave, RealPlay
 
 ## Initialization Example
 
-```html
+```js
 tinyMCE.init({
-	theme : "advanced",
-	mode : "textareas",
-	plugins : "media",
-	theme_advanced_buttons1_add : "media"
+  theme : "advanced",
+  mode : "textareas",
+  plugins : "media",
+  theme_advanced_buttons1_add : "media"
 });
 ```
 

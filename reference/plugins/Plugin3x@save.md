@@ -20,14 +20,13 @@ This plugin adds a save button to TinyMCE this save button will submit the form 
 
 ## Initialization Example
 
-```html
+```js
 tinyMCE.init({
-	theme : "advanced",
-	mode : "textareas",
-	plugins : "save",
-	theme_advanced_buttons3_add : "save",
-	save_enablewhendirty : true,
-	save_onsavecallback : "mysave"
+  theme : "advanced",
+  mode : "textareas",
+  plugins : "save",
+  theme_advanced_buttons3_add : "save",
+  save_enablewhendirty : true,
+  save_onsavecallback : "mysave"
 });
-
 ```

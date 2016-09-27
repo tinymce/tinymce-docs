@@ -7,7 +7,7 @@ This option should contain a function name to be executed each time TinyMCE inte
 
 ## Example of usage of the handle_event_callback option:
 
-```html
+```js
 // Remember to enable the ability to switch status messages in the browser before trying the example below
 
 function myHandleEvent(e) {

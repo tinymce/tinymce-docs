@@ -3,13 +3,12 @@ layout: default
 title: Language
 ---
 
-```html
+```js
 tinyMCE.init({
    ...
    language : 'en',
    ...
 });
-
 ```
 
 Edit the html file tinymceexamplessimple.html
@@ -26,17 +25,16 @@ Edit the html file tinymceexamplessimple.html
 tinyMCE.init({
      language : "sv", // change language here
      mode : "textareas",
-     theme : "simple"	
+     theme : "simple"
 });
 </script>
 <!-- /TinyMCE -->
 </head>
-
 ```
 
 ## Download
 
-The language pack download is seperated from TinyMCE, you can search for a language pack [here](/download/download.php).
+The language pack download is seperated from TinyMCE, you can search for a language pack [here](https://www.tinymce.com/download/).
 
 ## Unzip
 
@@ -44,11 +42,10 @@ After you have downloaded the package, unzip and upload it into the tinymce fold
 
 ## Upload
 
-```html
+```
 /tinymce/jscripts/tiny_mce/langs/
 /tinymce/jscripts/tiny_mce/themes/advanced/langs/
 /tinymce/jscripts/tiny_mce/plugins/<pluginname>/langs/
-
 ```
 
 Tip To Synchronization Use Meld, Kdiff on linux or WinMerge on win32.

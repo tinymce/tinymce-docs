@@ -7,9 +7,9 @@ This option should contain a comma separated list of button/control names to add
 
 A complete reference of all built in buttons and controls can be found in the button/control reference page.
 
-## Example of usage of the theme_advanced_buttons<1-n>_add option:
+## Example of usage of the `theme_advanced_buttons<1-n>_add option`:
 
-```html
+```js
 tinyMCE.init({
 	...
 	theme_advanced_buttons1_add : "separator,insertdate,inserttime,preview,zoom,separator,forecolor,backcolor"
@@ -21,9 +21,9 @@ tinyMCE.init({
 
 ## Common Mistakes
 
-You can only use theme_advanced_buttons<1-n>_add once per n where n is a whole number starting with 1 with step 1\. Multiple instances of the same n will overwrite each other. The following incorrect code will result in row 1 containing insertdate, inserttime, hr, and removeformat. Bullist and numlist will be overwritten.
+You can only use `theme_advanced_buttons<1-n>_add` once per n where n is a whole number starting with 1 with step 1\. Multiple instances of the same n will overwrite each other. The following incorrect code will result in row 1 containing insertdate, inserttime, hr, and removeformat. Bullist and numlist will be overwritten.
 
-```html
+```js
 tinyMCE.init({
 	...
 	theme_advanced_buttons1 : "insertdate,inserttime",

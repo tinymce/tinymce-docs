@@ -7,17 +7,16 @@ This option should contain a semicolon separated list of font titles and font fa
 
 ## Example of usage of the theme_advanced_fonts option:
 
-```html
+```js
 tinyMCE.init({
 	...
 	theme_advanced_fonts : "Arial=arial,helvetica,sans-serif;Courier New=courier new,courier,monospace;AkrutiKndPadmini=Akpdmi-n"
 });
-
 ```
 
 The default value is:
 
-```html
+```js
 tinyMCE.init({
 	...
 	theme_advanced_fonts : "Andale Mono=andale mono,times;"+
@@ -39,5 +38,4 @@ tinyMCE.init({
 		"Wingdings=wingdings,zapf dingbats",
 	...
 });
-
 ```

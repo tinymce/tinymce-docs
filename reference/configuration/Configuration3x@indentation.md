@@ -9,7 +9,7 @@ This option allows specification of the indentation level for indent/outdent but
 
 ## Example of usage of the indentation option:
 
-```html
+```js
 tinyMCE.init({
 	...
 	indentation : '20pt'

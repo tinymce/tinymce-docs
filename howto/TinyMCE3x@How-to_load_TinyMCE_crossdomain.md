@@ -11,19 +11,17 @@ As of TinyMCE 3.2.2 you will have to set the document.domain value by hand. This
 
 It's a fairly easy procedure to set the document domain value. Simply add it to before the tinyMCE.init call on your page.
 
-```html
+```js
 document.domain = 'mydomain.com';
 tinyMCE.init({
    ...
 });
-
 ```
 
-And then change the value in: tiny_mce_popup.js to:
+And then change the value in: `tiny_mce_popup.js` to:
 
-```html
+```js
 document.domain = 'mydomain.com';
-
 ```
 
 **This will enable the script to be loaded between two sub domains. For example www.mydomain.com can load TinyMCE from scripts.mydomain.com using the above method. We are currently working on a CDN version that will be able to load TinyMCE from any domain.**

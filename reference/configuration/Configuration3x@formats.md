@@ -5,7 +5,7 @@ title: formats
 
 (Requires: 3.3)
 
-This option enables you to override and add custom formats. A format is for example the style that get applied when you press the bold button inside the editor. TinyMCE is equipped with a text formatter engine that enables you to specify exacly what it should produce when the user clicks the bold button. Check out the [custom formats example](/tryit/custom_formats.php) for a demonstration of this option.
+This option enables you to override and add custom formats. A format is for example the style that get applied when you press the bold button inside the editor. TinyMCE is equipped with a text formatter engine that enables you to specify exactly what it should produce when the user clicks the bold button. Check out the [custom formats example](https://www.tinymce.com/docs/demo/format-custom/) for a demonstration of this option.
 
 ## Style merging
 
@@ -13,9 +13,9 @@ Similar elements and styles will be merged by default to reduce the output HTML 
 
 ## Built in formats
 
-TinyMCE has some built in formats that you can override. These are: alignleft, aligncenter, alignright, alignfull, bold, italic, underline, strikethrough, forecolor, hilitecolor, fontname, fontsize, blockquote, removeformat, p, h1, h2, h3, h4, h5, h6, div, address, pre, div, code, dt, dd, samp.
+TinyMCE has some built in formats that you can override. These are: `alignleft`, `aligncenter`, `alignright`, `alignfull`, `bold`, `italic`, `underline`, `strikethrough`, `forecolor`, `hilitecolor`, `fontname`, `fontsize`, `blockquote`, `removeformat`, `p`, `h1`, `h2`, `h3`, `h4`, `h5`, `h6`, `div`, `address`, `pre`, `div`, `code`, `dt`, `dd`, `samp`.
 
-Some built in formats fontsize, fontname, forecolor, hilitecolor uses a variable in their definition named %value. This one gets replaced with the user selected item such as a color value. Check the variable substitution section below for details.
+Some built in formats `fontsize`, `fontname`, `forecolor`, `hilitecolor` uses a variable in their definition named %value. This one gets replaced with the user selected item such as a color value. Check the variable substitution section below for details.
 
 ## Format parameters
 
@@ -36,7 +36,7 @@ Each format has a set of parameters that you can specify.
 
 This example overrides some of the built in formats and tells TinyMCE to apply classes instead of inline styles. It also includes a custom format that produced h1 elements with a title attribute and a red css style.
 
-```html
+```js
 // Output elements in HTML style
 tinyMCE.init({
 	...
@@ -60,7 +60,7 @@ tinyMCE.init({
 
 Custom formats can be handled though the TinyMCE API. Here is a basic example of usage for the custom format defined above.
 
-```html
+```js
 // Applying the specified format
 tinymce.activeEditor.formatter.apply('custom_format');
 
@@ -72,7 +72,7 @@ tinymce.activeEditor.formatter.remove('custom_format');
 
 You can use variables in your format definition these variables are then replaced with ones specified the specified in the call to the apply function. Here is an example how to use variables within formats.
 
-```html
+```js
 // Registering the special format with a variable
 tinymce.activeEditor.formatter.register('custom_format', {inline : 'span', styles : {color : '%value'}});
 
@@ -84,7 +84,7 @@ tinymce.activeEditor.formatter.apply('custom_format', {value : 'red'});
 
 The remove format behavior can be modifed by setting the removeformat see the example below:
 
-```html
+```js
 removeformat : [
     {selector : 'b,strong,em,i,font,u,strike', remove : 'all', split : true, expand : false, block_expand : true, deep : true},
     {selector : 'span', attributes : ['style', 'class'], remove : 'empty', split : true, expand : false, deep : true},

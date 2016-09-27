@@ -11,17 +11,17 @@ If you specify a relative path, it is resolved in relation to the URL of the (HT
 
 If you want the editor default font size to match your actual website and the TinyMCE font size drop down menu to match follow these steps:
 
-Add the following to tinyMCE.init()
+Add the following to `tinyMCE.init()`
 
-```html
+```js
 content_css : "css/custom_content.css",
 theme_advanced_font_sizes: "10px,12px,13px,14px,16px,18px,20px",
 font_size_style_values : "10px,12px,13px,14px,16px,18px,20px",
 ```
 
-The content_css option points to a modified (change font-size) copy of the default CSS file (tiny_mce/themes/advanced/skins/default/content.css). Update the following:
+The content_css option points to a modified (change font-size) copy of the default CSS file (`tiny_mce/themes/advanced/skins/default/content.css`). Update the following:
 
-```html
+```css
 body, td, pre {color:#000; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:14px; margin:8px;}
 ```
 
@@ -35,7 +35,7 @@ theme_advanced_font_sizes changes the dropdown menu fonts to visually match the 
 
 Absolute path:
 
-```html
+```js
 // File: http://domain.mine/mysite/index.html
 
 tinyMCE.init({
@@ -46,7 +46,7 @@ tinyMCE.init({
 
 Relative path:
 
-```html
+```js
 // File: http://domain.mine/mysite/index.html
 
 tinyMCE.init({
@@ -57,7 +57,7 @@ tinyMCE.init({
 
 Using multiple stylesheets:
 
-```html
+```js
 tinyMCE.init({
 	...
 	content_css : "mycontent.css,mycontent2.css"    // includes both css files in header
@@ -70,10 +70,11 @@ Browser caching might cause tinyMCE to not read the contents of a changed CSS fi
 
 One solution is to manually clear the browser cache when the file for content_css or editor_css has changed. Another solution is to use an old hack which adds a bogus parameter to the URL containing a present timestamp (number of milliseconds since January 1st, 1970) like "myFile.css?bogus=10023561235". Possible solutions could look like this:
 
-```html
+```js
 content_css : "path/myfile.css?" + new Date().getTime(),
 ```
-```html
+
+```js
 content_css : "path/myscript.php?myParam=myValue&bogus=" + new Date().getTime(),
 ```
 
@@ -87,7 +88,7 @@ Any CSS classes defined in your CSS file will show up in the styles dropdown lis
 
 As of TinyMCE3 there is a default CSS file loaded into your editor's content window. This default stylesheet can be found here:
 
-```html
+```
 tiny_mce/themes/
     {your theme here (usually "advanced" or "simple")}
         /skins/
@@ -99,7 +100,7 @@ tiny_mce/themes/
 
 The body element of a TinyMCE instance has it's own class called mceContentBody this can be used to add TinyMCE specific CSS rules to your site's css.
 
-```html
+```css
 /* Site rules */
 body {
    background: #000 url('somebg.gif');

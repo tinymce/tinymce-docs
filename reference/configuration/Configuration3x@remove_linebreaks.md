@@ -7,10 +7,9 @@ This option controls whether line break characters should be removed from output
 
 ## Example of usage of the remove_linebreaks option:
 
-```html
+```js
 tinyMCE.init({
 	...
 	remove_linebreaks : false
 });
-
 ```

@@ -7,10 +7,9 @@ This option gives you the ability to enable/disable the resizing button. This op
 
 ## Example of usage of the theme_advanced_resizing option:
 
-```html
+```js
 tinyMCE.init({
 	...
 	theme_advanced_resizing : true
 });
-
 ```

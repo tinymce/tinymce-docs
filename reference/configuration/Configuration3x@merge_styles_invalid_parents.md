@@ -11,7 +11,7 @@ The value may be a RegExp object or a string. If it's a string, then it is inter
 
 ## Example of usage of the merge_styles_invalid_parents option:
 
-```html
+```js
 tinyMCE.init({
 	...
 	// Excludes table cells and strong elements from any parent merge operation

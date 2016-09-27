@@ -7,7 +7,7 @@ Saving and loading data with TinyMCE and Ajax is fairly simple.
 
 Here is a simple example that you should be able to follow.
 
-```html
+```js
 <script type="text/javascript" src="<your installation path>/tiny_mce/tiny_mce.js"></script>
 <script type="text/javascript">
 tinyMCE.init({
@@ -42,7 +42,6 @@ function ajaxSave() {
     <textarea name="content" style="width:100%">
     </textarea>
 </form>
-
 ```
 
 It is as simple as that, to simplify loading/saving use some form of Ajax lib or jQuery for example.

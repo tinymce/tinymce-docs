@@ -7,10 +7,9 @@ This option enables you to specify the CSS to be used in all popup/dialog window
 
 ## Example of usage of the popup_css option:
 
-```html
+```js
 tinyMCE.init({
 	...
 	popup_css : "/mypopup.css"
 });
-
 ```

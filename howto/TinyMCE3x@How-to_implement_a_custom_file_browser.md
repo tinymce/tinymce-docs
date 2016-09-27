@@ -3,13 +3,13 @@ layout: default
 title: Implement a custom file browser
 ---
 
-With TinyMCE you can implement your own file browser functionality. When the [file_browser_callback](../configuration/Configuration3x@file_browser_callback) setting is defined, a browse button will appear in the dialogue windows where you can add a link or an image. Clicking this button will execute the function defined in this setting.
+With TinyMCE you can implement your own file browser functionality. When the [file_browser_callback](https://www.tinymce.com/docs-3x/reference/configuration/Configuration3x@file_browser_callback/) setting is defined, a browse button will appear in the dialogue windows where you can add a link or an image. Clicking this button will execute the function defined in this setting.
 
 ## The Necessary TinyMCE Settings
 
 Let's have a look at the required part of tinyMCE.init:
 
-```html
+```js
   tinyMCE.init({
     theme : ...,
     mode: ...,
@@ -28,7 +28,7 @@ Let's have a closer look at what this function could look like.
 
 This is a working example for a possible callback function in TinyMCE 2.x as can be defined in tinyMCE.init:
 
-```html
+```js
   function myFileBrowser (field_name, url, type, win) {
 
     // alert("Field_Name: " + field_name + "nURL: " + url + "nType: " + type + "nWin: " + win); // debug/testing
@@ -66,7 +66,7 @@ This is a working example for a possible callback function in TinyMCE 2.x as can
 
 This is a working example for a possible callback function in TinyMCE 3.x as can be defined in tinyMCE.init:
 
-```html
+```js
   function myFileBrowser (field_name, url, type, win) {
 
     // alert("Field_Name: " + field_name + "nURL: " + url + "nType: " + type + "nWin: " + win); // debug/testing
@@ -142,7 +142,7 @@ Instead of init() you can call any other function you have previousely defined i
 
 Since the 3.x branch of TinyMCE it is best to define a more complex object to carry your functions. Take a look:
 
-```html
+```js
 var FileBrowserDialogue = {
     init : function () {
         // Here goes your code for setting your custom things onLoad.
@@ -166,7 +166,7 @@ As mentioned above tinyMCE.openWindow() (for the 2.x branch) or tinyMCE.activeEd
 
 Example for the 2.x branch:
 
-```html
+```js
 var win = tinyMCE.getWindowArg("window");
 var input = tinyMCE.getWindowArg("input");
 var res = tinyMCE.getWindowArg("resizable");
@@ -175,7 +175,7 @@ var inline = tinyMCE.getWindowArg("inline");
 
 Example for the 3.x branch:
 
-```html
+```js
 var win = tinyMCEPopup.getWindowArg("window");
 var input = tinyMCEPopup.getWindowArg("input");
 var res = tinyMCEPopup.getWindowArg("resizable");
@@ -190,7 +190,7 @@ With the retrieved references you can now return your values (like image URL or 
 
 Again the code for TinyMCE2.x:
 
-```html
+```js
 function mySubmit() {
   //call this function only after page has loaded
   //otherwise tinyMCEPopup.close will close the
@@ -212,7 +212,7 @@ function mySubmit() {
 
 And the code for TinyMCE3.x:
 
-```html
+```js
 var FileBrowserDialogue = {
     init : function () {
         // Here goes your code for setting your custom things onLoad.
@@ -243,7 +243,7 @@ var FileBrowserDialogue = {
 tinyMCEPopup.onInit.add(FileBrowserDialogue.init, FileBrowserDialogue);
 ```
 
-Make sure you close your file browser window with tinyMCEPopup.close(). This ensures that any alterations by a plugin (as is the case with the [inline popup-plugin](../plugins/Plugin3x@inlinepopups)) won't break.
+Make sure you close your file browser window with tinyMCEPopup.close(). This ensures that any alterations by a plugin (as is the case with the [inline popup-plugin](https://www.tinymce.com/docs-3x/reference/plugins/Plugin3x@inlinepopups/)) won't break.
 
 Again remember that this function needs to be placed in your custom popup window and not in the editor's document!
 
@@ -255,7 +255,7 @@ Here are some tweaks and tricks for your file browser popup window.
 
 Since 3.2 version of TinyMCE you can simply supply a popup_css : false parameter when creating a popup window. Like this:
 
-```html
+```js
 tinyMCE.activeEditor.windowManager.open({
     file : filemanager_url
    ,width : 600
@@ -274,7 +274,7 @@ The following information could no longer be needed for the 3.x branch of TinyMC
 
 There is an issue with dynamically loaded CSS stuff which might break some of your file browser window's layout. TinyMCE_Popup() adds an additional link element which loads additional CSS code. If you don't want that to happen you can remove this additional link element by using your own initialize function (as mentioned above). This function just has to remove the last link element available in your DOM tree (or at least its 'href' attribute). Try the following code from within your own initializing function:
 
-```html
+```js
 var allLinks = document.getElementsByTagName("link");
 allLinks[allLinks.length-1].parentNode.removeChild(allLinks[allLinks.length-1]);
 ```
@@ -287,7 +287,7 @@ If you don't include the editor_id in the openWindow call of TinyMCE2.x, you wil
 
 Here is the solution to pass in the editor_id via the tinyMCE.openWindow function...
 
-```html
+```js
 tinyMCE.openWindow(fileBrowserWindow, {
     window : win,
     input : field_name,
@@ -301,13 +301,13 @@ tinyMCE.openWindow(fileBrowserWindow, {
 
 This line will come in handy if you want to preview the image after closing your custom filebrowser:
 
-```html
+```js
 win.showPreviewImage(inurl);
 ```
 
 For 3.x, the ImageDialog namespace is used.
 
-```html
+```js
 win.ImageDialog.showPreviewImage(inurl);
 ```
 
@@ -315,7 +315,7 @@ win.ImageDialog.showPreviewImage(inurl);
 
 Again this information refers to the 2.x branch of TinyMCE. It isn't valid for the 3.x branch.
 
-If you use the [inlinepopups plugin](../plugins/Plugin3x@inlinepopups) then your popup won't carry your window's title automatically. This is due to the fact that the inlinepopups plugin creates iframes in layers. To get your window title shown correctly you'll need to add some JavaScript code inside your custom file browser's template like shown below:
+If you use the [inlinepopups plugin](https://www.tinymce.com/docs-3x/reference/plugins/Plugin3x@inlinepopups/) then your popup won't carry your window's title automatically. This is due to the fact that the inlinepopups plugin creates iframes in layers. To get your window title shown correctly you'll need to add some JavaScript code inside your custom file browser's template like shown below:
 
 ```html
 <head>
@@ -342,7 +342,7 @@ If you use the [inlinepopups plugin](../plugins/Plugin3x@inlinepopups) then your
 
 ### How to prevent multiple file browser windows
 
-If you don't use the [inlinepopups plugin](../plugins/Plugin3x@inlinepopups) then this might be interesting for you.
+If you don't use the [inlinepopups plugin](https://www.tinymce.com/docs-3x/reference/plugins/Plugin3x@inlinepopups/) then this might be interesting for you.
 
 The idea is to store something into the current editor object (tinyMCE.selectedInstance/tinyMCE.activeEditor) to prevent the file_browser_callback function from opening yet another window. This is a bit tricky since you might overwrite existing objects or properties/methods! So make sure you know what you are doing!
 
@@ -353,7 +353,7 @@ My solution comes in two steps:
 
 Let's see the extended file_browser_callback function (for TinyMCE3 modify the following code according to the code samples earlier on this page!):
 
-```html
+```js
 function myFileBrowser (field_name, url, type, win) {
 
     var cmsURL = window.location.pathname;      // script URL
@@ -415,7 +415,7 @@ Now let's see how the closing function of the popup's tinyMCEPopup object needs 
 
 Finally, here is a fully working exampel of the popup window for tinyMCE 3.x (just change the path of tiny_mce_popup.js):
 
-```html
+```js
 <script type="text/javascript" src="tinymce/jscripts/tiny_mce/tiny_mce_popup.js">
 </script>
 
@@ -467,26 +467,26 @@ Open /tiny_mce/plugins/advimage/jscripts/functions.js go to line: 270-271
 
 You find:
 
-```html
+```js
 var inst = tinyMCE.getInstanceById(tinyMCE.getWindowArg('editor_id'));
 ```
 
 Replace it with:
 
-```html
+```js
 var inst = tinyMCE.selectedInstance;
 ```
 
-Open /tiny_mce/plugins/advlink/jscripts/functions.js go to line: 414-415
+Open `/tiny_mce/plugins/advlink/jscripts/functions.js` go to line: 414-415
 
 You find:
 
-```html
+```js
 var inst = tinyMCE.getInstanceById(tinyMCE.getWindowArg('editor_id'));
 ```
 
 Replace it with:
 
-```html
+```js
 var inst = tinyMCE.selectedInstance;
 ```

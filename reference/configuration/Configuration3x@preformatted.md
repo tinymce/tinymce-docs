@@ -7,10 +7,9 @@ If you enable this feature, whitespace such as tabs and spaces will be preserved
 
 ## Example of usage of the preformatted option:
 
-```html
+```js
 tinyMCE.init({
 	...
 	preformatted : true
 });
-
 ```

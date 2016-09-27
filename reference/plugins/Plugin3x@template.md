@@ -31,10 +31,10 @@ This plugin adds support for custom templates. There are two types of files this
 
 Class names are used for templates and variable names are used for snippets.
 
-```html
+```js
 template_replace_values : {
-	className : "Replace with this content",
-	anotherClassName: "Replacement content"
+  className : "Replace with this content",
+  anotherClassName: "Replacement content"
 }
 
 ```
@@ -43,47 +43,44 @@ template_replace_values : {
 
 Replace content array values can also be functions. If a template element has a classname matching and the value is a fuction the function is called and the element passed as an argument.
 
-```html
+```js
 template_replace_values : {
-	className : function(element) {
-		// do something and then:
-		// element.innerHTML = something
-	}
+  className : function(element) {
+    // do something and then:
+    // element.innerHTML = something
+  }
 }
-
 ```
 
 ## Templates example
 
-```html
+```js
 template_templates : [
-	{
-		title : "Editor Details",
-		src : "editor_details.htm",
-		description : "Adds Editors Name and Staff ID"
-	}
+  {
+    title : "Editor Details",
+    src : "editor_details.htm",
+    description : "Adds Editors Name and Staff ID"
+  }
 ]
-
 ```
 
 ## Example of an external list
 
 This is the contents your backend page should return if you specify a URL using the template_external_list_url option. A simple array containing each template to present. This URL can be a backend page, for example a PHP file.
 
-```html
+```js
 var tinyMCETemplateList = [
-	// Name, URL, Description
-	["Simple snippet", "templates/snippet1.htm", "Simple HTML snippet."],
-	["Layout", "templates/layout1.htm", "HTML Layout."]
+  // Name, URL, Description
+  ["Simple snippet", "templates/snippet1.htm", "Simple HTML snippet."],
+  ["Layout", "templates/layout1.htm", "HTML Layout."]
 ];
-
 ```
 
 ## Making Snippets
 
 Snippets are HTML code chunks that can be inserted. Replace variables will only be executed upon insert, without being wrapped in a template DIV element. So if you define somevar1 in template_replace_values array it will be replaced on preview and insert.
 
-```html
+```
 This is a simple <strong>snippet</strong>. Will be replaced: {$somevar1}.
 
 ```
@@ -112,33 +109,32 @@ A template is a file with DIV containing the template data. All HTML outside the
 
 ## Initialization Example
 
-```html
+```js
 tinyMCE.init({
-	theme : "advanced",
-	mode : "textareas",
-	plugins : "template",
-	theme_advanced_buttons3_add : "template",
-	template_cdate_classes : "cdate creationdate",
-	template_mdate_classes : "mdate modifieddate",
-	template_selected_content_classes : "selcontent",
-	template_cdate_format : "%m/%d/%Y : %H:%M:%S",
-	template_mdate_format : "%m/%d/%Y : %H:%M:%S",
-	template_replace_values : {
-		username : "Jack Black",
-		staffid : "991234"
-	},
-	template_templates : [
-		{
-			title : "Editor Details",
-			src : "editor_details.htm",
-			description : "Adds Editor Name and Staff ID"
-		},
-		{
-			title : "Timestamp",
-			src : "time.htm",
-			description : "Adds an editing timestamp."
-		}
-	]
+  theme : "advanced",
+  mode : "textareas",
+  plugins : "template",
+  theme_advanced_buttons3_add : "template",
+  template_cdate_classes : "cdate creationdate",
+  template_mdate_classes : "mdate modifieddate",
+  template_selected_content_classes : "selcontent",
+  template_cdate_format : "%m/%d/%Y : %H:%M:%S",
+  template_mdate_format : "%m/%d/%Y : %H:%M:%S",
+  template_replace_values : {
+    username : "Jack Black",
+    staffid : "991234"
+  },
+  template_templates : [
+    {
+      title : "Editor Details",
+      src : "editor_details.htm",
+      description : "Adds Editor Name and Staff ID"
+    },
+    {
+      title : "Timestamp",
+      src : "time.htm",
+      description : "Adds an editing timestamp."
+    }
+  ]
 });
-
 ```

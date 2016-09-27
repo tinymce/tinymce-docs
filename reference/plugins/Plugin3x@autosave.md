@@ -7,11 +7,11 @@ This plugin gives the user a warning if they made modifications to a editor inst
 
 ## Initialization Example
 
-```html
+```js
 tinyMCE.init({
-	theme : "advanced",
-	mode : "textareas",
-	plugins : "autosave"
+  theme : "advanced",
+  mode : "textareas",
+  plugins : "autosave"
 });
 
 ```

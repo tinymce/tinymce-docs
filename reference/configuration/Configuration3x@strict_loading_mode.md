@@ -9,7 +9,7 @@ This option will force TinyMCE to load scripts using a DOM insert method instead
 
 ## Example of usage of the strict_loading_mode option:
 
-```html
+```js
 tinyMCE.init({
 	...
 	strict_loading_mode : true

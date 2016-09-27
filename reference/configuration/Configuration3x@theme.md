@@ -3,7 +3,7 @@ layout: default
 title: theme
 ---
 
-This option enables you to specify what theme to use when rendering the TinyMCE WYSIWYG editor instances. This name matches the directories located in tinymce/jscripts/tiny_mce/themes. The default value of this option is "advanced". TinyMCE has two built-in themes described below.
+This option enables you to specify what theme to use when rendering the TinyMCE WYSIWYG editor instances. This name matches the directories located in `tinymce/jscripts/tiny_mce/themes`. The default value of this option is "advanced". TinyMCE has two built-in themes described below.
 
 | Name | Summary |
 | --- | --- |
@@ -12,12 +12,10 @@ This option enables you to specify what theme to use when rendering the TinyMCE 
 
 ## Example of usage of the theme option:
 
-```html
+```js
 tinyMCE.init({
 	...
 	theme : "advanced",
 	theme_advanced_buttons3_add_before : "tablecontrols,separator"
 });
 ```
-
-The theme option can also be a function that renders [custom ui:s](/tryit/custom_theme.php).

@@ -7,10 +7,9 @@ This true/false option gives you the ability to turn on/off the visual aid for b
 
 ## Example of usage of the visual option:
 
-```html
+```js
 tinyMCE.init({
 	...
 	visual : false
 });
-
 ```

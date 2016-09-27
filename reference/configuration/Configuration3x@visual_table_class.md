@@ -7,10 +7,9 @@ This option enables you to specify what CSS class to use for presenting visual a
 
 ## Example of usage of the visual_table_class option:
 
-```html
+```js
 tinyMCE.init({
 	...
 	visual_table_class : "myCustomVisualAidTableClass"
 });
-
 ```

@@ -43,7 +43,7 @@ title: "For Dummies"
 
 See an example of a simple form and in a few hours of experimentation you will have a form like this, as all the files have been uploaded.
 
-Further more comprehensive instructions can be found on [Installation](/TinyMCE3x@Installation/), which you can move on to when you have mastered the Dummies version! If you are not a Dummy don't edit, as us Dummies like simple instructions!
+Further more comprehensive instructions can be found on [Installation](https://www.tinymce.com/docs-3x/TinyMCE3x@Installation/), which you can move on to when you have mastered the Dummies version! If you are not a Dummy don't edit, as us Dummies like simple instructions!
 
 OK so let's move on to become a more advanced Dummy.
 

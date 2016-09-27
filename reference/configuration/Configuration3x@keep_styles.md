@@ -9,12 +9,11 @@ This option enables keeping the current text style when you press enter/return o
 
 ### Example of usage of the keep_styles option
 
-```html
+```js
 // Output elements in HTML style
 tinyMCE.init({
 	...
 	theme : "advanced",
 	keep_styles : false
 });
-
 ```

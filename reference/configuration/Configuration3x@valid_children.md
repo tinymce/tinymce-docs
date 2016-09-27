@@ -3,7 +3,7 @@ layout: default
 title: valid_children
 ---
 
-(Requires: 3.4)
+**(Requires: 3.4)**
 
 The valid_children enables you to control what child elements can exists within what parent elements. TinyMCE will remove/split any non HTML transitional contents by default. So for example a P can't be a child of another P element.
 
@@ -18,7 +18,7 @@ The syntax for this option is a comma separated list of parents with elements th
 
 This example shows you how to add style as a valid child of body and remove div as a valid child. It also forces only strong and a and text contents to be valid children of P.
 
-```html
+```js
 tinyMCE.init({
 	...
 	valid_children : "+body[style],-body[div],p[strong|a|#text]"

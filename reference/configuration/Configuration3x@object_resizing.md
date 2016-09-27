@@ -7,10 +7,9 @@ This true/false option gives you the ability to turn on/off the inline resizing 
 
 ## Example of usage of the object_resizing option:
 
-```html
+```js
 tinyMCE.init({
 	...
 	object_resizing : false
 });
-
 ```

@@ -13,7 +13,7 @@ With this option set to **false**, the line breaks are stripped from the HTML so
 
 ## Example of usage of the apply_source_formatting option:
 
-```html
+```js
 tinyMCE.init({
 	...
 	apply_source_formatting : true

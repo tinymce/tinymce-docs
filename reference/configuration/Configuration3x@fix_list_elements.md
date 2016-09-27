@@ -36,10 +36,9 @@ This option enables you to specify that list elements UL/OL is to be converted t
 
 ## Example of usage of the fix_list_elements option:
 
-```html
+```js
 tinyMCE.init({
 	...
 	fix_list_elements : true
 });
-
 ```

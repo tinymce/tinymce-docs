@@ -3,7 +3,7 @@ layout: default
 title: Security
 ---
 
-TinyMCE in itself can not be insecure, it would be completly impossible for any exploit to exist in TinyMCE that would allow anyone to hack your blog/cms or similar by injecting XSS contents since it by it self can't modify the contents of the site. The server side scripts like PHP/.NET etc is whats updating your site.
+TinyMCE in itself can not be insecure, it would be completely impossible for any exploit to exist in TinyMCE that would allow anyone to hack your blog/cms or similar by injecting XSS contents since it by it self can't modify the contents of the site. The server side scripts like PHP/.NET etc is whats updating your site.
 
 It is important to understand that TinyMCE is PURE Javascript, and is only run in the context of the browser of the user who is using the page. Any exploit in the regards of XSS has to be plugged in the server side logic since that exploit would still be there if you disable javascript.
 

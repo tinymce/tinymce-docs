@@ -5,7 +5,7 @@ title: theme_advanced_buttons_1_n_add_before
 
 This option should contain a comma separated list of button/control names to add to the beginning of the specified toolbar row. The number 1-n is the row number to add the buttons/controls to. Below is a list of built-in controls, plugins may include other controls names that can be inserted but these are documented in the individual plugins. This option can only be used when theme is set to advanced and when the theme_advanced_layout_manager option is set to the default value of "SimpleLayout".
 
-A complete reference of all built in buttons and controls can be found in the [button/control reference](/reference/buttons/) reference page.
+A complete reference of all built in buttons and controls can be found in the [button/control reference](https://www.tinymce.com/docs-3x/reference/buttons/) reference page.
 
 ## Example of usage of the `theme_advanced_buttons<1-n>_add_before` option:
 

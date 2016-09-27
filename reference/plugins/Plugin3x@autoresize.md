@@ -9,11 +9,11 @@ To activate this plugin, just add "autoresize" to TinyMCE plugin option list.
 
 ## Initialization Example
 
-```html
+```js
 tinyMCE.init({
-        theme : "advanced",
-        mode : "textareas",
-        plugins : "autoresize"
+  theme : "advanced",
+  mode : "textareas",
+  plugins : "autoresize"
 });
 ```
 

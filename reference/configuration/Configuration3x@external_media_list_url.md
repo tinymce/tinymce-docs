@@ -9,18 +9,18 @@ Change in 3.0: The way that relative URLs are calculated has changed since the 2
 
 ## Example of usage of the external_media_list_url option:
 
-```html
+```js
 tinyMCE.init({
 	...
 	external_media_list_url : "myexternallist.js"
 });
 ```
 
-Note: If utilizing the [document_base_url](/Configuration:document_base_url) option, the path to your file is relative from that base. If not set, your path is relative from the file containing the editor call.
+Note: If utilizing the [document_base_url](https://www.tinymce.com/docs-3x/reference/configuration/Configuration3x@document_base_url/) option, the path to your file is relative from that base. If not set, your path is relative from the file containing the editor call.
 
 ## Example of a external media list file: (myexternallist.js)
 
-```html
+```js
 var tinyMCEMediaList = new Array(
 	// Name, URL
 	["Logo 1", "logo.swf"],
@@ -30,7 +30,7 @@ var tinyMCEMediaList = new Array(
 
 ## Example of a PHP-generated media list file
 
-```html
+```php
 <?php // this must be the very first line in your PHP file!
 
 // You can't simply echo everything right away because we need to set some headers first!

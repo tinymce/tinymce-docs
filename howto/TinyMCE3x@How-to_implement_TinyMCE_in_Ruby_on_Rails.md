@@ -3,7 +3,7 @@ layout: default
 title: Implement TinyMCE in Ruby on Rails
 ---
 
-In your RubyOnRails application you can just invoke TinyMCE [in the standard way](/TinyMCE3x@Installation/), in the layout file, or just for the views in which you want to use TinyMCE. A good place for TinyMCE files may be `public/javascripts/tiny_mce` directory, but you are free to choose any other location.
+In your RubyOnRails application you can just invoke TinyMCE [in the standard way](https://www.tinymce.com/docs-3x/TinyMCE3x@Installation/), in the layout file, or just for the views in which you want to use TinyMCE. A good place for TinyMCE files may be `public/javascripts/tiny_mce` directory, but you are free to choose any other location.
 
 The plugins listed below will just make this task even easier.
 

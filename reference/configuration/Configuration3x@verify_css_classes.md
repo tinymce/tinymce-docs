@@ -7,10 +7,9 @@ If you enable this option, class names placed in class attributes will be verifi
 
 ## Example of usage of the verify_css_classes option:
 
-```html
+```js
 tinyMCE.init({
 	...
 	verify_css_classes : true
 });
-
 ```

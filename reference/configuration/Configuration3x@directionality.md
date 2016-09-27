@@ -7,10 +7,9 @@ This option specifies the default writing direction. Some languages (Like Hebrew
 
 ## Example of usage of the directionality option:
 
-```html
+```js
 tinyMCE.init({
 	...
 	directionality : "rtl"
 });
-
 ```

@@ -21,7 +21,7 @@ This option controls if invalid contents should be corrected before insertion in
 
 ## Example of usage of the fix_nesting option:
 
-```html
+```js
 tinyMCE.init({
 	...
 	fix_nesting : true

@@ -7,10 +7,9 @@ This true/false option gives you the ability to turn on/off the inline table edi
 
 ## Example of usage of the table_inline_editing option:
 
-```html
+```js
 tinyMCE.init({
 	...
 	table_inline_editing : true
 });
-
 ```

@@ -37,7 +37,7 @@ d
 
 ## Example of usage of the fix_table_elements option:
 
-```html
+```js
 tinyMCE.init({
 	...
 	fix_table_elements : true

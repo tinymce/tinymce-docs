@@ -7,10 +7,9 @@ This option enables you to force word wrap for the source editor, this option is
 
 ## Example of usage of the theme_advanced_source_editor_wrap option:
 
-```html
+```js
 tinyMCE.init({
 	...
 	theme_advanced_source_editor_wrap : false
 });
-
 ```

@@ -7,7 +7,7 @@ The TinyMCE compressor is a backend for reducing the overall download and initia
 
 ## What is GZip?
 
-gzip is short for GNU zip, a GNU free software file compression program. It was created by Jean-loup Gailly and Mark Adler. Version 0.1 was first publicly released on October 31, 1992\. Version 1.0 followed in February 1993\. The HTTP/1.1 protocol allows for clients to optionally request the compression of content from the server.
+gzip is short for GNU zip, a GNU free software file compression program. It was created by Jean-loup Gailly and Mark Adler. Version 0.1 was first publicly released on October 31, 1992. Version 1.0 followed in February 1993. The HTTP1.1 protocol allows for clients to optionally request the compression of content from the server.
 
 ## Third-party Compressors
 

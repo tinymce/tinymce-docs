@@ -11,12 +11,11 @@ This plugin adds a print button to TinyMCE. Installation Instructions
 
 ## Initialization Example
 
-```html
+```js
 tinyMCE.init({
-	theme : "advanced",
-	mode : "textareas",
-	plugins : "print",
-	theme_advanced_buttons3_add : "print"
+  theme : "advanced",
+  mode : "textareas",
+  plugins : "print",
+  theme_advanced_buttons3_add : "print"
 });
-
 ```

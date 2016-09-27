@@ -9,7 +9,7 @@ Note : You can also pass the function name as a string. But in this case, the f
 
 ## Example of usage of the oninit option:
 
-```html
+```js
 function myCustomOnInit() {
 	alert("We are ready to rumble!!");
 }
@@ -18,5 +18,4 @@ tinyMCE.init({
 	...
 	oninit : myCustomOnInit
 });
-
 ```

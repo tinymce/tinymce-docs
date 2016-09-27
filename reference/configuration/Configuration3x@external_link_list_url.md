@@ -9,18 +9,18 @@ Change in 3.0: The way that relative URLs are calculated has changed since the 2
 
 ## Example of usage of the external_link_list_url option:
 
-```html
+```js
 tinyMCE.init({
 	...
 	external_link_list_url : "myexternallist.js"
 });
 ```
 
-Note: If utilizing the [document_base_url](../configuration/Configuration3x@document_base_url) option, the path to your file is relative from that base. If not set, your path is relative from the file containing the editor call.
+Note: If utilizing the [document_base_url](https://www.tinymce.com/docs-3x/reference/configuration/Configuration3x@document_base_url/) option, the path to your file is relative from that base. If not set, your path is relative from the file containing the editor call.
 
 ## Example of a external link list file: (myexternallist.js)
 
-```html
+```js
 var tinyMCELinkList = new Array(
 	// Name, URL
 	["Moxiecode", "http://www.moxiecode.com"],
@@ -31,4 +31,4 @@ var tinyMCELinkList = new Array(
 
 ## Example of a PHP-generated external link list file
 
-See the [example of a PHP-generated image list file](../configuration/Configuration3x@external_image_list_url) for comparison.
+See the [example of a PHP-generated image list file](https://www.tinymce.com/docs-3x/reference/configuration/Configuration3x@external_image_list_url/) for comparison.

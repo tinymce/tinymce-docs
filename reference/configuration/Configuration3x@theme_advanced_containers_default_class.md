@@ -12,5 +12,4 @@ tinyMCE.init({
 	...
 	theme_advanced_containers_default_class : "myPanelClass"
 });
-
 ```

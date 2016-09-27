@@ -19,13 +19,12 @@ This plugin adds a button for inserting nonbreaking space entities &nbsp; at the
 
 ## Initialization Example
 
-```html
+```js
 tinyMCE.init({
-	theme : "advanced",
-	mode : "textareas",
-	plugins : "nonbreaking",
-	theme_advanced_buttons3_add : "nonbreaking",
-	nonbreaking_force_tab : true
+  theme : "advanced",
+  mode : "textareas",
+  plugins : "nonbreaking",
+  theme_advanced_buttons3_add : "nonbreaking",
+  nonbreaking_force_tab : true
 });
-
 ```

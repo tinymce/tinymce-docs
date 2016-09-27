@@ -17,12 +17,11 @@ You can download the IESpell ActiveX control from here.
 
 ## Initialization Example
 
-```html
+```js
 tinyMCE.init({
-	theme : "advanced",
-	mode : "textareas",
-	plugins : "iespell",
-	theme_advanced_buttons3_add : "iespell"
+  theme : "advanced",
+  mode : "textareas",
+  plugins : "iespell",
+  theme_advanced_buttons3_add : "iespell"
 });
-
 ```

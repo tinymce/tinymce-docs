@@ -9,11 +9,10 @@ This option enables you to specify non-HTML elements for the editor. These non-H
 
 ## Example of usage of the custom_elements option:
 
-```html
+```js
 tinyMCE.init({
 	...
 	extended_valid_elements : 'mycustomblock[id],mycustominline',
 	custom_elements : 'mycustomblock,~mycustominline' // Notice the ~ prefix to force a span element for the element
 });
-
 ```

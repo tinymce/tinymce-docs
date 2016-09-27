@@ -11,16 +11,15 @@ This plugin adds a preview button to TinyMCE, pressing the button opens a popup 
 
 ## Initialization Example
 
-```html
+```js
 tinyMCE.init({
-	theme : "advanced",
-	mode : "textareas",
-	plugins : "preview",
-	theme_advanced_buttons3_add : "preview",
-	plugin_preview_width : "500",
-	plugin_preview_height : "600"
+  theme : "advanced",
+  mode : "textareas",
+  plugins : "preview",
+  theme_advanced_buttons3_add : "preview",
+  plugin_preview_width : "500",
+  plugin_preview_height : "600"
 });
-
 ```
 
 ## Plugin options

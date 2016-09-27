@@ -7,7 +7,7 @@ This option should contain a comma separated list of container names. Each conta
 
 ## Example of usage of the theme_advanced_containers option:
 
-```html
+```js
 tinyMCE.init({
 	...
 	theme_advanced_containers : "mycontainer1,mycontainer2"

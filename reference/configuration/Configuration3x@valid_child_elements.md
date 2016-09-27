@@ -3,7 +3,7 @@ layout: default
 title: valid_child_elements
 ---
 
-**This option has been replaced with the new [valid_children](../configuration/Configuration3x@valid_children) as of 3.4.**
+**This option has been replaced with the new [valid_children](https://www.tinymce.com/docs-3x/reference/configuration/Configuration3x@valid_children/) as of 3.4.**
 
 This option gives you the ability to specify what elements are valid inside different parent elements. For example you may force that only thead,tbody,tfoot are valid within a table element. This option gives you a lot more control of the output XHTML and to ensure that it is more valid according to W3C specifications.
 
@@ -27,7 +27,7 @@ This option gives you the ability to specify what elements are valid inside diff
 
 ## Example of usage of the valid_child_elements option:
 
-```html
+```js
 tinyMCE.init({
 	...
 	valid_child_elements : "h1/h2/h3/h4/h5/h6/a[%itrans_na],table[thead|tbody|tfoot|tr|td],strong/b/p/div/em/i/td[%itrans|#text],body[%btrans|#text]"

@@ -13,12 +13,11 @@ This plugin makes all dialogs to open as floating DIV layers instead of popup wi
 
 ## Initialization Example
 
-```html
+```js
 tinyMCE.init({
-   theme : "advanced",
-   mode : "textareas",
-   plugins : "inlinepopups",
-   dialog_type : "modal"
+  theme : "advanced",
+  mode : "textareas",
+  plugins : "inlinepopups",
+  dialog_type : "modal"
 });
-
 ```

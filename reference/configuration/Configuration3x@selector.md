@@ -7,7 +7,7 @@ This option enables you to specify a CSS selector expression that will be used t
 
 ## Example of usage of the selector option:
 
-```html
+```js
 tinyMCE.init({
 	...
 	selector : "textarea.editor"

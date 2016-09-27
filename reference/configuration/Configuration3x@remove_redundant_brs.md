@@ -9,7 +9,7 @@ This option is enabled by default and will control the output of trailing BR ele
 
 ## Example of input/output
 
-```html
+```js
 This:
 <li>Text<br /></li>
 
@@ -19,7 +19,7 @@ Will become:
 
 ## Example of usage of the remove_redundant_brs option:
 
-```html
+```js
 tinyMCE.init({
 	...
 	remove_redundant_brs : false

@@ -11,12 +11,12 @@ The emotions plugin is able to insert smiley images into the TinyMCE editable ar
 
 ## Initialization Example
 
-```html
+```js
 tinyMCE.init({
-	theme : "advanced",
-	mode : "textareas",
-	plugins : "emotions",
-	theme_advanced_buttons3_add : "emotions"
+  theme : "advanced",
+  mode : "textareas",
+  plugins : "emotions",
+  theme_advanced_buttons3_add : "emotions"
 });
 
 ```

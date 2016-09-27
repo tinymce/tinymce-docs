@@ -7,7 +7,7 @@ Creating your own themes for the TinyMCE application is fairly easy if you know 
 
 ## Theme options
 
-If you want you may add theme specific options and settings, but remember to prefix them in the following format in order to provide a unique name space: `"<your theme>_<option>"` ("mytheme_someoption", for example). Use [tinyMCE.getParam](/api/class_tinymce.Editor.html/#getparam) to retrieve a custom theme option value.
+If you want you may add theme specific options and settings, but remember to prefix them in the following format in order to provide a unique name space: `"<your theme>_<option>"` ("mytheme_someoption", for example). Use [tinyMCE.getParam](https://www.tinymce.com/docs-3x/api/class_tinymce.Editor.html/#getparam) to retrieve a custom theme option value.
 
 ## Theme directory structure
 
@@ -28,7 +28,7 @@ The example below shows a simple empty theme and all possible callbacks.
 
 Please note that you need to replace "SomeName" with your own theme name.
 
-```html
+```js
 var TinyMCE_SomeNameTheme = {
 	/**
 	 * Returns information about the theme as a name/value array.
@@ -240,7 +240,6 @@ var TinyMCE_SomeNameTheme = {
 
 // Adds the theme class to the list of available TinyMCE themes
 tinyMCE.addTheme("sometheme", TinyMCE_SomeThemeTheme);
-
 ```
 
 ## Creating popup HTML files
@@ -252,14 +251,14 @@ When creating a popup you need to include the "tiny_mce_popup.js" this enables y
 ```html
 <html>
 <head>
-<title>{$lang_theme_sample_title}</title>
-<script language="javascript" src="../../tiny_mce_popup.js"></script>
-<script language="javascript">
+  <title>{$lang_theme_sample_title}</title>
+  <script language="javascript" src="../../tiny_mce_popup.js"></script>
+  <script language="javascript">
      // getWindowArg returns any arguments passed to the window
      alert(tinyMCE.getWindowArg('some_arg'));
-</script>
+     </script>
 <body>
-     <strong>{$lang_theme_sample_desc}</strong>
+  <strong>{$lang_theme_sample_desc}</strong>
 </body>
 ```
 

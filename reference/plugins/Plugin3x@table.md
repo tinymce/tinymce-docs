@@ -57,18 +57,17 @@ This plugin adds table management functionality to TinyMCE.
 
 ## Initialization Example
 
-```html
+```js
 tinyMCE.init({
-	theme : "advanced",
-	mode : "textareas",
-	plugins : "table",
-	theme_advanced_buttons3_add : "tablecontrols",
-	table_styles : "Header 1=header1;Header 2=header2;Header 3=header3",
-	table_cell_styles : "Header 1=header1;Header 2=header2;Header 3=header3;Table Cell=tableCel1",
-	table_row_styles : "Header 1=header1;Header 2=header2;Header 3=header3;Table Row=tableRow1",
-	table_cell_limit : 100,
-	table_row_limit : 5,
-	table_col_limit : 5
+  theme : "advanced",
+  mode : "textareas",
+  plugins : "table",
+  theme_advanced_buttons3_add : "tablecontrols",
+  table_styles : "Header 1=header1;Header 2=header2;Header 3=header3",
+  table_cell_styles : "Header 1=header1;Header 2=header2;Header 3=header3;Table Cell=tableCel1",
+  table_row_styles : "Header 1=header1;Header 2=header2;Header 3=header3;Table Row=tableRow1",
+  table_cell_limit : 100,
+  table_row_limit : 5,
+  table_col_limit : 5
 });
-
 ```

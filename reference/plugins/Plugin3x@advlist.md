@@ -7,11 +7,11 @@ This plugin adds more advanced options to the ordered and unordered list buttons
 
 ## Initialization Example
 
-```html
+```js
 tinyMCE.init({
-	theme : "advanced",
-	mode : "textareas",
-	plugins : "advlist"
+  theme : "advanced",
+  mode : "textareas",
+  plugins : "advlist"
 });
 
 ```

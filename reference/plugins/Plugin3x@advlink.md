@@ -18,11 +18,11 @@ This is a more advanced link dialog mostly based on code contributed by Michael 
 
 ## Initialization Example
 
-```html
+```js
 tinyMCE.init({
-	theme : "advanced",
-	mode : "textareas",
-	plugins : "advlink"
+  theme : "advanced",
+  mode : "textareas",
+  plugins : "advlink"
 });
 
 ```

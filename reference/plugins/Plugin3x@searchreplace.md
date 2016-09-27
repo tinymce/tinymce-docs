@@ -12,12 +12,11 @@ This plugin adds search/replace dialogs to TinyMCE.
 
 ## Initialization Example
 
-```html
+```js
 tinyMCE.init({
-	theme : "advanced",
-	mode : "textareas",
-	plugins : "searchreplace",
-	theme_advanced_buttons3_add : "search,replace"
+  theme : "advanced",
+  mode : "textareas",
+  plugins : "searchreplace",
+  theme_advanced_buttons3_add : "search,replace"
 });
-
 ```

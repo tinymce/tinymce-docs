@@ -9,7 +9,7 @@ This option enables you specify a function that all classes will be passed throu
 
 ## Example of usage of the class_filter option:
 
-```html
+```js
 tinyMCE.init({
     ...
     class_filter : function(cls, rule) {
@@ -29,5 +29,4 @@ tinyMCE.init({
         return cls;
     }
 });
-
 ```

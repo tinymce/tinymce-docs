@@ -7,10 +7,9 @@ This option gives you the ability to specify the width of the editor in pixels o
 
 ## Example of usage of the width option:
 
-```html
+```js
 tinyMCE.init({
 	...
 	width : "640"
 });
-
 ```

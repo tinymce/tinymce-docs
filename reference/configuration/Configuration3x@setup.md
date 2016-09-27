@@ -9,7 +9,7 @@ This option enables you to add [events](/) to editor instances before they get r
 
 ## Example of usage of the setup option:
 
-```html
+```js
 tinyMCE.init({
    ...
    setup : function(ed) {

@@ -7,10 +7,9 @@ This option controls the colors shown in the palette of colors displayed by the 
 
 ## Example of usage of the theme_advanced_text_colors option:
 
-```html
+```js
 tinyMCE.init({
 	...
 	theme_advanced_text_colors : "FF00FF,FFFF00,000000"
 });
-
 ```

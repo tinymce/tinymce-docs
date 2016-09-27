@@ -5,21 +5,21 @@ title: Installation
 
 Installing TinyMCE is very simple; follow the instructions here. We give a few examples of how to integrate TinyMCE. You should also take a look at TinyMCE's extensive configuration options.
 
-Recently added is the [For Dummies section](/reference/for-dummies/).
+Recently added is the [For Dummies section](https://www.tinymce.com/docs-3x/reference/for-dummies/).
 
 ## Requirements
 
-TinyMCE has no direct requirements except for browser compatibility (see [TinyMCE:compatibility](/extras/TinyMCE3x@Browser_compatiblity/) and, of course, having JavaScript enabled.
+TinyMCE has no direct requirements except for browser compatibility (see [TinyMCE:compatibility](https://www.tinymce.com/docs-3x/extras/TinyMCE3x@Browser_compatiblity/) and, of course, having JavaScript enabled.
 
 There is NO back-end code distributed with TinyMCE.
 
-TinyMCE can be set up to use textareas in an HTML form as a workspace. When the form is submitted you can have your system do something with the content of the textarea such as save the HTML code to a database or file. Your frontend can also be set up to read in existing content so you can make changes to it. Refer to Configuration Options, General, [Mode](/reference/configuration/Configuration3x@mode/) for more information.
+TinyMCE can be set up to use textareas in an HTML form as a workspace. When the form is submitted you can have your system do something with the content of the textarea such as save the HTML code to a database or file. Your frontend can also be set up to read in existing content so you can make changes to it. Refer to Configuration Options, General, [Mode](https://www.tinymce.com/docs-3x/reference/configuration/Configuration3x@mode/) for more information.
 
 ## Windows specific Apache configuration
 
 You may get errors like tinyMCE is not defined or missing } after property list on Windows installations.
 
-Problem is caused by default Apache option EnableSendfile. You must turn it OFF by removing the # character in the httpd.conf file.
+Problem is caused by default Apache option EnableSendfile. You must turn it OFF by removing the # character in the `httpd.conf` file.
 
 EnableSendfile off
 
@@ -134,7 +134,7 @@ which should be turned into :
 </script>
 ```
 
-Conclusion: this part will control the editor's look and functionalities. You can adapt it to your needs according to [TinyMCE:Configuration](/reference/Configuration3x/).
+Conclusion: this part will control the editor's look and functionalities. You can adapt it to your needs according to [TinyMCE:Configuration](https://www.tinymce.com/docs-3x/reference/Configuration3x/).
 
 ## Examples
 

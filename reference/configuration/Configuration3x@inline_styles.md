@@ -9,10 +9,9 @@ This option is enabled by default as of 3.0a1.
 
 ## Example of usage of the inline_styles option:
 
-```html
+```js
 tinyMCE.init({
 	...
 	inline_styles : true
 });
-
 ```

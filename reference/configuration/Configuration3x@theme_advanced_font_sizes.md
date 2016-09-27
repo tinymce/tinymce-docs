@@ -7,20 +7,18 @@ This option should contain a comma separated list of font sizes to include. Each
 
 ## Example of usage of the theme_advanced_font_sizes option:
 
-```html
+```js
 tinyMCE.init({
 	...
 	theme_advanced_font_sizes : "10px,12px,14px,16px,24px"
 });
-
 ```
 
 ## Advanced example of usage of the theme_advanced_font_sizes option:
 
-```html
+```js
 tinyMCE.init({
 	...
 	theme_advanced_font_sizes : "Big text=30px,Small text=small,My Text Size=.mytextsize"
 });
-
 ```

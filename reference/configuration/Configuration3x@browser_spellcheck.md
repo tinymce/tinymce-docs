@@ -7,7 +7,7 @@ This option enables you toggle the internal Gecko/WebKit/IE spellchecker logic. 
 
 ## Example of usage of the browser_spellcheck option:
 
-```html
+```js
 tinyMCE.init({
 	...
 	browser_spellcheck : true

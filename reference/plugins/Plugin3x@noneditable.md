@@ -7,14 +7,13 @@ Adds non editable elements support for MSIE and Mozilla/FF. Any element with the
 
 ## Initialization Example
 
-```html
+```js
 tinyMCE.init({
-	theme : "advanced",
-	mode : "textareas",
-	plugins : "noneditable",
-	noneditable_leave_contenteditable : true
+  theme : "advanced",
+  mode : "textareas",
+  plugins : "noneditable",
+  noneditable_leave_contenteditable : true
 });
-
 ```
 
 HTML contents example:
@@ -23,29 +22,26 @@ When you have existing classes that cannot be removed, you may combine MCE class
 
 Non editable div example:
 
-```html
+```js
 <div class="myclass mceNonEditable">Contents</div>
-
 ```
 
 Editable div example:
 
 ```html
 <div class="myclass mceEditable">Contents</div>
-
 ```
 
 Nested editable elements are not currently supported. You would not be able to edit the cell contents in the following table:
 
 ```html
 <table class="mceNonEditable">
-<tr>
-<td class="mceEditable">
-Contents
-</td>
-</tr>
+  <tr>
+    <td class="mceEditable">
+      Contents
+    </td>
+  </tr>
 </table>
-
 ```
 
 ## Plugin options

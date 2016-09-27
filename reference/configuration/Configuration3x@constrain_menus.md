@@ -9,10 +9,9 @@ This option enables you to force all menus to be constrained to the current view
 
 ## Example of usage of the constrain_menus option:
 
-```html
+```js
 tinyMCE.init({
 	...
 	constrain_menus : true
 });
-
 ```

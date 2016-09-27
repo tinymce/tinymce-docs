@@ -7,7 +7,7 @@ This option should contain buttons/control that you wish to insert into the cont
 
 ## Example of usage of the theme_advanced_container_<container> option:
 
-```html
+```js
 tinyMCE.init({
 	...
 	theme_advanced_containers : "somecontainer1,editorcontainer,somecontainer2",
@@ -15,5 +15,4 @@ tinyMCE.init({
 	theme_advanced_container_somecontainer2 : "strikethrough,cut",
 	theme_advanced_container_editorcontainer : "mceEditor"
 });
-
 ```

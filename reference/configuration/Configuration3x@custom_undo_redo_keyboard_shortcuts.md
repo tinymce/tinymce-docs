@@ -7,10 +7,9 @@ This option enables you to disable/enable the usage of keyboard shortcuts for un
 
 ## Example of usage of the custom_undo_redo_keyboard_shortcuts option:
 
-```html
+```js
 tinyMCE.init({
-	...
-	custom_undo_redo_keyboard_shortcuts : false
+  ...
+  custom_undo_redo_keyboard_shortcuts : false
 });
-
 ```

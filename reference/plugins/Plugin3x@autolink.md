@@ -14,10 +14,10 @@ Feature contributed by Ephox.
 
 ## Initialization Example
 
-```html
+```js
 tinyMCE.init({
-        theme : "advanced",
-        mode : "textareas",
-        plugins : "autolink"
+  theme : "advanced",
+  mode : "textareas",
+  plugins : "autolink"
 });
 ```

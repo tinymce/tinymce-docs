@@ -11,13 +11,13 @@ This is a more advanced hr dialog contributed by Michael Keck. This hr plugin su
 
 ## Initialization Example
 
-```html
+```js
 tinyMCE.init({
-	theme : "advanced",
-	mode : "textareas",
-	plugins : "advhr",
-	theme_advanced_buttons1_add : "advhr",
-	extended_valid_elements : "hr[class|width|size|noshade]"
+  theme : "advanced",
+  mode : "textareas",
+  plugins : "advhr",
+  theme_advanced_buttons1_add : "advhr",
+  extended_valid_elements : "hr[class|width|size|noshade]"
 });
 
 ```

@@ -11,7 +11,7 @@ This option contains a comma separated list of element conversion chunks. Each c
 
 | Name | Summary |
 | --- | --- |
-| @ | 
+| @ |
 
 Rules with this name will be applied to all elements defined after this rule. So @[attr1|attr2] will enable attr1 and attr2 for all elements, but element1,@[attr1|attr2],element2,element3 will enable attr1 and attr2 only for element2 and element3.
 
@@ -32,7 +32,7 @@ If applied in extended_valid_elements, it is only effective for the elements in 
 | - | Enables removal of empty elements such as <strong />. For example, "-strong". |
 | # | Enables padding of empty elements. This will pad with &nbsp; if they are empty. For example, "#p". |
 
-Wildcards such as *,+,? may be used in element or attribute name matching.
+Wildcards such as `*`,`+`,`?` may be used in element or attribute name matching.
 
 ## Special variables:
 
@@ -40,11 +40,11 @@ Wildcards such as *,+,? may be used in element or attribute name matching.
 | --- | --- |
 | {$uid} | Results in a unique ID. For example, "p[id:{$uid}]". |
 
-Use *[*] to include all elements and all attributes. This can be very useful when used with the invalid_elements option. Example of usage of the valid_elements option:
+Use `*[*]` to include all elements and all attributes. This can be very useful when used with the invalid_elements option. Example of usage of the valid_elements option:
 
-This example string tells TinyMCE to remove all elements that are not a "a, strong, div or br" element, convert "b" elements to "strong" elements, default "target" to "_blank" and keep the "href", "target" and "align" attributes of the elements.
+This example string tells TinyMCE to remove all elements that are not a "a, strong, div or br" element, convert "b" elements to "strong" elements, default "target" to `"_blank"` and keep the "href", "target" and "align" attributes of the elements.
 
-```html
+```js
 tinyMCE.init({
 	...
 	valid_elements : "a[href|target=_blank],strong/b,div[align],br"
@@ -55,7 +55,7 @@ tinyMCE.init({
 
 Be careful not to duplicate attributes in the definitions as this may cause tinyMCE to render duplicate attributes in the output. For example, if you have
 
-```html
+```js
  ... //bad code: dir and style listed twice
  "blockquote[dir|style|cite|class|dir<ltr?rtl|id|lang|onclick|ondblclick"
   +"|onkeydown|onkeypress|onkeyup|onmousedown|onmousemove|onmouseout"
@@ -69,7 +69,7 @@ then if you happen to have a <blockquote> element in your code with style= or di
 
 This is the default string used by TinyMCE to clean up the HTML contents.
 
-```html
+```js
 valid_elements : "@[id|class|style|title|dir<ltr?rtl|lang|xml::lang|onclick|ondblclick|"
 + "onmousedown|onmouseup|onmouseover|onmousemove|onmouseout|onkeypress|"
 + "onkeydown|onkeyup],a[rel|rev|charset|hreflang|tabindex|accesskey|type|"
@@ -99,7 +99,7 @@ The following will validate that the page complies fully with the XHTML specific
 
 Please note that using this may slow down performance when TinyMCE is cleaning up the document (on save etc). If you use very large bodies of text, it is recommended that you stick with the default rule set, because it should be sufficient for most people.
 
-```html
+```js
 valid_elements : ""
 +"a[accesskey|charset|class|coords|dir<ltr?rtl|href|hreflang|id|lang|name"
   +"|onblur|onclick|ondblclick|onfocus|onkeydown|onkeypress|onkeyup"
@@ -361,7 +361,7 @@ valid_elements : ""
 
 The following will validate that the page complies fully with the flashMX 2004 specification.
 
-```html
+```js
 valid_elements : ""
 +"a[href|target],"
 +"b,"
@@ -384,4 +384,4 @@ valid_elements : ""
 
 Reference: [http://livedocs.adobe.com/flash/mx2004/main_7_2/wwhelp/wwhimpl/common/html/wwhelp.htm?context=Flash_MX_2004&file=00001040.html](http://livedocs.adobe.com/flash/mx2004/main_7_2/wwhelp/wwhimpl/common/html/wwhelp.htm?context=Flash_MX_2004&file=00001040.html)
 
-Also see [extended_valid_elements](../configuration/Configuration3x@extended_valid_elements) and [invalid_elements](../configuration/Configuration3x@invalid_elements) for more configuration options.
+Also see [extended_valid_elements](https://www.tinymce.com/docs-3x/reference/configuration/Configuration3x@extended_valid_elements/) and [invalid_elements](https://www.tinymce.com/docs-3x/reference/configuration/Configuration3x@invalid_elements/) for more configuration options.

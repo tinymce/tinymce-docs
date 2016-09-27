@@ -7,10 +7,9 @@ This option enables you to turn on/off the onsubmit event listener. This feature
 
 ## Example of usage of the add_form_submit_trigger option:
 
-```html
+```js
 tinyMCE.init({
 	...
 	add_form_submit_trigger : false
 });
-
 ```

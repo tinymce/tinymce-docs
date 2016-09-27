@@ -15,18 +15,18 @@ An unofficial [spellchecker plugin with Java implementation](http://achorniy.wor
 *   Serverside technology
 *   If you wish to use the PHP integrated PSpell you need to have PSpell/Aspell installed on the server, as well as the dictionaries you wish to use and have this compiled with PHP. Read more about this on the PHP website or use Google to learn more. Use the following script to test that PSpell is working correctly before trying the TinyMCE spellchecker, as the PSpell error messages aren't optimal.
 
-```html
+```php
 <?php
 if (function_exists('pspell_new')) {
-	$pspell_link = pspell_new("en");
-	if (!pspell_check($pspell_link, "testt")) {
-		$suggestions = pspell_suggest($pspell_link, "testt");
-		foreach ($suggestions as $suggestion) {
-			echo "Possible spelling: $suggestion<br />";
-		}
-	}
+  $pspell_link = pspell_new("en");
+  if (!pspell_check($pspell_link, "testt")) {
+    $suggestions = pspell_suggest($pspell_link, "testt");
+    foreach ($suggestions as $suggestion) {
+      echo "Possible spelling: $suggestion<br />";
+    }
+  }
 } else {
-	echo "pspell is not installed";
+  echo "pspell is not installed";
 }
 ?>
 ```
@@ -38,7 +38,7 @@ if (function_exists('pspell_new')) {
 
 ## Installation Instructions
 
-1.  Download the latest version of the TinyMCE Spellchecker plugin, available on our [download page](/download/download.php).
+1.  Download the latest version of the TinyMCE Spellchecker plugin, available on our [download page](https://www.tinymce.com/download/).
 2.  Unzip the "spellchecker" directory into the "tiny_mce/plugins" dir, path should be "tiny_mce/plugins/spellchecker".
 3.  Open up the config.php file you just unziped in the spellchecker folder.
 4.  Uncomment the spellchecker engine that you wish to use for example "GoogleSpell".
@@ -48,7 +48,7 @@ if (function_exists('pspell_new')) {
 
 ## Google Spellchecker configuration example
 
-```html
+```js
 // General settings
 $config['general.engine'] = 'GoogleSpell';
 //$config['general.engine'] = 'PSpell';
@@ -93,13 +93,13 @@ There are 3 types of spellchecker implementations, that needs to be required/inc
 
 ## Initialization Example
 
-```html
+```js
 tinyMCE.init({
-	theme : "advanced",
-	mode : "textareas",
-	plugins : "spellchecker",
-	theme_advanced_buttons3_add : "spellchecker",
-	spellchecker_languages : "+English=en,Swedish=sv"
+  theme : "advanced",
+  mode : "textareas",
+  plugins : "spellchecker",
+  theme_advanced_buttons3_add : "spellchecker",
+  spellchecker_languages : "+English=en,Swedish=sv"
 });
 ```
 

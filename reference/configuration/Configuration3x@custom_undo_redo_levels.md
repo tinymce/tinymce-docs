@@ -7,7 +7,7 @@ This option should contain the number of undo levels to keep in memory. By defau
 
 ## Example of usage of the custom_undo_redo_levels option:
 
-```html
+```js
 tinyMCE.init({
 	...
 	custom_undo_redo_levels : 10

@@ -7,7 +7,7 @@ This option is used to specify a custom layout manager function. The format of t
 
 ## Example of usage of the theme_advanced_custom_layout option:
 
-```html
+```js
 function myCustomLayout(template) {
 	// Make custom layout
 	template['html'] = "make new layout";
@@ -19,5 +19,4 @@ tinyMCE.init({
 	...
 	theme_advanced_custom_layout : "myCustomLayout"
 });
-
 ```

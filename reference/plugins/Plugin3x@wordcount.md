@@ -7,10 +7,10 @@ This plugin adds word count functionality to TinyMCE.
 
 ## Initialization Example
 
-```html
+```js
 tinyMCE.init({
-	theme : "advanced",
-	mode : "textareas",
-	plugins : "wordcount"
+  theme : "advanced",
+  mode : "textareas",
+  plugins : "wordcount"
 });
 ```

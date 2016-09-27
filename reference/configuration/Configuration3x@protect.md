@@ -9,7 +9,7 @@ The option takes an array of regexps that it will match the contents against and
 
 Example of usage:
 
-```html
+```js
 tinymce.init({
     protect: [
         /\<\/?(if|endif)\>/g, // Protect <if> & </endif>

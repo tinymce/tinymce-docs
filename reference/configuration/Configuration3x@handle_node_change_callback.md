@@ -18,7 +18,7 @@ Gets called once the cursor/selection in a TinyMCE instance changes. This is use
 
 ## Example of usage of the handle_node_change_callback option
 
-```html
+```js
 tinyMCE.init({
 	...
 	handle_node_change_callback : "nodeChangeHandler"
@@ -28,5 +28,4 @@ function nodeChangeHandler(editor_id, node, undo_index, undo_levels, visual_aid,
    // Debug to Firebug in FF
    console.debug(node.nodeName);
 }
-
 ```

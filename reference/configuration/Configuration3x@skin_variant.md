@@ -13,7 +13,7 @@ When creating a skin, additional variants may also be created, by adding ui_<var
 
 ## Example of usage of the skin option:
 
-```html
+```js
 tinyMCE.init({
 	...
 	theme : "advanced",
@@ -22,4 +22,4 @@ tinyMCE.init({
 });
 ```
 
-Also see: [Creating_Skin](/customization/TinyMCE3x@Creating_a_skin/), [skin](../configuration/Configuration3x@skin)
+Also see: [Creating_Skin](https://www.tinymce.com/docs-3x/customization/TinyMCE3x@Creating_a_skin/), [skin](https://www.tinymce.com/docs-3x/reference/configuration/Configuration3x@skin/)

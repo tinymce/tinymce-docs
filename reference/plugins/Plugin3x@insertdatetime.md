@@ -11,16 +11,15 @@ title: insertdatetime
 
 ## Initialization Example
 
-```html
+```js
 tinyMCE.init({
-	theme : "advanced",
-	mode : "textareas",
-	plugins : "insertdatetime",
-	theme_advanced_buttons3_add : "insertdate,inserttime",
-	plugin_insertdate_dateFormat : "%Y-%m-%d",
-	plugin_insertdate_timeFormat : "%H:%M:%S"
+  theme : "advanced",
+  mode : "textareas",
+  plugins : "insertdatetime",
+  theme_advanced_buttons3_add : "insertdate,inserttime",
+  plugin_insertdate_dateFormat : "%Y-%m-%d",
+  plugin_insertdate_timeFormat : "%H:%M:%S"
 });
-
 ```
 
 ## Plugin options

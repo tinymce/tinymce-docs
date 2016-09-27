@@ -7,10 +7,9 @@ If you set this option to true, page contents will be stored away if the page is
 
 ## Example of usage of the add_unload_trigger option:
 
-```html
+```js
 tinyMCE.init({
 	...
 	add_unload_trigger : false
 });
-
 ```

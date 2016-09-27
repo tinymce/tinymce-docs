@@ -7,7 +7,7 @@ This option gives you the ability to specify the height of the editor in pixels 
 
 ## Example of usage of the height option:
 
-```html
+```js
 tinyMCE.init({
 	...
 	height : "480"

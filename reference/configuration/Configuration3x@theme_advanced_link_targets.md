@@ -7,7 +7,7 @@ This option should contain a semicolon separated list of link target names and t
 
 ## Example of usage of the theme_advanced_link_targets option:
 
-```html
+```js
 tinyMCE.init({
 	...
 	theme_advanced_link_targets : "someframe=Some frame,otherframe=Some other frame"

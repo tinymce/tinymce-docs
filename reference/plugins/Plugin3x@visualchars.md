@@ -10,12 +10,11 @@ This plugin adds the possibility to see invisible characters like &nbsp;. Instal
 
 ## Initialization Example
 
-```html
+```js
 tinyMCE.init({
-	theme : "advanced",
-	mode : "textareas",
-	plugins : "visualchars",
-	theme_advanced_buttons3_add : "visualchars"
+  theme : "advanced",
+  mode : "textareas",
+  plugins : "visualchars",
+  theme_advanced_buttons3_add : "visualchars"
 });
-
 ```

@@ -9,9 +9,9 @@ Writing automated tests for any plugins or patches you develop ensures that the 
 
 ## Running Existing Tests
 
-If you download the development (_dev.zip) package for TinyMCE, it will contain a tests directory with all the tests for TinyMCE. Tests are grouped into separate HTML files for different areas of functionality. You can open any test file in a browser and the tests in that file will automatically run, showing you the results. If the tests pass you'll see a green bar but if any test fails the bar will be red. Refreshing the page will rerun the tests.
+If you download the [development package](https://www.tinymce.com/download/) for TinyMCE, it will contain a tests directory with all the tests for TinyMCE. Tests are grouped into separate HTML files for different areas of functionality. You can open any test file in a browser and the tests in that file will automatically run, showing you the results. If the tests pass you'll see a green bar but if any test fails the bar will be red. Refreshing the page will rerun the tests.
 
-Open the index.html file to see a list of all the test files so you can easily run them.
+Open the `index.html` file to see a list of all the test files so you can easily run them.
 
 The [tests for the latest release](http://tinymce.moxiecode.com/js/tinymce/tests/) can also be run online.
 
@@ -21,12 +21,12 @@ Tests for TinyMCE are written using the [QUnit](http://docs.jquery.com/QUnit) te
 
 One very useful tip is that if you are using a full instance of TinyMCE in your tests, you need to ensure it finishes loading before QUnit starts running the tests. This is done by calling QUnit.setup(); in the init_instance_callback function:
 
-```html
+```js
 tinyMCE.init({
 ...
-	init_instance_callback : function(ed) {
-		QUnit.setup();
-	}
+init_instance_callback : function(ed) {
+  QUnit.setup();
+}
 ...
 });
 ```

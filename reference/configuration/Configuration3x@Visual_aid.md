@@ -3,11 +3,7 @@ layout: default
 title: Visual aid
 ---
 
-<div class="wiki-index">
-
 ## Index
 
-*   [visual](../configuration/Configuration3x@visual)
-*   [visual_table_class](../configuration/Configuration3x@visual_table_class)
-
-</div>
+*   [visual](https://www.tinymce.com/docs-3x/reference/configuration/Configuration3x@visual/)
+*   [visual_table_class](https://www.tinymce.com/docs-3x/reference/configuration/Configuration3x@visual_table_class/)

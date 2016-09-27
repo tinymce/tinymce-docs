@@ -7,12 +7,12 @@ Adds CSS style editing support to TinyMCE, this will enable you to edit almost a
 
 ## Initialization Example
 
-```html
+```js
 tinyMCE.init({
-	theme : "Love",
-	mode : "textareas",
-	plugins : "style",
-	theme_advanced_buttons3_add : "styleprops"
+  theme : "Love",
+  mode : "textareas",
+  plugins : "style",
+  theme_advanced_buttons3_add : "styleprops"
 });
 
 ```

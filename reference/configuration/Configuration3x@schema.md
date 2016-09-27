@@ -7,7 +7,7 @@ The schema option enables you to switch between the HTML4 and HTML5 schema. This
 
 ### Example of usage
 
-```html
+```js
 tinyMCE.init({
    mode : "textareas",
    theme : "advanced",

@@ -10,23 +10,23 @@ This plugin was completely rewritten for TinyMCE 3.2.3\. The new version will au
 
 ## Initialization Example
 
-```html
+```js
 tinyMCE.init({
-        theme : "advanced",
-        mode : "textareas",
-        plugins : "paste",
-        theme_advanced_buttons3_add : "pastetext,pasteword,selectall",
-        paste_auto_cleanup_on_paste : true,
-        paste_preprocess : function(pl, o) {
-            // Content string containing the HTML from the clipboard
-            alert(o.content);
-            o.content = "-: CLEANED :-\n" + o.content;
-        },
-        paste_postprocess : function(pl, o) {
-            // Content DOM node containing the DOM structure of the clipboard
-            alert(o.node.innerHTML);
-            o.node.innerHTML = o.node.innerHTML + "\n-: CLEANED :-";
-        }
+  theme : "advanced",
+  mode : "textareas",
+  plugins : "paste",
+  theme_advanced_buttons3_add : "pastetext,pasteword,selectall",
+  paste_auto_cleanup_on_paste : true,
+  paste_preprocess : function(pl, o) {
+    // Content string containing the HTML from the clipboard
+    alert(o.content);
+    o.content = "-: CLEANED :-\n" + o.content;
+  },
+  paste_postprocess : function(pl, o) {
+    // Content DOM node containing the DOM structure of the clipboard
+    alert(o.node.innerHTML);
+    o.node.innerHTML = o.node.innerHTML + "\n-: CLEANED :-";
+  }
 });
 ```
 

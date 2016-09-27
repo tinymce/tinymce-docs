@@ -20,7 +20,7 @@ $().ready(function() {
 });
 ```
 
-For a list of configuration options that can be used with $.tinymce() see the [Configuration Reference](/reference/Configuration3x/)
+For a list of configuration options that can be used with `$.tinymce()` see the [Configuration Reference](https://www.tinymce.com/docs-3x/reference/Configuration3x/)
 
 ## TinyMCE interaction
 

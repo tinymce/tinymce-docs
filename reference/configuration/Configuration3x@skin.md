@@ -16,4 +16,4 @@ tinyMCE.init({
 });
 ```
 
-Also see [Creating_a_Skin](/customization/TinyMCE3x@Creating_a_skin/)
+Also see [Creating_a_Skin](https://www.tinymce.com/docs-3x/customization/TinyMCE3x@Creating_a_skin/)

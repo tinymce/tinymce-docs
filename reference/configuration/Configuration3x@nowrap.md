@@ -7,10 +7,9 @@ This nowrap option enables you to control how whitespace is to be wordwrapped wi
 
 ## Example of usage of the nowrap option:
 
-```html
+```js
 tinyMCE.init({
 	...
 	nowrap : true
 });
-
 ```

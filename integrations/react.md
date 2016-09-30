@@ -3,48 +3,60 @@ layout: default
 title: React Integration
 title_nav: React
 description: React TinyMCE component.
-keywords: integration integrate react reactjs webpack react
+keywords: integration integrate react reactjs create-react-app
 ---
 
-Integration with React is currently done through [react-tinymce](https://github.com/instructure-react/react-tinymce) a third party module maintained by [Matt Zabriskie](https://github.com/mzabriskie). This how-to shows you how to setup a project using [react](https://facebook.github.io/react/), [tinymce](/docs/demo/basic-example/) and [webpack](https://webpack.github.io/).
+Integration with React is currently done through [react-tinymce](https://github.com/instructure-react/react-tinymce) a third party module maintained by [Matt Zabriskie](https://github.com/mzabriskie). This how-to shows you how to setup a project using [react](https://facebook.github.io/react/), [tinymce](/docs/demo/basic-example/) and [Create React App](https://github.com/facebookincubator/create-react-app).
 
-## 1. Setting up the project directory
+## 1. Installing `create-react-app`
 
-First we create a directory for the project called "tinymce-react-demo". After that we run "npm init" inside the new directory, this will setup a new empty npm project.
+We will use the [Create React App](https://github.com/facebookincubator/create-react-app) to quickly and easily get our project up and running.
+
+Simply run the following.
 
 ```
-$ mkdir tinymce-react-demo
+$ npm install -g create-react-app
+```
+
+## 2. Create a new project
+
+Use `create-react-app` to create a new project named `tinymce-react-demo`.
+
+```
+$ create-react-app tinymce-react-demo
+```
+When all of the installs have finished, cd into the directory.
+
+```
 $ cd tinymce-react-demo
-$ npm init
 ```
 
-## 2. Installation of react and webpack modules
+## 3. Setup `react-tinymce`
 
-Then we install webpack globally since this is a generic tool for bundling projects.
-
-```
-$ npm install -g webpack
-```
-
-After that we install [react](https://facebook.github.io/react/), [react-tinymce](https://github.com/instructure-react/react-tinymce) and various [webpack](https://webpack.github.io/) components we need to work with [es2015](https://babeljs.io/docs/learn-es2015/) and [jsx](https://facebook.github.io/react/docs/jsx-in-depth.html) files.
+Install the npm package and save it to your `package.json` with `--save`.
 
 ```
-$ npm install react-tinymce react react-dom webpack babel-loader babel-core babel-preset-es2015 babel-preset-react --save-dev
+$ npm install --save react-tinymce
 ```
 
-## 3. Creating the main.jsx file
+`react-tinymce` requires `tinymce` to be globally accessible, so add the necessary script tag with the CDN link to the head of the `index.html` file located in the `public` folder.
 
-We now create the **main.jsx** file this is the main entry point for this react application. The main entry renders the tinymce react component inside the specified container element.
+```html
+<script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
+```
+
+## 4. Replace the App.js file
+
+Open up the provided `App.js` file located in the `src` directory and replace its content with the code below.
 
 ```js
 import React from 'react';
-import ReactDOM from 'react-dom';
 import TinyMCE from 'react-tinymce';
 
-const App = React.createClass({
-  handleEditorChange(e) {
+class App extends React.Component {
+  handleEditorChange = (e) => {
     console.log('Content was updated:', e.target.getContent());
-  },
+  }
 
   render() {
     return (
@@ -58,58 +70,19 @@ const App = React.createClass({
       />
     );
   }
-});
+}
 
-ReactDOM.render(<App/>, document.getElementById('container'));
+export default App;
 ```
 
-## 4. Creating the demo.html file
+## 5. Start the development server
 
-This **demo.html** file has the container element where the react component will be rendered and loads tinymce from the cdn. It also includes the **bundle.js** file that gets created by webpack in a later step.
-
-```html
-<!DOCTYPE html>
-<body>
-  <div id="container"></div>
-  <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
-  <script src="bundle.js"></script>
-</body>
-```
-
-## 5. Creating the webpack.config.js file
-
-Now when all source files have been created we can setup the **webpack.config.js** file that creates a **bundle.js** file out of **main.jsx** file and it's dependencies.
-
-```js
-var path = require('path');
-var webpack = require('webpack');
-
-module.exports = {
-  entry: './main.jsx',
-  output: { path: __dirname, filename: 'bundle.js' },
-  module: {
-    loaders: [
-      {
-        test: /.jsx?$/,
-        loader: 'babel-loader',
-        exclude: /node_modules/,
-        query: {
-          presets: ['es2015', 'react']
-        }
-      }
-    ]
-  },
-};
-```
-
-## 6. Building the project
-
-You are now ready to build the project! Just run "webpack" inside the tinymce-react-demo page and it will load the webpack.config.js file and its dependencies and bundle that up into the **bundle.js** file.
+Start up the development server provided with `create-react-app`.
 
 ```
-$ webpack
+$ npm start
 ```
 
-## 7. Testing the application
+## 6. Keep on hacking
 
-Now that the project is built you can open the "tinymce-react-demo/demo.html" file in your favorite browser.
+This was just a simple guide how to get started, the rest is up to you.

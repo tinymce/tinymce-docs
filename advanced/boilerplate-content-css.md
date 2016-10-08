@@ -49,11 +49,25 @@ img.align-right {
 	float: right;
 }
 
+/* Basic styles for Table of Contents plugin (toc) */
+.mce-toc {
+	border: 1px solid gray;
+}
+
+.mce-toc h2 {
+	margin: 4px;
+}
+
+.mce-toc li {
+	list-style-type: none;
+}
+
 /*
  Removes margins on paragraphs,
  might be useful for mail clients
 */
 /*p { margin: 0 }*/
+
 
 /* Override CSS styles when within the editor only */
 /*.mce-content-body figure {...}*/

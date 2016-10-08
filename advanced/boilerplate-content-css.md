@@ -50,16 +50,16 @@ img.align-right {
 }
 
 /* Basic styles for Table of Contents plugin (toc) */
-div.mce-toc {
-    padding: 10px;
+.mce-toc {
+	border: 1px solid gray;
 }
 
-div.mce-toc > ul {
-    padding-left: 0;
+.mce-toc h2 {
+	margin: 4px;
 }
 
-div.mce-toc li {
-    list-style-type: none;
+.mce-toc li {
+	list-style-type: none;
 }
 
 /*

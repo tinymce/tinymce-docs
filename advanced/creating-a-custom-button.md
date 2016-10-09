@@ -13,7 +13,7 @@ keywords: example demo custom toolbar button
 * [Toggle button](#togglebutton)
 
 
-### Basic button
+## Basic button
 
 First question to answer is probably - how do you create a button in TinyMCE? And the answer is - of course there’s a special method for that - `addButton()`. It should be called with button identifier and configuration object. Here’s an example:
 
@@ -86,7 +86,7 @@ As you see we've supplied identifier of our button - `currentdate` in the `toolb
 Another point is `setup` callback - see how we've put all of our code into it? It is the callback that TinyMCE will automatically invoke for every initialised editor instance. It will receive reference to the instance as the first argument. We can use `setup` callback to customise editor to our taste - here we are adding a button, but we could also add custom keyboard shortcuts, menus and everything that has to be added *before* editor is ready.
 
 
-### Button options
+## Button options
 
 Button configuration properties:
 
@@ -98,7 +98,7 @@ Button configuration properties:
 * **onpostrender** - *callback to call when button is rendered*
 * **cmd** - *editor command to invoke when button is clicked (command [should be registered]({{ site.baseurl }}/api/tinymce/tinymce.editorcommands/#addcommands) prior to this, either by editor or by you)*
 
-### Conditionally disable button
+## Conditionally disable button
 
 You probably do not want your button to be enabled at all times, since sometimes it might fell out of context. For example it would be awkward if we could insert `<time>` tag into another `<time>` tag, right? And you can see in the example above, that it *is* possible.
 
@@ -131,7 +131,7 @@ Here's updated demo. Try to click inside and outside the date string:
 
 By the way notice how the code for our example gets bigger and bigger. It has almost reached a threshold of simplicity. This is the time when you should ask yourself whether it's better to [bundle this feature as plugin]({{ site.baseurl }}/advanced/creating-a-plugin/) instead.
 
-### Toggle button
+## Toggle button
 
 Sometimes we need a button to act as the on/off switcher, like in the case of basic emphasizing formatting (e.g. **bold**, *italic*). We've seen how we can [conditionally disable button](#conditionallydisablebutton), now lets see how we can conditionally make button either active (depressed) or inactive (unpressed). But lets create basic button first, that will strike through a currently selected text.
 

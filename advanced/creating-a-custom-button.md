@@ -129,7 +129,7 @@ Here's updated demo. Try to click inside and outside the date string:
 
 > In reality it would have been more practical to simply set `contenteditable` attribute to **false** on the `time` tag. But I wanted to demonstarte how you can toggle the button state, depending on various logical conditions.
 
-By the way notice how the code for our example gets bigger and bigger. It has almost reached a threshold of simplicity. This is the time when you should ask yourself whether it's better to [bundle this feature as plugin]({{ site.baseurl }}/advanced/creating-a-plugin/) instead.
+By the way, notice how the code for our example gets bigger and bigger. It has almost reached the boundaries of simplicity. This is the moment you should ask yourself whether it's better to [bundle this feature as plugin]({{ site.baseurl }}/advanced/creating-a-plugin/) instead.
 
 ## Toggle button
 

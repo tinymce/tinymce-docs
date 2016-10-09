@@ -46,7 +46,7 @@ tinymce.init({
 | [GetContent](#getcontent) | core | Fires after the contents been extracted from the editor. |
 | [PreProcess](#preprocess) | core | Fires when the contents in the editor is being serialized. |
 | [PostProcess](#postprocess) | core | Fires when the contents in the editor is being serialized. |
-| [NodeChange](#nodechange) | core | Fires when the contents in the editor is being serialized. |
+| [NodeChange](#nodechange) | core | Fires when selection inside the editor is changed. |
 | [Undo](#undo) | core | Fires when the contents has been undo:ed to a previous state. |
 | [Redo](#redo) | core | Fires when the contents has been redo:ed to a previous state. |
 | [Change](#change) | core | Fires when undo level is added to the editor. |

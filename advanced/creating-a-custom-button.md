@@ -28,15 +28,15 @@ editor.addButton('mybutton', {
 
 In fact identifier is the only required argument, but if you want to be able to find your button on the toolbar you better provide either an `icon` option or a `text` option (or both). Identifier will let us reference this button later in the code. Another important option is `onclick` - we want our button to do something when we click it, right?
 
-But let's do something more useful, than simply alerting a message. Let's insert something into the editor - the current date, for example. 
+But let's do something more useful, than simply alerting a message. Let's insert something into the editor - a current date, for example. 
 
-> Now, you might know that TinyMCE already ships with nice [Insert date/time plugin](https://www.tinymce.com/docs/plugins/insertdatetime/) (it is hard to find a text editing feature that is not implemented in TinyMCE), but it does whole lot of complementary things - adds some commands and shortcuts, inserts **"Insert date/time"** menu, adds support for fancy date formats, i18n and some more. We won’t go in all of that in this tutorial and make our button much simpler - we will insert the current date in the editor at the cursors position. That’s it. However `insertdatetime` plugin is a good read if mentioned stuff is something that you would like to familiarise yourself with. Its source code can be found on [github](https://github.com/tinymce/tinymce/blob/master/js/tinymce/plugins/insertdatetime/plugin.js).
+> Now, you might know that TinyMCE already ships with nice [Insert date/time plugin](https://www.tinymce.com/docs/plugins/insertdatetime/) (it is hard to find a text editing feature that is not implemented in TinyMCE), but it does whole lot of complementary things - adds some commands and shortcuts, inserts **"Insert date/time"** menu, adds support for fancy date formats, i18n and some more. We won’t go in all of that in this tutorial and make our button much simpler. However `insertdatetime` plugin is a good read if mentioned stuff is something that you would like to familiarise yourself with. Its source code can be found on [github](https://github.com/tinymce/tinymce/blob/master/js/tinymce/plugins/insertdatetime/plugin.js).
 
-For our purpose we will use [`<time>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/time) tag. `<time>` tag should have an attribute `datetime` - valid date with an optional time string. And as MDN states:
+For our purpose we will use [`<time>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/time) tag. `<time>` tag should have an attribute `datetime` - valid date with an optional time string. And as [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/time) states:
 
 > This attribute indicates the time and date of the element. If the value cannot be parsed as a date with an optional time string, the element does not have an associated time stamp.
 
-Here's the simple function, that converts a `Date` object into such tag with populated timestamp in `datetime` attribute and readable date string inside.
+Here's a simple function, that will convert a `Date` object into such tag with populated timestamp in `datetime` attribute and readable date string inside.
 
 ```js
 function toTimeHtml(date) {
@@ -68,22 +68,23 @@ editor.addButton('currentdate', {
 });
 ``` 
 
-We've borrowed an icon from the above mentioned *Insert date/time* plugin here, but you can use any icon class that you have currently defined in your stylesheets. If you do not have any icon classes, you can supply direct image URL via `image` option. 
+We've borrowed an icon from the above mentioned *Insert date/time* plugin, but you can use any icon class that you have currently defined in your stylesheets. If you do not have any icon classes, you can supply direct image URL via `image` option. 
 
-`image` option has priority over `icon`, so if you uncomment corresponding line above, icon will get superseded, with the calendar image from beautiful [Fugue iconset](http://p.yusukekamiyamane.com/).
+`image` option has priority over `icon`, so if you uncomment corresponding line above, icon will get superseded, with the calendar image from beautiful the [Fugue iconset](http://p.yusukekamiyamane.com/).
 
-We also replaced `text` with `tooltip` option, which fits the toolbar concept much better.
+We've also replaced `text` with `tooltip` option, which fits the toolbar concept much better.
 
-Done. That's it. Seriously. 
+Done. That's it. 
+Seriously. 
 
 Here is the full code (you can experiment on it by clicking *Edit on Codepen* in the top right corner)..
 
 {% include codepen.html id="XjRWZj" tab="js" height="550" %}
 
 
-As you see we've supplied identifier of our button - `currentdate` in the `toolbar` option. Along with `undo` and `redo`. So whenever user clicks *Insert Current Date*, the date is inserted at the current cursor position in the editor. Notice how `undo` button gets enabled after insertion, that's because we handle modification history for you. `code` plugin is also included - so that you could see HTML code that gets generated.
+As you see we've supplied identifier of our button in the `toolbar` property, along with `undo` and `redo` (`code` plugin is also included - so that you could see HTML code that gets generated). So whenever user clicks *Insert Current Date*, the date will be inserted into the editor at the current cursor position. Notice how `undo` button gets enabled after insertion, that's because we handle modification history for you.
   
-Another point is `setup` callback - see how we've put all of our code into it? It is the callback that TinyMCE will automatically invoke for every initialised editor instance. It will receive reference to the instance as the first argument. We can use `setup` callback to customise editor to our taste - here we are adding a button, but we could also add custom keyboard shortcuts, menus and everything that has to be added *before* editor is ready.
+Another point is `setup` callback - see how we put all of our code into it? It is the callback that TinyMCE will [automatically invoke]({{ site.baseurl }}/configure/integration-and-setup/#setup) for every initialised editor instance. It will receive reference to the instance as the first argument. We can use `setup` callback to customise editor to our taste - here we are adding a button, but we could also add custom keyboard shortcuts, menus and everything that has to be added *before* editor is ready.
 
 
 ## Button options
@@ -91,18 +92,18 @@ Another point is `setup` callback - see how we've put all of our code into it? I
 Button configuration properties:
 
 * **text** - *the text that will show up on the button*
-* **icon** - *CSS icon class from loaded stylesheet*
-* **image** - *image URL to use as an icon (16x16); if defined, overrides `icon` option*
+* **icon** - *CSS class for the icon (from one of the loaded stylesheets)*
+* **image** - *URL of the image (16x16 recommended) to use as an icon (overrides `icon` option if defined)*
 * **tooltip** - *tooltip to pop up on hover*
 * **onclick** - *callback to call when button is clicked*
 * **onpostrender** - *callback to call when button is rendered*
-* **cmd** - *editor command to invoke when button is clicked (command [should be registered]({{ site.baseurl }}/api/tinymce/tinymce.editorcommands/#addcommands) prior to this, either by editor or by you)*
+* **cmd** - *editor command to invoke, when button is clicked (command [should be registered]({{ site.baseurl }}/api/tinymce/tinymce.editorcommands/#addcommands) prior to this, either by editor or by you)*
 
 ## Conditionally disable button
 
 You probably do not want your button to be enabled at all times, since sometimes it might fell out of context. For example it would be awkward if we could insert `<time>` tag into another `<time>` tag, right? And you can see in the example above, that it *is* possible.
 
-So basically we need a way to monitor the cursor position and disable our button when it's inappropriate. For this purpose we can hook onto a [NodeChange event]({{ site.baseurl }}/advanced/events/#nodechange), that gets fired every time the cursor jumps from one node to another.
+So basically we need a way to monitor the cursor position and disable our button when it's inappropriate. For this purpose we can hook onto a [NodeChange event]({{ site.baseurl }}/advanced/events/#nodechange), that gets fired when cursor jumps from one node to another.
 
 ```js
 // ...
@@ -129,11 +130,13 @@ Here's updated demo. Try to click inside and outside the date string:
 
 > In reality it would have been more practical to simply set `contenteditable` attribute to **false** on the `time` tag. But I wanted to demonstarte how you can toggle the button state, depending on various logical conditions.
 
-By the way, notice how the code for our example gets bigger and bigger. It has almost reached the boundaries of simplicity. This is the moment you should ask yourself whether it's better to [bundle this feature as plugin]({{ site.baseurl }}/advanced/creating-a-plugin/) instead.
+By the way, notice how the code for our example gets bigger and bigger. It has almost reached the boundaries of simplicity already. This is the moment when you should ask yourself whether it's better to [bundle this feature as a plugin]({{ site.baseurl }}/advanced/creating-a-plugin/) instead.
 
 ## Toggle button
 
-Sometimes we need a button to act as the on/off switcher, like in the case of basic emphasizing formatting (e.g. **bold**, *italic*). We've seen how we can [conditionally disable button](#conditionallydisablebutton), now lets see how we can conditionally make button either active (depressed) or inactive (unpressed). But lets create basic button first, that will strike through a currently selected text.
+Sometimes we need a button to act as the on/off switcher, like in the case of basic emphasizing formatting (e.g. **bold**, *italic*). We've seen how we can [conditionally disable button](#conditionallydisablebutton), now lets see how we can conditionally make button either active (depressed) or inactive (unpressed). 
+
+Lets add a basic button first, that will strike out a currently selected text.
 
 ```js
 editor.addButton('strikeout', {
@@ -144,9 +147,9 @@ editor.addButton('strikeout', {
 });
 ```
 
-`mceToggleFormat` is internal command, which when executed toggles the specified format on and off. Obviously the format should also be registered and in this case `strikethrough` happens to be such, internally registered format. But notice that we named our button `strikeout` - to differentiate from internal `strikethrough` button and make sure that we are indeed creating the functionality ourselves.
+`mceToggleFormat` is internal command, which when executed, toggles the specified format on and off. Obviously the format should also be registered and in this case `strikethrough` happens to be such, internally registered format. But notice that we named our button `strikeout`. We did it to differentiate from internal `strikethrough` button and make sure that we are indeed creating the functionality ourselves.
 
-If you try the code at this stage, you will see that it actually works perfectly - striking out the plain text, and removing the striked formatting if it was already striked out. However the button visually doesn't reflect the operation that will be applied currently. Lets fix this:
+If you try the code at this stage, you will see that it actually works perfectly - striking out the plain text, and removing the striked formatting if it was already striked out. However the button visually doesn't reflect the operation that will be applied at that particular moment and place. Lets address this:
 
 ```js
 editor.addButton('strikeout', {
@@ -154,6 +157,7 @@ editor.addButton('strikeout', {
   onclick: function() {
     editor.execCommand('mceToggleFormat', false, 'strikethrough');
   },
+
   onpostrender: function() {
     var btn = this;
     editor.on('init', function() {

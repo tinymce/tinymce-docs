@@ -5,7 +5,7 @@ description: Power your premium plugins like spelling as-you-type.
 keywords: enterprise tinymcespellchecker spell check checker pro pricing imagetools server
 ---
 
-## Server-Side Component Installation
+## Server-side Component Installation
 
 
 *Spell checking* and *image tools proxy* require the deployment of several server-side components onto a J2EE compatible application server.  We currently support Jetty, Apache Tomcat, and WebSphere Application Server.  To discuss support for additional Java application servers, please contact us: <mailto:sales@ephox.com>

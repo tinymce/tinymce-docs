@@ -7,7 +7,7 @@ keywords: fullpage fullpage_default_doctype fullpage_default_encoding fullpage_d
 controls: toolbar button, menu item
 ---
 
-This plugin allows a user to edit certain document properties such as `title`, `keywords`, and `description`. This is done via a dialog box which appears after pressing a control added to the toolbar. If the `code` plugin is enabled `fullpage` exposes `<head>`, `<body>` and various `meta` tags in source code view.
+This plugin allows user to edit certain document properties such as `title`, `keywords`, and `description`. This is done via a dialog box which appears after pressing a control added to the toolbar. If the `code` plugin is enabled `fullpage` exposes `<head>`, `<body>` and various `meta` tags in source code view.
 
 The plugin also adds a `Document properties` menu under the `File` menu and button to the toolbar.
 

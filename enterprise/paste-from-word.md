@@ -22,7 +22,6 @@ https://www.tinymce.com/docs/advanced/handle-async-image-uploads/
 
 ***Note:*** *PowerPaste (when configured to allow local images) will import images from pasted Microsoft Word/Excel content.  When doing this, PowerPaste extracts Base64 encoded images from the clipboard.  Images larger than approximately 8.5MB may fail to import based on technical limitations of web browsers.*
 
-
 ## Installation
 
 To enable the TinyMCE PowerPaste plugin:
@@ -49,6 +48,8 @@ This setting controls how content being pasted from Microsoft Word is filtered. 
 * `clean` - Preserve the structure of the content such as headings, tables and lists but remove inline styles and classes. This results in simple content that uses the site's CSS stylesheet while retaining the semantic structure from the original document.
 * `merge` - Preserve the inline formatting and structure of the original document. Invalid and proprietary styles, tags and attributes are still removed ensuring that the HTML is valid while more closely matching the original document formatting.
 * `prompt` (Default) - Prompt the user to choose between the clean and merge options after attempting to paste word content.
+
+> Note: When using the Windows operating system, copying and pasting content from Word 2013 (or later) in "Protected View" will result in plain, unformatted text. This is due to how Protected View interacts with the clipboard.
 
 ### powerpaste_html_import
 

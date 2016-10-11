@@ -12,6 +12,6 @@ The advcode plugin brings a more advanced code editor to TinyMCE this code edito
 * Code folding
 * Multiple selections/carets
 
-## Downloading Advanced code plugin
+## Downloading Advanced Code plugin
 
-A [TinyMCE Enterprise](https://www.tinymce.com/pricing/) subscription includes the ability to download and install the advcode feature for the editor.
+> The Advanced Code feature is included with a [TinyMCE Enterprise](https://www.tinymce.com/pricing/) subscription. Please [click here](https://www.tinymce.com/pricing/) to learn more about our flexible subscriptions plans.

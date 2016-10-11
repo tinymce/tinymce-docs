@@ -61,3 +61,5 @@ tinymce.init({
   code_dialog_width: 300
 });
 ```
+
+> The Advanced Code feature is included with a [TinyMCE Enterprise](https://www.tinymce.com/pricing/) subscription. Please [click here](https://www.tinymce.com/pricing/) to learn more about our flexible subscriptions plans.

@@ -49,7 +49,7 @@ This setting controls how content being pasted from Microsoft Word is filtered. 
 * `merge` - Preserve the inline formatting and structure of the original document. Invalid and proprietary styles, tags and attributes are still removed ensuring that the HTML is valid while more closely matching the original document formatting.
 * `prompt` (Default) - Prompt the user to choose between the clean and merge options after attempting to paste word content.
 
-> Note: When using the Windows operating system, copying and pasting content from Word 2013 (or later) in "Protected View" will result in plain, unformatted text.  This is due to how Protected View interacts with the clipboard.
+> Note: When using the Windows operating system, copying and pasting content from Word 2013 (or later) in "Protected View" will result in plain, unformatted text. This is due to how Protected View interacts with the clipboard.
 
 ### powerpaste_html_import
 

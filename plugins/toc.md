@@ -24,7 +24,7 @@ tinymce.init({
 
 *Table of Contents* will have a simple HTML structure - a wrapper `div` element, a header with *editable* title and unordered nested list with navigation links. Nesting depth is customisable. 
 
-Internally plugin doesn't apply any inline styles. Basic formatting can be added via [Boilerplate Content CSS](({{ site.baseurl }}/advanced/boilerplate-content-css/)), that can be customised to your needs.
+Internally plugin doesn't apply any inline styles. Basic formatting can be added via [Boilerplate Content CSS]({{ site.baseurl }}/advanced/boilerplate-content-css/), that can be customised to your needs.
 
 ```css
 /* Basic styles for Table of Contents plugin (toc) */

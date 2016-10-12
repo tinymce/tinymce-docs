@@ -81,7 +81,8 @@ import {
   AfterViewInit,
   EventEmitter,
   Input,
-  Output
+  Output,
+  NgZone
 } from '@angular/core';
 
 import 'tinymce/themes/modern/theme';
@@ -98,6 +99,8 @@ export class SimpleTinyComponent implements AfterViewInit, OnDestroy {
   @Output() onEditorKeyup = new EventEmitter<any>();
 
   editor;
+  
+  constructor(private zone: NgZone) { }
 
   ngAfterViewInit() {
     tinymce.init({
@@ -108,7 +111,7 @@ export class SimpleTinyComponent implements AfterViewInit, OnDestroy {
         this.editor = editor;
         editor.on('keyup', () => {
           const content = editor.getContent();
-          this.onEditorKeyup.emit(content);
+          this.zone.run(() => this.onEditorKeyup.emit(content));
         });
       },
     });

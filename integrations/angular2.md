@@ -22,14 +22,18 @@ Simply run:
 ```
 $ npm install --save tinymce
 ```
-#### Setup TinyMCE global
+#### Setup TinyMCE globals
 TinyMCE needs to be globally accessible to work - something that usually can be a little tricky to get working with module loaders like Webpack (which `angular-cli` uses under the hood) - but is done extremely easily thanks to the `angular-cli.json` configuration file located in your project's root directory.
 
-Simply add the path to TinyMCE to `apps[0].scripts` in `angular-cli.json`:
+Simply add the path to TinyMCE, along with the path to the theme and any plugins you want to use, to `apps[0].scripts` in `angular-cli.json`. For example, if you want to use the `modern` theme and the `link`, `paste` and `table` plugin you would put this in your `angular-cli.json`:
 
 ```json
 "scripts": [
-  "../node_modules/tinymce/tinymce.js"
+  "../node_modules/tinymce/tinymce.js",
+  "../node_modules/tinymce/themes/modern/theme.js",
+  "../node_modules/tinymce/plugins/link/plugin.js",
+  "../node_modules/tinymce/plugins/paste/plugin.js",
+  "../node_modules/tinymce/plugins/table/plugin.js"
 ],
 ```
 
@@ -62,7 +66,7 @@ Then, when initializing a TinyMCE instance, just add the `skin_url` setting with
 
 ```js
 tinymce.init({
-  skin_url: '/assets/skins/lightgray'
+  skin_url: 'assets/skins/lightgray'
   // other settings
 });
 ```
@@ -84,11 +88,6 @@ import {
   Output
 } from '@angular/core';
 
-import 'tinymce/themes/modern/theme';
-import 'tinymce/plugins/link/plugin';
-import 'tinymce/plugins/paste/plugin';
-import 'tinymce/plugins/table/plugin';
-
 @Component({
   selector: 'simple-tiny',
   template: `<textarea id="{% raw %}{{{% endraw %}elementId{% raw %}}}{% endraw %}"></textarea>`
@@ -103,7 +102,7 @@ export class SimpleTinyComponent implements AfterViewInit, OnDestroy {
     tinymce.init({
       selector: '#' + this.elementId,
       plugins: ['link', 'paste', 'table'],
-      skin_url: '/assets/skins/lightgray',
+      skin_url: 'assets/skins/lightgray',
       setup: editor => {
         this.editor = editor;
         editor.on('keyup', () => {
@@ -132,7 +131,7 @@ It would be used in a parent component template like this:
 
 Things worth noting are
 
-1. A theme must be required, as well as any plugins that you want to use.
+1. All plugins that you want to use has to be added to your `angular-cli.json` configuration file.
 2. TinyMCE needs a unique id to be able to show more than one editor at a time, so we send in an id string through an input from the parent component.
 3. To clean up and remove the editor when the `SimpleTinyComponent` is destroyed we first save a reference to the editor in the `setup` method when we initialize the editor and then, in the `ngOnDestroy` lifecycle hook, we run the `tinymce.remove()` function passing in this reference.
 

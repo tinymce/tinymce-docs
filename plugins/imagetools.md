@@ -6,9 +6,9 @@ description: Image editing features for TinyMCE.
 keywords: imagetools rotate rotateleft rotateright flip flipv fliph editimage imageoptions
 ---
 
-The Image Tools (`imagetools`) plugin adds a contextual image editing toolbar to images inserted into the editable area. This works on modern browsers that let you edit images inline.
+`imagetools` adds a contextual image editing toolbar to the images in the editor. If toolbar is not appearing on image click, you might need to enable `imagetools_cors_hosts` or `imagetools_proxy`.
 
-Note that this feature requires at least Internet Explorer 10 as it uses the `HTML5 File API`. Also, if the `imagetools` inline toolbar isn't appearing you may need to enable `imagetools_cors_hosts` or `imagetools_proxy`.
+*Warning:* This feature requires at least Internet Explorer 10, as it uses `HTML5 File API`.
 
 **Type:** `String`
 
@@ -21,14 +21,12 @@ tinymce.init({
   plugins: "image imagetools"
 });
 ```
-
 ### Options
-
-These settings affect the execution of the Image Tools plugin. This plugin's cross-origin resource sharing (CORS), proxy and toolbar settings can be modified here.
-
 ### `imagetools_cors_hosts`
 
-This option lets you specify an array of domains that allow CORS. If CORS headers are enabled remote image editing is possible.
+Image Tools cannot work with images from other domains due to security measures imposed by browsers on so called Cross-origin HTTP requests. To overcome these constraints, Cross-Origin Resource Sharing (CORS) should be explicitly enabled on the specified domain(s) (more information can be found on [MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS)).
+
+Array of domains with CORS enabled on them can be passed to TinyMCE via `imagetools_cors_hosts` option.
 
 **Type:** `String`
 
@@ -45,10 +43,9 @@ tinymce.init({
 
 ### `imagetools_proxy`
 
-This option lets you specify a local proxy script to use when loading images from remote domains.
+Another way of getting images across domains is using local server-side proxy. Proxy is basically a script, that will retrieve remote image and pipe it back to TinyMCE, as if it was local. Example of such proxy (written in PHP) can be found below.
 
-A [TinyMCE Enterprise](http://www.tinymce.com/pricing/) subscription includes the ability to download and install a Java image proxy service you can use.
-Check the [server-side component installation guide]({{ site.baseurl }}/enterprise/server/) for details.
+[TinyMCE Enterprise](http://www.tinymce.com/pricing/) subscription also includes proxy service written in Java. Check the [Install Server-side Components]({{ site.baseurl }}/enterprise/server/) guide for details.
 
 **Type:** `String`
 
@@ -97,13 +94,9 @@ echo $content;
 
 ### `imagetools_toolbar`
 
-This option lets select which toolbar items you want to display in the `imagetools` contextual toolbar.
+The exact selection of buttons that will appear on the contextual toolbar can be controlled via `imagetools_toolbar` option.
 
-**Type:** `String`
-
-**Default Value:** `"rotateleft rotateright | flipv fliph | editimage imageoptions"`
-
-**Possible Values:**
+**Supported button identifiers:**
 
 * `rotateleft`
 * `rotateright`
@@ -111,6 +104,10 @@ This option lets select which toolbar items you want to display in the `imagetoo
 * `fliph`
 * `editimage`
 * `imageoptions`
+
+**Type:** `String`
+
+**Default Value:** `"rotateleft rotateright | flipv fliph | editimage imageoptions"`
 
 ##### Example
 

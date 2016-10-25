@@ -56,6 +56,11 @@ Here is a list of the currently exposed editor commands. All these commands are 
 | mceFullPageProperties | [fullpage]({{ site.baseurl }}/plugins/fullpage/) | Opens the fullpage dialog. |
 | mceFullscreen | [fullscreen]({{ site.baseurl }}/plugins/fullscreen/) | Toggles fullscreen mode. |
 | mceImage | [image]({{ site.baseurl }}/plugins/image/) | Opens the insert image dialog. |
+| mceEditImage | [imagetools]({{ site.baseurl }}/plugins/imagetools) | Opens the edit image dialog. |
+| mceImageRotateRight | [imagetools]({{ site.baseurl }}/plugins/imagetools) | Rotates selected image 90 degrees clockwise. |
+| mceImageRotateLeft | [imagetools]({{ site.baseurl }}/plugins/imagetools) | Rotates selected image 90 degrees counter clockwise. |
+| mceImageFlipVertical | [imagetools]({{ site.baseurl }}/plugins/imagetools) | Flips selected image vertically. |
+| mceImageFlipHorizontal | [imagetools]({{ site.baseurl }}/plugins/imagetools) | Flips selected image horizontally. |
 | mceInsertDate | [insertdatetime]({{ site.baseurl }}/plugins/insertdatetime/) | Inserts the current date as a human readable string. |
 | mceInsertTime | [insertdatetime]({{ site.baseurl }}/plugins/insertdatetime/) | Insert the current time as a human readable string. |
 | mceInsertDefinitionList| [lists]({{ site.baseurl }}/plugins/lists/) | Creates a definition list. |
@@ -87,4 +92,3 @@ Here is a list of the currently exposed editor commands. All these commands are 
 | mceInsertTable | [table]({{ site.baseurl }}/plugins/table) | Opens the insert table dialog. |
 | mceTableRowProps | [table]({{ site.baseurl }}/plugins/table) | Opens the table row properties dialog. |
 | mceTableCellProps | [table]({{ site.baseurl }}/plugins/table) | Opens the table cell properties dialog. |
-| mceEditImage | [imagetools]({{ site.baseurl }}/plugins/imagetools) | Opens the edit image dialog. |

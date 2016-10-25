@@ -1,6 +1,12 @@
 ## images_upload_url
 
-This option lets you specify a URL where you want images to be uploaded when you call `editor.uploadImages`.
+This option lets you specify a URL for the upload handler. Upload will get triggered whenever you call `editor.uploadImages()` or - automatically, if `automatic_uploads` option is enabled. Upload handler should return a new location for the uploaded file in the following format:
+
+```json
+{ "location": "folder/sub-folder/new-location.png" }
+```
+
+Be sure to checkout a demo implementation of the upload handler [here]({{ site.baseurl }}/advanced/php-upload-handler/) (written in PHP).
 
 **Type:** `String`
 
@@ -12,5 +18,3 @@ tinymce.init({
   images_upload_url: 'postAcceptor.php'
 });
 ```
-
-The `postAcceptor.php` file should return an URL for the image that got uploaded there is a [reference implementation]({{ site.baseurl }}/advanced/php-upload-handler/) that you can look at.

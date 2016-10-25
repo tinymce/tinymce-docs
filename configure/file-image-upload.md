@@ -5,8 +5,6 @@ description_short:
 description: These settings affect TinyMCE's image and file upload capabilities.
 ---
 
-{% include configuration/automatic-uploads.md %}
-
 {% include configuration/file-browser-callback.md %}
 
 {% include configuration/file-browser-callback-types.md %}
@@ -15,7 +13,9 @@ description: These settings affect TinyMCE's image and file upload capabilities.
 
 {% include configuration/file-picker-types.md %}
 
-{% include configuration/images-dataimg-filter.md %}
+{% include configuration/automatic-uploads.md %}
+
+{% include configuration/images-uploads-url.md %}
 
 {% include configuration/images-upload-base-path.md %}
 
@@ -23,4 +23,6 @@ description: These settings affect TinyMCE's image and file upload capabilities.
 
 {% include configuration/images-upload-handler.md %}
 
-{% include configuration/images-uploads-url.md %}
+{% include configuration/images-dataimg-filter.md %}
+
+{% include configuration/images-upload-reuse-filename.md %}

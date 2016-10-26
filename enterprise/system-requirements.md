@@ -80,6 +80,7 @@ JDK 7 update 55+
 
 * Tomcat 7+
 * Jetty 8+
+* WebSphere Application Server (WAS) 8+
 
 #### Operating Systems
 

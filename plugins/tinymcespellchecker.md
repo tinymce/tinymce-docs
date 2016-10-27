@@ -67,6 +67,9 @@ This option lets you specify an array of words that you want to ignore this can 
 ### `spellchecker_on_load`
 This option lets run the spellchecker when the contents is loaded into the editor. This option defaults to "false" so it's disabled by default.
 
+### `spellchecker_active`
+This option lets you decide if the spellchecker should be initialized as active or not. With this set to `false` the spellchecker will not be activated automatically on text input, you will have to press the toolbar button or the menu item to start the spellchecking. Only applicable when using the default as-you-type spellchecking, not while using the dialog mode. Defaults to `true`.
+
 ## Toolbar Buttons
 
 ### `spellchecker`

@@ -28,11 +28,11 @@ In addition to the advanced content creation solutions available in the Cloud of
 
 Lastly, you just need to extend your TinyMCE configuration to include any of the additional, advanced content services (and associated toolbar/menu items) you’ve purchased. You will find enablement guides here:
 
-* Advanced copy/paste with the PowerPaste plugin
-* Spellcheck-as-you-type via Spell Check Pro
-* Image Tools (with configured image proxy) **Note: We will configure the `imagetools_cors_hosts` and `imagetools_proxy` properties for you automatically.**
-* Accessibility-as-you-type
-* Advanced Code View
+* [Advanced copy/paste with the PowerPaste plugin]({{ site.baseurl }}/enterprise/paste-from-word/)
+* [Spellcheck-as-you-type via Spell Check Pro]({{ site.baseurl }}/enterprise/check-spelling/plugin/)
+* [Image Tools (with configured image proxy)]({{ site.baseurl }}/plugins/image/) **Note: We will configure the `imagetools_cors_hosts` and `imagetools_proxy` properties for you automatically.**
+* [Accessibility-as-you-type]({{ site.baseurl }}/plugins/a11ychecker/)
+* [Advanced Code View] ({{ site.baseurl }}/plugins/advcode/)
 
 ## Migrating from TinyMCE SDK to TinyMCE Cloud
 
@@ -48,10 +48,10 @@ Migrating from the SDK to the Cloud is a relatively straightforward process. Ple
 
 Now you just need to extend your TinyMCE [configuration]({{ site.baseurl }}/configure/) to include any additional plugins (and associated toolbar/menu items) you’ve purchased. You will find enablement guides here:
 
-* Advanced copy/paste with the PowerPaste plugin
-* Spellcheck-as-you-type via Spell Check Pro
-* Image Tools (with configured image proxy) *Note: We will configure the `imagetools_cors_hosts` and `imagetools_proxy` properties for you automatically.*
-* Accessibility-as-you-type
-* Advanced Code View
+* [Advanced copy/paste with the PowerPaste plugin]({{ site.baseurl }}/enterprise/paste-from-word/)
+* [Spellcheck-as-you-type via Spell Check Pro]({{ site.baseurl }}/enterprise/check-spelling/plugin/)
+* [Image Tools (with configured image proxy)]({{ site.baseurl }}/plugins/image/) **Note: We will configure the `imagetools_cors_hosts` and `imagetools_proxy` properties for you automatically.**
+* [Accessibility-as-you-type]({{ site.baseurl }}/plugins/a11ychecker/)
+* [Advanced Code View] ({{ site.baseurl }}/plugins/advcode/)
 
 That’s all there is to it. If you have any questions about [TinyMCE Cloud](http://go.tinymce.com/cloud) please contact our sales team via our [feature comparison and pricing page](https://www.tinymce.com/pricing/). If you are already a Cloud customer and have any queries, please contact your support representative.

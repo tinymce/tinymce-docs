@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Cloud Get Stared
+title: Cloud Get Started
 description_short: Learn how to setup TinyMCE Cloud, or migrate from the SDK.
 description: TinyMCE Cloud customers, you'll be up and running in less than 5 minutes.
 keywords: tinymce cloud script textarea apiKey

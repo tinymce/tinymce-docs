@@ -9,6 +9,8 @@ description: These settings change the way the editor handles the input and outp
 
 {% include configuration/allow-html-in-named-anchor.md %}
 
+{% include configuration/allow-unsafe-link-target.md %}
+
 {% include configuration/convert-fonts-to-spans.md %}
 
 {% include configuration/custom-elements.md %}

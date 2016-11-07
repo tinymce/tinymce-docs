@@ -46,6 +46,28 @@ tinymce.init({
 });
 ```
 
+### `link_context_toolbar`
+
+By default links are defunct in TinyMCE, it is not possible to open them directly from the editor. Setting `link_context_toolbar` to *true* will enable context toolbar on every link, with shortcut functions to open the link, modify it or - remove. External links will be opened in a separate tab, while relative ones will cause scroll to a target within the editor (if the target is found).
+
+**Type:** `Boolean`
+
+**Default Value:** `false`
+
+**Possible Values:** `true`, `false`
+
+##### Example
+
+```js
+tinymce.init({
+  selector: "textarea",
+  plugins: "link",
+  menubar: "insert",
+  toolbar: "link"
+  link_context_toolbar: true
+});
+```
+
 ### `link_assume_external_targets`
 
 This option allows you to set whether TinyMCE will prompt the user to prepend a `http://` prefix if the supplied link does not already contain a protocol prefix.

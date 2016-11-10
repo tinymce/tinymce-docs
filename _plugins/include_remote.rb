@@ -41,6 +41,10 @@ eos
     xpath = @params['xpath']
     css = @params['css']
 
+    # force params to strings
+    xpath = xpath.to_s if xpath
+    css = css.to_s if css
+
     if ! html = @@remote_cache["#{@url}_#{xpath}_#{css}"]
       # fetch remote file
       page = Nokogiri::HTML(open(@url))

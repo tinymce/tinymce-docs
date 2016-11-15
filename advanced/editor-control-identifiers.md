@@ -41,6 +41,7 @@ Here is a list of the toolbar/menu controls that the core and plugins provides. 
 | subscript | core | Applies subscript format to the current selection. |
 | superscript | core | Applies superscript format to the current selection. |
 | visualaid | core | Toggles the visual aids for invisible elements. |
+| insert | core | Groups various insert actions into one button. |
 | hr | [hr]({{ site.baseurl }}/plugins/hr/) | Inserts a horizontal rule into the editor. |
 | link | [link]({{ site.baseurl }}/plugins/link/) | Creates/Edits links within the editor. |
 | unlink | [link]({{ site.baseurl }}/plugins/link/) | Removes links from the current selection. |

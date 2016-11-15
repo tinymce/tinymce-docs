@@ -100,7 +100,7 @@ Here is an example off how to listen for blur events.
 tinymce.init({
   selector: 'textarea',
   init_instance_callback: function (editor) {
-    editor.on('focus', function (e) {
+    editor.on('blur', function (e) {
       console.log('Editor was blurred!');
     });
   }

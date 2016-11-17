@@ -14,3 +14,5 @@ description: Learn about some edge case editor behavior.
 {% include configuration/nowrap.md %}
 
 {% include configuration/object-resizing.md %}
+
+{% include configuration/type-ahead-urls.md %}

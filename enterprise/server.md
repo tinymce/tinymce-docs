@@ -17,6 +17,7 @@ The following server-side components are packaged with the TinyMCE SDK:
 | [Spellchecking]({{ site.baseurl }}/enterprise/check-spelling/) 				| ephox-spelling.war		|Spell checking service for TinyMCE Enterprise.|
 | [Image Tools Proxy]({{ site.baseurl }}/plugins/imagetools/)				| ephox-image-proxy.war		|Image proxy service for the Image Tools plugin.|
 
+> **Note:** The "Allowed Origins" service (ephox-allowed-origins.war) has been deprecated. Trusted domains can now simply be specified via application.conf, as documented below.
 
 This guide will help you set up the server-side components for the above-mentioned features, and show you how to use them in conjunction with editor clients. The steps required are:
 

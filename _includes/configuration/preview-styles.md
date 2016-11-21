@@ -1,19 +1,33 @@
 ## preview_styles
 
-This option enables you to turn off the preview of styles in format/style listboxes.
+This option lets you configure the preview of styles in format/style listboxes. Enter a string with the styles that you wish to preview separated by a blankspace, or disable the preview of of all styles by setting it to `false`.
 
-**Type:** `Boolean`
+If unset the editor will preview the styles listed in the default value listed below.
 
-**Default Value:** `true`
+**Type:** `Boolean || String`
 
-**Possible Values:** `true`, `false`
+**Default Value:** `font-family font-size font-weight font-style text-decoration text-transform color background-color border border-radius outline text-shadow`
+
+**Possible Values:** `String`, `false`
 
 ##### Example
+
+No preview of styles:
 
 ```js
 tinyMCE.init({
   selector: 'textarea',  // change this value according to your HTML
   mode: 'textareas',
   preview_styles: false
+});
+```
+
+Preview of only font-size and color:
+
+```js
+tinyMCE.init({
+  selector: 'textarea',  // change this value according to your HTML
+  mode: 'textareas',
+  preview_styles: 'font-size color'
 });
 ```

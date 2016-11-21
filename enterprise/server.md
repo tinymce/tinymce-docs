@@ -14,7 +14,6 @@ The following server-side components are packaged with the TinyMCE SDK:
 
 |Component                      | File							| Description |
 |:-----------------------------	|:-------						|:----------- |
-| Allowed Origins				| ephox-allowed-origins.war 	| Supplies configuration for server components to communicate with your application. In order to use the *Spellchecking* or *Image Tools Proxy* features, you **must** install and configure this component.|
 | [Spellchecking]({{ site.baseurl }}/enterprise/check-spelling/) 				| ephox-spelling.war		|Spell checking service for TinyMCE Enterprise.|
 | [Image Tools Proxy]({{ site.baseurl }}/plugins/imagetools/)				| ephox-image-proxy.war		|Image proxy service for the Image Tools plugin.|
 
@@ -44,7 +43,6 @@ These are both simple, open source Java application servers and they're easy to 
 
 You’ll need to ensure you deploy the following WAR files packaged with the TinyMCE Enterprise SDK:
 
-- ephox-allowed-origins.war
 - ephox-spelling.war
 - ephox-image-proxy.war
 
@@ -56,29 +54,23 @@ More information on deploying components/applications:
 - [Deploying applications with Jetty](https://wiki.eclipse.org/Jetty/Howto/Deploy_Web_Applications)
 
 
-### Step 3. Create a configuration file and configure the allowed origins service
+### Step 3. Create a configuration file
 
 > **Note:** It is recommended that you use a plain text editor (eg: gedit, vim, emacs, notepad etc) when creating or editing the application.conf file. Do not use editors like Evernote as there is a good chance of smart quotes being used where plain quotes should be used and this will cause the services to fail.
 
 Services require a configuration file named `application.conf` to be referenced by the application server.
 
-This configuration file will require you to enter two pieces of information:
+This configuration file will require you to enter the following  information:
 
 - `origins` - which domains are allowed to communicate with the server-side editor features.
-- `url` - the location of the allowed-origins checking service itself.
 
 #### allowed-origins
 
-This element configures the allowed-origins service which allows all server-side components to communicate with specified domains.
+This element configures the server-side components to communicate with specified, trusted  domains.
 
 The `origins` attribute must list all the domains that instances of the editor will be hosted on.  Only requests from the listed origins will be processed by the server-side components. Requests from any other domains will be rejected. An array of strings representing the domains allowed to communicate with the services.
 
 > Note: Be sure to include the protocol (https or http) and any required port number (eg:8080) in the string.
-
-The `url` attribute defines the location of the allowed-origins service. This string is a concatenation of two values:
-
-- String 1: The URL location of the allowed-origins service
-- String 2: The API to access in the service (/cors).
 
 Example:
 
@@ -86,7 +78,6 @@ Example:
 ephox {
 	allowed-origins {
 		origins = [ "http://myserver", "http://myserver:8080", "http://myotherserver", "http://myotherserver:9090", "https://mysecureserver" ]
-		url = "http://myserver:8080/ephox-allowed-origins/cors"
 	}
 }
 ````
@@ -99,7 +90,6 @@ The origins are matched by protocol, host name, and port. So you may need a comb
 ephox{
    allowed-origins{
 	   origins=["http://localhost", "http://any-other-servers:port"]
-	   url = "http://localhost/ephox-allowed-origins/cors"
   }
 }
 ````
@@ -110,12 +100,11 @@ This only applies to port 80 because this being the default HTTP port, browsers 
 ephox{
    allowed-origins{
 	   origins=["http://hostname", "http://hostname:1234"]
-	   url = "http://hostname:1234/ephox-allowed-origins/cors"
   }
 }
 ````
 
-Ensure that you have the right protocol specified, and for more examples see the section below. If you experience issues, please use the Troubleshooting guide (in the Tip below) and you should be able to see if the browser sends a different origin to the one that you have specified. Both must match for the services to work.
+Ensure that you have the right protocol specified and for more examples see the section below. If you experience issues, please use the Troubleshooting guide (in the Tip below) and you should be able to see if the browser sends a different origin to the one that you have specified. Both must match for the services to work.
 
 ##### Troubleshooting Origins
 
@@ -129,17 +118,12 @@ TinyMCE is deployed to an environment and displayed to end users on the followin
 - https://myCMS
 - http://myCMS:4141
 
-The `allowed-origins` service has been installed and is accessible via the following URL:
-
-- http://myCMS:8080/ephox-allowed-origins
-
 For this example, here is what the contents of `application.conf` should look like:
 
 ````
 ephox{
    allowed-origins{
            origins=["http://myCMS", "https://myCMS", "http://myCMS:4141"]
-           url = "http://myCMS:8080/ephox-allowed-origins/cors"
   }
 }
 ````
@@ -227,13 +211,13 @@ tinymce.init({
 
 ### Logging
 
-For compartmentalization of logs in your environment or to provide Ephox with more succinct feedback around the behavior of your deployed TinyMCE Spelling Component (e.g. for support purposes), you may want to write out the spelling-service specific logs to a specific file.
+For compartmentalization of logs in your environment or to provide Ephox with more succinct feedback around the behavior of your deployed TinyMCE Spelling Component (e.g. for support purposes), you may want to write out the service specific logs to a specific file.
 
-To write the spelling-service specific logs to a specific file, you’ll need to perform the following steps:
+To write the service specific logs to a specific file, you’ll need to perform the following steps:
 
 #### Create a logging configuration XML file
 
-The spelling service uses the [Logback](http://logback.qos.ch/manual/configuration.html) logging format.
+The services use the [Logback](http://logback.qos.ch/manual/configuration.html) logging format.
 
 For easy implementation, here is a sample XML configuration with a tokenized value you can populate where {$LOG_LOCATION} is the location and name of the file you would like to write the logs to (e.g. /tmp/tinymce_services.log).
 
@@ -254,7 +238,7 @@ For easy implementation, here is a sample XML configuration with a tokenized val
   </appender>
 
   <!-- This results in all ephox logging going to file.
-	   Change/uncomment this part here if spellchecking specific logging is required -->
+	   Change/uncomment this part here if specific logging is required -->
   <logger name="com.ephox" level="INFO"/>
   <!-- <logger name="com.ephox.ironbark" level="INFO"/> -->
 

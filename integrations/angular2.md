@@ -8,6 +8,8 @@ keywords: integration integrate angular2 angularjs
 
 The absolutely easiest way to get started using TinyMCE with Angular2 is with the marvelous [angular-cli](https://github.com/angular/angular-cli). This guide will show you how to set up a simple project. Let's get started!
 
+## Please note!
+**The following is not _production ready code_, but only a simple guide on how to get started using TinyMCE together with Angular2.**
 
 #### Generate new project
 Use `angular-cli` to generate a new project and cd into it (see [`angular-cli` docs](https://github.com/angular/angular-cli#usage) for details).

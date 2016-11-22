@@ -72,6 +72,40 @@ tinymce.init({
 });
 ```
 
+### `media_embed_handler`
+
+This option allows you to specify a function that will be used to replace TinyMCE's default media embed logic with your own, custom logic.
+
+The media embed handler function takes three arguments: `data`, a `success` callback and a `failure` callback. The `data` argument will be an object with a `url` property on it. In your custom handler function you can then handle the `url` in whatever way you want and return the HTML you want to embed by calling the `success` callback and passing it an object with the HTML set on the `html` property, like this: `success({html: 'YOUR_HTML'})`.
+
+If you in your handler would like fall back to the default media embed logic you can simple call the `success` callback with an object where the `html` property is set to an empty string, like this: `success({html: ''})`.
+
+If something goes wrong in your handler and you want to show an error to the user you can do so by calling the `failure` callback with and object where the message you want to present the user is set under the `msg` property, like this: `failure({msg: 'YOUR_ERROR_MESSAGE'})`. The message entered will be shown in an error notification to the user.
+
+
+**Type:** `JavaScript Function`
+
+##### Example
+
+The following example simply checks if the url contains some special url and returns an iframe if it does. Otherwise it calls the `success` callback with an empty string, falling back to the default media embed logic.
+
+```js
+tinymce.init({
+  selector: "textarea.tinymce",
+  plugins: "media",
+  toolbar: "media",
+  media_embed_handler: function (data, success/*, failure*/) {
+    if (data.url.indexOf('YOUR_SPECIAL_VIDEO_URL') !== -1) {
+      var embedHtml = '<iframe src="' + data.url +
+      '" width="400" height="400" ></iframe>';
+      success({html: embedHtml});
+    } else {
+      success({html: ''});
+    }
+  }
+});
+```
+
 ### `media_alt_source`
 
 This options allows you disable the `Alternative source` input field in the media dialog.

@@ -44,6 +44,10 @@ Note that the external dimensions of the actual modal will be slightly larger th
 
 This configuration option enables you to set a list of languages to be displayed in the languages drop down.
 
+### `codesample_content_css`
+
+This option enables you to specify a custom css file to be loaded when codesamples are inserted into the editor.
+
 ##### Example
 
 ```js

@@ -45,6 +45,7 @@ Here is a list of the toolbar/menu controls that the core and plugins provides. 
 | hr | [hr]({{ site.baseurl }}/plugins/hr/) | Inserts a horizontal rule into the editor. |
 | link | [link]({{ site.baseurl }}/plugins/link/) | Creates/Edits links within the editor. |
 | unlink | [link]({{ site.baseurl }}/plugins/link/) | Removes links from the current selection. |
+| openlink | [link]({{ site.baseurl }}/plugins/link/) | Opens the selected link in a new tab. |
 | image | [image]({{ site.baseurl }}/plugins/image/) | Creates/Edits images within the editor. |
 | charmap | [charmap]({{ site.baseurl }}/plugins/charmap/) | Inserts custom characters into the editor. |
 | pastetext | [paste]({{ site.baseurl }}/plugins/paste/) | Toggles plain text pasting mode on/off. |
@@ -120,6 +121,7 @@ Here is a list of the toolbar/menu controls that the core and plugins provides. 
 | removeformat | core | Removes all formats form the current selection. |
 | formats | core | Menu of all available formats. |
 | link | [link]({{ site.baseurl }}/plugins/link/) | Opens the link dialog. |
+| openlink | [link]({{ site.baseurl }}/plugins/link/) | Opens the selected link in a new tab. |
 | image | [image]({{ site.baseurl }}/plugins/image/) | Opens the image dialog. |
 | charmap | [charmap]({{ site.baseurl }}/plugins/charmap/) | Opens the charmap dialog. |
 | pastetext | [paste]({{ site.baseurl }}/plugins/paste/) | Toggles paste as plain text on/off. |

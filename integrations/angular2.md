@@ -76,19 +76,79 @@ tinymce.init({
 
 ## Sample component implementation
 
+The following is a simple sample implementation of a component showing the TinyMCE editor.
+
+```ts
+import {
+  Component,
+  OnDestroy,
+  AfterViewInit,
+  EventEmitter,
+  Input,
+  Output
+} from '@angular/core';
+
+@Component({
+  selector: 'simple-tiny',
+  template: `<textarea id="{% raw %}{{{% endraw %}elementId{% raw %}}}{% endraw %}"></textarea>`
+})
+export class SimpleTinyComponent implements AfterViewInit, OnDestroy {
+  @Input() elementId: String;
+  @Output() onEditorKeyup = new EventEmitter<any>();
+
+  editor;
+
+  ngAfterViewInit() {
+    tinymce.init({
+      selector: '#' + this.elementId,
+      plugins: ['link', 'paste', 'table'],
+      skin_url: 'assets/skins/lightgray',
+      setup: editor => {
+        this.editor = editor;
+        editor.on('keyup', () => {
+          const content = editor.getContent();
+          this.onEditorKeyup.emit(content);
+        });
+      },
+    });
+  }
+
+  ngOnDestroy() {
+    tinymce.remove(this.editor);
+  }
+}
+```
+
+It would be used in a parent component template like this:
+
+```ts
+<simple-tiny
+  [elementId]="'my-editor-id'"
+  (onEditorKeyup)="keyupHandlerFunction($event)"
+  >
+</simple-tiny>
+```
+
+Things worth noting are
+
+1. All plugins that you want to use has to be added to your `angular-cli.json` configuration file.
+2. TinyMCE needs a unique id to be able to show more than one editor at a time, so we send in an id string through an input from the parent component.
+3. To clean up and remove the editor when the `SimpleTinyComponent` is destroyed we first save a reference to the editor in the `setup` method when we initialize the editor and then, in the `ngOnDestroy` lifecycle hook, we run the `tinymce.remove()` function passing in this reference.
+
+### Sample directive implementation with ngModel two-way binding
+
 ```
   import {AfterViewInit, ChangeDetectorRef, Directive, EventEmitter, forwardRef, Input, OnInit, Output} from '@angular/core';
   import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
 
   declare var tinymce: any;
 
-  //This is needed to update the the tinymce when the model gets changed
+  //This is needed to update the tinymce editor when the model gets changed
   const CUSTOM_VALUE_ACCESSOR = {
       provide:NG_VALUE_ACCESSOR,
       useExisting: forwardRef(() => TinymceEditorDirective),
       multi: true
     }
-
 
   @Directive({
     inputs: ['tinyEditor'],
@@ -196,68 +256,6 @@ tinymce.init({
     }
   }
 ```
-
-
-The following is a simple sample implementation of a component showing the TinyMCE editor.
-
-```ts
-import {
-  Component,
-  OnDestroy,
-  AfterViewInit,
-  EventEmitter,
-  Input,
-  Output
-} from '@angular/core';
-
-@Component({
-  selector: 'simple-tiny',
-  template: `<textarea id="{% raw %}{{{% endraw %}elementId{% raw %}}}{% endraw %}"></textarea>`
-})
-export class SimpleTinyComponent implements AfterViewInit, OnDestroy {
-  @Input() elementId: String;
-  @Output() onEditorKeyup = new EventEmitter<any>();
-
-  editor;
-
-  ngAfterViewInit() {
-    tinymce.init({
-      selector: '#' + this.elementId,
-      plugins: ['link', 'paste', 'table'],
-      skin_url: 'assets/skins/lightgray',
-      setup: editor => {
-        this.editor = editor;
-        editor.on('keyup', () => {
-          const content = editor.getContent();
-          this.onEditorKeyup.emit(content);
-        });
-      },
-    });
-  }
-
-  ngOnDestroy() {
-    tinymce.remove(this.editor);
-  }
-}
-```
-
-It would be used in a parent component template like this:
-
-```ts
-<simple-tiny
-  [elementId]="'my-editor-id'"
-  (onEditorKeyup)="keyupHandlerFunction($event)"
-  >
-</simple-tiny>
-```
-
-Things worth noting are
-
-1. All plugins that you want to use has to be added to your `angular-cli.json` configuration file.
-2. TinyMCE needs a unique id to be able to show more than one editor at a time, so we send in an id string through an input from the parent component.
-3. To clean up and remove the editor when the `SimpleTinyComponent` is destroyed we first save a reference to the editor in the `setup` method when we initialize the editor and then, in the `ngOnDestroy` lifecycle hook, we run the `tinymce.remove()` function passing in this reference.
-
-### Sample directive implementation with ngModel two-way binding
 
 Under latest Angular2 versions ( Version > RC5 ) you need to inculde all the directives in the decalarations under @NgModule, which is usually defined at app.module.ts
 

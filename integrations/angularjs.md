@@ -23,7 +23,7 @@ $ bower init
 We now install the angular-ui-tinymce package this will automatically install angular and tinymce.
 
 ```
-$ bower install angular-ui-tinymce --save-dev
+$ bower install angular-ui-tinymce --save
 ```
 
 ## 3. Creating the demo.html file

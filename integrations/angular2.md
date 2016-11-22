@@ -285,6 +285,7 @@ Now if you observer, we are catching `(ngModelChange)` event. For some reason, i
 In your component class make sure that you have defined `doNothing()` method. This can be a empty method and model still gets updated.
 
 **NOTE**
+
 If you use something like this
 
 ```

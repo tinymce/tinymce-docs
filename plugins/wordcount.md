@@ -25,7 +25,7 @@ These settings affect the execution of the `wordcount` plugin. The regular expre
 
 ### `wordcount_cleanregex`
 
-This option allows you to specify the regular expression that will be used to *strip punctuation and numbers* from the word count.
+This option allows you to specify the regular expression that will be used to *strip punctuation and numbers* from the word count. **Removed in 4.5.0**
 
 **Type:** `String`
 
@@ -41,7 +41,7 @@ tinymce.init({
 
 ### `wordcount_countregex`
 
-This option allows you to specify the regular expression that will be used to *count the words* for the word count.
+This option allows you to specify the regular expression that will be used to *count the words* for the word count. **Removed in 4.5.0**
 
 **Type:** `String`
 

@@ -50,3 +50,5 @@ Example: path2/file.htm >> http://www.example.com/path1/path2/file.htm
 {% include configuration/relative-urls.md %}
 {% include configuration/remove-script-host.md %}
 {% include configuration/urlconverter-callback.md %}
+{% include configuration/anchor-bottom.md %}
+{% include configuration/anchor-top.md %}

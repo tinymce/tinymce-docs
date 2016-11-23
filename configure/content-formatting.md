@@ -17,4 +17,6 @@ description: These settings change the way the editor handles the input and outp
 
 {% include configuration/style-formats.md %}
 
+{% include configuration/style-formats-autohide.md %}
+
 {% include configuration/style-formats-merge.md %}

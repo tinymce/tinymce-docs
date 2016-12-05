@@ -16,7 +16,8 @@ This plugin gives the user a warning if they made modifications to the content w
 ```js
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
-  plugins: "autosave"
+  plugins: "autosave",
+  toolbar: "restoredraft"
 });
 ```
 

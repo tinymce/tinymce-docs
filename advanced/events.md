@@ -272,7 +272,7 @@ tinymce.init({
 
 ### Change
 
-This event gets fired when changes are made inside the editor that causes and undo level to be added.
+This event gets fired when changes are made inside the editor that cause an undo level to be added.
 
 Here is an example on how listen for editor changes.
 

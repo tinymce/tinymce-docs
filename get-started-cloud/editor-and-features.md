@@ -1,0 +1,61 @@
+---
+layout: default
+title: Editor and Features Deployed from Cloud
+description_short: Learn how to setup the TinyMCE editor via our Cloud, or migrate from the SDK.
+description: TinyMCE Cloud customers, you'll be up and running in less than 5 minutes.
+keywords: tinymce cloud script textarea apiKey
+---
+
+TinyMCE Cloud is the easiest way to integrate TinyMCE and upgrade to our premium features.
+
+You can start with [TinyMCE CDN]({{ site.baseurl }}/download/) completely free of charge.
+
+In order to use the advanced features of the editor, you’ll need to signup for an API key  and update the script tag used to load the editor code into your application.
+
+## Integrating TinyMCE for the First Time
+
+### Step 1: Embed Your Custom Script Tag into Your Webpage
+
+In order to load TinyMCE for the very first time, you need to embed the TinyMCE editor code into your application. This is done by adding the following script tag into your app, or in the case of a web page the `<head>` of the page:
+
+```js
+<script src="http://cloud.tinymce.com/stable/tinymce.min.js?apiKey=your_API_key"></script>
+```
+
+### Step 2: Load, Customize and Interact with TinyMCE
+
+In addition to the advanced content creation solutions available in the Cloud offering, you have access to more than 40 open source plugins to enhance the editing experience. We have provided a range of [simple examples]({{ site.baseurl }}/demo/basic-example/) and we encourage you to review our walkthrough documentation that will help you [get started with TinyMCE]({{ site.baseurl }}/get-started/first-steps/).
+
+### Step 3: Specifying Purchased TinyMCE Plugins and Toolbar/Menu Items
+
+Lastly, you just need to extend your TinyMCE configuration to include any of the additional, advanced plugins (and iassociated toolbar/menu items) you’ve purchased. You will find enablement guides here:
+
+* [Powerpaste]({{ site.baseurl }}/plugins/powerpaste/)
+* [Spell Checker]({{ site.baseurl }}/plugins/spellchecker/)
+**Note:** `spellchecker_rpc_url` is **not** required when enabling this plugin via [TinyMCE Cloud]({{ site.baseurl }}/get-started-cloud/)
+* [Image Tools (with configured image proxy)]({{ site.baseurl }}/plugins/image/)
+**Note:** We will configure the `imagetools_cors_hosts` and `imagetools_proxy` properties for you automatically.
+* [Accessibility Checker]({{ site.baseurl }}/plugins/a11ychecker/)
+* [Advanced Code]({{ site.baseurl }}/https://www.tinymce.com/docs/plugins/advcode/)
+
+## Migrating from TinyMCE SDK to TinyMCE Cloud
+
+### Step 1: Replace Existing Reference to tinymce.min.js
+
+Migrating from the SDK to the Cloud is a relatively straightforward process. Please remove your existing script tag that loads TinyMCE’s JavaScript (typically a reference to tinymce.min.js either hosted in your own application or available via our [CDN]({{ site.baseurl }}/download/)) and replace this script tag with the following:
+
+```js
+<script src="http://cloud.tinymce.com/stable/tinymce.min.js?apiKey=your_API_key"></script>
+```
+
+### Step 2: Specify Purchased TinyMCE Plugins and Toolbar Buttons
+
+Now you just need to extend your [TinyMCE configuration]({ site.baseurl }}/configure/) to include any additional plugins (and associated toolbar/menu items) you’ve purchased. You will find enablement guides here:
+
+* [Powerpaste]({{ site.baseurl }}/plugins/powerpaste/)
+* [Spell Checker]({{ site.baseurl }}/plugins/spellchecker/)
+**Note:** `spellchecker_rpc_url` is **not** required when enabling this plugin via [TinyMCE Cloud]({{ site.baseurl }}/get-started-cloud/)
+* [Image Tools (with configured image proxy)]({{ site.baseurl }}/plugins/image/)
+**Note:** We will configure the `imagetools_cors_hosts` and `imagetools_proxy` properties for you automatically.
+* [Accessibility Checker]({{ site.baseurl }}/plugins/a11ychecker/)
+* [Advanced Code]({{ site.baseurl }}/https://www.tinymce.com/docs/plugins/advcode/)

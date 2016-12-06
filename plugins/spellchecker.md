@@ -123,6 +123,8 @@ tinymce.init({
 
 This options enables you to specify a custom URL to be used for the spellchecker. This can be the `spellchecker` URL provided by the TinyMCE `spellchecker` packages or a URL to a page that you have in your system. The URL is **relative** to the `spellchecker` plugin.
 
+**Note:** `spellchecker_rpc_url` is **not** required when enabling this plugin via [TinyMCE Cloud]({{ site.baseurl }}/get-started-cloud/)
+
 **Type:** `String`
 
 ##### Example

@@ -1,0 +1,27 @@
+---
+layout: default
+title: Plugin and Editor Version Compatibility
+description_short: Matrix of compatibility between TinyMCE editor versions and premium plugins.
+description: Premium plugins compatibility with TinyMCE editor versions.
+keywords: tinymce cloud script textarea apiKey
+---
+
+Some of our premium plugins are only compatible with certain versions versions of TinyMCE.
+
+If you’re deploying [both the TinyMCE editor and premium plugins via the Cloud]({{ site.baseurl }}/editor-and-features), use the following matrix in conjunction with the optional parameters for specifying editor version and plugin version ({{ site.baseurl }}/editor-plugin-version) to ensure your editor and features are compatible.
+
+If you’re deploying [premium plugins *only* via the Cloud]({{ site.baseurl }}/features-only), you’ll need to ensure you’re either only loading plugins supported for your editor version, or that your editor is upgraded to the required release.
+
+|   | PowerPaste | Spell Checker Pro | Accessibility Checker | Mentions | Advanced Code | MoxieManager<br/>(SDK ONLY) | Link Checker | Media Embed |
+|  ------ | :------: | :------: | :------: | ------ | :------: | :------: | :------: | :------: |
+|  4.5 | Y | Y | Y | Y | Y | Y | Y | Y |
+|  4.4.3 | Y | Y | Y | Y | Y | Y | N | N |
+|  4.3.13 | Y | Y | Y | Y | Y | Y | N | N |
+|  4.2.8 | Y | N2 | N | N | N | Y | N | N |
+|  4.1.10 | Y | N | N | N | N | Y | N | N |
+|  4.0.28 | Y | N | N | N | N | Y | N | N |
+|  3.5.8 | N | N | N | N | N | Y | N | N |
+|   |  |  |  |  |  |  |  |  |
+
+
+

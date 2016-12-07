@@ -8,7 +8,7 @@ keywords: tinymce cloud script textarea apiKey
 
 ## Specifying the TinyMCE Editor Version Deployed from Cloud
 
-When deploying the [TinyMCE editor via the Cloud]({{ site.baseurl }}/editor-and-features), you’re able to specify the editor version via the provided for URL.
+When deploying the [TinyMCE editor via the Cloud]({{ site.baseurl }}/get-started-cloud/editor-and-features), you’re able to specify the editor version via the provided for URL.
 
 Our documented default for loading TinyMCE via the Cloud is:
 
@@ -83,7 +83,7 @@ This stream will deploy the latest release of TinyMCE that has undergone release
 
 ## Specifying the Version of Features/Plugins Deployed from the Cloud
 
-Whether you’re deploying both the [TinyMCE editor and premium plugins via the Cloud]({{ site.baseurl }}/editor-and-features) or deploying [only premium plugins from the Cloud]({{ site.baseurl }}/features-only), you can use URL query parameters to specify the version of each premium plugin.
+Whether you’re deploying both the [TinyMCE editor and premium plugins via the Cloud]({{ site.baseurl }}/get-started-cloud/editor-and-features) or deploying [only premium plugins from the Cloud]({{ site.baseurl }}/get-started-cloud/features-only), you can use URL query parameters to specify the version of each premium plugin.
 
 #### Powerpaste
 

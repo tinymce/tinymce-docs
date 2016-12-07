@@ -1,16 +1,16 @@
 ---
 layout: default
-title: Editor and Features Deployed from Cloud
+title: Editor and Plugins Deployed from Cloud
 description_short: Learn how to setup the TinyMCE editor via our Cloud, or migrate from the SDK.
 description: TinyMCE Cloud customers, you'll be up and running in less than 5 minutes.
 keywords: tinymce cloud script textarea apiKey
 ---
 
-TinyMCE Cloud is the easiest way to integrate TinyMCE and upgrade to our premium features.
+TinyMCE Cloud is the easiest way to integrate TinyMCE and upgrade to our premium plugins.
 
 You can start with [TinyMCE CDN]({{ site.baseurl }}/download/) completely free of charge.
 
-In order to use the advanced features of the editor, you’ll need to signup for an API key  and update the script tag used to load the editor code into your application.
+In order to use our premium plugins, you’ll need to signup for an API key and update the script tag used to load the editor code into your application.
 
 ## Integrating TinyMCE for the First Time
 
@@ -31,12 +31,12 @@ In addition to the advanced content creation solutions available in the Cloud of
 Lastly, you just need to extend your TinyMCE configuration to include any of the additional, advanced plugins (and iassociated toolbar/menu items) you’ve purchased. You will find enablement guides here:
 
 * [Powerpaste]({{ site.baseurl }}/plugins/powerpaste/)
-* [Spell Checker]({{ site.baseurl }}/plugins/spellchecker/)
+* [Spell Checker]({{ site.baseurl }}/plugins/tinymcespellchecker/)
 **Note:** `spellchecker_rpc_url` is **not** required when enabling this plugin via [TinyMCE Cloud]({{ site.baseurl }}/get-started-cloud/)
-* [Image Tools (with configured image proxy)]({{ site.baseurl }}/plugins/image/)
-**Note:** We will configure the `imagetools_cors_hosts` and `imagetools_proxy` properties for you automatically.
+* [Image Tools (with configured image proxy)]({{ site.baseurl }}/plugins/imagetools/)
+**Note:** `imagetools_cors_hosts` and `imagetools_proxy` are *not* required to be configured when enabling this plugin via [TinyMCE Cloud]({{ site.baseurl }}/get-started-cloud/)
 * [Accessibility Checker]({{ site.baseurl }}/plugins/a11ychecker/)
-* [Advanced Code]({{ site.baseurl }}/https://www.tinymce.com/docs/plugins/advcode/)
+* [Advanced Code]({{ site.baseurl }}/plugins/advcode/)
 
 ## Migrating from TinyMCE SDK to TinyMCE Cloud
 
@@ -50,12 +50,12 @@ Migrating from the SDK to the Cloud is a relatively straightforward process. Ple
 
 ### Step 2: Specify Purchased TinyMCE Plugins and Toolbar Buttons
 
-Now you just need to extend your [TinyMCE configuration]({ site.baseurl }}/configure/) to include any additional plugins (and associated toolbar/menu items) you’ve purchased. You will find enablement guides here:
+Now you just need to extend your [TinyMCE configuration]({{ site.baseurl }}/configure/) to include any additional plugins (and associated toolbar/menu items) you’ve purchased. You will find enablement guides here:
 
 * [Powerpaste]({{ site.baseurl }}/plugins/powerpaste/)
-* [Spell Checker]({{ site.baseurl }}/plugins/spellchecker/)
+* [Spell Checker]({{ site.baseurl }}/plugins/tinymcespellchecker/)
 **Note:** `spellchecker_rpc_url` is **not** required when enabling this plugin via [TinyMCE Cloud]({{ site.baseurl }}/get-started-cloud/)
-* [Image Tools (with configured image proxy)]({{ site.baseurl }}/plugins/image/)
-**Note:** We will configure the `imagetools_cors_hosts` and `imagetools_proxy` properties for you automatically.
+* [Image Tools (with configured image proxy)]({{ site.baseurl }}/plugins/imagetools/)
+**Note:** `imagetools_cors_hosts` and `imagetools_proxy` are *not* required to be configured when enabling this plugin via [TinyMCE Cloud]({{ site.baseurl }}/get-started-cloud/)
 * [Accessibility Checker]({{ site.baseurl }}/plugins/a11ychecker/)
-* [Advanced Code]({{ site.baseurl }}/https://www.tinymce.com/docs/plugins/advcode/)
+* [Advanced Code]({{ site.baseurl }}/plugins/advcode/)

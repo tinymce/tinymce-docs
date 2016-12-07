@@ -1,14 +1,14 @@
 ---
 layout: default
-title: Features Deployed from Cloud
-description_short: Learn how to setup TinyMCE features via our Cloud.
+title: Plugins Deployed from Cloud
+description_short: Learn how to setup TinyMCE Plugins via our Cloud.
 description: TinyMCE Cloud customers, you'll be up and running in less than 5 minutes.
 keywords: tinymce cloud script textarea apiKey
 ---
 
 If you’re already comfortable hosting and maintaining [TinyMCE Community edition]({{ site.baseurl }}/download/), or you’re running a web application where you have no control over the TinyMCE instance, you’re still able to load our premium TinyMCE plugins from TinyMCE Cloud.
 
-In order to use the advanced features of the editor, you’ll need to select what features you’d like to purchase and you’ll be setup with an API key for your account.
+In order to use oue premium plugins, you’ll need to select what plugins you’d like to purchase and you’ll be setup with an API key for your account.
 
 ## Step 1: Embed Your Custom Script Tag into Your Webpage
 
@@ -20,20 +20,20 @@ Within your webpage, after you’ve specified your script tag to load the TinyMC
 
 ## Step 2: Specify Purchased TinyMCE Plugins and Toolbar Buttons
 
-Now you just need to extend your [TinyMCE configuration]({ site.baseurl }}/configure/) to include any additional plugins (and associated toolbar/menu items) you’ve purchased. You will find enablement guides here:
+Now you just need to extend your [TinyMCE configuration]({{ site.baseurl }}/configure/) to include any additional plugins (and associated toolbar/menu items) you’ve purchased. You will find enablement guides here:
 
 * [Powerpaste]({{ site.baseurl }}/plugins/powerpaste/)
-* [Spell Checker]({{ site.baseurl }}/plugins/spellchecker/)
+* [Spell Checker]({{ site.baseurl }}/plugins/tinymcespellchecker/)
 **Note:** `spellchecker_rpc_url` is **not** required when enabling this plugin via [TinyMCE Cloud]({{ site.baseurl }}/get-started-cloud/)
-* [Image Tools (with configured image proxy)]({{ site.baseurl }}/plugins/image/)
+* [Image Tools (with configured image proxy)]({{ site.baseurl }}/plugins/imagetools/)
 **Note:** We will configure the `imagetools_cors_hosts` and `imagetools_proxy` properties for you automatically.
 * [Accessibility Checker]({{ site.baseurl }}/plugins/a11ychecker/)
-* [Advanced Code]({{ site.baseurl }}/https://www.tinymce.com/docs/plugins/advcode/)
+* [Advanced Code]({{ site.baseurl }}/plugins/advcode/)
 
 Here is a complete example, whereby:
 
 * The account `API key` has the value *TEST_API_KEY*.
-* The account has the [Spell Checker]({{ site.baseurl }}/plugins/spellchecker/) plugin enable.
+* The account has the [Spell Checker]({{ site.baseurl }}/plugins/tinymcespellchecker/) plugin enable.
 
 ```js
 <html>

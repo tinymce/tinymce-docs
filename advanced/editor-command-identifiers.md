@@ -92,3 +92,5 @@ Here is a list of the currently exposed editor commands. All these commands are 
 | mceInsertTable | [table]({{ site.baseurl }}/plugins/table) | Opens the insert table dialog. |
 | mceTableRowProps | [table]({{ site.baseurl }}/plugins/table) | Opens the table row properties dialog. |
 | mceTableCellProps | [table]({{ site.baseurl }}/plugins/table) | Opens the table cell properties dialog. |
+| mceInsertToc | [toc]({{ site.baseurl }}/plugins/toc) | Inserts a Table of Contents into the editor. |
+| mceUpdateToc | [toc]({{ site.baseurl }}/plugins/toc) | Updates the Table of Contents, if found in the editor. |

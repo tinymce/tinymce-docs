@@ -96,9 +96,11 @@ Here is a list of the toolbar/menu controls that the core and plugins provides. 
 | restoredraft | [restoredraft]({{ site.baseurl }}/plugins/autosave/) | Restores to the latest auto saved draft. |
 | insertfile | [moxiemanager]({{ site.baseurl }}/plugins/moxiemanager/) | Opens the MoxieManager dialog. |
 | a11ycheck | [a11ychecker]({{ site.baseurl }}/plugins/a11ychecker/) | Opens the accessibility checker dialog. |
+| toc | [toc]({{ site.baseurl }}/plugins/toc/) | Inserts a Table of Contents into the editor. |
 | quickimage | [inlite]({{ site.baseurl }}/themes/inlite/) | Inserts an image from the local machine. |
 | quicktable | [inlite]({{ site.baseurl }}/themes/inlite/) | Inserts an table 2x2. |
 | quicklink | [inlite]({{ site.baseurl }}/themes/inlite/) | Inserts an link in a quicker way. |
+
 
 ## Menu controls
 
@@ -147,3 +149,5 @@ Here is a list of the toolbar/menu controls that the core and plugins provides. 
 | column | [table]({{ site.baseurl }}/plugins/table/) | Column menu item with related controls. |
 | restoredraft | [autosave]({{ site.baseurl }}/plugins/autosave/) | Restores to the latest auto saved draft. |
 | fullpage | [fullpage]({{ site.baseurl }}/plugins/fullpage/) | Document properties for the full page. |
+| toc | [toc]({{ site.baseurl }}/plugins/toc/) | Inserts a Table of Contents into the editor. |
+

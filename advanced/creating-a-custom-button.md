@@ -70,7 +70,7 @@ editor.addButton('currentdate', {
 
 We've borrowed an icon from the above mentioned *Insert date/time* plugin, but you can use any icon class that you have currently defined in your stylesheets. If you do not have any icon classes, you can supply direct image URL via `image` option. 
 
-`image` option has priority over `icon`, so if you uncomment corresponding line above, icon will get superseded, with the calendar image from beautiful the [Fugue iconset](http://p.yusukekamiyamane.com/).
+`image` option has priority over `icon`, so if you uncomment corresponding line above, icon will get superseded, with the calendar image from the beautiful [Fugue iconset](http://p.yusukekamiyamane.com/).
 
 We've also replaced `text` with `tooltip` option, which fits the toolbar concept much better.
 

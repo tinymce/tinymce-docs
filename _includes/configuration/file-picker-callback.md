@@ -1,8 +1,8 @@
 ## file_picker_callback
 
-This hook can be used to add custom file picker to those dialogs that have it. Internally we support this in *Image*, *Media* and *Link* dialogs. The option replaces deprecated[file_browser_callback](#file_browser_callback). New callback has ability to update values of other fields in the dialog.
+This hook can be used to add custom file picker to those dialogs that have it. Internally we support this in *Image*, *Media* and *Link* dialogs. Option replaces deprecated [file_browser_callback](#file_browser_callback). New callback has ability to update values of other fields in the dialog.
 
-Once you define `file_picker_callback`, small browse button will appear along the fields of supported file types (see [file_picker_types](#file_picker_types) option). When user clicks the button, TinyMCE will automatically call your `file_picker_callback` with three arguments:
+Once you define `file_picker_callback`, small browse button will appear along the fields of supported file types (see [file_picker_types](#file_picker_types)). When user clicks the button, TinyMCE will automatically call the callback with three arguments:
 
 * **callback** - *a callback to call, once you have hold of the file; it expects new value for the field as the first argument and optionally meta information for other fields in the dialog as the second one*
 * **value** - *current value of the affected field*

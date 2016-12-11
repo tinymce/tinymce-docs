@@ -1,6 +1,6 @@
 ## file_picker_callback
 
-This hook can be used to add custom file picker to those dialogs that have it. Internally we support this in *Image*, *Media* and *Link* dialogs. Option replaces deprecated [file_browser_callback](#file_browser_callback). New callback has ability to update values of other fields in the dialog.
+This hook can be used to add custom file picker to those dialogs that have it. Internally we support this in *Image*, *Media* and *Link* dialogs. Option replaces deprecated [file_browser_callback](#file_browser_callback). New hook provides a way to update values of other fields in the dialog.
 
 Once you define `file_picker_callback`, small browse button will appear along the fields of supported file types (see [file_picker_types](#file_picker_types)). When user clicks the button, TinyMCE will automatically call the callback with three arguments:
 
@@ -11,6 +11,8 @@ Once you define `file_picker_callback`, small browse button will appear along th
 It should be noted, that we only provide a hook. It is up to you to implement specific functionality. 
 
 **Type:** `JavaScript Function`
+
+*The following example demonstrates how you can use `file_picker_callback` API, but doesn't pick any real files. Check [Basic Local File Picker]({{ site.baseurl }}/demo/file-picker) demo for a more functional example.*
 
 ##### Example
 
@@ -35,6 +37,4 @@ tinymce.init({
   }
 });
 ```
-
-You might also consider our [MoxieManager]({{ site.baseurl }}/docs/plugins/moxiemanager/) module, which can hook onto `file_picker_callback` and provide feature-rich file manager UI right in the popup. With accompanying plugins it is possible to pick files from Dropbox, Google Drive and more. It's awesome!
 

@@ -69,7 +69,7 @@ The default is `false`.
 
 When set to true Base 64 encoded images using a data URI in the copied content will not be removed after pasting.
 
-The default is `false`.
+The default is `true`.
 
 ***Note:*** *If you configure PowerPaste to allow local images you can have TinyMCE automatically upload Base64 encoded images for conversion back to a standard image as documented on the following page: https://www.tinymce.com/docs/advanced/handle-async-image-uploads/*
 

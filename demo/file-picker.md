@@ -10,5 +10,6 @@ While we demonstrate how you could add local file picker to the *Image* dialog, 
 
 *Note: The following code relies on `URL.createObjectURL()`. The level of support across modern browsers can be checked [here](http://caniuse.com/#search=createObjectURL).*
 
+{% include codepen.html id="yVqpjq" tab="js" height="950" %}
 
-{% include codepen.html id="yVqpjq" tab="js" height="930" %}
+You might also consider our [MoxieManager]({{ site.baseurl }}/docs/plugins/moxiemanager/) module, which can hook onto `file_picker_callback` and provide feature-rich file manager UI right in the popup (check a demo [here](http://www.moxiemanager.com/demos/tinymce.php)). With accompanying plugins it is possible to pick files from Dropbox, Google Drive [and much more](http://www.moxiemanager.com/documentation/index.php/Plugins).

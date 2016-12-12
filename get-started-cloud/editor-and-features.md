@@ -48,7 +48,11 @@ Migrating from the SDK to the Cloud is a relatively straightforward process. Ple
 <script src="http://cloud.tinymce.com/stable/tinymce.min.js?apiKey=your_API_key"></script>
 ```
 
-### Step 2: Specify Purchased TinyMCE Plugins and Toolbar Buttons
+### Step 2: Update Custom Plugin Paths
+
+If you have any custom created plugins (or if you've modified any of the existing plugins), in order for these plugins to continue operating with your Cloud deployment, you'll need to reference these plugins via [external_plugins]({{ site.baseurl }}/configure/integration-and-setup/#external_plugins) rather than the regular [plugins]({{ site.baseurl }}/get-started/work-with-plugins/) configuration element.
+
+### Step 3: Specify Purchased TinyMCE Plugins and Toolbar Buttons
 
 Now you just need to extend your [TinyMCE configuration]({{ site.baseurl }}/configure/) to include any additional plugins (and associated toolbar/menu items) you’ve purchased. You will find enablement guides here:
 

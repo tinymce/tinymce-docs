@@ -1,39 +1,34 @@
 ---
 layout: default
 title: Troubleshoot
-description: Debug problems with the premium spell checker.
+description: Debug problems with the Enterprise server-side components.
 keywords: enterprise tinymcespellchecker spell check checker pro pricing
 ---
 
+## General troubleshooting advice
+
+1. Verify that that your JavaScript configuration is correct for the relevant TinyMCE plugin.
+2. Ensure that your firewall has the appropriate ports and rules configured correctly. Be sure that the server the service is running on is accessible from the browser via the port specified in the server configuration
+3. Check the logs of your Java server for information. When making changes to the configuration you will need to restart the application server each time a change is made for that change to take effect. Refresh your browser window and then try the service again.
+
+## Debug server configuration
+
+If a service does not appear to be working, this is generally caused by one of the following reasons. This guide will walk you through the debugging process to identify the specific problem and how to remedy the issue.
+
+1. The `application.conf` file is incorrect. Please go back and follow the steps listed in the [installation guide]({{ site.baseurl }}/enterprise/server/#step3createaconfigurationfile). This is the most common problem - often the origins are specified without the port numbers and this can cause things to fail, eg: use `http://localhost:8080` instead of `http://localhost`. After making changes to the `application.conf` file, please restart your Java web server (e.g. Jetty or Tomcat).
+2. The `application.conf` file is correct, but something is wrong with one of the services. See the section below to debug the services.
+3. The `application.conf` file is correct, and the services are working, but the server-side component URLs that the editor uses are not quite right. Refer to the [Spell Checker Pro]({{ site.baseurl }}/plugins/tinymcespellchecker/) and [Image Tools]({{ site.baseurl }}/plugins/imagetools/) plugin pages for help.
+4. The browser is sending a different origin than expected (and configured in `application.conf`). Refer to step 6 of [Using browser tooling to investigate services issues]({{ site.baseurl }}/enterprise/server/troubleshoot/#usingbrowsertoolingtoinvestigateservicesissues)
 
 ## Browser-specific issues
 
 ### Internet Explorer specific troubleshooting tips
 
-If the editor is reporting that the service cannot be found and tracing the network traffic reveals that no request is made at all, check that the server is **not** listed in the "Trusted Sites" section of Internet Explorer's security options.  If it is, remove it and try again.
+If the editor is reporting that the service cannot be found and tracing the network traffic reveals that no request is made at all, check that the server is **not** listed in the `Trusted Sites` section of Internet Explorer's security options.  If it is, remove it and try again.
 
 ### Chrome specific tips
 
-If the server is not running on a standard HTTP or HTTPS port (80 or 443) then Chrome will include the port in the origin header that is sent to the server. Other browsers do not do this. This is why when specifying the "allowed-origins" config, you should use both the hostname by itself and the hostname and port in the configuration. See Entering Origins for more details
-
-
-## Debug server configuration
-
-If spell checking does not appear to be working, this is generally caused by the following reasons. This guide will walk you through the debugging process to identify the specific problem and how to remedy the issue.
-
-1. The application.conf file is incorrect. Please go back and follow the steps listed in the installation guide. This is the most common problem - often the origins are specified without the port numbers and this can cause things to fail, eg: use `http://localhost:8080` instead of `http://localhost`. After making changes to the application.conf file, please restart your Java web server (e.g. Jetty or Tomcat).
-2. The application.conf file is correct, but something is wrong with one of the services. See the section below to debug the services.
-3. The application.conf file is correct, and the services are working, but the URL's that editor uses are not quite right. Refer to the Spell checking Client-Side TinyMCE Plugin page for help.
-4. All of the above are correct, but the browser sends back a different origin. See step 6. of  Using Browser Tooling to Investigate Services Issues  and add the origin value to the list of origins. Restart Tomcat and then refresh the editor page in a browser and things should work.
-
-### Check/debug the server configuration
-
-To test the services, we will start with the following:
-
-1. We will use Tomcat 7 installed at /opt/tomcat/ and running on port 8080, and this is our 'application.conf' file. We have made a folder called 'images' in the webapps directory of the tomcat install i.e. /opt/tomcat/webapps/images/. Some of the commands below that require a 'terminal' window to be used.
-2. If you are on a Linux or Mac environment use a shell of your choice and make sure the 'curl' package is installed.
-3. If you are on a Windows environment follow the page Installing curl in Windows and then open a 'cmd' prompt and run the commands from there.
-
+If the server is not running on a standard HTTP or HTTPS port (80 or 443) then Chrome will include the port in the Origin header that is sent to the server. Other browsers do not do this. This is why when specifying the `allowed-origins` config, you should use both the hostname by itself and the hostname and port in the configuration. See [Additional Information Around Entering Origins]({{ site.baseurl }}/enterprise/server/#additionalinformationaroundenteringorigins) for more details.
 
 ## Using browser tooling to investigate services issues
 
@@ -54,35 +49,16 @@ To test the services, we will start with the following:
 
 ![Using browser tools to investigate services issues]({{ site.baseurl }}/images/spell-checking-browser-tools.png)
 
-> The value of the origin header sent by the must match the origin specified in the application.conf server configuration. If it does not match, you must make the server configuration match the browser
+> **Note:** The value of the Origin header sent by the must match the origin specified in the `application.conf` server configuration. If it does not match, you must make the server configuration match the browser.
 
 ## Windows Server specific issues
 
-Sometimes the 'Origin' header is never sent to the services, which results in the editor and services not working as intended. Follow step 6 from above and determine what the 'Origin' is - if you do not see an 'Origin' header at all, please do the following:
+Sometimes the Origin header is never sent to the services, which results in the editor and services not working as intended. Refer to step 6 of [Using browser tooling to investigate services issues]({{ site.baseurl }}/enterprise/server/troubleshoot/#usingbrowsertoolingtoinvestigateservicesissues) and determine what the origin is - if you do not see an Origin header at all, please do the following:
 
-1. Try accessing the editor web page using your machine's fully qualified domain name (FQDN) rather than 'localhost'; and keep the network tools open so you can see if the 'Origin' header is sent back to the services.
-	So open a browser window and try (replace the path to match your setup): `http://myhost:myport/tinymce/index.html`
-2. If you now see an 'Origin' header being sent across, please alter your application.conf and replace all instances of 'localhost' with the domain name of your machine
-3. Restart the Tomcat / Jetty service
-4. Reload the browser page and all should work well
-
-If you are still experiencing problems, please contact [Ephox Support](http://support.ephox.com).
-
-
-## General troubleshooting advice
-
-### Step 1
-
-Verify that the `spellchecker_rpc_url` value is correct in your TinyMCE client JavaScript configuration.
-
-### Step 2
-
-Ensure that your firewall has the appropriate ports and rules configured correctly. Be sure that the server the service is running on is accessible from the browser via the port specified in the server configuration
-
-### Step 3
-
-Check the logs of the appropriate Java server for information. When making changes to the configuration you will need to restart the application server each time a change is made for that change to take effect. Refresh your browser window and then try the service again.
-
+1. Try accessing the editor web page using your machine's fully qualified domain name (FQDN) and keep the network tools open so you can see if the Origin header is sent back to the services. For example, if you have been testing on port 8080 on your local machine and the editor is instantiated on a page with path `tinymce/index.html`, navigate to `http://myserver.example.com:8080/tinymce/index.html` rather than `http://localhost:8080/tinymce/index.html`.
+2. If you now see an Origin header being sent across, alter your `application.conf` and replace all instances of 'localhost' with the domain name of your machine.
+3. Restart the Tomcat / Jetty service.
+4. Reload the browser page and all should work well.
 
 
 ## Out of memory errors
@@ -175,3 +151,6 @@ Once downloaded:
 4. Once in the folder enter 'curl --version' (without quotes) and ensure you get a valid version
 
 	![Curl on Windows step 4]({{ site.baseurl }}/images/spell-checking-curl-windows-4.png)
+
+## Need more help?
+If you are still experiencing problems, please contact [Ephox Support](http://support.ephox.com).

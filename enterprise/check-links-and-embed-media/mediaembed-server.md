@@ -57,7 +57,7 @@ The service can be configured to hit a specific oembed endpoint when media from 
 - `endpoint` - the URL of the oembed endpoint that should be consulted when inserting media with a URL that matches an entry in `schemes`.
 - `schemes` - a list of patterns. `*` is the only special character and matches any sequence of characters. For example, `http://www.example.com/*` matches `http://www.example.com/1` and `http://www.example.com/1/1` and any other URL that begins with `http://www.example.com`. Similarly, `http://www.example.com/*/index.html` matches `http://www.example.com/1/index.html` and `http://www.example.com/1/1/index.html` and any other URL that begins with `http://www.exampe.com/` and ends with `/index.html`.
 
-**Example note:** This configuration is provided as an example only. The `mediaembed` service converts an oembed response into an embeddable snippet of code. The content and quality of the snippet is dependent on the oembed response.
+**Example note:** This configuration is provided as an example only. The *mediaembed* service converts an oembed response into an embeddable snippet of code. The content and quality of the snippet is dependent on the oembed response.
 
 Example:
 
@@ -68,7 +68,7 @@ ephox {
 
       # instagram
       {
-        endpoint = "http://api.instagram.com/oembed"
+        endpoint = "https://api.instagram.com/oembed/"
         schemes = [
           "http://instagram.com/p/*",
           "http://instagr.am/p/*",
@@ -405,4 +405,4 @@ ephox {
 
 If neither Iframely or an oembed endpoint is configured for a given URL, a summary card will be created.
 
-A summary card is an embeddable snippet of code which is generated based on what the `mediaembed` service can work out about the content at the URL. The quality of a summary card is greatly enhanced by the presence of [OpenGraph](http://ogp.me/) metadata in the content.
+A summary card is an embeddable snippet of code which is generated based on what the *mediaembed* service can work out about the content at the URL. The quality of a summary card is greatly enhanced by the presence of [OpenGraph](http://ogp.me/) metadata in the content.

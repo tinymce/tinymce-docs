@@ -65,6 +65,8 @@ Updates to these streams will be automatic, providing you and your users with th
 
 This stream will deploy the absolute latest released TinyMCE version seen in the [TinyMCE changelog]({{ site.baseurl }}/changelog/).
 
+The current version of TinyMCE available through the *dev* stream can be found at [http://cloud.tinymce.com/dev/version.txt](http://cloud.tinymce.com/dev/version.txt).
+
 ##### Example
 
 ```js
@@ -74,6 +76,8 @@ This stream will deploy the absolute latest released TinyMCE version seen in the
 #### "stable" Release Stream
 
 This stream will deploy the latest release of TinyMCE that has undergone release from the Ephox quality assurance testing cycle.
+
+The current version of TinyMCE available through the *stable* stream can be found at [http://cloud.tinymce.com/stable/version.txt](http://cloud.tinymce.com/stable/version.txt).
 
 ##### Example
 

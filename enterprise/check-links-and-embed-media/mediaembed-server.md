@@ -1,19 +1,17 @@
 ---
 layout: default
 title: Configure Media Embed Server
-description: Configure the link checking and media embedding service.
+description: Instructions for getting the Media Embed server configured.
 keywords: enterprise pricing video youtube vimeo mp3 mp4 mov movie clip film link linkchecking linkchecker mediaembed media
 ---
 
-Once you've got the [server-side component]({{ site.baseurl }}/enterprise/server/) installed, *mediaembed* requires some additional configuration in your `application.conf` file. Don't forget to restart the Java application server after updating the configuration.
+Once you've got the [server-side component]({{ site.baseurl }}/enterprise/server/) installed, the Media Embed server requires some additional configuration in your `application.conf` file. Don't forget to restart the Java application server after updating the configuration.
 
-You may need to restart the Java application server for the new configuration to take effect.
-
-The *mediaembed* service allows you to choose between using your own [Iframely](https://iframely.com/) account, configuring custom oembed endpoints or using a combination of both.
+The Media Embed service allows you to choose between using your own [Iframely](https://iframely.com/) account, configuring custom [oEmbed](http://oembed.com/) endpoints or using a combination of both.
 
 When you insert media into your content, the service will do the following (in order):
 
-1. Check if the URL matches any custom oembed configuration. If that fails,
+1. Check if the URL matches any custom oEmbed configuration. If that fails,
 2. If Iframely is configured, query the Iframely API. If Iframely is not configured,
 3. Create a summary card.
 
@@ -52,12 +50,12 @@ ephox {
 ````
 
 ## Configure a custom endpoint
-The service can be configured to hit a specific oembed endpoint when media from a URL matching a provided pattern is inserted into your content.
+The service can be configured to hit a specific oEmbed endpoint when media from a URL matching a provided pattern is inserted into your content.
 
-- `endpoint` - the URL of the oembed endpoint that should be consulted when inserting media with a URL that matches an entry in `schemes`.
-- `schemes` - a list of patterns. `*` is the only special character and matches any sequence of characters. For example, `http://www.example.com/*` matches `http://www.example.com/1` and `http://www.example.com/1/1` and any other URL that begins with `http://www.example.com`. Similarly, `http://www.example.com/*/index.html` matches `http://www.example.com/1/index.html` and `http://www.example.com/1/1/index.html` and any other URL that begins with `http://www.exampe.com/` and ends with `/index.html`.
+- `endpoint` - the URL of the oEmbed endpoint that should be consulted when inserting media with a URL that matches an entry in `schemes`.
+- `schemes` - a list of schemes as defined in [Section 2.1. Configuration](http://oembed.com/#section2.1) of the oEmbed specification. Note that HTTP and HTTPS are two separate schemes.
 
-**Example note:** This configuration is provided as an example only. The *mediaembed* service converts an oembed response into an embeddable snippet of code. The content and quality of the snippet is dependent on the oembed response.
+**Example note:** This configuration is provided as an example only. The Media Embed service converts an oEmbed response into an embeddable snippet of code. The content and quality of the snippet is dependent on the oEmbed response.
 
 Example:
 
@@ -83,7 +81,7 @@ ephox {
       # http://oembed.com/ example
       # flickr
       {
-        endpoint = "http://www.flickr.com/services/oembed.json/"
+        endpoint = "https://www.flickr.com/services/oembed.json/"
         schemes = [
           "http://www.flickr.com/photos/*",
           "https://www.flickr.com/photos/*",
@@ -277,7 +275,7 @@ ephox {
       },
       # Wordpress
       {
-        endpoint = "http://public-api.wordpress.com/oembed/1.0/?for=ephox"
+        endpoint = "https://public-api.wordpress.com/oembed/1.0/?for=ephox"
         schemes = [
           "http://*.wordpress.com/*",
           "https://*.wordpress.com/*"
@@ -375,7 +373,7 @@ ephox {
 ````
 
 ## Combining Iframely and custom endpoints
-It is also possible to configure Iframely with custom oembed endpoints. For example, you may want to use Iframely to embed media from the Internet and an internal oembed server to embed media from an Intranet.
+It is also possible to configure Iframely with custom oEmbed endpoints. For example, you may want to use Iframely to embed media from the Internet and an internal oEmbed server to embed media from an Intranet.
 
 
 Example (replace `xxx` with your Iframely API key):
@@ -403,6 +401,6 @@ ephox {
 
 ## Summary cards
 
-If neither Iframely or an oembed endpoint is configured for a given URL, a summary card will be created.
+If neither Iframely or an oEmbed endpoint is configured for a given URL, a summary card will be created.
 
-A summary card is an embeddable snippet of code which is generated based on what the *mediaembed* service can work out about the content at the URL. The quality of a summary card is greatly enhanced by the presence of [OpenGraph](http://ogp.me/) metadata in the content.
+A summary card is an embeddable snippet of code which is generated based on what the Media Embed service can work out about the content at the URL. The quality of a summary card is greatly enhanced by the presence of [OpenGraph](http://ogp.me/) metadata in the content.

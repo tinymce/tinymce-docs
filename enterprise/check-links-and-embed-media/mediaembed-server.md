@@ -403,4 +403,4 @@ ephox {
 
 If neither Iframely or an oEmbed endpoint is configured for a given URL, a summary card will be created.
 
-A summary card is an embeddable snippet of code which is generated based on what the Media Embed service can work out about the content at the URL. The quality of a summary card is greatly enhanced by the presence of [OpenGraph](http://ogp.me/) metadata in the content.
+A summary card is an embeddable snippet of code which is generated based on what the Media Embed service can work out about the content at the URL. See [Integrating with the Media Embed Server]({{ site.baseurl }}/enterprise/check-links-and-embed-media/mediaembed-server-integration/) for further details.

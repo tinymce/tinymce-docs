@@ -1,13 +1,13 @@
 ---
 layout: default
 title: Configure Linkchecker Server
-description: Configure the linkchecker server side component.
+description: Instructions for getting the Linkchecker service configured
 keywords: enterprise pricing video youtube vimeo mp3 mp4 mov movie clip film link linkchecking linkchecker mediaembed media
 ---
 
-Once you've got the [server-side component]({{ site.baseurl }}/enterprise/server/) installed, the *linkchecker* requires some additional configuration in your `application.conf` file. Don't forget to restart the Java application server after updating the configuration.
+Once you've got the [server-side component]({{ site.baseurl }}/enterprise/server/) installed, the Linkchecker service requires some additional configuration in your `application.conf` file. Don't forget to restart the Java application server after updating the configuration.
 
-This element configures the linkchecker service's built-in cache. When a hyperlink is checked and confirmed valid, the result is cached to save unnecessary network traffic in the future.
+This element configures the Linkchecker service's built-in cache. When a hyperlink is checked and confirmed valid, the result is cached to save unnecessary network traffic in the future.
 
 Default settings are automatically configured, meaning these settings are optional.
 

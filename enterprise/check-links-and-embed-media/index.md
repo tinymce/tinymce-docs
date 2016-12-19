@@ -10,3 +10,5 @@ The [Linkchecker plugin]({{ site.baseurl }}/plugins/linkchecker/) and [Media Emb
 These plugins require an additional [server-side component]({{ site.baseurl }}/enterprise/server/) to be installed and configured.
 
 You'll also need to do some [Linkchecker server configuration]({{ site.baseurl }}/enterprise/check-links-and-embed-media/linkchecker-server/) and [Media Embed server configuration]({{ site.baseurl }}/enterprise/check-links-and-embed-media/mediaembed-server/).
+
+> **Important note:** The Linkchecker and Media Embed server currently do not support integration with IBM WebSphere Application Server.

@@ -28,7 +28,7 @@ Now you just need to extend your [TinyMCE configuration]({{ site.baseurl }}/conf
 * [Image Tools (with configured image proxy)]({{ site.baseurl }}/plugins/imagetools/)
 **Note:** We will configure the `imagetools_cors_hosts` and `imagetools_proxy` properties for you automatically.
 * [Accessibility Checker]({{ site.baseurl }}/plugins/a11ychecker/)
-* [Advanced Code]({{ site.baseurl }}/plugins/advcode/)
+* [Advanced Code Editor]({{ site.baseurl }}/plugins/advcode/)
 
 Here is a complete example, whereby:
 

@@ -1,12 +1,12 @@
 ---
 layout: default
-title: Specifying Editor and Plugin Versions
+title: Specify Editor & Plugin Versions
 description_short: Specifying Editor and Plugin Versions for Cloud Deployments
 description: Specifying Editor and Plugin Versions for Cloud Deployments
 keywords: tinymce cloud script textarea apiKey
 ---
 
-## Specifying the TinyMCE Editor Version Deployed from Cloud
+## Specifying the TinyMCE editor version deployed from Cloud
 
 When deploying the [TinyMCE editor via the Cloud]({{ site.baseurl }}/get-started-cloud/editor-and-features), you’re able to specify the editor version via the provided for URL.
 
@@ -22,7 +22,7 @@ This value can be customised in order to load the version of TinyMCE that best s
 
 This value can be replaced with any of the following supported versions of TinyMCE: [http://cloud.tinymce.com/versions/tiny](http://cloud.tinymce.com/versions/tiny).
 
-### Selecting Specific Version Numbers
+### Selecting specific version numbers
 
 You can specify a *Major* version number, a *Major.Minor* version number or a *Major.Minor.Patch* version number. If the Minor or Patch versions numbers are not present, it will default to the latest Minor/pPatch version released.
 
@@ -36,7 +36,7 @@ The following would load TinyMCE *4.latest.latest*:
 ```
 
 ##### Example
-Major.Minor version number (e.g. "4.3"). 
+Major.Minor version number (e.g. "4.3").
 
 The following would load TinyMCE *4.3.latest*:
 
@@ -45,7 +45,7 @@ The following would load TinyMCE *4.3.latest*:
 ```
 
 ##### Example
-Major.Minor.Patch version number (e.g. "4.3.2"). 
+Major.Minor.Patch version number (e.g. "4.3.2").
 
 The following would load TinyMCE *4.3.2*:
 
@@ -55,13 +55,13 @@ The following would load TinyMCE *4.3.2*:
 
 If you enter a version that doesn’t exist, you will get a HTTP 404 response.
 
-### "dev" and "stable" Releases
+### "dev" and "stable" releases
 
 Rather than specifying a specific TinyMCE version to load from the Cloud, you can choose to select from our automatically updated *"dev"* and *"stable"* release streams.
 
 Updates to these streams will be automatic, providing you and your users with the latest TinyMCE version related to the criteria below as it’s released from Ephox.
 
-#### "dev" Release Stream
+#### "dev" release stream
 
 This stream will deploy the absolute latest released TinyMCE version seen in the [TinyMCE changelog]({{ site.baseurl }}/changelog/).
 
@@ -73,7 +73,7 @@ The current version of TinyMCE available through the *dev* stream can be found a
 <script src="http://cloud.tinymce.com/dev/tinymce.min.js?apiKey=your_API_key"></script>
 ```
 
-#### "stable" Release Stream
+#### "stable" release stream
 
 This stream will deploy the latest release of TinyMCE that has undergone release from the Ephox quality assurance testing cycle.
 
@@ -85,11 +85,11 @@ The current version of TinyMCE available through the *stable* stream can be foun
 <script src="http://cloud.tinymce.com/stable/tinymce.min.js?apiKey=your_API_key"></script>
 ```
 
-## Specifying the Version of Features/Plugins Deployed from the Cloud
+## Specifying the version of features/plugins deployed from the Cloud
 
 Whether you’re deploying both the [TinyMCE editor and premium plugins via the Cloud]({{ site.baseurl }}/get-started-cloud/editor-and-features) or deploying [only premium plugins from the Cloud]({{ site.baseurl }}/get-started-cloud/features-only), you can use URL query parameters to specify the version of each premium plugin.
 
-#### Powerpaste
+#### PowerPaste
 
 * [Developer documentation]({{ site.baseurl }}/plugins/powerpaste)
 * [Supported versions](http://plugins.tinymce.com/versions/powerpaste)
@@ -100,7 +100,7 @@ Whether you’re deploying both the [TinyMCE editor and premium plugins via the 
 <script src="http://cloud.tinymce.com/stable/plugins.min.js?apiKey=your_API_key&powerpaste=2.1.8"></script>
 ```
 
-#### Spell Checking
+#### Spell Checker Pro
 
 * [Developer documentation]({{ site.baseurl }}/plugins/tinymcespellchecker)
 * [Supported versions](http://plugins.tinymce.com/versions/tinymcespellchecker)
@@ -111,18 +111,18 @@ Whether you’re deploying both the [TinyMCE editor and premium plugins via the 
 <script src="http://cloud.tinymce.com/stable/plugins.min.js?apiKey=your_API_key&tinymcespellchecker=0.9.6"></script>
 ```
 
-#### Accessibility Checking
+#### Accessibility Checker
 
 * [Developer documentation]({{ site.baseurl }}/plugins/a11ychecker)
 * [Supported versions](http://plugins.tinymce.com/versions/a11ychecker)
 
 ##### Example
 
-```js 
+```js
 <script src="http://cloud.tinymce.com/stable/plugins.min.js?apiKey=your_API_key&a11ychecker=1.0.2"></script>
 ```
 
-#### Advanced Code
+#### Advanced Code Editor
 
 * [Developer documentation]({{ site.baseurl }}/plugins/advcode/)
 * [Supported versions](http://plugins.tinymce.com/versions/advcode)
@@ -133,13 +133,13 @@ Whether you’re deploying both the [TinyMCE editor and premium plugins via the 
 <script src="http://cloud.tinymce.com/stable/plugins.min.js?apiKey=your_API_key&advcode=1.0.2"></script>
 ```
 
-## Example (Featuring Editor and Plugin Versions Specified)
+## Example (featuring declared editor and plugin versions)
 
 The following example would load:
 
 * TinyMCE 4.5.0
-* Powerpaste version 2.1.8
-* Advanced Code 1.0.2
+* PowerPaste version 2.1.8
+* Advanced Code Editor 1.0.2
 
 ```js
 <html>

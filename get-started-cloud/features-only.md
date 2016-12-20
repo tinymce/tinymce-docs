@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Plugins Deployed from Cloud
+title: Cloud Deployment of Plugins Only
 description_short: Learn how to setup TinyMCE Plugins via our Cloud.
 description: TinyMCE Cloud customers, you'll be up and running in less than 5 minutes.
 keywords: tinymce cloud script textarea apiKey
@@ -10,7 +10,7 @@ If you’re already comfortable hosting and maintaining [TinyMCE Community editi
 
 In order to use oue premium plugins, you’ll need to select what plugins you’d like to purchase and you’ll be setup with an API key for your account.
 
-## Step 1: Embed Your Custom Script Tag into Your Webpage
+## Step 1: Embed your custom script tag into your webpage
 
 Within your webpage, after you’ve specified your script tag to load the TinyMCE editor code, you’ll need to then add the following new script:
 
@@ -18,7 +18,7 @@ Within your webpage, after you’ve specified your script tag to load the TinyMC
 <script src="http://cloud.tinymce.com/stable/plugins.min.js?apiKey=your_API_key"></script>
 ```
 
-## Step 2: Specify Purchased TinyMCE Plugins and Toolbar Buttons
+## Step 2: Specify purchased TinyMCE plugins and toolbar buttons
 
 Now you just need to extend your [TinyMCE configuration]({{ site.baseurl }}/configure/) to include any additional plugins (and associated toolbar/menu items) you’ve purchased. You will find enablement guides here:
 
@@ -28,7 +28,7 @@ Now you just need to extend your [TinyMCE configuration]({{ site.baseurl }}/conf
 * [Image Tools (with configured image proxy)]({{ site.baseurl }}/plugins/imagetools/)
 **Note:** We will configure the `imagetools_cors_hosts` and `imagetools_proxy` properties for you automatically.
 * [Accessibility Checker]({{ site.baseurl }}/plugins/a11ychecker/)
-* [Advanced Code]({{ site.baseurl }}/plugins/advcode/)
+* [Advanced Code Editor]({{ site.baseurl }}/plugins/advcode/)
 
 Here is a complete example, whereby:
 
@@ -56,4 +56,3 @@ Here is a complete example, whereby:
    </body>
 <html>
 ```
-

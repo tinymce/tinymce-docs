@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Plugin and Editor Version Compatibility
+title: Version Compatibility Reference
 description_short: Matrix of compatibility between TinyMCE editor versions and premium plugins.
 description: Premium plugins compatibility with TinyMCE editor versions.
 keywords: tinymce cloud script textarea apiKey
@@ -24,4 +24,3 @@ If you’re deploying [premium plugins *only* via the Cloud]({{ site.baseurl }}/
 |   |  |  |  |  |  |  |  |  |
 
 *N1* - For this combination of TinyMCE and Spellchecking, the [spellchecker_dialog mode]({{ site.baseurl }}/plugins/tinymcespellchecker/#spellchecker_dialog) is unavailable.
-

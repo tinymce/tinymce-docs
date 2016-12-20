@@ -52,6 +52,8 @@ The TinyMCE Enterprise Spellchecking plugin activates automatically when users t
 ### `spellchecker_rpc_url`
 This setting enables you to specify the URL to be used for the server side ephox-spelling service. Check the [server-side component installation guide]({{ site.baseurl }}/enterprise/server/) for details on how to setup your own spellchecker server.
 
+**Note:** `spellchecker_rpc_url` is **not** required when enabling this plugin via [TinyMCE Cloud]({{ site.baseurl }}/get-started-cloud/)
+
 ### `spellchecker_languages`
 This optional setting allows you to specify the languages that are available to the user, provided as a comma delimited string. The default value for this setting is: 'US English=en,UK English=en_GB,Danish=da,Dutch=nl,Finnish=fi,French=fr,German=de,Italian=it,Norwegian=nb,Brazilian Portuguese=pt_BR,Iberian Portuguese=pt_PT,Spanish=es,Swedish=sv'
 

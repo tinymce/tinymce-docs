@@ -13,17 +13,17 @@ There is however one thing you might want to know if you plan on using the CDN, 
 
 ### Versioning
 
-TinyMCE uses [semantic versioning](http://semver.org/), with the exception that we are a little bit more reckless and might sometimes do small breaking changes in minor versions. You can decide what version number you want to lock your CDN to by changing the CDN URL.
+TinyMCE uses [semantic versioning](http://semver.org/), and by default the CDN uses the latest major version **and** all minor and patch versions. If you're not comfortable with this, you can decide which version you want to lock your CDN to by changing the CDN URL.
 
-Using the script tag below will serve you the latest minor and patch versions of the major version 4.
+The script tag below will serve the latest minor and patch versions of the major version 4.
 
 ```html
 <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
 ```
 
-This is good because you will automatically get all minor **and** patch releases directly after they have been released, but might also be a problem if you are not prepared to go in and fix small breaking changes on the rare occasion that they are included in minor versions.
+This is good because you will automatically get all minor **and** patch updates directly after they're released. But, this could be a problem if you are not prepared to fix small breaking changes on the (very) rare occasion they are included in minor versions.
 
-For stability you can use the URL like in the script tag below which will instead lock the CDN at the minor 4.5 version and only serve patch releases, which will not contain any breaking changes.
+For stability you can use the URL as shown in the script tag below. In this example, the CDN will be locked at the minor 4.5 version and will only serve patch releases, which will not contain breaking changes.
 
 ```html
 <script src="//cdn.tinymce.com/4.5/tinymce.min.js"></script>

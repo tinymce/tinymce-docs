@@ -140,3 +140,7 @@ Things worth noting are
 ### Wrapping up
 
 This was just a simple run-through to show how to get started but hopefully it has inspired you to start using TinyMCE in your future Angular2 projects. Have fun!
+
+#### A note about integrations
+
+> We are pleased to provide integrations/code guidance to help you build great products with TinyMCE. If you have queries about this integration, please join the [TinyMCE Community](https://community.tinymce.com).

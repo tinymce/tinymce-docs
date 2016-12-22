@@ -8,4 +8,6 @@ keywords: integration integrate knockout knockoutjs
 
 Michael Papworth has developed a Knockout binding for TinyMCE. Check out his [tinymce-knockout-binding project](https://github.com/michaelpapworth/tinymce-knockout-binding) on Github.
 
-> This document is a work in progress. Click the contribute button (in the blue area above) to improve this page.
+#### A note about integrations
+
+> We are pleased to reference third-party integrations/code to help you build great products with TinyMCE. If you have queries about this integration, please contact the developer directly.

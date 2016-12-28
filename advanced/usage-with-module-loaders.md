@@ -87,3 +87,19 @@ require.context(
 What this does is more or less the same thing as the command line stuff above - it copies the skins directory from `node_modules/tinymce` to your output directory as defined in your Webpack configuration. This is handy because you can easily move the output directory of your build without having to manually copy over the skins folder - webpack will take care of it for you.
 
 Unfortunately we haven't found any equivalently easy-to-use way to handle this for Browserify builds, but please use the "Contribute to this page"-link at the top of this page and make a pull request if you have any ideas.
+
+### Minification with UglifyJS2
+
+[UglifyJS2](https://github.com/mishoo/UglifyJS2), one of the most popular JS minification tools, will corrupt TinyMCE unless `ascii-only` is set.
+
+This can happen when it is used directly or through module bundler. In [Webpack](https://webpack.github.io/), `-p` CLI option cannot be used to bundle TinyMCE and instead you'll need to configure minification explicitly:
+```javascript
+plugins: [
+  new webpack.optimize.UglifyJsPlugin({
+      /*...*/
+      output: {
+        "ascii_only": true
+      }
+  })
+]
+```

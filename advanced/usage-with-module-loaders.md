@@ -93,6 +93,7 @@ Unfortunately we haven't found any equivalently easy-to-use way to handle this f
 [UglifyJS2](https://github.com/mishoo/UglifyJS2), one of the most popular JS minification tools, will corrupt TinyMCE unless `ascii-only` is set.
 
 This can happen when it is used directly or through module bundler. In [Webpack](https://webpack.github.io/), `-p` CLI option cannot be used to bundle TinyMCE and instead you'll need to configure minification explicitly:
+
 ```javascript
 plugins: [
   new webpack.optimize.UglifyJsPlugin({

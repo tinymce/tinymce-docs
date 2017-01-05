@@ -9,7 +9,7 @@ keywords: integration integrate wordpress advanced
 
 ## Default Visual Editor in Wordpress
 
-A slimmed down version of TinyMCE is the default "Visual Editor" in WordPress.
+A slimmed down version of TinyMCE is the default "Visual Editor" in WordPress. If you want to use a version of TinyMCE closer to the full-featured SDK, TinyMCE Advanced is a great option.
 
 ## TinyMCE Advanced
 
@@ -24,4 +24,6 @@ A slimmed down version of TinyMCE is the default "Visual Editor" in WordPress.
 
 With this plugin you will also be able to enable the TinyMCE menu. It is a convenient way to access a lot of features that are not used frequently.
 
-> This document is a work in progress. Click the contribute button (in the blue area above) to improve this page.
+#### A note about integrations
+
+> We are pleased to reference third-party integrations/code to help you build great products with TinyMCE. If you have queries about this integration, please contact the developer directly.

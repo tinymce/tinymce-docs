@@ -1,8 +1,8 @@
 ---
 layout: default
 title: Specify Editor & Plugin Versions
-description_short: Specifying Editor and Plugin Versions for Cloud Deployments
-description: Specifying Editor and Plugin Versions for Cloud Deployments
+description_short: Specifying editor and plugin versions for Cloud deployments.
+description: Specifying editor and plugin versions for Cloud deployments.
 keywords: tinymce cloud script textarea apiKey
 ---
 

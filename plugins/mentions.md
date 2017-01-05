@@ -61,7 +61,7 @@ tinymce.init({
 
 ### `mentions_menu_complete`
 
-This option overrides the default logic for inserting the mention into the editor. The callback should return an editor created using the editor's document.
+This option overrides the default logic for inserting the mention into the editor. The callback should return an element created using the editor's document.
 
 **Type:** `function`
 
@@ -85,7 +85,7 @@ tinymce.init({
 
 ### `mentions_menu_hover`
 
-This option enables you to provide an element to present next to the menu item being hovered. This lets you do custom UI:s for presenting user information.
+This option enables you to provide an element to present next to the menu item being hovered. This lets you do custom UIs for presenting user information.
 
 **Type:** `function`
 
@@ -176,7 +176,7 @@ You can retrieve the inserted users by calling `getUsers` on the plugin instance
 ##### Example
 
 ```js
-var users = tinymce.activeEditor.plugins.metions.getUsers();
+var users = tinymce.activeEditor.plugins.mentions.getUsers();
 console.log(users);
 ```
 

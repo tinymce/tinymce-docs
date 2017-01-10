@@ -12,7 +12,7 @@ If you’re deploying [both the TinyMCE editor and premium plugins via the Cloud
 
 If you’re deploying [premium plugins *only* via the Cloud]({{ site.baseurl }}/get-started-cloud/features-only), you’ll need to ensure you’re either only loading plugins supported for your editor version, or that your editor is upgraded to the required release.
 
-|   | PowerPaste | Spell Checker Pro | Accessibility Checker | Mentions | Advanced Code Editor | MoxieManager<br/>(SDK ONLY) | Link Checker | Enhanced Media Embed |
+|   | [Powerpaste]({{ site.baseurl }}/plugins/powerpaste/) | [Spell Checker]({{ site.baseurl }}/plugins/tinymcespellchecker/) | [Accessibility Checker]({{ site.baseurl }}/plugins/a11ychecker/) | Mentions | [Advanced Code Editor]({{ site.baseurl }}/plugins/advcode/) | MoxieManager<br/>(SDK ONLY) | [Enhanced Media Embed]({{ site.baseurl }}/plugins/mediaembed/) | [Link Checker]({{ site.baseurl }}/plugins/linkchecker/) |
 |  ------ | :------: | :------: | :------: | ------ | :------: | :------: | :------: | :------: |
 |  4.5.2 | Y | Y | Y | Y | Y | Y | Y | Y |
 |  4.4.3 | Y | Y | Y | Y | Y | Y | N | N |

@@ -8,7 +8,7 @@ keywords: tinymce cloud script textarea apiKey
 
 TinyMCE Cloud is the easiest way to integrate TinyMCE and upgrade to our premium plugins.
 
-You can start with [TinyMCE CDN]({{ site.baseurl }}/download/) completely free of charge.
+You can start with [TinyMCE CDN](https://www.tinymce.com/download/) completely free of charge.
 
 In order to use our premium plugins, you’ll need to signup for an API key and update the script tag used to load the editor code into your application.
 
@@ -44,7 +44,7 @@ Lastly, you just need to extend your TinyMCE configuration to include any of the
 
 ### Step 1: Replace existing reference to tinymce.min.js
 
-Migrating from the SDK to the Cloud is a relatively straightforward process. Please remove your existing script tag that loads TinyMCE’s JavaScript (typically a reference to tinymce.min.js either hosted in your own application or available via our [CDN]({{ site.baseurl }}/download/)) and replace this script tag with the following:
+Migrating from the SDK to the Cloud is a relatively straightforward process. Please remove your existing script tag that loads TinyMCE’s JavaScript (typically a reference to `tinymce.min.js` either hosted in your own application or available via our [CDN](https://www.tinymce.com/download/)) and replace this script tag with the following:
 
 ```js
 <script src="http://cloud.tinymce.com/stable/tinymce.min.js?apiKey=your_API_key"></script>

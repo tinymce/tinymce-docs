@@ -6,7 +6,7 @@ description: TinyMCE Cloud customers, you'll be up and running in less than 5 mi
 keywords: tinymce cloud script textarea apiKey
 ---
 
-If you’re already comfortable hosting and maintaining [TinyMCE Community edition]({{ site.baseurl }}/download/), or you’re running a web application where you have no control over the TinyMCE instance, you’re still able to load our premium TinyMCE plugins from TinyMCE Cloud.
+If you’re already comfortable hosting and maintaining [TinyMCE Community edition](https://www.tinymce.com/download/), or you’re running a web application where you have no control over the TinyMCE instance, you’re still able to load our premium TinyMCE plugins from TinyMCE Cloud.
 
 In order to use oue premium plugins, you’ll need to select what plugins you’d like to purchase and you’ll be setup with an API key for your account.
 

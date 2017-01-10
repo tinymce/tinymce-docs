@@ -8,7 +8,7 @@ keywords: tinymce cloud script textarea apiKey
 
 Some of our premium plugins are only compatible with certain versions versions of TinyMCE.
 
-If you’re deploying [both the TinyMCE editor and premium plugins via the Cloud]({{ site.baseurl }}/get-started-cloud/editor-and-features), use the following matrix in conjunction with the optional parameters for specifying editor version and plugin version ({{ site.baseurl }}/get-started-cloud/editor-plugin-version) to ensure your editor and plugins are compatible.
+If you’re deploying [both the TinyMCE editor and premium plugins via the Cloud]({{ site.baseurl }}/get-started-cloud/editor-and-features), use the following matrix in conjunction with the optional parameters for specifying editor version and [plugin version]({{ site.baseurl }}/get-started-cloud/editor-plugin-version) to ensure your editor and plugins are compatible.
 
 If you’re deploying [premium plugins *only* via the Cloud]({{ site.baseurl }}/get-started-cloud/features-only), you’ll need to ensure you’re either only loading plugins supported for your editor version, or that your editor is upgraded to the required release.
 

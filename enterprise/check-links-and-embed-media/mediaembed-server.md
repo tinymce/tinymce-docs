@@ -1,13 +1,13 @@
 ---
 layout: default
-title: Configure Media Embed Server
-description: Instructions for getting the Media Embed server configured.
+title: Configure Enhanced Media Embed Server
+description: Instructions for getting the Enhanced Media Embed server configured.
 keywords: enterprise pricing video youtube vimeo mp3 mp4 mov movie clip film link linkchecking linkchecker mediaembed media
 ---
 
-Once you've got the [server-side component]({{ site.baseurl }}/enterprise/server/) installed, the Media Embed server requires some additional configuration in your `application.conf` file. Don't forget to restart the Java application server after updating the configuration.
+Once you've got the [server-side component]({{ site.baseurl }}/enterprise/server/) installed, the Enhanced Media Embed server requires some additional configuration in your `application.conf` file. Don't forget to restart the Java application server after updating the configuration.
 
-The Media Embed service allows you to choose between using your own [Iframely](https://iframely.com/) account, configuring custom [oEmbed](http://oembed.com/) endpoints or using a combination of both.
+The Enhanced Media Embed service allows you to choose between using your own [Iframely](https://iframely.com/) account, configuring custom [oEmbed](http://oembed.com/) endpoints or using a combination of both.
 
 When you insert media into your content, the service will do the following (in order):
 
@@ -55,7 +55,7 @@ The service can be configured to hit a specific oEmbed endpoint when media from 
 - `endpoint` - the URL of the oEmbed endpoint that should be consulted when inserting media with a URL that matches an entry in `schemes`.
 - `schemes` - a list of schemes as defined in [Section 2.1. Configuration](http://oembed.com/#section2.1) of the oEmbed specification. Note that HTTP and HTTPS are two separate schemes.
 
-**Example note:** This configuration is provided as an example only. The Media Embed service converts an oEmbed response into an embeddable snippet of code. The content and quality of the snippet is dependent on the oEmbed response.
+**Example note:** This configuration is provided as an example only. The Enhanced Media Embed service converts an oEmbed response into an embeddable snippet of code. The content and quality of the snippet is dependent on the oEmbed response.
 
 Example:
 
@@ -403,4 +403,4 @@ ephox {
 
 If neither Iframely or an oEmbed endpoint is configured for a given URL, a summary card will be created.
 
-A summary card is an embeddable snippet of code which is generated based on what the Media Embed service can work out about the content at the URL. See [Integrating with the Media Embed Server]({{ site.baseurl }}/enterprise/check-links-and-embed-media/mediaembed-server-integration/) for further details.
+A summary card is an embeddable snippet of code which is generated based on what the Enhanced Media Embed service can work out about the content at the URL. See [Integrating with the Enhanced Media Embed Server]({{ site.baseurl }}/enterprise/check-links-and-embed-media/mediaembed-server-integration/) for further details.

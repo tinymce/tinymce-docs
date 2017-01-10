@@ -1,35 +1,35 @@
 ---
 layout: default
-title: Integrating with the Media Embed Server
-description: Using the Media Embed server with non-public content such as a corporate CMS.
+title: Integrating with the Enhanced Media Embed Server
+description: Using the Enhanced Media Embed server with non-public content such as a corporate CMS.
 keywords: enterprise pricing video youtube vimeo mp3 mp4 mov movie clip film link linkchecking linkchecker mediaembed media
 ---
 
-Websites like [Facebook](https://developers.facebook.com/docs/plugins/oembed-endpoints) and [Instagram](https://www.instagram.com/developer/embedding/) expose an [oEmbed](http://oembed.com/) endpoint for developers to utilise. The [Iframely](https://iframely.com/) service creates embeds from websites on the public Internet. For content on private networks, such as a corporate CMS, this document outlines how to enrich the content or build an API that the Media Embed server can utilise to create rich hyperlinks. We'll also provide some information about the Media Embed server's summary cards.
+Websites like [Facebook](https://developers.facebook.com/docs/plugins/oembed-endpoints) and [Instagram](https://www.instagram.com/developer/embedding/) expose an [oEmbed](http://oembed.com/) endpoint for developers to utilise. The [Iframely](https://iframely.com/) service creates embeds from websites on the public Internet. For content on private networks, such as a corporate CMS, this document outlines how to enrich the content or build an API that the Enhanced Media Embed server can utilise to create rich hyperlinks. We'll also provide some information about the Enhanced Media Embed server's summary cards.
 
-There are three options for enhancing the embeds created for private content by the Media Embed server:
+There are three options for enhancing the embeds created for private content by the Enhanced Media Embed server:
 
 * Annotate content with [Open Graph](http://ogp.me/) or other meta tags
 * Develop your own custom endpoint that returns JSON in the oEmbed format
-* Develop your own custom endpoint that returns JSON in the Ephox Media Embed format
+* Develop your own custom endpoint that returns JSON in the Ephox Enhanced Media Embed format
 
 ## A note on cookies & authentication
 
-If the content or endpoint is on the same domain as the Media Embed server, cookies will be forwarded to that server. This should reuse the existing login of the user in a CMS environment.
+If the content or endpoint is on the same domain as the Enhanced Media Embed server, cookies will be forwarded to that server. This should reuse the existing login of the user in a CMS environment.
 
 As an example:
 
-* The Media Embed server is accessible at `http://mydomain.example.com/media`
+* The Enhanced Media Embed server is accessible at `http://mydomain.example.com/media`
 * Your custom oEmbed endpoint is accessible at `http://mydomain.example.com/endpoint`
 * You have already signed into your CMS at `http://mydomain.example.com/cms`
 * You embed content from `http://mydomain.example.com/cms/secretcontent` that normally requires authentication to access
-* Because your content, oEmbed endpoint and Media Embed server are all on the same domain, `http://mydomain.example.com/cms/secretcontent` is embeddable using cookie passthrough
+* Because your content, oEmbed endpoint and Enhanced Media Embed server are all on the same domain, `http://mydomain.example.com/cms/secretcontent` is embeddable using cookie passthrough
 
 ## Annotate content with Open Graph or other meta tags
 
 ### Opengraph
 
-If your content is marked up with Open Graph tags and is accessible with a HTTP GET request from the Media Embed server, then business card style embeds will be created based on your content.
+If your content is marked up with Open Graph tags and is accessible with a HTTP GET request from the Enhanced Media Embed server, then business card style embeds will be created based on your content.
 
 
 > **Note:** If Iframely is enabled in the configuration, then the Open Graph look up will be performed by Iframely. Iframely requires that the content be publicly accessible on the Internet.
@@ -65,23 +65,23 @@ As an alternative to Open Graph tags, you can include meta tags using the older 
 * This is the easiest method for creating embeds without an existing embed API
 * No server configuration required
 * There are existing CMS plugins that will add these tags to content
-* The Media Embed server will handle creating the embed HTML and styling
+* The Enhanced Media Embed server will handle creating the embed HTML and styling
 
 #### Cons
 
-* The page must be accessible to the Media Embed server (it must not require authentication)
-* The embed HTML and styling created by the Media Embed server is not configurable
+* The page must be accessible to the Enhanced Media Embed server (it must not require authentication)
+* The embed HTML and styling created by the Enhanced Media Embed server is not configurable
 * Only works for HTML URLs
 * Iframely can only be enabled or disabled as a global option. If Iframely is enabled, then all content must be world accessible and cookie passthrough will not happen.
 
 
 ## Custom API
-As an alternative to including meta tags in your content, you can write a custom API that returns JSON in either the oEmbed or Ephox Media Embed formats.
+As an alternative to including meta tags in your content, you can write a custom API that returns JSON in either the oEmbed or Ephox Enhanced Media Embed formats.
 
-See the docs on [configuring a custom endpoint](http://localhost:4000/enterprise/check-links-and-embed-media/mediaembed-server/#configureacustomendpoint) for details on getting the Media Embed server to utilise your custom API.
+See the docs on [configuring a custom endpoint](http://localhost:4000/enterprise/check-links-and-embed-media/mediaembed-server/#configureacustomendpoint) for details on getting the Enhanced Media Embed server to utilise your custom API.
 
 ### OEmbed endpoint
-This is a popular choice and many CMSs have existing plugins that support oEmbed. While you can create custom HTML embeds this way, they cannot contain scripts. If the HTML contains a script, then the Media Embed server will embed a [summary card]({{ site.baseurl }}/enterprise/check-links-and-embed-media/mediaembed-server-integration/#summarycards).
+This is a popular choice and many CMSs have existing plugins that support oEmbed. While you can create custom HTML embeds this way, they cannot contain scripts. If the HTML contains a script, then the Enhanced Media Embed server will embed a [summary card]({{ site.baseurl }}/enterprise/check-links-and-embed-media/mediaembed-server-integration/#summarycards).
 
 #### Pros
 
@@ -94,8 +94,8 @@ This is a popular choice and many CMSs have existing plugins that support oEmbed
 * Must be a separate API rather than just metadata embedded in the content
 * Error messages aren’t defined as part of the spec
 
-### Ephox Media Embed endpoint
-The other option for developing a custom API endpoint is to return JSON in the [Ephox Media Embed format]({{ site.baseurl }}/enterprise/check-links-and-embed-media/mediaembed-server-integration/#ephoxmediaembedspec).
+### Ephox Enhanced Media Embed endpoint
+The other option for developing a custom API endpoint is to return JSON in the [Ephox Enhanced Media Embed format]({{ site.baseurl }}/enterprise/check-links-and-embed-media/mediaembed-server-integration/#ephoxenhancedmediaembedformat).
 
 #### Pros
 
@@ -109,7 +109,7 @@ The other option for developing a custom API endpoint is to return JSON in the [
 * No support from existing plugins
 * The TinyMCE editor does not fully take advantage of this format yet
 
-### Ephox Media Embed format
+### Ephox Enhanced Media Embed format
 
 #### HTTP response status codes
 
@@ -121,7 +121,7 @@ The other option for developing a custom API endpoint is to return JSON in the [
 #### JSON response objects
 
 ##### `EphoxEmbedObj`
-`rel`, `media` and `html` combine to form the default representation of the embeddable resource that your server has chosen. Clients of the Media Embed server (such as the TinyMCE editor) can look for alternative representations in `links`.
+`rel`, `media` and `html` combine to form the default representation of the embeddable resource that your server has chosen. Clients of the Enhanced Media Embed server (such as the TinyMCE editor) can look for alternative representations in `links`.
 
 * `title` (optional)
   * String containing the document title.
@@ -308,7 +308,7 @@ No additional fields when `type` is `unbounded`.
   * A string message for developers / support people.
 
 ## Summary cards
-When the Media Embed server generates a summary card of a URL (using the title, thumbnail, description and website), it returns a HTML snippet like the following. You should apply styles to the document style to suit these to your preference.
+When the Enhanced Media Embed server generates a summary card of a URL (using the title, thumbnail, description and website), it returns a HTML snippet like the following. You should apply styles to the document style to suit these to your preference.
 
 ````
 <div class="ephox-embed" style="display: flex">

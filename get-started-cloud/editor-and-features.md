@@ -37,6 +37,8 @@ Lastly, you just need to extend your TinyMCE configuration to include any of the
 **Note:** `imagetools_cors_hosts` and `imagetools_proxy` are *not* required to be configured when enabling this plugin via [TinyMCE Cloud]({{ site.baseurl }}/get-started-cloud/)
 * [Accessibility Checker]({{ site.baseurl }}/plugins/a11ychecker/)
 * [Advanced Code Editor]({{ site.baseurl }}/plugins/advcode/)
+* [Enhanced Media Embed]({{ site.baseurl }}/plugins/mediaembed/)
+* [Link Checker]({{ site.baseurl }}/plugins/linkchecker/)
 
 ## Migrating from TinyMCE SDK to TinyMCE Cloud
 
@@ -63,3 +65,5 @@ Now you just need to extend your [TinyMCE configuration]({{ site.baseurl }}/conf
 **Note:** `imagetools_cors_hosts` and `imagetools_proxy` are *not* required to be configured when enabling this plugin via [TinyMCE Cloud]({{ site.baseurl }}/get-started-cloud/)
 * [Accessibility Checker]({{ site.baseurl }}/plugins/a11ychecker/)
 * [Advanced Code Editor]({{ site.baseurl }}/plugins/advcode/)
+* [Enhanced Media Embed]({{ site.baseurl }}/plugins/mediaembed/)
+* [Link Checker]({{ site.baseurl }}/plugins/linkchecker/)

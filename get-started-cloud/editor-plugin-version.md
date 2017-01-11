@@ -133,6 +133,28 @@ Whether you’re deploying both the [TinyMCE editor and premium plugins via the 
 <script src="http://cloud.tinymce.com/stable/plugins.min.js?apiKey=your_API_key&advcode=1.0.2"></script>
 ```
 
+#### Enhanced Media Embed
+
+* [Developer documentation]({{ site.baseurl }}/plugins/mediaembed/)
+* [Supported versions](http://plugins.tinymce.com/versions/mediaembed)
+
+##### Example
+
+```js
+<script src="http://cloud.tinymce.com/stable/plugins.min.js?apiKey=your_API_key&mediaembed=0.0.1"></script>
+```
+
+#### Link Checker
+
+* [Developer documentation]({{ site.baseurl }}/plugins/linkchecker/)
+* [Supported versions](http://plugins.tinymce.com/versions/linkchecker)
+
+##### Example
+
+```js
+<script src="http://cloud.tinymce.com/stable/plugins.min.js?apiKey=your_API_key&linkchecker=1.0.0"></script>
+```
+
 ## Example (featuring declared editor and plugin versions)
 
 The following example would load:

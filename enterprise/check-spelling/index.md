@@ -25,9 +25,11 @@ The following languages are supported:
 | Spanish                      | es     |
 | Swedish                      | sv     |
 
+## Custom words
+Spell Checker Pro dictionaries can be modified to include custom words. See [these instructions]({{ site.baseurl }}/enterprise/check-spelling/modifying/) for details.
 
 ## Downloading Spell Checker Pro
 
 A [TinyMCE Enterprise](http://www.tinymce.com/pricing/) subscription includes the ability to download and install a spell check as-you-type feature for the editor.
 
-Spell Checker Pro requires a client-side plugin to be configured. It also requires an additional [server-side component]({{ site.baseurl }}/enterprise/server/) to be installed and configured.
+**Spell Checker Pro** requires a [client-side plugin]({{ site.baseurl }}/plugins/tinymcespellchecker/) to be configured. It also requires an additional [server-side component]({{ site.baseurl }}/enterprise/server/) to be installed and configured.

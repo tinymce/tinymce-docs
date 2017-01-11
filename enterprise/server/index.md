@@ -8,7 +8,7 @@ keywords: enterprise tinymcespellchecker spell check checker pro pricing imageto
 ## Server-side Component Installation
 
 
-*Spell checking* and *image tools proxy* require the deployment of several server-side components onto a J2EE compatible application server.  We currently support Jetty, Apache Tomcat, and WebSphere Application Server.  To discuss support for additional Java application servers, please contact us: <mailto:sales@ephox.com>
+Some TinyMCE Enterprise features require the deployment of a server-side component onto a J2EE compatible application server.  We currently support Jetty, Apache Tomcat, and WebSphere Application Server.  To discuss support for additional Java application servers, please contact us at <mailto:sales@ephox.com>
 
 The following server-side components are packaged with the TinyMCE SDK:
 
@@ -17,7 +17,7 @@ The following server-side components are packaged with the TinyMCE SDK:
 | [Spellchecking]({{ site.baseurl }}/enterprise/check-spelling/) 				| ephox-spelling.war		|Spell checking service for TinyMCE Enterprise.|
 | [Image Tools Proxy]({{ site.baseurl }}/plugins/imagetools/)				| ephox-image-proxy.war		|Image proxy service for the Image Tools plugin.|
 
-> **Note:** The "Allowed Origins" service (ephox-allowed-origins.war) has been deprecated. Trusted domains can now simply be specified via application.conf, as documented below.
+> **Note:** The "Allowed Origins" service (ephox-allowed-origins.war) has been deprecated. Trusted domains can now simply be specified via `application.conf`, as documented below.
 
 This guide will help you set up the server-side components for the above-mentioned features, and show you how to use them in conjunction with editor clients. The steps required are:
 
@@ -37,7 +37,7 @@ If you don't already have a Java application server installed you can easily ins
 
 These are both simple, open source Java application servers and they're easy to install and configure.  The editor SDK supports both of these platforms. For the later setup, it's also helpful if you note any domain name and port number you specify during installation of the web application server.
 
-> **Memory requirement:** Please ensure that you configure your Java Server (Tomcat/Jetty etc) with a minimum of 4GB. Please refer to the Out of Memory Services Troubleshooting page if you require instructions on how to explicitly define how much RAM will be allocated to your Java server.
+> **Memory requirement:** Please ensure that you configure your Java Server (Tomcat/Jetty etc) with a minimum of 4GB. Please refer to [Out of memory errors]({{ site.baseurl }}/enterprise/server/troubleshoot/#outofmemoryerrors) section of the Troubleshoot page if you require instructions on how to explicitly define how much RAM will be allocated to your Java server.
 
 
 ### Step 2. Deploy Server-side Components
@@ -49,36 +49,38 @@ You’ll need to ensure you deploy the following WAR files packaged with the Tin
 
 The easiest way to deploy these files is to simply drag and drop them into the webapps directory of your Tomcat/Jetty server (or equivalent folder of another Java application server), and then restart the server.
 
-More information on deploying components/applications:
+More information on deploying components/applications can be found at:
 
-- [Deploying applications with Tomcat 6.0](https://tomcat.apache.org/tomcat-6.0-doc/deployer-howto.html)
-- [Deploying applications with Jetty](https://wiki.eclipse.org/Jetty/Howto/Deploy_Web_Applications)
+- [Deploying applications with Tomcat 8.0](https://tomcat.apache.org/tomcat-8.0-doc/deployer-howto.html)
+- [Deploying applications with Jetty](http://www.eclipse.org/jetty/documentation/current/configuring-deployment.html)
 
 
 ### Step 3. Create a configuration file
 
-> **Note:** It is recommended that you use a plain text editor (eg: gedit, vim, emacs, notepad etc) when creating or editing the application.conf file. Do not use editors like Evernote as there is a good chance of smart quotes being used where plain quotes should be used and this will cause the services to fail.
+> **Note:** It is recommended that you use a plain text editor (eg: gedit, vim, emacs, notepad etc) when creating or editing the `application.conf` file. Do not use editors like Evernote as there is a good chance of smart quotes being used where plain quotes should be used and this will cause the services to fail.
 
 Services require a configuration file named `application.conf` to be referenced by the application server.
 
-This configuration file will require you to enter the following  information:
+This configuration file will require you to enter *at least* the following  information:
 
-- `origins` - which domains are allowed to communicate with the server-side editor features.
+- `allowed-origins` - the domains allowed to communicate with the server-side editor features.
+
+Some features require additional configuration which can be found in their documentation.
 
 #### allowed-origins
 
 This element configures the server-side components to communicate with specified, trusted  domains.
 
-The `origins` attribute must list all the domains that instances of the editor will be hosted on.  Only requests from the listed origins will be processed by the server-side components. Requests from any other domains will be rejected. An array of strings representing the domains allowed to communicate with the services.
+The `origins` attribute must list **all** the origins that instances of the editor will be served from.  Only requests from the listed origins will be processed by the server-side components. Requests from any other origins will be rejected. The value must be an array of strings.
 
-> Note: Be sure to include the protocol (https or http) and any required port number (eg:8080) in the string.
+> **Note**: Origin in this context refers to the value of a HTTP Origin header. It must include the protocol (http or https), the domain, and an optional port number. Do not include a trailing slash or paths to specific resources.
 
 Example:
 
 ````
 ephox {
 	allowed-origins {
-		origins = [ "http://myserver", "http://myserver:8080", "http://myotherserver", "http://myotherserver:9090", "https://mysecureserver" ]
+		origins = [ "http://myserver", "http://myserver.example.com", "http://myserver:8080", "http://myotherserver", "http://myotherserver:9090", "https://mysecureserver" ]
 	}
 }
 ````
@@ -105,13 +107,11 @@ ephox{
 }
 ````
 
-Ensure that you have the right protocol specified and for more examples see the section below. If you experience issues, please use the Troubleshooting guide (in the Tip below) and you should be able to see if the browser sends a different origin to the one that you have specified. Both must match for the services to work.
-
 ##### Troubleshooting Origins
 
-Depending on your configuration and the browser you use, you may need to specify the port number as well when listing the origin. If you observe that requests are failing with services not being available, it may be because the port number is required. Refer to troubleshooting guide - section titled Investigating Using the Browser's Network Tools.
+Depending on your configuration and the browser you use, you may need to specify the port number as well when listing the origin. If you observe that requests are failing with services not being available, it may be because the port number is required. Refer to the Troubleshoot section titled [Using browser tooling to investigate services issues]({{ site.baseurl }}/enterprise/server/troubleshoot/#usingbrowsertoolingtoinvestigateservicesissues).
 
-##### Example application.conf
+##### Example `application.conf`
 
 TinyMCE is deployed to an environment and displayed to end users on the following domains:
 
@@ -133,9 +133,9 @@ ephox{
 
 You’ll need to reference the configuration file created in Step 3 as a parameter passed to the JVM running the services. Once the server has been configured to use the file, restart the server.
 
-> **Note:** If the path to your application.conf file has spaces in it, you must ensure you prefix each white space with an escape character (\). Example: ` -Dconfig.file=/config/file/location/with/white\ space/application.conf`
+> **Note**: If the path to your `application.conf` file has spaces in it, you must ensure you prefix each white space with an escape character (\\). Example: ` -Dconfig.file=/config/file/location/with/white\ space/application.conf`
 
-The following examples demonstrate how to reference application.conf for Tomcat or Jetty instances.
+The following examples demonstrate how to reference `application.conf` for Tomcat or Jetty instances.
 
 
 #### Tomcat Unix example:
@@ -160,7 +160,7 @@ The file should contain a single line:
 
 You can specify your `application.conf` as a parameter to this command, along with other JVM parameters:
 
-`java -jar /jetty/install/directory/start.jar -Dconfig.file="/config/file/location/application.conf"`
+    java -jar /jetty/install/directory/start.jar -Dconfig.file="/config/file/location/application.conf"
 
 
 #### Jetty (automatic configuration for services launching on system start-up):
@@ -192,10 +192,10 @@ Once you have created a configuration file, configured the allowed origins servi
 
 ### Step 6: Set up editor client instances to use the server-side functionality
 
-With the above steps completed you can now direct TinyMCE instances to use the image editing and server-side spelling components.
+With the above steps completed you can now direct TinyMCE instances to use Enterprise server-side components.
 
-Set the TinyMCE `spellchecker_rpc_url` configuration property to the URL of the deployed server side spelling component. This URL is provided to you by your Java application server.
-Set the TinyMCE `imagetools_proxy` configuration property to the URL of the deployed server-side image proxy component.
+- Set the TinyMCE `spellchecker_rpc_url` configuration property to the URL of the deployed server side spelling component.
+- Set the TinyMCE `imagetools_proxy` configuration property to the URL of the deployed server-side image proxy component.
 
 Example of TinyMCE client configuration:
 
@@ -205,7 +205,7 @@ tinymce.init({
 	toolbar: 'image',
 	plugins: 'tinymcespellchecker image imagetools',
 	spellchecker_rpc_url: 'http://yourspelling.server.com/ephox-spelling/',
-	imagetools_proxy: 'http://yourproxy.server.com/ephox-image-proxy/image'
+	imagetools_proxy: 'http://yourproxy.server.com/ephox-image-proxy/image',
 });
 ````
 

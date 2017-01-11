@@ -7,7 +7,7 @@ keywords: enterprise tinymcespellchecker spell check checker pro pricing
 
 **Note:** Updating the dictionaries packaged with the spellchecker is, in effect, forking the dictionary. Any future enhancements to our dictionaries (e.g. additional words added or errors fixed) could cause you to want to re-apply your updates to these future release dictionaries.
 
-**Note:** Updating the spellchecking feature (i.e. by installing updated versions of <link>ephox-spelling.war</link>) may overwrite your modified dictionaries. Please ensure you backup your modified dictionaries before upgrading <link>ephox-spelling.war</link>.
+**Note:** Updating the spellchecking feature (i.e. by installing updated versions of `ephox-spelling.war`) may overwrite your modified dictionaries. Please ensure you backup your modified dictionaries before upgrading `ephox-spelling.war`.
 
 ### Creating New Updates to a Dictionary
 

@@ -7,7 +7,7 @@ keywords: code advcode codemirror
 controls: toolbar button, menu item
 ---
 
-The Advanced Code Editor plugin (`advcode`) brings a more advanced code editor to TinyMCE. This code editor makes it easier to modify the HTML, and it's a very useful add-on for power users. It comes with many features often found in IDEs, all enabled by default:
+The [Advanced Code Editor]({{ site.baseurl }}/plugins/advcode/) plugin (`advcode`) brings a more advanced code editor to TinyMCE. This code editor makes it easier to modify the HTML, and it's a very useful add-on for power users. It comes with many features often found in IDEs, all enabled by default:
 
 * Syntax color highlighting
 * Bracket matching
@@ -16,4 +16,4 @@ The Advanced Code Editor plugin (`advcode`) brings a more advanced code editor t
 
 ## How to get the Advanced Code Editor plugin
 
-> The Advanced Code feature is included with a [TinyMCE Enterprise](https://www.tinymce.com/pricing/) subscription. Please [click here](https://www.tinymce.com/pricing/) to learn more about our flexible subscriptions plans.
+The Advanced Code feature is included with a [TinyMCE Enterprise](https://www.tinymce.com/pricing/) subscription.

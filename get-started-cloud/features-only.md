@@ -29,6 +29,8 @@ Now you just need to extend your [TinyMCE configuration]({{ site.baseurl }}/conf
 **Note:** We will configure the `imagetools_cors_hosts` and `imagetools_proxy` properties for you automatically.
 * [Accessibility Checker]({{ site.baseurl }}/plugins/a11ychecker/)
 * [Advanced Code Editor]({{ site.baseurl }}/plugins/advcode/)
+* [Enhanced Media Embed]({{ site.baseurl }}/plugins/mediaembed/)
+* [Link Checker]({{ site.baseurl }}/plugins/linkchecker/)
 
 Here is a complete example, whereby:
 

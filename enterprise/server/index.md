@@ -16,6 +16,7 @@ The following server-side components are packaged with the TinyMCE SDK:
 |:-----------------------------	|:-------						|:----------- |
 | [Spellchecking]({{ site.baseurl }}/enterprise/check-spelling/) 				| ephox-spelling.war		|Spell checking service for TinyMCE Enterprise.|
 | [Image Tools Proxy]({{ site.baseurl }}/plugins/imagetools/)				| ephox-image-proxy.war		|Image proxy service for the Image Tools plugin.|
+| [Link Checker and Enhanced Media Embed]({{ site.baseurl }}/enterprise/check-links-and-embed-media/)				| ephox-hyperlinking.war		|Link Checker and Enhanced Media Embed service for TinyMCE Enterprise.|
 
 > **Note:** The "Allowed Origins" service (ephox-allowed-origins.war) has been deprecated. Trusted domains can now simply be specified via `application.conf`, as documented below.
 
@@ -46,6 +47,7 @@ You’ll need to ensure you deploy the following WAR files packaged with the Tin
 
 - ephox-spelling.war
 - ephox-image-proxy.war
+- ephox-link-checker.war
 
 The easiest way to deploy these files is to simply drag and drop them into the webapps directory of your Tomcat/Jetty server (or equivalent folder of another Java application server), and then restart the server.
 
@@ -196,6 +198,7 @@ With the above steps completed you can now direct TinyMCE instances to use Enter
 
 - Set the TinyMCE `spellchecker_rpc_url` configuration property to the URL of the deployed server side spelling component.
 - Set the TinyMCE `imagetools_proxy` configuration property to the URL of the deployed server-side image proxy component.
+- Set the TinyMCE `mediaembed_service_url` and `linkchecker_service_url` configuration properties to the URL of the deployed server-side linkchecker and media embed component.
 
 Example of TinyMCE client configuration:
 
@@ -203,9 +206,11 @@ Example of TinyMCE client configuration:
 tinymce.init({
 	selector: 'textarea', // change this value according to your HTML
 	toolbar: 'image',
-	plugins: 'tinymcespellchecker image imagetools',
+	plugins: 'tinymcespellchecker image imagetools media mediaembed',
 	spellchecker_rpc_url: 'http://yourspelling.server.com/ephox-spelling/',
 	imagetools_proxy: 'http://yourproxy.server.com/ephox-image-proxy/image',
+	mediaembed_service_url: 'http://yourlinkchecker.server.com/ephox-link-checker/',
+	linkchecker_service_url: 'http://yourlinkchecker.server.com/ephox-link-checker/'
 });
 ````
 

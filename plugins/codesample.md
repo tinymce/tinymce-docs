@@ -52,7 +52,8 @@ This option enables you to specify a custom css file to be loaded when codesampl
 
 ```js
 tinymce.init({
-  selector: "textarea",
+  selector: 'textarea',
+  plugins: 'codesample',
   codesample_languages: [
 		{text: 'HTML/XML', value: 'markup'},
 		{text: 'JavaScript', value: 'javascript'},
@@ -65,7 +66,7 @@ tinymce.init({
 		{text: 'C#', value: 'csharp'},
 		{text: 'C++', value: 'cpp'}
 	],
-  toolbar: "codesample"
+  toolbar: 'codesample'
 });
 ```
 

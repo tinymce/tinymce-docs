@@ -310,7 +310,7 @@ No additional fields when `type` is `unbounded`.
 ## Summary cards
 When the Enhanced Media Embed server generates a summary card of a URL (using the title, thumbnail, description and website), it returns a HTML snippet like the following. You should apply styles to the document style to suit these to your preference.
 
-````
+```html
 <div class="ephox-embed" style="display: flex">
   <a class="ephox-embed-link" href="http://www.imdb.com/title/tt0117500/">
     <span class="ephox-embed-title">The Rock (1996)</span><br><br>
@@ -322,52 +322,53 @@ When the Enhanced Media Embed server generates a summary card of a URL (using th
   </a>
 </div>
 
-````
+```
 
 #### Recommended CSS
-````
-.ephox-embed{
-     display: flex;
-     border-radius: 5px;
-     border: 1px solid #AAA;
-     box-shadow: 0 0 5px 2px #CCC;
-     padding: 10px;
-     width: 500px;
-     font-size: 0.9em;
-     align-items: center;
+```css
+.ephox-summary-card {
+    border: 1px solid #AAA;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
+    padding: 10px;
+    overflow: hidden;
+    margin-bottom: 1em;
 }
-.ephox-embed a {
-  text-decoration: none;
-  color: inherit;
+
+.ephox-summary-card a {
+    text-decoration: none;
+    color: inherit;
 }
-.ephox-embed a:visited {
-  color: inherit;
+
+.ephox-summary-card a:visited {
+    color: inherit;
 }
-.ephox-embed-title {
-     font-size: 1em;
-     width: 280px;
-     white-space: nowrap;
-     overflow: hidden;
-     text-overflow: ellipsis;
-     display: block;
+
+.ephox-summary-card-title {
+    font-size: 1.2em;
+    display: block;
 }
-.ephox-embed-author {
-  color: #999;
-  display: block;
-  margin-top: 0.5em;
+
+.ephox-summary-card-author {
+    color: #999;
+    display: block;
+    margin-top: 0.5em;
 }
-.ephox-embed-website {
-  color: #999;
-  display: block;
-  margin-top: 0.5em;
+
+.ephox-summary-card-website {
+    color: #999;
+    display: block;
+    margin-top: 0.5em;
 }
-.ephox-embed-thumbnail {
-     max-width: 180px;
-     max-height: 180px;
-     margin-left: 2em;
+
+.ephox-summary-card-thumbnail {
+    max-width: 180px;
+    max-height: 180px;
+    margin-left: 2em;
+    float: right;
 }
-.ephox-embed-description {
-  margin-top: 0.5em;
-  display: block;
+
+.ephox-summary-card-description {
+    margin-top: 0.5em;
+    display: block;
 }
-````
+```

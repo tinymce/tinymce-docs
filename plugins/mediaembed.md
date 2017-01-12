@@ -38,7 +38,7 @@ This setting specifies the URL to the service that will handle your requests and
 
 ### `mediaembed_max_width`
 
-This optional setting specifies a maximum width in pixels of the embedded content. Defaults to `1000`.
+This optional setting specifies a maximum width in pixels of the embedded content. Defaults to `650`.
 
 ### `mediaembed_api_key`
 

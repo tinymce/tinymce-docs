@@ -6,31 +6,17 @@ description: Run old plugins on version 4.
 keywords: compat3x utils tiny_mce_popup editor_plugin
 ---
 
-This plugin contains a few compatibility files for the old 3.x branch. This enables you to run most old 3.x plugins without any modifications. You need to take a few steps to enable this plugin:
+This plugin makes possible to run majority of old 3.x plugins on the latest TinyMCE, without any modification. However you need to take a few steps to enable it:
 
 **Installation Instructions**
 
-1. Download the TinyMCE [development package](https://www.tinymce.com/download/).
-2. Copy the `compat3x` plugin to your site.
-3. Copy `utils` and `tiny_mce_popup.js` to the root directory, if `tinymce` where the `tinymce.min.js` file is located.
-4. Add the `compat3x` plugin as your first plugin in the plugins `init` option or load it after the TinyMCE core.
-5. (Optional) Rename the old plugins `editor_plugin.js` file to `plugin.min.js` then you can load it as a normal plugin.
+1. Download TinyMCE [development package](https://www.tinymce.com/download/).
+2. Copy `compat3x` plugin to your site.
+3. Copy `utils` and `tiny_mce_popup.js` to the same directory, where your `tinymce.min.js` resides.
+4. Load `compat3x` after TinyMCE core.
+5. (Optional) If you rename `editor_plugin.js` file to `plugin.min.js` then you will be able to load your old plugin as the regular one.
 
 **Type:** `String`
-
-##### Example
-
-Example of usage **in** `tinymce.init`:
-
-```js
-tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "compat3x",
-  external_plugins: {
-    "myoldplugin": "/tinymce/plugins/myoldplugin/editor_plugin.js"
-  }
-});
-```
 
 Example of loading the compat3x **before** `tinymce.init`:
 

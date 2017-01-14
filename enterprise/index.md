@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Upgrade to Enterprise
+title: Premium Features
 description: Premium features from the makers of TinyMCE.
 type: folder
 ---

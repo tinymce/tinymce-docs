@@ -11,6 +11,10 @@ keywords: integration integrate wordpress advanced
 
 A slimmed down version of TinyMCE is the default "Visual Editor" in WordPress. If you want to use a version of TinyMCE closer to the full-featured SDK, TinyMCE Advanced is a great option.
 
+## PowerPaste for WordPress
+
+[TinyMCE PowerPaste for WordPress](https://www.ephox.com/products/tinymce-powerpaste-wordpress/) is a premium plugin from the makers of TinyMCE that brings the PowerPaste features to WordPress. It automatically fixes Word formatting, creates tables from Excel, and links & embed images with content pasted from the web.
+
 ## TinyMCE Advanced
 
 [TinyMCE Advanced](https://wordpress.org/plugins/tinymce-advanced/) is a WordPress plugin built by [Andrew Ozz](https://profiles.wordpress.org/azaozz/) that will let you add, remove, and arrange the buttons that are shown on the Visual Editor toolbar. It includes 15 plugins for TinyMCE that are automatically enabled or disabled depending on what buttons are chosen.

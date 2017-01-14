@@ -2,11 +2,11 @@
 layout: default
 title: Enhanced Media Embed Plugin
 title_nav: Enhanced Media Embed
-description: Get embedded content from any URL.
+description: Add rich media previews inside TinyMCE.
 keywords: video youtube vimeo mp3 mp4 mov movie clip film spotify
 ---
 
-The **Enhanced Media Embed** plugin is an Enterprise plugin that will take a URL, send it to a backend service that returns an embeddable snippet of code, and add that code to the editor.
+The **Enhanced Media Embed** plugin is a [premium TinyMCE plugin](https://tinymce.com/pricing) that will take a URL, send it to a backend service that returns an embeddable snippet of code, and add that code to the editor. That typically takes the form of rich media such as audio, video and social media cards.
 
 ## Installation
 
@@ -34,7 +34,7 @@ The plugin can be used in two ways, either by simply entering a URL on an empty 
 
 ### `mediaembed_service_url`
 
-This setting specifies the URL to the service that will handle your requests and return the embeddable snippets used by the **Media Embed** plugin. You will get the URL as a part of your [TinyMCE Enterprise](http://www.tinymce.com/pricing/) subscription.
+This setting specifies the URL to the service that will handle your requests and return the embeddable snippets used by the **Media Embed** plugin. You will get the URL as a part of your [premium TinyMCE plugin](https://www.tinymce.com/pricing/) subscription.
 
 ### `mediaembed_max_width`
 
@@ -46,4 +46,4 @@ This optional setting specifies an API key needed to talk to the service default
 
 ## Downloading Enhanced Media Embed plugin
 
-A [TinyMCE Enterprise](http://www.tinymce.com/pricing/) subscription includes the ability to download and install the **Media Embed** plugin as well as gives you the URL needed to access the service backend.
+A [premium TinyMCE plugin](https://www.tinymce.com/pricing/) subscription includes the ability to download and install the **Media Embed** plugin as well as gives you the URL needed to access the service backend.

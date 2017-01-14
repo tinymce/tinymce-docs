@@ -214,6 +214,7 @@
     - url: "#contextmenu_never_use_native"
   - url: "directionality"
   - url: "emoticons"
+  - url: "mediaembed"
   - url: "fullpage"
     pages:
     - url: "#fullpage_default_doctype"
@@ -285,7 +286,6 @@
     - url: "#media_filter_html"
     - url: "#media_scripts"
     - url: "#video_template_callback"
-  - url: "mediaembed"
   - url: "mentions"
   - url: "moxiemanager"
   - url: "nonbreaking"
@@ -401,10 +401,10 @@
   - url: "check-spelling"
     pages:
     - url: "modifying"
-  - url: "check-links-and-embed-media"
+  - url: "check-links"
+  - url: "embed-media"
     pages:
-    - url: "linkchecker-server"
-    - url: "mediaembed-server"
+    - url: "mediaembed-server-config"
     - url: "mediaembed-server-integration"
   - url: "accessibility"
   - url: "mentions"

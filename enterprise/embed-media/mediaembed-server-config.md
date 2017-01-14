@@ -5,7 +5,7 @@ description: Instructions for getting the Enhanced Media Embed server configured
 keywords: enterprise pricing video youtube vimeo mp3 mp4 mov movie clip film link linkchecking linkchecker mediaembed media
 ---
 
-Once you've got the [server-side component]({{ site.baseurl }}/enterprise/server/) installed, the Enhanced Media Embed server requires some additional configuration in your `application.conf` file. Don't forget to restart the Java application server after updating the configuration.
+Once you've got the [server-side component]({{ site.baseurl }}/enterprise/server/) installed, additional configuration to your `application.conf` file is required. (Don't forget to restart the Java application server after updating the configuration.)
 
 The Enhanced Media Embed service allows you to choose between using your own [Iframely](https://iframely.com/) account, configuring custom [oEmbed](http://oembed.com/) endpoints or using a combination of both.
 
@@ -403,4 +403,4 @@ ephox {
 
 If neither Iframely or an oEmbed endpoint is configured for a given URL, a summary card will be created.
 
-A summary card is an embeddable snippet of code which is generated based on what the Enhanced Media Embed service can work out about the content at the URL. See [Integrating with the Enhanced Media Embed Server]({{ site.baseurl }}/enterprise/check-links-and-embed-media/mediaembed-server-integration/) for further details.
+A summary card is an embeddable snippet of code which is generated based on what the Enhanced Media Embed service can work out about the content at the URL. See the integration docs for [Enhanced Media Embed Server]({{ site.baseurl }}/enterprise/embed-media/mediaembed-server-integration/) for further details.

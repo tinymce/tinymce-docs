@@ -1,16 +1,16 @@
 ---
 layout: default
-title: Media Embed Plugin
-title_nav: Media Embed
+title: Enhanced Media Embed Plugin
+title_nav: Enhanced Media Embed
 description: Get embedded content from any URL.
-keywords: video youtube vimeo mp3 mp4 mov movie clip film
+keywords: video youtube vimeo mp3 mp4 mov movie clip film spotify
 ---
 
-The **Media Embed** plugin is an Enterprise plugin that will take a URL, send it to a backend service that returns an embeddable snippet of code, and add that code to the editor.
+The **Enhanced Media Embed** plugin is an Enterprise plugin that will take a URL, send it to a backend service that returns an embeddable snippet of code, and add that code to the editor.
 
 ## Installation
 
-For the moment the **Media Embed** plugin has to be used in conjunction with the [media](../media) plugin, so:
+For the moment the **Enhanced Media Embed** plugin has to be used in conjunction with the [media](../media) plugin, so:
 
 1. Make sure you have the `media` plugin added to the `plugins` list.
 2. Add the `mediaembed` plugin to the `plugins` list.
@@ -44,6 +44,6 @@ This optional setting specifies a maximum width in pixels of the embedded conten
 
 This optional setting specifies an API key needed to talk to the service defaults to the global `api_key` setting.
 
-## Downloading Media Embed plugin
+## Downloading Enhanced Media Embed plugin
 
 A [TinyMCE Enterprise](http://www.tinymce.com/pricing/) subscription includes the ability to download and install the **Media Embed** plugin as well as gives you the URL needed to access the service backend.

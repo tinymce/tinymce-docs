@@ -6,11 +6,9 @@ description: Validate links, as you type.
 keywords: url urls link linkchecker_service_url linkchecker_api_key linkchecker_content_css
 ---
 
-The `linkchecker` does what it says - validates links, as you type them. Links considered invalid will be highlighted with red and will have a dedicated context menu with options to edit the link, try and open it in a separate tab, remove the link or ignore it.
+The `linkchecker` does what it says &ndash; validates links, as you type them. Links considered invalid will be highlighted with red and will have a dedicated context menu with options to edit the link, try and open it in a separate tab, remove the link or ignore it.
 
-Please note that Link Checker is a **premium** plugin.
-
-*Important:* for the functionality it relies on server-side service, which comes as a part of a paid subscription plan, that includes [TinyMCE Enterprise](http://www.tinymce.com/pricing/).
+> Please note that Link Checker is a **premium** plugin and relies on a server-side service, which is included as a part of a [premium TinyMCE plugin](http://www.tinymce.com/pricing/) subscription.
 
 **Type:** `String`
 

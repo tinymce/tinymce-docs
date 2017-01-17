@@ -1,25 +1,25 @@
 ---
 layout: default
 title: 05. Advanced Install
-description_short: Cloud, package managers, SDK, jQuery and custom builds.
-description: Learn how to install TinyMCE via TinyMCE Cloud, package manager options, SDK, jQuery and custom build options.
+description_short: CDN, package managers, SDK, jQuery and custom builds.
+description: Learn how to install TinyMCE via our CDN, package manager options, SDK, jQuery and custom build options.
 keywords: npm bower composer nuget
 ---
 
-So far we've been using the Cloud version of TinyMCE and while it's the easiest way to instantiate the editor it may not always be the best way. In this section we will explain some of TinyMCE's other installation options including package managers, downloading the SDK, and the custom build option.
+So far we've been using the CDN version of TinyMCE and while it's the easiest way to instantiate the editor it may not always be the best way. In this section we will explain some of TinyMCE's other installation options including package managers, downloading the SDK, and the custom build option.
 
 On this page you'll find a detailed guide to our installation options:
 
-* [TinyMCE Cloud](#cloudinstall)
+* [Content Delivery Network](#cdninstall)
 * [Package Managers](#packagemanagerinstalloptions)
 * [SDK / Download](#sdkinstall)
 * [jQuery](#jqueryinstall)
 * [Custom Build](#custombuildinstall)
 
 
-## Cloud Install
+## CDN Install
 
-{% include install/cloud.md %}
+{% include install/cdn.md %}
 
 
 ## Package Manager Install Options

@@ -39,10 +39,10 @@ Install the npm package and save it to your `package.json` with `--save`.
 $ npm install --save react-tinymce
 ```
 
-`react-tinymce` requires `tinymce` to be globally accessible, so add the necessary script tag with the TinyMCE Cloud link to the head of the `index.html` file located in the `public` folder.
+`react-tinymce` requires `tinymce` to be globally accessible, so add the necessary script tag with the CDN link to the head of the `index.html` file located in the `public` folder.
 
 ```html
-<script src="{{site.cdnurl}}"></script>
+<script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
 ```
 
 ## 4. Replace the App.js file

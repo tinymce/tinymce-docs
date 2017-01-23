@@ -19,21 +19,21 @@ This is a list of keyboard shortcuts available within the editor body.
 | Select All | Ctrl+A | Command+A | core |
 | Redo | Ctrl+Y / Ctrl+Shift+Z | Command+Y / Command+Shift+Z | core |
 | Undo | Ctrl+Z | Command+Z | core |
-| Header 1 | Alt+Shift+1 | Ctrl+Shift+1 | core |
-| Header 2 | Alt+Shift+2 | Ctrl+Shift+2 | core |
-| Header 3 | Alt+Shift+3 | Ctrl+Shift+3 | core |
-| Header 4 | Alt+Shift+4 | Ctrl+Shift+4 | core |
-| Header 5 | Alt+Shift+5 | Ctrl+Shift+5 | core |
-| Header 6 | Alt+Shift+6 | Ctrl+Shift+6 | core |
-| Paragraph | Alt+Shift+7 | Ctrl+Shift+7 | core |
-| Div | Alt+Shift+8 | Ctrl+Shift+8 | core |
-| Address | Alt+Shift+9 | Ctrl+Shift+9 | core |
+| Header 1 | Alt+Shift+1 | Ctrl+Alt+1 | core |
+| Header 2 | Alt+Shift+2 | Ctrl+Alt+2 | core |
+| Header 3 | Alt+Shift+3 | Ctrl+Alt+3 | core |
+| Header 4 | Alt+Shift+4 | Ctrl+Alt+4 | core |
+| Header 5 | Alt+Shift+5 | Ctrl+Alt+5 | core |
+| Header 6 | Alt+Shift+6 | Ctrl+Alt+6 | core |
+| Paragraph | Alt+Shift+7 | Ctrl+Alt+7 | core |
+| Div | Alt+Shift+8 | Ctrl+Alt+8 | core |
+| Address | Alt+Shift+9 | Ctrl+Alt+9 | core |
 | Focus to menubar | Alt+F9 | Alt+F9 | core |
 | Focus to toolbar | Alt+F10 | Alt+F10 | core |
 | Focus to element path | Alt+F11 | Alt+F11 | core |
 | Focus to contextual toolbar | Ctrl+Shift+E > Ctrl+Shift+P | Ctrl+Shift+E > Ctrl+Shift+P | core |
 | Insert link | Ctrl+K | Command+K | [link]({{ site.baseurl }}/plugins/link/) |
-| Toggle Fullscreen | Ctrl+Shift+F | Command+Shift+F | [fullscreen]({{ site.baseurl }}/plugins/fullscreen/) |
+| Toggle Fullscreen | Ctrl+Shift+F | Ctrl+Shift+F | [fullscreen]({{ site.baseurl }}/plugins/fullscreen/) |
 | Save | Ctrl+S | Command+S | [save]({{ site.baseurl }}/plugins/save/) |
 | Find | Ctrl+F | Command+F | [searchreplace]({{ site.baseurl }}/plugins/searchreplace/) |
 

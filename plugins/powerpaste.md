@@ -17,7 +17,7 @@ If you configure **PowerPaste** to allow local images (see the `powerpaste_allow
 
 https://www.tinymce.com/docs/advanced/handle-async-image-uploads/
 
-***Note:*** *PowerPaste (when configured to allow local images) will import images from pasted Microsoft Word/Excel content.  When doing this, **PowerPaste** extracts Base64 encoded images from the clipboard.  Images larger than approximately 8.5MB may fail to import based on technical limitations of web browsers.*
+***Note:*** _PowerPaste (when configured to allow local images) will import images from pasted Microsoft Word/Excel content.  When doing this, **PowerPaste** extracts Base64 encoded images from the clipboard.  Images larger than approximately 8.5MB may fail to import based on technical limitations of web browsers._
 
 ## Installation
 

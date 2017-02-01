@@ -6,11 +6,11 @@ description: Get a local instance of TinyMCE up and running in less than 5 minut
 keywords: tinymce script textarea
 ---
 
-From getting a local editor instance up and running in less than 5 minutes (via our content delivery network) to advanced installation options, working with plugins and learning about content filtering and spell checking, this is the place to start for developers new to TinyMCE.
+From getting a local editor instance up and running in less than 5 minutes (via our TinyMCE Cloud) to advanced installation options, working with plugins and learning about content filtering and spell checking, this is the place to start for developers new to TinyMCE.
 
 Before we get to it, if you prefer to download TinyMCE and install it locally the [Advanced Install](../advanced-install/#sdkinstall) page in the Get Started guide has instructions.
 
-Now, back to the CDN. In the next 4 steps – and in less than 5 minutes – you'll have a basic, local editor instance up and running.
+Now, back to the TinyMCE Cloud. In the next 4 steps – and in less than 5 minutes – you'll have a basic, local editor instance up and running.
 
 ## Step 1: Include the TinyMCE script
 

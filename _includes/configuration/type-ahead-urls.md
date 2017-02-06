@@ -1,4 +1,4 @@
-## type_ahead_urls
+## typeahead_urls
 
 This option allows disable the type ahead url field feature.
 
@@ -13,6 +13,6 @@ This option allows disable the type ahead url field feature.
 ```js
 tinymce.init({
   selector: 'textarea',
-  type_ahead_urls: false
+  typeahead_urls: false
 });
 ```

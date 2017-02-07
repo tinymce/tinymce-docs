@@ -6,6 +6,8 @@ description: Insert an image into TinyMCE.
 keywords: photo insert edit style format image_caption image_list image_advtab image_title image_class_list image_prepend_url image_description image_dimensions image_title image_prepend_url
 ---
 
+{% include pardot-px-moxiemanager.html %}
+
 This plugin enables the user to insert an image into TinyMCE's editable area.
 
 > Note that this is not drag-drop functionality and the user is required to enter the path to the image. Optionally the user can also enter the image description, dimensions, and whether image proportions should be constrained (selected via a checkbox). Some of these settings can be preset using the plugin's configuration options.

@@ -6,6 +6,8 @@ description: This example shows how to add a local file picker to Image dialog.
 keywords: example demo image local-file-picker file_picker_callback
 ---
 
+{% include pardot-px-moxiemanager.html %}
+
 While we demonstrate how you can add local file picker to the *Image* dialog, in order for it to be useful in real world scenario, you should also enable [image uploading functionality]({{ site.baseurl }}/get-started/upload-images) - as a way to transport those local images to a server.
 
 *Note: The following code relies on `URL.createObjectURL()`, the level of support for which across modern browsers can be checked [here](http://caniuse.com/#search=createObjectURL).*

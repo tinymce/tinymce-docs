@@ -17,7 +17,7 @@ If you configure **PowerPaste** to allow local images (see the `powerpaste_allow
 
 https://www.tinymce.com/docs/advanced/handle-async-image-uploads/
 
-***Note:*** _PowerPaste (when configured to allow local images) will import images from pasted Microsoft Word/Excel content.  When doing this, **PowerPaste** extracts Base64 encoded images from the clipboard.  Images larger than approximately 8.5MB may fail to import based on technical limitations of web browsers._
+>***Note:*** _PowerPaste (when configured to allow local images) will import images from pasted Microsoft Word/Excel content.  When doing this, **PowerPaste** extracts Base64 encoded images from the clipboard.  Images larger than approximately 8.5MB may fail to import based on technical limitations of web browsers._
 
 ## Installation
 
@@ -46,7 +46,7 @@ This setting controls how content being pasted from Microsoft Word is filtered. 
 * `merge` - Preserve the inline formatting and structure of the original document. Invalid and proprietary styles, tags and attributes are still removed ensuring that the HTML is valid while more closely matching the original document formatting.
 * `prompt` (Default) - Prompt the user to choose between the clean and merge options after attempting to paste word content.
 
-> Note: When using the Windows operating system, copying and pasting content from Word 2013 (or later) in "Protected View" will result in plain, unformatted text. This is due to how Protected View interacts with the clipboard.
+>***Note:*** *When using the Windows operating system, copying and pasting content from Word 2013 (or later) in "Protected View" will result in plain, unformatted text. This is due to how Protected View interacts with the clipboard.*
 
 ### powerpaste_html_import
 
@@ -66,9 +66,9 @@ The default is `false`.
 
 When set to true Base 64 encoded images using a data URI in the copied content will not be removed after pasting.
 
-The default is `false`.
+The default is `true`.
 
-***Note:*** *If you configure **PowerPaste** to allow local images you can have TinyMCE automatically upload Base64 encoded images for conversion back to a standard image as documented on the following page: https://www.tinymce.com/docs/advanced/handle-async-image-uploads/*
+>***Note:*** *If you configure* ***PowerPaste*** *to allow local images you can have TinyMCE automatically upload Base64 encoded images for conversion back to a standard image as documented on the following page: https://www.tinymce.com/docs/advanced/handle-async-image-uploads*
 
 
 ##### Example
@@ -127,8 +127,8 @@ tinymce.init({
   selector: 'textarea',
   plugins: 'powerpaste',
   paste_postprocess: function(editor, fragment) {
-    // Fragment is a DocumentFragment node containing the DOM structure of the pasted content,
-    // after it has been filtered by the PowerPaste plugin.
+	// Fragment is a DocumentFragment node containing the DOM structure of the pasted content,
+	// after it has been filtered by the PowerPaste plugin.
   }
 });
 ```

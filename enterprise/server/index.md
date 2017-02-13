@@ -181,7 +181,7 @@ This is not recommended for production environments.
 |               |                     |             |
 |---------------|---------------------|-------------|
 | **element**   |  `http`             | Configures  HTTP client behaviour. |
-| **attribute** |  `trust-all-cert`   | Bypasses SSL security and indiscriminately trusts all SSL certificates. |
+| **attribute** |  `trust-all-cert`   | A boolean indicating whether to bypass SSL security and indiscriminately trusts all SSL certificates. |
 
 Example:
 

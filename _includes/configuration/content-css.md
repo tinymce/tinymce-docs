@@ -7,7 +7,7 @@ The `css` file used in this setting should be the same `css` file that controls 
 
 > Note: if you specify a relative path, it is resolved in relation to the URL of the (HTML) file that includes TinyMCE, **not** relative to TinyMCE itself.
 
-**Type:** `String`
+**Type:** `String`, `Array`
 
 ##### Absolute path example
 

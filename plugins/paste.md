@@ -126,7 +126,7 @@ tinymce.init({
 
 This option enables you to modify the pasted content before it gets inserted into the editor.
 
-**Type:** `String`
+**Type:** `Function`
 
 ##### Example
 
@@ -147,7 +147,7 @@ tinymce.init({
 
 This option enables you to modify the pasted content before it gets inserted into the editor but after it's been parsed into a DOM structure.
 
-**Type:** `String`
+**Type:** `Function`
 
 ##### Example
 

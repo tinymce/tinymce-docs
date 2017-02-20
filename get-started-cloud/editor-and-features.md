@@ -12,7 +12,7 @@ You may use TinyMCE Cloud without an API key as mentioned in the [getting starte
 
 ## Integrating TinyMCE for the first time
 
-### Step 1: Embed your custom script tag into your webpage
+### Step 1: Embed the TinyMCE Cloud script tag into your webpage
 
 In order to load TinyMCE for the very first time, you need to embed the TinyMCE editor code into your application. This is done by adding the following script tag into your app, or in the case of a web page the `<head>` of the page:
 
@@ -28,7 +28,7 @@ In addition to the advanced content creation solutions available in the Cloud of
 
 Lastly, you just need to extend your TinyMCE configuration to include any of the additional, advanced plugins (and associated toolbar/menu items) you’ve purchased. You will find enablement guides here:
 
-* [Powerpaste]({{ site.baseurl }}/plugins/powerpaste/)
+* [PowerPaste]({{ site.baseurl }}/plugins/powerpaste/)
 * [Spell Checker]({{ site.baseurl }}/plugins/tinymcespellchecker/)
 **Note:** `spellchecker_rpc_url` is **not** required when enabling this plugin via [TinyMCE Cloud]({{ site.baseurl }}/get-started-cloud/)
 * [Image Tools (with configured image proxy)]({{ site.baseurl }}/plugins/imagetools/)

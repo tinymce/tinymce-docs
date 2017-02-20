@@ -7,6 +7,20 @@ description: Everything you need to start migrating from 3.x to 4 and beyond.
 keywords: migrate migration 3x themes event handling new removed
 ---
 
+
+* [File structure](#filestructure)
+* [Removed plugins](#removedplugins)
+* [New plugins](#newplugins)
+* [Removed themes](#removedthemes)
+* [New themes](#newthemes)
+* [Event handling](#eventhandling)
+* [User interface](#userinterface)
+* [Control states](#controlstates)
+* [Dialogs/Windows](#dialogswindows)
+* [HTML5 output](#html5output)
+* [Using the compat3x plugin](#usingthecompat3xplugin)
+
+
 ## File structure
 
 The file structure was changed in the 4.0 release to more closely match other JavaScript projects. All minified files are suffixed with `.min.js` and `editor_plugin` and `editor_theme` was replaced with `plugin` and `theme`.

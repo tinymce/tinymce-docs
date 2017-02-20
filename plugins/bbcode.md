@@ -7,9 +7,9 @@ description: Add basic BBCode input/output support to TinyMCE.
 keywords: punbb informer
 ---
 
-This plugin makes it possible for TinyMCE to edit BBCode syntax in a WYSIWYG form by converting tags like `[b]` into `<strong>` and then `<strong>` back to `[b]` when the user submits the content.
+This plugin makes it possible to edit BBCode in a WYSIWYG style by converting tags like `[b]` into `<strong>` and then back, when user submits the content.
 
-> You will need to remove a lot of TinyMCE's functionality in order to use this plugin successfully, since the BBCode format doesn't support the whole HTML specification. The BBCode plugin also requires you to set some specific TinyMCE options in order to function.
+> You will need to sacrifice quite a lot of TinyMCE's functionality to use this plugin properly, since BBCode format doesn't support the whole HTML specification. 
 
 **Type:** `String`
 
@@ -26,7 +26,22 @@ tinymce.init({
 
 ### `bbcode_dialect`
 
-This option allows you to specify the BBCode dialect. We only support [PunBB](http://punbb.informer.com/) at the moment but hope to add more dialects in the future. When using the PunBB dialect `codeStyle` and `quoteStyle` will be converted into `[code]` and `[quote]` items.
+This option allows you to specify the BBCode dialect. We only support [PunBB](http://punbb.informer.com/) at the moment but hope to add more dialects in the future. Suported tags are listed in the table below:
+
+| BBCode                 | Description    | HTML equivalent                     |
+|------------------------|----------------|-------------------------------------|
+| `[b]...[/b]`             | Bold text      | `<strong>...</strong>`                |
+| `[i]...[/i]`             | Italicize text | `</em>...</em>`                     |
+| `[u]...[/u]`             | Underline text | `<u>...</u>`                          |
+| `[url=...]...[/url]`     | Link           | `<a href="...">...</a>`               |
+| `[img]...[/img]`         | Image          | `<img src="..." />`                   |
+| `[color=...]...[/color]` | Color text     | `<font color="...">...</font>`        |
+| `[code]...[/code]`       | Code           | `<span class="codeStyle">...</span>`  |
+| `[quote]...[/quote]`     | Quote          | `<span class="quoteStyle">...</span>` |
+| `\n`                     | Newline        | `<br />`                              |
+
+
+When using PunBB dialect, `codeStyle` and `quoteStyle` will be converted to `[code]` and `[quote]` correspondingly.
 
 **Type:** `String`
 

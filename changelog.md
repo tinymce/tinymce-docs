@@ -8,6 +8,10 @@ class: changelog
 
 {% capture changelog %}
 
+## Version 4.5.4 - February 23, 2017
+* Fixed bug where setBaseAndExtend would throw exceptions on Chrome 58 when selecting images.
+* Fixed bug where deleting partially selected contents could remove all contents in some edge cases on WebKit.
+
 ## Version 4.5.3 - February 1, 2017
 * Added keyboard navigation for menu buttons when the menu is in focus.
 * Added api to the list plugin for setting custom classes/attributes on lists.

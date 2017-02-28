@@ -41,6 +41,8 @@ These are both simple, open source Java application servers and they're easy to 
 > **Memory requirement:** Please ensure that you configure your Java Server (Tomcat/Jetty etc) with a minimum of 4GB. Please refer to [Out of memory errors]({{ site.baseurl }}/enterprise/server/troubleshoot/#outofmemoryerrors) section of the Troubleshoot page if you require instructions on how to explicitly define how much RAM will be allocated to your Java server.
 
 
+> **HTTP proxy:** If you are relying on an HTTP proxy for outgoing HTTP/HTTPS connections to the Internet, consider configuring use of the proxy by the application server by setting JVM system properties at this point. These are usually specified on the command line (using `-D` command line parameters) or in application server specific configurations files. Please refer to [Networking Properties for Java](http://docs.oracle.com/javase/8/docs/api/java/net/doc-files/net-properties.html) for details. The system properties `http.proxyHost`, `http.proxyPort`, `http.nonProxyHosts`, `https.proxyHost`, `https.proxyPort` are recognized as well as `http.proxyUser` and `http.proxyPassword` to support authenticating proxies. Alternatively, use of a proxy for server-side components can be configured in a configuration file, please see [below]({{ site.baseurl }}/enterprise/server/#proxyoptional).
+
 ### Step 2. Deploy Server-side Components
 
 You’ll need to ensure you deploy the following WAR files packaged with the TinyMCE Enterprise SDK:
@@ -73,7 +75,12 @@ Some features require additional configuration which can be found in their docum
 
 This element configures the server-side components to communicate with specified, trusted  domains.
 
-The `origins` attribute must list **all** the origins that instances of the editor will be served from.  Only requests from the listed origins will be processed by the server-side components. Requests from any other origins will be rejected. The value must be an array of strings.
+The `origins` attribute must list **all** the origins that instances of the editor will be hosted on.  Only requests from the listed origins will be processed by the server-side components. Requests from any other origins will be rejected. The value must be an array of strings.
+
+|               |                     |             |
+|---------------|---------------------|-------------|
+| **element**   |  `allowed-origins`  | Stores CORS setup information |
+| **attribute** |  `origins`          | An array of strings representing the domains allowed to communicate with the services. Note: Be sure to include the protocol (https or http) and any required port number (eg:8080) in the string. |
 
 > **Note**: Origin in this context refers to the value of a HTTP Origin header. It must include the protocol (http or https), the domain, and an optional port number. Do not include a trailing slash or paths to specific resources.
 
@@ -128,6 +135,61 @@ ephox{
    allowed-origins{
            origins=["http://myCMS", "https://myCMS", "http://myCMS:4141"]
   }
+}
+````
+
+#### proxy (optional)
+
+This element configures use of an HTTP proxy for outgoing HTTP/HTTPS requests made by the server-side components.
+
+Default proxy settings are picked up from JVM system properties, usually provided on the command line, as defined in [Networking Properties for Java](http://docs.oracle.com/javase/8/docs/api/java/net/doc-files/net-properties.html). The system properties `http.proxyHost`, `http.proxyPort`, `http.nonProxyHosts`, `https.proxyHost`, `https.proxyPort` are recognized as well as `http.proxyUser` and `http.proxyPassword` to support authenticating proxies.
+
+This optional proxy element provides an alternative to providing proxy settings as JVM system properties, or to override system properties.
+
+|               |                       |             |
+|---------------|-----------------------|-------------|
+| **element**   |  `proxy`              | Stores HTTP outgoing proxy settings for the server-side components. |
+| **attribute** |  `http.proxyHost`     | A string defining the host name of the proxy for plain HTTP (not HTTPS) connections. (Mandatory) |
+| **attribute** |  `http.proxyPort`     | An integer defining the port number of the proxy for plain HTTP (not HTTPS) connections. (Mandatory) |
+| **attribute** |  `http.nonProxyHosts` | A list of strings separated by vertical lines ("&#124;") listing hosts and domains to be excluded from proxying, for **both** plain HTTP and HTTPS connections. The strings can contain asterisks ("*") as wildcards. (Optional, defaults to "localhost&#124;127.\*&#124;[::1]" if not set.) |
+| **attribute** |  `https.proxyHost`    | A string defining the host name of the proxy for HTTPS connections. (Optional) |
+| **attribute** |  `https.proxyPort`    | An integer defining the port number of the proxy for HTTPS connections. (Optional) |
+| **attribute** |  `http.proxyUser`     | Username for authenticating to **both** the HTTP and HTTPS proxy. (Optional) |
+| **attribute** |  `http.proxyPassword` | Password for authenticating to **both** the HTTP and HTTPS proxy. (Optional) |
+
+
+In the following example, both HTTP and HTTPS connections (except to localhost and the example.com domain) are proxied through someproxy.example.com on port 8080 and someproxy.example.com does not require authentication.
+
+````
+ephox {
+    proxy {
+        http.proxyHost = "someproxy.example.com"
+        http.proxyPort = "8080"
+        https.proxyHost = "someproxy.example.com"
+        https.proxyPort = "8080"
+        http.nonProxyHosts = "localhost|*.example.com"
+    }
+}
+````
+
+#### http (optional)
+
+Some server-side components make outbound HTTP and HTTPS connections. These include Link Checker, Enhanced Media Embed and Image Tools Proxy. In an evaluation or pre-production environment, you might want to test these features against resources with untrusted SSL certificates such as in-house servers with self-signed SSL certificates. In these circumstances, it is possible to bypass all SSL security.
+
+This is not recommended for production environments.
+
+|               |                     |             |
+|---------------|---------------------|-------------|
+| **element**   |  `http`             | Configures  HTTP client behaviour. |
+| **attribute** |  `trust-all-cert`   | A boolean indicating whether to bypass SSL security and indiscriminately trusts all SSL certificates. |
+
+Example:
+
+````
+ephox {
+    http {
+        trust-all-cert = true
+    }
 }
 ````
 

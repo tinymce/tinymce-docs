@@ -145,4 +145,3 @@ tinymce.get('editorID').('PastePostProcess', function(fragment) {
 ## Downloading PowerPaste plugin
 
 A [TinyMCE Enterprise](http://www.tinymce.com/pricing/) subscription includes the ability to download and install the **PowerPaste** plugin.
-

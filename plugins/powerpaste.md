@@ -5,8 +5,6 @@ title_nav: PowerPaste
 keywords: enterprise powerpaste power paste powerpaste_word_import powerpaste_html_import powerpaste_block_drop powerpaste_allow_local_images microsoft word excel
 ---
 
-Test Addition
-
 The TinyMCE **PowerPaste** plugin automatically cleans up content from Microsoft Word and HTML sources to ensure clean, compliant content that matches the look and feel of the site.
 
 ## Usage

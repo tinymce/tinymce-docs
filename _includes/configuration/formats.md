@@ -42,18 +42,18 @@ Some built in formats `fontsize`, `fontname`, `forecolor`, `hilitecolor` uses a 
 
 ### Format parameters
 
-Each format has a set of parameters that you can specify.
+For each format you can specify some additional parameters:
 
 | Name       | Summary          |
 |------------|------------------|
-| inline     | Name of the inline element to produce for example "span". The current text selection will be wrapped in this inline element.
-| block      | Name of the block element to produce for example "h1". Existing block elements within the selection gets replaced with the new block element. |
-| selector   | CSS 3 selector pattern to find elements within the selection by. This can be used to apply classes to specific elements or complex things like odd rows in a table. |
-| classes    | Space separated list of classes to apply the the selected elements or the new inline/block element. |
-| styles     | Name/value object with CSS style items to apply such as color etc. |
-| attributes | Name/value object with attributes to apply to the selected elements or the new inline/block element. |
-| exact      | Disables the merge similar styles feature when used. This is needed for some CSS inheritance issues such as text-decoration for underline/strikethough. |
-| wrapper    | State that tells that the current format is a container format for block elements. For example a div wrapper or blockquote. |
+| inline     | Tag name of the inline element to use as a wrapper, for example "span". Will be used to wrap the current selection.
+| block      | Tag name of the block element to use as a wrapper, for example "h1". Existing block elements within the selection will be replaced with this block element. |
+| selector   | CSS3 selector pattern that will be used to find elements within the selection. It can be used to apply classes to specific elements only, for example only to odd rows in a table. |
+| classes    | Space separated list of classes that will be applied to the selected or newly created inline/block element. |
+| styles     | Key/value object with CSS style items to apply such as color etc. |
+| attributes | Key/value object with attributes to apply to the selected or newly created inline/block element. |
+| exact      | Makes sure that the format won't be merged with other wrappers having the same format. We use it to avoid conflicts between text-decorations for underline and strikethough formats. |
+| wrapper    | States that the format is a container format for block elements. For example a div wrapper or blockquote. |
 
 ### Example of usage of the formats option
 

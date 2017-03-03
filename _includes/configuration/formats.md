@@ -50,7 +50,7 @@ For each format you can specify some additional parameters:
 | block      | Tag name of the block element to use as a wrapper, for example "h1". Existing block elements within the selection will be replaced with this block element. |
 | selector   | CSS3 selector pattern that will be used to find elements within the selection. It can be used to apply classes to specific elements only, for example only to odd rows in a table. |
 | classes    | Space separated list of classes that will be applied to the selected or newly created inline/block element. |
-| styles     | Key/value object with CSS style items to apply such as color etc. |
+| styles     | Key/value object with CSS styles to apply to the selected or newly created inline/block element (e.g. color, backgroundColor, textDecoration, etc). |
 | attributes | Key/value object with attributes to apply to the selected or newly created inline/block element. |
 | exact      | Makes sure that the format won't be merged with other wrappers having the same format. We use it to avoid conflicts between text-decorations for underline and strikethough formats. |
 | wrapper    | States that the format is a container format for block elements. For example a div wrapper or blockquote. |

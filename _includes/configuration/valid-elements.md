@@ -13,7 +13,7 @@ If you just want to add or change some behavior for a few items, use the [extend
 |----------|------------------|
 | @        | Rules with this name will be applied to all elements defined after this rule. So `@[attr1&#124;attr2]` will enable `attr1` and `attr2` for all elements, but `element1,@[attr1&#124;attr2],element2,element3` will enable `attr1` and `attr2` only for `element2` and `element3`. If applied in [extended_valid_elements]({{ site.baseurl }}/configure/content-filtering/#extended_valid_elements), it is only effective for the elements in the extended_valid_elements list. |
 | ,   | Separates element chunk definitions. |
-| /   | Separates element synonymous. The first element is the one that will be output. |
+| /   | Separates element synonyms. The first element is the one that will be output. |
 | &#124; | Separates attribute definitions. |
 | [   | Starts a new attribute list for an element definition. |
 | ]   | Ends an attribute list for an element definition. |

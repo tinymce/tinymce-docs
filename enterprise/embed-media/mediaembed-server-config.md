@@ -64,38 +64,6 @@ ephox {
   embed {
     custom = [
 
-      # instagram
-      {
-        endpoint = "https://api.instagram.com/oembed/"
-        schemes = [
-          "http://instagram.com/p/*",
-          "http://instagr.am/p/*",
-          "https://instagram.com/p/*",
-          "https://instagr.am/p/*",
-          "http://www.instagram.com/p/*",
-          "http://www.instagr.am/p/*",
-          "https://www.instagram.com/p/*",
-          "https://www.instagr.am/p/*",
-        ]
-      },
-      # http://oembed.com/ example
-      # flickr
-      {
-        endpoint = "https://www.flickr.com/services/oembed.json/"
-        schemes = [
-          "http://www.flickr.com/photos/*",
-          "https://www.flickr.com/photos/*",
-          "http://www.flickr.com/photos/*/foo/",
-          "https://www.flickr.com/photos/*/foo/",
-          "http://*.flickr.com/photos/*",
-          "https://*.flickr.com/photos/*"
-        ]
-      },
-      # a bogus endpoint with no schemes
-      {
-        endpoint = "http://bogus.com/"
-        schemes = []
-      },
       # youtube
       {
         endpoint = "http://www.youtube.com/oembed"
@@ -196,14 +164,6 @@ ephox {
           "https://play.spotify.com/*"
         ]
       },
-      # Vine
-      {
-        endpoint = "https://vine.co/oembed.json"
-        schemes = [
-          "http://vine.co/v/*",
-          "https://vine.co/v/*"
-        ]
-      },
       # Hulu
       {
         endpoint = "http://www.hulu.com/api/oembed.json",
@@ -222,14 +182,6 @@ ephox {
           "https://www.vimeo.com/*"
         ]
       },
-      # CollegeHumor
-      {
-        endpoint = "http://www.collegehumor.com/oembed.json"
-        schemes = [
-          "http://www.collegehumor.com/video/*",
-          "https://www.collegehumor.com/video/*"
-        ]
-      },
       # SmugMug
       {
         endpoint = "http://api.smugmug.com/services/oembed/"
@@ -245,48 +197,12 @@ ephox {
           "http://*.slideshare.net/*"
         ]
       },
-      # Twitter timelines
-      {
-        endpoint = "https://publish.twitter.com/oembed?i=timeline"
-        schemes = [
-          "http://twitter.com/*/timelines/*",
-          "https://twitter.com/*/timelines/*",
-          "http://twitter.com/*/lists/*",
-          "https://twitter.com/*/lists/*",
-          "http://twitter.com/*/likes",
-          "https://twitter.com/*/likes"
-        ]
-      },
-      # Twitter Users
-      {
-        endpoint = "https://publish.twitter.com/oembed?i=user"
-        schemes = [
-          "http://twitter.com/*",
-          "https://twitter.com/*"
-        ]
-      },
-      # Getty Images
-      {
-        endpoint = "http://embed.gettyimages.com/oembed"
-        schemes = [
-          "http://gty.im/*",
-          "https://gty.im/*"
-        ]
-      },
       # Wordpress
       {
         endpoint = "https://public-api.wordpress.com/oembed/1.0/?for=ephox"
         schemes = [
           "http://*.wordpress.com/*",
           "https://*.wordpress.com/*"
-        ]
-      },
-      # Twitch
-      {
-        endpoint = "https://api.twitch.tv/v4/oembed"
-        schemes = [
-          "http://www.twitch.tv/*",
-          "https://www.twitch.tv/*"
         ]
       },
       # Meetup

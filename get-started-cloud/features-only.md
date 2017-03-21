@@ -58,3 +58,14 @@ Here is a complete example, whereby:
    </body>
 <html>
 ```
+
+## Step 3: Forward proxy configuration
+If your company network has a forward proxy that controls access to the internet, please ensure that the following URLs are accessible via this proxy.
+
+* All URLs at which the editor is deployed.
+* All URLs at which the plugins are deployed.
+* https://imageproxy.tinymce.com
+* https://hyperlinking.tinymce.com
+* https://spelling.tinymce.com
+
+Also, please ensure that the `tiny-api-key` and `tinymce-api-key` headers are retained while requesting the list of URLs above.

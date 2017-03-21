@@ -38,6 +38,17 @@ Lastly, you just need to extend your TinyMCE configuration to include any of the
 * [Enhanced Media Embed]({{ site.baseurl }}/plugins/mediaembed/)
 * [Link Checker]({{ site.baseurl }}/plugins/linkchecker/)
 
+### Step 4: Forward proxy configuration
+If your company network has a forward proxy that controls access to the internet, please ensure that the following URLs are accessible via this proxy.
+
+* All URLs at which the editor is deployed.
+* All URLs at which the plugins are deployed.
+* https://imageproxy.tinymce.com
+* https://hyperlinking.tinymce.com
+* https://spelling.tinymce.com
+
+Also, please ensure that the `tiny-api-key` and `tinymce-api-key` headers are retained while requesting the list of URLs above.
+
 ## Migrating from TinyMCE SDK to TinyMCE Cloud
 
 ### Step 1: Replace existing reference to tinymce.min.js

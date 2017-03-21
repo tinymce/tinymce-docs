@@ -16,4 +16,4 @@ The [Advanced Code Editor]({{ site.baseurl }}/plugins/advcode/) plugin (`advcode
 
 ## How to get the Advanced Code Editor plugin
 
-The Advanced Code feature is included with a [TinyMCE Enterprise](https://www.tinymce.com/pricing/) subscription.
+The Advanced Code feature is a [premium feature](https://www.tinymce.com/pricing/) available from as little as $4 per month.

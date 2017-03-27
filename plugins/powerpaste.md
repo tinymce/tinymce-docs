@@ -19,13 +19,11 @@ https://www.tinymce.com/docs/advanced/handle-async-image-uploads/
 
 >***Note:*** _PowerPaste (when configured to allow local images) will import images from pasted Microsoft Word/Excel content.  When doing this, **PowerPaste** extracts Base64 encoded images from the clipboard.  Images larger than approximately 8.5MB may fail to import based on technical limitations of web browsers._
 
-## Installation
-
-To enable the TinyMCE **PowerPaste** plugin:
+## Cloud Installation
+To enable the TinyMCE **PowerPaste** plugin with [TinyMCE Cloud]({{ site.baseurl }}/get-started-cloud/):
 
 1. If you are currently using the `paste` plugin provided with TinyMCE, disable it by removing it from the `plugins` list.
-2. Copy the entire `powerpaste` folder that contains this README file into the plugins directory of your TinyMCE installation. This is typically `/tinymce/plugins`.
-3. Add `powerpaste` to the `plugins` list.
+2. Add `powerpaste` to the `plugins` list.
 
 Example TinyMCE configuration:
 
@@ -35,6 +33,15 @@ tinymce.init({
   plugins: 'powerpaste'
 });
 ```
+
+## SDK Installation
+To enable the TinyMCE **PowerPaste** plugin:
+
+1. If you are currently using the `paste` plugin provided with TinyMCE, disable it by removing it from the `plugins` list.
+2. Copy the entire `powerpaste` folder that contains this README file into the plugins directory of your TinyMCE installation. This is typically `/tinymce/plugins`.
+3. Add `powerpaste` to the `plugins` list.
+
+See the example TinyMCE configuration above.
 
 ## Configuration Options
 

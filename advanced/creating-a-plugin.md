@@ -7,7 +7,9 @@ description: A short introduction to creating plugins for TinyMCE along with an 
 keywords: plugin plugin.js plugin.min.js tinymce.js
 ---
 
-Creating plugins in TinyMCE is pretty simple. This tutorial tries to outline some of the basic concepts of creating a plugin. For more details consult the API documentation and check the existing plugins we ship with the core.
+Creating plugins in TinyMCE is pretty simple - especially if you use the [Yeoman generator]({{ site.baseurl }}/advanced/yeoman-generator/)! - but if you would rather do it all by yourself keep reading on. 
+
+This tutorial tries to outline some of the basic concepts of creating a plugin. For more details consult the API documentation and check the existing plugins we ship with the core.
 
 ## File Structure
 

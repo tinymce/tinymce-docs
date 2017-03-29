@@ -96,7 +96,7 @@ ephox {
 
 ##### Additional Information Around Entering Origins
 
-The origins are matched by protocol, host name, and port. So you may need a combination of all three, depending on which browsers you use. If you are serving the editor and services from `http://localhost` & port 80, then the list of origins should have an entry for `http://localhost` and any other servers with ports, like so:
+The origins are matched by protocol, host name, and port. So you may need a combination of all three, depending on which browsers you use. If you are serving the editor and services from `http://localhost` on port 80, then the list of origins should have an entry for `http://localhost` and any other servers with ports, like so:
 
 ````
 ephox{
@@ -115,6 +115,22 @@ ephox{
   }
 }
 ````
+
+##### Wildcards in Origins
+
+Wildcards are supported in some parts of the allowed-origins entries. The most common scenario would be to allow origins on your domain, e.g. "https://*.mydomain.com".
+
+Wildcards are supported in the following parts of the allowed-origin URL:
+
+1. The scheme, e.g. `"*://mydomain.com"`.
+   Note that omitting the scheme is the same as specifying a wildcard scheme. e.g. `"mydomain.com"`
+2. The port, e.g. `"http://mydomain.com:*"`.
+   Note: if the port is not specified, then 80 is allowed for http and 443 is allowed for https.
+   Using a wildcard as the port allows all ports
+3. As a prefix of the domain, e.g. `"http://*.mydomain.com"`.
+4. Any combination of scheme, port, domain, e.g. `"*://*.mydomain.com:*"`
+
+You may specify an allowed-origin as `"*"` (allowing all origins), or `"https://*"` (allowing all domains for https). Allowing a broad set of origins NOT recommended, in order to maintain account security.
 
 ##### Troubleshooting Origins
 

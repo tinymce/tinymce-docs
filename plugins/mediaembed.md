@@ -15,7 +15,20 @@ For the moment the **Enhanced Media Embed** plugin has to be used in conjunction
 1. Make sure you have the `media` plugin added to the `plugins` list.
 2. Add the `mediaembed` plugin to the `plugins` list.
 
-### Example configuration
+### Example Cloud Configuration
+The service URL is already configured with [TinyMCE Cloud]({{ site.baseurl }}/get-started-cloud).
+Simply specify the `media` and `mediaembed` plugins, and optionally a `mediaembed_max_width`
+
+```js
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'media mediaembed',
+  mediaembed_max_width: 450
+})
+```
+
+### Example SDK Configuration
+In an SDK installation, please ensure you configure the URL to the service with the `mediaembed_service_url` parameter.
 
 ```js
 tinymce.init({
@@ -35,14 +48,11 @@ The plugin can be used in two ways, either by simply entering a URL on an empty 
 ### `mediaembed_service_url`
 
 This setting specifies the URL to the service that will handle your requests and return the embeddable snippets used by the **Media Embed** plugin. You will get the URL as a part of your [premium TinyMCE plugin](https://www.tinymce.com/pricing/) subscription.
+This option is not required for [TinyMCE Cloud]({{ site.baseurl }}/get-started-cloud)
 
 ### `mediaembed_max_width`
 
 This optional setting specifies a maximum width in pixels of the embedded content. Defaults to `650`.
-
-### `mediaembed_api_key`
-
-This optional setting specifies an API key needed to talk to the service defaults to the global `api_key` setting.
 
 ## Downloading Enhanced Media Embed plugin
 

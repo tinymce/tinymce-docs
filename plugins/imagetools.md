@@ -13,6 +13,7 @@ Image Tools (`imagetools`) plugin adds a contextual editing toolbar to the image
 *Warning:* This feature requires at least Internet Explorer 10, since it makes use of `HTML5 File API`.
 
 ## Cloud Installation
+The Image Tools plugin is provided with all subscriptions to [TinyMCE Cloud]({{ site.baseurl }}/get-started-cloud/), including an automatically configured image proxy.
 Simply add 'image' to the 'toolbar' list and 'image imagetools' to the 'plugins' list.
 
 ##### Example
@@ -29,7 +30,19 @@ tinymce.init({
 To enable the TinyMCE Image Tools plugin:
 
 1. Add 'image' to the 'toolbar' list and 'image imagetools' to the 'plugins' list
-2. Enable the following options as needed
+2. Enable `imagetools_cors_hosts` and `imagetools_proxy` options as needed
+
+##### Example
+
+```js
+tinymce.init({
+  selector: "textarea",  // change this value according to your HTML
+  toolbar: "image",
+  plugins: "image imagetools",
+  imagetools_cors_hosts: ['mydomain.com', 'otherdomain.com'],
+  imagetools_proxy: 'proxy.php'
+});
+```
 
 ### Options
 ### `imagetools_cors_hosts`

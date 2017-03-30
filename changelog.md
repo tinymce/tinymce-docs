@@ -8,6 +8,9 @@ class: changelog
 
 {% capture changelog %}
 
+## Version 4.5.6 - March 30, 2017
+* Fixed bug where it wasn't possible to select floated images in some cases.
+
 ## Version 4.5.5 - March 7, 2017
 * Fixed bug where fontsize could not be changed after changing the text color.
 

@@ -32,6 +32,8 @@ Now you just need to extend your [TinyMCE configuration]({{ site.baseurl }}/conf
 * [Enhanced Media Embed]({{ site.baseurl }}/plugins/mediaembed/)
 * [Link Checker]({{ site.baseurl }}/plugins/linkchecker/)
 
+> Please note that after purchasing a plugin, it may take up to 30 minutes for the plugin to be included with your editor. You may also need to clear your browser's cache.
+
 Here is a complete example, whereby:
 
 * The account `API key` has the value *TEST_API_KEY*.

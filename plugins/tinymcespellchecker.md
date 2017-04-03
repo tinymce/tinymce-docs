@@ -23,7 +23,26 @@ The following languages are supported:
 * Spanish
 * Swedish
 
-## Installation
+## Cloud Installation
+To enable the TinyMCE Enterprise Spellchecking plugin with [TinyMCE Cloud]({{ site.baseurl }}/get-started-cloud):
+
+1. If you are currently using the 'spellchecker' plugin provided with TinyMCE, disable it by removing it from the 'plugins' list.
+2. Add 'tinymcespellchecker' to the 'plugins' list.
+
+With TinyMCE Cloud the server-side spellchecking component is automatically configured, so the `spellchecker_rpc_url` parameter does not need to be set.
+
+##### Example TinyMCE Configuration
+
+```js
+tinymce.init({
+	selector: 'textarea',
+	plugins: 'tinymcespellchecker',
+	spellchecker_language: 'en'
+});
+```
+
+
+## SDK Installation
 To enable the TinyMCE Enterprise Spellchecking plugin:
 
 1. If you are currently using the 'spellchecker' plugin provided with TinyMCE, disable it by removing it from the 'plugins' list.

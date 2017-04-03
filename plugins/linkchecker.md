@@ -3,14 +3,17 @@ layout: default
 title: Link Checker Plugin
 title_nav: Link Checker
 description: Validate links, as you type.
-keywords: url urls link linkchecker_service_url linkchecker_api_key linkchecker_content_css
+keywords: url urls link linkchecker_service_url linkchecker_content_css
 ---
 
 The `linkchecker` does what it says &ndash; validates links, as you type them. Links considered invalid will be highlighted with red and will have a dedicated context menu with options to edit the link, try and open it in a separate tab, remove the link or ignore it.
 
 > Please note that Link Checker is a **premium** plugin and relies on a server-side service, which is included as a part of a [premium TinyMCE plugin](http://www.tinymce.com/pricing/) subscription.
 
-**Type:** `String`
+
+## Cloud Instructions
+
+If you are using [TinyMCE Cloud]({{ site.baseurl }}/get-started-cloud/), simply add `"linkchecker"` to your plugins list, and the service will be automatically configured.
 
 ##### Example
 
@@ -21,26 +24,24 @@ tinymce.init({
 });
 ```
 
-## Options
+## SDK Instructions
 
-Link Checker has the following settings.
-
-### `linkchecker_api_key`
-
-If the link validation service requires API key, you can provide it here.
-
-**Type:** `String`
+SDK customers will need to provide a URL to their deployment of the link
+checking service via the `linkchecker_service_url` parameter
 
 ##### Example
 
 ```js
 tinymce.init({
-    selector: "textarea",
-    plugins: "linkchecker",
-    linkchecker_service_url: "http://mydomain.com/navi",
-    linkchecker_api_key: "this_is_my_api_key"
+  selector: "textarea",  // change this value according to your HTML
+  plugins: "linkchecker",
+  linkchecker_service_url: "http://mydomain.com/linkchecker"
 });
 ```
+
+## Options
+
+Link Checker has the following settings.
 
 ### `linkchecker_content_css`
 
@@ -74,6 +75,6 @@ A URL of the server-side link validation service. This is required option, witho
 tinymce.init({
     selector: "textarea",
     plugins: "linkchecker",
-    linkchecker_service_url: "http://mydomain.com/navi"
+    linkchecker_service_url: "http://mydomain.com/linkchecker"
 });
 ```

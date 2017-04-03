@@ -51,6 +51,9 @@ If your company network has a forward proxy that controls access to the internet
 
 Also, please ensure that the `tiny-api-key` and `tinymce-api-key` headers are retained while requesting the list of URLs above.
 
+### Step 5: Specifying a translation
+If you wish to use a language other than English (US), please [download a language pack](https://www.tinymce.com/i18n) and then [specify its location]({{ site.baseurl }}/configure/localization/#language_url) with the `language_url` configuration option.
+
 ## Migrating from TinyMCE SDK to TinyMCE Cloud
 
 ### Step 1: Replace existing reference to tinymce.min.js

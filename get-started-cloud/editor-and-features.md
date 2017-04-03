@@ -17,7 +17,7 @@ You may use TinyMCE Cloud without an API key as mentioned in the [getting starte
 In order to load TinyMCE for the very first time, you need to embed the TinyMCE editor code into your application. This is done by adding the following script tag into your app, or in the case of a web page the `<head>` of the page:
 
 ```js
-<script src="http://cloud.tinymce.com/stable/tinymce.min.js?apiKey=your_API_key"></script>
+<script src="{{ site.cdnurl }}?apiKey=your_API_key"></script>
 ```
 
 ### Step 2: Load, customize and interact with TinyMCE
@@ -58,7 +58,7 @@ Also, please ensure that the `tiny-api-key` and `tinymce-api-key` headers are re
 Migrating from the SDK to the Cloud is a relatively straightforward process. Please remove your existing script tag that loads TinyMCE’s JavaScript (typically a reference to `tinymce.min.js` either hosted in your own application or available via one our our legacy CDNs) and replace this script tag with the following:
 
 ```js
-<script src="http://cloud.tinymce.com/stable/tinymce.min.js?apiKey=your_API_key"></script>
+<script src="{{ site.cdnurl }}?apiKey=your_API_key"></script>
 ```
 
 ### Step 2: Update custom plugin paths

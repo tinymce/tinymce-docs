@@ -15,7 +15,7 @@ In order to use oue premium plugins, you’ll need to select what plugins you’
 Within your webpage, after you’ve specified your script tag to load the TinyMCE editor code, you’ll need to then add the following new script:
 
 ```js
-<script src="http://cloud.tinymce.com/stable/plugins.min.js?apiKey=your_API_key"></script>
+<script src="https://cloud.tinymce.com/stable/plugins.min.js?apiKey=your_API_key"></script>
 ```
 
 ## Step 2: Specify purchased TinyMCE plugins and toolbar buttons
@@ -42,8 +42,8 @@ Here is a complete example, whereby:
 ```js
 <html>
    <head>
-      <script src="http://your_server/tinymce.min.js"></script>
-      <script src="http://cloud.tinymce.com/stable/plugins.min.js?apiKey=your_API_key"></script>
+      <script src="https://your_server/tinymce.min.js"></script>
+      <script src="https://cloud.tinymce.com/stable/plugins.min.js?apiKey=your_API_key"></script>
    </head>
    <body>
       <textarea><p>test textarea</p></textarea>

@@ -224,7 +224,39 @@ from the Cloud. It also won't display any warning or error messages if you're no
 ```
 
 
-## Example (featuring a combination of SDK and Cloud features)
+## Examples
+
+### Featuring declared editor and plugin versions
+
+The following example would load:
+
+* TinyMCE 4.5.0
+* PowerPaste version 2.1.8
+* Advanced Code Editor 1.0.2
+
+```js
+<html>
+   <head>
+      <script src="https://cloud.tinymce.com/4.5.0/tinymce.min.js?apiKey=your_API_key&powerpaste=2.1.8&advcode=1.0.2"></script>
+   </head>
+   <body>
+      <textarea><p>test textarea</p></textarea>
+      <script>
+         tinymce.init({
+            selector: 'textarea',
+            height: 500,
+            theme: 'modern',
+            plugins: [
+               'advlist autolink lists link image charmap print preview hr anchor pagebreak',
+               'tinymcespellchecker']
+         });
+      </script>
+   </body>
+<html>
+
+```
+
+### Featuring a combination of SDK and Cloud features
 
 The following example would load:
 

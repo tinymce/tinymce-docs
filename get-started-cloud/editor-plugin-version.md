@@ -24,7 +24,7 @@ This value can be replaced with any of the following supported versions of TinyM
 
 ### Selecting specific version numbers
 
-You can specify a *Major* version number, a *Major.Minor* version number or a *Major.Minor.Patch* version number. If the Minor or Patch versions numbers are not present, it will default to the latest Minor/pPatch version released.
+You can specify a *Major* version number, a *Major.Minor* version number or a *Major.Minor.Patch* version number. If the Minor or Patch versions numbers are not present, it will default to the latest Minor and Patch version released.
 
 ##### Example
 Major version number (e.g. "4").

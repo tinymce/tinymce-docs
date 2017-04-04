@@ -24,7 +24,7 @@ This value can be replaced with any of the following supported versions of TinyM
 
 ### Selecting specific version numbers
 
-You can specify a *Major* version number, a *Major.Minor* version number or a *Major.Minor.Patch* version number. If the Minor or Patch versions numbers are not present, it will default to the latest Minor/pPatch version released.
+You can specify a *Major* version number, a *Major.Minor* version number or a *Major.Minor.Patch* version number. If the Minor or Patch versions numbers are not present, it will default to the latest Minor and Patch version released.
 
 ##### Example
 Major version number (e.g. "4").
@@ -155,7 +155,78 @@ Whether you’re deploying both the [TinyMCE editor and premium plugins via the 
 <script src="https://cloud.tinymce.com/stable/plugins.min.js?apiKey=your_API_key&linkchecker=1.0.0"></script>
 ```
 
-## Example (featuring declared editor and plugin versions)
+## Specifying an SDK deployment of features/plugins
+
+If you're deploying [only premium plugins from the Cloud]({{ site.baseurl }}/get-started-cloud/features-only), you may want to have some features served from the Cloud and some features served from your own SDK installation. This is also possible with URL query parameters and the special version name "sdk".
+
+The "sdk" version lets the TinyMCE Plugin Manager know that you're not using the Cloud version of a particular plugin and that it shouldn't serve the plugin
+from the Cloud. It also won't display any warning or error messages if you're not entitled to it.
+
+
+#### PowerPaste
+
+* [Developer documentation]({{ site.baseurl }}/plugins/powerpaste)
+
+##### Example
+
+```js
+<script src="https://cloud.tinymce.com/stable/plugins.min.js?apiKey=your_API_key&powerpaste=sdk"></script>
+```
+
+#### Spell Checker Pro
+
+* [Developer documentation]({{ site.baseurl }}/plugins/tinymcespellchecker)
+
+##### Example
+
+```js
+<script src="https://cloud.tinymce.com/stable/plugins.min.js?apiKey=your_API_key&tinymcespellchecker=sdk"></script>
+```
+
+#### Accessibility Checker
+
+* [Developer documentation]({{ site.baseurl }}/plugins/a11ychecker)
+
+##### Example
+
+```js
+<script src="https://cloud.tinymce.com/stable/plugins.min.js?apiKey=your_API_key&a11ychecker=sdk"></script>
+```
+
+#### Advanced Code Editor
+
+* [Developer documentation]({{ site.baseurl }}/plugins/advcode/)
+
+##### Example
+
+```js
+<script src="https://cloud.tinymce.com/stable/plugins.min.js?apiKey=your_API_key&advcode=sdk"></script>
+```
+
+#### Enhanced Media Embed
+
+* [Developer documentation]({{ site.baseurl }}/plugins/mediaembed/)
+
+##### Example
+
+```js
+<script src="https://cloud.tinymce.com/stable/plugins.min.js?apiKey=your_API_key&mediaembed=sdk"></script>
+```
+
+#### Link Checker
+
+* [Developer documentation]({{ site.baseurl }}/plugins/linkchecker/)
+
+##### Example
+
+```js
+<script src="https://cloud.tinymce.com/stable/plugins.min.js?apiKey=your_API_key&linkchecker=sdk"></script>
+```
+
+
+## Examples
+
+### Featuring declared editor and plugin versions
 
 The following example would load:
 
@@ -167,6 +238,36 @@ The following example would load:
 <html>
    <head>
       <script src="https://cloud.tinymce.com/4.5.0/tinymce.min.js?apiKey=your_API_key&powerpaste=2.1.8&advcode=1.0.2"></script>
+   </head>
+   <body>
+      <textarea><p>test textarea</p></textarea>
+      <script>
+         tinymce.init({
+            selector: 'textarea',
+            height: 500,
+            theme: 'modern',
+            plugins: [
+               'advlist autolink lists link image charmap print preview hr anchor pagebreak',
+               'tinymcespellchecker']
+         });
+      </script>
+   </body>
+<html>
+
+```
+
+### Featuring a combination of SDK and Cloud features
+
+The following example would load:
+
+* TinyMCE from your SDK installation
+* PowerPaste version 2.1.8 from the Cloud
+* Advanced Code Editor from your SDK installation
+
+```js
+<html>
+   <head>
+      <script src="https://cloud.tinymce.com/stable/plugins.min.js?apiKey=your_API_key&powerpaste=2.1.8&advcode=sdk"></script>
    </head>
    <body>
       <textarea><p>test textarea</p></textarea>

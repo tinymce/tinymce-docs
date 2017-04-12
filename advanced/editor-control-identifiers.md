@@ -41,8 +41,8 @@ Here is a list of the toolbar/menu controls that the core and plugins provides. 
 | visualaid | core | Toggles the visual aids for invisible elements. |
 | insert | core | Groups various insert actions into one button. |
 | hr | [hr]({{ site.baseurl }}/plugins/hr/) | Inserts a horizontal rule into the editor. |
-| bullist | [link]({{ site.baseurl }}/plugins/link/) | Formats the current selection as a bullet list. |
-| numlist | [link]({{ site.baseurl }}/plugins/link/) | Formats the current selection as a numbered list. |
+| bullist | [link]({{ site.baseurl }}/plugins/advlist/) | Formats the current selection as a bullet list. |
+| numlist | [link]({{ site.baseurl }}/plugins/advlist/) | Formats the current selection as a numbered list. |
 | link | [link]({{ site.baseurl }}/plugins/link/) | Creates/Edits links within the editor. |
 | unlink | [link]({{ site.baseurl }}/plugins/link/) | Removes links from the current selection. |
 | openlink | [link]({{ site.baseurl }}/plugins/link/) | Opens the selected link in a new tab. |
@@ -150,4 +150,3 @@ Here is a list of the toolbar/menu controls that the core and plugins provides. 
 | restoredraft | [autosave]({{ site.baseurl }}/plugins/autosave/) | Restores to the latest auto saved draft. |
 | fullpage | [fullpage]({{ site.baseurl }}/plugins/fullpage/) | Document properties for the full page. |
 | toc | [toc]({{ site.baseurl }}/plugins/toc/) | Inserts a Table of Contents into the editor. |
-

@@ -8,11 +8,7 @@ keywords: photo insert edit style format image_caption image_list image_advtab i
 
 {% include pardot-px-moxiemanager.html %}
 
-This plugin enables the user to insert an image into TinyMCE's editable area.
-
-> Note that this is not drag-drop functionality and the user is required to enter the path to the image. Optionally the user can also enter the image description, dimensions, and whether image proportions should be constrained (selected via a checkbox). Some of these settings can be preset using the plugin's configuration options.
-
-The plugin also adds a toolbar button and an `Insert/edit image` menu item under the `Insert` menu.
+This plugin enables the user to insert an image into TinyMCE's editable area. The plugin also adds a toolbar button and an `Insert/edit image` menu item under the `Insert` menu.
 
 **Type:** `String`
 
@@ -31,6 +27,8 @@ tinymce.init({
 });
 
 ```
+
+> Note that this is not drag-drop functionality and the user is required to enter the path to the image. Optionally the user can also enter the image description, dimensions, and whether image proportions should be constrained (selected via a checkbox). Some of these settings can be preset using the plugin's configuration options.
 
 ### Options
 

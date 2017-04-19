@@ -197,7 +197,8 @@ This is not recommended for production environments.
 |               |                     |             |
 |---------------|---------------------|-------------|
 | **element**   |  `http`             | Configures  HTTP client behaviour. |
-| **attribute** |  `trust-all-cert`   | A boolean indicating whether to bypass SSL security and indiscriminately trusts all SSL certificates. |
+| **attribute** |  `trust-all-cert`   | A boolean indicating whether to bypass SSL security and indiscriminately trusts all SSL certificates. Default: false |
+| **attribute** |  `request-timeout-seconds` | An integer defining the number of seconds to allow HTTP requests to take. Default: 10 |
 
 Example:
 
@@ -205,6 +206,37 @@ Example:
 ephox {
     http {
         trust-all-cert = true
+    }
+}
+````
+
+The request timeout on outbound HTTP and HTTPS connections can be set. Setting this to a larger value will allow larger files through, but they may take a long time. An example might be if you expect to fetch very large files with the image proxy service.
+
+Example:
+
+````
+ephox {
+    http {
+        request-timeout-seconds = 15
+    }
+}
+````
+
+#### image-proxy (optional)
+
+The [image proxy service]({{ site.baseurl }}/plugins/imagetools/) has some optional configuration to set a maximum size for images proxied. Images beyond this size it will not be proxied. Please note that the `http.request-timeout-seconds` above also applies to requests made by the image proxy service.
+
+|               |                     |             |
+|---------------|---------------------|-------------|
+| **element**   |  `image-proxy`             | Configures image proxy behaviour. |
+| **attribute** |  `size-limit`   | An integer defining the maximum allowed image size in bytes. Default: 10000000 |
+
+Example:
+
+````
+ephox {
+    image-proxy {
+        image-size = 10000000 // 10MB in bytes
     }
 }
 ````

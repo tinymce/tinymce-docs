@@ -14,7 +14,7 @@ Image Tools (`imagetools`) plugin adds a contextual editing toolbar to the image
 
 ## Cloud Installation
 The Image Tools plugin is provided with all subscriptions to [TinyMCE Cloud]({{ site.baseurl }}/get-started-cloud/), including an automatically configured image proxy.
-Simply add 'image' to the 'toolbar' list and 'image imagetools' to the 'plugins' list.
+Simply add `image` to the `toolbar` list and `image imagetools` to the `plugins` list.
 
 ##### Example
 

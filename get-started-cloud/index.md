@@ -5,5 +5,5 @@ description: TinyMCE Cloud customers, you'll be up and running in less than 5 mi
 type: folder
 ---
 
-{% assign links = site.data.nav[1].pages %}
+{% assign links = site.data.nav[0].pages %}
 {% include index.html links=links %}

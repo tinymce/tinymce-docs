@@ -61,7 +61,7 @@ cp -r node_modules/tinymce/skins src/assets/skins
 **Windows**
 
 ```
-xcopy /I /E node_modules/tinymce/skins src/assets/skins
+xcopy /I /E node_modules\tinymce\skins src\assets\skins
 ```
 
 Then, when initializing a TinyMCE instance, just add the `skin_url` setting with the correct url like this:

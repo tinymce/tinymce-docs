@@ -7,7 +7,7 @@ keywords: charmap symbols
 controls: toolbar button, menu item
 ---
 
-This plugin adds a dialog to TinyMCE editor with a map of special unicode characters, that cannot be added directly from keyboard. Dialog can be invoked via toolbar button - `charmap` or dedicated menu item - `Insert > Special character`.
+This plugin adds a dialog to the editor with a map of special unicode characters, which cannot be added directly from the keyboard. The dialog can be invoked via a toolbar button - `charmap` - or a dedicated menu item added as `Insert > Special character`.
 
 **Type:** `String`
 
@@ -24,9 +24,9 @@ tinymce.init({
 
 ### Options
 
-Default map of unicode characters can be overriden or extended through the options below.
+The default map of unicode characters can be overridden or extended through the options below.
 
-Internally character map is defined by the array of arrays, where each sub-array represents a single character. First item in the sub-array is character code and second - a title that shows up when mouse hovers over the specified character in the map. Character code can be either decimal, octal or hexadecimal (in the case of octal or hexadecimal format, code should be appropriately prefixed with 0 and 0x). Options are expected to be provided in the same format.
+Internally, character map is defined by the array of arrays, where each sub-array represents a single character. The first item in the sub-array is character code. The second is a title that shows up when mouse hovers over the specified character in the map. Character code can be either decimal, octal or hexadecimal (in the case of octal or hexadecimal format, code should be appropriately prefixed with 0 and 0x). Options are expected to be provided in the same format.
 
 ```js
 [
@@ -42,7 +42,7 @@ Internally character map is defined by the array of arrays, where each sub-array
 
 ### `charmap`
 
-With this option it is possible to fully override default character map. Option can be array or a function that returns an array in the above mentioned format.
+With this option it is possible to fully override the default character map. This can be an array or a function that returns an array in the above mentioned format.
 
 **Type:** `Array`, `Function`
 
@@ -62,7 +62,7 @@ tinymce.init({
 
 ### `charmap_append`
 
-A way to append some additional characters to the default character map. Option can be array or a function that returns an array in the above mentioned format.
+This option provides a way to append some additional characters to the default character map. This can be array or a function that returns an array in the above mentioned format.
 
 **Type:** `Array`, `Function`
 

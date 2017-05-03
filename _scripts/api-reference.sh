@@ -8,7 +8,7 @@ API_TMPDIR="/tmp/tinymce-$API_VERSION"
 
 echo -e "\n > importing data files for tinymce api reference: $API_VERSION\n"
 
-rm _data/nav_api.json
+rm -f _data/nav_api.json
 rm -rf "$API_TMPDIR"
 mkdir "$API_TMPDIR"
 curl -s "$TARBALL_URL" | tar xzf - -C "$API_TMPDIR" --strip-components 1

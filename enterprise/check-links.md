@@ -7,7 +7,7 @@ keywords: enterprise pricing video youtube vimeo mp3 mp4 mov movie clip film lin
 
 The [Link Checker plugin]({{ site.baseurl }}/plugins/linkchecker/) provides a link checking service right within the TinyMCE editor.
 
-Think of Link Checker as "spell checking for links". But instead of checking spelling, it will let you know if a link in the editor is valid, invalid or questionable. This is a huge time-saver for anyone who creates content — no more having to double-check URLs, especially in imported content. Not to mention the benefit of no longer frustrating readers with broken links.
+Think of Link Checker as "spell-checking for URLs". But instead of checking spelling, it will let you know if a URL in the editor is valid, invalid or questionable. This is a huge time-saver for anyone who creates content — no more having to double-check URLs, especially in imported content. Not to mention the benefit of no longer frustrating readers with broken hyperlinks.
 
 Link Checker is available as a stand-alone plugin or as part of our Pro Bundle. To learn more about your options, check out our [pricing and plans here](http://www.tinymce.com/pricing/).
 

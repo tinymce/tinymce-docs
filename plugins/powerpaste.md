@@ -149,6 +149,6 @@ tinymce.get('editorID').('PastePostProcess', function(fragment) {
 });
 ```
 
-## Downloading PowerPaste plugin
+## Buy TinyMCE PowerPaste
 
-A [TinyMCE Enterprise](http://www.tinymce.com/pricing/) subscription includes the ability to download and install the **PowerPaste** plugin.
+Start with our [dedicated product page](https://www.ephox.com/products/powerpaste/) to see our flexible pricing options. OEM and enterprise customers should [contact sales directly](https://www.tinymce.com/pricing/).

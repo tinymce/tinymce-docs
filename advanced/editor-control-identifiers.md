@@ -58,6 +58,7 @@ Here is a list of the toolbar/menu controls that the core and plugins provides. 
 | visualblocks | [visualblocks]({{ site.baseurl }}/plugins/visualblocks/) | Toggles the visibility of block elements. |
 | visualchars | [visualchars]({{ site.baseurl }}/plugins/visualchars/) | Toggles the visibility of non breaking character elements. |
 | code | [code]({{ site.baseurl }}/plugins/code/) | Opens the code dialog |
+| help | [help]({{ site.baseurl }}/plugins/help/) | Opens the help dialog |
 | fullscreen | [fullscreen]({{ site.baseurl }}/plugins/fullscreen/) | Toggles fullscreen mode |
 | insertdatetime | [insertdatetime]({{ site.baseurl }}/plugins/insertdatetime/) | Inserts the current date/time |
 | media | [media]({{ site.baseurl }}/plugins/media/) | Created/Edits embedded media elements. |

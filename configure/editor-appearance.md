@@ -5,6 +5,8 @@ description_short:
 description: Configure the editor's appearance, including menu and toolbar controls.
 ---
 
+{% include configuration/branding.md %}
+
 {% include configuration/color-picker-callback.md %}
 
 {% include configuration/elementpath.md %}

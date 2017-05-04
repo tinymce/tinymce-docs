@@ -13,6 +13,8 @@ description: Configure the appearance of content inside TinyMCe's editable area.
 
 {% include configuration/content-style.md %}
 
+{% include configuration/inline-boundaries.md %}
+
 {% include configuration/visual-anchor-class.md %}
 
 {% include configuration/visual-table-class.md %}

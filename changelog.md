@@ -21,6 +21,7 @@ class: changelog
 * Fixed so the CSS in the visualblocks plugin doesn't overwrite background color. Patch contributed by Christian Rank.
 * Fixed bug where multibyte characters weren't encoded correctly. Patch contributed by James Tarkenton.
 * Fixed bug where shift-click to select within contenteditable=true fields wasn't working.
+
 ## Version 4.6.0 - May 4, 2017
 * Dropped support for IE 8-10 due to market share and lack of support from Microsoft. See tinymce docs for details.
 * Added an inline boundary caret position feature that makes it easier to type at the beginning/end of links/code elements.

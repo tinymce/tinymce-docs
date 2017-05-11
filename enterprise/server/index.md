@@ -5,10 +5,12 @@ description: Power your premium plugins like spelling as-you-type.
 keywords: enterprise tinymcespellchecker spell check checker pro pricing imagetools server
 ---
 
-## Server-side Component Installation
+## Server-side component installation
 
 
-Some TinyMCE Enterprise features require the deployment of a server-side component onto a J2EE compatible application server.  We currently support Jetty, Apache Tomcat, and WebSphere Application Server.  To discuss support for additional Java application servers, please contact us at <mailto:sales@ephox.com>
+Some TinyMCE Enterprise features require a server-side component. If you're using the TinyMCE cloud solution, we've done all the hard work for you and you can skip this page. Alternatively, if you've purchased our SDK solution then please read on.
+
+Server-side components must be deployed onto a Java Servlet 3.0 compatible application server.  We currently support Jetty, Apache Tomcat, and WebSphere Application Server. To discuss support for additional Java application servers, please contact us at <mailto:sales@ephox.com>
 
 The following server-side components are packaged with the TinyMCE SDK:
 
@@ -18,297 +20,175 @@ The following server-side components are packaged with the TinyMCE SDK:
 | [Image Tools Proxy]({{ site.baseurl }}/plugins/imagetools/)				| ephox-image-proxy.war		|Image proxy service for the Image Tools plugin.|
 | [Enhanced Media Embed]({{ site.baseurl }}/enterprise/embed-media/), [Link Checker]({{ site.baseurl }}/enterprise/check-links/)				| ephox-hyperlinking.war		|Link Checker and Enhanced Media Embed service for TinyMCE Enterprise.|
 
-> **Note:** The "Allowed Origins" service (ephox-allowed-origins.war) has been deprecated. Trusted domains can now simply be specified via `application.conf`, as documented below.
+> **Note:** The "Allowed Origins" service (ephox-allowed-origins.war) has been deprecated. Trusted domains should now be specified directly in the configuration file.
 
-This guide will help you set up the server-side components for the above-mentioned features, and show you how to use them in conjunction with editor clients. The steps required are:
-
-1. Install a Java application server (or use existing)
-2. Deploy server-side components
-3. Create a configuration file and configure the allowed origins service
-4. Pass the configuration file to the Java application server
-5. Restart the Java application server
-6. Set up editor client instances to use the server-side functionality
+This guide will help you get these server-side components up and running.
 
 
-### Step 1. Install a Java Application Server
+### Step 1. Install a Java application server
 
-Server-side components require a Java Application Server to run.
+If you've already got a Java application server like Jetty or Tomcat installed, skip to Step 2.
 
-If you don't already have a Java application server installed you can easily install [Tomcat](http://tomcat.apache.org/) or [Jetty](http://www.eclipse.org/jetty/) with their default settings.
-
-These are both simple, open source Java application servers and they're easy to install and configure.  The editor SDK supports both of these platforms. For the later setup, it's also helpful if you note any domain name and port number you specify during installation of the web application server.
+If you don't, pick either [Tomcat](http://tomcat.apache.org/) or [Jetty](http://www.eclipse.org/jetty/) and install one of these with their default settings using the instructions on their website.
 
 > **Memory requirement:** Please ensure that you configure your Java Server (Tomcat/Jetty etc) with a minimum of 4GB. Please refer to [Out of memory errors]({{ site.baseurl }}/enterprise/server/troubleshoot/#outofmemoryerrors) section of the Troubleshoot page if you require instructions on how to explicitly define how much RAM will be allocated to your Java server.
 
 
-> **HTTP proxy:** If you are relying on an HTTP proxy for outgoing HTTP/HTTPS connections to the Internet, consider configuring use of the proxy by the application server by setting JVM system properties at this point. These are usually specified on the command line (using `-D` command line parameters) or in application server specific configurations files. Please refer to [Networking Properties for Java](http://docs.oracle.com/javase/8/docs/api/java/net/doc-files/net-properties.html) for details. The system properties `http.proxyHost`, `http.proxyPort`, `http.nonProxyHosts`, `https.proxyHost`, `https.proxyPort` are recognized as well as `http.proxyUser` and `http.proxyPassword` to support authenticating proxies. Alternatively, use of a proxy for server-side components can be configured in a configuration file, please see [below]({{ site.baseurl }}/enterprise/server/#proxyoptional).
+### Step 2. Deploy server-side components
 
-### Step 2. Deploy Server-side Components
-
-You’ll need to ensure you deploy the following WAR files packaged with the TinyMCE Enterprise SDK:
+Deploy all the WAR files that came packaged with the TinyMCE Enterprise SDK to your newly installed Java application server:
 
 - ephox-spelling.war
 - ephox-image-proxy.war
 - ephox-link-checker.war
 
-The easiest way to deploy these files is to simply drag and drop them into the webapps directory of your Tomcat/Jetty server (or equivalent folder of another Java application server), and then restart the server.
+The easiest way to deploy these files is to copy them into the *webapps* directory of your Tomcat/Jetty installation and then restart the application server.
 
-More information on deploying components/applications can be found at:
+More information can be found in the documentation of your chosen application server:
 
-- [Deploying applications with Tomcat 8.0](https://tomcat.apache.org/tomcat-8.0-doc/deployer-howto.html)
+- [Deploying applications with Tomcat 9.0](https://tomcat.apache.org/tomcat-9.0-doc/deployer-howto.html)
 - [Deploying applications with Jetty](http://www.eclipse.org/jetty/documentation/current/configuring-deployment.html)
-
 
 ### Step 3. Create a configuration file
 
-> **Note:** It is recommended that you use a plain text editor (eg: gedit, vim, emacs, notepad etc) when creating or editing the `application.conf` file. Do not use editors like Evernote as there is a good chance of smart quotes being used where plain quotes should be used and this will cause the services to fail.
-
-Services require a configuration file named `application.conf` to be referenced by the application server.
-
-This configuration file will require you to enter *at least* the following  information:
-
-- `allowed-origins` - the domains allowed to communicate with the server-side editor features.
-
-Some features require additional configuration which can be found in their documentation.
-
-#### allowed-origins
-
-This element configures the server-side components to communicate with specified, trusted  domains.
-
-The `origins` attribute must list **all** the origins that instances of the editor will be hosted on.  Only requests from the listed origins will be processed by the server-side components. Requests from any other origins will be rejected. The value must be an array of strings.
-
-|               |                     |             |
-|---------------|---------------------|-------------|
-| **element**   |  `allowed-origins`  | Stores CORS setup information |
-| **attribute** |  `origins`          | An array of strings representing the domains allowed to communicate with the services. Note: Be sure to include the protocol (https or http) and any required port number (eg:8080) in the string. |
-
-> **Note**: Origin in this context refers to the value of a HTTP Origin header. It must include the protocol (http or https), the domain, and an optional port number. Do not include a trailing slash or paths to specific resources.
-
-Example:
-
-````
-ephox {
-	allowed-origins {
-		origins = [ "http://myserver", "http://myserver.example.com", "http://myserver:8080", "http://myotherserver", "http://myotherserver:9090", "https://mysecureserver" ]
-	}
-}
-````
-
-##### Additional Information Around Entering Origins
-
-The origins are matched by protocol, host name, and port. So you may need a combination of all three, depending on which browsers you use. If you are serving the editor and services from `http://localhost` on port 80, then the list of origins should have an entry for `http://localhost` and any other servers with ports, like so:
-
-````
-ephox{
-   allowed-origins{
-	   origins=["http://localhost", "http://any-other-servers:port"]
-  }
-}
-````
-
-This only applies to port 80 because this being the default HTTP port, browsers omit it when talking to the server. For every other port and host name, the recommended setting is to make one entry with the port and one without the port. This is because different browsers behave differently with regards to the Origin header. So the config file should resemble:
-
-````
-ephox{
-   allowed-origins{
-	   origins=["http://hostname", "http://hostname:1234"]
-  }
-}
-````
-
-##### Wildcards in Origins
-
-Wildcards are supported in some parts of the allowed-origins entries. The most common scenario would be to allow origins on your domain, e.g. "https://*.mydomain.com".
-
-Wildcards are supported in the following parts of the allowed-origin URL:
-
-1. The scheme, e.g. `"*://mydomain.com"`.
-   Note that omitting the scheme is the same as specifying a wildcard scheme. e.g. `"mydomain.com"`
-2. The port, e.g. `"http://mydomain.com:*"`.
-   Note: if the port is not specified, then 80 is allowed for http and 443 is allowed for https.
-   Using a wildcard as the port allows all ports
-3. As a prefix of the domain, e.g. `"http://*.mydomain.com"`.
-4. Any combination of scheme, port, domain, e.g. `"*://*.mydomain.com:*"`
-
-You may specify an allowed-origin as `"*"` (allowing all origins), or `"https://*"` (allowing all domains for https). Allowing a broad set of origins NOT recommended, in order to maintain account security.
-
-##### Troubleshooting Origins
-
-Depending on your configuration and the browser you use, you may need to specify the port number as well when listing the origin. If you observe that requests are failing with services not being available, it may be because the port number is required. Refer to the Troubleshoot section titled [Using browser tooling to investigate services issues]({{ site.baseurl }}/enterprise/server/troubleshoot/#usingbrowsertoolingtoinvestigateservicesissues).
-
-##### Example `application.conf`
-
-TinyMCE is deployed to an environment and displayed to end users on the following domains:
-
-- http://myCMS
-- https://myCMS
-- http://myCMS:4141
-
-For this example, here is what the contents of `application.conf` should look like:
-
-````
-ephox{
-   allowed-origins{
-           origins=["http://myCMS", "https://myCMS", "http://myCMS:4141"]
-  }
-}
-````
-
-#### proxy (optional)
-
-This element configures use of an HTTP proxy for outgoing HTTP/HTTPS requests made by the server-side components.
-
-Default proxy settings are picked up from JVM system properties, usually provided on the command line, as defined in [Networking Properties for Java](http://docs.oracle.com/javase/8/docs/api/java/net/doc-files/net-properties.html). The system properties `http.proxyHost`, `http.proxyPort`, `http.nonProxyHosts`, `https.proxyHost`, `https.proxyPort` are recognized as well as `http.proxyUser` and `http.proxyPassword` to support authenticating proxies.
-
-This optional proxy element provides an alternative to providing proxy settings as JVM system properties, or to override system properties.
-
-|               |                       |             |
-|---------------|-----------------------|-------------|
-| **element**   |  `proxy`              | Stores HTTP outgoing proxy settings for the server-side components. |
-| **attribute** |  `http.proxyHost`     | A string defining the host name of the proxy for plain HTTP (not HTTPS) connections. (Mandatory) |
-| **attribute** |  `http.proxyPort`     | An integer defining the port number of the proxy for plain HTTP (not HTTPS) connections. (Mandatory) |
-| **attribute** |  `http.nonProxyHosts` | A list of strings separated by vertical lines ("&#124;") listing hosts and domains to be excluded from proxying, for **both** plain HTTP and HTTPS connections. The strings can contain asterisks ("*") as wildcards. (Optional, defaults to "localhost&#124;127.\*&#124;[::1]" if not set.) |
-| **attribute** |  `https.proxyHost`    | A string defining the host name of the proxy for HTTPS connections. (Optional) |
-| **attribute** |  `https.proxyPort`    | An integer defining the port number of the proxy for HTTPS connections. (Optional) |
-| **attribute** |  `http.proxyUser`     | Username for authenticating to **both** the HTTP and HTTPS proxy. (Optional) |
-| **attribute** |  `http.proxyPassword` | Password for authenticating to **both** the HTTP and HTTPS proxy. (Optional) |
-
-
-In the following example, both HTTP and HTTPS connections (except to localhost and the example.com domain) are proxied through someproxy.example.com on port 8080 and someproxy.example.com does not require authentication.
-
-````
-ephox {
-    proxy {
-        http.proxyHost = "someproxy.example.com"
-        http.proxyPort = "8080"
-        https.proxyHost = "someproxy.example.com"
-        https.proxyPort = "8080"
-        http.nonProxyHosts = "localhost|*.example.com"
-    }
-}
-````
-
-#### http (optional)
-
-Some server-side components make outbound HTTP and HTTPS connections. These include Link Checker, Enhanced Media Embed and Image Tools Proxy. In an evaluation or pre-production environment, you might want to test these features against resources with untrusted SSL certificates such as in-house servers with self-signed SSL certificates. In these circumstances, it is possible to bypass all SSL security.
-
-This is not recommended for production environments.
-
-|               |                     |             |
-|---------------|---------------------|-------------|
-| **element**   |  `http`             | Configures  HTTP client behaviour. |
-| **attribute** |  `trust-all-cert`   | A boolean indicating whether to bypass SSL security and indiscriminately trusts all SSL certificates. Default: false |
-| **attribute** |  `request-timeout-seconds` | An integer defining the number of seconds to allow HTTP requests to take. Default: 10 |
-
-Example:
-
-````
-ephox {
-    http {
-        trust-all-cert = true
-    }
-}
-````
-
-The request timeout on outbound HTTP and HTTPS connections can be set. Setting this to a larger value will allow larger files through, but they may take a long time. An example might be if you expect to fetch very large files with the image proxy service.
-
-Example:
-
-````
-ephox {
-    http {
-        request-timeout-seconds = 15
-    }
-}
-````
-
-#### image-proxy (optional)
-
-The [image proxy service]({{ site.baseurl }}/plugins/imagetools/) has some optional configuration to set a maximum size for images proxied. Images beyond this size it will not be proxied. Please note that the `http.request-timeout-seconds` above also applies to requests made by the image proxy service.
-
-|               |                     |             |
-|---------------|---------------------|-------------|
-| **element**   |  `image-proxy`             | Configures image proxy behaviour. |
-| **attribute** |  `size-limit`   | An integer defining the maximum allowed image size in bytes. Default: 10000000 |
-
-Example:
-
-````
-ephox {
-    image-proxy {
-        image-size = 10000000 // 10MB in bytes
-    }
-}
-````
+Refer to the [Configure]({{ site.baseurl }}/enterprise/server/configure/) page for the details and come back here when you're done.
 
 ### Step 4. Pass the configuration file to the Java application server
 
-You’ll need to reference the configuration file created in Step 3 as a parameter passed to the JVM running the services. Once the server has been configured to use the file, restart the server.
+> **HTTP proxy:** If you are relying on an HTTP proxy for outgoing HTTP/HTTPS connections to the Internet, consider configuring use of the proxy by the application server by setting JVM system properties at this point. These can be set in the same manner as `config.file` using the instructions below (using the `-D` option to the `java` command). Please refer to [Networking Properties for Java](http://docs.oracle.com/javase/8/docs/api/java/net/doc-files/net-properties.html) for details on the relevant proxy system properties. The system properties `http.proxyHost`, `http.proxyPort`, `http.nonProxyHosts`, `https.proxyHost`, `https.proxyPort` are recognized as well as `http.proxyUser` and `http.proxyPassword` to support authenticating proxies. Alternatively, use of a proxy for server-side components can be set directly in their configuration file as discussed on the [Configure]({{ site.baseurl }}/enterprise/server/configure/#proxyoptional) page.
+
+Tell the services about the configuration file by setting the `config.file` JVM system property to the absolute path of the configuration file. The exact method for doing this varies depending on your operating system, application server and whether the application server is being run as a system service. The authoritative reference for configuring any application server is the vendor documentation, but we'll do our best to get you started below.
+
+#### Windows
+
+All Windows examples will assume the name of your configuration file is `application.conf` and it is located in the directory `C:\config\file\location\`. You'll need to set the JVM system property `-Dconfig.file=C:\config\file\location\application.conf`.
+
+##### Tomcat
+
+###### From the command line
+
+The following assumes you've downloaded the Tomcat 9.0 zip archive from the Tomcat website, unpacked it and you're working from the unpacked Tomcat directory.
+
+Create or edit the script `.\bin\setenv.bat` to contain the following line:
+
+    set "CATALINA_OPTS= -Dconfig.file=C:\config\file\location\application.conf"
+
+There should only be a single line in this file defining the `CATALINA_OPTS` environment variable.
+
+You may also need to add another line with the path to your Java Runtime Environment installation (replace with the actual path on your system) such as:
+
+    set "JRE_HOME=C:\Program Files\Java\jre1.8.0_131"
+
+After editing `setenv.bat`, run the following command to start Tomcat:
+
+    .\bin\startup.bat
+
+For further information see the documentation on [running Tomcat 9.0](https://tomcat.apache.org/tomcat-9.0-doc/RUNNING.txt).
+
+###### As a Windows service
+
+If you download the Windows installer, Tomcat 9.0 will always be installed as a Windows system service. See the notes on [Windows setup](https://tomcat.apache.org/tomcat-9.0-doc/setup.html#Windows) for Tomcat 9.0 and the instructions for setting JVM system properties in the [Tomcat 9.0 Windows Service HOW-TO](https://tomcat.apache.org/tomcat-9.0-doc/windows-service-howto.html).
+
+As a minimal example, if the installer installed Tomcat to `C:\Program Files\Apache Software Foundation\Tomcat 9.0\` (default option):
+
+- Run `C:\Program Files\Apache Software Foundation\Tomcat 9.0\bin\Tomcat9w` which opens the **Apache Tomcat 9.0 Tomcat9 Properties** dialog box
+- Select the `Java` tab
+- Add the following line to `Java Options`:
+
+    ```
+    -Dconfig.file=C:\config\file\location\application.conf
+    ```
+
+
+For other versions of Tomcat on Windows, check the Tomcat documentation for that version.
+
+
+##### Jetty
+
+###### From the command line
+
+If you're following the instructions for [Starting Jetty](http://www.eclipse.org/jetty/documentation/9.4.5.v20170502/startup.html) for Jetty 9.4.5, the path to the configuration file can simply be supplied as a command option:
+
+    java -D"config.file=C:\config\file\location\application.conf" -jar C:\jetty\install\directory\start.jar
+
+
+For other versions of Jetty on Windows, check the Jetty documentation for that version.
+
+###### As a Windows service
+
+Follow the instructions in [Startup via Windows Service](http://www.eclipse.org/jetty/documentation/9.4.5.v20170502/startup-windows-service.html) for Jetty 9.4.5. Remember to append the following snippet to the line beginning with `set PR_JVMOPTIONS` in your `install-jetty-service.bat` script:
+
+    ;-Dconfig.file="C:\config\file\location\application.conf"
+
+> **Note:** Check the `install-jetty-service.bat` has the correct paths to your Java installation. The service will fail to start with some rather unhelpful errors if the paths are incorrect.
+
+For other versions of Jetty on Windows, check the Jetty documentation for that version.
+
+#### Linux
+
+All Linux examples will assume the name of your configuration file is `application.conf` and it is located in the directory `/config/file/location/`. You'll need to set the JVM system property `-Dconfig.file=/config/file/location/application.conf`.
 
 > **Note**: If the path to your `application.conf` file has spaces in it, you must ensure you prefix each white space with an escape character (\\). Example: ` -Dconfig.file=/config/file/location/with/white\ space/application.conf`
 
-The following examples demonstrate how to reference `application.conf` for Tomcat or Jetty instances.
+Tomcat and/or Jetty can be obtained via the package manager for many Linux distributions. The commands for starting the service and the location of the configuration files will vary across distributions. If you installed an application server via the package manager, follow your distribution's documentation for configuring it.
 
+##### Tomcat
 
-#### Tomcat Unix example:
+The following assumes you've downloaded Tomcat 9.0 from the Tomcat website and unpacked the archive to `/opt/tomcat`.
 
-Make/edit a script at `/tomcat/install/directory/bin/setenv.sh`
+For other versions of Tomcat on Linux, check the Tomcat documentation for that version.
 
-Ensure the file contains a single line, like (this must be the absolute path as before):
+If you've obtained Tomcat from your distribution's package manager, refer to your distribution's documentation for Tomcat.
 
-`CATALINA_OPTS=" -Dconfig.file=/config/file/location/application.conf"`
+###### From the command line
 
+Create or edit the script `/opt/tomcat/bin/setenv.sh` to contain the following line:
 
-#### Tomcat (Windows) example:
+    CATALINA_OPTS=" -Dconfig.file=/config/file/location/application.conf"
 
-Make/edit a script at `DRIVE:\tomcat\install\directory\bin\setenv.bat`
+There should only be a single line in this file defining the `CATALINA_OPTS` environment variable.
 
-The file should contain a single line:
+After editing `setenv.sh`, run the following command to start Tomcat:
 
-`set CATALINA_OPTS= -Dconfig.file=DRIVE:\config\file\location\application.conf`
+    /opt/tomcat/bin/startup.sh
 
+For further information see the documentation on [running Tomcat 9.0](https://tomcat.apache.org/tomcat-9.0-doc/RUNNING.txt).
 
-#### Jetty (simple configuration):
+##### Jetty
 
-You can specify your `application.conf` as a parameter to this command, along with other JVM parameters:
+The following assumes you've downloaded Jetty 9.4.5 from the Jetty website and unpacked the archive to `/opt/jetty`.
 
-    java -jar /jetty/install/directory/start.jar -Dconfig.file="/config/file/location/application.conf"
+For other versions of Jetty on Linux, check the Jetty documentation for that version.
 
+If you've obtained Jetty from your distribution's package manager, refer to your distribution's documentation for Jetty.
 
-#### Jetty (automatic configuration for services launching on system start-up):
+###### From the command line
 
-Edit `/etc/default/jetty` and add the line:
+The path to the configuration file can simply be supplied as a command option:
 
-`JETTY_OPTS=" -Dconfig.file=/config/file/location/application.conf"`
+    java -Dconfig.file="/config/file/location/application.conf" -jar /opt/jetty/start.jar
 
-Edit `/opt/jetty/start.ini` and add the line:
+###### As a Linux service
 
-`" -Dconfig.file=/config/file/location/application.conf"`
+Assuming you've followed the instructions to [Startup a Unix Service using jetty.sh](http://www.eclipse.org/jetty/documentation/9.4.5.v20170502/startup-unix-service.html) for Jetty 9.4.5, edit `/etc/default/jetty` and add the line:
 
-The first new lines of the file should read:
+    JETTY_ARGS=" -Dconfig.file=/config/file/location/application.conf"
 
-````
-#===========================================================
-# Jetty start.jar arguments
-# Each line of this file is prepended to the command line
-# arguments # of a call to:
-# java -jar start.jar [arg...]
-#===========================================================
-" -Dconfig.file=/config/file/location/application.conf"
-````
-
+There should only be a single line in this file defining the `JETTY_ARGS` variable.
 
 ### Step 5: Restart the Java application server
 
-Once you have created a configuration file, configured the allowed origins service, and passed the configuration file to the Java application server you must restart the Java application server.
+After you've completed the steps on this page to [Deploy server-side components]({{ site.baseurl }}/enterprise/server/#step2deployserver-sidecomponents), [Create a configuration file]({{ site.baseurl }}/enterprise/server/#step3createaconfigurationfile) and [Pass the configuration file to the Java application server]({{ site.baseurl }}/enterprise/server/#step4passtheconfigurationfiletothejavaapplicationserver), the application server may need to be restarted to pick up all your changes. Turn it off and on again now, just to be safe.
 
 ### Step 6: Set up editor client instances to use the server-side functionality
 
-With the above steps completed you can now direct TinyMCE instances to use Enterprise server-side components.
+Now that the server-side components deployed and running, you'll need to tell your TinyMCE instances where to find them:
 
-- Set the TinyMCE `spellchecker_rpc_url` configuration property to the URL of the deployed server side spelling component.
+- Set the TinyMCE `spellchecker_rpc_url` configuration property to the URL of the deployed server-side spelling component.
 - Set the TinyMCE `imagetools_proxy` configuration property to the URL of the deployed server-side image proxy component.
 - Set the TinyMCE `mediaembed_service_url` and `linkchecker_service_url` configuration properties to the URL of the deployed server-side linkchecker and media embed component.
+
+This example assume your Java application server is running on port 80 (http) on `yourserver.example.com` and that all the server-side components are deployed to the same Java application server. Replace `yourserver.example.com` with the actual domain name or IP address of your server.
 
 Example of TinyMCE client configuration:
 
@@ -317,61 +197,10 @@ tinymce.init({
 	selector: 'textarea', // change this value according to your HTML
 	toolbar: 'image',
 	plugins: 'tinymcespellchecker image imagetools media mediaembed',
-	spellchecker_rpc_url: 'http://yourspelling.server.com/ephox-spelling/',
-	imagetools_proxy: 'http://yourproxy.server.com/ephox-image-proxy/image',
-	mediaembed_service_url: 'http://yourlinkchecker.server.com/ephox-link-checker/',
-	linkchecker_service_url: 'http://yourlinkchecker.server.com/ephox-link-checker/'
+	spellchecker_rpc_url: 'http://yourserver.example.com/ephox-spelling/',
+	imagetools_proxy: 'http://yourserver.example.com/ephox-image-proxy/image',
+	mediaembed_service_url: 'http://yourserver.example.com/ephox-link-checker/',
+	linkchecker_service_url: 'http://yourserver.example.com/ephox-link-checker/'
 });
 ````
 
-
-### Logging
-
-For compartmentalization of logs in your environment or to provide Ephox with more succinct feedback around the behavior of your deployed TinyMCE Spelling Component (e.g. for support purposes), you may want to write out the service specific logs to a specific file.
-
-To write the service specific logs to a specific file, you’ll need to perform the following steps:
-
-#### Create a logging configuration XML file
-
-The services use the [Logback](http://logback.qos.ch/manual/configuration.html) logging format.
-
-For easy implementation, here is a sample XML configuration with a tokenized value you can populate where {$LOG_LOCATION} is the location and name of the file you would like to write the logs to (e.g. /tmp/tinymce_services.log).
-
-````
-<configuration>
-
-  <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
-	<encoder>
-	  <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
-	</encoder>
-  </appender>
-
-  <appender name="FILE" class="ch.qos.logback.core.FileAppender">
-	<file>{$LOG_LOCATION}</file>
-	<encoder>
-	  <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
-	</encoder>
-  </appender>
-
-  <!-- This results in all ephox logging going to file.
-	   Change/uncomment this part here if specific logging is required -->
-  <logger name="com.ephox" level="INFO"/>
-  <!-- <logger name="com.ephox.ironbark" level="INFO"/> -->
-
-  <root level="INFO">
-	<appender-ref ref="FILE" />
-	<!-- If you want logging to go to the container as well uncomment
-	the following line -->
-	<!-- <appender-ref ref="STDOUT" /> -->
-  </root>
-
-</configuration>
-````
-
-#### Add the logging configuration to your classpath
-
-Much like how your `application.conf` services configuration file is added to the classpath (see Step 3 above), you’ll need to follow a similar pattern to add your logging configuration XML to the classpath.
-
-````
--Dlogback.configurationFile={$LOG_LOCATION}
-````

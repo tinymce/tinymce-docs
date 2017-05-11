@@ -2,7 +2,7 @@
 layout: default
 title: Troubleshoot
 description: Debug problems with the Enterprise server-side components.
-keywords: enterprise tinymcespellchecker spell check checker pro pricing
+keywords: enterprise tinymcespellchecker spell check checker pro pricing troubleshoot
 ---
 
 ## General troubleshooting advice

@@ -13,6 +13,15 @@ This list plugin normalizes list behavior between browsers. Enable it if you hav
 ```js
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
-  plugins: "lists"
+  plugins: "lists",
+  toolbar: "numlist bullist"
 });
 ```
+
+## Options
+
+These settings affect the execution of the `lists` plugin.
+
+### `lists_indent_on_tab`
+
+This boolean option allows to disable the indent on tab key functionality. It's default value is set to true.

@@ -12,7 +12,7 @@ The following languages are supported:
 |Language                      | Code   |
 |:-----------------------------|:-------|
 | English                      | en     |
-| English (UK)                 | en_UK, en_GB, en_BR |
+| English (UK)                 | en_uk, en_gb, en_br |
 | Danish                       | da     |
 | Dutch                        | nl     |
 | Finnish                      | fi     |
@@ -21,7 +21,7 @@ The following languages are supported:
 | Italian	                     | it     |
 | Norwegian	                   | nb     |
 | Portuguese (Brazil)          | pt     |
-| Portuguese (Europe)          | pt_PT  |
+| Portuguese (Europe)          | pt_pt  |
 | Spanish                      | es     |
 | Swedish                      | sv     |
 

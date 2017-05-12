@@ -74,10 +74,32 @@ This setting enables you to specify the URL to be used for the server side ephox
 **Note:** `spellchecker_rpc_url` is **not** required when enabling this plugin via [TinyMCE Cloud]({{ site.baseurl }}/get-started-cloud/)
 
 ### `spellchecker_languages`
-This optional setting allows you to specify the languages that are available to the user, provided as a comma delimited string. The default value for this setting is: 'US English=en,UK English=en_GB,Danish=da,Dutch=nl,Finnish=fi,French=fr,German=de,Italian=it,Norwegian=nb,Brazilian Portuguese=pt_BR,Iberian Portuguese=pt_PT,Spanish=es,Swedish=sv'
+This optional setting allows you to specify the languages that are available to the user, provided as a comma delimited string. The default value for this setting is:
+
+````
+'US English=en,UK English=en_gb,Danish=da,Dutch=nl,Finnish=fi,French=fr,German=de,Italian=it,Norwegian=nb,Brazilian Portuguese=pt_BR,Iberian Portuguese=pt_PT,Spanish=es,Swedish=sv'
+````
 
 ### `spellchecker_language`
 This optional setting allows you to specify the language code that will be used by default. This defaults to "en".
+
+The following languages are supported:
+
+|Language                      | Code   |
+|:-----------------------------|:-------|
+| English                      | en     |
+| English (UK)                 | en_uk, en_gb, en_br |
+| Danish                       | da     |
+| Dutch                        | nl     |
+| Finnish                      | fi     |
+| French                       | fr     |
+| German                       | de     |
+| Italian	                     | it     |
+| Norwegian	                   | nb     |
+| Portuguese (Brazil)          | pt     |
+| Portuguese (Europe)          | pt_pt  |
+| Spanish                      | es     |
+| Swedish                      | sv     |
 
 ### `spellchecker_dialog`
 This optional setting allows you to specify the mode of operation of the spellchecker. When set to true, the spellchecker will open a dialog that will check all of the document's contents at once. This also allows a user to step through each error, to ignore errors and accept recommended fixes. If the spellchecker dialog is enabled, the default as-you-type spellchecking will be disabled.

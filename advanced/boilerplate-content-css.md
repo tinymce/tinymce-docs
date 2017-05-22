@@ -70,5 +70,10 @@ img.align-right {
 
 
 /* Override CSS styles when within the editor only */
-/*.mce-content-body figure {...}*/
+/* .mce-content-body figure {...} */
+
+/* Override styles for the inline boundaries used within the editor */
+/* .mce-content-body a[data-mce-selected], .mce-content-body code[data-mce-selected] {...} */
+
+
 ```

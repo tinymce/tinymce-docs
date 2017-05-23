@@ -66,7 +66,7 @@ tinymce.init({
 
 This option allows you to specify a map of the text colors that will appear in the grid.
 
-**Type:** `List`
+**Type:** `Array`
 
 ##### Example
 

@@ -153,6 +153,46 @@ tinymce.init({
 });
 ````
 
+## Events
+
+#### SpellCheckerIgnore event
+
+This event gets fired when the user selects ignore word on a misspelled word.
+
+Here is an example of using the event:
+
+````
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'tinymcespellchecker',
+  toolbar: 'spellchecker',
+  init_instance_callback: function (editor) {
+    editor.on('SpellCheckerIgnore', function (e) {
+      console.log('Ignore word', e.word);
+    });
+  }
+});
+````
+
+#### SpellCheckerIgnoreAll event
+
+This event gets fired when the user selects ignore word on a misspelled word.
+
+Here is an example of using the event:
+
+````
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'tinymcespellchecker',
+  toolbar: 'spellchecker',
+  init_instance_callback: function (editor) {
+    editor.on('SpellCheckerIgnoreAll', function (e) {
+      console.log('Ignore word (all)', e.word);
+    });
+  }
+});
+````
+
 ## Downloading Spell Checker Pro
 
 A [TinyMCE Enterprise](http://www.tinymce.com/pricing/) subscription includes the ability to download and install a spell check as-you-type feature for the editor.

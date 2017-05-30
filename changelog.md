@@ -8,6 +8,14 @@ class: changelog
 
 {% capture changelog %}
 
+## Version 4.6.3 - May 30, 2017
+* Fixed bug where the arrow keys didn't work correctly when navigating on nested inline boundary elements.
+* Fixed bug where delete/backspace didn't work correctly on nested inline boundary elements.
+* Fixed bug where image editing didn't work on subsequent edits of the same image.
+* Fixed bug where charmap descriptions wouldn't properly wrap if they exceeded the width of the box.
+* Fixed bug where the default image upload handler only accepted 200 as a valid http status code.
+* Fixed so rel on target=_blank links gets forced with only noopener instead of both noopener and noreferrer.
+
 ## Version 4.6.2 - May 23, 2017
 * Fixed bug where the SaxParser would run out of memory on very large documents.
 * Fixed bug with formatting like font size wasn't applied to del elements.

@@ -199,7 +199,7 @@ ephox {
       },
       # Wordpress
       {
-        endpoint = "https://public-api.wordpress.com/oembed/1.0/?for=ephox"
+        endpoint = "https://public-api.wordpress.com/oembed/?for=ephox"
         schemes = [
           "http://*.wordpress.com/*",
           "https://*.wordpress.com/*"
@@ -229,7 +229,7 @@ ephox {
       },
       # Tech crunch
       {
-        endpoint = "http://public-api.wordpress.com/oembed/1.0/?for=ephox"
+        endpoint = "http://public-api.wordpress.com/oembed/?for=ephox"
         schemes = [
           "http://techcrunch.com/*",
           "https://techcrunch.com/*"

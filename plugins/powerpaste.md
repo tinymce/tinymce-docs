@@ -38,8 +38,8 @@ tinymce.init({
 To enable the TinyMCE **PowerPaste** plugin:
 
 1. If you are currently using the `paste` plugin provided with TinyMCE, disable it by removing it from the `plugins` list.
-2. Copy the entire `powerpaste` folder that contains this README file into the plugins directory of your TinyMCE installation. This is typically `/tinymce/plugins`.
-3. Add `powerpaste` to the `plugins` list.
+2. Copy the entire `powerpaste` folder (found in the ZIP that you downloaded) into the `plugins` directory of your TinyMCE installation. This is typically `/tinymce/plugins`.
+3. Add `powerpaste` to the `plugins` list in  your TinyMCE configuration.
 
 See the example TinyMCE configuration above.
 

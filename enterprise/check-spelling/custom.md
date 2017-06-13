@@ -60,7 +60,7 @@ individually present in the dictionary. It is not necessary to add "Fußballtenn
 ### Verifying Custom Dictionary Functionality
 
 If successfully configured, the custom dictionary feature will report dictionaries found in
-the application server's log at server startup.
+the application server's log at service startup.
 
 Example:
 
@@ -75,3 +75,8 @@ Example:
 The above log shows that 3 custom dictionaries were found, one "global", language-independent one and one each
 for English and French. They were found to contain 1, 3 and 2 words, respectively. Please check that this report matches your
 expectations.
+
+### Ongoing Dictionary Maintenance
+
+Future additions/changes to dictionaries after the initial deployment will require a restart of the spell check 
+service each time.

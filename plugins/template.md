@@ -190,7 +190,7 @@ tinymce.init({
 
 ### `template_replace_values`
 
-This is an array of items that controls content replacement in the inserted templates. The array keys equal the classnames used in the template. If a template element matches a classname in this array its contents will be replaced by the array value.
+This is an array of items that controls content replacement in the inserted templates. 
 
 **Type:** `String`
 
@@ -208,28 +208,16 @@ tinymce.init({
   }
 ```
 
-**Replace values example**
+This can then be used in a template or snippet that looks like this:
 
-Class names are used for *templates* and variable names are used for *snippets*.
+```html
+<p>Name: {$name}, StaffID: {$staffid}</p>
+``` 
 
-```js
-template_replace_values : {
-  className : "Replace with this content",
-  anotherClassName: "Replacement content"
-}
-```
+And that will be changed to: 
 
-**Replace values (functions) example**
-
-`template_replace_values` array values can also be functions. If a template element has a classname matching and where the value is a function, the function is called and the element passed as an argument.
-
-```js
-template_replace_values : {
-  className : function(element) {
-    // do something and then:
-    // element.innerHTML = something
-  }
-}
+```html
+<p>Name: Jack Black, StaffID: 991234</p>
 ```
 
 ### `template_selected_content_classes`
@@ -246,11 +234,6 @@ tinymce.init({
   template_selected_content_classes: "selcontent selectedcontent"
 });
 ```
-
-### `template_preview_replace_values`
-
-// This key is not linked in the source docs, i.e. no content.
-
 
 ### Template Plugin Examples
 
@@ -322,7 +305,7 @@ A template is a file with a `div` containing the template data. All `html` outsi
 
 A template has more capabilities than a simple snippet, for example, a template can have dynamic content/smart content that gets updated by functions located in the `template_replace_values` key. These functions will continue to be executed each time a cleanup procedure is performed.
 
-Each template needs to use the following base HTML:
+Each template needs to be inside of a div with the `mceTmpl` class, like this example:
 
 ```html
 <!-- This will not be inserted -->

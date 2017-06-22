@@ -7,27 +7,7 @@ keywords: support supported browser browsers windows osx linux ie8 chrome firefo
 
 ## Supported Browsers
 
-TinyMCE Enterprise is based on HTML, JavaScript, and CSS standards and will operate on most web browsers that support these standards.
-
-### Supported Browsers by Platform
-
-The following platforms are fully supported for TinyMCE Enterprise.
-
-| Platform    | Browser    |
-|-------------|---------------|
-| **Windows** | Internet Explorer 8+ |
-|             | Chrome* |
-|             | Firefox* |
-|             | Firefox ESR* |
-| **OS X**    | Safari 6.1+ |
-|             | Chrome* |
-|             | Firefox* |
-|             | Firefox ESR* |
-| **Linux**   | Chrome* |
-|             | Firefox* |
-|             | Firefox ESR* |
-
-* Current stable channel version.
+[Go to this page]({{ site.baseurl }}/get-started/system-requirements/) for information on which browsers are supported by TinyMCE.
 
 ## Word Copy/Paste
 

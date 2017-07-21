@@ -13,7 +13,7 @@ A slimmed down version of TinyMCE is the default "Visual Editor" in WordPress. I
 
 ## PowerPaste for WordPress
 
-[TinyMCE PowerPaste for WordPress](https://www.ephox.com/products/tinymce-powerpaste-wordpress/) is a premium plugin from the makers of TinyMCE that brings the PowerPaste features to WordPress. It automatically fixes Word formatting, creates tables from Excel, and links & embed images with content pasted from the web.
+[TinyMCE PowerPaste for WordPress](https://store.ephox.com/products/powerpaste/) is a premium plugin from the makers of TinyMCE that brings the PowerPaste features to WordPress. It automatically fixes Word formatting, creates tables from Excel, and links & embed images with content pasted from the web.
 
 ## TinyMCE Advanced
 

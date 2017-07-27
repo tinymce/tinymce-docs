@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Cloud Get Started
-description: TinyMCE Cloud customers, you'll be up and running in less than 5 minutes.
+description: TinyMCE Cloud customers, let's get you up and running.
 type: folder
 ---
 

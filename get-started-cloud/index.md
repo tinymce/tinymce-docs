@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Cloud Get Started
-description: TinyMCE Cloud customers, let's get you up and running.
+description: If you are new to TinyMCE Cloud, this is the place to start.
 type: folder
 ---
 

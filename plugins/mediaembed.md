@@ -21,8 +21,8 @@ Simply specify the `media` and `mediaembed` plugins, and optionally a `mediaembe
 
 ```js
 tinymce.init({
-  selector: "textarea",
-  plugins: "media mediaembed",
+  selector: 'textarea',
+  plugins: 'media mediaembed',
   mediaembed_max_width: 450
 });
 ```
@@ -32,9 +32,9 @@ In an SDK installation, please ensure you configure the URL to the service with 
 
 ```js
 tinymce.init({
-  selector: "textarea",
-  plugins: "media mediaembed",
-  mediaembed_service_url: "SERVICE_URL",
+  selector: 'textarea',
+  plugins: 'media mediaembed',
+  mediaembed_service_url: 'SERVICE_URL',
   mediaembed_max_width: 450
 });
 ```

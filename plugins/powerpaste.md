@@ -29,8 +29,8 @@ Example TinyMCE configuration:
 
 ```js
 tinymce.init({
-  selector: 'textarea',  // change this value according to your HTML
-  plugins: 'powerpaste'
+  selector: "textarea",  // change this value according to your HTML
+  plugins: "powerpaste"
 });
 ```
 
@@ -82,10 +82,10 @@ The default is `true`.
 
 ```js
 tinymce.init({
-  selector: 'textarea',  // change this value according to your HTML
-  plugins: 'powerpaste',
-  powerpaste_word_import: 'clean',
-  powerpaste_html_import: 'merge'
+  selector: "textarea",  // change this value according to your HTML
+  plugins: "powerpaste",
+  powerpaste_word_import: "clean",
+  powerpaste_html_import: "merge"
 });
 ```
 
@@ -98,9 +98,9 @@ Example TinyMCE Configuration:
 
 ```js
 tinymce.init({
-  selector: 'textarea',
-  plugins: 'powerpaste',
-  toolbar: 'pastetext'
+  selector: "textarea",
+  plugins: "powerpaste",
+  toolbar: "pastetext"
 });
 ```
 
@@ -113,10 +113,10 @@ Example TinyMCE Configuration:
 
 ```js
 tinymce.init({
-  selector: 'textarea',
-  plugins: 'powerpaste',
+  selector: "textarea",
+  plugins: "powerpaste",
   menu: {
-	edit: {title: 'edit', items: 'pastetext'}
+	edit: {title: "edit", items: "pastetext"}
   }
 });
 ```
@@ -131,8 +131,8 @@ Developers can add customer filtering after **PowerPaste** filters are run using
 
 ```js
 tinymce.init({
-  selector: 'textarea',
-  plugins: 'powerpaste',
+  selector: "textarea",
+  plugins: "powerpaste",
   paste_postprocess: function(editor, fragment) {
 	// Fragment is a DocumentFragment node containing the DOM structure of the pasted content,
 	// after it has been filtered by the PowerPaste plugin.

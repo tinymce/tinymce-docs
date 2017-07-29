@@ -41,4 +41,4 @@ These are the various rules that are checked:
 
 A [TinyMCE Enterprise](http://www.tinymce.com/pricing/) subscription includes the ability to download and install the accessibility checker feature for the editor.
 
-Accessibility checker is part of the demo [on the main page of TinyMCE site](https://www.tinymce.com/). For more information about the accessibility checker [see this blog post](http://www.ephox.com/blog/tinymce-enterprise-update-benefits-accessibility-users-brings-atmentions/).
+Accessibility checker is part of the demo [on the main page of TinyMCE site](https://www.tinymce.com/). For more information about the accessibility checker [see this blog post](https://go.tinymce.com/blog/tinymce-enterprise-update-benefits-accessibility-users-brings-atmentions/).

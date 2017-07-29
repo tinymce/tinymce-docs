@@ -12,9 +12,9 @@ The `a11ychecker` plugin enables you to check the HTML for various WCAG & Sectio
 
 ```js
 tinymce.init({
-    selector: 'textarea',
-    plugins: 'a11ychecker',
-    toolbar: 'a11ycheck'
+    selector: "textarea",
+    plugins: "a11ychecker",
+    toolbar: "a11ycheck"
 });
 ```
 

@@ -24,7 +24,7 @@ tinymce.init({
   selector: 'textarea',
   plugins: 'media mediaembed',
   mediaembed_max_width: 450
-})
+});
 ```
 
 ### Example SDK Configuration
@@ -36,7 +36,7 @@ tinymce.init({
   plugins: 'media mediaembed',
   mediaembed_service_url: 'SERVICE_URL',
   mediaembed_max_width: 450
-})
+});
 ```
 
 ## Usage

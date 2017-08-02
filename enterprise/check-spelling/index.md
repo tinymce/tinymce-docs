@@ -18,15 +18,15 @@ The following languages are supported:
 | Finnish                      | fi     |
 | French                       | fr     |
 | German                       | de     |
-| Italian	                     | it     |
+| Italian	                   | it     |
 | Norwegian	                   | nb     |
 | Portuguese (Brazil)          | pt     |
 | Portuguese (Europe)          | pt_pt  |
 | Spanish                      | es     |
 | Swedish                      | sv     |
 
-## Custom words
-Spell Checker Pro dictionaries can be modified to include custom words. See [these instructions]({{ site.baseurl }}/enterprise/check-spelling/modifying/) for details.
+## Custom Dictionaries
+Additional dictionaries can be added to Spell Checker Pro to supplement the default vocabulary. See [these instructions]({{ site.baseurl }}/enterprise/check-spelling/custom/) for details.
 
 ## Downloading Spell Checker Pro
 

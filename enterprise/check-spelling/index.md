@@ -9,21 +9,21 @@ keywords: enterprise tinymcespellchecker spell check checker pro pricing
 
 The following languages are supported:
 
-|Language                      | Code   |
-|:-----------------------------|:-------|
-| English                      | en     |
-| English (UK)                 | en_uk, en_gb, en_br |
-| Danish                       | da     |
-| Dutch                        | nl     |
-| Finnish                      | fi     |
-| French                       | fr     |
-| German                       | de     |
-| Italian	                   | it     |
-| Norwegian	                   | nb     |
-| Portuguese (Brazil)          | pt     |
-| Portuguese (Europe)          | pt_pt  |
-| Spanish                      | es     |
-| Swedish                      | sv     |
+|Language                   | Code   |
+|:--------------------------|:-------|
+| English                   | en     |
+| English (UK)              | en_uk, en_gb, en_br |
+| Danish                    | da     |
+| Dutch                     | nl     |
+| Finnish                   | fi     |
+| French                    | fr     |
+| German                    | de     |
+| Italian                   | it     |
+| Norwegian                 | nb     |
+| Portuguese (Brazil)       | pt     |
+| Portuguese (Europe)       | pt_pt  |
+| Spanish                   | es     |
+| Swedish                   | sv     |
 
 ## Custom Dictionaries
 Additional dictionaries can be added to Spell Checker Pro to supplement the default vocabulary. See [these instructions]({{ site.baseurl }}/enterprise/check-spelling/custom/) for details.

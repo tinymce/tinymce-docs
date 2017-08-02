@@ -4,7 +4,7 @@ This option allows you to specify whether the editor should parse and keep `html
 
 **Type:** `Boolean`
 
-**Default Value:** `false`  // confirmation required
+**Default Value:** `false`
 
 **Possible Values:** `true`, `false`
 

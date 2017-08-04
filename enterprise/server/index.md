@@ -107,7 +107,7 @@ For other versions of Tomcat on Windows, check the Tomcat documentation for that
 
 ###### From the command line
 
-If you're following the instructions for [Starting Jetty](http://www.eclipse.org/jetty/documentation/9.4.5.v20170502/startup.html) for Jetty 9.4.5, the path to the configuration file can simply be supplied as a command option:
+If you're following the instructions for [Starting Jetty](http://www.eclipse.org/jetty/documentation/current/startup.html) for Jetty 9.4.5, the path to the configuration file can simply be supplied as a command option:
 
     java -D"config.file=C:\config\file\location\application.conf" -jar C:\jetty\install\directory\start.jar
 
@@ -116,7 +116,7 @@ For other versions of Jetty on Windows, check the Jetty documentation for that v
 
 ###### As a Windows service
 
-Follow the instructions in [Startup via Windows Service](http://www.eclipse.org/jetty/documentation/9.4.5.v20170502/startup-windows-service.html) for Jetty 9.4.5. Remember to append the following snippet to the line beginning with `set PR_JVMOPTIONS` in your `install-jetty-service.bat` script:
+Follow the instructions in [Startup via Windows Service](http://www.eclipse.org/jetty/documentation/current/startup-windows-service.html) for Jetty 9.4.5. Remember to append the following snippet to the line beginning with `set PR_JVMOPTIONS` in your `install-jetty-service.bat` script:
 
     ;-Dconfig.file="C:\config\file\location\application.conf"
 
@@ -170,7 +170,7 @@ The path to the configuration file can simply be supplied as a command option:
 
 ###### As a Linux service
 
-Assuming you've followed the instructions to [Startup a Unix Service using jetty.sh](http://www.eclipse.org/jetty/documentation/9.4.5.v20170502/startup-unix-service.html) for Jetty 9.4.5, edit `/etc/default/jetty` and add the line:
+Assuming you've followed the instructions to [Startup a Unix Service using jetty.sh](http://www.eclipse.org/jetty/documentation/current/startup-unix-service.html) for Jetty 9.4.5, edit `/etc/default/jetty` and add the line:
 
     JETTY_ARGS=" -Dconfig.file=/config/file/location/application.conf"
 

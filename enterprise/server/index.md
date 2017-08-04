@@ -55,13 +55,13 @@ Refer to the [Configure]({{ site.baseurl }}/enterprise/server/configure/) page f
 
 ### Step 4. Pass the configuration file to the Java application server
 
-> **HTTP proxy:** If you are relying on an HTTP proxy for outgoing HTTP/HTTPS connections to the Internet, consider configuring use of the proxy by the application server by setting JVM system properties at this point. These can be set in the same manner as `config.file` using the instructions below (using the `-D` option to the `java` command). Please refer to [Networking Properties for Java](http://docs.oracle.com/javase/8/docs/api/java/net/doc-files/net-properties.html) for details on the relevant proxy system properties. The system properties `http.proxyHost`, `http.proxyPort`, `http.nonProxyHosts`, `https.proxyHost`, `https.proxyPort` are recognized as well as `http.proxyUser` and `http.proxyPassword` to support authenticating proxies. Alternatively, use of a proxy for server-side components can be set directly in their configuration file as discussed on the [Configure]({{ site.baseurl }}/enterprise/server/configure/#proxyoptional) page.
+> **HTTP proxy:** If you are relying on an HTTP proxy for outgoing HTTP/HTTPS connections to the Internet, consider configuring use of the proxy by the application server by setting JVM system properties at this point. These can be set in the same manner as `ephox.config.file` using the instructions below (using the `-D` option to the `java` command). Please refer to [Networking Properties for Java](http://docs.oracle.com/javase/8/docs/api/java/net/doc-files/net-properties.html) for details on the relevant proxy system properties. The system properties `http.proxyHost`, `http.proxyPort`, `http.nonProxyHosts`, `https.proxyHost`, `https.proxyPort` are recognized as well as `http.proxyUser` and `http.proxyPassword` to support authenticating proxies. Alternatively, use of a proxy for server-side components can be set directly in their configuration file as discussed on the [Configure]({{ site.baseurl }}/enterprise/server/configure/#proxyoptional) page.
 
-Tell the services about the configuration file by setting the `config.file` JVM system property to the absolute path of the configuration file. The exact method for doing this varies depending on your operating system, application server and whether the application server is being run as a system service. The authoritative reference for configuring any application server is the vendor documentation, but we'll do our best to get you started below.
+Tell the services about the configuration file by setting the `ephox.config.file` JVM system property to the absolute path of the configuration file. The exact method for doing this varies depending on your operating system, application server and whether the application server is being run as a system service. The authoritative reference for configuring any application server is the vendor documentation, but we'll do our best to get you started below.
 
 #### Windows
 
-All Windows examples will assume the name of your configuration file is `application.conf` and it is located in the directory `C:\config\file\location\`. You'll need to set the JVM system property `-Dconfig.file=C:\config\file\location\application.conf`.
+All Windows examples will assume the name of your configuration file is `application.conf` and it is located in the directory `C:\config\file\location\`. You'll need to set the JVM system property `-Dephox.config.file=C:\config\file\location\application.conf`.
 
 ##### Tomcat
 
@@ -71,7 +71,7 @@ The following assumes you've downloaded the Tomcat 9.0 zip archive from the Tomc
 
 Create or edit the script `.\bin\setenv.bat` to contain the following line:
 
-    set "CATALINA_OPTS= -Dconfig.file=C:\config\file\location\application.conf"
+    set "CATALINA_OPTS= -Dephox.config.file=C:\config\file\location\application.conf"
 
 There should only be a single line in this file defining the `CATALINA_OPTS` environment variable.
 
@@ -96,7 +96,7 @@ As a minimal example, if the installer installed Tomcat to `C:\Program Files\Apa
 - Add the following line to `Java Options`:
 
     ```
-    -Dconfig.file=C:\config\file\location\application.conf
+    -Dephox.config.file=C:\config\file\location\application.conf
     ```
 
 
@@ -109,7 +109,7 @@ For other versions of Tomcat on Windows, check the Tomcat documentation for that
 
 If you're following the instructions for [Starting Jetty](http://www.eclipse.org/jetty/documentation/current/startup.html) for Jetty 9.4.5, the path to the configuration file can simply be supplied as a command option:
 
-    java -D"config.file=C:\config\file\location\application.conf" -jar C:\jetty\install\directory\start.jar
+    java -D"ephox.config.file=C:\config\file\location\application.conf" -jar C:\jetty\install\directory\start.jar
 
 
 For other versions of Jetty on Windows, check the Jetty documentation for that version.
@@ -118,7 +118,7 @@ For other versions of Jetty on Windows, check the Jetty documentation for that v
 
 Follow the instructions in [Startup via Windows Service](http://www.eclipse.org/jetty/documentation/current/startup-windows-service.html) for Jetty 9.4.5. Remember to append the following snippet to the line beginning with `set PR_JVMOPTIONS` in your `install-jetty-service.bat` script:
 
-    ;-Dconfig.file="C:\config\file\location\application.conf"
+    ;-Dephox.config.file="C:\config\file\location\application.conf"
 
 > **Note:** Check the `install-jetty-service.bat` has the correct paths to your Java installation. The service will fail to start with some rather unhelpful errors if the paths are incorrect.
 
@@ -126,9 +126,9 @@ For other versions of Jetty on Windows, check the Jetty documentation for that v
 
 #### Linux
 
-All Linux examples will assume the name of your configuration file is `application.conf` and it is located in the directory `/config/file/location/`. You'll need to set the JVM system property `-Dconfig.file=/config/file/location/application.conf`.
+All Linux examples will assume the name of your configuration file is `application.conf` and it is located in the directory `/config/file/location/`. You'll need to set the JVM system property `-Dephox.config.file=/config/file/location/application.conf`.
 
-> **Note**: If the path to your `application.conf` file has spaces in it, you must ensure you prefix each white space with an escape character (\\). Example: ` -Dconfig.file=/config/file/location/with/white\ space/application.conf`
+> **Note**: If the path to your `application.conf` file has spaces in it, you must ensure you prefix each white space with an escape character (\\). Example: ` -Dephox.config.file=/config/file/location/with/white\ space/application.conf`
 
 Tomcat and/or Jetty can be obtained via the package manager for many Linux distributions. The commands for starting the service and the location of the configuration files will vary across distributions. If you installed an application server via the package manager, follow your distribution's documentation for configuring it.
 
@@ -144,7 +144,7 @@ If you've obtained Tomcat from your distribution's package manager, refer to you
 
 Create or edit the script `/opt/tomcat/bin/setenv.sh` to contain the following line:
 
-    CATALINA_OPTS=" -Dconfig.file=/config/file/location/application.conf"
+    CATALINA_OPTS=" -Dephox.config.file=/config/file/location/application.conf"
 
 There should only be a single line in this file defining the `CATALINA_OPTS` environment variable.
 
@@ -166,13 +166,13 @@ If you've obtained Jetty from your distribution's package manager, refer to your
 
 The path to the configuration file can simply be supplied as a command option:
 
-    java -Dconfig.file="/config/file/location/application.conf" -jar /opt/jetty/start.jar
+    java -Dephox.config.file="/config/file/location/application.conf" -jar /opt/jetty/start.jar
 
 ###### As a Linux service
 
 Assuming you've followed the instructions to [Startup a Unix Service using jetty.sh](http://www.eclipse.org/jetty/documentation/current/startup-unix-service.html) for Jetty 9.4.5, edit `/etc/default/jetty` and add the line:
 
-    JETTY_ARGS=" -Dconfig.file=/config/file/location/application.conf"
+    JETTY_ARGS=" -Dephox.config.file=/config/file/location/application.conf"
 
 There should only be a single line in this file defining the `JETTY_ARGS` variable.
 

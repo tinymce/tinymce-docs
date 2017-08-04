@@ -90,10 +90,10 @@ Edit the setenv.sh (Unix) or setenv.bat (Windows) to read as follows:
 On Windows, please prefix each line with 'set' and remove the quotes . So the configuration would look like:
 
 ```
-set CATALINA_OPTS= -Dconfig.file=/config/file/location/application.conf
+set CATALINA_OPTS= -Dephox.config.file=/config/file/location/application.conf
 set JAVA_OPTS= -Xms2048m -Xmx2048m -XX:PermSize=64m -XX:MaxPermSize=512m -Dfile.encoding=utf-8 -Djava.awt.headless-true -XX:+UseParallelGC -XX:MaxGCPauseMillis=100
 
-CATALINA_OPTS=" -Dconfig.file=/config/file/location/application.conf
+CATALINA_OPTS=" -Dephox.config.file=/config/file/location/application.conf
 JAVA_OPTS=" -Xms2048m -Xmx2048m -XX:PermSize=64m -XX:MaxPermSize=512m -Dfile.encoding=utf-8 -Djava.awt.headless-true -XX:+UseParallelGC -XX:MaxGCPauseMillis=100"
 ```
 
@@ -108,7 +108,7 @@ Edit the start.ini file to read as follows:
 # arguments # of a call to:
 # java -jar start.jar [arg...]
 #===========================================================
--Xms2048m -Xmx2048m -XX:PermSize=64m -XX:MaxPermSize=512m -Dconfig.file=/config/file/location/application.conf
+-Xms2048m -Xmx2048m -XX:PermSize=64m -XX:MaxPermSize=512m -Dephox.config.file=/config/file/location/application.conf
 ```
 
 Restart the service and confirm the settings have been applied like so:

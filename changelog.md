@@ -9,7 +9,7 @@ class: changelog
 {% capture changelog %}
 
 ## Version 4.6.5 August 2, 2017
-* Added new [inline_boundaries_selector](/configure/content-appearance/#inline_boundaries_selector) that allows you to specify the elements that should have boundaries.
+* Added new [inline_boundaries_selector](../configure/content-appearance/#inline_boundaries_selector) that allows you to specify the elements that should have boundaries.
 * Added new local upload feature, which allows the user to upload images directly from the image dialog.
 * Added a new API for providing meta data for plugins. It will show up in the [Help dialog](/plugins/help/) if it's provided.
 * Fixed so that the notifications created by the notification manager are more screen reader accessible.

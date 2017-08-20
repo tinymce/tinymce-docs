@@ -9,21 +9,21 @@ class: changelog
 {% capture changelog %}
 
 ## Version 4.6.5 August 2, 2017
-* Added new inline_boundaries_selector that allows you to specify the elements that should have boundaries.
-* Added new local upload feature this allows the user to upload images directly from the image dialog.
-* Added a new api for providing meta data for plugins. It will show up in the help dialog if it's provided.
+* Added new [inline_boundaries_selector](/configure/content-appearance/#inline_boundaries_selector) that allows you to specify the elements that should have boundaries.
+* Added new local upload feature, which allows the user to upload images directly from the image dialog.
+* Added a new API for providing meta data for plugins. It will show up in the [Help dialog](/plugins/help/) if it's provided.
 * Fixed so that the notifications created by the notification manager are more screen reader accessible.
 * Fixed bug where changing the list format on multiple selected lists didn't change all of the lists.
 * Fixed bug where the nonbreaking plugin would insert multiple undo levels when pressing the tab key.
 * Fixed bug where delete/backspace wouldn't render a caret when all editor contents where deleted.
 * Fixed bug where delete/backspace wouldn't render a caret if the deleted element was a single contentEditable false element.
-* Fixed bug where the wordcount plugin wouldn't count words correctly if word where typed after applying a style format.
-* Fixed bug where the wordcount plugin would count mathematical formulas as multiple words for example 1+1=2.
+* Fixed bug where the [Word Count plugin](/plugins/wordcount/) wouldn't count words correctly if word where typed after applying a style format.
+* Fixed bug where the [Word Count plugin](/plugins/wordcount/) would count mathematical formulas as multiple words for example 1+1=2.
 * Fixed bug where formatting of triple clicked blocks on Chrome/Safari would result in styles being added outside the visual selection.
 * Fixed bug where paste would add the contents to the end of the editor area when inline mode was used.
 * Fixed bug where toggling off bold formatting on text entered in a new paragraph would add an extra line break.
-* Fixed bug where autolink plugin would only produce a link on every other consecutive link on Firefox.
-* Fixed bug where it wasn't possible to select all contents if the content only had one pre element.
+* Fixed bug where [Autolink plugin](/plugins/autolink/) would only produce a link on every other consecutive link on Firefox.
+* Fixed bug where it wasn't possible to select all contents if the content only had one `pre` element.
 * Fixed bug where sizzle would produce lagging behavior on some sites due to repaints caused by feature detection.
 * Fixed bug where toggling off inline formats wouldn't include the space on selected contents with leading or trailing spaces.
 * Fixed bug where the cut operation in UI wouldn't work in Chrome.

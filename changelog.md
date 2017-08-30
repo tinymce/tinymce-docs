@@ -10,7 +10,7 @@ class: changelog
 
 ## Version 4.6.6 August 30, 2017
 * Fixed so that notifications wrap long text content instead of bleeding outside the notification element.
-* Fixed so the [content_style]() css is added after the skin and custom stylesheets.
+* Fixed so the [content_style]({{ site.baseurl }}/configure/content-appearance/#content_style) css is added after the skin and custom stylesheets.
 * Fixed bug where it wasn't possible to remove a table with the cut button.
 * Fixed bug where the center format wasn't getting the same font size as the other formats in the format preview.
 * Fixed bug where the [Word Count plugin]({{ site.baseurl }}/plugins/wordcount/) wasn't counting hyphenated words correctly.
@@ -26,7 +26,7 @@ class: changelog
 * Fixed bug where pasting some content into the editor on chrome some newlines were removed.
 * Fixed bug where it wasn't possible to remove a list if a list item was a table element.
 * Fixed bug where copy/pasting partial selections of tables wouldn't produce a proper table.
-* Fixed bug where the searchreplace plugin could not find consecutive spaces.
+* Fixed bug where the [Search And Replace plugin]({{ site.baseurl }}/plugins/searchreplace/) plugin could not find consecutive spaces.
 * Fixed bug where background color wasn't applied correctly on some partially selected contents.
 
 ## Version 4.6.5 August 2, 2017

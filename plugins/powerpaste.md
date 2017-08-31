@@ -136,6 +136,9 @@ tinymce.init({
   paste_postprocess: function(editor, fragment) {
 	// Fragment is a DocumentFragment node containing the DOM structure of the pasted content,
 	// after it has been filtered by the PowerPaste plugin.
+  var textnode = document.createTextNode("Added Text");
+  // Modify the fragment via the argument - do not return a value!
+  fragment.node.appendChild(textnode); 
   }
 });
 ```

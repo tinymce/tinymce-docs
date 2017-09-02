@@ -1,8 +1,8 @@
 ---
 layout: default
-title: Introducing TinyMCE mobile beta
-description: Setup the first true mobile rich-text editor.
-keywords: mobile tablet
+title: TinyMCE mobile beta
+description: Introducing the first true mobile rich-text editor.
+keywords: mobile tablet beta
 ---
 
 If everything is "mobile first", why do rich-text editor developers still expect authors to interact on mobile as if it were a desktop? Why has no-one redesigned for mobile? We decided to fix it.
@@ -40,10 +40,11 @@ One way to think about configuring TinyMCE mobile, is that it is a subset of con
 
 Therefore, the mobile section allows you to have completely different settings for mobile than for non-mobile devices. The main configuration options you can change are `plugins` and `toolbar`.
 Configuring the Plugins
-The plugins supported by mobile are currently limited to the most used core editor capabilities, and the [autosave], [autolink] and [lists] plugins. This is by design. We are in beta and want to hear from our developer community about which plugins should be mobile optimized. Please [complete our survey] to have your say.
+The plugins supported by mobile are currently limited to the most used core editor capabilities, and the [autosave](#), [autolink](#) and [lists](#) plugins. This is by design. We are in beta and want to hear from our developer community about which plugins should be mobile optimized. Please [complete our survey] to have your say.
 
 Specify which of these plugins you want by adding a plugin entry to the mobile section:
 
+```
 tinymce.init({
   selector: ‘textarea’,
   theme: ‘modern’,
@@ -52,9 +53,13 @@ tinymce.init({
     plugins: [ ‘autosave’ ]
   },
 });
-Configuring the Toolbar
+```
+
+## Configuring the Toolbar
+
 TinyMCE mobile beta supports a small subset of the toolbar items supported by the main mode. The toolbar is specified in the mobile section also.
 
+```
 tinymce.init({
   selector: ‘textarea’,
   theme: ‘modern’,
@@ -64,8 +69,9 @@ tinymce.init({
     toolbar: [ ‘undo’, ‘bold’, ‘italic’, ‘styleselect’ ]
   },
 });
+```
 
-Below are the toolbar items supported in the beta, with any plugins/configuration required. Note, that the `list` functions require the [lists] plugin and [styleselect] requires configuring [style_formats].
+Below are the toolbar items supported in the beta, with any plugins/configuration required. Note, that the `list` functions require the [lists](#) plugin and [styleselect](#) requires configuring [style_formats](#).
 
 Name
 Function
@@ -145,6 +151,6 @@ styleselect
 Apply a custom style
 
 
-style_formats (https://www.tinymce.com/docs/configure/content-formatting/#style_formats)
+[style_formats](https://www.tinymce.com/docs/configure/content-formatting/#style_formats)
 removeformat
 Removes any inline formatting

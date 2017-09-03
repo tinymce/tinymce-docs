@@ -41,6 +41,6 @@ ephox {
 }
 ```
 
-There is also more Self-hosted package setup information on the [Link Checker plugin page](/plugins/linkchecker/).
+You will also find more Self-hosted setup information on the [Link Checker plugin page](/plugins/linkchecker/).
 
 > **Important note:** The Link Checker server currently does not support integration with IBM WebSphere Application Server.

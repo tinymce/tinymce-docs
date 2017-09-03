@@ -8,11 +8,11 @@ keywords: enterprise tinymcespellchecker spell check checker pro pricing imageto
 ## Server-side component installation
 
 
-Some TinyMCE Enterprise features require a server-side component. If you're using the TinyMCE cloud solution, we've done all the hard work for you and you can skip this page. Alternatively, if you've purchased our SDK solution then please read on.
+Some TinyMCE Enterprise features require a server-side component. If you're using the TinyMCE cloud solution, we've done all the hard work for you and you can skip this page. Alternatively, if you've purchased our Self-hosted solution then please read on.
 
 Server-side components must be deployed onto a Java Servlet 3.0 compatible application server.  We currently support Jetty, Apache Tomcat, and WebSphere Application Server. To discuss support for additional Java application servers, please contact us at <mailto:sales@ephox.com>
 
-The following server-side components are packaged with the TinyMCE SDK:
+The following server-side components are included in the TinyMCE Self-hosted package:
 
 |Component                      | File							| Description |
 |:-----------------------------	|:-------						|:----------- |
@@ -36,7 +36,7 @@ If you don't, pick either [Tomcat](http://tomcat.apache.org/) or [Jetty](http://
 
 ### Step 2. Deploy server-side components
 
-Deploy all the WAR files that came packaged with the TinyMCE Enterprise SDK to your newly installed Java application server:
+Deploy all the WAR files that came packaged with the TinyMCE Enterprise Self-hosted package to your newly installed Java application server:
 
 - ephox-spelling.war
 - ephox-image-proxy.war
@@ -203,4 +203,3 @@ tinymce.init({
 	linkchecker_service_url: 'http://yourserver.example.com/ephox-link-checker/'
 });
 ````
-

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Cloud Deployment of Editor & Plugins
-description_short: Learn how to setup the TinyMCE editor via our Cloud, or migrate from the SDK.
+description_short: Learn how to setup the TinyMCE editor via our Cloud, or migrate from a Self-hosted environment.
 description: TinyMCE Cloud customers, you'll be up and running in less than 5 minutes.
 keywords: tinymce cloud script textarea apiKey
 ---
@@ -56,11 +56,11 @@ Also, please ensure that the `tiny-api-key` and `tinymce-api-key` headers are re
 ### Step 5: Specifying a translation
 If you wish to use a language other than English (US), please [download a language pack](https://www.tinymce.com/i18n) and then [specify its location]({{ site.baseurl }}/configure/localization/#language_url) with the `language_url` configuration option.
 
-## Migrating from TinyMCE SDK to TinyMCE Cloud
+## Migrating from a Self-hosted environment to TinyMCE Cloud
 
 ### Step 1: Replace existing reference to tinymce.min.js
 
-Migrating from the SDK to the Cloud is a relatively straightforward process. Please remove your existing script tag that loads TinyMCE’s JavaScript (typically a reference to `tinymce.min.js` either hosted in your own application or available via one our our legacy CDNs) and replace this script tag with the following:
+Migrating from the a Self-hosted environment to the Cloud is a relatively straightforward process. Please remove your existing script tag that loads TinyMCE’s JavaScript (typically a reference to `tinymce.min.js` either hosted in your own application or available via one our our legacy CDNs) and replace this script tag with the following:
 
 ```js
 <script src="{{ site.cdnurl }}?apiKey=your_API_key"></script>

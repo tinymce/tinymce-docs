@@ -42,7 +42,7 @@ tinymce.init({
 ```
 
 
-## SDK Installation
+## Self-hosted Installation
 To enable the TinyMCE Enterprise Spellchecking plugin:
 
 1. If you are currently using the 'spellchecker' plugin provided with TinyMCE, disable it by removing it from the 'plugins' list.
@@ -195,6 +195,6 @@ tinymce.init({
 
 ## Downloading Spell Checker Pro
 
-A [TinyMCE Enterprise](http://www.tinymce.com/pricing/) subscription includes the ability to download and install a spell check as-you-type feature for the editor.
+A [TinyMCE Enterprise](https://www.tinymce.com/pricing/) subscription includes the ability to download and install a spell check as-you-type feature for the editor.
 
 Spell Checker Pro requires both a client-side plugin to be configured and a server-side component to be installed and configured.

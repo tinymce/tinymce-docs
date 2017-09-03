@@ -34,7 +34,7 @@ tinymce.init({
 });
 ```
 
-## SDK Installation
+## Self-hosted Installation
 To enable the TinyMCE **PowerPaste** plugin:
 
 1. If you are currently using the `paste` plugin provided with TinyMCE, disable it by removing it from the `plugins` list.
@@ -138,7 +138,7 @@ tinymce.init({
 	// after it has been filtered by the PowerPaste plugin.
   var textnode = document.createTextNode("Added Text");
   // Modify the fragment via the argument - do not return a value!
-  fragment.node.appendChild(textnode); 
+  fragment.node.appendChild(textnode);
   }
 });
 ```

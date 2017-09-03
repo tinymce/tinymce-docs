@@ -9,7 +9,7 @@ keywords: forum forums url absolute relative security xss
 
 
 ## Premium Support
-If your support requirements included guaranteed responses from the TinyMCE Support Team or in-time bug fixes, **paid** premium support is available as part of [TinyMCE Enterprise](http://www.tinymce.com/pricing/).
+If your support requirements included guaranteed responses from the TinyMCE Support Team or in-time bug fixes, **paid** premium support is available as part of [TinyMCE Enterprise](https://www.tinymce.com/pricing/).
 
 If you are a TinyMCE Enterprise customer in good standing please [review what information you need to gather]({{ site.baseurl }}/enterprise/support/) to submit a case.
 

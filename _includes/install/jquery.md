@@ -4,7 +4,7 @@ We have a jQuery plugin [available here](http://archive.tinymce.com/download/cus
 
 > Note: the above link will take you to the custom package download page. When building your jQuery package, select "TinyMCE core (jQuery) under the "Core Elements" section.
 
-As with the [SDK](#sdkinstall) option, unzip the package and move the `'path/to/tinymce/'` directory into a web accessible location on your web server (for example, `localhost`).
+As with the [Self-hosted](#sdkinstall) option, unzip the package and move the `'path/to/tinymce/'` directory into a web accessible location on your web server (for example, `localhost`).
 
 ### Step 2: Installation
 

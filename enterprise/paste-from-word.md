@@ -10,7 +10,7 @@ keywords: enterprise powerpaste power paste powerpaste_word_import powerpaste_ht
 
 [TinyMCE PowerPaste](https://www.ephox.com/products/powerpaste/) automatically cleans up content from Microsoft Word and other HTML sources to ensure clean, compliant content that matches the look and feel of your site or app.
 
-TinyMCE PowerPaste is a Premium Plugin from TinyMCE. We have flexible purchase options: as a [stand-alone plugin](https://www.ephox.com/products/powerpaste/), to [OEM and custom enterprise pricing](http://www.tinymce.com/pricing/).
+TinyMCE PowerPaste is a Premium Plugin from TinyMCE. We have flexible purchase options: as a [stand-alone plugin](https://www.ephox.com/products/powerpaste/), to [OEM and custom enterprise pricing](https://www.tinymce.com/pricing/).
 
 > Customers: we have full documentation explaining how to install and configure TinyMCE PowerPaste. [Go to the docs.]({{ site.baseurl }}/plugins/powerpaste/)
 

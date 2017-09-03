@@ -127,8 +127,8 @@ tinymce.init({
   menubar: "insert",
   toolbar: "link",
   link_list: [
-    {title: 'My page 1', value: 'http://www.tinymce.com'},
-    {title: 'My page 2', value: 'http://www.ephox.com'}
+    {title: 'My page 1', value: 'https://www.tinymce.com'},
+    {title: 'My page 2', value: 'https://www.ephox.com'}
   ]
 });
 ```
@@ -178,8 +178,8 @@ tinymce.init({
   toolbar: "link",
   link_list: function(success) {
     success([
-       {title: 'My page 1', value: 'http://www.tinymce.com'},
-       {title: 'My page 2', value: 'http://www.ephox.com'}
+       {title: 'My page 1', value: 'https://www.tinymce.com'},
+       {title: 'My page 2', value: 'https://www.ephox.com'}
     ]);
   }
 });

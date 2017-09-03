@@ -27,8 +27,8 @@ tinymce.init({
 });
 ```
 
-### Example SDK Configuration
-In an SDK installation, please ensure you configure the URL to the service with the `mediaembed_service_url` parameter.
+### Example Self-hosted Configuration
+In a Self-hosted installation, please ensure you configure the URL to the service with the `mediaembed_service_url` parameter.
 
 ```js
 tinymce.init({

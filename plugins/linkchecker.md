@@ -8,7 +8,7 @@ keywords: url urls link linkchecker_service_url linkchecker_content_css
 
 The `linkchecker` does what it says &ndash; validates URLs, as you type them. URLs considered invalid will be highlighted with red and will have a dedicated context menu with options to either edit the link, try and open it in a separate tab, remove the link, or ignore it.
 
-> Please note that Link Checker is a **premium** plugin and relies on a server-side service, which is included as a part of a [premium TinyMCE plugin](http://www.tinymce.com/pricing/) subscription.
+> Please note that Link Checker is a **premium** plugin and relies on a server-side service, which is included as a part of a [premium TinyMCE plugin](https://www.tinymce.com/pricing/) subscription.
 
 
 ## Cloud Instructions
@@ -24,10 +24,9 @@ tinymce.init({
 });
 ```
 
-## SDK Instructions
+## Self-hosted Instructions
 
-SDK customers will need to provide a URL to their deployment of the link
-checking service via the `linkchecker_service_url` parameter
+Customers using a Self-hosted environment will need to provide a URL to their deployment of the link checking service via the `linkchecker_service_url` parameter
 
 ##### Example
 

@@ -167,9 +167,9 @@ Whether you’re deploying both the [TinyMCE editor and premium plugins via the 
 <script src="https://cloud.tinymce.com/stable/plugins.min.js?apiKey=your_API_key&linkchecker=1.0.0"></script>
 ```
 
-## Specifying an SDK deployment of features/plugins
+## Specifying a Self-hosted deployment of features/plugins
 
-If you're deploying [only premium plugins from the Cloud]({{ site.baseurl }}/get-started-cloud/features-only), you may want to have some features served from the Cloud and some features served from your own SDK installation. This is also possible with URL query parameters and the special version name "sdk".
+If you're deploying [only premium plugins from the Cloud]({{ site.baseurl }}/get-started-cloud/features-only), you may want to have some features served from the Cloud and some features served from your own Self-hosted installation. This is also possible with URL query parameters and the special version name "sdk".
 
 The "sdk" version lets the TinyMCE Plugin Manager know that you're not using the Cloud version of a particular plugin and that it shouldn't serve the plugin
 from the Cloud. It also won't display any warning or error messages if you're not entitled to it.
@@ -268,13 +268,13 @@ The following example would load:
 
 ```
 
-### Featuring a combination of SDK and Cloud features
+### Featuring a combination of Self-hosted and Cloud features
 
 The following example would load:
 
-* TinyMCE from your SDK installation
+* TinyMCE from your Self-hosted installation
 * PowerPaste version 2.1.8 from the Cloud
-* Advanced Code Editor from your SDK installation
+* Advanced Code Editor from your Self-hosted installation
 
 ```js
 <html>

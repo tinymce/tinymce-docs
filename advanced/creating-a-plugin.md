@@ -7,7 +7,7 @@ description: A short introduction to creating plugins for TinyMCE along with an 
 keywords: plugin plugin.js plugin.min.js tinymce.js
 ---
 
-Creating plugins in TinyMCE is pretty simple - especially if you use the [Yeoman generator]({{ site.baseurl }}/advanced/yeoman-generator/)! - but if you would rather do it all by yourself keep reading on. 
+Creating plugins in TinyMCE is pretty simple - especially if you use the [Yeoman generator]({{ site.baseurl }}/advanced/yeoman-generator/)! - but if you would rather do it all by yourself keep reading on.
 
 This tutorial tries to outline some of the basic concepts of creating a plugin. For more details consult the API documentation and check the existing plugins we ship with the core.
 
@@ -75,7 +75,7 @@ tinymce.PluginManager.add('example', function(editor, url) {
       // Open window with a specific url
       editor.windowManager.open({
         title: 'TinyMCE site',
-        url: 'http://www.tinymce.com',
+        url: 'https://www.tinymce.com',
         width: 800,
         height: 600,
         buttons: [{

@@ -14,7 +14,7 @@ In this section of the Get Started guide we will show you how to change TinyMCE'
 
 ### Step 1
 
-Go to our [language download page](http://archive.tinymce.com/i18n/index.php) (i18n), where you'll see a list of language packs for TinyMCE 4.
+Go to our [language download page](https://www.tinymce.com/download/language-packages/) (i18n), where you'll see a list of language packs for TinyMCE 4.
 
 If you want to use one language only, click the download link on the far right of the table. However, if you want to download multiple language packs, first check the box beside each language you need and then click the download button at the bottom of the table.
 
@@ -33,12 +33,11 @@ Set the language option in your TinyMCE configuration to the language code in th
 Confirm that the language has been set successfully by loading TinyMCE.
 
 
-
 ## A working example
 
 We have prepared a code snippet below that would set TinyMCE's language to Chinese and text directionality right-to-left.
 
-If you want to try it for yourself, [click here to directly download](http://archive.tinymce.com/i18n/download.php?download=zh_CN) the Chinese language pack. You'll also need a *local instance* of TinyMCE, which you can grab from our [downloads page](http://www.tinymce.com/download/). Follow the [SDK install instructions]({{ site.baseurl }}/get-started/advanced-install/#sdkinstall) if you're not familiar with setting up TinyMCE locally.
+If you want to try it for yourself, [download the Chinese language](https://www.tinymce.com/download/language-packages/) pack. You'll also need a *local instance* of TinyMCE, which you can grab from our [downloads page](https://www.tinymce.com/download/). Follow the [Self-hosted install instructions]({{ site.baseurl }}/get-started/advanced-install/#sdkinstall) if you're not familiar with setting up TinyMCE locally.
 
 ```html
 <!DOCTYPE html>

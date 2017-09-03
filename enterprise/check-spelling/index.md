@@ -30,6 +30,6 @@ Additional dictionaries can be added to Spell Checker Pro to supplement the defa
 
 ## Downloading Spell Checker Pro
 
-A [TinyMCE Enterprise](http://www.tinymce.com/pricing/) subscription includes the ability to download and install a spell check as-you-type feature for the editor.
+A [TinyMCE Enterprise](https://www.tinymce.com/pricing/) subscription includes the ability to download and install a spell check as-you-type feature for the editor.
 
 **Spell Checker Pro** requires a [client-side plugin]({{ site.baseurl }}/plugins/tinymcespellchecker/) to be configured. It also requires an additional [server-side component]({{ site.baseurl }}/enterprise/server/) to be installed and configured.

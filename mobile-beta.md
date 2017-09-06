@@ -30,7 +30,7 @@ In the snippet below, we use TinyMCE Cloud to instantiate the editor. If you're 
   <script>tinymce.init({
       selector:'textarea',
       theme: 'modern',
-      mobile: { theme: 'mobile' }
+      mobile: { theme: 'beta-mobile' }
     });</script>
 </head>
 <body>
@@ -50,7 +50,7 @@ tinymce.init({
   selector: 'textarea',
   theme: 'modern',
   mobile: {
-    theme: 'mobile'
+    theme: 'beta-mobile'
   }
 });
 ```
@@ -76,7 +76,7 @@ tinymce.init({
   selector: 'textarea',
   theme: 'modern',
   mobile: {
-    theme: 'mobile',
+    theme: 'beta-mobile',
     plugins: [ 'autosave' ]
   }
 });
@@ -91,7 +91,7 @@ tinymce.init({
   selector: 'textarea',
   theme: 'modern',
   mobile: {
-    theme: 'mobile',
+    theme: 'beta-mobile',
     plugins: [ 'autosave' ],
     toolbar: [ 'undo', 'bold', 'italic', 'styleselect' ]
   }

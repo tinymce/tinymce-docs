@@ -17,7 +17,7 @@ Configuration is relatively easy, so let’s get started.
 
 ## How to get the mobile beta
 
-Please visit our [mobile beta page](https://www.tinymce.com/mobile-beta) to download the Self-hosted package. If you're using TinyMCE Cloud, the beta is available in the `dev` branch.
+Please visit our [mobile beta page](https://www.tinymce.com/mobile) to download the Self-hosted package. If you're using TinyMCE Cloud, the beta is available in the `dev` branch.
 
 ## How to setup mobile beta
 

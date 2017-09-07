@@ -5,17 +5,19 @@ description: TinyMCE is now the first open source mobile ready rich-text editor.
 keywords: mobile tablet beta
 ---
 
-If everything is "mobile first", why do rich-text editor developers still expect authors to interact on mobile devices as if it's a desktop? Why has no-one redesigned for mobile devices? We decided to fix it.
+Why mobilize TinyMCE? Simple really. We live in a "mobile-first" world and we all expect a seamless experience between desktop and mobile. Our goal is to help you achieve this with as little effort as possible.
 
 We're pleased to introduce TinyMCE mobile in beta.
 
-TinyMCE mobile is a mode of TinyMCE designed and optimized for touch devices. The interface is slimmed down, and supports various touch interactions. Configuration is relatively easy, so let’s get started.
+TinyMCE mobile is a mode of TinyMCE designed and optimized for touch devices. The interface is slimmed down, and supports various touch interactions.
+
+Configuration is relatively easy, so let’s get started.
 
 > Please note that the mobile beta will not work on non-mobile environments.
 
 ## How to get the mobile beta
 
-Please visit our [mobile beta page](https://www.tinymce.com/mobile-beta) to download the Self-hosted package. If you're using TinyMCE Cloud, the beta is available via the `dev` branch.
+Please visit our [mobile beta page](https://www.tinymce.com/mobile-beta) to download the Self-hosted package. If you're using TinyMCE Cloud, the beta is available in the `dev` branch.
 
 ## How to setup mobile beta
 

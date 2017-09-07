@@ -1,7 +1,7 @@
 ---
 layout: default
 title: TinyMCE Mobile
-description: TinyMCE is now the first open source mobile ready rich-text editor.
+description: Build once. Works everywhere.
 keywords: mobile tablet beta
 ---
 

@@ -5,7 +5,7 @@ description: Build once. Works everywhere.
 keywords: mobile tablet beta
 ---
 
-Simple. We live in a "mobile-first" world and expect a seamless experience between desktop and mobile. Our goal is to help you achieve this with as little effort as possible.
+Why make TinyMCE mobile friendly? Simple. We live in a "mobile-first" world and expect a seamless experience between desktop and mobile. Our goal is to help you achieve this with as little effort as possible.
 
 We're pleased to introduce TinyMCE mobile in beta.
 

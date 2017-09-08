@@ -5,11 +5,11 @@ description: Build once. Works everywhere.
 keywords: mobile tablet beta
 ---
 
-Why mobilize TinyMCE? Simple really. We live in a "mobile-first" world and we all expect a seamless experience between desktop and mobile. Our goal is to help you achieve this with as little effort as possible.
+Why make TinyMCE mobile friendly? Simple. We live in a "mobile-first" world and expect a seamless experience between desktop and mobile. Our goal is to help you achieve this with as little effort as possible.
 
 We're pleased to introduce TinyMCE mobile in beta.
 
-TinyMCE mobile is a mode of TinyMCE designed and optimized for touch devices. The interface is slimmed down, and supports various touch interactions.
+TinyMCE mobile beta is designed to run on iOS Safari and Android Chrome. You'll find a streamlined interface, while keeping the most common touch interactions easily to hand.
 
 Configuration is relatively easy, so let’s get started.
 

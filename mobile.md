@@ -1,7 +1,7 @@
 ---
 layout: default
 title: TinyMCE Mobile
-description: Build once. Works everywhere.
+description: A new mobile-first user experience for rich-text editing.
 keywords: mobile tablet beta
 ---
 

@@ -28,7 +28,7 @@ In the snippet below, we use TinyMCE Cloud to instantiate the editor. If you're 
 <!DOCTYPE html>
 <html>
 <head><!-- Get TinyMCe Cloud -->
-  <script src="//cloud.tinymce.com/dev/tinymce.min.js"></script>
+  <script src="https://cloud.tinymce.com/dev/tinymce.min.js"></script>
   <script>tinymce.init({
       selector:'textarea',
       theme: 'modern',

@@ -9,7 +9,7 @@ class: changelog
 {% capture changelog %}
 
 ## Version 4.6.7 September 18, 2017
-Fixed bug where paste wasn't working in IOS.
+* Fixed bug where paste wasn't working in IOS.
 * Fixed bug where the [Word Count plugin]({{ site.baseurl }}/plugins/wordcount/) didn't count some mathematical operators correctly.
 * Fixed bug where inserting a list in a table caused the cell to expand in height.
 * Fixed bug where pressing enter in a list located inside of a table deleted list items instead of inserting new list item.

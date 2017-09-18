@@ -8,6 +8,22 @@ class: changelog
 
 {% capture changelog %}
 
+## Version 4.6.7 September 18, 2017
+Fixed bug where paste wasn't working in IOS.
+* Fixed bug where the [Word Count plugin]({{ site.baseurl }}/plugins/wordcount/) didn't count some mathematical operators correctly.
+* Fixed bug where inserting a list in a table caused the cell to expand in height.
+* Fixed bug where pressing enter in a list located inside of a table deleted list items instead of inserting new list item.
+* Fixed bug where copy and pasting table cells produced inconsistent results.
+* Fixed bug where initializing an editor with an ID of 'length' would throw an exception.
+* Fixed bug where it was possible to split a non merged table cell.
+* Fixed bug where copy and pasting a list with a very specific selection into another list would produce a nested list.
+* Fixed bug where copy and pasting ordered lists sometimes produced unordered lists.
+* Fixed bug where padded elements inside other elements would be treated as empty.
+* Added some missing translations to [Image]({{ site.baseurl }}/plugins/image/), [Link]({{ site.baseurl }}/plugins/link/) and [Help]({{ site.baseurl }}/plugins/help/) plugins.
+* Fixed so you can resize images inside a figure element.
+* Fixed bug where an inline TinyMCE editor initialized on a table did not set selection on load in Chrome.
+* Fixed the positioning of the inlite toolbar when the target element wasn't big enough to fit the toolbar.
+
 ## Version 4.6.6 August 30, 2017
 * Fixed so that notifications wrap long text content instead of bleeding outside the notification element.
 * Fixed so the [content_style]({{ site.baseurl }}/configure/content-appearance/#content_style) css is added after the skin and custom stylesheets.

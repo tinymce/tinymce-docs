@@ -54,3 +54,5 @@ This is a list of keyboard shortcuts available within the editor user interface.
 | Move focus back to editor body | Esc |
 
 > Note: Browsers/Screen Readers provide additional shortcuts within the editor context.
+
+How to add custom shortcuts ?

@@ -119,4 +119,15 @@ Below are the toolbar items supported in the beta, with any plugins/configuratio
 | styleselect | Apply a custom style | | [style_formats]({{ site.baseurl }}/configure/content-formatting/#style_formats) |
 | removeformat | Removes any inline formatting |
 
+## Browser compatibility
+
+During our initial QA, we tested the beta on the following platforms. If you use other platforms and encounter bugs, please let us know in the [TinyMCE issue tracker](https://github.com/tinymce/tinymce/issues).
+
+| OS        | Browser | Device       |
+|-----------|---------|--------------|
+| Android 7 | Chrome  | Mobile phone |
+| Android 6 | Chrome  | Mobile phone |
+| iOS10     | Safari  | iPad         |
+| iOS10     | Safari  | iPhone       |
+
 > To shape the future of mobile editing, [complete our survey](https://docs.google.com/forms/d/e/1FAIpQLSdWamU5HsZtv-SPqGRyu6Ql1zLqlrCQFP1vSrzx1oHikMFvlw/viewform) to have your say.

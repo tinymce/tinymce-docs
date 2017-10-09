@@ -203,6 +203,11 @@ class: changelog
 * Fixed bug where the init call promise wouldn't resolve if the specified selector didn't find any matching elements.
 * Fixed bug where the Schema isValidChild function was case sensitive.
 
+## Version 4.5.8 - November 5, 2017
+* Fixed bug where paste on Edge wouldn't paste UTF characters since Microsoft didn't implement the html5 clipboard api correctly.
+* Fixed bug where it was hard to focus the editor on IE 10 since the body element didn't have full height.
+* Fixed bug where malformed blob urls wouldn't be handled correctly by the editor.
+
 ## Version 4.5.7 - April 25, 2017
 * Fixed bug with selection around inline contenteditable false would get collapsed incorrectly.
 * Fixed bug where pasting on Microsoft Edge 40+ would produce clipboard fragment headers.

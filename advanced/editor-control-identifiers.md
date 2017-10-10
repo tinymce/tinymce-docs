@@ -122,6 +122,9 @@ Here is a list of the toolbar/menu controls that the core and plugins provides. 
 | subscript | core | Applies subscript format to current selection. |
 | superscript | core | Applies superscript format to current selection. |
 | removeformat | core | Removes all formats form the current selection. |
+| codeformat | core | Applies inline code format to current selection. |
+| blockformats | core | Applies block formats to current selection. |
+| align | core | Changes alignment to the current block or selection. |
 | formats | core | Menu of all available formats. |
 | link | [link]({{ site.baseurl }}/plugins/link/) | Opens the link dialog. |
 | openlink | [link]({{ site.baseurl }}/plugins/link/) | Opens the selected link in a new tab. |
@@ -151,3 +154,4 @@ Here is a list of the toolbar/menu controls that the core and plugins provides. 
 | restoredraft | [autosave]({{ site.baseurl }}/plugins/autosave/) | Restores to the latest auto saved draft. |
 | fullpage | [fullpage]({{ site.baseurl }}/plugins/fullpage/) | Document properties for the full page. |
 | toc | [toc]({{ site.baseurl }}/plugins/toc/) | Inserts a Table of Contents into the editor. |
+| help | [help]({{ site.baseurl }}/plugins/help/) | Opens the help dialog |

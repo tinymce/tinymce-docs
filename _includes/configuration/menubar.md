@@ -11,7 +11,7 @@ To specify the menus that should appear on TinyMCE's menu bar, the menubar optio
 ```js
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  menubar: 'file edit insert view format table tools'
+  menubar: 'file edit insert view format table tools help'
 });
 ```
 

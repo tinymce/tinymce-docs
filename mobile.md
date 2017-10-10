@@ -63,7 +63,7 @@ The example above loads default settings. To configure the mobile experience, co
 
 ## Configuring mobile
 
-One way to think about configuring TinyMCE mobile, is that it is a subset of config options within your standard `tinymce` init. When on a mobile device, anything included in the `mobile` section will be used instead of the equivalent values in the top-level of settings of your config.
+One way to think about configuring TinyMCE mobile, is that it is a subset of config options within your standard `tinymce` init. When on a mobile device, anything included in the [mobile]({{ site.baseurl }}/configure/editor-appearance/#mobile) section will be used instead of the equivalent values in the top-level of settings of your config.
 
 Therefore, the mobile section allows you to have completely different settings for mobile than non-mobile devices. The main configuration options you can change are `plugins` and `toolbar`.
 
@@ -86,7 +86,7 @@ tinymce.init({
 
 ### Configuring the Toolbar
 
-TinyMCE mobile supports a small subset of the toolbar items supported by the main mode. The toolbar is specified in the mobile section also.
+TinyMCE mobile supports a small subset of the toolbar items supported by the main mode. The toolbar is specified in the [mobile]({{ site.baseurl }}/configure/editor-appearance/#mobile) section also.
 
 ```js
 tinymce.init({

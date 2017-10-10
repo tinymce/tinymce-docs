@@ -37,6 +37,8 @@ description: Configure the editor's appearance, including menu and toolbar contr
 
 {% include configuration/min-width.md %}
 
+{% include configuration/mobile.md %}
+
 {% include configuration/preview-styles.md %}
 
 {% include configuration/removed-menuitems.md %}

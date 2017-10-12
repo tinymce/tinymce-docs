@@ -73,6 +73,20 @@ JDK 7 update 55+
 * CPU:  Dual Core Processor ~ 2Ghz. For higher loads, a quad core or higher is recommended.
 * RAM: 4 Gigabytes of RAM available for services
 
+### Supported TinyMCE versions
+
+These are the supported tinymce versions for each plugin:
+
+| Plugin                  | TinyMCE Version |
+|----------------------   | :-------------: |
+| Accessibility Checker   | 4.3.13 |
+| Advanced Code           | 4.3.13 |
+| Link Checker            | 4.4.3  |
+| Media Embeds            | 4.5.2  |
+| Mentions                | 4.3.13 |
+| PowerPaste              | 4.0.28 |
+| Spell Checker Pro       | 4.2.8  |
+
 #### Need more?
 
 Ephox is committed to broadening support for various application servers / platforms. If you have a requirement to support an application server that is not listed here, please contact support@ephox.com.

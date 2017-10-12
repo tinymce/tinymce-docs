@@ -41,7 +41,7 @@ tinymce.init({
     selector: "textarea",  // change this value according to your HTML
     plugins: "link",
     menubar: "insert",
-    toolbar: "link"
+    toolbar: "link",
     default_link_target: "_blank"
 });
 ```
@@ -63,7 +63,7 @@ tinymce.init({
   selector: "textarea",
   plugins: "link",
   menubar: "insert",
-  toolbar: "link"
+  toolbar: "link",
   link_context_toolbar: true
 });
 ```
@@ -87,7 +87,7 @@ tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "link",
   menubar: "insert",
-  toolbar: "link"
+  toolbar: "link",
   link_assume_external_targets: true
 });
 ```

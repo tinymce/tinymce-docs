@@ -67,3 +67,5 @@ tinymce.init({
   pagebreak_split_block: true
 });
 ```
+
+> If you use pagebreak with `valid_elements` you need to allow the `img` tag with a class attribute for the pagebreak to work regardless of the `pagebreak_separator` defined. So `valid_elements` needs to include `img[class]` or more specifically `img[class<mce-pagebreak]` to just allow the pagebreak image.

@@ -1,6 +1,8 @@
 ## browser_spellcheck
 
-One of the several spell checking options developers have available is to use the browser's native spell checker. `browser_spellcheck` handles this behavior. `browser_spellcheck` is not available in either Internet Explorer 8 or 9, as neither browser has native spell checker functionality.
+This option configures TinyMCE to use the browser's native spell checker.
+
+`browser_spellcheck` is not available in either Internet Explorer 8 or 9, as neither browser has native spell checker functionality. For more complete browser support, we recommend using [Spell Checker Pro](../../enterprise/check-spelling/).
 
 **Type:** `Boolean`
 

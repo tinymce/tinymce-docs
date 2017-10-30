@@ -73,7 +73,7 @@ img.align-right {
 /* .mce-content-body figure {...} */
 
 /* Override styles for the inline boundaries used within the editor */
-/* .mce-content-body a[data-mce-selected], .mce-content-body code[data-mce-selected] {...} */
+/* .mce-content-body *[data-mce-selected="inline-boundary"] {...} */
 
 
 ```

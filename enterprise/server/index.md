@@ -40,7 +40,7 @@ Deploy all the WAR files that came packaged with the TinyMCE Enterprise Self-hos
 
 - ephox-spelling.war
 - ephox-image-proxy.war
-- ephox-link-checker.war
+- ephox-hyperlinking.war
 
 The easiest way to deploy these files is to copy them into the *webapps* directory of your Tomcat/Jetty installation and then restart the application server.
 
@@ -198,8 +198,8 @@ tinymce.init({
 	toolbar: 'image',
 	plugins: 'tinymcespellchecker image imagetools media mediaembed',
 	spellchecker_rpc_url: 'http://yourserver.example.com/ephox-spelling/',
-	imagetools_proxy: 'http://yourserver.example.com/ephox-image-proxy/image',
-	mediaembed_service_url: 'http://yourserver.example.com/ephox-link-checker/',
-	linkchecker_service_url: 'http://yourserver.example.com/ephox-link-checker/'
+	imagetools_proxy: 'http://yourserver.example.com/ephox-image-proxy/1/image',
+	mediaembed_service_url: 'http://yourserver.example.com/ephox-hyperlinking/',
+	linkchecker_service_url: 'http://yourserver.example.com/ephox-hyperlinking/'
 });
 ````

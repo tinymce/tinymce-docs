@@ -99,6 +99,11 @@ export class SimpleTinyComponent implements AfterViewInit, OnDestroy {
   @Output() onEditorKeyup = new EventEmitter<any>();
 
   editor;
+  
+  constructor() {
+  this.elementId = `editor-${Math.floor(Math.random() * 10000)}`;
+  console.log(this.elementId);
+  }
 
   ngAfterViewInit() {
     tinymce.init({

@@ -33,7 +33,7 @@ This **demo.html** file has angular properties and a two calls to the controller
 ```html
 <!DOCTYPE html>
 <head>
-  <script type="text/javascript" src="bower_components/tinymce-dist/tinymce.js"></script>
+  <script type="text/javascript" src="bower_components/tinymce/tinymce.js"></script>
   <script type="text/javascript" src="bower_components/angular/angular.js"></script>
   <script type="text/javascript" src="bower_components/angular-ui-tinymce/src/tinymce.js"></script>
   <script type="text/javascript" src="app.js"></script>

@@ -6,7 +6,7 @@ description: React TinyMCE component.
 keywords: integration integrate react reactjs create-react-app
 ---
 
-Integration with React is currently done through [react-tinymce](https://github.com/instructure-react/react-tinymce) a third party module maintained by [Matt Zabriskie](https://github.com/mzabriskie). This how-to shows you how to setup a project using [react](https://facebook.github.io/react/), [tinymce](/docs/demo/basic-example/) and [Create React App](https://github.com/facebookincubator/create-react-app).
+Integration with React is easily done with our [@tinymce/tinymce-react](https://github.com/tinymce/tinymce-react) package. This how-to shows you how to setup a project using [react](https://facebook.github.io/react/), [tinymce](/docs/demo/basic-example/) and [Create React App](https://github.com/facebookincubator/create-react-app).
 
 ## 1. Installing `create-react-app`
 
@@ -36,10 +36,10 @@ $ cd tinymce-react-demo
 Install the npm package and save it to your `package.json` with `--save`.
 
 ```
-$ npm install --save react-tinymce
+$ npm install --save @tinymce/tinymce-react
 ```
 
-`react-tinymce` requires `tinymce` to be globally accessible, so add the necessary script tag with the TinyMCE Cloud link to the head of the `index.html` file located in the `public` folder.
+`@tinymce/tinymce-react` requires `tinymce` to be globally accessible, so add the necessary script tag with the TinyMCE Cloud link to the head of the `index.html` file located in the `public` folder.
 
 ```html
 <script src="{{site.cdnurl}}"></script>
@@ -51,7 +51,7 @@ Open up the provided `App.js` file located in the `src` directory and replace it
 
 ```js
 import React from 'react';
-import TinyMCE from 'react-tinymce';
+import { Editor } from '@tinymce/tinymce-react';
 
 class App extends React.Component {
   handleEditorChange = (e) => {
@@ -60,8 +60,8 @@ class App extends React.Component {
 
   render() {
     return (
-      <TinyMCE
-        content="<p>This is the initial content of the editor</p>"
+      <Editor
+        value="<p>This is the initial content of the editor</p>"
         config={% raw %}{{{% endraw %}
           plugins: 'link image code',
           toolbar: 'undo redo | bold italic | alignleft aligncenter alignright | code'
@@ -86,7 +86,3 @@ $ npm start
 ## 6. Keep on hacking
 
 This was just a simple guide how to get started, the rest is up to you.
-
-#### A note about integrations
-
-> We are pleased to reference third-party integrations/code to help you build great products with TinyMCE. If you have queries about this integration, please contact the developer directly.

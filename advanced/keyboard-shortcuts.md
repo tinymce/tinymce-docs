@@ -54,3 +54,7 @@ This is a list of keyboard shortcuts available within the editor user interface.
 | Move focus back to editor body | Esc |
 
 > Note: Browsers/Screen Readers provide additional shortcuts within the editor context.
+
+## Add custom shortcuts to TinyMCE
+
+If you would like to add your own custom keyboard shortcuts to TinyMCE, [this post on our blog](https://go.tinymce.com/blog/creating-keyboard-shortcuts-tinymce/) will help you get started.

@@ -9,14 +9,14 @@ class: changelog
 {% capture changelog %}
 
 ## Version 4.7.2 November 7, 2017
-* Added newly rewritten [Table Plugin]({{ site.baseurl }}/plugins/table).
-* Added support for attributes with colon in valid_elements and addValidElements.
-* Added support for dailymotion short url in the [Media Plugin]({{ site.baseurl }}/plugins/media). Patch contributed by maat8.
-* Added support for converting to half pt when converting font size from px to pt. Patch contributed by danny6514.
+* Rewrote the [Table Plugin]({{ site.baseurl }}/plugins/table).
+* Rewrote/simplified the CSS for [inline boundaries]({{ site.baseurl }}/configure/content-appearance/#inline_boundaries) selection by switching to an attribute selector.
+* Added support for attributes with colon in [valid_elements]({{ site.baseurl }}/configure/content-filtering/#valid_elements) and addValidElements.
+* Added support for dailymotion short url in the [Media Plugin]({{ site.baseurl }}/plugins/media). Patch contributed by [maat8](https://github.com/maat8).
+* Added support for converting to half pt when converting font size from px to pt. Patch contributed by [danny6514](https://github.com/danny6514).
 * Added support for location hash to the [Autosave plugin]({{ site.baseurl }}/plugins/autosave) to make it work better with SPAs using hash routing.
 * Added support for merging table cells when pasting a table into another table.
-* Changed so the language packs are only loaded once. Patch contributed by 0xor1.
-* Simplified the css for inline boundaries selection by switching to an attribute selector.
+* Fixed so the language packs are only loaded once. Patch contributed by [0xor1](https://github.com/0xor1).
 * Fixed bug where an error would be thrown on editor initialization if the window.getSelection() returned null.
 * Fixed bug where holding down control or alt keys made the keyboard navigation inside an inline boundary not work as expected.
 * Fixed bug where applying formats in IE11 produced extra, empty paragraphs in the editor.

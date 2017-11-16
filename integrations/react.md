@@ -61,8 +61,8 @@ class App extends React.Component {
   render() {
     return (
       <Editor
-        value="<p>This is the initial content of the editor</p>"
-        config={% raw %}{{{% endraw %}
+        initialValue="<p>This is the initial content of the editor</p>"
+        init={% raw %}{{{% endraw %}
           plugins: 'link image code',
           toolbar: 'undo redo | bold italic | alignleft aligncenter alignright | code'
         {% raw %}}}{% endraw %}

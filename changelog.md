@@ -8,6 +8,22 @@ class: changelog
 
 {% capture changelog %}
 
+## Version 4.7.3 November 23, 2017
+* Added functionality to open the [Codesample Plugin]({{ site.baseurl }}/plugins/codesample) dialog when double clicking on a codesample. Patch contributed by dakuzen.
+* Fixed bug where undo/redo didn't work correctly with some formats and caret positions.
+* Fixed bug where the color picker didn't show up in [Table Plugin]({{ site.baseurl }}/plugins/table) dialogs.
+* Fixed bug where it wasn't possible to change the width of a table through the [Table Plugin]({{ site.baseurl }}/plugins/table) dialog.
+* Fixed bug where the [Charmap Plugin]({{ site.baseurl }}/plugins/charmap) couldn't insert some special characters.
+* Fixed bug where editing a newly inserted link would not actually edit the link but insert a new link next to it.
+* Fixed bug where deleting all content in a table cell made it impossible to place the caret into it.
+* Fixed bug where the vertical alignment field in the [Table Plugin]({{ site.baseurl }}/plugins/table) cell properties dialog didn't do anything.
+* Fixed bug where an image with a caption showed two sets of resize handles in IE11.
+* Fixed bug where pressing the enter button inside of an h1 with contenteditable set to true would sometimes produce a p tag.
+* Fixed bug with backspace not working as expected before a noneditable element.
+* Fixed bug where operating on tables with invalid rowspans would cause an error to be thrown.
+* Fixed so a real base64 representation of the image is available on the blobInfo that the [images_upload_handler]({{ site.baseurl }}/configure/file-image-upload/#images_upload_handler) gets called with.
+* Fixed so the image upload tab is available when the [images_upload_handler]({{ site.baseurl }}/configure/file-image-upload/#images_upload_handler) is defined (and not only when the [images_upload_url]({{ site.baseurl }}/configure/file-image-upload/#images_upload_url) is defined).
+
 ## Version 4.7.2 November 7, 2017
 * Rewrote the [Table Plugin]({{ site.baseurl }}/plugins/table).
 * Rewrote/simplified the CSS for [inline boundaries]({{ site.baseurl }}/configure/content-appearance/#inline_boundaries) selection by switching to an attribute selector.

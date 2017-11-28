@@ -6,7 +6,7 @@ description: Premium plugins compatibility with TinyMCE editor versions.
 keywords: tinymce cloud script textarea apiKey
 ---
 
-Some of our premium plugins are only compatible with certain versions versions of TinyMCE.
+Some of our premium plugins are only compatible with certain versions of TinyMCE.
 
 If you’re deploying [both the TinyMCE editor and premium plugins via the Cloud]({{ site.baseurl }}/get-started-cloud/editor-and-features), use the following matrix in conjunction with the optional parameters for specifying editor version and [plugin version]({{ site.baseurl }}/get-started-cloud/editor-plugin-version) to ensure your editor and plugins are compatible.
 

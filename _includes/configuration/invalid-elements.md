@@ -1,6 +1,6 @@
 ## invalid_elements
 
-This options permits the editor to remove specific elements with TinyMCE executes a cleanup. This option should contain a comma separated list of element names to exclude from the content.
+This option instructs the editor to remove specific elements when TinyMCE executes a cleanup. This option should contain a comma separated list of element names to exclude from the content.
 
 **Type:** `String`
 

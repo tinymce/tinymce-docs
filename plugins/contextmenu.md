@@ -32,6 +32,8 @@ This option allows you to specify which items should appear on TinyMCE's context
 
 To specify the menu items that should appear on TinyMCE's context menu, the `contextmenu` option should be provided with a space separated list of menu items. To create groups within this listing, add `"|"` pipe characters between the groups of menu items that you would like to create.
 
+By default if you load the `contextmenu` plugin several TinyMCE plugins will automatically add items to the context menu.  For example, the `link`, `image`, and `table` plugins will all add items to the context menu if this plugin is loaded.  If you choose to define the `contextmenu` configuration item yourself (as done in the example below) you need to define **all** the elements you wish to appear on the menu.  Defining this option in the configuration effectively replaces any default settings with the list you define in the configuration.
+
 **Type:** `String`
 
 ##### Example

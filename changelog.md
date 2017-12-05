@@ -8,6 +8,16 @@ class: changelog
 
 {% capture changelog %}
 
+## Version 4.7.4 December 5, 2017
+* Fixed bug in the [Nonbreaking Plugin]({{ site.baseurl }}/plugins/nonbreaking) Plugin where the nonbreaking_force_tab setting was being ignored.
+* Fixed bug in the [Table Plugin]({{ site.baseurl }}/plugins/table) where changing row height incorrectly converted column widths to pixels.
+* Fixed bug in the [Table Plugin]({{ site.baseurl }}/plugins/table) on Edge and IE11 where resizing the last column after resizing the table would cause invalid column heights.
+* Fixed bug in the [Table Plugin]({{ site.baseurl }}/plugins/table) where keyboard navigation was not normalized between browsers.
+* Fixed bug in the [Table Plugin]({{ site.baseurl }}/plugins/table) where the colorpicker button would show even without defining the colorpicker_callback.
+* Fixed bug in the [Table Plugin]({{ site.baseurl }}/plugins/table) where it wasn't possible to set the cell background color.
+* Fixed bug where Firefox would throw an error when intialising an editor on an element that is hidden or not yet added to the DOM.
+* Fixed bug where Firefox would throw an error when intialising an editor inside of a hidden iframe.
+
 ## Version 4.7.3 November 23, 2017
 * Added functionality to open the [Codesample Plugin]({{ site.baseurl }}/plugins/codesample) dialog when double clicking on a codesample. Patch contributed by dakuzen.
 * Fixed bug where undo/redo didn't work correctly with some formats and caret positions.

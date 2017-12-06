@@ -57,7 +57,7 @@ Start hacking and have fun! If you didn’t skip it a git repository has also be
 
 ## Create distribution ready build
 
-When you feel satisfied with your plugin the only thing you need to do is run tthis command in the project root:
+When you feel satisfied with your plugin the only thing you need to do is run this command in the project root:
 
 ```bash
 npm run build

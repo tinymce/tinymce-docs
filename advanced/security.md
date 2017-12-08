@@ -28,7 +28,7 @@ Here is a list of the directives that are required by TinyMCE and why they are r
 You can use this CSP header when served from the cloud:
 
 ```html
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' *.tinymce.com; connect-src 'self' *.tinymce.com; img-src 'self' *.tinymce.com data: blob:; style-src 'self' 'unsafe-inline'; font-src 'self' *.tinymce.com;" />
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' *.tinymce.com; connect-src 'self' *.tinymce.com; img-src 'self' *.tinymce.com data: blob:; style-src 'self' 'unsafe-inline' *.tinymce.com; font-src 'self' *.tinymce.com;" />
 ```
 
 You can use this CSP header when served from a local domain excludes the *.tinymce.com domain:

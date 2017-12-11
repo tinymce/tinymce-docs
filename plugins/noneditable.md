@@ -29,22 +29,10 @@ When you have existing classes that cannot be removed, you may combine MCE class
 <div class="myclass mceNonEditable">Contents</div>
 ```
 
-**Editable div example:**
+##### Editable div example
 
 ```html
 <div class="myclass mceEditable">Contents</div>
-```
-
-Nested editable elements are not currently supported. For example, you would not be able to edit the cell contents in the following table:
-
-```html
-<table class="mceNonEditable">
-  <tr>
-    <td class="mceEditable">
-        Contents
-    </td>
-  </tr>
-</table>
 ```
 
 ### Options

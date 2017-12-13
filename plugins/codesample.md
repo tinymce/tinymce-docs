@@ -80,3 +80,7 @@ You need to add `prism.js` and `prism.css` to your page in order to get the synt
 <script src="prism.js"></script>
 <pre class="language-markup"><code>...</code></pre>
 ```
+
+## Live example
+
+{% include codepen.html id="mpyXwj" %}

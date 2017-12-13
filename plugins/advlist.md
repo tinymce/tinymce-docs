@@ -6,9 +6,9 @@ description: Create styled number and bulleted lists.
 keywords: advlist advlist_bullet_styles advlist_number_styles
 ---
 
-The `advlist` plugin extends the core `bullist` and `numlist` toolbar controls by adding CSS `list-style-type` styled number formats and bullet types to the controls. 
+The `advlist` plugin extends the core `bullist` and `numlist` toolbar controls by adding CSS `list-style-type` styled number formats and bullet types to the controls.
 
-> **Important note:** The `lists` plugin has to be activated for the `advlist` plugin to work. 
+> **Important note:** The [Lists](../lists) (`lists`) plugin must be activated for the `advlist` plugin to work. 
 
 **Type:** `String`
 

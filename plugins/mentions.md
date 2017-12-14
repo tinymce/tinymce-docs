@@ -14,14 +14,18 @@ tinymce.init({
   selector: "textarea",
   plugins: "mentions",
   mentions_fetch: function (query, success) {
-    // Fake a server call by using a setTimeout
-    setTimeout(function() {
-      console.log('Search query:', query.term);
+    //Fetch your full user list from somewhere
+    var users = getUserDataFromTheServer();   
+    
+    //query.term is the text the user typed after the '@'
+    users = users.filter(function (user) {
+      return user.name.indexOf(query.term.toLowerCase()) === 0;
+    });
 
-      success([
-        {id: 'johndoe', name: 'johndoe', fullName: 'John Doe'},
-        {id: 'janedoe', name: 'janedoe', fullName: 'Jane Doe'}
-      ]);
+    users = users.slice(0, 10);
+
+    window.setTimeout(function () {
+      success(users);
     }, 0);
   }
 });
@@ -46,14 +50,18 @@ tinymce.init({
   selector: "textarea",
   plugins: "mentions",
   mentions_fetch: function (query, success) {
-    // Fake a server call by using a setTimeout
-    setTimeout(function() {
-      console.log('Search query:', query.term);
+    //Fetch your full user list from somewhere
+    var users = getUserDataFromTheServer();   
 
-      success([
-        {id: 'johndoe', name: 'johndoe', fullName: 'John Doe'},
-        {id: 'janedoe', name: 'janedoe', fullName: 'Jane Doe'}
-      ]);
+    //query.term is the text the user typed after the '@'
+    users = users.filter(function (user) {
+      return user.name.indexOf(query.term.toLowerCase()) === 0;
+    });
+
+    users = users.slice(0, 10);
+
+    window.setTimeout(function () {
+      success(users);
     }, 0);
   }
 });

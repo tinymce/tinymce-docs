@@ -57,15 +57,15 @@ If you enter a version that doesn’t exist, you will get a HTTP 404 response.
 
 ### "dev", "testing" and "stable" releases
 
-Rather than specifying a specific TinyMCE version to load from the Cloud, you can choose to select from our *"dev"*, *"testing"* and *"stable"* release streams.
+Rather than specifying a specific TinyMCE version to load from the Cloud, you can choose to select from our *"dev"*, *"testing"* and *"stable"* release channels.
 
-Updates to these streams will be automatic, providing you and your users with the latest TinyMCE version matching the criteria below.
+Updates to these channels will be automatic, providing you and your users with the latest TinyMCE version matching the criteria below.
 
-#### "dev" release stream
+#### "dev" release channel
 
-This stream will deploy the absolute latest released TinyMCE version seen in the [TinyMCE changelog]({{ site.baseurl }}/changelog/).
+This channel will deploy the absolute latest released TinyMCE version seen in the [TinyMCE changelog]({{ site.baseurl }}/changelog/).
 
-The current version of TinyMCE available through the *dev* stream can be found at [https://cloud.tinymce.com/dev/version.txt](https://cloud.tinymce.com/dev/version.txt).
+The current version of TinyMCE available through the *dev* channel can be found at [https://cloud.tinymce.com/dev/version.txt](https://cloud.tinymce.com/dev/version.txt).
 
 ##### Example
 
@@ -73,11 +73,11 @@ The current version of TinyMCE available through the *dev* stream can be found a
 <script src="https://cloud.tinymce.com/dev/tinymce.min.js?apiKey=your_API_key"></script>
 ```
 
-#### "testing" release stream
+#### "testing" release channel
 
-This stream will deploy the current candidate for release to the *"stable"* stream. This TinyMCE build will be the next victim of the Ephox quality assurance testing process.
+This channel will deploy the current candidate for release to the *"stable"* channel. This TinyMCE build will be the next victim of the Ephox quality assurance testing process.
 
-The current version of TinyMCE available through the *testing* stream can be found at [https://cloud.tinymce.com/testing/version.txt](https://cloud.tinymce.com/testing/version.txt).
+The current version of TinyMCE available through the *testing* channel can be found at [https://cloud.tinymce.com/testing/version.txt](https://cloud.tinymce.com/testing/version.txt).
 
 ##### Example
 
@@ -85,11 +85,11 @@ The current version of TinyMCE available through the *testing* stream can be fou
 <script src="https://cloud.tinymce.com/testing/tinymce.min.js?apiKey=your_API_key"></script>
 ```
 
-#### "stable" release stream
+#### "stable" release channel
 
-This stream will deploy the latest release of TinyMCE that has passed the Ephox quality assurance process.
+This channel will deploy the latest release of TinyMCE that has passed the Ephox quality assurance process.
 
-The current version of TinyMCE available through the *stable* stream can be found at [https://cloud.tinymce.com/stable/version.txt](https://cloud.tinymce.com/stable/version.txt).
+The current version of TinyMCE available through the *stable* channel can be found at [https://cloud.tinymce.com/stable/version.txt](https://cloud.tinymce.com/stable/version.txt).
 
 ##### Example
 

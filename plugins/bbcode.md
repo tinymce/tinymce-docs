@@ -56,3 +56,7 @@ tinymce.init({
   bbcode_dialect: "punbb"
 });
 ```
+
+## Live example
+
+{% include codepen.html id="mpXVZv" %}

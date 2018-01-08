@@ -7,7 +7,7 @@ keywords: view preview plugin_preview_height plugin_preview_width
 controls: toolbar button, menu item
 ---
 
-This plugin adds a preview button to the toolbar. Pressing the button opens a dialog box showing the current content in a preview mode. It also adds a menu item `Preview` under the `View` menu dropdown.
+This plugin adds a preview button to the toolbar. Pressing the button opens a dialog box showing the current content in a preview mode. It also adds a menu item `Preview` under the `File` and `View` menu dropdowns.
 
 **Type:** `String`
 

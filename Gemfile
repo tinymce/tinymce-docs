@@ -8,6 +8,6 @@ group :development, :test do
   gem 'jekyll-redirect-from', '~> 0.11'
   gem 'jekyll-sitemap', '~> 0.10.0'
   gem 'redcarpet', '~> 3'
-  gem 'nokogiri', '1.6.6.4'
+  gem 'nokogiri', '~> 1.8.1'
   gem 'octopress-minify-html', '1.3.0'
 end

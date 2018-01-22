@@ -9,14 +9,14 @@ class: changelog
 {% capture changelog %}
 
 ## Version 4.7.5 January 22, 2018
-* Fixed bug with the Codesample Plugin where it wasn't possible to edit codesamples when the editor was in inline mode.
+* Fixed bug with the [Codesample Plugin]({{ site.baseurl }}/plugins/codesample) where it wasn't possible to edit codesamples when the editor was in inline mode.
 * Fixed bug where focusing on the status bar broke the keyboard navigation functionality.
-* Fixed bug where an error would be thrown on Edge by the Table Plugin when pasting using the PowerPaste Plugin.
-* Fixed bug in the Table Plugin where selecting row border style from the dropdown menu in advanced row properties would throw an error.
+* Fixed bug where an error would be thrown on Edge by the [Table Plugin]({{ site.baseurl }}/plugins/table) when pasting using the [Powerpaste Plugin]({{ site.baseurl }}/plugins/powerpaste).
+* Fixed bug in the [Table Plugin]({{ site.baseurl }}/plugins/table) where selecting row border style from the dropdown menu in advanced row properties would throw an error.
 * Fixed bug with icons being rendered incorrectly on Chrome on Mac OS.
-* Fixed bug in the Textcolor Plugin where the font color and background color buttons wouldn't trigger an ExecCommand event.
-* Fixed bug in the Link Plugin where the url field wasn't forced LTR.
-* Fixed bug where the Nonbreaking Plugin incorrectly inserted spaces into tables.
+* Fixed bug in the [Textcolor Plugin]({{ site.baseurl }}/plugins/textcolor) where the font color and background color buttons wouldn't trigger an ExecCommand event.
+* Fixed bug in the [Link Plugin]({{ site.baseurl }}/plugins/link) where the url field wasn't forced LTR.
+* Fixed bug where the [Nonbreaking Plugin]({{ site.baseurl }}/plugins/nonbreaking) incorrectly inserted spaces into tables.
 * Fixed bug with the inline theme where the toolbar wasn't repositioned on window resize.
 
 ## Version 4.7.4 December 5, 2017

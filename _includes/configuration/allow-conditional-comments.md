@@ -4,7 +4,7 @@ This option allows you to specify whether the editor should parse and keep condi
 
 **Type:** `Boolean`
 
-**Default Value:** `true`  // confirmation required
+**Default Value:** `false`
 
 **Possible Values:** `true`, `false`
 
@@ -13,6 +13,6 @@ This option allows you to specify whether the editor should parse and keep condi
 ```js
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  allow_conditional_comments: false
+  allow_conditional_comments: true
 });
 ```

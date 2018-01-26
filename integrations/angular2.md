@@ -2,144 +2,181 @@
 layout: default
 title: Angular2 Integration
 title_nav: Angular2
-description: Using TinyMCE together with Angular2 with the help of angular-cli.
+description: Using TinyMCE together with Angular2 with the @tinymce/tinymce-angular component
 keywords: integration integrate angular2 angularjs
 ---
 
-The absolutely easiest way to get started using TinyMCE with Angular2 is with the marvelous [angular-cli](https://github.com/angular/angular-cli). This guide will show you how to set up a simple project. Let's get started!
+The absolutely easiest way to get started using TinyMCE with Angular2 is with out official `@tinymce/tinymce-angular` component! 
 
-## Please note!
-**The following is not _production ready code_, but only a simple guide on how to get started using TinyMCE together with Angular2.**
+## Installation
 
-#### Generate new project
-Use `angular-cli` to generate a new project and cd into it (see [`angular-cli` docs](https://github.com/angular/angular-cli#usage) for details).
-
-```
-$ ng new PROJECT_NAME
-$ cd PROJECT_NAME
-```
-#### Install TinyMCE with npm
-Simply run:
-
-```
-$ npm install --save tinymce
-```
-#### Setup TinyMCE globals
-TinyMCE needs to be globally accessible to work - something that usually can be a little tricky to get working with module loaders like Webpack (which `angular-cli` uses under the hood) - but is done extremely easily thanks to the `angular-cli.json` configuration file located in your project's root directory.
-
-Simply add the path to TinyMCE, along with the path to the theme and any plugins you want to use, to `apps[0].scripts` in `angular-cli.json`. For example, if you want to use the `modern` theme and the `link`, `paste` and `table` plugin you would put this in your `angular-cli.json`:
-
-```json
-"scripts": [
-  "../node_modules/tinymce/tinymce.js",
-  "../node_modules/tinymce/themes/modern/theme.js",
-  "../node_modules/tinymce/plugins/link/plugin.js",
-  "../node_modules/tinymce/plugins/paste/plugin.js",
-  "../node_modules/tinymce/plugins/table/plugin.js"
-],
+```sh
+$ npm install @tinymce/tinymce-angular
 ```
 
-And that's it, TinyMCE is globally available in your project. For more see [`angular-cli` docs](https://github.com/angular/angular-cli#global-library-installation).
+## Usage
+### Loading the component
 
-#### Add typing
-
-Even though the setup above will make the `tinymce` global available TypeScript will complain that it "cannot find name 'tinymce'", so you will have to add something like this either directly into the file that calls on tinymce or to the `typings.d.ts` file located in the `src` directory:
-
-```ts
-declare var tinymce: any;
-```
-
-#### Getting the skin
-
-TinyMCE will not work without a **skin**, which simply consists of some fonts and CSS files used by the editor. The easiest way to get this working in a `angular-cli` project is just to copy the `skins` directory from TinyMCE to the `src/assets` directory, either by manually copying the files in the finder/file explorer, or using the terminal with a command something like this:
-
-**Macos and Linux**
-
-```
-cp -r node_modules/tinymce/skins src/assets/skins
-```
-**Windows**
-
-```
-xcopy /I /E node_modules\tinymce\skins src\assets\skins
-```
-
-Then, when initializing a TinyMCE instance, just add the `skin_url` setting with the correct url like this:
+Import the `EditorModule` from the npm package like this:
 
 ```js
-tinymce.init({
-  skin_url: 'assets/skins/lightgray'
-  // other settings
-});
+import { EditorModule } from '@tinymce/tinymce-angular';
 ```
+And add it to you application module:
 
-
-`angular-cli` will be smart enough to copy along the assets both while developing with the dev server using `ng serve`, but also when you build your project with `ng build`.
-
-## Sample component implementation
-
-The following is a simple sample implementation of a component showing the TinyMCE editor.
-
-```ts
-import {
-  Component,
-  OnDestroy,
-  AfterViewInit,
-  EventEmitter,
-  Input,
-  Output
-} from '@angular/core';
-
-@Component({
-  selector: 'simple-tiny',
-  template: `<textarea id="{% raw %}{{{% endraw %}elementId{% raw %}}}{% endraw %}"></textarea>`
+```js
+// This might look different depending on how you have set up your app
+// but the important part is the imports array
+@NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule,
+    EditorModule // <- Important part
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
 })
-export class SimpleTinyComponent implements AfterViewInit, OnDestroy {
-  @Input() elementId: String;
-  @Output() onEditorKeyup = new EventEmitter<any>();
-
-  editor;
-
-  ngAfterViewInit() {
-    tinymce.init({
-      selector: '#' + this.elementId,
-      plugins: ['link', 'paste', 'table'],
-      skin_url: 'assets/skins/lightgray',
-      setup: editor => {
-        this.editor = editor;
-        editor.on('keyup', () => {
-          const content = editor.getContent();
-          this.onEditorKeyup.emit(content);
-        });
-      },
-    });
-  }
-
-  ngOnDestroy() {
-    tinymce.remove(this.editor);
-  }
-}
 ```
 
-It would be used in a parent component template like this:
+### Using the component in your templates
 
-```ts
-<simple-tiny
-  [elementId]="'my-editor-id'"
-  (onEditorKeyup)="keyupHandlerFunction($event)"
+Use the editor in your templates like this:
+
+```tsx
+<editor apiKey="test" [init]="{plugins: 'link'}"></editor>
+```
+
+### Configuring the editor
+
+The editor accepts the following inputs:
+
+* `id`: An id for the editor so you can later grab the instance by using the `tinymce.get('ID')` method on tinymce, defaults to an automatically generated uuid. 
+* `init`: Object sent to the `tinymce.init` method used to initialize the editor.
+* `initialValue`: Initial value that the editor will be initialized with.
+* `inline`: Shorthand for setting that the editor should be inline, `<editor [inline]="true"></editor>` is the same as setting `{inline: true}` in the init.
+* `tagName`: Only used if the editor is inline, decides what element to initialize the editor on, defaults to `div`.
+* `plugins`: Shorthand for setting what plugins you want to use, `<editor plugins="foo bar"></editor>` is the same as setting `{plugins: 'foo bar'}` in the init.
+* `toolbar`: Shorthand for setting what toolbar items you want to show, `<editor toolbar="foo bar"></editor>` is the same as setting `{toolbar: 'foo bar'}` in the init. 
+* `apiKey`: Api key for TinyMCE cloud, more info below.
+* `cloudChannel`: Cloud channel for TinyMCE Cloud, more info below.
+
+### `ngModel`
+
+You can also use the `ngModel` directive (more info in the [Angular documentation](https://angular.io/api/forms/NgModel)) on the editor to simplify using it in a form:
+
+```tsx
+<editor [(ngModel)]="dataModel"></editor>
+```
+
+### Event binding
+
+You can also bind editor events via a shorthand prop on the editor, for example:
+```js
+<editor (onSelectionChange)="handleEvent($eventObj)"></editor>
+```
+Where the handler gets called with an object containing the properties `event`, which is the event object, and `editor`, which is a reference to the editor.
+
+Here is a full list of the events available:
+<details>
+<summary>All available events</summary>
+
+* `onActivate`
+* `onAddUndo`
+* `onBeforeAddUndo`
+* `onBeforeExecCommand`
+* `onBeforeGetContent`
+* `onBeforeRenderUI`
+* `onBeforeSetContent`
+* `onBeforePaste`
+* `onBlur`
+* `onChange`
+* `onClearUndos`
+* `onClick`
+* `onContextMenu`
+* `onCopy`
+* `onCut`
+* `onDblclick`
+* `onDeactivate`
+* `onDirty`
+* `onDrag`
+* `onDragDrop`
+* `onDragEnd`
+* `onDragGesture`
+* `onDragOver`
+* `onDrop`
+* `onExecCommand`
+* `onFocus`
+* `onFocusIn`
+* `onFocusOut`
+* `onGetContent`
+* `onHide`
+* `onInit`
+* `onKeyDown`
+* `onKeyPress`
+* `onKeyUp`
+* `onLoadContent`
+* `onMouseDown`
+* `onMouseEnter`
+* `onMouseLeave`
+* `onMouseMove`
+* `onMouseOut`
+* `onMouseOver`
+* `onMouseUp`
+* `onNodeChange`
+* `onObjectResizeStart`
+* `onObjectResized`
+* `onObjectSelected`
+* `onPaste`
+* `onPostProcess`
+* `onPostRender`
+* `onPreInit`
+* `onPreProcess`
+* `onProgressState`
+* `onRedo`
+* `onRemove`
+* `onReset`
+* `onSaveContent`
+* `onSelectionChange`
+* `onSetAttrib`
+* `onSetContent`
+* `onShow`
+* `onSubmit`
+* `onUndo`
+* `onVisualAid`
+</details>
+
+## Loading TinyMCE
+### Auto-loading from TinyMCE Cloud
+The `Editor` component needs TinyMCE to be globally available to work, but to make it as easy as possible it will automatically load [TinyMCE Cloud](https://www.tinymce.com/docs/get-started-cloud/) if it can't find TinyMCE available when the component has mounted. To get rid of the `This domain is not registered...` warning, sign up for the cloud and enter the api key like this:
+
+```tsx
+<editor apiKey="test" [init]="{/* your settings */}"></editor>
+```
+
+You can also define what cloud channel you want to use out these three
+* `stable` **Default**. The most stable and well tested version that has passed the Ephox quality assurance process.
+* `testing` This channel will deploy the current candidate for release to the `stable` channel.
+* `dev` The cutting edge version of TinyMCE updated daily for the daring users.
+
+So using the `dev` channel would look like this:
+
+```tsx
+<editor 
+  apiKey="YOUR_API_KEY" 
+  cloudChannel="dev" 
+  [init]="{/* your settings */}"
   >
-</simple-tiny>
+</editor>
 ```
 
-Things worth noting are
+For more info on the different versions see the [documentation](https://www.tinymce.com/docs/get-started-cloud/editor-plugin-version/#devtestingandstablereleases).
 
-1. All plugins that you want to use has to be added to your `angular-cli.json` configuration file.
-2. TinyMCE needs a unique id to be able to show more than one editor at a time, so we send in an id string through an input from the parent component.
-3. To clean up and remove the editor when the `SimpleTinyComponent` is destroyed we first save a reference to the editor in the `setup` method when we initialize the editor and then, in the `ngOnDestroy` lifecycle hook, we run the `tinymce.remove()` function passing in this reference.
+### Loading TinyMCE by yourself
 
-### Wrapping up
+To opt out of using TinyMCE cloud you have to make TinyMCE globally available yourself. This can be done either by hosting the `tinymce.min.js` file by youself and adding a script tag to you HTML or, if you are using a module loader, installing TinyMCE with npm. For info on how to get TinyMCE working with module loaders check out [this page in the documentation](https://www.tinymce.com/docs/advanced/usage-with-module-loaders/).
 
-This was just a simple run-through to show how to get started but hopefully it has inspired you to start using TinyMCE in your future Angular2 projects. Have fun!
 
 #### A note about integrations
 

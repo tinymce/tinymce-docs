@@ -50,7 +50,7 @@ Here is a list of the currently exposed editor commands. All these commands are 
 | Redo | Core  | Redoes the last change to the editor. |
 | mceAddEditor | Core | Converts the specified textarea or div into an editor instance having the specified ID.  |
 | mceRemoveEditor | Core | Removes an editor instance having the specified ID.  |
-| mceToggleEditor | Core | Runs mceAddEditor if an editor is not detected at the specified ID, otherwise it changes the "display" style using [dom.hide]({{ site.baseurl }}/api/tinymce.dom/tinymce.dom.domutils/#hide) or [dom.show]({{ site.baseurl }}/api/tinymce.dom/tinymce.dom.domutils/#show)|
+| mceToggleEditor | Core | Runs mceAddEditor if an editor is not detected at the specified ID, otherwise it runs either [hide]({{ site.baseurl }}/api/tinymce/tinymce.editor/#hide) or [show]({{ site.baseurl }}/api/tinymce/tinymce.editor/#show)|
 | mceAutoResize | [autoresize]({{ site.baseurl }}/plugins/autoresize/) | Auto resizes the editor to the contents. |
 | mceShowCharmap | [charmap]({{ site.baseurl }}/plugins/charmap/) | Opens the character map dialog. |
 | mceCodeEditor | [code]({{ site.baseurl }}/plugins/code/) | Opens the code editor dialog. |

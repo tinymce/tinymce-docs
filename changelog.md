@@ -8,6 +8,15 @@ class: changelog
 
 {% capture changelog %}
 
+## Version 4.7.6 January 29, 2018
+* Fixed a bug in the jquery integration where it threw an error saying that "global is not defined".
+* Fixed a bug where deleting a table cell whose previous sibling was set to contenteditable false would create a corrupted table.
+* Fixed a bug where highlighting text in an unfocused editor did not work correctly in IE11/Edge.
+* Fixed a bug where the table resize handles were not being repositioned when activating the [Fullscreen Plugin]({{ site.baseurl }}/plugins/fullscreen).
+* Fixed a bug where the [Imagetools Plugin]({{ site.baseurl }}/plugins/imagetools) dialog didn't honor editor RTL settings.
+* Fixed a bug where block elements weren't being merged correctly if you deleted from after a contenteditable false element to the beginning of another block element.
+* Fixed a bug where TinyMCE didn't work with module loaders like webpack.
+
 ## Version 4.7.5 January 22, 2018
 * Fixed bug with the [Codesample Plugin]({{ site.baseurl }}/plugins/codesample) where it wasn't possible to edit codesamples when the editor was in inline mode.
 * Fixed bug where focusing on the status bar broke the keyboard navigation functionality.

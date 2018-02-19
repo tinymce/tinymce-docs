@@ -89,7 +89,7 @@ tinymce.PluginManager.add('example', function(editor, url) {
   return {
     getMetadata: function () {
       return  {
-        title: "Example plugin",
+        name: "Example plugin",
         url: "http://exampleplugindocsurl.com"
       };
     }
@@ -111,7 +111,7 @@ tinymce.init({
 
 ## Exposing metadata
 
-You can expose metadata from your plugin by returning an object with the property `getMetadata` with a function that returns an object with a `title` and `url` property. This metadata will then be used by the [Help Plugin]({{ site.baseurl }}/plugins/help/) to show the correct name and link for your plugin in the Plugins installed tab. See test plugin above for example.
+You can expose metadata from your plugin by returning an object with the property `getMetadata` with a function that returns an object with a `name` and `url` property. This metadata will then be used by the [Help Plugin]({{ site.baseurl }}/plugins/help/) to show the correct name and link for your plugin in the Plugins installed tab. See test plugin above for example.
 
 ## Language localization
 

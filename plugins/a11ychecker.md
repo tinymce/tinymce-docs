@@ -37,6 +37,29 @@ These are the various rules that are checked:
 * Table markup
 * Table headers
 
+### API
+
+Accessibility Checker exposes couple of methods that can be called directly.
+
+### `toggleaduit()`
+
+Triggers accessibility dialog with the results of the audit and options to correct the problems, if any.
+
+### `getReport()`
+
+Conducts accessibility audit and reports about the results without triggering the dialog. The report represents an array of issues, each of which has details about:
+
+* **severity** - *severity of the issue, might be either - info, warning or error*
+* **description** - *brief description of the issue*
+* **url** - *URL of the details page at W3 dedicated specifically to the given issue*
+* **element** - *DOM element having the issue*
+
+##### Example
+
+```js
+var issues = editor.plugins.a11ychecker.getReport();
+```
+
 ## Downloading Accessibility Checker
 
 A [TinyMCE Enterprise](https://www.tinymce.com/pricing/) subscription includes the ability to download and install the accessibility checker feature for the editor.

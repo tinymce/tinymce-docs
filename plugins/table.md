@@ -127,7 +127,9 @@ tinymce.init({
 
 This option enables you to specify default attributes for inserted tables.
 
-**Type:** `String`
+**Type:** `Object`
+
+**Default Value:** `{ border: '1' }`
 
 ##### Example
 
@@ -138,16 +140,18 @@ tinymce.init({
   menubar: "table",
   toolbar: "table",
   table_default_attributes: {
-    title: 'My table'
+    border: '1'
   }
 });
 ```
 
 ### `table_default_styles`
 
-This option enables you to specify default styles for inserted tables.
+This option enables you to specify the default styles for inserted tables.
 
-**Type:** `String`
+**Type:** `Object`
+
+**Default Value:** `{ 'border-collapsed': 'collapse', 'width': '100%' }`
 
 ##### Example
 
@@ -158,8 +162,29 @@ tinymce.init({
   menubar: "table",
   toolbar: "table",
   table_default_styles: {
-    fontWeight: 'bold'
+    width: '50%'
   }
+});
+```
+
+### `table_responsive_width`
+
+This option enables you to force pixels or percentage sizes for tables. Setting this to true will force resizing by percentages and setting this to false
+will force pixel resizing. The default is to automatically detect what the table size is and just use that unit for resizing.
+
+**Type:** `boolean`
+
+**Default Value:** `none`
+
+##### Example
+
+```js
+tinymce.init({
+  selector: "textarea",  // change this value according to your HTML
+  plugins: "table",
+  menubar: "table",
+  toolbar: "table",
+  table_responsive_width: false
 });
 ```
 
@@ -292,5 +317,46 @@ tinymce.init({
   menubar: "table",
   toolbar: "table",
   table_row_advtab: false
+});
+```
+
+### Examples of various table setups
+
+Here are some examples of configuration for common setups.
+
+##### No default attributes or styles on tables
+
+```js
+tinymce.init({
+  plugins: "table",
+  table_default_attributes: {},
+  table_default_styles: {}
+});
+```
+
+##### Pixel based resizing
+
+```js
+tinymce.init({
+  plugins: "table",
+  table_default_attributes: {},
+  table_default_styles: {},
+  table_responsive_width: false
+});
+```
+
+##### Percentage based resizing
+
+```js
+tinymce.init({
+  plugins: "table",
+  table_default_attributes: {
+    'border': '1'
+  },
+  table_default_styles: {
+    'border-collapsed': 'collapse',
+    'width': '100%'
+  },
+  table_responsive_width: true
 });
 ```

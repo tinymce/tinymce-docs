@@ -8,6 +8,31 @@ class: changelog
 
 {% capture changelog %}
 
+## Version 4.7.7  February 19, 2018
+* Added a border style selector to the advanced tab of the [Image Plugin]({{ site.baseurl }}/plugins/image).
+* Added better controls for default table inserted by the [Table Plugin]({{ site.baseurl }}/plugins/table).
+* Added new `table_responsive_width` option to the [Table Plugin]({{ site.baseurl }}/plugins/table) that controls whether to use pixel or percentage widths.
+* Fixed a bug where the [Link Plugin]({{ site.baseurl }}/plugins/link) text didn't update when a URL was pasted using the context menu.
+* Fixed a bug with the [Spellchecker Plugin]({{ site.baseurl }}/plugins/spellchecker) where using "Add to dictionary" in the context menu threw an error.
+* Fixed a bug in the [Media Plugin]({{ site.baseurl }}/plugins/media) where the preview node for iframes got default width and height attributes that interfered with width/height styles.
+* Fixed a bug where backslashes were being added to some font family names in Firefox in the fontselect toolbar item.
+* Fixed a bug where errors would be thrown when trying to remove an editor that had not yet been fully initialized.
+* Fixed a bug where the [Imagetools Plugin]({{ site.baseurl }}/plugins/imagetools) didn't update the images atomically.
+* Fixed a bug where the [Fullscreen Plugin]({{ site.baseurl }}/plugins/fullscreen) was throwing errors when being used on an inline editor.
+* Fixed a bug where drop down menus weren't positioned correctly in inline editors on scroll.
+* Fixed a bug with a semicolon missing at the end of the bundled javascript files.
+* Fixed a bug in the [Table Plugin]({{ site.baseurl }}/plugins/table) with cursor navigation inside of tables where the cursor would sometimes jump into an incorrect table cells.
+* Fixed a bug where indenting a table that is a list item using the "Increase indent" button would create a nested table.
+* Fixed a bug where text nodes containing only whitespace were being wrapped by paragraph elements.
+* Fixed a bug where whitespace was being inserted after br tags inside of paragraph tags.
+* Fixed a bug where converting an indented paragraph to a list item would cause the list item to have extra padding.
+* Fixed a bug where Copy/Paste in an editor with a lot of content would cause the editor to scroll to the top of the content in IE11.
+* Fixed a bug with a memory leak in the DragHelper. Path contributed by ben-mckernan.
+* Fixed a bug where the advanced tab in the [Media Plugin]({{ site.baseurl }}/plugins/media) was being shown even if it didn't contain anything. Patch contributed by gabrieeel.
+* Fixed an outdated eventname in the EventUtils. Patch contributed by nazar-pc.
+* Fixed an issue where the Json.parse function would throw an error when being used on a page with strict CSP settings.
+* Fixed so you can place the curser before and after table elements within the editor in Firefox and Edge/IE.
+
 ## Version 4.7.6 January 29, 2018
 * Fixed a bug in the jquery integration where it threw an error saying that "global is not defined".
 * Fixed a bug where deleting a table cell whose previous sibling was set to contenteditable false would create a corrupted table.

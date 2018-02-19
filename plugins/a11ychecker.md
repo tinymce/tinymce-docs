@@ -41,7 +41,7 @@ These are the various rules that are checked:
 
 Accessibility Checker exposes couple of methods that can be called directly.
 
-### `toggleaduit()`
+### `toggleaudit()`
 
 Triggers accessibility dialog with the results of the audit and options to correct the problems, if any.
 

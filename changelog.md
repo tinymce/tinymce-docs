@@ -8,7 +8,7 @@ class: changelog
 
 {% capture changelog %}
 
-## Version 4.7.8 February 26,
+## Version 4.7.8 February 26, 2018
 * Fixed an issue with the [Help Plugin]({{ site.baseurl }}/plugins/help) where the menuitem name wasn't lowercase.
 * Fixed an issue on MacOS where text and bold text did not have the same line-height in the autocomplete dropdown in the [Link Plugin]({{ site.baseurl }}/plugins/link) dialog.
 * Fixed a bug where the "paste as text" option in the [Paste Plugin]({{ site.baseurl }}/plugins/paste) didn't work.

@@ -16,3 +16,21 @@ tinymce.init({
   indentation : '20pt'
 });
 ```
+
+## indent_use_margin
+
+This option sets if the editor should use margin instead of padding when indenting content.
+
+**Type:** `boolean`
+
+**Default Value:** `false`
+
+##### Example
+
+```js
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  indentation : '20pt',
+  indent_use_margin: true
+});
+```

@@ -39,7 +39,7 @@ These are the various rules that are checked:
 
 ### Options
 
-### `a117checker_allow_decorative_images`
+### `a11ychecker_allow_decorative_images`
 
 This configuration option sets whether the checker should allow decorative images (images with `alt=""` or `role="presentation"`).
 
@@ -54,7 +54,7 @@ tinymce.init({
     selector: "textarea",
     plugins: "a11ychecker",
     toolbar: "a11ycheck",
-    a117checker_allow_decorative_images: true
+    a11ychecker_allow_decorative_images: true
 });
 ```
 

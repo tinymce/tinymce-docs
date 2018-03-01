@@ -37,6 +37,27 @@ These are the various rules that are checked:
 * Table markup
 * Table headers
 
+### Options
+
+### `a117checker_allow_decorative_images`
+
+This configuration option sets whether the checker should allow decorative images (images with `alt=""` or `role="presentation"`).
+
+**Type:** `boolean`
+
+**Default value:** `false`
+
+#### Example:
+
+```js
+tinymce.init({
+    selector: "textarea",
+    plugins: "a11ychecker",
+    toolbar: "a11ycheck",
+    a117checker_allow_decorative_images: true
+});
+```
+
 ### API
 
 Accessibility Checker exposes couple of methods that can be called directly.

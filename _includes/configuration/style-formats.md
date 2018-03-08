@@ -1,9 +1,9 @@
 
 ## style_formats
 
-This option enables you to add more advanced style formats for text and other elements to the editor. The value of this option will be rendered as styles in the `Formats` dropdown.
+This option enables you to add more advanced style formats for text and other elements to the editor. The value of this option will be rendered as styles in the `styleselect` dropdown toolbar item.
 
-The format of the option is very similar to the formats option, the only difference is the title name that is used for presentation in the drop list.
+It's important to note that the `style_formats` option, while similar in syntax, is entirely separate from the `formats` option. This option will only add items to the *Formats* dropdown in the toolbar, not the *Format* dropdown in the menu bar.
 
 **Type:** `Array`
 
@@ -12,6 +12,7 @@ The format of the option is very similar to the formats option, the only differe
 ```js
 tinymce.init({
   selector: 'textarea',  // change this value according to your html
+  toolbar: "styleselect",
   style_formats: [
     {title: 'Bold text', inline: 'b'},
     {title: 'Red text', inline: 'span', styles: {color: '#ff0000'}},
@@ -33,6 +34,7 @@ Another example, this will add two options to the Formats dropdown, one for alig
 ```js
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
+  toolbar: "styleselect",
   style_formats: [
     {
       title: 'Image Left',
@@ -69,6 +71,7 @@ If you want to merge your styles to the default `styles_format`, you can use the
 ```js
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
+  toolbar: "styleselect",
   style_formats_merge: true,
   style_formats: [
       // Your format as described on this page
@@ -85,6 +88,7 @@ The default is very similar to the following:
 ```js
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
+  toolbar: "styleselect",
   style_formats: [
     {title: 'Headers', items: [
       {title: 'Header 1', format: 'h1'},

@@ -22,20 +22,77 @@ tinymce.init({
 
 These are the various rules that are checked:
 
-* Usage of paragraphs as headings
-* Sequential headings
-* Adjacent links
-* Ordered list structure
-* Unordered list structure
-* Contrast ratio of the text
-* Image ALT text
-* Alt text filename
-* Table caption
-* Complex table summary
-* Table caption and summary
-* Table heading scope
-* Table markup
-* Table headers
+#### Usage of paragraphs as headings
+
+**Rule info:** This rule checks that you aren't using `p` tags instead of `h1`-`h6` tags for heading content. Not using correct heading markup will make it more difficult for assistive technologies to visually represent and navigate through your content.
+
+[Link to specification](https://www.w3.org/TR/2016/NOTE-WCAG20-TECHS-20161007/H42).
+
+#### Sequential headings
+
+**Rule info:** This rule checks that headings are used sequentially, meaning that an `h1` heading should be followed by an `h2` heading, a `h4` heading should be followed by an `h5` heading and so on. You should never skip a level, like following an `h3` heading with an `h6` heading. Using sequential links will make it easier for assistive technology to parse your content.
+
+#### Adjacent links
+
+**Rule info:** This rule checks that links next to other links do not have the same href. For example if you have an image link and a text link with the same href they should be contained within the same `a` element and not in two different `a` elements. If the image and the text link are put in two separate elements it can be confusing for users of screen readers and other assistive technologies.
+
+[Link to specification](https://www.w3.org/TR/2016/NOTE-WCAG20-TECHS-20161007/H2).
+
+#### Ordered list structure
+
+**Rule info:** This rule checks that an `ol` element is used for ordered lists. Do not use paragraphs beginning with numbers or roman numverals instead of an actual `ol` element containing `li` items. This is to simplify navigation and parsing of the content for users of assistive technologies.
+
+#### Unordered list structure
+
+**Rule info:** This rule checks that a `ul` element is used for unordered lists. Do not use paragraphs beginning with `*` or `-` or some similar character instead of an actual `ol` element containing `li` items. This is to simplify navigation and parsing of the content for users of assistive technologies.
+
+#### Contrast ratio of the text
+
+**Rule info:** This rule checks that the contrast ratio of the text is above the specified values (4.5:1 for normal text and 3:1 for large text). Text with a low contrast ratio is hard to read, especially for users with an impaired vision.
+
+[Link to specification](https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html).
+
+#### Image ALT text
+
+**Rule info:** This rule checks that all images have an alt text so screen readers and other assistive technologies can correctly present the content to your users that can't see the images visually. 
+
+#### Alt text filename
+
+**Rule info:** This rule checks that the alt text of you image isn't just the same as the filename of the image. 
+
+#### Table caption
+
+**Rule info:** This rule checks that all `table` elements have a caption that describes the data inside of the table to simplify parsing and navigation of the content for users of assistive technologies. 
+
+[Link to specification](https://www.w3.org/TR/2016/NOTE-WCAG20-TECHS-20161007/H39).
+
+#### Complex table summary
+
+**Rule info:** This rule checks that all complex tables must have a `summary` attribute explaining to users of assistive technologies how to navigate through the data inside of the table. See the specification linked below for examples.
+
+[Link to specification](https://www.w3.org/TR/2016/NOTE-WCAG20-TECHS-20161007/H73).
+
+#### Table caption and summary
+
+**Rule info:** This rule checks that the table caption and summary does not have the same text content. The caption should explain **what** the table is about while the summary should explain **how** to navigate the data inside of the table.
+
+#### Table heading scope
+
+**Rule info:** This rule checks that all table heading - `th` - elements has a `scope` attribute clarifying what scope the heading has inside of the `table`. The allowed values are `row`, `col`, `rowgroup`, and `colgroup`. This is important for users of assistive technologies to be able to parse your table data.
+
+[Link to specification](https://www.w3.org/TR/2016/NOTE-WCAG20-TECHS-20161007/H63).
+
+#### Table markup
+
+**Rule info:** This rule checks that all `tables` contain both `td` and `th` elements.
+
+[Link to specification](https://www.w3.org/TR/2016/NOTE-WCAG20-TECHS-20161007/H51).
+
+#### Table headers
+
+**Rule info:** This rule checks that all `table` elements contain at lease one table header - `th` - element.
+
+[Link to specification](https://www.w3.org/TR/2016/NOTE-WCAG20-TECHS-20161007/F91).
 
 ### Options
 

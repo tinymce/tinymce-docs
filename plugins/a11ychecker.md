@@ -52,6 +52,8 @@ These are the various rules that are checked:
 **Rule info:** This rule checks that a `ul` element is used for unordered lists. Do not use paragraphs beginning with `*` or `-` or some similar character instead of an actual `ol` element containing `li` items. This is to simplify navigation and parsing of the content for users of assistive technologies.
 
 <a class="anchor" id="D5"></a>
+<a class="anchor" id="D5A"></a>
+<a class="anchor" id="D5B"></a>
 <h4><a class="anchorable" href="#D5">Contrast ratio of the text</a></h4>
 
 **Rule info:** This rule checks that the contrast ratio of the text is above the specified values (4.5:1 for normal text and 3:1 for large text). Text with a low contrast ratio is hard to read, especially for users with an impaired vision.

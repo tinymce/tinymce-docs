@@ -44,8 +44,33 @@ However, the `true` condition does capture the tab key and contain it within the
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "nonbreaking",
-  mewnubar: "insert",
+  menubar: "insert",
   toolbar: "nonbreaking",
   nonbreaking_force_tab: true
 });
 ```
+
+#### Usage with `table` plugin
+
+When using the `nonbreaking_force_tab` setting together with the `table` plugin it will conflict with the tab navigation between table cells. You can choose which setting you want to use by changing the ordering of the plugins in the init object. If `nonbreaking` is before `table` in the plugins setting you will activate the insert `&nbsp;` functionality, while if `table` is added before `nonbreaking` you will get tab table cell navigation. See examples:
+
+This will activate the insert `&nbsp;` setting:
+
+```js
+tinymce.init({
+  selector: "textarea",  // change this value according to your HTML
+  plugins: "nonbreaking table",
+  nonbreaking_force_tab: true
+});
+```
+
+This will activate the tab table cell navigation:
+
+```js
+tinymce.init({
+  selector: "textarea",  // change this value according to your HTML
+  plugins: "table nonbreaking",
+  nonbreaking_force_tab: true
+});
+```
+

@@ -5,7 +5,9 @@ title_nav: PowerPaste
 keywords: enterprise powerpaste power paste powerpaste_word_import powerpaste_html_import powerpaste_block_drop powerpaste_allow_local_images microsoft word excel
 ---
 
-The TinyMCE **PowerPaste** plugin automatically cleans up content from Microsoft Word and HTML sources to ensure clean, compliant content that matches the look and feel of the site.
+The TinyMCE **PowerPaste** plugin automatically cleans up content from Microsoft Word/Excel and HTML sources to ensure clean, compliant content that matches the look and feel of the site.
+
+>***Note:*** _Due to limitations in Excel online (part of Office Live) PowerPaste does not support pasting from Excel online.  If you paste content using Excel in Office Live you will get a plain text representation of the content._
 
 ## Usage
 

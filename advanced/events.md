@@ -176,7 +176,7 @@ This event gets fired when the contents inside the editor is being serialized to
 #### Parameters
 * **node** `DOMElement` - A clone of the HTML element being serialized.
 
-Here is an example on how alter the contents before it's being extracted from the editor.
+Here is an example on how to alter the contents before it's being extracted from the editor.
 
 ```js
 tinymce.init({
@@ -191,12 +191,12 @@ tinymce.init({
 
 ### PostProcess
 
-This event gets fired when the contents inside the editor is being serialized to a HTML string.
+This event gets fired when the contents inside the editor have been serialized to a HTML string.
 
 #### Parameters
-* **content** `String` - The HTML content that's being extracted from the editor.
+* **content** `String` - The HTML content that's been extracted from the editor.
 
-Here is an example on how alter the contents when it's being extracted from the editor.
+Here is an example on how to alter the contents when it's being extracted from the editor.
 
 ```js
 tinymce.init({
@@ -361,7 +361,7 @@ tinymce.init({
 
 ### PastePostProcess
 
-This event is fired when contents from the clipboard is being processed by the paste process.
+This event is fired when contents from the clipboard have been processed by the paste process.
 
 #### Parameters
 * **node** `DOMElement` - Node element being pasted.

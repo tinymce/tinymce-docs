@@ -6,7 +6,7 @@ description: Using TinyMCE together with Angular2 with the @tinymce/tinymce-angu
 keywords: integration integrate angular2 angularjs
 ---
 
-The absolutely easiest way to get started using TinyMCE with Angular2 is with out official `@tinymce/tinymce-angular` component! 
+The absolutely easiest way to get started using TinyMCE with Angular2 is with our official `@tinymce/tinymce-angular` component! 
 
 ## Installation
 

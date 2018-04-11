@@ -53,7 +53,7 @@ Array of supported domains for the images (with CORS enabled on them) can be sup
 
 **Note:** `imagetools_cors_hosts` is **not** required when enabling this plugin via [TinyMCE Cloud]({{ site.baseurl }}/get-started-cloud/).
 
-**Type:** `String`
+**Type:** `String[]`
 
 ##### Example
 
@@ -63,6 +63,25 @@ tinymce.init({
   toolbar: "image",
   plugins: "image imagetools",
   imagetools_cors_hosts: ['mydomain.com', 'otherdomain.com']
+});
+```
+
+### `imagetools_credentials_hosts`
+
+This option can be used together with the `imagetools_cors_hosts` option to allow credentials to be sent to the cors host. This is not enabled
+by default since the server would have need to have proper CORS headers to support this.
+
+**Type:** `String[]`
+
+##### Example
+
+```js
+tinymce.init({
+  selector: "textarea",  // change this value according to your HTML
+  toolbar: "image",
+  plugins: "image imagetools",
+  imagetools_cors_hosts: ['mydomain.com', 'otherdomain.com'],
+  imagetools_credentials_hosts: ['mydomain.com', 'otherdomain.com']
 });
 ```
 

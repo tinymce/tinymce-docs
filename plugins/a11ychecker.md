@@ -139,6 +139,11 @@ Accessibility Checker exposes couple of methods that can be called directly.
 
 Triggers accessibility dialog with the results of the audit and options to correct the problems, if any.
 
+#### Example 
+```js
+editor.plugins.a11ychecker.toggleaudit();
+```
+
 ### `getReport()`
 
 Conducts accessibility audit and reports about the results without triggering the dialog. The report represents an array of issues, each of which has details about:

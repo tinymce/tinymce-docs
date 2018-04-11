@@ -8,6 +8,18 @@ class: changelog
 
 {% capture changelog %}
 
+## Version 4.7.11 April 11, 2018
+* Added a new imagetools_credentials_hosts option to the [Imagetools Plugin]({{ site.baseurl }}/plugins/imagetools).
+* Fixed a bug where toggling a list containing empty LIs would throw an error. Patch contributed by bradleyke.
+* Fixed a bug where applying block styles to a text with the caret at the end of the paragraph would select all text in the paragraph.
+* Fixed a bug where toggling on the [Spellchecker Plugin]({{ site.baseurl }}/plugins/spellchecker) would trigger isDirty on the editor.
+* Fixed a bug where it was possible to enter content into selection bookmark spans.
+* Fixed a bug where if a non paragraph block was configured in forced_root_block the editor.getContent method would return incorrect values with an empty editor.
+* Fixed a bug where dropdown menu panels stayed open and fixed in position when dragging dialog windows.
+* Fixed a bug where it wasn't possible to extend table cells with the space button in Safari.
+* Fixed a bug where the setupeditor event would thrown an error when using the [Compat3x Plugin]({{ site.baseurl }}/plugins/compat3x).
+* Fixed a bug where an error was thrown in FontInfo when called on a detached element.
+
 ## Version 4.7.10 April 3, 2018
 * Removed the "read" step from the mobile theme.
 * Added normalization of triple clicks across browsers in the editor.

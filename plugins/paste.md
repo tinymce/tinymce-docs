@@ -283,3 +283,26 @@ tinymce.init({
   paste_remove_styles_if_webkit: false
 });
 ```
+
+### `smart_paste`
+
+This option allows you to disable TinyMCE's smart paste behaviour.
+Smart paste will autodetect urls and images within the pasted content and replaces them with a link / image tag.
+
+**Type:** `Boolean`
+
+**Default Value:** `true`
+
+**Possible Values:** `true`, `false`
+
+##### Example
+
+```js
+tinymce.init({
+  selector: "textarea",  // change this value according to your HTML
+  plugins: "paste",
+  menubar: "edit",
+  toolbar: "paste",
+  smart_paste: false
+});
+```

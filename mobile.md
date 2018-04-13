@@ -125,9 +125,10 @@ During our initial QA, we tested mobile on the following platforms. If you use o
 
 | OS        | Browser | Device       |
 |-----------|---------|--------------|
+| Android 8 | Chrome  | Mobile phone |
 | Android 7 | Chrome  | Mobile phone |
 | Android 6 | Chrome  | Mobile phone |
-| iOS10     | Safari  | iPad         |
-| iOS10     | Safari  | iPhone       |
+| iOS11     | Safari  | iPhone/iPad  |
+| iOS10     | Safari  | iPhone/iPad  |
 
 > To shape the future of mobile editing, [complete our survey](https://docs.google.com/forms/d/e/1FAIpQLSdWamU5HsZtv-SPqGRyu6Ql1zLqlrCQFP1vSrzx1oHikMFvlw/viewform) to have your say.

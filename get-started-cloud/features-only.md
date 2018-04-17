@@ -6,10 +6,9 @@ description: TinyMCE Cloud customers, you'll be up and running in less than 5 mi
 keywords: tinymce cloud script textarea apiKey
 ---
 
-If you’re already comfortable hosting and maintaining [TinyMCE Community edition](https://www.tinymce.com/download/), or you’re running a web application where you have no control over the TinyMCE instance, you’re still able to load our premium TinyMCE plugins from TinyMCE Cloud.
+If you’re already comfortable hosting and maintaining [TinyMCE Community edition](https://www.tinymce.com/download/), or you’re running a web application where you have no control over the TinyMCE instance, you’re still able to load our premium TinyMCE plugins from TinyMCE Cloud. Think of this as a hybrid deployment.
 
-Signing up for a free API key will entitle you to the premium [Image Tools]({{  site.baseurl }}/plugins/imagetools/) plugin, with a provided cloud image proxy server already configured.
-You can purchase our other premium plugins at any time once your API key has been set up.
+Signing up for a free API key will entitle you to the premium [Image Tools]({{  site.baseurl }}/plugins/imagetools/) plugin, with a provided cloud image proxy server already configured. You can purchase our Premium Plugins at any time once your API key is setup.
 
 ## Step 1: Embed your custom script tag into your webpage
 

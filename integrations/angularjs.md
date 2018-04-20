@@ -1,12 +1,12 @@
 ---
 layout: default
-title: AngularJS Integration
-title_nav: AngularJS
+title: Angular 1 Integration
+title_nav: Angular 1
 description: This directive allows you to add a TinyMCE editor to your form elements.
-keywords: integration integrate angular angularjs
+keywords: integration integrate angular angularjs angular1
 ---
 
-Integration with AngularJS is currently done through [angular-ui-tinymce](https://github.com/angular-ui/ui-tinymce) a third party module. This how-to shows you how to setup a project using [AngularJS](https://angularjs.org/) and [tinymce](/docs/demo/basic-example/).
+Integration with Angular 1 is currently done through [angular-ui-tinymce](https://github.com/angular-ui/ui-tinymce) a third party module. This how-to shows you how to setup a project using [AngularJS](https://angularjs.org/) and [tinymce](/docs/demo/basic-example/).
 
 ## 1. Setting up the project directory
 

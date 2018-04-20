@@ -1,12 +1,12 @@
 ---
 layout: default
-title: Angular2 Integration
-title_nav: Angular2
-description: Using TinyMCE together with Angular2 with the @tinymce/tinymce-angular component
-keywords: integration integrate angular2 angularjs
+title: Angular Integration
+title_nav: Angular 
+description: Using TinyMCE together with Angular 2+ with the @tinymce/tinymce-angular component
+keywords: integration integrate angular2 angular4 angular6 angular3 angular5 angularjs
 ---
 
-The absolutely easiest way to get started using TinyMCE with Angular2 is with our official `@tinymce/tinymce-angular` component! 
+The absolutely easiest way to get started using TinyMCE with Angular 2+ is with our official `@tinymce/tinymce-angular` component! 
 
 ## Installation
 

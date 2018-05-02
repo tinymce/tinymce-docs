@@ -10,17 +10,13 @@ keywords: tinymce cloud script textarea apiKey
 
 When deploying the [TinyMCE editor via the Cloud]({{ site.baseurl }}/get-started-cloud/editor-and-features), you’re able to specify the editor version via the provided for URL.
 
-Our documented default for loading TinyMCE via the Cloud is:
+Our documented default for loading TinyMCE via our Cloud is:
 
 ```js
 <script src="{{ site.cdnurl }}?apiKey=your_API_key"></script>
 ```
 
-The *“stable”* in this URL specifies the latest release of TinyMCE that has successfully completed the Ephox quality assurance testing process.
-
-This value can be customised in order to load the version of TinyMCE that best suits your needs.
-
-This value can be replaced with any of the following supported versions of TinyMCE: [https://cloud.tinymce.com/versions/tiny](https://cloud.tinymce.com/versions/tiny).
+The `stable` in this URL specifies the latest release of TinyMCE that successfully completed our quality assurance testing process. If it is necessary to not use the latest, stable TinyMCE version, you can customize this value. You'll find all [supported versions here](https://cloud.tinymce.com/versions/tiny).
 
 ### Selecting specific version numbers
 
@@ -55,17 +51,15 @@ The following would load TinyMCE *4.3.2*:
 
 If you enter a version that doesn’t exist, you will get a HTTP 404 response.
 
-### "dev", "testing" and "stable" releases
+### dev, testing and stable releases
 
-Rather than specifying a specific TinyMCE version to load from the Cloud, you can choose to select from our *"dev"*, *"testing"* and *"stable"* release channels.
+Rather than specifying a specific TinyMCE version to load from the Cloud, you can choose to select from our `dev`, `testing` and `stable` release channels.
 
 Updates to these channels will be automatic, providing you and your users with the latest TinyMCE version matching the criteria below.
 
-#### "dev" release channel
+#### dev release channel
 
-This channel will deploy the absolute latest released TinyMCE version seen in the [TinyMCE changelog]({{ site.baseurl }}/changelog/).
-
-The current version of TinyMCE available through the *dev* channel can be found at [https://cloud.tinymce.com/dev/version.txt](https://cloud.tinymce.com/dev/version.txt).
+This channel will deploy the absolute latest released TinyMCE version seen in the [TinyMCE changelog]({{ site.baseurl }}/changelog/). The current version of TinyMCE available through the `dev` channel [can be found at here](https://cloud.tinymce.com/dev/version.txt).
 
 ##### Example
 
@@ -73,11 +67,9 @@ The current version of TinyMCE available through the *dev* channel can be found 
 <script src="https://cloud.tinymce.com/dev/tinymce.min.js?apiKey=your_API_key"></script>
 ```
 
-#### "testing" release channel
+#### testing release channel
 
-This channel will deploy the current candidate for release to the *"stable"* channel. This TinyMCE build will be the next victim of the Ephox quality assurance testing process.
-
-The current version of TinyMCE available through the *testing* channel can be found at [https://cloud.tinymce.com/testing/version.txt](https://cloud.tinymce.com/testing/version.txt).
+This channel will deploy the current candidate for release to the `stable` channel. This TinyMCE build will be next in line for our quality assurance testing process. The current version of TinyMCE available through the `testing` channel [can be found at here](https://cloud.tinymce.com/testing/version.txt).
 
 ##### Example
 
@@ -85,11 +77,9 @@ The current version of TinyMCE available through the *testing* channel can be fo
 <script src="https://cloud.tinymce.com/testing/tinymce.min.js?apiKey=your_API_key"></script>
 ```
 
-#### "stable" release channel
+#### stable release channel
 
-This channel will deploy the latest release of TinyMCE that has passed the Ephox quality assurance process.
-
-The current version of TinyMCE available through the *stable* channel can be found at [https://cloud.tinymce.com/stable/version.txt](https://cloud.tinymce.com/stable/version.txt).
+This channel will deploy the latest release of TinyMCE that has passed our quality assurance process. The current version of TinyMCE available through the `stable` channel [can be found here](https://cloud.tinymce.com/stable/version.txt).
 
 ##### Example
 

@@ -8,9 +8,9 @@ keywords: tinymce cloud script textarea apiKey
 
 TinyMCE Cloud is the easiest way to integrate TinyMCE and upgrade to our premium plugins.
 
-You may use TinyMCE Cloud without an API key as mentioned in the [getting started]({{site.baseurl}}/get-started) docs. However, to use our premium plugins or avoid the developer warning to sign up for an API key, you will need to signup for an API key and update the script tag used to load the editor code into your application.
+You may use TinyMCE Cloud without an API key as mentioned in the [getting started]({{site.baseurl}}/get-started) docs. However, to use our premium plugins or avoid the in-editor developer warning, you will need to signup for an API key and update the script tag used to load the editor code into your application.
 
-Signing up for a free API key will entitle you to the premium [Image Tools]({{  site.baseurl }}/plugins/imagetools/) plugin, with a provided cloud image proxy server already configured.
+All TinyMCE Cloud accounts include a free, pre-configured cloud image proxy service. This is setup using the [Image Tools]({{  site.baseurl }}/plugins/imagetools/) plugin.
 
 ## Integrating TinyMCE for the first time
 

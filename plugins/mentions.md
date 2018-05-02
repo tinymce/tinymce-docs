@@ -67,7 +67,7 @@ tinymce.init({
 });
 ```
 
-**Note:**  *The values returned in the users array for "id", "name", and "fullName" all need to be `String` values *
+**Note:**  *The values returned in the users array for "id", "name", and "fullName" all need to be* `String` *values*
 
 ### `mentions_menu_complete`
 

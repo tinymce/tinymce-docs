@@ -14,19 +14,19 @@ tinymce.init({
   selector: "textarea",
   plugins: "mentions",
   mentions_fetch: function (query, success) {
-    //Fetch your full user list from somewhere
-    var users = getUserDataFromTheServer();   
-    
-    //query.term is the text the user typed after the '@'
-    users = users.filter(function (user) {
-      return user.name.indexOf(query.term.toLowerCase()) === 0;
-    });
+	//Fetch your full user list from somewhere
+	var users = getUserDataFromTheServer();
 
-    users = users.slice(0, 10);
+	//query.term is the text the user typed after the '@'
+	users = users.filter(function (user) {
+	  return user.name.indexOf(query.term.toLowerCase()) === 0;
+	});
 
-    window.setTimeout(function () {
-      success(users);
-    }, 0);
+	users = users.slice(0, 10);
+
+	window.setTimeout(function () {
+	  success(users);
+	}, 0);
   }
 });
 ```
@@ -50,22 +50,24 @@ tinymce.init({
   selector: "textarea",
   plugins: "mentions",
   mentions_fetch: function (query, success) {
-    //Fetch your full user list from somewhere
-    var users = getUserDataFromTheServer();   
+	//Fetch your full user list from somewhere
+	var users = getUserDataFromTheServer();
 
-    //query.term is the text the user typed after the '@'
-    users = users.filter(function (user) {
-      return user.name.indexOf(query.term.toLowerCase()) === 0;
-    });
+	//query.term is the text the user typed after the '@'
+	users = users.filter(function (user) {
+	  return user.name.indexOf(query.term.toLowerCase()) === 0;
+	});
 
-    users = users.slice(0, 10);
+	users = users.slice(0, 10);
 
-    window.setTimeout(function () {
-      success(users);
-    }, 0);
+	window.setTimeout(function () {
+	  success(users);
+	}, 0);
   }
 });
 ```
+
+**Note:**  *The values returned in the users array for "id", "name", and "fullName" all need to be `String` values *
 
 ### `mentions_menu_complete`
 
@@ -83,10 +85,10 @@ tinymce.init({
   plugins: "mentions",
   mentions_selector: 'span.mymention',
   mentions_menu_complete: function (editor, userinfo) {
-    var span = editor.getDoc().createElement('span');
-    span.className = 'mymention';
-    span.appendChild(editor.getDoc().createTextNode('@' + userinfo.name));
-    return span;
+	var span = editor.getDoc().createElement('span');
+	span.className = 'mymention';
+	span.appendChild(editor.getDoc().createTextNode('@' + userinfo.name));
+	return span;
   }
 });
 ```
@@ -106,18 +108,18 @@ tinymce.init({
   selector: "textarea",
   plugins: "mentions",
   mentions_menu_hover: function (userinfo, success) {
-    // Fake a server call by using a setTimeout
-    setTimeout(function() {
-      var div = document.createElement('div');
+	// Fake a server call by using a setTimeout
+	setTimeout(function() {
+	  var div = document.createElement('div');
 
-      div.innerHTML = (
-        '<div>' +
-          '<h1>' + userinfo.fullName + '</h1>' +
-        '</div>'
-      );
+	  div.innerHTML = (
+		'<div>' +
+		  '<h1>' + userinfo.fullName + '</h1>' +
+		'</div>'
+	  );
 
-      success(div);
-    }, 0);
+	  success(div);
+	}, 0);
   }
 });
 ```
@@ -138,10 +140,10 @@ tinymce.init({
   plugins: "mentions",
   mentions_selector: 'span.mymention',
   mentions_menu_complete: function (editor, userinfo) {
-    var span = editor.getDoc().createElement('span');
-    span.className = 'mymention';
-    span.appendChild(editor.getDoc().createTextNode('@' + userinfo.name));
-    return span;
+	var span = editor.getDoc().createElement('span');
+	span.className = 'mymention';
+	span.appendChild(editor.getDoc().createTextNode('@' + userinfo.name));
+	return span;
   }
 });
 ```
@@ -162,15 +164,15 @@ tinymce.init({
   plugins: "mentions",
   mentions_selector: 'span.mymention',
   mentions_select: function (mention, success) {
-    var div = document.createElement('div');
+	var div = document.createElement('div');
 
-    div.innerHTML = (
-      '<div>' +
-        '<h1>Some more info about the user</h1>' +
-      '</div>'
-    );
+	div.innerHTML = (
+	  '<div>' +
+		'<h1>Some more info about the user</h1>' +
+	  '</div>'
+	);
 
-    success(div);
+	success(div);
   }
 });
 ```

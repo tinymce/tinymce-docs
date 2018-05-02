@@ -285,5 +285,4 @@ The following example would load:
       </script>
    </body>
 <html>
-
 ```

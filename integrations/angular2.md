@@ -1,12 +1,12 @@
 ---
 layout: default
 title: Angular Integration
-title_nav: Angular 
+title_nav: Angular
 description: Using TinyMCE together with Angular 2+ with the @tinymce/tinymce-angular component
 keywords: integration integrate angular2 angular4 angular6 angular3 angular5 angularjs
 ---
 
-The absolutely easiest way to get started using TinyMCE with Angular 2+ is with our official `@tinymce/tinymce-angular` component! 
+The absolutely easiest way to get started using TinyMCE with Angular 2+ is with our official [@tinymce/tinymce-angular](https://github.com/tinymce/tinymce-angular) component!
 
 ## Installation
 
@@ -29,11 +29,11 @@ And add it to you application module:
 // but the important part is the imports array
 @NgModule({
   declarations: [
-    AppComponent
+	AppComponent
   ],
   imports: [
-    BrowserModule,
-    EditorModule // <- Important part
+	BrowserModule,
+	EditorModule // <- Important part
   ],
   providers: [],
   bootstrap: [AppComponent]
@@ -52,13 +52,13 @@ Use the editor in your templates like this:
 
 The editor accepts the following inputs:
 
-* `id`: An id for the editor so you can later grab the instance by using the `tinymce.get('ID')` method on tinymce, defaults to an automatically generated uuid. 
+* `id`: An id for the editor so you can later grab the instance by using the `tinymce.get('ID')` method on tinymce, defaults to an automatically generated uuid.
 * `init`: Object sent to the `tinymce.init` method used to initialize the editor.
 * `initialValue`: Initial value that the editor will be initialized with.
 * `inline`: Shorthand for setting that the editor should be inline, `<editor [inline]="true"></editor>` is the same as setting `{inline: true}` in the init.
 * `tagName`: Only used if the editor is inline, decides what element to initialize the editor on, defaults to `div`.
 * `plugins`: Shorthand for setting what plugins you want to use, `<editor plugins="foo bar"></editor>` is the same as setting `{plugins: 'foo bar'}` in the init.
-* `toolbar`: Shorthand for setting what toolbar items you want to show, `<editor toolbar="foo bar"></editor>` is the same as setting `{toolbar: 'foo bar'}` in the init. 
+* `toolbar`: Shorthand for setting what toolbar items you want to show, `<editor toolbar="foo bar"></editor>` is the same as setting `{toolbar: 'foo bar'}` in the init.
 * `apiKey`: Api key for TinyMCE cloud, more info below.
 * `cloudChannel`: Cloud channel for TinyMCE Cloud, more info below.
 
@@ -163,9 +163,9 @@ You can also define what cloud channel you want to use out these three
 So using the `dev` channel would look like this:
 
 ```tsx
-<editor 
-  apiKey="YOUR_API_KEY" 
-  cloudChannel="dev" 
+<editor
+  apiKey="YOUR_API_KEY"
+  cloudChannel="dev"
   [init]="{/* your settings */}"
   >
 </editor>

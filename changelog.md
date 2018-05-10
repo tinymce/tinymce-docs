@@ -10,15 +10,15 @@ class: changelog
 
 ## Version 4.7.12 May 3, 2018
 * Added an option to filter out image svg data urls.
-* Added support for html5 details and summary elements.
-* Changed so the mce-abs-layout-item css rule targets html instead of body. Patch contributed by nazar-pc.
-* Fixed a bug where the "read" step on the mobile theme was still present on android mobile browsers.
+* Added support for html5 `details` and `summary` elements.
+* Changed so the `mce-abs-layout-item` css rule targets `html` instead of `body`. Patch contributed by nazar-pc.
+* Fixed a bug where the "read" step on the mobile theme was still present on Android mobile browsers.
 * Fixed a bug where all images in the editor document would reload on any editor change.
 * Fixed a bug with the [Table Plugin]({{ site.baseurl }}/plugins/table) where ObjectResized event wasn't being triggered on column resize.
-* Fixed so the selection is set to the first suitable caret position after editor.setContent called.
-* Fixed so links with xlink:href attributes are filtered correctly to prevent XSS.
+* Fixed so the selection is set to the first suitable caret position after `editor.setContent` called.
+* Fixed so links with `xlink:href` attributes are filtered correctly to prevent XSS.
 * Fixed a bug on IE11 where pasting content into an inline editor initialized on a heading element would create new editable elements.
-* Fixed a bug where readonly mode would not work as expected when the editor contained contentEditable=true elements.
+* Fixed a bug where readonly mode would not work as expected when the editor contained `contentEditable=true` elements.
 * Fixed a bug where the[ Link Plugin]({{ site.baseurl }}/plugins/link) would throw an error when used together with the webcomponents polyfill. Patch contributed by 4esnog.
 * Fixed a bug where the "Powered by TinyMCE" branding link would break on XHTML pages. Patch contributed by tistre.
 * Fixed a bug where the same id would be used in the blobcache for all pasted images. Patch contributed by thorn0.

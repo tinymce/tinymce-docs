@@ -8,6 +8,17 @@ class: changelog
 
 {% capture changelog %}
 
+## Version 4.7.13 May 16, 2018
+* Fixed a bug where Edge 17 wouldn't be able to select images or tables.
+* Fixed issue where whitespace wasn't preserved when the editor was initialized on pre elements.
+* Fixed a bug with the fontselect dropdowns throwing an error if the editor was hidden in Firefox.
+* Fixed a bug where it wasn't possible to merge table cells on IE 11.
+* Fixed a bug where textcolor wasn't applying properly on IE 11 in some situations.
+* Fixed a bug where the justifyfull command state wasn't working correctly.
+* Fixed a bug where the styles wasn't updated correctly when resizing some tables.
+* Added missing code menu item from the default menu config.
+* Added new align button for combining the separate align buttons into a menu button.
+
 ## Version 4.7.12 May 3, 2018
 * Added an option to filter out image svg data urls.
 * Added support for html5 `details` and `summary` elements.

@@ -5,9 +5,9 @@ source 'https://rubygems.org'
 
 group :development, :test do
   gem 'jekyll', '~> 3'
-  gem 'jekyll-redirect-from', '~> 0.13'
-  gem 'jekyll-sitemap', '~> 1.2.0'
+  gem 'jekyll-redirect-from', '~> 0.11'
+  gem 'jekyll-sitemap', '~> 0.10.0'
   gem 'redcarpet', '~> 3'
-  gem 'nokogiri', '~> 1.8.2'
-  gem 'octopress-minify-html', '1.3.1'
+  gem 'nokogiri', '~> 1.8.1'
+  gem 'octopress-minify-html', '1.3.0'
 end

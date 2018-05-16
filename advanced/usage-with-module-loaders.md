@@ -84,6 +84,17 @@ require.context(
 );
 ```
 
+Webpack 4:
+
+```javascript
+require.context(
+  '!!file-loader?name=[path][name].[ext]&context=node_modules/tinymce!tinymce/skins',
+  true,
+  /.*/
+);
+```
+
+
 What this does is more or less the same thing as the command line stuff above - it copies the skins directory from `node_modules/tinymce` to your output directory as defined in your Webpack configuration. This is handy because you can easily move the output directory of your build without having to manually copy over the skins folder - webpack will take care of it for you.
 
 Unfortunately we haven't found any equivalently easy-to-use way to handle this for Browserify builds, but please use the "Contribute to this page"-link at the top of this page and make a pull request if you have any ideas.

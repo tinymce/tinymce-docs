@@ -43,7 +43,7 @@ tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "template",
   menubar: "insert",
-  toolbar: "template"
+  toolbar: "template",
   templates: [
     {title: 'Some title 1', description: 'Some desc 1', content: 'My content'},
     {title: 'Some title 2', description: 'Some desc 2', url: 'development.html'}
@@ -58,7 +58,7 @@ tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "template",
   menubar: "insert",
-  toolbar: "template"
+  toolbar: "template",
   templates: "/dir/templates.php"
 });
 ```
@@ -87,7 +87,7 @@ tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "template",
   menubar: "insert",
-  toolbar: "template"
+  toolbar: "template",
   template_cdate_classes: "cdate creationdate"
 });
 ```
@@ -105,7 +105,7 @@ tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "template",
   menubar: "insert",
-  toolbar: "template"
+  toolbar: "template",
   template_cdate_format: "%m/%d/%Y : %H:%M:%S"
 });
 ```
@@ -125,7 +125,7 @@ tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "template",
   menubar: "insert",
-  toolbar: "template"
+  toolbar: "template",
   template_mdate_classes: "mdate modifieddate"
 });
 ```
@@ -143,7 +143,7 @@ tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "template",
   menubar: "insert",
-  toolbar: "template"
+  toolbar: "template",
   template_mdate_format: "%m/%d/%Y : %H:%M:%S"
 });
 ```
@@ -163,7 +163,7 @@ tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "template",
   menubar: "insert",
-  toolbar: "template"
+  toolbar: "template",
   template_popup_height: "400"
 });
 ```
@@ -183,7 +183,7 @@ tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "template",
   menubar: "insert",
-  toolbar: "template"
+  toolbar: "template",
   template_popup_width: 300
 });
 ```
@@ -201,7 +201,7 @@ tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "template",
   menubar: "insert",
-  toolbar: "template"
+  toolbar: "template",
   template_replace_values: {
     username: "Jack Black",
     staffid: "991234"

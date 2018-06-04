@@ -38,12 +38,13 @@ Lastly, you just need to extend your TinyMCE configuration to include any of the
 * [Image Tools (with configured image proxy)]({{ site.baseurl }}/plugins/imagetools/)
 
 **Note:** `imagetools_cors_hosts` and `imagetools_proxy` are *not* required to be configured when enabling this plugin via [TinyMCE Cloud]({{ site.baseurl }}/get-started-cloud/)
+
 * [Accessibility Checker]({{ site.baseurl }}/plugins/a11ychecker/)
 * [Advanced Code Editor]({{ site.baseurl }}/plugins/advcode/)
 * [Enhanced Media Embed]({{ site.baseurl }}/plugins/mediaembed/)
 * [Link Checker]({{ site.baseurl }}/plugins/linkchecker/)
 
-> Please note that after purchasing a plugin, it may take up to 30 minutes for the plugin to be included with your editor. You may also need to clear your browser's cache.
+**Note:** Please note that after purchasing a plugin, it may take up to 30 minutes for the plugin to be included with your editor. You may also need to clear your browser's cache.
 
 ### Step 4: Forward proxy configuration
 If your company network has a forward proxy that controls access to the internet, please ensure that the following URLs are accessible via this proxy.
@@ -54,7 +55,7 @@ If your company network has a forward proxy that controls access to the internet
 * https://hyperlinking.tinymce.com
 * https://spelling.tinymce.com
 
-Also, please ensure that the `tiny-api-key` and `tinymce-api-key` headers are retained while requesting the list of URLs above.
+**Important:** Please ensure that the `tiny-api-key` and `tinymce-api-key` headers are retained while requesting the list of URLs above.
 
 ### Step 5: Specifying a translation
 If you wish to use a language other than English (US), please [download a language pack](https://www.tinymce.com/i18n) and then [specify its location]({{ site.baseurl }}/configure/localization/#language_url) with the `language_url` configuration option.
@@ -79,9 +80,13 @@ Now you just need to extend your [TinyMCE configuration]({{ site.baseurl }}/conf
 
 * [Powerpaste]({{ site.baseurl }}/plugins/powerpaste/)
 * [Spell Checker]({{ site.baseurl }}/plugins/tinymcespellchecker/)
+
 **Note:** `spellchecker_rpc_url` is **not** required when enabling this plugin via [TinyMCE Cloud]({{ site.baseurl }}/get-started-cloud/)
+
 * [Image Tools (with configured image proxy)]({{ site.baseurl }}/plugins/imagetools/)
+
 **Note:** `imagetools_cors_hosts` and `imagetools_proxy` are *not* required to be configured when enabling this plugin via [TinyMCE Cloud]({{ site.baseurl }}/get-started-cloud/)
+
 * [Accessibility Checker]({{ site.baseurl }}/plugins/a11ychecker/)
 * [Advanced Code Editor]({{ site.baseurl }}/plugins/advcode/)
 * [Enhanced Media Embed]({{ site.baseurl }}/plugins/mediaembed/)

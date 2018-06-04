@@ -43,7 +43,7 @@ Lastly, you just need to extend your TinyMCE configuration to include any of the
 * [Enhanced Media Embed]({{ site.baseurl }}/plugins/mediaembed/)
 * [Link Checker]({{ site.baseurl }}/plugins/linkchecker/)
 
-> Please note that after purchasing a plugin, it may take up to 30 minutes for the plugin to be included with your editor. You may also need to clear your browser's cache.
+**Note:** Please note that after purchasing a plugin, it may take up to 30 minutes for the plugin to be included with your editor. You may also need to clear your browser's cache.
 
 ### Step 4: Forward proxy configuration
 If your company network has a forward proxy that controls access to the internet, please ensure that the following URLs are accessible via this proxy.

@@ -14,6 +14,7 @@ RUN \
     make \
     python \
     nodejs \
+    npm \
     awscli \
     ruby \
     ruby-dev \

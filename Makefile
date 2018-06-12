@@ -10,3 +10,6 @@ serve:
 init:
 	_scripts/init.sh
 
+build:
+	_scripts/build.sh
+

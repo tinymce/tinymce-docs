@@ -1,6 +1,5 @@
-# boilerplate
-FROM ephox/node:4.2.2
-MAINTAINER ephoxServices, ops@textbox.io
+FROM ubuntu 
+MAINTAINER Ephox, is-inbox@ephox.com
 
 ENV DEBIAN_FRONTEND noninteractive
 
@@ -8,6 +7,14 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN \
   apt-get update && \
   apt-get install --no-install-recommends -y -q \
+    ca-certificates \
+    curl \
+    g++ \
+    git \
+    make \
+    python \
+    nodejs \
+    npm \
     awscli \
     ruby \
     ruby-dev \

@@ -14,6 +14,8 @@ exclude:
   - vendor
   - wercker.yml
   - node_modules
+  - .idea
+  - .git
 
 markdown: redcarpet
 
@@ -24,7 +26,7 @@ redcarpet:
     - tables
     - prettify
 
-gems:
+plugins:
   - jekyll-redirect-from
   - octopress-minify-html
   - jekyll-sitemap

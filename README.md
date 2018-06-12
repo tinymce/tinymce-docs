@@ -30,3 +30,7 @@ If you would like to contribute to the TinyMCE project please read our contribut
 https://www.tinymce.com/docs/advanced/contributing-docs/
 
 ### See the [TinyMCE Docs Wiki](https://github.com/tinymce/tinymce-docs/wiki) for additional, miscellaneous info, including init error handling.
+
+### Why is HTML minification disabled?
+
+It's very slow and the minifier is using regex to parse HTML. We may add a different minifier in the future.

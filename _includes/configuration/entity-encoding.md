@@ -4,6 +4,8 @@ This option controls how entities/characters get processed by TinyMCE. The value
 
 The base entities `<` `>` `&` `'` and `"` will always be entity encoded into their named equivalents. Though `'` and `"` will only be encoded within attribute values and `<` `>` will only be encoded within text nodes. This is correct according too the HTML and XML specs.
 
+TinyMCE will not encode any tags that are assigned to the special setting. By default this is settings.special = `script noscript style textarea`.
+
 ### Encoding Types
 
 | Name     | Summary          |

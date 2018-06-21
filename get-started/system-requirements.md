@@ -8,7 +8,7 @@ keywords: browser compatibility explorer ie safari firefox chrome edge
 
 We're pleased to introduce TinyMCE mobile, available in version 4.7.
 
-TinyMCE mobile is designed to run on iOS Safari and Android Chrome. You'll find a streamlined interface, while keeping the most common touch interactions easily to hand. We tested mobile on the following platforms:
+TinyMCE mobile is designed to run on iOS Safari and Android Chrome. You'll find a streamlined interface while keeping the most common touch interactions easily to hand. We tested mobile on the following platforms:
 
 | OS        | Browser | Device       |
 |:---------:|:-------:|:------------:|

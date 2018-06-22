@@ -16,7 +16,7 @@ Please visit our [mobile page](https://www.tinymce.com/mobile) to download the s
 
 If you use other platforms and encounter bugs, please let us know in the [TinyMCE issue tracker](https://github.com/tinymce/tinymce/issues).
 
-For further information on TinyMCE mobile setup and configuration, please visit [TinyMCE mobile]({{ site.baseurl }}/mobile).
+For further information on TinyMCE mobile setup and configuration, please visit [TinyMCE mobile documentation]({{ site.baseurl }}/mobile).
 
 ## Browser Compatibility
 

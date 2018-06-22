@@ -6,15 +6,17 @@ keywords: browser compatibility explorer ie safari firefox chrome edge
 ---
 ## Mobile Supported Platforms
 
-We're pleased to introduce TinyMCE mobile, available in version 4.7.
+We're pleased to introduce [TinyMCE mobile](https://www.tinymce.com/mobile), available in version 4.7.
 
 TinyMCE mobile is designed to run on iOS Safari and Android Chrome. You'll find a streamlined interface while keeping the most common touch interactions easily to hand. We tested mobile on the following platforms:
 
 {% include mobile_platform_compatibility.md %}
 
-Please visit our [mobile page](https://www.tinymce.com/mobile) to download the Self-hosted package. If you're using TinyMCE Cloud, mobile is available in the `dev` branch.
+Please visit our [mobile page](https://www.tinymce.com/mobile) to download the self-hosted package. If you're using TinyMCE Cloud, mobile is available in the `dev` branch.
 
 If you use other platforms and encounter bugs, please let us know in the [TinyMCE issue tracker](https://github.com/tinymce/tinymce/issues).
+
+For further information on TinyMCE mobile setup and configuration, please visit [TinyMCE mobile]({{ site.baseurl }}/mobile).
 
 ## Browser Compatibility
 

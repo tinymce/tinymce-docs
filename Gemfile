@@ -9,5 +9,4 @@ group :development, :test do
   gem 'jekyll-sitemap', '~> 1.2.0'
   gem 'redcarpet', '~> 3.4.0'
   gem 'nokogiri', '~> 1.8.2'
-  gem 'octopress-minify-html', '1.3.1'
 end

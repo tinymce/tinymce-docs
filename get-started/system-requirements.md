@@ -10,13 +10,7 @@ We're pleased to introduce TinyMCE mobile, available in version 4.7.
 
 TinyMCE mobile is designed to run on iOS Safari and Android Chrome. You'll find a streamlined interface while keeping the most common touch interactions easily to hand. We tested mobile on the following platforms:
 
-| OS        | Browser | Device       |
-|:---------:|:-------:|:------------:|
-| Android 8 | Chrome  | Mobile phone |
-| Android 7 | Chrome  | Mobile phone |
-| Android 6 | Chrome  | Mobile phone |
-| iOS11     | Safari  | iPhone/iPad  |
-| iOS10     | Safari  | iPhone/iPad  |
+{% include mobile_platform_compatibility.md %}
 
 Please visit our [mobile page](https://www.tinymce.com/mobile) to download the Self-hosted package. If you're using TinyMCE Cloud, mobile is available in the `dev` branch.
 
@@ -33,15 +27,15 @@ Since TinyMCE version 4.6.0 Internet Explorer 8-10 is no longer supported, if yo
 Please use the [issues tracker on GitHub](https://github.com/tinymce/tinymce/issues) to submit bugs on the listed browsers only.
 
 |Browser | Windows | Mac | GNU/Linux |
-|:------:|:-------:|:---:|:---------:|
-|Chrome  | YES      | YES  | YES |
-|Firefox | YES      | YES  | YES |
-|Edge    | YES      | N/A | N/A |
-|IE 11   | YES      | N/A | N/A |
-|IE 10   | NO      | N/A | N/A |
-|IE 9    | NO      | N/A | N/A |
-|IE 8    | NO      | N/A | N/A |
-|Safari  | N/A     | YES  | N/A |
+|--------|---------|-----|-----------|
+|Chrome  | YES     | YES | YES       |
+|Firefox | YES     | YES | YES       |
+|Edge    | YES     | N/A | N/A       |
+|IE 11   | YES     | N/A | N/A       |
+|IE 10   | NO      | N/A | N/A       |
+|IE 9    | NO      | N/A | N/A       |
+|IE 8    | NO      | N/A | N/A       |
+|Safari  | N/A     | YES | N/A       |
 
 TinyMCE fully supports the most recent version of all supported browsers listed above.  If vendors offer an Extended Support Release (e.g. Firefox) we also officially support the latest ESR from each vendor.  As each browser vendor releases new major versions (e.g. Chrome 61 vs Chrome 62) we will provide support for the prior major version for 60 days after the prior release is superseded.
 

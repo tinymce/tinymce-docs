@@ -26,7 +26,7 @@ ephox {
 One custom dictionary can be created for each language supported by the spell checker (see [supported languages]({{ site.baseurl }}/enterprise/check-spelling/)), as well as an additional "global" dictionary that contains words that are valid across all languages, such as trademarks.
 
 A dictionary file for a particular language must be named with the language code of the language (see
-[supported languages]({{ site.baseurl }}/enterprise/check-spelling/index/) for language codes), plus the suffix `.txt`:
+[supported languages]({{ site.baseurl }}/enterprise/check-spelling/) for language codes), plus the suffix `.txt`:
 E.g. `en.txt`, `en_gb.txt`, `fr.txt`, `de.txt` etc.
 
 The "global" dictionary file for language-independent words must be called "global.txt".

@@ -26,13 +26,13 @@ tinymce.init({
 |-------------|-----------------------|----------------|
 | [Click](https://developer.mozilla.org/en/docs/Web/Events/click) | native | Fires when the editor is clicked. |
 | [DblClick](https://developer.mozilla.org/en/docs/Web/Events/dblclick) | native | Fires when the editor is double-clicked. |
-| [MouseDown](https://developer.mozilla.org/en/docs/Web/Events/mousedown) | native | Fires when a mouse button is pressed down inside the editor. |
+| [MouseDown](https://developer.mozilla.org/en/docs/Web/Events/mousedown) | native | Fires when the mouse button is pressed down inside the editor. |
 | [MouseUp](https://developer.mozilla.org/en/docs/Web/Events/mouseup) | native | Fires when a mouse button is released inside the editor. |
 | [MouseMove](https://developer.mozilla.org/en/docs/Web/Events/mousemove) | native | Fires when the mouse is moved within the editor. |
 | [MouseOver](https://developer.mozilla.org/en/docs/Web/Events/mouseover) | native | Fires when a new element is being hovered within the editor. |
 | [MouseOut](https://developer.mozilla.org/en/docs/Web/Events/mouseout) | native | Fires when an element is no longer being hovered within the editor. |
 | [MouseEnter](https://developer.mozilla.org/en/docs/Web/Events/mouseenter) | native | Fires when a mouse enters the editor. |
-| [MouseLeave](https://developer.mozilla.org/en/docs/Web/Events/mouseleave) | native | Fires when the  mouse leaves the editor. |
+| [MouseLeave](https://developer.mozilla.org/en/docs/Web/Events/mouseleave) | native | Fires when the mouse leaves the editor. |
 | [KeyDown](https://developer.mozilla.org/en/docs/Web/Events/keydown) | native | Fires when a key is pressed within the editor. |
 | [KeyPress](https://developer.mozilla.org/en/docs/Web/Events/keypress) | native | Fires when a key is pressed within the editor. |
 | [KeyUp](https://developer.mozilla.org/en/docs/Web/Events/keyup) | native | Fires when a key is released within the editor. |
@@ -41,9 +41,9 @@ tinymce.init({
 | [Init](#init) | core | Fires when the editor is initialized. |
 | [Focus](#focus) | core | Fires when the editor is focused. |
 | [Blur](#blur) | core | Fires when the editor is blurred. |
-| [BeforeSetContent](#beforesetcontent) | core | Fires before contents being set to the editor. |
-| [SetContent](#setcontent) | core | Fires after contents been set to the editor. |
-| [GetContent](#getcontent) | core | Fires after the contents been extracted from the editor. |
+| [BeforeSetContent](#beforesetcontent) | core | Fires before the content is set to the editor. |
+| [SetContent](#setcontent) | core | Fires after the content is set to the editor. |
+| [GetContent](#getcontent) | core | Fires after the content is extracted from the editor. |
 | [PreProcess](#preprocess) | core | Fires when the contents in the editor are being serialized. |
 | [PostProcess](#postprocess) | core | Fires when the contents in the editor are being serialized. |
 | [NodeChange](#nodechange) | core | Fires when selection inside the editor is changed. |
@@ -115,7 +115,7 @@ Gets fired before the contents are inserted into the editor.
 * **content** `String` - The HTML content that's being inserted into the editor.
 * **selection** `Boolean` - True/False if the content was inserted at selection or replaced all contents.
 
-Here is an example of how to alter the contents before it's being inserted into the editor.
+Here is an example of how to alter the contents before inserting into the editor.
 
 ```js
 tinymce.init({
@@ -136,8 +136,7 @@ Gets fired after the content has been inserted into the editor.
 * **content** `String` - The HTML content that was inserted into the editor.
 * **selection** `Boolean` - True/False if the content was inserted at selection or replaced all contents.
 
-Here is an example of a content log that got inserted into the editor.
-
+Here is an example of the content logged into the console in response to the SetContent event.
 ```js
 tinymce.init({
   selector: 'textarea',
@@ -156,7 +155,7 @@ This event gets fired when the content is being extracted from the editor.
 #### Parameters
 * **content** `String` - The HTML content that's being extracted from the editor.
 
-Here is an example of how to alter the contents before it's being extracted from the editor.
+Here is an example of how to alter the contents before extracting it from the editor.
 
 ```js
 tinymce.init({
@@ -176,7 +175,7 @@ This event gets fired when the contents inside the editor are being serialized t
 #### Parameters
 * **node** `DOMElement` - A clone of the HTML element being serialized.
 
-Here is an example of how to alter the contents before it's being extracted from the editor.
+Here is an example of how to alter the contents before extracting it from the editor.
 
 ```js
 tinymce.init({
@@ -252,7 +251,7 @@ tinymce.init({
 
 ### Redo
 
-This event gets fired when a request to redo the changes made by the Undo event is made by the user.
+This event gets fired when a request to redo is made by the user..
 
 #### Parameters
 * **level** `Object` - Undo level object containing contents.
@@ -306,14 +305,14 @@ tinymce.init({
 
 This event gets fired when the editor is removed from a textarea/div.
 
-Here is an example of how to alter the contents before it's being extracted from the editor.
+Here is an example of how to detect when editor.remove() was called.
 
 ```js
 tinymce.init({
   selector: 'textarea',
   init_instance_callback: function (editor) {
-    editor.on('GetContent', function (e) {
-      e.content += 'My custom content!';
+    editor.on('Remove', function (e) {
+      console.log('The editor has been removed');
     });
   }
 });
@@ -324,7 +323,7 @@ tinymce.init({
 This event is fired when a command like Bold/Italic etc is made by the editor.
 
 #### Parameters
-* **content** `String` - The name of the command that was executed.
+* **command** `String` - The name of the command that was executed.
 
 Here is an example of how to detect when the bold feature was executed.
 
@@ -348,14 +347,15 @@ This event is fired when contents from the clipboard are being processed by the 
 #### Parameters
 * **content** `String` - The HTML content that's being pasted into the editor.
 
-Here is an example of how to alter the contents being pasted into the editor.
+Here is an example of how to detect when a paste operation is about to begin and how to modify the contents
 
 ```js
 tinymce.init({
   selector: 'textarea',
   init_instance_callback: function (editor) {
     editor.on('PastePreProcess', function (e) {
-      e.content += 'My custom content!';
+      e.content = e.content + ' foo';
+      console.log('The modified pasted content was: ', e.content);
     });
   }
 });
@@ -379,16 +379,6 @@ tinymce.init({
     });
   }
 });
-``
-
-## Editor Manager Events
-
-Here is an example of how to bind a handler function to the click event.
-
-```js
-tinymce.on('AddEditor', function (e) {
-  console.log('An editor was added with id: ' + e.editor.id);
-});
 ```
 
 | Event       |  Description   |
@@ -398,7 +388,7 @@ tinymce.on('AddEditor', function (e) {
 
 ### AddEditor
 
-This event gets fired when editor instances get created and added to the EditorManager collection.
+This event is fired when an editor instance is created and added to the EditorManager collection.
 
 #### Parameters
 * **editor** `tinymce.Editor` - Editor instance being added.

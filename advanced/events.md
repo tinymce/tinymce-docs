@@ -31,7 +31,7 @@ tinymce.init({
 | [MouseMove](https://developer.mozilla.org/en/docs/Web/Events/mousemove) | native | Fires when the mouse is moved within the editor. |
 | [MouseOver](https://developer.mozilla.org/en/docs/Web/Events/mouseover) | native | Fires when a new element is being hovered within the editor. |
 | [MouseOut](https://developer.mozilla.org/en/docs/Web/Events/mouseout) | native | Fires when an element is no longer being hovered within the editor. |
-| [MouseEnter](https://developer.mozilla.org/en/docs/Web/Events/mouseenter) | native | Fires when a mouse enters the editor. |
+| [MouseEnter](https://developer.mozilla.org/en/docs/Web/Events/mouseenter) | native | Fires when the mouse enters the editor. |
 | [MouseLeave](https://developer.mozilla.org/en/docs/Web/Events/mouseleave) | native | Fires when the mouse leaves the editor. |
 | [KeyDown](https://developer.mozilla.org/en/docs/Web/Events/keydown) | native | Fires when a key is pressed within the editor. |
 | [KeyPress](https://developer.mozilla.org/en/docs/Web/Events/keypress) | native | Fires when a key is pressed within the editor. |
@@ -136,7 +136,7 @@ Gets fired after the content has been inserted into the editor.
 * **content** `String` - The HTML content that was inserted into the editor.
 * **selection** `Boolean` - True/False if the content was inserted at selection or replaced all contents.
 
-Here is an example of the content logged into the console in response to the SetContent event.
+Here is an example of the content logged to the console in response to the SetContent event.
 ```js
 tinymce.init({
   selector: 'textarea',
@@ -251,7 +251,7 @@ tinymce.init({
 
 ### Redo
 
-This event gets fired when a request to redo is made by the user..
+This event gets fired when a request to redo is made by the user.
 
 #### Parameters
 * **level** `Object` - Undo level object containing contents.
@@ -288,7 +288,7 @@ tinymce.init({
 
 ### Dirty
 
-This event gets fired when the editor is considered dirty. This state can be toggled of using: editor.setDirty(false).
+This event gets fired when the editor is considered dirty. This state can be toggled by using: editor.setDirty(false).
 
 ```js
 tinymce.init({

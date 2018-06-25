@@ -137,6 +137,7 @@ Gets fired after the content has been inserted into the editor.
 * **selection** `Boolean` - True/False if the content was inserted at selection or replaced all contents.
 
 Here is an example of the content logged to the console in response to the SetContent event.
+
 ```js
 tinymce.init({
   selector: 'textarea',

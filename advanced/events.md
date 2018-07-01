@@ -112,6 +112,7 @@ tinymce.init({
 Gets fired before the contents are inserted into the editor.
 
 #### Parameters
+
 * **content** `String` - The HTML content that's being inserted into the editor.
 * **selection** `Boolean` - True/False if the content was inserted at selection or replaced all contents.
 
@@ -133,6 +134,7 @@ tinymce.init({
 Gets fired after the content has been inserted into the editor.
 
 #### Parameters
+
 * **content** `String` - The HTML content that was inserted into the editor.
 * **selection** `Boolean` - True/False if the content was inserted at selection or replaced all contents.
 
@@ -154,6 +156,7 @@ tinymce.init({
 This event gets fired when the content is being extracted from the editor.
 
 #### Parameters
+
 * **content** `String` - The HTML content that's being extracted from the editor.
 
 Here is an example of how to alter the contents before extracting it from the editor.
@@ -174,6 +177,7 @@ tinymce.init({
 This event gets fired when the contents inside the editor are being serialized to an HTML string.
 
 #### Parameters
+
 * **node** `DOMElement` - A clone of the HTML element being serialized.
 
 Here is an example of how to alter the contents before extracting it from the editor.
@@ -194,6 +198,7 @@ tinymce.init({
 This event gets fired when the contents inside the editor have been serialized to an HTML string.
 
 #### Parameters
+
 * **content** `String` - The HTML content that's been extracted from the editor.
 
 Here is an example of how to alter the contents when it's being extracted from the editor.
@@ -214,6 +219,7 @@ tinymce.init({
 This event gets fired when the selection inside the editor is changed.
 
 #### Parameters
+
 * **element** `DOMElement` - HTML Element of selection.
 * **parents** `[DOMElement]` - Array with parents of the element.
 
@@ -235,6 +241,7 @@ tinymce.init({
 This event gets fired when a request to undo is made by the user.
 
 #### Parameters
+
 * **level** `Object` - Undo level object containing contents.
 
 Here is an example of how to bind the Undo event.
@@ -255,6 +262,7 @@ tinymce.init({
 This event gets fired when a request to redo is made by the user.
 
 #### Parameters
+
 * **level** `Object` - Undo level object containing contents.
 
 Here is an example of how to bind the Redo event.
@@ -324,6 +332,7 @@ tinymce.init({
 This event is fired when a command like Bold/Italic etc is made by the editor.
 
 #### Parameters
+
 * **command** `String` - The name of the command that was executed.
 
 Here is an example of how to detect when the bold feature was executed.
@@ -346,6 +355,7 @@ tinymce.init({
 This event is fired when contents from the clipboard are being processed by the paste process.
 
 #### Parameters
+
 * **content** `String` - The HTML content that's being pasted into the editor.
 
 Here is an example of how to detect when a paste operation is about to begin and how to modify the contents
@@ -367,6 +377,7 @@ tinymce.init({
 This event is fired when contents from the clipboard have been processed by the paste process.
 
 #### Parameters
+
 * **node** `DOMElement` - Node element being pasted.
 
 Here is an example of how to log the node being pasted.
@@ -392,6 +403,7 @@ tinymce.init({
 This event is fired when an editor instance is created and added to the EditorManager collection.
 
 #### Parameters
+
 * **editor** `tinymce.Editor` - Editor instance being added.
 
 Here is an example of how to listen for editor instances being created.
@@ -407,6 +419,7 @@ tinymce.on('AddEditor', function (e) {
 This event gets fired when editor instances are removed from the target textarea/div.
 
 #### Parameters
+
 * **editor** `tinymce.Editor` - Editor instance being removed.
 
 Here is an example of how to listen for editor instances being removed.

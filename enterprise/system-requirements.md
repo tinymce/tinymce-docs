@@ -75,17 +75,12 @@ JDK 7 update 55+
 
 ### Supported TinyMCE versions
 
-These are the supported tinymce versions for each plugin:
+TinyMCE provides support for the following versions:
 
-| Plugin                  | TinyMCE Version |
-|----------------------   | :-------------: |
-| Accessibility Checker   | 4.3.13 |
-| Advanced Code           | 4.3.13 |
-| Link Checker            | 4.4.3  |
-| Media Embeds            | 4.5.2  |
-| Mentions                | 4.3.13 |
-| PowerPaste              | 4.0.28 |
-| Spell Checker Pro       | 4.2.8  |
+* TinyMCE 4.5
+* TinyMCE 4.7
+
+All commercially supported plugins are supported on these versions.
 
 #### Need more?
 

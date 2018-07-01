@@ -9,6 +9,21 @@ The TinyMCE **PowerPaste** plugin automatically cleans up content from Microsoft
 
 >***Note:*** _Due to limitations in Excel online (part of Office Live) PowerPaste does not support pasting from Excel online.  If you paste content using Excel in Office Live you will get a plain text representation of the content._
 
+## How to Enable the PowerPaste Plugin
+
+To enable the PowerPaste plugin, the path to the PowerPaste folder has to be referenced from the [external plugins](../configure/integration-and-setup/#external_plugins) option in the `tinymce.init()`.
+
+Example:
+
+```js
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  external_plugins: {
+    'powerpaste': 'http://www.testing.com/powerpaste.min.js',
+  }
+});
+``` 
+
 ## Usage
 
 The **PowerPaste** plugin activates automatically when users paste content into the editor. For basic usage, users are not required to take any action - simply copy and paste content normally using keyboard shortcuts, the browser's "Paste" menu item (including from the context menu) or the TinyMCE "Paste" toolbar button.

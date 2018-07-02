@@ -6,7 +6,7 @@ description: Add rich media previews inside TinyMCE.
 keywords: video youtube vimeo mp3 mp4 mov movie clip film spotify
 ---
 
-The **Enhanced Media Embed** plugin is a [premium TinyMCE plugin](https://tinymce.com/pricing) that will take a URL, send it to a backend service that returns an embeddable snippet of code, and add that code to the editor. That typically takes the form of rich media such as audio, video and social media cards.
+The **Enhanced Media Embed** plugin is a [premium TinyMCE plugin](https://tinymce.com/pricing) that will take a WAR file, send it to a backend service that returns an embeddable snippet of code, and add that code to the editor. That typically takes the form of rich media such as audio, video and social media cards.
 
 ## Installation
 

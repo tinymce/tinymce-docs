@@ -2,12 +2,15 @@
 
 [![wercker status](https://app.wercker.com/status/4d4c743635332430f9d25acae1be5218/s/master "wercker status")](https://app.wercker.com/project/bykey/4d4c743635332430f9d25acae1be5218)
 
-This project serves as the documentation for TinyMCE, as you see on tinymce.com. 
-If you have any modifications you wish to contribute, fork this project, make the
-changes and submit a pull request. You will need to sign a contributors license 
-agreement, a link will be sent via email.
+This project serves as the documentation for TinyMCE, as you see on 
+[http://tinymce.com/docs](http://tinymce.com/docs). If you have any 
+modifications you wish to contribute, fork this project, make the changes 
+and submit a pull request. You will need to sign the contributors license 
+agreement, which will be emailed to you upon creating the pull request.
 
 This project is built using [Jekyll](https://jekyllrb.com/).
+
+# Working on TinyMCE documentation
 
 ## Prerequisites
 

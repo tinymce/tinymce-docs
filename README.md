@@ -10,7 +10,7 @@ We use Jekyll 3, mainly because of [incremental](https://jekyllrb.com/docs/confi
 
 You need the following installed on your computer:
 
-1. Ruby. rvm is recommended.
+1. Ruby.
 
 2. Bundler. This can be installed via:
 

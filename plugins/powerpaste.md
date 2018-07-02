@@ -11,7 +11,7 @@ The TinyMCE **PowerPaste** plugin automatically cleans up content from Microsoft
 
 ## How to Enable the PowerPaste Plugin
 
-To enable the PowerPaste plugin, the path to the PowerPaste folder has to be referenced from the [external plugins](../configure/integration-and-setup/#external_plugins) option in the `tinymce.init()`.
+To enable the **PowerPaste** plugin, the path to the PowerPaste folder has to be referenced from the [external plugins]({{site.baseurl}}/configure/integration-and-setup/#external_plugins) option in the `tinymce.init()`.
 
 Example:
 

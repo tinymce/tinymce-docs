@@ -10,23 +10,21 @@ We use Jekyll 3, mainly because of [incremental](https://jekyllrb.com/docs/confi
 
 You need the following installed on your computer:
 
-1. git
+1. Ruby. rvm is recommended.
 
-3. Ruby. rvm is recommended.
-
-4. Bundler. This can be installed via:
+2. Bundler. This can be installed via:
 
 ```
 gem install bundler
 ```
   
-5. g++. On Fedora, for instance, run:
+3. g++. On Fedora, for instance, run:
 
 ```
 sudo dnf install gcc-c++
 ```
 
-6. make
+4. make
 
 ## First time set up
 

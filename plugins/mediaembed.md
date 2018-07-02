@@ -47,8 +47,8 @@ The plugin can be used in two ways, either by simply entering a URL on an empty 
 
 ### `mediaembed_service_url`
 
-This setting specifies the URL to the service that will handle your requests and return the embeddable snippets used by the **Media Embed** plugin. You will get the URL as a part of your [premium TinyMCE plugin](https://www.tinymce.com/pricing/) subscription.
-This option is not required for [TinyMCE Cloud]({{ site.baseurl }}/get-started-cloud)
+This setting specifies the URL to the service that will handle your requests and return the embeddable snippets used by the **Media Embed** plugin. Please follow these [instructions]({{site.baseurl}}/enterprise/server/#step6setupeditorclientinstancestousetheserver-sidefunctionality) to configure the **WAR** file that you will get as a part of your [premium TinyMCE plugin](https://www.tinymce.com/pricing/) subscription.
+This option is not required for [TinyMCE Cloud]({{ site.baseurl }}/get-started-cloud).
 
 ### `mediaembed_max_width`
 
@@ -56,4 +56,5 @@ This optional setting specifies a maximum width in pixels of the embedded conten
 
 ## Downloading Enhanced Media Embed plugin
 
-A [premium TinyMCE plugin](https://www.tinymce.com/pricing/) subscription includes the ability to download and install the **Media Embed** plugin as well as gives you the URL needed to access the service backend.
+A [premium TinyMCE plugin](https://www.tinymce.com/pricing/) subscription includes the ability to download and install the **Media Embed** plugin and a **WAR** file to access the service backend. Please follow these [instructions]({{site.baseurl}}/enterprise/server/#step6setupeditorclientinstancestousetheserver-sidefunctionality) to configure the **WAR** file. 
+

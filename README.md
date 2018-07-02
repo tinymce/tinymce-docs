@@ -6,11 +6,31 @@ This project serves as the documentation for TinyMCE, as you see on tinymce.com.
 
 We use Jekyll 3, mainly because of [incremental](https://jekyllrb.com/docs/configuration/) building feature. You should have at least Ruby 2 to run it (check your version: `ruby -v`).
 
-# First time setup
+## Prerequisites
 
-Make sure you have `bundler` installed:
+You need the following installed on your computer:
 
-    gem install bundler
+1. git
+
+3. Ruby. rvm is recommended.
+
+4. Bundler. This can be installed via:
+
+```
+gem install bundler
+```
+  
+5. g++. On Fedora, for instance, run:
+
+```
+sudo dnf install gcc-c++
+```
+
+6. make
+
+## First time set up
+
+Once you have the prerequisites
 
 Then retrieve and init the project:
 
@@ -22,15 +42,16 @@ Then retrieve and init the project:
 
     ./_scripts/serve.sh
 
-Navigate to http://127.0.0.1:4000/
+Navigate to [http://127.0.0.1:4000/](http://127.0.0.1:4000/)
 
-# Contribute to TinyMCE
+## Contributing to TinyMCE
 
-If you would like to contribute to the TinyMCE project please read our contributor's guide:
-https://www.tinymce.com/docs/advanced/contributing-docs/
+If you would like to contribute to the TinyMCE project please read 
+the [Contributor's Guide](https://www.tinymce.com/docs/advanced/contributing-docs/)
 
-## See the [TinyMCE Docs Wiki](https://github.com/tinymce/tinymce-docs/wiki) for additional, miscellaneous info, including init error handling.
+See the [TinyMCE Docs Wiki](https://github.com/tinymce/tinymce-docs/wiki) for additional information, 
+including init error handling.
 
-# Why is HTML minification disabled?
+## Why is HTML minification disabled?
 
 It's very slow and the minifier is using regex to parse HTML. We may add a different minifier in the future.

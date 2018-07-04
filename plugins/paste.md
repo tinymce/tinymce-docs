@@ -13,7 +13,7 @@ This plugin will filter/cleanup content pasted from Microsoft Word. The power of
 
 The plugin also adds a menu item `Paste as text` under the `Edit` menu dropdown and a toolbar button.
 
-> Note that the toolbar button won't work in browsers that don't support direct access to the clipboard. In such cases the user will be presented with a modal/dialog box advising them of this along with a reminder of standard keyboard shortcuts.
+> **Note:** The toolbar button won't work in browsers that don't support direct access to the clipboard. In such cases the user will be presented with a modal/dialog box advising them of this along with a reminder of standard keyboard shortcuts.
 
 **Type:** `String`
 
@@ -167,6 +167,8 @@ tinymce.init({
 ### `paste_word_valid_elements`
 
 This option enables you to configure the `valid_elements` specific to MS Office. Word produces a lot of junk HTML, so when users paste things from Word we do extra restrictive filtering on it to remove as much of this as possible. This option enables you to specify which elements and attributes you want to include when Word contents are intercepted.
+
+>**Note:** To access this feature, you need to set the value of [paste_enable_default_filters]({{site.baseurl}}./#paste_enable_default_filters) to `"false"` in your configuration.
 
 **Type:** `String`
 

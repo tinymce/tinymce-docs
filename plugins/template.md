@@ -211,7 +211,7 @@ tinymce.init({
 This can then be used in a template or snippet that looks like this:
 
 ```html
-<p>Name: {$name}, StaffID: {$staffid}</p>
+<p>Name: {$username}, StaffID: {$staffid}</p>
 ``` 
 
 And that will be changed to: 

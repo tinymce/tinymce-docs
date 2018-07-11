@@ -8,6 +8,13 @@ class: changelog
 
 {% capture changelog %}
 
+## Version 4.8.0 July 11, 2018
+* Added new "experimental" object in editor, with initial Annotator API.
+* Fixed a bug where deleting paragraphs inside of table cells would delete the whole table cell.
+* Fixed a bug in the Table Plugin where removing row height set on the row properties dialog did not update the table.
+* Fixed a bug with the font select toolbar item didn't update correctly.
+* Fixed a bug where all bogus elements would not be deleted when removing an inline editor.
+
 ## Version 4.7.13 May 16, 2018
 * Fixed a bug where Edge 17 wouldn't be able to select images or tables.
 * Fixed issue where whitespace wasn't preserved when the editor was initialized on pre elements.

@@ -7,5 +7,5 @@ description: TinyMCE is an incredibly powerful, flexible and customizable rich t
 type: folder
 ---
 
-{% assign links = site.data.nav[5].pages %}
+{% assign links = site.data.nav[6].pages %}
 {% include index.html links=links %}

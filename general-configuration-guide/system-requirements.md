@@ -1,6 +1,6 @@
 ---
 layout: default
-title: 12. System Requirements
+title: 11. System Requirements
 description: Official TinyMCE browser support.
 keywords: browser compatibility explorer ie safari firefox chrome edge
 ---
@@ -41,5 +41,5 @@ Please use the [issues tracker on GitHub](https://github.com/tinymce/tinymce/iss
 
 TinyMCE fully supports the most recent version of all supported browsers listed above.  If vendors offer an Extended Support Release (e.g. Firefox) we also officially support the latest ESR from each vendor.  As each browser vendor releases new major versions (e.g. Chrome 61 vs Chrome 62) we will provide support for the prior major version for 60 days after the prior release is superseded.
 
-{% assign_page next_page = "/get-started/get-support/index.html" %}
+{% assign_page next_page = "/general-configuration-guide/get-support/index.html" %}
 {% include next-step.html next=next_page %}

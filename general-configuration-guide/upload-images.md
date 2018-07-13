@@ -1,6 +1,6 @@
 ---
 layout: default
-title: 08. Upload Images
+title: 07. Upload Images
 description: Extend TinyMCE with powerful image uploading capabilities.
 keywords: uploader uploadImages image handler
 ---
@@ -146,5 +146,5 @@ The [PHP Upload Handler Script]({{ site.baseurl }}/advanced/php-upload-handler/)
 * [MDN - HTTP access control (CORS)](https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS)
 * [W3C - Cross-Origin Resource Sharing Specification](http://www.w3.org/TR/cors/)
 
-{% assign_page next_page = "/get-started/spell-checking/index.html" %}
+{% assign_page next_page = "/general-configuration-guide/spell-checking/index.html" %}
 {% include next-step.html next=next_page %}

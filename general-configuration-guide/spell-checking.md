@@ -1,6 +1,6 @@
 ---
 layout: default
-title: 09. Check Spelling
+title: 08. Check Spelling
 description: Take spell checking to your users.
 keywords: spell checker spelling browser_spellcheck gecko_spellcheck
 ---
@@ -53,5 +53,5 @@ For developers requiring a robust enterprise-grade spell check as-you-type funct
 
 Full documentation can be found in the TinyMCE Enterprise [documentation for Spelling]({{ site.baseurl }}/enterprise/check-spelling/). Learn more about [TinyMCE Enterprise here](https://www.tinymce.com/pricing/).
 
-{% assign_page next_page = "/get-started/filter-content/index.html" %}
+{% assign_page next_page = "/general-configuration-guide/filter-content/index.html" %}
 {% include next-step.html next=next_page %}

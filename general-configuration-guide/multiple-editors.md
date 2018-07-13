@@ -1,6 +1,6 @@
 ---
 layout: default
-title: 04. Multiple Editors
+title: 03. Multiple Editors
 description_short: Learn how to insert multiple editor instances on a single page.
 description: Learn how to insert multiple editor instances on a single page.
 keywords: form inline edit
@@ -81,5 +81,5 @@ In this next example each editable area will be loaded with an instance of TinyM
 </html>
 ```
 
-{% assign_page next_page = "/get-started/advanced-install/index.html" %}
+{% assign_page next_page = "/general-configuration-guide/advanced-install/index.html" %}
 {% include next-step.html next=next_page %}

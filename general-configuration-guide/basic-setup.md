@@ -1,6 +1,6 @@
 ---
 layout: default
-title: 02. Basic Setup
+title: 01. Basic Setup
 description_short: The 3 most important configuration settings, with examples.
 description: TinyMCE provides a wide range of configuration options that enable you to integrate it tightly with your application.
 keywords: selector plugin toolbar configuration configure
@@ -280,5 +280,5 @@ toolbar: 'insertfile undo redo | styleselect | bold italic | alignleft aligncent
 
 And we are done. We hope you found the above example helpful in showing not only how powerful TinyMCE is but also how easy it is to customize.
 
-{% assign_page next_page = "/get-started/use-tinymce-inline/index.html" %}
+{% assign_page next_page = "/general-configuration-guide/use-tinymce-inline/index.html" %}
 {% include next-step.html next=next_page %}

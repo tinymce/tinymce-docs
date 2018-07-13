@@ -1,17 +1,7 @@
 - url: "quick-start"
-  pages:
-  - url: "quick-start"
 
-- url: "get-started-cloud"
+- url: "general-configuration-guide"
   pages:
-  - url: "editor-and-features"
-  - url: "features-only"
-  - url: "editor-plugin-version"
-  - url: "plugin-editor-version-compatibility"
-
-- url: "get-started"
-  pages:
-  - url: "first-steps"
   - url: "basic-setup"
   - url: "use-tinymce-inline"
   - url: "multiple-editors"
@@ -25,7 +15,12 @@
   - url: "system-requirements"
   - url: "get-support"
 
-- url: "mobile"
+- url: "cloud-deployment-guide"
+  pages:
+  - url: "editor-and-features"
+  - url: "features-only"
+  - url: "editor-plugin-version"
+  - url: "plugin-editor-version-compatibility"
 
 - url: "demo"
   pages:
@@ -47,6 +42,8 @@
   - url: "custom-toolbar-menu-item"
   - url: "file-picker"
   - url: "local-upload"
+
+- url: "mobile"
 
 - url: "configure"
   pages:

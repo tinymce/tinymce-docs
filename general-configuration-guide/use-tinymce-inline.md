@@ -1,6 +1,6 @@
 ---
 layout: default
-title: 03. Use TinyMCE Inline
+title: 02. Use TinyMCE Inline
 description_short: Learn about forms-based editing v. inline editing.
 description: Understand the difference between traditional forms-based editing and advanced inline editing.
 keywords: form inline edit stylesheet
@@ -73,5 +73,5 @@ Enabling inline editing mode is simple. Setting the `inline` configuration prope
 </html>
 ```
 
-{% assign_page next_page = "/get-started/multiple-editors/index.html" %}
+{% assign_page next_page = "/general-configuration-guide/multiple-editors/index.html" %}
 {% include next-step.html next=next_page %}

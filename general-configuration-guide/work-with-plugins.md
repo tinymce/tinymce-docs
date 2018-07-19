@@ -10,7 +10,7 @@ For most developers, the real power of TinyMCE's functionality is found in its p
 
 Because most people install TinyMCE via TinyMCE Cloud or by downloading a package, they mistakenly think plugins are part of the TinyMCE "core". While all of the plugins (excluding the professional features) are included in those packages, each plugin is in a separate .js file. In fact, if you use the [custom package](https://www.tinymce.com/download/custom-builds/) download option you're able to select only the plugins you want included, or you can exclude all of the plugins built by the TinyMCE team.
 
-In this section of the Get Started guide we'll show you how easy it is to activate a plugin by highlighting two of the more popular plugins. Please note that you must include the plugin in your download options in order to activate it.
+In this section we'll show you how easy it is to activate a plugin by highlighting two of the more popular plugins. Please note that you must include the plugin in your download options in order to activate it.
 
 Let's start with a simple code snippet you can paste into an empty `html` file (call it whatever you like, `tinymce.html` works). Save the file locally, open it with your web browser and you'll have a basic, local TinyMCE instance up and running.
 

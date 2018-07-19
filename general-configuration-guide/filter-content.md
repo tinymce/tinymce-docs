@@ -23,7 +23,7 @@ A format is the style that gets applied to text when a user presses the bold but
 
 ### Built in formats
 
-TinyMCE has some built in formats that you can override. You may recall some of these from the default controls we mentioned in the [Basic Setup](../basic-setup) part of this Get Started guide:
+TinyMCE has some built in formats that you can override. You may recall some of these from the default controls we mentioned in the [Basic Setup](../basic-setup) part of this guide:
 
 * alignleft
 * aligncenter

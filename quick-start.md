@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Quick Start to Tiny Cloud
+title: Tiny Quick Start
 description_short: Setup TinyMCE in less than 5 minutes (on your desktop).
 description: Get a local instance of TinyMCE up and running in less than 5 minutes.
 keywords: tinymce script textarea
@@ -10,9 +10,7 @@ TinyMCE is a powerful and an incredibly flexible text editor that helps you in c
 
 This is the place to begin if you are new to TinyMCE and want to get a local editor instance up and running in less than 5 minutes (via our TinyMCE Cloud). We will guide you about features such as advanced installation options, working with plugins, learning about content filtering, and spell checking.
 
-If you prefer to download TinyMCE and install it locally the [Advanced Install]({{  site.baseurl }}/general-configuration-guide/advanced-install/#packagemanagerinstalloptions) page in the Self-hosted Get Started guide has instructions.
-
-Now, back to the TinyMCE Cloud. In the next 3 steps – and in less than 5 minutes – you'll have a basic, local editor instance up and running.
+Now, back to getting started with TinyMCE. In the next 3 steps – and in less than 5 minutes – you'll have a basic, local editor instance up and running.
 
 ## Step 1: Include the TinyMCE script
 
@@ -62,7 +60,9 @@ When the `<form>` is submitted the TinyMCE editor mimics the behavior of a norma
 
 And that's all there is to it!
 
-You may use TinyMCE Cloud without an API key. However, to use our premium plugins or avoid the in-editor developer warning, you will need to sign up for an API key and update the script tag used to load the editor code into your application. Please visit the [Cloud Deployment Guide]({{  site.baseurl }}/cloud-deployment-guide/) to learn more about the plugins and other features of TinyMCE.
+If you prefer to download TinyMCE and install it locally the [Advanced Install]({{  site.baseurl }}/general-configuration-guide/advanced-install/#packagemanagerinstalloptions) page in the [General Configuration Guide]({{  site.baseurl }}/general-configuration-guide/advanced-install) has instructions.
+
+You may use TinyMCE Cloud without an API key. However, to avoid the in-editor developer warning or use our premium plugins, you will need to sign up for an API key and update the script tag used to load the editor code into your application. Please visit the [Cloud Deployment Guide]({{  site.baseurl }}/cloud-deployment-guide/) to learn more about the plugins and other features of TinyMCE.
 
 
 

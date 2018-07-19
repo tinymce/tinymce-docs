@@ -124,7 +124,7 @@ If you're struggling with menus, menu items and toolbars from the previous secti
 
 There is one popular toolbar button not loaded with the default theme "modern" and that's the `code` button. Clicking it presents the user with a dialog box containing the raw HTML hidden by TinyMCE's interface.
 
-It's also a good example for the Get Started guide because it reminds us that some functionality requires the inclusion of a plugin.
+It's also a good example for this guide because it reminds us that some functionality requires the inclusion of a plugin.
 
 ```js
 tinymce.init({

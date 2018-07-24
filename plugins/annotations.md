@@ -1,14 +1,11 @@
 ---
 layout: default
 title: Annotations
-description: TinyMCE Annotations provides ability to provide additional information about a selected piece of content and creates identifiers for each added annotation.
+description: TinyMCE Annotations provides ability to describe particular features or add general information to a piece of content and creates identifiers for each added annotation.
 keywords: annotation annotations
 ---
 
-TinyMCE Annotation feature encourages content re-usability and makes the content more readable, maintainable, and flexible.
-These are pieces of code which don't have any direct impact on the execution of the code, instead they provide additional data about the program to either the compiler or the run-time system.
-This data is used by the compiler or the run time system to do a variety of things - generation of additional code, XML files, suppress warnings, errors, etc.
-User can even define annotation types, the way we define classes.
+TinyMCE Annotation provides flexibility in the appearance and placement of your content because you can select individual pieces of text and edit them.
 
 ## Using the Annotator Plugin
 
@@ -29,6 +26,7 @@ Please follow the following procedure to setup TinyMCE Annotation plugin:
                 ed.focus();
               },
        ```
+> Note: We use of 'experimental' in 'ed.experimental.annotator.annotate'
 
 ### 2. Registering the Annotator Plugin
 
@@ -68,7 +66,7 @@ Now, that we have registered an annotation, we can use it by applying it to the 
 The API to apply an annotation is `annotate`.  Annotations can be programmatically applied to selected text using:
 
 ```js
-editor.annotator.annotate('yoast-comments', {
+editor.annotator.annotate('alpha', {
 author: 'me'
 });
 ```
@@ -208,11 +206,11 @@ remove: (name: string): void
 Lastly, the annotator API allows you to retrieve an object of all of the uids for a particular annotation type (e.g. alpha), and the nodes associated with those uids. For example, to retrieve all 'alpha' annotations, we would use this code:
 
 ```js
-var annotations = editor.annotator.getAll('yoast-comments');
+var annotations = editor.annotator.getAll('alpha');
 var nodesInFirstUid = annotations['first-uid'];
 ```
 
-Assuming that there is a uid called 'first-uid', the above code shows you how to access the nodes used for making that annotation. In the yoast plugin, we need to turn these to xpaths, which is one of the main reasons they are exposed like this. The full API is:
+Assuming that there is a uid called 'first-uid', the above code shows you how to access the nodes used for making that annotation. The full API is:
 
 ```js
 /**

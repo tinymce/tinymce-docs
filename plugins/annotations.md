@@ -179,7 +179,7 @@ tinymce.init({
     <textarea name="content"></textarea>
 </form>
 ```
-[Example]({./images/annotations.png})
+[Example]({{ site.baseurl }}/images/annotate.png)
 
 ## Retrieving All Annotations for a Particular Annotation Name
 

@@ -6,7 +6,7 @@ keywords: annotation annotations
 ---
 
 ## Introduction
-The TinyMCE Annotation plugin provides flexibility in the appearance and placement of your comments because you can select individual pieces of text and add comments to them. The plugin provides an API to add, modify and delete annotations, listen to text selection events, and retrieving all annotations with the same annotation name.
+The TinyMCE Annotation API provides the ability to add, modify and delete annotations, listen to text selection events, and retrieve all annotations with the same annotation name.
 
 ## Using the Annotator Plugin
 
@@ -28,11 +28,11 @@ To setup the TinyMCE Annotation plugin, perform the following procedure:
                 ed.focus();
               },
        ```
-> Note: The annotator plugin is still considered experimental, so we use  'experimental' in 'ed.experimental.annotator.annotate'.
+> Note: The annotator plugin is still in its experimental stage, hence we are using 'experimental' in 'ed.experimental.annotator.annotate'. A user will see a *Using experimental API: annotator* warning on his console. Please ignore this warning, we are working on this.
 
 ### 2. Registering the Annotator Plugin
 
-The annotator API supports multiple annotation formats. Each annotation format must be registered with the annotator `(editor.annotator)`. The registration process uses this API.
+The annotator API supports multiple annotation functions. Each annotation function must be registered with the annotator `(editor.annotator)`. The registration process uses this API.
 
 ```js
 ed.on('init', () => {
@@ -69,8 +69,8 @@ The API to apply an annotation is `annotate`.  Annotations can be programmatical
 
 ```js
 editor.annotator.annotate('alpha', {
-author: 'me'
-});
+       author: 'me'
+       });
 ```
 The data passed through `{ author: 'me' }` is passed all the way through to the `decorate` function specified during registration for the particular annotation (here: alpha). This data can be any object. In this way, users can tag markers with any attributes/classes they want on a per-annotation basis. Here, we will end up with a span with a `data-author` attribute set to `me`. If the user wants, they can specify a `uid` as part of the data here. This will be used instead of a randomly generated `uid` when passing through as the first argument to decorate.
 
@@ -78,9 +78,9 @@ Example of specifying your own `uid`:
 
 ```js
 editor.annotator.annotate('alpha', {
-uid: 'use-this-id-instead-of-your-random-one-annotator!',
-author: 'me'
-});
+       uid: 'use-this-id-instead-of-your-random-one-annotator!',
+       author: 'me'
+       });
 ```
 
 ### 5. Listening to Selection Events
@@ -117,7 +117,7 @@ annotationChanged: (name: string, callback): void
 
 ## Example
 
-Here is an example of the full annotate API:
+Here is an example to create the Annotate API:
 
 ```js
 <script type="text/javascript">
@@ -163,7 +163,7 @@ tinymce.init({
          decorate: (uid, data) => {
            return {
              attributes: {
-               'data-mce-comment': data.comment
+               'data-mce-alpha': data.alpha
              }
            };
          }

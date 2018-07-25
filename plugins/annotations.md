@@ -16,6 +16,7 @@ To setup the TinyMCE Annotation plugin, perform the following procedure:
 
        To configure the annotate button on your toolbar, make the following changes:
 
+       
        ```js
         setup: (ed) => {
             ed.addButton('annotate-alpha', {
@@ -32,7 +33,7 @@ To setup the TinyMCE Annotation plugin, perform the following procedure:
 
 ### 2. Registering the Annotator Plugin
 
-The annotator API supports multiple annotation functions. Each annotation function must be registered with the annotator `(editor.annotator)`. The registration process uses this API.
+The annotator API supports multiple annotation functions. Each annotation function must be registered with the annotator `(editor.annotator)`. 
 
 ```js
 ed.on('init', () => {
@@ -41,7 +42,7 @@ ed.on('init', () => {
          decorate: (uid, data) => {
            return {
              attributes: {
-               'data-mce-comment': data.comment
+               'data-mce-comment': alpha.comment
              }
            };
          }
@@ -51,7 +52,7 @@ ed.on('init', () => {
 ```
 This will register an annotation with the name `alpha`. In our example, when a `alpha` is being added to the document, a span marker will be created with class `alpha` and a data attribute for the author.
 > Note: The data passed through here is the same as the data specified when calling the annotate API. `decorate` is used to turn the annotation data into a document object model (DOM) representation.
-The uid passed through to `decorate` is either the uid field in the data object (if it exists), or a randomly generated uid if it doesn't. Annotator will be responsible for putting the uid on the span. The user does not need to do that part.
+The uid (unique identification) passed through to `decorate` is either the uid field in the data object (if it exists), or a randomly generated uid if it doesn't. Annotator will be responsible for putting the uid on the span. The user does not need to do that part.
 
 ### 3. Making the Plugin Available
 
@@ -63,7 +64,7 @@ toolbar: "annotate-alpha”
 
 ### 4. Applying Annotations
 
-Now, that we have registered an annotation, we can use it by applying it to the current selection.
+After registering an annotation, we can use it by applying it to the current selection.
 > Note: If the selection is collapsed (single cursor rather than ranged selection) and is within a word, it will first perform a word grab function and then apply the annotation to the resulting word selection.
 The API to apply an annotation is `annotate`.  Annotations can be programmatically applied to selected text using:
 
@@ -100,8 +101,8 @@ console.log('We are now in comment: ' + obj.uid);
 });
 ```
 
-The `obj` parameter is only set if the `state` is true. `obj` has two fields when set: `uid`, which is the uid of the annotation currently nearest (in the DOM hierarchy) to the selection cursor, and `nodes`, which is an array of DOM nodes which make up this annotation. The reason that `nodes` are passed out is if the user might want to tag these nodes with a class to say that they are the 'active annotation'.
-The annotationChanged listeners should only fire when the state changes, or when the state stays true, but the uid changes. The full API is:
+The `obj` parameter is only set if the `state` is true. `obj` has two fields when set: `uid`, which is the uid of the annotation currently nearest (in the DOM hierarchy) to the selection cursor, and `nodes`, which is an array of DOM nodes which make up this annotation. `nodes` are made available to users in case the user might want to tag these nodes with a class to say that they are the 'active annotation'.
+The annotationChanged listeners should only fire when the state or the uid changes. The full API is:
 
 ```js
 /**
@@ -114,10 +115,9 @@ The annotationChanged listeners should only fire when the state changes, or when
 */
 annotationChanged: (name: string, callback): void
 ```
-
 ## Example
 
-Here is an example to create the Annotate API:
+To create the Annotate API, use the following example:
 
 ```js
 <script type="text/javascript">
@@ -163,7 +163,7 @@ tinymce.init({
          decorate: (uid, data) => {
            return {
              attributes: {
-               'data-mce-alpha': data.alpha
+               'data-mce-comment': data.comment
              }
            };
          }

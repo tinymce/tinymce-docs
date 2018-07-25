@@ -10,7 +10,7 @@ The TinyMCE Annotation API provides the ability to add, modify and delete annota
 
 ## Using the Annotator Plugin
 
-To setup the TinyMCE Annotation plugin, perform the following procedure:
+To se tup the TinyMCE Annotation plugin, perform the following procedure:
 
 ### 1. Configure the Annotate Button
 

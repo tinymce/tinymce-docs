@@ -6,7 +6,7 @@ keywords: annotation annotations
 ---
 
 ## Introduction
-The TinyMCE Annotation API provides the ability to add, modify and delete annotations, listen to text selection events, and retrieve all annotations with the same annotation name. The annotator tags all annotations with a unique identifier (uid) in addition to providing all the functions of formatting an API in TinyMCE core. This feature is accessible via `editor.annotator`. 
+The TinyMCE Annotation API provides the ability to add/modify/delete annotations, listen to text selection events, and retrieve all annotations with the same annotation name. The annotator tags all annotations with a unique identifier (uid) in addition to providing all the functions of formatting an API in the TinyMCE core. This feature is accessible via `editor.annotator`. 
 
 ## Using the Annotator Plugin
 

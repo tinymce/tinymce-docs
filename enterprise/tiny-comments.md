@@ -6,7 +6,7 @@ keywords: enterprise pricing video youtube vimeo mp3 mp4 mov movie clip film com
 ---
 
 The [Tiny Comment]({{ site.baseurl }}/plugins/tiny-comment/) plugin provides the ability to add comments to the content and collaborate with other users for content editing within the TinyMCE editor.
-The primary value that TinyComments offer is a user interface to create, reply, and delete comments. The TinyComments plugin is built upon the the new [Annotator API](({{ site.baseurl }}/plugins/annotations/) and uses annotations to create comment threads.
+The primary value that TinyComments offer is a user interface to create, reply, and delete comments. The TinyComments plugin is built upon the the new [Annotations API]({{ site.baseurl }}/plugins/annotations/) and uses annotations to create comment threads.
 
 > Note: The TinyComments plugin in its current state does not store the comments anywhere. However, it gives the integrator callback APIs to create, search, and store comment threads.
 
@@ -18,7 +18,7 @@ Example:
        toolbar: 'bold italic underline | tinycomments',
        plugins: 'tinycomments',
        content_style: '.mce-annotation { background: yellow; color: black; } .tc-active-annotation {background: lime; color: black; }',
-       annotations_create: create,
+       annotations_create: function() { console.log("comment created"); },
        annotations_reply: reply,
        annotations_get: get,
        annotations_delete: del,

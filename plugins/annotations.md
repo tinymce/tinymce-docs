@@ -6,7 +6,7 @@ keywords: annotation annotations
 ---
 
 ## Introduction
-The TinyMCE Annotation API provides the ability to add, modify and delete annotations, listen to text selection events, and retrieve all annotations with the same annotation name.
+The TinyMCE Annotation API provides the ability to add, modify and delete annotations, listen to text selection events, and retrieve all annotations with the same annotation name. The annotator tags all annotations with a unique identifier (uid) in addition to providing all the functions of formatting an API in TinyMCE core. This feature is accessible via `editor.annotator`. 
 
 ## Using the Annotator Plugin
 
@@ -52,7 +52,7 @@ ed.on('init', () => {
 ```
 This will register an annotation with the name `alpha`. In our example, when a `alpha` is being added to the document, a span marker will be created with class `alpha` and a data attribute for the author.
 > Note: The data passed through here is the same as the data specified when calling the annotate API. `decorate` is used to turn the annotation data into a document object model (DOM) representation.
-The uid (unique identification) passed through to `decorate` is either the uid field in the data object (if it exists), or a randomly generated uid if it doesn't. Annotator will be responsible for putting the uid on the span. The user does not need to do that part.
+The uid passed through to `decorate` is either the uid field in the data object (if it exists), or a randomly generated uid if it doesn't. Annotator will be responsible for putting the uid on the span. The user does not need to do that part.
 
 ### 3. Making the Plugin Available
 

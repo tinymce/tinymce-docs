@@ -6,22 +6,25 @@ keywords: enterprise pricing video youtube vimeo mp3 mp4 mov movie clip film com
 ---
 
 The [Tiny Comment]({{ site.baseurl }}/plugins/tiny-comment/) plugin provides the ability to add comments to the content and collaborate with other users for content editing within the TinyMCE editor.
-The primary value that TinyComments offer is a user interface to create, reply, and delete comments. TinyComments is a plugin that builds upon the the new Annotator API and uses annotations to create comment threads. The TinyComments plugin in its current state does not store the comments anywhere. However, it gives the integrator callback APIs to create, search, and store comment threads. 
+The primary value that TinyComments offer is a user interface to create, reply, and delete comments. The TinyComments plugin is built upon the the new [Annotator API](({{ site.baseurl }}/plugins/annotations/) and uses annotations to create comment threads.
+
+> Note: The TinyComments plugin in its current state does not store the comments anywhere. However, it gives the integrator callback APIs to create, search, and store comment threads.
 
 Example:
 
 ```js
-   ('tinycomments','The tinycomments enterprise plugin is not enabled on your API key. Please contact <a target="_blank" href="https://ephoxcommerce.staging.wpengine.com/product-category/tinymce/">Ephox</a> to upgrade your key.');
-(function (pluginName,message) {
-    tinymce.PluginManager.add(pluginName, function(editor) {
-        editor.on( "skinLoaded", function() {
-            editor.notificationManager.open({
-                text: message,
-                type: 'warning'
-            });
-        });
-    });
-});
+    tinymce.init({
+       selector: 'textarea',
+       toolbar: 'bold italic underline | tinycomments',
+       plugins: 'tinycomments',
+       content_style: '.mce-annotation { background: yellow; color: black; } .tc-active-annotation {background: lime; color: black; }',
+       annotations_create: create,
+       annotations_reply: reply,
+       annotations_get: get,
+       annotations_delete: del,
+       annotations_lookup: lookup,
+       annotations_username: 'Demo'
+     });
 ```
 
 [Tiny Comments]({{ site.baseurl }}/images/comments.png)

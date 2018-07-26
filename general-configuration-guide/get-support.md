@@ -5,7 +5,7 @@ description: Community and pro-grade support options.
 keywords: forum forums url absolute relative security xss
 ---
 
-> If you landed here having worked through the [General Configuration Guide]({{  site.baseurl }}/general-configuration-guide/advanced-install), congratulations, you are on you way to TinyMCE ninjahood :-) It's now time to deep-dive into [configuring the editor]({{ site.baseurl }}/configure/) and explor [plugin options]({{ site.baseurl }}/plugins/). We wish you well, and welcome you to TinyMCE. If you get stuck a great place to start is the [TinyMCE Forum](https://community.tinymce.com/).
+> If you landed here having worked through the [General Configuration Guide]({{  site.baseurl }}/general-configuration-guide/advanced-install), congratulations, you are on you way to TinyMCE ninjahood :-) It's now time to deep-dive into [configuring the editor]({{ site.baseurl }}/configure/) and explore [plugin options]({{ site.baseurl }}/plugins/). We wish you well, and welcome you to TinyMCE. If you get stuck a great place to start is the [TinyMCE Forum](https://community.tinymce.com/).
 
 
 ## Premium Support
@@ -22,7 +22,7 @@ Users of the open source Community Edition have free access to the [TinyMCE Foru
 
 ### Q: The icons are missing when installed on my server?
 
-TinyMCE 4 uses Web fonts for it's icons. Some web servers doesn't support the mime types needed for the font file extensions. Below are the mime types needed: the first part is the mime type the second part is the file extension that needs to be mapped. It's in apache mime type format other server might need some other format.
+TinyMCE 4 uses Web fonts for its icons. Some web servers do not support the mime types needed for the font file extensions. Below are the mime types needed - the first part is the mime type the second part is the file extension that needs to be mapped. It's in apache mime type format. Other servers might need a different format.
 
 | MIME type                     | File Extension |
 |:------------------------------|:---------------|
@@ -40,7 +40,7 @@ You are probably using an old `DOCTYPE` as of TinyMCE 4 a proper HTML5 doctype i
 
 ### Q: Is TinyMCE protected against XSS vulnerabilities?
 
-Protection against XSS attacks needs to be done on the server since if you can submit contents in a form using TinyMCE one could as easily disable all JavaScript and therefore bypass TinyMCE filtering and still submit HTML code with insecure content. You need to properly filter the HTML input on the server using things like [HTMLPurifier](http://htmlpurifier.org/).
+The server should have protection against XSS attacks implemented. Since if you can submit contents in a form using TinyMCE one could as easily disable all JavaScript and therefore bypass TinyMCE filtering and still submit HTML code with insecure content. You need to properly filter the HTML input on the server using things like [HTMLPurifier](http://htmlpurifier.org/).
 
 ### Q: How do I convert my URLs to relative, absolute, or absolute with domain?
 

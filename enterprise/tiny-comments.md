@@ -13,18 +13,63 @@ The primary value that TinyComments offer is a user interface to create, reply, 
 Example:
 
 ```js
-    tinymce.init({
-       selector: 'textarea',
-       toolbar: 'bold italic underline | tinycomments',
-       plugins: 'tinycomments',
-       content_style: '.mce-annotation { background: yellow; color: black; } .tc-active-annotation {background: lime; color: black; }',
-       annotations_create: (author, content, done, fail) => { console.log("comment created"); done(); },
-       annotations_reply: (uid, author, content, done, fail) => { console.log("comment reply"); done(); },
-       annotations_get: (done, fail) => { console.log("comment get"); done(); },
-       annotations_delete: (uid, done, fail) => { console.log("comment del"); done(); },
-       annotations_lookup: (uid, done, fail) => { console.log("comment lookup"); done(); },
-       annotations_username: 'Demo'
-     });
+   <script type="text/javascript">
+          const store = { };
+
+          let counter = 0;
+
+          const create = function(author, content, done, fail) {
+            if (content === 'fail') {
+              fail(new Error('Something has gone wrong...'));
+            } else {
+              const uid = 'annotation-' + counter;
+              counter++;
+              store[uid] = {
+                uid,
+                comments: [ { author, content } ]
+              };
+              done(uid);
+            }
+          };
+
+          const reply = function(uid, author, content, done, fail) {
+            const current = store[uid];
+            current.comments = current.comments.concat([
+              { author, content }
+            ]);
+            done();
+          };
+
+          const get = function(done, fail) {
+            const annotations = Object.keys(store).map(function(s) {
+              return store[s];
+            });
+
+            done(annotations);
+          };
+
+          const del = function(uid, done, fail) {
+            delete store[uid];
+            done(true);
+          };
+
+          const lookup = function(uid, done, fail) {
+            done(store[uid]);
+          };
+
+          tinymce.init({
+            selector: "#textarea",
+            toolbar: 'bold italic underline | tinycomments',
+            plugins: "tinycomments",
+            content_style: '.mce-annotation { background: yellow; color: black; } .tc-active-annotation {background: lime; color: black; }',
+            annotations_create: create,
+            annotations_reply: reply,
+            annotations_get: get,
+            annotations_delete: del,
+            annotations_lookup: lookup,
+            annotations_username: 'Some Guy'
+          });
+        </script>
 ```
 
 [Tiny Comments]({{ site.baseurl }}/images/comments.png)

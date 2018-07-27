@@ -18,11 +18,11 @@ Example:
        toolbar: 'bold italic underline | tinycomments',
        plugins: 'tinycomments',
        content_style: '.mce-annotation { background: yellow; color: black; } .tc-active-annotation {background: lime; color: black; }',
-       annotations_create: function() { console.log("comment created"); },
-       annotations_reply: reply,
-       annotations_get: get,
-       annotations_delete: del,
-       annotations_lookup: lookup,
+       annotations_create: (author, content, done, fail) => { console.log("comment created"); done(); },
+       annotations_reply: (uid, author, content, done, fail) => { console.log("comment reply"); done(); },
+       annotations_get: (done, fail) => { console.log("comment get"); done(); },
+       annotations_delete: (uid, done, fail) { console.log("comment del"); done(); },
+       annotations_lookup: (uid, done, fail) { console.log("comment lookup"); done(); },
        annotations_username: 'Demo'
      });
 ```

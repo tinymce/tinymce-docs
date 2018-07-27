@@ -6,11 +6,13 @@ keywords: annotation annotations
 ---
 
 ## Introduction
-The TinyMCE Annotation API provides the ability to add, modify and delete annotations, listen to text selection events, and retrieve all annotations with the same annotation name.
+The TinyMCE Annotation API provides the ability to add/modify/delete annotations, listen to text selection events, and retrieve all annotations with the same annotation name. The Annotations API is a part of the TinyMCE core and functions similar to the formatting APIs in TinyMCE core. 
+
+The primary value that the Annotations API provides is that it tags each annotation with a unique identifier(uid) which is accessible via `editor.annotator`. This highlights the annotated content and wraps it in annotation markers. These markers can either stay in the content or be removed on `getContent`, depending on the user configuration (persistent setting).
 
 ## Using the Annotator Plugin
 
-To se tup the TinyMCE Annotation plugin, perform the following procedure:
+To set up the TinyMCE Annotation plugin, perform the following procedure:
 
 ### 1. Configure the Annotate Button
 
@@ -29,7 +31,7 @@ To se tup the TinyMCE Annotation plugin, perform the following procedure:
                 ed.focus();
               },
        ```
-> Note: The annotator plugin is still in its experimental stage, hence we are using 'experimental' in 'ed.experimental.annotator.annotate'. A user will see a *Using experimental API: annotator* warning on his console. Please ignore this warning, we are working on this.
+> Note: The annotator plugin is still in its experimental stage, hence we are using 'experimental' in 'ed.experimental.annotator.annotate'. A user will see a *Using experimental API: annotator* warning on his console. Please ignore this warning, we are working on it.
 
 ### 2. Registering the Annotator Plugin
 
@@ -47,16 +49,15 @@ ed.on('init', () => {
            };
          }
        });
-
      });
 ```
-This will register an annotation with the name `alpha`. In our example, when a `alpha` is being added to the document, a span marker will be created with class `alpha` and a data attribute for the author.
+This will register an annotation with the name `alpha`. In our example, when an `alpha` is being added to the document, a span marker will be created with class `alpha` and a data attribute for the author.
 > Note: The data passed through here is the same as the data specified when calling the annotate API. `decorate` is used to turn the annotation data into a document object model (DOM) representation.
-The uid (unique identification) passed through to `decorate` is either the uid field in the data object (if it exists), or a randomly generated uid if it doesn't. Annotator will be responsible for putting the uid on the span. The user does not need to do that part.
+The uid passed through to `decorate` is either the uid field in the data object (if it exists), or a randomly generated uid if it doesn't. Annotator will be responsible for putting the uid on the span. The user does not need to do that part.
 
 ### 3. Making the Plugin Available
 
-For adding the annotate tool to the toolbar that is registered with `alpha` set the value of toolbar to:
+For adding the annotate tool to the toolbar that is registered with `alpha` set the value of the toolbar to:
 
 ```js
 toolbar: "annotate-alpha”
@@ -86,7 +87,7 @@ editor.annotator.annotate('alpha', {
 
 ### 5. Listening to Selection Events
 
-The annotator API can notify the user when the selection cursor moves in or out of a specified annotation. For example, for our 'alpha' scenario:
+The Annotator API can notify the user when the selection cursor moves in or out of a specified annotation. For example, for our 'alpha' scenario:
 
 ```js
 editor.annotator.annotationChanged('alpha', function (state, name, obj) {
@@ -163,7 +164,7 @@ tinymce.init({
          decorate: (uid, data) => {
            return {
              attributes: {
-               'data-mce-comment': data.comment
+               'data-mce-alpha': data.alpha
              }
            };
          }

@@ -20,10 +20,10 @@ To set up the TinyMCE Annotation plugin, perform the following procedure:
 
        
        ```js
-        setup: (ed) => {
+        setup: function(ed) {
             ed.addButton('annotate-alpha', {
               text: 'Annotate',
-              onclick: () => {
+              onclick: function() {
                 const comment = prompt('Comment with?');
                 ed.experimental.annotator.annotate('alpha', {
                   comment
@@ -31,6 +31,7 @@ To set up the TinyMCE Annotation plugin, perform the following procedure:
                 ed.focus();
               },
        ```
+       
 > Note: The annotator plugin is still in its experimental stage, hence we are using 'experimental' in 'ed.experimental.annotator.annotate'. A user will see a *Using experimental API: annotator* warning on his console. Please ignore this warning, we are working on it.
 
 ### 2. Registering the Annotator Plugin
@@ -38,10 +39,10 @@ To set up the TinyMCE Annotation plugin, perform the following procedure:
 The annotator API supports multiple annotation functions. Each annotation function must be registered with the annotator `(editor.annotator)`. 
 
 ```js
-ed.on('init', () => {
+ed.on('init', function() {
        ed.experimental.annotator.register('alpha', {
          persistent: true,
-         decorate: (uid, data) => {
+         decorate: function(uid, data) {
            return {
              attributes: {
                'data-mce-comment': alpha.comment
@@ -51,7 +52,9 @@ ed.on('init', () => {
        });
      });
 ```
+
 This will register an annotation with the name `alpha`. In our example, when an `alpha` is being added to the document, a span marker will be created with class `alpha` and a data attribute for the author.
+
 > Note: The data passed through here is the same as the data specified when calling the annotate API. `decorate` is used to turn the annotation data into a document object model (DOM) representation.
 The uid passed through to `decorate` is either the uid field in the data object (if it exists), or a randomly generated uid if it doesn't. Annotator will be responsible for putting the uid on the span. The user does not need to do that part.
 
@@ -66,6 +69,7 @@ toolbar: "annotate-alpha”
 ### 4. Applying Annotations
 
 After registering an annotation, we can use it by applying it to the current selection.
+
 > Note: If the selection is collapsed (single cursor rather than ranged selection) and is within a word, it will first perform a word grab function and then apply the annotation to the resulting word selection.
 The API to apply an annotation is `annotate`.  Annotations can be programmatically applied to selected text using:
 
@@ -74,6 +78,7 @@ editor.annotator.annotate('alpha', {
        author: 'me'
        });
 ```
+
 The data passed through `{ author: 'me' }` is passed all the way through to the `decorate` function specified during registration for the particular annotation (here: alpha). This data can be any object. In this way, users can tag markers with any attributes/classes they want on a per-annotation basis. Here, we will end up with a span with a `data-author` attribute set to `me`. If the user wants, they can specify a `uid` as part of the data here. This will be used instead of a randomly generated `uid` when passing through as the first argument to decorate.
 
 Example of specifying your own `uid`:
@@ -116,6 +121,7 @@ The annotationChanged listeners should only fire when the state or the uid chang
 */
 annotationChanged: (name: string, callback): void
 ```
+
 ## Example
 
 To create the Annotate API, use the following example:
@@ -133,10 +139,10 @@ tinymce.init({
 
    content_style: '.mce-annotation { background-color: darkgreen; color: white; }',
 
-   setup: (ed) => {
+   setup: function(ed) {
      ed.addButton('annotate-alpha', {
        text: 'Annotate',
-       onclick: () => {
+       onclick: function() {
          const comment = prompt('Comment with?');
          ed.experimental.annotator.annotate('alpha', {
            comment
@@ -144,10 +150,10 @@ tinymce.init({
          ed.focus();
        },
 
-       onpostrender: (ctrl) => {
+       onpostrender: function(ctrl) {
          const button = ctrl.control;
-         ed.on('init', () => {
-           ed.experimental.annotator.annotationChanged('alpha', (state, name, obj) => {
+         ed.on('init', function() {
+           ed.experimental.annotator.annotationChanged('alpha', function(state, name, obj) {
              if (! state) {
                button.active(false);
              } else {
@@ -158,10 +164,10 @@ tinymce.init({
        }
      });
 
-     ed.on('init', () => {
+     ed.on('init', function() {
        ed.experimental.annotator.register('alpha', {
          persistent: true,
-         decorate: (uid, data) => {
+         decorate: function(uid, data) {
            return {
              attributes: {
                'data-mce-alpha': data.alpha
@@ -180,6 +186,7 @@ tinymce.init({
     <textarea name="content"></textarea>
 </form>
 ```
+
 [Example]({{ site.baseurl }}/images/annotate.png)
 
 ## Retrieving All Annotations for a Particular Annotation Name

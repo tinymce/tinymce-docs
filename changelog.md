@@ -9,7 +9,6 @@ class: changelog
 {% capture changelog %}
 
 ## Version 4.8.0 July 11, 2018
-* Added new "experimental" object in editor, with initial Annotator API.
 * Fixed a bug where deleting paragraphs inside of table cells would delete the whole table cell.
 * Fixed a bug in the Table Plugin where removing row height set on the row properties dialog did not update the table.
 * Fixed a bug with the font select toolbar item didn't update correctly.

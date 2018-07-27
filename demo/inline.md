@@ -1,12 +1,12 @@
 ---
 layout: default
-title: Inline Mode Example
-title_nav: Inline Mode
-description_short: See how inline mode works.
-description: This example shows you the inline editing capabilities of TinyMCE. Click on the header or div below.
+title: Inline Editor Example
+title_nav: Inline Editor
+description_short: See how inline editor works.
+description: This example shows you the inline editing capabilities of TinyMCE. 
 keywords: example demo custom inline
 ---
 
-This example shows you the inline editing capabilities of TinyMCE. Click on the "editable header" or "editable div element" below.
+This example shows you the inline editing capabilities of TinyMCE. 
 
-{% include codepen.html id="YydQoj" %}
+{% include codepen.html id="bKPBjg" %}

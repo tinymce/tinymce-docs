@@ -21,8 +21,8 @@ Example:
        annotations_create: (author, content, done, fail) => { console.log("comment created"); done(); },
        annotations_reply: (uid, author, content, done, fail) => { console.log("comment reply"); done(); },
        annotations_get: (done, fail) => { console.log("comment get"); done(); },
-       annotations_delete: (uid, done, fail) { console.log("comment del"); done(); },
-       annotations_lookup: (uid, done, fail) { console.log("comment lookup"); done(); },
+       annotations_delete: (uid, done, fail) => { console.log("comment del"); done(); },
+       annotations_lookup: (uid, done, fail) => { console.log("comment lookup"); done(); },
        annotations_username: 'Demo'
      });
 ```

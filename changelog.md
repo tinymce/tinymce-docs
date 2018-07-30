@@ -8,6 +8,11 @@ class: changelog
 
 {% capture changelog %}
 
+## Version 4.8.1 July 26, 2018
+* Fixed a bug where the content of inline editors was being cleaned on every call of `editor.save()`.
+* Fixed a bug where the arrow of the Inlite Theme toolbar was being rendered incorrectly in RTL mode.
+* Fixed a bug with the Paste Plugin where pasting after inline contenteditable false elements moved the caret to the end of the line.
+
 ## Version 4.8.0 July 11, 2018
 * Fixed a bug where deleting paragraphs inside of table cells would delete the whole table cell.
 * Fixed a bug in the Table Plugin where removing row height set on the row properties dialog did not update the table.

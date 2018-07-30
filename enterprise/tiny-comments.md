@@ -5,7 +5,7 @@ description: Tiny Comments provides the ability to add comments to the content a
 keywords: enterprise pricing comment commenting
 ---
 
-The [Tiny Comments]({{ site.baseurl }}/plugins/tiny-comment/) plugin provides the user an ability to start or join a conversation by adding comments to the content within the TinyMCE editor.
+The Tiny Comments plugin provides the user an ability to start or join a conversation by adding comments to the content within the TinyMCE editor.
 Tiny Comments offers a user interface for adding and editing comments. Other users can collaborate by replying to these comments. You can delete the comment/comment thread if you want to remove it from your content.
 
 The Tiny Comments plugin is built upon the new [Annotations API]({{ site.baseurl }}/plugins/annotations/) and uses annotations to create comment threads.

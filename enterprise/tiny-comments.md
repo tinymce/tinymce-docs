@@ -82,7 +82,7 @@ Example:
           });
         </script>
 ```
-> Note: The administrator can disable the delete function for some users by setting the value of `done` to `done(false)`. In the following example we are configuring delete to be disabled for users other than the username `Author`:
+> Note: The administrator can disable the delete function for some users by passing `false` to the `done` callback. In the following example we are configuring delete to be disabled for users other than the username `Author`:
 ```js
 const del = function(uid, done, fail) {
    const data = store[uid];

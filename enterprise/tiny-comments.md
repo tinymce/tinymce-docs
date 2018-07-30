@@ -2,13 +2,15 @@
 layout: default
 title: Tiny Comments
 description: Tiny Comments provides the ability to add comments to the content and collaborate with other users for content editing.
-keywords: enterprise pricing video youtube vimeo mp3 mp4 mov movie clip film comment commenting mediaembed media
+keywords: enterprise pricing comment commenting
 ---
 
-The [Tiny Comment]({{ site.baseurl }}/plugins/tiny-comment/) plugin provides the ability to add comments to the content and collaborate with other users for content editing within the TinyMCE editor.
-The primary value that TinyComments offer is a user interface to create, reply, and delete comments. The TinyComments plugin is built upon the the new [Annotations API]({{ site.baseurl }}/plugins/annotations/) and uses annotations to create comment threads.
+The [Tiny Comments]({{ site.baseurl }}/plugins/tiny-comment/) plugin provides the ability to add comments to the content and collaborate with other users for content editing within the TinyMCE editor.
+Tiny Comments offers a user interface for adding and deleting comments to your content. Other users can collaborate by replying to the existing comments.
 
-> Note: The TinyComments plugin in its current state does not store the comments anywhere. However, it gives the integrator callback APIs to create, search, and store comment threads.
+The Tiny Comments plugin is built upon the new [Annotations API]({{ site.baseurl }}/plugins/annotations/) and uses annotations to create comment threads.
+
+> Note: The Tiny Comments plugin in its current state does not save the comments anywhere. However, it gives the integrator callback APIs to create, search, and save comment threads.
 
 Example:
 
@@ -26,7 +28,12 @@ Example:
               counter++;
               store[uid] = {
                 uid,
-                comments: [ { author, content } ]
+                comments: [
+                  {
+                    author: author,
+                    content: content
+                   }
+                 ]
               };
               done(uid);
             }
@@ -35,7 +42,10 @@ Example:
           const reply = function(uid, author, content, done, fail) {
             const current = store[uid];
             current.comments = current.comments.concat([
-              { author, content }
+              {
+               author: author,
+               content: content
+              }
             ]);
             done();
           };
@@ -67,9 +77,21 @@ Example:
             annotations_get: get,
             annotations_delete: del,
             annotations_lookup: lookup,
-            annotations_username: 'Some Guy'
+            annotations_username: 'Author'
           });
         </script>
+```
+> Note: An author of a comment can disable the delete function for the other users by setting the value of `done` to `done(false)`. For example:
+```js
+const del = function(uid, done, fail) {
+   const data = store[uid];
+   if (data && data.comments.length > 0 && data.comments[0].author !== 'Author') {
+      done(false);
+   } else {
+      delete store[uid];
+      done(true);
+   }
+  };
 ```
 
 [Tiny Comments]({{ site.baseurl }}/images/comments.png)

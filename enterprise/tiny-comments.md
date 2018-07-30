@@ -81,7 +81,7 @@ Example:
           });
         </script>
 ```
-> Note: An author of a comment can disable the delete function for the other users by setting the value of `done` to `done(false)`. For example:
+> Note: An author of a comment can disable the delete function for the other users by setting the value of `done` to `done(false)`. In the following example we are configuring delete to be disabled for users other than the username `Author`:
 ```js
 const del = function(uid, done, fail) {
    const data = store[uid];

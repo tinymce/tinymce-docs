@@ -32,7 +32,9 @@ setup: function(ed) {
     },
 ```
        
-> Note: The annotator plugin is still in its experimental stage, hence we are using 'experimental' in 'ed.experimental.annotator.annotate'. A user will see a *Using experimental API: annotator* warning on his console. Please ignore this warning, we are working on it.
+> Note: The annotator plugin is still in its experimental stage, hence we are using 'experimental' in 'ed.experimental.annotator.annotate'. A user will see a **Using experimental API: annotator** warning on his console. Please ignore this warning, we are working on it. 
+
+See [Configure TinyMCE]({{ site.baseurl }}/configure/) for more information on how to configure TinyMCE core.
 
 ### 2. Registering the Annotator Plugin
 
@@ -79,7 +81,7 @@ The API to apply an annotation is `annotate`.  Annotations can be programmatical
   });
 ```
 
-The data passed through `{ author: 'me' }` is passed all the way through to the `decorate` function specified during registration for the particular annotation (here: alpha). This data can be any object. In this way, users can tag markers with any attributes/classes they want on a per-annotation basis. Here, we will end up with a span with a `data-author` attribute set to `me`. If the user wants, they can specify a `uid` as part of the data here. This will be used instead of a randomly generated `uid` when passing through as the first argument to decorate.
+The data passed through `{ author: 'me' }` is passed all the way through to the `decorate` function specified during registration for the particular annotation (here: alpha). This data can be any object. In this way, users can tag markers with any attributes/classes they want on a per-annotation basis. Here, we will end up with a span with a `data-author` attribute set to `me`. If the user wants, they can specify a `uid` as part of the data here. This will be used instead of a randomly generated `uid` when passing through as the first argument to `decorate`.
 
 Example of specifying your own `uid`:
 
@@ -110,7 +112,7 @@ The `obj` parameter is only set if the `state` is true. `obj` has two fields whe
 * `uid`, which is the uid of the annotation currently nearest (in the DOM hierarchy) to the selection cursor.
 * `nodes`, which is an array of DOM nodes which make up this annotation. `nodes` are made available to users in case the user might want to tag these nodes with a class to say that they are the **active annotations**.
 
-The annotationChanged listeners should only fire when the state or the uid changes. The full API is:
+The `annotationChanged` listeners should only fire when the state or the uid changes. The full API is:
 
 ```js
 /**

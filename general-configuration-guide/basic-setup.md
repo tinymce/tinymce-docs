@@ -195,7 +195,7 @@ tinymce.init({
 });
 ```
 
-> Important! If a menu or toolbar control is associated with plugin functionality, we highlight that relationship under its respective plugin entry. Be sure to look for the icons.
+> Important: If a menu or toolbar control is associated with plugin functionality, we highlight that relationship under its respective plugin entry. Be sure to look for the icons.
 
 
 

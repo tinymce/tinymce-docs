@@ -24,9 +24,13 @@ Now you just need to extend your [TinyMCE configuration]({{ site.baseurl }}/conf
 
 * [Powerpaste]({{ site.baseurl }}/plugins/powerpaste/)
 * [Spell Checker]({{ site.baseurl }}/plugins/tinymcespellchecker/)
+
 > Note: `spellchecker_rpc_url` is **not** required when enabling this plugin via [TinyMCE Cloud]({{ site.baseurl }}/cloud-deployment-guide/)
+
 * [Image Tools (with configured image proxy)]({{ site.baseurl }}/plugins/imagetools/)
+
 > Note: We will configure the `imagetools_cors_hosts` and `imagetools_proxy` properties for you automatically.
+
 * [Accessibility Checker]({{ site.baseurl }}/plugins/a11ychecker/)
 * [Advanced Code Editor]({{ site.baseurl }}/plugins/advcode/)
 * [Enhanced Media Embed]({{ site.baseurl }}/plugins/mediaembed/)

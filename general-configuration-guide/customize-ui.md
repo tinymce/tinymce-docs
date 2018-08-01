@@ -134,7 +134,7 @@ tinymce.init({
 });
 ```
 
-If you tried this snippet, you would have noticed that although you added the `code` button to the toolbar and created a new menu called `Tools` with the menu item `Source code`, everything else on the toolbar disappeared. (See [this page](../first-steps/) if you need a basic HTML code block.)
+If you tried this snippet, you would have noticed that although you added the `code` button to the toolbar and created a new menu called `Tools` with the menu item `Source code`, everything else on the toolbar disappeared. (See [this page]({{ site.baseurl }}/quick-start/) if you need a basic HTML code block.)
 
 If you wanted the default toolbar *plus* the `code` functionality you'd need this:
 

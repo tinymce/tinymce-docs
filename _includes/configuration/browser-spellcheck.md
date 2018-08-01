@@ -17,4 +17,4 @@ tinymce.init({
 });
 ```
 
-For more information about spell checking in TinyMCE see [this page]({{ site.baseurl }}/get-started/spell-checking/) in the Get Started guide.
+For more information about spell checking in TinyMCE, see [this page]({{ site.baseurl }}/general-configuration-guide/spell-checking/) in the General-configuration-guide/ guide.

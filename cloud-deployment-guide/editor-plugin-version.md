@@ -8,7 +8,7 @@ keywords: tinymce cloud script textarea apiKey
 
 ## Specifying the TinyMCE editor version deployed from Cloud
 
-When deploying the [TinyMCE editor via the Cloud]({{ site.baseurl }}/get-started-cloud/editor-and-features), you’re able to specify the editor version via the provided URL.
+When deploying the [TinyMCE editor via the Cloud]({{ site.baseurl }}/cloud-deployment-guide/editor-and-features), you’re able to specify the editor version via the provided URL.
 
 Our documented default for loading TinyMCE via our Cloud is:
 
@@ -89,7 +89,7 @@ This channel deploys the latest release of TinyMCE that has passed our quality a
 
 ## Specifying the version of features/plugins deployed from the Cloud
 
-Whether you’re deploying both the [TinyMCE editor and premium plugins via the Cloud]({{ site.baseurl }}/get-started-cloud/editor-and-features) or deploying [only premium plugins from the Cloud]({{ site.baseurl }}/get-started-cloud/features-only), you can use URL query parameters to specify the version of each premium plugin.
+Whether you’re deploying both the [TinyMCE editor and premium plugins via the Cloud]({{ site.baseurl }}/cloud-deployment-guide/editor-and-features) or deploying [only premium plugins from the Cloud]({{ site.baseurl }}/cloud-deployment-guide/features-only), you can use URL query parameters to specify the version of each premium plugin.
 
 #### PowerPaste
 
@@ -159,7 +159,7 @@ Whether you’re deploying both the [TinyMCE editor and premium plugins via the 
 
 ## Specifying a Self-hosted deployment of features/plugins
 
-If you're deploying [only premium plugins from the Cloud]({{ site.baseurl }}/get-started-cloud/features-only), you may want to have some features served from the Cloud and some features served from your Self-hosted installation. This is also possible with URL query parameters and the special version name "SDK".
+If you're deploying [only premium plugins from the Cloud]({{ site.baseurl }}/cloud-deployment-guide/features-only), you may want to have some features served from the Cloud and some features served from your Self-hosted installation. This is also possible with URL query parameters and the special version name "SDK".
 
 The "SDK" version lets the TinyMCE Plugin Manager know that you're not using the Cloud version of a particular plugin and that it shouldn't serve the plugin
 from the Cloud. It also won't display any warning or error messages if you're not entitled to it.

@@ -7,7 +7,7 @@ description: This example shows you how to setup TinyMCE to produce different re
 keywords: example demo custom url conversion absolute relative url urls
 ---
 
-This example shows you how to setup TinyMCE to produce different results for its URLs in images and links. You can read more about these config options in the [TinyMCE FAQ]({{ site.baseurl }}/get-started/get-support/).
+This example shows you how to setup TinyMCE to produce different results for its URLs in images and links. You can read more about these config options in the [TinyMCE FAQ]({{ site.baseurl }}/general-configuration-guide/get-support/).
 
 ### Absolute URLs on links and images
 

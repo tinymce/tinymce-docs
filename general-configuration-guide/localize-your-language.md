@@ -10,7 +10,7 @@ As developers, we all hope our projects reach the wider audience, and for many o
 In this section, we show you how to change TinyMCE's user interface to suit your users' preferred language. The settings discussed in this section change the language that toolbar and menubar items, along with tooltips, are rendered in.
 
 
-> Pro tip: Language settings can be controlled in these configuration options: [directionality]({{ site.baseurl }}/configure/localization/#directionality), [language]({{ site.baseurl }}/configure/localization/#language) and  [language_url]({{ site.baseurl }}/configure/localization/#language_url). There is also a [Directionality Plugin]({{ site.baseurl }}/plugins/directionality/) that adds a toolbar button to control ltr-rtl behavior.
+> Pro tip: Language settings can be controlled in these configuration options: [directionality]({{ site.baseurl }}/configure/localization/#directionality), [language]({{ site.baseurl }}/configure/localization/#language) and  [language_url]({{ site.baseurl }}/configure/localization/#language_url). There is also a [Directionality Plugin]({{ site.baseurl }}/plugins/directionality/) that adds a toolbar button to control `ltr-rtl` behavior.
 
 ### Step 1
 
@@ -22,8 +22,9 @@ If you want to use one language only, click the download link on the far right o
 
 ### Step 2
 
-Unpack the language `js` file(s) into your `path/to/tinymce/langs/` folder. Important: if you 
-don't put the language pack in `langs/` the language settings will not work, unless you use the [language_url]({{ site.baseurl }}/configure/localization/#language_url) configuration option.
+Unpack the language `js` file(s) into your `path/to/tinymce/langs/` folder. 
+
+> Important: If you don't put the language pack in `langs/`, the language settings will not work unless you use the [language_url]({{ site.baseurl }}/configure/localization/#language_url) configuration option.
 
 ### Step 3
 

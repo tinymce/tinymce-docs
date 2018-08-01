@@ -1,8 +1,8 @@
 ## content_style
 
-This option allows you to set custom CSS styles as a string that will be injected into the editor's iframe.
+This option allows you to set custom CSS styles as a string that is injected into the editor's iframe.
 
-These styles are useful for previewing content as it will appear outside the editor. Since these styles are not saved with the content, it is important that they match the styles in the location that the content will appear.
+These styles are useful for previewing content as it appears outside the editor. Since these styles are not saved with the content, it is important that they match the styles in the location that the content appears.
 
 **Type:** `String`
 

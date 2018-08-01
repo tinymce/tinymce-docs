@@ -8,7 +8,7 @@ keywords: tinymce cloud script textarea apiKey
 
 TinyMCE Cloud is the easiest way to integrate TinyMCE and upgrade to our premium plugins.
 
-You may use TinyMCE Cloud without an API key as mentioned in the [getting started]({{site.baseurl}}/get-started) Docs. However, to use our premium plugins or avoid the in-editor developer warning, you need to signup for an API key and update the script tag used to load the editor code into your application.
+You may use TinyMCE Cloud without an API key as mentioned in the [General Configuration]({{site.baseurl}}/general-configuration-guide) guide. However, to use our premium plugins or avoid the in-editor developer warning, you need to signup for an API key and update the script tag used to load the editor code into your application.
 
 All TinyMCE Cloud accounts include a free, pre-configured cloud image proxy service. This is setup using the [Image Tools]({{  site.baseurl }}/plugins/imagetools/) plugin.
 
@@ -24,7 +24,7 @@ To load TinyMCE for the very first time, you need to embed the TinyMCE editor co
 
 ### Step 2: Load, customize and interact with TinyMCE
 
-In addition to the advanced content creation solutions available in the Cloud offering, you have access to more than 40 open source plugins to enhance the editing experience. We have provided a range of [simple examples]({{ site.baseurl }}/demo/basic-example/) and we encourage you to review our walkthrough documentation that will help you [get started with TinyMCE]({{ site.baseurl }}/get-started/first-steps/).
+In addition to the advanced content creation solutions available in the Cloud offering, you have access to more than 40 open source plugins to enhance the editing experience. We have provided a range of [simple examples]({{ site.baseurl }}/demo/basic-example/) and we encourage you to review our walkthrough documentation that will help you [get started with TinyMCE]({{ site.baseurl }}/quick-start).
 
 ### Step 3: Specifying purchased TinyMCE plugins and toolbar/menu items
 
@@ -33,11 +33,11 @@ Lastly, you just need to extend your TinyMCE configuration to include any of the
 * [PowerPaste]({{ site.baseurl }}/plugins/powerpaste/)
 * [Spell Checker]({{ site.baseurl }}/plugins/tinymcespellchecker/)
 
-**Note:** `spellchecker_rpc_url` is **not** required when enabling this plugin via [TinyMCE Cloud]({{ site.baseurl }}/get-started-cloud/)
+> Note: `spellchecker_rpc_url` is **not** required when enabling this plugin via [TinyMCE Cloud]({{site.baseurl}}/general-configuration-guide).
 
 * [Image Tools (with configured image proxy)]({{ site.baseurl }}/plugins/imagetools/)
 
-**Note:** `imagetools_cors_hosts` and `imagetools_proxy` are *not* required to be configured when enabling this plugin via [TinyMCE Cloud]({{ site.baseurl }}/get-started-cloud/)
+> Note:`imagetools_cors_hosts` and `imagetools_proxy` are *not* required to be configured when enabling this plugin via [TinyMCE Cloud]({{site.baseurl}}/general-configuration-guide).
 
 * [Accessibility Checker]({{ site.baseurl }}/plugins/a11ychecker/)
 * [Advanced Code Editor]({{ site.baseurl }}/plugins/advcode/)
@@ -72,20 +72,20 @@ Migrating from a Self-hosted environment to the Cloud is a relatively straightfo
 
 ### Step 2: Update custom plugin paths
 
-If you have any custom created plugins (or if you've modified any of the existing plugins), in order for these plugins to continue operating with your Cloud deployment, you'll need to reference these plugins via [external_plugins]({{ site.baseurl }}/configure/integration-and-setup/#external_plugins) rather than the regular [plugins]({{ site.baseurl }}/get-started/work-with-plugins/) configuration element.
+If you have any custom created plugins (or if you've modified any of the existing plugins), in order for these plugins to continue operating with your Cloud deployment, you'll need to reference these plugins via [external_plugins]({{ site.baseurl }}/configure/integration-and-setup/#external_plugins) rather than the regular [plugins]({{ site.baseurl }}/general-configuration-guide/work-with-plugins/) configuration element.
 
 ### Step 3: Specify purchased TinyMCE plugins and toolbar buttons
 
-Now you just need to extend your [TinyMCE configuration]({{ site.baseurl }}/configure/) to include any additional plugins (and associated toolbar/menu items) you’ve purchased. You will find enablement guides here:
+Now, you just need to extend your [TinyMCE configuration]({{ site.baseurl }}/configure/) to include any additional plugins (and associated toolbar/menu items) you’ve purchased. You will find enablement guides here:
 
 * [Powerpaste]({{ site.baseurl }}/plugins/powerpaste/)
 * [Spell Checker]({{ site.baseurl }}/plugins/tinymcespellchecker/)
 
-**Note:** `spellchecker_rpc_url` is **not** required when enabling this plugin via [TinyMCE Cloud]({{ site.baseurl }}/get-started-cloud/)
+> Note: `spellchecker_rpc_url` is **not** required when enabling this plugin via [TinyMCE Cloud]({{site.baseurl}}/general-configuration-guide).
 
 * [Image Tools (with configured image proxy)]({{ site.baseurl }}/plugins/imagetools/)
 
-**Note:** `imagetools_cors_hosts` and `imagetools_proxy` are *not* required to be configured when enabling this plugin via [TinyMCE Cloud]({{ site.baseurl }}/get-started-cloud/)
+> Note:`imagetools_cors_hosts` and `imagetools_proxy` are *not* required to be configured when enabling this plugin via [TinyMCE Cloud]({{site.baseurl}}/general-configuration-guide).
 
 * [Accessibility Checker]({{ site.baseurl }}/plugins/a11ychecker/)
 * [Advanced Code Editor]({{ site.baseurl }}/plugins/advcode/)

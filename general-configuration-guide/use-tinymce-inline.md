@@ -12,7 +12,7 @@ The inline editing mode is useful when creating user experiences where you want 
 
 When in inline editing mode the editor does not replace the selected element with its own iframe, but instead edits the element's content in place instead.
 
-The distraction-free theme is responsible for rendering the editor lightweight inline mode. This is an optional more lightweight distraction-free UI for the editor. It provides options to quickly insert links, images, and tables into your content. See [Inlite Theme]({{ site.baseurl }}/themes/inlite/) for more information.
+The distraction-free theme is responsible for rendering the editor lightweight inline mode. This is an optional more lightweight distraction-free UI for the editor. It provides options to quickly insert links, images, and tables into your content. For a sample view of this mode, visit the [Distraction-free Editor]({{ site.baseurl }}/demo/editor-dfree/) example page. See [Inlite Theme]({{ site.baseurl }}/themes/inlite/) for more information.
 
 ## Forms-based editing vs. inline editing
 

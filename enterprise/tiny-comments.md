@@ -73,12 +73,12 @@ Example:
             plugins: "tinycomments",
             content_style: '.mce-annotation { background: yellow; color: black; } .tc-active-annotation {background: lime; color: black; }',
 // `content_style` is defined to highlight the commented text in the editor. You can choose a different color as per your preference.
-            annotations_create: create,
-            annotations_reply: reply,
-            annotations_get: get,
-            annotations_delete: del,
-            annotations_lookup: lookup,
-            annotations_username: 'Author'
+            tinycomments_create: create,
+            tinycomments_reply: reply,
+            tinycomments_get: get,
+            tinycomments_delete: del,
+            tinycomments_lookup: lookup,
+            tinycomments_username: 'Author'
           });
         </script>
 ```

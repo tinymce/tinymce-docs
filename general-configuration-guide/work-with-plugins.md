@@ -66,7 +66,7 @@ tinymce.init({
 });
 ```
 
-Impressive! We now have a button on the toolbar users can click to get into source code mode, but we lost our default toolbar controls. We explained why this happens back in [Basic Configuration](../basic-setup/), so if this behavior surprises you, please re-read that section.
+Impressive! We now have a button on the toolbar users can click to get into source code mode, but we lost our default toolbar controls. We explained why this happens back in the [Basic Setup](../basic-setup/), so if this behavior surprises you, please re-read that section.
 
 Let's quickly take our minimal design one step further by deleting the menubar entirely.
 

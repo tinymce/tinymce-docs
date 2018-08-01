@@ -5,12 +5,12 @@ description: Localize TinyMCE with global language capabilities.
 keywords: internationalization localization languages
 ---
 
-As developers we all hope our projects reach a wide audience, and for many of us they do. This is why it is important that TinyMCE is easy to localize its language.
+As developers, we all hope our projects reach the wider audience, and for many of us, they do. This is why it is vital that TinyMCE is easy to localize its language.
 
-In this section we will show you how to change TinyMCE's user interface to suit your users' preferred language. The settings discussed in this section change the language that toolbar and menubar items, along with tooltips, are rendered in.
+In this section, we show you how to change TinyMCE's user interface to suit your users' preferred language. The settings discussed in this section change the language that toolbar and menubar items, along with tooltips, are rendered in.
 
 
-> Pro tip: language settings can be controlled in these configuration options: [directionality]({{ site.baseurl }}/configure/localization/#directionality), [language]({{ site.baseurl }}/configure/localization/#language) and  [language_url]({{ site.baseurl }}/configure/localization/#language_url). There is also a [Directionality Plugin]({{ site.baseurl }}/plugins/directionality/) that adds a toolbar button to control ltr-rtl behavior.
+> Pro tip: Language settings can be controlled in these configuration options: [directionality]({{ site.baseurl }}/configure/localization/#directionality), [language]({{ site.baseurl }}/configure/localization/#language) and  [language_url]({{ site.baseurl }}/configure/localization/#language_url). There is also a [Directionality Plugin]({{ site.baseurl }}/plugins/directionality/) that adds a toolbar button to control ltr-rtl behavior.
 
 ### Step 1
 
@@ -18,7 +18,7 @@ Go to our [language download page](https://www.tinymce.com/download/language-pac
 
 If you want to use one language only, click the download link on the far right of the table. However, if you want to download multiple language packs, first check the box beside each language you need and then click the download button at the bottom of the table.
 
-> Important note: the language packs provided via our language download page are translated by the TinyMCE community. We greatly appreciate their contribution!
+> Important: The TinyMCE community translates the language packs provided on our language download page. We much appreciate their contribution!
 
 ### Step 2
 

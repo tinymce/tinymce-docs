@@ -1,14 +1,14 @@
 ---
 layout: default
 title: Cloud Deployment of Editor & Plugins
-description_short: Learn how to setup the TinyMCE editor via our Cloud, or migrate from a Self-hosted environment.
+description_short: Learn how to set up the TinyMCE editor via our Cloud, or migrate from a Self-hosted environment.
 description: TinyMCE Cloud customers, you'll be up and running in less than 5 minutes.
 keywords: tinymce cloud script textarea apiKey
 ---
 
 TinyMCE Cloud is the easiest way to integrate TinyMCE and upgrade to our premium plugins.
 
-You may use TinyMCE Cloud without an API key as mentioned in the [getting started]({{site.baseurl}}/get-started) docs. However, to use our premium plugins or avoid the in-editor developer warning, you will need to signup for an API key and update the script tag used to load the editor code into your application.
+You may use TinyMCE Cloud without an API key as mentioned in the [getting started]({{site.baseurl}}/get-started) Docs. However, to use our premium plugins or avoid the in-editor developer warning, you need to signup for an API key and update the script tag used to load the editor code into your application.
 
 All TinyMCE Cloud accounts include a free, pre-configured cloud image proxy service. This is setup using the [Image Tools]({{  site.baseurl }}/plugins/imagetools/) plugin.
 
@@ -16,7 +16,7 @@ All TinyMCE Cloud accounts include a free, pre-configured cloud image proxy serv
 
 ### Step 1: Embed the TinyMCE Cloud script tag into your webpage
 
-In order to load TinyMCE for the very first time, you need to embed the TinyMCE editor code into your application. This is done by adding the following script tag into your app, or in the case of a web page the `<head>` of the page:
+To load TinyMCE for the very first time, you need to embed the TinyMCE editor code into your application. The code embedding is done by adding the following script tag into your app, or in the case of a web page the `<head>` of the page:
 
 ```js
 <script src="{{ site.cdnurl }}?apiKey=your_API_key"></script>
@@ -44,7 +44,7 @@ Lastly, you just need to extend your TinyMCE configuration to include any of the
 * [Enhanced Media Embed]({{ site.baseurl }}/plugins/mediaembed/)
 * [Link Checker]({{ site.baseurl }}/plugins/linkchecker/)
 
-**Note:** Please note that after purchasing a plugin, it may take up to 30 minutes for the plugin to be included with your editor. You may also need to clear your browser's cache.
+> Note: Please note that after purchasing a plugin, it may take up to 30 minutes for the plugin to become available with your editor. You may also need to clear your browser's cache.
 
 ### Step 4: Forward proxy configuration
 If your company network has a forward proxy that controls access to the internet, please ensure that the following URLs are accessible via this proxy.
@@ -55,7 +55,7 @@ If your company network has a forward proxy that controls access to the internet
 * https://hyperlinking.tinymce.com
 * https://spelling.tinymce.com
 
-**Important:** Please ensure that the `tiny-api-key` and `tinymce-api-key` headers are retained while requesting the list of URLs above.
+> Important: Please ensure that the `tiny-api-key` and `tinymce-api-key` headers are retained while requesting the list of URLs above.
 
 ### Step 5: Specifying a translation
 If you wish to use a language other than English (US), please [download a language pack](https://www.tinymce.com/i18n) and then [specify its location]({{ site.baseurl }}/configure/localization/#language_url) with the `language_url` configuration option.
@@ -64,7 +64,7 @@ If you wish to use a language other than English (US), please [download a langua
 
 ### Step 1: Replace existing reference to tinymce.min.js
 
-Migrating from the a Self-hosted environment to the Cloud is a relatively straightforward process. Please remove your existing script tag that loads TinyMCE’s JavaScript (typically a reference to `tinymce.min.js` either hosted in your own application or available via one our our legacy CDNs) and replace this script tag with the following:
+Migrating from a Self-hosted environment to the Cloud is a relatively straightforward process. Please remove your existing script tag that loads TinyMCE’s JavaScript (typically a reference to `tinymce.min.js` either hosted in your application or available via one our legacy CDNs). Now, replace this script tag with the following:
 
 ```js
 <script src="{{ site.cdnurl }}?apiKey=your_API_key"></script>

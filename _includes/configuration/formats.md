@@ -1,16 +1,16 @@
 ## formats
 
-This option enables you to override and add custom "formats" to the editor.
+The format option enables you to override and add custom **formats** to the editor.
 
-A format is the style that gets applied to text when you press, for example, the bold button inside the editor. TinyMCE is equipped with a text formatter engine that enables you to specify exactly what it should produce when the user clicks (in this example) the bold button.
+A format is a style that gets applied to text when you press, for example, the bold button inside the editor. TinyMCE is equipped with a text formatting engine that enables you to precisely specify what it should produce when the user clicks (in this example) the bold button.
 
 Check out the [custom formats example]({{ site.baseurl }}/demo/format-custom/) for a demonstration of this option.
 
 ### Style merging
 
-Similar elements and styles will be merged by default to reduce the output HTML size. So for example, if you select a word and select a font size and font face for it, it will merge these two styles into one `span` element instead of one `span` for **each format type**.
+Similar elements and styles are merged by default to reduce the output HTML size. So for example, if you select a word and select a font size and font face for it, it merges these two styles into one `span` element instead of one `span` for **each format type**.
 
-### Built in formats
+### Built-in formats
 
 TinyMCE has some built in formats that you can override. These are:
 
@@ -38,7 +38,7 @@ TinyMCE has some built in formats that you can override. These are:
 * dt, dd
 * samp
 
-Some built in formats `fontsize`, `fontname`, `forecolor`, `hilitecolor` uses a variable in their definition named `%value`. This one gets replaced with the user selected item such as a color value. Check the variable substitution section below for details.
+Some built-in formats `fontsize`, `fontname`, `forecolor`, `hilitecolor` uses a variable in their definition named `%value`. This one gets replaced with the user selected item such as a color value. Check the variable substitution section below for details.
 
 ### Format parameters
 
@@ -46,18 +46,18 @@ For each format you can specify some additional parameters:
 
 | Name       | Summary          |
 |------------|------------------|
-| inline     | Tag name of the inline element to use as a wrapper, for example "span". Will be used to wrap the current selection.
-| block      | Tag name of the block element to use as a wrapper, for example "h1". Existing block elements within the selection will be replaced with this block element. |
-| selector   | CSS3 selector pattern that will be used to find elements within the selection. It can be used to apply classes to specific elements only, for example only to odd rows in a table. |
-| classes    | Space separated list of classes that will be applied to the selected or newly created inline/block element. |
+| inline     | Tag name of the inline element to use as a wrapper, for example, "span" is used to wrap the current selection.
+| block      | Tag name of the block element to use as a wrapper, for example, "h1". Existing block elements within the selection are replaced with this block element. |
+| selector   | CSS3 selector pattern that is used to find elements within the selection. It can be used to apply classes to specific elements only, for example only to odd rows in a table. |
+| classes    | Space-separated list of classes that are applied to the selected or newly created inline/block element. |
 | styles     | Key/value object with CSS styles to apply to the selected or newly created inline/block element (e.g. color, backgroundColor, textDecoration, etc). |
 | attributes | Key/value object with attributes to apply to the selected or newly created inline/block element. |
-| exact      | Makes sure that the format won't be merged with other wrappers having the same format. We use it to avoid conflicts between text-decorations for underline and strikethough formats. |
+| exact      | Makes sure that the format is not merged with other wrappers having the same format. We use it to avoid conflicts between text-decorations for underline and strikethrough formats. |
 | wrapper    | States that the format is a container format for block elements. For example a div wrapper or blockquote. |
 
 ### Example of usage of the formats option
 
-This example overrides some of the built in formats and tells TinyMCE to apply classes instead of inline styles. It also includes a custom format that produced `h1` elements with a title attribute and a `red` CSS style.
+This example overrides some of the built-in formats and tells TinyMCE to apply classes instead of inline styles. It also includes a custom format that produced `h1` elements with a title attribute and a `red` CSS style.
 
 **Type:** `Object`
 
@@ -85,7 +85,7 @@ tinymce.init({
 
 ### Using custom formats
 
-Custom formats can be handled though the TinyMCE API. Here is a basic example of usage for the custom format defined above.
+Custom formats can be handled through the TinyMCE API. Here is a basic example of usage for the custom format defined above.
 
 ```js
 // Applying the specified format
@@ -97,7 +97,7 @@ tinymce.activeEditor.formatter.remove('custom_format');
 
 ### Variable substitution
 
-You can use variables in your format definition these variables are then replaced with ones specified the specified in the call to the apply function. Here is an example how to use variables within formats.
+You can use variables in your format definition. These variables are then replaced with the ones specified in the call to the apply function. Here is an example of how to use variables within formats.
 
 ```js
 // Registering the special format with a variable
@@ -109,7 +109,7 @@ tinymce.activeEditor.formatter.apply('custom_format', {value : 'red'});
 
 ### Removing a format
 
-It is possible to remove formats via the `removeformat` option.
+Use the `removeformat` option to remove formats.
 
 **Type:** `Array`
 

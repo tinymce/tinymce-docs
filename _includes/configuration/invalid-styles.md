@@ -2,8 +2,8 @@
 
 The **invalid_styles** option enables you to restrict the styles that are valid for specific elements. This option takes two formats: 
 
-* **String format** - that is a simple list of global styles to disallow.
-* **Complex object format** - where you can specify invalid styles for individual elements.
+* **String format** - This is a simple list of global styles to disallow.
+* **Object format** - This is a more complex format where you can specify invalid styles for individual elements.
 
 ### Simple global classes
 

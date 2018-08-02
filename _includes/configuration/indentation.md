@@ -1,8 +1,8 @@
 ## indentation
 
-This option allows specification of the indentation level for indent/outdent buttons in the UI.
+The **indentation** option allows specification of the indentation level for indent/outdent buttons in the UI.
 
-This defaults to 30px but can be any value.
+The **indentation** option defaults to 30px but can be any value.
 
 **Type:** `String`
 
@@ -19,7 +19,7 @@ tinymce.init({
 
 ## indent_use_margin
 
-This option sets if the editor should use margin instead of padding when indenting content.
+The **indent_use_margin** option is set if the editor should use margin instead of padding when indenting content.
 
 **Type:** `boolean`
 

@@ -6,7 +6,7 @@ description: Theme that renders a light weight UI for inline editing.
 keywords: theme inlite
 ---
 
-The `inlite` theme is responsible for rendering the editor lightweight inline mode. The current default theme is called [modern]({{ site.baseurl }}/themes/modern/) this is an optional more light weight distraction free UI for the editor.
+The `inlite` theme is responsible for rendering the editor lightweight inline mode. The current default theme is called [modern]({{ site.baseurl }}/themes/modern/) this is an optional more lightweight distraction-free UI for the editor.
 
 ##### Example:
 

@@ -44,7 +44,7 @@ These are the new plugins in 4.0: [anchor]({{ site.baseurl }}/plugins/anchor), [
 
 ## Removed themes
 
-The "simple" and "advanced" themes where removed in 4.0.
+The "simple" and "advanced" themes were removed in 4.0.
 
 ## New themes
 
@@ -52,7 +52,7 @@ The new "modern" theme was introduced in 4.0. More themes will be added in the f
 
 ## Event handling
 
-TinyMCE 4.0 has a new way of binding events. Instead of the old dispatcher method it uses the more common "on" and "off" like for example jQuery. It also allows you to bind multiple events and cancel events using the more common preventDefault and stopPropagation. Check the [API documentation]({{ site.baseurl }}/api/class/tinymce.editor/) for a full list of events.
+TinyMCE 4.0 has a new way of binding events. Instead of the old dispatcher method, it uses the more common "on" and "off" like for example jQuery. It also allows you to bind multiple events and cancel events using the more common preventDefault and stopPropagation. Check the [API documentation]({{ site.baseurl }}/api/class/tinymce.editor/) for a full list of events.
 
 ```js
 // Old event
@@ -68,7 +68,7 @@ editor.on('init', function(args) {
 
 ## User interface
 
-The user interface logic has been changed completely in 4.0. Though the easier methods of adding buttons and windows are the same, more complex controls or dialogs needs to be written in the new API style.
+The user interface logic has been changed entirely in 4.0. Though the more straightforward methods of adding buttons and windows are the same, more complex controls or dialogs needs to be written in the new API style.
 
 ## Control states
 
@@ -132,4 +132,4 @@ TinyMCE produces HTML5 loose output as of 4.0. This means it can handle all new 
 
 ## Using the compat3x plugin
 
-As a last resort one can use the [compat3x plugin]({{ site.baseurl }}/plugins/compat3x) it mimic parts of the 3.x API contains a few files removed from 4.x. We only recommend this as a last resort and it won't work for all plugins. But most plugins should work right out of the box we tested it with some of our own old 3.x plugins.
+As a last resort one can use the [compat3x plugin]({{ site.baseurl }}/plugins/compat3x) it mimics parts of the 3.x API contains a few files removed from 4.x. We only recommend this as a last resort, and it won't work for all plugins. But most plugins should work right out of the box we tested it with some of our old 3.x plugins.

@@ -1,6 +1,6 @@
 ## keep_styles
 
-This option will keep the editor's current text style when a user presses enter/return.
+The **keep_styles** option will keep the editor's current text style when a user presses `enter/return`.
 
 **Type:** `Boolean`
 

@@ -2,7 +2,7 @@
 layout: default
 title: Mobile theme
 title_nav: Mobile
-description: Theme that renders a mobile ready user interface.
+description: Theme that renders a mobile-ready user interface.
 keywords: theme mobile
 ---
 

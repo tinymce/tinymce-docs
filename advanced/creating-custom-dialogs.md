@@ -9,7 +9,7 @@ keywords: custom dialog dialogs cdn windowmanager
 
 ## Dialogs as HTML pages
 
-In TinyMCE 3.x all dialogs were HTML pages that got loaded into an iframe or window. This was changed in TinyMCE 4 to make it easier to make plugins and fully support CDNs. But you can still load HTML based pages into TinyMCE dialogs by using the WindowManager.
+In TinyMCE 3.x all dialogs were HTML pages that got loaded into an iframe or window. This was changed in TinyMCE 4 to make it easier to create plugins and fully support CDNs. But you can still load HTML based pages into TinyMCE dialogs by using the WindowManager.
 
 ```js
 // Opens a HTML page inside a TinyMCE dialog

@@ -26,8 +26,8 @@ A slimmed down version of TinyMCE is the default "Visual Editor" in WordPress. I
 * Search and Replace in the editor
 * Ability to set Font Family and Font Size
 
-With this plugin you will also be able to enable the TinyMCE menu. It is a convenient way to access a lot of features that are not used frequently.
+With this plugin, you will also be able to enable the TinyMCE menu. It is a convenient way to access a lot of features that are not used frequently.
 
 #### A note about integrations
 
-> We are pleased to reference third-party integrations/code to help you build great products with TinyMCE. If you have queries about this integration, please contact the developer directly.
+> Note:  We are pleased to reference third-party integrations/code to help you build great products with TinyMCE. If you have queries about this integration, please contact the developer directly.

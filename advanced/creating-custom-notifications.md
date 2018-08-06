@@ -7,11 +7,11 @@ description: Learn how to make custom dialogs with NotificationManager.
 keywords: custom notification notifications cdn notificationmanager
 ---
 
-In version 4.3 of TinyMCE, a new feature was added to allow you to display notifications.  These notifications can be customized in several ways.
+In version 4.3 of TinyMCE, a new feature was added to allow you to display notifications. These notifications can be customized in several ways.
 
 ## Text
 
-By far the most important setting when opening a notification, the "text" property will set the text that is displayed at the center of the notification.
+**Text** is the most critical setting when opening a notification. The "text" property sets the text that is displayed at the center of the notification.
 
 ```js
 editor.notificationManager.open({
@@ -21,14 +21,14 @@ editor.notificationManager.open({
 
 ## Type
 
-There are several notification types that differ in colour and purpose.  These are:
+There are several types of notifications that differ in color and purpose. These are:
 
 * success
 * info
 * warning
 * error
 
-To set a notification type, set the "type" property when opening the notification.  Leaving this property blank will use the default style.
+To set a notification type, set the "type" property when opening the notification. Leaving this property blank will use the default style.
 
 ```js
 editor.notificationManager.open({
@@ -73,7 +73,7 @@ editor.notificationManager.open({
 
 ## Progress Bar
 
-By setting the "progressBar" property to true, the notification will display a progress bar to the left of the close button and to the right of the text.
+By setting the "progressBar" property to `True`, the notification will display a progress bar to the left of the close button and to the right of the text.
 
 ```js
 var notification = editor.notificationManager.open({

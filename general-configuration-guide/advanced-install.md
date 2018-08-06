@@ -1,12 +1,12 @@
 ---
 layout: default
-title: 05. Advanced Install
+title: 04. Advanced Install
 description_short: Cloud, package managers, Self-hosted, jQuery and custom builds.
 description: Learn how to install TinyMCE via TinyMCE Cloud, package manager options, Self-hosted, jQuery and custom build options.
 keywords: npm bower composer nuget
 ---
 
-So far we've been using the Cloud version of TinyMCE and while it's the easiest way to instantiate the editor it may not always be the best way. In this section we will explain some of TinyMCE's other installation options including package managers, downloading the SDK, and the custom build option.
+So far we've been using the Cloud version of TinyMCE and while it's the easiest way to instantiate the editor it may not always be the best way. In this section we explain some of TinyMCE's other installation options including package managers, downloading the SDK, and the custom build option.
 
 On this page you'll find a detailed guide to our installation options:
 
@@ -60,5 +60,5 @@ On this page you'll find a detailed guide to our installation options:
 
 {% include install/custom.md %}
 
-{% assign_page next_page = "/get-started/work-with-plugins/index.html" %}
+{% assign_page next_page = "/general-configuration-guide/work-with-plugins/index.html" %}
 {% include next-step.html next=next_page %}

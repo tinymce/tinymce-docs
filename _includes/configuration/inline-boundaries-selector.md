@@ -1,6 +1,6 @@
 ## inline_boundaries_selector
 
-This option allows you specify what elements the inline boundaries should apply to. This defaults to `a[href],code` but can be extended to include other inline elements such as `b`, `strong`, `i`, `em`.
+The **inline_boundaries_selector** option allows you specify what elements the inline boundaries should apply to. This defaults to `a[href],code` but can be extended to include other inline elements such as `b`, `strong`, `i`, and `em`.
 
 If you add new elements, you need to add CSS selectors for them in the content CSS. See the [Boilerplate Content CSS page]({{ site.baseurl }}/advanced/boilerplate-content-css/) for details.
 

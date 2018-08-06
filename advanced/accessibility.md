@@ -24,15 +24,15 @@ The `ALT+key` shortcut assumes that you are currently in the content area of the
 
 ## How to work with the editor
 
-When you navigate into an editor instance, you will land in the content area. Arrowing up and down will give you paragraphs, headings and other items such as links. Note that NVDA and Firefox treat links as embedded characters, you have to actually navigate into them to read their texts, but they are accessible.
+When you navigate into an editor instance, you will land in the content area. Arrowing up and down will give you paragraphs, headings and other items such as links. Note that NVDA and Firefox treat links as embedded characters, you have actually to navigate into them to read their texts, but they are accessible.
 
-From the content, you can press Alt+F9 to move focus to the menu bar. Left and Right arrow navigate through the top menu items like in your average desktop app, and Down Arrow will actually open a menu. Note that from there, you cannot go Right or Left through the various drop-down menus, you first have to press Escape once to go back to the top level. When on sub menus, Right Arrow will walk into them, escape will back up.
+From the content, you can press Alt+F9 to move focus to the menu bar. Left and Right arrow navigate through the top menu items like in your average desktop app, and Down Arrow will open a menu. Note that from there, you cannot go Right or Left through the various drop-down menus, you first have to press Escape once to go back to the top level. When on submenus, Right Arrow will walk into them, escape will back up.
 
-Alternatively, you can press `Alt+F10` to focus toolbars. You’ll land on the first toolbar and can tab or arrow through the items. Submenu items will have the sub menus or panels opened via Down Arrow, and closed via Escape. When you reach the end of one toolbar, Right Arrow and LeftArrow wrap to the next and previous tool bars respectively. Escape will bring you back into the main content area.
+Alternatively, you can press `Alt+F10` to focus toolbars. You’ll land on the first toolbar and can tab or arrow through the items. Submenu items will have the sub-menus or panels opened via Down Arrow, and closed via Escape. When you reach the end of one toolbar, Right Arrow and LeftArrow wrap to the next and previous toolbars respectively. Escape will bring you back into the central content area.
 
-From either the menus or toolbars, you can open dialogs such as Insert/Edit or Image/Video. These are multi-page dialogs with at least two tabs at the top. When in the tab list, Right and Left arrow will move between the tabs, Space will make the current tab active. Tab moves into the panel and through the controls. OK will accept changes, Escape or Cancel will discard.
+From either the menus or toolbars, you can open dialogs such as Insert/Edit or Image/Video. These are multi-page dialogs with at least two tabs at the top. When in the tab list, the Right and Left arrow will move between the tabs, Space will make the current tab active. Tab moves into the panel and through the controls. `OK` will accept changes, `Escape` or `Cancel` will discard.
 
-On the tool bars and in the formatting menu, you can insert emoticons or change the text and background colors. These are panels you open by pressing DownArrow or Enter on their respective menu/toolbar items, and then use the arrow keys to select the actual item you want applied/inserted. All of these items are also made to talk, so a blind person can change the text color as well and know what they’re doing.
+On the toolbars and in the formatting menu, you can insert emoticons or change the text and background colors. These are panels you open by pressing DownArrow or Enter on their respective menu/toolbar items and then use the arrow keys to select the actual item you want to be applied/inserted. All of these items are also made to talk, so a blind person can change the text color as well and know what they’re doing.
 
 ## Credits
 

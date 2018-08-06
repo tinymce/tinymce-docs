@@ -9,17 +9,17 @@ Why make TinyMCE mobile friendly? Simple. We live in a "mobile-first" world and 
 
 We're pleased to introduce TinyMCE mobile, available in version 4.7.
 
-TinyMCE mobile is designed to run on iOS Safari and Android Chrome. You'll find a streamlined interface, while keeping the most common touch interactions easily to hand.
+TinyMCE mobile is designed to run on iOS Safari and Android Chrome. You'll find a streamlined interface while keeping the most common touch interactions easily to hand.
 
 Configuration is relatively easy, so let's get started.
 
-> Please note that TinyMCE mobile will not work on non-mobile environments.
+> Note: Please note that TinyMCE mobile will not work on non-mobile environments.
 
 ## How to TinyMCE mobile setup
 
 Please visit our [mobile page](https://www.tinymce.com/mobile) to download the Self-hosted package. If you're using TinyMCE Cloud, mobile is available in the `dev` branch.
 
-## How to setup mobile
+## How to set up mobile
 
 In the snippet below, we use TinyMCE Cloud to instantiate the editor. If you're using the Self-hosted package, replace `cloud.tinymce.com/dev/` with your path to `tinymce.min.js`.
 
@@ -41,9 +41,10 @@ In the snippet below, we use TinyMCE Cloud to instantiate the editor. If you're 
 </html>
 ```
 
-> If you're new to TinyMCE Cloud, [this post](https://go.tinymce.com/blog/how-to-get-tinymce-cloud-up-in-less-than-5-minutes/) will help you get the editor instantiated quickly.
-> Don't forget to add your API key to the `init`:
-> `<script src="https://cloud.tinymce.com/stable/tinymce.min.js?apiKey=your_API_key"></script>`
+> Note:  If you're new to TinyMCE Cloud, [this post](https://go.tinymce.com/blog/how-to-get-tinymce-cloud-up-in-less-than-5-minutes/) will help you get the editor instantiated quickly.
+
+> Tip: Don't forget to add your API key to the `init`:
+`<script src="https://cloud.tinymce.com/stable/tinymce.min.js?apiKey=your_API_key"></script>`
 
 If you have experience using TinyMCE, you'll see in the above example that we added a new parameter called `mobile`. To use mobile mode on touch-only devices, add this to your editor settings, specifying the `theme` as `mobile`:
 
@@ -63,7 +64,7 @@ The example above loads default settings. To configure the mobile experience, co
 
 ## Configuring mobile
 
-One way to think about configuring TinyMCE mobile, is that it is a subset of config options within your standard `tinymce` init. When on a mobile device, anything included in the [mobile]({{ site.baseurl }}/configure/editor-appearance/#mobile) section will be used instead of the equivalent values in the top-level of settings of your config.
+One way to think about configuring TinyMCE mobile is that it is a subset of config options within your standard `tinymce` init. When on a mobile device, anything included in the [mobile]({{ site.baseurl }}/configure/editor-appearance/#mobile) section will be used instead of the equivalent values in the top-level of settings of your config.
 
 Therefore, the mobile section allows you to have completely different settings for mobile than non-mobile devices. The main configuration options you can change are `plugins` and `toolbar`.
 

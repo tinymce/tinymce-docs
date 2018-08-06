@@ -8,7 +8,7 @@ keywords: tinymce cloud script textarea apiKey
 
 ## Specifying the TinyMCE editor version deployed from Cloud
 
-When deploying the [TinyMCE editor via the Cloud]({{ site.baseurl }}/get-started-cloud/editor-and-features), you’re able to specify the editor version via the provided for URL.
+When deploying the [TinyMCE editor via the Cloud]({{ site.baseurl }}/cloud-deployment-guide/editor-and-features), you’re able to specify the editor version via the provided URL.
 
 Our documented default for loading TinyMCE via our Cloud is:
 
@@ -16,11 +16,11 @@ Our documented default for loading TinyMCE via our Cloud is:
 <script src="{{ site.cdnurl }}?apiKey=your_API_key"></script>
 ```
 
-The `stable` in this URL specifies the latest release of TinyMCE that successfully completed our quality assurance testing process. If it is necessary to not use the latest, stable TinyMCE version, you can customize this value. You'll find all [supported versions here](https://cloud.tinymce.com/versions/tiny).
+The `stable` in this URL specifies the latest release of TinyMCE that completed our quality assurance testing process, successfully. If you are not using the latest, stable TinyMCE version, you can customize this value. You'll find all [supported versions here](https://cloud.tinymce.com/versions/tiny).
 
 ### Selecting specific version numbers
 
-You can specify a *Major* version number, a *Major.Minor* version number or a *Major.Minor.Patch* version number. If the Minor or Patch versions numbers are not present, it will default to the latest Minor and Patch version released.
+You can specify a *Major* version number, a *Major.Minor* version number or a *Major.Minor.Patch* version number. If the Minor or Patch versions numbers are not present, it has the latest Minor and Patch version released, by default.
 
 ##### Example
 Major version number (e.g. "4").
@@ -49,17 +49,17 @@ The following would load TinyMCE *4.3.2*:
 <script src="https://cloud.tinymce.com/4.3.2/tinymce.min.js?apiKey=your_API_key"></script>
 ```
 
-If you enter a version that doesn’t exist, you will get a HTTP 404 response.
+If you enter a version that doesn’t exist, you get a **HTTP 404** error in response.
 
-### dev, testing and stable releases
+### dev, testing, and stable releases
 
-Rather than specifying a specific TinyMCE version to load from the Cloud, you can choose to select from our `dev`, `testing` and `stable` release channels.
+Rather than specifying a specific TinyMCE version to load from the Cloud, you can choose to select from our `dev`, `testing`, and `stable` release channels.
 
-Updates to these channels will be automatic, providing you and your users with the latest TinyMCE version matching the criteria below.
+Updates to these channels are automatic, providing you and your users with the latest TinyMCE version matching the criteria below.
 
 #### dev release channel
 
-This channel will deploy the absolute latest released TinyMCE version seen in the [TinyMCE changelog]({{ site.baseurl }}/changelog/). The current version of TinyMCE available through the `dev` channel [can be found at here](https://cloud.tinymce.com/dev/version.txt).
+This channel deploys the absolute latest released TinyMCE version seen in the [TinyMCE changelog]({{ site.baseurl }}/changelog/). The current version of TinyMCE available through the `dev` channel [can be found at here](https://cloud.tinymce.com/dev/version.txt).
 
 ##### Example
 
@@ -69,7 +69,7 @@ This channel will deploy the absolute latest released TinyMCE version seen in th
 
 #### testing release channel
 
-This channel will deploy the current candidate for release to the `stable` channel. This TinyMCE build will be next in line for our quality assurance testing process. The current version of TinyMCE available through the `testing` channel [can be found at here](https://cloud.tinymce.com/testing/version.txt).
+This channel deploys the current candidate for release to the `stable` channel. This TinyMCE build is next in line for our quality assurance testing process. The current version of TinyMCE available through the `testing` channel [can be found at here](https://cloud.tinymce.com/testing/version.txt).
 
 ##### Example
 
@@ -79,7 +79,7 @@ This channel will deploy the current candidate for release to the `stable` chann
 
 #### stable release channel
 
-This channel will deploy the latest release of TinyMCE that has passed our quality assurance process. The current version of TinyMCE available through the `stable` channel [can be found here](https://cloud.tinymce.com/stable/version.txt).
+This channel deploys the latest release of TinyMCE that has passed our quality assurance process. The current version of TinyMCE available through the `stable` channel [can be found here](https://cloud.tinymce.com/stable/version.txt).
 
 ##### Example
 
@@ -89,7 +89,7 @@ This channel will deploy the latest release of TinyMCE that has passed our quali
 
 ## Specifying the version of features/plugins deployed from the Cloud
 
-Whether you’re deploying both the [TinyMCE editor and premium plugins via the Cloud]({{ site.baseurl }}/get-started-cloud/editor-and-features) or deploying [only premium plugins from the Cloud]({{ site.baseurl }}/get-started-cloud/features-only), you can use URL query parameters to specify the version of each premium plugin.
+Whether you’re deploying both the [TinyMCE editor and premium plugins via the Cloud]({{ site.baseurl }}/cloud-deployment-guide/editor-and-features) or deploying [only premium plugins from the Cloud]({{ site.baseurl }}/cloud-deployment-guide/features-only), you can use URL query parameters to specify the version of each premium plugin.
 
 #### PowerPaste
 
@@ -159,9 +159,9 @@ Whether you’re deploying both the [TinyMCE editor and premium plugins via the 
 
 ## Specifying a Self-hosted deployment of features/plugins
 
-If you're deploying [only premium plugins from the Cloud]({{ site.baseurl }}/get-started-cloud/features-only), you may want to have some features served from the Cloud and some features served from your own Self-hosted installation. This is also possible with URL query parameters and the special version name "sdk".
+If you're deploying [only premium plugins from the Cloud]({{ site.baseurl }}/cloud-deployment-guide/features-only), you may want to have some features served from the Cloud and some features served from your Self-hosted installation. This is also possible with URL query parameters and the special version name "SDK".
 
-The "sdk" version lets the TinyMCE Plugin Manager know that you're not using the Cloud version of a particular plugin and that it shouldn't serve the plugin
+The "SDK" version lets the TinyMCE Plugin Manager know that you're not using the Cloud version of a particular plugin and that it shouldn't serve the plugin
 from the Cloud. It also won't display any warning or error messages if you're not entitled to it.
 
 

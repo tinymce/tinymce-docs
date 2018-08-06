@@ -6,11 +6,11 @@ description: Premium plugins compatibility with TinyMCE editor versions.
 keywords: tinymce cloud script textarea apiKey
 ---
 
-Some of our premium plugins are only compatible with certain versions of TinyMCE.
+Some of our premium plugins are only compatible with specific versions of TinyMCE.
 
-If you’re deploying [both the TinyMCE editor and premium plugins via the Cloud]({{ site.baseurl }}/get-started-cloud/editor-and-features), use the following matrix in conjunction with the optional parameters for specifying editor version and [plugin version]({{ site.baseurl }}/get-started-cloud/editor-plugin-version) to ensure your editor and plugins are compatible.
+If you’re deploying [both the TinyMCE editor and premium plugins via the Cloud]({{ site.baseurl }}/cloud-deployment-guide/editor-and-features), use the following matrix in conjunction with the optional parameters for specifying editor version and [plugin version]({{ site.baseurl }}/cloud-deployment-guide/editor-plugin-version) to ensure your editor and plugins are compatible.
 
-If you’re deploying [premium plugins *only* via the Cloud]({{ site.baseurl }}/get-started-cloud/features-only), you’ll need to ensure you’re either only loading plugins supported for your editor version, or that your editor is upgraded to the required release.
+If you’re deploying [premium plugins *only* via the Cloud]({{ site.baseurl }}/cloud-deployment-guide/features-only), you’ll need to ensure you’re either only loading plugins supported for your editor version, or that your editor is upgraded to the required release.
 
 |   | [PowerPaste]({{ site.baseurl }}/plugins/powerpaste/) | [Spell Checker]({{ site.baseurl }}/plugins/tinymcespellchecker/) | [Accessibility Checker]({{ site.baseurl }}/plugins/a11ychecker/) | Mentions | [Advanced Code Editor]({{ site.baseurl }}/plugins/advcode/) | MoxieManager<br/>(SDK ONLY) | [Enhanced Media Embed]({{ site.baseurl }}/plugins/mediaembed/) | [Link Checker]({{ site.baseurl }}/plugins/linkchecker/) |
 |  ------ | :------: | :------: | :------: | ------ | :------: | :------: | :------: | :------: |

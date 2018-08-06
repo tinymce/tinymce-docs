@@ -6,7 +6,7 @@ description: Theme that renders iframe or inline modes using the tinymce core UI
 keywords: theme modern
 ---
 
-The `modern` theme is responsible for rendering the editor in iframe or inline mode. This is currently the default theme there is also a light weight theme called [inlite]({{ site.baseurl }}/themes/inlite/)
+The `modern` theme is responsible for rendering the editor in iframe or inline mode. This is currently the default theme there is also a lightweight theme called [inlite]({{ site.baseurl }}/themes/inlite/)
 
 ##### Example:
 

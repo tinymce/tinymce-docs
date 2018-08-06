@@ -48,7 +48,7 @@ $ npm install --save @tinymce/tinymce-react
 ```
 
 You can also define what cloud channel you want to use out these three
-* `stable` **Default**. The most stable and well tested version that has passed the Ephox quality assurance process.
+* `stable` **Default**. The most stable and well-tested version that has passed the Ephox quality assurance process.
 * `testing` This channel will deploy the current candidate for release to the `stable` channel.
 * `dev` The cutting edge version of TinyMCE updated daily for the daring users.
 
@@ -62,7 +62,7 @@ For more info on the different channels see the [documentation](https://www.tiny
 
 #### Loading TinyMCE by yourself
 
-To opt out of using TinyMCE cloud you have to make TinyMCE globally available yourself. This can be done either by hosting the `tinymce.min.js` file by youself and adding a script tag to you HTML or, if you are using a module loader, installing TinyMCE with npm. For info on how to get TinyMCE working with module loaders check out [this page in the documentation](https://www.tinymce.com/docs/advanced/usage-with-module-loaders/).
+To opt out of using TinyMCE cloud, you have to make TinyMCE globally available yourself. This can be done either by hosting the `tinymce.min.js` file by yourself and adding a script tag to your HTML or, if you are using a module loader, installing TinyMCE with npm. For info on how to get TinyMCE working with module loaders check out [this page in the documentation](https://www.tinymce.com/docs/advanced/usage-with-module-loaders/).
 
 ```html
 <script src="{{site.cdnurl}}"></script>
@@ -108,4 +108,4 @@ $ npm start
 
 ## 6. Keep on hacking
 
-This was just a simple guide how to get started, the rest is up to you.
+This was just a simple guide on how to get started. For more complex configuration information, see the  React documentation.

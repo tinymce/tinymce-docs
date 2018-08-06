@@ -8,11 +8,11 @@ keywords: tinymce cloud script textarea apiKey
 
 If you’re already comfortable hosting and maintaining [TinyMCE Community edition](https://www.tinymce.com/download/), or you’re running a web application where you have no control over the TinyMCE instance, you’re still able to load our premium TinyMCE plugins from TinyMCE Cloud. Think of this as a hybrid deployment.
 
-Signing up for a free API key will entitle you to the premium [Image Tools]({{  site.baseurl }}/plugins/imagetools/) plugin, with a provided cloud image proxy server already configured. You can purchase our Premium Plugins at any time once your API key is setup.
+Signing up for a free API key entitles you to the premium [Image Tools]({{  site.baseurl }}/plugins/imagetools/) plugin, with a provided cloud image proxy server already configured. You can purchase our Premium Plugins at any time once your API key is set up.
 
 ## Step 1: Embed your custom script tag into your webpage
 
-Within your webpage, after you’ve specified your script tag to load the TinyMCE editor code, you’ll need to then add the following new script:
+Within your webpage, after you’ve specified your script tag to load the TinyMCE editor code, you’ll then need to add the following new script:
 
 ```js
 <script src="https://cloud.tinymce.com/stable/plugins.min.js?apiKey=your_API_key"></script>
@@ -24,15 +24,19 @@ Now you just need to extend your [TinyMCE configuration]({{ site.baseurl }}/conf
 
 * [Powerpaste]({{ site.baseurl }}/plugins/powerpaste/)
 * [Spell Checker]({{ site.baseurl }}/plugins/tinymcespellchecker/)
-**Note:** `spellchecker_rpc_url` is **not** required when enabling this plugin via [TinyMCE Cloud]({{ site.baseurl }}/get-started-cloud/)
+
+> Note: `spellchecker_rpc_url` is **not** required when enabling this plugin via [TinyMCE Cloud]({{ site.baseurl }}/cloud-deployment-guide/)
+
 * [Image Tools (with configured image proxy)]({{ site.baseurl }}/plugins/imagetools/)
-**Note:** We will configure the `imagetools_cors_hosts` and `imagetools_proxy` properties for you automatically.
+
+> Note: We will configure the `imagetools_cors_hosts` and `imagetools_proxy` properties for you automatically.
+
 * [Accessibility Checker]({{ site.baseurl }}/plugins/a11ychecker/)
 * [Advanced Code Editor]({{ site.baseurl }}/plugins/advcode/)
 * [Enhanced Media Embed]({{ site.baseurl }}/plugins/mediaembed/)
 * [Link Checker]({{ site.baseurl }}/plugins/linkchecker/)
 
-> Please note that after purchasing a plugin, it may take up to 30 minutes for the plugin to be included with your editor. You may also need to clear your browser's cache.
+> Note: Please note that after purchasing a plugin, it may take up to 30 minutes for the plugin to become available with your editor. You may also need to clear your browser's cache.
 
 Here is a complete example, whereby:
 

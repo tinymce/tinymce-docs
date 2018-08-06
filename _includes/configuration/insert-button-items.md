@@ -1,6 +1,6 @@
 ## insert_button_items
 
-This enables you to specify what to display in the insert buttons menu. The value of this option should be a space separated list of menu item [control identifiers]({{ site.baseurl }}/advanced/editor-control-identifiers/#menucontrols) or | for a menu separator.
+The **insert_button_items** enables you to specify what to display in the insert buttons menu. The value of this option should be a space-separated list of menu items [control identifiers]({{ site.baseurl }}/advanced/editor-control-identifiers/#menucontrols) or `|` for a menu separator.
 
 **Type:** `String`
 

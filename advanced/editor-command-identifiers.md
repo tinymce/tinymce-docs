@@ -7,6 +7,7 @@ description: The complete list of exposed editor commands.
 keywords: editorcommands editorcommand execcommand Bold Italic Underline Strikethrough Superscript Subscript Cut Copy Paste Unlink JustifyLeft JustifyCenter JustifyRight JustifyFull JustifyNone InsertUnorderedList InsertOrderedList ForeColor HiliteColor FontName FontSize RemoveFormat mceBlockQuote FormatBlock mceInsertContent mceToggleFormat mceSetContent Indent Outdent InsertHorizontalRule mceToggleVisualAid mceInsertLink selectAll delete mceNewDocument Undo Redo mceAutoResize mceShowCharmap mceCodeEditor mceDirectionLTR mceDirectionRTL mceFullPageProperties mceFullscreen mceImage mceInsertDate mceInsertTime mceInsertDefinitionList mceNonBreaking mcePageBreak mcePreview mcePrint mceSave SearchReplace mceSpellcheck mceInsertTemplate mceVisualBlocks mceVisualChars mceMedia mceAnchor mceTableSplitCells mceTableMergeCells mceTableInsertRowBefore mceTableInsertRowAfter mceTableInsertColBefore mceTableInsertColAfter mceTableDeleteCol mceTableDeleteRow mceTableCutRow mceTableCopyRow mceTablePasteRowBefore mceTablePasteRowAfter mceTableDelete mceInsertTable mceTableRowProps mceTableCellProps mceEditImage
 ---
 
+
 Here is a list of the currently exposed editor commands. All these commands are provided by `tinymce` and not by the browser's internal commands. These commands can be executed using the [execCommand]({{ site.baseurl }}/api/tinymce/tinymce.editorcommands/#execcommand) function.
 
 | Command     | Core/Plugin      | Description   |
@@ -46,8 +47,8 @@ Here is a list of the currently exposed editor commands. All these commands are 
 | selectAll | Core  | Selects all contents in the editor. |
 | delete | Core  | Deletes the current selection from the editor. |
 | mceNewDocument | Core  | Removes all contents of the editor. |
-| Undo | Core  | Undoes the last change to the editor. |
-| Redo | Core  | Redoes the last change to the editor. |
+| Undo | Core  | To undo the last change to the editor. |
+| Redo | Core  | To redo the last change to the editor. |
 | mceAutoResize | [autoresize]({{ site.baseurl }}/plugins/autoresize/) | Auto resizes the editor to the contents. |
 | mceShowCharmap | [charmap]({{ site.baseurl }}/plugins/charmap/) | Opens the character map dialog. |
 | mceCodeEditor | [code]({{ site.baseurl }}/plugins/code/) | Opens the code editor dialog. |
@@ -86,8 +87,8 @@ Here is a list of the currently exposed editor commands. All these commands are 
 | mceTableDeleteRow | [table]({{ site.baseurl }}/plugins/table) | Deletes the current row. |
 | mceTableCutRow | [table]({{ site.baseurl }}/plugins/table) | Cuts the current row into table clipboard. |
 | mceTableCopyRow | [table]({{ site.baseurl }}/plugins/table) | Copies the current row into table clipboard. |
-| mceTablePasteRowBefore | [table]({{ site.baseurl }}/plugins/table) | Paste the clipboard row before the current row. |
-| mceTablePasteRowAfter  | [table]({{ site.baseurl }}/plugins/table) | Paste the clipboard row after the current row. |
+| mceTablePasteRowBefore | [table]({{ site.baseurl }}/plugins/table) | Pastes the clipboard row before the current row. |
+| mceTablePasteRowAfter  | [table]({{ site.baseurl }}/plugins/table) | Pastes the clipboard row after the current row. |
 | mceTableDelete | [table]({{ site.baseurl }}/plugins/table) | Deletes the current table. |
 | mceInsertTable | [table]({{ site.baseurl }}/plugins/table) | Opens the insert table dialog. |
 | mceTableRowProps | [table]({{ site.baseurl }}/plugins/table) | Opens the table row properties dialog. |

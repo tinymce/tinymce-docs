@@ -33,8 +33,8 @@ Here is a list of the toolbar/menu controls that the core and plugins provides. 
 | outdent | core | Outdents the current list item or block element. |
 | indent | core | Indents the current list item or block element. |
 | blockquote | core | Applies block quote format to the current block level element. |
-| undo | core | Undoes the last operation. |
-| redo | core | Redoes the last undoed operation. |
+| undo | core | To undo the last operation. |
+| redo | core | To redo the last undone operation. |
 | removeformat | core | Removes the formatting from the current selection. |
 | subscript | core | Applies subscript format to the current selection. |
 | superscript | core | Applies superscript format to the current selection. |
@@ -54,40 +54,40 @@ Here is a list of the toolbar/menu controls that the core and plugins provides. 
 | anchor | [anchor]({{ site.baseurl }}/plugins/anchor/) | Creates/Edits anchor elements. |
 | pagebreak | [pagebreak]({{ site.baseurl }}/plugins/pagebreak/) | Inserts a pagebreak into the editor. |
 | spellchecker | [spellchecker]({{ site.baseurl }}/plugins/spellchecker/) | Spellchecks the current editor contents. |
-| searchreplace | [searchreplace]({{ site.baseurl }}/plugins/searchreplace/) | Search and/or Replaces contents within the editor. |
+| searchreplace | [searchreplace]({{ site.baseurl }}/plugins/searchreplace/) | Searches and/or Replaces contents within the editor. |
 | visualblocks | [visualblocks]({{ site.baseurl }}/plugins/visualblocks/) | Toggles the visibility of block elements. |
 | visualchars | [visualchars]({{ site.baseurl }}/plugins/visualchars/) | Toggles the visibility of non breaking character elements. |
 | code | [code]({{ site.baseurl }}/plugins/code/) | Opens the code dialog |
 | help | [help]({{ site.baseurl }}/plugins/help/) | Opens the help dialog |
 | fullscreen | [fullscreen]({{ site.baseurl }}/plugins/fullscreen/) | Toggles fullscreen mode |
 | insertdatetime | [insertdatetime]({{ site.baseurl }}/plugins/insertdatetime/) | Inserts the current date/time |
-| media | [media]({{ site.baseurl }}/plugins/media/) | Created/Edits embedded media elements. |
+| media | [media]({{ site.baseurl }}/plugins/media/) | Creates/Edits embedded media elements. |
 | nonbreaking | [nonbreaking]({{ site.baseurl }}/plugins/nonbreaking/) | Inserts a nonbreaking space into the editor. |
 | save | [save]({{ site.baseurl }}/plugins/save/) | Saves the current editor contents to a form or ajax call. |
 | cancel | [save]({{ site.baseurl }}/plugins/save/) | Cancels/Resets the editor contents to it's initial state. |
-| table | [table]({{ site.baseurl }}/plugins/table/) | Create/Edit table elements. |
-| tabledelete | [table]({{ site.baseurl }}/plugins/table/) | Delete table. |
+| table | [table]({{ site.baseurl }}/plugins/table/) | Creates/Edits table elements. |
+| tabledelete | [table]({{ site.baseurl }}/plugins/table/) | Deletes table. |
 | tablecellprops | [table]({{ site.baseurl }}/plugins/table/) | Opens the Cell properties dialog. |
-| tablemergecells | [table]({{ site.baseurl }}/plugins/table/) | Merge the selected cells. |
-| tablesplitcells | [table]({{ site.baseurl }}/plugins/table/) | Split the current merged cell. |
-| tableinsertrowbefore | [table]({{ site.baseurl }}/plugins/table/) | Insert a new row before the current one. |
-| tableinsertrowafter | [table]({{ site.baseurl }}/plugins/table/) | Insert a new row after the current one. |
-| tabledeleterow | [table]({{ site.baseurl }}/plugins/table/) | Delete the current row row. |
+| tablemergecells | [table]({{ site.baseurl }}/plugins/table/) | Merges the selected cells. |
+| tablesplitcells | [table]({{ site.baseurl }}/plugins/table/) | Splits the current merged cell. |
+| tableinsertrowbefore | [table]({{ site.baseurl }}/plugins/table/) | Inserts a new row before the current one. |
+| tableinsertrowafter | [table]({{ site.baseurl }}/plugins/table/) | Inserts a new row after the current one. |
+| tabledeleterow | [table]({{ site.baseurl }}/plugins/table/) | Deletes the current row row. |
 | tablerowprops | [table]({{ site.baseurl }}/plugins/table/) | Opens the Row properties dialog. |
-| tablecutrow | [table]({{ site.baseurl }}/plugins/table/) | Cut the selected rows. |
+| tablecutrow | [table]({{ site.baseurl }}/plugins/table/) | Cuts the selected rows. |
 | tablecopyrow | [table]({{ site.baseurl }}/plugins/table/) | Copies the selected rows. |
-| tablepasterowbefore | [table]({{ site.baseurl }}/plugins/table/) | Paste rows before the current one. |
-| tablepasterowafter | [table]({{ site.baseurl }}/plugins/table/) | Paste rows after the current one. |
+| tablepasterowbefore | [table]({{ site.baseurl }}/plugins/table/) | Pastes rows before the current one. |
+| tablepasterowafter | [table]({{ site.baseurl }}/plugins/table/) | Pastes rows after the current one. |
 | tableinsertcolbefore | [table]({{ site.baseurl }}/plugins/table/) | Inserts a column before the current one. |
 | tableinsertcolafter | [table]({{ site.baseurl }}/plugins/table/) | Inserts column after the current one. |
 | tabledeletecol | [table]({{ site.baseurl }}/plugins/table/) | Deletes the selected column. |
-| rotateleft | [imagetools]({{ site.baseurl }}/plugins/imagetools/) | Rotate the current image counterclockwise. |
-| rotateright | [imagetools]({{ site.baseurl }}/plugins/imagetools/) | Rotate the current image clockwise. |
-| flipv | [imagetools]({{ site.baseurl }}/plugins/imagetools/) | Flip the current image vertically. |
-| fliph | [imagetools]({{ site.baseurl }}/plugins/imagetools/) | Flip the current image horizontally. |
-| editimage | [imagetools]({{ site.baseurl }}/plugins/imagetools/) | Edit the current image in the image dialog. |
+| rotateleft | [imagetools]({{ site.baseurl }}/plugins/imagetools/) | Rotates the current image counterclockwise. |
+| rotateright | [imagetools]({{ site.baseurl }}/plugins/imagetools/) | Rotates the current image clockwise. |
+| flipv | [imagetools]({{ site.baseurl }}/plugins/imagetools/) | Flips the current image vertically. |
+| fliph | [imagetools]({{ site.baseurl }}/plugins/imagetools/) | Flips the current image horizontally. |
+| editimage | [imagetools]({{ site.baseurl }}/plugins/imagetools/) | Edits the current image in the image dialog. |
 | imageoptions | [imagetools]({{ site.baseurl }}/plugins/imagetools/) | Opens the image options dialog. |
-| fullpage | [fullpage]({{ site.baseurl }}/plugins/fullpage/) | Document properties for the full page. |
+| fullpage | [fullpage]({{ site.baseurl }}/plugins/fullpage/) | Documents properties for the full page. |
 | ltr | [directionality]({{ site.baseurl }}/plugins/directionality/) | Sets the directionality of contents to ltr. |
 | rtl | [directionality]({{ site.baseurl }}/plugins/directionality/) | Sets the directionality of contents to rtl. |
 | emoticons | [emoticons]({{ site.baseurl }}/plugins/emoticons/) | Opens the emoticons dialog. |
@@ -108,8 +108,8 @@ Here is a list of the toolbar/menu controls that the core and plugins provides. 
 | Control     | Core/Plugin    |  Description   |
 |-------------|----------------|----------------|
 | newdocument | core | Creates a new document. |
-| undo | core | Undoes the last operation. |
-| redo | core | Redoes the last undoed operation. |
+| undo | core | To undo the last operation. |
+| redo | core | To redo the last undoed operation. |
 | visualaid | core | Toggles visual aids on/off. |
 | cut | core | Cuts the current selection into clipboard. |
 | copy | core | Copies the current selection into clipboard. |
@@ -145,13 +145,13 @@ Here is a list of the toolbar/menu controls that the core and plugins provides. 
 | insertdatetime | [insertdatetime]({{ site.baseurl }}/plugins/insertdatetime/) | Inserts the current date/time into the editor. |
 | media | [media]({{ site.baseurl }}/plugins/media/) | Opens the media dialog. |
 | nonbreaking | [nonbreaking]({{ site.baseurl }}/plugins/nonbreaking/) | Inserts a nonbreaking space into the editor. |
-| inserttable | [table]({{ site.baseurl }}/plugins/table/) | Insert table grid menu. |
+| inserttable | [table]({{ site.baseurl }}/plugins/table/) | Inserts table grid menu. |
 | tableprops | [table]({{ site.baseurl }}/plugins/table/) | Opens the table properties dialog. |
 | deletetable | [table]({{ site.baseurl }}/plugins/table/) | Deletes the current table. |
 | cell | [table]({{ site.baseurl }}/plugins/table/) | Cell menu item with related controls. |
 | row | [table]({{ site.baseurl }}/plugins/table/) | Row menu item with related controls. |
 | column | [table]({{ site.baseurl }}/plugins/table/) | Column menu item with related controls. |
 | restoredraft | [autosave]({{ site.baseurl }}/plugins/autosave/) | Restores to the latest auto saved draft. |
-| fullpage | [fullpage]({{ site.baseurl }}/plugins/fullpage/) | Document properties for the full page. |
+| fullpage | [fullpage]({{ site.baseurl }}/plugins/fullpage/) | Documents properties for the full page. |
 | toc | [toc]({{ site.baseurl }}/plugins/toc/) | Inserts a Table of Contents into the editor. |
 | help | [help]({{ site.baseurl }}/plugins/help/) | Opens the help dialog |

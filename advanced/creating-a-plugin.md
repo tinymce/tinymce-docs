@@ -7,13 +7,13 @@ description: A short introduction to creating plugins for TinyMCE along with an 
 keywords: plugin plugin.js plugin.min.js tinymce.js
 ---
 
-Creating plugins in TinyMCE is pretty simple - especially if you use the [Yeoman generator]({{ site.baseurl }}/advanced/yeoman-generator/)! - but if you would rather do it all by yourself keep reading on.
+Creating plugins in TinyMCE is pretty simple - especially if you use the [Yeoman generator]({{ site.baseurl }}/advanced/yeoman-generator/)! - but if you would rather do it all by yourself, keep reading.
 
 This tutorial tries to outline some of the basic concepts of creating a plugin. For more details consult the API documentation and check the existing plugins we ship with the core.
 
 ## File Structure
 
-To create a plugin you need to create a directory in the TinyMCE plugins directory. TinyMCE will load the plugin.js file if you use the tinymce.js file in your page. If you use the tinymce.min.js file it will load the plugin.min.js file. It's recommended to use the tinymce.js file while developing then have a build script minifying the plugin.js into plugin.min.js for production usage.
+To create a plugin, you need to create a directory in the TinyMCE plugins directory. TinyMCE will load the plugin.js file if you use the tinymce.js file in your page. If you use the tinymce.min.js file, it will load the plugin.min.js file. It's recommended to use the tinymce.js file while developing then have a build script minifying the plugin.js into plugin.min.js for production usage.
 
 The build scripts that comes with the development package of TinyMCE will automatically build all plugins including your custom ones.
 
@@ -99,7 +99,7 @@ tinymce.PluginManager.add('example', function(editor, url) {
 
 ## Example init
 
-Here is an example on how to use the new toolbar button.
+Here is an example of how to use the new toolbar button.
 
 ```js
 tinymce.init({
@@ -111,7 +111,7 @@ tinymce.init({
 
 ## Exposing metadata
 
-You can expose metadata from your plugin by returning an object with the property `getMetadata` with a function that returns an object with a `name` and `url` property. This metadata will then be used by the [Help Plugin]({{ site.baseurl }}/plugins/help/) to show the correct name and link for your plugin in the Plugins installed tab. See test plugin above for example.
+You can expose metadata from your plugin by returning an object with the property `getMetadata` with a function that returns an object with a `name` and `url` property. This metadata will then be used by the [Help Plugin]({{ site.baseurl }}/plugins/help/) to show the correct name and link for your plugin in the Plugins installed tab. See the `test` plugin above for example.
 
 ## Language localization
 

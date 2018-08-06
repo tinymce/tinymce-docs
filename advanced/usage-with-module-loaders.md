@@ -57,11 +57,11 @@ tinymce.init({
 
 ## Getting the skin
 
-TinyMCE will not work without a **skin**, which simply consists of some fonts and CSS files used by the editor. By default TinyMCE looks for these files in a `/skins` directory located in your root directory, although this can  be [configured in the init object]({{ site.baseurl }}/configure/editor-appearance/#skin_url).
+TinyMCE will not work without a **skin**, which consists of some fonts and CSS files used by the editor. By default TinyMCE looks for these files in a `/skins` directory located in your root directory, although this can  be [configured in the init object]({{ site.baseurl }}/configure/editor-appearance/#skin_url).
 
-No matter where you choose to put it you need a skin, and the quickest way to get started is simply to copy the skin that comes packaged with TinyMCE, located in `node_modules/tinymce/skins` - either manually copying the files in the finder/file explorer, or using the terminal with a command something like this:
+No matter where you choose to put it you need a skin, and the quickest way to get started is to copy the skin that comes packaged with TinyMCE, located in `node_modules/tinymce/skins` - either manually copying the files in the finder/file explorer, or using the terminal with a command something like this:
 
-**Macos and Linux**
+**MacOS and Linux**
 
 ```
 cp -r node_modules/tinymce/skins skins
@@ -74,7 +74,7 @@ xcopy /I /E node_modules/tinymce/skins skins
 
 ### Webpack file-loader
 
-If you are using Webpack another option is to use the [file loader](https://github.com/webpack/file-loader) together with the [require.context](https://webpack.github.io/docs/context.html#require-context) function to copy the skins directory by adding these lines before your call to the TinyMCE `init` function:
+If you are using Webpack, another option is to use the [file loader](https://github.com/webpack/file-loader) together with the [require.context](https://webpack.github.io/docs/context.html#require-context) function to copy the skins directory by adding these lines before your call to the TinyMCE `init` function:
 
 ```javascript
 require.context(

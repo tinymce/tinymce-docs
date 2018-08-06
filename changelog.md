@@ -405,6 +405,9 @@ class: changelog
 * Fixed bug where the init call promise wouldn't resolve if the specified selector didn't find any matching elements.
 * Fixed bug where the Schema isValidChild function was case sensitive.
 
+## Version 4.5.9 - August 2, 2018
+* Fixed a bug where Edge 17 wouldn't be able to select images or tables.
+
 ## Version 4.5.8 - November 5, 2017
 * Fixed bug where paste on Edge wouldn't paste UTF characters since Microsoft didn't implement the html5 clipboard api correctly.
 * Fixed bug where it was hard to focus the editor on IE 10 since the body element didn't have full height.

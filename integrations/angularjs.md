@@ -10,7 +10,7 @@ Integration with Angular 1 is currently done through [angular-ui-tinymce](https:
 
 ## 1. Setting up the project directory
 
-First we create a directory for the project called "tinymce-angular-demo". After that we run "bower init" inside the new directory, this will setup a new empty bower project.
+First, we create a directory for the project called "tinymce-angular-demo". After that, we run "bower init"in the new directory, this will set up a new empty bower project.
 
 ```
 $ mkdir tinymce-angular-demo
@@ -28,7 +28,7 @@ $ bower install angular-ui-tinymce --save
 
 ## 3. Creating the demo.html file
 
-This **demo.html** file has angular properties and a two calls to the controller.
+This **demo.html** file has angular properties and two calls to the controller.
 
 ```html
 <!DOCTYPE html>
@@ -78,4 +78,4 @@ You can now test the application by running the demo.html page in your favorite 
 
 #### A note about integrations
 
-> We are pleased to reference third-party integrations/code to help you build great products with TinyMCE. If you have queries about this integration, please contact the developer directly.
+> Note:  We are pleased to reference third-party integrations/code to help you build great products with TinyMCE. If you have queries about this integration, please contact the developer directly.

@@ -18,54 +18,43 @@ Example:
    <script type="text/javascript">
           const store = { };
 
-          let counter = 0;
-
-          const create = function(author, content, done, fail) {
-            if (content === 'fail') {
-              fail(new Error('Something has gone wrong...'));
-            } else {
-              const uid = 'annotation-' + counter;
-              counter++;
-              store[uid] = {
-                uid: uid,
-                comments: [
-                  {
-                    author: author,
-                    content: content
-                   }
-                 ]
-              };
-              done(uid);
+            function randomString() {
+              return Math.random().toString(36).substring(2, 14);
             }
-          };
 
-          const reply = function(uid, author, content, done, fail) {
-            const current = store[uid];
-            current.comments = current.comments.concat([
-              {
-               author: author,
-               content: content
+            const author = 'Author';
+
+            const create = function(content, done, fail) {
+              if (content === 'fail') {
+                fail(new Error('Something has gone wrong...'));
+              } else {
+                const conversationId = 'annotation-' + randomString();
+                store[conversationId] = {
+                  uid,
+                  comments: [ { author, content } ]
+                };
+                done(conversationId);
               }
-            ]);
-            done();
-          };
+            };
+      
+            const reply = function(conversationId, content, done, fail) {
+              const current = store[conversationId];
+              current.comments = current.comments.concat([
+                { author, content }
+              ]);
+              done();
+            };
 
-          const get = function(done, fail) {
-            const annotations = Object.keys(store).map(function(s) {
-              return store[s];
-            });
+            const del = function(conversationId, done, fail) {
+              delete store[conversationId];
+              done(true);
+            };
 
-            done(annotations);
-          };
-
-          const del = function(uid, done, fail) {
-            delete store[uid];
-            done(true);
-          };
-
-          const lookup = function(uid, done, fail) {
-            done(store[uid]);
-          };
+            const lookup = function(conversationId, done, fail) {
+              done(store[conversationId]);
+            };
+          
+// TinyMCE
 
           tinymce.init({
             selector: "#textarea",
@@ -75,7 +64,6 @@ Example:
 // `content_style` is defined to highlight the commented text in the editor. You can choose a different color as per your preference.
             tinycomments_create: create,
             tinycomments_reply: reply,
-            tinycomments_get: get,
             tinycomments_delete: del,
             tinycomments_lookup: lookup,
             tinycomments_username: 'Author'

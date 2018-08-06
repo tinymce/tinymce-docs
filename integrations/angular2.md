@@ -6,7 +6,7 @@ description: Using TinyMCE together with Angular 2+ with the @tinymce/tinymce-an
 keywords: integration integrate angular2 angular4 angular6 angular3 angular5 angularjs
 ---
 
-The absolutely easiest way to get started using TinyMCE with Angular 2+ is with our official [@tinymce/tinymce-angular](https://github.com/tinymce/tinymce-angular) component!
+The easiest way to get started using TinyMCE with Angular 2+ is with our official [@tinymce/tinymce-angular](https://github.com/tinymce/tinymce-angular) component!
 
 ## Installation
 
@@ -22,18 +22,18 @@ Import the `EditorModule` from the npm package like this:
 ```js
 import { EditorModule } from '@tinymce/tinymce-angular';
 ```
-And add it to you application module:
+And add it to your application module:
 
 ```js
 // This might look different depending on how you have set up your app
 // but the important part is the imports array
 @NgModule({
   declarations: [
-	AppComponent
+    AppComponent
   ],
   imports: [
-	BrowserModule,
-	EditorModule // <- Important part
+    BrowserModule,
+    EditorModule // <- Important part
   ],
   providers: [],
   bootstrap: [AppComponent]
@@ -53,8 +53,8 @@ Use the editor in your templates like this:
 The editor accepts the following inputs:
 
 * `id`: An id for the editor so you can later grab the instance by using the `tinymce.get('ID')` method on tinymce, defaults to an automatically generated uuid.
-* `init`: Object sent to the `tinymce.init` method used to initialize the editor.
-* `initialValue`: Initial value that the editor will be initialized with.
+* `init`: Object sent to the `tinymce.init` the method used to initialize the editor.
+* `initialValue`: The Initial value that the editor will be initialized with.
 * `inline`: Shorthand for setting that the editor should be inline, `<editor [inline]="true"></editor>` is the same as setting `{inline: true}` in the init.
 * `tagName`: Only used if the editor is inline, decides what element to initialize the editor on, defaults to `div`.
 * `plugins`: Shorthand for setting what plugins you want to use, `<editor plugins="foo bar"></editor>` is the same as setting `{plugins: 'foo bar'}` in the init.
@@ -149,14 +149,14 @@ Here is a full list of the events available:
 
 ## Loading TinyMCE
 ### Auto-loading from TinyMCE Cloud
-The `Editor` component needs TinyMCE to be globally available to work, but to make it as easy as possible it will automatically load [TinyMCE Cloud](https://www.tinymce.com/docs/get-started-cloud/) if it can't find TinyMCE available when the component has mounted. To get rid of the `This domain is not registered...` warning, sign up for the cloud and enter the api key like this:
+The `Editor` component needs TinyMCE to be globally available to work, but to make it as easy as possible it will automatically load [TinyMCE Cloud](https://www.tinymce.com/docs/cloud-deployment-guide/) if it can't find TinyMCE available when the component has mounted. To get rid of the `This domain is not registered...` warning, sign up for the cloud and enter the api key like this:
 
 ```tsx
 <editor apiKey="test" [init]="{/* your settings */}"></editor>
 ```
 
 You can also define what cloud channel you want to use out these three
-* `stable` **Default**. The most stable and well tested version that has passed the Ephox quality assurance process.
+* `stable` **Default**. The most stable and well-tested version that has passed the Ephox quality assurance process.
 * `testing` This channel will deploy the current candidate for release to the `stable` channel.
 * `dev` The cutting edge version of TinyMCE updated daily for the daring users.
 
@@ -171,13 +171,13 @@ So using the `dev` channel would look like this:
 </editor>
 ```
 
-For more info on the different versions see the [documentation](https://www.tinymce.com/docs/get-started-cloud/editor-plugin-version/#devtestingandstablereleases).
+For more info on the different versions see the [documentation](https://www.tinymce.com/docs/cloud-deployment-guide/editor-plugin-version/#devtestingandstablereleases).
 
 ### Loading TinyMCE by yourself
 
-To opt out of using TinyMCE cloud you have to make TinyMCE globally available yourself. This can be done either by hosting the `tinymce.min.js` file by youself and adding a script tag to you HTML or, if you are using a module loader, installing TinyMCE with npm. For info on how to get TinyMCE working with module loaders check out [this page in the documentation](https://www.tinymce.com/docs/advanced/usage-with-module-loaders/).
+To opt out of using TinyMCE cloud, you have to make TinyMCE globally available yourself. This can be done either by hosting the `tinymce.min.js` file by yourself and adding a script tag to your HTML or, if you are using a module loader, installing TinyMCE with npm. For info on how to get TinyMCE working with module loaders check out [this page in the documentation](https://www.tinymce.com/docs/advanced/usage-with-module-loaders/).
 
 
 #### A note about integrations
 
-> We are pleased to provide integrations/code guidance to help you build great products with TinyMCE. If you have queries about this integration, please join the [TinyMCE Community](https://community.tinymce.com).
+> Note:  We are pleased to provide integrations/code guidance to help you build great products with TinyMCE. If you have queries about this integration, please join the [TinyMCE Community](https://community.tinymce.com).

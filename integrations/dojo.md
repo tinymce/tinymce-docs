@@ -10,10 +10,10 @@ keywords: integration integrate angular angularjs
 
 [@caitlinmarkert](https://github.com/caitlinmarkert) and [@billeatman](https://github.com/billeatman) have created a TinyMCE 4.x widget for [Dojo](https://dojotoolkit.org/) 1.10+, in which each editor instance can have a unique configuration.
 
-The  [tinymce-dojo-widget](https://github.com/caitlinmarkert/tinymce-dojo-widget) repository is actively maintained on GitHub.
+The  [tinymce-dojo-widget](https://github.com/caitlinmarkert/tinymce-dojo-widget) repository is maintained actively on GitHub.
 
 Repo: https://github.com/caitlinmarkert/tinymce-dojo-widget
 
 #### A note about integrations
 
-> We are pleased to reference third-party integrations/code to help you build great products with TinyMCE. If you have queries about this integration, please contact the developer directly.
+> Note:  We are pleased to reference third-party integrations/code to help you build great products with TinyMCE. If you have queries about this integration, please contact the developer directly.

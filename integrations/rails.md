@@ -17,4 +17,4 @@ Sam Pohlenz has integrated TinyMCE into the Rails asset pipeline. Check out his 
 
 #### A note about integrations
 
-> We are pleased to reference third-party integrations/code to help you build great products with TinyMCE. If you have queries about this integration, please contact the developer directly.
+> Note: We are pleased to reference third-party integrations/code to help you build great products with TinyMCE. If you have queries about this integration, please contact the developer directly.

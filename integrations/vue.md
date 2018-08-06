@@ -12,4 +12,4 @@ Integration with Vue is easily done with the [@tinymce/tinymce-vue](https://gith
 npm install @tinymce/tinymce-vue
 ```
 
-For info on how to use the package, check out the [Github repository readme](https://github.com/tinymce/tinymce-vue#usage).
+For information on how to use the package, check out the [Github repository readme](https://github.com/tinymce/tinymce-vue#usage).

@@ -29,7 +29,8 @@ setup: function(ed) {
         comment
       });
       ed.focus();
-    },
+    });
+   }
 ```
        
 > Note: The annotator plugin is still in its experimental stage, hence we are using 'experimental' in 'ed.experimental.annotator.annotate'. A user will see a **Using experimental API: annotator** warning on his console. Please ignore this warning, we are working on it. 

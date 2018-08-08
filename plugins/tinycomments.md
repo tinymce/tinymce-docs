@@ -7,284 +7,210 @@ keywords: comments commenting tinycomments
 
 ## Introduction
 
-<Text>
+This section describes the various configuration options for the Tiny Comments plugin.
 
-## Using the Tiny Comments Plugin
+## Prerequisite for Implementing the Tiny Comments Plugin
 
-To set up the Tiny Comments, perform the following procedure:
-
-### 1. Configure the Tiny Comments Button
-
-To configure the Tiny Comments button on your toolbar, make the following changes:
+The comments plugin does not know the user which is currently logged in. It is up to the server implementation to associate the comment with the current user. This example returns `Promises` to allow for asynchronous behaviour, as any server-side implementation would do.
 
 
- ```js
+> Caution: This action is implemented on the server-side only. Please do not use this configuration on your browser. See [Configure TinyMCE]({{ site.baseurl }}/configure/) for more information on how to configure TinyMCE core.
+
+### Example
+
+```js
+function MockConversationServer() {
+  const authorId = 'demo';
+  const store = { };
+  function randomString() {
+    return Math.random().toString(36).substring(2, 14);
+  }
+
+  this.createNew = function(commentText) {
+    return new Promise(function(resolve, reject) {
+      if (commentText === 'fail') {
+        reject('Server error!!!');
+      } else {
+        // Generated unique ID for conversation
+        const conversationUid = 'annotation-' + randomString();
+        // Store the comment details
+        store[conversationUid] = [
+          { authorId, commentText }
+        ];
+        resolve(conversationUid);
+      }
+    });
+  };
+
+  this.replyTo = function(conversationUid, commentText) {
+    return new Promise(function(resolve, reject) {
+      if (commentText === 'fail') {
+        reject('Server error!!!');
+      } else {
+        store[conversationUid].push({ authorId, commentText });
+        resolve();
+      }
+    });
+  };
+
+  this.purge = function(conversationUid) {
+    return new Promise(function(resolve) {
+      delete store[conversationUid];
+      resolve(true);
+    });
+  };
+
+  this.retreive = function(conversationUid) {
+    return new Promise(function(resolve, reject) {
+      if (conversationUid in store) {
+        resolve(store[conversationUid]);
+      } else {
+        reject('Unable to retreive conversation');
+      }
+    });
+  };
+}
 
 ```
+
+## 1. Create a Comment
+
+Conversation "create" function. Saves the comment as a new conversation, and asynchronously returns a conversation unique ID via the "done" callback.
+
+```js
+const create = function(commentText, done, fail) {
+  server.createNew(commentText)
+    .then(function(conversationUid) {
+      done(conversationUid);
+    })
+    .catch(function() {
+      fail(new Error('Something has gone wrong creating comment...'));
+    });
+};
+
+```
+
+This will create a comment <..Text>
 
 > Note: <...Text>
 
-See [Configure TinyMCE]({{ site.baseurl }}/configure/) for more information on how to configure TinyMCE core.
+## 2. Reply to a Comment
 
-### 2. Registering the Tiny Comments Plugin
-
-The Tiny Comments plugin supports multiple commenting functions. Each comment function must be registered with <...Text>.
+Conversation "reply" function. Saves the comment as a reply to the Conversation "reply" function. Saves the comment as a reply to the callback when finished.
 
 ```js
+const reply = function(conversationUid, commentText, done, fail) {
+  server.replyTo(conversationUid, commentText)
+    .then(function() { done(); })
+    .catch(function() {
+      fail(new Error('Something has gone wrong replying to comment...'));
+    });
+};
 
 ```
 
-This will register a comment with the name `X`. In our example, when an `X` is being added to the document, a span marker will be created with class `X` and a data attribute for the author.
+This will let the user reply to a comment <..Text>
 
 > Note: <...Text>
 
-### 3. Making the Tiny Comments Plugin Available
+## 3. Delete the Comments
 
-For adding the Tiny Comments tool to the toolbar that is registered with `X` set the value of the toolbar to:
-
-```js
-  toolbar: "tinycomments-X"
-
- ```
-> Note:
-
-### 4. Applying Tiny Comments
-
-After registering the Tiny Comments, we can use it by applying it to the current selection.
-
-> Note:
+Conversation "delete" function. Deletes an entire conversation. Returns asynchronously whether the conversation was deleted.
 
 ```js
+const del = function(conversationUid, done, fail) {
+  server.purge(conversationUid)
+    .then(function(wasDeleted) { done(wasDeleted); })
+    .catch(function() {
+      fail(new Error('Something has gone wrong while deleting...'));
+    });
+};
 
 ```
 
-<Text>
+This will let the user delete a comment <..Text>
 
-Example :
+## 4. Lookup Username for the Comments
+
+Conversation "lookup" function. Retrieves an existing conversation via a conversation unique ID. Asynchronously returns the conversation via the "done" callback.
+
+### Prerequisite for display name lookup from user ID
+
+To set a username for a user, perform the following procedure:
+
+> Caution: This action is implemented on the server-side only. Please do not use this configuration on your browser. See [Configure TinyMCE]({{ site.baseurl }}/configure/) for more information on how to configure TinyMCE core.
 
 ```js
+function getDisplayName(authorId) {
+  if (authorId === 'demo') {
+    return 'Demo User';
+  } else {
+    return 'Unknown';
+  }
+}
+
+const server = new MockConversationServer();
+```
+
+### Conversation object structure:
+
+```js
+{
+ "comments": [
+  <comment1>,
+  <comment2>,
+  ...
+ ]
+}
 
 ```
 
-### 4. Create Tiny Comments
-
-Create Tiny Comments, we can use it by applying it to the current selection.
-
-> Note:
+### Comment object structure:
 
 ```js
+{
+  "author": "Author Display Name",
+  "content": "This is the text of the comment"
+}
 
 ```
 
-<Text>
-
-Example :
+### Example
 
 ```js
+const lookup = function(conversationUid, done, fail) {
+  server.retreive(conversationUid)
+    .then(function(comments) {
+      const authorName = getDisplayName(comment.authorId);
+      done({
+        comments: comments.map(function(comment) {
+          return {
+            author: authorName,
+            content: comment.commentText
+          };
+        })
+      });
+    })
+    .catch(function() {
+      fail('Unable to retreive conversation');
+    });
+};
+
+tinymce.init({
+  selector: 'textarea',
+  toolbar: 'bold italic underline | tinycomments',
+  plugins: 'tinycomments',
+  tinycomments_css_url: '../../../dist/tinycomments/css/tinycomments.css',
+  content_style: '.mce-annotation { background: yellow; color: black; } .tc-active-annotation {background: lime; color: black; }',
+  tinycomments_create: create,
+  tinycomments_reply: reply,
+  tinycomments_delete: del,
+  tinycomments_lookup: lookup
+});
 
 ```
 
-### 4. Reply to Tiny Comments
+## Store the Comments
 
-Reply to Tiny Comments, we can use it by applying it to the current selection.
-
-> Note:
-
-```js
-
-```
-
-<Text>
-
-Example :
-
-```js
-
-```
-
-### 4. Delete Tiny Comments
-
-To delete a particular comment at the cursor, use the `delete` API. It will remove the closest comment that matches the name. For example,
-
-```js
-
-```
-> Note:
-
-The full API is:
-
-```js
-/**
-* Removes any comments from the current selection that match
-* the name
-*
-* @param remove
-* @param {String} name the name of the comment to remove
-*/
-remove: (name)
-```
-
-
-### 4. Lookup Tiny Comments
-
-Lookup Tiny Comments, we can use it by applying the `get` API it to the current selection.
-
-> Note:
-
-```js
-
-```
-
-<Text>
-
-Example :
-
-```js
-
-```
-
-
-
-
-### 5. Listening to Selection Events
-
-The Tiny Comments plugin can notify the user when the selection cursor moves in or out of a specified comment. For example, for our `X` scenario:
-
-```js
-
-```
-
-The `obj` parameter is only set if the `state` is true. `obj` has two fields when set:
-
-* `uid`, which is the uid of the comments currently nearest (in the DOM hierarchy) to the selection cursor.
-* `nodes`, which is an array of DOM nodes which make up this comment. `nodes` are made available to users in case the user might want to tag these nodes with a class to say that they are the **active comments**.
-
-The `commentChanged` listeners should only fire when the state or the uid changes. The full API is:
-
-```js
-/**
-* Executes the specified callback when the current selection matches the comment or not.
-*
-* @method commentChanged
-* @param {String} name Name of comment to listen for
-* @param {function} callback Calback with (state, name, and data) fired when the comment
-* at the cursor changes. If state if false, data will not be provided.
-*/
-commentChanged: (name: string, callback): void
-```
-
-## Example
-
-To create the Tiny Comments plugin, use the following example:
-
-```js
-   <script type="text/javascript">
-          const store = { };
-
-            function randomString() {
-              return Math.random().toString(36).substring(2, 14);
-            }
-
-            const author = 'Author';
-
-            const create = function(content, done, fail) {
-              if (content === 'fail') {
-                fail(new Error('Something has gone wrong...'));
-              } else {
-                const conversationId = 'annotation-' + randomString();
-                store[conversationId] = {
-                  uid,
-                  comments: [ { author, content } ]
-                };
-                done(conversationId);
-              }
-            };
-
-            const reply = function(conversationId, content, done, fail) {
-              const current = store[conversationId];
-              current.comments = current.comments.concat([
-                { author, content }
-              ]);
-              done();
-            };
-
-            const del = function(conversationId, done, fail) {
-              delete store[conversationId];
-              done(true);
-            };
-
-            const lookup = function(conversationId, done, fail) {
-              done(store[conversationId]);
-            };
-
-// TinyMCE
-
-          tinymce.init({
-            selector: "#textarea",
-            toolbar: 'bold italic underline | tinycomments',
-            plugins: "tinycomments",
-            content_style: '.mce-annotation { background: yellow; color: black; } .tc-active-annotation {background: lime; color: black; }',
-// `content_style` is defined to highlight the commented text in the editor. You can choose a different color as per your preference.
-            tinycomments_create: create,
-            tinycomments_reply: reply,
-            tinycomments_delete: del,
-            tinycomments_lookup: lookup,
-          });
-        </script>
-
-<form method="post" action="dump.php">
-    <textarea name="content"></textarea>
-</form>
-```
-
-[Example]({{ site.baseurl }}/images/comments.png)
-
-## Storing All Tiny Comments for a Particular Comment
-
-The Tiny Comments plugin allows you to retrieve an object of all of the uids for a particular comment type (e.g. X), and the nodes associated with those uids. For example, to retrieve all `X` comments, we would use this code:
-
-```js
-            const reply = function(conversationId, content, done, fail) {
-              const current = store[conversationId];
-              current.comments = current.comments.concat([
-                { author, content }
-              ]);
-              done();
-            };
-
-```
-
-<Text> The full API is:
-
-```js
-/**
-* Retrieve all the comments for a given name
-*
-* @method getAll
-* @param {String} name the name of the comments to retrieve
-* @return {Object} an index of comments from uid => DOM nodes
-*/
-getAll: (name)
-```
-
-## Retrieving All Tiny Comments for a Particular Comment
-
-The Tiny Comments plugin allows you to retrieve an object of all of the uids for a particular comment type (e.g. X), and the nodes associated with those uids. For example, to retrieve all `X` comments, we would use this code:
-
-```js
-
-```
-
-<Text> The full API is:
-
-```js
-/**
-* Retrieve all the comments for a given name
-*
-* @method getAll
-* @param {String} name the name of the comments to retrieve
-* @return {Object} an index of comments from uid => DOM nodes
-*/
-getAll: (name)
-```
+A good implementation should store comments authors using an author ID, and converts this to a display name as part of "lookup". This can be done entirely server-side, by using client requests or by referring to an in-memory data structure. The comments plugin will simply display the author based on the text provided.
 

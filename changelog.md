@@ -802,7 +802,7 @@ class: changelog
 * Fixed bug where pagebreaks were editable to imagetools patch contributed by Rasmus Wallin.
 * Fixed bug where the element path could cause too much recursion exception.
 * Fixed bug for domains containing ".min". Patch contributed by Loïc Février.
-* Fixed so validation of external links to accept a number after www. Patch contributed by Victor Carvalho.
+* Fixed so validation of external links to accept a number after `www`. Patch contributed by Victor Carvalho.
 * Fixed so the charmap is exposed though execCommand. Patch contributed by Matthew Will.
 * Fixed so that the image uploads are concurrent for improved performance.
 * Fixed various grammar problems in inline documentation. Patches provided by nikolas.

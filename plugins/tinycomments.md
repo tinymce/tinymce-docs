@@ -7,6 +7,25 @@ keywords: comments commenting tinycomments
 
 ## Introduction
 
+The Tiny Comments plugin is built upon the new [Annotations API]({{ site.baseurl }}/plugins/annotations/) and uses annotations to create comment threads.
+
+> Note: The Tiny Comments plugin in its current state does not save the comments anywhere. However, it gives the developer callback APIs to create, search, and save comment threads.
+
+
+```js
+const del = function(uid, done, fail) {
+   const data = store[uid];
+   if (data && data.comments.length > 0 && data.comments[0].author !== 'Author') {
+      done(false);
+   } else {
+      delete store[uid];
+      done(true);
+   }
+  };
+```
+
+[Tiny Comments]({{ site.baseurl }}/images/comments.png)
+
 This section describes the various configuration options for the Tiny Comments plugin.
 
 ## Prerequisite for Implementing the Tiny Comments Plugin
@@ -177,38 +196,102 @@ const server = new MockConversationServer();
 
 ### Example
 
+Example:
+
 ```js
-const lookup = function(conversationUid, done, fail) {
-  server.retreive(conversationUid)
-    .then(function(comments) {
-      const authorName = getDisplayName(comment.authorId);
-      done({
-        comments: comments.map(function(comment) {
-          return {
-            author: authorName,
-            content: comment.commentText
-          };
-        })
+  function example(contentSelector, commentSelector) {
+
+    function getConversation(uid) {
+      var el = document.querySelector(commentSelector);
+      return JSON.parse(el.value)[uid];
+    }
+
+    function setConversation(uid, conversation) {
+      var el = document.querySelector(commentSelector);
+      var store = JSON.parse(el.value);
+      store[uid] = conversation;
+      el.value = JSON.stringify(store, null, 2);
+    }
+
+    function deleteConversation(uid) {
+      var el = document.querySelector(commentSelector);
+      var store = JSON.parse(el.value);
+      delete store[uid];
+      el.value = JSON.stringify(store, null, 2);
+    }
+
+    function getAuthorDisplayName(authorId) {
+      var authors = {
+        'other': 'A Prior User',
+        'demo': 'Demo User'
+      };
+      return authors[authorId] || 'Unknown';
+    }
+
+    function randomString() {
+      return Math.random().toString(36).substring(2, 14);
+    }
+
+    var authorId = 'demo';
+
+    function create(content, done, fail) {
+      if (content === 'fail') {
+        fail(new Error('Something has gone wrong...'));
+      } else {
+        var uid = 'annotation-' + randomString();
+        setConversation(
+          uid,
+          [ { user: authorId, comment: content } ]
+        );
+        done(uid);
+      }
+    }
+
+    var reply = function(uid, content, done, fail) {
+      var comments = getConversation(uid);
+      comments.push({
+        user: authorId,
+        comment: content
       });
-    })
-    .catch(function() {
-      fail('Unable to retreive conversation');
+      setConversation(uid, comments);
+      done();
+    }
+
+    function del(uid, done, fail) {
+      // only allow first commenter to delete
+      if (getConversation(uid)[0].user === authorId) {
+        deleteConversation(uid);
+        done(true);
+      } else {
+        done(false);
+      }
+    }
+
+    function lookup(uid, done, fail) {
+      var comments = getConversation(uid).map(function(item) {
+        return {
+          author: getAuthorDisplayName(item.user),
+          content: item.comment
+        };
+      });
+      done({ comments: comments });
+    };
+
+    tinymce.init({
+      selector: contentSelector,
+      toolbar: 'bold italic underline | tinycomments',
+      plugins: 'tinycomments',
+      tinycomments_css_url: '../../../dist/tinycomments/css/tinycomments.css',
+      content_style: '.mce-annotation { background: yellow; color: black; } .tc-active-annotation {background: lime; color: black; }',
+      tinycomments_create: create,
+      tinycomments_reply: reply,
+      tinycomments_delete: del,
+      tinycomments_lookup: lookup
     });
-};
-
-tinymce.init({
-  selector: 'textarea',
-  toolbar: 'bold italic underline | tinycomments',
-  plugins: 'tinycomments',
-  tinycomments_css_url: '../../../dist/tinycomments/css/tinycomments.css',
-  content_style: '.mce-annotation { background: yellow; color: black; } .tc-active-annotation {background: lime; color: black; }',
-  tinycomments_create: create,
-  tinycomments_reply: reply,
-  tinycomments_delete: del,
-  tinycomments_lookup: lookup
-});
-
+  };
 ```
+> Note: An user with administrative privileges can disable the delete function for some users by passing `false` to the `done` callback. In the following example we are configuring delete to be disabled for users other than the username `Author`:
+
 
 ## Store the Comments
 

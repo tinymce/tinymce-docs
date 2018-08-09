@@ -8,80 +8,44 @@ keywords: enterprise pricing comment commenting
 The Tiny Comments plugin provides the user an ability to start or join a conversation by adding comments to the content within the TinyMCE editor.
 Tiny Comments offers a user interface for adding and editing comments. Other users can collaborate by replying to these comments. You can delete the comment/comment thread if you want to remove it from your content.
 
-The Tiny Comments plugin is built upon the new [Annotations API]({{ site.baseurl }}/plugins/annotations/) and uses annotations to create comment threads.
+## Improve your productivity & writing experience
 
-> Note: The Tiny Comments plugin in its current state does not save the comments anywhere. However, it gives the integrator callback APIs to create, search, and save comment threads.
+[TinyMCE PowerPaste](https://www.ephox.com/products/powerpaste/) automatically cleans up content from Microsoft Word and other HTML sources to ensure clean, compliant content that matches the look and feel of your site or app.
 
-Example:
+TinyMCE PowerPaste is a Premium Plugin from TinyMCE. We have flexible purchase options: as a [stand-alone plugin](https://www.ephox.com/products/powerpaste/), to [OEM and custom enterprise pricing](https://www.tinymce.com/pricing/).
 
-```js
-   <script type="text/javascript">
-          const store = { };
+> Customers: we have full documentation explaining how to install and configure TinyMCE PowerPaste. [Go to the docs.]({{ site.baseurl }}/plugins/powerpaste/)
 
-            function randomString() {
-              return Math.random().toString(36).substring(2, 14);
-            }
+## Example use cases
 
-            const author = 'Author';
+#### Content from Microsoft Word
 
-            const create = function(content, done, fail) {
-              if (content === 'fail') {
-                fail(new Error('Something has gone wrong...'));
-              } else {
-                const conversationId = 'annotation-' + randomString();
-                store[conversationId] = {
-                  uid,
-                  comments: [ { author, content } ]
-                };
-                done(conversationId);
-              }
-            };
-      
-            const reply = function(conversationId, content, done, fail) {
-              const current = store[conversationId];
-              current.comments = current.comments.concat([
-                { author, content }
-              ]);
-              done();
-            };
+If you paste content from Microsoft Word into your app, you probably know the published page usually doesn’t match the site’s style. Fonts can be different, images missing and formatting not the same as their original document.
 
-            const del = function(conversationId, done, fail) {
-              delete store[conversationId];
-              done(true);
-            };
+This can be time consuming for users to fix, and usually involves manually editing HTML. It can also increase support requests.
 
-            const lookup = function(conversationId, done, fail) {
-              done(store[conversationId]);
-            };
-          
-// TinyMCE
+TinyMCE PowerPaste automatically “cleans” pasted content, fixing these issues. It can also automatically upload images to a server, helping you spend time on more productive tasks.
 
-          tinymce.init({
-            selector: "#textarea",
-            toolbar: 'bold italic underline | tinycomments',
-            plugins: "tinycomments",
-            content_style: '.mce-annotation { background: yellow; color: black; } .tc-active-annotation {background: lime; color: black; }',
-// `content_style` is defined to highlight the commented text in the editor. You can choose a different color as per your preference.
-            tinycomments_create: create,
-            tinycomments_reply: reply,
-            tinycomments_delete: del,
-            tinycomments_lookup: lookup,
-            tinycomments_username: 'Author'
-          });
-        </script>
-```
-> Note: The administrator can disable the delete function for some users by passing `false` to the `done` callback. In the following example we are configuring delete to be disabled for users other than the username `Author`:
+#### Content from Microsoft Excel
 
-```js
-const del = function(uid, done, fail) {
-   const data = store[uid];
-   if (data && data.comments.length > 0 && data.comments[0].author !== 'Author') {
-      done(false);
-   } else {
-      delete store[uid];
-      done(true);
-   }
-  };
-```
+TinyMCE PowerPaste also makes light work of pasting Excel content into your app, automatically creating HTML compliant tables in the process.
 
-[Tiny Comments]({{ site.baseurl }}/images/comments.png)
+While developers are very familiar writing HTML tables, most content creators literally don’t know where to start. And then there’s the issue of manually entering their Excel data into the table. This isn’t a fun experience either.
+
+For users of both Word and Excel, PowerPaste will dramatically improve the content production experience you deliver to your clients.
+
+#### Content from the internet
+
+If you cut and paste content from the internet into your app – which includes almost everyone – PowerPaste also works its auto-magic.
+
+Just as it cleans up rogue formatting from sources like Word, it does the same for internet content. Need to grab a quote from a website for your blog post? PowerPaste removes classes, minimizing the chance of unwanted CSS overriding your stylesheets.
+
+It also does the same for images, automatically linking to the source image URL. Perfect content, every time.
+
+### Buy Tiny Comments
+
+Start with our [dedicated product page](https://www.tiny.cloud/pricing/) to see our flexible pricing options. OEM and enterprise customers should [contact sales directly](https://www.tinymce.com/pricing/). Still not sure? Check out the demo below.
+
+## Tiny Comments demo
+
+{% include codepen.html id="4d07e4da27b1e7245b5333ed7413083b" %}

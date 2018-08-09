@@ -8,6 +8,15 @@ class: changelog
 
 {% capture changelog %}
 
+# Version 4.8.2 August 9, 2018
+* Moved annotator from "experimental" to "annotator" object on editor.
+* Improved the multiclick normalization across browsers.
+* Fixed a bug where running getSelectedBlocks with a collapsed selection between block elements would produce incorrect results.
+* Fixed a bug where the ScriptLoaders loadScript method would not work as expected in FireFox when loaded on the same page as a ShadowDOM polyfill.
+* Removed reference to ShadowDOM event.path as Blink based browsers now support event.composedPath.
+* Fixed a bug where a reference to localStorage would throw an "access denied" error in IE11 with strict security settings.
+* Fixed a bug where pasting using the toolbar button on an inline editor in IE11 would cause a looping behaviour.
+
 ## Version 4.8.1 July 26, 2018
 * Fixed a bug where the content of inline editors was being cleaned on every call of `editor.save()`.
 * Fixed a bug where the arrow of the Inlite Theme toolbar was being rendered incorrectly in RTL mode.

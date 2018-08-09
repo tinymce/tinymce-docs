@@ -8,7 +8,7 @@ class: changelog
 
 {% capture changelog %}
 
-# Version 4.8.2 August 9, 2018
+## Version 4.8.2 August 9, 2018
 * Moved annotator from "experimental" to "annotator" object on editor.
 * Improved the multiclick normalization across browsers.
 * Fixed a bug where running getSelectedBlocks with a collapsed selection between block elements would produce incorrect results.

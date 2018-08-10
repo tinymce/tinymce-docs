@@ -5,7 +5,7 @@ description: Tiny Comments provides the ability to add comments to the content a
 keywords: enterprise pricing comment commenting
 ---
 
-TinyMCE editor now has a highly desirable functionality, Tiny Comments.
+TinyMCE editor now has a highly desirable functionality, **Tiny Comments**.
 
 The Tiny Comments plugin provides the user an ability to start or join a conversation by adding comments to the content within the TinyMCE editor.
 
@@ -16,7 +16,7 @@ Users can now add comments to their text from within their TinyMCE editor for co
 
 Tiny Comments offers the following primary functionality:
 
-* A user interface to collaborate on content by creating and replying to comments.
+* A **user interface** to collaborate on content by creating and replying to comments.
 * A way to control the delete operation on a comment/comment thread if you want to remove it from your content.
 
 ## Primary Tiny Comments Functions
@@ -33,7 +33,7 @@ The Tiny Comments plugin allows the user to perform the following functions:
 
 We provide a working example for integrating the TinyMCE plugin into your site.
 
-> Customers: We have full documentation explaining how to install and configure Tiny Comments. [Go to the docs]({{ site.baseurl }}/plugins/tinycomments/).
+> Note: For more information on installing and configuring Tiny Comments, please visit our [documentation]({{ site.baseurl }}/plugins/tinycomments/).
 
 ### Buy Tiny Comments
 

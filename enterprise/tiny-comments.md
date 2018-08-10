@@ -16,13 +16,12 @@ Users can now add comments to their text from within their TinyMCE editor for co
 
 Tiny Comments offers the following primary functionality:
 
-* A user interface for adding and editing comments.
-* A way to collaborate on content by creating and replying to comments.
+* A user interface to collaborate on content by creating and replying to comments.
 * A way to control the delete operation on a comment/comment thread if you want to remove it from your content.
 
 ## Primary Tiny Comments Functions
 
-The Tiny Comments plugin supports the following functions:
+The Tiny Comments plugin allows the user to perform the following functions:
 
 * Create a comment
 * Reply to a comment
@@ -40,7 +39,7 @@ We provide a working example for integrating the TinyMCE plugin into your site.
 
 Start with our [dedicated product page](https://www.tiny.cloud/pricing/) to see our flexible pricing options. Enterprise customers should [contact sales directly](https://www.tinymce.com/pricing/). Still not sure? Check out the demo below.
 
-## Tiny Comments demo
+## Tiny Comments Demo
 
 In this example, we highlight the features in Tiny Comments, including adding a comment, replying to a comment, and deleting a comment. For more information on the other Tiny Comments configuration options, see the [docs]({{ site.baseurl }}/plugins/tinycomments/).
 

@@ -7,31 +7,17 @@ keywords: comments commenting tinycomments
 
 ## Introduction
 
-The Tiny Comments plugin is built upon the new [Annotations API]({{ site.baseurl }}/plugins/annotations/) and uses annotations to create comment threads.
-
-> Note: The Tiny Comments plugin in its current state does not save the comments anywhere. However, it gives the developer callback APIs to create, search, and save comment threads.
-
-
-```js
-const del = function(uid, done, fail) {
-   const data = store[uid];
-   if (data && data.comments.length > 0 && data.comments[0].author !== 'Author') {
-      done(false);
-   } else {
-      delete store[uid];
-      done(true);
-   }
-  };
-```
-
-[Tiny Comments]({{ site.baseurl }}/images/comments.png)
+The Tiny Comments plugin provides the user an ability to start or join a conversation by adding comments to the content within the TinyMCE editor. The Tiny Comments plugin is built upon the new [Annotations API]({{ site.baseurl }}/plugins/annotations/) and uses annotations to create comment threads.
 
 This section describes the various configuration options for the Tiny Comments plugin.
 
+## Considerations
+
+The Tiny Comments plugin does not provide the user an ability to save the comments. You need to configure storage at your end to be able to store your comments. Later in the **5. Store the Comments** section, we provide you one way of setting comments storage.
+
 ## Prerequisite for Implementing the Tiny Comments Plugin
 
-The comments plugin does not know the user which is currently logged in. It is up to the server implementation to associate the comment with the current user. This example returns `Promises` to allow for asynchronous behaviour, as any server-side implementation would do.
-
+The Tiny Comments plugin does not automatically associate a currently logged in user to a comment. It is up to the server implementation to associate the comment with the current user. This example returns `Promises` to allow for asynchronous behavior, as any server-side implementation would do.
 
 > Caution: This action is implemented on the server-side only. Please do not use this configuration on your browser. See [Configure TinyMCE]({{ site.baseurl }}/configure/) for more information on how to configure TinyMCE core.
 
@@ -92,9 +78,13 @@ function MockConversationServer() {
 
 ```
 
+[Tiny Comments]({{ site.baseurl }}/images/comments.png)
+
 ## 1. Create a Comment
 
-Conversation "create" function. Saves the comment as a new conversation, and asynchronously returns a conversation unique ID via the "done" callback.
+Tiny Comments uses the Conversation "create" function to create a comment. This function saves the comment as a new conversation and asynchronously returns a unique conversation ID via the "done" callback.
+
+Here is an example of how to create a comment:
 
 ```js
 const create = function(commentText, done, fail) {
@@ -109,13 +99,11 @@ const create = function(commentText, done, fail) {
 
 ```
 
-This will create a comment <..Text>
-
-> Note: <...Text>
-
 ## 2. Reply to a Comment
 
-Conversation "reply" function. Saves the comment as a reply to the Conversation "reply" function. Saves the comment as a reply to the callback when finished.
+Tiny Comments uses the Conversation "reply" function to reply to a comment. It saves the comment as a reply to an existing conversation and asynchronously returns via the "done" callback when finished.
+
+Here is an example of how to reply to a comment:
 
 ```js
 const reply = function(conversationUid, commentText, done, fail) {
@@ -128,13 +116,11 @@ const reply = function(conversationUid, commentText, done, fail) {
 
 ```
 
-This will let the user reply to a comment <..Text>
-
-> Note: <...Text>
-
 ## 3. Delete the Comments
 
-Conversation "delete" function. Deletes an entire conversation. Returns asynchronously whether the conversation was deleted.
+Tiny Comments uses the Conversation "delete" function. Applying this function deletes an entire conversation and returns asynchronously whether the comment/comment thread was removed.
+
+Here is an example of how to delete a comment:
 
 ```js
 const del = function(conversationUid, done, fail) {
@@ -147,13 +133,29 @@ const del = function(conversationUid, done, fail) {
 
 ```
 
-This will let the user delete a comment <..Text>
+> Note: Failure to delete due to permissions or business rules is indicated by "false", while unexpected errors should be indicated using the "fail" callback.
+
+> Note: An user with administrative privileges can disable the delete function for some users by setting the value of the `done` callback to  `false`. In the following example we are configuring delete to be disabled for users other than the username `Author`:
+
+```js
+const del = function(uid, done, fail) {
+   const data = store[uid];
+   if (data && data.comments.length > 0 && data.comments[0].author !== 'Author') {
+      done(false);
+   } else {
+      delete store[uid];
+      done(true);
+   }
+  };
+```
 
 ## 4. Lookup Username for the Comments
 
-Conversation "lookup" function. Retrieves an existing conversation via a conversation unique ID. Asynchronously returns the conversation via the "done" callback.
+Tiny Comments uses the Conversation "lookup" function to retrieve an existing conversation via a conversation unique ID. Applying this function to a comment asynchronously returns the conversation via the "done" callback.
 
 ### Prerequisite for display name lookup from user ID
+
+You need to set a username for the comments to be able to perform the Lookup function. Please see the Prerequisite section above for more information.
 
 To set a username for a user, perform the following procedure:
 
@@ -181,9 +183,7 @@ const server = new MockConversationServer();
   ...
  ]
 }
-
 ```
-
 ### Comment object structure:
 
 ```js
@@ -191,12 +191,16 @@ const server = new MockConversationServer();
   "author": "Author Display Name",
   "content": "This is the text of the comment"
 }
-
 ```
+## 5. Store the Comments
+
+> Note: The Tiny Comments plugin in its current state does not save the comments anywhere. However, it gives the developer callback APIs to create, search, and save comment threads.
+
+A proper implementation should store comments authors using an author ID, and converts this to a display name as part of "lookup". Storing is done entirely server-side, by using client requests or by referring to an in-memory data structure. The comments plugin will only display the author based on the text provided.
 
 ### Example
 
-Example:
+Here is a complete example of creating the Tiny Comments plugin along with server configuration for storing comments:
 
 ```js
   function example(contentSelector, commentSelector) {
@@ -290,10 +294,9 @@ Example:
     });
   };
 ```
-> Note: An user with administrative privileges can disable the delete function for some users by passing `false` to the `done` callback. In the following example we are configuring delete to be disabled for users other than the username `Author`:
 
+We also have a [demo]({{ site.baseurl }}enterprise/tiny-comments/#tinycommentsdemo) to showcase the Tiny Comments functionality.
 
-## Store the Comments
+For more information on Tiny Comments commercial feature, visit our [Premium Features]({{ site.baseurl }}enterprise/tiny-comments/) page.
 
-A good implementation should store comments authors using an author ID, and converts this to a display name as part of "lookup". This can be done entirely server-side, by using client requests or by referring to an in-memory data structure. The comments plugin will simply display the author based on the text provided.
 

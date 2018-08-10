@@ -25,7 +25,7 @@ setup: function(ed) {
     text: 'Annotate',
     onclick: function() {
       const comment = prompt('Comment with?');
-      ed.experimental.annotator.annotate('alpha', {
+      ed.annotator.annotate('alpha', {
         comment
       });
       ed.focus();
@@ -33,8 +33,6 @@ setup: function(ed) {
    }
 ```
        
-> Note: The annotator plugin is still in its experimental stage, hence we are using 'experimental' in 'ed.experimental.annotator.annotate'. A user will see a **Using experimental API: annotator** warning on his console. Please ignore this warning, we are working on it. 
-
 See [Configure TinyMCE]({{ site.baseurl }}/configure/) for more information on how to configure TinyMCE core.
 
 ### 2. Registering the Annotator Plugin
@@ -43,7 +41,7 @@ The annotator API supports multiple annotation functions. Each annotation functi
 
 ```js
   ed.on('init', function() {
-     ed.experimental.annotator.register('alpha', {
+     ed.annotator.register('alpha', {
        persistent: true,
        decorate: function(uid, data) {
          return {
@@ -149,7 +147,7 @@ tinymce.init({
       text: 'Annotate',
       onclick: function() {
         const comment = prompt('Comment with?');
-        ed.experimental.annotator.annotate('alpha', {
+        ed.annotator.annotate('alpha', {
           comment: comment
         });
         ed.focus();
@@ -158,7 +156,7 @@ tinymce.init({
       onpostrender: function(ctrl) {
         const button = ctrl.control;
         ed.on('init', function() {
-          ed.experimental.annotator.annotationChanged('alpha', function(state, name, obj) {
+          ed.annotator.annotationChanged('alpha', function(state, name, obj) {
             if (! state) {
               button.active(false);
             } else {
@@ -170,7 +168,7 @@ tinymce.init({
     });
 
     ed.on('init', function() {
-      ed.experimental.annotator.register('alpha', {
+      ed.annotator.register('alpha', {
         persistent: true,
         decorate: function(uid, data) {
           return {

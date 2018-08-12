@@ -70,7 +70,6 @@ Here is an example of how `randomString` can be implemented:
 
 ```js
   function randomString() {
-    // ~62 bits of randomness, so very unlikely to collide for <100K uses
     return Math.random().toString(36).substring(2, 14);
   }
 ```
@@ -118,7 +117,7 @@ Here is an example of how `setConversation` can be implemented:
 
 ##### getConversation(uid)
 
- `getConversation` here is a function written to synchronously retrieve an existing conversation from a form field populated by the server.
+`getConversation` here is a function written to synchronously retrieve an existing conversation from a form field populated by the server.
  
 Here is an example of how `getConversation(uid)` can be implemented:
 

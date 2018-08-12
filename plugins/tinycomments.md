@@ -43,7 +43,7 @@ All functions incorporate `done` and `fail` callbacks as parameters. The functio
 
 ### Create
 
-Tiny Comments uses the Conversation "create" function to create a comment. This function saves the comment as a new conversation and returns a unique conversation ID via the `done` callback. If an unrecoverable error occurs, it should indicate this with the `fail` callback.
+Tiny Comments uses the Conversation `create` function to create a comment. This function saves the comment as a new conversation and returns a unique conversation ID via the `done` callback. If an unrecoverable error occurs, it should indicate this with the `fail` callback.
 
 Here is an example of how `create` can be implemented:
 

@@ -258,6 +258,6 @@ function lookup(uid, done, fail) {
 
 ```
 
-We also have a [demo]{{ site.baseurl }}/enterprise/tiny-comments/#tinycommentsdemo) to showcase the Tiny Comments functionality.
+We also have a [demo]({{ site.baseurl }}/enterprise/tiny-comments/#tinycommentsdemo) to showcase the Tiny Comments functionality.
 
 For more information on Tiny Comments commercial feature, visit our [Premium Features]({{ site.baseurl }}/enterprise/tiny-comments/) page.

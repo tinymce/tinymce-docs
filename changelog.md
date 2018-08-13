@@ -8,6 +8,15 @@ class: changelog
 
 {% capture changelog %}
 
+## Version 4.8.2 August 9, 2018
+* Moved annotator from "experimental" to "annotator" object on editor.
+* Improved the multiclick normalization across browsers.
+* Fixed a bug where running getSelectedBlocks with a collapsed selection between block elements would produce incorrect results.
+* Fixed a bug where the ScriptLoaders loadScript method would not work as expected in FireFox when loaded on the same page as a ShadowDOM polyfill.
+* Removed reference to ShadowDOM event.path as Blink based browsers now support event.composedPath.
+* Fixed a bug where a reference to localStorage would throw an "access denied" error in IE11 with strict security settings.
+* Fixed a bug where pasting using the toolbar button on an inline editor in IE11 would cause a looping behaviour.
+
 ## Version 4.8.1 July 26, 2018
 * Fixed a bug where the content of inline editors was being cleaned on every call of `editor.save()`.
 * Fixed a bug where the arrow of the Inlite Theme toolbar was being rendered incorrectly in RTL mode.
@@ -404,6 +413,9 @@ class: changelog
 * Fixed bug where browsers would hang if you tried to load some malformed html contents.
 * Fixed bug where the init call promise wouldn't resolve if the specified selector didn't find any matching elements.
 * Fixed bug where the Schema isValidChild function was case sensitive.
+
+## Version 4.5.9 - August 2, 2018
+* Fixed a bug where Edge 17 wouldn't be able to select images or tables.
 
 ## Version 4.5.8 - November 5, 2017
 * Fixed bug where paste on Edge wouldn't paste UTF characters since Microsoft didn't implement the html5 clipboard api correctly.

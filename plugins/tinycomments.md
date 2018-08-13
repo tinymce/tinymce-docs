@@ -45,6 +45,7 @@ All functions incorporate `done` and `fail` callbacks as parameters. The functio
 
 To create the Tiny Comments plugin, use the following example:
 
+```js
 `function example(contentSelector, commentSelector) {
     
       /********************
@@ -191,32 +192,11 @@ Tiny Comments uses the Conversation `create` function to create a comment.
 
 #### Helper Functions
 
-##### setConversation(uid, conversation)
-
+* **setConversation(uid, conversation)**
 `setConversation` here is a function written to synchronously persist the new conversation to a form field for submission to the server later.
 
-Here is an example of how `setConversation(uid, conversation)` can be implemented:
-
-```js
-  function setConversation(uid, conversation) {
-    var el = document.querySelector(commentSelector);
-    var store = JSON.parse(el.value);
-    store[uid] = conversation;
-    el.value = JSON.stringify(store, null, 2);
-  }
-```
-
-##### randomString()
-
+* **randomString()**
 `randomString()` here is a function used in the `create` function to return a 62-bits random strings to provision a large number of UIDs.
-
-Here is an example of how `randomString` can be implemented:
-
-```js
-  function randomString() {
-    return Math.random().toString(36).substring(2, 14);
-  }
-```
 
 The `create` function saves the comment as a new conversation and returns a unique conversation ID via the `done` callback. If an unrecoverable error occurs, it should indicate this with the `fail` callback.
 
@@ -248,33 +228,11 @@ Tiny Comments uses the Conversation `reply` function to reply to a comment.
 
 #### Helper Functions
 
-##### setConversation(uid, conversation)
-
+* **setConversation(uid, conversation)**
 `setConversation` here is a function written to synchronously write the comment back to the form field, awaiting persist on document save.
 
-Here is an example of how `setConversation` can be implemented:
-
-```js
-  function setConversation(uid, conversation) {
-    var el = document.querySelector(commentSelector);
-    var store = JSON.parse(el.value);
-    store[uid] = conversation;
-    el.value = JSON.stringify(store, null, 2);
-  }
-```
-
-##### getConversation(uid)
-
+* **getConversation(uid)**
 `getConversation` here is a function written to synchronously retrieve an existing conversation from a form field populated by the server.
- 
-Here is an example of how `getConversation(uid)` can be implemented:
-
-```js
-function getConversation(uid) {
-    var el = document.querySelector(commentSelector);
-    return JSON.parse(el.value)[uid];
-  }
-```
 
 The `reply` function saves the comment as a reply to an existing conversation and returns via the `done` callback once successful. Unrecoverable errors are communicated to TinyMCE by calling the `fail` callback instead.
 
@@ -309,23 +267,12 @@ Tiny Comments uses the Conversation `delete` function to delete an entire conver
 
 #### Helper Functions
 
-##### deleteConversation(uid)
-
+* **deleteConversation(uid)**
 `deleteConversation(uid)` here is to allow only the first commenter to delete a comment.
 
-Here is an example of how `deleteConversation(uid)` can be implemented:
+* **getConversation(uid)**
+`getConversation` here is a function written to synchronously retrieve an existing conversation from a form field populated by the server.
 
-```js
-  function del(uid, done, fail) {
-    // only allow first commenter to delete
-    if (getConversation(uid)[0].user === authorId) {
-      deleteConversation(uid);
-      done(true);
-    } else {
-      done(false);
-    }
-  }
-```
 The `delete` function should asynchronously return a flag indicating whether the comment/comment thread was removed using the `done` callback. Unrecoverable errors are communicated to TinyMCE by calling the `fail` callback instead.
 
 Here is an example of how `delete` can be implemented:
@@ -378,21 +325,11 @@ The conventional conversation object structure that should be returned via the `
 ```
 #### Helper Functions
 
-##### getAuthorDisplayName(uid)
-
+* **getAuthorDisplayName(uid)**
 `getAuthorDisplayName(authorID)` here is a function to retrieve an existing conversation via a conversation UID (`authorID` in our example).
 
-Here is an example of how `getAuthorDisplayName(uid)` can be implemented:
-
-```js
-  function getAuthorDisplayName(authorId) {
-    var authors = {
-      'other': 'A Prior User',
-      'demo': 'Demo User'
-    };
-    return authors[authorId] || 'Unknown';
-  }
-```
+* **getConversation(uid)**
+`getConversation` here is a function written to synchronously retrieve an existing conversation from a form field populated by the server.
 
 Here is an example of how `lookup` might be implemented, utilizing an in-memory lookup function to resolve author display names:
 

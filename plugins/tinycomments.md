@@ -46,7 +46,7 @@ All functions incorporate `done` and `fail` callbacks as parameters. The functio
 To create the Tiny Comments plugin, use the following example:
 
 ```js
-`function example(contentSelector, commentSelector) {
+function example(contentSelector, commentSelector) {
     
       /********************
        * Helper functions *

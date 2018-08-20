@@ -35,14 +35,11 @@ Here is a demo to showcase the Tiny Comments functionality using storage configu
 
 We have used the following helper functions in our demo above:
 
-* **Create** - **setConversation(uid, conversation)**
-`setConversation` is a function written to synchronously persist the new conversation to a form field for submission to the server later.
+* **setConversation(uid, conversation)**
+`setConversation` is a function written to synchronously write a conversation to a form field for submission to the server later..
 
 * **randomString()**
 `randomString()` is a function used in the `create` function to return a 62-bits random strings to provision a large number of UIDs.
-
-* **Reply** - **setConversation(uid, conversation)**
-`setConversation` is a function written to synchronously write the comment back to the form field, awaiting persist on document save.
 
 * **getConversation(uid)**
 `getConversation` is a function written to synchronously retrieve an existing conversation from a form field populated by the server.

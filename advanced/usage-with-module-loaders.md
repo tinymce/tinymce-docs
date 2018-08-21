@@ -65,7 +65,7 @@ No matter where you choose to put it you need a skin, and the quickest way to ge
 
 ```
 cp -r node_modules/tinymce/skins skins
-```
+``` 
 **Windows**
 
 ```

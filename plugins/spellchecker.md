@@ -24,7 +24,7 @@ tinymce.init({
 
 ## Options
 
-These settings affect the execution of the `spellchecker` plugin by modifying how spellchecking is handled. If you need an introduction to setting up server-side spell checking with TinyMCE please [refer to this section]({{ site.baseurl }}/get-started/spell-checking/) in the Get Started guide.
+These settings affect the execution of the `spellchecker` plugin by modifying how spellchecking is handled. If you need an introduction to setting up server-side spell checking with TinyMCE please [refer to this section]({{ site.baseurl }}/general-configuration-guide/spell-checking/) in the General Configuration Guide.
 
 ### `spellchecker_callback`
 

@@ -70,7 +70,150 @@ If you are persisting the comments to a form field to be persisted on document s
 
 However, if you are persisting comments directly back to a server as they are made, you would call them asynchronously after the network call to do so had completed.
 
+<<<<<<< HEAD
+```js
+function example(contentSelector, commentSelector) {
+    
+      /********************
+       * Helper functions *
+       ********************/
+    
+      function getConversation(uid) {
+        var el = document.querySelector(commentSelector);
+        return JSON.parse(el.value)[uid];
+      }
+    
+      function setConversation(uid, conversation) {
+        var el = document.querySelector(commentSelector);
+        var store = JSON.parse(el.value);
+        store[uid] = conversation;
+        el.value = JSON.stringify(store, null, 2);
+      }
+    
+      function deleteConversation(uid) {
+        var el = document.querySelector(commentSelector);
+        var store = JSON.parse(el.value);
+        delete store[uid];
+        el.value = JSON.stringify(store, null, 2);
+      }
+    
+      function getAuthorDisplayName(authorId) {
+        var authors = {
+          'other': 'A Prior User',
+          'demo': 'Demo User'
+        };
+        return authors[authorId] || 'Unknown';
+      }
+    
+      function randomString() {
+        // ~62 bits of randomness, so very unlikely to collide for <100K uses
+        return Math.random().toString(36).substring(2, 14);
+      }
+    
+      var authorId = 'demo';
+    
+      /********************************
+       *   Tiny Comments functions    *
+       * (must call "done" or "fail") *
+       ********************************/
+    
+    /**
+     * Conversation "create" function. Saves the comment as a new conversation,
+     * and asynchronously returns a conversation unique ID via the "done"
+     * callback.
+     */
+      function create(content, done, fail) {
+        if (content === 'fail') {
+          fail(new Error('Something has gone wrong...'));
+        } else {
+          var uid = 'annotation-' + randomString();
+          setConversation(
+            uid,
+            [ { user: authorId, comment: content } ]
+          );
+          done(uid);
+        }
+      }
+    
+    /**
+     * Conversation "reply" function. Saves the comment as a reply to the
+     * an existing conversation, and asynchronously returns via the "done"
+     * callback when finished.
+     */
+      var reply = function(uid, content, done, fail) {
+        var comments = getConversation(uid);
+        comments.push({
+          user: authorId,
+          comment: content
+        });
+        setConversation(uid, comments);
+        done();
+      }
+    
+    /**
+     * Conversation "delete" function. Deletes an entire conversation.
+     * Returns asynchronously whether the conversation was deleted.
+     * Failure to delete due to permissions or business rules is indicated
+     * by "false", while unexpected errors should be indicated using the
+     * "fail" callback. 
+     */
+      function del(uid, done, fail) {
+        // only allow first commenter to delete
+        if (getConversation(uid)[0].user === authorId) {
+          deleteConversation(uid);
+          done(true);
+        } else {
+          done(false);
+        }
+      }
+    
+    /**
+     * Conversation "lookup" function. Retreives an existing conversation
+     * via a conversation unique ID. Asynchronously returns the conversation
+     * via the "done" callback.
+     *
+     * Conversation object structure:
+     * {
+     *   "comments": [
+     *     <comment1>,
+     *     <comment2>,
+     *     ...
+     *   ]
+     * }
+     * 
+     * Comment object structure:
+     * {
+     *   "author": "Author Display Name",
+     *   "content": "This is the text of the comment"
+     * }
+     * 
+     */
+      function lookup(uid, done, fail) {
+        var comments = getConversation(uid).map(function(item) {
+          return {
+            author: getAuthorDisplayName(item.user),
+            content: item.comment
+          };
+        });
+        done({ comments: comments });
+      };
+    
+      tinymce.init({
+        selector: contentSelector,
+        toolbar: 'bold italic underline | tinycomments',
+        plugins: 'tinycomments',
+        tinycomments_css_url: '../../../dist/tinycomments/css/tinycomments.css',
+        content_style: '.mce-annotation { background: yellow; color: black; } .tc-active-annotation {background: lime; color: black; }',
+        tinycomments_create: create,
+        tinycomments_reply: reply,
+        tinycomments_delete: del,
+        tinycomments_lookup: lookup
+      });
+    };
+```
+=======
 ### Considerations
+>>>>>>> develop
 
 #### Display Names
 

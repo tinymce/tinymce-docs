@@ -11,25 +11,50 @@ The Tiny Comments plugin provides the user an ability to start or join a convers
 
 This section describes the various configuration options for the Tiny Comments plugin.
 
-## Considerations
+## Storage
 
-### Storage
+Like TinyMCE, the Tiny Comments plugin does not directly provide the user an ability to save the comments. You need to configure storage at your end to be able to save comments on your server. You can choose to configure your storage settings to either persist them immediately or save them at the same time as the content.
 
-Like TinyMCE, the Tiny Comments plugin does not directly provide the user an ability to save the comments. You need to configure storage at your end to be able to store comments on your server. How you store those comments, and whether you choose to persist them immediately or save them at the same time as the content, affects when other users see new comments.
+How you store those comments affects when other users see new comments. The Tiny Comments functions (create, reply, delete, and lookup) are configured differently depending upon the server-side storage configuration.
 
-### Display Names
+In this chapter, we have provided examples of both ways of configuring Tiny Comments storage.
 
-Tiny Comments expects each comment to contain the author's _display name_, not a user ID, as Tiny Comments does not know the user identities. Your implementation of `lookup` will most likely need to consider this and resolve user identifiers to an appropriate display name.
+### Storage - persist in real-time
 
-### Current Author
+Here is a demo to showcase the Tiny Comments functionality using storage configured to persist in real-time:
 
-Tiny Comments does not know the name of the current user. After a user comments (triggering `create` for the first comment, or `reply` for subsequent comments) Tiny Comments requests the updated conversation via `lookup`, which should now contain the additional comment with the proper author. Determining the current user, and storing the comment related to that user, has to be done by the user.
+{% include codepen.html id="pOzxJw" %}
 
-## Implementation Functions
+### Storage - persist on content-save
+
+Here is a demo to showcase the Tiny Comments functionality using storage configured to persist on content-save.
+
+{% include codepen.html id="4d07e4da27b1e7245b5333ed7413083b" %}
+
+#### Helper Functions
+
+We have used the following helper functions in our demo above:
+
+* **setConversation(uid, conversation)**
+`setConversation` is a function written to synchronously write a conversation to a form field for submission to the server later..
+
+* **randomString()**
+`randomString()` is a function used in the `create` function to return a 62-bits random strings to provision a large number of UIDs.
+
+* **getConversation(uid)**
+`getConversation` is a function written to synchronously retrieve an existing conversation from a form field populated by the server.
+
+* **deleteConversation(uid)**
+`deleteConversation(uid)` is a function to allow only the first commenter to delete a comment.
+
+* **getAuthorDisplayName(uid)**
+`getAuthorDisplayName(authorID)` is a function to retrieve an existing conversation via a conversation UID (`authorID` in our example).
+
+## Tiny Comments Implementation Functions
 
 Tiny Comments requires four functions to be defined:
 
-```
+```js
 tinymce.init({
   ...
   tinycomments_create: create,
@@ -39,12 +64,13 @@ tinymce.init({
 });
 ```
 
-All functions incorporate `done` and `fail` callbacks as parameters. The function return type is not important, but all functions must call one of these two callbacks. If you are persisting the comments to a form field to be persisted on document save, you likely would call the appropriate callback prior to the function returning. However, if you are persisting comments directly back to a server as they are made, you would call them asynchronously after the network call to do so had completed.
+All functions incorporate `done` and `fail` callbacks as parameters. The function return type is not important, but all functions must call one of these two callbacks.
 
-## Example
+If you are persisting the comments to a form field to be persisted on document save, you likely would call the appropriate callback prior to the function returning.
 
-To create the Tiny Comments plugin, use the following example:
+However, if you are persisting comments directly back to a server as they are made, you would call them asynchronously after the network call to do so had completed.
 
+<<<<<<< HEAD
 ```js
 function example(contentSelector, commentSelector) {
     
@@ -185,22 +211,48 @@ function example(contentSelector, commentSelector) {
       });
     };
 ```
+=======
+### Considerations
+>>>>>>> develop
+
+#### Display Names
+
+Tiny Comments expects each comment to contain the author's _display name_, not a user ID, as Tiny Comments does not know the user identities. Your implementation of `lookup` will most likely need to consider this and resolve user identifiers to an appropriate display name.
+
+#### Current Author
+
+Tiny Comments does not know the name of the current user. After a user comments (triggering `create` for the first comment, or `reply` for subsequent comments) Tiny Comments requests the updated conversation via `lookup`, which should now contain the additional comment with the proper author. Determining the current user, and storing the comment related to that user, has to be done by the user.
 
 ### Create
 
-Tiny Comments uses the Conversation `create` function to create a comment. 
-
-#### Helper Functions
-
-* **setConversation(uid, conversation)**
-`setConversation` here is a function written to synchronously persist the new conversation to a form field for submission to the server later.
-
-* **randomString()**
-`randomString()` here is a function used in the `create` function to return a 62-bits random strings to provision a large number of UIDs.
+Tiny Comments uses the Conversation `create` function to create a comment.
 
 The `create` function saves the comment as a new conversation and returns a unique conversation ID via the `done` callback. If an unrecoverable error occurs, it should indicate this with the `fail` callback.
 
-Here is an example of how `create` can be implemented:
+The following are examples of how `create` can be implemented if you choose to configure your storage settings to be either persistent in real time or on content-save.
+
+#### Example - Storage - persist in real-time
+
+Here is an example of how `create` can be implemented using storage configured to persist in real-time:
+
+```js
+function create(content, done, fail) {
+    fetch(
+      'https://api.example/conversations/',
+      { method: 'POST', body: content }
+    ).then(function(response) {
+      return response.json();
+    }).then(function(json) {
+      done(json.uid);
+    }).catch(function() {
+      fail(new Error('Something has gone wrong...'));
+    });
+  }
+```
+
+#### Example - Storage - persist on content-save
+
+Here is an example of how `create` can be implemented using storage configured to persist on content-save:
 
 ```js
 var currentAuthorId = ...
@@ -224,19 +276,34 @@ function create(content, done, fail) {
 
 ### Reply
 
-Tiny Comments uses the Conversation `reply` function to reply to a comment. 
-
-#### Helper Functions
-
-* **setConversation(uid, conversation)**
-`setConversation` here is a function written to synchronously write the comment back to the form field, awaiting persist on document save.
-
-* **getConversation(uid)**
-`getConversation` here is a function written to synchronously retrieve an existing conversation from a form field populated by the server.
+Tiny Comments uses the Conversation `reply` function to reply to a comment.
 
 The `reply` function saves the comment as a reply to an existing conversation and returns via the `done` callback once successful. Unrecoverable errors are communicated to TinyMCE by calling the `fail` callback instead.
 
-Here is an example of how `reply` can be implemented:
+The following are examples of how `reply` can be implemented if you choose to configure your storage settings to be either persistent in real time or on content-save.
+
+#### Example - Storage - persist in real-time
+
+Here is an example of how `reply` can be implemented using storage configured to persist in real-time:
+
+```js
+function reply(uid, content, done, fail) {
+    fetch(
+      'https://api.example/conversations/'+uid,
+      { method: 'PATCH', body: content }
+    ).then(function(response) {
+      if (response.ok) {
+        done();
+      } else {
+        fail(new Error('Something has gone wrong...'));
+      }
+    });
+  }
+```
+
+#### Example - Storage - persist on content-save
+
+Here is an example of how `reply` can be implemented using storage configured to persist on content-save:
 
 ```js
 var currentAuthorId = ...
@@ -263,38 +330,55 @@ function reply(uid, content, done, fail) {
 
 ### Delete
 
-Tiny Comments uses the Conversation `delete` function to delete an entire conversation. 
-
-#### Helper Functions
-
-* **deleteConversation(uid)**
-`deleteConversation(uid)` here is to allow only the first commenter to delete a comment.
-
-* **getConversation(uid)**
-`getConversation` here is a function written to synchronously retrieve an existing conversation from a form field populated by the server.
+Tiny Comments uses the Conversation `delete` function to delete an entire conversation.
 
 The `delete` function should asynchronously return a flag indicating whether the comment/comment thread was removed using the `done` callback. Unrecoverable errors are communicated to TinyMCE by calling the `fail` callback instead.
 
-Here is an example of how `delete` can be implemented:
+The following are examples of how `delete` can be implemented if you choose to configure your storage settings to be either persistent in real time or on content-save.
+
+#### Example - Storage - persist in real-time
+
+Here is an example of how `delete` can be implemented using storage configured to persist in real-time:
 
 ```js
 function del(uid, done, fail) {
-  try {
-    // only allow first commenter to delete
-    if (getConversation(uid)[0].user === authorId) {
-      deleteConversation(uid);
-      done(true);
-     } else {
-       done(false);
-     }
-   } catch {
-     fail(new Error('Error deleting conversation...'));
-   }
-}
+    fetch(
+      'https://api.example/conversations/'+uid,
+      { method: 'DELETE' }
+    ).then(function(response) {
+      if (response.ok) {
+        done(true);
+      } else if (response.status == 403) {
+        done(false)
+      } else {
+        fail(new Error('Something has gone wrong...'));
+      }
+    });
+  }
+```
+
+#### Example - Storage - persist on content-save
+
+Here is an example of how `delete` can be implemented using storage configured to persist on content-save:
+
+```js
+  function del(uid, done, fail) {
+    fetch(
+      'https://api.example/conversations/'+uid,
+      { method: 'DELETE' }
+    ).then(function(response) {
+      if (response.ok) {
+        done(true);
+      } else if (response.status == 403) {
+        done(false)
+      } else {
+        fail(new Error('Something has gone wrong...'));
+      }
+    });
+  }
 ```
 
 > Note: Failure to delete due to permissions or business rules is indicated by "false", while unexpected errors should be indicated using the "fail" callback.
-
 
 ### Lookup
 
@@ -323,17 +407,47 @@ The conventional conversation object structure that should be returned via the `
 }
 
 ```
-#### Helper Functions
 
-* **getAuthorDisplayName(uid)**
-`getAuthorDisplayName(authorID)` here is a function to retrieve an existing conversation via a conversation UID (`authorID` in our example).
+The following are examples of how `lookup` can be implemented if you choose to configure your storage settings to be either persistent in real time or on content-save.
 
-* **getConversation(uid)**
-`getConversation` here is a function written to synchronously retrieve an existing conversation from a form field populated by the server.
+#### Example - Storage - persist in real-time
 
-Here is an example of how `lookup` might be implemented, utilizing an in-memory lookup function to resolve author display names:
+Here is an example of how `lookup` can be implemented using storage configured to persist in real-time:
 
+```js
+  function lookup(uid, done, fail) {
+    fetch('https://api.example/conversations/'+uid)
+      .then(function(response) { return response.json(); })
+      .then(function(json) {
+        var conversation = json.comments;
+        return fetch('https://api.example/users/')
+          .then(function(response) { return response.json(); })
+          .then(function(json) {
+            var users = json.users;
+            var unknown = { displayName: 'Unknown' };
+            return conversation.map(function(item) {
+              var user = users.find(function(v) { return v.id == item.user; });
+              return {
+                author: (user || unknown).displayName,
+                content: item.comment
+              };
+            });
+          });
+      })
+      .then(function(comments) {
+        done({ comments: comments });
+      })
+      .catch(function() {
+        fail(new Error('Something has gone wrong...'));
+      })
+  };
 ```
+
+#### Example - Storage - persist on content-save
+
+Here is an example of how `lookup` can be implemented using storage configured to persist on content-save, utilizing an in-memory lookup function to resolve author display names:
+
+```js
 function lookup(uid, done, fail) {
   try {
     var comments = getConversation(uid).map(function(item) {
@@ -347,9 +461,6 @@ function lookup(uid, done, fail) {
     fail(new Error('Error looking up conversation...'));
   }
 }
-
 ```
-
-We also have a [demo]({{ site.baseurl }}/enterprise/tiny-comments/#tinycommentsdemo) to showcase the Tiny Comments functionality.
 
 For more information on Tiny Comments commercial feature, visit our [Premium Features]({{ site.baseurl }}/enterprise/tiny-comments/) page.

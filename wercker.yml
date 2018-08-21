@@ -25,7 +25,7 @@ deploy:
     - s3sync:
         key-id: $S3_KEY
         key-secret: $S3_SECRET
-        bucket-url: $S3_BUCKET/$WERCKER_GIT_BRANCH/
+        bucket-url: $S3_BUCKET/docs/
         source-dir: $S3_SOURCE
         opts: --delete-removed
     - script:

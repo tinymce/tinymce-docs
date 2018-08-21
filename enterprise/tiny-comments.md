@@ -43,4 +43,4 @@ Start with our [dedicated product page](https://www.tiny.cloud/pricing/) to see 
 
 In this example, we highlight the features in Tiny Comments, including adding a comment, replying to a comment, and deleting a comment. For more information on the other Tiny Comments configuration options, see the [docs]({{ site.baseurl }}/plugins/tinycomments/).
 
-{% include codepen.html id="4d07e4da27b1e7245b5333ed7413083b" %}
+{% include codepen.html id="pOzxJw" %}

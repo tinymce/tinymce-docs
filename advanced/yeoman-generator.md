@@ -32,7 +32,7 @@ You will then be guided through these questions:
 1. **Plugin name?**  
 The name of the plugin.
 2. **How do you want to write your plugin?**  
-With what technology do you want to write your plugin? ES2015 transpiled with Babel, Typescript or Bolt (which is the module system used internally by Ephox, and probably not something that will be that interesting for external developers to use).
+With what technology do you want to write your plugin? ES2015 transpiled with Babel, Typescript or Bolt (which is the module system used internally by Tiny, and probably not something that will be that interesting for external developers to use).
 3. **Use yarn instead of npm?**  
 If you have yarn installed you can use that instead of npm for a speedier install.
 4. **Skip git repo initialization?**  

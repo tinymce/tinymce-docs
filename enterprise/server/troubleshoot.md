@@ -153,4 +153,4 @@ Once downloaded:
 	![Curl on Windows step 4]({{ site.baseurl }}/images/spell-checking-curl-windows-4.png)
 
 ## Need more help?
-If you are still experiencing problems, please contact [Ephox Support](http://support.ephox.com).
+If you are still experiencing problems, please contact [Tiny Support](http://support.ephox.com).

@@ -178,4 +178,4 @@ tinymce.get('editorID').('PastePostProcess', function(fragment) {
 
 ## Buy TinyMCE PowerPaste
 
-Start with our [dedicated product page](https://www.ephox.com/products/powerpaste/) to see our flexible pricing options. OEM and enterprise customers should [contact sales directly](https://www.tinymce.com/pricing/).
+Start with our [dedicated product page](https://about.tiny.cloud/products/powerpaste/) to see our flexible pricing options. OEM and enterprise customers should [contact sales directly](https://www.tinymce.com/pricing/).

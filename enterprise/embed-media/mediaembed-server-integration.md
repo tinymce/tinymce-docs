@@ -11,7 +11,7 @@ There are three options for enhancing the embeds created for private content by 
 
 * Annotate content with [Open Graph](http://ogp.me/) or other meta tags
 * Develop your own custom endpoint that returns JSON in the oEmbed format
-* Develop your own custom endpoint that returns JSON in the Ephox Enhanced Media Embed format
+* Develop your own custom endpoint that returns JSON in the Tiny Enhanced Media Embed format
 
 ## A note on cookies & authentication
 
@@ -76,7 +76,7 @@ As an alternative to Open Graph tags, you can include meta tags using the older 
 
 
 ## Custom API
-As an alternative to including meta tags in your content, you can write a custom API that returns JSON in either the oEmbed or Ephox Enhanced Media Embed formats.
+As an alternative to including meta tags in your content, you can write a custom API that returns JSON in either the oEmbed or Tiny Enhanced Media Embed formats.
 
 See the docs on [configuring a custom endpoint]({{ site.baseurl }}/enterprise/embed-media/mediaembed-server-config/#configureacustomendpoint) for details on getting the Enhanced Media Embed server to utilise your custom API.
 
@@ -94,8 +94,8 @@ This is a popular choice and many CMSs have existing plugins that support oEmbed
 * Must be a separate API rather than just metadata embedded in the content
 * Error messages aren’t defined as part of the spec
 
-### Ephox Enhanced Media Embed endpoint
-The other option for developing a custom API endpoint is to return JSON in the [Ephox Enhanced Media Embed format]({{ site.baseurl }}/enterprise/embed-media/mediaembed-server-integration/#ephoxenhancedmediaembedformat).
+### Tiny Enhanced Media Embed endpoint
+The other option for developing a custom API endpoint is to return JSON in the [Tiny Enhanced Media Embed format]({{ site.baseurl }}/enterprise/embed-media/mediaembed-server-integration/#ephoxenhancedmediaembedformat).
 
 #### Pros
 
@@ -109,7 +109,7 @@ The other option for developing a custom API endpoint is to return JSON in the [
 * No support from existing plugins
 * The TinyMCE editor does not fully take advantage of this format yet
 
-### Ephox Enhanced Media Embed format
+### Tiny Enhanced Media Embed format
 
 #### HTTP response status codes
 

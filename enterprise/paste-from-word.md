@@ -8,9 +8,9 @@ keywords: enterprise powerpaste power paste powerpaste_word_import powerpaste_ht
 
 ## Improve your productivity & writing experience
 
-[TinyMCE PowerPaste](https://www.ephox.com/products/powerpaste/) automatically cleans up content from Microsoft Word and other HTML sources to ensure clean, compliant content that matches the look and feel of your site or app.
+[TinyMCE PowerPaste](https://about.tiny.cloud/products/powerpaste/) automatically cleans up content from Microsoft Word and other HTML sources to ensure clean, compliant content that matches the look and feel of your site or app.
 
-TinyMCE PowerPaste is a Premium Plugin from TinyMCE. We have flexible purchase options: as a [stand-alone plugin](https://www.ephox.com/products/powerpaste/), to [OEM and custom enterprise pricing](https://www.tinymce.com/pricing/).
+TinyMCE PowerPaste is a Premium Plugin from TinyMCE. We have flexible purchase options: as a [stand-alone plugin](https://about.tiny.cloud/products/powerpaste/), to [OEM and custom enterprise pricing](https://www.tinymce.com/pricing/).
 
 > Customers: we have full documentation explaining how to install and configure TinyMCE PowerPaste. [Go to the docs.]({{ site.baseurl }}/plugins/powerpaste/)
 
@@ -42,7 +42,7 @@ It also does the same for images, automatically linking to the source image URL.
 
 ### Buy TinyMCE PowerPaste
 
-Start with our [dedicated product page](https://www.ephox.com/products/powerpaste/) to see our flexible pricing options. OEM and enterprise customers should [contact sales directly](https://www.tinymce.com/pricing/). Still not sure? Check out the demo below.
+Start with our [dedicated product page](https://about.tiny.cloud/products/powerpaste/) to see our flexible pricing options. OEM and enterprise customers should [contact sales directly](https://www.tinymce.com/pricing/). Still not sure? Check out the demo below.
 
 ## PowerPaste demo
 

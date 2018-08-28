@@ -156,7 +156,7 @@ The `Editor` component needs TinyMCE to be globally available to work, but to ma
 ```
 
 You can also define what cloud channel you want to use out these three
-* `stable` **Default**. The most stable and well-tested version that has passed the Ephox quality assurance process.
+* `stable` **Default**. The most stable and well-tested version that has passed the Tiny quality assurance process.
 * `testing` This channel will deploy the current candidate for release to the `stable` channel.
 * `dev` The cutting edge version of TinyMCE updated daily for the daring users.
 

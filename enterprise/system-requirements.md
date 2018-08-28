@@ -44,7 +44,7 @@ Spell checking is supported on all the browsers supported by TinyMCE Enterprise.
 
 ### Internet Explorer 8 and 9 Limitations
 
-Cross Origin Requests (CORS) are not supported in Internet Explorer 8 and 9. For spell checking to work, the ephox-seplling service must be located on the same domain as the TinyMCE client. The domain is considered to be the combination of the protocol (HTTP vs HTTPS), server name and the port as it appears in the browser's address bar.
+Cross Origin Requests (CORS) are not supported in Internet Explorer 8 and 9. For spell checking to work, the ephox-spelling service must be located on the same domain as the TinyMCE client. The domain is considered to be the combination of the protocol (HTTP vs HTTPS), server name and the port as it appears in the browser's address bar.
 
 Internet Explorer 8 will not highlight misspelt words as you type due to browser limitations. Misspelt words are highlighted after the current HTML node is changed (e.g. when the Enter key is pressed and the cursor enters a new paragraph).
 
@@ -84,4 +84,4 @@ All commercially supported plugins are supported on these versions.
 
 #### Need more?
 
-Ephox is committed to broadening support for various application servers / platforms. If you have a requirement to support an application server that is not listed here, please contact support@ephox.com.
+Tiny is committed to broadening support for various application servers / platforms. If you have a requirement to support an application server that is not listed here, please contact support@tiny.cloud.

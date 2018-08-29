@@ -7,9 +7,9 @@ description: How to manage asynchronous image uploads with jQuery, CORS.
 keywords: asynchronous async paste_data_images image cors
 ---
 
-Please note, this image upload feature is available for TinyMCE version 4.2 and above. Alternatively, the Ephox PowerPaste plugin is capable of this functionality in versions of TinyMCE 4.0 and above.
+Please note, this image upload feature is available for TinyMCE version 4.2 and above. Alternatively, the Tiny PowerPaste plugin is capable of this functionality in versions of TinyMCE 4.0 and above.
 
-The image uploader is designed to complement the new image editing functionality of TinyMCE 4.2. Images that are edited within TinyMCE can be uploaded using this function. Local images that are added through other means - for example drag and drop when using the [paste_data_images]({{ site.baseurl }}/plugins/paste/#paste_data_images) configuration property or using Ephox's PowerPaste Plugin - can also be uploaded using this functionality.
+The image uploader is designed to complement the new image editing functionality of TinyMCE 4.2. Images that are edited within TinyMCE can be uploaded using this function. Local images that are added through other means - for example drag and drop when using the [paste_data_images]({{ site.baseurl }}/plugins/paste/#paste_data_images) configuration property or using Tiny's PowerPaste Plugin - can also be uploaded using this functionality.
 
 Once uploaded, TinyMCE will automatically update the `<image>` src attribute with the new path to the remote image.
 

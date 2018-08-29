@@ -10,7 +10,7 @@ keywords: enterprise tinymcespellchecker spell check checker pro pricing imageto
 
 Some TinyMCE Enterprise features require a server-side component. If you're using the TinyMCE cloud solution, we've done all the hard work for you and you can skip this page. Alternatively, if you've purchased our Self-hosted solution then please read on.
 
-Server-side components must be deployed onto a Java Servlet 3.0 compatible application server.  We currently support Jetty, Apache Tomcat, and WebSphere Application Server. To discuss support for additional Java application servers, please contact us at <mailto:sales@ephox.com>
+Server-side components must be deployed onto a Java Servlet 3.0 compatible application server.  We currently support Jetty, Apache Tomcat, and WebSphere Application Server. To discuss support for additional Java application servers, please contact us at <mailto:sales@tiny.cloud>
 
 The following server-side components are included in the TinyMCE Self-hosted package:
 

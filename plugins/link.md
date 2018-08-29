@@ -127,8 +127,8 @@ tinymce.init({
   menubar: "insert",
   toolbar: "link",
   link_list: [
-    {title: 'My page 1', value: 'https://www.tinymce.com'},
-    {title: 'My page 2', value: 'https://www.ephox.com'}
+    {title: 'My page 1', value: 'https://www.tiny.cloud'},
+    {title: 'My page 2', value: 'https://about.tiny.cloud'}
   ]
 });
 ```
@@ -144,10 +144,10 @@ tinymce.init({
   menubar: "insert",
   toolbar: "link",
   link_list: [
-    {title: 'TinyMCE', value: 'https://www.tinymce.com'},
-    {title: 'Moxiecode', value: 'https://www.ephox.com'},
+    {title: 'TinyMCE', value: 'https://www.tiny.cloud'},
+    {title: 'Moxiecode', value: 'https://about.tiny.cloud'},
     {title: 'TinyMCE resources', menu: [
-    {title: 'TinyMCE documentation', value: 'https://www.tinymce.com/docs/'},
+    {title: 'TinyMCE documentation', value: 'https://www.tiny.cloud/docs/'},
     {title: 'TinyMCE forum', value: 'https://community.tinymce.com/'}
     ]}
   ]
@@ -178,8 +178,8 @@ tinymce.init({
   toolbar: "link",
   link_list: function(success) {
     success([
-       {title: 'My page 1', value: 'https://www.tinymce.com'},
-       {title: 'My page 2', value: 'https://www.ephox.com'}
+       {title: 'My page 1', value: 'https://www.tiny.cloud'},
+       {title: 'My page 2', value: 'https://about.tiny.cloud'}
     ]);
   }
 });

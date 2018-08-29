@@ -1,5 +1,5 @@
 FROM ubuntu 
-MAINTAINER Ephox, is-inbox@ephox.com
+MAINTAINER Tiny, is-inbox@tiny.cloud
 
 ENV DEBIAN_FRONTEND noninteractive
 

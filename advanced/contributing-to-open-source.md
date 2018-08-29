@@ -13,7 +13,7 @@ TinyMCE is an open source software project, and we encourage developers to contr
 ## Basic rules
 
 * Contributed code will be licensed under the LGPL license, but not limited to LGPL.
-* Copyright notices will be changed to Ephox Corporation but contributors will get credit for their work.
+* Copyright notices will be changed to Tiny Technologies but contributors will get credit for their work.
 * All third party code will be reviewed, tested and possibly modified before being released.
 * For contributions to be accepted, a Contributors License Agreement must be completed.  
 

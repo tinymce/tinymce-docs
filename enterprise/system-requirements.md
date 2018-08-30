@@ -7,7 +7,7 @@ keywords: support supported browser browsers windows osx linux ie8 chrome firefo
 
 ## Supported Browsers
 
-[Go to this page]({{ site.baseurl }}/get-started/system-requirements/) for information on which browsers are supported by TinyMCE.
+[Go to this page]({{ site.baseurl }}/general-configuration-guide/system-requirements/) for information on which browsers are supported by TinyMCE.
 
 ## Word Copy/Paste
 

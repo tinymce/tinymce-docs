@@ -12,4 +12,3 @@ init:
 
 build:
 	_scripts/build.sh
-

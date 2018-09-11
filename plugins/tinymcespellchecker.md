@@ -24,7 +24,7 @@ The following languages are supported:
 * Swedish
 
 ## Cloud Installation
-To enable the TinyMCE Enterprise Spellchecking plugin with [TinyMCE Cloud]({{ site.baseurl }}/get-started-cloud):
+To enable the TinyMCE Enterprise Spellchecking plugin with [TinyMCE Cloud]({{ site.baseurl }}/cloud-deployment-guide/editor-and-features):
 
 1. If you are currently using the 'spellchecker' plugin provided with TinyMCE, disable it by removing it from the 'plugins' list.
 2. Add 'tinymcespellchecker' to the 'plugins' list.
@@ -71,7 +71,7 @@ The TinyMCE Enterprise Spellchecking plugin activates automatically when users t
 ### `spellchecker_rpc_url`
 This setting enables you to specify the URL to be used for the server side ephox-spelling service. Check the [server-side component installation guide]({{ site.baseurl }}/enterprise/server/) for details on how to setup your own spellchecker server.
 
-**Note:** `spellchecker_rpc_url` is **not** required when enabling this plugin via [TinyMCE Cloud]({{ site.baseurl }}/get-started-cloud/)
+**Note:** `spellchecker_rpc_url` is **not** required when enabling this plugin via [TinyMCE Cloud]({{ site.baseurl }}/cloud-deployment-guide/editor-and-features/)
 
 ### `spellchecker_languages`
 This optional setting allows you to specify the languages that are available to the user, provided as a comma delimited string. The default value for this setting is:

@@ -16,7 +16,7 @@ For the moment the **Enhanced Media Embed** plugin has to be used in conjunction
 2. Add the `mediaembed` plugin to the `plugins` list.
 
 ### Example Cloud Configuration
-The service URL is already configured with [TinyMCE Cloud]({{ site.baseurl }}/get-started-cloud).
+The service URL is already configured with [TinyMCE Cloud]({{ site.baseurl }}/cloud-deployment-guide/editor-and-features/).
 Simply specify the `media` and `mediaembed` plugins, and optionally a `mediaembed_max_width`
 
 ```js
@@ -48,7 +48,7 @@ The plugin can be used in two ways, either by simply entering a URL on an empty 
 ### `mediaembed_service_url`
 
 This setting specifies the URL to the service that will handle your requests and return the embeddable snippets used by the **Media Embed** plugin. Please follow these [instructions]({{site.baseurl}}/enterprise/server/#step6setupeditorclientinstancestousetheserver-sidefunctionality) to configure the **WAR** file that you will get as a part of your [premium TinyMCE plugin](https://www.tinymce.com/pricing/) subscription.
-This option is not required for [TinyMCE Cloud]({{ site.baseurl }}/get-started-cloud).
+This option is not required for [TinyMCE Cloud]({{ site.baseurl }}/cloud-deployment-guide/editor-and-features/).
 
 ### `mediaembed_max_width`
 

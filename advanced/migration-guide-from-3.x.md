@@ -52,7 +52,7 @@ The new "modern" theme was introduced in 4.0. More themes will be added in the f
 
 ## Event handling
 
-TinyMCE 4.0 has a new way of binding events. Instead of the old dispatcher method, it uses the more common "on" and "off" like for example jQuery. It also allows you to bind multiple events and cancel events using the more common preventDefault and stopPropagation. Check the [API documentation]({{ site.baseurl }}/api/class/tinymce.editor/) for a full list of events.
+TinyMCE 4.0 has a new way of binding events. Instead of the old dispatcher method, it uses the more common "on" and "off" like for example jQuery. It also allows you to bind multiple events and cancel events using the more common preventDefault and stopPropagation. Check the [API documentation]({{ site.baseurl }}/api/tinymce/tinymce.editor/) for a full list of events.
 
 ```js
 // Old event

@@ -96,7 +96,7 @@ tinymce.init({
 
 ### Q: Where are the advanced image options?
 
-Use the [`Style Formats`](/configure/content-filtering/#style_formats) option instead, which is much more powerful.
+Use the [`Style Formats`]({{ site.baseurl }}/configure/content-filtering/#style_formats) option instead, which is much more powerful.
 
 ```js
 tinymce.init({

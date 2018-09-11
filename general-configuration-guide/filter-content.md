@@ -63,7 +63,7 @@ Before we move on to the table of format parameters below, we want to acknowledg
 | classes    | Space-separated list of classes to apply the selected elements or the new inline/block element. |
 | styles     | Name/value object with CSS style items to apply such as color and other attributes. |
 | attributes | Name/value object with attributes to apply to the selected elements or the new inline/block element. |
-| exact      | Disables the [Style merging]({{ site.baseurl }}configure/content-formatting/#stylemerging) feature when used. `exact` is needed for some CSS inheritance issues such as text-decoration for underline/strikethrough. |
+| exact      | Disables the [Style merging]({{ site.baseurl }}/configure/content-formatting/#stylemerging) feature when used. `exact` is needed for some CSS inheritance issues such as text-decoration for underline/strikethrough. |
 | wrapper    | State that tells that the current format is a container format for block elements. For example a `div wrapper` or `blockquote`. |
 
 ### Example of usage of the formats option

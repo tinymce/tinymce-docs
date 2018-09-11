@@ -1,7 +1,7 @@
 ## images_upload_credentials
 
 
-The **images_upload_credentials** option lets you specify if calls to the configured [`images_upload_url`](images-upload-url) should pass along credentials like cookies etc. cross domain.
+The **images_upload_credentials** option lets you specify if calls to the configured [`images_upload_url`](#images_upload_url) should pass along credentials like cookies etc. cross domain.
 
 **Type:** `Boolean`
 

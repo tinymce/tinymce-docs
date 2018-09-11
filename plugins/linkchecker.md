@@ -13,7 +13,7 @@ The `linkchecker` does what it says &ndash; validates URLs, as you type them. UR
 
 ## Cloud Instructions
 
-If you are using [TinyMCE Cloud]({{ site.baseurl }}/get-started-cloud/), simply add `"linkchecker"` to your plugins list, and the service will be automatically configured.
+If you are using [TinyMCE Cloud]({{ site.baseurl }}/cloud-deployment-guide/editor-and-features/), simply add `"linkchecker"` to your plugins list, and the service will be automatically configured.
 
 ##### Example
 

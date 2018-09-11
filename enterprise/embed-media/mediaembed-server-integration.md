@@ -113,10 +113,10 @@ The other option for developing a custom API endpoint is to return JSON in the [
 
 #### HTTP response status codes
 
-* HTTP 200 (OK): [`EphoxEmbedObj`]({{ site.baseurl }}/enterprise/check-links-and-embed-media/mediaembed-server-integration/#ephoxembedobj)
-* HTTP 400 (User Error): [`ErrorObj`]({{ site.baseurl }}/enterprise/check-links-and-embed-media/mediaembed-server-integration/#errorobj)
-* HTTP 503 (Upstream Error): [`ErrorObj`]({{ site.baseurl }}/enterprise/check-links-and-embed-media/mediaembed-server-integration/#errorobj)
-* HTTP 500 (Unexpected Error): [`ErrorObj`]({{ site.baseurl }}/enterprise/check-links-and-embed-media/mediaembed-server-integration/#errorobj)
+* HTTP 200 (OK): [`EphoxEmbedObj`]({{ site.baseurl }}/enterprise/embed-media/mediaembed-server-integration/#ephoxembedobj)
+* HTTP 400 (User Error): [`ErrorObj`]({{ site.baseurl }}/enterprise/embed-media/mediaembed-server-integration/#errorobj)
+* HTTP 503 (Upstream Error): [`ErrorObj`]({{ site.baseurl }}/enterprise/embed-media/mediaembed-server-integration/#errorobj)
+* HTTP 500 (Unexpected Error): [`ErrorObj`]({{ site.baseurl }}/enterprise/embed-media/mediaembed-server-integration/#errorobj)
 
 #### JSON response objects
 

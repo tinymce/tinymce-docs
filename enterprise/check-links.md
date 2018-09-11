@@ -15,7 +15,7 @@ Your have two deployment options. One is super easy with TinyMCE Cloud, the othe
 
 ## Link Checker Cloud Quick Setup
 
-[TinyMCE Cloud]({{ site.baseurl }}/get-started-cloud/) makes setting up Link Checker a breeze. Simply include the `linkchecker` parameter in your `tinymce.init` and have our Cloud services do the work for you.
+[TinyMCE Cloud]({{ site.baseurl }}/cloud-deployment-guide/editor-and-features/) makes setting up Link Checker a breeze. Simply include the `linkchecker` parameter in your `tinymce.init` and have our Cloud services do the work for you.
 
 ## Link Checker Self-hosted Quick Setup
 
@@ -41,6 +41,6 @@ ephox {
 }
 ```
 
-You will also find more Self-hosted setup information on the [Link Checker plugin page](/plugins/linkchecker/).
+You will also find more Self-hosted setup information on the [Link Checker plugin page]({{ site.baseurl }}/plugins/linkchecker/).
 
 > **Important note:** The Link Checker server currently does not support integration with IBM WebSphere Application Server.

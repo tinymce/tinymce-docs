@@ -43,4 +43,4 @@ tinymce.init({
 });
 ```
 
-For more information on the differences between regular and inline editing modes please see this page [here]({{ site.baseurl }}/get-started/use-tinymce-inline/).
+For more information on the differences between regular and inline editing modes please see this page [here]({{ site.baseurl }}/general-configuration-guide/use-tinymce-inline/).

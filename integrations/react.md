@@ -41,7 +41,7 @@ $ npm install --save @tinymce/tinymce-react
 
 ### 3.1 Loading TinyMCE
 #### Auto-loading from TinyMCE Cloud
-`@tinymce/tinymce-react` requires `tinymce` to be globally available to work, but to make it as easy as possible it will automatically load [TinyMCE Cloud](https://www.tinymce.com/docs/get-started-cloud/) if it can't find TinyMCE available when the component is mounting. To get rid of the `This domain is not registered...` warning, sign up for the cloud and enter the api key like this:
+`@tinymce/tinymce-react` requires `tinymce` to be globally available to work, but to make it as easy as possible it will automatically load [TinyMCE Cloud](https://www.tinymce.com/docs/cloud-deployment-guide/editor-and-features/) if it can't find TinyMCE available when the component is mounting. To get rid of the `This domain is not registered...` warning, sign up for the cloud and enter the api key like this:
 
 ```js
 <Editor apiKey='YOUR_API_KEY' init={% raw %}{{{% endraw %} /* your other settings */ {% raw %}}}{% endraw %} />
@@ -58,7 +58,7 @@ So using the `dev` channel would look like this:
 <Editor apiKey='YOUR_API_KEY' cloudChannel='dev' init={% raw %}{{{% endraw %} /* your other settings */ {% raw %}}}{% endraw %} />
 ```
 
-For more info on the different channels see the [documentation](https://www.tinymce.com/docs/get-started-cloud/editor-plugin-version/#devtestingandstablereleases).
+For more info on the different channels see the [documentation](https://www.tinymce.com/docs/cloud-deployment-guide/editor-and-features/editor-plugin-version/#devtestingandstablereleases).
 
 #### Loading TinyMCE by yourself
 

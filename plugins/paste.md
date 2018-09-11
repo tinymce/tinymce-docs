@@ -168,7 +168,7 @@ tinymce.init({
 
 This option enables you to configure the `valid_elements` specific to MS Office. Word produces a lot of junk HTML, so when users paste things from Word we do extra restrictive filtering on it to remove as much of this as possible. This option enables you to specify which elements and attributes you want to include when Word contents are intercepted.
 
->**Note:** To access this feature, you need to set the value of [paste_enable_default_filters]({{site.baseurl}}./#paste_enable_default_filters) to `"false"` in your configuration.
+>**Note:** To access this feature, you need to set the value of [paste_enable_default_filters]({{site.baseurl}}plugins/paste/#paste_enable_default_filters) to `"false"` in your configuration.
 
 **Type:** `String`
 

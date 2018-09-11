@@ -15,7 +15,7 @@ Your have two deployment options. One is super easy with TinyMCE Cloud, the othe
 
 ## Enhanced Media Embed Cloud Quick Setup
 
-[TinyMCE Cloud]({{ site.baseurl }}/get-started-cloud/) makes setting up Enhanced Media Embed a breeze. Simply include the `mediaembed` parameter in your `tinymce.init` and have our Cloud services do the work for you.
+[TinyMCE Cloud]({{ site.baseurl }}/cloud-deployment-guide/editor-and-features/) makes setting up Enhanced Media Embed a breeze. Simply include the `mediaembed` parameter in your `tinymce.init` and have our Cloud services do the work for you.
 
 ## Enhanced Media Embed Self-hosted Quick Setup
 

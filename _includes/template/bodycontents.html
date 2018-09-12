@@ -1,0 +1,63 @@
+{% if page.url contains '/demo/' %}
+{% include_remote {{ site.origin }}/_docs/menu_demo.html css="body > *" %}
+{% else %}
+{% include_remote {{ site.origin }}/_docs/menu.html css="body > *" %}
+{% endif %}
+
+<div class="top-bar">
+    <div>
+        <div class="versions">
+            <div class="dropdown">
+                TinyMCE v4
+                <div class="dropdown-arrow"></div>
+                <div class="dropdown-options">
+                    <a class="link-gelato" href="{{ site.baseurl }}">TinyMCE v4</a>
+                    <a class="link-gelato" href="/docs-3x/">TinyMCE v3</a>
+                </div>
+            </div>
+        </div>
+        <div class="breadcrumbs">{% include breadcrumbs.html %}</div>
+        <div class="search">
+            <input type="text" name="seach" value="" id="searchKeywordInput" placeholder="Search in documentation" tabindex="1">
+        </div>
+    </div>
+</div>
+
+<div class="main {{ page.type }} {{ page.class }}">
+    <aside class="side-nav">
+        {% assign nav = site.data.nav | array_concat:site.data.nav_api %}
+        {% include nav.html links=nav preceding_address="/" %}
+    </aside>
+
+    <div class="heading">
+        <h1 class="light">{{ page.title }}</h1>
+        <h2 class="light">{{ page.description }}</h2>
+        {% if page.url contains '/api/' %}
+        <!-- Disabled since there is no git link -->
+        {% else %}
+        <a class="contribute link-garlic" href="https://github.com/tinymce/tinymce-docs/tree/master/{{ page.path }}">Contribute to this page<i></i></a>
+        {% endif %}
+        {% if page.controls %}
+        {% assign controls = page.controls | split:',' %}
+        <div class="badges">
+            {% for control in controls %}<span class="badge-naan lg">+ {{ control }}</span> {% endfor %}
+        </div>
+        {% endif %}
+    </div>
+
+    <div class="content">
+        {{ content }}
+        {% include feedback.html %}
+        <p class="let-us-know">
+            Can't find what you're looking for?
+            <a href="#" data-modal="let-us-know">
+                Let us know.
+            </a>
+        </p>
+        {% include license.html %}
+    </div>
+</div>
+
+{% include_remote {{ site.origin }}/_docs/footer.html css="body > *" %}
+<script src="{{ site.shared_baseurl }}/scripts/common.min.js"></script>
+<script src="{{ site.shared_baseurl }}/scripts/docs.min.js"></script>

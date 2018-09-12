@@ -1,0 +1,21 @@
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="{{ page.meta_description | or:page.description }}">
+    <meta name="keywords" content="{{ page.meta_keywords | or:site.default_meta_keywords }}">
+    <meta property="og:og:site_name" content="TinyMCE.com">
+    <meta property="og:title" content="TinyMCE | {{ page.meta_title | or:page.title }}">
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="{{ page.meta_description | or:page.description }}">
+    <meta property="og:image" content="https://www.tinymce.com/images/fb-share@2x.png">
+
+    <title>TinyMCE | {{ page.meta_title | or:page.title }}</title>
+
+    <link href="//cdn.jsdelivr.net/docsearch.js/2.2.1/docsearch.min.css" rel="stylesheet" />
+    <link href="{{ site.shared_baseurl }}/css/common.min.css" rel="stylesheet">
+    <link href="{{ site.shared_baseurl }}/css/docs.min.css" rel="stylesheet">
+    <link href="//fast.fonts.net/cssapi/5d4ae438-4aca-4c75-8249-d9486d12b12e.css" rel="stylesheet">
+    <!-- link href="//afeld.github.io/emoji-css/emoji.css" rel="stylesheet" -->
+    {% include_remote {{ site.origin }}/_docs/head.html css="head > *" %}
+</head>

@@ -8,6 +8,14 @@ class: changelog
 
 {% capture changelog %}
 
+## Version 4.8.3, September 13, 2018
+* Fixed a bug where the Wordcount Plugin didn't correctly count words within tables on IE11.
+* Fixed a bug where it wasn't possible to move the caret out of a table on IE11 and Firefox.
+* Fixed a bug where merging empty blocks didn't work as expected, sometimes causing content to be deleted.
+* Fixed a bug where the Textcolor Plugin didn't show the correct current color.
+* Fixed a bug where clear formatting with a collapsed selection would sometimes clear formatting from more content than expected.
+* Fixed a bug with the Table Plugin where it wasn't possible to keyboard navigate to the caption.
+
 ## Version 4.8.2 August 9, 2018
 * Moved annotator from "experimental" to "annotator" object on editor.
 * Improved the multiclick normalization across browsers.

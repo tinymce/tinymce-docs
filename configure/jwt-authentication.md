@@ -5,88 +5,95 @@ description_short: JWT Authentication
 description: JWT tokens is a common way for authorization of web services.
 ---
 
-Some cloud services for tinymce requires you to setup jwt token authentication. This allows us to verify that you and your end user is allowed to access a particular feature. Jwt tokens is a common way for authorization of web services and is documented more detail at the [https://jwt.io/](https://jwt.io/) website. This guide aims to show how to setup jwt authentication for the cloud services provided for tinymce.
+Some cloud services for TinyMCE requires you to setup JWT token authentication. This allows us to verify that you and your end user are allowed to access a particular feature. JWT tokens are a common way for authorization of web services and they are documented in more detail at the https://jwt.io/ website. This guide aims to show how to setup JWT authentication for the cloud services provided for TinyMCE.
 
-## Private/public key pair
 
-Jwt tokes used by the tinymce cloud services are done using a public/private rsa key. This allows you as an integrator to have full control over the authentication since we don't store the private key only you have access to that key and only you can produce valid jwt tokens. We can only verify that they are valid and extract user information from that token.
+## Private/Public Key Pair
 
-The private/public key pair is created in your shop account page but we only store the public key on our side. The private key is for you to store in your backend.
+JWT tokens used by the TinyMCE cloud services are done using a public/private RSA key. This allows you as an integrator to have full control over the authentication as we don't store the private key. Only you have access to the private key, and only you can produce valid JWT tokens. We can only verify that they are valid and extract user information from that token.
 
-## Jwt token provider url
+The private/public key pair is created in your Tiny account page, but we only store the public key on our side. The private key is for you to store in your backend.
 
-The easiest way to setup jwt token authentication against tinymce cloud services is to create a jwt token provider page. This page takes a JSON HTTP POST request and produces a JSON result with the token that the service will then use for all the http requests.
 
-## PHP Token provider example
+## JWT Token Provider URL
 
-This example uses the [firebase jwt library](https://github.com/firebase/php-jwt) provided though [composer](https://getcomposer.org/). The private key should be the private key that got generated on the store page. Each service requires different claims to be provided so the example shows the sub and name claims needed for tiny drive.
+The easiest way to setup JWT token authentication against TinyMCE cloud services is to create a JWT token provider page. This page takes a JSON HTTP POST request and produces a JSON result with the token that the service will then use for all the HTTP requests.
 
-    <?php
-    require 'vendor/autoload.php';
-    use \Firebase\JWT\JWT;
+## PHP Token Provider Example
 
-    $privateKey = <<<EOD
-    -----BEGIN RSA PRIVATE KEY-----
-    ....
-    -----END RSA PRIVATE KEY-----
-    EOD;
+This example uses the [Firebase JWT library]("https://github.com/firebase/php-jwt") provided through the Composer dependency manager. The private key should be the private key that was generated through your Tiny Account. Each service requires different claims to be provided. The following example shows the sub and name claims needed for Tiny Drive.
 
-    $payload = array(
-      "sub" => "123",           // Unique user id string
-      "name" => "John Doe",     // Full name of user
-      "exp" => time() + 60 * 10 // 10 minutes expiration
-    );
+```js
+<?php
+require 'vendor/autoload.php';
+use \Firebase\JWT\JWT;
 
-    try {
-      $token = JWT::encode($payload, $privateKey, 'RS256');
-      http_response_code(200);
-      header('Content-Type: application/json');
-      echo json_encode(array("token" => $token));
-    } catch (Exception $e) {
-      http_response_code(500);
-      header('Content-Type: application/json');
-      echo $e->getMessage();
-    }
-    ?>
+$privateKey = <<<EOD
+-----BEGIN RSA PRIVATE KEY-----
+....
+-----END RSA PRIVATE KEY-----
+EOD;
 
-## Node Token provider example
+$payload = array(
+  "sub" => "123",           // Unique user id string
+  "name" => "John Doe",     // Full name of user
+  "exp" => time() + 60 * 10 // 10 minutes expiration
+);
 
-This example shows you how to setup a node js express handler that produces the jwt tokens. It requires you to install [express](https://expressjs.com/) and the [jsonwebtoken](https://www.npmjs.com/package/jsonwebtoken) node modules. Each service requires different claims to be provided so the example shows the sub and name claims needed for tiny drive.
+try {
+  $token = JWT::encode($payload, $privateKey, 'RS256');
+  http_response_code(200);
+  header('Content-Type: application/json');
+  echo json_encode(array("token" => $token));
+} catch (Exception $e) {
+  http_response_code(500);
+  header('Content-Type: application/json');
+  echo $e->getMessage();
+}
+?>
+```
 
-    const express = require('express');
-    const jwt = require('jsonwebtoken');
-    const app = express();
+## Node Token Provider Example
 
-    const privateKey = `
-    -----BEGIN RSA PRIVATE KEY-----
-    ....
-    -----END RSA PRIVATE KEY-----
-    `;
+This example shows you how to set up a Node.js express handler that produces the JWT tokens. It requires you to install the Express web framework and the JSON web token Node modules. Each service requires different claims to be provided. The following example shows the sub and name claims needed for Tiny Drive.
 
-    app.post('/jwt', function (req, res) {
-      const payload = {
-        sub: '123',         // Unique user id string
-        name: 'John Doe',   // Full name of user
-        exp: Math.floor(Date.now() / 1000) + (60 * 10) // 10 minutes expiration
-      };
+```js
+const express = require('express');
+const jwt = require('jsonwebtoken');
+const app = express();
 
-      try {
-    	  const token = jwt.sign(payload, privateKey, { algorithm: 'RS256'});
-    		res.set('content-type', 'application/json');
-    	  res.status(200);
-    	  res.send(JSON.stringify({
-    	    token: token
-    	  }));
-      } catch (e) {
-    		res.status(500);
-    	  res.send(e.message);
-    	}
-    });
+const privateKey = `
+-----BEGIN RSA PRIVATE KEY-----
+....
+-----END RSA PRIVATE KEY-----
+`;
 
-    app.listen(3000);
+app.post('/jwt', function (req, res) {
+  const payload = {
+    sub: '123',         // Unique user id string
+    name: 'John Doe',   // Full name of user
+    exp: Math.floor(Date.now() / 1000) + (60 * 10) // 10 minutes expiration
+  };
 
-## Tiny drive specific jwt claims:
+  try {
+	  const token = jwt.sign(payload, privateKey, { algorithm: 'RS256'});
+		res.set('content-type', 'application/json');
+	  res.status(200);
+	  res.send(JSON.stringify({
+	    token: token
+	  }));
+  } catch (e) {
+		res.status(500);
+	  res.send(e.message);
+	}
+});
 
-**sub** - (required) Unique string to identify the user. This can be a database id, hashed email address or similar.
+app.listen(3000);
+```
 
-**name** - (required) Full name of the user this will be used for presentation inside tiny drive when a user uploads a file the user name is presented as the creator of that file.
+## Tiny Drive Specific JWT Claims:
+
+**sub** - (required) Unique string to identify the user. This can be a database id, hashed email address, or similar identifier.
+
+**name** - (required) Full name of the user that will be used for presentation inside Tiny Drive. When a user uploads a file, the username is presented as the creator of that file.
+

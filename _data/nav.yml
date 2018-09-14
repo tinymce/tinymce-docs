@@ -411,6 +411,28 @@
     - url: "#wordcount_cleanregex"
     - url: "#wordcount_countregex"
 
+- url: "components"
+  pages:
+  - url: "dialog"
+    pages:
+    - url: "dialogoverview"
+    - url: "dialogcomponent"
+    - url: "dialogexample"
+  - url: "contextmenu"
+  - url: "contexttoolbar"
+  - url: "menu"
+  - url: "tables"
+    pages:
+    - url: "tableoverview"
+    - url: "tablecomponents"
+    - url: "tableexample"
+  - url: "toolbarmenu"
+  - url: "toolbarbuttons"
+    pages:
+    - url: "toolbarbuttonsoverview"
+    - url: "toolbarbuttonscomponent"
+    - url: "toolbarbuttonsexample"
+
 - url: "themes"
   pages:
   - url: "inlite"
@@ -478,5 +500,13 @@
   - url: "react"
   - url: "vue"
   - url: "wordpress"
+
+- url: "migration-from-4.x"
+  pages:
+  - url: "migrating4x"
+
+- url: "release-notes"
+  pages:
+  - url: "new-features"
 
 - url: "changelog"

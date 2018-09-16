@@ -21,16 +21,17 @@ To configure the annotate button on your toolbar, make the following changes:
        
  ```js
 setup: function(ed) {
-  ed.addButton('annotate-alpha', {
-    text: 'Annotate',
-    onclick: function() {
-      const comment = prompt('Comment with?');
-      ed.annotator.annotate('alpha', {
-        comment
-      });
-      ed.focus();
+    ed.addButton('annotate-alpha', {
+        text: 'Annotate',
+        onclick: function() {
+            const comment = prompt('Comment with?');
+            ed.annotator.annotate('alpha', {
+                comment
+            });
+            ed.focus();
+        }
     });
-   }
+}
 ```
        
 See [Configure TinyMCE]({{ site.baseurl }}/configure/) for more information on how to configure TinyMCE core.

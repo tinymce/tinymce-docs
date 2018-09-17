@@ -415,23 +415,29 @@
   pages:
   - url: "dialog"
     pages:
-    - url: "dialogoverview"
-    - url: "dialogcomponent"
-    - url: "dialogexample"
+    - url: "overview"
+    - url: "components"
+    - url: "example"
   - url: "contextmenu"
-  - url: "contexttoolbar"
-  - url: "menu"
-  - url: "tables"
     pages:
-    - url: "tableoverview"
-    - url: "tablecomponents"
-    - url: "tableexample"
-  - url: "toolbarmenu"
+    - url: "overview"
+    - url: "components"
+    - url: "example"
+  - url: "contexttoolbar"
+    pages:
+    - url: "overview"
+    - url: "components"
+    - url: "example"
   - url: "toolbarbuttons"
     pages:
-    - url: "toolbarbuttonsoverview"
-    - url: "toolbarbuttonscomponent"
-    - url: "toolbarbuttonsexample"
+    - url: "overview"
+    - url: "components"
+      pages:
+      - url: "basic"
+      - url: "menu"
+      - url: "split"
+      - url: "toggle"
+    - url: "example"
 
 - url: "themes"
   pages:
@@ -503,6 +509,7 @@
 
 - url: "migration-from-4.x"
   pages:
+  - url: "considerations"
   - url: "migrating4x"
 
 - url: "release-notes"

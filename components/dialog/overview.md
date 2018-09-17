@@ -1,6 +1,6 @@
 ---
 layout: draft
-title: Dialog
+title: Dialog Overview
 title_nav: Dialog Overview
 description: Dialog is a TinyMCE UI component used to display simple information.
 keywords: dialog dialogapi api
@@ -133,9 +133,12 @@ The instanceApi is a javascript object containing methods attached to the dialog
 This [example]({{site.baseurl}}/api-reference-guide/dialog/example) demonstrate one way of implementing Interactive Dialog using the `redial(config): void’
 
 
-## Component Definition
+## Dialog Framework
 
-Ui Components types and their definitions/what they do/why they needed/
+A Dialog framework has two main parts:
+
+* **Body** The body type can take either a **Panel** or **Tab Panel**.
+* **Footer** This section consists of a **Button**.
 
 ### Panel
 

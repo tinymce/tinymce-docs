@@ -1,62 +1,79 @@
 ---
 layout: draft
-title: Toolbar Buttons Overview
-title_nav: Toolbar Buttons Overview
+title: Overview
+title_nav: Overview
 description: This section shows you how to add a custom button to the Tiny 5.0 toolbar.
 keywords: toolbar toolbarbuttons buttons toolbarbuttonsapi
 ---
 
+
 ## Introduction
 
-Working off this, to have something to go by: https://www.tiny.cloud/docs/advanced/creating-a-custom-button/
 
-Basic button example is now: (check with mike if we might yet switch `editor.ui.registry.addButton` back to `editor.addButton`
-```editor.ui.registry.addButton('myButton', {
-  text: 'My Button',
-  onAction: (eventApi) => {
-    alert('My Button clicked!');
+## Use Cases
+
+* Create a shortcut some action/series of actions that the user does often/repeatedly
+* Create a button for some custom behaviour
+
+## Types of Toolbar Buttons
+
+### Basic Button
+
+A basic button simply triggers it's onAction function when clicked. 
+[link to page with more details]
+
+### Toggle Button
+
+A toggle button, when clicked, triggers an action like a basic button, but it also has a concept of state, and can be toggled on and off. Toggle buttons have CSS styling to show their state, which gives the user visual feedback. 
+
+> Example: bold button, which gets highlighted if your cursor is in a word with bold formatting.
+[link to page with more details]
+
+### Split Button
+
+A split button (also called a dropdown) has a preview field and a down arrow, and when clicked opens a list of options.
+
+> Example: font select dropdown
+[link to page with more details]
+
+### Menu Button
+
+A toolbar menu button is a toolbar button that opens a menu on click, which can also contain submenu. This is useful if you want to group actions together that would otherwise be several buttons on the toolbar, or if you don't want a toolbar and a menubar since this allows you to pull menus into the toolbar.
+
+> Example: the table plugin's table toolbar button, which opens a menu very similar to table's menubar menu, or its context menu.
+[link to page with more details]
+
+## How to Create Custom Toolbar Buttons
+
+The methods for adding custom toolbar buttons are in the UI Registry part of the editor API * `editor.ui.registry`. The API has four methods for adding toolbar buttons, one for each type of toolbar button: 
+* editor.ui.registry.addButton(identifier, configuration)
+* editor.ui.registry.addToggleButton(identifier, configuration)
+* editor.ui.registry.addSplitButton(identifier, configuration)
+* editor.ui.registry.addMenuButton(identifier, configuration)
+
+The two arguments these methods take are:
+
+* identifier - a unique name for the button
+* configuration - an object containing your configuration for that button. Note that although there are some common configuration options, each type of button has custom options so we recommend reading the relevant page for the type of button you're creating.
+
+To actually add a custom toolbar button to the editor, you need to define it within the `setup` callback of your TinyMCE configuration. This callback is automatically invoked for every initialised editor instance. It receives a reference to the editor instance as its argument, which we use to access the UI Registry API. 
+### Example of adding a basic button that triggers an alert when clicked:
+
+```js
+tinymce.init({
+  selector: '#editor',
+  toolbar: 'myCustomToolbarButton',
+  setup: (editor) => {
+    editor.ui.registry.addButton('myCustomToolbarButton', {
+      text: 'My Custom Button',
+      onAction: () => alert('Button clicked!')
+    });
   }
-});```
-note:
- - onclick is now onAction (part of standardising across UI components), and has an `eventApi` argument which has some helpful functions depending on the type of button.
- - pretty sure buttons must *also* have an `onAction`, even if it's just `onAction: () => {}` which is an empty function.
- - tooltip, icon and text are still optionals fields
- - cmd is deprecated, and commands should be called in onAction. e.g. `cmd: mceSave' is now` onAction: (_) => { editor.execCommand('mceSave') }` - *I haven't checked that exactly, execCommand might take more args*. And an example with `mceInsertLink` or such might be better, but I have no idea how to pass args to the old cmd property >_>
- - onPostRender is now onSetup, and has some changes. Old onPostRender example function:
-```onpostrender: function monitorNodeChange() {
-  var btn = this;
-  editor.on('NodeChange', function(e) {
-    btn.disabled(e.element.nodeName.toLowerCase() == 'time');
-  });
-}```
+});
+```
+> Note that the identifier used to create the basic button is included in the `toolbar` option of our TinyMCE configuration * without this, our button won't be added to the toolbar.
+For more information on how to create the different types of buttons, ...
 
-new version:
-        ```onSetup: (api) => {
-          const editorEventCallback = (e) => {
-            api.setDisabled(e.element.nodeName.toLowerCase() === 'time');
-          };
-          ed.on('NodeChange', editorEventCallback);
-          return (api) => ed.off('NodeChange', editorEventCallback);
-        }```
-notes:
- - also has an `api` argument with some helpful functions - in this case, `isDisabled` and `setDisabled`.
- - onSetup can be called multiple times, whereas onPostRender only ever got called once, so there is now a teardown function (check wording with Morgan). So if any events were listened to in the onSetup code (the `ed.on('eventName', callback)` part), the callback function must also be returned as `(api) => ed.off('eventName', callback)`. The teardown will be automatically dealt with by Tiny - nothing further needs to be done regarding teardown.
-   - check with Morgan and Mike - not only did I maybe not explain that too well, there may yet be minor changes to onSetup you'd need to be aware of (edited)
 
-Millie Macdonald [3:36 PM]
-we also now have a couple more button types, accessed by `editor.ui.registry.<function>`. the full list is:
-- addButton - basic button
-- addToggleButton - toggle button, similar to old one. also can have a `active` parameter in it's config, and the `api` object passed as an argument to onSetup and onAction also includes `isActive()` and `setActive()` helper functions. So rather than:
 
-```var btn = this;
-btn.active(false)```
-   or such in an `onAction` function, you'd do
 
-```api.setActive(false)```
-   no more need for the `btn = this` part in this case
-- addSplitButton - new, I don't know it at all. I can look for more details later. I think it kept changing until recently.
-- addMenuButton - new, still in development? Definitely still changing
-So, summary for migration guide:
-- onclick is now onAction, which has `api` as an argument to give the user some helper functions
-- onpostrender is now onSetup, and if it listens to any events, the user should *probably* return a `editor.off` callback for teardown, since onSetup potentially runs multiple times, whereas onpostrender only ever ran once (details in custom toolbar button page?). onSetup also has some helper functions passed in through the `api` parameter
-- two new types of toolbar buttons that can be easily added via `editor.ui.registry.<function>` (these may have already been possible but I'm not sure how, and it should be easier now anyway)

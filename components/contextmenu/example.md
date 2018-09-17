@@ -1,7 +1,7 @@
 ---
 layout: draft
-title: Context Menu Example
-title_nav: Context Menu Example
+title: Example
+title_nav: Example
 description: Context Menu Example
 keywords: contextmenu context menu contextmenuapi
 ---

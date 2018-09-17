@@ -1,7 +1,7 @@
 ---
 layout: draft
-title: Toolbar Button Example
-title_nav: Toolbar Button Example
-description: Interactive Example using redial(config).
+title: Example
+title_nav: Example
+description: Toolbar Button Example.
 keywords: toolbar toolbarbuttons buttons toolbarbuttonsapi
 ---

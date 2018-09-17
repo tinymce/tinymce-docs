@@ -1,7 +1,7 @@
 ---
 layout: draft
-title: Dialog Example
-title_nav: Dialog Example
+title: Example
+title_nav: Example
 description: Interactive Example using redial(config).
 keywords: dialog dialogapi api redial example
 ---

@@ -1,7 +1,7 @@
 ---
 layout: draft
-title: Dialog Overview
-title_nav: Dialog Overview
+title: Overview
+title_nav: Overview
 description: Dialog is a TinyMCE UI component used to display simple information.
 keywords: dialog dialogapi api
 ---

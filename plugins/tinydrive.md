@@ -64,7 +64,7 @@ tinymce.init({
 
 ### `tinydrive_upload_path`
 
-This setting enables you to change the default upload path for files that get uploaded when pasted into the editor, uploaded directly through the Image dialog, or when you drag-and-drop images into the editor. It will produce a date-based structure within this path like this `/uploads/{year}/{month}/{day}`. This is to avoid having thousands of files in the same directory.
+This setting enables you to change the default upload path for files that get uploaded when pasted into the editor, uploaded directly through the Image dialog, or when you drag-and-drop images into the editor. It will produce a date-based structure within this path like this `/uploads/{year}{month}{day}`. This is to avoid having thousands of files in the same directory.
 
 **Type:** `String`
 

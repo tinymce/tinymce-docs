@@ -2,5 +2,5 @@
 
 set -e
 
-echo "/docs"
+echo "/docs-preview"
 

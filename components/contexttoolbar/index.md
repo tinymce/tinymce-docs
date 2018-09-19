@@ -2,6 +2,6 @@
 layout: draft
 title: Context Toolbars
 title_nav: Context Toolbars
-description: <Text>
+description: Text
 keywords: context contexttoolbars contexttoolbarsapi toolbars
 ---

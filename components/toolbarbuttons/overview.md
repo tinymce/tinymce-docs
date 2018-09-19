@@ -57,6 +57,7 @@ The two arguments these methods take are:
 * configuration - an object containing your configuration for that button. Note that although there are some common configuration options, each type of button has custom options so we recommend reading the relevant page for the type of button you're creating.
 
 To actually add a custom toolbar button to the editor, you need to define it within the `setup` callback of your TinyMCE configuration. This callback is automatically invoked for every initialised editor instance. It receives a reference to the editor instance as its argument, which we use to access the UI Registry API. 
+
 ### Example of adding a basic button that triggers an alert when clicked:
 
 ```js

@@ -8,7 +8,7 @@ keywords: tinydrive storage media tiny drive
 
 The Tiny Drive plugin adds the functionality to upload and manage files and images to the cloud. This plugin is only available in [Tiny Cloud]("https://www.tiny.cloud/download/") and requires you to register for an API key.
 
-To enable this functionality, add `tinydrive` to the list of plugins in the `tinymce.init` call. You also need to authenticate the user using a [JWT token]({{site.baseur}}/configure/jwt-authentication).
+To enable this functionality, add `tinydrive` to the list of plugins in the `tinymce.init` call. You also need to authenticate the user using a [JWT token]({{site.baseur}}/configure/jwt-authentication/).
 
 Once you enable Drive it integrates as the default file picker for the Image, Link, and Media dialogs and as the default upload handler for local images being pasted or inserted into the document.
 
@@ -112,4 +112,3 @@ Tiny Drive has restrictions on what files can be uploaded and how large these fi
 All files are uploaded to a central storage with a CDN endpoint that means that we are hosting your files and they are publicly available in read-only mode for anyone that has access to the URL of that file.
 The URL format for each file is `https://drive.tiny.cloud/1/{your-api-key}/{uuid}` and gets generated when a file is uploaded.
 If you move or rename a file, it will still have the same unique URL, so the restructuring of your files using Drive won't affect where they are being used. However, deleting a file will mark the URL as being unused, and the URL will not continue to work.
-

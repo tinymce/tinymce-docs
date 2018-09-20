@@ -5,25 +5,45 @@ description_short: JWT Authentication
 description: JWT tokens is a common way for authorization of web services.
 ---
 
-Some cloud services for TinyMCE requires you to setup JWT token authentication. This allows us to verify that you and your end user are allowed to access a particular feature. JWT tokens are a common way for authorization of web services and they are documented in more detail at the https://jwt.io/ website. This guide aims to show how to setup JWT authentication for the cloud services provided for TinyMCE.
+Some cloud services for TinyMCE requires you to setup JSON Web Token (JWT) authentication. This allows us to verify that you and your end user are allowed to access a particular feature. JWT tokens are a common way for authorization of web services and they are documented in more detail at the https://jwt.io/ website. This guide aims to show how to setup JWT authentication for the cloud services provided for TinyMCE.
 
 
 ## Private/Public Key Pair
 
 JWT tokens used by the TinyMCE cloud services are done using a public/private RSA key. This allows you as an integrator to have full control over the authentication as we don't store the private key. Only you have access to the private key, and only you can produce valid JWT tokens. We can only verify that they are valid and extract user information from that token.
 
-The private/public key pair is created in your Tiny account page, but we only store the public key on our side. The private key is for you to store in your backend.
-
+The private/public key pair is created in your Tiny account page, but we only store the public key on our side. The private key is for you to store in your backend and use to sign JWT tokens so TinyMCE cloud services can validate requests and track which user made them.
 
 ## JWT Token Provider URL
 
 The easiest way to setup JWT token authentication against TinyMCE cloud services is to create a JWT token provider page. This page takes a JSON HTTP POST request and produces a JSON result with the token that the service will then use for all the HTTP requests.
 
+## JWT requirements
+
+### Algorithm
+
+The following algorithms are supported for the JWT header/signature:
+
+* RS256
+* RS384
+* RS512
+* PS256
+* PS384
+* PS512
+
+All of these algorithms use the private RSA key to sign the JWT, but vary in how they do so. `RS256` is most widely supported, and so features in following code examples.
+
+### Claims:
+
+**sub** - _(required)_ Unique string to identify the user. This can be a database ID, hashed email address, or similar identifier.
+
+**name** - _(required)_ Full name of the user that will be used for presentation inside Tiny Drive. When the user uploads a file, this name is presented as the creator of that file.
+
 ## PHP Token Provider Example
 
 This example uses the [Firebase JWT library]("https://github.com/firebase/php-jwt") provided through the Composer dependency manager. The private key should be the private key that was generated through your Tiny Account. Each service requires different claims to be provided. The following example shows the sub and name claims needed for Tiny Drive.
 
-```js
+```php
 <?php
 require 'vendor/autoload.php';
 use \Firebase\JWT\JWT;
@@ -90,10 +110,3 @@ app.post('/jwt', function (req, res) {
 
 app.listen(3000);
 ```
-
-## Tiny Drive Specific JWT Claims:
-
-**sub** - (required) Unique string to identify the user. This can be a database id, hashed email address, or similar identifier.
-
-**name** - (required) Full name of the user that will be used for presentation inside Tiny Drive. When a user uploads a file, the username is presented as the creator of that file.
-

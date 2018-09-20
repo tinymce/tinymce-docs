@@ -1,10 +1,13 @@
 ---
 layout: draft
-title: Deleted and Deprecated Features
-title_nav: Deleted and Deprecated Features
+title: Deleted and Changed Features
+title_nav: Deleted and Changed Features
 description: These features have either changed or have been deleted in TinyMCE 5.0.
 keywords: deleted features migration 4.x
 ---
+
+Each release of TinyMCE adds new features and functionality. We also occasionally remove features and functionality, usually because we've added a better options.
+Here are the details about the features and functionalities that we removed in Tiny 5.0.
 
 ##Listbox (Removed)
 

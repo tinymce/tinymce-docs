@@ -106,6 +106,7 @@ Tiny Drive has restrictions on what files can be uploaded and how large these fi
 * Allowed audio extensions: wav, wave, mp3, ogg, ogv, oga, ogx, ogm, spx, opus
 * Allowed video extensions: mp4, m4v, ogv, webm, mov
 * Allowed archive extensions: zip
+* The Copy operation is limited to single files due to technical reasons.
 
 ## Upload Files URL
 

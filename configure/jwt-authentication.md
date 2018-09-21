@@ -29,9 +29,9 @@ require 'vendor/autoload.php';
 use \Firebase\JWT\JWT;
 
 $privateKey = <<<EOD
------BEGIN RSA PRIVATE KEY-----
+-----BEGIN PRIVATE KEY-----
 ....
------END RSA PRIVATE KEY-----
+-----END PRIVATE KEY-----
 EOD;
 
 $payload = array(
@@ -60,12 +60,15 @@ This example shows you how to set up a Node.js express handler that produces the
 ```js
 const express = require('express');
 const jwt = require('jsonwebtoken');
+const cors = require('cors');
+
 const app = express();
+app.use(cors());
 
 const privateKey = `
------BEGIN RSA PRIVATE KEY-----
+-----BEGIN PRIVATE KEY-----
 ....
------END RSA PRIVATE KEY-----
+-----END PRIVATE KEY-----
 `;
 
 app.post('/jwt', function (req, res) {

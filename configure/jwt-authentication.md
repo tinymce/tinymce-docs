@@ -79,16 +79,16 @@ app.post('/jwt', function (req, res) {
   };
 
   try {
-	  const token = jwt.sign(payload, privateKey, { algorithm: 'RS256'});
-		res.set('content-type', 'application/json');
-	  res.status(200);
-	  res.send(JSON.stringify({
-	    token: token
-	  }));
+    const token = jwt.sign(payload, privateKey, { algorithm: 'RS256'});
+    res.set('content-type', 'application/json');
+    res.status(200);
+    res.send(JSON.stringify({
+      token: token
+    }));
   } catch (e) {
-		res.status(500);
-	  res.send(e.message);
-	}
+    res.status(500);
+    res.send(e.message);
+  }
 });
 
 app.listen(3000);

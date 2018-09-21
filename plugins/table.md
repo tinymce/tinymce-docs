@@ -21,7 +21,7 @@ tinymce.init({
 });
 ```
 
-### Options
+### Config Options
 
 These settings affect the execution of the `table` plugin and let you modify the default styles and attributes for tables, preset class lists, and table behavior.
 
@@ -32,6 +32,8 @@ This option allows you to specify the buttons and the order that they will appea
 **Type:** `String`
 
 **Default Value:** `"tableprops tabledelete | tableinsertrowbefore tableinsertrowafter tabledeleterow | tableinsertcolbefore tableinsertcolafter tabledeletecol"`
+
+**Possible Values:**  `table`, `tablerowprops`, `tablecellprops`
 
 ##### Example
 
@@ -320,6 +322,74 @@ tinymce.init({
 });
 ```
 
+### `table_resize_bars`
+
+This option makes it possible to
+
+**Type:**
+
+**Default Value:**
+
+**Possible Values:**
+
+##### Example
+
+```js
+tinymce.init({
+});
+```
+
+### `table_style_by_css`
+
+This option makes it possible to
+
+**Type:**
+
+**Default Value:**
+
+**Possible Values:**
+
+##### Example
+
+```js
+tinymce.init({
+});
+```
+
+### `color_picker_callback`
+
+This option makes it possible to
+
+**Type:**
+
+**Default Value:**
+
+**Possible Values:**
+
+##### Example
+
+```js
+tinymce.init({
+});
+```
+
+### `table_responsive_width`
+
+This option makes it possible to
+
+**Type:**
+
+**Default Value:**
+
+**Possible Values:**
+
+##### Example
+
+```js
+tinymce.init({
+});
+```
+
 ### Examples of various table setups
 
 Here are some examples of configuration for common setups.
@@ -360,3 +430,9 @@ tinymce.init({
   table_responsive_width: true
 });
 ```
+
+### Commands
+
+### Events
+
+### API

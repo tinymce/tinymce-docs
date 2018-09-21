@@ -5,8 +5,6 @@ title_nav: Components
 description: Context Menu Components
 keywords: contextmenu context menu contextmenuapi
 ---
-
-
 ## Registering context menus
 
 The structure of context menu sections is a very simple query system indexed by name. The strong recommendation is that the name of the menu section used matches the plugin name for ease of configuration.

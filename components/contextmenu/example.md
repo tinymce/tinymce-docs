@@ -18,8 +18,8 @@ tinymce.init({
 ```
 
 The context menu setting accepts two styles of values:
-* context menu sections defined by a plugin (usually equal to the plugin name)
-* any registered menu item
+* Context menu sections defined by a plugin (usually equal to the plugin name)
+* Any registered menu item
 
 If a name is registered as both a context menu section and a menu item, the section takes preference. In the example below, rather than adding the `link` menu item, the `link` context menu section will be used (which is dynamic depending on whether the cursor is in a link).
 

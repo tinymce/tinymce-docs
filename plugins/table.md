@@ -17,7 +17,8 @@ The `table` plugin adds table management functionality to TinyMCE. It also adds 
 tinymce.init({
   plugins: "table",
   menubar: "table",
-  toolbar: "table"
+  toolbar: "table tabledelete | tableprops tablerowprops tablecellprops | tableinsertrowbefore tableinsertrowafter tabledeleterow | tableinsertcolbefore tableinsertcolafter tabledeletecol
+"
 });
 ```
 
@@ -71,7 +72,6 @@ This option enables you to specify which elements should be cloned as empty chil
 **Type:** `String`
 
 ##### Example
-
 ```js
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
@@ -82,7 +82,6 @@ tinymce.init({
 ### `table_grid`
 
 This option allows you disable the table grid feature of the table menu. The grid feature (which is enabled by default) consists of a dragable matrix that a user can interact with to automatically create a table of x-rows by x-columns based upon their input.
-
 However, if you set this option to `false` the dragable matrix will be replaced with a table dialog box into which a user can enter various parameters to create a table cols, rows, width, height, cell spacing, cell padding, border, caption and alignment). There are also advanced style options available in the dialog.
 
 **Type:** `Boolean`
@@ -168,13 +167,12 @@ tinymce.init({
   }
 });
 ```
-
 ### `table_responsive_width`
 
 This option enables you to force pixels or percentage sizes for tables. Setting this to true will force resizing by percentages and setting this to false
 will force pixel resizing. The default is to automatically detect what the table size is and just use that unit for resizing.
 
-**Type:** `boolean`
+**Type:** `Boolean`
 
 **Default Value:** `none`
 
@@ -189,12 +187,11 @@ tinymce.init({
   table_responsive_width: false
 });
 ```
-
 ### `table_class_list`
 
 This option enables you to specify a list of classes to present in the table options dialog box. This is useful if you want users to assign predefined classes to table elements.
 
-**Type:** `String`
+**Type:** `Array`
 
 ##### Example
 
@@ -216,7 +213,7 @@ tinymce.init({
 
 This option enables you to specify a list of classes to present in the table cell options dialog box. This is useful if you want users to assign predefined classes to table cells.
 
-**Type:** `String`
+**Type:** `Array`
 
 ##### Example
 
@@ -233,12 +230,11 @@ tinymce.init({
   ]
 });
 ```
-
 ### `table_row_class_list`
 
 This option enables you to specify a list of classes to present in the table row options dialog. This is useful if you want users to assign predefined classes to table rows.
 
-**Type:** `String`
+**Type:** `Array`
 
 ##### Example
 
@@ -255,7 +251,6 @@ tinymce.init({
   ]
 });
 ```
-
 ### `table_advtab`
 
 This option makes it possible to disable the advanced tab in the table dialog box. The advanced tab allows a user to input `style`, `border color` and `background color` values.
@@ -277,7 +272,6 @@ tinymce.init({
   table_advtab: false
 });
 ```
-
 ### `table_cell_advtab`
 
 This option makes it possible to disable the advanced tab in the table cell dialog box. The advanced tab allows a user to input `style`, `border color` and `background color` values.
@@ -324,13 +318,13 @@ tinymce.init({
 
 ### `table_resize_bars`
 
-This option makes it possible to
+This option makes it possible to disable the ability to resize table columns and rows by dragging the border between two columns or rows.
 
-**Type:**
+**Type:** `Boolean`
 
-**Default Value:**
+**Default Value:** `true`
 
-**Possible Values:**
+**Possible Values:** `true`, `false`
 
 ##### Example
 
@@ -338,33 +332,15 @@ This option makes it possible to
 tinymce.init({
 });
 ```
-
 ### `table_style_by_css`
 
-This option makes it possible to
+This option enables you to force Table Properties dialog to use HTML5/CSS3 standards for setting cell spacing and cellpadding. By default, these are added as attributes to the table element. By setting this to true, cell spacing is applied to the table element as a `border-spacing` style and cell padding is applied to all `td` elements as a `padding` style
 
-**Type:**
+**Type:** `Boolean`
 
-**Default Value:**
+**Default Value:** `false`
 
-**Possible Values:**
-
-##### Example
-
-```js
-tinymce.init({
-});
-```
-
-### `color_picker_callback`
-
-This option makes it possible to
-
-**Type:**
-
-**Default Value:**
-
-**Possible Values:**
+**Possible Values:** `true`, `false`
 
 ##### Example
 
@@ -372,24 +348,6 @@ This option makes it possible to
 tinymce.init({
 });
 ```
-
-### `table_responsive_width`
-
-This option makes it possible to
-
-**Type:**
-
-**Default Value:**
-
-**Possible Values:**
-
-##### Example
-
-```js
-tinymce.init({
-});
-```
-
 ### Examples of various table setups
 
 Here are some examples of configuration for common setups.
@@ -403,7 +361,6 @@ tinymce.init({
   table_default_styles: {}
 });
 ```
-
 ##### Pixel based resizing
 
 ```js
@@ -414,7 +371,6 @@ tinymce.init({
   table_responsive_width: false
 });
 ```
-
 ##### Percentage based resizing
 
 ```js
@@ -431,41 +387,55 @@ tinymce.init({
 });
 ```
 
+> Note: The advanced tabs of the table, row, and cell properties dialogs use the `colorpicker` to allow for border and background colors to be applied. See docs to use and configure a custom [colorpicker]({{site.baseurl}}/plugins/colorpicker/).
+
 ### Commands
 
-| Name | Value | Requirement | Description |
-|------| ------| ------------| ----------- |
-| mceInsertTable |  |  |  |
-| mceTableProps |  |  |  |
-| mceTableRowProps |  |  |  |
-| mceTableCellProps |  |  |  |
-| mceTableSplitCells |  |  |  |
-| mceTableMergeCells |  |  |  |
-| mceTableInsertRowBefore |  |  |  |
-| mceTableInsertRowAfter |  |  |  |
-| mceTableInsertColBefore |  |  |  |
-| mceTableInsertColAfter |  |  |  |
-| mceTableDeleteCol |  |  |  |
-| mceTableDeleteRow |  |  |  |
-| mceTableCutRow |  |  |  |
-| mceTableCopyRow |  |  |  |
-| mceTablePasteRowBefore |  |  |  |
-| mceTablePasteRowAfter |  |  |  |
-| mceTableDelete |  |  |  |
+| Name | Description |
+|------| ------------|
+| mceInsertTable | Open the table properties dialog. On submit, a table will be inserted at the current cursor location. |
+| mceTableProps | Open the table properties dialog |
+| mceTableRowProps | Open the table row properties dialog |
+| mceTableCellProps | Open the table cell properties dialog |
+| mceTableSplitCells | Split the currently selected cell |
+| mceTableMergeCells | Merge the currently selected cells |
+| mceTableInsertRowBefore | Insert a row before the currently selected row(s) |
+| mceTableInsertRowAfter | Insert a row after the currently selected row(s) |
+| mceTableInsertColBefore | Insert a column before the currently selected column(s) |
+| mceTableInsertColAfter | Insert a column after the currently selected column(s) |
+| mceTableDeleteCol | Delete the currently selected column(s) |
+| mceTableDeleteRow | Delete the currently selected row(s) |
+| mceTableCutRow | Cut the currently selected row(s) to the clipboard |
+| mceTableCopyRow | Copy the currently selected row(s) to the clipboard |
+| mceTablePasteRowBefore | Paste any cut or coped rows into the table before the currently selected row(s) |
+| mceTablePasteRowAfter | Paste any cut or coped rows into the table after the currently selected row(s)  |
+| mceTableDelete | Delete the currently selected table |
 
-### Events
+#### Example
 
-| Name | Value | Requirement | Description |
-|------| ------| ------------| ----------- |
-| newrow|  |  |  |
-| newcell |  |  |  |
-| ObectResizeStart |  |  |  |
-| ObjectResized |  |  |  |
+```js
+tinymce.execCommand('mceInsertTable');
+```
 
 ### API
 
-| Name | Value | Requirement | Description |
-|------| ------| ------------| ----------- |
-| insertTable |  |  |  |
-| getClipboardRows |  |  |  |
-| setClipboardRows |  |  |  |
+| Name | Arguments | Description |
+|------| ------| ----------- |
+| insertTable | columns: number, rows: number | Insert a table with the given number of columns and rows at the current cursor location |
+| getClipboardRows |  | Returns the data for any rows cut or copied using `mceTableCutRow` or `mceTableCopyRow` |
+| setClipboardRows | rows: HTMLElement[] | Set the data to be used by `mceTablePasteRowBefore` or `mceTablePasteRowAfter` for pasting rows into a table |
+
+#### Example
+
+```js
+tinymce.activeEditor.plugins.table.insertTable(2, 3);
+```
+
+### Events
+
+| Name | Description |
+|------| ----------- |
+| newrow | Fired when a row is created |
+| newcell | Fired when a cell is created |
+| ObectResizeStart | Fired when a resize action is started on a table, row, column or cell using the resize bars |
+| ObjectResized | Fired when a resize action is finished on a table, row, column or cell using the resize bars |

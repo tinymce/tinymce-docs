@@ -6,7 +6,7 @@ description: Cloud-based file and image management for TinyMCE.
 keywords: tinydrive storage media tiny drive
 ---
 
-The Tiny Drive plugin adds the functionality to upload and manage files and images to the cloud. This plugin is only available in [Tiny Cloud]("https://www.tiny.cloud/download/") and requires you to register for an API key.
+The Tiny Drive plugin adds the functionality to upload and manage files and images to the cloud. This plugin is only available in [Tiny Cloud](https://www.tiny.cloud/download/) and requires you to register for an API key.
 
 To enable this functionality, add `tinydrive` to the list of plugins in the `tinymce.init` call. You also need to authenticate the user using a [JWT token]({{site.baseur}}/configure/jwt-authentication).
 

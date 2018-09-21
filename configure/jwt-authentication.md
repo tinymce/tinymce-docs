@@ -2,7 +2,7 @@
 layout: draft
 title: JWT Authentication
 description_short: JWT Authentication
-description: JWT is a common way for authorization of web services.
+description: JWT is a common authorization solution for web services.
 ---
 
 Some cloud services for TinyMCE require you to setup JWT authentication. This allows us to verify that you and your end user are allowed to access a particular feature. JWT is a common authorization solution for web services and is documented in more detail at the https://jwt.io/ website. This guide aims to show how to setup JWT authentication for the cloud services provided for TinyMCE.

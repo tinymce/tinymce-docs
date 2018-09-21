@@ -2,17 +2,17 @@
 layout: draft
 title: JWT Authentication
 description_short: JWT Authentication
-description: JWT tokens is a common way for authorization of web services.
+description: JWT is a common authorization solution for web services.
 ---
 
-Some cloud services for TinyMCE requires you to setup JWT token authentication. This allows us to verify that you and your end user are allowed to access a particular feature. JWT tokens are a common way for authorization of web services and they are documented in more detail at the https://jwt.io/ website. This guide aims to show how to setup JWT authentication for the cloud services provided for TinyMCE.
+Some cloud services for TinyMCE require you to setup JWT authentication. This allows us to verify that you and your end user are allowed to access a particular feature. JWT is a common authorization solution for web services and is documented in more detail at the https://jwt.io/ website. This guide aims to show how to setup JWT authentication for the cloud services provided for TinyMCE.
 
 
 ## Private/Public Key Pair
 
 JWT tokens used by the TinyMCE cloud services are done using a public/private RSA key. This allows you as an integrator to have full control over the authentication as we don't store the private key. Only you have access to the private key, and only you can produce valid JWT tokens. We can only verify that they are valid and extract user information from that token.
 
-The private/public key pair is created in your Tiny account page, but we only store the public key on our side. The private key is for you to store in your backend.
+The private/public key pair is created in your [Tiny account page](https://apps.tiny.cloud/my-account/jwt-key-manager/), but we only store the public key on our side. The private key is for you to store in your backend.
 
 
 ## JWT Token Provider URL
@@ -21,17 +21,20 @@ The easiest way to setup JWT token authentication against TinyMCE cloud services
 
 ## PHP Token Provider Example
 
-This example uses the [Firebase JWT library]("https://github.com/firebase/php-jwt") provided through the Composer dependency manager. The private key should be the private key that was generated through your Tiny Account. Each service requires different claims to be provided. The following example shows the sub and name claims needed for Tiny Drive.
+This example uses the [Firebase JWT library](https://github.com/firebase/php-jwt) provided through the Composer dependency manager. The private key should be the private key that was generated through your Tiny Account. Each service requires different claims to be provided. The following example shows the sub and name claims needed for Tiny Drive.
 
 ```js
 <?php
 require 'vendor/autoload.php';
 use \Firebase\JWT\JWT;
 
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
+
 $privateKey = <<<EOD
------BEGIN RSA PRIVATE KEY-----
+-----BEGIN PRIVATE KEY-----
 ....
------END RSA PRIVATE KEY-----
+-----END PRIVATE KEY-----
 EOD;
 
 $payload = array(
@@ -60,12 +63,15 @@ This example shows you how to set up a Node.js express handler that produces the
 ```js
 const express = require('express');
 const jwt = require('jsonwebtoken');
+const cors = require('cors');
+
 const app = express();
+app.use(cors());
 
 const privateKey = `
------BEGIN RSA PRIVATE KEY-----
+-----BEGIN PRIVATE KEY-----
 ....
------END RSA PRIVATE KEY-----
+-----END PRIVATE KEY-----
 `;
 
 app.post('/jwt', function (req, res) {
@@ -76,16 +82,16 @@ app.post('/jwt', function (req, res) {
   };
 
   try {
-	  const token = jwt.sign(payload, privateKey, { algorithm: 'RS256'});
-		res.set('content-type', 'application/json');
-	  res.status(200);
-	  res.send(JSON.stringify({
-	    token: token
-	  }));
+    const token = jwt.sign(payload, privateKey, { algorithm: 'RS256'});
+    res.set('content-type', 'application/json');
+    res.status(200);
+    res.send(JSON.stringify({
+      token: token
+    }));
   } catch (e) {
-		res.status(500);
-	  res.send(e.message);
-	}
+    res.status(500);
+    res.send(e.message);
+  }
 });
 
 app.listen(3000);

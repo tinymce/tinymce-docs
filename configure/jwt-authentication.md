@@ -21,7 +21,7 @@ The easiest way to setup JWT token authentication against TinyMCE cloud services
 
 ## PHP Token Provider Example
 
-This example uses the [Firebase JWT library]("https://github.com/firebase/php-jwt") provided through the Composer dependency manager. The private key should be the private key that was generated through your Tiny Account. Each service requires different claims to be provided. The following example shows the sub and name claims needed for Tiny Drive.
+This example uses the [Firebase JWT library](https://github.com/firebase/php-jwt) provided through the Composer dependency manager. The private key should be the private key that was generated through your Tiny Account. Each service requires different claims to be provided. The following example shows the sub and name claims needed for Tiny Drive.
 
 ```js
 <?php

@@ -28,6 +28,9 @@ This example uses the [Firebase JWT library](https://github.com/firebase/php-jwt
 require 'vendor/autoload.php';
 use \Firebase\JWT\JWT;
 
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
+
 $privateKey = <<<EOD
 -----BEGIN PRIVATE KEY-----
 ....

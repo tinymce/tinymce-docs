@@ -433,6 +433,39 @@ tinymce.init({
 
 ### Commands
 
+| Name | Value | Requirement | Description |
+|------| ------| ------------| ----------- |
+| mceInsertTable |  |  |  |
+| mceTableProps |  |  |  |
+| mceTableRowProps |  |  |  |
+| mceTableCellProps |  |  |  |
+| mceTableSplitCells |  |  |  |
+| mceTableMergeCells |  |  |  |
+| mceTableInsertRowBefore |  |  |  |
+| mceTableInsertRowAfter |  |  |  |
+| mceTableInsertColBefore |  |  |  |
+| mceTableInsertColAfter |  |  |  |
+| mceTableDeleteCol |  |  |  |
+| mceTableDeleteRow |  |  |  |
+| mceTableCutRow |  |  |  |
+| mceTableCopyRow |  |  |  |
+| mceTablePasteRowBefore |  |  |  |
+| mceTablePasteRowAfter |  |  |  |
+| mceTableDelete |  |  |  |
+
 ### Events
 
+| Name | Value | Requirement | Description |
+|------| ------| ------------| ----------- |
+| newrow|  |  |  |
+| newcell |  |  |  |
+| ObectResizeStart |  |  |  |
+| ObjectResized |  |  |  |
+
 ### API
+
+| Name | Value | Requirement | Description |
+|------| ------| ------------| ----------- |
+| insertTable |  |  |  |
+| getClipboardRows |  |  |  |
+| setClipboardRows |  |  |  |

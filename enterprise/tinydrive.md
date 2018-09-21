@@ -9,7 +9,7 @@ keywords: tinydrive .net php relative_urls
 
 Tiny Drive is a premium TinyMCE plugin for cloud-based asset management and storage solution. Tiny Drive is a solution for creating rich text by attaching and embedding images, videos, and other files in your document.
 
-Drive presents a cloud-based asset management and storage solution that provides the ease of use of Google Drive without the server requirements of a self-hosted asset manager such as, our own MoxieManager.
+Drive presents a cloud-based asset management and storage solution that provides the ease of use of Google Drive without the server requirements of a self-hosted asset manager such as our own MoxieManager.
 
 ### Getting Started
 
@@ -31,7 +31,7 @@ We know security is a primary concern when it comes to cloud storage.  Drive use
 
 As your assets are passed back and forth between your TinyMCE editor instance and the S3 bucket, Drive uses both your API key and a [JSON Web Token](https://jwt.io/introduction/) (JWT) to authenticate each data transaction.  Each Drive user will need to create their own JWT, and we walk you through the whole process [here]({{site.baseurl}}/configure/jwt-authentication/).
 
-And to make sure your assets are delivered as fast as possible, we utilize the [Cloudfront CDN](https://aws.amazon.com/cloudfront/), which is Amazon’s global content delivery network, known for its low latency and high data transfer speeds.
+And to make sure your assets are delivered as fast as possible, we utilize the [CloudFront CDN](https://aws.amazon.com/cloudfront/), which is Amazon’s global content delivery network, known for its low latency and high data transfer speeds.
 
 For more information on Drive see our full [documentation]({{site.baseurl}}/plugins/tinydrive/).
 

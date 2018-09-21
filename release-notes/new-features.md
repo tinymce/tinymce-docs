@@ -8,13 +8,13 @@ keywords: new features enhancements technology preview
 
 ## Technology Preview
 
-TinyMCE 5.0 offers an easy to navigate configurable less cumbersome user interface. The user interface logic has been changed entirely in 5.0. TinyMCE 5.0 has an ARIA complaint user interface in order to make user interface controls and dynamic content more accessible. In version 5.0, more complex controls or dialogs needs to be written in the new API style while keeping the more straightforward methods of adding buttons and windows the same.
+TinyMCE 5.0 offers an easy to navigate configurable less cumbersome user interface. The user interface logic has been changed entirely in 5.0. TinyMCE 5.0 has an [ARIA](https://www.ibm.com/able/checklists.html) complaint user interface in order to make user interface controls and dynamic content more accessible. In version 5.0, more complex controls or dialogs needs to be written in the new API style while keeping the more straightforward methods of adding buttons and windows the same.
 
 ## Specifications
 
 * Streamlined documentation
 * Creates a Ui using a strict {configuration}
-* ARIA(IBM standards) compliant
+* [ARIA](https://www.ibm.com/able/checklists.html)(IBM standards) compliant
 * Keyboard navigable, via configuration
 * Skinnable:
 * I18n (via config layer)

@@ -8,8 +8,7 @@ keywords: dialog dialogapi api
 
 ## Introduction
 
-The Dialog plugin is created for showing dialogs (sometimes referred to as modals) in your application. The plugin supports the use of dynamic content for all aspects and is easily configurable / overridable. To display simple information (eg: source code plugin, displays the HTML code from the content in the dialog)
-
+The Dialog API allows plugins to show dialogs (sometimes referred to as modals) in your application. The API supports the use of dynamic content for all aspects and is easily configurable / overridable.
 
 ## Use Cases
 
@@ -31,14 +30,14 @@ A dialog is a tinymce Ui component. You can use one of the many TinyMCE componen
 const dialogConfig = {
    title: 'Just a title',
    body: {
-     type: 'panel', <note: the root body type can only be of type Panel or TabPanel, see component definitions for panel or tabpanel>
-     items: []      <a list of ui component configurations the dialog will have>
+     type: 'panel', // note: the root body type can only be of type Panel or TabPanel, see component definitions for panel or tabpanel
+     items: []      //a list of ui component configurations the dialog will have
    },
-   buttons: []    <a list of button configurations the dialog will have>
+   buttons: []    //a list of button configurations the dialog will have
 }
 ```
 
-`tinymce.activeEditor.windowManager.open`(conf), pass the config to the open method will create a dialog, with the title ‘Just a title’, an empty body and an empty footer without buttons.
+Using the above example, calling `tinymce.activeEditor.windowManager.open(dialogConfig)`, will create a dialog with the title `Just a title`, an empty body and an empty footer without buttons.
 
 
 ### Complex
@@ -97,9 +96,9 @@ const dialogConfig =  {
 }
 ```
 
-The key highlight in this example is the input field for ‘enter the name of a cat’, the name property ‘catdata’ is associated to the initalData. All body components that require a name property also require an initialData property, this is how the relationship between the underlaying data model and the component is declared. Notice that when we first load the dialog, the input field is pre-populated with ‘initial cat’. When initialData.catdata = '' then on load, the input field should be empty.
+The key highlight in this example is the input field for ‘enter the name of a cat’, the name property `catdata` is associated to the initalData. All body components that require a name property also require an initialData property, this is how the relationship between the underlaying data model and the component is declared. Notice that when we first load the dialog, the input field is pre-populated with `initial cat`. When `initialData.catdata = ''` then on load, the input field should be empty.
 
-In this example we declared 2 buttons to be placed in the dialog footer, Close and Submit.  These are pre-made buttons that perform common actions, like closing a dialog or submitting a dialog, we will move onto a third type ‘custom’ button later.  The type: ‘close’ button is pre-wired to just abort and close the dialog.  The type: ‘submit’ button when clicked will invoke the onSubmit callback provided in the configuration, and we use that callback to insert the message.  When onSubmit is called, a dialog instanceApi is passed in as the parameter.
+In this example we declared 2 buttons to be placed in the dialog footer, Close and Submit.  These are pre-made buttons that perform common actions, like closing a dialog or submitting a dialog, we will move onto a third type `custom` button later.  The type: `close` button is pre-wired to just abort and close the dialog.  The type: `submit` button when clicked will invoke the `onSubmit` callback provided in the configuration, and we use that callback to insert the message.  When `onSubmit` is called, a dialog `instanceApi` is passed in as the parameter.
 
 ## Composition
 
@@ -119,18 +118,18 @@ The instanceApi is a javascript object containing methods attached to the dialog
 
 | Methods | Description |
 |---------|-------------|
-| getData(): <T>  | getData() returns a key value object matching the structure of the initialData -> see initialData configuration. The object keys in the returned data object represents a component name.  For the Insert Cat Name example, data.catdata is the value currently being held by the input field with the name 'catdata' |
-| setData(newConfig: object): void  | setData(newData) updates the dataset.  This method also works with partial data sets. |
-| disable(name: string): void| Calling disable and passing the component name will disable the component.  Calling enable(name) will re-enable the component. |
-| enable(name: string): void| Calling enable and passing the component name will enable a component, and users can interact with the component. |
-| focus(name: string): void      | Calling focus and passing the component name will set browser focus to the component.|
-| block(message: string): void         | Calling block and passing a message string will disable the entire dialog window and display the message notifying users why the dialog is blocked, this is useful for asynchronous data.  When the data is ready we use unblock() to unlock the dialog |
-| unblock(): void  | Calling unblock will unlock the dialog instance restoring functionality |
-| showtab(name: string): void  | This method only applies to tab dialogs only. <todo insert tab dialog demo link> Calling showtab and passing the name of a tab will make the dialog switch to the named tag. |
-| close(): void| Calling the close method will close the dialog.  When closing the dialog, all DOM elements and dialog data are destroyed.  When open(config) is called again, all DOM elements and data are recreated from the config. |
-| redial(config): void       | Calling redial and passing a dialog configuration, will destroy the current dialog and create a new dialog.  Redial is used to create a multipage form, where the next button loads a new form page. |
+| `getData(): <T>`  | `getData()` returns a key value object matching the structure of the initialData -> see initialData configuration. The object keys in the returned data object represents a component name.  For the Insert Cat Name example, `data.catdata` is the value currently being held by the input field with the name `catdata` |
+| `setData(newConfig: object): void`  | `setData(newData)` updates the dataset.  This method also works with partial data sets. |
+| `disable(name: string): void` | Calling disable and passing the component name will disable the component.  Calling enable(name) will re-enable the component. |
+| `enable(name: string): void` | Calling enable and passing the component name will enable a component, and users can interact with the component. |
+| `focus(name: string): void` | Calling focus and passing the component name will set browser focus to the component.|
+| `block(message: string): void` | Calling block and passing a message string will disable the entire dialog window and display the message notifying users why the dialog is blocked, this is useful for asynchronous data.  When the data is ready we use unblock() to unlock the dialog |
+| `unblock(): void` | Calling unblock will unlock the dialog instance restoring functionality |
+| `showtab(name: string): void` | This method only applies to tab dialogs only. `todo: insert tab dialog demo link` Calling showtab and passing the name of a tab will make the dialog switch to the named tag. |
+| `close(): void` | Calling the close method will close the dialog.  When closing the dialog, all DOM elements and dialog data are destroyed.  When `open(config)` is called again, all DOM elements and data are recreated from the config. |
+| `redial(config): void` | Calling redial and passing a dialog configuration, will destroy the current dialog and create a new dialog.  Redial is used to create a multipage form, where the next button loads a new form page. |
 
-This [example]({{site.baseurl}}/api-reference-guide/dialog/example) demonstrate one way of implementing Interactive Dialog using the `redial(config): void’
+This [example]({{site.baseurl}}/api-reference-guide/dialog/example) demonstrates one way of implementing an Interactive Dialog using the `redial(config): void` method.
 
 
 ## Dialog Framework
@@ -142,7 +141,7 @@ A Dialog framework has two main parts:
 
 ### Panel
 
-A **Panel** is a basic container, that holds other components, we can compose many components inside a panel.  In HTML terms consider a panel a <div> wrapper.  A dialog body configuration must begin with either a Panel or a TabPanel
+A **Panel** is a basic container, that holds other components, we can compose many components inside a panel.  In HTML terms consider a panel a `<div>` wrapper.  A dialog body configuration must begin with either a Panel or a TabPanel
 
 ```js
 var panelConfig = {
@@ -150,7 +149,7 @@ var panelConfig = {
   items: []
 };
 ```
-> Insert Table: Items: Array of component configurations, any component listed in [this page]({{site.baseurl}}/api-reference-guide/dialog/dialogcomponent) are compatible
+**Items:** Array of component configurations, any component listed in [this page]({{site.baseurl}}/api-reference-guide/dialog/dialogcomponent) are compatible
 
 ### TabPanel
 
@@ -168,7 +167,7 @@ var tabPanelConfig = {
   ]
 };
 ```
-> Insert Table: tabs: Array of tab configurations. Each tab has a title which is used to reference the tab.  The items property in the tab configuration takes a list of components and works the same way as a Panel.  We can programmatically switch to a tab by calling dialogApi.showTab(‘title’), see dialogApi for more details
+**Tabs:** Array of tab configurations. Each tab has a title which is used to reference the tab.  The items property in the tab configuration takes a list of components and works the same way as a Panel.  We can programmatically switch to a tab by calling dialogApi.showTab(‘title’), see dialogApi for more details
 
 ### Button
 
@@ -184,7 +183,7 @@ var buttonConfig = {
 }
 ```
 
-> Insert Table: Name: The name property on the button is used to identify which button was clicked. The name property is used as an id attribute to identify dialog components. When we define name: ‘foobutton’ and a user clicks on that button.  The dialog onAction handler will fire and provide event details.name will be ‘foobutton’ this will allow developers to create a click handler for ‘foobutton’  see dialog onAction configuration.
+**Name:** The name property on the button is used to identify which button was clicked. The name property is used as an id attribute to identify dialog components. When we define name: `foobutton` and a user clicks on that button.  The dialog onAction handler will fire and provide event `details.name` will be `foobutton` this will allow developers to create a click handler for ‘foobutton’  see dialog onAction configuration.
 
 **Text:** This will be the displayed button text, eg: text: ‘do magic’ will create a button with text ‘do magic’, dialog buttons do not support icons at the moment
 

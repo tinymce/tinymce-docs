@@ -7,48 +7,47 @@ keywords: contextmenu context menu contextmenuapi
 ---
 
 
-## Structure
+## Registering context menus
 
-The basic structure will be a method similar to but far simpler than Textbox.io:
+The structure of context menu sections is a very simple query system indexed by name. The strong recommendation is that the name of the menu section used matches the plugin name for ease of configuration.
 
-```js
-editor.ui.registry.addContextMenu(name: string, feature: Feature);
+In the menu shown to the user, sections are delineated by separators. Sections can return an empty array of menu items to indicate that section has no applicable items to the current context and should not be shown.
 
-type Feature = {
-  update: (element: DomElement) => Array<ContextMenuContents>
+```typescript
+type ContextMenuApi = {
+  update: (element: Element) => Array<ContextMenuContents>
 }
+
+editor.ui.registry.addContextMenu(name: string, feature: ContextMenuApi);
 ```
 
-The idea is that we combine the situation and assign concepts, and do away with the need for a handle concept instead moving that into each menu item.
+Every time the user opens the context menu, the selected element is passed to the update function which must return an array of items to display.
 
-The strong recommendation is that the name match the plugin name for ease of configuration. There doesn't seem to be a way to enforce this, short of passing a plugin-specific editor object into each plugin.
-Update
-The return value array for this API describes the entire menu section.
-
-```js
+```typescript
 type ContextMenuContents = string | ContextMenuItem | SeparatorMenuItemApi | ContextSubMenu
 
 type ContextMenuItem = {
+  type?: 'item';
   text: string;
   icon?: string;
   onAction: () => void;
 }
 type ContextSubMenu = {
+  type: 'submenu';
   text: string;
   icon?: string;
-  getSubmenuItems: () => Array<MenuItem>;
+  getSubmenuItems: () => Array<ContextMenuContents>;
 }
 
-// copied from standard menus
 type SeparatorMenuItemApi = {
   type: 'separator'
 }
 ```
 
-Where the type is string, it is a reference to an existing registered menu item.
+The most common use case is `string`, which references an existing registered menu item. The item and submenu structures are intended for use by plugins with completely dynamic menu requirements, where registering each menu item would be onerous and wasteful. For example the spellchecker which shows a list of suggestions specific to the selected word.
 
-The types overlap in order to support untyped API usage with the type property:
+When creating a dynamic menu, the structure `type` properties are used in order to support untyped API usage:
 
-type 'item' (default) is a regular menu item, and must have an onAction method
-type 'submenu' must have items, and if it has an onAction property it is ignored
-type 'separator' ignores all other fields
+* type `item` (default) is a regular menu item, and must have an `onAction` method
+* type `submenu` must have `getSubmenuItems`, and if it has an `onAction` property it is ignored
+* type `separator` ignores all other properties

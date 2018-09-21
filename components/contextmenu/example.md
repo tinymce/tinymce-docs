@@ -6,31 +6,20 @@ description: Context Menu Example
 keywords: contextmenu context menu contextmenuapi
 ---
 
-### Example usage
+## Example usage
 
-The default context menu includes all plugins that provide a context menu; `link`, `image`, `imagetools`, `table`, and `spellchecker`.
+This example creates a menu with a mixture of dynamic and static menu items. While `link` is the name of both a context menu section and a menu item, context menu sections take preference (the link context menu is dynamic based on the cursor position).
 
-```js
-tinymce.init({
-  selector: "textarea",
-  contextmenu: "link image imagetools table spellchecker" // equal to the default
-});
-```
-
-The context menu setting accepts two styles of values:
-* Context menu sections defined by a plugin (usually equal to the plugin name)
-* Any registered menu item
-
-If a name is registered as both a context menu section and a menu item, the section takes preference. In the example below, rather than adding the `link` menu item, the `link` context menu section will be used (which is dynamic depending on whether the cursor is in a link).
+The other item names are all menu items and will appear on the context menu regardless of cursor position. A separator is used to distinguish the table edit features from the table insert feature. As `link` is a context menu section, a separator will automatically be inserted after it so it is not necessary to specify one in the configuration.
 
 ```js
 tinymce.init({
   selector: "textarea",
-  contextmenu: "bold italic link inserttable | cell row column deletetable"
+  contextmenu: "link bold italic inserttable | cell row column deletetable"
 });
 ```
 
-#### Defining a context menu
+## Defining a context menu section
 
 This example shows how the image plugin dynamically adds the standard image menu section to the context menu. The image context menu section is empty unless the selected element is an image.
 
@@ -47,5 +36,13 @@ PluginManager.add('image', function (editor) {
       return !element.src ? [] : ['image'];
     }
   });
+});
+```
+
+To configure the editor with this context menu section:
+```js
+tinymce.init({
+  selector: "textarea",
+  contextmenu: "image"
 });
 ```

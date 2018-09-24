@@ -1,5 +1,5 @@
 ---
-layout: draft
+layout: default
 title: Moxie Manager
 description: MoxieManager. A premium plugin to manage files & images.
 keywords: moxiemanager .net php relative_urls
@@ -17,5 +17,5 @@ MoxieManager is a paid addition to TinyMCE. It is included in [TinyMCE subscript
 
 Full documentation on MoxieManager, including how to [integrate with TinyMCE](http://www.moxiemanager.com/documentation/index.php/TinyMCE_Integration), can be [found](http://www.moxiemanager.com/documentation/) on the MoxieManager website.
 
-We also have a demo for you to explore the Tiny Drive capabilities [here]({{site.baseurl}}/demo/moxie-manager/).
+// We also have a demo for you to explore the Tiny Drive capabilities [here]({{site.baseurl}}/demo/moxie-manager/).
 

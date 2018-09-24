@@ -22,13 +22,13 @@ In this chapter, we have provided examples of both ways of configuring Comments 
 
 ### Storage - persist in real-time
 
-Here is a demo to showcase the Comments functionality using storage configured to persist in real-time:
+The following demo showcases the Comments functionality using storage configured to persist in real-time:
 
 {% include codepen.html id="pOzxJw" %}
 
 ### Storage - persist on content-save
 
-Here is a demo to showcase the Comments functionality using storage configured to persist on content-save.
+The following demo showcases the Comments functionality using storage configured to persist on content-save.
 
 {% include codepen.html id="4d07e4da27b1e7245b5333ed7413083b" %}
 

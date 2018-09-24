@@ -50,7 +50,7 @@ In this example, let's replace `<textarea id='mytextarea'>` with a TinyMCE edito
 </html>
 ```
 
-> Note: If you're testing this locally, you will need to prepend `https://` to urls in the `script` tag. For example, `<script src='https:{{ site.cdnurl }}'></script>`.
+> Note: If you're testing this locally, you will need to prepend `https://` to urls in the `script` tag. For example, `<script src='{{ site.cdnurl }}'></script>`.
 
 ## Step 3: Saving content with a form POST
 

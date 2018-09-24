@@ -1,16 +1,22 @@
 ---
-layout: draft
+layout: default
 title: JWT Authentication
 description_short: JWT Authentication
 description: JWT is a common authorization solution for web services.
 ---
 
-Some cloud services for TinyMCE require you to setup JWT authentication. This allows us to verify that you and your end user are allowed to access a particular feature. JWT is a common authorization solution for web services and is documented in more detail at the https://jwt.io/ website. This guide aims to show how to setup JWT authentication for the cloud services provided for TinyMCE.
+### Audience
+
+This section is intended to be used by developers with prior knowledge of JSON Web Tokens (or JWTs) in detail, including how they can be used for User Authentication and Session Management in a Web Application. To configure JWT as per the instructions in this section, there will be some coding involved on both the client-side and the server-side.
+
+## Introduction
+
+Some cloud services for TinyMCE require you to setup JSON web tokens authentication. This allows us to verify that you and your end user are allowed to access a particular feature. JWT is a common authorization solution for web services and is documented in more detail at the https://jwt.io/ website. This guide aims to show how to setup JWT authentication for the cloud services provided for TinyMCE.
 
 
 ## Private/Public Key Pair
 
-JWT tokens used by the TinyMCE cloud services are done using a public/private RSA key. This allows you as an integrator to have full control over the authentication as we don't store the private key. Only you have access to the private key, and only you can produce valid JWT tokens. We can only verify that they are valid and extract user information from that token.
+JWT used by the TinyMCE cloud services are done using a public/private RSA key. This allows you as an integrator to have full control over the authentication as we don't store the private key. Only you have access to the private key, and only you can produce valid JWT. We can only verify that they are valid and extract user information from that token.
 
 The private/public key pair is created in your [Tiny account page](https://apps.tiny.cloud/my-account/jwt-key-manager/), but we only store the public key on our side. The private key is for you to store in your backend.
 

@@ -7,7 +7,7 @@ description: JWT is a common authorization solution for web services.
 
 ### Audience
 
-This section is intended to be used by developers with prior knowledge of JSON Web Tokens (or JWTs) in detail, including how they can be used for User Authentication and Session Management in a Web Application. To configure JWT as per the instructions in this section, there will be some coding involved on both the client-side and the server-side.
+This section is intended to be used by developers with prior knowledge of JSON Web Tokens (or JWTs) in detail, including how they can be used for User Authentication and Session Management in a Web Application. There will be some coding involved on both the client-side and the server-side to configure JWT as per the instructions in this section.
 
 ## Introduction
 
@@ -21,9 +21,9 @@ JWT used by the TinyMCE cloud services are done using a public/private RSA key. 
 The private/public key pair is created in your [Tiny account page](https://apps.tiny.cloud/my-account/jwt-key-manager/), but we only store the public key on our side. The private key is for you to store in your backend.
 
 
-## JWT Token Provider URL
+## JWT Provider URL
 
-The easiest way to setup JWT token authentication against TinyMCE cloud services is to create a JWT token provider page. This page takes a JSON HTTP POST request and produces a JSON result with the token that the service will then use for all the HTTP requests.
+The easiest way to setup JWT authentication against TinyMCE cloud services is to create a JWT provider page. This page takes a JSON HTTP POST request and produces a JSON result with the token that the service will then use for all the HTTP requests.
 
 ## PHP Token Provider Example
 
@@ -64,7 +64,7 @@ try {
 
 ## Node Token Provider Example
 
-This example shows you how to set up a Node.js express handler that produces the JWT tokens. It requires you to install the Express web framework and the JSON web token Node modules. Each service requires different claims to be provided. The following example shows the sub and name claims needed for Tiny Drive.
+This example shows you how to set up a Node.js express handler that produces the JWT. It requires you to install the Express web framework and the JSON web token Node modules. Each service requires different claims to be provided. The following example shows the sub and name claims needed for Tiny Drive.
 
 ```js
 const express = require('express');

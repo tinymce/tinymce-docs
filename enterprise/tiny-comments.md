@@ -14,7 +14,7 @@ Users can now add comments to their text from within their TinyMCE editor for co
 
 ## Collaborate on your projects within your content
 
-Comments offers the following primary functionality:
+Comments offer the following primary functionality:
 
 * A **user interface** to collaborate on content by creating and replying to comments.
 * A way to control the delete operation on a comment/comment thread if you want to remove it from your content.

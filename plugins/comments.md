@@ -37,7 +37,7 @@ Here is a demo to showcase the Comments functionality using storage configured t
 We have used the following helper functions in our demo above:
 
 * **setConversation(uid, conversation)**
-`setConversation` is a function written to synchronously write a conversation to a form field for submission to the server later..
+`setConversation` is a function written to synchronously write a conversation to a form field for submission to the server later.
 
 * **randomString()**
 `randomString()` is a function used in the `create` function to return a 62-bits random strings to provision a large number of UIDs.

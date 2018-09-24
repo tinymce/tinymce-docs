@@ -22,7 +22,7 @@ If you would like to try out Drive and our Cloud-delivered editor, the first ste
 
 #### Configuring the Editor for Drive
 
-Once you have the API key, or if you are a current Cloud user who already has an API key, then you have access to Drive.  In order to get the service up and running, you’ll need to complete a few more steps. See our [documentation]({{site.baseurl}}/plugins/tinydrive) for more information.
+Once you have the API key, or if you are a current Cloud user who already has an API key, then you have access to Drive.  In order to get the service up and running, you’ll need to complete a few more steps. See our [documentation]({{site.baseurl}}/plugins/drive) for more information.
 
 > We are launching the service with a complimentary 100MB of storage and up to 1 GB of bandwidth.
 
@@ -34,6 +34,6 @@ As your assets are passed back and forth between your TinyMCE editor instance an
 
 And to make sure your assets are delivered as fast as possible, we utilize the [CloudFront CDN](https://aws.amazon.com/cloudfront/), which is Amazon’s global content delivery network, known for its low latency and high data transfer speeds.
 
-For more information on Drive see our full [documentation]({{site.baseurl}}/plugins/tinydrive/).
+For more information on Drive see our full [documentation]({{site.baseurl}}/plugins/drive/).
 
-We also have a demo for you to explore the Drive capabilities [here]({{site.baseurl}}/demo/tiny-drive/).
+We also have a demo for you to explore the Drive capabilities [here]({{site.baseurl}}/demo/drive/).

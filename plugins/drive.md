@@ -1,6 +1,6 @@
 ---
-layout: draft
-title: Tiny Drive
+layout: default
+title: Drive
 title_nav: Drive
 description: Cloud-based file and image management for TinyMCE.
 keywords: tinydrive storage media tiny drive
@@ -8,7 +8,7 @@ keywords: tinydrive storage media tiny drive
 
 The Tiny Drive plugin adds the functionality to upload and manage files and images to the cloud. This plugin is only available in [Tiny Cloud](https://www.tiny.cloud/download/) and requires you to register for an API key.
 
-To enable this functionality, add `tinydrive` to the list of plugins in the `tinymce.init` call. You also need to authenticate the user using a [JWT token]({{site.baseurl}}/configure/jwt-authentication).
+To enable this functionality, add `tinydrive` to the list of plugins in the `tinymce.init` call. You also need to authenticate the user using a [JSON Web token]({{site.baseurl}}/configure/jwt-authentication).
 
 Once you enable Drive it integrates as the default file picker for the Image, Link, and Media dialogs and as the default upload handler for local images being pasted or inserted into the document.
 
@@ -24,14 +24,14 @@ tinymce.init({
 
 ## Options
 
-These settings are necessary to make Tiny Drive work:
+These settings are necessary to make Drive work:
 
 ### `tinydrive_token_provider`
 
 This setting could take one of the following two forms:
 
-* A URL to a page that takes an HTTP JSON POST request and produces a JSON structure with a valid JWT token. It uses a POST request to avoid caching by browsers and proxies.
-* A function that provides the same token through a callback. This allows you to make your own HTTP request in any format you like. The provider function is a function that has a success and failure callback where the success takes an object with a token property containing the JWT token, and the failure callback takes a string to present as an error message if the token could not be produced.
+* A URL to a page that takes an HTTP JSON POST request and produces a JSON structure with a valid JWT. It uses a POST request to avoid caching by browsers and proxies.
+* A function that provides the same token through a callback. This allows you to make your own HTTP request in any format you like. The provider function is a function that has a success and failure callback where the success takes an object with a token property containing the JWT, and the failure callback takes a string to present as an error message if the token could not be produced.
 
 You can read more about how to create these JWT tokens in the [JWT authentication]({{site.baseurl}}/configure/jwt-authentication/) guide.
 
@@ -98,7 +98,7 @@ tinymce.init({
 
 ## Restrictions and Quotas
 
-Tiny Drive has restrictions on what files can be uploaded and how large these files can be:
+Drive has restrictions on what files can be uploaded and how large these files can be:
 
 * The maximum file size is 100MB
 * Allowed image extensions: gif, jpeg, jpg, png, tif, tiff, bmp

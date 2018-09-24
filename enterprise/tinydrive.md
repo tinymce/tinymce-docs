@@ -1,6 +1,7 @@
 ---
-layout: draft
-title: Tiny Drive
+layout: default
+title: Drive
+title_nav: Drive
 description: Tiny Drive. A premium plugin to manage files & images.
 keywords: tinydrive .net php relative_urls
 ---
@@ -35,4 +36,4 @@ And to make sure your assets are delivered as fast as possible, we utilize the [
 
 For more information on Drive see our full [documentation]({{site.baseurl}}/plugins/tinydrive/).
 
-We also have a demo for you to explore the Tiny Drive capabilities [here]({{site.baseurl}}/demo/tiny-drive/).
+We also have a demo for you to explore the Drive capabilities [here]({{site.baseurl}}/demo/tiny-drive/).

@@ -10,7 +10,8 @@ keywords: migration considerations premigration pre-migration
 
 ### Initialization
 
-In version 5 we have renamed the plugin from <X>  to <y>  to make it more suggestive and avoid any name conflict. Therefore, when initializing the editor or calling a method inside the editor, <y> method should be used instead of <x>.
+The initialization process of Tiny 5, is the same as Tiny 4, the bootstrap process and initialization events all remain the same.  The main difference is in the init configuration, specifically the configuration items for Ui components.
+It still retains a familiar JSON structure, however the properties have been greatly simplified.
 
 ### Plugins
 
@@ -25,27 +26,31 @@ In version 5 some plugins have been deprecated.  These plugins are now part of t
 
 ### Themes
 
-In version 5, some themes have been removed and are now combined in a new single theme called Silver.
+In version 5, some themes have been removed and are now combined in a new single responsive theme called Silver.
 
-| **Removed Theme** | **Description** |
+| **Removed Theme** | **Replaced by** |
 | ------------ | ------------- |
-| Modern |  |
-| Inlite (Distraction-free Editor) |  |
-| Silver inline mode |  |
+| Modern | Silver |
+| Modern inline | Silver Inline |
+| Inlite (Distraction-free Editor) | Silver (distraction free configuration) |
+| Mobile | Silver (responsive to screen size)  |
 
 ### Settings
 
-In version 5, some settings were renamed to make them easier to find and browse. Some of them were removed because they are no longer necessary or they were out of the editor's scope.
+In version 5, Some configurations have been removed because they are no longer necessary or an improved solution has been introduced.
 Changed Settings
 
 | **Old Settings** |  **Description**|
 | ---------------- | ---------------- |
+| dialog width | Uses css3 for optimal width |
+| dialog height | Uses css3 for optimal height |
+| settings for inline styles | Use css stylesheets for custom |
 
 #### New Settings
 
 The following options were newly added:
 
-* TBD
+* Ui components, see
 * TBD
 * TBD
 
@@ -55,20 +60,23 @@ The following options were newly added:
 
 ### Methods
 
-One of the main change from version 5 is the modular design. Old methods were moved into modules and some of them were removed because they were out of the editor's scope. If a method that you were using changed its name, we recommend that you also check the list of arguments.
+All methods for creating Ui components in Tiny 4 have been removed.
+No core editor methods where removed (tinymce, editor, selection, on() etc remain the same)
+
 
 #### Changed Methods
 
-| **Old Method** | **Description** |
-| ----------- | -------------- |
-| editor.addButton() |  |
-| editor.ui.registry.addButton() |  |
-| editor.addMenuItem() |  |
-| editor.ui.registry.addMenuItem() |  |
+| **Old Method** | **New Method** | **Description** |
+| ----------- | -------------- | -------------- |
+| editor.addButton() | editor.ui.registry.addButton() | |
+| editor.addMenuItem() | editor.ui.registry.addMenuItem() | |
+
 
 #### New Method
 
 The following methods were newly added:
+Creating buttons now use explicit methods, for example to create a toggleButton we would use editor.ui.registry.addToggleButton().
+The configuration for the toggle button has been simplified because it only supports one specific type of button.
 
 ##### New methods for custom toolbar buttons:
 
@@ -87,22 +95,6 @@ The following methods were newly added:
 | editor.ui.registry.addContextMenu() |  |
 
 ### Events
-
-In version 5, the namespace of the events was changed from <X> to <Y>. Therefore, events should now be bind accordingly: $(selector).on('Y.event'). Most of the events from v4 are still available in v5, however most of them changed their name because of the new modular design. We recommend that you also check the list of arguments for the events you are using.
-Some of the events from v4 were replaced in v5 by a generic event called commands.after. See tinymce.ui for more details.
-
-#### Changed Events
-
-| **Changed Event** | **Description**|
-| ----------------- | -------------- |
-
-#### New Events
-
-The following events were newly added:
-
-| **New Event** |  **Description**|
-| ------------- | --------------- |
-
 
 #### Removed Events
 

@@ -68,9 +68,16 @@ The skin creator is coupled with the tinymce.ui framework so it works with the m
 
 ## New Features and Enhancements
 
+### New Theme
+
+## Silver
+
+Tiny 5's silver theme contains a set of configuratable ui components, that could be used to replace
+
+
 ### New UI
 
-It creates css and bundles resources like icon fonts and images for the ui. I think we should just rewrite that part to something less complex. It's complex since at the time of writing gradients was a thing so everything needed a start/end color range. I don't see such a project as as major work took us a few days to create the existing skin creator.
+It creates CSS and bundles resources like icon fonts and images for the UI. I think we should just rewrite that part to something less complex. It's complex since at the time of writing gradients was a thing so everything needed a start/end color range. I don't see such a project as as major work took us a few days to create the existing skin creator.
 
 
 ### Emoticons
@@ -82,11 +89,12 @@ The Dialog plugin is created for showing dialogs (sometimes referred to as modal
 ### Context Menu
 
 The contextMenu can provide a simple list of clickable commands, or offer an in-menu form. This makes very simple attribute modification possible. Tiny 5.0 offers the contextMenu Plugin that is designed for web applications in need of menus on a possibly large amount of objects. Now, a single menu is defined that can be used by multiple objects and a contextMenu doesn't need to bind itself to triggering objects. This allows injecting and removing triggers without having to re-initialize or update contextMenu.
-context menu release notes
-- the context menu is no longer a plugin, it is part of the core and always enabled
-- plugins can now register context menu sections
-- editor `contextmenu` configuration can include menu items as before, but now also plugin menu sections
-- e.g. the default context menu config is now `link image editimage table spelling` which are all plugin references
+context menu
+
+* The context menu is no longer a plugin, it is part of the core and always enabled
+* Plugins can now register context menu sections
+* editor `contextmenu` configuration can include menu items as before, but now also plugin menu sections
+* e.g. the default context menu config is now `link image editimage table spelling` which are all plugin references
 
 ### Context Toolbars
 
@@ -94,10 +102,18 @@ The Context Toolbar configures its buttons based on the type of object selected 
 
 ### Tables
 
-* Styles text field has been removed from the advanced table of the dialogs. Much less confronting/confusing for non-dev users, and means we have more control over the table styles and therefore are better able to ensure the styles are correct.
-* Related, put some work into improving how styles are set and retrieved from tables/rows/cells, so should be more reliable.
-* Shifted to using CSS more for styling, and therefore was able to remove a few legacy data attributes that we were setting on tables/rows/cells which are no longer good practice to use. Html is now cleaner and shorter.
-* When opening a properties dialog with a single table/row/cell selected, the dialog will autofill with the relevant existing values. If you select multiple rows or cells and open the relevant properties dialog, Tiny 4 will leave all the dialog fields blank. In Apollo, any fields which have the same values for all the selected rows or cells will autofill, and the fields which have no existing value or have differing values will be empty.
+#### Removed Styles
+
+Styles text field has been removed from the advanced table of the dialogs. The code is now much less confronting/confusing for non-dev users, and means we have more control over the table styles and therefore are better able to ensure the styles are correct.
+We have improved how styles are set and retrieved from tables/rows/cells, so should be more reliable.
+
+#### Using CSS for styling
+
+Shifted to using CSS more for styling, and therefore was able to remove a few legacy data attributes that we were setting on tables/rows/cells which are no longer good practice to use. Html is now cleaner and shorter.
+
+#### Autofill Values
+
+When opening a properties dialog with a single table/row/cell selected, the dialog will autofill with the relevant existing values. If you select multiple rows or cells and open the relevant properties dialog, Tiny 4 will leave all the dialog fields blank. In Apollo, any fields which have the same values for all the selected rows or cells will autofill, and the fields which have no existing value or have differing values will be empty.
 "Border" input field in the tableprops dialog is now called "Border width", for clarity.
 
 ### Toolbar buttons
@@ -106,10 +122,10 @@ Svg icons for better crisp look
 
 New buttons are added to the global
 
-editor.buttons
-editor.menuItems
-editor.sidebar
-editor.contextToolbars
+* editor.buttons
+* editor.menuItems
+* editor.sidebar
+* editor.contextToolbars
 
 
 ### Toolbar Menus

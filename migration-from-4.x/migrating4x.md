@@ -18,7 +18,7 @@ In version 5 some plugins have been deprecated.  These plugins are now part of t
 
 #### Moved Plugins
 
-| **Plugin Name** | **Required Changes** |
+| **Plugin Name** | **Description** |
 | ---------- | ------------------------- |
 |ContextMenu | New api, see docs |
 | WordCount | No changes required |
@@ -27,10 +27,9 @@ In version 5 some plugins have been deprecated.  These plugins are now part of t
 
 In version 5, some themes have been removed and are now combined in a new single theme called Silver.
 
-| **Removed Theme** | **New Theme** |
+| **Removed Theme** | **Description** |
 | ------------ | ------------- |
 | Modern |  |
-| Silver |  |
 | Inlite (Distraction-free Editor) |  |
 | Silver inline mode |  |
 
@@ -39,7 +38,7 @@ In version 5, some themes have been removed and are now combined in a new single
 In version 5, some settings were renamed to make them easier to find and browse. Some of them were removed because they are no longer necessary or they were out of the editor's scope.
 Changed Settings
 
-| **Old Settings** |  **New Settings**|
+| **Old Settings** |  **Description**|
 | ---------------- | ---------------- |
 
 #### New Settings
@@ -52,7 +51,7 @@ The following options were newly added:
 
 #### Removed Settings
 
-* Fixed_toolbar_container - because of the new inline toolbar behaviour\
+* Fixed_toolbar_container - because of the new inline toolbar behaviour
 
 ### Methods
 
@@ -60,7 +59,7 @@ One of the main change from version 5 is the modular design. Old methods were mo
 
 #### Changed Methods
 
-| **Old Method** | **New Method** |
+| **Old Method** | **Description** |
 | ----------- | -------------- |
 | editor.addButton() |  |
 | editor.ui.registry.addButton() |  |
@@ -73,15 +72,19 @@ The following methods were newly added:
 
 ##### New methods for custom toolbar buttons:
 
-* editor.ui.registry.addToggleButton()
-* editor.ui.registry.addSplitButton()
-* editor.ui.registry.addMenuButton()
+| **New Method** | **Description** |
+| ----------- | -------------- |
+| editor.ui.registry.addToggleButton()|  |
+| editor.ui.registry.addSplitButton() |  |
+| editor.ui.registry.addMenuButton() |  |
 
 ##### New method for custom menu items:
 
-* editor.ui.registry.addToggleMenuItem()
-* editor.ui.registry.addAutocompleter()
-* editor.ui.registry.addContextMenu()
+| **New Method** | **Description** |
+| ----------- | -------------- |
+| editor.ui.registry.addToggleMenuItem() |  |
+| editor.ui.registry.addAutocompleter() |  |
+| editor.ui.registry.addContextMenu() |  |
 
 ### Events
 
@@ -90,14 +93,19 @@ Some of the events from v4 were replaced in v5 by a generic event called command
 
 #### Changed Events
 
-| **Old Event** |  **New Event**|
-| ------------- | ------------- |
+| **Changed Event** | **Description**|
+| ----------------- | -------------- |
 
 #### New Events
 
 The following events were newly added:
 
+| **New Event** |  **Description**|
+| ------------- | --------------- |
+
 
 #### Removed Events
 
-* BeforeRenderUi
+| **Removed Event** | **Description**|
+| ----------------- | -------------- |
+| BeforeRenderUi |  |

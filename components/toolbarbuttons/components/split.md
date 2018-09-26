@@ -1,5 +1,5 @@
 ---
-layout: draft
+layout: default
 title: Split
 title_nav: Split
 description: Toolbar Button - Split
@@ -13,15 +13,15 @@ keywords: Splitmenu Split menu toolbarmenu
 
 | Name | Value | Requirement | Description |
 |------| ------| ------------| ----------- |
-| text | string | optional | text to display if no icon is found |
-| icon | string | optional | It displays the icon corresponding to the icon name that has been defined in the icon pack  |
+| text | string | optional | Text to display if no icon is found. |
+| icon | string | optional | It displays the icon corresponding to the icon name that has been defined in the icon pack.  |
 | select | (value: string) => boolean  | optional | default: false - TODO |
 | presets | 'color', 'normal', 'toolbar' | optional | default: 'normal' - TODO |
-| columns | string | optional | CHECK HOW THIS WILL WORK REGARDING ICON PACKS |
-| fetch | (success: (menu) => void) => void  | required| default: false - represents button state. is toggled by the button's api |
-| onAction | string | optional | text to display if no icon is found |
-| onItemAction | string | optional | CHECK HOW THIS WILL WORK REGARDING ICON PACKS |
-| onSetup | (api) => (api) => void | optional | default: () => () => {} - function that's invoked when the button is rendered. |
+| columns | string | optional | It displays the icon corresponding to the icon name that has been defined in the icon pack. |
+| fetch | (success: (menu) => void) => void  | required| default: false - Represents button state. is toggled by the button's api. |
+| onAction | string | optional | Text to display if no icon is found. |
+| onItemAction | string | optional | Item that's called when the button is clicked. |
+| onSetup | (api) => (api) => void | optional | default: () => () => {} - Function that's invoked when the button is rendered. |
 
 > Note:  See below for details on return type for onSetup.
 
@@ -30,16 +30,17 @@ keywords: Splitmenu Split menu toolbarmenu
 
 | Name | Value | Description |
 |------| ------| ------------|
-| isDisabled | ( ) => boolean | check if the button is disabled |
-| setDisabled | (state: boolean) => void | set the button's disabled state |
-| isActive| ( ) => boolean | check the button's toggle state |
-| setActive | (state: boolean) => void | set the button's toggle state |
-| setIconFill | (id: string, value: string) => void | TBD |
-| setIconStroke | (id: string, value: string) => void | TBD |
+| isDisabled | ( ) => boolean | Check if the button is disabled. |
+| setDisabled | (state: boolean) => void | Set the button's disabled state. |
+| isActive| ( ) => boolean | Check the button's toggle state. |
+| setActive | (state: boolean) => void | Set the button's toggle state. |
+| setIconFill | (id: string, value: string) => void | It fills the values for the icon corresponding to the icon name that has been defined in the icon pack. TODO |
+| setIconStroke | (id: string, value: string) => void | It sets the action on click for the icon corresponding to the icon name that has been defined in the icon pack. TODO|
 
 
 ## Explanation and Example
 
+The following example shows how to setup just a basic split button, with a static dropdown menu.
 
 ```js
 tinymce.init({

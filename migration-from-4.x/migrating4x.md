@@ -1,5 +1,5 @@
 ---
-layout: draft
+layout: default
 title: Migrating from TinyMCE 4.x to TinyMCE 5.0.
 title_nav: Migrating from 4.x
 description: Instructions for migrating from TinyMCE 4.x to TinyMCE 5.0.
@@ -30,10 +30,10 @@ In version 5, some themes have been removed and are now combined in a new single
 
 | **Removed Theme** | **Replaced by** |
 | ------------ | ------------- |
-| [Modern](https://www.tiny.cloud/docs/themes/modern/ | Silver |
-| [Modern inline]() | [Silver Inline] |
-| Inlite (Distraction-free Editor) | Silver (distraction free configuration) |
-| Mobile | Silver (responsive to screen size)  |
+| [Modern](https://www.tiny.cloud/docs/themes/modern/) | Silver |
+| [Modern inline](https://www.tiny.cloud/docs/general-configuration-guide/use-tinymce-inline/) | [Silver Inline] |
+| Inlite (Distraction-free Editor)(https://www.tiny.cloud/docs/themes/inlite/) | Silver (distraction free configuration) |
+| Mobile(https://www.tiny.cloud/docs/themes/mobile/) | Silver (responsive to screen size)  |
 
 ### Settings
 
@@ -42,26 +42,24 @@ Changed Settings
 
 | **Old Settings** |  **Description**|
 | ---------------- | ---------------- |
-| dialog width | Uses css3 for optimal width |
-| dialog height | Uses css3 for optimal height |
-| settings for inline styles | Use css stylesheets for custom |
+| Dialog width | Uses CSS3 for optimal width |
+| Dialog height | Uses CSS3 for optimal height |
+| Settings for inline styles | Uses CSS stylesheets for custom |
 
 #### New Settings
 
 The following options were newly added:
 
-* Ui components, see
-* TBD
-* TBD
+* UI components: Users can now build their components from configurations. This is an enhancement that simplfies the previous way of creating components.
 
 #### Removed Settings
 
-* Fixed_toolbar_container - because of the new inline toolbar behaviour
+* Fixed_toolbar_container - Owing to the enhancements to the new inline toolbar behaviour, `fixed_toolbar_container` is not required in TinyMCE 5.0.
 
 ### Methods
 
-All methods for creating Ui components in Tiny 4 have been removed.
-No core editor methods where removed (tinymce, editor, selection, on() etc remain the same)
+* All methods for creating Ui components in TinyMCE 4.x have been removed.
+* No core editor methods where removed (tinymce, editor, selection, on() etc remain the same)
 
 
 #### Changed Methods
@@ -75,8 +73,9 @@ No core editor methods where removed (tinymce, editor, selection, on() etc remai
 #### New Method
 
 The following methods were newly added:
-Creating buttons now use explicit methods, for example to create a toggleButton we would use editor.ui.registry.addToggleButton().
-The configuration for the toggle button has been simplified because it only supports one specific type of button.
+
+* Creating buttons now use explicit methods. For example, to create a toggleButton we would use `editor.ui.registry.addToggleButton()`.
+* The configuration for the toggle button has been simplified because it only supports one specific type of button.
 
 ##### New methods for custom toolbar buttons:
 

@@ -1,5 +1,5 @@
 ---
-layout: draft
+layout: default
 title: Menu
 title_nav: Menu
 description: Toolbar Button - Menu
@@ -12,26 +12,26 @@ keywords: menu menu toolbarmenu
 
 | Name | Value | Requirement | Description |
 |------| ------| ------------| ----------- |
-| text | string | optional | text to display if no icon is found |
+| text | string | optional | Text to display if no icon is found. |
 | icon | string | optional | It displays the icon corresponding to the icon name that has been defined in the icon pack. |
-| tooltip | string | optional | text for button tooltip  |
-| fetch | (success: (menu) => void) => void  | required| default: false - represents button state. is toggled by the button's api |
-| onSetup | (api) => (api) => void | optional | default: () => () => {} - function that's invoked when the button is rendered. |
+| tooltip | string | optional | Text for button tooltip.  |
+| fetch | (success: (menu) => void) => void  | required| default: false - Represents button state. Is toggled by the button's API. |
+| onSetup | (api) => (api) => void | optional | default: () => () => {} - Function that's invoked when the button is rendered. |
 
 > Note:  See below for details on return type for onSetup and onAction.
-
 
 ### API
 
 | Name | Value | Description |
 |------| ------| ------------|
-| isDisabled | ( ) => boolean | check if the button is disabled |
-| setDisabled | (state: boolean) => void | set the button's disabled state |
+| isDisabled | ( ) => boolean | Check if the button is disabled. |
+| setDisabled | (state: boolean) => void | Set the button's disabled state. |
 
-or.ui.registry.<function>` (these may have already been possible but I'm not sure how, and it should be easier now anyway)
+or.ui.registry.<function>` // TODO: (these may have already been possible but I'm not sure how, and it should be easier now anyway)
 
 ## Explanation and Example
 
+The following is an example of a Simple Toolbar Button:
 
 ```js
 tinymce.init({

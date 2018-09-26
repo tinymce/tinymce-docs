@@ -1,5 +1,5 @@
 ---
-layout: draft
+layout: default
 title: Basic
 title_nav: Basic
 description: Basic Toolbar Button
@@ -13,12 +13,12 @@ keywords: basicmenu basic menu toolbarmenu
 
 | Name | Value | Requirement | Description |
 | ---- | ----- | ----------- | ----------- |
-| text | string | optional | text to display if no icon is found |
+| text | string | optional | Text to display if no icon is found. |
 | icon | string | optional | It displays the icon corresponding to the icon name that has been defined in the icon pack. |
-| tooltip | string | optional | text for button tooltip  |
-| disabled | boolean | optional | default: false - represents button state. is toggled by the button's api |
-| onSetup | (api) => (api) => void | optional | default: () => () => {} - function that's invoked when the button is rendered. |
-| onAction | (api) => void | required | function that's called when the button is clicked |
+| tooltip | string | optional | Text for button tooltip.  |
+| disabled | boolean | optional | default: false - Represents button state. Is toggled by the button's API. |
+| onSetup | (api) => (api) => void | optional | default: () => () => {} - Function that's invoked when the button is rendered. |
+| onAction | (api) => void | required | Function that's called when the button is clicked. |
 
 > Note:  See below for details on return type for onSetup and onAction.
 
@@ -26,8 +26,8 @@ keywords: basicmenu basic menu toolbarmenu
 
 | Name | Value | Description |
 | ---- | ----- | ----------- |
-| isDisabled | () => boolean | check if the button is disabled |
-| setDisabled | (state: boolean) => void | set the button's disabled state |
+| isDisabled | () => boolean | Check if the button is disabled. |
+| setDisabled | (state: boolean) => void | Set the button's disabled state. |
 
 
 ### Example

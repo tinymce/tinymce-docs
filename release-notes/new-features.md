@@ -27,24 +27,20 @@ TinyMCE 5.0 offers an easy to navigate configurable less cumbersome user interfa
 
 Try out our demo page to explore the new UI.
 
-## Tiny 5.0 Demo
+## Tiny 5.0 Demo // TODO
 
 ## Value to a Developer
 
 ### Modern, cleaner, stricter UI API
 
-cleaner + stricter, are benefits to tiny. We have less code pathways that do the same thing (reduced complexity and maintenance for ourselves). We reduce the ability for developers to introduce bugs as tiny5 will only accept specific configs, and should throw specific errors on why it failed so. Theres a tradeoff here, developers used to have 10 undocumented ways to do something, where as now there is 1 accepted and documented way.
-
-I think the term modern should be removed, as the API style and feel is still consistent with tiny. The theme is more modern but not he API
-
 ### Easy to integrate with modern systems
 
-As application design continues to improve and evolve, and developers are asked to integrate the editor into wildy different apps, the flexible UI allows developers to more easily match the look and feel of these new applications, so the editor does not stick out like a sore thumb
+As application design continues to improve and evolve, and developers are asked to integrate the editor into different apps. The flexible UI allows developers to more easily match the look and feel of these new applications which provides the benefit of creating a seamless user experience.
 
 ### Easy Upgrade
 
-* Devs can upgrade their Tiny 4.x instances to 5 with little / no fuss
-* For instructions on how to migrate, please see the Migration Guide<link>.
+* Devs can upgrade their Tiny 4.x instances to 5 with little/no fuss.
+* For instructions on how to migrate, please see the [Migration Guide]({{site.baseurl}}/migrating-from-4.x).
 
 > Note: An instance of Tiny with massive customizations could take longer to upgrade. Please contact Customer Support<link> if you are encountering issues with upgrade.
 
@@ -72,29 +68,22 @@ The skin creator is coupled with the tinymce.ui framework so it works with the m
 
 ## Silver
 
-Tiny 5's silver theme contains a set of configuratable ui components, that could be used to replace
+Tiny 5's **Silver** theme contains a set of configurarable ui components, that could be used to replace the current customizations (modern, inline, and inlite theme). Silver is enabled by default. If you do not specify a theme, it will default to Silver.
 
 
 ### New UI
 
-It creates CSS and bundles resources like icon fonts and images for the UI. I think we should just rewrite that part to something less complex. It's complex since at the time of writing gradients was a thing so everything needed a start/end color range. I don't see such a project as as major work took us a few days to create the existing skin creator.
-
+It creates CSS and bundles resources like icon fonts and images for the UI.
 
 ### Emoticons
 
 ### Dialog
 
-The Dialog plugin is created for showing dialogs (sometimes referred to as modals) in your application. The plugin supports the use of dynamic content for all aspects and is easily configurable / overridable. To display simple information (eg: source code plugin, displays the HTML code from the content in the dialog)
+The Dialog plugin is created for showing dialogs (sometimes referred to as modals) in your application. The plugin supports the use of dynamic content for all aspects and is easily configurable/overridable. To display simple information (e.g., source code plugin, displays the HTML code from the content in the dialog).
 
 ### Context Menu
 
 The contextMenu can provide a simple list of clickable commands, or offer an in-menu form. This makes very simple attribute modification possible. Tiny 5.0 offers the contextMenu Plugin that is designed for web applications in need of menus on a possibly large amount of objects. Now, a single menu is defined that can be used by multiple objects and a contextMenu doesn't need to bind itself to triggering objects. This allows injecting and removing triggers without having to re-initialize or update contextMenu.
-context menu
-
-* The context menu is no longer a plugin, it is part of the core and always enabled
-* Plugins can now register context menu sections
-* editor `contextmenu` configuration can include menu items as before, but now also plugin menu sections
-* e.g. the default context menu config is now `link image editimage table spelling` which are all plugin references
 
 ### Context Toolbars
 

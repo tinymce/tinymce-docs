@@ -1,5 +1,5 @@
 ---
-layout: draft
+layout: default
 title: Changed Features
 title_nav: Changed Features
 description: These features have either changed or have been deleted in TinyMCE 5.0.
@@ -33,11 +33,11 @@ For a workaround, refer the following table:
 | ------------------- | ----------- | ------ |
 | Minor | Has some custom buttons | no Ui fixes required, update button configuration to Tiny 5.0 format |
 | Moderate | Has a webform in a dialog that can be submitted | port tiny 4 config to tiny 5 config |
-| Major | You have created the kitchen sink | Not all api use cases are covered by our new Tiny 5 components, however we will strive to create a supprted work around or if there are sufficient requests, we will create a component to resolve the use case. |
+| Major | You have created the kitchen sink | Not all api use cases are covered by our new Tiny 5 components. However, we will strive to create a supported work around or if there are sufficient requests, we will create a component to resolve the use case. |
 
-> Note: Please provide feedback on your use case, and your current tinymce 4 configuration file containing only the ui component, you wish to have supported or to know a work around. -improve submission instructions -
+> Note: Please provide feedback on your use case, and your current Tinymce 4.x configuration file containing only the UI component that you wish to be supported or to know a work around.
 
-> Note: The Silver theme in Tiny 5.0. contains a set of configuratable ui components, that could be used to replace the current customizations.
+> Note: The Silver theme in Tiny 5.0. contains a set of configurarable UI components that could be used to replace the current customizations(modern, inline, and inlite theme). Silver is enabled by default. If you do not specify a theme, it will default to Silver.
 
 
 
@@ -54,7 +54,7 @@ For a workaround, refer the following table:
 ### Context Menu
 
 The contextMenu can provide a simple list of clickable commands, or offer an in-menu form. This makes very simple attribute modification possible. Tiny 5.0 offers the contextMenu Plugin that is designed for web applications in need of menus on a possibly large amount of objects. Now, a single menu is defined that can be used by multiple objects and a contextMenu doesn't need to bind itself to triggering objects. This allows injecting and removing triggers without having to re-initialize or update contextMenu.
-context menu release notes
+
 - the context menu is no longer a plugin, it is part of the core and always enabled
 - plugins can now register context menu sections
 - editor `contextmenu` configuration can include menu items as before, but now also plugin menu sections
@@ -65,35 +65,22 @@ context menu release notes
 
 The Context Toolbar configures its buttons based on the type of object selected in the Tree Outline. The Context Toolbar makes a limited number of relevant choices more visible and readily accessible.
 
-
-#### Differences with TinyMCE 4
-
-* buttons go before and after the input in t4 // TODO: resolve with align
-* the Ctrl+K shortcut does nothing until the context toolbar is visible in t4. Possibly by design?
-* In t5, the pop animates to its new width
-* in t4, it is a url input, so you get a popup and a browse button. This might be something we have to implement, but it's not clear how to support it yet. I think at best for this release, we should just have before and after commands.
-
 ### Context Form
 
 ContextForms are a generalisation of the `Insert Link` form that existed in the original `inlite` plugin from [TinyMCE 4]((https://www.tiny.cloud/docs/themes/inlite/#quicklink)).
 
 ### Toolbar buttons
 
-Svg icons for better crisp look
-
-New buttons are added to the global
-
-* editor.buttons
-* editor.menuItems
-* editor.sidebar
-* editor.contextToolbars
-
+1. Svg icons for better crisp look
+2. New buttons are added to the global
+    * editor.buttons
+    * editor.menuItems
+    * editor.sidebar
+    * editor.contextToolbars
 
 ### Toolbar Menus
 
-New buttons are added to the global `editor.settings.menus`
-
-* Improvement -> now shows toggled state
+* New buttons are added to the global `editor.settings.menus` which is an enhancement since, it now shows the toggled state.
 * Improved mouse and keyboard nav
 
 

@@ -1,5 +1,5 @@
 ---
-layout: draft
+layout: default
 title: Overview
 title_nav: Overview
 description: Context Toolbar Overview
@@ -12,8 +12,6 @@ A ContextToolbar can only contain either buttons that are defined for a normal t
 
 The button strings for launching a ContextForm will be of the form `form:${name}` where name is the registered name of the context form (e.g. form:link). Note, these will only be present if the 'launch` setting of the ContextForm is specified.
 
-
-
 ### Registering a Context Toolbar
 
 A ContextToolbar is registered by calling the `addContextToolbar` API in the registry. The specification is as follows:
@@ -22,7 +20,7 @@ A ContextToolbar is registered by calling the `addContextToolbar` API in the reg
 | ---- | ----------- |
 | `predicate` | This controls when the context toolbar will appear |
 | `position` | This controls where the context toolbar will appear with regards to the current cursor |
-| `scope` | This controls whether the predicate is a `node`-based predicate, or an `editor`-based predicate. See Context Toolbar Proirity for more details. |
+| `scope` | This controls whether the predicate is a `node`-based predicate, or an `editor`-based predicate. See Context Toolbar Proirity below, for more details. |
 | `items` | A list of strings which represent either a registered toolbar button, or a registered context form launcher. |
 
 
@@ -47,13 +45,13 @@ Two of the settings for a ContextToolbar or ContextForm determine its priority: 
 3. If no predicates (scope: node) match the current context position, then all of the `scope: editor` predicates are tried. The first one that matches the editor context wins.
 4. If no `scope: editor` predicates match, then the new context position is calculated by going up the tree one level to the parent node. All `scope: node` predicates are then checked again. As soon as one matches, it *wins* and that ContextForm or ContextToolbar is shown. If nothing matches, it goes up the tree and tries again. Note, only `scope: node` predicates are checked at this stage. The `scope: editor` predicate is only checked once and that check only happens in (2).
 
-Note, because the order that the ContextForms and ContextToolbars are checked is not specified, try not to have their predicates overlap.
+> Note: Since the order in which the ContextForms and ContextToolbars are checked is not specified, try not to have their predicates overlap.
 
 
 ## Positioning ContextToolbars and ContextForms
 
 There are two options for how to position a ContextToolbar or ContextForm: `selection` or `line`.
 
-A `selection` position will place the ContextToolbar or ContextForm above or below the current selection, centred if possible.
+* A `selection` position will place the ContextToolbar or ContextForm above or below the current selection, centred if possible.
 
-A `line` position will place the ContextToolbar or ContextForm to the right (or left in Right-to-Left languages) of the current selection.
+* A `line` position will place the ContextToolbar or ContextForm to the right (or left in Right-to-Left languages) of the current selection.

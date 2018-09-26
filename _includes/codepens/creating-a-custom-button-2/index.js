@@ -1,5 +1,5 @@
 tinymce.init({
-  selector: '#creating-a-custom-button-2',
+  selector: 'textarea.tinymce',
   height: 300,  
   plugins: 'code',
   toolbar: 'undo redo | currentdate',
@@ -8,7 +8,7 @@ tinymce.init({
     '//www.tiny.cloud/css/codepen.min.css'],
   
   setup: function(editor) {
-    
+
     function toTimeHtml(date) {
       return '<time datetime="' + date.toString() + '">' + date.toDateString() + '</time>';
     }
@@ -18,18 +18,21 @@ tinymce.init({
       editor.insertContent(html);
     }
     
-    function monitorNodeChange() {
-      var btn = this;
-      editor.on('NodeChange', function(e) {
-        btn.disabled(e.element.nodeName.toLowerCase() === 'time');
-      });
+    function monitorNodeChange(btnApi) {
+      const disable = (e) => {
+         btnApi.setDisabled(e.element.nodeName.toLowerCase() === 'time'); 
+      }
+      editor.on('nodechange', disable);
+      return () => { editor.off('NodeChange', disable) };
     }
 
-    editor.addButton('currentdate', {
-      icon: 'insertdatetime',
+    editor.ui.registry.addButton('currentdate', {
+      icon: 'insert-time',
       tooltip: "Insert Current Date",
-      onclick: insertDate,
-      onpostrender: monitorNodeChange
+      onAction: insertDate,
+      onSetup: (btnApi) => {
+        return monitorNodeChange(btnApi)
+      }
     });
   }
 });

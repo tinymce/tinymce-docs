@@ -17,10 +17,10 @@ tinymce.init({
       editor.insertContent(html);
     }
 
-    editor.addButton('currentdate', {
+    editor.ui.registry.addButton('currentdate', {
       icon: 'insertdatetime',
       tooltip: "Insert Current Date",
-      onclick: insertDate
+      onAction: insertDate
     });
   }
 });

@@ -1,5 +1,5 @@
 ---
-layout: draft
+layout: default
 title: Toggle
 title_nav: Toggle
 description: Toolbar Button - Toggle

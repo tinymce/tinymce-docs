@@ -73,10 +73,12 @@ ContextForms are a generalisation of the `Insert Link` form that existed in the 
 
 1. Svg icons for better crisp look
 2. New buttons are added to the global
-    * editor.buttons
-    * editor.menuItems
-    * editor.sidebar
-    * editor.contextToolbars
+| **New Buttons** | **Description** |
+| --------------- | --------------- |
+| editor.buttons |  |
+| editor.menuItems |  |
+| editor.sidebar |  |
+| editor.contextToolbars |  |
 
 ### Toolbar Menus
 

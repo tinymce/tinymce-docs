@@ -1,7 +1,6 @@
 tinymce.init({
   selector: 'textarea',
   height: 200,
-  code_dialog_height: 200,
   plugins: 'bbcode code',
   toolbar: 'undo redo | bold italic underline | code',
   content_css: [

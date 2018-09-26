@@ -13,12 +13,13 @@ keywords: Togglemenu Toggle menu toolbarmenu
 | Name | Value | Requirement | Description |
 |------| ------| ------------| ----------- |
 | text | string | optional | text to display if no icon is found |
-| icon | string | optional | CHECK HOW THIS WILL WORK REGARDING ICON PACKS |
+| icon | string | optional | It displays the icon corresponding to the icon name that has been defined in the icon pack  |
 | tooltip | string | optional | text for button tooltip  |
 | disabled | boolean | optional| default: false - represents button state. is toggled by the button's api |
 | active | boolean | optional | default: false |
 | onSetup | (api) => (api) => void | optional | default: () => () => {} - function that's invoked when the button is rendered. |
 | onAction | (api) => void | required | function that's called when the button is clicked |
+
 > Note:  See below for details on return type for onSetup and onAction.
 
 ### API

@@ -65,7 +65,7 @@ A **Checkbox** is a component, used to toggle states on, or off
     }
 ```
 
-### ColourInput
+### ColorInput
 
 A **ColorInput** is a specialised input field which takes rgb colors and will render the sample color typed
 
@@ -73,7 +73,7 @@ A **ColorInput** is a specialised input field which takes rgb colors and will re
     {
       type: 'colorinput',
       name: 'colorA',
-      label: 'Colour Label',
+      label: 'Color Label',
       colspan: 1
     }
 ```
@@ -85,7 +85,7 @@ A **ColorPicker**  is an intuitive color picker tool similar to image editors.
 ```js
     {
       type: 'colorpicker',
-      name: 'colour',
+      name: 'color',
       label: 'Color A',
       colspan: 1
     }
@@ -194,7 +194,7 @@ A **SelectBox** allows users to select a choice from a list of many <reword>
 
 ### SizeInput
 
-A **SizeInput** is a specialised input field that can lock ratios, see image dialog or ....
+A **SizeInput** is a specialised input field that can lock ratios, see image dialog.
 
 ```js
     {

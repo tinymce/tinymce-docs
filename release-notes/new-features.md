@@ -107,14 +107,15 @@ When opening a properties dialog with a single table/row/cell selected, the dial
 
 ### Toolbar buttons
 
-Svg icons for better crisp look
+* Svg icons for better crisp look
+* New buttons are added to the global
 
-New buttons are added to the global
-
-* editor.buttons
-* editor.menuItems
-* editor.sidebar
-* editor.contextToolbars
+| **New Buttons** | **Description** |
+| --------------- | --------------- |
+| editor.buttons |  |
+| editor.menuItems |  |
+| editor.sidebar |  |
+| editor.contextToolbars |  |
 
 
 ### Toolbar Menus

@@ -4,10 +4,6 @@ var demoBaseConfig = {
   height: 500,
   resize: false,
   autosave_ask_before_unload: false,
-  codesample_dialog_width: 600,
-  codesample_dialog_height: 425,
-  template_popup_width: 600,
-  template_popup_height: 450,
   mentions_fetch: mentionsFetchFunction,
   powerpaste_allow_local_images: true,
   plugins: [

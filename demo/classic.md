@@ -11,4 +11,4 @@ keywords: example demo classic editor
 
 This example shows you how to use TinyMCE Classic Editor.
 
-{% include codepen.html id="YybwmL" %}
+{% include codepen.html id="classic" %}

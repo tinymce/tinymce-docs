@@ -59,4 +59,4 @@ tinymce.init({
 
 ## Live example
 
-{% include codepen.html id="mpXVZv" %}
+{% include codepen.html id="bbcode" %}

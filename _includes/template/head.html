@@ -18,4 +18,26 @@
     <link href="//fast.fonts.net/cssapi/5d4ae438-4aca-4c75-8249-d9486d12b12e.css" rel="stylesheet">
     <!-- link href="//afeld.github.io/emoji-css/emoji.css" rel="stylesheet" -->
     {% include_remote {{ site.origin }}/_docs/head.html css="head > *" %}
+
+    {% assign tinymce_script_tag_included = false %}
+
+    <style type="text/css">
+        .codepen {
+            margin-top: 2em;
+            margin-bottom: 2em;
+        }
+        .codepen_tab_selected, .codepen_tab_deselected {
+            padding-left: 2em;
+            padding-right: 2em;
+        }
+        .codepen_tab_selected {
+            border-bottom: 2px solid #2276d2;
+        }
+        .codepen_tab_deselected:hover {
+            border-bottom: 2px solid #abcdef;
+        }
+        .codepen_tabs {
+            margin-bottom: 1em;
+        }
+    </style>
 </head>

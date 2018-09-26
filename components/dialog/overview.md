@@ -37,7 +37,7 @@ const dialogConfig = {
 }
 ```
 
-Using the above example, calling `tinymce.activeEditor.windowManager.open(dialogConfig)`, will create a dialog with the title `Just a title`, an empty body, and an empty footer without buttons.
+Using the above example, calling `tinymce.activeEditor.windowManager.open(dialogConfig)` will create a dialog with the title `Just a title`, an empty body, and an empty footer without buttons.
 
 ### Complex
 
@@ -122,18 +122,18 @@ The `instanceApi` is a javascript object containing methods attached to the dial
 
 | Methods | Description |
 |---------|-------------|
-| `getData(): <T>`  | `getData()` Returns a key-value object matching the structure of the initialData -> See, initialData configuration. The object keys in the returned data object represent a component name.  For the Insert Cat Name example, `data.catdata` is the value currently being held by the input field with the name `catdata` |
+| `getData(): <T>`  | `getData()` returns a key-value object matching the structure of the initialData -> See, initialData configuration. The object keys in the returned data object represent a component name.  For the Insert Cat Name example, `data.catdata` is the value currently being held by the input field with the name `catdata` |
 | `setData(newConfig: object): void`  | `setData(newData)` updates the dataset.  This method also works with partial data sets. |
-| `disable(name: string): void` | Calling disable and passing the component name will disable the component.  Calling enable(name) will re-enable the component. |
-| `enable(name: string): void` | Calling enable and passing the component name will enable a component, and users can interact with the component. |
-| `focus(name: string): void` | Calling focus and passing the component name will set the browser focus to the component.|
-| `block(message: string): void` | Calling block and passing a message string will disable the entire dialog window and display the message notifying users why the dialog is blocked, this is useful for asynchronous data.  When the data is ready we use unblock() to unlock the dialog |
-| `unblock(): void` | Calling unblock will unlock the dialog instance restoring functionality |
+| `disable(name: string): void` | Calling `disable` and passing the component name will disable the component.  Calling enable(name) will re-enable the component. |
+| `enable(name: string): void` | Calling `enable` and passing the component name will enable a component, and users can interact with the component. |
+| `focus(name: string): void` | Calling `focus` and passing the component name will set the browser focus to the component.|
+| `block(message: string): void` | Calling `block` and passing a message string will disable the entire dialog window and display the message notifying users why the dialog is blocked, this is useful for asynchronous data.  When the data is ready we use unblock() to unlock the dialog |
+| `unblock(): void` | Calling `unblock` will unlock the dialog instance restoring functionality |
 | `showtab(name: string): void` | This method only applies to tab dialogs only. `todo: insert tab dialog demo link` Calling `showtab` and passing the name of a tab will make the dialog switch to the named tag. |
-| `close(): void` | Calling the close method will close the dialog.  When closing the dialog, all DOM elements and dialog data are destroyed.  When `open(config)` is called again, all DOM elements and data are recreated from the config. |
-| `redial(config): void` | Calling redial and passing a dialog configuration, will destroy the current dialog and create a new dialog.  Redial is used to create a multipage form, where the next button loads a new form page. |
+| `close(): void` | Calling the `close` method will close the dialog.  When closing the dialog, all DOM elements and dialog data are destroyed.  When `open(config)` is called again, all DOM elements and data are recreated from the config. |
+| `redial(config): void` | Calling `redial` and passing a dialog configuration, will destroy the current dialog and create a new dialog.  Redial is used to create a multipage form, where the next button loads a new form page. |
 
-This [example]({{site.baseurl}}./example) demonstrates one way of implementing an Interactive Dialog using the `redial(config): void` method.
+This [example]({{site.baseurl}}../example) demonstrates one way of implementing an Interactive Dialog using the `redial(config): void` method.
 
 
 ## Dialog Framework
@@ -154,7 +154,7 @@ var panelConfig = {
 };
 ```
 
-**Items:** Array of component configurations, any component listed in [this page]({{site.baseurl}}./component) are compatible.
+**Items:** Array of component configurations, any component listed in [this page]({{site.baseurl}}../component) are compatible.
 
 ### TabPanel
 
@@ -172,7 +172,7 @@ var tabPanelConfig = {
   ]
 };
 ```
-**Tabs:** Array of tab configurations. Each tab has a title which is used to reference the tab. The items property in the tab configuration takes a list of components and works the same way as a Panel. We can programmatically switch to a tab by calling `dialogApi.showTab`(‘title’), See [dialogApi]({{site.baseurl}}./component) for more details.
+**Tabs:** Array of tab configurations. Each tab has a title which is used to reference the tab. The items property in the tab configuration takes a list of components and works the same way as a Panel. We can programmatically switch to a tab by calling `dialogApi.showTab`(‘title’), See [dialogApi]({{site.baseurl}}../component) for more details.
 
 ### Button
 
@@ -192,6 +192,6 @@ var buttonConfig = {
 
 **Text:** This will be the displayed button text. For example, text: ‘do magic’ will create a button with text ‘do magic’. Dialog buttons do not support icons at the moment.
 
-**Disabled:** value: `boolean`, (defaults to false): When set to `true`, the button will be disabled when the dialog loads.  To toggle between disabled and enabled states, use `dialogApi.enable(name)`` or `dialogApi.disable(name)`. See [dialogApi]({{site.baseurl}}./component).
+**Disabled:** value: `boolean`, (defaults to false): When set to `true`, the button will be disabled when the dialog loads.  To toggle between disabled and enabled states, use `dialogApi.enable(name)`` or `dialogApi.disable(name)`. See [dialogApi]({{site.baseurl}}../component).
 
 **Primary:** (defaults to false):  When set to `true`, the button will be colored to standout. The color will depend on the chosen skin.

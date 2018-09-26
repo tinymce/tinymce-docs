@@ -2,8 +2,6 @@ tinymce.init({
   selector: 'textarea',
   height: 500,
   plugins: 'codesample code',
-  codesample_dialog_width: '400',
-  codesample_dialog_height: '400',
   codesample_languages: [
         {text: 'HTML/XML', value: 'markup'},
         {text: 'JavaScript', value: 'javascript'},

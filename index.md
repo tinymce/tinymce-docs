@@ -1,9 +1,9 @@
 ---
 layout: default
-title: TinyMCE Documentation
+title: TinyMCE 5 Developer Preview
 type: index
 meta_title: Documentation
-meta_description: The official documentation source for the most advanced editor designed to simplify website creation.
+meta_description: Official documentation for the most advanced and widely deployed rich text editor platform.
 ---
 
 {% include index.html links=site.data.nav %}

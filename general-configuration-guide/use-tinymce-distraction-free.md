@@ -1,7 +1,7 @@
 ---
 layout: default
 title: 04. Use TinyMCE Distraction-free
-description: Theme that renders a light weight UI for inline editing.
+description: Theme that renders a lightweight UI for inline editing.
 keywords: theme inlite distraction-free
 ---
 

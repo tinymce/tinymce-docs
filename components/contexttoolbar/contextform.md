@@ -9,7 +9,8 @@ keywords: contexttoolbar context toolbar contexttoolbarapi
 
 ## Context Forms
 
-A ContextForm consists of an input field, and a series of related buttons. ContextForms are a generalisation of the `Insert Link` form that existed in the original `inlite` plugin from TinyMCE 4. Context forms can be shown wherever a context toolbar can be shown. Also, when a context form is registered containing a `launch` configuration, a special context toolbar button with name `form:${name}` is registered which will launch that particular context form.
+A ContextForm consists of an input field, and a series of related buttons. Context forms can be shown wherever a context toolbar can be shown. Also, when a context form is registered containing a `launch` configuration, a special context toolbar button with name `form:${name}` is registered which will launch that particular context form.
+ContextForms are a generalisation of the `Insert Link` form that existed in the original `inlite` plugin from [TinyMCE 4](https://www.tiny.cloud/docs/themes/inlite/#quicklink).
 
 ### Options
 
@@ -19,18 +20,28 @@ There are no options for ContextForms
 
 A ContextForm is registered by calling the `addContextForm` API in the registry. The specification of a ContextForm is separated into two parts:
 
-* The Launch specification. This relates to what the button that launches this form will look like
-* The Form specification: This relates to the form itself
+#### Launch
 
-| Name | Specification | Details |
-| ---- | ------------- | ------- |
-| `launch` |  | This is the specification for the launching button that can appear in a ContextToolbar only. It will be either type: `contextformbutton` or `contextformtogglebutton`, and will be identical to those definitions below except it will **not** have an `onAction`. |
-| `label` |  | This is the label that will appear in the form |
-| `initValue` |  | This is the initial value the input will have in the form |
-| `predicate` |  | This controls when the context toolbar will appear |
-| `position` |  | This controls where the context toolbar will appear with regards to the current cursor |
-| `scope` |  | This controls whether the predicate is a `node`-based predicate, or an `editor`-based predicate. See Context Toolbar Proirity for more details. |
-| `commands` |  | This is a list of the items to show in the ContextForm. They can be either `contextformbutton` or `contextformtogglebutton`. |
+The Launch specification. This relates to what the button that launches this form will look like.
+
+| Name | Details |
+| ---- | ------- |
+| `launch` | This is the specification for the launching button that can appear in a ContextToolbar only. It will be either type: `contextformbutton` or `contextformtogglebutton`, and will be identical to those definitions below except it will **not** have an `onAction`. |
+
+
+#### Form
+
+The Form specification: This relates to the form itself.
+
+| Name | Details |
+| ---- | ------- |
+| `launch` | This is the specification for the launching button that can appear in a ContextToolbar only. It will be either type: `contextformbutton` or `contextformtogglebutton`, and will be identical to those definitions below except it will **not** have an `onAction`. |
+| `label` | This is the label that will appear in the form |
+| `initValue` | This is the initial value the input will have in the form |
+| `predicate` | This controls when the context toolbar will appear |
+| `position` | This controls where the context toolbar will appear with regards to the current cursor |
+| `scope` | This controls whether the predicate is a `node`-based predicate, or an `editor`-based predicate. See Context Toolbar Proirity for more details. |
+| `commands` | This is a list of the items to show in the ContextForm. They can be either `contextformbutton` or `contextformtogglebutton`. |
 
 ### Context Form buttons
 
@@ -44,16 +55,16 @@ The definition of a ContextFormButton is very similar to the definition of a nor
 
 ##### type: 'contextformtoggleutton';
 
-| Name | Value | Description |
-| ---- | ----- | ----------- |
-| primary?: | boolean; |// Whether this button fires on <enter> in the input form. |
-| onAction: | (formApi, togglebuttonApi) => void; | // What happens when the user clicks the button |
-| active?: | boolean; | // Same as Button |
-| disabled?: | boolean; | // Same as Button |
-| tooltip? | string; | // Same as Button |
-| text?: | string; | // Same as Button |
-| icon?: | string; | // Same as Button |
-| onSetup? | (togglebuttonApi) => (togglebuttonApi) => void; | // Same as Button |
+| Name | Value | Requirement | Description |
+| ---- | ----- | ----------- | ----------- |
+| primary | boolean; | Optional | This will activate the button on <enter> in the input form. |
+| onAction | (formApi, togglebuttonApi) => void; | Required | This decides what happens when the user clicks the button |
+| active | boolean; | Optional | default:false |
+| disabled | boolean; | Optional | default: false - represents button state. is toggled by the button's api |
+| tooltip | string; | Optional | text for button tooltip |
+| text | string; | Optional | text to display if no icon is found |
+| icon | string; | Optional | It displays the icon corresponding to the icon name that has been defined in the icon pack |
+| onSetup | (togglebuttonApi) => (togglebuttonApi) => void; | Optional | default: () => () => {} - function that's invoked when the button is rendered. |
 
 Where the buttonApi is the same as a regular toolbar button.
 
@@ -66,16 +77,16 @@ The definition of a ContextFormToggleButton is very similar to the definition of
 
 ##### type: 'contextformtoggleutton';
 
-| Name | Value | Description |
-| ---- | ----- | ----------- |
-| primary?: | boolean; |// Whether this button fires on <enter> in the input form. |
-| onAction: | (formApi, togglebuttonApi) => void; | // What happens when the user clicks the button |
-| active?: | boolean; | // Same as Button |
-| disabled?: | boolean; | // Same as Button |
-| tooltip? | string; | // Same as Button |
-| text?: | string; | // Same as Button |
-| icon?: | string; | // Same as Button |
-| onSetup? | (togglebuttonApi) => (togglebuttonApi) => void; | // Same as Button |
+| Name | Value | Requirement | Description |
+| ---- | ----- | ----------- | ----------- |
+| primary | boolean; | Optional | This will activate the button on <enter> in the input form. |
+| onAction | (formApi, togglebuttonApi) => void; | Required | This decides what happens when the user clicks the button |
+| active | boolean; | Optional | default:false |
+| disabled | boolean; | Optional | default: false - represents button state. is toggled by the button's api |
+| tooltip | string; | Optional | text for button tooltip |
+| text | string; | Optional | text to display if no icon is found |
+| icon | string; | Optional | It displays the icon corresponding to the icon name that has been defined in the icon pack |
+| onSetup | (togglebuttonApi) => (togglebuttonApi) => void; | Optional | default: () => () => {} - function that's invoked when the button is rendered. |
 
 where the `toggleButtonApi` is the same as a regular toolbar toggle button.
 

@@ -20,6 +20,7 @@ Any custom listbox toolbar buttons can be converted to a different type of toolb
 ## Removed Themes
 
 ### Inlite
+
 The Inlite theme is no longer supported in Tiny 5.0. The features that the Inlite theme used to provide, is now available as a plugin. For a workaround, using the configuration parameter { theme: 'silver', inline: true, toolbar: false, plugins: [ 'inlite' ] },
 will provide a similar and improved distraction free experience in Tiny 5.0.
 
@@ -71,6 +72,10 @@ The Context Toolbar configures its buttons based on the type of object selected 
 * the Ctrl+K shortcut does nothing until the context toolbar is visible in t4. Possibly by design?
 * In t5, the pop animates to its new width
 * in t4, it is a url input, so you get a popup and a browse button. This might be something we have to implement, but it's not clear how to support it yet. I think at best for this release, we should just have before and after commands.
+
+### Context Form
+
+ContextForms are a generalisation of the `Insert Link` form that existed in the original `inlite` plugin from [TinyMCE 4]((https://www.tiny.cloud/docs/themes/inlite/#quicklink)).
 
 ### Toolbar buttons
 

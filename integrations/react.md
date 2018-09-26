@@ -47,7 +47,8 @@ $ npm install --save @tinymce/tinymce-react
 <Editor apiKey='YOUR_API_KEY' init={% raw %}{{{% endraw %} /* your other settings */ {% raw %}}}{% endraw %} />
 ```
 
-You can also define what cloud channel you want to use out these three
+You can also define what cloud channel you want to use out these three:
+
 * `stable` **Default**. The most stable and well-tested version that has passed the Tiny quality assurance process.
 * `testing` This channel will deploy the current candidate for release to the `stable` channel.
 * `dev` The cutting edge version of TinyMCE updated daily for the daring users.
@@ -108,4 +109,4 @@ $ npm start
 
 ## 6. Keep on hacking
 
-This was just a simple guide on how to get started. For more complex configuration information, see the  React documentation.
+This was just a simple guide on how to get started. For more complex configuration information, see the React documentation.

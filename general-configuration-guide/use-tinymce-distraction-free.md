@@ -7,14 +7,15 @@ keywords: theme inlite distraction-free
 
 The **Distraction-free** theme is responsible for rendering the editor lightweight inline mode. This is an optional more lightweight distraction-free UI for the editor. It provides options to quickly insert links, images, and tables into your content. For a sample view of this mode, visit the [Distraction-free Editor]({{ site.baseurl }}/demo/editor-dfree/) example page.
 
-The `inlite` theme is responsible for rendering the editor lightweight inline mode. The current default theme is called [Classic]({{ site.baseurl }}./use-tinymce-classic). This is an optional more lightweight distraction-free UI for the editor.
+The `inlite` plugin is responsible for rendering the editor lightweight inline mode. The current default theme is called [Classic]({{ site.baseurl }}./use-tinymce-classic). This is an optional more lightweight distraction-free UI for the editor.
 
 ##### Example:
 
 ```js
 tinymce.init({
     selector: "div.tinymce",
-    theme: "inlite",
+    plugins: [ 'inlite' ],
+    toolbar: false,
     inline: true
 });
 ```
@@ -29,8 +30,9 @@ Lets you quickly insert/edit links inline.
 ```js
 tinymce.init({
     selector: "div.tinymce",
-    theme: "inlite",
-    inline: true,
+    plugins: [ 'inlite' ],
+    toolbar: false,
+    inline: true
     selection_toolbar: 'bold italic | quicklink h2 h3 blockquote'
 });
 ```
@@ -44,8 +46,9 @@ Lets you quickly insert images from the local machine into the editor. These can
 ```js
 tinymce.init({
     selector: "div.tinymce",
-    theme: "inlite",
-    inline: true,
+    plugins: [ 'inlite' ],
+    toolbar: false,
+    inline: true
     insert_toolbar: 'quickimage quicktable'
 });
 ```
@@ -59,8 +62,9 @@ Lets you quickly insert a table 2x2 with 100% width.
 ```js
 tinymce.init({
     selector: "div.tinymce",
-    theme: "inlite",
-    inline: true,
+    plugins: [ 'inlite' ],
+    toolbar: false,
+    inline: true
     insert_toolbar: 'quickimage quicktable'
 });
 ```

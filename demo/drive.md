@@ -49,9 +49,6 @@ tinymce.init({
   ],
   height: 600,
   imagetools_cors_hosts: ['picsum.photos'],
-  external_plugins: {
-    tinydrive: 'http://localhost:3000/dist/tinydrive/plugin.js'
-  },
   tinydrive_token_provider: (success, failure) => {
     success({ token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJqb2huZG9lIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.Ks_BdfH4CWilyzLNk8S2gDARFhuxIauLa8PwhdEQhEo' });
   },

@@ -1,12 +1,13 @@
 ---
 layout: default
-title: Inlite theme
-title_nav: Inlite
+title: 04. Use TinyMCE Distraction-free
 description: Theme that renders a light weight UI for inline editing.
-keywords: theme inlite
+keywords: theme inlite distraction-free
 ---
 
-The `inlite` theme is responsible for rendering the editor lightweight inline mode. The current default theme is called [modern]({{ site.baseurl }}/themes/modern/) this is an optional more lightweight distraction-free UI for the editor.
+The **Distraction-free** theme is responsible for rendering the editor lightweight inline mode. This is an optional more lightweight distraction-free UI for the editor. It provides options to quickly insert links, images, and tables into your content. For a sample view of this mode, visit the [Distraction-free Editor]({{ site.baseurl }}/demo/editor-dfree/) example page.
+
+The `inlite` theme is responsible for rendering the editor lightweight inline mode. The current default theme is called [Classic]({{ site.baseurl }}./use-tinymce-classic). This is an optional more lightweight distraction-free UI for the editor.
 
 ##### Example:
 
@@ -71,3 +72,7 @@ tinymce.init({
 * [inline]({{ site.baseurl }}/configure/editor-appearance/#inline)
 * [skin]({{ site.baseurl }}/configure/editor-appearance/#skin)
 * [theme]({{ site.baseurl }}/configure/editor-appearance/#theme)
+
+
+{% assign_page next_page = "/general-configuration-guide/multiple-editors/index.html" %}
+{% include next-step.html next=next_page %}

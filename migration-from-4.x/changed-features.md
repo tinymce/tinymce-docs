@@ -64,6 +64,14 @@ context menu release notes
 
 The Context Toolbar configures its buttons based on the type of object selected in the Tree Outline. The Context Toolbar makes a limited number of relevant choices more visible and readily accessible.
 
+
+#### Differences with TinyMCE 4
+
+* buttons go before and after the input in t4 // TODO: resolve with align
+* the Ctrl+K shortcut does nothing until the context toolbar is visible in t4. Possibly by design?
+* In t5, the pop animates to its new width
+* in t4, it is a url input, so you get a popup and a browse button. This might be something we have to implement, but it's not clear how to support it yet. I think at best for this release, we should just have before and after commands.
+
 ### Toolbar buttons
 
 Svg icons for better crisp look

@@ -21,8 +21,8 @@ In version 5 some plugins have been deprecated.  These plugins are now part of t
 
 | **Plugin Name** | **Description** |
 | ---------- | ------------------------- |
-|ContextMenu | New api, see docs |
-| WordCount | No changes required |
+| [ContextMenu](https://www.tiny.cloud/docs/plugins/contextmenu/) | New API. See [docs]({{site.baseurl}}/components/contextmenu/) |
+| [WordCount](https://www.tiny.cloud/docs/plugins/wordcount/) | No changes required |
 
 ### Themes
 
@@ -30,8 +30,8 @@ In version 5, some themes have been removed and are now combined in a new single
 
 | **Removed Theme** | **Replaced by** |
 | ------------ | ------------- |
-| Modern | Silver |
-| Modern inline | Silver Inline |
+| [Modern](https://www.tiny.cloud/docs/themes/modern/ | Silver |
+| [Modern inline]() | [Silver Inline] |
 | Inlite (Distraction-free Editor) | Silver (distraction free configuration) |
 | Mobile | Silver (responsive to screen size)  |
 

@@ -3,7 +3,9 @@
 - url: "general-configuration-guide"
   pages:
   - url: "basic-setup"
+  - url: "use-tinymce-classic"
   - url: "use-tinymce-inline"
+  - url: "use-tinymce-distraction-free"
   - url: "multiple-editors"
   - url: "advanced-install"
   - url: "work-with-plugins"
@@ -422,7 +424,7 @@
   - url: "contexttoolbar"
     pages:
     - url: "overview"
-    - url: "components"
+    - url: "contextform"
     - url: "example"
   - url: "toolbarbuttons"
     pages:
@@ -434,12 +436,6 @@
       - url: "split"
       - url: "toggle"
     - url: "example"
-
-- url: "themes"
-  pages:
-  - url: "inlite"
-  - url: "mobile"
-  - url: "modern"
 
 - url: "enterprise"
   pages:

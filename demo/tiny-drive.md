@@ -36,9 +36,7 @@ This example shows you how to use Tiny Drive for your file and image management.
   }
 </style>
 
-<!-- <script src="http://localhost/tinymce/js/tinymce/tinymce.min.js"></script>
-<script> -->
-<script src="https://cloud.tinymce.com/dev/tinymce.min.js?apiKey=mewrstxy1qafkxzgwrof3s2apj0mnccleag1rsj527bs02fd&mediaembed=dev&linkchecker=dev&tinymcespellchecker=dev&powerpaste=dev&a11ychecker=dev&advcode=dev&fluffy=dev&tinydrive=dev&x=2"></script>
+<script src="https://cloud.tinymce.com/dev/tinymce.min.js?apiKey=mewrstxy1qafkxzgwrof3s2apj0mnccleag1rsj527bs02fd&tinydrive=dev&xy=4"></script>
 <script>
 
 tinymce.init({

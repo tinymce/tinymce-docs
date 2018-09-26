@@ -46,4 +46,4 @@ Start with our [dedicated product page](https://about.tiny.cloud/products/powerp
 
 ## PowerPaste demo
 
-{% include codepen.html id="Jbaeyr" %}
+{% include codepen.html id="paste-from-word" %}

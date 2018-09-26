@@ -83,4 +83,4 @@ You need to add `prism.js` and `prism.css` to your page in order to get the synt
 
 ## Live example
 
-{% include codepen.html id="mpyXwj" %}
+{% include codepen.html id="codesample" %}

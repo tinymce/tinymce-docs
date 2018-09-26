@@ -9,4 +9,4 @@ keywords: example demo custom wysiwyg full-power full-featured
 
 This example displays all plugins included in the default TinyMCE package, and includes those delivered via TinyMCE Cloud premium subscriptions. Please note, it includes [premium plugins](/pricing/#demo-enterprise).
 
-{% include codepen.html id="NGegZK" height="750" %}
+{% include codepen.html id="full-featured" height="750" %}

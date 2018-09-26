@@ -24,13 +24,13 @@ In this chapter, we have provided examples of both ways of configuring Comments 
 
 The following demo showcases the Comments functionality using storage configured to persist in real-time:
 
-{% include codepen.html id="pOzxJw" %}
+{% include codepen.html id="tinycomments-realtime" %}
 
 ### Storage - persist on content-save
 
 The following demo showcases the Comments functionality using storage configured to persist on content-save.
 
-{% include codepen.html id="4d07e4da27b1e7245b5333ed7413083b" %}
+{% include codepen.html id="tinycomments-save" %}
 
 #### Helper Functions
 
@@ -298,7 +298,7 @@ Here is an example of how `lookup` can be implemented using storage configured t
       .catch(function() {
         fail(new Error('Something has gone wrong...'));
       })
-  };
+  }
 ```
 
 #### Example - Storage - persist on content-save

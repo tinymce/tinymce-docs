@@ -9,4 +9,4 @@ keywords: example demo custom toolbar listbox
 
 This example shows you how to add a simple [listbox]({{ site.baseurl }}/api/tinymce.ui/tinymce.ui.listbox/) to the toolbar.
 
-{% include codepen.html id="JYwJVr" %}
+{% include codepen.html id="custom-toolbar-listbox" %}

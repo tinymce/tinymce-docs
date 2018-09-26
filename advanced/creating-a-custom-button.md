@@ -59,7 +59,6 @@ function toTimeHtml(date) {
 
 editor.addButton('currentdate', {
   icon: 'insertdatetime',
-  //image: 'http://p.yusukekamiyamane.com/icons/search/fugue/icons/calendar-blue.png',
   tooltip: "Insert Current Date",
   onclick: function () {
      var html = toTimeHtml(new Date());
@@ -79,7 +78,7 @@ Seriously.
 
 Here is the full code (you can experiment on it by clicking *Edit on Codepen* in the top right corner).
 
-{% include codepen.html id="XjRWZj" tab="js" height="550" %}
+{% include codepen.html id="creating-a-custom-button-1" tab="js" height="550" %}
 
 
 As you see we've supplied identifier of our button in the `toolbar` property, along with `undo` and `redo` (`code` plugin is also included - so that you could see HTML code that gets generated). So whenever the user clicks *Insert Current Date*, the date will be inserted into the editor at the current cursor position. Notice how `undo` button gets enabled after insertion, that's because we handle modification history for you.
@@ -106,12 +105,10 @@ You probably do not want your button to be enabled at all times since sometimes 
 So basically we need a way to monitor the cursor position and disable our button when it's inappropriate. For this purpose, we can hook onto a [NodeChange event]({{ site.baseurl }}/advanced/events/#nodechange), that gets fired when cursor jumps from one node to another.
 
 ```js
-// ...
-
 function monitorNodeChange() {
   var btn = this;
   editor.on('NodeChange', function(e) {
-    btn.disabled(e.element.nodeName.toLowerCase() == 'time');
+    btn.disabled(e.element.nodeName.toLowerCase() === 'time');
   });
 }
 
@@ -126,7 +123,7 @@ We made use of `postrender` option here and attached the callback that will be c
 
 Here's updated demo. Try to click inside and outside the date string:
 
-{% include codepen.html id="qaoXLB" tab="result" height="300" %}
+{% include codepen.html id="creating-a-custom-button-2" tab="run" height="300" %}
 
 > Note:  In reality, it would have been more practical to simply set `contenteditable` attribute to **false** on the `time` tag. But I wanted to demonstrate how you can toggle the button state, depending on various logical conditions.
 
@@ -173,5 +170,5 @@ Again we are using `onpostrender` to invoke our code after the button is rendere
 
 Here's a full example:
 
-{% include codepen.html id="wzmAjY" tab="js" height="550" %}
+{% include codepen.html id="creating-a-custom-button-3" tab="js" height="550" %}
 

@@ -9,4 +9,4 @@ keywords: example demo custom inline
 
 This example shows you the inline editing capabilities of TinyMCE. 
 
-{% include codepen.html id="bKPBjg" %}
+{% include codepen.html id="inline" %}

@@ -2,7 +2,7 @@
 layout: default
 title: Components
 title_nav: Components
-description: Context Menu Components
+description: Components are the configurable UI elements available for user customization.
 keywords: contextmenu context menu contextmenuapi
 ---
 

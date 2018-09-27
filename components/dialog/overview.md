@@ -1,5 +1,5 @@
 ---
-layout: draft
+layout: default
 title: Overview
 title_nav: Overview
 description: Dialog is a TinyMCE UI component used to display simple information.
@@ -108,7 +108,7 @@ In this example, we declared two buttons to be placed in the dialog footer, **Cl
 
 To demonstrate how data flows through the dialog and how buttons are configured, we will create a dialog that inserts the name of a cat into the editor content on submit.  We will refer to this example as we walk through the new dialog instance api.
 
-## Dialog Instance Api
+## Dialog Instance API
 
 When a dialog is created, a dialog `instanceApi` is returned.  For example,
 
@@ -118,7 +118,7 @@ When a dialog is created, a dialog `instanceApi` is returned.  For example,
 
 The `instanceApi` is a javascript object containing methods attached to the dialog instance.  When the dialog is *closed*, the `instanceApi` is *destroyed*.
 
-## instanceApi Methods
+## instanceAPI Methods
 
 | Methods | Description |
 |---------|-------------|
@@ -188,10 +188,10 @@ var buttonConfig = {
 }
 ```
 
-**Name:** The name property on the button is used to identify which button was clicked. The name property is used as an id attribute to identify dialog components. When we define name: `foobutton` and a user clicks on that button. The dialog `onAction` handler will fire and provide event `details.name` will be `foobutton` this will allow developers to create a click handler for ‘foobutton’. See dialog [onAction]() configuration.
+**Name:** The name property on the button is used to identify which button was clicked. The name property is used as an id attribute to identify dialog components. When we define name: `foobutton` and a user clicks on that button. The dialog `onAction` handler will fire and provide event `details.name` will be `foobutton` this will allow developers to create a click handler for ‘foobutton’. See dialog `[onAction]()` configuration.
 
 **Text:** This will be the displayed button text. For example, text: ‘do magic’ will create a button with text ‘do magic’. Dialog buttons do not support icons at the moment.
 
-**Disabled:** value: `boolean`, (defaults to false): When set to `true`, the button will be disabled when the dialog loads.  To toggle between disabled and enabled states, use `dialogApi.enable(name)`` or `dialogApi.disable(name)`. See [dialogApi]({{site.baseurl}}../component).
+**Disabled:** value: `boolean`, (defaults to false): When set to `true`, the button will be disabled when the dialog loads.  To toggle between disabled and enabled states, use `dialogApi.enable(name)` or `dialogApi.disable(name)`. See [dialogApi]({{site.baseurl}}../component).
 
 **Primary:** (defaults to false):  When set to `true`, the button will be colored to standout. The color will depend on the chosen skin.

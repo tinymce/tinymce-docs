@@ -1,12 +1,12 @@
 ---
-layout: draft
+layout: default
 title: Example
 title_nav: Example
 description: Context Menu Example
 keywords: contextmenu context menu contextmenuapi
 ---
 
-## Example usage
+## Example Usage
 
 This example creates a menu with a mixture of dynamic and static menu items. While `link` is the name of both a context menu section and a menu item, context menu sections take preference (the link context menu is dynamic based on the cursor position).
 
@@ -19,7 +19,7 @@ tinymce.init({
 });
 ```
 
-## Defining a context menu section
+## Defining a Context Menu Section
 
 This example shows how the image plugin dynamically adds the standard image menu section to the context menu. The image context menu section is empty unless the selected element is an image.
 

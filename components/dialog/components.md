@@ -1,5 +1,5 @@
 ---
-layout: draft
+layout: default
 title: Component
 title_nav: Component
 description: Dialog component summary is a reference list of all TinyMCE UI components that can be used to display simple information.
@@ -12,7 +12,7 @@ This chapter describes the Dialog component summary is a reference list of all T
 
 ### AlertBanner
 
-An **AlertBanner** is a color coded banner to alert the user of a problem, a url may be provided to direct users to reference site that may resolve the alerted issue.
+An **AlertBanner** is a color coded banner to alert the user of a problem, a URL may be provided to direct users to reference site that may resolve the alerted issue.
 
 ```js
     {
@@ -39,7 +39,7 @@ A **Button**component to be used inside the dialog body, these buttons differ fr
 
 ### Charmap
 
-A **Charmap** is a specialised component that prints a range of special characters from unicode
+A **Charmap** is a specialised component that prints a range of special characters from unicode.
 
 ```js
     {
@@ -55,7 +55,7 @@ A **Charmap** is a specialised component that prints a range of special characte
 
 ### Checkbox
 
-A **Checkbox** is a component, used to toggle states on, or off
+A **Checkbox** is a component, used to toggle states on, or off.
 
 ```js
     {
@@ -117,7 +117,7 @@ A **Grid** is a layout component that creates columns in the dialog body.
 
 ### HtmlPanel
 
-A **HtmlPanel** is similar to panel. Only takes a string of HTML
+A **HtmlPanel** is similar to panel. It only takes a string of HTML.
 
 ```js
     {
@@ -128,7 +128,7 @@ A **HtmlPanel** is similar to panel. Only takes a string of HTML
 
 ### Iframe
 
-An **Iframe** is a component used to?
+An **Iframe** is a component used to define the values of an iframe.
 
 ```js
     {
@@ -142,7 +142,7 @@ An **Iframe** is a component used to?
 
 ### Input
 
-An **Input** is a single line text field, a label element is also rendered
+An **Input** is a single line text field, a label element is also rendered.
 
 ```js
     {
@@ -167,7 +167,7 @@ A **JukeBox**  is a specialised component that can cycle through a list of optio
 
 ### Panel
 
-A **Panel** is a basic container, that holds other components, we can compose many components inside a panel. In HTML terms consider a panel a <div> wrapper. A dialog body configuration must begin with either a Panel or a TabPanel
+A **Panel** is a basic container, that holds other components, we can compose many components inside a panel. In HTML terms consider a panel a <div> wrapper. A dialog body configuration must begin with either a Panel or a TabPanel.
 
 ```js
     {
@@ -178,7 +178,7 @@ A **Panel** is a basic container, that holds other components, we can compose ma
 
 ### SelectBox
 
-A **SelectBox** allows users to select a choice from a list of many <reword>
+A **SelectBox** allows users to select a choice from a list of many options.
 
 ```js
     {
@@ -207,7 +207,7 @@ A **SizeInput** is a specialised input field that can lock ratios, see image dia
 
 ### Tabpanel
 
-A **Tabpanel -** is similar to a Panel, where it can holder other components. TabPanel is a layout component that will separate sections using tabs. Each tab is a panel that can hold different components. A dialog body configuration must begin with either a Panel or a TabPanel
+A **Tabpanel -** is similar to a Panel, where it can holder other components. TabPanel is a layout component that will separate sections using tabs. Each tab is a panel that can hold different components. A dialog body configuration must begin with either a Panel or a TabPanel.
 
 ```js
     {
@@ -224,7 +224,7 @@ A **Tabpanel -** is similar to a Panel, where it can holder other components. Ta
 
 ### TextArea
 
-A **TextArea** is a multiline text field
+A **TextArea** is a multiline text field.
 
 ```js
     {
@@ -238,7 +238,7 @@ A **TextArea** is a multiline text field
 
 ### UrlInput
 
-A **UrlInput**  is a specialised input text field for
+A **URlInput** is a specialised input text field for image dialog. This will include a typeahead for previous image urls entered.
 
 ```js
     // URL input for image dialog
@@ -259,6 +259,5 @@ A **UrlInput**  is a specialised input text field for
       filetype: 'file',
       label: 'Url'
     }
-    // Note that "filetype" also accepts "media" though I am uncertain what
-    // the difference is to "image".
+    // Note that "filetype" also accepts "media" 
 ```

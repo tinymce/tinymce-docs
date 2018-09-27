@@ -72,6 +72,8 @@ For more information on Context Menus, see the [docs]({{site.baseurl}}/component
 
 The Context Toolbar takes its buttons from things that are registered with as toolbar buttons using `addButton`, `addToggleButton`, `addSplitButton` or `addMenuButton`. For more information on Context Toolbars, see [docs]({{site.baseurl}}/components/contexttoolbar).
 
+The method for creating custom context toolbars has also been moved from `editor.addContextToolbar()` to `editor.ui.registry.addContextToolbar()`.
+
 ### Context Form
 
 ContextForms are a generalisation of the `Insert Link` form that existed in the original `inlite` plugin from [TinyMCE 4]((https://www.tiny.cloud/docs/themes/inlite/#quicklink)).
@@ -85,12 +87,15 @@ ContextForms are a generalisation of the `Insert Link` form that existed in the 
 ### Custom Menu Items // TODO explanations of the subpoints
 
 * editor.menuitems
-* editor.sidebar
+
+### Custom Sidebars // TODO explanation
+
+* editor.addSidebar
 
 ### Toolbar Menus
 
 * New buttons are added to the global `editor.settings.menus` which is an enhancement since, it now shows the toggled state.
-* Improved mouse and keyboard nav
+* Improved mouse and keyboard navigation.
 
 
 

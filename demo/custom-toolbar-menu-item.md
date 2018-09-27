@@ -9,4 +9,4 @@ keywords: example demo custom toolbar menu button
 
 This example shows you how to add a simple menu item to the predefined tools menu.
 
-{% include codepen.html id="ZbNWvK" %}
+{% include codepen.html id="custom-toolbar-menu-item" %}

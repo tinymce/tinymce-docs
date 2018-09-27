@@ -1,6 +1,6 @@
 ---
 layout: default
-title: 04. Advanced Install
+title: 06. Advanced Install
 description_short: Cloud, package managers, Self-hosted, jQuery and custom builds.
 description: Learn how to install TinyMCE via TinyMCE Cloud, package manager options, Self-hosted, jQuery and custom build options.
 keywords: npm bower composer nuget

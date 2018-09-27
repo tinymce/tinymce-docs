@@ -1,7 +1,7 @@
 ---
 layout: default
 title: 01. Basic Setup
-description_short: The 3 most important configuration settings, with examples.
+description_short: The three most important configuration settings, with examples.
 description: TinyMCE provides a wide range of configuration options that enable you to integrate it tightly with your application.
 keywords: selector plugin toolbar configuration configure
 ---
@@ -31,7 +31,7 @@ tinymce.init({
 
 Snippets always include a `selector` with the value `'textarea'`. You need to change this value according to your HTML, but otherwise, the snippet is a working code block.
 
-Cut and paste the snippet into your HTML document, replacing everything between the `<script>` tags containing the `tinymce` object (`tinymce.init({})`). If the setting makes a visual change to the editor, (for example adds a toolbar button or menu item) you'll see the changes in the editor.
+Cut and paste the snippet into your HTML document, replacing everything between the `<script>` tags containing the `tinymce` object (`tinymce.init({})`). If the setting makes a visual change to the editor, (for example, adds a toolbar button or menu item) you'll see the changes in the editor.
 
 ## Selector configuration
 
@@ -68,7 +68,7 @@ tinymce.init({
 });
 ```
 
-> For more information on the differences between regular and inline editing modes see the [Using TinyMCE Inline](../use-tinymce-inline/) page. 
+> For more information on the differences between regular and inline editing modes see the [Using TinyMCE Inline](../use-tinymce-inline/) page.
 
 
 ## Plugin configuration
@@ -143,7 +143,7 @@ tinymce.init({
 
 ### A quick look at menu and menubar controls
 
-Just as there is a `toolbar` option, there is also a `menu` option. In fact, there is two menu related options: `menu` and `menubar`. Let's take a quick look at the default menu items. Some of these settings are used in the examples throughout this guide and all of them within the plugins and customization documentation.
+Just as there is a `toolbar` option, there is also a `menu` option. There  are two menu related options: `menu` and `menubar`. Let's take a quick look at the default menu items. Some of these settings are used in the examples throughout this guide and all of them within the plugins and customization documentation.
 
 #### Default menu controls
 
@@ -280,5 +280,5 @@ toolbar: 'insertfile undo redo | styleselect | bold italic | alignleft aligncent
 
 And we are done. We hope you found the above example helpful in showing not only how powerful TinyMCE is but also how easy it is to customize.
 
-{% assign_page next_page = "/general-configuration-guide/use-tinymce-inline/index.html" %}
+{% assign_page next_page = "/general-configuration-guide/use-tinymce-classic/index.html" %}
 {% include next-step.html next=next_page %}

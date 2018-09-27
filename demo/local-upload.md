@@ -14,7 +14,7 @@ Once `images_upload_url` is defined in the config, an **Upload** tab appears in 
 
 So a setup like this displays a friendly UI simplifying image upload either by picking it up or by dropping it in, directly from the desktop:
 
-{% include codepen.html id="xLPoeV" tab="result" height="400" %}
+{% include codepen.html id="local-upload" height="400" %}
 
 All [image uploading options]({{ site.baseurl }}/general-configuration-guide/upload-images/#imageuploaderoptions) are supported, including `images_upload_handler` (a way to define custom file uploader) and `images_upload_credentials`.
 

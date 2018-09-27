@@ -11,4 +11,4 @@ keywords: example demo custom common standard normal typical
 
 In this example we highlight new features in our latest release, including the image caption option, media embeds and code snippets. For more information on the latest updates to TinyMCE, see the  [changelog]({{ site.baseurl }}/changelog).
 
-{% include codepen.html id="gGRYKN" height="900" %}
+{% include codepen.html id="whats-new" height="900" %}

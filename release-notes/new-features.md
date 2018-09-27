@@ -48,7 +48,7 @@ TinyMCE 5.0 offers a modern CSS to provide styled components that leverage the p
 
 ### Modern codebase
 
-Tiny 5.0 codebase has been extensively rewritten focus on converting the UI components to a more modern UI framework. As of consequence of this rewrite, all the related features have been updated. The new framework takes advantage of the latest CSS3 features for streamline styling and is  [ARIA](https://www.ibm.com/able/checklists.html)(IBM standards) compliant complaint. The new UI framework has a reasonably locked-down API for creating components, which means our code is more structured and has an in-built validation combined with TypeScript. This strictness makes our code cleaner and more stable. The new Tiny 5.0 code is cleaner and easier to maintain and troubleshoot.
+Tiny 5.0 codebase has been extensively rewritten focus on converting the UI components to a more modern UI framework. As of consequence of this rewrite, all the related features have been updated. The new framework takes advantage of the latest CSS3 features for streamline styling and is  [ARIA](https://www.ibm.com/able/checklists.html)(IBM standards) complaint. The new UI framework has a reasonably locked-down API for creating components, which means our code is more structured and has an in-built validation combined with TypeScript. This strictness makes our code cleaner and more stable. The new Tiny 5.0 code is cleaner and easier to maintain and troubleshoot.
 
 ### Support modern browser technologies
 
@@ -103,7 +103,7 @@ Shifted to using CSS more for styling, and therefore was able to remove a few le
 #### Autofill Values
 
 When opening a properties dialog with a single table/row/cell selected, the dialog will autofill with the relevant existing values. If you select multiple rows or cells and open the relevant properties dialog, Tiny 4 will leave all the dialog fields blank. In Tiny 5.0, fields which have the same values for all the selected rows or cells will autofill, and the fields which have no existing value or have differing values will be empty.
-"Border" input field in the tableprops dialog is now called "Border width", for clarity.
+"Border" input field in the `tableprops` dialog is now called "Border width", for clarity.
 
 ### Toolbar buttons
 

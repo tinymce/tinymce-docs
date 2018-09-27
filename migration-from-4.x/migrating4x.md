@@ -10,38 +10,39 @@ keywords: migration considerations premigration pre-migration
 
 ### Initialization
 
-The initialization process of Tiny 5, is the same as Tiny 4, the bootstrap process and initialization events all remain the same.  The main difference is in the init configuration, specifically the configuration items for Ui components.
-It still retains a familiar JSON structure, however the properties have been greatly simplified.
+The initialization process of Tiny 5.0 is the same as Tiny 4.x. The bootstrap process and initialization events all remain the same.  The main difference is in the `init` configuration, specifically the configuration items for UI components.
+It still retains a familiar JSON structure. However, the properties have been greatly simplified.
 
 ### Plugins
 
-In version 5 some plugins have been deprecated.  These plugins are now part of the core editor and are not required to be declared in the plugins setting.
+In version 5.0 some plugins have moved. These plugins are now part of the core editor and are not required to be declared in the plugins setting.
 
 #### Moved Plugins
 
 | **Plugin Name** | **Description** |
-| ---------- | ------------------------- |
+| --------------- |  -------------- |
 | [ContextMenu](https://www.tiny.cloud/docs/plugins/contextmenu/) | New API. See [docs]({{site.baseurl}}/components/contextmenu/) |
 | [WordCount](https://www.tiny.cloud/docs/plugins/wordcount/) | Moved to the core. No changes required |
 
 ### Themes
 
-In version 5, some themes have been removed and are now combined in a new single responsive theme called Silver.
+In version 5.0, some themes have been removed and are now combined in a new single responsive theme called **Silver**.
 
 | **Removed Theme** | **Replaced by** |
-| ------------ | ------------- |
+| ----------------- | --------------  |
 | [Modern](https://www.tiny.cloud/docs/themes/modern/) | Silver |
 | [Modern inline](https://www.tiny.cloud/docs/general-configuration-guide/use-tinymce-inline/) | [Silver Inline] |
-| Inlite (Distraction-free Editor)(https://www.tiny.cloud/docs/themes/inlite/) | Silver (distraction free configuration) |
-| Mobile(https://www.tiny.cloud/docs/themes/mobile/) | Silver (responsive to screen size)  |
+| [Inlite(Distraction-free Editor)](https://www.tiny.cloud/docs/themes/inlite/) | Silver (distraction free configuration) |
+| [Mobile](https://www.tiny.cloud/docs/themes/mobile/) | Silver (responsive to screen size)  |
 
 ### Settings
 
-In version 5, Some configurations have been removed because they are no longer necessary or an improved solution has been introduced.
-Changed Settings
+In version 5.0, Some configurations have been removed because they are no longer necessary or an improved solution has been introduced.
+
+#### Changed Settings
 
 | **Old Settings** |  **Description**|
-| ---------------- | ---------------- |
+| ---------------- | --------------- |
 | Dialog width | Uses CSS3 for optimal width |
 | Dialog height | Uses CSS3 for optimal height |
 | Settings for inline styles | Uses CSS stylesheets for custom |
@@ -50,7 +51,7 @@ Changed Settings
 
 The following options were newly added:
 
-* UI components: Users can now build their components from configurations. This is an enhancement that simplfies the previous way of creating components.
+* UI components: Users can now build their components from configurations. This is an enhancement that simplifies the previous way of creating components.
 
 #### Removed Settings
 
@@ -59,15 +60,15 @@ The following options were newly added:
 ### Methods
 
 * All methods for creating Ui components in TinyMCE 4.x have been removed.
-* No core editor methods where removed (tinymce, editor, selection, on() etc remain the same)
+* No core editor methods where removed (tinymce, editor, selection, on(), etc remain the same)
 
 
 #### Changed Methods
 
-| **Old Method** | **New Method** | **Description** |
-| ----------- | -------------- | -------------- |
-| editor.addButton() | editor.ui.registry.addButton() | |
-| editor.addMenuItem() | editor.ui.registry.addMenuItem() | |
+| **Old Method** | **New Method** |
+| -------------- | -------------- |
+| editor.addButton() | editor.ui.registry.addButton() |
+| editor.addMenuItem() | editor.ui.registry.addMenuItem() |
 
 
 #### New Method
@@ -81,8 +82,8 @@ The following methods were newly added:
 ##### New methods for custom toolbar buttons:
 
 | **New Method** | **Description** |
-| ----------- | -------------- |
-| editor.ui.registry.addToggleButton()| Adds a custom toolbar toggle button. |
+| -------------- | --------------- |
+| editor.ui.registry.addToggleButton() | Adds a custom toolbar toggle button. |
 | editor.ui.registry.addSplitButton() | Adds a custom toolbar split button. |
 | editor.ui.registry.addMenuButton() | Adds a custom toolbar menu button. |
 
@@ -94,7 +95,7 @@ For more information, see [docs]({{site.baseurl}}/components/toolbarbuttons/)
 | ----------- | -------------- |
 | editor.ui.registry.addToggleMenuItem() | Adds a custom toggle menu item. |
 | editor.ui.registry.addAutocompleter() | Adds a custom autocompleter. |
-| editor.ui.registry.addContextMenu() | Adds a custom context menu|
+| editor.ui.registry.addContextMenu() | Adds a custom context menu. |
 
 ### Events
 

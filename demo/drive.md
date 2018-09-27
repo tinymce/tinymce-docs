@@ -36,7 +36,7 @@ This example shows you how to use Tiny Drive for your file and image management.
   }
 </style>
 
-<script src="https://cloud.tinymce.com/dev/tinymce.min.js?apiKey=mewrstxy1qafkxzgwrof3s2apj0mnccleag1rsj527bs02fd"></script>
+<script src="https://s3-ap-southeast-2.amazonaws.com/apollo-tiny5-temporary-bucket/demo/tinymce.js"></script>
 <script>
 
 tinymce.init({

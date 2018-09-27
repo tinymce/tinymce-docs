@@ -7,8 +7,8 @@ var demoBaseConfig = {
   mentions_fetch: mentionsFetchFunction,
   powerpaste_allow_local_images: true,
   plugins: [
-    "a11ychecker advcode advlist anchor autolink codesample colorpicker contextmenu fullscreen help image imagetools",
-    " lists link linkchecker media mediaembed noneditable powerpaste preview",
+    "a11ychecker advcode advlist anchor autolink codesample colorpicker fullscreen help image imagetools",
+    " lists link linkchecker media noneditable powerpaste preview",
     " searchreplace table template textcolor tinymcespellchecker visualblocks wordcount"
   ], /* removed:  charmap insertdatetime print */
   external_plugins: {

@@ -8,7 +8,7 @@ keywords: tinymce script textarea
 
 TinyMCE is a powerful and flexible rich text editor that you can embed in your web application. 
 
-Tiny Cloud is perfect for developers who wants an easier installation and upgrade process. This document is the place to start if you want to get an editor instance up and running in less than 5 minutes. 
+Tiny Cloud is perfect for developers who want an easier installation and upgrade process. This document is the place to start if you want to get an editor instance up and running in less than 5 minutes. 
 
 ## Step 1: Include the TinyMCE script
 

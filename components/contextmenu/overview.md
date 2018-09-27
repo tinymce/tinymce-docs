@@ -1,5 +1,5 @@
 ---
-layout: draft
+layout: default
 title: Overview
 title_nav: Overview
 description: Context Menu Overview
@@ -59,7 +59,7 @@ tinymce.init({
 });
 ```
 
-## Registering context menu sections
+## Registering Context Menu Sections
 
 The structure of context menu sections is a simple query system indexed by name. We strongly recommend using the name of the plugin as the context menu name for ease of configuration.
 
@@ -98,14 +98,14 @@ type SeparatorMenuItemApi = {
 
 The most common type to use is `string`, which references an existing registered menu item.
 
-`ContextMenuItem`, `ContextSubMenu` and `SeparatorMenuItemApi` types are intended for use by plugins with completely dynamic menu requirements, where registering each menu item would be onerous and wasteful. For example the spellchecker shows a list of suggestions specific to the selected word.
+`ContextMenuItem`, `ContextSubMenu` and `SeparatorMenuItemApi` types are intended for use by plugins with completely dynamic menu requirements, where registering each menu item would be onerous and wasteful. For example, the spellchecker shows a list of suggestions specific to the selected word.
 
 When creating a dynamic menu, the structure `type` properties are used in order to support untyped API usage:
 
-* type `item` (default) is a regular menu item, and must have an `onAction` method
-* type `submenu` must have `getSubmenuItems`, and if it has an `onAction` property it is ignored
-* type `separator` ignores all other properties
+* type `item` (default) is a regular menu item, and must have an `onAction` method.
+* type `submenu` must have `getSubmenuItems`, and if it has an `onAction` property it is ignored.
+* type `separator` ignores all other properties.
 
 #### Example
 
-Examples of registering context menu sections are available in the [context menu examples](example).
+Examples of registering context menu sections are available in the [context menu examples]({{site.baseurl}}../example).

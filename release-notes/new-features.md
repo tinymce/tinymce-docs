@@ -8,15 +8,15 @@ keywords: new features enhancements technology preview
 
 ## Technology Preview
 
-TinyMCE 5.0 offers an easy to navigate configurable less cumbersome user interface. The user interface logic has been changed entirely in 5.0. TinyMCE 5.0 has an [ARIA](https://www.ibm.com/able/checklists.html) complaint user interface in order to make the user interface controls and dynamic content more accessible. In Tiny 5.0, more complex controls or dialogs need to be written in the new API style while keeping the more straightforward methods of adding buttons and windows the same.
+TinyMCE 5.0 offers an easy to navigate configurable less cumbersome user interface. The user interface logic has been changed entirely in 5.0. TinyMCE 5.0 has an ARIA [IBM standards](https://www.ibm.com/able/checklists.html) complaint user interface in order to make the user interface controls and dynamic content more accessible. In Tiny 5.0, more complex controls or dialogs need to be written in the new API style while keeping the more straightforward methods of adding buttons and windows the same.
 
 ## Specifications
 
 * Streamlined documentation
-* Creates a Ui using a strict {configuration}
-* [ARIA](https://www.ibm.com/able/checklists.html)(IBM standards) compliant
+* Creates a UI using a strict {configuration}
+* ARIA [IBM standards](https://www.ibm.com/able/checklists.html) compliant
 * Keyboard navigable, via configuration
-* Skinnable:
+* Skinnable
 * I18n (via config layer)
 * Easier for developers to build their own plugins
 * Easier to meet requests that come from their internal stakeholders or clients
@@ -31,26 +31,25 @@ Try out our demo page to explore the new UI.
 
 ## Value to a Developer
 
-### Easy to integrate with modern systems
+### Easy to Integrate with Modern Systems
 
 As application design continues to improve and evolve, and developers are asked to integrate the editor into different apps. The flexible UI allows developers to more easily match the look and feel of these new applications which provides the benefit of creating a seamless user experience.
 
 ### Easy Upgrade
 
-* Devs can upgrade their Tiny 4.x instances to 5 with little/no fuss.
-* For instructions on how to migrate, please see the [Migration Guide]({{site.baseurl}}/migrating-from-4.x).
+Devs can upgrade their Tiny 4.x instances to Tiny 5.0 with little/no fuss. For instructions on how to migrate, please see the [Migration Guide]({{site.baseurl}}/migrating-from-4.x).
 
 > Note: An instance of Tiny with heavy customizations could take longer to upgrade. Please contact [Customer Support] if you are encountering issues with the upgrade. // TODO link to customer support
 
-### JavaScript → modern CSS →Better exploitation of modern CSS
+### JavaScript → Modern CSS → Better Exploitation of Modern CSS
 
 TinyMCE 5.0 offers a modern CSS to provide styled components that leverage the power of a complete programming language — JavaScript — and its scoping capabilities to help structure the code into the components. This helps to avoid the common pitfalls of writing and maintaining CSS for large projects. A developer can describe a component’s style with no risk of side effects.
 
-### Modern codebase
+### Modern Codebase
 
-Tiny 5.0 codebase has been extensively rewritten focus on converting the UI components to a more modern UI framework. As of consequence of this rewrite, all the related features have been updated. The new framework takes advantage of the latest CSS3 features for streamline styling and is  [ARIA](https://www.ibm.com/able/checklists.html)(IBM standards) complaint. The new UI framework has a reasonably locked-down API for creating components, which means our code is more structured and has an in-built validation combined with TypeScript. This strictness makes our code cleaner and more stable. The new Tiny 5.0 code is cleaner and easier to maintain and troubleshoot.
+Tiny 5.0 codebase has been extensively rewritten focus on converting the UI components to a more modern UI framework. As of consequence of this rewrite, all the related features have been updated. The new framework takes advantage of the latest CSS3 features for streamline styling and is ARIA [IBM standards](https://www.ibm.com/able/checklists.html) complaint. The new UI framework has a reasonably locked-down API for creating components, which means our code is more structured and has an in-built validation combined with TypeScript. This strictness makes our code cleaner and more stable. The new Tiny 5.0 code is cleaner and easier to maintain and troubleshoot.
 
-### Support modern browser technologies
+### Support Modern Browser Technologies
 
 Tiny 5 now supports IE 11, Chrome, Firefox, Safari, Edge, Opera.
 
@@ -73,8 +72,6 @@ Tiny 5's **Silver** theme contains a set of configurable UI components that coul
 ### New UI
 
 It creates CSS and bundles resources like icon fonts and images for the UI.
-
-### Emoticons
 
 ### Dialog
 
@@ -107,20 +104,20 @@ When opening a properties dialog with a single table/row/cell selected, the dial
 
 ### Toolbar buttons
 
-1. SVG icons for a better crisp look
-2. Buttons are now added via methods in `editor.ui.registry` rather than `editor` e.g. `editor.ui.registry.addButton()` instead of `editor.addButton()`
+1. SVG icons for a better crisp look.
+2. Buttons are now added via methods in `editor.ui.registry` rather than `editor` e.g. `editor.ui.registry.addButton()` instead of `editor.addButton()`.
 3. New methods were added for split, toggle and menu toolbar buttons with configuration options specific to the button type, to make the creation of custom toolbar buttons easier.
 
 ### Custom Menu Items // TODO explanations of the subpoints
 
-* editor.menuitems
+* `editor.menuitems`
 
 ### Custom Sidebars // TODO explanation
 
-* editor.addSidebar
+* `editor.addSidebar`
 
 ### Toolbar Menus
 
 * New buttons are added to the global `editor.settings.menus` which is an enhancement since, it now shows the toggled state.
-* Improved mouse and keyboard nav
+* Improved mouse and keyboard navigation.
 

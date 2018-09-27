@@ -3,7 +3,7 @@ layout: default
 title: Code Sample Plugin
 title_nav: Code Sample
 description: Insert and embed syntax highlighted code snippets.
-keywords: syntax highlight codesample code contenteditable codesample_dialog_width codesample_dialog_height codesample_languages
+keywords: syntax highlight codesample code contenteditable codesample_languages
 controls: toolbar button
 ---
 
@@ -26,18 +26,6 @@ By default `codesample` uses http://prismjs.com/ to embed the code samples withi
 > Prism.js and prism.css need to be added to a page for syntax highlighting to work. See the instructions below to learn how to do this.
 
 ### Options
-
-### `codesample_dialog_width`
-
-This configuration option sets the *internal, editable area* width of the `codesample` dialog box.
-
-Note that the external dimensions of the actual modal will be slightly larger than the value set.
-
-### `codesample_dialog_height`
-
-This configuration option sets the *internal, editable area* height of the `codesample` dialog box.
-
-Note that the external dimensions of the actual modal will be slightly larger than the value set.
 
 ### `codesample_languages`
 

@@ -51,6 +51,22 @@ For changes required, refer to the following table:
 
 ## Changed Features
 
+### Dialog
+
+Plugins that use dialogs as their UI, no longer have `height` or `width` properties. The dialog component now uses a predefined `small`, `medium`, and `large` template to specify the dimensions. 
+
+#### Differences from 4.x to 5.0
+
+The following plugins from Tiny 4.x do not require height or width options to be specified in Tiny 5.0:
+
+* [Code]({{site.baseurl}}/plugins/code/)
+* [Codesample]({{site.baseurl}}plugins/codesample/)
+* [Preview]({{site.baseurl}}plugins/preview/)
+* [Template]({{site.baseurl}}plugins/template/)
+
+Please read the [docs]({{site.baseurl}}/plugins/) if you need more information on the Tiny 4.x configuration options.
+
+
 ### Table
 
 * Styles text field has been removed from the advanced table of the dialogs. This simplifies the dialogs for users and gives the editor stricter control over the table styles which means we are better able to ensure the styles are correct.

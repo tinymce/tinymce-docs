@@ -108,6 +108,8 @@ Drive has restrictions on what files can be uploaded and how large these files c
 * Allowed archive extensions: zip
 * The Copy operation is limited to single files due to technical reasons.
 
+Your storage and bandwidth quota varies based upon the [Tiny Cloud Plan](https://www.tiny.cloud/pricing/) you are subscribed to.
+
 ## Upload Files URL
 
 All files are uploaded to a central storage with a CDN endpoint that means that we are hosting your files and they are publicly available in read-only mode for anyone that has access to the URL of that file.

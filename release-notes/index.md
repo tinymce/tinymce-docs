@@ -1,5 +1,5 @@
 ---
-layout: draft
+layout: default
 title: Release Notes
 title_nav: Release Notes
 description: TinyMCE API Release Notes for version 5.0.

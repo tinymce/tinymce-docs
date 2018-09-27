@@ -22,7 +22,7 @@ In version 5 some plugins have been deprecated.  These plugins are now part of t
 | **Plugin Name** | **Description** |
 | ---------- | ------------------------- |
 | [ContextMenu](https://www.tiny.cloud/docs/plugins/contextmenu/) | New API. See [docs]({{site.baseurl}}/components/contextmenu/) |
-| [WordCount](https://www.tiny.cloud/docs/plugins/wordcount/) | No changes required |
+| [WordCount](https://www.tiny.cloud/docs/plugins/wordcount/) | Moved to the core. No changes required |
 
 ### Themes
 
@@ -77,21 +77,24 @@ The following methods were newly added:
 * Creating buttons now use explicit methods. For example, to create a toggleButton we would use `editor.ui.registry.addToggleButton()`.
 * The configuration for the toggle button has been simplified because it only supports one specific type of button.
 
+
 ##### New methods for custom toolbar buttons:
 
 | **New Method** | **Description** |
 | ----------- | -------------- |
-| editor.ui.registry.addToggleButton()|  |
-| editor.ui.registry.addSplitButton() |  |
-| editor.ui.registry.addMenuButton() |  |
+| editor.ui.registry.addToggleButton()| Adds a custom toolbar toggle button. |
+| editor.ui.registry.addSplitButton() | Adds a custom toolbar split button. |
+| editor.ui.registry.addMenuButton() | Adds a custom toolbar menu button. |
+
+For more information, see [docs]({{site.baseurl}}/components/toolbarbuttons/)
 
 ##### New method for custom menu items:
 
 | **New Method** | **Description** |
 | ----------- | -------------- |
-| editor.ui.registry.addToggleMenuItem() |  |
-| editor.ui.registry.addAutocompleter() |  |
-| editor.ui.registry.addContextMenu() |  |
+| editor.ui.registry.addToggleMenuItem() | Adds a custom toggle menu item. |
+| editor.ui.registry.addAutocompleter() | Adds a custom autocompleter. |
+| editor.ui.registry.addContextMenu() | Adds a custom context menu|
 
 ### Events
 
@@ -99,4 +102,4 @@ The following methods were newly added:
 
 | **Removed Event** | **Description**|
 | ----------------- | -------------- |
-| BeforeRenderUi |  |
+| BeforeRenderUi | Fired before the UI was rendered. |

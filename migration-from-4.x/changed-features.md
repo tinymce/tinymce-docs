@@ -40,7 +40,6 @@ For a workaround, refer the following table:
 > Note: The Silver theme in Tiny 5.0. contains a set of configurarable UI components that could be used to replace the current customizations(modern, inline, and inlite theme). Silver is enabled by default. If you do not specify a theme, it will default to Silver.
 
 
-
 ## Changed Features
 
 ### Table
@@ -55,15 +54,14 @@ For a workaround, refer the following table:
 
 The contextMenu can provide a simple list of clickable commands, or offer an in-menu form. This makes very simple attribute modification possible. Tiny 5.0 offers the contextMenu Plugin that is designed for web applications in need of menus on a possibly large amount of objects. Now, a single menu is defined that can be used by multiple objects and a contextMenu doesn't need to bind itself to triggering objects. This allows injecting and removing triggers without having to re-initialize or update contextMenu.
 
-- the context menu is no longer a plugin, it is part of the core and always enabled
-- plugins can now register context menu sections
-- editor `contextmenu` configuration can include menu items as before, but now also plugin menu sections
-- e.g. the default context menu config is now `link image editimage table spelling` which are all plugin references
+- The context menu is no longer a plugin, it is part of the core and always enabled.
+- Plugins can now register context menu sections.
+- Editor `contextmenu` configuration can include menu items as before, but now also as plugin menu sections. For example, the default context menu config is now `link image editimage table spelling` which are all plugin references.
 
 
 ### Context Toolbar
 
-The Context Toolbar configures its buttons based on the type of object selected in the Tree Outline. The Context Toolbar makes a limited number of relevant choices more visible and readily accessible.
+The Context Toolbar takes its buttons from things that are registered with as toolbar buttons using `addButton`, `addToggleButton`, `addSplitButton` or `addMenuButton`. For more information on Context Toolbars, see [docs]({{site.baseurl}}/components/contexttoolbar).
 
 ### Context Form
 
@@ -72,13 +70,13 @@ ContextForms are a generalisation of the `Insert Link` form that existed in the 
 ### Toolbar buttons
 
 1. Svg icons for better crisp look
-2. New buttons are added to the global
-| **New Buttons** | **Description** |
-| --------------- | --------------- |
-| editor.buttons |  |
-| editor.menuItems |  |
-| editor.sidebar |  |
-| editor.contextToolbars |  |
+2. Buttons are now added via methods in `editor.ui.registry` rather than `editor` e.g. `editor.ui.registry.addButton()` instead of `editor.addButton()`
+3. New methods were added for split, toggle and menu toolbar buttons with configuration options specific to the button type, to make the creation of custom toolbar buttons easier.
+
+### Custom Menu Items // TODO explanations of the subpoints
+
+* editor.menuitems
+* editor.sidebar
 
 ### Toolbar Menus
 

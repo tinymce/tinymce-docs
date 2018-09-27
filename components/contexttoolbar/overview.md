@@ -10,7 +10,9 @@ keywords: contexttoolbar context toolbar contexttoolbarapi
 
 A ContextToolbar can only contain either buttons that are defined for a normal toolbar, or buttons specifically registered for launching a ContextForm. The buttons comes as a list of strings, where each string is a registered name of a button.
 
-The button strings for launching a ContextForm will be of the form `form:${name}` where name is the registered name of the context form (e.g. form:link). Note, these will only be present if the 'launch` setting of the ContextForm is specified.
+The button strings for launching a ContextForm will be of the form `form:${name}` where name is the registered name of the context form (e.g. form:link).
+
+> Note: These buttons will only be present if the 'launch` setting of the ContextForm is specified.
 
 ### Registering a Context Toolbar
 

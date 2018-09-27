@@ -96,6 +96,26 @@ tinymce.init({
 });
 ```
 
+## Insert File menu item
+
+Drive will automatically integrate into the Image, Link, and Media dialogs as a file picker. You can also configure it to insert files directly into your content using the `insertfile` menu item. To enable this menu item, add it to your menus editor setting or the insert_button_items setting.
+
+The Insert File menu item will insert images as `img` elements or other files as links to that file.
+
+### Example of menu item
+
+```js
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'tinydrive',
+  toolbar: 'insert',
+  menu: {
+    insert: { title: 'Insert', items: 'insertfile' }
+  },
+  insert_button_items: 'insertfile'
+});
+```
+
 ## Restrictions and Quotas
 
 Drive has restrictions on what files can be uploaded and how large these files can be:

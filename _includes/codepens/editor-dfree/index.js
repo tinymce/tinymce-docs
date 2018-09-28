@@ -2,7 +2,7 @@ var dfreeHeaderConfig = {
     selector: '.dfree-header',
     menubar: false,
     inline: true,
-    theme: 'inlite',
+    plugins: [ 'inlite' ],
     insert_toolbar: 'undo redo',
     selection_toolbar: 'italic underline'
   };
@@ -11,19 +11,17 @@ var dfreeHeaderConfig = {
     selector: '.dfree-body',
     menubar: false,
     inline: true,
-    theme: 'inlite',
     plugins: [
       'autolink',
       'codesample',
-      'contextmenu',
       'link',
-      'linkchecker',
       'lists',
-      'mediaembed',
+      'media',
       'powerpaste',
       'table',
       'textcolor',
-      'image'
+      'image',
+      'inlite'
     ],
     toolbar: [
       'undo redo | bold italic underline | fontselect fontsizeselect',

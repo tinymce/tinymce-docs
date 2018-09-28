@@ -49,50 +49,7 @@ The interactive dialogs use web forms to collect interaction data, and then appl
 
 #### Example Interactive - Pet Name Machine
 
-```js
-// example dialog that inserts the name of a Pet into the editor content
-const dialogConfig =  {
-  title: 'Pet Name Machine',
-  body: {
-    type: 'panel',
-    items: [
-      {
-        type: 'input',
-        name: 'catdata',
-        label: 'enter the name of a cat'
-      },
-      {
-        type: 'checkbox',
-        name: 'isdog',
-        label: 'tick if cat is actually a dog'
-      }
-    ]
-  },
-  buttons: [
-    {
-      type: 'submit',
-      name: 'submitButton',
-      text: 'Do Cat Thing',
-      primary: true,
-    },
-    {
-      type: 'close',
-      name: 'closeButton',
-      text: 'cancel'
-    }
-  ],
-  initialData: {
-    catdata: 'initial Cat',
-    isdog: 'unchecked'
-  },
-  onSubmit: (api) => {
-    const data = api.getData();
-    const pet = data.isdog === 'checked' ? 'dog' : 'cat';
-
-    tinymce.activeEditor.execCommand('mceInsertContent', false, `<b>My #{pet}'s name is:</b>, #{data.catdata}`);
-  }
-}
-```
+{% include codepen.html id="dialog-pet-machine" height="150" tab="js" %}
 
 The key highlight in this example is the input field for ‘enter the name of a cat’, the name property `catdata` is associated with the `initalData`. All body components that require a name property also require an `initialData` property. This is how the relationship between the underlaying data model and the component is declared. Notice that when we first load the dialog, the input field is pre-populated with `initial cat`. When `initialData.catdata = ''` then on load, the input field should be empty.
 
@@ -100,7 +57,7 @@ In this example, we declared two buttons to be placed in the dialog footer, **Cl
 
 * Closing a dialog or submitting a dialog.
 * The type: `close` button is pre-wired to *abort* and *close* the dialog.
-* The type: `submit` button when clicked, will invoke the `onSubmit` callback provided in the configuration, and we use that callback to insert the message.  When `onSubmit` is called, a dialog `instanceApi` is passed in as the parameter.
+* The type: `submit` button when clicked, will invoke the `onSubmit` callback provided in the configuration, and we use that callback to insert the message.  When `onSubmit` is called, a dialog `instanceApi` is passed in as the parameter. The dialog does not close by default because some use cases may require a server side callback confirmation 
 * The type: `cancel` button dismisses an action request.
 * The type: `custom` button can be used to specify your own custom operation.
 

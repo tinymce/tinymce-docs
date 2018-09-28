@@ -30,11 +30,11 @@ A **Button**component to be used inside the dialog body, these buttons differ fr
 
 ```js
     {
-          type: 'button',
-          text: 'Alpha',
-          primary: true,
-          name: 'alpha-button'
-        }
+      type: 'button',
+      text: 'Alpha',
+      primary: true,
+      name: 'alpha-button'
+    }
 ```
 
 ### Charmap

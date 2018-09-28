@@ -31,7 +31,6 @@ In the snippet below, we use TinyMCE Cloud to instantiate the editor. If you're 
   <script src="https://cloud.tinymce.com/dev/tinymce.min.js"></script>
   <script>tinymce.init({
       selector:'textarea',
-      theme: 'modern',
       mobile: { theme: 'mobile' }
     });</script>
 </head>
@@ -51,7 +50,6 @@ If you have experience using TinyMCE, you'll see in the above example that we ad
 ```js
 tinymce.init({
   selector: 'textarea',
-  theme: 'modern',
   mobile: {
     theme: 'mobile'
   }
@@ -77,7 +75,6 @@ Specify which of these plugins you want by adding a plugin entry to the mobile s
 ```js
 tinymce.init({
   selector: 'textarea',
-  theme: 'modern',
   mobile: {
     theme: 'mobile',
     plugins: [ 'autosave', 'lists', 'autolink' ]
@@ -92,7 +89,6 @@ TinyMCE mobile supports a small subset of the toolbar items supported by the mai
 ```js
 tinymce.init({
   selector: 'textarea',
-  theme: 'modern',
   mobile: {
     theme: 'mobile',
     plugins: [ 'autosave', 'lists', 'autolink' ],

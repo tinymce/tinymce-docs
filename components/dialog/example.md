@@ -10,6 +10,8 @@ keywords: dialog dialogapi api redial example
 
 The following example demonstrates custom buttons using the redial dialog for creating two separate dialogs that we cycle through by pressing the `Next` button.
 
+{% include codepen.html id="redial" height="900" %}
+
 ```js
 // example Redial dialog that demonstrates custom buttons
 

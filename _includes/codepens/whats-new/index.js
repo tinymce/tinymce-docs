@@ -1,7 +1,6 @@
 tinymce.init({
   selector: 'textarea',
   height: 550,
-  theme: 'modern',
   mobile: {
     theme: 'beta-mobile',
     plugins: [ 'autosave' ]

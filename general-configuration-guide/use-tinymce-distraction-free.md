@@ -32,7 +32,7 @@ tinymce.init({
     selector: "div.tinymce",
     plugins: [ 'inlite' ],
     toolbar: false,
-    inline: true
+    inline: true,
     selection_toolbar: 'bold italic | quicklink h2 h3 blockquote'
 });
 ```
@@ -48,7 +48,7 @@ tinymce.init({
     selector: "div.tinymce",
     plugins: [ 'inlite' ],
     toolbar: false,
-    inline: true
+    inline: true,
     insert_toolbar: 'quickimage quicktable'
 });
 ```
@@ -64,7 +64,7 @@ tinymce.init({
     selector: "div.tinymce",
     plugins: [ 'inlite' ],
     toolbar: false,
-    inline: true
+    inline: true,
     insert_toolbar: 'quickimage quicktable'
 });
 ```

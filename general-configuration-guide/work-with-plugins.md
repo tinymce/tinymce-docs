@@ -79,26 +79,6 @@ tinymce.init({
 });
 ```
 
-### Plugin customization easy as 1-2 ...
-
-Many plugins have customization options that give developers granular control of the editor. The `code` plugin is no exception, and it has two options available to us, which respectively change the height and width of the dialog box's (internal) **editable area**. These are `code_dialog_height` and `code_dialog_width`.
-
-Let's add them as values to our `tinymce.init()` object/method.
-
-```js
-tinymce.init({
-  selector: 'textarea',  // note the comma at the end of the line!
-  plugins: 'code',  // note the comma at the end of the line!
-  toolbar: 'code',  // last reminder, note the comma!
-  menubar: false,
-  code_dialog_height: 300,
-  code_dialog_width: 350
-});
-```
-
-Save the file, refresh your browser and when you next click the "Source code" toolbar button you'll have resized the dialog box.
-
-
 ## Time for one more example
 
 Even if you found the above example quite easy, hang with us we'll show you how to extend TinyMCE's default ordered and unordered lists. If on the other hand that was all a bit new, read this example to help your understanding.

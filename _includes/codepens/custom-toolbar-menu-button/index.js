@@ -8,7 +8,7 @@ tinymce.init({
     '//www.tiny.cloud/css/codepen.min.css'],
   
   setup: function(editor) {
-    editor.addButton('mybutton', {
+    editor.ui.registry.addButton('mybutton', {
       type: 'menubutton',
       text: 'My button',
       icon: false,

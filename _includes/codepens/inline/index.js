@@ -6,8 +6,6 @@
       'textcolor',
       'lists',
       'powerpaste',
-      'linkchecker',
-      'contextmenu',
       'autolink'
     ],
     toolbar: 'undo redo | bold italic underline',
@@ -31,8 +29,6 @@
       'textcolor',
       'lists',
       'powerpaste',
-      'linkchecker',
-      'contextmenu',
       'autolink',
       'tinymcespellchecker'
     ],

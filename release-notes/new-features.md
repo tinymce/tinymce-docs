@@ -55,9 +55,11 @@ Tiny 5 now supports IE 11, Chrome, Firefox, Safari, Edge, Opera.
 
 ### Enhanced CSS
 
-* A **SKIN** in tinymce is purely colors, margins, paddings, fonts, icons, etc. A **Theme** is where you can control where the toolbar appears (left/top/bottom/right of the editing area - vertical or horizontal, inline or outside, etc.). Then we have the component level that defines a button, menu item, panel, dropdowns, etc. regardless of its position.
-* TinyMCE 4.0 uses `onclick` whereas Tiny 5.0 uses `action`. The `on<event> `handlers in the current UI is rich since they expose the whole instance of a UI element so that you can alter state like toggled etc.
-* The skin creator is coupled with the `tinymce.ui` framework, so it works with the modern theme and the inlite theme and in some extent MoxieManager since it's using the same UI framework.
+A **SKIN** in Tinymce is used to make changes to the appearance of the editor, for example, colors, margins, paddings, fonts, icons, etc. A **Theme** is how the editor is constructed (left/top/bottom/right of the editing area - vertical or horizontal, inline or outside, etc.). A skin usually changes the color scheme of a button, dialog, etc. while the theme applies to the whole editor including its functionality and has child skins to change the appearance.
+
+Tiny 5.0 uses a new theme is **Silver** (see below) and a new skin is **Oxide** which uses more modern CSS such as `flexbox`.
+
+The skin creator is coupled with the `tinymce.ui` framework, so it works with the modern theme, the inlite theme, and in some extent MoxieManager.
 
 
 ## New Features and Enhancements
@@ -90,7 +92,7 @@ The Context Toolbar configures its buttons based on the type of object selected 
 #### Removed Styles
 
 * Styles text field has been removed from the advanced table of the dialogs.
-* The code is now much less confronting/confusing for non-dev users, and means we have more control over the table styles and therefore are better able to ensure the styles are correct.
+* The code is now much less confronting/confusing for non developers. This also means we have more control over the table styles and therefore are better able to ensure the styles are correct.
 * We have improved how styles are set and retrieved from tables/rows/cells, so should be more reliable.
 
 #### Using CSS for styling
@@ -100,13 +102,13 @@ Shifted to using CSS more for styling, and therefore was able to remove a few le
 #### Autofill Values
 
 When opening a properties dialog with a single table/row/cell selected, the dialog will autofill with the relevant existing values. If you select multiple rows or cells and open the relevant properties dialog, Tiny 4 will leave all the dialog fields blank. In Tiny 5.0, fields which have the same values for all the selected rows or cells will autofill, and the fields which have no existing value or have differing values will be empty.
-"Border" input field in the `tableprops` dialog is now called "Border width", for clarity.
+"Border" input field in the `tableprops` dialog is now called "Border width" for clarity.
 
 ### Toolbar buttons
 
 1. SVG icons for a better crisp look.
 2. Buttons are now added via methods in `editor.ui.registry` rather than `editor` e.g. `editor.ui.registry.addButton()` instead of `editor.addButton()`.
-3. New methods were added for split, toggle and menu toolbar buttons with configuration options specific to the button type, to make the creation of custom toolbar buttons easier.
+3. To make the creation of custom toolbar buttons easier, new methods were added for split, toggle, and menu toolbar buttons with configuration options specific to the button type.
 
 ### Custom Menu Items // TODO explanations of the subpoints
 

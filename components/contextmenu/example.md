@@ -23,26 +23,4 @@ tinymce.init({
 
 This example shows how the image plugin dynamically adds the standard image menu section to the context menu. The image context menu section is empty unless the selected element is an image.
 
-```js
-PluginManager.add('image', function (editor) {
-  editor.ui.registry.addMenuItem('image', {
-    icon: 'image',
-    text: 'Image',
-    onAction: Dialog(editor).open
-  });
-
-  editor.ui.registry.addContextMenu('image', {
-    update: (element) => {
-      return !element.src ? [] : ['image'];
-    }
-  });
-});
-```
-
-To configure the editor with this context menu section:
-```js
-tinymce.init({
-  selector: "textarea",
-  contextmenu: "image"
-});
-```
+{% include codepen.html id="contextmenu-section" height="900" tab="js" %}

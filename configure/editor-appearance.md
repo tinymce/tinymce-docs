@@ -23,8 +23,6 @@ description: Configure the editor's appearance, including menu and toolbar contr
 
 {% include configuration/insert-button-items.md %}
 
-{% include configuration/insert-toolbar.md %}
-
 {% include configuration/max-height.md %}
 
 {% include configuration/max-width.md %}

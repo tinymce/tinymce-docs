@@ -113,7 +113,9 @@ ContextForms are a generalisation of the `Insert Link` form that existed in the 
 * New buttons are added to the global `editor.settings.menus` which is an enhancement since, it now shows the toggled state.
 * Improved mouse and keyboard navigation.
 
-
+### Mobile Support
+* TinyMCE 4 introduced mobile support, bundled with a new theme and configuration settings.
+* Tiny 5 makes this process seamless, where mobile support comes out of the box without additional configurations.  Tiny 5 mobile will be an exciting space to watch.
 
 
 

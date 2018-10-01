@@ -8,7 +8,7 @@ var demoBaseConfig = {
   powerpaste_allow_local_images: true,
   plugins: [
     "a11ychecker advcode advlist anchor autolink codesample colorpicker fullscreen help image imagetools",
-    " lists link linkchecker media noneditable powerpaste preview",
+    " lists link media noneditable powerpaste preview",
     " searchreplace table template textcolor tinymcespellchecker visualblocks wordcount"
   ], /* removed:  charmap insertdatetime print */
   external_plugins: {
@@ -32,7 +32,15 @@ var demoBaseConfig = {
   content_css: [
     "//fonts.googleapis.com/css?family=Lato:300,300i,400,400i",
     "//www.tiny.cloud/css/content-standard.min.css"
-  ]
+  ],
+  api_key: 'fake-key',
+  spellchecker_rpc_url: 'https://spelling.tinymce.com/',
+  spellchecker_api_key: 'h22wb7h8xi78b4fyo46hhx5k7fbh46vt5f6yqmvd492iy00c',
+  spellchecker_dialog: true,
+  spellchecker_whitelist: ['Ephox', 'Moxiecode'],
+  api_key: 'fakekey',
+  mediaembed_service_url: 'http://tbs-ub14-jetty:8080/navi',
+  mediaembed_max_width: 650,
 };
 
 var mentionsFetchFunction = function (query, success) {

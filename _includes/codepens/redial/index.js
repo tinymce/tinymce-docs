@@ -76,7 +76,11 @@ var config = {
         },
         onAction: (dialogApi, actionData) => {
           var data = dialogApi.getData();
-          console.log('you chose wisely: ' + data.choosydata);
+
+          var result = 'you chose wisely: ' + data.choosydata;
+          console.log(result);
+          tinymce.activeEditor.execCommand('mceInsertContent', false, '<p>' + result + '</p>');
+
           dialogApi.close();
         }
       });

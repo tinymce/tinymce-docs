@@ -8,9 +8,11 @@ keywords: dialog dialogapi api redial example
 
 ## Interactive Example using `redial(config): void’
 
-The following example demonstrates custom buttons using the redial dialog for creating two separate dialogs that we cycle through by pressing the `Next` button.
+The following example demonstrates custom buttons using the redial dialog for creating two separate dialogs that we cycle through by pressing the `Next` button.  
 
-{% include codepen.html id="redial" height="900" %}
+To see the output of the code, click on the TinyMCE tab on the fiddle below.
+
+{% include codepen.html id="redial" height="900" tab="js" %}
 
 In this redial example, we have two separate dialogs that we cycle through by pressing the `Next` button.  Looking at the configuration structure, the first level is like any other dialog.
 The difference is the `onAction` call, loads a new configuration for the dialog using redial.  The configuration we use in the redial(dialogConf) call can be any supported dialog structure.  We could even replace the 'Redial Demo - Page 2' configuration, with the 'Pet Name Machine' dialog.

@@ -31,44 +31,7 @@ keywords: menu menu toolbarmenu
 
 The following is an example of a Simple Toolbar Button:
 
-```js
-tinymce.init({
-  selector: '#editor',
-  toolbar: 'myButton',
-  setup: (editor) => {
-    editor.ui.registry.addMenuButton('myButton', {
-      text: 'My Button',
-      fetch: (callback) => {
-        const items = [
-          {
-            type: 'menuitem',
-            text: 'Menu item 1',
-            onAction: () => ed.insertContent('&nbsp;<em>You clicked menu item 1!</em>')
-          },
-          {
-            type: 'menuitem',
-            text: 'Menu item 2',
-            getSubmenuItems: () => {
-              return [
-                {
-                  type: 'menuitem',
-                  text: 'Sub menu item 1'
-                },
-                {
-                  type: 'menuitem',
-                  text: 'Sub menu item 2'
-                }
-              ]
-            }
-          },
-        ];
-        callback(items);
-      }
-    });
-  }
-});
-
-```
+{% include codepen.html id="custom-toolbar-menu-button" tab="js" %}
 
 The above is a simple example of a toolbar menu button. It adds a button to the toolbar with the text 'My Button' which, when clicked, opens the specified menu. In this case, we've added two menu items. The first inserts content when clicked, and the second opens a submenu which has two children.
 

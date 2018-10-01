@@ -39,8 +39,6 @@ var demoBaseConfig = {
   spellchecker_dialog: true,
   spellchecker_whitelist: ['Ephox', 'Moxiecode'],
   api_key: 'fakekey',
-  mediaembed_service_url: 'http://tbs-ub14-jetty:8080/navi',
-  mediaembed_max_width: 650,
 };
 
 var mentionsFetchFunction = function (query, success) {

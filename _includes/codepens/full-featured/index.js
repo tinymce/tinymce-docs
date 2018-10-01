@@ -1,7 +1,7 @@
 tinymce.init({
   selector: 'textarea',
   height: 500,
-  plugins: 'print preview fullpage powerpaste searchreplace autolink directionality advcode visualblocks visualchars fullscreen image link media template codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists textcolor wordcount tinymcespellchecker a11ychecker imagetools mediaembed colorpicker textpattern help',
+  plugins: 'print preview fullpage powerpaste searchreplace autolink directionality advcode visualblocks visualchars fullscreen image link media template codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists textcolor wordcount tinymcespellchecker a11ychecker imagetools colorpicker textpattern help',
   toolbar: 'formatselect | bold italic strikethrough forecolor backcolor | link | alignleft aligncenter alignright alignjustify  | numlist bullist outdent indent  | removeformat',
   image_advtab: true,
   templates: [
@@ -73,7 +73,4 @@ tinymce.init({
   spellchecker_api_key: 'h22wb7h8xi78b4fyo46hhx5k7fbh46vt5f6yqmvd492iy00c',
   spellchecker_dialog: true,
   spellchecker_whitelist: ['Ephox', 'Moxiecode'],
-  api_key: 'fakekey',
-  mediaembed_service_url: 'http://tbs-ub14-jetty:8080/navi',
-  mediaembed_max_width: 650,
  });

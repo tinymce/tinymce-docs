@@ -19,7 +19,7 @@ Alternatively, you can build your own with the [Developer Preview SDK](https://g
 Include this line of code in the `<head>` of your HTML page and link to the tinymce.min.js source file:
 
 ```html
-<script src='https://example.com/path/tinymce.min.js'></script>
+<script src='https://devpreview.tiny.cloud/demo/tinymce.min.js'></script>
 ```
 
 > Tip: We give you a complete HTML snippet in Step 2.
@@ -37,7 +37,7 @@ In this example, let's replace `<textarea id='mytextarea'>` with a TinyMCE edito
 <!DOCTYPE html>
 <html>
 <head>
-  <script src='https://example.com/path/tinymce.min.js'></script>
+  <script src='https://devpreview.tiny.cloud/demo/tinymce.min.js'></script>
   <script>
   tinymce.init({
     selector: '#mytextarea'

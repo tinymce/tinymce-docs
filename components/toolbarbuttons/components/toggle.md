@@ -33,29 +33,7 @@ keywords: Togglemenu Toggle menu toolbarmenu
 
 ### Explanation and Example
 
-
-```js
-tinymce.init({
-  selector: '#editor',
-  toolbar: 'customStrikethrough customToggleStrikethrough',
-  setup: (editor) => {
-    editor.ui.registry.addToggleButton('customStrikethrough', {
-      text: 'Strikethrough',
-      onAction: (_) => editor.execCommand('mceToggleFormat', false, 'strikethrough')
-    });
-
-    editor.ui.registry.addToggleButton('customToggleStrikethrough', {
-      icon: 'strikethrough',
-      onAction: (_) => editor.execCommand('mceToggleFormat', false, 'strikethrough'),
-      onSetup: (api) => {
-        editor.formatter.formatChanged('strikethrough', (state) => {
-          api.setActive(state);
-        });
-      }
-    });
-  }
-});
-```
+{% include codepen.html id="custom-toolbar-toggle-button" %}
 
 In this example we add two custom strikethrough buttons to the editor. Both have the same `onAction` configuration: they use `editor.execCommand(command, ui, args)` to execute `mceToggleFormat` - an internal command that toggles the specified format on and off - and pass it the format name `strikethrough`. Note that the format name must already be registered with the editor, which `strikethrough` is.
 

@@ -48,7 +48,9 @@ tinymce.init({
       /* Split button that lists 3 formats, and inserts the date in the selected format when clicked */
       editor.ui.registry.addSplitButton('splitDateButton', {
         text: 'Insert Date',
-        onAction: (_) => {},
+        onAction: (_) => {
+          editor.insertContent('<p>Its Friday!</p>')
+        },
         onItemAction: (buttonApi, value) => {
           editor.insertContent(value);
         },

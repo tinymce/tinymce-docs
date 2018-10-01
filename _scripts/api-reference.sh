@@ -12,7 +12,7 @@ echo -e "\n > importing data files for tinymce api reference: $API_VERSION\n"
 #rm -rf "$API_TMPDIR"
 mkdir "$API_TMPDIR"
 curl -s "$TARBALL_URL" | tar xzf - -C "$API_TMPDIR" --strip-components 1
-moxiedoc "$API_TMPDIR/src/core/src/main/js" -t tinymcenext -o "$API_TMPDIR/tinymce-api-reference.zip"
+moxiedoc "$API_TMPDIR/src/core/main/ts" -t tinymcenext -o "$API_TMPDIR/tinymce-api-reference.zip"
 unzip -o "$API_TMPDIR/tinymce-api-reference.zip"
 
 echo ""

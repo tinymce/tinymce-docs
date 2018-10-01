@@ -42,37 +42,7 @@ keywords: Splitmenu Split menu toolbarmenu
 
 The following example shows how to setup just a basic split button, with a static dropdown menu.
 
-```js
-tinymce.init({
-  selector: '#editor',
-  toolbar: 'myButton',
-  setup: (editor) => {
-    editor.ui.registry.addSplitButton('myButton', {
-      text: 'My Button',
-      onAction: () => {},
-      onItemAction: (api, value) => {
-        editor.insertContent(value);
-      },
-      fetch: (callback) => {
-        const items = [
-          {
-            type: 'choiceitem',
-            text: 'Menu item 1',
-            value: '&nbsp;<em>You clicked menu item 1!</em>'
-          },
-          {
-            type: 'choiceitem',
-            text: 'Menu item 2',
-            value: '&nbsp;<em>You clicked menu item 2!</em>'
-          },
-        ];
-        callback(items);
-      }
-    });
-  }
-});
-
-```
+{% include codepen.html id="custom-toolbar-split-button" tab="js" %}
 
 Split toolbar buttons are highly configurable, but most of their configuration options are optional. This example shows how to setup just a basic split button, with a static dropdown menu.
 

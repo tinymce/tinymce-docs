@@ -215,7 +215,7 @@ To help get you started, let's walk through an example of a basic TinyMCE config
   <script type="text/javascript">
   tinymce.init({
     selector: '#myTextarea',
-    theme: 'modern',
+    theme: 'silver',
     width: 600,
     height: 300,
     plugins: [
@@ -243,10 +243,11 @@ First, we want to select only the `textarea` with the id `myTextarea`.
 selector: '#myTextarea',
 ```
 
-We next choose a theme, in this case, the modern theme (which is the default theme, so this isn't needed. You can, however, create your own themes using the [TinyMCE Skin Creator](http://skin.tinymce.com/)).
+We next choose a theme, in this case, the silver theme (which is the default theme, so this isn't needed. You can, however, create your own themes using the [TinyMCE Skin Creator](http://skin.tinymce.com/)).
+Note: only the silver theme is currently compatible with Tiny 5
 
 > ```js
-theme: 'modern',
+theme: 'silver',
 ```
 
 Here we set the width and height of the editable area in pixels. These must be numeric values.

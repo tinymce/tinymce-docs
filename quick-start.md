@@ -8,14 +8,18 @@ keywords: tinymce script textarea
 
 TinyMCE is a powerful and flexible rich text editor that you can embed in your web application. 
 
-Tiny Cloud is perfect for developers who want an easier installation and upgrade process. This document is the place to start if you want to get an editor instance up and running in less than 5 minutes. 
+The Developer Preview is perfect for developers who want to see how Tiny 5 integrates into their ecosystem. 
 
 ## Step 1: Include the TinyMCE script
 
-Include this line of code in the `<head>` of your HTML page:
+Download and unzip the pre-compiled [Developer Preview Zip](https://devpreview.tiny.cloud/download/tinymce.zip).
+
+Alternatively, you can build your own with the [Developer Preview SDK](https://github.com/tinymce/tinymce/tree/5.x).
+
+Include this line of code in the `<head>` of your HTML page and link to the tinymce.min.js source file:
 
 ```html
-<script src='{{ site.cdnurl }}'></script>
+<script src='https://example.com/path/tinymce.min.js'></script>
 ```
 
 > Tip: We give you a complete HTML snippet in Step 2.
@@ -33,7 +37,7 @@ In this example, let's replace `<textarea id='mytextarea'>` with a TinyMCE edito
 <!DOCTYPE html>
 <html>
 <head>
-  <script src='{{ site.cdnurl }}'></script>
+  <script src='https://example.com/path/tinymce.min.js'></script>
   <script>
   tinymce.init({
     selector: '#mytextarea'
@@ -58,8 +62,3 @@ When the `<form>` is submitted the TinyMCE editor mimics the behavior of a norma
 That is all there is to it!
 
 If you prefer to download TinyMCE and install it locally the [Advanced Install]({{  site.baseurl }}/general-configuration-guide/advanced-install/#packagemanagerinstalloptions) page in the [General Configuration Guide]({{  site.baseurl }}/general-configuration-guide) has instructions. This document also provides information about TinyMCE features such as advanced installation options, working with plugins, learning about content filtering, and spell checking.
-
-You may use TinyMCE Cloud without an API key. However, to avoid the warning message, sign up for an API key and update the script tag used to load the editor code into your application. Please visit the [Cloud Deployment Guide]({{  site.baseurl }}/cloud-deployment-guide/) to learn more about the plugins and other features of Tiny Cloud.
-
-
-

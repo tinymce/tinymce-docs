@@ -100,20 +100,22 @@ ContextForms are a generalisation of the `Insert Link` form that existed in the 
 2. Buttons are now added via methods in `editor.ui.registry` rather than `editor` e.g. `editor.ui.registry.addButton()` instead of `editor.addButton()`
 3. New methods were added for split, toggle and menu toolbar buttons with configuration options specific to the button type, to make the creation of custom toolbar buttons easier.
 
-### Custom Menu Items // TODO explanations of the subpoints
+### Custom Menu Items
 
-* editor.menuitems
+* editor.menuitems, [see configuration]({{site.baseurl}}/components/toolbarbuttons/components/menu/)
 
-### Custom Sidebars // TODO explanation
+### Custom Sidebars
 
-* editor.addSidebar
+* editor.addSidebar, Docs coming soon.
 
 ### Toolbar Menus
 
 * New buttons are added to the global `editor.settings.menus` which is an enhancement since, it now shows the toggled state.
 * Improved mouse and keyboard navigation.
 
-
+### Mobile Support
+* TinyMCE 4 introduced mobile support, bundled with a new theme and configuration settings.
+* Tiny 5 makes this process seamless, where mobile support comes out of the box without additional configurations.  Tiny 5 mobile will be an exciting space to watch.
 
 
 

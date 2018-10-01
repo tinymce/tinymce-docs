@@ -15,8 +15,8 @@ keywords: Splitmenu Split menu toolbarmenu
 |------| ------| ------------| ----------- |
 | text | string | optional | Text to display if no icon is found. |
 | icon | string | optional | It displays the icon corresponding to the icon name that has been defined in the icon pack.  |
-| select | (value: string) => boolean  | optional | default: false - TODO |
-| presets | 'color', 'normal', 'toolbar' | optional | default: 'normal' - TODO |
+| select | (value: string) => boolean  | optional | default: false |
+| presets | 'color', 'normal', 'toolbar' | optional | default: 'normal' |
 | columns | string | optional | It displays the icon corresponding to the icon name that has been defined in the icon pack. |
 | fetch | (success: (menu) => void) => void  | required| default: false - Represents button state. is toggled by the button's api. |
 | onAction | string | optional | Text to display if no icon is found. |
@@ -34,8 +34,8 @@ keywords: Splitmenu Split menu toolbarmenu
 | setDisabled | (state: boolean) => void | Set the button's disabled state. |
 | isActive| ( ) => boolean | Check the button's toggle state. |
 | setActive | (state: boolean) => void | Set the button's toggle state. |
-| setIconFill | (id: string, value: string) => void | It fills the values for the icon corresponding to the icon name that has been defined in the icon pack. TODO |
-| setIconStroke | (id: string, value: string) => void | It sets the action on click for the icon corresponding to the icon name that has been defined in the icon pack. TODO|
+| setIconFill | (id: string, value: string) => void | It fills the values for the icon corresponding to the icon name that has been defined in the icon pack. |
+| setIconStroke | (id: string, value: string) => void | It sets the action on click for the icon corresponding to the icon name that has been defined in the icon pack. |
 
 
 ## Explanation and Example

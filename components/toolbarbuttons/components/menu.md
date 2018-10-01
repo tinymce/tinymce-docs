@@ -27,8 +27,6 @@ keywords: menu menu toolbarmenu
 | isDisabled | ( ) => boolean | Check if the button is disabled. |
 | setDisabled | (state: boolean) => void | Set the button's disabled state. |
 
-or.ui.registry.<function>` // TODO: (these may have already been possible but I'm not sure how, and it should be easier now anyway)
-
 ## Explanation and Example
 
 The following is an example of a Simple Toolbar Button:

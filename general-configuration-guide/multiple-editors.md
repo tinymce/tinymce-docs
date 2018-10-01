@@ -1,6 +1,6 @@
 ---
 layout: default
-title: 03. Multiple Editors
+title: 05. Multiple Editors
 description_short: Learn how to insert multiple editor instances on a single page.
 description: Learn how to insert multiple editor instances on a single page.
 keywords: form inline edit

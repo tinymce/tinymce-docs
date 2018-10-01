@@ -3,7 +3,7 @@ layout: default
 title: Template Plugin
 title_nav: Template
 description: Custom templates for your content.
-keywords: insert template_cdate_classes template_cdate_format template_mdate_classes template_mdate_format template_popup_height template_popup_width template_replace_values template_selected_content_classes template_preview_replace_values
+keywords: insert template_cdate_classes template_cdate_format template_mdate_classes template_mdate_format  template_replace_values template_selected_content_classes template_preview_replace_values
 controls: toolbar button, menu item
 ---
 
@@ -148,46 +148,6 @@ tinymce.init({
 });
 ```
 
-### `template_popup_height`
-
-This option allows you to specify the height of the template dialog box.
-
-**Type:** `String`
-
-**Default Value:** `"500"`
-
-##### Example
-
-```js
-tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "template",
-  menubar: "insert",
-  toolbar: "template",
-  template_popup_height: "400"
-});
-```
-
-### `template_popup_width`
-
-This option allows you to specify the width of the template dialog box.
-
-**Type:** `String`
-
-**Default Value:** `"600"`
-
-##### Example
-
-```js
-tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "template",
-  menubar: "insert",
-  toolbar: "template",
-  template_popup_width: 300
-});
-```
-
 ### `template_replace_values`
 
 This is an array of items that controls content replacement in the inserted templates. 
@@ -206,12 +166,13 @@ tinymce.init({
     username: "Jack Black",
     staffid: "991234"
   }
+});
 ```
 
 This can then be used in a template or snippet that looks like this:
 
 ```html
-<p>Name: {$name}, StaffID: {$staffid}</p>
+<p>Name: {$username}, StaffID: {$staffid}</p>
 ``` 
 
 And that will be changed to: 

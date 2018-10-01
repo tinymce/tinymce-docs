@@ -3,7 +3,9 @@
 - url: "general-configuration-guide"
   pages:
   - url: "basic-setup"
+  - url: "use-tinymce-classic"
   - url: "use-tinymce-inline"
+  - url: "use-tinymce-distraction-free"
   - url: "multiple-editors"
   - url: "advanced-install"
   - url: "work-with-plugins"
@@ -17,16 +19,18 @@
 
 - url: "cloud-deployment-guide"
   pages:
-  - url: "editor-and-features"
-  - url: "features-only"
-  - url: "editor-plugin-version"
-  - url: "plugin-editor-version-compatibility"
+  - url: "coming-soon"
+  # - url: "editor-and-features"
+  # - url: "features-only"
+  # - url: "editor-plugin-version"
+  # - url: "plugin-editor-version-compatibility"
 
 - url: "demo"
   pages:
   - url: "whats-new"
   - url: "basic-example"
   - url: "full-featured"
+  - url: "drive"
   - url: "editor-dfree"
   - url: "inline"
   - url: "classic"
@@ -38,12 +42,14 @@
   - url: "custom-toolbar-button"
   - url: "custom-toolbar-menu-button"
   - url: "custom-toolbar-split-button"
-  - url: "custom-toolbar-listbox"
   - url: "custom-toolbar-menu-item"
   - url: "file-picker"
   - url: "local-upload"
 
 - url: "mobile"
+  pages:
+  - url: "#configuringmobile"
+  - url: "#browsercompatibility"
 
 - url: "configure"
   pages:
@@ -146,6 +152,7 @@
       url: "#spellcheckerpro"
     - url: "#browser_spellcheck"
     - url: "#gecko_spellcheck"
+  - url: "jwt-authentication"
   - url: "file-image-upload"
     pages:
     - url: "#automatic_uploads"
@@ -185,7 +192,6 @@
 
 - url: "plugins"
   pages:
-  - url: "compat3x"
   - url: "a11ychecker"
   - url: "advcode"
   - url: "advlist"
@@ -216,18 +222,14 @@
     - url: "#charmap"
     - url: "#charmap_append"
   - url: "code"
-    pages:
-    - url: "#code_dialog_height"
-    - url: "#code_dialog_width"
   - url: "codesample"
   - url: "colorpicker"
     pages:
     - url: "#color_picker_callback"
+  - url: "comments"
   - url: "contextmenu"
-    pages:
-    - url: "#contextmenu"
-    - url: "#contextmenu_never_use_native"
   - url: "directionality"
+  - url: "drive"
   - url: "emoticons"
   - url: "mediaembed"
   - url: "fullpage"
@@ -362,14 +364,18 @@
     - url: "#table_grid"
     - url: "#table_tab_navigation"
     - url: "#table_default_attributes"
-    - url: "#table_default_styles"
+    - url: "#table_default_styles"    
+    - url: "#table_responsive_width"
     - url: "#table_class_list"
     - url: "#table_cell_class_list"
     - url: "#table_row_class_list"
     - url: "#table_advtab"
     - url: "#table_cell_advtab"
-    - url: "#table_row_advtab"
-  - url: "tinycomments"
+    - url: "#table_resize_bars"    
+    - url: "#table_style_by_css"
+    - url: "#Commands"
+    - url: "#API"
+    - url: "#Events"
   - url: "template"
     pages:
     - url: "#templates"
@@ -377,8 +383,6 @@
     - url: "#template_cdate_format"
     - url: "#template_mdate_classes"
     - url: "#template_mdate_format"
-    - url: "#template_popup_height"
-    - url: "#template_popup_width"
     - url: "#template_replace_values"
     - url: "#template_selected_content_classes"
     - url: "#template_preview_replace_values"
@@ -407,16 +411,37 @@
     - url: "#wordcount_cleanregex"
     - url: "#wordcount_countregex"
 
-- url: "themes"
+- url: "components"
   pages:
-  - url: "inlite"
-  - url: "mobile"
-  - url: "modern"
+  - url: "dialog"
+    pages:
+    - url: "overview"
+    - url: "components"
+    - url: "example"
+  - url: "contextmenu"
+    pages:
+    - url: "overview"
+    - url: "example"
+  - url: "contexttoolbar"
+    pages:
+    - url: "overview"
+    - url: "contextform"
+  - url: "toolbarbuttons"
+    pages:
+    - url: "overview"
+    - url: "components"
+      pages:
+      - url: "basic"
+      - url: "menu"
+      - url: "split"
+      - url: "toggle"
+    - url: "example"
 
 - url: "enterprise"
   pages:
   - url: "tiny-comments"
-  - url: "manage-files-and-images"
+  - url: "tinydrive"
+  - url: "moxiemanager"
   - url: "paste-from-word"
   - url: "check-spelling"
     pages:
@@ -444,21 +469,20 @@
   - url: "accessibility"
   - url: "security"
   - url: "boilerplate-content-css"
-  - url: "creating-a-custom-button"
-  - url: "creating-a-skin"
-  - url: "creating-a-plugin"
-  - url: "annotations"
+  # - url: "creating-a-custom-button"
+  # - url: "creating-a-skin"
+  # - url: "creating-a-plugin"
+  # - url: "annotations"
   - url: "yeoman-generator"
-  - url: "creating-custom-dialogs"
+  # - url: "creating-custom-dialogs"
   - url: "creating-custom-notifications"
-  - url: "creating-a-sidebar"
+  # - url: "creating-a-sidebar"
   - url: "handle-async-image-uploads"
   - url: "php-upload-handler"
   - url: "editor-command-identifiers"
   - url: "editor-control-identifiers"
   - url: "events"
   - url: "keyboard-shortcuts"
-  - url: "migration-guide-from-3.x"
   - url: "usage-with-module-loaders"
 
 - url: "integrations"
@@ -474,4 +498,13 @@
   - url: "vue"
   - url: "wordpress"
 
-- url: "changelog"
+- url: "migration-from-4.x"
+  pages:
+  - url: "migrating4x"
+  - url: "considerations"
+  - url: "changed-features"
+
+- url: "release-notes"
+  pages:
+  - url: "new-features"
+  - url: "known-issues"

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: 07. Upload Images
+title: 09. Upload Images
 description: Extend TinyMCE with powerful image uploading capabilities.
 keywords: uploader uploadImages image handler
 ---
@@ -9,7 +9,7 @@ keywords: uploader uploadImages image handler
 
 > Note: Please note, this image upload feature is available for TinyMCE version 4.3 and above. Alternatively, the [PowerPaste plugin]({{ site.baseurl }}/plugins/powerpaste/) is capable of this functionality in versions of TinyMCE 4.0 and above.
 
-The image uploader is designed to complement the new image editing functionality of TinyMCE 4.3. Images that are edited within TinyMCE can be uploaded using this function. Local images that are added through other means, for example drag and drop when using the [paste_data_images]({{ site.baseurl }}/plugins/paste/#paste_data_images) configuration property, or using Tiny's PowerPaste Plugin.
+The image uploader is designed to complement the new image editing functionality of TinyMCE. Images that are edited within TinyMCE can be uploaded using this function. Local images that are added through other means, for example drag and drop when using the [paste_data_images]({{ site.baseurl }}/plugins/paste/#paste_data_images) configuration property, or using Tiny's PowerPaste Plugin.
 
 Once uploaded, TinyMCE automatically updates the `<image>` src attribute with the new path to the remote image.
 
@@ -50,9 +50,9 @@ Images are sent to the Image Uploader via HTTP POST with each post containing a 
 
 When the image is uploaded it has a standardized name in the post (e.g. `blobid0`, `blobid1`, `imagetools0`, `imagetools1`).
 
-> Note: You need to ensure that your upload handler script takes each uploaded file and generates a unique name before saving the image. For example, you could append the current time (in milliseconds) to the end of the file name which would lead to file names like `blobid0-1458428901092.png` or `blobid0-1460405299-0114.png`. Take care to make sure that the file name is unique because you don't want to overwrite a previously uploaded image accidentally!
+> Note: You need to ensure that your upload handler script takes each uploaded file and generates a unique name before saving the image. For example, you could append the current time (in milliseconds) to the end of the file name which would lead to file names like `blobid0-1458428901092.png` or `blobid0-1460405299-0114.png`. Please ensure that the file name is unique because you don't want to overwrite a previously uploaded image accidentally!
 
-This server-side upload handler must return a JSON object that contains a "location" property. This property should represent the remote location or filename of the newly uploaded image.
+This server-side upload handler must return a JSON object that contains a `location` property. This property should represent the remote location or filename of the newly uploaded image.
 
 ```
 { location : '/uploaded/image/path/image.png' }
@@ -62,7 +62,7 @@ This server-side upload handler must return a JSON object that contains a "locat
 
 Multiple configuration options that affect the operation of this feature.  These options are listed below.
 
-> Note: Please note, for image uploads to function correctly, either the `images_upload_url` or `images_upload_handler` options must be set.
+> Note: For image uploads to function correctly, either the `images_upload_url` or `images_upload_handler` options must be set.
 
 | Image Upload Handling Option     | Description          |
 |----------------------------------|----------------------|
@@ -86,7 +86,7 @@ tinymce.init({
 
 If the default behavior of TinyMCE's image upload logic is not right for you, you may set your behavior by using the images_upload_handler configuration property.
 
-Please note that while using this option, other image uploader options are not necessary. Additionally, if you would like TinyMCE to replace the <image> tag's src attribute with the remote location, please use the success callback defined in the image_upload_handler function with the returned JSON object's location property.
+Please note that while using this option, other image uploader options are not necessary. Additionally, if you would like TinyMCE to replace the <image> tag's src attribute with the remote location, please use the success callback defined in the `image_upload_handler` function with the returned JSON object's location property.
 
 ##### Example
 
@@ -122,7 +122,7 @@ tinymce.init({
 
 ## CORS considerations
 
-You may choose for your web application to upload image data to a separate domain. If so, you need to configure [Cross-origin resource sharing (CORS)](http://en.wikipedia.org/wiki/Cross-origin_resource_sharing) for your application to comply with JavaScript "same origin" restrictions.
+You may choose for your web application to upload image data to a separate domain. If so, you need to configure [Cross-origin resource sharing (CORS)](http://en.wikipedia.org/wiki/Cross-origin_resource_sharing) for your application to comply with JavaScript *same origin* restrictions.
 
 CORS has stringent rules about what constitutes a cross-origin request. The browser can require CORS headers when uploading to the same server the editor is hosted on, for example:
 

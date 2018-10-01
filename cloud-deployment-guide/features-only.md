@@ -36,7 +36,7 @@ Now you just need to extend your [TinyMCE configuration]({{ site.baseurl }}/conf
 * [Enhanced Media Embed]({{ site.baseurl }}/plugins/mediaembed/)
 * [Link Checker]({{ site.baseurl }}/plugins/linkchecker/)
 
-> Note: Please note that after purchasing a plugin, it may take up to 30 minutes for the plugin to become available with your editor. You may also need to clear your browser's cache.
+> Note: After purchasing a plugin, it may take up to 30 minutes for the plugin to become available with your editor. You may also need to clear your browser's cache.
 
 Here is a complete example, whereby:
 
@@ -55,7 +55,6 @@ Here is a complete example, whereby:
          tinymce.init({
             selector: 'textarea',
             height: 500,
-            theme: 'modern',
             plugins: [
                'advlist autolink lists link image charmap print preview hr anchor pagebreak',
                'tinymcespellchecker']

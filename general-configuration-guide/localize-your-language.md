@@ -1,6 +1,6 @@
 ---
 layout: default
-title: 10. Localize TinyMCE
+title: 12. Localize TinyMCE
 description: Localize TinyMCE with global language capabilities.
 keywords: internationalization localization languages
 ---
@@ -14,7 +14,7 @@ In this section, we show you how to change TinyMCE's user interface to suit your
 
 ### Step 1
 
-Go to our [language download page](https://www.tinymce.com/download/language-packages/) (i18n), where you'll see a list of language packs for TinyMCE 4.
+Go to our [language download page](https://www.tinymce.com/download/language-packages/) (i18n), where you'll see a list of language packs for TinyMCE.
 
 If you want to use one language only, click the download link on the far right of the table. However, if you want to download multiple language packs, first check the box beside each language you need and then click the download button at the bottom of the table.
 

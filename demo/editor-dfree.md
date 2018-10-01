@@ -11,4 +11,4 @@ keywords: example distraction-free editor
 
 This example shows you how to use TinyMCE's Distraction-free editor.
 
-{% include codepen.html id="xzoELd" %}
+{% include codepen.html id="editor-dfree" %}

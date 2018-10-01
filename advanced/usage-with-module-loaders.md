@@ -74,7 +74,7 @@ xcopy /I /E node_modules/tinymce/skins skins
 
 ### Webpack file-loader
 
-If you are using Webpack, another option is to use the [file loader](https://github.com/webpack/file-loader) together with the [require.context](https://webpack.github.io/docs/context.html#require-context) function to copy the skins directory by adding these lines before your call to the TinyMCE `init` function:
+If you are using Webpack, another option is to use the [file loader](https://github.com/webpack/file-loader) together with the [require.context](https://github.com/webpack/docs/wiki/context) function to copy the skins directory by adding these lines before your call to the TinyMCE `init` function:
 
 ```javascript
 require.context(

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: 02. Use TinyMCE Inline
+title: 03. Use TinyMCE Inline
 description_short: Learn about forms-based editing v. inline editing.
 description: Understand the difference between traditional forms-based editing and advanced inline editing.
 keywords: form inline edit stylesheet
@@ -10,9 +10,8 @@ TinyMCE has three main integration modes: a "classic" form-based mode, an inline
 
 The inline editing mode is useful when creating user experiences where you want the editing view of the page to be merged with the reading view of the page. This creates a seamless editing experience and true WYSIWYG behavior.
 
-When in inline editing mode the editor does not replace the selected element with its own iframe, but instead edits the element's content in place instead.
+When in inline editing mode the editor does not replace the selected element with its own iframe, but instead edits the element's content in place instead. For a sample view of this mode, visit the [Inline Editor]({{ site.baseurl }}/demo/inline) example page.
 
-The distraction-free theme is responsible for rendering the editor lightweight inline mode. This is an optional more lightweight distraction-free UI for the editor. It provides options to quickly insert links, images, and tables into your content. For a sample view of this mode, visit the [Distraction-free Editor]({{ site.baseurl }}/demo/editor-dfree/) example page. See [Inlite Theme]({{ site.baseurl }}/themes/inlite/) for more information.
 
 ## Forms-based editing vs. inline editing
 
@@ -74,5 +73,5 @@ Enabling inline editing mode is simple. Setting the `inline` configuration prope
 </html>
 ```
 
-{% assign_page next_page = "/general-configuration-guide/multiple-editors/index.html" %}
+{% assign_page next_page = "/general-configuration-guide/use-tinymce-distraction-free/index.html" %}
 {% include next-step.html next=next_page %}

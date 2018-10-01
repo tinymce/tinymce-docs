@@ -27,7 +27,9 @@ TinyMCE 5.0 offers an easy to navigate configurable less cumbersome user interfa
 
 Try out our demo page to explore the new UI.
 
-## Tiny 5.0 Demo // TODO
+## Tiny 5.0 Demo
+
+{% include codepen.html id="full-featured" height="750" %}
 
 ## Value to a Developer
 
@@ -39,7 +41,7 @@ As application design continues to improve and evolve, and developers are asked 
 
 Devs can upgrade their Tiny 4.x instances to Tiny 5.0 with little/no fuss. For instructions on how to migrate, please see the [Migration Guide]({{site.baseurl}}/migrating-from-4.x).
 
-> Note: An instance of Tiny with heavy customizations could take longer to upgrade. Please contact [Customer Support] if you are encountering issues with the upgrade. // TODO link to customer support
+> Note: An instance of Tiny with heavy customizations could take longer to upgrade. Please contact [Customer Support] if you are encountering issues with the upgrade.
 
 ### JavaScript → Modern CSS → Better Exploitation of Modern CSS
 
@@ -110,13 +112,13 @@ When opening a properties dialog with a single table/row/cell selected, the dial
 2. Buttons are now added via methods in `editor.ui.registry` rather than `editor` e.g. `editor.ui.registry.addButton()` instead of `editor.addButton()`.
 3. To make the creation of custom toolbar buttons easier, new methods were added for split, toggle, and menu toolbar buttons with configuration options specific to the button type.
 
-### Custom Menu Items // TODO explanations of the subpoints
+### Custom Menu Items
 
-* `editor.menuitems`
+* `editor.menuitems`, [see configuration]({{site.baseurl}}/components/toolbarbuttons/components/menu/)
 
-### Custom Sidebars // TODO explanation
+### Custom Sidebars
 
-* `editor.addSidebar`
+* `editor.addSidebar`, Docs coming soon.
 
 ### Toolbar Menus
 

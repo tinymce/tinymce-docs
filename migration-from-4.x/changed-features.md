@@ -100,13 +100,13 @@ ContextForms are a generalisation of the `Insert Link` form that existed in the 
 2. Buttons are now added via methods in `editor.ui.registry` rather than `editor` e.g. `editor.ui.registry.addButton()` instead of `editor.addButton()`
 3. New methods were added for split, toggle and menu toolbar buttons with configuration options specific to the button type, to make the creation of custom toolbar buttons easier.
 
-### Custom Menu Items // TODO explanations of the subpoints
+### Custom Menu Items
 
-* editor.menuitems
+* editor.menuitems, [see configuration]({{site.baseurl}}/components/toolbarbuttons/components/menu/)
 
-### Custom Sidebars // TODO explanation
+### Custom Sidebars
 
-* editor.addSidebar
+* editor.addSidebar, Docs coming soon.
 
 ### Toolbar Menus
 

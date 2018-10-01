@@ -21,10 +21,10 @@ This chapter describes the migration process and workarounds if you are using an
 
 #### Changes between TinyMCE 4.x and TinyMCE 5.0:
 
-* Buttons go before and after the input in TinyMCE version 4.x. // TODO: resolve with align
-* The `Ctrl+K` shortcut does nothing until the context toolbar is visible in TinyMCE version 4.x. // TODO: Possibly by design?
+* Buttons go before and after the input in TinyMCE version 4.x.
+* The `Ctrl+K` shortcut does nothing until the context toolbar is visible in TinyMCE version 4.x.
 * In TinyMCE version 5.0, the pop animates to its new width.
-* In TinyMCE version 4.x., it is a URL input, so you get a popup and a browse button. // TODO: This might be something we have to implement, but it's not clear how to support it yet. I think at best for this release, we should just have before and after commands.
+* In TinyMCE version 4.x., it is a URL input, so you get a popup and a browse button.
 
 ### Tables
 

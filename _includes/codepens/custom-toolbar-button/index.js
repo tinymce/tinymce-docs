@@ -9,11 +9,14 @@ tinymce.init({
     '//www.tiny.cloud/css/codepen.min.css'],
   
   setup: function (editor) {
+
+    /* adding a toolbar button */
     editor.ui.registry.addButton('mybutton', {
       icon: 'user',
       onAction: function () {
         editor.insertContent('&nbsp;<b>It\'s my button!</b>&nbsp;');
       }
     });
+
   }
 });

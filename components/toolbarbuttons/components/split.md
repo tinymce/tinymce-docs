@@ -52,6 +52,6 @@ As with all toolbar buttons, a split button requires an `onAction` callback. How
 
 Next is `onItemAction`, which will be called when a menu item is clicked. The callback function is passed the split button's API [link] and the value of the selected menu item, and should not return anything. In the example, we're simply calling `editor.insertContent(value)` to insert the given value into the editor's content.
 
-Finally, we have `fetch`. This configuration option is a function that is passed a callback which is called whenever the split button's dropdown menu is opened. This allows for asynchronous fetching of the menu items. Within this function, we need to create a list of menu items, and pass them to the callback.The configuration options and API for menu items can be found here [link to custom menu items explanation once we've created it?].
+Finally, we have `fetch`. This configuration option is a function that is passed a callback which is called whenever the split button's dropdown menu is opened. This allows for asynchronous fetching of the menu items. Within this function, we need to create a list of menu items, and pass them to the callback.The configuration options and API for menu items can be found here.
 
 We also have a demo of the Menu Toolbar button for you [here]({{site.baseurl}}/demo/custom-toolbar-split-button/).

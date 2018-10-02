@@ -6,9 +6,7 @@ description: Toolbar Button - Menu
 keywords: menu menu toolbarmenu
 ---
 
-##MENU BUTTON
-
-### Config Options
+## Config Options
 
 | Name | Value | Requirement | Description |
 |------| ------| ------------| ----------- |
@@ -20,14 +18,14 @@ keywords: menu menu toolbarmenu
 
 > Note:  See below for details on return type for onSetup and onAction.
 
-### API
+## API
 
 | Name | Value | Description |
 |------| ------| ------------|
 | isDisabled | ( ) => boolean | Check if the button is disabled. |
 | setDisabled | (state: boolean) => void | Set the button's disabled state. |
 
-## Explanation and Example
+## Example and Explanation
 
 The following is an example of a Simple Toolbar Button:
 

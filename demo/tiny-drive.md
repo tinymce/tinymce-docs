@@ -9,7 +9,7 @@ keywords: tinydrive .net php relative_urls
 
 ## Live example
 
-This example shows you how to use Tiny Drive for your file and image management. For more information on the Tiny Drive plugin, see the [docs]({{site.baseurl}}/plugins/drive/).
+This example shows you how to use Tiny Drive for your file and image management. For more information on the Tiny Drive plugin, see the [docs]({{site.baseurl}}/plugins/tinydrive/).
 
 <textarea>
 <h2>The world's first rich text editor in the cloud</h2>

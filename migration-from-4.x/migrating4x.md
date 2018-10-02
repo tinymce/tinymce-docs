@@ -1,8 +1,8 @@
 ---
 layout: default
-title: Migrating from TinyMCE 4.x to TinyMCE 5.0.
+title: Migrating from TinyMCE 4.x to Tiny 5.0.
 title_nav: Migrating from 4.x
-description: Instructions for migrating from TinyMCE 4.x to TinyMCE 5.0.
+description: Instructions for migrating from TinyMCE 4.x to Tiny 5.0.
 keywords: migration considerations premigration pre-migration
 ---
 
@@ -10,12 +10,12 @@ keywords: migration considerations premigration pre-migration
 
 ### Initialization
 
-The initialization process of Tiny 5.0 is the same as Tiny 4.x. The bootstrap process and initialization events all remain the same.  The main difference is in the `init` configuration, specifically the configuration items for UI components.
+The initialization process of Tiny 5.0 is the same as TinyMCE 4.x. The bootstrap process and initialization events all remain the same.  The main difference is in the `init` configuration, specifically the configuration items for UI components.
 It still retains a familiar JSON structure. However, the properties have been greatly simplified.
 
 ### Plugins
 
-In version 5.0 some plugins have moved. These plugins are now part of the core editor and are not required to be declared in the plugins setting.
+In version 5.0 some plugins have moved. These plugins are now a part of the core editor and are not required to be declared in the plugins setting.
 
 #### Moved Plugins
 
@@ -31,7 +31,7 @@ In version 5.0, some themes have been removed and are now combined in a new sing
 | **Removed Theme** | **Replaced by** |
 | ----------------- | --------------  |
 | [Modern](https://www.tiny.cloud/docs/themes/modern/) | Silver |
-| [Modern inline](https://www.tiny.cloud/docs/general-configuration-guide/use-tinymce-inline/) | [Silver Inline] |
+| [Modern inline](https://www.tiny.cloud/docs/general-configuration-guide/use-tinymce-inline/) | Silver Inline |
 | [Inlite(Distraction-free Editor)](https://www.tiny.cloud/docs/themes/inlite/) | Silver (distraction free configuration) |
 | [Mobile](https://www.tiny.cloud/docs/themes/mobile/) | Silver (responsive to screen size)  |
 
@@ -55,11 +55,11 @@ The following options were newly added:
 
 #### Removed Settings
 
-* Fixed_toolbar_container - Owing to the enhancements to the new inline toolbar behaviour, `fixed_toolbar_container` is not required in TinyMCE 5.0.
+* Fixed_toolbar_container - Owing to the enhancements to the new inline toolbar behaviour, `fixed_toolbar_container` is not required in Tiny 5.0.
 
 ### Methods
 
-* All methods for creating Ui components in TinyMCE 4.x have been removed.
+* All methods for creating UI components in TinyMCE 4.x have been removed.
 * No core editor methods where removed (tinymce, editor, selection, on(), etc remain the same)
 
 

@@ -9,27 +9,8 @@ keywords: mentions atmentions
 The mentions plugin will present a list of users when a user types the "@" symbol followed by the beginnings of a username after it. It will then query your server using the `mentions_fetch` callback.
 
 ##### Example
-```javascript
-tinymce.init({
-  selector: "textarea",
-  plugins: "mentions",
-  mentions_fetch: function (query, success) {
-	//Fetch your full user list from somewhere
-	var users = getUserDataFromTheServer();
 
-	//query.term is the text the user typed after the '@'
-	users = users.filter(function (user) {
-	  return user.name.indexOf(query.term.toLowerCase()) === 0;
-	});
-
-	users = users.slice(0, 10);
-
-	window.setTimeout(function () {
-	  success(users);
-	}, 0);
-  }
-});
-```
+{% include codepen.html id="mentions" height="400" %}
 
 ## Options
 

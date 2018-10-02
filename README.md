@@ -59,10 +59,3 @@ including information on troubleshooting the "first time set up" process.
 ## Why is HTML minification disabled?
 
 It's very slow and the minifier is using regex to parse HTML. We may add a different minifier in the future.
-
-## Generating api docs from local files
-
-```
-npm i -g ephox/moxiedoc#feature/tinymcenext
-./_scripts/api-reference-local.sh ../tinymce
-```

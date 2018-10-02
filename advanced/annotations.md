@@ -46,7 +46,7 @@ The annotator API supports multiple annotation functions. Each annotation functi
        decorate: function(uid, data) {
          return {
            attributes: {
-             'data-mce-author': alpha.author
+             'data-mce-author': data.comment
            }
          };
        }
@@ -173,7 +173,7 @@ tinymce.init({
         decorate: function(uid, data) {
           return {
             attributes: {
-              'data-mce-alpha': data.alpha
+              'data-mce-alpha': data.comment
             }
           };
         }

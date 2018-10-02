@@ -8,7 +8,7 @@ keywords: tinymce script textarea
 
 TinyMCE is a powerful and flexible rich text editor that you can embed in your web application. 
 
-The Developer Preview is perfect for developers who want to see how Tiny 5 integrates into their ecosystem. 
+The Developer Preview is perfect for developers who want to see how Tiny 5.0 integrates into their ecosystem.
 
 ## Step 1: Include the TinyMCE script
 

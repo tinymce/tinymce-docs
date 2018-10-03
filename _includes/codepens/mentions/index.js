@@ -1,12 +1,14 @@
 var fakeMentionsServer = function (term, success) {
-  /* fake mentions server, implementations will vary however data passed to success must be an object with these properties
+  /* 
+    Fake mentions server, implementations will vary however data passed to success must be an object with these properties
 
-  success({
+    success({
       id: string,
       name: string,
       fullName: string,
       image: string_url
     })
+
   */
   var userNames = [
     'Terry Green', 'Edward Carroll', 'Virginia Turner', 'Alexander Schneider', 'Gary Vasquez', 'Randy Howell',
@@ -90,8 +92,6 @@ var fakeMentionsServer = function (term, success) {
     var name = fullName.toLowerCase().replace(/ /g, '');
 
     var image = 'https://s3.amazonaws.com/uifaces/faces/twitter/' + images[Math.round(images.length * Math.random())] + '/128.jpg';
-
-    /* fake mentions server, needs to return an array of objects */
     return {
       id: name,
       name,
@@ -117,11 +117,13 @@ var fakeMentionsServer = function (term, success) {
   return findUser(term, success);
 };
 
+var mentions_menu_complete = function (editor, userinfo) {
+  const x = document.createElement('div');
 
+  x.innerHTML = '<span style="color: green" class="mentionsmentionsmentions">@' + userinfo.name + '</span>';
 
-
-
-
+  return x.childNodes[0];
+};
 
 var mentions_fetch = function (query, success) {
   fakeMentionsServer(query.term, success);
@@ -131,7 +133,8 @@ tinymce.init({
   selector: "textarea",
   plugins: "mentions",
   
+  mentions_selector: '.mentionsmentionsmentions',
   mentions_fetch: mentions_fetch,
-  
+  mentions_menu_complete: mentions_menu_complete
 
 });

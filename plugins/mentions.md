@@ -40,11 +40,16 @@ tinymce.init({
 	});
 
 	users = users.slice(0, 10);
-
-	window.setTimeout(function () {
-	  success(users);
-	}, 0);
-  }
+	/*
+		Where the user object must contain these properties
+		users: {
+			id: string,
+			name: string,
+			fullName: string,
+			image: string_url
+		}
+	*/
+  success(users);
 });
 ```
 

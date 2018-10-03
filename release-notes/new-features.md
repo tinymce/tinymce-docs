@@ -2,13 +2,15 @@
 layout: default
 title: New Features, Enhancements, and Technology Preview
 title_nav: New Features
-description: These features have been introduced in TinyMCE 5.0.
+description: These features have been introduced in Tiny 5.0.
 keywords: new features enhancements technology preview
 ---
 
 ## Technology Preview
 
-TinyMCE 5.0 offers an easy to navigate configurable less cumbersome user interface. The user interface logic has been changed entirely in 5.0. TinyMCE 5.0 has an ARIA [IBM standards](https://www.ibm.com/able/checklists.html) compliant user interface in order to make the user interface controls and dynamic content more accessible. In Tiny 5.0, more complex controls or dialogs need to be written in the new API style while keeping the more straightforward methods of adding buttons and windows the same.
+Tiny 5.0 offers an easy to navigate configurable less cumbersome user interface. The user interface logic has been changed entirely in Tiny 5.0.
+
+Tiny 5.0 has an ARIA [IBM standards](https://www.ibm.com/able/checklists.html) compliant user interface in order to make the user interface controls and dynamic content more accessible. In Tiny 5.0, more complex controls or dialogs need to be written in the new API style while keeping the more straightforward methods of adding buttons and windows the same.
 
 ## Specifications
 
@@ -45,7 +47,7 @@ Devs can upgrade their Tiny 4.x instances to Tiny 5.0 with little/no fuss. For i
 
 ### JavaScript → Modern CSS → Better Exploitation of Modern CSS
 
-TinyMCE 5.0 offers a modern CSS to provide styled components that leverage the power of a complete programming language — JavaScript — and its scoping capabilities to help structure the code into the components. This helps to avoid the common pitfalls of writing and maintaining CSS for large projects. A developer can describe a component’s style with no risk of side effects.
+Tiny 5.0 offers a modern CSS to provide styled components that leverage the power of a complete programming language — JavaScript — and its scoping capabilities to help structure the code into the components. This helps to avoid the common pitfalls of writing and maintaining CSS for large projects. A developer can describe a component’s style with no risk of side effects.
 
 ### Modern Codebase
 
@@ -114,7 +116,7 @@ When opening a properties dialog with a single table/row/cell selected, the dial
 
 ### Custom Menu Items
 
-* `editor.menuitems`, [see configuration]({{site.baseurl}}/components/toolbarbuttons/components/menu/)
+* `editor.menuitems`, [see configuration]({{site.baseurl}}/components/toolbarbuttons/components/menu/).
 
 ### Custom Sidebars
 

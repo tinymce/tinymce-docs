@@ -2,13 +2,13 @@
 layout: default
 title: Considerations
 title_nav: Considerations
-description: Instructions for migrating from TinyMCE 4.x to TinyMCE 5.0.
+description: Instructions for migrating from TinyMCE 4.x to Tiny 5.0.
 keywords: migration considerations premigration pre-migration
 ---
 
 ## Migrating from Previous Versions
 
-The new TinyMCE 5.0 editor comes with significant changes to the previous versions. The new editor offers an easier to navigate user interface.
+The new Tiny 5.0 editor comes with significant changes to the previous versions. The new editor offers an easier to navigate user interface.
 
 Our team at Tiny has worked on creating a configurable, less cumbersome editor while retaining the familiarity of the user interface from the older versions.
 
@@ -19,26 +19,26 @@ This chapter describes the migration process and workarounds if you are using an
 
 ### Context Toolbars
 
-#### Changes between TinyMCE 4.x and TinyMCE 5.0:
+#### Changes between TinyMCE 4.x and Tiny 5.0:
 
-* Buttons go before and after the input in TinyMCE version 4.x.
-* The `Ctrl+K` shortcut does nothing until the context toolbar is visible in TinyMCE version 4.x.
-* In TinyMCE version 5.0, the pop animates to its new width.
-* In TinyMCE version 4.x., it is a URL input, so you get a popup and a browse button.
+* Buttons go before and after the input in TinyMCE 4.x.
+* The `Ctrl+K` shortcut does nothing until the context toolbar is visible in TinyMCE 4.x.
+* In Tiny 5.0, the pop animates to its new width.
+* In TinyMCE 4.x., it is a URL input, so you get a popup and a browse button.
 
 ### Tables
 
-Changes between TinyMCE 4.x and TinyMCE 5.0:
+Changes between TinyMCE 4.x and Tiny 5.0:
 
 * Styles text field has been removed from the advanced table of the dialogs. This simplifies the dialogs for users and gives the editor stricter control over the table styles which means we are better able to ensure the styles are correct.
 * Improved how styles are set and retrieved from tables, rows, and cells, so this should be more reliable now.
 * Shifted to using CSS more for styling, and therefore was able to remove a few legacy data attributes that we were configuring on tables/rows/cells which are no longer good practice to use. This makes the output HTML cleaner and more modern.
-* When opening a properties dialog with a single table/row/cell selected, the dialog will autofill with the relevant existing values. If you select multiple rows or cells and open the relevant properties dialog, Tiny 4 will leave all the dialog fields blank. In Tiny 5, any fields which have the same values for all the selected rows or cells will autofill, and the fields which have no existing value or have differing values will be empty.
+* When opening a properties dialog with a single table/row/cell selected, the dialog will autofill with the relevant existing values. If you select multiple rows or cells and open the relevant properties dialog, TinyMCE 4.x will leave all the dialog fields blank. In Tiny 5.0, any fields which have the same values for all the selected rows or cells will autofill, and the fields which have no existing value or have differing values will be empty.
 * "Border" input field in the `tableprops` dialog is now called "Border width", for better clarity.
 
 ### Toolbar buttons
 
-Changes between TinyMCE 4.x and TinyMCE 5.0:
+Changes between TinyMCE 4.x and Tiny 5.0:
 
 * The methods for adding toolbar buttons have been moved to a different part of the editor API.
 * `onclick` is now onAction, which is given `api` as an argument to give the user some helper functions.
@@ -62,7 +62,7 @@ editor.addButton('mybutton', {
   onclick: () => alert("My Button clicked!")
 });
 ```
-###### TinyMCE 5.0:
+###### Tiny 5.0:
 
 ```js
 editor.ui.registry.addButton('myButton', {
@@ -82,7 +82,7 @@ editor.addButton('mybutton', {
   cmd: 'mceSave'
 });
 ```
-##### TinyMCE 5.0:
+##### Tiny 5.0:
 
 ```js
 editor.ui.registry.addButton('myButton', {
@@ -108,7 +108,7 @@ editor.addButton('currentdate', {
   }
 });
 ```
-#####  TinyMCE 5.0:
+#####  Tiny 5.0:
 
 ```js
 editor.ui.registry.addButton('customDateButton', {
@@ -151,7 +151,7 @@ editor.addButton('mybutton', {
   }
 });
 ```
-##### TinyMCE 5.0:
+##### Tiny 5.0:
 
 ```js
 editor.ui.registry.addButton('myButton', {

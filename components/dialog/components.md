@@ -12,11 +12,11 @@ This chapter describes the Dialog component summary is a reference list of all T
 
 ### AlertBanner
 
-An **AlertBanner** is a color coded banner to alert the user of a problem, a URL may be provided to direct users to reference site that may resolve the alerted issue.
+An **AlertBanner** is a color-coded banner to alert the user of a problem. A URL may be provided to direct users to a reference site that may resolve the informed issue.
 
 ```js
     {
-    	type: 'alertbanner',
+        type: 'alertbanner',
       level: 'info', // 'info' | 'warn' | 'error' | 'success'
       text: 'An informative message to the user',
       icon: string,
@@ -25,7 +25,7 @@ An **AlertBanner** is a color coded banner to alert the user of a problem, a URL
 
 ### Button
 
-A **Button**component to be used inside the dialog body, these buttons differ from toolbar buttons and dialog footer buttons.
+A **Button** component to be used inside the dialog body. These buttons differ from toolbar buttons and dialog footer buttons.
 
 
 ```js
@@ -39,17 +39,17 @@ A **Button**component to be used inside the dialog body, these buttons differ fr
 
 ### Charmap
 
-A **Charmap** is a specialised component that prints a range of special characters from unicode.
+A **Charmap** is a specialized component that prints a range of unique characters from Unicode.
 
 ```js
     {
-    	type: 'charmap',
+        type: 'charmap',
       name: 'charmap-1',
       characters: [
-    		{value: 'A', text: 'A'},
-    		{value: 'B', text: 'B'},
-    		{value: 'C', text: 'C'}
-    	]
+            {value: 'A', text: 'A'},
+            {value: 'B', text: 'B'},
+            {value: 'C', text: 'C'}
+        ]
     }
 ```
 
@@ -67,7 +67,7 @@ A **Checkbox** is a component, used to toggle states on, or off.
 
 ### ColorInput
 
-A **ColorInput** is a specialised input field which takes rgb colors and will render the sample color typed
+A **ColorInput** is a specialized input field which takes `RGB` colors and will render the sample color typed.
 
 ```js
     {
@@ -93,7 +93,7 @@ A **ColorPicker**  is an intuitive color picker tool similar to image editors.
 
 ### DropZone
 
-A **DropZone** is a component that catches drag and drop items, or lets the user browse  that can send a list of files for processing and receive the result
+A **DropZone** is a component that catches drag and drops items, or lets the user browse that can send a list of files for processing and receive the result.
 
 ```js
     {
@@ -128,7 +128,7 @@ A **HtmlPanel** is similar to panel. It only takes a string of HTML.
 
 ### Iframe
 
-An **Iframe** is a component used to define the values of an iframe.
+A **Iframe** is a component used to define the values of an iframe.
 
 ```js
     {
@@ -142,7 +142,7 @@ An **Iframe** is a component used to define the values of an iframe.
 
 ### Input
 
-An **Input** is a single line text field, a label element is also rendered.
+A **Input** is a single line text field, and also renders a label element.
 
 ```js
     {
@@ -155,7 +155,7 @@ An **Input** is a single line text field, a label element is also rendered.
 
 ### JukeBox
 
-A **JukeBox**  is a specialised component that can cycle through a list of options.
+A **JukeBox**  is a specialized component that can cycle through a list of options.
 
 ```js
     {
@@ -167,7 +167,7 @@ A **JukeBox**  is a specialised component that can cycle through a list of optio
 
 ### Panel
 
-A **Panel** is a basic container, that holds other components, we can compose many components inside a panel. In HTML terms consider a panel a <div> wrapper. A dialog body configuration must begin with either a Panel or a TabPanel.
+A **Panel** is a basic container, that holds other components, we can compose many components inside a panel. In HTML terms consider a panel a `<div>` wrapper. A dialog body configuration must begin with either a Panel or a TabPanel.
 
 ```js
     {
@@ -194,7 +194,7 @@ A **SelectBox** allows users to select a choice from a list of many options.
 
 ### SizeInput
 
-A **SizeInput** is a specialised input field that can lock ratios, see image dialog.
+A **SizeInput** is a specialized input field that can lock ratios, see image dialog.
 
 ```js
     {
@@ -207,7 +207,7 @@ A **SizeInput** is a specialised input field that can lock ratios, see image dia
 
 ### Tabpanel
 
-A **Tabpanel -** is similar to a Panel, where it can holder other components. TabPanel is a layout component that will separate sections using tabs. Each tab is a panel that can hold different components. A dialog body configuration must begin with either a Panel or a TabPanel.
+A **Tabpanel -** is similar to a Panel, where it can hold other components. TabPanel is a layout component that will separate sections using tabs. Each tab is a panel that can contain different components. A dialog body configuration must begin with either a Panel or a TabPanel.
 
 ```js
     {
@@ -238,11 +238,11 @@ A **TextArea** is a multiline text field.
 
 ### UrlInput
 
-A **URlInput** is a specialised input text field for image dialog. This will include a typeahead for previous image urls entered.
+A **URlInput** is a specialized input text field for image dialog. This will include a typeahead for previous image URLs entered.
 
 ```js
     // URL input for image dialog
-    // this will include a typeahead for previous image urls entered
+    // This will include a typeahead for previous image urls entered
     {
       name: 'src',
       type: 'urlinput',
@@ -251,8 +251,8 @@ A **URlInput** is a specialised input text field for image dialog. This will inc
     }
     // URL input for link dialog
     // The main difference from the image mode is that it will include typeahead
-    // information for all anchor targets and headings in the document as well
-    // as the history of 5 previously entered URLs.
+    // Information for all anchor targets and headings in the document as well
+    // As the history of 5 previously entered URLs.
     {
       name: 'url',
       type: 'urlinput',

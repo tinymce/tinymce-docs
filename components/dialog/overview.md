@@ -14,7 +14,7 @@ The Dialog API allows plugins to show dialogs (sometimes referred to as modals) 
 
 * **Display simple information** (e.g., source code plugin, displays the HTML code from the content in the dialog).
 * **Display complex information**, sections can be contained within tabs (e.g., help dialog or special chars dialog are tabbed dialogs).
-* **Interactive dialogs** use web forms to collect interaction data and then apply the data  (e.g.: search and replace dialog, uses an input field.  Here, the input text is searched.)
+* **Interactive dialogs** use web forms to collect interaction data and then apply the data  (e.g.: search and replace dialog, uses an input field. Where the input text will be used as the search key.)
 
 ##  Types of Dialogs
 
@@ -30,10 +30,10 @@ A dialog is a tinymce UI component. You can use one of the many TinyMCE componen
 const dialogConfig = {
    title: 'Just a title',
    body: {
-     type: 'panel', // note: the root body type can only be of type Panel or TabPanel, see component definitions for panel or tabpanel
-     items: []      //a list of ui component configurations the dialog will have
+     type: 'panel', // Note: The root body type can only be of type Panel or TabPanel, see component definitions for `panel` or `tabpanel` below.
+     items: []      //A list of UI component configurations the dialog will have.
    },
-   buttons: []    //a list of button configurations the dialog will have
+   buttons: []    //A list of button configurations the dialog will have.
 }
 ```
 
@@ -41,7 +41,7 @@ Using the above example, calling `tinymce.activeEditor.windowManager.open(dialog
 
 ### Complex
 
-The complex dialogs are used to display complex information. These sections can be contained within tabs, for example, the help dialog or special chars dialog. These dialogs need a way to set the desired content into a defined tab section.
+The complex dialogs are used to display complex information. These sections can be contained within tabs. For example, the help dialog or special chars dialog. These dialogs need a way to set the desired content into a defined tab section.
 
 #### Interactive
 
@@ -51,19 +51,19 @@ The interactive dialogs use web forms to collect interaction data, and then appl
 
 {% include codepen.html id="dialog-pet-machine" height="150" tab="js" %}
 
-The key highlight in this example is the input field for ‘enter the name of a cat’, the name property `catdata` is associated with the `initalData`. All body components that require a name property also require an `initialData` property. This is how the relationship between the underlaying data model and the component is declared. Notice that when we first load the dialog, the input field is pre-populated with `initial cat`. When `initialData.catdata = ''` then on load, the input field should be empty.
+The key highlight in this example is the input field for ‘enter the name of a cat’. The name property `catdata` is associated with the `initalData`. All body components that require a name property also require an `initialData` property. This is how the relationship between the underlaying data model and the component is declared. Notice that when we first load the dialog, the input field is pre-populated with `initial cat`. When `initialData.catdata = ''` then on load, the input field should be empty.
 
 In this example, we declared two buttons to be placed in the dialog footer, **Close** and **Submit**.  These are pre-constructed buttons that perform common actions, such as,
 
 * Closing a dialog or submitting a dialog.
 * The type: `close` button is pre-wired to *abort* and *close* the dialog.
-* The type: `submit` button when clicked, will invoke the `onSubmit` callback provided in the configuration, and we use that callback to insert the message.  When `onSubmit` is called, a dialog `instanceApi` is passed in as the parameter. The dialog does not close by default because some use cases may require a server side callback confirmation 
+* The type: `submit` button when clicked, will invoke the `onSubmit` callback provided in the configuration. We use that callback to insert the message.  When `onSubmit` is called, a dialog `instanceApi` is passed in as the parameter. The dialog does not close by default because some use cases may require a server side callback confirmation.
 * The type: `cancel` button dismisses an action request.
 * The type: `custom` button can be used to specify your own custom operation.
 
 ## Composition
 
-To demonstrate how data flows through the dialog and how buttons are configured, we will create a dialog that inserts the name of a cat into the editor content on submit.  We will refer to this example as we walk through the new dialog instance api.
+To demonstrate how data flows through the dialog and how buttons are configured, we will create a dialog that inserts the name of a cat into the editor content on submit.  We will refer to this example as we walk through the new dialog instance API.
 
 ## Dialog Instance API
 
@@ -145,10 +145,10 @@ var buttonConfig = {
 }
 ```
 
-**Name:** The name property on the button is used to identify which button was clicked. The name property is used as an id attribute to identify dialog components. When we define name: `foobutton` and a user clicks on that button. The dialog `onAction` handler will fire and provide event `details.name` will be `foobutton` this will allow developers to create a click handler for ‘foobutton’. See dialog `[onAction]()` configuration.
+**Name:** The name property on the button is used to identify which button was clicked. The name property is used as an id attribute to identify dialog components. When we define name: `foobutton` and a user clicks on that button. The dialog `onAction` handler will fire and provide event `details.name` will be `foobutton`. This will allow developers to create a click handler for ‘foobutton’. See dialog `[onAction]()` configuration.
 
 **Text:** This will be the displayed button text. For example, text: ‘do magic’ will create a button with text ‘do magic’. Dialog buttons do not support icons at the moment.
 
-**Disabled:** value: `boolean`, (defaults to false): When set to `true`, the button will be disabled when the dialog loads.  To toggle between disabled and enabled states, use `dialogApi.enable(name)` or `dialogApi.disable(name)`. See [dialogApi]({{site.baseurl}}../component).
+**Disabled:** value: `boolean`, (defaults to false): When set to `true`, the button will be disabled when the dialog loads. To toggle between disabled and enabled states, use `dialogApi.enable(name)` or `dialogApi.disable(name)`. See [dialogApi]({{site.baseurl}}../component).
 
 **Primary:** (defaults to false):  When set to `true`, the button will be colored to standout. The color will depend on the chosen skin.

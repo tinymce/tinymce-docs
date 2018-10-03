@@ -81,87 +81,16 @@ tinymce.init({
 
 ### `mentions_menu_hover`
 
-This option enables you to provide an element to present next to the menu item being hovered. This lets you do custom UIs for presenting user information.
+This option is no longer supported in Tiny 5.0
 
-**Type:** `function`
-
-**Default Value:** `none`
-
-##### Example
-
-```js
-tinymce.init({
-  selector: "textarea",
-  plugins: "mentions",
-  mentions_menu_hover: function (userinfo, success) {
-	// Fake a server call by using a setTimeout
-	setTimeout(function() {
-	  var div = document.createElement('div');
-
-	  div.innerHTML = (
-		'<div>' +
-		  '<h1>' + userinfo.fullName + '</h1>' +
-		'</div>'
-	  );
-
-	  success(div);
-	}, 0);
-  }
-});
-```
 
 ### `mentions_selector`
 
-This option enables you to provide a custom CSS selector that should match the element created using `mentions_menu_complete`. This enables the plugin to find existing mentions. The callback takes two parameters: the editor instance and the userinfo object. A warning will be logged to console unless they match.
-
-**Type:** `function`
-
-**Default Value:** `none`
-
-##### Example
-
-```js
-tinymce.init({
-  selector: "textarea",
-  plugins: "mentions",
-  mentions_selector: 'span.mymention',
-  mentions_menu_complete: function (editor, userinfo) {
-	var span = editor.getDoc().createElement('span');
-	span.className = 'mymention';
-	span.appendChild(editor.getDoc().createTextNode('@' + userinfo.name));
-	return span;
-  }
-});
-```
+This option is no longer supported in Tiny 5.0
 
 ### `mentions_select`
 
-This option enables you to provide an element to be presented next to a selected mention on page. This could include more details about the user.
-
-**Type:** `function`
-
-**Default Value:** `none`
-
-##### Example
-
-```js
-tinymce.init({
-  selector: "textarea",
-  plugins: "mentions",
-  mentions_selector: 'span.mymention',
-  mentions_select: function (mention, success) {
-	var div = document.createElement('div');
-
-	div.innerHTML = (
-	  '<div>' +
-		'<h1>Some more info about the user</h1>' +
-	  '</div>'
-	);
-
-	success(div);
-  }
-});
-```
+This option is no longer supported in Tiny 5.0
 
 ## API
 

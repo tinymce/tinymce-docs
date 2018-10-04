@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Tiny Comments
+title: Comments
 title_nav: Comments
 description: Tiny Comments provides the ability to add comments to the content and collaborate with other users for content editing.
 keywords: comments commenting tinycomments

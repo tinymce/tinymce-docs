@@ -7,9 +7,7 @@ keywords: Splitmenu Split menu toolbarmenu
 ---
 
 
-##MENU BUTTON
-
-### Config Options
+## Config Options
 
 | Name | Value | Requirement | Description |
 |------| ------| ------------| ----------- |
@@ -38,7 +36,7 @@ keywords: Splitmenu Split menu toolbarmenu
 | setIconStroke | (id: string, value: string) => void | It sets the action on click for the icon corresponding to the icon name that has been defined in the icon pack. |
 
 
-## Explanation and Example
+## Example and Explanation
 
 The following example shows how to setup just a basic split button, with a static dropdown menu.
 

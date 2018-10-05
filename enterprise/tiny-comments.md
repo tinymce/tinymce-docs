@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Tiny Comments
+title: Comments
 description: Tiny Comments provides the ability to add comments to the content and collaborate with other users for content editing.
 keywords: enterprise pricing comment commenting
 ---
@@ -33,7 +33,7 @@ The Tiny Comments plugin allows the user to perform the following functions:
 
 We provide a working example for integrating the TinyMCE plugin into your site.
 
-> Note: For more information on installing and configuring Tiny Comments, please visit our [documentation]({{ site.baseurl }}/plugins/tinycomments/).
+> Note: For more information on installing and configuring Tiny Comments, please visit our [documentation]({{ site.baseurl }}/plugins/comments/).
 
 ### Buy Tiny Comments
 
@@ -41,6 +41,6 @@ Start with our [dedicated product page](https://www.tiny.cloud/pricing/) to see 
 
 ## Tiny Comments Demo
 
-In this example, we highlight the features in Tiny Comments, including adding a comment, replying to a comment, and deleting a comment. For more information on the other Tiny Comments configuration options, see the [docs]({{ site.baseurl }}/plugins/tinycomments/).
+In this example, we highlight the features in Tiny Comments, including adding a comment, replying to a comment, and deleting a comment. For more information on the other Tiny Comments configuration options, see the [docs]({{ site.baseurl }}/plugins/comments/).
 
 {% include codepen.html id="pOzxJw" %}

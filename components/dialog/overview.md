@@ -13,7 +13,7 @@ The Dialog API allows plugins to show dialogs (sometimes referred to as modals) 
 ## Use Cases
 
 * **Display simple information** (e.g., source code plugin, displays the HTML code from the content in the dialog).
-* **Display complex information**, sections can be contained within tabs (e.g., help dialog or special chars dialog are tabbed dialogs).
+* **Display complex information** sections can be contained within tabs (e.g., help dialog or special chars dialog are tabbed dialogs).
 * **Interactive dialogs** use web forms to collect interaction data and then apply the data  (e.g.: search and replace dialog, uses an input field. Where the input text will be used as the search key.)
 
 ##  Types of Dialogs
@@ -22,7 +22,7 @@ The Dialog API allows plugins to show dialogs (sometimes referred to as modals) 
 
 The simple dialogs are used to display simple information, such as source code plugin, or the HTML code from the content in the dialog. These dialogs need a way to set the desired content into the dialog.
 
-A dialog is a tinymce UI component. You can use one of the many TinyMCE components inside your dialogs to fulfill a use case. For example, the `search` and `replace` dialog is made up of two input fields, two check boxes, and five buttons. We compose components by using a configuration structure. The most basic configuration structure is this:
+A dialog is a TinyMCE UI component. You can use one of the many TinyMCE components inside your dialogs to fulfill a use case. For example, the `search` and `replace` dialog is made up of two input fields - two check boxes and five buttons. We compose components by using a configuration structure. The most basic configuration structure is this:
 
 ### Example
 
@@ -41,11 +41,11 @@ Using the above example, calling `tinymce.activeEditor.windowManager.open(dialog
 
 ### Complex
 
-The complex dialogs are used to display complex information. These sections can be contained within tabs. For example, the help dialog or special chars dialog. These dialogs need a way to set the desired content into a defined tab section.
+The complex dialogs are used to display complex information. These sections can be contained within tabs. For example, the help dialog or the special chars dialog. These dialogs need a way to set the desired content into a defined tab section.
 
 #### Interactive
 
-The interactive dialogs use web forms to collect interaction data, and then apply the data  (e.g.: search and replace dialog, uses an input field.  Where the input text will be used as the search key). These are the most complex forms of dialogs and requires the ability to define what data is required, and how to get that data when we need it, and how to set the data to what we want.
+The interactive dialogs use web forms to collect interaction data, and then apply the data  (e.g.: The search and replace dialog uses an input field.  Where the input text will be used as the search key). These are the most complex forms of dialogs and requires the ability to define what data is required, and how to get that data when we need it, and how to set the data to what we want.
 
 #### Example Interactive - Pet Name Machine
 
@@ -98,6 +98,7 @@ This [example]({{site.baseurl}}../example) demonstrates one way of implementing 
 A Dialog framework has two main parts:
 
 * **Body** The body type can take either a **Panel** or **Tab Panel**.
+
 * **Footer** This section consists of a **Button**.
 
 ### Panel
@@ -129,7 +130,7 @@ var tabPanelConfig = {
   ]
 };
 ```
-**Tabs:** Array of tab configurations. Each tab has a title which is used to reference the tab. The items property in the tab configuration takes a list of components and works the same way as a Panel. We can programmatically switch to a tab by calling `dialogApi.showTab`(‘title’), See [dialogApi]({{site.baseurl}}../component) for more details.
+**Tabs:** Array of tab configurations. Each tab has a title which is used to reference the tab. The items property in the tab configuration takes a list of components and works the same way as a Panel. We can programmatically switch to a tab by calling `dialogApi.showTab`(‘title’), see [dialogApi]({{site.baseurl}}../component) for more details.
 
 ### Button
 

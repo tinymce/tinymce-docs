@@ -6,9 +6,7 @@ description: Toolbar Button - Toggle
 keywords: Togglemenu Toggle menu toolbarmenu
 ---
 
-##MENU BUTTON
-
-### Config Options
+## Config Options
 
 | Name | Value | Requirement | Description |
 |------| ------| ------------| ----------- |
@@ -22,7 +20,7 @@ keywords: Togglemenu Toggle menu toolbarmenu
 
 > Note:  See below for details on return type for onSetup and onAction.
 
-### API
+## API
 
 | Name | Value | Description |
 |------| ------| ------------|
@@ -31,7 +29,8 @@ keywords: Togglemenu Toggle menu toolbarmenu
 | isActive| ( ) => boolean | check the button's toggle state |
 | setActive | (state: boolean) => void | set the button's toggle state |
 
-### Explanation and Example
+
+## Example and Explanation
 
 {% include codepen.html id="custom-toolbar-toggle-button" %}
 

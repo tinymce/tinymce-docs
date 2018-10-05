@@ -2,14 +2,11 @@
 layout: default
 title: Basic
 title_nav: Basic
-description: Basic Toolbar Button
+description: Toolbar Button - Basic
 keywords: basicmenu basic menu toolbarmenu
 ---
 
-##BASIC BUTTON
-
-
-### Config Options
+## Config Options
 
 | Name | Value | Requirement | Description |
 | ---- | ----- | ----------- | ----------- |
@@ -22,7 +19,7 @@ keywords: basicmenu basic menu toolbarmenu
 
 > Note:  See below for details on return type for onSetup and onAction.
 
-### API
+## API
 
 | Name | Value | Description |
 | ---- | ----- | ----------- |
@@ -30,13 +27,11 @@ keywords: basicmenu basic menu toolbarmenu
 | setDisabled | (state: boolean) => void | Set the button's disabled state. |
 
 
-### Example
+## Example and Explanation
 
 This example adds two buttons to the toolbar:
 
 {% include codepen.html id="custom-toolbar-button" tab="js" %}
-
-### Explanation
 
 This example adds two buttons to the toolbar. The first just inserts "It's my button!" into the editor when clicked.
 ​

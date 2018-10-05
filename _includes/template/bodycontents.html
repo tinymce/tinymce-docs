@@ -26,7 +26,7 @@
 
 <div class="main {{ page.type }} {{ page.class }}">
     <aside class="side-nav">
-        {% assign nav = site.data.nav | array_concat:site.data.nav_api %}
+        {% assign nav = site.data.nav %}
         {% include nav.html links=nav preceding_address="/" %}
     </aside>
 

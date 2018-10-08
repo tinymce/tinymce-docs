@@ -32,3 +32,14 @@ deploy:
   after-steps:
     - slack-notifier:
         url: $SLACK_WEBHOOK_URL
+
+deploy_branch:
+  steps:
+    - script:
+        # I know about sed/awk but this one is exact the same we use in our JS lambda so we can guarantee it behaves the same
+        code: export S3_BUCKET=$(node -e 'console.log(`s3://docs-v5-${process.env.WERCKER_GIT_BRANCH.replace(/[/\s]/g, "-").replace(/[^0-9a-zA-Z-]/g, "").replace(/-$/g, "").toLowerCase()}.staging.tiny.cloud`)')
+    - s3sync:
+        key-id: $S3_KEY
+        key-secret: $S3_SECRET
+        bucket-url: $S3_BUCKET
+        source-dir: $S3_SOURCE

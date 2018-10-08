@@ -8,27 +8,27 @@ keywords: comments commenting tinycomments
 
 ## Introduction
 
-The Tiny Comments plugin provides the user an ability to start or join a conversation by adding comments to the content within the TinyMCE editor. The Tiny Comments plugin is built upon the new [Annotations API]({{ site.baseurl }}/advanced/annotations/) and uses annotations to create comment threads (conversations).
+The Tiny Comments plugin provides the user an ability to start or join a conversation by adding comments to the content within the TinyMCE editor. The Comments plugin is built upon the new [Annotations API]({{ site.baseurl }}/advanced/annotations/) and uses annotations to create comment threads (conversations).
 
-This section describes the various configuration options for the Tiny Comments plugin.
+This section describes the various configuration options for the Comments plugin.
 
 ## Storage
 
-Like TinyMCE, the Tiny Comments plugin does not directly provide the user an ability to save the comments. You need to configure storage at your end to be able to save comments on your server. You can choose to configure your storage settings to either persist them immediately or save them at the same time as the content.
+Like TinyMCE, the Comments plugin does not directly provide the user an ability to save the comments. You need to configure storage at your end to be able to save comments on your server. You can choose to configure your storage settings to either persist them immediately or save them at the same time as the content.
 
-How you store those comments affects when other users see new comments. The Tiny Comments functions (create, reply, delete, and lookup) are configured differently depending upon the server-side storage configuration.
+How you store those comments affects when other users see new comments. The Comments functions (create, reply, delete, and lookup) are configured differently depending upon the server-side storage configuration.
 
-In this chapter, we have provided examples of both ways of configuring Tiny Comments storage.
+In this chapter, we have provided examples of both ways of configuring Comments storage.
 
 ### Storage - persist in real-time
 
-Here is a demo to showcase the Tiny Comments functionality using storage configured to persist in real-time:
+The following demo showcases the Comments functionality using storage configured to persist in real-time:
 
 {% include codepen.html id="pOzxJw" %}
 
 ### Storage - persist on content-save
 
-Here is a demo to showcase the Tiny Comments functionality using storage configured to persist on content-save.
+The following demo showcases the Comments functionality using storage configured to persist on content-save.
 
 {% include codepen.html id="4d07e4da27b1e7245b5333ed7413083b" %}
 
@@ -37,7 +37,7 @@ Here is a demo to showcase the Tiny Comments functionality using storage configu
 We have used the following helper functions in our demo above:
 
 * **setConversation(uid, conversation)**
-`setConversation` is a function written to synchronously write a conversation to a form field for submission to the server later..
+`setConversation` is a function written to synchronously write a conversation to a form field for submission to the server later.
 
 * **randomString()**
 `randomString()` is a function used in the `create` function to return a 62-bits random strings to provision a large number of UIDs.
@@ -51,9 +51,9 @@ We have used the following helper functions in our demo above:
 * **getAuthorDisplayName(uid)**
 `getAuthorDisplayName(authorID)` is a function to retrieve an existing conversation via a conversation UID (`authorID` in our example).
 
-## Tiny Comments Implementation Functions
+## Comments Implementation Functions
 
-Tiny Comments requires four functions to be defined:
+Comments requires four functions to be defined:
 
 ```js
 tinymce.init({
@@ -75,15 +75,15 @@ However, if you are persisting comments directly back to a server as they are ma
 
 #### Display Names
 
-Tiny Comments expects each comment to contain the author's _display name_, not a user ID, as Tiny Comments does not know the user identities. Your implementation of `lookup` will most likely need to consider this and resolve user identifiers to an appropriate display name.
+Comments expects each comment to contain the author's _display name_, not a user ID, as Comments does not know the user identities. Your implementation of `lookup` will most likely need to consider this and resolve user identifiers to an appropriate display name.
 
 #### Current Author
 
-Tiny Comments does not know the name of the current user. After a user comments (triggering `create` for the first comment, or `reply` for subsequent comments) Tiny Comments requests the updated conversation via `lookup`, which should now contain the additional comment with the proper author. Determining the current user, and storing the comment related to that user, has to be done by the user.
+Comments does not know the name of the current user. After a user comments (triggering `create` for the first comment, or `reply` for subsequent comments) Comments requests the updated conversation via `lookup`, which should now contain the additional comment with the proper author. Determining the current user, and storing the comment related to that user, has to be done by the user.
 
 ### Create
 
-Tiny Comments uses the Conversation `create` function to create a comment.
+Comments uses the Conversation `create` function to create a comment.
 
 The `create` function saves the comment as a new conversation and returns a unique conversation ID via the `done` callback. If an unrecoverable error occurs, it should indicate this with the `fail` callback.
 
@@ -134,7 +134,7 @@ function create(content, done, fail) {
 
 ### Reply
 
-Tiny Comments uses the Conversation `reply` function to reply to a comment.
+Comments uses the Conversation `reply` function to reply to a comment.
 
 The `reply` function saves the comment as a reply to an existing conversation and returns via the `done` callback once successful. Unrecoverable errors are communicated to TinyMCE by calling the `fail` callback instead.
 
@@ -188,7 +188,7 @@ function reply(uid, content, done, fail) {
 
 ### Delete
 
-Tiny Comments uses the Conversation `delete` function to delete an entire conversation.
+Comments uses the Conversation `delete` function to delete an entire conversation.
 
 The `delete` function should asynchronously return a flag indicating whether the comment/comment thread was removed using the `done` callback. Unrecoverable errors are communicated to TinyMCE by calling the `fail` callback instead.
 
@@ -240,7 +240,7 @@ Here is an example of how `delete` can be implemented using storage configured t
 
 ### Lookup
 
-Tiny Comments uses the Conversation `lookup` function to retrieve an existing conversation via a conversation unique ID.
+Comments uses the Conversation `lookup` function to retrieve an existing conversation via a conversation unique ID.
 
 The conventional conversation object structure that should be returned via the `done` callback is as follows:
 
@@ -298,7 +298,7 @@ Here is an example of how `lookup` can be implemented using storage configured t
       .catch(function() {
         fail(new Error('Something has gone wrong...'));
       })
-  };
+  }
 ```
 
 #### Example - Storage - persist on content-save
@@ -321,4 +321,4 @@ function lookup(uid, done, fail) {
 }
 ```
 
-For more information on Tiny Comments commercial feature, visit our [Premium Features]({{ site.baseurl }}/enterprise/tiny-comments/) page.
+For more information on Comments commercial feature, visit our [Premium Features]({{ site.baseurl }}/enterprise/tiny-comments/) page.

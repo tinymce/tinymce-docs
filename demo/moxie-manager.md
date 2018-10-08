@@ -1,5 +1,5 @@
 ---
-layout: draft
+layout: default
 title: MoxieManager
 title_nav: MoxieManager
 description_short: MoxieManager

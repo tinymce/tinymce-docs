@@ -1,15 +1,15 @@
 ---
 layout: default
-title: Tiny Drive
-title_nav: Tiny Drive
+title: Drive
+title_nav: Drive
 description_short: Tiny Drive
 description: Tiny Drive. A premium plugin to manage files & images.
-keywords: tinydrive .net php relative_urls
+keywords: tinydrive storage media tiny drive
 ---
 
 ## Live example
 
-This example shows you how to use Tiny Drive for your file and image management. For more information on the Tiny Drive plugin, see the [docs]({{site.baseurl}}/plugins/tinydrive/).
+This example shows you how to use Tiny Drive for your file and image management. For more information on the Tiny Drive plugin, see the [docs]({{site.baseurl}}/plugins/drive/).
 
 <textarea>
 <h2>The world's first rich text editor in the cloud</h2>
@@ -36,7 +36,7 @@ This example shows you how to use Tiny Drive for your file and image management.
   }
 </style>
 
-<script src="https://cloud.tinymce.com/dev/tinymce.min.js?apiKey=mewrstxy1qafkxzgwrof3s2apj0mnccleag1rsj527bs02fd"></script>
+<script src="https://devpreview.tiny.cloud/demo/tinymce.min.js"></script>
 <script>
 
 tinymce.init({

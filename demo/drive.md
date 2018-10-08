@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Tiny Drive
-title_nav: Tiny Drive
+title: Drive
+title_nav: Drive
 description_short: Tiny Drive
 description: Tiny Drive. A premium plugin to manage files & images.
 keywords: tinydrive storage media tiny drive

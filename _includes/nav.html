@@ -1,8 +1,9 @@
 <ul>
-
+{% unless include.recursed %}
   <li>
     <a  href="/docs-preview/">TinyMCE 5 Preview</a>
   </li>
+{% endunless %}
 
 {% for link in include.links %}
   {% capture slash_url_slash %}/{{ link.url }}/{% endcapture %}
@@ -26,7 +27,7 @@
     {% endif %}
 
     {% if link.pages %}
-      {% include nav.html links=link.pages preceding_address=address %}
+      {% include nav.html recursed=true links=link.pages preceding_address=address %}
     {% endif %}
   </li>
 {% endfor %}

@@ -29,8 +29,6 @@ description: These settings change the way the editor handles the input and outp
 
 {% include configuration/fix-list-elements.md %}
 
-{% include configuration/force-hex-style-colors.md %}
-
 {% include configuration/forced-root-block.md %}
 
 {% include configuration/forced-root-block-attrs.md %}

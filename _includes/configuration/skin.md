@@ -1,6 +1,6 @@
 ## skin
 
-This option allows you to specify the skin that TinyMCE should use. The default skin included with TinyMCE is named "lightgray".
+This option allows you to specify the skin that TinyMCE should use. The default skin included with TinyMCE is named "oxide".
 
 **Type:** `String`
 

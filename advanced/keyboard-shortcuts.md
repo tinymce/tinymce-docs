@@ -47,8 +47,8 @@ This is a list of keyboard shortcuts available within the editor user interface.
 | Focus next widget | Right Arrow / Tab / Down Arrow |
 | Focus previous widget | Left Arrow / Shift+Tab / Up Arrow |
 | Open widget menu | Down Arrow |
-| Open submenu | Left Arrow |
-| Close submenu | Right Arrow |
+| Open submenu | Right Arrow |
+| Close submenu | Left Arrow |
 | Close dialog | Esc |
 | Close menu | Esc |
 | Move focus back to editor body | Esc |

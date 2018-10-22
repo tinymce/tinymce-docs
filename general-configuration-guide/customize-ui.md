@@ -9,9 +9,9 @@ By now it should be clear that TinyMCE is incredibly powerful and at the same ti
 
 ### Themes
 
-TinyMCE comes with a beautiful, lightweight theme out of the box called "modern". This theme is enabled by default, and you can easily customize the menubar or toolbar without having to edit the theme.
+TinyMCE comes with a beautiful, lightweight theme out of the box called "Silver". This theme is enabled by default, and you can easily customize the menubar or toolbar without having to edit the theme.
 
-Although any developer can create their themes, it does require a more in-depth knowledge of TinyMCE's API and is beyond the scope of this Get Started guide.
+Although any developer can create their themes, it does require a more in-depth knowledge of TinyMCE's API and is beyond the scope of this guide.
 
 However, TinyMCE skins are much easier to make thanks to the TinyMCE Skin Creator.
 
@@ -26,7 +26,7 @@ Once you've created your skin, download it, unzip the file, and place it in the 
 ```js
 tinymce.init({
   selector: 'textarea'  // change this value according to your HTML
-  skin: 'lightgray'  // use the name of your skin, not lightgray
+  skin: 'oxide'  // use the name of your skin, not oxide
 });
 ```
 
@@ -34,7 +34,7 @@ If you are going to roll your skins, the name of the skin should match the name 
 
 > Pro tip. Many developers confuse the difference between TinyMCE themes and skins. You'll often see the term "theme" used by developers when they mean "skin". 
 
-### Changing editor height and width
+### Changing Editor Height and Width
 
 One of the most common UI customizations is changing the height and width of the editable area. Let's quickly look at how you can do this with some code snippets.
 

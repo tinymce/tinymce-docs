@@ -8,6 +8,21 @@ class: changelog
 
 {% capture changelog %}
 
+## Version 4.8.4, October 23, 2018
+* Added support for the HTML5 `main` element.
+* Changed the keyboard shortcut to move focus to contextual toolbars to Ctrl+F9.
+* Fixed a bug where content css could not be loaded from another domain.
+* Fixed a bug on FireFox where the cursor would get stuck between two contenteditable false inline elements located inside of the same block element divided by a BR.
+* Fixed a bug with the insertContent method where nonbreaking spaces would be inserted incorrectly.
+* Fixed a bug where the toolbar of the inline editor would not be visible in some scenarios.
+* Fixed a bug where removing the editor while more than one notification was open would throw an error.
+* Fixed a bug where the menubutton would be rendered on top of the menu if the viewport didn't have enough height.
+* Fixed a bug with the annotations api where annotating collapsed selections caused problems.
+* Fixed a bug where wbr elements were being transformed into whitespace when using the Paste Plugin's paste as text setting.
+* Fixed a bug where the Search and Replace didn't replace spaces correctly.
+* Fixed a bug with sublist items not persisting selection.
+* Fixed a bug with mceInsertRawHTML command not working as expected.
+
 ## Version 4.8.3, September 13, 2018
 * Fixed a bug where the Wordcount Plugin didn't correctly count words within tables on IE11.
 * Fixed a bug where it wasn't possible to move the caret out of a table on IE11 and Firefox.

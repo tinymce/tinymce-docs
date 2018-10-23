@@ -16,6 +16,7 @@ tinymce.init({
     selector: "div.tinymce",
     plugins: [ 'inlite' ],
     toolbar: false,
+    menubar: false,
     inline: true
 });
 ```
@@ -23,7 +24,8 @@ tinymce.init({
 ### Theme specific controls
 
 #### quicklink
-Lets you quickly insert/edit links inline.
+
+The `quicklink` lets you quickly insert/edit links inline.
 
 ##### Example:
 
@@ -32,14 +34,15 @@ tinymce.init({
     selector: "div.tinymce",
     plugins: [ 'inlite' ],
     toolbar: false,
+    menubar: false,
     inline: true,
-    selection_toolbar: 'bold italic | quicklink h2 h3 blockquote'
+    inlite_selection_toolbar: 'bold italic | quicklink h2 h3 blockquote'
 });
 ```
 
 #### quickimage
 
-Lets you quickly insert images from the local machine into the editor. These can then be automatically uploaded if you configure [image uploading]({{ site.baseurl }}/advanced/handle-async-image-uploads/).
+The `quickimage` lets you quickly insert images from the local machine into the editor. These can then be automatically uploaded if you configure [image uploading]({{ site.baseurl }}/advanced/handle-async-image-uploads/).
 
 ##### Example:
 
@@ -48,14 +51,15 @@ tinymce.init({
     selector: "div.tinymce",
     plugins: [ 'inlite' ],
     toolbar: false,
+    menubar: false,
     inline: true,
-    insert_toolbar: 'quickimage quicktable'
+    inlite_insert_toolbar: 'quickimage quicktable'
 });
 ```
 
 #### quicktable
 
-Lets you quickly insert a table 2x2 with 100% width.
+The `quicktable` lets you quickly insert a 2x2 table with 100% width.
 
 ##### Example:
 
@@ -64,8 +68,9 @@ tinymce.init({
     selector: "div.tinymce",
     plugins: [ 'inlite' ],
     toolbar: false,
+    menubar: false,
     inline: true,
-    insert_toolbar: 'quickimage quicktable'
+    inlite_insert_toolbar: 'quickimage quicktable'
 });
 ```
 

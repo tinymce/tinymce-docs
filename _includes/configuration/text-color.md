@@ -1,4 +1,4 @@
-## text-color
+## text_color
 
 The`textcolor` plugin adds the forecolor/backcolor button controls that enable you to pick colors from a color picker and apply these to text. It adds a toolbar button to enable this functionality.
 

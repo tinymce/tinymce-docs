@@ -41,7 +41,7 @@ tinymce.init({
 
 #### quickimage
 
-he `quickimage` lets you quickly insert images from the local machine into the editor. These can then be automatically uploaded if you configure [image uploading]({{ site.baseurl }}/advanced/handle-async-image-uploads/).
+The `quickimage` lets you quickly insert images from the local machine into the editor. These can then be automatically uploaded if you configure [image uploading]({{ site.baseurl }}/advanced/handle-async-image-uploads/).
 
 ##### Example:
 

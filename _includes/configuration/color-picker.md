@@ -2,7 +2,7 @@
 
 The `colorpicker` plugin adds an HSV color picker dialog to the editor. When activated **in conjunction with** the [textcolor plugin](../textcolor/) it adds a "custom color" button to the text color toolbar dropdown. When a user clicks "custom color" a modal will open presenting a color wheel so that the user can choose their own colors (rather than the ones defined by `textcolor`) to be applied to text and/or the selected text's background.
 
-The plugin hooks into the [`color_picker_callback`](#color_picker_callback) so you provide your own color picker specification to the user.
+The plugin hooks into the editor [`color_picker_callback`](#color_picker_callback) api, which is a hookin point reserved for any color picker implementation in TinyMCE.
 
 **Type:** `String`
 

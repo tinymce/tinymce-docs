@@ -1,6 +1,6 @@
 ## text_color
 
-The`textcolor` component adds the forecolor/backcolor button controls that enable you to pick colors from a color picker and apply these to text. It adds a toolbar button to enable this functionality.
+The `textcolor` component adds the forecolor/backcolor button controls that enable you to pick colors from a color picker and apply them to text. It adds a toolbar button to allow this functionality.
 
 **Type:** `String`
 
@@ -15,11 +15,11 @@ tinymce.init({
 
 ### Options
 
-These settings affect the execution of the `textcolor` plugin. The dimensions and mapping of the grid of text colors may be set here.
+These settings affect the execution of the `textcolor` plugin. You can set the dimensions and mapping of the grid of text colors here.
 
 ### `color_cols`
 
-This option allows you to specify how many columns appear on the grid of text colors.  The amount of rows are calcualated based on how many text colors are supplied divided by the specified number of columns.  The textcolor_cols and textcolor_rows property have been removed sinced TinyMCE 5.0
+This option allows you to specify how many columns appear on the grid of text colors.  The number of rows is calculated based on how many text colors are supplied divided by the specified number of columns.  The `textcolor_cols` and `textcolor_rows` property has been removed in TinyMCE 5.0.
 
 **Type:** `String`
 

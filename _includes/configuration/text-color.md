@@ -15,7 +15,7 @@ tinymce.init({
 
 ### Options
 
-These settings affect the execution of the `textcolor` plugin. You can set the dimensions and mapping of the grid of text colors here.
+These settings affect the execution of the `textcolor`. You can set the dimensions and mapping of the grid of text colors here.
 
 ### `color_cols`
 

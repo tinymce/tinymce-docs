@@ -1,6 +1,6 @@
 ## text_color
 
-The`textcolor` plugin adds the forecolor/backcolor button controls that enable you to pick colors from a color picker and apply these to text. It adds a toolbar button to enable this functionality.
+The`textcolor` component adds the forecolor/backcolor button controls that enable you to pick colors from a color picker and apply these to text. It adds a toolbar button to enable this functionality.
 
 **Type:** `String`
 
@@ -8,8 +8,7 @@ The`textcolor` plugin adds the forecolor/backcolor button controls that enable y
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
-  plugins: "textcolor",
+  selector: "textarea",
   toolbar: "forecolor backcolor"
 });
 ```
@@ -18,28 +17,9 @@ tinymce.init({
 
 These settings affect the execution of the `textcolor` plugin. The dimensions and mapping of the grid of text colors may be set here.
 
-### `textcolor_cols`
+### `color_cols`
 
-This option allows you to specify how many columns appear on the grid of text colors.
-
-**Type:** `String`
-
-**Default Value:** `"8"`
-
-##### Example
-
-```js
-tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "textcolor",
-  toolbar: "forecolor backcolor",
-  textcolor_cols: "5"
-});
-```
-
-### `textcolor_rows`
-
-This option allows you to specify how many rows appear on the grid of text colors.
+This option allows you to specify how many columns appear on the grid of text colors.  The amount of rows are calcualated based on how many text colors are supplied divided by the specified number of columns.  The textcolor_cols and textcolor_rows property have been removed sinced TinyMCE 5.0
 
 **Type:** `String`
 
@@ -50,13 +30,11 @@ This option allows you to specify how many rows appear on the grid of text color
 ```js
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
-  plugins: "textcolor",
   toolbar: "forecolor backcolor",
-  textcolor_rows: "4"
+  color_cols: "5"
 });
 ```
-
-### `textcolor_map`
+### `color_map`
 
 This option allows you to specify a map of the text colors that will appear in the grid.
 
@@ -67,9 +45,8 @@ This option allows you to specify a map of the text colors that will appear in t
 ```js
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
-  plugins: "textcolor",
   toolbar: "forecolor backcolor",
-  textcolor_map: [
+  color_map: [
     "000000", "Black",
     "993300", "Burnt orange",
     "333300", "Dark olive",

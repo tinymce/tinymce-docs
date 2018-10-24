@@ -13,6 +13,6 @@ tinymce.init({
   selector: 'div.tinymce',
   theme: 'inlite',
   inline: true,
-  insert_toolbar: 'quickimage quicktable'
+  inlite_insert_toolbar: 'quickimage quicktable'
 });
 ```

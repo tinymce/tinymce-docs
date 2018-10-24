@@ -6,7 +6,7 @@ description: Prevent users from changing content within elements. Ideal for temp
 keywords: noneditable contenteditable editable mceNonEditable noneditable_editable_class noneditable_noneditable_class noneditable_regexp
 ---
 
-> **Updated in 4.3!** The `noneditable` plugin has been rewritten from scratch to use stability improvements to the TinyMCE core released in version 4.3. It is now more reliable and has fewer browser-specific quirks.
+> The `noneditable` plugin has been rewritten from scratch to use stability improvements to the TinyMCE core. It is now more reliable and has fewer browser-specific quirks.
 
 This plugin enables you to prevent users from being able to edit content within elements assigned the `mceNonEditable` class.
 
@@ -91,6 +91,6 @@ This option allows you to specify a regular expression or array of regular expre
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "noneditable",
-  noneditable_regexp: [/<custom-token>/g]
+  noneditable_regexp: /<custom-token>/g
 });
 ```

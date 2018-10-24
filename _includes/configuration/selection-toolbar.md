@@ -13,6 +13,6 @@ tinymce.init({
   selector: 'div.tinymce',
   theme: 'inlite',
   inline: true,
-  selection_toolbar: 'bold italic | quicklink h2 h3 blockquote'
+  inlite_selection_toolbar: 'bold italic | quicklink h2 h3 blockquote'
 });
 ```

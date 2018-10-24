@@ -13,7 +13,7 @@ The syntax for this option is a comma separated list of parents with elements th
 | +    | Adds children to the list of valid elements for the specified parent. |
 | -    | Removes children from the list of valid children for the specified parent. |
 
-This example shows you how to add style as a valid child of body and remove div as a valid child. It also forces only strong and a and text contents to be valid children of `p`.
+This example shows you how to add `style` as a valid child of `body` and remove `div` as a valid child. It also forces only `strong`, `a`, and `text` contents to be valid children of `p`.
 
 **Type:** `String`
 
@@ -26,4 +26,4 @@ tinymce.init({
 });
 ```
 
-This is an option you shouldn't have to fiddle with, the default ruleset for this follows the HTML5 specification and some legacy elements from HTML4. You can switch between these defaults by configuring the [`schema`](#scheme) option.
+This is an option you shouldn't have to fiddle with. The default rule set for this follows the HTML5 specification and some legacy elements from HTML4. You can switch between these defaults by configuring the [`schema`](#scheme) option.

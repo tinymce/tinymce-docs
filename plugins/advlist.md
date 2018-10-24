@@ -35,6 +35,7 @@ This option allows you to include specific unordered list item markers in the de
 
 **Possible Values:**
 
+  * `default`: your browser's default style
   * `circle`: a hollow circle
   * `disc`: a filled circle
   * `square`: a filled square
@@ -59,6 +60,7 @@ This option allows you to include specific ordered list item markers in the defa
 
 **Possible Values:**
 
+  * `default`: your browser's default style
   * `lower-alpha`: lowercase ASCII letters, e.g. a, b, c, ... z
   * `lower-greek`: lowercase classical Greek (alpha, beta, gamma), e.g. α, β, γ ...
   * `lower-roman`: lowercase roman numerals, e.g. i, ii, iii, iv, v ...

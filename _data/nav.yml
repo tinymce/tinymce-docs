@@ -100,10 +100,12 @@
     pages:
     - url: "#body_class"
     - url: "#body_id"
+    - url: "#color_picker"
     - url: "#content_css"
     - url: "#content_style"
     - url: "#inline_boundaries"
     - url: "#inline_boundaries_selector"
+    - url: "#text_color"
     - url: "#visual_anchor_class"
     - url: "#visual_table_class"
     - url: "#visual"
@@ -121,8 +123,6 @@
     - url: "#entity_encoding"
     - url: "#extended_valid_elements"
     - url: "#fix_list_elements"
-    - url: "#force_hex_style_colors"
-    - url: "#force_p_newlines-(deprecated)"
     - url: "#forced_root_block"
     - url: "#forced_root_block_attrs"
     - url: "#invalid_elements"
@@ -224,8 +224,6 @@
   - url: "code"
   - url: "codesample"
   - url: "colorpicker"
-    pages:
-    - url: "#color_picker_callback"
   - url: "comments"
   - url: "contextmenu"
   - url: "directionality"
@@ -270,6 +268,7 @@
     - url: "#importcss_groups"
     - url: "#importcss_merge_classes"
     - url: "#importcss_selector_converter"
+  - url: "inlite"
   - url: "insertdatetime"
     pages:
     - url: "#insertdatetime_dateformat"

@@ -38,7 +38,7 @@ tinymce.init({
 });
 ```
 
-Further examples of the `contextmenu` option are available in the [context menu examples](example).
+Further examples of the `contextmenu` option are available in the [context menu examples]({{site.baseurl}}./#exampleusage).
 
 ### `contextmenu_never_use_native`
 
@@ -105,10 +105,6 @@ When creating a dynamic menu, the structure `type` properties are used in order 
 * type `item` (default) is a regular menu item, and must have an `onAction` method.
 * type `submenu` must have `getSubmenuItems`, and if it has an `onAction` property it is ignored.
 * type `separator` ignores all other properties.
-
-#### Example
-
-Examples of registering context menu sections are available in the [context menu examples]({{site.baseurl}}../example).
 
 ## Example Usage
 

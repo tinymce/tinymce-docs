@@ -1,8 +1,8 @@
 ---
 layout: default
-title: Components
-title_nav: Components
-description: Components are the configurable UI elements available for user customization.
+title: UI Elements
+title_nav: UI Elements
+description: These are the configurable UI elements available for user customization.
 keywords: toolbar toolbarbuttons buttons toolbarbuttonsapi
 type: folder
 ---

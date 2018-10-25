@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Overview
-title_nav: Overview
+title: Dialog
+title_nav: Dialog
 description: Dialog is a TinyMCE UI component used to display simple information.
 keywords: dialog dialogapi api
 ---
@@ -24,7 +24,7 @@ The simple dialogs are used to display simple information, such as source code p
 
 A dialog is a TinyMCE UI component. You can use one of the many TinyMCE components inside your dialogs to fulfill a use case. For example, the `search` and `replace` dialog is made up of two input fields - two check boxes and five buttons. We compose components by using a configuration structure. The most basic configuration structure is this:
 
-### Example
+For example,
 
 ```js
 const dialogConfig = {
@@ -43,11 +43,11 @@ Using the above example, calling `tinymce.activeEditor.windowManager.open(dialog
 
 The complex dialogs are used to display complex information. These sections can be contained within tabs. For example, the help dialog or the special chars dialog. These dialogs need a way to set the desired content into a defined tab section.
 
-#### Interactive
+### Interactive
 
 The interactive dialogs use web forms to collect interaction data, and then apply the data  (e.g.: The search and replace dialog uses an input field.  Where the input text will be used as the search key). These are the most complex forms of dialogs and requires the ability to define what data is required, and how to get that data when we need it, and how to set the data to what we want.
 
-#### Example Interactive - Pet Name Machine
+The following `Pet Name Machine` example illustrates an interactive dialog:
 
 {% include codepen.html id="dialog-pet-machine" height="150" tab="js" %}
 
@@ -153,3 +153,28 @@ var buttonConfig = {
 **Disabled:** value: `boolean`, (defaults to false): When set to `true`, the button will be disabled when the dialog loads. To toggle between disabled and enabled states, use `dialogApi.enable(name)` or `dialogApi.disable(name)`. See [dialogApi]({{site.baseurl}}../component).
 
 **Primary:** (defaults to false):  When set to `true`, the button will be colored to standout. The color will depend on the chosen skin.
+
+## Example
+
+### Interactive Example using `redial(config): void’
+
+The following example demonstrates custom buttons using the redial dialog for creating two separate dialogs that we cycle through by pressing the `Next` button.
+
+To see the output of the code, click on the TinyMCE tab on the fiddle below.
+
+{% include codepen.html id="redial" height="900" tab="js" %}
+
+In this redial example, we have two separate dialogs that we cycle through by pressing the `Next` button.  In the configuration structure, the first level is like any other dialog.
+
+The difference is the `onAction` call, loads a new configuration for the dialog using redial.  The configuration we use in the `redial(dialogConf)`` call can be any supported dialog structure.  We could even replace this 'Redial Demo' configuration, with the Pet Name Machine example in the dialog [overview]({{site.baseurl}}./overview/) section.
+
+This demo also includes the use of `dialogApi.enable` and `dialogApi.disable` to disable the `Next` button when user input is required.  For checkboxes, we use the `onChange` callback to handle the changes for the checkbox data.  The checkbox data is mapped to its defined name: `anyterms`.  When a user clicks or presses enter on the checkbox, the new value of the checkbox is returned by the `getData()` call stored in the `anyterms` property.  Given the state of the checkbox, we either `disable` or `enable` the `Next` button.
+
+The `onAction` callback at the root level, is the handler for the `Previous` and `Next` buttons. The `onAction` handler is shared across multiple buttons, and we use the name property to identify the clicked button.  The `Previous` button named 'doesnothing' is used to highlight branching.
+
+A **Switch** statement could be used to handle many buttons.
+
+The `onAction` callback inside the `redial()` call, is a separate handler for the redialed dialog.  Since there is only one button, we don't check which named button triggered the click. This handler demonstrates the `dialogApi.close()` API.
+
+> Note: Please see [this]({{site.baseurl}}/api-reference-guide/dialog/component) page for a comprehensive list of components.
+

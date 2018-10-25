@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Component
-title_nav: Component
+title: Dialog Components
+title_nav: Dialog Components
 description: Dialog component summary is a reference list of all TinyMCE UI components that can be used to display simple information.
 keywords: dialog dialogapi
 ---
@@ -259,5 +259,5 @@ A **URlInput** is a specialized input text field for image dialog. This will inc
       filetype: 'file',
       label: 'Url'
     }
-    // Note that "filetype" also accepts "media" 
+    // Note that "filetype" also accepts "media"
 ```

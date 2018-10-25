@@ -2,20 +2,24 @@
 layout: default
 title: Context Forms
 title_nav: Context Forms
-description: Context Toolbar Components
-keywords: contexttoolbar context toolbar contexttoolbarapi contextform
+description: Context Forms Overview
+keywords: contextforms context forms contextformsbarapi
 ---
 
 ## Context Forms
 
 A ContextForm consists of an input field, and a series of related buttons. Context forms can be shown wherever a context toolbar can be shown. Also, when a context form is registered containing a `launch` configuration, a special context toolbar button with name `form:${name}` is registered which will launch that particular context form.
-ContextForms are a generalisation of the `Insert Link` form that existed in the original `inlite` plugin from [TinyMCE 4](https://www.tiny.cloud/docs/themes/inlite/#quicklink).
+ContextForms are a generalisation of the `Insert Link` form that existed in the original [inlite](https://www.tiny.cloud/docs/themes/inlite/#quicklink) plugin from TinyMCE 4.
 
 ### Registering a Context Form
 
 A ContextForm is registered by calling the `addContextForm` API in the registry. The specification of a ContextForm is separated into two parts:
 
-#### Launch
+### Launch
+
+The button strings for launching a ContextForm is of the form `form:${name}` where name is the registered name of the context form (e.g. form:link).
+
+> Note: These buttons will only be present if the 'launch` setting of the ContextForm is specified.
 
 The Launch specification. This relates to what the button that launches this form will look like.
 
@@ -23,8 +27,36 @@ The Launch specification. This relates to what the button that launches this for
 | ---- | ------- |
 | `launch` | This is the specification for the launching button that can appear in a ContextToolbar only. It will be either type: `contextformbutton` or `contextformtogglebutton`, and will be identical to those definitions below except it will **not** have an `onAction`. |
 
+#### Launching ContextForms from a ContextToolbar
 
-#### Form
+If a registered ContextForm has a `launch` setting, then it can be launched from a ContextToolbar. The name of item will be `form:${name}` (e.g. 'form:link'). When the user presses this button, the toolbar will change into the specified ContextForm. If you the user presses Esc in a ContextForm that was launched through a ContextToolbar, they will be returned to the original ContextToolbar.
+
+#### Launching a ContextForm programmatically
+
+There is an `editor` event called `contexttoolbar-show` that can be fired to show a ContextForm at the current selection. The event takes a parameter `toolbarKey` which specifies the name of the registered ContextForm or ContextToolbar to show.
+
+### ContextForm Priority
+
+Two of the settings for a ContextForm determine its priority: `predicate` and `scope`. The priority system mirrors the old `inlite` plugin. The `predicate` is a function that takes in the current context position and returns a boolean. The `scope` is either `node` or `editor`. The whole priority process works as follows:
+
+1. The current cursor position is stored to use as the first current context position
+2. For this current context position, each predicate with `scope: node` in the registered ContextForm is called. Currently, the order they are checked cannot be specified. The first predicate that passes will `win` and that ContextForm will be shown.
+3. If no predicates (scope: node) match the current context position, then all of the `scope: editor` predicates are tried. The first one that matches the editor context wins.
+4. If no `scope: editor` predicates match, then the new context position is calculated by going up the tree one level to the parent node. All `scope: node` predicates are then checked again. As soon as one matches, it *wins* and that ContextForm is shown. If nothing matches, it goes up the tree and tries again.
+
+> Note: Only `scope: node` predicates are checked at this stage. The `scope: editor` predicate is only checked once and that check only happens in (2).
+
+> Caution: Since the order in which the ContextForms and ContextToolbars are checked is not specified, try not to have their predicates overlap.
+
+### Positioning ContextForms
+
+There are two options for how to position a ContextForm: `selection` or `line`.
+
+* A `selection` position will place the ContextForm above or below the current selection, centred if possible.
+
+* A `line` position will place the ContextForm to the right (or left in Right-to-Left languages) of the current selection.
+
+### Form
 
 The Form specification: This relates to the form itself.
 
@@ -41,7 +73,6 @@ The Form specification: This relates to the form itself.
 ### Context Form buttons
 
 Unlike normal context toolbar buttons, Context form buttons are not registered beforehand. Instead, you need to define each button completely in the `commands` section.
-
 
 #### ContextForm Button
 

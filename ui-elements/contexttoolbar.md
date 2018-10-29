@@ -46,9 +46,9 @@ There are two options for how to position a ContextToolbar: `selection` or `line
 
 * A `line` position will place the ContextToolbar to the right (or left in Right-to-Left languages) of the current selection.
 
-### Example Configuration
+<!--- ### Example Configuration
 
-<!--- In this example, a custom toolbar object with two custom toolbar buttons is created and added to a configuration object via the ui toolbar property. This config is then used to create an  editor by replace.
+In this example, a custom toolbar object with two custom toolbar buttons is created and added to a configuration object via the ui toolbar property. This config is then used to create an  editor by replace.
 
 ```js
 var customToolbar = {

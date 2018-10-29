@@ -48,7 +48,7 @@ There are two options for how to position a ContextToolbar: `selection` or `line
 
 ### Example Configuration
 
-In this example, a custom toolbar object with two custom toolbar buttons is created and added to a configuration object via the ui toolbar property. This config is then used to create an  editor by replace.
+<!--- In this example, a custom toolbar object with two custom toolbar buttons is created and added to a configuration object via the ui toolbar property. This config is then used to create an  editor by replace.
 
 ```js
 var customToolbar = {
@@ -92,6 +92,6 @@ var config = {
 };
 
 var editor = textboxio.replace('#targetId', config);
-```
+``` --->
 
 

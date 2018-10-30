@@ -37,24 +37,11 @@ There is an `editor` event called `contexttoolbar-show` that can be fired to sho
 
 ### ContextForm Priority
 
-Two of the settings for a ContextForm determine its priority: `predicate` and `scope`. The priority system mirrors the old `inlite` plugin. The `predicate` is a function that takes in the current context position and returns a boolean. The `scope` is either `node` or `editor`. The whole priority process works as follows:
-
-1. The current cursor position is stored to use as the first current context position
-2. For this current context position, each predicate with `scope: node` in the registered ContextForm is called. Currently, the order they are checked cannot be specified. The first predicate that passes will `win` and that ContextForm will be shown.
-3. If no predicates (scope: node) match the current context position, then all of the `scope: editor` predicates are tried. The first one that matches the editor context wins.
-4. If no `scope: editor` predicates match, then the new context position is calculated by going up the tree one level to the parent node. All `scope: node` predicates are then checked again. As soon as one matches, it *wins* and that ContextForm is shown. If nothing matches, it goes up the tree and tries again.
-
-> Note: Only `scope: node` predicates are checked at this stage. The `scope: editor` predicate is only checked once and that check only happens in (2).
-
-> Caution: Since the order in which the ContextForms and ContextToolbars are checked is not specified, try not to have their predicates overlap.
+{% include context/priority.md %}
 
 ### Positioning ContextForms
 
-There are two options for how to position a ContextForm: `selection` or `line`.
-
-* A `selection` position will place the ContextForm above or below the current selection, centred if possible.
-
-* A `line` position will place the ContextForm to the right (or left in Right-to-Left languages) of the current selection.
+{% include context/positioning.md %}
 
 ### Form
 

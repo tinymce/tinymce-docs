@@ -9,7 +9,7 @@ keywords: contextforms context forms contextformsbarapi
 ## Context Forms
 
 A ContextForm consists of an input field, and a series of related buttons. Context forms can be shown wherever a context toolbar can be shown. Also, when a context form is registered containing a `launch` configuration, a special context toolbar button with name `form:${name}` is registered which will launch that particular context form.
-ContextForms are a generalisation of the `Insert Link` form that existed in the original [inlite](https://www.tiny.cloud/docs/themes/inlite/#quicklink) plugin from TinyMCE 4.
+ContextForms are a generalisation of the `Insert Link` form that existed in the original [inlite](https://www.tiny.cloud/docs/themes/inlite/#quicklink) theme from TinyMCE 4.
 
 ### Registering a Context Form
 
@@ -41,7 +41,13 @@ There is an `editor` event called `contexttoolbar-show` that can be fired to sho
 
 ### Positioning ContextForms
 
-{% include context/positioning.md %}
+There are two options for positioning: `selection` or `line`.
+
+* A `selection` position will place the ContextForm above or below the current selection, centred if possible.
+
+* A `line` position will place the ContextForm to the right (or left in Right-to-Left languages) of the current selection.
+
+* A `node` position will place the ContextForm relative to the bounds of a node (e.g. a table or image). It applies to a selected node that does not match the selection due to CSS properties( like float).
 
 ### Form
 

@@ -31,7 +31,14 @@ There is an `editor` event called `contexttoolbar-show` that can be fired to sho
 
 ### Positioning ContextToolbars
 
-{% include context/positioning.md %}
+There are three options for positioning are: `selection`, `line`, or `node`.
+
+* A `selection` position will place the ContextToolbars above or below the current selection, centred if possible.
+
+* A `line` position will place the ContextToolbars to the right (or left in Right-to-Left languages) of the current selection.
+
+* A `node` position will place the ContextToolbars relative to the bounds of a node (e.g. a table or image). It applies to a selected node that does not match the selection due to CSS properties( like float).
+
 
 
 <!--- ### Example Configuration

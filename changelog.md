@@ -8,7 +8,14 @@ class: changelog
 
 {% capture changelog %}
 
-## Version 4.8.4, October 23, 2018
+## Version 4.8.5 October 30, 2018
+* Added a content_css_cors setting to the editor that adds the crossorigin="anonymous" attribute to link tags added by the StyleSheetLoader.
+* Fixed a bug where trying to remove formatting with a collapsed selection range would throw an exception.
+* Fixed a bug in the image plugin that caused updating figures to split contenteditable elements.
+* Fixed a bug that was causing incorrect viewport calculations for fixed position UI elements.
+* Fixed a bug where inline formatting would cause the delete key to do nothing.
+
+## Version 4.8.4 October 23, 2018
 * Added support for the HTML5 `main` element.
 * Changed the keyboard shortcut to move focus to contextual toolbars to Ctrl+F9.
 * Fixed a bug where content css could not be loaded from another domain.
@@ -23,7 +30,7 @@ class: changelog
 * Fixed a bug with sublist items not persisting selection.
 * Fixed a bug with mceInsertRawHTML command not working as expected.
 
-## Version 4.8.3, September 13, 2018
+## Version 4.8.3 September 13, 2018
 * Fixed a bug where the Wordcount Plugin didn't correctly count words within tables on IE11.
 * Fixed a bug where it wasn't possible to move the caret out of a table on IE11 and Firefox.
 * Fixed a bug where merging empty blocks didn't work as expected, sometimes causing content to be deleted.

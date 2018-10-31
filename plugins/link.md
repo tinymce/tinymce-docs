@@ -203,7 +203,7 @@ tinymce.init({
     {title: 'None', value: ''},
     {title: 'Same page', value: '_self'},
     {title: 'New page', value: '_blank'},
-    {title: 'LIghtbox', value: '_lightbox'}
+    {title: 'Lightbox', value: '_lightbox'}
   ]
 });
 ```

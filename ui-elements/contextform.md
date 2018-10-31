@@ -2,20 +2,24 @@
 layout: default
 title: Context Forms
 title_nav: Context Forms
-description: Context Toolbar Components
-keywords: contexttoolbar context toolbar contexttoolbarapi contextform
+description: Context Forms Overview
+keywords: contextforms context forms contextformsbarapi
 ---
 
 ## Context Forms
 
 A ContextForm consists of an input field, and a series of related buttons. Context forms can be shown wherever a context toolbar can be shown. Also, when a context form is registered containing a `launch` configuration, a special context toolbar button with name `form:${name}` is registered which will launch that particular context form.
-ContextForms are a generalisation of the `Insert Link` form that existed in the original `inlite` plugin from [TinyMCE 4](https://www.tiny.cloud/docs/themes/inlite/#quicklink).
+ContextForms are a generalisation of the `Insert Link` form that existed in the original [inlite](https://www.tiny.cloud/docs/themes/inlite/#quicklink) theme from TinyMCE 4.
 
 ### Registering a Context Form
 
 A ContextForm is registered by calling the `addContextForm` API in the registry. The specification of a ContextForm is separated into two parts:
 
-#### Launch
+### Launch
+
+The button strings for launching a ContextForm is of the form `form:${name}` where name is the registered name of the context form (e.g. form:link).
+
+> Note: These buttons will only be present if the 'launch` setting of the ContextForm is specified.
 
 The Launch specification. This relates to what the button that launches this form will look like.
 
@@ -23,8 +27,29 @@ The Launch specification. This relates to what the button that launches this for
 | ---- | ------- |
 | `launch` | This is the specification for the launching button that can appear in a ContextToolbar only. It will be either type: `contextformbutton` or `contextformtogglebutton`, and will be identical to those definitions below except it will **not** have an `onAction`. |
 
+#### Launching ContextForms from a ContextToolbar
 
-#### Form
+If a registered ContextForm has a `launch` setting, then it can be launched from a ContextToolbar. The name of item will be `form:${name}` (e.g. 'form:link'). When the user presses this button, the toolbar will change into the specified ContextForm. If you the user presses Esc in a ContextForm that was launched through a ContextToolbar, they will be returned to the original ContextToolbar.
+
+#### Launching a ContextForm programmatically
+
+There is an `editor` event called `contexttoolbar-show` that can be fired to show a ContextForm at the current selection. The event takes a parameter `toolbarKey` which specifies the name of the registered ContextForm or ContextToolbar to show.
+
+### ContextForm Priority
+
+{% include context/priority.md %}
+
+### Positioning ContextForms
+
+There are two options for positioning: `selection` or `line`.
+
+* A `selection` position will place the ContextForm above or below the current selection, centred if possible.
+
+* A `line` position will place the ContextForm to the right (or left in Right-to-Left languages) of the current selection.
+
+* A `node` position will place the ContextForm relative to the bounds of a node (e.g. a table or image). It applies to a selected node that does not match the selection due to CSS properties (like float).
+
+### Form
 
 The Form specification: This relates to the form itself.
 
@@ -41,7 +66,6 @@ The Form specification: This relates to the form itself.
 ### Context Form buttons
 
 Unlike normal context toolbar buttons, Context form buttons are not registered beforehand. Instead, you need to define each button completely in the `commands` section.
-
 
 #### ContextForm Button
 

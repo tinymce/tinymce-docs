@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Overview
-title_nav: Overview
+title: Context Menu
+title_nav: Context Menu
 description: Context Menu Overview
 keywords: contextmenu context menu contextmenuapi
 ---
@@ -38,7 +38,7 @@ tinymce.init({
 });
 ```
 
-Further examples of the `contextmenu` option are available in the [context menu examples](example).
+Further examples of the `contextmenu` option are available in the [context menu examples]({{site.baseurl}}./#exampleusage).
 
 ### `contextmenu_never_use_native`
 
@@ -106,6 +106,23 @@ When creating a dynamic menu, the structure `type` properties are used in order 
 * type `submenu` must have `getSubmenuItems`, and if it has an `onAction` property it is ignored.
 * type `separator` ignores all other properties.
 
-#### Example
+<!--- ## Example Usage
 
-Examples of registering context menu sections are available in the [context menu examples]({{site.baseurl}}../example).
+This example creates a menu with a mixture of dynamic and static menu items. While `link` is the name of both a context menu section and a menu item, context menu sections take preference (the link context menu is dynamic based on the cursor position).
+
+The other item names are all menu items and will appear on the context menu regardless of cursor position. A separator is used to distinguish the table edit features from the table insert feature. As `link` is a context menu section, a separator will automatically be inserted after it so it is not necessary to specify one in the configuration.
+
+```js
+tinymce.init({
+  selector: "textarea",
+  contextmenu: "link bold italic inserttable | cell row column deletetable"
+});
+``` 
+--->
+
+## Defining a Context Menu Section
+
+This example shows how the image plugin dynamically adds the standard image menu section to the context menu. The image context menu section is empty unless the selected element is an image.
+
+{% include codepen.html id="contextmenu-section" height="900" tab="js" %}
+

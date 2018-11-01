@@ -20,8 +20,8 @@ build:
 deploy:
   steps:
     - s3sync:
-        key-id: $S3_KEY
-        key-secret: $S3_SECRET
+        key-id: $AWS_ACCESS_KEY_ID
+        key-secret: $AWS_SECRET_ACCESS_KEY
         bucket-url: $S3_BUCKET/docs/
         source-dir: $S3_SOURCE
         opts: --delete-removed
@@ -32,6 +32,11 @@ deploy:
   after-steps:
     - slack-notifier:
         url: $SLACK_WEBHOOK_URL
+        
+invalidate_cache:
+  steps:
+    - script:
+        code: aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_DISTRIBUTION_ID --paths "/docs-preview/*"
 
 deploy_branch:
   steps:
@@ -42,12 +47,12 @@ deploy_branch:
         name: get bucket name
         code: export S3_BUCKET=$(node -e 'console.log(`s3://docs-v5-${process.env.WERCKER_GIT_BRANCH.replace(/[/\s]/g, "-").replace(/[^0-9a-zA-Z-]/g, "").replace(/-$/g, "").toLowerCase()}.staging.tiny.cloud`)')
     - s3sync:
-        key-id: $S3_KEY
-        key-secret: $S3_SECRET
+        key-id: $AWS_ACCESS_KEY_ID
+        key-secret: $AWS_SECRET_ACCESS_KEY
         bucket-url: $S3_BUCKET
         source-dir: _essentials
     - s3sync:
-        key-id: $S3_KEY
-        key-secret: $S3_SECRET
+        key-id: $AWS_ACCESS_KEY_ID
+        key-secret: $AWS_SECRET_ACCESS_KEY
         bucket-url: $S3_BUCKET/docs-preview/
         source-dir: $S3_SOURCE

@@ -100,52 +100,69 @@ index.css
 </form>
 
 <script>
-  (function() {
-{{ codepen_js }}
-  })();
+  var isIE = !!window.MSInputMethodContext && !!document.documentMode;
 
-  (function() {
-    /* TODO: more js, less jekyll */
-    var id = "{{ include.id }}";
+  if (isIE) {
+    document.getElementsByClassName("codepen")[0].innerHTML =
+      "<div style='background-color: #ededed; height: 30rem; display: flex; justify-content: center; align-items: center;'>" +
+        "<div style='text-align: center'>" +
+          '<svg width="48" height="48" xmlns="http://www.w3.org/2000/svg"><g transform="translate(1 1)" stroke="#FF307C" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"><circle cx="23" cy="23" r="23"/><path d="M12 18.5a.5.5 0 1 1 0 1 .5.5 0 0 1 0-1m22 0a.5.5 0 1 0 0 1 .5.5 0 0 0 0-1M14 37a9 9 0 0 1 18 0"/></g></svg>' +
+          "<p style='color: #FF307C; font-weight: 600; margin-bottom: 0'>" +
+            "Unfortunately, our demos no longer support Internet Explorer 11" +
+          "</p>" +
+          "<p style='font-size: 14px;'>" +
+            "Don't worry, TinyMCE still works with Internet Explorer 11" +
+          "</p>" +
+        "</div>" +
+      "</div>";
+  } else {
+    (function() {
+      {{ codepen_js }}
+    })();
 
-    var html = decodeURIComponent("{{ codepen_html | uri_escape }}");
-    var js = decodeURIComponent("{{ codepen_js | uri_escape }}");
-    var css = decodeURIComponent("{{ codepen_css | uri_escape }}");
+    (function() {
+      /* TODO: more js, less jekyll */
+      var id = "{{ include.id }}";
 
-    /* Note: there are some other fields we could populate here to polish this. */
-    /* See: https://blog.codepen.io/documentation/api/prefill/ */
-    var data = {
-      title: "TinyMCE Example",
-      description: '',
-      html: html,
-      css: css,
-      css_external: 'https://www.tiny.cloud/css/codepen.min.css',
-      js: js,
-      js_external: '{{ site.codepen_url }}'
-    };
-    document.getElementById("codepen_data_{{ include.id }}").value = JSON.stringify(data);
+      var html = decodeURIComponent("{{ codepen_html | uri_escape }}");
+      var js = decodeURIComponent("{{ codepen_js | uri_escape }}");
+      var css = decodeURIComponent("{{ codepen_css | uri_escape }}");
 
-    /* TODO: */
-    var tabs = ["run","html","css","js"].map(function(t) {
-      return {
-        tab: document.getElementById("codepen_tab_" + t + "_" + id),
-        pane: document.getElementById("codepen_pane_" + t + "_" + id)
+      /* Note: there are some other fields we could populate here to polish this. */
+      /* See: https://blog.codepen.io/documentation/api/prefill/ */
+      var data = {
+        title: "TinyMCE Example",
+        description: '',
+        html: html,
+        css: css,
+        css_external: 'https://www.tiny.cloud/css/codepen.min.css',
+        js: js,
+        js_external: '{{ site.codepen_url }}'
       };
-    });
+      document.getElementById("codepen_data_{{ include.id }}").value = JSON.stringify(data);
 
-    tabs.forEach(function(t) {
-      t.tab.onclick = function() {
-        tabs.forEach(function(tt) {
-          tt.pane.style.display = t === tt ? 'block' : 'none';
-          tt.tab.className = t === tt ? 'codepen_tab_selected' : 'codepen_tab_deselected';
-        });
-        return false;
+      /* TODO: */
+      var tabs = ["run","html","css","js"].map(function(t) {
+        return {
+          tab: document.getElementById("codepen_tab_" + t + "_" + id),
+          pane: document.getElementById("codepen_pane_" + t + "_" + id)
+        };
+      });
+
+      tabs.forEach(function(t) {
+        t.tab.onclick = function() {
+          tabs.forEach(function(tt) {
+            tt.pane.style.display = t === tt ? 'block' : 'none';
+            tt.tab.className = t === tt ? 'codepen_tab_selected' : 'codepen_tab_deselected';
+          });
+          return false;
+        };
+      });
+
+      document.getElementById("codepen_tab_codepen_" + id).onclick = function() {
+        document.getElementById("codepen_form_" + id).submit();
       };
-    });
 
-    document.getElementById("codepen_tab_codepen_" + id).onclick = function() {
-      document.getElementById("codepen_form_" + id).submit();
-    };
-
-  })();
+    })();
+  }
 </script>

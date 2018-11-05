@@ -133,3 +133,4 @@ app.listen(3000);
 
 **name** - (required) Full name of the user that will be used for presentation inside Tiny Drive. When a user uploads a file, the username is presented as the creator of that file.
 
+**https://claims.tiny.cloud/drive/root** - (optional) Full path to a tiny drive specific root for example "/johndoe".

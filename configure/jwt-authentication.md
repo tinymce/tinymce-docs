@@ -69,9 +69,17 @@ $privateKey = <<<EOD
 EOD;
 
 $payload = array(
-  "sub" => "123",           // Unique user id string
-  "name" => "John Doe",     // Full name of user
-  "exp" => time() + 60 * 10 // 10 minutes expiration
+  // Unique user id string
+  "sub" => "123",
+
+  // Full name of user
+  "name" => "John Doe",
+
+  // Optional custom user root path
+  // "https://claims.tiny.cloud/drive/root" => "/johndoe",
+
+  // 10 minutes expiration
+  "exp" => time() + 60 * 10
 );
 
 try {
@@ -107,9 +115,17 @@ const privateKey = `
 
 app.post('/jwt', function (req, res) {
   const payload = {
-    sub: '123',         // Unique user id string
-    name: 'John Doe',   // Full name of user
-    exp: Math.floor(Date.now() / 1000) + (60 * 10) // 10 minutes expiration
+    // Unique user id string
+    sub: '123',
+
+    // Full name of user
+    name: 'John Doe',
+
+    // Optional custom user root path
+    // 'https://claims.tiny.cloud/drive/root': '/johndoe',
+
+    // 10 minutes expiration
+    exp: Math.floor(Date.now() / 1000) + (60 * 10)
   };
 
   try {
@@ -134,3 +150,4 @@ app.listen(3000);
 
 **name** - (required) Full name of the user that will be used for presentation inside Tiny Drive. When a user uploads a file, the username is presented as the creator of that file.
 
+**https://claims.tiny.cloud/drive/root** - (optional) Full path to a tiny drive specific root for example "/johndoe".

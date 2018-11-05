@@ -38,7 +38,7 @@ tinymce.init({
 });
 ```
 
-Further examples of the `contextmenu` option are available in the [context menu examples]({{site.baseurl}}./#exampleusage).
+Further examples of the `contextmenu` option are available in the [context menu examples]({{site.baseurl}}/ui-elements/contextmenu/#exampleusage).
 
 ### `contextmenu_never_use_native`
 

@@ -42,7 +42,7 @@ The format painter retains the formats after application making it possible to a
 
 ## Options
 
-The format painter acts upon all [`formats`]({{ site.baseurl }}/configure/content-formatting/#formats) registered in the editor. In addition to any standard formats it will treat lists as a block format whenever the [`lists plugin`]({{ site.baseurl }}/plugins/lists/) is made available.
+The format painter acts upon all [`formats`]({{ site.baseurl }}/configure/content-formatting/#formats) registered in the editor. In addition to any standard formats, it will treat lists as a block format whenever the [`lists plugin`]({{ site.baseurl }}/plugins/lists/) is made available.
 
 ### `formats`
 
@@ -73,7 +73,7 @@ tinymce.init({
 
 ### `formatpainter_table_format_names`
 
-The format painter treats table formats differently for better user experience. The `formatpainter_table_format_names` option allows you to specify the formats to be defined as such. In practice this means that these formats will be active when reading and applying formats to and from tables.
+The format painter treats table formats differently for better user experience. The `formatpainter_table_format_names` option allows you to specify the formats to be defined as such. In practice, this means that these formats will be active when reading and applying formats to and from tables.
 
 **Type:** `String`
 

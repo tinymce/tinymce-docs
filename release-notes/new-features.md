@@ -68,12 +68,28 @@ The skin creator is coupled with the `tinymce.ui` framework, so it works with th
 
 ## New Features and Enhancements
 
+### Format Painter 1.0
+
+The `Format Painter` plugin allows a user to copy and paste formatting from one location to another, such as font style and size. The format painter is capable of working with a wide variety of formats and styles such as inline & block formats and table styles.
+The format painter may be used either through keyboard shortcuts or a toolbar button. For more information, please see the [Format Painter]({{site.baseurl}}/ui-elements/formatpainter/) documentation.
+
+### Permanent Pen 1.0
+
+### UI Accessibility
+
+### Shortcut Key:; Audit & Add to Tooltips
+
+### Icon Packs
+
+### Modernise default content in TinyMCE 5.0
+
+### UI Microcopy Audit
+
 ### New Theme
 
 ### Silver
 
 Tiny 5's **Silver** theme contains a set of configurable UI components that could be used to replace the current customizations (modern, inline, and inlite theme). Silver is enabled by default. If you do not specify a theme, it will default to Silver.
-
 
 ### New UI
 

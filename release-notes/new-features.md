@@ -71,9 +71,15 @@ The skin creator is coupled with the `tinymce.ui` framework, so it works with th
 ### Format Painter 1.0
 
 The `Format Painter` plugin allows a user to copy and paste formatting from one location to another, such as font style and size. The format painter is capable of working with a wide variety of formats and styles such as inline & block formats and table styles.
-The format painter may be used either through keyboard shortcuts or a toolbar button. For more information, please see the [Format Painter]({{site.baseurl}}/ui-elements/formatpainter/) documentation.
+The format painter may be used either through keyboard shortcuts or a toolbar button. For more information, please see the [Format Painter]({{site.baseurl}}/plugins/formatpainter/) documentation.
 
 ### Permanent Pen 1.0
+
+The Permanent Pen allows you to add comments or responses in emails or other Notes documents, without having to change the test color or style. You can highlight text in two ways - using a permanent pen or using a highlighter pen. You must be in a rich-text field to use permanent pen and highlighters.
+The Permanent Pen enables you to add text in a different color, typeface and type style, or font than the default font settings so that it stands out from the rest of the document. This is especially useful for collaborative projects because each user can work ina different colored permanent pen; everyone can see who contributed to the document by the color of the text.
+This feature is easier to use when you want to apply the same text formatting to noncontagious text that you have already typed, or when you are inserting new text into existing text such as comments. Permanent Pen only works in a rich text field such as the body of a message.
+The Permanent Pen function is available in the toolbar. When you click the Permanent pen icon and begin typing, the input defaults to `Arial` `bold` font; font size `12` and font color `red`. To disable the Permanent Pen function, click the Permanent pen icon again.
+You can click anywhere in the text field to use the Permanent Pen function. To change the text style while Permanent Pen is enabled, right-click to open the **Context** menu, then select **Permanent pen** properties to open the **Permanent pen** properties dialog.
 
 ### UI Accessibility
 

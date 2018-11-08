@@ -1,77 +1,55 @@
 ---
-layout: default
-title: New Features, Enhancements, and Technology Preview
+layout: draft
+title: New Features and Enhancements
 title_nav: New Features
-description: These features have been introduced in Tiny 5.0.
+description: These are the new and enhanced features introduced in Tiny 5.0.
 keywords: new features enhancements technology preview
 ---
 
-## Technology Preview
-
-Tiny 5.0 offers an easy to navigate configurable less cumbersome user interface. The user interface logic has been changed entirely in Tiny 5.0.
-
-Tiny 5.0 has an ARIA [IBM standards](https://www.ibm.com/able/checklists.html) compliant user interface in order to make the user interface controls and dynamic content more accessible. In Tiny 5.0, more complex controls or dialogs need to be written in the new API style while keeping the more straightforward methods of adding buttons and windows the same.
-
-## Specifications
-
-* Streamlined documentation
-* Creates a UI using a strict {configuration}
-* ARIA [IBM standards](https://www.ibm.com/able/checklists.html) compliant
-* Keyboard navigable, via configuration
-* Skinnable
-* I18n (via config layer)
-* Easier for developers to build their own plugins
-* Easier to meet requests that come from their internal stakeholders or clients
-* Custom plugins can more easily match the look and feel of the editor as opposed to Tiny 4.x
-* If the custom plugins have dialogs, it’s now easier to create dialogs
-* Can also create chained dialogs
-* Easier for developers to contribute to the open source editor
-
-Try out our demo page to explore the new UI.
-
-## Tiny 5.0 Demo
-
-{% include codepen.html id="full-featured" height="750" %}
-
-## Value to a Developer
-
-### Easy to Integrate with Modern Systems
-
-As application design continues to improve and evolve, and developers are asked to integrate the editor into different apps. The flexible UI allows developers to more easily match the look and feel of these new applications which provides the benefit of creating a seamless user experience.
-
-### Easy Upgrade
-
-Devs can upgrade their Tiny 4.x instances to Tiny 5.0 with little/no fuss. For instructions on how to migrate, please see the [Migration Guide]({{site.baseurl}}/migrating-from-4.x).
-
-> Note: An instance of Tiny with heavy customizations could take longer to upgrade. Please contact [Customer Support](https://support.tiny.cloud) if you are encountering issues with the upgrade.
-
-### JavaScript → Modern CSS → Better Exploitation of Modern CSS
-
-Tiny 5.0 offers a modern CSS to provide styled components that leverage the power of a complete programming language — JavaScript — and its scoping capabilities to help structure the code into the components. This helps to avoid the common pitfalls of writing and maintaining CSS for large projects. A developer can describe a component’s style with no risk of side effects.
-
-### Modern Codebase
-
-Tiny 5.0 codebase has been extensively rewritten focus on converting the UI components to a more modern UI framework. As of consequence of this rewrite, all the related features have been updated. The new framework takes advantage of the latest CSS3 features for streamline styling and is ARIA [IBM standards](https://www.ibm.com/able/checklists.html) compliant. The new UI framework has a reasonably locked-down API for creating components, which means our code is more structured and has an in-built validation combined with TypeScript. This strictness makes our code cleaner and more stable. The new Tiny 5.0 code is cleaner and easier to maintain and troubleshoot.
-
-### Support Modern Browser Technologies
-
-Tiny 5 now supports IE 11, Chrome, Firefox, Safari, Edge, Opera.
-
-### Enhanced CSS
-
-A **SKIN** in Tinymce is used to make changes to the appearance of the editor, for example, colors, margins, paddings, fonts, icons, etc. A **Theme** is how the editor is constructed (left/top/bottom/right of the editing area - vertical or horizontal, inline or outside, etc.). A skin usually changes the color scheme of a button, dialog, etc. while the theme applies to the whole editor including its functionality and has child skins to change the appearance.
-
-Tiny 5.0 uses a new theme is **Silver** (see below) and a new skin is **Oxide** which uses more modern CSS such as `flexbox`.
-
-The skin creator is coupled with the `tinymce.ui` framework, so it works with the modern theme, the inlite theme, and in some extent MoxieManager.
-
-
 ## New Features and Enhancements
+
+### Context Menu
+
+The contextMenu can provide a simple list of clickable commands, or offer an in-menu form. This makes the most straightforward attribute modifications possible. Tiny 5.0 offers the ContextMenu Plugin that is designed for web applications in need of menus on a possibly large amount of objects. Now, a single menu is defined that can be used by multiple objects and a ContextMenu doesn't need to bind itself to the triggering objects. This allows injecting and removing triggers without having to re-initialize or update ContextMenu.
+
+### Context Toolbars
+
+The Context Toolbar configures its buttons based on the type of object selected in the Tree Outline. The Context Toolbar makes a limited number of relevant choices more visible and readily accessible.
+
+### Custom Menu Items
+
+* `editor.menuitems`, [see configuration]({{site.baseurl}}/components/toolbarbuttons/components/menu/).
+
+### Custom Sidebars
+
+* `editor.addSidebar`, Docs coming soon.
+
+### Dialog
+
+The Dialog plugin is created for showing dialogs (sometimes referred to as modals) in your application. The plugin supports the use of dynamic content for all aspects and is easily configurable/overridable. To display simple information (e.g., source code plugin, displays the HTML code from the content in the dialog).
 
 ### Format Painter 1.0
 
 The `Format Painter` plugin allows a user to copy and paste formatting from one location to another, such as font style and size. The format painter is capable of working with a wide variety of formats and styles such as inline & block formats and table styles.
 The format painter may be used either through keyboard shortcuts or a toolbar button. For more information, please see the [Format Painter]({{site.baseurl}}/plugins/formatpainter/) documentation.
+
+### Icon Packs
+
+- New Section [(DOC-161)](https://ephocks.atlassian.net/browse/DOC-161)
+
+### Modernize default content in TinyMCE 5.0
+
+- New Section [(DOC-162)](https://ephocks.atlassian.net/browse/DOC-162)
+
+### New Theme
+
+### Silver
+
+In Tiny 5.0 the **Silver** theme contains a set of configurable UI components that could be used to replace the current customizations (modern, inline, and inlite theme). Silver is enabled by default. If you do not specify a theme, it will default to Silver.
+
+### New UI
+
+It creates CSS and bundles resources like icon fonts and images for the UI.
 
 ### Permanent Pen 1.0
 
@@ -81,37 +59,12 @@ This feature is easier to use when you want to apply the same text formatting to
 The Permanent Pen function is available in the toolbar. When you click the Permanent pen icon and begin typing, the input defaults to `Arial` `bold` font; font size `12` and font color `red`. To disable the Permanent Pen function, click the Permanent pen icon again.
 You can click anywhere in the text field to use the Permanent Pen function. To change the text style while Permanent Pen is enabled, right-click to open the **Context** menu, then select **Permanent pen** properties to open the **Permanent pen** properties dialog.
 
-### UI Accessibility
-
 ### Shortcut Key:; Audit & Add to Tooltips
 
-### Icon Packs
+Our developers at Tiny have been working hard to keep TinyMCE up-to-date with the latest accessibility standards. This includes the review of shortcuts and ensuring tooltips when used with keyboard navigation.
+The editor can now reflect accurately where and what a user is interacting with. We have also added a new experimental feature that allows users to be able to tab across all our toolbars, sidebars, content and footer bar. This allows more granular control to quickly jump to the appropriate editor control and then navigate down to its specific feature sets.
 
-### Modernise default content in TinyMCE 5.0
-
-### UI Microcopy Audit
-
-### New Theme
-
-### Silver
-
-Tiny 5's **Silver** theme contains a set of configurable UI components that could be used to replace the current customizations (modern, inline, and inlite theme). Silver is enabled by default. If you do not specify a theme, it will default to Silver.
-
-### New UI
-
-It creates CSS and bundles resources like icon fonts and images for the UI.
-
-### Dialog
-
-The Dialog plugin is created for showing dialogs (sometimes referred to as modals) in your application. The plugin supports the use of dynamic content for all aspects and is easily configurable/overridable. To display simple information (e.g., source code plugin, displays the HTML code from the content in the dialog).
-
-### Context Menu
-
-The contextMenu can provide a simple list of clickable commands, or offer an in-menu form. This makes the most straightforward attribute modifications possible. Tiny 5.0 offers the ContextMenu Plugin that is designed for web applications in need of menus on a possibly large amount of objects. Now, a single menu is defined that can be used by multiple objects and a ContextMenu doesn't need to bind itself to the triggering objects. This allows injecting and removing triggers without having to re-initialize or update ContextMenu.
-
-### Context Toolbars
-
-The Context Toolbar configures its buttons based on the type of object selected in the Tree Outline. The Context Toolbar makes a limited number of relevant choices more visible and readily accessible.
+> Tiny is the only editor to have this feature!
 
 ### Tables
 
@@ -136,16 +89,24 @@ When opening a properties dialog with a single table/row/cell selected, the dial
 2. Buttons are now added via methods in `editor.ui.registry` rather than `editor` e.g. `editor.ui.registry.addButton()` instead of `editor.addButton()`.
 3. To make the creation of custom toolbar buttons easier, new methods were added for split, toggle, and menu toolbar buttons with configuration options specific to the button type.
 
-### Custom Menu Items
-
-* `editor.menuitems`, [see configuration]({{site.baseurl}}/components/toolbarbuttons/components/menu/).
-
-### Custom Sidebars
-
-* `editor.addSidebar`, Docs coming soon.
-
 ### Toolbar Menus
 
 * New buttons are added to the global `editor.settings.menus` which is an enhancement since, it now shows the toggled state.
 * Improved mouse and keyboard navigation.
+
+### UI Accessibility
+
+The new Tiny 5.0 has a better UI accessibility for a diverse set of users. We at TinyMCE 5.0 are committed to adhering to WCAG 2.1 standards to ensure content is accessible to everyone.
+Our UI can be mouse or keyboard driven. The new UI delivers a consistent user experience when used with screen readers or browsers in various modes like high contrast on both mobile and desktop platforms.
+TinyMCE 5.0 conforms to WCAG 2.1 standards and has a stricter editor UI and workflow to offer a much more accessibility compliant interface and a consistent workflow. While this may impact a developer's customization abilities, you will receive a more overall consistent user experience.
+
+### UI Microcopy Audit
+
+- New Section [(DOC-163)](https://ephocks.atlassian.net/browse/DOC-163)
+
+
+
+
+
+
 

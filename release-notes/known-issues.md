@@ -58,7 +58,6 @@ The following issues were fixed in the developer's preview cycle:
 | AP-117 | Change Typeahead to pass though change events |
 | AP-126 | Display placeholder when typeahead menu is empty |
 | AP-127 | remove PatchEditor and use bridge |
-| AP-133 | close the backdoor |
 | AP-135 | Add onCancel |
 | AP-147 | Standardise test code format |
 | AP-151 | Update TransformFind types to return Option<B> instead of Option<Element> |
@@ -214,6 +213,11 @@ The following issues were fixed in the developer's preview cycle:
 | AP-28	| Make menu item buttons for the file toolbar |
 | AP-33	| Make Toolbar and button Groups for Toolbar |
 | AP-54	| Make general toolbar button |
+| AP-64	| [T5] plugins A-C update to the new addButton, Addmenu APi |
+| AP-65	| [T5] plugins D-L update to the new addButton, Addmenu APi |
+| AP-66	| [T5] plugins M-S update to the new addButton, Addmenu APi |
+| AP-67	| [T5] plugins T-W update to the new addButton, Addmenu APi |
+| AP-68	| [T5] plugins all Premium plugins - update to the new addButton, Addmenu APi |
 | AP-152 | Generalise toolbars in preparation for context toolbars. |
 | AP-155 | Identify the bridge requirements for existing / proposed toolbar / menubar. |
 | AP-175 | Create a sidebar component |
@@ -260,15 +264,6 @@ The following issues were fixed in the developer's preview cycle:
 | AP-330 | accessibility checker not loading at all |
 | AP-340 | accessibility checker requires input validation |
 | AP-419 | Accessibility checker does not work without a toolbar |
-
-#### addButton
-
-| Issue key | Summary |
-| AP-64	| [T5] plugins A-C update to the new addButton, Addmenu APi |
-| AP-65	| [T5] plugins D-L update to the new addButton, Addmenu APi |
-| AP-66	| [T5] plugins M-S update to the new addButton, Addmenu APi |
-| AP-67	| [T5] plugins T-W update to the new addButton, Addmenu APi |
-| AP-68	| [T5] plugins all Premium plugins - update to the new addButton, Addmenu APi |
 
 #### Advlist
 

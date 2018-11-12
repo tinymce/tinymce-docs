@@ -30,7 +30,9 @@ gem install bundler
 sudo dnf install gcc-c++
 ```
 
-4. make
+4. Docker
+
+5. make
 
 ## First time set up
 

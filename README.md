@@ -51,7 +51,7 @@ Navigate to [http://127.0.0.1:4000/](http://127.0.0.1:4000/)
 ## Contributing to TinyMCE
 
 If you would like to contribute to the TinyMCE project please read 
-the [Contributor's Guide](https://www.tinymce.com/docs/advanced/contributing-docs/)
+the [Contributor's Guide](https://www.tiny.cloud/docs/advanced/contributing-docs/)
 
 See the [TinyMCE Docs Wiki](https://github.com/tinymce/tinymce-docs/wiki) for additional information, 
 including information on troubleshooting the "first time set up" process.

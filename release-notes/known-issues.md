@@ -13,7 +13,7 @@ This section describes issues that users of TinyMCE 5.0 may encounter, as well a
 
 ## Fixed Issues
 
-The following issues were fixed in the developer's preview cycle:
+In the developer's preview release, we invited the community to test the TinyMCE 5.0 editor and report bugs and issues. The following issues were fixed in the TinyMCE 5.0 version.
 
 ### Editor-Core
 

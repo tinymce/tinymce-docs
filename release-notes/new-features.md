@@ -2,7 +2,7 @@
 layout: draft
 title: New Features and Enhancements
 title_nav: New Features
-description: These are the new and enhanced features introduced in Tiny 5.0.
+description: These are the new and enhanced features introduced in TinyMCE 5.0.
 keywords: new features enhancements technology preview
 ---
 
@@ -10,7 +10,7 @@ keywords: new features enhancements technology preview
 
 ### Context Menu
 
-The contextMenu can provide a simple list of clickable commands, or offer an in-menu form. This makes the most straightforward attribute modifications possible. Tiny 5.0 offers the ContextMenu Plugin that is designed for web applications in need of menus on a possibly large amount of objects. Now, a single menu is defined that can be used by multiple objects and a ContextMenu doesn't need to bind itself to the triggering objects. This allows injecting and removing triggers without having to re-initialize or update ContextMenu.
+The ContextMenu can provide a simple list of clickable commands, or offer an in-menu form. This makes the most straightforward attribute modifications possible. TinyMCE 5.0 offers the ContextMenu Plugin that is designed for web applications in need of menus on a possibly large amount of objects. Now, a single menu is defined that can be used by multiple objects and a ContextMenu doesn't need to bind itself to the triggering objects. This allows injecting and removing triggers without having to re-initialize or update ContextMenu.
 
 ### Context Toolbars
 
@@ -45,26 +45,34 @@ The format painter may be used either through keyboard shortcuts or a toolbar bu
 
 ### Silver
 
-In Tiny 5.0 the **Silver** theme contains a set of configurable UI components that could be used to replace the current customizations (modern, inline, and inlite theme). Silver is enabled by default. If you do not specify a theme, it will default to Silver.
+In TinyMCE 5.0 the **Silver** theme contains a set of configurable UI components that could be used to replace the current customizations (modern, inline, and inlite theme). Silver is enabled by default. If you do not specify a theme, it will default to `Silver`.
 
 ### New UI
 
 It creates CSS and bundles resources like icon fonts and images for the UI.
 
-### Permanent Pen 1.0
+<!-- ### Permanent Pen 1.0
 
 The Permanent Pen allows you to add comments or responses in emails or other Notes documents, without having to change the test color or style. You can highlight text in two ways - using a permanent pen or using a highlighter pen. You must be in a rich-text field to use permanent pen and highlighters.
+
+
 The Permanent Pen enables you to add text in a different color, typeface and type style, or font than the default font settings so that it stands out from the rest of the document. This is especially useful for collaborative projects because each user can work ina different colored permanent pen; everyone can see who contributed to the document by the color of the text.
+
+
 This feature is easier to use when you want to apply the same text formatting to noncontagious text that you have already typed, or when you are inserting new text into existing text such as comments. Permanent Pen only works in a rich text field such as the body of a message.
+
+
 The Permanent Pen function is available in the toolbar. When you click the Permanent pen icon and begin typing, the input defaults to `Arial` `bold` font; font size `12` and font color `red`. To disable the Permanent Pen function, click the Permanent pen icon again.
-You can click anywhere in the text field to use the Permanent Pen function. To change the text style while Permanent Pen is enabled, right-click to open the **Context** menu, then select **Permanent pen** properties to open the **Permanent pen** properties dialog.
+
+
+You can click anywhere in the text field to use the Permanent Pen function. To change the text style while Permanent Pen is enabled, right-click to open the **Context** menu, then select **Permanent pen** properties to open the **Permanent pen** properties dialog. -->
 
 ### Shortcut Key:; Audit & Add to Tooltips
 
 Our developers at Tiny have been working hard to keep TinyMCE up-to-date with the latest accessibility standards. This includes the review of shortcuts and ensuring tooltips when used with keyboard navigation.
 The editor can now reflect accurately where and what a user is interacting with. We have also added a new experimental feature that allows users to be able to tab across all our toolbars, sidebars, content and footer bar. This allows more granular control to quickly jump to the appropriate editor control and then navigate down to its specific feature sets.
 
-> Tiny is the only editor to have this feature!
+> TinyMCE is the only editor to have this feature!
 
 ### Tables
 
@@ -80,7 +88,7 @@ Shifted to using CSS more for styling, and therefore was able to remove a few le
 
 #### Autofill Values
 
-When opening a properties dialog with a single table/row/cell selected, the dialog will autofill with the relevant existing values. If you select multiple rows or cells and open the relevant properties dialog, Tiny 4 will leave all the dialog fields blank. In Tiny 5.0, fields which have the same values for all the selected rows or cells will autofill, and the fields which have no existing value or have differing values will be empty.
+When opening a properties dialog with a single table/row/cell selected, the dialog will autofill with the relevant existing values. In TinyMCE 4.x., if you select multiple rows or cells and open the relevant properties dialog, all the dialog fields are left blank. In Tiny 5.0, fields which have the same values for all the selected rows or cells will autofill, and the fields which have no existing value or have differing values will be empty.
 "Border" input field in the `tableprops` dialog is now called "Border width" for clarity.
 
 ### Toolbar buttons
@@ -96,7 +104,7 @@ When opening a properties dialog with a single table/row/cell selected, the dial
 
 ### UI Accessibility
 
-The new Tiny 5.0 has a better UI accessibility for a diverse set of users. We at TinyMCE 5.0 are committed to adhering to WCAG 2.1 standards to ensure content is accessible to everyone.
+The new TinyMCE 5.0 has a better UI accessibility for a diverse set of users. We at Tiny are committed to adhering to WCAG 2.1 standards to ensure content is accessible to everyone.
 Our UI can be mouse or keyboard driven. The new UI delivers a consistent user experience when used with screen readers or browsers in various modes like high contrast on both mobile and desktop platforms.
 TinyMCE 5.0 conforms to WCAG 2.1 standards and has a stricter editor UI and workflow to offer a much more accessibility compliant interface and a consistent workflow. While this may impact a developer's customization abilities, you will receive a more overall consistent user experience.
 

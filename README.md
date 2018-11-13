@@ -3,7 +3,7 @@
 [![wercker status](https://app.wercker.com/status/4d4c743635332430f9d25acae1be5218/s/master "wercker status")](https://app.wercker.com/project/bykey/4d4c743635332430f9d25acae1be5218)
 
 This project serves as the documentation for TinyMCE, as you see on 
-[http://tinymce.com/docs](http://tinymce.com/docs). If you have any 
+[https://www.tiny.cloud/docs](httsp://www.tiny.cloud/docs). If you have any 
 modifications you wish to contribute, fork this project, make the changes 
 and submit a pull request. You will need to sign the contributors license 
 agreement, which will be emailed to you upon creating the pull request.
@@ -30,7 +30,9 @@ gem install bundler
 sudo dnf install gcc-c++
 ```
 
-4. make
+4. Docker
+
+5. make
 
 ## First time set up
 
@@ -51,7 +53,7 @@ Navigate to [http://127.0.0.1:4000/](http://127.0.0.1:4000/)
 ## Contributing to TinyMCE
 
 If you would like to contribute to the TinyMCE project please read 
-the [Contributor's Guide](https://www.tinymce.com/docs/advanced/contributing-docs/)
+the [Contributor's Guide](https://www.tiny.cloud/docs/advanced/contributing-docs/)
 
 See the [TinyMCE Docs Wiki](https://github.com/tinymce/tinymce-docs/wiki) for additional information, 
 including information on troubleshooting the "first time set up" process.

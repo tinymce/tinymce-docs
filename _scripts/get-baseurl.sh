@@ -1,4 +1,4 @@
 #!/bin/bash
 
-echo "/docs-3x/"
+echo "/docs-3x"
 

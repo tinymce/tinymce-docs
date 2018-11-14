@@ -1,8 +1,8 @@
 ## max_height
 
-This option allows you to set the maximum height that a user can stretch the entire TinyMCE interface (by grabbing the dragable area in the bottom right of the editor interface) when using the modern theme.
+Without the `autoresize` plugin, this option allows you to set the maximum height that a user can stretch the entire TinyMCE interface (by grabbing the dragable area in the bottom right of the editor interface).
 
-> Note that this behavior is different than the [`autoresize`]({{ site.baseurl }}/plugins/autoresize) plugin, which controls the resizing of the editable area only, not the entire editor.
+With the `autoresize` plugin, this option sets the minimum height the editor can automatically shrink to.
 
 **Type:** `Number`
 
@@ -15,4 +15,5 @@ tinymce.init({
 });
 ```
 
-> Pro tip: if you set the option [`resize`](#resize) to `false` the resize handle will be disabled and a user will not be able to resize the editor (by manual dragging).
+> Pro tip: if you set the option [`resize`](#resize) to `false` the resize handle will be disabled and a user will not be able to resize the editor (by manual dragging). Not that `resize` defaults to `false` when the `autoresize` plugin is enabled.
+

@@ -276,7 +276,7 @@ ContextForms are a generalisation of the `Insert Link` form that existed in the 
 
 ### Toolbar Menus
 
-* New buttons are added to the global `editor.settings.menus` which is an enhancement since, it now shows the toggled state.
+* New toolbar buttons are added to the global settings object `editor.settings.menus` for reference.
 * Improved mouse and keyboard navigation.
 
 ## Plugins

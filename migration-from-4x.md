@@ -22,19 +22,19 @@ The initialization process of TinyMCE 5.0 is the same as TinyMCE 4.x. The bootst
 
 ### Settings
 
-In TinyMCE 5.0, some configurations have been removed because they are no longer necessary or an improved solution has been introduced.
+In TinyMCE 5.0, some configurations have been removed because they are no longer necessary or an improved solution has been introduced.  All inline style configurations have been removed in TinyMCE 5.0 in favour of modern CSS.
 
 #### Changed Settings
 
-| **Old Settings** |  **Description**|
-| ---------------- | --------------- |
-| Settings for inline styles | Uses CSS stylesheets for custom |
-
-TODO
-
-#### New Settings
-
-TODO
+| **Old Settings** | **Description** | **Alternative** |
+| ---------------- | --------------- | --------------- |
+| flex | sets an inline css value for the component | Use CSS stylesheets for custom styling |
+| border | sets an inline css border for the component | Use CSS stylesheets for custom styling |
+| layout | defines a layout | Use the new TinyMCE 5 Ui components to compose your custom layout |
+| spacing | sets spacing for the component | Use CSS stylesheets for custom styling |
+| padding | sets an inline css padding value for the component | Use CSS stylesheets for custom styling |
+| align | sets an inline css align property for the component | Use CSS stylesheets for custom styling |
+| pack | emulates flex pack | Use CSS stylesheets for custom styling |
 
 #### Removed Settings
 

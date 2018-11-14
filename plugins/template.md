@@ -22,9 +22,21 @@ tinymce.init({
 });
 ```
 
+### Commands
+
+| Name | Description |
+|------| ------------|
+| mceInsertTemplate | Insert template html |
+
+##### Example
+
+```js
+tinymce.activeEditor.execCommand('mceInsertTemplate', false, '<p class="cdate">This will be replaced with the creation date.</p>')
+```
+
 There are two types of files the `template` plugin supports: *templates* and *snippets*. We will first review the plugin options before moving on to some examples.
 
-### Options
+### Config Options
 
 These settings affect the execution of the `template` plugin. Predefined templates for items such as created dates and modified dates can be set here.
 
@@ -80,6 +92,8 @@ A creation date is one that is set if no previous date existed within the elemen
 
 **Type:** `String`
 
+**Default Value:** `cdate`
+
 ##### Example
 
 ```js
@@ -88,8 +102,16 @@ tinymce.init({
   plugins: "template",
   menubar: "insert",
   toolbar: "template",
-  template_cdate_classes: "cdate creationdate"
+  template_cdate_format: "%m/%d/%Y : %H:%M",
+  templates: [
+	{title: 'Cdate', description: 'Cdate example', content: '<p class="cdate">This will be replaced with the creation date</p>'}
+  ]
 });
+```
+If the creation date is set as 9:00AM on January 1st 2000, then inserting this template will insert the following into the editor:
+
+```html
+<p class="cdate">01/01/2000 : 09:00</p>
 ```
 
 ### `template_cdate_format`
@@ -97,6 +119,8 @@ tinymce.init({
 This option allows you to provide a date format that all 'creation' date templates will be replaced by.
 
 **Type:** `String`
+
+**Default:** `'%Y-%m-%d'`
 
 ##### Example
 
@@ -118,6 +142,8 @@ A modified date is one that is updated with each edit.
 
 **Type:** `String`
 
+**Default Value:** `mdate`
+
 ##### Example
 
 ```js
@@ -136,6 +162,8 @@ This option allows you to provide TinyMCE with a date/time format that all 'modi
 
 **Type:** `String`
 
+**Default:** `'%Y-%m-%d'`
+
 ##### Example
 
 ```js
@@ -150,9 +178,9 @@ tinymce.init({
 
 ### `template_replace_values`
 
-This is an array of items that controls content replacement in the inserted templates. 
+This is an object containing items that will be replaced with their respective string values when a template is inserted into the editor content.
 
-**Type:** `String`
+**Type:** `Object`
 
 ##### Example
 
@@ -181,10 +209,46 @@ And that will be changed to:
 <p>Name: Jack Black, StaffID: 991234</p>
 ```
 
+### `template_preview_replace_values`
+
+This is an object containing items that will be replaced with their respective string values in the template preview shown in the template dialog.
+
+**Type:** `Object`
+
+##### Example
+
+```js
+tinymce.init({
+  selector: "textarea",  // change this value according to your HTML
+  plugins: "template",
+  menubar: "insert",
+  toolbar: "template",
+  template_preview_replace_values: {
+    username: "Jack Black",
+    staffid: "991234"
+  }
+});
+```
+
+This can then be used in a template or snippet that looks like this:
+
+```html
+<p>Name: {$username}, StaffID: {$staffid}</p>
+```
+
+And the preview will look like:
+
+```html
+<p>Name: Jack Black, StaffID: 991234</p>
+```
+
 ### `template_selected_content_classes`
 
 This option allows you to provide a list of class names (separated by spaces) whereby any template element with one of the classes will have its content replaced by the selected editor content when first inserted.
 
+*Type:** `String`
+
+**Default Value:** `selcontent`
 
 ##### Example
 

@@ -22,10 +22,11 @@ The initialization process of TinyMCE 5.0 is the same as TinyMCE 4.x. The bootst
 
 ### Settings
 
-In TinyMCE 5.0, some configurations have been removed because they are no longer necessary or an improved solution has been introduced.  All inline style configurations have been removed in TinyMCE 5.0 in favour of modern CSS.
+In TinyMCE 5.0, some configurations have been removed because they are no longer necessary or an improved solution has been introduced.  All inline style configurations have been removed in TinyMCE 5.0 in favour of modern CSS.  This affects all TinyMCE 4 Ui component configurations.
 
-#### Changed Settings
+#### Removed Settings
 
+* **affects all TinyMCE 4 ui component configurations**
 | **Old Settings** | **Description** | **Alternative** |
 | ---------------- | --------------- | --------------- |
 | flex | sets an inline css value for the component | Use CSS stylesheets for custom styling |
@@ -36,11 +37,7 @@ In TinyMCE 5.0, some configurations have been removed because they are no longer
 | align | sets an inline css align property for the component | Use CSS stylesheets for custom styling |
 | pack | emulates flex pack | Use CSS stylesheets for custom styling |
 
-#### Removed Settings
-
 * **fixed_toolbar_container**: Owing to the enhancements to the new inline toolbar behaviour, `fixed_toolbar_container` is not required in TinyMCE 5.0.
-
-TODO
 
 ### Methods
 

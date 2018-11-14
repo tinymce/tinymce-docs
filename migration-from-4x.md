@@ -99,63 +99,13 @@ For changes required, refer to the following table:
 | BeforeRenderUi | Fired before the UI was rendered. |
 
 
-
 ## Components
 
 ### Method Namespacing Changes
 
 The methods for registering components have moved to a different part of the editor API. They are now in the UI Registry part of the editor API. For example, `editor.addButton(identifier, configuration)` is now `editor.ui.registry.addButton(identifier, configuration)`. See the relevant sections below for more information.
 
-### Dialogs
-
-Dialogs no longer have `height` or `width` settings. The dialog component now uses CSS3 and a predefined `small`, `medium`, and `large` template to specify the dimensions.
-
-### Context Form
-
-ContextForms are a generalisation of the `Insert Link` form that existed in the original `inlite` plugin from [TinyMCE 4.x]((https://www.tiny.cloud/docs/themes/inlite/#quicklink)).
-
-### Context Menu
-
-The context menu is no longer a plugin, it is part of the core and always enabled. Where TinyMCE 4.x only supported adding registered menu items, the new context menu also allows plugins to register "sections" of the context menu. These sections are dynamic and may show or hide depending on the cursor position when the context menu is opened. For example, the default context menu config is now `'link image editimage table spelling'` which are all plugin section references, not menu items.
-
-##### New methods:
-
-| **New Method** | **Description** |
-| ----------- | -------------- |
-| editor.ui.registry.addContextMenu() | Adds a custom context menu. |
-
-For more information on Context Menus, see the [docs]({{site.baseurl}}/components/contextmenu).
-
-
-### Context Toolbar
-
-The Context Toolbar takes its buttons the registry of toolbar buttons added using `addButton`, `addToggleButton`, `addSplitButton` or `addMenuButton`. The method for creating custom context toolbars has also been moved from `editor.addContextToolbar()` to `editor.ui.registry.addContextToolbar()`.
-
-For more information on Context Toolbars, see [docs]({{site.baseurl}}/components/contexttoolbar).
-
-#### Changes between TinyMCE 4.x and TinyMCE 5.0:
-
-* Buttons go before and after the input in TinyMCE 4.x.
-* The `Ctrl+K` shortcut does nothing until the context toolbar is visible in TinyMCE 4.x.
-* In TinyMCE 5.0, the pop animates to its new width.
-* In TinyMCE 4.x., it is a URL input, so you get a popup and a browse button.
-
-### Custom Menu Items
-
-##### New methods:
-
-| **New Method** | **Description** |
-| ----------- | -------------- |
-| editor.ui.registry.addMenuItem() | Adds a custom basic menu item. |
-| editor.ui.registry.addToggleMenuItem() | Adds a custom toggle menu item. |
-
-Docs coming soon!
-
-### Custom Sidebars
-
-Docs coming soon!
-
-### Toolbar buttons
+### Custom Toolbar Buttons
 
 The methods for adding custom toolbar buttons have changed significantly between TinyMCE 4.x and TinyMCE 5.0.
 
@@ -279,6 +229,54 @@ Also, `onpostrender` was only ever called once, when the editor is initialized. 
 This is particularly important if `onSetup` listens to any events using `editor.on(eventName, callback)`. Unless the event was `'init'`, `onSetup` should return `(buttonApi) => ed.off(eventName, callback)`. The **teardown** function will automatically be called by the editor when necessary.
 
 If some functionality should only run once, when the editor is initialized, it should be passed to `editor.on('init', callback)` as the callback function so it's only run when the editor is initialized.
+
+### Custom Menu Items
+
+##### New methods:
+
+| **New Method** | **Description** |
+| ----------- | -------------- |
+| editor.ui.registry.addMenuItem() | Adds a custom basic menu item. |
+| editor.ui.registry.addToggleMenuItem() | Adds a custom toggle menu item. |
+
+Docs coming soon!
+
+### Custom Dialogs
+
+Dialogs no longer have `height` or `width` settings. The dialog component now uses CSS3 and a predefined `small`, `medium`, and `large` template to specify the dimensions.
+
+### Custom Sidebars
+
+Docs coming soon!
+
+### Custom Context Toolbars
+
+The Context Toolbar takes its buttons the registry of toolbar buttons added using `addButton`, `addToggleButton`, `addSplitButton` or `addMenuButton`. The method for creating custom context toolbars has also been moved from `editor.addContextToolbar()` to `editor.ui.registry.addContextToolbar()`.
+
+For more information on Context Toolbars, see [docs]({{site.baseurl}}/components/contexttoolbar).
+
+#### Changes between TinyMCE 4.x and TinyMCE 5.0:
+
+* Buttons go before and after the input in TinyMCE 4.x.
+* The `Ctrl+K` shortcut does nothing until the context toolbar is visible in TinyMCE 4.x.
+* In TinyMCE 5.0, the pop animates to its new width.
+* In TinyMCE 4.x., it is a URL input, so you get a popup and a browse button.
+
+### Custom Context Menus
+
+The default context menu is no longer a plugin, it is part of the core and always enabled. Where TinyMCE 4.x only supported adding registered menu items, the new context menu also allows plugins to register "sections" of the context menu. These sections are dynamic and may show or hide depending on the cursor position when the context menu is opened. For example, the default context menu config is now `'link image editimage table spelling'` which are all plugin section references, not menu items.
+
+##### New methods:
+
+| **New Method** | **Description** |
+| ----------- | -------------- |
+| editor.ui.registry.addContextMenu() | Adds a custom context menu. |
+
+For more information on Context Menus, see the [docs]({{site.baseurl}}/components/contextmenu).
+
+### Custom Context Forms
+
+ContextForms are a generalisation of the `Insert Link` form that existed in the original `inlite` plugin from [TinyMCE 4.x]((https://www.tiny.cloud/docs/themes/inlite/#quicklink)).
 
 ### Toolbar Menus
 

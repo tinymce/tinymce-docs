@@ -274,10 +274,6 @@ For more information on Context Menus, see the [docs]({{site.baseurl}}/component
 
 ContextForms are a generalisation of the `Insert Link` form that existed in the original `inlite` plugin from [TinyMCE 4.x]((https://www.tiny.cloud/docs/themes/inlite/#quicklink)).
 
-### Toolbar Menus
-
-* New toolbar buttons are added to the global settings object `editor.settings.menus` for reference.
-* Improved mouse and keyboard navigation.
 
 ## Plugins
 

@@ -56,7 +56,7 @@ In TinyMCE 5.0, some themes have been removed and are now combined in a new sing
 | [Modern](https://www.tiny.cloud/docs/themes/modern/) | Silver |
 | [Modern inline](https://www.tiny.cloud/docs/general-configuration-guide/use-tinymce-inline/) | Silver Inline |
 | [Inlite(Distraction-free Editor)](https://www.tiny.cloud/docs/themes/inlite/) | Silver (distraction free configuration) |
-| [Mobile](https://www.tiny.cloud/docs/themes/mobile/) | Silver (responsive to screen size)  |
+| [Mobile](https://www.tiny.cloud/docs/themes/mobile/) | Silver (responsive to small screen touch devices)  |
 
 ### Removed Themes
 

@@ -24,9 +24,18 @@ The initialization process of TinyMCE 5.0 is the same as TinyMCE 4.x. The bootst
 
 In TinyMCE 5.0, some configurations have been removed because they are no longer necessary or an improved solution has been introduced.  All inline style configurations have been removed in TinyMCE 5.0 in favour of modern CSS.  This affects all TinyMCE 4 Ui component configurations.
 
+#### Added Settings
+
+- **custom_colors** - `true` by default, when `false` will turn off the custom color picker in the color swatch. 
+
 #### Removed Settings
 
-* **affects all TinyMCE 4 ui component configurations**
+##### Removed Editor Core Settings
+
+* **fixed_toolbar_container**: Owing to the enhancements to the new inline toolbar behaviour, `fixed_toolbar_container` is not required in TinyMCE 5.0.
+
+##### Removed Component Configuration Settings
+
 | **Old Settings** | **Description** | **Alternative** |
 | ---------------- | --------------- | --------------- |
 | flex | sets an inline css value for the component | Use CSS stylesheets for custom styling |
@@ -37,7 +46,29 @@ In TinyMCE 5.0, some configurations have been removed because they are no longer
 | align | sets an inline css align property for the component | Use CSS stylesheets for custom styling |
 | pack | emulates flex pack | Use CSS stylesheets for custom styling |
 
-* **fixed_toolbar_container**: Owing to the enhancements to the new inline toolbar behaviour, `fixed_toolbar_container` is not required in TinyMCE 5.0.
+##### Removed Plugin Settings
+
+- **textcolor_rows**: The textcolor plugin was removed and this setting is not required for its replacement.
+
+#### Changed Settings
+
+##### Changed Editor Core Settings
+
+| **Setting** | **TinyMCE 4.x** | **TinyMCE 5.0** |
+| ----------- | --------------- | --------------- |
+| `height` | Set the height of the editable area of the editor | Sets the overall height of the editor, including the menubar, toolbars and statusbar |
+| `height` | Only supported number values | Supports numbers and strings, and assume a string is a valid CSS value for height |
+| `width` | Only supported number values | Supports numbers and strings, and assume a string is a valid CSS value for width |
+| `resize` | `true` by default | `true` by default if the `autoresize` plugin isn't enabled, `false` by default if the `autoresize` plugin is enabled |
+
+##### Changed Plugin Settings
+
+| **TinyMCE 4.x** | **TinyMCE 5.0** |
+| `autoresize_min_height` | `min_height` |
+| `autoresize_max_height` | `max_height` |
+| `textcolor_cols` | `color_cols` |
+| `textcolor_map` | `color_map` |
+
 
 ### Methods
 

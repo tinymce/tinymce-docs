@@ -1,4 +1,7 @@
-FROM ubuntu 
+# Images build from this Dockerfile are used in Wercker to build
+# our webiste and documentation
+
+FROM ubuntu
 MAINTAINER Tiny, is-inbox@tiny.cloud
 
 ENV DEBIAN_FRONTEND noninteractive
@@ -27,5 +30,7 @@ RUN \
   apt-get clean autoclean && \
   apt-get autoremove -y && \
   rm -rf /var/lib/{apt,dpkg,cache,log}/
+
+RUN npm install -g npm@6
 
 RUN gem install bundle

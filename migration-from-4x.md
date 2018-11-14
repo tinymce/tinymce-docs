@@ -324,5 +324,5 @@ Changes between TinyMCE 4.x and TinyMCE 5.0:
 
 ## Mobile Support
 * TinyMCE 4.x introduced mobile support, bundled with a new theme and configuration settings.
-* TinyMCE 5.0 makes this process seamless, where mobile support comes out of the box without additional configurations.  TinyMCE 5.0 mobile will be an exciting space to watch.
+* TinyMCE 5.0 makes this process seamless, where mobile support comes out of the box without additional configurations.  The new theme is now responsive on tablets, where the classic desktop theme will be displayed, and on smaller devices like phones, a touch Ui will be displayed. TinyMCE 5.0 mobile will be an exciting space to watch.
 

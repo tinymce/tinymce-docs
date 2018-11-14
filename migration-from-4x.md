@@ -8,9 +8,9 @@ keywords: migration considerations premigration pre-migration
 
 ## Migrating from 4.x
 
-The new TinyMCE 5.0 editor comes with significant changes to the previous versions. The new editor offers an easier to navigate user interface.
+The new TinyMCE 5.0 editor comes with significant changes to the previous versions, though most configuration changes affect complex use cases like adding custom components. Setting up a basic TinyMCE 5.0 instance should be no harder than with TinyMCE 4.x.
 
-Our team at Tiny has worked on creating a configurable, less cumbersome editor while retaining the familiarity of the user interface from the older versions.
+Our team at Tiny has worked on creating a more configurable, more modern and less cumbersome editor while retaining the familiarity of the user interface from the older versions.
 
 This chapter describes the migration process and workarounds if you are using an older version of TinyMCE. It includes tasks that you must perform before the migration can begin, and different workaround procedures for deprecated, deleted, and updated features.
 
@@ -18,8 +18,7 @@ This chapter describes the migration process and workarounds if you are using an
 
 ### Initialization
 
-The initialization process of TinyMCE 5.0 is the same as TinyMCE 4.x. The bootstrap process and initialization events all remain the same.  The main difference is in the `init` configuration, specifically the configuration items for UI components.
-It still retains a familiar JSON structure. However, the properties have been greatly simplified.
+The initialization process of TinyMCE 5.0 is the same as TinyMCE 4.x. The bootstrap process and initialization events all remain the same.  The main differences are in the `init` configuration, specifically the configuration items for UI components. It still retains a familiar JSON structure. However, many of the configuration options have been simplified.
 
 ### Settings
 
@@ -39,7 +38,7 @@ TODO
 
 #### Removed Settings
 
-* **Fixed_toolbar_container**: Owing to the enhancements to the new inline toolbar behaviour, `fixed_toolbar_container` is not required in TinyMCE 5.0.
+* **fixed_toolbar_container**: Owing to the enhancements to the new inline toolbar behaviour, `fixed_toolbar_container` is not required in TinyMCE 5.0.
 
 TODO
 
@@ -63,7 +62,7 @@ In TinyMCE 5.0, some themes have been removed and are now combined in a new sing
 
 #### Inlite
 
-The Inlite theme is no longer supported in TinyMCE 5.0. The features that the Inlite theme used to provide is now available as a plugin. For a workaround, using the following configuration:
+The Inlite theme is no longer supported in TinyMCE 5.0. The features that the Inlite theme used to provide are now available as a plugin. For a workaround, use the following configuration:
 ```
 {
   theme: 'silver',
@@ -72,19 +71,19 @@ The Inlite theme is no longer supported in TinyMCE 5.0. The features that the In
   plugins: [ 'inlite' ]
 }
  ```
-This will provide a similar and improved distraction free experience in TinyMCE 5.0.
+This will provide a similar but improved distraction free experience in TinyMCE 5.0.
 
 #### Modern
 
 The Modern theme is no longer supported in TinyMCE 5.0.  The modern themes Ui library `tinymce.ui.*` has also been deleted. This change may impact integrations depending upon the level of customization.
 
-For changes required, refer to the following table:
+For changes required, refer to the following table of examples:
 
 | Customization Level | Description | Impact |
 | ------------------- | ----------- | ------ |
 | Minor | Some custom buttons | no Ui fixes required, update `addButton` configuration to TinyMCE 5.0 format |
 | Moderate | A dialog created using `editor.windowManager.open` configuration objects | Convert TinyMCE 4.x config to TinyMCE 5.0 config |
-| Major | Completely custom dialogs and extended use of the Modern UI framework | Not all API use cases are covered by our new TinyMCE 5.0 components. However, we will strive to create supported workarounds or if there are sufficient requests, we a new component to resolve the use case. |
+| Major | Completely custom dialogs and extended use of the Modern UI framework | Not all API use cases are covered by our new TinyMCE 5.0 components. However, we will strive to create supported workarounds or if there are sufficient requests, add a new component to resolve the use case. |
 
 > Note: Please provide feedback on your use case and your Tinymce 4.x configuration containing only the UI component that you wish to be supported or need a workaround.
 

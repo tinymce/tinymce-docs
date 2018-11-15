@@ -1,8 +1,8 @@
 ## height
 
-**height** sets the height of the entire editor, including the menubar, toolbars, and status bar.
+**height** sets the height of the entire editor including the menubar, toolbars, and status bar.
 
-> Note: If given a number, TinyMCE sets the height in pixels. If given a string, TinyMCE assumes the value is valid CSS and simply sets the editor's height as the string value. This allows for alternate units such as `%`, `em` and `vh`.
+> Note: TinyMCE sets the height in pixels if a number is provided. However, if TinyMCE is provided a string it assumes the value is valid CSS and simply sets the editor's height as the string value. This allows for alternate units such as `%`, `em` and `vh`.
 
 **Type:** `Number` or `String`
 

@@ -18,15 +18,15 @@ const dialogConfig =  {
   },
   buttons: [
     {
+      type: 'cancel',
+      name: 'closeButton',
+      text: 'Cancel'
+    },
+    {
       type: 'submit',
       name: 'submitButton',
       text: 'Do Cat Thing',
       primary: true,
-    },
-    {
-      type: 'cancel',
-      name: 'closeButton',
-      text: 'cancel'
     }
   ],
   initialData: {
@@ -54,3 +54,4 @@ tinymce.init({
     })
   }
 });
+

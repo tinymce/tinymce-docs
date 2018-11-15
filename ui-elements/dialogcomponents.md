@@ -145,12 +145,13 @@ A **Iframe** is a component used to define the values of an iframe.
 A **Input** is a single line text field, and also renders a label element.
 
 ```js
-    {
-      type: 'input',
-      name: 'inputA',
-      label: 'Input Label'
-      colspan: 1
-    }
+     {
+       type: 'input',
+       name: 'inputA',
+       label: 'Input Label',
+       placeholder: 'example',
+       colspan: 1
+     }
 ```
 
 ### JukeBox
@@ -232,6 +233,7 @@ A **TextArea** is a multiline text field.
       size: 'flex'
       name: 'text-a',
       label: 'Text: ',
+      placeholder: 'example',
       colspan: 1
     }
 ```

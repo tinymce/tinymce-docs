@@ -166,7 +166,7 @@ To see the output of the code, click on the TinyMCE tab on the fiddle below.
 
 In this redial example, we have two separate dialogs that we cycle through by pressing the `Next` button.  In the configuration structure, the first level is like any other dialog.
 
-The difference is the `onAction` call, loads a new configuration for the dialog using redial.  The configuration we use in the `redial(dialogConf)`` call can be any supported dialog structure.  We could even replace this 'Redial Demo' configuration, with the Pet Name Machine example in the dialog [Interactive]({{site.baseurl}}/ ui-elements/dialog/#interactive) section.
+The difference is the `onAction` call, loads a new configuration for the dialog using redial.  The configuration we use in the `redial(dialogConf)`` call can be any supported dialog structure.  We could even replace this 'Redial Demo' configuration, with the Pet Name Machine example in the dialog [Interactive]({{site.baseurl}}/ui-elements/dialog/#interactive) section.
 
 This demo also includes the use of `dialogApi.enable` and `dialogApi.disable` to disable the `Next` button when user input is required.  For checkboxes, we use the `onChange` callback to handle the changes for the checkbox data.  The checkbox data is mapped to its defined name: `anyterms`.  When a user clicks or presses enter on the checkbox, the new value of the checkbox is returned by the `getData()` call stored in the `anyterms` property.  Given the state of the checkbox, we either `disable` or `enable` the `Next` button.
 

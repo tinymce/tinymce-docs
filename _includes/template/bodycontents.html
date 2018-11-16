@@ -19,7 +19,7 @@
         </div>
         <div class="breadcrumbs">{% include breadcrumbs.html %}</div>
         <div class="search">
-            <input type="text" name="seach" value="" id="searchKeywordInput" placeholder="Search in documentation" tabindex="1">
+            <input type="text" name="seach" value="" id="searchInput" placeholder="Search in documentation" tabindex="1">
         </div>
     </div>
 </div>
@@ -62,3 +62,14 @@
 {% include_remote {{ site.origin }}/_docs/footer.html css="body > *" %}
 <script src="{{ site.shared_baseurl }}/scripts/common.min.js"></script>
 <script src="{{ site.shared_baseurl }}/scripts/docs.min.js"></script>
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+<script type="text/javascript">
+    docsearch({
+        apiKey: 'd70977481e4a0b72eacaec1533b2d81b',
+        indexName: 'tiny',
+        inputSelector: '#searchInput',
+        algoliaOptions: { 'facetFilters': ["tags:docs-preview"] },
+        debug: true
+    });
+</script>

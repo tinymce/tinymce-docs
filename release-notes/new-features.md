@@ -10,11 +10,11 @@ keywords: new features enhancements technology preview
 
 ### Context Menu
 
-The ContextMenu can provide a simple list of clickable commands, or offer an in-menu form. This makes the most straightforward attribute modifications possible. TinyMCE 5.0 offers the ContextMenu Plugin that is designed for web applications in need of menus on a possibly large amount of objects. Now, a single menu is defined that can be used by multiple objects and a ContextMenu doesn't need to bind itself to the triggering objects. This allows injecting and removing triggers without having to re-initialize or update ContextMenu.
+The ContextMenu can provide a simple list of clickable commands, or offer an in-menu form. This makes the most straightforward attribute modifications possible. TinyMCE 5.0 offers the [ContextMenu]({{site.baseurl}}/ui-elements/contextmenu/) plugin, that is designed for web applications in need of menus on a possibly large amount of objects. Now, a single menu is defined that can be used by multiple objects. A context menu doesn't need to bind itself to the triggering objects. This allows injecting and removing triggers without having to re-initialize or update the context menu.
 
 ### Context Toolbars
 
-The Context Toolbar configures its buttons based on the type of object selected in the Tree Outline. The Context Toolbar makes a limited number of relevant choices more visible and readily accessible.
+The Context Toolbar configures its buttons based on the type of object selected in the Tree Outline. The context toolbar makes a limited number of relevant choices more visible and readily accessible.
 
 <!-- ### Custom Menu Items
 
@@ -76,37 +76,30 @@ The editor can now reflect accurately where and what a user is interacting with.
 
 ### Tables
 
-#### Removed Styles
-
-* Styles text field has been removed from the advanced table of the dialogs.
-* The code is now much less confronting/confusing for non developers. This also means we have more control over the table styles and therefore are better able to ensure the styles are correct.
-* We have improved how styles are set and retrieved from tables/rows/cells, so should be more reliable.
+Tables are better in TinyMCE 5.0 editor. Creating and configuring tables in TinyMCE 5.0 is less cumbersome. We have enhanced this feature by modifying the code to ensure the styles are correct and consistent. Styles text field has been removed from the advanced table of the dialogs. The code is now much less confronting/confusing for non-developers. This also means we have more control over the table styles and therefore are better able to ensure the styles are correct. We have improved how styles are set and retrieved from tables/rows/cells, so should be more reliable.
 
 #### Using CSS for styling
 
-Shifted to using CSS more for styling, and therefore was able to remove a few legacy data attributes that we were configuring on tables/rows/cells which are no longer good practice to use. HTML is now cleaner and shorter.
+In TinyMCE 5.0, we have shifted to using CSS more for styling. We were thus able to remove a few legacy and outdated data attributes that we were configuring on tables, rows, and cells which no longer adhere to the industry best practices. HTML is now cleaner and shorter.
 
 #### Autofill Values
 
-When opening a properties dialog with a single table/row/cell selected, the dialog will autofill with the relevant existing values. In TinyMCE 4.x., if you select multiple rows or cells and open the relevant properties dialog, all the dialog fields are left blank. In Tiny 5.0, fields which have the same values for all the selected rows or cells will autofill, and the fields which have no existing value or have differing values will be empty.
-"Border" input field in the `tableprops` dialog is now called "Border width" for clarity.
+In TinyMCE 5.0, the **Autofill** feature is used while opening a properties dialog with a single table, row, or cell selected. The dialog will fill automatically with the relevant existing values. In TinyMCE 4.x., if you selected multiple rows or cells and open the relevant properties dialog, all the dialog fields were left blank. In TinyMCE 5.0, fields which have the same values for all the selected rows or cells will be filled automatically, and the fields which have no existing value or have differing values will be empty.
 
 ### Toolbar buttons
 
-1. SVG icons for a better crisp look.
-2. Buttons are now added via methods in `editor.ui.registry` rather than `editor` e.g. `editor.ui.registry.addButton()` instead of `editor.addButton()`.
-3. To make the creation of custom toolbar buttons easier, new methods were added for split, toggle, and menu toolbar buttons with configuration options specific to the button type.
+TinyMCE 5.0 uses SVG icons for a better crisp look. Buttons are now added via methods in `editor.ui.registry` rather than `editor` e.g. `editor.ui.registry.addButton()` instead of `editor.addButton()`. To make the creation of custom toolbar buttons easier, new methods were added for split, toggle, and menu toolbar buttons with configuration options specific to the button type.
+"Border" input field in the `tableprops` dialog is now called "Border width" for clarity. For more information, see the [Toolbar Buttons]({{site.baseurl}}/ui-elements/toolbarbuttons/) documentation.
 
 ### Toolbar Menus
 
-* New buttons are added to the global `editor.settings.menus` which is an enhancement since, it now shows the toggled state.
-* Improved mouse and keyboard navigation.
+**Toolbar Menus** is improved in TinyMCE 5.0. We have added new buttons to the global `editor.settings.menus` which is an enhancement since it now shows the toggled state. We have also improved mouse and keyboard navigation. See [demo]({{site.baseurl}}/demo/custom-toolbar-menu-button/) for more details.
 
 ### UI Accessibility
 
 The new TinyMCE 5.0 has a better UI accessibility for a diverse set of users. We at Tiny are committed to adhering to WCAG 2.1 standards to ensure content is accessible to everyone.
-Our UI can be mouse or keyboard driven. The new UI delivers a consistent user experience when used with screen readers or browsers in various modes like high contrast on both mobile and desktop platforms.
-TinyMCE 5.0 conforms to WCAG 2.1 standards and has a stricter editor UI and workflow to offer a much more accessibility compliant interface and a consistent workflow. While this may impact a developer's customization abilities, you will receive a more overall consistent user experience.
+Our UI can be mouse or keyboard driven. The new UI delivers a consistent user experience when used with screen readers or browsers in various modes like the high contrast on both mobile and desktop platforms.
+TinyMCE 5.0 conforms to WCAG 2.1 standards and has a stricter editor UI and workflow to offer a much more accessibility-compliant interface and a consistent workflow. While this may impact a developer's customization abilities, you will receive a more overall consistent user experience.
 
 <!-- ### UI Microcopy Audit
 

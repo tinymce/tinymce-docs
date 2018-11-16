@@ -10,7 +10,7 @@ keywords: new features enhancements technology preview
 
 TinyMCE 5.0 offers an easy to navigate configurable less cumbersome user interface. The user interface logic has been changed entirely in TinyMCE 5.0.
 
-TinyMCE 5.0 has an ARIA [WCAG 2.1 standards](https://www.w3.org/WAI/standards-guidelines/wcag/) compliant user interface in order to make the user interface controls and dynamic content more accessible. In TinyMCE 5.0, more complex controls or dialogs need to be written in the new API style while keeping the more straightforward methods of adding buttons and windows the same.
+TinyMCE 5.0 has an ARIA [WCAG 2.1 standards](https://www.w3.org/WAI/standards-guidelines/wcag/) compliant user interface to make the user interface controls and dynamic content more accessible. In TinyMCE 5.0, more complex controls or dialogs can be written in the new API style while keeping the more straightforward methods of adding buttons and windows the same.
 
 ## Specifications
 
@@ -20,7 +20,7 @@ TinyMCE 5.0 has an ARIA [WCAG 2.1 standards](https://www.w3.org/WAI/standards-gu
 * Keyboard navigable, via configuration
 * Skinnable
 * I18n (via config layer)
-* Easier for developers to build their own plugins
+* Easier for developers to build their plugins
 * Easier to meet requests that come from their internal stakeholders or clients
 * Custom plugins can more easily match the look and feel of the editor as opposed to Tiny 4.x.
 * If the custom plugins have dialogs, it’s now easier to create dialogs
@@ -47,15 +47,15 @@ As application design continues to improve and evolve, and developers are asked 
 
 Developers can upgrade their TinyMCE 4.x instances to TinyMCE 5.0 with little/no fuss. For instructions on how to migrate, please see the [Migration Guide]({{site.baseurl}}/migrating-from-4.x).
 
-> Note: An instance of Tiny with heavy customizations could take longer to upgrade. Please contact [Customer Support](https://support.tiny.cloud) if you are encountering issues with the upgrade.
+> Note:  An instance of Tiny with heavy customizations could take longer to upgrade. Please contact [Customer Support](https://support.tiny.cloud) if you are encountering issues with the upgrade.
 
 ### Enhanced CSS
 
-A **SKIN** in Tinymce is used to make changes to the appearance of the editor, for example, colors, margins, paddings, fonts, icons, etc. A **Theme** is how the editor is constructed (left/top/bottom/right of the editing area - vertical or horizontal, inline or outside, etc.). A skin usually changes the color scheme of a button, dialog, etc. while the theme applies to the whole editor including its functionality and has child skins to change the appearance.
+A **SKIN** in Tinymce is used to make changes to the appearance of the editor, for example, colors, margins, paddings, fonts, icons, etc. A **Theme** creates the editor construction (left/top/bottom/right of the editing area - vertical or horizontal, inline or outside, etc.). A skin usually changes the color scheme of a button, dialog, etc. while the theme applies to the whole editor including its functionality and has child skins to change the appearance.
 
-TinyMCE  5.0 uses a new theme is **Silver** (see below) and a new skin is **Oxide** which uses more modern CSS such as `flexbox`.
+TinyMCE  5.0 uses a new theme **Silver** and a new skin **Oxide** which uses more modern CSS such as `flexbox`.
 
-The skin creator is coupled with the `tinymce.ui` framework, so it works with the modern theme, the inlite theme, and in some extent MoxieManager.
+The skin creator is coupled with the `tinymce.ui` framework, so it works with the modern theme, the inlite theme, and to some extent MoxieManager.
 
 ### JavaScript → Modern CSS → Better Exploitation of Modern CSS
 

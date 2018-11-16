@@ -1,5 +1,5 @@
 ---
-layout: draft
+layout: default
 title: Technology Preview
 title_nav: Technology Preview
 description: This section previews the new technology introduced in Tiny 5.0.

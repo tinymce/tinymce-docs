@@ -1,5 +1,5 @@
 ---
-layout: draft
+layout: default
 title: New Features and Enhancements
 title_nav: New Features
 description: These are the new and enhanced features introduced in TinyMCE 5.0.
@@ -16,13 +16,13 @@ The ContextMenu can provide a simple list of clickable commands, or offer an in-
 
 The Context Toolbar configures its buttons based on the type of object selected in the Tree Outline. The Context Toolbar makes a limited number of relevant choices more visible and readily accessible.
 
-### Custom Menu Items
+<!-- ### Custom Menu Items
 
 * `editor.menuitems`, [see configuration]({{site.baseurl}}/components/toolbarbuttons/components/menu/).
 
 ### Custom Sidebars
 
-* `editor.addSidebar`, Docs coming soon.
+* `editor.addSidebar`, Docs coming soon. -->
 
 ### Dialog
 
@@ -33,13 +33,13 @@ The Dialog plugin is created for showing dialogs (sometimes referred to as modal
 The `Format Painter` plugin allows a user to copy and paste formatting from one location to another, such as font style and size. The format painter is capable of working with a wide variety of formats and styles such as inline & block formats and table styles.
 The format painter may be used either through keyboard shortcuts or a toolbar button. For more information, please see the [Format Painter]({{site.baseurl}}/plugins/formatpainter/) documentation.
 
-### Icon Packs
+<!-- ### Icon Packs
 
 - New Section [(DOC-161)](https://ephocks.atlassian.net/browse/DOC-161)
 
 ### Modernize default content in TinyMCE 5.0
 
-- New Section [(DOC-162)](https://ephocks.atlassian.net/browse/DOC-162)
+- New Section [(DOC-162)](https://ephocks.atlassian.net/browse/DOC-162) -->
 
 ### New Theme
 
@@ -108,9 +108,9 @@ The new TinyMCE 5.0 has a better UI accessibility for a diverse set of users. We
 Our UI can be mouse or keyboard driven. The new UI delivers a consistent user experience when used with screen readers or browsers in various modes like high contrast on both mobile and desktop platforms.
 TinyMCE 5.0 conforms to WCAG 2.1 standards and has a stricter editor UI and workflow to offer a much more accessibility compliant interface and a consistent workflow. While this may impact a developer's customization abilities, you will receive a more overall consistent user experience.
 
-### UI Microcopy Audit
+<!-- ### UI Microcopy Audit
 
-- New Section [(DOC-163)](https://ephocks.atlassian.net/browse/DOC-163)
+- New Section [(DOC-163)](https://ephocks.atlassian.net/browse/DOC-163) -->
 
 
 

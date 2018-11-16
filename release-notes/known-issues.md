@@ -1,5 +1,5 @@
 ---
-layout: draft
+layout: default
 title: Known and Fixed Issues
 title_nav: Known and Fixed Issues
 description: These are the known and fixed issues in TinyMCE 5.0.

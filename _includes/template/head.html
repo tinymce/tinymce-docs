@@ -12,11 +12,10 @@
 
     <title>TinyMCE | {{ page.meta_title | or:page.title }}</title>
 
-    <link href="//cdn.jsdelivr.net/docsearch.js/2.2.1/docsearch.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" rel="stylesheet"/>
     <link href="{{ site.shared_baseurl }}/css/common.min.css" rel="stylesheet">
     <link href="{{ site.shared_baseurl }}/css/docs.min.css" rel="stylesheet">
     <link href="//fast.fonts.net/cssapi/5d4ae438-4aca-4c75-8249-d9486d12b12e.css" rel="stylesheet">
-    <!-- link href="//afeld.github.io/emoji-css/emoji.css" rel="stylesheet" -->
     {% include_remote {{ site.origin }}/_docs/head.html css="head > *" %}
 
     {% assign tinymce_script_tag_included = false %}

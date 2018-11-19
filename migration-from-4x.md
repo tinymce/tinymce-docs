@@ -18,7 +18,7 @@ This chapter describes the migration process and workarounds if you are using an
 
 ### Initialization
 
-The initialization process of TinyMCE 5.0 is the same as TinyMCE 4.x. The bootstrap process and initialization events all remain the same.  The main differences are in the `init` configuration, specifically the configuration items for UI components. It still retains a familiar JSON structure. However, many of the configuration options have been simplified.
+The initialization process of TinyMCE 5.0 is the same as TinyMCE 4.x. The bootstrap process and initialization events all remain the same. Please see the [Quick Start]({{site.baseurl}}/quick-start) section for more information on setup. The main differences are in the `init` configuration, specifically the configuration items for UI components. It still retains a familiar JSON structure. However, many of the configuration options have been simplified.
 
 ### Settings
 
@@ -26,29 +26,31 @@ In TinyMCE 5.0, some configurations have been removed because they are no longer
 
 #### Added Settings
 
-- **custom_colors** - `true` by default, when `false` will turn off the custom color picker in the color swatch. 
+**custom_colors** is `true` by default. When it is set to `false`, it will turn off the custom color picker in the color swatch.
 
 #### Removed Settings
 
 ##### Removed Editor Core Settings
 
-* **fixed_toolbar_container**: Owing to the enhancements to the new inline toolbar behaviour, `fixed_toolbar_container` is not required in TinyMCE 5.0.
+**fixed_toolbar_container**: Owing to the enhancements to the new inline toolbar behaviour, `fixed_toolbar_container` is not required in TinyMCE 5.0.
 
 ##### Removed Component Configuration Settings
 
 | **Old Settings** | **Description** | **Alternative** |
 | ---------------- | --------------- | --------------- |
-| flex | sets an inline css value for the component | Use CSS stylesheets for custom styling |
-| border | sets an inline css border for the component | Use CSS stylesheets for custom styling |
-| layout | defines a layout | Use the new TinyMCE 5 Ui components to compose your custom layout |
-| spacing | sets spacing for the component | Use CSS stylesheets for custom styling |
-| padding | sets an inline css padding value for the component | Use CSS stylesheets for custom styling |
-| align | sets an inline css align property for the component | Use CSS stylesheets for custom styling |
-| pack | emulates flex pack | Use CSS stylesheets for custom styling |
+| flex | Sets an inline css value for the component | Use CSS stylesheets for custom styling |
+| border | Sets an inline css border for the component | Use CSS stylesheets for custom styling |
+| layout | Defines a layout | Use the new TinyMCE 5 UI components to compose your custom layout |
+| spacing | Sets spacing for the component | Use CSS stylesheets for custom styling |
+| padding | Sets an inline css padding value for the component | Use CSS stylesheets for custom styling |
+| align | Sets an inline css align property for the component | Use CSS stylesheets for custom styling |
+| pack | Emulates flex pack | Use CSS stylesheets for custom styling |
+
+Please see the [TinyMCE 4.x docs](https://www.tiny.cloud/docs/) for more information on the above settings.
 
 ##### Removed Plugin Settings
 
-- **textcolor_rows**: The textcolor plugin was removed and this setting is not required for its replacement.
+**textcolor_rows**: The textcolor plugin was removed and this setting is not required for its replacement.
 
 #### Changed Settings
 
@@ -109,13 +111,13 @@ For changes required, refer to the following table of examples:
 
 | Customization Level | Description | Impact |
 | ------------------- | ----------- | ------ |
-| Minor | Some custom buttons | no Ui fixes required, update `addButton` configuration to TinyMCE 5.0 format |
-| Moderate | A dialog created using `editor.windowManager.open` configuration objects | Convert TinyMCE 4.x config to TinyMCE 5.0 config |
-| Major | Completely custom dialogs and extended use of the Modern UI framework | Not all API use cases are covered by our new TinyMCE 5.0 components. However, we will strive to create supported workarounds or if there are sufficient requests, add a new component to resolve the use case. |
+| Minor | Some custom buttons | No UI fixes required. Updating the `addButton` configuration to TinyMCE 5.0 format. |
+| Moderate | A [dialog]({{site.baseurl}}/ui-elements/dialog/#dialoginstanceapi) created using `editor.windowManager.open` configuration objects | Convert TinyMCE 4.x config to TinyMCE 5.0 config. |
+| Major | Completely custom dialogs and extended use of the Modern UI framework | Not all API use cases are covered by our new TinyMCE 5.0 components. However, we will strive to create supported workarounds or if there are sufficient requests and add a new component to resolve the use case. |
 
-> Note: Please provide feedback on your use case and your Tinymce 4.x configuration containing only the UI component that you wish to be supported or need a workaround.
+> Note: Please provide feedback on your use case and your Tinymce 4.x configuration containing only the UI component that you wish to be supported or need a workaround. You can also track developer preview issues on GitHub, [here](https://github.com/tinymce/tinymce/labels/dev%20preview).
 
-> Note: The Silver theme in TinyMCE 5.0 contains a set of configurable UI components that could be used to replace the current customizations (modern, inline, and inlite theme). Silver is enabled by default. If you do not specify a theme, it will default to Silver.
+> Note: In TinyMCE 5.0 `Silver` is enabled by default. If you do not specify a theme, it will default to Silver. The Silver theme contains a set of configurable UI components that could be used to replace the current customizations (modern, inline, and inlite theme).
 
 ### Events
 
@@ -134,7 +136,7 @@ The methods for registering components have moved to a different part of the edi
 
 ### Custom Toolbar Buttons
 
-The methods for adding custom toolbar buttons have changed significantly between TinyMCE 4.x and TinyMCE 5.0.
+The methods for adding [Custom Toolbar]({{site.baseurl}}/ui-elements/toolbarbuttons/#howtocreatecustomtoolbarbuttons) buttons have changed significantly between TinyMCE 4.x and TinyMCE 5.0.
 
 * Toolbar button types have changed from basic, split, listbox, and menu to basic, toggle, split, and menu.
 * Methods for creating toolbar buttons have been moved from `editor.*` to `editor.ui.registry.*`.
@@ -142,7 +144,7 @@ The methods for adding custom toolbar buttons have changed significantly between
 
 #### Changed Methods
 
-Some of the methods from TinyMCE 4.x for creating custom toolbar buttons have been moved and re-implemented to use the TinyMCE 5.0 style of configuration. For more information on how these methods have changed, see [docs]({{site.baseurl}}/components/toolbarbuttons/).
+Some of the methods from TinyMCE 4.x for creating custom toolbar buttons have been moved and re-implemented to use the TinyMCE 5.0 style of configuration. For more information on how these methods have changed, see [docs]({{site.baseurl}}/ui-elements/toolbarbuttons/).
 
 | **Old Method** | **New Method** |
 | -------------- | -------------- |
@@ -160,7 +162,7 @@ New methods have been added for creating other common types of toolbar buttons. 
 | editor.ui.registry.addSplitButton() | Adds a custom toolbar split button. |
 | editor.ui.registry.addMenuButton() | Adds a custom toolbar menu button. |
 
-For more information, see [docs]({{site.baseurl}}/components/toolbarbuttons/).
+For more information on how these methods have changed, see [docs]({{site.baseurl}}/ui-elements/typesoftoolbarbuttons/).
 
 ### Removed Toolbar Button Types
 
@@ -170,13 +172,17 @@ Any custom listbox toolbar buttons can be converted to a different type of toolb
 
 ### Configuration Differences between TinyMCE 4.x and TinyMCE 5.0:
 
-* `onclick` is now onAction, which is given `api` as an argument to give the user some helper functions.
-* `cmd` has been removed as a configuration option. Commands should be executed in `onAction` now.
-* `onpostrender` is now `onSetup`, and can return a function that is called on teardown since onSetup potentially runs multiple times, whereas `onpostrender` only ever ran once. If `onSetup` listens to any events using `editor.on(eventName, callback)` it should probably return a `editor.off(eventName, callback)` callback. `onSetup` also has some helper functions passed in through the `buttonApi` argument.
+| Old Method | New Method | Description |
+| -----------| ---------- | ----------- |
+| `onclick` | `onAction` | `onclick` is now `onAction`. `onAction` now has an API to provide some helper functions to the user. |
+| `cmd` | `onAction` | `cmd` has been removed as a configuration option. Commands should be executed through `onAction` now. |
+| `onpostrender` | `onSetup` | `onPostRender` has been removed, and instead you should use `onSetup`.  |
 
-#### onclick
+#### onclick → onAction
 
-`onclick` is now `onAction`. The callback function given to onAction should take a `buttonApi` argument that's passed to the onAction callback is an object that contains some helper functions. Each type of toolbar button has a different set of API functions. [link to custom toolbar buttons pages?] Example:
+`onclick` is now `onAction`. The callback function given to onAction should take a `buttonApi` argument that's passed to the onAction callback is an object that contains some helper functions. Each type of toolbar button has a different set of API functions. See [docs]({{site.baseurl}}/ui-elements/typesoftoolbarbuttons/) for more information.
+
+ Example:
 
 ##### TinyMCE 4.x:
 
@@ -194,7 +200,7 @@ editor.ui.registry.addButton('myButton', {
   onAction: (buttonApi) => alert('My Button clicked!')
 });
 ```
-#### cmd
+#### cmd → onAction
 
 `cmd: string` has been removed as a configuration options, and commands should be executed in `onAction` instead. Example:
 
@@ -214,8 +220,16 @@ editor.ui.registry.addButton('myButton', {
   onAction: (_) => editor.execCommand('mceSave')
 });
 ```
-#### onpostrender
-`onPostRender` has been removed, and instead you should use `onSetup`. Example:
+#### onpostrender → onSetup
+
+`onPostRender` has been removed, and instead you should use `onSetup`. There are 3 major changes:
+
+* While [`onpostrender`](https://www.tiny.cloud/docs/advanced/creating-a-custom-button/#togglebutton) only ran once, when the editor was created, [`onSetup`]({{site.baseurl}}/ui-elements/typesoftoolbarbuttons/#basicbuttonexampleandexplanation) runs every time a component is rendered, e.g. for a menu item, every time its menu becomes visible.  `onSetup` now has an API containing some helper functions. Each type of toolbar button has a different API.
+* You can configure `onSetup` to return a function, which will be automatically be called on teardown of the component, e.g. when a menu item's menu is closed.
+  * If `onSetup` listens to any events using editor.on(eventName, callback) it should return a editor.off(eventName, callback) callback to unbind the event on teardown. This is particularly important if `onSetup` listens to any events using `editor.on(eventName, callback)`. Unless the event was `'init'`, `onSetup` should return `(buttonApi) => ed.off(eventName, callback)`. The **teardown** callback function will automatically be called by the editor when necessary.
+  * If some functionality should only run when the editor is first initialized, it should be passed to `editor.on('init', callback)` as the callback function.
+
+Example:
 
 #####  TinyMCE 4.x:
 
@@ -234,6 +248,8 @@ editor.addButton('currentdate', {
 ```
 #####  TinyMCE 5.0:
 
+In this example, the button's API contains `isDisabled: () => boolean` and `setDisabled: (state: boolean) => void`.
+
 ```js
 editor.ui.registry.addButton('customDateButton', {
   icon: 'insert-time',
@@ -249,14 +265,6 @@ editor.ui.registry.addButton('customDateButton', {
 ```
 > Note: The callback function given to `onSetup` should take a `buttonApi` argument which is an object that contains some helper functions.
 
-Each type of toolbar button has a different API. In this example, the button's API contains `isDisabled: () => boolean` and `setDisabled: (state: boolean) => void`.
-
-Also, `onpostrender` was only ever called once, when the editor is initialized. `onSetup` is called whenever the component is rendered, which may be multiple times. This means we may need a `onTearDown` handler. Rather than have to define this as a separate configuration option, `onSetup` can return a function to be used on tear down.
-
-This is particularly important if `onSetup` listens to any events using `editor.on(eventName, callback)`. Unless the event was `'init'`, `onSetup` should return `(buttonApi) => ed.off(eventName, callback)`. The **teardown** function will automatically be called by the editor when necessary.
-
-If some functionality should only run once, when the editor is initialized, it should be passed to `editor.on('init', callback)` as the callback function so it's only run when the editor is initialized.
-
 ### Custom Menu Items
 
 ##### New methods:
@@ -270,7 +278,7 @@ Docs coming soon!
 
 ### Custom Dialogs
 
-Dialogs no longer have `height` or `width` settings. The dialog component now uses CSS3 and a predefined `small`, `medium`, and `large` template to specify the dimensions.
+Dialogs no longer have `height` or `width` settings. The dialog component now uses CSS3 and a predefined `small`, `medium`, and `large` template to specify the dimensions. See [docs]({{site.baseurl}}/ui-elements/dialog/), for more information.
 
 ### Custom Sidebars
 
@@ -305,7 +313,6 @@ For more information on Context Menus, see the [docs]({{site.baseurl}}/component
 
 ContextForms are a generalisation of the `Insert Link` form that existed in the original `inlite` plugin from [TinyMCE 4.x]((https://www.tiny.cloud/docs/themes/inlite/#quicklink)).
 
-
 ## Plugins
 
 Each release of TinyMCE adds new features and functionality. We also occasionally remove features and functionality, usually because we've added a better option.
@@ -334,6 +341,7 @@ Each release of TinyMCE adds new features and functionality. We also occasionall
 | **Plugin Name** | **Description** |
 | --------------- |  -------------- |
 | [ContextMenu](https://www.tiny.cloud/docs/plugins/contextmenu/) | New API. See [docs]({{site.baseurl}}/components/contextmenu/). |
+| [ColorPicker](https://www.tiny.cloud/docs/plugins/colorpicker/) | Moved to the core. See [docs]({{site.baseurl}}/configure/content-appearance/#color_picker}}). |
 
 ### Table
 

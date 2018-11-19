@@ -76,7 +76,7 @@ The editor can now reflect accurately where and what a user is interacting with.
 
 ### Tables
 
-Tables are better in TinyMCE 5.0 editor. Creating and configuring tables in TinyMCE 5.0 is less cumbersome. We have enhanced this feature by modifying the code to ensure the styles are correct and consistent. Styles text field has been removed from the advanced table of the dialogs. The code is now much less confronting/confusing for non-developers. This also means we have more control over the table styles and therefore are better able to ensure the styles are correct. We have improved how styles are set and retrieved from tables/rows/cells, so should be more reliable.
+Tables are better in TinyMCE 5.0 editor. Creating and configuring tables in TinyMCE 5.0 is less cumbersome. We have enhanced this feature by modifying the code to ensure the styles are correct and consistent. Styles text field has been removed from the advanced table of the dialogs. The code is now much less confronting/confusing for non-developers. This also means we have more control over the table styles and therefore are better able to ensure the styles are correct. We have improved how styles are set and retrieved from tables/rows/cells, so should be more reliable."Border" input field in the `tableprops` dialog is now called "Border width" for clarity. For more information, see the [Toolbar Buttons]({{site.baseurl}}//plugins/table/) documentation.
 
 #### Using CSS for styling
 
@@ -89,7 +89,7 @@ In TinyMCE 5.0, the **Autofill** feature is used while opening a properties dial
 ### Toolbar buttons
 
 TinyMCE 5.0 uses SVG icons for a better crisp look. Buttons are now added via methods in `editor.ui.registry` rather than `editor` e.g. `editor.ui.registry.addButton()` instead of `editor.addButton()`. To make the creation of custom toolbar buttons easier, new methods were added for split, toggle, and menu toolbar buttons with configuration options specific to the button type.
-"Border" input field in the `tableprops` dialog is now called "Border width" for clarity. For more information, see the [Toolbar Buttons]({{site.baseurl}}/ui-elements/toolbarbuttons/) documentation.
+For more information, see the [Toolbar Buttons]({{site.baseurl}}/ui-elements/toolbarbuttons/) documentation.
 
 ### Toolbar Menus
 

@@ -34,7 +34,7 @@ The name of the plugin.
 2. **How do you want to write your plugin?**  
 With what technology do you want to write your plugin? ES2015 transpiled with Babel, Typescript or the module system used internally by Tiny called Bolt.
 3. **Use yarn instead of npm?**  
-Use yarn instead of npm for a speedier install.
+Use `yarn` instead of `npm` for a speedier install.
 4. **Skip git repo initialization?**  
 Here you can skip the creation of a new repository for the plugin.
 5. **What’s your name?**  
@@ -46,7 +46,7 @@ For license
 8. **Which license do you want to use?**  
 Choose the license for the plugin.
 
-Yeoman installs the needed dependencies and the project is bootstrapped and ready. `cd` into the plugin directory and run the following command to start the auto reloading development server:
+Yeoman installs the needed dependencies, and the project is bootstrapped and ready. `cd` into the plugin directory and run the following command to start the auto-reloading development server:
 
 ```bash
 npm start

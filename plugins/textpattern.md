@@ -6,7 +6,7 @@ description: Matches special patterns in the text and applies formats or execute
 keywords: textpattern textpattern_patterns format cmd
 ---
 
-This plugin matches special patterns in the text and applies formats, replaces text or executed commands on these patterns.
+This plugin matches special patterns in the text and applies formats, replaces text, or executes commands on these patterns.
 
 The default pattern is similar to markdown syntax, so you can type `# text` to produce a header or `**text**` to make text **bold**.
 
@@ -27,9 +27,9 @@ This setting affects the execution of the `textpattern` plugin. Text patterns th
 
 ### `textpattern_patterns`
 
-This option lets you configure the text patterns that get matched by the `textpattern` plugin. By default it has basic markdown patterns.
+This option lets you configure the text patterns that get matched by the `textpattern` plugin. By default, it has basic markdown patterns.
 
-There are three types of patterns: inline, block and replacement patterns. Inline patterns have a start and end whereas the block- and replacement-based patterns only have a start. You can specify formats to be applied to the selection, commands to be executed or text to be replaced.
+There are three types of patterns: inline, block, and replacement patterns. Inline patterns have a start and end whereas the block- and replacement-based patterns only have a start. You can specify formats to be applied to the selection, commands to be executed, or text to be replaced.
 
 ##### Example
 

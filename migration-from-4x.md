@@ -22,7 +22,7 @@ The initialization process of TinyMCE 5.0 is the same as TinyMCE 4.x. The bootst
 
 ### Settings
 
-In TinyMCE 5.0, some configurations have been removed because they are no longer necessary or an improved solution has been introduced.  All inline style configurations have been removed in TinyMCE 5.0 in favour of modern CSS.  This affects all TinyMCE 4 Ui component configurations.
+In TinyMCE 5.0, some configurations have been removed because they are no longer necessary or an improved solution has been introduced.  All inline style configurations have been removed in TinyMCE 5.0 in favor of modern CSS.  This affects all TinyMCE 4 Ui component configurations.
 
 #### Added Settings
 
@@ -50,7 +50,7 @@ Please see the [TinyMCE 4.x docs](https://www.tiny.cloud/docs/) for more informa
 
 ##### Removed Plugin Settings
 
-**textcolor_rows**: The textcolor plugin was removed and this setting is not required for its replacement.
+**textcolor_rows**: The textcolor plugin was removed and this setting is not required in TinyMCE 5.0.
 
 #### Changed Settings
 
@@ -58,7 +58,7 @@ Please see the [TinyMCE 4.x docs](https://www.tiny.cloud/docs/) for more informa
 
 | **Setting** | **TinyMCE 4.x** | **TinyMCE 5.0** |
 | ----------- | --------------- | --------------- |
-| `height` | Set the height of the editable area of the editor | Sets the overall height of the editor, including the menubar, toolbars and statusbar |
+| `height` | Set the height of the editable area of the editor | Sets the overall height of the editor, including the menubar, toolbars, and statusbar |
 | `height` | Only supported number values | Supports numbers and strings, and assume a string is a valid CSS value for height |
 | `width` | Only supported number values | Supports numbers and strings, and assume a string is a valid CSS value for width |
 | `resize` | `true` by default | `true` by default if the `autoresize` plugin isn't enabled, `false` by default if the `autoresize` plugin is enabled |
@@ -74,7 +74,7 @@ Please see the [TinyMCE 4.x docs](https://www.tiny.cloud/docs/) for more informa
 
 ### Methods
 
-* All TinyMCE 4.x methods for creating creating UI components have been removed. New methods have been added for TinyMCE 5.0. For more information, see the [docs]({{site.baseurl}}/components/).
+* All TinyMCE 4.x methods for creating UI components have been removed. New methods have been added for TinyMCE 5.0. For more information, see the [docs]({{site.baseurl}}/components/).
 * No core editor methods were removed (tinymce, editor, selection, on(), etc remain the same).
 
 ## Themes
@@ -113,7 +113,7 @@ For changes required, refer to the following table of examples:
 | ------------------- | ----------- | ------ |
 | Minor | Some custom buttons | No UI fixes required. Updating the `addButton` configuration to TinyMCE 5.0 format. |
 | Moderate | A [dialog]({{site.baseurl}}/ui-elements/dialog/#dialoginstanceapi) created using `editor.windowManager.open` configuration objects | Convert TinyMCE 4.x config to TinyMCE 5.0 config. |
-| Major | Completely custom dialogs and extended use of the Modern UI framework | Not all API use cases are covered by our new TinyMCE 5.0 components. However, we will strive to create supported workarounds or if there are sufficient requests and add a new component to resolve the use case. |
+| Major | Completely custom dialogs and extended use of the Modern UI framework | The new TinyMCE 5.0 components may not  cover all API use cases. However, we will strive to create supported workarounds or if there are sufficient requests and add a new component to resolve the use case. |
 
 > Note: Please provide feedback on your use case and your Tinymce 4.x configuration containing only the UI component that you wish to be supported or need a workaround. You can also track developer preview issues on GitHub, [here](https://github.com/tinymce/tinymce/labels/dev%20preview).
 
@@ -138,7 +138,7 @@ The methods for registering components have moved to a different part of the edi
 
 The methods for adding [Custom Toolbar]({{site.baseurl}}/ui-elements/toolbarbuttons/#howtocreatecustomtoolbarbuttons) buttons have changed significantly between TinyMCE 4.x and TinyMCE 5.0.
 
-* Toolbar button types have changed from basic, split, listbox, and menu to basic, toggle, split, and menu.
+* Toolbar button types have changed from -  basic, split, listbox, and menu,  to -  basic, toggle, split, and menu.
 * Methods for creating toolbar buttons have been moved from `editor.*` to `editor.ui.registry.*`.
 * Explicit methods have been added for creating each type of toolbar button.
 
@@ -154,7 +154,7 @@ Some of the methods from TinyMCE 4.x for creating custom toolbar buttons have be
 
 #### New Methods
 
-New methods have been added for creating other common types of toolbar buttons. For example, to create a toggle button In TinyMCE 5.0 we would use `editor.ui.registry.addToggleButton()`. Each of these methods take configurations specific to their type, to simplify implementation.
+New methods have been added for creating other common types of toolbar buttons. For example, to create a toggle button In TinyMCE 5.0 we would use `editor.ui.registry.addToggleButton()`. Each of these methods takes configurations specific to their type, to simplify implementation.
 
 | **New Method** | **Description** |
 | -------------- | --------------- |
@@ -168,7 +168,7 @@ For more information on how these methods have changed, see [docs]({{site.baseur
 
 **Listbox** is no longer a supported toolbar button type in TinyMCE 5.0. Though listbox has been removed, any functionality provided by custom listbox toolbar buttons can be retained by switching to a different type of toolbar button.
 
-Any custom listbox toolbar buttons can be converted to a different type of toolbar button using the new methods. The recommended toolbar button type to switch to is **Split** button.
+Any custom listbox toolbar buttons can be converted to a different type of toolbar button using the new methods. The recommended toolbar button type to switch to is the**Split** button.
 
 ### Configuration Differences between TinyMCE 4.x and TinyMCE 5.0:
 
@@ -222,10 +222,10 @@ editor.ui.registry.addButton('myButton', {
 ```
 #### onpostrender → onSetup
 
-`onPostRender` has been removed, and instead you should use `onSetup`. There are 3 major changes:
+`onPostRender` has been removed, and instead, you should use `onSetup`. There are 3 major changes:
 
 * While [`onpostrender`](https://www.tiny.cloud/docs/advanced/creating-a-custom-button/#togglebutton) only ran once, when the editor was created, [`onSetup`]({{site.baseurl}}/ui-elements/typesoftoolbarbuttons/#basicbuttonexampleandexplanation) runs every time a component is rendered, e.g. for a menu item, every time its menu becomes visible.  `onSetup` now has an API containing some helper functions. Each type of toolbar button has a different API.
-* You can configure `onSetup` to return a function, which will be automatically be called on teardown of the component, e.g. when a menu item's menu is closed.
+* You can configure `onSetup` to return a function, which will be automatically be called `onTeardown` of the component, e.g. when a menu item's menu is closed.
   * If `onSetup` listens to any events using editor.on(eventName, callback) it should return a editor.off(eventName, callback) callback to unbind the event on teardown. This is particularly important if `onSetup` listens to any events using `editor.on(eventName, callback)`. Unless the event was `'init'`, `onSetup` should return `(buttonApi) => ed.off(eventName, callback)`. The **teardown** callback function will automatically be called by the editor when necessary.
   * If some functionality should only run when the editor is first initialized, it should be passed to `editor.on('init', callback)` as the callback function.
 
@@ -274,7 +274,7 @@ editor.ui.registry.addButton('customDateButton', {
 | editor.ui.registry.addMenuItem() | Adds a custom basic menu item. |
 | editor.ui.registry.addToggleMenuItem() | Adds a custom toggle menu item. |
 
-Docs coming soon!
+Docs are coming soon!
 
 ### Custom Dialogs
 
@@ -282,7 +282,7 @@ Dialogs no longer have `height` or `width` settings. The dialog component now us
 
 ### Custom Sidebars
 
-Docs coming soon!
+Docs are coming soon!
 
 ### Custom Context Toolbars
 

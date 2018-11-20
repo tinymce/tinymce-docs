@@ -10,7 +10,7 @@ keywords: migration considerations premigration pre-migration
 
 The new TinyMCE 5.0 editor comes with significant changes to the previous versions. Most configuration changes in TinyMCE 5.0 only affect complex use cases like adding custom components. Setting up a basic TinyMCE 5.0 instance should be the same as TinyMCE 4.x.
 
-Our team at Tiny has worked on creating a more configurableand modern editor while retaining the familiarity of the user interface from the older versions.
+Our team at Tiny has worked on creating a more configurable and modern editor while retaining the familiarity of the user interface from the older versions.
 
 This chapter describes the migration process and workarounds if you are using TinyMCE version 4.x. It includes tasks that you must perform before the migration can begin, and different workaround procedures for deprecated, deleted, and updated features.
 
@@ -20,13 +20,13 @@ This chapter describes the migration process and workarounds if you are using Ti
 
 The initialization process of TinyMCE 5.0 is the same as TinyMCE 4.x. The bootstrap process and initialization events all remain the same. It still retains a familiar JSON structure. Some `init` configuration in the TinyMCE version 5.0 has been updated to simplify the configuration options, specifically the configuration items for [UI components]({{site.baseurl}}/ui-elements/). Please see the [Quick Start]({{site.baseurl}}/quick-start) section for more information on setup.
 
-These changes may impact integrations depending upon the level of customization. Refer the table below for a general guide for understanding the impact on your sepcific integration:
+These changes may impact integrations depending upon the level of customization. Refer the table below for a general guide for understanding the impact on your specific integration:
 
 | Customization Level | Description | Impact |
 | ------------------- | ----------- | ------ |
 | Minor | Some custom buttons | No UI fixes required. Updating the `addButton` configuration to TinyMCE 5.0 format. |
 | Moderate | A [dialog]({{site.baseurl}}/ui-elements/dialog/#dialoginstanceapi) created using `editor.windowManager.open` configuration objects | Convert TinyMCE 4.x config to TinyMCE 5.0 config. |
-| Major | Completely custom dialogs and extended use of the Modern UI framework | The new TinyMCE 5.0 components may not  cover all API use cases. However, we will strive to create supported workarounds or if there are sufficient requests and add a new component to resolve the use case. |
+| Major | Completely custom dialogs and extended use of the Modern UI framework | The new TinyMCE 5.0 components may not cover all API use cases. However, we will strive to create supported workarounds or if there are sufficient requests and add a new component to resolve the use case. |
 
 > Note: If you encounter problems while migrating and wish to be supported or need a workaround, please contact [support](https://support.tiny.cloud/hc/en-us/requests/new). You can also track developer preview issues on GitHub, [here](https://github.com/tinymce/tinymce/labels/dev%20preview).
 
@@ -103,7 +103,7 @@ The Modern theme is no longer supported in TinyMCE 5.0.  The modern themes UI li
 
 ## Mobile Support
 * TinyMCE 4.x introduced mobile support, bundled with a new theme and configuration settings.
-* TinyMCE 5.0 makes this process seamless, where mobile support comes out of the box without additional configurations.  The new theme is now responsive on tablets, where the classic desktop theme will be displayed, and on smaller devices like phones, a touch Ui will be displayed. TinyMCE 5.0 mobile will be an exciting space to watch.
+* TinyMCE 5.0 makes this process seamless, where mobile support comes out of the box without additional configurations.  The new theme is now responsive on tablets, where the classic desktop theme will be displayed, and on smaller devices like phones, a touch UI will be displayed. TinyMCE 5.0 mobile will be an exciting space to watch.
 
 
 ## Components
@@ -285,7 +285,7 @@ For more information on Context Menus, see the [docs]({{site.baseurl}}/component
 
 ### Custom Context Forms
 
-A ContextForm consists of an input field, and a series of related buttons. Context forms can be shown wherever a context toolbar can be shown. Also, when a context form is registered containing a `launch` configuration, a special context toolbar button with name ``form:${name}`` is registered which will launch that particular context form. ContextForms are a generalisation of the `Insert Link` form that existed in the original [inlite](https://www.tiny.cloud/docs/themes/inlite/#quicklink) theme from TinyMCE 4.
+ContextForm consists of an input field and a series of related buttons. Context forms can be shown wherever a context toolbar can be shown. Also, when a context form is registered containing a `launch` configuration, a special context toolbar button with name ``form:${name}`` is registered which will launch that particular context form. ContextForms are a generalization of the `Insert Link` form that existed in the original [inlite](https://www.tiny.cloud/docs/themes/inlite/#quicklink) theme from TinyMCE 4.
 
 ## Plugins
 

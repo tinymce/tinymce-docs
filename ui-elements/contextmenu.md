@@ -67,13 +67,13 @@ In the menu shown to the user, sections are delineated by separators. Sections c
 
 ```typescript
 type ContextMenuApi = {
-  update: (element: Element) => Array<ContextMenuContents>
+  update: (element: Element) => string | Array<ContextMenuContents>
 }
 
 editor.ui.registry.addContextMenu(name: string, feature: ContextMenuApi);
 ```
 
-Every time the user opens the context menu, the selected element is passed to the update function which must return an array of items to display. The types of the items returned are as follows:
+Every time the user opens the context menu, the selected element is passed to the update function which must return either a space separated string or an array of items to display. The types of the items returned are as follows:
 
 ```typescript
 type ContextMenuContents = string | ContextMenuItem | SeparatorMenuItemApi | ContextSubMenu
@@ -88,7 +88,7 @@ type ContextSubMenu = {
   type: 'submenu';
   text: string;
   icon?: string;
-  getSubmenuItems: () => Array<ContextMenuContents>;
+  getSubmenuItems: () => string | Array<ContextMenuContents>;
 }
 
 type SeparatorMenuItemApi = {

@@ -8,9 +8,9 @@ keywords: migration considerations premigration pre-migration
 
 ## Migrating from 4.x
 
-The new TinyMCE 5.0 editor comes with significant changes to the previous versions, though most configuration changes affect complex use cases like adding custom components. Setting up a basic TinyMCE 5.0 instance should be no harder than with TinyMCE 4.x.
+The new TinyMCE 5.0 editor comes with significant changes to the previous versions. Most configuration changes in TinyMCE 5.0 only affect complex use cases like adding custom components. Setting up a basic TinyMCE 5.0 instance should be the same as TinyMCE 4.x.
 
-Our team at Tiny has worked on creating a more configurable, more modern and less cumbersome editor while retaining the familiarity of the user interface from the older versions.
+Our team at Tiny has worked on creating a more configurable, more modern, and less cumbersome editor while retaining the familiarity of the user interface from the older versions.
 
 This chapter describes the migration process and workarounds if you are using an older version of TinyMCE. It includes tasks that you must perform before the migration can begin, and different workaround procedures for deprecated, deleted, and updated features.
 
@@ -22,7 +22,7 @@ The initialization process of TinyMCE 5.0 is the same as TinyMCE 4.x. The bootst
 
 ### Settings
 
-In TinyMCE 5.0, some configurations have been removed because they are no longer necessary or an improved solution has been introduced.  All inline style configurations have been removed in TinyMCE 5.0 in favor of modern CSS.  This affects all TinyMCE 4 Ui component configurations.
+In TinyMCE 5.0, some configurations have been removed because they are no longer necessary or an improved solution has been introduced.  All inline style configurations have been removed in TinyMCE 5.0 in favor of modern CSS.  This affects all TinyMCE 4.x UI component configurations.
 
 #### Added Settings
 
@@ -74,7 +74,7 @@ Please see the [TinyMCE 4.x docs](https://www.tiny.cloud/docs/) for more informa
 
 ### Methods
 
-* All TinyMCE 4.x methods for creating UI components have been removed. New methods have been added for TinyMCE 5.0. For more information, see the [docs]({{site.baseurl}}/components/).
+* All TinyMCE 4.x methods for creating UI components have been removed. New methods have been added for TinyMCE 5.0. For more information, see the [docs]({{site.baseurl}}/ui-elements/).
 * No core editor methods were removed (tinymce, editor, selection, on(), etc remain the same).
 
 ## Themes

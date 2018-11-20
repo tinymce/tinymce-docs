@@ -9,11 +9,11 @@ keywords: security xss scripting vulnerability hack hacker
 
 ## Q: Is TinyMCE protected against XSS vulnerabilities?
 
-TinyMCE filters out some of the more common XSS content like scripts etc. from the contents since it's relatively common that the editor is used in a single page application. However, if you want extra security, then we suggest passing it through server-side filters like [HTMLPurifier](http://htmlpurifier.org/).
+TinyMCE filters out some of the more common XSS content like scripts from the content since it is common that the editor is used in a single page application. For additional security, consider passing it through server-side filters like [HTMLPurifier](http://htmlpurifier.org/).
 
-## Q: How do I setup Content Security Policy (CSP) with tinymce?
+## Q: How do I setup Content Security Policy (CSP) with TinyMCE?
 
-You can use TinyMCE with a [CSP](https://content-security-policy.com/) header, but there are a few things that need to be enabled for the editor to function properly:
+You can use TinyMCE with a [CSP](https://content-security-policy.com/) header, however, there are a few things that need to be enabled for the editor to function properly:
 
 Here is a list of the directives that are required by TinyMCE and why they are required:
 

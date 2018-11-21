@@ -31,7 +31,7 @@ The documentaiton is written in [GitHub Flavored Markdown](https://help.github.c
 
 ##### Highlighting
 
-Code language syntax and associated elements are highlit within an open and closing backtick. For example, this `object` is actually enclosed with backticks like this: \`object\`.
+Code language syntax and associated elements are highlighted using an open and closing backtick. For example, this `object` is actually enclosed with backticks like this: \`object\`.
 
 Highlight words relating specifically to executable parts of software languages. Keys and their values when pertaining to objects and methods (particularly the case with TinyMCE) should have backticks. We cannot cover every use case here and contributors need to use their best judgment. What is more important is your ability to articulate complex ideas. 
 

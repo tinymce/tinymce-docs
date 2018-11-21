@@ -148,7 +148,7 @@ For more information on how these methods have changed, see [docs]({{site.baseur
 
 **Listbox** is no longer a supported toolbar button type in TinyMCE 5.0. Though listbox has been removed, any functionality provided by custom listbox toolbar buttons can be retained by switching to a different type of toolbar button.
 
-Any custom listbox toolbar buttons can be converted to a different type of toolbar button using the new methods. The recommended toolbar button type to switch to is the**Split** button.
+Any custom listbox toolbar buttons can be converted to a different type of toolbar button using the new methods. The recommended toolbar button type to switch to is the **Split** button.
 
 ### Configuration Differences between TinyMCE 4.x and TinyMCE 5.0:
 

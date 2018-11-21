@@ -10,7 +10,7 @@ There is a **POWERED BY TINY** attribution in the status bar that is enabled by 
 
 When including attribution, the following requirements must be met:
 
-* “**POWERED BY TINY**” to be stated or the [Tiny logo](https://www.tiny.cloud/_guidelines/) placed in a readily visible location wherever the editor is loaded.
+* “**POWERED BY TINY**” to be stated or the [Tiny logo](https://www.tiny.cloud/_guidelines/) placed in a readily visible location whenever the editor is loaded.
 * The word “**Tiny**” or the Tiny logo is to have a hyperlink to https://www.tiny.cloud/.
 * The location of the product attribution is to be:
   * In the  top right-hand corner of the status bar of the TinyMCE editor; or

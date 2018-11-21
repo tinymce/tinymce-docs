@@ -3,8 +3,17 @@ tinymce.PluginManager.add('my-example-plugin', function (editor) {
     icon: 'image',
     text: 'Image',
     onAction: () => {
-      console.log('context menu clicked');
-      alert('context menu clicked');
+      console.log('image context menu clicked');
+      alert('image context menu clicked');
+    }
+  });
+
+  editor.ui.registry.addMenuItem('link', {
+    icon: 'link',
+    text: 'Link',
+    onAction: () => {
+      console.log('link context menu clicked');
+      alert('link context menu clicked');
     }
   });
 

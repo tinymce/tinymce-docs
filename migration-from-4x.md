@@ -26,7 +26,7 @@ These changes may impact integrations depending upon the level of customization.
 | ------------------- | ----------- | ------ |
 | Minor | Some custom buttons | No UI fixes required. Updating the `addButton` configuration to TinyMCE 5.0 format. |
 | Moderate | A [dialog]({{site.baseurl}}/ui-elements/dialog/#dialoginstanceapi) created using `editor.windowManager.open` configuration objects | Convert TinyMCE 4.x config to TinyMCE 5.0 config. |
-| Major | Completely custom dialogs and extended use of the Modern UI framework | The new TinyMCE 5.0 components may not cover all API use cases. However, we will strive to create supported workarounds or if there are sufficient requests and add a new component to resolve the use case. |
+| Major | Completely custom dialogs and extended use of the Modern UI framework | The new TinyMCE 5.0 components may not cover all API use cases. However, we will strive to create supported workarounds or if there are sufficient requests, add a new component to resolve the use case. |
 
 > Note: If you encounter problems while migrating and wish to be supported or need a workaround, please contact [support](https://support.tiny.cloud/hc/en-us/requests/new). You can also track developer preview issues on GitHub, [here](https://github.com/tinymce/tinymce/labels/dev%20preview).
 
@@ -53,12 +53,12 @@ In TinyMCE 5.0, some configurations have been removed because they are no longer
 | `height` | Set the height of the editable area of the editor | Sets the overall height of the editor, including the menubar, toolbars, and statusbar |
 | | Only supported number values | Supports numbers and strings, and assume a string is a valid CSS value for height |
 | `width` | Only supported number values | Supports numbers and strings, and assume a string is a valid CSS value for width |
-| `resize` | `true` by default | `true` by default if the `autoresize` plugin isn't enabled, `false` by default if the `autoresize` plugin is enabled |
+| `resize` | `true` by default | `true` by default if the `autoresize` plugin isn't enabled. `false` by default if the `autoresize` plugin is enabled. |
 
 ### Methods
 
 * All TinyMCE 4.x methods for creating UI components have been removed. New methods have been added for TinyMCE 5.0. For more information, see the [docs]({{site.baseurl}}/ui-elements/).
-* No core editor methods were removed (tinymce, editor, selection, on(), etc remain the same).
+* No core editor methods were removed (tinymce, editor, selection, on(), etc. remain the same).
 
 ## Themes
 
@@ -88,7 +88,7 @@ This will provide a similar but improved distraction free experience in TinyMCE 
 
 #### Modern
 
-The Modern theme is no longer supported in TinyMCE 5.0.  The modern themes UI library `tinymce.ui.*` has also been deleted. This change may impact integrations depending upon the level of customization.
+The Modern theme is no longer supported in TinyMCE 5.0.  The modern theme's UI library [`tinymce.ui.*`](https://www.tiny.cloud/docs/api/tinymce.ui/) has also been deleted. This change may impact integrations depending upon the ![level of customization](# Initialization).
 
 > Note: If you encounter problems while migrating and wish to be supported or need a workaround, please contact [support](https://support.tiny.cloud/hc/en-us/requests/new). You can also track developer preview issues on GitHub, [here](https://github.com/tinymce/tinymce/labels/dev%20preview).
 
@@ -102,8 +102,7 @@ The Modern theme is no longer supported in TinyMCE 5.0.  The modern themes UI li
 
 
 ## Mobile Support
-* TinyMCE 4.x introduced mobile support, bundled with a new theme and configuration settings.
-* TinyMCE 5.0 makes this process seamless, where mobile support comes out of the box without additional configurations.  The new theme is now responsive on tablets, where the classic desktop theme will be displayed, and on smaller devices like phones, a touch UI will be displayed. TinyMCE 5.0 mobile will be an exciting space to watch.
+In TinyMCE 4.x, we introduced mobile support bundled with a new theme and configuration settings. TinyMCE 5.0 makes this process seamless where mobile support comes out of the box without any additional configurations.  The new theme is now responsive on tablets, where the classic desktop theme will be displayed, and on smaller devices like phones. It now shows a UI responsive to touchscreens. TinyMCE 5.0 mobile will be an exciting space to watch.
 
 
 ## Components
@@ -146,7 +145,7 @@ For more information on how these methods have changed, see [docs]({{site.baseur
 
 ### Removed Toolbar Button Types
 
-**Listbox** is no longer a supported toolbar button type in TinyMCE 5.0. Though listbox has been removed, any functionality provided by custom listbox toolbar buttons can be retained by switching to a different type of toolbar button.
+**Listbox** is no longer a supported toolbar button type in TinyMCE 5.0. Though listbox has been removed, any functionality provided by custom listbox toolbar buttons can be retained by switching to a different kind of toolbar button.
 
 Any custom listbox toolbar buttons can be converted to a different type of toolbar button using the new methods. The recommended toolbar button type to switch to is the **Split** button.
 
@@ -205,7 +204,7 @@ editor.ui.registry.addButton('myButton', {
 `onPostRender` has been removed, and instead, you should use `onSetup`. There are 3 major changes:
 
 * While [`onpostrender`](https://www.tiny.cloud/docs/advanced/creating-a-custom-button/#togglebutton) only ran once, when the editor was created, [`onSetup`]({{site.baseurl}}/ui-elements/typesoftoolbarbuttons/#basicbuttonexampleandexplanation) runs every time a component is rendered, e.g. for a menu item, every time its menu becomes visible.  `onSetup` now has an API containing some helper functions. Each type of toolbar button has a different API.
-* You can configure `onSetup` to return a function, which will be automatically be called `onTeardown` of the component, e.g. when a menu item's menu is closed.
+* You can configure `onSetup` to return a function, which will be automatically be called `onTeardown` of the component, e.g., when a menu item's menu is closed.
   * If `onSetup` listens to any events using editor.on(eventName, callback) it should return a editor.off(eventName, callback) callback to unbind the event on tear down. This is particularly important if `onSetup` listens to any events using `editor.on(eventName, callback)`. Unless the event was `'init'`, `onSetup` should return `(buttonApi) => ed.off(eventName, callback)`. The **teardown** callback function will automatically be called by the editor when necessary.
 
 > Caution: If some functionality should only run when the editor is first initialized, it should be passed to `editor.on('init', callback)` as the callback function.
@@ -267,7 +266,7 @@ Docs are coming soon! -->
 
 ### Custom Context Toolbars
 
-The Context Toolbar registers the toolbar buttons that added using `addButton`, `addToggleButton`, `addSplitButton` or `addMenuButton`. The method for creating custom context toolbars has also been moved from `editor.addContextToolbar()` to `editor.ui.registry.addContextToolbar()`.
+The Context Toolbar accepts toolbar buttons that were previously added to the editor using the editor's `addButton`, `addToggleButton`, `addSplitButton` or a`ddMenuButton` functions. The method for creating custom context toolbars in TinyMCE 5.0 has also been changed from `editor.addContextToolbar()`` to `editor.ui.registry.addContextToolbar()`.
 
 For more information on Context Toolbars, see [docs]({{site.baseurl}}/components/contexttoolbar).
 
@@ -285,7 +284,7 @@ For more information on Context Menus, see the [docs]({{site.baseurl}}/component
 
 ### Custom Context Forms
 
-ContextForm consists of an input field and a series of related buttons. Context forms can be shown wherever a context toolbar can be shown. Also, when a context form is registered containing a `launch` configuration, a special context toolbar button with name ``form:${name}`` is registered which will launch that particular context form. ContextForms are a generalization of the `Insert Link` form that existed in the original [inlite](https://www.tiny.cloud/docs/themes/inlite/#quicklink) theme from TinyMCE 4.
+ContextForm consists of an input field and a series of related buttons. Context forms can be shown wherever a context toolbar can be displayed. Also, when a context form is registered containing a `launch` configuration, a special context toolbar button with name ``form:${name}`` is registered which will launch that particular context form. ContextForms are a generalization of the `Insert Link` form that existed in the original [inlite](https://www.tiny.cloud/docs/themes/inlite/#quicklink) theme from TinyMCE 4.
 
 ## Plugins
 
@@ -328,11 +327,11 @@ These features have either changed or have been deleted in TinyMCE 5.0.
 
 Changes between TinyMCE 4.x and TinyMCE 5.0:
 
-* Styles text field has been removed from the advanced table of the dialogs. This simplifies the dialogs for users and gives the editor stricter control over the table styles which means we are better able to ensure the styles are correct.
-* Improved how styles are set and retrieved from tables, rows, and cells, so this should be more reliable now.
-* Shifted to using CSS more for styling, and therefore removed a few legacy data attributes that were set on tables/rows/cells which are no longer the good practice to use. This makes the output HTML cleaner and more modern.
-* When opening a properties dialog with a single table/row/cell selected, the dialog will autofill with the relevant existing values. If you select multiple rows or cells and open the relevant properties dialog, TinyMCE 4.x will leave all the dialog fields blank. In TinyMCE 5.0, any fields which have the same values for all the selected rows or cells will autofill, and the fields which have no existing value or have differing values will be empty.
-* `Border` input field in the table properties dialog is now called `Border width`, for better clarity.
+* The text field for Styles have been removed from the advanced table of the dialogs. This simplifies the dialogs for users and gives the editor a stricter control over the table styles which ensures that the styles are correct.
+* We improved the methods for how styles are set and retrieved from tables, rows, and cells to make these operations more reliable.
+* We now use CSS for styling, and therefore we have removed a few legacy data attributes that were set on tables, rows, and cells which are no longer the good practice. This makes the output HTML cleaner and more modern.
+* When opening a properties dialog with a single table, row, or cell selected, the dialog will autofill with the relevant existing values. If you selected multiple rows or cells to open the relevant properties dialog, TinyMCE 4.x left all the dialog fields blank. TinyMCE 5.0 autofills for all the selected rows or cells which have the same values. The fields which have no existing value or have different values, are left empty.
+* `Border` input field in the table properties dialog is now called `Border width` for better clarity.
 
 ### Other Removed Component Configuration Settings
 

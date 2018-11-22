@@ -81,10 +81,11 @@ The Inlite theme is no longer supported in TinyMCE 5.0. The features that the In
   theme: 'silver',
   inline: true,
   toolbar: false,
+  menubar: false,
   plugins: [ 'inlite' ]
 }
  ```
-This will provide a similar but improved distraction free experience in TinyMCE 5.0.
+This will provide a similar but improved [distraction-free]({{site.baseurl}}/general-configuration-guide/use-tinymce-distraction-free/) experience in TinyMCE 5.0.
 
 #### Modern
 
@@ -145,9 +146,7 @@ For more information on how these methods have changed, see [docs]({{site.baseur
 
 ### Removed Toolbar Button Types
 
-**Listbox** is no longer a supported toolbar button type in TinyMCE 5.0. Though listbox has been removed, any functionality provided by custom listbox toolbar buttons can be retained by switching to a different kind of toolbar button.
-
-Any custom listbox toolbar buttons can be converted to a different type of toolbar button using the new methods. The recommended toolbar button type to switch to is the **Split** button.
+**Listbox** is no longer a supported toolbar button type in TinyMCE 5.0. Though listbox has been removed, any functionality provided by custom listbox toolbar buttons can be retained by switching to a different kind of toolbar button using the new methods. The recommended toolbar button type to switch to is the **Split** button.
 
 ### Configuration Differences between TinyMCE 4.x and TinyMCE 5.0:
 
@@ -201,13 +200,14 @@ editor.ui.registry.addButton('myButton', {
 ```
 #### onpostrender → onSetup
 
-`onPostRender` has been removed, and instead, you should use `onSetup`. There are 3 major changes:
+`onPostRender` has been removed and replaced with `onSetup`. There are 3 major changes:
 
-* While [`onpostrender`](https://www.tiny.cloud/docs/advanced/creating-a-custom-button/#togglebutton) only ran once, when the editor was created, [`onSetup`]({{site.baseurl}}/ui-elements/typesoftoolbarbuttons/#basicbuttonexampleandexplanation) runs every time a component is rendered, e.g. for a menu item, every time its menu becomes visible.  `onSetup` now has an API containing some helper functions. Each type of toolbar button has a different API.
-* You can configure `onSetup` to return a function, which will be automatically be called `onTeardown` of the component, e.g., when a menu item's menu is closed.
-  * If `onSetup` listens to any events using editor.on(eventName, callback) it should return a editor.off(eventName, callback) callback to unbind the event on tear down. This is particularly important if `onSetup` listens to any events using `editor.on(eventName, callback)`. Unless the event was `'init'`, `onSetup` should return `(buttonApi) => ed.off(eventName, callback)`. The **teardown** callback function will automatically be called by the editor when necessary.
+* While [`onpostrender`](https://www.tiny.cloud/docs/advanced/creating-a-custom-button/#togglebutton) only ran once, when the editor was created, [`onSetup`]({{site.baseurl}}/ui-elements/typesoftoolbarbuttons/#basicbuttonexampleandexplanation) runs every time a component is rendered, e.g. for a menu item, every time its menu becomes visible.
+* `onSetup` now has an API containing some helper functions. Each type of toolbar button has a different API.
+* If some functionality only runs when the editor is first initialized, it should be passed to `editor.on('init', callback)` as the callback function.
 
-> Caution: If some functionality should only run when the editor is first initialized, it should be passed to `editor.on('init', callback)` as the callback function.
+> Caution: You can configure `onSetup` to return a function, which will be automatically be called on tear down of the component, e.g., when a menu item's menu is closed. If `onSetup` listens to any events using editor.on(eventName, callback) it should return a editor.off(eventName, callback) callback to unbind the event on tear down. This is particularly important if `onSetup` listens to any events using `editor.on(eventName, callback)`. Unless the event was `'init'`, `onSetup` should return `(buttonApi) => ed.off(eventName, callback)`. The tear down callback function will automatically be called by the editor when necessary.
+
 
 Example:
 
@@ -284,7 +284,7 @@ For more information on Context Menus, see the [docs]({{site.baseurl}}/component
 
 ### Custom Context Forms
 
-ContextForm consists of an input field and a series of related buttons. Context forms can be shown wherever a context toolbar can be displayed. Also, when a context form is registered containing a `launch` configuration, a special context toolbar button with name ``form:${name}`` is registered which will launch that particular context form. ContextForms are a generalization of the `Insert Link` form that existed in the original [inlite](https://www.tiny.cloud/docs/themes/inlite/#quicklink) theme from TinyMCE 4.
+ContextForm consists of an input field and a series of related buttons. Context forms can be shown wherever a context toolbar can be displayed. Also, when a context form is registered containing a `launch` configuration, a special context toolbar button with name **\`form:${name}\`** is registered which will launch that particular context form. ContextForms are a generalization of the `Insert Link` form that existed in the original [inlite](https://www.tiny.cloud/docs/themes/inlite/#quicklink) theme from TinyMCE 4.
 
 ## Plugins
 

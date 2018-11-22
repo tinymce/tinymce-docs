@@ -28,8 +28,12 @@ The new TinyMCE 5.0 editor comes with significant changes to the previous versio
 | AP-47 | [dialog H] create a help menu in Alloy |
 | AP-49 | cleanup alloy types |
 | AP-51 | SPIKE: Investigate typed Alloy on the Mobile theme |
+| AP-57	| Add Types to Boulder |
 | AP-71 | Fully type alloy |
 | AP-144 | Port status bar to alloy |
+| AP-409 | Add types to lumber |
+| AP-407 | Add types to Sand |
+| AP-415 | Add types to Jax |
 
 #### Browser
 
@@ -48,6 +52,7 @@ The following browser related issues were reported during the developer's previe
 The following Colorpicker related issues were reported during the developer's preview and are now fixed in the TinyMCE 5.0 BETA version. Please see the [Colorpicker]({{site.baseurl}}/configure/content-appearance/#color_picker) docs for more information.
 
 | Issue key | Summary |
+| AP-87	| Create colorinput component |
 | AP-207 | Color Picker - Not applying color selection |
 | AP-210 | Color Picker - button should not be visible if color picker is not in the list of plugins configured |
 | AP-216 | Change color picker dialog title to "Color" to match Tiny 4.8.2 |
@@ -57,7 +62,6 @@ The following Colorpicker related issues were reported during the developer's pr
 | AP-123 | Colorinput fixes |
 | AP-142 | Font color and Background color palettes |
 | AP-284 | Unable to apply forecolor and backcolor to the text in the table |
-| AP-87	| Create colorinput component |
 | AP-286 | ColorInput gives an error saying the panel is an unknown component. |
 
 
@@ -102,6 +106,7 @@ The following editor related issues were reported during the developer's preview
 | AP-262 | size lock ratio |
 | AP-267 | Tall menus cause scroll jump with a small window |
 | AP-273 | Bottom positioned menus appear in the wrong spot initially |
+| AP-282 | Translations |
 | AP-283 | Re-enable all tinymce tests |
 | AP-312 | Cap the width of menu items with ellipsis. |
 | AP-359 | Font size select issues |
@@ -135,8 +140,8 @@ The following CSS related issues were reported during the developer's preview an
 | AP-183 | create a Css solution for dialog width/height |
 | AP-201 | Refactor the menu CSS to be more generic |
 | AP-203 | Need to make a content.inline.min.css |
-| AP-453 | TinyMCE 5 DP doesn't support css values in height option |
 | AP-393 | style_formats API is not fully supported |
+| AP-453 | TinyMCE 5 DP doesn't support css values in height option |
 
 #### Skin
 
@@ -212,7 +217,13 @@ The following Dialog related issues were reported during the developer's preview
 | AP-55	| [dialog M] Insert Link |
 | AP-61	| Create styles for a pick swatch dialog |
 | AP-70	| Spike a dialog API for discussion |
+| AP-74 | Fix classes used on TextField and make label optional |
 | AP-81	| Wire dialog values through TabPanel |
+| AP-82 | Implement Grid component |
+| AP-83 | Create a Dropzone component |
+| AP-88 | Fix type and lint errors |
+| AP-89 | Pass through extra information to typeaheads |
+| AP-90	| Add change behavior to SelectBox |
 | AP-93	| Search replace dialog tabbing from replace to check box does not work |
 | AP-97	| Make a confirm dialog |
 | AP-98	 | [dialog L] Code dialog |
@@ -247,6 +258,15 @@ The following Dialog related issues were reported during the developer's preview
 | AP-315 | dialog checkbox does not refire a dialog onChange event |
 | AP-329 | tabbed dialogs shrinking when no results returned |
 
+#### Menu
+
+The following Menu related issues were reported during the developer's preview and are now fixed in the TinyMCE 5.0 BETA version.
+
+| Issue key | Summary |
+| AP-2 | Clarify Icon declaration for buttons and menuItems |
+| AP-76	| Reimplement Buttons and MenuItems using Bridge register |
+| AP-280 | Menu check marks should be on the left |
+
 #### Toolbar Buttons
 
 The following Toolbar Buttons related issues were reported during the developer's preview and are now fixed in the TinyMCE 5.0 BETA version. Please see the [Toolbar Buttons]({{site.baseurl}}/ui-elements/toolbarbuttons/) docs for more information.
@@ -261,6 +281,7 @@ The following Toolbar Buttons related issues were reported during the developer'
 | AP-66	| [T5] plugins M-S update to the new addButton, Addmenu APi |
 | AP-67	| [T5] plugins T-W update to the new addButton, Addmenu APi |
 | AP-68	| [T5] plugins all Premium plugins - update to the new addButton, Addmenu APi |
+| AP-136 | tab navigating radio buttons is broken after clicking a radio button |
 | AP-152 | Generalise toolbars in preparation for context toolbars. |
 | AP-155 | Identify the bridge requirements for existing / proposed toolbar / menubar. |
 | AP-175 | Create a sidebar component |
@@ -282,7 +303,6 @@ The following Toolbar Buttons related issues were reported during the developer'
 | AP-371 | Stop icon is displayed along with tooltip for undo and redo buttons |
 | AP-377 | toolbar - restore last draft icon has text displayed ( not tooltip) |
 | AP-450 | Filter out empty toolbar groups |
-| AP-136 | tab navigating radio buttons is broken after clicking a radio button |
 
 ### Premium Plugins
 
@@ -320,8 +340,8 @@ The following Accessibility Checker related issues were reported during the deve
 | AP-261 | Accessibility checker, notification banner is broken |
 | AP-330 | accessibility checker not loading at all |
 | AP-340 | accessibility checker requires input validation |
-| AP-419 | Accessibility checker does not work without a toolbar |
 | AP-369 | AllyChecker dialogue should show "Caption cannot be empty" when left empty and click repair |
+| AP-419 | Accessibility checker does not work without a toolbar |
 
 #### Advlist
 
@@ -340,24 +360,17 @@ The following Anchors related issues were reported during the developer's previe
 | AP-277 | Statusbar bugs (tox-edit-area height and autoresize plugin) |
 | AP-424 | Turn resize handler off when autoresize is enabled |
 
-#### Boulder
-
-The following Accessibility Checker related issues were reported during the developer's preview and are now fixed in the TinyMCE 5.0 BETA version. Please see the [Accessibility Checker]({{site.baseurl}}/plugins/a11ychecker/) docs for more information.
-
-| Issue key | Summary |
-| AP-57	| Add Types to Boulder |
-
 #### CharMap
 
 The following CharMap related issues were reported during the developer's preview and are now fixed in the TinyMCE 5.0 BETA version. Please see the [CharMap]({{site.baseurl}}/plugins/charmap/) docs for more information.
 
 | Issue key| Summary |
 | AP-86	| Create the charmap component |
+| AP-115 | Special chars, when mouse focus moves away from the char, focus defaults back to the first item instead of the last item that was focused |
 | AP-129 | Character Map mouse hover and mouse out focus states |
 | AP-228 | Consolidate charmap / resultsbox into Collection |
 | AP-238 | Charmap: Character category names need updating |
 | AP-316 | Character map entries do not have the active class added on mouse over |
-| AP-115 | Special chars, when mouse focus moves away from the char, focus defaults back to the first item instead of the last item that was focused |
 
 #### Directionality
 
@@ -365,14 +378,6 @@ The following Directionality related issues were reported during the developer's
 
 | Issue key | Summary |
 | AP-423 | Directionality ltr/rtl not implemented |
-
-#### DropZone
-
-The following Accessibility Checker related issues were reported during the developer's preview and are now fixed in the TinyMCE 5.0 BETA version. Please see the [Accessibility Checker]({{site.baseurl}}/plugins/a11ychecker/) docs for more information.
-
-| Issue key | Summary |
-| AP-83 | Create a Dropzone component |
-
 
 #### Emoticons
 
@@ -383,36 +388,15 @@ The following Emoticons related issues were reported during the developer's prev
 | AP-366 | emoji type ahead can mess with typing urls http:// will bring up an empty emoji typeahead result |
 | AP-449 | Emoji dialog intermittent failing tests |
 
-#### Find and Replace
+#### Image Tools
 
-The following Accessibility Checker related issues were reported during the developer's preview and are now fixed in the TinyMCE 5.0 BETA version. Please see the [Accessibility Checker]({{site.baseurl}}/plugins/a11ychecker/) docs for more information.
-
-| Issue key| Summary |
-| AP-298 | Find and Replace - "Match case" should not be selected by default, title and button label needs correction |
-
-#### Grid
-
-The following Accessibility Checker related issues were reported during the developer's preview and are now fixed in the TinyMCE 5.0 BETA version. Please see the [Accessibility Checker]({{site.baseurl}}/plugins/a11ychecker/) docs for more information.
-
-| Issue key| Summary |
-| AP-82 | Implement Grid component |
-
-#### Image
-
-The following Accessibility Checker related issues were reported during the developer's preview and are now fixed in the TinyMCE 5.0 BETA version. Please see the [Accessibility Checker]({{site.baseurl}}/plugins/a11ychecker/) docs for more information.
+The following Image Tools related issues were reported during the developer's preview and are now fixed in the TinyMCE 5.0 BETA version. Please see the [Image Tools]({{site.baseurl}}/plugins/imagetools/) docs for more information.
 
 | Issue key | Summary |
 | AP-323 | imagetools needs to handle CORS errors |
 | AP-342 | imagetools_toolbar configurations not functional |
 | AP-346 | Imagetools - Image editing area size should be consistent across all options and should not overlap on buttons below |
 | AP-382 | Image - context menu not appearing when image has caption |
-
-#### Language
-
-The following Accessibility Checker related issues were reported during the developer's preview and are now fixed in the TinyMCE 5.0 BETA version. Please see the [Accessibility Checker]({{site.baseurl}}/plugins/a11ychecker/) docs for more information.
-
-| Issue key| Summary |
-| AP-282 | Translations |
 
 #### Link
 
@@ -433,15 +417,6 @@ The following Media related issues were reported during the developer's preview 
 | AP-198 | Media plugin is missing media dimensions setting |
 | AP-245 | Media Embed premium plugin (pillow) |
 
-#### Menu
-
-The following Menu related issues were reported during the developer's preview and are now fixed in the TinyMCE 5.0 BETA version. Please see the [Accessibility Checker]({{site.baseurl}}/plugins/a11ychecker/) docs for more information.
-
-| Issue key | Summary |
-| AP-2 | Clarify Icon declaration for buttons and menuItems |
-| AP-76	| Reimplement Buttons and MenuItems using Bridge register |
-| AP-280 | Menu check marks should be on the left |
-
 #### Num/Bullist
 
 The following Lists related issues were reported during the developer's preview and are now fixed in the TinyMCE 5.0 BETA version. Please see the [Lists]({{site.baseurl}}/plugins/lists/) docs for more information.
@@ -451,12 +426,12 @@ The following Lists related issues were reported during the developer's preview 
 | AP-146 | Create numbered list icons |
 | AP-339 | Num/Bullist - not reflecting the selection on toolbar |
 
-#### SelectBox
+#### Search and Replace
 
-The following Accessibility Checker related issues were reported during the developer's preview and are now fixed in the TinyMCE 5.0 BETA version. Please see the [Accessibility Checker]({{site.baseurl}}/plugins/a11ychecker/) docs for more information.
+The following Search and Replace related issues were reported during the developer's preview and are now fixed in the TinyMCE 5.0 BETA version. Please see the [Search and Replace]({{site.baseurl}}/plugins/searchreplace/) docs for more information.
 
-| Issue key | Summary |
-| AP-90	| Add change behavior to SelectBox |
+| Issue key| Summary |
+| AP-298 | Find and Replace - "Match case" should not be selected by default, title and button label needs correction |
 
 #### Table
 
@@ -471,27 +446,12 @@ The following Table related issues were reported during the developer's preview 
 | AP-385 | Caption - table properties and image |
 | AP-391 | Table style attribute should retain "border-collapse: collapse;" when border is set to 0 |
 
-#### TextField
-
-The following TextField related issues were reported during the developer's preview and are now fixed in the TinyMCE 5.0 BETA version.
-
-| Issue key | Summary |
-| AP-74 | Fix classes used on TextField and make label optional |
-
 #### Table of Contents
 
 The following Table of Contents related issues were reported during the developer's preview and are now fixed in the TinyMCE 5.0 BETA version. Please see the [Table of Contents]({{site.baseurl}}/plugins/toc/) docs for more information.
 
 | Issue key | Summary |
 | AP-347 | By default table of contents (toc) should be disabled on toolbar and should be only enabled if editor content has headings, Table of contents - contextmenu should be displayed in center not top right corner |
-
-#### Typeheads
-
-The following Typeheads related issues were reported during the developer's preview and are now fixed in the TinyMCE 5.0 BETA version. Please see the [Typeheads]({{site.baseurl}}/configure/advanced-editing-behavior/#typeahead_urls) docs for more information.
-
-| Issue key | Summary |
-| AP-88 | Fix type and lint errors |
-| AP-89 | Pass through extra information to typeaheads |
 
 #### URL
 
@@ -504,9 +464,6 @@ The following URL related issues were reported during the developer's preview an
 | AP-125 | Add history to UrlInput and disable anchor+headers in image mode |
 | AP-128 | Wire up button on URL Input |
 | AP-153 | Pressing <escape> and <enter> in a URL input should not be swallowed by the URL input |
-| AP-409 | Add types to lumber |
-| AP-407 | Add types to Sand |
-| AP-415 | Add types to Jax |
 
 
 ### Documentation

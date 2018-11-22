@@ -8,7 +8,7 @@ Nobody likes content with spelling errors. Our team at TinyMCE is motivated to h
 
 ## Browser-based spell checking
 
-The first and easiest to implement option is to utilize the browser's native spell check functionality by assigning the [`browser_spellcheck`]({{ site.baseurl }}/configure/spelling/#browser_spellcheck) configuration option the value of `true`. Depending on the right click / context behavior you want, you *may* need to enable the [`contextmenu`]({{ site.baseurl }}/plugins/contextmenu/) plugin.
+The first and easiest to implement option is to utilize the browser's native spell check functionality by assigning the [`browser_spellcheck`]({{ site.baseurl }}/configure/spelling/#browser_spellcheck) configuration option the value of `true`. Depending on the right click / context behavior you want, you *may* need to enable the [`contextmenu`]({{ site.baseurl }}/plugins/contextmenu/) option.
 
 ```js
 tinymce.init({

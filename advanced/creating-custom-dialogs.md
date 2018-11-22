@@ -9,7 +9,7 @@ keywords: custom dialog dialogs cdn windowmanager
 
 ## Dialogs as HTML pages
 
-In TinyMCE 3.x all dialogs were HTML pages that got loaded into an iframe or window. This was changed in TinyMCE 4 to make it easier to create plugins and fully support CDNs. But you can still load HTML based pages into TinyMCE dialogs by using the WindowManager.
+HTML based pages can be loaded into TinyMCE dialogs by using the WindowManager.This makes it easier to create plugins and fully support CDNs.
 
 ```js
 // Opens a HTML page inside a TinyMCE dialog
@@ -21,10 +21,10 @@ editor.windowManager.open({
 });
 ```
 
-You can also pass in parameters to the dialog just as you could in 3.x by using the second parameter of the WindowManager.open.
+Parameters can be passed to the dialog by using the second parameter of the `WindowManager.open`
 
 ```js
-// Opens a HTML page inside a TinyMCE dialog and pass in two parameters
+// Opens an HTML page inside a TinyMCE dialog and pass in two parameters
 editor.windowManager.open({
   title: 'My html dialog',
   url: 'mydialog.html',
@@ -36,7 +36,7 @@ editor.windowManager.open({
 });
 ```
 
-You can access these parameters from your mydialog.html page by using this code:
+Access these parameters from the `mydialog.html` page by using this code:
 
 ```js
 // Get the parameters passed into the window from the top frame
@@ -44,7 +44,7 @@ var args = top.tinymce.activeEditor.windowManager.getParams();
 console.log(args.arg1, args.arg2);
 ```
 
-You can also close the current window by calling:
+Close the current window by calling:
 
 ```js
 // Close the front most window (mydialog.html)

@@ -9,17 +9,17 @@ keywords: php_upload_handler php async image upload
 
 {% include pardot-px-moxiemanager.html %}
 
-The following script creates a server-side upload handler in PHP suitable for use with TinyMCE.
+The following PHP script creates a server-side upload handler suitable for TinyMCE.
 
-Please note that this script is provided for your reference - you'll need to update this as necessary for your application.
+> Note: This script is a reference requires updating to suit the application.
 
 ##### Example postAcceptor.php
 
 ```php
 <?php
-  /*******************************************************
-   * Only these origins will be allowed to upload images *
-   ******************************************************/
+  /***************************************************
+   * Only these origins are allowed to upload images *
+   ***************************************************/
   $accepted_origins = array("http://localhost", "http://192.168.1.1", "http://example.com");
 
   /*********************************************

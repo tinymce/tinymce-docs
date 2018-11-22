@@ -89,7 +89,7 @@ This will provide a similar but improved [distraction-free]({{site.baseurl}}/gen
 
 #### Modern
 
-The Modern theme is no longer supported in TinyMCE 5.0.  The modern theme's UI library [`tinymce.ui.*`](https://www.tiny.cloud/docs/api/tinymce.ui/) has also been deleted. This change may impact integrations depending upon the ![level of customization](# Initialization).
+The Modern theme is no longer supported in TinyMCE 5.0.  The modern theme's UI library [`tinymce.ui.*`](https://www.tiny.cloud/docs/api/tinymce.ui/) has also been deleted. This change may impact integrations depending upon the [level of customization]({{site.baseurl}}/migration-from-4x/#initialization).
 
 > Note: If you encounter problems while migrating and wish to be supported or need a workaround, please contact [support](https://support.tiny.cloud/hc/en-us/requests/new). You can also track developer preview issues on GitHub, [here](https://github.com/tinymce/tinymce/labels/dev%20preview).
 
@@ -114,9 +114,27 @@ The methods for registering components have moved to a different part of the edi
 
 #### Changed Methods
 
-| **Old Method** | **New Method** |
-| -------------- | -------------- |
-| editor.addButton(identifier, configuration) | editor.ui.registry.addButton(identifier, configuration) |
+| **Old Method** | **New Method** | **Component** |
+| -------------- | -------------- | ------------- |
+| editor.addButton(identifier, configuration) | editor.ui.registry.addButton(identifier, configuration) | [Toolbar Buttons]({{site.baseurl}}/ui-elements/typesoftoolbarbuttons/) |
+| editor.addContextToolbar: (name, spec) | editor.ui.registry.addContextToolbar | [Context toolbar]({{site.baseurl}}/ui-elements/contexttoolbar/) |
+| editor.addMenuItem: (name, spec) | editor.ui.registry.addMenuItem | [Menu Item]({{site.baseurl}}/migration-from-4x/#custommenuitems) |
+
+#### New Methods
+
+The following new methods have been added for creating and using new components:
+
+| **New Method** | **Description** |
+| -------------- | --------------- |
+| editor.ui.registry.addAutocompleter: (name, spec) | Autocompleter |
+| editor.ui.registry.addContextForm: (name, spec) | [Context form]({{site.baseurl}}/ui-elements/contextform/) |
+| editor.ui.registry.addContextMenu: (name, spec) | [Context menu]({{site.baseurl}}/ui-elements/contextmenu/) |
+| editor.ui.registry.addMenuButton: (name, spec) | [Menu Button]({{site.baseurl}}/ui-elements/typesoftoolbarbuttons/#menubutton) |
+| editor.ui.registry.addSplitButton: (name, spec) | [Split Button]({{site.baseurl}}/ui-elements/typesoftoolbarbuttons/#splitbutton) |
+| editor.ui.registry.addToggleButton: (name, spec) | [Toggle Button]({{site.baseurl}}/ui-elements/typesoftoolbarbuttons/#togglebutton) |
+| editor.ui.registry.addToggleMenuItem: (name, spec) | [Toggle menu item]({{site.baseurl}}/migration-from-4x/#custommenuitems) |
+| editor.ui.registry.addIcon: (name, svgData) | Registers an SVG as an icon |
+| editor.ui.registry.getAll: () | Returns an array of everything in the UI registry |
 
 ### Custom Toolbar Buttons
 
@@ -204,9 +222,10 @@ editor.ui.registry.addButton('myButton', {
 
 * While [`onpostrender`](https://www.tiny.cloud/docs/advanced/creating-a-custom-button/#togglebutton) only ran once, when the editor was created, [`onSetup`]({{site.baseurl}}/ui-elements/typesoftoolbarbuttons/#basicbuttonexampleandexplanation) runs every time a component is rendered, e.g. for a menu item, every time its menu becomes visible.
 * `onSetup` now has an API containing some helper functions. Each type of toolbar button has a different API.
-* If some functionality only runs when the editor is first initialized, it should be passed to `editor.on('init', callback)` as the callback function.
+* You can configure `onSetup` to return a function, which will be automatically be called on tear down of the component, e.g., when a menu item's menu is closed.
+    * If some functionality only runs when the editor is first initialized, it should be passed to `editor.on('init', callback)` as the callback function.
 
-> Caution: You can configure `onSetup` to return a function, which will be automatically be called on tear down of the component, e.g., when a menu item's menu is closed. If `onSetup` listens to any events using editor.on(eventName, callback) it should return a editor.off(eventName, callback) callback to unbind the event on tear down. This is particularly important if `onSetup` listens to any events using `editor.on(eventName, callback)`. Unless the event was `'init'`, `onSetup` should return `(buttonApi) => ed.off(eventName, callback)`. The tear down callback function will automatically be called by the editor when necessary.
+> Caution: If `onSetup` listens to any events using editor.on(eventName, callback) it should return a editor.off(eventName, callback) callback to unbind the event on tear down. This is particularly important if `onSetup` listens to any events using `editor.on(eventName, callback)`. Unless the event was `'init'`, `onSetup` should return `(buttonApi) => ed.off(eventName, callback)`. The tear down callback function will automatically be called by the editor when necessary.
 
 
 Example:
@@ -247,18 +266,24 @@ editor.ui.registry.addButton('customDateButton', {
 
 ### Custom Menu Items
 
-##### New methods:
+#### New Methods:
 
 | **New Method** | **Description** |
 | ----------- | -------------- |
-| editor.ui.registry.addMenuItem() | Adds a custom basic menu item. |
 | editor.ui.registry.addToggleMenuItem() | Adds a custom toggle menu item. |
+
+#### Changed Methods:
+
+| **Old Method** | **New Method** | **Description** |
+| -------------- | -------------- | --------------- |
+| editor.addMenuItem: (name, spec) | editor.ui.registry.addMenuItem() | Adds a custom basic menu item. |
+
 
 <!-- Docs are coming soon! -->
 
 ### Custom Dialogs
 
-Dialogs no longer have `height` or `width` settings. The dialog component now uses CSS3 and a predefined `small`, `medium`, and `large` template to specify the dimensions. See [docs]({{site.baseurl}}/ui-elements/dialog/), for more information.
+Dialogs no longer have `height` or `width` settings. The dialog component now uses CSS3 and a predefined `small`, `medium`, and `large` template to specify the dimensions. See [docs]({{site.baseurl}}/ui-elements/dialog/) for more information.
 
 <!-- ### Custom Sidebars
 

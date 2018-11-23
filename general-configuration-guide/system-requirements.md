@@ -1,6 +1,7 @@
 ---
 layout: default
 title: 14. System Requirements
+title_nav: System requirements
 description: Official TinyMCE browser support.
 keywords: browser compatibility explorer ie safari firefox chrome edge
 ---

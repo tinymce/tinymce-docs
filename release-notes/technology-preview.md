@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Technology Preview
-title_nav: Technology Preview
+title_nav: Technology Preview release notes
 description: This section previews the new technology introduced in Tiny 5.0.
 keywords: new features enhancements technology preview
 ---

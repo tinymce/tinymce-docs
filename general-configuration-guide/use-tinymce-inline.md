@@ -1,6 +1,7 @@
 ---
 layout: default
-title: 03. Use TinyMCE Inline
+title: 03. Setup inline
+title_nav: Inline mode
 description_short: Learn about forms-based editing v. inline editing.
 description: Understand the difference between traditional forms-based editing and advanced inline editing.
 keywords: form inline edit stylesheet

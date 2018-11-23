@@ -1,7 +1,7 @@
 ---
 layout: default
 title: URL Handling
-description_short:
+title_nav: URL handling options
 description: These settings affect the way URLs are handled by the editor.
 keywords: url urls relative absolute domain document_base_url
 ---

@@ -1,6 +1,7 @@
 ---
 layout: default
 title: JWT Authentication
+title_nav: JWT authentication setup
 description_short: JWT Authentication
 description: JWT is a common authorization solution for web services.
 ---

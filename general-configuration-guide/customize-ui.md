@@ -1,6 +1,7 @@
 ---
 layout: default
 title: 08. Customize UI
+title_nav: Customize the user interface
 description: Learn how to change the appearance of the editor.
 keywords: themes skins statusbar
 ---

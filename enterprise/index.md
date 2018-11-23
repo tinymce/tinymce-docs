@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Premium Features
+title_nav: Premium features
 description: Premium features from the makers of TinyMCE.
 type: folder
 ---

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Boilerplate Content CSS
-title_nav: Boilerplate Content CSS
+title_nav: Boilerplate content CSS
 description_short: Learn how to set up CSS for your site to integrate TinyMCE.
 description: Learn how to set up CSS for your site to integrate TinyMCE.
 keywords: css content_css

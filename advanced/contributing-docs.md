@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Contribute to the Docs
-title_nav: Contribute to the Docs
+title: Contribute to Documentation
+title_nav: Contribute to documentation
 description_short: Contribute to TinyMCE's developer documentation.
 description: Contribute to TinyMCE's developer documentation.
 keywords: opensource oss contributors lgpl docs dox

@@ -1,6 +1,7 @@
 ---
 layout: default
-title: Spelling
+title: Spelling Options
+title_nav: Spelling options
 description_short:
 description: TinyMCE spell checking
 ---

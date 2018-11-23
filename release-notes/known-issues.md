@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Known and Fixed Issues
-title_nav: Known and Fixed Issues
+title_nav: Known and fixed issues
 description: These are the known and fixed issues in TinyMCE 5.0.
 keywords: knownissues bug releasenotes migration 4.x
 ---

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: UI Elements
-title_nav: UI Elements
+title_nav: User interface elements
 description: These are the configurable UI elements available for user customization.
 keywords: toolbar toolbarbuttons buttons toolbarbuttonsapi
 type: folder

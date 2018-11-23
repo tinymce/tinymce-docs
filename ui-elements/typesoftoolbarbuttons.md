@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Types of Toolbar Buttons
-title_nav: Types of Toolbar Buttons
+title_nav: Types of toolbar buttons
 description: This section shows you different types of toolbar buttons.
 keywords: toolbar toolbarbuttons buttons toolbarbuttonsapi
 ---

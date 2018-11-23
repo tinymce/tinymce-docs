@@ -26,7 +26,7 @@ The Custom Menu items configurations options has changed in TinyMCE 5.0. The `ad
 
 ## Dialog
 
-The [Dialog]({{site.baseurl}}/ui-elements/dialog/) component is created for showing dialogs (sometimes referred to as modals) in your application. The plugin supports the use of dynamic content for all aspects and is easily configurable and overridable. To display simple information (e.g., source code plugin, displays the HTML code from the content in the dialog).
+The [Dialog]({{site.baseurl}}/ui-elements/dialog/) component is created for showing dialogs (sometimes referred to as modals) in your application. The plugin supports the use of dynamic content for all aspects and is easily configurable and overridable. To display simple information e.g., source code plugin, displays the HTML code from the content in the dialog.
 
 ## Format Painter 1.0
 

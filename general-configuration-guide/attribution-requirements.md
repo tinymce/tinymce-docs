@@ -4,7 +4,7 @@ title: 13. Attribution Requirements
 description: TinyMCE Terms of Service.
 keywords: legal attribution requirements logo branding
 ---
-Tiny Cloud is available to anyone wishing to integrate TinyMCE into their own website or application. Use of Tiny Cloud is governed by the [Terms of Service](https://about.tiny.cloud/legal/tiny-cloud-services-subscription-agreement/). Among other things, these terms require adhering to specific guidelines on how branding for Tiny must be handled. The purpose of this document is to highlight these requirements.
+Tiny Cloud is available to anyone wanting to integrate TinyMCE into their own website or application. Use of Tiny Cloud is governed by the [Terms of Service](https://about.tiny.cloud/legal/tiny-cloud-services-subscription-agreement/). Among other things, these terms require adhering to specific guidelines on how branding for Tiny must be handled. The purpose of this document is to highlight these requirements.
 
 There is a **POWERED BY TINY** attribution in the status bar that is enabled by default for all Tiny Cloud users. The Tiny Cloud Starter plan is meant to support small projects and give back to the community. This option cannot be disabled on a free user account. However, it is **optional** for users on other paid tiers to include attribution and link back to Tiny via a logo or text to let the world know that their editor is powered by Tiny.
 

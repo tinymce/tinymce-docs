@@ -304,6 +304,18 @@ The following Toolbar Buttons related issues were reported during the developer'
 | AP-377 | toolbar - restore last draft icon has text displayed ( not tooltip) |
 | AP-450 | Filter out empty toolbar groups |
 
+#### URL
+
+The following URL related issues were reported during the developer's preview and are now fixed in the TinyMCE 5.0 BETA version. Please see the [URL]({{site.baseurl}}/configure/url-handling/) docs for more information.
+
+| Issue key| Summary |
+| AP-85	| Make a Url input component |
+| AP-118 | Change Urlinput to fire formChange event |
+| AP-119 | Add validation icons to UrlInput |
+| AP-125 | Add history to UrlInput and disable anchor+headers in image mode |
+| AP-128 | Wire up button on URL Input |
+| AP-153 | Pressing <escape> and <enter> in a URL input should not be swallowed by the URL input |
+
 ### Premium Plugins
 
 #### Comments
@@ -381,7 +393,7 @@ The following Directionality related issues were reported during the developer's
 
 #### Emoticons
 
-The following Emoticons related issues were reported during the developer's preview and are now fixed in the TinyMCE 5.0 BETA version. Please see the [Accessibility Checker]({{site.baseurl}}/plugins/emoticons/) docs for more information.
+The following Emoticons related issues were reported during the developer's preview and are now fixed in the TinyMCE 5.0 BETA version. Please see the [Emoticons]({{site.baseurl}}/plugins/emoticons/) docs for more information.
 
 | Issue key | Summary |
 | AP-156 | Create the emoticon panel |
@@ -452,19 +464,6 @@ The following Table of Contents related issues were reported during the develope
 
 | Issue key | Summary |
 | AP-347 | By default table of contents (toc) should be disabled on toolbar and should be only enabled if editor content has headings, Table of contents - contextmenu should be displayed in center not top right corner |
-
-#### URL
-
-The following URL related issues were reported during the developer's preview and are now fixed in the TinyMCE 5.0 BETA version. Please see the [URL]({{site.baseurl}}/configure/url-handling/) docs for more information.
-
-| Issue key| Summary |
-| AP-85	| Make a Url input component |
-| AP-118 | Change Urlinput to fire formChange event |
-| AP-119 | Add validation icons to UrlInput |
-| AP-125 | Add history to UrlInput and disable anchor+headers in image mode |
-| AP-128 | Wire up button on URL Input |
-| AP-153 | Pressing <escape> and <enter> in a URL input should not be swallowed by the URL input |
-
 
 ### Documentation
 

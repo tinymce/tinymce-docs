@@ -266,6 +266,11 @@ editor.ui.registry.addButton('customDateButton', {
 
 ### Custom Menu Items
 
+The following configurations options have changed in the Custom Menu items in TinyMCE 5.0:
+* `addMenuItem` has a new configuration.
+* A new method `addToggleMenuItem` has been added to the options. The `addToggleMenuItem` is an explicit method for creating toggle menu items similar to the new special [toolbar button methods]({{site.baseurl}}/ui-elements/typesoftoolbarbuttons/).
+* The concept of `context` has been removed from menu item configurations.
+
 #### New Methods:
 
 | **New Method** | **Description** |
@@ -279,6 +284,25 @@ editor.ui.registry.addButton('customDateButton', {
 | editor.addMenuItem: (name, spec) | editor.ui.registry.addMenuItem() | Adds a custom basic menu item. |
 
 
+The following are examples of Custom Menu Item configurations in TinyMCE 4.x and TinyMCE 5.0:
+
+#### TinyMCE 4.x
+
+```js
+editor.addMenuItem('example', {
+ text: 'My menu item',
+ context: 'tools',
+ onclick: () => editor.insertContent('Hello world!!');
+});
+```
+#### TinyMCE 5.0
+
+```js
+editor.ui.registry.addMenuItem('example', {
+ text: 'My menu item',
+ onAction: () => editor.insertContent('Hello world!!');
+});
+```
 <!-- Docs are coming soon! -->
 
 ### Custom Dialogs

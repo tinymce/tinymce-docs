@@ -10,7 +10,7 @@ keywords: new features enhancements technology preview
 
 ### Context Menu
 
-The ContextMenu can provide a simple list of clickable commands, or offer an in-menu form. This makes the most straightforward attribute modifications possible. TinyMCE 5.0 offers the [ContextMenu]({{site.baseurl}}/ui-elements/contextmenu/), that is designed for web applications in need of menus on a possibly large amount of objects. Now, a single menu is defined that can be used by multiple objects. A context menu doesn't need to bind itself to the triggering objects. This allows injecting and removing triggers without having to re-initialize or update the context menu.
+The [ContextMenu]({{site.baseurl}}/ui-elements/contextmenu/) can provide a simple list of clickable commands, or offer an in-menu form. This makes the most straightforward attribute modifications possible. TinyMCE 5.0 offers the [ContextMenu]({{site.baseurl}}/ui-elements/contextmenu/), that is designed for web applications in need of menus on a possibly large amount of objects. Now, a single menu is defined that can be used by multiple objects. A context menu doesn't need to bind itself to the triggering objects. This allows injecting and removing triggers without having to re-initialize or update the context menu.
 
 ### Context Toolbars
 
@@ -18,7 +18,7 @@ The Context Toolbar configures its buttons based on the type of object selected 
 
 <!-- ### Custom Menu Items
 
-* `editor.menuitems`, [see configuration]({{site.baseurl}}/components/toolbarbuttons/components/menu/).
+* `editor.menuitems`, [see configuration]({{site.baseurl}}/ui-elements/typesoftoolbarbuttons/#menunbspbutton).
 
 ### Custom Sidebars
 

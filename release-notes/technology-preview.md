@@ -41,7 +41,7 @@ Try out our demo page to explore the new UI.
 
 ### Easy to Integrate with Modern Systems
 
-As application design continues to improve and evolve, and developers are asked to integrate the editor into different apps. The flexible UI allows developers to more easily match the look and feel of these new applications which provides the benefit of creating a seamless user experience.
+As application design continues to improve and evolve, and developers are asked to integrate the editor into different apps. TinyMCE 5.0 has a flexible UI that allows developers to easily match the look and feel of these new applications which provides the benefit of creating a seamless user experience.
 
 ### Easy Upgrade
 
@@ -51,9 +51,9 @@ Developers can upgrade their TinyMCE 4.x instances to TinyMCE 5.0 with little/no
 
 ### Enhanced CSS
 
-A **SKIN** in Tinymce is used to make changes to the appearance of the editor, for example, colors, margins, paddings, fonts, icons, etc. A **Theme** creates the editor construction (left/top/bottom/right of the editing area - vertical or horizontal, inline or outside, etc.). A skin usually changes the color scheme of a button, dialog, etc. while the theme applies to the whole editor including its functionality and has child skins to change the appearance.
-
 TinyMCE  5.0 uses a new theme **Silver** and a new skin **Oxide** which uses more modern CSS such as `flexbox`.
+
+A **SKIN** in Tinymce is used to make changes to the appearance of the editor, for example, colors, margins, paddings, fonts, icons, etc. A **Theme** creates the editor construction (left/top/bottom/right of the editing area - vertical or horizontal, inline or outside, etc.). A skin usually changes the color scheme of a button, dialog, etc. while the theme applies to the whole editor including its functionality and has child skins to change the appearance.
 
 The skin creator is coupled with the `tinymce.ui` framework, so it works with the modern theme, the inlite theme, and to some extent MoxieManager.
 
@@ -65,6 +65,6 @@ TinyMCE 5.0 offers a modern CSS to provide styled components that leverage the p
 
 TinyMCE 5.0 codebase has been extensively rewritten focus on converting the UI components to a more modern UI framework. As of consequence of this rewrite, all the related features have been updated. The new framework takes advantage of the latest CSS3 features for streamline styling and is ARIA [IBM standards](https://www.ibm.com/able/checklists.html) compliant. The new UI framework has a reasonably locked-down API for creating components, which means our code is more structured and has an in-built validation combined with TypeScript. This strictness makes our code cleaner and more stable. The new TinyMCE 5.0 code is cleaner and easier to maintain and troubleshoot.
 
-### Support Modern Browser Technologies
+### Supports Modern Browser Technologies
 
 TinyMCE 5.0 now supports IE 11, Chrome, Firefox, Safari, Edge, Opera.

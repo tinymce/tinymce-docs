@@ -1,6 +1,6 @@
 ---
 layout: default
-title: 02. Use TinyMCE Classic
+title: Use TinyMCE Classic
 title_nav: Classic forms-based mode
 description: Theme that renders iframe or inline modes using the tinymce core UI framework.
 keywords: theme classic

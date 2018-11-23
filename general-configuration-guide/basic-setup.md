@@ -1,6 +1,6 @@
 ---
 layout: default
-title: 01. Basic Setup
+title: Basic Setup
 title_nav: Basic setup
 description_short: The three most important configuration settings, with examples.
 description: TinyMCE provides a wide range of configuration options that enable you to integrate it tightly with your application.

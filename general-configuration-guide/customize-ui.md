@@ -1,6 +1,6 @@
 ---
 layout: default
-title: 08. Customize UI
+title: Customize the TinyMCE User Interface
 title_nav: Customize the user interface
 description: Learn how to change the appearance of the editor.
 keywords: themes skins statusbar

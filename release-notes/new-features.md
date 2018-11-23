@@ -78,7 +78,7 @@ You can click anywhere in the text field to use the Permanent Pen function. To c
 
 ## Tables
 
-Tables are better in TinyMCE 5.0 editor. Creating and configuring tables in TinyMCE 5.0 is less cumbersome. We have enhanced this feature by modifying the code to ensure the styles are correct and consistent. Styles text field has been removed from the advanced table of the dialogs. The code is now much less confronting and confusing for non-developers. This also means we have more control over the table styles and therefore are better able to ensure the styles are correct. We have improved how styles are set and retrieved from tables, rows, or cells, so should be more reliable."Border" input field in the table props dialog is now called "Border width" for clarity. For more information, see the [Toolbar Buttons]({{site.baseurl}}/plugins/table/) documentation.
+Tables are better in TinyMCE 5.0 editor. Creating and configuring tables in TinyMCE 5.0 is less cumbersome. We have enhanced this feature by modifying the code to ensure the styles are correct and consistent. Styles text field has been removed from the advanced table of the dialogs. The code is now much less confronting and confusing for non-developers. This also means we have more control over the table styles and therefore are better able to ensure the styles are correct. We have improved how styles are set and retrieved from tables, rows, or cells, so should be more reliable."Border" input field in the table properties dialog is now called "Border width" for clarity. For more information, see the [Toolbar Buttons]({{site.baseurl}}/plugins/table/) documentation.
 
 ### 1. Using CSS for styling
 

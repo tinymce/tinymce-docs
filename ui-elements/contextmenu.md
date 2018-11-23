@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Context Menu
-title_nav: Context Menu
+title_nav: Context menu
 description: Context Menu Overview
 keywords: contextmenu context menu contextmenuapi
 ---

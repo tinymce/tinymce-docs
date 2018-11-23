@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Enterprise Accessibility Checking
+title_nav: Accessibility checking
 description: WCAG & Section 508 compliant accessibility checking.
 keywords: a11y accessibility
 ---

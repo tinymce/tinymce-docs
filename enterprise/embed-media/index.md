@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Embed Rich Media
+title_nav: Media embedding
 description: Add rich media previews inside TinyMCE.
 keywords: enterprise pricing video youtube vimeo mp3 mp4 mov movie clip film link linkchecking linkchecker mediaembed media
 ---

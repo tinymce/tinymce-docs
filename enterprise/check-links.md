@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Validate Links As-You-Type
+title_nav: Hyperlink checking
 description: Check for valid hyperlinks inside the editor
 keywords: enterprise pricing video youtube vimeo mp3 mp4 mov movie clip film link linkchecking linkchecker mediaembed media
 ---

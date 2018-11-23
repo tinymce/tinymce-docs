@@ -1,6 +1,7 @@
 ---
 layout: default
-title: Comments
+title: Tiny Comments
+title_nav: Commenting and collaboration
 description: Tiny Comments provides the ability to add comments to the content and collaborate with other users for content editing.
 keywords: enterprise pricing comment commenting
 ---

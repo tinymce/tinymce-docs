@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Install Server-side Components
+title_nav: Server-side component installation
 description: Power your premium plugins like spelling as-you-type.
 keywords: enterprise tinymcespellchecker spell check checker pro pricing imagetools server
 ---

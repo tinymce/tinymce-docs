@@ -1,18 +1,20 @@
 ---
 layout: default
-title: Technology Preview
-title_nav: Technology Preview
-description: This section previews the new technology introduced in Tiny 5.0.
-keywords: new features enhancements technology preview
+title: Overview
+title_nav: Overview
+description: Release Notes for TinyMCE 5.0 Beta.
+keywords: release notes new features enhancements technology preview
 ---
 
-## Technology Preview
+## Purpose of the Document
 
-TinyMCE 5.0 offers an easy to navigate configurable less cumbersome user interface. The user interface logic has been changed entirely in TinyMCE 5.0.
-
-TinyMCE 5.0 has an ARIA [WCAG 2.1 standards](https://www.w3.org/WAI/standards-guidelines/wcag/) compliant user interface to make the user interface controls and dynamic content more accessible. In TinyMCE 5.0, more complex controls or dialogs can be written in the new API style while keeping the more straightforward methods of adding buttons and windows the same.
+This document is only provided as a preview. It is under development and is subject to substantial changes. Consider the included information incomplete and use it with caution. The Release Notes provide high-level coverage of the improvements and additions that have been implemented in TinyMCE 5.0 Beta and document known problems in this release, as well as notable bug fixes, Technology Previews, deprecated functionality, and other details.
 
 ## Specifications
+
+TinyMCE 5.0 offers an easy to navigate, configurable, and less cumbersome user interface. The user interface logic has been changed entirely in TinyMCE 5.0.
+
+TinyMCE 5.0 has an ARIA [WCAG 2.1 standards](https://www.w3.org/WAI/standards-guidelines/wcag/) compliant user interface to make the user interface controls and dynamic content more accessible. In TinyMCE 5.0, more complex controls or dialogs can be written in the new API style while keeping the more straightforward methods of adding buttons and windows the same.
 
 * Streamlined documentation
 * Creates a UI using a strict {configuration}
@@ -26,12 +28,6 @@ TinyMCE 5.0 has an ARIA [WCAG 2.1 standards](https://www.w3.org/WAI/standards-gu
 * If the custom plugins have dialogs, it’s now easier to create dialogs
 * Can also create chained dialogs
 * Easier for developers to contribute to the open source editor
-
-Try out our demo page to explore the new UI.
-
-## TinyMCE 5.0 Demo
-
-{% include codepen.html id="full-featured" height="750" %}
 
 ## Value to a Developer
 
@@ -68,3 +64,11 @@ TinyMCE 5.0 codebase has been extensively rewritten focus on converting the UI c
 ### Supports Modern Browser Technologies
 
 TinyMCE 5.0 now supports IE 11, Chrome, Firefox, Safari, Edge, Opera.
+
+
+Try out our demo page to explore the new UI.
+
+## TinyMCE 5.0 Demo
+
+{% include codepen.html id="full-featured" height="750" %}
+

@@ -6,8 +6,6 @@ description: Instructions for migrating from TinyMCE 4.x to TinyMCE 5.0.
 keywords: migration considerations premigration pre-migration
 ---
 
-## Migrating from 4.x
-
 The new TinyMCE 5.0 editor comes with significant changes to the previous versions. Most configuration changes in TinyMCE 5.0 only affect complex use cases like adding custom components. Setting up a basic TinyMCE 5.0 instance should be the same as TinyMCE 4.x.
 
 Our team at Tiny has worked on creating a more configurable and modern editor while retaining the familiarity of the user interface from the older versions.

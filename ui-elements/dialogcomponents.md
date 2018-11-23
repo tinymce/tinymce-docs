@@ -6,8 +6,6 @@ description: Dialog component summary is a reference list of all TinyMCE UI comp
 keywords: dialog dialogapi
 ---
 
-## Introduction
-
 This chapter describes the Dialog component summary is a reference list of all TinyMCE UI components that can be used to display simple information.
 
 ### AlertBanner

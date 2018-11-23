@@ -6,8 +6,6 @@ description: This section previews the new technology introduced in TinyMCE 5.0 
 keywords: new features enhancements technology preview
 ---
 
-## What does a "Technology Previews" documentation mean?
-
 Technology Previews provide users a way to access upcoming technological innovations. We create the technology preview as a courtesy to the community of developers and community of use to get feedback and make this technology better. As Tiny considers making these previews generally available, we will endeavor to resolve issues reported by our customers or our internal and external developers.
 
 It is important to note that these "Tech Previews" are not fully supported under our Tiny Cloud [service level agreements](https://about.tiny.cloud/legal/tiny-cloud-services-subscription-agreement/). These previews are not recommended for deployment in production and are for testing purposes only.

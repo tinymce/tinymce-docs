@@ -6,8 +6,6 @@ description: Context Menu Overview
 keywords: contextmenu context menu contextmenuapi
 ---
 
-## Introduction
-
 The context menu is a configurable component that appears when the user right clicks in the editable area. By default it does not disable the operating system's native context menu, if there are no items to display at the cursor position the native context menu will be shown.
 
 The context menu supports both individual menu items and dynamic context menu sections.

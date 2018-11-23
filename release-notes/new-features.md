@@ -10,11 +10,13 @@ The following new features were added to the TinyMCE 5.0 Beta version.
 
 ## Context Menu
 
-The [ContextMenu]({{site.baseurl}}/ui-elements/contextmenu/) can provide a simple list of clickable commands, or offer an in-menu form. This makes the most straightforward attribute modifications possible. TinyMCE 5.0 offers the [ContextMenu]({{site.baseurl}}/ui-elements/contextmenu/), that is designed for web applications in need of menus on a possibly large amount of objects. Now, a single menu is defined that can be used by multiple objects. A context menu doesn't need to bind itself to the triggering objects. This allows injecting and removing triggers without having to re-initialize or update the context menu.
+The context menu is a new configurable component added in TinyMCE 5.0 . It appears when the user right clicks in the editable area. By default it does not disable the operating system's native context menu, if there are no items to display at the cursor position the native context menu will be shown. See the [context menu]({{site.baseurl}}/ui-elements/contextmenu/) documentation for more information.
+
+The context menu supports both individual menu items and dynamic context menu sections. See the
 
 ## Context Toolbars
 
-The Context Toolbar configures its buttons based on the type of object selected in the Tree Outline. The context toolbar makes a limited number of relevant choices more visible and readily accessible. For more information, please see the [Context Toolbar]({{site.baseurl}}/ui-elements/contexttoolbar/) documentation.
+A context toolbar is a pop-up toolbar that appears when you focus specific types of content, and which contains toolbar buttons relevant to that content. The context toolbar makes a limited number of relevant choices more visible and readily accessible. For more information, please see the [Context Toolbar]({{site.baseurl}}/ui-elements/contexttoolbar/) documentation.
 
 ## Custom Menu Items
 
@@ -40,6 +42,13 @@ The format painter may be used either through keyboard shortcuts or a toolbar bu
 ## Modernize default content in TinyMCE 5.0
 
 - New Section [(DOC-162)](https://ephocks.atlassian.net/browse/DOC-162) -->
+
+## Keyboard Navigation and Tooltips Improvements
+
+Our developers at Tiny have been working hard to keep TinyMCE up-to-date with the latest accessibility standards. This includes the review of shortcuts and ensuring tooltips when used with keyboard navigation.
+The editor can now reflect accurately where and what a user is interacting with. We have also added a new experimental feature that allows users to be able to tab across all our toolbars, sidebars, content and footer bar. This allows more granular control to quickly jump to the appropriate editor control and then navigate down to its specific feature sets.
+
+> TinyMCE is the only editor to have this feature!
 
 ## Modern Codebase
 
@@ -67,16 +76,9 @@ The Permanent Pen function is available in the toolbar. When you click the Perm
 
 You can click anywhere in the text field to use the Permanent Pen function. To change the text style while Permanent Pen is enabled, right-click to open the **Context** menu, then select **Permanent pen** properties to open the **Permanent pen** properties dialog. -->
 
-## Shortcut Key:; Audit & Add to Tooltips
-
-Our developers at Tiny have been working hard to keep TinyMCE up-to-date with the latest accessibility standards. This includes the review of shortcuts and ensuring tooltips when used with keyboard navigation.
-The editor can now reflect accurately where and what a user is interacting with. We have also added a new experimental feature that allows users to be able to tab across all our toolbars, sidebars, content and footer bar. This allows more granular control to quickly jump to the appropriate editor control and then navigate down to its specific feature sets.
-
-> TinyMCE is the only editor to have this feature!
-
 ## Tables
 
-Tables are better in TinyMCE 5.0 editor. Creating and configuring tables in TinyMCE 5.0 is less cumbersome. We have enhanced this feature by modifying the code to ensure the styles are correct and consistent. Styles text field has been removed from the advanced table of the dialogs. The code is now much less confronting/confusing for non-developers. This also means we have more control over the table styles and therefore are better able to ensure the styles are correct. We have improved how styles are set and retrieved from tables, rows, or cells, so should be more reliable."Border" input field in the `tableprops` dialog is now called "Border width" for clarity. For more information, see the [Toolbar Buttons]({{site.baseurl}}/plugins/table/) documentation.
+Tables are better in TinyMCE 5.0 editor. Creating and configuring tables in TinyMCE 5.0 is less cumbersome. We have enhanced this feature by modifying the code to ensure the styles are correct and consistent. Styles text field has been removed from the advanced table of the dialogs. The code is now much less confronting and confusing for non-developers. This also means we have more control over the table styles and therefore are better able to ensure the styles are correct. We have improved how styles are set and retrieved from tables, rows, or cells, so should be more reliable."Border" input field in the table props dialog is now called "Border width" for clarity. For more information, see the [Toolbar Buttons]({{site.baseurl}}/plugins/table/) documentation.
 
 ### 1. Using CSS for styling
 
@@ -90,10 +92,6 @@ In TinyMCE 5.0, the **Autofill** feature is used while opening a properties dial
 
 TinyMCE 5.0 uses SVG icons for a better crisp look. Buttons are now added via methods in `editor.ui.registry` rather than `editor` e.g. `editor.ui.registry.addButton()` instead of `editor.addButton()`. To make the creation of custom toolbar buttons easier, new methods were added for split, toggle, and menu toolbar buttons with configuration options specific to the button type.
 For more information, see the [Toolbar Buttons]({{site.baseurl}}/ui-elements/toolbarbuttons/) documentation.
-
-## Toolbar Menus
-
-**Toolbar Menus** is improved in TinyMCE 5.0. We have added new buttons to the global `editor.settings.menus` which is an enhancement since it now shows the toggled state. We have also improved mouse and keyboard navigation. See [demo]({{site.baseurl}}/demo/custom-toolbar-menu-button/) for more details.
 
 ## UI Accessibility
 

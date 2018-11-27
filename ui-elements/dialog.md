@@ -6,8 +6,6 @@ description: Dialog is a TinyMCE UI component used to display simple information
 keywords: dialog dialogapi api
 ---
 
-## Introduction
-
 The Dialog API allows plugins to show dialogs (sometimes referred to as modals) in your application. The API supports the use of dynamic content for all aspects and is easily configurable/overridable.
 
 ## Use Cases

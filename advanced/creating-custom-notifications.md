@@ -89,7 +89,7 @@ Set the `progressBar` property between 0 and 100 to set the progress of the prog
 notification.progressBar.value(50);
 ```
 
-Set the 'notificationManager` property to `close` to close the last shown notification.
+To close the last shown notification, `call` the following method:
 
 ```js
 // Close the last shown notification.

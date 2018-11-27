@@ -14,7 +14,7 @@ When including attribution, the following requirements must be met:
 * The word "**Tiny**" or the Tiny logo should have a hyperlink to https://www.tiny.cloud/.
 * The location of the product attribution is to be:
 
-  * In the  top right-hand corner of the status bar of the TinyMCE editor; or
+  * In the right-hand corner of the status bar of the TinyMCE editor; or
   * An alternate location adjacent to the TinyMCE editor that is no less prominent.
 
 The editor demo on the [Tiny homepage](https://www.tiny.cloud/) displays the status bar product attribution as in the screenshot below:

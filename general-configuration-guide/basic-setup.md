@@ -108,10 +108,6 @@ paste | bullist | numlist | outdent | indent
 blockquote | undo | redo | removeformat | subscript
 superscript | | | |
 
-```js
-newdocument, bold, italic, underline, strikethrough, alignleft, aligncenter, alignright, alignjustify, styleselect, formatselect, fontselect, fontsizeselect, cut, copy, paste, bullist, numlist, outdent, indent, blockquote, undo, redo, removeformat, subscript, superscript
-```
-
 ![TinyMCE Default Toolbar & Menubar State]({{ site.baseurl }}/images/tinymce-default-state.png)
 
 *Default TinyMCE toolbar & menubar state*

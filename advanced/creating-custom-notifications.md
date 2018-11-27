@@ -11,7 +11,7 @@ TinyMCE can display customized notifications.
 
 ## Text
 
-The **text** property sets the text that is displayed at the center of the notification and is the most important setting.
+The **text** property sets the text that is displayed at the center of the notification. This is the most important setting when opening a notification.
 
 ```js
 editor.notificationManager.open({

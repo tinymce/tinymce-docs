@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Bug Fixes
-title_nav: Bug Fixes
+title: Bug fixes in TinyMCE 5
+title_nav: Bug fixes
 description: These are the fixed issues in TinyMCE 5.0 Beta.
 keywords: knownissues bug releasenotes migration 4.x
 ---

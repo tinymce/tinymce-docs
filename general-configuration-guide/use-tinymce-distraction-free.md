@@ -1,7 +1,7 @@
 ---
 layout: default
-title: TinyMCE Inlite mode
-title_nav: Inlite mode
+title: TinyMCE inlite editing mode
+title_nav: Inlite editing mode
 description: Theme that renders a lightweight UI for inline editing.
 keywords: theme inlite distraction-free
 ---

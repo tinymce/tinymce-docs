@@ -8,7 +8,8 @@ keywords: editorcommands editorcommand execcommand Bold Italic Underline Striket
 ---
 
 
-Here is a list of the currently exposed editor commands. All these commands are provided by `tinymce` and not by the browser's internal commands. These commands can be executed using the [execCommand]({{ site.baseurl }}/api/tinymce/tinymce.editorcommands/#execcommand) function.
+Here is a list of exposed editor commands that `tinymce` provides. Use the [execCommand]({{ site.baseurl }}/api/tinymce/tinymce.editorcommands/#execcommand) function to execute the commands.
+
 
 | Command     | Core/Plugin      | Description   |
 |-------------|------------------|---------------|

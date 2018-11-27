@@ -7,7 +7,7 @@ description: Complete list of control identifiers.
 keywords: aligncenter alignjustify alignleft alignright anchor backcolor blockquote bold bullist cancel cell charmap code column controls copy cut deletetable emoticons fontselect fontsizeselect forecolor formats formatselect  fullscreen hr image indent insertdatetime insertfile inserttable italic link ltr media newdocument nonbreaking numlist outdent pagebreak paste pastetext preview print redo removeformat row rtl save searchreplace selectall spellchecker strikethrough styleselect subscript superscript table tableprops template toolbar underline undo unlink visualaid visualblocks visualchars a11ycheck
 ---
 
-Here is a list of the toolbar/menu controls that the core and plugins provides. These controls can be configured using the [toolbar]({{ site.baseurl }}/configure/editor-appearance/#toolbar) or the [menu]({{ site.baseurl }}/configure/editor-appearance/#menu) config options.
+Use the [toolbar]({{ site.baseurl }}/configure/editor-appearance/#toolbar) or the [menu]({{ site.baseurl }}/configure/editor-appearance/#menu) configuration options.
 
 ## Toolbar controls
 

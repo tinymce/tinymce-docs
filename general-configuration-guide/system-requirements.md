@@ -7,27 +7,25 @@ keywords: browser compatibility explorer ie safari firefox chrome edge
 ---
 ## Mobile supported platforms
 
-We're pleased to introduce [TinyMCE mobile](https://www.tinymce.com/mobile), available in TinyMCE version 4.7 and above.
+[TinyMCE mobile](https://www.tinymce.com/mobile) is available in TinyMCE 5.0
 
-TinyMCE mobile is designed to run on iOS Safari and Android Chrome. You'll find a streamlined interface while keeping the most common touch interactions easily to hand. We tested mobile on the following platforms:
+TinyMCE mobile has a streamlined interface with most common touch interactions easily accomplished with one hand. TinyMCE mobile is designed to run on iOS Safari and Android Chrome. TinyMCE mobile is tested on the following platforms:
 
 {% include mobile_platform_compatibility.md %}
 
-Please visit our [mobile page](https://www.tinymce.com/mobile) to download the self-hosted package. If you're using TinyMCE Cloud, mobile is available in the `dev` branch.
+Visit the [mobile page](https://www.tinymce.com/mobile) to download the self-hosted package. TinyMCE mobile is available on /dev branch on Tiny Cloud. 
 
-If you use other platforms and encounter bugs, please let us know in the [TinyMCE issue tracker](https://github.com/tinymce/tinymce/issues).
+Please report platform issues and bugs in the [TinyMCE issue tracker](https://github.com/tinymce/tinymce/issues).
 
-For further information on TinyMCE mobile setup and configuration, please visit [TinyMCE mobile documentation]({{ site.baseurl }}/mobile).
+Visit [TinyMCE mobile documentation]({{ site.baseurl }}/mobile) for further information on TinyMCE mobile setup and configuration.
 
 ## Browser compatibility
 
-TinyMCE uses advanced JavaScript and tries to be as smart as possible when it comes to different browsers. The primary focus is on Chrome, Firefox, Internet Explorer, and Safari.
+TinyMCE uses advanced JavaScript techniques to normalize inconsistencies among browsers to ensure a uniform user experience. The primary focus is on Chrome, Firefox, Internet Explorer, and Safari.
 
-If a browser is not listed on this page, it doesn't mean TinyMCE won't work. An unlisted browser might mean that TinyMCE may not have been fully tested on that browser. To determine compatibility with an unlisted browser, try out the examples on our website.
+An unlisted browser might mean that TinyMCE may not have been fully tested on that browser. Try out the examples on www.tinymce.com to determine compatibility with an unlisted browser.
 
-Since TinyMCE version 4.6.0 Internet Explorer 8-10 is not supported, if you need legacy browser support, the 4.5.X branch is maintained with critical fixes.
-
-Please use the [issues tracker on GitHub](https://github.com/tinymce/tinymce/issues) to submit bugs on the listed browsers only.
+Please use the [issues tracker on GitHub](https://github.com/tinymce/tinymce/issues) to submit bugs on listed browsers only.
 
 |Browser | Windows | Mac | GNU/Linux |
 |--------|---------|-----|-----------|
@@ -40,7 +38,7 @@ Please use the [issues tracker on GitHub](https://github.com/tinymce/tinymce/iss
 |IE 8    | NO      | N/A | N/A       |
 |Safari  | N/A     | YES | N/A       |
 
-TinyMCE fully supports the most recent version of all supported browsers listed above. If vendors offer an Extended Support Release (e.g., Firefox) we also officially support the latest ESR from each vendor. As each browser vendor releases new major versions (e.g. Chrome 61 vs. Chrome 62) we provide support for the prior major version for 60 days after the prior release is superseded.
+TinyMCE fully supports the most recent version of all browsers listed above. TinyMCE also supports the latest Extended Support Release (ESR) from each vendor (e.g. Firefox). TinyMCE provides support for the prior major version for 60 days after the release has been superceded by a new major version (e.g. Chrome 61 vs. Chrome 62).
 
 {% assign_page next_page = "/general-configuration-guide/get-support/index.html" %}
 {% include next-step.html next=next_page %}

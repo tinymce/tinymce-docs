@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Attribution Requirements
-title_nav: Attribution
+title: Logo &amp; attribution requirements
+title_nav: Logo attribution
 description: TinyMCE Terms of Service.
 keywords: legal attribution requirements logo branding
 ---

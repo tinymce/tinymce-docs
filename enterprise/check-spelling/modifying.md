@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Modifying Spellchecking Dictionaries
+title: Modifying spell check dictionaries
 description: Spell Checker Pro dictionaries can be modified to include custom words.
 keywords: enterprise tinymcespellchecker spell check checker pro pricing
 ---
@@ -9,7 +9,7 @@ keywords: enterprise tinymcespellchecker spell check checker pro pricing
 
 **Note:** Updating the spellchecking feature (i.e. by installing updated versions of `ephox-spelling.war`) may overwrite your modified dictionaries. Please ensure you backup your modified dictionaries before upgrading `ephox-spelling.war`.
 
-### Creating New Updates to a Dictionary
+### Creating new updates to a dictionary
 
 1) You'll need to identify which language/s you want to apply updates to. The spellchecking feature provides support for <link>13 languages</link>.
 You can locate each individual dictionary .jar file for each supported language in *your_web_server/ephox-spelling/WEB-INF/classes/dictionaries*.
@@ -45,7 +45,7 @@ If the contents of the dictionary .jar file were extracted to c:\customdictionar
 ````
 8) Move the newly compiled .jar file back to it's original location, replacing the original file. For the context of this example, you would be replacing your_web_server/ephox-spelling/WEB-INF/classes/dictionaries/en_us_4_0.jar with your updated copy of en_us_4_0.jar.
 
-#### Modifying an Updated Dictionary
+#### Modifying an updated dictionary
 1) Perform steps 1 and 2 as above in the <link>Creating New Updates to a Dictionary</link> section of this document.
 
 2) Open the userdic.tlx file in a plain text editor.
@@ -68,7 +68,7 @@ If the contents of the dictionary .jar file were extracted to c:\customdictionar
 ````
 6) Move the newly compiled .jar file back to it's original location, replacing the original file. For the context of this example, you would be replacing your_web_server/ephox-spelling/WEB-INF/classes/dictionaries/en_us_4_0.jar with your updated copy of en_us_4_0.jar.
 
-#### Removing the Modifications from a Dictionary
+#### removing the modifications from a dictionary
 1) Perform steps 1 and 2 as above in the <link>Creating New Updates to a Dictionary</link> section of this document.
 
 2) Delete the userdic.tlx file from the directory where the contents of the original .jar file were extracted.

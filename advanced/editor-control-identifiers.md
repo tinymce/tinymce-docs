@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Editor Control Identifiers
+title: Editor control identifiers
 title_nav: Editor control identifiers
 description_short: Complete list of control identifiers.
 description: Complete list of control identifiers.

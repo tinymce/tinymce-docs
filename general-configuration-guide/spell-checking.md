@@ -1,8 +1,7 @@
 ---
 layout: default
-title: Check Spelling
+title: Check spelling in TinyMCE
 title_nav: Spell checking
-description: Take spell checking to your users.
 keywords: spell checker spelling browser_spellcheck gecko_spellcheck
 ---
 Nobody likes content with spelling errors. Our team at TinyMCE is motivated to help your users create error-free content. Which is why we have several options to help you bring spell checking capabilities to your users.
@@ -21,7 +20,7 @@ tinymce.init({
 
 ## PHP Spellchecker component
 
-You can also use TinyMCE's PHP Spellchecker component, which you can [download here](http://download.moxiecode.com/spellcheckers/tinymce_spellchecker_php_4.0.zip). To view the complete changelog history, view this [txt](http://archive.tinymce.com/develop/changelog/?type=phpspell) file. The TinyMCE's PHP Spellchecker component requires a little more work than the browser-based option, being a server-side script.
+You can also use TinyMCE's PHP _Spellchecker_ component, that you can [download here](http://download.moxiecode.com/spellcheckers/tinymce_spellchecker_php_4.0.zip). To view the complete changelog history, view this [txt](http://archive.tinymce.com/develop/changelog/?type=phpspell) file. The TinyMCE's PHP Spellchecker component requires a little more work than the browser-based option, being a server-side script.
 
 This plugin enables you to use **Enchant** or **PSpell** on the backend of your server to spell check contents within the TinyMCE editor.
 
@@ -47,7 +46,7 @@ tinymce.init({
 
 Please see the [Spell Checker Plugin]({{ site.baseurl }}/plugins/spellchecker/) for advanced configuration options.
 
-## TinyMCE Spellchecker Pro plugin
+## TinyMCE Spell Checker Pro plugin
 
 For developers requiring a robust enterprise-grade spell check as-you-type functionality, you need the [Spell Checker Pro plugin]({{ site.baseurl }}/plugins/tinymcespellchecker/). Spell Checker Pro requires both a client-side plugin to be configured and a server-side component to be installed and configured.
 

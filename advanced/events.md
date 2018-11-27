@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Editor Events
+title: Editor events
 title_nav: Editor events
 description_short: List of common editor events
 description: List of common editor events

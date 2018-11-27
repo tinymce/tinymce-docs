@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Editor Command Identifiers
+title: Editor command identifiers
 title_nav: Editor command identifiers
 description_short: Complete list of editor commands.
 description: The complete list of exposed editor commands.

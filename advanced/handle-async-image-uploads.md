@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Handle Asynchronous Image Uploads
+title: Handle asynchronous image uploads
 title_nav: Asynchronous image uploading
 description_short: How to manage asynchronous image uploads.
 description: How to manage asynchronous image uploads with jQuery, CORS.

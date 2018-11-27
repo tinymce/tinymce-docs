@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Get Support & FAQ
+title: Get Support &amp; FAQ
 title_nav: Support &amp; FAQ
 description: Community and pro-grade support options.
 keywords: forum forums url absolute relative security xss

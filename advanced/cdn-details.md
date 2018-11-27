@@ -1,6 +1,6 @@
 ---
 layout: default
-title: CDN Details
+title: Content delivery network (CDN) details
 title_nav: CDN Details
 description_short: Details on CDN usage and versioning.
 description: Details on CDN usage and versioning.

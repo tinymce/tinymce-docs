@@ -1,6 +1,6 @@
 ---
 layout: default
-title: PHP Upload Handler
+title: PHP image upload handler
 title_nav: PHP image upload handler
 description_short: A server-side upload handler PHP script.
 description: A server-side upload handler PHP script suitable for TinyMCE.

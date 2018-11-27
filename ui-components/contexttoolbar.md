@@ -6,7 +6,7 @@ description: Context Toolbar Overview
 keywords: contexttoolbar context toolbar contexttoolbarapi
 ---
 
-A ContextToolbar can only contain either buttons that are defined for a normal toolbar, or buttons specifically registered for launching a [ContextForm]({{site.baseurl}}/ui-elements/contextform/). The buttons comes as a list of strings, where each string is a registered name of a button.
+A ContextToolbar can only contain either buttons that are defined for a normal toolbar, or buttons specifically registered for launching a [ContextForm]({{site.baseurl}}/ui-components/contextform/). The buttons comes as a list of strings, where each string is a registered name of a button.
 
 ### Registering a Context Toolbar
 

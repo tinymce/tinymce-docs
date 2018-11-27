@@ -77,7 +77,7 @@ tinymce.init({
 
 The `plugins` configuration option enables the plugins functionality within the editor. TinyMCE plugins provide useful features to extend and enhance the TinyMCE experience.
 
-> Important!: Now is the time to consider which plugins to include in TinyMCE
+> Important: Now is the time to consider which plugins to include in TinyMCE
 
 Enabling plugin functionality is simple. Simply add the `plugins` key to `tinymce.init()` and provide a comma, space-separated string, or an array of strings as values. 
 

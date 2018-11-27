@@ -1,5 +1,5 @@
 ---
-layout: draft
+layout: default
 title: Moxie Manager
 description: MoxieManager. A premium plugin to manage files & images.
 keywords: moxiemanager .net php relative_urls

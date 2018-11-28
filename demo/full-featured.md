@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Full Featured Example
+title: Full featured example
 title_nav: Full featured
 description_short: Every TinyMCE plugin in action.
 description: This example displays all plugins that come with TinyMCE Cloud's premium subscriptions.

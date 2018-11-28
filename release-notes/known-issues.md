@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Known issues in TinyMCE 5 Beta
+title: Known issues in TinyMCE 5.0 Beta
 title_nav: Known issues
 keywords: knownissues bug releasenotes migration 4.x
 ---

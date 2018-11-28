@@ -1,8 +1,8 @@
 ---
 layout: default
-title: Context Toolbar
+title: Context toolbar
 title_nav: Context toolbar
-description: Context Toolbar Overview
+description: Context toolbar overview
 keywords: contexttoolbar context toolbar contexttoolbarapi
 ---
 

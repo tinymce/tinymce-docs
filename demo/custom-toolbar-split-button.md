@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Custom Toolbar Split Button
+title: Custom toolbar split button
 title_nav: Custom toolbar split button
 description_short: Add a custom menu button to the toolbar.
 description: This example shows you how to add a simple split menu button to TinyMCE's toolbar.

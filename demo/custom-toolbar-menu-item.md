@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Custom Toolbar Menu Item
+title: Custom toolbar menu item
 title_nav: Custom toolbar menu item
 description_short: Add a simple menu item to the predefined tools menu.
 description: This example shows you how to add a simple menu item to the predefined tools menu.

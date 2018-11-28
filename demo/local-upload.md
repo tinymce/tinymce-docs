@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Local Upload
+title: Local upload
 title_nav: Local file upload
 description: This example demonstrates the local file upload feature.
 keywords: example demo image local-upload

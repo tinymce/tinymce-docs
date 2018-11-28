@@ -1,8 +1,8 @@
 ---
 layout: default
-title: Toolbar Buttons
+title: Toolbar buttons
 title_nav: Toolbar buttons
-description: This section shows you how to add a custom button to the Tiny 5.0 toolbar.
+description: This section shows you how to add a custom button to the TinyMCE 5.0 toolbar.
 keywords: toolbar toolbarbuttons buttons toolbarbuttonsapi
 ---
 

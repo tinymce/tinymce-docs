@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Custom Toolbar Menu Button
+title: Custom toolbar menu button
 title_nav: Custom toolbar menu button
 description_short: Add a custom menu button to the toolbar.
 description: This example shows you how to add a simple menu button to TinyMCE's toolbar.

@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Dialog Components
-title_nav: Dialog Components
+title: Dialog components
+title_nav: Dialog components
 description: Dialog component summary is a reference list of all TinyMCE UI components that can be used to display simple information.
 keywords: dialog dialogapi
 ---

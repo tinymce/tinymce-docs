@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Help Plugin
+title: Help plugin
 title_nav: Help
 description: Shows the help dialog.
 keywords: help

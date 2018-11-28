@@ -1,8 +1,7 @@
 ---
 layout: default
-title: New Features
-title_nav: New Features
-description: These are the new and enhanced features introduced in TinyMCE 5.0.
+title: New and enhanced features in TinyMCE 5.0 Beta
+title_nav: New features
 keywords: new features enhancements technology preview
 ---
 

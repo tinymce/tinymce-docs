@@ -1,7 +1,7 @@
 ---
 layout: default
 title: TinyMCE plugin Yeoman generator
-title_nav: Yeoman Generator
+title_nav: Yeoman generator
 description_short: How to use the Yeoman generator to bootstrap a new TinyMCE plugin
 description: How to use the Yeoman generator to bootstrap a new TinyMCE plugin using ES2015/Babel or TypeScript.
 keywords: webpack yeoman generator plugin tinymce

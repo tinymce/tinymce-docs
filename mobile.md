@@ -1,6 +1,7 @@
 ---
 layout: default
 title: TinyMCE Mobile
+title_nav: Mobile
 description: A new mobile-first user experience for rich text editing.
 keywords: mobile tablet
 ---

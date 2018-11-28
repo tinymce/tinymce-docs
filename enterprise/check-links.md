@@ -1,6 +1,7 @@
 ---
 layout: default
-title: Validate Links As-You-Type
+title: Checking links as-you-type
+title_nav: Hyperlink checking
 description: Check for valid hyperlinks inside the editor
 keywords: enterprise pricing video youtube vimeo mp3 mp4 mov movie clip film link linkchecking linkchecker mediaembed media
 ---
@@ -13,11 +14,11 @@ Link Checker is available as a stand-alone plugin or as part of our Pro Bundle. 
 
 Your have two deployment options. One is super easy with TinyMCE Cloud, the other is to go the more traditional Self-hosted route, requiring an additional [server-side component]({{ site.baseurl }}/enterprise/server/) to be installed and configured.
 
-## Link Checker Cloud Quick Setup
+## Link Checker cloud setup
 
 [TinyMCE Cloud]({{ site.baseurl }}/cloud-deployment-guide/editor-and-features/) makes setting up Link Checker a breeze. Simply include the `linkchecker` parameter in your `tinymce.init` and have our Cloud services do the work for you.
 
-## Link Checker Self-hosted Quick Setup
+## Link Checker self-hosted quick setup
 
 If you'd rather deploy Link Checker via the Self-hosted package, you have a little more work to do. Once you've got the [server-side component]({{ site.baseurl }}/enterprise/server/) installed, additional configuration to your `application.conf` file is required. (Don't forget to restart the Java application server after updating the configuration.)
 

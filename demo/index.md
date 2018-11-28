@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Examples & Demos
+title: Examples & demos
 title_nav: Examples
 description: Working examples of TinyMCE's popular functionality.
 type: folder

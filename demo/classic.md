@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Classic editor eCxample
+title: Classic editor example
 title_nav: Classic editor mode
 description_short: Configure TinyMCE Classic Editor.
 description: This example shows you how to use TinyMCE Classic Editor.

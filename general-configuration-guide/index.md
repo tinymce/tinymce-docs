@@ -1,7 +1,7 @@
 ---
 layout: default
 title: General Configuration Guide
-description: If you are new to self-hosting TinyMCE, this is the place to start.
+description: New to self-hosting TinyMCE? Start here.
 type: folder
 ---
 

@@ -2,7 +2,7 @@
 
 Use the `branding` option to disable the "**Powered by Tiny**" displayed in the status bar for [product attribution]({{site.baseurl}}/general-configuration-guide/attribution-requirements/).
 
-> Note: The "**Powered by Tiny**" product attribution is required for users on the Tiny Cloud Starter plan. Product attribution is optional for commercial users.
+> Note: The "**Powered by Tiny**" product attribution is required for users on the Tiny Cloud Starter plan. Product attribution is optional for premium users.
 
 **Type:** `Boolean`
 

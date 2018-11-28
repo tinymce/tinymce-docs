@@ -1,8 +1,8 @@
 ---
 layout: default
-title: Context Forms
+title: Context forms
 title_nav: Context forms
-description: Context Forms Overview
+description: Context forms overview
 keywords: contextforms context forms contextformsbarapi
 ---
 

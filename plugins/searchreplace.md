@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Search and Replace Plugin
+title: Search and Replace plugin
 title_nav: Search and Replace
 description: Find and replace content in TinyMCE.
 keywords: searchreplace edit

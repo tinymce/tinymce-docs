@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Context Menu Plugin
+title: Context Menu plugin
 title_nav: Context Menu
 description: Right-click to perform actions in TinyMCE
 keywords: contextmenu inserttable deletetable contextmenu_never_use_native

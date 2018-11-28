@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Spell Checker Plugin
+title: Spell Checker plugin
 title_nav: Spell Checker
 description: Enables TinyMCE's spellcheck functionality.
 keywords: spellchecker spellchecker_callback spellchecker_language spellchecker_languages spellchecker_rpc_url spellchecker_wordchar_pattern

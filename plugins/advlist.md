@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Advanced List Plugin
+title: Advanced List plugin
 title_nav: Advanced List
 description: Create styled number and bulleted lists.
 keywords: advlist advlist_bullet_styles advlist_number_styles

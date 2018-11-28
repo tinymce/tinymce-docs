@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Drive
+title: Drive plugin
 title_nav: Drive
 description: Cloud-based file and image management for TinyMCE.
 keywords: tinydrive storage media tiny drive

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Full Page Plugin
+title: Full Page plugin
 title_nav: Full Page
 description: Edit all metadata and document properties such as title, keywords and description.
 keywords: fullpage fullpage_default_doctype fullpage_default_encoding fullpage_default_font_size fullpage_default_font_family fullpage_default_langcode fullpage_default_title fullpage_default_text_color fullpage_default_xml_pi fullpage_hide_in_source_view

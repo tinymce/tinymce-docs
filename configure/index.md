@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Configure
+title: Configuratiun options reference
 title_nav: Configuration reference
 description_short: The most customizable rich text editor.
 description: TinyMCE is not only the most advanced rich text editor it's also the most customizable.

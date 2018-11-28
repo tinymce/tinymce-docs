@@ -1,6 +1,6 @@
 ---
 layout: default
-title: URL Handling
+title: URL handling options
 title_nav: URL handling options
 description: These settings affect the way URLs are handled by the editor.
 keywords: url urls relative absolute domain document_base_url
@@ -31,7 +31,7 @@ document_base_url : "http://www.example.com/path1/"
 
 Example: path2/file.htm >> /path1/path2/file.htm
 
-### Domain Absolute URLs
+### Domain absolute URLs
 
 This will convert all relative URLs to absolute URLs. The URLs will be absolute based on the [document_base_url] with domain.
 

@@ -1,6 +1,7 @@
 ---
 layout: default
-title: Editor Appearance
+title: User interface options
+title_nav: User interface options
 description_short:
 description: Configure the editor's appearance, including menu and toolbar controls.
 ---
@@ -8,6 +9,10 @@ description: Configure the editor's appearance, including menu and toolbar contr
 {% include configuration/branding.md %}
 
 {% include configuration/color-picker-callback.md %}
+
+{% include configuration/contextmenu.md %}
+
+{% include configuration/contextmenu_never_use_native.md %}
 
 {% include configuration/custom-ui-selector.md %}
 

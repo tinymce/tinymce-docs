@@ -1,7 +1,7 @@
 ---
 layout: default
-title: 09. Upload Images
-description: Extend TinyMCE with powerful image uploading capabilities.
+title: Uploading images and files
+title_nav: Upload images &amp; files
 keywords: uploader uploadImages image handler
 ---
 

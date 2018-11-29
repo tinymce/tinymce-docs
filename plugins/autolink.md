@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Autolink Plugin
+title: Autolink plugin
 title_nav: Autolink
 description: Automatically create hyperlinks.
 keywords: link url urls

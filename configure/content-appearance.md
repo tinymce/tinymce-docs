@@ -1,6 +1,7 @@
 ---
 layout: default
-title: Content Appearance
+title: Content appearance options
+title_nav: Content appearance options
 description_short:
 description: Configure the appearance of content inside TinyMCe's editable area.
 ---

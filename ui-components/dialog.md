@@ -6,8 +6,6 @@ description: Dialog is a TinyMCE UI component used to display simple information
 keywords: dialog dialogapi api
 ---
 
-## Introduction
-
 The Dialog API allows plugins to show dialogs (sometimes referred to as modals) in your application. The API supports the use of dynamic content for all aspects and is easily configurable/overridable.
 
 ## Use Cases
@@ -90,7 +88,7 @@ The `instanceApi` is a javascript object containing methods attached to the dial
 | `close(): void` | Calling the `close` method will close the dialog.  When closing the dialog, all DOM elements and dialog data are destroyed.  When `open(config)` is called again, all DOM elements and data are recreated from the config. |
 | `redial(config): void` | Calling `redial` and passing a dialog configuration, will destroy the current dialog and create a new dialog.  Redial is used to create a multipage form, where the next button loads a new form page. |
 
-This [example]({{site.baseurl}}/ui-elements/dialog/#example) demonstrates one way of implementing an Interactive Dialog using the `redial(config): void` method.
+This [example]({{site.baseurl}}/ui-components/dialog/#example) demonstrates one way of implementing an Interactive Dialog using the `redial(config): void` method.
 
 
 ## Dialog Framework
@@ -112,7 +110,7 @@ var panelConfig = {
 };
 ```
 
-**Items:** Array of component configurations, any component listed in [this page]({{site.baseurl}}/ui-elements/dialogcomponents) are compatible.
+**Items:** Array of component configurations, any component listed in [this page]({{site.baseurl}}/ui-components/dialogcomponents) are compatible.
 
 ### TabPanel
 
@@ -130,7 +128,7 @@ var tabPanelConfig = {
   ]
 };
 ```
-**Tabs:** Array of tab configurations. Each tab has a title which is used to reference the tab. The items property in the tab configuration takes a list of components and works the same way as a Panel. We can programmatically switch to a tab by calling `dialogApi.showTab`(‘title’), see [dialogApi]({{site.baseurl}}/ui-elements/dialogcomponents) for more details.
+**Tabs:** Array of tab configurations. Each tab has a title which is used to reference the tab. The items property in the tab configuration takes a list of components and works the same way as a Panel. We can programmatically switch to a tab by calling `dialogApi.showTab`(‘title’), see [dialogApi]({{site.baseurl}}/ui-components/dialogcomponents) for more details.
 
 ### Button
 
@@ -150,7 +148,7 @@ var buttonConfig = {
 
 **Text:** This will be the displayed button text. For example, text: ‘do magic’ will create a button with text ‘do magic’. Dialog buttons do not support icons at the moment.
 
-**Disabled:** value: `boolean`, (defaults to false): When set to `true`, the button will be disabled when the dialog loads. To toggle between disabled and enabled states, use `dialogApi.enable(name)` or `dialogApi.disable(name)`. See [dialogApi]({{site.baseurl}}/ui-elements/dialogcomponents).
+**Disabled:** value: `boolean`, (defaults to false): When set to `true`, the button will be disabled when the dialog loads. To toggle between disabled and enabled states, use `dialogApi.enable(name)` or `dialogApi.disable(name)`. See [dialogApi]({{site.baseurl}}/ui-components/dialogcomponents).
 
 **Primary:** (defaults to false):  When set to `true`, the button will be colored to standout. The color will depend on the chosen skin.
 
@@ -166,7 +164,7 @@ To see the output of the code, click on the TinyMCE tab on the fiddle below.
 
 In this redial example, we have two separate dialogs that we cycle through by pressing the `Next` button.  In the configuration structure, the first level is like any other dialog.
 
-The difference is the `onAction` call, loads a new configuration for the dialog using redial.  The configuration we use in the `redial(dialogConf)`` call can be any supported dialog structure.  We could even replace this 'Redial Demo' configuration, with the Pet Name Machine example in the dialog [Interactive]({{site.baseurl}}/ui-elements/dialog/#interactive) section.
+The difference is the `onAction` call, loads a new configuration for the dialog using redial.  The configuration we use in the `redial(dialogConf)`` call can be any supported dialog structure.  We could even replace this 'Redial Demo' configuration, with the Pet Name Machine example in the dialog [Interactive]({{site.baseurl}}/ui-components/dialog/#interactive) section.
 
 This demo also includes the use of `dialogApi.enable` and `dialogApi.disable` to disable the `Next` button when user input is required.  For checkboxes, we use the `onChange` callback to handle the changes for the checkbox data.  The checkbox data is mapped to its defined name: `anyterms`.  When a user clicks or presses enter on the checkbox, the new value of the checkbox is returned by the `getData()` call stored in the `anyterms` property.  Given the state of the checkbox, we either `disable` or `enable` the `Next` button.
 
@@ -176,5 +174,5 @@ A **Switch** statement could be used to handle many buttons.
 
 The `onAction` callback inside the `redial()` call, is a separate handler for the redialed dialog.  Since there is only one button, we don't check which named button triggered the click. This handler demonstrates the `dialogApi.close()` API.
 
-> Note: Please see [this]({{site.baseurl}}/ui-elements/dialogcomponents) page for a comprehensive list of components.
+> Note: Please see [this]({{site.baseurl}}/ui-components/dialogcomponents) page for a comprehensive list of components.
 

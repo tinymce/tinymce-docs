@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Contribute to the Docs
-title_nav: Contribute to the Docs
+title: Contribute to documentation
+title_nav: Contribute to documentation
 description_short: Contribute to TinyMCE's developer documentation.
 description: Contribute to TinyMCE's developer documentation.
 keywords: opensource oss contributors lgpl docs dox
@@ -21,7 +21,7 @@ What is more important is your ability to articulate complex ideas. Our goal is 
 
 Simply branch the [docs GitHub repository](https://github.com/tinymce/tinymce-docs) and submit a PR, or reach out to the [TinyMCE docs team](mailto:marketing@tiny.cloud) if you have a specific question.
 
-### TinyMCE docs tech stack
+### TinyMCE documentation tech stack
 
 The documentation is built with Jekyll. Text files are written in [Markdown](https://help.github.com/articles/markdown-basics/) and published on [GitHub](https://github.com/tinymce/tinymce-docs). You will find the [repo here](https://github.com/tinymce/tinymce-docs).
 
@@ -94,11 +94,11 @@ Use the capitalized version of TinyMCE when referring to the open source project
 
 ##### Title capitalization
 
-For H1 titles use "Title Case Capitalization". For H2-H6 titles use "Sentence case capitalization". Sentence case capitalization is more comfortable to read in technical documentation.
+For titles use "Sentence case capitalization". Sentence case capitalization is more comfortable to read in technical documentation.
 
 ##### Spelling
 
-Use United States English. For example, behavior rather than behavior, referring rather than referring.
+Use United States English. For example, behavior rather than behavior, and referring rather than referring.
 
 ##### Proper names
 

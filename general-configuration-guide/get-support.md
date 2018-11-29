@@ -10,13 +10,11 @@ keywords: forum forums url absolute relative security xss
 
 
 ## Premium Support
-If your support requirements included guaranteed responses from the TinyMCE Support Team or in-time bug fixes, **paid** premium support is available as part of [TinyMCE Enterprise](https://www.tinymce.com/pricing/).
-
-If you are a TinyMCE Enterprise customer in good standing please [review what information you need to gather]({{ site.baseurl }}/enterprise/support/) to submit a case.
+**Paid** premium support is available as part of [TinyMCE Enterprise](https://www.tinymce.com/pricing/). TinyMCE Enterprise customers can [review what information you need to gather]({{ site.baseurl }}/enterprise/support/) to submit a case.
 
 
 ## Forums
-Users of the open source Community Edition have free access to the [TinyMCE Forum](https://community.tinymce.com/). Sign up [here](https://community.tinymce.com/).
+Open Source Community Edition users can get free access to the [TinyMCE Forum](https://community.tinymce.com/).  Sign up [here](https://community.tinymce.com/).
 
 
 ## FAQ & Troubleshooting
@@ -115,4 +113,4 @@ tinymce.init({
 });
 ```
 
-If you wish to align the image, you can also use the text-align buttons when having images selected.
+Use the text-align buttons when images are selected to also align the images.

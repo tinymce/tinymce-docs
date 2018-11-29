@@ -10,7 +10,7 @@ A hybrid deployment of Tiny Cloud allows the loading of premium plugins in a sel
 
 Sign up for a free API key provides entitlements to premium [Image Tools]({{  site.baseurl }}/plugins/imagetools/) plugin. A cloud image proxy server must already be configured. Premium plugins can be purchased at any time once the API key has been set up.
 
-## Step 1: Embed custom script tag into the webpage
+## Step 1: Insert custom script tag into the webpage
 
 Add the following script in the webpage once the script tag to load TinyMCE has been specified:
 

@@ -1,6 +1,7 @@
 ---
 layout: default
-title: 11. Filter Content
+title: Filtering TinyMCE content
+title_nav: Content filtering
 description: Learn how to create clean, maintainable and readable content.
 ---
 

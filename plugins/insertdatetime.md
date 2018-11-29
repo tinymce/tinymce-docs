@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Insert Date/Time Plugin
+title: Insert Date/Time plugin
 title_nav: Insert Date/Time
 description: Insert the current date and/or time into TinyMCE.
 keywords: insertdatetime insertdatetime_dateformat insertdatetime_formats insertdatetime_timeformat insertdatetime_element dateformats

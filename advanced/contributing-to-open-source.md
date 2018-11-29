@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Contribute to TinyMCE
+title: Contribute to TinyMCE development
 title_nav: Contribute to TinyMCE
 description_short: Contribute to the open source project.
 description: Contribute to the open source project. Help build the core, plugins or even write the documentation.

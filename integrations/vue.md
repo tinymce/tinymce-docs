@@ -1,8 +1,8 @@
 ---
 layout: default
-title: Vue Integration
+title: Vue integration
 title_nav: Vue
-description: Vue TinyMCE component.
+description: TinyMCE Vue component
 keywords: integration integrate vue vuejs
 ---
 

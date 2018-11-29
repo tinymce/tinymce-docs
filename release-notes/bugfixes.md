@@ -1,12 +1,12 @@
 ---
 layout: default
-title: Bug Fixes
-title_nav: Bug Fixes
+title: Bug fixes in TinyMCE 5.0 Beta
+title_nav: Bug fixes
 description: These are the fixed issues in TinyMCE 5.0 Beta.
 keywords: knownissues bug releasenotes migration 4.x
 ---
 
-In the developer's preview release, we invited the community to test the TinyMCE 5.0 editor and report bugs and issues. The following issues have been fixed in the TinyMCE 5.0 BETA version.
+In the developer's preview release, we invited the community to test the TinyMCE 5.0 editor and report bugs and issues. The following issues have been fixed in the TinyMCE 5.0 Beta version.
 
 ### Editor-Core
 
@@ -165,7 +165,7 @@ The following theme related issues were reported during the developer's preview 
 
 #### Context Form
 
-The following Context Form related issues were reported during the developer's preview and are now fixed in the TinyMCE 5.0 BETA version. Please see the [Context Form]({{site.baseurl}}/ui-elements/contextform/) docs for more information.
+The following Context Form related issues were reported during the developer's preview and are now fixed in the TinyMCE 5.0 BETA version. Please see the [Context Form]({{site.baseurl}}/ui-components/contextform/) docs for more information.
 
 | Issue key| Summary |
 | AP-274 | Separate ContextForm API into launch and form (and | DOCument how it works) |
@@ -173,7 +173,7 @@ The following Context Form related issues were reported during the developer's p
 
 #### Context Menus
 
-The following Context Menu related issues were reported during the developer's preview and are now fixed in the TinyMCE 5.0 BETA version. Please see the [Context Menu]({{site.baseurl}}/ui-elements/contextmenu/) docs for more information.
+The following Context Menu related issues were reported during the developer's preview and are now fixed in the TinyMCE 5.0 BETA version. Please see the [Context Menu]({{site.baseurl}}/ui-components/contextmenu/) docs for more information.
 
 | Issue key| Summary |
 | AP-11	| image tools context menus |
@@ -183,7 +183,7 @@ The following Context Menu related issues were reported during the developer's p
 
 ####  Context Toolbar
 
-The following Context Toolbar related issues were reported during the developer's preview and are now fixed in the TinyMCE 5.0 BETA version. Please see the [Context Toolbar]({{site.baseurl}}/ui-elements/contexttoolbar/) docs for more information.
+The following Context Toolbar related issues were reported during the developer's preview and are now fixed in the TinyMCE 5.0 BETA version. Please see the [Context Toolbar]({{site.baseurl}}/ui-components/contexttoolbar/) docs for more information.
 
 | Issue key | Summary |
 | AP-148 | Create a context toolbar|
@@ -195,7 +195,7 @@ The following Context Toolbar related issues were reported during the developer'
 
 #### Dialog
 
-The following Dialog related issues were reported during the developer's preview and are now fixed in the TinyMCE 5.0 BETA version. Please see the [Dialog]({{site.baseurl}}/ui-elements/dialog/) docs for more information.
+The following Dialog related issues were reported during the developer's preview and are now fixed in the TinyMCE 5.0 BETA version. Please see the [Dialog]({{site.baseurl}}/ui-components/dialog/) docs for more information.
 
 | Issue key| Summary |
 | AP-17	| [dialog L] Insert Anchor |
@@ -262,7 +262,7 @@ The following Menu related issues were reported during the developer's preview a
 
 #### Toolbar Buttons
 
-The following Toolbar Buttons related issues were reported during the developer's preview and are now fixed in the TinyMCE 5.0 BETA version. Please see the [Toolbar Buttons]({{site.baseurl}}/ui-elements/toolbarbuttons/) docs for more information.
+The following Toolbar Buttons related issues were reported during the developer's preview and are now fixed in the TinyMCE 5.0 BETA version. Please see the [Toolbar Buttons]({{site.baseurl}}/ui-components/toolbarbuttons/) docs for more information.
 
 | Issue key| Summary |
 | AP-1	| Clarify inner button creation for Public API |

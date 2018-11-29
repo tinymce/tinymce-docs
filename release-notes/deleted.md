@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Deleted Features
-title_nav: Deleted Features
+title: Removed &amp; deprecated features
+title_nav: Removed &amp; deprecated features
 description: This section is a summary of all the deleted features in TinyMCE 5.0 Beta.
 keywords: deleted removed features enhancements technology preview
 ---

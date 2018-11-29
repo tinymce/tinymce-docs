@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Create a Skin for TinyMCE
-title_nav: Create a Skin
+title: Create a skin for TinyMCE
+title_nav: Create a skin
 description_short: Introducing skin creation.
 description: Introducing skin creation, less and icon modification.
 keywords: create creator skin icomoon

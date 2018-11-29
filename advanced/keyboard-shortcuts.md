@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Keyboard Shortcuts
-title_nav: Keyboard Shortcuts
+title: Keyboard shortcuts
+title_nav: Keyboard shortcuts
 description_short: Complete list of keyboard shortcuts.
 description: Complete list of keyboard shortcuts.
 keywords: keyboard shortcuts
@@ -9,7 +9,7 @@ keywords: keyboard shortcuts
 
 ## Editor keyboard shortcuts
 
-This is a list of keyboard shortcuts available within the editor body.
+This is a list of available keyboard shortcuts within the editor body.
 
 | Action | PC | Mac | Core/Plugin |
 |--------|----|-----|-------------|
@@ -39,7 +39,7 @@ This is a list of keyboard shortcuts available within the editor body.
 
 ## Accessibility keyboard shortcuts
 
-This is a list of keyboard shortcuts available within the editor user interface.
+This is a list of available keyboard shortcuts within the editor user interface.
 
 | Action | Key |
 |--------|-----|
@@ -53,8 +53,8 @@ This is a list of keyboard shortcuts available within the editor user interface.
 | Close menu | Esc |
 | Move focus back to editor body | Esc |
 
-> Note: Browsers/Screen Readers provide additional shortcuts within the editor context.
+> Note: Browsers and Screen Readers provide additional shortcuts within the editor context.
 
 ## Add custom shortcuts to TinyMCE
 
-If you would like to add your custom keyboard shortcuts to TinyMCE, [this post on our blog](https://go.tinymce.com/blog/creating-keyboard-shortcuts-tinymce/) will help you get started.
+Go to [this post on our blog](https://go.tinymce.com/blog/creating-keyboard-shortcuts-tinymce/) and get started adding your custom keyboard shortcuts to TinyMCE.

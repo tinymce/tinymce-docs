@@ -1,6 +1,7 @@
 ---
 layout: default
-title: 12. Localize TinyMCE
+title: Localize TinyMCE
+title_nav: Localization
 description: Localize TinyMCE with global language capabilities.
 keywords: internationalization localization languages
 ---

@@ -1,8 +1,7 @@
 ---
 layout: default
-title: New Features
-title_nav: New Features
-description: These are the new and enhanced features introduced in TinyMCE 5.0.
+title: New and enhanced features in TinyMCE 5.0 Beta
+title_nav: New features
 keywords: new features enhancements technology preview
 ---
 
@@ -10,17 +9,17 @@ The following new features were added to the TinyMCE 5.0 Beta version.
 
 ## Context Menu
 
-The context menu is a new configurable component added in TinyMCE 5.0 . It appears when the user right clicks in the editable area. By default it does not disable the operating system's native context menu, if there are no items to display at the cursor position the native context menu will be shown. See the [context menu]({{site.baseurl}}/ui-elements/contextmenu/) documentation for more information.
+The context menu is a new configurable component added in TinyMCE 5.0 . It appears when the user right clicks in the editable area. By default it does not disable the operating system's native context menu, if there are no items to display at the cursor position the native context menu will be shown. See the [context menu]({{site.baseurl}}/ui-components/contextmenu/) documentation for more information.
 
 The context menu supports both individual menu items and dynamic context menu sections. See the
 
 ## Context Toolbars
 
-A context toolbar is a pop-up toolbar that appears when you focus specific types of content, and which contains toolbar buttons relevant to that content. The context toolbar makes a limited number of relevant choices more visible and readily accessible. For more information, please see the [Context Toolbar]({{site.baseurl}}/ui-elements/contexttoolbar/) documentation.
+A context toolbar is a pop-up toolbar that appears when you focus specific types of content, and which contains toolbar buttons relevant to that content. The context toolbar makes a limited number of relevant choices more visible and readily accessible. For more information, please see the [Context Toolbar]({{site.baseurl}}/ui-components/contexttoolbar/) documentation.
 
 ## Custom Menu Items
 
-The Custom Menu items configurations options has changed in TinyMCE 5.0. The `addMenuItem` has a new configuration. A new method `addToggleMenuItem` has been added which is an explicit method for creating toggle menu items similar to the new special toolbar button methods. For more details on `editor.menuitems`, see the [configuration]({{site.baseurl}}/ui-elements/typesoftoolbarbuttons/#menunbspbutton) docs.
+The Custom Menu items configurations options has changed in TinyMCE 5.0. The `addMenuItem` has a new configuration. A new method `addToggleMenuItem` has been added which is an explicit method for creating toggle menu items similar to the new special toolbar button methods. For more details on `editor.menuitems`, see the [configuration]({{site.baseurl}}/ui-components/typesoftoolbarbuttons/#menunbspbutton) docs.
 
 <!-- ### Custom Sidebars
 
@@ -28,7 +27,7 @@ The Custom Menu items configurations options has changed in TinyMCE 5.0. The `ad
 
 ## Dialog
 
-The [Dialog]({{site.baseurl}}/ui-elements/dialog/) component is created for showing dialogs (sometimes referred to as modals) in your application. The plugin supports the use of dynamic content for all aspects and is easily configurable and overridable. To display simple information e.g., source code plugin, displays the HTML code from the content in the dialog.
+The [Dialog]({{site.baseurl}}/ui-components/dialog/) component is created for showing dialogs (sometimes referred to as modals) in your application. The plugin supports the use of dynamic content for all aspects and is easily configurable and overridable. To display simple information e.g., source code plugin, displays the HTML code from the content in the dialog.
 
 ## Format Painter 1.0
 
@@ -78,7 +77,7 @@ You can click anywhere in the text field to use the Permanent Pen function. To c
 
 ## Tables
 
-Tables are better in TinyMCE 5.0 editor. Creating and configuring tables in TinyMCE 5.0 is less cumbersome. We have enhanced this feature by modifying the code to ensure the styles are correct and consistent. Styles text field has been removed from the advanced table of the dialogs. The code is now much less confronting and confusing for non-developers. This also means we have more control over the table styles and therefore are better able to ensure the styles are correct. We have improved how styles are set and retrieved from tables, rows, or cells, so should be more reliable."Border" input field in the table properties dialog is now called "Border width" for clarity. For more information, see the [Toolbar Buttons]({{site.baseurl}}/plugins/table/) documentation.
+Tables are better in TinyMCE 5.0 editor. Creating and configuring tables in TinyMCE 5.0 is less cumbersome. We have enhanced this feature by modifying the code to ensure the styles are correct and consistent. Styles text field has been removed from the advanced table of the dialogs. The code is now much less confronting and confusing for non-developers. This also means we have more control over the table styles and therefore are better able to ensure the styles are correct. We have improved how styles are set and retrieved from tables, rows, or cells, so should be more reliable."Border" input field in the table properties dialog is now called "Border width" for clarity. For more information, see the [Tables]({{site.baseurl}}/plugins/table/) documentation.
 
 ### 1. Using CSS for styling
 
@@ -91,7 +90,7 @@ In TinyMCE 5.0, the **Autofill** feature is used while opening a properties dial
 ## Toolbar buttons
 
 TinyMCE 5.0 uses SVG icons for a better crisp look. Buttons are now added via methods in `editor.ui.registry` rather than `editor` e.g. `editor.ui.registry.addButton()` instead of `editor.addButton()`. To make the creation of custom toolbar buttons easier, new methods were added for split, toggle, and menu toolbar buttons with configuration options specific to the button type.
-For more information, see the [Toolbar Buttons]({{site.baseurl}}/ui-elements/toolbarbuttons/) documentation.
+For more information, see the [Toolbar Buttons]({{site.baseurl}}/ui-components/toolbarbuttons/) documentation.
 
 ## UI Accessibility
 

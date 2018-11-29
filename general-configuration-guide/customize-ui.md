@@ -1,7 +1,8 @@
 ---
 layout: default
-title: 08. Customize UI
-description: Learn how to change the appearance of the editor.
+title: Customizing the editor UI
+title_nav: Customizing the UI
+description: Learn how to change the appearance of TinyMCE.
 keywords: themes skins statusbar
 ---
 

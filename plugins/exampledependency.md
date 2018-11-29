@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Example_dependency Plugin
+title: Example_dependency plugin
 title_nav: Example_dependency
 description: How to build a plugin that depends on another plugin.
 keywords: example template custom example_dependency

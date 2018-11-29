@@ -1,6 +1,6 @@
 ---
 layout: default
-title: PowerPaste Plugin
+title: PowerPaste plugin
 title_nav: PowerPaste
 keywords: enterprise powerpaste power paste powerpaste_word_import powerpaste_html_import powerpaste_block_drop powerpaste_allow_local_images microsoft word excel
 ---

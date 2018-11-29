@@ -1,16 +1,16 @@
 ---
 layout: default
-title: Quickbar plugin
-title_nav: Quickbar
+title: Quick Toolbar plugin
+title_nav: Quick Toolbar
 description: User interface controls to create content faster.
 keywords: plugin inlite quickbar
 ---
 
-The Quickbar plugin (`quickbar`) enables new user interface components to help users create content faster. It can be used to create an experience similar to Medium, Quip, and other modern editing tools.
+The Quick Toolbar plugin (`quickbar`) enables new user interface components to help users create content faster. It can be used to create an experience similar to Medium, Quip, and other modern editing tools.
 
 It replaces the capabilities of the `inlite` theme in TinyMCE 4 or earlier.
 
-The Quickbar plugin enables two new context toolbars:
+The Quick Toolbar plugin enables two new context toolbars:
 
 * _Quick Selection_ - shown when text is selected for quick access to formatting commands such as bold, italic and link. 
 * _Quick Insert_ - shown when a new line is created for the quick insertion of objects such as tables and images.

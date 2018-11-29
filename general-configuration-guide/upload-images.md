@@ -84,7 +84,7 @@ tinymce.init({
 
 ## Rolling your image handler
 
-Change the default behaviour of TinyMCE's image upload logic by changing the `images_upload_handler` configuration property.
+Change the default behavior of TinyMCE's image upload logic by changing the `images_upload_handler` configuration property.
 
 Please note that while using this option, other image uploader options are not necessary. Additionally, to replace the <image> tag's src attribute with the remote location, please use the success callback defined in the `image_upload_handler` function with the returned JSON object's location property.
 
@@ -122,7 +122,7 @@ tinymce.init({
 
 ## CORS considerations
 
-Configure [Cross-origin resource sharing (CORS)](http://en.wikipedia.org/wiki/Cross-origin_resource_sharing) to allow the web application to upload image data to a separate domain. This ensure compliance with JavaScript *same origin* restrictions.
+Configure [Cross-origin resource sharing (CORS)](http://en.wikipedia.org/wiki/Cross-origin_resource_sharing) to allow the web application to upload image data to a separate domain. This ensures compliance with JavaScript *same-origin* restrictions.
 
 CORS has stringent rules about what constitutes a cross-origin request. The browser can require CORS headers when uploading to the same server the editor is hosted on, for example:
 

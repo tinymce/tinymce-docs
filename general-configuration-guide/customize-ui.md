@@ -26,7 +26,7 @@ tinymce.init({
 
 Ensure the name of the created skin matches the name of the folder in skins directory (ie. `tinymce/js/skins`). TinyMCE cannot load if the specified skin is not found.
 
-> Note: Developers often confuse the difference between TinyMCE "themes" and "skins".
+> Note: Developers often confuse the difference between TinyMCE "themes" and "skins". A **Skin** in Tinymce is used to make changes to the appearance of the editor, for example, colors, margins, paddings, fonts, icons, etc. A **Theme** creates the editor construction (left, top, bottom, or right of the editing area - vertical or horizontal, inline or outside, etc.). A skin usually changes the color scheme of a button, dialog, etc. while the theme applies to the whole editor including its functionality and has child skins to change the appearance.
 
 ### Changing Editor Height and Width
 

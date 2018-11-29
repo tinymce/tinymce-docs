@@ -30,7 +30,7 @@ Ensure the name of the created skin matches the name of the folder in skins dire
 
 ### Changing Editor Height and Width
 
-A common UI customization used by developers is changing the height and width of the editable area. The following examples are code snippets that change TinyMCE height and wideth.
+A common UI customization used by developers is changing the height and width of the editable area. The following examples are code snippets that change TinyMCE height and width.
 
 > Note: The links below contain specific details of these customization options.
 

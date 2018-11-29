@@ -14,7 +14,7 @@ All Tiny Cloud accounts include a free, pre-configured cloud image proxy service
 
 ## Integrating TinyMCE for the first time
 
-### Step 1: Embed the TinyMCE Cloud script tag into your webpage
+### Step 1: Insert the TinyMCE Cloud script tag into the webpage
 
 Embed the TinyMCE editor code into the application to load TinyMCE for the first time. The code embedding is done by adding the following script tag into your app, or in the case of a web page the `<head>` of the page:
 
@@ -35,7 +35,7 @@ Extend the [TinyMCE configuration]({{ site.baseurl }}/configure/) to include any
 * [Powerpaste]({{ site.baseurl }}/plugins/powerpaste/)
 * [Spell Checker]({{ site.baseurl }}/plugins/tinymcespellchecker/)
 
-> Note: `spellchecker_rpc_url` is **not** required when enabling this plugin via [TinyMCE Cloud]({{ site.baseurl }}/cloud-deployment-guide/)
+> Note: `spellchecker_rpc_url` is **not** required when enabling this plugin via [Tiny Cloud]({{ site.baseurl }}/cloud-deployment-guide/)
 
 * [Image Tools (with configured image proxy)]({{ site.baseurl }}/plugins/imagetools/)
 
@@ -89,7 +89,7 @@ Extend the [TinyMCE configuration]({{ site.baseurl }}/configure/) to include any
 * [Powerpaste]({{ site.baseurl }}/plugins/powerpaste/)
 * [Spell Checker]({{ site.baseurl }}/plugins/tinymcespellchecker/)
 
-> Note: `spellchecker_rpc_url` is **not** required when enabling this plugin via [TinyMCE Cloud]({{ site.baseurl }}/cloud-deployment-guide/)
+> Note: `spellchecker_rpc_url` is **not** required when enabling this plugin via [Tiny Cloud]({{ site.baseurl }}/cloud-deployment-guide/)
 
 * [Image Tools (with configured image proxy)]({{ site.baseurl }}/plugins/imagetools/)
 

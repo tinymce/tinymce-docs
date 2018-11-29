@@ -14,7 +14,7 @@ All Tiny Cloud accounts include a free, pre-configured cloud image proxy service
 
 ## Integrating TinyMCE for the first time
 
-### Step 1: Insert the TinyMCE Cloud script tag into the webpage
+### Step 1: Insert the Tiny Cloud script tag into the webpage
 
 Embed the TinyMCE editor code into the application to load TinyMCE for the first time. The code embedding is done by adding the following script tag into your app, or in the case of a web page the `<head>` of the page:
 

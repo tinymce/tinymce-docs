@@ -1,6 +1,6 @@
 ## insert_toolbar
 
-The **insert_toolbar** enables you to specify toolbar items to include in the [inlite]({{ site.baseurl }}/themes/inlite) themes insert toolbar. It is recommended that you only have insert related controls in this toolbar. However, nothing is restricting you to use any of the available [toolbar controls]({{ site.baseurl }}/advanced/editor-control-identifiers/#toolbarcontrols).
+The **insert_toolbar** option enables you to specify toolbar items to include in the [quickui]({{ site.baseurl }}/plugins/quickui) plugin Insert minibar. It is recommended that you only have controls in this toolbar related to inserting content. However, nothing is restricting you to use any of the available [toolbar controls]({{ site.baseurl }}/advanced/editor-control-identifiers/#toolbarcontrols).
 
 **Type:** `String`
 
@@ -11,8 +11,8 @@ The **insert_toolbar** enables you to specify toolbar items to include in the [i
 ```js
 tinymce.init({
   selector: 'div.tinymce',
-  theme: 'inlite',
+  plugins: 'quickui',
   inline: true,
-  inlite_insert_toolbar: 'quickimage quicktable'
+  quickui_insert_toolbar: 'quickimage quicktable'
 });
 ```

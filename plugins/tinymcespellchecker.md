@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Spell Checker Pro Plugin
+title: Spell Checker Pro plugin
 title_nav: Spell Checker Pro
 description: Check spelling as-you-type in TinyMCE.
 keywords: tinymcespellchecker spellchecker_language spellchecker_languages spellchecker_rpc_url spellchecker_dialog ephox English US UK Danish Dutch Finnish French German Italian Norwegian Portuguese Brazilian European Spanish Swedish

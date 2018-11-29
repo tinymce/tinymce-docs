@@ -1,15 +1,16 @@
 ---
 layout: default
-title: 02. Use TinyMCE Classic
-description: Theme that renders iframe or inline modes using the tinymce core UI framework.
+title: TinyMCE classic editing mode
+title_nav: Classic editing mode
+description: Theme that renders iframe or inline modes using the TinyMCE core UI framework.
 keywords: theme classic
 ---
 
 TinyMCE has three main integration modes: 
 
-1. "classic" form-based
-1. inline editing 
-1. distraction-free
+* "classic" form-based
+* inline editing 
+* distraction-free
 
 **Classic** mode is the most common TinyMCE integration. **Classic** mode's popularity is due to its familiarity to users and how quickly they identify it as a text editor.
 

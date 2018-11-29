@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Print Plugin
+title: Print plugin
 title_nav: Print
 description: Print the content in TinyMCE.
 keywords: file

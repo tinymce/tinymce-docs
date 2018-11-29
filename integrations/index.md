@@ -1,6 +1,7 @@
 ---
 layout: default
-title: Integrate With Other Projects
+title: Integrate with other projects
+title_nav: Integrations
 description: Faster development with integrations of TinyMCE into your favorite framework or CMS.
 type: folder
 ---

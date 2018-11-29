@@ -1,10 +1,11 @@
 ---
 layout: default
-title: 14. System Requirements
+title: System requirements
+title_nav: System requirements
 description: Official TinyMCE browser support.
 keywords: browser compatibility explorer ie safari firefox chrome edge
 ---
-## Mobile Supported Platforms
+## Mobile supported platforms
 
 [TinyMCE mobile](https://www.tinymce.com/mobile) is available in TinyMCE 5.0
 
@@ -18,7 +19,7 @@ Please report platform issues and bugs in the [TinyMCE issue tracker](https://gi
 
 Visit [TinyMCE mobile documentation]({{ site.baseurl }}/mobile) for further information on TinyMCE mobile setup and configuration.
 
-## Browser Compatibility
+## Browser compatibility
 
 TinyMCE uses advanced JavaScript techniques to normalize inconsistencies among browsers to ensure a uniform user experience. The primary focus is on Chrome, Firefox, Internet Explorer, and Safari.
 

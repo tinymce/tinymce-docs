@@ -1,6 +1,7 @@
 ---
 layout: default
-title: Editor Appearance
+title: User interface options
+title_nav: User interface options
 description_short:
 description: Configure the editor's appearance, including menu and toolbar controls.
 ---

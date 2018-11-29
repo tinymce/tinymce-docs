@@ -1,8 +1,8 @@
 ---
 layout: default
-title: Drive
-title_nav: Drive
-description: Tiny Drive. A premium plugin to manage files & images.
+title: Cloud-based file management
+title_nav: Cloud-based file management
+description: Tiny Drive - a premium plugin to manage files & images.
 keywords: tinydrive .net php relative_urls
 ---
 

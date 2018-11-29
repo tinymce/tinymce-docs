@@ -1,12 +1,12 @@
 ---
 layout: default
-title: Bootstrap Integration
+title: Bootstrap integration
 title_nav: Bootstrap
 description: How to override the built-in block on `focusin` in Bootstrap dialogs when using TinyMCE.
 keywords: integration integrate bootstrap
 ---
 
-## Using TinyMCE in a Bootstrap Dialog
+## Using TinyMCE in a Bootstrap dialog
 
 You need to override the built-in block on `focusin` in Bootstrap dialogs when using TinyMCE inside it. See this fiddle for a [working example](http://fiddle.tinymce.com/oxdaab).
 

@@ -2,7 +2,7 @@
 layout: default
 title: Cloud Deployment of Editor & Plugins
 description_short: Learn how to set up the TinyMCE editor via the Cloud or migrate from a self-hosted environment.
-description: Run TinyMCE Cloud in less than 5 minutes.
+description: Run Tiny Cloud in less than 5 minutes.
 keywords: tinymce cloud script textarea apiKey
 ---
 

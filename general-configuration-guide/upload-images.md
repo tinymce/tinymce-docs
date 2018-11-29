@@ -37,7 +37,7 @@ tinymce.activeEditor.uploadImages(function(success) {
 
 ## Image uploader requirements
 
-A server-side upload handler script that accepts images on the server, saves them appropriately, and resturns a JSON object containing the location of the saved images is necessary to upload local images to a remote server.
+A server-side upload handler script that accepts images on the server, saves them appropriately, and returns a JSON object containing the location of the saved images is necessary to upload local images to a remote server.
 
 An example PHP upload handler implementation is available [here]({{ site.baseurl }}/advanced/php-upload-handler/).
 

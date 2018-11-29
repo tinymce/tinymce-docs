@@ -1,9 +1,8 @@
-
-In the developer's preview release, we invited the community to test the TinyMCE 5.0 editor and report bugs and issues. The following issues have been fixed in the TinyMCE 5.0 Beta version.
+The community was invited to test the TinyMCE 5.0 editor and report bugs and issues in the Developers Preview release. The following issues have been fixed in the TinyMCE 5.0 Beta version.
 
 ### Editor-Core
 
-The new TinyMCE 5.0 editor comes with significant changes to the previous versions. Our team at Tiny has created a more configurable and modern editor. To create a less cumbersome editor, we have removed some configurations because they are no longer necessary or an improved solution has been introduced. For more information, please see the [Editor-Core]({{site.baseurl}}/migration-from-4x/#editor-core) section in the Migration Guide.
+The new TinyMCE 5.0 editor comes with significant changes to the previous versions. Tiny has created a more configurable and modern editor. Improved solutions have been introduced for unnecessary and obsolete configuration options. This has contributed to a less cumbersome editor. Refer to the [Editor-Core]({{site.baseurl}}/migration-from-4x/#editor-core) section in the Migration Guide for more information.
 
 #### Alloy
 

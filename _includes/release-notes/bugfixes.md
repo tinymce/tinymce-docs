@@ -1,16 +1,8 @@
----
-layout: default
-title: Bug fixes in TinyMCE 5.0 Beta
-title_nav: Bug fixes
-description: These are the fixed issues in TinyMCE 5.0 Beta.
-keywords: knownissues bug releasenotes migration 4.x
----
-
-In the developer's preview release, we invited the community to test the TinyMCE 5.0 editor and report bugs and issues. The following issues have been fixed in the TinyMCE 5.0 Beta version.
+The community was invited to test the TinyMCE 5.0 editor and report bugs and issues in the Developers Preview release. The following issues have been fixed in the TinyMCE 5.0 Beta version.
 
 ### Editor-Core
 
-The new TinyMCE 5.0 editor comes with significant changes to the previous versions. Our team at Tiny has created a more configurable and modern editor. To create a less cumbersome editor, we have removed some configurations because they are no longer necessary or an improved solution has been introduced. For more information, please see the [Editor-Core]({{site.baseurl}}/migration-from-4x/#editor-core) section in the Migration Guide.
+The new TinyMCE 5.0 editor comes with significant changes to the previous versions. Tiny has created a more configurable and modern editor. Improved solutions have been introduced for unnecessary and obsolete configuration options. This has contributed to a less cumbersome editor. Please see the [Editor-Core]({{site.baseurl}}/migration-from-4x/#editor-core) section in the Migration Guide for more information.
 
 #### Alloy
 
@@ -114,7 +106,7 @@ The following editor related issues were reported during the developer's preview
 
 ### User Interface
 
-TinyMCE 5.0 has an ARIA WCAG 2.1 standards compliant user interface to make the user interface controls and dynamic content more accessible. The user interface logic has been changed entirely in TinyMCE 5.0. For more information on the UI changes, please see the [Migration Guide]({{site.baseurl}}/migration-from-4x).
+TinyMCE 5.0 has an ARIA WCAG 2.1 standards compliant user interface to make the user interface controls and dynamic content more accessible. The user interface logic has been changed entirely in TinyMCE 5.0. Refer to the [Migration Guide]({{site.baseurl}}/migration-from-4x), for more information on the UI changes.
 
 #### UI
 
@@ -460,7 +452,7 @@ The following Table of Contents related issues were reported during the develope
 
 ### Documentation
 
-The following documentation related issues were reported during the developer's preview and are now fixed in the TinyMCE 5.0 BETA version. Please see the latest [Docs](https://www.tiny.cloud/docs-preview/) for more information.
+The following documentation related issues were reported during the developer's preview and are now fixed in the TinyMCE 5.0 BETA version. Refer to the latest [Documentation](https://www.tiny.cloud/docs-preview/) for more information.
 
 | Issue key | Summary |
 | DOC-98 | Typo - importcss_file_filter |

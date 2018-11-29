@@ -17,7 +17,7 @@ The Quick UI plugin enables two new context toolbars:
 
 It also enables three new toolbar controls:
 
-* _Quick Link_ - an inline experience for creating links without a dialog
+* _Quick Link_ - an inline experience for creating and editing links without a dialog
 * _Quick Image_ - immediately prompts a user to select a local image to upload
 * _Quick Table_ - immediately inserts a 2x2 table without prompting the user to select the number of rows and columns
 

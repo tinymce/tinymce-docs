@@ -6,13 +6,25 @@ The **insert_toolbar** option enables you to specify toolbar items to include in
 
 **Defaults:** `quickimage quicktable`
 
-##### Example
+##### Example customizing the Insert toolbar
 
 ```js
 tinymce.init({
   selector: 'div.tinymce',
   plugins: 'quickui',
-  inline: true,
+  quickui: true,
   quickui_insert_toolbar: 'quickimage quicktable'
+});
+```
+
+
+##### Example disabling the Insert toolbar
+
+```js
+tinymce.init({
+  selector: 'div.tinymce',
+  plugins: 'quickui',
+  quickui: true,
+  quickui_insert_toolbar: false
 });
 ```

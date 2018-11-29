@@ -61,7 +61,7 @@ A **SKIN** in Tinymce is used to make changes to the appearance of the editor, f
 
 In TinyMCE 5.0 the **Silver** theme contains a set of configurable UI components that could be used to replace the current customizations (modern, inline, and inlite theme). Silver is enabled by default. If you do not specify a theme, it will default to `Silver`.
 
-The skin creator is coupled with the `tinymce.ui` framework, so it works with the modern theme, the inlite theme, and to some extent MoxieManager.
+The skin creator is coupled with the `tinymce.ui` framework, so it works with the modern theme, and to some extent MoxieManager.
 
 <!-- ## Permanent Pen 1.0
 

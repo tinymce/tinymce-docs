@@ -2,7 +2,7 @@ The community was invited to test the TinyMCE 5.0 editor and report bugs and iss
 
 ### Editor-Core
 
-The new TinyMCE 5.0 editor comes with significant changes to the previous versions. Tiny has created a more configurable and modern editor. Improved solutions have been introduced for unnecessary and obsolete configuration options. This has contributed to a less cumbersome editor. Refer to the [Editor-Core]({{site.baseurl}}/migration-from-4x/#editor-core) section in the Migration Guide for more information.
+The new TinyMCE 5.0 editor comes with significant changes to the previous versions. Tiny has created a more configurable and modern editor. Improved solutions have been introduced for unnecessary and obsolete configuration options. This has contributed to a less cumbersome editor. Please see the [Editor-Core]({{site.baseurl}}/migration-from-4x/#editor-core) section in the Migration Guide for more information.
 
 #### Alloy
 
@@ -106,7 +106,7 @@ The following editor related issues were reported during the developer's preview
 
 ### User Interface
 
-TinyMCE 5.0 has an ARIA WCAG 2.1 standards compliant user interface to make the user interface controls and dynamic content more accessible. The user interface logic has been changed entirely in TinyMCE 5.0. For more information on the UI changes, please see the [Migration Guide]({{site.baseurl}}/migration-from-4x).
+TinyMCE 5.0 has an ARIA WCAG 2.1 standards compliant user interface to make the user interface controls and dynamic content more accessible. The user interface logic has been changed entirely in TinyMCE 5.0. Refer the [Migration Guide]({{site.baseurl}}/migration-from-4x), for more information on the UI changes.
 
 #### UI
 
@@ -452,7 +452,7 @@ The following Table of Contents related issues were reported during the develope
 
 ### Documentation
 
-The following documentation related issues were reported during the developer's preview and are now fixed in the TinyMCE 5.0 BETA version. Please see the latest [Docs](https://www.tiny.cloud/docs-preview/) for more information.
+The following documentation related issues were reported during the developer's preview and are now fixed in the TinyMCE 5.0 BETA version. Refer the latest [Documentation](https://www.tiny.cloud/docs-preview/) for more information.
 
 | Issue key | Summary |
 | DOC-98 | Typo - importcss_file_filter |

@@ -77,8 +77,8 @@ tinymce.init({
 
 ### Related configuration options
 
-* [insert_toolbar]({{ site.baseurl }}/configure/editor-appearance/#insert_toolbar)
-* [selection_toolbar]({{ site.baseurl }}/configure/editor-appearance/#selection_toolbar)
+* [quick_insert_toolbar]({{ site.baseurl }}/configure/editor-appearance/#quick_insert_toolbar)
+* [quick_selection_toolbar]({{ site.baseurl }}/configure/editor-appearance/#quick_selection_toolbar)
 * [inline]({{ site.baseurl }}/configure/editor-appearance/#inline)
 * [skin]({{ site.baseurl }}/configure/editor-appearance/#skin)
 * [theme]({{ site.baseurl }}/configure/editor-appearance/#theme)

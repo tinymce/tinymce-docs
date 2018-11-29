@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Cloud Deployment Guide
-description: Start here for TinyMCE Cloud.
+description: Start here for Tiny Cloud.
 type: folder
 ---
 

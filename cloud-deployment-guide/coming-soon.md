@@ -6,6 +6,6 @@ description: Run Tiny Cloud in less than 5 minutes.
 keywords: tinymce cloud script textarea apiKey
 ---
 
-TinyMCE Cloud is the easiest way to integrate TinyMCE and upgrade to premium plugins.
+Tiny Cloud is the easiest way to integrate TinyMCE and upgrade to premium plugins.
 
 This section is under revision and will be available soon.

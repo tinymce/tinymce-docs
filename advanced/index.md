@@ -1,6 +1,7 @@
 ---
 layout: default
-title: Explore Advanced Topics
+title: Explore advanced topics
+title_nav: Advanced topics
 description: Information and guides for developers wanting to build advanced capabilities into TinyMCE.
 type: folder
 ---

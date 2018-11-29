@@ -1,9 +1,8 @@
 ---
 layout: default
-title: 05. Multiple Editors
-description_short: Learn how to insert multiple editor instances on a single page.
-description: Learn how to insert multiple editor instances on a single page.
-keywords: form inline edit
+title: Use multiple TinyMCE instances in a single page
+title_nav: Multiple editors in a page
+keywords: 
 ---
 
 Now that you know how to add TinyMCE to your page, and how to use the `inline` mode, it's time to learn how to add multiple editor instances to a single page.

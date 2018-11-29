@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Text Color Plugin
+title: Text Color plugin
 title_nav: Text Color
 keywords: textcolor textcolor_cols textcolor_map textcolor_rows
 controls: toolbar button

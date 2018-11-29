@@ -1,10 +1,10 @@
 ## entity_encoding
 
-This option controls how entities/characters get processed by TinyMCE. The value can be set as shown in Encoding Types below. You can also mix named and numeric by setting this to "named+numeric" this way it will produce entity names of the ones found in the configured entities and numeric entities for other entities.
+This option controls how entities/characters get processed by TinyMCE. The value can be set as shown in _Encoding types_ below. You can also mix named and numeric by setting this to "named+numeric" this way it will produce entity names of the ones found in the configured entities and numeric entities for other entities.
 
 The base entities `<`, `>`, `&`, `'`, and `"` will always be entity encoded into their named equivalents. Though, `'` and `"` will only be encoded within attribute values and `<` and `>` will only be encoded within text nodes. This is correct according too the HTML and XML specs.
 
-### Encoding Types
+### Encoding types
 
 | Name     | Summary          |
 |----------|------------------|

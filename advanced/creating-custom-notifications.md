@@ -1,17 +1,17 @@
 ---
 layout: default
-title: Create Custom Notifications
-title_nav: Create Custom Notifications
+title: Create custom notifications
+title_nav: Create custom notifications
 description_short: Learn how to make custom notifications.
 description: Learn how to make custom dialogs with NotificationManager.
 keywords: custom notification notifications cdn notificationmanager
 ---
 
-In version 4.3 of TinyMCE, a new feature was added to allow you to display notifications. These notifications can be customized in several ways.
+TinyMCE can display customized notifications.
 
 ## Text
 
-**Text** is the most critical setting when opening a notification. The "text" property sets the text that is displayed at the center of the notification.
+The **text** property sets the text that is displayed at the center of the notification. This is the most important setting when opening a notification.
 
 ```js
 editor.notificationManager.open({
@@ -21,14 +21,14 @@ editor.notificationManager.open({
 
 ## Type
 
-There are several types of notifications that differ in color and purpose. These are:
+The following notification types differ in color and purpose:
 
 * success
 * info
 * warning
 * error
 
-To set a notification type, set the "type" property when opening the notification. Leaving this property blank will use the default style.
+Set the `type` property when opening the notification. The default style is used if this property is not set.
 
 ```js
 editor.notificationManager.open({
@@ -39,7 +39,7 @@ editor.notificationManager.open({
 
 ## Timeout
 
-By setting the "timeout" property, the notification will automatically close after the provided value's time has elapsed in milliseconds.
+The notification automatically closes after the value set in the `timeout` property elapses in milliseconds.
 
 ```js
 editor.notificationManager.open({
@@ -50,7 +50,7 @@ editor.notificationManager.open({
 
 ## Close Button
 
-By setting the "closeButton" property to false in conjunction with a non-zero timeout, you may disable the close button to the right of the notification.
+Disable the close button to the right of the notification by setting the `closeButton` property to **false** in conjunction with a `timeout` property that is **not** zero.
 
 ```js
 editor.notificationManager.open({
@@ -62,7 +62,7 @@ editor.notificationManager.open({
 
 ## Icon
 
-By setting the "icon" property, the notification will display an icon to the left of the text.
+Set the `icon` property to display an icon to the left of the text.
 
 ```js
 editor.notificationManager.open({
@@ -73,7 +73,8 @@ editor.notificationManager.open({
 
 ## Progress Bar
 
-By setting the "progressBar" property to `True`, the notification will display a progress bar to the left of the close button and to the right of the text.
+Set the `progressBar` property type to `True` to display a progress bar to the left of the close button and to the right of the text.
+
 
 ```js
 var notification = editor.notificationManager.open({
@@ -82,13 +83,13 @@ var notification = editor.notificationManager.open({
 });
 ```
 
-To set the current progress of this progress bar, set the value of the progress bar's value property to between 0 and 100.
+Set the `progressBar` property between 0 and 100 to set the progress of the progress bar.
 
 ```js
 notification.progressBar.value(50);
 ```
 
-You can also close the last shown notification by calling:
+To close the last shown notification, `call` the following method:
 
 ```js
 // Close the last shown notification.

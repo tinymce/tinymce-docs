@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Angular 1 Integration
+title: Angular 1 integration
 title_nav: Angular 1
 description: This directive allows you to add a TinyMCE editor to your form elements.
 keywords: integration integrate angular angularjs angular1

@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Nonbreaking Space Plugin
-title_nav: Nonbreaking
+title: Nonbreaking Space plugin
+title_nav: Nonbreaking Space
 description: Insert a nonbreaking space.
 keywords: nonbreaking nonbreaking_force_tab insert
 controls: toolbar button, menu item

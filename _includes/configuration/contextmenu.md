@@ -13,7 +13,7 @@ The default configuration includes all plugins that provide a context menu; `lin
 
 **Type:** `String`
 
-#### Default Configuration Example
+#### Default configuration example
 
 ```js
 tinymce.init({

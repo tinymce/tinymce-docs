@@ -1,11 +1,11 @@
 ---
 layout: default
-title: Adding Custom Dictionaries
+title: Adding custom dictionaries
 description: Custom dictionaries can be added to Spell Checker Pro
-keywords: enterprise tinymcespellchecker spell check checker pro pricing
+keywords: enterprise tinymcespellchecker spell check checker pro
 ---
 
-### Configuring the Custom Dictionary Feature
+### Configuring the custom dictionary feature
 
 Additional configuration to your `application.conf` file is required. (Don't forget to restart the Java application server after updating the configuration.)
 
@@ -21,7 +21,7 @@ ephox {
 }
 ```
 
-### Creating Custom Dictionary Files
+### Creating custom dictionary files
 
 One custom dictionary can be created for each language supported by the spell checker (see [supported languages]({{ site.baseurl }}/enterprise/check-spelling/)), as well as an additional "global" dictionary that contains words that are valid across all languages, such as trademarks.
 
@@ -33,7 +33,7 @@ The "global" dictionary file for language-independent words must be called "glob
 
 The server will scan the dictionary directory as per configuration above and pick up "txt"-files for each language and the global file as present.
 
-### Custom Dictionary File Format
+### Custom dictionary file format
 
 A dictionary file must be a simple text file with:
 
@@ -47,7 +47,7 @@ The last point is important for files created or edited on non-Linux (Windows or
 **NOTE for German and Finnish languages**: Spell checking in German and Finnish will employ compound word spell checking. Compound words such as "Fußballtennis" will be assumed correct as long as the root words "Fußball" and "Tennis" are
 individually present in the dictionary. It is not necessary to add "Fußballtennis" separately.
 
-### Verifying Custom Dictionary Functionality
+### Verifying custom dictionary functionality
 
 If successfully configured, the custom dictionary feature will report dictionaries found in the application server's log at service startup.
 
@@ -63,6 +63,6 @@ Example:
 
 The above log shows that 3 custom dictionaries were found, one "global", language-independent one and one each for English and French. They were found to contain 1, 3 and 2 words, respectively. Please check that this report matches your expectations.
 
-### Ongoing Dictionary Maintenance
+### Ongoing dictionary maintenance
 
 Future additions/changes to dictionaries after the initial deployment will require a restart of the spell check service each time.

@@ -6,11 +6,11 @@ description: Run TinyMCE Cloud in less than 5 minutes.
 keywords: tinymce cloud script textarea apiKey
 ---
 
-TinyMCE Cloud is the easiest way to integrate TinyMCE and upgrade to premium plugins.
+Tiny Cloud is the easiest way to integrate TinyMCE and upgrade to premium plugins.
 
-TinyMCE Cloud can be used without an API key. Refer to the [General Configuration]({{site.baseurl}}/general-configuration-guide) guide for more information. Sign up for an API key and update the script tag to use premium plugins or avoid the in-editor developer warning.
+Tiny Cloud can be used without an API key. Refer to the [General Configuration]({{site.baseurl}}/general-configuration-guide) guide for more information. Sign up for an API key and update the script tag to use premium plugins or avoid the in-editor developer warning.
 
-All TinyMCE Cloud accounts include a free, pre-configured cloud image proxy service. This setup uses the [Image Tools]({{  site.baseurl }}/plugins/imagetools/) plugin.
+All Tiny Cloud accounts include a free, pre-configured cloud image proxy service. This setup uses the [Image Tools]({{  site.baseurl }}/plugins/imagetools/) plugin.
 
 ## Integrating TinyMCE for the first time
 
@@ -66,7 +66,7 @@ Ensure the `tiny-api-key` and `tinymce-api-key` headers are retained while reque
 
 ### Step 1: Replace existing reference to tinymce.min.js
 
-Migrating from a self-hosted environment to `tiny.cloud` is easy. Remove the existing script tag that loads TinyMCE’s JavaScript.
+Migrating from a self-hosted environment to Tiny Cloud is easy. Remove the existing script tag that loads TinyMCE’s JavaScript.
 
 > Note: The script tag typically references `tinymce.min.js` hosted within the application or available at a legacy CDN.
 

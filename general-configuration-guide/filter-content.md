@@ -95,7 +95,7 @@ The `schema` option enables the switch between the HTML4 and HTML5 schema. This 
 
 The `html5` schema is the full HTML5 specification including the older HTML4 elements for compatibility. The `html5-strict` schema only allows the elements in the current HTML5 specification, excluding things that are removed. The `html4` schema includes the full HTML4 transitional specification.
 
-The options above are an example of the type of configuration options in the [Content Filtering]({{ site.baseurl }}/configure/content-filtering/) configuration documentation.
+The options above are examples of the type of configuration options in the [Content Filtering]({{ site.baseurl }}/configure/content-filtering/) configuration documentation.
 
 ```js
 tinymce.init({

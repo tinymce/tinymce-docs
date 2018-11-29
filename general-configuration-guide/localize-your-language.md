@@ -24,7 +24,7 @@ Click the download link on the far right of the table for a single language. Che
 
 Unpack the language `js` file(s) into the `path/to/tinymce/langs/` folder. 
 
-> Important! The language settings will not work unless the language pack is placed in `langs/` directory. The [language_url]({{ site.baseurl }}/configure/localization/#language_url) configuration option is another method to enable additional language settings.
+> Important: The language settings will not work unless the language pack is placed in `langs/` directory. The [language_url]({{ site.baseurl }}/configure/localization/#language_url) configuration option is another method to enable additional language settings.
 
 ### Step 3
 

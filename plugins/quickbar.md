@@ -1,16 +1,16 @@
 ---
 layout: default
-title: Quickbars plugin
-title_nav: Quickbars
+title: Quickbar plugin
+title_nav: Quickbar
 description: User interface controls to create content faster.
-keywords: plugin inlite quickbars
+keywords: plugin inlite quickbar
 ---
 
-The Quickbars plugin (`quickbars`) enables new user interface components to help users create content faster. It can be used to create an experience similar to Medium, Quip, and other modern editing tools.
+The Quickbar plugin (`quickbar`) enables new user interface components to help users create content faster. It can be used to create an experience similar to Medium, Quip, and other modern editing tools.
 
 It replaces the capabilities of the `inlite` theme in TinyMCE 4 or earlier.
 
-The Quickbars plugin enables two new context toolbars:
+The Quickbar plugin enables two new context toolbars:
 
 * _Quick Selection_ - shown when text is selected for quick access to formatting commands such as bold, italic and link. 
 * _Quick Insert_ - shown when a new line is created for the quick insertion of objects such as tables and images.
@@ -27,10 +27,10 @@ It also enables three new toolbar controls:
 ```js
 tinymce.init({
     selector: "div.tinymce",
-    plugins: [ 'quickbars' ],
+    plugins: [ 'quickbar' ],
     toolbar: false,
     menubar: false,
-    quickbars: true
+    quickbar: true
 });
 ```
 #### Example disabling the Quick Insert toolbar:
@@ -38,11 +38,11 @@ tinymce.init({
 ```js
 tinymce.init({
     selector: "div.tinymce",
-    plugins: [ 'quickbars' ],
+    plugins: [ 'quickbar' ],
     toolbar: false,
     menubar: false,
-    quickbars: true,
-    quickbars_insert_toolbar: false
+    quickbar: true,
+    quickbar_insert_toolbar: false
 });
 ```
 
@@ -51,11 +51,11 @@ tinymce.init({
 ```js
 tinymce.init({
     selector: "div.tinymce",
-    plugins: [ 'quickbars' ],
+    plugins: [ 'quickbar' ],
     toolbar: false,
     menubar: false,
-    quickbars: true,
-    quickbars_selection_toolbar: false
+    quickbar: true,
+    quickbar_selection_toolbar: false
 });
 ```
 
@@ -70,11 +70,11 @@ The Quick Link (`quicklink`) control lets the user quickly insert/edit links inl
 ```js
 tinymce.init({
     selector: "div.tinymce",
-    plugins: [ 'quickbars' ],
+    plugins: [ 'quickbar' ],
     toolbar: false,
     menubar: false,
-    quickbars: true,
-    quickbars_selection_toolbar: 'bold italic | quicklink h2 h3 blockquote'
+    quickbar: true,
+    quickbar_selection_toolbar: 'bold italic | quicklink h2 h3 blockquote'
 });
 ```
 
@@ -87,11 +87,11 @@ The Quick Image (`quickimage`) control lets you quickly insert images from the l
 ```js
 tinymce.init({
     selector: "div.tinymce",
-    plugins: [ 'quickbars' ],
+    plugins: [ 'quickbar' ],
     toolbar: false,
     menubar: false,
-    quickbars: true,
-    quickbars_insert_toolbar: 'quickimage quicktable'
+    quickbar: true,
+    quickbar_insert_toolbar: 'quickimage quicktable'
 });
 ```
 
@@ -104,15 +104,15 @@ The Quick Table (`quicktable`) control lets you quickly insert a 2x2 table with 
 ```js
 tinymce.init({
     selector: "div.tinymce",
-    plugins: [ 'quickbars' ],
+    plugins: [ 'quickbar' ],
     toolbar: false,
     menubar: false,
-    quickbars: true,
-    quickbars_insert_toolbar: 'quickimage quicktable'
+    quickbar: true,
+    quickbar_insert_toolbar: 'quickimage quicktable'
 });
 ```
 
 ### Related configuration options
 
-* [quickbars_insert_toolbar]({{ site.baseurl }}/configure/editor-appearance/#quickbars_insert_toolbar)
-* [quickbars_selection_toolbar]({{ site.baseurl }}/configure/editor-appearance/#quickbars_selection_toolbar)
+* [quickbar_insert_toolbar]({{ site.baseurl }}/configure/editor-appearance/#quickbar_insert_toolbar)
+* [quickbar_selection_toolbar]({{ site.baseurl }}/configure/editor-appearance/#quickbar_selection_toolbar)

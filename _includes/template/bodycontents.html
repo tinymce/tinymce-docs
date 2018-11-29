@@ -30,21 +30,23 @@
         {% include nav.html links=nav preceding_address="/" %}
     </aside>
 
-    <div class="heading">
-        <h1 class="light">{{ page.title }}</h1>
-        <h2 class="light">{{ page.description }}</h2>
-        {% if page.url contains '/api/' %}
-        <!-- Disabled since there is no git link -->
-        {% else %}
-        <a class="contribute link-garlic" href="https://github.com/tinymce/tinymce-docs/tree/master/{{ page.path }}">Contribute to this page<i></i></a>
-        {% endif %}
-        {% if page.controls %}
-        {% assign controls = page.controls | split:',' %}
-        <div class="badges">
-            {% for control in controls %}<span class="badge-naan lg">+ {{ control }}</span> {% endfor %}
+    <main>
+        <div class="heading">
+            <h1 class="light">{{ page.title }}</h1>
+            <h2 class="light">{{ page.description }}</h2>
+            {% if page.url contains '/api/' %}
+            <!-- Disabled since there is no git link -->
+            {% else %}
+            <a class="contribute link-garlic" href="https://github.com/tinymce/tinymce-docs/tree/master/{{ page.path }}">Contribute to this page<i></i></a>
+            {% endif %}
+            {% if page.controls %}
+            {% assign controls = page.controls | split:',' %}
+            <div class="badges">
+                {% for control in controls %}<span class="badge-naan lg">+ {{ control }}</span> {% endfor %}
+            </div>
+            {% endif %}
         </div>
-        {% endif %}
-    </div>
+    </main>
 
     <div class="content">
         {{ content }}

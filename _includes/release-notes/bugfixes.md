@@ -106,7 +106,7 @@ The following editor related issues were reported during the developer's preview
 
 ### User Interface
 
-TinyMCE 5.0 has an ARIA WCAG 2.1 standards compliant user interface to make the user interface controls and dynamic content more accessible. The user interface logic has been changed entirely in TinyMCE 5.0. Refer the [Migration Guide]({{site.baseurl}}/migration-from-4x), for more information on the UI changes.
+TinyMCE 5.0 has an ARIA WCAG 2.1 standards compliant user interface to make the user interface controls and dynamic content more accessible. The user interface logic has been changed entirely in TinyMCE 5.0. Refer to the [Migration Guide]({{site.baseurl}}/migration-from-4x), for more information on the UI changes.
 
 #### UI
 

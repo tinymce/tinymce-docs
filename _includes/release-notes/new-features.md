@@ -3,15 +3,15 @@ The following new features were added to the TinyMCE 5.0 Beta version.
 
 ### Context Menu
 
-The context menu is a new configurable component added in TinyMCE 5.0 . It appears when the user right-clicks in the editable area. By default, it does not disable the operating system's native context menu, if there are no items to display at the cursor position the native context menu will be shown. The context menu supports both individual menu items and dynamic context menu sections. Refer the [context menu]({{site.baseurl}}/ui-components/contextmenu/) documentation, for more information.
+The context menu is a new configurable component added in TinyMCE 5.0 . It appears when the user right-clicks in the editable area. By default, it does not disable the operating system's native context menu, if there are no items to display at the cursor position the native context menu will be shown. The context menu supports both individual menu items and dynamic context menu sections. Refer to the [context menu]({{site.baseurl}}/ui-components/contextmenu/) documentation, for more information.
 
 ### Context Toolbars
 
-A context toolbar is a pop-up toolbar that appears when a specific type of content is focused. It contains the toolbar buttons relevant to that content. The context toolbar makes a limited number of relevant choices more visible and readily accessible. Refer the [Context Toolbar]({{site.baseurl}}/ui-components/contexttoolbar/) documentation, for more information.
+A context toolbar is a pop-up toolbar that appears when a specific type of content is focused. It contains the toolbar buttons relevant to that content. The context toolbar makes a limited number of relevant choices more visible and readily accessible. Refer to the [Context Toolbar]({{site.baseurl}}/ui-components/contexttoolbar/) documentation, for more information.
 
 ### Custom Menu Items
 
-The Custom Menu items configurations options has changed in TinyMCE 5.0. The `addMenuItem` has a new configuration. A new method `addToggleMenuItem` has been added which is an explicit method for creating toggle menu items similar to the new special toolbar button methods. Refer the [configuration]({{site.baseurl}}/ui-components/typesoftoolbarbuttons/#menunbspbutton) documentation, for more information on `editor.menuitems`.
+The Custom Menu items configurations options has changed in TinyMCE 5.0. The `addMenuItem` has a new configuration. A new method `addToggleMenuItem` has been added which is an explicit method for creating toggle menu items similar to the new special toolbar button methods. Refer to the [configuration]({{site.baseurl}}/ui-components/typesoftoolbarbuttons/#menunbspbutton) documentation, for more information on `editor.menuitems`.
 
 <!-- ### Custom Sidebars
 
@@ -24,7 +24,7 @@ The [Dialog]({{site.baseurl}}/ui-components/dialog/) component is created for sh
 ### Format Painter 1.0
 
 The `Format Painter` plugin allows the copying and pasting formatting from one location to another, such as font style and size. The format painter is capable of working with a wide variety of formats and styles such as inline & block formats and table styles.
-The format painter may be used either through keyboard shortcuts or a toolbar button. Refer the [Format Painter]({{site.baseurl}}/plugins/formatpainter/) documentation, for more information.
+The format painter may be used either through keyboard shortcuts or a toolbar button. Refer to the [Format Painter]({{site.baseurl}}/plugins/formatpainter/) documentation, for more information.
 
 <!-- ### Icon Packs
 

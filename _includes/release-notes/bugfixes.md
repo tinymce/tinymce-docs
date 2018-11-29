@@ -1,10 +1,3 @@
----
-layout: default
-title: Bug fixes in TinyMCE 5.0 Beta
-title_nav: Bug fixes
-description: These are the fixed issues in TinyMCE 5.0 Beta.
-keywords: knownissues bug releasenotes migration 4.x
----
 
 In the developer's preview release, we invited the community to test the TinyMCE 5.0 editor and report bugs and issues. The following issues have been fixed in the TinyMCE 5.0 Beta version.
 

@@ -1,10 +1,3 @@
----
-layout: default
-title: Technology Preview
-title_nav: Technology Preview
-description: This section previews the new technology introduced in TinyMCE 5.0 Beta.
-keywords: new features enhancements technology preview
----
 
 Technology Previews provide users a way to access upcoming technological innovations. We create the technology preview as a courtesy to the community of developers and community of use to get feedback and make this technology better. As Tiny considers making these previews generally available, we will endeavor to resolve issues reported by our customers or our internal and external developers.
 

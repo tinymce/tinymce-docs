@@ -71,24 +71,6 @@ tinymce.init({
 });
 ```
 
-### `formatpainter_table_format_names`
-
-The format painter treats table formats differently for better user experience. The `formatpainter_table_format_names` option allows you to specify the formats to be defined as such. In practice, this means that these formats will be active when reading and applying formats to and from tables.
-
-**Type:** `String`
-
-**Default:** `'borderstyle,bordercolor,backgroundcolor'`
-
-##### Example
-
-```js
-tinymce.init({
-  selector: 'textarea',  // change this value according to your HTML
-  plugins: 'formatpainter',
-  formatpainter_table_format_names: 'borderstyle,bordercolor,backgroundcolor'
-});
-```
-
 ### `formatpainter_blacklisted_formats`
 
 This option makes it possible to blacklist formats that you don't want the format painter to act upon.
@@ -103,6 +85,6 @@ This option makes it possible to blacklist formats that you don't want the forma
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'formatpainter',
-  formatpainter_blacklisted_formats: 'link,address,removeformat,formatpainter_removeformat' // Default value
+  formatpainter_blacklisted_formats: 'link,address,removeformat,formatpainter_removeformat'
 });
 ```

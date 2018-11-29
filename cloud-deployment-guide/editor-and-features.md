@@ -62,7 +62,7 @@ Ensure the `tiny-api-key` and `tinymce-api-key` headers are retained while reque
 ### Step 5: Specifying a translation
 [Download a language pack](https://www.tinymce.com/i18n) to enable a language other than English (US). [Specify its location]({{ site.baseurl }}/configure/localization/#language_url) with the `language_url` configuration option.
 
-## Migrating from a self-hosted environment to TinyMCE Cloud
+## Migrating from a self-hosted environment to Tiny Cloud
 
 ### Step 1: Replace existing reference to tinymce.min.js
 

@@ -36,7 +36,7 @@ A common UI customization used by developers is changing the height and width of
 
 ##### Set the editable area height
 
-> Important! The "editable area" is the textbox used to enter information. This "editable area" is different from the "editor" itself.
+> Important: The "editable area" is the textbox used to enter information. This "editable area" is different from the "editor" itself.
 
 ```js
 tinymce.init({

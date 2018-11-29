@@ -1,5 +1,5 @@
 
-In TinyMCE 5.0, some configurations have been removed because they are no longer necessary or an improved solution has been introduced. Please see the [Migration Guide]({{site.baseurl}}/migrating-from-4x/) for more information.
+In TinyMCE 5.0, some configurations have been removed because they are no longer necessary or an improved solution has been introduced. Refer the [Migration Guide]({{site.baseurl}}/migrating-from-4x/), for more information.
 
 ### Editor-Core Removed Settings
 
@@ -31,7 +31,7 @@ The following plugins from TinyMCE 4.x do not require height or width options to
 * [Preview]({{site.baseurl}}plugins/preview/)
 * [Template]({{site.baseurl}}plugins/template/)
 
-Please see the [Migration Guide]({{site.baseurl}}/migrating-from-4x/) for more information.
+Refer the [Migration Guide]({{site.baseurl}}/migrating-from-4x/), for more information.
 
 ### Other Removed Component Configuration Settings
 

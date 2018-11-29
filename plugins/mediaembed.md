@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Enhanced Media Embed Plugin
+title: Enhanced Media Embed plugin
 title_nav: Enhanced Media Embed
 description: Add rich media previews inside TinyMCE.
 keywords: video youtube vimeo mp3 mp4 mov movie clip film spotify

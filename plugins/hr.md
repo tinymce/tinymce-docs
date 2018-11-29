@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Horizontal Rule Plugin
+title: Horizontal Rule plugin
 title_nav: Horizontal Rule
 description: Insert a horizontal line.
 keywords: hr insert

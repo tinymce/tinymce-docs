@@ -1,6 +1,7 @@
 ---
 layout: default
-title: Quick Start
+title: Quick start
+title_nav: Quick start
 description_short: Setup TinyMCE in less than 5 minutes.
 description: Get an instance of TinyMCE up and running in less than 5 minutes.
 keywords: tinymce script textarea

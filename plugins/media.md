@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Media Plugin
+title: Media plugin
 title_nav: Media
 description: Add HTML5 video and audio elements.
 keywords: video youtube vimeo mp3 mp4 mov movie clip film media_live_embeds audio_template_callback media_alt_source media_poster media_dimensions media_filter_html media_scripts video_template_callback

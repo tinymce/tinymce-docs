@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Table Plugin
+title: Table plugin
 title_nav: Table
 description: Table editing features.
 keywords: row cell column table_appearance_options table_clone_elements table_grid table_tab_navigation table_default_attributes table_default_styles table_class_list table_cell_class_list table_row_class_list table_advtab table_cell_advtab table_row_advtab

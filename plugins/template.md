@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Template Plugin
+title: Template plugin
 title_nav: Template
 description: Custom templates for your content.
 keywords: insert template_cdate_classes template_cdate_format template_mdate_classes template_mdate_format  template_replace_values template_selected_content_classes template_preview_replace_values

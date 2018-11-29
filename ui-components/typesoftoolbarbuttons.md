@@ -1,12 +1,10 @@
 ---
 layout: default
-title: Types of Toolbar Buttons
-title_nav: Types of Toolbar Buttons
+title: Types of toolbar buttons
+title_nav: Types of toolbar buttons
 description: This section shows you different types of toolbar buttons.
 keywords: toolbar toolbarbuttons buttons toolbarbuttonsapi
 ---
-
-## Types of Toolbar Buttons
 
 There are four types of Toolbar Buttons in TinyMCE 5.0:
 

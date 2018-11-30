@@ -337,7 +337,7 @@ ContextForm consists of an input field and a series of related buttons. Context 
 
 ## Plugins
 
-Each release of TinyMCE adds new features and functionality. We also occasionally remove features and functionality, usually because we've added a better option.
+Each release of TinyMCE adds new features and functionality. Occasionally some features and functionalities are removed because a better option is added.
 Here are the details about the features and functionalities that were removed in TinyMCE 5.0.
 
 ### Removed features

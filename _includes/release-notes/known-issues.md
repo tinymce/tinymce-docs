@@ -9,7 +9,7 @@ This section describes issues that users of TinyMCE 5.0 may encounter, as well a
 
 [Link](https://github.com/tinymce/tinymce/issues/4597)
 
-In TinyMCE Developers Preview version, pages were slow to respond on Chrome. The responsive issue was caused by excessive use of memory when multiple inline editors were used.  This issue was fixed by optimizing the way the inline editor consumes memory.  The inline editor's deactivated state was improved to consume less memory when it was not being used. When the inactive editor becomes active again, its full capabilities are restored.  This optimization resulted in only 1 active editor consuming memory while the others are in a dormant, ready state.
+In TinyMCE Developers Preview version, pages were slow to respond on Chrome. The responsive issue was caused by excessive use of memory when multiple inline editors were used.  This issue was fixed by optimizing the way the inline editor consumes memory.  The inline editor's deactivated state was improved to consume less memory when it was not being used. When the inactive editor becomes active again, its full capabilities are restored.  This optimization resulted in only one active editor consuming memory while the others are in a dormant, ready state.
 
 ### Create new UI controls by extending existing ones
 [Link](https://github.com/tinymce/tinymce/issues/4588)

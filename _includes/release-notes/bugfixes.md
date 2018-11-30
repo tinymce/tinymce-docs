@@ -2,7 +2,7 @@ The community was invited to test the TinyMCE 5.0 editor and report bugs and iss
 
 ### Editor-Core
 
-The new TinyMCE 5.0 editor comes with significant changes to the previous versions. Tiny has created a more configurable and modern editor. Improved solutions have been introduced for unnecessary and obsolete configuration options. This has contributed to a less cumbersome editor. Please see the [Editor-Core]({{site.baseurl}}/migration-from-4x/#editor-core) section in the Migration Guide for more information.
+The new TinyMCE 5.0 editor comes with significant changes to the previous versions. Tiny has created a more configurable and modern editor. Improved solutions have been introduced for unnecessary and obsolete configuration options. Please see the [Editor-Core]({{site.baseurl}}/migration-from-4x/#editor-core) section in the Migration Guide for more information.
 
 #### Alloy
 

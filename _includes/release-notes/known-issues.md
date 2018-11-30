@@ -20,7 +20,7 @@ Previously, it was possible to create new UI controls by extending existing cont
 
 #### Insert/Edit image
 
-In the current version of TinyMCE, when the focus is on the source input, the tab does not shift the focus to the source button. This issue is being caused due to the size input lock component not reading dimensions -> width, or dimensions -> height. As a consequence of this issue, image list select box up and down arrow do not change the content. To resolve this issue, we need to restructure the code so that the label context is read. This issue also affects the dialog select component task. This issue will be fixed in the forthcoming release of TinyMCE.
+In TinyMCE Developers Preview version, when the focus was on the source input, the tab did not shift the focus to the source button. This issue was being caused due to the size input lock component not reading dimensions -> width, or dimensions -> height. As a consequence of this issue, image list select box up and down arrow did not change the content. To resolve this issue, we restructured the code so that the label context is read. This issue also affected the dialog select component task. This issue has been fixed in the current release of TinyMCE.
 
 #### Context menu component
 

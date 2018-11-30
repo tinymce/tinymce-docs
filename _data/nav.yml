@@ -529,16 +529,23 @@
   - url: "wordpress"
 
 - url: "migration-from-4x"
-# pages:
- # - url: "#Editor-Core"
- # - url: "#Themes"
- # - url: "#Mobile Support"
- # - url: "#Components"
- # - url: "#Plugins"
- # - url: "#Other&nbspRemoved&nbspComponent&nbspConfiguration&nbspSettings"
- # - url: "#Components"
- # - url: "#Premium&nbsp;Plugins"
+  pages:
+  - url: "#Editor-Core"
+  - url: "#Themes"
+  - url: "#Mobile support"
+  - url: "#Components"
+  - url: "#Plugins"
+  - url: "#Other removed component configuration settings"
+  - url: "#Components"
+  - url: "#Premium features"
 
 - url: "release-notes"
-
+  pages:
+  - url: "#Overview"
+  - url: "#TinyMCE 5.0 demo"
+  - url: "#New features"
+  - url: "#Technology preview"
+  - url: "#Removed & deprecated features"
+  - url: "#Known issues"
+  - url: "#Bug fixes"
 

@@ -34,18 +34,18 @@ The format painter may be used either through keyboard shortcuts or a toolbar bu
 
 - New Section [(DOC-162)](https://ephocks.atlassian.net/browse/DOC-162) -->
 
-### Keyboard Navigation and Tooltips Improvements
+### Keyboard navigation and tooltips improvements
 
 TinyMCE is up-to-date with the latest accessibility standards. This includes the review of shortcuts and ensuring tooltips when used with keyboard navigation.
 The editor can now reflect accurately where and what a user is interacting with. A new experimental feature has been added that allows using the tab across all TinyMCE toolbars, sidebars, content, and footer bar. This allows more granular control to quickly jump to the appropriate editor control and then navigate down to its specific feature sets.
 
 > TinyMCE is the only editor to have this feature!
 
-### Modern Codebase
+### Modern codebase
 
 TinyMCE 5.0 codebase has been extensively rewritten with the focus on converting the UI components to a more modern UI framework. As a consequence of this rewrite, all the related features have been updated. The new framework takes advantage of the latest CSS3 features for consistent styling and is ARIA [IBM standards](https://www.ibm.com/able/checklists.html) compliant. The new UI framework has a stricter API for creating components, which means that the code is more structured and has an in-built validation combined with TypeScript. This strictness makes the code cleaner, more stable, and easier to maintain and troubleshoot.
 
-### New Theme - Silver
+### New theme - Silver
 
 TinyMCE  5.0 uses a new theme **Silver** and a new skin **Oxide** which uses more modern CSS such as `flexbox`.
 
@@ -80,13 +80,13 @@ Tables are better in TinyMCE 5.0 editor. Creating and configuring tables in Tiny
 TinyMCE 5.0 uses SVG icons for a better crisp look. Buttons are now added via methods in `editor.ui.registry` rather than `editor` e.g. `editor.ui.registry.addButton()` instead of `editor.addButton()`. To make the creation of custom toolbar buttons easier, new methods were added for split, toggle, and menu toolbar buttons with configuration options specific to the button type.
 Refer the [Toolbar Buttons]({{site.baseurl}}/ui-components/toolbarbuttons/) documentation, for more information.
 
-### UI Accessibility
+### UI accessibility
 
 The new TinyMCE 5.0 has a better UI accessibility for a diverse set of users. Tiny is committed to adhering to WCAG 2.1 standards to ensure content is accessible to everyone.
 TinyMCE UI can be mouse or keyboard driven. The new UI delivers a consistent user experience when used with screen readers or browsers in various modes like high contrast on both mobile and desktop platforms.
 TinyMCE 5.0 conforms to WCAG 2.1 standards and has a stricter editor UI and workflow to offer a much more accessibility-compliant interface and a consistent workflow. While this may impact a developer's customization abilities, they receive a more overall consistent user experience.
 
-<!-- ### UI Microcopy Audit
+<!-- ### UI microcopy audit
 
 - New Section [(DOC-163)](https://ephocks.atlassian.net/browse/DOC-163) -->
 

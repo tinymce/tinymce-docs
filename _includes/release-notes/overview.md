@@ -15,7 +15,7 @@ Developers can upgrade their TinyMCE 4.x instances to TinyMCE 5.0 with little or
 
 Try out TinyMCE 5.0 demo to explore the new UI.
 
-### TinyMCE 5.0 Demo
+### TinyMCE 5.0 demo
 
 {% include codepen.html id="full-featured" height="750" %}
 

@@ -32,11 +32,11 @@ Previously, when the focus was on a split button, there were no focus outlines a
 
 #### Lists, font color/fore/background, spell checker
 
-In the current version of TinyMCE, There is no way to know if a button is pressed or not. This behavior is expected for the language options when the `Shift+Enter` keys are pressed. this issue will be fixed in the future release of TinyMCE.
+In the current version of TinyMCE, There is no way to know if a button is pressed or not. This behavior is expected for the language options when the `Shift+Enter` keys are pressed. This issue will be fixed in the future release of TinyMCE.
 
 #### Spellcheck button
 
-Previously, when the focus was on the spellcheck button, pressing the right arrow key shifted the focus to the next button. In the current version of TinyMCE, this does not work as expected. this issue will be fixed in the future release of TinyMCE.
+Previously, when the focus was on the spellcheck button, pressing the right arrow key shifted the focus to the next button. In the current version of TinyMCE, this does not work as expected. This issue will be fixed in the future release of TinyMCE.
 
 #### Other UI known issues
 

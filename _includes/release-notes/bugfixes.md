@@ -268,7 +268,7 @@ The following Toolbar Buttons related issues were reported during the developer'
 | AP-68	| [T5] plugins all Premium plugins - update to the new addButton, Addmenu APi |
 | AP-136 | tab navigating radio buttons is broken after clicking a radio button |
 | AP-152 | Generalise toolbars in preparation for context toolbars. |
-| AP-155 | Identify the bridge requirements for existing / proposed toolbar / menubar. |
+| AP-155 | Identify the bridge requirements for existing / proposed toolbar / menu bar. |
 | AP-175 | Create a sidebar component |
 | AP-186 | Core "plugins" - update to the new addButton, Addmenu APi |
 | AP-189 | Editor configuration "height" not functional with full set of toolbar items & toolbar items should break and rollover as per the height settings |

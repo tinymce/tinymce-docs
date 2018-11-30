@@ -457,15 +457,15 @@
     - url: "#Priority"
     - url: "#Positioning"
     - url: "#Form"
-    - url: "#ContextForm&nbsp;buttons"
-    - url: "#Form&nbsp;API"
+    - url: "#ContextForm buttons"
+    - url: "#Form API"
   - url: "toolbarbuttons"
   - url: "typesoftoolbarbuttons"
     pages:
-    - url: "#Basic&nbsp;Button"
-    - url: "#Toggle&nbsp;Button"
-    - url: "#Split&nbsp;Button"
-    - url: "#Menu&nbsp;Button"
+    - url: "#Basic Button"
+    - url: "#Toggle Button"
+    - url: "#Split Button"
+    - url: "#Menu Button"
 
 - url: "enterprise"
   pages:
@@ -529,16 +529,23 @@
   - url: "wordpress"
 
 - url: "migration-from-4x"
-# pages:
- # - url: "#Editor-Core"
- # - url: "#Themes"
- # - url: "#Mobile Support"
- # - url: "#Components"
- # - url: "#Plugins"
- # - url: "#Other&nbspRemoved&nbspComponent&nbspConfiguration&nbspSettings"
- # - url: "#Components"
- # - url: "#Premium&nbsp;Plugins"
+  pages:
+  - url: "#Editor-Core"
+  - url: "#Themes"
+  - url: "#Mobile support"
+  - url: "#Components"
+  - url: "#Plugins"
+  - url: "#Other removed component configuration settings"
+  - url: "#Components"
+  - url: "#Premium features"
 
 - url: "release-notes"
-
+  pages:
+  - url: "#Overview"
+  - url: "#TinyMCE 5.0 demo"
+  - url: "#New features"
+  - url: "#Technology preview"
+  - url: "#Removed & deprecated features"
+  - url: "#Known issues"
+  - url: "#Bug fixes"
 

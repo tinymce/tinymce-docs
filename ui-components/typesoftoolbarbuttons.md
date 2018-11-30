@@ -15,7 +15,7 @@ There are four types of Toolbar Buttons in TinyMCE 5.0:
 
 ### Basic Button
 
-A basic button triggers it's `onAction` function when clicked.
+A basic button triggers its `onAction` function when clicked.
 
 #### Config Options
 
@@ -28,7 +28,7 @@ A basic button triggers it's `onAction` function when clicked.
 | onSetup | (api) => (api) => void | optional | default: () => () => {} - Function invoked when the button is rendered. |
 | onAction | (api) => void | required | Function called when the button is clicked. |
 
-> Note:  See below for details on return type for `onSetup` and `onAction`.
+> Note: See below for details on the return type for `onSetup` and `onAction`.
 
 #### API
 
@@ -44,11 +44,9 @@ The following example adds two buttons to the toolbar:
 
 {% include codepen.html id="custom-toolbar-button" tab="js" %}
 
-This example adds two buttons to the toolbar. The first just inserts "It's my button!" into the editor when clicked.
-​
-The second button is an example of how `onSetup` works. This button inserts a `time` element containing the current date into the editor using a `toTimeHtml()` helper function - a simplified version of TinyMCE's [insertdatetime]({{site.baseurl}}/plugins/insertdatetime/) plugin.
+The first button inserts "It's my button!" into the editor when clicked. The second button is an example of how `onSetup` works. This button inserts a `time` element containing the current date into the editor using a `toTimeHtml()` helper function - a simplified version of TinyMCE's [insertdatetime]({{site.baseurl}}/plugins/insertdatetime/) plugin.
 
-`onSetup` is used to listen to the editor's [`NodeChange` event]({{site.baseurl}}/advanced/events/#nodechange) to disable the button when the user's cursor is inside a `time` element (or "node"). This method is used as it is illogical to insert a `time` element into *another* `time` element. The icon from the `insertdatetime` plugin is set `disabled` to `true` in the button configuration. This disables the button when it is created.
+`onSetup` is used to listen to the editor's [`NodeChange` event]({{site.baseurl}}/advanced/events/#nodechange) to disable the button when the cursor is inside a `time` element (or "node"). This method is used as it is illogical to insert a `time` element into *another* `time` element. The icon from the `insertdatetime` plugin is set `disabled` to `true` in the button configuration. This disables the button when it is created.
 
 `onSetup` is a complex property as it requires a function that takes the button's API and returns an empty function. This occurs because `onSetup` runs whenever its toolbar button is created and the returned function must be a callback for when the button is destroyed. This is essentially an `onTeardown` handler.
 
@@ -62,7 +60,7 @@ A callback function is bound to an event when using `editor.on(eventName, callba
 
 ### Toggle Button
 
-A toggle button is a button that triggers an action when clicked. A toggle button holds the concept of state. This means it can be toggled `on` and `off`. A toggle button gives the user visual feedback for its state through CSS styling. An example of this behaviour is the **Bold** button that becomes highlighted when the cursor is in a word with bold formatting.
+A toggle button triggers an action when clicked. A toggle button holds the concept of state. This means it can be toggled `on` and `off`. A toggle button gives the user visual feedback for its state through CSS styling. An example of this behaviour is the **Bold** button that becomes highlighted when the cursor is in a word with bold formatting.
 
 #### Config Options
 

@@ -2,7 +2,7 @@
 layout: default
 title: Types of toolbar buttons
 title_nav: Types of toolbar buttons
-description: This section shows you different types of toolbar buttons.
+description: This section demonstrates different types of toolbar buttons.
 keywords: toolbar toolbarbuttons buttons toolbarbuttonsapi
 ---
 
@@ -15,95 +15,97 @@ There are four types of Toolbar Buttons in TinyMCE 5.0:
 
 ### Basic Button
 
-A basic button simply triggers it's `onAction` function when clicked.
+A basic button triggers it's `onAction` function when clicked.
 
 #### Config Options
 
 | Name | Value | Requirement | Description |
 | ---- | ----- | ----------- | ----------- |
 | text | string | optional | Text to display if no icon is found. |
-| icon | string | optional | It displays the icon corresponding to the icon name that has been defined in the icon pack. |
+| icon | string | optional | Displays the icon corresponding to the icon name defined in the icon pack. |
 | tooltip | string | optional | Text for button tooltip.  |
-| disabled | boolean | optional | default: false - Represents button state. Is toggled by the button's API. |
-| onSetup | (api) => (api) => void | optional | default: () => () => {} - Function that's invoked when the button is rendered. |
-| onAction | (api) => void | required | Function that's called when the button is clicked. |
+| disabled | boolean | optional | default: false - Represents button state. Toggled by the button's API. |
+| onSetup | (api) => (api) => void | optional | default: () => () => {} - Function invoked when the button is rendered. |
+| onAction | (api) => void | required | Function called when the button is clicked. |
 
-> Note:  See below for details on return type for onSetup and onAction.
+> Note:  See below for details on return type for `onSetup` and `onAction`.
 
 #### API
 
 | Name | Value | Description |
 | ---- | ----- | ----------- |
-| isDisabled | () => boolean | Check if the button is disabled. |
-| setDisabled | (state: boolean) => void | Set the button's disabled state. |
+| isDisabled | () => boolean | Checks if the button is disabled. |
+| setDisabled | (state: boolean) => void | Sets the button's disabled state. |
 
 
 #### Basic Button Example and Explanation
 
-This example adds two buttons to the toolbar:
+The following example adds two buttons to the toolbar:
 
 {% include codepen.html id="custom-toolbar-button" tab="js" %}
 
 This example adds two buttons to the toolbar. The first just inserts "It's my button!" into the editor when clicked.
 ​
-The second button is an example of how onSetup works. This button inserts a `time` element containing the current date into the editor using a `toTimeHtml()` helper function - a simplified version of TinyMCE's [insertdatetime]({{site.baseurl}}/plugins/insertdatetime/) plugin.
+The second button is an example of how `onSetup` works. This button inserts a `time` element containing the current date into the editor using a `toTimeHtml()` helper function - a simplified version of TinyMCE's [insertdatetime]({{site.baseurl}}/plugins/insertdatetime/) plugin.
 
-Since it wouldn't make sense to insert a `time` element into another `time` element, we have used `onSetup` to listen to the editor's [`NodeChange` event]({{site.baseurl}}/advanced/events/#nodechange) and disable the button when the user's cursor is inside a `time` element (or "node"). We have also borrowed an icon from the `insertdatetime` plugin, and explicitly set `disabled` to `true` in the button configuration so that it is disabled when the button is created.
+`onSetup` is used to listen to the editor's [`NodeChange` event]({{site.baseurl}}/advanced/events/#nodechange) to disable the button when the user's cursor is inside a `time` element (or "node"). This method is used as it is illogical to insert a `time` element into *another* `time` element. The icon from the `insertdatetime` plugin is set `disabled` to `true` in the button configuration. This disables the button when it is created.
 
-`onSetup` is a complex property. It requires a function that takes the button's API and returns a function that takes the button's API and returns nothing. That's because `onSetup` is run whenever its toolbar button is created, and the function it returns must be a callback for when the button is destroyed - essentially an `onTeardown` handler.
+`onSetup` is a complex property as it requires a function that takes the button's API and returns an empty function. This occurs because `onSetup` runs whenever its toolbar button is created and the returned function must be a callback for when the button is destroyed. This is essentially an `onTeardown` handler.
 
-When you listen to events in `onSetup` using `editor.on(eventName, callback)`, you're binding a callback function to an event. Therefore, in the teardown handler you need to tell the editor which function to unbind from which event using `editor.off(eventName, callback)`.
+A callback function is bound to an event when using `editor.on(eventName, callback)` to listen to events in `onSetup`. The editor needs to be told which function to unbind from which event in the teardown handler using the `editor.off(eventName, callback)`.
 
 > Note:
 
-* The callback function is the same one you passed to `editor.on()`. In this case, because we're binding the `editorEventCallback` function to the `NodeChange` event when the button is created, we simply need to return `(api) => editor.off('NodeChange', editorEventCallback)`.
-* If you don't listen to any editor events or only listen to the editor's `init` event, you can just return an empty function from onSetup - `return () => {};`.
+* The callback function is the same function passed to `editor.on()`. In this case, because `editorEventCallback` function is bound to the `NodeChange` event when the button is created, the `(api) => editor.off('NodeChange', editorEventCallback)` needs to be returned.
+* Return an empty function from `onSetup` - `return () => {};` if editor events are not listened for or if only the editor's `init` event is listened for.
 
 
 ### Toggle Button
 
-A toggle button, when clicked, triggers an action like a basic button, but it also has a concept of state, and can be toggled on and off. Toggle buttons have CSS styling to show their state, which gives the user visual feedback.
-
-> Example: Bold button, which gets highlighted if your cursor is in a word with bold formatting.
+A toggle button is a button that triggers an action when clicked. A toggle button holds the concept of state. This means it can be toggled `on` and `off`. A toggle button gives the user visual feedback for its state through CSS styling. An example of this behaviour is the **Bold** button that becomes highlighted when the cursor is in a word with bold formatting.
 
 #### Config Options
 
 | Name | Value | Requirement | Description |
 |------| ------| ------------| ----------- |
 | text | string | optional | Text to display if no icon is found. |
-| icon | string | optional | It displays the icon corresponding to the icon name that has been defined in the icon pack.  |
+| icon | string | optional | Displays the icon corresponding to the icon name is defined in the icon pack.  |
 | tooltip | string | optional | Text for button tooltip.  |
-| disabled | boolean | optional| default: false - Represents button state. Is toggled by the button's API. |
+| disabled | boolean | optional| default: false - Represents button state. Toggled by the button's API. |
 | active | boolean | optional | default: false |
-| onSetup | (api) => (api) => void | optional | default: () => () => {} - Function that's invoked when the button is rendered. |
-| onAction | (api) => void | required | Function that's called when the button is clicked. |
+| onSetup | (api) => (api) => void | optional | default: () => () => {} - Function invoked when the button is rendered. |
+| onAction | (api) => void | required | Function called when the button is clicked. |
 
-> Note:  See below for details on return type for onSetup and onAction.
+> Note: More details are below for the return type for `onSetup` and `onAction`.
 
 #### API
 
 | Name | Value | Description |
 |------| ------| ------------|
-| isDisabled | ( ) => boolean | check if the button is disabled |
-| setDisabled | (state: boolean) => void | set the button's disabled state |
-| isActive| ( ) => boolean | check the button's toggle state |
-| setActive | (state: boolean) => void | set the button's toggle state |
+| isDisabled | ( ) => boolean | checks if button is disabled |
+| setDisabled | (state: boolean) => void | sets the button's disabled state |
+| isActive| ( ) => boolean | checks the button's toggle state |
+| setActive | (state: boolean) => void | sets the button's toggle state |
 
 #### Toggle Button Example and Explanation
 
 {% include codepen.html id="custom-toolbar-toggle-button" %}
 
-In this example we add two custom strikethrough buttons to the editor. Both have the same `onAction` configuration: they use `editor.execCommand(command, ui, args)` to execute `mceToggleFormat` - an internal command that toggles the specified format on and off - and pass it the format name `strikethrough`. Note that the format name must already be registered with the editor, which `strikethrough` is.
+The example above adds two custom **strikethrough** buttons with the same `onAction` configuration. The configuration uses `editor.execCommand(command, ui, args)` to execute `mceToggleFormat`. This internal command toggles the specified format on and off while passing it the format name `strikethrough`. Note that the format name `strikethrough` must already be registered with the editor.
 
-This first button works perfectly in terms of applying and removing strikethrough formatting to editor content, but the button itself only toggles its active state on click and doesn't reflect the state of the selected content. For example, if you were to select some text and click the button to apply strikethrough formatting, the button would become highlighted to show that it's active. But if you select other text that doesn't have strikethrough formatting, the button would still remain active. We would prefer the button to only be active when the selected content has strikethrough formatting, and to be inactive when the selected content doesn't have strikethrough formatting.
+The first button functions as expected: it applies and removes strikethrough formatting to the editor's content. Note that the button itself only toggles its active state on click and *doesn't* reflect the actual state of the selected content. 
 
-To do this, the second button uses `onSetup` to register a callback for strikethrough content with `editor.formatter.formatChanged(formatName, callback)`. This is an internal TinyMCE method that will call the specified callback function when the selected content has the given formatting. Note that the format name given to `mceToggleFormat` via `editor.execCommand(command, ui, args)` and to `editor.formatter.formatChanged(formatName, callback)` is the same.
+The accepted useability standard occurs when the button becomes **active** to show that strikethrough formatting has been applied if the selected text *does* have strikethrough formatting applied and the button remains **inactive** if the selected text *doesn't* have strikethrough formatting applied.
 
-The callback given to `editor.formatter.formatChanged` should be a function that takes a `state` boolean which represents whether the currently selected content has the specified format or not. We can then use this `state` boolean to set the buttons active state to match whether the selected content has the specified formatting, using `api.setActive(state)` from the button's API [link]. This way, the `customToggleStrikethrough` button will only be active when the selected content has strikethrough formatting.
+Achieving this useability standard requires additional configuration. The second button uses `onSetup` to register a callback for strikethrough content using `editor.formatter.formatChanged(formatName, callback)`. This internal TinyMCE method calls the specified callback function when the selected content has the applied formatting. 
+
+> Note: The format name given to `mceToggleFormat` via `editor.execCommand(command, ui, args)` and to `editor.formatter.formatChanged(formatName, callback)` is the same.
+
+The callback given to `editor.formatter.formatChanged` is a function that takes a `state` boolean representing whether the currently selected content contains the applied format. This `state` boolean is used to set the button's active state to match if the selected content has the applied formatting by using the `api.setActive(state)` from the button's API [link]. The `customToggleStrikethrough` button is only active when the selected content contains the strikethrough formatting.
 
 ### Split Button
 
-A split button (also called a dropdown) has a preview field and a down arrow, and when clicked opens a list of options.
+A split button, or dropdown button, opens a list of options when clicked. It also contains a preview field and a down arrow.
 
 > Example: Font select dropdown.
 
@@ -111,52 +113,50 @@ A split button (also called a dropdown) has a preview field and a down arrow, an
 
 | Name | Value | Requirement | Description |
 |------| ------| ------------| ----------- |
-| text | string | optional | Text to display if no icon is found. |
-| icon | string | optional | It displays the icon corresponding to the icon name that has been defined in the icon pack.  |
+| text | string | optional | Text displayed if no icon is found. |
+| icon | string | optional | Displays the icon corresponding to the icon name defined in the icon pack.  |
 | select | (value: string) => boolean  | optional | default: false |
 | presets | 'color', 'normal', 'toolbar' | optional | default: 'normal' |
-| columns | string | optional | It displays the icon corresponding to the icon name that has been defined in the icon pack. |
-| fetch | (success: (menu) => void) => void  | required| default: false - Represents button state. is toggled by the button's api. |
-| onAction | string | optional | Text to display if no icon is found. |
-| onItemAction | string | optional | Item that's called when the button is clicked. |
-| onSetup | (api) => (api) => void | optional | default: () => () => {} - Function that's invoked when the button is rendered. |
+| columns | string | optional | Displays the icon corresponding to the icon name defined in the icon pack. |
+| fetch | (success: (menu) => void) => void  | required| default: false - Represents button state. Toggled by the button's api. |
+| onAction | string | optional | Text displayed if no icon is found. |
+| onItemAction | string | optional | Item called when the button is clicked. |
+| onSetup | (api) => (api) => void | optional | default: () => () => {} - Function invoked when the button is rendered. |
 
-> Note:  See below for details on return type for onSetup.
+> Note:  See below for details on return type for `onSetup`.
 
 #### API
 
 | Name | Value | Description |
 |------| ------| ------------|
-| isDisabled | ( ) => boolean | Check if the button is disabled. |
-| setDisabled | (state: boolean) => void | Set the button's disabled state. |
-| isActive| ( ) => boolean | Check the button's toggle state. |
-| setActive | (state: boolean) => void | Set the button's toggle state. |
-| setIconFill | (id: string, value: string) => void | It fills the values for the icon corresponding to the icon name that has been defined in the icon pack. |
-| setIconStroke | (id: string, value: string) => void | It sets the action on click for the icon corresponding to the icon name that has been defined in the icon pack. |
+| isDisabled | ( ) => boolean | Checks if button is disabled. |
+| setDisabled | (state: boolean) => void | Sets the button's disabled state. |
+| isActive| ( ) => boolean | Checks the button's toggle state. |
+| setActive | (state: boolean) => void | Sets the button's toggle state. |
+| setIconFill | (id: string, value: string) => void | Fills the values for the icon corresponding to the icon name defined in the icon pack. |
+| setIconStroke | (id: string, value: string) => void | Sets the action on click for the icon corresponding to the icon name defined in the icon pack. |
 
 #### Split Button Example and Explanation
 
-The following example shows how to setup just a basic split button, with a static dropdown menu.
+The following example sets up a split button with a static dropdown menu.
 
 {% include codepen.html id="custom-toolbar-split-button" tab="js" %}
 
-Split toolbar buttons are highly configurable, but most of their configuration options are optional. This example shows how to setup just a basic split button, with a static dropdown menu.
+Most of the configuration options for split toolbar buttons are optional. 
 
-We start with a text label for the button, although we could have used an icon instead.
+This example starts with a text label instead of an icon. A split button is similar to toolbar buttons as they both require an `onAction` callback. `onAction` is given an empty function so that the menu appears when the user clicks on the menu item and not the toolbar button. 
 
-As with all toolbar buttons, a split button requires an `onAction` callback. However, in this case we only care about when the user clicks on a menu item, and not the toolbar button that triggers the appearance of the menu, so we give `onAction` a function that does nothing.
+`onItemAction` is called when a menu item is clicked. The callback function is passed the split button's API [link] and the *value* of the selected menu item. Nothing else is returned. The example calls `editor.insertContent(value)` to insert the *value* into the editor's content.
 
-Next is `onItemAction`, which will be called when a menu item is clicked. The callback function is passed the split button's API [link] and the value of the selected menu item, and should not return anything. In the example, we're simply calling `editor.insertContent(value)` to insert the given value into the editor's content.
+`fetch` is a configuration option that is a function that passes a callback. This is called whenever the split button's dropdown menu is open. This allows for asynchronous fetching of the menu items. Within this function, a list of menu items is created and passed into the callback. 
 
-Finally, we have `fetch`. This configuration option is a function that is passed a callback which is called whenever the split button's dropdown menu is opened. This allows for asynchronous fetching of the menu items. Within this function, we need to create a list of menu items, and pass them to the callback.The configuration options and API for menu items can be found here.
-
-We also have a demo of the Menu Toolbar button for you [here]({{site.baseurl}}/demo/custom-toolbar-split-button/).
+Use the following demo [here]({{site.baseurl}}/demo/custom-toolbar-split-button/) for help using the Menu Toolbar button.
 
 ### Menu Button
 
-A toolbar menu button is a toolbar button that opens a menu on click, which can also contain submenu. This is useful if you want to group actions together that would otherwise be several buttons on the toolbar, or if you don't want a toolbar and a menubar since this allows you to pull menus into the toolbar.
+A toolbar menu button is a toolbar button that opens a menu when clicked. This menu can also contain a submenu. This is used when grouping actions together conveniently that would otherwise be several buttons on the toolbar. This is also used to reduce visual clutter by pulling menus into the toolbar instead of having a toolbar and a menubar.
 
-> Example: the table plugin's table toolbar button, which opens a menu very similar to table's menubar menu, or its context menu.
+> Example: The table plugin's table toolbar button opens a menu similar to a table's menubar menu or its context menu.
 
 #### Config Options
 
@@ -168,23 +168,23 @@ A toolbar menu button is a toolbar button that opens a menu on click, which can 
 | fetch | (success: (menu) => void) => void  | required| default: false - Represents button state. Is toggled by the button's API. |
 | onSetup | (api) => (api) => void | optional | default: () => () => {} - Function that's invoked when the button is rendered. |
 
-> Note:  See below for details on return type for onSetup and onAction.
+> Note:  See below for details on the return type for `onSetup` and `onAction`.
 
 #### API
 
 | Name | Value | Description |
 |------| ------| ------------|
-| isDisabled | ( ) => boolean | Check if the button is disabled. |
-| setDisabled | (state: boolean) => void | Set the button's disabled state. |
+| isDisabled | ( ) => boolean | Checks if the button is disabled. |
+| setDisabled | (state: boolean) => void | Sets the button's disabled state. |
 
 #### Menu Button Example and Explanation
 
-The following is an example of a Simple Toolbar Button:
+The following is a Simple Toolbar Button example:
 
 {% include codepen.html id="custom-toolbar-menu-button" tab="js" %}
 
-The above is a simple example of a toolbar menu button. It adds a button to the toolbar with the text `My Button` which, when clicked, opens the specified menu. In this case, we've added two menu items. The first inserts content when clicked, and the second opens a submenu which has two children.
+The above is a simple example of a toolbar menu button. It adds a button to the toolbar with the text `My Button` that opens the specified menu when clicked. Two menu items are added. The first menu item inserts content when clicked and the second menu item opens a submenu containing two menu items.
 
-The most important part of the configuration for a menu button is the `fetch` option. This configuration option is a function that is passed a callback which is called whenever the menu button's menu is opened. This allows for asynchronous fetching of the menu items. Within this function, we need to create a list of menu items, and pass them to the callback.
+The `fetch` option is the most important part of the configuration. This option is a function that passes a callback that is called when the menu button's menu is opened. This allows for asynchronous fetching of the menu items. Within this function, a list of menu items is created and passed into the callback. 
 
-We also have a demo of the Menu Toolbar button for you [here]({{site.baseurl}}/demo/custom-toolbar-menu-button/).
+Use the following demo [here]({{site.baseurl}}/demo/custom-toolbar-menu-button/) for help using the Menu Toolbar button.

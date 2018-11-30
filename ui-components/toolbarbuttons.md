@@ -27,7 +27,7 @@ The two arguments these methods take are:
 
 > Note: Each type of button has custom and common configuration options. Review the relevant documentation for each type of button for more information.
 
-Define the custom toolbar button with the `setup` callback of the TinyMCE configuration to add it to the editor. This callback is automatically invoked for every initialised editor instance. Accesses to the UI Registry API occurs when the callback receives a reference to the editor instance as its argument.
+Define the custom toolbar button with the `setup` callback of the TinyMCE configuration to add it to the editor. This callback is automatically invoked for every initialised editor instance. Access to the UI Registry API occurs when the callback receives a reference to the editor instance as its argument.
 
 ### Example of adding a basic button that triggers an alert when clicked:
 
@@ -43,7 +43,7 @@ tinymce.init({
   }
 });
 ```
-> Note: The identifier used to create the basic button is included in the `toolbar` option the TinyMCE configuration. The button is not added to the toolbar without this identifier.
+> Note: The identifier used to create the basic button is included in the `toolbar` option in the TinyMCE configuration. The button is not added to the toolbar without this identifier.
 
 ## Example
 

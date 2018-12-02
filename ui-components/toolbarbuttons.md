@@ -8,8 +8,8 @@ keywords: toolbar toolbarbuttons buttons toolbarbuttonsapi
 
 ## Use Cases
 
-* Create a shortcut for an action or series of actions that the user does repeatedly.
-* Create a button for a custom behaviour.
+* Create a shortcut for an action or a series of actions that the user repeatedly does.
+* Create a button for custom behavior.
 
 ## How to Create Custom Toolbar Buttons
 
@@ -27,7 +27,7 @@ The two arguments these methods take are:
 
 > Note: Each type of button has custom and common configuration options. Review the relevant documentation for each type of button for more information.
 
-Define the custom toolbar button with the `setup` callback of the TinyMCE configuration to add it to the editor. This callback is automatically invoked for every initialised editor instance. Access to the UI Registry API occurs when the callback receives a reference to the editor instance as its argument.
+Define the custom toolbar button with the `setup` callback of the TinyMCE configuration to add it to the editor. This callback is invoked automatically for every initialized editor instance. Access to the UI Registry API occurs when the callback receives a reference to the editor instance as its argument.
 
 ### Example of adding a basic button that triggers an alert when clicked:
 

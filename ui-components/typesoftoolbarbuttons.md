@@ -48,7 +48,7 @@ The first button inserts "It's my button!" into the editor when clicked. The sec
 
 `onSetup` is used to listen to the editor's [`NodeChange` event]({{site.baseurl}}/advanced/events/#nodechange) to disable the button when the cursor is inside a `time` element (or "node"). This method is used as it is illogical to insert a `time` element into *another* `time` element. The icon from the `insertdatetime` plugin is set `disabled` to `true` in the button configuration. This disables the button when it is created.
 
-`onSetup` is a complex property as it requires a function that takes the button's API and returns an empty function. This occurs because `onSetup` runs whenever its toolbar button is created and the returned function must be a callback for when the button is destroyed. This is essentially an `onTeardown` handler.
+`onSetup` is a complex property as it requires a function that takes the button's API and returns an empty function. This occurs because `onSetup` runs whenever its toolbar button is created, and the returned function must be a callback for when the button is destroyed. This is essentially an `onTeardown` handler.
 
 A callback function is bound to an event when using `editor.on(eventName, callback)` to listen to events in `onSetup`. The editor needs to be told which function to unbind from which event in the teardown handler using the `editor.off(eventName, callback)`.
 
@@ -60,7 +60,7 @@ A callback function is bound to an event when using `editor.on(eventName, callba
 
 ### Toggle Button
 
-A toggle button triggers an action when clicked. A toggle button holds the concept of state. This means it can be toggled `on` and `off`. A toggle button gives the user visual feedback for its state through CSS styling. An example of this behaviour is the **Bold** button that becomes highlighted when the cursor is in a word with bold formatting.
+A toggle button triggers an action when clicked. A toggle button holds the concept of state. This means it can be toggled `on` and `off`. A toggle button gives the user visual feedback for its state through CSS styling. An example of this behavior is the **Bold** button that becomes highlighted when the cursor is in a word with bold formatting.
 
 #### Config Options
 
@@ -91,11 +91,13 @@ A toggle button triggers an action when clicked. A toggle button holds the conce
 
 The example above adds two custom **strikethrough** buttons with the same `onAction` configuration. The configuration uses `editor.execCommand(command, ui, args)` to execute `mceToggleFormat`. This internal command toggles the specified format on and off while passing it the format name `strikethrough`. Note that the format name `strikethrough` must already be registered with the editor.
 
-The first button functions as expected: it applies and removes strikethrough formatting to the editor's content. Note that the button itself only toggles its active state on click and *doesn't* reflect the actual state of the selected content. 
+The first button functions as expected: it applies and removes strikethrough formatting to the editor's content. 
 
-The accepted useability standard occurs when the button becomes **active** to show that strikethrough formatting has been applied if the selected text *does* have strikethrough formatting applied and the button remains **inactive** if the selected text *doesn't* have strikethrough formatting applied.
+> Note:  The button itself only toggles its active state on click and *doesn't* reflect the actual state of the selected content. 
 
-Achieving this useability standard requires additional configuration. The second button uses `onSetup` to register a callback for strikethrough content using `editor.formatter.formatChanged(formatName, callback)`. This internal TinyMCE method calls the specified callback function when the selected content has the applied formatting. 
+The accepted usability standard occurs when the button becomes **active** to show that strikethrough formatting has been applied if the selected text *does* have strikethrough formatting applied and the button remains **inactive** if the selected text *doesn't* have strikethrough formatting applied.
+
+Achieving this usability standard requires additional configuration. The second button uses `onSetup` to register a callback for strikethrough content using `editor.formatter.formatChanged(formatName, callback)`. This internal TinyMCE method calls the specified callback function when the selected content has the applied formatting. 
 
 > Note: The format name given to `mceToggleFormat` via `editor.execCommand(command, ui, args)` and to `editor.formatter.formatChanged(formatName, callback)` is the same.
 
@@ -103,7 +105,7 @@ The callback given to `editor.formatter.formatChanged` is a function that takes 
 
 ### Split Button
 
-A split button, or dropdown button, opens a list of options when clicked. It also contains a preview field and a down arrow.
+A split button, or drop-down button, opens a list of options when clicked. It also contains a preview field and a down arrow.
 
 > Example: Font select dropdown.
 
@@ -146,7 +148,7 @@ This example starts with a text label instead of an icon. A split button is simi
 
 `onItemAction` is called when a menu item is clicked. The callback function is passed the split button's API [link] and the *value* of the selected menu item. Nothing else is returned. The example calls `editor.insertContent(value)` to insert the *value* into the editor's content.
 
-`fetch` is a configuration option that is a function that passes a callback. This is called whenever the split button's dropdown menu is open. This allows for asynchronous fetching of the menu items. Within this function, a list of menu items is created and passed into the callback. 
+`fetch` is a configuration option that is a function that passes a callback. This is called whenever the split button's drop-down menu is open. This allows for asynchronous fetching of the menu items. Within this function, a list of menu items is created and passed into the callback. 
 
 Use the following demo [here]({{site.baseurl}}/demo/custom-toolbar-split-button/) for help using the Menu Toolbar button.
 

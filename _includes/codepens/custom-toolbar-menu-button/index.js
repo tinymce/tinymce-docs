@@ -6,7 +6,7 @@ tinymce.init({
   content_css: [
   '//fonts.googleapis.com/css?family=Lato:300,300i,400,400i',
   '//www.tiny.cloud/css/codepen.min.css'],
-  
+
   setup: function(editor) {
 
     /* example, adding a toolbar menu button */
@@ -20,7 +20,7 @@ tinymce.init({
             onAction: () => editor.insertContent('&nbsp;<em>You clicked menu item 1!</em>')
           },
           {
-            type: 'menuitem',
+            type: 'nestedmenuitem',
             text: 'Menu item 2',
             icon: 'user',
             getSubmenuItems: () => {

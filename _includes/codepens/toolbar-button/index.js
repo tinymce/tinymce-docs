@@ -2,19 +2,19 @@ tinymce.init({
   selector: 'textarea',
     toolbar: 'basicDateButton selectiveDateButton toggleDateButton splitDateButton menuDateButton',
     setup: (editor) => {
-  
+
       /* Helper functions */
       const toDateHtml = (date) => `<time datetime="${date.toString()}">${date.toDateString()}</time>`;
       const toGmtHtml = (date) => `<time datetime="${date.toString()}">${date.toGMTString()}</time>`;
       const toIsoHtml = (date) => `<time datetime="${date.toString()}">${date.toISOString()}</time>`;
-  
+
       /* Basic button that just inserts the date */
       editor.ui.registry.addButton('basicDateButton', {
         text: 'Insert Date',
         tooltip: 'Insert Current Date',
         onAction: (_) => editor.insertContent(toDateHtml(new Date())),
       });
-  
+
       /* Basic button that inserts the date, but only if the cursor isn't currently in a "time" element */
       editor.ui.registry.addButton('selectiveDateButton', {
         icon: 'insert-time',
@@ -29,7 +29,7 @@ tinymce.init({
           return (buttonApi) => editor.off('NodeChange', editorEventCallback);
         }
       });
-  
+
       /* Toggle button that inserts the date, but becomes inactive when the cursor is in a "time" element */
       /* so you can't insert a "time" element inside another one. Also gives visual feedback. */
       editor.ui.registry.addToggleButton('toggleDateButton', {
@@ -44,7 +44,7 @@ tinymce.init({
           return (buttonApi) => editor.off('NodeChange', editorEventCallback);
         }
       });
-  
+
       /* Split button that lists 3 formats, and inserts the date in the selected format when clicked */
       editor.ui.registry.addSplitButton('splitDateButton', {
         text: 'Insert Date',
@@ -75,7 +75,7 @@ tinymce.init({
           callback(items);
         }
       });
-  
+
       /* Menu button that has a simple "insert date" menu item, and a submenu containing other formats. */
       /* Clicking the first menu item or one of the submenu items inserts the date in the selected format. */
       editor.ui.registry.addMenuButton('menuDateButton', {
@@ -88,7 +88,7 @@ tinymce.init({
               onAction: (_) => editor.insertContent(toDateHtml(new Date()))
             },
             {
-              type: 'menuitem',
+              type: 'nestedmenuitem',
               text: 'Other formats',
               getSubmenuItems: () => {
                 return [

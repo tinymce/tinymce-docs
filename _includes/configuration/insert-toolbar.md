@@ -12,7 +12,7 @@ The **quickbars_insert_toolbar** option enables specifying toolbar items to incl
 tinymce.init({
   selector: 'div.tinymce',
   plugins: 'quickbars',
-  quickbars: true,
+  inline: true,
   quickbars_insert_toolbar: 'quickimage quicktable'
 });
 ```
@@ -24,7 +24,7 @@ tinymce.init({
 tinymce.init({
   selector: 'div.tinymce',
   plugins: 'quickbars',
-  quickbars: true,
+  inline: true,
   quickbars_insert_toolbar: false
 });
 ```

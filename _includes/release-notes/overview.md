@@ -5,7 +5,15 @@ TinyMCE 5.0 has an ARIA [WCAG 2.1 standards](https://www.w3.org/WAI/standards-gu
 
 ### Get TinyMCE 5.0 Beta
 
-Docs for the Cloud version coming soon.
+Include this line of code in the <head> of your HTML page and link to the tinymce.min.js source file:
+
+```js
+<script src='http://cloud.tinymce.com/5-testing/tinymce.min.js'></script>
+```
+
+Signing up for a free API key provides entitlements to premium [Image Tools]({{  site.baseurl }}/plugins/imagetools/) plugin. A cloud image proxy server must already be configured. Premium plugins can be purchased at any time once the API key has been set up.
+
+Refer to the [Quick start]({{site.baseurl}}/quick-start) docs for more information.
 
 ### Upgrade
 

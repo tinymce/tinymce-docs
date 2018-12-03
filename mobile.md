@@ -8,7 +8,7 @@ keywords: mobile tablet
 
 Why make TinyMCE mobile friendly? Simple. We live in a "mobile-first" world and expect a seamless experience between desktop and mobile. Our goal is to help you achieve this with as little effort as possible.
 
-We're pleased to introduce TinyMCE mobile, available in version 4.7.
+We're pleased to introduce TinyMCE mobile, available in version 4.7 and later.
 
 TinyMCE mobile is designed to run on iOS Safari and Android Chrome. You'll find a streamlined interface while keeping the most common touch interactions easily to hand.
 

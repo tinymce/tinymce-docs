@@ -4,8 +4,9 @@ tinymce.init({
   toolbar: 'mybutton',
 
   content_css: [
-  '//fonts.googleapis.com/css?family=Lato:300,300i,400,400i',
-  '//www.tiny.cloud/css/codepen.min.css'],
+    '//fonts.googleapis.com/css?family=Lato:300,300i,400,400i',
+    '//www.tiny.cloud/css/codepen.min.css'
+  ],
 
   setup: function (editor) {
 
@@ -43,7 +44,7 @@ tinymce.init({
                     editor.insertContent('&nbsp;<em>You clicked Sub menu item 2!</em>');
                   }
                 }
-              ]
+              ];
             }
           }
         ];

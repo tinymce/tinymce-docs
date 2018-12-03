@@ -28,7 +28,9 @@ tinymce.init({
         editor.on('NodeChange', editorEventCallback);
 
         /* onSetup should always return the unbind handlers */
-        return function (buttonApi) { editor.off('NodeChange', editorEventCallback); };
+        return function (buttonApi) {
+          editor.off('NodeChange', editorEventCallback);
+        };
       }
     });
   }

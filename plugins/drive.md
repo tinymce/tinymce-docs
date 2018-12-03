@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Drive
+title: Drive plugin
 title_nav: Drive
 description: Cloud-based file and image management for TinyMCE.
 keywords: tinydrive storage media tiny drive
@@ -77,6 +77,22 @@ tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "tinydrive",
   tinydrive_upload_path: '/some/other/path'
+});
+```
+
+### `tinydrive_max_image_dimension`
+
+This setting enables you to constrain the width/height of uploaded images. When this is enabled any images with a higher width or height than the specified amount would be proportionally resized down to the specified max dimension.
+
+**Type:** `Number`
+
+#### Example
+
+```js
+tinymce.init({
+  selector: "textarea",  // change this value according to your HTML
+  plugins: "tinydrive",
+  tinydrive_max_image_dimension: 1024
 });
 ```
 

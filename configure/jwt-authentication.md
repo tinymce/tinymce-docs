@@ -1,6 +1,7 @@
 ---
 layout: default
-title: JWT Authentication
+title: JWT authentication setup
+title_nav: JWT authentication setup
 description_short: JWT Authentication
 description: JWT is a common authorization solution for web services.
 ---
@@ -11,17 +12,17 @@ This section is intended to be used by developers with prior knowledge of JSON W
 
 ## Introduction
 
-Some cloud services for TinyMCE require you to setup JWT authentication. This allows us to verify that you and your end user are allowed to access a particular feature. JWT is a common authorization solution for web services and is documented in more detail at the https://jwt.io/ website. The guide aims to show how to setup JWT authentication for the cloud services provided for TinyMCE.
+Some cloud services for TinyMCE require configuring JWT authentication to verify that the end users are allowed to access a particular feature. JWT is a common authorization solution for web services and is documented in more detail at the https://jwt.io/ website. This section aims to show how to setup JWT authentication for the cloud services provided for TinyMCE.
 
 
-## Private/Public Key Pair
+## Private/public key pair
 
-Tokens used by the TinyMCE cloud services make use of a public/private RSA key-pair. This allows you as an integrator to have full control over the authentication as we don't store the private key. Only you have access to the private key, and only you can produce valid tokens. We can only verify that they are valid and extract user information from that token.
+Tokens used by the TinyMCE cloud services make use of a public/private RSA key-pair. This allows the integrating developer to have full control over the authentication as Tiny does not store the private key. Only the user has access to the private key and can produce valid tokens. Tiny only verifies that they are valid and extracts user information from that token.
 
-The private/public key pair is created in your [Tiny account page](https://apps.tiny.cloud/my-account/jwt-key-manager/), but we only store the public key on our side. The private key is for you to store in your backend.
+The private/public key pair is created in the user's [Tiny account page](https://apps.tiny.cloud/my-account/jwt-key-manager/), but only the public key is stored on Tiny web server. The user needs to store the private key in their backend.
 
 
-## JWT Provider URL
+## JWT provider URL
 
 The easiest way to setup JWT authentication against TinyMCE cloud services is to create a JWT provider endpoint. This endpoint takes a JSON HTTP POST request and produces a JSON result with the token that the service will then use for all the HTTP requests.
 
@@ -47,11 +48,11 @@ All of these algorithms use the private RSA key to sign the JWT, but vary in how
 ### Claims:
 
 * **sub** - _(required)_ Unique string to identify the user. This can be a database ID, hashed email address, or similar identifier.
-* **name** - _(required)_ Full name of the user that will be used for presentation inside Tiny Drive. When the user uploads a file, this name is presented as the creator of that file.
+* **name** - _(required)_ Full name of the user that will be used for presentation inside Tiny [Drive]({{site.baseurl}}/plugins/drive/). When the user uploads a file, this name is presented as the creator of that file.
 
-## PHP Token Provider Example
+## PHP token provider example
 
-This example uses the [Firebase JWT library](https://github.com/firebase/php-jwt) provided through the Composer dependency manager. The private key should be the private key that was generated through your Tiny Account. Each service requires different claims to be provided. The following example shows the sub and name claims needed for Tiny Drive.
+This example uses the [Firebase JWT library](https://github.com/firebase/php-jwt) provided through the Composer dependency manager. The private key should be the private key that was generated through the user's Tiny Account. Each service requires different claims to be provided. The following example shows the sub and name claims needed for Tiny Drive.
 
 ```php
 <?php
@@ -68,9 +69,17 @@ $privateKey = <<<EOD
 EOD;
 
 $payload = array(
-  "sub" => "123",           // Unique user id string
-  "name" => "John Doe",     // Full name of user
-  "exp" => time() + 60 * 10 // 10 minutes expiration
+  // Unique user id string
+  "sub" => "123",
+
+  // Full name of user
+  "name" => "John Doe",
+
+  // Optional custom user root path
+  // "https://claims.tiny.cloud/drive/root" => "/johndoe",
+
+  // 10 minutes expiration
+  "exp" => time() + 60 * 10
 );
 
 try {
@@ -86,9 +95,9 @@ try {
 ?>
 ```
 
-## Node Token Provider Example
+## Node token provider example
 
-This example shows you how to set up a Node.js express handler that produces the tokens. It requires you to install the Express web framework and the `jsonwebtoken` Node modules. Each service requires different claims to be provided. The following example shows the sub and name claims needed for Tiny Drive.
+This example shows how to set up a Node.js express handler that produces the tokens. It requires installing the Express web framework and the `jsonwebtoken` Node modules. Each service requires different claims to be provided. The following example shows the sub and name claims needed for Tiny Drive.
 
 ```js
 const express = require('express');
@@ -106,9 +115,17 @@ const privateKey = `
 
 app.post('/jwt', function (req, res) {
   const payload = {
-    sub: '123',         // Unique user id string
-    name: 'John Doe',   // Full name of user
-    exp: Math.floor(Date.now() / 1000) + (60 * 10) // 10 minutes expiration
+    // Unique user id string
+    sub: '123',
+
+    // Full name of user
+    name: 'John Doe',
+
+    // Optional custom user root path
+    // 'https://claims.tiny.cloud/drive/root': '/johndoe',
+
+    // 10 minutes expiration
+    exp: Math.floor(Date.now() / 1000) + (60 * 10)
   };
 
   try {
@@ -127,9 +144,10 @@ app.post('/jwt', function (req, res) {
 app.listen(3000);
 ```
 
-## Tiny Drive Specific JWT Claims:
+## Tiny Drive specific JWT claims:
 
 **sub** - (required) Unique string to identify the user. This can be a database id, hashed email address, or similar identifier.
 
 **name** - (required) Full name of the user that will be used for presentation inside Tiny Drive. When a user uploads a file, the username is presented as the creator of that file.
 
+**https://claims.tiny.cloud/drive/root** - (optional) Full path to a tiny drive specific root for example "/johndoe".

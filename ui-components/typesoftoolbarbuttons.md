@@ -46,7 +46,7 @@ The following example adds two buttons to the toolbar:
 
 The first button inserts "It's my button!" into the editor when clicked. The second button is an example of how `onSetup` works. This button inserts a `time` element containing the current date into the editor using a `toTimeHtml()` helper function - a simplified version of TinyMCE's [insertdatetime]({{site.baseurl}}/plugins/insertdatetime/) plugin.
 
-`onSetup` is used to listen to the editor's [`NodeChange` event]({{site.baseurl}}/advanced/events/#nodechange) to disable the button when the cursor is inside a `time` element (or "node"). This method is used as it is illogical to insert a `time` element into *another* `time` element. The icon from the `insertdatetime` plugin is set `disabled` to `true` in the button configuration. This disables the button when it is created.
+`onSetup` is used to listen to the editor's [`NodeChange` event]({{site.baseurl}}/advanced/events/#nodechange) to disable the button when the cursor is inside a `time` element (or "node"). This method is used as it is illogical to insert a `time` element into *another* `time` element. In this example an icon from the `insertdatetime` plugin is being used and the button configuration has been explicitly set from `disabled` to `true`. It results in the button being disabled when it is created.
 
 `onSetup` is a complex property as it requires a function that takes the button's API and returns an empty function. This occurs because `onSetup` runs whenever its toolbar button is created, and the returned function must be a callback for when the button is destroyed. This is essentially an `onTeardown` handler.
 

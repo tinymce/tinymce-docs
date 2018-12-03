@@ -10,7 +10,7 @@ tinymce.PluginManager.add('my-example-plugin', function (editor) {
 
   editor.ui.registry.addContextMenu('image', {
     update: (element) => {
-      return !element.src ? [] : ['image'];
+      return !element.src ? '' : 'image';
     }
   });
 });

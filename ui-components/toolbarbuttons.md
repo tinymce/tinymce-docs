@@ -2,14 +2,14 @@
 layout: default
 title: Toolbar buttons
 title_nav: Toolbar buttons
-description: This section shows you how to add a custom button to the TinyMCE 5.0 toolbar.
+description: Add a custom buttons to the TinyMCE 5.0 toolbar.
 keywords: toolbar toolbarbuttons buttons toolbarbuttonsapi
 ---
 
 ## Use Cases
 
-* Create a shortcut for some action/series of actions that the user does often/repeatedly.
-* Create a button for some custom behaviour.
+* Create a shortcut for an action or a series of actions that the user repeatedly does.
+* Create a button for custom behavior.
 
 ## How to Create Custom Toolbar Buttons
 
@@ -25,9 +25,9 @@ The two arguments these methods take are:
 * `identifier` - a unique name for the button
 * `configuration` - an object containing your configuration for that button.
 
-> Note: Although there are some common configuration options, each type of button has custom options. We recommend reading the relevant page for the type of button you're creating.
+> Note: Each type of button has custom and common configuration options. Review the relevant documentation for each type of button for more information.
 
-To actually add a custom toolbar button to the editor, you need to define it within the `setup` callback of your TinyMCE configuration. This callback is automatically invoked for every initialised editor instance. It receives a reference to the editor instance as its argument, which we use to access the UI Registry API.
+Define the custom toolbar button with the `setup` callback of the TinyMCE configuration to add it to the editor. This callback is invoked automatically for every initialized editor instance. Access to the UI Registry API occurs when the callback receives a reference to the editor instance as its argument.
 
 ### Example of adding a basic button that triggers an alert when clicked:
 
@@ -43,11 +43,11 @@ tinymce.init({
   }
 });
 ```
-> Note: The identifier used to create the basic button is included in the `toolbar` option of our TinyMCE configuration. Without this, our button won't be added to the toolbar.
+> Note: The identifier used to create the basic button is included in the `toolbar` option in the TinyMCE configuration. The button is not added to the toolbar without this identifier.
 
 ## Example
 
-The following is an example for creating different types of ToolBar Buttons.
+The following example creates different types of toolbar buttons.
 
 {% include codepen.html id="toolbar-button" height="900" %}
 

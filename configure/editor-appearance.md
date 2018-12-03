@@ -20,13 +20,9 @@ description: Configure the editor's appearance, including menu and toolbar contr
 
 {% include configuration/event-root.md %}
 
-<!-- {% include configuration/fixed-toolbar-container.md %} -->
-
 {% include configuration/height.md %}
 
 {% include configuration/inline.md %}
-
-{% include configuration/insert-button-items.md %}
 
 {% include configuration/insert-toolbar.md %}
 
@@ -42,7 +38,7 @@ description: Configure the editor's appearance, including menu and toolbar contr
 
 {% include configuration/min-width.md %}
 
-{% include configuration/mobile.md %}
+<!--{% include configuration/mobile.md %}-->
 
 {% include configuration/preview-styles.md %}
 

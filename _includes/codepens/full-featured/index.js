@@ -1,13 +1,8 @@
 tinymce.init({
   selector: 'textarea',
-  height: 500,
   plugins: 'print preview fullpage powerpaste searchreplace autolink directionality advcode visualblocks visualchars fullscreen image link media template codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists textcolor wordcount tinymcespellchecker a11ychecker imagetools colorpicker textpattern help',
   toolbar: 'formatselect | bold italic strikethrough forecolor backcolor | link | alignleft aligncenter alignright alignjustify  | numlist bullist outdent indent  | removeformat',
   image_advtab: true,
-  templates: [
-    { title: 'Test template 1', content: 'Test 1' },
-    { title: 'Test template 2', content: 'Test 2' }
-  ],
   content_css: [
     '//fonts.googleapis.com/css?family=Lato:300,300i,400,400i',
     '//www.tiny.cloud/css/codepen.min.css'
@@ -26,7 +21,7 @@ tinymce.init({
   ],
   importcss_append: true,
   height: 400,
-  file_picker_callback (callback, value, meta) {
+  file_picker_callback: function (callback, value, meta) {
     /* Provide file and text for the link dialog */
     if (meta.filetype === 'file') {
       callback('https://www.google.com/logos/google.jpg', { text: 'My text' });
@@ -42,13 +37,13 @@ tinymce.init({
       callback('movie.mp4', { source2: 'alt.ogg', poster: 'https://www.google.com/logos/google.jpg' });
     }
   },
-  spellchecker_callback (method, text, success, failure) {
-    const words = text.match(this.getWordCharPattern());
+  spellchecker_callback: function (method, text, success, failure) {
+    var words = text.match(this.getWordCharPattern());
 
     if (method === 'spellcheck') {
-      const suggestions = {};
+      var suggestions = {};
 
-      for (let i = 0; i < words.length; i++) {
+      for (var i = 0; i < words.length; i++) {
         suggestions[words[i]] = ['First', 'Second'];
       }
 
@@ -66,11 +61,10 @@ tinymce.init({
   template_cdate_format: '[CDATE: %m/%d/%Y : %H:%M:%S]',
   template_mdate_format: '[MDATE: %m/%d/%Y : %H:%M:%S]',
   image_caption: true,
-  
 
   api_key: 'fake-key',
   spellchecker_rpc_url: 'https://spelling.tinymce.com/',
   spellchecker_api_key: 'h22wb7h8xi78b4fyo46hhx5k7fbh46vt5f6yqmvd492iy00c',
   spellchecker_dialog: true,
-  spellchecker_whitelist: ['Ephox', 'Moxiecode'],
+  spellchecker_whitelist: ['Ephox', 'Moxiecode']
  });

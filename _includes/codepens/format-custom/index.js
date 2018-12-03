@@ -5,7 +5,7 @@ tinymce.init({
   content_css: [
     '//fonts.googleapis.com/css?family=Lato:300,300i,400,400i',
     '//www.tiny.cloud/css/codepen.min.css'],
-  
+
   style_formats: [
     { title: 'Bold text', inline: 'strong' },
     { title: 'Red text', inline: 'span', styles: { color: '#ff0000' } },
@@ -22,6 +22,6 @@ tinymce.init({
     italic: { inline: 'span', 'classes': 'italic' },
     underline: { inline: 'span', 'classes': 'underline', exact: true },
     strikethrough: { inline: 'del' },
-    customformat: { inline: 'span', styles: { color: '#00ff00', fontSize: '20px' }, attributes: { title: 'My custom format' }, classes: 'example1' },
+    customformat: { inline: 'span', styles: { color: '#00ff00', fontSize: '20px' }, attributes: { title: 'My custom format' }, classes: 'example1' }
   }
 });

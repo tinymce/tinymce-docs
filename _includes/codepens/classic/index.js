@@ -33,12 +33,11 @@ var demoBaseConfig = {
     "//fonts.googleapis.com/css?family=Lato:300,300i,400,400i",
     "//www.tiny.cloud/css/content-standard.min.css"
   ],
-  api_key: 'fake-key',
   spellchecker_rpc_url: 'https://spelling.tinymce.com/',
   spellchecker_api_key: 'h22wb7h8xi78b4fyo46hhx5k7fbh46vt5f6yqmvd492iy00c',
   spellchecker_dialog: true,
   spellchecker_whitelist: ['Ephox', 'Moxiecode'],
-  api_key: 'fakekey',
+  api_key: 'fakekey'
 };
 
 var mentionsFetchFunction = function (query, success) {
@@ -142,7 +141,7 @@ var table = '<p>This table uses features of the non-editable plugin to make the 
 '            </tr> ' +
 '            <tr> ' +
 '                <td class="mceNonEditable">Central Region</td> ' +
-'                <td>100</td> <td>110</td> <td>115</td> <td>130</td> ' + 
+'                <td>100</td> <td>110</td> <td>115</td> <td>130</td> ' +
 '            </tr> ' +
 '            <tr> ' +
 '                <td class="mceNonEditable">West Region</td> ' +
@@ -173,6 +172,6 @@ var table2 = '<div> ' +
 '        </tr> ' +
 '        </tbody> ' +
 '        </table> ' +
-'    </div> '; 
+'    </div> ';
 
 tinymce.init(demoBaseConfig);

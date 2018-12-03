@@ -3,7 +3,7 @@ tinymce.init({
   plugins: 'image code',
   toolbar: 'undo redo | link image | code',
   /* enable title field in the Image dialog*/
-  image_title: true, 
+  image_title: true,
   /* enable automatic uploads of images represented by blob or data URIs*/
   automatic_uploads: true,
   /*
@@ -11,13 +11,13 @@ tinymce.init({
     images_upload_url: 'postAcceptor.php',
     here we add custom filepicker only to Image dialog
   */
-  file_picker_types: 'image', 
+  file_picker_types: 'image',
   /* and here's our custom image picker*/
-  file_picker_callback: function(cb, value, meta) {
+  file_picker_callback: function (cb, value, meta) {
     var input = document.createElement('input');
     input.setAttribute('type', 'file');
     input.setAttribute('accept', 'image/*');
-    
+
     /*
       Note: In modern browsers input[type="file"] is functional without
       even adding it to the DOM, but that might not be the case in some older
@@ -26,9 +26,9 @@ tinymce.init({
       once you do not need it anymore.
     */
 
-    input.onchange = function() {
+    input.onchange = function () {
       var file = this.files[0];
-      
+
       var reader = new FileReader();
       reader.onload = function () {
         /*
@@ -47,7 +47,7 @@ tinymce.init({
       };
       reader.readAsDataURL(file);
     };
-    
+
     input.click();
   }
 });

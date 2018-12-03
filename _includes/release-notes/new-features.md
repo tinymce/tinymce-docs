@@ -24,7 +24,9 @@ The [Dialog]({{site.baseurl}}/ui-components/dialog/) component is created for sh
 ### Format Painter 1.0
 
 The `Format Painter` plugin allows the copying and pasting formatting from one location to another, such as font style and size. The format painter is capable of working with a wide variety of formats and styles such as inline & block formats and table styles.
-The format painter may be used either through keyboard shortcuts or a toolbar button. <!--Refer to the [Format Painter]({{site.baseurl}}/plugins/formatpainter/) documentation, for more information.-->
+The format painter may be used either through keyboard shortcuts or a toolbar button.
+
+<!--Refer to the [Format Painter]({{site.baseurl}}/plugins/formatpainter/) documentation, for more information.-->
 
 <!-- ### Icon Packs
 

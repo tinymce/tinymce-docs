@@ -18,7 +18,7 @@ Configuration is relatively easy, so let's get started.
 
 ## Configuring mobile
 
-New to Tiny 5, the mobile experience is built in and does not require additional configuration.  
+New to Tiny 5, the mobile experience is built in and does not require additional configuration.
 
 Tinymce will detect the platform and will show an optimal Ui experience given a device type and screensize.
 

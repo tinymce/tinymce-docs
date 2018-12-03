@@ -98,9 +98,9 @@ Use the [toolbar]({{ site.baseurl }}/configure/editor-appearance/#toolbar) or th
 | insertfile | [moxiemanager]({{ site.baseurl }}/plugins/moxiemanager/) | Opens the MoxieManager dialog. |
 | a11ycheck | [a11ychecker]({{ site.baseurl }}/plugins/a11ychecker/) | Opens the accessibility checker dialog. |
 | toc | [toc]({{ site.baseurl }}/plugins/toc/) | Inserts a Table of Contents into the editor. |
-| quickimage | [inlite]({{ site.baseurl }}/themes/inlite/) | Inserts an image from the local machine. |
-| quicktable | [inlite]({{ site.baseurl }}/themes/inlite/) | Inserts an table 2x2. |
-| quicklink | [inlite]({{ site.baseurl }}/themes/inlite/) | Inserts an link in a quicker way. |
+| quickimage | [quickbars]({{ site.baseurl }}/plugins/quickbars/) | Inserts an image from the local machine. |
+| quicktable | [quickbars]({{ site.baseurl }}/plugins/quickbars/) | Inserts a table 2x2. |
+| quicklink | [quickbars]({{ site.baseurl }}/plugins/quickbars/) | Inserts a link in a quicker way. |
 
 
 ## Menu controls

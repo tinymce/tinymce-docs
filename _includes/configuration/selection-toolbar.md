@@ -1,8 +1,8 @@
-## quickbar_selection_toolbar
+## quickbars_selection_toolbar
 
-This option enables you to specify toolbar items to include on the Quick Selection toolbar or to disable the toolbar. 
+This option enables specifying toolbar items to include on the Quick Selection toolbar or to disable the toolbar. 
 
-We recommend that you only have formatting related controls in this toolbar. However, you are able to use any of the available [toolbar controls]({{ site.baseurl }}/advanced/editor-control-identifiers/#toolbarcontrols).
+It is recommended that only formatting related controls are specified in this toolbar. However, any of the available [toolbar controls]({{ site.baseurl }}/advanced/editor-control-identifiers/#toolbarcontrols) can also be used.
 
 **Type:** `String`
 
@@ -13,9 +13,9 @@ We recommend that you only have formatting related controls in this toolbar. How
 ```js
 tinymce.init({
   selector: 'div.tinymce',
-  plugins: 'quickbar',
-  quickbar: true,
-  quickbar_selection_toolbar: 'bold italic | quicklink h2 h3 blockquote'
+  plugins: 'quickbars',
+  quickbars: true,
+  quickbars_selection_toolbar: 'bold italic | quicklink h2 h3 blockquote'
 });
 ```
 
@@ -24,8 +24,8 @@ tinymce.init({
 ```js
 tinymce.init({
   selector: 'div.tinymce',
-  plugins: 'quickbar',
-  quickbar: true,
-  quickbar_selection_toolbar: false
+  plugins: 'quickbars',
+  quickbars: true,
+  quickbars_selection_toolbar: false
 });
 ```

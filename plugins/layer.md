@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Layer Plugin
+title: Layer plugin
 title_nav: Layer
 description: Adds some layer controls (only works on some browsers).
 keywords: browser

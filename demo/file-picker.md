@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Basic Local File Picker
-title_nav: Basic Local File Picker
+title: Basic local file picker
+title_nav: Basic local file picker
 description: This example shows how to add a local file picker to Image dialog.
 keywords: example demo image local-file-picker file_picker_callback
 ---

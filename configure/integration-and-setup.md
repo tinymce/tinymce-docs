@@ -1,6 +1,7 @@
 ---
 layout: default
-title: Integration and Setup
+title: Integration and setup options
+title_nav: Integration options
 description_short:
 description: Essential editor configuration, including `selector` and `plugins` keys.
 ---

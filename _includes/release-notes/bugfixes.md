@@ -1,16 +1,8 @@
----
-layout: default
-title: Bug Fixes
-title_nav: Bug Fixes
-description: These are the fixed issues in TinyMCE 5.0 Beta.
-keywords: knownissues bug releasenotes migration 4.x
----
-
-In the developer's preview release, we invited the community to test the TinyMCE 5.0 editor and report bugs and issues. The following issues have been fixed in the TinyMCE 5.0 BETA version.
+The community was invited to test the TinyMCE 5.0 editor and report bugs and issues in the Developers Preview release. The following issues have been fixed in the TinyMCE 5.0 Beta version.
 
 ### Editor-Core
 
-The new TinyMCE 5.0 editor comes with significant changes to the previous versions. Our team at Tiny has created a more configurable and modern editor. To create a less cumbersome editor, we have removed some configurations because they are no longer necessary or an improved solution has been introduced. For more information, please see the [Editor-Core]({{site.baseurl}}/migration-from-4x/#editor-core) section in the Migration Guide.
+The new TinyMCE 5.0 editor comes with significant changes to the previous versions. Tiny has created a more configurable and modern editor. Improved solutions have been introduced for unnecessary and obsolete configuration options. Please see the [Editor-Core]({{site.baseurl}}/migration-from-4x/#editor-core) section in the Migration Guide for more information.
 
 #### Alloy
 
@@ -114,7 +106,7 @@ The following editor related issues were reported during the developer's preview
 
 ### User Interface
 
-TinyMCE 5.0 has an ARIA WCAG 2.1 standards compliant user interface to make the user interface controls and dynamic content more accessible. The user interface logic has been changed entirely in TinyMCE 5.0. For more information on the UI changes, please see the [Migration Guide]({{site.baseurl}}/migration-from-4x).
+TinyMCE 5.0 has an ARIA WCAG 2.1 standards compliant user interface to make the user interface controls and dynamic content more accessible. The user interface logic has been changed entirely in TinyMCE 5.0. Refer to the [Migration Guide]({{site.baseurl}}/migration-from-4x), for more information on the UI changes.
 
 #### UI
 
@@ -171,7 +163,7 @@ The following Context Form related issues were reported during the developer's p
 | AP-274 | Separate ContextForm API into launch and form (and | DOCument how it works) |
 | AP-301 | Navigating through a link flickers and moves the context form |
 
-#### Context Menus
+#### Context menus
 
 The following Context Menu related issues were reported during the developer's preview and are now fixed in the TinyMCE 5.0 BETA version. Please see the [Context Menu]({{site.baseurl}}/ui-components/contextmenu/) docs for more information.
 
@@ -181,7 +173,7 @@ The following Context Menu related issues were reported during the developer's p
 | AP-16	| Table context menus |
 | AP-109 | Spike a new context menu for apollo that works similar to tbio |
 
-####  Context Toolbar
+####  Context toolbar
 
 The following Context Toolbar related issues were reported during the developer's preview and are now fixed in the TinyMCE 5.0 BETA version. Please see the [Context Toolbar]({{site.baseurl}}/ui-components/contexttoolbar/) docs for more information.
 
@@ -260,7 +252,7 @@ The following Menu related issues were reported during the developer's preview a
 | AP-76	| Reimplement Buttons and MenuItems using Bridge register |
 | AP-280 | Menu check marks should be on the left |
 
-#### Toolbar Buttons
+#### Toolbar buttons
 
 The following Toolbar Buttons related issues were reported during the developer's preview and are now fixed in the TinyMCE 5.0 BETA version. Please see the [Toolbar Buttons]({{site.baseurl}}/ui-components/toolbarbuttons/) docs for more information.
 
@@ -309,7 +301,7 @@ The following URL related issues were reported during the developer's preview an
 | AP-128 | Wire up button on URL Input |
 | AP-153 | Pressing <escape> and <enter> in a URL input should not be swallowed by the URL input |
 
-### Premium Plugins
+### Premium features
 
 #### Comments
 
@@ -337,7 +329,7 @@ The following issues were reported against the Mentions premium plugin during th
 
 #### Plugins
 
-#### Accessibility Checker
+#### Accessibility checker
 
 The following Accessibility Checker related issues were reported during the developer's preview and are now fixed in the TinyMCE 5.0 BETA version. Please see the [Accessibility Checker]({{site.baseurl}}/plugins/a11ychecker/) docs for more information.
 
@@ -393,7 +385,7 @@ The following Emoticons related issues were reported during the developer's prev
 | AP-366 | emoji type ahead can mess with typing urls http:// will bring up an empty emoji typeahead result |
 | AP-449 | Emoji dialog intermittent failing tests |
 
-#### Image Tools
+#### Image tools
 
 The following Image Tools related issues were reported during the developer's preview and are now fixed in the TinyMCE 5.0 BETA version. Please see the [Image Tools]({{site.baseurl}}/plugins/imagetools/) docs for more information.
 
@@ -431,7 +423,7 @@ The following Lists related issues were reported during the developer's preview 
 | AP-146 | Create numbered list icons |
 | AP-339 | Num/Bullist - not reflecting the selection on toolbar |
 
-#### Search and Replace
+#### Search and replace
 
 The following Search and Replace related issues were reported during the developer's preview and are now fixed in the TinyMCE 5.0 BETA version. Please see the [Search and Replace]({{site.baseurl}}/plugins/searchreplace/) docs for more information.
 
@@ -451,7 +443,7 @@ The following Table related issues were reported during the developer's preview 
 | AP-385 | Caption - table properties and image |
 | AP-391 | Table style attribute should retain "border-collapse: collapse;" when border is set to 0 |
 
-#### Table of Contents
+#### Table of contents
 
 The following Table of Contents related issues were reported during the developer's preview and are now fixed in the TinyMCE 5.0 BETA version. Please see the [Table of Contents]({{site.baseurl}}/plugins/toc/) docs for more information.
 
@@ -460,7 +452,7 @@ The following Table of Contents related issues were reported during the develope
 
 ### Documentation
 
-The following documentation related issues were reported during the developer's preview and are now fixed in the TinyMCE 5.0 BETA version. Please see the latest [Docs](https://www.tiny.cloud/docs-preview/) for more information.
+The following documentation related issues were reported during the developer's preview and are now fixed in the TinyMCE 5.0 BETA version. Refer to the latest [Documentation](https://www.tiny.cloud/docs-preview/) for more information.
 
 | Issue key | Summary |
 | DOC-98 | Typo - importcss_file_filter |

@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Full Featured Example
-title_nav: Full Featured
+title: Full featured example
+title_nav: Full featured
 description_short: Every TinyMCE plugin in action.
 description: This example displays all plugins that come with TinyMCE Cloud's premium subscriptions.
 keywords: example demo custom wysiwyg full-power full-featured

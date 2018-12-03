@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Inlite
+title: Inlite plugin
 title_nav: Inlite
 description: Plugin that renders a light weight UI for inline editing.
 keywords: plugin inlite

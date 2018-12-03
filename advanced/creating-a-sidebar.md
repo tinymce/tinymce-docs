@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Create a Sidebar Panel
-title_nav: Create a Sidebar Panel
+title: Create a sidebar panel
+title_nav: Create a sidebar panel
 description_short: Introducing sidebar creation.
 description: A short introduction to creating sidebars.
 keywords: sidebar

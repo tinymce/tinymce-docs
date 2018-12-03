@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Keyboard Shortcuts
-title_nav: Keyboard Shortcuts
+title: Keyboard shortcuts
+title_nav: Keyboard shortcuts
 description_short: Complete list of keyboard shortcuts.
 description: Complete list of keyboard shortcuts.
 keywords: keyboard shortcuts

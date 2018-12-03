@@ -1,7 +1,7 @@
 ---
 layout: default
-title: 10. Check Spelling
-description: Take spell checking to your users.
+title: Check spelling in TinyMCE
+title_nav: Spell checking
 keywords: spell checker spelling browser_spellcheck gecko_spellcheck
 ---
 TinyMCE provides several options to bring spell checking capabilities to your users.
@@ -20,7 +20,7 @@ tinymce.init({
 
 ## PHP Spellchecker component
 
-TinyMCE's PHP Spellchecker component can be [download here](http://download.moxiecode.com/spellcheckers/tinymce_spellchecker_php_4.0.zip). The complete changelog history is [here](http://archive.tinymce.com/develop/changelog/?type=phpspell). TinyMCE's PHP Spellchecker component is a server-side script and thus requires more effort by developers to integrate than the browser-based option. 
+You can also use TinyMCE's PHP _Spellchecker_ component, that you can [download here](http://download.moxiecode.com/spellcheckers/tinymce_spellchecker_php_4.0.zip). To view the complete changelog history, view this [txt](http://archive.tinymce.com/develop/changelog/?type=phpspell) file. The TinyMCE's PHP Spellchecker component requires a little more work than the browser-based option, being a server-side script.
 
 This plugin enables **Enchant** or **PSpell** on the server to spell check content within the TinyMCE editor.
 
@@ -46,7 +46,7 @@ tinymce.init({
 
 Review the [Spell Checker Plugin]({{ site.baseurl }}/plugins/spellchecker/) for advanced configuration options.
 
-## TinyMCE Spellchecker Pro plugin
+## TinyMCE Spell Checker Pro plugin
 
 Use the [Spell Checker Pro plugin]({{ site.baseurl }}/plugins/tinymcespellchecker/) for scalable enterprise-grade spell check as-you-type functionality. **Spell Checker Pro** requires both a client-side plugin to be configured and a server-side component to be installed and configured.
 

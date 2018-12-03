@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Create a Plugin for TinyMCE
-title_nav: Create a Plugin
+title: Create a plugin for TinyMCE
+title_nav: Create a plugin
 description_short: Introducing plugin creation, with an example.
 description: A short introduction to creating plugins for TinyMCE along with an example plugin.
 keywords: plugin plugin.js plugin.min.js tinymce.js

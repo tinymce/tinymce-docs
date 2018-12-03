@@ -14,7 +14,7 @@ It is recommended that only formatting related controls are specified in this to
 tinymce.init({
   selector: 'div.tinymce',
   plugins: 'quickbars',
-  quickbars: true,
+  inline: true,
   quickbars_selection_toolbar: 'bold italic | quicklink h2 h3 blockquote'
 });
 ```
@@ -25,7 +25,7 @@ tinymce.init({
 tinymce.init({
   selector: 'div.tinymce',
   plugins: 'quickbars',
-  quickbars: true,
+  inline: true,
   quickbars_selection_toolbar: false
 });
 ```

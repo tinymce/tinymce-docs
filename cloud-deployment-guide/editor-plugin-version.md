@@ -16,11 +16,11 @@ The following example is the default for loading TinyMCE via Tiny Cloud:
 <script src="{{ site.cdnurl }}?apiKey=your_API_key"></script>
 ```
 
-The `stable` in this URL specifies the latest, quality assured, release of TinyMCE. This value can be customized to any [supported versions here](https://cloud.tinymce.com/versions/tiny).
+The `stable` in this URL specifies the latest, and quality assured release of TinyMCE. This value can be customized to any [supported versions here](https://cloud.tinymce.com/versions/tiny).
 
 ### Selecting specific version numbers
 
-*Major*, *Major.Minor*, or *Major.Minor.Patch* version numbers can all be specified. The latest *Major.Minor* or *Major.Minor.Patch* patch versions are released by default should the *Major.Minor* or *Major.Minor.Patch* versions not be present.
+*Major*, *Major.Minor*, or *Major.Minor.Patch* version numbers can all be specified. The latest *Major.Minor* or *Major.Minor.Patch* patch versions are released by default if the *Major.Minor* or *Major.Minor.Patch* versions are not present.
 
 ##### Example
 Major version number (e.g. "5").
@@ -49,7 +49,7 @@ The following loads TinyMCE *4.3.2*:
 <script src="https://cloud.tinymce.com/4.3.2/tinymce.min.js?apiKey=your_API_key"></script>
 ```
 
-An **HTTP 404** error is returned when a version does not exist.
+A**HTTP 404** error is returned when a version does not exist.
 
 ### dev, testing, and stable releases
 

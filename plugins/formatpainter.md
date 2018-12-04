@@ -7,9 +7,9 @@ keywords: formats formatting edit formatpainter_removeformat formatpainter_table
 controls: toolbar button
 ---
 
-The `Format Painter` plugin allows a user to copy and paste formatting from one location to another, such as font style and size. The format painter is capable of working with a wide variety of formats and styles such as inline & block formats and table styles.
+The `Format Painter` plugin allows a user to copy and paste formatting from one location to another, such as font style and size. The format painter is capable of working with a wide variety of formats such as inline and block formats and styles such as table styles.
 
-The format painter may be used either through keyboard shortcuts or a toolbar button.
+The format painter is accessed using either keyboard shortcuts or a toolbar button.
 
 ##### Example
 
@@ -23,30 +23,30 @@ tinymce.init({
 
 ## Usage
 
-The format painter operates in two modes, one for retrieval and one for application of formats. The usage differs slightly depending on whether the keyboard or toolbar button is being used.
+The format painter operates in two modes, one for retrieval and one for application of formatting. The usage of the keyboard is slightly different from the usage of the toolbar buttons.
 
-**Usage with Toolbar Button**
+**Usage with toolbar button**
 
-1. Position the cursor at the location you wish to retrieve formats from.
-2. Toggle the `Format Painter` button to read the formats.
-3. Select the content you wish to apply the formats to.
+1. Position the cursor at the source content to retrieve the formatting.
+2. Toggle the `Format Painter` button to read the formatting.
+3. Select the goal content to apply the formatting.
 
-**Usage with Keyboard**
+**Usage with keyboard**
 
-1. Position the cursor at the location you wish to retrieve formats from.
-2. Press `Ctrl+Alt+C` to read the formats.
-3. Select the content you wish to apply the formats to.
-4. Press `Ctrl+Alt+V` to apply the formats.
+1. Position the cursor at the source content to retrieve formatting.
+2. Press the `Ctrl+Alt+C` keys to read the formatting.
+3. Select the goal content to apply the formatting.
+4. Press the `Ctrl+Alt+V` keys to apply the formatting.
 
-The format painter retains the formats after application making it possible to apply the same formats multiple times by using the `Ctrl+Alt+V` shortcut.
+The format painter retains the formatting after application making it possible to apply the same formatting multiple times by using the `Ctrl+Alt+V` keyboard shortcut.
 
 ## Options
 
-The format painter acts upon all [`formats`]({{ site.baseurl }}/configure/content-formatting/#formats) registered in the editor. In addition to any standard formats, it will treat lists as a block format whenever the [`lists plugin`]({{ site.baseurl }}/plugins/lists/) is made available.
+The format painter acts upon all [`formats`]({{ site.baseurl }}/configure/content-formatting/#formats) registered in the editor. In addition to any standard formatting, it will treat **lists** as a block format whenever the [`lists plugin`]({{ site.baseurl }}/plugins/lists/) is made available.
 
 ### `formats`
 
-The format painter plugin will register a number of formats upon initialization. You may override these through the [`formats`]({{ site.baseurl }}/configure/content-formatting/#exampleofusageoftheformatsoption) option.
+The format painter plugin will register many formats upon initialization. To override these formats, use the [`formats`]({{ site.baseurl }}/configure/content-formatting/#exampleofusageoftheformatsoption) option.
 <br/>
 The example below showcases the formats registered automatically by the plugin upon initialization. The `formatpainter_removeformat` is used to clear any existing formats before applying the new ones. It is similar to the [`removeformat`]({{ site.baseurl }}/configure/content-formatting/#removingaformat) format.
 
@@ -73,7 +73,7 @@ tinymce.init({
 
 ### `formatpainter_blacklisted_formats`
 
-This option makes it possible to blacklist formats that you don't want the format painter to act upon.
+This option makes it possible to block the unwanted formats in the format painter.
 
 **Type:** `String`
 

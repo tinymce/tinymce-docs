@@ -7,7 +7,7 @@ description: Get an instance of TinyMCE up and running in less than 5 minutes.
 keywords: tinymce script textarea
 ---
 
-TinyMCE is a powerful and flexible rich text editor that can be embeded in the user's web application. 
+TinyMCE is a powerful and flexible rich text editor that can be embedded in the user's web application. 
 
 The TinyMCE 5.0 Beta is perfect for developers who want to see how the new version of TinyMCE integrates into their ecosystem.
 

@@ -6,6 +6,7 @@ keywords: annotation annotations
 ---
 
 ## Introduction
+
 The TinyMCE Annotations API provides the ability to add, modify, and delete annotations; listen to text selection events and retrieve all annotations with the same annotation name. The Annotations API is a part of the TinyMCE core and functions in the same way as the formatting APIs in TinyMCE core.
 
 The primary value that the Annotations API provides is that it tags each annotation with a unique identifier(uid) accessible via `editor.annotator`. This highlights the annotated content and wraps it in annotation markers. These markers can either stay in the content or be removed on `getContent`, depending on the user configuration (`persistent` setting).
@@ -20,17 +21,18 @@ To configure the annotate button on your toolbar:
 
        
  ```js
-setup: function(ed) {
-  ed.addButton('annotate-alpha', {
-    text: 'Annotate',
-    onclick: function() {
-      const comment = prompt('Comment with?');
-      ed.annotator.annotate('alpha', {
-        comment
-      });
-      ed.focus();
-    });
-   }
+  setup: function(ed) {
+    ed.ui.registry.addButton('annotate-alpha', {
+      text: 'Annotate',
+      onAction: function() {
+        var comment = prompt('Comment with?');
+        ed.annotator.annotate('alpha', {
+          comment
+        });
+        ed.focus();
+      }
+    })
+  }
 ```
        
 See [Configure TinyMCE]({{ site.baseurl }}/configure/) for more information on how to configure TinyMCE core.
@@ -41,17 +43,18 @@ The annotator API supports multiple annotation functions. Each annotation functi
 
 ```js
   ed.on('init', function() {
-     ed.annotator.register('alpha', {
-       persistent: true,
-       decorate: function(uid, data) {
-         return {
-           attributes: {
-             'data-mce-author': data.comment
-           }
-         };
-       }
-     });
-   });
+    editor.annotator.register('alpha', {
+      persistent: true,
+      decorate: function (uid, data) {
+        return {
+          attributes: {
+            'data-mce-comment': data.comment ? data.comment : '',
+            'data-mce-author': data.author ? data.author : 'anonymous'
+          }
+        };
+      }
+    });
+  });
 ```
 
 This will register an annotation with the name `alpha`. In our example, when an `alpha` is being added to the document, a span marker will be created with class `alpha` and a data attribute for the author.
@@ -129,67 +132,7 @@ annotationChanged: (name: string, callback): void
 
 Use the following example to create the Annotate API:
 
-```js
-<script type="text/javascript">
-tinymce.init({
-  selector: "textarea",
-  plugins: [
-    "advlist autolink lists link image charmap print preview anchor",
-    "searchreplace visualblocks code fullscreen",
-    "insertdatetime media table contextmenu paste"
-  ],
-  toolbar: "annotate-alpha | insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
-
-  content_style: '.mce-annotation { background-color: darkgreen; color: white; }',
-
-  setup: function(ed) {
-    ed.addButton('annotate-alpha', {
-      text: 'Annotate',
-      onclick: function() {
-        const comment = prompt('Comment with?');
-        ed.annotator.annotate('alpha', {
-          comment: comment
-        });
-        ed.focus();
-      },
-
-      onpostrender: function(ctrl) {
-        const button = ctrl.control;
-        ed.on('init', function() {
-          ed.annotator.annotationChanged('alpha', function(state, name, obj) {
-            if (! state) {
-              button.active(false);
-            } else {
-              button.active(true);
-            }
-          });
-        });
-      }
-    });
-
-    ed.on('init', function() {
-      ed.annotator.register('alpha', {
-        persistent: true,
-        decorate: function(uid, data) {
-          return {
-            attributes: {
-              'data-mce-alpha': data.comment
-            }
-          };
-        }
-      });
-    });
-  }
-});
-
-</script>
-
-<form method="post" action="dump.php">
-    <textarea name="content"></textarea>
-</form>
-```
-
-[Example]({{ site.baseurl }}/images/annotate.png)
+{% include codepen.html id="annotations" height="750" %}
 
 ## Retrieving All Annotations for a Particular Annotation Name
 

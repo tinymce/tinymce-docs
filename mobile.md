@@ -15,10 +15,6 @@ Configuration is relatively easy, so let's get started.
 
 > Note: Please note that TinyMCE mobile will not work on non-mobile environments.
 
-## How to TinyMCE mobile setup
-
-Please visit our [mobile page](https://www.tinymce.com/mobile) to download the Self-hosted package. If you're using TinyMCE Cloud, mobile is available in the `dev` branch.
-
 ## How to set up mobile
 
 In the snippet below, we use TinyMCE Cloud to instantiate the editor. If you're using the Self-hosted package, replace `cloud.tinymce.com/dev/` with your path to `tinymce.min.js`.

@@ -2,7 +2,7 @@
 layout: default
 title: Annotations
 description: TinyMCE Annotations provides the ability to describe particular features or add general information to a piece of content and creates identifiers for each added annotation.
-keywords: annotation annotations
+keywords: annotation annotations annotator
 ---
 
 ## Introduction

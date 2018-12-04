@@ -5,7 +5,7 @@ TinyMCE 5.0 has an ARIA [WCAG 2.1 standards](https://www.w3.org/WAI/standards-gu
 
 ### Get TinyMCE 5.0 Beta
 
-Include this line of code in the <head> of your HTML page and link to the tinymce.min.js source file:
+Include this line of code in the <head> of the HTML page and link to the tinymce.min.js source file:
 
 ```js
 <script src='http://cloud.tinymce.com/5-testing/tinymce.min.js'></script>

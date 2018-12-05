@@ -2,7 +2,7 @@
 layout: default
 title: TinyMCE classic editing mode
 title_nav: Classic editing mode
-description: Theme that renders iframe or inline modes using the TinyMCE core UI framework.
+description: The Theme that renders iframe or inline modes using the TinyMCE core UI framework.
 keywords: theme classic
 ---
 

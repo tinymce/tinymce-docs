@@ -96,7 +96,7 @@ Example of specifying your own `uid`:
 
 ### 5. Listening to Selection Events
 
-The Annotator API notifies the user when the selection cursor moves in or out of a specified annotation. For example, for our `alpha` scenario:
+The Annotator API notifies the user when the selection cursor moves in or out of a specified annotation. For example, for the `alpha` scenario:
 
 ```js
 editor.annotator.annotationChanged('alpha', function (state, name, obj) {
@@ -109,7 +109,7 @@ editor.annotator.annotationChanged('alpha', function (state, name, obj) {
 });
 ```
 
-The `obj` parameter is only set if the `state` is true. `obj` has two fields when set:
+The `obj` parameter is only set if the `state` is true. A set `obj` has two fields:
 
 * `uid`, which is the uid of the annotation currently nearest (in the DOM hierarchy) to the selection cursor.
 * `nodes`, which is an array of DOM nodes which make up this annotation. `nodes` are made available to users in case the user might want to tag these nodes with a class to say that they are the **active annotations**.
@@ -136,14 +136,14 @@ Use the following example to create the Annotate API:
 
 ## Retrieving All Annotations for a Particular Annotation Name
 
-The Annotator API allows you to retrieve an object of all of the uids for a particular annotation type (e.g. alpha), and the nodes associated with those uids. For example, to retrieve all `alpha` annotations, we would use this code:
+The Annotator API allows retrieving an object of all of the uids for a particular annotation type (e.g. alpha), and the nodes associated with those uids. For example, to retrieve all `alpha` annotations, this code is used:
 
 ```js
 var annotations = editor.annotator.getAll('alpha');
 var nodesInFirstUid = annotations['first-uid'];
 ```
 
-Assuming that there is a uid called `first-uid`, the above code shows you how to access the nodes used for making that annotation. The full API is:
+Assuming that there is a uid called `first-uid`, the above code shows how to access the nodes used for making that annotation. The full API is:
 
 ```js
 /**
@@ -164,7 +164,7 @@ Use the `remove` API to delete a particular annotation at the cursor. It will re
 editor.annotator.remove('alpha');
 ```
 
-Now, this bypasses any other annotations that might be closer to the selection cursor, and removes annotations which are `alpha` annotations. If there are no annotations of that name, it will do nothing. The full API is:
+This bypasses any other annotations that might be closer to the selection cursor and removes annotations which are `alpha` annotations. If there are no annotations of that name, it will do nothing. The full API is:
 
 ```js
 /**

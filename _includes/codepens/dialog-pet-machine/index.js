@@ -43,7 +43,7 @@ const dialogConfig =  {
 };
 
 tinymce.init({
-  selector: 'textarea',
+  selector: 'textarea.petMachine',
   toolbar: 'dialog-example-btn',
   setup: (editor) => {
     editor.ui.registry.addButton('dialog-example-btn', {

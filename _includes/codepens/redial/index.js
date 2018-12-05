@@ -32,9 +32,6 @@ var config = {
     }
   ],
   onChange: (dialogApi, changeData) => {
-    console.log('onChange fired');
-    debugger;
-
     var data = dialogApi.getData();
     /* Example of enabling and disabling a button, based on the checkbox state. */
     var toggle = data.anyterms === 'checked' ? dialogApi.enable : dialogApi.disable;
@@ -91,10 +88,11 @@ var config = {
 };
 
 tinymce.init({
-  selector: 'textarea',
-  toolbar: 'pet-example',
+  selector: 'textarea.wizard',
+  toolbar: 'wizardExample',
+  height: '900px',
   setup: (editor) => {
-    editor.ui.registry.addButton('pet-example', {
+    editor.ui.registry.addButton('wizardExample', {
       icon: 'code-sample',
       onAction: () => {
         editor.windowManager.open(config)

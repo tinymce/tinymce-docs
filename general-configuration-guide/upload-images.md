@@ -37,7 +37,7 @@ tinymce.activeEditor.uploadImages(function(success) {
 
 ## Image uploader requirements
 
-A server-side upload handler script that accepts images on the server, saves them appropriately, and returns a JSON object containing the location of the saved images is necessary to upload local images to a remote server.
+A server-side upload handler script that accepts images on the server saves them appropriately and returns a JSON object containing the location of the saved images is necessary to upload local images to a remote server.
 
 An example PHP upload handler implementation is available [here]({{ site.baseurl }}/advanced/php-upload-handler/).
 
@@ -50,7 +50,7 @@ Images are sent to the Image Uploader via HTTP POST with each post containing a 
 
 When the image is uploaded it has a standardized name in the post (e.g. `blobid0`, `blobid1`, `imagetools0`, `imagetools1`).
 
-> Note: Ensure that your upload handler script takes each uploaded file and generates a unique name before saving the image. For example, users could append the current time (in milliseconds) to the end of the file name which would lead to file names like `blobid0-1458428901092.png` or `blobid0-1460405299-0114.png`. Please ensure that the file name is unique so files are not overwritten accidentally!
+> Note: Ensure that your upload handler script takes each uploaded file and generates a unique name before saving the image. For example, users could append the current time (in milliseconds) to the end of the file name which would lead to file names like `blobid0-1458428901092.png` or `blobid0-1460405299-0114.png`. Please ensure that the file name is unique, so files are not overwritten accidentally!
 
 This server-side upload handler must return a JSON object that contains a `location` property. This property should represent the remote location or filename of the newly uploaded image.
 

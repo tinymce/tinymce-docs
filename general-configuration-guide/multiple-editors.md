@@ -41,7 +41,7 @@ The following example breaks the page into two separate editable areas. Each are
 
 ## Multiple editor instances, each with a unique configuration
 
-The following example loads each editable area with a unique configuraiton of TinyMCE. This is useful when different content areas have different needs, such as providing simple configuration for editing titles and a complete configuration for editing body content. Define a `tinymce.init` object/method for each configuration.
+The following example loads each editable area with a unique configuration of TinyMCE. This is useful when different content areas have different needs, such as providing simple configuration for editing titles and a complete configuration for editing body content. Define a `tinymce.init` object/method for each configuration.
 
 
 ```html

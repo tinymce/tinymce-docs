@@ -2,17 +2,17 @@ tinymce.init({
   selector: 'textarea',
   toolbar: 'myButton',
   menubar: false,
-  setup: (editor) => {
+  setup: function (editor) {
     editor.ui.registry.addSplitButton('myButton', {
       text: 'My Button',
-      onAction: () => {
-        editor.insertContent('<p>You clicked the main button</p>')
+      onAction: function () {
+        editor.insertContent('<p>You clicked the main button</p>');
       },
-      onItemAction: (api, value) => {
+      onItemAction: function (api, value) {
         editor.insertContent(value);
       },
-      fetch: (callback) => {
-        const items = [
+      fetch: function (callback) {
+        var items = [
           {
             type: 'choiceitem',
             text: 'Menu item 1',
@@ -22,7 +22,7 @@ tinymce.init({
             type: 'choiceitem',
             text: 'Menu item 2',
             value: '&nbsp;<em>You clicked menu item 2!</em>'
-          },
+          }
         ];
         callback(items);
       }

@@ -5,13 +5,13 @@ tinymce.init({
   content_css: [
     '//fonts.googleapis.com/css?family=Lato:300,300i,400,400i',
     '//www.tiny.cloud/css/codepen.min.css'],
-  
-  setup: function(editor) {
-    
+
+  setup: function (editor) {
+
     function toTimeHtml(date) {
       return '<time datetime="' + date.toString() + '">' + date.toDateString() + '</time>';
     }
-    
+
     function insertDate() {
       var html = toTimeHtml(new Date());
       editor.insertContent(html);

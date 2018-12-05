@@ -9,15 +9,15 @@ var settings = {
   setup: function (editor) {
     editor.ui.registry.addButton('annotate-alpha', {
       text: 'Annotate',
-      onAction() {
-        const comment = prompt('Comment with?');
+      onAction: function() {
+        var comment = prompt('Comment with?');
         editor.annotator.annotate('alpha', {
           uid: 'custom-generated-id',
           comment: comment
         });
         editor.focus();
       },
-      onSetup (btnApi) {
+      onSetup: function (btnApi) {
         editor.annotator.annotationChanged('alpha', function (state, name, obj) {
           console.log('Current selection has an annotation: ', state);
           btnApi.setDisabled(state);

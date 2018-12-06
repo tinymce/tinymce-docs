@@ -87,7 +87,7 @@ var buttonConfig = {
 
 **Text:** This will be the text displayed on a button. For example, `text: ‘do magic’` will create a button with text **do magic**. Dialog buttons do not support icons at the moment.
 
-**Disabled:** (Value: Boolean; Default: False): When set to true, the button will be disabled when the dialog loads. To toggle between disabled and enabled states, use `dialogApi.enable(name)`` or `dialogApi.disable(name)`. See [dialog API]({{site.baseurl}}/ui-components/dialog/#dialoginstanceapi) for more information.
+**Disabled:** (Value: Boolean; Default: False): When set to true, the button will be disabled when the dialog loads. To toggle between disabled and enabled states, use `dialogApi.enable(name)` or `dialogApi.disable(name)`. See [dialog API]({{site.baseurl}}/ui-components/dialog/#dialoginstanceapi) for more information.
 
 **Primary:** (Default: False): When set to true, the button will be colored to stand out. The color will depend on the chosen [skin]({{site.baseurl}}/general-configuration-guide/customize-ui/#skins).
 
@@ -124,7 +124,7 @@ const dialogConfig = {
 }
 ```
 
-Using the above example, calling `tinymce.activeEditor.windowManager.open(dialogConfig)`` will create a dialog with the title just a title, an empty body, and an empty footer without buttons.
+Using the above example, calling `tinymce.activeEditor.windowManager.open(dialogConfig)` will create a dialog with the title just a title, an empty body, and an empty footer without buttons.
 
 ### Complex dialog
 
@@ -158,7 +158,7 @@ To see the output of the code, click on the TinyMCE tab on the fiddle below.
 
 In this redial example, there are two separate dialogs that are cycled through by pressing the **Next** button. In the configuration structure, the first level is like any other dialog.
 
-The difference is the `onAction` call loads a new configuration for the dialog using redial. The configuration that is used in the `redial(dialogConf)`` call can be any supported dialog structure. It could even replace this **Redial Demo** configuration, in the **Pet Name Machine** example in the [compostion]({{site.baseurl}}/dialog/#composition/) section.
+The difference is the `onAction` call loads a new configuration for the dialog using redial. The configuration that is used in the `redial(dialogConf)` call can be any supported dialog structure. It could even replace this **Redial Demo** configuration, in the **Pet Name Machine** example in the [compostion]({{site.baseurl}}/dialog/#composition/) section.
 
 This demo also includes the use of `dialogApi.enable` and `dialogApi.disable` to disable the **Next** button when user input is required. For **Checkboxes**, the `onChange` callback is used to handle the changes for the checkbox data. The checkbox data is mapped to its defined `name: anyterms`. When a user clicks or presses **Enter** on the checkbox, the new value of the checkbox is returned by the `getData()` call stored in the anyterms property. Given the state of the checkbox, the **Next** button is either disabled or enabled.
 

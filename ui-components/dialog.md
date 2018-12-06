@@ -65,7 +65,7 @@ var tabPanelConfig = {
   ]
 };
 ```
-**Tabs:** These are an array of tab configurations. Each tab has a title which is used to reference the tab. The items property in the tab configuration takes a list of components and works the same way as a Panel. A tab can be programmatically be switched by calling `dialogApi.showTab(‘title’)``. For example, the dialog that appears as a result of Help plugin is usually formatted in tab panels.
+**Tabs:** These are an array of tab configurations. Each tab has a title which is used to reference the tab. The items property in the tab configuration takes a list of components and works the same way as a Panel. A tab can be programmatically be switched by calling `dialogApi.showTab(‘title’)`. For example, the dialog that appears as a result of Help plugin is usually formatted in tab panels.
 
 ![Help Button]({{site.baseurl}}/images/help.png)
 

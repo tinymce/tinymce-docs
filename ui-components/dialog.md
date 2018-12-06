@@ -7,7 +7,17 @@ keywords: dialog dialogapi api
 ---
 ## Overview
 
-A dialog is a TinyMCE UI component. Dialogs have their own dialog components which can be used inside dialogs to fulfill a use case. The Dialog API allows plugins to show dialogs (sometimes referred to as modals) in the user application. This API supports the use of dynamic content for all aspects and is easily configurable and overridable. For example, the search and replace dialog is made up of two input fields - two check boxes and five buttons. Components are composed by using a configuration structure. The most basic configuration structure is this:
+A dialog is a TinyMCE UI component. Dialogs have their own dialog components which can be used inside dialogs to fulfill a use case. The Dialog API allows plugins to show dialogs (sometimes referred to as modals) in the user application. This API supports the use of dynamic content for all aspects and is easily configurable and overridable. 
+
+### Use cases
+
+* **Display simple information** - The plugin that is used to view the source code is an example of a simple dialog that displays the HTML code from the content.
+
+* **Display complex information** - These dialogs can display complex information by using layouts components like tabs or columns to help present information to the user (e.g., help dialog or special characters dialog are tabbed dialogs).
+
+* **Interactive dialogs** - These dialogs use web forms to collect interaction data and then apply the data (e.g.: search and replace dialog, uses an input field. Where the input text will be used as the search key. Another example is, special characters or character map dialogs use typeaheads to dynamically narrow down matches as you type)
+
+For example, the search and replace dialog is made up of two input fields - two check boxes and five buttons. Components are composed by using a configuration structure. The most basic configuration structure is this:
 
 ```js
 const dialogConfig = {
@@ -19,14 +29,6 @@ const dialogConfig = {
    buttons: []    //A list of button configurations the dialog will have.
 }
 ```
-
-### Use cases
-
-* **Display simple information** - The plugin that is used to view the source code is an example of a simple dialog that displays the HTML code from the content.
-
-* **Display complex information** - These dialogs can display complex information by using layouts components like tabs or columns to help present information to the user (e.g., help dialog or special characters dialog are tabbed dialogs).
-
-* **Interactive dialogs** - These dialogs use web forms to collect interaction data and then apply the data (e.g.: search and replace dialog, uses an input field. Where the input text will be used as the search key. Another example is, special characters or character map dialogs use typeaheads to dynamically narrow down matches as you type)
 
 ## Dialog configuration framework
 

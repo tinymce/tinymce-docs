@@ -97,7 +97,7 @@ var buttonConfig = {
 
 **Submit** button when clicked, will invoke the `onSubmit` callback provided in the configuration. This callback is used to insert the message.
 
-When `onSubmit` is called, a [dialog instance API][dialogApi]({{site.baseurl}}/ui-components/dialog/#dialoginstanceapi) is passed in as the parameter. The dialog does not close by default because some use cases may require a server side callback confirmation.
+When `onSubmit` is called, a [dialog instance API]({{site.baseurl}}/ui-components/dialog/#dialoginstanceapi) is passed in as the parameter. The dialog does not close by default because some use cases may require a server side callback confirmation.
 
 **Cancel** button dismisses an action request.
 
@@ -158,7 +158,7 @@ To see the output of the code, click on the TinyMCE tab on the fiddle below.
 
 In this redial example, there are two separate dialogs that are cycled through by pressing the **Next** button. In the configuration structure, the first level is like any other dialog.
 
-The difference is the `onAction` call loads a new configuration for the dialog using redial. The configuration that is used in the `redial(dialogConf)` call can be any supported dialog structure. It could even replace this **Redial Demo** configuration, in the **Pet Name Machine** example in the [compostion]({{site.baseurl}}/dialog/#composition/) section.
+The difference is the `onAction` call loads a new configuration for the dialog using redial. The configuration that is used in the `redial(dialogConf)` call can be any supported dialog structure. It could even replace this **Redial Demo** configuration, in the **Pet Name Machine** example in the [compostion]({{site.baseurl}}/ui-components/dialog/#dialogcomposition) section.
 
 This demo also includes the use of `dialogApi.enable` and `dialogApi.disable` to disable the **Next** button when user input is required. For **Checkboxes**, the `onChange` callback is used to handle the changes for the checkbox data. The checkbox data is mapped to its defined `name: anyterms`. When a user clicks or presses **Enter** on the checkbox, the new value of the checkbox is returned by the `getData()` call stored in the anyterms property. Given the state of the checkbox, the **Next** button is either disabled or enabled.
 
@@ -173,7 +173,7 @@ The `onAction` callback inside the `redial()` call, is a separate handler for th
 
 ## Dialog composition
 
-The following example demonstrates how data flows through the dialog and how buttons are configured. This is an interactive dialog that inserts the name of a cat into the editor content on **Submit**. This example is referred to throughout the new [dialog instance API]({{site.baseurl}}/dialog/#dialoginstanceapi) section.
+The following example demonstrates how data flows through the dialog and how buttons are configured. This is an interactive dialog that inserts the name of a cat into the editor content on **Submit**. This example is referred to throughout the new [dialog instance API]({{site.baseurl}}/ui-components/dialog/#dialoginstanceapi) section.
 
 The following Pet Name Machine example illustrates an interactive dialog:
 
@@ -199,7 +199,7 @@ The instance API is a javascript object containing methods attached to the dialo
 
 | Methods | Description |
 |---------|-------------|
-| `getData(): <T>` | `getData()` returns a key-value object matching the structure of the `initialData`. See [initialData]({{site.baseurl}}/dialog/#composition/) configuration. The object keys in the returned data object represent a component name.  For the **Insert Cat Name** example, `data.catdata` is the value currently being held by the input field with the name `catdata` |
+| `getData(): <T>` | `getData()` returns a key-value object matching the structure of the `initialData`. See [initialData]({{site.baseurl}}/ui-components/dialog/#composition/) configuration. The object keys in the returned data object represent a component name.  For the **Insert Cat Name** example, `data.catdata` is the value currently being held by the input field with the name `catdata` |
 | `setData(newConfig: object): void`  | `setData(newData)` updates the data set.  This method also works with partial data sets. |
 | `disable(name: string): void` | Calling `disable()` and passing the component name will disable the component.  Calling `enable(name)` will re-enable the component. |
 | `enable(name: string): void` | Calling `enable()` and passing the component name will enable a component, and users can interact with the component. |

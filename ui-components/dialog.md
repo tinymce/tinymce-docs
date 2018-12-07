@@ -7,7 +7,7 @@ keywords: dialog dialogapi api
 ---
 ## Overview
 
-A dialog is a TinyMCE UI component. Dialogs have their own dialog components which can be used inside dialogs to fulfill a use case. The Dialog API allows plugins to show dialogs (sometimes referred to as modals) in the user application. This API supports the use of dynamic content for all aspects and is easily configurable and overridable. 
+A dialog is a TinyMCE UI component. Dialogs have their own dialog components which can be used inside dialogs to fulfill a use case. The Dialog API allows showing dialogs (sometimes referred to as modals) in the user application. This API supports the use of dynamic content for all aspects and is easily configurable and overridable. 
 
 ### Use cases
 

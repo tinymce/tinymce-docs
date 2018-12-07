@@ -6,7 +6,7 @@ description: Show a word count in the TinyMCE status bar.
 keywords: wordcount
 ---
 
-This plugin adds word count functionality to TinyMCE, placing a counter on the right edge of the status as well as a toolbar button that opens a dialog showing both word- and character count. By clicking the wordcount in the statusbar you can switch between counting words and characters.
+This plugin adds word count functionality to TinyMCE by placing a counter on the right edge of the status bar. Clicking the wordcount in the statusbar switches between counting words and characters. Using the menuitem, situated in the Tools dropdown, or the toolbar button you can open a dialog box with both word and character counts. 
 
 **Type:** `String`
 

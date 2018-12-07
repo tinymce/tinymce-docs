@@ -17,7 +17,7 @@ A dialog is a TinyMCE UI component. Dialogs have their own dialog components whi
 
 * **Interactive dialogs** - These dialogs use web forms to collect interaction data and then apply the data (e.g.: search and replace dialog, uses an input field. Where the input text will be used as the search key. Another example is, special characters or character map dialogs use typeaheads to dynamically narrow down matches as you type)
 
-For example, the search and replace dialog is made up of two input fields - two check boxes and five buttons. Components are composed by using a configuration structure. The most basic configuration structure is this:
+For example, the search and replace dialog is made up of two input fields - two checkboxes and five buttons. Components are composed by using a configuration structure. The most basic configuration structure is this:
 
 ```js
 const dialogConfig = {
@@ -40,7 +40,10 @@ A Dialog configuration framework has three main parts:
 
 * **Footer** This section consists of a [button]({{site.baseurl}}/ui-components/dialogcomponents/#button) or list of buttons.
 
-### Panel
+### Body components
+
+#### Panel
+
 A **Panel** is a basic container, that holds other components. Many components can be configured inside a panel. In HTML terms, consider a panel a `<div>` wrapper. A dialog body configuration must begin with either a Panel or a TabPanel.
 
 ```js
@@ -51,9 +54,9 @@ var panelConfig = {
 ```
 **Items:** - These are an array of component configurations. Any component listed in [this]({{site.baseurl}}/ui-components/dialogcomponents/) page are compatible.
 
-### TabPanel
+#### TabPanel
 
-A **TabPanel** is similar to a panel, where it can hold other [components]({{site.baseurl}}/ui-components/dialogcomponents/). Components can be separated by tab sections. Each tab can hold different components which display information for the user that is grouped by tabs. A dialog body configuration must begin with either a Panel or a TabPanel.
+A **TabPanel** is similar to a panel, where it can hold other [components]({{site.baseurl}}/ui-components/dialogcomponents/). Tab sections can separate components. Each tab can hold different components which display information for the user that is grouped by tabs. A dialog body configuration must begin with either a Panel or a TabPanel.
 
 ```js
 var tabPanelConfig = {
@@ -71,7 +74,9 @@ var tabPanelConfig = {
 
 ![Help Button]({{site.baseurl}}/images/help.png)
 
-### Button
+### Footer components
+
+#### Button
 
 The following configuration is used to create a button inside the dialog body :
 
@@ -93,17 +98,17 @@ var buttonConfig = {
 
 **Primary:** (Default: False): When set to true, the button will be colored to stand out. The color will depend on the chosen [skin]({{site.baseurl}}/general-configuration-guide/customize-ui/#skins).
 
-### Button types
+#### Button types
 
-**Close** button is pre-wired to abort and close the dialog.
+The **Close** button is pre-wired to abort and close the dialog.
 
-**Submit** button when clicked, will invoke the `onSubmit` callback provided in the configuration. This callback is used to insert the message.
+The **Submit** button when clicked will invoke the `onSubmit` callback provided in the configuration. This callback is used to insert the message.
 
-When `onSubmit` is called, a [dialog instance API]({{site.baseurl}}/ui-components/dialog/#dialoginstanceapi) is passed in as the parameter. The dialog does not close by default because some use cases may require a server side callback confirmation.
+When `onSubmit` is called, a [dialog instance API]({{site.baseurl}}/ui-components/dialog/#dialoginstanceapi) is passed in as the parameter. The dialog does not close by default because some use cases may require a server-side callback confirmation.
 
 **Cancel** button dismisses an action request.
 
-**Custom** button can be used to specify a custom operation.
+The **Custom** button can be used to specify a custom operation.
 
 ## Dialog application examples
 
@@ -138,7 +143,7 @@ The complex dialogs are used to display complex information. These sections can 
 
 The interactive dialogs use web forms to collect interaction data, and then apply the data (e.g.: The search and replace dialog uses an input field. Where the input text will be used as the search key). These are the most complex forms of dialogs and require the users to configure the following:
 
-* Definition of a desired user input (for example, the search value in the search and replace dialog).
+* Definition of the desired user input (for example, the search value in the search and replace dialog).
 
 * Method to process the user input.
 
@@ -152,7 +157,7 @@ This example demonstrates one way of implementing an Interactive Dialog using th
 
 ### Interactive example using redial(config): void
 
-The following example demonstrates custom buttons using the redial dialog for creating two separate dialogs that is cycled through by pressing the **Next** button.
+The following example demonstrates custom buttons using the redial dialog for creating two separate dialogs that are cycled through by pressing the **Next** button.
 
 To see the output of the code, click on the TinyMCE tab on the fiddle below.
 

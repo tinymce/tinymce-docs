@@ -5,7 +5,9 @@ In TinyMCE 5.0, some configurations have been removed because they are no longer
 
 | **Setting** | **Description** |
 | ----------- | --------------- |
-| `fixed_toolbar_container` | **fixed_toolbar_container**: Owing to the enhancements to the new inline toolbar behaviour, `fixed_toolbar_container` is not required in TinyMCE 5.0. |
+| [`fixed_toolbar_container`](https://www.tiny.cloud/docs/configure/editor-appearance/#fixed_toolbar_container) | Owing to the enhancements to the new inline toolbar behaviour, `fixed_toolbar_container` is not required in TinyMCE 5.0. |
+| [`insert_toolbar`](https://www.tiny.cloud/docs/configure/editor-appearance/#insert_button_items) | Owing to the changes in the menus and removal of the `context` property, `insert_button_items` is not required in TinyMCE 5.0. Refer to the [Migration guide]({{site.baseurl}}/migration-from-4x/#removedsettings) for a workaround. |
+| [`insert_button_items`](https://www.tiny.cloud/docs/configure/editor-appearance/#insert_button_items) | Owing to the changes in the menus and removal of the `context` property, `insert_button_items` is not required in TinyMCE 5.0. Refer to the [Migration guide]({{site.baseurl}}/migration-from-4x/#removedsettings) for a workaround. |
 
 ### Removed themes
 

@@ -32,13 +32,13 @@ tinymce.init({
 
 Snippets regularly include a `selector` with the value `'textarea'`. Adapt the value of the working code block according to the HTML. 
 
-Insert the snippet into your HTML document and replace everything between the `<script>` tags containing the `tinymce` object (`tinymce.init({})`). Visual changes such as adding a toolbar button or menu item changes the editor immediately.
+Insert the snippet into your HTML document and replace everything between the `<script>` tags containing the `tinymce` object (`tinymce.init({})`). Visual changes such as adding a toolbar button or menu item change the editor immediately.
 
 ## Selector configuration
 
 Selector configuration is an important configuration option for TinyMCE integration. Selector configuration uses CSS `selector` syntax to determine which elements on the page are editable through TinyMCE.
 
-> Important!: This is where TinyMCE editable areas are specified. 
+> Important: This is where TinyMCE editable areas are specified. 
 
 TinyMCE replaces the selected element with an `iframe` and performs its operations within that `iframe` while in regular editing mode. 
 
@@ -62,7 +62,7 @@ tinymce.init({
 
 This selector can be used on any block element while using this option in TinyMCE's [inline editing mode](../use-tinymce-inline/). Inline editing mode edits the content in place instead of replacing the element with an `iframe`.
 
-The following example uses `selector` in inline editing mode on a `div` element with `id` `'editable'`:
+The following example uses the `selector` in inline editing mode on a `div` element with `id` `'editable'`:
 
 ```js
 tinymce.init({
@@ -113,9 +113,9 @@ superscript | | | |
 
 *Default TinyMCE toolbar & menubar state*
 
-The `toolbar` option diplays, orders, and groups the toolbar buttons.
+The `toolbar` option displays, orders, and groups the toolbar buttons.
 
-Use a space separate list to specify the buttons that appear in TinyMCE's toolbar. Use `"|"` pipe characters between the groups of buttons to create groups within this list.
+Use a space-separated list to specify the buttons that appear in TinyMCE's toolbar. Use `"|"` pipe characters between the groups of buttons to create groups within this list.
 
 ##### Example
 
@@ -135,7 +135,7 @@ tinymce.init({
 });
 ```
 
-The example below specifies multiple toolbars by providing an `array` of space separated strings. 
+The example below specifies multiple toolbars by providing an `array` of space-separated strings. 
 
 ##### Example
 
@@ -151,7 +151,7 @@ tinymce.init({
 > Note: Adding multiple `toolbar` options suffixed with a number i.e. "toolbar1", "toolbar2", "toolbar3" is allowed.
 
 
-### A quick look at menu and menubar controls
+### A quick look at the menu and menubar controls
 
 Just as there is a `toolbar` option, there is also a `menu` option. There  are two menu related options: `menu` and `menubar`. Let's take a quick look at the default menu items. Some of these settings are used in the examples throughout this guide and all of them within the plugins and customization documentation.
 
@@ -163,7 +163,7 @@ newdocument, undo, redo, visualaid, cut, copy, paste, selectall, bold, italic, u
 
 `menubar` affects items placed on the menu bar itself and `menu` affects individual items appearing on a menu's drop-down. `menu` also provides granular control of the menus. Customized titles can be created for menu items using `menu`.
 
-The menubar in the following snippet includes only the menu items `File`, `Edit` and `View`. 
+The menu bar in the following snippet includes only the menu items `File`, `Edit` and `View`. 
 
 > Note: The example above also loads the default items included in each respective menu. For example, `Edit` loads Undo, Redo, Cut, Copy, Paste, and Select all.
 
@@ -185,7 +185,7 @@ tinymce.init({
 });
 ```
 
-Create your own menu titles by adding a `title` value. The following example creates a menu titled "Happy". In the snippet below we create a menu with the title "Happy" and includes the "Source code" item.
+Create your menu titles by adding a `title` value. The following example creates a menu titled "Happy". In the snippet below we create a menu with the title "Happy" and includes the "Source code" item.
 
 ```js
 tinymce.init({
@@ -207,7 +207,7 @@ tinymce.init({
 });
 ```
 
-> Important: Each page in the plugin documentation indicates via an icon if that plugin has a toolbar buttons or menu items. 
+> Important: Each page in the plugin documentation indicates via an icon if that plugin has toolbar buttons or menu items. 
 
 
 
@@ -215,7 +215,7 @@ tinymce.init({
 
 TinyMCE has many other configuration options available that enable further customization and extension of the editor to match the user's requirements.
 
-The full list of configuration options is in the [Configure TinyMCE Guide]({{ site.baseurl }}/configure/). Plugins, their options and control associations are available in the [Plugin guide]({{ site.baseurl }}/plugins/).
+The full list of configuration options is in the [Configure TinyMCE Guide]({{ site.baseurl }}/configure/). Plugins, their options, and control associations are available in the [Plugin guide]({{ site.baseurl }}/plugins/).
 
 The following example is a walkthrough of a basic TinyMCE configuration.
 

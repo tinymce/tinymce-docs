@@ -21,7 +21,7 @@ Open Source Community Edition users can get free access to the [TinyMCE Forum](h
 
 ### Q: The icons are missing when installing on my server?
 
-TinyMCE 4 uses Web fonts for its icons. Some web servers do not support the mime types needed for the font file extensions. Below are the mime types needed - the first part is the mime type the second part is the file extension that needs to be mapped. It's in apache mime type format. Other servers might need a different format.
+TinyMCE 4 uses Web fonts for its icons. Some web servers do not support the mime types needed for the font file extensions. Below are the mime types required - the first part is the mime type the second part is the file extension that needs to be mapped. It's in apache mime type format. Other servers might need a different format.
 
 | MIME type                     | File Extension |
 |:------------------------------|:---------------|
@@ -35,7 +35,7 @@ TinyMCE 4 uses Web fonts for its icons. Some web servers do not support the mime
 
 ### Q: Why do buttons/select boxes have the incorrect size?
 
-You are probably using an old `DOCTYPE` as of TinyMCE 4 a proper HTML5 doctype is required. All web developers should use a standards rendering mode on their web pages. Use a HTML5 doctype like `<!DOCTYPE html>` to properly render the page and the TinyMCE UI.
+You are probably using an old `DOCTYPE` as of TinyMCE 4 a proper HTML5 doctype is required. All web developers should use a standard rendering mode on their web pages. Use a HTML5 doctype like `<!DOCTYPE html>` to properly render the page and the TinyMCE UI.
 
 ### Q: Is TinyMCE protected against XSS vulnerabilities?
 

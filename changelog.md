@@ -8,6 +8,12 @@ class: changelog
 
 {% capture changelog %}
 
+## Version 4.9.1 December 04, 2018
+* Added functionality to insert html to the replacement feature of the Textpattern Plugin.
+* Fixed a bug where `editor.selection.getContent({format: 'text'})` didn't work as expected in IE11 on an unfocused editor.
+* Fixed a bug in the Textpattern Plugin where the editor would get an incorrect selection after inserting a text pattern on Safari.
+* Fixed a bug where the space bar didn't work correctly in editors with the forced_root_block setting set to false.
+
 ## Version 4.9.0 November 27, 2018
 * Added a replace feature to the Textpattern Plugin.
 * Added functionality to the Lists Plugin that improves the indentation logic.

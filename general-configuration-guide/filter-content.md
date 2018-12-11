@@ -14,7 +14,7 @@ These settings enable developers to control content styling features that are av
 
 This section is about the [formats]({{ site.baseurl }}/configure/content-filtering/#font_formats) configuration option. These options enable developers to override TinyMCE defaults and adds custom "formats" to the editor.  
 
-A format is a style that is applied to text when a user clicks the bold button inside the editor. TinyMCE is equipped with a text formatting engine that allows the specification of an expected action. For example, TinyMCE let's the user specify what to produce when a user clicks the bold button.
+A format is a style that is applied to text when a user clicks the bold button inside the editor. TinyMCE is equipped with a text formatting engine that allows the specification of expected action. For example, TinyMCE lets the user specify what to produce when a user clicks the bold button.
 
 ### Style merging
 
@@ -22,7 +22,7 @@ Similar elements and styles are merged by default to reduce the output HTML size
 
 ### Built-in formats
 
-TinyMCE contains built-in formats that can be overriden. More information about these default controls are in the [Basic Setup](../basic-setup) part of this guide. 
+TinyMCE contains built-in formats that can be overridden. More information about these default controls is in the [Basic Setup](../basic-setup) part of this guide. 
 
 * alignleft
 * aligncenter

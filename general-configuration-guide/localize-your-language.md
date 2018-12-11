@@ -19,7 +19,7 @@ Go to the [language download page](https://www.tinymce.com/download/language-pac
 
 Click the download link on the far right of the table for a single language. Check the box beside each language and then click the download button at the bottom of the table for multiple languages.
 
-> Important! The TinyMCE community translation project provide the language packs on our language download page. 
+> Important: The TinyMCE community translation project provides the language packs on our language download page. 
 
 ### Step 2
 

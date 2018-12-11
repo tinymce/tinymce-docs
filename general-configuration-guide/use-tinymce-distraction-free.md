@@ -8,7 +8,7 @@ keywords: theme inlite distraction-free
 
 The **Distraction-free** theme renders the editor in lightweight inline mode. This mode provides options to quickly insert links, images, and tables into the content. For a sample view of this mode, see the [Distraction-free Editor]({{ site.baseurl }}/demo/editor-dfree/) example page.
 
-The `inlite` plugin renders the editor in lightweight inline mode. The current default theme is [Classic]({{ site.baseurl }}../use-tinymce-classic). This is an optional, even more lightweight distraction-free UI for the editor.
+The `inlite` plugin renders the editor in lightweight inline mode. The current default theme is [Classic]({{ site.baseurl }}../use-tinymce-classic). This is an optional, even more, lightweight distraction-free UI for the editor.
 
 ##### Example:
 
@@ -26,7 +26,7 @@ tinymce.init({
 
 #### quicklink
 
-The `quicklink` quickly inserts and edits links inline.
+The `quicklink` quickly inserts and edits link inline.
 
 ##### Example:
 

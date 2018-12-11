@@ -414,10 +414,11 @@
   pages:
   - url: "dialog"
     pages:
-    - url: "#Types"
-    - url: "#InstanceAPI"
-    - url: "#Framework"
-    - url: "#Example"
+    - url: "#Overview"
+    - url: "#Dialog configuration framework"
+    - url: "#Dialog application examples"
+    - url: "#Dialog compostion"
+    - url: "#Dialog instance API"
   - url: "dialogcomponents"
     pages:
     - url: "#AlertBanner"
@@ -502,7 +503,7 @@
   # - url: "creating-a-custom-button"
   # - url: "creating-a-skin"
   # - url: "creating-a-plugin"
-  # - url: "annotations"
+  - url: "annotations"
   - url: "yeoman-generator"
   # - url: "creating-custom-dialogs"
   - url: "creating-custom-notifications"

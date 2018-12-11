@@ -3,13 +3,19 @@ layout: default
 title: Page Embed plugin
 title_nav: Page Embed
 description: Lets you easily add iframe embeds to your content.
-keywords: view Page Embed 
+keywords: view Page Embed insert iframe
 controls: toolbar button, menu item
 ---
 
 The TinyMCE **Page Embed** plugin lets you embed a page in your content in a responsive or exactly sized iframe.
 
 This plugin adds a Page Embed button to the toolbar. Pressing the button opens a dialog where you can enter a URL to the page you want to embed into your content. You can also choose if you want to set an exact dimension size or use a responsive size such as 16 by 9 that will adapt to the page where your content will be shown. 
+
+
+## Live example
+
+{% include codepen.html id="page-embed" %}
+
 
 ##### Example
 

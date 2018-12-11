@@ -3,11 +3,15 @@ layout: default
 title: Permanent Pen Plugin
 title_nav: Permanent Pen
 description: Apply formats when typing
-keywords: 
+keywords: permanent pen copy text format style
 controls: toolbar button, contextmenu, menu item
 ---
 
 The Permanent Pen plugin lets a user apply formats while typing. It adds a toolbar button which toggles the functionality of the Permanent Pen. It also adds a `Permanent Pen` item under the `Format` menu which opens up a properties dialog when clicked. The Permanent Pen properties dialog, also accessible through a context menu, can be used to configure the formats used.
+
+## Live example
+
+{% include codepen.html id="permanent-pen" %}
 
 ##### Example
 

@@ -14,6 +14,7 @@ Files required under _includes/codepens/id/
 index.html
 index.js
 index.css
+example.js optional file, when present the displayed JS tab example will use example.js, while the real code executes with index.js
 
 {% endcomment %}
 
@@ -25,7 +26,11 @@ index.css
 {% endcapture %}
 
 {% capture codepen_js %}
-{% include codepens/{{ include.id }}/index.js %}
+    {% if exists codepens/{{ include.id }}/example.js %}
+        {% include codepens/{{ include.id }}/example.js %}
+    {% else %}
+        {% include codepens/{{ include.id }}/index.js %}
+    {% endif %}
 {% endcapture %}
 
 {% capture codepen_css %}

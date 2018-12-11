@@ -3,13 +3,18 @@ layout: default
 title: Format Painter
 title_nav: Format Painter
 description: Quickly apply formats to multiple pieces of text.
-keywords: formats formatting edit formatpainter_removeformat formatpainter_tableformats formatpainter_blacklisted_formats
+keywords: formats formatting edit formatpainter_removeformat formatpainter_tableformats formatpainter_blacklisted_formats format painter configuration
 controls: toolbar button
 ---
 
 The `Format Painter` plugin allows a user to copy and paste formatting from one location to another, such as font style and size. The format painter is capable of working with a wide variety of formats such as inline and block formats and styles such as table styles.
 
 The format painter is accessed using either keyboard shortcuts or a toolbar button.
+
+
+## Live example
+
+{% include codepen.html id="format-painter" %}
 
 ##### Example
 

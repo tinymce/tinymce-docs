@@ -21,12 +21,12 @@ The Custom Menu items configurations options has changed in TinyMCE 5.0. The `ad
 
 The [Dialog]({{site.baseurl}}/ui-components/dialog/) component is created for showing dialogs (sometimes referred to as modals) in the user application. The plugin supports the use of dynamic content for all aspects and is easily configurable and overridable. To display simple information, e.g., a source code plugin displays the HTML code from the content in the dialog.
 
-### Format Painter 1.0
+<!--### Format Painter 1.0
 
 The `Format Painter` plugin allows the copying and pasting formatting from one location to another, such as font style and size. The format painter is capable of working with a wide variety of formats and styles such as inline & block formats and table styles.
 The format painter may be used either through keyboard shortcuts or a toolbar button.
 
-<!--Refer to the [Format Painter]({{site.baseurl}}/plugins/formatpainter/) documentation, for more information.-->
+Refer to the [Format Painter]({{site.baseurl}}/plugins/formatpainter/) documentation, for more information.-->
 
 <!-- ### Icon Packs
 

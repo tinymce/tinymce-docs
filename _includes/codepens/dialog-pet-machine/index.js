@@ -1,5 +1,5 @@
 /* example dialog that inserts the name of a Pet into the editor content */
-const dialogConfig =  {
+var dialogConfig =  {
   title: 'Pet Name Machine',
   body: {
     type: 'panel',
@@ -33,9 +33,9 @@ const dialogConfig =  {
     catdata: 'initial Cat',
     isdog: 'unchecked'
   },
-  onSubmit: (api) => {
-    const data = api.getData();
-    const pet = data.isdog === 'checked' ? 'dog' : 'cat';
+  onSubmit: function (api) {
+    var data = api.getData();
+    var pet = data.isdog === 'checked' ? 'dog' : 'cat';
 
     tinymce.activeEditor.execCommand('mceInsertContent', false, '<p>My ' + pet +'\'s name is: <strong>' + data.catdata + '</strong></p>');
     api.close();
@@ -43,12 +43,12 @@ const dialogConfig =  {
 };
 
 tinymce.init({
-  selector: 'textarea',
+  selector: 'textarea.petMachine',
   toolbar: 'dialog-example-btn',
-  setup: (editor) => {
+  setup: function (editor) {
     editor.ui.registry.addButton('dialog-example-btn', {
       icon: 'code-sample',
-      onAction: () => {
+      onAction: function () {
         editor.windowManager.open(dialogConfig)
       }
     })

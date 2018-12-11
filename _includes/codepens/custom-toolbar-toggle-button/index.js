@@ -1,17 +1,21 @@
 tinymce.init({
   selector: 'textarea',
   toolbar: 'customStrikethrough customToggleStrikethrough',
-  setup: (editor) => {
+  setup: function (editor) {
     editor.ui.registry.addToggleButton('customStrikethrough', {
       text: 'Strikethrough',
-      onAction: (_) => editor.execCommand('mceToggleFormat', false, 'strikethrough')
+      onAction: function (_) {
+        editor.execCommand('mceToggleFormat', false, 'strikethrough');
+      }
     });
 
     editor.ui.registry.addToggleButton('customToggleStrikethrough', {
       icon: 'strike-through',
-      onAction: (_) => editor.execCommand('mceToggleFormat', false, 'strikethrough'),
-      onSetup: (api) => {
-        editor.formatter.formatChanged('strikethrough', (state) => {
+      onAction: function (_) {
+        editor.execCommand('mceToggleFormat', false, 'strikethrough');
+      },
+      onSetup: function (api) {
+        editor.formatter.formatChanged('strikethrough', function (state) {
           api.setActive(state);
         });
       }

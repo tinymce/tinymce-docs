@@ -11,14 +11,14 @@ TinyMCE has three main integration modes: a _classic_ form-based mode, an _inlin
 
 The inline editing mode is useful when creating user experiences where you want the editing view of the page to be merged with the reading view of the page. This creates a seamless editing experience and true WYSIWYG behavior.
 
-When in inline editing mode the editor does not replace the selected element with its own iframe, but instead edits the element's content in place instead. For a sample view of this mode, visit the [Inline Editor]({{ site.baseurl }}/demo/inline) example page.
+When in inline editing mode the editor does not replace the selected element with its iframe, but instead edits the element's content in place instead. For a sample view of this mode, visit the [Inline Editor]({{ site.baseurl }}/demo/inline) example page.
 
 
 ## Forms-based editing vs. inline editing
 
 Most common TinyMCE integrations use the editor in its classic form-based mode. In this integration mode, the editor usage is as a form field that is filled out to provide content. The editor is always visible as part of the form to be edited.
 
-Inline editing mode blends the editable view with the readable view of the page. Elements are replaced inline with an editor once clicked rather than the editor always being visible.
+Inline editing mode blends the editable view with a readable view of the page. Elements are replaced inline with an editor once clicked rather than the editor always being visible.
 
 Most significantly, when using inline editing TinyMCE is not isolated from the page by being encapsulated within an iframe. This has the advantage of ensuring that the content within the editor inherits the surrounding page's styles when presenting the content.
 

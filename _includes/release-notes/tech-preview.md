@@ -5,11 +5,11 @@ It is important to note that these "Tech Previews" are not fully supported under
 
 Please provide feedback or [contact us](https://support.tiny.cloud/hc/en-us/requests/new) for support.
 
-### Format Painter
+<!-- ### Format Painter
 
 [Documentation]({{site.baseurl}}/plugins/formatpainter)
 
-<!-- ### Permanent Pen 1.0
+ ### Permanent Pen 1.0
 
 ### Tiny Drive 1.1
 

@@ -17,7 +17,7 @@ Refer to the [Context Toolbar]({{site.baseurl}}/ui-components/contexttoolbar/) d
 
 The Custom Menu items configurations options have changed in TinyMCE 5.0. The `addMenuItem` has a new configuration. A new method `addToggleMenuItem` has been added which is an explicit method for creating toggle menu items similar to the new special toolbar button methods.
 
-Refer to the [configuration]({{site.baseurl}}/ui-components/typesoftoolbarbuttons/#menunbspbutton) documentation, for more information on `editor.menuitems`.
+Refer to the [configuration]({{site.baseurl}}/ui-components/typesoftoolbarbuttons/#menubutton) documentation, for more information on `editor.menuitems`.
 
 <!-- ### Custom Sidebars
 
@@ -73,15 +73,13 @@ A skin usually changes the color scheme of a button, dialog, etc. while the them
 
 In TinyMCE 5.0 the **Silver** theme contains a set of configurable UI components that could be used to replace the current customizations (modern, inline, and inlite theme). Silver is enabled by default if a theme is not specified.
 
-The skin creator is coupled with the `tinymce.ui` framework, so it works with the modern theme, the inlite theme, and to some extent MoxieManager.
-
 ### Page Embed
 
 The **Page Embed** premium plugin allows inserting content from another source, such as an advertisement, on a Web page.
 
 This plugin is used to embed another document within the current HTML document and display this content, including scrollbars and borders.
 
-Using the Page Embed feature can enable including content like Google map or a video from YouTube in the website content.
+Using the Page Embed feature can enable including content like Google maps or a video from YouTube in the website content.
 
 The embedded content is an independent HTML document, referenced in the `src` attribute of each element. Hence it is a fully independent resource, referenced from the current document.
 
@@ -91,7 +89,7 @@ The Page Embed premium plugin will be available to use with TinyMCE in the early
 
 ### Permanent Pen 1.0
 
-The Permanent Pen is a premium plugin that allows adding comments or responses in emails or other Notes documents, without having to change the test color or style.
+The Permanent Pen is a premium plugin that allows adding comments or responses in emails or other documents, without having to change the text color or style.
 
 For collaborative projects, the Permanent Pen enables adding text in a different color, typeface and type style, or font than the default font settings. This allows each user to work in a different colored permanent pen making it easy for everyone to see who contributed to the document by the color of the text.
 
@@ -105,11 +103,9 @@ The Permanent Pen premium plugin will be available to use with TinyMCE in the ea
 
 ### Tables
 
-Tables are better in TinyMCE 5.0 editor. Creating and configuring tables in TinyMCE 5.0 is less cumbersome.
+Tables are better in TinyMCE 5.0 editor. Creating and configuring tables in TinyMCE 5.0 is simpler.
 
-This feature has been enhanced by modifying the code to ensure the styles are correct and consistent. The **Styles** text field has been removed from the advanced table of the dialogs. The code is now much less confronting and confusing for non-developers.
-
-This also means more control can be exercised over the table styles to ensure better the styles are correct. The process of how styles are set and retrieved from tables, rows, or cells, have been improved to d be more reliable.
+This feature has been enhanced by modifying the code to ensure the styles are correct and consistent. The **Styles** text field has been removed from the advanced table properties dialogs. The dialog configuration is now much less confronting and confusing for non-developers.
 
 "Border" input field in the table properties dialog is now called "Border width" for clarity. Refer the [Tables]({{site.baseurl}}/plugins/table/) documentation, for more information. Tables are enriched with the following new additions:
 
@@ -127,11 +123,11 @@ Refer the [Toolbar Buttons]({{site.baseurl}}/ui-components/toolbarbuttons/) docu
 
 ### UI accessibility
 
-The new TinyMCE 5.0 has a better UI accessibility for a diverse set of users. Tiny is committed to adhering to WCAG 2.1 standards to ensure content is accessible to everyone.
+The new TinyMCE 5.0 editor has improved UI accessibility for a diverse set of users. Tiny is committed to adhering to WCAG 2.1 standards to ensure content is accessible to everyone.
 
-TinyMCE UI can be mouse or keyboard driven. The new UI delivers a consistent user experience when used with screen readers or browsers in various modes like high contrast on both mobile and desktop platforms.
+TinyMCE 5.0 conforms to WCAG 2.1 standards and has a stricter editor UI and workflow to offer a much more accessibility-compliant interface and a consistent workflow. TinyMCE UI can be mouse or keyboard driven. 
 
-TinyMCE 5.0 conforms to WCAG 2.1 standards and has a stricter editor UI and workflow to offer a much more accessibility-compliant interface and a consistent workflow. While this may impact a developer's customization abilities, they receive a more overall consistent user experience.
+The new UI delivers a consistent user experience when used with screen readers or browsers in various modes like high contrast on both mobile and desktop platforms. While this may impact a developer's customization abilities, they receive a more overall consistent user experience.
 
 <!-- ### UI microcopy audit
 

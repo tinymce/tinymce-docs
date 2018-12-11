@@ -1,5 +1,5 @@
 var fakeMentionsServer = function (term, success) {
-  /* 
+  /*
     Fake mentions server, implementations will vary however data passed to success must be an object with these properties
 
     success({
@@ -94,9 +94,9 @@ var fakeMentionsServer = function (term, success) {
     var image = 'https://s3.amazonaws.com/uifaces/faces/twitter/' + images[Math.round(images.length * Math.random())] + '/128.jpg';
     return {
       id: name,
-      name,
-      fullName,
-      image
+      name: name,
+      fullName: fullName,
+      image: image
     };
   });
 
@@ -105,10 +105,10 @@ var fakeMentionsServer = function (term, success) {
     var matches = users.filter(function (user) {
       return user.name.indexOf(term.toLowerCase()) !== -1;
     });
-  
+
     /* fake async server delay */
-    var timeout = 30; 
-  
+    var timeout = 30;
+
     window.setTimeout(function () {
       success(matches);
     }, timeout);
@@ -118,7 +118,7 @@ var fakeMentionsServer = function (term, success) {
 };
 
 var mentions_menu_complete = function (editor, userinfo) {
-  const x = document.createElement('div');
+  var x = document.createElement('div');
 
   x.innerHTML = '<span style="color: green" class="mentionsmentionsmentions">@' + userinfo.name + '</span>';
 
@@ -132,7 +132,7 @@ var mentions_fetch = function (query, success) {
 tinymce.init({
   selector: "textarea",
   plugins: "mentions",
-  
+
   mentions_selector: '.mentionsmentionsmentions',
   mentions_fetch: mentions_fetch,
   mentions_menu_complete: mentions_menu_complete

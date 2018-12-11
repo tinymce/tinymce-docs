@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Custom Toolbar Button
-title_nav: Custom Toolbar Button
+title: Custom toolbar button
+title_nav: Custom toolbar button
 description_short: Add a custom button to the toolbar.
 description: This example shows you how to add a custom button to the toolbar.
 keywords: example demo custom toolbar button

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Noneditable Plugin
+title: Noneditable plugin
 title_nav: Noneditable
 description: Prevent users from changing content within elements. Ideal for templates.
 keywords: noneditable contenteditable editable mceNonEditable noneditable_editable_class noneditable_noneditable_class noneditable_regexp
@@ -94,3 +94,38 @@ tinymce.init({
   noneditable_regexp: /<custom-token>/g
 });
 ```
+
+## Making Content Noneditable:
+
+### Procedure
+
+* Add to `plugins`.
+
+```js
+tinymce.init({
+  selector: "textarea",  // change this value according to your HTML
+  plugins: "noneditable"
+});
+```
+
+* Configure `noneditable_noneditable_class` or the others as necessary in your `tiny.init` with the class name you want to use for noneditable regions.
+
+```js
+tinymce.init({
+  selector: "textarea",  // change this value according to your HTML
+  plugins: "noneditable",
+  noneditable_editable_class: "mceEditable"
+});
+```
+> Note: Replace `mceEditable` with the class name you want for your noneditable regions.
+
+* Select the desired content.
+* In your editor, select `Source code` from the `Tools` menu.
+* Apply the noneditable class to the desired editor content.
+
+```html
+<div class="myclass mceEditable">Contents</div>
+```
+
+
+

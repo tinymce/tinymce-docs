@@ -1,11 +1,12 @@
 ---
 layout: default
 title: Cloud Deployment Guide
-description: If you are new to TinyMCE Cloud, this is the place to start.
+title_nav: Cloud deployment guide
+description: Start here for Tiny Cloud.
 type: folder
 ---
 
 {% assign links = site.data.nav[2].pages %}
 {% include index.html links=links %}
 
-comming soon
+Coming soon

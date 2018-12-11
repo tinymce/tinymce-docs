@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Lists Plugin
+title: Lists plugin
 title_nav: Lists
 description: Normalizes list behavior between browsers.
 keywords: list lists browser normalize

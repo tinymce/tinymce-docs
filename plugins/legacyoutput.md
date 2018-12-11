@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Legacy Output Plugin
+title: Legacy Output plugin
 title_nav: Legacy Output
 description: Changes HTML output to old HTML syntax such as font, b and i
 keywords: legacyoutput filter content cms email flash

@@ -1,21 +1,19 @@
 ---
 layout: default
-title: Create a Plugin for TinyMCE
-title_nav: Create a Plugin
+title: Create a plugin for TinyMCE
+title_nav: Create a plugin
 description_short: Introducing plugin creation, with an example.
 description: A short introduction to creating plugins for TinyMCE along with an example plugin.
 keywords: plugin plugin.js plugin.min.js tinymce.js
 ---
 
-Creating plugins in TinyMCE is pretty simple - especially if you use the [Yeoman generator]({{ site.baseurl }}/advanced/yeoman-generator/)! - but if you would rather do it all by yourself, keep reading.
-
-This tutorial tries to outline some of the basic concepts of creating a plugin. For more details consult the API documentation and check the existing plugins we ship with the core.
+TinyMCE is designed to make creating plugins simple and to provide choice. Users can employ the [Yeoman generator]({{ site.baseurl }}/advanced/yeoman-generator/) or you can use the following tutorial that outlines the basic concepts of creating a plugin. Consult the API documentation and review the existing plugins that are shipped with the core editor for additional details.
 
 ## File Structure
 
-To create a plugin, you need to create a directory in the TinyMCE plugins directory. TinyMCE will load the plugin.js file if you use the tinymce.js file in your page. If you use the tinymce.min.js file, it will load the plugin.min.js file. It's recommended to use the tinymce.js file while developing then have a build script minifying the plugin.js into plugin.min.js for production usage.
+First create a directory in the TinyMCE plugins directory. TinyMCE loads the `plugin.js` file when developers use the `tinymce.js` file in the page. Similarly, the `tinymce.min.js` loads the `plugin.min.js` file. The recommended usage is to use the `tinymce.js` file while developing and then use a build script minifying the `plugin.js` into `plugin.min.js` in production.
 
-The build scripts that comes with the development package of TinyMCE will automatically build all plugins including your custom ones.
+The build scripts that comes with the TinyMCE development package automatically builds all plugins including custom ones.
 
 ## Example of the plugin file structure
 
@@ -24,7 +22,7 @@ The build scripts that comes with the development package of TinyMCE will automa
 /tinymce/plugins/example/plugin.min.js
 ```
 
-This new example plugin can now be loaded using the tinymce.init plugins option.
+This new example plugin can be loaded using the `tinymce.init` plugins option.
 
 ```js
 tinymce.init({
@@ -33,7 +31,7 @@ tinymce.init({
 });
 ```
 
-You can also have the plugin in any location you want by loading the plugin.js/plugin.min.js files directly after the tinymce.js/tinymce.min.js.
+Developers can designate the location of the plugins by loading the `plugin.js` or `plugin.min.js` files directly after the `tinymce.js` or `tinymce.min.js`.
 
 ## Example of loading the plugin from another URL
 
@@ -44,7 +42,7 @@ You can also have the plugin in any location you want by loading the plugin.js/p
 
 ## Example plugin
 
-Here is an example plugin showing how you add a simple toolbar button and menu item. The button opens a dialog that lets you type in a title that gets inserted into the editor. The menu item will open the TinyMCE site in a dialog.
+This example plugin demonstrates how to add a simple toolbar button and menu item. This button opens a dialog that allows a title to be entered into the editor. The menu item will open the TinyMCE site in a dialog.
 
 ```js
 tinymce.PluginManager.add('example', function(editor, url) {
@@ -99,7 +97,7 @@ tinymce.PluginManager.add('example', function(editor, url) {
 
 ## Example init
 
-Here is an example of how to use the new toolbar button.
+The following is an example of how to use the new toolbar button.
 
 ```js
 tinymce.init({
@@ -111,24 +109,24 @@ tinymce.init({
 
 ## Exposing metadata
 
-You can expose metadata from your plugin by returning an object with the property `getMetadata` with a function that returns an object with a `name` and `url` property. This metadata will then be used by the [Help Plugin]({{ site.baseurl }}/plugins/help/) to show the correct name and link for your plugin in the Plugins installed tab. See the `test` plugin above for example.
+Metadata can be exposed from a custom plugin by returning an object with the property `getMetadata` with a function that returns an object with a `name` and `url` property. This metadata is used by the [Help Plugin]({{ site.baseurl }}/plugins/help/) to show the correct name and link for the plugin in the Plugins installed tab. See the `test` plugin above for example.
 
 ## Language localization
 
-If you want to have custom translations for your plugin you need to create a "langs" directory in your plugin directory. TinyMCE will then try to load language files based on the specified language core for example if the language is "sv_SE" it will try to load ```'<your plugin>/langs/sv_SE.js'```.
+Create a "langs" directory in the plugin directory for custom translations. TinyMCE loads language files based on the specified language code. For example, if the language is "es_ES" it will try to load ```'<your plugin>/langs/es_ES.js'```.
 
-This file is similar to .po files it has the English string on the left side and the translated string on the right side.
+The structure is similar to `.po` files in that the English string left and its corresponding translation on the right.
 
-## Example of a Swedish translation for the dialog title
+## Example of a Spanish translation for the dialog title
 
 ```js
-tinymce.addI18n('sv_SE', {
+tinymce.addI18n('es_ES', {
   'Example plugin': 'Example plugin'
 });
 ```
 
-Sometimes you don't have all the translations that the full TinyMCE package has this would result in a 404 error while loading the non-existing file. This can be avoided by adding this line to the top of your plugin file.
+> Warning: A 404 error will load if translations are missing in the plugin that the full TinyMCE package contains. Add the following line to the top of the plugin file to avoid this.
 
 ```js
-tinymce.PluginManager.requireLangPack('example', 'sv_SE,de_AT');
+tinymce.PluginManager.requireLangPack('example', 'es_ES,de_AT');
 ```

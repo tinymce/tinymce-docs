@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Drive
+title: Drive plugin
 title_nav: Drive
 description: Cloud-based file and image management for TinyMCE.
 keywords: tinydrive storage media tiny drive
@@ -80,6 +80,22 @@ tinymce.init({
 });
 ```
 
+### `tinydrive_max_image_dimension`
+
+This setting enables you to constrain the width/height of uploaded images. When this is enabled any images with a higher width or height than the specified amount would be proportionally resized down to the specified max dimension.
+
+**Type:** `Number`
+
+#### Example
+
+```js
+tinymce.init({
+  selector: "textarea",  // change this value according to your HTML
+  plugins: "tinydrive",
+  tinydrive_max_image_dimension: 1024
+});
+```
+
 ## Insert File toolbar button
 
 Drive will automatically integrate into the Image, Link, and Media dialogs as a file picker. You can also configure it to insert files directly into your content using the `insertfile` button. To enable this button, add it to your toolbar editor setting.
@@ -136,3 +152,6 @@ All files are uploaded to a central storage with a CDN endpoint that means that 
 The URL format for each file is `https://drive.tiny.cloud/1/{your-api-key}/{uuid}` and gets generated when a file is uploaded.
 If you move or rename a file, it will still have the same unique URL, so the restructuring of your files using Drive won't affect where they are being used. However, deleting a file will mark the URL as being unused, and the URL will not continue to work.
 
+## User specific root
+
+It's common that you want to be able to have user specific paths so that each user within your system gets it's own directory. This can be done by setting the `https://claims.tiny.cloud/drive/root` custom jwt claim to a path within your tiny drive account. This path will automatically be constructured when the user is accessing drive using a jwt key with that claim. The user only be able to see and manage files within that root.

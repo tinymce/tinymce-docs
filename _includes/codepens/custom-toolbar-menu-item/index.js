@@ -4,17 +4,18 @@ tinymce.init({
   plugins: 'wordcount',
   toolbar: false,
   menubar: "tools",
-    content_css: [
+  content_css: [
     '//fonts.googleapis.com/css?family=Lato:300,300i,400,400i',
-    '//www.tiny.cloud/css/codepen.min.css'],
-  
-  setup: function(editor) {
+    '//www.tiny.cloud/css/codepen.min.css'
+  ],
+
+  setup: function (editor) {
     editor.addMenuItem('myitem', {
       text: 'My menu item',
       context: 'tools',
-      onclick: function() {
+      onclick: function () {
         editor.insertContent('&nbsp;Here\'s some content!&nbsp;');
       }
     });
-  },
+  }
 });

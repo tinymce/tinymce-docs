@@ -1,6 +1,7 @@
 ---
 layout: default
-title: Advanced Editing Behaviors
+title: Advanced editing behaviors
+title_nav: Advanced editing options
 description_short:
 description: Learn about some edge case editor behavior.
 ---

@@ -1,6 +1,7 @@
 ---
 layout: default
-title: Get TinyMCE Bugs Fixed
+title: Get TinyMCE bugs fixed
+title_nav: Get bugs fixed
 description: TinyMCE Enterprise customers get priority fixes of bugs.
 keywords: enterprise bug bugs patch patches
 ---

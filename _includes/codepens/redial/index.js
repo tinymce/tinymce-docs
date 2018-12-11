@@ -31,16 +31,13 @@ var config = {
       disabled: true
     }
   ],
-  onChange: (dialogApi, changeData) => {
-    console.log('onChange fired');
-    debugger;
-
+  onChange: function (dialogApi, changeData) {
     var data = dialogApi.getData();
     /* Example of enabling and disabling a button, based on the checkbox state. */
     var toggle = data.anyterms === 'checked' ? dialogApi.enable : dialogApi.disable;
     toggle('uniquename');
   },
-  onAction: (dialogApi, actionData) => {
+  onAction: function (dialogApi, actionData) {
     if (actionData.name === 'uniquename') {
       dialogApi.redial({
         title: 'Redial Demo - Page 2',
@@ -74,7 +71,7 @@ var config = {
         initialData: {
           choosydata: ''
         },
-        onAction: (dialogApi, actionData) => {
+        onAction: function (dialogApi, actionData) {
           var data = dialogApi.getData();
 
           var result = 'you chose wisely: ' + data.choosydata;
@@ -91,12 +88,13 @@ var config = {
 };
 
 tinymce.init({
-  selector: 'textarea',
-  toolbar: 'pet-example',
-  setup: (editor) => {
-    editor.ui.registry.addButton('pet-example', {
+  selector: 'textarea.wizard',
+  toolbar: 'wizardExample',
+  height: '900px',
+  setup: function (editor) {
+    editor.ui.registry.addButton('wizardExample', {
       icon: 'code-sample',
-      onAction: () => {
+      onAction: function () {
         editor.windowManager.open(config)
       }
     })

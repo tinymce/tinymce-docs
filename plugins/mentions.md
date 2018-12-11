@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Mentions Plugin
+title: Mentions plugin
 title_nav: Mentions
 description: Enables @mention functionality.
 keywords: mentions atmentions

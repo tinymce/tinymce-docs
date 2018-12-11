@@ -1,0 +1,26 @@
+[1mdiff --git a/_data/nav.yml b/_data/nav.yml[m
+[1mindex d8edd8c..3f2e139 100644[m
+[1m--- a/_data/nav.yml[m
+[1m+++ b/_data/nav.yml[m
+[36m@@ -529,6 +529,8 @@[m
+   - url: "wordpress"[m
+ [m
+ - url: "migration-from-4x"[m
+[32m+[m[32m  pages:[m
+[32m+[m[32m  - url: "#Themes"[m
+ [m
+ - url: "release-notes"[m
+   pages:[m
+[1mdiff --git a/migration-from-4x.md b/migration-from-4x.md[m
+[1mindex c10a11e..8bcb65c 100644[m
+[1m--- a/migration-from-4x.md[m
+[1m+++ b/migration-from-4x.md[m
+[36m@@ -1,7 +1,6 @@[m
+ ---[m
+ layout: default[m
+[31m-title: Migrating from TinyMCE 4.x to TinyMCE 5.0.[m
+[31m-title_nav: Migrating from 4.x[m
+[32m+[m[32mtitle: Migrating from 4.x[m
+ description: Instructions for migrating from TinyMCE 4.x to TinyMCE 5.0.[m
+ keywords: migration considerations premigration pre-migration[m
+ ---[m

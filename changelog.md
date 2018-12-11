@@ -8,6 +8,20 @@ class: changelog
 
 {% capture changelog %}
 
+## Version 4.9.1 December 04, 2018
+* Added functionality to insert html to the replacement feature of the Textpattern Plugin.
+* Fixed a bug where `editor.selection.getContent({format: 'text'})` didn't work as expected in IE11 on an unfocused editor.
+* Fixed a bug in the Textpattern Plugin where the editor would get an incorrect selection after inserting a text pattern on Safari.
+* Fixed a bug where the space bar didn't work correctly in editors with the forced_root_block setting set to false.
+
+## Version 4.9.0 November 27, 2018
+* Added a replace feature to the Textpattern Plugin.
+* Added functionality to the Lists Plugin that improves the indentation logic.
+* Fixed a bug where it wasn't possible to delete/backspace when the caret was between a contentEditable=false element and a BR.
+* Fixed a bug where copying table cells without a text selection would fail to copy anything.
+* Implemented missing `autosave_restore_when_empty` functionality in the Autosave Plugin. Patch contributed by gzzo.
+* Reduced insertion of unnecessary nonbreaking spaces in the editor.
+
 ## Version 4.8.5 October 30, 2018
 * Added a content_css_cors setting to the editor that adds the crossorigin="anonymous" attribute to link tags added by the StyleSheetLoader.
 * Fixed a bug where trying to remove formatting with a collapsed selection range would throw an exception.

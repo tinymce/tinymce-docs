@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Autoresize Plugin
+title: Autoresize plugin
 title_nav: Autoresize
 description_short:
 description: Automatically resize TinyMCE to fit content.
@@ -40,7 +40,7 @@ tinymce.init({
 });
 ```
 
-### `autoresize_max_height`
+### `max_height`
 
 This option enables you to specify the **maximum** `height` that the editor will automatically resize to when a user enters text into the editor. In other words, the editor will stop automatically resizing when the set value is reached.
 
@@ -51,11 +51,11 @@ This option enables you to specify the **maximum** `height` that the editor will
 ```js
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
-  autoresize_max_height: 500
+  max_height: 500
 });
 ```
 
-### `autoresize_min_height`
+### `min_height`
 
 This option enables you to specify the **minimum** `height` of the editor when it's initialized.
 
@@ -66,7 +66,7 @@ This option enables you to specify the **minimum** `height` of the editor when i
 ```js
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
-  autoresize_min_height: 350
+  min_height: 350
 });
 ```
 

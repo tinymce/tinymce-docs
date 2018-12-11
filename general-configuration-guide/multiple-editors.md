@@ -1,18 +1,15 @@
 ---
 layout: default
-title: 05. Multiple Editors
-description_short: Learn how to insert multiple editor instances on a single page.
-description: Learn how to insert multiple editor instances on a single page.
-keywords: form inline edit
+title: Use multiple TinyMCE instances in a single page
+title_nav: Multiple editors in a page
+keywords: 
 ---
 
-Now that you know how to add TinyMCE to your page, and how to use the `inline` mode, it's time to learn how to add multiple editor instances to a single page.
-
-This is, in fact, a common use case, especially when using TinyMCE's `inline` mode. For example, you may wish to break your content into sections (e.g., titles, paragraphs) that the user can edit individually.
+This section is about adding multiple editor instances to a single page. This is a common use case when using TinyMCE's `inline` mode. Breaking content into sections (e.g., titles, paragraphs) allows users to edit them individually.
 
 ## Multiple editor instances sharing the same configuration
 
-In the following example, the page is broken into two separate editable areas, each sharing a single editor configuration. Each editable `div` is provided the same `class` of 'myeditablediv'. When the user clicks within the content area, TinyMCE is loaded for just that area.
+The following example breaks the page into two separate editable areas. Each area shares a single editor configuraiton. Each editable `div` is provided the same `class` of 'myeditablediv'. TinyMCE is loaded just for the content area the user clicks.
 
 ```html
 <!DOCTYPE html>
@@ -40,11 +37,12 @@ In the following example, the page is broken into two separate editable areas, e
 </body>
 </html>
 ```
-> Pro tip: note that the reason the css selector in this example is a `class` is because the `id` must be unique.
+> Note: In the example above, the css selector is a `class` because the `id` must be unique.
 
 ## Multiple editor instances, each with a unique configuration
 
-In this next example, each editable area is loaded with an instance of TinyMCE with a unique configuration. This is especially helpful when different content areas have different needs. For example, you may want to provide a simple configuration for editing titles and a complete configuration for editing body content. This is accomplished by defining a `tinymce.init` object/method for each desired configuration.  
+The following example loads each editable area with a unique configuration of TinyMCE. This is useful when different content areas have different needs, such as providing simple configuration for editing titles and a complete configuration for editing body content. Define a `tinymce.init` object/method for each configuration.
+
 
 ```html
 <!DOCTYPE html>

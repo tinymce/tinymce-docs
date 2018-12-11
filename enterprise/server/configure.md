@@ -1,7 +1,6 @@
 ---
 layout: default
-title: Configure
-description: Configure the Enterprise server-side components.
+title: Configure server-side components
 keywords: enterprise tinymcespellchecker spell check checker pro pricing imagetools server configuration configure
 ---
 

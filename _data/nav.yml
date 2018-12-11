@@ -14,6 +14,7 @@
   - url: "spell-checking"
   - url: "filter-content"
   - url: "localize-your-language"
+  - url: "attribution-requirements"
   - url: "system-requirements"
   - url: "get-support"
 
@@ -47,9 +48,6 @@
   - url: "local-upload"
 
 - url: "mobile"
-  pages:
-  - url: "#configuringmobile"
-  - url: "#browsercompatibility"
 
 - url: "configure"
   pages:
@@ -69,25 +67,25 @@
     pages:
     - url: "#branding"
     - url: "#color_picker_callback"
+    - url: "#contextmenu"
+    - url: "#contextmenu_never_use_native"
     - url: "#custom_ui_selector"
     - url: "#elementpath"
     - url: "#event_root"
     - url: "#fixed_toolbar_container"
     - url: "#height"
     - url: "#inline"
-    - url: "#insert_button_items"
-    - url: "#insert_toolbar"
     - url: "#max_height"
     - url: "#max_width"
     - url: "#menu"
     - url: "#menubar"
     - url: "#min_height"
     - url: "#min_width"
-    - url: "#mobile"
     - url: "#preview_styles"
+    - url: "#quickbars_insert_toolbar"
+    - url: "#quickbars_selection_toolbar"
     - url: "#removed_menuitems"
     - url: "#resize"
-    - url: "#selection_toolbar"
     - url: "#skin_url"
     - url: "#skin"
     - url: "#statusbar"
@@ -269,7 +267,6 @@
     - url: "#importcss_groups"
     - url: "#importcss_merge_classes"
     - url: "#importcss_selector_converter"
-  - url: "inlite"
   - url: "insertdatetime"
     pages:
     - url: "#insertdatetime_dateformat"
@@ -277,7 +274,6 @@
     - url: "#insertdatetime_timeformat"
     - url: "#insertdatetime_element"
     - url: "#dateformats"
-  - url: "layer"
   - url: "legacyoutput"
   - url: "link"
     pages:
@@ -339,6 +335,7 @@
     - url: "#plugin_preview_height"
     - url: "#plugin_preview_width"
   - url: "print"
+  - url: "quickbars"
   - url: "save"
     pages:
     - url: "#save_enablewhendirty"
@@ -411,14 +408,15 @@
     - url: "#wordcount_cleanregex"
     - url: "#wordcount_countregex"
 
-- url: "ui-elements"
+- url: "ui-components"
   pages:
   - url: "dialog"
     pages:
-    - url: "#Types"
-    - url: "#InstanceAPI"
-    - url: "#Framework"
-    - url: "#Example"
+    - url: "#Overview"
+    - url: "#Dialog configuration framework"
+    - url: "#Dialog application examples"
+    - url: "#Dialog compostion"
+    - url: "#Dialog instance API"
   - url: "dialogcomponents"
     pages:
     - url: "#AlertBanner"
@@ -458,15 +456,15 @@
     - url: "#Priority"
     - url: "#Positioning"
     - url: "#Form"
-    - url: "#ContextFormButtons"
-    - url: "#FormAPI"
+    - url: "#ContextForm buttons"
+    - url: "#Form API"
   - url: "toolbarbuttons"
   - url: "typesoftoolbarbuttons"
     pages:
-    - url: "#BasicButton"
-    - url: "#ToggleButton"
-    - url: "#SplitButton"
-    - url: "#MenuButton"
+    - url: "#Basic Button"
+    - url: "#Toggle Button"
+    - url: "#Split Button"
+    - url: "#Menu Button"
 
 - url: "enterprise"
   pages:
@@ -503,7 +501,7 @@
   # - url: "creating-a-custom-button"
   # - url: "creating-a-skin"
   # - url: "creating-a-plugin"
-  # - url: "annotations"
+  - url: "annotations"
   - url: "yeoman-generator"
   # - url: "creating-custom-dialogs"
   - url: "creating-custom-notifications"
@@ -529,13 +527,24 @@
   - url: "vue"
   - url: "wordpress"
 
-- url: "migration-from-4.x"
+- url: "migration-from-4x"
   pages:
-  - url: "migrating4x"
-  - url: "considerations"
-  - url: "changed-features"
+  - url: "#Editor-Core"
+  - url: "#Themes"
+  - url: "#Mobile support"
+  - url: "#Components"
+  - url: "#Plugins"
+  - url: "#Other removed component configuration settings"
+  - url: "#Components"
+  - url: "#Premium features"
 
 - url: "release-notes"
   pages:
-  - url: "new-features"
-  - url: "known-issues"
+  - url: "#Overview"
+  - url: "#TinyMCE 5.0 demo"
+  - url: "#New features"
+  - url: "#Technology preview"
+  - url: "#Removed & deprecated features"
+  - url: "#Known issues"
+  - url: "#Bug fixes"
+

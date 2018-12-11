@@ -1,17 +1,17 @@
 ---
 layout: default
-title: Create a Sidebar Panel
-title_nav: Create a Sidebar Panel
+title: Create a sidebar panel
+title_nav: Create a sidebar panel
 description_short: Introducing sidebar creation.
 description: A short introduction to creating sidebars.
 keywords: sidebar
 ---
 
-Creating sidebars in TinyMCE is relatively easy and lets you add custom UI widgets inside a constrained and easily accessible area of the editor. The sidebar is designed to allow integrators and plugin authors to provide additional tools that can be used on the contents in tinymce.
+TinyMCE allows developers to create sidebars and add custom UI widgets inside a constrained and easily accessible area of the editor. The sidebar is designed to allow administrators and plugin developers to provide additional tools that can be accessed by TinyMCE users.
 
 ## Editor sidebar API
 
-The sidebar API is relatively straightforward. It allows you to add sidebars on editor instances in a similar way as adding buttons or menu items. You can either add sidebars directly in the tinymce.init using the setup callback or inside your plugin.
+The sidebar API allows developers to add sidebars on editor instances in a similar way as adding buttons or menu items. Developers can either add sidebars directly in the `tinymce.init` using the setup callback or inside your plugin.
 
 This is the syntax for the addSidebar function: `editor.addSidebar(id:String, options:Object)`
 
@@ -19,37 +19,37 @@ This is the syntax for the addSidebar function: `editor.addSidebar(id:String, op
 
 #### `tooltip`
 
-The `tooltip` allows you to specify a tooltip to be displayed when hovering the sidebar toggle button.
+The `tooltip` specifies a tooltip to be displayed when hovering over the sidebar toggle button.
 
 **Type**: `String`
 
 #### `icon`
 
-The `icon` allows you to specify an icon for the sidebar toggle button. The icon should be a name of an icon provided by the TinyMCE skin.
+The `icon` specifies an icon for the sidebar toggle button. The icon should be the name of an icon provided by the TinyMCE skin.
 
 **Type**: `String`
 
 #### `image`
 
-The `image` allows you to specify a custom image URL to use as an icon.
+The `image` specifies a custom image URL to use as an icon.
 
 **Type**: `String`
 
 #### `onrender`
 
-The `onrender` allows you to specify a function to be called when the panel is first created. It will pass in an API object.
+The `onrender` specifies a function to be called when the panel is first created. It passes in an API object.
 
 **Type**: `function`
 
 #### `onshow`
 
-The `onshow` allows you to specify a function to be called when the panel displayed. It will pass in an API object.
+The `onshow` specifies a function to be called when the panel displayed. It passes in an API object.
 
 **Type**: `function`
 
 #### `onhide`
 
-The `onhide` allows you to specify a function to be called when the panel has been hidden. It will pass in an API  object.
+The `onhide` specifies a function to be called when the panel is hidden. It passes in an API  object.
 
 **Type**: `function`
 

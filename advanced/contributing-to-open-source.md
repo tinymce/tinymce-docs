@@ -1,13 +1,13 @@
 ---
 layout: default
-title: Contribute to TinyMCE
+title: Contribute to TinyMCE development
 title_nav: Contribute to TinyMCE
 description_short: Contribute to the open source project.
 description: Contribute to the open source project. Help build the core, plugins or even write the documentation.
 keywords: opensource oss contributors lgpl
 ---
 
-TinyMCE is an open source software project, and we encourage developers to contribute patches and code for us to include in the main package of TinyMCE. However, there are a few rules and limitations when doing so, and this page lists them.
+TinyMCE is an open source software project. We encourage developers to contribute patches and code to include in TinyMCE. However, there are a few rules and limitations:
 
 
 ## Basic rules
@@ -15,9 +15,9 @@ TinyMCE is an open source software project, and we encourage developers to contr
 * Contributed code will be licensed under the LGPL license, but not limited to LGPL.
 * Copyright notices will be changed to Tiny Technologies but contributors will get credit for their work.
 * All third party code will be reviewed, tested and possibly modified before being released.
-* For contributions to be accepted, a Contributors License Agreement must be completed.  
+* For contributions to be accepted, a Contributors License Agreement must be completed.
 
-These basic rules make it possible for us to properly manage the TinyMCE project and to ensure that the code remains open source and under the LGPL license.
+These basic rules make it possible for us to manage the TinyMCE project and to ensure that the code remains open source and under the LGPL license.
 
 
 ## How to contribute

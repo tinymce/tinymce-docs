@@ -1,13 +1,14 @@
 ---
 layout: default
-title: 04. Use TinyMCE Distraction-free
+title: TinyMCE inlite editing mode
+title_nav: Inlite editing mode
 description: Theme that renders a lightweight UI for inline editing.
 keywords: theme inlite distraction-free
 ---
 
-The **Distraction-free** theme is responsible for rendering the editor lightweight inline mode. This is an optional more lightweight distraction-free UI for the editor. It provides options to quickly insert links, images, and tables into your content. For a sample view of this mode, visit the [Distraction-free Editor]({{ site.baseurl }}/demo/editor-dfree/) example page.
+The **Distraction-free** theme renders the editor in lightweight inline mode. This mode provides options to quickly insert links, images, and tables into the content. For a sample view of this mode, see the [Distraction-free Editor]({{ site.baseurl }}/demo/editor-dfree/) example page.
 
-The `inlite` plugin is responsible for rendering the editor lightweight inline mode. The current default theme is called [Classic]({{ site.baseurl }}../use-tinymce-classic). This is an optional more lightweight distraction-free UI for the editor.
+The `inlite` plugin renders the editor in lightweight inline mode. The current default theme is [Classic]({{ site.baseurl }}../use-tinymce-classic). This is an optional, even more, lightweight distraction-free UI for the editor.
 
 ##### Example:
 
@@ -25,7 +26,7 @@ tinymce.init({
 
 #### quicklink
 
-The `quicklink` lets you quickly insert/edit links inline.
+The `quicklink` quickly inserts and edits link inline.
 
 ##### Example:
 
@@ -42,7 +43,7 @@ tinymce.init({
 
 #### quickimage
 
-The `quickimage` lets you quickly insert images from the local machine into the editor. These can then be automatically uploaded if you configure [image uploading]({{ site.baseurl }}/advanced/handle-async-image-uploads/).
+`quickimage` inserts images from the local machine into the editor. These can be automatically uploaded by configuring [image uploading]({{ site.baseurl }}/advanced/handle-async-image-uploads/).
 
 ##### Example:
 
@@ -59,7 +60,7 @@ tinymce.init({
 
 #### quicktable
 
-The `quicktable` lets you quickly insert a 2x2 table with 100% width.
+`quicktable` quickly inserts a 2x2 table with 100% width.
 
 ##### Example:
 
@@ -76,8 +77,8 @@ tinymce.init({
 
 ### Related configuration options
 
-* [insert_toolbar]({{ site.baseurl }}/configure/editor-appearance/#insert_toolbar)
-* [selection_toolbar]({{ site.baseurl }}/configure/editor-appearance/#selection_toolbar)
+* [quick_insert_toolbar]({{ site.baseurl }}/configure/editor-appearance/#quickbars_insert_toolbar)
+* [quick_selection_toolbar]({{ site.baseurl }}/configure/editor-appearance/#quickbars_selection_toolbar)
 * [inline]({{ site.baseurl }}/configure/editor-appearance/#inline)
 * [skin]({{ site.baseurl }}/configure/editor-appearance/#skin)
 * [theme]({{ site.baseurl }}/configure/editor-appearance/#theme)

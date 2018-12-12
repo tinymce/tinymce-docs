@@ -25,13 +25,23 @@ example.js optional file, when present the displayed JS tab example will use exa
 {% include codepens/{{ include.id }}/index.html %}
 {% endcapture %}
 
-{% capture codepen_js %}
-    {% if exists codepens/{{ include.id }}/example.js %}
-        {% include codepens/{{ include.id }}/example.js %}
-    {% else %}
-        {% include codepens/{{ include.id }}/index.js %}
-    {% endif %}
+{% capture hasExampleJS %}
+{% file_exists _includes/codepens/{{ include.id }}/example.js %}
 {% endcapture %}
+
+{% capture codepen_js %}
+{% include codepens/{{ include.id }}/index.js %}
+{% endcapture %}
+
+{% if hasExampleJS contains 'true' %}
+{% capture example_js %}
+{% include codepens/{{ include.id }}/example.js %}
+{% endcapture %}
+{% else %}
+{% capture example_js %}
+{% include codepens/{{ include.id }}/index.js %}
+{% endcapture %}
+{% endif %}
 
 {% capture codepen_css %}
 {% include codepens/{{ include.id }}/style.css %}
@@ -65,6 +75,9 @@ example.js optional file, when present the displayed JS tab example will use exa
     {% assign initialTab = "run" %}
 {% endif %}
 
+{{codepen_js}}
+{{hasExampleJS}}
+{{example_js}}
 
 <div id="codepen_{{ include.id }}" class="codepen" {% if include.height %}style="min-height:{{ include.height }}px;"{% endif %}>
     <div class="codepen_tabs">

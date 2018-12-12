@@ -33,7 +33,7 @@ example.js optional file, when present the displayed JS tab example will use exa
 {% include codepens/{{ include.id }}/index.js %}
 {% endcapture %}
 
-{% if hasExampleJS contains 'true' %}
+{% if hasExampleJS contains "true" %}
 {% capture example_js %}
 {% include codepens/{{ include.id }}/example.js %}
 {% endcapture %}
@@ -59,7 +59,7 @@ example.js optional file, when present the displayed JS tab example will use exa
 
 {% capture codepen_js_preview %}
 ```js
-{{ codepen_js }}
+{{ example_js }}
 ```
 {% endcapture %}
 
@@ -75,10 +75,6 @@ example.js optional file, when present the displayed JS tab example will use exa
     {% assign initialTab = "run" %}
 {% endif %}
 
-{{codepen_js}}
-{{hasExampleJS}}
-{{example_js}}
-
 <div id="codepen_{{ include.id }}" class="codepen" {% if include.height %}style="min-height:{{ include.height }}px;"{% endif %}>
     <div class="codepen_tabs">
         {% for tab in site.data.codepen-tabs %}
@@ -90,7 +86,9 @@ example.js optional file, when present the displayed JS tab example will use exa
             <a href="#" id="codepen_tab_{{ tab.name }}_{{ include.id }}" class="{{ class }}">{{ tab.text }}</a>
         {% endfor %}
 
+        {% if hasExampleJS contains 'false' %}
         <a href="#" id="codepen_tab_codepen_{{ include.id }}" class="codepen_tab_deselected ie11_optional">Edit on CodePen</a>
+        {% endif %}
     </div>
 
     <div id="codepen_pane_run_{{ include.id }}" {% if "run" != initialTab %}style="display:none;"{% endif %}>

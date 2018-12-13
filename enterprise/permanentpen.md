@@ -21,7 +21,7 @@ To try out Permanent Pen and Tiny Cloud-delivered editor, the first step is to c
 
 ### Buy TinyMCE Permanent Pen
 
-Start with this [dedicated product page](https://about.tiny.cloud/products/permanentpen/) to see all flexible pricing options. OEM and enterprise customers should [contact sales directly](https://www.tinymce.com/pricing/).
+Start with this [dedicated product page](https://about.tiny.cloud/products/permanentpen/) to see all the flexible pricing options. OEM and enterprise customers should [contact sales directly](https://www.tinymce.com/pricing/).
 
 For more information on Permanent Pen refer to the full [documentation]({{site.baseurl}}/plugins/permanentpen/).
 

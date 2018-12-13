@@ -7,14 +7,13 @@ keywords: formats formatting edit formatpainter_removeformat formatpainter_table
 controls: toolbar button
 ---
 
-The `Format Painter` plugin allows a user to copy and paste formatting from one location to another, such as font style and size. The format painter is capable of working with a wide variety of formats such as inline and block formats and styles such as table styles.
+The Format Painter plugin allows a user to copy and paste formatting from one location to another, such as font style and size. The format painter is capable of working with a wide variety of formats such as inline and block formats and styles such as table styles.
+
+Format Painter is a premium plugin from Tiny. Please see the [Premium features]({{site.baseurl}}/enterprise/formatpainter/) section for all the buying options.
+
+Once you have obtained the Format Painter plugin, refer to the following instructions for using it.
 
 The format painter is accessed using either keyboard shortcuts or a toolbar button.
-
-
-## Live example
-
-{% include codepen.html id="format-painter" %}
 
 ##### Example
 
@@ -33,8 +32,10 @@ The format painter operates in two modes, one for retrieval and one for applicat
 **Usage with toolbar button**
 
 1. Position the cursor at the source content to retrieve the formatting.
-2. Toggle the `Format Painter` button to read the formatting.
+2. Enable the `Format Painter` button to copy the formatting.
 3. Select the goal content to apply the formatting.
+
+**Result**: The formatting from the source content is applied to the goal content.
 
 **Usage with keyboard**
 
@@ -43,7 +44,7 @@ The format painter operates in two modes, one for retrieval and one for applicat
 3. Select the goal content to apply the formatting.
 4. Press the `Ctrl+Alt+V` keys to apply the formatting.
 
-The format painter retains the formatting after application making it possible to apply the same formatting multiple times by using the `Ctrl+Alt+V` keyboard shortcut.
+> The format painter retains the formatting after application making it possible to apply the same formatting multiple times by using the `Ctrl+Alt+V` keyboard shortcut.
 
 ## Options
 
@@ -93,3 +94,4 @@ tinymce.init({
   formatpainter_blacklisted_formats: 'link,address,removeformat,formatpainter_removeformat'
 });
 ```
+Check out the [Format Painter demo]({{site.baseurl}}/demo/formatpainter/) to try out this new feature.

@@ -2,22 +2,20 @@
 layout: default
 title: Page Embed plugin
 title_nav: Page Embed
-description: Lets you easily add iframe embeds to your content.
+description: Easily inserts iframe into the content.
 keywords: view Page Embed insert iframe
 controls: toolbar button, menu item
 ---
 
-The TinyMCE **Page Embed** plugin lets you embed a page in your content in a responsive or exactly sized iframe.
+The **Page Embed** plugin embeds a page in the content using an iframe (Inline frames). The size of these iframes can be configured to be responsive or another user-defined dimension. The ability to use iframes helps create visually engaging content which is very useful for online courses and learning materials.
 
-This plugin adds a Page Embed button to the toolbar. Pressing the button opens a dialog where you can enter a URL to the page you want to embed into your content. You can also choose if you want to set an exact dimension size or use a responsive size such as 16 by 9 that will adapt to the page where your content will be shown. 
+Page Embed is a premium plugin from Tiny. Please see the [Premium features]({{site.baseurl}}/enterprise/pageembed/) section for all the buying options.
 
+Once you have obtained the Page Embed plugin, refer to the following instructions for using it.
 
-## Live example
+### Creating a Page Embed toolbar button
 
-{% include codepen.html id="page-embed" %}
-
-
-##### Example
+Use the following script to create a Page Embed toolbar button:
 
 ```js
 tinymce.init({
@@ -28,13 +26,40 @@ tinymce.init({
 });
 ```
 
-### Options
+**Result**: The ![**Page Embed**]({{site.baseurl}}/images/pageembed.png)(**Page Embed**) button appears in the toolbar menu.
 
-### `tiny_pageembed_classes`
+### Using Page Embed
 
-Takes an array of objects with `text` and `value` properties that will populate the size select input in the plugin dialog. 
+Use the following procedure for embedding an iframe into the content:
 
-##### Example custom classes
+1. Click on the ![**Page Embed**]({{site.baseurl}}/images/pageembed.png)(**Page Embed**) toolbar button.
+2. The **InsertEdit Iframe** dialog box appears.
+![InsertEdit Iframe]({{site.baseurl}}/images/insert-iframes.png)
+3. In the **General** tab, click on the ![Source]({{site.baseurl}}/images/source.png)(**Source**) icon to upload a file.
+4. For setting the iframe size, select the preferred option from the **Size** drop-down menu.
+* **Inline Value** is used to insert an iframe within a line. To set the dimensions of an inline iframe, provide the values in pixels in the **Width** and **Height** input box.
+>Note: The default values are **Width** `350px` and **Height** `260px.
+Click the ![Constrain Proportions]({{site.baseurl}}/images/constrainprop.png)(**Constrain Proportions**) lock icon to change the default values.
+* **Responsive** is used to make embedded content responsive using CSS, so that content such as video and calendars resize with the browser’s viewport. There are four options provided to set the responsive iframe size.
+        * **Responsive-21X9**
+        * **Responsive-16X9**
+        * **Responsive-4X3**
+        * **Responsive-1X1**
+> Note: The **Responsive** option has pre-defined width and height values. The **Width** and **Height** fields are not available if one of the **Responsive** values are selected.
+5. In the **Advanced** tab, provide a name and title for the iframe in the **Name** and **Title** fields.
+6. The **Long description URL** field can be used to describe an iframe by including text in a separate resource when a short text alternative does not adequately convey the function or information provided in the iframe.
+* Click on the ![Source]({{site.baseurl}}/images/source.png)(**Long description URL**) icon to upload a description file.
+7. Click on the **Show iframe border** radio button to display iframe borders.
+8. Click on the **Scrollbar** radio button to add scrollbars to the iframe.
+9. Click **Save** to save and exit or **Cancel** to dismiss and exit.
+
+**Result**: An iframe of the configured size is inserted in the desired location within the content.
+
+### Options to configure the Page Embed properties
+
+### Create custom classes
+
+The `tiny_pageembed_classes` takes an array of objects with `text` and `value` properties that will populate the size select input in the plugin dialog. Use the following script to create custom classes using the `tiny_pageembed_classes` option:
 
 ```js
 tinymce.init({
@@ -49,9 +74,9 @@ tinymce.init({
 });
 ```
 
-If set to an empty array the size select will not be shown and only exact sizes can be set.
+### Disable select
 
-##### Example disable select
+When the `tiny_pageembed_classes` value is set to an empty array, the size select will not be shown and only exact sizes can be set. Use the following script to disable `select` using the `tiny_pageembed_classes` option:
 
 ```js
 tinymce.init({
@@ -65,7 +90,9 @@ tinymce.init({
 
 ### Default CSS
 
-If the `tiny_pageembed_classes` setting is left undefined the default classes will be used, letting you choose between a selection of responsive sizes. To make these work on your page please make sure you add this css to the page:
+If the `tiny_pageembed_classes` setting is left undefined, the default classes will be used. As a result, a responsive size option can be selected.
+
+> The following CSS script must be added to the webpage for the default CSS to work correctly.
 
 ```css
 .tiny-pageembed--21by9,
@@ -115,3 +142,5 @@ If the `tiny_pageembed_classes` setting is left undefined the default classes wi
   width: 100%;
 }
 ```
+
+Check out the [Page Embed demo]({{site.baseurl}}/demo/pageembed/) to try out this new feature.

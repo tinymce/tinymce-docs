@@ -2,7 +2,7 @@
 layout: default
 title: Page Embed plugin
 title_nav: Page Embed
-description: Easily adds iframe embeds into the content.
+description: Easily inserts iframe into the content.
 keywords: view Page Embed insert iframe
 controls: toolbar button, menu item
 ---

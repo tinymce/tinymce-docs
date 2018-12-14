@@ -7,9 +7,9 @@ keywords: permanent pen copy text format style
 controls: toolbar button, contextmenu, menu item
 ---
 
-Permanent Pen is a premium TinyMCE plugin for applying a pre-defined format (color, typeface and type style, or font) to a desired section of content. The ability to store information for reuse saves the user time and ensures consistency across the content.
+Permanent Pen is a premium TinyMCE plugin for applying a pre-defined format (for example, color, typeface and type style, font, etc.) to a desired section of content. The ability to store information for reuse saves the user time and ensures consistency across the content.
 
-The Permanent Pen allows the user to add comments without modifying the original content.
+This allows the user to add text without modifying the original content.
 
 ### Getting started
 

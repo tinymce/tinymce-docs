@@ -7,11 +7,11 @@ keywords: permanent pen copy text format style
 controls: toolbar button, contextmenu, menu item
 ---
 
-The Permanent Pen allows a user to apply a pre-defined format (color, typeface and type style, or font) to a desired section of content overriding the default values set for that content area.
+The Permanent Pen allows a user to apply a pre-defined format (for example, color, typeface and type style, font, etc.) to a new content, overriding the default values set for that content area.
 
-The Permanent Pen is useful when a distinctly styled text needs to be repeatedly added to the content. The user can pre-define the desired style in the Permanent Pen properties. This pre-defined style is applied to all the text entered into the document with the Permanent Pen enabled. The ability to store information for reuse saves the user time and ensures consistency across the content.
+The Permanent Pen is useful when a distinct style text needs to be repeatedly added to the content. The user can pre-define the desired style in the Permanent Pen properties. This pre-defined style is applied to all the text entered into the document while the Permanent Pen is enabled. The ability to store information for reuse saves the user time and ensures consistency across the content.
 
-The Permanent Pen can also be used to highlight user notes and other useful comments in a different format for easy identification. This allows the user to add comments without modifying the original content.
+The Permanent Pen can also be used to create user notes and other useful comments in a different format for easy identification. This allows the user to add text without modifying the original content.
 
 The default properties of Permanent Pen are:
 
@@ -25,6 +25,7 @@ italic: false,
 underline: false,
 strikethrough: false
 ```
+For more information on TinyMCE formats, refer to the [formats]({{site.baseurl}}/configure/content-formatting/#formats) section.
 
 Permanent Pen is a premium plugin from Tiny. Please see the [Premium features]({{site.baseurl}}/enterprise/permanentpen/) section for all the buying options.
 
@@ -91,12 +92,12 @@ The **Permanent pen properties** dialog box appears.
 ![Permanent pen properties]({{site.baseurl}}/images/pp-prop.png)
 2. Select the desired settings from the **Font** and **Size** drop-down menus.
 3. To select the desired **Styles**, click on the radio button next to **Bold**, **Italic**, **Strikethrough**, or **Underline**.
-4. Choose the desired color to set the **Text color**.
+4. Choose the desired **Text color**.
 5. Select the desired **Background color**
 6. Press **Ok** to Save or **Cancel** to dismiss.
 
 **Result**:
-When the Permanent Pen is enabled, it will apply the new settings to the input text.
+When the Permanent Pen is enabled, it will apply the new settings to the entered text.
 
 #### Using the script
 
@@ -124,5 +125,6 @@ tinymce.init({
   }
 });
 ```
+For more information on TinyMCE formats, refer to the [formats]({{site.baseurl}}/configure/content-formatting/#formats) section.
 
 Check out the [Permanent Pen demo]({{site.baseurl}}/demo/permanentpen/) to try out this new feature.

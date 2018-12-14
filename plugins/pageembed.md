@@ -35,7 +35,7 @@ Use the following procedure for embedding an iframe into the content:
 1. Click on the ![**Page Embed**]({{site.baseurl}}/images/pageembed.png)(**Page Embed**) toolbar button.
 2. The **InsertEdit Iframe** dialog box appears.
 ![InsertEdit Iframe]({{site.baseurl}}/images/insert-iframes.png)
-3. In the **General** tab, click on the ![Source]({{site.baseurl}}/images/source.png)(**Source**) icon to upload a file.
+3. In the **General** tab, enter the url in the **Source** field, or click on the ![Source]({{site.baseurl}}/images/source.png)(**Source**) icon to upload a file.
 4. For setting the iframe size, select the preferred option from the **Size** drop-down menu.
 * **Inline Value** is used to insert an iframe within a line. To set the dimensions of an inline iframe, provide the values in pixels in the **Width** and **Height** input box.
 >Note: The default values are **Width** `350px` and **Height** `260px.
@@ -59,7 +59,7 @@ Click the ![Constrain Proportions]({{site.baseurl}}/images/constrainprop.png)(**
 
 ### Create custom classes
 
-The `tiny_pageembed_classes` takes an array of objects with `text` and `value` properties that will populate the size select input in the plugin dialog. Use the following script to create custom classes using the `tiny_pageembed_classes` option:
+The `tiny_pageembed_classes` takes an array of objects with `text` and `value` properties that will populate the size selection fields in the plugin dialog. Use the following script to create custom classes using the `tiny_pageembed_classes` option:
 
 ```js
 tinymce.init({
@@ -76,7 +76,7 @@ tinymce.init({
 
 ### Disable select
 
-When the `tiny_pageembed_classes` value is set to an empty array, the size select will not be shown and only exact sizes can be set. Use the following script to disable `select` using the `tiny_pageembed_classes` option:
+When the `tiny_pageembed_classes` value is set to an empty array, the size selection fields are not available and only exact sizes can be set. Use the following script to disable `select` using the `tiny_pageembed_classes` option:
 
 ```js
 tinymce.init({
@@ -142,5 +142,6 @@ If the `tiny_pageembed_classes` setting is left undefined, the default classes w
   width: 100%;
 }
 ```
+For more information on configuring CSS, refer to the [content_css]({{site.baseurl}}/configure/content-appearance/#content_css) section.
 
 Check out the [Page Embed demo]({{site.baseurl}}/demo/pageembed/) to try out this new feature.

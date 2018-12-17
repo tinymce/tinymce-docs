@@ -7,7 +7,7 @@ keywords: view Page Embed insert iframe
 controls: toolbar button, menu item
 ---
 
-The TinyMCE **Page Embed** plugin lets you embed a page in your content in a responsive or exactly sized iframe.
+The **Page Embed** plugin is a premium plugin from Tiny that embeds a page in the content using an iframe (Inline frames). 
 
 The Page Embed plugin allows an external webpage to be embedded in an HTML document and can be inserted anywhere within a webpage layout.
 

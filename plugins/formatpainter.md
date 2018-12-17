@@ -13,7 +13,9 @@ Format Painter is a premium plugin from Tiny. Please see the [Premium features](
 
 Once you have obtained the Format Painter plugin, refer to the following instructions for using it.
 
-The format painter is accessed using either keyboard shortcuts or a toolbar button.
+### Configuring the Format Painter toolbar button
+
+Use the following script to configure the Format Painter toolbar button:
 
 ##### Example
 
@@ -24,15 +26,19 @@ tinymce.init({
   toolbar: "formatpainter"
 });
 ```
+**Result**:
+The ![**Format Painter**]({{site.baseurl}}/images/fp-disabled.png)(**Format Painter**) button appears in the toolbar menu.
 
-## Usage
+## Using Format Painter
+
+The format painter is accessed using either keyboard shortcuts or a toolbar button.
 
 The format painter operates in two modes, one for retrieval and one for application of formatting. The usage of the keyboard is slightly different from the usage of the toolbar buttons.
 
 **Usage with toolbar button**
 
 1. Position the cursor at the source content to retrieve the formatting.
-2. Enable the `Format Painter` button to copy the formatting.
+2. Enable the **Format Painter** button to copy the formatting. The **Format Painter** toolbar button background color changes to _grey_ ![**Format Painter**]({{site.baseurl}}/images/fp-enabled.png).
 3. Select the goal content to apply the formatting.
 
 **Result**: The formatting from the source content is applied to the goal content.

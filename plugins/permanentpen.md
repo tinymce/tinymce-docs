@@ -94,7 +94,7 @@ The **Permanent pen properties** dialog box appears.
 3. To select the desired **Styles**, click on the radio button next to **Bold**, **Italic**, **Strikethrough**, or **Underline**.
 4. Choose the desired **Text color**.
 5. Select the desired **Background color**
-6. Press **Ok** to Save or **Cancel** to dismiss.
+6. Press **Ok** to save or **Cancel** to dismiss.
 
 **Result**:
 When the Permanent Pen is enabled, it will apply the new settings to the entered text.

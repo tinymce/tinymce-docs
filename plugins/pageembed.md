@@ -38,9 +38,10 @@ Use the following procedure for embedding an iframe into the content:
 3. In the **General** tab, enter the url in the **Source** field, or click on the ![Source]({{site.baseurl}}/images/source.png)(**Source**) icon to upload a file.
 4. For setting the iframe size, select the preferred option from the **Size** drop-down menu.
 * **Inline Value** is used to insert an iframe within a line. To set the dimensions of an inline iframe, provide the values in pixels in the **Width** and **Height** input box.
-> Note: The default values are **Width** `350px` and **Height** `260px`.
-Click the ![Constrain Proportions]({{site.baseurl}}/images/constrainprop.png)(**Constrain Proportions**) lock icon to change the default values.
+        * The default values are **Width** `350px` and **Height** `260px`. Click the ![Constrain Proportions]({{site.baseurl}}/images/constrainprop.png)(**Constrain Proportions**) lock icon to change the default values.
+> Note: The **Width** and **Height** fields are only available if the **Inline Value** value option is selected.
 * **Responsive** is used to make embedded content responsive using CSS, so that content such as video and calendars resize with the browser’s viewport. There are four options provided to set the responsive iframe size.
+
         * **Responsive-21X9**
         * **Responsive-16X9**
         * **Responsive-4X3**

@@ -39,7 +39,7 @@ Use the following script to configure the Permanent Pen toolbar button:
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: 'permanentpen',
-  contextmenu: 'permanentpen',
+  contextmenu: 'configurepermanentpen',
   toolbar: 'permanentpen'
 ```
 **Result**:
@@ -111,7 +111,7 @@ The default formats for Permanent Pen can be specified in the following configur
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: 'permanentpen',
-  contextmenu: 'permanentpen',
+  contextmenu: 'configurepermanentpen',
   toolbar: 'permanentpen',
   permanentpen_properties: {
     fontname: 'arial,helvetica,sans-serif',

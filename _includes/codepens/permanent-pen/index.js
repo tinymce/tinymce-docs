@@ -1,7 +1,7 @@
 tinymce.init({
   selector: 'textarea',
   plugins: 'permanentpen code',
-  contextmenu: 'permanentpen',
+  contextmenu: 'configurepermanentpen',
   toolbar: 'permanentpen code',
   permanentpen_properties: {
     fontname: 'arial,helvetica,sans-serif',

@@ -56,6 +56,8 @@ Use the following procedure for embedding an iframe into the content:
 
 **Result**: An iframe of the configured size is inserted in the desired location within the content.
 
+> Note: Not all pages allow embedding, as the X-Frame-Options header can be set to block embedding. See [this page](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options) for more information.
+
 ### Options to configure the Page Embed properties
 
 ### Create custom classes

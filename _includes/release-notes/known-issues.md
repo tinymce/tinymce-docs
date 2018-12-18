@@ -3,7 +3,7 @@ This section describes issues that users of TinyMCE 5.0 may encounter, as well a
 
 [Track developer preview issues on GitHub](https://github.com/tinymce/tinymce/labels/dev%20preview)
 
-### Customer reported known and fixed issues
+<!--### Customer reported known and fixed issues
 
 #### TinyMCE 5 kills page responsiveness on Chrome
 
@@ -45,6 +45,6 @@ The following issues were reported in the current TinyMCE UI:
 * In the current version, autocorrect does not announce when a word changes.
 * In the current version, spelling highlights do not have an attribute `aria-invalid="spelling"` for assistive tools to announce when the cursor has entered a misspelled word.
 
-The above issues will be fixed in the future release of TinyMCE.
+The above issues will be fixed in the future release of TinyMCE. -->
 
 

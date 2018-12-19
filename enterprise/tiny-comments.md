@@ -28,7 +28,7 @@ The Comments plugin allows the user to perform the following functions:
 * Reply to a comment
 * Delete a comment/comment thread
 * Lookup a comment
-* Store a comment
+* Edit a comment
 
 ## Comments Integration
 

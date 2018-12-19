@@ -18,7 +18,7 @@ Once you have obtained the Comments plugin, refer to the following instructions 
 
 There are two modes available in Comments that provide the ability to save comments. These modes are configured in the Comments settings.
 
-* **Callback Mode** - This is the default mode in Comments. This mode is used to configure storage and save comments on user’s server. This option gives the user a choice to configure the storage settings to either persist comments immediately or save them at the same time as the content. Additional callbacks are required to be configured to use Comments in the callback mode. Refer to the [configuring callbacks for comments]({{site.baseurl}}/advanced/configuring-comments-callbacks/make serve) section, for more information.
+* **Callback Mode** - This is the default mode in Comments. This mode is used to configure storage and save comments on user’s server. This option gives the user a choice to configure the storage settings to either persist comments immediately or save them at the same time as the content. Additional callbacks are required to be configured to use Comments in the callback mode. Refer to the [configuring callbacks for comments]({{site.baseurl}}/advanced/configuring-comments-callbacks/) section, for more information.
 
 * **Embedded Mode** - This mode allows the user to store the comments within the content. No additional callbacks are required to be configured to use this mode.
 

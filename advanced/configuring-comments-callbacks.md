@@ -11,11 +11,9 @@ keywords: comments commenting tinycomments callback
 Callback mode is the default mode for [Tiny Comments]({{site.baseurl}}/plugins/comments/). In the callback mode the user needs to configure storage to be able to save comments on the server. The storage settings can be configured to either persist the comments immediately or save them at the same time as the content.
 How the comments are stored effects when other users see new comments. The Comments functions (create, reply, edit, delete comment, delete all conversations, and lookup) are configured differently depending upon the server-side storage configuration.
 
-In this chapter, we have provided examples of both ways of configuring Comments storage.
+### Helper Functions
 
-#### Helper Functions
-
-We have used the following helper functions in our demo above:
+Comments uses the following helper functions:
 
 * **setConversation(uid, conversation)** `setConversation` is a function written to synchronously write a conversation to a form field for submission to the server later.
 
@@ -30,7 +28,7 @@ We have used the following helper functions in our demo above:
 * **getAuthorDisplayName(uid)** `getAuthorDisplayName(authorID)` is a function to retrieve an existing conversation via a conversation UID (`authorID` in our example).
 
 
-## Comments Implementation Functions
+### Comments Implementation Functions
 
 Comments requires the following functions to be defined:
 
@@ -101,7 +99,7 @@ The done callback needs to take an object of the form:
 
 ```js
 {
-  commentUid: whatever the new comment uid is
+  commentUid: the value of the new comment uid
 }
 ```
 
@@ -115,22 +113,26 @@ The `edit` function is given a request object as the first parameter, which has 
 
 * **conversationUid**: the uid of the conversation the reply is a part of.
 
+* **commentUid**: the uid of the comment to edit (it can be the same as `conversationUid` if editing the first comment in a conversation)
+
 * **content**: the content of the comment to create.
 
-* **createdAt**: the date the comment was created.
+* **modifiedAt**: the date the comment was modified.
 
 The done callback needs to take an object of the form:
 
 ```js
 {
-  commentUid: whatever the new comment uid is
+  canEdit: whether or not the Edit succeeded
+  reason: an optional string explaining why the edit was not allowed (if canEdit is false)
 }
+```
 
 ### Delete
 
 The `delete` function should asynchronously return a flag indicating whether the comment/comment thread was removed using the `done` callback. Unrecoverable errors are communicated to TinyMCE by calling the `fail` callback instead.
 
-The `delete` function is given a request object as the first parameter, which has these fields:
+The `delete` function is given a request object as the first parameter, which has this field:
 
 * **conversationUid**: the uid of the conversation the reply is a part of.
 
@@ -139,6 +141,7 @@ The done callback needs to take an object of the form:
 ```js
 {
   canDelete:boolean
+  reason: an optional string explaining why the delete was not allowed (if canDelete is false)
 }
 ```
 
@@ -148,34 +151,37 @@ The done callback needs to take an object of the form:
 
 The `deleteAll` function should asynchronously return a flag indicating whether all the comments in a conversation were removed using the `done` callback. Unrecoverable errors are communicated to TinyMCE by calling the `fail` callback instead.
 
-The `deleteAll` function is given a request object as the first parameter, which has these fields:
-
-* **conversationUid**: the uid of the conversation the reply is a part of.
+The `deleteAll` function is given a request object as the first parameter with no fields.
 
 The done callback needs to take an object of the form:
 
 ```js
 {
   canDelete:boolean
+  reason: an optional string explaining why the delete all was not allowed (if canDelete is false)
 }
 ```
+
 > Note: Failure to delete due to permissions or business rules is indicated by "false", while unexpected errors should be indicated using the "fail" callback.
 
 ### DeleteComments
 
-The `deleteComments` function should asynchronously return a flag indicating whether the comment/comment thread was removed using the `done` callback. Unrecoverable errors are communicated to TinyMCE by calling the `fail` callback instead.
+The `deleteComment` function should asynchronously return a flag indicating whether the comment/comment thread was removed using the `done` callback. Unrecoverable errors are communicated to TinyMCE by calling the `fail` callback instead.
 
 The `deleteComments` function is given a request object as the first parameter, which has these fields:
 
 * **conversationUid**: the uid of the conversation the reply is a part of.
+* **commentUid**: the uid of the comment to delete (cannot be the same as conversationUid)
 
 The done callback needs to take an object of the form:
 
 ```js
 {
   canDelete:boolean
+  reason: an optional reason
 }
 ```
+
 > Note: Failure to delete due to permissions or business rules is indicated by "false", while unexpected errors should be indicated using the "fail" callback.
 
 
@@ -185,13 +191,11 @@ Comments uses the Conversation `lookup` function to retrieve an existing convers
 
 The conventional conversation object structure that should be returned via the `done` callback is as follows:
 
-The `lookup` function is given a request object as the first parameter, which has these fields:
+The `lookup` function is given a request object as the first parameter, which has this field:
 
 * **conversationUid**: the uid of the conversation the reply is a part of.
 
 The done callback needs to take an object of the form:
-
-#### Comment object
 
 ```js
 {
@@ -203,6 +207,16 @@ The done callback needs to take an object of the form:
      modifiedAt: 'date',
      uid: 'asfasdf87dfas08asd0fsadflsadf'
    },
+   {
+    author: 'Demouser2',
+    createdAt: 'date',
+    content: 'Reply',
+    modifiedAt: 'date',
+    uid: 'asfasdf87dfas08asd0fsadflsadg’'
+   },
+ ]
+}
+
  ]
 }
 

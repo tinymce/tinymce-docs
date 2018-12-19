@@ -37,22 +37,21 @@ Comments requires the following functions to be defined:
 ```js
 tinymce.init({
   ...
-  tinycomments_create: create,
-  tinycomments_reply: reply,
-  tinycomments_delete: del,
-  tinycomments_delete_all: deleteAll,
-  tinycomments_delete_comment: deleteComment,
-  tinycomments_lookup: lookup,
-  tinycomments_edit_comment: editComment
+   tinycomments_create: create,
+   tinycomments_reply: reply,
+   tinycomments_delete: del,
+   tinycomments_delete_all: deleteAll,
+   tinycomments_delete_comment: deleteComment,
+   tinycomments_lookup: lookup,
+   tinycomments_edit_comment: editComment
 });
 ```
 
-All functions incorporate done and fail callbacks as parameters. The function return type is not important, but all functions must call one of these two callbacks.
+All functions incorporate `done` and `fail` callbacks as parameters. The function return type is not important, but all functions must call exactly one of these two callbacks: `fail` or `done`.
 
-If the comments are configured to be persistent to a form field to be persisted on document save, the appropriate callback should be called prior to the function returning.
+* The `fail` callback takes either a string or a JavaScript Error type.
 
-However, if comments are persisted directly back to a server as they are made, they are called asynchronously after the designated network call has completed.
-
+* The `done` callback takes an argument specific to each function.
 
 ### Considerations
 
@@ -68,50 +67,20 @@ Comments does not know the name of the current user. After a user comments (trig
 
 Comments uses the Conversation create function to create a comment.
 
-The create function saves the comment as a new conversation and returns a unique conversation ID via the done callback. If an unrecoverable error occurs, it should indicate this with the fail callback.
+The create function saves the comment as a new conversation and returns a unique conversation ID via the `done` callback. If an unrecoverable error occurs, it should indicate this with the fail callback.
 
-The following are examples of how `create` can be implemented depending on whether storage settings are configured to be persistent in real time or on content-save.
+The create function is given a request object as the first parameter, which has these fields:
 
-#### Example - Storage - persist in real-time
+* **content**: the content of the comment to create.
 
-Here is an example of how `create` can be implemented using storage configured to persist in real-time:
+* **createdAt**: the date the comment was created.
 
-```js
-function create(req, done, fail) {
-    fetch(
-      'https://api.example/conversations/',
-      { method: 'POST', body: req }
-    ).then(function(response) {
-      return response.json();
-    }).then(function(json) {
-      console.log('here', json.uid);
-      done({ conversationUid: json.uid });
-    }).catch(function() {
-      fail(new Error('Something has gone wrong...'));
-    });
-  }
-```
-
-#### Example - Storage - persist on content-save
-
-Here is an example of how `create` can be implemented using storage configured to persist on content-save:
+The done callback needs to take an object of the form:
 
 ```js
-function create (req, done, fail) {
-    if (req.content === 'fail') {
-      fail(new Error('Something has gone wrong...'));
-    } else {
-      var uid = 'annotation-' + randomString();
-      setConversation(
-        uid,
-        // [ { uid, author, content: req.content, createdAt: ts, modifiedAt: ts } ]
-        [ { author: authorId, content: req.content, createdAt: req.createdAt, modifiedAt: req.createdAt } ]
-      );
-      done({
-        conversationUid: uid
-      });
-    }
-  }
+{
+  conversationUid: whatever the new conversation uid is
+}
 ```
 
 ### Reply
@@ -120,70 +89,95 @@ Comments uses the conversation `reply` function to reply to a comment.
 
 The `reply` function saves the comment as a reply to an existing conversation and returns via the `done` callback once successful. Unrecoverable errors are communicated to TinyMCE by calling the `fail` callback instead.
 
-#### Example - Storage - persist on content-save
+The `reply` function is given a request object as the first parameter, which has these fields:
 
-Here is an example of how `reply` can be implemented using storage configured to persist on content-save:
+* **conversationUid**: the uid of the conversation the reply is a part of.
+
+* **content**: the content of the comment to create.
+
+* **createdAt**: the date the comment was created.
+
+The done callback needs to take an object of the form:
 
 ```js
-function reply(req, done, fail) {
-    var comments = getConversation(req.conversationUid);
-    var replyUid = 'annotation-' + randomString();
-    comments.push({
-      uid: replyUid,
-      author: authorId,
-      content: req.content,
-      createdAt: req.createdAt,
-      modifiedAt: req.modifiedAt
-    });
-    setConversation(req.conversationUid, comments);
-    done({ commentUid: replyUid });
-  }
+{
+  commentUid: whatever the new comment uid is
+}
 ```
+
+### Edit
+
+Comments uses the conversation `edit` function to edit a comment.
+
+The `edit` function allows updating or changing an original comments and returns via the `done` callback once successful. Unrecoverable errors are communicated to TinyMCE by calling the `fail` callback instead.
+
+The `edit` function is given a request object as the first parameter, which has these fields:
+
+* **conversationUid**: the uid of the conversation the reply is a part of.
+
+* **content**: the content of the comment to create.
+
+* **createdAt**: the date the comment was created.
+
+The done callback needs to take an object of the form:
+
+```js
+{
+  commentUid: whatever the new comment uid is
+}
 
 ### Delete
 
-The `delete` function should asynchronously return a flag indicating whether the comment/comment thread was removed using the done callback. Unrecoverable errors are communicated to TinyMCE by calling the fail callback instead.
+The `delete` function should asynchronously return a flag indicating whether the comment/comment thread was removed using the `done` callback. Unrecoverable errors are communicated to TinyMCE by calling the `fail` callback instead.
 
-The following are examples of how `delete` can be implemented depending on whether storage settings are configured to be persistent in real time or on content-save.
+The `delete` function is given a request object as the first parameter, which has these fields:
 
-<!--#### Example - Storage - persist in real-time
+* **conversationUid**: the uid of the conversation the reply is a part of.
 
-Here is an example of how `delete` can be implemented using storage configured to persist in real-time:
-
-```js
-function del(uid, done, fail) {
-    fetch(
-      'https://api.example/conversations/'+uid,
-      { method: 'DELETE' }
-    ).then(function(response) {
-      if (response.ok) {
-        done(true);
-      } else if (response.status == 403) {
-        done(false)
-      } else {
-        fail(new Error('Something has gone wrong...'));
-      }
-    });
-  }
-```-->
-
-#### Example - Storage - persist on content-save
-
-Here is an example of how `delete` can be implemented using storage configured to persist on content-save:
+The done callback needs to take an object of the form:
 
 ```js
-  function del(req, done, fail) {
-      // only allow first commenter to delete
-      if (getConversation(req.conversationUid)[0].author === authorId) {
-        deleteConversation(req.conversationUid);
-        done({ canDelete: true });
-      } else {
-        done({ canDelete: false });
-      }
-    }
+{
+  canDelete:boolean
+}
 ```
 
 > Note: Failure to delete due to permissions or business rules is indicated by "false", while unexpected errors should be indicated using the "fail" callback.
+
+### DeleteAll
+
+The `deleteAll` function should asynchronously return a flag indicating whether all the comments in a conversation were removed using the `done` callback. Unrecoverable errors are communicated to TinyMCE by calling the `fail` callback instead.
+
+The `deleteAll` function is given a request object as the first parameter, which has these fields:
+
+* **conversationUid**: the uid of the conversation the reply is a part of.
+
+The done callback needs to take an object of the form:
+
+```js
+{
+  canDelete:boolean
+}
+```
+> Note: Failure to delete due to permissions or business rules is indicated by "false", while unexpected errors should be indicated using the "fail" callback.
+
+### DeleteComments
+
+The `deleteComments` function should asynchronously return a flag indicating whether the comment/comment thread was removed using the `done` callback. Unrecoverable errors are communicated to TinyMCE by calling the `fail` callback instead.
+
+The `deleteComments` function is given a request object as the first parameter, which has these fields:
+
+* **conversationUid**: the uid of the conversation the reply is a part of.
+
+The done callback needs to take an object of the form:
+
+```js
+{
+  canDelete:boolean
+}
+```
+> Note: Failure to delete due to permissions or business rules is indicated by "false", while unexpected errors should be indicated using the "fail" callback.
+
 
 ### Lookup
 
@@ -191,81 +185,27 @@ Comments uses the Conversation `lookup` function to retrieve an existing convers
 
 The conventional conversation object structure that should be returned via the `done` callback is as follows:
 
-#### Conversation object
+The `lookup` function is given a request object as the first parameter, which has these fields:
 
-```js
-{
- "comments": [
-  <comment1>,
-  <comment2>,
-  ...
- ]
-}
+* **conversationUid**: the uid of the conversation the reply is a part of.
 
-```
+The done callback needs to take an object of the form:
+
 #### Comment object
 
 ```js
 {
-  "author": "Author Display Name",
-  "content": "This is the text of the comment"
+ comments: [
+   {
+     author: 'Demouser1',
+     createdAt: 'date',
+     content: 'Starter',
+     modifiedAt: 'date',
+     uid: 'asfasdf87dfas08asd0fsadflsadf'
+   },
+ ]
 }
 
-```
-
-The following are examples of how `lookup` can be implemented if you choose to configure your storage settings to be either persistent in real time or on content-save.
-
-#### Example - Storage - persist in real-time
-
-Here is an example of how `lookup` can be implemented using storage configured to persist in real-time:
-
-```js
-  function lookup(uid, done, fail) {
-    fetch('https://api.example/conversations/'+uid)
-      .then(function(response) { return response.json(); })
-      .then(function(json) {
-        var conversation = json.comments;
-        return fetch('https://api.example/users/')
-          .then(function(response) { return response.json(); })
-          .then(function(json) {
-            var users = json.users;
-            var unknown = { displayName: 'Unknown' };
-            return conversation.map(function(item) {
-              var user = users.find(function(v) { return v.id == item.user; });
-              return {
-                author: (user || unknown).displayName,
-                content: item.comment
-              };
-            });
-          });
-      })
-      .then(function(comments) {
-        done({ comments: comments });
-      })
-      .catch(function() {
-        fail(new Error('Something has gone wrong...'));
-      })
-  }
-```
-
-#### Example - Storage - persist on content-save
-
-Here is an example of how `lookup` can be implemented using storage configured to persist on content-save, utilizing an in-memory lookup function to resolve author display names:
-
-```js
-function lookup(uid, done, fail) {
-  try {
-    var comments = getConversation(uid).map(function(item) {
-      return {
-        author: getAuthorDisplayName(item.user),
-        content: item.comment
-      };
-    });
-    done({ comments: comments });
-  } catch {
-    fail(new Error('Error looking up conversation...'));
-  }
-}
 ```
 
 For more information on Comments commercial feature, visit our [Premium Features]({{ site.baseurl }}/enterprise/tiny-comments/) page.

@@ -92,7 +92,8 @@ menu: {
 ```
 
 **Result**: The commented text will be highlighted yellow.
-![**Highlighted text**]({{site.baseurl}}/images/highlight.png)(**Highlighted text**)
+![**Highlighted text**]({{site.baseurl}}/images/highlight.png)
+
 For more information on TinyMCE formats, refer to the [formats]({{site.baseurl}}/configure/content-formatting/#formats) section.
 
 

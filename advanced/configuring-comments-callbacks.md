@@ -185,7 +185,6 @@ Here is an example of how `delete` can be implemented using storage configured t
 
 > Note: Failure to delete due to permissions or business rules is indicated by "false", while unexpected errors should be indicated using the "fail" callback.
 
-
 ### Lookup
 
 Comments uses the Conversation `lookup` function to retrieve an existing conversation via a conversation unique ID.

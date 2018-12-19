@@ -8,17 +8,19 @@ keywords: comments commenting tinycomments
 
 ## Introduction
 
-The Tiny Comments plugin provides the ability to start or join a conversation by adding comments to the content within the TinyMCE editor. The Comments plugin is built upon the new [Annotations API]({{site.baseurl}}/advanced/annotations/) and uses annotations to create comment threads (conversations).
+The Tiny Comments plugin provides the ability to start or join a conversation by adding comments to the content within the TinyMCE editor. The Comments plugin is built upon the [Annotations API]({{site.baseurl}}/advanced/annotations/) and uses annotations to create comment threads (conversations).
 
 Comments is a premium plugin from Tiny. Please see the [Premium features]({{site.baseurl}}/enterprise/tiny-comments/) section for all the buying options.
 
 Once you have obtained the Comments plugin, refer to the following instructions for using it.
 
-### Storage
+### Modes
 
-There are two storage modes available in Comments that provide the ability to save comments.
-* **Callback Mode** - This mode is used to configure storage and save comments on user’s server. This option gives the user a choice to configure the storage settings to either persist comments immediately or save them at the same time as the content. By default, the **callback** mode is enabled in Comments. Refer to the configuring callbacks for comments section, for more information.
-* **Embedded Mode** - This mode allows the user to store the comments within the content.
+There are two modes available in Comments that provide the ability to save comments. These modes are configured in the Comments settings.
+
+* **Callback Mode** - This is the default mode in Comments. This mode is used to configure storage and save comments on user’s server. This option gives the user a choice to configure the storage settings to either persist comments immediately or save them at the same time as the content. Additional callbacks are required to be configured to use Comments in the callback mode. Refer to the [configuring callbacks for comments]({{site.baseurl}}/advanced/configuring-comments-callbacks/make serve) section, for more information.
+
+* **Embedded Mode** - This mode allows the user to store the comments within the content. No additional callbacks are required to be configured to use this mode.
 
 ### Configuring Comments embedded mode
 
@@ -56,8 +58,10 @@ Optional values: addcomment, showcomments
 
 **Result**: The **Comments**  ![**Comments**]({{site.baseurl}}/images/comment-disabled.png) toolbar button appears in the toolbar menu. The function of this button is to add comments to selected text.
 
-> Note: Currently, there are two toolbar options available:
+> Note: Currently, there are two toolbar buttons available:
+
 * `addcomment` - Provides the ability to add comments.
+
 * `showcomments`- Provides the ability to display comments field for the selected text. It is a toggle button and is used to hide the comments sidebar as well.
 
 
@@ -67,9 +71,12 @@ By default, when Comments is added to the plugin list, the default menus will ha
 
 For more information on configuring menu items refer to the [toolbar]({{site.baseurl}}/configure/editor-appearance/#toolbar) and [menu]({{site.baseurl}}/configure/editor-appearance/#menu) sections.
 
-Currently, there are three options available for creating a menu item:
+Currently, there are three menu items available:
+
 * `addcomment` - Provides the ability to add comments. By default, this option can be accessed through **Insert** -> **Add comment** menu bar item.
+
 * `showcomments`- Provides the ability to display comments field for the selected text. It is a toggle button and is used to hide the comments as well. By default, this option can be accessed through **View** -> **Show comment** menu bar item.
+
 * `deleteallconversations`- Provides the ability to delete all the comments in the content. By default, this option can be accessed through **File** -> **Delete all conversations** menu bar item.
 
 ### Configuring the commented text properties
@@ -78,14 +85,7 @@ The editor needs to be configured to highlight the commented text. The following
 
 ```js
 tinymce.init({
-  selector: "#textarea",
-  menubar: 'file edit view insert format tools tc',
-menu: {
- tc: {
-  title: 'TinyComments',
-  items: 'addcomment'
-   }
- },
+...
  content_style: '.mce-annotation { background: #fff0b7; } .tc-active-annotation {background: #ffe168; color: black; }',
  ...
 })
@@ -113,7 +113,7 @@ For more information on TinyMCE formats, refer to the [formats]({{site.baseurl}}
 Note: The above procedure can be followed for adding multiple comments to the document.
 
 #### Editing a comment
-Once a comment is saved, follow this procedure to edit a comment.
+Follow this procedure to edit a comment.
 
 1. Click on the ![**3dots**]({{site.baseurl}}/images/3dots.png) icon above the comments box to expand the menu.
 1. Select **Edit** from the menu items.
@@ -121,7 +121,7 @@ Once a comment is saved, follow this procedure to edit a comment.
 1. Click **Cancel** to discard or **Save** to store the changes.
 
 #### Delete a comment
-Once a comment is saved, follow this procedure to delete a comment. This option is not available for the first comment in a conversation.
+Follow this procedure to delete a comment. This option is not available for the first comment in a conversation.
 
 1. Click on the ![**3dots**]({{site.baseurl}}/images/3dots.png) icon above the comments box to expand the menu.
 1. Select **Delete** from the menu items.
@@ -131,7 +131,7 @@ Once a comment is saved, follow this procedure to delete a comment. This option 
 
 
 #### Delete conversation
-This option is only available for the first comment of a selected text. Once the comment is saved, follow this procedure to delete a conversation.
+This option is only available for the first comment in a conversation. Once the comment is saved, follow this procedure to delete a conversation.
 
 1. Click on the ![**3dots**]({{site.baseurl}}/images/3dots.png) icon above the comments box to expand the menu.
 1. Select **Delete conversation** from the menu items.
@@ -142,15 +142,16 @@ This option is only available for the first comment of a selected text. Once the
 **Result**: The conversation and all its subsequent comments will be deleted.
 
 #### Show comment
-Once the comment is saved, follow this procedure to display the comments for a selected text in the editor body:
+Follow this procedure to display the comments sidebar:
 
 1. Place the cursor on the desired text in the editor body:
 1. From the navigation menu, choose **View** -> **Show Comment** or click on the **Show Comments**![**Comments**]({{site.baseurl}}/images/comment-disabled.png) toggle toolbar button to display the comment.
 
-**Result**: The comments field will appear. The comments field will display the saved comments for the selected text in the editor body.
+**Result**: The comments sidebar will appear and display the corresponding conversation for the highlighted text.
 
 #### Delete all conversations
-Once the comment is saved, follow this procedure to display the comments for a selected text in the editor body:
+
+Follow this procedure to delete all conversations in the document:
 
 1. From the navigation menu, choose **File** -> **Delete all conversations** option to delete all the comments in a document.
 1. The following decision dialog box will appear:

@@ -3,7 +3,7 @@
 
 This option enables you to add more advanced style formats for text and other elements to the editor. The value of this option will be rendered as styles in the `styleselect` dropdown toolbar item.
 
-It's important to note that the `style_formats` option, while similar in syntax, is entirely separate from the `formats` option. This option will only add items to the *Formats* dropdown in the toolbar, not the *Format* dropdown in the menu bar.
+It's important to note that the `style_formats` option, while similar in syntax, is entirely separate from the `formats` option. For a complete reference of the different format options then check the [formats]({{ site.baseurl }}/configure/content-formatting/#formats)
 
 **Type:** `Array`
 

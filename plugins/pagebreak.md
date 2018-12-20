@@ -41,7 +41,7 @@ tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "pagebreak",
   menubar: "insert",
-  toolbar: "pagebreak"
+  toolbar: "pagebreak",
   pagebreak_separator: "<!-- my page break -->"
 });
 ```
@@ -63,7 +63,7 @@ tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "pagebreak",
   menubar: "insert",
-  toolbar: "pagebreak"
+  toolbar: "pagebreak",
   pagebreak_split_block: true
 });
 ```

@@ -303,7 +303,7 @@ tinymce.init({
 
 This option lets you control if the selection should expand upwards to the closest matching block element. This can be useful when configuring removeformat to remove block elements. So if the selection start is at the start of a matching block then that matching block will be included as well. If the end of the selection is at the end of a matching block element then that parent element will be included as well.
 
-So if the selection is from a to b in this html contents `<h1><b>[a</h1><p>b]</p>` then the h1 will be removed even if it's not part of the actual selection.
+So if the selection is from a to b in this html contents `<h1><b>[a</b></h1><p>b]</p>` then the h1 will be removed even if it's not part of the actual selection.
 
 **Type:** `boolean`
 

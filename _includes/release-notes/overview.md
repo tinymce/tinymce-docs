@@ -17,7 +17,7 @@ Refer to the [Quick start]({{site.baseurl}}/quick-start) docs for more informati
 
 ### Upgrade
 
-Developers can upgrade their TinyMCE 4.x instances to TinyMCE 5.0 with little or no fuss. For instructions on how to migrate, refer to the [Migration Guide]({{site.baseurl}}/migrating-from-4.x).
+Developers can upgrade their TinyMCE 4.x instances to TinyMCE 5.0 with little or no fuss. For instructions on how to migrate, refer to the [Migration Guide]({{site.baseurl}}/migration-from-4x/).
 
 > Note:  An instance of TinyMCE with heavy customizations could take longer to upgrade. Please contact [Customer Support](https://support.tiny.cloud) if encountering issues with the upgrade.
 

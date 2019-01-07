@@ -57,7 +57,7 @@ A new experimental feature has been added that allows using the tab across all T
 
 TinyMCE 5.0 codebase has been extensively rewritten with the focus on converting the UI components to a more modern UI framework. As a consequence of this rewrite, all the related features have been updated.
 
-The new framework takes advantage of the latest CSS3 features for consistent styling and is ARIA [IBM standards](https://www.ibm.com/able/checklists.html) compliant.
+The new framework takes advantage of the latest CSS3 features for consistent styling and is ARIA [WCAG 2.1 standards](https://www.w3.org/WAI/standards-guidelines/wcag/) compliant.
 
 The new UI framework has a stricter API for creating components, which means that the code is more structured and has an in-built validation combined with TypeScript. This strictness makes the code cleaner, more stable, and easier to maintain and troubleshoot.
 
@@ -83,7 +83,7 @@ Using the Page Embed feature can enable including content like Google maps or a 
 
 The embedded content is an independent HTML document, referenced in the `src` attribute of each element. Hence it is a fully independent resource, referenced from the current document.
 
-The Page Embed premium plugin will be available to use with TinyMCE in the early weeks of January 2019.
+The Page Embed premium plugin will be available to use with TinyMCE in the early weeks of February 2019.
 
 <!-- Refer to the [Page Embed]({{site.baseurl}}/plugins/pageembed/) documentation, for more information.-->
 
@@ -97,7 +97,7 @@ Permanent Pen only works in a rich text field such as the body of a message.
 
 For premium users, the Permanent Pen function is available in the toolbar. Click anywhere in the text field to use the Permanent Pen function.
 
-The Permanent Pen premium plugin will be available to use with TinyMCE in the early weeks of January 2019.
+The Permanent Pen premium plugin will be available to use with TinyMCE in the early weeks of February 2019.
 
 <!-- Refer to the [Permanent Pen]({{site.baseurl}}/plugins/permanentpen/) documentation, for more information.-->
 
@@ -107,7 +107,7 @@ Tables are better in TinyMCE 5.0 editor. Creating and configuring tables in Tiny
 
 This feature has been enhanced by modifying the code to ensure the styles are correct and consistent. The **Styles** text field has been removed from the advanced table properties dialogs. The dialog configuration is now much less confronting and confusing for non-developers.
 
-"Border" input field in the table properties dialog is now called "Border width" for clarity. Refer the [Tables]({{site.baseurl}}/plugins/table/) documentation, for more information. Tables are enriched with the following new additions:
+"Border" input field in the table properties dialog is now called "Border width" for clarity. Refer to the [Tables]({{site.baseurl}}/plugins/table/) documentation, for more information. Tables are enriched with the following new additions:
 
 * **Using CSS for styling** - TinyMCE 5.0 uses CSS more for styling. Thus few legacy and outdated data attributes that were being configured on tables, rows, and cells and no longer adhered to the industry best practices, were removed. HTML is now cleaner and shorter.
 
@@ -119,7 +119,7 @@ TinyMCE 5.0 uses SVG icons for a better crisp look. Buttons are now added via me
 
 To make the creation of custom toolbar buttons easier, new methods were added for split, toggle, and menu toolbar buttons with configuration options specific to the button type.
 
-Refer the [Toolbar Buttons]({{site.baseurl}}/ui-components/toolbarbuttons/) documentation, for more information.
+Refer to the [Toolbar Buttons]({{site.baseurl}}/ui-components/toolbarbuttons/) documentation, for more information.
 
 ### UI accessibility
 

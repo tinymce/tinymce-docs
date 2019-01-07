@@ -15,7 +15,7 @@ There are two deployment options. One is with TinyMCE Cloud, the other is to go 
 
 ## Mentions cloud setup
 
-[TinyMCE Cloud]({{ site.baseurl }}/cloud-deployment-guide/editor-and-features/) makes setting up Mentions very easy. Simply include the `mentions` parameter in the `tinymce.init` section. The Tiny Cloud services automatically downloads the Mentions feature for the editor.
+[TinyMCE Cloud]({{ site.baseurl }}/cloud-deployment-guide/editor-and-features/) makes setting up Mentions very easy. Simply include the `mentions` parameter in the `tinymce.init` script. The Tiny Cloud services automatically downloads the Mentions feature for the editor.
 
 ## Downloading Mentions
 

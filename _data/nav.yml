@@ -32,6 +32,8 @@
   - url: "basic-example"
   - url: "full-featured"
   - url: "pageembed"
+  - url: "permanentpen"
+  - url: "formatpainter"
   - url: "drive"
   - url: "editor-dfree"
   - url: "inline"
@@ -223,12 +225,13 @@
   - url: "code"
   - url: "codesample"
   - url: "colorpicker"
-  - url: "comments"
+  # - url: "comments"
   - url: "contextmenu"
   - url: "directionality"
   - url: "drive"
   - url: "emoticons"
   - url: "mediaembed"
+  - url: "formatpainter"
   - url: "fullpage"
     pages:
     - url: "#fullpage_default_doctype"
@@ -332,6 +335,7 @@
     - url: "#paste_merge_formats"
     - url: "#paste_convert_word_fake_lists"
     - url: "#paste_remove_styles_if_webkit"
+  - url: "permanentpen"
   - url: "powerpaste"
   - url: "preview"
     pages:
@@ -471,10 +475,12 @@
 
 - url: "enterprise"
   pages:
-  - url: "tiny-comments"
+  # - url: "tiny-comments"
   - url: "tinydrive"
   - url: "moxiemanager"
   - url: "pageembed"
+  - url: "permanentpen"
+  - url: "formatpainter"
   - url: "paste-from-word"
   - url: "check-spelling"
     pages:
@@ -550,5 +556,5 @@
   - url: "#Technology preview"
   - url: "#Removed & deprecated features"
   - url: "#Known issues"
-  - url: "#Bug fixes"
+ # - url: "#Bug fixes"
 

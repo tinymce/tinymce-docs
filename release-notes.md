@@ -25,6 +25,6 @@ keywords: releasenotes newfeatures deleted technologypreview bugfixes knownissue
 
 {% include release-notes/known-issues.md %}
 
-## Bug fixes
+<!--## Bug fixes
 
-{% include release-notes/bugfixes.md %}
+{% include release-notes/bugfixes.md %}-->

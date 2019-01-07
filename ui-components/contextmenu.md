@@ -10,6 +10,10 @@ The context menu is a configurable component that appears when the user right cl
 
 The context menu supports both individual menu items and dynamic context menu sections.
 
+## Live example
+
+{% include codepen.html id="context-menu" %}
+
 ## Options
 
 #{% include configuration/contextmenu.md %}

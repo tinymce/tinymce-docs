@@ -108,7 +108,7 @@ For more information on TinyMCE formats, refer to the [formats]({{site.baseurl}}
 1. Press **Clear** to delete or **Save** to store the input comment.
 
 **Result**: The selected text will be highlighted as per the configured options. The following screen with the option for editing, deleting, and replying to the comment, will appear.
-![**Delete Conversation**]({{site.baseurl}}/images/deleteconversation.png)
+![**Delete Conversation**]({{site.baseurl}}/images/commentedit.png)
 
 Note: The above procedure can be followed for adding multiple comments to the document.
 

@@ -26,16 +26,16 @@ var dialogConfig =  {
       type: 'submit',
       name: 'submitButton',
       text: 'Do Cat Thing',
-      primary: true,
+      primary: true
     }
   ],
   initialData: {
     catdata: 'initial Cat',
-    isdog: 'unchecked'
+    isdog: false
   },
   onSubmit: function (api) {
     var data = api.getData();
-    var pet = data.isdog === 'checked' ? 'dog' : 'cat';
+    var pet = data.isdog ? 'dog' : 'cat';
 
     tinymce.activeEditor.execCommand('mceInsertContent', false, '<p>My ' + pet +'\'s name is: <strong>' + data.catdata + '</strong></p>');
     api.close();

@@ -15,7 +15,7 @@ var config = {
     }]
   },
   initialData: {
-    anyterms: 'unchecked'
+    anyterms: false
   },
   buttons: [
     {
@@ -34,7 +34,7 @@ var config = {
   onChange: function (dialogApi, changeData) {
     var data = dialogApi.getData();
     /* Example of enabling and disabling a button, based on the checkbox state. */
-    var toggle = data.anyterms === 'checked' ? dialogApi.enable : dialogApi.disable;
+    var toggle = data.anyterms ? dialogApi.enable : dialogApi.disable;
     toggle('uniquename');
   },
   onAction: function (dialogApi, actionData) {

@@ -41,6 +41,7 @@ tinymce.init({
   plugins: 'permanentpen',
   contextmenu: 'configurepermanentpen',
   toolbar: 'permanentpen'
+});
 ```
 **Result**:
 The ![**Permanent Pen**]({{site.baseurl}}/images/pp-disabled.png)(**Permanent Pen**) button appears in the toolbar menu.
@@ -67,29 +68,38 @@ There are two ways to access the Permanent Pen properties:
 
 #### From the menubar
 
-In the TinyMCE 5.0 instance, choose the *Format* -> *(Permanent Pen)* option from the **Format** menu.
+Add the Permanent pen properties option to the menu bar with the [menu]({{site.baseurl}}/docs-beta/configure/editor-appearance/#menu) configuration.
 
-![Format Menu]({{site.baseurl}}/images/formatmenu.png)
+```js
+tinymce.init({
+  selector: "textarea",  // change this value according to your HTML
+  plugins: 'permanentpen',
+  toolbar: 'permanentpen',
+  menu: {
+    format: { title: 'Format', items: 'configurepermanentpen' }
+  }
+});
+```
 
 #### Inline
 
 1. Place the cursor on the text entered using a Permanent Pen.
 2. Right-click anywhere from inside the text area.
-3. Choose on the **Permanent Pen** option.
+3. Choose the **Permanent Pen** option.
 
 ![Right-click]({{site.baseurl}}/images/right-click.png)
 
 **Result**:
-The **Permanent pen properties** dialog box appears.
+The **Permanent Pen Properties** dialog box appears.
 
-> Note: The Permanent Pen has to be enabled to access the **Permanent pen properties** dialog box by right-clicking the text. On the other hand, the menubar option can be accessed without enabling the Permanent Pen.
+> Note: The Permanent Pen has to be enabled to access the **Permanent Pen Properties** dialog box by right-clicking the text. On the other hand, the menubar option can be accessed without enabling the Permanent Pen.
 
 ### Changing Permanent Pen properties
 
 #### Using the UI
 
-1. Open the **Permanent pen properties** dialog box using any of the above methods.
-![Permanent pen properties]({{site.baseurl}}/images/pp-prop.png)
+1. Open the **Permanent Pen Properties** dialog box using any of the above methods.
+![Permanent pen properties]({{site.baseurl}}/images/ppprop.png)
 2. Select the desired settings from the **Font** and **Size** drop-down menus.
 3. To select the desired **Styles**, click on the radio button next to **Bold**, **Italic**, **Strikethrough**, or **Underline**.
 4. Choose the desired **Text color**.

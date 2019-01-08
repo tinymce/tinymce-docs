@@ -90,7 +90,7 @@ tinymce.init({
 ![Right-click]({{site.baseurl}}/images/right-click.png)
 
 **Result**:
-The **Permanent pen properties** dialog box appears.
+The **Permanent Pen Properties** dialog box appears.
 
 > Note: The Permanent Pen has to be enabled to access the **Permanent Pen Properties** dialog box by right-clicking the text. On the other hand, the menubar option can be accessed without enabling the Permanent Pen.
 

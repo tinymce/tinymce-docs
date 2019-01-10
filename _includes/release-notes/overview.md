@@ -1,9 +1,9 @@
 
-This document is only provided as a preview. It is under development and is subject to substantial changes. Consider the included information incomplete and use it with caution. The Release Notes provide high-level coverage of the improvements and additions that have been implemented in TinyMCE 5.0 Beta and document known problems in this release, as well as notable bug fixes, Technology Previews, deprecated functionality, and other details.
+This document is only provided as a preview. It is under development and is subject to substantial changes. Consider the included information incomplete and use it with caution. The Release Notes provide high-level coverage of the improvements and additions that have been implemented in TinyMCE 5.0 Release Candidate and document known problems in this release, as well as notable bug fixes, Technology Previews, deprecated functionality, and other details.
 
 TinyMCE 5.0 has an ARIA [WCAG 2.1 standards](https://www.w3.org/WAI/standards-guidelines/wcag/) compliant user interface to make the user interface controls and dynamic content more accessible. In TinyMCE 5.0, more complex controls or dialogs can be written in the new API style while keeping the more straightforward methods of adding buttons and windows the same.
 
-### Get TinyMCE 5.0 Beta
+### Get TinyMCE 5.0 RC
 
 Include this line of code in the <head> of the HTML page and link to the tinymce.min.js source file:
 

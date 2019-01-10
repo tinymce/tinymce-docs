@@ -1,5 +1,5 @@
 
-The following new features were added to the TinyMCE 5.0 Beta version.
+The following new features were added to the TinyMCE 5.0 RC version.
 
 ### Context Menu
 

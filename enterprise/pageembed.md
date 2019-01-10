@@ -2,7 +2,7 @@
 layout: default
 title: Page Embed plugin
 title_nav: Page Embed
-description: Easily inserts iframe into the content.
+description: Easily inserts iframe into the content. (Available post TinyMCE 5.0 GA)
 keywords: view Page Embed insert iframe
 controls: toolbar button, menu item
 ---
@@ -23,7 +23,7 @@ To try out Page Embed and Tiny Cloud-delivered editor, the first step is to crea
 
 ### Buy TinyMCE Page Embed
 
-Start with this [dedicated product page](https://about.tiny.cloud/products/pageembed/) to see all the flexible pricing options. OEM and enterprise customers should [contact sales directly](https://www.tinymce.com/pricing/).
+Start with the [pricing page](https://www.tiny.cloud/pricing/)<!--this [dedicated product page](https://about.tiny.cloud/products/permanentpen/)--> to see all the flexible pricing options. OEM and enterprise customers should [contact sales directly](https://www.tiny.cloud/contact/).
 
 For more information on Page Embed refer to the full [documentation]({{site.baseurl}}/plugins/pageembed/).
 

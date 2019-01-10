@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Release notes for TinyMCE 5.0 Beta
-title_nav: Release notes for TinyMCE 5.0 Beta
+title: Release notes for TinyMCE 5.0 RC
+title_nav: Release notes for TinyMCE 5.0 RC
 keywords: releasenotes newfeatures deleted technologypreview bugfixes knownissues
 ---
 

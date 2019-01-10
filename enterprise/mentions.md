@@ -9,7 +9,9 @@ It is now possible for users to send notifications to other users using the Ment
 
 Users can communicate every day using `@username` on social networks and can expect to be able to use them when creating content too.
 
-Mentions is available as a stand-alone plugin or as part of the Pro Bundle. To learn more about all the options, check out the [pricing and plans here](https://www.tiny.cloud/pricing/).
+### Buy TinyMCE Mentions
+
+Mentions is available as a stand-alone plugin or as part of the Pro Bundle. To learn more about all the options, check out the [pricing and plans here](https://apps.tiny.cloud/products/atmention/). OEM and enterprise customers should [contact sales directly](https://www.tiny.cloud/contact/).
 
 There are two deployment options. One is with TinyMCE Cloud, the other is the more traditional Self-hosted route, requiring an additional [server-side component]({{ site.baseurl }}/enterprise/server/) to be installed and configured.
 

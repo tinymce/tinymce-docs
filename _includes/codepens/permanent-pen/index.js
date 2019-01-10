@@ -3,6 +3,7 @@ tinymce.init({
   plugins: 'permanentpen code',
   contextmenu: 'configurepermanentpen',
   toolbar: 'permanentpen code',
+  menubar: 'file edit view format table tools help',
   permanentpen_properties: {
     fontname: 'arial,helvetica,sans-serif',
     forecolor: '#E74C3C',

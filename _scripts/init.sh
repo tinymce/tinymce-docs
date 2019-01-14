@@ -14,7 +14,4 @@ else
   cp _config-local.sample.yml _config-local.yml
 fi
 
-echo " > creating dummy API ref data file"
-echo [] > _data/nav_api.json
-
 echo -e " > done\n"

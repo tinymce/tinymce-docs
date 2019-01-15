@@ -331,8 +331,9 @@ Dialogs are still opened via the `editor.window.open(spec)` api, however a numbe
 | ------------------- | --------------- |
 | height | The dialog component now uses CSS3 and a predefined `small`, `medium`, and `large` template to specify the dimensions. |
 | width | The dialog component now uses CSS3 and a predefined `small`, `medium`, and `large` template to specify the dimensions. |
-| bodyType | The `bodyType` has been merged into the `body` setting.
+| bodyType | `bodyType` has been merged into the `body` setting.
 | onpostrender | The dialog configuration instead now includes an `initialData` setting for providing the initial state and an api to fetch or update the data.
+| url | The `iframe` dialog component has been removed, which makes the `url` setting irrelevant.
 
 ##### New settings:
 

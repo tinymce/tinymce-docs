@@ -363,9 +363,9 @@ Plugins with dialogs no longer have `height` or `width` settings for their dialo
 The following plugins from TinyMCE 4.x do not require height or width options to be specified in TinyMCE 5.0:
 
 * [Code]({{site.baseurl}}/plugins/code/)
-* [Codesample]({{site.baseurl}}/plugins/codesample/)
-* [Preview]({{site.baseurl}}/plugins/preview/)
-* [Template]({{site.baseurl}}/plugins/template/)
+* [Codesample]({{site.baseurl}}plugins/codesample/)
+* [Preview]({{site.baseurl}}plugins/preview/)
+* [Template]({{site.baseurl}}plugins/template/)
 
 #### Changed plugin settings
 

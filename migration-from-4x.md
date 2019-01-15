@@ -182,13 +182,13 @@ For more information on how these methods have changed, see [docs]({{site.baseur
 
 [Listbox](https://www.tiny.cloud/docs/demo/custom-toolbar-listbox/) is no longer a supported toolbar button type in TinyMCE 5.0. Though listbox has been removed, any functionality provided by custom listbox toolbar buttons can be retained by switching to a different kind of toolbar button using the new methods. The recommended toolbar button type to switch to is the **Split** button.
 
-### Configuration differences between TinyMCE 4.x and TinyMCE 5.0:
+### Toolbar configuration differences between TinyMCE 4.x and TinyMCE 5.0:
 
-| Old method | New method | Description |
-| -----------| ---------- | ----------- |
+| **Old method** | **New method** | **Description** |
+| -------------- | -------------- | --------------- |
 | `onclick` | `onAction` | `onclick` is now `onAction`. `onAction` now has an API to provide some helper functions to the user. |
 | `cmd` | `onAction` | `cmd` has been removed as a configuration option. Commands should be executed through `onAction` now. |
-| `onpostrender` | `onSetup` | `onPostRender` has been replaced with `onSetup`.  |
+| `onpostrender` | `onSetup` | `onpostrender` has been replaced with `onSetup`. |
 
 #### onclick → onAction
 
@@ -234,7 +234,7 @@ editor.ui.registry.addButton('myButton', {
 ```
 #### onpostrender → onSetup
 
-`onPostRender` has been removed and replaced with `onSetup`. There are 3 major changes:
+`onpostrender` has been removed and replaced with `onSetup` for menu and toolbar components. There are 3 major changes:
 
 * While [`onpostrender`](https://www.tiny.cloud/docs/advanced/creating-a-custom-button/#togglebutton) only ran once, when the editor was created, [`onSetup`]({{site.baseurl}}/ui-components/typesoftoolbarbuttons/#basicbuttonexampleandexplanation) runs every time a component is rendered, e.g. for a menu item, every time its menu becomes visible.
 * `onSetup` now has an API containing some helper functions. Each type of toolbar button has a different API.
@@ -290,7 +290,7 @@ The following configurations options have changed in the Custom Menu items in Ti
 #### New methods:
 
 | **New method** | **Description** |
-| ----------- | -------------- |
+| -------------- | --------------- |
 | editor.ui.registry.addToggleMenuItem() | Adds a custom toggle menu item. |
 
 #### Changed methods:
@@ -323,7 +323,24 @@ editor.ui.registry.addMenuItem('example', {
 
 ### Custom dialogs
 
-Dialogs no longer have `height` or `width` settings. The dialog component now uses CSS3 and a predefined `small`, `medium`, and `large` template to specify the dimensions. See [docs]({{site.baseurl}}/ui-components/dialog/) for more information.
+Dialogs are still opened via the `editor.window.open(spec)` api, however a number of configuration options have changed.
+
+##### Removed settings:
+
+| **Removed setting** | **Description** |
+| ------------------- | --------------- |
+| height | The dialog component now uses CSS3 and a predefined `small`, `medium`, and `large` template to specify the dimensions. |
+| width | The dialog component now uses CSS3 and a predefined `small`, `medium`, and `large` template to specify the dimensions. |
+| bodyType | The `bodyType` has been merged into the `body` setting.
+| onpostrender | The dialog configuration instead now includes an `initialData` setting for providing the initial state and an api to fetch or update the data.
+
+##### New settings:
+
+| **New setting** | **Description** |
+| --------------- | --------------- |
+| initialData | An object containing the initial value for the dialog components.
+
+For more information about the new dialog configuration, see the [`Dialog`]({{site.baseurl}}/ui-components/dialog/) and [`Dialog components`]({{site.baseurl}}/ui-components/dialogcomponents/) docs.
 
 <!-- ### Custom sidebars
 

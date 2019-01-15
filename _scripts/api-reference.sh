@@ -5,7 +5,7 @@ set -e
 API_VERSION="$(cat .api-version)"
 #TARBALL_URL="https://codeload.github.com/tinymce/tinymce/tar.gz/$API_VERSION"
 #Release candidate temporary s3 tarball, once we go stable the above link resumes
-TARBALL_URL="https://devpreview-tiny-cloud.s3.amazonaws.com/download/$API_VERSION.tar.gz"
+TARBALL_URL="https://devpreview.tiny.cloud/download/$API_VERSION.tar.gz"
 API_TMPDIR="/tmp/tinymce-$API_VERSION"
 
 echo -e "\n > importing data files for tinymce api reference: $API_VERSION\n"

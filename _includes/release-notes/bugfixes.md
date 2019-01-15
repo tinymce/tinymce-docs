@@ -452,7 +452,7 @@ The following Table of Contents related issues were reported during the develope
 
 ### Documentation
 
-The following documentation related issues were reported during the developer's preview and are now fixed in the TinyMCE 5.0 BETA version. Refer to the latest [Documentation](https://www.tiny.cloud/docs-beta/) for more information.
+The following documentation related issues were reported during the developer's preview and are now fixed in the TinyMCE 5.0 BETA version. Refer to the latest [Documentation](https://www.tiny.cloud/docs/) for more information.
 
 | Issue key | Summary |
 | DOC-98 | Typo - importcss_file_filter |

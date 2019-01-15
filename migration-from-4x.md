@@ -323,7 +323,7 @@ editor.ui.registry.addMenuItem('example', {
 
 ### Custom dialogs
 
-Dialogs are still opened via the `editor.window.open(spec)` api, however a number of configuration options have changed.
+Dialogs are still opened via the `editor.windowManager.open(config)` api, however a number of configuration options have changed.
 
 ##### Removed settings:
 
@@ -333,7 +333,7 @@ Dialogs are still opened via the `editor.window.open(spec)` api, however a numbe
 | width | The dialog component now uses CSS3 and a predefined `small`, `medium`, and `large` template to specify the dimensions. |
 | bodyType | `bodyType` has been merged into the `body` setting.
 | onpostrender | The dialog configuration instead now includes an `initialData` setting for providing the initial state and an api to fetch or update the data.
-| url | The `iframe` dialog component has been removed, which makes the `url` setting irrelevant.
+| url | HTML page dialogs are no longer supported, as such the `url` setting has been removed.
 
 ##### New settings:
 

@@ -332,7 +332,7 @@ Dialogs are still opened via the `editor.windowManager.open(config)` api, howeve
 | height | The dialog component now uses CSS3 and a predefined `small`, `medium`, and `large` template to specify the dimensions. |
 | width | The dialog component now uses CSS3 and a predefined `small`, `medium`, and `large` template to specify the dimensions. |
 | bodyType | `bodyType` has been merged into the `body` setting.
-| onpostrender | The dialog configuration instead now includes an `initialData` setting for providing the initial state and an api to fetch or update the data.
+| onpostrender | `onpostrender` has been removed for the dialog configuration. The dialog configuration now includes an `initialData` setting for providing the initial state and an API to fetch or update the data.
 | url | HTML page dialogs are no longer supported, as such the `url` setting has been removed.
 
 ##### New settings:

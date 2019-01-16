@@ -331,15 +331,66 @@ Dialogs are still opened via the `editor.windowManager.open(config)` api, howeve
 | ------------------- | --------------- |
 | height | The dialog component now uses CSS3 and a predefined `small`, `medium`, and `large` template to specify the dimensions. |
 | width | The dialog component now uses CSS3 and a predefined `small`, `medium`, and `large` template to specify the dimensions. |
-| bodyType | `bodyType` has been merged into the `body` setting.
-| onpostrender | `onpostrender` has been removed for the dialog configuration. The dialog configuration now includes an `initialData` setting for providing the initial state and an API to fetch or update the data.
-| url | HTML page dialogs are no longer supported, as such the `url` setting has been removed.
+| bodyType | `bodyType` has been merged into the `body` setting. |
+| onpostrender | `onpostrender` has been removed for the dialog configuration. The dialog configuration now includes an `initialData` setting for providing the initial state and an API to fetch or update the data. Refer to [this]({site.baseurl}/ui-components/dialog/#interactiveexampleusingredialconfigvoid) section for more information on how to configure `initialData`. |
+| url | HTML page dialogs are no longer supported, as such the `url` setting has been removed. |
 
 ##### New settings:
 
 | **New setting** | **Description** |
 | --------------- | --------------- |
-| initialData | An object containing the initial value for the dialog components.
+| `initialData` | An object containing the initial value for the dialog components. |
+| `onCancel` | A callback that is called when the dialog is cancelled without submitting any changes. |
+| `onTabChange` | A callback that is called when switching tabs in a [TabPanel]({{site.baseurl}}/ui-components/dialogcomponents/#tabpanel). |
+
+##### Changed settings:
+
+| **Old setting** | **New setting** | **Description** |
+| --------------- | --------------- | --------------- |
+| `onchange` | `onChange` | `onchange` has been removed and replaced by a single callback, which gets passed an object containing the changes made. |
+
+> Note: `onchange`, a callback that was previously used to detect changes on each component, has been removed. The changes are now tracked by a single callback function with the change data. 
+
+#### TinyMCE 4.x
+
+```js
+const config = {
+  title: 'Insert Link',
+  body: [
+    {
+      name: 'text',
+      type: 'textbox',
+      size: 40,
+      label: 'Text to display',
+      onchange () {
+        data.text = this.value();
+      }
+    }
+  ]
+};
+```
+#### TinyMCE 5.0
+
+```js
+const config = {
+  title: 'Insert Link',
+  body: {
+    type: 'panel',
+    items: [
+      {
+        name: 'text',
+        type: 'input',
+        label: 'Text to display'
+      }
+    ]
+  },
+  onChange (api, changeData) {
+    if (changeData.name === 'text') {
+      // Do something with the text to display changes
+    }
+  }
+};
+```
 
 For more information about the new dialog configuration, see the [`Dialog`]({{site.baseurl}}/ui-components/dialog/) and [`Dialog components`]({{site.baseurl}}/ui-components/dialogcomponents/) docs.
 

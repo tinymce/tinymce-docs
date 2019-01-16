@@ -41,7 +41,7 @@ There are three options for positioning are: `selection`, `line`, or `node`.
 
 ### Example Configuration
 
-This example shows how the quickbars plugin dynamically adds the standard selection context toolbar and an example of a custom toolbar for image alignment. The context toolbar will show whenever any content is selected.
+This example shows how the quickbars plugin adds the standard selection context toolbar and an example of a custom toolbar for image alignment. The context toolbar will show whenever any content is selected.
 
 {% include codepen.html id="context-toolbar" height="600" tab="js" %}
 

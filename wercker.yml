@@ -14,6 +14,9 @@ build:
         deployment: true
         jobs: 10
     - script:
+        name: import tinymce api reference
+        code: _scripts/api-reference.sh
+    - script:
         name: build
         code: _scripts/build.sh
 

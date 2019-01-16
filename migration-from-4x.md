@@ -340,6 +340,15 @@ Dialogs are still opened via the `editor.windowManager.open(config)` api, howeve
 | **New setting** | **Description** |
 | --------------- | --------------- |
 | initialData | An object containing the initial value for the dialog components.
+| onCancel | A callback that's called when the dialog is cancelled without submitting any changes.
+| onTabChange | A callback that's called when switching tabs in a [TabPanel]({{site.baseurl}}/ui-components/dialogcomponents/#tabpanel).
+
+##### Changed settings:
+
+| **Old setting** | **New setting** | **Description** |
+| --------------- | --------------- | --------------- |
+| onchange | onChange | `onchange` has been removed and replaced by a single callback, which gets passed an object containing the changes made.
+
 
 For more information about the new dialog configuration, see the [`Dialog`]({{site.baseurl}}/ui-components/dialog/) and [`Dialog components`]({{site.baseurl}}/ui-components/dialogcomponents/) docs.
 

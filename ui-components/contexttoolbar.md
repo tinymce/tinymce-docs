@@ -19,7 +19,7 @@ A ContextToolbar is registered by calling the `addContextToolbar` API in the reg
 | `scope` | This controls whether the predicate is a `node`-based predicate, or an `editor`-based predicate. See Context Toolbar Proirity below, for more details. |
 | `items` | A list of strings which represent either a registered toolbar button, or a registered context form launcher. |
 
-### Launching a ContextToolbar Programmatically
+### Launching a Context Toolbar Programmatically
 
 There is an `editor` event called `contexttoolbar-show` that can be fired to show a ContextToolbar at the current selection. The event takes a parameter `toolbarKey` which specifies the name of the registered ContextForm or ContextToolbar to show.
 
@@ -27,7 +27,7 @@ There is an `editor` event called `contexttoolbar-show` that can be fired to sho
 
 {% include context/priority.md %}
 
-### Positioning ContextToolbars
+### Positioning Context Toolbars
 
 There are three options for positioning are: `selection`, `line`, or `node`.
 

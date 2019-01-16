@@ -25,19 +25,19 @@ The Launch specification. This relates to what the button that launches this for
 | ---- | ------- |
 | `launch` | This is the specification for the launching button that can appear in a ContextToolbar only. It will be either type: `contextformbutton` or `contextformtogglebutton`, and will be identical to those definitions below except it will **not** have an `onAction`. |
 
-#### Launching ContextForms from a ContextToolbar
+#### Launching Context Forms from a Context Toolbar
 
 If a registered ContextForm has a `launch` setting, then it can be launched from a ContextToolbar. The name of item will be `form:${name}` (e.g. 'form:link'). When the user presses this button, the toolbar will change into the specified ContextForm. If you the user presses Esc in a ContextForm that was launched through a ContextToolbar, they will be returned to the original ContextToolbar.
 
-#### Launching a ContextForm programmatically
+#### Launching a Context Form programmatically
 
 There is an `editor` event called `contexttoolbar-show` that can be fired to show a ContextForm at the current selection. The event takes a parameter `toolbarKey` which specifies the name of the registered ContextForm or ContextToolbar to show.
 
-### ContextForm Priority
+### Context Form Priority
 
 {% include context/priority.md %}
 
-### Positioning ContextForms
+### Positioning Context Forms
 
 There are two options for positioning: `selection` or `line`.
 
@@ -65,7 +65,7 @@ The Form specification: This relates to the form itself.
 
 Unlike normal context toolbar buttons, Context form buttons are not registered beforehand. Instead, you need to define each button completely in the `commands` section.
 
-#### ContextForm Button
+#### ContextFormButton
 
 The definition of a ContextFormButton is very similar to the definition of a normal ToolbarButton. The main difference is that the action is slightly different (as it will relate to the form), and the type is `contextformbutton` instead of `button`. In full, the options are:
 

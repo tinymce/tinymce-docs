@@ -1,5 +1,5 @@
 tinymce.init({
-  selector: 'textarea',
+  selector: 'textarea#custom-toolbar-split-button',
   toolbar: 'myButton',
   menubar: false,
   setup: function (editor) {

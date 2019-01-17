@@ -146,6 +146,7 @@ The following new methods have been added for creating and using new components:
 | editor.ui.registry.addContextForm: (name, spec) | [Context form]({{site.baseurl}}/ui-components/contextform/) |
 | editor.ui.registry.addContextMenu: (name, spec) | [Context menu]({{site.baseurl}}/ui-components/contextmenu/) |
 | editor.ui.registry.addMenuButton: (name, spec) | [Menu Button]({{site.baseurl}}/ui-components/typesoftoolbarbuttons/#menubutton) |
+| editor.ui.registry.addNestedMenuItem: (name, spec) | [Nested Menu Item]({{site.baseurl}}/migration-from-4x/#custommenuitems) |
 | editor.ui.registry.addSplitButton: (name, spec) | [Split Button]({{site.baseurl}}/ui-components/typesoftoolbarbuttons/#splitbutton) |
 | editor.ui.registry.addToggleButton: (name, spec) | [Toggle Button]({{site.baseurl}}/ui-components/typesoftoolbarbuttons/#togglebutton) |
 | editor.ui.registry.addToggleMenuItem: (name, spec) | [Toggle menu item]({{site.baseurl}}/migration-from-4x/#custommenuitems) |
@@ -284,6 +285,7 @@ editor.ui.registry.addButton('customDateButton', {
 
 The following configurations options have changed in the Custom Menu items in TinyMCE 5.0:
 * `addMenuItem` has a new configuration.
+* A new method `addNestedMenuItem` has been added to the options. The `addNestedMenuItem` is an explicit method for creating menu items that have a submenu with more menu items.
 * A new method `addToggleMenuItem` has been added to the options. The `addToggleMenuItem` is an explicit method for creating toggle menu items similar to the new special [toolbar button methods]({{site.baseurl}}/ui-components/typesoftoolbarbuttons/).
 * The concept of `context` has been removed from menu item configurations.
 
@@ -291,6 +293,7 @@ The following configurations options have changed in the Custom Menu items in Ti
 
 | **New method** | **Description** |
 | -------------- | --------------- |
+| editor.ui.registry.addNestedMenuItem() | Adds a menu item that opens a submenu. |
 | editor.ui.registry.addToggleMenuItem() | Adds a custom toggle menu item. |
 
 #### Changed methods:

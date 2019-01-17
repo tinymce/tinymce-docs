@@ -34,7 +34,7 @@ tinymce.init({
               buttonApi.setActive(!editor.readonly && !!getAnchorElement());
             };
             editor.on('nodechange', nodeChangeHandler);
-            return function() {
+            return function () {
               editor.off('nodechange', nodeChangeHandler);
             }
           },
@@ -46,13 +46,9 @@ tinymce.init({
         },
         {
           type: 'contextformtogglebutton',
-            icon: 'unlink',
+          icon: 'unlink',
           tooltip: 'Remove link',
           active: false,
-          onSetup: function () {
-            return function () {
-            }
-          },
           onAction: function (formApi) {
             console.log('Remove link clicked');
             formApi.hide();

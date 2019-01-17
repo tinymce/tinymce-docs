@@ -18,6 +18,6 @@ tinymce.init({
       items: 'bold italic | blockquote',
       position: 'selection',
       scope: 'node'
-    })
+    });
   }
 });

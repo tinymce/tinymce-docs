@@ -85,5 +85,5 @@ tinymce.init({
 
 This example shows how the image plugin dynamically adds the standard image menu section to the context menu. The image context menu section is empty unless the selected element is an image.
 
-{% include codepen.html id="contextmenu-section" height="900" tab="js" %}
+{% include codepen.html id="contextmenu-section" height="600" tab="js" %}
 

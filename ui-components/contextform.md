@@ -111,3 +111,9 @@ Both `contextformbutton` and `contextformtogglebutton` are passed `formApi` in t
 | --------- | ----------- |
 |`hide` | This will hide the form. By default, no button hides the form. It is the responsibility of the developer to hide the form in the `onAction` handler of buttons that require that the ContextForm close after the action. |
 | `getValue` | This will retrieve the value current typed in the input field. |
+
+### Example Configuration
+
+This example shows how the link plugin adds the standard link context form. The context form will show whenever any content is selected.
+
+{% include codepen.html id="context-form" height="400" tab="js" %}

@@ -49,5 +49,5 @@ tinymce.init({
 
 The following example creates different types of toolbar buttons.
 
-{% include codepen.html id="toolbar-button" height="900" %}
+{% include codepen.html id="toolbar-button" height="400" %}
 

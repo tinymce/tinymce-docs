@@ -50,6 +50,20 @@ Then retrieve and init the project:
 
 Navigate to [http://127.0.0.1:4000/](http://127.0.0.1:4000/)
 
+## Run with moxiedoc
+    git clone git@github.com:tinymce/tinymce-docs.git
+    cd tinymce-docs
+    ./_scripts/init.sh
+    ./_scripts/api-reference.sh 
+    ./_scripts/serve.sh
+
+## Run with moxiedoc, with a local version of tinymce checked out
+    git clone git@github.com:tinymce/tinymce-docs.git
+    cd tinymce-docs
+    ./_scripts/init.sh
+    ./_scripts/api-reference-local.sh <tinymce src folder path>
+    ./_scripts/serve.sh
+
 ## Contributing to TinyMCE
 
 If you would like to contribute to the TinyMCE project please read 

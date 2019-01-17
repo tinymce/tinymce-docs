@@ -20,7 +20,7 @@ The context menu supports both individual menu items and dynamic context menu se
 
 #{% include configuration/contextmenu_never_use_native.md %}
 
-## Registering Context Menu Sections
+## Registering context menu sections
 
 The structure of context menu sections is a simple query system indexed by name. We strongly recommend using the name of the plugin as the context menu name for ease of configuration.
 
@@ -59,7 +59,7 @@ type SeparatorMenuItemApi = {
 
 The most common type to use is `string`, which references an existing registered menu item.
 
-`ContextMenuItem`, `ContextSubMenu` and `SeparatorMenuItemApi` types are intended for use by plugins with completely dynamic menu requirements, where registering each menu item would be onerous and wasteful. For example, the spellchecker shows a list of suggestions specific to the selected word.
+`ContextMenuItem`, `ContextSubMenu` and `SeparatorMenuItemApi` types are intended for use by plugins with completely dynamic menu requirements, where registering each menu item is not necessary. For example, the spellchecker shows a list of suggestions specific to the selected word.
 
 When creating a dynamic menu, the structure `type` properties are used in order to support untyped API usage:
 
@@ -81,7 +81,7 @@ tinymce.init({
 ``` 
 --->
 
-## Defining a Context Menu Section
+## Defining a context menu section
 
 This example shows how the image plugin dynamically adds the standard image menu section to the context menu. The image context menu section is empty unless the selected element is an image.
 

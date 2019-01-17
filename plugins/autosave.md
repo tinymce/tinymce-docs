@@ -88,7 +88,7 @@ This option enables you to specify if TinyMCE should automatically restore the c
 
 **Type**: `Boolean`
 
-**Default Value**: `true`
+**Default Value**: `false`
 
 **Possible Values**: `true`, `false`
 
@@ -98,7 +98,7 @@ This option enables you to specify if TinyMCE should automatically restore the c
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "autosave",
-  autosave_restore_when_empty: false
+  autosave_restore_when_empty: true
 });
 ```
 

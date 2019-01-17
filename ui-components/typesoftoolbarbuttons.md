@@ -101,7 +101,7 @@ Achieving this usability standard requires additional configuration. The second 
 
 > Note: The format name given to `mceToggleFormat` via `editor.execCommand(command, ui, args)` and to `editor.formatter.formatChanged(formatName, callback)` is the same.
 
-The callback given to `editor.formatter.formatChanged` is a function that takes a `state` boolean representing whether the currently selected content contains the applied format. This `state` boolean is used to set the button's active state to match if the selected content has the applied formatting by using the `api.setActive(state)` from the button's API [link]. The `customToggleStrikethrough` button is only active when the selected content contains the strikethrough formatting.
+The callback given to `editor.formatter.formatChanged` is a function that takes a `state` boolean representing whether the currently selected content contains the applied format. This `state` boolean is used to set the button's active state to match if the selected content has the applied formatting by using the `api.setActive(state)` from the button's API. The `customToggleStrikethrough` button is only active when the selected content contains the strikethrough formatting.
 
 ### Split Button
 
@@ -148,7 +148,7 @@ Most of the configuration options for split toolbar buttons are optional.
 
 This example starts with a text label instead of an icon. A split button is similar to toolbar buttons as they both require an `onAction` callback. `onAction` is given an empty function so that the menu appears when the user clicks on the menu item and not the toolbar button.
 
-`onItemAction` is called when a menu item is clicked. The callback function is passed the split button's API [link] and the *value* of the selected menu item. Nothing else is returned. The example calls `editor.insertContent(value)` to insert the *value* into the editor's content.
+`onItemAction` is called when a menu item is clicked. The callback function is passed the split button's API and the *value* of the selected menu item. Nothing else is returned. The example calls `editor.insertContent(value)` to insert the *value* into the editor's content.
 
 `fetch` is called whenever the split button's drop-down menu is opened. It is a function that takes a callback and passes it a list of items to be rendered in the button's drop-down menu. This allows for asynchronous fetching of the menu items.
 

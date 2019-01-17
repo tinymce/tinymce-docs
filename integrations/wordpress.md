@@ -1,8 +1,7 @@
 ---
 layout: default
-title: WordPress Integration
+title: WordPress integration
 title_nav: WordPress
-description: WordPress powers 25% of the web and TinyMCE is proud to be the default editor.
 keywords: integration integrate wordpress advanced
 ---
 
@@ -13,7 +12,7 @@ A slimmed down version of TinyMCE is the default "Visual Editor" in WordPress. I
 
 ## PowerPaste for WordPress
 
-[TinyMCE PowerPaste for WordPress](https://store.ephox.com/products/powerpaste/) is a premium plugin from the makers of TinyMCE that brings the PowerPaste features to WordPress. It automatically fixes Word formatting, creates tables from Excel, and links & embed images with content pasted from the web.
+[TinyMCE PowerPaste for WordPress](https://apps.tiny.cloud/products/powerpaste/) is a premium plugin from the makers of TinyMCE that brings the PowerPaste features to WordPress. It automatically fixes Word formatting, creates tables from Excel, and links & embed images with content pasted from the web.
 
 ## TinyMCE Advanced
 

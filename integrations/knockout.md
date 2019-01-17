@@ -1,6 +1,6 @@
 ---
 layout: default
-title: KnockoutJS Integration
+title: KnockoutJS integration
 title_nav: Knockout
 description: A custom binding that applies a TinyMCE Editor to the bound HTML element.
 keywords: integration integrate knockout knockoutjs

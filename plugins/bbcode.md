@@ -1,6 +1,6 @@
 ---
 layout: default
-title: BBCode Plugin
+title: BBCode plugin
 title_nav: BBCode
 description_short: Add basic BBCode input/output to TinyMCE.
 description: Add basic BBCode input/output support to TinyMCE.
@@ -59,4 +59,4 @@ tinymce.init({
 
 ## Live example
 
-{% include codepen.html id="mpXVZv" %}
+{% include codepen.html id="bbcode" %}

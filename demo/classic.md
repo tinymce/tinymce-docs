@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Classic Editor Example
-title_nav: Classic Editor
+title: Classic editor example
+title_nav: Classic editor mode
 description_short: Configure TinyMCE Classic Editor.
 description: This example shows you how to use TinyMCE Classic Editor.
 keywords: example demo classic editor
@@ -11,4 +11,4 @@ keywords: example demo classic editor
 
 This example shows you how to use TinyMCE Classic Editor.
 
-{% include codepen.html id="YybwmL" %}
+{% include codepen.html id="classic" %}

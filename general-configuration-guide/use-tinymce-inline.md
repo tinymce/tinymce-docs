@@ -1,24 +1,24 @@
 ---
 layout: default
-title: 02. Use TinyMCE Inline
+title: Setup inline editing mode
+title_nav: Inline editing mode
 description_short: Learn about forms-based editing v. inline editing.
 description: Understand the difference between traditional forms-based editing and advanced inline editing.
 keywords: form inline edit stylesheet
 ---
 
-TinyMCE has three main integration modes: a "classic" form-based mode, an inline editing mode, and a distraction-free mode.
+TinyMCE has three main integration modes: a _classic_ form-based mode, an _inline_ editing mode, and a distraction-free _inlite_ mode.
 
 The inline editing mode is useful when creating user experiences where you want the editing view of the page to be merged with the reading view of the page. This creates a seamless editing experience and true WYSIWYG behavior.
 
-When in inline editing mode the editor does not replace the selected element with its own iframe, but instead edits the element's content in place instead.
+When in inline editing mode the editor does not replace the selected element with its iframe, but instead edits the element's content in place instead. For a sample view of this mode, visit the [Inline Editor]({{ site.baseurl }}/demo/inline) example page.
 
-The distraction-free theme is responsible for rendering the editor lightweight inline mode. This is an optional more lightweight distraction-free UI for the editor. It provides options to quickly insert links, images, and tables into your content. For a sample view of this mode, visit the [Distraction-free Editor]({{ site.baseurl }}/demo/editor-dfree/) example page. See [Inlite Theme]({{ site.baseurl }}/themes/inlite/) for more information.
 
 ## Forms-based editing vs. inline editing
 
 Most common TinyMCE integrations use the editor in its classic form-based mode. In this integration mode, the editor usage is as a form field that is filled out to provide content. The editor is always visible as part of the form to be edited.
 
-Inline editing mode blends the editable view with the readable view of the page. Elements are replaced inline with an editor once clicked rather than the editor always being visible.
+Inline editing mode blends the editable view with a readable view of the page. Elements are replaced inline with an editor once clicked rather than the editor always being visible.
 
 Most significantly, when using inline editing TinyMCE is not isolated from the page by being encapsulated within an iframe. This has the advantage of ensuring that the content within the editor inherits the surrounding page's styles when presenting the content.
 
@@ -74,5 +74,5 @@ Enabling inline editing mode is simple. Setting the `inline` configuration prope
 </html>
 ```
 
-{% assign_page next_page = "/general-configuration-guide/multiple-editors/index.html" %}
+{% assign_page next_page = "/general-configuration-guide/use-tinymce-distraction-free/index.html" %}
 {% include next-step.html next=next_page %}

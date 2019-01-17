@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Import CSS Plugin
+title: Import CSS plugin
 title_nav: Import CSS
 description: Automatically populate CSS class names into the Format dropdown.
 keywords: importcss content_css importcss_append importcss_file_filter importcss_selector_filter importcss_groups importcss_merge_classes importcss_selector_converter importcss_exclusive
@@ -47,7 +47,7 @@ tinymce.init({
 
 ### `importcss_file_filter`
 
-This option enables you to add the CSS files that should be used for populating the styles drop down. This will go though any `@import` rules and only target the specified file. This option can be either a `string`, `regexp` or a `function`. This also allows you to import styles form existing files on the currently editable page in inline mode.
+This option enables you to add the CSS files that should be used for populating the styles drop down. This will go through any `@import` rules and only target the specified file. This option can be either a `string`, `regexp` or a `function`. This also allows you to import styles form existing files on the currently editable page in inline mode.
 
 **Type:** `String`
 

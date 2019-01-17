@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Distraction-free Editor Example
-title_nav: Distraction-free Editor
+title: Distraction-free editor example
+title_nav: Distraction-free editor
 description_short: Distraction-free Editor.
 description: Distraction-free Editor
 keywords: example distraction-free editor
@@ -11,4 +11,4 @@ keywords: example distraction-free editor
 
 This example shows you how to use TinyMCE's Distraction-free editor.
 
-{% include codepen.html id="xzoELd" %}
+{% include codepen.html id="editor-dfree" %}

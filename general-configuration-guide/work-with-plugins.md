@@ -1,6 +1,7 @@
 ---
 layout: default
-title: 05. Work With Plugins
+title: Work with plugins to extend TinyMCE
+title_nav: Using plugins to extend TinyMCE
 description_short: Learn about TinyMCE's plugin functionality and discover our Top 10 plugins.
 description: TinyMCE is an incredibly powerful, flexible and customizable rich text editor. In this section, we show you the power of plugins with several working examples.
 keywords: plugin
@@ -78,26 +79,6 @@ tinymce.init({
   menubar: false
 });
 ```
-
-### Plugin customization easy as 1-2 ...
-
-Many plugins have customization options that give developers granular control of the editor. The `code` plugin is no exception, and it has two options available to us, which respectively change the height and width of the dialog box's (internal) **editable area**. These are `code_dialog_height` and `code_dialog_width`.
-
-Let's add them as values to our `tinymce.init()` object/method.
-
-```js
-tinymce.init({
-  selector: 'textarea',  // note the comma at the end of the line!
-  plugins: 'code',  // note the comma at the end of the line!
-  toolbar: 'code',  // last reminder, note the comma!
-  menubar: false,
-  code_dialog_height: 300,
-  code_dialog_width: 350
-});
-```
-
-Save the file, refresh your browser and when you next click the "Source code" toolbar button you'll have resized the dialog box.
-
 
 ## Time for one more example
 

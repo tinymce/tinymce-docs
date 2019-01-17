@@ -1,48 +1,43 @@
 ---
 layout: default
-title: 06. Customize UI
-description: Learn how to change the appearance of the editor.
+title: Customizing the editor UI
+title_nav: Customizing the UI
+description: Learn how to change the appearance of TinyMCE.
 keywords: themes skins statusbar
 ---
 
-By now it should be clear that TinyMCE is incredibly powerful and at the same time extremely flexible. This is also true for user interface customizations. In this section we look at skinning the editor UI, adding a useful toolbar button not included in the default theme and hiding the status bar.
+This section is about customizing TinyMCE's user interface with skins, toolbar buttons and manipulating the status bar.
 
 ### Themes
 
-TinyMCE comes with a beautiful, lightweight theme out of the box called "modern". This theme is enabled by default, and you can easily customize the menubar or toolbar without having to edit the theme.
-
-Although any developer can create their themes, it does require a more in-depth knowledge of TinyMCE's API and is beyond the scope of this Get Started guide.
-
-However, TinyMCE skins are much easier to make thanks to the TinyMCE Skin Creator.
+"Silver" is TinyMCE's default theme. Users can easily customize the menu or toolbar without having to edit the theme. Theme creation requires a more in depth-knowledge of TinyMCE's API and is beyond the scope of this guide. TinyMCE skins, however, are easier to make using the TinyMCE Skin Creator.
 
 ### Skins
 
-Unlike TinyMCE themes, which affect much more than just the editor's user interface, skins only change the editor's appearance.
+TinyMCE skins only change the editor's appearance while TinyMCE themes can affect much more. Use the [TinyMCE Skin Creator](http://skin.tinymce.com/) to easily create skins. Download, unzip, and place the completed skin in the `js/skins` folder. 
 
-If you would like to create your skins the best (and easiest) place to start is the [TinyMCE Skin Creator](http://skin.tinymce.com/).
-
-Once you've created your skin, download it, unzip the file, and place it in the `js/skins `folder of your TinyMCE install. Then activate it using code similar to this:
+The following example activates the skin:
 
 ```js
 tinymce.init({
   selector: 'textarea'  // change this value according to your HTML
-  skin: 'lightgray'  // use the name of your skin, not lightgray
+  skin: 'oxide'  // use the name of your skin, not oxide
 });
 ```
 
-If you are going to roll your skins, the name of the skin should match the name of the folder within the skins directory (typically `tinymce/js/skins`). If the specified skin is not found, TinyMCE does not load.
+Ensure the name of the created skin matches the name of the folder in the skins directory (ie. `tinymce/js/skins`). TinyMCE cannot load if the specified skin is not found.
 
-> Pro tip. Many developers confuse the difference between TinyMCE themes and skins. You'll often see the term "theme" used by developers when they mean "skin". 
+> Note: Developers often confuse the difference between TinyMCE "themes" and "skins". A **Skin** in Tinymce is used to make changes to the appearance of the editor, for example, colors, margins, paddings, fonts, icons, etc. A **Theme** creates the editor construction (left, top, bottom, or right of the editing area - vertical or horizontal, inline or outside, etc.). A skin usually changes the color scheme of a button, dialog, etc. while the theme applies to the whole editor including its functionality and has child skins to change the appearance.
 
-### Changing editor height and width
+### Changing Editor Height and Width
 
-One of the most common UI customizations is changing the height and width of the editable area. Let's quickly look at how you can do this with some code snippets.
+A common UI customization used by developers is changing the height and width of the editable area. The following examples are code snippets that change TinyMCE height and width.
 
-> We have included links to the source documentation if you want to get into the specific details of these customization options.
+> Note: The links below contain specific details of these customization options.
 
 ##### Set the editable area height
 
-> Reminder, the "editable area" is the box users type in. The editable area is different from the "editor".
+> Important: The "editable area" is the textbox used to enter information. This "editable area" is different from the "editor" itself.
 
 ```js
 tinymce.init({
@@ -55,7 +50,7 @@ See the [height option]({{ site.baseurl }}/configure/editor-appearance/#height) 
 
 ##### Set the editable area width
 
-> Note that the editable area width is (almost) effectively the width of the editor itself. This is **not** the case for height.
+> Note: The editable area width is effectively the width of the editor itself. This is **not** the case for height.
 
 ```js
 tinymce.init({
@@ -69,7 +64,7 @@ See the [width option]({{ site.baseurl }}/configure/editor-appearance/#width) fo
 
 ##### Set maximum and minimum heights and widths
 
-By now you're fast becoming a TinyMCE pro, so we're going to include several options in this snippet to set the maximum and minimum values for heights and widths of the editable area. See if you can work out what's going on.
+The following code snippets use several options for the maximum and minimum values for heights and widths of the editable area.
 
 ```js
 tinymce.init({
@@ -81,15 +76,15 @@ tinymce.init({
 });
 ```
 
-To learn more about these customization options please see the [max_height]({{ site.baseurl }}/configure/editor-appearance/#max_height), [max_width]({{ site.baseurl }}/configure/editor-appearance/#max_width), [min_height]({{ site.baseurl }}/configure/editor-appearance/#min_height), [min_width]({{ site.baseurl }}/configure/editor-appearance/#min_width) documentation pages.
+See the [max_height]({{ site.baseurl }}/configure/editor-appearance/#max_height), [max_width]({{ site.baseurl }}/configure/editor-appearance/#max_width), [min_height]({{ site.baseurl }}/configure/editor-appearance/#min_height), [min_width]({{ site.baseurl }}/configure/editor-appearance/#min_width) documentation pages to learn more about these customization options.
 
-This is not the end of your options when it comes to customizing TinyMCE's height and width behavior. You can also automatically resize the editable area as the user types into the iframe with the [Autoresize Plugin]({{ site.baseurl }}/plugins/autoresize/), and you can enable the user to resize the editor on horizontal and vertical axis by dragging the status bar handle with the [resize]({{ site.baseurl }}/configure/editor-appearance/#resize) configuration option.
+The editable area can also automatically resize itself as the user enters content into the iframe with the [Autoresize Plugin]({{ site.baseurl }}/plugins/autoresize/). Users can resize the editor on both the horizontal and vertical access by dragging the status bar handle with the [resize]({{ site.baseurl }}/configure/editor-appearance/#resize) configuration option.
 
 ### Customizing the editable area with content_css
 
-It is usually desirable that TinyMCE's editable area has the same styling as the surrounding content. This can be achieved with the [`content_css`]({{ site.baseurl }}/configure/content-appearance/#content_css) customization option.
+Use the [`content_css`]({{ site.baseurl }}/configure/content-appearance/#content_css) customization option to ensure that TinyMCE's editable area has the same styling as the surrounding content. 
 
-The `css` file used in this setting should be the same `css` file that controls the look/style of all your pages. Let's say you include a file `myLayout.css` in all your pages to control your site's global appearance; then this file must be set as your `content_css` value. Doing this ensures the content in the editable area also has your site's style.
+Use the same `css` file that controls the look and style of the content TinyMCE is integrated into in this setting. The following example includes the file `mycontent.css` in all of the pages to control the site's global appearance. This example ensures the content in the editable area contains the same style as the site.
 
 ##### Example using an absolute path
 
@@ -102,13 +97,11 @@ tinyMCE.init({
 });
 ```
 
-Refer to the [content_css]({{ site.baseurl }}/configure/content-appearance/#content_css) customization page if you want to learn more about the use of absolute and relative paths and multiple stylesheets.
+See the [content_css]({{ site.baseurl }}/configure/content-appearance/#content_css) customization page for more information about the use of absolute and relative paths as well as and how to use multiple stylesheets.
 
 ### Hiding the status bar
 
-In this step, we're going to remove a UI element entirely, and for this example, we say hello and goodbye to the status bar.
-
-The status bar is a gray bar stuck to the bottom of the editor's editable area containing the path information and the resize handle. Sometimes we don't want users to be able to change the size of the editable area (by dragging the resize handle*) and so removing the status bar achieves this objective.
+The status bar is the gray bar aligned to the bottom of the editor's editable area. The status bar contains the path information and the resize handle. Removing the status bar disables the ability for users to change the size of the editable area. The following example disables the status bar.
 
 ```js
 tinymce.init({
@@ -116,15 +109,13 @@ tinymce.init({
   statusbar: false
 });
 ```
+> Note: Refer to the plugins and advanced configuration options documentation for more information on how to restrict whether the resize handle can be dragged.
 
+### Adding the code button plugin
 
-### We all need code
+One popular toolbar button that is *not* loaded with the "Silver" theme is the `code` button. Clicking the `code` button displays a dialog box containing the raw HTML hidden behind TinyMCE's interface.
 
-If you're struggling with menus, menu items and toolbars from the previous sections, we'll quickly revisit this for you with another example.
-
-There is one popular toolbar button not loaded with the default theme "modern" and that's the `code` button. Clicking it presents the user with a dialog box containing the raw HTML hidden by TinyMCE's interface.
-
-It's also a good example for this guide because it reminds us that some functionality requires the inclusion of a plugin.
+> Note: Additional functionality may require the inclusion of a plugin
 
 ```js
 tinymce.init({
@@ -134,9 +125,9 @@ tinymce.init({
 });
 ```
 
-If you tried this snippet, you would have noticed that although you added the `code` button to the toolbar and created a new menu called `Tools` with the menu item `Source code`, everything else on the toolbar disappeared. (See [this page]({{ site.baseurl }}/quick-start/) if you need a basic HTML code block.)
+All of the buttons disappear after the `code` button is added to the toolbar and a new menu called `Tools` with the menu item `Source code` is created. (See [this page]({{ site.baseurl }}/quick-start/) for a basic HTML code block.)
 
-If you wanted the default toolbar *plus* the `code` functionality you'd need this:
+The following example displays the default toolbar in addition to the `code` functionality:
 
 ```js
 tinymce.init({
@@ -146,9 +137,9 @@ tinymce.init({
   });
 ```
 
-We realize we covered toolbars in an earlier step but they're such an integral part of the experience your users have with the TinyMCE editor that the more practice, the better.
+The ability to customize the user interface is an integral part of ensuring an integrated and complete user experience.
 
-> `*` There are ways to restrict whether the resize handle can be dragged, which you'll discover when deep diving into plugins and advanced configuration options.
+
 
 {% assign_page next_page = "/general-configuration-guide/upload-images/index.html" %}
 {% include next-step.html next=next_page %}

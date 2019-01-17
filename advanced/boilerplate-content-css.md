@@ -1,13 +1,13 @@
 ---
 layout: default
-title: Boilerplate Content CSS
-title_nav: Boilerplate Content CSS
+title: Boilerplate content CSS
+title_nav: Boilerplate content CSS
 description_short: Learn how to set up CSS for your site to integrate TinyMCE.
 description: Learn how to set up CSS for your site to integrate TinyMCE.
 keywords: css content_css
 ---
 
-There are a few advanced features in TinyMCE that require some CSS to be added to the page that displays the contents produced by the editor. In general, you want to get an as clean output as possible from a rich text editor, and some of the more advanced features like captioned images use CSS rather than inline styles to render correctly.
+There are advanced features in TinyMCE that require some CSS to be added to the page that displays the content produced by the editor. In general, to get as clean an output as possible from a rich text editor as well as to use some advanced features like captioned images, use CSS rather than inline styles to render correctly.
 
 This Boilerplate CSS can be used to style these advanced elements. This CSS file can be used within the editor using the [content_css]({{ site.baseurl }}/configure/content-appearance/#content_css) option and also on your page where the saved content is presented.
 

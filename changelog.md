@@ -8,7 +8,53 @@ class: changelog
 
 {% capture changelog %}
 
-## Version 4.8.3, September 13, 2018
+## Version 4.9.2 December 17, 2018
+* Fixed a bug with pressing the space key on IE 11 would result in nbsp characters being inserted between words at the end of a block.
+* Fixed a bug where character composition using quote and space on US International keyboards would produce a space instead of a quote.
+* Fixed a bug where remove format wouldn't remove the inner most inline element in some situations.
+* Fixed a bug where outdenting an list item would affect attributes on other list items within the same list.
+* Fixed a bug where the DomParser filters wouldn't be applied for elements created when parsing invalid html.
+* Fixed a bug where setProgressState wouldn't automatically close floating ui elements like menus.
+* Fixed a bug where it wasn't possible to navigate out of a figcaption element using the arrow keys.
+* Fixed a bug where enter key before an image inside a link would remove the image.
+
+## Version 4.9.1 December 04, 2018
+* Added functionality to insert html to the replacement feature of the Textpattern Plugin.
+* Fixed a bug where `editor.selection.getContent({format: 'text'})` didn't work as expected in IE11 on an unfocused editor.
+* Fixed a bug in the Textpattern Plugin where the editor would get an incorrect selection after inserting a text pattern on Safari.
+* Fixed a bug where the space bar didn't work correctly in editors with the forced_root_block setting set to false.
+
+## Version 4.9.0 November 27, 2018
+* Added a replace feature to the Textpattern Plugin.
+* Added functionality to the Lists Plugin that improves the indentation logic.
+* Fixed a bug where it wasn't possible to delete/backspace when the caret was between a contentEditable=false element and a BR.
+* Fixed a bug where copying table cells without a text selection would fail to copy anything.
+* Implemented missing `autosave_restore_when_empty` functionality in the Autosave Plugin. Patch contributed by gzzo.
+* Reduced insertion of unnecessary nonbreaking spaces in the editor.
+
+## Version 4.8.5 October 30, 2018
+* Added a content_css_cors setting to the editor that adds the crossorigin="anonymous" attribute to link tags added by the StyleSheetLoader.
+* Fixed a bug where trying to remove formatting with a collapsed selection range would throw an exception.
+* Fixed a bug in the image plugin that caused updating figures to split contenteditable elements.
+* Fixed a bug that was causing incorrect viewport calculations for fixed position UI elements.
+* Fixed a bug where inline formatting would cause the delete key to do nothing.
+
+## Version 4.8.4 October 23, 2018
+* Added support for the HTML5 `main` element.
+* Changed the keyboard shortcut to move focus to contextual toolbars to Ctrl+F9.
+* Fixed a bug where content css could not be loaded from another domain.
+* Fixed a bug on FireFox where the cursor would get stuck between two contenteditable false inline elements located inside of the same block element divided by a BR.
+* Fixed a bug with the insertContent method where nonbreaking spaces would be inserted incorrectly.
+* Fixed a bug where the toolbar of the inline editor would not be visible in some scenarios.
+* Fixed a bug where removing the editor while more than one notification was open would throw an error.
+* Fixed a bug where the menubutton would be rendered on top of the menu if the viewport didn't have enough height.
+* Fixed a bug with the annotations api where annotating collapsed selections caused problems.
+* Fixed a bug where wbr elements were being transformed into whitespace when using the Paste Plugin's paste as text setting.
+* Fixed a bug where the Search and Replace didn't replace spaces correctly.
+* Fixed a bug with sublist items not persisting selection.
+* Fixed a bug with mceInsertRawHTML command not working as expected.
+
+## Version 4.8.3 September 13, 2018
 * Fixed a bug where the Wordcount Plugin didn't correctly count words within tables on IE11.
 * Fixed a bug where it wasn't possible to move the caret out of a table on IE11 and Firefox.
 * Fixed a bug where merging empty blocks didn't work as expected, sometimes causing content to be deleted.
@@ -422,6 +468,9 @@ class: changelog
 * Fixed bug where the init call promise wouldn't resolve if the specified selector didn't find any matching elements.
 * Fixed bug where the Schema isValidChild function was case sensitive.
 
+## Version 4.5.10 - November 7, 2018
+* Changed the keyboard shortcut to move focus to contextual toolbars to Ctrl+F9.
+
 ## Version 4.5.9 - August 2, 2018
 * Fixed a bug where Edge 17 wouldn't be able to select images or tables.
 
@@ -822,7 +871,7 @@ class: changelog
 * Fixed bug where pagebreaks were editable to imagetools patch contributed by Rasmus Wallin.
 * Fixed bug where the element path could cause too much recursion exception.
 * Fixed bug for domains containing ".min". Patch contributed by Loïc Février.
-* Fixed so validation of external links to accept a number after www. Patch contributed by Victor Carvalho.
+* Fixed so validation of external links to accept a number after `www`. Patch contributed by Victor Carvalho.
 * Fixed so the charmap is exposed though execCommand. Patch contributed by Matthew Will.
 * Fixed so that the image uploads are concurrent for improved performance.
 * Fixed various grammar problems in inline documentation. Patches provided by nikolas.

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Link Plugin
+title: Link plugin
 title_nav: Link
 description: Add hyperlinks to content.
 keywords: url urls insert edit default_link_target link_assume_external_targets link_class_list link_list target_list rel_list link_title
@@ -203,7 +203,7 @@ tinymce.init({
     {title: 'None', value: ''},
     {title: 'Same page', value: '_self'},
     {title: 'New page', value: '_blank'},
-    {title: 'LIghtbox', value: '_lightbox'}
+    {title: 'Lightbox', value: '_lightbox'}
   ]
 });
 ```

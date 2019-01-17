@@ -1,39 +1,42 @@
 ---
 layout: default
-title: Tiny Quick Start
-description_short: Setup TinyMCE in less than 5 minutes (on your desktop).
-description: Get a local instance of TinyMCE up and running in less than 5 minutes.
+title: Quick start
+title_nav: Quick start
+description_short: Setup TinyMCE in less than 5 minutes.
+description: Get an instance of TinyMCE up and running in less than 5 minutes.
 keywords: tinymce script textarea
 ---
 
-TinyMCE is a powerful and flexible text editor that makes it incredibly easy for people with various levels of technical expertise to create rich content. Tiny Cloud is perfect for anyone who wants an easier installation and upgrade process. This document is the place to start if you are new to TinyMCE and want to get a local editor instance up and running in less than 5 minutes (via our TinyMCE Cloud). 
+TinyMCE is a powerful and flexible rich text editor that can be embedded in the user's web application. 
 
-Now, back to getting started with TinyMCE. You'll have a basic local editor instance up and running in the next 3 steps.
+The TinyMCE 5.0 Beta is perfect for developers who want to see how the new version of TinyMCE integrates into their ecosystem.
 
 ## Step 1: Include the TinyMCE script
 
-Include this line of code in the `<head>` of your HTML page:
+Build a TinyMCE 5.0 Beta instance with the [TinyMCE 5.0 Beta SDK](https://github.com/tinymce/tinymce/tree/5.x).
+
+Include this line of code in the `<head>` of the HTML page and link to the tinymce.min.js source file:
 
 ```html
-<script src='{{ site.cdnurl }}'></script>
+<script src='http://cloud.tinymce.com/5-testing/tinymce.min.js'></script>
 ```
 
-> Tip: We give you a complete HTML snippet in Step 2.
+> Tip: A complete HTML snippet is provided in Step 2.
 
 
 ## Step 2: Initialize TinyMCE as part of a web form
 
-With the script included, initialize TinyMCE on any element (or elements) in your web page.
+With the script included, initialize TinyMCE on any element (or elements) in the web page.
 
-Since TinyMCE lets you identify replaceable elements via a CSS selector, all you need to do is pass an object that contains a `selector` to `tinymce.init()`.
+Since TinyMCE enables identifying replaceable elements via a CSS selector, the only requirement is to pass an object that contains a `selector` to `tinymce.init()`.
 
-In this example, let's replace `<textarea id='mytextarea'>` with a TinyMCE editor instance by passing the selector `'#mytextarea'` to `tinymce.init()`.
+In this example, replace `<textarea id='mytextarea'>` with a TinyMCE editor instance by passing the selector `'#mytextarea'` to `tinymce.init()`.
 
 ```html
 <!DOCTYPE html>
 <html>
 <head>
-  <script src='{{ site.cdnurl }}'></script>
+  <script src='http://cloud.tinymce.com/5-testing/tinymce.min.js'></script>
   <script>
   tinymce.init({
     selector: '#mytextarea'
@@ -50,17 +53,11 @@ In this example, let's replace `<textarea id='mytextarea'>` with a TinyMCE edito
 </html>
 ```
 
-> Note: If you're testing this locally, you will need to prepend `https://` to urls in the `script` tag. For example, `<script src='https:{{ site.cdnurl }}'></script>`.
 
 ## Step 3: Saving content with a form POST
 
-When the `<form>` is submitted the TinyMCE editor mimics the behavior of a normal HTML `<textarea>` during the `post`. In your form handler, you can process the content submitted as if it had come from a regular `<textarea>`.
+When the `<form>` is submitted, the TinyMCE editor mimics the behavior of a normal HTML `<textarea>` during the `POST`. In the user's form handler, the content submitted can be processed in the same way as the content created from a regular `<textarea>`.
 
-So that's all there is to it!
+That is all there is to it!
 
-If you prefer to download TinyMCE and install it locally the [Advanced Install]({{  site.baseurl }}/general-configuration-guide/advanced-install/#packagemanagerinstalloptions) page in the [General Configuration Guide]({{  site.baseurl }}/general-configuration-guide) has instructions. This document also provides information about TinyMCE features such as advanced installation options, working with plugins, learning about content filtering, and spell checking.
-
-You may use TinyMCE Cloud without an API key. However, to avoid the in-editor developer warning or use our premium plugins, sign up for an API key and update the script tag used to load the editor code into your application. Please visit the [Cloud Deployment Guide]({{  site.baseurl }}/cloud-deployment-guide/) to learn more about the plugins and other features of TinyMCE.
-
-
-
+To download TinyMCE and install it locally, the [Advanced installation choices]({{  site.baseurl }}/general-configuration-guide/advanced-install/#packagemanagerinstalloptions) page in the [Introduction and getting started]({{  site.baseurl }}/general-configuration-guide) guide has instructions. This document also provides information about TinyMCE features such as advanced installation options, working with plugins, learning about content filtering, and spell checking.

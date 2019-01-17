@@ -1,18 +1,18 @@
 ---
 layout: default
 title: Cloud Deployment of Plugins Only
-description_short: Learn how to setup TinyMCE Plugins via our Cloud.
-description: TinyMCE Cloud customers, you'll be up and running in less than 5 minutes.
-keywords: tinymce cloud script textarea apiKey
+description_short: Learn how to setup TinyMCE Plugins via the Cloud.
+description: Connect to Tiny Cloud within a hybrid deployment in less than 5 minutes.
+keywords: tinymce cloud script textarea apiKey hybrid
 ---
 
-If you’re already comfortable hosting and maintaining [TinyMCE Community edition](https://www.tinymce.com/download/), or you’re running a web application where you have no control over the TinyMCE instance, you’re still able to load our premium TinyMCE plugins from TinyMCE Cloud. Think of this as a hybrid deployment.
+A hybrid deployment of Tiny Cloud allows the loading of premium plugins in a self-hosted environment. Download and install the [TinyMCE Community edition](https://www.tinymce.com/download/) to get started.
 
-Signing up for a free API key entitles you to the premium [Image Tools]({{  site.baseurl }}/plugins/imagetools/) plugin, with a provided cloud image proxy server already configured. You can purchase our Premium Plugins at any time once your API key is set up.
+Sign up for a free API key provides entitlements to premium [Image Tools]({{  site.baseurl }}/plugins/imagetools/) plugin. A cloud image proxy server must already be configured. Premium plugins can be purchased at any time once the API key has been set up.
 
-## Step 1: Embed your custom script tag into your webpage
+## Step 1: Insert the custom script tag into the webpage
 
-Within your webpage, after you’ve specified your script tag to load the TinyMCE editor code, you’ll then need to add the following new script:
+Add the following script in the webpage once the script tag to load TinyMCE has been specified:
 
 ```js
 <script src="https://cloud.tinymce.com/stable/plugins.min.js?apiKey=your_API_key"></script>
@@ -20,7 +20,7 @@ Within your webpage, after you’ve specified your script tag to load the TinyMC
 
 ## Step 2: Specify purchased TinyMCE plugins and toolbar buttons
 
-Now you just need to extend your [TinyMCE configuration]({{ site.baseurl }}/configure/) to include any additional plugins (and associated toolbar/menu items) you’ve purchased. You will find enablement guides here:
+Extend the [TinyMCE configuration]({{ site.baseurl }}/configure/) to include any additional purchased plugins and associated toolbar and menu items. Refer to the following enablement guides for more information:
 
 * [Powerpaste]({{ site.baseurl }}/plugins/powerpaste/)
 * [Spell Checker]({{ site.baseurl }}/plugins/tinymcespellchecker/)
@@ -29,19 +29,21 @@ Now you just need to extend your [TinyMCE configuration]({{ site.baseurl }}/conf
 
 * [Image Tools (with configured image proxy)]({{ site.baseurl }}/plugins/imagetools/)
 
-> Note: We will configure the `imagetools_cors_hosts` and `imagetools_proxy` properties for you automatically.
+> Note: Configuration of the `imagetools_cors_hosts` and `imagetools_proxy` properties occurrs automatically.
 
 * [Accessibility Checker]({{ site.baseurl }}/plugins/a11ychecker/)
 * [Advanced Code Editor]({{ site.baseurl }}/plugins/advcode/)
 * [Enhanced Media Embed]({{ site.baseurl }}/plugins/mediaembed/)
 * [Link Checker]({{ site.baseurl }}/plugins/linkchecker/)
 
-> Note: Please note that after purchasing a plugin, it may take up to 30 minutes for the plugin to become available with your editor. You may also need to clear your browser's cache.
+> Note: It may take up to 30 minutes for the purchased plugin to be available to TinyMCE. Clear the browser's cache.
 
-Here is a complete example, whereby:
+The following is a complete example:
+
+The example below has the following:
 
 * The account `API key` has the value *TEST_API_KEY*.
-* The account has the [Spell Checker]({{ site.baseurl }}/plugins/tinymcespellchecker/) plugin enable.
+* The account has the [Spell Checker]({{ site.baseurl }}/plugins/tinymcespellchecker/) plugin enabled.
 
 ```js
 <html>
@@ -55,7 +57,6 @@ Here is a complete example, whereby:
          tinymce.init({
             selector: 'textarea',
             height: 500,
-            theme: 'modern',
             plugins: [
                'advlist autolink lists link image charmap print preview hr anchor pagebreak',
                'tinymcespellchecker']
@@ -66,12 +67,12 @@ Here is a complete example, whereby:
 ```
 
 ## Step 3: Forward proxy configuration
-If your company network has a forward proxy that controls access to the internet, please ensure that the following URLs are accessible via this proxy.
+Ensure that the following URLs are accessible via this proxy if the network has a forward proxy that controls access to the internet.
 
-* All URLs at which the editor is deployed.
-* All URLs at which the plugins are deployed.
+* All URLs where the editor is deployed.
+* All URLs where the plugins are deployed.
 * https://imageproxy.tinymce.com
 * https://hyperlinking.tinymce.com
 * https://spelling.tinymce.com
 
-Also, please ensure that the `tiny-api-key` and `tinymce-api-key` headers are retained while requesting the list of URLs above.
+Ensure the `tiny-api-key` and `tinymce-api-key` headers are retained while requesting the list of above URLs.

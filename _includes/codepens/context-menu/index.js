@@ -1,5 +1,5 @@
 tinymce.init({
-  selector: 'textarea',
+  selector: 'textarea#context-menu',
   height: 500,
   plugins: [
     'link image imagetools table spellchecker'

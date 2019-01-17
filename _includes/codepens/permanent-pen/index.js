@@ -1,5 +1,5 @@
 tinymce.init({
-  selector: 'textarea',
+  selector: 'textarea#permanent-pen',
   plugins: 'permanentpen code',
   contextmenu: 'configurepermanentpen',
   toolbar: 'permanentpen code',

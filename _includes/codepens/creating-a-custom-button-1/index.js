@@ -1,5 +1,5 @@
 tinymce.init({
-  selector: '#creating-a-custom-button-1',
+  selector: 'textarea#creating-a-custom-button-1',
   plugins: 'code wordcount',
   toolbar: 'undo redo | currentdate',
   content_css: [

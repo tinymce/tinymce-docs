@@ -1,5 +1,5 @@
 tinymce.init({
-  selector: 'textarea',
+  selector: 'textarea#paste-from-word',
   height: 400,
   menubar: true,
   plugins: [

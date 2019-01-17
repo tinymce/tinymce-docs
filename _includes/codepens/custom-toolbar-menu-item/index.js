@@ -1,5 +1,5 @@
 tinymce.init({
-  selector: "textarea",
+  selector: "textarea#custom-toolbar-menu-item",
   height: 500,
   plugins: 'wordcount',
   toolbar: false,

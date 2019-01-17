@@ -1,5 +1,5 @@
 tinymce.init({
-  selector: 'textarea',
+  selector: 'textarea#context-toolbar',
   height: 350,
   setup: function (editor) {
     editor.ui.registry.addContextToolbar('imagealignment', {

@@ -50,8 +50,6 @@ In this example, let's replace `<textarea id='mytextarea'>` with a TinyMCE edito
 </html>
 ```
 
-> Note: If you're testing this locally, you will need to prepend `https://` to urls in the `script` tag. For example, `<script src='https:{{ site.cdnurl }}'></script>`.
-
 ## Step 3: Saving content with a form POST
 
 When the `<form>` is submitted the TinyMCE editor mimics the behavior of a normal HTML `<textarea>` during the `post`. In your form handler, you can process the content submitted as if it had come from a regular `<textarea>`.

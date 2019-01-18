@@ -1,5 +1,5 @@
 tinymce.init({
-  selector: 'textarea',
+  selector: 'textarea#format-painter',
   plugins: 'formatpainter code',
   toolbar: 'formatpainter code',
   formats: {

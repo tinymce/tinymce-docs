@@ -1,5 +1,5 @@
 tinymce.init({
-  selector: 'textarea',
+  selector: 'textarea#drive',
   plugins: 'image media link tinydrive code imagetools',
   api_key: 'fake-key',
   content_css: [

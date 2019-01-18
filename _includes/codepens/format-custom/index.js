@@ -1,5 +1,5 @@
 tinymce.init({
-  selector: 'textarea',
+  selector: 'textarea#format-custom',
   height: 500,
   plugins: 'table wordcount',
   content_css: [

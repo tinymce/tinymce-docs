@@ -130,7 +130,7 @@ var mentions_fetch = function (query, success) {
 };
 
 tinymce.init({
-  selector: "textarea",
+  selector: "textarea#mentions",
   plugins: "mentions",
 
   mentions_selector: '.mentionsmentionsmentions',

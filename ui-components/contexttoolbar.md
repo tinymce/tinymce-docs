@@ -6,85 +6,42 @@ description: Context toolbar overview
 keywords: contexttoolbar context toolbar contexttoolbarapi
 ---
 
-A ContextToolbar can only contain either buttons that are defined for a normal toolbar, or buttons specifically registered for launching a [ContextForm]({{site.baseurl}}/ui-components/contextform/). The buttons comes as a list of strings, where each string is a registered name of a button.
+A context toolbar can only contain either buttons that are defined for a normal toolbar, or buttons specifically registered for launching a [ContextForm]({{site.baseurl}}/ui-components/contextform/). The buttons comes as a list of strings, where each string is a registered name of a button.
 
-### Registering a Context Toolbar
+### Registering a context toolbar
 
-A ContextToolbar is registered by calling the `addContextToolbar` API in the registry. The specification is as follows:
+A context toolbar is registered by calling the `addContextToolbar` API in the registry. The specification is as follows:
 
 | Name | Description |
 | ---- | ----------- |
 | `predicate` | This controls when the context toolbar will appear |
 | `position` | This controls where the context toolbar will appear with regards to the current cursor |
-| `scope` | This controls whether the predicate is a `node`-based predicate, or an `editor`-based predicate. See Context Toolbar Proirity below, for more details. |
+| `scope` | This controls whether the predicate is a `node`-based predicate, or an `editor`-based predicate. See context toolbar proirity section below, for more details. |
 | `items` | A list of strings which represent either a registered toolbar button, or a registered context form launcher. |
 
-### Launching a ContextToolbar Programmatically
+### Launching a context toolbar programmatically
 
-There is an `editor` event called `contexttoolbar-show` that can be fired to show a ContextToolbar at the current selection. The event takes a parameter `toolbarKey` which specifies the name of the registered ContextForm or ContextToolbar to show.
+There is an `editor` event called `contexttoolbar-show` that can be fired to show a context toolbar at the current selection. The event takes a parameter `toolbarKey` which specifies the name of the registered context form or context toolbar to show.
 
-### Context Toolbar Priority
+### Context toolbar priority
 
 {% include context/priority.md %}
 
-### Positioning ContextToolbars
+### Positioning context toolbars
 
 There are three options for positioning are: `selection`, `line`, or `node`.
 
-* A `selection` position will place the ContextToolbars above or below the current selection, centred if possible.
+* A `selection` position will place the context toolbars above or below the current selection, centred if possible.
 
-* A `line` position will place the ContextToolbars to the right (or left in Right-to-Left languages) of the current selection.
+* A `line` position will place the context toolbars to the right (or left in Right-to-Left languages) of the current selection.
 
-* A `node` position will place the ContextToolbars relative to the bounds of a node (e.g. a table or image). It applies to a selected node that does not match the selection due to CSS properties (like float).
+* A `node` position will place the context toolbars relative to the bounds of a node (e.g. a table or image). It applies to a selected node that does not match the selection due to CSS properties (like float).
 
 
 
-<!--- ### Example Configuration
+### Example configuration
 
-In this example, a custom toolbar object with two custom toolbar buttons is created and added to a configuration object via the ui toolbar property. This config is then used to create an  editor by replace.
+This example shows how the quickbars plugin adds the standard selection context toolbar and an example of a custom toolbar for image alignment. The context toolbar will show whenever any content is selected.
 
-```js
-var customToolbar = {
-    items : [
-        {
-            label: 'Undo and Redo group',
-            items: [ 'undo', 'redo' ]
-        },
-        {
-            label: 'Insert group',
-            items: [
-                {
-                    id    : 'insert',
-                    label  : 'Insert Menu',
-                    items : [ 'link', 'fileupload', 'table' ]
-                }
-            ]
-        },
-        {
-            label: 'Custom Toolbar Group',
-            items: [
-                {
-                    id     : 'custom1',
-                    text   : 'Custom Button 1',
-                    icon   : '/path/to/icon1.png',
-                    action : function () { alert('Custom Button 1 Clicked'); }
-                },
-                {
-                    id     : 'custom2',
-                    text   : 'Custom Button 2',
-                    icon   : '/path/to/icon2.png',
-                    action : function () { alert('Custom Button 2 Clicked'); }
-                }
-            ]
-        }
-    ]
-};
-
-var config = {
-    ui : { toolbar : customToolbar }
-};
-
-var editor = textboxio.replace('#targetId', config);
-``` --->
-
+{% include codepen.html id="context-toolbar" height="600" tab="js" %}
 

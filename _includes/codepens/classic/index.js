@@ -33,11 +33,8 @@ var demoBaseConfig = {
     "//fonts.googleapis.com/css?family=Lato:300,300i,400,400i",
     "//www.tiny.cloud/css/content-standard.min.css"
   ],
-  spellchecker_rpc_url: 'https://spelling.tinymce.com/',
-  spellchecker_api_key: 'h22wb7h8xi78b4fyo46hhx5k7fbh46vt5f6yqmvd492iy00c',
   spellchecker_dialog: true,
-  spellchecker_whitelist: ['Ephox', 'Moxiecode'],
-  api_key: 'fakekey'
+  spellchecker_whitelist: ['Ephox', 'Moxiecode']
 };
 
 var mentionsFetchFunction = function (query, success) {

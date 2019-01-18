@@ -1,5 +1,5 @@
 var demoBaseConfig = {
-  selector: "textarea",
+  selector: "textarea#classic",
   width: 755,
   height: 500,
   resize: false,

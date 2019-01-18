@@ -1,5 +1,5 @@
 var settings = {
-  selector: 'textarea',
+  selector: 'textarea#annotations',
   toolbar: ['annotate-alpha'],
   menubar: false,
   height: '750px',

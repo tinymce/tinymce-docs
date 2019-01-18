@@ -6,12 +6,12 @@ description: Add a custom buttons to the TinyMCE 5.0 toolbar.
 keywords: toolbar toolbarbuttons buttons toolbarbuttonsapi
 ---
 
-## Use Cases
+## Use cases
 
 * Create a shortcut for an action or a series of actions that the user repeatedly does.
 * Create a button for custom behavior.
 
-## How to Create Custom Toolbar Buttons
+## How to create custom toolbar buttons
 
 The methods for adding custom toolbar buttons are in the UI Registry part of the editor API `editor.ui.registry`. The API has four methods for adding toolbar buttons, one for each type of toolbar button:
 
@@ -27,7 +27,7 @@ The two arguments these methods take are:
 
 > Note: Each type of button has custom and common configuration options. Review the relevant documentation for each type of button for more information.
 
-Define the custom toolbar button with the `setup` callback of the TinyMCE configuration to add it to the editor. This callback is invoked automatically for every initialized editor instance. Access to the UI Registry API occurs when the callback receives a reference to the editor instance as its argument.
+Define the custom toolbar button with the `setup` callback of the TinyMCE configuration to add it to the editor. This callback is invoked automatically for every initialized editor instance. Access to the UI registry API occurs when the callback receives a reference to the editor instance as its argument.
 
 ### Example of adding a basic button that triggers an alert when clicked:
 
@@ -49,5 +49,5 @@ tinymce.init({
 
 The following example creates different types of toolbar buttons.
 
-{% include codepen.html id="toolbar-button" height="900" %}
+{% include codepen.html id="toolbar-button" height="400" %}
 

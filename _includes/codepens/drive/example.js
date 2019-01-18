@@ -1,5 +1,5 @@
 tinymce.init({
-  selector: 'textarea',
+  selector: 'textarea#drive',
   plugins: 'image media link tinydrive code imagetools',
   api_key: 'YOUR_API_KEY',
   height: 600,

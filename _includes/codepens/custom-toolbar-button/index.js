@@ -1,5 +1,5 @@
 tinymce.init({
-  selector: 'textarea',
+  selector: 'textarea#custom-toolbar-button',
   toolbar: 'customInsertButton customDateButton',
   setup: function (editor) {
 

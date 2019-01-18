@@ -1,5 +1,5 @@
 tinymce.init({
-  selector: 'textarea.tinymce',
+  selector: 'textarea#creating-a-custom-button-2',
   height: 300,
   plugins: 'code',
   toolbar: 'undo redo | currentdate',

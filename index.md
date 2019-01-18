@@ -1,6 +1,6 @@
 ---
 layout: default
-title: TinyMCE 5 Developer Preview
+title: TinyMCE 5.0 Release Candidate
 type: index
 meta_title: Documentation
 meta_description: Official documentation for the most advanced and widely deployed rich text editor platform.

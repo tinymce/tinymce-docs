@@ -1,5 +1,5 @@
 tinymce.init({
-  selector: 'textarea',
+  selector: 'textarea#local-upload',
   plugins: 'image code',
   toolbar: 'undo redo | image code',
 

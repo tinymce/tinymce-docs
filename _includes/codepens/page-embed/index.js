@@ -1,5 +1,5 @@
 tinymce.init({
-  selector: 'textarea',
+  selector: 'textarea#page-embed',
   plugins: 'pageembed code',
   toolbar: 'pageembed code',
   menubar: "view",

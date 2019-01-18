@@ -31,11 +31,11 @@ var dialogConfig =  {
   ],
   initialData: {
     catdata: 'initial Cat',
-    isdog: false
+    isdog: 'unchecked'
   },
   onSubmit: function (api) {
     var data = api.getData();
-    var pet = data.isdog ? 'dog' : 'cat';
+    var pet = data.isdog == 'checked' ? 'dog' : 'cat';
 
     tinymce.activeEditor.execCommand('mceInsertContent', false, '<p>My ' + pet +'\'s name is: <strong>' + data.catdata + '</strong></p>');
     api.close();

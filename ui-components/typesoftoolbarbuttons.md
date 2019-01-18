@@ -69,13 +69,8 @@ A toggle button triggers an action when clicked. A toggle button holds the conce
 | text | string | optional | Text to display if no icon is found. |
 | icon | string | optional | Name of the icon to be displayed. Must correspond to an icon in the icon pack. |
 | tooltip | string | optional | Text for button tooltip.  |
-<<<<<<< HEAD
 | disabled | boolean | optional | default: false - Represents the button's state. When true, button is unclickable. Toggled by the button's API. |
 | active | boolean | optional | default: false - Represents the button's state. When true, button is highlighted. Toggled by the button's API. |
-=======
-| disabled | boolean | optional| default: false - Represents a button state. Toggled by the button's API. |
-| active | boolean | optional | default: false |
->>>>>>> develop
 | onSetup | (api) => (api) => void | optional | default: () => () => {} - Function invoked when the button is rendered. |
 | onAction | (api) => void | required | Function invoked when the button is clicked. |
 
@@ -85,17 +80,10 @@ A toggle button triggers an action when clicked. A toggle button holds the conce
 
 | Name | Value | Description |
 |------| ------| ------------|
-<<<<<<< HEAD
-| isDisabled | ( ) => boolean | Checks if button is disabled |
-| setDisabled | (state: boolean) => void | Sets the button's disabled state |
-| isActive| ( ) => boolean | Checks the button's toggle state |
-| setActive | (state: boolean) => void | Sets the button's toggle state |
-=======
 | isDisabled | ( ) => boolean | Checks if a button is disabled. |
 | setDisabled | (state: boolean) => void | Sets the button's disabled state. |
 | isActive| ( ) => boolean | Checks the button's toggle state. |
 | setActive | (state: boolean) => void | Sets the button's toggle state. |
->>>>>>> develop
 
 #### Toggle button example and explanation
 
@@ -103,11 +91,7 @@ A toggle button triggers an action when clicked. A toggle button holds the conce
 
 The example above adds two custom **strikethrough** buttons with the same `onAction` configuration. The configuration uses `editor.execCommand(command, ui, args)` to execute `mceToggleFormat`. This internal command toggles the specified format on and off while passing it the format name `strikethrough`. The format name `strikethrough` must already be registered with the editor.
 
-<<<<<<< HEAD
-The first button functions as expected: it applies and removes strikethrough formatting to the editor's content.
-=======
 The first button functions as expected. It applies and removes strikethrough formatting to the editor's content.
->>>>>>> develop
 
 > Note:  The button itself only toggles its active state on click and *doesn't* reflect the actual state of the selected content.
 

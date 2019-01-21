@@ -7,7 +7,7 @@ keywords: visualchars
 controls: toolbar button, menu item
 ---
 
-This plugin adds the ability for users to see invisible characters like `&nbsp;` displayed in the editable area. It also adds a toolbar control and a menu item `Show invisible characters` under the `View` menu.
+This plugin adds the ability to see invisible characters like `&nbsp;` displayed in the editable area. It also adds a toolbar control and a menu item `Show invisible characters` under the `View` menu.
 
 > It's worth noting that at present the toolbar button icon is the same for both [Visual Blocks](../visualblocks/) and Visual Characters plugins.
 
@@ -26,11 +26,11 @@ tinymce.init({
 
 ### Options
 
-This setting affects the execution of the `visualchars` plugin. You may specify whether chars are visible by default here.
+This setting affects the execution of the `visualchars` plugin. Characters can be configured to be visible by default using this option.
 
 ### `visualchars_default_state`
 
-This option enables you to specify the default state of the Visual Blocks plugin.
+This option enables specifying the default state of the Visual Blocks plugin.
 
 **Type:** `Boolean`
 
@@ -40,7 +40,7 @@ This option enables you to specify the default state of the Visual Blocks plugin
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
+  selector: "textarea",  // change this value according to the HTML
   plugins: "visualchars",
   menubar: "view",
   toolbar: "visualchars",

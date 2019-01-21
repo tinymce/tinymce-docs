@@ -14,6 +14,8 @@ description: Configure the appearance of content inside TinyMCe's editable area.
 
 {% include configuration/content-css.md %}
 
+{% include configuration/content-css-cors.md %}
+
 {% include configuration/content-style.md %}
 
 {% include configuration/inline-boundaries.md %}

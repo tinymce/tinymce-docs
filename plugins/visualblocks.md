@@ -43,7 +43,7 @@ tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "visualblocks",
   menubar: "view",
-  toolbar: "visualblocks",
+  toolbar: "visualblocks"
   visualblocks_default_state: true
 });
 ```

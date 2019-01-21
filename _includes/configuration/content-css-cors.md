@@ -1,5 +1,5 @@
 ## content_css_cors
-When setting the `content_css_cors` setting to `true` the editor will add a `crossorigin="anonymous"` attribute to the link tags that the StyleSheetLoader uses when loading the `content_css`, allowing you to host the `content_css` on a different server than the editor itself.
+When `content_css_cors` is set to `true`, the editor will add a `crossorigin="anonymous"` attribute to the link tags that the StyleSheetLoader uses when loading the `content_css`. This allows you to host the content_css on a different server than the editor itself.
 
 **Type:** `Boolean`
 

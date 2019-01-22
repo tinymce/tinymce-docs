@@ -16,7 +16,7 @@ TinyMCE has three main integration modes:
 
 The current default theme `silver` renders the editor in classic mode.
 
-See the [Classic Editor]({{ site.baseurl }}/demo/classic/) example page.
+See the [Classic editor]({{ site.baseurl }}/demo/classic/) example page.
 
 ##### Example:
 
@@ -29,7 +29,7 @@ tinymce.init({
 ### Related configuration options
 
 * [elementpath]({{ site.baseurl }}/configure/editor-appearance/#elementpath)
-* [fixed-toolbar-container]({{ site.baseurl }}/configure/editor-appearance/#fixed-toolbar-container)
+<!-- * [fixed-toolbar-container]({{ site.baseurl }}/configure/editor-appearance/#fixed-toolbar-container) -->
 * [inline]({{ site.baseurl }}/configure/editor-appearance/#inline)
 * [menu]({{ site.baseurl }}/configure/editor-appearance/#menu)
 * [menubar]({{ site.baseurl }}/configure/editor-appearance/#menubar)
@@ -38,7 +38,7 @@ tinymce.init({
 * [statusbar]({{ site.baseurl }}/configure/editor-appearance/#statusbar)
 * [theme]({{ site.baseurl }}/configure/editor-appearance/#theme)
 * [toolbar]({{ site.baseurl }}/configure/editor-appearance/#toolbar)
-* [toolbar-n]({{ site.baseurl }}/configure/editor-appearance/#toolbar-n)
+* [toolbar-n]({{ site.baseurl }}/configure/editor-appearance/#toolbarn)
 * [height]({{ site.baseurl }}/configure/editor-appearance/#height)
 
 

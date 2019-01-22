@@ -7,9 +7,9 @@ description: Understand the difference between traditional forms-based editing a
 keywords: form inline edit stylesheet
 ---
 
-TinyMCE has three main integration modes: a _classic_ form-based mode, an _inline_ editing mode, and a distraction-free _inlite_ mode.
+TinyMCE has three main integration modes: a _classic_ form-based mode, an _inline_ editing mode, and a distraction-free mode.
 
-The inline editing mode is useful when creating user experiences where you want the editing view of the page to be merged with the reading view of the page. This creates a seamless editing experience and true WYSIWYG behavior.
+The inline editing mode is useful when creating user experiences where the editing view of the page can be merged with the reading view of the page. This creates a seamless editing experience and true WYSIWYG behavior.
 
 When in inline editing mode the editor does not replace the selected element with its iframe, but instead edits the element's content in place instead. For a sample view of this mode, visit the [Inline Editor]({{ site.baseurl }}/demo/inline) example page.
 
@@ -22,16 +22,16 @@ Inline editing mode blends the editable view with a readable view of the page. E
 
 Most significantly, when using inline editing TinyMCE is not isolated from the page by being encapsulated within an iframe. This has the advantage of ensuring that the content within the editor inherits the surrounding page's styles when presenting the content.
 
-Since the editor is not sandboxed in an iframe in inline editing mode, CSS styles for the editor's content are inherited from the page that the editor is on. This feature allows you to edit content exactly as it appears within the context of the page, providing a true WYSIWYG editing experience.
+Since the editor is not sandboxed in an iframe in inline editing mode, CSS styles for the editor's content are inherited from the page that the editor is on. This feature allows editing content exactly as it appears within the context of the page, providing a true WYSIWYG editing experience.
 
 
 ## Inline editing and complex stylesheets
 
 When using TinyMCE in the inline mode it inherits the CSS stylesheet from the page it is embedded in.
 
-While this is advantageous in providing a true WYSIWYG view of the content, it can result in user confusion when working with complex CSS. This is because your site's CSS is now being applied directly to the editor and may result in behavior that the user doesn't expect.
+While this is advantageous in providing a true WYSIWYG view of the content, it can result in user confusion when working with complex CSS. This is because the site's CSS is now being applied directly to the editor and may result in behavior that the user doesn't expect.
 
-If you are going to use the editor in inline mode care should be taken when using styling that depends on structures within the editor. For example, if you had a class like this:
+If the editor is used in inline mode, care should be taken when using styling that depends on structures within the editor. For example, if there's a class like this:
 
 ```css
 h1 strong {

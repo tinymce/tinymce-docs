@@ -9,11 +9,11 @@ keywords: tinymce script textarea
 
 TinyMCE is a powerful and flexible rich text editor that can be embedded in the user's web application. 
 
-The TinyMCE 5.0 Beta is perfect for developers who want to see how the new version of TinyMCE integrates into their ecosystem.
+The TinyMCE 5.0 Release Candidate is perfect for developers who want to see how the new version of TinyMCE integrates into their ecosystem.
 
 ## Step 1: Include the TinyMCE script
 
-Build a TinyMCE 5.0 Beta instance with the [TinyMCE 5.0 Beta SDK](https://github.com/tinymce/tinymce/tree/5.x).
+Build a TinyMCE 5.0 Release Candidate instance with the [TinyMCE 5.0 Release Candidate SDK](https://github.com/tinymce/tinymce/tree/5.x).
 
 Include this line of code in the `<head>` of the HTML page and link to the tinymce.min.js source file:
 
@@ -60,4 +60,4 @@ When the `<form>` is submitted, the TinyMCE editor mimics the behavior of a norm
 
 That is all there is to it!
 
-To download TinyMCE and install it locally, the [Advanced installation choices]({{  site.baseurl }}/general-configuration-guide/advanced-install/#packagemanagerinstalloptions) page in the [Introduction and getting started]({{  site.baseurl }}/general-configuration-guide) guide has instructions. This document also provides information about TinyMCE features such as advanced installation options, working with plugins, learning about content filtering, and spell checking.
+To download TinyMCE and install it locally, the [More installation choices]({{  site.baseurl }}/general-configuration-guide/advanced-install/#packagemanagerinstalloptions) page in the [Introduction and getting started]({{ site.baseurl }}/general-configuration-guide) guide has instructions. This document also provides information about TinyMCE features such as advanced installation options, working with plugins, learning about content filtering, and spell checking.

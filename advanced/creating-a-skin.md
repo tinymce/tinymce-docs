@@ -24,7 +24,7 @@ Skin for TinyMCE 5 are written in [LESS](http://lesscss.org), a popular CSS prep
 
 You now have the development environment set up and are ready to get to work.
 
-## Making a skin
+## Making or editing a skin
 
 Make sure you have performed the preparation step above.
 
@@ -37,14 +37,16 @@ Begin by looking in the `src/less/skins/` folder where you find two folders: `ui
 1. Begin by duplicating the `default` folder located in `src/less/slins/ui/` and rename it.
 2. Open the file `src/less/theme/globals/global-variables.less` and **copy** the variables you like to change to your `skin.less` file in the folder you duplicated in the previous step. Change the values. The variables you put in `skin.less` will override the default values.
 3. For more detailed customizations, review the variables in each component, such as `src/less/theme/components/toolbar-button.less` and copy the ones you want to change to `skin.less`.
-4. **CHANGING THE CONTENT UI**
-5. Preview your skin by building it. See _Build process_
-6. **TRANSFER YOUR SKIN TO TINYMCE**
+4. To style interface elements in the content, such as selection color, drag handles, table of contents, bookmarks etc, copy variables to `src/less/skins/ui/<skin-name>/content.less` or `content.inline.less` depending on if you are using the inline mode or not.
+5. Preview your skin by building it with `gulp`.
+6. **TRANSFER YOUR SKIN TO TINYMCE! HOW?** 
 
-## Creating a content skin
+### Creating a content skin
 
 To update the appearance of the content within the editor, such as headings, quotes, lists etc you create a content skin. These are located in `src/less/skin/content/`
-**CONTINUE**
+
+1. Create a folder in `src/less/skins/content/` and create a `content.less` file in it. Alternatively you can duplicate any of the existing content skins.
+2. Add the relevant element selectors for your particular use case such as `h1` to `h6`, `a`, `blockquote`, `code`, `table`... 
 
 ## Modifying the icons
 

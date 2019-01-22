@@ -211,8 +211,8 @@ The instance API is a javascript object containing methods attached to the dialo
 | `disable(name: string): void` | Calling `disable()` and passing the component name will disable the component.  Calling `enable(name)` will re-enable the component. |
 | `enable(name: string): void` | Calling `enable()` and passing the component name will enable a component, and users can interact with the component. |
 | `focus(name: string): void` | Calling `focus()` and passing the component name will set the browser focus to the component.|
-| `block(message: string): void` | Calling `block()` and passing a message string will disable the entire dialog window and display the message notifying users why the dialog is blocked, this is useful for asynchronous data.  When the data is ready we use `unblock()` to unlock the dialog |
-| `unblock(): void` | Calling `unblock()` will unlock the dialog instance restoring functionality |
+| `block(message: string): void` | Calling `block()` and passing a message string will disable the entire dialog window and show a loading image. This is useful for handling asynchronous data. The message is used for screen reader accessibility. When the data is ready use `unblock()` to unlock the dialog. |
+| `unblock(): void` | Calling `unblock()` will unlock the dialog instance restoring functionality. |
 | `showtab(name: string): void` | This method only applies to tab dialogs only. Calling `showtab()` and passing the name of a tab will make the dialog switch to the named tag. |
 | `close(): void` | Calling the `close()` method will close the dialog.  When closing the dialog, all DOM elements and dialog data are destroyed.  When `open(config)` is called again, all DOM elements and data are recreated from the config. |
 | `redial(config): void` | Calling `redial()` and passing a dialog configuration, will destroy the current dialog and create a new dialog.  Redial is used to create a multipage form, where the next button loads a new form page. |

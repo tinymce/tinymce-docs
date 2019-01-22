@@ -4,48 +4,55 @@ title: Create a skin for TinyMCE
 title_nav: Create a skin
 description_short: Introducing skin creation.
 description: Introducing skin creation, less and icon modification.
-keywords: create creator skin icomoon
+keywords: create creator skin icon
 ---
 
-Create a new skin to alter the appearance of TinyMCE. The simplest way to create a new skin is to use the [TinyMCE Skin Creator](http://skin.tinymce.com/) tool. The other option is to manually modify `less` files and build them using the `Node.js` build process. The tutorial below focuses on the manual method of skin creation.
+Create a new skin to alter the appearance of TinyMCE.
+
+This guide assumes you have basic understanding of [Node](http://nodejs.org) and [Gulp](http://gulpjs.com) and know your way around a terminal.
+
+> Note: The  [TinyMCE Skin Creator](http://skin.tinymce.com/) does not support TinyMCE 5 yet.
 
 ## Preparation
 
-Download the [TinyMCE development package](https://www.tinymce.com/download/) to manually build the `less` files. This package contains the source code for the entire TinyMCE project and the `less` files needed to skin the editor or use the [GitHub version](https://github.com/tinymce/tinymce/).
+Skin for TinyMCE 5 are written in [LESS](http://lesscss.org), a popular CSS preprocessor. Making a skin primarily involves modifying variables which you can consider as a kind of API. You are not supposed to modify or override CSS rules, instead you override the less variables in your skin files.
 
-## Building skin.min.css from less files
+1. Downloading the [**LINK MISSING** Oxide Skin project](#).
+2. Install all dependencies with `npm install`.
+3. Issue the `gulp` command which also spins up a webserver for previewing the files. (If you just want to build the files, use `gulp build`) .
+4. Point your web browser of choice to the address shown in the terminal, usually `localhost:3000`.
 
-Make a copy of the default skin "light gray" and place it in the skins directory.
+You now have the development environment set up and are ready to get to work.
 
-> Note: This is the same directory that contains the "light gray" skin.
+## Making a skin
 
-Issue the `grunt less` command from your console. This command automatically builds CSS files out of the `less` files contained in the skins directories. Use `grunt watch` to automatically build the skin when changes are made to the `less` files.
+Make sure you have performed the preparation step above.
 
-The build process will produce these CSS files:
-* `skin.min.css`
-* `content.min.css`
-* `content.inline.min.css`
-
-`content.min.css` and `content.inline.min.css` are used for content inside the editor. These files contain CSS for normalizing editing behavior and the appearance of things like video placeholders.
-
-`skin.min.css` are used to render the UI.
-
-## Modifying the less files
-
-Most CSS elements can be modified by altering the `variables.less` file. This file contains variables such as:
-* font size
-* font family
-* colors
-* borders
-
-Modify additional files to create radically different skins. 
+Begin by looking in the `src/less/skins/` folder where you find two folders: `ui` which is the skins for the editor and `content` which skins the content within the editor. The skin imports the theme LESS files located in `src/less/theme/`. You are not supposed to edit the CSS in the theme folder, instead we have created variables for relevant css properties such as colors, margins and spacings which you use in your skin file to customize TinyMCE 5. This have multiple benefits. You can do quite advanced changes and still easily update TinyMCE 5 since the only thing you have changed is a variable file, and you benefit from all the browser testing we make.
 
 > Note: The skin **only** changes the visual presentation of the UI and **not** the placement of elements. Placement of elements is done by the TinyMCE UI framework. This framework makes it possible to do complex UI layouts on all browsers without touching any CSS when plugins are created.
 
+### Creating a skin
+
+1. Begin by duplicating the `default` folder located in `src/less/slins/ui/` and rename it.
+2. Open the file `src/less/theme/globals/global-variables.less` and **copy** the variables you like to change to your `skin.less` file in the folder you duplicated in the previous step. Change the values. The variables you put in `skin.less` will override the default values.
+3. For more detailed customizations, review the variables in each component, such as `src/less/theme/components/toolbar-button.less` and copy the ones you want to change to `skin.less`.
+4. **CHANGING THE CONTENT UI**
+5. Preview your skin by building it. See _Build process_
+6. **TRANSFER YOUR SKIN TO TINYMCE**
+
+## Creating a content skin
+
+To update the appearance of the content within the editor, such as headings, quotes, lists etc you create a content skin. These are located in `src/less/skin/content/`
+**CONTINUE**
+
 ## Modifying the icons
 
-The icons shipped with the default skin are created by the [IcoMoon](http://icomoon.io/) project and are embedded as web fonts. This makes them *retina ready* and easy to skin.
+TinyMCE 5 uses inline SVG to display icons. The icons is loaded into the editor using a icon pack file.  This guide assumes you have basic understanding of [Node](http://nodejs.org) and [Gulp](http://gulpjs.com).
 
-Import the existing TinyMCE icons by uploading the "icomoon.dev.svg" file and then adding and/or changing the icons that are provided. Alter the `icons.less` file to add more icons.
+To modify or create a icon pack, download the [**LINK MISSING** default icon repository](#). Modify the icons in the `src/svg/` folder. It's important that the icons keep their file names. Then perform the commands  `npm install` and `gulp` which build a `/dist` folder in the root of the project. The build process takes care of minification and optimization. You can preview your icons with the `dist/html/Icons.html` file (it works without a web server). The icon pack is found in `dist/js/???`. To use the icon pack in TinyMCE, see [LINK TO USING ICON PACKS](#).
 
-> Note: There are a few images that are used as placeholders within the contents of the editor.
+> Note: TinyMCE uses the size of the SVG which means that if you create an SVG with the size of 16px, it will be 16px in TinyMCE too. The default icons is based on a 24x24 pixel grid with some exceptions.
+
+> Tip: The icon pack only need to contain the icons you modify and fall back to the default icons for the ones that's absent from the icon pack. You can delete all the SVG files in `src/svg/` that you don't need to save space.
+

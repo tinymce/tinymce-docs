@@ -9,7 +9,7 @@ This section is about adding multiple editor instances to a single page. This is
 
 ## Multiple editor instances sharing the same configuration
 
-The following example breaks the page into two separate editable areas. Each area shares a single editor configuraiton. Each editable `div` is provided the same `class` of 'myeditablediv'. TinyMCE is loaded just for the content area the user clicks.
+The following example breaks the page into two separate editable areas. Each area shares a single editor configuraiton. Each editable `div` is provided the same `class` of `myeditablediv`. TinyMCE is loaded just for the content area the user clicks.
 
 ```html
 <!DOCTYPE html>

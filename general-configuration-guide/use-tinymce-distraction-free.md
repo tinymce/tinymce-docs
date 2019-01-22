@@ -13,7 +13,7 @@ The **Distraction-free** theme renders the editor in lightweight inline mode. Th
 ```js
 tinymce.init({
     selector: "div.tinymce",
-    plugins: [ 'inlite' ],
+    plugins: [ 'quickbars' ],
     toolbar: false,
     menubar: false,
     inline: true
@@ -31,11 +31,11 @@ The `quicklink` quickly inserts and edits link inline.
 ```js
 tinymce.init({
     selector: "div.tinymce",
-    plugins: [ 'inlite' ],
+    plugins: [ 'quickbars' ],
     toolbar: false,
     menubar: false,
     inline: true,
-    inlite_selection_toolbar: 'bold italic | quicklink h2 h3 blockquote'
+    quickbars_selection_toolbar: 'bold italic | quicklink h2 h3 blockquote'
 });
 ```
 
@@ -48,11 +48,11 @@ tinymce.init({
 ```js
 tinymce.init({
     selector: "div.tinymce",
-    plugins: [ 'inlite' ],
+    plugins: [ 'quickbars' ],
     toolbar: false,
     menubar: false,
     inline: true,
-    inlite_insert_toolbar: 'quickimage quicktable'
+    quickbars_insert_toolbar: 'quickimage quicktable'
 });
 ```
 
@@ -65,18 +65,18 @@ tinymce.init({
 ```js
 tinymce.init({
     selector: "div.tinymce",
-    plugins: [ 'inlite' ],
+    plugins: [ 'quickbars' ],
     toolbar: false,
     menubar: false,
     inline: true,
-    inlite_insert_toolbar: 'quickimage quicktable'
+    quickbars_insert_toolbar: 'quickimage quicktable'
 });
 ```
 
 ### Related configuration options
 
-* [quick_insert_toolbar]({{ site.baseurl }}/configure/editor-appearance/#quickbars_insert_toolbar)
-* [quick_selection_toolbar]({{ site.baseurl }}/configure/editor-appearance/#quickbars_selection_toolbar)
+* [quickbars_insert_toolbar]({{ site.baseurl }}/configure/editor-appearance/#quickbars_insert_toolbar)
+* [quickbars_selection_toolbar]({{ site.baseurl }}/configure/editor-appearance/#quickbars_selection_toolbar)
 * [inline]({{ site.baseurl }}/configure/editor-appearance/#inline)
 * [skin]({{ site.baseurl }}/configure/editor-appearance/#skin)
 * [theme]({{ site.baseurl }}/configure/editor-appearance/#theme)

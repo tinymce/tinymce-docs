@@ -215,7 +215,7 @@ tinymce.init({
 
 TinyMCE has many other configuration options available that enable further customization and extension of the editor to match the user's requirements.
 
-The full list of configuration options is in the [Configure TinyMCE Guide]({{ site.baseurl }}/configure/). Plugins, their options, and control associations are available in the [Plugin guide]({{ site.baseurl }}/plugins/).
+The full list of configuration options is in the [Configuration options references]({{ site.baseurl }}/configure/) section. Plugins, their options, and control associations are available in the [Plugins]({{ site.baseurl }}/plugins/) section.
 
 The following example is a walkthrough of a basic TinyMCE configuration.
 
@@ -257,7 +257,7 @@ selector: '#myTextarea',
 
 Choose a theme such as the silver theme. 
 
-> Note: Only the silver theme is currently compatible with TinyMCE 5. Create your themes using the [TinyMCE Skin Creator](http://skin.tinymce.com/)).
+> Note: Only the silver theme is currently compatible with TinyMCE 5. Create themes using the [TinyMCE - Skin Creator](http://skin.tinymce.com/)).
 
 > ```js
 theme: 'silver',
@@ -280,7 +280,7 @@ plugins: [
 ],
 ```
 
-Set the styling of the editable area using `content_css`. The styling should be a simplified version of your website CSS. Use styles for headers (H1-H6), table layouts, margins, paddings around elements (images, paragraphs), etc.
+Set the styling of the editable area using `content_css`. The styling should be a simplified version of the website CSS. Use styles for headers (H1-H6), table layouts, margins, paddings around elements (images, paragraphs), etc.
 
 > ```js
 content_css: 'css/content.css',

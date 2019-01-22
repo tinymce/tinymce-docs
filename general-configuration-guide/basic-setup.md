@@ -210,7 +210,6 @@ tinymce.init({
 > Important: Each page in the plugin documentation indicates via an icon if that plugin has toolbar buttons or menu items. 
 
 
-
 ## Basic configuration example
 
 TinyMCE has many other configuration options available that enable further customization and extension of the editor to match the user's requirements.
@@ -227,7 +226,7 @@ The following example is a walkthrough of a basic TinyMCE configuration.
   <script type="text/javascript">
   tinymce.init({
     selector: '#myTextarea',
-    theme: 'silver',
+    skin: 'dark',
     width: 600,
     height: 300,
     plugins: [
@@ -251,28 +250,26 @@ The following example is a walkthrough of a basic TinyMCE configuration.
 
 Select only the `textarea` with the id `myTextarea`.
 
-> ```js
+```js
 selector: '#myTextarea',
 ```
 
-Choose a theme such as the silver theme. 
+Choose a Skin such as the dark skin which is included with TinyMCE. 
 
-> Note: Only the silver theme is currently compatible with TinyMCE 5. Create themes using the [TinyMCE - Skin Creator](http://skin.tinymce.com/)).
-
-> ```js
-theme: 'silver',
+```js
+skin: 'dark',
 ```
 
 Set the width and height of the editable area in pixels as numeric values.
 
-> ```js
+```js
 width: 600,
 height: 300,
 ```
 
 Select the plugins that should be included on load.
 
-> ```js
+```js
 plugins: [
   'advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker',
   'searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking',
@@ -282,13 +279,13 @@ plugins: [
 
 Set the styling of the editable area using `content_css`. The styling should be a simplified version of the website CSS. Use styles for headers (H1-H6), table layouts, margins, paddings around elements (images, paragraphs), etc.
 
-> ```js
+```js
 content_css: 'css/content.css',
 ```
 
 The final step is to select the toolbar buttons exposed to the user. Use a comma or space as a separator.
 
-> ```js
+```js
 toolbar: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | print preview media fullpage | forecolor backcolor emoticons',
 ```
 

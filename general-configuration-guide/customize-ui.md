@@ -23,9 +23,9 @@ tinymce.init({
 });
 ```
 
-Making your own skins for TinyMCE is easy with our Skin development environment. See [Creating a skin]({{ site.baseurl }}/advanced/creating-a-skin/) for more details.
+Making your own skins for TinyMCE is easy with our Skin tool project. See [Creating a skin]({{ site.baseurl }}/advanced/creating-a-skin/) for more details.
 
-> Note: The  [TinyMCE Skin Creator](http://skin.tinymce.com/) does not support TinyMCE 5 yet.
+> Note: The  [TinyMCE Skin Creator](http://skin.tinymce.com/) only supports TinyMCE 4.
 
 > Note: Developers often confuse the difference between TinyMCE "themes" and "skins". A **Skin** in Tinymce is used to make changes to the appearance of the editor, for example, colors, margins, paddings, fonts, icons, etc. A **Theme** creates the editor construction (left, top, bottom, or right of the editing area - vertical or horizontal, inline or outside, etc.). A skin usually changes the color scheme of a button, dialog, etc. while the theme applies to the whole editor including its functionality and has child skins to change the appearance.
 
@@ -98,6 +98,8 @@ tinyMCE.init({
 ```
 
 See the [content_css]({{ site.baseurl }}/configure/content-appearance/#content_css) customization page for more information about the use of absolute and relative paths as well as and how to use multiple stylesheets.
+
+> Note: We have included two aditional content CSS:es you can try out: Document and Writer. Use `content_css: 'document'` or `content_css: 'writer'` to try them out.
 
 ### Hiding the status bar
 

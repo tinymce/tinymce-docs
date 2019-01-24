@@ -8,7 +8,7 @@ Check out the [custom formats example]({{ site.baseurl }}/demo/format-custom/) f
 
 Formats are objects where the value is either an object with format options or an array of format variants. 
 
-When a format is applied the first item, the formats array will be applied. However, when trying to match the format to remove or update the UI, the other formats in the array is considered as well. So the first format is a kind of primary format, and the rest is secondary formats.
+When a format is applied the first item, the formats array will be applied. However, when trying to match the format to remove or update the UI, the other formats in the array is considered as well. So the first format is a kind of primary format, and the rest are secondary formats.
 
 The following is an example of an array of format variants:
 

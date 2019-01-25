@@ -14,11 +14,9 @@ In this section, we show you how to change TinyMCE's user interface to suit your
 
 ### Step 1
 
-Go to our [language download page](https://www.tinymce.com/download/language-packages/) (i18n), where you'll see a list of language packs for TinyMCE 4.
+Download the [Tinymce 4 language pack](/language/tinymce4x_languages.zip) (i18n), which contains the fullset of languages supported by TinyMCE 4.
 
-If you want to use one language only, click the download link on the far right of the table. However, if you want to download multiple language packs, first check the box beside each language you need and then click the download button at the bottom of the table.
-
-> Important: The TinyMCE community translates the language packs provided on our language download page. We much appreciate their contribution!
+> Note: The TinyMCE 4 community translation packs are no longer maintained
 
 ### Step 2
 
@@ -39,7 +37,7 @@ Confirm that the language has been set successfully by loading TinyMCE.
 
 We have prepared a code snippet below that would set TinyMCE's language to Chinese and text directionality right-to-left.
 
-If you want to try it for yourself, [download the Chinese language](https://www.tinymce.com/download/language-packages/) pack. You'll also need a *local instance* of TinyMCE, which you can grab from our [downloads page](https://www.tinymce.com/download/). Follow the [Self-hosted install instructions]({{ site.baseurl }}/general-configuration-guide/advanced-install/#sdkinstall) if you're not familiar with setting up TinyMCE locally.
+If you want to try it for yourself, [download the TinyMCE 4 language pack](/language/tinymce4x_languages.zip), unzip the file and place the ```zh_CN.js``` file in your ```tinymce/lang``` folder. If you don't have TinyMCE setup, you can grab a copy from our [downloads page](https://www.tinymce.com/download/). Follow the [Self-hosted install instructions]({{ site.baseurl }}/general-configuration-guide/advanced-install/#sdkinstall) if you're not familiar with setting up TinyMCE locally.
 
 ```html
 <!DOCTYPE html>

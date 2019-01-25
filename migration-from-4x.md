@@ -76,6 +76,39 @@ tinymce.init({
 * All TinyMCE 4.x methods for creating UI components have been removed. New methods have been added for TinyMCE 5.0. For more information, see the [docs]({{site.baseurl}}/ui-components/).
 * No core editor methods were removed (tinymce, editor, selection, on(), etc. remain the same).
 
+### file_browser_callback -> file_picker_callback
+
+When migrating from using `file_browser_callback` to `file_picker_callback`, there is no longer any need to manually find and update the element or fire events. Instead a callback function is now provided that will update the component value with the value passed. In addition to that, it's possible to update other fields by passing a second argument that will update other fields in the dialog. For more information about the `file_picker_callback`, see the [docs]({{site.baseurl}}/configure/file-image-upload/#file_picker_callback).
+
+Below is a basic example showcasing how to migrate from `file_browser_callback` to `file_picker_callback`, assuming that `browseFiles` is a function that opens an external file picker.
+
+#### TinyMCE 4.x
+
+```js
+tinymce.init({
+  ...
+  file_browser_callback_types: 'file image media',
+  file_browser_callback: function (fieldId, value, type, win) {
+    browseFiles(value, type, function (fileUrl) {
+      win.document.getElementById(fieldId).value = fileUrl;
+    });
+  }
+});
+```
+#### TinyMCE 5.0
+
+```js
+tinymce.init({
+  ...
+  file_picker_types: 'file image media',
+  file_picker_callback: function (callback, value, meta) {
+    browseFiles(value, meta.filetype, function (fileUrl) {
+      callback(fileUrl);
+    });
+  }
+});
+```
+
 ## Themes
 
 In TinyMCE 5.0, some themes have been removed and are now combined in a new single responsive theme called **Silver**. In TinyMCE 5.0 `Silver` is enabled by default, if a theme is not specified. The Silver theme contains a set of configurable UI components that could be used to replace the current customizations (modern, inline, and inlite theme).

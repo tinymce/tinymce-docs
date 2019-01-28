@@ -76,7 +76,7 @@ tinymce.init({
 | `width` | Only supported number values | Supports numbers and strings, and assume a string is a valid CSS value for width |
 | `resize` | `true` by default | `true` by default if the `autoresize` plugin isn't enabled. `false` by default if the `autoresize` plugin is enabled. |
 
-#### file_browser_callback -> file_picker_callback
+#### file_browser_callback → file_picker_callback
 
 When migrating from using `file_browser_callback` to `file_picker_callback`, there is no longer any need to manually find and update the element or fire events. Instead a callback function is now provided that will update the component with the value passed. In addition to that, it's possible to update other fields by passing a second argument that will update other fields in the dialog. For more information about the `file_picker_callback`, see the [docs]({{site.baseurl}}/configure/file-image-upload/#file_picker_callback).
 

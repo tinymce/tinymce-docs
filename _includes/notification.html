@@ -1,0 +1,67 @@
+<div class="tiny-news-docs">
+    <div class="hide-on-mobile">
+        TINY NEWS: TinyMCE 5 Developer Challenge now on.&nbsp;
+        <a type="inverse"
+           href="https://go.tiny.cloud/blog/tinymce-5-developer-challenge/"
+           data-marketing="tiny-news-developer-challenge-link">
+            Find out more
+        </a>
+    </div>
+
+    <div class="hide-on-desktop">
+        <a type="inverse"
+           href="https://go.tiny.cloud/blog/tinymce-5-developer-challenge/"
+           data-marketing="tiny-news-developer-challenge-link">
+            TinyMCE 5 Dev Challenge now on
+        </a>
+    </div>
+</div>
+
+<style type="text/css">
+
+    .tiny-news-docs {
+        height: 2.5rem;
+        text-align: center;
+        color: white;
+        background-color: #1976D2;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        z-index: 99999;
+    }
+
+    .tiny-news-docs a {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+        transition: border-bottom .25s;
+    }
+
+    .tiny-news-docs a:hover {
+        border-bottom: 1px solid white;
+    }
+
+    .tiny-news-docs .hide-on-mobile {
+        display: none;
+        overflow: hidden;
+        position: absolute;
+    }
+
+    @media screen and (min-width: 50em) {
+        .tiny-news-docs .hide-on-mobile {
+            display: inherit;
+            overflow: inherit;
+            position: inherit;
+        }
+    }
+
+    @media screen and (min-width: 50em) {
+        .tiny-news-docs .hide-on-desktop {
+            display: none;
+            overflow: hidden;
+            position: absolute;
+        }
+    }
+
+
+</style>

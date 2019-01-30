@@ -6,10 +6,10 @@ description: Community and pro-grade support options.
 keywords: forum forums url absolute relative security xss
 ---
 
-> If you landed here having worked through the [General Configuration Guide]({{  site.baseurl }}/general-configuration-guide/advanced-install), congratulations, you are on your way to the TinyMCE ninja hood :-). It's now time to deep-dive into [configuring the editor]({{ site.baseurl }}/configure/) and explore [plugin options]({{ site.baseurl }}/plugins/). We wish you well and welcome you to TinyMCE. If you get stuck, a great place to start is the [TinyMCE Forum](https://community.tinymce.com/).
+> If you landed here having worked through the [Introduction & getting started]({{  site.baseurl }}/general-configuration-guide/advanced-install) section, congratulations, you are on your way to the TinyMCE ninja hood :-). It's now time to deep-dive into [configuring the editor]({{ site.baseurl }}/configure/) and explore [plugin options]({{ site.baseurl }}/plugins/). We wish you well and welcome you to TinyMCE. If you get stuck, a great place to start is the [TinyMCE Forum](https://community.tinymce.com/).
 
 
-## Premium Support
+## Premium support
 **Paid** premium support is available as part of [TinyMCE Enterprise](https://www.tinymce.com/pricing/). TinyMCE Enterprise customers can [review what information you need to gather]({{ site.baseurl }}/enterprise/support/) to submit a case.
 
 
@@ -17,7 +17,7 @@ keywords: forum forums url absolute relative security xss
 Open Source Community Edition users can get free access to the [TinyMCE Forum](https://community.tinymce.com/).  Sign up [here](https://community.tinymce.com/).
 
 
-## FAQ & Troubleshooting
+## FAQ & troubleshooting
 
 ### Q: The icons are missing when installing on my server?
 

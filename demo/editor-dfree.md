@@ -2,8 +2,8 @@
 layout: default
 title: Distraction-free editor example
 title_nav: Distraction-free editor
-description_short: Distraction-free Editor.
-description: Distraction-free Editor
+description_short: Distraction-free editor.
+description: Distraction-free editor
 keywords: example distraction-free editor
 ---
 

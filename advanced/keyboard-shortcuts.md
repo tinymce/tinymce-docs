@@ -58,4 +58,4 @@ This is a list of available keyboard shortcuts within the editor user interface.
 
 ## Add custom shortcuts to TinyMCE
 
-Go to [this post on our blog](https://go.tinymce.com/blog/creating-keyboard-shortcuts-tinymce/) and get started adding your custom keyboard shortcuts to TinyMCE.
+Refer to the [addShortcut]({{site.baseurl}}/api/tinymce/tinymce.editor/#addshortcut) and [tinymce.Shortcuts]({{site.baseurl}}/api/tinymce/tinymce.shortcuts/) sections to add custom keyboard shortcuts to TinyMCE.

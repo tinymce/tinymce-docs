@@ -251,28 +251,28 @@ The following example is a walkthrough of a basic TinyMCE configuration.
 
 Select only the `textarea` with the id `myTextarea`.
 
-> ```js
+```js
 selector: '#myTextarea',
 ```
 
 Choose a theme such as the silver theme. 
 
-> Note: Only the silver theme is currently compatible with TinyMCE 5. Create themes using the [TinyMCE - Skin Creator](http://skin.tinymce.com/)).
+> Note: Only the _silver_ theme is currently compatible with TinyMCE 5. Create themes using the [TinyMCE - Skin Creator](http://skin.tinymce.com/)).
 
-> ```js
+```js
 theme: 'silver',
 ```
 
 Set the width and height of the editable area in pixels as numeric values.
 
-> ```js
+```js
 width: 600,
 height: 300,
 ```
 
 Select the plugins that should be included on load.
 
-> ```js
+```js
 plugins: [
   'advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker',
   'searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking',
@@ -282,13 +282,13 @@ plugins: [
 
 Set the styling of the editable area using `content_css`. The styling should be a simplified version of the website CSS. Use styles for headers (H1-H6), table layouts, margins, paddings around elements (images, paragraphs), etc.
 
-> ```js
+```js
 content_css: 'css/content.css',
 ```
 
 The final step is to select the toolbar buttons exposed to the user. Use a comma or space as a separator.
 
-> ```js
+```js
 toolbar: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | print preview media fullpage | forecolor backcolor emoticons',
 ```
 

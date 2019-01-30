@@ -22,4 +22,4 @@ tinymce.init({
 });
 ```
 
-Further examples of the `contextmenu` option are available in the [context menu examples]({{site.baseurl}}/ui-elements/contextmenu/#exampleusage).
+Further examples of the `contextmenu` option are available in the [context menu examples]({{site.baseurl}}/ui-components/contextmenu/#liveexample).

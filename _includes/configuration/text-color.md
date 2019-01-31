@@ -89,3 +89,20 @@ tinymce.init({
   ]
 });
 ```
+### `custom_colors`
+
+This option allows you to disable the custom color picker in all color swatches of the editor.
+
+**Type:** `Boolean`
+
+**Default Value:** `true`
+
+##### Example
+
+```js
+tinymce.init({
+  selector: "textarea",  // change this value according to your HTML
+  toolbar: "forecolor backcolor",
+  custom_colors: false
+});
+```

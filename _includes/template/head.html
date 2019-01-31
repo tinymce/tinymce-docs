@@ -17,4 +17,39 @@
     <link href="{{ site.shared_baseurl }}/css/docs.min.css" rel="stylesheet">
     <link href="//fast.fonts.net/cssapi/5d4ae438-4aca-4c75-8249-d9486d12b12e.css" rel="stylesheet">
     {% include_remote {{ site.origin }}/_docs/head.html css="head > *" %}
+
+
+    <style type="text/css">
+        .new-header {
+            position: fixed;
+            z-index: 999999;
+            width: 100%;
+        }
+
+        .menu.menu--docs {
+            position: relative !important;
+            background-color: #fff;
+            border-bottom: 1px solid #dfdfdf;
+        }
+
+        .top-bar {
+            position: relative !important;
+            top: 0 !important;
+        }
+
+        aside {
+            padding-top: 70px;
+        }
+
+        .main {
+            padding-top: 34px;
+        }
+
+        @media screen and (min-width: 50em) {
+
+            .main {
+                padding-top: 194px;
+            }
+        }
+    </style>
 </head>

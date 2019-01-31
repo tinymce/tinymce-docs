@@ -42,7 +42,7 @@ A working example is provided here for integrating the TinyMCE plugin into your 
 
 ### Buy Comments
 
-Start with our [dedicated product page](https://www.tiny.cloud/pricing/) to see our flexible pricing options. Enterprise customers should [contact sales directly](https://www.tinymce.com/pricing/). Still not sure? Check out the demo below.
+Start with our [dedicated product page](https://apps.tiny.cloud/products/comments/) to see our flexible pricing options. Enterprise customers should [contact sales directly](https://www.tiny.cloud/contact/). Still not sure? Check out the demo below.
 
 ## Comments 1.0 Demo
 

@@ -468,6 +468,9 @@ class: changelog
 * Fixed bug where the init call promise wouldn't resolve if the specified selector didn't find any matching elements.
 * Fixed bug where the Schema isValidChild function was case sensitive.
 
+## Version 4.5.10 - November 7, 2018
+* Changed the keyboard shortcut to move focus to contextual toolbars to Ctrl+F9.
+
 ## Version 4.5.9 - August 2, 2018
 * Fixed a bug where Edge 17 wouldn't be able to select images or tables.
 

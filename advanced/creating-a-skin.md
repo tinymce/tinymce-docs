@@ -42,9 +42,9 @@ Begin by looking in the `src/less/skins/` folder where you find two folders: `ui
 4. To style interface elements in the content, such as selection color, drag handles, table of contents, bookmarks etc, copy variables to `src/less/skins/ui/<skin-name>/content.less` or `content.inline.less` depending on if you are using the inline mode or not.
 5. Preview your skin by building it using the `gulp` command in your terminal.
 
-### Creating a content skin
+### Creating a content css
 
-To update the appearance of the content within the editor, such as headings, quotes, lists etc you create a content skin. These are located in `src/less/skin/content/`
+To update the appearance of the content within the editor, such as headings, quotes, lists etc you create a content css. These are located in `src/less/skin/content/`
 
 1. Create a folder in `src/less/skins/content/` and create a `content.less` file in it. Alternatively you can duplicate any of the existing content skins.
 2. Add the relevant element selectors for your particular use case such as `h1` to `h6`, `a`, `blockquote`, `code`, `table`... 
@@ -56,15 +56,4 @@ To update the appearance of the content within the editor, such as headings, quo
 
 ## Modifying the icons
 
-TinyMCE uses inline SVG to display icons. The icons is loaded into the editor using a icon pack file.  This guide assumes you have basic understanding of [Node](http://nodejs.org) and [Gulp](http://gulpjs.com).
-
-1. To modify or create a new icon pack, download the [**LINK MISSING** TinyMCE default icons](#). Perform the installation instructions outlined in the `README.md` in the root of the project
-2. Modify the icons in the `src/svg/` folder either by designing new ones in a design tool, or copying icons from a another icon pack. **It's important that the icons keep their file names.**
-3. Remove all the svg files you *didn't* change to save some space. This step is optional.
-4. Build the icon pack using `gulp` which build a `/dist` folder in the root of the project. The build process takes care of minification and optimization. You can preview your icons with the `dist/html/Icons.html` file (it works without a web server).
-5. To use the icon pack in TinyMCE, copy the `build/icons` folder to the same folder as your `tinymce.min.js` file. Then update your init function with the [icons](http://www.tiny.cloud/docs-beta/configure/editor-appearance/#icons) option.
-
-> Note: The icon's size is independent of the toolbar button size. To change the toolbar button size you create a new skin as outlined above and update the toolbar button size variables.
-
-> Tip: The icon pack only need to contain the icons you modify and fall back to the default icons for the ones that's absent from the icon pack. You can delete all the SVG files in `src/svg/` that you don't need to save space.
-
+Documentation on how to change the icons will be added here shortly.

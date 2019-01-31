@@ -8,27 +8,27 @@ keywords: comments commenting tinycomments
 
 ## Introduction
 
-The Tiny Comments plugin provides the user an ability to start or join a conversation by adding comments to the content within the TinyMCE editor. The Comments plugin is built upon the new [Annotations API]({{ site.baseurl }}/advanced/annotations/) and uses annotations to create comment threads (conversations).
+The Comments 1.0 plugin provides the user an ability to start or join a conversation by adding comments to the content within the TinyMCE editor. The Comments 1.0 plugin is built upon the [Annotations API]({{ site.baseurl }}/advanced/annotations/) and uses annotations to create comment threads (conversations).
 
-This section describes the various configuration options for the Comments plugin.
+This section describes the various configuration options for the Comments 1.0 plugin.
 
 ## Storage
 
-Like TinyMCE, the Comments plugin does not directly provide the user an ability to save the comments. You need to configure storage at your end to be able to save comments on your server. You can choose to configure your storage settings to either persist them immediately or save them at the same time as the content.
+Like TinyMCE, the Comments 1.0 plugin does not directly provide the user an ability to save the comments. User needs to configure the storage to be able to save comments on their server. Storage settings can be configured to either persist them immediately or save them at the same time as the content.
 
-How you store those comments affects when other users see new comments. The Comments functions (create, reply, delete, and lookup) are configured differently depending upon the server-side storage configuration.
+How these comments are stored affects when other users see new comments. The Comments 1.0 functions (create, reply, delete, and lookup) are configured differently depending upon the server-side storage configuration.
 
-In this chapter, we have provided examples of both ways of configuring Comments storage.
+In this chapter, we have provided examples of both ways of configuring Comments 1.0 storage.
 
 ### Storage - persist in real-time
 
-The following demo showcases the Comments functionality using storage configured to persist in real-time:
+The following demo showcases the Comments 1.0 functionality using storage configured to persist in real-time:
 
 {% include codepen.html id="pOzxJw" %}
 
 ### Storage - persist on content-save
 
-The following demo showcases the Comments functionality using storage configured to persist on content-save.
+The following demo showcases the Comments 1.0 functionality using storage configured to persist on content-save.
 
 {% include codepen.html id="4d07e4da27b1e7245b5333ed7413083b" %}
 
@@ -51,9 +51,9 @@ We have used the following helper functions in our demo above:
 * **getAuthorDisplayName(uid)**
 `getAuthorDisplayName(authorID)` is a function to retrieve an existing conversation via a conversation UID (`authorID` in our example).
 
-## Comments Implementation Functions
+## Comments 1.0 Implementation Functions
 
-Comments requires four functions to be defined:
+Comments 1.0 requires four functions to be defined:
 
 ```js
 tinymce.init({
@@ -67,27 +67,27 @@ tinymce.init({
 
 All functions incorporate `done` and `fail` callbacks as parameters. The function return type is not important, but all functions must call one of these two callbacks.
 
-If you are persisting the comments to a form field to be persisted on document save, you likely would call the appropriate callback prior to the function returning.
+If comments are being persisted to a form field to be persisted on document save, an appropriate callback is likely called prior to the function returning.
 
-However, if you are persisting comments directly back to a server as they are made, you would call them asynchronously after the network call to do so had completed.
+However, if comments are being persisted directly back to a server as they are made, they are called asynchronously after the network call to do so had completed.
 
 ### Considerations
 
 #### Display Names
 
-Comments expects each comment to contain the author's _display name_, not a user ID, as Comments does not know the user identities. Your implementation of `lookup` will most likely need to consider this and resolve user identifiers to an appropriate display name.
+Comments 1.0 expects each comment to contain the author's _display name_, not a user ID, as Comments 1.0 does not know the user identities. The implementation of `lookup` will most likely need to consider this and resolve user identifiers to an appropriate display name.
 
 #### Current Author
 
-Comments does not know the name of the current user. After a user comments (triggering `create` for the first comment, or `reply` for subsequent comments) Comments requests the updated conversation via `lookup`, which should now contain the additional comment with the proper author. Determining the current user, and storing the comment related to that user, has to be done by the user.
+Comments 1.0 does not know the name of the current user. After a user comments (triggering `create` for the first comment, or `reply` for subsequent comments) Comments 1.0 requests the updated conversation via `lookup`, which should now contain the additional comment with the proper author. Determining the current user, and storing the comment related to that user, has to be done by the user.
 
 ### Create
 
-Comments uses the Conversation `create` function to create a comment.
+Comments 1.0 uses the Conversation `create` function to create a comment.
 
 The `create` function saves the comment as a new conversation and returns a unique conversation ID via the `done` callback. If an unrecoverable error occurs, it should indicate this with the `fail` callback.
 
-The following are examples of how `create` can be implemented if you choose to configure your storage settings to be either persistent in real time or on content-save.
+The following are examples of how `create` can be implemented if storage settings are configured to be either persistent in real time or on content-save.
 
 #### Example - Storage - persist in real-time
 
@@ -134,11 +134,11 @@ function create(content, done, fail) {
 
 ### Reply
 
-Comments uses the Conversation `reply` function to reply to a comment.
+Comments 1.0 uses the Conversation `reply` function to reply to a comment.
 
 The `reply` function saves the comment as a reply to an existing conversation and returns via the `done` callback once successful. Unrecoverable errors are communicated to TinyMCE by calling the `fail` callback instead.
 
-The following are examples of how `reply` can be implemented if you choose to configure your storage settings to be either persistent in real time or on content-save.
+The following are examples of how `reply` can be implemented if storage settings are configured to be either persistent in real time or on content-save.
 
 #### Example - Storage - persist in real-time
 
@@ -188,11 +188,11 @@ function reply(uid, content, done, fail) {
 
 ### Delete
 
-Comments uses the Conversation `delete` function to delete an entire conversation.
+Comments 1.0 uses the Conversation `delete` function to delete an entire conversation.
 
 The `delete` function should asynchronously return a flag indicating whether the comment/comment thread was removed using the `done` callback. Unrecoverable errors are communicated to TinyMCE by calling the `fail` callback instead.
 
-The following are examples of how `delete` can be implemented if you choose to configure your storage settings to be either persistent in real time or on content-save.
+The following are examples of how `delete` can be implemented if storage settings are configured to be either persistent in real time or on content-save.
 
 #### Example - Storage - persist in real-time
 
@@ -240,7 +240,7 @@ Here is an example of how `delete` can be implemented using storage configured t
 
 ### Lookup
 
-Comments uses the Conversation `lookup` function to retrieve an existing conversation via a conversation unique ID.
+Comments 1.0 uses the Conversation `lookup` function to retrieve an existing conversation via a conversation unique ID.
 
 The conventional conversation object structure that should be returned via the `done` callback is as follows:
 
@@ -266,7 +266,7 @@ The conventional conversation object structure that should be returned via the `
 
 ```
 
-The following are examples of how `lookup` can be implemented if you choose to configure your storage settings to be either persistent in real time or on content-save.
+The following are examples of how `lookup` can be implemented if storage settings are configured to be either persistent in real time or on content-save.
 
 #### Example - Storage - persist in real-time
 
@@ -321,4 +321,4 @@ function lookup(uid, done, fail) {
 }
 ```
 
-For more information on Comments commercial feature, visit our [Premium Features]({{ site.baseurl }}/enterprise/tiny-comments/) page.
+For more information on Comments 1.0 commercial feature, visit our [Premium Features]({{ site.baseurl }}/enterprise/tiny-comments/) page.

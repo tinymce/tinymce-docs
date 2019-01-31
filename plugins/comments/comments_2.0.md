@@ -1,30 +1,30 @@
 ---
 layout: default
-title: Comments plugin
-title_nav: Comments
+title: Comments 2.0
+title_nav: Comments 2.0
 description: Tiny Comments provides the ability to add comments to the content and collaborate with other users for content editing.
 keywords: comments commenting tinycomments
 ---
 
 ## Introduction
 
-The Tiny Comments plugin provides the ability to start or join a conversation by adding comments to the content within the TinyMCE editor. The Comments plugin is built upon the [Annotations API]({{site.baseurl}}/advanced/annotations/) and uses annotations to create comment threads (conversations).
+The Comments 2.0 plugin provides the ability to start or join a conversation by adding comments to the content within the TinyMCE editor. The Comments 2.0 plugin is built upon the [Annotations API]({{site.baseurl}}/advanced/annotations/) and uses annotations to create comment threads (conversations).
 
 Comments is a premium plugin from Tiny. Please see the [Premium features]({{site.baseurl}}/enterprise/tiny-comments/) section for all the buying options.
 
-Once you have obtained the Comments plugin, refer to the following instructions for using it.
+Once you have obtained the Comments 2.0 plugin, refer to the following instructions for using it.
 
 ### Modes
 
-There are two modes available in Comments that provide the ability to save comments. These modes are configured in the Comments settings.
+There are two modes available in Comments 2.0 that provide the ability to save comments. These modes are configured in the Comments 2.0settings.
 
 * **Callback Mode** - This is the default mode in Comments. This mode is used to configure storage and save comments on user’s server. This option gives the user a choice to configure the storage settings to either persist comments immediately or save them at the same time as the content. Additional callbacks are required to be configured to use Comments in the callback mode. Refer to the [configuring callbacks for comments]({{site.baseurl}}/advanced/configuring-comments-callbacks/) section, for more information.
 
 * **Embedded Mode** - This mode allows the user to store the comments within the content. No additional callbacks are required to be configured to use this mode.
 
-### Configuring Comments embedded mode
+### Configuring Comments 2.0 embedded mode
 
-To configure Comments to use the embedded mode use the following script:
+To configure Comments 2.0 to use the embedded mode use the following script:
 
 ```js
 tinymce.init({
@@ -42,9 +42,9 @@ menu: {
 })
 ```
 
-### Configuring the Comments toolbar button
+### Configuring the Comments 2.0 toolbar button
 
-Use the following script to configure the Comments toolbar button:
+Use the following script to configure the Comments 2.0 toolbar button:
 
 ```js
 tinymce.init({
@@ -65,9 +65,9 @@ Optional values: addcomment, showcomments
 * `showcomments`- Provides the ability to display comments field for the selected text. It is a toggle button and is used to hide the comments sidebar as well.
 
 
-### Configuring the Comments menu item
+### Configuring the Comments 2.0 menu item
 
-By default, when Comments is added to the plugin list, the default menus will have entries for `addcomment` (Insert Menu), showcomments (View Menu), and deleteallconversations (File Menu).
+By default, when Comments 2.0 is added to the plugin list, the default menus will have entries for `addcomment` (Insert Menu), showcomments (View Menu), and deleteallconversations (File Menu).
 
 For more information on configuring menu items refer to the [toolbar]({{site.baseurl}}/configure/editor-appearance/#toolbar) and [menu]({{site.baseurl}}/configure/editor-appearance/#menu) sections.
 
@@ -160,4 +160,4 @@ Follow this procedure to delete all conversations in the document:
 
 **Result**: All the comments for the selected document will be deleted.
 
-Check out the [Comments demo]({{site.baseurl}}/demo/comments/) to try out this new feature.
+Check out the [Comments demo]({{site.baseurl}}/enterprise/tiny-comments/#tinycomments20demo) to try out this new feature.

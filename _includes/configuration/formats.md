@@ -69,9 +69,11 @@ There are three format types that the default classes can be applied to:
 
 Tag name of the block element to use as a wrapper, for example, `h1`. Existing block elements within the selection are replaced with this block element.
 
-Type: string
-Example
+**Type:** `string`
 
+##### Example
+
+```js
 tinymce.init({
   selector: 'textarea',
   formats: {
@@ -83,14 +85,17 @@ tinymce.init({
     { title: 'My heading', block: 'h1', classes: 'heading' }
   ]
 });
+```
 
 #### inline
 
 Tag name of the inline element to use as a wrapper, for example, `span` is used to wrap the current selection.
 
-Type: string
-Example
+**Type:** `string`
 
+##### Example
+
+```js
 tinymce.init({
   selector: 'textarea',
   formats: {
@@ -102,14 +107,17 @@ tinymce.init({
     { title: 'My bold', inline: 'span', classes: 'bold' }
   ]
 });
+```
 
 #### selector
 
 CSS3 selector pattern that is used to find elements within the selection. It can be used to apply classes to specific elements only, for example only to odd rows in a table.
 
-Type: string
-Example
+**Type:** `string`
 
+##### Example
+
+```js
 tinymce.init({
   selector: 'textarea',
   formats: {
@@ -127,7 +135,7 @@ tinymce.init({
     { title: 'Align justify', selector: 'p,h1,h2,h3,h4,h5,h6,td,th,div,ul,ol,li,table,img', classes: 'full' }
   ]
 });
-
+```
 
 ### Format parameters
 
@@ -241,6 +249,7 @@ tinymce.init({
     { title: 'My custom format', block: 'div', classes: 'wrapper', wrapper: true }
   ]
 });
+```
 
 #### remove
 

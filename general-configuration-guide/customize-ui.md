@@ -37,8 +37,6 @@ A common UI customization used by developers is changing the height and width of
 
 ##### Set the editable area height
 
-> Important: The "editable area" is the textbox used to enter information. This "editable area" is different from the "editor" itself.
-
 ```js
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
@@ -49,8 +47,6 @@ tinymce.init({
 See the [height option]({{ site.baseurl }}/configure/editor-appearance/#height) for customization details.
 
 ##### Set the editable area width
-
-> Note: The editable area width is effectively the width of the editor itself. This is **not** the case for height.
 
 ```js
 tinymce.init({

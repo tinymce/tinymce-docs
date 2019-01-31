@@ -8,41 +8,24 @@ keywords: comments commenting tinycomments callback
 
 ## Introduction
 
-Callback mode is the default mode for [Tiny Comments]({{site.baseurl}}/plugins/comments/). In the callback mode the user needs to configure storage to be able to save comments on the server. The storage settings can be configured to either persist the comments immediately or save them at the same time as the content.
-How the comments are stored effects when other users see new comments. The Comments functions (create, reply, edit, delete comment, delete all conversations, and lookup) are configured differently depending upon the server-side storage configuration.
+**Callback mode** is the default mode for [Tiny Comments]({{site.baseurl}}/plugins/comments/). In the callback mode, the user needs to configure storage to be able to save comments on the server. The Comments functions (create, reply, edit, delete comment, delete all conversations, and lookup) are configured differently depending upon the server-side storage configuration.
 
-### Helper Functions
-
-Comments uses the following helper functions:
-
-* **setConversation(uid, conversation)** `setConversation` is a function written to synchronously write a conversation to a form field for submission to the server later.
-
-* **randomString()** `randomString()` is a function used in the `create` function to return a 62-bits random strings to provision a large number of UIDs.
-
-* **getConversation(uid)** `getConversation` is a function written to synchronously retrieve an existing conversation from a form field populated by the server.
-
-* **deleteConversation(uid)** `deleteConversation(uid)` is a function to allow only the first commenter to delete a comment.
-
-* **deleteAllConversations()** `deleteAllConversations()` is a function to delete all the conversations in a document.
-
-* **getAuthorDisplayName(uid)** `getAuthorDisplayName(authorID)` is a function to retrieve an existing conversation via a conversation UID (`authorID` in our example).
-
-
-### Comments Implementation Functions
+### Required settings
 
 Comments requires the following functions to be defined:
 
 ```js
 tinymce.init({
   ...
-   tinycomments_create: create,
-   tinycomments_reply: reply,
-   tinycomments_delete: del,
-   tinycomments_delete_all: deleteAll,
-   tinycomments_delete_comment: deleteComment,
-   tinycomments_lookup: lookup,
-   tinycomments_edit_comment: editComment
+   tinycomments_create: function (req, done, fail) { ... },
+   tinycomments_reply: function (req, done, fail) { ... },
+   tinycomments_delete: function (req, done, fail) { ... },
+   tinycomments_delete_all: function (req, done, fail) { ... },
+   tinycomments_delete_comment: function (req, done, fail) { ... },
+   tinycomments_lookup: function (req, done, fail) { ... },
+   tinycomments_edit_comment: function (req, done, fail) { ... },
 });
+
 ```
 
 All functions incorporate `done` and `fail` callbacks as parameters. The function return type is not important, but all functions must call exactly one of these two callbacks: `fail` or `done`.
@@ -51,23 +34,17 @@ All functions incorporate `done` and `fail` callbacks as parameters. The functio
 
 * The `done` callback takes an argument specific to each function.
 
-### Considerations
+All functions require configuring the **current author**:
 
-#### Display Names
+* **Current author** - Comments does not know the name of the current user. After a user comments (triggering `tinycomments_create` for the first comment, or `tinycomments_reply` for subsequent comments), Comments requests the updated conversation via `tinycomments_lookup`, which should now contain the additional comment with the proper author. Determining the current user and storing the comment related to that user, has to be configured by the user.
 
-Comments expects each comment to contain the author's display name, not a user ID, as Comments does not know the user identities. The `lookup` function should be implemented  considering this and resolve user identifiers to an appropriate display name.
+### tinycomments_create
 
-#### Current Author
+Comments uses the conversation `tinycomments_create` function to create a comment.
 
-Comments does not know the name of the current user. After a user comments (triggering create for the first comment, or reply for subsequent comments) Comments requests the updated conversation via `lookup`, which should now contain the additional comment with the proper author. Determining the current user, and storing the comment related to that user, has to be done by the user.
+The `tinycomments_create` function saves the comment as a new conversation and returns a unique conversation ID via the `done` callback. If an unrecoverable error occurs, it should indicate this with the fail callback.
 
-### Create
-
-Comments uses the Conversation create function to create a comment.
-
-The create function saves the comment as a new conversation and returns a unique conversation ID via the `done` callback. If an unrecoverable error occurs, it should indicate this with the fail callback.
-
-The create function is given a request object as the first parameter, which has these fields:
+The `tinycomments_create` function is given a request(req) object as the first parameter, which has these fields:
 
 * **content**: the content of the comment to create.
 
@@ -77,17 +54,17 @@ The done callback needs to take an object of the form:
 
 ```js
 {
-  conversationUid: whatever the new conversation uid is
+  conversationUid: the new conversation uid 
 }
 ```
 
-### Reply
+### tinycomments_reply
 
-Comments uses the conversation `reply` function to reply to a comment.
+Comments uses the conversation `tinycomments_reply` function to reply to a comment.
 
-The `reply` function saves the comment as a reply to an existing conversation and returns via the `done` callback once successful. Unrecoverable errors are communicated to TinyMCE by calling the `fail` callback instead.
+The `tinycomments_reply` function saves the comment as a reply to an existing conversation and returns via the `done` callback once successful. Unrecoverable errors are communicated to TinyMCE by calling the `fail` callback instead.
 
-The `reply` function is given a request object as the first parameter, which has these fields:
+The `tinycomments_reply` function is given a request(req) object as the first parameter, which has these fields:
 
 * **conversationUid**: the uid of the conversation the reply is a part of.
 
@@ -103,13 +80,13 @@ The done callback needs to take an object of the form:
 }
 ```
 
-### Edit
+### tinycomments_edit_comment
 
-Comments uses the conversation `edit` function to edit a comment.
+Comments uses the conversation `tinycomments_edit_comment` function to edit a comment.
 
-The `edit` function allows updating or changing an original comments and returns via the `done` callback once successful. Unrecoverable errors are communicated to TinyMCE by calling the `fail` callback instead.
+The `tinycomments_edit_comment` function allows updating or changing original comments and returns via the `done` callback once successful. Unrecoverable errors are communicated to TinyMCE by calling the `fail` callback instead.
 
-The `edit` function is given a request object as the first parameter, which has these fields:
+The `tinycomments_edit_comment` function is given a request(req) object as the first parameter, which has these fields:
 
 * **conversationUid**: the uid of the conversation the reply is a part of.
 
@@ -128,11 +105,11 @@ The done callback needs to take an object of the form:
 }
 ```
 
-### Delete
+### tinycomments_delete
 
-The `delete` function should asynchronously return a flag indicating whether the comment/comment thread was removed using the `done` callback. Unrecoverable errors are communicated to TinyMCE by calling the `fail` callback instead.
+The `tinycomments_delete` function should asynchronously return a flag indicating whether the comment/comment thread was removed using the `done` callback. Unrecoverable errors are communicated to TinyMCE by calling the `fail` callback instead.
 
-The `delete` function is given a request object as the first parameter, which has this field:
+The `tinycomments_delete` function is given a request(req) object as the first parameter, which has this field:
 
 * **conversationUid**: the uid of the conversation the reply is a part of.
 
@@ -147,28 +124,28 @@ The done callback needs to take an object of the form:
 
 > Note: Failure to delete due to permissions or business rules is indicated by "false", while unexpected errors should be indicated using the "fail" callback.
 
-### DeleteAll
+### tinycomments_delete_all
 
-The `deleteAll` function should asynchronously return a flag indicating whether all the comments in a conversation were removed using the `done` callback. Unrecoverable errors are communicated to TinyMCE by calling the `fail` callback instead.
+The `tinycomments_delete_all` function should asynchronously return a flag indicating whether all the comments in a conversation were removed using the `done` callback. Unrecoverable errors are communicated to TinyMCE by calling the `fail` callback instead.
 
-The `deleteAll` function is given a request object as the first parameter with no fields.
+The `tinycomments_delete_all` function is given a request(req) object as the first parameter with no fields.
 
 The done callback needs to take an object of the form:
 
 ```js
 {
   canDelete:boolean
-  reason: an optional string explaining why the delete all was not allowed (if canDelete is false)
+  reason: an optional string explaining why the deleteAll was not allowed (if canDelete is false)
 }
 ```
 
 > Note: Failure to delete due to permissions or business rules is indicated by "false", while unexpected errors should be indicated using the "fail" callback.
 
-### DeleteComments
+### tinycomments_delete_comment
 
-The `deleteComment` function should asynchronously return a flag indicating whether the comment/comment thread was removed using the `done` callback. Unrecoverable errors are communicated to TinyMCE by calling the `fail` callback instead.
+The `tinycomments_delete_comment` function should asynchronously return a flag indicating whether the comment/comment thread was removed using the `done` callback. Unrecoverable errors are communicated to TinyMCE by calling the `fail` callback instead.
 
-The `deleteComments` function is given a request object as the first parameter, which has these fields:
+The `tinycomments_delete_comment` function is given a request(req) object as the first parameter, which has these fields:
 
 * **conversationUid**: the uid of the conversation the reply is a part of.
 * **commentUid**: the uid of the comment to delete (cannot be the same as conversationUid)
@@ -185,13 +162,16 @@ The done callback needs to take an object of the form:
 > Note: Failure to delete due to permissions or business rules is indicated by "false", while unexpected errors should be indicated using the "fail" callback.
 
 
-### Lookup
+### tinycomments_lookup
+Comments uses the Conversation `tinycomments_lookup` function to retrieve an existing conversation via a conversation unique ID.
 
-Comments uses the Conversation `lookup` function to retrieve an existing conversation via a conversation unique ID.
+The **Display names** configuration must be considered for the `tinycomments_lookup` function:
+
+* **Display names** - Comments uses a simple string for the display name. For the `lookup` function, Comments expects each comment to contain the author's display name, not a user ID, as Comments does not know the user identities. The `lookup` function should be implemented considering this and resolve user identifiers to an appropriate display name.
 
 The conventional conversation object structure that should be returned via the `done` callback is as follows:
 
-The `lookup` function is given a request object as the first parameter, which has this field:
+The `tinycomments_lookup` function is given a request(req) object as the first parameter, which has this field:
 
 * **conversationUid**: the uid of the conversation the reply is a part of.
 

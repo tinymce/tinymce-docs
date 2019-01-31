@@ -9,7 +9,7 @@ class: changelog
 {% capture changelog %}
 
 ## Version 4.9.3 January 31, 2019
-* Added a visualchars_defaul_state setting to the Visualchars Plugin. Patch contributed by mat3e.
+* Added a visualchars_default_state setting to the Visualchars Plugin. Patch contributed by mat3e.
 * Fixed a bug where scrolling on a page with more than one editor would cause a ResizeWindow event to fire.
 * Fixed a bug where if a plugin threw an error during initialisation the whole editor would fail to load.
 * Fixed a bug where getContent would include bogus elements when valid_elements setting was set up in a specific way.

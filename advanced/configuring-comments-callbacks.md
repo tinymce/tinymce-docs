@@ -44,7 +44,7 @@ Comments 2.0 uses the conversation `tinycomments_create` function to create a co
 
 The `tinycomments_create` function saves the comment as a new conversation and returns a unique conversation ID via the `done` callback. If an unrecoverable error occurs, it should indicate this with the fail callback.
 
-The `tinycomments_create` function is given a request(req) object as the first parameter, which has these fields:
+The `tinycomments_create` function is given a request (req) object as the first parameter, which has these fields:
 
 * **content**: the content of the comment to create.
 
@@ -64,7 +64,7 @@ Comments 2.0 uses the conversation `tinycomments_reply` function to reply to a c
 
 The `tinycomments_reply` function saves the comment as a reply to an existing conversation and returns via the `done` callback once successful. Unrecoverable errors are communicated to TinyMCE by calling the `fail` callback instead.
 
-The `tinycomments_reply` function is given a request(req) object as the first parameter, which has these fields:
+The `tinycomments_reply` function is given a request (req) object as the first parameter, which has these fields:
 
 * **conversationUid**: the uid of the conversation the reply is a part of.
 
@@ -86,7 +86,7 @@ Comments 2.0 uses the conversation `tinycomments_edit_comment` function to edit 
 
 The `tinycomments_edit_comment` function allows updating or changing original comments and returns via the `done` callback once successful. Unrecoverable errors are communicated to TinyMCE by calling the `fail` callback instead.
 
-The `tinycomments_edit_comment` function is given a request(req) object as the first parameter, which has these fields:
+The `tinycomments_edit_comment` function is given a request (req) object as the first parameter, which has these fields:
 
 * **conversationUid**: the uid of the conversation the reply is a part of.
 
@@ -109,7 +109,7 @@ The done callback needs to take an object of the form:
 
 The `tinycomments_delete` function should asynchronously return a flag indicating whether the comment/comment thread was removed using the `done` callback. Unrecoverable errors are communicated to TinyMCE by calling the `fail` callback instead.
 
-The `tinycomments_delete` function is given a request(req) object as the first parameter, which has this field:
+The `tinycomments_delete` function is given a request (req) object as the first parameter, which has this field:
 
 * **conversationUid**: the uid of the conversation the reply is a part of.
 
@@ -128,7 +128,7 @@ The done callback needs to take an object of the form:
 
 The `tinycomments_delete_all` function should asynchronously return a flag indicating whether all the comments in a conversation were removed using the `done` callback. Unrecoverable errors are communicated to TinyMCE by calling the `fail` callback instead.
 
-The `tinycomments_delete_all` function is given a request(req) object as the first parameter with no fields.
+The `tinycomments_delete_all` function is given a request (req) object as the first parameter with no fields.
 
 The done callback needs to take an object of the form:
 
@@ -145,7 +145,7 @@ The done callback needs to take an object of the form:
 
 The `tinycomments_delete_comment` function should asynchronously return a flag indicating whether the comment/comment thread was removed using the `done` callback. Unrecoverable errors are communicated to TinyMCE by calling the `fail` callback instead.
 
-The `tinycomments_delete_comment` function is given a request(req) object as the first parameter, which has these fields:
+The `tinycomments_delete_comment` function is given a request (req) object as the first parameter, which has these fields:
 
 * **conversationUid**: the uid of the conversation the reply is a part of.
 * **commentUid**: the uid of the comment to delete (cannot be the same as conversationUid)
@@ -171,7 +171,7 @@ The **Display names** configuration must be considered for the `tinycomments_loo
 
 The conventional conversation object structure that should be returned via the `done` callback is as follows:
 
-The `tinycomments_lookup` function is given a request(req) object as the first parameter, which has this field:
+The `tinycomments_lookup` function is given a request (req) object as the first parameter, which has this field:
 
 * **conversationUid**: the uid of the conversation the reply is a part of.
 

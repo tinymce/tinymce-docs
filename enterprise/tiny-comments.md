@@ -46,13 +46,13 @@ Start with our [dedicated product page](https://www.tiny.cloud/pricing/) to see 
 
 ## Tiny Comments 1.0 Demo
 
-In this example, the features in Tiny Comments 1.0 are highlighted, including adding a comment, replying to a comment, and deleting a comment. For more information on the other Tiny Comments configuration options, see the [docs]({{ site.baseurl }}/plugins/comments/comments_1.0).
+In this example, the features in Tiny Comments 1.0 are highlighted, including adding a comment, replying to a comment, and deleting a comment. For more information on the other Comments 1.0 configuration options, see the [docs]({{ site.baseurl }}/plugins/comments/comments_1.0).
 
 {% include codepen.html id="pOzxJw" %}
 
 ## Tiny Comments 2.0 Demo
 
-In this example, the features in Tiny Comments 2.0 are highlighted, including adding a comment, replying to a comment, and deleting a comment. For more information on the other Tiny Comments configuration options, see the [docs]({{ site.baseurl }}/plugins/comments/comments_2.0).
+In this example, the features in Tiny Comments 2.0 are highlighted, including adding a comment, replying to a comment, and deleting a comment. For more information on the other Comments 2.0 configuration options, see the [docs]({{ site.baseurl }}/plugins/comments/comments_2.0).
 
 [Demo coming soon!]
 

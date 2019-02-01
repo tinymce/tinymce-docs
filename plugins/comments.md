@@ -1,324 +1,163 @@
 ---
 layout: default
-title: Comments plugin
-title_nav: Comments
+title: Comments 2.0
+title_nav: Comments 2.0
 description: Tiny Comments provides the ability to add comments to the content and collaborate with other users for content editing.
 keywords: comments commenting tinycomments
 ---
 
 ## Introduction
 
-The Tiny Comments plugin provides the user an ability to start or join a conversation by adding comments to the content within the TinyMCE editor. The Comments plugin is built upon the new [Annotations API]({{ site.baseurl }}/advanced/annotations/) and uses annotations to create comment threads (conversations).
+The Comments 2.0 plugin provides the ability to start or join a conversation by adding comments to the content within the TinyMCE editor. The Comments 2.0 plugin is built upon the [Annotations API]({{site.baseurl}}/advanced/annotations/) and uses annotations to create comment threads (conversations).
 
-This section describes the various configuration options for the Comments plugin.
+Comments is a premium plugin from Tiny. Please see the [Premium features]({{site.baseurl}}/enterprise/tiny-comments/) section for all the buying options.
 
-## Storage
+Once you have obtained the Comments 2.0 plugin, refer to the following instructions for using it.
 
-Like TinyMCE, the Comments plugin does not directly provide the user an ability to save the comments. You need to configure storage at your end to be able to save comments on your server. You can choose to configure your storage settings to either persist them immediately or save them at the same time as the content.
+### Modes
 
-How you store those comments affects when other users see new comments. The Comments functions (create, reply, delete, and lookup) are configured differently depending upon the server-side storage configuration.
+There are two modes available in Comments 2.0 that provide the ability to save comments. These modes are configured in the Comments 2.0settings.
 
-In this chapter, we have provided examples of both ways of configuring Comments storage.
+* **Callback Mode** - This is the default mode in Comments. This mode is used to configure storage and save comments on user’s server. This option gives the user a choice to configure the storage settings to either persist comments immediately or save them at the same time as the content. Additional callbacks are required to be configured to use Comments in the callback mode. Refer to the [configuring callbacks for comments]({{site.baseurl}}/advanced/configuring-comments-callbacks/) section, for more information.
 
-### Storage - persist in real-time
+* **Embedded Mode** - This mode allows the user to store the comments within the content. No additional callbacks are required to be configured to use this mode.
 
-The following demo showcases the Comments functionality using storage configured to persist in real-time:
+### Configuring Comments 2.0 embedded mode
 
-{% include codepen.html id="tinycomments-realtime" %}
-
-### Storage - persist on content-save
-
-The following demo showcases the Comments functionality using storage configured to persist on content-save.
-
-{% include codepen.html id="tinycomments-save" %}
-
-#### Helper Functions
-
-We have used the following helper functions in our demo above:
-
-* **setConversation(uid, conversation)**
-`setConversation` is a function written to synchronously write a conversation to a form field for submission to the server later.
-
-* **randomString()**
-`randomString()` is a function used in the `create` function to return a 62-bits random strings to provision a large number of UIDs.
-
-* **getConversation(uid)**
-`getConversation` is a function written to synchronously retrieve an existing conversation from a form field populated by the server.
-
-* **deleteConversation(uid)**
-`deleteConversation(uid)` is a function to allow only the first commenter to delete a comment.
-
-* **getAuthorDisplayName(uid)**
-`getAuthorDisplayName(authorID)` is a function to retrieve an existing conversation via a conversation UID (`authorID` in our example).
-
-## Comments Implementation Functions
-
-Comments requires four functions to be defined:
+To configure Comments 2.0 to use the embedded mode use the following script:
 
 ```js
 tinymce.init({
-  ...
-  tinycomments_create: create,
-  tinycomments_reply: reply,
-  tinycomments_delete: del,
-  tinycomments_lookup: lookup
-});
-```
-
-All functions incorporate `done` and `fail` callbacks as parameters. The function return type is not important, but all functions must call one of these two callbacks.
-
-If you are persisting the comments to a form field to be persisted on document save, you likely would call the appropriate callback prior to the function returning.
-
-However, if you are persisting comments directly back to a server as they are made, you would call them asynchronously after the network call to do so had completed.
-
-### Considerations
-
-#### Display Names
-
-Comments expects each comment to contain the author's _display name_, not a user ID, as Comments does not know the user identities. Your implementation of `lookup` will most likely need to consider this and resolve user identifiers to an appropriate display name.
-
-#### Current Author
-
-Comments does not know the name of the current user. After a user comments (triggering `create` for the first comment, or `reply` for subsequent comments) Comments requests the updated conversation via `lookup`, which should now contain the additional comment with the proper author. Determining the current user, and storing the comment related to that user, has to be done by the user.
-
-### Create
-
-Comments uses the Conversation `create` function to create a comment.
-
-The `create` function saves the comment as a new conversation and returns a unique conversation ID via the `done` callback. If an unrecoverable error occurs, it should indicate this with the `fail` callback.
-
-The following are examples of how `create` can be implemented if you choose to configure your storage settings to be either persistent in real time or on content-save.
-
-#### Example - Storage - persist in real-time
-
-Here is an example of how `create` can be implemented using storage configured to persist in real-time:
-
-```js
-function create(content, done, fail) {
-    fetch(
-      'https://api.example/conversations/',
-      { method: 'POST', body: content }
-    ).then(function(response) {
-      return response.json();
-    }).then(function(json) {
-      done(json.uid);
-    }).catch(function() {
-      fail(new Error('Something has gone wrong...'));
-    });
-  }
-```
-
-#### Example - Storage - persist on content-save
-
-Here is an example of how `create` can be implemented using storage configured to persist on content-save:
-
-```js
-var currentAuthorId = ...
-function create(content, done, fail) {
-  // `randomString` should be written to produce random strings with a very low
-  // chance of collisions.
-  var uid = 'annotation-' + randomString();
-  try {
-    // `setConversation` here is a function written to synchronously persist
-    // the new conversation to a form field for later submission to the server
-    setConversation(
-      uid,
-      [ { user: currentAuthorId, comment: content } ]
-     );
-     done(uid);
-   } catch {
-    fail(new Error('Error creating conversation...'));
-  }
-}
-```
-
-### Reply
-
-Comments uses the Conversation `reply` function to reply to a comment.
-
-The `reply` function saves the comment as a reply to an existing conversation and returns via the `done` callback once successful. Unrecoverable errors are communicated to TinyMCE by calling the `fail` callback instead.
-
-The following are examples of how `reply` can be implemented if you choose to configure your storage settings to be either persistent in real time or on content-save.
-
-#### Example - Storage - persist in real-time
-
-Here is an example of how `reply` can be implemented using storage configured to persist in real-time:
-
-```js
-function reply(uid, content, done, fail) {
-    fetch(
-      'https://api.example/conversations/'+uid,
-      { method: 'PATCH', body: content }
-    ).then(function(response) {
-      if (response.ok) {
-        done();
-      } else {
-        fail(new Error('Something has gone wrong...'));
-      }
-    });
-  }
-```
-
-#### Example - Storage - persist on content-save
-
-Here is an example of how `reply` can be implemented using storage configured to persist on content-save:
-
-```js
-var currentAuthorId = ...
-function reply(uid, content, done, fail) {
-  try {
-    // "getConversation" here is a function written to synchronously retrieve an
-    // existing conversation from a form field populated by the server.
-    var comments = getConversation(uid);
-    // Add comment to the conversation
-    comments.push({
-      user: currentAuthorId,
-      comment: content
-    });
-    // Synchronously write the comment back to the form field, awaiting persist
-    // on document save.
-    setConversation(uid, comments);
-    done();
-  } catch {
-     fail(new Error('Error replying to conversation...'));
+  selector: "#textarea",
+  menubar: 'file edit view insert format tools tc',
+menu: {
+ tc: {
+  title: 'TinyComments',
+  items: 'addcomment'
    }
-}
-
+ },
+ tinycomments_author: 'Embedded Journalist',
+ tinycomments_mode: 'embedded'
+ ...
+})
 ```
 
-### Delete
+### Configuring the Comments 2.0 toolbar button
 
-Comments uses the Conversation `delete` function to delete an entire conversation.
-
-The `delete` function should asynchronously return a flag indicating whether the comment/comment thread was removed using the `done` callback. Unrecoverable errors are communicated to TinyMCE by calling the `fail` callback instead.
-
-The following are examples of how `delete` can be implemented if you choose to configure your storage settings to be either persistent in real time or on content-save.
-
-#### Example - Storage - persist in real-time
-
-Here is an example of how `delete` can be implemented using storage configured to persist in real-time:
+Use the following script to configure the Comments 2.0 toolbar button:
 
 ```js
-function del(uid, done, fail) {
-    fetch(
-      'https://api.example/conversations/'+uid,
-      { method: 'DELETE' }
-    ).then(function(response) {
-      if (response.ok) {
-        done(true);
-      } else if (response.status == 403) {
-        done(false)
-      } else {
-        fail(new Error('Something has gone wrong...'));
-      }
-    });
-  }
+tinymce.init({
+ selector: "#textarea",
+ toolbar: 'bold italic underline insertfile | addcomment',
+ ...
+})
 ```
 
-#### Example - Storage - persist on content-save
+Optional values: addcomment, showcomments
 
-Here is an example of how `delete` can be implemented using storage configured to persist on content-save:
+**Result**: The **Comments**  ![**Comments**]({{site.baseurl}}/images/comment-disabled.png) toolbar button appears in the toolbar menu. The function of this button is to add comments to selected text.
+
+> Note: Currently, there are two toolbar buttons available:
+
+* `addcomment` - Provides the ability to add comments.
+
+* `showcomments`- Provides the ability to display comments field for the selected text. It is a toggle button and is used to hide the comments sidebar as well.
+
+
+### Configuring the Comments 2.0 menu item
+
+By default, when Comments 2.0 is added to the plugin list, the default menus will have entries for `addcomment` (Insert Menu), showcomments (View Menu), and deleteallconversations (File Menu).
+
+For more information on configuring menu items refer to the [toolbar]({{site.baseurl}}/configure/editor-appearance/#toolbar) and [menu]({{site.baseurl}}/configure/editor-appearance/#menu) sections.
+
+Currently, there are three menu items available:
+
+* `addcomment` - Provides the ability to add comments. By default, this option can be accessed through **Insert** -> **Add comment** menu bar item.
+
+* `showcomments`- Provides the ability to display comments field for the selected text. It is a toggle button and is used to hide the comments as well. By default, this option can be accessed through **View** -> **Show comment** menu bar item.
+
+* `deleteallconversations`- Provides the ability to delete all the comments in the content. By default, this option can be accessed through **File** -> **Delete all conversations** menu bar item.
+
+### Configuring the commented text properties
+
+The editor needs to be configured to highlight the commented text. The following configuration is an example of displaying the text that the comment has been added to in a desired style:
 
 ```js
-  function del(uid, done, fail) {
-    fetch(
-      'https://api.example/conversations/'+uid,
-      { method: 'DELETE' }
-    ).then(function(response) {
-      if (response.ok) {
-        done(true);
-      } else if (response.status == 403) {
-        done(false)
-      } else {
-        fail(new Error('Something has gone wrong...'));
-      }
-    });
-  }
+tinymce.init({
+...
+ content_style: '.mce-annotation { background: #fff0b7; } .tc-active-annotation {background: #ffe168; color: black; }',
+ ...
+})
 ```
 
-> Note: Failure to delete due to permissions or business rules is indicated by "false", while unexpected errors should be indicated using the "fail" callback.
+**Result**: The commented text will be highlighted yellow.
+![**Highlighted text**]({{site.baseurl}}/images/highlight.png)
 
-### Lookup
+For more information on TinyMCE formats, refer to the [formats]({{site.baseurl}}/configure/content-formatting/#formats) section.
 
-Comments uses the Conversation `lookup` function to retrieve an existing conversation via a conversation unique ID.
 
-The conventional conversation object structure that should be returned via the `done` callback is as follows:
+### Using Comments
 
-#### Conversation object
+#### To add a comment
 
-```js
-{
- "comments": [
-  <comment1>,
-  <comment2>,
-  ...
- ]
-}
+1. Select the text from the desired location in the editor body.
+1. From the navigation menu, choose **Insert**-> **Add Comment** or click on the **Comments** ![**Comments**]({{site.baseurl}}/images/comment-disabled.png) toolbar button to add the comment.
+1. The Comment dialog box appears in the sidebar of the editor instance.
+1. Type the comment in the box displaying _Say something…_ suggested text.
+1. Press **Clear** to delete or **Save** to store the input comment.
 
-```
-#### Comment object
+**Result**: The selected text will be highlighted as per the configured options. The following screen with the option for editing, deleting, and replying to the comment, will appear.
+![**Delete Conversation**]({{site.baseurl}}/images/commentedit.png)
 
-```js
-{
-  "author": "Author Display Name",
-  "content": "This is the text of the comment"
-}
+Note: The above procedure can be followed for adding multiple comments to the document.
 
-```
+#### Editing a comment
+Follow this procedure to edit a comment.
 
-The following are examples of how `lookup` can be implemented if you choose to configure your storage settings to be either persistent in real time or on content-save.
+1. Click on the ![**3dots**]({{site.baseurl}}/images/3dots.png) icon above the comments box to expand the menu.
+1. Select **Edit** from the menu items.
+1. The comment field becomes editable. Make the required changes.
+1. Click **Cancel** to discard or **Save** to store the changes.
 
-#### Example - Storage - persist in real-time
+#### Delete a comment
+Follow this procedure to delete a comment. This option is not available for the first comment in a conversation.
 
-Here is an example of how `lookup` can be implemented using storage configured to persist in real-time:
+1. Click on the ![**3dots**]({{site.baseurl}}/images/3dots.png) icon above the comments box to expand the menu.
+1. Select **Delete** from the menu items.
+1. The following options appear in the comments sidebar:
+![**delete comment**]({{site.baseurl}}/images/delete.png)
+1. Click **Cancel** to save or **Delete** to remove the comment from the conversation.
 
-```js
-  function lookup(uid, done, fail) {
-    fetch('https://api.example/conversations/'+uid)
-      .then(function(response) { return response.json(); })
-      .then(function(json) {
-        var conversation = json.comments;
-        return fetch('https://api.example/users/')
-          .then(function(response) { return response.json(); })
-          .then(function(json) {
-            var users = json.users;
-            var unknown = { displayName: 'Unknown' };
-            return conversation.map(function(item) {
-              var user = users.find(function(v) { return v.id == item.user; });
-              return {
-                author: (user || unknown).displayName,
-                content: item.comment
-              };
-            });
-          });
-      })
-      .then(function(comments) {
-        done({ comments: comments });
-      })
-      .catch(function() {
-        fail(new Error('Something has gone wrong...'));
-      })
-  }
-```
 
-#### Example - Storage - persist on content-save
+#### Delete conversation
+This option is only available for the first comment in a conversation. Once the comment is saved, follow this procedure to delete a conversation.
 
-Here is an example of how `lookup` can be implemented using storage configured to persist on content-save, utilizing an in-memory lookup function to resolve author display names:
+1. Click on the ![**3dots**]({{site.baseurl}}/images/3dots.png) icon above the comments box to expand the menu.
+1. Select **Delete conversation** from the menu items.
+1. The following decision dialog box will appear:
+![**delete conversation**]({{site.baseurl}}/images/decision.png)
+1. Click **Cancel** to save or **Delete** to remove the conversation.
 
-```js
-function lookup(uid, done, fail) {
-  try {
-    var comments = getConversation(uid).map(function(item) {
-      return {
-        author: getAuthorDisplayName(item.user),
-        content: item.comment
-      };
-    });
-    done({ comments: comments });
-  } catch {
-    fail(new Error('Error looking up conversation...'));
-  }
-}
-```
+**Result**: The conversation and all its subsequent comments will be deleted.
 
-For more information on Comments commercial feature, visit our [Premium Features]({{ site.baseurl }}/enterprise/tiny-comments/) page.
+#### Show comment
+Follow this procedure to display the comments sidebar:
+
+1. Place the cursor on the desired text in the editor body:
+1. From the navigation menu, choose **View** -> **Show Comment** or click on the **Show Comments**![**Comments**]({{site.baseurl}}/images/comment-disabled.png) toggle toolbar button to display the comment.
+
+**Result**: The comments sidebar will appear and display the corresponding conversation for the highlighted text.
+
+#### Delete all conversations
+
+Follow this procedure to delete all conversations in the document:
+
+1. From the navigation menu, choose **File** -> **Delete all conversations** option to delete all the comments in a document.
+1. The following decision dialog box will appear:
+![**Delete all conversations**]({{site.baseurl}}/images/decision2.png)
+1. Click **Ok** to remove the all the comments or **Cancel** to dismiss the action.
+
+**Result**: All the comments for the selected document will be deleted.
+
+Check out the [Comments demo]({{site.baseurl}}/enterprise/tiny-comments/#tinycomments20demo) to try out this new feature.

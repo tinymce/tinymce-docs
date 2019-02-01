@@ -3,7 +3,7 @@ The following new features were added to the TinyMCE 5.0 RC version.
 
 ### Context Menu
 
-The context menu is a new configurable component added in TinyMCE 5.0 . It appears when the user right-clicks in the editable area. By default, it does not disable the operating system's native context menu, if there are no items to display at the cursor position the native context menu will be shown.
+The [Context Menu](https://www.tiny.cloud/docs/plugins/contextmenu/) is no longer a plugin, it is part of the core and always enabled. Where TinyMCE 4.x only supported adding registered menu items, the new context menu also allows plugins to register "sections" of the context menu. These sections are dynamic and may show or hide depending on the cursor position when the context menu is opened. For example, the default context menu config is now `'link image editimage table spelling'` which are all plugin section references, not menu items. 
 
 The context menu supports both individual menu items and dynamic context menu sections. Refer to the [context menu]({{site.baseurl}}/ui-components/contextmenu/) documentation, for more information.
 

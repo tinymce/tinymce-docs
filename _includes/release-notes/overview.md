@@ -11,7 +11,7 @@ Include this line of code in the <head> of the HTML page and link to the tinymce
 <script src='http://cloud.tinymce.com/5-testing/tinymce.min.js'></script>
 ```
 
-Signing up for a free API key provides entitlements to premium [Image Tools]({{  site.baseurl }}/plugins/imagetools/) plugin. A cloud image proxy server must already be configured. Premium plugins can be purchased at any time once the API key has been set up.
+Signing up for a free API key provides entitlements to all our free plugins. This includes advanced functionality such as the [Image Tools]({{  site.baseurl }}/plugins/imagetools/) plugin, which requires a cloud image proxy server to already be configured. Premium plugins can be purchased at any time once the API key has been set up.
 
 Refer to the [Quick start]({{site.baseurl}}/quick-start) docs for more information.
 

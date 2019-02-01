@@ -66,9 +66,7 @@ In TinyMCE 5.0, some configurations have been removed because they are no longer
 
 * [`file_browser_callback`](https://www.tiny.cloud/docs/configure/file-image-upload/#file_browser_callback) - Previously, the `file_browser_callback` option was used to add a file or image browser to TinyMCE. This feature was deprecated in version 4.1.0 and replaced by [`file_picker_callback`]({{site.baseurl}}/configure/file-image-upload/#file_picker_callback). `file_browser_callback` option has been removed from TinyMCE 5.0 owing to the configuration changes in the dialog component.
 
-* **Insert** - Previously, the `insert` option was used to specify what to display in the insert buttons menu in a space-separated list of menu items control identifiers or `|` for a menu separator. This feature has been removed from TinyMCE 5.0 owing to the changes in the menus and removal of the `context` property. The `insert` item in the toolbars setting no longer displays a toolbar button by default. The [`insert_button_items`](https://www.tiny.cloud/docs/configure/editor-appearance/#insert_button_items) option is no longer available in TinyMCE 5.0.
-
-For a workaround to display the `insert` buttons menu in the toolbars setting by default, register it in TinyMCE 5.0 using the following configurations in the `tinymce.init`:
+* [`insert_button_items`](https://www.tiny.cloud/docs/configure/editor-appearance/#insert_button_items) - Previously, the `insert_button_items` option was used to specify what to display in the `insert` toolbar button's menu in a space-separated list of menu items control identifiers or `|` for a menu separator. This toolbar button has been removed from TinyMCE 5.0 owing to the changes in the menus and removal of the `context` property. For a workaround, configure a custom toolbar button using the following configurations in the `tinymce.init`:
 
 ```js
 tinymce.init({
@@ -171,7 +169,7 @@ The Modern theme is no longer supported in TinyMCE 5.0.  The modern theme's UI l
 
 ## Mobile support
 
-In TinyMCE 4.x, mobile support was introduced bundled with a new theme and configuration settings. TinyMCE 5.0 makes this process seamless where mobile support comes out of the box without any additional configurations.  The new theme is now responsive on tablets, where the classic desktop theme will be displayed, and on smaller devices like phones. It now shows a UI responsive to touchscreens. TinyMCE 5.0 mobile will be an exciting space to watch.
+In TinyMCE 4.x, mobile support was introduced bundled with a new theme and configuration settings. TinyMCE 5.0 makes this process seamless where mobile support comes out of the box without any additional configurations. The mobile theme will be automatically loaded if a user views the editor on a mobile phone. TinyMCE 5.0 mobile will be an exciting space to watch.
 
 
 ## Components
@@ -404,7 +402,7 @@ Dialogs are still opened via the `editor.windowManager.open(config)` api, howeve
 | --------------- | --------------- | --------------- |
 | `onchange` | `onChange` | `onchange` has been removed and replaced by a single callback, which gets passed an object containing the changes made. |
 
-> Note: `onchange`, a callback that was previously used to detect changes on each component, has been removed. The changes are now tracked by a single callback function with the change data. 
+> Note: `onchange`, a callback that was previously used to detect changes on each component, has been removed. The changes are now tracked by a single callback function with the change data.
 
 #### TinyMCE 4.x
 

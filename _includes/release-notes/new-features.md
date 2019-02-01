@@ -17,8 +17,6 @@ Refer to the [Context Toolbar]({{site.baseurl}}/ui-components/contexttoolbar/) d
 
 The Custom Menu items configurations options have changed in TinyMCE 5.0. The `addMenuItem` has a new configuration. A new method `addToggleMenuItem` has been added which is an explicit method for creating toggle menu items similar to the new special toolbar button methods.
 
-Refer to the [configuration]({{site.baseurl}}/ui-components/typesoftoolbarbuttons/#menubutton) documentation, for more information on `editor.menuitems`.
-
 <!-- ### Custom Sidebars
 
 * `editor.addSidebar`, Docs coming soon. -->
@@ -115,17 +113,21 @@ This feature has been enhanced by modifying the code to ensure the styles are co
 
 ### Toolbar buttons
 
-TinyMCE 5.0 uses SVG icons for a better crisp look. Buttons are now added via methods in `editor.ui.registry` rather than `editor` e.g. `editor.ui.registry.addButton()` instead of `editor.addButton()`.
+TinyMCE 5.0 uses SVG icons for a better crisp look. Buttons are now added via methods in `editor.ui.registry` rather than `editor` e.g. `editor.ui.registry.addButton()` instead of `editor.addButton()`. The list of all registered toolbar buttons is also now in `editor.ui.registry` e.g. `editor.ui.registry.getAll().buttons` rather than `editor.buttons`.
 
 To make the creation of custom toolbar buttons easier, new methods were added for split, toggle, and menu toolbar buttons with configuration options specific to the button type.
 
 Refer to the [Toolbar Buttons]({{site.baseurl}}/ui-components/toolbarbuttons/) documentation, for more information.
 
+### Menu items
+
+Menu items are now added via methods in `editor.ui.registry` rather than `editor` e.g. `editor.ui.registry.addMenuItem()` instead of `editor.addMenuItem()`. The list of all registered menu items is also now in `editor.ui.registry` e.g. `editor.ui.registry.getAll().menuItems` rather than `editor.menuItems`.
+
 ### UI accessibility
 
 The new TinyMCE 5.0 editor has improved UI accessibility for a diverse set of users. Tiny is committed to adhering to WCAG 2.1 standards to ensure content is accessible to everyone.
 
-TinyMCE 5.0 conforms to WCAG 2.1 standards and has a stricter editor UI and workflow to offer a much more accessibility-compliant interface and a consistent workflow. TinyMCE UI can be mouse or keyboard driven. 
+TinyMCE 5.0 conforms to WCAG 2.1 standards and has a stricter editor UI and workflow to offer a much more accessibility-compliant interface and a consistent workflow. TinyMCE UI can be mouse or keyboard driven.
 
 The new UI delivers a consistent user experience when used with screen readers or browsers in various modes like high contrast on both mobile and desktop platforms. While this may impact a developer's customization abilities, they receive a more overall consistent user experience.
 

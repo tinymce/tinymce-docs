@@ -139,14 +139,14 @@ In TinyMCE 5.0, some themes have been removed and are now combined in a new sing
 
 #### Inlite
 
-The Inlite theme is no longer supported in TinyMCE 5.0. The features that the Inlite theme used to provide are now available as a plugin. The following is an example of the current Inlite configuration:
+The Inlite theme is no longer supported in TinyMCE 5.0. The features that the Inlite theme used to provide are now available as a plugin. The inlite plugin has been renamed `quickbars`. The following is an example of the current quickbars configuration:
 ```
 {
   theme: 'silver',
   inline: true,
   toolbar: false,
   menubar: false,
-  plugins: [ 'inlite' ]
+  plugins: [ 'quickbars' ]
 }
  ```
 This will provide a similar but improved [distraction-free]({{site.baseurl}}/general-configuration-guide/use-tinymce-distraction-free/) experience in TinyMCE 5.0.
@@ -205,7 +205,7 @@ The following new methods have been added for creating and using new components:
 
 ### Custom toolbar buttons
 
-The methods for adding [Custom Toolbar]({{site.baseurl}}/ui-components/toolbarbuttons/#howtocreatecustomtoolbarbuttons) buttons have changed significantly between TinyMCE 4.x and TinyMCE 5.0. The methods have been moved from `editor.*` to `editor.ui.registry.*` Toolbar button types have changed from -  basic, split, listbox, and menu,  to -  basic, toggle, split, and menu. Explicit methods have been added for creating each type of toolbar button.
+The methods for adding [Custom toolbar buttons]({{site.baseurl}}/ui-components/toolbarbuttons/#howtocreatecustomtoolbarbuttons) have changed significantly between TinyMCE 4.x and TinyMCE 5.0. The methods have been moved from `editor.*` to `editor.ui.registry.*` Toolbar button types have changed from -  basic, split, listbox, and menu,  to -  basic, toggle, split, and menu. Explicit methods have been added for creating each type of toolbar button.
 
 #### Changed methods
 
@@ -400,9 +400,9 @@ Dialogs are still opened via the `editor.windowManager.open(config)` api, howeve
 
 | **Old setting** | **New setting** | **Description** |
 | --------------- | --------------- | --------------- |
-| `onchange` | `onChange` | `onchange` has been removed and replaced by a single callback, which gets passed an object containing the changes made. |
+| `onchange` | `onChange` | `onchange` now takes a callback function which is passed an API helper function and data. |
 
-> Note: `onchange`, a callback that was previously used to detect changes on each component, has been removed. The changes are now tracked by a single callback function with the change data.
+> Note: `onchange`, a callback that was previously used to detect changes on each component, has been removed. The changes are now tracked by a single callback function with the change data. Refer to the [Interactive example using redial(config): void]({{site.baseurl}}/ui-components/dialog/#interactiveexampleusingredialconfigvoid) for more information.
 
 #### TinyMCE 4.x
 

@@ -67,7 +67,7 @@ A **Theme** creates the editor construction (left, top, bottom, or right of the 
 
 A skin usually changes the color scheme of a button, dialog, etc. while the theme applies to the whole editor including its functionality and has dependant skins to change the appearance.
 
-In TinyMCE 5.0 the **Silver** theme contains a set of configurable UI components that could be used to replace the current customizations (modern, inline, and inlite theme). Silver is enabled by default if a theme is not specified.
+In TinyMCE 5.0 the **Silver** theme contains a set of configurable UI components that could be used to replace the current customizations (modern, inline, and distraction-free theme). Silver is enabled by default if a theme is not specified.
 
 ### Page Embed
 

@@ -8,5 +8,3 @@ type: folder
 
 {% assign links = site.data.nav[2].pages %}
 {% include index.html links=links %}
-
-Coming soon

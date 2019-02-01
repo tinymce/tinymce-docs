@@ -31,9 +31,7 @@ This API supports the use of dynamic content for all aspects and is easily confi
 
 The `Format Painter` premium plugin allows copying and pasting formatting (such as font style and size) from one location to another. The Format Painter is capable of working with a wide variety of formats and styles such as inline & block formats and table styles.
 
-The Format Painter may be used through keyboard shortcuts or a toolbar button.  The Format Painter premium plugin will be available to use with TinyMCE in the early weeks of January 2019.
-
-<!-- Refer to the [Format Painter]({{site.baseurl}}/plugins/formatpainter/) documentation, for more information.-->
+The Format Painter may be used through keyboard shortcuts or a toolbar button. Refer to the [Format Painter]({{site.baseurl}}/plugins/formatpainter/) documentation, for more information.
 
 <!-- ### Icon Packs
 
@@ -81,9 +79,7 @@ Using the Page Embed feature can enable including content like Google maps or a 
 
 The embedded content is an independent HTML document, referenced in the `src` attribute of each element. Hence it is a fully independent resource, referenced from the current document.
 
-The Page Embed premium plugin will be available to use with TinyMCE in the early weeks of February 2019.
-
-<!-- Refer to the [Page Embed]({{site.baseurl}}/plugins/pageembed/) documentation, for more information.-->
+Refer to the [Page Embed]({{site.baseurl}}/plugins/pageembed/) documentation, for more information.
 
 ### Permanent Pen 1.0
 
@@ -91,13 +87,11 @@ The Permanent Pen is a premium plugin that allows adding comments or responses i
 
 For collaborative projects, the Permanent Pen enables adding text in a different color, typeface and type style, or font than the default font settings. This allows each user to work in a different colored permanent pen making it easy for everyone to see who contributed to the document by the color of the text.
 
-Permanent Pen only works in a rich text field such as the body of a message.
+Permanent Pen works in standard text content.
 
 For premium users, the Permanent Pen function is available in the toolbar. Click anywhere in the text field to use the Permanent Pen function.
 
-The Permanent Pen premium plugin will be available to use with TinyMCE in the early weeks of February 2019.
-
-<!-- Refer to the [Permanent Pen]({{site.baseurl}}/plugins/permanentpen/) documentation, for more information.-->
+Refer to the [Permanent Pen]({{site.baseurl}}/plugins/permanentpen/) documentation, for more information.
 
 ### Tables
 

@@ -45,6 +45,11 @@ These changes may impact integrations depending upon the level of customization.
 
 > Note: For support related issues such as problems while migrating and a workaround, please contact [support](https://support.tiny.cloud/hc/en-us/requests/new). Alternatively, track developer preview issues on GitHub, [here](https://github.com/tinymce/tinymce/labels/dev%20preview).
 
+### Methods
+
+* All TinyMCE 4.x methods for creating UI components have been removed. New methods have been added for TinyMCE 5.0. For more information, see the [docs]({{site.baseurl}}/ui-components/).
+* No core editor methods were removed (tinymce, editor, selection, on(), etc. remain the same).
+
 ### Settings
 
 In TinyMCE 5.0, some configurations have been removed because they are no longer necessary or an improved solution has been introduced.
@@ -88,10 +93,38 @@ tinymce.init({
 | `width` | Only supported number values | Supports numbers and strings, and assume a string is a valid CSS value for width |
 | `resize` | `true` by default | `true` by default if the `autoresize` plugin isn't enabled. `false` by default if the `autoresize` plugin is enabled. |
 
-### Methods
+#### file_browser_callback → file_picker_callback
 
-* All TinyMCE 4.x methods for creating UI components have been removed. New methods have been added for TinyMCE 5.0. For more information, see the [docs]({{site.baseurl}}/ui-components/).
-* No core editor methods were removed (tinymce, editor, selection, on(), etc. remain the same).
+When migrating from using `file_browser_callback` to `file_picker_callback`, there is no longer any need to manually find and update the element or fire events. Instead a callback function is now provided that will update the component with the value passed. In addition to that, it's possible to update other fields by passing a second argument that will update other fields in the dialog. For more information about the `file_picker_callback`, see the [docs]({{site.baseurl}}/configure/file-image-upload/#file_picker_callback).
+
+Below is a basic example showcasing how to migrate from using `file_browser_callback` to `file_picker_callback`, assuming that `browseFiles` is a function that opens an external file picker.
+
+##### TinyMCE 4.x
+
+```js
+tinymce.init({
+  ...
+  file_browser_callback_types: 'file image media',
+  file_browser_callback: function (fieldId, value, type, win) {
+    browseFiles(value, type, function (fileUrl) {
+      win.document.getElementById(fieldId).value = fileUrl;
+    });
+  }
+});
+```
+##### TinyMCE 5.0
+
+```js
+tinymce.init({
+  ...
+  file_picker_types: 'file image media',
+  file_picker_callback: function (callback, value, meta) {
+    browseFiles(value, meta.filetype, function (fileUrl) {
+      callback(fileUrl);
+    });
+  }
+});
+```
 
 ## Themes
 

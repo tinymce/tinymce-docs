@@ -9,7 +9,7 @@ keywords: tinymce script textarea
 
 TinyMCE 5.0 is a powerful and flexible rich text editor that can be embedded in the user's web application. 
 
-The TinyMCE 5.0 is perfect for developers who want to see how the new version of TinyMCE integrates into their ecosystem.
+TinyMCE 5.0 is perfect for developers who want to see how the new version of TinyMCE integrates into their ecosystem.
 
 ## Step 1: Include the TinyMCE script
 

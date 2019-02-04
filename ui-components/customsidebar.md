@@ -29,12 +29,6 @@ The `icon` specifies an icon for the sidebar toggle button. The icon should be t
 
 **Type**: `String`
 
-#### `image`
-
-The `image` specifies a custom image URL to use as an icon.
-
-**Type**: `String`
-
 #### `onSetup`
 
 The `onSetup` specifies a function to be called when the panel is first created. It passes in an API object and should return a callback that takes an API. The default is `(api) => (api) => {}`.

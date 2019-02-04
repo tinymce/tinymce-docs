@@ -12,7 +12,7 @@ Use the following matrix in conjunction with the optional parameters for specify
 
 > Important: Ensure the plugins are supported in your editor version when deploying [premium plugins *only* via Tiny Cloud]({{ site.baseurl }}/cloud-deployment-guide/features-only)
 
-| Plugins | TinyMCE 4.x | TinyMCE 5.x |
+| **Plugins** | **TinyMCE 4.x** | **TinyMCE 5.x** |
 | :-----: | :---------: | :---------: |
 | [Accessibility Checker]({{ site.baseurl }}/plugins/a11ychecker/) | Y | Y |
 | [Advanced Code Editor]({{ site.baseurl }}/plugins/advcode/) | Y | Y |
@@ -26,6 +26,6 @@ Use the following matrix in conjunction with the optional parameters for specify
 | [Page Embed]({{site.baseurl}}/plugins/pageembed) | N | Y |
 | [Permanent Pen]({{site.baseurl}}/plugins/permanentpen) | N | Y |
 | [Format Painter]({{site.baseurl}}/plugins/formatpainter) | Y | Y |
-| MoxieManager<br/>(SDK ONLY) | Y | Y |
+| [MoxieManager]({{site.baseurl}}/plugins/moxiemanager)<br/>(SDK ONLY) | Y | Y |
 
 *N1* - For this combination of TinyMCE and Spellchecking, the [spellchecker_dialog mode]({{ site.baseurl }}/plugins/tinymcespellchecker/#spellchecker_dialog) is unavailable.

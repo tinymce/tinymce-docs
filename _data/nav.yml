@@ -302,7 +302,7 @@
     - url: "#media_scripts"
     - url: "#video_template_callback"
   - url: "mentions"
-    pages
+    pages:
     - url: "#mentions_fetch"
     - url: "#mentions_menu_complete"
     - url: "#mentions_menu_hover"
@@ -324,7 +324,7 @@
     - url: "#pagebreak_separator"
     - url: "#pagebreak_split_block"
   - url: "pageembed"
-   pages:
+    pages:
     - url: "#Creating a Page Embed toolbar button"
     - url: "#Using Page Embed"
     - url: "#Create custom classes"
@@ -514,14 +514,9 @@
   - url: "accessibility"
   - url: "security"
   - url: "boilerplate-content-css"
-  # - url: "creating-a-custom-button"
-  # - url: "creating-a-skin"
-  # - url: "creating-a-plugin"
   - url: "annotations"
   - url: "yeoman-generator"
-  # - url: "creating-custom-dialogs"
   - url: "creating-custom-notifications"
-  # - url: "creating-a-sidebar"
   - url: "handle-async-image-uploads"
   - url: "php-upload-handler"
   - url: "editor-command-identifiers"

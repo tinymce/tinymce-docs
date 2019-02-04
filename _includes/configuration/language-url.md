@@ -13,4 +13,4 @@ tinymce.init({
 });
 ```
 
-You can find and download languages [here](https://www.tinymce.com/download/language-packages/).
+You can download the TinyMCE 4 language pack [here](/language/tinymce4x_languages.zip).

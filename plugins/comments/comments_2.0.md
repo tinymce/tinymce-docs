@@ -2,7 +2,7 @@
 layout: default
 title: Comments 2.0
 title_nav: Comments 2.0
-description: Tiny Comments provides the ability to add comments to the content and collaborate with other users for content editing.
+description: Comments 2.0 provides the ability to add comments to the content and collaborate with other users for content editing.
 keywords: comments commenting tinycomments
 ---
 
@@ -10,7 +10,7 @@ keywords: comments commenting tinycomments
 
 The Comments 2.0 plugin provides the ability to start or join a conversation by adding comments to the content within the TinyMCE editor. The Comments 2.0 plugin is built upon the [Annotations API]({{site.baseurl}}/advanced/annotations/) and uses annotations to create comment threads (conversations).
 
-Comments is a premium plugin from Tiny. Please see the [Premium features]({{site.baseurl}}/enterprise/tiny-comments/) section for all the buying options.
+Comments 2.0 is a premium plugin from Tiny. Please see the [Premium features]({{site.baseurl}}/enterprise/tiny-comments/) section for all the buying options.
 
 Once you have obtained the Comments 2.0 plugin, refer to the following instructions for using it.
 

@@ -189,7 +189,7 @@ A **SizeInput** is a specialized input field that can lock ratios, see image dia
 
 ### Tabpanel
 
-A **Tabpanel** is similar to a Panel, where it can hold other components. TabPanel is a layout component that will separate sections using tabs. Each tab is a panel that can contain different components. A dialog body configuration must begin with either a Panel or a TabPanel.
+A **Tabpanel** is similar to a Panel, where it can hold other components. Tabpanel is a layout component that will separate sections using tabs. Each tab is a panel that can contain different components. A dialog body configuration must begin with either a Panel or a Tabpanel.
 
 ```js
 {

@@ -24,8 +24,6 @@ description: Configure the editor's appearance, including menu and toolbar contr
 
 {% include configuration/inline.md %}
 
-{% include configuration/insert-toolbar.md %}
-
 {% include configuration/max-height.md %}
 
 {% include configuration/max-width.md %}
@@ -45,6 +43,8 @@ description: Configure the editor's appearance, including menu and toolbar contr
 {% include configuration/removed-menuitems.md %}
 
 {% include configuration/resize.md %}
+
+{% include configuration/insert-toolbar.md %}
 
 {% include configuration/selection-toolbar.md %}
 

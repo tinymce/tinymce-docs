@@ -219,7 +219,7 @@ A **textarea** is a multiline text field.
 
 ### urlinput
 
-A **uRlinput** is a specialized input text field for image dialog. This will include a typeahead for previous image URLs entered.
+A **urlinput** is a specialized input text field for image dialog. This will include a typeahead for previous image URLs entered.
 
 ```js
 // URL input for image dialog

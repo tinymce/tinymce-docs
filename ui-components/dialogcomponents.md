@@ -10,7 +10,7 @@ This chapter describes the Dialog component summary is a reference list of all T
 
 ### alertbanner
 
-An **Alertbanner** is a color-coded banner to alert the user of a problem. A URL may be provided to direct users to a reference site that may resolve the informed issue.
+An **alertbanner** is a color-coded banner to alert the user of a problem. A URL may be provided to direct users to a reference site that may resolve the informed issue.
 
 ```js
 {
@@ -23,7 +23,7 @@ An **Alertbanner** is a color-coded banner to alert the user of a problem. A URL
 
 ### button
 
-A **Button** component to be used inside the dialog body. These buttons differ from toolbar buttons and dialog footer buttons.
+A **button** component to be used inside the dialog body. These buttons differ from toolbar buttons and dialog footer buttons.
 
 
 ```js

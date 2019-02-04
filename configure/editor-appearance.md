@@ -8,8 +8,6 @@ description: Configure the editor's appearance, including menu and toolbar contr
 
 {% include configuration/branding.md %}
 
-{% include configuration/color-picker-callback.md %}
-
 {% include configuration/contextmenu.md %}
 
 {% include configuration/contextmenu_never_use_native.md %}

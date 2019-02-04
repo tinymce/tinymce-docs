@@ -3,7 +3,7 @@ The following new features were added to the TinyMCE 5.0 RC version.
 
 ### Context Menu
 
-The context menu is a new configurable component added in TinyMCE 5.0 . It appears when the user right-clicks in the editable area. By default, it does not disable the operating system's native context menu, if there are no items to display at the cursor position the native context menu will be shown.
+The [Context Menu](https://www.tiny.cloud/docs/plugins/contextmenu/) is no longer a plugin, it is part of the core and always enabled. Where TinyMCE 4.x only supported adding registered menu items, the new context menu also allows plugins to register "sections" of the context menu. These sections are dynamic and may show or hide depending on the cursor position when the context menu is opened. For example, the default context menu config is now `'link image editimage table spelling'` which are all plugin section references, not menu items. 
 
 The context menu supports both individual menu items and dynamic context menu sections. Refer to the [context menu]({{site.baseurl}}/ui-components/contextmenu/) documentation, for more information.
 
@@ -16,8 +16,6 @@ Refer to the [Context Toolbar]({{site.baseurl}}/ui-components/contexttoolbar/) d
 ### Custom Menu Items
 
 The Custom Menu items configurations options have changed in TinyMCE 5.0. The `addMenuItem` has a new configuration. A new method `addToggleMenuItem` has been added which is an explicit method for creating toggle menu items similar to the new special toolbar button methods.
-
-Refer to the [configuration]({{site.baseurl}}/ui-components/typesoftoolbarbuttons/#menubutton) documentation, for more information on `editor.menuitems`.
 
 <!-- ### Custom Sidebars
 
@@ -33,9 +31,7 @@ This API supports the use of dynamic content for all aspects and is easily confi
 
 The `Format Painter` premium plugin allows copying and pasting formatting (such as font style and size) from one location to another. The Format Painter is capable of working with a wide variety of formats and styles such as inline & block formats and table styles.
 
-The Format Painter may be used through keyboard shortcuts or a toolbar button.  The Format Painter premium plugin will be available to use with TinyMCE in the early weeks of January 2019.
-
-<!-- Refer to the [Format Painter]({{site.baseurl}}/plugins/formatpainter/) documentation, for more information.-->
+The Format Painter may be used through keyboard shortcuts or a toolbar button. Refer to the [Format Painter]({{site.baseurl}}/plugins/formatpainter/) documentation, for more information.
 
 <!-- ### Icon Packs
 
@@ -71,7 +67,7 @@ A **Theme** creates the editor construction (left, top, bottom, or right of the 
 
 A skin usually changes the color scheme of a button, dialog, etc. while the theme applies to the whole editor including its functionality and has dependant skins to change the appearance.
 
-In TinyMCE 5.0 the **Silver** theme contains a set of configurable UI components that could be used to replace the current customizations (modern, inline, and inlite theme). Silver is enabled by default if a theme is not specified.
+In TinyMCE 5.0 the **Silver** theme contains a set of configurable UI components that could be used to replace the current customizations (modern, inline, and distraction-free theme). Silver is enabled by default if a theme is not specified.
 
 ### Page Embed
 
@@ -83,9 +79,7 @@ Using the Page Embed feature can enable including content like Google maps or a 
 
 The embedded content is an independent HTML document, referenced in the `src` attribute of each element. Hence it is a fully independent resource, referenced from the current document.
 
-The Page Embed premium plugin will be available to use with TinyMCE in the early weeks of February 2019.
-
-<!-- Refer to the [Page Embed]({{site.baseurl}}/plugins/pageembed/) documentation, for more information.-->
+Refer to the [Page Embed]({{site.baseurl}}/plugins/pageembed/) documentation, for more information.
 
 ### Permanent Pen 1.0
 
@@ -93,13 +87,11 @@ The Permanent Pen is a premium plugin that allows adding comments or responses i
 
 For collaborative projects, the Permanent Pen enables adding text in a different color, typeface and type style, or font than the default font settings. This allows each user to work in a different colored permanent pen making it easy for everyone to see who contributed to the document by the color of the text.
 
-Permanent Pen only works in a rich text field such as the body of a message.
+Permanent Pen works in standard text content.
 
 For premium users, the Permanent Pen function is available in the toolbar. Click anywhere in the text field to use the Permanent Pen function.
 
-The Permanent Pen premium plugin will be available to use with TinyMCE in the early weeks of February 2019.
-
-<!-- Refer to the [Permanent Pen]({{site.baseurl}}/plugins/permanentpen/) documentation, for more information.-->
+Refer to the [Permanent Pen]({{site.baseurl}}/plugins/permanentpen/) documentation, for more information.
 
 ### Tables
 
@@ -115,17 +107,21 @@ This feature has been enhanced by modifying the code to ensure the styles are co
 
 ### Toolbar buttons
 
-TinyMCE 5.0 uses SVG icons for a better crisp look. Buttons are now added via methods in `editor.ui.registry` rather than `editor` e.g. `editor.ui.registry.addButton()` instead of `editor.addButton()`.
+TinyMCE 5.0 uses SVG icons for a better crisp look. Buttons are now added via methods in `editor.ui.registry` rather than `editor` e.g. `editor.ui.registry.addButton()` instead of `editor.addButton()`. The list of all registered toolbar buttons is also now in `editor.ui.registry` e.g. `editor.ui.registry.getAll().buttons` rather than `editor.buttons`.
 
 To make the creation of custom toolbar buttons easier, new methods were added for split, toggle, and menu toolbar buttons with configuration options specific to the button type.
 
 Refer to the [Toolbar Buttons]({{site.baseurl}}/ui-components/toolbarbuttons/) documentation, for more information.
 
+### Menu items
+
+Menu items are now added via methods in `editor.ui.registry` rather than `editor` e.g. `editor.ui.registry.addMenuItem()` instead of `editor.addMenuItem()`. The list of all registered menu items is also now in `editor.ui.registry` e.g. `editor.ui.registry.getAll().menuItems` rather than `editor.menuItems`.
+
 ### UI accessibility
 
 The new TinyMCE 5.0 editor has improved UI accessibility for a diverse set of users. Tiny is committed to adhering to WCAG 2.1 standards to ensure content is accessible to everyone.
 
-TinyMCE 5.0 conforms to WCAG 2.1 standards and has a stricter editor UI and workflow to offer a much more accessibility-compliant interface and a consistent workflow. TinyMCE UI can be mouse or keyboard driven. 
+TinyMCE 5.0 conforms to WCAG 2.1 standards and has a stricter editor UI and workflow to offer a much more accessibility-compliant interface and a consistent workflow. TinyMCE UI can be mouse or keyboard driven.
 
 The new UI delivers a consistent user experience when used with screen readers or browsers in various modes like high contrast on both mobile and desktop platforms. While this may impact a developer's customization abilities, they receive a more overall consistent user experience.
 

@@ -8,9 +8,9 @@ keywords: tinymce cloud script textarea apiKey
 
 Tiny Cloud is the easiest way to integrate TinyMCE and upgrade to premium plugins.
 
-Tiny Cloud can be used without an API key. Refer to the [General Configuration]({{site.baseurl}}/general-configuration-guide) guide for more information. Sign up for an API key and update the script tag to use premium plugins or avoid the in-editor developer warning.
+Tiny Cloud can be used without an API key. Refer to the [Introduction & getting started ]({{site.baseurl}}/general-configuration-guide) guide for more information. Sign up for an API key and update the script tag to use premium plugins or avoid the in-editor developer warning.
 
-All Tiny Cloud accounts include a free, pre-configured cloud image proxy service. This setup uses the [Image Tools]({{  site.baseurl }}/plugins/imagetools/) plugin.
+All Tiny Cloud accounts include a free, pre-configured cloud image proxy service. This setup uses the [Image tools]({{  site.baseurl }}/plugins/imagetools/) plugin.
 
 ## Integrating TinyMCE for the first time
 
@@ -26,13 +26,13 @@ The following example adds a script tag into the application that inserts the co
 
 ### Step 2: Load, customize and interact with TinyMCE
 
-There are more than 40 open source plugins that enhance the editing experience in addition to the advanced content create solutions on Tiny Cloud. A range of [simple examples]({{ site.baseurl }}/demo/basic-example/) are available. Refer to [get started with TinyMCE]({{ site.baseurl }}/quick-start) for additional walkthrough documentation.
+There are more than 40 open source plugins that enhance the editing experience in addition to the advanced content create solutions on Tiny Cloud. A range of [simple examples]({{ site.baseurl }}/demo/basic-example/) are available. Refer to [Quick start]({{ site.baseurl }}/quick-start) for additional walkthrough documentation.
 
 ### Step 3: Specifying purchased TinyMCE plugins and toolbar/menu items
 
 Extend the [TinyMCE configuration]({{ site.baseurl }}/configure/) to include any additional purchased plugins and associated toolbar and menu items. Refer to the following enablement guides for more information:
 
-* [Powerpaste]({{ site.baseurl }}/plugins/powerpaste/)
+* [PowerPaste]({{ site.baseurl }}/plugins/powerpaste/)
 * [Spell Checker]({{ site.baseurl }}/plugins/tinymcespellchecker/)
 
 > Note: `spellchecker_rpc_url` is **not** required when enabling this plugin via [Tiny Cloud]({{ site.baseurl }}/cloud-deployment-guide/)
@@ -91,7 +91,7 @@ Extend the [TinyMCE configuration]({{ site.baseurl }}/configure/) to include any
 
 > Note: `spellchecker_rpc_url` is **not** required when enabling this plugin via [Tiny Cloud]({{ site.baseurl }}/cloud-deployment-guide/)
 
-* [Image Tools (with configured image proxy)]({{ site.baseurl }}/plugins/imagetools/)
+* [Image tools (with configured image proxy)]({{ site.baseurl }}/plugins/imagetools/)
 
 > Note: Configuration of the `imagetools_cors_hosts` and `imagetools_proxy` properties occurrs automatically.
 

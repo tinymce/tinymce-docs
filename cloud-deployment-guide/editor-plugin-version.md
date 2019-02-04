@@ -10,10 +10,7 @@ keywords: tinymce cloud script textarea apiKey
 
 Use the URL provided to specify the TinyMCE version when deploying via Tiny Cloud. Refer to [TinyMCE editor via the Tiny Cloud]({{ site.baseurl }}/cloud-deployment-guide/editor-and-features) for more information.
 
-Please note as Tinymce 5 is currently under development,
-The traditional ```https://cloud.tinymce.com/stable/tinymce.min.js``` is currently serving the latest Tinymce 4x.  From  February 4, 2019, at 2pm Pacific Standard Time (GMT-8). The '/stable/' link will default to serving Tinymce 5.
-
-The following example is the default for loading TinyMCE via Tiny Cloud:
+The following example is the default for loading TinyMCE 5.0 via Tiny Cloud:
 
 ```js
 <script src="https://cloud.tinymce.com/5-stable/tinymce.min.js?apiKey=your_API_key"></script>
@@ -23,7 +20,7 @@ The `stable` in this URL specifies the latest, and quality assured release of Ti
 
 ### Selecting specific version numbers
 
-Support for requesting specific versions of TinyMCE 5 will be available after TinyMCE 5 RC becomes stable. It should work in a similar way as Tinymce 4.  In the meantime, there are 3 release channels available, see the section below.
+Support for requesting specific versions of TinyMCE 5.0 should work in a similar way as Tinymce 4.  In the meantime, there are 3 release channels available, see the section below.
 
 ### dev, testing, and stable releases
 
@@ -205,5 +202,4 @@ The "SDK" version lets the TinyMCE Plugin Manager know that you're not using Tin
 
 ### Featuring declared editor and plugin versions
 
-Support for requesting specific versions of TinyMCE 5 and plugin versions will be available after TinyMCE 5 RC becomes stable.
-The process will work similar to Tinymce 4.  For now only the latest version is available via cloud.
+Support for requesting specific versions of TinyMCE 5.0 will work similar to Tinymce 4.  For now only the latest version is available via cloud.

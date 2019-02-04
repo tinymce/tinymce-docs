@@ -22,6 +22,7 @@ tinymce.init({
 });
 ```
 
+
 | Event       | Native/Core/Plugin    |  Description   |
 |-------------|-----------------------|----------------|
 | [Click](https://developer.mozilla.org/en/docs/Web/Events/click) | native | Fires when the editor is clicked. |
@@ -55,7 +56,9 @@ tinymce.init({
 | [ExecCommand](#execcommand) | core | Fires after a command has been executed. |
 | [PastePreProcess](#pastepreprocess) | [paste]({{ site.baseurl }}/plugins/paste/) | Fires when contents are pasted into the editor. |
 | [PastePostProcess](#pastepostprocess) | [paste]({{ site.baseurl }}/plugins/paste/) | Fires when contents are pasted into the editor. |
+
 > Native means that it's just a wrapped native browser event.
+
 > Core means that it's a core specific event provided by the editor.
 
 ### Init

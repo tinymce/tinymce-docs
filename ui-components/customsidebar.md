@@ -15,7 +15,7 @@ The sidebar API allows developers to add sidebars on editor instances in a simil
 
 This is the syntax for the addSidebar function: `editor.ui.registry.addSidebar(name:String, spec:Object)`
 
-### Spec object
+### Specification object
 
 #### `tooltip`
 

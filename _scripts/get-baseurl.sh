@@ -2,5 +2,5 @@
 
 set -e
 
-echo "/docs-beta"
+echo "/docs"
 

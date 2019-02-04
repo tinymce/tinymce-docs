@@ -18,7 +18,7 @@ Build a TinyMCE 5.0 instance with the [TinyMCE 5.0 SDK](https://github.com/tinym
 Include this line of code in the `<head>` of the HTML page and link to the tinymce.min.js source file:
 
 ```html
-<script src="https://cloud.tinymce.com/5-stable/tinymce.min.js?apiKey=your_API_key"></script>
+<script src="https://cloud.tinymce.com/5/tinymce.min.js?apiKey=your_API_key"></script>
 ```
 
 > Tip: A complete HTML snippet is provided in Step 2.
@@ -36,7 +36,7 @@ In this example, replace `<textarea id='mytextarea'>` with a TinyMCE 5.0 editor 
 <!DOCTYPE html>
 <html>
 <head>
-  <script src='http://cloud.tinymce.com/5-testing/tinymce.min.js'></script>
+  <script src='http://cloud.tinymce.com/5/tinymce.min.js'></script>
   <script>
   tinymce.init({
     selector: '#mytextarea'

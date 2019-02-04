@@ -2,7 +2,7 @@
 layout: default
 title: Permanent Pen Plugin
 title_nav: Permanent Pen
-description: Apply formats while typing (Available post TinyMCE 5.0 GA)
+description: Apply formats while typing.
 keywords: permanent pen copy text format style
 controls: toolbar button, contextmenu, menu item
 ---

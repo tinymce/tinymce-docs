@@ -38,13 +38,14 @@ We provide a working example for integrating the TinyMCE plugin into your site.
 
 ### Buy Comments 2.0
 
-Start with our [dedicated product page](https://www.tiny.cloud/pricing/) to see our flexible pricing options. Enterprise customers should [contact sales directly](https://www.tinymce.com/pricing/). Still not sure? Check out the demo below.
+Start with our [dedicated product page](https://www.tiny.cloud/pricing/) to see our flexible pricing options. Enterprise customers should [contact sales directly](https://www.tinymce.com/pricing/).
+
+<!-- Still not sure? Check out the demo below.
 
 ## Comments 2.0 Demo
 
 In this example, the features in Comments 2.0 are highlighted, including adding a comment, replying to a comment, and deleting a comment. For more information on the other Comments 2.0 configuration options, see the [docs]({{ site.baseurl }}/plugins/comments/comments_2.0).
 
-[Demo coming soon!]
+[Demo coming soon!] -->
 
-<!--{% include codepen.html id="pOzxJw" %}-->
-{% include codepen.html id="tinycomments-realtime" %}
+

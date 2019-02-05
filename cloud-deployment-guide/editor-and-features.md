@@ -21,7 +21,7 @@ Insert the TinyMCE editor code into the application to load TinyMCE for the firs
 The following example adds a script tag into the application that inserts the code. Use the `<head>` of the page on a web page.
 
 ```js
-<script src="https://cloud.tinymce.com/5/tinymce.min.js?apiKey=your_API_key"></script>
+<script src="{{ site.cdnurl }}?apiKey=your_API_key"></script>
 ```
 
 ### Step 2: Load, customize and interact with TinyMCE
@@ -73,7 +73,7 @@ Migrating from a self-hosted environment to Tiny Cloud is easy. Remove the exist
 Replace the script tag with the following:
 
 ```js
-<script src="https://cloud.tinymce.com/4/tinymce.min.js?apiKey=your_API_key"></script>
+<script src="{{ site.cdnurl }}?apiKey=your_API_key"></script>
 ```
 
 ### Step 2: Update custom plugin paths

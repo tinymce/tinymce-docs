@@ -23,12 +23,8 @@ To serve TinyMCE 5 from the cloud, include this in your html page:
 
 To serve the latest nightlies and testing builds refer to the [cloud deployment guide](/cloud-deployment-guide/editor-and-features/)
 
-<!-- On February 4, 2019, at 2 pm Pacific Standard Time (GMT-8), TinyMCE 5 will be deployed to the cloud stable channel. This means that if you are running TinyMCE from the stable channel it will automatically be upgraded from version 4 to version 5.
-
-Current TinyMCE 4 Cloud users, who are using the ```/stable/``` channel and would like to continue using TinyMCE 4, should update their script tags to version lock TinyMCE 4. -->
-
 ```js
-<script src="https://cloud.tinymce.com/4/tinymce.min.js?apiKey=your_API_key"></script>
+<script src="https://cloud.tinymce.com/5-dev/tinymce.min.js?apiKey=your_API_key"></script>
 ```
 
 ### Initialization

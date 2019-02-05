@@ -13,9 +13,9 @@ TinyMCE allows developers to create sidebars and add custom UI widgets inside a 
 
 The sidebar API allows developers to add sidebars on editor instances in a similar way as adding buttons or menu items. Developers can either add sidebars directly in the `tinymce.init` using the setup callback or inside your plugin.
 
-This is the syntax for the addSidebar function: `editor.ui.registry.addSidebar(id:String, options:Object)`
+This is the syntax for the addSidebar function: `editor.ui.registry.addSidebar(name:String, spec:Object)`
 
-### Options object
+### Specification object
 
 #### `tooltip`
 
@@ -26,12 +26,6 @@ The `tooltip` specifies a tooltip to be displayed when hovering over the sidebar
 #### `icon`
 
 The `icon` specifies an icon for the sidebar toggle button. The icon should be the name of an icon provided by the TinyMCE skin.
-
-**Type**: `String`
-
-#### `image`
-
-The `image` specifies a custom image URL to use as an icon.
 
 **Type**: `String`
 
@@ -57,9 +51,9 @@ The `onHide` specifies a function to be called when the panel is hidden. It pass
 
 ### API Object
 
-#### `element():DOMElement`
+#### `element():HTMLElement`
 
-The `element():DOMElement` function returns the root element of the sidebar panel.
+The `element():HTMLElement` function returns the root element of the sidebar panel.
 
 ## Example inside the tinymce.init
 

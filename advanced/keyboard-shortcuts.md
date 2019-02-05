@@ -36,7 +36,6 @@ This is a list of available keyboard shortcuts within the editor body.
 | Toggle Fullscreen | Ctrl+Shift+F | Ctrl+Shift+F | [fullscreen]({{ site.baseurl }}/plugins/fullscreen/) |
 | Save | Ctrl+S | Command+S | [save]({{ site.baseurl }}/plugins/save/) |
 | Find | Ctrl+F | Command+F | [searchreplace]({{ site.baseurl }}/plugins/searchreplace/) |
-| Open wordcount dialog | Ctrl+Shift+C | Command+Shift+C | [wordcount]({{ site.baseurl }}/plugins/wordcount/) |
 
 ## Accessibility keyboard shortcuts
 

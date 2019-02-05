@@ -2,7 +2,7 @@
 layout: default
 title: Permanent Pen Plugin
 title_nav: Permanent Pen
-description: Apply formats while typing (Available post TinyMCE 5.0 GA)
+description: Apply formats while typing.
 keywords: permanent pen copy text format style
 controls: toolbar button, contextmenu, menu item
 ---
@@ -68,7 +68,7 @@ There are two ways to access the Permanent Pen properties:
 
 #### From the menubar
 
-Add the Permanent pen properties option to the menu bar with the [menu]({{site.baseurl}}/docs-beta/configure/editor-appearance/#menu) configuration.
+Add the Permanent pen properties option to the menu bar with the [menu]({{site.baseurl}}/docs/configure/editor-appearance/#menu) configuration.
 
 ```js
 tinymce.init({

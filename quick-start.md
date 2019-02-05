@@ -36,7 +36,7 @@ In this example, replace `<textarea id='mytextarea'>` with a TinyMCE 5.0 editor 
 <!DOCTYPE html>
 <html>
 <head>
-  <script src='http://cloud.tinymce.com/5/tinymce.min.js'></script>
+  <script src='{{ site.cdnurl }}?apiKey=your_API_key'></script>
   <script>
   tinymce.init({
     selector: '#mytextarea'

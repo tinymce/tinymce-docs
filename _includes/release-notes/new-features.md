@@ -17,10 +17,6 @@ Refer to the [Context Toolbar]({{site.baseurl}}/ui-components/contexttoolbar/) d
 
 The Custom Menu items configurations options have changed in TinyMCE 5.0. The `addMenuItem` has a new configuration. A new method `addToggleMenuItem` has been added which is an explicit method for creating toggle menu items similar to the new special toolbar button methods.
 
-<!-- ### Custom Sidebars
-
-* `editor.addSidebar`, Docs coming soon. -->
-
 ### Dialog
 
 The [Dialog]({{site.baseurl}}/ui-components/dialog/) API allows showing dialogs (sometimes referred to as modals) in the user application. For example, the plugin that is used to view the source code is an example of a simple dialog that displays the HTML code from the content.
@@ -32,14 +28,6 @@ This API supports the use of dynamic content for all aspects and is easily confi
 The `Format Painter` premium plugin allows copying and pasting formatting (such as font style and size) from one location to another. The Format Painter is capable of working with a wide variety of formats and styles such as inline & block formats and table styles.
 
 The Format Painter may be used through keyboard shortcuts or a toolbar button. Refer to the [Format Painter]({{site.baseurl}}/plugins/formatpainter/) documentation, for more information.
-
-<!-- ### Icon Packs
-
-- New Section [(DOC-161)](https://ephocks.atlassian.net/browse/DOC-161)
-
-### Modernize default content in TinyMCE 5.0
-
-- New Section [(DOC-162)](https://ephocks.atlassian.net/browse/DOC-162) -->
 
 ### Keyboard navigation and tooltips improvements
 
@@ -125,9 +113,7 @@ TinyMCE 5.0 conforms to WCAG 2.1 standards and has a stricter editor UI and work
 
 The new UI delivers a consistent user experience when used with screen readers or browsers in various modes like high contrast on both mobile and desktop platforms. While this may impact a developer's customization abilities, they receive a more overall consistent user experience.
 
-<!-- ### UI microcopy audit
 
-- New Section [(DOC-163)](https://ephocks.atlassian.net/browse/DOC-163) -->
 
 
 

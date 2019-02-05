@@ -1,41 +1,3 @@
-var demoBaseConfig = {
-  selector: "textarea#classic",
-  width: 755,
-  height: 500,
-  resize: false,
-  autosave_ask_before_unload: false,
-  mentions_fetch: mentionsFetchFunction,
-  powerpaste_allow_local_images: true,
-  plugins: [
-    "a11ychecker advcode advlist anchor autolink codesample colorpicker fullscreen help image imagetools",
-    " lists link media noneditable powerpaste preview",
-    " searchreplace table template textcolor tinymcespellchecker visualblocks wordcount"
-  ], /* removed:  charmap insertdatetime print */
-  external_plugins: {
-    mentions: "//www.tiny.cloud/pro-demo/mentions/plugin.min.js",
-    moxiemanager: "//www.tiny.cloud/pro-demo/moxiemanager/plugin.min.js"
-  },
-  templates: [
-    {
-      title: "Non-editable Example",
-      description: "Non-editable example.",
-      content: table
-    },
-    {
-      title: "Simple Table Example",
-      description: "Simple Table example.",
-      content: table2
-    }
-  ],
-  toolbar:
-    "insertfile a11ycheck undo redo | bold italic | forecolor backcolor | template codesample | alignleft aligncenter alignright alignjustify | bullist numlist | link image",
-  content_css: [
-    "//fonts.googleapis.com/css?family=Lato:300,300i,400,400i",
-    "//www.tiny.cloud/css/content-standard.min.css"
-  ],
-  spellchecker_dialog: true,
-  spellchecker_whitelist: ['Ephox', 'Moxiecode']
-};
 
 var mentionsFetchFunction = function (query, success) {
   var users = [
@@ -106,7 +68,7 @@ var mentionsFetchFunction = function (query, success) {
     "Matthew Bryant", "Tyler Rose", "Mildred Delgado", "Emma Peters", "Walter Delgado", "Lauren Gilbert", "Christopher Romero"
   ];
 
-  users = $.map(users, function (fullName) {
+  users = users.map(function (fullName) {
     var userName = fullName.replace(/ /g, '').toLowerCase();
 
     return {
@@ -116,11 +78,50 @@ var mentionsFetchFunction = function (query, success) {
     }
   });
 
-  users = $.grep(users, function (user) {
+  users = users.filter(function (user) {
     return user.name.indexOf(query.term) === 0
   });
 
   success(users)
+};
+
+var demoBaseConfig = {
+  selector: "textarea#classic",
+  width: 755,
+  height: 500,
+  resize: false,
+  autosave_ask_before_unload: false,
+  mentions_fetch: mentionsFetchFunction,
+  powerpaste_allow_local_images: true,
+  plugins: [
+    "a11ychecker advcode advlist anchor autolink codesample colorpicker fullscreen help image imagetools",
+    " lists link media noneditable powerpaste preview",
+    " searchreplace table template textcolor tinymcespellchecker visualblocks wordcount"
+  ], /* removed:  charmap insertdatetime print */
+  external_plugins: {
+    mentions: "//www.tiny.cloud/pro-demo/mentions/plugin.min.js",
+    moxiemanager: "//www.tiny.cloud/pro-demo/moxiemanager/plugin.min.js"
+  },
+  templates: [
+    {
+      title: "Non-editable Example",
+      description: "Non-editable example.",
+      content: table
+    },
+    {
+      title: "Simple Table Example",
+      description: "Simple Table example.",
+      content: table2
+    }
+  ],
+  toolbar:
+    "insertfile a11ycheck undo redo | bold italic | forecolor backcolor | template codesample | alignleft aligncenter alignright alignjustify | bullist numlist | link image",
+  content_css: [
+    "//fonts.googleapis.com/css?family=Lato:300,300i,400,400i",
+    "//www.tiny.cloud/css/content-standard.min.css"
+  ],
+  spellchecker_dialog: true,
+  spellchecker_whitelist: ['Ephox', 'Moxiecode']
 };
 
 var table = '<p>This table uses features of the non-editable plugin to make the text in the<br /><strong>top row</strong> and <strong>left column</strong> uneditable.</p>' +

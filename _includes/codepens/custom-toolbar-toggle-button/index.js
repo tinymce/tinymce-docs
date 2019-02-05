@@ -4,8 +4,9 @@ tinymce.init({
   setup: function (editor) {
     editor.ui.registry.addToggleButton('customStrikethrough', {
       text: 'Strikethrough',
-      onAction: function (_) {
+      onAction: function (api) {
         editor.execCommand('mceToggleFormat', false, 'strikethrough');
+        api.setActive(!api.isActive());
       }
     });
 

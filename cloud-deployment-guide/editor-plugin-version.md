@@ -10,20 +10,17 @@ keywords: tinymce cloud script textarea apiKey
 
 Use the URL provided to specify the TinyMCE version when deploying via Tiny Cloud. Refer to [TinyMCE editor via the Tiny Cloud]({{ site.baseurl }}/cloud-deployment-guide/editor-and-features) for more information.
 
-Please note as Tinymce 5 is currently under development,
-The traditional ```https://cloud.tinymce.com/stable/tinymce.min.js``` is currently serving the latest Tinymce 4x.  From  February 4, 2019, at 2pm Pacific Standard Time (GMT-8). The '/stable/' link will default to serving Tinymce 5.
-
-The following example is the default for loading TinyMCE via Tiny Cloud:
+The following example is the default for loading TinyMCE 5.0 via Tiny Cloud:
 
 ```js
-<script src="https://cloud.tinymce.com/5-stable/tinymce.min.js?apiKey=your_API_key"></script>
+<script src="{{ site.cdnurl }}?apiKey=your_API_key"></script>
 ```
 
-The `stable` in this URL specifies the latest, and quality assured release of TinyMCE.
+This URL specifies the latest and quality assured release of TinyMCE.
 
 ### Selecting specific version numbers
 
-Support for requesting specific versions of TinyMCE 5 will be available after TinyMCE 5 RC becomes stable. It should work in a similar way as Tinymce 4.  In the meantime, there are 3 release channels available, see the section below.
+Support for requesting specific versions of TinyMCE 5.0 should work in a similar way as Tinymce 4.  In the meantime, there are 3 release channels available, see the section below.
 
 ### dev, testing, and stable releases
 
@@ -53,12 +50,12 @@ This channel deploys the current release candidate for the `stable` channel. The
 
 #### stable release channel
 
-This channel deploys the latest release of TinyMCE that has passed our quality assurance process. The current version of TinyMCE available through the `stable` channel [can be found here](https://cloud.tinymce.com/5-stable/version.txt).
+This channel deploys the latest release of TinyMCE that has passed our quality assurance process. The current version of TinyMCE available through the the /5/ stable channel can be found [here](https://cloud.tinymce.com/5/version.txt). The TinyMCE 5 stable channel can be loaded from [this url](https://cloud.tinymce.com/5/tinymce.min.js.)
 
 ##### Example
 
 ```js
-<script src="https://cloud.tinymce.com/5-stable/tinymce.min.js?apiKey=your_API_key"></script>
+<script src="{{ site.cdnurl }}?apiKey=your_API_key"></script>
 ```
 
 ## Specifying the version of features/plugins deployed from Tiny Cloud
@@ -73,7 +70,7 @@ Use the URL query parameters to specify the version of each premium plugin. This
 ##### Example
 
 ```js
-<script src="https://cloud.tinymce.com/stable/plugins.min.js?apiKey=your_API_key&powerpaste=2.1.8"></script>
+<script src="https://cloud.tinymce.com/5/plugins.min.js?apiKey=your_API_key&powerpaste=2.1.8"></script>
 ```
 
 #### Spell Checker Pro
@@ -84,7 +81,7 @@ Use the URL query parameters to specify the version of each premium plugin. This
 ##### Example
 
 ```js
-<script src="https://cloud.tinymce.com/stable/plugins.min.js?apiKey=your_API_key&tinymcespellchecker=0.9.6"></script>
+<script src="https://cloud.tinymce.com/5/plugins.min.js?apiKey=your_API_key&tinymcespellchecker=1.0.0"></script>
 ```
 
 #### Accessibility Checker
@@ -95,7 +92,7 @@ Use the URL query parameters to specify the version of each premium plugin. This
 ##### Example
 
 ```js
-<script src="https://cloud.tinymce.com/stable/plugins.min.js?apiKey=your_API_key&a11ychecker=1.0.2"></script>
+<script src="https://cloud.tinymce.com/5/plugins.min.js?apiKey=your_API_key&a11ychecker=2.0.0"></script>
 ```
 
 #### Advanced Code Editor
@@ -106,7 +103,7 @@ Use the URL query parameters to specify the version of each premium plugin. This
 ##### Example
 
 ```js
-<script src="https://cloud.tinymce.com/stable/plugins.min.js?apiKey=your_API_key&advcode=1.0.2"></script>
+<script src="https://cloud.tinymce.com/5/plugins.min.js?apiKey=your_API_key&advcode=1.0.2"></script>
 ```
 
 #### Enhanced Media Embed
@@ -117,7 +114,7 @@ Use the URL query parameters to specify the version of each premium plugin. This
 ##### Example
 
 ```js
-<script src="https://cloud.tinymce.com/stable/plugins.min.js?apiKey=your_API_key&mediaembed=0.0.1"></script>
+<script src="https://cloud.tinymce.com/5/plugins.min.js?apiKey=your_API_key&mediaembed=2.0.0"></script>
 ```
 
 #### Link Checker
@@ -128,7 +125,7 @@ Use the URL query parameters to specify the version of each premium plugin. This
 ##### Example
 
 ```js
-<script src="https://cloud.tinymce.com/stable/plugins.min.js?apiKey=your_API_key&linkchecker=1.0.0"></script>
+<script src="https://cloud.tinymce.com/5/plugins.min.js?apiKey=your_API_key&linkchecker=1.0.0"></script>
 ```
 
 ## Specifying a self-hosted deployment of features/plugins
@@ -147,7 +144,7 @@ The "SDK" version lets the TinyMCE Plugin Manager know that you're not using Tin
 ##### Example
 
 ```js
-<script src="https://cloud.tinymce.com/stable/plugins.min.js?apiKey=your_API_key&powerpaste=sdk"></script>
+<script src="https://cloud.tinymce.com/5/plugins.min.js?apiKey=your_API_key&powerpaste=sdk"></script>
 ```
 
 #### Spell Checker Pro
@@ -157,7 +154,7 @@ The "SDK" version lets the TinyMCE Plugin Manager know that you're not using Tin
 ##### Example
 
 ```js
-<script src="https://cloud.tinymce.com/stable/plugins.min.js?apiKey=your_API_key&tinymcespellchecker=sdk"></script>
+<script src="https://cloud.tinymce.com/5/plugins.min.js?apiKey=your_API_key&tinymcespellchecker=sdk"></script>
 ```
 
 #### Accessibility Checker
@@ -167,7 +164,7 @@ The "SDK" version lets the TinyMCE Plugin Manager know that you're not using Tin
 ##### Example
 
 ```js
-<script src="https://cloud.tinymce.com/stable/plugins.min.js?apiKey=your_API_key&a11ychecker=sdk"></script>
+<script src="https://cloud.tinymce.com/5/plugins.min.js?apiKey=your_API_key&a11ychecker=sdk"></script>
 ```
 
 #### Advanced Code Editor
@@ -177,7 +174,7 @@ The "SDK" version lets the TinyMCE Plugin Manager know that you're not using Tin
 ##### Example
 
 ```js
-<script src="https://cloud.tinymce.com/stable/plugins.min.js?apiKey=your_API_key&advcode=sdk"></script>
+<script src="https://cloud.tinymce.com/5/plugins.min.js?apiKey=your_API_key&advcode=sdk"></script>
 ```
 
 #### Enhanced Media Embed
@@ -187,7 +184,7 @@ The "SDK" version lets the TinyMCE Plugin Manager know that you're not using Tin
 ##### Example
 
 ```js
-<script src="https://cloud.tinymce.com/stable/plugins.min.js?apiKey=your_API_key&mediaembed=sdk"></script>
+<script src="https://cloud.tinymce.com/5/plugins.min.js?apiKey=your_API_key&mediaembed=sdk"></script>
 ```
 
 #### Link Checker
@@ -197,7 +194,7 @@ The "SDK" version lets the TinyMCE Plugin Manager know that you're not using Tin
 ##### Example
 
 ```js
-<script src="https://cloud.tinymce.com/stable/plugins.min.js?apiKey=your_API_key&linkchecker=sdk"></script>
+<script src="https://cloud.tinymce.com/5/plugins.min.js?apiKey=your_API_key&linkchecker=sdk"></script>
 ```
 
 
@@ -205,5 +202,4 @@ The "SDK" version lets the TinyMCE Plugin Manager know that you're not using Tin
 
 ### Featuring declared editor and plugin versions
 
-Support for requesting specific versions of TinyMCE 5 and plugin versions will be available after TinyMCE 5 RC becomes stable.
-The process will work similar to Tinymce 4.  For now only the latest version is available via cloud.
+Support for requesting specific versions of TinyMCE 5.0 will work similar to TinyMCE 4.  Only the latest version is available via cloud.

@@ -8,8 +8,6 @@ description: Configure the editor's appearance, including menu and toolbar contr
 
 {% include configuration/branding.md %}
 
-{% include configuration/color-picker-callback.md %}
-
 {% include configuration/contextmenu.md %}
 
 {% include configuration/contextmenu_never_use_native.md %}
@@ -23,8 +21,6 @@ description: Configure the editor's appearance, including menu and toolbar contr
 {% include configuration/height.md %}
 
 {% include configuration/inline.md %}
-
-{% include configuration/insert-toolbar.md %}
 
 {% include configuration/max-height.md %}
 
@@ -44,9 +40,11 @@ description: Configure the editor's appearance, including menu and toolbar contr
 
 {% include configuration/removed-menuitems.md %}
 
-{% include configuration/resize.md %}
+{% include configuration/insert-toolbar.md %}
 
 {% include configuration/selection-toolbar.md %}
+
+{% include configuration/resize.md %}
 
 {% include configuration/skin-url.md %}
 

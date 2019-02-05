@@ -152,7 +152,7 @@ This option enables you to specify the default styles for inserted tables.
 
 **Type:** `Object`
 
-**Default Value:** `{ 'border-collapsed': 'collapse', 'width': '100%' }`
+**Default Value:** `{ 'border-collapse': 'collapse', 'width': '100%' }`
 
 ##### Example
 

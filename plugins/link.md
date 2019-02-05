@@ -45,29 +45,6 @@ tinymce.init({
     default_link_target: "_blank"
 });
 ```
-
-### `link_context_toolbar`
-
-By default links are defunct in TinyMCE, it is not possible to open them directly from the editor. Setting `link_context_toolbar` to *true* will enable context toolbar on every link, with shortcut functions to open the link, modify it or - remove. External links will be opened in a separate tab, while relative ones will cause scroll to a target within the editor (if the target is found).
-
-**Type:** `Boolean`
-
-**Default Value:** `false`
-
-**Possible Values:** `true`, `false`
-
-##### Example
-
-```js
-tinymce.init({
-  selector: "textarea",
-  plugins: "link",
-  menubar: "insert",
-  toolbar: "link",
-  link_context_toolbar: true
-});
-```
-
 ### `link_assume_external_targets`
 
 This option allows you to set whether TinyMCE should prompt the user to prepend a `http://` prefix if the supplied link does not already contain a protocol prefix.
@@ -111,6 +88,28 @@ tinymce.init({
     {title: 'Dog', value: 'dog'},
     {title: 'Cat', value: 'cat'}
   ]
+});
+```
+
+### `link_context_toolbar`
+
+By default links are defunct in TinyMCE, it is not possible to open them directly from the editor. Setting `link_context_toolbar` to *true* will enable context toolbar on every link, with shortcut functions to open the link, modify it or - remove. External links will be opened in a separate tab, while relative ones will cause scroll to a target within the editor (if the target is found).
+
+**Type:** `Boolean`
+
+**Default Value:** `false`
+
+**Possible Values:** `true`, `false`
+
+##### Example
+
+```js
+tinymce.init({
+  selector: "textarea",
+  plugins: "link",
+  menubar: "insert",
+  toolbar: "link",
+  link_context_toolbar: true
 });
 ```
 
@@ -185,6 +184,49 @@ tinymce.init({
 });
 ```
 
+### `link_title`
+
+This options allows you disable the link `title` input field in the `link` dialog.
+
+**Type:** `Boolean`
+
+**Default Value:** `true`
+
+**Possible Values:** `true`, `false`
+
+##### Example
+
+```js
+tinymce.init({
+  selector: "textarea",  // change this value according to your HTML
+  plugins: "link",
+  menubar: "insert",
+  toolbar: "link",
+  link_title: false
+});
+```
+
+### `rel_list`
+
+This option lets you specify a predefined list of values for the `link` dialog. These values gets applied to the `rel` attribute.
+
+**Type:** `String`
+
+##### Example
+
+```js
+tinymce.init({
+  selector: "textarea",  // change this value according to your HTML
+  plugins: "link",
+  menubar: "insert",
+  toolbar: "link",
+  rel_list: [
+    {title: 'Lightbox', value: 'lightbox'},
+    {title: 'Table of contents', value: 'toc'}
+  ]
+});
+```
+
 ### `target_list`
 
 The `target_list` lets you specify a predefined list of targets for the `link` dialog. This defaults to a dialog containing the options `_self` and `_blank`.
@@ -219,48 +261,5 @@ tinymce.init({
   menubar: "insert",
   toolbar: "link",
   target_list: false
-});
-```
-
-### `rel_list`
-
-This option lets you specify a predefined list of values for the `link` dialog. These values gets applied to the `rel` attribute.
-
-**Type:** `String`
-
-##### Example
-
-```js
-tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "link",
-  menubar: "insert",
-  toolbar: "link",
-  rel_list: [
-    {title: 'Lightbox', value: 'lightbox'},
-    {title: 'Table of contents', value: 'toc'}
-  ]
-});
-```
-
-### `link_title`
-
-This options allows you disable the link `title` input field in the `link` dialog.
-
-**Type:** `Boolean`
-
-**Default Value:** `true`
-
-**Possible Values:** `true`, `false`
-
-##### Example
-
-```js
-tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "link",
-  menubar: "insert",
-  toolbar: "link",
-  link_title: false
 });
 ```

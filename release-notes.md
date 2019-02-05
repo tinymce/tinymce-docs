@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Release notes for TinyMCE 5.0 RC
-title_nav: Release notes for TinyMCE 5.0 RC
+title: Release notes for TinyMCE 5.0 
+title_nav: Release notes for TinyMCE 5.0 
 keywords: releasenotes newfeatures deleted technologypreview bugfixes knownissues
 ---
 
@@ -13,9 +13,9 @@ keywords: releasenotes newfeatures deleted technologypreview bugfixes knownissue
 
 {% include release-notes/new-features.md %}
 
-## Technology preview
+<!--## Technology preview
 
-{% include release-notes/tech-preview.md %}
+{% include release-notes/tech-preview.md %}-->
 
 ## Removed & deprecated features
 

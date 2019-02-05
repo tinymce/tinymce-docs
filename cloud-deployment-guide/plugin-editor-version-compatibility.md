@@ -12,10 +12,20 @@ Use the following matrix in conjunction with the optional parameters for specify
 
 > Important: Ensure the plugins are supported in your editor version when deploying [premium plugins *only* via Tiny Cloud]({{ site.baseurl }}/cloud-deployment-guide/features-only)
 
-|   | [PowerPaste]({{ site.baseurl }}/plugins/powerpaste/) | [Spell Checker]({{ site.baseurl }}/plugins/tinymcespellchecker/) | [Accessibility Checker]({{ site.baseurl }}/plugins/a11ychecker/) | Mentions | [Advanced Code Editor]({{ site.baseurl }}/plugins/advcode/) | MoxieManager<br/>(SDK ONLY) | [Enhanced Media Embed]({{ site.baseurl }}/plugins/mediaembed/) | [Link Checker]({{ site.baseurl }}/plugins/linkchecker/) |
-|  ------ | :------: | :------: | :------: | ------ | :------: | :------: | :------: | :------: |
-|  5 | Y | Y | Y | Y | Y | Y | Y | Y |
-|  4 | Y | Y | Y | Y | Y | Y | N | N |
-|   |  |  |  |  |  |  |  |  |
+| **Plugins** | **TinyMCE 4.x** | **TinyMCE 5.x** |
+| :-----: | :---------: | :---------: |
+| [Accessibility Checker]({{ site.baseurl }}/plugins/a11ychecker/) | Y | Y |
+| [Advanced Code Editor]({{ site.baseurl }}/plugins/advcode/) | Y | Y |
+| [Enhanced Media Embed]({{ site.baseurl }}/plugins/mediaembed/) | Y | Y |
+| [Link Checker]({{ site.baseurl }}/plugins/linkchecker/) | Y | Y |
+| [Mentions]({{site.baseurl}}/plugins/mentions) | Y | Y |
+| [PowerPaste]({{ site.baseurl }}/plugins/powerpaste/) | Y | Y |
+| [Spell Checker Pro]({{ site.baseurl }}/plugins/tinymcespellchecker/) | Y | Y |
+| [Tiny Drive]({{site.baseurl}}/plugins/drive) | Y | Y |
+| [Tiny Comments]({{site.baseurl}}/plugins/comments) | Y | Y |
+| [Page Embed]({{site.baseurl}}/plugins/pageembed) | N | Y |
+| [Permanent Pen]({{site.baseurl}}/plugins/permanentpen) | N | Y |
+| [Format Painter]({{site.baseurl}}/plugins/formatpainter) | Y | Y |
+| [MoxieManager]({{site.baseurl}}/plugins/moxiemanager)<br/>(SDK ONLY) | Y | Y |
 
 *N1* - For this combination of TinyMCE and Spellchecking, the [spellchecker_dialog mode]({{ site.baseurl }}/plugins/tinymcespellchecker/#spellchecker_dialog) is unavailable.

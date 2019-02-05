@@ -45,7 +45,7 @@ The following algorithms are supported for the JWT header/signature:
 
 All of these algorithms use the private RSA key to sign the JWT, but vary in how they execute. `RS256`, the most widely supported algorithm, features in following code examples.
 
-### Claims:
+### Claims
 
 * **sub** - _(required)_ Unique string to identify the user. This can be a database ID, hashed email address, or similar identifier.
 * **name** - _(required)_ Full name of the user that will be used for presentation inside Tiny Drive. When the user uploads a file, this name is presented as the creator of that file.
@@ -144,7 +144,7 @@ app.post('/jwt', function (req, res) {
 app.listen(3000);
 ```
 
-## Tiny Drive specific JWT claims:
+## Tiny Drive specific JWT claims
 
 **sub** - (required) Unique string to identify the user. This can be a database id, hashed email address, or similar identifier.
 

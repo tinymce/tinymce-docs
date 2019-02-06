@@ -1,10 +1,6 @@
 <div class="new-header">
     {% include notification.html %}
-    {% if page.url contains '/demo/' %}
-    {% include_remote {{ site.origin }}/_docs/menu_demo.html css="body > *" %}
-    {% else %}
     {% include_remote {{ site.origin }}/_docs/menu.html css="body > *" %}
-    {% endif %}
 
     <div class="top-bar">
         <div>

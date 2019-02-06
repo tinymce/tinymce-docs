@@ -4,7 +4,7 @@ This option allows you to specify the language that TinyMCE's user interface wil
 
 If you wish to use a language other than English, please follow these steps:
 
-1. Download the TinyMCE 4 language pack [from here](/language/tinymce4x_languages.zip).
+1. Download the TinyMCE 4 language pack [from here](https://www.tiny.cloud/docs-4x/language/tinymce4x_languages.zip).
 2. Unpack the language `.js` file into your `tinymce/langs` folder.
 3. Set the [`language`]({{ site.baseurl }}/configure/localization/#language) option in your TinyMCE configuration to the language code in the list below the example.
 4. Confirm that the language has been set successfully by loading TinyMCE.

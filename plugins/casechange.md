@@ -54,11 +54,11 @@ The toolbar button will retain the last applied type of case making it simple to
 
 ### `casechange_title_case_minors`
 
-When using Title Case this option makes it possible to configure what words not to capitalize. By default, all words not specified in this ruleset will be capitalized.
+When using Title Case this option makes it possible to configure what words not to capitalize. All words not specified by this ruleset will be capitalized.
 
-**Type:** `String`
+**Type:** `Array`
 
-**Default:** *A ruleset base on Wikipedia Title Case*
+**Default:** *A ruleset based on [Wikipedia Title Case](https://titlecaseconverter.com/rules/#WP)*
 
 ##### Example
 
@@ -67,6 +67,11 @@ tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "casechange",
   toolbar: "casechange",
-  casechange_title_case_minors: [ 'and', 'with', 'of', 'for' ]
+  casechange_title_case_minors: [
+    'at', 'by', 'in', 'of', 'on', 'up', 'to', 'en', 're', 'vs',
+    'but', 'off', 'out', 'via', 'bar', 'mid', 'per', 'pro', 'qua', 'til',
+    'from', 'into', 'unto', 'with', 'amid', 'anit', 'atop', 'down', 'less', 'like', 'near', 'over', 'past', 'plus', 'sans', 'save', 'than', 'thru', 'till', 'upon',
+    'for', 'and', 'nor', 'but', 'or', 'yet', 'so'
+  ]
 });
 ```

@@ -17,9 +17,9 @@ This guide assumes you have basic understanding of [Node](http://nodejs.org) and
 
 Skin for TinyMCE 5 are written in [less](http://lesscss.org), a popular CSS preprocessor. Making a skin primarily involves modifying variables which you can consider a kind of API. You are not supposed to modify or override CSS rules, instead you override the less variables in your skin files. This makes updating TinyMCE much easier.
 
-1. Download the [**LINK MISSING** TinyMCE skin tools](#).
+1. Download the [TinyMCE skin tools](https://github.com/tinymce/oxide).
 2. Install all dependencies with `npm install`.
-3. Issue the `gulp` command which also spins up a webserver for previewing the files (If you just want to build the files, use `gulp build`) .
+3. Issue the `npm run start` command which also spins up a webserver for previewing the files (If you just want to build the files, use `npm run build`) .
 4. Point your web browser of choice to the address shown in the terminal, usually `localhost:3000`.
 
 You now have the development environment set up and are ready to get to work.

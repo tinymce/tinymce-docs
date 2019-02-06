@@ -20,7 +20,7 @@ This URL specifies the latest and quality assured release of TinyMCE.
 
 ### Selecting specific version numbers
 
-Support for requesting specific versions of TinyMCE 5.0 should work in a similar way as Tinymce 4.  In the meantime, there are 3 release channels available, see the section below.
+Support for requesting specific versions of TinyMCE 5.0 should work same as Tinymce 4.  In the meantime, there are three release channels available, see the section below.
 
 ### dev, testing, and stable releases
 
@@ -50,7 +50,7 @@ This channel deploys the current release candidate for the `stable` channel. The
 
 #### stable release channel
 
-This channel deploys the latest release of TinyMCE that has passed our quality assurance process. The current version of TinyMCE available through the the /5/ stable channel can be found [here](https://cloud.tinymce.com/5/version.txt). The TinyMCE 5 stable channel can be loaded from [this url](https://cloud.tinymce.com/5/tinymce.min.js.)
+This channel deploys the latest release of TinyMCE that has passed our quality assurance process. The current version of TinyMCE available through the `/5` stable channel can be found [here](https://cloud.tinymce.com/5/version.txt). The TinyMCE 5 stable channel can be loaded from [this url](https://cloud.tinymce.com/5/tinymce.min.js.)
 
 ##### Example
 
@@ -62,6 +62,72 @@ This channel deploys the latest release of TinyMCE that has passed our quality a
 
 Use the URL query parameters to specify the version of each premium plugin. This is used when deployment is by the [TinyMCE editor and premium plugins via Tiny Cloud]({{ site.baseurl }}/cloud-deployment-guide/editor-and-features) or deploying [only premium plugins from Tiny Cloud]({{ site.baseurl }}/cloud-deployment-guide/features-only).
 
+#### Mentions
+
+* [Developer documentation]({{ site.baseurl }}/plugins/mentions/)
+* [Supported versions](https://plugins.tinymce.com/versions/mentions)
+
+##### Example
+
+```js
+<script src="https://cloud.tinymce.com/5/plugins.min.js?apiKey=your_API_key&mentions=2.0.0"></script>
+```
+
+#### Tiny Drive
+
+* [Developer documentation]({{ site.baseurl }}/plugins/drive/)
+* [Supported versions](https://plugins.tinymce.com/versions/tinydrive)
+
+##### Example
+
+```js
+<script src="https://cloud.tinymce.com/5/plugins.min.js?apiKey=your_API_key&tinydrive=1.1.0"></script>
+```
+
+#### Comments 2.0
+
+* [Developer documentation]({{ site.baseurl }}/plugins//comments/)
+* [Supported versions](https://plugins.tinymce.com/versions/tinycomments)
+
+##### Example
+
+```js
+<script src="https://cloud.tinymce.com/5/plugins.min.js?apiKey=your_API_key&tinycomments=2.0.0"></script>
+```
+
+#### Page Embed
+
+* [Developer documentation]({{ site.baseurl }}/plugins/pageembed/)
+* [Supported versions](https://plugins.tinymce.com/versions/pageembed)
+
+##### Example
+
+```js
+<script src="https://cloud.tinymce.com/5/plugins.min.js?apiKey=your_API_key&pageembed=1.0.0"></script>
+```
+
+#### Permanent Pen
+
+* [Developer documentation]({{ site.baseurl }}/plugins/permanentpen/)
+* [Supported versions](https://plugins.tinymce.com/versions/permanentpen)
+
+##### Example
+
+```js
+<script src="https://cloud.tinymce.com/5/plugins.min.js?apiKey=your_API_key&permanentpen=1.0.0"></script>
+```
+
+#### Format Painter
+
+* [Developer documentation]({{ site.baseurl }}/plugins/formatpainter/)
+* [Supported versions](https://plugins.tinymce.com/versions/formatpainter)
+
+##### Example
+
+```js
+<script src="https://cloud.tinymce.com/5/plugins.min.js?apiKey=your_API_key&formatpainter=1.0.0"></script>
+```
+
 #### PowerPaste
 
 * [Developer documentation]({{ site.baseurl }}/plugins/powerpaste)
@@ -70,7 +136,7 @@ Use the URL query parameters to specify the version of each premium plugin. This
 ##### Example
 
 ```js
-<script src="https://cloud.tinymce.com/5/plugins.min.js?apiKey=your_API_key&powerpaste=2.1.8"></script>
+<script src="https://cloud.tinymce.com/5/plugins.min.js?apiKey=your_API_key&powerpaste=4.0.0"></script>
 ```
 
 #### Spell Checker Pro
@@ -103,7 +169,7 @@ Use the URL query parameters to specify the version of each premium plugin. This
 ##### Example
 
 ```js
-<script src="https://cloud.tinymce.com/5/plugins.min.js?apiKey=your_API_key&advcode=1.0.2"></script>
+<script src="https://cloud.tinymce.com/5/plugins.min.js?apiKey=your_API_key&advcode=2.0.0"></script>
 ```
 
 #### Enhanced Media Embed
@@ -125,7 +191,7 @@ Use the URL query parameters to specify the version of each premium plugin. This
 ##### Example
 
 ```js
-<script src="https://cloud.tinymce.com/5/plugins.min.js?apiKey=your_API_key&linkchecker=1.0.0"></script>
+<script src="https://cloud.tinymce.com/5/plugins.min.js?apiKey=your_API_key&linkchecker=2.0.0"></script>
 ```
 
 ## Specifying a self-hosted deployment of features/plugins
@@ -136,6 +202,65 @@ If you're deploying [only premium plugins from Tiny Cloud]({{ site.baseurl }}/cl
 
 The "SDK" version lets the TinyMCE Plugin Manager know that you're not using Tiny Cloud version of a particular plugin and that it shouldn't serve the plugin from Tiny Cloud. It also won't display any warning or error messages if you're not entitled to it.
 
+#### Mentions
+
+* [Developer documentation]({{ site.baseurl }}/plugins/mentions/)
+
+##### Example
+
+```js
+<script src="https://cloud.tinymce.com/5/plugins.min.js?apiKey=your_API_key&mentions=sdk"></script>
+```
+
+#### Tiny Drive
+
+* [Developer documentation]({{ site.baseurl }}/plugins/drive/)
+
+##### Example
+
+```js
+<script src="https://cloud.tinymce.com/5/plugins.min.js?apiKey=your_API_key&tinydrive=sdk"></script>
+```
+
+#### Comments 2.0
+
+* [Developer documentation]({{ site.baseurl }}/plugins//comments/)
+
+##### Example
+
+```js
+<script src="https://cloud.tinymce.com/5/plugins.min.js?apiKey=your_API_key&tinycomments=sdk"></script>
+```
+
+#### Page Embed
+
+* [Developer documentation]({{ site.baseurl }}/plugins/pageembed/)
+
+##### Example
+
+```js
+<script src="https://cloud.tinymce.com/5/plugins.min.js?apiKey=your_API_key&pageembed=sdk"></script>
+```
+
+#### Permanent Pen
+
+* [Developer documentation]({{ site.baseurl }}/plugins/permanentpen/)
+
+##### Example
+
+```js
+<script src="https://cloud.tinymce.com/5/plugins.min.js?apiKey=your_API_key&permanentpen=sdk"></script>
+```
+
+#### Format Painter
+
+* [Developer documentation]({{ site.baseurl }}/plugins/formatpainter/)
+
+##### Example
+
+```js
+<script src="https://cloud.tinymce.com/5/plugins.min.js?apiKey=your_API_key&formatpainter=sdk"></script>
+```
 
 #### PowerPaste
 
@@ -202,4 +327,4 @@ The "SDK" version lets the TinyMCE Plugin Manager know that you're not using Tin
 
 ### Featuring declared editor and plugin versions
 
-Support for requesting specific versions of TinyMCE 5.0 will work similar to TinyMCE 4.  Only the latest version is available via cloud.
+Support for requesting specific versions of TinyMCE 5.0 will work similar to TinyMCE 4.  Only the latest version is available via the cloud.

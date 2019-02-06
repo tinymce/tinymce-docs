@@ -32,6 +32,12 @@ There are more than 40 open source plugins that enhance the editing experience i
 
 Extend the [TinyMCE configuration]({{ site.baseurl }}/configure/) to include any additional purchased plugins and associated toolbar and menu items. Refer to the following enablement guides for more information:
 
+* [Mentions]({{ site.baseurl }}/plugins/mentions/)
+* [Tiny Drive]({{ site.baseurl }}/plugins/drive/)
+* [Comments 2.0]({{ site.baseurl }}/plugins//comments/)
+* [Page Embed]({{ site.baseurl }}/plugins/pageembed/)
+* [Permanent Pen]({{ site.baseurl }}/plugins/permanentpen/)
+* [Format Painter]({{ site.baseurl }}/plugins/formatpainter/)
 * [PowerPaste]({{ site.baseurl }}/plugins/powerpaste/)
 * [Spell Checker]({{ site.baseurl }}/plugins/tinymcespellchecker/)
 
@@ -41,6 +47,7 @@ Extend the [TinyMCE configuration]({{ site.baseurl }}/configure/) to include any
 
 > Note: Configuration of the `imagetools_cors_hosts` and `imagetools_proxy` properties occurrs automatically.
 
+* [Moxie Manager]({{ site.baseurl }}/plugins/moxiemanager/)
 * [Accessibility Checker]({{ site.baseurl }}/plugins/a11ychecker/)
 * [Advanced Code Editor]({{ site.baseurl }}/plugins/advcode/)
 * [Enhanced Media Embed]({{ site.baseurl }}/plugins/mediaembed/)
@@ -86,6 +93,12 @@ Reference [external_plugins]({{ site.baseurl }}/configure/integration-and-setup/
 
 Extend the [TinyMCE configuration]({{ site.baseurl }}/configure/) to include any additional purchased plugins and associated toolbar and menu items. Refer to the following enablement guides for more information:
 
+* [Mentions]({{ site.baseurl }}/plugins/mentions/)
+* [Tiny Drive]({{ site.baseurl }}/plugins/drive/)
+* [Comments 2.0]({{ site.baseurl }}/plugins//comments/)
+* [Page Embed]({{ site.baseurl }}/plugins/pageembed/)
+* [Permanent Pen]({{ site.baseurl }}/plugins/permanentpen/)
+* [Format Painter]({{ site.baseurl }}/plugins/formatpainter/)
 * [Powerpaste]({{ site.baseurl }}/plugins/powerpaste/)
 * [Spell Checker]({{ site.baseurl }}/plugins/tinymcespellchecker/)
 
@@ -95,6 +108,7 @@ Extend the [TinyMCE configuration]({{ site.baseurl }}/configure/) to include any
 
 > Note: Configuration of the `imagetools_cors_hosts` and `imagetools_proxy` properties occurrs automatically.
 
+* [Moxie Manager]({{ site.baseurl }}/plugins/moxiemanager/)
 * [Accessibility Checker]({{ site.baseurl }}/plugins/a11ychecker/)
 * [Advanced Code Editor]({{ site.baseurl }}/plugins/advcode/)
 * [Enhanced Media Embed]({{ site.baseurl }}/plugins/mediaembed/)

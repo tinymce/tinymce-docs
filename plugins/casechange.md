@@ -7,7 +7,10 @@ keywords: case capitalization capitalize lowercase uppercase
 controls: toolbar button, menu item
 ---
 
-The Case Change plugin allows a user to change the case or capitalization of text with a few simple clicks.
+The Case Change plugin allows a user to change the case or capitalization of text with a few simple clicks. Three types of formats are available:
+* lowercase
+* UPPERCASE
+* Title Case
 
 ### Configuring the Case Change split toolbar button
 
@@ -45,7 +48,7 @@ tinymce.init({
 
 2. Select the type of case you wish to apply thorugh the toolbar dropdown or the menu item.
 
-The toolbar button will retain the last applied type of case making it simpler to apply it multiple times.
+The toolbar button will retain the last applied type of case making it simple to apply it multiple times.
 
 ## Options
 

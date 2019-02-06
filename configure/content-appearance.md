@@ -10,8 +10,6 @@ description: Configure the appearance of content inside TinyMCe's editable area.
 
 {% include configuration/body-id.md %}
 
-{% include configuration/color-picker.md %}
-
 {% include configuration/content-css.md %}
 
 {% include configuration/content-css-cors.md %}

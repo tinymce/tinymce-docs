@@ -18,7 +18,7 @@ These configuration options affect the execution of the `mentions` plugin. The m
 
 ### `mentions_fetch`
 
-This option lets you request a list of uses from your server that match a search query. The callback gets passed two parameters: one is the search query object, the other is the success callback to execute with the results. The query object has a term property that contains what the user has typed after the "@" sign. The success call should contain an array of users with the required properties "id", "name" and "fullName".
+This option lets you request a list of uses from your server that match a search query. The callback gets passed two parameters: one is the search query object, the other is the success callback to execute with the results. The query object has a term property that contains what the user has typed after the "@" sign. The success call should contain an array of users with the required properties "id" and "name".
 
 **Type:** `function`
 
@@ -27,33 +27,32 @@ This option lets you request a list of uses from your server that match a search
 ##### Example
 
 ```js
+var usersRequest = null;
 tinymce.init({
   selector: "textarea",
   plugins: "mentions",
   mentions_fetch: function (query, success) {
-	//Fetch your full user list from somewhere
-	var users = getUserDataFromTheServer();
+    // Fetch your full user list from the server and cache locally
+    if (usersRequest === null) {
+      usersRequest = fetch('/users');
+    }
+    usersRequest.then(function(users) {
+      // query.term is the text the user typed after the '@'
+      users = users.filter(function (user) {
+        return user.name.indexOf(query.term.toLowerCase()) !== -1;
+      });
 
-	//query.term is the text the user typed after the '@'
-	users = users.filter(function (user) {
-	  return user.name.indexOf(query.term.toLowerCase()) === 0;
-	});
-
-	users = users.slice(0, 10);
-	/*
-		Where the user object must contain these properties
-		users: {
-			id: string,
-			name: string,
-			fullName: string,
-			image: string_url
-		}
-	*/
-  success(users);
+      users = users.slice(0, 10);
+      
+      // Where the user object must contain the properties `id` and `name`
+      // but you could additionally include anything else you deem useful.
+      success(users);
+    });
+  }
 });
 ```
 
-**Note:**  *The values returned in the users array for "id", "name", and "fullName" all need to be* `String` *values*
+**Note:**  *The values returned in the users array for "id" and "name" all need to be* `String` *values*
 
 ### `mentions_menu_complete`
 
@@ -70,33 +69,132 @@ tinymce.init({
   selector: "textarea",
   plugins: "mentions",
   mentions_selector: 'span.mymention',
-  mentions_menu_complete: function (editor, userinfo) {
-	var span = editor.getDoc().createElement('span');
-	span.className = 'mymention';
-	span.appendChild(editor.getDoc().createTextNode('@' + userinfo.name));
-	return span;
+  mentions_menu_complete: function (editor, userInfo) {
+    var span = editor.getDoc().createElement('span');
+    span.className = 'mymention';
+    // store the user id in the mention so it can be identified later
+    span.setAttribute('data-mention-id', userInfo.id);
+    span.appendChild(editor.getDoc().createTextNode('@' + userInfo.name));
+    return span;
   }
 });
 ```
 
 ### `mentions_menu_hover`
 
-This option is no longer supported in Tiny 5.0
+This option enables you to provide an element to present next to the menu item being hovered. This lets you do custom UIs for presenting user information.
 
+**Type:** `function`
+
+**Default Value:** `none`
+
+##### Example
+
+```js
+var userRequest = {};
+tinymce.init({
+  selector: "textarea",
+  plugins: "mentions",
+  mentions_menu_hover: function (userInfo, success) {
+    // request more information about the user from the server and cache it locally
+    if (!userRequest[userInfo.id]) {
+      userRequest[userInfo.id] = fetch('/user?id=' + userInfo.id);
+    }
+    userRequest[userInfo.id].then(function(userDetail) {
+      var div = document.createElement('div');
+
+      div.innerHTML = (
+      '<div>' +
+        '<h1>' + userDetail.fullName + '</h1>' +
+        '<img src="' + userDetail.image + '" ' +
+            'style="width: 50px; height: 50px; float: left;"/>' +
+        '<p>' + userDetail.description + '</p>' +
+      '</div>'
+      );
+
+      success(div);
+    });
+  }
+});
+```
 
 ### `mentions_selector`
 
-This option is no longer supported in Tiny 5.0
+This option enables you to provide a custom CSS selector that should match the element created using `mentions_menu_complete`. This enables the plugin to find existing mentions. The callback takes two parameters: the editor instance and the userInfo object.
+
+**Type:** `function`
+
+**Default Value:** `none`
+
+##### Example
+
+```js
+tinymce.init({
+  selector: "textarea",
+  plugins: "mentions",
+  mentions_selector: 'span.mymention',
+  mentions_menu_complete: function (editor, userInfo) {
+    var span = editor.getDoc().createElement('span');
+    span.className = 'mymention';
+    span.setAttribute('data-mention-id', userInfo.id);
+    span.appendChild(editor.getDoc().createTextNode('@' + userInfo.name));
+    return span;
+  }
+});
+```
 
 ### `mentions_select`
 
-This option is no longer supported in Tiny 5.0
+This option enables you to provide an element to be presented below a hovered mention on the page. This could include more details about the user.
+
+**Type:** `function`
+
+**Default Value:** `none`
+
+##### Example
+
+```js
+var userRequest = {};
+tinymce.init({
+  selector: "textarea",
+  plugins: "mentions",
+  mentions_selector: 'span.mymention',
+  mentions_menu_complete: function (editor, userInfo) {
+    var span = editor.getDoc().createElement('span');
+    span.className = 'mymention';
+    span.setAttribute('data-mention-id', userInfo.id);
+    span.appendChild(editor.getDoc().createTextNode('@' + userInfo.name));
+    return span;
+  },
+  mentions_select: function (mention, success) {
+    // `mention` is the element we previously created with `mentions_menu_complete`
+    // in this case we have chosen to store the id as an attribute
+    var id = mention.getAttribute('data-mention-id');
+    // request more information about the user from the server and cache locally
+    if (!userRequest[id]) {
+      userRequest[id] = fetch('/user?id=' + id);
+    }
+    userRequest[id].then(function(userDetail) {
+      var div = document.createElement('div');
+      div.innerHTML = (
+        '<div>' +
+        '<h1>' + userDetail.fullName + '</h1>' +
+        '<img src="' + userDetail.image + '" ' +
+            'style="width: 50px; height: 50px; float: left;"/>' +
+        '<p>' + userDetail.description + '</p>' +
+        '</div>'
+      );
+      success(div);
+    });
+  }
+});
+```
 
 ## API
 
 ### `getUsers`
 
-You can retrieve the inserted users by calling `getUsers` on the plugin instance object of an editor. This will return an array of users that the author `@mentioned` in the content, but only the ones currently present in the content and will exclude any existing before the content was created. It will also exclude duplicate inserts by using the `userinfo` objects id property.
+You can retrieve the inserted users by calling `getUsers` on the plugin instance object of an editor. This will return an array of users that the author `@mentioned` in the content, but only the ones currently present in the content and will exclude any existing before the content was created. It will also exclude duplicate inserts by using the `userInfo` objects id property.
 
 ##### Example
 

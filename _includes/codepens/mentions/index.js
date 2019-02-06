@@ -1,15 +1,18 @@
-var fakeMentionsServer = function (term, success) {
-  /*
-    Fake mentions server, implementations will vary however data passed to success must be an object with these properties
 
-    success({
-      id: string,
-      name: string,
-      fullName: string,
-      image: string_url
-    })
+/* 
+** This is to simulate requesting information from a server.
+**
+** It has 2 functions:
+** fetchUsers() - returns a complete list of users' ids and names.
+** fetchUser(id) - returns the full information about a single user id.
+**
+** Both of these functions have a slight delay to simulate a server request.
+*/
+var fakeServer = (function () {
+  /* Use tinymce's Promise shim */
+  var Promise = tinymce.util.Promise;
 
-  */
+  /* Some user names for our fake server */
   var userNames = [
     'Terry Green', 'Edward Carroll', 'Virginia Turner', 'Alexander Schneider', 'Gary Vasquez', 'Randy Howell',
     'Katherine Moore', 'Betty Washington', 'Grace Chapman', 'Christina Nguyen', 'Danielle Rose', 'Thomas Freeman',
@@ -78,6 +81,7 @@ var fakeMentionsServer = function (term, success) {
     'Matthew Bryant', 'Tyler Rose', 'Mildred Delgado', 'Emma Peters', 'Walter Delgado', 'Lauren Gilbert', 'Christopher Romero'
   ];
 
+  /* some user profile images for our fake server */
   var images = [
     'camilarocun', 'brianmichel', 'absolutehype', '4l3d', 'lynseybrowne', 'hi_kendall', '4ae78e7058d2434', 'yusuf_y7',
     'beauty__tattoos', 'mehrank36176270', 'fabriziocuscini', 'hassaminian', 'mediajorge', 'alexbienz', 'eesates', 'donjain',
@@ -88,53 +92,148 @@ var fakeMentionsServer = function (term, success) {
     'tweetubhai', 'avonelink', 'ahmedkojito', 'piripipirics', 'dmackerman', 'markcipolla'
   ];
 
-  var users = userNames.map(function (fullName) {
-    var name = fullName.toLowerCase().replace(/ /g, '');
+  /* some user profile descriptions for our fake server */
+  var descriptions = [
+    'I like to work hard, play hard!',
+    'I drink like a fish, that is a fish that drinks coffee.',
+    'OutOfCheeseError: Please reinstall universe.',
+    'Do not quote me.',
+    'No one reads these things right?'
+  ];
 
-    var image = 'https://s3.amazonaws.com/uifaces/faces/twitter/' + images[Math.round(images.length * Math.random())] + '/128.jpg';
+  /* This represents a database of users on the server */
+  var userDb = {};
+  userNames.map(function (fullName) {
+    var name = fullName.toLowerCase().replace(/ /g, '');
+    var description = descriptions[Math.floor(descriptions.length * Math.random())];
+    var image = 'https://s3.amazonaws.com/uifaces/faces/twitter/' + images[Math.floor(images.length * Math.random())] + '/128.jpg';
     return {
       id: name,
       name: name,
       fullName: fullName,
+      description: description,
       image: image
     };
+  }).forEach(function(user) {
+    userDb[user.id] = user;
   });
 
-  var findUser = function (term, success) {
-    /* demo string search */
-    var matches = users.filter(function (user) {
-      return user.name.indexOf(term.toLowerCase()) !== -1;
+  /* This represents getting the complete list of users from the server with only basic details */
+  var fetchUsers = function() {
+    return new Promise(function(resolve, _reject) {
+      /* simulate a server delay */
+      setTimeout(function() {
+        var users = Object.keys(userDb).map(function(id) {
+          return {
+            id: id,
+            name: userDb[id].name,
+          };
+        });
+        resolve(users);
+      }, 500);
     });
-
-    /* fake async server delay */
-    var timeout = 30;
-
-    window.setTimeout(function () {
-      success(matches);
-    }, timeout);
   };
 
-  return findUser(term, success);
-};
+  /* This represents requesting all the details of a single user from the server database */
+  var fetchUser = function(id) {
+    return new Promise(function(resolve, reject) {
+      /* simulate a server delay */
+      setTimeout(function() {
+        if (Object.prototype.hasOwnProperty.call(userDb, id)) {
+          resolve(userDb[id]);
+        }
+        reject('unknown user id "' + id + '"');
+      }, 300);
+    });
+  };
+  
+  return {
+    fetchUsers: fetchUsers,
+    fetchUser: fetchUser
+  };
+})();
 
-var mentions_menu_complete = function (editor, userinfo) {
-  var x = document.createElement('div');
-
-  x.innerHTML = '<span style="color: green" class="mentionsmentionsmentions">@' + userinfo.name + '</span>';
-
-  return x.childNodes[0];
-};
+/* These are "local" caches of the data returned from the fake server */
+var usersRequest = null;
+var userRequest = {};
 
 var mentions_fetch = function (query, success) {
-  fakeMentionsServer(query.term, success);
+  /* Fetch your full user list from somewhere */
+  if (usersRequest === null) {
+    usersRequest = fakeServer.fetchUsers();
+  }
+  usersRequest.then(function(users) {
+    /* query.term is the text the user typed after the '@' */
+    users = users.filter(function (user) {
+      return user.name.indexOf(query.term.toLowerCase()) !== -1;
+    });
+
+    users = users.slice(0, 10);
+    
+    /* Where the user object must contain the properties `id` and `name`
+       but you could additionally include anything else you deem useful. */
+    success(users);
+  });
+};
+
+var mentions_menu_hover = function (userInfo, success) {
+  /* request more information about the user from the server and cache it locally */
+  if (!userRequest[userInfo.id]) {
+    userRequest[userInfo.id] = fakeServer.fetchUser(userInfo.id);
+  }
+  userRequest[userInfo.id].then(function(userDetail) {
+    var div = document.createElement('div');
+
+    div.innerHTML = (
+    '<div class="card">' +
+      '<h1>' + userDetail.fullName + '</h1>' +
+      '<img class="avatar" src="' + userDetail.image + '"/>' +
+      '<p>' + userDetail.description + '</p>' +
+    '</div>'
+    );
+
+    success(div);
+  });
+};
+
+var mentions_menu_complete = function (editor, userInfo) {
+  var span = editor.getDoc().createElement('span');
+  span.className = 'mymention';
+  span.setAttribute('data-mention-id', userInfo.id);
+  span.appendChild(editor.getDoc().createTextNode('@' + userInfo.name));
+  return span;
+};
+
+var mentions_select = function (mention, success) {
+  /* `mention` is the element we previously created with `mentions_menu_complete`
+     in this case we have chosen to store the id as an attribute */
+  var id = mention.getAttribute('data-mention-id');
+  /* request more information about the user from the server and cache it locally */
+  if (!userRequest[id]) {
+    userRequest[id] = fakeServer.fetchUser(id);
+  }
+  userRequest[id].then(function(userDetail) {
+    var div = document.createElement('div');
+    div.innerHTML = (
+      '<div class="card">' +
+      '<h1>' + userDetail.fullName + '</h1>' +
+      '<img class="avatar" src="' + userDetail.image + '"/>' +
+      '<p>' + userDetail.description + '</p>' +
+      '</div>'
+    );
+    success(div);
+  });
 };
 
 tinymce.init({
   selector: "textarea#mentions",
   plugins: "mentions",
+  content_style: ".mymention{ color: green; }",
 
-  mentions_selector: '.mentionsmentionsmentions',
+  mentions_selector: '.mymention',
   mentions_fetch: mentions_fetch,
-  mentions_menu_complete: mentions_menu_complete
+  mentions_menu_hover: mentions_menu_hover,
+  mentions_menu_complete: mentions_menu_complete,
+  mentions_select: mentions_select
 
 });

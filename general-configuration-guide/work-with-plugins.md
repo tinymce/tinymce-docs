@@ -84,7 +84,7 @@ tinymce.init({
 
 Even if you found the above example quite easy, hang with us we'll show you how to extend TinyMCE's default ordered and unordered lists. If on the other hand that was all a bit new, read this example to help your understanding.
 
-### Advanced Lists
+### Advanced List
 
 The [Advanced List]({{ site.baseurl }}/plugins/advlist/) plugin extends the default unordered and ordered list toolbar controls by adding CSS `list-style-type` styled number formats and bullet types to the controls.
 

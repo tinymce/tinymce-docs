@@ -15,13 +15,19 @@ Sign up for a free API key provides entitlements to premium [Image Tools]({{  si
 Add the following script in the webpage once the script tag to load TinyMCE has been specified:
 
 ```js
-<script src="https://cloud.tinymce.com/stable/plugins.min.js?apiKey=your_API_key"></script>
+<script src="https://cloud.tinymce.com/5/plugins.min.js?apiKey=your_API_key"></script>
 ```
 
 ## Step 2: Specify purchased TinyMCE plugins and toolbar buttons
 
 Extend the [TinyMCE configuration]({{ site.baseurl }}/configure/) to include any additional purchased plugins and associated toolbar and menu items. Refer to the following enablement guides for more information:
 
+* [Mentions]({{ site.baseurl }}/plugins/mentions/)
+* [Tiny Drive]({{ site.baseurl }}/plugins/drive/)
+* [Comments 2.0]({{ site.baseurl }}/plugins//comments/)
+* [Page Embed]({{ site.baseurl }}/plugins/pageembed/)
+* [Permanent Pen]({{ site.baseurl }}/plugins/permanentpen/)
+* [Format Painter]({{ site.baseurl }}/plugins/formatpainter/)
 * [Powerpaste]({{ site.baseurl }}/plugins/powerpaste/)
 * [Spell Checker]({{ site.baseurl }}/plugins/tinymcespellchecker/)
 
@@ -31,6 +37,7 @@ Extend the [TinyMCE configuration]({{ site.baseurl }}/configure/) to include any
 
 > Note: Configuration of the `imagetools_cors_hosts` and `imagetools_proxy` properties occurrs automatically.
 
+* [Moxie Manager]({{ site.baseurl }}/plugins/moxiemanager/)
 * [Accessibility Checker]({{ site.baseurl }}/plugins/a11ychecker/)
 * [Advanced Code Editor]({{ site.baseurl }}/plugins/advcode/)
 * [Enhanced Media Embed]({{ site.baseurl }}/plugins/mediaembed/)
@@ -49,7 +56,7 @@ The example below has the following:
 <html>
    <head>
       <script src="https://your_server/tinymce.min.js"></script>
-      <script src="https://cloud.tinymce.com/stable/plugins.min.js?apiKey=your_API_key"></script>
+      <script src="https://cloud.tinymce.com/5/plugins.min.js?apiKey=your_API_key"></script>
    </head>
    <body>
       <textarea><p>test textarea</p></textarea>

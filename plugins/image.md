@@ -38,7 +38,7 @@ If you wish to align the image, you can also use the text align buttons while im
 
 ### `image_caption`
 
-> New in TinyMCE version 4.3!
+> Available in TinyMCE version 4.3 onwards.
 
 This option lets users enable captions for images. When this option is enabled the image dialog will have an extra checkbox called "Caption". When a user checks the checkbox the image will get wrapped in an HTML5 `figure` element with a `figcaption` inside it. The user will then be able to type caption content inside the editor.
 

@@ -8,9 +8,9 @@ keywords: dialog dialogapi
 
 This chapter describes the Dialog component summary is a reference list of all TinyMCE UI components that can be used to display simple information.
 
-### AlertBanner
+### alertbanner
 
-An **AlertBanner** is a color-coded banner to alert the user of a problem. A URL may be provided to direct users to a reference site that may resolve the informed issue.
+An **alertbanner** is a color-coded banner to alert the user of a problem. A URL may be provided to direct users to a reference site that may resolve the informed issue.
 
 ```js
 {
@@ -21,9 +21,9 @@ An **AlertBanner** is a color-coded banner to alert the user of a problem. A URL
 }
 ```
 
-### Button
+### button
 
-A **Button** component to be used inside the dialog body. These buttons differ from toolbar buttons and dialog footer buttons.
+A **button** component to be used inside the dialog body. These buttons differ from toolbar buttons and dialog footer buttons.
 
 
 ```js
@@ -35,9 +35,9 @@ A **Button** component to be used inside the dialog body. These buttons differ f
 }
 ```
 
-### Charmap
+### charmap
 
-A **Charmap** is a specialized component that prints a range of unique characters from Unicode.
+A **charmap** is a specialized component that prints a range of unique characters from Unicode.
 
 ```js
 {
@@ -51,9 +51,9 @@ A **Charmap** is a specialized component that prints a range of unique character
 }
 ```
 
-### Checkbox
+### checkbox
 
-A **Checkbox** is a component, used to toggle states on, or off.
+A **checkbox** is a component, used to toggle states on, or off.
 
 ```js
 {
@@ -63,9 +63,9 @@ A **Checkbox** is a component, used to toggle states on, or off.
 }
 ```
 
-### ColorInput
+### colorinput
 
-A **ColorInput** is a specialized input field which takes `RGB` colors and will render the sample color typed.
+A **colorinput** is a specialized input field which takes `RGB` colors and will render the sample color typed.
 
 ```js
 {
@@ -75,9 +75,9 @@ A **ColorInput** is a specialized input field which takes `RGB` colors and will 
 }
 ```
 
-### ColorPicker
+### colorpicker
 
-A **ColorPicker**  is an intuitive color picker tool similar to image editors.
+A **colorpicker**  is an intuitive color picker tool similar to image editors.
 
 ```js
 {
@@ -87,9 +87,9 @@ A **ColorPicker**  is an intuitive color picker tool similar to image editors.
 }
 ```
 
-### DropZone
+### dropzone
 
-A **DropZone** is a component that catches drag and drops items, or lets the user browse that can send a list of files for processing and receive the result.
+A **dropzone** is a component that catches drag and drops items, or lets the user browse that can send a list of files for processing and receive the result.
 
 ```js
 {
@@ -99,9 +99,9 @@ A **DropZone** is a component that catches drag and drops items, or lets the use
 }
 ```
 
-### Grid
+### grid
 
-A **Grid** is a layout component that creates columns in the dialog body.
+A **grid** is a layout component that creates columns in the dialog body.
 
 ```js
 {
@@ -111,9 +111,9 @@ A **Grid** is a layout component that creates columns in the dialog body.
 }
 ```
 
-### HtmlPanel
+### htmlpanel
 
-A **HtmlPanel** is similar to panel. It only takes a string of HTML.
+A **htmlpanel** is similar to panel. It only takes a string of HTML.
 
 ```js
 {
@@ -122,9 +122,9 @@ A **HtmlPanel** is similar to panel. It only takes a string of HTML.
 }
 ```
 
-### Iframe
+### iframe
 
-A **Iframe** is a component used to define the values of an iframe.
+A **iframe** is a component used to define the values of an iframe.
 
 ```js
 {
@@ -135,9 +135,9 @@ A **Iframe** is a component used to define the values of an iframe.
 }
 ```
 
-### Input
+### input
 
-A **Input** is a single line text field, and also renders a label element.
+A **input** is a single line text field, and also renders a label element.
 
 ```js
 {
@@ -148,9 +148,9 @@ A **Input** is a single line text field, and also renders a label element.
 }
 ```
 
-### Panel
+### panel
 
-A **Panel** is a basic container, that holds other components, we can compose many components inside a panel. In HTML terms consider a panel a `<div>` wrapper. A dialog body configuration must begin with either a Panel or a TabPanel.
+A **panel** is a basic container, that holds other components, we can compose many components inside a panel. In HTML terms consider a panel a `<div>` wrapper. A dialog body configuration must begin with either a `panel` or a `tabpanel`.
 
 ```js
 {
@@ -159,9 +159,9 @@ A **Panel** is a basic container, that holds other components, we can compose ma
 }
 ```
 
-### SelectBox
+### selectbox
 
-A **SelectBox** allows users to select a choice from a list of many options.
+A **selectbox** allows users to select a choice from a list of many options.
 
 ```js
 {
@@ -175,9 +175,9 @@ A **SelectBox** allows users to select a choice from a list of many options.
 }
 ```
 
-### SizeInput
+### sizeinput
 
-A **SizeInput** is a specialized input field that can lock ratios, see image dialog.
+A **sizeinput** is a specialized input field that can lock ratios, see image dialog.
 
 ```js
 {
@@ -187,9 +187,9 @@ A **SizeInput** is a specialized input field that can lock ratios, see image dia
 }
 ```
 
-### Tabpanel
+### tabpanel
 
-A **Tabpanel** is similar to a Panel, where it can hold other components. TabPanel is a layout component that will separate sections using tabs. Each tab is a panel that can contain different components. A dialog body configuration must begin with either a Panel or a TabPanel.
+A **tabpanel** is similar to a `panel`, where it can hold other components. Tabpanel is a layout component that will separate sections using tabs. Each tab is a panel that can contain different components. A dialog body configuration must begin with either a `panel` or a `tabpanel`.
 
 ```js
 {
@@ -204,9 +204,9 @@ A **Tabpanel** is similar to a Panel, where it can hold other components. TabPan
 }
 ```
 
-### TextArea
+### textarea
 
-A **TextArea** is a multiline text field.
+A **textarea** is a multiline text field.
 
 ```js
 {
@@ -217,9 +217,9 @@ A **TextArea** is a multiline text field.
 }
 ```
 
-### UrlInput
+### urlinput
 
-A **URlInput** is a specialized input text field for image dialog. This will include a typeahead for previous image URLs entered.
+A **urlinput** is a specialized input text field for image dialog. This will include a typeahead for previous image URLs entered.
 
 ```js
 // URL input for image dialog

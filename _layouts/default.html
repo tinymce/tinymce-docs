@@ -21,11 +21,7 @@
   <link href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" rel="stylesheet"/>
 </head>
 <body role="document" data-shared-baseurl="{{ site.shared_baseurl }}" data-baseurl="{{ site.baseurl }}">
-  {% if page.url contains '/demo/' %}
-    {% include_remote {{ site.origin }}/_docs/menu_demo.html css="body > *" %}
-  {% else %}
-    {% include_remote {{ site.origin }}/_docs/menu.html css="body > *" %}
-  {% endif %}
+  {% include_remote {{ site.origin }}/_docs/menu.html css="body > *" %}
 
   <div class="top-bar">
     <div>

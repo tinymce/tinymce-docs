@@ -50,7 +50,7 @@ This channel deploys the current release candidate for the `stable` channel. The
 
 #### stable release channel
 
-This channel deploys the latest release of TinyMCE that has passed our quality assurance process. The current version of TinyMCE available through the `/5` stable channel can be found [here](https://cloud.tinymce.com/5/version.txt). The TinyMCE 5 stable channel can be loaded from [this url](https://cloud.tinymce.com/5/tinymce.min.js.)
+This channel deploys the latest release of TinyMCE that has passed our quality assurance process. The current version of TinyMCE available through the `/5` stable channel can be found [here](https://cloud.tinymce.com/5/version.txt). The TinyMCE 5 stable channel can be loaded from [this url](https://cloud.tinymce.com/5/tinymce.min.js.).
 
 ##### Example
 
@@ -60,7 +60,7 @@ This channel deploys the latest release of TinyMCE that has passed our quality a
 
 ## Specifying the version of features/plugins deployed from Tiny Cloud
 
-Use the URL query parameters to specify the version of each premium plugin. This is used when deployment is by the [TinyMCE editor and premium plugins via Tiny Cloud]({{ site.baseurl }}/cloud-deployment-guide/editor-and-features) or deploying [only premium plugins from Tiny Cloud]({{ site.baseurl }}/cloud-deployment-guide/features-only).
+Use the URL query parameters to specify the version of each premium plugin. This is used when deployment is through the [TinyMCE editor and premium plugins via Tiny Cloud]({{ site.baseurl }}/cloud-deployment-guide/editor-and-features) or deploying [only premium plugins from Tiny Cloud]({{ site.baseurl }}/cloud-deployment-guide/features-only).
 
 #### Mentions
 

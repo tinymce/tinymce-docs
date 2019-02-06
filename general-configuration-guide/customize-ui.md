@@ -10,22 +10,22 @@ This section is about customizing TinyMCE's user interface with skins, toolbar b
 
 ### Themes
 
-"Silver" is TinyMCE's default theme. Users can easily customize the menu or toolbar without having to edit the theme. Theme creation requires a more in depth-knowledge of TinyMCE's API and is beyond the scope of this guide. TinyMCE skins, however, are easier to make using the TinyMCE Skin Creator.
+"Silver" is TinyMCE's default theme. Users can easily customize the menu or toolbar without having to edit the theme. Theme creation requires a more in depth-knowledge of TinyMCE's API and is beyond the scope of this guide. TinyMCE skins, however, are easier to make.
 
 ### Skins
 
-TinyMCE skins only change the editor's appearance while TinyMCE themes can affect much more. Use the [TinyMCE Skin Creator](http://skin.tinymce.com/) to easily create skins. Download, unzip, and place the completed skin in the `js/skins` folder. 
-
-The following example activates the skin:
+Skins controls the appearance of TinyMCE such as colors and spacings. The default skin is called "Oxide" and we have included a light and a dark version. The default skin is white. To get the dark version, use the following config:
 
 ```js
 tinymce.init({
-  selector: 'textarea'  // change this value according to your HTML
-  skin: 'oxide'  // use the name of your skin, not oxide
+  selector: 'textarea',  // change this value according to your HTML
+  skin: 'dark'
 });
 ```
 
-Ensure the name of the created skin matches the name of the folder in the skins directory (ie. `tinymce/js/skins`). TinyMCE cannot load if the specified skin is not found.
+Making your own skins for TinyMCE is easy with our Skin tool project. See [Creating a skin]({{ site.baseurl }}/advanced/creating-a-skin/) for more details.
+
+> Note: The  [TinyMCE Skin Creator](http://skin.tinymce.com/) only supports TinyMCE 4.
 
 > Note: Developers often confuse the difference between TinyMCE "themes" and "skins". A **Skin** in Tinymce is used to make changes to the appearance of the editor, for example, colors, margins, paddings, fonts, icons, etc. A **Theme** creates the editor construction (left, top, bottom, or right of the editing area - vertical or horizontal, inline or outside, etc.). A skin usually changes the color scheme of a button, dialog, etc. while the theme applies to the whole editor including its functionality and has child skins to change the appearance.
 
@@ -37,8 +37,6 @@ A common UI customization used by developers is changing the height and width of
 
 ##### Set the editable area height
 
-> Important: The "editable area" is the textbox used to enter information. This "editable area" is different from the "editor" itself.
-
 ```js
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
@@ -49,8 +47,6 @@ tinymce.init({
 See the [height option]({{ site.baseurl }}/configure/editor-appearance/#height) for customization details.
 
 ##### Set the editable area width
-
-> Note: The editable area width is effectively the width of the editor itself. This is **not** the case for height.
 
 ```js
 tinymce.init({
@@ -98,6 +94,8 @@ tinyMCE.init({
 ```
 
 See the [content_css]({{ site.baseurl }}/configure/content-appearance/#content_css) customization page for more information about the use of absolute and relative paths as well as and how to use multiple stylesheets.
+
+> Note: We have included two aditional content CSS:es you can try out: Document and Writer. Use `content_css: 'document'` or `content_css: 'writer'` to try them out.
 
 ### Hiding the status bar
 

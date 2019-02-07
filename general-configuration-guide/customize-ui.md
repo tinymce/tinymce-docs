@@ -95,7 +95,7 @@ tinyMCE.init({
 
 See the [content_css]({{ site.baseurl }}/configure/content-appearance/#content_css) customization page for more information about the use of absolute and relative paths as well as and how to use multiple stylesheets.
 
-> Note: We have included two aditional content CSS:es you can try out: Document and Writer. Use `content_css: 'document'` or `content_css: 'writer'` to try them out.
+> Note: We have included two additional themes for `content_css` to try out: [Document](http://fiddle.tinymce.com/9Bgaab) and [Writer](http://fiddle.tinymce.com/ABgaab). Use `content_css: 'document'` or `content_css: 'writer'` to try them out.
 
 ### Hiding the status bar
 

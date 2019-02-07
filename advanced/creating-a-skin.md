@@ -40,7 +40,7 @@ Begin by looking in the `src/less/skins/` folder where you find two folders: `ui
 2. Open the file `src/less/theme/globals/global-variables.less` and **copy** the variables you like to change to your `skin.less` file in the folder you duplicated in the previous step. Change the values. The variables you put in `skin.less` will override the default values.
 3. For more detailed customizations, review the variables in each component, such as `src/less/theme/components/toolbar-button.less` and copy the ones you want to change to `skin.less`.
 4. To style interface elements in the content, such as selection color, drag handles, table of contents, bookmarks etc, copy variables to `src/less/skins/ui/<skin-name>/content.less` or `content.inline.less` depending on if you are using the inline mode or not.
-5. Preview your skin by building it using the `gulp` command in your terminal.
+5. Preview your skin by building it using the `npm run start` command in your terminal and visit the address shown in the terminal, usually `localhost:3000`.
 
 ### Creating a content css
 
@@ -51,7 +51,7 @@ To update the appearance of the content within the editor, such as headings, quo
 
 ### Moving your skin into TinyMCE
 
-1. Simply copy your skin and/or content skin from `build/skins/ to the corresponding folders in your TinyMCE folder.
+1. Simply copy your skin and/or content skin from `build/skins/` to the corresponding folders in your TinyMCE folder.
 2. Update your init function with the [skin](https://www.tiny.cloud/docs-beta/configure/editor-appearance/#skin) option and/or the [content_css](https://www.tiny.cloud/docs-beta/configure/content-appearance/#content_css) option.
 
 ## Modifying the icons

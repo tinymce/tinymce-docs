@@ -13,9 +13,9 @@ A dialog is a TinyMCE UI component. Dialogs have their own dialog components whi
 
 * **Display simple information** - The plugin that is used to view the source code is an example of a simple dialog that displays the HTML code from the content.
 
-* **Display complex information** - These dialogs can display complex information by using layouts components like tabs or columns to help present information to the user (e.g., help dialog or special characters dialog are tabbed dialogs).
+* **Display complex information** - These dialogs can display complex information by using layouts components like tabs or columns to help present information to the user. For example, the help and special characters dialog are tabbed dialogs.
 
-* **Interactive dialogs** - These dialogs use web forms to collect interaction data and then apply the data (e.g.: search and replace dialog, uses an input field, where the input text will be used as the search key. Another example is, special characters or character map dialogs use typeaheads to dynamically narrow down matches as you type)
+* **Interactive dialogs** - These dialogs use web forms to collect interaction data and then apply the data. For example, the search and replace dialog uses an input field, where the input text will be used as the search key. Another example is, special characters or character map dialogs use typeaheads to dynamically narrow down matches as you type.
 
 For example, the search and replace dialog is made up of two input fields - two checkboxes and five buttons. Components are composed by using a configuration structure. The most basic configuration structure is this:
 
@@ -34,8 +34,7 @@ const dialogConfig = {
 
 A Dialog configuration framework has three main parts:
 
-* **Title** This is the ti
-tle of a dialog.
+* **Title** This is the title of a dialog.
 
 * **Body** The body can be either a Panel or Tab Panel.
 
@@ -71,7 +70,7 @@ var tabPanelConfig = {
   ]
 };
 ```
-**Tabs:** These are an array of tab configurations. Each tab has a title which is used to reference the tab. The items property in the tab configuration takes a list of components and works the same way as a Panel. A tab can be programmatically be switched by calling `dialogApi.showTab('title')`. For example, the dialog that appears as a result of the Help plugin is usually formatted in tab panels.
+**Tabs:** These are an array of tab configurations. Each tab has a title which is used to reference the tab. The `items` property in the tab configuration takes a list of components and works the same way as a Panel. A tab can be programmatically be switched by calling `dialogApi.showTab('title')`. For example, the dialog that appears as a result of the Help plugin is usually formatted in tab panels.
 
 ![Help Button]({{site.baseurl}}/images/help.png)
 
@@ -138,7 +137,7 @@ const dialogConfig = {
 }
 ```
 
-Using the above example, calling `tinymce.activeEditor.windowManager.open(dialogConfig)` will create a dialog with the title **just a title**, an empty body, and an empty footer without buttons.
+Using the above example, calling `tinymce.activeEditor.windowManager.open(dialogConfig)` will create a dialog with the title **Just a title**, an empty body, and an empty footer without buttons.
 
 ### Complex dialog
 
@@ -148,7 +147,7 @@ The complex dialogs are used to display more complex information. These sections
 
 ### Interactive dialog
 
-The interactive dialogs use web forms to collect data from the user, and then apply the data (e.g.: The search and replace dialog uses an input field, where the input text will be used as the search key). These are the most complex forms of dialogs and require the users to configure the following:
+The interactive dialogs use web forms to collect data from the user, and then apply the data. For example, the search and replace dialog uses an input field, where the input text will be used as the search key. These are the most complex forms of dialogs and require the users to configure the following:
 
 * Definition of the desired user input (for example, the search value in the search and replace dialog).
 

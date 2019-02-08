@@ -146,7 +146,7 @@ tinymce.init({
   selector: 'textarea',
   plugins: 'tinymcespellchecker',
   menu: {
-	tools: {title: 'Tools', items: 'spellchecker spellcheckerlanguage'}
+    tools: {title: 'Tools', items: 'spellchecker spellcheckerlanguage'}
   },
   spellchecker_rpc_url: 'localhost/ephox-spelling',
   spellchecker_language: 'en'
@@ -155,7 +155,7 @@ tinymce.init({
 
 ## Events
 
-#### SpellCheckerIgnore event
+#### SpellcheckerIgnore event
 
 This event gets fired when the user selects ignore word on a misspelled word.
 
@@ -167,14 +167,14 @@ tinymce.init({
   plugins: 'tinymcespellchecker',
   toolbar: 'spellchecker',
   init_instance_callback: function (editor) {
-    editor.on('SpellCheckerIgnore', function (e) {
+    editor.on('SpellcheckerIgnore', function (e) {
       console.log('Ignore word', e.word);
     });
   }
 });
 ````
 
-#### SpellCheckerIgnoreAll event
+#### SpellcheckerIgnoreAll event
 
 This event gets fired when the user selects ignore word on a misspelled word.
 
@@ -186,8 +186,46 @@ tinymce.init({
   plugins: 'tinymcespellchecker',
   toolbar: 'spellchecker',
   init_instance_callback: function (editor) {
-    editor.on('SpellCheckerIgnoreAll', function (e) {
+    editor.on('SpellcheckerIgnoreAll', function (e) {
       console.log('Ignore word (all)', e.word);
+    });
+  }
+});
+````
+
+#### SpellcheckStart event
+
+This event gets fired when the user enables as-you-type spellchecking.
+
+Here is an example of using the event:
+
+````
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'tinymcespellchecker',
+  toolbar: 'spellchecker',
+  init_instance_callback: function (editor) {
+    editor.on('SpellcheckStart', function (e) {
+      console.log('Started spellchecking');
+    });
+  }
+});
+````
+
+#### SpellcheckEnd event
+
+This event gets fired when the user disables as-you-type spellchecking.
+
+Here is an example of using the event:
+
+````
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'tinymcespellchecker',
+  toolbar: 'spellchecker',
+  init_instance_callback: function (editor) {
+    editor.on('SpellcheckEnd', function (e) {
+      console.log('Stopped spellchecking');
     });
   }
 });

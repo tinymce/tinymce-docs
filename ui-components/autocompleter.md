@@ -6,13 +6,9 @@ description: Add a custom autocompleter to TinyMCE 5.0.
 keywords: autcomplete
 ---
 
-## Overview
+## Overview and use case
 
-An `autocompleter` enables users to quickly find and select from a pre-populated list of values as they type, leveraging searching and filtering. 
-
-## Use cases
-
-An `autocompleter`  provides suggestions to insert while the user is typing into the field. For example, typing <b>:amp</b> should show the ampersand item in the menu. Pressing `esc` should close the autocomplete menu.</p>
+An `autocompleter` enables users to quickly find and select from a pre-populated list of values as they type, leveraging searching and filtering. It provides suggestions to insert while the user is typing into the field. For example, typing <b>:amp</b> should show the ampersand item in the menu. Pressing `esc` should close the autocomplete menu.</p>
 
 ## How to create custom autocompleters
 

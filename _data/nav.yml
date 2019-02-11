@@ -225,6 +225,9 @@
   - url: "directionality"
   - url: "drive"
   - url: "emoticons"
+    pages:
+    - url: "#emoticons_append"
+    - url: "#emoticons_database_url"
   - url: "mediaembed"
   - url: "formatpainter"
   - url: "fullpage"
@@ -419,7 +422,7 @@
     - url: "#visualblocks_default_state"
   - url: "visualchars"
   - url: "wordcount"
-    
+
 - url: "ui-components"
   pages:
   - url: "dialog"
@@ -471,7 +474,7 @@
     - url: "#Context form buttons"
     - url: "#Form API"
     - url: "#Example configuration"
-  - url: "customsidebar"  
+  - url: "customsidebar"
   - url: "toolbarbuttons"
   - url: "typesoftoolbarbuttons"
     pages:

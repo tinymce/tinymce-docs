@@ -44,6 +44,28 @@ Internally, emoticons is defined by an object mapping emoticon names to addition
 }
 ```
 
+### `emoticons_append`
+
+This option provides a way to append some additional emojis to the default emoji database. This should be an object in the above mentioned format.
+
+**Type:** `Object`
+
+##### Example
+
+```js
+tinymce.init({
+  selector: "textarea",  // change this value according to your HTML
+  plugins: "emoticons",
+  toolbar: "emoticons",
+  emoticons_append: {
+    custom_mind_explode: {
+      keywords: ["brain", "mind", "explode", "blown"],
+      char: "🤯"
+    }
+  }
+});
+```
+
 ### `emoticons_database_url`
 
 This option provides the default location to load the emoji database from. The database should be an external JavaScript file, that assigns an object in the above format, to the `window.tinymce.emoticons_plugin_database` variable.
@@ -70,27 +92,5 @@ tinymce.init({
   plugins: "emoticons",
   toolbar: "emoticons",
   emoticons_database_url: '/emojis.js'
-});
-```
-
-### `emoticons_append`
-
-This option provides a way to append some additional emojis to the default emoji database. This should be an object in the above mentioned format.
-
-**Type:** `Object`
-
-##### Example
-
-```js
-tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "emoticons",
-  toolbar: "emoticons",
-  emoticons_append: {
-    custom_mind_explode: {
-      keywords: ["brain", "mind", "explode", "blown"],
-      char: "🤯"
-    }
-  }
 });
 ```

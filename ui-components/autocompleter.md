@@ -8,7 +8,7 @@ keywords: autcomplete
 
 ## Overview and use case
 
-An `autocompleter` enables users to quickly find and select from a pre-populated list of values as they type, leveraging searching and filtering. It provides suggestions to insert while the user is typing into the field. For example, typing <b>:amp</b> should show the ampersand item in the menu. Pressing `esc` should close the autocomplete menu.</p>
+An `autocompleter` enables users to quickly find and select from a pre-populated list of values as they type, leveraging searching and filtering. It provides suggestions to insert while the user is typing into the content. For example, typing **:amp** should show the ampersand item in the menu. Pressing `esc` should close the autocomplete menu.
 
 ## How to create custom autocompleters
 

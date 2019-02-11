@@ -6,20 +6,24 @@ description: Add a custom autocompleter to TinyMCE 5.0.
 keywords: autcomplete
 ---
 
+## Overview
+
+An `autocompleter` enables users to quickly find and select from a pre-populated list of values as they type, leveraging searching and filtering. 
+
 ## Use cases
 
-* Create an autocompleter that shows options to insert into the content while the user is typing.
+An `autocompleter`  provides suggestions to insert while the user is typing into the field. For example, typing <b>:amp</b> should show the ampersand item in the menu. Pressing `esc` should close the autocomplete menu.</p>
 
 ## How to create custom autocompleters
 
-The method for adding a custom autocompleter is in the UI Registry part of the editor API `editor.ui.registry`:
+The method for adding a custom autocompleter is in the **UI Registry** part of the editor API `editor.ui.registry`:
 
 * `editor.ui.registry.addAutocompleter(name, configuration)`
 
 The two arguments this method take are:
 
-* `name` - a unique name for the autocompleter
-* `configuration` - an object containing your configuration.
+* `name` - A unique name for the autocompleter.
+* `configuration` - An object containing the user's configuration.
 
 ### Configuration options
 
@@ -28,12 +32,12 @@ The two arguments this method take are:
 | ch | string | Required | The character to trigger the autocompleter. |
 | fetch |  (pattern: string, maxResults: number) => Promise<AutocompleterItem[]> | Required | A function that is passed the current matched text pattern and the maximum number of expected results. The function should return a promise containing matching results. |
 | onAction | (api, rng: Range, value: string) => void | Required | A function invoked when a fetched item is selected. |
-| columns | number or 'auto' | Optional | default: auto - The number of columns to show. If set to 1 column, then icons and text are displayed, otherwise only icons are displayed. |
+| columns | number or 'auto' | Optional | default: auto - The number of columns to show. If set to `1` column, then icons and text are displayed, otherwise only icons are displayed. |
 | matches | (rng: Range, text: string, pattern: string) => boolean | Optional | default: isStartOfWord - A predicate function that takes a range, the current text node content and the matched text content and returns a boolean indicating if the autocompleter should trigger. |
 | maxResults | number | Optional | default: 10 - The maximum number of results that should be fetched. |
 | minChars | number | Optional | default: 1 - The minimum number of characters that must be typed before the autocompleter will trigger (excluding the trigger char). |
 
-The `fetch` function is called whenever the trigger `char` is pressed and the `matches` predicate returns true. It is a function that takes the matched text pattern and returns a promise containing matching results. This allows for asynchronous fetching of the autocompleter items. The results should be a list of objects with the following details:
+The `fetch` function is called whenever the trigger `char` is pressed and the `matches` predicate returns `true`. It is a function that takes the matched text pattern and returns a promise containing matching results. This allows for asynchronous fetching of the autocompleter items. The results should be a list of objects with the following details:
 * `value`: Value of the item. This will be passed to the `onAction` callback when selected.
 * `text`: Text to display for the item.
 * `icon`: Name of the icon to be displayed. Must a single unicode character or correspond to an icon in the icon pack.

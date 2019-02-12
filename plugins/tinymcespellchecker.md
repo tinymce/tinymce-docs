@@ -53,10 +53,10 @@ For information on installing the server-side component for spell checking, plea
 
 ```js
 tinymce.init({
-	selector: 'textarea',
-	plugins: 'tinymcespellchecker',
-	spellchecker_rpc_url: 'localhost/ephox-spelling',
-	spellchecker_language: 'en'
+  selector: 'textarea',
+  plugins: 'tinymcespellchecker',
+  spellchecker_rpc_url: 'localhost/ephox-spelling',
+  spellchecker_language: 'en'
 });
 ```
 

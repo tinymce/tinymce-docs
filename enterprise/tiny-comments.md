@@ -13,8 +13,8 @@ Users can now add comments to their text from within their TinyMCE editor for co
 
 Currently, there are two versions of Comments compatible with TinyMCE v4 -
 
-* [Comments 1.0]({{site.baseurl}}/plugins/comments/comments_1.0)
-* [Comments 2.0]({{site.baseurl}}/plugins/comments/comments_2.0)
+* [Comments 1.0]({{site.baseurl}}/plugins/comments/comments_1.0/)
+* [Comments 2.0]({{site.baseurl}}/plugins/comments/comments_2.0/)
 
 ## Collaborate on your projects within your content
 
@@ -52,7 +52,7 @@ In this example, the features in Comments 1.0 are highlighted, including adding 
 
 ## Comments 2.0 Demo
 
-In this example, the features in Comments 2.0 are highlighted, including adding a comment, replying to a comment, and deleting a comment. For more information on the other Comments 2.0 configuration options, see the [docs]({{ site.baseurl }}/plugins/comments/comments_2.0).
+In this example, the features in Comments 2.0 are highlighted, including adding a comment, replying to a comment, and deleting a comment. For more information on the other Comments 2.0 configuration options, see the [docs]({{ site.baseurl }}/plugins/comments/comments_2.0/).
 
 [Demo coming soon!]
 

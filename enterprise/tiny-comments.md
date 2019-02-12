@@ -46,7 +46,7 @@ Start with our [dedicated product page](https://apps.tiny.cloud/products/comment
 
 ## Comments 1.0 Demo
 
-In this example, the features in Comments 1.0 are highlighted, including adding a comment, replying to a comment, and deleting a comment. For more information on the other Comments 1.0 configuration options, see the [docs]({{ site.baseurl }}/plugins/comments/comments_1.0).
+In this example, the features in Comments 1.0 are highlighted, including adding a comment, replying to a comment, and deleting a comment. For more information on the other Comments 1.0 configuration options, see the [docs]({{ site.baseurl }}/plugins/comments/comments_1.0/).
 
 {% include codepen.html id="pOzxJw" %}
 

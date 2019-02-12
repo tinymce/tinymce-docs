@@ -8,20 +8,7 @@ keywords: tinymcespellchecker spellchecker_language spellchecker_languages spell
 
 **Spell Checker Pro** adds spell check as-you-type capabilities to TinyMCE.
 
-The following languages are supported:
-
-* English (US & UK)
-* English - with additional medical terms (US & UK)
-* Danish
-* Dutch
-* Finnish
-* French
-* German
-* Italian
-* Norwegian
-* Portuguese (Brazilian and European)
-* Spanish
-* Swedish
+{% include configuration/languages.md %}
 
 ## Cloud Installation
 To enable the TinyMCE Enterprise Spellchecking plugin with [TinyMCE Cloud]({{ site.baseurl }}/cloud-deployment-guide/editor-and-features):

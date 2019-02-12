@@ -25,10 +25,8 @@ The following languages are supported:
 ## Cloud Installation
 To enable the TinyMCE Enterprise Spellchecking plugin with [TinyMCE Cloud]({{ site.baseurl }}/cloud-deployment-guide/editor-and-features):
 
-Follow these steps to upgrade to the latest version of 'spellchecker':
-
-1. For an already existing instance of the 'spellchecker' plugin provided with TinyMCE, disable it by removing it from the 'plugins' list.
-2. Add 'tinymcespellchecker' to the 'plugins' list.
+1. If configured, disable the `spellchecker` plugin provided with TinyMCE, by removing it from the `plugins` list.
+2. Add `tinymcespellchecker` to the `plugins` list.
 
 With TinyMCE Cloud the server-side spellchecking component is automatically configured, so the `spellchecker_rpc_url` parameter does not need to be set.
 
@@ -46,10 +44,10 @@ tinymce.init({
 ## Self-hosted Installation
 To enable the TinyMCE Enterprise Spellchecking plugin:
 
-1. For an already existing instance of the 'spellchecker' plugin provided with TinyMCE,, disable it by removing it from the 'plugins' list.
-2. Add 'tinymcespellchecker' to the 'plugins' list.
+1. If configured, disable the `spellchecker` plugin provided with TinyMCE, by removing it from the `plugins` list.
+2. Add `tinymcespellchecker` to the `plugins` list.
 
-For information on installing the server-side component for spell checking, please see the [server-side component installation guide]({{ site.baseurl }}/enterprise/server/).
+For information on installing the server-side component for spell checking, please see the [server-side component installation guide]({{site.baseurl}}/enterprise/server/).
 
 ##### Example TinyMCE Configuration
 
@@ -70,9 +68,9 @@ The TinyMCE Enterprise Spellchecking plugin activates automatically when users t
 ## Configuration Options
 
 ### `spellchecker_rpc_url`
-This setting enables specifying the URL to be used for the server side ephox-spelling service. Check the [server-side component installation guide]({{ site.baseurl }}/enterprise/server/) for details on how to setup a spellchecker server.
+This setting enables specifying the URL to be used for the server side ephox-spelling service. Check the [server-side component installation guide]({{site.baseurl}}/enterprise/server/) for details on how to setup a spellchecker server.
 
-**Note:** `spellchecker_rpc_url` is **not** required when enabling this plugin via [TinyMCE Cloud]({{ site.baseurl }}/cloud-deployment-guide/editor-and-features/)
+**Note:** `spellchecker_rpc_url` is **not** required when enabling this plugin via [TinyMCE Cloud]({{site.baseurl}}/cloud-deployment-guide/editor-and-features/)
 
 ### `spellchecker_languages`
 This optional setting allows specifying the languages that are available to the user, provided as a comma delimited string. The default value for this setting is:
@@ -106,7 +104,7 @@ The following languages are supported:
 This optional setting allows specifying the mode of operation of the spellchecker. When set to true, the spellchecker will open a dialog that will check all of the document's contents at once. This also allows a user to step through each error, to ignore errors and accept recommended fixes. If the spellchecker dialog is enabled, the default as-you-type spellchecking will be disabled.
 
 ### `spellchecker_whitelist`
-This option allows to specify an array of words that should be ignored. This can, for example, be the current company name or internal products. This field can be populated from a file by just getting the white list array from an external JS file.
+This option allows an array of words to be configured, that should be ignored. This can, for example, be the current company name or internal products. This field can be populated from a file by just getting the white list array from an external JS file.
 
 ### `spellchecker_on_load`
 This option lets run the spellchecker when the contents is loaded into the editor. This option defaults to "false" so it's disabled by default.
@@ -118,7 +116,7 @@ This option helps in deciding if the spellchecker should be initialized as activ
 
 ### `spellchecker`
 
-This button allows the user to perform a spellcheck on the entire document. In addition, the drop-down menu attached to this button allows specifying the language that is currently used when spellchecking. For more information about customizing the toolbar, refer to the [Editor appearance section of the documentation]({{ site.baseurl }}/configure/editor-appearance/#toolbar).
+This button allows the user to perform a spellcheck on the entire document. In addition, the drop-down menu attached to this button allows specifying the language that is currently used when spellchecking. For more information about customizing the toolbar, refer to the [Editor appearance section of the documentation]({{site.baseurl}}/configure/editor-appearance/#toolbar).
 
 Example TinyMCE Configuration:
 

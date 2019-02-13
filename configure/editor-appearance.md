@@ -20,6 +20,8 @@ description: Configure the editor's appearance, including menu and toolbar contr
 
 {% include configuration/height.md %}
 
+{% include configuration/icons.md %}
+
 {% include configuration/inline.md %}
 
 {% include configuration/max-height.md %}

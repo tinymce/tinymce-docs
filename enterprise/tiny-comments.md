@@ -54,6 +54,4 @@ In this example, the features in Comments 1.0 are highlighted, including adding 
 
 In this example, the features in Comments 2.0 are highlighted, including adding a comment, replying to a comment, and deleting a comment. For more information on the other Comments 2.0 configuration options, see the [docs]({{ site.baseurl }}/plugins/comments/comments_2.0/).
 
-[Demo coming soon!]
-
 {% include codepen.html id="ZwjzWj" %}

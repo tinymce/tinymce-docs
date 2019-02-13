@@ -36,7 +36,7 @@ The two arguments this method take are:
 The `fetch` function is called whenever the trigger `char` is pressed and the `matches` predicate returns `true`. It is a function that takes the matched text pattern and returns a promise containing matching results. This allows for asynchronous fetching of the autocompleter items. The results should be a list of objects with the following details:
 * `value`: Value of the item. This will be passed to the `onAction` callback when selected.
 * `text`: Text to display for the item.
-* `icon`: Name of the icon to be displayed. Must a single unicode character or correspond to an icon in the icon pack.
+* `icon`: Name of the icon to be displayed. Must be a single unicode character or correspond to an icon in the icon pack.
 
 > Note: If two or more autocompleters use the same trigger character, then the fetched results will be merged together before being displayed.
 

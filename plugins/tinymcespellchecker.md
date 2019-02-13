@@ -6,21 +6,7 @@ description: Check spelling as-you-type in TinyMCE.
 keywords: tinymcespellchecker spellchecker_language spellchecker_languages spellchecker_rpc_url spellchecker_dialog ephox English US UK Danish Dutch Finnish French German Italian Norwegian Portuguese Brazilian European Spanish Swedish
 ---
 
-**Spell Checker Pro** adds spell check as-you-type capabilities to TinyMCE.
-
-The following languages are supported:
-
-* English (US & UK)
-* Danish
-* Dutch
-* Finnish
-* French
-* German
-* Italian
-* Norwegian
-* Portuguese (Brazilian and European)
-* Spanish
-* Swedish
+**Spell Checker Pro** adds spell check as-you-type capabilities to TinyMCE. For information on the supported languages, refer to [this]({{site.baseurl}}/plugins/tinymcespellchecker/#spellchecker_language) section.
 
 ## Cloud Installation
 To enable the TinyMCE Enterprise Spellchecking plugin with [TinyMCE Cloud]({{ site.baseurl }}/cloud-deployment-guide/editor-and-features):
@@ -39,7 +25,6 @@ tinymce.init({
 	spellchecker_language: 'en'
 });
 ```
-
 
 ## Self-hosted Installation
 To enable the TinyMCE Enterprise Spellchecking plugin:
@@ -64,7 +49,6 @@ tinymce.init({
 
 The TinyMCE Enterprise Spellchecking plugin activates automatically when users type content into the editor. To see and select a spelling suggestion after a word has been misspelled, right-click the misspelled red underlined word.
 
-
 ## Configuration Options
 
 ### `spellchecker_rpc_url`
@@ -82,23 +66,7 @@ This optional setting allows specifying the languages that are available to the 
 ### `spellchecker_language`
 This optional setting allows specifying the language code that will be used by default. This defaults to "en".
 
-The following languages are supported:
-
-|Language                      | Code   |
-|:-----------------------------|:-------|
-| English                      | en     |
-| English (UK)                 | en_uk, en_gb, en_br |
-| Danish                       | da     |
-| Dutch                        | nl     |
-| Finnish                      | fi     |
-| French                       | fr     |
-| German                       | de     |
-| Italian	                     | it     |
-| Norwegian	                   | nb     |
-| Portuguese (Brazil)          | pt     |
-| Portuguese (Europe)          | pt_pt  |
-| Spanish                      | es     |
-| Swedish                      | sv     |
+{% include configuration/languages.md %}
 
 ### `spellchecker_dialog`
 This optional setting allows specifying the mode of operation of the spellchecker. When set to true, the spellchecker will open a dialog that will check all of the document's contents at once. This also allows a user to step through each error, to ignore errors and accept recommended fixes. If the spellchecker dialog is enabled, the default as-you-type spellchecking will be disabled.

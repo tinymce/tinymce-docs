@@ -56,4 +56,4 @@ In this example, the features in Comments 2.0 are highlighted, including adding 
 
 [Demo coming soon!]
 
-<!--{% include codepen.html id="pOzxJw" %}-->
+{% include codepen.html id="ZwjzWj" %}

@@ -120,7 +120,7 @@ npm run start
 
 TinyMCE editor with all the configured skin changes will appear in the browser screen.
 
-### Creating a content css
+### Creating a content CSS file
 
 To update the appearance of the content within the editor, such as headings, quotes, lists etc you create a content css. These are located in `src/less/skin/content/`
 
@@ -129,7 +129,7 @@ To update the appearance of the content within the editor, such as headings, quo
 
 ### Moving the skin into TinyMCE
 
-1. Copy the skin and/or content skin from `build/skins/` to the corresponding folders in the duplicated TinyMCE folder.
+1. Copy the skin and/or content skin from `build/skins/` to the corresponding folders in the duplicate TinyMCE folder.
 2. Update the init function with the [skin](https://www.tiny.cloud/docs-beta/configure/editor-appearance/#skin) option and/or the [content_css](https://www.tiny.cloud/docs-beta/configure/content-appearance/#content_css) option.
 
 #### Example
@@ -158,6 +158,8 @@ Following is an example of a sample `init` configuration for moving the configur
   </body>
 </html>
 ```
+
+For more information on how to specify the location of the skin file, see [this]({{site.baseurl}}/configure/editor-appearance/#skin_url) section.
 
 ## Modifying the icons
 

@@ -46,45 +46,9 @@ The `fetch` function is called whenever the trigger `char` is pressed and the `m
 | ---- | ----- | ----------- |
 | hide | () => void | Hides the autocompleter menu. |
 
-### Example of an autocompleter that completes an email address domain:
-
-```js
-tinymce.init({
-  selector: '#editor',
-  setup: (editor) => {
-    editor.ui.registry.addAutocompleter('myCustomAutocompleter', {
-      ch: '@',
-      columns: 1,
-      matches: (rng) => rng.startOffset !== 0,
-      fetch: (text) => {
-        return new Promise((resolve) => {
-          resolve([
-            {
-              value: '@example.com',
-              text: 'example.com',
-              icon: 'user'
-            },
-            {
-              value: '@tiny.cloud',
-              text: 'tiny.cloud',
-              icon: 'user'
-            }
-          ]);
-        });
-      },
-      onAction: (api, rng, value) => {
-        editor.selection.setRng(rng);
-        editor.insertContent(value);
-        api.hide();
-      }
-    });
-  }
-});
-```
-
 ## Example
 
 This example shows how the charmap plugin adds the standard autocompleter. The autocompleter will show whenever a `:` character is typed plus at least one additional character.
 
-{% include codepen.html id="autocompleter" height="300" %}
+{% include codepen.html id="autocompleter" height="300" tab="js" %}
 

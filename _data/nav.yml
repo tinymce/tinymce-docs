@@ -226,6 +226,9 @@
   - url: "directionality"
   - url: "drive"
   - url: "emoticons"
+    pages:
+    - url: "#emoticons_append"
+    - url: "#emoticons_database_url"
   - url: "mediaembed"
   - url: "formatpainter"
   - url: "fullpage"
@@ -449,6 +452,7 @@
     - url: "#tabpanel"
     - url: "#textarea"
     - url: "#urlinput"
+  - url: "autocompleter"
   - url: "contextmenu"
     pages:
     - url: "#Live example"
@@ -509,16 +513,14 @@
   - url: "get-tinymce-bugs-fixed"
   - url: "system-requirements"
 
-- url: "advanced"
+-  url: "advanced"
   pages:
   - url: "contributing-to-open-source"
   - url: "contributing-docs"
   - url: "accessibility"
   - url: "security"
   - url: "boilerplate-content-css"
-  # - url: "creating-a-custom-button"
   - url: "creating-a-skin"
-  # - url: "creating-a-plugin"
   - url: "annotations"
   - url: "configuring-comments-callbacks"
   - url: "yeoman-generator"

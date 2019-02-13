@@ -189,7 +189,7 @@ The following new methods have been added for creating and using new components:
 
 | **New method** | **Description** |
 | -------------- | --------------- |
-| editor.ui.registry.addAutocompleter: (name, spec) | Autocompleter |
+| editor.ui.registry.addAutocompleter: (name, spec) | [Autocompleter]({{site.baseurl}}/ui-components/autocompleter/) |
 | editor.ui.registry.addContextForm: (name, spec) | [Context form]({{site.baseurl}}/ui-components/contextform/) |
 | editor.ui.registry.addContextMenu: (name, spec) | [Context menu]({{site.baseurl}}/ui-components/contextmenu/) |
 | editor.ui.registry.addMenuButton: (name, spec) | [Menu Button]({{site.baseurl}}/ui-components/typesoftoolbarbuttons/#menubutton) |

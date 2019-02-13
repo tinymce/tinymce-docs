@@ -6,7 +6,7 @@ description: Learn how to change the appearance of TinyMCE.
 keywords: themes skins statusbar
 ---
 
-This section is about customizing TinyMCE's user interface with skins, toolbar buttons and manipulating the status bar.
+This section is about customizing TinyMCE's user interface with skins, toolbar buttons, and manipulating the status bar.
 
 ### Themes
 
@@ -14,7 +14,7 @@ This section is about customizing TinyMCE's user interface with skins, toolbar b
 
 ### Skins
 
-Skins controls the appearance of TinyMCE such as colors and spacings. The default skin is called "Oxide" and we have included a light and a dark version. The default skin is white. To get the dark version, use the following config:
+Skins control the appearance of TinyMCE such as colors and spacing. The default skin is called **Oxide** and has a `light` and a `dark` version. The default skin is `white`. To get the dark version, use the following config:
 
 ```js
 tinymce.init({
@@ -23,15 +23,15 @@ tinymce.init({
 });
 ```
 
-Making your own skins for TinyMCE is easy with our Skin tool project. See [Creating a skin]({{ site.baseurl }}/advanced/creating-a-skin/) for more details.
+Creating skins for TinyMCE is easy with the TinyMCE Skin tool project. See [Creating a skin]({{ site.baseurl }}/advanced/creating-a-skin/) for more details.
 
-> Note: Currently, the TinyMCE Skin Creator only supports TinyMCE 4. A TinyMCE 5 Skin Creator will be released in the future. Until then, please see [Creating a skin]({{ site.baseurl }}/advanced/creating-a-skin/) for manually creating a skin.
+> Note: The  [TinyMCE Skin Creator](http://skin.tinymce.com/) only supports TinyMCE 4.
 
 > Note: Developers often confuse the difference between TinyMCE "themes" and "skins". A **Skin** in Tinymce is used to make changes to the appearance of the editor, for example, colors, margins, paddings, fonts, icons, etc. A **Theme** creates the editor construction (left, top, bottom, or right of the editing area - vertical or horizontal, inline or outside, etc.). A skin usually changes the color scheme of a button, dialog, etc. while the theme applies to the whole editor including its functionality and has child skins to change the appearance.
 
 ### Changing editor height and width
 
-A common UI customization used by developers is changing the height and width of the editable area. The following examples are code snippets that change TinyMCE height and width.
+A common UI customization used by developers is changing the height and width of the editable area. The following examples are code snippets that change TinyMCE's height and width.
 
 > Note: The links below contain specific details of these customization options.
 
@@ -95,11 +95,15 @@ tinyMCE.init({
 
 See the [content_css]({{ site.baseurl }}/configure/content-appearance/#content_css) customization page for more information about the use of absolute and relative paths as well as and how to use multiple stylesheets.
 
-> Note: We have included two additional themes for `content_css` to try out: [Document](http://fiddle.tinymce.com/9Bgaab) and [Writer](http://fiddle.tinymce.com/ABgaab). Use `content_css: 'document'` or `content_css: 'writer'` to try them out.
+> Note: We have included two aditional themes for `content_css` to try out: **Document** and **Writer**. Use `content_css: 'document'` or `content_css: 'writer'` to try them out.
 
 ### Hiding the status bar
 
-The status bar is the gray bar aligned to the bottom of the editor's editable area. The status bar contains the path information and the resize handle. Removing the status bar disables the ability for users to change the size of the editable area. The following example disables the status bar.
+The status bar is the gray bar aligned to the bottom of the editor's editable area. The status bar contains the path information and the resize handle. Removing the status bar disables the ability for users to change the size of the editable area. 
+
+#### Example
+
+The following example disables the status bar.
 
 ```js
 tinymce.init({
@@ -107,6 +111,7 @@ tinymce.init({
   statusbar: false
 });
 ```
+
 > Note: Refer to the plugins and advanced configuration options documentation for more information on how to restrict whether the resize handle can be dragged.
 
 ### Adding the code button plugin
@@ -124,6 +129,8 @@ tinymce.init({
 ```
 
 All of the buttons disappear after the `code` button is added to the toolbar and a new menu called `Tools` with the menu item `Source code` is created. (See [this page]({{ site.baseurl }}/quick-start/) for a basic HTML code block.)
+
+#### Example 
 
 The following example displays the default toolbar in addition to the `code` functionality:
 

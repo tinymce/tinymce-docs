@@ -69,7 +69,7 @@ This allows the user to easily update the TinyMCE instance despite making advanc
 ### Creating a skin
 
 1. In the `/oxide` directory, begin by duplicating the `default` folder located in `src/less/skins/ui/` and rename it to the name of your skin.
-1. Open the file `src/less/theme/globals/global-variables.less` and **copy** the variables to change into the `skin.less` file of the duplicated folder in the previous step.
+1. Open the file `src/less/theme/globals/global-variables.less` and **copy** the variables to change into the `skin.less` file of the duplicate folder in the previous step.
 1. Change the values. The variables in the `skin.less` will override the default values.
 
 For more detailed customizations, review the variables in each component, such as `src/less/theme/components/toolbar-button.less` and copy the desired ones to the `skin.less`.

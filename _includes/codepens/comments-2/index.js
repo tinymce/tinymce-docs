@@ -8,7 +8,6 @@ tinymce.init({
       items: 'addcomment showcomments deleteallconversations'
     }
   },
-  // Paste can cause problems with getContent filtering, so good to keep it here
   plugins: 'paste tinycomments',
   tinycomments_mode: 'embedded',
   tinycomments_author: 'John'

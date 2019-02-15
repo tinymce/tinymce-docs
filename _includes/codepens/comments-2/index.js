@@ -10,5 +10,5 @@ tinymce.init({
   },
   plugins: 'paste tinycomments',
   tinycomments_mode: 'embedded',
-  tinycomments_author: 'John'
+  tinycomments_author: 'Author'
 });

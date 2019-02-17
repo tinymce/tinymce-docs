@@ -6,9 +6,9 @@ description: Matches special patterns in the text and applies formats or execute
 keywords: textpattern textpattern_patterns format cmd
 ---
 
-This plugin matches special patterns in the text and applies formats, replaces text, or executes commands on these patterns.
+The Text Pattern plugin matches special patterns in the text and applies formats, replaces text, or executes commands on these patterns.
 
-The default pattern is similar to markdown syntax, so you can type `# text` to produce a header or `**text**` to make text **bold**.
+The default pattern is similar to markdown syntax, so the user can type `# text` to produce a header or `**text**` to make text **bold**.
 
 **Type:** `String`
 
@@ -27,9 +27,9 @@ This setting affects the execution of the `textpattern` plugin. Text patterns th
 
 ### `textpattern_patterns`
 
-This option lets you configure the text patterns that get matched by the `textpattern` plugin. By default, it has basic markdown patterns.
+This option allows configuring the text patterns that get matched by the `textpattern` plugin. By default, it has basic markdown patterns.
 
-There are three types of patterns: inline, block, and replacement patterns. Inline patterns have a `start` and an `end` text pattern whereas the block- and replacement-based patterns only have a `start`. You can specify formats to be applied to the selection, commands to be executed, or text to be replaced.
+There are three types of patterns: `inline`, `block`, and `replacement` patterns. Inline patterns have a `start` and an `end` text pattern whereas the block and replacement patterns only have a `start`. User can specify the formats to be applied to the selection, commands to be executed, or text to be replaced.
 
 > Note: Formats and commands must be already registered with the editor. See the [formats]({{ site.baseurl }}/configure/content-formatting/#formats) and [commands]({{ site.baseurl }}/api/tinymce/tinymce.editorcommands/) documentation for more information.
 
@@ -53,7 +53,12 @@ There are three types of patterns: inline, block, and replacement patterns. Inli
 
 #### Inline patterns
 
-Inline patterns have a `start` and an `end`, and either a `format` or a `cmd` and optional `value` property. This allows for patterns to be used to either apply a format or execute a command, optionally with the given value.
+Inline patterns must have the following:
+* A `start` and an `end`
+* A `format` or a `cmd` 
+* An optional `value` property. 
+
+This allows for patterns to be used to either apply a format or execute a command, optionally with the given value.
 
 > Note: Inline patterns are executed on space and on enter.
 
@@ -71,13 +76,21 @@ tinymce.init({
 });
 ```
 
-Using the configuration in this example, typing `*`, some text, `*`, then space will result in the format `italic` being applied to the text between the `*` symbols. The same will happen for `**` and `bold`. The third pattern will execute `editor.execCommand('createLink', false, 'https://tiny.cloud')`, which will wrap the text between the `~` symbols in an link that points to `https://tiny.cloud`.
+Using the configuration in this example:
+* `{start: '*', end: '*', format: 'italic'}` - Entering text between`*` and then pressing the **spacebar** will result in the `italic` format being applied to the text between the `*` symbols. 
+* `{start: '**', end: '**', format: 'bold'}` - Entering text between`**` and then pressing the **spacebar** will result in the `bold` format being applied. 
+* `{start: '~', end: '~', cmd: 'createLink', value: 'https://tiny.cloud'}` - This executes `editor.execCommand('createLink', false, 'https://tiny.cloud')`, which will wrap the text between the `~` symbols in an link that points to `https://tiny.cloud`.
 
 #### Block patterns
 
-Block patterns have a `start` and either a `format` or a `cmd` and optional `value` property. They do not have an `end` property. This allows for patterns to be used to either apply a block format or execute a command, optionally with the given value.
+Block patterns must have the following:
+* A `start` 
+* A `format` or a `cmd` 
+* An optional `value` property.
 
-> Note: Block patterns are only executed on enter, **not** on space.
+The block patterns do not have an `end` property. This allows for patterns to be used to either apply a block format or execute a command, optionally, with the given value.
+
+> Note: Block patterns are only executed on **Enter**, **not** on pressing the **spacebar**.
 
 ##### Example
 
@@ -104,13 +117,19 @@ tinymce.init({
 });
 ```
 
-Using the configuration in this example, typing `#`, some text, then pressing enter will convert the text to a `h1` heading. Typing `1. `, some text, then pressing enter will convert the text to an ordered list, with the original text as the first list item, and the new line as the second list item. In particular, since we have specified `value`, this pattern will execute `editor.execCommand('InsertOrderedList', false, { 'list-style-type': 'decimal'})`.
+Using the configuration in this example:
+* `{start: '#', format: 'h1'}` - Typing `#`, some text, and then pressing `Enter` will convert the text to a `h1` heading. 
+* Typing `1. `, some text, and then pressing `Enter` will convert the text into an ordered list, with the original text as the first list item, and the new line as the second list item. Since we have specified `value`, this pattern will execute `editor.execCommand('InsertOrderedList', false, { 'list-style-type': 'decimal'})`.
 
 #### Replacements patterns
 
-Replacement patterns have a `start` and a `replacement`, which takes a string that can be text or HTML. Whether a replacement pattern inserts a block or inline element depends on what the `replacement` string is.
+Replacement patterns must have the following:
+* A `start` 
+* A `replacement`, which takes a string that can be text or HTML.
 
-> Note: Replacement patterns are executed on space and on enter.
+Whether a replacement pattern inserts a block or inline element depends on what the `replacement` string is.
+
+> Note: Replacement patterns are executed on pressing the **spacebar** and the **Enter** key.
 
 ##### Example
 
@@ -129,4 +148,8 @@ tinymce.init({
 });
 ```
 
-In this example, typing `---` will insert a horizontal rule block, but typing `(c)` will insert an inline copyright symbol. This is useful for commonly used phrases or symbols, and can be leveraged to create content templates. The last pattern is an example of this.
+Using the configuration in this example:
+* Typing `---` will insert a horizontal rule block.
+* Typing `(c)` will insert an inline copyright symbol. 
+
+This is useful for commonly used phrases or symbols, and can be leveraged to create content templates. The last pattern is an example of this.

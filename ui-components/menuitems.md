@@ -1,4 +1,10 @@
-# Custom Menu Items
+---
+layout: default
+title: Custom menu items
+title_nav: Custom menu items
+description: This section demonstrates different types of menu items.
+keywords: menu menuitem menuitems
+---
 
 ## Use Cases
 
@@ -42,19 +48,19 @@ tinymce.init({
 > Note: The identifier used to create the menu item must be included in the [`menu`](https://www.tiny.cloud/docs-beta/configure/editor-appearance/#menu) option in the TinyMCE configuration for it to be added to the menubar's menus. It will not be added to the menubar's menus if `menu` is not configured correctly.
 
 
-# Types of Menu Items
+## Types of menu items
 
 There are three types of menu items in TinyMCE 5.0:
 
 * Basic menu items
-* Toggle menu items
 * Nested menu items
+* Toggle menu items
 
-## Basic Menu Items
+### Basic menu items
 
 A basic menu item triggers its `onAction` function when clicked.
 
-### Config options
+#### Config options
 
 | Name | Value | Requirement | Description |
 | ---- | ----- | ----------- | ----------- |
@@ -72,11 +78,30 @@ A basic menu item triggers its `onAction` function when clicked.
 | isDisabled | () => boolean | Checks if the menu item is disabled. |
 | setDisabled | (state: boolean) => void | Sets the menu item's disabled state. |
 
-## Toggle Menu Item
+### Nested menu items
+
+A nested menu item is a menu item with a submenu. Registering a submenu this way allows it to be reused in menubar menus and toolbar button menus without having to define the submenu twice. The submenu can contain any combination of basic menu items and toggle menu items.
+
+| Name | Value | Requirement | Description |
+| ---- | ----- | ----------- | ----------- |
+| text | string | optional | Text to display if no icon is found. |
+| icon | string | optional | Name of the icon to be displayed. Must correspond to an icon in the icon pack. |
+| value | string | optional | A value to associate with the menu item. |
+| onSetup | (api) => (api) => void | optional | default: () => () => {} - Function invoked when the menu item is rendered, each time its menu is opened. |
+| getSubmenuItems | () => string or MenuItem[] | required | Function invoked when the menu item is clicked to open its submenu. Must return either a space separated string of registered menu names or an array of basic, toggle or nested menu items specifications. |
+
+#### API
+
+| Name | Value | Description |
+| ---- | ----- | ----------- |
+| isDisabled | () => boolean | Checks if the menu item is disabled. |
+| setDisabled | (state: boolean) => void | Sets the menu item's disabled state. |
+
+### Toggle menu items
 
 A toggle menu item triggers its `onAction` when clicked. It also has a concept of state. This means it can be toggled `on` and `off`. A toggle menu item gives the user visual feedback for its state through a checkmark that appears to the left of the menu item's text when it is `on`. 
 
-### Config options
+#### Config options
 
 | Name | Value | Requirement | Description |
 | ---- | ----- | ----------- | ----------- |
@@ -95,24 +120,5 @@ A toggle menu item triggers its `onAction` when clicked. It also has a concept o
 | ---- | ----- | ----------- |
 | isActive | () => boolean | Checks if the menu item is active. |
 | setActive | (state: boolean) => void | Sets the menu item's active state. |
-| isDisabled | () => boolean | Checks if the menu item is disabled. |
-| setDisabled | (state: boolean) => void | Sets the menu item's disabled state. |
-
-## Nested Menu Item
-
-A nested menu item is a menu item with a submenu. Registering a submenu this way allows it to be reused in menubar menus and toolbar button menus without having to define the submenu twice. The submenu can contain any combination of basic menu items and toggle menu items.
-
-| Name | Value | Requirement | Description |
-| ---- | ----- | ----------- | ----------- |
-| text | string | optional | Text to display if no icon is found. |
-| icon | string | optional | Name of the icon to be displayed. Must correspond to an icon in the icon pack. |
-| value | string | optional | A value to associate with the menu item. |
-| onSetup | (api) => (api) => void | optional | default: () => () => {} - Function invoked when the menu item is rendered, each time its menu is opened. |
-| getSubmenuItems | () => string or MenuItem[] | required | Function invoked when the menu item is clicked to open its submenu. Must return either a space separated string of registered menu names or an array of basic, toggle or nested menu items specifications. |
-
-#### API
-
-| Name | Value | Description |
-| ---- | ----- | ----------- |
 | isDisabled | () => boolean | Checks if the menu item is disabled. |
 | setDisabled | (state: boolean) => void | Sets the menu item's disabled state. |

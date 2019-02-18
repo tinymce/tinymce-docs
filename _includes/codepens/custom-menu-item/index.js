@@ -43,6 +43,7 @@ tinymce.init({
       },
       onSetup: function (api) {
         api.setActive(toggleState);
+        return function () {};
       }
     });
   }

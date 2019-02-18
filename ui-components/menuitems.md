@@ -16,8 +16,8 @@ keywords: menu menuitem menuitems
 The methods for adding custom menu items are in the UI Registry part of the editor API editor.ui.registry. The API has three methods for adding menu items:
 
 * `editor.ui.registry.addMenuItem`(identifier, configuration)
-* `editor.ui.registry.addToggleMenuItem`(identifier, configuration)
 * `editor.ui.registry.addNestedMenuItem`(identifier, configuration)
+* `editor.ui.registry.addToggleMenuItem`(identifier, configuration)
 
 The two arguments these methods take are:
 
@@ -42,10 +42,9 @@ tinymce.init({
     });
   }
 });
-
 ```
 
-> Note: The identifier used to create the menu item must be included in the [`menu`](https://www.tiny.cloud/docs-beta/configure/editor-appearance/#menu) option in the TinyMCE configuration for it to be added to the menubar's menus. It will not be added to the menubar's menus if `menu` is not configured correctly.
+> Note: The identifier used to create the menu item must be included in the [`menu`]({{site.baseurl}}/configure/editor-appearance/#menu) option in the TinyMCE configuration for it to be added to the menubar's menus. It will not be added to the menubar's menus if `menu` is not configured correctly.
 
 
 ## Types of menu items
@@ -78,6 +77,15 @@ A basic menu item triggers its `onAction` function when clicked.
 | isDisabled | () => boolean | Checks if the menu item is disabled. |
 | setDisabled | (state: boolean) => void | Sets the menu item's disabled state. |
 
+#### Example
+
+```js
+editor.ui.registry.addMenuItem('basicitem', {
+  text: 'My basic menu item',
+  onAction: () => alert('Menu item clicked')
+});
+```
+
 ### Nested menu items
 
 A nested menu item is a menu item with a submenu. Registering a submenu this way allows it to be reused in menubar menus and toolbar button menus without having to define the submenu twice. The submenu can contain any combination of basic menu items and toggle menu items.
@@ -96,6 +104,21 @@ A nested menu item is a menu item with a submenu. Registering a submenu this way
 | ---- | ----- | ----------- |
 | isDisabled | () => boolean | Checks if the menu item is disabled. |
 | setDisabled | (state: boolean) => void | Sets the menu item's disabled state. |
+
+#### Example
+
+```js
+editor.ui.registry.addNestedMenuItem('nesteditem', {
+  text: 'My nested menu item',
+  getSubmenuItems: () => {
+    return [{
+      type: 'menuitem',
+      text: 'My submenu item',
+      onAction: alert('Submenu item clicked')
+    }];
+  }
+});
+```
 
 ### Toggle menu items
 
@@ -122,3 +145,20 @@ A toggle menu item triggers its `onAction` when clicked. It also has a concept o
 | setActive | (state: boolean) => void | Sets the menu item's active state. |
 | isDisabled | () => boolean | Checks if the menu item is disabled. |
 | setDisabled | (state: boolean) => void | Sets the menu item's disabled state. |
+
+#### Example
+
+```js
+var toggleState = false;
+editor.ui.registry.addToggleMenuItem('toggleitem', {
+  text: 'My toggle menu item',
+  onAction: () => {
+    toggleState = !toggleState;
+    alert('Toggle menu item clicked');
+  },
+  onSetup: (api) => {
+    api.setActive(toggleState);
+    return () => {};
+  }
+});
+```

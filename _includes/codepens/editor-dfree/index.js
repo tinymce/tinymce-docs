@@ -2,6 +2,7 @@ var dfreeHeaderConfig = {
   selector: '.dfree-header',
   menubar: false,
   inline: true,
+  toolbar: false,
   plugins: [ 'quickbars' ],
   quickbars_insert_toolbar: 'undo redo',
   quickbars_selection_toolbar: 'italic underline'
@@ -23,10 +24,7 @@ var dfreeBodyConfig = {
     'image',
     'quickbars'
   ],
-  toolbar: [
-    'undo redo | bold italic underline | fontselect fontsizeselect',
-    'forecolor backcolor | alignleft aligncenter alignright alignfull | link unlink | numlist bullist outdent indent'
-  ],
+  toolbar: false,
   quickbars_insert_toolbar: 'quicktable image',
   quickbars_selection_toolbar: 'bold italic | h2 h3 | blockquote quicklink',
   contextmenu: 'inserttable | cell row column deletetable',

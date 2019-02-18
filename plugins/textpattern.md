@@ -13,21 +13,6 @@ The default pattern is similar to markdown syntax, so the user can type `# text`
 **Type:** `String`
 
 ##### Example
----
-layout: default
-title: Text Pattern plugin
-title_nav: Text Pattern
-description: Matches special patterns in the text and applies formats or executed commands on these patterns.
-keywords: textpattern textpattern_patterns format cmd
----
-
-The Text Pattern plugin matches special patterns in the text and applies formats, replaces text, or executes commands on these patterns.
-
-The default pattern is similar to markdown syntax, so the user can type `# text` to produce a header or `**text**` to make text **bold**.
-
-**Type:** `String`
-
-##### Example
 
 ```js
 tinymce.init({
@@ -139,7 +124,7 @@ Using the configuration in this example:
 #### Replacements patterns
 
 Replacement patterns must have the following:
-* A `start` 
+* A `start`.
 * A `replacement`, which takes a string that can be text or HTML.
 
 Whether a replacement pattern inserts a block or inline element depends on what the `replacement` string is.
@@ -165,8 +150,8 @@ tinymce.init({
 ```
 
 Using the configuration in this example:
-* Typing `---` will insert a horizontal rule block.
-* Typing `(c)` will insert an inline copyright symbol. 
+* Typing `---` and then either pressing the **spacebar** or the **Enter** key will insert a horizontal rule block.
+* Typing `(c)` and then either pressing the **spacebar** or the **Enter** key will insert an inline copyright symbol. 
 
 This is useful for commonly used phrases or symbols and can be leveraged to create content templates. The last pattern is an example of this.
 
@@ -185,7 +170,7 @@ This setting affects the execution of the `textpattern` plugin. Text patterns th
 
 This option allows configuring the text patterns that get matched by the `textpattern` plugin. By default, it has basic markdown patterns.
 
-There are three types of patterns: `inline`, `block`, and `replacement` patterns. Inline patterns have a `start` and an `end` text pattern whereas the block and replacement patterns only have a `start`. User can specify the formats to be applied to the selection, commands to be executed, or text to be replaced.
+There are three types of patterns: `inline`, `block`, and `replacement` patterns. Inline patterns have a `start` and an `end` text pattern whereas the block and replacement patterns only have a `start`. A user can specify the formats to be applied to the selection, commands to be executed, or text to be replaced.
 
 > Note: Formats and commands must be already registered with the editor. See the [formats]({{ site.baseurl }}/configure/content-formatting/#formats) and [commands]({{ site.baseurl }}/api/tinymce/tinymce.editorcommands/) documentation for more information.
 
@@ -240,13 +225,13 @@ Using the configuration in this example:
 #### Block patterns
 
 Block patterns must have the following:
-* A `start` 
-* A `format` or a `cmd`
+* A `start`. 
+* A `format` or a `cmd`.
   * If `cmd` is specified, an optional `value` property is allowed.
 
 The block patterns do not have an `end` property. This allows for patterns to be used to either apply a block format or execute a command, optionally, with the given value.
 
-> Note: Block patterns are only executed on **Enter**, **not** on pressing the **spacebar**.
+> Note: Block patterns are only executed on pressing the **Enter** key, **not** on pressing the **spacebar**.
 
 ##### Example
 
@@ -274,13 +259,13 @@ tinymce.init({
 ```
 
 Using the configuration in this example:
-* `{start: '#', format: 'h1'}` - Typing `#`, some text, and then pressing `Enter` will convert the text to a `h1` heading. 
-* Typing `1. `, some text, and then pressing `Enter` will convert the text into an ordered list, with the original text as the first list item, and the new line as the second list item. Since we have specified `value`, this pattern will execute `editor.execCommand('InsertOrderedList', false, { 'list-style-type': 'decimal'})`.
+* `{start: '#', format: 'h1'}` - Typing `#`, some text, and then pressing the **Enter** key will convert the text to a `h1` heading. 
+* Typing `1. `, some text, and then pressing the **Enter** key will convert the text into an ordered list, with the original text as the first list item, and the new line as the second list item. Since we have specified `value`, this pattern will execute `editor.execCommand('InsertOrderedList', false, { 'list-style-type': 'decimal'})`.
 
 #### Replacements patterns
 
 Replacement patterns must have the following:
-* A `start` 
+* A `start`. 
 * A `replacement`, which takes a string that can be text or HTML.
 
 Whether a replacement pattern inserts a block or inline element depends on what the `replacement` string is.
@@ -306,7 +291,7 @@ tinymce.init({
 ```
 
 Using the configuration in this example:
-* Typing `---` will insert a horizontal rule block.
-* Typing `(c)` will insert an inline copyright symbol. 
+* Typing `---` and then either pressing the **spacebar** or the **Enter** key will insert a horizontal rule block.
+* Typing `(c)` and then either pressing the **spacebar** or the **Enter** key will insert an inline copyright symbol. 
 
-This is useful for commonly used phrases or symbols, and can be leveraged to create content templates. The last pattern is an example of this.
+This is useful for commonly used phrases or symbols and can be leveraged to create content templates. The last pattern is an example of this.

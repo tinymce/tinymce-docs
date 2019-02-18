@@ -149,7 +149,10 @@ A toggle menu item triggers its `onAction` when clicked. It also has a concept o
 #### Example
 
 ```js
+// Menu items are recreated when the menu is closed and opened, so we need
+// a variable to store the toggle menu item state.
 var toggleState = false;
+
 editor.ui.registry.addToggleMenuItem('toggleitem', {
   text: 'My toggle menu item',
   onAction: () => {

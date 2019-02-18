@@ -144,10 +144,9 @@ var demoBaseConfig = {
   plugins: [
     "a11ychecker advcode advlist anchor autolink codesample colorpicker fullscreen help image imagetools",
     " lists link media noneditable powerpaste preview",
-    " searchreplace table template textcolor tinymcespellchecker visualblocks wordcount"
+    " searchreplace table template textcolor tinymcespellchecker visualblocks wordcount mentions"
   ], /* removed:  charmap insertdatetime print */
   external_plugins: {
-    mentions: "//www.tiny.cloud/pro-demo/mentions/plugin.min.js",
     moxiemanager: "//www.tiny.cloud/pro-demo/moxiemanager/plugin.min.js"
   },
   templates: [

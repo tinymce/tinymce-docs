@@ -40,7 +40,7 @@ deploy:
 invalidate_cache:
   steps:
     - script:
-        code: aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_DISTRIBUTION_ID --paths "/docs/*"
+        code: aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_DISTRIBUTION_ID --paths "/docs-4x/*"
 
 deploy_branch:
   steps:
@@ -58,5 +58,5 @@ deploy_branch:
     - s3sync:
         key-id: $AWS_ACCESS_KEY_ID
         key-secret: $AWS_SECRET_ACCESS_KEY
-        bucket-url: $S3_BUCKET/docs/
+        bucket-url: $S3_BUCKET/docs-4x/
         source-dir: $S3_SOURCE

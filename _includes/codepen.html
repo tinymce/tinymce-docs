@@ -123,7 +123,7 @@ When the example.js file is present, the link to the external codepen site is di
 <script>
   (function() {
     var isIE = !!window.MSInputMethodContext && !!document.documentMode;
-    if (isIE && document.getElementsByClassName("ie11_optional") !== null) {
+    if (isIE && document.getElementsByClassName("ie11_optional")[0] !== undefined) {
         document.getElementsByClassName("ie11_optional")[0].style.display = 'none';  
     }
   })();

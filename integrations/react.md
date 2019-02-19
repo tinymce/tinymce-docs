@@ -59,7 +59,7 @@ So using the `dev` channel would look like this:
 <Editor apiKey='YOUR_API_KEY' cloudChannel='dev' init={% raw %}{{{% endraw %} /* your other settings */ {% raw %}}}{% endraw %} />
 ```
 
-For more info on the different channels see the [documentation](https://www.tinymce.com/docs/cloud-deployment-guide/editor-and-features/editor-plugin-version/#devtestingandstablereleases).
+For more info on the different channels see the [documentation](https://www.tinymce.com/docs/cloud-deployment-guide/editor-and-features/#devtestingandstablereleases).
 
 #### Loading TinyMCE by yourself
 

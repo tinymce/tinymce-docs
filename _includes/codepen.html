@@ -123,7 +123,9 @@ When the example.js file is present, the link to the external codepen site is di
 <script>
   (function() {
     var isIE = !!window.MSInputMethodContext && !!document.documentMode;
-    isIE && (document.getElementsByClassName("ie11_optional")[0].style.display = 'none');
+    if (isIE && document.getElementsByClassName("ie11_optional") !== null) {
+        document.getElementsByClassName("ie11_optional")[0].style.display = 'none';  
+    }
   })();
 
   (function() {
@@ -169,9 +171,11 @@ When the example.js file is present, the link to the external codepen site is di
       };
     });
 
-    document.getElementById("codepen_tab_codepen_" + id).onclick = function() {
-      document.getElementById("codepen_form_" + id).submit();
-    };
+    if (document.getElementById("codepen_tab_codepen_" + id) !== null) {
+        document.getElementById("codepen_tab_codepen_" + id).onclick = function() {
+            document.getElementById("codepen_form_" + id).submit();
+        };
+    }
 
   })();
 

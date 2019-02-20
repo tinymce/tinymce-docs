@@ -49,7 +49,7 @@ check_links:
         key-id: $AWS_ACCESS_KEY_ID
         key-secret: $AWS_SECRET_ACCESS_KEY
         bucket-url: $S3_BUCKET/docs/report/
-        source-dir: $S3_SOURCE/report/
+        source-dir: report/
         opts: --delete-removed
 
 invalidate_cache:

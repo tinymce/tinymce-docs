@@ -35,7 +35,20 @@ deploy:
   after-steps:
     - slack-notifier:
         url: $SLACK_WEBHOOK_URL
-        
+
+check_links:
+  box: jointiny/tiny-cloud-docs-linkchecker
+  steps:
+    - script:
+        name: check links
+        code: mkdir report/; linkchecker -r 1 http://staging.tiny.cloud/docs/
+    - s3sync:
+        key-id: $AWS_ACCESS_KEY_ID
+        key-secret: $AWS_SECRET_ACCESS_KEY
+        bucket-url: $S3_BUCKET/docs/report/
+        source-dir: $S3_SOURCE/report/
+        opts: --delete-removed
+
 invalidate_cache:
   steps:
     - script:

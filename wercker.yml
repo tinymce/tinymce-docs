@@ -41,7 +41,7 @@ check_links:
   steps:
     - script:
         name: check links
-        code: mkdir report/; linkchecker -r 1 http://staging.tiny.cloud/docs/
+        code: mkdir report/; linkchecker -r 0 http://staging.tiny.cloud/docs/
     - script:
         name: get bucket name
         code: export S3_BUCKET=$(node -e 'console.log(`s3://docs-v5-${process.env.WERCKER_GIT_BRANCH.replace(/[/\s]/g, "-").replace(/[^0-9a-zA-Z-]/g, "").replace(/-$/g, "").toLowerCase()}.staging.tiny.cloud`)')

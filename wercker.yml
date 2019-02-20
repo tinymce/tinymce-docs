@@ -28,9 +28,6 @@ deploy:
         bucket-url: $S3_BUCKET/docs/
         source-dir: $S3_SOURCE
         opts: --delete-removed
-    - script:
-        name: s3 cleanup
-        code: _scripts/s3-cleanup.sh
 
   after-steps:
     - slack-notifier:

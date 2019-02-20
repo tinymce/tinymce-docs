@@ -8,23 +8,7 @@ keywords: enterprise tinymcespellchecker spell check checker pro pricing
 
 _Spell Checker Pro_ adds spell check as-you-type capabilities to TinyMCE. This includes inline spell checking and a dialog mode that steps a user through each error offering a list of suggested corrections.
 
-The following languages are supported:
-
-|Language                   | Code   |
-|:--------------------------|:-------|
-| English                   | en     |
-| English (UK)              | en_uk, en_gb, en_br |
-| Danish                    | da     |
-| Dutch                     | nl     |
-| Finnish                   | fi     |
-| French                    | fr     |
-| German                    | de     |
-| Italian                   | it     |
-| Norwegian                 | nb     |
-| Portuguese (Brazil)       | pt     |
-| Portuguese (Europe)       | pt_pt  |
-| Spanish                   | es     |
-| Swedish                   | sv     |
+{% include configuration/languages.md %}
 
 ## Custom dictionaries
 Additional dictionaries can be added to Spell Checker Pro to supplement the default vocabulary. See [these instructions]({{ site.baseurl }}/enterprise/check-spelling/custom/) for details.

@@ -75,6 +75,7 @@
     - url: "#elementpath"
     - url: "#event_root"
     - url: "#height"
+    - url: "#icons"
     - url: "#inline"
     - url: "#max_height"
     - url: "#max_width"
@@ -226,6 +227,9 @@
   - url: "directionality"
   - url: "drive"
   - url: "emoticons"
+    pages:
+    - url: "#emoticons_append"
+    - url: "#emoticons_database_url"
   - url: "mediaembed"
   - url: "formatpainter"
   - url: "fullpage"
@@ -420,7 +424,7 @@
     - url: "#visualblocks_default_state"
   - url: "visualchars"
   - url: "wordcount"
-    
+
 - url: "ui-components"
   pages:
   - url: "dialog"
@@ -449,6 +453,7 @@
     - url: "#tabpanel"
     - url: "#textarea"
     - url: "#urlinput"
+  - url: "autocompleter"
   - url: "contextmenu"
     pages:
     - url: "#Live example"
@@ -472,7 +477,7 @@
     - url: "#Context form buttons"
     - url: "#Form API"
     - url: "#Example configuration"
-  - url: "customsidebar"  
+  - url: "customsidebar"
   - url: "toolbarbuttons"
   - url: "typesoftoolbarbuttons"
     pages:

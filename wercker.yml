@@ -42,9 +42,6 @@ check_links:
     - script:
         name: check links
         code: _scripts/check-links.sh
-    - script:
-        name: get bucket name
-        code: export S3_BUCKET=$(node -e 'console.log(`s3://docs-v5-${process.env.WERCKER_GIT_BRANCH.replace(/[/\s]/g, "-").replace(/[^0-9a-zA-Z-]/g, "").replace(/-$/g, "").toLowerCase()}.staging.tiny.cloud`)')
     - s3sync:
         key-id: $AWS_ACCESS_KEY_ID
         key-secret: $AWS_SECRET_ACCESS_KEY

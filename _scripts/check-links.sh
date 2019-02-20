@@ -1,4 +1,7 @@
 #!/bin/bash
 
-mkdir -p ./_report
-linkchecker -r 0 http://staging.tiny.cloud/docs/ --user-agent=linkchecker --output=html > _report/report.html
+# read more here
+# https://www.notion.so/tinycloud/Check-for-broken-links-4876019acee44cc88c5082e447c85519
+
+mkdir -p ./_report/report
+linkchecker -r 2 http://staging.tiny.cloud/docs/ --user-agent=linkchecker --output=html > _report/report/index.html

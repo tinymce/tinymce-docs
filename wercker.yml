@@ -48,7 +48,7 @@ check_links:
     - s3sync:
         key-id: $AWS_ACCESS_KEY_ID
         key-secret: $AWS_SECRET_ACCESS_KEY
-        bucket-url: $S3_BUCKET
+        bucket-url: s3://docs-v5-feature-doc-237.staging.tiny.cloud/docs
         source-dir: _report
         delete-removed: false
 

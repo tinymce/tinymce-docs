@@ -160,4 +160,4 @@ Follow this procedure to delete all conversations in the document:
 
 **Result**: All the comments for the selected document will be deleted.
 
-Check out the [Comments demo]({{site.baseurl}}/enterprise/tiny-comments/#tinycomments20demo) to try out this new feature.
+Check out the [Comments demo]({{site.baseurl}}/demo/comments/#comments20demo) to try out this new feature.

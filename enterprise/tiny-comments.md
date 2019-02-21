@@ -42,16 +42,10 @@ A working example is provided here for integrating the TinyMCE plugin into your 
 
 ### Buy Comments
 
-Start with our [dedicated product page](https://apps.tiny.cloud/products/comments/) to see our flexible pricing options. Enterprise customers should [contact sales directly](https://www.tiny.cloud/contact/). Still not sure? Check out the demo below.
+Start with our [dedicated product page](https://apps.tiny.cloud/products/comments/) to see our flexible pricing options. Enterprise customers should [contact sales directly](https://www.tiny.cloud/contact/). Still not sure? Check out the demos below.
 
-## Comments 1.0 Demo
+* [Comments 1.0 demo]({{site.baseurl}}/demo/comments/#comments10demo/)
 
-In this example, the features in Comments 1.0 are highlighted, including adding a comment, replying to a comment, and deleting a comment. For more information on the other Comments 1.0 configuration options, see the [docs]({{ site.baseurl }}/plugins/comments/comments_1.0/).
+* [Comments 2.0 demo]({{site.baseurl}}/demo/comments/#comments20demo/)
 
-{% include codepen.html id="pOzxJw" %}
 
-## Comments 2.0 Demo
-
-In this example, the features in Comments 2.0 are highlighted, including adding a comment, replying to a comment, and deleting a comment. For more information on the other Comments 2.0 configuration options, see the [docs]({{ site.baseurl }}/plugins/comments/comments_2.0/).
-
-{% include codepen.html id="ZwjzWj" %}

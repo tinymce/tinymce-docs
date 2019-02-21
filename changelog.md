@@ -16,13 +16,13 @@ class: changelog
 * Fixed an issue in the media plugin that was causing the source url and height/width to be lost in certain circumstances.
 * Fixed an issue with the Context Toolbar not being removed when clicking outside of the editor.
 * Fixed an issue where clicking 'Remove link' wouldn't remove the link in certain circumstances.
-* Added the ability highlight the code sample toolbar button when a code sample is selected.
+* Added active state to the code sample toolbar button when a code sample block is selected.
 * Fixed an issue where the media plugin would fail when parsing dialog data.
 * Fixed an issue where retrieving the selected content as text didn't create newlines.
 * Fixed incorrect keyboard shortcuts in the Help dialog for Windows.
 * Fixed an issue where JSON serialization could produce invalid JSON.
 * Fixed production CSS including references to source maps.
-* Fixed development CSS was not included in development zip.
+* Fixed development CSS not being included in the development zip.
 * Added a new toolbar setting `toolbar_drawer` that, upon the toolbar running over one line of groups, the remaining groups will overflow into a collapsible drawer.
 * Fixed the autocompleter matches predicate not matching on the start of words by default.
 * Added new settings to the emoticons plugin to allow additional emoticons to be added.

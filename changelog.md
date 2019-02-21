@@ -8,7 +8,32 @@ class: changelog
 
 {% capture changelog %}
 
+## Version 5.0.1 February 21, 2019
+* Fixed an issue where adding links to images would replace the image with text.
+* Fixed an issue where the inline editor could use fractional pixels for positioning.
+* Fixed an issue where uploading non-image files in the Image Plugin upload tab threw an error.
+* Added H1-H6 toggle button registration to the silver theme.
+* Fixed an issue in the media plugin that was causing the source url and height/width to be lost in certain circumstances.
+* Fixed an issue with the Context Toolbar not being removed when clicking outside of the editor.
+* Fixed an issue where clicking 'Remove link' wouldn't remove the link in certain circumstances.
+* Added the ability highlight the code sample toolbar button when a code sample is selected.
+* Fixed an issue where the media plugin would fail when parsing dialog data.
+* Fixed an issue where retrieving the selected content as text didn't create newlines.
+* Fixed incorrect keyboard shortcuts in the Help dialog for Windows.
+* Fixed an issue where JSON serialization could produce invalid JSON.
+* Fixed production CSS including references to source maps.
+* Fixed development CSS was not included in development zip.
+* Added a new toolbar setting `toolbar_drawer` that, upon the toolbar running over one line of groups, the remaining groups will overflow into a collapsible drawer.
+* Fixed the autocompleter matches predicate not matching on the start of words by default.
+* Added new settings to the emoticons plugin to allow additional emoticons to be added.
+* Fixed an issue where the window could be scrolled with modal dialogs open.
+* Fixed an issue where autocomplete menus would show an icon margin, when no items had icons.
+* Fixed an issue in the quickbars plugin where images incorrectly showed the text selection toolbar.
+* Fixed an issue that caused the inline editor to fail to render in specific circumstances.
+* Removed paste as text notification banner and paste_plaintext_inform setting.
+
 ## Version 5.0.0 February 4, 2019
+* Fixed an issue where tab panel heights weren't sizing properly on smaller screens and weren't updating on resize.
 * Added links and registered names with * to denote premium plugins in Plugins tab of Help dialog.
 * Fixed an issue where tab panel heights weren't sizing properly on smaller screens and weren't updating on resize.
 * Changed Tiny 5 mobile skin to look more uniform with desktop.
@@ -19,6 +44,7 @@ class: changelog
 * Fixed notification icon positioning in alert banners.
 * Fixed a typo in the word count plugin name.
 * Fixed charmap and emoticons dialogs not having a primary button.
+* Fixed an issue where resizing wouldn't work correctly depending on the box-sizing model.
 
 ## Version 5.0.0-rc-2 January 22, 2019
 * Removed unnecessary 'flex' and unused 'colspan' properties from the new dialog APIs.

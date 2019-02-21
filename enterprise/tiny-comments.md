@@ -16,14 +16,14 @@ Currently, there are two versions of Comments compatible with TinyMCE v4 -
 * [Comments 1.0]({{site.baseurl}}/plugins/comments/comments_1.0/)
 * [Comments 2.0]({{site.baseurl}}/plugins/comments/comments_2.0/)
 
-## Collaborate on your projects within your content
+### Collaborate on your projects within your content
 
 Comments offers the following primary functionality:
 
 * A **user interface** to collaborate on content by creating and replying to comments.
-* A way to control the delete operation on a comment/comment thread if you want to remove it from your content.
+* A way to control the delete operation on a comment or a comment thread if you want to remove it from your content.
 
-## Primary Comments Functions
+### Primary Comments Functions
 
 The Tiny Comments plugin allows the user to perform the following functions:
 
@@ -33,12 +33,6 @@ The Tiny Comments plugin allows the user to perform the following functions:
 * Lookup a comment
 * Store a comment (Comments 1.0)
 * Edit a comment (Comments 2.0)
-
-## Comments Integration
-
-A working example is provided here for integrating the TinyMCE plugin into your site.
-
-> Note: For more information on installing and configuring Tiny Comments, please visit the [documentation]({{ site.baseurl }}/plugins/comments/).
 
 ### Buy Comments
 
@@ -51,5 +45,10 @@ Still not sure? Check out the demos below.
 * [Comments 1.0 demo]({{site.baseurl}}/demo/comments/#comments10demo/)
 
 * [Comments 2.0 demo]({{site.baseurl}}/demo/comments/#comments20demo/)
+
+> Note: For more information on installing and configuring Tiny Comments, please visit the [documentation]({{ site.baseurl }}/plugins/comments/).
+
+
+
 
 

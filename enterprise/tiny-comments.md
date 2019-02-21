@@ -11,7 +11,7 @@ The Comments plugin provides the user an ability to start or join a conversation
 
 Users can now add comments to their text from within their TinyMCE editor for collaboration, review, and providing feedback.
 
-Currently, there are two versions of Comments compatible with TinyMCE v4 -
+Currently, there are two versions of Comments compatible with TinyMCE v4:
 
 * [Comments 1.0]({{site.baseurl}}/plugins/comments/comments_1.0/)
 * [Comments 2.0]({{site.baseurl}}/plugins/comments/comments_2.0/)

@@ -38,7 +38,7 @@ check_links:
   steps:
     - script:
         name: check links
-        code: _scripts/check-links.sh $S3_BUCKET
+        code: _scripts/check-links.sh
     - s3sync:
         key-id: $AWS_ACCESS_KEY_ID
         key-secret: $AWS_SECRET_ACCESS_KEY

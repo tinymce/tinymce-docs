@@ -13,8 +13,6 @@ TinyMCE 5.0 is perfect for developers who want to see how the new version of Tin
 
 ## Step 1: Include the TinyMCE script
 
-Build a TinyMCE 5.0 instance with the [TinyMCE 5.0 SDK](https://github.com/tinymce/tinymce/tree/master).
-
 Include this line of code in the `<head>` of the HTML page and link to the tinymce.min.js source file:
 
 ```html

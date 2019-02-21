@@ -6,9 +6,9 @@ description: Comments 2.0 provides the ability to add comments to the content an
 keywords: enterprise pricing comment commenting
 ---
 
-TinyMCE editor now has a highly desirable functionality, [Comments 2.0](#commentsdemo).
+TinyMCE editor now has a highly desirable functionality, [Comments 2.0]({{site.baseurl}}/demo/comments-2/).
 
-The Comments 2.0 plugin provides the user an ability to start or join a conversation by adding comments to the content within the TinyMCE editor.
+The Comments 2.0 plugin provides an ability to start or join a conversation by adding comments to the content within the TinyMCE editor.
 
 Users can now add comments to their text from within their TinyMCE editor for collaboration, review, and providing feedback.
 
@@ -40,10 +40,4 @@ We provide a working example for integrating the TinyMCE plugin into your site.
 
 Start with the [pricing](https://www.tiny.cloud/pricing/) page to see our flexible pricing options. Enterprise customers should [contact sales directly](https://www.tinymce.com/pricing/).
 
-<!--Still not sure? Check out the demo below.
-
- ## Comments 2.0 Demo
-
-In this example, the features in Comments 2.0 are highlighted, including adding a comment, replying to a comment, and deleting a comment. For more information on the other Comments 2.0 configuration options, see the [docs]({{ site.baseurl }}/plugins/comments/comments_2.0).
-
-[Demo coming soon!]-->
+Still not sure? Check out the [demo]({{site.baseurl}}/demo/comments-2/) that displays all the features in Comments 2.0.

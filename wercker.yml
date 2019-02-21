@@ -38,11 +38,11 @@ check_links:
   steps:
     - script:
         name: check links
-        code: _scripts/check-links.sh
+        code: _scripts/check-links.sh $S3_BUCKET
     - s3sync:
         key-id: $AWS_ACCESS_KEY_ID
         key-secret: $AWS_SECRET_ACCESS_KEY
-        bucket-url: s3://docs-v5-feature-doc-237.staging.tiny.cloud/docs/
+        bucket-url: $S3_BUCKET/docs/
         source-dir: _report
         delete-removed: false
 

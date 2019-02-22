@@ -6,7 +6,7 @@ description: Community and pro-grade support options.
 keywords: forum forums url absolute relative security xss
 ---
 
-> If you landed here having worked through the [Introduction & getting started]({{  site.baseurl }}/general-configuration-guide/advanced-install) section, congratulations, you are on your way to the TinyMCE ninja hood :-). It's now time to deep-dive into [configuring the editor]({{ site.baseurl }}/configure/) and explore [plugin options]({{ site.baseurl }}/plugins/). We wish you well and welcome you to TinyMCE. If you get stuck, a great place to start is the [TinyMCE Forum](https://community.tinymce.com/).
+> If you landed here having worked through the [Introduction & getting started]({{  site.baseurl }}/general-configuration-guide/advanced-install) section, congratulations, you are on your way to the TinyMCE ninja hood :-). It's now time to deep-dive into [configuring the editor]({{ site.baseurl }}/configure/) and explore [plugin options]({{ site.baseurl }}/plugins/). We wish you well and welcome you to TinyMCE. If you get stuck, a great place to start is the [TinyMCE Forum](https://community.tiny.cloud/).
 
 
 ## Premium support
@@ -14,7 +14,7 @@ keywords: forum forums url absolute relative security xss
 
 
 ## Forums
-Open Source Community Edition users can get free access to the [TinyMCE Forum](https://community.tinymce.com/).  Sign up [here](https://community.tinymce.com/).
+Open Source Community Edition users can get free access to the [TinyMCE Forum](https://community.tiny.cloud/).  Sign up [here](https://community.tiny.cloud/).
 
 
 ## FAQ & troubleshooting

@@ -147,7 +147,7 @@ tinymce.init({
     {title: 'Moxiecode', value: 'https://about.tiny.cloud'},
     {title: 'TinyMCE resources', menu: [
     {title: 'TinyMCE documentation', value: 'https://www.tiny.cloud/docs/'},
-    {title: 'TinyMCE forum', value: 'https://community.tinymce.com/'}
+    {title: 'TinyMCE forum', value: 'https://community.tiny.cloud/'}
     ]}
   ]
 });

@@ -123,4 +123,4 @@ tinymce.init({
 });
 ```
 
-Hopefully we'll have an [exact replica of the defaults](https://community.tinymce.com/communityQuestion?id=90661000000Mrw1AAC) soon.
+Hopefully we'll have an [exact replica of the defaults](https://community.tiny.cloud/communityQuestion?id=90661000000Mrw1AAC) soon.

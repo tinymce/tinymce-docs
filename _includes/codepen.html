@@ -13,8 +13,10 @@ Files required under _includes/codepens/id/
 
 index.html
 index.js
-index.css
-example.js optional file, 
+index.css optional file
+example.js optional file
+
+if index.css is omitted, the css tab will not display
 
 example.js purpose:
 when the file is present the codepen js will display the contents of example.js, while the real demo code executes with index.js
@@ -48,9 +50,23 @@ When the example.js file is present, the link to the external codepen site is di
 {% endcapture %}
 {% endif %}
 
+{% capture hasCss %}
+{% file_exists _includes/codepens/{{ include.id }}/style.css %}
+{% endcapture %}
+
+{% if hasCss contains "true" %}
+
 {% capture codepen_css %}
 {% include codepens/{{ include.id }}/style.css %}
 {% endcapture %}
+
+{% capture codepen_css_preview %}
+```css
+{{ codepen_css }}
+```
+{% endcapture %}
+
+{% endif %}
 
 {% capture script_tag %}
 {% include tinymce-script-tag.html %}
@@ -68,11 +84,6 @@ When the example.js file is present, the link to the external codepen site is di
 ```
 {% endcapture %}
 
-{% capture codepen_css_preview %}
-```css
-{{ codepen_css }}
-```
-{% endcapture %}
 
 {% if include.tab %}
     {% assign initialTab = include.tab %}
@@ -88,7 +99,9 @@ When the example.js file is present, the link to the external codepen site is di
             {% else %}
                 {% assign class="codepen_tab_deselected" %}
             {% endif %}
-            <a href="#" id="codepen_tab_{{ tab.name }}_{{ include.id }}" class="{{ class }}">{{ tab.text }}</a>
+            {% if tab.name != "css" or hasCss contains "true" %}
+                <a href="#" id="codepen_tab_{{ tab.name }}_{{ include.id }}" class="{{ class }}">{{ tab.text }}</a>
+            {% endif %}
         {% endfor %}
 
         {% if hasExampleJS contains 'false' %}
@@ -97,9 +110,11 @@ When the example.js file is present, the link to the external codepen site is di
     </div>
 
     <div id="codepen_pane_run_{{ include.id }}" {% if "run" != initialTab %}style="display:none;"{% endif %}>
-        <style type="text/css">
-            {{ codepen_css }}
-        </style>
+        {% if hasCss contains "true" %}
+            <style type="text/css">
+                {{ codepen_css }}
+            </style>
+        {% endif %}
         {{ codepen_html }}
     </div>
 
@@ -107,9 +122,11 @@ When the example.js file is present, the link to the external codepen site is di
         {{ codepen_html_preview | markdownify }}
     </div>
 
-    <div id="codepen_pane_css_{{ include.id }}" {% if "css" != initialTab %}style="display:none;"{% endif %}>
-        {{ codepen_css_preview | markdownify }}
-    </div>
+    {% if hasCss contains "true" %}
+        <div id="codepen_pane_css_{{ include.id }}" {% if "css" != initialTab %}style="display:none;"{% endif %}>
+            {{ codepen_css_preview | markdownify }}
+        </div>
+    {% endif %}
 
     <div id="codepen_pane_js_{{ include.id }}" {% if "js" != initialTab %}style="display:none;"{% endif %}>
         {{ codepen_js_preview | markdownify }}
@@ -138,7 +155,14 @@ When the example.js file is present, the link to the external codepen site is di
 
     var html = decodeURIComponent("{{ codepen_html | uri_escape }}");
     var js = decodeURIComponent("{{ codepen_js | uri_escape }}");
-    var css = decodeURIComponent("{{ codepen_css | uri_escape }}");
+
+    {% if hasCss contains "true" %}
+        var css = decodeURIComponent("{{ codepen_css | uri_escape }}");
+        var tabNames = ["run","html","css","js"];
+    {% else %}
+        var css = "";
+        var tabNames = ["run","html","js"];
+    {% endif %}
 
     /* Note: there are some other fields we could populate here to polish this. */
     /* See: https://blog.codepen.io/documentation/api/prefill/ */
@@ -154,7 +178,7 @@ When the example.js file is present, the link to the external codepen site is di
     document.getElementById("codepen_data_{{ include.id }}").value = JSON.stringify(data);
 
     /* TODO: */
-    var tabs = ["run","html","css","js"].map(function(t) {
+    var tabs = tabNames.map(function(t) {
       return {
         tab: document.getElementById("codepen_tab_" + t + "_" + id),
         pane: document.getElementById("codepen_pane_" + t + "_" + id)
@@ -162,12 +186,12 @@ When the example.js file is present, the link to the external codepen site is di
     });
 
     tabs.forEach(function(t) {
-      t.tab.onclick = function() {
+      t.tab.onclick = function(e) {
         tabs.forEach(function(tt) {
           tt.pane.style.display = t === tt ? 'block' : 'none';
           tt.tab.className = t === tt ? 'codepen_tab_selected' : 'codepen_tab_deselected';
         });
-        return false;
+        e.preventDefault();
       };
     });
 

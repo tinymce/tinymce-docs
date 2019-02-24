@@ -191,7 +191,7 @@ When the example.js file is present, the link to the external codepen site is di
           tt.pane.style.display = t === tt ? 'block' : 'none';
           tt.tab.className = t === tt ? 'codepen_tab_selected' : 'codepen_tab_deselected';
         });
-        return false;
+        e.preventDefault();
       };
     });
 

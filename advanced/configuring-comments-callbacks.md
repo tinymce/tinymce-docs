@@ -54,7 +54,7 @@ The done callback needs to take an object of the form:
 
 ```js
 {
-  conversationUid: the new conversation uid 
+  conversationUid: string // the new conversation uid
 }
 ```
 
@@ -76,7 +76,7 @@ The done callback needs to take an object of the form:
 
 ```js
 {
-  commentUid: the value of the new comment uid
+  commentUid: string // the value of the new comment uid
 }
 ```
 
@@ -100,8 +100,8 @@ The done callback needs to take an object of the form:
 
 ```js
 {
-  canEdit: whether or not the Edit succeeded
-  reason: an optional string explaining why the edit was not allowed (if canEdit is false)
+  canEdit: boolean, // whether or not the Edit succeeded
+  reason: string? // an optional string explaining why the edit was not allowed (if canEdit is false)
 }
 ```
 
@@ -117,8 +117,8 @@ The done callback needs to take an object of the form:
 
 ```js
 {
-  canDelete:boolean
-  reason: an optional string explaining why the delete was not allowed (if canDelete is false)
+  canDelete: boolean // whether or not the conversation can be deleted
+  reason: string? // an optional string explaining why the delete was not allowed (if canDelete is false)
 }
 ```
 
@@ -134,8 +134,8 @@ The done callback needs to take an object of the form:
 
 ```js
 {
-  canDelete:boolean
-  reason: an optional string explaining why the deleteAll was not allowed (if canDelete is false)
+  canDelete: boolean, // whether or not all conversations can be deleted
+  reason: string? // an optional string explaining why the deleteAll was not allowed (if canDelete is false)
 }
 ```
 
@@ -154,8 +154,8 @@ The done callback needs to take an object of the form:
 
 ```js
 {
-  canDelete:boolean
-  reason: an optional reason
+  canDelete: boolean, // whether or not an individual comment can be deleted
+  reason: string? // an optional reason explaining why the delete was not allowed (if canDelete is false)
 }
 ```
 
@@ -179,27 +179,28 @@ The done callback needs to take an object of the form:
 
 ```js
 {
- comments: [
-   {
-     author: 'Demouser1',
-     createdAt: 'date',
-     content: 'Starter',
-     modifiedAt: 'date',
-     uid: 'asfasdf87dfas08asd0fsadflsadf'
-   },
-   {
-    author: 'Demouser2',
-    createdAt: 'date',
-    content: 'Reply',
-    modifiedAt: 'date',
-    uid: 'asfasdf87dfas08asd0fsadflsadg’'
-   },
- ]
+ conversation: {
+   uid: string, // the uid of the conversation,
+   comments: [
+    {
+      author: string, // author of first comment
+      createdAt: date, // when the first comment was created
+      content: string // content of first comment
+      modifiedAt: date // when the first comment was last created/updated
+      uid: string // the uid of the first comment in the conversation
+    },
+    {
+      author: string, // author of second comment
+      createdAt: date, // when the second comment was created
+      content: string // content of second comment
+      modifiedAt: date // when the second comment was last created/updated
+      uid: string // the uid of the second comment in the conversation
+    }
+  ]
+ }
 }
-
- ]
-}
-
 ```
+
+Note, the dates should use ISO 8601 format. This can be generated in JavaScript with: `new Date().toISOString()` (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString).
 
 For more information on Comments commercial feature, visit our [Premium Features]({{ site.baseurl }}/enterprise/tiny-comments/) page.

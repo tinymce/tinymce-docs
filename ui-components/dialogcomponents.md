@@ -21,6 +21,17 @@ An **alertbanner** is a color-coded banner to alert the user of a problem. A URL
 }
 ```
 
+### bar
+
+A **bar** is a layout component that creates a single row of items in the dialog body.
+
+```js
+{
+  type: 'bar',
+  items: [ ]
+}
+```
+
 ### button
 
 A **button** component to be used inside the dialog body. These buttons differ from toolbar buttons and dialog footer buttons.
@@ -35,22 +46,6 @@ A **button** component to be used inside the dialog body. These buttons differ f
 }
 ```
 
-### charmap
-
-A **charmap** is a specialized component that prints a range of unique characters from Unicode.
-
-```js
-{
-  type: 'charmap',
-  name: 'charmap-1',
-  characters: [
-    {value: 'A', text: 'A'},
-    {value: 'B', text: 'B'},
-    {value: 'C', text: 'C'}
-  ]
-}
-```
-
 ### checkbox
 
 A **checkbox** is a component, used to toggle states on, or off.
@@ -62,6 +57,20 @@ A **checkbox** is a component, used to toggle states on, or off.
   label: 'Checkbox Label'
 }
 ```
+
+### collection
+
+A **collection** is a layout component that creates a panel containing a collection of symbols in the dialog body.
+
+```js
+{
+  type: 'collection',
+  name: 'collection-1',
+  label: 'Collection Label'
+}
+```
+
+> Note: To populate the collection with data, specify an array of items in the dialogs [`initialData`]({{site.baseurl}}/ui-components/dialog/#dialogcomposition) property. Each item should contain a `text`, `value` and `icon` property.
 
 ### colorinput
 
@@ -148,6 +157,18 @@ A **input** is a single line text field, and also renders a label element.
 }
 ```
 
+### label
+
+A **label** is a component that wraps other components and renders a label element.
+
+```js
+{
+  type: 'label',
+  label: 'Caption',
+  items: [ ]
+}
+```
+
 ### panel
 
 A **panel** is a basic container, that holds other components, we can compose many components inside a panel. In HTML terms consider a panel a `<div>` wrapper. A dialog body configuration must begin with either a `panel` or a `tabpanel`.
@@ -186,6 +207,22 @@ A **sizeinput** is a specialized input field that can lock ratios, see image dia
   label: 'Dimensions'
 }
 ```
+
+### table
+
+A **table** is a layout component that renders a simple table.
+
+```js
+{
+  type: 'table',
+  header: [ 'Heading 1', 'Heading 2', 'Heading 3' ],
+  cells: [
+    [ 'Cell 1', 'Cell 2', 'Cell 3' ],
+    [ 'Cell 4', 'Cell 5', 'Cell 6' ]
+  ]
+}
+```
+
 
 ### tabpanel
 

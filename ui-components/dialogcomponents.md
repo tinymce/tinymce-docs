@@ -34,7 +34,7 @@ A **bar** is a layout component that creates a single row of items in the dialog
 
 ### button
 
-A **button** component to be used inside the dialog body. These buttons differ from toolbar buttons and dialog footer buttons.
+A **button** is a component to be used inside the dialog body. These buttons differ from toolbar buttons and dialog footer buttons.
 
 
 ```js
@@ -48,7 +48,7 @@ A **button** component to be used inside the dialog body. These buttons differ f
 
 ### checkbox
 
-A **checkbox** is a component, used to toggle states on, or off.
+A **checkbox** is a component used to toggle states to `on` or `off`.
 
 ```js
 {
@@ -70,7 +70,7 @@ A **collection** is a layout component that creates a panel containing a collect
 }
 ```
 
-> Note: To populate the collection with data, specify an array of items in the dialogs [`initialData`]({{site.baseurl}}/ui-components/dialog/#dialogcomposition) property. Each item should contain a `text`, `value` and `icon` property.
+> Note: To populate the collection with data, specify an array of items in the dialogs [`initialData`]({{site.baseurl}}/ui-components/dialog/#dialogcomposition) property. Each item should contain a `text`, `value`, and `icon` property.
 
 ### colorinput
 
@@ -98,7 +98,7 @@ A **colorpicker**  is an intuitive color picker tool similar to image editors.
 
 ### dropzone
 
-A **dropzone** is a component that catches drag and drops items, or lets the user browse that can send a list of files for processing and receive the result.
+A **dropzone** is a component that catches drag and drops items or lets the user browse that can send a list of files for processing and receive the result.
 
 ```js
 {
@@ -122,7 +122,7 @@ A **grid** is a layout component that creates columns in the dialog body.
 
 ### htmlpanel
 
-A **htmlpanel** is similar to panel. It only takes a string of HTML.
+An **htmlpanel** is similar to panel. It only takes a string of HTML.
 
 ```js
 {
@@ -133,7 +133,7 @@ A **htmlpanel** is similar to panel. It only takes a string of HTML.
 
 ### iframe
 
-A **iframe** is a component used to define the values of an iframe.
+An **iframe** is a component used to define the values of an iframe.
 
 ```js
 {
@@ -146,7 +146,7 @@ A **iframe** is a component used to define the values of an iframe.
 
 ### input
 
-A **input** is a single line text field, and also renders a label element.
+An **input** is a single line text field, and also renders a label element.
 
 ```js
 {

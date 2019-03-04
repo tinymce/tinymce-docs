@@ -154,10 +154,3 @@ Using the configuration in this example:
 * Typing `(c)` and then either pressing the **spacebar** or the **Enter** key will insert an inline copyright symbol. 
 
 This is useful for commonly used phrases or symbols and can be leveraged to create content templates. The last pattern is an example of this.
-
-```js
-tinymce.init({
-  selector: "textarea",
-  plugins: "textpattern"
-});
-```

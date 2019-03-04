@@ -8,6 +8,27 @@ class: changelog
 
 {% capture changelog %}
 
+## Version 5.0.2 March 5, 2019
+* Added fixed_toolbar_container.
+* Added default icons to registry.
+* Added aria attributes to silver inline dialogs.
+* Added presentation and document presets to htmlpanel.
+* Fixed a memory leak related to select toolbar items.
+* Fixed an issue where content may have been lost when using permanent bookmarks.
+* Fixed the quicklink toolbar button not rendering in the quickbars plugin.
+* Fixed an issue where format changed listeners weren't getting unbound.
+* Fixed an issue where menus were generating invalid HTML in some cases.
+* Fixed an issue that could cause the editor to show a blank white screen in mobile mode in specific circumstances.
+* Fixed mobile using a transparent background and not taking up the full width on iOS.
+* Fixed the template plugin dialog missing the description field.
+* Fixed input dialog components using an invalid default type attribute.
+* Fixed an issue where backspace/delete keys after/before pagebreak elements wouldn't move the caret.
+* Fixed an issue in the table plugin where menu items and toolbar buttons weren't showing correctly based on the selection.
+* Fixed inconsistent button focus styles in Firefox #TINY-3377
+* Fixed the resize icon floating left when branding, element path and wordcount was disabled.
+* Fixed an issue that was causing the resize handle to show in fullscreen mode.
+* Updated the build process to include package lock files in the dev distribution archive.
+
 ## Version 5.0.1 February 21, 2019
 * Fixed an issue where adding links to images would replace the image with text.
 * Fixed an issue where the inline editor could use fractional pixels for positioning.

@@ -1,5 +1,5 @@
 tinymce.init({
-  selector: "textarea#custom-toolbar-menu-item",
+  selector: "textarea#custom-menu-item",
   height: 500,
   toolbar: false,
   menubar: "custom",
@@ -11,8 +11,6 @@ tinymce.init({
     '//www.tiny.cloud/css/codepen.min.css'
   ],
   setup: function (editor) {
-    // Menu items are recreated when the menu is closed and opened, so we need
-    // a variable to store the toggle menu item state.
     var toggleState = false;
 
     editor.ui.registry.addMenuItem('basicitem', {

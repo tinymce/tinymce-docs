@@ -7,12 +7,12 @@ description: Learn how to create clean, maintainable and readable content.
 
 TinyMCE has comprehensive content filtering capabilities that change the way the editor handles the input and output of content. This capability ensures content is clean, maintainable, and readable.
 
-These settings enable developers to control content styling features that are available to users such as font formats, font sizes, and text indentation. This section focuses on 1 of 32 content filtering options available in TinyMCE. There are additional configuration options concerning the complex parsing of text. Those options are beyond the scope of the General Configuration Guide. Refer to the [Content Filtering]({{ site.baseurl }}/configure/content-filtering/) section to learn more.
+These settings enable developers to control content styling features that are available to users such as font formats, font sizes, and text indentation. This section focuses on 1 of 32 content filtering options available in TinyMCE. There are additional configuration options concerning the complex parsing of text. Those options are beyond the scope of the General Configuration Guide. Refer to the [Content filtering options]({{ site.baseurl }}/configure/content-filtering/) section to learn more.
 
 
 ## Role your style formats
 
-This section is about the [formats]({{ site.baseurl }}/configure/content-filtering/#font_formats) configuration option. These options enable developers to override TinyMCE defaults and adds custom "formats" to the editor.  
+This section is about the [formats]({{ site.baseurl }}/configure/content-formatting/#font_formats) configuration option. These options enable developers to override TinyMCE defaults and adds custom "formats" to the editor.
 
 A format is a style that is applied to text when a user clicks the bold button inside the editor. TinyMCE is equipped with a text formatting engine that allows the specification of expected action. For example, TinyMCE lets the user specify what to produce when a user clicks the bold button.
 
@@ -22,7 +22,7 @@ Similar elements and styles are merged by default to reduce the output HTML size
 
 ### Built-in formats
 
-TinyMCE contains built-in formats that can be overridden. More information about these default controls is in the [Basic Setup](../basic-setup) part of this guide. 
+TinyMCE contains built-in formats that can be overridden. More information about these default controls is in the [Basic setup](../basic-setup) part of this guide.
 
 * alignleft
 * aligncenter
@@ -62,7 +62,7 @@ The table of format parameters below explores some more advanced topics.
 | classes    | Space-separated list of classes to apply the selected elements or the new inline/block element. |
 | styles     | Name/value object with CSS style items to apply such as color and other attributes. |
 | attributes | Name/value object with attributes to apply to the selected elements or the new inline/block element. |
-| exact      | Disables the [Style merging]({{ site.baseurl }}/configure/content-formatting/#stylemerging) feature when used. `exact` is needed for some CSS inheritance issues such as text-decoration for underline/strikethrough. |
+| exact      | Disables the [Style merging]({{ site.baseurl }}/configure/content-formatting/#style_formats_merge) feature when used. `exact` is needed for some CSS inheritance issues such as text-decoration for underline/strikethrough. |
 | wrapper    | State that tells that the current format is a container format for block elements. For example a `div wrapper` or `blockquote`. |
 
 ### Example of usage of the formats option
@@ -96,7 +96,7 @@ The `schema` option enables the switch between the HTML4 and HTML5 schema. This 
 
 The `html5` schema is the full HTML5 specification including the older HTML4 elements for compatibility. The `html5-strict` schema only allows the elements in the current HTML5 specification, excluding things that are removed. The `html4` schema includes the full HTML4 transitional specification.
 
-The options above are examples of the type of configuration options in the [Content Filtering]({{ site.baseurl }}/configure/content-filtering/) configuration documentation.
+The options above are examples of the type of configuration options in the [Content filtering]({{ site.baseurl }}/configure/content-filtering/) configuration documentation.
 
 ```js
 tinymce.init({

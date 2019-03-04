@@ -13,7 +13,7 @@ TinyMCE mobile has a streamlined interface with most common touch interactions e
 
 {% include mobile_platform_compatibility.md %}
 
-Visit the [mobile page](https://www.tiny.cloud/docs/mobile/) to download the self-hosted package. TinyMCE mobile is available on /dev branch on Tiny Cloud. 
+Visit the [mobile page](https://www.tiny.cloud/docs/mobile/) to download the self-hosted package. TinyMCE mobile is available on `/dev` branch on Tiny Cloud.
 
 Please report platform issues and bugs in the [TinyMCE issue tracker](https://github.com/tinymce/tinymce/issues).
 

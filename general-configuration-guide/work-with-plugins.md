@@ -67,7 +67,7 @@ tinymce.init({
 });
 ```
 
-Impressive! We now have a button on the toolbar users can click to get into source code mode, but we lost our default toolbar controls. We explained why this happens back in the [Basic Setup](../basic-setup/), so if this behavior surprises you, please re-read that section.
+Impressive! We now have a button on the toolbar users can click to get into source code mode, but we lost our default toolbar controls. We explained why this happens back in the [Basic setup](../basic-setup/), so if this behavior surprises you, please re-read that section.
 
 Let's quickly take our minimal design one step further by deleting the menubar entirely.
 
@@ -139,10 +139,10 @@ Customizing TinyMCE with the default plugins is that easy. There are 40 default 
 | **4**    | Code          | [code]({{ site.baseurl }}/plugins/code/) |
 | **5**    | Media         | [media]({{ site.baseurl }}/plugins/media/) |
 | **6**    | Link          | [link]({{ site.baseurl }}/plugins/link) |
-| **7**    | Color Picker  | [colorpicker]({{ site.baseurl }}/plugins/colorpicker/) |
+| **7**    | Emoticons     | [emoticons]({{ site.baseurl }}/plugins/emoticons/) |
 | **8**    | Paste         | [paste]({{ site.baseurl }}/plugins/paste/) |
 | **9**    | Table         | [table]({{ site.baseurl }}/plugins/table/) |
-| **10**   | Text Color    | [textcolor]({{ site.baseurl }}/plugins/textcolor) |
+| **10**   | Quick Toolbar | [quickbars]({{ site.baseurl }}/plugins/quickbars/) |
 
 {% assign_page next_page = "/general-configuration-guide/customize-ui/index.html" %}
 {% include next-step.html next=next_page %}

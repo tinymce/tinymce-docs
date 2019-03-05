@@ -8,28 +8,29 @@ class: changelog
 
 {% capture changelog %}
 
-## Version 5.0.2 March 5, 2019
-* Added fixed_toolbar_container.
-* Added default icons to registry.
-* Added aria attributes to silver inline dialogs.
-* Added presentation and document presets to htmlpanel.
+Version 5.0.2 March 5, 2019
+* Added presentation and document presets to `htmlpanel` dialog component.
+* Added missing fixed_toolbar_container setting has been reimplemented in the Silver theme.
+* Added a new toolbar setting `toolbar_drawer` that moves toolbar groups which overflow the editor width into either a `sliding` or `floating` toolbar section.
+* Updated the build process to include package lock files in the dev distribution archive.
+* Fixed inline dialogs did not have aria attributes.
+* Fixed default icons are now available in the UI registry, allowing use outside of toolbar buttons.
 * Fixed a memory leak related to select toolbar items.
+* Fixed a memory leak due to format changed listeners that were never unbound.
 * Fixed an issue where content may have been lost when using permanent bookmarks.
 * Fixed the quicklink toolbar button not rendering in the quickbars plugin.
-* Fixed an issue where format changed listeners weren't getting unbound.
 * Fixed an issue where menus were generating invalid HTML in some cases.
-* Fixed an issue that could cause the editor to show a blank white screen in mobile mode in specific circumstances.
-* Fixed mobile using a transparent background and not taking up the full width on iOS.
+* Fixed an issue that could cause the mobile theme to show a blank white screen when the editor was inside an `overflow:hidden` element.
+* Fixed mobile theme using a transparent background and not taking up the full width on iOS.
 * Fixed the template plugin dialog missing the description field.
 * Fixed input dialog components using an invalid default type attribute.
 * Fixed an issue where backspace/delete keys after/before pagebreak elements wouldn't move the caret.
 * Fixed an issue in the table plugin where menu items and toolbar buttons weren't showing correctly based on the selection.
-* Fixed inconsistent button focus styles in Firefox #TINY-3377
-* Fixed the resize icon floating left when branding, element path and wordcount was disabled.
-* Fixed an issue that was causing the resize handle to show in fullscreen mode.
-* Updated the build process to include package lock files in the dev distribution archive.
-
-## Version 5.0.1 February 21, 2019
+* Fixed inconsistent button focus styles in Firefox.
+* Fixed the resize icon floating left when all status bar elements were disabled.
+* Fixed the resize handle to not show in fullscreen mode.
+* 
+Version 5.0.1 February 21, 2019
 * Fixed an issue where adding links to images would replace the image with text.
 * Fixed an issue where the inline editor could use fractional pixels for positioning.
 * Fixed an issue where uploading non-image files in the Image Plugin upload tab threw an error.
@@ -37,20 +38,19 @@ class: changelog
 * Fixed an issue in the media plugin that was causing the source url and height/width to be lost in certain circumstances.
 * Fixed an issue with the Context Toolbar not being removed when clicking outside of the editor.
 * Fixed an issue where clicking 'Remove link' wouldn't remove the link in certain circumstances.
-* Added active state to the code sample toolbar button when a code sample block is selected.
+* Added code sample toolbar button will now toggle on when the cursor is in a code section.
 * Fixed an issue where the media plugin would fail when parsing dialog data.
 * Fixed an issue where retrieving the selected content as text didn't create newlines.
 * Fixed incorrect keyboard shortcuts in the Help dialog for Windows.
 * Fixed an issue where JSON serialization could produce invalid JSON.
 * Fixed production CSS including references to source maps.
-* Fixed development CSS not being included in the development zip.
-* Added a new toolbar setting `toolbar_drawer` that, upon the toolbar running over one line of groups, the remaining groups will overflow into a collapsible drawer.
+* Fixed development CSS was not included in the development zip.
 * Fixed the autocompleter matches predicate not matching on the start of words by default.
 * Added new settings to the emoticons plugin to allow additional emoticons to be added.
-* Fixed an issue where the window could be scrolled with modal dialogs open.
-* Fixed an issue where autocomplete menus would show an icon margin, when no items had icons.
+* Fixed an issue where the page could be scrolled with modal dialogs open.
+* Fixed an issue where autocomplete menus would show an icon margin when no items had icons.
 * Fixed an issue in the quickbars plugin where images incorrectly showed the text selection toolbar.
-* Fixed an issue that caused the inline editor to fail to render in specific circumstances.
+* Fixed an issue that caused the inline editor to fail to render when the target element already had focus.
 * Removed paste as text notification banner and paste_plaintext_inform setting.
 
 ## Version 5.0.0 February 4, 2019

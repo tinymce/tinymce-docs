@@ -11,7 +11,7 @@ TinyMCE makes your project accessible to the world through its simple localizati
 This section demonstrates how to change TinyMCE's user interface to the user's language preference. These settings change the language in the toolbar, menu items, buttons, and tooltips.
 
 
-> Pro tip: Language settings can be controlled in these configuration options: [directionality]({{ site.baseurl }}/configure/localization/#directionality), [language]({{ site.baseurl }}/configure/localization/#language) and  [language_url]({{ site.baseurl }}/configure/localization/#language_url). There is also a [Directionality Plugin]({{ site.baseurl }}/plugins/directionality/) that adds a toolbar button to control `ltr-rtl` behavior.
+> Pro tip: Language settings can be controlled in these configuration options: [directionality]({{ site.baseurl }}/configure/localization/#directionality), [language]({{ site.baseurl }}/configure/localization/#language) and  [language_url]({{ site.baseurl }}/configure/localization/#language_url). There is also a [Directionality plugin]({{ site.baseurl }}/plugins/directionality/) that adds a toolbar button to control `ltr-rtl` behavior.
 
 ### Step 1
 
@@ -40,7 +40,7 @@ Load TinyMCE to confirm that the language is set correctly.
 
 The following code snippet sets TinyMCE's language to Chinese and the text directionality from right to left.
 
-[Download the Chinese language](https://www.tinymce.com/download/language-packages/) pack to test this functionality. Install a *local instance* of TinyMCE from the [downloads page](https://www.tinymce.com/download/). Follow the [Self-hosted install instructions]({{ site.baseurl }}/general-configuration-guide/advanced-install/#sdkinstall).
+[Download the Chinese language](https://www.tinymce.com/download/language-packages/) pack to test this functionality. Install a *local instance* of TinyMCE from the [downloads page](https://www.tinymce.com/download/). Follow the [self-hosted install instructions]({{ site.baseurl }}/general-configuration-guide/advanced-install/#sdkinstall).
 
 ```html
 <!DOCTYPE html>

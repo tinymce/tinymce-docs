@@ -71,7 +71,7 @@ tinymce.init({
 });
 ```
 
-> Note: For more information on the differences between regular and inline editing modes see the [Using TinyMCE Inline](../use-tinymce-inline/) page.
+> Note: For more information on the differences between regular and inline editing modes, see the [Setup inline editing mode](../use-tinymce-inline/) page.
 
 
 ## Plugin configuration
@@ -163,7 +163,7 @@ newdocument, undo, redo, visualaid, cut, copy, paste, selectall, bold, italic, u
 
 `menubar` affects items placed on the menu bar itself and `menu` affects individual items appearing on a menu's drop-down. `menu` also provides granular control of the menus. Customized titles can be created for menu items using `menu`.
 
-The menu bar in the following snippet includes only the menu items `File`, `Edit` and `View`.
+The menu bar in the following snippet includes only the menu items `File`, `Edit`, and `View`.
 
 > Note: The example above also loads the default items included in each respective menu. For example, `Edit` loads Undo, Redo, Cut, Copy, Paste, and Select all.
 

@@ -8,4 +8,5 @@ group :development, :test do
   gem 'jekyll-redirect-from', '~> 0.8.0'
   gem 'jekyll-sitemap', '~> 0.10.0'
   gem 'nokogiri', '1.6.6.4'
+  gem "jekyll-last-modified-at", "~> 0.3.4"
 end

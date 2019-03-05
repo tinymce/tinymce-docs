@@ -8,7 +8,7 @@ class: changelog
 
 {% capture changelog %}
 
-Version 5.0.2 March 5, 2019
+## Version 5.0.2 March 5, 2019
 * Added presentation and document presets to `htmlpanel` dialog component.
 * Added missing fixed_toolbar_container setting has been reimplemented in the Silver theme.
 * Added a new toolbar setting `toolbar_drawer` that moves toolbar groups which overflow the editor width into either a `sliding` or `floating` toolbar section.
@@ -29,8 +29,8 @@ Version 5.0.2 March 5, 2019
 * Fixed inconsistent button focus styles in Firefox.
 * Fixed the resize icon floating left when all status bar elements were disabled.
 * Fixed the resize handle to not show in fullscreen mode.
-* 
-Version 5.0.1 February 21, 2019
+
+## Version 5.0.1 February 21, 2019
 * Fixed an issue where adding links to images would replace the image with text.
 * Fixed an issue where the inline editor could use fractional pixels for positioning.
 * Fixed an issue where uploading non-image files in the Image Plugin upload tab threw an error.

@@ -18,6 +18,8 @@ description: Configure the editor's appearance, including menu and toolbar contr
 
 {% include configuration/event-root.md %}
 
+{% include configuration/fixed-toolbar-container.md %}
+
 {% include configuration/height.md %}
 
 {% include configuration/icons.md %}

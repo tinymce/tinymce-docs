@@ -58,8 +58,6 @@ In TinyMCE 5.0, some configurations have been removed because they are no longer
 
 #### Removed settings
 
-* [`fixed_toolbar_container`](https://www.tiny.cloud/docs/configure/editor-appearance/#fixed_toolbar_container) - Previously, the `fixed_toolbar_container` option was used to render the inline toolbar into a fixed positioned HTML element. This feature has been removed from TinyMCE 5.0 owing to the enhancements to the new inline toolbar behavior.
-
 * [`file_browser_callback`](https://www.tiny.cloud/docs/configure/file-image-upload/#file_browser_callback) - Previously, the `file_browser_callback` option was used to add a file or image browser to TinyMCE. This feature was deprecated in version 4.1.0 and replaced by [`file_picker_callback`]({{site.baseurl}}/configure/file-image-upload/#file_picker_callback). `file_browser_callback` option has been removed from TinyMCE 5.0 owing to the configuration changes in the dialog component.
 
 * [`insert_button_items`](https://www.tiny.cloud/docs/configure/editor-appearance/#insert_button_items) - Previously, the `insert_button_items` option was used to specify what to display in the `insert` toolbar button's menu in a space-separated list of menu items control identifiers or `|` for a menu separator. This toolbar button has been removed from TinyMCE 5.0 owing to the changes in the menus and removal of the `context` property. For a workaround, configure a custom toolbar button using the following configurations in the `tinymce.init`:

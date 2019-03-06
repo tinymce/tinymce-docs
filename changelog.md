@@ -14,7 +14,7 @@ class: changelog
 * Added a new toolbar setting `toolbar_drawer` that moves toolbar groups which overflow the editor width into either a *sliding* or *floating* toolbar section.
 * Changed the build process to include package lock files in the dev distribution archive.
 * Fixed inline dialogs that did not have aria attributes.
-* Fixed default icons, now available in the UI registry, to allow use outside of toolbar buttons.
+* Fixed the UI registry to add default icons to enhance flexibility and allow use outside of toolbar buttons.
 * Fixed a memory leak related to select toolbar items.
 * Fixed a memory leak due to format changed listeners that were never unbound.
 * Fixed an issue where content may have been lost when using permanent bookmarks.
@@ -158,8 +158,8 @@ class: changelog
 * Fixed dialog titles so they are now the proper case.
 * Fixed color picker default to be `#000000` instead of `#ff00ff`.
 * Fixed "match case" option on the **Find and Replace** dialog is no longer selected by default.
-* Fixed vertical alignment of toolbar icons `#DES-134`.
-* Fixed toolbar icons not appearing on IE11 `#DES-133`.
+* Fixed vertical alignment of toolbar icons.
+* Fixed toolbar icons not appearing on IE11.
 
 ## Version 5.0.0-preview-2 October 10, 2018
 * Added swatch is now shown for `colorinput` fields, instead of the `colorpicker` directly.

@@ -3,7 +3,7 @@ layout: default
 title: Implement TinyMCE in Ruby on Rails
 ---
 
-In your RubyOnRails application you can just invoke TinyMCE [in the standard way](https://www.tinymce.com/docs-3x/TinyMCE3x@Installation/), in the layout file, or just for the views in which you want to use TinyMCE. A good place for TinyMCE files may be `public/javascripts/tiny_mce` directory, but you are free to choose any other location.
+In your RubyOnRails application you can just invoke TinyMCE [in the standard way](https://www.tiny.cloud/docs-3x/TinyMCE3x@Installation/), in the layout file, or just for the views in which you want to use TinyMCE. A good place for TinyMCE files may be `public/javascripts/tiny_mce` directory, but you are free to choose any other location.
 
 The plugins listed below will just make this task even easier.
 
@@ -42,6 +42,6 @@ To integrate TinyMCE into a Ruby on Rails application, there is a [tiny_mce](htt
 *   [Configure tinyMCE Spellcheck with rails app](http://webonrails.com/2008/08/08/configuring-tinymce-spellchecker-with-rails-application/)
 *   Integrating TinyMCE with the [ajaxscaffold generator](http://www.ajaxscaffold.com/), see [blog.katipo.co.nz](http://blog.katipo.co.nz/?p=24) (possibly outdated)
 *   Although TinyMCE does some HTML sanitizing, it's not advisable to rely on that because it can be easily circumvented (remember, it's just a client-side script). Better use something like technoweenie's [white_list plugin](http://svn.techno-weenie.net/projects/plugins/white_list/). (possibly outdated)
-*   [spellchecking](http://www.gusto.com/mike/blog/post202) ([forum thread](/punbb/viewtopic.php?id=5060)) (possibly outdated)
-*   [GZip compressor](http://garbageburrito.com/home/tinymce_gzip_compressor_ruby_on_rails_plugin) ([forum thread](/punbb/viewtopic.php?id=4765)) (possibly outdated)
-*   [integration with scriptaculous's InPlaceEdit](http://dev.rubyonrails.org/ticket/5263) ([forum thread](/punbb/viewtopic.php?id=3702)) (possibly outdated)
+*   [spellchecking](http://www.gusto.com/mike/blog/post202) ([forum thread](http://archive.tinymce.com/forum/viewtopic.php?id=5060)) (Outdated)
+*   [GZip compressor](http://garbageburrito.com/home/tinymce_gzip_compressor_ruby_on_rails_plugin) ([forum thread](http://archive.tinymce.com/forum/viewtopic.php?id=4765)) (Outdated)
+*   [integration with scriptaculous's InPlaceEdit](http://dev.rubyonrails.org/ticket/5263) ([forum thread](http://archive.tinymce.com/forum/viewtopic.php?id=3702)) (Outdated)

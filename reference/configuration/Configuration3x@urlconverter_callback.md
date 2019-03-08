@@ -11,7 +11,7 @@ node = the element that contains the URL that is to be converted (this parameter
 
 on_save is set to true when the contents are to be extracted from the editor (for example when the user submits the HTML form).
 
-This function should return the converted URL as a string. This option is set to an internal TinyMCE function <editor>.[convertURL()](https://www.tinymce.com/docs-3x/api/class_tinymce.Editor.html/#converturl) by default. You may call this function from your extension in order to use the built-in convert options.
+This function should return the converted URL as a string. This option is set to an internal TinyMCE function <editor>.[convertURL()](https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html/#converturl) by default. You may call this function from your extension in order to use the built-in convert options.
 
 ## Example of usage of the urlconverter_callback option:
 

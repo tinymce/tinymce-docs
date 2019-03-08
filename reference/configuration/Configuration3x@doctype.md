@@ -11,7 +11,7 @@ The default value is set to:
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 ```
 
-This option does not affect the format of tags: "<br>" versus "<br />". See [element_format](https://www.tinymce.com/docs-3x/reference/configuration/Configuration3x@element_format/) option instead.
+This option does not affect the format of tags: "<br>" versus "<br />". See [element_format](https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@element_format/) option instead.
 
 Note however that there is no need to change the doctype to XHTML because TinyMCE will produce XHTML in any case. Read the [comments here](http://archive.tinymce.com/forum/viewtopic.php?id=15069).
 

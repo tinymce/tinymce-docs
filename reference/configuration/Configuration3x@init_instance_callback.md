@@ -18,4 +18,4 @@ tinyMCE.init({
 });
 ```
 
-Also see the the [setup callback option](https://www.tinymce.com/docs-3x/reference/configuration/Configuration3x@setup/) it enabled you to bind events before the editor instance is initialized.
+Also see the the [setup callback option](https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@setup/) it enabled you to bind events before the editor instance is initialized.

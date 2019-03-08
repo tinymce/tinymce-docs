@@ -11,7 +11,7 @@ Warning: We are focusing on raw performance here and some options might produce 
 
 Here are some actions to take to boost initialization/loading time of TinyMCE.
 
-Use and install the [TinyMCE Compressor](https://www.tinymce.com/docs-3x/compressor/about/).
+Use and install the [TinyMCE Compressor](https://www.tiny.cloud/docs-3x/compressor/about/).
 This will bundle all JavaScript HTTP requests into one big request and also gzip compress them by 75%.
 
 Enable the button_tile_map option (should be enabled by default if you have a newer version of TinyMCE).
@@ -27,10 +27,10 @@ Remember to both remove them from the tinyMCE.init and the tinyMCE_GZ.init calls
 
 Here are some actions to take to boost cleanup/saving time of TinyMCE.
 
-Set the [entity_encoding](https://www.tinymce.com/docs-3x/reference/configuration/Configuration3x@entity_encoding/) option to "raw".
+Set the [entity_encoding](https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@entity_encoding/) option to "raw".
 Since the default option uses a lookup table for all entities it's kind of slow. Switching to raw will skip entity encoding on everything but the essentials.
 
-Set the [verify_html](https://www.tinymce.com/docs-3x/reference/configuration/Configuration3x@verify_html/) to false.
+Set the [verify_html](https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@verify_html/) to false.
 This will switch the cleanup method to another but also enable all elements and attributes in output. **You might need to add some form of server side cleanup.**
 
 ## Other cleanup options
@@ -40,5 +40,5 @@ These options are not recommended, they will disable any of the above cleanup/sa
 Switch to the somewhat experimental XML serializer by setting cleanup_serializer to "xml".
 This will switch the serialization engine to one based on a XML document DOM tree. Sometimes this is a lot faster but most of the cleanup options doesn't apply to this engine. It will always produce a parsable XML output.
 
-Disable the cleanup by setting [cleanup](https://www.tinymce.com/docs-3x/reference/configuration/Configuration3x@cleanup/) option to false.
+Disable the cleanup by setting [cleanup](https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@cleanup/) option to false.
 This will make it faster to save but IE will produce invalid HTML code. So you should clean that up by using some other method like a server side Tidy cleanup or [HTML Purifier](http://htmlpurifier.org/).

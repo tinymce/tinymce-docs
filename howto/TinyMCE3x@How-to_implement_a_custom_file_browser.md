@@ -3,7 +3,7 @@ layout: default
 title: Implement a custom file browser
 ---
 
-With TinyMCE you can implement your own file browser functionality. When the [file_browser_callback](https://www.tinymce.com/docs-3x/reference/configuration/Configuration3x@file_browser_callback/) setting is defined, a browse button will appear in the dialogue windows where you can add a link or an image. Clicking this button will execute the function defined in this setting.
+With TinyMCE you can implement your own file browser functionality. When the [file_browser_callback](https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@file_browser_callback/) setting is defined, a browse button will appear in the dialogue windows where you can add a link or an image. Clicking this button will execute the function defined in this setting.
 
 ## The Necessary TinyMCE Settings
 
@@ -243,7 +243,7 @@ var FileBrowserDialogue = {
 tinyMCEPopup.onInit.add(FileBrowserDialogue.init, FileBrowserDialogue);
 ```
 
-Make sure you close your file browser window with tinyMCEPopup.close(). This ensures that any alterations by a plugin (as is the case with the [inline popup-plugin](https://www.tinymce.com/docs-3x/reference/plugins/Plugin3x@inlinepopups/)) won't break.
+Make sure you close your file browser window with tinyMCEPopup.close(). This ensures that any alterations by a plugin (as is the case with the [inline popup-plugin](https://www.tiny.cloud/docs-3x/reference/plugins/Plugin3x@inlinepopups/)) won't break.
 
 Again remember that this function needs to be placed in your custom popup window and not in the editor's document!
 
@@ -315,7 +315,7 @@ win.ImageDialog.showPreviewImage(inurl);
 
 Again this information refers to the 2.x branch of TinyMCE. It isn't valid for the 3.x branch.
 
-If you use the [inlinepopups plugin](https://www.tinymce.com/docs-3x/reference/plugins/Plugin3x@inlinepopups/) then your popup won't carry your window's title automatically. This is due to the fact that the inlinepopups plugin creates iframes in layers. To get your window title shown correctly you'll need to add some JavaScript code inside your custom file browser's template like shown below:
+If you use the [inlinepopups plugin](https://www.tiny.cloud/docs-3x/reference/plugins/Plugin3x@inlinepopups/) then your popup won't carry your window's title automatically. This is due to the fact that the inlinepopups plugin creates iframes in layers. To get your window title shown correctly you'll need to add some JavaScript code inside your custom file browser's template like shown below:
 
 ```html
 <head>
@@ -342,7 +342,7 @@ If you use the [inlinepopups plugin](https://www.tinymce.com/docs-3x/reference/p
 
 ### How to prevent multiple file browser windows
 
-If you don't use the [inlinepopups plugin](https://www.tinymce.com/docs-3x/reference/plugins/Plugin3x@inlinepopups/) then this might be interesting for you.
+If you don't use the [inlinepopups plugin](https://www.tiny.cloud/docs-3x/reference/plugins/Plugin3x@inlinepopups/) then this might be interesting for you.
 
 The idea is to store something into the current editor object (tinyMCE.selectedInstance/tinyMCE.activeEditor) to prevent the file_browser_callback function from opening yet another window. This is a bit tricky since you might overwrite existing objects or properties/methods! So make sure you know what you are doing!
 

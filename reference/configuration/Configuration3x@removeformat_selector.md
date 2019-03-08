@@ -16,4 +16,4 @@ tinyMCE.init({
 });
 ```
 
-You can now use the [formats](https://www.tinymce.com/docs-3x/reference/configuration/Configuration3x@formats/) option instead.
+You can now use the [formats](https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@formats/) option instead.

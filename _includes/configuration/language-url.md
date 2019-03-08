@@ -13,4 +13,4 @@ tinymce.init({
 });
 ```
 
-You can find and download languages [here](http://www.tinymce.com/i18n/).
+You can find and download languages [here](https://www.tiny.cloud/i18n/).

@@ -119,4 +119,4 @@ tinymce.init({
 });
 ```
 
-Hopefully we'll have an [exact replica of the defaults](http://www.tinymce.com/forum/viewtopic.php?id=33648) soon.
+Hopefully we'll have an [exact replica of the defaults](http://archive.tinymce.com/forum/viewtopic.php?id=33648) soon.

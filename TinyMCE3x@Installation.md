@@ -5,15 +5,15 @@ title: Installation
 
 Installing TinyMCE is very simple; follow the instructions here. We give a few examples of how to integrate TinyMCE. You should also take a look at TinyMCE's extensive configuration options.
 
-Recently added is the [For Dummies section](https://www.tinymce.com/docs-3x/reference/for-dummies/).
+Recently added is the [For Dummies section](https://www.tiny.cloud/docs-3x/reference/for-dummies/).
 
 ## Requirements
 
-TinyMCE has no direct requirements except for browser compatibility (see [TinyMCE:compatibility](https://www.tinymce.com/docs-3x/extras/TinyMCE3x@Browser_compatiblity/) and, of course, having JavaScript enabled.
+TinyMCE has no direct requirements except for browser compatibility (see [TinyMCE:compatibility](https://www.tiny.cloud/docs-3x/extras/TinyMCE3x@Browser_compatiblity/) and, of course, having JavaScript enabled.
 
 There is NO back-end code distributed with TinyMCE.
 
-TinyMCE can be set up to use textareas in an HTML form as a workspace. When the form is submitted you can have your system do something with the content of the textarea such as save the HTML code to a database or file. Your frontend can also be set up to read in existing content so you can make changes to it. Refer to Configuration Options, General, [Mode](https://www.tinymce.com/docs-3x/reference/configuration/Configuration3x@mode/) for more information.
+TinyMCE can be set up to use textareas in an HTML form as a workspace. When the form is submitted you can have your system do something with the content of the textarea such as save the HTML code to a database or file. Your frontend can also be set up to read in existing content so you can make changes to it. Refer to Configuration Options, General, [Mode](https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@mode/) for more information.
 
 ## Windows specific Apache configuration
 
@@ -27,7 +27,7 @@ Side note: tinyMCE is not defined or missing } after property list may also occu
 
 ## Downloading
 
-For download instructions check our [TinyMCE Website](https://www.tinymce.com).
+For download instructions check our [TinyMCE Website](https://www.tiny.cloud).
 
 ## Extracting the archives
 
@@ -134,10 +134,10 @@ which should be turned into :
 </script>
 ```
 
-Conclusion: this part will control the editor's look and functionalities. You can adapt it to your needs according to [TinyMCE:Configuration](https://www.tinymce.com/docs-3x/reference/Configuration3x/).
+Conclusion: this part will control the editor's look and functionalities. You can adapt it to your needs according to [TinyMCE:Configuration](https://www.tiny.cloud/docs-3x/reference/Configuration3x/).
 
 ## Examples
 
-Go here to check out the [examples](https://www.tinymce.com/docs/demo/full-featured/) of different ways you can implement TinyMCE.
+Go here to check out the [examples](https://www.tiny.cloud/docs/demo/full-featured/) of different ways you can implement TinyMCE.
 
-If you have any problems, you should check the [forum](https://community.tinymce.com).
+If you have any problems, you should check the [forum](https://community.tiny.cloud).

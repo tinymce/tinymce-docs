@@ -5,7 +5,7 @@ title: Creating a plugin
 
 ## Creating a plugin for TinyMCE (3.x)
 
-NOTE: Still using TinyMCE version 3.x? [Update to 4.x](https://tinymce.com/docs/). More features, easier deployment and better support!
+NOTE: Still using TinyMCE version 3.x? [Update to 4.x](https://tiny.cloud/docs/). More features, easier deployment and better support!
 
 ## Creating your own plugins
 
@@ -13,11 +13,11 @@ Creating your own plugins for the TinyMCE application is fairly easy if you know
 
 ## Migration from the 2.x API to the new 3.x API
 
-There have been lots of changes to the API for the 3.x version of TinyMCE. The new API is more robust and clean than the old 2.x API and it's also well documented. Check the [TinyMCE API](https://www.tinymce.com/docs-3x/api/) for details on different methods and classes. One of the big changes to plugin creation from the 2.x API is that it now uses the observer pattern instead of an event interface pattern, so you need to register listener functions in the "init" method of the plugin instead of simply implementing different event callback methods. The new approach has its advantages from the older method. You can read more about the changes API changes in the [Migration guide](https://www.tinymce.com/docs-3x/howto/TinyMCE3x@How-to_migrate_from_TinyMCE_2.x_to_3.x/).
+There have been lots of changes to the API for the 3.x version of TinyMCE. The new API is more robust and clean than the old 2.x API and it's also well documented. Check the [TinyMCE API](https://www.tiny.cloud/docs-3x/api/) for details on different methods and classes. One of the big changes to plugin creation from the 2.x API is that it now uses the observer pattern instead of an event interface pattern, so you need to register listener functions in the "init" method of the plugin instead of simply implementing different event callback methods. The new approach has its advantages from the older method. You can read more about the changes API changes in the [Migration guide](https://www.tiny.cloud/docs-3x/howto/TinyMCE3x@How-to_migrate_from_TinyMCE_2.x_to_3.x/).
 
 ## Plugin options
 
-If you want, you may add plugin specific options and settings, but remember to prefix their names in the following format in order to create a unique name space: `"<your plugin>_<option>"` ("yourplugin_someoption", for example). Use [getParam](https://www.tinymce.com/docs-3x/api/class_tinymce.Editor.html/#getparam) to retrieve a custom plugin option value.
+If you want, you may add plugin specific options and settings, but remember to prefix their names in the following format in order to create a unique name space: `"<your plugin>_<option>"` ("yourplugin_someoption", for example). Use [getParam](https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html/#getparam) to retrieve a custom plugin option value.
 
 ## Plugin directory structure
 

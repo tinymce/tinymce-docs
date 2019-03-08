@@ -16,4 +16,4 @@ tinyMCE.init({
 
 Caution: This option doesn't accept attributes in the list, only elements
 
-Also see [valid_elements](https://www.tinymce.com/docs-3x/reference/configuration/Configuration3x@valid_elements/) and [extended_valid_elements](https://www.tinymce.com/docs-3x/reference/configuration/Configuration3x@extended_valid_elements/) for more configuration options.
+Also see [valid_elements](https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@valid_elements/) and [extended_valid_elements](https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@extended_valid_elements/) for more configuration options.

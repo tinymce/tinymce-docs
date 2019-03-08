@@ -50,4 +50,4 @@ To change the toolbar background colour, edit jscripts/tiny_mce/themes/advanced/
 .<your skin name>Skin table {background:#FBE6ED}
 ```
 
-[Skin configuration option](https://www.tinymce.com/docs-3x/reference/configuration/Configuration3x@skin/)
+[Skin configuration option](https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@skin/)

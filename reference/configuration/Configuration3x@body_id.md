@@ -5,7 +5,7 @@ title: body_id
 
 (Requires: 3.0.2)
 
-This option enables you to specify an id for the body of each editor instance. This id can then be used to do TinyMCE specific overrides in your [content_css](https://www.tinymce.com/docs-3x/reference/configuration/Configuration3x@content_css/).
+This option enables you to specify an id for the body of each editor instance. This id can then be used to do TinyMCE specific overrides in your [content_css](https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@content_css/).
 
 ## Examples of usage of the body_id option
 

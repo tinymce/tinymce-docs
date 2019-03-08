@@ -1,6 +1,6 @@
 ### Step 1: Download the SDK
 
-If you'd rather download and install the script manually, get the package from [TinyMCE Downloads](http://www.tinymce.com/download).
+If you'd rather download and install the script manually, get the package from [TinyMCE Downloads](https://www.tiny.cloud/get).
 
 Unzip the package and move the `'path/to/tinymce/'` directory into a web accessible location on your web server (for example, `localhost`).
 

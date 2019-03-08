@@ -5,7 +5,7 @@ title: formats
 
 (Requires: 3.3)
 
-This option enables you to override and add custom formats. A format is for example the style that get applied when you press the bold button inside the editor. TinyMCE is equipped with a text formatter engine that enables you to specify exactly what it should produce when the user clicks the bold button. Check out the [custom formats example](https://www.tinymce.com/docs/demo/format-custom/) for a demonstration of this option.
+This option enables you to override and add custom formats. A format is for example the style that get applied when you press the bold button inside the editor. TinyMCE is equipped with a text formatter engine that enables you to specify exactly what it should produce when the user clicks the bold button. Check out the [custom formats example](https://www.tiny.cloud/docs/demo/format-custom/) for a demonstration of this option.
 
 ## Style merging
 

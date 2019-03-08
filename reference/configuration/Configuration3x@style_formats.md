@@ -5,7 +5,7 @@ title: style_formats
 
 (Requires: 3.3)
 
-This option enables you to add more advanced style formats for text and other elements to the editor. The value of this option will be rendered as styles in the styles drop down if you use the advanced theme. The format of the option is very similar to the [formats](https://www.tinymce.com/docs-3x/reference/configuration/Configuration3x@formats/) option the only difference is the title name that is used for presentation in the drop list.
+This option enables you to add more advanced style formats for text and other elements to the editor. The value of this option will be rendered as styles in the styles drop down if you use the advanced theme. The format of the option is very similar to the [formats](https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@formats/) option the only difference is the title name that is used for presentation in the drop list.
 
 ## Example of usage of the style_formats option:
 
@@ -24,4 +24,4 @@ tinyMCE.init({
 });
 ```
 
-A live demo of this option can be found in the [Custom formats example](https://www.tinymce.com/docs/demo/format-custom/).
+A live demo of this option can be found in the [Custom formats example](https://www.tiny.cloud/docs/demo/format-custom/).

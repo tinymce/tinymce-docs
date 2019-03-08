@@ -1,6 +1,6 @@
 ### Step 1: Download the jQuery package
 
-We have a jQuery plugin [available here](http://archive.tinymce.com/download/custom_package.php) if you'd rather install TinyMCE using this method.
+We have a jQuery plugin [available here](http://archive.tiny.cloud/download/custom_package.php) if you'd rather install TinyMCE using this method.
 
 > Note: the above link will take you to the custom package download page. When building your jQuery package, select "TinyMCE core (jQuery) under the "Core Elements" section.
 

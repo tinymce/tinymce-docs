@@ -65,8 +65,8 @@ Save the code above into a file ending with .php, upload it to your webserver an
 
 A few words on the JavaScript `tinyMCE.init({...}` part in the example.
 
-*   theme : advanced  tells TinyMCE to use the "advanced" theme, which enables us to configure a lot of customizations. → [theme](https://www.tinymce.com/docs-3x/reference/configuration/Configuration3x@theme/) in the TinyMCE documentation
+*   theme : advanced  tells TinyMCE to use the "advanced" theme, which enables us to configure a lot of customizations. → [theme](https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@theme/) in the TinyMCE documentation
 
-*   mode : exact  commands TinyMCE to not convert all the textareas on the page, but only those we tell it to (see below) → [mode](https://www.tinymce.com/docs-3x/reference/configuration/Configuration3x@mode/) in the TinyMCE documentation
+*   mode : exact  commands TinyMCE to not convert all the textareas on the page, but only those we tell it to (see below) → [mode](https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@mode/) in the TinyMCE documentation
 
-*   elements : "elm1"  related to the option "mode" above, tells TinyMCE which textareas are converted. The value should contain the id attributes of all textareas you would like to convert. → [elements](https://www.tinymce.com/docs-3x/reference/configuration/Configuration3x@elements/) in the TinyMCE documentation.
+*   elements : "elm1"  related to the option "mode" above, tells TinyMCE which textareas are converted. The value should contain the id attributes of all textareas you would like to convert. → [elements](https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@elements/) in the TinyMCE documentation.

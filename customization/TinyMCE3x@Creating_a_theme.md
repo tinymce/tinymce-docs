@@ -7,7 +7,7 @@ Creating your own themes for the TinyMCE application is fairly easy if you know 
 
 ## Theme options
 
-If you want you may add theme specific options and settings, but remember to prefix them in the following format in order to provide a unique name space: `"<your theme>_<option>"` ("mytheme_someoption", for example). Use [tinyMCE.getParam](https://www.tinymce.com/docs-3x/api/class_tinymce.Editor.html/#getparam) to retrieve a custom theme option value.
+If you want you may add theme specific options and settings, but remember to prefix them in the following format in order to provide a unique name space: `"<your theme>_<option>"` ("mytheme_someoption", for example). Use [tinyMCE.getParam](https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html/#getparam) to retrieve a custom theme option value.
 
 ## Theme directory structure
 

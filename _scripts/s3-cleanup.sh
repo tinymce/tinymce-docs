@@ -6,7 +6,7 @@ export AWS_ACCESS_KEY_ID="$S3_KEY"
 export AWS_SECRET_ACCESS_KEY="$S3_SECRET"
 export AWS_DEFAULT_REGION="${S3_REGION:=us-east-1}"
 
-branches=($(git ls-remote --heads https://github.com/tinymce/tinymce-docs.git | awk -F/ '{ print $3 }'))
+branches=($(git ls-remote --heads https://github.com/tinymce/tinymce-docs-3x.git | awk -F/ '{ print $3 }'))
 exclude="--exclude docs-3x/* "
 list=""
 

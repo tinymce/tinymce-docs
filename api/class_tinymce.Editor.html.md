@@ -16,25 +16,25 @@ This class contains the core logic for a TinyMCE editor.
 
 | Property | Defined By |
 | --- | --- |
-| [baseURI](#baseuri) : [URI](../util/class_tinymce.util.URI.html) : URI object to current document that holds the TinyMCE editor instance. | Editor |
+| [baseURI](#baseuri) : [URI](https://www.tiny.cloud/docs-3x/api/util/class_tinymce.util.URI.html) : URI object to current document that holds the TinyMCE editor instance. | Editor |
 | [contentCSS](#contentcss) : Array : Array with CSS files to load into the iframe. | Editor |
 | [contentStyles](#contentstyles) : Array : Array of CSS styles to add to head of document when the editor loads. | Editor |
-| [controlManager](#controlmanager) : [ControlManager](class_tinymce.ControlManager.html) : Control manager instance for the editor. | Editor |
-| [documentBaseURI](#documentbaseuri) : [URI](../util/class_tinymce.util.URI.html) : URI object to document configured for the TinyMCE instance. | Editor |
-| [dom](#dom) : [DOMUtils](../dom/class_tinymce.dom.DOMUtils.html) : DOM instance for the editor. | Editor |
-| [formatter](#formatter) : [Formatter](class_tinymce.Formatter.html) : Formatter instance. | Editor |
+| [controlManager](#controlmanager) : [ControlManager](https://www.tiny.cloud/docs-3x/api/class_tinymce.ControlManager.html/) : Control manager instance for the editor. | Editor |
+| [documentBaseURI](#documentbaseuri) : [URI](https://www.tiny.cloud/docs-3x/api/util/class_tinymce.util.URI.html) : URI object to document configured for the TinyMCE instance. | Editor |
+| [dom](#dom) : [DOMUtils](https://www.tiny.cloud/docs-3x/api/dom/class_tinymce.dom.DOMUtils.html) : DOM instance for the editor. | Editor |
+| [formatter](#formatter) : [Formatter](https://www.tiny.cloud/docs-3x/api/class_tinymce.Formatter.html) : Formatter instance. | Editor |
 | [id](#id) : String : Editor instance id, normally the same as the div/textarea that was replaced. | Editor |
 | [initialized](#initialized) : Boolean : Is set to true after the editor instance has been initialized | Editor |
 | [isNotDirty](#isnotdirty) : Boolean : State to force the editor to return false on a isDirty call. | Editor |
-| [parser](#parser) : [DomParser](../html/class_tinymce.html.DomParser.html) : HTML parser will be used when contents is inserted into the editor. | Editor |
+| [parser](#parser) : [DomParser](https://www.tiny.cloud/docs-3x/api/html/class_tinymce.html.DomParser.html) : HTML parser will be used when contents is inserted into the editor. | Editor |
 | [plugins](#plugins) : Object : Name/Value object containting plugin instances. | Editor |
-| [schema](#schema) : [Schema](../html/class_tinymce.html.Schema.html) : Schema instance, enables you to validate elements and it's children. | Editor |
-| [selection](#selection) : [Selection](../dom/class_tinymce.dom.Selection.html) : Selection instance for the editor. | Editor |
-| [serializer](#serializer) : [Serializer](../dom/class_tinymce.dom.Serializer.html) : DOM serializer for the editor. | Editor |
+| [schema](#schema) : [Schema](https://www.tiny.cloud/docs-3x/api/html/class_tinymce.html.Schema.html) : Schema instance, enables you to validate elements and it's children. | Editor |
+| [selection](#selection) : [Selection](https://www.tiny.cloud/docs-3x/api/dom/class_tinymce.dom.Selection.html) : Selection instance for the editor. | Editor |
+| [serializer](#serializer) : [Serializer](https://www.tiny.cloud/docs-3x/api/dom/class_tinymce.dom.Serializer.html) : DOM serializer for the editor. | Editor |
 | [settings](#settings) : Object : Name/value collection with editor settings. | Editor |
-| [theme](#theme) : [Theme](class_tinymce.Theme.html) : Reference to the theme instance that was used to generate the UI. | Editor |
-| [undoManager](#undomanager) : [UndoManager](class_tinymce.UndoManager.html) : Undo manager instance, responsible for handling undo levels. | Editor |
-| [windowManager](#windowmanager) : [WindowManager](class_tinymce.WindowManager.html) : Window manager reference, use this to open new windows and dialogs. | Editor |
+| [theme](#theme) : [Theme](https://www.tiny.cloud/docs-3x/api/class_tinymce.Theme.html) : Reference to the theme instance that was used to generate the UI. | Editor |
+| [undoManager](#undomanager) : [UndoManager](https://www.tiny.cloud/docs-3x/api/class_tinymce.UndoManager.html) : Undo manager instance, responsible for handling undo levels. | Editor |
+| [windowManager](#windowmanager) : [WindowManager](https://www.tiny.cloud/docs-3x/api/class_tinymce.WindowManager.html) : Window manager reference, use this to open new windows and dialogs. | Editor |
 
 ## Public Methods
 
@@ -82,7 +82,7 @@ This class contains the core logic for a TinyMCE editor.
 
 ### baseURI 
 
-***public baseURI : [URI](../util/class_tinymce.util.URI.html)***  
+***public baseURI : [URI](https://www.tiny.cloud/docs-3x/api/util/class_tinymce.util.URI.html)***  
 URI object to current document that holds the TinyMCE editor instance.      
 
 **Example**  
@@ -99,28 +99,28 @@ Array of CSS styles to add to head of document when the editor loads.
 
 ### controlManager 
 
-***public controlManager : [ControlManager](class_tinymce.ControlManager.html)***  
+***public controlManager : [ControlManager](https://www.tiny.cloud/docs-3x/api/class_tinymce.ControlManager.html)***  
 Control manager instance for the editor. Will enables you to create new UI elements and change their states etc.      
 
 **Example**  
 
 ### documentBaseURI 
 
-***public documentBaseURI : [URI](../util/class_tinymce.util.URI.html)***  
+***public documentBaseURI : [URI](https://www.tiny.cloud/docs-3x/api/util/class_tinymce.util.URI.html)***  
 URI object to document configured for the TinyMCE instance.      
 
 **Example**  
 
 ### dom 
 
-***public dom : [DOMUtils](../dom/class_tinymce.dom.DOMUtils.html)***  
+***public dom : [DOMUtils](https://www.tiny.cloud/docs-3x/api/dom/class_tinymce.dom.DOMUtils.html)***  
 DOM instance for the editor.      
 
 **Example**  
 
 ### formatter 
 
-***public formatter : [Formatter](class_tinymce.Formatter.html)***  
+***public formatter : [Formatter](https://www.tiny.cloud/docs-3x/api/class_tinymce.Formatter.html)***  
 Formatter instance.
 
 ### id 
@@ -144,7 +144,7 @@ State to force the editor to return false on a isDirty call.
 
 ### parser 
 
-***public parser : [DomParser](../html/class_tinymce.html.DomParser.html)***  
+***public parser : [DomParser](https://www.tiny.cloud/docs-3x/api/html/class_tinymce.html.DomParser.html)***  
 HTML parser will be used when contents is inserted into the editor.
 
 ### plugins 
@@ -156,19 +156,19 @@ Name/Value object containting plugin instances.
 
 ### schema 
 
-***public schema : [Schema](../html/class_tinymce.html.Schema.html)***  
+***public schema : [Schema](https://www.tiny.cloud/docs-3x/api/html/class_tinymce.html.Schema.html)***  
 Schema instance, enables you to validate elements and it's children.
 
 ### selection 
 
-***public selection : [Selection](../dom/class_tinymce.dom.Selection.html)***  
+***public selection : [Selection](https://www.tiny.cloud/docs-3x/api/dom/class_tinymce.dom.Selection.html)***  
 Selection instance for the editor.      
 
 **Example**  
 
 ### serializer 
 
-***public serializer : [Serializer](../dom/class_tinymce.dom.Serializer.html)***  
+***public serializer : [Serializer](https://www.tiny.cloud/docs-3x/api/dom/class_tinymce.dom.Serializer.html)***  
 DOM serializer for the editor. Will be used when contents is extracted from the editor.      
 
 **Example**  
@@ -182,21 +182,21 @@ Name/value collection with editor settings.
 
 ### theme 
 
-***public theme : [Theme](class_tinymce.Theme.html)***  
+***public theme : [Theme](https://www.tiny.cloud/docs-3x/api/class_tinymce.Theme.html)***  
 Reference to the theme instance that was used to generate the UI.      
 
 **Example**  
 
 ### undoManager 
 
-***public undoManager : [UndoManager](class_tinymce.UndoManager.html)***  
+***public undoManager : [UndoManager](https://www.tiny.cloud/docs-3x/api/class_tinymce.UndoManager.html)***  
 Undo manager instance, responsible for handling undo levels.      
 
 **Example**  
 
 ### windowManager 
 
-***public windowManager : [WindowManager](class_tinymce.WindowManager.html)***  
+***public windowManager : [WindowManager](https://www.tiny.cloud/docs-3x/api/class_tinymce.WindowManager.html)***  
 Window manager reference, use this to open new windows and dialogs.      
 
 **Example**  

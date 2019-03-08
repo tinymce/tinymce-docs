@@ -17,7 +17,7 @@ Entity encoder class.<span>Version:</span>3.4
 
 | Method | Defined By |
 | --- | --- |
-| [SaxParser](#saxparser)(settings:Object, schema:[Schema](../html/class_tinymce.html.Schema.html)) : Constructs a new SaxParser instance. | SaxParser |
+| [SaxParser](#saxparser)(settings:Object, schema:[Schema](https://www.tiny.cloud/docs-3x/api/html/class_tinymce.html.Schema.html)) : Constructs a new SaxParser instance. | SaxParser |
 | [encodeAllRaw](#encodeallraw)(text:String):String : <span class="static">[static]</span> Encoded the specified text with both the attributes and text entities. | SaxParser |
 | [encodeNamed](#encodenamed)(text:String, attr:Boolean, entities:Object):String : <span class="static">[static]</span> Encodes the specified string using named entities. | SaxParser |
 | [encodeNumeric](#encodenumeric)(text:String, attr:Boolean):String : <span class="static">[static]</span> Encodes the specified string using numeric entities. | SaxParser |
@@ -29,7 +29,7 @@ Entity encoder class.<span>Version:</span>3.4
 
 ### SaxParser 
 
-***public function SaxParser(settings:Object, schema:[Schema](../html/class_tinymce.html.Schema.html))***  
+***public function SaxParser(settings:Object, schema:[Schema](https://www.tiny.cloud/docs-3x/api/html/class_tinymce.html.Schema.html))***  
 Constructs a new SaxParser instance.      
 
 **Parameters**  
@@ -37,7 +37,7 @@ Constructs a new SaxParser instance.
 | Param | Detail |
 | --- | --- |
 | settings:Object | Name/value collection of settings. comment, cdata, text, start and end are callbacks. |
-| schema:[Schema](../html/class_tinymce.html.Schema.html) | HTML Schema class to use when parsing. |
+| schema:[Schema](https://www.tiny.cloud/docs-3x/api/html/class_tinymce.html.Schema.html) | HTML Schema class to use when parsing. |
 
 ### encodeAllRaw 
 

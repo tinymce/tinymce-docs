@@ -15,7 +15,7 @@ Installation Instructions
 
 | Name | Summary |
 | --- | --- |
-| [theme_advanced_styles](../configuration/Configuration3x@theme_advanced_styles) | This option should contain a semicolon separated list of class titles and class names separated by =. The titles are the ones that get presented to the user in the styles drop down list and and the class names is the classes that gets inserted. |
+| [theme_advanced_styles](https://www.tiny.cloud/docs-3x/api/configuration/Configuration3x@theme_advanced_styles) | This option should contain a semicolon separated list of class titles and class names separated by =. The titles are the ones that get presented to the user in the styles drop down list and and the class names is the classes that gets inserted. |
 | advimage_update_dimensions_onchange | This option enables you to control if the image dimensions should be updated with new data if the image src field is changed. This option is enabled by default. |
 
 ## Initialization Example

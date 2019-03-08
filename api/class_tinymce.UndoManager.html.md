@@ -26,10 +26,10 @@ This class handles the undo/redo history levels for the editor. Since the build 
 
 | Event | Defined By |
 | --- | --- |
-| [onAdd](#onadd)(sender:[UndoManager](class_tinymce.UndoManager.html), level:Object) : This event will fire each time a new undo level is added to the undo manager. | UndoManager |
-| [onBeforeAdd](#onbeforeadd)(sender:[UndoManager](class_tinymce.UndoManager.html), level:Object) : This event will fire before a new undo level is added to the undo manager | UndoManager |
-| [onRedo](#onredo)(sender:[UndoManager](class_tinymce.UndoManager.html), level:Object) : This event will fire when the user make an redo of a change. | UndoManager |
-| [onUndo](#onundo)(sender:[UndoManager](class_tinymce.UndoManager.html), level:Object) : This event will fire when the user make an undo of a change. | UndoManager |
+| [onAdd](#onadd)(sender:[UndoManager](https://www.tiny.cloud/docs-3x/api/class_tinymce.UndoManager.html), level:Object) : This event will fire each time a new undo level is added to the undo manager. | UndoManager |
+| [onBeforeAdd](#onbeforeadd)(sender:[UndoManager](https://www.tiny.cloud/docs-3x/api/class_tinymce.UndoManager.html), level:Object) : This event will fire before a new undo level is added to the undo manager | UndoManager |
+| [onRedo](#onredo)(sender:[UndoManager](https://www.tiny.cloud/docs-3x/api/class_tinymce.UndoManager.html), level:Object) : This event will fire when the user make an redo of a change. | UndoManager |
+| [onUndo](#onundo)(sender:[UndoManager](https://www.tiny.cloud/docs-3x/api/class_tinymce.UndoManager.html), level:Object) : This event will fire when the user make an undo of a change. | UndoManager |
 
 ## Method details
 
@@ -93,48 +93,48 @@ Object - Undo level or null if no undo was performed.
 
 ### onAdd 
 
-***public event onAdd(sender:[UndoManager](class_tinymce.UndoManager.html), level:Object)***  
+***public event onAdd(sender:[UndoManager](https://www.tiny.cloud/docs-3x/api/class_tinymce.UndoManager.html), level:Object)***  
 This event will fire each time a new undo level is added to the undo manager.      
 
 **Parameters**  
 
 | Param | Detail |
 | --- | --- |
-| sender:[UndoManager](class_tinymce.UndoManager.html) | UndoManager instance that got the new level. |
+| sender:[UndoManager](https://www.tiny.cloud/docs-3x/api/class_tinymce.UndoManager.html) | UndoManager instance that got the new level. |
 | level:Object | The new level object containing a bookmark and contents. |
 
 ### onBeforeAdd 
 
-***public event onBeforeAdd(sender:[UndoManager](class_tinymce.UndoManager.html), level:Object)***  
+***public event onBeforeAdd(sender:[UndoManager](https://www.tiny.cloud/docs-3x/api/class_tinymce.UndoManager.html), level:Object)***  
 This event will fire before a new undo level is added to the undo manager      
 
 **Parameters**  
 
 | Param | Detail |
 | --- | --- |
-| sender:[UndoManager](class_tinymce.UndoManager.html) | UndoManager instance that is going to add the new level |
+| sender:[UndoManager](https://www.tiny.cloud/docs-3x/api/class_tinymce.UndoManager.html) | UndoManager instance that is going to add the new level |
 | level:Object | The new level object containing a bookmark and contents |
 
 ### onRedo 
 
-***public event onRedo(sender:[UndoManager](class_tinymce.UndoManager.html), level:Object)***  
+***public event onRedo(sender:[UndoManager](https://www.tiny.cloud/docs-3x/api/class_tinymce.UndoManager.html), level:Object)***  
 This event will fire when the user make an redo of a change.      
 
 **Parameters**  
 
 | Param | Detail |
 | --- | --- |
-| sender:[UndoManager](class_tinymce.UndoManager.html) | UndoManager instance that got the new level. |
+| sender:[UndoManager](https://www.tiny.cloud/docs-3x/api/class_tinymce.UndoManager.html) | UndoManager instance that got the new level. |
 | level:Object | The old level object containing a bookmark and contents. |
 
 ### onUndo 
 
-***public event onUndo(sender:[UndoManager](class_tinymce.UndoManager.html), level:Object)***  
+***public event onUndo(sender:[UndoManager](https://www.tiny.cloud/docs-3x/api/class_tinymce.UndoManager.html), level:Object)***  
 This event will fire when the user make an undo of a change.      
 
 **Parameters**  
 
 | Param | Detail |
 | --- | --- |
-| sender:[UndoManager](class_tinymce.UndoManager.html) | UndoManager instance that got the new level. |
+| sender:[UndoManager](https://www.tiny.cloud/docs-3x/api/class_tinymce.UndoManager.html) | UndoManager instance that got the new level. |
 | level:Object | The old level object containing a bookmark and contents. |

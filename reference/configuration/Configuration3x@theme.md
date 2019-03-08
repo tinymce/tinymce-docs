@@ -7,7 +7,7 @@ This option enables you to specify what theme to use when rendering the TinyMCE 
 
 | Name | Summary |
 | --- | --- |
-| advanced | This theme enables users to add/remove buttons and panels and is a lot more flexible than the simple theme. For more information about this theme's specific options check the [advanced theme](../configuration/Configuration3x@Advanced_theme) configuration section. |
+| advanced | This theme enables users to add/remove buttons and panels and is a lot more flexible than the simple theme. For more information about this theme's specific options check the [advanced theme](https://www.tiny.cloud/docs-3x/api/configuration/Configuration3x@Advanced_theme) configuration section. |
 | simple | This is the most simple theme for TinyMCE. It contains only the basic functions. |
 
 ## Example of usage of the theme option:

@@ -14,8 +14,8 @@ This class handles the loading of themes/plugins or other add-ons and their lang
 
 | Method | Defined By |
 | --- | --- |
-| [add](#add)(id:String, o:[Theme](class_tinymce.Theme.html)/[Plugin](../plugins/class_tinymce.Plugin.html)):[Theme](class_tinymce.Theme.html)/[Plugin](../plugins/class_tinymce.Plugin.html) : Adds a instance of the add-on by it's short name. | AddOnManager |
-| [get](#get)(n:String):[Theme](class_tinymce.Theme.html)/[Plugin](../plugins/class_tinymce.Plugin.html) : Returns the specified add on by the short name. | AddOnManager |
+| [add](#add)(id:String, o:[Theme](https://www.tiny.cloud/docs-3x/api/class_tinymce.Theme.html)/[Plugin](https://www.tiny.cloud/docs-3x/api/plugins/class_tinymce.Plugin.html)):[Theme](https://www.tiny.cloud/docs-3x/api/class_tinymce.Theme.html)/[Plugin](https://www.tiny.cloud/docs-3x/api/plugins/class_tinymce.Plugin.html) : Adds a instance of the add-on by it's short name. | AddOnManager |
+| [get](#get)(n:String):[Theme](https://www.tiny.cloud/docs-3x/api/class_tinymce.Theme.html)/[Plugin](https://www.tiny.cloud/docs-3x/api/plugins/class_tinymce.Plugin.html) : Returns the specified add on by the short name. | AddOnManager |
 | [load](#load)(n:String, u:String, cb:function, s:Object):void : Loads an add-on from a specific url. | AddOnManager |
 | [requireLangPack](#requirelangpack)(n:String):void : Loads a language pack for the specified add-on. | AddOnManager |
 
@@ -29,7 +29,7 @@ This class handles the loading of themes/plugins or other add-ons and their lang
 
 ### add 
 
-***public function add(id:String, o:[Theme](class_tinymce.Theme.html)/[Plugin](../plugins/class_tinymce.Plugin.html)):[Theme](class_tinymce.Theme.html)/[Plugin](../plugins/class_tinymce.Plugin.html)***  
+***public function add(id:String, o:[Theme](https://www.tiny.cloud/docs-3x/api/class_tinymce.Theme.html)/[Plugin](https://www.tiny.cloud/docs-3x/api/plugins/class_tinymce.Plugin.html)):[Theme](https://www.tiny.cloud/docs-3x/api/class_tinymce.Theme.html)/[Plugin](https://www.tiny.cloud/docs-3x/api/plugins/class_tinymce.Plugin.html)***  
 Adds a instance of the add-on by it's short name.      
 
 **Parameters**  
@@ -37,16 +37,16 @@ Adds a instance of the add-on by it's short name.
 | Param | Detail |
 | --- | --- |
 | id:String | Short name/id for the add-on. |
-| o:[Theme](class_tinymce.Theme.html)/[Plugin](../plugins/class_tinymce.Plugin.html) | Theme or plugin to add. |
+| o:[Theme](https://www.tiny.cloud/docs-3x/api/class_tinymce.Theme.html)/[Plugin](https://www.tiny.cloud/docs-3x/api/plugins/class_tinymce.Plugin.html) | Theme or plugin to add. |
 
 **Returns**  
-[Theme](class_tinymce.Theme.html)/[Plugin](../plugins/class_tinymce.Plugin.html) - The same theme or plugin instance that got passed in.      
+[Theme](https://www.tiny.cloud/docs-3x/api/class_tinymce.Theme.html)/[Plugin](https://www.tiny.cloud/docs-3x/api/plugins/class_tinymce.Plugin.html) - The same theme or plugin instance that got passed in.      
 
 **Example**  
 
 ### get 
 
-***public function get(n:String):[Theme](class_tinymce.Theme.html)/[Plugin](../plugins/class_tinymce.Plugin.html)***  
+***public function get(n:String):[Theme](https://www.tiny.cloud/docs-3x/api/class_tinymce.Theme.html)/[Plugin](https://www.tiny.cloud/docs-3x/api/plugins/class_tinymce.Plugin.html)***  
 Returns the specified add on by the short name.      
 
 **Parameters**  
@@ -56,7 +56,7 @@ Returns the specified add on by the short name.
 | n:String | Add-on to look for. |
 
 **Returns**  
-[Theme](class_tinymce.Theme.html)/[Plugin](../plugins/class_tinymce.Plugin.html) - Theme or plugin add-on instance or undefined.
+[Theme](https://www.tiny.cloud/docs-3x/api/class_tinymce.Theme.html)/[Plugin](https://www.tiny.cloud/docs-3x/api/plugins/class_tinymce.Plugin.html) - Theme or plugin add-on instance or undefined.
 
 ### load 
 

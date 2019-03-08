@@ -16,14 +16,14 @@ This class is used to serialize down the DOM tree into a string using a Writer i
 
 | Method | Defined By |
 | --- | --- |
-| [Serializer](#serializer)(settings:Object, schema:[Schema](../html/class_tinymce.html.Schema.html)) : Constructs a new Serializer instance. | Serializer |
-| [serialize](#serialize)(node:[Node](../html/class_tinymce.html.Node.html)):String : Serializes the specified node into a string. | Serializer |
+| [Serializer](#serializer)(settings:Object, schema:[Schema](https://www.tiny.cloud/docs-3x/api/html/class_tinymce.html.Schema.html)) : Constructs a new Serializer instance. | Serializer |
+| [serialize](#serialize)(node:[Node](https://www.tiny.cloud/docs-3x/api/html/class_tinymce.html.Node.html)):String : Serializes the specified node into a string. | Serializer |
 
 ## Method details
 
 ### Serializer 
 
-***public function Serializer(settings:Object, schema:[Schema](../html/class_tinymce.html.Schema.html))***  
+***public function Serializer(settings:Object, schema:[Schema](https://www.tiny.cloud/docs-3x/api/html/class_tinymce.html.Schema.html))***  
 Constructs a new Serializer instance.      
 
 **Parameters**  
@@ -31,18 +31,18 @@ Constructs a new Serializer instance.
 | Param | Detail |
 | --- | --- |
 | settings:Object | Name/value settings object. |
-| schema:[Schema](../html/class_tinymce.html.Schema.html) | Schema instance to use. |
+| schema:[Schema](https://www.tiny.cloud/docs-3x/api/html/class_tinymce.html.Schema.html) | Schema instance to use. |
 
 ### serialize 
 
-***public function serialize(node:[Node](../html/class_tinymce.html.Node.html)):String***  
+***public function serialize(node:[Node](https://www.tiny.cloud/docs-3x/api/html/class_tinymce.html.Node.html)):String***  
 Serializes the specified node into a string.      
 
 **Parameters**  
 
 | Param | Detail |
 | --- | --- |
-| node:[Node](../html/class_tinymce.html.Node.html) | Node instance to serialize. |
+| node:[Node](https://www.tiny.cloud/docs-3x/api/html/class_tinymce.html.Node.html) | Node instance to serialize. |
 
 **Returns**  
 String - String with HTML based on DOM tree.      

@@ -16,16 +16,16 @@ This class parses HTML code into a DOM like structure of nodes it will remove re
 
 | Method | Defined By |
 | --- | --- |
-| [DomParser](#domparser)(settings:Object, schema:[Schema](../html/class_tinymce.html.Schema.html)) : Constructs a new DomParser instance. | DomParser |
+| [DomParser](#domparser)(settings:Object, schema:[Schema](https://www.tiny.cloud/docs-3x/api/html/class_tinymce.html.Schema.html)) : Constructs a new DomParser instance. | DomParser |
 | [addAttributeFilter](#addattributefilter)(callback:function):void : Adds a attribute filter function to the parser, the parser will collect nodes that has the specified attributes and then... | DomParser |
 | [addNodeFilter](#addnodefilter)(callback:function):void : Adds a node filter function to the parser, the parser will collect the specified nodes by name and then execute the call... | DomParser |
-| [parse](#parse)(html:String, args:Object):[Node](../html/class_tinymce.html.Node.html) : Parses the specified HTML string into a DOM like node tree and returns the result. | DomParser |
+| [parse](#parse)(html:String, args:Object):[Node](https://www.tiny.cloud/docs-3x/api/html/class_tinymce.html.Node.html) : Parses the specified HTML string into a DOM like node tree and returns the result. | DomParser |
 
 ## Method details
 
 ### DomParser 
 
-***public function DomParser(settings:Object, schema:[Schema](../html/class_tinymce.html.Schema.html))***  
+***public function DomParser(settings:Object, schema:[Schema](https://www.tiny.cloud/docs-3x/api/html/class_tinymce.html.Schema.html))***  
 Constructs a new DomParser instance.      
 
 **Parameters**  
@@ -33,7 +33,7 @@ Constructs a new DomParser instance.
 | Param | Detail |
 | --- | --- |
 | settings:Object | Name/value collection of settings. comment, cdata, text, start and end are callbacks. |
-| schema:[Schema](../html/class_tinymce.html.Schema.html) | HTML Schema class to use when parsing. |
+| schema:[Schema](https://www.tiny.cloud/docs-3x/api/html/class_tinymce.html.Schema.html) | HTML Schema class to use when parsing. |
 
 ### addAttributeFilter 
 
@@ -63,7 +63,7 @@ Adds a node filter function to the parser, the parser will collect the specified
 
 ### parse 
 
-***public function parse(html:String, args:Object):[Node](../html/class_tinymce.html.Node.html)***  
+***public function parse(html:String, args:Object):[Node](https://www.tiny.cloud/docs-3x/api/html/class_tinymce.html.Node.html)***  
 Parses the specified HTML string into a DOM like node tree and returns the result.      
 
 **Parameters**  
@@ -74,6 +74,6 @@ Parses the specified HTML string into a DOM like node tree and returns the resul
 | args:Object | Optional args object that gets passed to all filter functions. |
 
 **Returns**  
-[Node](../html/class_tinymce.html.Node.html) - Root node containing the tree.      
+[Node](https://www.tiny.cloud/docs-3x/api/html/class_tinymce.html.Node.html) - Root node containing the tree.      
 
 **Example**

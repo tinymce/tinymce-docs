@@ -7,8 +7,8 @@ title: tinymce.ui.ListBox
 | --- | --- |
 | Namespace | tinymce.ui |
 | Class | ListBox |
-| Inheritance | <span>ListBox</span> <span class="last">[Control](../ui/class_tinymce.ui.Control.html)</span> |
-| Subclasses | [NativeListBox](../ui/class_tinymce.ui.NativeListBox.html) |
+| Inheritance | <span>ListBox</span> <span class="last">[Control](https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html)</span> |
+| Subclasses | [NativeListBox](https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.NativeListBox.html) |
 
 This class is used to create list boxes/select list. This one will generate a non native control. This one has the benefits of having visual items added.      
 
@@ -29,19 +29,19 @@ This class is used to create list boxes/select list. This one will generate a no
 | [destroy](#destroy)():void : Destroys the ListBox i. | ListBox |
 | [getLength](#getlength)(Number:Number):void : Returns the number of items inside the list box. | ListBox |
 | [hideMenu](#hidemenu)():void : Hides the drop menu. | ListBox |
-| [isActive](#isactive)():Boolean : Returns true/false if the control is disabled or not. | [Control](../ui/class_tinymce.ui.Control.html) |
-| [isDisabled](#isdisabled)():Boolean : Returns true/false if the control is disabled or not. | [Control](../ui/class_tinymce.ui.Control.html) |
-| [isRendered](#isrendered)():Boolean : Returns true/false if the control has been rendered or not. | [Control](../ui/class_tinymce.ui.Control.html) |
+| [isActive](#isactive)():Boolean : Returns true/false if the control is disabled or not. | [Control](https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html) |
+| [isDisabled](#isdisabled)():Boolean : Returns true/false if the control is disabled or not. | [Control](https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html) |
+| [isRendered](#isrendered)():Boolean : Returns true/false if the control has been rendered or not. | [Control](https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html) |
 | [postRender](#postrender)():void : Post render event. | ListBox |
-| [remove](#remove)():void : Removes the control. | [Control](../ui/class_tinymce.ui.Control.html) |
+| [remove](#remove)():void : Removes the control. | [Control](https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html) |
 | [renderHTML](#renderhtml)():String : Renders the list box as a HTML string. | ListBox |
 | [renderMenu](#rendermenu)():void : Renders the menu to the DOM. | ListBox |
-| [renderTo](#renderto)(n:Element):void : Renders the control to the specified container element. | [Control](../ui/class_tinymce.ui.Control.html) |
+| [renderTo](#renderto)(n:Element):void : Renders the control to the specified container element. | [Control](https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html) |
 | [select](#select)(va:String/function):void : Selects a item/option by value. | ListBox |
 | [selectByIndex](#selectbyindex)(idx:String):void : Selects a item/option by index. | ListBox |
-| [setActive](#setactive)(s:Boolean):void : Sets the activated state for the control. | [Control](../ui/class_tinymce.ui.Control.html) |
-| [setDisabled](#setdisabled)(s:Boolean):void : Sets the disabled state for the control. | [Control](../ui/class_tinymce.ui.Control.html) |
-| [setState](#setstate)(c:String, s:Boolean):void : Sets the specified class state for the control. | [Control](../ui/class_tinymce.ui.Control.html) |
+| [setActive](#setactive)(s:Boolean):void : Sets the activated state for the control. | [Control](https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html) |
+| [setDisabled](#setdisabled)(s:Boolean):void : Sets the disabled state for the control. | [Control](https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html) |
+| [setState](#setstate)(c:String, s:Boolean):void : Sets the specified class state for the control. | [Control](https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html) |
 | [showMenu](#showmenu)():void : Displays the drop menu with all items. | ListBox |
 
 ## Public Events

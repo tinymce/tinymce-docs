@@ -7,7 +7,7 @@ title: tinymce.ui.NativeListBox
 | --- | --- |
 | Namespace | tinymce.ui |
 | Class | NativeListBox |
-| Inheritance | <span>NativeListBox</span> <span>[ListBox](../ui/class_tinymce.ui.ListBox.html)</span> <span class="last">[Control](../ui/class_tinymce.ui.Control.html)</span> |
+| Inheritance | <span>NativeListBox</span> <span>[ListBox](https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.ListBox.html)</span> <span class="last">[Control](https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html)</span> |
 
 This class is used to create list boxes/select list. This one will generate a native control the way that the browser produces them by default.
 
@@ -15,7 +15,7 @@ This class is used to create list boxes/select list. This one will generate a na
 
 | Property | Defined By |
 | --- | --- |
-| [items](#items) : Array : Array of ListBox items. | [ListBox](../ui/class_tinymce.ui.ListBox.html) |
+| [items](#items) : Array : Array of ListBox items. | [ListBox](https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.ListBox.html) |
 
 ## Public Methods
 
@@ -23,32 +23,32 @@ This class is used to create list boxes/select list. This one will generate a na
 | --- | --- |
 | [NativeListBox](#nativelistbox)(id:String, s:Object) : Constructs a new button control instance. | NativeListBox |
 | [add](#add)(n:String, v:String, o:Object):void : Adds a option item to the list box. | NativeListBox |
-| [destroy](#destroy)():void : Destroys the ListBox i. | [ListBox](../ui/class_tinymce.ui.ListBox.html) |
+| [destroy](#destroy)():void : Destroys the ListBox i. | [ListBox](https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.ListBox.html) |
 | [getLength](#getlength)():void : Executes the specified callback function for the menu item. | NativeListBox |
-| [hideMenu](#hidemenu)():void : Hides the drop menu. | [ListBox](../ui/class_tinymce.ui.ListBox.html) |
-| [isActive](#isactive)():Boolean : Returns true/false if the control is disabled or not. | [Control](../ui/class_tinymce.ui.Control.html) |
+| [hideMenu](#hidemenu)():void : Hides the drop menu. | [ListBox](https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.ListBox.html) |
+| [isActive](#isactive)():Boolean : Returns true/false if the control is disabled or not. | [Control](https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html) |
 | [isDisabled](#isdisabled)():Boolean : Returns true/false if the control is disabled or not. | NativeListBox |
-| [isRendered](#isrendered)():Boolean : Returns true/false if the control has been rendered or not. | [Control](../ui/class_tinymce.ui.Control.html) |
+| [isRendered](#isrendered)():Boolean : Returns true/false if the control has been rendered or not. | [Control](https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html) |
 | [postRender](#postrender)():void : Post render handler. | NativeListBox |
-| [remove](#remove)():void : Removes the control. | [Control](../ui/class_tinymce.ui.Control.html) |
+| [remove](#remove)():void : Removes the control. | [Control](https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html) |
 | [renderHTML](#renderhtml)():String : Renders the list box as a HTML string. | NativeListBox |
-| [renderMenu](#rendermenu)():void : Renders the menu to the DOM. | [ListBox](../ui/class_tinymce.ui.ListBox.html) |
-| [renderTo](#renderto)(n:Element):void : Renders the control to the specified container element. | [Control](../ui/class_tinymce.ui.Control.html) |
+| [renderMenu](#rendermenu)():void : Renders the menu to the DOM. | [ListBox](https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.ListBox.html) |
+| [renderTo](#renderto)(n:Element):void : Renders the control to the specified container element. | [Control](https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html) |
 | [select](#select)(va:String/function):void : Selects a item/option by value. | NativeListBox |
 | [selectByIndex](#selectbyindex)(idx:String):void : Selects a item/option by index. | NativeListBox |
-| [setActive](#setactive)(s:Boolean):void : Sets the activated state for the control. | [Control](../ui/class_tinymce.ui.Control.html) |
+| [setActive](#setactive)(s:Boolean):void : Sets the activated state for the control. | [Control](https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html) |
 | [setDisabled](#setdisabled)(s:Boolean):void : Sets the disabled state for the control. | NativeListBox |
-| [setState](#setstate)(c:String, s:Boolean):void : Sets the specified class state for the control. | [Control](../ui/class_tinymce.ui.Control.html) |
-| [showMenu](#showmenu)():void : Displays the drop menu with all items. | [ListBox](../ui/class_tinymce.ui.ListBox.html) |
+| [setState](#setstate)(c:String, s:Boolean):void : Sets the specified class state for the control. | [Control](https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html) |
+| [showMenu](#showmenu)():void : Displays the drop menu with all items. | [ListBox](https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.ListBox.html) |
 
 ## Public Events
 
 | Event | Defined By |
 | --- | --- |
-| [onAdd](#onadd)() : Fires when a new item is added. | [ListBox](../ui/class_tinymce.ui.ListBox.html) |
-| [onChange](#onchange)() : Fires when the selection has been changed. | [ListBox](../ui/class_tinymce.ui.ListBox.html) |
-| [onPostRender](#onpostrender)() : Fires after the element has been rendered to DOM. | [ListBox](../ui/class_tinymce.ui.ListBox.html) |
-| [onRenderMenu](#onrendermenu)() : Fires when the menu gets rendered. | [ListBox](../ui/class_tinymce.ui.ListBox.html) |
+| [onAdd](#onadd)() : Fires when a new item is added. | [ListBox](https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.ListBox.html) |
+| [onChange](#onchange)() : Fires when the selection has been changed. | [ListBox](https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.ListBox.html) |
+| [onPostRender](#onpostrender)() : Fires after the element has been rendered to DOM. | [ListBox](https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.ListBox.html) |
+| [onRenderMenu](#onrendermenu)() : Fires when the menu gets rendered. | [ListBox](https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.ListBox.html) |
 
 ## Method details
 

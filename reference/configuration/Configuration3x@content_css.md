@@ -82,7 +82,7 @@ content_css : "path/myscript.php?myParam=myValue&bogus=" + new Date().getTime()
 
 The CSS file in this setting should be the very CSS file that controls the looks (or "layout") of all your pages! So, let's say you include a file "myLayout.css" in all your pages in order to control your site's global looks then this file must be set as your content_css option, because then the contents in the editor will also have the looks of your site.
 
-Any CSS classes defined in your CSS file will show up in the styles dropdown lists (unless you explicitly set what shows up in the styles dropdown list with the [theme_advanced_styles](../configuration/Configuration3x@theme_advanced_styles) option), be they in the main editor window or in a plugin's dialogue window (for example, the [advimage plugin](../plugins/Plugin3x@advimage) dialogue window) because TinyMCE will generate them dynamically based on your CSS file.
+Any CSS classes defined in your CSS file will show up in the styles dropdown lists (unless you explicitly set what shows up in the styles dropdown list with the [theme_advanced_styles](https://www.tiny.cloud/docs-3x/api/configuration/Configuration3x@theme_advanced_styles) option), be they in the main editor window or in a plugin's dialogue window (for example, the [advimage plugin](https://www.tiny.cloud/docs-3x/api/plugins/Plugin3x@advimage) dialogue window) because TinyMCE will generate them dynamically based on your CSS file.
 
 ## Default CSS
 

@@ -53,7 +53,7 @@ These commands are instance specific so they can only be executed on a specific 
 | mceRemoveNode | Removes a specific node or element. |
 | mceRepaint | Repaints the editor. Sometimes the browser has graphic glitches. |
 | mceReplaceContent | Replaces the selected contents with the given value contents. |
-| mceResize | resizes the editor container in the advanced theme (requires [theme_advanced_resizing](../configuration/Configuration3x@theme_advanced_resizing) set to true as by default) |
+| mceResize | resizes the editor container in the advanced theme (requires [theme_advanced_resizing](https://www.tiny.cloud/docs-3x/api/configuration/Configuration3x@theme_advanced_resizing) set to true as by default) |
 | mceSetAttribute | Sets an attribute on the selected element. |
 | mceSetCSSClass (removed in 3.3) | Sets a CSS class of the selected element or selection. |
 | mceSelectNode | Selects a specific node or element. |

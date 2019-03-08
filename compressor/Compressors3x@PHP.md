@@ -15,7 +15,7 @@ TinyMCE Compressor gzips all javascript files in TinyMCE to a single streamable 
 Here are step-by-step instructions for installing the GZip compressor.
 
 1.  Ensure that your server does not have zlib compression enabled in the file php.ini
-2.  Copy the tiny_mce_gzip.js and tiny_mce_gzip.php to the tiny_mce directory. The same directory that contains the tiny_mce.js file. (You can download the necessary files from our [download page](http://archive.tiny.cloud/download/download.php).)
+2.  Copy the tiny_mce_gzip.js and tiny_mce_gzip.php to the tiny_mce directory. The same directory that contains the tiny_mce.js file. (You can download the necessary files from our [download page](http://archive.tinymce.com/download/download.php).)
 3.  Remove the current script tag.
     <script type="text/javascript" src="tinymce/jscripts/tiny_mce/tiny_mce.js"></script>
 4.  Add the new new GZip script

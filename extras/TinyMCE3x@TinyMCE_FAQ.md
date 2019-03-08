@@ -45,7 +45,7 @@ Short answer: You can't!
 
 Long answer: TinyMCE is just an editor to output (X)HTML code. It is by no means comparable to web editing desktop software such as Adobe Dreamweaver, Go Live! or Microsoft Web Expressions and the like. It runs on a user's browser (client-side) and not on a server. If you want to upload pictures to a server then you need a server-side component to process your image files. TinyMCE can't do that on its own since it doesn't run on the server but on the user's browser.
 
-However there are two commercial plugins that enable you to upload files since they come with a server-side component. These are [MCImageManager](http://archive.tiny.cloud/enterprise/mcimagemanager.php) and [MCFileManager](http://archive.tiny.cloud/enterprise/mcfilemanager.php).
+However there are two commercial plugins that enable you to upload files since they come with a server-side component. These are [MCImageManager](http://archive.tinymce.com/enterprise/mcimagemanager.php) and [MCFileManager](http://archive.tinymce.com/enterprise/mcfilemanager.php).
 
 **These were merged into MoxieManager. Please visit (moxiemanager.com)[http://www.moxiemanager.com] to learn more.**
 

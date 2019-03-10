@@ -9,4 +9,5 @@ group :development, :test do
   gem 'jekyll-sitemap', '~> 1.2.0'
   gem 'rouge', '~> 3.2.1'
   gem 'nokogiri', '~> 1.8.4'
+  gem "jekyll-last-modified-at", "~> 1.0"
 end

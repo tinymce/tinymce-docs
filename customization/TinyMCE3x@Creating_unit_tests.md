@@ -9,7 +9,7 @@ Writing automated tests for any plugins or patches you develop ensures that the 
 
 ## Running Existing Tests
 
-If you download the [development package](https://www.tiny.cloud/download/) for TinyMCE, it will contain a tests directory with all the tests for TinyMCE. Tests are grouped into separate HTML files for different areas of functionality. You can open any test file in a browser and the tests in that file will automatically run, showing you the results. If the tests pass you'll see a green bar but if any test fails the bar will be red. Refreshing the page will rerun the tests.
+If you download the [development package](https://www.tiny.cloud/get-tiny/) for TinyMCE, it will contain a tests directory with all the tests for TinyMCE. Tests are grouped into separate HTML files for different areas of functionality. You can open any test file in a browser and the tests in that file will automatically run, showing you the results. If the tests pass you'll see a green bar but if any test fails the bar will be red. Refreshing the page will rerun the tests.
 
 Open the `index.html` file to see a list of all the test files so you can easily run them.
 

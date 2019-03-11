@@ -77,7 +77,7 @@ Read what main developer spocke [has to say](http://archive.tinymce.com/forum/vi
 
 ## I need a language pack and have downloaded the XML file but it's not working!
 
-You don't want the XML file! You want to check the checkboxes on the [language pack service page](https://www.tiny.cloud/download/language-packages/) in order to select the desired language packs and then you click the "download" button. This way you get a ZIP file which contains JavaScript files. It is those files you are after!
+You don't want the XML file! You want to check the checkboxes on the [language pack service page](https://www.tiny.cloud/get-tiny/language-packages/) in order to select the desired language packs and then you click the "download" button. This way you get a ZIP file which contains JavaScript files. It is those files you are after!
 
 The XML file is for those who wish to complete or update/improve the already existing language files. These people can then work on the respective XML file and upload it back to the server so others can then re-download an updated language pack.
 

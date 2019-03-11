@@ -7,7 +7,7 @@ title: "For Dummies"
 
 ### Instructions
 
-1. [Download TinyMCE tinymce_3_x_x.zip](https://www.tiny.cloud/download/older-releases/), it contains all you need for any editor.
+1. [Download TinyMCE tinymce_3_x_x.zip](https://www.tiny.cloud/get-tiny/older-releases/), it contains all you need for any editor.
 2. Unzip and extract the `tinymce_3_x_x.zip` move the subdir `tinymce` to your desired local location.
 3. Upload tinymce directory to your server with all it's contents.
 4. Now create a simple test web page with code as below, upload to server, that's all, it should work.

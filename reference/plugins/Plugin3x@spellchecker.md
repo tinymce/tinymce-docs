@@ -38,7 +38,7 @@ if (function_exists('pspell_new')) {
 
 ## Installation Instructions
 
-1.  Download the latest version of the TinyMCE Spellchecker plugin, available on our [download page](https://www.tiny.cloud/download/).
+1.  Download the latest version of the TinyMCE Spellchecker plugin, available on our [download page](https://www.tiny.cloud/get-tiny/).
 2.  Unzip the "spellchecker" directory into the "tiny_mce/plugins" dir, path should be "tiny_mce/plugins/spellchecker".
 3.  Open up the config.php file you just unziped in the spellchecker folder.
 4.  Uncomment the spellchecker engine that you wish to use for example "GoogleSpell".

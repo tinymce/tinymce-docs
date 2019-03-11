@@ -23,7 +23,7 @@ There are currently 4 different compressors written by MoxieCode based on variou
 *   [JSP / Tomcat or compatible application servers](https://www.tiny.cloud/docs-3x/compressor/Compressors3x@JSP/)
 *   [CFM / Coldfusion](https://www.tiny.cloud/docs-3x/compressor/Compressors3x@Coldfusion/)
 
-They can be downloaded from our [Download page](https://www.tiny.cloud/download/).
+They can be downloaded from our [Download page](https://www.tiny.cloud/get-tiny/).
 
 ## Third-party Compressors
 

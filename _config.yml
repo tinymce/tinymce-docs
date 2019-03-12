@@ -1,5 +1,6 @@
+url: "https://www.tiny.cloud"
 permalink: pretty
-origin: "https://www.tinymce.com"
+origin: "https://www.tiny.cloud"
 baseurl: ""
 shared_baseurl: ""
 syntax_highlight_theme: "tomorrow-night"
@@ -27,5 +28,6 @@ redcarpet:
     - prettify
 
 plugins:
+  - jekyll-last-modified-at
   - jekyll-redirect-from
   - jekyll-sitemap

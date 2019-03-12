@@ -66,7 +66,7 @@ This option enables you to set the default state of the `Paste as text` menu ite
 
 **Default Value:** `false`
 
-**Possbile Values:** `true`, `false`
+**Possible Values:** `true`, `false`
 
 ##### Example
 
@@ -75,7 +75,7 @@ tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "paste",
   menubar: "edit",
-  toolbar: "paste"
+  toolbar: "paste",
   paste_as_text: true
 });
 ```

@@ -2,7 +2,7 @@
 layout: default
 title: PowerPaste plugin
 title_nav: PowerPaste
-keywords: enterprise powerpaste power paste powerpaste_word_import powerpaste_html_import powerpaste_block_drop powerpaste_allow_local_images microsoft word excel
+keywords: enterprise powerpaste power paste paste_as_text powerpaste_word_import powerpaste_html_import powerpaste_block_drop powerpaste_allow_local_images microsoft word excel
 ---
 
 The TinyMCE **PowerPaste** plugin automatically cleans up content from Microsoft Word/Excel and HTML sources to ensure clean, compliant content that matches the look and feel of the site.
@@ -68,6 +68,24 @@ tinymce.init({
 
 
 ## Configuration Options
+
+### paste_as_text
+
+This option controls the default state of the `Paste as text` menu item, which is added by the `powerpaste` plugin under the `Edit` menu dropdown.
+
+The supported values are `true` and `false`. The default is `false`.
+
+##### Example
+
+```js
+tinymce.init({
+  selector: "textarea",  // change this value according to your HTML
+  plugins: "powerpaste",
+  menubar: "edit",
+  toolbar: "pastetext",
+  paste_as_text: true
+});
+```
 
 ### powerpaste_word_import
 

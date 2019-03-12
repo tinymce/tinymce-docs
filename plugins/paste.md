@@ -7,7 +7,7 @@ keywords: microsoft word excel cut copy paste_data_images paste_as_text paste_en
 controls: toolbar button, menu item
 ---
 
-> Looking for more advanced Microsoft Word importing and pasting? Try the [PowerPaste](../powerpaste/) plugin.
+> Looking for more advanced Microsoft Word importing and pasting? Try the [PowerPaste]({{site.baseurl}}/plugins/powerpaste/) plugin.
 
 This plugin will filter/cleanup content pasted from Microsoft Word. The power of the plugin is in its options, so please take the time to learn more about them below.
 
@@ -168,7 +168,7 @@ tinymce.init({
 
 This option enables you to configure the `valid_elements` specific to MS Office. Word produces a lot of junk HTML, so when users paste things from Word we do extra restrictive filtering on it to remove as much of this as possible. This option enables you to specify which elements and attributes you want to include when Word contents are intercepted.
 
->**Note:** To access this feature, you need to set the value of [paste_enable_default_filters]({{site.baseurl}}plugins/paste/#paste_enable_default_filters) to `"false"` in your configuration.
+>**Note:** To access this feature, you need to set the value of [paste_enable_default_filters]({{site.baseurl}}/plugins/paste/#paste_enable_default_filters) to `"false"` in your configuration.
 
 **Type:** `String`
 

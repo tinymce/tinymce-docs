@@ -50,7 +50,7 @@ Specify which of the plugins should be added by adding a plugin entry to the mob
 ```js
 tinymce.init({
   selector: 'textarea',
-  theme: 'modern',
+  theme: 'silver',
   mobile: {
     theme: 'mobile',
     plugins: [ 'autosave', 'lists', 'autolink' ]
@@ -65,7 +65,7 @@ TinyMCE mobile supports a small subset of the toolbar items supported by the mai
 ```js
 tinymce.init({
   selector: 'textarea',
-  theme: 'modern',
+  theme: 'silver',
   mobile: {
     theme: 'mobile',
     plugins: [ 'autosave', 'lists', 'autolink' ],

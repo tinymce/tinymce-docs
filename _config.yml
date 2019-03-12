@@ -1,3 +1,4 @@
+url: "https://www.tiny.cloud"
 permalink: pretty
 origin: "https://www.tiny.cloud"
 baseurl: ""
@@ -25,5 +26,6 @@ redcarpet:
     - prettify
 
 gems:
+  - jekyll-last-modified-at
   - jekyll-redirect-from
   - jekyll-sitemap

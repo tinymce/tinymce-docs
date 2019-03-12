@@ -43,7 +43,7 @@ Below are the toolbar items currently supported, with any plugins/configuration 
 
 ## Configuring the Plugins
 
-The plugins supported by mobile are currently limited to the [autosave]({{site.baseurl}}/plugins/autosave/), [autolink]({{site.baseurl}}/plugins/autolink/), and [lists]({{site.baseurl}}/plugins/lists/) plugins. This is by design. TinyMCE Mobile is in the early release cycle and does not include all the plugins available in the web version. The developer community is encouraged to provide suggestions about which plugins should be mobile optimized. Please complete this [survey](https://docs.google.com/forms/d/e/1FAIpQLSdWamU5HsZtv-SPqGRyu6Ql1zLqlrCQFP1vSrzx1oHikMFvlw/viewform) to provide feedback.
+The plugins supported by mobile are currently limited to the [autosave]({{site.baseurl}}/plugins/autosave/), [autolink]({{site.baseurl}}/plugins/autolink/), and [lists]({{site.baseurl}}/plugins/lists/) plugins. This is by design. TinyMCE Mobile is in the early release cycle and does not include all the plugins available in the desktop version. The developer community is encouraged to provide suggestions about which plugins should be mobile optimized. Please complete this [survey](https://docs.google.com/forms/d/e/1FAIpQLSdWamU5HsZtv-SPqGRyu6Ql1zLqlrCQFP1vSrzx1oHikMFvlw/viewform) to provide feedback.
 
 Specify which of the plugins should be added by adding a plugin entry to the mobile section as shown in the following example:
 
@@ -94,7 +94,6 @@ Below are the toolbar items currently supported, with any plugins/configuration 
 | forecolor | Apply a foreground color
 | styleselect | Apply a custom style | | [style_formats]({{ site.baseurl }}/configure/content-formatting/#style_formats) |
 | removeformat | Removes any inline formatting |
-
 
 ## Browser compatibility
 

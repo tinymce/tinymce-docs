@@ -22,7 +22,7 @@ New to Tiny 5, the mobile experience is built in and does not require additional
 
 Tinymce will detect the platform and will show an optimal Ui experience given a device type and screensize.
 
-Below are the toolbar items currently supported, with any plugins/configuration required. Note, that the `list` functions require the [lists]({{ site.baseurl }}/plugins/lists) plugin and [styleselect](#) requires configuring [style_formats]({{ site.baseurl}}/configure/content-formatting/#style_formats).
+Below are the toolbar items currently supported, with any plugins/configuration required. Note, that the `list` functions require the [lists]({{ site.baseurl }}/plugins/lists) plugin and [styleselect](#) requires configuring [style_formats]({{ site.baseurl}}/configure/editor-appearance/#style_formats).
 
 | Name | Function | Plugins Required | Configuration |
 |--------|----|-----|-------------|
@@ -38,7 +38,7 @@ Below are the toolbar items currently supported, with any plugins/configuration 
 | numlist | Insert an ordered list | [lists]({{ site.baseurl }}/plugins/lists) |
 | fontsizeselect | Change the font size
 | forecolor | Apply a foreground color
-| styleselect | Apply a custom style | | [style_formats]({{ site.baseurl }}/configure/content-formatting/#style_formats) |
+| styleselect | Apply a custom style | | [style_formats]({{ site.baseurl }}/configure/editor-appearance/#style_formats) |
 | removeformat | Removes any inline formatting |
 
 ## Configuring the Plugins
@@ -76,7 +76,7 @@ tinymce.init({
 
 Below are the toolbar items currently supported, with any plugins/configuration required.
 
-> Note: The `list` functions require the [lists]({{site.baseurl}}/plugins/lists/) plugin and `styleselect` requires configuring [style_formats]({{site.baseurl}}/configure/content-formatting/#style_formats).
+> Note: The `list` functions require the [lists]({{site.baseurl}}/plugins/lists/) plugin and `styleselect` requires configuring [style_formats]({{site.baseurl}}/configure/editor-appearance/#style_formats).
 
 | Name | Function | Plugins Required | Configuration |
 |--------|----|-----|-------------|
@@ -92,7 +92,7 @@ Below are the toolbar items currently supported, with any plugins/configuration 
 | numlist | Insert an ordered list | [lists]({{ site.baseurl }}/plugins/lists) |
 | fontsizeselect | Change the font size
 | forecolor | Apply a foreground color
-| styleselect | Apply a custom style | | [style_formats]({{ site.baseurl }}/configure/content-formatting/#style_formats) |
+| styleselect | Apply a custom style | | [style_formats]({{ site.baseurl }}/configure/editor-appearance/#style_formats) |
 | removeformat | Removes any inline formatting |
 
 ## Browser compatibility

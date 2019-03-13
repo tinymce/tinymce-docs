@@ -10,11 +10,13 @@ TinyMCE has comprehensive content filtering capabilities that change the way the
 These settings enable developers to control content styling features that are available to users such as font formats, font sizes, and text indentation. This section focuses on 1 of 32 content filtering options available in TinyMCE. There are additional configuration options concerning the complex parsing of text. Those options are beyond the scope of the General Configuration Guide. Refer to the [Content filtering options]({{ site.baseurl }}/configure/content-filtering/) section to learn more.
 
 
-## Role your style formats
+## Roll your style formats
 
-This section is about the [formats]({{ site.baseurl }}/configure/content-formatting/#font_formats) configuration option. These options enable developers to override TinyMCE defaults and adds custom "formats" to the editor.
+This section is about the [formats]({{ site.baseurl }}/configure/content-formatting/#formats) configuration option. This options lets developers override TinyMCE defaults and adds custom **formats** to the editor.
 
-A format is a style that is applied to text when a user clicks the bold button inside the editor. TinyMCE is equipped with a text formatting engine that allows the specification of expected action. For example, TinyMCE lets the user specify what to produce when a user clicks the bold button.
+TinyMCE is equipped with a formatting engine that allows you to register a set of styles and attributes as a named **format**. For example, the `bold` format is the style that is applied to text when the bold button is clicked.
+
+Check out the [custom formats example]({{ site.baseurl }}/demo/format-custom/) for a demonstration of this option.
 
 ### Style merging
 
@@ -48,7 +50,7 @@ TinyMCE contains built-in formats that can be overridden. More information about
 * dt, dd
 * samp
 
-Some built-in formats `fontsize`, `fontname`, `forecolor`, `hilitecolor` use the variable `%value`. This variable gets replaced with the user selected value. For example, the value for the `fontname` variable can be "blue". See the variable substitution section for more information. 
+Some built-in formats `fontsize`, `fontname`, `forecolor`, `hilitecolor` use a variable in their definition named `%value`. This gets replaced with the user selected item such as a `color` value. Check the variable substitution section below for details.
 
 ### Format parameters
 
@@ -62,8 +64,11 @@ The table of format parameters below explores some more advanced topics.
 | classes    | Space-separated list of classes to apply the selected elements or the new inline/block element. |
 | styles     | Name/value object with CSS style items to apply such as color and other attributes. |
 | attributes | Name/value object with attributes to apply to the selected elements or the new inline/block element. |
-| exact      | Disables the [Style merging]({{ site.baseurl }}/configure/content-formatting/#style_formats_merge) feature when used. `exact` is needed for some CSS inheritance issues such as text-decoration for underline/strikethrough. |
+| exact      | Disables the [Style merging]({{ site.baseurl }}/configure/editor-appearance/#style_formats_merge) feature when used. `exact` is needed for some CSS inheritance issues such as text-decoration for underline/strikethrough. |
 | wrapper    | State that tells that the current format is a container format for block elements. For example a `div wrapper` or `blockquote`. |
+| remove     | Specifies what the remove behavior of the element should be when the format is removed. |
+| block_expand | controls if the selection should expand upwards to the closest matching block element.|
+| deep       | Enables control for removing the child elements of the matching format. |
 
 ### Example of usage of the formats option
 

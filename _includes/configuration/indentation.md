@@ -21,7 +21,7 @@ tinymce.init({
 
 The **indent_use_margin** option is set if the editor should use margin instead of padding when indenting content.
 
-**Type:** `boolean`
+**Type:** `Boolean`
 
 **Default Value:** `false`
 

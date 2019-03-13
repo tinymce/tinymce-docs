@@ -1,9 +1,9 @@
 ## style_formats_autohide
 
-This option enables auto hiding of styles that doesn't match the current context. That means if you have a style for tables only it wouldn't be visible in the styles drop down when the caret isn't inside a table.
+This option enables auto hiding of styles that can't be applied to the current context. For example: if a style applies only to tables, it wouldn't be visible in the styles drop down when the caret isn't inside a table. By default, irrelevant menu items are disabled
 
 **Type:** `Boolean`
-**Defaults:** `False`
+**Default:** `false`
 
 ##### Example
 

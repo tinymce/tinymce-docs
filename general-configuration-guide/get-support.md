@@ -93,9 +93,9 @@ tinymce.init({
 
 `path2/file.htm >> http://www.site.com/path1/path2/file.htm`
 
-### Q: Where are the advanced image options?
+### Q: Where are the advanced image formatting options?
 
-Use the [`Style Formats`]({{ site.baseurl }}/configure/content-filtering/#style_formats) option instead, which is much more powerful.
+Use the [`Style Formats`]({{ site.baseurl }}/configure/editor-appearance/#style_formats) option instead, which is much more powerful.
 
 ```js
 tinymce.init({

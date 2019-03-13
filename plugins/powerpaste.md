@@ -71,7 +71,7 @@ tinymce.init({
 
 ### paste_as_text
 
-This option controls the default state of the `Paste as text` menu item, which is added by the `powerpaste` plugin under the `Edit` menu dropdown.
+This option controls the default state of the **Paste as text** menu item, which is added by the `powerpaste` plugin under the `Edit` menu dropdown.
 
 The supported values are `true` and `false`. The default is `false`.
 

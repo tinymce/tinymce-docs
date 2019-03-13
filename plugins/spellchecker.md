@@ -38,14 +38,16 @@ tinymce.init({
   plugins: "spellchecker",
   menubar: "tools",
   toolbar: "spellchecker",
-  spellchecker_callback: function(method, text, success, failure) {
+  spellchecker_callback: function (method, text, success, failure) {
     var words = text.match(this.getWordCharPattern());
-    if (method == "spellcheck") {
+    if (method === "spellcheck") {
       var suggestions = {};
       for (var i = 0; i < words.length; i++) {
         suggestions[words[i]] = ["First", "Second"];
       }
-      success(suggestions);
+      success({ words: suggestions, dictionary: [ ] });
+    } else if (method === "addToDictionary") {
+      success({ dictionary: [ text ]});
     }
   }
 });
@@ -59,7 +61,15 @@ tinymce.init({
   plugins: "spellchecker",
   menubar: "tools",
   toolbar: "spellchecker",
-    spellchecker_callback: function(method, text, success, failure) {
+  spellchecker_callback: function (method, text, success, failure) {
+    var successCallback = function (result) {
+      success(result);
+    };
+    var errorCallback = function (error, xhr) {
+      failure("Spellcheck error:" + xhr.status);
+    };
+    
+    if (method === "spellcheck") {
       tinymce.util.JSONRequest.sendRPC({
         url: "/tinymce/spellchecker.php",
         method: "spellcheck",
@@ -67,13 +77,21 @@ tinymce.init({
           lang: this.getLanguage(),
           words: text.match(this.getWordCharPattern())
         },
-        success: function(result) {
-          success(result);
+        success: successCallback,
+        error: errorCallback
+      });
+    } else if (method === 'addToDictionary') {
+      tinymce.util.JSONRequest.sendRPC({
+        url: "/tinymce/spellchecker.php",
+        method: "addToDictionary",
+        params: {
+          lang: this.getLanguage(),
+          word: text
         },
-        error: function(error, xhr) {
-          failure("Spellcheck error:" + xhr.status);
-        }
-    });
+        success: successCallback,
+        error: errorCallback
+      });
+    }
   }
 });
 ```

@@ -47,7 +47,8 @@ tinymce.init({
       }
       success({ words: suggestions, dictionary: [ ] });
     } else if (method === "addToDictionary") {
-      success({ dictionary: [ text ]});
+      // Add word to dictionary here
+      success();
     }
   }
 });
@@ -62,13 +63,6 @@ tinymce.init({
   menubar: "tools",
   toolbar: "spellchecker",
   spellchecker_callback: function (method, text, success, failure) {
-    var successCallback = function (result) {
-      success(result);
-    };
-    var errorCallback = function (error, xhr) {
-      failure("Spellcheck error:" + xhr.status);
-    };
-    
     if (method === "spellcheck") {
       tinymce.util.JSONRequest.sendRPC({
         url: "/tinymce/spellchecker.php",
@@ -77,20 +71,15 @@ tinymce.init({
           lang: this.getLanguage(),
           words: text.match(this.getWordCharPattern())
         },
-        success: successCallback,
-        error: errorCallback
-      });
-    } else if (method === 'addToDictionary') {
-      tinymce.util.JSONRequest.sendRPC({
-        url: "/tinymce/spellchecker.php",
-        method: "addToDictionary",
-        params: {
-          lang: this.getLanguage(),
-          word: text
+        success: function (result) {
+          success({ words: result });
         },
-        success: successCallback,
-        error: errorCallback
+        error: function (error, xhr) {
+          failure("Spellcheck error:" + xhr.status);
+        }
       });
+    } else {
+      failure('Unsupported spellcheck method');
     }
   }
 });

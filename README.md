@@ -64,6 +64,25 @@ Navigate to [http://127.0.0.1:4000/](http://127.0.0.1:4000/)
     ./_scripts/api-reference-local.sh <tinymce src folder path>
     ./_scripts/serve.sh
 
+## tinymce_url_override (optional - no default)
+
+Use this option if you would like to override the full `tinymce.min.js` URL for testing features. Follow these steps to override URLs:
+
+1. Add any local config overrides in the `_config-local-override.smaple.yml` file.
+
+2. Run the init script to fetch the changes:
+```
+cd tinymce-docs
+./_scripts/init.sh
+```
+
+3. Run development version to test your changes:
+```
+./_scripts/serve.sh
+```
+
+> Important: Do not check in your _config.local-override.yml file and remove this setting once the feature is in the main channel.
+
 ## Contributing to TinyMCE
 
 If you would like to contribute to the TinyMCE project please read 

@@ -8,12 +8,12 @@ keywords: integration integrate jquery javascript
 
 ## TinyMCE in a jQuery UI Dialog
 
-You need to add some custom logic when rendering TinyMCE instances inside jQuery UI dialogs since it blocks all focus in calls of elements outside the dialog. [Check this fiddle out](http://fiddle.tinymce.com/rsdaab/713) for a working example.
+You need to add some custom logic when rendering TinyMCE instances inside jQuery UI dialogs since it blocks all focus in calls of elements outside the dialog. [Check this fiddle out](http://fiddle.tinymce.com/rsdaab/840) for a working example.
 
 ```js
 // Prevent jQuery UI dialog from blocking focusin
 $(document).on('focusin', function(e) {
-    if ($(e.target).closest(".mce-window, .moxman-window").length) {
+    if ($(e.target).closest(".tox-tinymce-aux, .moxman-window, .tam-assetmanager-root").length) {
 		e.stopImmediatePropagation();
 	}
 });

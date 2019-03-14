@@ -20,26 +20,7 @@ Configuration is relatively easy, so let's get started.
 
 New to Tiny 5, the mobile experience is built in and does not require additional configuration.
 
-Tinymce will detect the platform and will show an optimal Ui experience given a device type and screensize.
-
-Below are the toolbar items currently supported, with any plugins/configuration required. Note, that the `list` functions require the [lists]({{ site.baseurl }}/plugins/lists) plugin and [styleselect](#) requires configuring [style_formats]({{ site.baseurl}}/configure/editor-appearance/#style_formats).
-
-| Name | Function | Plugins Required | Configuration |
-|--------|----|-----|-------------|
-| undo | Undo operation |
-| redo | Redo operation |
-| bold | Bold formatting operation |
-| italic | Italic formatting operation |
-| underline | Underline formatting operation |
-| link | Insert / Edit a hyperlink |
-| unlink | Remove an existing hyperlink |
-| image | Insert an image |
-| bullist | Insert an unordered list | [lists]({{ site.baseurl }}/plugins/lists) |
-| numlist | Insert an ordered list | [lists]({{ site.baseurl }}/plugins/lists) |
-| fontsizeselect | Change the font size
-| forecolor | Apply a foreground color
-| styleselect | Apply a custom style | | [style_formats]({{ site.baseurl }}/configure/editor-appearance/#style_formats) |
-| removeformat | Removes any inline formatting |
+Tinymce will detect the platform and will show an optimal UI experience given a device type and screensize.
 
 ## Configuring the Plugins
 

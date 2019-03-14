@@ -11,9 +11,7 @@ controls: toolbar button
 
 A checklist is a proven method to improve productivity and quality of a business and are generally a great way of getting things done. The **Checklist** plugin helps the user keep track of all required actions by creating a simple, clean, and easy to use TODO list.
 
-Common use cases for using a Checklist:
-
-
+Common use cases for using a checklist:
 
 *   **Private & Work** - Checklist can help in keeping work and private tasks separate for more efficiency.
 *   **Tracking Bills** - Checklists can be created to avoid forgetting payment cycles to pay a bill on time.
@@ -28,7 +26,6 @@ Common use cases for using a Checklist:
 
 
 ### Getting started
-
 
 #### Creating an account
 

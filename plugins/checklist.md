@@ -21,7 +21,6 @@ In the TinyMCE 5 editor, checklists are presented as lists with small checkboxes
 
 Once you have obtained the **Checklist** plugin, refer to the following instructions for using it.
 
-
 ### Configuring the Checklist toolbar button
 
 Use the following script to add the **Checklist** [toolbar button](https://www.tiny.cloud/docs/ui-components/toolbarbuttons/):
@@ -34,7 +33,7 @@ tinymce.init({
 });
 ```
 
-> Note: The **Checklist** Plugin has to be used together with the Lists plugin to work.
+> Note: The **Checklist** plugin has to be used together with the [Lists]({{site.baseurl}}/plugins/lists/) plugin to work.
 
 ### CSS
 

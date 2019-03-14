@@ -14,6 +14,13 @@ else
   cp _config-local.sample.yml _config-local.yml
 fi
 
+if [[ -e "_config-local-override.yml" ]]; then
+  echo " > _config-local-override present, skipping creation"
+else
+  echo " > creating _config-local-override.yml"
+  cp _config-local-override.sample.yml _config-local-override.yml
+fi
+
 echo " > creating dummy API ref data file"
 echo [] > _data/nav_api.json
 

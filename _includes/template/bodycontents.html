@@ -28,7 +28,7 @@
 
 <div class="main {{ page.type }} {{ page.class }}">
     <aside class="side-nav">
-        <div id="side-nav-controller" style="display: none;">Expand Menu</div>
+        <div id="side-nav-controller">Expand Menu</div>
         {% assign nav = site.data.nav | array_concat:site.data.nav_api %}
         {% include nav.html links=nav preceding_address="/" %}
     </aside>
@@ -68,83 +68,6 @@
 {% include_remote {{ site.origin }}/_docs/footer.html css="body > *" %}
 <script src="{{ site.shared_baseurl }}/scripts/common.min.js"></script>
 <script src="{{ site.shared_baseurl }}/scripts/docs.min.js"></script>
-
-<script>
-  $("#side-nav-controller").on("click", function () {
-    $("aside > ul > li > ul").hide();
-    $("aside > ul").toggle();
-    if ($("aside > ul").is(":visible")) {
-      $("#side-nav-controller").text('Collapse Menu');
-    } else {
-      $("#side-nav-controller").text('Expand Menu');
-    }
-  });
-
-  var visible = [];
-
-  $(document).ready(function() {
-    visible = [];
-    $("aside > ul > li > ul").each(function(index) {
-      if ($(this).is(":visible")) {
-        visible.push(index);
-      }
-    });
-    if ($(document).width() < 1126) {
-      $("aside > ul > li > ul").hide();
-      $("aside > ul").hide();
-      $("#side-nav-controller").show();
-    }
-  });
-
-  var sizeTest = window.matchMedia("(max-width: 1126px)");
-  sizeTest.addListener(function(size) {
-    if (size.matches) {
-      $("aside > ul > li > ul").each(function(index) {
-        if ($(this).is(":visible") && visible.indexOf(index) < 0) {
-          visible.push(index);
-        }
-      });
-      $("aside > ul > li > ul").hide();
-      $("#side-nav-controller").show();
-      $("aside > ul").hide();
-    } else {
-      $("aside > ul > li > ul").each(function(index) {
-        if (visible.indexOf(index) > -1) {
-          $(this).show();
-        }
-      });
-      $("#side-nav-controller").hide();
-      $("aside > ul").show();
-    }
-  });
-</script>
-
-<style type="text/css">
-    #side-nav-controller {
-        font-size: 16px;
-        color: #1976d2;
-        padding: 13px 0;
-        cursor: pointer;
-        background: #FFFFFF;
-        border-bottom: 1px solid #dfdfdf;
-        font-weight: 600;
-    }
-
-    @media screen and (max-width: 1126px) {
-        .main {
-            padding-top: 52px !important;
-        }
-        aside {
-            padding-top: 56px;
-        }
-    }
-
-    @media screen and (max-width: 850px) {
-        aside {
-            padding-top: 40px !important;
-        }
-    }
-</style>
 
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
 <script type="text/javascript">

@@ -13,9 +13,9 @@ You need to add some custom logic when rendering TinyMCE instances inside jQuery
 ```js
 // Prevent jQuery UI dialog from blocking focusin
 $(document).on('focusin', function(e) {
-    if ($(e.target).closest(".tox-tinymce-aux, .moxman-window, .tam-assetmanager-root").length) {
-		e.stopImmediatePropagation();
-	}
+  if ($(e.target).closest(".tox-tinymce-aux, .moxman-window, .tam-assetmanager-root").length) {
+    e.stopImmediatePropagation();
+  }
 });
 ```
 

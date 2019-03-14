@@ -54,7 +54,7 @@ Currently, there are three types of formats available:
 * UPPERCASE
 * Title Case
 
-![**Case Change**]({{site.baseurl}}/images/casechange.png)(**Case Change**)
+![**Case Change**]({{site.baseurl}}/images/casechange.png)
 
 ### lowercase
 
@@ -64,7 +64,7 @@ The **lowercase** option changes all the selected characters to lowercase. This 
 #### To change the case of selected text in a document to lowercase, perform the following steps:
 
 1. Select the desired text to change the case.
-2. Click on the ![**Case Change**]({{site.baseurl}}/images/casechangeicon.png)(**Case Change**) icon in the toolbar.
+2. Click on the ![**Case Change**]({{site.baseurl}}/images/casechangeicon.png) icon in the toolbar.
 3. From the drop-down menu, click on the **lowercase **option.
 
 
@@ -79,7 +79,7 @@ The **UPPERCASE** option changes all the selected characters to uppercase. This 
 #### To change the case of selected text in a document to UPPERCASE, perform the following steps:
 
 1. Select the desired text to change the case.
-2. Click on the **Case Change (Aa)** icon in the toolbar.
+2. Click on the ![**Case Change**]({{site.baseurl}}/images/casechangeicon.png) icon in the toolbar.
 3. From the drop-down menu, click on the **UPPERCASE **option.
 
 ##### Result: The UPPERCASE format will be applied to the selected text.
@@ -93,7 +93,7 @@ The **Title Case** option changes anything other than articles, coordinating con
 #### To change the case of selected text in a document to Title Case, perform the following steps:
 
 1. Select the desired text to change the case.
-2. Click on the **Case Change (Aa)** icon in the toolbar.
+2. Click on the ![**Case Change**]({{site.baseurl}}/images/casechangeicon.png) icon in the toolbar.
 3. From the drop-down menu, click on the **Title Case** option.
 
 

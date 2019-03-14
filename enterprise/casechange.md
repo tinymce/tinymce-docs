@@ -15,6 +15,8 @@ The **Case Change** plugin is a time saving and handy extension that allows chan
 
 Currently, there are three types of formats available:
 
+![**Case Change**]({{site.baseurl}}/images/casechange.png)
+
 ### lowercase
 
 The **lowercase** option changes all the selected characters to lowercase.
@@ -43,14 +45,14 @@ The **Title Case** can be used for the following editor elements:
 
 #### Creating an account
 
-To try out **Case Change** and Tiny Cloud-delivered editor, the first step is to create a free[ Tiny account](https://www.tiny.cloud/download/).
+To try out **Case Change** and Tiny Cloud-delivered editor, the first step is to create a free [Tiny account](https://www.tiny.cloud/download/).
 
-The free user account provisioned with a free 30-day trial of all Tiny[ premium plugins](https://apps.tiny.cloud/product-category/tiny-cloud-extensions/), with no credit card information or commitment required.
+The free user account provisioned with a free 30-day trial of all Tiny [premium plugins](https://apps.tiny.cloud/product-category/tiny-cloud-extensions/), with no credit card information or commitment required.
 
 #### Buy TinyMCE Case Change
 
 Start with this [dedicated product page](https://apps.tiny.cloud/products/case-change/) to see all the flexible pricing options. OEM and enterprise customers should [contact sales directly](https://www.tiny.cloud/contact/).
 
-For more information on **Case Change** refer to the full [documentation](https://www.tiny.cloud/docs/plugins/casechange/).
+For more information on **Case Change** refer to the full [documentation]({{site.baseurl}}/plugins/casechange/).
 
-There is also a demo provided to explore the **Case Change** capabilities[ here](https://www.tiny.cloud/docs/demo/casechange/).
+There is also a demo provided to explore the **Case Change** capabilities [here]({{site.baseurl}}/demo/casechange/).

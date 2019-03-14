@@ -7,14 +7,17 @@ keywords: case capitalization capitalize lowercase uppercase
 controls: toolbar button, menu item
 ---
 
-The Case Change plugin allows a user to change the case or capitalization of text with a few simple clicks. Three types of formats are available:
-* lowercase
-* UPPERCASE
-* Title Case
+## Overview
+
+The **Case Change** plugin is a time saving and handy extension that allows changing the case of text in block selection to uppercase, lowercase, or title case.
+
+**Case Change** is a premium plugin from Tiny. Please see the [Premium features]({{site.baseurl}}/enterprise/casechange/) section for all the buying options.
+
+Once you have obtained the **Case Change** plugin, refer to the following instructions for using it.
 
 ### Configuring the Case Change split toolbar button
 
-Use the following script to configure the Case Change split toolbar button:
+Use the following script to configure the **Case Change** [split toolbar button]({{site.baseurl}}/ui-components/typesoftoolbarbuttons/#splitbutton):
 
 ##### Example
 
@@ -28,7 +31,7 @@ tinymce.init({
 
 ### Configuring the Case Change menu item
 
-Use the following script to configure the Case Change menu item:
+Use the following script to configure the **Case Change** [menu item]({{site.baseurl}}/ui-components/menuitems/):
 
 ##### Example
 
@@ -42,27 +45,77 @@ tinymce.init({
 });
 ```
 
-### Usage
 
-1. Select the text you wish to change the case of.
+### Types of Formats
 
-2. Select the type of case you wish to apply thorugh the toolbar dropdown or the menu item.
+Currently, there are three types of formats available:
 
-The toolbar button will retain the last applied type of case making it simple to apply it multiple times.
+* lowercase
+* UPPERCASE
+* Title Case
 
-## Options
+![**Case Change**]({{site.baseurl}}/images/casechange.png)(**Case Change**)
 
-### `casechange_title_case_minors`
+### lowercase
 
-When using Title Case this option makes it possible to configure what words not to capitalize. All words not specified by this ruleset will be capitalized.
+The **lowercase** option changes all the selected characters to lowercase. This is a handy option in situations when the Caps Lock key was accidentally left on while typing. Instead of starting over and retyping everything, the user can simply select this text and change words to lowercase if they have been erroneously capitalized in the input.
 
-**Type:** `Array`
 
-**Default:** *A ruleset based on [Wikipedia Title Case](https://titlecaseconverter.com/rules/#WP)*
+#### To change the case of selected text in a document to lowercase, perform the following steps:
 
-##### Example
+1. Select the desired text to change the case.
+2. Click on the ![**Case Change**]({{site.baseurl}}/images/casechangeicon.png)(**Case Change**) icon in the toolbar.
+3. From the drop-down menu, click on the **lowercase **option.
 
-```js
+
+##### Result: The lowercase format will be applied to the selected text.
+
+> Note: The toolbar button will retain the last applied type of case making it simple to apply the same formatting multiple times.
+
+### UPPERCASE
+
+The **UPPERCASE** option changes all the selected characters to uppercase. This formatting option is useful in documentation, where "initial caps" are to be used ("headline style") as opposed to sentence style (first word of sentence or phrase capitalized only), regardless of the specific type of title, heading, header, or interface text.
+
+#### To change the case of selected text in a document to UPPERCASE, perform the following steps:
+
+1. Select the desired text to change the case.
+2. Click on the **Case Change (Aa)** icon in the toolbar.
+3. From the drop-down menu, click on the **UPPERCASE **option.
+
+##### Result: The UPPERCASE format will be applied to the selected text.
+
+> Note: The toolbar button will retain the last applied type of case making it simple to apply the same formatting multiple times.
+
+### Title Case
+
+The **Title Case** option changes anything other than articles, coordinating conjunctions, or short prepositions to capital letters.
+
+#### To change the case of selected text in a document to Title Case, perform the following steps:
+
+1. Select the desired text to change the case.
+2. Click on the **Case Change (Aa)** icon in the toolbar.
+3. From the drop-down menu, click on the **Title Case** option.
+
+
+##### Result: The Title Case format will be applied to the selected text.
+
+> Note: The toolbar button will retain the last applied type of case making it simple to apply the same formatting multiple times.
+
+#### **Options**
+
+**Title Case** can be customized to create user defined rule sets by using the following options:
+
+##### **casechange_title_case_minors**
+
+The `casechange_title_case_minors` option is used to customize the rules while using **Title Case.** This option makes it possible to configure what words not to capitalize. All other words not specified by this rule set will be capitalized overriding the default **Title Case** rule set.
+
+**Type:** Array
+
+**Default:** _A rule set based on [Wikipedia Title Case](https://titlecaseconverter.com/rules/#WP)_
+
+##### **Example**
+
+```
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "casechange",

@@ -64,24 +64,38 @@ Navigate to [http://127.0.0.1:4000/](http://127.0.0.1:4000/)
     ./_scripts/api-reference-local.sh <tinymce src folder path>
     ./_scripts/serve.sh
 
-## tinymce_url_override (optional - no default)
+# Codepens
 
-Use this option if you would like to override the full `tinymce.min.js` URL for testing features. Follow these steps to override URLs:
+Codepens can be created using the "codepen.html" include, e.g:
 
-1. Add any local config overrides in the `_config-local-override.smaple.yml` file.
+    {% include codepen.html id="basic-example" %}
+    
+There are several options for this include file - please see codepen.html for details.
 
-2. Run the init script to fetch the changes:
-```
-cd tinymce-docs
-./_scripts/init.sh
-```
+## Overriding the tinymce URL in codepens
 
-3. Run development version to test your changes:
-```
-./_scripts/serve.sh
-```
+All codepens usually get their tinymce.min.js URL from the `codepen_url` setting in the _config.yml file. 
+However, there are some instances where you wish to override this, e.g.
 
-> Important: Do not check in your _config.local-override.yml file and remove this setting once the feature is in the main channel.
+ - You want to push/deploy a branch for a new feature that's only on the 'dev' channel.
+ - You want to run the site locally, but test out the codepens in a different channel.
+
+To help with this, there are two mechanisms for overriding the tinymce.min.js URL.
+
+ 1. Set `codepen_url` in `_config-local-override.yml`.  
+    - This will override the `codepen_url` setting in `config.yml`. 
+    - This file is *not* intended to be checked in. 
+    - This option changes the URL for all codepens.
+    
+ 2. Set the `tinymce_url_override` setting when including `codepen.html`.
+    - This is useful if you want to deploy the develop branch for a feature only in the 'dev' channel.
+    - This only overrides the URL for one codepen.
+    - Don't use this in more than one codepen on a page.
+    - Don't use this long-term - when the feature is fully rolled-out, use the standard channel.
+    - See `codepen.html` for details.
+    
+Note: Jekyll is pretty bad at automatically reloading code when you're playing with include files.
+Sometimes you need to restart the server.  
 
 ## Contributing to TinyMCE
 

@@ -2,7 +2,7 @@
 
 set -e
 
-if [[ $1 -eq 0 ]] ; then
+if [[ -z $1 ]] ; then
   echo 'You need to specify the root tinymce directory to generate the source for'
   echo './_scripts/api-reference-local ../tinymce'
   exit 1

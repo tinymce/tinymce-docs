@@ -64,4 +64,6 @@ description: Configure the editor's appearance, including menu and toolbar contr
 
 {% include configuration/toolbar-n.md %}
 
+{% include configuration/toolbar-drawer.md %}
+
 {% include configuration/width.md %}

@@ -30,7 +30,7 @@ The `identifier` is the only required argument. To find your button on the toolb
 
 For example, to insert the current date into the editor:
 
->  Note:  TinyMCE already ships with **nice** [Insert date/time plugin](https://www.tinymce.com/docs/plugins/insertdatetime/) (it is hard to find a text editing feature that is not implemented in TinyMCE), but it does many complimentary things - adds some commands and shortcuts, inserts **"Insert date/time"** menu, adds support for additional date formats, internationalization, and  more. This tutorial does not explore those complex topics. However, `insertdatetime` plugin is a good starting point to learn more. Its source code can be found on [github](https://github.com/tinymce/tinymce/blob/master/js/tinymce/plugins/insertdatetime/plugin.js).
+>  Note:  TinyMCE already ships with **nice** [Insert date/time plugin](https://www.tinymce.com/docs/plugins/insertdatetime/) (it is hard to find a text editing feature that is not implemented in TinyMCE), but it does many complimentary things - adds some commands and shortcuts, inserts **"Insert date/time"** menu, adds support for additional date formats, internationalization, and  more. This tutorial does not explore those complex topics. However, `insertdatetime` plugin is a good starting point to learn more. Its source code can be found on [Github](https://github.com/tinymce/tinymce/tree/master/src/plugins/insertdatetime).
 
 For this example, use [`<time>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/time) tag. `<time>` tag should have an attribute `datetime` - valid date with an optional time string. And as [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/time) states:
 

@@ -10,11 +10,11 @@ keywords: forum forums url absolute relative security xss
 
 
 ## Premium support
-**Paid** premium support is available as part of [TinyMCE Enterprise](https://www.tinymce.com/pricing/). TinyMCE Enterprise customers can [review what information you need to gather]({{ site.baseurl }}/enterprise/support/) to submit a case.
+Paid premium support is available as part of [TinyMCE Enterprise](https://www.tinymce.com/pricing/). TinyMCE Enterprise customers can [review what information you need to gather]({{ site.baseurl }}/enterprise/support/) to submit a case.
 
 
 ## Forums
-Open Source Community Edition users can get free access to the [TinyMCE Forum](https://community.tiny.cloud/).  Sign up [here](https://community.tiny.cloud/).
+Open Source Community Edition users can get free access to the [TinyMCE Forum](https://community.tiny.cloud/). Sign up [here](https://community.tiny.cloud/).
 
 
 ## FAQ & troubleshooting
@@ -39,7 +39,7 @@ You are probably using an old `DOCTYPE` as of TinyMCE 4 a proper HTML5 doctype i
 
 ### Q: Is TinyMCE protected against XSS vulnerabilities?
 
-The server should have protection against XSS attacks implemented. Since if you can submit contents in a form using TinyMCE one could as easily disable all JavaScript and therefore bypass TinyMCE filtering and still submit HTML code with insecure content. You need to properly filter the HTML input on the server using things like [HTMLPurifier](http://htmlpurifier.org/).
+The server should have protection against XSS attacks implemented. Since if you can submit contents in a form using TinyMCE one could as easily disable all JavaScript and therefore bypass TinyMCE filtering and still submit HTML code with insecure content. You need to properly filter the HTML input on the server using things like [HTML Purifier](http://htmlpurifier.org/).
 
 ### Q: How do I convert my URLs to relative, absolute, or absolute with the domain?
 

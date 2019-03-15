@@ -8,7 +8,7 @@ TinyMCE provides several options to bring spell checking capabilities to your us
 
 ## Browser-based spell checking
 
-Assign the [`browser_spellcheck`]({{ site.baseurl }}/configure/spelling/#browser_spellcheck) configuration option the value of `true` to utilize the browser's native spell check functionality. Enabling the [`contextmenu`]({{ site.baseurl }}/plugins/contextmenu/) option _may_ be required depending on the right click / context useability requirement. 
+Assign the [`browser_spellcheck`]({{ site.baseurl }}/configure/spelling/#browser_spellcheck) configuration option the value of `true` to utilize the browser's native spell check functionality. Enabling the [`contextmenu`]({{ site.baseurl }}/plugins/contextmenu/) option _may_ be required depending on the right-click or context usability requirement.
 
 ```js
 tinymce.init({
@@ -44,7 +44,7 @@ tinymce.init({
 });
 ```
 
-Review the [Spell Checker Plugin]({{ site.baseurl }}/plugins/spellchecker/) for advanced configuration options.
+Review the [Spell Checker plugin]({{ site.baseurl }}/plugins/spellchecker/) for advanced configuration options.
 
 ## TinyMCE Spell Checker Pro plugin
 

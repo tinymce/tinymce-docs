@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Cloud Deployment Guide
+title: Cloud deployment guide
 title_nav: Cloud deployment guide
 description: Start here for Tiny Cloud.
 type: folder

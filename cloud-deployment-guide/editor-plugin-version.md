@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Specify Editor & Plugin Versions
+title: Specify editor & plugin versions
 description_short: Specifying editor and plugin versions for Tiny Cloud deployments.
 description: Specifying editor and plugin versions for Tiny Cloud deployments.
 keywords: tinymce cloud script textarea apiKey
@@ -8,7 +8,7 @@ keywords: tinymce cloud script textarea apiKey
 
 ## Specifying the TinyMCE editor version deployed from Cloud
 
-Use the URL provided to specify the TinyMCE version when deploying via Tiny Cloud. Refer to [TinyMCE editor via the Tiny Cloud]({{ site.baseurl }}/cloud-deployment-guide/editor-and-features) for more information.
+Use the URL provided to specify the TinyMCE version when deploying via Tiny Cloud. Refer to the [TinyMCE editor via the Tiny Cloud]({{ site.baseurl }}/cloud-deployment-guide/editor-and-features) for more information.
 
 The following example is the default for loading TinyMCE 5.0 via Tiny Cloud:
 
@@ -30,7 +30,7 @@ These channels are updated automatically and provide the latest TinyMCE version 
 
 #### dev release channel
 
-This channel deploys the absolute latest version of TinyMCE as documented in [TinyMCE changelog]({{ site.baseurl }}/changelog/). The current version of TinyMCE available through the `dev` channel [can be found at here](https://cloud.tinymce.com/5-dev/version.txt).
+This channel deploys the absolute latest version of TinyMCE as documented in [TinyMCE changelog]({{ site.baseurl }}/changelog/). The current version of TinyMCE available through the `dev` channel [can be found here](https://cloud.tinymce.com/5-dev/version.txt).
 
 ##### Example
 
@@ -322,8 +322,6 @@ The "SDK" version lets the TinyMCE Plugin Manager know that you're not using Tin
 <script src="https://cloud.tinymce.com/5/plugins.min.js?apiKey=your_API_key&linkchecker=sdk"></script>
 ```
 
-
-## Examples
 
 ### Featuring declared editor and plugin versions
 

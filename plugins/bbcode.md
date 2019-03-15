@@ -31,7 +31,7 @@ This option allows you to specify the BBCode dialect. We only support [PunBB](ht
 | BBCode                 | Description    | HTML equivalent                     |
 |------------------------|----------------|-------------------------------------|
 | `[b]...[/b]`             | Bold text      | `<strong>...</strong>`                |
-| `[i]...[/i]`             | Italicize text | `</em>...</em>`                     |
+| `[i]...[/i]`             | Italicize text | `<em>...</em>`                     |
 | `[u]...[/u]`             | Underline text | `<u>...</u>`                          |
 | `[url=...]...[/url]`     | Link           | `<a href="...">...</a>`               |
 | `[img]...[/img]`         | Image          | `<img src="..." />`                   |

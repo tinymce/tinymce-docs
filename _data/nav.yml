@@ -47,7 +47,7 @@
   - url: "custom-toolbar-button"
   - url: "custom-toolbar-menu-button"
   - url: "custom-toolbar-split-button"
-  - url: "custom-toolbar-menu-item"
+  - url: "custom-menu-item"
   - url: "file-picker"
   - url: "local-upload"
 
@@ -75,6 +75,7 @@
     - url: "#custom_ui_selector"
     - url: "#elementpath"
     - url: "#event_root"
+    - url: "#fixed_toolbar_container"
     - url: "#height"
     - url: "#icons"
     - url: "#inline"
@@ -479,6 +480,11 @@
     - url: "#Form API"
     - url: "#Example configuration"
   - url: "customsidebar"
+  - url: "menuitems"
+    pages:
+      - url: "#Basic menu items"
+      - url: "#Nested menu items"
+      - url: "#Toggle menu items"
   - url: "toolbarbuttons"
   - url: "typesoftoolbarbuttons"
     pages:

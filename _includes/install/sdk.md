@@ -1,6 +1,6 @@
 ### Step 1: Download the SDK
 
-If you'd rather download and install the script manually, get the package from [TinyMCE Downloads](http://www.tinymce.com/download).
+If you'd rather download and install the script manually, get the package from [TinyMCE Downloads](https://www.tiny.cloud/get).
 
 Unzip the package and move the `'path/to/tinymce/'` directory into a web accessible location on your web server (for example, `localhost`).
 
@@ -45,4 +45,4 @@ In this example, let's replace `<textarea id='mytextarea'>` with a TinyMCE edito
 
 When the `<form>` is submitted the TinyMCE editor mimics the behavior of a normal HTML `<textarea>` during the `post`. In your form handler you can process the content submitted as if it had come from a regular `<textarea>`.
 
-> If you have decided the use the SDK, move on to the next step [working with plugins](../work-with-plugins/), where you'll start customizing TinyMCE. If you'd like to learn about other install options please keep reading.
+> If you have decided the use the SDK, move on to the next step [working with plugins](https://www.tiny.cloud/docs-3x/api/work-with-plugins/), where you'll start customizing TinyMCE. If you'd like to learn about other install options please keep reading.

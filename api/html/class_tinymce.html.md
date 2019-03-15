@@ -16,8 +16,8 @@ Core namespace with core functionality for the TinyMCE API all sub classes will 
 
 | Property | Defined By |
 | --- | --- |
-| [activeEditor](#activeeditor) : [Editor](class_tinymce.Editor.html) : Currently active editor instance. | tinymce |
-| [baseURI](#baseuri) : [URI](../util/class_tinymce.util.URI.html) : Absolute baseURI for the installation path of TinyMCE. | tinymce |
+| [activeEditor](#activeeditor) : [Editor](https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html) : Currently active editor instance. | tinymce |
+| [baseURI](#baseuri) : [URI](https://www.tiny.cloud/docs-3x/api/util/class_tinymce.util.URI.html) : Absolute baseURI for the installation path of TinyMCE. | tinymce |
 | [editors](#editors) : Object : Collection of editor instances. | tinymce |
 | [i18n](#i18n) : Object : Collection of language pack data. | tinymce |
 | [isAir](#isair) : Boolean : <span class="static">[static]</span> Constant that is true if the runtime is Adobe Air. | tinymce |
@@ -40,7 +40,7 @@ Core namespace with core functionality for the TinyMCE API all sub classes will 
 
 | Method | Defined By |
 | --- | --- |
-| [add](#add)(editor:[Editor](class_tinymce.Editor.html)):[Editor](class_tinymce.Editor.html) : Adds an editor instance to the editor collection. | tinymce |
+| [add](#add)(editor:[Editor](https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html)):[Editor](https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html) : Adds an editor instance to the editor collection. | tinymce |
 | [addI18n](#addi18n)(p:String, o:Object):void : Adds a language pack, this gets called by the loaded language files like en. | tinymce |
 | [addUnload](#addunload)(f:function, s:Object):function : <span class="static">[static]</span> Adds an unload handler to the document. | tinymce |
 | [create](#create)(s:String, p:Object, root:Object):void : <span class="static">[static]</span> Creates a class, subclass or static singleton. | tinymce |
@@ -50,8 +50,8 @@ Core namespace with core functionality for the TinyMCE API all sub classes will 
 | [execInstanceCommand](#execinstancecommand)(id:String, c:String, u:Boolean, v:String):BooleanDeprecated: Use the execCommand method of a editor instance instead. | tinymce |
 | [explode](#explode)(s:string, d:string):void : <span class="static">[static]</span> Splits a string but removes the whitespace before and after each value. | tinymce |
 | [extend](#extend)(obj:Object, ext..n:Object):Object : <span class="static">[static]</span> Extends an object with the specified other object(s). | tinymce |
-| [get](#get)(id:String/Number):[Editor](class_tinymce.Editor.html) : Returns a editor instance by id. | tinymce |
-| [getInstanceById](#getinstancebyid)(id:String):[Editor](class_tinymce.Editor.html)Deprecated: Use get method instead. | tinymce |
+| [get](#get)(id:String/Number):[Editor](https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html) : Returns a editor instance by id. | tinymce |
+| [getInstanceById](#getinstancebyid)(id:String):[Editor](https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html)Deprecated: Use get method instead. | tinymce |
 | [grep](#grep)(a:Array, f:function):Array : <span class="static">[static]</span> Filters out items from the input array by calling the specified function for each item. | tinymce |
 | [inArray](#inarray)(a:Array, v:Object):Number/String : <span class="static">[static]</span> Returns the index of a value in an array, this method will return -1 if the item wasn't found. | tinymce |
 | [init](#init)(s:Object):void : Initializes a set of editors. | tinymce |
@@ -59,7 +59,7 @@ Core namespace with core functionality for the TinyMCE API all sub classes will 
 | [isArray](#isarray)(obj:Object):boolean : <span class="static">[static]</span> Returns true/false if the object is an array or not. | tinymce |
 | [makeMap](#makemap)(items:Array/String, delim:String, map:Object):Object : <span class="static">[static]</span> Makes a name/object map out of an array with names. | tinymce |
 | [map](#map)(a:Array, f:function):Array : <span class="static">[static]</span> Creates a new array by the return value of each iteration function call. | tinymce |
-| [remove](#remove)(e:[Editor](class_tinymce.Editor.html)):[Editor](class_tinymce.Editor.html) : Removes a editor instance from the collection. | tinymce |
+| [remove](#remove)(e:[Editor](https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html)):[Editor](https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html) : Removes a editor instance from the collection. | tinymce |
 | [removeUnload](#removeunload)(f:function):function : <span class="static">[static]</span> Removes the specified function form the unload handler list. | tinymce |
 | [resolve](#resolve)(n:String, o:Object):Object : <span class="static">[static]</span> Resolves a string and returns the object from a specific structure. | tinymce |
 | [triggerSave](#triggersave)():void : Calls the save method on all editor instances in the collection. | tinymce |
@@ -70,21 +70,21 @@ Core namespace with core functionality for the TinyMCE API all sub classes will 
 
 | Event | Defined By |
 | --- | --- |
-| [onAddEditor](#onaddeditor)(sender:[tinymce](../html/class_tinymce.html), editor:[Editor](class_tinymce.Editor.html)) : Fires when a new editor instance is added to the tinymce collection. | tinymce |
-| [onRemoveEditor](#onremoveeditor)(sender:[tinymce](../html/class_tinymce.html), editor:[Editor](class_tinymce.Editor.html)) : Fires when an editor instance is removed from the tinymce collection. | tinymce |
+| [onAddEditor](#onaddeditor)(sender:[tinymce](https://www.tiny.cloud/docs-3x/api/html/class_tinymce.html), editor:[Editor](https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html)) : Fires when a new editor instance is added to the tinymce collection. | tinymce |
+| [onRemoveEditor](#onremoveeditor)(sender:[tinymce](https://www.tiny.cloud/docs-3x/api/html/class_tinymce.html), editor:[Editor](https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html)) : Fires when an editor instance is removed from the tinymce collection. | tinymce |
 
 ## Property details
 
 ### activeEditor 
 
-***public activeEditor : [Editor](class_tinymce.Editor.html)***  
+***public activeEditor : [Editor](https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html)***  
 Currently active editor instance.      
 
 **Example**  
 
 ### baseURI 
 
-***public baseURI : [URI](../util/class_tinymce.util.URI.html)***  
+***public baseURI : [URI](https://www.tiny.cloud/docs-3x/api/util/class_tinymce.util.URI.html)***  
 Absolute baseURI for the installation path of TinyMCE.
 
 ### editors 
@@ -178,17 +178,17 @@ Release date of TinyMCE build.
 
 ### add 
 
-***public function add(editor:[Editor](class_tinymce.Editor.html)):[Editor](class_tinymce.Editor.html)***  
+***public function add(editor:[Editor](https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html)):[Editor](https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html)***  
 Adds an editor instance to the editor collection. This will also set it as the active editor.      
 
 **Parameters**  
 
 | Param | Detail |
 | --- | --- |
-| editor:[Editor](class_tinymce.Editor.html) | Editor instance to add to the collection. |
+| editor:[Editor](https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html) | Editor instance to add to the collection. |
 
 **Returns**  
-[Editor](class_tinymce.Editor.html) - The same instance that got passed in.
+[Editor](https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html) - The same instance that got passed in.
 
 ### addI18n 
 
@@ -332,7 +332,7 @@ Object - o New extended object, same reference as the input object.
 
 ### get 
 
-***public function get(id:String/Number):[Editor](class_tinymce.Editor.html)***  
+***public function get(id:String/Number):[Editor](https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html)***  
 Returns a editor instance by id.      
 
 **Parameters**  
@@ -342,13 +342,13 @@ Returns a editor instance by id.
 | id:String/Number | Editor instance id or index to return. |
 
 **Returns**  
-[Editor](class_tinymce.Editor.html) - Editor instance to return.      
+[Editor](https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html) - Editor instance to return.      
 
 **Example**  
 
 ### getInstanceById 
 
-***public function getInstanceById(id:String):[Editor](class_tinymce.Editor.html)***  
+***public function getInstanceById(id:String):[Editor](https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html)***  
 Deprecated: Use get method instead.Returns a editor instance by id. This method was added for compatibility with the 2.x branch.      
 
 **Parameters**  
@@ -358,7 +358,7 @@ Deprecated: Use get method instead.Returns a editor instance by id. This method 
 | id:String | Editor instance id to return. |
 
 **Returns**  
-[Editor](class_tinymce.Editor.html) - Editor instance to return.      
+[Editor](https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html) - Editor instance to return.      
 
 **See Also**  
 
@@ -473,17 +473,17 @@ Array - Array with new values based on function return values.
 
 ### remove 
 
-***public function remove(e:[Editor](class_tinymce.Editor.html)):[Editor](class_tinymce.Editor.html)***  
+***public function remove(e:[Editor](https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html)):[Editor](https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html)***  
 Removes a editor instance from the collection.      
 
 **Parameters**  
 
 | Param | Detail |
 | --- | --- |
-| e:[Editor](class_tinymce.Editor.html) | Editor instance to remove. |
+| e:[Editor](https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html) | Editor instance to remove. |
 
 **Returns**  
-[Editor](class_tinymce.Editor.html) - The editor that got passed in will be return if it was found otherwise null.
+[Editor](https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html) - The editor that got passed in will be return if it was found otherwise null.
 
 ### removeUnload 
 
@@ -555,26 +555,26 @@ Executed the specified function for each item in a object tree.
 
 ### onAddEditor 
 
-***public event onAddEditor(sender:[tinymce](../html/class_tinymce.html), editor:[Editor](class_tinymce.Editor.html))***  
+***public event onAddEditor(sender:[tinymce](https://www.tiny.cloud/docs-3x/api/html/class_tinymce.html), editor:[Editor](https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html))***  
 Fires when a new editor instance is added to the tinymce collection.      
 
 **Parameters**  
 
 | Param | Detail |
 | --- | --- |
-| sender:[tinymce](../html/class_tinymce.html) | TinyMCE root class/namespace. |
-| editor:[Editor](class_tinymce.Editor.html) | Editor instance. |
+| sender:[tinymce](https://www.tiny.cloud/docs-3x/api/html/class_tinymce.html) | TinyMCE root class/namespace. |
+| editor:[Editor](https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html) | Editor instance. |
 
 **Example**  
 
 ### onRemoveEditor 
 
-***public event onRemoveEditor(sender:[tinymce](../html/class_tinymce.html), editor:[Editor](class_tinymce.Editor.html))***  
+***public event onRemoveEditor(sender:[tinymce](https://www.tiny.cloud/docs-3x/api/html/class_tinymce.html), editor:[Editor](https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html))***  
 Fires when an editor instance is removed from the tinymce collection.      
 
 **Parameters**  
 
 | Param | Detail |
 | --- | --- |
-| sender:[tinymce](../html/class_tinymce.html) | TinyMCE root class/namespace. |
-| editor:[Editor](class_tinymce.Editor.html) | Editor instance. |
+| sender:[tinymce](https://www.tiny.cloud/docs-3x/api/html/class_tinymce.html) | TinyMCE root class/namespace. |
+| editor:[Editor](https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html) | Editor instance. |

@@ -35,7 +35,7 @@ TinyMCE popup/dialog helper class. This gives you easy access to the parent edit
 
 | Event | Defined By |
 | --- | --- |
-| [onInit](#oninit)(editor:[Editor](class_tinymce.Editor.html)) : <span class="static">[static]</span> Fires when the popup is initialized. | tinyMCEPopup |
+| [onInit](#oninit)(editor:[Editor](https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html)) : <span class="static">[static]</span> Fires when the popup is initialized. | tinyMCEPopup |
 
 ## Method details
 
@@ -203,13 +203,13 @@ Stores the current editor selection for later restoration. This can be useful si
 
 ### onInit 
 
-***public static event onInit(editor:[Editor](class_tinymce.Editor.html))***  
+***public static event onInit(editor:[Editor](https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html))***  
 Fires when the popup is initialized.      
 
 **Parameters**  
 
 | Param | Detail |
 | --- | --- |
-| editor:[Editor](class_tinymce.Editor.html) | Editor instance. |
+| editor:[Editor](https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html) | Editor instance. |
 
 **Example**

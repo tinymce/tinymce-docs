@@ -16,7 +16,7 @@ This class handles the creation of native windows and dialogs. This class can be
 
 | Method | Defined By |
 | --- | --- |
-| [WindowManager](#windowmanager)(ed:[Editor](class_tinymce.Editor.html)) : Constructs a new window manager instance. | WindowManager |
+| [WindowManager](#windowmanager)(ed:[Editor](https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html)) : Constructs a new window manager instance. | WindowManager |
 | [alert](#alert)(t:String, cb:function, s:Object):void : Creates a alert dialog. | WindowManager |
 | [close](#close)(w:Window):void : Closes the specified window. | WindowManager |
 | [confirm](#confirm)(t:String, cb:function, s:Object):void : Creates a confirm dialog. | WindowManager |

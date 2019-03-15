@@ -16,15 +16,15 @@ Plugin base class, this is a pseudo class that describes how a plugin is to be c
 
 | Method | Defined By |
 | --- | --- |
-| [createControl](#createcontrol)(name:String, controlman:[ControlManager](class_tinymce.ControlManager.html)):[Control](../ui/class_tinymce.ui.Control.html) : Gets called when a new control instance is created. | Plugin |
+| [createControl](#createcontrol)(name:String, controlman:[ControlManager](https://www.tiny.cloud/docs-3x/api/class_tinymce.ControlManager.html)):[Control](https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html) : Gets called when a new control instance is created. | Plugin |
 | [getInfo](#getinfo)():Object : Meta info method, this method gets executed when TinyMCE wants to present information about the plugin for example in th... | Plugin |
-| [init](#init)(editor:[Editor](class_tinymce.Editor.html), url:String):void : Initialization function for the plugin. | Plugin |
+| [init](#init)(editor:[Editor](https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html), url:String):void : Initialization function for the plugin. | Plugin |
 
 ## Method details
 
 ### createControl 
 
-***public function createControl(name:String, controlman:[ControlManager](class_tinymce.ControlManager.html)):[Control](../ui/class_tinymce.ui.Control.html)***  
+***public function createControl(name:String, controlman:[ControlManager](https://www.tiny.cloud/docs-3x/api/class_tinymce.ControlManager.html)):[Control](https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html)***  
 Gets called when a new control instance is created.      
 
 **Parameters**  
@@ -32,10 +32,10 @@ Gets called when a new control instance is created.
 | Param | Detail |
 | --- | --- |
 | name:String | Control name to create for example "mylistbox" |
-| controlman:[ControlManager](class_tinymce.ControlManager.html) | Control manager/factory to use to create the control. |
+| controlman:[ControlManager](https://www.tiny.cloud/docs-3x/api/class_tinymce.ControlManager.html) | Control manager/factory to use to create the control. |
 
 **Returns**  
-[Control](../ui/class_tinymce.ui.Control.html) - Returns a new control instance or null.      
+[Control](https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html) - Returns a new control instance or null.      
 
 **Example**  
 
@@ -51,14 +51,14 @@ Object - Returns an object with meta information about the plugin the current it
 
 ### init 
 
-***public function init(editor:[Editor](class_tinymce.Editor.html), url:String):void***  
+***public function init(editor:[Editor](https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html), url:String):void***  
 Initialization function for the plugin. This will be called when the plugin is created.      
 
 **Parameters**  
 
 | Param | Detail |
 | --- | --- |
-| editor:[Editor](class_tinymce.Editor.html) | Editor instance that created the plugin instance. |
+| editor:[Editor](https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html) | Editor instance that created the plugin instance. |
 | url:String | Absolute URL where the plugin is located. |
 
 **Example**

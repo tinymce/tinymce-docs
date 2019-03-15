@@ -40,4 +40,4 @@ function submitForm() {
 }
 ```
 
-[Example](http://fiddle.tinymce.com/l1baab) on how to visually preview the contents entered in a size restrictive box.
+[Example](http://fiddle.tiny.cloud/l1baab) on how to visually preview the contents entered in a size restrictive box.

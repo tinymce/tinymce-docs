@@ -15,7 +15,7 @@ TinyMCE theme class.
 | Method | Defined By |
 | --- | --- |
 | [getInfo](#getinfo)():Object : Meta info method, this method gets executed when TinyMCE wants to present information about the theme for example in the... | Theme |
-| [init](#init)(editor:[Editor](class_tinymce.Editor.html), url:String):void : Initializes the theme. | Theme |
+| [init](#init)(editor:[Editor](https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html), url:String):void : Initializes the theme. | Theme |
 | [renderUI](#renderui)(obj:Object):Object : This method is responsible for rendering/generating the overall user interface with toolbars, buttons, iframe containers... | Theme |
 
 ## Method details
@@ -30,14 +30,14 @@ Object - Returns an object with meta information about the theme the current ite
 
 ### init 
 
-***public function init(editor:[Editor](class_tinymce.Editor.html), url:String):void***  
+***public function init(editor:[Editor](https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html), url:String):void***  
 Initializes the theme.      
 
 **Parameters**  
 
 | Param | Detail |
 | --- | --- |
-| editor:[Editor](class_tinymce.Editor.html) | Editor instance that created the theme instance. |
+| editor:[Editor](https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html) | Editor instance that created the theme instance. |
 | url:String | Absolute URL where the theme is located. |
 
 ### renderUI 

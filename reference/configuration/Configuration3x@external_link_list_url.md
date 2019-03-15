@@ -16,7 +16,7 @@ tinyMCE.init({
 });
 ```
 
-Note: If utilizing the [document_base_url](https://www.tinymce.com/docs-3x/reference/configuration/Configuration3x@document_base_url/) option, the path to your file is relative from that base. If not set, your path is relative from the file containing the editor call.
+Note: If utilizing the [document_base_url](https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@document_base_url/) option, the path to your file is relative from that base. If not set, your path is relative from the file containing the editor call.
 
 ## Example of a external link list file: (myexternallist.js)
 
@@ -31,4 +31,4 @@ var tinyMCELinkList = new Array(
 
 ## Example of a PHP-generated external link list file
 
-See the [example of a PHP-generated image list file](https://www.tinymce.com/docs-3x/reference/configuration/Configuration3x@external_image_list_url/) for comparison.
+See the [example of a PHP-generated image list file](https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@external_image_list_url/) for comparison.

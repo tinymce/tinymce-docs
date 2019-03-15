@@ -18,4 +18,4 @@ tinyMCE.init({
 
 ## See also
 
-The [cleanup](https://www.tinymce.com/docs-3x/reference/configuration/Configuration3x@cleanup/) configuration option.
+The [cleanup](https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@cleanup/) configuration option.

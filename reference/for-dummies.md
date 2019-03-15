@@ -7,7 +7,7 @@ title: "For Dummies"
 
 ### Instructions
 
-1. [Download TinyMCE tinymce_3_x_x.zip](https://www.tinymce.com/download/older-releases/), it contains all you need for any editor.
+1. [Download TinyMCE tinymce_3_x_x.zip](https://www.tiny.cloud/get-tiny/older-releases/), it contains all you need for any editor.
 2. Unzip and extract the `tinymce_3_x_x.zip` move the subdir `tinymce` to your desired local location.
 3. Upload tinymce directory to your server with all it's contents.
 4. Now create a simple test web page with code as below, upload to server, that's all, it should work.
@@ -43,7 +43,7 @@ title: "For Dummies"
 
 See an example of a simple form and in a few hours of experimentation you will have a form like this, as all the files have been uploaded.
 
-Further more comprehensive instructions can be found on [Installation](https://www.tinymce.com/docs-3x/TinyMCE3x@Installation/), which you can move on to when you have mastered the Dummies version! If you are not a Dummy don't edit, as us Dummies like simple instructions!
+Further more comprehensive instructions can be found on [Installation](https://www.tiny.cloud/docs-3x/TinyMCE3x@Installation/), which you can move on to when you have mastered the Dummies version! If you are not a Dummy don't edit, as us Dummies like simple instructions!
 
 OK so let's move on to become a more advanced Dummy.
 
@@ -84,7 +84,7 @@ With:
 </script>
 ```
 
-Now start experimenting, so open [Full Featured Example](https://www.tinymce.com/docs/demo/full-featured/) and "view source", add feature and buttons which you like. You will also have downloaded this file so it should be in your `tinymce.dir` `tinymce/examples/full1.html`, open in your editor, so you can see the source, just copy and paste the bits you like.
+Now start experimenting, so open [Full Featured Example](https://www.tiny.cloud/docs/demo/full-featured/) and "view source", add feature and buttons which you like. You will also have downloaded this file so it should be in your `tinymce.dir` `tinymce/examples/full1.html`, open in your editor, so you can see the source, just copy and paste the bits you like.
 
 It is also a good time to start looking at the Wiki in depth.
 

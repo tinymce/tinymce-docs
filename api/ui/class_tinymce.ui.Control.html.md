@@ -7,7 +7,7 @@ title: tinymce.ui.Control
 | --- | --- |
 | Namespace | tinymce.ui |
 | Class | Control |
-| Subclasses | [Button](../ui/class_tinymce.ui.Button.html), [Container](../ui/class_tinymce.ui.Container.html), [ListBox](../ui/class_tinymce.ui.ListBox.html), [MenuButton](../ui/class_tinymce.ui.MenuButton.html), [MenuItem](../ui/class_tinymce.ui.MenuItem.html), [Separator](../ui/class_tinymce.ui.Separator.html) |
+| Subclasses | [Button](https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Button.html), [Container](https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Container.html), [ListBox](https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.ListBox.html), [MenuButton](https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.MenuButton.html), [MenuItem](https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.MenuItem.html), [Separator](https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Separator.html) |
 
 This class is the base class for all controls like buttons, toolbars, containers. This class should not be instantiated directly other controls should inherit from this one.
 

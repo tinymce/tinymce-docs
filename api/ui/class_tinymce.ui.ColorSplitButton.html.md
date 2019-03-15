@@ -7,7 +7,7 @@ title: tinymce.ui.ColorSplitButton
 | --- | --- |
 | Namespace | tinymce.ui |
 | Class | ColorSplitButton |
-| Inheritance | <span>ColorSplitButton</span> <span>[SplitButton](../ui/class_tinymce.ui.SplitButton.html)</span> <span>[Button](../ui/class_tinymce.ui.Button.html)</span> <span class="last">[Control](../ui/class_tinymce.ui.Control.html)</span> |
+| Inheritance | <span>ColorSplitButton</span> <span>[SplitButton](https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.SplitButton.html)</span> <span>[Button](https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Button.html)</span> <span class="last">[Control](https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html)</span> |
 
 This class is used to create UI color split button. A color split button will present show a small color picker when you press the open menu.
 
@@ -26,18 +26,18 @@ This class is used to create UI color split button. A color split button will pr
 | [destroy](#destroy)():void : Destroys the control. | ColorSplitButton |
 | [displayColor](#displaycolor)(c:String):void : Change the currently selected color for the control. | ColorSplitButton |
 | [hideMenu](#hidemenu)(e:Event):void : Hides the color menu. | ColorSplitButton |
-| [isActive](#isactive)():Boolean : Returns true/false if the control is disabled or not. | [Control](../ui/class_tinymce.ui.Control.html) |
-| [isDisabled](#isdisabled)():Boolean : Returns true/false if the control is disabled or not. | [Control](../ui/class_tinymce.ui.Control.html) |
-| [isRendered](#isrendered)():Boolean : Returns true/false if the control has been rendered or not. | [Control](../ui/class_tinymce.ui.Control.html) |
+| [isActive](#isactive)():Boolean : Returns true/false if the control is disabled or not. | [Control](https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html) |
+| [isDisabled](#isdisabled)():Boolean : Returns true/false if the control is disabled or not. | [Control](https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html) |
+| [isRendered](#isrendered)():Boolean : Returns true/false if the control has been rendered or not. | [Control](https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html) |
 | [postRender](#postrender)():void : Post render event. | ColorSplitButton |
-| [remove](#remove)():void : Removes the control. | [Control](../ui/class_tinymce.ui.Control.html) |
-| [renderHTML](#renderhtml)():String : Renders the split button as a HTML string. | [SplitButton](../ui/class_tinymce.ui.SplitButton.html) |
+| [remove](#remove)():void : Removes the control. | [Control](https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html) |
+| [renderHTML](#renderhtml)():String : Renders the split button as a HTML string. | [SplitButton](https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.SplitButton.html) |
 | [renderMenu](#rendermenu)():void : Renders the menu to the DOM. | ColorSplitButton |
-| [renderTo](#renderto)(n:Element):void : Renders the control to the specified container element. | [Control](../ui/class_tinymce.ui.Control.html) |
-| [setActive](#setactive)(s:Boolean):void : Sets the activated state for the control. | [Control](../ui/class_tinymce.ui.Control.html) |
+| [renderTo](#renderto)(n:Element):void : Renders the control to the specified container element. | [Control](https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html) |
+| [setActive](#setactive)(s:Boolean):void : Sets the activated state for the control. | [Control](https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html) |
 | [setColor](#setcolor)(c:String):void : Sets the current color for the control and hides the menu if it should be visible. | ColorSplitButton |
-| [setDisabled](#setdisabled)(s:Boolean):void : Sets the disabled state for the control. | [Control](../ui/class_tinymce.ui.Control.html) |
-| [setState](#setstate)(c:String, s:Boolean):void : Sets the specified class state for the control. | [Control](../ui/class_tinymce.ui.Control.html) |
+| [setDisabled](#setdisabled)(s:Boolean):void : Sets the disabled state for the control. | [Control](https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html) |
+| [setState](#setstate)(c:String, s:Boolean):void : Sets the specified class state for the control. | [Control](https://www.tiny.cloud/docs-3x/api/ui/class_tinymce.ui.Control.html) |
 | [showMenu](#showmenu)():void : Shows the color menu. | ColorSplitButton |
 
 ## Public Events

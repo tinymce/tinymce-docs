@@ -11,7 +11,7 @@ There are three different layout manager options:
 *   RowLayout is a more advanced layout manager, and
 *   CustomLayout executes a custom layout manager function.
 
-Each of these layout managers have different options and can be configured in different ways. This option is only available if the "advanced" [theme](https://www.tinymce.com/docs-3x/reference/configuration/Configuration3x@theme/) is used.
+Each of these layout managers have different options and can be configured in different ways. This option is only available if the "advanced" [theme](https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@theme/) is used.
 
 ## Example of usage of the theme_advanced_layout_manager option:
 

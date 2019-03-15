@@ -11,7 +11,7 @@ The base entities `<` `>` `&` `'` and `"` will always be entity encoded into the
 
 | Name | Summary |
 | --- | --- |
-| named | Characters will be converted into named entities based on the [entities](../configuration/Configuration3x@entities) option. For example, a non-breaking space could be encoded as &nbsp;. |
+| named | Characters will be converted into named entities based on the [entities](https://www.tiny.cloud/docs-3x/api/configuration/Configuration3x@entities) option. For example, a non-breaking space could be encoded as &nbsp;. |
 | numeric | Characters will be converted into numeric entities. For example, a non-breaking space would be encoded as &#160;. |
 | raw | All characters will be stored in non-entity form except these XML default entities: &amp; &lt; &gt; &quot; |
 

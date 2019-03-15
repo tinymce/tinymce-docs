@@ -22,4 +22,4 @@ tinyMCE.init({
 
 ## HowTo for this Option
 
-There is a HowTo article for this option which also provides a working example (without a server-side counterpart yet): [Custom FileBrowser Implementation](https://www.tinymce.com/docs-3x/howto/TinyMCE3x@How-to_implement_a_custom_file_browser/)
+There is a HowTo article for this option which also provides a working example (without a server-side counterpart yet): [Custom FileBrowser Implementation](https://www.tiny.cloud/docs-3x/howto/TinyMCE3x@How-to_implement_a_custom_file_browser/)

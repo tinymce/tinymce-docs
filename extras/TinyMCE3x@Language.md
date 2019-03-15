@@ -34,7 +34,7 @@ tinyMCE.init({
 
 ## Download
 
-The language pack download is seperated from TinyMCE, you can search for a language pack [here](https://www.tinymce.com/download/).
+The language pack download is seperated from TinyMCE, you can search for a language pack [here](https://www.tiny.cloud/get-tiny/).
 
 ## Unzip
 

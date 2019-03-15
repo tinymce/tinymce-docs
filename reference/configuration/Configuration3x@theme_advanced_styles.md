@@ -3,7 +3,7 @@ layout: default
 title: theme_advanced_styles
 ---
 
-This option should contain a semicolon separated list of class titles and class names separated by =. The titles will be presented to the user in the styles dropdown list and the class names will be inserted. If this option is not defined, TinyMCE imports the classes from the [content_css](https://www.tinymce.com/docs-3x/reference/configuration/Configuration3x@content_css/).
+This option should contain a semicolon separated list of class titles and class names separated by =. The titles will be presented to the user in the styles dropdown list and the class names will be inserted. If this option is not defined, TinyMCE imports the classes from the [content_css](https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@content_css/).
 
 ## Example of usage of the theme_advanced_styles option:
 

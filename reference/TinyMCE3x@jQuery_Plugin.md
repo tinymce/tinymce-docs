@@ -20,7 +20,7 @@ $().ready(function() {
 });
 ```
 
-For a list of configuration options that can be used with `$.tinymce()` see the [Configuration Reference](https://www.tinymce.com/docs-3x/reference/Configuration3x/)
+For a list of configuration options that can be used with `$.tinymce()` see the [Configuration Reference](https://www.tiny.cloud/docs-3x/reference/Configuration3x/)
 
 ## TinyMCE interaction
 
@@ -44,7 +44,7 @@ $('textarea.tinymce').html('Some contents...');
 alert($('#someeditor').html());
 ```
 
-There is also an [online example](https://www.tinymce.com/docs/demo/full-featured/) that displays these functions.
+There is also an [online example](https://www.tiny.cloud/docs/demo/full-featured/) that displays these functions.
 
 ## TinyMCE pseudo selector
 

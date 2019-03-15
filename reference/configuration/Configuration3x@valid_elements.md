@@ -384,4 +384,4 @@ valid_elements : ""
 
 Reference: [http://livedocs.adobe.com/flash/mx2004/main_7_2/wwhelp/wwhimpl/common/html/wwhelp.htm?context=Flash_MX_2004&file=00001040.html](http://livedocs.adobe.com/flash/mx2004/main_7_2/wwhelp/wwhimpl/common/html/wwhelp.htm?context=Flash_MX_2004&file=00001040.html)
 
-Also see [extended_valid_elements](https://www.tinymce.com/docs-3x/reference/configuration/Configuration3x@extended_valid_elements/) and [invalid_elements](https://www.tinymce.com/docs-3x/reference/configuration/Configuration3x@invalid_elements/) for more configuration options.
+Also see [extended_valid_elements](https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@extended_valid_elements/) and [invalid_elements](https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@invalid_elements/) for more configuration options.

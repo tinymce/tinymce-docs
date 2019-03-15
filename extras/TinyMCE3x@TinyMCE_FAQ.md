@@ -3,13 +3,13 @@ layout: default
 title: TinyMCE 3.x FAQ
 ---
 
-**Note: This document was migrated from the deprecated tinymce.com website and relates specifically to version 3.x TinyMCE. Some of this FAQ may no longer be accurate and we recommend you update your install to TinyMCE 4.x.**
+**Note: This document was migrated from the deprecated tiny.cloud website and relates specifically to version 3.x TinyMCE. Some of this FAQ may no longer be accurate and we recommend you update your install to TinyMCE 4.x.**
 
 ## I have a question, what information should I provide so that somebody can help me with an answer?
 
 Remember: People in the forum spend their spare time to help you. So make helping you as pleasant and easy for them as possible or you might get no help at all. Tell them as many useful (= relevant) details (e.g. what browsers you use for testing,what TinyMCE version you are using and the scope of your application) as you can think of right in your first posting. Include possible error messages which your browser tells you (you might need to search for them depending on which browser you use). It is especially tiresome if you ask a question that has been asked already many times so make sure you use the forum's search functionality before you post your problem!! And if you ask, don't ask in multiple threads because this will only split the process which makes it hard to follow - for both you and the willing helpers. Later when someone looks for the solution to your problem they, too, will have a hard time finding what they need.
 
-For many questions (especially for beginners' questions) an answer can be found in the [documentation on the configuration settings of TinyMCE](https://www.tinymce.com/docs-3x/reference/Configuration3x/). Often people just don't know (or simply don't realise) that the solution to their problems can be found there. They just need a hint on where to look for it. Therefore it is somehow mandatory that you provide the configuration code of your TinyMCE so that others can see how you have set up your editor and which changes can help solve your problem.
+For many questions (especially for beginners' questions) an answer can be found in the [documentation on the configuration settings of TinyMCE](https://www.tiny.cloud/docs-3x/reference/Configuration3x/). Often people just don't know (or simply don't realise) that the solution to their problems can be found there. They just need a hint on where to look for it. Therefore it is somehow mandatory that you provide the configuration code of your TinyMCE so that others can see how you have set up your editor and which changes can help solve your problem.
 
 Now where is this code to be found? Have a look into the HTML source code of your editor's page and look for something like this:
 
@@ -34,8 +34,8 @@ Don't write any excuses for your English language skills! The fewest people in t
 
 ## Where can I find installation instructions ?
 
-1.  [Fully detailed](https://www.tinymce.com/docs-3x/TinyMCE3x@Installation/)
-2.  [For Dummies](https://www.tinymce.com/docs-3x/reference/for-dummies/)
+1.  [Fully detailed](https://www.tiny.cloud/docs-3x/TinyMCE3x@Installation/)
+2.  [For Dummies](https://www.tiny.cloud/docs-3x/reference/for-dummies/)
 
 <a name="How_can_I_upload_image_files_from_my_local_computer.3F"></a>
 
@@ -55,7 +55,7 @@ TinyMCE is a front-end for systems that need a client-side WYSIWYG editor (like 
 
 ## TinyMCE is broken, what should I do?
 
-There are a few things you should check before posting questions about your problem at the [forum](https://community.tinymce.com) or [bugtracker](https://www.tinymce.com/docs/enterprise/get-tinymce-bugs-fixed/).
+There are a few things you should check before posting questions about your problem at the [forum](https://community.tiny.cloud) or [bugtracker](https://www.tiny.cloud/docs/enterprise/get-tinymce-bugs-fixed/).
 
 *   Check that you haven't missed removing the last , (comma) character in your initialization code and that all the other rows have a trailing , character.
 *   Does TinyMCE work on the TinyMCE website. Then you know that TinyMCE works with your browser.
@@ -77,17 +77,17 @@ Read what main developer spocke [has to say](http://archive.tinymce.com/forum/vi
 
 ## I need a language pack and have downloaded the XML file but it's not working!
 
-You don't want the XML file! You want to check the checkboxes on the [language pack service page](https://www.tinymce.com/download/language-packages/) in order to select the desired language packs and then you click the "download" button. This way you get a ZIP file which contains JavaScript files. It is those files you are after!
+You don't want the XML file! You want to check the checkboxes on the [language pack service page](https://www.tiny.cloud/get-tiny/language-packages/) in order to select the desired language packs and then you click the "download" button. This way you get a ZIP file which contains JavaScript files. It is those files you are after!
 
 The XML file is for those who wish to complete or update/improve the already existing language files. These people can then work on the respective XML file and upload it back to the server so others can then re-download an updated language pack.
 
 ## Paths/URLs are incorrect, I want absolute/relative URLs?
 
-These are the different configuration scenarios for URLs within TinyMCE. There is also an [example page](https://www.tinymce.com/docs/demo/url-conversion/) illustrating these different options:
+These are the different configuration scenarios for URLs within TinyMCE. There is also an [example page](https://www.tiny.cloud/docs/demo/url-conversion/) illustrating these different options:
 
 ##### Relative URLs
 
-This will convert all URLs within the same domain to relative URLs. The URLs will be relative from the [document_base_url](https://www.tinymce.com/docs-3x/reference/configuration/Configuration3x@document_base_url/).
+This will convert all URLs within the same domain to relative URLs. The URLs will be relative from the [document_base_url](https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@document_base_url/).
 
 ```js
 relative_urls : true,
@@ -98,7 +98,7 @@ Example: `http://www.site.com/path1/path2/file.htm >> path2/file.htm`
 
 ##### Absolute URLs
 
-This will convert all relative URLs to absolute URLs. The URLs will be absolute based on the [document_base_url](https://www.tinymce.com/docs-3x/reference/configuration/Configuration3x@document_base_url/).
+This will convert all relative URLs to absolute URLs. The URLs will be absolute based on the [document_base_url](https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@document_base_url/).
 
 ```js
 relative_urls : false,
@@ -110,7 +110,7 @@ Example: `path2/file.htm >> /path1/path2/file.htm`
 
 ##### Domain Absolute URLs
 
-This will convert all relative URLs to absolute URLs. The URLs will be absolute based on the [document_base_url](https://www.tinymce.com/docs-3x/reference/configuration/Configuration3x@document_base_url/) with domain.
+This will convert all relative URLs to absolute URLs. The URLs will be absolute based on the [document_base_url](https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@document_base_url/) with domain.
 
 ```js
 relative_urls : false,
@@ -134,7 +134,7 @@ Note: Some versions of Internet Explorer may continue to convert URLs even with 
 
 ## TinyMCE strip away attributes or tags from my source?
 
-You need to check out the [valid_elements](https://www.tinymce.com/docs-3x/reference/configuration/Configuration3x@valid_elements/) and [extended_valid_elements](https://www.tinymce.com/docs-3x/reference/configuration/Configuration3x@extended_valid_elements/) option in the configuration. By default, TinyMCE only allows certain tags and attributes. TinyMCE also tries to follow the XHTML specification as much as possible, this can cause some unexpected source changes, there are however configuration options to battle this issue, study the configuration options in details.
+You need to check out the [valid_elements](https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@valid_elements/) and [extended_valid_elements](https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@extended_valid_elements/) option in the configuration. By default, TinyMCE only allows certain tags and attributes. TinyMCE also tries to follow the XHTML specification as much as possible, this can cause some unexpected source changes, there are however configuration options to battle this issue, study the configuration options in details.
 
 ## TinyMCE strips away or alters my server-side code
 
@@ -142,11 +142,11 @@ So you mix HTML markup with server-side logic? Moxiecode developer spocke [expla
 
 ## How do I change the default font size/face color of the editor?
 
-We recommend that you have a look at the [content_css](https://www.tinymce.com/docs-3x/reference/configuration/Configuration3x@content_css/) option, this enables you to switch the CSS file TinyMCE uses for its editing area with a file with your CSS rules for font size and so forth.
+We recommend that you have a look at the [content_css](https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@content_css/) option, this enables you to switch the CSS file TinyMCE uses for its editing area with a file with your CSS rules for font size and so forth.
 
 ## How do I remove/add buttons/controls to TinyMCE?
 
-There are quite a few options for this but a reference of all available buttons/control names can be found in the [button/control reference](https://www.tinymce.com/docs-3x/reference/buttons/).
+There are quite a few options for this but a reference of all available buttons/control names can be found in the [button/control reference](https://www.tiny.cloud/docs-3x/reference/buttons/).
 
 ## TinyMCE adds BR elements to my content
 
@@ -154,7 +154,7 @@ No it should not, if you are using PHP, check so that you are not using [nl2br()
 
 ## TinyMCE produce P elements on enter/return instead of BR elements?
 
-TinyMCE produced P tags on enter by default since all desktop and online word processors use the concept of paragraphs on enter and it also makes your content semantic. If you for some reason need BR elements use the [forced_root_block](https://www.tinymce.com/docs-3x/reference/configuration/Configuration3x@forced_root_block/) option in TinyMCE 3.5.
+TinyMCE produced P tags on enter by default since all desktop and online word processors use the concept of paragraphs on enter and it also makes your content semantic. If you for some reason need BR elements use the [forced_root_block](https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@forced_root_block/) option in TinyMCE 3.5.
 
 So if you really really must use BR elements for some reason use this:
 
@@ -345,21 +345,21 @@ So you want the styles dropdown to actually show how the element will look like 
 
 ## TinyMCE does not update the content when I set a new text in textarea by JavaScript
 
-TinyMCE reads the content of the `<textarea>` element only on start, and writes it when the edition is done. If you want to change the edited content, do not update the `<textarea>`  but call editor's [setContent](https://www.tinymce.com/docs-3x/api/class_tinymce.Editor.html/#setcontent) method.
+TinyMCE reads the content of the `<textarea>` element only on start, and writes it when the edition is done. If you want to change the edited content, do not update the `<textarea>`  but call editor's [setContent](https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html/#setcontent) method.
 
-You may also read the [How to load/save with Ajax in TinyMCE](https://www.tinymce.com/docs-3x/howto/save_with_Ajax_in_TinyMCE/) article.
+You may also read the [How to load/save with Ajax in TinyMCE](https://www.tiny.cloud/docs-3x/howto/save_with_Ajax_in_TinyMCE/) article.
 
 ## Loading is slow, is there a way to make it load quicker?
 
-There is a extra package for TinyMCE called [TinyMCE compressor](https://www.tinymce.com/docs-3x/compressor/about/) that reduces download and initialization time dramatically by using GZip to compress the JavaScript files.
+There is a extra package for TinyMCE called [TinyMCE compressor](https://www.tiny.cloud/docs-3x/compressor/about/) that reduces download and initialization time dramatically by using GZip to compress the JavaScript files.
 
 ## Change default text color/editor background in TinyMCE?
 
-You need to specify a content css file with the [content_css](https://www.tinymce.com/docs-3x/reference/configuration/Configuration3x@content_css/) option in order to change the default text color or background of the editor. The specified CSS is loaded after the default CSS so you can use it to override. A good idea to check the CSS status of elements is to install Firebug addon to Firefox.
+You need to specify a content css file with the [content_css](https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@content_css/) option in order to change the default text color or background of the editor. The specified CSS is loaded after the default CSS so you can use it to override. A good idea to check the CSS status of elements is to install Firebug addon to Firefox.
 
 ## Edit a full page (with <html> and <head> tags) in TinyMCE?
 
-By default TinyMCE is only interested in your page's content which is contained within the document's <body> part. If you want to have TinyMCE edit every part of your document, especially the <head> section, then you'll need the [fullpage plugin](https://www.tinymce.com/docs-3x/reference/plugins/Plugin3x@fullpage/).
+By default TinyMCE is only interested in your page's content which is contained within the document's <body> part. If you want to have TinyMCE edit every part of your document, especially the <head> section, then you'll need the [fullpage plugin](https://www.tiny.cloud/docs-3x/reference/plugins/Plugin3x@fullpage/).
 
 ## Can I use TinyMCE in my commercial application?
 
@@ -377,11 +377,11 @@ If you start to make a lot of revenue from using TinyMCE, please remember the ti
 
 ## I don't like LGPL, is there a commercial license available for me?
 
-Yes, commercial licenses and premium support are available. Learn about your [commercial licensing options](https://www.tinymce.com/pricing).
+Yes, commercial licenses and premium support are available. Learn about your [commercial licensing options](https://www.tiny.cloud/pricing).
 
 ## Do you provide support?
 
-We do not provide any non-commercial support outside the forum on the TinyMCE website. Learn about [paid, commercial support](https://www.tinymce.com/pricing).
+We do not provide any non-commercial support outside the forum on the TinyMCE website. Learn about [paid, commercial support](https://www.tiny.cloud/pricing).
 
 ## Who made this software?
 

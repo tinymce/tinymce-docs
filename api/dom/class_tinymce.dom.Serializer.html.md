@@ -14,7 +14,7 @@ This class is used to serialize DOM trees into a string. Consult the TinyMCE Wik
 
 | Method | Defined By |
 | --- | --- |
-| [Serializer](#serializer)(settings:Object, dom:[DOMUtils](../dom/class_tinymce.dom.DOMUtils.html), schema:[Schema](../html/class_tinymce.html.Schema.html)) : Constucts a new DOM serializer class. | Serializer |
+| [Serializer](#serializer)(settings:Object, dom:[DOMUtils](https://www.tiny.cloud/docs-3x/api/dom/class_tinymce.dom.DOMUtils.html), schema:[Schema](https://www.tiny.cloud/docs-3x/api/html/class_tinymce.html.Schema.html)) : Constucts a new DOM serializer class. | Serializer |
 | [addAttributeFilter](#addattributefilter)(callback:function):void : Adds a attribute filter function to the parser used by the serializer, the parser will collect nodes that has the specif... | Serializer |
 | [addNodeFilter](#addnodefilter)(callback:function):void : Adds a node filter function to the parser used by the serializer, the parser will collect the specified nodes by name an... | Serializer |
 | [addRules](#addrules)(rules:String):void : Adds valid elements rules to the serializers schema instance this enables you to specify things like what elements shoul... | Serializer |
@@ -25,16 +25,16 @@ This class is used to serialize DOM trees into a string. Consult the TinyMCE Wik
 
 | Event | Defined By |
 | --- | --- |
-| [onPostProcess](#onpostprocess)(sender:[Editor](class_tinymce.Editor.html), obj:Object) : Fires when the Serializer does a postProcess on the contents. | Serializer |
-| [onPreProcess](#onpreprocess)(sender:[Serializer](../dom/class_tinymce.dom.Serializer.html), args:Object) : This event gets executed before a HTML fragment gets serialized into a HTML string. | Serializer |
-| [onPreProcess](#onpreprocess)(sender:[Serializer](../dom/class_tinymce.dom.Serializer.html), args:Object) : This event gets executed after a HTML fragment has been serialized into a HTML string. | Serializer |
-| [onPreProcess](#onpreprocess)(sender:[Editor](class_tinymce.Editor.html), obj:Object) : Fires when the Serializer does a preProcess on the contents. | Serializer |
+| [onPostProcess](#onpostprocess)(sender:[Editor](https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html), obj:Object) : Fires when the Serializer does a postProcess on the contents. | Serializer |
+| [onPreProcess](#onpreprocess)(sender:[Serializer](https://www.tiny.cloud/docs-3x/api/dom/class_tinymce.dom.Serializer.html), args:Object) : This event gets executed before a HTML fragment gets serialized into a HTML string. | Serializer |
+| [onPreProcess](#onpreprocess)(sender:[Serializer](https://www.tiny.cloud/docs-3x/api/dom/class_tinymce.dom.Serializer.html), args:Object) : This event gets executed after a HTML fragment has been serialized into a HTML string. | Serializer |
+| [onPreProcess](#onpreprocess)(sender:[Editor](https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html), obj:Object) : Fires when the Serializer does a preProcess on the contents. | Serializer |
 
 ## Method details
 
 ### Serializer 
 
-***public function Serializer(settings:Object, dom:[DOMUtils](../dom/class_tinymce.dom.DOMUtils.html), schema:[Schema](../html/class_tinymce.html.Schema.html))***  
+***public function Serializer(settings:Object, dom:[DOMUtils](https://www.tiny.cloud/docs-3x/api/dom/class_tinymce.dom.DOMUtils.html), schema:[Schema](https://www.tiny.cloud/docs-3x/api/html/class_tinymce.html.Schema.html))***  
 Constucts a new DOM serializer class.      
 
 **Parameters**  
@@ -42,8 +42,8 @@ Constucts a new DOM serializer class.
 | Param | Detail |
 | --- | --- |
 | settings:Object | Serializer settings object. |
-| dom:[DOMUtils](../dom/class_tinymce.dom.DOMUtils.html) | DOMUtils instance reference. |
-| schema:[Schema](../html/class_tinymce.html.Schema.html) | Optional schema reference. |
+| dom:[DOMUtils](https://www.tiny.cloud/docs-3x/api/dom/class_tinymce.dom.DOMUtils.html) | DOMUtils instance reference. |
+| schema:[Schema](https://www.tiny.cloud/docs-3x/api/html/class_tinymce.html.Schema.html) | Optional schema reference. |
 
 ### addAttributeFilter 
 
@@ -109,52 +109,52 @@ Sets the valid elements rules to the serializers schema instance this enables yo
 
 ### onPostProcess 
 
-***public event onPostProcess(sender:[Editor](class_tinymce.Editor.html), obj:Object)***  
+***public event onPostProcess(sender:[Editor](https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html), obj:Object)***  
 Fires when the Serializer does a postProcess on the contents.      
 
 **Parameters**  
 
 | Param | Detail |
 | --- | --- |
-| sender:[Editor](class_tinymce.Editor.html) | Editor instance. |
+| sender:[Editor](https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html) | Editor instance. |
 | obj:Object | PreProcess object. |
 
 ### onPreProcess 
 
-***public event onPreProcess(sender:[Serializer](../dom/class_tinymce.dom.Serializer.html), args:Object)***  
+***public event onPreProcess(sender:[Serializer](https://www.tiny.cloud/docs-3x/api/dom/class_tinymce.dom.Serializer.html), args:Object)***  
 This event gets executed before a HTML fragment gets serialized into a HTML string. This event enables you to do modifications to the DOM before the serialization occurs. It's important to know that the element that is getting serialized is cloned so it's not inside a document.      
 
 **Parameters**  
 
 | Param | Detail |
 | --- | --- |
-| sender:[Serializer](../dom/class_tinymce.dom.Serializer.html) | object/Serializer instance that is serializing an element. |
+| sender:[Serializer](https://www.tiny.cloud/docs-3x/api/dom/class_tinymce.dom.Serializer.html) | object/Serializer instance that is serializing an element. |
 | args:Object | Object containing things like the current node. |
 
 **Example**  
 
 ### onPreProcess 
 
-***public event onPreProcess(sender:[Serializer](../dom/class_tinymce.dom.Serializer.html), args:Object)***  
+***public event onPreProcess(sender:[Serializer](https://www.tiny.cloud/docs-3x/api/dom/class_tinymce.dom.Serializer.html), args:Object)***  
 This event gets executed after a HTML fragment has been serialized into a HTML string. This event enables you to do modifications to the HTML string like regexp replaces etc.      
 
 **Parameters**  
 
 | Param | Detail |
 | --- | --- |
-| sender:[Serializer](../dom/class_tinymce.dom.Serializer.html) | object/Serializer instance that is serializing an element. |
+| sender:[Serializer](https://www.tiny.cloud/docs-3x/api/dom/class_tinymce.dom.Serializer.html) | object/Serializer instance that is serializing an element. |
 | args:Object | Object containing things like the current contents. |
 
 **Example**  
 
 ### onPreProcess 
 
-***public event onPreProcess(sender:[Editor](class_tinymce.Editor.html), obj:Object)***  
+***public event onPreProcess(sender:[Editor](https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html), obj:Object)***  
 Fires when the Serializer does a preProcess on the contents.      
 
 **Parameters**  
 
 | Param | Detail |
 | --- | --- |
-| sender:[Editor](class_tinymce.Editor.html) | Editor instance. |
+| sender:[Editor](https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html) | Editor instance. |
 | obj:Object | PreProcess object. |

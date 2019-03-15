@@ -13,4 +13,4 @@ tinyMCE.init({
 });
 ```
 
-In case you'd like to register custom shortcuts you'll need <editor>.[addShortcut()](https://www.tinymce.com/docs-3x/api/class_tinymce.Editor.html/#addshortcut/).
+In case you'd like to register custom shortcuts you'll need <editor>.[addShortcut()](https://www.tiny.cloud/docs-3x/api/class_tinymce.Editor.html/#addshortcut/).

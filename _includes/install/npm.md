@@ -60,4 +60,4 @@ tinymce.init({
 });
 ```
 
-> If you have decided to use this package manager, move on to the next step [working with plugins](../work-with-plugins/), where you'll start customizing TinyMCE. If you'd like to learn about other install options please keep reading.
+> If you have decided to use this package manager, move on to the next step [working with plugins](https://www.tiny.cloud/docs-3x/api/work-with-plugins/), where you'll start customizing TinyMCE. If you'd like to learn about other install options please keep reading.

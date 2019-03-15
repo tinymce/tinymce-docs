@@ -22,4 +22,4 @@ tinyMCE.init({
 });
 ```
 
-Also see: [Creating_Skin](https://www.tinymce.com/docs-3x/customization/TinyMCE3x@Creating_a_skin/), [skin](https://www.tinymce.com/docs-3x/reference/configuration/Configuration3x@skin/)
+Also see: [Creating_Skin](https://www.tiny.cloud/docs-3x/customization/TinyMCE3x@Creating_a_skin/), [skin](https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@skin/)

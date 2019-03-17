@@ -14,6 +14,27 @@ Comments is a premium plugin from Tiny. Please see the [Premium features]({{site
 
 Once you have obtained the Comments 2.0 plugin, refer to the following instructions for using it.
 
+## Add Comments plugin
+
+Following is an example to add Comments 2.0 plugin to the TinyMCE editor:
+
+```js
+tinymce.init({
+  selector: '#tiny-ui .editor',
+  toolbar: 'bold italic underline | addcomment',
+  menubar: 'file edit view insert format tools tc',
+  menu: {
+    tc: {
+      title: 'TinyComments',
+      items: 'addcomment showcomments deleteallconversations'
+    }
+  },
+  plugins: 'paste tinycomments',
+  tinycomments_mode: 'embedded',
+  tinycomments_author: 'Author'
+});
+```
+
 ### Modes
 
 There are two modes available in Comments 2.0 that provide the ability to save comments. These modes are configured in the Comments 2.0settings.
@@ -94,6 +115,8 @@ tinymce.init({
 **Result**: The commented text will be highlighted yellow.
 ![**Highlighted text**]({{site.baseurl}}/images/highlight.png)
 
+> Note: The values provided in the above example are the default values provided in Comments 2.0. These can be changed as desired in the `tinymce.init` script.
+
 For more information on TinyMCE formats, refer to the [formats]({{site.baseurl}}/configure/content-formatting/#formats) section.
 
 
@@ -161,3 +184,14 @@ Follow this procedure to delete all conversations in the document:
 **Result**: All the comments for the selected document will be deleted.
 
 Check out the [Comments demo]({{site.baseurl}}/demo/comments-2) to try this new feature.
+
+## Using Comments 2.0 embedded mode with the Full Page plugin
+
+Users have to be cautious when deciding the order in which the plugins are added in the plugins list.
+
+Comments can cause an issue if the Full Page plugin `fullpage` appears before Comments 2.0 plugin `tinycomments` in the plugin list, and "tinycomments" is configured to use `embedded mode`.
+
+The consequence of this situation is that when a saved document is re-opened, the comment data is lost (but the highlights are still there). This is because the comment data is in the wrong place. The order that the plugins appear affects the order that the `getContent` hooks are processed in. The `fullpage` adds outer elements to the content and then `tinycomments` adds its comment data outside those markers. `tinycomments` expects to find its data inside the content, but having `fullpage` add outer `<html>` elements before `tinycomments` adds its comment data. This results in the comment data being lost
+
+For a workaround, please ensure that `tinycomments` is listed before `fullpage` in the plugins list. This should result in `tinycomments` working properly.
+

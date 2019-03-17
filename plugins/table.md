@@ -391,7 +391,7 @@ tinymce.init({
     'border': '1'
   },
   table_default_styles: {
-    'border-collapsed': 'collapse',
+    'border-collapse': 'collapse',
     'width': '100%'
   },
   table_responsive_width: true

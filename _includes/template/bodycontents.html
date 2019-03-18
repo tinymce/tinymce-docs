@@ -15,7 +15,9 @@
                     </div>
                 </div>
             </div>
-            <div class="breadcrumbs">{% include breadcrumbs.html %}</div>
+            <div class="breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList">
+                {% include breadcrumbs.html %}
+            </div>
             <div class="search">
                 <input type="text" name="seach" value="" id="searchInput" placeholder="Search in documentation" tabindex="1">
             </div>
@@ -26,6 +28,7 @@
 
 <div class="main {{ page.type }} {{ page.class }}">
     <aside class="side-nav">
+        <div id="side-nav-controller">Expand Menu</div>
         {% assign nav = site.data.nav | array_concat:site.data.nav_api %}
         {% include nav.html links=nav preceding_address="/" %}
     </aside>

@@ -21,14 +21,6 @@ Following is an example to add Comments 2.0 plugin to the TinyMCE editor:
 ```js
 tinymce.init({
   selector: '#tiny-ui .editor',
-  toolbar: 'bold italic underline | addcomment',
-  menubar: 'file edit view insert format tools tc',
-  menu: {
-    tc: {
-      title: 'TinyComments',
-      items: 'addcomment showcomments deleteallconversations'
-    }
-  },
   plugins: 'paste tinycomments',
   tinycomments_mode: 'embedded',
   tinycomments_author: 'Author'
@@ -37,7 +29,7 @@ tinymce.init({
 
 ### Modes
 
-There are two modes available in Comments 2.0 that provide the ability to save comments. These modes are configured in the Comments 2.0settings.
+There are two modes available in Comments 2.0 that provide the ability to save comments. These modes are configured in the Comments 2.0 settings.
 
 * **Callback Mode** - This is the default mode in Comments. This mode is used to configure storage and save comments on user’s server. This option gives the user a choice to configure the storage settings to either persist comments immediately or save them at the same time as the content. Additional callbacks are required to be configured to use Comments in the callback mode. Refer to the [configuring callbacks for comments]({{site.baseurl}}/advanced/configuring-comments-callbacks/) section, for more information.
 
@@ -50,22 +42,17 @@ To configure Comments 2.0 to use the embedded mode use the following script:
 ```js
 tinymce.init({
   selector: "#textarea",
-  menubar: 'file edit view insert format tools tc',
-menu: {
- tc: {
-  title: 'TinyComments',
-  items: 'addcomment'
-   }
- },
- tinycomments_author: 'Embedded Journalist',
- tinycomments_mode: 'embedded'
+  tinycomments_author: 'Embedded Journalist',
+  tinycomments_mode: 'embedded'
  ...
 })
 ```
 
 ### Configuring the Comments 2.0 toolbar button
 
-Use the following script to configure the Comments 2.0 toolbar button:
+The **Add Comment** toolbar button is available by default if the toolbar menu is not customized.
+
+In case of a customized toolbar menu, use the following script to configure the Comments 2.0 toolbar button:
 
 ```js
 tinymce.init({
@@ -115,7 +102,7 @@ tinymce.init({
 **Result**: The commented text will be highlighted yellow.
 ![**Highlighted text**]({{site.baseurl}}/images/highlight.png)
 
-> Note: The values provided in the above example are the default values provided in Comments 2.0. These can be changed as desired in the `tinymce.init` script.
+> Note: The values provided in the above example are the default values provided in Comments 2.0. To configure these options differently, see the [Create a skin]({{site.baseurl}}/advanced/creating-a-skin/) section.
 
 For more information on TinyMCE formats, refer to the [formats]({{site.baseurl}}/configure/content-formatting/#formats) section.
 
@@ -191,7 +178,7 @@ Users have to be cautious when deciding the order in which the plugins are added
 
 Comments can cause an issue if the Full Page plugin `fullpage` appears before Comments 2.0 plugin `tinycomments` in the plugin list, and "tinycomments" is configured to use `embedded mode`.
 
-The consequence of this situation is that when a saved document is re-opened, the comment data is lost (but the highlights are still there). This is because the comment data is in the wrong place. The order that the plugins appear affects the order that the `getContent` hooks are processed in. The `fullpage` adds outer elements to the content and then `tinycomments` adds its comment data outside those markers. `tinycomments` expects to find its data inside the content, but having `fullpage` add outer `<html>` elements before `tinycomments` adds its comment data. This results in the comment data being lost
+The consequence of this situation is that when a saved document is re-opened, the comment data is lost (but the highlights are still there). This is because the comment data is in the wrong place. The order that the plugins appear affects the order that the `getContent` hooks are processed in. This creates an issue with `tinycomments` working as expected since the `fullpage` plugin adds outer `<html>` elements before `tinycomments` adds its comment data. 
 
 For a workaround, please ensure that `tinycomments` is listed before `fullpage` in the plugins list. This should result in `tinycomments` working properly.
 

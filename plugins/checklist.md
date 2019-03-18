@@ -19,6 +19,8 @@ In the TinyMCE 5 editor, checklists are presented as lists with small checkboxes
 
 **Checklist** is a premium plugin from Tiny. Please see the [Premium features](https://www.tiny.cloud/docs/enterprise/tiny-comments/) section for all the buying options.
 
+There is also a demo provided to explore the **Checklist** capabilities [here]({{site.baseurl}}/demo/checklist/).
+
 Once you have obtained the **Checklist** plugin, refer to the following instructions for using it.
 
 ### Configuring the Checklist toolbar button
@@ -77,3 +79,4 @@ A checklist will be created. If some items were selected, a check mark will appe
 ### Toggling checklist items
 
 The state of the check marks of checklist items can be toggled to be empty or checked. This is done by clicking the checkbox. If using the keyboard, the check marks can be toggled by placing the cursor on the desired Checklist item and pressing the `Ctrl+Enter` (`Command+Enter` if you are a Mac user) key combination.
+

@@ -1,16 +1,16 @@
 ## formats
 
-The format options are used to override and add custom **formats** to the editor.
+This option is used to override default TinyMCE **formats** or add custom **formats** to the editor.
 
-For example, a format is a style that gets applied to text when the bold button is enabled inside the editor. TinyMCE is equipped with a text formatting engine that allows specifying what it should produce when the user clicks (in this example) the bold button.
+TinyMCE is equipped with a formatting engine that allows you to register a set of styles and attributes as a named **format**. For example, the `bold` format is the style that is applied to text when the bold button is clicked.
 
 Check out the [custom formats example]({{ site.baseurl }}/demo/format-custom/) for a demonstration of this option.
 
-Formats are objects where the value is either an object with format options or an array of format variants. 
+The `formats` configuration option takes an object of format name and format specification pairs. Each format specification must be defined as an object where the value is either an object of format options or an array of such objects.
 
-When a format is applied the first item, the formats array will be applied. However, when trying to match the format to remove or update the UI, the other formats in the array is considered as well. So the first format is a kind of primary format, and the rest are secondary formats.
+If a format is specified with an array of variants, when the format is applied only the first item in the array will be used. However, when trying to match the format to remove or update the UI, the other variants in the array will be considered as well. So the first format is a kind of primary format, and the rest are secondary formats.
 
-The following is an example of an array of format variants:
+The following is an example of an array of format specification that contains three variants:
 
 ```js
 bold: [
@@ -52,26 +52,20 @@ TinyMCE has some built in formats that can be overridden. These are:
 * dt, dd
 * samp
 
-Some built-in formats `fontsize`, `fontname`, `forecolor`, `hilitecolor` uses a variable in their definition named `%value`. This one gets replaced with the user selected item such as a `color` value. Check the variable substitution section below for details.
+Some built-in formats `fontsize`, `fontname`, `forecolor`, `hilitecolor` use a variable in their definition named `%value`. This gets replaced with the user selected item such as a `color` value. Check the variable substitution section below for details.
 
 
+### Format Type
 
-### Format Type 
-
-There are three format types that the default classes can be applied to:
+There are three types of formats:
 
 * Block format
 * Inline format
 * Selector format
 
+All three format types can be used with the `formats` configuration option. They can also be used to specify a new format item in the [`style_formats`]({{ site.baseurl }}/configure/editor-appearance/#style_formats) configuration option. However, a format that is specified using `formats` is then registered with the editor, and can be referred to by name in `style_formats` rather than needing to specify the format again.
 
-#### block
-
-Tag name of the block element to use as a wrapper, for example, `h1`. Existing block elements within the selection are replaced with this block element.
-
-**Type:** `string`
-
-##### Example
+For example, these two configurations are equivalent:
 
 ```js
 tinymce.init({
@@ -81,9 +75,39 @@ tinymce.init({
     h1: { block: 'h1', classes: 'heading' }
   },
   style_formats: [
-    // Adds a h1 format to the formats select dropdown
+    // Adds the h1 format defined above to style_formats
+    { title: 'My heading', format: 'h1' }
+  ]
+});
+```
+
+```js
+tinymce.init({
+  selector: 'textarea',
+  style_formats: [
+    // Adds a h1 format to style_formats that applies a class of heading
     { title: 'My heading', block: 'h1', classes: 'heading' }
   ]
+});
+```
+
+A registered format can also be used by name with the built-in [formatter]({{ site.baseurl }}/api/tinymce/tinymce.formatter) methods. See [/configure/content-formatting/#usingcustomformats]({{ site.baseurl }}/configure/content-formatting/#usingcustomformats) for an example.
+
+#### block
+
+Tag name of the block element to use as a wrapper, for example, `h1`. Existing block elements within the selection are replaced with this block element.
+
+**Type:** `String`
+
+##### Example
+
+```js
+tinymce.init({
+  selector: 'textarea',
+  formats: {
+    // Changes the default format for h1 to have a class of heading
+    h1: { block: 'h1', classes: 'heading' }
+  }
 });
 ```
 
@@ -91,7 +115,7 @@ tinymce.init({
 
 Tag name of the inline element to use as a wrapper, for example, `span` is used to wrap the current selection.
 
-**Type:** `string`
+**Type:** `String`
 
 ##### Example
 
@@ -101,11 +125,7 @@ tinymce.init({
   formats: {
     // Changes the default format for the bold button to produce a span with a bold class
     bold: { inline: 'span', classes: 'bold' }
-  },
-  style_formats: [
-    // Adds a my bold format to the formats select dropdown
-    { title: 'My bold', inline: 'span', classes: 'bold' }
-  ]
+  }
 });
 ```
 
@@ -113,7 +133,7 @@ tinymce.init({
 
 CSS3 selector pattern that is used to find elements within the selection. It can be used to apply classes to specific elements only, for example only to odd rows in a table.
 
-**Type:** `string`
+**Type:** `String`
 
 ##### Example
 
@@ -126,26 +146,19 @@ tinymce.init({
     aligncenter: { selector: 'p,h1,h2,h3,h4,h5,h6,td,th,div,ul,ol,li,table,img', classes: 'center' },
     alignright: { selector: 'p,h1,h2,h3,h4,h5,h6,td,th,div,ul,ol,li,table,img', classes: 'right' },
     alignjustify: { selector: 'p,h1,h2,h3,h4,h5,h6,td,th,div,ul,ol,li,table,img', classes: 'full' }
-  },
-  style_formats: [
-    // Adds alignment formats to the formats dropdown
-    { title: 'Align left', selector: 'p,h1,h2,h3,h4,h5,h6,td,th,div,ul,ol,li,table,img', classes: 'left' },
-    { title: 'Align center', selector: 'p,h1,h2,h3,h4,h5,h6,td,th,div,ul,ol,li,table,img', classes: 'center' },
-    { title: 'Align right', selector: 'p,h1,h2,h3,h4,h5,h6,td,th,div,ul,ol,li,table,img', classes: 'right' },
-    { title: 'Align justify', selector: 'p,h1,h2,h3,h4,h5,h6,td,th,div,ul,ol,li,table,img', classes: 'full' }
-  ]
+  }
 });
 ```
 
 ### Format parameters
 
-For each format some additional parameters can be specified: 
+For each format some additional parameters can be specified:
 
 #### classes
 
 Space-separated list of classes that are applied to the selected or newly created inline/block element.
 
-**Type:** `string`
+**Type:** `String`
 
 ##### Example
 
@@ -155,11 +168,7 @@ tinymce.init({
   formats: {
     // Changes the default format for the bold button to produce a span with a bold class
     bold: { inline: 'span', classes: 'bold' }
-  },
-  style_formats: [
-    // Adds bold format to the formats dropdown
-    { title: 'My bold', inline: 'span', classes: 'bold' }
-  ]
+  }
 });
 ```
 
@@ -177,11 +186,7 @@ tinymce.init({
   formats: {
     // Changes the default format for the bold button to produce a span with style with font-width: bold
     bold: { inline: 'span', styles: { 'font-weight': 'bold' } }
-  },
-  style_formats: [
-    // Adds bold format to the formats dropdown
-    { title: 'My bold', inline: 'span', styles: { 'font-weight': 'bold' } }
-  ]
+  }
 });
 ```
 
@@ -200,11 +205,7 @@ tinymce.init({
   formats: {
     // Changes the default format for the bold button to produce a strong with data-style attribute
     bold: { inline: 'strong', attributes: { 'data-style': 'bold' } }
-  },
-  style_formats: [
-    // Adds bold format to the formats dropdown
-    { title: 'My bold', inline: 'strong', attributes: { 'data-style': 'bold' } }
-  ]
+  }
 });
 ```
 
@@ -213,7 +214,7 @@ tinymce.init({
 Makes sure that the format is not merged with other wrappers having the same format. We use it to avoid conflicts between text-decorations for `underline` and `strikethrough` formats.
 
 
-**Type:** `boolean`
+**Type:** `Boolean`
 
 **Default:** `false`
 
@@ -235,7 +236,7 @@ tinymce.init({
 
 States that the format is a container format for block elements. For example, a `div` wrapper or `blockquote`.
 
-**Type:** `boolean`
+**Type:** `Boolean`
 
 **Default:** `false`
 
@@ -244,10 +245,10 @@ States that the format is a container format for block elements. For example, a 
 ```js
 tinymce.init({
   selector: 'textarea',
-  style_formats: [
+  formats: {
     // A custom format that wraps blocks into a div with the specified wrapper class
-    { title: 'My custom format', block: 'div', classes: 'wrapper', wrapper: true }
-  ]
+    'custom-wrapper': { block: 'div', classes: 'wrapper', wrapper: true }
+  }
 });
 ```
 
@@ -255,9 +256,9 @@ tinymce.init({
 
 Specifies what the remove behavior of the element should be when the format is removed.
 
-**Type:** `string`
+**Type:** `String`
 
-**Default:** `none` for `selector` formats `empty` for all other format types.
+**Default:** `none` for `Selector` formats and `empty` for all other format types.
 
 This can be set to three different modes:
 
@@ -292,7 +293,7 @@ This option controls if the selection should expand upwards to the closest match
 
 So if the selection is from _a_ to _b_ in this html contents `<h1><b>[a</b></h1><p>b]</p>` then the _h1_ will be removed even if it's not part of the actual selection.
 
-**Type:** `boolean`
+**Type:** `Boolean`
 
 ##### Example
 
@@ -327,7 +328,7 @@ tinymce.init({
 
 Enables control for removing the child elements of the matching format. This is set to `false`  by default on selector formats. As a result, when a class is removed from a selected table class, disabling `deep` retains the class in the child elements within the other nested tables.
 
-**Type:** `boolean`
+**Type:** `Boolean`
 
 **Default:** `false` for `selector` formats
 
@@ -336,10 +337,10 @@ Enables control for removing the child elements of the matching format. This is 
 ```js
 tinymce.init({
   selector: 'textarea',
-  style_formats: [
+  formats: {
     // A custom format that wraps blocks into a div with the specified wrapper class
-    { title: 'My custom format', inline: 'span', classes: 'myclass', deep: false }
-  ]
+    'custom-deep': { inline: 'span', classes: 'myclass', deep: false }
+  }
 });
 ```
 
@@ -397,7 +398,7 @@ tinymce.activeEditor.formatter.apply('custom_format', { value: 'red' });
 
 ### Removing a format
 
-Use the `removeformat` option specify how the `clear formatting` feature should work in the editor.
+Use the `removeformat` option to specify how the `clear formatting` feature should work in the editor.
 
 **Type:** `Array`
 

@@ -34,6 +34,6 @@ tinymce.init({
 ```js
 tinymce.init({
     selector: "textarea",
-   	toolbar_drawer: 'sliding'
+    toolbar_drawer: 'sliding'
 });
 ```

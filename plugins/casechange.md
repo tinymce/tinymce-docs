@@ -124,7 +124,7 @@ tinymce.init({
     'at', 'by', 'in', 'of', 'on', 'up', 'to', 'en', 're', 'vs',
     'but', 'off', 'out', 'via', 'bar', 'mid', 'per', 'pro', 'qua', 'til',
     'from', 'into', 'unto', 'with', 'amid', 'anit', 'atop', 'down', 'less', 'like', 'near', 'over', 'past', 'plus', 'sans', 'save', 'than', 'thru', 'till', 'upon',
-    'for', 'and', 'nor', 'but', 'or', 'yet', 'so'
+    'for', 'and', 'nor', 'but', 'or', 'yet', 'so', 'an', 'a', 'some', 'the'
   ]
 });
 ```

@@ -1,6 +1,6 @@
 ## theme
 
-This option allows you to specify the theme that TinyMCE should use. The default theme included with TinyMCE is named "[silver]({{ site.baseurl }}/themes/silver/)".
+This option allows you to specify the theme that TinyMCE should use. The default theme included with TinyMCE is called **Silver**.
 
 The name of the theme should match the name of the folder within the themes directory of TinyMCE. If the specified theme is not found, TinyMCE will not load.
 

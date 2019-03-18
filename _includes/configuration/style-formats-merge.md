@@ -1,9 +1,9 @@
 ## style_formats_merge
 
-This option allows you to set whether TinyMCE should append the styles in the [`style_formats`](#style_formats) setting to the default style formats or completely replace them.
+This option allows you to set whether TinyMCE should append custom styles defined using the [`style_formats`]({{ site.baseurl }}/configure/editor-appearance/#style_formats) setting to the default style formats or completely replace them.
 
-**Type:** `Boolean`  
-**Defaults:** `False`
+**Type:** `Boolean`
+**Default:** `false`
 
 ##### Example
 

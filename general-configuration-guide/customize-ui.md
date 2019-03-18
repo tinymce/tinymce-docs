@@ -6,38 +6,36 @@ description: Learn how to change the appearance of TinyMCE.
 keywords: themes skins statusbar
 ---
 
-This section is about customizing TinyMCE's user interface with skins, toolbar buttons and manipulating the status bar.
+This section is about customizing TinyMCE's user interface with skins, toolbar buttons, and manipulating the status bar.
 
 ### Themes
 
-"Silver" is TinyMCE's default theme. Users can easily customize the menu or toolbar without having to edit the theme. Theme creation requires a more in depth-knowledge of TinyMCE's API and is beyond the scope of this guide. TinyMCE skins, however, are easier to make using the TinyMCE Skin Creator.
+**Silver** is TinyMCE's default theme. Users can easily customize the menu or toolbar without having to edit the theme. Theme creation requires a more in depth-knowledge of TinyMCE's API and is beyond the scope of this guide. TinyMCE skins, however, are easier to make.
 
 ### Skins
 
-TinyMCE skins only change the editor's appearance while TinyMCE themes can affect much more. Use the [TinyMCE Skin Creator](http://skin.tinymce.com/) to easily create skins. Download, unzip, and place the completed skin in the `js/skins` folder. 
-
-The following example activates the skin:
+Skins control the appearance of TinyMCE such as colors and spacing. The default skin is called **Oxide** and has a `light` and a `dark` version. The default skin is `white`. To get the dark version, use the following config:
 
 ```js
 tinymce.init({
-  selector: 'textarea'  // change this value according to your HTML
-  skin: 'oxide'  // use the name of your skin, not oxide
+  selector: 'textarea',  // change this value according to your HTML
+  skin: 'dark'
 });
 ```
 
-Ensure the name of the created skin matches the name of the folder in the skins directory (ie. `tinymce/js/skins`). TinyMCE cannot load if the specified skin is not found.
+Creating skins for TinyMCE is easy with the TinyMCE Skin tool project. See [Creating a skin]({{ site.baseurl }}/advanced/creating-a-skin/) for more details.
+
+> Note: The  [TinyMCE Skin Creator](http://skin.tinymce.com/) only supports TinyMCE 4.
 
 > Note: Developers often confuse the difference between TinyMCE "themes" and "skins". A **Skin** in Tinymce is used to make changes to the appearance of the editor, for example, colors, margins, paddings, fonts, icons, etc. A **Theme** creates the editor construction (left, top, bottom, or right of the editing area - vertical or horizontal, inline or outside, etc.). A skin usually changes the color scheme of a button, dialog, etc. while the theme applies to the whole editor including its functionality and has child skins to change the appearance.
 
 ### Changing editor height and width
 
-A common UI customization used by developers is changing the height and width of the editable area. The following examples are code snippets that change TinyMCE height and width.
+A common UI customization used by developers is changing the height and width of the editable area. The following examples are code snippets that change TinyMCE's height and width.
 
 > Note: The links below contain specific details of these customization options.
 
 ##### Set the editable area height
-
-> Important: The "editable area" is the textbox used to enter information. This "editable area" is different from the "editor" itself.
 
 ```js
 tinymce.init({
@@ -49,8 +47,6 @@ tinymce.init({
 See the [height option]({{ site.baseurl }}/configure/editor-appearance/#height) for customization details.
 
 ##### Set the editable area width
-
-> Note: The editable area width is effectively the width of the editor itself. This is **not** the case for height.
 
 ```js
 tinymce.init({
@@ -76,9 +72,9 @@ tinymce.init({
 });
 ```
 
-See the [max_height]({{ site.baseurl }}/configure/editor-appearance/#max_height), [max_width]({{ site.baseurl }}/configure/editor-appearance/#max_width), [min_height]({{ site.baseurl }}/configure/editor-appearance/#min_height), [min_width]({{ site.baseurl }}/configure/editor-appearance/#min_width) documentation pages to learn more about these customization options.
+See the [max_height]({{ site.baseurl }}/configure/editor-appearance/#max_height), [max_width]({{ site.baseurl }}/configure/editor-appearance/#max_width), [min_height]({{ site.baseurl }}/configure/editor-appearance/#min_height), and [min_width]({{ site.baseurl }}/configure/editor-appearance/#min_width) documentation pages to learn more about these customization options.
 
-The editable area can also automatically resize itself as the user enters content into the iframe with the [Autoresize Plugin]({{ site.baseurl }}/plugins/autoresize/). Users can resize the editor on both the horizontal and vertical access by dragging the status bar handle with the [resize]({{ site.baseurl }}/configure/editor-appearance/#resize) configuration option.
+The editable area can also automatically resize itself as the user enters content into the iframe with the [Autoresize plugin]({{ site.baseurl }}/plugins/autoresize/). Users can resize the editor on both the horizontal and vertical access by dragging the status bar handle with the [resize]({{ site.baseurl }}/configure/editor-appearance/#resize) configuration option.
 
 ### Customizing the editable area with content_css
 
@@ -99,9 +95,15 @@ tinyMCE.init({
 
 See the [content_css]({{ site.baseurl }}/configure/content-appearance/#content_css) customization page for more information about the use of absolute and relative paths as well as and how to use multiple stylesheets.
 
+> Note: We have included two aditional themes for `content_css` to try out: **Document** and **Writer**. Use `content_css: 'document'` or `content_css: 'writer'` to try them out.
+
 ### Hiding the status bar
 
-The status bar is the gray bar aligned to the bottom of the editor's editable area. The status bar contains the path information and the resize handle. Removing the status bar disables the ability for users to change the size of the editable area. The following example disables the status bar.
+The status bar is the gray bar aligned to the bottom of the editor's editable area. The status bar contains the path information and the resize handle. Removing the status bar disables the ability for users to change the size of the editable area. 
+
+#### Example
+
+The following example disables the status bar.
 
 ```js
 tinymce.init({
@@ -109,6 +111,7 @@ tinymce.init({
   statusbar: false
 });
 ```
+
 > Note: Refer to the plugins and advanced configuration options documentation for more information on how to restrict whether the resize handle can be dragged.
 
 ### Adding the code button plugin
@@ -126,6 +129,8 @@ tinymce.init({
 ```
 
 All of the buttons disappear after the `code` button is added to the toolbar and a new menu called `Tools` with the menu item `Source code` is created. (See [this page]({{ site.baseurl }}/quick-start/) for a basic HTML code block.)
+
+#### Example 
 
 The following example displays the default toolbar in addition to the `code` functionality:
 

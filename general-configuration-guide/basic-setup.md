@@ -7,7 +7,7 @@ description: TinyMCE provides a wide range of configuration options that enable 
 keywords: selector plugin toolbar configuration configure
 ---
 
-This introduction to TinyMCE configuration section details important options used in traditional form-based layouts, useful information for creating streamlined user experiences and examples of using TinyMCE as an inline editor. 
+This introduction to TinyMCE configuration section details important options used in traditional form-based layouts, useful information for creating streamlined user experiences and examples of using TinyMCE as an inline editor.
 
 There are three configuration options that require careful consideration once the TinyMCE script has been added to your page:
 
@@ -30,7 +30,7 @@ tinymce.init({
 });
 ```
 
-Snippets regularly include a `selector` with the value `'textarea'`. Adapt the value of the working code block according to the HTML. 
+Snippets regularly include a `selector` with the value `'textarea'`. Adapt the value of the working code block according to the HTML.
 
 Insert the snippet into your HTML document and replace everything between the `<script>` tags containing the `tinymce` object (`tinymce.init({})`). Visual changes such as adding a toolbar button or menu item change the editor immediately.
 
@@ -38,9 +38,9 @@ Insert the snippet into your HTML document and replace everything between the `<
 
 Selector configuration is an important configuration option for TinyMCE integration. Selector configuration uses CSS `selector` syntax to determine which elements on the page are editable through TinyMCE.
 
-> Important: This is where TinyMCE editable areas are specified. 
+> Important: This is where TinyMCE editable areas are specified.
 
-TinyMCE replaces the selected element with an `iframe` and performs its operations within that `iframe` while in regular editing mode. 
+TinyMCE replaces the selected element with an `iframe` and performs its operations within that `iframe` while in regular editing mode.
 
 The following example replaces all `textarea` elements on the page:
 
@@ -50,7 +50,7 @@ tinymce.init({
 });
 ```
 
-TinyMCE can also match an `id` attribute. 
+TinyMCE can also match an `id` attribute.
 
 The following example replaces a `textarea` element with `id` `'editable'` on the page:
 
@@ -71,7 +71,7 @@ tinymce.init({
 });
 ```
 
-> Note: For more information on the differences between regular and inline editing modes see the [Using TinyMCE Inline](../use-tinymce-inline/) page.
+> Note: For more information on the differences between regular and inline editing modes, see the [Setup inline editing mode](../use-tinymce-inline/) page.
 
 
 ## Plugin configuration
@@ -80,7 +80,7 @@ The `plugins` configuration option enables the plugins functionality within the 
 
 > Important: Now is the time to consider which plugins to include in TinyMCE
 
-Enabling plugin functionality is simple. Simply add the `plugins` key to `tinymce.init()` and provide a comma, space-separated string, or an array of strings as values. 
+Enabling plugin functionality is simple. Simply add the `plugins` key to `tinymce.init()` and provide a comma, space-separated string, or an array of strings as values.
 
 The following example enables plugins.
 
@@ -135,7 +135,7 @@ tinymce.init({
 });
 ```
 
-The example below specifies multiple toolbars by providing an `array` of space-separated strings. 
+The example below specifies multiple toolbars by providing an `array` of space-separated strings.
 
 ##### Example
 
@@ -163,7 +163,7 @@ newdocument, undo, redo, visualaid, cut, copy, paste, selectall, bold, italic, u
 
 `menubar` affects items placed on the menu bar itself and `menu` affects individual items appearing on a menu's drop-down. `menu` also provides granular control of the menus. Customized titles can be created for menu items using `menu`.
 
-The menu bar in the following snippet includes only the menu items `File`, `Edit` and `View`. 
+The menu bar in the following snippet includes only the menu items `File`, `Edit`, and `View`.
 
 > Note: The example above also loads the default items included in each respective menu. For example, `Edit` loads Undo, Redo, Cut, Copy, Paste, and Select all.
 
@@ -207,8 +207,7 @@ tinymce.init({
 });
 ```
 
-> Important: Each page in the plugin documentation indicates via an icon if that plugin has toolbar buttons or menu items. 
-
+> Important: Each page in the plugin documentation indicates via an icon if that plugin has toolbar buttons or menu items.
 
 
 ## Basic configuration example
@@ -227,7 +226,7 @@ The following example is a walkthrough of a basic TinyMCE configuration.
   <script type="text/javascript">
   tinymce.init({
     selector: '#myTextarea',
-    theme: 'silver',
+    skin: 'dark',
     width: 600,
     height: 300,
     plugins: [
@@ -255,12 +254,10 @@ Select only the `textarea` with the id `myTextarea`.
 selector: '#myTextarea',
 ```
 
-Choose a theme such as the silver theme. 
-
-> Note: Only the _silver_ theme is currently compatible with TinyMCE 5. Create themes using the [TinyMCE - Skin Creator](http://skin.tinymce.com/)).
+Choose a Skin such as the dark skin which is included with TinyMCE.
 
 ```js
-theme: 'silver',
+skin: 'dark',
 ```
 
 Set the width and height of the editable area in pixels as numeric values.

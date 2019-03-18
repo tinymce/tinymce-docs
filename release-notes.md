@@ -13,10 +13,6 @@ keywords: releasenotes newfeatures deleted technologypreview bugfixes knownissue
 
 {% include release-notes/new-features.md %}
 
-<!--## Technology preview
-
-{% include release-notes/tech-preview.md %}-->
-
 ## Removed & deprecated features
 
 {% include release-notes/deleted.md %}
@@ -25,6 +21,4 @@ keywords: releasenotes newfeatures deleted technologypreview bugfixes knownissue
 
 {% include release-notes/known-issues.md %}
 
-<!--## Bug fixes
 
-{% include release-notes/bugfixes.md %}-->

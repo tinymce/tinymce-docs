@@ -58,8 +58,6 @@ In TinyMCE 5.0, some configurations have been removed because they are no longer
 
 #### Removed settings
 
-* [`fixed_toolbar_container`](https://www.tiny.cloud/docs/configure/editor-appearance/#fixed_toolbar_container) - Previously, the `fixed_toolbar_container` option was used to render the inline toolbar into a fixed positioned HTML element. This feature has been removed from TinyMCE 5.0 owing to the enhancements to the new inline toolbar behavior.
-
 * [`file_browser_callback`](https://www.tiny.cloud/docs/configure/file-image-upload/#file_browser_callback) - Previously, the `file_browser_callback` option was used to add a file or image browser to TinyMCE. This feature was deprecated in version 4.1.0 and replaced by [`file_picker_callback`]({{site.baseurl}}/configure/file-image-upload/#file_picker_callback). `file_browser_callback` option has been removed from TinyMCE 5.0 owing to the configuration changes in the dialog component.
 
 * [`insert_button_items`](https://www.tiny.cloud/docs/configure/editor-appearance/#insert_button_items) - Previously, the `insert_button_items` option was used to specify what to display in the `insert` toolbar button's menu in a space-separated list of menu items control identifiers or `|` for a menu separator. This toolbar button has been removed from TinyMCE 5.0 owing to the changes in the menus and removal of the `context` property. For a workaround, configure a custom toolbar button using the following configurations in the `tinymce.init`:
@@ -126,10 +124,10 @@ In TinyMCE 5.0, some themes have been removed and are now combined in a new sing
 
 | **Removed Theme** | **Replaced by** |
 | ----------------- | --------------  |
-| [Modern](https://www.tiny.cloud/docs/themes/modern/) | Silver |
-| [Modern inline](https://www.tiny.cloud/docs/general-configuration-guide/use-tinymce-inline/) | Silver Inline |
-| [Inlite(Distraction-free Editor)](https://www.tiny.cloud/docs/themes/inlite/) | Silver (distraction free configuration) |
-| [Mobile](https://www.tiny.cloud/docs/themes/mobile/) | Silver (responsive to small screen touch devices)  |
+| [Modern](https://www.tiny.cloud/docs-4x/themes/modern/) | Silver |
+| [Modern inline](https://www.tiny.cloud/docs-4x/general-configuration-guide/use-tinymce-inline/) | Silver Inline |
+| [Inlite(Distraction-free Editor)](https://www.tiny.cloud/docs-4x/themes/inlite/) | Silver (distraction free configuration) |
+| [Mobile](https://www.tiny.cloud/docs-4x/themes/mobile/) | Silver (responsive to small screen touch devices)  |
 
 ### Removed themes
 
@@ -180,7 +178,7 @@ The methods for registering components have moved to a different part of the edi
 | -------------- | -------------- | ------------- |
 | editor.addButton(identifier, configuration) | editor.ui.registry.addButton(identifier, configuration) | [Toolbar Buttons]({{site.baseurl}}/ui-components/typesoftoolbarbuttons/) |
 | editor.addContextToolbar: (name, spec) | editor.ui.registry.addContextToolbar | [Context toolbar]({{site.baseurl}}/ui-components/contexttoolbar/) |
-| editor.addMenuItem: (name, spec) | editor.ui.registry.addMenuItem | [Menu Item]({{site.baseurl}}/migration-from-4x/#custommenuitems) |
+| editor.addMenuItem: (name, spec) | editor.ui.registry.addMenuItem | [Menu item]({{site.baseurl}}/ui-components/menuitems/#basicmenuitems) |
 | editor.addSidebar: (name, spec) | editor.ui.registry.addSidebar: (name, spec) | [Sidebar]({{site.baseurl}}/ui-components/customsidebar/)|
 
 #### New methods
@@ -189,14 +187,14 @@ The following new methods have been added for creating and using new components:
 
 | **New method** | **Description** |
 | -------------- | --------------- |
-| editor.ui.registry.addAutocompleter: (name, spec) | Autocompleter |
+| editor.ui.registry.addAutocompleter: (name, spec) | [Autocompleter]({{site.baseurl}}/ui-components/autocompleter/) |
 | editor.ui.registry.addContextForm: (name, spec) | [Context form]({{site.baseurl}}/ui-components/contextform/) |
 | editor.ui.registry.addContextMenu: (name, spec) | [Context menu]({{site.baseurl}}/ui-components/contextmenu/) |
 | editor.ui.registry.addMenuButton: (name, spec) | [Menu Button]({{site.baseurl}}/ui-components/typesoftoolbarbuttons/#menubutton) |
-| editor.ui.registry.addNestedMenuItem: (name, spec) | [Nested Menu Item]({{site.baseurl}}/migration-from-4x/#custommenuitems) |
+| editor.ui.registry.addNestedMenuItem: (name, spec) | [Nested menu item]({{site.baseurl}}/ui-components/menuitems/#nestedmenuitems) |
 | editor.ui.registry.addSplitButton: (name, spec) | [Split Button]({{site.baseurl}}/ui-components/typesoftoolbarbuttons/#splitbutton) |
 | editor.ui.registry.addToggleButton: (name, spec) | [Toggle Button]({{site.baseurl}}/ui-components/typesoftoolbarbuttons/#togglebutton) |
-| editor.ui.registry.addToggleMenuItem: (name, spec) | [Toggle menu item]({{site.baseurl}}/migration-from-4x/#custommenuitems) |
+| editor.ui.registry.addToggleMenuItem: (name, spec) | [Toggle menu item]({{site.baseurl}}/ui-components/menuitems/#togglemenuitems) |
 | editor.ui.registry.addIcon: (name, svgData) | Registers an SVG as an icon |
 | editor.ui.registry.getAll: () | Returns an array of everything in the UI registry |
 
@@ -369,7 +367,8 @@ editor.ui.registry.addMenuItem('example', {
  onAction: () => editor.insertContent('Hello world!!');
 });
 ```
-<!-- Docs are coming soon! -->
+
+For more information on how these methods have changed, see [docs]({{site.baseurl}}/ui-components/menuitems/).
 
 ### Custom dialogs
 

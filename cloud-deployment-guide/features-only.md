@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Cloud Deployment of Plugins Only
+title: Cloud deployment of plugins Only
 description_short: Learn how to setup TinyMCE Plugins via the Cloud.
 description: Connect to Tiny Cloud within a hybrid deployment in less than 5 minutes.
 keywords: tinymce cloud script textarea apiKey hybrid
@@ -28,10 +28,10 @@ Extend the [TinyMCE configuration]({{ site.baseurl }}/configure/) to include any
 * [Page Embed]({{ site.baseurl }}/plugins/pageembed/)
 * [Permanent Pen]({{ site.baseurl }}/plugins/permanentpen/)
 * [Format Painter]({{ site.baseurl }}/plugins/formatpainter/)
-* [Powerpaste]({{ site.baseurl }}/plugins/powerpaste/)
-* [Spell Checker]({{ site.baseurl }}/plugins/tinymcespellchecker/)
+* [PowerPaste]({{ site.baseurl }}/plugins/powerpaste/)
+* [Spell Checker Pro]({{ site.baseurl }}/plugins/tinymcespellchecker/)
 
-> Note: `spellchecker_rpc_url` is **not** required when enabling this plugin via [TinyMCE Cloud]({{ site.baseurl }}/cloud-deployment-guide/)
+> Note: `spellchecker_rpc_url` is **not** required when enabling this plugin via [TinyMCE Cloud]({{ site.baseurl }}/cloud-deployment-guide/).
 
 * [Image Tools (with configured image proxy)]({{ site.baseurl }}/plugins/imagetools/)
 
@@ -50,7 +50,7 @@ The following is a complete example:
 The example below has the following:
 
 * The account `API key` has the value *TEST_API_KEY*.
-* The account has the [Spell Checker]({{ site.baseurl }}/plugins/tinymcespellchecker/) plugin enabled.
+* The account has the [Spell Checker Pro]({{ site.baseurl }}/plugins/tinymcespellchecker/) plugin enabled.
 
 ```js
 <html>

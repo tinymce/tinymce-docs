@@ -6,6 +6,8 @@ description_short:
 description: Configure the editor's appearance, including menu and toolbar controls.
 ---
 
+{% include configuration/block-formats.md %}
+
 {% include configuration/branding.md %}
 
 {% include configuration/contextmenu.md %}
@@ -18,7 +20,15 @@ description: Configure the editor's appearance, including menu and toolbar contr
 
 {% include configuration/event-root.md %}
 
+{% include configuration/fixed-toolbar-container.md %}
+
+{% include configuration/font-formats.md %}
+
+{% include configuration/fontsize-formats.md %}
+
 {% include configuration/height.md %}
+
+{% include configuration/icons.md %}
 
 {% include configuration/inline.md %}
 
@@ -52,6 +62,12 @@ description: Configure the editor's appearance, including menu and toolbar contr
 
 {% include configuration/statusbar.md %}
 
+{% include configuration/style-formats.md %}
+
+{% include configuration/style-formats-autohide.md %}
+
+{% include configuration/style-formats-merge.md %}
+
 {% include configuration/theme-url.md %}
 
 {% include configuration/theme.md %}
@@ -59,5 +75,7 @@ description: Configure the editor's appearance, including menu and toolbar contr
 {% include configuration/toolbar.md %}
 
 {% include configuration/toolbar-n.md %}
+
+{% include configuration/toolbar-drawer.md %}
 
 {% include configuration/width.md %}

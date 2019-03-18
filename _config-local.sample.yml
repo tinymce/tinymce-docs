@@ -1,3 +1,5 @@
-shared_baseurl: "https://www.tinymce.com"
+shared_baseurl: "https://www.tiny.cloud"
 plugins:
+  - jekyll-last-modified-at
   - jekyll-redirect-from
+  - jekyll-sitemap

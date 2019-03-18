@@ -67,7 +67,7 @@ tinymce.init({
 });
 ```
 
-Impressive! We now have a button on the toolbar users can click to get into source code mode, but we lost our default toolbar controls. We explained why this happens back in the [Basic Setup](../basic-setup/), so if this behavior surprises you, please re-read that section.
+Impressive! We now have a button on the toolbar users can click to get into source code mode, but we lost our default toolbar controls. We explained why this happens back in the [Basic setup](../basic-setup/), so if this behavior surprises you, please re-read that section.
 
 Let's quickly take our minimal design one step further by deleting the menubar entirely.
 
@@ -134,15 +134,15 @@ Customizing TinyMCE with the default plugins is that easy. There are 40 default 
 | Position | Plugin Name   | Plugin Value |
 |----------|---------------|--------------|
 | **1**    | Image         | [image]({{ site.baseurl }}/plugins/image/) |
-| **2**    | Image Tools   | [imagetools]({{ site.baseurl }}/plugins/imagetools/) |
-| **3**    | Advanced List | [advlist]({{ site.baseurl }}/plugins/advlist/) |
-| **4**    | Code          | [code]({{ site.baseurl }}/plugins/code/) |
-| **5**    | Media         | [media]({{ site.baseurl }}/plugins/media/) |
-| **6**    | Link          | [link]({{ site.baseurl }}/plugins/link) |
-| **7**    | Color Picker  | [colorpicker]({{ site.baseurl }}/plugins/colorpicker/) |
-| **8**    | Paste         | [paste]({{ site.baseurl }}/plugins/paste/) |
-| **9**    | Table         | [table]({{ site.baseurl }}/plugins/table/) |
-| **10**   | Text Color    | [textcolor]({{ site.baseurl }}/plugins/textcolor) |
+| **2**    | Paste         | [paste]({{ site.baseurl }}/plugins/paste/) |
+| **3**    | Code          | [code]({{ site.baseurl }}/plugins/code/) |
+| **4**    | Image Tools   | [imagetools]({{ site.baseurl }}/plugins/imagetools/) |
+| **5**    | Link          | [link]({{ site.baseurl }}/plugins/link/) |
+| **6**    | Table         | [table]({{ site.baseurl }}/plugins/table/) |
+| **7**    | Advanced Code | [advcode]({{ site.baseurl }}/plugins/advcode/) |
+| **8**    | Media         | [media]({{ site.baseurl }}/plugins/media/) |
+| **9**    | PowerPaste    | [powerpaste]({{ site.baseurl }}/plugins/powerpaste/) |
+| **10**   | Advanced List | [advlist]({{ site.baseurl }}/plugins/advlist/) |
 
 {% assign_page next_page = "/general-configuration-guide/customize-ui/index.html" %}
 {% include next-step.html next=next_page %}

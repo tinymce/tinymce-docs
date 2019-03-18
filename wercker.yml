@@ -28,14 +28,24 @@ deploy:
         bucket-url: $S3_BUCKET/docs/
         source-dir: $S3_SOURCE
         opts: --delete-removed
-    - script:
-        name: s3 cleanup
-        code: _scripts/s3-cleanup.sh
 
   after-steps:
     - slack-notifier:
         url: $SLACK_WEBHOOK_URL
-        
+
+check_links:
+  box: jointiny/tiny-cloud-docs-linkchecker
+  steps:
+    - script:
+        name: check links
+        code: _scripts/check-links-staging.sh
+    - s3sync:
+        key-id: $AWS_ACCESS_KEY_ID
+        key-secret: $AWS_SECRET_ACCESS_KEY
+        bucket-url: $S3_BUCKET/docs/
+        source-dir: _report
+        delete-removed: false
+
 invalidate_cache:
   steps:
     - script:

@@ -20,9 +20,44 @@ Configuration is relatively easy, so let's get started.
 
 New to Tiny 5, the mobile experience is built in and does not require additional configuration.
 
-Tinymce will detect the platform and will show an optimal Ui experience given a device type and screensize.
+Tinymce will detect the platform and will show an optimal UI experience given a device type and screensize.
 
-Below are the toolbar items currently supported, with any plugins/configuration required. Note, that the `list` functions require the [lists]({{ site.baseurl }}/plugins/lists) plugin and [styleselect](#) requires configuring [style_formats]({{ site.baseurl}}/configure/content-formatting/#style_formats).
+## Configuring the Plugins
+
+The plugins supported by mobile are currently limited to the [autosave]({{site.baseurl}}/plugins/autosave/), [autolink]({{site.baseurl}}/plugins/autolink/), and [lists]({{site.baseurl}}/plugins/lists/) plugins. This is by design. TinyMCE Mobile is in the early release cycle and does not include all the plugins available in the desktop version. The developer community is encouraged to provide suggestions about which plugins should be mobile optimized. Please complete this [survey](https://docs.google.com/forms/d/e/1FAIpQLSdWamU5HsZtv-SPqGRyu6Ql1zLqlrCQFP1vSrzx1oHikMFvlw/viewform) to provide feedback.
+
+Specify which of the plugins should be added by adding a plugin entry to the mobile section as shown in the following example:
+
+```js
+tinymce.init({
+  selector: 'textarea',
+  theme: 'silver',
+  mobile: {
+    theme: 'mobile',
+    plugins: [ 'autosave', 'lists', 'autolink' ]
+  }
+});
+```
+
+## Configuring the Toolbar
+
+TinyMCE mobile supports a small subset of the toolbar items supported by the main mode.
+
+```js
+tinymce.init({
+  selector: 'textarea',
+  theme: 'silver',
+  mobile: {
+    theme: 'mobile',
+    plugins: [ 'autosave', 'lists', 'autolink' ],
+    toolbar: [ 'undo', 'bold', 'italic', 'styleselect' ]
+  }
+});
+```
+
+Below are the toolbar items currently supported, with any plugins/configuration required.
+
+> Note: The `list` functions require the [lists]({{site.baseurl}}/plugins/lists/) plugin and `styleselect` requires configuring [style_formats]({{site.baseurl}}/configure/editor-appearance/#style_formats).
 
 | Name | Function | Plugins Required | Configuration |
 |--------|----|-----|-------------|
@@ -38,7 +73,7 @@ Below are the toolbar items currently supported, with any plugins/configuration 
 | numlist | Insert an ordered list | [lists]({{ site.baseurl }}/plugins/lists) |
 | fontsizeselect | Change the font size
 | forecolor | Apply a foreground color
-| styleselect | Apply a custom style | | [style_formats]({{ site.baseurl }}/configure/content-formatting/#style_formats) |
+| styleselect | Apply a custom style | | [style_formats]({{ site.baseurl }}/configure/editor-appearance/#style_formats) |
 | removeformat | Removes any inline formatting |
 
 ## Browser compatibility
@@ -48,3 +83,4 @@ During our initial QA, we tested mobile on the following platforms. If you use o
 {% include mobile_platform_compatibility.md %}
 
 > To shape the future of mobile editing, [complete our survey](https://docs.google.com/forms/d/e/1FAIpQLSdWamU5HsZtv-SPqGRyu6Ql1zLqlrCQFP1vSrzx1oHikMFvlw/viewform) to have your say.
+

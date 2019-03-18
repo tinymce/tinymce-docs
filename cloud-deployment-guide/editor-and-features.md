@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Cloud Deployment of Editor & Plugins
+title: Cloud deployment of editor & plugins
 description_short: Learn how to set up the TinyMCE editor via the Cloud or migrate from a self-hosted environment.
 description: Run Tiny Cloud in less than 5 minutes.
 keywords: tinymce cloud script textarea apiKey
@@ -26,7 +26,7 @@ The following example adds a script tag into the application that inserts the co
 
 ### Step 2: Load, customize and interact with TinyMCE
 
-There are more than 40 open source plugins that enhance the editing experience in addition to the advanced content create solutions on Tiny Cloud. A range of [simple examples]({{ site.baseurl }}/demo/basic-example/) are available. Refer to [Quick start]({{ site.baseurl }}/quick-start) for additional walkthrough documentation.
+There are more than 40 open source plugins that enhance the editing experience in addition to the advanced content create solutions on Tiny Cloud. A range of [simple examples]({{ site.baseurl }}/demo/basic-example/) are available. Refer to the [Quick start]({{ site.baseurl }}/quick-start) section for more information.
 
 ### Step 3: Specifying purchased TinyMCE plugins and toolbar/menu items
 
@@ -39,9 +39,9 @@ Extend the [TinyMCE configuration]({{ site.baseurl }}/configure/) to include any
 * [Permanent Pen]({{ site.baseurl }}/plugins/permanentpen/)
 * [Format Painter]({{ site.baseurl }}/plugins/formatpainter/)
 * [PowerPaste]({{ site.baseurl }}/plugins/powerpaste/)
-* [Spell Checker]({{ site.baseurl }}/plugins/tinymcespellchecker/)
+* [Spell Checker Pro]({{ site.baseurl }}/plugins/tinymcespellchecker/)
 
-> Note: `spellchecker_rpc_url` is **not** required when enabling this plugin via [Tiny Cloud]({{ site.baseurl }}/cloud-deployment-guide/)
+> Note: `spellchecker_rpc_url` is **not** required when enabling this plugin via [Tiny Cloud]({{ site.baseurl }}/cloud-deployment-guide/).
 
 * [Image Tools (with configured image proxy)]({{ site.baseurl }}/plugins/imagetools/)
 
@@ -100,9 +100,9 @@ Extend the [TinyMCE configuration]({{ site.baseurl }}/configure/) to include any
 * [Permanent Pen]({{ site.baseurl }}/plugins/permanentpen/)
 * [Format Painter]({{ site.baseurl }}/plugins/formatpainter/)
 * [Powerpaste]({{ site.baseurl }}/plugins/powerpaste/)
-* [Spell Checker]({{ site.baseurl }}/plugins/tinymcespellchecker/)
+* [Spell Checker Pro]({{ site.baseurl }}/plugins/tinymcespellchecker/)
 
-> Note: `spellchecker_rpc_url` is **not** required when enabling this plugin via [Tiny Cloud]({{ site.baseurl }}/cloud-deployment-guide/)
+> Note: `spellchecker_rpc_url` is **not** required when enabling this plugin via [Tiny Cloud]({{ site.baseurl }}/cloud-deployment-guide/).
 
 * [Image tools (with configured image proxy)]({{ site.baseurl }}/plugins/imagetools/)
 

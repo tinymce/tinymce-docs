@@ -28,6 +28,7 @@
 
 <div class="main {{ page.type }} {{ page.class }}">
     <aside class="side-nav">
+        <div id="side-nav-controller">Expand Menu</div>
         {% assign nav = site.data.nav | array_concat:site.data.nav_api %}
         {% include nav.html links=nav preceding_address="/" %}
     </aside>

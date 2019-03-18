@@ -40,4 +40,4 @@ Start with this [dedicated product page](https://apps.tiny.cloud/products/checkl
 
 For more information on **Checklist** refer to the full [documentation]({{site.baseurl}}/plugins/checklist/).
 
-There is also a demo provided to explore the Case Change capabilities[ here](https://www.tiny.cloud/docs/demo/checklist/).
+There is also a demo provided to explore the **Checklist** capabilities [here]({{site.baseurl}}/demo/checklist/).

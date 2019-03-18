@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Release notes for TinyMCE 5.0.1
-title_nav: Release notes for TinyMCE 5.0.1
+title: TinyMCE 5.0.1
+title_nav: TinyMCE 5.0.1
 keywords: releasenotes newfeatures deleted technologypreview bugfixes knownissues
 ---
 

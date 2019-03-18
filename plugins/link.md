@@ -132,27 +132,6 @@ tinymce.init({
 });
 ```
 
-**Example of an array with links and sub-menu**
-
-Since TinyMCE 4.0.27 it is now possible to have sub-menus within the link list. A TinyMCE Fiddle [example of nested sub-menus](http://fiddle.tinymce.com/wleaab) is available.
-
-```js
-tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "link",
-  menubar: "insert",
-  toolbar: "link",
-  link_list: [
-    {title: 'TinyMCE', value: 'https://www.tiny.cloud'},
-    {title: 'Moxiecode', value: 'https://about.tiny.cloud'},
-    {title: 'TinyMCE resources', menu: [
-    {title: 'TinyMCE documentation', value: 'https://www.tiny.cloud/docs/'},
-    {title: 'TinyMCE forum', value: 'https://community.tiny.cloud/'}
-    ]}
-  ]
-});
-```
-
 **Example of a JSON URL with links**
 
 You can also configure a URL with JSON data. The format of that list is the same as above:

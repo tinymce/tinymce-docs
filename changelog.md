@@ -8,6 +8,23 @@ class: changelog
 
 {% capture changelog %}
 
+## Version 5.0.3 March 19, 2019
+* Changed empty nested-menu items within the style formats menu to be disabled or hidden if the value of `style_formats_autohide` is `true`.
+* Changed the entire phrase 'Powered by Tiny' in the status bar to be a link instead of just the word 'Tiny'.
+* Changed `formatselect`, `styleselect` and `align` menus to use the `mceToggleFormat` command internally.
+* Fixed toolbar keyboard navigation to work as expected when `toolbar_drawer` is configured.
+* Fixed text direction buttons to display the correct pressed state in selections that have no explicit `dir` property.
+* Fixed the mobile editor to clean up properly when removed.
+* Fixed quickbar toolbars to add an empty box to the screen when it is set to `false`.
+* Fixed an issue where pressing the **Delete/Backspace** key at the edge of tables was creating incorrect selections.
+* Fixed an issue where dialog collection items (emoticon and special character dialogs) couldn't be selected with touch devices.
+* Fixed a type error introduced in TinyMCE version 5.0.2 when calling `editor.getContent()` with nested bookmarks.
+* Fixed an issue that prevented default icons from being overridden.
+* Fixed an issue where **Home/End** keys wouldn't move the caret correctly before or after `contenteditable=false` inline elements.
+* Fixed styles to be preserved in IE 11 when editing via the `fullpage` plugin.
+* Fixed the `link` plugin context toolbar missing the open link button.
+* Fixed inconsistent dialog component spacing.
+
 ## Version 5.0.2 March 5, 2019
 * Added presentation and document presets to `htmlpanel` dialog component.
 * Added missing `fixed_toolbar_container` setting that has been reimplemented in the Silver theme.

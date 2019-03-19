@@ -12,11 +12,11 @@ The Comments 2.0 plugin provides the ability to start or join a conversation by 
 
 Comments is a premium plugin from Tiny. Please see the [Premium features]({{site.baseurl}}/enterprise/tiny-comments/) section for all the buying options.
 
-Once you have obtained the Comments 2.0 plugin, refer to the following instructions for using it.
+After obtaining the Comments 2.0 plugin, refer to the following instructions for using it.
 
-## Add Comments plugin
+## Add the Comments 2.0 plugin
 
-Following is an example to add Comments 2.0 plugin to the TinyMCE editor:
+Following is an example to add the Comments 2.0 plugin to the TinyMCE editor:
 
 ```js
 tinymce.init({
@@ -50,7 +50,7 @@ tinymce.init({
 
 ### Configuring the Comments 2.0 toolbar button
 
-The **Add Comment** toolbar button is available by default if the toolbar menu is not customized.
+The **Add comment** toolbar button is available by default if the toolbar menu is not customized.
 
 In case of a customized toolbar menu, use the following script to configure the Comments 2.0 toolbar button:
 
@@ -62,7 +62,7 @@ tinymce.init({
 })
 ```
 
-Optional values: addcomment, showcomments
+**Optional values:** `addcomment`, `showcomments`
 
 **Result**: The **Comments**  ![**Comments**]({{site.baseurl}}/images/comment-disabled.png) toolbar button appears in the toolbar menu. The function of this button is to add comments to selected text.
 
@@ -102,10 +102,9 @@ tinymce.init({
 **Result**: The commented text will be highlighted yellow.
 ![**Highlighted text**]({{site.baseurl}}/images/highlight.png)
 
-> Note: The values provided in the above example are the default values provided in Comments 2.0. To configure these options differently, see the [Create a skin]({{site.baseurl}}/advanced/creating-a-skin/) section.
+> Note: The values provided in the above example are the default values provided in Comments 2.0. To configure these options differently, refer to the [Create a skin]({{site.baseurl}}/advanced/creating-a-skin/) section.
 
 For more information on TinyMCE formats, refer to the [formats]({{site.baseurl}}/configure/content-formatting/#formats) section.
-
 
 ### Using Comments
 
@@ -176,9 +175,9 @@ Check out the [Comments demo]({{site.baseurl}}/demo/comments-2) to try this new 
 
 Users have to be cautious when deciding the order in which the plugins are added in the plugins list.
 
-Comments can cause an issue if the Full Page plugin `fullpage` appears before Comments 2.0 plugin `tinycomments` in the plugin list, and "tinycomments" is configured to use `embedded mode`.
+Comments can cause an issue if the [Full Page]({{site.baseurl}}/plugins/fullpage/) plugin `fullpage` appears before Comments 2.0 plugin `tinycomments` in the plugin list, and "tinycomments" is configured to use `embedded mode`.
 
-The consequence of this situation is that when a saved document is re-opened, the comment data is lost (but the highlights are still there). This is because the comment data is in the wrong place. The order that the plugins appear affects the order that the `getContent` hooks are processed in. This creates an issue with `tinycomments` working as expected since the `fullpage` plugin adds outer `<html>` elements before `tinycomments` adds its comment data. 
+The order that the plugins appear affects the order that the `getContent` hooks are processed in. This creates an issue with `tinycomments` working as expected since the `fullpage` plugin adds outer `<html>` elements before `tinycomments` adds its comment data. This leads to the comment data being in the wrong place. The consequence of this situation is that when a saved document is re-opened, the comment data is lost (but the highlights are still there). 
 
 For a workaround, please ensure that `tinycomments` is listed before `fullpage` in the plugins list. This should result in `tinycomments` working properly.
 

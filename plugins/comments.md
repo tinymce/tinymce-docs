@@ -89,22 +89,13 @@ Currently, there are three menu items available:
 
 ### Configuring the commented text properties
 
-The editor needs to be configured to highlight the commented text. The following configuration is an example of displaying the text that the comment has been added to in a desired style:
+The highlight styles are now a part of the overall content skin and are changed through customizing the skin.
 
-```js
-tinymce.init({
-...
- content_style: '.mce-annotation { background: #fff0b7; } .tc-active-annotation {background: #ffe168; color: black; }',
- ...
-})
-```
+TinyMCE open source project [oxide](https://github.com/tinymce/oxide/blob/master/src/less/theme/content/comments/comments.less) (default skin), defines the variables used for changing the annotation colours. 
 
-**Result**: The commented text will be highlighted yellow.
-![**Highlighted text**]({{site.baseurl}}/images/highlight.png)
+Refer to the [documentation]({{site.baseurl}}/advanced/creating-a-skin/#creatingaskin) for building a skin using this repo. 
 
-> Note: The values provided in the above example are the default values provided in Comments 2.0. To configure these options differently, refer to the [Create a skin]({{site.baseurl}}/advanced/creating-a-skin/) section.
-
-For more information on TinyMCE formats, refer to the [formats]({{site.baseurl}}/configure/content-formatting/#formats) section.
+For more information on configuring TinyMCE formats, refer to the [formats]({{site.baseurl}}/configure/content-formatting/#formats) section.
 
 ### Using Comments
 

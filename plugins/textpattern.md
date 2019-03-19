@@ -31,6 +31,8 @@ This option allows configuring the text patterns that get matched by the `textpa
 
 There are three types of patterns: `inline`, `block`, and `replacement` patterns. Inline patterns have a `start` and an `end` text pattern whereas the block and replacement patterns only have a `start`. A user can specify the formats to be applied to the selection, commands to be executed, or text to be replaced.
 
+When using list commands make sure that the [lists plugin]({{ site.baseurl }}/plugins/lists) is registered for normalized behavior across browsers.
+
 > Note: Formats and commands must be already registered with the editor. See the [formats]({{ site.baseurl }}/configure/content-formatting/#formats) and [commands]({{ site.baseurl }}/api/tinymce/tinymce.editorcommands/) documentation for more information.
 
 **Default Value:**
@@ -97,7 +99,7 @@ The block patterns do not have an `end` property. This allows for patterns to be
 ```js
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
-  plugin: 'textpattern',
+  plugin: 'textpattern lists',
   textpattern_patterns: [
     {start: '#', format: 'h1'},
     {start: '##', format: 'h2'},

@@ -11,7 +11,7 @@ class: changelog
 ## Version 5.0.3 March 19, 2019
 * Changed empty nested-menu items within the style formats menu to be disabled or hidden if the value of `style_formats_autohide` is `true`.
 * Changed the entire phrase 'Powered by Tiny' in the status bar to be a link instead of just the word 'Tiny'.
-* Changed `formatselect`, `styleselect` and `align` menus to use the `mceToggleFormat` command internally.
+* Changed `formatselect`, `styleselect`, and `align` menus to use the `mceToggleFormat` command internally.
 * Fixed toolbar keyboard navigation to work as expected when `toolbar_drawer` is configured.
 * Fixed text direction buttons to display the correct pressed state in selections that have no explicit `dir` property.
 * Fixed the mobile editor to clean up properly when removed.

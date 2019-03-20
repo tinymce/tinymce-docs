@@ -18,7 +18,7 @@ Once you have obtained the Comments 2.0 plugin, refer to the following instructi
 
 There are two modes available in Comments 2.0 that provide the ability to save comments. These modes are configured in the Comments 2.0 settings.
 
-* **Callback Mode** - This is the default mode in Comments. This mode is used to configure storage and save comments on the user’s server. This option provides a choice to configure the storage settings to either persist comments immediately or save them at the same time as the content. Additional callbacks are required to be configured to use Comments in the callback mode. Refer to the [configuring callbacks for comments]({{site.baseurl}}/advanced/configuring-comments-callbacks/) section for more information.
+* **Callback Mode** - This is the default mode in Comments 2.0. This mode is used to configure storage and save comments on the user’s server. This option provides a choice to configure the storage settings to either persist comments immediately or save them at the same time as the content. Additional callbacks are required to be configured to use Comments in the callback mode. Refer to the [configuring callbacks for comments]({{site.baseurl}}/advanced/configuring-comments-callbacks/) section for more information.
 
 * **Embedded Mode** - This mode allows the user to store the comments within the content. No additional callbacks are required to be configured to use this mode.
 
@@ -42,7 +42,9 @@ menu: {
 })
 ```
 
-### Configuring the Comments 2.0 toolbar button
+### Configuring the Comments 2.0 addcomment toolbar button
+
+The `addcomment` toolbar button provides the ability to add comments.
 
 Use the following script to configure the Comments 2.0 toolbar button:
 
@@ -54,15 +56,23 @@ tinymce.init({
 })
 ```
 
-Optional values: addcomment, showcomments
+**Result**: The **Comments**  ![**Comments**]({{site.baseurl}}/images/comment-disabled.png) toolbar button appears in the toolbar menu. The function of this button is to add comments to the selected text.
 
-**Result**: The **Comments**  ![**Comments**]({{site.baseurl}}/images/comment-disabled.png) toolbar button appears in the toolbar menu. The function of this button is to add comments to selected text.
+### Configuring the Comments 2.0 showcomment toolbar button
 
-> Note: Currently, there are two toolbar buttons available:
+The `showcomments` toolbar button provides the ability to display comments field for the selected text. It is a toggle button and is used to hide the comments sidebar as well.
 
->* `addcomment` - Provides the ability to add comments.
->* `showcomments`- Provides the ability to display comments field for the selected text. It is a toggle button and is used to hide the comments sidebar as well.
+Use the following script to configure the Comments 2.0 toolbar button:
 
+```js
+tinymce.init({
+ selector: "#textarea",
+ toolbar: 'bold italic underline insertfile | showcomment',
+ ...
+})
+```
+
+**Result**: The **Comments**  ![**Comments**]({{site.baseurl}}/images/comment-disabled.png) toolbar button appears in the toolbar menu. The function of this button is to show comments to for the selected text.
 
 ### Configuring the Comments 2.0 menu item
 
@@ -80,18 +90,14 @@ Currently, there are three menu items available:
 
 ### Configuring the commented text properties
 
-The editor needs to be configured to highlight the commented text. The following configuration is an example of displaying the text that the comment has been added to in a desired style:
+The editor needs to be configured to highlight the commented text. Replace the value of `background-color` in the following configuration example to change the highlight color of the text that the comment has been added to:
 
 ```js
 tinymce.init({
 ...
  content_style: '.tox-comments-visible span.tox-comment
- { background-color: magenta; }
-
- .tox-comments-visible span.tox-comment--active
- { background-color: cyan; }
-
- '
+ { background-color: magenta; }.tox-comments-visible span.tox-comment--active
+ { background-color: cyan; }'
  ...
 })
 ```
@@ -100,7 +106,6 @@ tinymce.init({
 ![**Highlighted text**]({{site.baseurl}}/images/highlight.png)
 
 For more information on TinyMCE formats, refer to the [formats]({{site.baseurl}}/configure/content-formatting/#formats) section.
-
 
 ### Using Comments
 

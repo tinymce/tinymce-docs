@@ -30,10 +30,10 @@ To configure Comments 2.0 to use the embedded mode use the following script:
 tinymce.init({
   selector: "#textarea",
   menubar: 'file edit view insert format tools tc',
-menu: {
- tc: {
-  title: 'TinyComments',
-  items: 'addcomment'
+  menu: {
+   tc: {
+    title: 'TinyComments',
+    items: 'addcomment'
    }
  },
  tinycomments_author: 'Embedded Journalist',

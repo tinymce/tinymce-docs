@@ -16,7 +16,7 @@ TinyMCE 5.0.2 release adds improvements to the TinyMCE editor to improve the ove
 ### Toolbar Drawers
 
 TinyMCE 5.0.2 introduces the ability to display overflowing toolbar buttons in an extra toolbar called a "toolbar drawer". The toolbar drawer is initially hidden, and can be shown by pressing the `toolbar_drawer` icon ![**Drawer**]({{site.baseurl}}/images/drawer.png). The button only appears if the toolbar buttons do not fit horizontally. This feature is configured using the `toolbar_drawer` configuration setting.
-Refer to the [toolbar_drawer]({{site.baseurl}}/configure/editor-appearance/toolbar_drawer/) documentation for more information.
+Refer to the [toolbar_drawer]({{site.baseurl}}/configure/editor-appearance/#toolbar_drawer) documentation for more information.
 
 ### Checklist
 

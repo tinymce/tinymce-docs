@@ -62,7 +62,7 @@ tinymce.init({
 
 **Result**: The **Comments**  ![**Comments**]({{site.baseurl}}/images/comment-disabled.png) toolbar button appears in the toolbar menu. The function of this button is to add comments to the selected text.
 
-### Configuring the Comments 2.0 showcomment toolbar button
+### Configuring the Comments 2.0 showcomments toolbar button
 
 The `showcomments` toolbar button provides the ability to display comments field for the selected text. It is a toggle button and is used to hide the comments sidebar as well.
 
@@ -70,7 +70,7 @@ Use the following script to configure the Comments 2.0 toolbar button:
 ```js
 tinymce.init({
  selector: "#textarea",
- toolbar: 'bold italic underline insertfile | showcomment',
+ toolbar: 'bold italic underline insertfile | showcomments',
  ...
 })
 ```

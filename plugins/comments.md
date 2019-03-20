@@ -52,6 +52,12 @@ tinymce.init({
 
 The **Add comment** toolbar button is available by default if the toolbar menu is not customized.
 
+> Note: Currently, there are two types of toolbar buttons available:
+
+* `addcomment` - Provides the ability to add comments.
+
+* `showcomments`- Provides the ability to display comments field for the selected text. It is a toggle button and is used to hide the comments sidebar as well.
+
 In case of a customized toolbar menu, use the following script to configure the Comments 2.0 toolbar button:
 
 ```js
@@ -65,13 +71,6 @@ tinymce.init({
 **Optional values:** `addcomment`, `showcomments`
 
 **Result**: The **Comments**  ![**Comments**]({{site.baseurl}}/images/comment-disabled.png) toolbar button appears in the toolbar menu. The function of this button is to add comments to selected text.
-
-> Note: Currently, there are two toolbar buttons available:
-
-* `addcomment` - Provides the ability to add comments.
-
-* `showcomments`- Provides the ability to display comments field for the selected text. It is a toggle button and is used to hide the comments sidebar as well.
-
 
 ### Configuring the Comments 2.0 menu item
 

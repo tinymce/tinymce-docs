@@ -16,7 +16,7 @@ After obtaining the Comments 2.0 plugin, refer to the following instructions for
 
 ## Add the Comments 2.0 plugin
 
-Following is an example to add the Comments 2.0 plugin to the TinyMCE editor:
+To add the Comments 2.0 plugin to the TinyMCE editor, use the following script:
 
 ```js
 tinymce.init({
@@ -53,9 +53,7 @@ tinymce.init({
 The **Add comment** toolbar button is available by default if the toolbar menu is not customized.
 
 > Note: Currently, there are two types of toolbar buttons available:
-
 * `addcomment` - Provides the ability to add comments.
-
 * `showcomments`- Provides the ability to display comments field for the selected text. It is a toggle button and is used to hide the comments sidebar as well.
 
 In case of a customized toolbar menu, use the following script to configure the Comments 2.0 toolbar button:
@@ -74,7 +72,7 @@ tinymce.init({
 
 ### Configuring the Comments 2.0 menu item
 
-By default, when Comments 2.0 is added to the plugin list, the default menus will have entries for `addcomment` (Insert Menu), showcomments (View Menu), and deleteallconversations (File Menu).
+By default, when Comments 2.0 is added to the plugin list, the default menus will have entries for `addcomment` (Insert Menu), `showcomments` (View Menu), and `deleteallconversations` (File Menu).
 
 For more information on configuring menu items refer to the [toolbar]({{site.baseurl}}/configure/editor-appearance/#toolbar) and [menu]({{site.baseurl}}/configure/editor-appearance/#menu) sections.
 
@@ -103,7 +101,7 @@ For more information on configuring TinyMCE formats, refer to the [formats]({{si
 1. Select the text from the desired location in the editor body.
 1. From the navigation menu, choose **Insert**-> **Add Comment** or click on the **Comments** ![**Comments**]({{site.baseurl}}/images/comment-disabled.png) toolbar button to add the comment.
 1. The Comment dialog box appears in the sidebar of the editor instance.
-1. Type the comment in the box displaying _Say something…_ suggested text.
+1. Type the comment in the box displaying "_Say something…_" suggested text.
 1. Press **Clear** to delete or **Save** to store the input comment.
 
 **Result**: The selected text will be highlighted as per the configured options. The following screen with the option for editing, deleting, and replying to the comment, will appear.
@@ -114,7 +112,7 @@ Note: The above procedure can be followed for adding multiple comments to the do
 #### Editing a comment
 Follow this procedure to edit a comment.
 
-1. Click on the ![**3dots**]({{site.baseurl}}/images/3dots.png) icon above the comments box to expand the menu.
+1. Click on this ![**3dots**]({{site.baseurl}}/images/3dots.png) icon above the comments box to expand the menu.
 1. Select **Edit** from the menu items.
 1. The comment field becomes editable. Make the required changes.
 1. Click **Cancel** to discard or **Save** to store the changes.
@@ -122,7 +120,7 @@ Follow this procedure to edit a comment.
 #### Delete a comment
 Follow this procedure to delete a comment. This option is not available for the first comment in a conversation.
 
-1. Click on the ![**3dots**]({{site.baseurl}}/images/3dots.png) icon above the comments box to expand the menu.
+1. Click on this ![**3dots**]({{site.baseurl}}/images/3dots.png) icon above the comments box to expand the menu.
 1. Select **Delete** from the menu items.
 1. The following options appear in the comments sidebar:
 ![**delete comment**]({{site.baseurl}}/images/delete.png)
@@ -132,7 +130,7 @@ Follow this procedure to delete a comment. This option is not available for the 
 #### Delete conversation
 This option is only available for the first comment in a conversation. Once the comment is saved, follow this procedure to delete a conversation.
 
-1. Click on the ![**3dots**]({{site.baseurl}}/images/3dots.png) icon above the comments box to expand the menu.
+1. Click on this ![**3dots**]({{site.baseurl}}/images/3dots.png) icon above the comments box to expand the menu.
 1. Select **Delete conversation** from the menu items.
 1. The following decision dialog box will appear:
 ![**delete conversation**]({{site.baseurl}}/images/decision.png)
@@ -165,7 +163,7 @@ Check out the [Comments demo]({{site.baseurl}}/demo/comments-2) to try this new 
 
 Users have to be cautious when deciding the order in which the plugins are added in the plugins list.
 
-Comments can cause an issue if the [Full Page]({{site.baseurl}}/plugins/fullpage/) plugin `fullpage` appears before Comments 2.0 plugin `tinycomments` in the plugin list, and "tinycomments" is configured to use `embedded mode`.
+Comments can cause an issue if the [Full Page]({{site.baseurl}}/plugins/fullpage/) plugin `fullpage` appears before Comments 2.0 plugin `tinycomments` in the plugin list, and `tinycomments` is configured to use `embedded mode`.
 
 The order that the plugins appear affects the order that the `getContent` hooks are processed in. This creates an issue with `tinycomments` working as expected since the `fullpage` plugin adds outer `<html>` elements before `tinycomments` adds its comment data. This leads to the comment data being in the wrong place. The consequence of this situation is that when a saved document is re-opened, the comment data is lost (but the highlights are still there). 
 

@@ -3,7 +3,7 @@
 [![wercker status](https://app.wercker.com/status/4d4c743635332430f9d25acae1be5218/s/master "wercker status")](https://app.wercker.com/project/bykey/4d4c743635332430f9d25acae1be5218)
 
 This project serves as the documentation for TinyMCE, as you see on 
-[https://www.tiny.cloud/docs](httsp://www.tiny.cloud/docs). If you have any 
+[https://www.tiny.cloud/docs](https://www.tiny.cloud/docs). If you have any 
 modifications you wish to contribute, fork this project, make the changes 
 and submit a pull request. You will need to sign the contributors license 
 agreement, which will be emailed to you upon creating the pull request.
@@ -13,6 +13,8 @@ This project is built using [Jekyll](https://jekyllrb.com/).
 # Working on TinyMCE documentation
 
 ## Prerequisites
+
+Notes for Windows: Install [Ruby+Devkit 2.4.5-1 (x64)](https://rubyinstaller.org/downloads/) and no later, gem install bundler, bundle install then run "\_scripts/init.sh" and "\_scripts/serve.sh" as instructed below from the root folder. 
 
 You need the following installed on your computer:
 

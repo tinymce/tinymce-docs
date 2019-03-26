@@ -12,7 +12,7 @@ Users can easily configure TinyMCE in Swing through the TinyMCE Swing Integratio
 
 * [GitHub repository](https://github.com/tinymce/tinymce-swing-codesamples)
 
-* An additional set of documentation in `zip` files is shipped with the integration. These files contain a library of `java` docs and API reference guides which help in understanding and applying the concepts.
+* An additional set of documentation is shipped with the integration in `zip` files. These files contain a library of `java` docs and API reference guides which help in understanding and applying the concepts.
 
 #### A note about integrations
 

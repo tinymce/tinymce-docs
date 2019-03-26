@@ -13,7 +13,7 @@ This setting could take one of the following two forms:
 * A URL to a page that takes an HTTP JSON POST request and produces a JSON structure with a valid JWT. It uses a POST request to avoid caching by browsers and proxies.
 * A function that provides the same token through a callback. This allows you to make your own HTTP request in any format you like. The provider function is a function that has a success and failure callback where the success takes an object with a token property containing the JWT, and the failure callback takes a string to present as an error message if the token could not be produced.
 
-You can read more about how to create these tokens in the [JWT authentication]({{site.baseurl}}/tinydrive/jwt-authentication/) guide or try one of the started projects described in the [getting started]({{site.baseurl}}/tinydrive/getting-started/) guide.
+You can read more about how to create these tokens in the [JWT authentication guide]({{site.baseurl}}/tinydrive/jwt-authentication/) or try one of the started projects described in the [getting started guide]({{site.baseurl}}/tinydrive/getting-started/).
 
 **Type:** `String` or `Function`
 

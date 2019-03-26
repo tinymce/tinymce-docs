@@ -1,34 +1,10 @@
 ---
 layout: default
-title: Drive plugin
-title_nav: Drive
-description: Cloud-based file and image management for TinyMCE.
-keywords: tinydrive storage media tiny drive
+title: Configuration
+title_nav: Configuration
+description: Configuration
+keywords: configuration
 ---
-
-The Tiny Drive plugin adds the functionality to upload and manage files and images to the cloud. This plugin is only available in [Tiny Cloud](https://www.tiny.cloud/download/) and requires you to register for an API key.
-
-To enable this functionality, add `tinydrive` to the list of plugins in the `tinymce.init` call. You also need to authenticate the user using a [JSON Web Token]({{site.baseurl}}/configure/jwt-authentication) (JWT).
-
-Once you enable Drive it integrates as the default file picker for the Image, Link, and Media dialogs and as the default upload handler for local images being pasted or inserted into the document.
-
-
-## Live example
-
-{% include codepen.html id="drive" %}
-
-### Example
-
-```js
-tinymce.init({
-  selector: 'textarea',  // change this value according to your html
-  plugins: 'tinydrive'
-});
-```
-
-## Options
-
-These settings are necessary to make Drive work:
 
 ### `tinydrive_token_provider`
 
@@ -135,27 +111,3 @@ tinymce.init({
   insert_button_items: 'insertfile'
 });
 ```
-
-## Restrictions and Quotas
-
-Drive has restrictions on what files can be uploaded and how large these files can be:
-
-* The maximum file size is 100MB
-* Allowed image extensions: gif, jpeg, jpg, png, tif, tiff, bmp
-* Allowed document extensions: doc, xls, ppt, pps, docx, xlsx, pptx, pdf, rtf, txt, keynote, pages, numbers
-* Allowed audio extensions: wav, wave, mp3, ogg, ogv, oga, ogx, ogm, spx, opus
-* Allowed video extensions: mp4, m4v, ogv, webm, mov
-* Allowed archive extensions: zip
-* The Copy operation is limited to single files due to technical reasons.
-
-Your storage and bandwidth quota varies based upon the [Tiny Cloud Plan](https://www.tiny.cloud/pricing/) you are subscribed to.
-
-## Upload Files URL
-
-All files are uploaded to a central storage with a CDN endpoint that means that we are hosting your files and they are publicly available in read-only mode for anyone that has access to the URL of that file.
-The URL format for each file is `https://drive.tiny.cloud/1/{your-api-key}/{uuid}` and gets generated when a file is uploaded.
-If you move or rename a file, it will still have the same unique URL, so the restructuring of your files using Drive won't affect where they are being used. However, deleting a file will mark the URL as being unused, and the URL will not continue to work.
-
-## User specific root
-
-It's common that you want to be able to have user specific paths so that each user within your system gets it's own directory. This can be done by setting the `https://claims.tiny.cloud/drive/root` custom jwt claim to a path within your tiny drive account. This path will automatically be constructured when the user is accessing drive using a jwt key with that claim. The user only be able to see and manage files within that root.

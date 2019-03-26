@@ -229,7 +229,6 @@
   - url: "comments"
   - url: "contextmenu"
   - url: "directionality"
-  - url: "drive"
   - url: "emoticons"
     pages:
     - url: "#emoticons_append"
@@ -419,6 +418,7 @@
     pages:
     - url: "#textpattern_patterns"
   - url: "toc"
+  - url: "tinydrive"
     pages:
     - url: "#toc_depth"
     - url: "#toc_header"
@@ -523,6 +523,15 @@
   - url: "support"
   - url: "get-tinymce-bugs-fixed"
   - url: "system-requirements"
+
+- url: "tiny-drive"
+  pages:
+  - url: "overview"
+  - url: "getting-started"
+  - url: "jwt-authentication"
+  - url: "configuration"
+  - url: "tinydrive-demo"
+  - url: "get-help"
 
 - url: "advanced"
   pages:

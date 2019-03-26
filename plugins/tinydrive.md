@@ -28,4 +28,4 @@ tinymce.init({
 
 ### Configuration
 
-You can read more about the various configuration options for Tiny Drive in the dedicated [configuration]({{site.baseurl}}/tiny-drive/configuration/) page.
+You can read more about the various configuration options for Tiny Drive in the dedicated [configuration]({{site.baseurl}}/tinydrive/configuration/) page.

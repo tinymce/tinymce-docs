@@ -1,9 +1,9 @@
 ---
 layout: default
-title: Overview
+title: Tiny Drive Overview
 title_nav: Overview
-description: Overview
-keywords: overview
+description: Overview of what Tiny Drive is and it's capabilities
+keywords: tinydrive overview
 ---
 
 Tiny Drive allows you to manage your images and files in the cloud, when you are setup with your system, you will enjoy trouble free management of assets in the cloud.

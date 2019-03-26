@@ -1,9 +1,9 @@
 ---
 layout: default
-title: Configuration
+title: Tiny Drive Configuration
 title_nav: Configuration
-description: Configuration
-keywords: configuration
+description: List of all available Tiny Drive configuration options.
+keywords: tinydrive configuration
 ---
 
 ### `tinydrive_token_provider`

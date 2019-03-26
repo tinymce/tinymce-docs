@@ -1,12 +1,12 @@
 ---
 layout: default
-title: Getting started
+title: Getting started with Tiny Drive
 title_nav: Getting started
-description: Getting started
-keywords: Getting started
+description: Guide on how to get started with Tiny Drive
+keywords: tinydrive starter
 ---
 
-## REQUIREMENTS
+## Requirements
 Before you start your journey with Tiny Drive, you will need these keys.
 1. Login/register to [tiny.cloud](https://apps.tiny.cloud/my-account/)
 2. Get a [TinyMCE API Key](https://apps.tiny.cloud/my-account/key-manager/)

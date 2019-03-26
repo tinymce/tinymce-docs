@@ -7,6 +7,6 @@ keywords: toolbar toolbarbuttons buttons toolbarbuttonsapi
 type: folder
 ---
 
-{% assign links = site.data.nav[7].pages %}
+{% assign links = site.data | where_exp:"nav", "nav.url == 'ui-components'" | first | map: "pages" %}
 {% include index.html links=links %}
 

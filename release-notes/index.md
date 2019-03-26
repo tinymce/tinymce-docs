@@ -6,5 +6,5 @@ keywords: releasenotes newfeatures deleted technologypreview bugfixes knownissue
 type: folder
 ---
 
-{% assign links = site.data.nav[12].pages %}
+{% assign links = site.data | where_exp:"nav", "nav.url == 'release-notes'" | first | map: "pages" %}
 {% include index.html links=links %}

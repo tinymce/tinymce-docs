@@ -6,5 +6,5 @@ description: Start here for Tiny Cloud.
 type: folder
 ---
 
-{% assign links = site.data.nav[2].pages %}
+{% assign links = site.data | where_exp:"nav", "nav.url == 'cloud-deployment-guide'" | first | map: "pages" %}
 {% include index.html links=links %}

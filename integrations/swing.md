@@ -6,7 +6,13 @@ description: Seamlessly integrates TinyMCE into Swing applications.
 keywords: integration integrate swing
 ---
 
-Users can easily configure TinyMCE in Swing through the TinyMCE Swing Integration. Contact [customer support](https://www.tiny.cloud/contact/) to obtain a copy of the Integration to start using TinyMCE as your new Rich Text Editor.
+Users can easily configure TinyMCE in Swing through the TinyMCE Swing Integration. 
+
+### Buy TinyMCE Swing integration
+
+To start using TinyMCE in Swing as your new rich text editor, the first step is to obtain a copy of the Integration. 
+
+Contact [customer support](https://www.tiny.cloud/contact/) to get started with a customized TinyMCE Swing integration for your specific use case.
 
 ### Other resources
 

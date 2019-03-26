@@ -16,8 +16,8 @@ Before you start your journey with Tiny Drive, you will need these keys.
 
 To get started quickly and understand how Tiny Drive works, we highly recommend trying one of the starter projects, should get you up and running in no time.
 
-- [.NET](https://github.com/tinymce/tinydrive-dotnet-mvc-starter)
-- [NODE](https://github.com/tinymce/tinydrive-nodejs-starter)
+- [.NET Core](https://github.com/tinymce/tinydrive-dotnet-mvc-starter)
+- [Node.js](https://github.com/tinymce/tinydrive-nodejs-starter)
 - [PHP](https://github.com/tinymce/tinydrive-php-starter)
 - [Java](https://github.com/tinymce/tinydrive-java-spring-starter)
 

@@ -16,14 +16,14 @@ Before you start your journey with Tiny Drive, you will need these keys.
 
 To get started quickly and understand how Tiny Drive works, we highly recommend trying one of the starter projects, should get you up and running in no time.
 
-- [.NET](https://github.com/tinymce/tinydrive-net-mvc-starter)
-- [NODE](https://github.com/tinymce/tinydrive-node-starter)
+- [.NET](https://github.com/tinymce/tinydrive-dotnet-mvc-starter)
+- [NODE](https://github.com/tinymce/tinydrive-nodejs-starter)
 - [PHP](https://github.com/tinymce/tinydrive-php-starter)
 - [Java](https://github.com/tinymce/tinydrive-java-spring-starter)
 
 If you do not have any experience with these languages, it might still be useful to see how they work and then try to implement your own solution.
 
-We really recommend giving these starter packages a try, it will help you understand how authentication and integration can work in your system. You can them move on and try to implement Tiny Drive into your system.
+We really recommend giving these starter packages a try, it will help you understand how authentication and integration can work in your system. You can then move on and try to implement Tiny Drive into your system.
 
 ## Implementing with your system
 

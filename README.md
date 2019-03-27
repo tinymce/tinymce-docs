@@ -3,7 +3,7 @@
 [![wercker status](https://app.wercker.com/status/4d4c743635332430f9d25acae1be5218/s/master "wercker status")](https://app.wercker.com/project/bykey/4d4c743635332430f9d25acae1be5218)
 
 This project serves as the documentation for TinyMCE, as you see on 
-[https://www.tiny.cloud/docs](httsp://www.tiny.cloud/docs). If you have any 
+[https://www.tiny.cloud/docs](https://www.tiny.cloud/docs). If you have any 
 modifications you wish to contribute, fork this project, make the changes 
 and submit a pull request. You will need to sign the contributors license 
 agreement, which will be emailed to you upon creating the pull request.
@@ -29,10 +29,25 @@ gem install bundler
 ```
 sudo dnf install gcc-c++
 ```
-
 4. Docker
 
-5. make
+5. `make` - From the root folder, run `_scripts/init.sh` and `_scripts/serve.sh` as instructed below .
+
+## Notes for Windows users
+
+If you are a Windows user, follow these steps to work on TinyMCE documentation:
+
+1. Install [Ruby+Devkit 2.4.5-1 (x64)](https://rubyinstaller.org/downloads/) and no later.
+
+2. Run the following commands from a terminal to install Bundler:
+
+```
+gem install bundler
+```
+```
+bundle install
+```
+3. From the root folder, run `_scripts/init.sh` and `_scripts/serve.sh` as instructed below . 
 
 ## First time set up
 

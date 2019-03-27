@@ -16,7 +16,7 @@ Contact [customer support](https://www.tiny.cloud/contact/) to discuss pricing o
 
 ### Other resources
 
-* [GitHub repository](https://github.com/tinymce/tinymce-swing-codesamples)
+* [GitHub repository](https://github.com/tinymce/tinymce-swing-codesamples) - Refer to this link for examples on how to use TinyMCE for Swing.
 
 * An additional set of documentation is shipped with the integration in `zip` files. It contains a library of `Javadocs` and API reference guides which help in understanding and applying the concepts. The `zip` file includes the following documents:
 

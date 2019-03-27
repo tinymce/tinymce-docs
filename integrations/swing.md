@@ -20,11 +20,11 @@ Contact [customer support](https://www.tiny.cloud/contact/) to discuss pricing o
 
 * An additional set of documentation is shipped with the integration in `zip` files. It contains a library of `Javadocs` and API reference guides which help in understanding and applying the concepts. The `zip` file includes the following documents:
 
-  * readme.txt - basic instructions
-  * license.txt
-  * release-notes.txt
-  * The `jar` files that implement the integration
-  * JavaDocs - A well-known tool used by Java developers used to produce web pages of docs from specially-formatted comments in the code.
+  * `readme.txt` - This file has general information about TinyMCE Swing integration.
+  * `license.txt` - This file has all the license details about TinyMCE for Swing as a commercial software.
+  * `release-notes.txt` - This file has information about the integrations and enhancements that have been implemented in TinyMCE Swing integration.
+  * `jar` files - The `jar` files that implement the integration can be found under lib/
+  * `javadoc` - The `javadoc` can be found at `docs/javadoc/index.html`. **JavaDoc** is well-known tool used by Java developers used to produce web pages of docs from specially-formatted comments in the code. 
 
 
 #### A note about integrations

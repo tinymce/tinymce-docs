@@ -24,8 +24,7 @@ Contact [customer support](https://www.tiny.cloud/contact/) to discuss pricing o
   * `license.txt` - This file has all the license details about TinyMCE for Swing as a commercial software.
   * `release-notes.txt` - This file has information about the integrations and enhancements that have been implemented in TinyMCE for Swing integration.
   * `jar` files - The `jar` files that implement the integration can be found under lib/
-  * `javadoc` - The `javadoc` can be found at `docs/javadoc/index.html`. **JavaDoc** is well-known tool used by Java developers used to produce web pages of docs from specially-formatted comments in the code. 
-
+  * `javadoc` - The `javadoc` can be found at `docs/javadoc/index.html`. 
 
 #### A note about integrations
 

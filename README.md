@@ -14,8 +14,6 @@ This project is built using [Jekyll](https://jekyllrb.com/).
 
 ## Prerequisites
 
-Notes for Windows: Install [Ruby+Devkit 2.4.5-1 (x64)](https://rubyinstaller.org/downloads/) and no later, gem install bundler, bundle install then run "\_scripts/init.sh" and "\_scripts/serve.sh" as instructed below from the root folder. 
-
 You need the following installed on your computer:
 
 1. Ruby version 2 or later.
@@ -31,10 +29,25 @@ gem install bundler
 ```
 sudo dnf install gcc-c++
 ```
-
 4. Docker
 
-5. make
+5. `make` - From the root folder, run `_scripts/init.sh` and `_scripts/serve.sh` as instructed below .
+
+## Notes for Windows users
+
+If you are a Windows user, follow these steps to work on TinyMCE documentation:
+
+1. Install [Ruby+Devkit 2.4.5-1 (x64)](https://rubyinstaller.org/downloads/) and no later.
+
+2. Run the following commands from a terminal to install Bundler:
+
+```
+gem install bundler
+```
+```
+bundle install
+```
+3. From the root folder, run `_scripts/init.sh` and `_scripts/serve.sh` as instructed below . 
 
 ## First time set up
 

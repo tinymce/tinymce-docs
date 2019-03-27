@@ -18,7 +18,14 @@ Contact [customer support](https://www.tiny.cloud/contact/) to discuss pricing o
 
 * [GitHub repository](https://github.com/tinymce/tinymce-swing-codesamples)
 
-* An additional set of documentation is shipped with the integration in `zip` files. These files contain a library of `java` docs and API reference guides which help in understanding and applying the concepts.
+* An additional set of documentation is shipped with the integration in `zip` files. It contains a library of `Javadocs` and API reference guides which help in understanding and applying the concepts. The `zip` file includes the following documents:
+
+  * readme.txt - basic instructions
+  * license.txt
+  * release-notes.txt
+  * The `jar` files that implement the integration
+  * JavaDocs - A well-known tool used by Java developers used to produce web pages of docs from specially-formatted comments in the code.
+
 
 #### A note about integrations
 

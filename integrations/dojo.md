@@ -3,7 +3,7 @@ layout: default
 title: Dojo integration
 title_nav: Dojo
 description: This integration adds any parameter to an instance of TinyMCE 4 in Dojo.
-keywords: integration integrate angular angularjs
+keywords: integration integrate dojo
 ---
 
 ## TinyMCE 4 Widget for Dojo

@@ -42,45 +42,58 @@ Developers can designate the location of the plugins by loading the `plugin.js` 
 
 ## Example plugin
 
-This example plugin demonstrates how to add a simple toolbar button and menu item. This button opens a dialog that allows a title to be entered into the editor. The menu item will open the TinyMCE site in a dialog.
+This example plugin demonstrates how to add a simple toolbar button and menu item. This button opens a dialog that allows a title to be entered into the editor. The menu item will open the same dialog as the button.
 
 ```js
 tinymce.PluginManager.add('example', function(editor, url) {
-  // Add a button that opens a window
-  editor.addButton('example', {
-    text: 'My button',
-    icon: false,
-    onclick: function() {
-      // Open window
-      editor.windowManager.open({
-        title: 'Example plugin',
-        body: [
-          {type: 'textbox', name: 'title', label: 'Title'}
-        ],
-        onsubmit: function(e) {
-          // Insert content when the window form is submitted
-          editor.insertContent('Title: ' + e.data.title);
+  var openDialog = function () {
+    return editor.windowManager.open({
+      title: 'Example plugin',
+      body: {
+        type: 'panel',
+        items: [
+          {
+            type: 'input',
+            name: 'title',
+            label: 'Title'
+          }
+        ]
+      },
+      buttons: [
+        {
+          type: 'cancel',
+          text: 'Close'
+        },
+        {
+          type: 'submit',
+          text: 'Save',
+          primary: true
         }
-      });
+      ],
+      onSubmit: function (api) {
+        var data = api.getData();
+        // Insert content when the window form is submitted
+        editor.insertContent('Title: ' + data.title);
+        api.close();
+      }
+    });
+  };
+  
+  // Add a button that opens a window
+  editor.ui.registry.addButton('example', {
+    text: 'My button',
+    onAction: function () {
+      // Open window
+      openDialog();
     }
   });
 
-  // Adds a menu item to the tools menu
-  editor.addMenuItem('example', {
+  // Adds a menu item, which can then be included in any menu via the menu/menubar configuration
+  editor.ui.registry.addMenuItem('example', {
     text: 'Example plugin',
-    context: 'tools',
-    onclick: function() {
-      // Open window with a specific url
-      editor.windowManager.open({
-        title: 'TinyMCE site',
-        url: 'https://www.tinymce.com',
-        width: 800,
-        height: 600,
-        buttons: [{
-          text: 'Close',
-          onclick: 'close'
-        }]
-      });
+    onAction: function() {
+      // Open window
+      openDialog();
     }
   });
 

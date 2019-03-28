@@ -6,19 +6,21 @@ description: Guide on how to setup JWT Authentication for Tiny Drive
 keywords: jwt authentication
 ---
 
-## Audience
-
-This section is intended to be used by developers with prior knowledge of [JSON Web Token](https://jwt.io/) (or JWT) in detail, including how they can be used for user authentication and session management in a web application. There will be some coding involved on both the client-side and the server-side to configure JWT as per the instructions in this section.
-
 ## Introduction
 
-Tiny Drive require you to setup JWT authentication. This allows us to verify that you and your end user are allowed to access a particular feature. JWT is a common authorization solution for web services and is documented in more detail at the [https://jwt.io/](https://jwt.io/) website. The guide aims to show how to setup JWT authentication for Tiny Drive.
+Tiny Drive require you to setup JWT authentication. This is to ensure that the security of your files remain in your control.
+
+JWT is a common authorization solution for web services and is documented in more detail at the [https://jwt.io/](https://jwt.io/) website. The guide aims to show how to setup JWT authentication for Tiny Drive.
+
+> If you haven't tried any of the [Starter projects]({{site.baseurl}}/tinydrive/getting-started/)  yet, we urge you to try them before trying to implement your own solution. The source is also available on Github to study.
 
 ## Private/public key pair
 
 Tokens used by the TinyMCE cloud services make use of a public/private RSA key-pair. This allows you as an integrator to have full control over the authentication as we don't store the private key. Only you have access to the private key, and only you can produce valid tokens. We can only verify that they are valid and extract user information from that token.
 
 The private/public key pair is created in your [Tiny account page](https://apps.tiny.cloud/my-account/jwt-key-manager/), but we only store the public key on our side. The private key is for you to store in your backend.
+
+> Keep the private key secure, make sure you do not commit files containing the key to public repositories or similar!
 
 ## JWT provider URL
 
@@ -32,26 +34,34 @@ The following diagram explains the JWT call flow:
 
 ### Algorithm
 
-The following algorithms are supported for the JWT header/signature:
-
-* RS256
-* RS384
-* RS512
-* PS256
-* PS384
-* PS512
-
-All of these algorithms use the private RSA key to sign the JWT, but vary in how they execute. `RS256`, the most widely supported algorithm, features in following code examples.
+Our examples use, and we recommend, RS256 algorithm. this is a list of supported ones: RS256, RS384, RS512, PS256, PS384, PS512
 
 ### Claims
+
+These are like options/data you can send with the JWT token.
 
 * **sub** - _(required)_ Unique string to identify the user. This can be a database ID, hashed email address, or similar identifier.
 * **name** - _(required)_ Full name of the user that will be used for presentation inside Tiny Drive. When the user uploads a file, this name is presented as the creator of that file.
 * **https://claims.tiny.cloud/drive/root** - (optional) Full path to a tiny drive specific root for example "/johndoe". The user won't be able to see or manage files outside this configured root path.
 
-## PHP token provider example
+## Step by step
+Follow these steps in order to setup your own JWT endpoint.
 
-This example uses the [Firebase JWT library](https://github.com/firebase/php-jwt) provided through the Composer dependency manager. The private key should be the private key that was generated through your Tiny Account. Each service requires different claims to be provided. The following example shows the sub and name claims needed for Tiny Drive.
+ 1. Setup a JWT endpoint on your server, this could be a simple page using one of the examples below.
+ 2. Configure the `tinydrive_token_provider` to that endpoint.
+ 3. Make sure you copy the private key into the example code.
+ 4. You should be good to go now.
+
+ > The JWT Endoint should examine your systems sessions in order to verify your user has access to your system.
+
+## Need help?
+We recommend reading up and trying to understand how JWT works, you need some basic skills in order to implement Tiny Drive. This can be tricky, if you need some help, check our [help page](/tinydrive/get-help/) and if that doesn't work, contact our support.
+
+## PHP token provider endpoint example
+
+This example uses the [Firebase JWT library](https://github.com/firebase/php-jwt) provided through the Composer dependency manager. The private key should be the private key that was generated through your Tiny Account.
+
+### jwt.php ###
 
 ```php
 <?php
@@ -67,18 +77,16 @@ $privateKey = <<<EOD
 -----END PRIVATE KEY-----
 EOD;
 
-$payload = array(
-  // Unique user id string
-  "sub" => "123",
+// NOTE: Before you proceed with the TOKEN, verify your users session or access.
 
-  // Full name of user
-  "name" => "John Doe",
+$payload = array(
+  "sub" => "123", // unique user id string
+  "name" => "John Doe", // full name of user
 
   // Optional custom user root path
   // "https://claims.tiny.cloud/drive/root" => "/johndoe",
 
-  // 10 minutes expiration
-  "exp" => time() + 60 * 10
+  "exp" => time() + 60 * 10 // 10 minute expiration
 );
 
 try {
@@ -93,10 +101,21 @@ try {
 }
 ?>
 ```
+### TinyMCE example with jwt.php Endpoint
+```
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'image media link tinydrive code imagetools',
+  tinydrive_token_provider: 'jwt.php',
+  toolbar: 'insertfile image link | code'
+});
+```
 
-## Node token provider example
+## Node token provider endpoint example
 
-This example shows you how to set up a Node.js express handler that produces the tokens. It requires you to install the Express web framework and the `jsonwebtoken` Node modules. Each service requires different claims to be provided. The following example shows the sub and name claims needed for Tiny Drive.
+This example shows you how to set up a Node.js express handler that produces the tokens. It requires you to install the Express web framework and the `jsonwebtoken` Node modules. 
+
+### /jwt
 
 ```js
 const express = require('express');
@@ -113,18 +132,15 @@ const privateKey = `
 `;
 
 app.post('/jwt', function (req, res) {
+  // NOTE: Before you proceed with the TOKEN, verify your users session or access.
   const payload = {
-    // Unique user id string
-    sub: '123',
-
-    // Full name of user
-    name: 'John Doe',
+    sub: '123', // Unique user id string
+    name: 'John Doe', // Full name of user
 
     // Optional custom user root path
     // 'https://claims.tiny.cloud/drive/root': '/johndoe',
 
-    // 10 minutes expiration
-    exp: Math.floor(Date.now() / 1000) + (60 * 10)
+    exp: Math.floor(Date.now() / 1000) + (60 * 10) // 10 minutes expiration
   };
 
   try {
@@ -142,3 +158,18 @@ app.post('/jwt', function (req, res) {
 
 app.listen(3000);
 ```
+### TinyMCE example with /jwt endpoint
+```
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'image media link tinydrive code imagetools',
+  tinydrive_token_provider: '/jwt',
+  toolbar: 'insertfile image link | code'
+});
+```
+### More configuration
+If you managed to set this up, you should be good to go with checking out the various [configuration options](/tinydrive/configuration/) for Tiny Drive and how you can customize is. Don't forget to change the JWT Claim's (user id, user name) to get those from your system.
+
+If you need some help, check our [help page](/tinydrive/get-help/) and if that doesn't work, contact our support.
+
+

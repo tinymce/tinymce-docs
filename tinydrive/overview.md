@@ -8,7 +8,7 @@ keywords: tinydrive overview
 
 Tiny Drive allows you to manage your images and files in the cloud, when you are setup with your system, you will enjoy trouble free management of assets in the cloud.
 
-Once Tiny Drive is setup, you will be able to drag and drop files to instantly upload them to cloud storage behind a blazing fast CDN helping you serve the files and images you need.
+You will be able to drag and drop files to instantly upload them to cloud storage behind a blazing fast CDN helping you serve the files and images you need.
 
 ## Demo
 
@@ -38,4 +38,6 @@ If you move or rename a file, it will still have the same unique URL, so the res
 
 ## User specific root
 
-It's common that you want to be able to have user specific paths so that each user within your system gets it's own directory. This can be done by setting the `https://claims.tiny.cloud/drive/root` custom jwt claim to a path within your tiny drive account. This path will automatically be constructured when the user is accessing drive using a jwt key with that claim. The user only be able to see and manage files within that root.
+It's common that you want to be able to have user specific paths so that each user within your system gets it's own directory. This can be done by setting the `https://claims.tiny.cloud/drive/root` custom JWT claim to a path within your tiny drive account. This path will automatically be constructured when the user is accessing drive using a JWT key with that claim. The user only be able to see and manage files within that root.
+
+Continue to [getting started](/tinydrive/getting-started/) with Tiny Drive.

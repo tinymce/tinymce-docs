@@ -17,12 +17,23 @@ Store the keys temporarily somewhere, you will need to copy & paste them later.
 ## Starter projects
 
 To get started quickly and understand how Tiny Drive works, we highly recommend trying one of the starter projects on Github, should get you up and running in no time.
-
-- [.NET Core](https://github.com/tinymce/tinydrive-dotnet-mvc-starter)
-- [Node.js](https://github.com/tinymce/tinydrive-nodejs-starter)
-- [PHP](https://github.com/tinymce/tinydrive-php-starter)
-- [Java](https://github.com/tinymce/tinydrive-java-spring-starter)
-
+#### Choose a familar language
+<table style="text-align: center">
+    <tbody>
+        <tr>
+            <td><a href="https://github.com/tinymce/tinydrive-dotnet-mvc-starter"><img src="/images/netcore.svg" width="120"></a></td>
+            <td><a href="https://github.com/tinymce/tinydrive-nodejs-starter"><img src="/images/nodejs.svg"  width="120"></a></td>
+            <td><a href="https://github.com/tinymce/tinydrive-php-starter"><img src="/images/php.svg"  width="120"></a></td>
+            <td><a href="https://github.com/tinymce/tinydrive-java-spring-starter"><img src="/images/java.png" height="120"></a></td>
+        </tr>
+        <tr style="background-color: white">
+            <td><a href="https://github.com/tinymce/tinydrive-dotnet-mvc-starter">.NET Core</a></td>
+            <td><a href="https://github.com/tinymce/tinydrive-nodejs-starter">Node.js</a></td>
+            <td><a href="https://github.com/tinymce/tinydrive-php-starter">PHP</a></td>
+            <td><a href="https://github.com/tinymce/tinydrive-java-spring-starter">Java</a></td>
+        </tr>
+    </tbody>
+</table>
 The starter projects have their own 5 steps to get Tiny Drive running, follow those steps.
 
 If you do not have any experience with these languages, it might still be useful to see how they work and then try to implement your own solution.

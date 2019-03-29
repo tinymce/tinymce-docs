@@ -6,23 +6,20 @@ Use the [toolbar]({{site.baseurl}}/configure/editor-appearance/#toolbar) option 
 
 ### Type: String
 
-### Settings
+## Settings
 
 The drawer settings have to be specified in the `tinymce.init` at the time of configuring the  `toolbar_drawer` option. There are two types of drawer settings - _floating_ and _sliding_.
 
-* **Floating** - If the `toolbar_drawer` is configured to `floating`, the toolbar appears under the `toolbar_drawer` icon in a floating shelf format when the `toolbar_drawer` icon ![**Drawer**]({{site.baseurl}}/images/drawer.png) is clicked.
+### Floating
+
+If the `toolbar_drawer` is configured to `floating`, the toolbar appears under the `toolbar_drawer` icon in a floating shelf format when the `toolbar_drawer` icon ![**Drawer**]({{site.baseurl}}/images/drawer.png) is clicked.
 
 ![**Floating**]({{site.baseurl}}/images/floating.png)
 
-* **Sliding** - If the `toolbar_drawer` is configured to `sliding`, the toolbar appears as a fixed toolbar under the first toolbar when the `toolbar_drawer` icon ![**Drawer**]({{site.baseurl}}/images/drawer.png) is clicked.
+#### Configuring a Floating drawer
 
-![**Sliding**]({{site.baseurl}}/images/sliding.png)
+Use the following settings to configure a Floating drawer:
 
-### Configuring a drawer
-
-Use the following settings to configure a drawer:
-
-#### Floating drawer
 ```js
 tinymce.init({
     selector: "textarea",
@@ -30,7 +27,16 @@ tinymce.init({
 });
 ```
 
-#### Sliding drawer
+### Sliding
+
+If the `toolbar_drawer` is configured to `sliding`, the toolbar appears as a fixed toolbar under the first toolbar when the `toolbar_drawer` icon ![**Drawer**]({{site.baseurl}}/images/drawer.png) is clicked.
+
+![**Sliding**]({{site.baseurl}}/images/sliding.png)
+
+#### Configuring a Sliding drawer
+
+Use the following settings to configure a Sliding drawer:
+
 ```js
 tinymce.init({
     selector: "textarea",

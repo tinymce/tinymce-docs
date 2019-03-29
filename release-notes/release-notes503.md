@@ -35,7 +35,7 @@ There is also a demo provided to explore the **Case Change** capabilities [here]
 
 ### TinyMCE for Swing integration
 
-Users can easily configure the TinyMCE editor in Swing through the **TinyMCE for Swing** integration.
+Users can easily configure the TinyMCE editor in Swing through the **TinyMCE for Swing** integration. TinyMCE for Swing is an integration of the TinyMCE web-based rich text editor into the Java Swing UI toolkit. A Java API is provided, allowing a developer to configure, instantiate and interact with TinyMCE as a Swing component.
 
 #### Buy TinyMCE for Swing integration
 

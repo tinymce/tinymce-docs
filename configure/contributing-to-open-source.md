@@ -27,4 +27,4 @@ The TinyMCE source code is [hosted on Github](https://github.com/tinymce/tinymce
 
 ## Contributing to the documentation
 
-If you would like to contribute to TinyMCE's documentation, please see our [contribute page and style guide](../contributing-docs/).
+If you would like to contribute to TinyMCE's documentation, please see our [contribute to documentation page and style guide](../contributing-docs/).

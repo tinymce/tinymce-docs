@@ -76,6 +76,54 @@ tinymce.init({
 });
 ```
 
+### `tinydrive_dropbox_app_key`
+
+This setting enables you specify the Dropbox app key for integrating dropbox into Tiny Drive. You can read more about how you obtain this key in the [Dropbox integration guide]({{site.baseurl}}/tinydrive/dropbox-integration/).
+
+**Type:** `string`
+
+#### Example
+
+```js
+tinymce.init({
+  selector: "textarea",  // change this value according to your HTML
+  plugins: "tinydrive",
+  tinydrive_dropbox_app_key: '<your dropbox app key>'
+});
+```
+
+### `tinydrive_google_drive_key`
+
+This setting enables you specify the Google Drive api key for integrating Google Drive into Tiny Drive. You can read more about how you obtain this key in the [Google Drive integration guide]({{site.baseurl}}/tinydrive/googledrive-integration/).
+
+**Type:** `string`
+
+#### Example
+
+```js
+tinymce.init({
+  selector: "textarea",  // change this value according to your HTML
+  plugins: "tinydrive",
+  tinydrive_max_image_dimension: '<your google drive api key>'
+});
+```
+
+### `tinydrive_google_drive_client_id`
+
+This setting enables you specify the Google Drive client id for integrating Google Drive into Tiny Drive. You can read more about how you obtain this id in the (Google Drive integration guide)[({{site.baseurl}}/tinydrive/googledrive-integration/)].
+
+**Type:** `string`
+
+#### Example
+
+```js
+tinymce.init({
+  selector: "textarea",  // change this value according to your HTML
+  plugins: "tinydrive",
+  tinydrive_google_drive_client_id: '<your google drive client id>'
+});
+```
+
 ## Insert File toolbar button
 
 Drive will automatically integrate into the Image, Link, and Media dialogs as a file picker. You can also configure it to insert files directly into your content using the `insertfile` button. To enable this button, add it to your toolbar editor setting.

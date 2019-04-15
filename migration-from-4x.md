@@ -378,11 +378,11 @@ Dialogs are still opened via the `editor.windowManager.open(config)` api, howeve
 
 | **Removed setting** | **Description** |
 | ------------------- | --------------- |
-| height | The dialog component now uses CSS3 and a predefined `small`, `medium`, and `large` template to specify the dimensions. |
-| width | The dialog component now uses CSS3 and a predefined `small`, `medium`, and `large` template to specify the dimensions. |
+| `height` | The dialog component now uses CSS3 and a predefined `small`, `medium`, and `large` template to specify the dimensions. |
+| `width` | The dialog component now uses CSS3 and a predefined `small`, `medium`, and `large` template to specify the dimensions. |
 | bodyType | `bodyType` has been merged into the `body` setting. |
 | onpostrender | `onpostrender` has been removed for the dialog configuration. The dialog configuration now includes an `initialData` setting for providing the initial state and an API to fetch or update the data. Refer to [this]({{site.baseurl}}/ui-components/dialog/#interactiveexampleusingredialconfigvoid) section for more information on how to configure `initialData`. |
-| url | HTML page dialogs are no longer supported, as such the `url` setting has been removed. |
+| url | URL dialogs now have their own API. For more information, see [`Custom URL dialogs`](#customurldialogs). |
 
 ##### New settings:
 
@@ -442,6 +442,42 @@ const config = {
 ```
 
 For more information about the new dialog configuration, see the [`Dialog`]({{site.baseurl}}/ui-components/dialog/) and [`Dialog components`]({{site.baseurl}}/ui-components/dialogcomponents/) docs.
+
+### Custom URL dialogs
+
+URL dialogs in TinyMCE 4.x were included as part of the `editor.windowManager.open()` API, however in TinyMCE 5.0 they've been moved to a new API `editor.windowManager.openUrl()`. This allows for clear separation and configuration between the two different types of dialogs in TinyMCE.
+
+##### Removed settings:
+
+| **Removed setting** | **Description** |
+| ------------------- | --------------- |
+| `file` | The `file` setting has been replaced by `url`, and as such has been removed. |
+
+##### New settings:
+
+| **New setting** | **Description** |
+| --------------- | --------------- |
+| `onCancel` | A callback that is called when the dialog is cancelled without submitting any changes. |
+| `onMessage` | A callback that is called when the dialog receives a message via the browser `window.postMessage` API. |
+
+#### TinyMCE 4.x
+
+```js
+editor.windowManager.open({
+  title: 'URL Dialog Demo',
+  url: 'http://mysite.com/external-page.html'
+});
+```
+#### TinyMCE 5.0
+
+```js
+editor.windowManager.openUrl({
+  title: 'URL Dialog Demo',
+  url: 'http://mysite.com/external-page.html'
+});
+```
+
+For more information about the new URL dialog configuration, see the [`URL dialog`]({{site.baseurl}}/ui-components/urldialog/) docs.
 
 <!-- ### Custom sidebars
 

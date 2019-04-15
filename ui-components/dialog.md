@@ -40,6 +40,21 @@ A Dialog configuration framework has three main parts:
 
 * **Footer** This section consists of a [button]({{site.baseurl}}/ui-components/dialogcomponents/#button) or list of buttons.
 
+### Config options
+
+| Name | Value | Requirement | Description |
+| ---- | ----- | ----------- | ----------- |
+| title | string | required | The title of the dialog. |
+| body | Panel or TabPanel | required | The configuration for the body of the dialog. See [Body components](#bodycomponents) configuration. |
+| buttons | DialogButton[] | required | An optional array of button configurations to render in the footer. See [Footer components](#footercomponents) configuration. |
+| size | 'normal', 'medium' or 'large' | optional | default: `normal` - The size to use when rendering the dialog. |
+| initialData | object | optional | An object containing the initial value for the dialog components. |
+| onAction | (api) => void | optional | Function invoked when a custom button is clicked. |
+| onCancel | (api) => void | optional | Function invoked when the dialog is cancelled either by a cancel button or the close button in the dialog header. |
+| onChange | (api, data) => void | optional | Function invoked when a dialog component changes it's value. |
+| onClose | () => void | optional | Function invoked when the dialog has been closed. |
+| onSubmit | (api) => void | optional | Function invoked when the dialog is submitted. |
+
 ### Body components
 
 #### Panel
@@ -78,7 +93,7 @@ var tabPanelConfig = {
 
 #### Button
 
-The following configuration is used to create a button inside the dialog body:
+The following configuration is used to create a button inside the dialog footer:
 
 ```js
 var buttonConfig = {

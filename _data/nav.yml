@@ -461,6 +461,13 @@
     - url: "#tabpanel"
     - url: "#textarea"
     - url: "#urlinput"
+  - url: "urldialog"
+    pages:
+    - url: "#Overview"
+    - url: "#URL dialog configuration"
+    - url: "#URL dialog instance API"
+    - url: "#URL dialog messaging"
+    - url: "#Example configuration"
   - url: "autocompleter"
   - url: "contextmenu"
     pages:
@@ -570,8 +577,6 @@
   - url: "#Components"
   - url: "#Plugins"
   - url: "#Other removed component configuration settings"
-  - url: "#Components"
-  - url: "#Premium features"
 
 - url: "release-notes"
   pages:

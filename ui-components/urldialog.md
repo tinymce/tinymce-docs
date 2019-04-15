@@ -7,7 +7,7 @@ keywords: dialog urldialog api
 ---
 ## Overview
 
-A URL dialog is a special TinyMCE UI component which loads an external web page inside a dialog (sometimes referred to as `modals`). This differs from the regular dialogs that use supported components to render an interactive dialog inside the application. URL dialogs are useful for very complex use cases, where the supported dialog components cannot be used — for example, dialogs in a custom file manager.
+A URL dialog is a special TinyMCE UI component which loads an external web page inside a dialog (sometimes referred to as `modals`). This differs from the regular dialogs that use supported components to render an interactive dialog inside the application. URL dialogs are useful for very complex use cases, where the supported dialog components cannot be used — for example, a custom file manager that is loaded inside a TinyMCE dialog.
 
 The most basic configuration structure is:
 
@@ -124,7 +124,7 @@ These actions are built into the URL dialog functionality and will perform an ac
 
 ##### insertContent
 
-This option inserts content into the editor at the current selection. The `content` property specifies what content should be inserted into the editor.
+This action inserts content into the editor at the current selection. The `content` property specifies what content should be inserted into the editor.
 
  ```js
 {
@@ -135,7 +135,7 @@ This option inserts content into the editor at the current selection. The `conte
 
 ##### setContent
 
-This option is used to set the editors content. The `content` property specifies what content should be set inside the editor.
+This action is used to set the editors content. The `content` property specifies what content should be set inside the editor.
 
 ```js
 {
@@ -146,7 +146,7 @@ This option is used to set the editors content. The `content` property specifies
 
 ##### execCommand
 
-This option executes a command inside the editor. The options available for this action are:
+This action executes a command inside the editor. The options available for this action are:
 
 **cmd:** The name of the command to be executed inside the editor.
 
@@ -164,7 +164,7 @@ This option executes a command inside the editor. The options available for this
 
 ##### close
 
-This option closes the open URL dialog. This is the same as using the `api.close()` function.
+This action closes the open URL dialog. This is the same as using the `api.close()` function.
 
 ```js
 {
@@ -174,7 +174,7 @@ This option closes the open URL dialog. This is the same as using the `api.close
 
 ##### block
 
-This option disables the entire dialog window and shows a loading image. This is the same as using the `api.block(message)` function.
+This action disables the entire dialog window and shows a loading image. This is the same as using the `api.block(message)` function.
 
 ```js
 {
@@ -185,7 +185,7 @@ This option disables the entire dialog window and shows a loading image. This is
 
 ##### unblock
 
-This option unblocks the window/dialog. This is the same as using the `api.unblock()` function.
+This action unblocks the window/dialog. This is the same as using the `api.unblock()` function.
 
 ```js
 {

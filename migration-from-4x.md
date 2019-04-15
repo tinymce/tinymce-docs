@@ -445,13 +445,13 @@ For more information about the new dialog configuration, see the [`Dialog`]({{si
 
 ### Custom URL dialogs
 
-URL dialogs in TinyMCE 4.x were included as part of the `editor.windowManager.open()` API, however in TinyMCE 5.0 they've been moved to a new API `editor.windowManager.openUrl()`. This allows for clear separation and configuration between the two different types of dialogs in TinyMCE.
+In TinyMCE 4.x, URL dialogs were included as part of the `editor.windowManager.open()` API. However, in TinyMCE 5.0 they've been moved to a new API `editor.windowManager.openUrl()`. This allows for clear separation and configuration between the two different types of dialogs in TinyMCE.
 
 ##### Removed settings:
 
-| **Removed setting** | **Description** |
-| ------------------- | --------------- |
-| `file` | The `file` setting has been replaced by `url`, and as such has been removed. |
+| **Old setting** | **New setting** | **Description** |
+| --------------- | --------------- | --------------- |
+| `file` | `url` | The `file` setting has been removed in TinyMCE 5.0 and replaced with `url`. |
 
 ##### New settings:
 

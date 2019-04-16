@@ -435,6 +435,31 @@
 
 - url: "ui-components"
   pages:
+  - url: "autocompleter"
+  - url: "contextform"
+    pages:
+    - url: "#Registering a context form"
+    - url: "#Launch"
+    - url: "#Context form priority"
+    - url: "#Positioning context forms"
+    - url: "#Form"
+    - url: "#Context form buttons"
+    - url: "#Form API"
+    - url: "#Example configuration"
+  - url: "contextmenu"
+    pages:
+    - url: "#Live example"
+    - url: "#Options"
+    - url: "#Registering context menu sections"
+    - url: "#Defining a context menu section"
+  - url: "customsidebar"
+  - url: "contexttoolbar"
+    pages:
+    - url: "#Registering a context toolbar"
+    - url: "#Launching a context toolbar programmatically"
+    - url: "#Context toolbar priority"
+    - url: "#Positioning context toolbars"
+    - url: "#Example configuration"  
   - url: "dialog"
     pages:
     - url: "#Overview"
@@ -468,31 +493,6 @@
     - url: "#URL dialog instance API"
     - url: "#URL dialog messaging"
     - url: "#Example configuration"
-  - url: "autocompleter"
-  - url: "contextmenu"
-    pages:
-    - url: "#Live example"
-    - url: "#Options"
-    - url: "#Registering context menu sections"
-    - url: "#Defining a context menu section"
-  - url: "contexttoolbar"
-    pages:
-    - url: "#Registering a context toolbar"
-    - url: "#Launching a context toolbar programmatically"
-    - url: "#Context toolbar priority"
-    - url: "#Positioning context toolbars"
-    - url: "#Example configuration"
-  - url: "contextform"
-    pages:
-    - url: "#Registering a context form"
-    - url: "#Launch"
-    - url: "#Context form priority"
-    - url: "#Positioning context forms"
-    - url: "#Form"
-    - url: "#Context form buttons"
-    - url: "#Form API"
-    - url: "#Example configuration"
-  - url: "customsidebar"
   - url: "menuitems"
     pages:
       - url: "#Basic menu items"

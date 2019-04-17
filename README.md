@@ -91,6 +91,19 @@ including information on troubleshooting the "first time set up" process.
 
 It's very slow and the minifier is using regex to parse HTML. We may add a different minifier in the future.
 
+
 ## Working with Codepens
 
-Please be aware while working with Codepens that adding comments to the `*.js` files will break the related demonstration due to parsing issues.
+While working with Codepens, please be aware that adding comments in the single line format (`//`) to the *.js files will break the related demonstration due to parsing issues. To create comments, use this format:
+
+```
+<!--
+    This is a comment.
+-->
+```
+Or
+```
+/*
+    This is a comment.
+*/
+```

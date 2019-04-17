@@ -91,3 +91,6 @@ including information on troubleshooting the "first time set up" process.
 
 It's very slow and the minifier is using regex to parse HTML. We may add a different minifier in the future.
 
+## Working with Codepens
+
+Please be aware while working with Codepens that adding comments to the `*.js` files will break the related demonstration due to parsing issues.

@@ -68,9 +68,9 @@ description: Configure the editor's appearance, including menu and toolbar contr
 
 {% include configuration/style-formats-merge.md %}
 
-{% include configuration/theme-url.md %}
-
 {% include configuration/theme.md %}
+
+{% include configuration/theme-url.md %}
 
 {% include configuration/toolbar.md %}
 

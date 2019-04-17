@@ -47,6 +47,49 @@ tinymce.init({
 });
 ```
 
+### `importcss_exclusive`
+
+If set to `false` then selectors will not be globally exclusive meaning they can exist in two separate groups. This can be useful for scenarios where you want to have a ".class" imported as a paragraph selector and as a span format selector.
+
+**Type:** `Boolean`
+
+**Default Value:** `true`
+
+```
+// Sample compressed stylesheet:
+
+/* Normalize */
+article, aside, footer, header, main, nav, section {display: block;}
+
+/* jQueryUI */
+.ui-helper-hidden { display: none; }
+
+/* Custom Styles */
+.myCustomStyleStart {display:none;}
+       // INCLUDE ALL MY CLASSES HERE IN THE Formats menu!
+.myCustomStyleEnd {display:none;}
+
+/* Any other possible styles afterward ... */
+```
+
+```js
+var keepSelector = false;
+tinymce.init({
+  importcss_selector_converter: function(selector) {
+    if (selector == '.myCustomStyleStart') {
+      keepSelector = true;
+      return false;
+    } else if (selector == '.myCustomStyleEnd') {
+      keepSelector = false;
+    }
+    if (!keepSelector ) {
+      return false;
+    }
+    return this.convertSelectorToFormat(selector);
+  }
+});
+```
+
 ### `importcss_file_filter`
 
 This option enables you to add the CSS files that should be used for populating the styles drop down. This will go through any `@import` rules and only target the specified file. This option can be either a `string`, `regexp` or a `function`. This also allows you to import styles form existing files on the currently editable page in inline mode.
@@ -62,50 +105,6 @@ tinymce.init({
   menubar: "format",
   content_css: "/my-styles.css",
   importcss_file_filter: "/my-styles.css"
-});
-```
-
-### `importcss_selector_filter`
-
-This option enables you to only import classes from selectors matching the filter. The filter can be a `string`, `regexp` or a `function`. See the examples below.
-
-**Type:** `String`
-
-**Example of usage with string filter:**
-
-```js
-tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "importcss",
-  menubar: "format",
-  content_css: "/my-styles.css",
-  importcss_selector_filter: ".my-prefix-"
-});
-```
-
-**Example of usage with RegExp filter**
-
-```js
-tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "importcss",
-  menubar: "format",
-  content_css: "/my-styles.css",
-  importcss_selector_filter: /\.prefix|\.otherprefix/
-});
-```
-
-**Example of usage with function filter**
-
-```js
-tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "importcss",
-  menubar: "format",
-  content_css: "/my-styles.css",
-  importcss_selector_filter: function(selector) {
-    return selector.indexOf('myprefix') !== -1;
-  }
 });
 ```
 
@@ -167,45 +166,47 @@ tinymce.init({
 });
 ```
 
-### `importcss_exclusive`
+### `importcss_selector_filter`
 
-If set to `false` then selectors will not be globally exclusive meaning they can exist in two separate groups. This can be useful for scenarios where you want to have a ".class" imported as a paragraph selector and as a span format selector.
+This option enables you to only import classes from selectors matching the filter. The filter can be a `string`, `regexp` or a `function`. See the examples below.
 
-**Type:** `Boolean`
+**Type:** `String`
 
-**Default Value:** `true`
-
-```
-// Sample compressed stylesheet:
-
-/* Normalize */
-article, aside, footer, header, main, nav, section {display: block;}
-
-/* jQueryUI */
-.ui-helper-hidden { display: none; }
-
-/* Custom Styles */
-.myCustomStyleStart {display:none;}
-       // INCLUDE ALL MY CLASSES HERE IN THE Formats menu!
-.myCustomStyleEnd {display:none;}
-
-/* Any other possible styles afterward ... */
-```
+**Example of usage with string filter:**
 
 ```js
-var keepSelector = false;
 tinymce.init({
-  importcss_selector_converter: function(selector) {
-    if (selector == '.myCustomStyleStart') {
-      keepSelector = true;
-      return false;
-    } else if (selector == '.myCustomStyleEnd') {
-      keepSelector = false;
-    }
-    if (!keepSelector ) {
-      return false;
-    }
-    return this.convertSelectorToFormat(selector);
+  selector: "textarea",  // change this value according to your HTML
+  plugins: "importcss",
+  menubar: "format",
+  content_css: "/my-styles.css",
+  importcss_selector_filter: ".my-prefix-"
+});
+```
+
+**Example of usage with RegExp filter**
+
+```js
+tinymce.init({
+  selector: "textarea",  // change this value according to your HTML
+  plugins: "importcss",
+  menubar: "format",
+  content_css: "/my-styles.css",
+  importcss_selector_filter: /\.prefix|\.otherprefix/
+});
+```
+
+**Example of usage with function filter**
+
+```js
+tinymce.init({
+  selector: "textarea",  // change this value according to your HTML
+  plugins: "importcss",
+  menubar: "format",
+  content_css: "/my-styles.css",
+  importcss_selector_filter: function(selector) {
+    return selector.indexOf('myprefix') !== -1;
   }
 });
 ```
+

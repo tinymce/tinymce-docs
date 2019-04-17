@@ -4,7 +4,7 @@ The `toolbar_drawer` option is used to add an additional toolbar to accommodate 
 
 Use the [toolbar]({{site.baseurl}}/configure/editor-appearance/#toolbar) option to specify the buttons and the order that they will appear in the extended toolbars. To create groups within this list, please add `|` pipe characters between the configured groups of controls.
 
-### Type: String
+**Type: String**
 
 ## Settings
 

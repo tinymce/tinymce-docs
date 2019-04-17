@@ -17,3 +17,4 @@ tinymce.init({
   ],
   visual_table_class: 'tiny-table'
  });
+

@@ -6,6 +6,10 @@ description: List of all available Tiny Drive configuration options.
 keywords: tinydrive configuration
 ---
 
+## Options
+
+These settings are necessary to make Drive work:
+
 ### `tinydrive_token_provider`
 
 This setting could take one of the following two forms:
@@ -76,13 +80,15 @@ tinymce.init({
 });
 ```
 
-## Insert File toolbar button
+## Configuring the Insert File toolbar button
 
 Drive will automatically integrate into the Image, Link, and Media dialogs as a file picker. You can also configure it to insert files directly into your content using the `insertfile` button. To enable this button, add it to your toolbar editor setting.
 
 The Insert File toolbar button will insert images as `img` elements or other files as links to that file.
 
-### Example of toolbar button
+### Example
+
+This is an example of configuring the 'insertfile' toolbar button.
 
 ```js
 tinymce.init({
@@ -92,13 +98,15 @@ tinymce.init({
 });
 ```
 
-## Insert File menu item
+## Configuring the Insert File menu item
 
 Drive will automatically integrate into the Image, Link, and Media dialogs as a file picker. You can also configure it to insert files directly into your content using the `insertfile` menu item. To enable this menu item, add it to your menus editor setting or the insert_button_items setting.
 
 The Insert File menu item will insert images as `img` elements or other files as links to that file.
 
-### Example of menu item
+### Example
+
+This is an example of configuring the 'insertfile' menu item.
 
 ```js
 tinymce.init({

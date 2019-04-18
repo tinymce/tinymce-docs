@@ -26,4 +26,4 @@ These settings affect the execution of the `lists` plugin.
 
 ### `lists_indent_on_tab`
 
-This boolean option allows to disable the indent on tab key functionality. It's default value is set to `true`.
+This boolean option allows to disable the indent on tab key functionality. Its default value is set to `true`.

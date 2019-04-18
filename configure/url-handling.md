@@ -44,11 +44,11 @@ document_base_url : "http://www.example.com/path1/"
 Example: path2/file.htm >> http://www.example.com/path1/path2/file.htm
 
 
+{% include configuration/anchor-bottom.md %}
+{% include configuration/anchor-top.md %}
 {% include configuration/allow-script-urls.md %}
 {% include configuration/convert-urls.md %}
 {% include configuration/document-base-url.md %}
 {% include configuration/relative-urls.md %}
 {% include configuration/remove-script-host.md %}
 {% include configuration/urlconverter-callback.md %}
-{% include configuration/anchor-bottom.md %}
-{% include configuration/anchor-top.md %}

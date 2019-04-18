@@ -458,14 +458,19 @@
     - url: "#Options"
     - url: "#Registering context menu sections"
     - url: "#Defining a context menu section"
-  - url: "customsidebar"
   - url: "contexttoolbar"
     pages:
     - url: "#Registering a context toolbar"
     - url: "#Launching a context toolbar programmatically"
     - url: "#Context toolbar priority"
     - url: "#Positioning context toolbars"
-    - url: "#Example configuration"  
+    - url: "#Example configuration"
+  - url: "menuitems"
+    pages:
+    - url: "#Basic menu items"
+    - url: "#Nested menu items"
+    - url: "#Toggle menu items"
+  - url: "customsidebar"
   - url: "dialog"
     pages:
     - url: "#Overview"
@@ -502,11 +507,6 @@
     - url: "#URL dialog instance API"
     - url: "#URL dialog messaging"
     - url: "#Example configuration"
-  - url: "menuitems"
-    pages:
-      - url: "#Basic menu items"
-      - url: "#Nested menu items"
-      - url: "#Toggle menu items"
   - url: "toolbarbuttons"
   - url: "typesoftoolbarbuttons"
     pages:

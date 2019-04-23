@@ -8,6 +8,26 @@ class: changelog
 
 {% capture changelog %}
 
+## Version 5.0.4 April 23, 2019
+* Added back url dialog functionality, which is now available via `editor.windowManager.openUrl()`.
+* Added missing throbber functionality when calling `editor.setProgressState(true)`.
+* Added function to reset the editor content and undo/dirty state via `editor.resetContent()`.
+* Added the ability to set menu buttons as active.
+* Added `editor.mode` API, featuring a custom editor mode API.
+* Added better styling to floating toolbar drawer.
+* Added the new premium plugins to the Help dialog plugins tab.
+* Added linkchecker context menu items to default configuration.
+* Fixed image context menu items showing on placeholder images.
+* Fixed dialog labels and text color contrast within notifications/alert banners to satisfy WCAG 4.5:1 contrast ratio for accessibility.
+* Fixed selectbox and colorswatch items not being translated.
+* Fixed toolbar drawer sliding mode keyboard navigation incorrectly focusing the editor when tabbing.
+* Fixed positioning of the styleselect menu in iOS while using mobile theme.
+* Fixed the menubutton onSetup callback not executing when menubuttons were rendered.
+* Fixed `default_link_target` setting not being utilized correctly when creating a link.
+* Fixed color picker floating marginally outside it's container.
+* Fixed disabled menu items displaying as active when hovered.
+* Removed redundant mobile wrapper.
+
 ## Version 5.0.3 March 19, 2019
 * Changed empty nested-menu items within the style formats menu to be disabled or hidden if the value of `style_formats_autohide` is `true`.
 * Changed the entire phrase 'Powered by Tiny' in the status bar to be a link instead of just the word 'Tiny'.

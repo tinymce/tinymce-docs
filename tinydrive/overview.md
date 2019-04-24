@@ -10,34 +10,23 @@ Tiny Drive allows you to manage your images and files in the cloud, when you are
 
 You will be able to drag and drop files to instantly upload them to cloud storage behind a blazing fast CDN helping you serve the files and images you need.
 
+You can manage file uploads, storage, processing, and delivery for your website or app. Learn more about our concepts here.
+
+All components of our infrastructure seamlessly work as a whole, are easy to configure, and can be deeply flexible when needed.
+
+Our upload UI, libs, and APIs are built by developers for developers. In turn, we design Tiny Drive integrations to be non-coder ready, easy to configure, and well-covered with documentation and guides.
+
+
 ## Demo
 
 Here is a quick demo on how Tiny Drive integrates with TinyMCE.
 
 {% include codepen.html id="drive-demo" %}
 
-## Restrictions and Quotas
 
-Drive has restrictions on what files can be uploaded and how large these files can be:
+Start off your Tiny Drive journey with checking out our [Getting Started]({{site.baseurl}}/tinydrive/getting-started/), analyzing your image performance, or head straight to our [signup](https://apps.tiny.cloud/my-account/) page.
 
-* The maximum file size is 100MB
-* Allowed image extensions: gif, jpeg, jpg, png, tif, tiff, bmp
-* Allowed document extensions: doc, xls, ppt, pps, docx, xlsx, pptx, pdf, rtf, txt, keynote, pages, numbers
-* Allowed audio extensions: wav, wave, mp3, ogg, ogv, oga, ogx, ogm, spx, opus
-* Allowed video extensions: mp4, m4v, ogv, webm, mov
-* Allowed archive extensions: zip
-* The Copy operation is limited to single files due to technical reasons.
+We’re striving to make Tiny Drive as useful and simple as possible. We recommend reading up and trying to understand how [JWT authentication]({{site.baseurl}}/tinydrive/jwt-authentication/) works. In order to implement Tiny Drive you need prior knowledge of JSON Web Token (or JWT) in detail, including how they can be used for user authentication and session management in a web application. There will be some coding involved on both the client-side and the server-side to configure JWT as per the instructions in this section.
 
-Your storage and bandwidth quota varies based upon the [Tiny Cloud Plan](https://www.tiny.cloud/pricing/) you are subscribed to.
+> Note: For support related issues such as problems with JWT authentication and implementing Tiny Drive, check our [help page](/tinydrive/get-help/) or please contact [support](https://support.tiny.cloud/hc/en-us/requests/new).
 
-## Upload Files URL
-
-All files are uploaded to a central storage with a CDN endpoint that means that we are hosting your files and they are publicly available in read-only mode for anyone that has access to the URL of that file.
-The URL format for each file is `https://drive.tiny.cloud/1/{your-api-key}/{uuid}` and gets generated when a file is uploaded.
-If you move or rename a file, it will still have the same unique URL, so the restructuring of your files using Drive won't affect where they are being used. However, deleting a file will mark the URL as being unused, and the URL will not continue to work.
-
-## User specific root
-
-It's common that you want to be able to have user specific paths so that each user within your system gets it's own directory. This can be done by setting the `https://claims.tiny.cloud/drive/root` custom JWT claim to a path within your tiny drive account. This path will automatically be constructured when the user is accessing drive using a JWT key with that claim. The user only be able to see and manage files within that root.
-
-Continue to [getting started](/tinydrive/getting-started/) with Tiny Drive.

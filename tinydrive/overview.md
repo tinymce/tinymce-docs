@@ -24,7 +24,9 @@ Here is a quick demo on how Tiny Drive integrates with TinyMCE.
 {% include codepen.html id="drive-demo" %}
 
 
-Start off your Tiny Drive journey with checking out our Getting Started, analyzing your image performance, or head straight to our signup page.
+Start off your Tiny Drive journey with checking out our [Getting Started]({{site.baseurl}}/tinydrive/getting-started/), analyzing your image performance, or head straight to our [signup](https://apps.tiny.cloud/my-account/) page.
 
-We’re striving to make Tiny Drive as useful and simple as possible. We recommend reading up and trying to understand how JWT works, you need some basic skills in order to implement Tiny Drive. This can be tricky, if you need some help, check our [help page](/tinydrive/get-help/) and if that doesn't work, contact our support.
+We’re striving to make Tiny Drive as useful and simple as possible. We recommend reading up and trying to understand how [JWT authentication]({{site.baseurl}}/tinydrive/jwt-authentication/) works. In order to implement Tiny Drive you need prior knowledge of JSON Web Token (or JWT) in detail, including how they can be used for user authentication and session management in a web application. There will be some coding involved on both the client-side and the server-side to configure JWT as per the instructions in this section.
+
+> Note: For support related issues such as problems with JWT authentication and implementing Tiny Drive, check our [help page](/tinydrive/get-help/) or please contact [support](https://support.tiny.cloud/hc/en-us/requests/new).
 

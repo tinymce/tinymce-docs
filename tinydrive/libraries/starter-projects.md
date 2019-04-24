@@ -10,11 +10,11 @@ keywords: tinydrive starter projects
 
 To get started quickly and understand how Tiny Drive works, we highly recommend trying one of the starter projects on Github, should get you up and running in no time.
 
-The starter projects have their own 5 steps to get Tiny Drive running, follow those steps.
+The starter projects have their own 5 steps to get Tiny Drive up and running. Follow those steps.
 
 If you do not have any experience with these languages, it might still be useful to see how they work and then try to implement your own solution.
 
-We really recommend giving these starter packages a try, it will help you understand how authentication and integration can work in your system. You can then move on and try to implement Tiny Drive into your system.
+We highly recommend giving these starter packages a try, it will help you understand how authentication and integration can work in your system. You can then move on and try to implement Tiny Drive into your system.
 
 #### Choose a familar language
 

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Dropbox integration
-title_nav: Dropbox integration
+title_nav: Dropbox
 description: Guide for setting up Tiny Drive with Dropbox.
 keywords: dropbox
 ---

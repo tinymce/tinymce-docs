@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Google Drive integration
-title_nav: Google Drive integration
+title_nav: Google Drive
 description: Guide for setting up Tiny Drive with Google Drive.
 keywords: google drive
 ---

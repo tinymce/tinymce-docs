@@ -527,7 +527,10 @@
 - url: "tinydrive"
   pages:
   - url: "overview"
-  - url: "concepts"
+  - url: "authentication"
+    pages:
+    - url: "concepts"
+    - url: "jwt-authentication"
   - url: "libraries"
     pages:
     - url: "starter-projects"
@@ -536,10 +539,11 @@
     - url: "php"
     - url: "java"
   - url: "getting-started"
-  - url: "jwt-authentication"
   - url: "configuration"
-  - url: "dropbox-integration"
-  - url: "googledrive-integration"
+  - url: "integrations"
+    pages:
+    - url: "dropbox-integration"
+    - url: "googledrive-integration"
   - url: "changelog"
   - url: "get-help"
 

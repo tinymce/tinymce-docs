@@ -1,12 +1,12 @@
 ---
 layout: default
 title: Starter projects
-title_nav: Starter projects
+title_nav: Overview
 description: Tiny Drive starter projects
 keywords: tinydrive starter projects
 ---
 
-## Overview
+## Starter projects
 
 To get started quickly and understand how Tiny Drive works, we highly recommend trying one of the starter projects on Github, should get you up and running in no time.
 

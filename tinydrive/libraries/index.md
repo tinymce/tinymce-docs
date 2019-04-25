@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Tiny Drive third-party libraries
-title_nav: Third-party libraries
+title_nav: Example projects
 description: Starter projects libraries to make your Tiny Drive experience smooth with the technologies you use.
 type: folder
 keywords: tinydrive libraries .net node.js php java

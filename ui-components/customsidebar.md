@@ -15,7 +15,7 @@ The sidebar API allows developers to add sidebars on editor instances in a simil
 
 This is the syntax for the addSidebar function: `editor.ui.registry.addSidebar(name:String, spec:Object)`
 
-Including the sidebar name in the `toolbar` option will create a sidebar toggle button with the icon specified in the `onSetup` function.
+When a new sidebar is registered, a corresponding toolbar button for toggling the sidebar open and close is also created using the same name. This button can then be included in the toolbar by adding the sidebar name to the `toolbar` option.
 
 ### Specification object
 

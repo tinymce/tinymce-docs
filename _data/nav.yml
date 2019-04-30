@@ -527,10 +527,11 @@
 - url: "tinydrive"
   pages:
   - url: "overview"
-  - url: "authentication"
+  - url: "getting-started"
     pages:
     - url: "concepts"
     - url: "jwt-authentication"
+    - url: "getting-started"
   - url: "libraries"
     pages:
     - url: "starter-projects"
@@ -538,7 +539,6 @@
     - url: "nodejs"
     - url: "php"
     - url: "java"
-  - url: "getting-started"
   - url: "configuration"
   - url: "integrations"
     pages:

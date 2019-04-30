@@ -8,7 +8,7 @@ keywords: tinydrive .Net Core
 
 ## Tiny Drive .NET MVC Starter Project
 
-This project will help you get started with Tiny Drive and allow you to play around with it's features.
+This project will help you get started with Tiny Drive using .NET and allow you to play around with its features.
 
 ## Requirements
 
@@ -65,5 +65,5 @@ Go through the following additional resources to figure out how to configure Tin
 
 ## Need help? ##
 
-We’re striving to make Tiny Drive as useful and simple as possible. For support related issues such as problems with JWT authentication and implementing Tiny Drive, check our [help page](/tinydrive/get-help/) or please contact [support](https://support.tiny.cloud/hc/en-us/requests/new).
+We are striving to make Tiny Drive as useful and simple as possible. For support related issues such as problems with JWT authentication and implementing Tiny Drive, check our [help page](/tinydrive/get-help/) or please contact [support](https://support.tiny.cloud/hc/en-us/requests/new).
 

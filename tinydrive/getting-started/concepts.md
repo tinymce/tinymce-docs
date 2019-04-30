@@ -41,7 +41,7 @@ It's common that you want to be able to have user specific paths so that each us
 ## Storage
 
 Tiny Drive uses an [Amazon Web Services S3](https://aws.amazon.com/s3/) bucket, the same storage solution used by companies like Netflix, Thomson Reuters, and Zillow. (You can read about Amazon’s comprehensive security approach [here](https://aws.amazon.com/security/).)
-You can also configure Tiny Drive to use Google Drive or Dropbox for storage. Read about integrating Google Drive or Dropbox [here].
+You can also configure Tiny Drive to use Google Drive or Dropbox for storage. Read about integrating Google Drive or Dropbox [here]({{site.baseurl}}/tinydrive/integrations).
 
 ## Security & performance
 

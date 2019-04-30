@@ -2,7 +2,7 @@
 layout: default
 title: Custom sidebar
 title_nav: Custom sidebar
-description_short: Introducing sidebar panel creation. 
+description_short: Introducing sidebar panel creation.
 description: A short introduction to creating sidebars.
 keywords: sidebar
 ---
@@ -15,6 +15,8 @@ The sidebar API allows developers to add sidebars on editor instances in a simil
 
 This is the syntax for the addSidebar function: `editor.ui.registry.addSidebar(name:String, spec:Object)`
 
+Including the sidebar name in the `toolbar` option will create a sidebar toggle button with the icon specified in the `onSetup` function.
+
 ### Specification object
 
 #### `tooltip`
@@ -25,7 +27,7 @@ The `tooltip` specifies a tooltip to be displayed when hovering over the sidebar
 
 #### `icon`
 
-The `icon` specifies an icon for the sidebar toggle button. The icon should be the name of an icon provided by the TinyMCE skin.
+The `icon` specifies an icon for the sidebar toggle button. The icon should be the name of an icon provided by the TinyMCE skin or a [custom icon]({{site.baseurl}}/api/tinymce.editor.ui/tinymce.editor.ui.registry/#addicon/).
 
 **Type**: `String`
 
@@ -60,10 +62,11 @@ The `element():HTMLElement` function returns the root element of the sidebar pan
 ```js
 tinymce.init({
   ...
+  toolbar: "mysidebar",
   setup: function (editor) {
     editor.ui.registry.addSidebar('mysidebar', {
       tooltip: 'My sidebar',
-      icon: 'settings',
+      icon: 'comment',
       onSetup: function (api) {
         console.log('Render panel', api.element());
       },
@@ -85,7 +88,7 @@ tinymce.init({
 tinymce.PluginManager.add('myplugin', function (editor) {
   editor.ui.registry.addSidebar('mysidebar', {
     tooltip: 'My sidebar',
-    icon: 'settings',
+    icon: 'comment',
     onSetup: function (api) {
       console.log('Render panel', api.element());
     },

@@ -10,6 +10,12 @@ keywords: google drive
 
 Tiny Drive enables you to import files from any Google Drive account if you setup the google drive integration by providing a Google credentials. When the user selects a file from Google Drive it will instantly be uploaded or imported into the Tiny Drive storage so that it can be viewed online and shared though Tiny Drive. Documents picked from Google Drive will be converted to PDF Files within Tiny Drive.
 
+## Prerequisites
+
+1. A valid Google Drive user account is required for integrating Google Drive with Tiny Drive. Refer to [this](https://support.google.com/drive/answer/2424384?co=GENIE.Platform%3DDesktop&hl=en) link for more information on creating a Google Drive user account.
+2. The Google Drive API should be enabled. Refer to [this](https://developers.google.com/drive/api/v3/enable-drive-api) link for more information on enabling the Google Drive API.
+3. The Google Picker API should be enabled. Refer to [this](https://developers.google.com/picker/docs/) link for more information on enabling the Google Picker API.
+
 ## Obtaining the API Key and Client ID
 
 You can obtain the Google Drive credentials by following the steps below.
@@ -65,3 +71,13 @@ tinymce.init({
   tinydrive_google_drive_client_id: '<your google drive OAuth client ID>'
 });
 ```
+
+For more information on other TinyDrive config options refer to the [configuration] section of this document.
+
+### 7. Tiny Drive UI
+
+1. From the Tiny Drive UI, click on the <Insert image> button to access the Tiny Drive UI.
+2. Click on the <Upload/Create> button to select Google Drive from the list of storages.
+3. Select the file to upload/import from Google Drive by double-clicking.
+
+Result: You should be able to view the selected files in you Tiny Drive storage.

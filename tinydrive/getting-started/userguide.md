@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Getting started with Tiny Drive
-title_nav: Getting started
+title: User guide for getting started with Tiny Drive
+title_nav: User guide
 description: Guide on how to get started with Tiny Drive
 keywords: tinydrive starter
 ---
@@ -53,4 +53,5 @@ After seeing it running, the next step would be to figure out how to implement i
 Don't forget you can look at the starter projects on Github to figure out how it works, even if your not familiar any of the languages we have for the starter packages, it may help you figure out how to go about it with your system.
 
 ## Need help? ##
+
 We recommend reading up and trying to understand how JWT works, you need some basic skills in order to implement Tiny Drive. This can be tricky, if you need some help, check our [help page](/tinydrive/get-help/) and if that doesn't work, contact our support.

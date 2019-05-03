@@ -46,10 +46,15 @@ tinymce.init({
 });
 ```
 
+For more information on other Tiny Drive config options refer to the [configuration]({{site.baseurl}}/getting-started/configuration/#configuringwithdropbox) section of this document.
+
 ### 4. Tiny Drive UI
 
-From the Tiny Drive UI, click on the <Insert image> button to access the Tiny Drive UI.
-Click on the <Upload/Create> button to select Dropbox from the list of storages.
-Select the file to upload/import from Dropbox by double-clicking.
+1. From the TinyMCE user interface, click on the ![**Insert/edit image**]({{site.baseurl}}/images/insertimage.png) button to access the Tiny Drive user interface.
+2. Click on the ![Upload/Create]({{site.baseurl}}/images/upload.png) button to select Dropbox from the list of storages.
+3. Select the file to upload/import from Dropbox by clicking on the radio button next to it and click the **Choose** button to upload or **Cancel** to abort the operation.
+4. Alternatively, files from your local browser can be uploaded to the Dropbox by clicking on the **Upload files** option and selecting the files to upload.
 
-Result: You should be able to view the selected files in you Tiny Drive storage.
+**Result:** You should be able to view the selected files in your Tiny Drive storage.
+
+Read more about more Dropbox options [here](https://www.dropbox.com/guide/business).

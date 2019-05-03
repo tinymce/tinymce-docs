@@ -59,9 +59,10 @@ If your specific use case has not been covered by any of our sample [Starter pro
 
 Go through the following additional resources to figure out how to configure Tiny Drive with your system.
 
-- We recommend reading up and trying to understand how [JWT authentication]({{site.baseurl}}/tinydrive/jwt-authentication/) works. In order to implement Tiny Drive you need prior knowledge of JWT in detail, including how they can be used for user authentication and session management in a web application. There will be some coding involved on both the client-side and the server-side to configure JWT as per the instructions in this section.
-- [Getting Started]({{site.baseurl}}/tinydrive/getting-started/)
-- [Configuration Options]({{site.baseurl}}/tinydrive/configuration/)
+- We recommend reading up and trying to understand how [JWT authentication]({{site.baseurl}}/tinydrive/introduction/jwt-authentication/) works. In order to implement Tiny Drive you need prior knowledge of JWT in detail, including how they can be used for user authentication and session management in a web application. There will be some coding involved on both the client-side and the server-side to configure JWT as per the instructions in this section.
+- [Concepts]({{site.baseurl}}/tinydrive/introduction/concepts/)
+- [Configuration Options]({{site.baseurl}}/tinydrive/getting-started/configuration/)
+- [Storage integrations]({{site.baseurl}}/tinydrive/integrations/)
 
 
 ## Need help? ##

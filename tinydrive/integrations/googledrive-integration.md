@@ -61,7 +61,7 @@ Click on the `Create credentials` button then on `OAuth client ID` item:
 
 ### 6. Configure tinydrive to use the new Google Drive credentials
 
-You configure the Google drive api key by setting the [tinydrive_google_drive_key]({{site.baseurl}}/tinydrive/configuration/#tinydrive_google_drive_key) and the Google OAuth client ID by setting the [tinydrive_google_drive_client_id]({{site.baseurl}}/tinydrive/configuration/#tinydrive_google_drive_client_id).
+You configure the Google drive api key by setting the [tinydrive_google_drive_key]({{site.baseurl}}/tinydrive/getting-started/configuration/#tinydrive_google_drive_key) and the Google OAuth client ID by setting the [tinydrive_google_drive_client_id]({{site.baseurl}}/tinydrive/getting-started/configuration/#tinydrive_google_drive_client_id).
 
 ```js
 tinymce.init({
@@ -72,7 +72,7 @@ tinymce.init({
 });
 ```
 
-For more information on other TinyDrive config options refer to the [configuration] section of this document.
+For more information on other TinyDrive config options refer to the [configuration]({{site.baseurl}}/tinydrive/getting-started/configuration) section of this document.
 
 ### 7. Tiny Drive UI
 
@@ -87,7 +87,6 @@ For more information on other TinyDrive config options refer to the [configurati
 
 The following other options can be performed to the selected file :
 
-{% include /images/imageoptions.png %)
 
 1. Follow the steps from 1-3 of the Tiny Drive UI procedure.
 2. Choose from the options below as per the requirement:

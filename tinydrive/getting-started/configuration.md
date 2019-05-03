@@ -1,14 +1,12 @@
 ---
 layout: default
-title: Tiny Drive Configuration
-title_nav: Configuration
+title: Tiny Drive configuration
+title_nav: Configuration options
 description: List of all available Tiny Drive configuration options.
 keywords: tinydrive configuration
 ---
 
-## Options
-
-These settings are necessary to make Drive work:
+## Configuring with TinyMCE
 
 ### `tinydrive_token_provider`
 
@@ -17,7 +15,7 @@ This setting could take one of the following two forms:
 * A URL to a page that takes an HTTP JSON POST request and produces a JSON structure with a valid JWT. It uses a POST request to avoid caching by browsers and proxies.
 * A function that provides the same token through a callback. This allows you to make your own HTTP request in any format you like. The provider function is a function that has a success and failure callback where the success takes an object with a token property containing the JWT, and the failure callback takes a string to present as an error message if the token could not be produced.
 
-You can read more about how to create these tokens in the [JWT authentication guide]({{site.baseurl}}/tinydrive/jwt-authentication/) or try one of the started projects described in the [getting started guide]({{site.baseurl}}/tinydrive/getting-started/).
+You can read more about how to create these tokens in the [JWT authentication guide]({{site.baseurl}}/tinydrive/introduction/jwt-authentication/) or try one of the [starter projects]({{site.baseurl}}/tinydrive/getting-started/user-guide/#starterprojects) described in the user guide.
 
 **Type:** `String` or `Function`
 
@@ -64,6 +62,7 @@ tinymce.init({
 });
 ```
 
+
 ### `tinydrive_max_image_dimension`
 
 This setting enables you to constrain the width/height of uploaded images. When this is enabled any images with a higher width or height than the specified amount would be proportionally resized down to the specified max dimension.
@@ -80,9 +79,53 @@ tinymce.init({
 });
 ```
 
+## Configuring the Tiny Drive UI
+
+### Configuring the Insert File toolbar button
+
+Drive will automatically integrate into the Image, Link, and Media dialogs as a file picker. You can also configure it to insert files directly into your content using the `insertfile` button. To enable this button, add it to your toolbar editor setting.
+
+The Insert File toolbar button will insert images as `img` elements or other files as links to that file.
+
+#### Example
+
+This is an example of configuring the 'insertfile' toolbar button.
+
+```js
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'tinydrive',
+  toolbar: 'insertfile'
+});
+```
+
+### Configuring the Insert File menu item
+
+Drive will automatically integrate into the Image, Link, and Media dialogs as a file picker. You can also configure it to insert files directly into your content using the `insertfile` menu item. To enable this menu item, add it to your menus editor setting or the insert_button_items setting.
+
+The Insert File menu item will insert images as `img` elements or other files as links to that file.
+
+#### Example
+
+This is an example of configuring the 'insertfile' menu item.
+
+```js
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'tinydrive',
+  toolbar: 'insert',
+  menu: {
+    insert: { title: 'Insert', items: 'insertfile' }
+  },
+  insert_button_items: 'insertfile'
+});
+```
+
+## Configuring with Dropbox
+
 ### `tinydrive_dropbox_app_key`
 
-This setting enables you specify the Dropbox app key for integrating dropbox into Tiny Drive. You can read more about how you obtain this key in the [Dropbox integration guide]({{site.baseurl}}/tinydrive/dropbox-integration/).
+This setting enables you specify the Dropbox app key for integrating dropbox into Tiny Drive. You can read more about how you obtain this key in the [Dropbox integration guide]({{site.baseurl}}/tinydrive/integrations/dropbox-integration/).
 
 **Type:** `string`
 
@@ -96,9 +139,11 @@ tinymce.init({
 });
 ```
 
+## Configuring with Google Drive
+
 ### `tinydrive_google_drive_key`
 
-This setting enables you specify the Google Drive api key for integrating Google Drive into Tiny Drive. You can read more about how you obtain this key in the [Google Drive integration guide]({{site.baseurl}}/tinydrive/googledrive-integration/).
+This setting enables you specify the Google Drive api key for integrating Google Drive into Tiny Drive. You can read more about how you obtain this key in the [Google Drive integration guide]({{site.baseurl}}/tinydrive/integrations/googledrive-integration/).
 
 **Type:** `string`
 
@@ -114,7 +159,7 @@ tinymce.init({
 
 ### `tinydrive_google_drive_client_id`
 
-This setting enables you specify the Google Drive client id for integrating Google Drive into Tiny Drive. You can read more about how you obtain this id in the (Google Drive integration guide)[({{site.baseurl}}/tinydrive/googledrive-integration/)].
+This setting enables you specify the Google Drive client id for integrating Google Drive into Tiny Drive. You can read more about how you obtain this id in the [Google Drive integration guide]({{site.baseurl}}/tinydrive/integrations/googledrive-integration/).
 
 **Type:** `string`
 
@@ -128,42 +173,3 @@ tinymce.init({
 });
 ```
 
-## Configuring the Insert File toolbar button
-
-Drive will automatically integrate into the Image, Link, and Media dialogs as a file picker. You can also configure it to insert files directly into your content using the `insertfile` button. To enable this button, add it to your toolbar editor setting.
-
-The Insert File toolbar button will insert images as `img` elements or other files as links to that file.
-
-### Example
-
-This is an example of configuring the 'insertfile' toolbar button.
-
-```js
-tinymce.init({
-  selector: 'textarea',  // change this value according to your HTML
-  plugins: 'tinydrive',
-  toolbar: 'insertfile'
-});
-```
-
-## Configuring the Insert File menu item
-
-Drive will automatically integrate into the Image, Link, and Media dialogs as a file picker. You can also configure it to insert files directly into your content using the `insertfile` menu item. To enable this menu item, add it to your menus editor setting or the insert_button_items setting.
-
-The Insert File menu item will insert images as `img` elements or other files as links to that file.
-
-### Example
-
-This is an example of configuring the 'insertfile' menu item.
-
-```js
-tinymce.init({
-  selector: 'textarea',  // change this value according to your HTML
-  plugins: 'tinydrive',
-  toolbar: 'insert',
-  menu: {
-    insert: { title: 'Insert', items: 'insertfile' }
-  },
-  insert_button_items: 'insertfile'
-});
-```

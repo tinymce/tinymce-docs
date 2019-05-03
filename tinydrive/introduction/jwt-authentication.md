@@ -46,7 +46,8 @@ These are like options/data you can send with the JWT token.
 
 [^1] The "sub" value is a case-sensitive string containing a **String** or **URI** value. The `sub` cannot have a `:` *unless* it is a valid URI or else the callback would fail.
 
-## Step by step
+## JWT endpoint setup procedure
+
 Follow these steps in order to setup your own JWT endpoint.
 
  1. Setup a JWT endpoint on your server, this could be a simple page using one of the examples below.
@@ -57,6 +58,7 @@ Follow these steps in order to setup your own JWT endpoint.
  > The JWT Endoint should examine your systems sessions in order to verify your user has access to your system.
 
 ## Need help?
+
 We recommend reading up and trying to understand how JWT works, you need some basic skills in order to implement Tiny Drive. This can be tricky, if you need some help, check our [help page](/tinydrive/get-help/) and if that doesn't work, contact our support.
 
 ## PHP token provider endpoint example
@@ -169,6 +171,7 @@ tinymce.init({
   toolbar: 'insertfile image link | code'
 });
 ```
+
 ### More configuration
 If you managed to set this up, you should be good to go with checking out the various [configuration options](/tinydrive/configuration/) for Tiny Drive and how you can customize is. Don't forget to change the JWT Claim's (user id, user name) to get those from your system.
 

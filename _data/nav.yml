@@ -36,7 +36,7 @@
   - url: "pageembed"
   - url: "permanentpen"
   - url: "formatpainter"
-  - url: "drive"
+  - url: "tinydrive"
   - url: "editor-dfree"
   - url: "inline"
   - url: "classic"
@@ -233,7 +233,6 @@
   - url: "comments"
   - url: "contextmenu"
   - url: "directionality"
-  - url: "drive"
   - url: "emoticons"
     pages:
     - url: "#emoticons_append"
@@ -423,6 +422,7 @@
     pages:
     - url: "#textpattern_patterns"
   - url: "toc"
+  - url: "tinydrive"
     pages:
     - url: "#toc_depth"
     - url: "#toc_header"
@@ -544,6 +544,35 @@
   - url: "support"
   - url: "get-tinymce-bugs-fixed"
   - url: "system-requirements"
+
+- url: "tinydrive"
+  pages:
+  - url: "introduction"
+    pages:
+    - url: "overview"
+    - url: "concepts"
+    - url: "jwt-authentication"
+  - url: "getting-started"
+    pages:
+    - url: "user-guide"
+    - url: "configuration"
+      pages:
+      - url: "#Configuring with TinyMCE"
+      - url: "#Configuring the Tiny Drive UI"
+      - url: "#Configuring with Dropbox"
+      - url: "#Configuring with Google Drive"
+  - url: "libraries"
+    pages:
+    - url: "dotnet"
+    - url: "nodejs"
+    - url: "php"
+    - url: "java"
+  - url: "integrations"
+    pages:
+    - url: "dropbox-integration"
+    - url: "googledrive-integration"
+  - url: "changelog"
+  - url: "get-help"
 
 - url: "advanced"
   pages:

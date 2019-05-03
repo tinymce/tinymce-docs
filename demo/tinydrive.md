@@ -9,7 +9,7 @@ keywords: tinydrive .net php relative_urls
 
 ## Live example
 
-This example shows you how to use Tiny Drive for your file and image management. For more information on the Tiny Drive plugin, see the [docs]({{site.baseurl}}/plugins/drive/).
+This example shows you how to use Tiny Drive for your file and image management. For more information on the Tiny Drive plugin, see the [docs]({{site.baseurl}}/tinydrive/overview/).
 
 {% include codepen.html id="drive-demo" %}
 
@@ -19,7 +19,6 @@ This example shows you how to use Tiny Drive for your file and image management.
 tinymce.init({
   selector: 'textarea',
   plugins: 'image media link tinydrive code imagetools',
-  api_key: 'YOUR_API_KEY',
   height: 600,
   tinydrive_token_provider: 'URL_TO_YOUR_TOKEN_PROVIDER',
   toolbar: 'insertfile image link | code'

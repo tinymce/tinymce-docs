@@ -1,34 +1,12 @@
 ---
 layout: default
-title: Drive plugin
-title_nav: Drive
-description: Cloud-based file and image management for TinyMCE.
-keywords: tinydrive storage media tiny drive
+title: Tiny Drive configuration
+title_nav: Configuration options
+description: List of all available Tiny Drive configuration options.
+keywords: tinydrive configuration
 ---
 
-The Tiny Drive plugin adds the functionality to upload and manage files and images to the cloud. This plugin is only available in [Tiny Cloud](https://www.tiny.cloud/download/) and requires you to register for an API key.
-
-To enable this functionality, add `tinydrive` to the list of plugins in the `tinymce.init` call. You also need to authenticate the user using a [JSON Web Token]({{site.baseurl}}/configure/jwt-authentication) (JWT).
-
-Once you enable Drive it integrates as the default file picker for the Image, Link, and Media dialogs and as the default upload handler for local images being pasted or inserted into the document.
-
-
-## Live example
-
-{% include codepen.html id="drive" %}
-
-### Example
-
-```js
-tinymce.init({
-  selector: 'textarea',  // change this value according to your html
-  plugins: 'tinydrive'
-});
-```
-
-## Options
-
-These settings are necessary to make Drive work:
+## Configuring with TinyMCE
 
 ### `tinydrive_token_provider`
 
@@ -37,7 +15,7 @@ This setting could take one of the following two forms:
 * A URL to a page that takes an HTTP JSON POST request and produces a JSON structure with a valid JWT. It uses a POST request to avoid caching by browsers and proxies.
 * A function that provides the same token through a callback. This allows you to make your own HTTP request in any format you like. The provider function is a function that has a success and failure callback where the success takes an object with a token property containing the JWT, and the failure callback takes a string to present as an error message if the token could not be produced.
 
-You can read more about how to create these tokens in the [JWT authentication]({{site.baseurl}}/configure/jwt-authentication/) guide.
+You can read more about how to create these tokens in the [JWT authentication guide]({{site.baseurl}}/tinydrive/introduction/jwt-authentication/) or try one of the [starter projects]({{site.baseurl}}/tinydrive/getting-started/user-guide/#starterprojects) described in the user guide.
 
 **Type:** `String` or `Function`
 
@@ -84,6 +62,7 @@ tinymce.init({
 });
 ```
 
+
 ### `tinydrive_max_image_dimension`
 
 This setting enables you to constrain the width/height of uploaded images. When this is enabled any images with a higher width or height than the specified amount would be proportionally resized down to the specified max dimension.
@@ -100,13 +79,17 @@ tinymce.init({
 });
 ```
 
-## Insert File toolbar button
+## Configuring the Tiny Drive UI
+
+### Configuring the Insert File toolbar button
 
 Drive will automatically integrate into the Image, Link, and Media dialogs as a file picker. You can also configure it to insert files directly into your content using the `insertfile` button. To enable this button, add it to your toolbar editor setting.
 
 The Insert File toolbar button will insert images as `img` elements or other files as links to that file.
 
-### Example of toolbar button
+#### Example
+
+This is an example of configuring the 'insertfile' toolbar button.
 
 ```js
 tinymce.init({
@@ -116,13 +99,15 @@ tinymce.init({
 });
 ```
 
-## Insert File menu item
+### Configuring the Insert File menu item
 
 Drive will automatically integrate into the Image, Link, and Media dialogs as a file picker. You can also configure it to insert files directly into your content using the `insertfile` menu item. To enable this menu item, add it to your menus editor setting or the insert_button_items setting.
 
 The Insert File menu item will insert images as `img` elements or other files as links to that file.
 
-### Example of menu item
+#### Example
+
+This is an example of configuring the 'insertfile' menu item.
 
 ```js
 tinymce.init({
@@ -136,26 +121,55 @@ tinymce.init({
 });
 ```
 
-## Restrictions and Quotas
+## Configuring with Dropbox
 
-Drive has restrictions on what files can be uploaded and how large these files can be:
+### `tinydrive_dropbox_app_key`
 
-* The maximum file size is 100MB
-* Allowed image extensions: gif, jpeg, jpg, png, tif, tiff, bmp
-* Allowed document extensions: doc, xls, ppt, pps, docx, xlsx, pptx, pdf, rtf, txt, keynote, pages, numbers
-* Allowed audio extensions: wav, wave, mp3, ogg, ogv, oga, ogx, ogm, spx, opus
-* Allowed video extensions: mp4, m4v, ogv, webm, mov
-* Allowed archive extensions: zip
-* The Copy operation is limited to single files due to technical reasons.
+This setting enables you specify the Dropbox app key for integrating dropbox into Tiny Drive. You can read more about how you obtain this key in the [Dropbox integration guide]({{site.baseurl}}/tinydrive/integrations/dropbox-integration/).
 
-Your storage and bandwidth quota varies based upon the [Tiny Cloud Plan](https://www.tiny.cloud/pricing/) you are subscribed to.
+**Type:** `string`
 
-## Upload Files URL
+#### Example
 
-All files are uploaded to a central storage with a CDN endpoint that means that we are hosting your files and they are publicly available in read-only mode for anyone that has access to the URL of that file.
-The URL format for each file is `https://drive.tiny.cloud/1/{your-api-key}/{uuid}` and gets generated when a file is uploaded.
-If you move or rename a file, it will still have the same unique URL, so the restructuring of your files using Drive won't affect where they are being used. However, deleting a file will mark the URL as being unused, and the URL will not continue to work.
+```js
+tinymce.init({
+  selector: "textarea",  // change this value according to your HTML
+  plugins: "tinydrive",
+  tinydrive_dropbox_app_key: '<your dropbox app key>'
+});
+```
 
-## User specific root
+## Configuring with Google Drive
 
-It's common that you want to be able to have user specific paths so that each user within your system gets it's own directory. This can be done by setting the `https://claims.tiny.cloud/drive/root` custom jwt claim to a path within your tiny drive account. This path will automatically be constructured when the user is accessing drive using a jwt key with that claim. The user only be able to see and manage files within that root.
+### `tinydrive_google_drive_key`
+
+This setting enables you specify the Google Drive api key for integrating Google Drive into Tiny Drive. You can read more about how you obtain this key in the [Google Drive integration guide]({{site.baseurl}}/tinydrive/integrations/googledrive-integration/).
+
+**Type:** `string`
+
+#### Example
+
+```js
+tinymce.init({
+  selector: "textarea",  // change this value according to your HTML
+  plugins: "tinydrive",
+  tinydrive_max_image_dimension: '<your google drive api key>'
+});
+```
+
+### `tinydrive_google_drive_client_id`
+
+This setting enables you specify the Google Drive client id for integrating Google Drive into Tiny Drive. You can read more about how you obtain this id in the [Google Drive integration guide]({{site.baseurl}}/tinydrive/integrations/googledrive-integration/).
+
+**Type:** `string`
+
+#### Example
+
+```js
+tinymce.init({
+  selector: "textarea",  // change this value according to your HTML
+  plugins: "tinydrive",
+  tinydrive_google_drive_client_id: '<your google drive client id>'
+});
+```
+

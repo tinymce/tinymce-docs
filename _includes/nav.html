@@ -1,7 +1,8 @@
 <ul>
 {% for link in include.links %}
-  {% capture slash_url_slash %}/{{ link.url }}/{% endcapture %}
-  {% if page.url contains slash_url_slash %}
+  {% capture prefixedLinkUrl %}:{{ include.preceding_address }}{{ link.url }}{% endcapture %}
+  {% capture prefixedPageUrl %}:{{ page.url }}{% endcapture %}
+  {% if prefixedPageUrl contains prefixedLinkUrl %}
     <li class="active">
   {% else %}
     <li>

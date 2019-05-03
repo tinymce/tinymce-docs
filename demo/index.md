@@ -13,5 +13,5 @@ redirect_from:
   - /try-tinymce/
 ---
 
-{% assign links = site.data.nav[3].pages %}
+{% assign links = site.data | where_exp:"nav", "nav.url == 'demo'" | first | map: "pages" %}
 {% include index.html links=links %}

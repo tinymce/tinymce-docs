@@ -12,7 +12,7 @@ To enable this functionality, add tinydrive to the list of plugins in the tinymc
 
 Once you enable Drive it integrates as the default file picker for the Image, Link, and Media dialogs and as the default upload handler for local images being pasted or inserted into the document.
 
-Checkout the [Tiny Drive Demo]({{site.baseurl}}/tinydrive/overview/#demo) to get familiar with its features.
+Checkout the [Tiny Drive Demo]({{site.baseurl}}/tinydrive/introduction/overview/#demo) to get familiar with its features.
 
 ### Creating an account
 

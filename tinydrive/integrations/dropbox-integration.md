@@ -58,3 +58,9 @@ For more information on other Tiny Drive config options refer to the [configurat
 **Result:** You should be able to view the selected files in your Tiny Drive storage.
 
 Read more about more Dropbox options [here](https://www.dropbox.com/guide/business).
+
+### Live example
+
+Here is a live example of Dropbox enabled on Tiny Drive.
+
+{% include codepen.html id="drive-demo-dropbox" %}

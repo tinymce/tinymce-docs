@@ -96,3 +96,8 @@ The following other options can be performed to the selected file :
 
 Read more about these options [here](https://gsuite.google.com/learning-center/products/drive/get-started/#!/).
 
+### Live example
+
+Here is a live example of Dropbox enabled on Tiny Drive.
+
+{% include codepen.html id="drive-demo-googledrive" %}

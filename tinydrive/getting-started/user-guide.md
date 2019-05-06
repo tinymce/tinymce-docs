@@ -44,19 +44,19 @@ The starter projects have their own procedures to get Tiny Drive up and running.
             <td><h3><b>Tiny Drive docs</b></h3></td>
         </tr>
         <tr>
-            <td><a href="https://github.com/tinymce/tinydrive-dotnet-mvc-starter"><img src="/images/netcore.svg" width="120"></a></td>
+            <td><a href="https://github.com/tinymce/tinydrive-dotnet-mvc-starter"><img src="{{site.baseurl}}/images/netcore.svg" width="120"></a></td>
             <td><a href="../dotnet/">.NET Core</a></td>
         </tr>
         <tr>
-            <td><a href="https://github.com/tinymce/tinydrive-nodejs-starter"><img src="/images/nodejs.svg"  width="120"></a></td>
+            <td><a href="https://github.com/tinymce/tinydrive-nodejs-starter"><img src="{{site.baseurl}}/images/nodejs.svg"  width="120"></a></td>
             <td><a href="../nodejs/">Node.js</a></td>
         </tr>
         <tr>
-            <td><a href="https://github.com/tinymce/tinydrive-php-starter"><img src="/images/php.svg"  width="120"></a></td>
+            <td><a href="https://github.com/tinymce/tinydrive-php-starter"><img src="{{site.baseurl}}/images/php.svg"  width="120"></a></td>
             <td><a href="../php/">PHP</a></td>
         </tr>
         <tr>
-            <td><a href="https://github.com/tinymce/tinydrive-java-spring-starter"><img src="/images/java.png" height="120"></a></td>
+            <td><a href="https://github.com/tinymce/tinydrive-java-spring-starter"><img src="{{site.baseurl}}/images/java.png" height="120"></a></td>
             <td><a href="../java/">Java Spring</a></td>
         </tr>
     </tbody>

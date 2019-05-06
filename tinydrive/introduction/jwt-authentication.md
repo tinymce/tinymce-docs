@@ -8,11 +8,11 @@ keywords: jwt authentication
 
 ## Introduction
 
-Tiny Drive require you to setup JWT authentication. This is to ensure that the security of your files remain in your control.
+Tiny Drive requires you to setup JWT authentication. This is to ensure that the security of your files remains in your control.
 
-JWT is a common authorization solution for web services and is documented in more detail at the [https://jwt.io/](https://jwt.io/) website. The guide aims to show how to setup JWT authentication for Tiny Drive.
+JWT is a standard authorization solution for web services and is documented in more detail at the [https://jwt.io/](https://jwt.io/) website. The guide aims to show how to setup JWT authentication for Tiny Drive.
 
-> If you haven't tried any of the [Starter projects]({{site.baseurl}}/tinydrive/getting-started/)  yet, we urge you to try them before trying to implement your own solution. The source is also available on Github to study.
+> If you haven't tried any of the [Starter projects]({{site.baseurl}}/tinydrive/getting-started/)  yet, we urge you to try them before trying to implement your solution. The source is also available on Github to study.
 
 ## Private/public key pair
 
@@ -34,7 +34,7 @@ The following diagram explains the JWT call flow:
 
 ### Algorithm
 
-Our examples use, and we recommend, RS256 algorithm. this is a list of supported ones: RS256, RS384, RS512, PS256, PS384, PS512
+Our examples use, and we recommend RS256 algorithm. This is a list of supported ones: RS256, RS384, RS512, PS256, PS384, PS512
 
 ### Claims
 
@@ -48,18 +48,18 @@ These are like options/data you can send with the JWT token.
 
 ## JWT endpoint setup procedure
 
-Follow these steps in order to setup your own JWT endpoint.
+Follow these steps to set up your own JWT endpoint.
 
  1. Setup a JWT endpoint on your server, this could be a simple page using one of the examples below.
  2. Configure the `tinydrive_token_provider` to that endpoint.
  3. Make sure you copy the private key into the example code.
  4. You should be good to go now.
 
- > The JWT Endoint should examine your systems sessions in order to verify your user has access to your system.
+ > The JWT Endpoint should examine your systems sessions to verify your user has access to your system.
 
 ## Need help?
 
-We recommend reading up and trying to understand how JWT works, you need some basic skills in order to implement Tiny Drive. This can be tricky, if you need some help, check our [help page](/tinydrive/get-help/) and if that doesn't work, contact our support.
+We recommend reading up and trying to understand how JWT works; you need some necessary skills to implement Tiny Drive. This can be tricky if you need some help, check our [help page](/tinydrive/get-help/) and if that doesn't work, contact our support.
 
 ## PHP token provider endpoint example
 
@@ -117,7 +117,7 @@ tinymce.init({
 
 ## Node token provider endpoint example
 
-This example shows you how to set up a Node.js express handler that produces the tokens. It requires you to install the Express web framework and the `jsonwebtoken` Node modules. 
+This example shows you how to set up a Node.js express handler that produces the tokens. It requires you to install the Express web framework and the `jsonwebtoken` Node modules.
 
 ### /jwt
 
@@ -136,7 +136,7 @@ const privateKey = `
 `;
 
 app.post('/jwt', function (req, res) {
-  // NOTE: Before you proceed with the TOKEN, verify your users session or access.
+  // NOTE: Before you proceed with the TOKEN, verify your users' session or access.
   const payload = {
     sub: '123', // Unique user id string
     name: 'John Doe', // Full name of user
@@ -173,8 +173,8 @@ tinymce.init({
 ```
 
 ### More configuration
-If you managed to set this up, you should be good to go with checking out the various [configuration options](/tinydrive/configuration/) for Tiny Drive and how you can customize is. Don't forget to change the JWT Claim's (user id, user name) to get those from your system.
+If you managed to set this up, you should be good to go with checking out the various [configuration options](/tinydrive/getting-started/configuration/) for Tiny Drive and how you can customize it. Don't forget to change the JWT Claim's (user id, user name) to get those from your system.
 
-If you need some help, check our [help page](/tinydrive/get-help/) and if that doesn't work, contact our support.
+If you need some help, check our [help page](/tinydrive/get-help/) and if that doesn't work, [submit a support request](https://support.tiny.cloud/hc/en-us/requests/new).
 
 

@@ -13,9 +13,9 @@ keywords: tinydrive configuration
 This setting could take one of the following two forms:
 
 * A URL to a page that takes an HTTP JSON POST request and produces a JSON structure with a valid JWT. It uses a POST request to avoid caching by browsers and proxies.
-* A function that provides the same token through a callback. This allows you to make your own HTTP request in any format you like. The provider function is a function that has a success and failure callback where the success takes an object with a token property containing the JWT, and the failure callback takes a string to present as an error message if the token could not be produced.
+* A function that provides the same token through a callback. This allows making an HTTP request in any desired format. The provider function is a function that has a success and failure callback where the success takes an object with a token property containing the JWT, and the failure callback takes a string to present as an error message if the token could not be produced.
 
-You can read more about how to create these tokens in the [JWT authentication guide]({{site.baseurl}}/tinydrive/introduction/jwt-authentication/) or try one of the [starter projects]({{site.baseurl}}/tinydrive/getting-started/user-guide/#starterprojects) described in the user guide.
+For more information on how to create these tokens, refer to the [JWT authentication guide]({{site.baseurl}}/tinydrive/introduction/jwt-authentication/) or try one of the [starter projects]({{site.baseurl}}/tinydrive/getting-started/user-guide/#starterprojects) described in the user guide.
 
 **Type:** `String` or `Function`
 
@@ -46,7 +46,7 @@ tinymce.init({
 
 ### `tinydrive_upload_path`
 
-This setting enables you to change the default upload path for files that get uploaded when pasted into the editor, uploaded directly through the Image dialog, or when you drag-and-drop images into the editor. It will produce a date-based structure within this path like this `/uploads/{year}{month}{day}`. This is to avoid having thousands of files in the same directory.
+This setting enables changing the default upload path for files that get uploaded when pasted into the editor, uploaded directly through the Image dialog, or when an image is dragged-and-dropped into the editor. It will produce a date-based structure within this path like this `/uploads/{year}{month}{day}`. This is to avoid having thousands of files in the same directory.
 
 **Type:** `String`
 
@@ -65,7 +65,7 @@ tinymce.init({
 
 ### `tinydrive_max_image_dimension`
 
-This setting enables you to constrain the width/height of uploaded images. When this is enabled any images with a higher width or height than the specified amount would be proportionally resized down to the specified max dimension.
+This setting enables constraining the width/height of uploaded images. When this is enabled any images with a higher width or height than the specified amount would be proportionally resized down to the specified maximum dimension.
 
 **Type:** `Number`
 
@@ -83,7 +83,7 @@ tinymce.init({
 
 ### Configuring the Insert File toolbar button
 
-Drive will automatically integrate into the Image, Link, and Media dialogs as a file picker. You can also configure it to insert files directly into your content using the `insertfile` button. To enable this button, add it to your toolbar editor setting.
+Tiny Drive will automatically integrate into the Image, Link, and Media dialogs as a file picker. It can also be configured to insert files directly into any content using the `insertfile` button. To enable this button, add it to the toolbar editor setting.
 
 The Insert File toolbar button will insert images as `img` elements or other files as links to that file.
 
@@ -101,7 +101,7 @@ tinymce.init({
 
 ### Configuring the Insert File menu item
 
-Drive will automatically integrate into the Image, Link, and Media dialogs as a file picker. You can also configure it to insert files directly into your content using the `insertfile` menu item. To enable this menu item, add it to your menus editor setting or the insert_button_items setting.
+Tiny Drive will automatically integrate into the Image, Link, and Media dialogs as a file picker. It can also be configured to insert files directly into any content using the `insertfile` menu item. To enable this menu item, add it to the menus editor setting or the `insert_button_items` setting.
 
 The Insert File menu item will insert images as `img` elements or other files as links to that file.
 
@@ -125,7 +125,7 @@ tinymce.init({
 
 ### `tinydrive_dropbox_app_key`
 
-This setting enables you specify the Dropbox app key for integrating dropbox into Tiny Drive. You can read more about how you obtain this key in the [Dropbox integration guide]({{site.baseurl}}/tinydrive/integrations/dropbox-integration/).
+This setting enables specifying the Dropbox API key for integrating dropbox into Tiny Drive. For more information on how you obtain this key, refer to the [Dropbox integration guide]({{site.baseurl}}/tinydrive/integrations/dropbox-integration/).
 
 **Type:** `string`
 
@@ -143,7 +143,7 @@ tinymce.init({
 
 ### `tinydrive_google_drive_key`
 
-This setting enables you specify the Google Drive api key for integrating Google Drive into Tiny Drive. You can read more about how you obtain this key in the [Google Drive integration guide]({{site.baseurl}}/tinydrive/integrations/googledrive-integration/).
+This setting enables specifying the Google Drive API key for integrating Google Drive into Tiny Drive. For more information on how you obtain this key, refer to the [Google Drive integration guide]({{site.baseurl}}/tinydrive/integrations/googledrive-integration/).
 
 **Type:** `string`
 
@@ -159,7 +159,7 @@ tinymce.init({
 
 ### `tinydrive_google_drive_client_id`
 
-This setting enables you specify the Google Drive client id for integrating Google Drive into Tiny Drive. You can read more about how you obtain this id in the [Google Drive integration guide]({{site.baseurl}}/tinydrive/integrations/googledrive-integration/).
+This setting enables specifying the Google Drive client ID for integrating Google Drive into Tiny Drive. For more information on how you obtain this ID, refer to the [Google Drive integration guide]({{site.baseurl}}/tinydrive/integrations/googledrive-integration/).
 
 **Type:** `string`
 

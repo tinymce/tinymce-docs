@@ -21,7 +21,7 @@ Store the keys temporarily somewhere as you will need to copy & paste them later
 
 ### Prerequisites
 
-NodeJS 11 on any supported platform.
+* NodeJS 11 on any supported platform.
 
 ### Procedure
 
@@ -35,7 +35,7 @@ $ git clone git@github.com:tinymce/tinydrive-nodejs-starter.git
 
 #### 2. Change the `apiKey` in `tinydrive-nodejs-starter/config.js`
 
-You get the api key from the `API Key Manager` account manager at http://tiny.cloud.
+You get the API key from the `API Key Manager` account manager at http://tiny.cloud.
 
 #### 3. Create a `tinydrive-nodejs-starter/private.key` file containing your generated private RSA key
 
@@ -53,19 +53,18 @@ $ npm run start
 
 ### Implementing with your system
 
-If your specific use case has not been covered by any of our sample [Starter projects]({{site.baseurl}}/tinydrive/libraries/starter-projects/), you may have to apply some customizations at your end to figure out how to implement it with your own system. You need to tie our JSON Web Token (or JWT) authentication solution to the login authentication of your system. This usually means integrating the JWT authentication to your existing session authentication so that users automatically login to Tiny Drive and your system.
+If your specific use case has not been covered by any of the sample [starter projects]({{site.baseurl}}/tinydrive/libraries/), some customizations might be required to be applied to implement Tiny Drive in the specific system. The [JSON Web Token]({{site.baseurl}}/tinydrive/introduction/jwt-authentication/) authentication solution would have to be tied to the login authentication of your system. This usually means integrating the JWT authentication to the existing session authentication so that users automatically login to Tiny Drive and your system.
 
 #### Additional resources
 
 Go through the following additional resources to figure out how to configure Tiny Drive with your system.
 
 - We recommend reading up and trying to understand how [JWT authentication]({{site.baseurl}}/tinydrive/introduction/jwt-authentication/) works. In order to implement Tiny Drive you need prior knowledge of JWT in detail, including how they can be used for user authentication and session management in a web application. There will be some coding involved on both the client-side and the server-side to configure JWT as per the instructions in this section.
-- [Concepts]({{site.baseurl}}/tinydrive/introduction/concepts/)
+- [Starter projects]({{site.baseurl}}/tinydrive/libraries/)
 - [Configuration Options]({{site.baseurl}}/tinydrive/getting-started/configuration/)
-- [Storage integrations]({{site.baseurl}}/tinydrive/integrations/)
-
+- [Integrations]({{site.baseurl}}/tinydrive/integrations/)
 
 ## Need help? ##
 
-We are striving to make Tiny Drive as useful and simple as possible. For support related issues such as problems with JWT authentication and implementing Tiny Drive, check our [help page](/tinydrive/get-help/) or please contact [support](https://support.tiny.cloud/hc/en-us/requests/new).
+We are striving to make Tiny Drive as useful and as simple as possible. For support related issues such as problems with JWT authentication and implementing Tiny Drive, check our [help page](/tinydrive/get-help/) or please contact [support](https://support.tiny.cloud/hc/en-us/requests/new).
 

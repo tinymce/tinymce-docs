@@ -8,13 +8,13 @@ keywords: google drive
 
 ## Overview
 
-Tiny Drive enables you to import files from any Google Drive account if you setup the google drive integration by providing a Google credentials. When the user selects a file from Google Drive it will instantly be uploaded or imported into the Tiny Drive storage so that it can be viewed online and shared though Tiny Drive. Documents picked from Google Drive will be converted to PDF Files within Tiny Drive.
+Tiny Drive enables you to import files from any Google Drive account if you setup the google drive integration by providing Google credentials. When the user selects a file from Google Drive, it will instantly be uploaded or imported into the Tiny Drive storage so that it can be viewed online and shared through Tiny Drive. Documents picked from Google Drive will be converted to PDF Files within Tiny Drive.
 
 ## Prerequisites
 
-1. A valid Google Drive user account is required for integrating Google Drive with Tiny Drive. Refer to [this](https://support.google.com/drive/answer/2424384?co=GENIE.Platform%3DDesktop&hl=en) link for more information on creating a Google Drive user account.
-2. The Google Drive API should be enabled. Refer to [this](https://developers.google.com/drive/api/v3/enable-drive-api) link for more information on enabling the Google Drive API.
-3. The Google Picker API should be enabled. Refer to [this](https://developers.google.com/picker/docs/) link for more information on enabling the Google Picker API.
+1. A valid Google Drive user account is required for integrating Google Drive with Tiny Drive. Refer to this [Google Drive](https://support.google.com/drive/answer/2424384?co=GENIE.Platform%3DDesktop&hl=en) link for more information on creating a Google Drive user account.
+2. The Google Drive API should be enabled. Refer to this [Google Drive](https://developers.google.com/drive/api/v3/enable-drive-api) link for more information on enabling the Google Drive API.
+3. The Google Picker API should be enabled. Refer to this [Google Drive](https://developers.google.com/picker/docs/) link for more information on enabling the Google Picker API.
 
 ## Obtaining the API Key and Client ID
 
@@ -87,7 +87,6 @@ For more information on other TinyDrive config options refer to the [configurati
 
 The following other options can be performed to the selected file :
 
-
 1. Follow the steps from 1-3 of the Tiny Drive UI procedure.
 2. Choose from the options below as per the requirement:
  * Choose **Star** to flag important files and view the starred file under the **Star** tab in the Google Drive Home tab.
@@ -98,6 +97,6 @@ Read more about these options [here](https://gsuite.google.com/learning-center/p
 
 ### Live example
 
-Here is a live example of Dropbox enabled on Tiny Drive.
+Here is a live example of Google Drive enabled on Tiny Drive.
 
 {% include codepen.html id="drive-demo-googledrive" %}

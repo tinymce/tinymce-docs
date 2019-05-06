@@ -8,7 +8,7 @@ keywords: help
 
 ### Get help with Tiny Drive
 
-In order to implement Tiny Drive you need prior knowledge of JWT in detail, including how they can be used for user authentication and session management in a web application. There will be some coding involved on both the client-side and the server-side to configure JWT as per the instructions in this section.
+To implement Tiny Drive, you need prior knowledge of JWT in detail, including how they can be used for user authentication and session management in a web application. There will be some coding involved on both the client-side and the server-side to configure JWT as per the instructions in this section.
 
 Getting started with Tiny Drive can be tricky if you are new to JWT. We recommend reading up and trying to understand how [JWT authentication]({{site.baseurl}}/tinydrive/introduction/jwt-authentication/) works.
 

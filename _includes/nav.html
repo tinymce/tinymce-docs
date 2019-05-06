@@ -1,7 +1,7 @@
 <ul>
 {% for link in include.links %}
-  {% capture prefixedLinkUrl %}:{{ include.preceding_address }}{{ link.url }}{% endcapture %}
-  {% capture prefixedPageUrl %}:{{ page.url }}{% endcapture %}
+  {% capture prefixedLinkUrl %}:{{ include.preceding_address }}{{ link.url }}/{% endcapture %}
+  {% capture prefixedPageUrl %}:{{ page.url }}/{% endcapture %}
   {% if prefixedPageUrl contains prefixedLinkUrl %}
     <li class="active">
   {% else %}

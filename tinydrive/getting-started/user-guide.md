@@ -8,7 +8,7 @@ keywords: tinydrive starter projects
 
 The Tiny Drive plugin adds the functionality to upload and manage files and images to the cloud. This plugin is only available in [Tiny Cloud](https://www.tiny.cloud/download/) and requires you to register for an API key.
 
-To enable this functionality, add tinydrive to the list of plugins in the tinymce.init call. You also need to authenticate the user using a [JSON Web Token (JWT)]({{site.baseurl}}tinydrive/getting-started/jwt-authentication/).
+To enable this functionality, add tinydrive to the list of plugins in the tinymce.init call. You also need to authenticate the user using a [JSON Web Token (JWT)]({{site.baseurl}}/tinydrive/introduction/jwt-authentication/).
 
 Once you enable Drive it integrates as the default file picker for the Image, Link, and Media dialogs and as the default upload handler for local images being pasted or inserted into the document.
 
@@ -65,7 +65,7 @@ The starter projects have their own procedures to get Tiny Drive up and running.
 
 ### Implementing with your system
 
-If your specific use case has not been covered by any of our sample [Starter projects]({{site.baseurl}}/tinydrive/libraries/starter-projects/), you may have to apply some customizations at your end to figure out how to implement it with your own system. You need to tie our JSON Web Token (or JWT) authentication solution to the login authentication of your system. This usually means integrating the JWT authentication to your existing session authentication so that users automatically login to Tiny Drive and your system.
+If your specific use case has not been covered by any of our sample [Starter projects]({{site.baseurl}}/tinydrive/libraries/), you may have to apply some customizations at your end to figure out how to implement it with your own system. You need to tie our JSON Web Token (or JWT) authentication solution to the login authentication of your system. This usually means integrating the JWT authentication to your existing session authentication so that users automatically login to Tiny Drive and your system.
 
 #### Additional resources
 

@@ -22,7 +22,7 @@ If you would like to try out Drive and our Cloud-delivered editor, the first ste
 
 Start off your Tiny Drive journey with checking out our [Demo]({{site.baseurl}}/tinydrive//introduction/overview/#demo), analyzing your image performance, or head straight to our [signup](https://apps.tiny.cloud/my-account/) page.
 
-Refer to the other documents like [Example projects]({{site.baseurl}}/tinydrive/libraries) and [Storage integrations]({{site.baseurl}}/tinydrive/integrations/) to gain understanding of the Tiny Drive configuration process.
+Refer to the other documents like [Starter projects]({{site.baseurl}}/tinydrive/libraries) and [integrations]({{site.baseurl}}/tinydrive/integrations/) to gain understanding of the Tiny Drive configuration process.
 
 In order to implement Tiny Drive you need prior knowledge of JSON Web Token (or JWT) in detail, including how they can be used for user authentication and session management in a web application. There will be some coding involved on both the client-side and the server-side to configure JWT as per the instructions in this section.
 We recommend reading up and trying to understand how [JWT authentication]({{site.baseurl}}/tinydrive/introduction/jwt-authentication/) works.
@@ -45,19 +45,19 @@ The starter projects have their own procedures to get Tiny Drive up and running.
         </tr>
         <tr>
             <td><a href="https://github.com/tinymce/tinydrive-dotnet-mvc-starter"><img src="{{site.baseurl}}/images/netcore.svg" width="120"></a></td>
-            <td><a href="../dotnet/">.NET Core</a></td>
+            <td><a href="{{site.baseurl}}/tinydrive/libraries/dotnet/">.NET Core</a></td>
         </tr>
         <tr>
             <td><a href="https://github.com/tinymce/tinydrive-nodejs-starter"><img src="{{site.baseurl}}/images/nodejs.svg"  width="120"></a></td>
-            <td><a href="../nodejs/">Node.js</a></td>
+            <td><a href="{{site.baseurl}}/tinydrive/libraries/nodejs/">Node.js</a></td>
         </tr>
         <tr>
             <td><a href="https://github.com/tinymce/tinydrive-php-starter"><img src="{{site.baseurl}}/images/php.svg"  width="120"></a></td>
-            <td><a href="../php/">PHP</a></td>
+            <td><a href="{{site.baseurl}}/tinydrive/libraries/php/">PHP</a></td>
         </tr>
         <tr>
             <td><a href="https://github.com/tinymce/tinydrive-java-spring-starter"><img src="{{site.baseurl}}/images/java.png" height="120"></a></td>
-            <td><a href="../java/">Java Spring</a></td>
+            <td><a href="{{site.baseurl}}/tinydrive/libraries/java/">Java Spring</a></td>
         </tr>
     </tbody>
 </table>
@@ -74,7 +74,7 @@ Go through the following additional resources to figure out how to configure Tin
 - We recommend reading up and trying to understand how [JWT authentication]({{site.baseurl}}/tinydrive/introduction/jwt-authentication/) works. In order to implement Tiny Drive you need prior knowledge of JWT in detail, including how they can be used for user authentication and session management in a web application. There will be some coding involved on both the client-side and the server-side to configure JWT as per the instructions in this section.
 - [Concepts]({{site.baseurl}}/tinydrive/introduction/concepts/)
 - [Configuration Options]({{site.baseurl}}/tinydrive/getting-started/configuration/)
-- [Storage integrations]({{site.baseurl}}/tinydrive/integrations/)
+- [Integrations]({{site.baseurl}}/tinydrive/integrations/)
 
 ## Need help? ##
 

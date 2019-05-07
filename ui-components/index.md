@@ -6,7 +6,12 @@ description: The configurable UI components available for customization.
 keywords: toolbar toolbarbuttons buttons toolbarbuttonsapi
 type: folder
 ---
+{% assign navigaton = site.data.nav %}
+{% for entry in navigaton %}
+  {% if entry.url == "ui-components" %}
+    {% assign links = entry.pages %}
+  {% endif %}
+{% endfor %}
 
-{% assign links = site.data | where_exp:"nav", "nav.url == 'ui-components'" | first | map: "pages" %}
 {% include index.html links=links %}
 

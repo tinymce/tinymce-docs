@@ -12,6 +12,11 @@ redirect_from:
   - /example-tutorial/
   - /try-tinymce/
 ---
+{% assign navigaton = site.data.nav %}
+{% for entry in navigaton %}
+  {% if entry.url == "demo" %}
+    {% assign links = entry.pages %}
+  {% endif %}
+{% endfor %}
 
-{% assign links = site.data | where_exp:"nav", "nav.url == 'demo'" | first | map: "pages" %}
 {% include index.html links=links %}

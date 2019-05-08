@@ -5,6 +5,11 @@ title_nav: Premium features
 description: Premium features from the makers of TinyMCE.
 type: folder
 ---
+{% assign navigaton = site.data.nav %}
+{% for entry in navigaton %}
+  {% if entry.url == "enterprise" %}
+    {% assign links = entry.pages %}
+  {% endif %}
+{% endfor %}
 
-{% assign links = site.data | where_exp:"nav", "nav.url == 'enterprise'" | first | map: "pages" %}
 {% include index.html links=links %}

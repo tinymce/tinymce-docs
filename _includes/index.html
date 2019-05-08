@@ -3,7 +3,7 @@
   {% capture path %}{{url}}index.html{% endcapture %}
   {% assign_page link_data = path %}
 <div>
-  <h2><a href="{{ site.baseurl }}{{ url }}">{{ link_data.title }}</a></h2>
+  <h2><a href="{{ site.baseurl }}{{ url }}">{{ link_data.title_nav | or:link_data.title }}</a></h2>
   <p>{{ link_data.description_short | or:link_data.description }}</p>
 </div>
 {% endfor %}

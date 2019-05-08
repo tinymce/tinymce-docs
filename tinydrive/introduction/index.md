@@ -6,7 +6,15 @@ description: Overview of Tiny Drive is and its concepts
 type: folder
 keywords: tinydrive overview jwt concepts
 ---
+{% assign navigaton = site.data.nav %}
+{% for entry in navigaton %}
+  {% if entry.url == "tinydrive" %}
+    {% for subentry in entry.pages %}
+      {% if subentry.url == "introduction" %}
+        {% assign links = subentry.pages %}
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+{% endfor %}
 
-
-{% assign links = site.data | where_exp:"nav", "nav.url == 'introduction'" | first | map: "pages" %}
 {% include index.html links=links %}

@@ -8,6 +8,15 @@ class: changelog
 
 {% capture changelog %}
 
+## Version 5.0.5 May 9, 2019
+* Added menu items to match the forecolor/backcolor toolbar buttons.
+* Added default directionality based on the configured language.
+* Added styles, icons and tests for rtl mode.
+* Fixed autoresize not working with floating elements or when media elements finished loading.
+* Fixed incorrect vertical caret positioning in IE 11.
+* Fixed submenu anchoring hiding overflowed content.
+* Removed unused and hidden validation icons to avoid displaying phantom tooltips.
+
 ## Version 5.0.4 April 23, 2019
 * Added back URL dialog functionality, which is now available via `editor.windowManager.openUrl()`.
 * Added the missing throbber functionality when calling `editor.setProgressState(true)`.

@@ -546,32 +546,16 @@
 
 - url: "tinydrive"
   pages:
-  - url: "introduction"
-    pages:
-    - url: "overview"
+    - url: "introduction"
+    - url: "getting-started"
     - url: "jwt-authentication"
-    - url: "demo"
-  - url: "getting-started"
-    pages:
-    - url: "user-guide"
     - url: "configuration"
+    - url: "integrations"
       pages:
-      - url: "#Configuring with TinyMCE"
-      - url: "#Configuring the Tiny Drive UI"
-      - url: "#Configuring with Dropbox"
-      - url: "#Configuring with Google Drive"
-  - url: "libraries"
-    pages:
-    - url: "dotnet"
-    - url: "nodejs"
-    - url: "php"
-    - url: "java"
-  - url: "integrations"
-    pages:
-    - url: "dropbox-integration"
-    - url: "googledrive-integration"
-  - url: "changelog"
-  - url: "get-help"
+      - url: "dropbox-integration"
+      - url: "googledrive-integration"
+    - url: "changelog"
+    - url: "get-help"
 
 - url: "advanced"
   pages:

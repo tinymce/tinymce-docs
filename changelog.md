@@ -9,9 +9,9 @@ class: changelog
 {% capture changelog %}
 
 ## Version 5.0.5 May 9, 2019
-* Added menu items to match the forecolor/backcolor toolbar buttons.
+* Added menu items to match the **forecolor/backcolor** toolbar buttons.
 * Added default directionality based on the configured language.
-* Added styles, icons and tests for rtl mode.
+* Added styles, icons, and tests for RTL mode.
 * Fixed autoresize not working with floating elements or when media elements finished loading.
 * Fixed incorrect vertical caret positioning in IE 11.
 * Fixed submenu anchoring hiding overflowed content.

@@ -8,7 +8,7 @@ keywords: tinydrive introduction overview
 
 Tiny Drive is a premium TinyMCE plugin for cloud-based asset management and storage solution.
 
-Tiny Drive allows trouble-free management of assets such as images and files in the cloud. Files can be dragged and dropped to be instantly uploaded to the cloud storage using a **CDN or Content Delivery Network** to serve the required files and images.
+Tiny Drive allows trouble-free management of assets such as images and files in the cloud. Files can be dragged and dropped to be instantly uploaded to the cloud storage using a CDN to serve the required files and images.
 
 User can manage file uploads, storage, processing, and delivery for your website or app. All components of Tiny Drive infrastructure seamlessly work as a whole, are easy to configure, and can be extremely flexible when needed.
 

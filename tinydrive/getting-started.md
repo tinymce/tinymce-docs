@@ -14,7 +14,7 @@ keywords: tinydrive starter projects
 
 Tiny Drive allows trouble free management of assets such as images and files in the cloud. Tiny Drive is only available in [Tiny Cloud](https://www.tiny.cloud/signup/) and requires registering for an API key.
 
-To enable this functionality in the TinyMCE editor, add `tinydrive` to the list of plugins in the `tinymce.init` call. The user also needs to be authenticated using a [JSON Web Token (JWT)]({{site.baseurl}}/tinydrive/introduction/jwt-authentication/).
+To enable this functionality in the TinyMCE editor, add `tinydrive` to the list of plugins in the `tinymce.init` call. The user also needs to be authenticated using a [JSON Web Token (JWT)]({{site.baseurl}}/tinydrive/jwt-authentication/).
 
 Once Drive is enabled, it integrates as the default file picker for the Image, Link, and Media dialogs and as the default upload handler for local images being pasted or inserted into the document.
 

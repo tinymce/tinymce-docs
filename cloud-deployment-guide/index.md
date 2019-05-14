@@ -5,6 +5,11 @@ title_nav: Cloud deployment guide
 description: Start here for Tiny Cloud.
 type: folder
 ---
+{% assign navigaton = site.data.nav %}
+{% for entry in navigaton %}
+  {% if entry.url == "cloud-deployment-guide" %}
+    {% assign links = entry.pages %}
+  {% endif %}
+{% endfor %}
 
-{% assign links = site.data.nav[2].pages %}
 {% include index.html links=links %}

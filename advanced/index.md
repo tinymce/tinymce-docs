@@ -5,5 +5,11 @@ title_nav: Advanced topics
 description: Information and guides for developers wanting to build advanced capabilities into TinyMCE.
 type: folder
 ---
-{% assign links = site.data.nav[9].pages %}
+{% assign navigaton = site.data.nav %}
+{% for entry in navigaton %}
+  {% if entry.url == "advanced" %}
+    {% assign links = entry.pages %}
+  {% endif %}
+{% endfor %}
+
 {% include index.html links=links %}

@@ -237,6 +237,24 @@ tinymce.init({
 });
 ```
 
+## `image_prepend_url`
+
+This option allows you to specify a URL prefix that will be applied to images when appropriate.
+
+**Type:** `String`
+
+##### Example
+
+```js
+tinymce.init({
+  selector: "textarea",  // change this value according to your HTML
+  plugins: "image",
+  menubar: "insert",
+  toolbar: "image",
+  image_prepend_url: "https://www.tinymce.com/images/"
+});
+```
+
 ### `image_title`
 
 This options allows you enable the image title input field in the image dialog.
@@ -256,24 +274,6 @@ tinymce.init({
   menubar: "insert",
   toolbar: "image",
   image_title: true
-});
-```
-
-## `image_prepend_url`
-
-This option allows you to specify a URL prefix that will be applied to images when appropriate.
-
-**Type:** `String`
-
-##### Example
-
-```js
-tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "image",
-  menubar: "insert",
-  toolbar: "image",
-  image_prepend_url: "https://www.tinymce.com/images/"
 });
 ```
 

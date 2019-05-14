@@ -40,36 +40,6 @@ tinymce.init({
 });
 ```
 
-### `max_height`
-
-This option enables you to specify the **maximum** `height` that the editor will automatically resize to when a user enters text into the editor. In other words, the editor will stop automatically resizing when the set value is reached.
-
-**Type:** `Number`
-
-##### Example
-
-```js
-tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  max_height: 500
-});
-```
-
-### `min_height`
-
-This option enables you to specify the **minimum** `height` of the editor when it's initialized.
-
-**Type:** `Number`
-
-##### Example
-
-```js
-tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  min_height: 350
-});
-```
-
 ### `autoresize_on_init`
 
 This option allows you to set whether the editor will attempt to resize itself upon initialization. By default this option is set to `true`.
@@ -103,5 +73,35 @@ tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "autoresize",
   autoresize_overflow_padding: 50
+});
+```
+
+### `max_height`
+
+This option enables you to specify the **maximum** `height` that the editor will automatically resize to when a user enters text into the editor. In other words, the editor will stop automatically resizing when the set value is reached.
+
+**Type:** `Number`
+
+##### Example
+
+```js
+tinymce.init({
+  selector: "textarea",  // change this value according to your HTML
+  max_height: 500
+});
+```
+
+### `min_height`
+
+This option enables you to specify the **minimum** `height` of the editor when it's initialized.
+
+**Type:** `Number`
+
+##### Example
+
+```js
+tinymce.init({
+  selector: "textarea",  // change this value according to your HTML
+  min_height: 350
 });
 ```

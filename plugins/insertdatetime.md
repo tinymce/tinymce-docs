@@ -28,7 +28,7 @@ These settings affect the execution of the `insertdatetime` plugin. Formats for 
 
 ### `insertdatetime_dateformat`
 
-This option allows you to override the default formatting rule for date formats inserted by the `mceInsertDate` command. This defaults to `%Y-%m-%d` and where the different `%` variables get replaced with various [date format options](#dateformats).
+This option allows you to override the default formatting rule for date formats inserted by the `mceInsertDate` command. This defaults to `%Y-%m-%d` and where the different `%` variables get replaced with various [date format options](#referencedatetimeformats).
 
 ##### Example
 
@@ -44,7 +44,7 @@ tinymce.init({
 
 ### `insertdatetime_formats`
 
-Allows you to specify a list of date/time formats to be used in the date menu or date select box. A complete list of formats is available under [date formats](#dateformats) below.
+Allows you to specify a list of date/time formats to be used in the date menu or date select box. A complete list of formats is available under [date formats](#referencedatetimeformats) below.
 
 ##### Example
 
@@ -60,7 +60,7 @@ tinymce.init({
 
 ### `insertdatetime_timeformat`
 
-This option allows you to override the default formatting rule for times inserted by the `mceInsertTime` command. This defaults to `%H:%M:%S` and where the different `%` variables get replaced with various [date format options](#dateformats).
+This option allows you to override the default formatting rule for times inserted by the `mceInsertTime` command. This defaults to `%H:%M:%S` and where the different `%` variables get replaced with various [date format options](#referencedatetimeformats).
 
 ##### Example
 
@@ -94,9 +94,7 @@ tinymce.init({
 });
 ```
 
-### `dateformats`
-
-**Replacement variables**
+### Reference Date/Time formats
 
 | Name | Summary         |
 |------|-----------------|

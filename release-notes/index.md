@@ -5,6 +5,11 @@ title_nav: Release notes for TinyMCE 5
 keywords: releasenotes newfeatures deleted technologypreview bugfixes knownissues
 type: folder
 ---
+{% assign navigaton = site.data.nav %}
+{% for entry in navigaton %}
+  {% if entry.url == "release-notes" %}
+    {% assign links = entry.pages %}
+  {% endif %}
+{% endfor %}
 
-{% assign links = site.data.nav[12].pages %}
 {% include index.html links=links %}

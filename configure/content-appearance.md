@@ -22,8 +22,8 @@ description: Configure the appearance of content inside TinyMCe's editable area.
 
 {% include configuration/text-color.md %}
 
+{% include configuration/visual.md %}
+
 {% include configuration/visual-anchor-class.md %}
 
 {% include configuration/visual-table-class.md %}
-
-{% include configuration/visual.md %}

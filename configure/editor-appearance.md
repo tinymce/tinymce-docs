@@ -48,17 +48,17 @@ description: Configure the editor's appearance, including menu and toolbar contr
 
 {% include configuration/preview-styles.md %}
 
-{% include configuration/removed-menuitems.md %}
-
 {% include configuration/insert-toolbar.md %}
 
 {% include configuration/selection-toolbar.md %}
 
+{% include configuration/removed-menuitems.md %}
+
 {% include configuration/resize.md %}
 
-{% include configuration/skin-url.md %}
-
 {% include configuration/skin.md %}
+
+{% include configuration/skin-url.md %}
 
 {% include configuration/statusbar.md %}
 
@@ -68,9 +68,9 @@ description: Configure the editor's appearance, including menu and toolbar contr
 
 {% include configuration/style-formats-merge.md %}
 
-{% include configuration/theme-url.md %}
-
 {% include configuration/theme.md %}
+
+{% include configuration/theme-url.md %}
 
 {% include configuration/toolbar.md %}
 

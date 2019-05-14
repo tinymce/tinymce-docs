@@ -176,7 +176,7 @@ Following step by step guide outlines the process of loading TinyMCE and TinyMCE
 
 * Install TinyMCE using NPM
   * `npm install --save tinymce`
-* In your `angular.json`, add `tinymce.min.js`, your desired theme (`.js`) and all required plugins in the "scripts" list of your Angular build declaration
+* In your `angular.json`, add tinymce, your desired theme and all required plugins in the `scripts` list of your Angular build declaration
   * Your script list might look like the following:
   ```json
   "scripts": [
@@ -185,16 +185,17 @@ Following step by step guide outlines the process of loading TinyMCE and TinyMCE
     "node_modules/tinymce/plugins/fullscreen/plugin.min.js",
   ]
   ```
-* To get TinyMCE skins (content & ui CSS) add them to the "assets" list of your `angular.json` file.
+* To get TinyMCE skins (ui & content CSS) add them to the `assets` list of your `angular.json` file.
   ```json
   "assets": [
-    { "glob": "**/*", "input": "node_modules/tinymce/skins", "output": "/skins/" }
+    { "glob": "**/*", "input": "node_modules/tinymce/skins", "output": "/tinymce/skins/" }
   ]
   ```
-* Finally, configure the `<editor>` to use the local skin files by using the `skin_url` setting:
+* Finally, configure the `<editor>` to use the local skin files by using the `skin_url` and `content_css` settings. Note: in most use cases the content css should be customized for each use case rather than using the default one as shown here. Read more about [content_css](https://www.tiny.cloud/docs/configure/content-appearance/#content_css)
   ```js
   public tinyMceSettings = {
-    skin_url: 'skins/ui/oxide'
+    skin_url: 'tinymce/skins/ui/oxide',
+    content_css: 'tinymce/skins/content/default/content.css',
     inline: false,
     statusbar: false,
     browser_spellcheck: true,

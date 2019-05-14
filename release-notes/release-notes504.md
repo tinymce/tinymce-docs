@@ -21,7 +21,7 @@ To try out **Tiny Drive** start with this [dedicated product page](https://www.t
 
 For more information on **Tiny Drive** refer to the full [documentation]({{site.baseurl}}/tinydrive/).
 
-There is also a demo provided to explore the **Tiny Drive** capabilities [here]({{site.baseurl}}/tinydrive/introduction/demo/).
+There is also a demo provided to explore the **Tiny Drive** capabilities [here]({{site.baseurl}}/tinydrive/introduction/#demo).
 
 #### Tiny Drive starter projects
 

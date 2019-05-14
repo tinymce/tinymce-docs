@@ -28,10 +28,10 @@ Once you have the API key, or if you are a current Cloud user who already has an
 
 We know security is a primary concern when it comes to cloud storage.  Drive uses an [Amazon Web Services S3](https://aws.amazon.com/s3/) bucket, the same storage solution used by companies like Netflix, Thomson Reuters, and Zillow.  (You can read about Amazon’s comprehensive security approach [here](https://aws.amazon.com/security/).)
 
-As your assets are passed back and forth between your TinyMCE editor instance and the S3 bucket, Drive uses both your API key and a [JSON Web Token](https://jwt.io/introduction/) (JWT) to authenticate each data transaction.  Each Drive user will need to create their own JWT, and we walk you through the whole process [here]({{site.baseurl}}/tinydrive/introduction/jwt-authentication/).
+As your assets are passed back and forth between your TinyMCE editor instance and the S3 bucket, Drive uses both your API key and a [JSON Web Token](https://jwt.io/introduction/) (JWT) to authenticate each data transaction.  Each Drive user will need to create their own JWT, and we walk you through the whole process [here]({{site.baseurl}}/tinydrive/jwt-authentication/).
 
 And to make sure your assets are delivered as fast as possible, we utilize the [CloudFront CDN](https://aws.amazon.com/cloudfront/), which is Amazon’s global content delivery network, known for its low latency and high data transfer speeds.
 
 For more information on Drive see our full [documentation]({{site.baseurl}}/tinydrive/).
 
-We also have a demo for you to explore the Drive capabilities [here]({{site.baseurl}}/tinydrive/introduction/overview/#demo).
+We also have a demo for you to explore the Drive capabilities [here]({{site.baseurl}}/tinydrive/introduction/#demo).

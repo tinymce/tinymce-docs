@@ -30,27 +30,27 @@ These channels are updated automatically and provide the latest TinyMCE version 
 
 #### dev release channel
 
-This channel deploys the absolute latest version of TinyMCE as documented in [TinyMCE changelog]({{ site.baseurl }}/changelog/). The current version of TinyMCE available through the `dev` channel [can be found here](https://cloud.tinymce.com/5-dev/version.txt).
+This channel deploys the absolute latest version of TinyMCE as documented in [TinyMCE changelog]({{ site.baseurl }}/changelog/). The current version of TinyMCE available through the `dev` channel [can be found here](https://cdn.tiny.cloud/1/no-api-key/tinymce/5-dev/version.txt).
 
 ##### Example
 
 ```js
-<script src="https://cloud.tinymce.com/5-dev/tinymce.min.js?apiKey=your_API_key"></script>
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js"></script>
 ```
 
 #### testing release channel
 
-This channel deploys the current release candidate for the `stable` channel. The TinyMCE release candidate is undergoing quality assurance. The current version of TinyMCE available through the `testing` channel [can be found at here](https://cloud.tinymce.com/5-testing/version.txt).
+This channel deploys the current release candidate for the `stable` channel. The TinyMCE release candidate is undergoing quality assurance. The current version of TinyMCE available through the `testing` channel [can be found at here](https://cdn.tiny.cloud/1/no-api-key/tinymce/5-testing/version.txt).
 
 ##### Example
 
 ```js
-<script src="https://cloud.tinymce.com/5-testing/tinymce.min.js?apiKey=your_API_key"></script>
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5-testing/tinymce.min.js"></script>
 ```
 
 #### stable release channel
 
-This channel deploys the latest release of TinyMCE that has passed our quality assurance process. The current version of TinyMCE available through the `/5` stable channel can be found [here](https://cloud.tinymce.com/5/version.txt). The TinyMCE 5 stable channel can be loaded from [this url](https://cloud.tinymce.com/5/tinymce.min.js.).
+This channel deploys the latest release of TinyMCE that has passed our quality assurance process. The current version of TinyMCE available through the `/5` stable channel can be found [here](https://cdn.tiny.cloud/1/no-api-key/tinymce/5/version.txt). The TinyMCE 5 stable channel can be loaded from [this url](https://cdn.tiny.cloud/1/no-api-key/tinymce/5/plugins.min.js).
 
 ##### Example
 
@@ -70,7 +70,7 @@ Use the URL query parameters to specify the version of each premium plugin. This
 ##### Example
 
 ```js
-<script src="https://cloud.tinymce.com/5/plugins.min.js?apiKey=your_API_key&mentions=2.0.0"></script>
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/plugins.min.js?&mentions=2.0.0"></script>
 ```
 
 #### Tiny Drive
@@ -81,7 +81,7 @@ Use the URL query parameters to specify the version of each premium plugin. This
 ##### Example
 
 ```js
-<script src="https://cloud.tinymce.com/5/plugins.min.js?apiKey=your_API_key&tinydrive=1.1.0"></script>
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/plugins.min.js?&tinydrive=1.1.0"></script>
 ```
 
 #### Comments 2.0
@@ -92,7 +92,7 @@ Use the URL query parameters to specify the version of each premium plugin. This
 ##### Example
 
 ```js
-<script src="https://cloud.tinymce.com/5/plugins.min.js?apiKey=your_API_key&tinycomments=2.0.0"></script>
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/plugins.min.js?&tinycomments=2.0.0"></script>
 ```
 
 #### Page Embed
@@ -103,7 +103,7 @@ Use the URL query parameters to specify the version of each premium plugin. This
 ##### Example
 
 ```js
-<script src="https://cloud.tinymce.com/5/plugins.min.js?apiKey=your_API_key&pageembed=1.0.0"></script>
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/plugins.min.js?&pageembed=1.0.0"></script>
 ```
 
 #### Permanent Pen
@@ -114,7 +114,7 @@ Use the URL query parameters to specify the version of each premium plugin. This
 ##### Example
 
 ```js
-<script src="https://cloud.tinymce.com/5/plugins.min.js?apiKey=your_API_key&permanentpen=1.0.0"></script>
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/plugins.min.js?&permanentpen=1.0.0"></script>
 ```
 
 #### Format Painter
@@ -125,7 +125,7 @@ Use the URL query parameters to specify the version of each premium plugin. This
 ##### Example
 
 ```js
-<script src="https://cloud.tinymce.com/5/plugins.min.js?apiKey=your_API_key&formatpainter=1.0.0"></script>
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/plugins.min.js?&formatpainter=1.0.0"></script>
 ```
 
 #### PowerPaste
@@ -136,7 +136,7 @@ Use the URL query parameters to specify the version of each premium plugin. This
 ##### Example
 
 ```js
-<script src="https://cloud.tinymce.com/5/plugins.min.js?apiKey=your_API_key&powerpaste=4.0.0"></script>
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/plugins.min.js?&powerpaste=4.0.0"></script>
 ```
 
 #### Spell Checker Pro
@@ -147,7 +147,7 @@ Use the URL query parameters to specify the version of each premium plugin. This
 ##### Example
 
 ```js
-<script src="https://cloud.tinymce.com/5/plugins.min.js?apiKey=your_API_key&tinymcespellchecker=1.0.0"></script>
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/plugins.min.js?&tinymcespellchecker=1.0.0"></script>
 ```
 
 #### Accessibility Checker
@@ -158,7 +158,7 @@ Use the URL query parameters to specify the version of each premium plugin. This
 ##### Example
 
 ```js
-<script src="https://cloud.tinymce.com/5/plugins.min.js?apiKey=your_API_key&a11ychecker=2.0.0"></script>
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/plugins.min.js?&a11ychecker=2.0.0"></script>
 ```
 
 #### Advanced Code Editor
@@ -169,7 +169,7 @@ Use the URL query parameters to specify the version of each premium plugin. This
 ##### Example
 
 ```js
-<script src="https://cloud.tinymce.com/5/plugins.min.js?apiKey=your_API_key&advcode=2.0.0"></script>
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/plugins.min.js?&advcode=2.0.0"></script>
 ```
 
 #### Enhanced Media Embed
@@ -180,7 +180,7 @@ Use the URL query parameters to specify the version of each premium plugin. This
 ##### Example
 
 ```js
-<script src="https://cloud.tinymce.com/5/plugins.min.js?apiKey=your_API_key&mediaembed=2.0.0"></script>
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/plugins.min.js?&mediaembed=2.0.0"></script>
 ```
 
 #### Link Checker
@@ -191,7 +191,7 @@ Use the URL query parameters to specify the version of each premium plugin. This
 ##### Example
 
 ```js
-<script src="https://cloud.tinymce.com/5/plugins.min.js?apiKey=your_API_key&linkchecker=2.0.0"></script>
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/plugins.min.js?&linkchecker=2.0.0"></script>
 ```
 
 ## Specifying a self-hosted deployment of features/plugins
@@ -209,7 +209,7 @@ The "SDK" version lets the TinyMCE Plugin Manager know that you're not using Tin
 ##### Example
 
 ```js
-<script src="https://cloud.tinymce.com/5/plugins.min.js?apiKey=your_API_key&mentions=sdk"></script>
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/plugins.min.js?&mentions=sdk"></script>
 ```
 
 #### Tiny Drive
@@ -219,7 +219,7 @@ The "SDK" version lets the TinyMCE Plugin Manager know that you're not using Tin
 ##### Example
 
 ```js
-<script src="https://cloud.tinymce.com/5/plugins.min.js?apiKey=your_API_key&tinydrive=sdk"></script>
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/plugins.min.js?&tinydrive=sdk"></script>
 ```
 
 #### Comments 2.0
@@ -229,7 +229,7 @@ The "SDK" version lets the TinyMCE Plugin Manager know that you're not using Tin
 ##### Example
 
 ```js
-<script src="https://cloud.tinymce.com/5/plugins.min.js?apiKey=your_API_key&tinycomments=sdk"></script>
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/plugins.min.js?&tinycomments=sdk"></script>
 ```
 
 #### Page Embed
@@ -239,7 +239,7 @@ The "SDK" version lets the TinyMCE Plugin Manager know that you're not using Tin
 ##### Example
 
 ```js
-<script src="https://cloud.tinymce.com/5/plugins.min.js?apiKey=your_API_key&pageembed=sdk"></script>
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/plugins.min.js?&pageembed=sdk"></script>
 ```
 
 #### Permanent Pen
@@ -249,7 +249,7 @@ The "SDK" version lets the TinyMCE Plugin Manager know that you're not using Tin
 ##### Example
 
 ```js
-<script src="https://cloud.tinymce.com/5/plugins.min.js?apiKey=your_API_key&permanentpen=sdk"></script>
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/plugins.min.js?&permanentpen=sdk"></script>
 ```
 
 #### Format Painter
@@ -259,7 +259,7 @@ The "SDK" version lets the TinyMCE Plugin Manager know that you're not using Tin
 ##### Example
 
 ```js
-<script src="https://cloud.tinymce.com/5/plugins.min.js?apiKey=your_API_key&formatpainter=sdk"></script>
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/plugins.min.js?&formatpainter=sdk"></script>
 ```
 
 #### PowerPaste
@@ -269,7 +269,7 @@ The "SDK" version lets the TinyMCE Plugin Manager know that you're not using Tin
 ##### Example
 
 ```js
-<script src="https://cloud.tinymce.com/5/plugins.min.js?apiKey=your_API_key&powerpaste=sdk"></script>
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/plugins.min.js?&powerpaste=sdk"></script>
 ```
 
 #### Spell Checker Pro
@@ -279,7 +279,7 @@ The "SDK" version lets the TinyMCE Plugin Manager know that you're not using Tin
 ##### Example
 
 ```js
-<script src="https://cloud.tinymce.com/5/plugins.min.js?apiKey=your_API_key&tinymcespellchecker=sdk"></script>
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/plugins.min.js?&tinymcespellchecker=sdk"></script>
 ```
 
 #### Accessibility Checker
@@ -289,7 +289,7 @@ The "SDK" version lets the TinyMCE Plugin Manager know that you're not using Tin
 ##### Example
 
 ```js
-<script src="https://cloud.tinymce.com/5/plugins.min.js?apiKey=your_API_key&a11ychecker=sdk"></script>
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/plugins.min.js?&a11ychecker=sdk"></script>
 ```
 
 #### Advanced Code Editor
@@ -299,7 +299,7 @@ The "SDK" version lets the TinyMCE Plugin Manager know that you're not using Tin
 ##### Example
 
 ```js
-<script src="https://cloud.tinymce.com/5/plugins.min.js?apiKey=your_API_key&advcode=sdk"></script>
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/plugins.min.js?&advcode=sdk"></script>
 ```
 
 #### Enhanced Media Embed
@@ -309,7 +309,7 @@ The "SDK" version lets the TinyMCE Plugin Manager know that you're not using Tin
 ##### Example
 
 ```js
-<script src="https://cloud.tinymce.com/5/plugins.min.js?apiKey=your_API_key&mediaembed=sdk"></script>
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/plugins.min.js?&mediaembed=sdk"></script>
 ```
 
 #### Link Checker
@@ -319,7 +319,7 @@ The "SDK" version lets the TinyMCE Plugin Manager know that you're not using Tin
 ##### Example
 
 ```js
-<script src="https://cloud.tinymce.com/5/plugins.min.js?apiKey=your_API_key&linkchecker=sdk"></script>
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/plugins.min.js?&linkchecker=sdk"></script>
 ```
 
 

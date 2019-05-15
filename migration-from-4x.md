@@ -24,7 +24,7 @@ To serve TinyMCE 5 from the cloud, include this in your html page:
 To serve the latest nightlies and testing builds refer to the [cloud deployment guide](/cloud-deployment-guide/editor-and-features/)
 
 ```js
-<script src="https://cloud.tinymce.com/5-dev/tinymce.min.js?apiKey=your_API_key"></script>
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5-dev/tinymce.min.js"></script>
 ```
 
 ### Initialization

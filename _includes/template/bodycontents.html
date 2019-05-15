@@ -1,40 +1,70 @@
-<div class="new-header">
-    {% include notification.html %}
-    {% include_remote {{ site.origin }}/_docs/menu.html css="body > *" %}
+{% include template/notification.html %}
+{% include template/menu.html css="body > *" %}
 
-    <div class="top-bar">
-        <div>
-            <div class="versions">
-                <div class="dropdown">
-                    TinyMCE v5
-                    <div class="dropdown-arrow"></div>
-                    <div class="dropdown-options">
-                        <a class="link-gelato" href="/docs/">TinyMCE v5</a>
-                        <a class="link-gelato" href="/docs-4x/">TinyMCE v4</a>
-                        <a class="link-gelato" href="/docs-3x/">TinyMCE v3</a>
-                    </div>
+
+<style>
+    .main2 {
+        width: 1140px;
+        margin: 0 auto;
+        display: flex;
+    }
+
+    .navigation2 {
+        padding: 0;
+        position: relative;
+        width: 250px;
+        top: 0;
+        overflow-y: auto;
+        z-index: 1;
+    }
+
+    .navigation2 .docs-nav-container2 {
+        padding-top: 16px;
+    }
+
+    .main-container2 {
+        width: auto;
+        flex-grow: 1;
+        padding-top: 16px;
+    }
+
+    main .heading2 {
+        margin-left: 0;
+    }
+
+    main .content2 {
+        margin-left: 0;
+    }
+
+    .versions2 .dropdown {
+        width: 210px;
+    }
+
+</style>
+<div class="main2 {{ page.type }} {{ page.class }}">
+    <aside class="side-nav navigation2">
+        <div class="versions2">
+            <div class="dropdown">
+                TinyMCE v5
+                <div class="dropdown-arrow"></div>
+                <div class="dropdown-options">
+                    <a class="link-gelato" href="/docs/">TinyMCE v5</a>
+                    <a class="link-gelato" href="/docs-4x/">TinyMCE v4</a>
+                    <a class="link-gelato" href="/docs-3x/">TinyMCE v3</a>
                 </div>
             </div>
-            <div class="breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList">
-                {% include breadcrumbs.html %}
-            </div>
-            <div class="search">
-                <input type="text" name="seach" value="" id="searchInput" placeholder="Search in documentation" tabindex="1">
-            </div>
         </div>
-    </div>
 
-</div>
-
-<div class="main {{ page.type }} {{ page.class }}">
-    <aside class="side-nav">
         <div id="side-nav-controller">Expand Menu</div>
+
+        <div class="docs-nav-container2">
         {% assign nav = site.data.nav | array_concat:site.data.nav_api %}
         {% include nav.html links=nav preceding_address="/" %}
+        </div>
     </aside>
 
-    <main>
-        <div class="heading">
+    <main class="main-container2">
+        <div class="heading heading2">
             <h1 class="light">{{ page.title }}</h1>
             <h2 class="light">{{ page.description }}</h2>
             {% if page.url contains '/api/' %}
@@ -50,7 +80,7 @@
             {% endif %}
         </div>
 
-        <div class="content">
+        <div class="content content2">
             {{ content }}
             {% include feedback.html %}
             <p class="let-us-know">
@@ -61,6 +91,8 @@
             </p>
             {% include license.html %}
         </div>
+
+        <div style="clear: both"></div>
     </main>
 
 </div>

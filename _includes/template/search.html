@@ -1,0 +1,65 @@
+<style>
+    .search2 {
+        right: 0;
+        width: 275px;
+    }
+
+    .search2 input {
+        background-image: url("../images/docs/icn-search.svg");
+        background-repeat: no-repeat;
+        background-position: 15px 15px;
+        background-size: 15px 16px;
+        background-color: white;
+        display: inline-block;
+        height: 45px;
+        text-align: left;
+        padding: 12px 20px 12px 40px;
+        border-radius: 3px;
+        border: 1px solid #B9B9B9;
+        width: 100%;
+    }
+
+    .search-results-container {
+        position: absolute;
+        top: 100%;
+        width: 100%;
+        background: #4A4A4A;
+        display: none;
+        z-index: 10;
+    }
+
+    .search-results-container > div {
+        width: 1100px;
+        margin: 30px auto;
+        position: relative;
+    }
+
+    .search-results-container .search-close {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    .search-results-container .search-results-count,
+    .search-results-container .search-results-count span {
+        margin-bottom: 15px;
+        font-family: "Avenir W01";
+        font-size: 14px;
+        font-weight: 600;
+        color: white;
+    }
+
+    .search-results-container .search-results {
+        max-height: 500px;
+        overflow-y: scroll;
+    }
+
+    .search-results-container .search-results a {
+        display: block;
+        margin: 5px 0;
+        width: 50%;
+    }
+</style>
+<div class="search2">
+    <input type="text" name="seach" value="" id="searchInput" placeholder="Search in documentation" tabindex="1">
+</div>

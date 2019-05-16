@@ -1,32 +1,16 @@
 <div class="tiny-news-docs">
-    <div class="hide-on-mobile">
+    <div>
         TinyMCE 5 webinar: Q1 review, migration tips, roadmap —&nbsp;
-        <a type="inverse"
-           href="https://go.tiny.cloud/blog/tinymce-5-webinar-q1-review-migration-tips-roadmap-preview/"
+        <a href="https://go.tiny.cloud/blog/tinymce-5-webinar-q1-review-migration-tips-roadmap-preview/"
            data-marketing="tiny-news-webinar-blog-link">
             Visit the blog
         </a>
     </div>
 
-    <div class="hide-on-desktop">
-        <a type="inverse"
-           href="https://go.tiny.cloud/blog/tinymce-5-webinar-q1-review-migration-tips-roadmap-preview/"
-           data-marketing="tiny-news-webinar-blog-link">
-            TinyMCE 5 webinar
+    <div>
+        <a class="utility-link" href="{{ site.shared_baseurl }}" data-marketing="tiny-docs-news-back-home">
+            Return to Tiny.cloud
         </a>
-        : Visit the blog
-    </div>
-
-    <div style="display: flex">
-        <a class="utility-link"
-           to="/docs"
-           type="primary"
-           marketing="tiny-news-documents-link"
-           legacy={true}
-        >
-            Documentation
-        </a>
-
     </div>
 </div>
 
@@ -48,6 +32,18 @@
         align-items: center;
     }
 
+    .tiny-news-docs a {
+        color: rgb(25, 118, 210);
+        font-weight: 600;
+        text-decoration: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+        transition: border-bottom 0.25s ease 0s;
+    }
+
+        .tiny-news-docs a:hover {
+            border-bottom: 1px solid rgb(255, 255, 255);
+        }
+
     .tiny-news-docs .utility-link {
         margin: 0 1rem 0 0;
         height: 1rem;
@@ -56,26 +52,16 @@
         color: #4A4A4A;
     }
 
+    .tiny-news-docs .utility-link:hover{
+        color: #1976D2;
+    }
+
     .tiny-news-docs .utility-link:last-child {
         margin: 0;
     }
 
-    .tiny-news-docs .hide-on-mobile {
-        display: none;
-        overflow: hidden;
-        position: absolute;
-    }
-
-    @media screen and (min-width: 50em) {
-        .tiny-news-docs .hide-on-mobile {
-            display: inherit;
-            overflow: inherit;
-            position: inherit;
-        }
-    }
-
-    @media screen and (min-width: 50em) {
-        .tiny-news-docs .hide-on-desktop {
+    @media screen and (max-width: 1126px) {
+        .tiny-news-docs {
             display: none;
             overflow: hidden;
             position: absolute;

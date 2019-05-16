@@ -1,5 +1,5 @@
 <style>
-    header.new-menu {
+    .modern-header {
         position: sticky;
         top: 0;
         border-bottom: 1px solid rgba(0, 0, 0, 0.2);
@@ -11,12 +11,8 @@
     }
 
     @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-        header.new-menu {
+        header.modern-header {
             position: relative;
-        }
-
-        .homepage-link-container {
-            padding: 1rem 3.5rem 1rem 1rem;
         }
     }
 
@@ -33,11 +29,7 @@
         font-size: inherit;
     }
 
-    .nav-container a {
-        font-weight: 900;
-    }
-
-    .menu-container {
+    .nav-container__menu-container {
         position: relative;
         width: 100%;
         justify-content: space-between;
@@ -48,8 +40,7 @@
         align-items: center;
     }
 
-    .homepage-link-container {
-        display: block;
+    .nav-container__homepage-link-container {
         box-sizing: border-box;
         position: relative;
         z-index: 9999;
@@ -57,33 +48,126 @@
         margin: 0 4rem 0 0;
         padding: 1rem 0;
         background: none;
+        display: flex;
+        align-items: flex-end;
+        width: 25%;
+    }
+
+    .nav-container__homepage-link-container > span {
+        color: #3ED0A6;
+        display: inline-block;
+        margin-bottom: 5px;
+        font-size: 18px;
+        margin-left: 5px;
+    }
+
+    .nav-container__right-container {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        width: 25%;
+    }
+
+    header .create-account-button {
+        box-sizing: border-box;
+        position: relative;
+        display: inline-block;
+        outline: currentcolor none medium;
+        border-width: 1px;
+        border-style: solid;
+        border-color: rgb(25, 118, 210);
+        border-radius: 0.1875rem;
+        padding: 0.5rem 3rem;
+        line-height: 1.4;
+        font-size: 1rem;
+        font-weight: 700;
+        text-align: center;
+        text-rendering: auto;
+        text-decoration: none;
+        cursor: pointer;
+        color: rgb(255, 255, 255);
+        background-color: rgb(25, 118, 210);
+        transition: color 0.1s ease 0s, background-color 0.1s ease 0s, border-color 0.1s ease 0s;
+    }
+
+    #header-my-account-button {
+        display: none;
+        font-weight: 900;
+        color: rgb(74, 74, 74);
+        font-size: 16px;
+        padding-top: 6px;
+    }
+
+    #header-my-account-button:hover {
+        color: rgb(25, 118, 210) !important;
     }
 
 
-    .homepage-link-container img {
-        box-sizing: border-box;
-        display: block;
+    #header-my-account-button:hover g {
+        stroke: rgb(25, 118, 210) !important;
+    }
+
+    .header-my-account-button__icon {
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 9px;
+    }
+
+    .header-my-account-button__icon svg {
+        width: 24px;
+        height: 26px;
+    }
+
+    .header-my-account-button__icon g {
+        stroke: rgba(74, 74, 74, 0.75);
+    }
+
+
+    @media screen and (max-width: 1126px) {
+        .nav-container__right-container {
+            width: 75%;
+        }
     }
 
 </style>
 
-<header class="new-menu">
+<header class="modern-header">
     <div class="nav-container">
-        <div class="menu-container">
-            <div class="homepage-link-container">
-                <a aria-current="page" class="css-1tyvv1r ernp1ir1" data-marketing="link" type="primary" href="/">
-
+        <div class="nav-container__menu-container">
+            <div class="nav-container__homepage-link-container">
+                <a data-marketing="link" type="primary" href="{{ site.shared_baseurl }}">
                     <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iNTg2cHgiIGhlaWdodD0iMTk4cHgiIHZpZXdCb3g9IjAgMCA1ODYgMTk4IiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPgogICAgPCEtLSBHZW5lcmF0b3I6IFNrZXRjaCA1MC4yICg1NTA0NykgLSBodHRwOi8vd3d3LmJvaGVtaWFuY29kaW5nLmNvbS9za2V0Y2ggLS0+CiAgICA8dGl0bGU+R3JvdXA8L3RpdGxlPgogICAgPGRlc2M+Q3JlYXRlZCB3aXRoIFNrZXRjaC48L2Rlc2M+CiAgICA8ZGVmcz48L2RlZnM+CiAgICA8ZyBpZD0iUGFnZS0xIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj4KICAgICAgICA8ZyBpZD0iR3JvdXAiIGZpbGw9IiMxOTc1RDEiPgogICAgICAgICAgICA8cGF0aCBkPSJNODcuOCw2MS4xOSBMMTMxLjcsNjEuMTkgTDEzMS43LDcxIEw4Ny44LDcxIEw4Ny44LDYxLjE5IFogTTg3LjgsMTE5LjgxIEwxMzEuNywxMTkuODEgTDEzMS43LDEyOS41OCBMODcuOCwxMjkuNTggTDg3LjgsMTE5LjgxIFogTTczLjE3LDEwMC4yNyBMMTQ2LjMzLDEwMC4yNyBMMTQ2LjMzLDExMCBMNzMuMTcsMTEwIEw3My4xNywxMDAuMjcgWiBNNzMuMTcsODAuNzMgTDE0Ni4zMyw4MC43MyBMMTQ2LjMzLDkwLjUgTDczLjE3LDkwLjUgTDczLjE3LDgwLjczIFogTTI5LjI3LDkzIEwxMDkuNzgsMTcxLjE1IEwxOTAuMjMsOTIuOTkgTDEwOS43OCwxNC43OSBMMjkuMjcsOTMgWiBNMTA5LjQyLDAuMTMgTDE5Ny41NSw4NSBMMjEwLjMyLDczLjA5IEwyMTkuNSw4MS40IEwxMDkuNzUsMTg4LjIgTDIwLjQ1LDEwMS41MSBMOC42MywxMTIuOTIgTDAsMTA0LjU1IEwxMDkuNDIsMC4xMyBaIiBpZD0iU2hhcGUiPjwvcGF0aD4KICAgICAgICAgICAgPHBhdGggZD0iTTUyMi40NiwxNTQuNDYgTDQ3Ni44LDQ2LjkyIEw0OTIuNjcsNDYuOTIgTDUzMCwxMzUuNTUgTDU2OS44Niw0Ni45MiBMNTg1LjcyLDQ2LjkyIEw1MTcuNzQsMTk3LjE1IEw1MDIuMDksMTk3LjE1IEw1MjIuNDYsMTU0LjQ2IFogTTM2NS43Miw0Ni45MiBMMzgwLjcyLDQ2LjkyIEwzODAuNzIsNjEuMTUgTDM4MS4xNSw2MS4xNSBDMzgyLjU2NzI5Nyw1OS4xOTQzMzMxIDM4NC4xNDI1NzUsNTcuMzU4MTgwMyAzODUuODYsNTUuNjYgQzM4OC4wOTA4MDEsNTMuNDU2MDMwMSAzOTAuNjE4NTY0LDUxLjU3NDUxMjkgMzkzLjM3LDUwLjA3IEMzOTYuNjU4ODA1LDQ4LjI1NDM1MTIgNDAwLjE0NDg5MSw0Ni44MjE2NjcgNDAzLjc2LDQ1LjggQzQwOC4xMjIwOSw0NC41OTExMTU4IDQxMi42MzM5MTMsNDQuMDA4NjE5MyA0MTcuMTYsNDQuMDcgQzQyMy45MjAwODQsNDQuMDExMTE3NyA0MzAuNjQ2ODA3LDQ1LjAyMzY3MDIgNDM3LjA5LDQ3LjA3IEM0NDMuNTI2NjI4LDQ5LjMwNTg4OTYgNDQ5LjM4MjU0LDUyLjk1MTMxNCA0NTQuMjMsNTcuNzQgQzQ1OC44ODk1MTEsNjIuMTQzMzE1IDQ2Mi41MTMzNTcsNjcuNTI2MTQ0IDQ2NC44NCw3My41IEM0NjcuNTA2NjY3LDc5LjkyNjY2NjcgNDY4Ljg0LDg3Ljc1MzMzMzMgNDY4Ljg0LDk2Ljk4IEw0NjguODQsMTU4LjE3IEw0NTMuODQsMTU4LjE3IEw0NTMuODQsOTYuOTMgQzQ1My44NCw4OS41OTY2NjY3IDQ1Mi44MDMzMzMsODMuNDMgNDUwLjczLDc4LjQzIEM0NDguOTg0NTY2LDczLjg4NzA4OTIgNDQ2LjI1MjEzNSw2OS43ODg0NDM0IDQ0Mi43Myw2Ni40MyBDNDM4Ljk0NDk3Miw2Mi44NDQxNDU3IDQzNC4zNDY5NjQsNjAuMjI5NDU3NCA0MjkuMzMsNTguODEgQzQyMS40NjUxMDQsNTYuMjM2OTE2NyA0MTIuOTg0ODk2LDU2LjIzNjkxNjcgNDA1LjEyLDU4LjgxIEMzOTUuMzk1Nzg3LDYxLjUzNzQxODcgMzg3LjUyOTgxOSw2OC42OTUzNzU2IDM4My45LDc4LjEyIEMzODEuNjk4MDEsODMuNzg2MjQ1NiAzODAuNjQwOTc1LDg5LjgzMjc1NjMgMzgwLjc5LDk1LjkxIEwzODAuNzksMTU4LjEyIEwzNjUuNzksMTU4LjEyIEwzNjUuNzIsNDYuOTIgWiBNMzIyLjg1LDQ2LjkyIEwzMzcuODUsNDYuOTIgTDMzNy44NSwxNTguMTIgTDMyMi44NSwxNTguMTIgTDMyMi44NSw0Ni45MiBaIE0zMjIuODUsNy42OSBMMzM3Ljg1LDcuNjkgTDMzNy44NSwzMy4zIEwzMjIuODUsMzMuMyBMMzIyLjg1LDcuNjkgWiBNMjYzLjkyLDU5LjY5IEwyMzkuMjcsNTkuNjkgTDIzOS4yNyw0Ni45MiBMMjYzLjkyLDQ2LjkyIEwyNjMuOTIsNy42OSBMMjc4LjkyLDcuNjkgTDI3OC45Miw0Ni45MiBMMzA3LDQ2LjkyIEwzMDcsNTkuNzMgTDI3OC45Miw1OS43MyBMMjc4LjkyLDE1OC4xMiBMMjYzLjkyLDE1OC4xMiBMMjYzLjkyLDU5LjY5IFoiIGlkPSJTaGFwZSI+PC9wYXRoPgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+"
-                         alt="Tiny logo" height="32px"></a>
-                Docs
+                         alt="Tiny logo" height="32px">
+                </a>
+                <span>Docs</span>
             </div>
 
             {% include template/search.html %}
 
-            <div>
-                <a class="edfbb0s8 css-17b37pn ernp1ir1"
-                   data-marketing="header-contact-icon" type="primary"
-                   href="/contact">Get your free API key now!</a>
+            <div class="nav-container__right-container">
+
+                <a class="create-account-button"
+                   id="header-get-tiny-button"
+                   href="https://apps.tiny.cloud/?add-to-cart=197933"
+                   data-marketing="docs-header-get-started">Create Account</a>
+
+                <a href="https://apps.tiny.cloud/my-account/"
+                   id="header-my-account-button"
+                   data-marketing="docs-header-my-account">
+
+                    <i class="header-my-account-button__icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <g transform="translate(.75 .75)" stroke-width="1.5" fill="none" fill-rule="evenodd"
+                               stroke-linecap="round"
+                               stroke-linejoin="round">
+                                <circle cx="11.25" cy="9" r="5.25"></circle>
+                                <path d="M18.163 20.126a9.746 9.746 0 0 0-13.826 0"></path>
+                                <circle cx="11.25" cy="11.25" r="11.25"></circle>
+                            </g>
+                        </svg>
+                    </i>
+                    My Account
+                </a>
             </div>
         </div>
     </div>

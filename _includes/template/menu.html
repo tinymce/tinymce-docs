@@ -68,7 +68,7 @@
         width: 25%;
     }
 
-    header .create-account-button {
+    header .header-get-tiny-button {
         box-sizing: border-box;
         position: relative;
         display: inline-block;
@@ -90,7 +90,7 @@
         transition: color 0.1s ease 0s, background-color 0.1s ease 0s, border-color 0.1s ease 0s;
     }
 
-    #header-my-account-button {
+    .header-my-account-button {
         display: none;
         font-weight: 900;
         color: rgb(74, 74, 74);
@@ -98,12 +98,16 @@
         padding-top: 6px;
     }
 
-    #header-my-account-button:hover {
+    .menu-mobile .menu-nav > .header-my-account-button-mobile {
+        display: none;
+    }
+
+    .header-my-account-button:hover {
         color: rgb(25, 118, 210) !important;
     }
 
 
-    #header-my-account-button:hover g {
+    .header-my-account-button:hover g {
         stroke: rgb(25, 118, 210) !important;
     }
 
@@ -123,9 +127,47 @@
     }
 
 
+    .modern-menu-mobile {
+        position: absolute;
+        background: transparent;
+        z-index: 21;
+    }
+
+    .modern-menu-mobile .menu-bar {
+        border: none;
+    }
+
+    .modern-menu-mobile .menu-nav {
+        box-shadow: 0 9px 10px -5px rgba(0, 0, 0, 0.34);
+    }
+
+    .modern-menu-mobile .menu-nav.open {
+        top: 68px;
+    }
+
+    .modern-menu-mobile__btn-open {
+        background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+Cjxzdmcgd2lkdGg9IjQwcHgiIGhlaWdodD0iMzJweCIgdmlld0JveD0iMCAwIDQwIDMyIiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbG5zOnNrZXRjaD0iaHR0cDovL3d3dy5ib2hlbWlhbmNvZGluZy5jb20vc2tldGNoL25zIj4KICAgIDwhLS0gR2VuZXJhdG9yOiBTa2V0Y2ggMy4zLjMgKDEyMDcyKSAtIGh0dHA6Ly93d3cuYm9oZW1pYW5jb2RpbmcuY29tL3NrZXRjaCAtLT4KICAgIDx0aXRsZT5idG4tbWVudTwvdGl0bGU+CiAgICA8ZGVzYz5DcmVhdGVkIHdpdGggU2tldGNoLjwvZGVzYz4KICAgIDxkZWZzPjwvZGVmcz4KICAgIDxnIGlkPSJhc3NldHMiIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxIiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIHNrZXRjaDp0eXBlPSJNU1BhZ2UiPgogICAgICAgIDxnIHNrZXRjaDp0eXBlPSJNU0FydGJvYXJkR3JvdXAiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0xMDIzLjAwMDAwMCwgLTY2NTYuMDAwMDAwKSIgaWQ9ImJ0bi1tZW51IiBmaWxsPSIjNTk1OTU5Ij4KICAgICAgICAgICAgPGcgc2tldGNoOnR5cGU9Ik1TTGF5ZXJHcm91cCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTAyMy4wMDAwMDAsIDY2NTYuMDAwMDAwKSI+CiAgICAgICAgICAgICAgICA8ZyBpZD0iUmVjdGFuZ2xlLTIyNCIgc2tldGNoOnR5cGU9Ik1TU2hhcGVHcm91cCI+CiAgICAgICAgICAgICAgICAgICAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjQwIiBoZWlnaHQ9IjQiIHJ4PSIyIj48L3JlY3Q+CiAgICAgICAgICAgICAgICAgICAgPHJlY3QgeD0iMCIgeT0iMTQiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0IiByeD0iMiI+PC9yZWN0PgogICAgICAgICAgICAgICAgICAgIDxyZWN0IHg9IjAiIHk9IjI4IiB3aWR0aD0iNDAiIGhlaWdodD0iNCIgcng9IjIiPjwvcmVjdD4KICAgICAgICAgICAgICAgIDwvZz4KICAgICAgICAgICAgPC9nPgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+);
+        width: 24px;
+        height: 24px;
+        display: block;
+        background-size: 24px 24px;
+        right: 20px;
+        position: absolute;
+        top: 20px;
+        opacity: 0.6;
+    }
+
+    .modern-menu-mobile__btn-open.active {
+        opacity: 1;
+    }
+
     @media screen and (max-width: 1126px) {
         .nav-container__right-container {
-            width: 75%;
+            display: none;
+        }
+
+        .menu-mobile {
+            display: block;
         }
     }
 
@@ -146,13 +188,12 @@
 
             <div class="nav-container__right-container">
 
-                <a class="create-account-button"
-                   id="header-get-tiny-button"
-                   href="https://apps.tiny.cloud/?add-to-cart=197933"
+                <a href="https://apps.tiny.cloud/?add-to-cart=197933"
+                   class="header-get-tiny-button"
                    data-marketing="docs-header-get-started">Create Account</a>
 
                 <a href="https://apps.tiny.cloud/my-account/"
-                   id="header-my-account-button"
+                   class="header-my-account-button"
                    data-marketing="docs-header-my-account">
 
                     <i class="header-my-account-button__icon">
@@ -168,7 +209,25 @@
                     </i>
                     My Account
                 </a>
+
             </div>
         </div>
+    </div>
+
+    <div class="menu-mobile modern-menu-mobile">
+        <a class="modern-menu-mobile__btn-open btn-open" href="#" title="Toggle menus"></a>
+        <nav class="menu-nav">
+            <a class="link-menu header-get-tiny-button-mobile"
+               href="https://apps.tiny.cloud/?add-to-cart=197933"
+               data-marketing="docs-header-get-started">Get Started</a>
+
+            <a href="https://apps.tiny.cloud/my-account/"
+               class="link-menu header-my-account-button-mobile"
+               data-marketing="docs-header-my-account">My Account</a>
+
+            <a class="link-menu" href="{{ site.shared_baseurl }}" data-marketing="docs-header-back-home">
+                Return to Tiny.cloud
+            </a>
+        </nav>
     </div>
 </header>

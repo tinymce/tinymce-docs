@@ -15,8 +15,8 @@
     var LS_KEY_EXPIRE = "tiny:docs:isAuthKeyExpiry";
     var EXPIRE_TIMEOUT = 15 * 60 * 1000;
 
-    var $getTinyBtn = $("#header-get-tiny-button");
-    var $myAccountBtn = $("#header-my-account-button");
+    var $getTinyBtn = $(".header-get-tiny-button, .header-get-tiny-button-mobile");
+    var $myAccountBtn = $(".header-my-account-button, .header-my-account-button-mobile");
 
     function getIsAuthData() {
 

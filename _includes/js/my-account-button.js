@@ -49,7 +49,7 @@
 
     function renderMyAccountButton() {
         $getTinyBtn.hide();
-        $myAccountBtn.show();
+        $myAccountBtn.css({ display: "block"});
     }
 
     $(document).ready(getIsAuthData);

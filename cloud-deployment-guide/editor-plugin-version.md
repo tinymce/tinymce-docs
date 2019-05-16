@@ -13,7 +13,7 @@ Use the URL provided to specify the TinyMCE version when deploying via Tiny Clou
 The following example is the default for loading TinyMCE 5.0 via Tiny Cloud:
 
 ```js
-<script src="{{ site.cdnurl }}?apiKey=your_API_key"></script>
+<script src="{{ site.cdnurl }}"></script>
 ```
 
 This URL specifies the latest and quality assured release of TinyMCE.
@@ -35,7 +35,7 @@ This channel deploys the absolute latest version of TinyMCE as documented in [Ti
 ##### Example
 
 ```js
-<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js"></script>
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5-dev/tinymce.min.js"></script>
 ```
 
 #### testing release channel
@@ -55,7 +55,7 @@ This channel deploys the latest release of TinyMCE that has passed our quality a
 ##### Example
 
 ```js
-<script src="{{ site.cdnurl }}?apiKey=your_API_key"></script>
+<script src="{{ site.cdnurl }}"></script>
 ```
 
 ## Specifying the version of features/plugins deployed from Tiny Cloud

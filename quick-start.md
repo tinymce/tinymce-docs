@@ -16,7 +16,7 @@ TinyMCE 5.0 is perfect for developers who want to see how the new version of Tin
 Include this line of code in the `<head>` of the HTML page and link to the tinymce.min.js source file:
 
 ```html
-<script src="{{ site.cdnurl }}?apiKey=your_API_key"></script>
+<script src="{{ site.cdnurl }}"></script>
 ```
 
 > Tip: A complete HTML snippet is provided in Step 2.
@@ -34,7 +34,7 @@ In this example, replace `<textarea id='mytextarea'>` with a TinyMCE 5.0 editor 
 <!DOCTYPE html>
 <html>
 <head>
-  <script src='{{ site.cdnurl }}?apiKey=your_API_key'></script>
+  <script src='{{ site.cdnurl }}'></script>
   <script>
   tinymce.init({
     selector: '#mytextarea'

@@ -8,7 +8,7 @@ TinyMCE 5.0 has an ARIA [WCAG 2.1 standards](https://www.w3.org/WAI/standards-gu
 Include this line of code in the <head> of the HTML page and link to the tinymce.min.js source file:
 
 ```js
-<script src="{{ site.cdnurl }}?apiKey=your_API_key"></script>
+<script src="{{ site.cdnurl }}"></script>
 ```
 
 Signing up for a free API key provides entitlements to all our free plugins. This includes advanced functionality such as the [Image tools]({{  site.baseurl }}/plugins/imagetools/) plugin, which requires a cloud image proxy server to already be configured. Premium plugins can be purchased at any time once the API key has been set up.

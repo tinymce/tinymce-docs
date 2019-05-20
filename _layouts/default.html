@@ -1,101 +1,161 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/html">
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="{{ page.meta_description | or:page.description }}">
-  <meta name="keywords" content="{{ page.meta_keywords | or:site.default_meta_keywords }}">
-  <meta property="og:og:site_name" content="TinyMCE.com">
-  <meta property="og:title" content="TinyMCE | {{ page.meta_title | or:page.title }}">
-  <meta property="og:type" content="website">
-  <meta property="og:description" content="{{ page.meta_description | or:page.description }}">
-  <meta property="og:image" content="https://www.tiny.cloud/images/fb-share@2x.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="{{ page.meta_description | or:page.description }}">
+    <meta name="keywords" content="{{ page.meta_keywords | or:site.default_meta_keywords }}">
+    <meta property="og:og:site_name" content="TinyMCE.com">
+    <meta property="og:title" content="TinyMCE | {{ page.meta_title | or:page.title }}">
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="{{ page.meta_description | or:page.description }}">
+    <meta property="og:image" content="https://www.tiny.cloud/images/fb-share@2x.png">
 
-  <title>TinyMCE | {{ page.meta_title | or:page.title }}</title>
+    <title>TinyMCE | {{ page.meta_title | or:page.title }}</title>
 
-  <link href="{{ site.shared_baseurl }}/css/common.min.css" rel="stylesheet">
-  <link href="{{ site.shared_baseurl }}/css/docs.min.css" rel="stylesheet">
-  <link href="//fast.fonts.net/cssapi/5d4ae438-4aca-4c75-8249-d9486d12b12e.css" rel="stylesheet">
-  <link href="//afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" rel="stylesheet"/>
+    <link href="https://www.tiny.cloud/css/common.min.css" rel="stylesheet">
+    <link href="https://www.tiny.cloud/css/docs.min.css" rel="stylesheet">
+    <link href="//fast.fonts.net/cssapi/5d4ae438-4aca-4c75-8249-d9486d12b12e.css" rel="stylesheet">
+    <link href="//afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" rel="stylesheet"/>
+
+
+    <style>
+        .modern-main {
+            width: 1140px;
+            margin: 0 auto;
+            display: flex;
+        }
+
+        .modern-navigation {
+            padding: 0;
+            position: relative;
+            width: 250px;
+            top: 0;
+            overflow-y: auto;
+            z-index: 1;
+        }
+
+        .modern-main-container {
+            width: auto;
+            flex-grow: 1;
+            padding-top: 16px;
+        }
+
+        main .modern-heading {
+            margin-left: 0;
+        }
+
+        main .modern-content {
+            margin-left: 0;
+        }
+
+        .modern-versions {
+            margin-bottom: 30px;
+        }
+
+        .modern-versions .dropdown {
+            width: 225px;
+            height: 42px;
+        }
+
+        .modern-versions .dropdown .dropdown-arrow {
+            width: 42px;
+            height: 42px;
+            border: none;
+            background-color: transparent;
+        }
+
+        @media screen and (max-width: 1126px) {
+            .modern-main {
+                flex-direction: column;
+                width: auto;
+            }
+
+            .modern-versions {
+                display: none;
+            }
+
+            .modern-navigation {
+                width: 100%;
+            }
+        }
+
+        .content {
+            margin-left: 0;
+        }
+    </style>
+
 </head>
 <body role="document" data-shared-baseurl="{{ site.shared_baseurl }}" data-baseurl="{{ site.baseurl }}">
-  {% include_remote {{ site.origin }}/_docs/menu.html css="body > *" %}
 
-  <div class="top-bar">
-    <div>
-      <div class="versions">
-        <div class="dropdown">
-          TinyMCE v3
-          <div class="dropdown-arrow"></div>
-          <div class="dropdown-options">
-            <a class="link-gelato" href="/docs/">TinyMCE v5</a>
-            <a class="link-gelato" href="/docs-4x/">TinyMCE v4</a>
-            <a class="link-gelato" href="{{ site.baseurl }}">TinyMCE v3</a>
-          </div>
+{% include template/notification.html %}
+{% include template/menu.html css="body > *" %}
+
+<div class="modern-main {{ page.type }} {{ page.class }}">
+
+    <aside class="side-nav modern-navigation">
+        <div class="modern-versions">
+            <div class="dropdown">
+                TinyMCE v4
+                <div class="dropdown-arrow"></div>
+                <div class="dropdown-options">
+                    <a class="link-gelato" href="/docs/">TinyMCE v5</a>
+                    <a class="link-gelato" href="/docs-4x/">TinyMCE v4</a>
+                    <a class="link-gelato" href="/docs-3x/">TinyMCE v3</a>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList">
-        {% include breadcrumbs.html %}
-      </div>
-      <div class="search">
-        <input type="text" name="seach" value="" id="searchInput" placeholder="Search in documentation" tabindex="1">
-      </div>
-    </div>
-    <div class="search-results-container">
-      <div>
-        <button class="btn btn-sauce link-naan search-close" type="button" name="search-close">Close</button>
-        <div class="search-results-count light"><span>0</span> results found</div>
-        <div class="search-results"></div>
-      </div>
-    </div>
-  </div>
 
-  <div class="main {{ page.type }} {{ page.class }}">
-    <aside class="side-nav" style="padding-top: 16px;"> <!-- Override padding-top by 40px less as docs-3x doesn't have tiny news -->
-      <div id="side-nav-controller">Expand Menu</div>
-      <ul style="margin-bottom: 0 !important;">
-        <li>
-          <a href="/docs/">TinyMCE 5</a>
-        </li>
-      </ul>
-      {% assign nav = site.data.nav | array_concat:site.data.nav_api %}
-      {% include nav.html links=nav preceding_address="/" %}
+        <div id="side-nav-controller">Expand Menu</div>
+
+        {% assign nav = site.data.nav | array_concat:site.data.nav_api %}
+        {% include nav.html links=nav preceding_address="/" %}
+
     </aside>
+    <main class="modern-main-container">
+        <div class="heading modern-heading">
+            <h1 class="light">{{ page.title }}</h1>
+            <h2 class="light">{{ page.description }}</h2>
+            <a class="contribute link-garlic"
+               href="https://github.com/tinymce/tinymce-docs-3x/tree/master/{{ page.path }}">Contribute to this
+                page<i></i></a>
+            {% if page.controls %}
+            {% assign controls = page.controls | split:',' %}
+            <div class="badges">
+                {% for control in controls %}<span class="badge-naan lg">+ {{ control }}</span> {% endfor %}
+            </div>
+            {% endif %}
+        </div>
 
-    <div class="heading">
-      <h1 class="light">{{ page.title }}</h1>
-      <h2 class="light">{{ page.description }}</h2>
-      <a class="contribute link-garlic" href="https://github.com/tinymce/tinymce-docs-3x/tree/master/{{ page.path }}">Contribute to this page<i></i></a>
-      {% if page.controls %}
-      {% assign controls = page.controls | split:',' %}
-      <div class="badges">
-        {% for control in controls %}<span class="badge-naan lg">+ {{ control }}</span> {% endfor %}
-      </div>
-      {% endif %}
-    </div>
+        <div class="content">
+            {{ content }}
+            {% include feedback.html %}
+            {% include license.html %}
+        </div>
 
-    <div class="content">
-      {{ content }}
-      {% include feedback.html %}
-      {% include license.html %}
-    </div>
-  </div>
+    </main>
+</div>
 
-  {% include_remote {{ site.origin }}/_docs/footer.html css="body > *" %}
-  <script src="{{ site.shared_baseurl }}/scripts/common.min.js"></script>
-  <script src="{{ site.shared_baseurl }}/scripts/docs.min.js"></script>
 
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
-  <script type="text/javascript">
-      docsearch({
-          apiKey: 'd70977481e4a0b72eacaec1533b2d81b',
-          indexName: 'tiny',
-          inputSelector: '#searchInput',
-          algoliaOptions: { 'facetFilters': ["tags:docs-3x"] },
-          debug: true
-      });
-  </script>
+{% include_remote {{ site.origin }}/_docs/footer.html css="body > *" %}
+<script src="https://www.tiny.cloud/scripts/common.min.js"></script>
+<script src="https://www.tiny.cloud/scripts/docs.min.js"></script>
+
+<script>
+    {% include js/my-account-button.js %}
+</script>
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+<script type="text/javascript">
+    docsearch({
+        apiKey: 'd70977481e4a0b72eacaec1533b2d81b',
+        indexName: 'tiny',
+        inputSelector: '#searchInput',
+        algoliaOptions: { 'facetFilters': ["tags:docs-3x"] },
+        debug: true
+    });
+</script>
 </body>
 </html>

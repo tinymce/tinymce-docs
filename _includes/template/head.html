@@ -16,40 +16,33 @@
     <link href="{{ site.shared_baseurl }}/css/common.min.css" rel="stylesheet">
     <link href="{{ site.shared_baseurl }}/css/docs.min.css" rel="stylesheet">
     <link href="//fast.fonts.net/cssapi/5d4ae438-4aca-4c75-8249-d9486d12b12e.css" rel="stylesheet">
+
     {% include_remote {{ site.origin }}/_docs/head.html css="head > *" %}
 
+    {% assign tinymce_script_tag_included = false %}
 
     <style type="text/css">
-        .new-header {
-            position: fixed;
-            z-index: 1000;
-            width: 100%;
+        .codepen {
+            margin-top: 2em;
+            margin-bottom: 2em;
         }
 
-        .menu.menu--docs {
-            position: relative !important;
-            background-color: #fff;
-            border-bottom: 1px solid #dfdfdf;
+        .codepen_tab_selected, .codepen_tab_deselected {
+            padding-left: 2em;
+            padding-right: 2em;
         }
 
-        .top-bar {
-            position: relative !important;
-            top: 0 !important;
+        .codepen_tab_selected {
+            border-bottom: 2px solid #2276d2;
         }
 
-        aside {
-            padding-top: 70px;
+        .codepen_tab_deselected:hover {
+            border-bottom: 2px solid #abcdef;
         }
 
-        .main {
-            padding-top: 34px;
-        }
-
-        @media screen and (min-width: 50em) {
-
-            .main {
-                padding-top: 194px;
-            }
+        .codepen_tabs {
+            margin-bottom: 1em;
         }
     </style>
+
 </head>

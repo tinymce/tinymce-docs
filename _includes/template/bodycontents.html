@@ -1,70 +1,132 @@
-<div class="new-header">
-    {% include notification.html %}
-    {% include_remote {{ site.origin }}/_docs/menu.html css="body > *" %}
+{% include template/notification.html %}
+{% include template/menu.html css="body > *" %}
 
-    <div class="top-bar">
-        <div>
-            <div class="versions">
-                <div class="dropdown">
-                    TinyMCE v4
-                    <div class="dropdown-arrow"></div>
-                    <div class="dropdown-options">
-                        <a class="link-gelato" href="/docs/">TinyMCE v5</a>
-                        <a class="link-gelato" href="/docs-4x/">TinyMCE v4</a>
-                        <a class="link-gelato" href="/docs-3x/">TinyMCE v3</a>
-                    </div>
+<style>
+    .modern-main {
+        width: 1140px;
+        margin: 0 auto;
+        display: flex;
+    }
+
+    .modern-navigation {
+        padding: 0;
+        position: relative;
+        width: 250px;
+        top: 0;
+        overflow-y: auto;
+        z-index: 1;
+    }
+
+    .modern-main-container {
+        width: auto;
+        flex-grow: 1;
+        padding-top: 16px;
+    }
+
+    main .modern-heading {
+        margin-left: 0;
+    }
+
+    main .modern-content {
+        margin-left: 0;
+    }
+
+    .modern-versions {
+        margin-bottom: 30px;
+    }
+
+    .modern-versions .dropdown {
+        width: 225px;
+        height: 42px;
+    }
+
+    .modern-versions .dropdown .dropdown-arrow {
+        width: 42px;
+        height: 42px;
+        border: none;
+        background-color: transparent;
+    }
+
+    @media screen and (max-width: 1126px) {
+        .modern-main {
+            flex-direction: column;
+            width: auto;
+        }
+
+        .modern-versions {
+            display: none;
+        }
+
+        .modern-navigation {
+            width: 100%;
+        }
+    }
+
+</style>
+
+<div class="modern-main {{ page.type }} {{ page.class }}">
+    <aside class="side-nav modern-navigation">
+        <div class="modern-versions">
+            <div class="dropdown">
+                TinyMCE v4
+                <div class="dropdown-arrow"></div>
+                <div class="dropdown-options">
+                    <a class="link-gelato" href="/docs/">TinyMCE v5</a>
+                    <a class="link-gelato" href="/docs-4x/">TinyMCE v4</a>
+                    <a class="link-gelato" href="/docs-3x/">TinyMCE v3</a>
                 </div>
             </div>
-            <div class="breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList">
-                {% include breadcrumbs.html %}
-            </div>
-            <div class="search">
-                <input type="text" name="seach" value="" id="searchInput" placeholder="Search in documentation" tabindex="1">
-            </div>
         </div>
-    </div>
 
-</div>
-
-<div class="main {{ page.type }} {{ page.class }}">
-    <aside class="side-nav">
         <div id="side-nav-controller">Expand Menu</div>
+
         {% assign nav = site.data.nav | array_concat:site.data.nav_api %}
         {% include nav.html links=nav preceding_address="/" %}
+
     </aside>
 
-    <div class="heading">
-        <h1 class="light">{{ page.title }}</h1>
-        <h2 class="light">{{ page.description }}</h2>
-        {% if page.url contains '/api/' %}
-        <!-- Disabled since there is no git link -->
-        {% else %}
-        <a class="contribute link-garlic" href="https://github.com/tinymce/tinymce-docs/tree/master/{{ page.path }}">Contribute to this page<i></i></a>
-        {% endif %}
-        {% if page.controls %}
-        {% assign controls = page.controls | split:',' %}
-        <div class="badges">
-            {% for control in controls %}<span class="badge-naan lg">+ {{ control }}</span> {% endfor %}
+    <main class="modern-main-container">
+        <div class="heading modern-heading">
+            <h1 class="light">{{ page.title }}</h1>
+            <h2 class="light">{{ page.description }}</h2>
+            {% if page.url contains '/api/' %}
+            <!-- Disabled since there is no git link -->
+            {% else %}
+            <a class="contribute link-garlic"
+               href="https://github.com/tinymce/tinymce-docs-4x/tree/master/{{ page.path }}">Contribute to this page<i></i></a>
+            {% endif %}
+            {% if page.controls %}
+            {% assign controls = page.controls | split:',' %}
+            <div class="badges">
+                {% for control in controls %}<span class="badge-naan lg">+ {{ control }}</span> {% endfor %}
+            </div>
+            {% endif %}
         </div>
-        {% endif %}
-    </div>
 
-    <div class="content">
-        {{ content }}
-        {% include feedback.html %}
-        <p class="let-us-know">
-            Can't find what you're looking for?
-            <a href="#" data-modal="let-us-know">
-                Let us know.
-            </a>
-        </p>
-        {% include license.html %}
-    </div>
+        <div class="content modern-content">
+            {{ content }}
+            {% include feedback.html %}
+            <p class="let-us-know">
+                Can't find what you're looking for?
+                <a href="#" data-modal="let-us-know">
+                    Let us know.
+                </a>
+            </p>
+            {% include license.html %}
+        </div>
+
+        <div style="clear: both"></div>
+    </main>
+
 </div>
 
 {% include_remote {{ site.origin }}/_docs/footer.html css="body > *" %}
 <script src="{{ site.shared_baseurl }}/scripts/common.min.js"></script>
 <script src="{{ site.shared_baseurl }}/scripts/docs.min.js"></script>
+
+<script>
+    {% include js/my-account-button.js %}
+</script>
 
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
 <script type="text/javascript">

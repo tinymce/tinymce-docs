@@ -43,8 +43,8 @@
     }
 
     function isStagingEnvironment() {
-        return window.location.hostname.indexOf("staging") ||
-            window.location.hostname.indexOf("localhost");
+        return window.location.hostname.indexOf("staging") >= 0 ||
+            window.location.hostname.indexOf("localhost") >= 0;
     }
 
     function renderMyAccountButton() {

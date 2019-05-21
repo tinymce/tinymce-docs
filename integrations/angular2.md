@@ -176,35 +176,34 @@ Following step by step guide outlines the process of loading TinyMCE and TinyMCE
 
 * Install TinyMCE using NPM
   * `npm install --save tinymce`
-* In your `angular.json`, add tinymce, your desired theme and all required plugins in the `scripts` list of your Angular build declaration
+* In your `angular.json` add tinymce to the *global scripts* tag.
   * Your script list might look like the following:
   ```json
   "scripts": [
-    "node_modules/tinymce/tinymce.min.js",
-    "node_modules/tinymce/themes/modern/theme.min.js",
-    "node_modules/tinymce/plugins/fullscreen/plugin.min.js",
+    "node_modules/tinymce/tinymce.min.js"
   ]
   ```
-* To get TinyMCE skins (ui & content CSS) add them to the `assets` list of your `angular.json` file.
+* Add tinymce skins, themes and plugins to the assets property of your `angular.json`. This will allow Tiny to lazy-load everything it requires on initialization.
   ```json
   "assets": [
-    { "glob": "**/*", "input": "node_modules/tinymce/skins", "output": "/tinymce/skins/" }
+    { "glob": "**/*", "input": "node_modules/tinymce/skins", "output": "/tinymce/skins/" },
+    { "glob": "**/*", "input": "node_modules/tinymce/themes", "output": "/tinymce/themes/" },
+    { "glob": "**/*", "input": "node_modules/tinymce/plugins", "output": "/tinymce/plugins/" }
   ]
   ```
-* Finally, configure the `<editor>` to use the local skin files by using the `skin_url` and `content_css` settings. Note: in most use cases the content css should be customized for each use case rather than using the default one as shown here. Read more about [content_css](https://www.tiny.cloud/docs/configure/content-appearance/#content_css)
-  ```js
-  public tinyMceSettings = {
-    skin_url: 'tinymce/skins/ui/oxide',
-    content_css: 'tinymce/skins/content/default/content.css',
-    inline: false,
-    statusbar: false,
-    browser_spellcheck: true,
-    height: 320,
-    plugins: 'fullscreen',
-  };
+* If necessary, set the `base_url` and `suffix` of the global `tinyMCE` object. This must be done before any editor is initialized.
   ```
+  window.tinyMCE.overrideDefaults({
+    base_url: '/tinymce/',  // Base for assets such as skins, themes and plugins
+    suffix: '.min'          // This will make Tiny load minified versions of all its assets
+  });
+  ```
+* Finally, configure the editor.
   ```html
-  <editor [init]="tinyMceSettings"></editor>
+  <editor [init]="{
+    plugins: 'lists advlist',
+    toolbar: 'undo redo | bold italic | bullist numlist outdent indent'
+  }"></editor>
   ```
 
 #### A note about integrations

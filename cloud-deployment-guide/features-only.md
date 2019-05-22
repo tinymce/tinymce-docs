@@ -15,7 +15,7 @@ Sign up for a free API key provides entitlements to premium [Image Tools]({{  si
 Add the following script in the webpage once the script tag to load TinyMCE has been specified:
 
 ```js
-<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/plugins.min.js?"></script>
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/plugins.min.js"></script>
 ```
 
 ## Step 2: Specify purchased TinyMCE plugins and toolbar buttons
@@ -56,7 +56,7 @@ The example below has the following:
 <html>
    <head>
       <script src="https://your_server/tinymce.min.js"></script>
-      <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/plugins.min.js?"></script>
+      <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/plugins.min.js"></script>
    </head>
    <body>
       <textarea><p>test textarea</p></textarea>

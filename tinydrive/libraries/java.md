@@ -52,15 +52,15 @@ $ gradle bootRun
 
 ### Implementing with your system
 
-If your specific use case has not been covered by any of the sample [starter projects]({{site.baseurl}}/tinydrive/libraries/), some customizations might be required to be applied to implement Tiny Drive in the specific system. The [JSON Web Token]({{site.baseurl}}/tinydrive/introduction/jwt-authentication/) authentication solution would have to be tied to the login authentication of your system. This usually means integrating the JWT authentication to the existing session authentication so that users automatically login to Tiny Drive and your system.
+If your specific use case has not been covered by any of the sample [starter projects]({{site.baseurl}}/tinydrive/libraries/), some customizations might be required to be applied to implement Tiny Drive in the specific system. The [JSON Web Token]({{site.baseurl}}/tinydrive/jwt-authentication/) authentication solution would have to be tied to the login authentication of your system. This usually means integrating the JWT authentication to the existing session authentication so that users automatically login to Tiny Drive and your system.
 
 #### Additional resources
 
 Go through the following additional resources to figure out how to configure Tiny Drive with your system.
 
-- We recommend reading up and trying to understand how [JWT authentication]({{site.baseurl}}/tinydrive/introduction/jwt-authentication/) works. In order to implement Tiny Drive you need prior knowledge of JWT in detail, including how they can be used for user authentication and session management in a web application. There will be some coding involved on both the client-side and the server-side to configure JWT as per the instructions in this section.
+- We recommend reading up and trying to understand how [JWT authentication]({{site.baseurl}}/tinydrive/jwt-authentication/) works. In order to implement Tiny Drive you need prior knowledge of JWT in detail, including how they can be used for user authentication and session management in a web application. There will be some coding involved on both the client-side and the server-side to configure JWT as per the instructions in this section.
 - [Starter projects]({{site.baseurl}}/tinydrive/libraries/)
-- [Configuration Options]({{site.baseurl}}/tinydrive/getting-started/configuration/)
+- [Configuration Options]({{site.baseurl}}/tinydrive/configuration/)
 - [Integrations]({{site.baseurl}}/tinydrive/integrations/)
 
 ## Need help? ##

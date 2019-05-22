@@ -56,4 +56,4 @@ Some cloud services for TinyMCE require setting up JWT authentication. This allo
 
 To get started quickly and understand how Tiny Drive works, Tiny highly recommends trying one of the starter projects on Github to set up a Tiny Drive instance by following a few simple steps.
 
-The starter projects have their procedures to get Tiny Drive up and running. Choose a [starter project]({{site.baseurl}}/tinydrive/getting-started/) of a familiar language and follow the steps to set up Tiny Drive.
+The starter projects have their procedures to get Tiny Drive up and running. Choose a [starter project]({{site.baseurl}}/tinydrive/getting-started/#starterprojects) of a familiar language and follow the steps to set up Tiny Drive.

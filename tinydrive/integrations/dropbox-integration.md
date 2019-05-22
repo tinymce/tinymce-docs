@@ -46,7 +46,7 @@ tinymce.init({
 });
 ```
 
-For more information on other Tiny Drive config options refer to the [configuration]({{site.baseurl}}/getting-started/configuration/#configuringwithdropbox) section of this document.
+For more information on other Tiny Drive config options refer to the [configuration]({{site.baseurl}}/tinydrive/configuration/#configuringwithdropbox) section of this document.
 
 ### 4. Tiny Drive UI
 

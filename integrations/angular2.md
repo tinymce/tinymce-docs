@@ -15,16 +15,17 @@ $ npm install @tinymce/tinymce-angular
 ```
 
 ## Usage
+
 ### Loading the component
 
 Import the `EditorModule` from the npm package like this:
 
-```js
+```tsx
 import { EditorModule } from '@tinymce/tinymce-angular';
 ```
 And add it to your application module:
 
-```js
+```tsx
 // This might look different depending on how you have set up your app
 // but the important part is the imports array
 @NgModule({
@@ -44,17 +45,17 @@ And add it to your application module:
 
 Use the editor in your templates like this:
 
-```tsx
+```html
 <editor apiKey="test" [init]="{plugins: 'link'}"></editor>
 ```
 
 ### Configuring the editor
 
 The editor accepts the following inputs:
-
+* `disabled`: Using this input that takes a boolean value you can dynamically set the editor into a "disabled" readonly mode or into the normal editable mode.
 * `id`: An id for the editor so you can later grab the instance by using the `tinymce.get('ID')` method on tinymce, defaults to an automatically generated uuid.
-* `init`: Object sent to the `tinymce.init` the method used to initialize the editor.
-* `initialValue`: The Initial value that the editor will be initialized with.
+* `init`: Object sent to the `tinymce.init` method used to initialize the editor.
+* `initialValue`: Initial value that the editor will be initialized with.
 * `inline`: Shorthand for setting that the editor should be inline, `<editor [inline]="true"></editor>` is the same as setting `{inline: true}` in the init.
 * `tagName`: Only used if the editor is inline, decides what element to initialize the editor on, defaults to `div`.
 * `plugins`: Shorthand for setting what plugins you want to use, `<editor plugins="foo bar"></editor>` is the same as setting `{plugins: 'foo bar'}` in the init.
@@ -62,19 +63,31 @@ The editor accepts the following inputs:
 * `apiKey`: Api key for TinyMCE cloud, more info below.
 * `cloudChannel`: Cloud channel for TinyMCE Cloud, more info below.
 
+None of the configuration inputs are **required** for the editor to work - other than if you are using TinyMCE Cloud you will have to specify the `apiKey` to get rid of the `This domain is not registered...` warning message.
+
 ### `ngModel`
 
 You can also use the `ngModel` directive (more info in the [Angular documentation](https://angular.io/api/forms/NgModel)) on the editor to simplify using it in a form:
 
-```tsx
+```html
 <editor [(ngModel)]="dataModel"></editor>
+```
+
+### Using with reactive forms
+
+The component also works with reactive forms (see [Angular documentation](https://angular.io/guide/reactive-forms))).
+
+For example it can be used with the `formControlName` directive like this, placed inside a `formGroup`:
+
+```html
+<editor [formControlName]="schema.key" [init]="{plugins: 'link'}></editor>
 ```
 
 ### Event binding
 
 You can also bind editor events via a shorthand prop on the editor, for example:
-```js
-<editor (onSelectionChange)="handleEvent($eventObj)"></editor>
+```html
+<editor (onSelectionChange)="handleEvent($event)"></editor>
 ```
 Where the handler gets called with an object containing the properties `event`, which is the event object, and `editor`, which is a reference to the editor.
 
@@ -131,7 +144,6 @@ Here is a full list of the events available:
 * `onPaste`
 * `onPostProcess`
 * `onPostRender`
-* `onPreInit`
 * `onPreProcess`
 * `onProgressState`
 * `onRedo`
@@ -149,34 +161,50 @@ Here is a full list of the events available:
 
 ## Loading TinyMCE
 ### Auto-loading from TinyMCE Cloud
-The `Editor` component needs TinyMCE to be globally available to work, but to make it as easy as possible it will automatically load [TinyMCE Cloud](https://www.tinymce.com/docs/cloud-deployment-guide/) if it can't find TinyMCE available when the component has mounted. To get rid of the `This domain is not registered...` warning, sign up for the cloud and enter the api key like this:
+The `Editor` component needs TinyMCE to be globally available to work, but to make it as easy as possible it will automatically load [TinyMCE Cloud](https://www.tiny.cloud/docs/cloud-deployment-guide/) if it can't find TinyMCE available when the component has mounted. To get rid of the `This domain is not registered...` warning, sign up for the cloud and enter the api key like this:
 
-```tsx
+```html
 <editor apiKey="test" [init]="{/* your settings */}"></editor>
 ```
 
-You can also define what cloud channel you want to use out these three
-* `stable` **Default**. The most stable and well-tested version that has passed the Tiny quality assurance process.
-* `testing` This channel will deploy the current candidate for release to the `stable` channel.
-* `dev` The cutting edge version of TinyMCE updated daily for the daring users.
-
-So using the `dev` channel would look like this:
-
-```tsx
-<editor
-  apiKey="YOUR_API_KEY"
-  cloudChannel="dev"
-  [init]="{/* your settings */}"
-  >
-</editor>
-```
-
-For more info on the different versions see the [documentation](https://www.tinymce.com/docs/cloud-deployment-guide/editor-plugin-version/#devtestingandstablereleases).
+You can also define what cloud channel you want to use, for more info on the different versions see the [documentation](https://www.tiny.cloud/docs/cloud-deployment-guide/editor-plugin-version/#devtestingandstablereleases).
 
 ### Loading TinyMCE by yourself
 
-To opt out of using TinyMCE cloud, you have to make TinyMCE globally available yourself. This can be done either by hosting the `tinymce.min.js` file by yourself and adding a script tag to your HTML or, if you are using a module loader, installing TinyMCE with npm. For info on how to get TinyMCE working with module loaders check out [this page in the documentation](https://www.tinymce.com/docs/advanced/usage-with-module-loaders/).
+To opt out of using TinyMCE cloud you have to make TinyMCE globally available yourself. This can be done either by hosting the `tinymce.min.js` file by youself and adding a script tag to you HTML or, if you are using a module loader, installing TinyMCE with npm. For info on how to get TinyMCE working with module loaders check out [this page in the documentation](https://www.tinymce.com/docs/advanced/usage-with-module-loaders/).
+Following step by step guide outlines the process of loading TinyMCE and TinyMCE-Angular in your local Angular project.
 
+* Install TinyMCE using NPM
+  * `npm install --save tinymce`
+* In your `angular.json` add tinymce to the *global scripts* tag.
+  * Your script list might look like the following:
+  ```json
+  "scripts": [
+    "node_modules/tinymce/tinymce.min.js"
+  ]
+  ```
+* Add tinymce skins, themes and plugins to the assets property of your `angular.json`. This will allow Tiny to lazy-load everything it requires on initialization.
+  ```json
+  "assets": [
+    { "glob": "**/*", "input": "node_modules/tinymce/skins", "output": "/tinymce/skins/" },
+    { "glob": "**/*", "input": "node_modules/tinymce/themes", "output": "/tinymce/themes/" },
+    { "glob": "**/*", "input": "node_modules/tinymce/plugins", "output": "/tinymce/plugins/" }
+  ]
+  ```
+* If necessary, set the `base_url` and `suffix` of the global `tinyMCE` object. This must be done before any editor is initialized.
+  ```
+  window.tinyMCE.overrideDefaults({
+    base_url: '/tinymce/',  // Base for assets such as skins, themes and plugins
+    suffix: '.min'          // This will make Tiny load minified versions of all its assets
+  });
+  ```
+* Finally, configure the editor.
+  ```html
+  <editor [init]="{
+    plugins: 'lists advlist',
+    toolbar: 'undo redo | bold italic | bullist numlist outdent indent'
+  }"></editor>
+  ```
 
 #### A note about integrations
 

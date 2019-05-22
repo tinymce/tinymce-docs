@@ -12,7 +12,7 @@ Tiny Drive requires you to setup JWT authentication. This is to ensure that the 
 
 JWT is a standard authorization solution for web services and is documented in more detail at the [https://jwt.io/](https://jwt.io/) website. The guide aims to show how to setup JWT authentication for Tiny Drive.
 
-> If you haven't tried any of the [Starter projects]({{site.baseurl}}/tinydrive/getting-started/)  yet, we urge you to try them before trying to implement your solution. The source is also available on Github to study.
+> If you haven't tried any of the [Starter projects]({{site.baseurl}}/tinydrive/getting-started/#starterprojects)  yet, we urge you to try them before trying to implement your solution. The source is also available on Github to study.
 
 ## Private/public key pair
 

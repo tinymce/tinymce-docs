@@ -1,6 +1,6 @@
 ## text_color
 
-The `textcolor` component adds the forecolor/back color button controls that enables selecting colors from a color picker and applying them to text. It adds a toolbar button to allow this functionality.
+The `textcolor` component adds the forecolor/back color button controls that enables selecting colors from a color picker and applying them to text. It adds a toolbar button and menu item to allow this functionality.
 
 **Type:** `String`
 
@@ -9,6 +9,9 @@ The `textcolor` component adds the forecolor/back color button controls that ena
 ```js
 tinymce.init({
   selector: "textarea",
+  menu: {
+    format: { title: "Format", items: "forecolor backcolor" }
+  },
   toolbar: "forecolor backcolor"
 });
 ```

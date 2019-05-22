@@ -13,20 +13,36 @@ TinyMCE 5.0.5 release adds improvements to the TinyMCE editor to improve the ove
 
 ## New features
 
-### Tiny Drive
+### Text color menu items
 
-TODO
+In TinyMCE 5.0.5 the `forecolor` and `backcolor` toolbar buttons can now be used in [menus]({{site.baseurl}}/configure/editor-appearance/#menu). The new menu items have also been added to the default `Formats` menu.
 
-A comprehensive list of the updates and fixed issues is available in the [Changelog]({{site.baseurl}}/tinydrive/changelog/).
+For more information on `forecolor` and `backcolor`, refer to the [documentation]({{site.baseurl}}/configure/content-appearance/#text_color).
 
-### Forecolor/backcolor menu items
+### Right to left styles
 
-TODO
+When the editor is configured to use a right to left language, such as Arabic, TinyMCE 5.0.5 will now style the UI to display in right to left mode. Additionally when a right to left language is configured, TinyMCE will now set the default directionality of the editor to match the language directionality.
 
-### Right to left stlyes
-
-TODO
+For more information on configuring the editors `language` and `directionality`, refer to the [documentation]({{site.baseurl}}/configure/localization/).
 
 ## Updates and enhancements
 
+### TinyMCE
+
 The new TinyMCE 5.0.5 editor comes with significant changes to the previous versions. Improved solutions have been introduced for unnecessary and obsolete configuration options. A comprehensive list of the updates and fixed issues is available in the [Changelog]({{site.baseurl}}/changelog/#version505may92019).
+
+### Tiny Drive
+
+**Tiny Drive** 1.2.1 comes with numerous bug fixes to the previous versions. A comprehensive list of the updates and fixed issues is available in the [Changelog]({{site.baseurl}}/tinydrive/changelog/).
+
+To try out **Tiny Drive** start with this [dedicated product page](https://www.tiny.cloud/drive/) or check out the [pricing page](https://www.tiny.cloud/pricing) to see all the flexible pricing options.
+
+For more information on **Tiny Drive** refer to the full [documentation]({{site.baseurl}}/tinydrive/).
+
+There is also a demo provided to explore the **Tiny Drive** capabilities [here]({{site.baseurl}}/tinydrive/introduction/demo/).
+
+### Link Checker
+
+**Link Checker** 2.0.2 comes with numerous bug fixes to the previous versions. A number of improvements have been made for accessibility and an issue has been fixed where the linkchecker context menu items weren't appearing in TinyMCE 5.
+
+For more information on **Link Checker** refer to the full [documentation]({{site.baseurl}}/plugins/linkchecker/).

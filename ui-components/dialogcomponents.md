@@ -6,7 +6,87 @@ description: Dialog component summary is a reference list of all TinyMCE UI comp
 keywords: dialog dialogapi
 ---
 
-This chapter describes the Dialog component summary is a reference list of all TinyMCE UI components that can be used to display simple information.
+This chapter is a reference list of all TinyMCE dialog UI components.
+
+## Body Components
+
+The body of a dialog must be either a `panel` (a single panel) or a `tabpanel` (a collection of panels). Each panel can contain [interactive components](#panelcomponents) such as inputs, buttons and text.
+
+### panel
+
+The basic dialog type is a **panel** dialog. A panel is a container for [interactive panel components](#panelcomponents). A panel type dialog only has one panel.
+
+```js
+{
+  type: 'panel',
+  items: [ ... ] // array of panel components
+}
+```
+
+### tabpanel
+
+A **tabpanel** dialog contains multiple panels, and a tab navigation menu on the left-hand side of the dialog to allow for switching between panels. Each panel can contain different [panel components](#panelcomponents), allowing for complex dialogs.
+
+Each tab panel is defined using the following configuration options:
+
+| Name | Type | Requirement | Description |
+| ---- | ---- | ----------- | ----------- |
+| name | string | optional | A unique identifier for the tab. If not specified, the tab will be assigned a randomly generated value. |
+| title | string | required | The title of the tab for the navigation menu. |
+| items | array | required | An array of [panel components](#panelcomponents) to display inside the panel. |
+
+**Note:** Panel components in different tabs with the same `name` will use the same value in the [dialog's data object]({{site.baseurl}}/ui-components/dialog/#dialogcomposition). This allows for transference of data between tabs. For example, the `charmap` and `emoticons` plugin dialogs contain a search input field in each tab. By assigning the same name to all the search fields, user data entered on one tab will be transferred when the user changes tabs.
+
+```js
+{
+  type: 'tabpanel',
+  tabs: [ // array of tab panel specifications
+    {
+      name: 'mytab',
+      title: 'My Tab',
+      items: [ ... ] // array of panel components
+    },
+    ...
+  ]
+}
+```
+
+#### Dialog Instance API Methods
+
+The dialog instance API contains the `showTab("tabName")` method, which allows for programmatic tab switching using the registered `name` of a tab.
+
+For more information on the dialog instance API, see the [dialog instance API]({{site.baseurl}}/ui-components/dialog/#dialoginstanceapi) reference.
+
+#### Dialog Config Options
+
+A dialog can be configured with an [`onTabChange`]({{site.baseurl}}/ui-components/dialog/#configoptions) callback. This function is called when the user changes tabs. It is passed the dialog instance API and a `details` object which contains `newTabName` and `oldTabName`.
+
+As an example of when this is useful, the `charmap` and `emoticons` plugin dialogs use `newTabName` to change search results to match the character or emoticon category represented by the current tab.
+
+#### Example
+
+Below is a trivial example of how to use `onTabChange` and `showTab()`.
+
+```js
+const dialogConfig = {
+  title: "Example Dialog",
+  body: {
+    type: 'tabpanel',
+    tabs: [ ... ]
+  },
+  buttons: [],
+  onTabChange: (dialogApi, details) => {
+    // log the contents of details
+    console.log(details.newTabName);
+    console.log(details.oldTabName);
+
+    // switch back to the old tab
+    dialogApi.showTab(details.oldTabName);
+  }
+};
+```
+
+## Panel Components
 
 ### alertbanner
 
@@ -169,17 +249,6 @@ A **label** is a component that wraps other components and renders a label eleme
 }
 ```
 
-### panel
-
-A **panel** is a basic container, that holds other components, we can compose many components inside a panel. In HTML terms consider a panel a `<div>` wrapper. A dialog body configuration must begin with either a `panel` or a `tabpanel`.
-
-```js
-{
-  type: 'panel',
-  items: [ ... ]
-}
-```
-
 ### selectbox
 
 A **selectbox** allows users to select a choice from a list of many options.
@@ -219,24 +288,6 @@ A **table** is a layout component that renders a simple table.
   cells: [
     [ 'Cell 1', 'Cell 2', 'Cell 3' ],
     [ 'Cell 4', 'Cell 5', 'Cell 6' ]
-  ]
-}
-```
-
-
-### tabpanel
-
-A **tabpanel** is similar to a `panel`, where it can hold other components. Tabpanel is a layout component that will separate sections using tabs. Each tab is a panel that can contain different components. A dialog body configuration must begin with either a `panel` or a `tabpanel`.
-
-```js
-{
-  type: 'tabpanel',
-  tabs: [
-    {
-      title: 'First Tab',
-      items: [ .... ]
-    },
-    ...
   ]
 }
 ```

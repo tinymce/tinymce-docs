@@ -7,7 +7,7 @@ keywords: dialog dialogapi api
 ---
 ## Overview
 
-A dialog is a TinyMCE UI component. Dialogs have their own dialog components which can be used inside dialogs to fulfill a use case. The Dialog API allows showing dialogs (sometimes referred to as modals) in the user application. This API supports the use of dynamic content for all aspects and is easily configurable and overridable. 
+A dialog is a TinyMCE UI component. Dialogs have their own dialog components which can be used inside dialogs to fulfill a use case. The Dialog API allows showing dialogs (sometimes referred to as modals) in the user application. This API supports the use of dynamic content for all aspects and is easily configurable and overridable.
 
 ### Use cases
 
@@ -38,54 +38,66 @@ A Dialog configuration framework has three main parts:
 
 * **Body** The body can be either a Panel or Tab Panel.
 
-* **Footer** This section consists of a [button]({{site.baseurl}}/ui-components/dialogcomponents/#button) or list of buttons.
+* **Footer** This section consists of a list of [footer buttons](#button).
 
 ### Config options
 
 | Name | Value | Requirement | Description |
 | ---- | ----- | ----------- | ----------- |
 | title | string | required | The title of the dialog. |
-| body | Panel or TabPanel | required | The configuration for the body of the dialog. See [Body components](#bodycomponents) configuration. |
-| buttons | DialogButton[] | required | An optional array of button configurations to render in the footer. See [Footer components](#footercomponents) configuration. |
+| body | Panel or TabPanel | required | The configuration for the body of the dialog. See the [Body components](#bodycomponents) reference. |
+| buttons | DialogButton[] | required | An optional array of button configurations to render in the footer. See the [Footer components](#footercomponents) reference. |
 | size | 'normal', 'medium' or 'large' | optional | default: `normal` - The size to use when rendering the dialog. |
 | initialData | object | optional | An object containing the initial value for the dialog components. |
-| onAction | (api) => void | optional | Function invoked when a custom button is clicked. |
-| onCancel | (api) => void | optional | Function invoked when the dialog is cancelled either by a cancel button or the close button in the dialog header. |
-| onChange | (api, data) => void | optional | Function invoked when a dialog component changes it's value. |
+| onAction | (dialogApi) => void | optional | Function invoked when a custom button is clicked. |
+| onCancel | (dialogApi) => void | optional | Function invoked when the dialog is cancelled either by a cancel button or the close button in the dialog header. |
+| onChange | (dialogApi, data) => void | optional | Function invoked when a dialog component changes it's value. |
 | onClose | () => void | optional | Function invoked when the dialog has been closed. |
-| onSubmit | (api) => void | optional | Function invoked when the dialog is submitted. |
+| onSubmit | (dialogApi) => void | optional | Function invoked when the dialog is submitted. |
+| onTabChange | (dialogApi, details) => void | optional | **This method only applies to [tab panel]({{site.baseurl}}/ui-components/dialogcomponents/#tabpanel) dialogs.** Function invoked when the user changes tabs. `details` is an object that contains `newTabName` and `oldTabName`. |
+
+For more information on the `dialogApi` object that is passed to some of the configuration options, see the [dialog instance API](#dialogapimethods) reference.
 
 ### Body components
 
+The body of a dialog must be either a [`panel`]({{site.baseurl}}/ui-components/dialogcomponents/#panel) (a single panel) or a [`tabpanel`]({{site.baseurl}}/ui-components/dialogcomponents/#tabpanel) (a collection of panels). Each panel can contain [interactive components]({{site.baseurl}}/ui-components/dialogcomponents/#panelcomponents) such as inputs, buttons and text.
+
 #### Panel
 
-A **Panel** is a basic container that holds other components. Many components can be configured inside a panel. In HTML terms, consider a panel as a `<div>` wrapper. A dialog body configuration must begin with either a Panel or a TabPanel.
+The basic dialog type is a **panel** dialog. A panel is a container for [interactive panel components]({{site.baseurl}}/ui-components/dialogcomponents/#panelcomponents). A panel type dialog only has one panel.
 
 ```js
-var panelConfig = {
+{
   type: 'panel',
-  items: []
-};
+  items: [ ... ] // array of panel components
+}
 ```
-**Items:** - These are an array of component configurations. Any component listed in the [dialog components]({{site.baseurl}}/ui-components/dialogcomponents/) are compatible.
 
 #### TabPanel
 
-A **TabPanel** is similar to a panel, where it can hold other [components]({{site.baseurl}}/ui-components/dialogcomponents/). Each tab can hold different components which display information for the user, that are grouped by tabs. A dialog body configuration must begin with either a Panel or a TabPanel.
+A **tabpanel** dialog contains multiple panels, and a tab navigation menu on the left-hand side of the dialog to allow for switching between panels. Each panel can contain different [panel components]({{site.baseurl}}/ui-components/dialogcomponents/#panelcomponents), allowing for complex dialogs.
+
+See the [tab panel component reference]({{site.baseurl}}/ui-components/dialogcomponents/#tabpanel) for tab panel configuration options.
 
 ```js
-var tabPanelConfig = {
+{
   type: 'tabpanel',
-  tabs: [
+  tabs: [ // array of tab panel specifications
     {
-      title: string,
-      items: [<other dialog components>]
+      name: 'mytab',
+      title: 'My Tab',
+      items: [ ... ] // array of panel components
     },
     ...
   ]
-};
+}
 ```
-**Tabs:** These are an array of tab configurations. Each tab has a title which is used to reference the tab. The `items` property in the tab configuration takes a list of components and works the same way as a Panel. A tab can be programmatically be switched by calling `dialogApi.showTab('title')`. For example, the dialog that appears as a result of the Help plugin is usually formatted in tab panels.
+
+The `name` of the panel can be used with the [`dialogApi.showTab('tabName')`](#dialogapimethods) method to programmatically switch tabs. It is also passed into the [`onTabChange`](#configoptions) callback as part of the `details` object.
+
+##### Example tab panel
+
+The Help plugin's dialog is an example of a tab panel dialog.
 
 ![Help Button]({{site.baseurl}}/images/help.png)
 
@@ -135,7 +147,7 @@ The **Custom** button can be used to specify a custom operation.
 
 ### Simple dialog
 
-The simple dialogs are used to display simple information, such as the plugins that display the source code or the HTML code from the content in the dialog. These dialogs may not have any values set in the body and footer parts of the dialog configuration.
+Simple dialogs are used to display simple information, such as the plugins that display the source code or the HTML code from the content in the dialog. These dialogs may not have any values set in the body and footer parts of the dialog configuration.
 
 ![Source Code]({{site.baseurl}}/images/sourcecode.png)
 
@@ -156,13 +168,13 @@ Using the above example, calling `tinymce.activeEditor.windowManager.open(dialog
 
 ### Complex dialog
 
-The complex dialogs are used to display more complex information. These sections can be contained within tabs. For example, the help dialog or the special chars dialog. These dialogs need a way to set the desired content into a defined tab section.
+Complex dialogs are used to display more complex information. These sections can be contained within tabs. For example, the help dialog or the special chars dialog. These dialogs need a way to set the desired content into a defined tab section.
 
 ![Special Characters]({{site.baseurl}}/images/specialchars.png)
 
 ### Interactive dialog
 
-The interactive dialogs use web forms to collect data from the user, and then apply the data. For example, the search and replace dialog uses an input field, where the input text will be used as the search key. These are the most complex forms of dialogs and require the users to configure the following:
+Interactive dialogs use web forms to collect data from the user, and then apply the data. For example, the search and replace dialog uses an input field, where the input text will be used as the search key. These are the most complex forms of dialogs and require the users to configure the following:
 
 * Definition of the desired user input (for example, the search value in the search and replace dialog).
 
@@ -215,11 +227,11 @@ In this example, two buttons are declared to be placed in the dialog footer, **C
 
 ## Dialog instance API
 
-When a dialog is created, a dialog instance API is returned. For example, `const instanceApi = editor.windowManager.open(config);`
+When a dialog is created, a dialog instance API is returned. For example, `const instanceApi = editor.windowManager.open(config);`. The dialog API instance is also passed to some of the [dialog configuration options](#configoptions).
 
 The instance API is a javascript object containing methods attached to the dialog instance. When the dialog is closed, the instance API is destroyed.
 
-### Instance API methods
+### Dialog API methods
 
 | Methods | Description |
 |---------|-------------|
@@ -230,7 +242,7 @@ The instance API is a javascript object containing methods attached to the dialo
 | `focus(name: string): void` | Calling `focus()` and passing the component name will set the browser focus to the component.|
 | `block(message: string): void` | Calling `block()` and passing a message string will disable the entire dialog window and show a loading image. This is useful for handling asynchronous data. The message is used for screen reader accessibility. When the data is ready use `unblock()` to unlock the dialog. |
 | `unblock(): void` | Calling `unblock()` will unlock the dialog instance restoring functionality. |
-| `showTab(name: string): void` | This method only applies to tab dialogs only. Calling `showTab()` and passing the name of a tab will make the dialog switch to the named tag. |
+| `showTab(name: string): void` | **This method only applies to [tab panel]({{site.baseurl}}/ui-components/dialogcomponents/#tabpanel) dialogs.** Calling `showTab()` and passing the `name` of a tab will make the dialog switch to the named tab. |
 | `close(): void` | Calling the `close()` method will close the dialog. When closing the dialog, all DOM elements and dialog data are destroyed.  When `open(config)` is called again, all DOM elements and data are recreated from the config. |
 | `redial(config): void` | Calling `redial()` and passing a dialog configuration, will destroy the current dialog and create a new dialog. Redial is used to create a multipage form, where the next button loads a new form page or to re-create the dialog with different components or options. |
 

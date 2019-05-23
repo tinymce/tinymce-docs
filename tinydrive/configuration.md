@@ -153,7 +153,7 @@ This setting enables specifying the Google Drive API key for integrating Google 
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "tinydrive",
-  tinydrive_max_image_dimension: '<your google drive api key>'
+  tinydrive_google_drive_key: '<your google drive api key>'
 });
 ```
 

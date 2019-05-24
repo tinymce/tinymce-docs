@@ -31,7 +31,7 @@ Each tab panel is defined using the following configuration options:
 
 | Name | Type | Requirement | Description |
 | ---- | ---- | ----------- | ----------- |
-| name | string | optional | A unique identifier for the tab. If not specified, the tab will be assigned a randomly generated name. |
+| name | string | optional | A identifier for the tab. If not specified, the tab will be assigned a randomly generated name. |
 | title | string | required | The title of the tab for the navigation menu. |
 | items | array | required | An array of [panel components](#panelcomponents) to display inside the panel. |
 
@@ -51,13 +51,13 @@ Each tab panel is defined using the following configuration options:
 }
 ```
 
-#### Dialog Instance API Methods
+#### Dialog instance API methods
 
 The dialog instance API contains the `showTab("tabName")` method, which allows for programmatic tab switching using the registered `name` of a tab.
 
 For more information on the dialog instance API, see the [dialog instance API]({{site.baseurl}}/ui-components/dialog/#dialoginstanceapi) reference.
 
-#### Dialog Config Options
+#### Dialog config event callbacks
 
 A dialog can be configured with an [`onTabChange`]({{site.baseurl}}/ui-components/dialog/#configoptions) callback. This function is called when the user changes tabs. It is passed the dialog instance API and a `details` object which contains `newTabName` and `oldTabName`.
 
@@ -88,6 +88,8 @@ const dialogConfig = {
 
 ## Panel components
 
+Panels can contain [layout components](#layoutcomponents) and [basic components](#basiccomponents), which include components for displaying information and user interaction and input.
+
 ### Layout components
 
 Some panel components can be used to apply a layout to an array of other panel components.
@@ -110,7 +112,7 @@ A **collection** is a layout component that creates a panel containing a collect
 ```js
 {
   type: 'collection', // component type
-  name: 'collection-1', // unique identifier
+  name: 'collection-1', // identifier
   label: 'Collection Label'
 }
 ```
@@ -187,19 +189,21 @@ Clicking the icon in the alert banner will fire the `onAction` function in the d
 
 #### button
 
-A **button** is a panel button component that can contain text and an icon. There are two types of buttons (primary and secondary buttons), though the only difference is that they are styled differently. Primary buttons are intended to draw attention and would, while secondary buttons are styled to not be as obvious.
+A **button** is a clickable component that can contain text or an icon. There are two types of buttons (primary and secondary buttons), though the only difference is that they are styled differently. Primary buttons are intended to stand out. The color will depend on the chosen [skin]({{site.baseurl}}/general-configuration-guide/customize-ui/#skins).
 
-**Note:** Panel buttons are different to dialog footer buttons.
+> Note: Panel buttons are different to [dialog footer buttons]({{site.baseurl}}/ui-components/dialog/#footerbuttons).
 
 **Events:** Interacting with a **button** component will fire the `onAction` function in the dialog's configuration.
 
 | Name | Type | Requirement | Description |
 | ---- | ---- | ----------- | ----------- |
 | type | `'button'` | required | The component type. Must be `'button'`. |
-| text | string | required | Text to display in the button. |
-| name | string | optional | A unique identifier for the button. If not specified, the button will be assigned a randomly generated name.  |
-| icon | string | optional | Name of the icon to be displayed. Must correspond to an icon in the icon pack. |
+| text | string | required | Text to display in the button **if icon is not specified**. Also used for the button's `title` attribute. |
+| name | string | optional | A identifier for the button. If not specified, the button will be assigned a randomly generated name.  |
+| icon | string | optional | Name of the icon to be displayed. Must correspond to an icon in the icon pack. **When configured, the button will display the icon instead of text.** |
 | primary | boolean | optional | Whether to style the button as a primary or secondary button. |
+
+> Note: Buttons do not support mixing icons and text at the moment.
 
 ```js
 {
@@ -219,7 +223,7 @@ A **checkbox** is a composite component with a checkbox and a label, and with `o
 ```js
 {
   type: 'checkbox', // component type
-  name: 'checkbox-1', // unique identifier
+  name: 'checkbox-1', // identifier
   label: 'Checkbox Label' // text for the lavel
 }
 ```
@@ -231,7 +235,7 @@ A **colorinput** is a specialized composite component with a label, an input fie
 ```js
 {
   type: 'colorinput', // component type
-  name: 'colorinput', // unique identifier
+  name: 'colorinput', // identifier
   label: 'Color Label' // text for the label
 }
 ```
@@ -243,7 +247,7 @@ A **colorpicker** component is an intuitive color picker tool similar to that fo
 ```js
 {
   type: 'colorpicker', // component type
-  name: 'colorpicker', // unique identifier
+  name: 'colorpicker', // identifier
 }
 ```
 
@@ -256,7 +260,7 @@ A **dropzone** is a composite component that catches drag and drops items or let
 ```js
 {
   type: 'dropzone', // component type
-  name: 'dropzone', // unique identifier
+  name: 'dropzone', // identifier
   label: 'Dropzone' // text for the label
 }
 ```
@@ -283,14 +287,14 @@ An **iframe** component takes a HTML document as a string and displays it in the
 | Name | Type | Requirement | Description |
 | ---- | ---- | ----------- | ----------- |
 | type | `'iframe'` | required | The component type. Must be `'iframe'`. |
-| name | string | required | A unique identifier for the button. |
+| name | string | required | A identifier for the button. |
 | label | string | optional | String to use for the iframe's `title` attribute. |
 | sandboxed | boolean | optional | default: `true` - When true, sets the iframe's `sandbox` attribute to `"allow-scripts allow-same-origin"`. |
 
 ```js
 {
   type: 'iframe', // component type
-  name: 'iframe', // unique identifier
+  name: 'iframe', // identifier
   label: 'Description of iframe', // text for the iframe's title attribute
   sandboxed: true
 }
@@ -317,7 +321,7 @@ An **input** is a composite component that renders a label and a single line tex
 ```js
 {
   type: 'input', // component type
-  name: 'inputA', // unique identifier
+  name: 'inputA', // identifier
   label: 'Input Label', // text for the label
   placeholder: 'example' // placeholder text for the input
 }
@@ -332,7 +336,7 @@ A **selectbox** is a composite component with a label and a dropdown list of opt
 ```js
 {
   type: 'selectbox', // component type
-  name: 'SelectA', // unique identifier
+  name: 'SelectA', // identifier
   label: 'Select Label',
   items: [
     { value: 'one', text: 'One' },
@@ -350,7 +354,7 @@ A **sizeinput** is a specialized composite component with two input fields label
 ```js
 {
   type: 'sizeinput', // component type
-  name: 'size', // unique identifier
+  name: 'size', // identifier
   label: 'Dimensions'
 }
 ```
@@ -379,7 +383,7 @@ A **textarea** is a multiline text field.
 ```js
 {
   type: 'textarea', // component type
-  name: 'text-a', // unique identifier
+  name: 'text-a', // identifier
   label: 'Text: ',
   placeholder: 'example'
 }
@@ -396,7 +400,7 @@ A **urlinput** is a specialized composite component for URL input or file upload
 | Name | Type | Requirement | Description |
 | ---- | ---- | ----------- | ----------- |
 | type | `'urlinput'` | required | The component type. Must be `'urlinput'`. |
-| name | string | required | A unique identifier for the urlinput. |
+| name | string | required | A identifier for the urlinput. |
 | label | string | optional | String to use for the label. |
 | filetype | `'file'` or `'image'` or `'media'` | optional | default: `'file'` - Restrict the types of files that can be uploaded using the filepicker. `file` allows anything, including document links. **Requires `file_picker_callback` to be configured.** |
 
@@ -409,7 +413,7 @@ The filepicker will accept any file type and the typeahead will include 5 previo
 ```js
 {
   type: 'urlinput', // component type
-  name: 'url', // unique identifier
+  name: 'url', // identifier
   filetype: 'file', // allow any file types
   label: 'Url' // text for component label
 }
@@ -422,7 +426,7 @@ The filepicker will only accept images and the typeahead will include 5 previous
 ```js
 {
   type: 'urlinput', // component type
-  name: 'src', // unique identifier
+  name: 'src', // identifier
   filetype: 'image', // restrict file types to image types
   label: 'Source' // text for component label
 }

@@ -2,69 +2,76 @@
 layout: default
 title: Dialog
 title_nav: Dialog
-description: Dialog is a TinyMCE UI component used to display simple information.
+description: An overview of TinyMCE dialogs and how to create custom dialogs.
 keywords: dialog dialogapi api
 ---
 ## Overview
 
-A dialog is a TinyMCE UI component. Dialogs have their own dialog components which can be used inside dialogs to fulfill a use case. The Dialog API allows showing dialogs (sometimes referred to as modals) in the user application. This API supports the use of dynamic content for all aspects and is easily configurable and overridable.
+A dialog is a popup UI element that contains a header, body and footer, each containing specific types of sub-components. Dialogs also have an instance API and several configuration options, including configurable callback functions for certain dialog events.
 
 ### Use cases
 
-* **Display simple information** - The plugin that is used to view the source code is an example of a simple dialog that displays the HTML code from the content.
+* **Display simple information** - The [`code`]({{site.baseurl}}/plugins/code) plugin's dialog is an example of a simple dialog. It contains only one body panel component that displays the HTML code from the content.
 
-* **Display complex information** - These dialogs can display complex information by using layouts components like tabs or columns to help present information to the user. For example, the help and special characters dialog are tabbed dialogs.
+* **Display complex information** - More complex dialogs can use tab panels and columns to categorise and organise information displayed to the user. For example, the [`help`]({{site.baseurl}}/plugins/help) and [`character map`]({{site.baseurl}}/plugins/charmap) plugins use dialogs with tabbed panels to categorise and separate information.
 
-* **Interactive dialogs** - These dialogs use web forms to collect interaction data and then apply the data. For example, the search and replace dialog uses an input field, where the input text will be used as the search key. Another example is, special characters or character map dialogs use typeaheads to dynamically narrow down matches as you type.
+* **Interactive dialogs** - TinyMCE dialogs can also contain interactive components such as buttons, checkboxes and input fields. For example, the [`search and replace`]({{site.baseurl}}/plugins/searchreplace) plugin's dialog contains a search term input field and a checkbox to only match whole words. The [`character map`]({{site.baseurl}}/plugins/charmap) also contains a search term input field, which filters the special characters shown in the dialog.
 
-For example, the search and replace dialog is made up of two input fields - two checkboxes and five buttons. Components are composed by using a configuration structure. The most basic configuration structure is this:
+## Dialog configuration
+
+A dialog configuration has three main parts:
+
+* **Title:** The title of the dialog. This will display in the header of the dialog.
+
+* **Body:** The body of the dialog. The body component can be a [panel](#panel) or a [tab panel](#tabpanel), which contain an array of panel components such as buttons, inputs and text.
+
+* **Buttons:** An array of [footer buttons](#button) that are displayed in the dialog's footer.
+
+### Basic example
+
+The most basic configuration structure is this:
 
 ```js
-const dialogConfig = {
-   title: 'Just a title',
-   body: {
-     type: 'panel', // The root body type can only be of type Panel or TabPanel
-     items: [] // A list of UI component configurations the dialog will have.
-   },
-   buttons: [] // A list of button configurations the dialog will have.
-}
+tinymce.activeEditor.windowManager.open({
+  title: 'Dialog Title', // The dialog's title - displayed in the dialog header
+  body: {
+    type: 'panel', // The root body type - a Panel or TabPanel
+    items: [ // A list of panel components
+      {
+        type: 'htmlpanel', // A HTML panel component
+        html: 'Panel content goes here'
+      }
+    ]
+  },
+  buttons: [] // A list of footer buttons
+});
 ```
-
-## Dialog configuration framework
-
-A Dialog configuration framework has three main parts:
-
-* **Title** This is the title of a dialog.
-
-* **Body** The body can be either a Panel or Tab Panel.
-
-* **Footer** This section consists of a list of [footer buttons](#button).
 
 ### Config options
 
 | Name | Value | Requirement | Description |
 | ---- | ----- | ----------- | ----------- |
-| title | string | required | The title of the dialog. |
-| body | Panel or TabPanel | required | The configuration for the body of the dialog. See the [Body components](#bodycomponents) reference. |
-| buttons | DialogButton[] | required | An optional array of button configurations to render in the footer. See the [Footer components](#footercomponents) reference. |
-| size | 'normal', 'medium' or 'large' | optional | default: `normal` - The size to use when rendering the dialog. |
-| initialData | object | optional | An object containing the initial value for the dialog components. |
-| onAction | (dialogApi) => void | optional | Function invoked when a custom button is clicked. |
-| onCancel | (dialogApi) => void | optional | Function invoked when the dialog is cancelled either by a cancel button or the close button in the dialog header. |
-| onChange | (dialogApi, data) => void | optional | Function invoked when a dialog component changes it's value. |
-| onClose | () => void | optional | Function invoked when the dialog has been closed. |
+| title | string | required | The title of the dialog. This will display in the header of the dialog. |
+| body | Panel or TabPanel | required | The configuration for the body of the dialog. See [Body components](#bodycomponents). |
+| buttons | DialogButton[] | required | An array of [footer buttons](#footercomponents) to render in the footer of the dialog.  |
+| size | 'normal', 'medium' or 'large' | optional | default: `normal` - Dialog size options. |
+| initialData | object | optional | An object containing initial values for the dialog's panel components. |
+| onAction | (dialogApi, details) => void | optional | Function invoked when a user interacts with a `button` type panel component. |
+| onCancel | (dialogApi) => void | optional | Function invoked when the dialog is cancelled. The dialog header's close button and the `cancel` footer button invoke this function. |
+| onChange | (dialogApi, data) => void | optional | Function invoked when the value of an `input` type panel component changes. |
+| onClose | () => void | optional | Function invoked when the dialog is closed. |
 | onSubmit | (dialogApi) => void | optional | Function invoked when the dialog is submitted. |
 | onTabChange | (dialogApi, details) => void | optional | **This method only applies to [tab panel]({{site.baseurl}}/ui-components/dialogcomponents/#tabpanel) dialogs.** Function invoked when the user changes tabs. `details` is an object that contains `newTabName` and `oldTabName`. |
 
-For more information on the `dialogApi` object that is passed to some of the configuration options, see the [dialog instance API](#dialogapimethods) reference.
+For more information on the `dialogApi` object that is passed to some of the configuration options, see the [dialog instance API](#dialogapimethods) documentation.
 
 ### Body components
 
-The body of a dialog must be either a [`panel`]({{site.baseurl}}/ui-components/dialogcomponents/#panel) (a single panel) or a [`tabpanel`]({{site.baseurl}}/ui-components/dialogcomponents/#tabpanel) (a collection of panels). Each panel can contain [interactive components]({{site.baseurl}}/ui-components/dialogcomponents/#panelcomponents) such as inputs, buttons and text.
+The body of a dialog must be either a [`panel`]({{site.baseurl}}/ui-components/dialogcomponents/#panel) (a single panel) or a [`tabpanel`]({{site.baseurl}}/ui-components/dialogcomponents/#tabpanel) (a collection of panels). Each panel can contain [panel components]({{site.baseurl}}/ui-components/dialogcomponents/#panelcomponents) such as inputs, buttons and text.
 
 #### Panel
 
-The basic dialog type is a **panel** dialog. A panel is a container for [interactive panel components]({{site.baseurl}}/ui-components/dialogcomponents/#panelcomponents). A panel type dialog only has one panel.
+The basic dialog type is a **panel** dialog. A panel is a container for [panel components]({{site.baseurl}}/ui-components/dialogcomponents/#panelcomponents). A panel type dialog only has one panel.
 
 ```js
 {
@@ -132,8 +139,6 @@ var buttonConfig = {
 **Align:** (Default: 'end'): This will define the position of the button in the footer. When set to `end`, the button will be positioned on the right side of the dialog. When set to `start`, the button will be positioned on the left side of the dialog.
 
 #### Button types
-
-The **Close** button is pre-wired to abort and close the dialog.
 
 The **Submit** button when clicked will invoke the `onSubmit` callback provided in the configuration. This callback is used to insert the message.
 

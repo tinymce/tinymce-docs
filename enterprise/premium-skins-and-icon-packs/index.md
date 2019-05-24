@@ -10,9 +10,10 @@ The Premium Skins and Icon Packs lets you quickly give TinyMCE a new look. Just 
 
 You can freely mix skins and icon packs but note that some skins are designed to be used with a particular icon pack. For example the Small skin is supposed to be used together with the Small icon pack or the Jam icon pack.
 
-## How to use a premium skin
+### How to use a premium skin
 
-The premium skins use the [skin option]({{site.baseurl}}/configure/editor-appearance/#skin) in the init function.
+Cloud customers simply use the [skin option]({{site.baseurl}}/configure/editor-appearance/#skin) with any of the values below to get the skins. Some skins also has a custom [content_css]({{site.baseurl}}/configure/content-appearance/#content_css) to go with the skin.
+If you are using self hosted, see below.
 
 ```
 tinymce.init({
@@ -21,30 +22,41 @@ tinymce.init({
 });
 ```
 
-Simply use one of the following keywords to get the skins
+Available values for skins:
 
-- material-outline
 - material-classic
+- material-outline
 - bootstrap
 - borderless
 - small
+- jam
 
-## How to use Icon Packs
+Available valuse for content_css:
 
-The icon packs use the [icon option]({{site.baseurl}}/configure/editor-appearance/#icons) in the TinyMCE config.
+- material-classic
+- material-outline
+
+### How to use Icon Packs
+
+Cloud customers simply use the [icons option]({{site.baseurl}}/configure/editor-appearance/#icons) with any of the keywords listed below. If you using a self hosted version of TinyMCE, see below.
 
     tinymce.init({
       selector: 'textarea',  // change this value according to your HTML
       icons: 'material'      // Name of icon pack
     });
 
-Simply use one of the following keywords to get the icons
+Availabe options for icon packs:
 
 - material
-- jam
 - small
+- jam
 
-## Examples
+### Self hosted usage instructions
+If you are using a self hosted version of TinyMCE you need to log in to your account and download the skins and icons pack from the download page. (NEED INFO)
+
+To use the icons, follow the instructions in the icon option
+
+### Examples
 Below are some recommended combinations of skins and icons
 
 * [Bootstrap skin]({{site.baseurl}}/enterprise/premium-skins-and-icon-packs/bootstrap-demo/)
@@ -54,4 +66,14 @@ Below are some recommended combinations of skins and icons
 * [Small skin with Jam icon pack]({{site.baseurl}}/enterprise/premium-skins-and-icon-packs/jam-demo/)
 * [Borderless editor]({{site.baseurl}}/enterprise/premium-skins-and-icon-packs/borderless-demo/)
 
-<!--{% include codepen.html id="premiumskinsandicons-material-classic" %}-->
+### Getting started
+
+#### Creating an account
+
+To try out **Premium Skins and Icon Packs** and Tiny Cloud-delivered editor, the first step is to create a free [Tiny account](https://www.tiny.cloud/download/).
+
+The free user account provisioned with a free 30-day trial of all Tiny [premium plugins](https://apps.tiny.cloud/product-category/tiny-cloud-extensions/), with no credit card information or commitment required.
+
+#### Buy Premium Skins and Icon Packs
+
+Start with this [dedicated product page (ADD LINK)](#) to see all the flexible pricing options. OEM and enterprise customers should [contact sales directly](https://www.tiny.cloud/contact/).

@@ -18,7 +18,7 @@ If you are using self hosted, see below.
 ```
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  skin: "bootstrap" // Name of the skin
+  skin: "bootstrap"      // Name of the skin
 });
 ```
 

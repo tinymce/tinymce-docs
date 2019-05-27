@@ -54,9 +54,7 @@ Availabe options for icon packs:
 - jam
 
 ### Self hosted usage instructions
-If you are using a self hosted version of TinyMCE you need to log in to your account and download the skins and icons pack from the download page. (NEED INFO)
-
-To use the icons, follow the instructions in the icon option
+If you are using a self hosted version of TinyMCE you need to log in to your account and download enterprise bundle from the download page. All skins and icons are included in the package so you just need to update the `tinymce.init` config as outlined above.
 
 ### Examples
 Below are some recommended combinations of skins and icons
@@ -79,4 +77,4 @@ The free user account provisioned with a free 30-day trial of all Tiny [premium 
 
 #### Buy Premium Skins and Icon Packs
 
-Start with this [dedicated product page (ADD LINK)](#) to see all the flexible pricing options. OEM and enterprise customers should [contact sales directly](https://www.tiny.cloud/contact/).
+Start with this [dedicated product page](https://apps.tiny.cloud/products/premium-skins-and-icon-packs/) to see all the flexible pricing options. OEM and enterprise customers should [contact sales directly](https://www.tiny.cloud/contact/).

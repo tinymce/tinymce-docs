@@ -1,5 +1,5 @@
 tinymce.init({
-  selector: 'textarea#drive-pick-example',
+  selector: 'textarea#drive-pick-images-example',
   height: 200,
   menubar: false,
   plugins: [
@@ -8,13 +8,14 @@ tinymce.init({
   toolbar: 'custom | insertfile | link image media',
   setup: function (editor) {
     editor.ui.registry.addButton('custom', {
-      text: 'Custom pick',
+      text: 'Custom pick image',
       onAction: function () {
         editor.plugins.tinydrive.pick({
+          filetypes: ['image']
         }).then(function (result) {
           result.files.forEach(function (file) {
-            var link = editor.dom.createHTML('a', { href: file.url }, editor.dom.encode(file.name));
-            editor.insertContent(link);
+            var img = editor.dom.createHTML('img', { src: file.url });
+            editor.insertContent(img);
           });
         });
       }

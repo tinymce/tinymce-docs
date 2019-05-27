@@ -246,7 +246,7 @@ interface StandaloneApi
   pick: (settings: StandalonePickerApiSettings) => Promise<PickerResult>;
   browse: (settings: StandalonePickerApiSettings) => Promise<void>;
   start: (settings: StandalonePickerApiSettings) => Promise<void>;
-  upload: (settings: StandaloneUploadApiSettings) => Promise<void>;
+  upload: (settings: StandaloneUploadApiSettings) => Promise<UploadResult>;
 }
 
 type TokenProviderCallback = (
@@ -271,11 +271,11 @@ interface StandaloneUploadApiSettings extends CommonStandaloneApiSettings {
   path?: string;
   name: string;
   blob: Blob;
-  onprogress?: (details: DirectUploadProgress) => void;
+  onprogress?: (details: UploadProgress) => void;
   max_image_dimension?: number;
 }
 
-interface PickerFile {
+interface DriveFile {
   url: string;
   size: number;
   name: string;
@@ -284,11 +284,15 @@ interface PickerFile {
 }
 
 interface PickerResult {
-  files: PickerFile[];
+  files: DriveFile[];
 }
 
-interface DirectUploadProgress {
+interface UploadProgress {
   loaded: number;
   total: number;
+}
+
+interface UploadResult {
+  file: DriveFile;
 }
 ```

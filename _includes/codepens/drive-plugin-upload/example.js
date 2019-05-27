@@ -18,7 +18,8 @@ tinymce.init({
             console.log('upload progess', progress);
           }
         }).then(function (result) {
-          editor.insertContent('<a href="' + editor.dom.encode(result.file.url) + '">' + editor.dom.encode(result.file.name) + '</a>');
+          var link = editor.dom.createHTML('a', { href: file.url }, editor.dom.encode(file.name));
+          editor.insertContent(link);
         });
       }
     });

@@ -15,7 +15,8 @@ tinymce.init({
         editor.plugins.tinydrive.pick({
         }).then(function (result) {
           result.files.forEach(function (file) {
-            editor.insertContent('<a href="' + editor.dom.encode(file.url) + '">' + editor.dom.encode(file.name) + '</a>');
+            var link = editor.dom.createHTML('a', { href: file.url }, editor.dom.encode(file.name));
+            editor.insertContent(link);
           });
         });
       }

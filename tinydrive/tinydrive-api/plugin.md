@@ -62,15 +62,9 @@ This setting enables to restrict what types of files you want do display based o
 
 **Type:** `Array<string>`
 
-#### Example
+#### Demo
 
-```js
-tinydrive.pick({
-  filetypes: ['image']
-}).then((result) => {
-  console.log(result.files);
-});
-```
+{% include codepen.html id="drive-plugin-pick-images" %}
 
 ### Available file types
 
@@ -106,7 +100,7 @@ Here is a complete api reference as TypeScript types for developers used to Type
 interface PluginApi {
   pick: (settings: PluginPickerApiSettings) => Promise<PickerResult>;
   browse: (settings: PluginPickerApiSettings) => Promise<void>;
-  upload: (settings: PluginUploadApiSettings) => Promise<void>;
+  upload: (settings: PluginUploadApiSettings) => Promise<UploadResult>;
 }
 
 interface PluginPickerApiSettings {
@@ -117,11 +111,11 @@ interface PluginUploadApiSettings {
   path?: string;
   name: string;
   blob: Blob;
-  onprogress?: (details: DirectUploadProgress) => void;
+  onprogress?: (details: UploadProgress) => void;
   max_image_dimension?: number;
 }
 
-interface PickerFile {
+interface DriveFile {
   url: string;
   size: number;
   name: string;
@@ -130,11 +124,15 @@ interface PickerFile {
 }
 
 interface PickerResult {
-  files: PickerFile[];
+  files: DriveFile[];
 }
 
-interface DirectUploadProgress {
+interface UploadProgress {
   loaded: number;
   total: number;
+}
+
+interface UploadResult {
+  file: DriveFile;
 }
 ```

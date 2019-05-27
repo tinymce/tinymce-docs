@@ -18,7 +18,7 @@ This chapter describes the migration process and workarounds for customers using
 
 To serve TinyMCE 5 from the cloud, include this in your html page:
 ```js
-<script src="{{ site.cdnurl }}"></script>
+<script src="{{ site.cdnurl }}" referrerpolicy="origin"></script>
 ```
 
 To serve the latest nightlies and testing builds refer to the [cloud deployment guide](/cloud-deployment-guide/editor-and-features/)

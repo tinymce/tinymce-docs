@@ -3,14 +3,14 @@ layout: default
 title: Tiny Drive Standalone API
 title_nav: Standalone API
 description: Description of the Tiny Drive standalone api
-keywords: tinydrive standalone api
+keywords: tinydrive api
 ---
 
-Tiny Drive can be used as a generic file manager separate from tinymce this is referred to as standalone mode. This enables you to use Tiny Drive as a generic storage solution for your web application.
+Tiny Drive can be used as a generic file manager separate from tinymce this is referred to as standalone mode.
 
 ## Loading the standalone api script
 
-You need to add a script to your page where you want to use the standalone api the url to that script is in the following format:
+In order to use Tiny Drive in standalone mode you will need to add a script to your page with your api key as part of the url. The url is in the following format:
 
 `https://cdn.tiny.cloud/1/<your api key>/tinydrive/dev/tinydrive.min.js`
 
@@ -29,11 +29,11 @@ tinydrive.pick({
 
 ## tinydrive.pick
 
-The `tinydrive.pick` method enables you to pick files from the Tiny Drive and get the selected files returned as meta data in a promise. For a complete list of available settings check the 
+The `tinydrive.pick` method enables you to pick files from Tiny Drive and get the meta data of those files returned in a promise. For a complete list of available settings to pass in to this method check the [Picker settings](#pickersettings) section in this page.
 
 ### File Picker Result Format
 
-The file picker api call will return a promise with a `files` property. This `files` property is an array of files with the following properties.
+The `tinydrive.pick` api method will return a promise with object that has a `files` property. This `files` property is an array of files with the following properties.
 
 #### name
 
@@ -57,7 +57,7 @@ The modification date for the file in ISO 8601 format for example `2019-02-24T15
 
 ## tinydrive.browse
 
-The `tinydrive.browse` method enables you to browse your files stored in Tiny Drive but not insert/pick them. This might be useful if you want to use Tiny Drive as a generic file manager. It returns a promise but the promise will only resolve when the Tiny Drive dialog is closed.
+The `tinydrive.browse` method enables you to browse your files stored in Tiny Drive but without the possibility to pick them to be inserted. This might be useful if you want to use Tiny Drive as a generic file manager. It returns a promise but the promise will only resolve when the Tiny Drive dialog is closed by using the close button.
 
 ### Demo
 
@@ -73,7 +73,7 @@ The `tinydrive.upload` method enables directly upload blobs to your Tiny Drive s
 
 ## tinydrive.start
 
-Start is similar to pick and browser the difference is that method doesn't have a way of closing the dialog. This can be useful when you want to lauch Tiny Drive from an url where there is no application to place the files into it would just be a generic storage solution.
+Start is similar to pick and browse, the main difference is that method doesn't have a way of closing the dialog. This can be useful when you want to lauch Tiny Drive from an url where there is no application to insert the files into. This might be useful when you want to launch Tiny Drive from an url but not part of a bigger application.
 
 ### Example
 

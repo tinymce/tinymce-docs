@@ -27,6 +27,7 @@ Available values for skins:
 - material-classic
 - material-outline
 - bootstrap
+- fabric
 - borderless
 - small
 - jam
@@ -35,6 +36,7 @@ Available valuse for content_css:
 
 - material-classic
 - material-outline
+- fabric
 
 ### How to use Icon Packs
 
@@ -62,6 +64,7 @@ Below are some recommended combinations of skins and icons
 * [Bootstrap skin]({{site.baseurl}}/enterprise/premium-skins-and-icon-packs/bootstrap-demo/)
 * [Material Outline skin with Material icon pack]({{site.baseurl}}/enterprise/premium-skins-and-icon-packs/material-classic-demo/)
 * [Material Classic skin with Material icon pack]({{site.baseurl}}/enterprise/premium-skins-and-icon-packs/material-outline-demo/)
+* [Microsoft Fabric skin]({{site.baseurl}}/enterprise/premium-skins-and-icon-packs/fabric-demo/)
 * [Small skin with Small icon pack]({{site.baseurl}}/enterprise/premium-skins-and-icon-packs/small-demo/)
 * [Small skin with Jam icon pack]({{site.baseurl}}/enterprise/premium-skins-and-icon-packs/jam-demo/)
 * [Borderless editor]({{site.baseurl}}/enterprise/premium-skins-and-icon-packs/borderless-demo/)

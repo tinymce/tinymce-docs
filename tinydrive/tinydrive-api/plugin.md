@@ -38,7 +38,7 @@ The modification date for the file in ISO 8601 format for example `2019-02-24T15
 
 ## tinydrive.browse
 
-The `tinydrive.browse` method enables you to browse your files stored in Tiny Drive but without the possibility to pick them to be inserted. This might be useful if you want to use Tiny Drive as a generic file manager. It returns a promise but the promise will only resolve when the Tiny Drive dialog is closed by using the close button.
+The `tinydrive.browse` method enables you to browse your files stored in Tiny Drive but without the possibility to pick them to be inserted. This might be useful if you want to use Tiny Drive as a generic file manager. It returns a promise but the promise will only resolve when the Tiny Drive dialog is closed by using the close button. For a complete list of available settings to pass in to this method check the [Picker settings](#pickersettings) section in this page.
 
 ### Demo
 

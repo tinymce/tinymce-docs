@@ -129,7 +129,7 @@ tinydrive.pick({
 
 ## Picker settings
 
-These settings are available for the [tinydrive.pick](#pick) / [tinydrive.browse](#browse) / [tinydrive.start](#start) api methods.
+These settings are available for the [tinydrive.pick](#tinydrivepick) / [tinydrive.browse](#tinydrivebrowse) / [tinydrive.start](#tinydrivestart) api methods.
 
 ### `dropbox_app_key`
 

@@ -54,7 +54,7 @@ The `tinydrive.upload` method enables directly upload blobs to your Tiny Drive s
 
 ## Picker settings
 
-These settings are available for the [tinydrive.pick](#pick) / [tinydrive.browse](#browse) api methods.
+These settings are available for the [tinydrive.pick](#tinydrivepick) / [tinydrive.browse](#tinydrivebrowse) api methods.
 
 ### `filetypes`
 

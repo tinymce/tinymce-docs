@@ -17,7 +17,7 @@ In order to use Tiny Drive in standalone mode you will need to add a script to y
 ### Example
 
 ```html
-<script src="https://cdn.tiny.cloud/1/<your api key>/tinydrive/dev/tinydrive.min.js"></script>
+<script src="https://cdn.tiny.cloud/1/<your api key>/tinydrive/dev/tinydrive.min.js" referrerpolicy="origin"></script>
 <script>
 tinydrive.pick({
   token_provider: '/your-local/jwt-provider'

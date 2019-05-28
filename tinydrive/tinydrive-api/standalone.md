@@ -80,14 +80,8 @@ Start is similar to pick and browse, the main difference is that method doesn't 
 ```js
 tinydrive.start({
   token_provider: '/your-local/jwt-provider'
-}).then(() => {
-  console.log('Upload completed.');
 });
 ```
-
-### Demo
-
-{% include codepen.html id="drive-standalone-start" type="tinydrive" %}
 
 ## Generic settings
 

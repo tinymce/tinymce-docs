@@ -27,7 +27,7 @@ The documentation is built with Jekyll. Text files are written in [Markdown](htt
 
 ### Markdown & code syntax
 
-The documentaiton is written in [GitHub Flavored Markdown](https://help.github.com/articles/github-flavored-markdown/). If you are not familiar with Markdown [read this](https://help.github.com/articles/markdown-basics/).
+The documentation is written in [GitHub Flavored Markdown](https://help.github.com/articles/github-flavored-markdown/). If you are not familiar with Markdown [read this](https://help.github.com/articles/markdown-basics/).
 
 ##### Highlighting
 

@@ -10,11 +10,19 @@ Specific versions of TinyMCE are compatible with premium plugins.
 
 Use the following matrix in conjunction with the optional parameters for specifying editor version and [plugin version]({{ site.baseurl }}/cloud-deployment-guide/editor-plugin-version) to ensure compatibility.
 
-> Important: Ensure the plugins are supported in your editor version when deploying premium plugins only[^footnote] via [Tiny Cloud]({{ site.baseurl }}/cloud-deployment-guide/features-only).
-> Also ensure you are using the latest script tag and substitute 'no-api-key' with your api key.
+> Note: On June 4, 2019 the URL to access tiny.cloud changed from:
+```js
+<script src="https://cloud.tinymce.com/5/tinymce.min.js?apiKey=your_API_key"></script>
+```
+to:
+
 ```js
 <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
 ```
+> Ensure the application uses latest script tag and substitute 'no-api-key' with your api key.
+
+
+> Important: Ensure the plugins are supported in your editor version when deploying premium plugins only[^footnote] via [Tiny Cloud]({{ site.baseurl }}/cloud-deployment-guide/features-only).
 
 
 | **Plugins** | **TinyMCE 4.x** | **TinyMCE 5.x** |

@@ -13,7 +13,7 @@ TinyMCE 5.0 is perfect for developers who want to see how the new version of Tin
 
 ## Step 1: Include the TinyMCE script
 
-Include this line of code in the `<head>` of the HTML page and link to the tinymce.min.js source file:
+Include this line of code in the `<head>` of the HTML page and link to the tinymce.min.js source file. Substitute 'no-api-key' with your api key.
 
 ```html
 <script src="{{ site.cdnurl }}" referrerpolicy="origin"></script>
@@ -34,7 +34,7 @@ In this example, replace `<textarea id='mytextarea'>` with a TinyMCE 5.0 editor 
 <!DOCTYPE html>
 <html>
 <head>
-  <script src='{{ site.cdnurl }}' referrerpolicy="origin></script>
+  <script src='{{ site.cdnurl }}' referrerpolicy="origin"></script>
   <script>
   tinymce.init({
     selector: '#mytextarea'

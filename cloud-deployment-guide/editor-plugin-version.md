@@ -10,7 +10,7 @@ keywords: tinymce cloud script textarea apiKey
 
 Use the URL provided to specify the TinyMCE version when deploying via Tiny Cloud. Refer to the [TinyMCE editor via the Tiny Cloud]({{ site.baseurl }}/cloud-deployment-guide/editor-and-features) for more information.
 
-The following example is the default for loading TinyMCE 5.0 via Tiny Cloud:
+The following example is the default for loading TinyMCE 5.0 via Tiny Cloud. Substitute 'no-api-key' with your api key in the examples below.
 
 ```js
 <script src="{{ site.cdnurl }}" referrerpolicy="origin"></script>
@@ -70,7 +70,7 @@ Use the URL query parameters to specify the version of each premium plugin. This
 ##### Example
 
 ```js
-<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/plugins.min.js?&mentions=2.0.0" referrerpolicy="origin"></script>
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/plugins.min.js?mentions=2.0.0" referrerpolicy="origin"></script>
 ```
 
 #### Tiny Drive
@@ -81,7 +81,7 @@ Use the URL query parameters to specify the version of each premium plugin. This
 ##### Example
 
 ```js
-<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/plugins.min.js?&tinydrive=1.1.0" referrerpolicy="origin"></script>
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/plugins.min.js?tinydrive=1.1.0" referrerpolicy="origin"></script>
 ```
 
 #### Comments 2.0
@@ -92,7 +92,7 @@ Use the URL query parameters to specify the version of each premium plugin. This
 ##### Example
 
 ```js
-<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/plugins.min.js?&tinycomments=2.0.0" referrerpolicy="origin"></script>
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/plugins.min.js?tinycomments=2.0.0" referrerpolicy="origin"></script>
 ```
 
 #### Page Embed
@@ -103,7 +103,7 @@ Use the URL query parameters to specify the version of each premium plugin. This
 ##### Example
 
 ```js
-<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/plugins.min.js?&pageembed=1.0.0" referrerpolicy="origin"></script>
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/plugins.min.js?pageembed=1.0.0" referrerpolicy="origin"></script>
 ```
 
 #### Permanent Pen
@@ -114,7 +114,7 @@ Use the URL query parameters to specify the version of each premium plugin. This
 ##### Example
 
 ```js
-<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/plugins.min.js?&permanentpen=1.0.0" referrerpolicy="origin"></script>
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/plugins.min.js?permanentpen=1.0.0" referrerpolicy="origin"></script>
 ```
 
 #### Format Painter
@@ -125,7 +125,7 @@ Use the URL query parameters to specify the version of each premium plugin. This
 ##### Example
 
 ```js
-<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/plugins.min.js?&formatpainter=1.0.0" referrerpolicy="origin"></script>
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/plugins.min.js?formatpainter=1.0.0" referrerpolicy="origin"></script>
 ```
 
 #### PowerPaste
@@ -136,7 +136,7 @@ Use the URL query parameters to specify the version of each premium plugin. This
 ##### Example
 
 ```js
-<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/plugins.min.js?&powerpaste=4.0.0" referrerpolicy="origin"></script>
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/plugins.min.js?powerpaste=4.0.0" referrerpolicy="origin"></script>
 ```
 
 #### Spell Checker Pro
@@ -147,7 +147,7 @@ Use the URL query parameters to specify the version of each premium plugin. This
 ##### Example
 
 ```js
-<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/plugins.min.js?&tinymcespellchecker=1.0.0" referrerpolicy="origin"></script>
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/plugins.min.js?tinymcespellchecker=1.0.0" referrerpolicy="origin"></script>
 ```
 
 #### Accessibility Checker
@@ -158,7 +158,7 @@ Use the URL query parameters to specify the version of each premium plugin. This
 ##### Example
 
 ```js
-<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/plugins.min.js?&a11ychecker=2.0.0" referrerpolicy="origin"></script>
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/plugins.min.js?a11ychecker=2.0.0" referrerpolicy="origin"></script>
 ```
 
 #### Advanced Code Editor
@@ -169,7 +169,7 @@ Use the URL query parameters to specify the version of each premium plugin. This
 ##### Example
 
 ```js
-<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/plugins.min.js?&advcode=2.0.0" referrerpolicy="origin"></script>
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/plugins.min.js?advcode=2.0.0" referrerpolicy="origin"></script>
 ```
 
 #### Enhanced Media Embed
@@ -180,7 +180,7 @@ Use the URL query parameters to specify the version of each premium plugin. This
 ##### Example
 
 ```js
-<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/plugins.min.js?&mediaembed=2.0.0" referrerpolicy="origin"></script>
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/plugins.min.js?mediaembed=2.0.0" referrerpolicy="origin"></script>
 ```
 
 #### Link Checker
@@ -191,7 +191,7 @@ Use the URL query parameters to specify the version of each premium plugin. This
 ##### Example
 
 ```js
-<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/plugins.min.js?&linkchecker=2.0.0" referrerpolicy="origin"></script>
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/plugins.min.js?linkchecker=2.0.0" referrerpolicy="origin"></script>
 ```
 
 ## Specifying a self-hosted deployment of features/plugins
@@ -209,7 +209,7 @@ The "SDK" version lets the TinyMCE Plugin Manager know that you're not using Tin
 ##### Example
 
 ```js
-<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/plugins.min.js?&mentions=sdk" referrerpolicy="origin"></script>
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/plugins.min.js?mentions=sdk" referrerpolicy="origin"></script>
 ```
 
 #### Tiny Drive
@@ -219,7 +219,7 @@ The "SDK" version lets the TinyMCE Plugin Manager know that you're not using Tin
 ##### Example
 
 ```js
-<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/plugins.min.js?&tinydrive=sdk" referrerpolicy="origin"></script>
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/plugins.min.js?tinydrive=sdk" referrerpolicy="origin"></script>
 ```
 
 #### Comments 2.0
@@ -229,7 +229,7 @@ The "SDK" version lets the TinyMCE Plugin Manager know that you're not using Tin
 ##### Example
 
 ```js
-<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/plugins.min.js?&tinycomments=sdk" referrerpolicy="origin"></script>
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/plugins.min.js?tinycomments=sdk" referrerpolicy="origin"></script>
 ```
 
 #### Page Embed
@@ -239,7 +239,7 @@ The "SDK" version lets the TinyMCE Plugin Manager know that you're not using Tin
 ##### Example
 
 ```js
-<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/plugins.min.js?&pageembed=sdk" referrerpolicy="origin"></script>
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/plugins.min.js?pageembed=sdk" referrerpolicy="origin"></script>
 ```
 
 #### Permanent Pen
@@ -249,7 +249,7 @@ The "SDK" version lets the TinyMCE Plugin Manager know that you're not using Tin
 ##### Example
 
 ```js
-<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/plugins.min.js?&permanentpen=sdk" referrerpolicy="origin"></script>
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/plugins.min.js?permanentpen=sdk" referrerpolicy="origin"></script>
 ```
 
 #### Format Painter
@@ -259,7 +259,7 @@ The "SDK" version lets the TinyMCE Plugin Manager know that you're not using Tin
 ##### Example
 
 ```js
-<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/plugins.min.js?&formatpainter=sdk" referrerpolicy="origin"></script>
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/plugins.min.js?formatpainter=sdk" referrerpolicy="origin"></script>
 ```
 
 #### PowerPaste
@@ -269,7 +269,7 @@ The "SDK" version lets the TinyMCE Plugin Manager know that you're not using Tin
 ##### Example
 
 ```js
-<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/plugins.min.js?&powerpaste=sdk" referrerpolicy="origin"></script>
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/plugins.min.js?powerpaste=sdk" referrerpolicy="origin"></script>
 ```
 
 #### Spell Checker Pro
@@ -279,7 +279,7 @@ The "SDK" version lets the TinyMCE Plugin Manager know that you're not using Tin
 ##### Example
 
 ```js
-<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/plugins.min.js?&tinymcespellchecker=sdk" referrerpolicy="origin"></script>
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/plugins.min.js?tinymcespellchecker=sdk" referrerpolicy="origin"></script>
 ```
 
 #### Accessibility Checker
@@ -289,7 +289,7 @@ The "SDK" version lets the TinyMCE Plugin Manager know that you're not using Tin
 ##### Example
 
 ```js
-<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/plugins.min.js?&a11ychecker=sdk" referrerpolicy="origin"></script>
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/plugins.min.js?a11ychecker=sdk" referrerpolicy="origin"></script>
 ```
 
 #### Advanced Code Editor
@@ -299,7 +299,7 @@ The "SDK" version lets the TinyMCE Plugin Manager know that you're not using Tin
 ##### Example
 
 ```js
-<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/plugins.min.js?&advcode=sdk" referrerpolicy="origin"></script>
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/plugins.min.js?advcode=sdk" referrerpolicy="origin"></script>
 ```
 
 #### Enhanced Media Embed
@@ -309,7 +309,7 @@ The "SDK" version lets the TinyMCE Plugin Manager know that you're not using Tin
 ##### Example
 
 ```js
-<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/plugins.min.js?&mediaembed=sdk" referrerpolicy="origin"></script>
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/plugins.min.js?mediaembed=sdk" referrerpolicy="origin"></script>
 ```
 
 #### Link Checker
@@ -319,7 +319,7 @@ The "SDK" version lets the TinyMCE Plugin Manager know that you're not using Tin
 ##### Example
 
 ```js
-<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/plugins.min.js?&linkchecker=sdk" referrerpolicy="origin"></script>
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/plugins.min.js?linkchecker=sdk" referrerpolicy="origin"></script>
 ```
 
 

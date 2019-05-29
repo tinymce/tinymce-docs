@@ -16,7 +16,7 @@ This chapter describes the migration process and workarounds for customers using
 
 ### Cloud Delivery
 
-To serve TinyMCE 5 from the cloud, include this in your html page:
+To serve TinyMCE 5 from the cloud, include this in your html page. Substitute 'no-api-key' with your api key.
 ```js
 <script src="{{ site.cdnurl }}" referrerpolicy="origin"></script>
 ```

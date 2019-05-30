@@ -15,7 +15,6 @@ Use the following matrix in conjunction with the optional parameters for specify
 <script src="https://cloud.tinymce.com/5/tinymce.min.js?apiKey=your_API_key"></script>
 ```
 to:
-
 ```js
 <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
 ```

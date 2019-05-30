@@ -35,7 +35,7 @@ Each tab panel is defined using the following configuration options:
 | title | string | required | The title of the tab for the navigation menu. |
 | items | array | required | An array of [panel components](#panelcomponents) to display inside the panel. |
 
-**Note:** Panel components in different tabs with the same `name` will use the same value in the [dialog's data object]({{site.baseurl}}/ui-components/dialog/#dialogcomposition). This allows for transference of data between tabs. For example, the `charmap` and `emoticons` plugin dialogs contain a search input field in each tab. By assigning the same name to all the search fields, user data entered on one tab will be transferred when the user changes tabs.
+> Note: Panel components in different tabs with the same `name` will use the same value in the [dialog's data object]({{site.baseurl}}/ui-components/dialog/#dialogcomposition). This allows for transference of data between tabs. For example, the `charmap` and `emoticons` plugin dialogs contain a search input field in each tab. By assigning the same name to all the search fields, user data entered on one tab will be transferred when the user changes tabs.
 
 ```js
 {
@@ -53,13 +53,11 @@ Each tab panel is defined using the following configuration options:
 
 #### Dialog instance API methods
 
-The dialog instance API contains the `showTab("tabName")` method, which allows for programmatic tab switching using the registered `name` of a tab.
+The [dialog instance API]({{site.baseurl}}/ui-components/dialog/#dialoginstanceapi) contains the `showTab("tabName")` method, which allows for programmatic tab switching using the registered `name` of a tab.
 
-For more information on the dialog instance API, see the [dialog instance API]({{site.baseurl}}/ui-components/dialog/#dialoginstanceapi) reference.
+#### Dialog configuration event callbacks
 
-#### Dialog config event callbacks
-
-A dialog can be configured with an [`onTabChange`]({{site.baseurl}}/ui-components/dialog/#configoptions) callback. This function is called when the user changes tabs. It is passed the dialog instance API and a `details` object which contains `newTabName` and `oldTabName`.
+A dialog can be configured with an [`onTabChange`]({{site.baseurl}}/ui-components/dialog/#configurationoptions) callback. This function is called when the user changes tabs. It is passed the dialog instance API and a `details` object which contains `newTabName` and `oldTabName`.
 
 As an example of when this is useful, the `charmap` and `emoticons` plugin dialogs use `newTabName` to change search results to match the character or emoticon category represented by the current tab.
 
@@ -89,6 +87,8 @@ const dialogConfig = {
 ## Panel components
 
 Panels can contain [layout components](#layoutcomponents) and [basic components](#basiccomponents), which include components for displaying information and user interaction and input.
+
+> Note: Panel components in different tabs with the same `name` will use the same value in the [dialog's data object]({{site.baseurl}}/ui-components/dialog/#dialogcomposition). This allows for transference of data between tabs. For example, the `charmap` and `emoticons` plugin dialogs contain a search input field in each tab. By assigning the same name to all the search fields, user data entered on one tab will be transferred when the user changes tabs.
 
 ### Layout components
 

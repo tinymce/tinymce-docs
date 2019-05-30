@@ -31,29 +31,19 @@ For example, the [`image`]({{site.baseurl}}/plugins/image) plugin's dialog allow
 
 ![Insert/Edit images]({{site.baseurl}}/images/interactive.png)
 
-Interactive dialogs may require extensive configuration. For example, for a form-like dialog you may need to configure:
-
-* dialog components
-* initial data
-* input validation on change and/or on submit
-* input processing on submit
-* handling of asynchronous data calls
-
-See the following sections for information on configuration options.
-
 ## Dialog configuration
 
-A dialog configuration has three main parts:
+A dialog configuration has three main parts to match the three main parts of the dialog's UI:
 
 * **Title:** The title of the dialog. This will display in the header of the dialog.
 
 * **Body:** The body of the dialog. The body component can be a [panel](#panel) or a [tab panel](#tabpanel), which can contain an array of [panel components]({{site.baseurl}}/ui-components/dialogcomponents/#panelcomponents) such as buttons, inputs and text.
 
-* **Buttons:** An array of [footer buttons](#button) that are displayed in the dialog's footer.
+* **Buttons:** An array of [footer buttons](#footerbuttons) that are displayed in the dialog's footer.
 
 ### Basic example
 
-The most basic configuration structure is this:
+The configuration for a basic dialog that displays HTML information might look like this:
 
 ```js
 tinymce.activeEditor.windowManager.open({
@@ -63,29 +53,34 @@ tinymce.activeEditor.windowManager.open({
     items: [ // A list of panel components
       {
         type: 'htmlpanel', // A HTML panel component
-        html: 'Panel content goes here'
+        html: 'Panel content goes here.'
       }
     ]
   },
-  buttons: [] // A list of footer buttons
+  buttons: [ // A list of footer buttons
+    {
+      type: 'submit',
+      text: 'OK'
+    }
+  ]
 });
 ```
 
-### Config options
+### Configuration options
 
 | Name | Value | Requirement | Description |
 | ---- | ----- | ----------- | ----------- |
 | title | string | required | The title of the dialog. This will display in the header of the dialog. |
-| body | Panel or TabPanel | required | The configuration for the body of the dialog. See [Body components](#bodycomponents). |
-| buttons | DialogButton[] | required | An array of [footer buttons](#footercomponents) to render in the footer of the dialog.  |
-| size | 'normal', 'medium' or 'large' | optional | default: `normal` - Dialog size options. |
+| body | `panel` or `tabpanel` component | required | The specification for the [body component](#bodycomponents). |
+| buttons | button array | required | An array of [footer buttons](#footerbuttons) to render in the footer of the dialog.  |
+| size | `'normal'`, `'medium'` or `'large'` | optional | default: `normal` - Dialog size options. |
 | initialData | object | optional | An object containing initial values for the dialog's panel components. |
-| onAction | (dialogApi, details) => void | optional | Function invoked when a user interacts with a `button` type panel component. |
-| onSubmit | (dialogApi) => void | optional | Function invoked when the dialog is submitted. |
-| onCancel | (dialogApi) => void | optional | Function invoked when the dialog is cancelled. The dialog header's close button and the `cancel` footer button invoke this function. |
-| onChange | (dialogApi, data) => void | optional | Function invoked when the value of an `input` type panel component changes. |
-| onClose | () => void | optional | Function invoked when the dialog is closed. |
-| onTabChange | (dialogApi, details) => void | optional | **This method only applies to [tab panel]({{site.baseurl}}/ui-components/dialogcomponents/#tabpanel) dialogs.** Function invoked when the user changes tabs. `details` is an object that contains `newTabName` and `oldTabName`. |
+| onAction | `(dialogApi, details) => void` | optional | Function invoked when a user interacts with a `button` type panel component. |
+| onSubmit | `(dialogApi) => void` | optional | Function invoked when the dialog is submitted. |
+| onCancel | `(dialogApi) => void` | optional | Function invoked when the dialog is cancelled. The dialog header's close button and the `cancel` footer button invoke this function. |
+| onChange | `(dialogApi, details) => void` | optional | Function invoked when the value of an `input` type panel component changes. |
+| onClose | `() => void` | optional | Function invoked when the dialog is closed. |
+| onTabChange | `(dialogApi, details)` => void | optional | **This method only applies to [tab panel]({{site.baseurl}}/ui-components/dialogcomponents/#tabpanel) dialogs.** Function invoked when the user changes tabs. `details` is an object that contains `newTabName` and `oldTabName`. |
 
 For more information on the `dialogApi` object that is passed to some of the configuration options, see the [dialog instance API](#dialogapimethods) documentation.
 
@@ -126,7 +121,7 @@ See the [tab panel component reference]({{site.baseurl}}/ui-components/dialogcom
 }
 ```
 
-The `name` of the panel can be used with the [`dialogApi.showTab('tabName')`](#dialogapimethods) method to programmatically switch tabs. It is also passed to [`onTabChange`](#configoptions) as part of the `details` object.
+The `name` of the panel can be used with the [`dialogApi.showTab('tabName')`](#dialogapimethods) method to programmatically switch tabs. It is also passed to [`onTabChange`](#configurationoptions) as part of the `details` object.
 
 ##### Example tab panel
 
@@ -145,8 +140,8 @@ A **button** is a clickable component that can contain text or an icon. There ar
 | Name | Type | Requirement | Description |
 | ---- | ---- | ----------- | ----------- |
 | type | `'button'` | required | The component type. Must be `'button'`. |
-| text | string | required | Text to display in the button **if icon is not specified**. Also used for the button's `title` attribute. |
-| name | string | optional | A identifier for the button. If not specified, the button will be assigned a randomly generated name.  |
+| text | string | required | Text to display in the button **if `icon` is not specified**. Also used for the button's `title` attribute. |
+| name | string | optional | A identifier for the button. If not specified, the button will be assigned a randomly generated `name`.  |
 | icon | string | optional | Name of the icon to be displayed. Must correspond to an icon in the icon pack. **When configured, the button will display the icon instead of text.** |
 | primary | boolean | optional | Whether to style the button as a primary or secondary button. |
 | disabled | boolean | optional | default: `false` - When `true`, the button will be disabled when the dialog loads. |
@@ -158,95 +153,112 @@ A **button** is a clickable component that can contain text or an icon. There ar
 
 To toggle between a button's disabled and enabled states, use `dialogApi.enable(name)` or `dialogApi.disable(name)`, where `name` is the identifier the button was configured with. See the [dialog instance API](#dialoginstanceapi) documentation for more information.
 
-#### Dialog config event callbacks
+#### Dialog configuration event callbacks
 
-When a user clicks on a button, the dialog's `onAction()` will be fired. The `details` object that is passed to `onAction()` will include the button's `name`. This will allow developers to create a click handler for a footer button. See the [Redial example]({{site.baseurl}}/ui-components/dialog/#interactiveexampleusingredialconfigvoid) for an example of how to use this.
+When a user clicks on a button, the dialog's `onAction()` function will be fired. The `details` object that is passed to `onAction()` will include the button's `name`. This allows developers to create a click handler for a footer button. See the [Redial example]({{site.baseurl}}/ui-components/dialog/#interactiveexampleusingredialconfigvoid) for an example of how to use this.
 
 The different footer button types will also invoke different callbacks when clicked:
 
-* The **Submit** button will invoke the `onSubmit` callback provided in the configuration. This callback is used to insert the message.
-* The **Cancel** button will invoke the `onCancel` and `onClose` callbacks provided in the configuration.
-* The **Custom** button will invoke the `onAction` callbacks provided in the configuration, and pass it the button's `name` in the `details` object.
+* The **Submit** button will invoke the `onSubmit` callback provided in the configuration. **TinyMCE assumes that a dialog will not have multiple Submit buttons.**
+* The **Cancel** button will invoke the `onCancel` and `onClose` callbacks provided in the configuration. **TinyMCE assumes that a dialog will not have multiple Cancel buttons.**
+* The **Custom** button will invoke the `onAction` callback provided in the configuration, and pass it the button's `name` in the `details` object. A dialog can have multiple Custom buttons.
 
-See the [dialog configuration options](#configoptions) documentation for more information.
+See the [dialog configuration options](#configurationoptions) documentation for more information.
 
 
 #### Example
 
 ```js
 {
-  type: 'submit',
-  name: 'submitButton',
-  text: 'Submit',
+  type: 'submit', // button type
+  name: 'submitButton', // identifying name
+  text: 'Submit', // text for the button
   // icon: 'checkmark', // will replace the text if configured
-  disabled: false,
-  primary: true,
-  align: 'start'
+  disabled: false, // button is active when the dialog opens
+  primary: true, // style the button as a primary button
+  align: 'start' // align the button to the left of the dialog footer
 }
 ```
 
 ## Dialog instance API
 
-When a dialog is created, a dialog instance API is returned. For example, `const instanceApi = editor.windowManager.open(config);`. The dialog API instance is also passed to some of the [dialog configuration options](#configoptions).
+When a dialog is created, a dialog instance API is returned. For example, `const instanceApi = editor.windowManager.open(config);`. The dialog API instance is also passed to some of the [dialog configuration options](#configurationoptions).
 
-The instance API is a javascript object containing methods attached to the dialog instance. When the dialog is closed, the instance API is destroyed.
+The instance API is a JavaScript object containing methods attached to the dialog instance. When the dialog is closed, the instance API is destroyed.
 
 ### Dialog API methods
 
 | Methods | Description |
 |---------|-------------|
-| `getData(): <T>` | `getData()` returns a key-value object matching the structure of the `initialData`. The object keys in the returned data object represent a component's `name`.  |
-| `setData(newConfig: object): void`  | `setData(newData)` updates the data set.  This method also works with partial data sets. |
-| `enable(name: string): void` | Calling `enable()` and passing the component `name` will enable a component, allowing users to interact with the component. |
-| `disable(name: string): void` | Calling `disable()` and passing the component's `name` will disable the component. |
-| `focus(name: string): void` | Calling `focus()` and passing the component's `name` will set the browser's focus to the component.|
-| `block(message: string): void` | Calling `block()` and passing a message string will disable the entire dialog window and show a loading image. This is useful for handling asynchronous data. The message is used for screen reader accessibility. When the data is ready use `unblock()` to unblock the dialog. |
-| `unblock(): void` | Calling `unblock()` will unblock the dialog restoring functionality. |
-| `close(): void` | Calling the `close()` method will close the dialog. When closing the dialog, all DOM elements and dialog data are destroyed.  When `windowManager.open(config)` is called again, all DOM elements and data are recreated from the config. |
-| `redial(config): void` | Calling `redial()` and passing a dialog body configuration will destroy and recreate the body of the dialog.  |
-| `showTab(name: string): void` | **This method only applies to [tab panel]({{site.baseurl}}/ui-components/dialogcomponents/#tabpanel) dialogs.** Calling `showTab()` and passing the `name` of a tab will make the dialog switch to the named tab. |
+| `getData() => <T>` | `getData()` returns a key-value object matching the structure of the `initialData`. The object keys in the returned data object represent a component's `name`.  |
+| `setData(newConfig: object) => void`  | `setData(newData)` updates the data set.  This method also works with partial data sets. |
+| `enable(name: string) => void` | Calling `enable()` and passing the component `name` will enable a component, allowing users to interact with the component. |
+| `disable(name: string) => void` | Calling `disable()` and passing the component's `name` will disable the component. |
+| `focus(name: string) => void` | Calling `focus()` and passing the component's `name` will set the browser's focus to the component.|
+| `block(message: string) => void` | Calling `block()` and passing a message string will disable the entire dialog window and show a loading image. This is useful for handling asynchronous data. The message is used for screen reader accessibility. When the data is ready use `unblock()` to unblock the dialog. |
+| `unblock() => void` | Calling `unblock()` will unblock the dialog restoring functionality. |
+| `close() => void` | Calling the `close()` method will close the dialog. When closing the dialog, all DOM elements and dialog data are destroyed.  When `windowManager.open(config)` is called again, all DOM elements and data are recreated from the config. |
+| `redial(config) => void` | Calling `redial()` and passing a dialog body configuration will destroy and recreate the body of the dialog. See the [Redial](#redial) documentation. |
+| `showTab(name: string) => void` | **This method only applies to [tab panel]({{site.baseurl}}/ui-components/dialogcomponents/#tabpanel) dialogs.** Calling `showTab()` and passing the `name` of a tab will make the dialog switch to the named tab. |
+
+## Dialog data and state
+
+All dialogs have an internal data store, which is used to track the value and/or state of the dialog's panel components.
+
+This data store takes the form of a JavaScript object, where the object's keys are the `name`s of the configured panel components. For example, if a dialog contains a [checkbox]({{site.baseurl}}/ui-components/dialogcomponents/#checkbox) component configured with `name: myCheckbox` and the checkbox is not checked then the dialog's data object will contain `{ myCheckbox: false }`.
+
+The current value of a dialog's data store can be accessed using the dialog instance API's `getData()` function. It can also be set using `setData()` which will automatically update the relevant components. For example, if you call `setData({ myCheckbox: true })` with the previous example, the checkbox would be toggled to checked.
+
+To set initial values for components when the dialog is opened, use the `initialData` [dialog configuration option](#configurationoptions). For example, you could set the checkbox in the previous example to be checked when the dialog opens by including `initialData: { myCheckbox: true }` in the dialog's configuration.
+
+## Redial
+
+**Redial** is an advanced concept that allows developers to replace the contents of a dialog with a new configuration. This can be used for:
+
+* Programmatically changing the information displayed in a dialog while it is open
+* Changing panel components on user action e.g. updating the options in a `selectbox` component based on user input to another interactive component
+* Creating a multipage form where a button leads to the next page
+
+To redial a dialog, pass a new dialog configuration to the `redial()` method from the [dialog instance API](#dialoginstanceapi).
+
+> Note: At the moment, Redial does not support partial dialog replacement or the replacement of specific components. Redial must be passed an entire dialog configuration.
+
+See the [redial example](#interactiveexampleusingredial) for more information on how to use redial.
 
 ## Examples
 
 ### Simple interactive dialog
 
-This example is referred to throughout the new [dialog instance API]({{site.baseurl}}/ui-components/dialog/#dialoginstanceapi) section.
-
-Redial can be used to change information or options. F, create a multipage form, where the next button loads a new form page or to re-create the dialog with different components or options.
-
-For the [**Insert Cat Name**]({{site.baseurl}}/ui-components/dialog/#dialogcomposition) example, `data.catdata` is the value currently being held by the input field with the name `catdata`.
-
-The following example demonstrates how data flows through the dialog and how buttons are configured. This is an interactive dialog that inserts the name of a cat into the editor content on **Submit**.
+The following example demonstrates how data flows through the dialog and how buttons are configured. This is an interactive dialog that inserts the name of a cat into the editor content on submit.
 
 {% include codepen.html id="dialog-pet-machine" height="150" tab="js" %}
 
-The key highlight in this example is the input field for ‘enter the name of a cat’. The name property `catdata` is associated with the `initalData`.
+The dialog in this example contains two interactive components - an input component named `catdata` and a checkbox component named `isdog`. These names are used in the `initialdata` configuration property to set the initial values for these components. In this case, when the dialog loads the input will contain the text _"initial Cat"_ and the checkbox will not be checked.
 
-> Note: All body components that require a name property also require an `initialData` property. This is how the relationship between the underlaying data model and the component is declared.
+The dialog also contains two footer buttons - a **submit** type button and a **cancel** type button. Since the dialog's configuration does not contain an `onCancel` callback, clicking the cancel type button will just close the dialog. However, the configuration does contain an `onSubmit` callback that will be fired when the submit type button is clicked.
 
-When the dialog is loaded first, the input field is pre-populated with the _initial cat_.
+In the `onSubmit` callback, the dialog instance API that is passed into the callback is used to call `getData()`. This function returns the dialog's data store, from which we are able to get the state of the `isdog` checkbox and the value of the `catadata` input. This information is used to construct a sentence which is then inserted into the editor. Finally, `close()` is called to manually close the dialog.
 
-When `initialData.catdata = ''` then on load, the input field should be empty.
+### Interactive example using Redial
 
-In this example, two buttons are declared to be placed in the dialog footer, **Close** and **Submit**. These are pre-constructed buttons that perform common actions, such as, closing a dialog or submitting a dialog.
+Redial can be used to change information that is displayed in the dialog, create a multipage form where the next button loads a new form page, or to re-create the dialog with different components or options.
 
-
-### Interactive example using redial
-
-The following example demonstrates one way of implementing an Interactive Dialog using the `redial(config): void` method. Custom buttons are used for creating two separate dialogs that are cycled through by pressing the **Next** button.
+The following example demonstrates one way of implementing a multipage form dialog using the `redial())` method. Custom buttons are used to switch between the two pages of the form by calling `redial()` with the appropriate dialog configuration.
 
 To see the output of the code, click on the TinyMCE tab on the fiddle below.
 
 {% include codepen.html id="redial" height="900" tab="js" %}
 
-In the configuration structure, the first level is like any other dialog. The difference is the `onAction` call loads a new configuration for the dialog using redial. The configuration that is used in the `redial(dialogConf)` call can be any supported dialog structure. It could even replace this **Redial Demo** configuration, in the **Pet Name Machine** example in the [compostion]({{site.baseurl}}/ui-components/dialog/#dialogcomposition) section.
+The example JavaScript code contains two dialog configurations - `page1Config` and `page2Config`. The TinyMCE initialisation code adds a button to the editor that when clicked calls `editor.windowManager.open(page1Config)` to open a dialog using the first configuration.
 
-This demo also includes the use of `dialogApi.enable` and `dialogApi.disable` to disable the **Next** button when user input is required. For **Checkboxes**, the `onChange` callback is used to handle the changes for the checkbox data. The checkbox data is mapped to its defined `name: anyterms`. When a user clicks or presses **Enter** on the checkbox, the new value of the checkbox is returned by the `getData()` call stored in the anyterms property. Given the state of the checkbox, the **Next** button is either disabled or enabled.
+The configuration for the first page of the multipage form contains a description of the form and a checkbox. The checkbox, via the dialog's `onChange()` callback function, toggles whether the `next` button is disabled or enabled. The `next` button when clicked fires the `onAction()` callback function, which in turn triggers `redial()` which will replace the `page1Config` dialog with the `page2Config` dialog.
 
-The `onAction` callback at the root level, is the handler for the **Previous** and **Next** buttons. The `onAction` handler is shared across multiple buttons, and this name property is used to identify the clicked button. The previous button named **doesnothing** is used to highlight branching.
+More specifically:
 
-A **Switch** statement could be used to handle many buttons.
+The `onChange()` callback in `page1Config` is fired when the checkbox is toggled. It uses `enable` and `disable` from the dialog instance API to disable and enable the **Next** button. The code uses `getData()` from the dialog instance API to get the state of the checkbox called `anyterms` (which is `true` if checked and `false` if unchecked) and choose `enable()` or `disable()` based on its value. It assigns the correct function to a variable, then calls that variable with the component name `uniquename` to toggle the state of the **Next** button.
 
-The `onAction` callback inside the `redial()` call, is a separate handler for the redialed dialog. Since there is only one button, which button triggered the click is not checked. This handler demonstrates the `dialogApi.close()` API.
+The `onAction()` callback in `page1Config` is fired when either of the footer buttons are clicked, since they are both custom type footer buttons. `onAction()` is passed the dialog instance API and an object containing some data about the change event, including the `name` of the component that triggered it. This is important since the same `onAction()` handler is shared across all compatible dialog components. The code checks the `name` of the component that triggered `onAction()` and if it is `uniquename` (the name of the **Next** button) `redial(page2Config)` is called. If the component's `name` is `donothing` then the code does nothing.
 
-> Note: Please see [this]({{site.baseurl}}/ui-components/dialogcomponents) page for a comprehensive list of components.
+> Note: A **Switch** statement could be used to handle many buttons.
+
+In `page2Config` the `onAction()` callback uses `getData()` to get the value of the `selectbox` component, and specifically whether the user has chosen _"Cat"_, _"Dog"_ or _"Rock"_. It then constructs a sentence using this value, inserts it into the editor content and calls `close()` to manually close the dialog.

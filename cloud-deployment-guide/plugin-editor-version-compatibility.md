@@ -18,7 +18,7 @@ to:
 ```js
 <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
 ```
-> Ensure the application uses latest script tag and substitute 'no-api-key' with your api key.
+> Ensure the application uses the latest script tag and substitute 'no-api-key' with your api key.
 
 
 > Important: Ensure the plugins are supported in your editor version when deploying premium plugins only[^footnote] via [Tiny Cloud]({{ site.baseurl }}/cloud-deployment-guide/features-only).

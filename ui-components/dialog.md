@@ -84,6 +84,11 @@ tinymce.activeEditor.windowManager.open({
 
 For more information on the `dialogApi` object that is passed to some of the configuration options, see the [dialog instance API](#dialogapimethods) documentation.
 
+#### Event callback functions
+Each of the event callback functions - `onAction`, `onSubmit`, `onCancel`, `onChange`, `onClose` and `onTabChange` - are shared between all dialog components that may trigger them. For example, **Custom** type footer buttons and dialog panel buttons all trigger `onAction`. Therefore, callback functions that may be triggered by multiple components are passed an object (called `details` above) that contains the `name` of the component that triggered the event.
+
+Any callback function that is not passed a `details` object assumes that the dialog will only contain one component which can trigger it or that it does not matter if the function is triggered by multiple components. For example, `onSubmit` is only triggered when a user clicks on a **Submit** type footer button, and TinyMCE assumes that a dialog will only have one **Submit** type button. In comparison, `onCancel` and `onClose` are both triggered by clicking the `X` button in the top right of a dialog or by clicking a **Cancel** type footer button. These two buttons have the same functionality, and therefore TinyMCE does not differentiate between them.
+
 ### Body components
 
 The body of a dialog must be either a [`panel`]({{site.baseurl}}/ui-components/dialogcomponents/#panel) (a single panel) or a [`tabpanel`]({{site.baseurl}}/ui-components/dialogcomponents/#tabpanel) (a collection of panels). Each panel can contain [panel components]({{site.baseurl}}/ui-components/dialogcomponents/#panelcomponents) such as inputs, buttons and text.
@@ -151,7 +156,7 @@ A **button** is a clickable component that can contain text or an icon. There ar
 
 #### Dialog instance API methods
 
-To toggle between a button's disabled and enabled states, use `dialogApi.enable(name)` or `dialogApi.disable(name)`, where `name` is the identifier the button was configured with. See the [dialog instance API](#dialoginstanceapi) documentation for more information.
+To toggle between a button's disabled and enabled states, use `enable(name)` or `disable(name)` from the [dialog instance API](#dialoginstanceapi), where `name` is the identifier the button was configured with.
 
 #### Dialog configuration event callbacks
 
@@ -159,9 +164,9 @@ When a user clicks on a button, the dialog's `onAction()` function will be fired
 
 The different footer button types will also invoke different callbacks when clicked:
 
-* The **Submit** button will invoke the `onSubmit` callback provided in the configuration. **TinyMCE assumes that a dialog will not have multiple Submit buttons.**
-* The **Cancel** button will invoke the `onCancel` and `onClose` callbacks provided in the configuration. **TinyMCE assumes that a dialog will not have multiple Cancel buttons.**
-* The **Custom** button will invoke the `onAction` callback provided in the configuration, and pass it the button's `name` in the `details` object. A dialog can have multiple Custom buttons.
+* A **Submit** type button will invoke the `onSubmit` callback function provided in the dialog configuration. **TinyMCE assumes that a dialog will not have multiple Submit buttons.**
+* A **Cancel** type button will invoke the `onCancel` and `onClose` callback functions provided in the dialog configuration. These callback functions are also fired when a user clicks the `X` button in the top right of the dialog. **TinyMCE assumes that a dialog will not have multiple Cancel buttons.**
+* A **Custom** type button will invoke the `onAction` callback function provided in the dialog configuration, and pass it the button's `name` in the `details` object. A dialog can have multiple Custom buttons.
 
 See the [dialog configuration options](#configurationoptions) documentation for more information.
 
@@ -213,17 +218,17 @@ To set initial values for components when the dialog is opened, use the `initial
 
 ## Redial
 
-**Redial** is an advanced concept that allows developers to replace the contents of a dialog with a new configuration. This can be used for:
+**Redial** is a concept that allows developers to replace a dialog's configuration with a new configuration. This can be used for advanced applications such as:
 
-* Programmatically changing the information displayed in a dialog while it is open
-* Changing panel components on user action e.g. updating the options in a `selectbox` component based on user input to another interactive component
-* Creating a multipage form where a button leads to the next page
+* Programmatically changing the information displayed in a dialog while it is open.
+* Changing panel components on user action. For example, updating the options in a `selectbox` component based on user input to another interactive component.
+* Creating a multipage form where a button leads to the next page.
 
 To redial a dialog, pass a new dialog configuration to the `redial()` method from the [dialog instance API](#dialoginstanceapi).
 
 > Note: At the moment, Redial does not support partial dialog replacement or the replacement of specific components. Redial must be passed an entire dialog configuration.
 
-See the [redial example](#interactiveexampleusingredial) for more information on how to use redial.
+See the [redial example](#interactiveexampleusingredial) for more information on how to use Redial.
 
 ## Examples
 
@@ -233,7 +238,7 @@ The following example demonstrates how data flows through the dialog and how but
 
 {% include codepen.html id="dialog-pet-machine" height="150" tab="js" %}
 
-The dialog in this example contains two interactive components - an input component named `catdata` and a checkbox component named `isdog`. These names are used in the `initialdata` configuration property to set the initial values for these components. In this case, when the dialog loads the input will contain the text _"initial Cat"_ and the checkbox will not be checked.
+The dialog in this example contains two interactive components - an input component named `catdata` and a checkbox component named `isdog`. These names are used in the `initialdata` configuration property to set the initial values for these components. In this case, when the dialog loads the input will contain the text _initial Cat_ and the checkbox will not be checked.
 
 The dialog also contains two footer buttons - a **submit** type button and a **cancel** type button. Since the dialog's configuration does not contain an `onCancel` callback, clicking the cancel type button will just close the dialog. However, the configuration does contain an `onSubmit` callback that will be fired when the submit type button is clicked.
 
@@ -243,7 +248,7 @@ In the `onSubmit` callback, the dialog instance API that is passed into the call
 
 Redial can be used to change information that is displayed in the dialog, create a multipage form where the next button loads a new form page, or to re-create the dialog with different components or options.
 
-The following example demonstrates one way of implementing a multipage form dialog using the `redial())` method. Custom buttons are used to switch between the two pages of the form by calling `redial()` with the appropriate dialog configuration.
+The following example demonstrates one way of implementing a multipage form dialog using the `redial()` method. Custom buttons are used to switch between the two pages of the form by calling `redial()` with the appropriate dialog configuration.
 
 To see the output of the code, click on the TinyMCE tab on the fiddle below.
 
@@ -259,6 +264,4 @@ The `onChange()` callback in `page1Config` is fired when the checkbox is toggled
 
 The `onAction()` callback in `page1Config` is fired when either of the footer buttons are clicked, since they are both custom type footer buttons. `onAction()` is passed the dialog instance API and an object containing some data about the change event, including the `name` of the component that triggered it. This is important since the same `onAction()` handler is shared across all compatible dialog components. The code checks the `name` of the component that triggered `onAction()` and if it is `uniquename` (the name of the **Next** button) `redial(page2Config)` is called. If the component's `name` is `donothing` then the code does nothing.
 
-> Note: A **Switch** statement could be used to handle many buttons.
-
-In `page2Config` the `onAction()` callback uses `getData()` to get the value of the `selectbox` component, and specifically whether the user has chosen _"Cat"_, _"Dog"_ or _"Rock"_. It then constructs a sentence using this value, inserts it into the editor content and calls `close()` to manually close the dialog.
+In `page2Config` the `onAction()` callback uses `getData()` to get the value of the `selectbox` component, and specifically whether the user has chosen _Cat_, _Dog_ or _Rock_. It then constructs a sentence using this value, inserts it into the editor content and calls `close()` to manually close the dialog.

@@ -4,14 +4,14 @@ var page1Config = {
     type: 'panel',
     items: [{
       type: 'htmlpanel',
-      html: '<p>Redial allows the creation of multi-page forms.</p><p>The Next button has been configured to be disabled. When the <strong>checkbox</strong> is checked, the next button should be enabled</p>'
+      html: '<p>Redial allows for the contents of a dialog to be replaced with new contents. This can be used to create multipage form dialogs.</p><br/><p>The Next button is initially disabled. When the <strong>checkbox</strong> is checked, the Next button should be enabled.</p>'
     }, {
       type: 'checkbox',
       name: 'anyterms',
       label: 'I agree to disagree'
     }, {
       type: 'htmlpanel',
-      html: '<p>The next button calls the redial method which reloads a new dialog in place</p><p>Press next to continue</p>'
+      html: '<p>Pressing the Next button will call redial() to reload the dialog with the next page of the form.</p><br /><p>Press Next to continue.</p>'
     }]
   },
   initialData: {
@@ -63,7 +63,7 @@ var page2Config = {
       },
       {
         type: 'htmlpanel',
-        html: '<p>Click done, your pet choice will be printed in the console.log and the dialog should close</p>'
+        html: '<p>Click done and the dialog will log a message to the console, insert a sentence into the editor and close.</p>'
       }
     ]
   },
@@ -81,7 +81,7 @@ var page2Config = {
   onAction: (dialogApi, details) => {
     var data = dialogApi.getData();
 
-    var result = 'you chose wisely: ' + data.choosydata;
+    var result = 'You chose wisely: ' + data.choosydata;
     console.log(result);
     tinymce.activeEditor.execCommand('mceInsertContent', false, '<p>' + result + '</p>');
 

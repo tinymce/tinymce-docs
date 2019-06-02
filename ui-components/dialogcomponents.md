@@ -35,7 +35,7 @@ Each tab panel is defined using the following configuration options:
 | title | string | required | The title of the tab for the navigation menu. |
 | items | array | required | An array of [panel components](#panelcomponents) to display inside the panel. |
 
-> Note: Panel components in different tabs with the same `name` will use the same value in the [dialog's data object]({{site.baseurl}}/ui-components/dialog/#dialogcomposition). This allows for transference of data between tabs. For example, the `charmap` and `emoticons` plugin dialogs contain a search input field in each tab. By assigning the same name to all the search fields, user data entered on one tab will be transferred when the user changes tabs.
+> Note: Panel components in different tabs with the same `name` will use the same value in the [dialog's data object]({{site.baseurl}}/ui-components/dialog/#dialogdataandstate). This allows for transference of data between tabs. For example, the `charmap` and `emoticons` plugin dialogs contain a search input field in each tab. By assigning the same name to all the search fields, user data entered on one tab will be transferred when the user changes tabs.
 
 ```js
 {
@@ -88,7 +88,7 @@ const dialogConfig = {
 
 Panels can contain [layout components](#layoutcomponents) and [basic components](#basiccomponents), which include components for displaying information and user interaction and input.
 
-> Note: Panel components in different tabs with the same `name` will use the same value in the [dialog's data object]({{site.baseurl}}/ui-components/dialog/#dialogcomposition). This allows for transference of data between tabs. For example, the `charmap` and `emoticons` plugin dialogs contain a search input field in each tab. By assigning the same name to all the search fields, user data entered on one tab will be transferred when the user changes tabs.
+> Note: Panel components in different tabs with the same `name` will use the same value in the [dialog's data object]({{site.baseurl}}/ui-components/dialog/#dialogdataandstate). This allows for transference of data between tabs. For example, the `charmap` and `emoticons` plugin dialogs contain a search input field in each tab. By assigning the same name to all the search fields, user data entered on one tab will be transferred when the user changes tabs.
 
 ### Layout components
 
@@ -117,7 +117,7 @@ A **collection** is a layout component that creates a panel containing a collect
 }
 ```
 
-To populate the collection with collection items, specify an array of items in the dialog's [`initialData`]({{site.baseurl}}/ui-components/dialog/#dialogcomposition) property. To update the items in the collection, use the [dialog API's]({{site.baseurl}}/ui-components/dialog/#dialoginstanceapi) `setData()` method. Each item should contain a `text`, `value`, and `icon` property. For example:
+To populate the collection with collection items, specify an array of items in the dialog's [`initialData`]({{site.baseurl}}/ui-components/dialog/#dialogdataandstate) property. To update the items in the collection, use the [dialog API's]({{site.baseurl}}/ui-components/dialog/#dialoginstanceapi) `setData()` method. Each item should contain a `text`, `value`, and `icon` property. For example:
 
 ```js
 [
@@ -300,7 +300,7 @@ An **iframe** component takes a HTML document as a string and displays it in the
 }
 ```
 
-To set the iframe's content on dialog open, specify document HTML as a string in the dialog's [`initialData`]({{site.baseurl}}/ui-components/dialog/#dialogcomposition) property. To update the iframe's content, use the [dialog API's]({{site.baseurl}}/ui-components/dialog/#dialoginstanceapi) `setData()` method. For example:
+To set the iframe's content on dialog open, specify document HTML as a string in the dialog's [`initialData`]({{site.baseurl}}/ui-components/dialog/#dialogdataandstate) property. To update the iframe's content, use the [dialog API's]({{site.baseurl}}/ui-components/dialog/#dialoginstanceapi) `setData()` method. For example:
 
 ```js
 dialogApi.setData({

@@ -72,17 +72,17 @@ tinymce.activeEditor.windowManager.open({
 | ---- | ----- | ----------- | ----------- |
 | title | string | required | The title of the dialog. This will display in the header of the dialog. |
 | body | `panel` or `tabpanel` component | required | The specification for the [body component](#bodycomponents). |
-| buttons | button array | required | An array of [footer buttons](#footerbuttons) to render in the footer of the dialog.  |
+| buttons | FooterButton[] | required | An array of [footer buttons](#footerbuttons) to render in the footer of the dialog. |
 | size | `'normal'`, `'medium'` or `'large'` | optional | default: `normal` - Dialog size options. |
 | initialData | object | optional | An object containing initial values for the dialog's panel components. |
-| onAction | `(dialogApi, details) => void` | optional | Function invoked when a user interacts with a `button` type panel component. |
-| onSubmit | `(dialogApi) => void` | optional | Function invoked when the dialog is submitted. |
-| onCancel | `(dialogApi) => void` | optional | Function invoked when the dialog is cancelled. The dialog header's close button and the `cancel` footer button invoke this function. |
+| onAction | `(dialogApi, details) => void` | optional | Function invoked when a user interacts with a `button` type panel component or clicks a **Custom** type footer button. |
+| onSubmit | `(dialogApi) => void` | optional | Function invoked when a **Submit** type footer button is clicked. |
+| onCancel | `(dialogApi) => void` | optional | Function invoked when the dialog is cancelled. The dialog header's close button and a **Cancel** type footer button invoke this function. |
 | onChange | `(dialogApi, details) => void` | optional | Function invoked when the value of an `input` type panel component changes. |
-| onClose | `() => void` | optional | Function invoked when the dialog is closed. |
+| onClose | `() => void` | optional | Function invoked when the dialog is closed. The dialog header's close button, a **Cancel** type footer button and the dialog instance API's `close()` method invoke this function. |
 | onTabChange | `(dialogApi, details)` => void | optional | **This method only applies to [tab panel]({{site.baseurl}}/ui-components/dialogcomponents/#tabpanel) dialogs.** Function invoked when the user changes tabs. `details` is an object that contains `newTabName` and `oldTabName`. |
 
-For more information on the `dialogApi` object that is passed to some of the configuration options, see the [dialog instance API](#dialogapimethods) documentation.
+For more information on the `dialogApi` object that is passed to some of the configuration options, see the [dialog instance API](#dialoginstanceapi) documentation.
 
 #### Event callback functions
 Each of the event callback functions - `onAction`, `onSubmit`, `onCancel`, `onChange`, `onClose` and `onTabChange` - are shared between all dialog components that may trigger them. For example, **Custom** type footer buttons and dialog panel buttons all trigger `onAction`. Therefore, callback functions that may be triggered by multiple components are passed an object (called `details` above) that contains the `name` of the component that triggered the event.
@@ -160,9 +160,9 @@ To toggle between a button's disabled and enabled states, use `enable(name)` or 
 
 #### Dialog configuration event callbacks
 
-When a user clicks on a button, the dialog's `onAction()` function will be fired. The `details` object that is passed to `onAction()` will include the button's `name`. This allows developers to create a click handler for a footer button. See the [Redial example]({{site.baseurl}}/ui-components/dialog/#interactiveexampleusingredialconfigvoid) for an example of how to use this.
+When a user clicks on a button, the dialog's `onAction()` function will be fired. The `details` object that is passed to `onAction()` will include the button's `name`. This allows developers to create a click handler for a footer button. See the [Redial example](#interactiveexampleusingredial) for an example of how to use this.
 
-The different footer button types will also invoke different callbacks when clicked:
+The different footer button types will invoke different callbacks when clicked:
 
 * A **Submit** type button will invoke the `onSubmit` callback function provided in the dialog configuration. **TinyMCE assumes that a dialog will not have multiple Submit buttons.**
 * A **Cancel** type button will invoke the `onCancel` and `onClose` callback functions provided in the dialog configuration. These callback functions are also fired when a user clicks the `X` button in the top right of the dialog. **TinyMCE assumes that a dialog will not have multiple Cancel buttons.**

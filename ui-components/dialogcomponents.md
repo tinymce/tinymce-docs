@@ -193,7 +193,7 @@ A **button** is a clickable component that can contain text or an icon. There ar
 
 > Note: Panel buttons are different to [dialog footer buttons]({{site.baseurl}}/ui-components/dialog/#footerbuttons).
 
-**Events:** Interacting with a **button** component will fire the `onAction` function in the dialog's configuration.
+**Events:** Interacting with a **button** component will fire the `onAction` function in the dialog's configuration, and pass it the button's `name` in the `details` object. This allows developers to create a click handler for each button.
 
 | Name | Type | Requirement | Description |
 | ---- | ---- | ----------- | ----------- |

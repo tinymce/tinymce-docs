@@ -162,9 +162,9 @@ To toggle between a button's disabled and enabled states, use `enable(name)` or 
 
 The different footer button types will invoke different callbacks when clicked:
 
-* A **Submit** type button will invoke the `onSubmit` callback function provided in the dialog configuration. **TinyMCE assumes that a dialog will not have multiple Submit buttons.**
-* A **Cancel** type button will invoke the `onCancel` and `onClose` callback functions. These callback functions are also fired when a user clicks the `X` button in the top right of the dialog. **TinyMCE assumes that a dialog will not have multiple Cancel buttons.**
-* A **Custom** type button will invoke the `onAction` callback function, and pass it the button's `name` in the `details` object. This allows developers to create a click handler for a **Custom** type footer button. See the [Redial example](#interactiveexampleusingredial) for an example of how to use this. A dialog can have multiple **Custom** type footer buttons.
+* A **Submit** type button will invoke the `onSubmit` callback function provided in the dialog configuration.
+* A **Cancel** type button will invoke the `onCancel` and `onClose` callback functions. These callback functions are also fired when a user clicks the `X` button in the top right of the dialog.
+* A **Custom** type button will invoke the `onAction` callback function, and pass it the button's `name` in the `details` object. This allows developers to create a click handler for each **Custom** type footer button in the dialog. See the [Redial example](#interactiveexampleusingredial) for an example of how to use this. A dialog can have multiple **Custom** type footer buttons.
 
 See the [dialog configuration options](#configurationoptions) documentation for more information.
 

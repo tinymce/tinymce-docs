@@ -70,8 +70,8 @@ A **button** is a clickable component that can contain text or an icon. There ar
 
 The different footer button types will invoke different callbacks when clicked:
 
-* A **Cancel** type button will invoke the `onCancel` and `onClose` callback functions provided in the dialog configuration. These callback functions are also fired when a user clicks the `X` button in the top right of the dialog. **TinyMCE assumes that a dialog will not have multiple Cancel buttons.**
-* A **Custom** type button will invoke the `onAction` callback function provided in the dialog configuration, and pass it the button's `name` in the `details` object. This allows developers to create a click handler for a **Custom** type footer button. See the [Redial example]({{site.baseurl}}/ui-components/dialog/#interactiveexampleusingredialconfigvoid) for an example of how to use this with standard dialogs. A dialog can have multiple **Custom** type buttons.
+* A **Cancel** type button will invoke the `onCancel` and `onClose` callback functions provided in the dialog configuration. These callback functions are also fired when a user clicks the `X` button in the top right of the dialog.
+* A **Custom** type button will invoke the `onAction` callback function provided in the dialog configuration, and pass it the button's `name` in the `details` object. This allows developers to create a click handler for each **Custom** type footer button in the dialog. See the [Redial example]({{site.baseurl}}/ui-components/dialog/#interactiveexampleusingredialconfigvoid) for an example of how to use this with standard dialogs.
 
 > Note: Unlike [standard dialogs]({{site.baseurl}}/ui-components/dialog/), URL dialogs do not have a **Submit** type footer button, and therefore do not have an `onSubmit` callback.
 

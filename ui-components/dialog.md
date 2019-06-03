@@ -154,19 +154,17 @@ A **button** is a clickable component that can contain text or an icon. There ar
 
 > Note: Buttons do not support mixing icons and text at the moment.
 
-#### Dialog instance API methods
+#### Disabling and enabling buttons
 
 To toggle between a button's disabled and enabled states, use `enable(name)` or `disable(name)` from the [dialog instance API](#dialoginstanceapi), where `name` is the identifier the button was configured with.
 
-#### Dialog configuration event callbacks
-
-When a user clicks on a button, the dialog's `onAction()` function will be fired. The `details` object that is passed to `onAction()` will include the button's `name`. This allows developers to create a click handler for a footer button. See the [Redial example](#interactiveexampleusingredial) for an example of how to use this.
+#### Button types and event callbacks
 
 The different footer button types will invoke different callbacks when clicked:
 
 * A **Submit** type button will invoke the `onSubmit` callback function provided in the dialog configuration. **TinyMCE assumes that a dialog will not have multiple Submit buttons.**
-* A **Cancel** type button will invoke the `onCancel` and `onClose` callback functions provided in the dialog configuration. These callback functions are also fired when a user clicks the `X` button in the top right of the dialog. **TinyMCE assumes that a dialog will not have multiple Cancel buttons.**
-* A **Custom** type button will invoke the `onAction` callback function provided in the dialog configuration, and pass it the button's `name` in the `details` object. A dialog can have multiple Custom buttons.
+* A **Cancel** type button will invoke the `onCancel` and `onClose` callback functions. These callback functions are also fired when a user clicks the `X` button in the top right of the dialog. **TinyMCE assumes that a dialog will not have multiple Cancel buttons.**
+* A **Custom** type button will invoke the `onAction` callback function, and pass it the button's `name` in the `details` object. This allows developers to create a click handler for a **Custom** type footer button. See the [Redial example](#interactiveexampleusingredial) for an example of how to use this. A dialog can have multiple **Custom** type footer buttons.
 
 See the [dialog configuration options](#configurationoptions) documentation for more information.
 

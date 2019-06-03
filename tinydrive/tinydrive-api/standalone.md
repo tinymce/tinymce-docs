@@ -12,12 +12,12 @@ Tiny Drive can be used as a generic file manager separate from tinymce this is r
 
 In order to use Tiny Drive in standalone mode you will need to add a script to your page with your api key as part of the url. The url is in the following format:
 
-`https://cdn.tiny.cloud/1/<your api key>/tinydrive/dev/tinydrive.min.js`
+`https://cdn.tiny.cloud/1/<your api key>/tinydrive/stable/tinydrive.min.js`
 
 ### Example
 
 ```html
-<script src="https://cdn.tiny.cloud/1/<your api key>/tinydrive/dev/tinydrive.min.js" referrerpolicy="origin"></script>
+<script src="https://cdn.tiny.cloud/1/<your api key>/tinydrive/stable/tinydrive.min.js" referrerpolicy="origin"></script>
 <script>
 tinydrive.pick({
   token_provider: '/your-local/jwt-provider'
@@ -143,7 +143,7 @@ tinydrive.pick({
 
 ### `filetypes`
 
-This setting enables to restrict what types of files you want do display based on file type categories. For example if your app needs to insert images only then you can specify `['image']` in the file types array.
+This setting enables to restrict what types of files you want do display based on [file type]({{site.baseurl}}/tinydrive/introduction/#filetypes) categories. For example if your app needs to insert images only then you can specify `['image']` in the file types array.
 
 **Type:** `Array<string>`
 
@@ -156,16 +156,6 @@ tinydrive.pick({
   console.log(result.files);
 });
 ```
-
-### Available file types
-
-The file types are a set of file extensions.
-
-* `document` - doc, xls, ppt, pps, docx, xlsx, pptx, pdf, rtf, txt, key, pages, numbers
-* `audio` - wav, wave, mp3, ogg, oga, ogx, ogm, spx, opus
-* `video` - mp4, m4v, ogv, webm, mov
-* `image` - gif, jpeg, jpg, png, tif, tiff, bmp
-* `archive` - zip
 
 ### `google_drive_client_id`
 

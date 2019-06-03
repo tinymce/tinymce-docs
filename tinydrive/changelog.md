@@ -9,6 +9,14 @@ class: changelog
 
 {% capture changelog %}
 
+## Version 1.3.0 (2019-06-03)
+  * Added new standalone api functions pick, browse, start and upload.
+  * Added new plugin api with functions pick, browse and upload.
+  * Added new target setting to allow rendering inside a specific target element.
+  * Added new video preview functionality.
+  * Added fallback icons for video, zip and audio formats.
+  * Added client side validation of min characters for search field.
+
 ## Version 1.2.1 (2019-04-24)
   * Added new dropbox/google drive icons.
   * Fixed an issue where file selection wouldn't be cleared when navigating to a new directory.

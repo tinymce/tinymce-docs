@@ -52,6 +52,16 @@ Tiny is aware that security is a primary concern when it comes to cloud storage.
 
 Some cloud services for TinyMCE require setting up JWT authentication. This allows verifying that the end users are allowed to access a particular feature. JWT is a common authorization solution for web services and is documented in more detail at the https://jwt.io/ website. For more information, see the [JWT authentication]({{site.baseurl}}/tinydrive/jwt-authentication/) section.
 
+## File types
+
+There is a fixed set of file extensions that you can upload and these are placed in the file type categories below. We constantly expand these sets with new file extensions. We don't allow any file type to be uploaded since some extensions are problematic from a security perspective.
+
+* `document` - doc, xls, ppt, pps, docx, xlsx, pptx, pdf, rtf, txt, key, pages, numbers
+* `audio` - wav, wave, mp3, ogg, oga, ogx, ogm, spx, opus
+* `video` - mp4, m4v, ogv, webm, mov
+* `image` - gif, jpeg, jpg, png, tif, tiff, bmp
+* `archive` - zip
+
 ## Starter projects
 
 To get started quickly and understand how Tiny Drive works, Tiny highly recommends trying one of the starter projects on Github to set up a Tiny Drive instance by following a few simple steps.

@@ -20,7 +20,7 @@ tinymce.init({
             console.log('upload progress', progress);
           }
         }).then(function (result) {
-          var link = editor.dom.createHTML('a', { href: file.url }, editor.dom.encode(file.name));
+          var link = editor.dom.createHTML('a', { href: result.file.url }, editor.dom.encode(result.file.name));
           editor.insertContent(link);
         });
       }

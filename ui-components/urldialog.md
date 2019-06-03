@@ -7,26 +7,32 @@ keywords: dialog urldialog api
 ---
 ## Overview
 
-A URL dialog is a special TinyMCE UI component which loads an external web page inside a dialog (sometimes referred to as `modals`). This differs from the regular dialogs that use supported components to render an interactive dialog inside the application. URL dialogs are useful for very complex use cases, where the supported dialog components cannot be used — for example, a custom file manager that is loaded inside a TinyMCE dialog.
+A URL dialog is a special TinyMCE UI component which loads an external web page inside a dialog (sometimes referred to as `modals`). URL dialogs are useful for very complex use cases, where the supported components for TinyMCE's standard dialogs cannot be used. For example, a custom file manager that is loaded inside a TinyMCE dialog would probably require a URL dialog.
 
-The most basic configuration structure is:
+> Note: [Standard TinyMCE dialogs]({{site.baseurl}}/ui-components/dialog/) should suffice for most use cases, and may be simpler to configure.
+
+### Basic example
+
+The configuration for a basic URL dialog might look like this:
 
 ```js
-const urlDialogConfig = {
+tinymce.activeEditor.windowManager.openUrl({
    title: 'Just a title',
    url: 'http://www.tiny.cloud/example.html'
-}
+});
 ```
 
 ## URL dialog configuration
 
-A URL Dialog configuration has two main parts:
+A URL Dialog configuration has three main parts to match the three main parts of the dialog's UI:
 
-* **Title** This is the title of a dialog.
+* **Title:** The title of the dialog. This will display in the header of the dialog.
 
-* **URL** The external pages URL to load inside the dialog.
+* **URL:** The URL of the external page to load inside the dialog.
 
-### Config options
+* **Buttons: optional -** An array of [footer buttons](#footerbuttons) that are displayed in the dialog's footer.
+
+### Configuration options
 
 | Name    | Value  | Requirement | Description |
 | ------- | ------ | ----------- | ----------- |
@@ -34,64 +40,57 @@ A URL Dialog configuration has two main parts:
 | url     | string | required    | The URL to the external page to load. |
 | width   | number | optional    | The width of the dialog in pixels. |
 | height  | number | optional    | The height of the dialog in pixels. |
-| buttons | UrlDialogButton[] | optional | An optional array of button configurations to render in the footer. See [Footer components](#footercomponents) configuration. |
-| onAction | (api) => void | optional | Function invoked when a custom button is clicked. |
-| onCancel | (api) => void | optional | Function invoked when the dialog is cancelled. |
-| onClose | () => void | optional | Function invoked when the dialog has been closed. |
-| onMessage | (api, data) => void | optional | Function invoked when a message is received from the external page. |
+| buttons | FooterButton[] | optional | An optional array of [footer buttons](#footerbuttons) to render in the footer of the dialog. |
+| onAction | `(dialogApi, details) => void` | optional | Function invoked when a **Custom** type footer button is clicked. |
+| onCancel | `(dialogApi) => void` | optional | Function invoked when the dialog is cancelled. The dialog header's close button and a **Cancel** type footer button invoke this function. |
+| onClose | `() => void` | optional | Function invoked when the dialog is closed. The dialog header's close button, a **Cancel** type footer button and the dialog instance API's `close()` method invoke this function. |
+| onMessage | `(dialogApi, details) => void` | optional | Function invoked when a message is received from the external page. |
 
-### Footer components
+For more information on the `dialogApi` object that is passed to some of the configuration options, see the [URL dialog instance API](#urldialoginstanceapi) documentation.
 
-#### Button
+### Footer buttons
 
-The following configuration is used to create a button inside the dialog footer:
+A **button** is a clickable component that can contain text or an icon. There are two types of buttons (primary and secondary buttons), though the only difference is that they are styled differently. Primary buttons are intended to stand out. The color will depend on the chosen [skin]({{site.baseurl}}/general-configuration-guide/customize-ui/#skins).
 
-```js
-var buttonConfig = {
-  type: 'button',
-  name: string,
-  text: string,
-  icon: string,
-  disabled: boolean,
-  primary: boolean,
-  align: 'start' | 'end'
-}
-```
+#### Configuration
 
-**Name:** The name property on the button is used as an ID attribute to identify the dialog component. For example, when `name: foobutton` is defined and a user clicks on that button, the dialog `onAction()` handler will fire and provide an object containing the name of the dialog component, e.g., `details.name = 'foobutton'`. This will allow developers to create a click handler for **foobutton**.
+| Name | Type | Requirement | Description |
+| ---- | ---- | ----------- | ----------- |
+| type | `'button'` | required | The component type. Must be `'button'`. |
+| text | string | required | Text to display in the button **if `icon` is not specified**. Also used for the button's `title` attribute. |
+| name | string | optional | A identifier for the button. If not specified, the button will be assigned a randomly generated `name`.  |
+| icon | string | optional | Name of the icon to be displayed. Must correspond to an icon in the icon pack. **When configured, the button will display the icon instead of text.** |
+| primary | boolean | optional | Whether to style the button as a primary or secondary button. |
+| disabled | boolean | optional | default: `false` - When `true`, the button will be disabled when the dialog loads. |
+| align | `'end'` or `'start'` | optional | default: `'end'` - When set to `'end'` the button will display on the right-hand side of the dialog. When set to `'start'` the button will display on the left-hand side. |
 
-**Text:** This will be the text displayed on the button. For example, `text: ‘do magic’` will create a button with text **do magic**.
+> Note: Buttons do not support mixing icons and text at the moment.
 
-**Icon:** This will be the name of the icon to be displayed on the button, in place of any text. The name must correspond to an icon in the icon pack. Dialog buttons do not support mixing icons and text at the moment.
+#### Button types and event callbacks
 
-**Disabled:** (Value: Boolean; Default: `False`): When set to `true`, the button will be disabled when the dialog loads.
+The different footer button types will invoke different callbacks when clicked:
 
-**Primary:** (Default: `False`): When set to `true`, the button will be colored to stand out. The color will depend on the chosen [skin]({{site.baseurl}}/general-configuration-guide/customize-ui/#skins).
+* A **Cancel** type button will invoke the `onCancel` and `onClose` callback functions provided in the dialog configuration. These callback functions are also fired when a user clicks the `X` button in the top right of the dialog. **TinyMCE assumes that a dialog will not have multiple Cancel buttons.**
+* A **Custom** type button will invoke the `onAction` callback function provided in the dialog configuration, and pass it the button's `name` in the `details` object. This allows developers to create a click handler for a **Custom** type footer button. See the [Redial example]({{site.baseurl}}/ui-components/dialog/#interactiveexampleusingredialconfigvoid) for an example of how to use this with standard dialogs. A dialog can have multiple **Custom** type buttons.
 
-**Align:** (Default: 'end'): This will define the position of the button in the footer. When set to `end`, the button will be positioned on the right side of the dialog. When set to `start`, the button will be positioned on the left side of the dialog.
+> Note: Unlike [standard dialogs]({{site.baseurl}}/ui-components/dialog/), URL dialogs do not have a **Submit** type footer button, and therefore do not have an `onSubmit` callback.
 
-#### Button types
-
-The **Close** button is pre-wired to abort and close the dialog.
-
-The **Cancel** button dismisses an action request.
-
-The **Custom** button can be used to specify a custom operation.
+See the [URL dialog configuration options](#configurationoptions) documentation for more information on event callbacks.
 
 ## URL dialog instance API
 
-When a URL dialog is created, a dialog instance API is returned. For example, `const instanceApi = editor.windowManager.openUrl(config);`.
+When a URL dialog is created, a dialog instance API is returned. For example, `const instanceApi = editor.windowManager.openUrl(config);`. The URL dialog API instance is also passed to some of the [dialog configuration options](#configurationoptions).
 
-The instance API is a javascript object containing methods attached to the dialog instance. When the dialog is closed, the instance API is destroyed.
+The instance API is a JavaScript object containing methods attached to the dialog instance. When the dialog is closed, the instance API is destroyed.
 
 ### Instance API methods
 
 | Methods | Description |
 |---------|-------------|
-| `block(message: string): void` | Calling `block()` and passing a message string will disable the entire dialog window and show a loading image. This is useful for handling asynchronous data. The message is used for screen reader accessibility. When the data is ready use `unblock()` to unlock the dialog. |
-| `unblock(): void` | Calling `unblock()` will unlock the dialog instance restoring functionality. |
-| `close(): void` | Calling the `close()` method will close the dialog. When closing the dialog, all DOM elements and dialog data are destroyed.  When `open(config)` is called again, all DOM elements and data are recreated from the config. |
-| `sendMessage(data: any): void` | Calling the `sendMessage()` method will attempt to send a message to the external page via `window.postMesssage()`. |
+| `block(message: string) => void` | Calling `block()` and passing a message string will disable the entire dialog window and show a loading image. This is useful for handling asynchronous data. The message is used for screen reader accessibility. When the data is ready use `unblock()` to unlock the dialog. |
+| `unblock() => void` | Calling `unblock()` will unlock the dialog instance restoring functionality. |
+| `close() => void` | Calling the `close()` method will close the dialog. When closing the dialog, all DOM elements and dialog data are destroyed.  When `open(config)` is called again, all DOM elements and data are recreated from the config. |
+| `sendMessage(data) => void` | Calling the `sendMessage()` method will attempt to send a message to the external page via `window.postMesssage()`. |
 
 ## URL dialog messaging
 
@@ -104,19 +103,19 @@ window.parent.postMessage({
 }, '*');
 ```
 
-Similarly, to send messages from TinyMCE back to the external page, the `api.sendMessage()` function can be used to send messages, and then in the external page an event listener can be added to receive the messages:
+Similarly, to send messages from TinyMCE back to the external page, the `sendMessage()` function from the [URL dialog instance API](#urldialoginstanceapi) can be used to send messages, and then in the external page an event listener can be added to receive the messages:
 
 ```js
 window.addEventListener('message', function (event) {
   var data = event.data;
- 
+
   // Do something with the data received here
   console.log('message received from TinyMCE', data);
 });
 
 ```
 
-> Note: When sending a message it is recommended to specify the target origin of where TinyMCE is running, instead of using a wildcard (`'*'`). Similarly, when receiving messages, also validate that `event.origin` matches the origin of where TinyMCE is running. For example, if TinyMCE is running on *http://mysite.com/tinymce.html*, then if `event.origin` doesn't match `http://mysite.com` the message should be ignored.
+> Note: When sending a message it is recommended to specify the target origin of where TinyMCE is running, instead of using a wildcard (`'*'`). Similarly, when receiving messages, check that `event.origin` matches the origin of where TinyMCE is running. For example, if TinyMCE is running on *http://mysite.com/tinymce.html*, then if `event.origin` doesn't match `http://mysite.com` the message should be ignored.
 
 ### Supported message actions
 
@@ -148,11 +147,11 @@ This action is used to set the editors content. The `content` property specifies
 
 This action executes a command inside the editor. The options available for this action are:
 
-**cmd:** The name of the command to be executed inside the editor.
+* `cmd`: The name of the command to be executed inside the editor.
 
-**ui:** An optional boolean to specify if a UI (dialog) should be presented or not.
+* `ui`: An optional boolean to specify if a UI (dialog) should be presented or not.
 
-**value:** An optional value to be used by the command.
+* `value`: An optional value to be used by the command.
 
 ```js
 {
@@ -208,9 +207,9 @@ A custom message is one that contains a `mceAction` not listed in the above-supp
 
 > Note: TinyMCE will ignore all messages received that don't contain a `mceAction` property.
 
-## Example configuration
+## Example
 
-This example shows a very basic toolbar button that opens an external URL inside a 640x640px dialog without any footer. The dialog can be opened by clicking the `{;}` toolbar button.
+This example shows a toolbar button that opens an external URL inside a 640px by 640px dialog without any footer buttons. The dialog can be opened by clicking the `{;}` toolbar button.
 
 {% include codepen.html id="url-dialog" height="300" tab="js" %}
 

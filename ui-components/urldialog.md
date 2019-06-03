@@ -30,7 +30,7 @@ A URL Dialog configuration has three main parts to match the three main parts of
 
 * **URL:** The URL of the external page to load inside the dialog.
 
-* **Buttons: optional -** An array of [footer buttons](#footerbuttons) that are displayed in the dialog's footer.
+* **Buttons:** (Optional) An array of [footer buttons](#footerbuttons) that are displayed in the dialog's footer.
 
 ### Configuration options
 
@@ -40,7 +40,7 @@ A URL Dialog configuration has three main parts to match the three main parts of
 | url     | string | required    | The URL to the external page to load. |
 | width   | number | optional    | The width of the dialog in pixels. |
 | height  | number | optional    | The height of the dialog in pixels. |
-| buttons | FooterButton[] | optional | An optional array of [footer buttons](#footerbuttons) to render in the footer of the dialog. |
+| buttons | FooterButton[] | optional | An array of [buttons](#footerbuttons) to render in the footer of the dialog. |
 | onAction | `(dialogApi, details) => void` | optional | Function invoked when a **Custom** type footer button is clicked. |
 | onCancel | `(dialogApi) => void` | optional | Function invoked when the dialog is cancelled. The dialog header's close button and a **Cancel** type footer button invoke this function. |
 | onClose | `() => void` | optional | Function invoked when the dialog is closed. The dialog header's close button, a **Cancel** type footer button and the dialog instance API's `close()` method invoke this function. |
@@ -57,10 +57,10 @@ A **button** is a clickable component that can contain text or an icon. There ar
 | Name | Type | Requirement | Description |
 | ---- | ---- | ----------- | ----------- |
 | type | `'button'` | required | The component type. Must be `'button'`. |
-| text | string | required | Text to display in the button **if `icon` is not specified**. Also used for the button's `title` attribute. |
-| name | string | optional | A identifier for the button. If not specified, the button will be assigned a randomly generated `name`.  |
+| text | string | required | Text to display in the button if `icon` is not specified. Also used for the button's `title` attribute. |
+| name | string | optional | An identifier for the button. If not specified, the button will be assigned a randomly generated `name`.  |
 | icon | string | optional | Name of the icon to be displayed. Must correspond to an icon in the icon pack. **When configured, the button will display the icon instead of text.** |
-| primary | boolean | optional | Whether to style the button as a primary or secondary button. |
+| primary | boolean | optional | default: `false` - Whether to style the button as a primary or secondary button. |
 | disabled | boolean | optional | default: `false` - When `true`, the button will be disabled when the dialog loads. |
 | align | `'end'` or `'start'` | optional | default: `'end'` - When set to `'end'` the button will display on the right-hand side of the dialog. When set to `'start'` the button will display on the left-hand side. |
 

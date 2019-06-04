@@ -15,7 +15,7 @@ TinyMCE 5.0.6 release adds improvements to the TinyMCE editor to improve the ove
 
 ### Readonly mode
 
-TinyMCE's readonly mode has been extended so that it now works with inline editors. Additionally while the editor is in readonly mode, users can now select and copy content from the editor.
+TinyMCE's readonly mode has been extended so that it now works with inline editors. Additionally the editor has been fixed to allow users to select and copy content while in readonly mode.
 
 ### Image upload tab
 

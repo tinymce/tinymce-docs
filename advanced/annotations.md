@@ -11,9 +11,9 @@ The TinyMCE Annotations API provides the ability to add, modify, and delete anno
 
 The primary value that the Annotations API provides is that it tags each annotation with a unique identifier(uid) accessible via `editor.annotator`. This highlights the annotated content and wraps it in annotation markers. These markers can either stay in the content or be removed on `getContent`, depending on the user configuration (`persistent` setting).
 
-## Using the Annotator Plugin
+## Using the Annotator
 
-Perform the following procedure to set up the TinyMCE Annotation plugin:
+Perform the following procedure to set up the TinyMCE Annotations feature:
 
 ### 1. Configure the Annotate Button
 
@@ -37,7 +37,7 @@ To configure the annotate button on your toolbar:
        
 See [Configure TinyMCE]({{ site.baseurl }}/configure/) for more information on how to configure TinyMCE core.
 
-### 2. Registering the Annotator Plugin
+### 2. Registering the Annotator
 
 The annotator API supports multiple annotation functions. Each annotation function must be registered with the annotator (`editor.annotator`).
 
@@ -62,7 +62,7 @@ This will register an annotation with the name `alpha`. In our example, when an 
 > Note: The data passed through here is the same as the data specified when calling the annotate API. `decorate` is used to turn the annotation data into a document object model (DOM) representation.
 The uid passed through to `decorate` is either the uid field in the data object (if it exists), or a randomly generated uid if it does not. Annotator will be responsible for putting the uid on the span. The user does not need to do that part.
 
-### 3. Making the Plugin Available
+### 3. Making the Annotator Available
 
 For adding the annotate tool to the toolbar that is registered with `alpha` set the value of the toolbar to:
 

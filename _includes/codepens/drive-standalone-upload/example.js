@@ -6,7 +6,7 @@ button.addEventListener('click', function () {
     token_provider: '/your-local/jwt-provider',
     path: '/hello',
     name: 'hello.txt',
-    blob: new Blob('Hello world!'),
+    blob: new Blob(['Hello world!']),
     onprogress: function (progress) {
       percent.innerHTML = Math.round(progress.loaded / progress.total * 100) + '%';
     }

@@ -78,7 +78,7 @@ Another option when using Webpack is to use the [file loader](https://github.com
 
 ```javascript
 require.context(
-  'file?name=[path][name].[ext]&context=node_modules/tinymce!tinymce/skins',
+  'file-loader?name=[path][name].[ext]&context=node_modules/tinymce!tinymce/skins',
   true,
   /.*/
 );

@@ -224,7 +224,7 @@ A **checkbox** is a composite component with a checkbox and a label, and with `o
 {
   type: 'checkbox', // component type
   name: 'checkbox-1', // identifier
-  label: 'Checkbox Label' // text for the lavel
+  label: 'Checkbox Label' // text for the label
 }
 ```
 

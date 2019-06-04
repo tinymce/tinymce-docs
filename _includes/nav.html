@@ -1,11 +1,4 @@
 <ul>
-  <li>
-    <div class="modern-navigation-extra">
-      <a href="https://www.tiny.cloud/get-tiny/"
-         data-marketing="docs-nav-get-tiny">Get TinyMCE</a>
-    </div>
-  </li>
-
 {% for link in include.links %}
   {% capture prefixedLinkUrl %}:{{ include.preceding_address }}{{ link.url }}/{% endcapture %}
   {% capture prefixedPageUrl %}:{{ page.url }}/{% endcapture %}

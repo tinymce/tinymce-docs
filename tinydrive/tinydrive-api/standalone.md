@@ -227,10 +227,6 @@ tinydrive.pick({
 });
 ```
 
-### Demo
-
-{% include codepen.html id="drive-standalone-target" type="tinydrive" %}
-
 ### Standalone api interfaces
 
 Here is a complete api reference as TypeScript types for developers used to TypeScript syntax.

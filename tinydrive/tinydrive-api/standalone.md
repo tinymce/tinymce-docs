@@ -135,7 +135,8 @@ This setting enables specifying the Dropbox API key for integrating dropbox into
 
 ```js
 tinydrive.pick({
-  dropbox_app_key: '<your dropbox app key>'
+  dropbox_app_key: '<your dropbox app key>',
+  token_provider: '/your-local/jwt-provider'
 }).then((result) => {
   console.log(result.files);
 });
@@ -151,7 +152,8 @@ This setting enables to restrict what types of files you want do display based o
 
 ```js
 tinydrive.pick({
-  filetypes: ['image']
+  filetypes: ['image'],
+  token_provider: '/your-local/jwt-provider'
 }).then((result) => {
   console.log(result.files);
 });
@@ -167,7 +169,8 @@ This setting enables specifying the Google Drive client ID for integrating Googl
 
 ```js
 tinydrive.pick({
-  google_drive_client_id: '<your google drive client id>'
+  google_drive_client_id: '<your google drive client id>',
+  token_provider: '/your-local/jwt-provider'
 }).then((result) => {
   console.log(result.files);
 });
@@ -183,7 +186,8 @@ This setting enables specifying the Google Drive API key for integrating Google 
 
 ```js
 tinydrive.pick({
-  google_drive_key: '<your google drive api key>'
+  google_drive_key: '<your google drive api key>',
+  token_provider: '/your-local/jwt-provider'
 }).then((result) => {
   console.log(result.files);
 });
@@ -199,7 +203,8 @@ This setting enables constraining the width/height of uploaded images. When this
 
 ```js
 tinydrive.pick({
-  max_image_dimension: 1024
+  max_image_dimension: 1024,
+  token_provider: '/your-local/jwt-provider'
 }).then((result) => {
   console.log(result.files);
 });
@@ -207,7 +212,7 @@ tinydrive.pick({
 
 ### `target`
 
-This setting enables you to render tinydrive within a target element by using a css selector.
+This setting enables you to render tinydrive within a target element by using a css selector. If the container has display: flex then the container will be filled with the Tiny Drive UI this could be useful if you want to position the Tiny Drive UI inside your web applications interface.
 
 **Type:** `String`
 
@@ -215,11 +220,16 @@ This setting enables you to render tinydrive within a target element by using a 
 
 ```js
 tinydrive.pick({
-  target: '.my-custom-div'
+  target: '.my-custom-div',
+  token_provider: '/your-local/jwt-provider'
 }).then((result) => {
   console.log(result.files);
 });
 ```
+
+### Demo
+
+{% include codepen.html id="drive-standalone-target" type="tinydrive" %}
 
 ### Standalone api interfaces
 

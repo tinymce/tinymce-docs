@@ -58,7 +58,7 @@ These settings are available for the [tinydrive.pick](#tinydrivepick) / [tinydri
 
 ### `filetypes`
 
-This setting enables to restrict what types of files you want do display based on [file type]({{site.baseurl}}/tinydrive/introduction/#filetypes) categories. For example if your app needs to insert images only then you can specify `['image']` in the file types array.
+This setting enables restricting what types of files you want do display based on [file type]({{site.baseurl}}/tinydrive/introduction/#filetypes) categories. For example if your app needs to insert images only then you can specify `['image']` in the file types array.
 
 **Type:** `Array<string>`
 

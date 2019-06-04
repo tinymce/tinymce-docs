@@ -6,7 +6,7 @@ description: Description of the Tiny Drive standalone api
 keywords: tinydrive api
 ---
 
-Tiny Drive can be used as a generic file manager separate from tinymce this is referred to as standalone mode.
+Tiny Drive can be used as a generic file manager separate from TinyMCE this is referred to as standalone mode.
 
 ## Loading the standalone api script
 
@@ -144,7 +144,7 @@ tinydrive.pick({
 
 ### `filetypes`
 
-This setting enables to restrict what types of files you want do display based on [file type]({{site.baseurl}}/tinydrive/introduction/#filetypes) categories. For example if your app needs to insert images only then you can specify `['image']` in the file types array.
+This setting enables restricting what types of files you want do display based on [file type]({{site.baseurl}}/tinydrive/introduction/#filetypes) categories. For example if your app needs to insert images only then you can specify `['image']` in the file types array.
 
 **Type:** `Array<string>`
 
@@ -212,7 +212,7 @@ tinydrive.pick({
 
 ### `target`
 
-This setting enables you to render tinydrive within a target element by using a css selector. If the container has display: flex then the container will be filled with the Tiny Drive UI this could be useful if you want to position the Tiny Drive UI inside your web applications interface.
+This setting enables you to render Tiny Drive within a target element by using a css selector. If the container has display: flex then the container will be filled with the Tiny Drive UI this could be useful if you want to position the Tiny Drive UI inside your web applications interface.
 
 **Type:** `String`
 

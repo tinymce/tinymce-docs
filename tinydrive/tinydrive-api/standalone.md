@@ -218,13 +218,17 @@ This setting enables you to render Tiny Drive within a target element by using a
 
 #### Example
 
-```js
+```html
+<script>
 tinydrive.pick({
   target: '.my-custom-div',
   token_provider: '/your-local/jwt-provider'
 }).then((result) => {
   console.log(result.files);
 });
+</script>
+<div class="my-custom-div" style="display: flex; width: 800px; height: 600px">
+</div>
 ```
 
 ### Standalone api interfaces

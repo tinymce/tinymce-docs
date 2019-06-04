@@ -15,7 +15,7 @@ Bootstrap blocks all focus events on contents within the dialog. Add this script
 ```js
 // Prevent Bootstrap dialog from blocking focusin
 $(document).on('focusin', function(e) {
-  if ($(e.target).closest(".mce-window").length) {
+  if ($(e.target).closest(".tox-tinymce-aux, .moxman-window, .tam-assetmanager-root").length) {
     e.stopImmediatePropagation();
   }
 });

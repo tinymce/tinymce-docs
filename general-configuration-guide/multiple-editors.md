@@ -15,7 +15,7 @@ The following example breaks the page into two separate editable areas. Each are
 <!DOCTYPE html>
 <html>
 <head>
-  <script src="{{ site.cdnurl }}"></script>
+  <script src="{{ site.cdnurl }}" referrerpolicy="origin"></script>
   <script type="text/javascript">
   tinymce.init({
     selector: '.myeditablediv',
@@ -48,7 +48,7 @@ The following example loads each editable area with a unique configuration of Ti
 <!DOCTYPE html>
 <html>
 <head>
-  <script src="{{ site.cdnurl }}"></script>
+  <script src="{{ site.cdnurl }}" referrerpolicy="origin"></script>
   <script type="text/javascript">
   tinymce.init({
     selector: '#myeditable-h1',

@@ -23,7 +23,7 @@ TinyMCE 5.0.6 adds a new configuration option `image_uploadtab` that can be used
 
 For more information on `image_uploadtab`, refer to the [documentation]({{site.baseurl}}/plugins/image/#image_uploadtab).
 
-### Wordcount plugin api
+### Word Count plugin api
 
 TinyMCE 5.0.6 adds a new API for the Word Count plugin. The API exposes the functionality used by the Word Count dialog and allows developers to retrieve details about how many words or characters are used inside the editor content.
 

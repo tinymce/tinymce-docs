@@ -6,7 +6,7 @@ Use the [toolbar]({{site.baseurl}}/configure/editor-appearance/#toolbar) option 
 
 **Type: String**
 
-> **Note:** The toolbar drawer will not be applicable to [multiple toolbars]({{site.baseurl}}/configure/editor-appearance/#usingmultipletoolbars) or when using the [toolbar(n)]({{site.baseurl}}/configure/editor-appearance/#toolbarn) option.
+> **Note:** The toolbar drawer is not available when using [multiple toolbars]({{site.baseurl}}/configure/editor-appearance/#usingmultipletoolbars) or the [toolbar(n)]({{site.baseurl}}/configure/editor-appearance/#toolbarn) option.
 
 ## Settings
 

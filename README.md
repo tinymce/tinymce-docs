@@ -79,6 +79,39 @@ Navigate to [http://127.0.0.1:4000/](http://127.0.0.1:4000/)
     ./_scripts/api-reference-local.sh <tinymce src folder path>
     ./_scripts/serve.sh
 
+# Codepens
+
+Codepens can be created using the "codepen.html" include, e.g:
+
+    {% include codepen.html id="basic-example" %}
+    
+There are several options for this include file - please see codepen.html for details.
+
+## Overriding the tinymce URL in codepens
+
+All codepens usually get their tinymce.min.js URL from the `codepen_url` setting in the _config.yml file. 
+However, there are some instances where you wish to override this, e.g.
+
+ - You want to push/deploy a branch for a new feature that's only on the 'dev' channel.
+ - You want to run the site locally, but test out the codepens in a different channel.
+
+To help with this, there are two mechanisms for overriding the tinymce.min.js URL.
+
+ 1. Set `codepen_url` in `_config-local-override.yml`.  
+    - This will override the `codepen_url` setting in `config.yml`. 
+    - This file is *not* intended to be checked in. 
+    - This option changes the URL for all codepens.
+    
+ 2. Set the `tinymce_url_override` setting when including `codepen.html`.
+    - This is useful if you want to deploy the develop branch for a feature only in the 'dev' channel.
+    - This only overrides the URL for one codepen.
+    - Don't use this in more than one codepen on a page.
+    - Don't use this long-term - when the feature is fully rolled-out, use the standard channel.
+    - See `codepen.html` for details.
+    
+Note: Jekyll is pretty bad at automatically reloading code when you're playing with include files.
+Sometimes you need to restart the server.  
+
 ## Contributing to TinyMCE
 
 If you would like to contribute to the TinyMCE project please read 

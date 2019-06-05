@@ -8,6 +8,10 @@ params:
 id (required). Picks folder for files, and used in css classes.
 tab (optional - default to "run"), "run", "html", "css" or "js". The first tab to open.
 height (optional - no default). min-height in pixels.
+tinymce_url_override (optional - no default).
+  - Override the full tinymce.min.js URL, including api key.
+  - Useful for testing things that aren't in the main channel, yet.
+  - Remove this setting once the feature is in the main channel.
 
 Files required under _includes/codepens/id/
 
@@ -23,10 +27,15 @@ when the file is present the codepen js will display the contents of example.js,
 Useful for when we want to hide actual api-keys or tokens: 'example-token'.
 When the example.js file is present, the link to the external codepen site is disabled
 
+
+
 {% endcomment %}
 
-
+{% if include.tinymce_url_override %}
+  <script src='{{ include.tinymce_url_override }}'></script>
+{% else %}
 {% include tinymce-script-tag-once.html %}
+{% endif %}
 
 {% capture codepen_html %}
 {% include codepens/{{ include.id }}/index.html %}

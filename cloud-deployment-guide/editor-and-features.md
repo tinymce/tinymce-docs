@@ -18,11 +18,21 @@ All Tiny Cloud accounts include a free, pre-configured cloud image proxy service
 
 Insert the TinyMCE editor code into the application to load TinyMCE for the first time. The code inserting is done by adding the following script tag into your app, or in the case of a web page the `<head>` of the page:
 
-The following example adds a script tag into the application that inserts the code. Use the `<head>` of the page on a web page.
+The following example adds a script tag into the application that inserts the code. Use the `<head>` of the page on a web page. Be sure to substitute 'no-api-key' with your api key.
 
 ```js
-<script src="{{ site.cdnurl }}?apiKey=your_API_key"></script>
+<script src="{{ site.cdnurl }}" referrerpolicy="origin"></script>
 ```
+
+||Value|Description|
+|---|---|---|
+|1|no-api-key|Replace with your api key|
+|2|origin=|A `referrerpolicy` specifies how much of the current page's URL is sent in the `Referer` header when the browser fetches page resources (for example, the TinyMCE editor). The use of the `Referer` header ensures API keys are only used on domains registered to their owners. We only care about the domain portion however (similar to the operation of `Origin` header), so for improved performance and privacy always set the `referrerpolicy` to `origin` when requesting Tiny resources.|
+
+
+
+![Script Tag Description]({{ site.baseurl }}/images/scripttag.png)
+
 
 ### Step 2: Load, customize and interact with TinyMCE
 
@@ -67,7 +77,7 @@ Ensure that the following URLs are accessible via this proxy if the network has 
 Ensure the `tiny-api-key` and `tinymce-api-key` headers are retained while requesting the list of above URLs.
 
 ### Step 5: Specifying a translation
-[Download a language pack](https://www.tinymce.com/i18n) to enable a language other than English (US). [Specify its location]({{ site.baseurl }}/configure/localization/#language_url) with the `language_url` configuration option.
+[Download a language pack](https://www.tiny.cloud/get-tiny/language-packages/) to enable a language other than English (US). [Specify its location]({{ site.baseurl }}/configure/localization/#language_url) with the `language_url` configuration option.
 
 ## Migrating from a self-hosted environment to Tiny Cloud
 
@@ -80,7 +90,7 @@ Migrating from a self-hosted environment to Tiny Cloud is easy. Remove the exist
 Replace the script tag with the following:
 
 ```js
-<script src="{{ site.cdnurl }}?apiKey=your_API_key"></script>
+<script src="{{ site.cdnurl }}" referrerpolicy="origin"></script>
 ```
 
 ### Step 2: Update custom plugin paths

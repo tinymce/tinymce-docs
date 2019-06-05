@@ -17,6 +17,37 @@ tinymce.init({
 });
 ```
 
+### Adding toolbar group labels
+
+To specify labels to the grouped controls that appear on TinyMCE's toolbar, the `toolbar` option should be provided with an array of objects with `name` and `items` as object properties. The `name` should be a string value that will be set as the `title` attribute on the `div` containing the toolbar group. The `items` should be an array of strings that indicate the controls that should appear within the particular toolbar group.
+
+**Type:** `Array`
+
+##### Example
+
+```js
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  toolbar: [
+    {
+      name: 'history', items: [ 'undo', 'redo' ]
+    },
+    {
+      name: 'styles', items: [ 'styleselect' ]
+    },
+    {
+      name: 'formatting', items: [ 'bold', 'italic']
+    },
+    {
+      name: 'alignment', items: [ 'alignleft', 'aligncenter', 'alignright', 'alignjustify' ]
+    },
+    {
+      name: 'indentation', items: [ 'outdent', 'indent' ]
+    }
+  ];
+});
+```
+
 ### Disabling the toolbar
 
 To disable the toolbar, the toolbar option should be provided a boolean value of `false`.

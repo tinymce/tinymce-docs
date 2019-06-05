@@ -3,7 +3,7 @@
 Include this line of code in the `<head>` of your HTML page:
 
 ```html
-<script src="{{ site.cdnurl }}"></script>
+<script src="{{ site.cdnurl }}" referrerpolicy="origin"></script>
 ```
 
 ### Step 2: Initialize TinyMCE as part of a web form
@@ -18,7 +18,7 @@ In this example, let's replace `<textarea id='mytextarea'>` with a TinyMCE edito
 <!DOCTYPE html>
 <html>
 <head>
-  <script src="{{ site.cdnurl }}"></script>
+  <script src="{{ site.cdnurl }}" referrerpolicy="origin"></script>
   <script type="text/javascript">
   tinymce.init({
     selector: '#mytextarea'

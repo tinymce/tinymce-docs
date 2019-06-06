@@ -4,7 +4,6 @@ title: Premium Skins and Icon Packs
 title_nav: Premium Skins and Icon Packs
 description: Quickly give TinyMCE a new look.
 keywords: skin skins icon icons material bootstrap customize theme
-sitemap: false
 ---
 
 The Premium Skins and Icon Packs lets you quickly give TinyMCE a new look. Just choose one of our pre-made skins and icon packs.
@@ -23,7 +22,7 @@ tinymce.init({
 });
 ```
 
-Available values for skins:
+Available values for [skins]({{site.baseurl}}/configure/editor-appearance/#skin):
 
 - material-classic
 - material-outline
@@ -33,7 +32,7 @@ Available values for skins:
 - small
 - jam
 
-Available valuse for content_css:
+Available values for [content_css]({{site.baseurl}}/configure/content-appearance/#content_css):
 
 - material-classic
 - material-outline

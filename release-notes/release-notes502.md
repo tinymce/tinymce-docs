@@ -24,7 +24,7 @@ The new TinyMCE 5.0.2 editor has the ability to add checklists to the content. T
 
 For more information on **Checklist** refer to the full [documentation]({{site.baseurl}}/plugins/checklist/).
 
-There is also a demo provided to explore the **Checklist** capabilities [here](https://www.tiny.cloud/docs/demo/checklist/).
+There is also a demo provided to explore the **Checklist** capabilities [here]({{site.baseurl}}/demo/checklist/).
 
 ## Updates and enhancements
 

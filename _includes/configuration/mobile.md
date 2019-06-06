@@ -1,6 +1,6 @@
 ## mobile
 
-This option allows you specify an alternative config that will extend the existing desktop config when the editor is loaded on a mobile device. This gives you the flexibility to override settings specifically for [mobile]({{ site.baseurl }}/docs/mobile) and really customize the mobile experience.
+This option allows you specify an alternative config that will extend the existing desktop config when the editor is loaded on a mobile device. This gives you the flexibility to override settings specifically for [mobile]({{ site.baseurl }}/mobile) and really customize the mobile experience.
 
 **Type:** `Object`
 

@@ -68,7 +68,7 @@ There are two ways to access the Permanent Pen properties:
 
 #### From the menubar
 
-Add the Permanent pen properties option to the menu bar with the [menu]({{site.baseurl}}/docs/configure/editor-appearance/#menu) configuration.
+Add the Permanent pen properties option to the menu bar with the [menu]({{site.baseurl}}/configure/editor-appearance/#menu) configuration.
 
 ```js
 tinymce.init({

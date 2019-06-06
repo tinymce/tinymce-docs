@@ -75,7 +75,7 @@ Use the URL query parameters to specify the version of each premium plugin. This
 
 #### Tiny Drive
 
-* [Developer documentation]({{ site.baseurl }}/plugins/drive/)
+* [Developer documentation]({{ site.baseurl }}/plugins/tinydrive/)
 * [Supported versions](https://plugins.tinymce.com/versions/tinydrive)
 
 ##### Example
@@ -86,7 +86,7 @@ Use the URL query parameters to specify the version of each premium plugin. This
 
 #### Comments 2.0
 
-* [Developer documentation]({{ site.baseurl }}/plugins//comments/)
+* [Developer documentation]({{ site.baseurl }}/plugins/comments/)
 * [Supported versions](https://plugins.tinymce.com/versions/tinycomments)
 
 ##### Example
@@ -214,7 +214,7 @@ The "SDK" version lets the TinyMCE Plugin Manager know that you're not using Tin
 
 #### Tiny Drive
 
-* [Developer documentation]({{ site.baseurl }}/plugins/drive/)
+* [Developer documentation]({{ site.baseurl }}/plugins/tinydrive/)
 
 ##### Example
 
@@ -224,7 +224,7 @@ The "SDK" version lets the TinyMCE Plugin Manager know that you're not using Tin
 
 #### Comments 2.0
 
-* [Developer documentation]({{ site.baseurl }}/plugins//comments/)
+* [Developer documentation]({{ site.baseurl }}/plugins/comments/)
 
 ##### Example
 

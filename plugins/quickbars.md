@@ -115,4 +115,4 @@ tinymce.init({
 ### Related configuration options
 
 * [quickbars_insert_toolbar]({{ site.baseurl }}/configure/editor-appearance/#quickbars_insert_toolbar)
-* [quickbars_selection_toolbar]({{ site.baseurl }}configure/editor-appearance/#quickbars_selection_toolbar)
+* [quickbars_selection_toolbar]({{ site.baseurl }}/configure/editor-appearance/#quickbars_selection_toolbar)

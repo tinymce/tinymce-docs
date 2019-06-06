@@ -175,4 +175,4 @@ To opt out of using TinyMCE cloud you have to make TinyMCE globally available yo
 
 #### A note about integrations
 
-> Note:  We are pleased to provide integrations/code guidance to help you build great products with TinyMCE. If you have queries about this integration, please join the [TinyMCE Community](https://community.tiny.cloud).
+> Note:  We are pleased to provide integrations/code guidance to help you build great products with TinyMCE. If you have queries about this integration, please join the [TinyMCE Community](https://community.tiny.cloud/).

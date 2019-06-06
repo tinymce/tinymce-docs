@@ -208,4 +208,4 @@ Following step by step guide outlines the process of loading TinyMCE and TinyMCE
 
 #### A note about integrations
 
-> Note:  We are pleased to provide integrations/code guidance to help you build great products with TinyMCE. If you have queries about this integration, please join the [TinyMCE Community](https://community.tiny.cloud).
+> Note:  We are pleased to provide integrations/code guidance to help you build great products with TinyMCE. If you have queries about this integration, please join the [TinyMCE Community](https://community.tiny.cloud/).

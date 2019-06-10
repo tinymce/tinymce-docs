@@ -86,6 +86,27 @@ tinymce.init({
 });
 ```
 
+### `imagetools_fetch_image`
+
+This option can be used to define a custom fetch function, which provides another way to access images in complex situations. The function will be passed the HTML element of the image to be fetched and should return a `Blob` containing the content.
+
+**Type:** `Function`
+
+##### Example
+
+```js
+tinymce.init({
+  selector: "textarea",  // change this value according to your HTML
+  toolbar: "image",
+  plugins: "image imagetools",
+  imagetools_fetch_image: function (img) {
+    // Fetch the image and return a blob containing the image content
+    ...
+    return new Blob(...);
+  }
+});
+```
+
 ### `imagetools_proxy`
 
 Another way of getting images across domains is using local server-side proxy. Proxy is basically a script, that will retrieve remote image and pipe it back to TinyMCE, as if it was local. Example of such proxy (written in PHP) can be found below.

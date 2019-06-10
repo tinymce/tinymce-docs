@@ -39,20 +39,34 @@ tinymce.init({
 });
 ```
 
+### CSS
+
+To make the embeddable snippets display correctly on your site, be sure to add the required [summary card CSS]({{site.baseurl}}/enterprise/embed-media/mediaembed-server-integration/#summarycards).
+
 ## Usage
 
 The plugin can be used in two ways, either by simply entering a URL on an empty line and pressing the enter key - or by entering the URL into the media plugin's dialog window. Either way the URL will be handled by the service backend and the returned code will be embedded into the editor.
 
 ## Configuration Options
 
+### `mediaembed_inline_styles`
+
+This optional setting will inline all styles, instead of using CSS classes, when rendering the embedded snippet. This is useful when the additional CSS classes can't be added to your site. Defaults to `false`.
+
+**Type:** `Boolean`
+
 ### `mediaembed_service_url`
 
 This setting specifies the URL to the service that will handle your requests and return the embeddable snippets used by the **Media Embed** plugin. Please follow these [instructions]({{site.baseurl}}/enterprise/server/#step6setupeditorclientinstancestousetheserver-sidefunctionality) to configure the **WAR** file that you will get as a part of your [premium TinyMCE plugin](https://www.tinymce.com/pricing/) subscription.
-This option is not required for [TinyMCE Cloud]({{ site.baseurl }}/cloud-deployment-guide/editor-and-features/).
+This option is not required for [TinyMCE Cloud]({{site.baseurl}}/cloud-deployment-guide/editor-and-features/).
+
+**Type:** `String`
 
 ### `mediaembed_max_width`
 
 This optional setting specifies a maximum width in pixels of the embedded content. Defaults to `650`.
+
+**Type:** `Number`
 
 ## Downloading Enhanced Media Embed plugin
 

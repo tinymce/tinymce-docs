@@ -88,7 +88,7 @@ tinymce.init({
 
 ### `imagetools_fetch_image`
 
-This option can be used to define a custom fetch function, which provides another way to access images in complex situations. The function will be passed the HTML element of the image to be fetched and should return a `Blob` containing the content.
+This option can be used to define a custom fetch function, which provides another way to access images in complex situations. The function will be passed the HTML element of the image to be fetched and should return a `Promise` containing a `Blob` representation of the image.
 
 **Type:** `Function`
 
@@ -100,9 +100,11 @@ tinymce.init({
   toolbar: "image",
   plugins: "image imagetools",
   imagetools_fetch_image: function (img) {
-    // Fetch the image and return a blob containing the image content
-    ...
-    return new Blob(...);
+    return new tinymce.util.Promise(function (resolve) {
+      // Fetch the image and return a blob containing the image content
+      ...
+      resolve(new Blob(...));
+    });
   }
 });
 ```

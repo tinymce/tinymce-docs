@@ -16,6 +16,7 @@ class: changelog
   * Added new video preview functionality.
   * Added fallback icons for video, zip and audio formats.
   * Added client side validation of min characters for search field.
+  * Fixed bug where IE 11 would render the toolbar icons at incorrect positions.
 
 ## Version 1.2.1 (2019-04-24)
   * Added new dropbox/google drive icons.

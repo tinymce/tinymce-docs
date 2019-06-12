@@ -41,7 +41,7 @@ tinymce.init({
 
 ### CSS
 
-To make the embeddable snippets display correctly on your site, be sure to add the required [summary card CSS]({{site.baseurl}}/enterprise/embed-media/mediaembed-server-integration/#summarycards).
+To make the embeddable snippets display correctly on your site, be sure to add the required [summary card]({{site.baseurl}}/enterprise/embed-media/mediaembed-server-integration/#summarycards) CSS.
 
 ## Usage
 

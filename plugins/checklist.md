@@ -17,7 +17,7 @@ The **Checklist** plugin helps the user keep track of all required actions by cr
 
 In the TinyMCE 5 editor, checklists are presented as lists with small checkboxes on the left hand side of the list items. After the item has been completed, a small tick or check mark is drawn in the box by clicking on it.
 
-**Checklist** is a premium plugin from Tiny. Please see the [Premium features](https://www.tiny.cloud/docs/enterprise/tiny-comments/) section for all the buying options.
+**Checklist** is a premium plugin from Tiny. Please see the [Premium features]({{site.baseurl}}/enterprise/tiny-comments/) section for all the buying options.
 
 There is also a demo provided to explore the **Checklist** capabilities [here]({{site.baseurl}}/demo/checklist/).
 
@@ -25,7 +25,7 @@ Once you have obtained the **Checklist** plugin, refer to the following instruct
 
 ### Configuring the Checklist toolbar button
 
-Use the following script to add the **Checklist** [toolbar button](https://www.tiny.cloud/docs/ui-components/toolbarbuttons/):
+Use the following script to add the **Checklist** [toolbar button]({{site.baseurl}}/ui-components/toolbarbuttons/):
 
 ```js
 tinymce.init({

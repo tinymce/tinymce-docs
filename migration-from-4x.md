@@ -21,7 +21,7 @@ To serve TinyMCE 5 from the cloud, include this in your html page. Substitute 'n
 <script src="{{ site.cdnurl }}" referrerpolicy="origin"></script>
 ```
 
-To serve the latest nightlies and testing builds refer to the [cloud deployment guide](/cloud-deployment-guide/editor-and-features/)
+To serve the latest nightlies and testing builds refer to the [cloud deployment guide]({{site.baseurl}}/cloud-deployment-guide/editor-and-features/)
 
 ```js
 <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5-dev/tinymce.min.js" referrerpolicy="origin"></script>
@@ -147,7 +147,7 @@ This will provide a similar but improved [distraction-free]({{site.baseurl}}/gen
 
 #### Modern
 
-The Modern theme is no longer supported in TinyMCE 5.0.  The modern theme's UI library [`tinymce.ui.*`](https://www.tiny.cloud/docs/api/tinymce.ui/) has also been deleted. This change may impact integrations depending upon the [level of customization]({{site.baseurl}}/migration-from-4x/#initialization).
+The Modern theme is no longer supported in TinyMCE 5.0.  The modern theme's UI library [`tinymce.ui.*`](https://www.tiny.cloud/docs-4x/api/tinymce.ui/) has also been deleted. This change may impact integrations depending upon the [level of customization]({{site.baseurl}}/migration-from-4x/#initialization).
 
 > Note: For support related issues such as problems while migrating and a workaround, please contact [support](https://support.tiny.cloud/hc/en-us/requests/new). Alternatively, track developer preview issues on GitHub, [here](https://github.com/tinymce/tinymce/labels/5.x).
 
@@ -226,7 +226,7 @@ For more information on how these methods have changed, see [docs]({{site.baseur
 
 ### Removed toolbar button types
 
-[Listbox](https://www.tiny.cloud/docs/demo/custom-toolbar-listbox/) is no longer a supported toolbar button type in TinyMCE 5.0. Though listbox has been removed, any functionality provided by custom listbox toolbar buttons can be retained by switching to a different kind of toolbar button using the new methods. The recommended toolbar button type to switch to is the **Split** button.
+[Listbox](https://www.tiny.cloud/docs-4x/demo/custom-toolbar-listbox/) is no longer a supported toolbar button type in TinyMCE 5.0. Though listbox has been removed, any functionality provided by custom listbox toolbar buttons can be retained by switching to a different kind of toolbar button using the new methods. The recommended toolbar button type to switch to is the **Split** button.
 
 ### Toolbar configuration differences between TinyMCE 4.x and TinyMCE 5.0:
 
@@ -503,7 +503,7 @@ For more information on Context Menus, see the [docs]({{site.baseurl}}/ui-compon
 
 ### Custom context forms
 
-ContextForm consists of an input field and a series of related buttons. Context forms can be shown wherever a context toolbar can be displayed. Also, when a context form is registered containing a `launch` configuration, a special context toolbar button with name **\`form:${name}\`** is registered which will launch that particular context form. ContextForms are a generalization of the `Insert Link` form that existed in the original [inlite](https://www.tiny.cloud/docs/themes/inlite/#quicklink) theme from TinyMCE 4.
+ContextForm consists of an input field and a series of related buttons. Context forms can be shown wherever a context toolbar can be displayed. Also, when a context form is registered containing a `launch` configuration, a special context toolbar button with name **\`form:${name}\`** is registered which will launch that particular context form. ContextForms are a generalization of the `Insert Link` form that existed in the original [inlite](https://www.tiny.cloud/docs-4x/themes/inlite/#quicklink) theme from TinyMCE 4.
 
 ## Plugins
 
@@ -540,7 +540,7 @@ These features have either changed or have been deleted in TinyMCE 5.0.
 | --------------- |  -------------- |
 | [ContextMenu](https://www.tiny.cloud/docs/plugins/contextmenu/) | New API. See [docs]({{site.baseurl}}/ui-components/contextmenu/). |
 | [ColorPicker](https://www.tiny.cloud/docs/plugins/colorpicker/) | Moved to the core. See [docs]({{site.baseurl}}/configure/content-appearance/#color_picker}}). |
-| [Text Color](https://www.tiny.cloud/docs/plugins/textcolor/#textcolor_rows) | The `textcolor` plugin was removed and this setting is not required in TinyMCE 5.0. |
+| [Text Color](https://www.tiny.cloud/docs/plugins/textcolor/) | The `textcolor` plugin was removed and this setting is not required in TinyMCE 5.0. |
 
 ### Table
 
@@ -568,5 +568,5 @@ The table below shows UI configurations that have been removed. They are general
 | pack | Emulates flex pack | Use CSS stylesheets for custom styling |
 | no-wrap | Emulates CSS no line wrap | Use CSS stylesheet for custom styling |
 
-Please see the [TinyMCE 4.x docs](https://www.tiny.cloud/docs/) for more information on the above settings.
+Please see the [TinyMCE 4.x docs](https://www.tiny.cloud/docs-4x/) for more information on the above settings.
 

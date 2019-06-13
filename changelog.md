@@ -8,6 +8,21 @@ class: changelog
 
 {% capture changelog %}
 
+## Version 5.0.6 May 22, 2019
+* Added `icons_url` editor settings to enable icon packs to be loaded from a custom url.
+* Added `image_uploadtab` editor setting to control the visibility of the upload tab in the image dialog.
+* Added new api endpoints to the wordcount plugin and improved character count logic.
+* Changed plugin, language and icon loading errors to log in the console instead of a notification.
+* Fixed the textpattern plugin not working with fragmented text.
+* Fixed various toolbar drawer accessibility issues and added an animation.
+* Fixed issues with selection and ui components when toggling readonly mode.
+* Fixed so readonly mode works with inline editors.
+* Fixed docked inline toolbar positioning when scrolled.
+* Fixed initial value not being set on bespoke select in quickbars and toolbar drawer.
+* Fixed so that nbsp entities aren't trimmed in white-space: pre-line elements.
+* Fixed `mceInsertLink` command inserting spaces instead of url encoded characters.
+* Fixed text content floating on top of dialogs in IE11.
+
 ## Version 5.0.5 May 9, 2019
 * Added menu items to match the **forecolor/backcolor** toolbar buttons.
 * Added default directionality based on the configured language.

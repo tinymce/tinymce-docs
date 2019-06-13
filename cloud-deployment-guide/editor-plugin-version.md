@@ -86,7 +86,7 @@ Use the URL query parameters to specify the version of each premium plugin. This
 
 #### Comments 2.0
 
-* [Developer documentation]({{ site.baseurl }}/plugins//comments/)
+* [Developer documentation]({{ site.baseurl }}/plugins/comments/)
 * [Supported versions](https://plugins.tinymce.com/versions/tinycomments)
 
 ##### Example
@@ -224,7 +224,7 @@ The "SDK" version lets the TinyMCE Plugin Manager know that you're not using Tin
 
 #### Comments 2.0
 
-* [Developer documentation]({{ site.baseurl }}/plugins//comments/)
+* [Developer documentation]({{ site.baseurl }}/plugins/comments/)
 
 ##### Example
 

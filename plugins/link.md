@@ -47,15 +47,16 @@ tinymce.init({
 ```
 ### `link_assume_external_targets`
 
-This option allows you to set whether TinyMCE should prompt the user to prepend a `http://` prefix if the supplied link does not already contain a protocol prefix.
+Set whether TinyMCE should prepend a `http://` prefix if the supplied URL does not contain a protocol prefix.
 
-With the default setting the user will only be prompted to prepend `http://` if the url entered starts with `www`, all other urls without a protocol will be added without prompt. With the setting set to `true` all urls will be assumed to be external and the user will be prompted on all urls.
-
-**Type:** `Boolean`
+- `false`: users are prompted to prepend `http://` when the URL entered starts with `www` and does not have a protocol. Other URLs are added without prompt.
+- `true`: URLs are assumed to be external. Users are prompted to prepend a `http://` prefix when the protocol is not specified.
+- `'http'`: URLs are assumed to be external. URLs without a protocol prefix are prepended a `http://` prefix.
+- `'https'`: URLs are assumed to be external. URLs without a protocol prefix are prepended a `https://` prefix.
 
 **Default Value:** `false`
 
-**Possible Values:** `true`, `false`
+**Possible Values:** `true`, `false`, `'http'`, `'https'`
 
 ##### Example
 

@@ -222,7 +222,7 @@ The following example is a walkthrough of a basic TinyMCE configuration.
 <!DOCTYPE html>
 <html>
 <head>
-  <script type="text/javascript" src='{{ site.cdnurl }}'></script>
+  <script type="text/javascript" src='{{ site.cdnurl }}' referrerpolicy="origin"></script>
   <script type="text/javascript">
   tinymce.init({
     selector: '#myTextarea',

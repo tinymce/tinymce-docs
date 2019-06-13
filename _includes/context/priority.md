@@ -1,5 +1,5 @@
 
-There are two settings that determine determine the priority: `predicate` and `scope`. The priority system mirrors the old [inlite](https://www.tiny.cloud/docs/themes/inlite/#quicklink) theme from TinyMCE 4. The `predicate` is a function that takes in the current context position and returns a boolean. The `scope` is either `node` or `editor`. The whole priority process works as follows:
+There are two settings that determine determine the priority: `predicate` and `scope`. The priority system mirrors the old [inlite](https://www.tiny.cloud/docs-4x/themes/inlite/#quicklink) theme from TinyMCE 4. The `predicate` is a function that takes in the current context position and returns a boolean. The `scope` is either `node` or `editor`. The whole priority process works as follows:
 
 1. The current cursor position is stored to use as the first current context position.
 2. For this current context position, each predicate with `scope: node` in the registered ContextForm is called. Currently, the order they are checked-in cannot be specified. The first predicate that passes will `win` and that ContextForm will be shown.

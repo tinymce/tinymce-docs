@@ -17,6 +17,16 @@
         z-index: 1;
     }
 
+    .modern-navigation-extra {
+        padding: 0 0 20px 0;
+    }
+
+    @media screen and (max-width: 1126px) {
+        .modern-navigation-extra {
+            padding: 20px 0;
+        }
+    }
+
     .modern-main-container {
         width: auto;
         flex-grow: 1;
@@ -79,6 +89,11 @@
         </div>
 
         <div id="side-nav-controller">Expand Menu</div>
+
+        <div class="modern-navigation-extra">
+            <a href="https://www.tiny.cloud/get-tiny/"
+               data-marketing="docs-nav-get-tiny">Get TinyMCE</a>
+        </div>
 
         {% assign nav = site.data.nav | array_concat:site.data.nav_api %}
         {% include nav.html links=nav preceding_address="/" %}

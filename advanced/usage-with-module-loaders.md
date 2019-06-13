@@ -20,7 +20,7 @@ If you are using ES2015 modules, a simple example could look something like this
 import tinymce from 'tinymce/tinymce';
 
 // A theme is also required
-import 'tinymce/themes/modern/theme';
+import 'tinymce/themes/silver';
 
 // Any plugins you want to use has to be imported
 import 'tinymce/plugins/paste';
@@ -42,7 +42,7 @@ The example is nearly the same if you are using CommonJS modules. However, a dif
 var tinymce = require('tinymce/tinymce');
 
 // A theme is also required
-require('tinymce/themes/modern/theme');
+require('tinymce/themes/silver');
 
 // Any plugins you want to use has to be imported
 require('tinymce/plugins/paste');
@@ -78,7 +78,7 @@ Another option when using Webpack is to use the [file loader](https://github.com
 
 ```javascript
 require.context(
-  'file?name=[path][name].[ext]&context=node_modules/tinymce!tinymce/skins',
+  'file-loader?name=[path][name].[ext]&context=node_modules/tinymce!tinymce/skins',
   true,
   /.*/
 );

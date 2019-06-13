@@ -161,13 +161,13 @@ Here is a full list of the events available:
 
 ## Loading TinyMCE
 ### Auto-loading from TinyMCE Cloud
-The `Editor` component needs TinyMCE to be globally available to work, but to make it as easy as possible it will automatically load [TinyMCE Cloud](https://www.tiny.cloud/docs/cloud-deployment-guide/) if it can't find TinyMCE available when the component has mounted. To get rid of the `This domain is not registered...` warning, sign up for the cloud and enter the api key like this:
+The `Editor` component needs TinyMCE to be globally available to work, but to make it as easy as possible it will automatically load [TinyMCE Cloud]({{site.baseurl}}/cloud-deployment-guide/) if it can't find TinyMCE available when the component has mounted. To get rid of the `This domain is not registered...` warning, sign up for the cloud and enter the api key like this:
 
 ```html
 <editor api-key='YOUR_API_KEY' :init="{/* your settings */}>"</editor>
 ```
 
-You can also define what cloud channel you want to use, for more info on the different versions see the [documentation](https://www.tiny.cloud/docs/cloud-deployment-guide/editor-plugin-version/#devtestingandstablereleases).
+You can also define what cloud channel you want to use, for more info on the different versions see the [documentation]({{site.baseurl}}/cloud-deployment-guide/editor-plugin-version/#devtestingandstablereleases).
 
 ### Loading TinyMCE by yourself
 
@@ -175,4 +175,4 @@ To opt out of using TinyMCE cloud you have to make TinyMCE globally available yo
 
 #### A note about integrations
 
-> Note:  We are pleased to provide integrations/code guidance to help you build great products with TinyMCE. If you have queries about this integration, please join the [TinyMCE Community](https://community.tiny.cloud).
+> Note:  We are pleased to provide integrations/code guidance to help you build great products with TinyMCE. If you have queries about this integration, please join the [TinyMCE Community](https://community.tiny.cloud/).

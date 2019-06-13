@@ -65,8 +65,7 @@ Due to different toolbar button sizes, some icon packs fit better with some skin
 
 
 ### Self hosted usage instructions
-For the self-hosted version of TinyMCE, Premium Skins and Icon Packs are available with the enterprise bundle which is available for download from the download page. All skins and icons packs are included in the bundle.
-
+For the self-hosted version of TinyMCE, Premium Skins and Icon Packs are available as a download, either as part of the Pro bundle or as an individual purchase. All skins and icons packs are included in the bundle.
 
 ### Examples
 Below are some recommended combinations of skins and icon packs

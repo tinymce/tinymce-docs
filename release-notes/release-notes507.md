@@ -23,7 +23,7 @@ For more information on the new `help_tabs` setting and API refer to the [docume
 
 #### Image Tools custom image fetch
 
-The **Image Tools** plugin includes a new `imagetools_fetch_image` setting, which allows a custom function to be used to fetch the image content for more complex, such as when authentication is required.
+The **Image Tools** plugin includes a new `imagetools_fetch_image` setting, which allows a custom function to be used to fetch the image content in complex environments, where extra customization is required, such as authentication.
 
 For more information on `imagetools_fetch_image` refer to the [documentation]({{site.baseurl}}/plugins/imagetools/#imagetools_fetch_image).
 
@@ -43,7 +43,7 @@ For more information and demos on the new **Premium Skins and Icon Packs** refer
 
 ### Tiny Drive
 
-Tiny Drive 1.3.0 comes with significant changes to the previous versions. Improved solutions have been introduced for unnecessary and obsolete configuration options. A comprehensive list of the updates and fixed issues is available in the [changelog]({{site.baseurl}}/tinydrive/changelog/).
+**Tiny Drive** 1.3.0 comes with significant changes to the previous versions. Improved solutions have been introduced for unnecessary and obsolete configuration options. A comprehensive list of the updates and fixed issues is available in the [changelog]({{site.baseurl}}/tinydrive/changelog/).
 
 To try out **Tiny Drive** start with this [dedicated product page](https://www.tiny.cloud/drive/) or check out the [pricing page](https://www.tiny.cloud/pricing) to see all the flexible pricing options.
 

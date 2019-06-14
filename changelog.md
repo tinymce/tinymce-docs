@@ -8,6 +8,28 @@ class: changelog
 
 {% capture changelog %}
 
+## Version 5.0.7 June 5, 2019
+* Added new toolbar button and menu item for inserting tables via dialog.
+* Added new API for adding/removing/changing tabs in the Help dialog.
+* Added highlighting of matched text in autocompleter items.
+* Added the ability for autocompleters to work with matches that include spaces.
+* Added new `imagetools_fetch_image` callback to allow custom implementations for cors loading of images.
+* Added `'http'` and `https` options to `link_assume_external_targets` to prepend `http://` or `https://` prefixes when URL does not contain a protocol prefix. Patch contributed by francoisfreitag.
+* Changed annotations navigation to work the same as inline boundaries.
+* Changed tabpanel API by adding a `name` field and changing relevant methods to use it.
+* Fixed text color not updating all color buttons when choosing a color.
+* Fixed the autocompleter not working with fragmented text.
+* Fixed the autosave plugin no longer overwrites window.onbeforeunload.
+* Fixed infinite loop in the paste plugin when IE11 takes a long time to process paste events. Patch contributed by lRawd.
+* Fixed image handle locations when using `fixed_toolbar_container`. Patch contributed by t00.
+* Fixed the autoresize plugin not firing `ResizeEditor` events.
+* Fixed editor in fullscreen mode not extending to the bottom of the screen.
+* Fixed list removal when pressing backspace after the start of the list item.
+* Fixed autocomplete not triggering from compositionend events.
+* Fixed `file_picker_callback` could not set the caption field on the insert image dialog.
+* Fixed the autocompleter menu showing up after a selection had been made.
+* Fixed an exception being thrown when a file or number input has focus during initialization. Patch contributed by t00.
+
 ## Version 5.0.6 May 22, 2019
 * Added `icons_url` editor settings to enable icon packs to be loaded from a custom url.
 * Added `image_uploadtab` editor setting to control the visibility of the upload tab in the image dialog.

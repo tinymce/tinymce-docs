@@ -20,6 +20,20 @@
     </div>
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/contentful@latest/dist/contentful.browser.min.js"></script>
+<script>
+  var client = contentful.createClient({
+    space: "sn6g75ou164i",
+    accessToken: "BptrxEYsjeOYo1RSx_-qF_UVkn5HDs_MeHpG1g0wJx4"
+  });
+
+  client.getEntries({order: "-sys.createdAt", limit: 10}).then(function(entries) {
+        console.log("entries", entries);
+      }).catch(function(err) {
+        console.log(err)
+      });
+</script>
+
 <style type="text/css">
 
     .tiny-news-docs {

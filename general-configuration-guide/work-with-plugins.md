@@ -21,7 +21,7 @@ Let's start with a simple code snippet you can paste into an empty `html` file (
 <!DOCTYPE html>
 <html>
 <head>
-  <script src="{{ site.cdnurl }}"></script>
+  <script src="{{ site.cdnurl }}" referrerpolicy="origin"></script>
   <script type="text/javascript">
   tinymce.init({
     selector: 'textarea'

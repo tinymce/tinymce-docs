@@ -8,7 +8,7 @@ keywords: comments commenting tinycomments callback
 
 ## Introduction
 
-**Callback mode** is the default mode for [Comments 2.0]({{site.baseurl}}/plugins/comments/comments_2.0/). In the callback mode, the user needs to configure storage to be able to save comments on the server. The Comments functions (create, reply, edit, delete comment, delete all conversations, and lookup) are configured differently depending upon the server-side storage configuration.
+**Callback mode** is the default mode for [Comments 2.0]({{site.baseurl}}/plugins/comments/). In the callback mode, the user needs to configure storage to be able to save comments on the server. The Comments functions (create, reply, edit, delete comment, delete all conversations, and lookup) are configured differently depending upon the server-side storage configuration.
 
 ### Required settings
 

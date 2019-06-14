@@ -20,7 +20,7 @@ You can get Dropbox integration up and running by following the steps below.
 
 ### 1. Create the application
 
-1. Open the [https://www.dropbox.com/developers/apps/create](Create app) page.
+1. Open the [Create app](https://www.dropbox.com/developers/apps/create) page.
 2. Select the `Dropbox API` from `Choose an API`.
 3. Select `Full Dropbox` from the `Choose the type of access you need`.
 4. Name your app with something company unique `acmeinc-tinydrive` for example.

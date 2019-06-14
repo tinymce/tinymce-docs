@@ -22,7 +22,7 @@ tinymce.init({
 });
 ```
 
-Available values for skins:
+Available values for [skins]({{site.baseurl}}/configure/editor-appearance/#skin):
 
 - material-classic
 - material-outline
@@ -32,7 +32,7 @@ Available values for skins:
 - small
 - jam
 
-Available valuse for content_css:
+Available values for [content_css]({{site.baseurl}}/configure/content-appearance/#content_css):
 
 - material-classic
 - material-outline

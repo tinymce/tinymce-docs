@@ -233,6 +233,7 @@
   - url: "comments"
   - url: "contextmenu"
   - url: "directionality"
+  - url: "drive"
   - url: "emoticons"
     pages:
     - url: "#emoticons_append"
@@ -268,6 +269,7 @@
     pages:
     - url: "#imagetools_cors_hosts"
     - url: "#imagetools_credentials_hosts"
+    - url: "#imagetools_fetch_image"
     - url: "#imagetools_proxy"
     - url: "#imagetools_toolbar"
   - url: "importcss"
@@ -427,7 +429,6 @@
     - url: "#toc_depth"
     - url: "#toc_header"
     - url: "#toc_class"
-  - url: "tinydrive"
   - url: "visualblocks"
     pages:
     - url: "#visualblocks_default_state"
@@ -638,6 +639,7 @@
 
 - url: "changelog"
   pages:
+  - url: "#Version 5.0.7 June 5, 2019"
   - url: "#Version 5.0.6 May 22, 2019"
   - url: "#Version 5.0.5 May 9, 2019"
   - url: "#Version 5.0.4 April 23, 2019"

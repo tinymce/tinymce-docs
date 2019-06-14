@@ -5,7 +5,7 @@ The following new features were added to the TinyMCE 5.0 RC version.
 
 The [Comments 2.0]({{site.baseurl}}/enterprise/tiny-comments/) is a premium plugin built on the [Annotations API]({{site.baseurl}}/advanced/annotations/) to create comment threads (conversations). Comments 2.0 provides the ability to start or join a conversation by adding comments to the content within the TinyMCE editor. 
 
-Refer to the [Comments 2.0]({{site.baseurl}}/plugin/comments/) documentation, for more information.
+Refer to the [Comments 2.0]({{site.baseurl}}/plugins/comments/) documentation, for more information.
 
 ### Context menu
 

@@ -24,7 +24,7 @@ Extend the [TinyMCE configuration]({{ site.baseurl }}/configure/) to include any
 
 * [Mentions]({{ site.baseurl }}/plugins/mentions/)
 * [Tiny Drive]({{ site.baseurl }}/plugins/drive/)
-* [Comments 2.0]({{ site.baseurl }}/plugins//comments/)
+* [Comments 2.0]({{ site.baseurl }}/plugins/comments/)
 * [Page Embed]({{ site.baseurl }}/plugins/pageembed/)
 * [Permanent Pen]({{ site.baseurl }}/plugins/permanentpen/)
 * [Format Painter]({{ site.baseurl }}/plugins/formatpainter/)

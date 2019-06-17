@@ -10,7 +10,7 @@ The Premium Skins and Icon Packs lets you quickly give TinyMCE a new look. Just 
 
 ### How to use a premium skin
 
-Use the [skin]({{site.baseurl}}/configure/editor-appearance/#skin) option together with the [content_css]({{site.baseurl}}/configure/content-appearance/#content_css) option with the values below.
+Use the [skin]({{site.baseurl}}/configure/editor-appearance/#skin) option, in combination with the [content_css]({{site.baseurl}}/configure/content-appearance/#content_css) option and the values listed below.
 
 Available values for [skins]({{site.baseurl}}/configure/editor-appearance/#skin):
 

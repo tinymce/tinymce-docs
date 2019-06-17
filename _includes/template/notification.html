@@ -20,56 +20,6 @@
     </div>
 </div>
 
-<!-- <script>
-  var client = contentful.createClient({
-    space: "sn6g75ou164i",
-    accessToken: "BptrxEYsjeOYo1RSx_-qF_UVkn5HDs_MeHpG1g0wJx4"
-  });
-
-  var storedNews = localStorage.getItem("latestTinyNews");
-  console.log("storedNews", storedNews);
-  if (storedNews === null) {
-    console.log("no news in storage, fetch some");
-    client.getEntries({ order: "-sys.createdAt", limit: 10, content_type: "news" }).then(function(entries) {
-      localStorage.setItem("latestTinyNews", JSON.stringify(entries));
-      var latest = entries.items[0].fields;
-      $(".tiny-news-text").text(latest.text);
-      var newsLink = $(".tiny-news-link");
-      newsLink.attr("href", latest.url);
-      newsLink.text(latest.urlText);
-    }).catch(function(err) {
-      console.log(err)
-    });
-  } else {
-    console.log("news was stored");
-    var latest = JSON.parse(storedNews).items[0].fields;
-    $(".tiny-news-text").text(latest.text);
-    var newsLink = $(".tiny-news-link");
-    newsLink.attr("href", latest.url);
-    newsLink.text(latest.urlText);
-    setNews(latest);
-  }
-
-  // function setNews(latest) {
-  //   console.log("setting news");
-  //   $(".tiny-news-text").text(latest.text);
-  //   var newsLink = $(".tiny-news-link");
-  //   newsLink.attr("href", latest.url);
-  //   newsLink.text(latest.urlText);
-  // }
-
-  /*
-      // Basically setNews might need to go in 2 places, these are the lines
-      // $(".tiny-news-text").text(latest.text);
-      // var newsLink = $(".tiny-news-link");
-      // newsLink.attr("href", latest.url);
-      // newsLink.text(latest.urlText);
-  */
-
-  // In js script - Just need to save an expiry for localstorage, if it has expired, fetch again from contentful
-  // and save back to storage with new expiry. Not sure on exact expiry, start short for testing
-</script> -->
-
 <style type="text/css">
 
     .tiny-news-docs {

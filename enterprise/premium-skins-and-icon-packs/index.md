@@ -8,12 +8,9 @@ keywords: skin skins icon icons material bootstrap customize theme
 
 The Premium Skins and Icon Packs lets you quickly give TinyMCE a new look. Just choose one of our pre-made skins and icon packs.
 
-You can freely mix skins and icon packs but note that some skins are designed to be used with a particular icon pack. For example the `small` skin is designed to be used together with the `jam` or `small` icon pack.
-
 ### How to use a premium skin
 
-Cloud customers simply use the [skin]({{site.baseurl}}/configure/editor-appearance/#skin) option, with any of the values below to get the skins. Some skins also has a custom [content_css]({{site.baseurl}}/configure/content-appearance/#content_css) to go with the skin.
-If you are using a self hosted version of TinyMCE, see the self hosted instructions below.
+Use the [skin]({{site.baseurl}}/configure/editor-appearance/#skin) option, in combination with the [content_css]({{site.baseurl}}/configure/content-appearance/#content_css) option and the values listed below.
 
 Available values for [skins]({{site.baseurl}}/configure/editor-appearance/#skin):
 
@@ -43,9 +40,9 @@ tinymce.init({
 
 ### How to use an icon pack
 
-Cloud customers simply use the [icons]({{site.baseurl}}/configure/editor-appearance/#icons) option, with any of the keywords listed below. If you are using a self hosted version of TinyMCE, see the self hosted instructions below.
+Use the [icons]({{site.baseurl}}/configure/editor-appearance/#icons) option with any of the values listed below.
 
-Available options for [icon]({{site.baseurl}}/configure/editor-appearance/#icons) packs:
+Available values for [icon]({{site.baseurl}}/configure/editor-appearance/#icons) packs:
 
 - material
 - small
@@ -60,13 +57,27 @@ tinymce.init({
 });
 ```
 
+#### Icon pack compatibility matrix
+
+Due to different toolbar button sizes, some icon packs fit better with some skins. Use the below matrix as a guide.
+
+| Skin | Compatible Icon pack |
+| --- | --- |
+| material-classic | material, jam, small |
+| material-outline | material, jam, small |
+| bootstrap | material, jam, small |
+| fabric | material, jam, small |
+| borderless | material, jam, small |
+| small | jam, small |
+| jam | jam, small |
+
 ### Self hosted usage instructions
 
-If you are using a self hosted version of TinyMCE, you need to log in to your account and download the latest enterprise bundle from the download page. All skins and icons are included in the package, so once the latest bundle has been downloaded and installed, just update the `tinymce.init` config as outlined above.
+For the self-hosted version of TinyMCE, Premium Skins and Icon Packs are available as a download, either as part of the Pro bundle or as an individual purchase. All skins and icons packs are included in the bundle.
 
 ### Examples
 
-Below are some recommended combinations of skins and icons
+Below are some recommended combinations of skins and icon packs:
 
 * [Bootstrap skin]({{site.baseurl}}/enterprise/premium-skins-and-icon-packs/bootstrap-demo/)
 * [Material Outline skin with Material icon pack]({{site.baseurl}}/enterprise/premium-skins-and-icon-packs/material-classic-demo/)

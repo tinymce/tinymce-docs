@@ -11,7 +11,12 @@ If the same name is registered as both a context menu section and a menu item, t
 
 The default configuration includes all plugins that provide a context menu; `link`, `image`, `imagetools`, `table`, and `spellchecker`.
 
-**Type:** `String`
+Alternatively the editors context menu can be disabled by setting this option to `false`.
+
+**Type:** `String` or `false`
+
+> Note: The browsers native context menu can still be accessed by holding the `Ctrl` key while right clicking with the mouse.
+However if the `contextmenu_never_use_native` option is enabled, holding the `Ctrl` key will have no effect.
 
 #### Default configuration example
 

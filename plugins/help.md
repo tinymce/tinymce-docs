@@ -73,9 +73,9 @@ tinymce.init({
     'custom2', // new tab custom2 as defined on init in setup() below
     'custom3' // new tab custom3 as defined on button click in setup() below
   ],
-  setup: (editor) => {
+  setup: function(editor) {
     // on editor init, add a tab called custom2
-    editor.on('init', () => {
+    editor.on('init', function() {
       editor.plugins.help.addTab({
         name: 'custom2',
         title: 'Custom Tab 2',
@@ -91,7 +91,7 @@ tinymce.init({
     // add a toolbar button that when clicked adds a tab called custom3
     editor.ui.registry.addButton('addTab', {
       text: 'Add tab',
-      onAction: () => {
+      onAction: function() {
         editor.plugins.help.addTab({
           name: 'custom3',
           title: 'Custom Tab 3',
@@ -104,6 +104,8 @@ tinymce.init({
         });
       }
     });
+  }
+});
 ```
 
 ## API

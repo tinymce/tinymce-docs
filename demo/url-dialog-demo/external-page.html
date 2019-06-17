@@ -27,7 +27,7 @@
 <script>
   var closeButton = document.getElementById('close');
   closeButton.addEventListener('click', function () {
-    window.postMessage({ mceAction: 'close' });
+    window.parent.postMessage({ mceAction: 'close' });
   })
 </script>
 </body>

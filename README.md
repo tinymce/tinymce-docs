@@ -102,7 +102,7 @@ To help with this, there are two mechanisms for overriding the tinymce.min.js UR
     - This file is *not* intended to be checked in. 
     - This option changes the URL for all codepens.
     
- 2. Set the `tinymce_url_override` setting when including `codepen.html`.
+ 2. Set the `script_url_override` setting when including `codepen.html`.
     - This is useful if you want to deploy the develop branch for a feature only in the 'dev' channel.
     - This only overrides the URL for one codepen.
     - Don't use this in more than one codepen on a page.

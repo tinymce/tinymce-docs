@@ -269,6 +269,7 @@
     pages:
     - url: "#imagetools_cors_hosts"
     - url: "#imagetools_credentials_hosts"
+    - url: "#imagetools_fetch_image"
     - url: "#imagetools_proxy"
     - url: "#imagetools_toolbar"
   - url: "importcss"
@@ -548,6 +549,10 @@
       pages:
       - url: "dropbox-integration"
       - url: "googledrive-integration"
+    - url: "tinydrive-api"
+      pages:
+      - url: "standalone"
+      - url: "plugin"
     - url: "changelog"
     - url: "get-help"
 
@@ -595,6 +600,12 @@
 
 - url: "release-notes"
   pages:
+  - url: "release-notes507"
+    pages:
+    - url: "#Overview"
+    - url: "#New features"
+    - url: "#Updates and enhancements"
+    - url: "#Known issues"
   - url: "release-notes506"
     pages:
     - url: "#Overview"
@@ -634,6 +645,7 @@
 
 - url: "changelog"
   pages:
+  - url: "#Version 5.0.7 June 5, 2019"
   - url: "#Version 5.0.6 May 22, 2019"
   - url: "#Version 5.0.5 May 9, 2019"
   - url: "#Version 5.0.4 April 23, 2019"

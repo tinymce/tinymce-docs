@@ -12,13 +12,6 @@ The Premium Skins and Icon Packs lets you quickly give TinyMCE a new look. Just 
 
 Use the [skin]({{site.baseurl}}/configure/editor-appearance/#skin) option together with the [content_css]({{site.baseurl}}/configure/content-appearance/#content_css) option with the values below.
 
-```
-tinymce.init({
-  selector: 'textarea',  // change this value according to your HTML
-  skin: "bootstrap"      // Name of the skin
-});
-```
-
 Available values for [skins]({{site.baseurl}}/configure/editor-appearance/#skin):
 
 - material-classic
@@ -35,23 +28,38 @@ Available values for [content_css]({{site.baseurl}}/configure/content-appearance
 - material-outline
 - fabric
 
-### How to use Icon Packs
+##### Example
+
+```js
+tinymce.init({
+  selector: 'textarea',    // change this value according to your HTML
+  skin: "bootstrap",       // Name of the skin
+  content_css: "bootstrap" // Name of the content skin
+});
+```
+
+### How to use an icon pack
 
 Use the [icons]({{site.baseurl}}/configure/editor-appearance/#icons) option with any of the values listed below.
 
-    tinymce.init({
-      selector: 'textarea',  // change this value according to your HTML
-      icons: 'material'      // Name of icon pack
-    });
-
-Available values for icon packs:
+Available values for [icon]({{site.baseurl}}/configure/editor-appearance/#icons) packs:
 
 - material
 - small
 - jam
 
+##### Example
+
+```js
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  icons: 'material'      // Name of icon pack
+});
+```
+
 #### Icon pack compatibility matrix
-Due to different toolbar button sizes, some icon packs fit better with some skins. Use the below matrix as a guide
+
+Due to different toolbar button sizes, some icon packs fit better with some skins. Use the below matrix as a guide.
 
 | Skin | Compatible Icon pack |
 | --- | --- |
@@ -63,12 +71,13 @@ Due to different toolbar button sizes, some icon packs fit better with some skin
 | small | jam, small |
 | jam | jam, small |
 
-
 ### Self hosted usage instructions
+
 For the self-hosted version of TinyMCE, Premium Skins and Icon Packs are available as a download, either as part of the Pro bundle or as an individual purchase. All skins and icons packs are included in the bundle.
 
 ### Examples
-Below are some recommended combinations of skins and icon packs
+
+Below are some recommended combinations of skins and icon packs:
 
 * [Bootstrap skin]({{site.baseurl}}/enterprise/premium-skins-and-icon-packs/bootstrap-demo/)
 * [Material Outline skin with Material icon pack]({{site.baseurl}}/enterprise/premium-skins-and-icon-packs/material-classic-demo/)
@@ -88,4 +97,4 @@ The free user account provisioned with a free 30-day trial of all Tiny [premium 
 
 #### Buy Premium Skins and Icon Packs
 
-Start with this [dedicated product page](https://apps.tiny.cloud/products/premium-skins-and-icon-packs/) to see all the flexible pricing options. OEM and enterprise customers should [contact sales directly](https://www.tiny.cloud/contact/).
+Start with this [dedicated product page](https://apps.tiny.cloud/products/skins-and-icon-packs/) to see all the flexible pricing options. OEM and enterprise customers should [contact sales directly](https://www.tiny.cloud/contact/).

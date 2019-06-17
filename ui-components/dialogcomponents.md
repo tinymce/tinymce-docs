@@ -338,6 +338,7 @@ A **selectbox** is a composite component with a label and a dropdown list of opt
   type: 'selectbox', // component type
   name: 'SelectA', // identifier
   label: 'Select Label',
+  size: 1 // number of visible values (optional)
   items: [
     { value: 'one', text: 'One' },
     { value: 'two', text: 'Two' }

@@ -7,11 +7,24 @@
         return;
     }
 
+    function getPrefixURL(type) {
+        switch(type) {
+            case "blog":
+                return "https://go.tiny.cloud/blog/";
+                break;
+            default:
+                return "https://go.tiny.cloud/blog/";
+        }
+    }
+
     function setResultToNewsBar(latest) {
         $(".tiny-news-text").text(latest.text);
         var newsLink = $(".tiny-news-link");
         newsLink.attr("href", latest.url);
         newsLink.text(latest.urlText);
+        var prefix = $(".tiny-news-prefix");
+        prefix.text("TINY " + latest.type.toUpperCase());
+        prefix.attr("href", getPrefixURL(latest.type));
     }
 
     function fetchLatestNews() {

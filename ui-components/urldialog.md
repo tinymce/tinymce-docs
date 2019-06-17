@@ -56,7 +56,7 @@ A **button** is a clickable component that can contain text or an icon. There ar
 
 | Name | Type | Requirement | Description |
 | ---- | ---- | ----------- | ----------- |
-| type | `'button'` | required | The component type. Must be `'button'`. |
+| type | `'cancel'` or `'custom'` | required | The component type. Must be `'cancel'` or `'custom'` based on the type of callback function that should be invoked when the button is clicked. |
 | text | string | required | Text to display in the button if `icon` is not specified. Also used for the button's `title` attribute. |
 | name | string | optional | An identifier for the button. If not specified, the button will be assigned a randomly generated `name`.  |
 | icon | string | optional | Name of the icon to be displayed. Must correspond to an icon in the icon pack. **When configured, the button will display the icon instead of text.** |

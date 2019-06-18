@@ -8,6 +8,28 @@ class: changelog
 
 {% capture changelog %}
 
+## Version 5.0.8 June 18, 2019
+* Added back support for multiple toolbars.
+* Added support for .m4a files to the media plugin.
+* Added new `base_url` and `suffix` editor init options.
+* Fixed incorrect padding for select boxes with visible values.
+* Fixed selection incorrectly changing when programmatically setting selection on contenteditable false elements.
+* Fixed sidebar background being transparent.
+* Fixed the build to remove duplicate iife wrappers.
+* Fixed bogus autocompleter span appearing in content when the autocompleter menu is shown.
+* Fixed toolbar font size select not working with legacyoutput plugin.
+* Fixed the legacyoutput plugin incorrectly aligning images.
+* Fixed remove color not working when using the legacyoutput plugin.
+* Fixed the font size menu applying incorrect sizes when using the legacyoutput plugin.
+* Fixed scrollIntoView not working when the parent window was out of view.
+* Fixed the print plugin printing from the wrong window in IE11.
+* Fixed content CSS loaded over CORS not loading in the preview plugin with content_css_cors enabled.
+* Fixed the link plugin missing the default "None" option for link list.
+* Fixed small dot visible with menubar and toolbar disabled in inline mode.
+* Fixed space key properly inserts a nbsp before/after block elements.
+* Fixed native context menu not showing with images in IE11.
+* Fixed inconsistent browser context menu image selection.
+
 ## Version 5.0.7 June 5, 2019
 * Added new toolbar button and menu item for inserting tables via dialog.
 * Added new API for adding/removing/changing tabs in the Help dialog.

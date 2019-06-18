@@ -1,9 +1,6 @@
 (function () {
 
-    if (typeof window.fetch === "undefined" ||
-        typeof window.$ === "undefined" ||
-        typeof window.localStorage === "undefined"
-    ) {
+    if (typeof window.$ === "undefined") {
         return;
     }
 

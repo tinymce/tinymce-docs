@@ -44,6 +44,7 @@
     .modern-navigation-extra a.back-home:hover path {
         fill: rgb(145, 180, 225);
     }
+
     .modern-navigation-extra a.back-home:hover {
         color: rgb(145, 180, 225);
     }
@@ -157,6 +158,10 @@
         {% include nav.html links=nav preceding_address="/" %}
         <div id="optimize-top">
             <a href="/features/">
+                <source
+                    srcset="{{ site.baseurl }}/images/optimize/editor/mini/primary@2x.gif"
+                    media="(min-device-pixel-ratio: 2)"
+                />
                 <img
                     title="Power meets beauty with TinyMCE 5."
                     src="{{ site.baseurl }}/images/optimize/editor/mini/primary.gif"
@@ -165,10 +170,16 @@
         </div>
         <div id="optimize-bottom">
             <a href="/signup/">
-                <img
-                    title="Create your Tiny Account. Get the most out of TinyMCE with a 30-day free trial of all premium plugins."
-                    src="{{ site.baseurl }}/images/optimize/account/standard/base.gif"
-                />
+                <picture>
+                    <source
+                        srcset="{{ site.baseurl }}/images/optimize/account/standard/base@2x.gif"
+                        media="(min-device-pixel-ratio: 2)"
+                    />
+                    <img
+                        title="Create your Tiny Account. Get the most out of TinyMCE with a 30-day free trial of all premium plugins."
+                        src="{{ site.baseurl }}/images/optimize/account/standard/base.gif"
+                    />
+                </picture>
             </a>
         </div>
     </aside>

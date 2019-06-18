@@ -8,6 +8,8 @@ description: Essential editor configuration, including `selector` and `plugins` 
 
 {% include configuration/auto-focus.md %}
 
+{% include configuration/base-url.md %}
+
 {% include configuration/cache-suffix.md %}
 
 {% include configuration/content-security-policy.md %}
@@ -23,5 +25,7 @@ description: Essential editor configuration, including `selector` and `plugins` 
 {% include configuration/selector.md %}
 
 {% include configuration/setup.md %}
+
+{% include configuration/suffix.md %}
 
 {% include configuration/target.md %}

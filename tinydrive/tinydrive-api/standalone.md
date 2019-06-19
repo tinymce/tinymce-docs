@@ -8,9 +8,9 @@ keywords: tinydrive api
 
 Tiny Drive can be used as a generic file manager separate from TinyMCE this is referred to as standalone mode.
 
-## Loading the standalone api script
+## Loading the standalone API script
 
-In order to use Tiny Drive in standalone mode you will need to add a script to your page with your api key as part of the url. The url is in the following format:
+In order to use Tiny Drive in standalone mode you will need to add a script to your page with your API key as part of the URL. The URL is in the following format:
 
 `https://cdn.tiny.cloud/1/<your api key>/tinydrive/stable/tinydrive.min.js`
 
@@ -29,11 +29,11 @@ tinydrive.pick({
 
 ## tinydrive.pick
 
-The `tinydrive.pick` method enables you to pick files from Tiny Drive and get the meta data of those files returned in a promise. For a complete list of available settings to pass in to this method check the [Picker settings](#pickersettings) section in this page.
+The `tinydrive.pick` method enables you to pick files from Tiny Drive and get the meta data of those files returned in a promise. For a complete list of available settings to pass into this method check the [Picker settings](#pickersettings) section in this page.
 
 ### File Picker Result Format
 
-The `tinydrive.pick` api method will return a promise with object that has a `files` property. This `files` property is an array of files with the following properties.
+The `tinydrive.pick` method will return a promise with object that has a `files` property. This `files` property is an array of files with the following properties.
 
 #### name
 
@@ -45,7 +45,7 @@ The size in bytes of the selected file.
 
 #### url
 
-The url for the selected file would be in the following format: `https://drive.tiny.cloud/1/<your api key>/<file uuid>`
+The URL for the selected file would be in the following format: `https://drive.tiny.cloud/1/<your api key>/<file uuid>`
 
 #### mdate
 
@@ -85,7 +85,7 @@ tinydrive.start({
 
 ## Generic settings
 
-These settings can be passed to any of the the standalone api methods.
+These settings can be passed to any of the the standalone API methods.
 
 ### `token_provider`
 
@@ -123,7 +123,7 @@ tinydrive.pick({
 
 ## Picker settings
 
-These settings are available for the [tinydrive.pick](#tinydrivepick) / [tinydrive.browse](#tinydrivebrowse) / [tinydrive.start](#tinydrivestart) api methods.
+These settings are available for the [tinydrive.pick](#tinydrivepick) / [tinydrive.browse](#tinydrivebrowse) / [tinydrive.start](#tinydrivestart) methods.
 
 ### `dropbox_app_key`
 
@@ -212,7 +212,7 @@ tinydrive.pick({
 
 ### `target`
 
-This setting enables you to render Tiny Drive within a target element by using a css selector. If the container has display: flex then the container will be filled with the Tiny Drive UI this could be useful if you want to position the Tiny Drive UI inside your web applications interface.
+This setting enables you to render Tiny Drive within a target element by using a CSS selector. If the container has display: flex then the container will be filled with the Tiny Drive UI this could be useful if you want to position the Tiny Drive UI inside your web applications interface.
 
 **Type:** `String`
 
@@ -231,9 +231,9 @@ tinydrive.pick({
 </div>
 ```
 
-### Standalone api interfaces
+### Standalone API interfaces
 
-Here is a complete api reference as TypeScript types for developers used to TypeScript syntax.
+Here is a complete API reference as TypeScript types for developers used to TypeScript syntax.
 
 ```tsx
 interface StandaloneApi 

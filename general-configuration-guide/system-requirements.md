@@ -38,6 +38,8 @@ Please use the [issues tracker on GitHub](https://github.com/tinymce/tinymce/iss
 |IE 8    | NO      | N/A | N/A       |
 |Safari  | N/A     | YES | N/A       |
 
+> Note: TinyMCE does not support browsers running in Quirks mode.
+
 TinyMCE fully supports the most recent version of all browsers listed above. TinyMCE also supports the latest Extended Support Release (ESR) from each vendor (e.g. Firefox). TinyMCE provides support for the prior major version for 60 days after the release has been superseded by a new major version (e.g. Chrome 61 vs. Chrome 62).
 
 {% assign_page next_page = "/general-configuration-guide/get-support/index.html" %}

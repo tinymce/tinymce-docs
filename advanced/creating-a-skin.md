@@ -7,46 +7,44 @@ description: Introducing skin creation, less and icon modification.
 keywords: create creator skin icon
 ---
 
-This section provides information on how to create a new skin to alter the appearance of TinyMCE.
+This section provides information on how to create a new skin to customize the appearance of TinyMCE.
+
+> Note: The  [TinyMCE Skin Creator](http://skin.tinymce.com/) only supports TinyMCE 4.
 
 ## Prerequisites:
 
 This guide assumes:
 
 * Basic understanding of [Node.js](http://nodejs.org) and [Gulp](http://gulpjs.com).
+* Basic understanding of [Less](http://lesscss.org), the CSS preprocessor we use to build the skins. More specifically, [read the section about variables](http://lesscss.org/features/#variables-feature)
 * Familiarity with the command line and running simple commands.
-
-> Note: The  [TinyMCE Skin Creator](http://skin.tinymce.com/) only supports TinyMCE 4.
 
 ## Preparation
 
-A skin for TinyMCE 5 is written in [less](http://lesscss.org), a popular CSS preprocessor. Making a skin primarily involves modifying variables similar to using an API. The CSS rules are not modified or overridden, instead the `less` variables in the `skin` files is modified. This makes updating TinyMCE easier.
+The CSS that goes with a theme is called a skin. The default skin for TinyMCE 5 is named Oxide and is written in [less](http://lesscss.org), a popular CSS preprocessor. With Oxide we introduced a concept we call the _Style API_. This API consists of around 300 variables which you use to modify the appearance of TinyMCE, _you never touch the underlying CSS_. The benefit of this approach is that you can keep TinyMCE updated as changes in the CSS and HTML will not break your skin. This also means that if things doesn't work as expected, we can provide support and bug fixed, something that was virtually impossible before.
 
-> Important: TinyMCE does not recommend modifying or overriding CSS rules directly.
+> Important: We do not recommend modifying or overriding CSS rules directly.
 
-1. Download (or `git clone`) the [TinyMCE skin tools](https://github.com/tinymce/oxide).
-1. Open a terminal and `cd` into the `/oxide` directory.
-1. Run the following command to install all dependencies:
+1. Download (or `git clone`) the [REPOSITORY NAME](REPOSITORY URL).
+2. Open the terminal and navigate to the repository folder
+3. Run the following command to install all dependencies:
 ```js
 npm install
 ```
-4. To start `gulp` and spin up a web server for previewing the files, run the following command:
+4. To preview the included skins, run the command:
 ```js
-npm run start
+npm start
 ```
-> This command starts the preview server at the URL `http://localhost:3000` and starts watching the filesystem for changes.
-
-> Note: Run the following command to just build the files:
-```
-npm run build
-```
-
-
-### Result:
+This command spins up a local web server at the URL `http://localhost:3000` and starts watching the filesystem for changes.
 
 The development environment is set up and ready to work.
 
 ![**TinyMCE skin SDK for Silver theme**]({{site.baseurl}}/images/SDKforsilver.png)
+
+If you just need to build the skins without launching a web server, run:
+```
+npm run build
+```
 
 ## Making or editing a skin
 
@@ -54,23 +52,31 @@ The preparation steps above must be performed to create or edit a skin.
 
 ### Overview
 
-In the `/oxide` directory, navigate to `src/less/skins/`. There are two folders in this location:
+Navigate to `src/less/skins/`. There are two folders in this location:
 * `/ui` - which is the skins for the editor.
 * `/content` - which is the skins for the content within the editor.
 
-The skin imports the theme `less` files located in the `src/less/theme/` directory.
+The folder `src/less/theme/` contains the less files. At the top of most files you find the available variables that defines the default colors, margins, fonts etc (the strings that starts with an at-character, for example `@background-color`). *Do not edit* these files, instead use them as a reference when creating your skin. Two common places you likely start with is the global variables: `src/less/theme/globals/global-variables.less` and the toolbar buttons: `src/less/theme/components/toolbar-buttons/toolbar-buttons.less`.
 
-To create a skin, the CSS in the `/theme` folder is not required to be edited. Instead, TinyMCE provides variables for the relevant CSS properties, such as colors, margins, and spacings, that are used in the skin file to customize TinyMCE.
-
-This allows the user to easily update the TinyMCE instance despite making advanced changes to the skin, since the only thing that is changed is a variable file. Another benefit of this approach is that the user gains access to all the variables that have been tested to work together with the browsers.
+The general workflow is that you look inside the less files within the themes folder and copy the variables you like to change into your skin's `skin.less` file.
 
 > Note: The skin **only** changes the visual presentation of the UI and **not** the placement of elements. Placement of elements is done by the TinyMCE UI framework. This framework makes it possible to do complex UI layouts on all browsers without touching any CSS when plugins are created.
 
 ### Creating a skin
 
-1. In the `/oxide` directory, begin by duplicating the `default` folder located in `src/less/skins/ui/` and rename it to the name of your skin.
-1. Open the file `src/less/theme/globals/global-variables.less` and **copy** the variables to change into the `skin.less` file of the duplicate folder in the previous step.
-1. Change the values. The variables in the `skin.less` will override the default values.
+1. Begin by duplicating the `default` folder located in `src/less/skins/ui/` and rename it to the name of your skin.
+2. Open the file `src/less/skin/ui/<your-skin-name>/skin.less`
+3. Open any less file located in the theme folder, for example `src/less/theme/globals/global-variables.less` and copy a variable you like to change, it's easiest to copy the whole line. Let's copy the `@background-color` variable to start with.
+4. Paste the variable into the skin.less you opened in step 2. For a striking look, change the variable value to be red, like this: `@background-color: red;`. Then save the file. 
+Your skin.less should now look like this:
+```less
+EXAMPLE
+```
+And the result should now be a fiery red editor.
+{IMAGE}
+
+This is the basic gist of skinning TinyMCE. Copy variables from the theme files and paste them into your skin file. There is variables for most things, like spacing between toolbar buttons to customizing the dialogs. Simple and powerful. And as you can see, since you don't change the files in the /src/less/theme` folder, you can keep TinyMCE updated and expect your custom skin to work.
+
 
 For more detailed customizations, review the variables in each component, such as `src/less/theme/components/toolbar-button.less` and copy the desired ones to the `skin.less`.
 

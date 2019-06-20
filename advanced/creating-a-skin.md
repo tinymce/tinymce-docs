@@ -75,7 +75,7 @@ EXAMPLE
 And the result should now be a fiery red editor.
 {IMAGE}
 
-This is the basic gist of skinning TinyMCE. Copy variables from the theme files and paste them into your skin file. There is variables for most things, like spacing between toolbar buttons to customizing the dialogs. Simple and powerful. And as you can see, since you don't change the files in the /src/less/theme` folder, you can keep TinyMCE updated and expect your custom skin to work.
+This is the basic gist of skinning TinyMCE. Copy variables from the theme files and paste them into your skin file. There is variables for most things, like spacing between toolbar buttons to customizing the dialogs. Simple and powerful. And as you can see, since you don'tQ change the files in the /src/less/theme` folder, you can keep TinyMCE updated and expect your custom skin to work.
 
 
 For more detailed customizations, review the variables in each component, such as `src/less/theme/components/toolbar-button.less` and copy the desired ones to the `skin.less`.

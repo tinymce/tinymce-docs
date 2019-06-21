@@ -40,7 +40,7 @@ To set up the skin development environment, begin with the following steps:
 4. Launch the web server to preview the skins using the command:
 
    ```
-   yarn oxide-watch
+   yarn oxide-start
    ```
 
 You should now be able to open a web browser and point it to the url displayed in the terminal, usually `http://localhost:3000`.

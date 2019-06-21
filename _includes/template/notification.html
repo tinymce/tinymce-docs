@@ -16,13 +16,14 @@
 
     <div>
         <a class="utility-link" href="/" data-marketing="tiny-docs-news-back-home">
-            Return to Tiny.cloud
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+                <path fill="#FFFFFF" fill-rule="evenodd" d="M6.25 10.5L1 5.25 6.25 0l1.361 1.361-2.917 2.917h5.445C12.86 4.278 15 6.417 15 9.138 15 11.862 12.861 14 10.139 14H2.36v-1.944h7.778c1.653 0 2.917-1.264 2.917-2.917 0-1.653-1.264-2.917-2.917-2.917H4.694L7.611 9.14 6.25 10.5z"/>
+            </svg>Return to Website
         </a>
     </div>
 </div>
 
 <style type="text/css">
-
     .tiny-news-docs {
         display: flex;
         align-content: flex-start;
@@ -30,8 +31,8 @@
         border-bottom: 1px solid #D2D2D2;
         padding: 0.5rem 2rem 0.5rem;
         text-align: center;
-        color: #4A4A4A;
-        background-color: white;
+        color: white;
+        background-color: #1976D2;
         box-sizing: border-box;
         position: relative;
         z-index: 1000;
@@ -40,27 +41,33 @@
     }
 
     .tiny-news-docs a {
-        color: rgb(25, 118, 210);
-        font-weight: 600;
+        color: white;
+        font-weight: 900;
         text-decoration: none;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.5);
-        transition: border-bottom 0.25s ease 0s;
     }
 
-        .tiny-news-docs a:hover {
-            border-bottom: 1px solid rgb(255, 255, 255);
-        }
+    .tiny-news-docs a svg {
+        display: inline-block;
+        width: 12px;
+        height: 12px;
+        vertical-align: text-top;
+        margin: 0 4px 0 0;
+    }
+
+    .tiny-news-docs a:hover {
+        border-bottom: 1px solid rgb(255, 255, 255);
+    }
 
     .tiny-news-docs .utility-link {
         margin: 0 1rem 0 0;
         height: 1rem;
         line-height: 1rem;
         font-weight: 900;
-        color: #4A4A4A;
+        color: white;
     }
 
     .tiny-news-docs .utility-link:hover{
-        color: #1976D2;
+        color: white;
     }
 
     .tiny-news-docs .utility-link:last-child {
@@ -74,6 +81,4 @@
             position: absolute;
         }
     }
-
-
 </style>

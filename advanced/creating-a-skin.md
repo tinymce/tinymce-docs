@@ -11,7 +11,7 @@ This section provides information on how to create a new skin to customize the a
 
 > Note: The  [TinyMCE Skin Creator](http://skin.tinymce.com/) only supports TinyMCE 4.
 
-## Prerequisites:
+## Prerequisites
 
 This guide assumes:
 
@@ -21,7 +21,7 @@ This guide assumes:
 
 ## Preparation
 
-The CSS that goes with a theme is called a skin. The default skin for TinyMCE 5 is named Oxide and is written in [Less](http://lesscss.org), a popular CSS preprocessor. With Oxide we introduced a concept we call the **Style API**. This API consists of around 300 variables which you use to modify the appearance of TinyMCE. You never touch the underlying CSS. The benefit of this approach is that improvements we make to the the CSS and HTML won't break your custom skin. This also means that if things doesn't work as expected, we can provide support and bug fixed, something that was virtually impossible before.
+The CSS that goes with a theme is called a skin. The default skin for TinyMCE 5 is named Oxide and is written in [Less](http://lesscss.org), a popular CSS preprocessor. With Oxide we introduced a concept we call the **Style API**. This API consists of around 300 variables which you use to modify the appearance of TinyMCE. You never touch the underlying CSS. The benefit of this approach is that improvements we make to the the CSS and HTML won't break your custom skin. This also means that if things doesn't work as expected, we can provide support and bug fixes, something that was virtually impossible before.
 
 > Important: We do not recommend modifying or overriding CSS rules directly.
 
@@ -56,7 +56,7 @@ yarn oxide-build
 
 ## Making or editing a skin
 
-Make sure you have performed the preparation steps above
+Make sure you have performed the preparation steps above.
 
 ### Overview
 
@@ -64,9 +64,9 @@ Navigate to `modules/oxide/src/less/skins/`. There are two folders in this locat
 * `/ui` - which is the skins for the editor. The important file here is  `skin.less`.
 * `/content` - which is the skins for the content within the editor.
 
-The folder `modules/oxide/src/less/theme/` contains the less files. At the top of most files you find the available variables that defines the default colors, margins, fonts etc (variables are the strings that starts with an at-character, for example `@background-color`). *Do not edit these files*, instead use them as a reference when creating your skin. Two common files you likely start with is the global variables: `modules/oxide/src/less/theme/globals/global-variables.less` and the toolbar buttons: `modules/oxide/src/less/theme/components/toolbar-button/toolbar-button.less`.
+The folder `modules/oxide/src/less/theme/` contains the less files. At the top of most files you find the available variables that defines the default colors, margins, fonts etc (variables are the strings that starts with an at-character, for example `@background-color`). *Do not edit these files*, instead use them as a reference when creating your skin. Two common files you likely will start with are the global variables: `modules/oxide/src/less/theme/globals/global-variables.less` and the toolbar buttons: `modules/oxide/src/less/theme/components/toolbar-button/toolbar-button.less`.
 
-The general workflow is that you look inside the *less files within the theme* folder and copy the variables you like to change into your skin's `skin.less` file.
+The general workflow is that you look inside the less files within the theme folder and copy the variables you like to change into your skin's `skin.less` file.
 
 > Note: The skin **only** changes the visual presentation of the UI and **not** the placement of elements. Placement of elements is done by the TinyMCE UI framework. This framework makes it possible to do complex UI layouts on all browsers without touching any CSS when plugins are created.
 

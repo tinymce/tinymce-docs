@@ -50,10 +50,5 @@ deploy_branch:
     - s3sync:
         key-id: $AWS_ACCESS_KEY_ID
         key-secret: $AWS_SECRET_ACCESS_KEY
-        bucket-url: $S3_BUCKET
-        source-dir: _essentials
-    - s3sync:
-        key-id: $AWS_ACCESS_KEY_ID
-        key-secret: $AWS_SECRET_ACCESS_KEY
         bucket-url: $S3_BUCKET/docs-4x/
         source-dir: $S3_SOURCE

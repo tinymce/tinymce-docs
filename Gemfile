@@ -10,4 +10,5 @@ group :development, :test do
   gem 'rouge', '~> 3.2.1'
   gem 'nokogiri', '~> 1.8.4'
   gem "jekyll-last-modified-at", "~> 1.0"
+  gem 'wdm', '~> 0.1.1', :install_if => Gem.win_platform?
 end

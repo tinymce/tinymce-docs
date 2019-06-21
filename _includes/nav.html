@@ -1,5 +1,4 @@
 <ul>
-
 {% for link in include.links %}
   {% capture slash_url_slash %}/{{ link.url }}/{% endcapture %}
   {% if page.url contains slash_url_slash %}

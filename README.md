@@ -34,9 +34,7 @@ sudo dnf install gcc-c++
 
 ## First time set up
 
-Once you have the prerequisites
-
-Then retrieve and init the project:
+Once you have the prerequisites, retrieve and init the project:
 
     git clone git@github.com:tinymce/tinymce-docs.git
     cd tinymce-docs
@@ -60,7 +58,7 @@ including information on troubleshooting the "first time set up" process.
 
 It's very slow and the minifier is using regex to parse HTML. We may add a different minifier in the future.
 
-## Generating api docs from local files
+## Generating API docs from local files
 
 ```
 npm i -g ephox/moxiedoc#feature/tinymcenext

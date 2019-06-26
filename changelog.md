@@ -8,6 +8,9 @@ class: changelog
 
 {% capture changelog %}
 
+## Version 5.0.9 June 26, 2019
+* Fixed print plugin not working in Firefox.
+
 ## Version 5.0.8 June 18, 2019
 * Added back support for multiple toolbars.
 * Added support for .m4a files to the media plugin.

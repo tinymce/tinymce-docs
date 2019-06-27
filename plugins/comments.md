@@ -30,9 +30,13 @@ tinymce.init({
 
 There are two modes available in Comments 2.0 that provide the ability to save comments. These modes are configured in the Comments 2.0 settings.
 
-* **Callback Mode** - This is the default mode in Comments. This mode is used to configure storage and save comments on user’s server. This option gives the user a choice to configure the storage settings to either persist comments immediately or save them at the same time as the content. Additional callbacks are required to be configured to use Comments in the callback mode. Refer to the [configuring callbacks for comments]({{site.baseurl}}/advanced/configuring-comments-callbacks/) section, for more information.
+* **Callback Mode** - This is the default mode in Comments. This mode is used to configure storage and save comments on user’s server. This option gives the user a choice to configure the storage settings to either persist comments immediately or save them at the same time as the content. Additional callbacks are required to be configured to use Comments in the callback mode.
 
 * **Embedded Mode** - This mode allows the user to store the comments within the content. No additional callbacks are required to be configured to use this mode.
+
+### Configuring Comments 2.0 callback mode
+
+Refer to the [configuring callbacks for comments]({{site.baseurl}}/advanced/configuring-comments-callbacks/) section, for more information.
 
 ### Configuring Comments 2.0 embedded mode
 
@@ -40,11 +44,54 @@ To configure Comments 2.0 to use the embedded mode use the following script:
 ```js
 tinymce.init({
   selector: "#textarea",
-  tinycomments_author: 'Embedded Journalist',
+  tinycomments_author: 'embedded_journalist',
+  tinycomments_author_name: 'Embedded Journalist',
   tinycomments_mode: 'embedded'
- ...
+  ...
 })
 ```
+
+#### Embedded mode options
+
+##### tinycomments_author
+
+This option sets the author id to be used when creating or replying to comments.
+
+**Type:** `String`
+
+**Default Value:** `"Anon"`
+
+###### Example
+
+```js
+tinymce.init({
+  selector: "#textarea",
+  tinycomments_author: 'embedded_journalist',
+  tinycomments_mode: 'embedded'
+})
+```
+
+##### tinycomments_author_name
+
+> Available in Tiny Comments version 2.1 onwards.
+
+This option sets the author display name to be used when creating or replying to comments. If this option is omitted, then the author id is used instead.
+
+**Type:** `String`
+
+###### Example
+
+```js
+tinymce.init({
+  selector: "#textarea",
+  tinycomments_author: 'embedded_journalist',
+  tinycomments_author_name: 'Embedded Journalist',
+  tinycomments_mode: 'embedded'
+})
+```
+
+#### Embedded mode options
+
 ### Configuring the Comments 2.0 addcomment toolbar button
 
 The `addcomment` toolbar button provides the ability to add comments.

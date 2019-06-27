@@ -30,13 +30,13 @@ tinymce.init({
 
 There are two modes available in Comments 2.0 that provide the ability to save comments. These modes are configured in the Comments 2.0 settings.
 
-* **Callback Mode** - This is the default mode in Comments. This mode is used to configure storage and save comments on user’s server. This option gives the user a choice to configure the storage settings to either persist comments immediately or save them at the same time as the content. Additional callbacks are required to be configured to use Comments in the callback mode.
+* **Callback Mode** - This is the default mode in Comments. This mode is used to configure storage and save comments on the user’s server. This option gives the user a choice of configuring the storage settings to either persist comments immediately or save them at the same time as the content. Additional callbacks must be configured to use Comments in callback mode.
 
 * **Embedded Mode** - This mode allows the user to store the comments within the content. No additional callbacks are required to be configured to use this mode.
 
 ### Configuring Comments 2.0 callback mode
 
-Refer to the [configuring callbacks for comments]({{site.baseurl}}/advanced/configuring-comments-callbacks/) section, for more information.
+Refer to the [configuring callbacks for comments]({{site.baseurl}}/advanced/configuring-comments-callbacks/) section for more information.
 
 ### Configuring Comments 2.0 embedded mode
 
@@ -75,7 +75,7 @@ tinymce.init({
 
 > Available in Tiny Comments version 2.1 onwards.
 
-This option sets the author display name to be used when creating or replying to comments. If this option is omitted, then the author id is used instead.
+Optional - This option sets the author's display name to be used when creating or replying to comments. If this option is omitted, then the author id is used instead.
 
 **Type:** `String`
 

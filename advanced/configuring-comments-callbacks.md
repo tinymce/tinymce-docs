@@ -184,16 +184,18 @@ The done callback needs to take an object of the form:
    comments: [
     {
       author: string, // author of first comment
+      authorName: string, // optional author display name of first comment. Defaults to using `author` if not specified
       createdAt: date, // when the first comment was created
-      content: string // content of first comment
-      modifiedAt: date // when the first comment was last created/updated
+      content: string, // content of first comment
+      modifiedAt: date, // when the first comment was last created/updated
       uid: string // the uid of the first comment in the conversation
     },
     {
       author: string, // author of second comment
+      authorName: string, // optional author display name of second comment. Defaults to using `author` if not specified
       createdAt: date, // when the second comment was created
-      content: string // content of second comment
-      modifiedAt: date // when the second comment was last created/updated
+      content: string, // content of second comment
+      modifiedAt: date, // when the second comment was last created/updated
       uid: string // the uid of the second comment in the conversation
     }
   ]

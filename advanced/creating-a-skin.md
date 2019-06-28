@@ -7,9 +7,7 @@ description: Introducing skin creation, less and icon modification.
 keywords: create creator skin icon
 ---
 
-This section provides information on how to create a new skin to customize the appearance of TinyMCE.
-
-> Note: The  [TinyMCE Skin Creator](http://skin.tinymce.com/) only supports TinyMCE 4.
+This section provides information on how to create a new skin to customize the appearance of TinyMCE 5.
 
 ## Prerequisites
 

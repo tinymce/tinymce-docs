@@ -11,7 +11,7 @@ The Release Notes provide high-level coverage of the improvements and additions 
 
 TinyMCE 5.0.9 release adds improvements to the TinyMCE editor to improve the overall user experience.
 
-> **Note:** TinyMCE 5.0.8 community was not released to enterprise due to blockers found during QA. As such TinyMCE 5.0.9 enterprise contains changes from both TinyMCE 5.0.8 and 5.0.9 community releases.
+> **Note:** TinyMCE 5.0.8 community was not released to enterprise due to issues found during QA. As such TinyMCE 5.0.9 enterprise contains changes from both TinyMCE 5.0.8 and 5.0.9 community releases.
 
 ## New features
 
@@ -43,7 +43,7 @@ For more information on the media plugin refer to the [documentation]({{site.bas
 
 ### TinyMCE
 
-The new TinyMCE 5.0.9 editor comes with significant changes to the previous versions. Improved solutions have been introduced for unnecessary and obsolete configuration options. A comprehensive list of the updates and fixed issues is available in the [changelog]({{site.baseurl}}/changelog/#version509june262019).
+The new TinyMCE 5.0.9 editor comes with numerous changes to the previous versions. A comprehensive list of the updates and fixed issues is available in the [changelog]({{site.baseurl}}/changelog/#version509june262019).
 
 #### Iframe dialog component
 

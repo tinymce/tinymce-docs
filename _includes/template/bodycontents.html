@@ -212,8 +212,8 @@
 </div>
 
 {% include_remote {{ site.origin }}/_docs/footer.html css="body > *" %}
-<script src="{{ site.shared_baseurl }}/scripts/common.min.js"></script>
-<script src="{{ site.shared_baseurl }}/scripts/docs.min.js"></script>
+<script src="{{ site.shared_baseurl }}{{ site.baseurl }}/scripts/common.min.js"></script>
+<script src="{{ site.shared_baseurl }}{{ site.baseurl }}/scripts/docs.min.js"></script>
 
 <script>
     {% include js/my-account-button.js %}

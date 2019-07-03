@@ -6,6 +6,8 @@ Use the [toolbar]({{site.baseurl}}/configure/editor-appearance/#toolbar) option 
 
 **Type: String**
 
+> **Note:** The toolbar drawer is not available when using [multiple toolbars]({{site.baseurl}}/configure/editor-appearance/#usingmultipletoolbars) or the [toolbar(n)]({{site.baseurl}}/configure/editor-appearance/#toolbarn) option.
+
 ## Settings
 
 The drawer settings have to be specified in the `tinymce.init` at the time of configuring the  `toolbar_drawer` option. There are two types of drawer settings - _floating_ and _sliding_.

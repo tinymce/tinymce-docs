@@ -22,6 +22,9 @@ build:
 
 deploy:
   steps:
+    - script:
+        name: prepare files
+        code: _scripts/deploy-branch.sh
     - s3sync:
         key-id: $AWS_ACCESS_KEY_ID
         key-secret: $AWS_SECRET_ACCESS_KEY

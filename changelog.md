@@ -8,6 +8,28 @@ class: changelog
 
 {% capture changelog %}
 
+## Version 5.0.10 July 2, 2019
+* Added support for all HTML color formats in `color_map` setting.
+* Changed backspace key handling to outdent content in appropriate circumstances.
+* Changed default palette for forecolor and backcolor to include some lighter colors suitable for highlights.
+* Changed the search and replace plugin to cycle through results.
+* Fixed inconsistent types causing some properties to be unable to be used in dialog components.
+* Fixed an issue in the Oxide skin where dialog content like outlines and shadows were clipped because of overflow hidden.
+* Fixed the search and replace plugin not resetting state when changing the search query.
+* Fixed backspace in lists not creating an undo level.
+* Fixed the editor to cancel loading in quirks mode where the UI is not supported.
+* Fixed applying fonts not working when the name contained spaces and numbers.
+* Fixed so that initial content is retained when initializing on list items.
+* Fixed inefficient font name and font size current value lookup during rendering.
+* Fixed mobile font copied into the wrong folder for the oxide-dark skin.
+* Fixed an issue where resizing the width of tables would produce inaccurate results.
+* Fixed a memory leak in the Silver theme.
+* Fixed alert and confirm dialogs using incorrect markup causing inconsistent padding.
+* Fixed an issue in the Table plugin with `table_responsive_width` not enforcing units when resizing.
+* Fixed leading, trailing and sequential spaces being lost when pasting plain text.
+* Fixed exception being thrown when creating relative URIs.
+* Fixed focus is no longer set to the editor content during mode changes unless the editor already had focus.
+
 ## Version 5.0.9 June 26, 2019
 * Fixed print plugin not working in Firefox.
 

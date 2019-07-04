@@ -8,6 +8,11 @@ class: changelog
 
 {% capture changelog %}
 
+## Version 5.0.11 July 4, 2019
+* Fixed packaging errors caused by a rollup treeshaking [bug](https://github.com/rollup/rollup/issues/2970).
+* Fixed the customeditor component not able to get data from the dialog api.
+* Fixed collection component tooltips not being translated.
+
 ## Version 5.0.10 July 2, 2019
 * Added support for all HTML color formats in `color_map` setting.
 * Changed backspace key handling to outdent content in appropriate circumstances.

@@ -25,56 +25,56 @@
     function getIsAuthData() {
         var isAuthFromStorage = localStorage.getItem(LS_KEY_VALUE) === "true";
         var isAuthExpireFromStorage = parseInt(localStorage.getItem(LS_KEY_EXPIRE), 10);
-
+    
         if (isAuthFromStorage && isAuthExpireFromStorage > Date.now()) {
             return renderMyAccountButton();
         }
-
+    
         var wordpressResponse = {};
-        var auth0Response = {};
-
-        fetch(
-            WP_ENDPOINT,
-            {
+    
+        fetch(WP_ENDPOINT, {
                 credentials: "include",
                 method: "get",
                 mode: "cors",
-            }    
-        )
-        .then(function (response) {
-            wordpressResponse = response.json();
-
-            return fetch(AUTH0_ENDPOINT, {
-                credentials: "include",
-                method: "get",
-                mode: "cors",
+            })
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (wordpressAuthResponse) {
+                wordpressResponse = wordpressAuthResponse;
+    
+                return fetch(AUTH0_ENDPOINT, {
+                    credentials: "include",
+                    method: "get",
+                    mode: "cors",
+                });
+            })
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (auth0Response) {
+                /**
+                 * Just don't change the button if you can't verify the identity.
+                 */
+                if (!auth0Response.public || !auth0Response.public.username) {
+                    return;
+                }
+    
+                if (!wordpressResponse.isAuthenticated || !wordpressResponse.username) {
+                    return;
+                }
+    
+                var isAuthenticated =
+                    wordpressResponse.username === auth0Response.public.username &&
+                    wordpressResponse.isAuthenticated;
+    
+                localStorage.setItem(LS_KEY_VALUE, isAuthenticated);
+                localStorage.setItem(LS_KEY_EXPIRE, Date.now() + EXPIRE_TIMEOUT);
+    
+                if (isAuthenticated) {
+                    renderMyAccountButton();
+                }
             });
-        })
-        .then(function (response) {
-            auth0Response = response.json();
-
-            /**
-             * Just don't change the button if you can't verify the identity.
-             */
-            if (!auth0Response.public || !auth0Response.public.username) {
-                return;
-            }
-
-            if (!wordpressResponse.isAuthenticated || !wordpressResponse.username) {
-                return;
-            }
-
-            var isAuthenticated = 
-                wordpressResponse.username === auth0Response.public.username
-                && wordpressResponse.isAuthenticated;
-
-            localStorage.setItem(LS_KEY_VALUE, isAuthenticated);
-            localStorage.setItem(LS_KEY_EXPIRE, Date.now() + EXPIRE_TIMEOUT);
-
-            if (isAuthenticated) {
-                renderMyAccountButton();
-            }
-        });
     }
 
     function isStagingEnvironment() {

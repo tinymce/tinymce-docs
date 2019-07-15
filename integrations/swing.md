@@ -54,7 +54,7 @@ tinyProperties.put("toolbar", "undo redo | formatselect | bold italic backcolor 
 final Config myConfig = Config.embedded().addProperties(tinyProperties);
 ```
 
-### 3. Create the editor and it to your view
+### 3. Create the editor and add it to your view
 
 Create the editor by passing a configuration object. The editor initialization is asynchronous so starting a new editor will return a future value that can be accessed as a normal future value.
 

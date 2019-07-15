@@ -29,7 +29,7 @@ The Swing integration allows the user to select the origin of the TinyMCE code: 
 * Cloud deployments pull the latest release of TinyMCE from the channel of your choice. Use this option by passing your API key and selecting a release channel.
 
   ```
-  final Confif myTinyConfiguration = Config.cloud("<my_api_key>", "5-stable");
+  final Config myTinyConfiguration = Config.cloud("<my_api_key>", "5-stable");
   ```
 
 * Embedded deployments use the version of TinyMCE prepackaged with the current release of the integration.

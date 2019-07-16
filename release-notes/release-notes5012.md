@@ -1,17 +1,18 @@
 ---
 layout: default
-title: TinyMCE 5.0.11
-title_nav: TinyMCE 5.0.11
+title: TinyMCE 5.0.12
+title_nav: TinyMCE 5.0.12
 keywords: releasenotes newfeatures deleted technologypreview bugfixes knownissues
+sitemap: false
 ---
 
 ## Overview
 
-The Release Notes provide high-level coverage of the improvements and additions that have been implemented in TinyMCE 5.0.11 and document known problems in this release, as well as important bug fixes, deprecated functionality, and other details.
+The Release Notes provide high-level coverage of the improvements and additions that have been implemented in TinyMCE 5.0.12 and document known problems in this release, as well as important bug fixes, deprecated functionality, and other details.
 
-TinyMCE 5.0.11 release adds improvements to the TinyMCE editor to improve the overall user experience.
+TinyMCE 5.0.12 release adds improvements to the TinyMCE editor to improve the overall user experience.
 
-> **Note:** TinyMCE 5.0.10 community was not released to enterprise due to a bundling issue discovered shortly after the community release. As such TinyMCE 5.0.11 enterprise contains changes from both TinyMCE 5.0.10 and 5.0.11 community releases.
+> **Note:** TinyMCE 5.0.10 community was not released to enterprise due to a bundling issue discovered shortly after the community release. As such TinyMCE 5.0.12 enterprise contains changes from both TinyMCE 5.0.10 and 5.0.12 community releases.
 
 ## New features
 
@@ -42,15 +43,15 @@ For more information on **Tiny Comments** refer to the full [documentation]({{si
 
 ### TinyMCE
 
-The updated TinyMCE 5.0.11 editor comes with numerous changes to the previous versions. A comprehensive list of the updates and fixed issues is available in the [changelog]({{site.baseurl}}/changelog/#version5011july42019).
+The updated TinyMCE 5.0.12 editor comes with numerous changes to the previous versions. A comprehensive list of the updates and fixed issues is available in the [changelog]({{site.baseurl}}/changelog/#version5011july42019).
 
 #### Backspace key handling
 
-TinyMCE 5.0.11 has improved the backspace key handling, so that pressing backspace at the start of an indented paragraph will now outdent the paragraph by one level instead of merging into the previous paragraph.
+TinyMCE 5.0.12 has improved the backspace key handling, so that pressing backspace at the start of an indented paragraph will now outdent the paragraph by one level instead of merging into the previous paragraph.
 
 #### Default background and foreground colors
 
-TinyMCE 5.0.11 has updated the default colors defined in the [`color_map`]({{site.baseurl}}/configure/content-appearance/#color_map) setting to include colors that are useful for both highlights and regular text.
+TinyMCE 5.0.12 has updated the default colors defined in the [`color_map`]({{site.baseurl}}/configure/content-appearance/#color_map) setting to include colors that are useful for both highlights and regular text.
 
 ![Color map]({{site.baseurl}}/images/color-map-updated.png)
 
@@ -92,7 +93,7 @@ tinymce.init({
 
 #### Search and replace plugin
 
-TinyMCE 5.0.11 has improved the search and replace plugin so that it will now cycle through results instead of stopping when it reaches the top or bottom of the document. 
+TinyMCE 5.0.12 has improved the search and replace plugin so that it will now cycle through results instead of stopping when it reaches the top or bottom of the document. 
 
 ### PowerPaste
 

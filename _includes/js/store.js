@@ -1,28 +1,8 @@
 (function () {
 
-  if (typeof window.fetch === "undefined" ||
-      typeof window.$ === "undefined"
-  ) {
-    return;
-  }
-
   var ENDPOINT = isStagingEnvironment()
       ? "https://apps.staging.tiny.cloud/tiny/order/"
       : "https://apps.tiny.cloud/tiny/order/";
-
-  function fetchCart() {
-    fetch(ENDPOINT, {
-      credentials: "include",
-      method: "GET",
-      mode: "cors"
-    }).then(function (response) {
-      return response.json()
-    }).then(function (response) {
-      if (response.itemCount > 0) {
-        showStoreButtons();
-      }
-    });
-  }
 
   function fetchByXhr() {
     let xhr = new XMLHttpRequest();

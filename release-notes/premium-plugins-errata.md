@@ -32,7 +32,7 @@ The new version of PowerPaste 5.0.1 includes bug fixes. Refer to the changelog b
 
 * Added: console logged error codes to assist with support requests.
 * Removed: unused Flash files that were getting bundled with PowerPaste.
-* Fixed: PowerPaste not respecting the editor `automatic_uploads` setting.
+* Fixed: PowerPaste not respecting the `automatic_uploads` setting.
 * Fixed: images incorrectly pasted when `paste_as_text` was enabled.
 * Fixed: issue where `<pre>` elements were not allowed to contain images.
 * Fixed: issue where the wrong error notification was displayed when images failed to import.

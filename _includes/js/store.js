@@ -1,27 +1,27 @@
 (function () {
 
+  if (typeof window.fetch === "undefined" ||
+      typeof window.$ === "undefined"
+  ) {
+    return;
+  }
+
   var ENDPOINT = isStagingEnvironment()
       ? "https://apps.staging.tiny.cloud/tiny/order/"
       : "https://apps.tiny.cloud/tiny/order/";
 
-  function fetchByXhr() {
-    let xhr = new XMLHttpRequest();
-    xhr.open('GET', ENDPOINT);
-    xhr.withCredentials = true;
-    xhr.send();
-    xhr.onload = function() {
-      if (xhr.status != 200) {
-        console.log("Error", xhr.status, xhr.statusText);
-      } else {
-        console.log("response", xhr.response, JSON.parse(xhr.response));
-        if (JSON.parse(xhr.response).itemCount > 0) {
-          showStoreButtons();
-        }
+  function fetchCart() {
+    fetch(ENDPOINT, {
+      credentials: "include",
+      method: "GET",
+      mode: "cors"
+    }).then(function (response) {
+      return response.json()
+    }).then(function (response) {
+      if (response.itemCount > 0) {
+        showStoreButtons();
       }
-    };
-    xhr.onerror = function() {
-      console.log("Request failed");
-    };
+    });
   }
 
   function isStagingEnvironment() {
@@ -34,5 +34,5 @@
     $("#nav-cart-button").text("Cart");
   }
 
-  $(document).ready(fetchByXhr);
+  $(document).ready(fetchCart);
 })();

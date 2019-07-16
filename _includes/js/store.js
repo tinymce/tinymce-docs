@@ -18,6 +18,7 @@
     }).then(function (response) {
       return response.json()
     }).then(function (response) {
+      console.log("count", response.itemCount);
       if (response.itemCount > 0) {
         showStoreButtons();
       }
@@ -30,7 +31,7 @@
   }
 
   function showStoreButtons() {
-    $(".tiny-news-store").css("visibility", "unset");
+    $(".tiny-news-store").css("visibility", "visible");
   }
 
   $(document).ready(fetchCart);

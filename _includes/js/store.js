@@ -30,8 +30,7 @@
   }
 
   function showStoreButtons() {
-    $(".tiny-news-store").css("visibility", "unset");
-    $("#nav-cart-button").text("Cart");
+    $(".tiny-news-store").css("visibility", "visible");
   }
 
   $(document).ready(fetchCart);

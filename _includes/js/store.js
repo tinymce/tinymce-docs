@@ -31,6 +31,11 @@
 
   function showStoreButtons() {
     $(".tiny-news-store").css("visibility", "visible");
+    $(".store-button-mobile").css({
+      "visibility": "visible",
+      "height": "inherit",
+      "padding": "20px 0"
+    });
   }
 
   $(document).ready(fetchCart);

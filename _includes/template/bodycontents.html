@@ -123,8 +123,8 @@
 {% include_remote {{ site.origin }}/_docs/footer.html css="body > *" %}
 <script src="{{ site.shared_baseurl }}/scripts/common.min.js"></script>
 <script src="{{ site.shared_baseurl }}/scripts/docs.min.js"></script>
-<script src=https://cdn.jsdelivr.net/npm/promise-polyfill@8.1/dist/polyfill.min.js></script>
-<script src=https://cdn.jsdelivr.net/npm/whatwg-fetch@3.0/dist/fetch.umd.min.js></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/promise-polyfill@8.1/dist/polyfill.min.js"></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/whatwg-fetch@3.0/dist/fetch.umd.min.js"></script>
 
 <script>
     {% include js/my-account-button.js %}

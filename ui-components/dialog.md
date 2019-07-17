@@ -136,7 +136,7 @@ The Help plugin's dialog is an example of a tab panel dialog.
 
 ### Footer buttons
 
-A **button** is a clickable component that can contain text or an icon. There are two types of buttons (primary and secondary buttons), though the only difference is that they are styled differently. Primary buttons are intended to stand out. The color will depend on the chosen [skin]({{site.baseurl}}/general-configuration-guide/customize-ui/#skins).
+A **button** is a clickable component that can contain text or an icon. There are three types of buttons (primary, secondary and menu buttons). Primary and secondary buttons will perform an action when clicked, however they are styled differently. Primary buttons are intended to stand out. The color will depend on the chosen [skin]({{site.baseurl}}/general-configuration-guide/customize-ui/#skins). Menu buttons instead of performing an action will open a menu with more options when clicked.
 
 > Note: Dialog footer buttons are different to [dialog panel buttons]({{site.baseurl}}/ui-components/dialogcomponents/#button).
 
@@ -144,7 +144,7 @@ A **button** is a clickable component that can contain text or an icon. There ar
 
 | Name | Type | Requirement | Description |
 | ---- | ---- | ----------- | ----------- |
-| type | `'submit'` or `'cancel'` or `'custom'` | required | Must be `'submit'`, `'cancel'` or `'custom'` based on the type of callback function that should be invoked when the button is clicked. |
+| type | `'submit'` or `'cancel'` or `'custom'` or `'menu'` | required | Must be `'submit'`, `'cancel'`, `'custom'` or `'menu'` based on the type of callback function that should be invoked when the button is clicked. |
 | text | string | required | Text to display in the button if `icon` is not specified. Also used for the button's `title` attribute. |
 | name | string | optional | An identifier for the button. If not specified, the button will be assigned a randomly generated `name`.  |
 | icon | string | optional | Name of the icon to be displayed. Must correspond to an icon in the icon pack. **When configured, the button will display the icon instead of text.** |
@@ -165,6 +165,7 @@ The different footer button types will invoke different callbacks when clicked:
 * A **Submit** type button will invoke the `onSubmit` callback function provided in the dialog configuration.
 * A **Cancel** type button will invoke the `onCancel` and `onClose` callback functions. These callback functions are also fired when a user clicks the `X` button in the top right of the dialog.
 * A **Custom** type button will invoke the `onAction` callback function, and pass it the button's `name` in the `details` object. This allows developers to create a click handler for each **Custom** type footer button in the dialog. See the [Redial example](#interactiveexampleusingredial) for an example of how to use this.
+* A **Menu** type button will fetch a list of additional options and display them in a dropdown menu. Dialog menu buttons are similar to [toolbar menu buttons]({{site.baseurl}}/ui-components/typesoftoolbarbuttons/#menubutton).
 
 See the [dialog configuration options](#configurationoptions) documentation for more information.
 

@@ -75,7 +75,7 @@ tinymce.init({
 
 ### `link_class_list`
 
-The `link_class_list` option allows you to specify a list of classes for the link dialog. These classes will appear in a dropdown menu in the link dialog. Each class must be defined as an object with a `title` and a `value`. For example: `{title: 'Cat', value: 'cat'}`. When the dialog is submitted, the `value` of the selected class item from the dropdwon will be set as the link's `class`.
+The `link_class_list` option allows you to specify a list of classes for the link dialog. These classes will appear in a dropdown menu in the link dialog. Each class must be defined as an object with a `title` and a `value`. For example: `{title: 'Cat', value: 'cat'}`. When the dialog is submitted, the `value` of the selected class item from the dropdown will be set as the link's `class`.
 
 ##### Example
 
@@ -95,7 +95,7 @@ tinymce.init({
 
 ### `link_context_toolbar`
 
-By default it is not possible to open links directly from the editor. Setting `link_context_toolbar` to `true` will enable a context toolbar that will appear when the user's cursor is within a link. This context toolbar contains fields to modify, remove and open the selected link. External links will be opened in a separate tab, while relative ones will cause scroll to a target within the editor (if the target is found).
+By default it is not possible to open links directly from the editor. Setting `link_context_toolbar` to `true` will enable a context toolbar that will appear when the user's cursor is within a link. This context toolbar contains fields to modify, remove and open the selected link. External links will be opened in a separate tab, while relative links scroll to a target within the editor (if the target is found).
 
 > Note: This context toolbar is the same as the context toolbar mentioned in the [`link_quicklink`](#link_quicklink) documentation below.
 
@@ -119,7 +119,7 @@ tinymce.init({
 
 ### `link_list`
 
-This option lets you specify a predefined list of links for the link dialog. These links will appear in a dropdown menu in the link dialog, and when clicked will auto-populate the dialog with the relevant data. This is useful if your users need to regularly link to the same sources.
+This option lets you specify a predefined list of links for the link dialog. These links are added to a drop-down list in the link dialog. When a list item is selected, the dialog will be populated with the relevant data. This is useful if your users need to regularly link to the same sources.
 
 There are multiple ways to specify how to get the data for the link list, but all methods rely on the returned data containing an array of link items. A link item is an object with a `title` and a `value`. For example: `{title: 'My page 1', value: 'https://www.tiny.cloud'}`.
 
@@ -158,7 +158,12 @@ tinymce.init({
 
 `link_list` can also take a function that is called when the link dialog is opened. TinyMCE passes this function a `success` callback function, which should be passed an array of link items. This allows for asynchronous and dynamic generation of the list of links.
 
-The following example is a trivial example of how link_list can be used with a callback function. `fetchLinkLists` could be replaced with any function that returns an array of link items. For example, it could be used to dynamically generate a list of link items based on the user or current editor content, or to fetch data from a database.
+The following is an example of how `link_list` can be used with a callback function. `fetchLinkLists` could be replaced with any function that returns an array of link items. It can be used to generate a list of link items based on:
+
+* Data retrieved from a database.
+* The current editor content.
+* The current user.
+
 
 ```js
 var fetchLinkLists = function() {
@@ -272,7 +277,7 @@ tinymce.init({
     {title: 'None', value: ''},
     {title: 'Same page', value: '_self'},
     {title: 'New page', value: '_blank'},
-    {title: 'Parent frame', value: '_parent_'}
+    {title: 'Parent frame', value: '_parent'}
   ]
 });
 ```

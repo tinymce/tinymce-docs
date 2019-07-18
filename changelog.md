@@ -8,6 +8,20 @@ class: changelog
 
 {% capture changelog %}
 
+## Version 5.0.12 July 18, 2019
+* Added ability to utilize UI dialog panels inside other panels.
+* Added help dialog tab explaining keyboard navigation of the editor.
+* Changed the "Find and Replace" design to an inline dialog.
+* Fixed issue where autolink spacebar event was not being fired on Edge.
+* Fixed table selection missing the background color.
+* Fixed removing shortcuts not working for function keys.
+* Fixed non-descriptive UI component type names.
+* Fixed UI registry components rendering as the wrong type when manually specifying a different type.
+* Fixed an issue where dialog checkbox, input, selectbox, textarea and urlinput components couldn't be disabled.
+* Fixed the context toolbar not using viable screen space in inline/distraction free mode.
+* Fixed the context toolbar overlapping the toolbar in various conditions.
+* Fixed IE11 edge case where items were being inserted into the wrong location.
+
 ## Version 5.0.11 July 4, 2019
 * Fixed packaging errors caused by a rollup treeshaking [bug](https://github.com/rollup/rollup/issues/2970).
 * Fixed the customeditor component not able to get data from the dialog api.

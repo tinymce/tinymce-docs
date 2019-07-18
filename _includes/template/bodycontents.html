@@ -214,10 +214,10 @@
 {% include_remote {{ site.origin }}/_docs/footer.html css="body > *" %}
 <script src="{{ site.shared_baseurl }}{{ site.baseurl }}/scripts/common.min.js"></script>
 <script src="{{ site.shared_baseurl }}{{ site.baseurl }}/scripts/docs.min.js"></script>
-<script src=https://cdn.jsdelivr.net/npm/promise-polyfill@8.1/dist/polyfill.min.js></script>
-<script src=https://cdn.jsdelivr.net/npm/whatwg-fetch@3.0/dist/fetch.umd.min.js></script>
 
 <script>
+    {% include js/polyfill/promise-polyfill/polyfill.min.js %}
+    {% include js/polyfill/whatwg-fetch/fetch.umd.min.js %}
     {% include js/my-account-button.js %}
     {% include js/notifications.js %}
     {% include js/store.js %}

@@ -11,23 +11,18 @@
     var constructor = this.constructor;
     return this.then(
         function(value) {
-          // @ts-ignore
           return constructor.resolve(callback()).then(function() {
             return value;
           });
         },
         function(reason) {
-          // @ts-ignore
           return constructor.resolve(callback()).then(function() {
-            // @ts-ignore
             return constructor.reject(reason);
           });
         }
     );
   }
 
-// Store setTimeout reference so promise-polyfill will be unaffected by
-// other code modifying setTimeout (like sinon.useFakeTimers())
   var setTimeoutFunc = setTimeout;
 
   function isArray(x) {
@@ -36,28 +31,20 @@
 
   function noop() {}
 
-// Polyfill for Function.prototype.bind
   function bind(fn, thisArg) {
     return function() {
       fn.apply(thisArg, arguments);
     };
   }
 
-  /**
-   * @constructor
-   * @param {Function} fn
-   */
+
   function Promise(fn) {
     if (!(this instanceof Promise))
       throw new TypeError('Promises must be constructed via new');
     if (typeof fn !== 'function') throw new TypeError('not a function');
-    /** @type {!number} */
     this._state = 0;
-    /** @type {!boolean} */
     this._handled = false;
-    /** @type {Promise|undefined} */
     this._value = undefined;
-    /** @type {!Array<!Function>} */
     this._deferreds = [];
 
     doResolve(fn, this);
@@ -91,7 +78,6 @@
 
   function resolve(self, newValue) {
     try {
-      // Promise Resolution Procedure: https://github.com/promises-aplus/promises-spec#the-promise-resolution-procedure
       if (newValue === self)
         throw new TypeError('A promise cannot be resolved with itself.');
       if (
@@ -138,21 +124,12 @@
     self._deferreds = null;
   }
 
-  /**
-   * @constructor
-   */
   function Handler(onFulfilled, onRejected, promise) {
     this.onFulfilled = typeof onFulfilled === 'function' ? onFulfilled : null;
     this.onRejected = typeof onRejected === 'function' ? onRejected : null;
     this.promise = promise;
   }
 
-  /**
-   * Take a potentially misbehaving resolver function and make sure
-   * onFulfilled and onRejected are only called once.
-   *
-   * Makes no guarantees about asynchrony.
-   */
   function doResolve(fn, self) {
     var done = false;
     try {
@@ -180,7 +157,6 @@
   };
 
   Promise.prototype.then = function(onFulfilled, onRejected) {
-    // @ts-ignore
     var prom = new this.constructor(noop);
 
     handle(this, new Handler(onFulfilled, onRejected, prom));
@@ -257,12 +233,9 @@
     });
   };
 
-// Use polyfill for setImmediate for performance gains
   Promise._immediateFn =
-      // @ts-ignore
       (typeof setImmediate === 'function' &&
           function(fn) {
-            // @ts-ignore
             setImmediate(fn);
           }) ||
       function(fn) {
@@ -271,15 +244,11 @@
 
   Promise._unhandledRejectionFn = function _unhandledRejectionFn(err) {
     if (typeof console !== 'undefined' && console) {
-      console.warn('Possible Unhandled Promise Rejection:', err); // eslint-disable-line no-console
+      console.warn('Possible Unhandled Promise Rejection:', err);
     }
   };
 
-  /** @suppress {undefinedVars} */
   var globalNS = (function() {
-    // the only reliable means to get the global object is
-    // `Function('return this')()`
-    // However, this causes CSP violations in Chrome apps.
     if (typeof self !== 'undefined') {
       return self;
     }

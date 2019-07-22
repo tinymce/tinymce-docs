@@ -216,6 +216,8 @@
 <script src="{{ site.shared_baseurl }}{{ site.baseurl }}/scripts/docs.min.js"></script>
 
 <script>
+    {% include js/polyfill/promise-polyfill/polyfill.js %}
+    {% include js/polyfill/whatwg-fetch/fetch.umd.js %}
     {% include js/my-account-button.js %}
     {% include js/notifications.js %}
     {% include js/store.js %}

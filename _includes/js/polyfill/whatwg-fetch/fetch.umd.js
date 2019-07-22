@@ -63,7 +63,6 @@
     return value
   }
 
-  // Build a destructive iterator for the value list
   function iteratorFor(items) {
     var iterator = {
       next: function() {
@@ -228,7 +227,6 @@
         this._bodyText = body.toString();
       } else if (support.arrayBuffer && support.blob && isDataView(body)) {
         this._bodyArrayBuffer = bufferClone(body.buffer);
-        // IE 10-11 can't handle a DataView body.
         this._bodyInit = new Blob([this._bodyArrayBuffer]);
       } else if (support.arrayBuffer && (ArrayBuffer.prototype.isPrototypeOf(body) || isArrayBufferView(body))) {
         this._bodyArrayBuffer = bufferClone(body);
@@ -304,7 +302,6 @@
     return this
   }
 
-  // HTTP methods whose capitalization should be normalized
   var methods = ['DELETE', 'GET', 'HEAD', 'OPTIONS', 'POST', 'PUT'];
 
   function normalizeMethod(method) {
@@ -373,8 +370,6 @@
 
   function parseHeaders(rawHeaders) {
     var headers = new Headers();
-    // Replace instances of \r\n and \n followed by at least one space or horizontal tab with a space
-    // https://tools.ietf.org/html/rfc7230#section-3.2
     var preProcessedHeaders = rawHeaders.replace(/\r?\n[\t ]+/g, ' ');
     preProcessedHeaders.split(/\r?\n/).forEach(function(line) {
       var parts = line.split(':');
@@ -501,7 +496,6 @@
         request.signal.addEventListener('abort', abortXhr);
 
         xhr.onreadystatechange = function() {
-          // DONE (success or failure)
           if (xhr.readyState === 4) {
             request.signal.removeEventListener('abort', abortXhr);
           }

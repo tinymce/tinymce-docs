@@ -21,6 +21,8 @@
       if (response.itemCount > 0) {
         showStoreButtons();
       }
+    }).catch(function(error) {
+      console.error('Fetch error:', error);
     });
   }
 

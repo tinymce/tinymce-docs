@@ -92,14 +92,15 @@ tinymce.init({
 
 ##### tinycomments_can_delete
 
-_Optional_ - This option sets the author permissions for _deleting comment conversations_. If the `tinycomments_can_delete` option is not included, the current author (`currentAuthor`) cannot delete comment conversations created by other authors.
+_Optional_ - This option sets the author permissions for _deleting comment conversations_. If the `tinycomments_can_delete` option is not included, the current author (`tinycomments_author`) cannot delete comment conversations created by other authors.
 
 **Type:** `Function`
 
 **Default Function**
 ```js
 function (req, done, fail) {
-  var allowed = req.comments.length > 0 && req.comments[0].author === currentAuthor;
+  var allowed = req.comments.length > 0 &&
+                req.comments[0].author === <Current_tinycomments_author>;
   done({
     canDelete: allowed
   });
@@ -111,11 +112,14 @@ The following example extends the default behavior to allow the author `<Admin u
 ###### Example
 
 ```js
+var currentAuthor = 'embedded_journalist';
+
 tinymce.init({
   selector: "#textarea",
-  tinycomments_author: 'embedded_journalist',
+  tinycomments_author: currentAuthor,
   tinycomments_can_delete: function (req, done, fail) {
-    var allowed = req.comments.length > 0 && req.comments[0].author === currentAuthor;
+    var allowed = req.comments.length > 0 &&
+                  req.comments[0].author === currentAuthor;
     done({
       canDelete: allowed || currentAuthor === "<Admin user>"
     });
@@ -126,14 +130,14 @@ tinymce.init({
 ##### tinycomments_can_delete_comment
 
 
-_Optional_ - This option sets the author permissions for _deleting comments_. If the `tinycomments_can_delete_comment` option is not included, the current author (`currentAuthor`) cannot delete comments added by other authors.
+_Optional_ - This option sets the author permissions for _deleting comments_. If the `tinycomments_can_delete_comment` option is not included, the current author (`tinycomments_author`) cannot delete comments added by other authors.
 
 **Type:** `Function`
 
 **Default Function**
 ```js
 function (req, done, fail) {
-  var allowed = req.comment.author === currentAuthor;
+  var allowed = req.comment.author === <Current_tinycomments_author>;
   done({
     canDelete: allowed
   });
@@ -145,9 +149,11 @@ The following example extends the default behavior to allow the author `<Admin u
 ###### Example
 
 ```js
+var currentAuthor = 'embedded_journalist';
+
 tinymce.init({
   selector: "#textarea",
-  tinycomments_author: 'embedded_journalist',
+  tinycomments_author: currentAuthor,
   tinycomments_can_delete_comment: function (req, done, fail) {
     var allowed = req.comment.author === currentAuthor;
     done({
@@ -159,14 +165,14 @@ tinymce.init({
 
 ##### tinycomments_can_edit_comment
 
-_Optional_ - This option sets the author permissions for _editing comments_. If the `tinycomments_can_edit_comment` option is not included, the current author (`currentAuthor`) cannot edit comments added by other authors.
+_Optional_ - This option sets the author permissions for _editing comments_. If the `tinycomments_can_edit_comment` option is not included, the current author (`tinycomments_author`) cannot edit comments added by other authors.
 
 **Type:** `Function`
 
 **Default Function**
 ```js
 function (req, done, fail) {
-  var allowed = req.comment.author === currentAuthor;
+  var allowed = req.comment.author === <Current_tinycomments_author>;
   done({
     canEdit: allowed
   });
@@ -178,9 +184,11 @@ The following example extends the default behavior to allow the author `<Admin u
 ###### Example
 
 ```js
+var currentAuthor = 'embedded_journalist';
+
 tinymce.init({
   selector: "#textarea",
-  tinycomments_author: 'embedded_journalist',
+  tinycomments_author: currentAuthor,
   tinycomments_can_edit_comment: function (req, done, fail) {
     var allowed = req.comment.author === currentAuthor;
     done({

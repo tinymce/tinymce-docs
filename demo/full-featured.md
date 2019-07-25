@@ -7,6 +7,6 @@ description: This example displays all plugins that come with TinyMCE Cloud's pr
 keywords: example demo custom wysiwyg full-power full-featured
 ---
 
-This example displays all plugins included in the default TinyMCE package, and includes those delivered via TinyMCE Cloud premium subscriptions. Please note, it includes [premium plugins](/pricing/#demo-enterprise).
+This example demonstrates the available TinyMCE plugins, including plugins available on TinyMCE Cloud premium subscriptions (excluding [MoxieManager](/plugins/moxiemanager)). Please note, it includes [premium plugins](/pricing/#demo-enterprise).
 
 {% include codepen.html id="full-featured" height="750" %}

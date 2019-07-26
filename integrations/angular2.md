@@ -80,7 +80,7 @@ The component also works with reactive forms (see [Angular documentation](https:
 For example it can be used with the `formControlName` directive like this, placed inside a `formGroup`:
 
 ```html
-<editor [formControlName]="schema.key" [init]="{plugins: 'link'}></editor>
+<editor [formControlName]="schema.key" [init]="{plugins: 'link'}"></editor>
 ```
 
 ### Event binding

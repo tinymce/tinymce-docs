@@ -216,8 +216,11 @@
 <script src="{{ site.shared_baseurl }}/scripts/docs.min.js"></script>
 
 <script>
+    {% include js/polyfill/promise-polyfill/polyfill.js %}
+    {% include js/polyfill/whatwg-fetch/fetch.umd.js %}
     {% include js/my-account-button.js %}
     {% include js/notifications.js %}
+    {% include js/store.js %}
 </script>
 
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>

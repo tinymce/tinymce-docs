@@ -3,7 +3,7 @@ layout: default
 title: "For Dummies"
 ---
 
-## Create a very simple TinyMCE wysiwyg Editor
+## Create a very simple TinyMCE WYSIWYG Editor
 
 ### Instructions
 
@@ -47,7 +47,7 @@ Further more comprehensive instructions can be found on [Installation](https://w
 
 OK so let's move on to become a more advanced Dummy.
 
-## Custom Advanced TinyMCE wysiwyg Editor
+## Custom Advanced TinyMCE WYSIWYG Editor
 
 ### Instructions
 

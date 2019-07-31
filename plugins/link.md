@@ -7,11 +7,11 @@ keywords: url urls insert edit default_link_target link_assume_external_targets 
 controls: toolbar button, menu item
 ---
 
-The `link` plugin allows a user to link external resources such as website URLs, to selected text in their document.
+The **link** plugin allows a user to link external resources such as website URLs, to selected text in their document.
 
-It also adds a toolbar button and a menu item `Insert/edit link` under the `Insert` menu dropdown.
+It adds two toolbar buttons called `link` and `unlink` and three menu items called `link`, `unlink` and `openlink`. The toolbar button and menu item called `link` are included in TinyMCE's default configuration. The `link` menu item can be found in the `Insert` menu.
 
-**Type:** `String`
+The **link** plugin also includes a context menu and context toolbar. The context toolbar can be configured using the [`link_context_toolbar`](#link_context_toolbar) and [`link_quicklink`](#link_quicklink) options documented below.
 
 ##### Example
 
@@ -30,7 +30,9 @@ These settings affect the execution of the `link` plugin. Predefined links, targ
 
 ### `default_link_target`
 
-This option allows you to set a default target for links when inserting/editing a link.
+This option allows you to set a default `target` value for links when inserting/editing a link via the link dialog. If the value of `default_link_target` matches a value specified by the [`target_list`](#target_list) option, that item will be set as the default item for the targets dropdown in the link dialog.
+
+> Note: This option also applies to the [autolink]({{ site.baseurl }}/plugins/autolink) plugin.
 
 **Type:** `String`
 
@@ -45,6 +47,7 @@ tinymce.init({
     default_link_target: "_blank"
 });
 ```
+
 ### `link_assume_external_targets`
 
 Set whether TinyMCE should prepend a `http://` prefix if the supplied URL does not contain a protocol prefix.
@@ -72,9 +75,7 @@ tinymce.init({
 
 ### `link_class_list`
 
-The `link_class_list` plugin adds a predefined `class` dropdown to the `link` dialog box.
-
-**Type:** `String`
+The `link_class_list` option allows you to specify a list of classes for the link dialog. These classes will appear in a dropdown menu in the link dialog. Each class must be defined as an object with a `title` and a `value`. For example: `{title: 'Cat', value: 'cat'}`. When the dialog is submitted, the `value` of the selected class item from the dropdown will be set as the link's `class`.
 
 ##### Example
 
@@ -94,7 +95,9 @@ tinymce.init({
 
 ### `link_context_toolbar`
 
-By default links are defunct in TinyMCE, it is not possible to open them directly from the editor. Setting `link_context_toolbar` to *true* will enable context toolbar on every link, with shortcut functions to open the link, modify it or - remove. External links will be opened in a separate tab, while relative ones will cause scroll to a target within the editor (if the target is found).
+By default it is not possible to open links directly from the editor. Setting `link_context_toolbar` to `true` will enable a context toolbar that will appear when the user's cursor is within a link. This context toolbar contains fields to modify, remove and open the selected link. External links will be opened in a separate tab, while relative links scroll to a target within the editor (if the target is found).
+
+> Note: This context toolbar is the same as the context toolbar mentioned in the [`link_quicklink`](#link_quicklink) documentation below.
 
 **Type:** `Boolean`
 
@@ -106,7 +109,7 @@ By default links are defunct in TinyMCE, it is not possible to open them directl
 
 ```js
 tinymce.init({
-  selector: "textarea",
+  selector: "textarea",  // change this value according to your HTML
   plugins: "link",
   menubar: "insert",
   toolbar: "link",
@@ -116,9 +119,13 @@ tinymce.init({
 
 ### `link_list`
 
-This option lets you specify a predefined list of links for the link dialog. This is very useful if your users need to regularly link to the same sources.
+This option lets you specify a predefined list of links for the link dialog. These links are added to a drop-down list in the link dialog. When a list item is selected, the dialog will be populated with the relevant data. This is useful if your users need to regularly link to the same sources.
 
-**Example of an array with links**
+There are multiple ways to specify how to get the data for the link list, but all methods rely on the returned data containing an array of link items. A link item is an object with a `title` and a `value`. For example: `{title: 'My page 1', value: 'https://www.tiny.cloud'}`.
+
+**Type:** `String` or `Array` or `Function`
+
+**Example of an array of link items**
 
 ```js
 tinymce.init({
@@ -133,9 +140,9 @@ tinymce.init({
 });
 ```
 
-**Example of a JSON URL with links**
+**Example of a JSON URL that returns an array of link items**
 
-You can also configure a URL with JSON data. The format of that list is the same as above:
+You can also configure a URL with JSON data. The JSON data must use the same format as above.
 
 ```js
 tinymce.init({
@@ -147,19 +154,33 @@ tinymce.init({
 });
 ```
 
-**Example of a custom asynchronous function**
+**Example of a custom asynchronous callback function**
+
+`link_list` can also take a function that is called when the link dialog is opened. TinyMCE passes this function a `success` callback function, which should be passed an array of link items. This allows for asynchronous and dynamic generation of the list of links.
+
+The following is an example of how `link_list` can be used with a callback function. `fetchLinkLists` could be replaced with any function that returns an array of link items. It can be used to generate a list of link items based on:
+
+* Data retrieved from a database.
+* The current editor content.
+* The current user.
+
 
 ```js
+var fetchLinkLists = function() {
+  return [
+    {title: 'My page 1', value: 'https://www.tiny.cloud'},
+    {title: 'My page 2', value: 'https://about.tiny.cloud'}
+  ]
+};
+
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "link",
   menubar: "insert",
   toolbar: "link",
-  link_list: function(success) {
-    success([
-       {title: 'My page 1', value: 'https://www.tiny.cloud'},
-       {title: 'My page 2', value: 'https://about.tiny.cloud'}
-    ]);
+  link_list: function(success) { // called on link dialog open
+    var links = fetchLinkList(); // get link_list data
+    success(links); // pass link_list data to TinyMCE
   }
 });
 ```
@@ -186,11 +207,33 @@ tinymce.init({
 });
 ```
 
+### `link_quicklink`
+
+This option changes the behaviour of the `CTRL + K` shortcut. By default, pressing `CTRL + K` will open the link dialog. If `link_quicklink` is set to `true`, pressing `CTRL + K` will instead open the link context toolbar. If the cursor is within an existing link, this context toolbar will contain fields for modifying, removing and opening the selected link. If not, the context toolbar allows for the quick insertion of a link.
+
+> Note: This context toolbar is the same as the context toolbar mentioned in the [`link_context_toolbar`](#link_context_toolbar) documentation above.
+
+**Type:** `Boolean`
+
+**Default Value:** `true`
+
+**Possible Values:** `true`, `false`
+
+##### Example
+
+```js
+tinymce.init({
+  selector: "textarea",  // change this value according to your HTML
+  plugins: "link",
+  menubar: "insert",
+  toolbar: "link",
+  link_quicklink: false
+});
+```
+
 ### `rel_list`
 
-This option lets you specify a predefined list of values for the `link` dialog. These values gets applied to the `rel` attribute.
-
-**Type:** `String`
+This option lets you specify a list of `rel` values for the `link` dialog. These values gets applied to the `rel` attribute. Each `rel` item must be defined as an object with a `title` and a `value`. For example: `{title: 'Table of contents', value: 'toc'}`. When the dialog is submitted, the `value` of the selected `rel` item will be set as the link's `rel` attribute.
 
 ##### Example
 
@@ -209,9 +252,18 @@ tinymce.init({
 
 ### `target_list`
 
-The `target_list` lets you specify a predefined list of targets for the `link` dialog. This defaults to a dialog containing the options `_self` and `_blank`.
+The `target_list` option lets you specify a list of named targets for the `link` dialog. These targets will appear in a dropdown menu in the link dialog. Each target must be defined as an object with a `title` and a `value`. For example: `{title: 'Same page', value: '_self'}`. When the dialog is submitted, the `value` of the selected target item will be set as the link's `target` attribute.
 
-**Type:** `String`
+If [`default_link_target`](#default_link_target) is also configured and its value matches a value specified by `target_list`, that item will be set as the default item for the targets dropdown in the link dialog.
+
+**Default:**
+
+```js
+[
+  { text: 'Current window', value: '' },
+  { text: 'New window', value: '_blank' }
+]
+```
 
 **Example, adding a `_lightbox` target to the dropdown list**
 
@@ -225,7 +277,7 @@ tinymce.init({
     {title: 'None', value: ''},
     {title: 'Same page', value: '_self'},
     {title: 'New page', value: '_blank'},
-    {title: 'Lightbox', value: '_lightbox'}
+    {title: 'Parent frame', value: '_parent'}
   ]
 });
 ```

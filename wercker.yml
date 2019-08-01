@@ -20,15 +20,6 @@ build:
         name: build
         code: _scripts/build.sh
 
-deploy:
-  steps:
-    - s3sync:
-        key-id: $AWS_ACCESS_KEY_ID
-        key-secret: $AWS_SECRET_ACCESS_KEY
-        bucket-url: $S3_BUCKET/docs-4x/
-        source-dir: $S3_SOURCE
-        opts: --delete-removed
-
   after-steps:
     - slack-notifier:
         url: $SLACK_WEBHOOK_URL
@@ -52,3 +43,27 @@ deploy_branch:
         key-secret: $AWS_SECRET_ACCESS_KEY
         bucket-url: $S3_BUCKET/docs-4x/
         source-dir: $S3_SOURCE
+
+deploy_staging:
+  steps:
+    - script:
+        name: prepare files
+        code: _scripts/deploy-staging.sh
+    - s3sync:
+        key-id: $AWS_ACCESS_KEY_ID
+        key-secret: $AWS_SECRET_ACCESS_KEY
+        bucket-url: $S3_BUCKET/docs-4x/
+        source-dir: $S3_SOURCE
+        opts: --delete-removed
+
+deploy_production:
+  steps:
+    - script:
+        name: prepare files
+        code: _scripts/deploy-production.sh
+    - s3sync:
+        key-id: $AWS_ACCESS_KEY_ID
+        key-secret: $AWS_SECRET_ACCESS_KEY
+        bucket-url: $S3_BUCKET/docs-4x/
+        source-dir: $S3_SOURCE
+        opts: --delete-removed

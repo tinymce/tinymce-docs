@@ -2,14 +2,14 @@
 layout: default
 title: Use multiple TinyMCE instances in a single page
 title_nav: Multiple editors in a page
-keywords: 
+keywords:
 ---
 
 This section is about adding multiple editor instances to a single page. This is a common use case when using TinyMCE's `inline` mode. Breaking content into sections (e.g., titles, paragraphs) allows users to edit them individually.
 
 ## Multiple editor instances sharing the same configuration
 
-The following example breaks the page into two separate editable areas. Each area shares a single editor configuraiton. Each editable `div` is provided the same `class` of `myeditablediv`. TinyMCE is loaded just for the content area the user clicks.
+The following example breaks the page into two separate editable areas. Each area shares a single editor configuration. Each editable `div` is provided the same `class` of `myeditablediv`. TinyMCE is loaded just for the content area the user clicks.
 
 ```html
 <!DOCTYPE html>

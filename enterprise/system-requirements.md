@@ -19,12 +19,12 @@ Word copy and paste is supported on all the browsers supported by TinyMCE Enterp
 
 |                      | HTML Cleaning | Improved HTML Cleaning | Image Import |
 |----------------------| :-------------: | :----------------------: | :------------: |
-| Internet Explorer 8  | X |   |   |
-| Internet Explorer 9  | X |   |   |
-| Internet Explorer 10+| X | X | X |
-| Chrome Current       | X | X | X |
-| Firefox Current      | X | X | X |
-| Safari 6.1+          | X | X | X |
+| Internet Explorer 8  | &#10003; |          |          |
+| Internet Explorer 9  | &#10003; |          |          |
+| Internet Explorer 10+| &#10003; | &#10003; | &#10003; |
+| Chrome Current       | &#10003; | &#10003; | &#10003; |
+| Firefox Current      | &#10003; | &#10003; | &#10003; |
+| Safari 6.1+          | &#10003; | &#10003; | &#10003; |
 
 #### HTML Cleaning
 

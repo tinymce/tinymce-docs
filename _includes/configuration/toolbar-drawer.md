@@ -1,6 +1,6 @@
 ## toolbar_drawer
 
-The `toolbar_drawer` option is used to add an additional toolbar to accommodate the overflowing toolbar buttons. This option is very useful while using a smaller screen or a contracted editor window. The toolbar drawer is initially hidden, and can be shown by pressing the `toolbar_drawer` icon ![**Drawer**]({{site.baseurl}}/images/drawer.png). The button only appears if the toolbar buttons do not fit horizontally. This feature is configured using the `toolbar_drawer` configuration setting.Even when this option is configured, it only appears when the editor window cannot display all the configured toolbar buttons.
+The `toolbar_drawer` option is used to add an additional toolbar to accommodate the overflowing toolbar buttons. This option is very useful while using a smaller screen or a contracted editor window. The toolbar drawer is initially hidden, and can be shown by pressing the `toolbar_drawer` icon ![**Drawer**]({{site.baseurl}}/images/drawer.png). The button only appears if the toolbar buttons do not fit horizontally. This feature is configured using the `toolbar_drawer` configuration setting. Even when this option is configured, it only appears when the editor window cannot display all the configured toolbar buttons.
 
 Use the [toolbar]({{site.baseurl}}/configure/editor-appearance/#toolbar) option to specify the buttons and the order that they will appear in the extended toolbars. To create groups within this list, please add `|` pipe characters between the configured groups of controls.
 

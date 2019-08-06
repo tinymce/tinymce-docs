@@ -80,7 +80,7 @@ For:
 <html>
   <head>
     <meta charset='utf-8'>
-    <script src='/lib/node_modules/tinymce/tinymce.min.js'></script>
+    <script src="https://cdn.tiny.cloud/1/my-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
   </head>
   <body>
     <form method='post'>
@@ -92,6 +92,10 @@ For:
   </body>
 </html>
 ```
+
+### Next Steps
+
+For information on getting started with TinyMCE, see: [TinyMCE Quick Start]({{site.baseurl}}/quick-start).
 
 ## Custom Toolbar
 
@@ -130,6 +134,11 @@ For:
 </script>
 ```
 
+### Next Steps
+
+* For information on customizing the TinyMCE Toolbar, see: [User interface options: Toolbar]({{site.baseurl}}/configure/editor-appearance/#toolbar).
+* For a list of available toolbar items, see: [Editor control identifiers: Toolbar controls]({{site.baseurl}}/advanced/editor-control-identifiers/#toolbarcontrols).
+
 ## Inline Mode
 
 ### Froala 3 Example: Inline Mode
@@ -161,6 +170,13 @@ For:
   });
 </script>
 ```
+
+### Next Steps
+
+* For information on the inline editing mode; including how to enable inline editing mode, see: [Setup inline editing mode]({{site.baseurl}}/general-configuration-guide/use-tinymce-inline/).
+* quick bar [Quick Toolbar plugin]({{site.baseurl}}/plugins/quickbars/)
+* disable menubar [User interface options: Menubar]({{site.baseurl}}/configure/editor-appearance/#menubar)
+* destraction-free editing mode [TinyMCE distraction-free editing mode]({{site.baseurl}}/general-configuration-guide/use-tinymce-distraction-free/)
 
 ## Custom Button
 
@@ -229,6 +245,10 @@ For:
 </script>
 ```
 
+### Next Steps
+
+* For an overview on creating custom toolbar buttons, see: [Toolbar buttons]({{site.baseurl}}/ui-components/toolbarbuttons/#howtocreatecustomtoolbarbuttons).
+* For information on the available types of toolbar buttons and examples of custom toolbar buttons, see: [Types of toolbar buttons]({{site.baseurl}}/ui-components/typesoftoolbarbuttons/).
 
 ## Custom Drop-down Toolbar Buttons
 
@@ -307,63 +327,8 @@ For:
 </script>
 ```
 
-### TinyMCE 5 Example: Custom Nested Drop-down Button
+### Next Steps
 
-```html
-<h2>TinyMCE Custom Nested Drop-down Button</h2>
-  <form method='post'>
-    <textarea id='tiny_custom_button_menu'>Hello, World! I'm a tiny editor!</textarea>
-  </form>
-<script>
-  tinymce.init({
-    selector: '#tiny_custom_button_menu',
-    toolbar: 'mybutton',
-
-    setup: function (editor) {
-      editor.ui.registry.addMenuButton('mybutton', {
-        text: 'My nested button menu',
-        fetch: function (callback) {
-          var items = [
-            {
-              type: 'menuitem',
-              text: 'Menu item 1',
-              onAction: function () {
-                editor.insertContent('&nbsp;<em>You clicked menu item 1!</em>');
-              }
-            },
-            {
-              type: 'nestedmenuitem',
-              text: 'Menu item 2',
-              icon: 'user',
-              getSubmenuItems: function () {
-                return [
-                  {
-                    type: 'menuitem',
-                    text: 'Sub menu item 1',
-                    icon: 'unlock',
-                    onAction: function () {
-                      editor.insertContent('&nbsp;<strong>You clicked Sub menu item 1!</strong>');
-                    }
-                  },
-                  {
-                    type: 'menuitem',
-                    text: 'Sub menu item 2',
-                    icon: 'lock',
-                    onAction: function () {
-                      editor.insertContent('&nbsp;<em>You clicked Sub menu item 2!</em>');
-                    }
-                  }
-                ];
-              }
-            }
-          ];
-          callback(items);
-        }
-      });
-    }
- });
-</script>
-```
-
+For information on creating Drop-down buttons, see: [Types of toolbar buttons: Menu button]({{site.baseurl}}/ui-components/typesoftoolbarbuttons/#menubutton).
 
 

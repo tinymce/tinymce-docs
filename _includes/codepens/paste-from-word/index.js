@@ -5,7 +5,7 @@ tinymce.init({
   plugins: [
     'advlist autolink lists link image charmap print preview anchor',
     'searchreplace visualblocks advcode fullscreen',
-    'insertdatetime media table contextmenu powerpaste'
+    'insertdatetime media table powerpaste'
   ],
   toolbar: 'undo redo | insert | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image code',
   powerpaste_allow_local_images: true,

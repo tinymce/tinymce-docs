@@ -49,7 +49,7 @@ The configuration can be customized via Java or by passing Javascript function t
 ```
 final HashMap<String, String> tinyProperties = new HashMap<>();
 tinyProperties.put("menubar", "false");
-tinyProperties.put("plugins", "advlist autolink lists link image anchor textcolor searchreplace visualblocks code insertdatetime media table powerpaste code help");
+tinyProperties.put("plugins", "advlist autolink lists link image anchor searchreplace visualblocks code insertdatetime media table powerpaste code help");
 tinyProperties.put("toolbar", "undo redo | formatselect | bold italic backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | help");
 final Config myConfig = Config.embedded().addProperties(tinyProperties);
 ```

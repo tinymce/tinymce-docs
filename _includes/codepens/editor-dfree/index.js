@@ -20,7 +20,6 @@ var dfreeBodyConfig = {
     'media',
     'powerpaste',
     'table',
-    'textcolor',
     'image',
     'quickbars'
   ],

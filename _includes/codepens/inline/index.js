@@ -3,7 +3,6 @@ var emailHeaderConfig = {
   menubar: false,
   inline: true,
   plugins: [
-    'textcolor',
     'lists',
     'powerpaste',
     'autolink'
@@ -26,7 +25,6 @@ var emailBodyConfig = {
   inline: true,
   plugins: [
     'link',
-    'textcolor',
     'lists',
     'powerpaste',
     'autolink',

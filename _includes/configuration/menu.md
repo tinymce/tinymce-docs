@@ -10,19 +10,20 @@ If you would like to group these menu items, please insert a `|` pipe character 
 
 **Type:** `Object`
 
-##### Example
+##### Example: The TinyMCE Default Menu Items
 
 ```js
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   menu: {
-    file: {title: 'File', items: 'newdocument'},
-    edit: {title: 'Edit', items: 'undo redo | cut copy paste pastetext | selectall'},
-    insert: {title: 'Insert', items: 'link media | template hr'},
-    view: {title: 'View', items: 'visualaid'},
-    format: {title: 'Format', items: 'bold italic underline strikethrough superscript subscript | formats | removeformat'},
-    table: {title: 'Table', items: 'inserttable tableprops deletetable | cell row column'},
-    tools: {title: 'Tools', items: 'spellchecker code'}
+    file: { title: 'File', items: 'newdocument restoredraft | preview | print ' },
+    edit: { title: 'Edit', items: 'undo redo | cut copy paste | selectall | searchreplace' },
+    view: { title: 'View', items: 'code | visualaid visualchars visualblocks | spellchecker | preview fullscreen' },
+    insert: { title: 'Insert', items: 'image link media template codesample inserttable | charmap emoticons hr | pagebreak nonbreaking anchor toc | insertdatetime' },
+    format: { title: 'Format', items: 'bold italic underline strikethrough superscript subscript codeformat | formats blockformats fontformats fontsizes align | forecolor backcolor | removeformat' },
+    tools: { title: 'Tools', items: 'spellchecker spellcheckerlanguage | code wordcount' },
+    table: { title: 'Table', items: 'inserttable tableprops deletetable row column cell' },
+    help: { title: 'Help', items: 'help' }
   }
 });
 ```

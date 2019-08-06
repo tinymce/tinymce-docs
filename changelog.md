@@ -8,6 +8,23 @@ class: changelog
 
 {% capture changelog %}
 
+## Version 5.0.13 August 6, 2019
+* Changed modal dialogs to prevent dragging by default and added new `draggable_modal` setting to restore dragging.
+* Changed the nonbreaking plugin to insert nbsp characters wrapped in spans to aid in filtering. This can be disabled using the `nonbreaking_wrap` setting.
+* Changed backspace behaviour in lists to outdent nested list items when the cursor is at the start of the list item.
+* Fixed sidebar growing beyond editor bounds in IE 11.
+* Fixed issue with being unable to keyboard navigate disabled toolbar buttons.
+* Fixed issues with backspace and delete in nested contenteditable true and false elements.
+* Fixed issue with losing keyboard navigation in dialogs due to disabled buttons.
+* Fixed _MouseEvent.mozPressure is deprecated_ warning in Firefox.
+* Fixed `default_link_target` not being respected when `target_list` is disabled.
+* Fixed mobile plugin filter to only apply to the mobile theme, rather than all mobile platforms.
+* Fixed focus switching to another editor during mode changes.
+* Fixed an exception being thrown when clicking on an uninitialized inline editor.
+* Fixed unable to keyboard navigate to dialog menu buttons.
+* Fixed dialogs being able to be dragged outside the window viewport.
+* Fixed inline dialogs appearing above modal dialogs.
+
 ## Version 5.0.12 July 18, 2019
 * Added ability to utilize UI dialog panels inside other panels.
 * Added help dialog tab explaining keyboard navigation of the editor.

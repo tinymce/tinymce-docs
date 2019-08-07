@@ -45,7 +45,7 @@ In this example, replace `<textarea id='mytextarea'>` with a TinyMCE 5.0 editor 
 <body>
 <h1>TinyMCE Quick Start Guide</h1>
   <form method="post">
-    <textarea id="mytextarea">Hello, World!</textarea>
+    <textarea id="mytextarea" name="mytextarea">Hello, World!</textarea>
   </form>
 </body>
 </html>

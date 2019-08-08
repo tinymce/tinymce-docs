@@ -115,7 +115,7 @@ To update the appearance of the content within the editor, such as headings, quo
 ## Moving the skin into TinyMCE
 
 1. Copy the skin and/or content CSS from `modules/oxide/build/skins/` to the corresponding folders in your production TinyMCE folder.
-2. Update the TinyMCE init function with the [skin](https://www.tiny.cloud/docs-beta/configure/editor-appearance/#skin) option and/or the [content_css](https://www.tiny.cloud/docs-beta/configure/content-appearance/#content_css) option.
+2. Update the TinyMCE init function with the [skin]({{site.baseurl}}/configure/editor-appearance/#skin) option and/or the [content_css]({{site.baseurl}}/configure/content-appearance/#content_css) option.
 
 For more information on how to specify the location of the skin file, see [this]({{site.baseurl}}/configure/editor-appearance/#skin_url) section.
 

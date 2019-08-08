@@ -7,78 +7,78 @@ description: Introducing skin creation, less and icon modification.
 keywords: create creator skin icon
 ---
 
-This section provides information on how to create a new skin to alter the appearance of TinyMCE.
+This section provides information on how to create a new skin to customize the appearance of TinyMCE 5.
 
-## Prerequisites:
+## Prerequisites
 
 This guide assumes:
 
-* Basic understanding of [Node.js](http://nodejs.org) and [Gulp](http://gulpjs.com).
 * Familiarity with the command line and running simple commands.
-
-> Note: The  [TinyMCE Skin Creator](http://skin.tinymce.com/) only supports TinyMCE 4.
+* [NodeJS](https://nodejs.org/en/), [Yarn](https://yarnpkg.com/en/) and [Gulp](https://gulpjs.com) are already installed.
+* Basic understanding of [Less](http://lesscss.org), the CSS preprocessor we use to build the skins. More specifically, [read the section about variables](http://lesscss.org/features/#variables-feature).
 
 ## Preparation
 
-A skin for TinyMCE 5 is written in [less](http://lesscss.org), a popular CSS preprocessor. Making a skin primarily involves modifying variables similar to using an API. The CSS rules are not modified or overridden, instead the `less` variables in the `skin` files is modified. This makes updating TinyMCE easier.
+The CSS that goes with a theme is called a skin. The default skin for TinyMCE 5 is named Oxide and is written in [Less](http://lesscss.org), a popular CSS preprocessor. With Oxide we introduced a concept we call the **Style API**. This API consists of around 300 variables which you use to modify the appearance of TinyMCE. You never touch the underlying CSS. The benefit of this approach is that improvements we make to the the CSS and HTML won't break your custom skin. This also means that if things don't work as expected, we can provide support and bug fixes, something that was virtually impossible before.
 
-> Important: TinyMCE does not recommend modifying or overriding CSS rules directly.
+> Important: We do not recommend modifying or overriding CSS rules directly.
 
-1. Download (or `git clone`) the [TinyMCE skin tools](https://github.com/tinymce/oxide).
-1. Open a terminal and `cd` into the `/oxide` directory.
-1. Run the following command to install all dependencies:
-```js
-npm install
-```
-4. To start `gulp` and spin up a web server for previewing the files, run the following command:
-```js
-npm run start
-```
-> This command starts the preview server at the URL `http://localhost:3000` and starts watching the filesystem for changes.
+To set up the skin development environment, begin with the following steps:
 
-> Note: Run the following command to just build the files:
-```
-npm run build
-```
+1. Download (or `git clone`) the [TinyMCE source code](https://github.com/tinymce/tinymce).
 
+2. Open the terminal and navigate to the folder you just downloaded.
 
-### Result:
+3. Install dependencies with the command:
+
+   ```
+    yarn install
+   ```
+
+4. Launch the web server to preview the skins using the command:
+
+   ```
+   yarn oxide-start
+   ```
+
+You should now be able to open a web browser and point it to the url displayed in the terminal, usually `http://localhost:3000`.
 
 The development environment is set up and ready to work.
 
 ![**TinyMCE skin SDK for Silver theme**]({{site.baseurl}}/images/SDKforsilver.png)
 
+If you just need to build the skins without launching a web server, run:
+```
+yarn oxide-build
+```
+
 ## Making or editing a skin
 
-The preparation steps above must be performed to create or edit a skin.
+Make sure you have performed the preparation steps above.
 
 ### Overview
 
-In the `/oxide` directory, navigate to `src/less/skins/`. There are two folders in this location:
-* `/ui` - which is the skins for the editor.
+Navigate to `modules/oxide/src/less/skins/`. There are two folders in this location:
+* `/ui` - which is the skins for the editor. The important file here is `skin.less`.
 * `/content` - which is the skins for the content within the editor.
 
-The skin imports the theme `less` files located in the `src/less/theme/` directory.
+The folder `modules/oxide/src/less/theme/` contains the Less files. At the top of most files you'll find the available variables that defines the default colors, margins, fonts etc (variables are the strings that starts with an at-character, for example `@background-color`). *Do not edit these files*, instead use them as a reference when creating your skin. We recommend starting with the two files containing global variables: `modules/oxide/src/less/theme/globals/global-variables.less` and the toolbar buttons: `modules/oxide/src/less/theme/components/toolbar-button/toolbar-button.less`.
 
-To create a skin, the CSS in the `/theme` folder is not required to be edited. Instead, TinyMCE provides variables for the relevant CSS properties, such as colors, margins, and spacings, that are used in the skin file to customize TinyMCE.
-
-This allows the user to easily update the TinyMCE instance despite making advanced changes to the skin, since the only thing that is changed is a variable file. Another benefit of this approach is that the user gains access to all the variables that have been tested to work together with the browsers.
+The general workflow is that you look inside the less files within the theme folder and copy the variables you like to change into your skin's `skin.less` file.
 
 > Note: The skin **only** changes the visual presentation of the UI and **not** the placement of elements. Placement of elements is done by the TinyMCE UI framework. This framework makes it possible to do complex UI layouts on all browsers without touching any CSS when plugins are created.
 
 ### Creating a skin
 
-1. In the `/oxide` directory, begin by duplicating the `default` folder located in `src/less/skins/ui/` and rename it to the name of your skin.
-1. Open the file `src/less/theme/globals/global-variables.less` and **copy** the variables to change into the `skin.less` file of the duplicate folder in the previous step.
-1. Change the values. The variables in the `skin.less` will override the default values.
+1. Begin by duplicating the `default` folder located in `modules/oxide/src/less/skins/ui/` and rename it to the name of your skin.
+2. Start the development server using the terminal command `yarn oxide-start`. If you already have the server running, you need to restart it to make it recognize your new skin using `ctrl-c` and then start it again.
+3. Open the file `modules/oxide/src/less/skin/ui/<your-skin-name>/skin.less`.
+4. Open any less file located in the theme folder, for example `modules/oxide/src/less/theme/globals/global-variables.less` and copy a variable you like to change, it's easiest to copy the whole line. Let's copy the `@background-color` variable to start with.
+5. Paste the variable into the `skin.less` file you opened in step 2. For a striking look, change the variable value to be red, like this: `@background-color: red;`. Then save the file.
 
-For more detailed customizations, review the variables in each component, such as `src/less/theme/components/toolbar-button.less` and copy the desired ones to the `skin.less`.
+Your skin.less file should now look like this:
 
-To style interface elements in the content, such as selection color, drag handles, table of contents, bookmarks etc, copy variables to `src/less/skins/ui/<skin-name>/content.less` or `content.inline.less` (if inline mode is being used).
-
-Following is an example of a sample `skin.less` file:
-
-```js
+```
 /**
  * Copyright (c) Tiny Technologies, Inc. All rights reserved.
  * Licensed under the LGPL or a commercial license.
@@ -89,75 +89,31 @@ Following is an example of a sample `skin.less` file:
 @import 'src/less/theme/theme';
 
 //
+// Place your variables here
+//
 
-// Root variables
-// Begin customization by changing these variables as most other variables are derivatives of these.
-@background-color: #1976D2;
-@base-value: 24px;
-@color-black: #222f3e;
-@color-tint: #3498db;
-@color-white: #fff;
-@color-error: #c00;
-@font-stack: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
-
-// Colors
-@border-color: darken(@background-color, 20);
-@text-color: contrast(@background-color, @color-black, @color-white);
-@text-color-muted: contrast(@background-color, fade(@color-black, 60%), fade(@color-white, 50%));
+@background-color: red;
 ```
+Switch to the web browser. Select your skin from the *Skin menu*. It should show a fiery red editor
 
-### Preview the skin
+![**TinyMCE skin SDK for Silver theme**]({{site.baseurl}}/images/SDKforsilverCustomExample.png)
 
-1. To preview the new skin, run the following command from a terminal:
-```js
-npm run start
-```
-2. Navigate to the address shown in the terminal, usually `localhost:3000`. The TinyMCE skin SDK for Silver theme development environment page will appear in the browser.
-3. In the **Editor examples** section, select the new skin from the **UI skin** drop-down menu.
-![**UI skin**]({{site.baseurl}}/images/default-copy.png)
+This is how you skin TinyMCE: copy variables from the files in the theme folder and paste them into your skin file. There are variables for most things, like spacing between toolbar buttons to letter spacing. Simple yet powerful.
 
-#### Result
+> Tip: You can change the TinyMCE config in `modules/oxide/src/demo/index.html` to suit your particular use case.
 
-TinyMCE editor with all the configured skin changes will appear in the browser screen.
+## Creating a content CSS file
 
-### Creating a content CSS file
+To update the appearance of the content within the editor, such as headings, quotes, lists, etc... you create a content css. These are located in `modules/oxide/src/less/skin/content/`
 
-To update the appearance of the content within the editor, such as headings, quotes, lists etc you create a content css. These are located in `src/less/skin/content/`
+1. Create a folder in `modules/oxide/src/less/skins/content/` and create a `content.less` file in it. Alternatively, you can duplicate any of the existing content css.
+2. Start the development server using the terminal command yarn oxide-start. If you already have the server running, you need to restart it to make it recognize your new skin using ctrl-c and then start it again.
+3. Add the relevant element selectors for the desired use case such as `h1` to `h6`, `a`, `blockquote`, `code`, `table`, etc...
 
-1. Create a folder in `src/less/skins/content/` and create a `content.less` file in it. Alternatively, any of the existing content skins can be duplicated.
-2. Add the relevant element selectors for the desired use case such as `h1` to `h6`, `a`, `blockquote`, `code`, `table`, etc.
+## Moving the skin into TinyMCE
 
-### Moving the skin into TinyMCE
-
-1. Copy the skin and/or content skin from `build/skins/` to the corresponding folders in the duplicate TinyMCE folder.
-2. Update the init function with the [skin](https://www.tiny.cloud/docs-beta/configure/editor-appearance/#skin) option and/or the [content_css](https://www.tiny.cloud/docs-beta/configure/content-appearance/#content_css) option.
-
-#### Example
-
-Following is an example of a sample `init` configuration for moving the configured skin into a TinyMCE instance.
-
-```js
-<!DOCTYPE html>
-<html>
-  <head>
-    <script src="js/tinymce/tinymce.min.js"></script>
-
-    <script>
-
-      tinymce.init({
-        selector: 'textarea',
-
-        skin_url: '../oxide/build/skins/ui/<name of default(copy)>',
-        content_css: '../oxide/build/skins/content/<name of the new-skin>/content.min.css'
-      })
-    </script>
-  </head>
-  <body>
-    <textarea>Hello, World</textarea>
-
-  </body>
-</html>
-```
+1. Copy the skin and/or content CSS from `modules/oxide/build/skins/` to the corresponding folders in your production TinyMCE folder.
+2. Update the TinyMCE init function with the [skin]({{site.baseurl}}/configure/editor-appearance/#skin) option and/or the [content_css]({{site.baseurl}}/configure/content-appearance/#content_css) option.
 
 For more information on how to specify the location of the skin file, see [this]({{site.baseurl}}/configure/editor-appearance/#skin_url) section.
 

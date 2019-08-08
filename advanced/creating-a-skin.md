@@ -14,12 +14,12 @@ This section provides information on how to create a new skin to customize the a
 This guide assumes:
 
 * Familiarity with the command line and running simple commands.
-* Having [NodeJS](https://nodejs.org/en/), [Yarn](https://yarnpkg.com/en/) and [Gulp](https://gulpjs.com) installed
+* [NodeJS](https://nodejs.org/en/), [Yarn](https://yarnpkg.com/en/) and [Gulp](https://gulpjs.com) are already installed.
 * Basic understanding of [Less](http://lesscss.org), the CSS preprocessor we use to build the skins. More specifically, [read the section about variables](http://lesscss.org/features/#variables-feature).
 
 ## Preparation
 
-The CSS that goes with a theme is called a skin. The default skin for TinyMCE 5 is named Oxide and is written in [Less](http://lesscss.org), a popular CSS preprocessor. With Oxide we introduced a concept we call the **Style API**. This API consists of around 300 variables which you use to modify the appearance of TinyMCE. You never touch the underlying CSS. The benefit of this approach is that improvements we make to the the CSS and HTML won't break your custom skin. This also means that if things doesn't work as expected, we can provide support and bug fixes, something that was virtually impossible before.
+The CSS that goes with a theme is called a skin. The default skin for TinyMCE 5 is named Oxide and is written in [Less](http://lesscss.org), a popular CSS preprocessor. With Oxide we introduced a concept we call the **Style API**. This API consists of around 300 variables which you use to modify the appearance of TinyMCE. You never touch the underlying CSS. The benefit of this approach is that improvements we make to the the CSS and HTML won't break your custom skin. This also means that if things don't work as expected, we can provide support and bug fixes, something that was virtually impossible before.
 
 > Important: We do not recommend modifying or overriding CSS rules directly.
 
@@ -27,7 +27,7 @@ To set up the skin development environment, begin with the following steps:
 
 1. Download (or `git clone`) the [TinyMCE source code](https://github.com/tinymce/tinymce).
 
-2. Open the terminal and navigate to the folder you just downloaded
+2. Open the terminal and navigate to the folder you just downloaded.
 
 3. Install dependencies with the command:
 
@@ -59,10 +59,10 @@ Make sure you have performed the preparation steps above.
 ### Overview
 
 Navigate to `modules/oxide/src/less/skins/`. There are two folders in this location:
-* `/ui` - which is the skins for the editor. The important file here is  `skin.less`.
+* `/ui` - which is the skins for the editor. The important file here is `skin.less`.
 * `/content` - which is the skins for the content within the editor.
 
-The folder `modules/oxide/src/less/theme/` contains the less files. At the top of most files you find the available variables that defines the default colors, margins, fonts etc (variables are the strings that starts with an at-character, for example `@background-color`). *Do not edit these files*, instead use them as a reference when creating your skin. Two common files you likely will start with are the global variables: `modules/oxide/src/less/theme/globals/global-variables.less` and the toolbar buttons: `modules/oxide/src/less/theme/components/toolbar-button/toolbar-button.less`.
+The folder `modules/oxide/src/less/theme/` contains the Less files. At the top of most files you'll find the available variables that defines the default colors, margins, fonts etc (variables are the strings that starts with an at-character, for example `@background-color`). *Do not edit these files*, instead use them as a reference when creating your skin. We recommend starting with the two files containing global variables: `modules/oxide/src/less/theme/globals/global-variables.less` and the toolbar buttons: `modules/oxide/src/less/theme/components/toolbar-button/toolbar-button.less`.
 
 The general workflow is that you look inside the less files within the theme folder and copy the variables you like to change into your skin's `skin.less` file.
 
@@ -72,7 +72,7 @@ The general workflow is that you look inside the less files within the theme fol
 
 1. Begin by duplicating the `default` folder located in `modules/oxide/src/less/skins/ui/` and rename it to the name of your skin.
 2. Start the development server using the terminal command `yarn oxide-start`. If you already have the server running, you need to restart it to make it recognize your new skin using `ctrl-c` and then start it again.
-3. Open the file `modules/oxide/src/less/skin/ui/<your-skin-name>/skin.less`
+3. Open the file `modules/oxide/src/less/skin/ui/<your-skin-name>/skin.less`.
 4. Open any less file located in the theme folder, for example `modules/oxide/src/less/theme/globals/global-variables.less` and copy a variable you like to change, it's easiest to copy the whole line. Let's copy the `@background-color` variable to start with.
 5. Paste the variable into the `skin.less` file you opened in step 2. For a striking look, change the variable value to be red, like this: `@background-color: red;`. Then save the file.
 
@@ -102,15 +102,13 @@ This is how you skin TinyMCE: copy variables from the files in the theme folder 
 
 > Tip: You can change the TinyMCE config in `modules/oxide/src/demo/index.html` to suit your particular use case.
 
-To style interface elements in the content, such as selection color, drag handles, table of contents, bookmarks etc, copy variables to `modules/oxide/src/less/skins/ui/<skin-name>/content.less` or `content.inline.less` (if inline mode is being used).
-
 ## Creating a content CSS file
 
-To update the appearance of the content within the editor, such as headings, quotes, lists etc you create a content css. These are located in `modules/oxide/src/less/skin/content/`
+To update the appearance of the content within the editor, such as headings, quotes, lists, etc... you create a content css. These are located in `modules/oxide/src/less/skin/content/`
 
 1. Create a folder in `modules/oxide/src/less/skins/content/` and create a `content.less` file in it. Alternatively, you can duplicate any of the existing content css.
 2. Start the development server using the terminal command yarn oxide-start. If you already have the server running, you need to restart it to make it recognize your new skin using ctrl-c and then start it again.
-3. Add the relevant element selectors for the desired use case such as `h1` to `h6`, `a`, `blockquote`, `code`, `table`, etc.
+3. Add the relevant element selectors for the desired use case such as `h1` to `h6`, `a`, `blockquote`, `code`, `table`, etc...
 
 ## Moving the skin into TinyMCE
 

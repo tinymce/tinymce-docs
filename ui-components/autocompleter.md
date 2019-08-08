@@ -33,7 +33,7 @@ The two arguments this method take are:
 | maxResults | number | Optional | default: 10 - The maximum number of results that should be fetched. |
 | minChars | number | Optional | default: 1 - The minimum number of characters that must be typed before the autocompleter will trigger (excluding the trigger char). |
 
-The `fetch` function is called whenever the trigger `char` is pressed and the `matches` predicate returns `true`. It is a function that takes the matched text pattern and returns a promise containing matching results. This allows for asynchronous fetching of the autocompleter items. The `fetchOptions` passed to the `fetch` function is by default an empty object, however using the [reload](#api) API additional arguments can be passed to fetch a different set of results. The results should be a list of objects with the following details:
+The `fetch` function is called whenever the trigger `char` is pressed and the `matches` predicate returns `true`. It is a function that takes the matched text pattern and returns a promise containing matching results. This allows for asynchronous fetching of the autocompleter items. The `fetchOptions` passed to the `fetch` function is by default an empty object, however using the [reload](#api) API additional options can be passed to fetch a different set of results. The results should be a list of objects with the following details:
 * `value`: Value of the item. This will be passed to the `onAction` callback when selected.
 * `text`: Text to display for the item.
 * `icon`: Name of the icon to be displayed. Must be a single unicode character or correspond to an icon in the icon pack.

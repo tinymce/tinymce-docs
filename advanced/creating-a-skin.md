@@ -109,7 +109,8 @@ To style interface elements in the content, such as selection color, drag handle
 To update the appearance of the content within the editor, such as headings, quotes, lists etc you create a content css. These are located in `modules/oxide/src/less/skin/content/`
 
 1. Create a folder in `modules/oxide/src/less/skins/content/` and create a `content.less` file in it. Alternatively, you can duplicate any of the existing content css.
-2. Add the relevant element selectors for the desired use case such as `h1` to `h6`, `a`, `blockquote`, `code`, `table`, etc.
+2. Start the development server using the terminal command yarn oxide-start. If you already have the server running, you need to restart it to make it recognize your new skin using ctrl-c and then start it again.
+3. Add the relevant element selectors for the desired use case such as `h1` to `h6`, `a`, `blockquote`, `code`, `table`, etc.
 
 ## Moving the skin into TinyMCE
 

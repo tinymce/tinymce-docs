@@ -26,7 +26,7 @@ The two arguments this method take are:
 | Name | Value | Requirement | Description |
 | ---- | ----- | ----------- | ----------- |
 | ch | string | Required | The character to trigger the autocompleter. |
-| fetch |  (pattern: string, maxResults: number) => Promise<AutocompleterItem[]> | Required | A function that is passed the current matched text pattern and the maximum number of expected results. The function should return a promise containing matching results. |
+| fetch |  (pattern: string, maxResults: number, fetchOptions: Record<string, any>) => Promise<AutocompleterItem[]> | Required | A function that is passed the current matched text pattern and the maximum number of expected results. The function should return a promise containing matching results. |
 | onAction | (api, rng: Range, value: string) => void | Required | A function invoked when a fetched item is selected. |
 | columns | number or 'auto' | Optional | default: auto - The number of columns to show. If set to `1` column, then icons and text are displayed, otherwise only icons are displayed. |
 | matches | (rng: Range, text: string, pattern: string) => boolean | Optional | default: isStartOfWord - A predicate function that takes a range, the current text node content and the matched text content and returns a boolean indicating if the autocompleter should trigger. |
@@ -45,6 +45,7 @@ The `fetch` function is called whenever the trigger `char` is pressed and the `m
 | Name | Value | Description |
 | ---- | ----- | ----------- |
 | hide | () => void | Hides the autocompleter menu. |
+| reload| (fetchOptions: Record<string, any>) => void | Hides the autocompleter menu and fetches new menu items. The additional `fetchOptions` will be passed to the `fetch` callback. |
 
 ## Example
 

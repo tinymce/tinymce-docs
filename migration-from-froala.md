@@ -6,65 +6,89 @@ description: Instructions for migrating from Froala Editor v3 to TinyMCE 5.
 keywords: migration considerations premigration pre-migration froala
 ---
 
+This page covers the basic steps for migrating from Froala Editor 3 to TinyMCE 5.
+Procedures and links to our documentation have been included to assist with your migration to TinyMCE.
+
+**Covered in this section:**
+* [Migrating a Basic Froala Configuration to TinyMCE]({{site.baseurl}}/migration-from-froala/#migratingabasicfroalaconfigurationtotinymce)
+* [Updating the list of Plugins]({{site.baseurl}}/migration-from-froala/#updatingthelistofplugins)
+* [Migrating a Custom Toolbar Layout]({{site.baseurl}}/migration-from-froala/#migratingacustomtoolbarlayout)
+* [Configuring Inline Mode]({{site.baseurl}}/migration-from-froala/#configuringinlinemode)
+* [Migrating Custom Buttons]({{site.baseurl}}/migration-from-froala/#migratingcustombuttons)
+* [Migrating Custom Drop-down Toolbar Buttons]({{site.baseurl}}/migration-from-froala/#migratingcustomdrop-downtoolbarbuttons)
+
 ## Migrating a Basic Froala Configuration to TinyMCE
 
-### Procedure
+To migrate from a basic Froala 3 configuration to a basic TinyMCE 5 configuration, you need to:
 
-#### Replace Froala source and link scripts with a TinyMCE source script
+1. Replace the Froala links and source scripts with a TinyMCE source script.
+2. Replace the Froala editor variable assignment with the tinymce.init function.
 
-Such as:
+### Replace Froala links and source script with a TinyMCE source script
+
+1. Remove the Froala links and source script, located in the `<head>` of the target HTML page.
+For example:
+
+    ```html
+    <link href='/path/to/froala-editor/base/directory/css/froala_editor.pkgd.min.css' rel='stylesheet' type='text/css' />
+    <script type='text/javascript' src='/path/to/froala-editor/base/directory/js/froala_editor.pkgd.min.js'></script>
+    <link href='/path/to/froala-editor/base/directory/css/froala_style.min.css' rel='stylesheet' type='text/css' />
+    ```
+2. Insert a TinyMCE source script into the `<head>` of the page.
+  * For Tiny Cloud deployments:
 ```html
-<link href='/lib/node_modules/froala-editor/css/froala_editor.pkgd.min.css' rel='stylesheet' type='text/css' />
-<script type='text/javascript' src='/lib/node_modules/froala-editor/js/froala_editor.pkgd.min.js'></script>
-<link href='/lib/node_modules/froala-editor/css/froala_style.min.css' rel='stylesheet' type='text/css' />
-```
-
-Tiny Cloud:
-```html
-<script src="https://cdn.tiny.cloud/1/my-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+<script src='https://cdn.tiny.cloud/1/my-api-key/tinymce/5/tinymce.min.js' referrerpolicy='origin'></script>
 ```
 Replace `my-api-key` with your Tiny Cloud API key.
-
-Self-hosted TinyMCE:
+  * For Self-hosted TinyMCE deployments:
 ```html
 <script src='/path/to/tinymce/base/directory/tinymce.min.js'></script>
 ```
 Replace `/path/to/tinymce/base/directory` with the relative path of the `tinymce/` directory containing `tinymce.min.js`.
 
-#### Replace the Froala editor variable assignment with the tinymce.init function
-For:
+For information on TinyMCE deployment types, see: [Advanced installation choices]({{site.baseurl}}/general-configuration-guide/advanced-install/).
+
+### Replace the Froala editor variable assignment with the tinymce.init function
+To insert an editor in the body of the page for a `<textarea>` element such as:
 ```html
 <form method='post'>
   <textarea id='myeditor'>Enter your comment here!</textarea>
 </form>
 ```
 
+1. Remove the Froala editor variable assignment script.
 ```html
 <script>
   var editor = new FroalaEditor('textarea#myeditor')
 </script>
 ```
-
+2. Add a `tinymce.init` function.
 ```html
 <script>
   tinymce.init({ selector: '#myeditor' });
 </script>
 ```
 
-### Froala 3 Example: Basic Configuration
+For information on configuring the `selector` setting, see: [Basic Setup]({{site.baseurl}}/general-configuration-guide/basic-setup/).
+
+### Examples: Basic Configuration
+
+The following examples show an initial Froala configuration and the migrated TinyMCE configuration.
+
+#### Froala 3 - A Basic Configuration
 
 ```html
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset='utf-8'>
-    <link href='/lib/node_modules/froala-editor/css/froala_editor.pkgd.min.css' rel='stylesheet' type='text/css' />
-    <script type='text/javascript' src='/lib/node_modules/froala-editor/js/froala_editor.pkgd.min.js'></script>
-    <link href='/lib/node_modules/froala-editor/css/froala_style.min.css' rel='stylesheet' type='text/css' />
+    <link href='/path/to/froala-editor/base/directory/css/froala_editor.pkgd.min.css' rel='stylesheet' type='text/css' />
+    <script type='text/javascript' src='/path/to/froala-editor/base/directory/js/froala_editor.pkgd.min.js'></script>
+    <link href='/path/to/froala-editor/base/directory/css/froala_style.min.css' rel='stylesheet' type='text/css' />
   </head>
   <body>
     <form method='post'>
-      <textarea id=basic_froala>Hello, World! I'm a froala editor!</textarea>
+      <textarea id='basic_froala'>Hello, World! I'm a froala editor!</textarea>
     </form>
     <script>
       var editor = new FroalaEditor('textarea#basic_froala')
@@ -73,14 +97,14 @@ For:
 </html>
 ```
 
-### TinyMCE 5 Example: Basic Configuration
+#### TinyMCE 5 - A Basic Configuration
 
 ```html
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset='utf-8'>
-    <script src="https://cdn.tiny.cloud/1/my-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+    <script src='https://cdn.tiny.cloud/1/my-api-key/tinymce/5/tinymce.min.js' referrerpolicy='origin'></script>
   </head>
   <body>
     <form method='post'>
@@ -93,13 +117,110 @@ For:
 </html>
 ```
 
-### Next Steps
+### Additional Information
 
-For information on getting started with TinyMCE, see: [TinyMCE Quick Start]({{site.baseurl}}/quick-start).
+For information on:
+* Getting started with TinyMCE, see: [TinyMCE Quick Start]({{site.baseurl}}/quick-start).
+* Installing TinyMCE, see: [Advanced installation choices]({{site.baseurl}}/general-configuration-guide/advanced-install/).
 
-## Custom Toolbar
+## Updating the list of Plugins
 
-### Froala 3 Example: Custom Toolbar
+Some _Froala core functionality_ is implemented by plugins for TinyMCE; and some _Froala plugin-provided functionality_ is TinyMCE core functionality.
+
+For Example:
+* Froala includes ordered lists as part of the core functionality, but the `lists` plugin provides ordered lists for TinyMCE.
+* Adding a font size option in Froala requires a plugin, but `fontsize` is core functionality for TinyMCE.
+
+To include a plugin for a TinyMCE editor, add a `plugins` option and provide a space-delimited list of the plugins to include, as shown below. You should delete any Froala sourcing scripts and Froala links from the page.
+
+### Examples: Enabling Plugins
+
+The following examples show how plugins as included or enabled for Froala and TinyMCE editors.
+
+#### Froala 3 - Enabling Plugins
+```html
+<head>
+  <meta charset='utf-8'>
+  <link href='/path/to/froala-editor/base/directory/css/froala_editor.pkgd.min.css' rel='stylesheet' type='text/css' />
+  <script type='text/javascript' src='/path/to/froala-editor/base/directory/js/froala_editor.pkgd.min.js'></script>
+  <link href='/path/to/froala-editor/base/directory/css/froala_style.min.css' rel='stylesheet' type='text/css' />
+  <!-- Examples of Froala Plugin scripts -->
+  <!-- Colors plugin -->
+  <script type='text/javascript' src='/path/to/froala-editor/base/directory/js/plugins/colors.min.js'></script>
+  <link href='/path/to/froala-editor/base/directory/css/plugins/colors.min.css' rel='stylesheet' type='text/css' />
+  <!-- Emoticons plugin -->
+  <script type='text/javascript' src='/path/to/froala-editor/base/directory/js/plugins/emoticons.min.js'></script>
+  <link href='../css/plugins/emoticons.min.css' rel='stylesheet' type='text/css' />
+  <!-- Font Family plugin -->
+  <script type='text/javascript' src='/path/to/froala-editor/base/directory/js/plugins/font_family.min.js'></script>
+  <!-- Font Size plugin -->
+  <script type='text/javascript' src='/path/to/froala-editor/base/directory/js/plugins/font_size.min.js'></script>
+  <!-- Help plugin -->
+  <script type='text/javascript' src='/path/to/froala-editor/base/directory/js/plugins/help.min.js'></script>
+  <link href='/path/to/froala-editor/base/directory/css/plugins/help.min.css ' rel='stylesheet' type='text/css' />
+</head>
+```
+
+#### TinyMCE 5 - Enabling Plugins
+
+```html
+<script>
+  tinymce.init({
+    selector: '#tiny_editor',
+    plugins: 'emoticons wordcount help code lists'
+  });
+</script>
+```
+
+### Additional Information on Plugins
+* For information on enabling plugins for TinyMCE, see: [Integration and setup options: plugins]({{site.baseurl}}/configure/integration-and-setup/#plugins).
+* For a list of TinyMCE plugins, see: [Add plugins to TinyMCE]({{site.baseurl}}/plugins/).
+
+## Migrating a Custom Toolbar Layout
+
+To migrate a Custom Toolbar Layout from Froala to TinyMCE:
+* Change the `toolbarButtons` option to `toolbar`.
+* Update the toolbar item listing.
+* Update the `plugin` option as required.
+
+### Change the `toolbarButtons` option to `toolbar`
+Rename the Froala option `toolbarButtons` to `toolbar`.
+### Update the toolbar item listing
+Froala and TinyMCE use different formats for listing toolbar items.
+
+Froala accepts the list of toolbar buttons as a two-dimensional array of strings, such as:
+```js
+toolbarButtons: [['undo', 'redo'], ['paragraphFormat'], ['bold', 'italic'],
+['alignLeft', 'alignCenter', 'alignRight', 'alignJustify'],
+['formatOL', 'formatUL'], ['indent', 'outdent']]
+```
+TinyMCE accepts a space-delimited string with horizontal bars (` | `) for grouping items.
+For example:
+```js
+toolbar: 'undo redo | formatselect | bold italic \
+| alignleft aligncenter alignright alignjustify \
+| numlist bullist | outdent indent'
+```
+
+The names of toolbar items are also different. For example:
+
+Toolbar Button | Froala | TinyMCE
+---|---|---
+Format/Style Selector | `paragraphFormat` | `formatselect`
+Ordered list | `formatOl` | `numlist`
+Unordered list | `formatUL` | `bullist`
+
+### Update the `plugin` option as required
+
+The list of plugins may need updating, as indicated in [Updating the list of Plugins]({{site.baseurl}}/migration-from-froala/#UpdatingthelistofPluginswhenmigratingfromFroala). For example, the TinyMCE toolbar items; `numlist` and `bullist`, require the `lists` plugin.
+
+For a list of toolbar items with the required plugins, see: [Editor control identifiers: Toolbar controls]({{site.baseurl}}/advanced/editor-control-identifiers/#toolbarcontrols).
+
+### Examples: Custom Toolbar Layouts
+
+The following examples show a custom toolbar layout in Froala and the same layout migrated to TinyMCE.
+
+#### Froala 3 - Creating a Custom Toolbar Layout
 
 ```html
 <h2>Froala Custom Toolbar</h2>
@@ -116,7 +237,7 @@ For information on getting started with TinyMCE, see: [TinyMCE Quick Start]({{si
 </script>
 ```
 
-### TinyMCE 5 Example: Custom Toolbar
+#### TinyMCE 5 - Creating a Custom Toolbar Layout
 
 ```html
 <h2>TinyMCE Custom Toolbar</h2>
@@ -128,20 +249,31 @@ For information on getting started with TinyMCE, see: [TinyMCE Quick Start]({{si
     selector: '#tiny_custom_toolbar',
     plugins: 'lists',
     toolbar: 'undo redo | formatselect | bold italic \
-      | alignleft aligncenter alignright alignjustify | numlist bullist | \
-      outdent indent',
+      | alignleft aligncenter alignright alignjustify \
+      | numlist bullist | outdent indent',
   });
 </script>
 ```
 
-### Next Steps
+### Additional Information Customizing Toolbars
 
 * For information on customizing the TinyMCE Toolbar, see: [User interface options: Toolbar]({{site.baseurl}}/configure/editor-appearance/#toolbar).
-* For a list of available toolbar items, see: [Editor control identifiers: Toolbar controls]({{site.baseurl}}/advanced/editor-control-identifiers/#toolbarcontrols).
+* For a list of toolbar items, see: [Editor control identifiers: Toolbar controls]({{site.baseurl}}/advanced/editor-control-identifiers/#toolbarcontrols).
 
-## Inline Mode
+## Configuring Inline Mode
 
-### Froala 3 Example: Inline Mode
+When migrating from Froala to TinyMCE, the `toolbarInline` option changes to `inline`. Some addition settings you should consider include:
+
+* [The Quick Toolbar plugin]({{site.baseurl}}/plugins/quickbars/).
+* [Context Toolbars]({{site.baseurl}}/ui-components/contexttoolbar/).
+* [Context Menus]({{site.baseurl}}/ui-components/contextmenu/).
+* [Disabling the TinyMCE menubar]({{site.baseurl}}/configure/editor-appearance/#menubar).
+
+### Examples: Enabling Inline Mode
+
+The following examples show Froala and TinyMCE configured for inline mode.
+
+#### Froala 3 - Configuring Inline Mode
 
 ```html
 <h3>Froala Inline Mode</h3>
@@ -156,7 +288,7 @@ For information on getting started with TinyMCE, see: [TinyMCE Quick Start]({{si
 </script>
 ```
 
-### TinyMCE 5 Example: Inline Mode
+#### TinyMCE 5 - Configuring Inline Mode
 
 ```html
 <h3>TinyMCE Inline Mode</h3>
@@ -171,16 +303,27 @@ For information on getting started with TinyMCE, see: [TinyMCE Quick Start]({{si
 </script>
 ```
 
-### Next Steps
+### Additional Information for Inline Mode
 
-* For information on the inline editing mode; including how to enable inline editing mode, see: [Setup inline editing mode]({{site.baseurl}}/general-configuration-guide/use-tinymce-inline/).
-* quick bar [Quick Toolbar plugin]({{site.baseurl}}/plugins/quickbars/)
-* disable menubar [User interface options: Menubar]({{site.baseurl}}/configure/editor-appearance/#menubar)
-* destraction-free editing mode [TinyMCE distraction-free editing mode]({{site.baseurl}}/general-configuration-guide/use-tinymce-distraction-free/)
+For information on:
+* The inline editing mode, see: [Setup inline editing mode]({{site.baseurl}}/general-configuration-guide/use-tinymce-inline/).
+* Configuring a Quick Toolbar, see: [Quick Toolbar plugin]({{site.baseurl}}/plugins/quickbars/).
+* Configuring a contextual toolbar, see: [Context Toolbar]({{site.baseurl}}/ui-components/contexttoolbar/).
+* Configuring a contextual menu, see: [Context Menu]({{site.baseurl}}/ui-components/contextmenu/).
+* Disabling the TinyMCE menubar, see: [User interface options: Menubar]({{site.baseurl}}/configure/editor-appearance/#menubar).
+* The TinyMCE distraction-free editing mode, see: [TinyMCE distraction-free editing mode]({{site.baseurl}}/general-configuration-guide/use-tinymce-distraction-free/).
 
-## Custom Button
+## Migrating Custom Buttons
 
-### Froala 3 Example: Custom Toolbar Button
+The TinyMCE `addButton` option is used in place of the Froala `RegisterCommand` option.
+
+For information on getting started with the `addButton` option, see: [Toolbar buttons]({{site.baseurl}}/ui-components/toolbarbuttons/#howtocreatecustomtoolbarbuttons).
+
+### Examples: Custom Toolbar Buttons
+
+The following examples show a Froala editor and a TinyMCE editor with a basic configuration and two custom toolbar buttons.
+
+#### Froala 3 - Creating a Custom Toolbar Button
 
 ```html
 <h2>Froala Custom Button</h2>
@@ -215,7 +358,7 @@ For information on getting started with TinyMCE, see: [TinyMCE Quick Start]({{si
 </script>
 ```
 
-### TinyMCE 5 Example: Custom Toolbar Button
+#### TinyMCE 5 - Creating a Custom Toolbar Button
 
 ```html
 <h2>TinyMCE Custom Button</h2>
@@ -237,7 +380,7 @@ For information on getting started with TinyMCE, see: [TinyMCE Quick Start]({{si
       editor.ui.registry.addButton('myButton2', {
         text: 'My Button',
         onAction: function (_) {
-          editor.insertContent('&nbsp;<strong>It\'s my text icon button!</strong>&nbsp;');
+          editor.insertContent('&nbsp;<strong>It\'s my text button!</strong>&nbsp;');
         }
       });
     }
@@ -245,19 +388,27 @@ For information on getting started with TinyMCE, see: [TinyMCE Quick Start]({{si
 </script>
 ```
 
-### Next Steps
+### Additional Information on Custom Toolbar Buttons
 
 * For an overview on creating custom toolbar buttons, see: [Toolbar buttons]({{site.baseurl}}/ui-components/toolbarbuttons/#howtocreatecustomtoolbarbuttons).
 * For information on the available types of toolbar buttons and examples of custom toolbar buttons, see: [Types of toolbar buttons]({{site.baseurl}}/ui-components/typesoftoolbarbuttons/).
 
-## Custom Drop-down Toolbar Buttons
+## Migrating Custom Drop-down Toolbar Buttons
 
-### Froala 3 Example: Custom Drop-down Button
+The TinyMCE `addMenuButton` option is used in place of the Froala `RegisterCommand` `type: dropdown` option.
+
+For information on getting started with the `addMenuButton` option, see: [Toolbar buttons]({{site.baseurl}}/ui-components/toolbarbuttons/#howtocreatecustomtoolbarbuttons) and [Types of toolbar buttons: Menu button]({{site.baseurl}}/ui-components/typesoftoolbarbuttons/#menubutton).
+
+### Examples: Custom Drop-down Buttons
+
+The following examples show a Froala editor and a TinyMCE editor with a basic configuration and a custom drop-down toolbar button.
+
+#### Froala 3 - Creating a Custom Drop-down Button
 
 ```html
 <h2>Froala Custom Drop-down Button</h2>
   <form method='post'>
-    <textarea id=froala_custom_button_menu>Hello, World! I'm a froala editor!</textarea>
+    <textarea id='froala_custom_button_menu'>Hello, World! I'm a froala editor!</textarea>
   </form>
 <script>
   var option_values = {
@@ -285,7 +436,7 @@ For information on getting started with TinyMCE, see: [TinyMCE Quick Start]({{si
 </script>
 ```
 
-### TinyMCE 5 Example: Custom Drop-down Button
+#### TinyMCE 5 - Creating a Custom Drop-down Button
 
 ```html
 <h2>TinyMCE Custom Drop-down Button</h2>
@@ -327,7 +478,7 @@ For information on getting started with TinyMCE, see: [TinyMCE Quick Start]({{si
 </script>
 ```
 
-### Next Steps
+### Additional Information on Drop-down Buttons
 
 For information on creating Drop-down buttons, see: [Types of toolbar buttons: Menu button]({{site.baseurl}}/ui-components/typesoftoolbarbuttons/#menubutton).
 

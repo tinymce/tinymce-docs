@@ -111,7 +111,7 @@ The following examples show an initial Froala configuration and the migrated Tin
       <textarea id='tiny_basic'>Hello, World! I'm a tiny editor!</textarea>
     </form>
     <script>
-      tinymce.init({ selector: '#tiny_basic' });
+      tinymce.init({ selector: 'textarea#tiny_basic' });
     </script>
   </body>
 </html>
@@ -197,8 +197,8 @@ toolbarButtons: [['undo', 'redo'], ['paragraphFormat'], ['bold', 'italic'],
 TinyMCE accepts a space-delimited string with horizontal bars (` | `) for grouping items.
 For example:
 ```js
-toolbar: 'undo redo | formatselect | bold italic \
-| alignleft aligncenter alignright alignjustify \
+toolbar: 'undo redo | formatselect | bold italic
+| alignleft aligncenter alignright alignjustify
 | numlist bullist | outdent indent'
 ```
 
@@ -248,14 +248,14 @@ The following examples show a custom toolbar layout in Froala and the same layou
   tinymce.init({
     selector: '#tiny_custom_toolbar',
     plugins: 'lists',
-    toolbar: 'undo redo | formatselect | bold italic \
-      | alignleft aligncenter alignright alignjustify \
+    toolbar: 'undo redo | formatselect | bold italic
+      | alignleft aligncenter alignright alignjustify
       | numlist bullist | outdent indent',
   });
 </script>
 ```
 
-### Additional Information Customizing Toolbars
+### Additional Information for Customizing Toolbars
 
 * For information on customizing the TinyMCE Toolbar, see: [User interface options: Toolbar]({{site.baseurl}}/configure/editor-appearance/#toolbar).
 * For a list of toolbar items, see: [Editor control identifiers: Toolbar controls]({{site.baseurl}}/advanced/editor-control-identifiers/#toolbarcontrols).

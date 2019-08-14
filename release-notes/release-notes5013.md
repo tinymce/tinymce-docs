@@ -3,16 +3,18 @@ layout: default
 title: TinyMCE 5.0.13
 title_nav: TinyMCE 5.0.13
 keywords: releasenotes newfeatures deleted technologypreview bugfixes knownissues
-sitemap: false
 ---
 
 ## Overview
 
-The Release Notes provide high-level coverage of the improvements and additions that have been implemented in TinyMCE 5.0.13 and document known problems in this release, as well as important bug fixes, deprecated functionality, and other details.
+The Release Notes provide high-level coverage of the improvements and additions that have been implemented in TinyMCE 5.0.13
+and document known problems in this release, as well as important bug fixes, deprecated functionality, and other details.
 
 TinyMCE 5.0.13 release adds improvements to the TinyMCE editor to improve the overall user experience.
 
-> **Note:** TinyMCE 5.0.10 community was not released to enterprise due to a bundling issue discovered shortly after the community release. Additionally 5.0.11 and 5.0.12 were not released to enterprise due to issues found during QA. As such TinyMCE 5.0.13 enterprise contains all changes in TinyMCE 5.0.10 through to 5.0.13 community releases.
+> **Note:** TinyMCE 5.0.10 community was not released to enterprise due to a bundling issue discovered shortly after the
+> community release. Additionally 5.0.11 and 5.0.12 were not released to enterprise due to issues found during QA. As such
+> TinyMCE 5.0.13 enterprise contains all changes in TinyMCE 5.0.10 through to 5.0.13 community releases.
 
 ## New features
 
@@ -31,21 +33,36 @@ TinyMCE now supports all valid HTML color formats for the `color_map` setting. A
 
 For more information on the `color_map` setting refer to the [documentation]({{site.baseurl}}/configure/content-appearance/#color_map).
 
-### Tiny Comments
-
-**Tiny Comments** 2.1.1 has addressed an issue where Tiny Comments didn't respect the editors readonly state and would allow changes to be made to comments. Comments will now also enable readonly mode when the editor is switched into a readonly mode.
-
-For more information on **Tiny Comments** refer to the full [documentation]({{site.baseurl}}/plugins/comments/).
-
 ## Updates and enhancements
 
 ### TinyMCE
 
-The updated TinyMCE 5.0.13 editor comes with numerous changes to the previous versions. A comprehensive list of the updates and fixed issues is available in the [changelog]({{site.baseurl}}/changelog/#version5011july42019).
+The updated TinyMCE 5.0.13 editor comes with numerous changes to the previous versions. A comprehensive list of the updates
+and fixed issues is available in the [changelog]({{site.baseurl}}/changelog/#version5011july42019).
+
+#### Accessibility improvements
+     
+A number of accessibility and keyboard navigation fixes have been made in TinyMCE 5.0.13 for inline dialogs, which impacted
+the new search and replace dialog design. Users will now be able to correctly tab through the input and button elements in
+the dialog and focus won't be lost when closing the preferences menu. Additionally disabled toolbar buttons can now be
+navigated with a keyboard and will apply a style when the disabled toolbar button is active.
 
 #### Backspace key handling
 
-TinyMCE 5.0.13 has improved the backspace key handling, so that pressing backspace at the start of an indented paragraph will now outdent the paragraph by one level instead of merging into the previous paragraph.
+TinyMCE 5.0.13 has improved the backspace key handling, so that pressing backspace at the start of an indented paragraph
+will now outdent the paragraph by one level instead of merging into the previous paragraph.
+
+Additionally when using the **List** plugin, pressing backspace when the cursor is at the start of a list item will outdent
+the list item, instead of merging it with the previous list item.
+
+#### Context toolbar positioning
+     
+TinyMCE 5.0.13 has made a number of improvements to the positioning of the context toolbar. The toolbar will no longer
+collapse and overlap with the toolbar or content when there's no empty space above or below the selected content. It will
+also escape outside the bounds of the editor content area when running in inline mode.
+
+**Example:**
+![Improved context toolbar position]({{site.baseurl}}/images/improved-context-toolbar.png)
 
 #### Default background and foreground colors
 
@@ -89,9 +106,42 @@ tinymce.init({
 })
 ```
 
+#### Dialog improvements
+
+TinyMCE 5.0.13 has updated modal dialogs so that they are no longer draggable by default. If the old functionality is still
+desired then the [`draggable_modal`]({{site.baseurl}}/configure/editor-appearance/#draggable_modal) setting can be added to
+TinyMCE init configuration to re-enable draggable modals.
+
+Additionally an issue has been addressed whereby dialogs could be dragged off-screen. Now when dragging a dialog, it is now
+correctly constrained to the window viewport to prevent the dialog from being dragged off-screen.
+
+#### Help plugin
+     
+TinyMCE 5.0.13 has improved the help plugin so that it now contains a new tab called "Keyboard navigation" which provides
+content on how to use the editor when navigating via a keyboard.
+
+#### Nonbreaking space plugin
+
+TinyMCE 5.0.13 has improved the nonbreaking space plugin so that any nonbreaking space characters inserted by the plugi
+will be wrapped in a span to prevent the character being converted to a regular space while typing. This behaviour can be
+disabled by adding the new `nonbreaking_wrap: false` setting to the TinyMCE init configuration.
+
 #### Search and replace plugin
 
-TinyMCE 5.0.13 has improved the search and replace plugin so that it will now cycle through results instead of stopping when it reaches the top or bottom of the document. 
+TinyMCE 5.0.13 has improved the search and replace plugin so that it will now appear inline, instead of as a modal dialog
+which prevented seeing the content found. The dialog also comes with a new design that's better suited to an inline dialog:
+
+![New search and replace dialog]({{site.baseurl}}/images/inline-search-replace-dialog.png)
+ 
+Additional when finding content, the plugin will now cycle through results instead of stopping when it reaches the top or
+bottom of the document. 
+
+### Tiny Comments
+
+**Tiny Comments** 2.1.1 addresses an issue where setting the editor mode to readonly would still allow users to add, edit
+or remove comments. Comments will now correctly listen to the editor mode change and disable comments when the editor is in readonly mode and then enable them again when in design mode.
+
+For more information on **Tiny Comments** refer to the full [documentation]({{site.baseurl}}/plugins/comments/).
 
 ## Known issues
 

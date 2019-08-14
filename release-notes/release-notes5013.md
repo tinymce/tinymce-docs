@@ -62,6 +62,7 @@ collapse and overlap with the toolbar or content when there's no empty space abo
 also escape outside the bounds of the editor content area when running in inline mode.
 
 **Example:**
+
 ![Improved context toolbar position]({{site.baseurl}}/images/improved-context-toolbar.png)
 
 #### Default background and foreground colors
@@ -139,7 +140,8 @@ bottom of the document.
 ### Tiny Comments
 
 **Tiny Comments** 2.1.1 addresses an issue where setting the editor mode to readonly would still allow users to add, edit
-or remove comments. Comments will now correctly listen to the editor mode change and disable comments when the editor is in readonly mode and then enable them again when in design mode.
+or remove comments. Comments will now correctly listen to the editor mode change and disable comments when the editor is 
+in readonly mode and then enable them again when in design mode.
 
 For more information on **Tiny Comments** refer to the full [documentation]({{site.baseurl}}/plugins/comments/).
 
@@ -149,3 +151,6 @@ For more information on **Tiny Comments** refer to the full [documentation]({{si
 
 #### Search and replace plugin
 
+When using an editor that's larger than the size of the screen, then the find and replace dialog may disappear off the top
+of the screen and uses will need to scroll back up to find the next match in the content. This will be fixed in an upcoming
+release of TinyMCE.

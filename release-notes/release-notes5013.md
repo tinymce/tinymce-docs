@@ -38,8 +38,7 @@ and fixed issues is available in the [changelog]({{site.baseurl}}/changelog/#ver
 
 #### Accessibility improvements
 
-This release provides accessibility and keyboard navigation fixes for inline dialogs. Users will now be able to tab through the input and button elements in
-the dialog without losing cursor focus when closing the preferences menu.
+This release provides accessibility and keyboard navigation fixes for inline dialogs. Users will now be able to tab through the input and button elements in the dialog without the cursor getting stuck or losing focus.
 
 Disabled toolbar buttons can be navigated with a keyboard and will apply a style when the toolbar button is re-enabled.
 
@@ -118,6 +117,7 @@ TinyMCE 5.0.13 improves the nonbreaking space plugin by wrapping any nonbreaking
 #### Search and replace plugin
 
 The search and replace dialog will now appear inline, instead of as a modal dialog, preventing it from overlapping the content found.
+
 The dialog also comes with a new design that's better suited to an inline dialog.
 
 ![New search and replace dialog]({{site.baseurl}}/images/inline-search-replace-dialog.png)

@@ -30,7 +30,7 @@ tinymce.init({
 
 ### `help_tabs`
 
-This option allows you to specify which tabs the Help dialog should show, and in what order. The default TinyMCE tabs are called `shortcuts`, `plugins` and `versions`. These tabs can be overwritten by providing a new [tab panel]({{site.baseurl}}/ui-components/dialogcomponents/#tabpanel) specification with the same `name`, and new tabs can be added by registering a tab panel with a new `name`. New tabs can be registered in the `help_tabs` configuration or at initialisation or runtime using the [`addTab` API method](#api).
+This option allows you to specify which tabs the Help dialog should show, and in what order. The default TinyMCE tabs are called `shortcuts`, `keyboardnav`, `plugins` and `versions`. These tabs can be overwritten by providing a new [tab panel]({{site.baseurl}}/ui-components/dialogcomponents/#tabpanel) specification with the same `name`, and new tabs can be added by registering a tab panel with a new `name`. New tabs can be registered in the `help_tabs` configuration or at initialisation or runtime using the [`addTab` API method](#api).
 
 If `help_tabs` is configured, only tabs named in `help_tabs` will be displayed. Any tabs defined using `addTab` that are not named in `help_tabs` will be ignored.
 
@@ -38,17 +38,18 @@ If `help_tabs` is not configured, any tabs defined using `addTab` will be displa
 
 **Type:** `Array`
 
-**Default Value:** `["shortcuts", "plugins", "versions"]`
+**Default Value:** `["shortcuts", "keyboardnav", "plugins", "versions"]`
 
 #### Example
 
 ```js
 tinymce.init({
   selector: 'textarea',
-  plugins: 'help link table paste code emoticons colorpicker textcolor',
+  plugins: 'help link table paste code emoticons',
   toolbar: 'help addTab',
   help_tabs: [
-    'shortcuts', // the default shortcuts tabs
+    'shortcuts', // the default shortcuts tab
+    'keyboardnav', // the default keyboard navigation tab
     'plugins', // the default plugins tab
     {
       name: 'custom1', // new tab called custom1
@@ -61,7 +62,7 @@ tinymce.init({
       ]
     },
     {
-      name: 'versions', // override the default versions tabs
+      name: 'versions', // override the default versions tab
       title: 'Custom Versions',
       items: [
         {

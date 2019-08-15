@@ -142,9 +142,9 @@ var demoBaseConfig = {
   mentions_fetch: mentionsFetchFunction,
   powerpaste_allow_local_images: true,
   plugins: [
-    "a11ychecker advcode advlist anchor autolink codesample colorpicker fullscreen help image imagetools tinydrive",
+    "a11ychecker advcode advlist anchor autolink codesample fullscreen help image imagetools tinydrive",
     " lists link media noneditable powerpaste preview",
-    " searchreplace table template textcolor tinymcespellchecker visualblocks wordcount mentions"
+    " searchreplace table template tinymcespellchecker visualblocks wordcount mentions"
   ],
   templates: [
     {

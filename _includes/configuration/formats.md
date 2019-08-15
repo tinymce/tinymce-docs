@@ -47,7 +47,6 @@ TinyMCE has some built in formats that can be overridden. These are:
 * div
 * address
 * pre
-* div
 * code
 * dt, dd
 * samp

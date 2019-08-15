@@ -52,13 +52,16 @@ tinymce.init({
 
 TinyMCE can also match an `id` attribute.
 
-The following example replaces a `textarea` element with `id` `'editable'` on the page:
+The following example replaces a `textarea` element with the `id` `'default'` on the page:
 
 ```js
 tinymce.init({
-  selector: 'textarea#editable'
+  selector: 'textarea#default'
 });
 ```
+
+Providing a TinyMCE editor with the default configuration, such as:
+{% include codepen.html id="default" %}
 
 This selector can be used on any block element while using this option in TinyMCE's [inline editing mode](../use-tinymce-inline/). Inline editing mode edits the content in place instead of replacing the element with an `iframe`.
 
@@ -232,7 +235,7 @@ The following example is a walkthrough of a basic TinyMCE configuration.
     plugins: [
       'advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker',
       'searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking',
-      'save table contextmenu directionality emoticons template paste textcolor'
+      'save table directionality emoticons template paste'
     ],
     content_css: 'css/content.css',
     toolbar: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | print preview media fullpage | forecolor backcolor emoticons'
@@ -273,7 +276,7 @@ Select the plugins that should be included on load.
 plugins: [
   'advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker',
   'searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking',
-  'save table contextmenu directionality emoticons template paste textcolor'
+  'save table directionality emoticons template paste'
 ],
 ```
 

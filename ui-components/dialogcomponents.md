@@ -210,7 +210,8 @@ A **button** is a clickable component that can contain text or an icon. There ar
   type: 'button', // component type
   text: 'Alpha',
   primary: true,
-  name: 'alpha-button'
+  name: 'alpha-button',
+  disabled: true
 }
 ```
 
@@ -224,7 +225,8 @@ A **checkbox** is a composite component with a checkbox and a label, and with `o
 {
   type: 'checkbox', // component type
   name: 'checkbox-1', // identifier
-  label: 'Checkbox Label' // text for the label
+  label: 'Checkbox Label', // text for the label
+  disabled: true // disabled state
 }
 ```
 
@@ -323,7 +325,8 @@ An **input** is a composite component that renders a label and a single line tex
   type: 'input', // component type
   name: 'inputA', // identifier
   label: 'Input Label', // text for the label
-  placeholder: 'example' // placeholder text for the input
+  placeholder: 'example', // placeholder text for the input
+  disabled: true // disabled state
 }
 ```
 
@@ -338,6 +341,7 @@ A **selectbox** is a composite component with a label and a dropdown list of opt
   type: 'selectbox', // component type
   name: 'SelectA', // identifier
   label: 'Select Label',
+  disabled: true, // disabled state
   size: 1 // number of visible values (optional)
   items: [
     { value: 'one', text: 'One' },
@@ -356,7 +360,8 @@ A **sizeinput** is a specialized composite component with two input fields label
 {
   type: 'sizeinput', // component type
   name: 'size', // identifier
-  label: 'Dimensions'
+  label: 'Dimensions',
+  disabled: true // disabled state
 }
 ```
 
@@ -386,7 +391,8 @@ A **textarea** is a multiline text field.
   type: 'textarea', // component type
   name: 'text-a', // identifier
   label: 'Text: ',
-  placeholder: 'example'
+  placeholder: 'example',
+  disabled: true // disabled state
 }
 ```
 
@@ -404,6 +410,7 @@ A **urlinput** is a specialized composite component for URL input or file upload
 | name | string | required | A identifier for the urlinput. |
 | label | string | optional | String to use for the label. |
 | filetype | `'file'` or `'image'` or `'media'` | optional | default: `'file'` - Restrict the types of files that can be uploaded using the filepicker. `file` allows anything, including document links. **Requires `file_picker_callback` to be configured.** |
+| disabled | boolean | optional | default: `false` - Whether the component should initially be disabled. |
 
 ##### urlinput examples
 
@@ -416,7 +423,8 @@ The filepicker will accept any file type and the typeahead will include 5 previo
   type: 'urlinput', // component type
   name: 'url', // identifier
   filetype: 'file', // allow any file types
-  label: 'Url' // text for component label
+  label: 'Url', // text for component label
+  disabled: true // disabled state
 }
 ```
 
@@ -429,6 +437,7 @@ The filepicker will only accept images and the typeahead will include 5 previous
   type: 'urlinput', // component type
   name: 'src', // identifier
   filetype: 'image', // restrict file types to image types
-  label: 'Source' // text for component label
+  label: 'Source', // text for component label
+  disabled: true // disabled state
 }
 ```

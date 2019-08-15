@@ -16,6 +16,8 @@ description: Configure the editor's appearance, including menu and toolbar contr
 
 {% include configuration/custom-ui-selector.md %}
 
+{% include configuration/draggable-modal.md %}
+
 {% include configuration/elementpath.md %}
 
 {% include configuration/event-root.md %}

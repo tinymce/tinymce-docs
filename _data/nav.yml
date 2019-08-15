@@ -77,6 +77,7 @@
     - url: "#contextmenu"
     - url: "#contextmenu_never_use_native"
     - url: "#custom_ui_selector"
+    - url: "#draggable_modal"
     - url: "#elementpath"
     - url: "#event_root"
     - url: "#fixed_toolbar_container"
@@ -331,6 +332,7 @@
   - url: "nonbreaking"
     pages:
     - url: "#nonbreaking_force_tab"
+    - url: "#nonbreaking_wrap"
   - url: "noneditable"
     pages:
     - url: "#noneditable_editable_class"
@@ -602,6 +604,12 @@
 
 - url: "release-notes"
   pages:
+  - url: "release-notes5013"
+    pages:
+    - url: "#Overview"
+    - url: "#New features"
+    - url: "#Updates and enhancements"
+    - url: "#Known issues"
   - url: "premium-plugins-errata509"
     pages:
     - url: "#Overview"

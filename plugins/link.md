@@ -233,7 +233,7 @@ tinymce.init({
 
 ### `rel_list`
 
-This option lets you specify a list of `rel` values for the `link` dialog. These values gets applied to the `rel` attribute. Each `rel` item must be defined as an object with a `title` and a `value`. For example: `{title: 'Table of contents', value: 'toc'}`. When the dialog is submitted, the `value` of the selected `rel` item will be set as the link's `rel` attribute.
+This option lets you specify a list of `rel` values for the `link` dialog. These values gets applied to the `rel` attribute. Each `rel` item must be defined as an object with a `title` and a `value`. For example: `{title: 'No Referrer', value: 'noreferrer'}`. When the dialog is submitted, the `value` of the selected `rel` item will be set as the link's `rel` attribute.
 
 ##### Example
 
@@ -244,8 +244,8 @@ tinymce.init({
   menubar: "insert",
   toolbar: "link",
   rel_list: [
-    {title: 'Lightbox', value: 'lightbox'},
-    {title: 'Table of contents', value: 'toc'}
+    {title: 'No Referrer', value: 'noreferrer'},
+    {title: 'External Link', value: 'external'}
   ]
 });
 ```
@@ -265,7 +265,7 @@ If [`default_link_target`](#default_link_target) is also configured and its valu
 ]
 ```
 
-**Example, adding a `_lightbox` target to the dropdown list**
+**Example, adding a `_parent` target to the dropdown list**
 
 ```js
 tinymce.init({

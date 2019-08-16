@@ -5,6 +5,8 @@ title_nav: TinyMCE 5.0.9
 keywords: releasenotes newfeatures deleted technologypreview bugfixes knownissues
 ---
 
+> **Important:** Premium Plugins were updated on the 17th July, 2019, as described in the [Errata&#58; TinyMCE 5.0.9 Premium Plugins](#erratatinymce509premiumplugins).
+
 ## Overview
 
 The Release Notes provide high-level coverage of the improvements and additions that have been implemented in TinyMCE 5.0.9 and document known problems in this release, as well as important bug fixes, deprecated functionality, and other details.
@@ -12,6 +14,7 @@ The Release Notes provide high-level coverage of the improvements and additions 
 TinyMCE 5.0.9 release adds improvements to the TinyMCE editor to improve the overall user experience.
 
 > **Note:** TinyMCE 5.0.8 community was not released to enterprise due to issues found during QA. As such TinyMCE 5.0.9 enterprise contains changes from both TinyMCE 5.0.8 and 5.0.9 community releases.
+
 
 ## New features
 
@@ -53,7 +56,7 @@ This resolves the issue with the previous release where cloud hosted **Premium S
 
 #### Space key not working in lists
 
-TinyMCE 5.0.9 has addressed an issue where trying to press the space key at the end of a nested list may not have correctly inserted a space. 
+TinyMCE 5.0.9 has addressed an issue where trying to press the space key at the end of a nested list may not have correctly inserted a space.
 
 #### Legacy Output plugin
 
@@ -72,3 +75,37 @@ For more information on **Enhanced Media Embed** refer to the [documentation]({{
 **LinkChecker** 2.0.3 has addressed an issue where empty or blank links were incorrectly sent for validation and marked as invalid.
 
 For more information on **Link Checker** refer to the [documentation]({{site.baseurl}}/plugins/linkchecker/).
+
+
+## Errata&#58; TinyMCE 5.0.9 Premium Plugins
+
+This errata documents updates to the TinyMCE 5.0.9 Premium Plugins released on the 17th July, 2019. Future releases of TinyMCE will also include these changes.
+
+### Tiny Comments
+
+**Tiny Comments** 2.1.0 adds two optional display name settings:
+
+* `tinycomments_author_name` option for embedded mode.
+* `authorName` API property for callback mode.
+
+These settings can resolve permission issues related to duplicate user names by separating the "author id" and "author name".
+
+> **Note:** If these settings are not used, **Tiny Comments** reverts to using the `tinycomments_author` option or `author` property for the display name.
+
+For information on **Tiny Comments**, refer to the [**Tiny Comments** documentation]({{site.baseurl}}/plugins/comments/).
+
+### PowerPaste
+
+The new version of PowerPaste 5.0.1 includes bug fixes. Refer to the changelog below for a full list of changes.
+
+##### Changelog
+
+* Added: console logged error codes to assist with support requests.
+* Removed: unused Flash files that were getting bundled with PowerPaste.
+* Fixed: PowerPaste not respecting the `automatic_uploads` editor setting.
+* Fixed: images incorrectly pasted when `paste_as_text` was enabled.
+* Fixed: issue where `<pre>` elements were not allowed to contain images.
+* Fixed: issue where the wrong error notification was displayed when images failed to import.
+* Fixed: leading, trailing and sequential spaces being lost when pasting plain text.
+
+For information on **PowerPaste**, refer to the [**PowerPaste** documentation]({{site.baseurl}}/plugins/powerpaste/).

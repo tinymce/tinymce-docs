@@ -6,25 +6,22 @@ description: Consolidated system requirements for TinyMCE premium features.
 keywords: support supported browser browsers windows osx linux ie8 chrome firefox safari
 ---
 
-## Supported Browsers
+{% include misc/browser_compatibility.md %}
 
-[Go to this page]({{ site.baseurl }}/general-configuration-guide/system-requirements/) for information on which browsers are supported by TinyMCE.
+## Word Copy/Paste (PowerPaste)
 
-## Word Copy/Paste
-
-Word copy and paste is supported on all the browsers supported by TinyMCE Enterprise. There is some variances of functionality for different browsers. Please see the information below for more details.
+Word copy and paste is supported on all the browsers supported by {{site.productname}} Enterprise. There is some variances of functionality for different browsers. Please see the information below for more details.
 
 ### Feature Matrix and Browser Support
 
 
-|                      | HTML Cleaning | Improved HTML Cleaning | Image Import |
-|----------------------| :-------------: | :----------------------: | :------------: |
-| Internet Explorer 8  | X |   |   |
-| Internet Explorer 9  | X |   |   |
-| Internet Explorer 10+| X | X | X |
-| Chrome Current       | X | X | X |
-| Firefox Current      | X | X | X |
-| Safari 6.1+          | X | X | X |
+|                      | HTML Cleaning | Improved HTML Cleaning | Image Import  |
+|----------------------| :-----------: | :--------------------: | :-----------: |
+| Internet Explorer 11 | {{site.tick}} |                        |               |
+| Microsoft Edge       | {{site.tick}} | {{site.tick}}          | {{site.tick}} |
+| Chrome Latest        | {{site.tick}} | {{site.tick}}          | {{site.tick}} |
+| Firefox Latest       | {{site.tick}} | {{site.tick}}          | {{site.tick}} |
+| Safari Latest        | {{site.tick}} | {{site.tick}}          |               |
 
 #### HTML Cleaning
 
@@ -41,17 +38,17 @@ On browsers that support HTML5 PowerPaste is able to import images embedded in t
 
 ## Spell Checking
 
-Spell checking is supported on all the browsers supported by TinyMCE Enterprise.  
+Spell checking is supported on all the browsers supported by {{site.productname}} Enterprise.  
 
 ### Internet Explorer 8 and 9 Limitations
 
-Cross Origin Requests (CORS) are not supported in Internet Explorer 8 and 9. For spell checking to work, the ephox-spelling service must be located on the same domain as the TinyMCE client. The domain is considered to be the combination of the protocol (HTTP vs HTTPS), server name and the port as it appears in the browser's address bar.
+Cross Origin Requests (CORS) are not supported in Internet Explorer 8 and 9. For spell checking to work, the ephox-spelling service must be located on the same domain as the {{site.productname}} client. The domain is considered to be the combination of the protocol (HTTP vs HTTPS), server name and the port as it appears in the browser's address bar.
 
 Internet Explorer 8 will not highlight misspelt words as you type due to browser limitations. Misspelt words are highlighted after the current HTML node is changed (e.g. when the Enter key is pressed and the cursor enters a new paragraph).
 
 ### Supported Application Servers
 
-The TinyMCE spell checking server-side component requires a Java Web Application Server that supports Servlet Implementation API 3.0.
+The {{site.productname}} spell checking server-side component requires a Java Web Application Server that supports Servlet Implementation API 3.0.
 
 ##### Java Development Kit
 
@@ -74,12 +71,12 @@ JDK 7 update 55+
 * CPU:  Dual Core Processor ~ 2Ghz. For higher loads, a quad core or higher is recommended.
 * RAM: 4 Gigabytes of RAM available for services
 
-### Supported TinyMCE versions
+### Supported {{site.productname}} versions
 
-TinyMCE provides support for the following versions:
+{{site.companyname}} provides support for the following versions:
 
-* TinyMCE 4.5
-* TinyMCE 4.7
+* {{site.productname}} 4.5
+* {{site.productname}} 4.7
 
 All commercially supported plugins are supported on these versions.
 

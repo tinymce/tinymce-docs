@@ -80,7 +80,5 @@ Below are the toolbar items currently supported, with any plugins/configuration 
 
 During our initial QA, we tested mobile on the following platforms. If you use other platforms and encounter bugs, please let us know in the [TinyMCE issue tracker](https://github.com/tinymce/tinymce/issues).
 
-{% include mobile_platform_compatibility.md %}
-
-> To shape the future of mobile editing, [complete our survey](https://docs.google.com/forms/d/e/1FAIpQLSdWamU5HsZtv-SPqGRyu6Ql1zLqlrCQFP1vSrzx1oHikMFvlw/viewform) to have your say.
+{% include misc/mobile_platform_compatibility.md %}
 

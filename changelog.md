@@ -8,6 +8,16 @@ class: changelog
 
 {% capture changelog %}
 
+## Version 5.0.14 August 19, 2019
+* Added an API to reload the autocompleter menu, with additional fetch metadata.
+* Fixed missing toolbar button border styling options.
+* Fixed image upload progress notification closing before the upload is complete.
+* Fixed inline dialogs not closing on escape when no dialog component is in focus.
+* Fixed plugins not being filtered when defaulting to mobile on phones.
+* Fixed toolbar more drawer showing the content behind it when transitioning between opened and closed states.
+* Fixed focus not returning to the dialog after pressing the "Replace all" button in the search and replace dialog.
+* Removed Oxide variable `@menubar-select-disabled-border-color` and replaced it with `@menubar-select-disabled-border`.
+
 ## Version 5.0.13 August 6, 2019
 * Changed modal dialogs to prevent dragging by default and added new `draggable_modal` setting to restore dragging.
 * Changed the nonbreaking plugin to insert nbsp characters wrapped in spans to aid in filtering. This can be disabled using the `nonbreaking_wrap` setting.

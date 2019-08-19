@@ -259,6 +259,8 @@
   - url: "hr"
   - url: "image"
     pages:
+    - url: "#file_picker_callback"
+    - url: "#file_picker_types"
     - url: "#image_caption"
     - url: "#image_list"
     - url: "#image_advtab"
@@ -268,6 +270,11 @@
     - url: "#image_prepend_url"
     - url: "#image_title"
     - url: "#image_uploadtab"
+    - url: "#images_upload_base_path"
+    - url: "#images_upload_credentials"
+    - url: "#images_upload_handler"
+    - url: "#images_upload_url"
+    - url: "#typeahead_urls"
   - url: "imagetools"
     pages:
     - url: "#imagetools_cors_hosts"

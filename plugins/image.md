@@ -36,10 +36,6 @@ These configuration options affect the execution of the `image` plugin. Many of 
 
 If you wish to align the image, you can also use the text align buttons while images are selected.
 
-#{% include configuration/anchor-bottom.md %}
-
-#{% include configuration/anchor-top.md %}
-
 #{% include configuration/file-picker-callback.md %}
 
 #{% include configuration/file-picker-types.md %}

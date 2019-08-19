@@ -30,15 +30,21 @@ tinymce.init({
 
 > Note that this is not drag-drop functionality and the user is required to enter the path to the image. Optionally the user can also enter the image description, dimensions, and whether image proportions should be constrained (selected via a checkbox). Some of these settings can be preset using the plugin's configuration options.
 
-### Options
+## Options
 
 These configuration options affect the execution of the `image` plugin. Many of the settings here will disable dialog box features used to insert or edit images. A predefined list of images can also be provided to enable quick insertion of those images.
 
 If you wish to align the image, you can also use the text align buttons while images are selected.
 
-### `image_caption`
+#{% include configuration/anchor-bottom.md %}
 
-> Available in TinyMCE version 4.3 onwards.
+#{% include configuration/anchor-top.md %}
+
+#{% include configuration/file-picker-callback.md %}
+
+#{% include configuration/file-picker-types.md %}
+
+### `image_caption`
 
 This option lets users enable captions for images. When this option is enabled the image dialog will have an extra checkbox called "Caption". When a user checks the checkbox the image will get wrapped in an HTML5 `figure` element with a `figcaption` inside it. The user will then be able to type caption content inside the editor.
 
@@ -237,7 +243,7 @@ tinymce.init({
 });
 ```
 
-## `image_prepend_url`
+### `image_prepend_url`
 
 This option allows you to specify a URL prefix that will be applied to images when appropriate.
 
@@ -298,6 +304,17 @@ tinymce.init({
   image_uploadtab: false
 });
 ```
+
+#{% include configuration/images-upload-base-path.md %}
+
+#{% include configuration/images-upload-credentials.md %}
+
+#{% include configuration/images-upload-handler.md %}
+
+#{% include configuration/images-uploads-url.md %}
+
+#{% include configuration/type-ahead-urls.md %}
+
 
 ## Q: Where are the advanced image options?
 

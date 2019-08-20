@@ -11,10 +11,13 @@ default_meta_keywords: tinymce, documentation, docs, plugins, customizable skins
 # product variables
 productname: TinyMCE
 productversion: 5
-companyname: Tiny
+releaseversion: 5.0
+companyname: Tiny Technologies
 # HMTL entities
-tick: ✔
-cross: ✖
+tick: '&#10004;'
+cross: '&#10006;'
+nbsp: '&#160;'
+tab: '&#160;&#160;'
 
 exclude:
   - Dockerfile

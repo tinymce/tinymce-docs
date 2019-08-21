@@ -66,6 +66,6 @@ The following table lists the plugins supported by {{site.companyname}} and indi
 | [Word Count]({{site.baseurl}}/plugins/wordcount)                  | {{site.tick}} | {{site.tick}} |               |
 
 #### Notes
-1. [Color Picker]({{site.baseurl}}/plugins/colorpicker), [Context Menu]({{site.baseurl}}/plugins/contextmenu), and [Text Color]({{site.baseurl}}/plugins/textcolor) are provided as part of the silver theme for TinyMCE 5 and plugins no-longer needed.
+1. [Color Picker]({{site.baseurl}}/plugins/colorpicker), [Context Menu]({{site.baseurl}}/plugins/contextmenu), and [Text Color]({{site.baseurl}}/plugins/textcolor) are provided as part of the default theme for TinyMCE 5 (silver theme) and the plugins are no-longer needed.
 2. The **Layer** plugin has been deprecated since the launch of TinyMCE 5.
 3. The Quick Toolbar plugin function was available in TinyMCE 4 as part of the deprecated `inlite` theme.

@@ -16,9 +16,7 @@ The **PowerPaste** plugin activates automatically when users paste content into 
 
 To paste clipboard content as plain text, users can click the "Paste As Text" toolbar button or menu item then paste the content normally. The TinyMCE **PowerPaste** plugin will convert the HTML on the clipboard into plain text.
 
-If you configure **PowerPaste** to allow local images (see the `powerpaste_allow_local_images` setting below), then images copied from Microsoft Word and other sources will appear in TinyMCE as Base64 encoded images. You can have TinyMCE automatically upload Base64 encoded images for reverting back to a standard image as documented on the following page:
-
-{{site.baseurl}}/advanced/handle-async-image-uploads/
+If you configure **PowerPaste** to allow local images (see the `powerpaste_allow_local_images` setting below), then images copied from Microsoft Word and other sources will appear in TinyMCE as Base64 encoded images. You can have TinyMCE automatically upload Base64 encoded images for reverting back to a standard image as described in the [image upload documentation]({{site.baseurl}}/advanced/handle-async-image-uploads/).
 
 >***Note:*** _PowerPaste (when configured to allow local images) will import images from pasted Microsoft Word/Excel content.  When doing this, **PowerPaste** extracts Base64 encoded images from the clipboard.  Images larger than approximately 8.5MB may fail to import based on technical limitations of web browsers._
 
@@ -129,7 +127,7 @@ When set to true Base64 encoded images using a data URI in the copied content wi
 
 **Possible values:**  `true`, `false`
 
->***Note:*** *If you configure* ***PowerPaste*** *to allow local images you can have TinyMCE automatically upload Base64 encoded images for conversion back to a standard image as documented on the following page: {{ site.baseurl }}/advanced/handle-async-image-uploads/*
+>***Note:*** *If you configure* ***PowerPaste*** *to allow local images you can have TinyMCE automatically upload Base64 encoded images for conversion back to a standard image as documented as described on the [image upload documenation]({{ site.baseurl }}/advanced/handle-async-image-uploads/).*
 
 ### powerpaste_keep_unsupported_src
 

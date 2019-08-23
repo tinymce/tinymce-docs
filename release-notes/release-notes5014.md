@@ -31,13 +31,13 @@ Accessibility Checker 2.1.0 provides a new streamlined design for the accessibil
 
 ![Redesigned Accessibility Checker Dialog]({{site.baseurl}}/images/accessibility_checker.png)
 
-> **Note:** We don't currently support any additional accessibility rules, but it does enable variations of the current rules to be checked. For example, enabling `aaa` will check the color contrast is 7:1 instead of 4.5:1.
+> **Note:** Currently, additional accessibility rules are not supported, but variations of the current rules can be checked. For example, enabling `aaa` will check the color contrast is 7:1 instead of 4.5:1.
 
 ## Updates and enhancements
 
 ### PowerPaste 5.0.2
 
-PowerPaste 5.0.2 now provides a way for developers to keep unsupported image source URLs in the HTML, instead of PowerPaste completely removing them. To enable set the new `powerpaste_keep_unsupported_src` setting to `true`, which will store the original `src` in the `data-image-src` attribute. This allows developers to replace the images manually using post-processing. For example, if the src is a `file://` URL and they have access to the local filesystem, they can add the image during post-processing of the posted content.
+PowerPaste 5.0.2 now provides a way for developers to keep unsupported image source URLs in the HTML, instead of PowerPaste completely removing them. To enable, set the new `powerpaste_keep_unsupported_src` setting to `true`, which will store the original `src` in the `data-image-src` attribute. This allows the images to be replaced manually using post-processing. For example: If the `src` is a `file://` URL, a service with access to the local filesystem can add the images during post-processing of the posted content.
 
 PowerPaste 5.0.2 addresses two issues where pasting an external image could cause a Cross Origin Resource Sharing (CORS) error and pasting local image files didn't respect the `powerpaste_allow_local_images` setting.
 

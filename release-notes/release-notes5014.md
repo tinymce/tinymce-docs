@@ -23,8 +23,9 @@ See the autocompleter documentation for information: [https://www.tiny.cloud/doc
 ### Accessibility Checker 2.1.0
 
 Two new settings have been introduced to allow developers to set the Accessibility Level and HTML version they wish to comply to. The new settings are:
-- `a11ychecker_level`  - a, aa or aaa (aa by default)
-- `a11ychecker_html_version` - html4 or html5 (html4 by default)
+
+* `a11ychecker_level`  - a, aa or aaa (aa by default)
+* `a11ychecker_html_version` - html4 or html5 (html4 by default)
 
 Accessibility Checker 2.1.0 provides a new streamlined design for the accessibility checker dialog:
 

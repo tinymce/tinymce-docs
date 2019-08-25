@@ -135,7 +135,7 @@ tinymce.init({
 
 This configuration option sets the HTML version to use when checking issues.
 
-For example, the "Complex tables should have summaries" rule in HTML4 the attribute is required because it's a valid attribute, however in HTML5 the attribute is deprecated, so the rule doesn't trigger.
+For example, setting the version to HTML 4 will trigger the rule "Complex tables should have summaries" as summary is a valid attribute and is required for tables, however in HTML 5 the attribute is deprecated, so the rule won't be triggered.
 
 **Type:** `String`
 

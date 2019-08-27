@@ -156,7 +156,7 @@ tinymce.init({
 
 ### `a11ychecker_level`
 
-This configuration option sets the WCAG level to use when checking issues.
+This configuration option sets the [WCAG level](https://www.w3.org/TR/WCAG20/#conformance) to use when checking issues.
 
 For example, the "Text must have a contrast ratio of at least ..." rule when using **AA** will trigger when the contrast ratio is less than 4.5:1, however when using **AAA** the rule will trigger when the ratio is less than 7.0:1.
 

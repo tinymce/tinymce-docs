@@ -3,11 +3,13 @@ layout: default
 title: React integration
 title_nav: React
 description: React TinyMCE component.
-keywords: integration integrate react reactjs create-react-app
+keywords: integration integrate react reactjs create-react-app tinymce-react
 ---
 
-The TinyMCE [@tinymce/tinymce-react](https://github.com/tinymce/tinymce-react) package integrates TinyMCE into React projects.
+The [Official TinyMCE React component](https://github.com/tinymce/tinymce-react) integrates TinyMCE into React projects.
 This procedure creates a [basic react application](https://github.com/facebook/create-react-app) containing a TinyMCE editor based on our [Basic example]({{site.baseurl}}/docs/demo/basic-example/).
+
+For examples of the TinyMCE integration, visit [the tinymce-react storybook](https://tinymce.github.io/tinymce-react/).
 
 ## Prerequisites
 
@@ -16,11 +18,11 @@ This procedure requires:
 * Access to `tinymce.min.js` on:
 
     * [Tiny Cloud]({{site.baseurl}}/cloud-deployment-guide/editor-and-features/).
-    * TinyMCE Self-hosted. See [Advanced installation choices]({{site.baseurl}}/general-configuration-guide/advanced-install/) for installation options.
+    * TinyMCE Self-hosted. See [Advanced installation choices]({{site.baseurl}}/general-configuration-guide/advanced-install/) for details on self-hosting TinyMCE.
 
 ## Procedure
 
-1. On a command line or command prompt, install the [Create React App](https://github.com/facebook/create-react-app) package, such as:
+1. On a command line or command prompt, install the [Create React App](https://github.com/facebook/create-react-app) package.
 
     ```
     $ npm install -g create-react-app
@@ -35,7 +37,7 @@ This procedure requires:
     ```
     $ cd tinymce-react-demo
     ```
-4. Install the `react-tinymce` package and save it to your `package.json` with `--save`.
+4. Install the `tinymce-react` package and save it to your `package.json` with `--save`.
 
     ```
     $ npm install --save @tinymce/tinymce-react
@@ -76,8 +78,9 @@ This procedure requires:
 
     export default App;
     ```
-    This javascript file will create the class `App` containing a TinyMCE editor configured to replicate the example on the [Basic example page]({{site.baseurl}}/docs/demo/basic-example/).
-6. Provide access to TinyMCE using Tiny Cloud or TinyMCE Self-hosted.
+    This JavaScript file will create the class `App` containing a TinyMCE editor configured to replicate the example on the [Basic example page]({{site.baseurl}}/docs/demo/basic-example/).
+6. Provide access to TinyMCE using the Tiny Cloud, TinyMCE Self-hosted or by bundling TinyMCE using a module loader.
+
     * **Tiny Cloud**
 
         Include the `apiKey` option in the editor element and include your [TinyMCE API key]({{site.baseurl}}/signup/).
@@ -90,7 +93,7 @@ This procedure requires:
         _(Optional)_ The `cloudChannel` option can be used to connect to one of the following cloud channels:
 
         - `5-stable` (**Default**): The current enterprise release of TinyMCE.
-        - `5-testing`: The current release candidate for next enterprise release of TinyMCE.
+        - `5-testing`: The current release candidate for the next enterprise release of TinyMCE.
         - `5-dev`: The nightly-build version of TinyMCE.
 
         Such as:
@@ -102,31 +105,49 @@ This procedure requires:
 
     * **TinyMCE Self-hosted**
 
-To opt out of using TinyMCE cloud, you have to make TinyMCE globally available yourself. This can be done either by hosting the `tinymce.min.js` file by yourself and adding a script tag to your HTML or, if you are using a module loader, installing TinyMCE with npm. For info on how to get TinyMCE working with module loaders check out [this page in the documentation]({{site.baseurl}}/advanced/usage-with-module-loaders/).
+        To load a self-hosted deployment of TinyMCE, add a script to either the `<head>` or the end of the `<body>` of the HTML file, such as:
+        ```html
+        <script src="/path/to/tinymce.min.js"></script>
+        ```
 
-```html
-<script src="/path/to/tinymce.min.js"></script>
-```
+        To use a self-hosted deployment of TinyMCE with this React application, add the script to `/path/to/tinymce-react-demo/public/index.html`.
 
+        For information on self-hosting TinyMCE, see: [Advanced installation choices]({{site.baseurl}}/general-configuration-guide/advanced-install/).
 
-## 5. Start the development server
+    * **Bundling TinyMCE using a module loader**
 
-Start up the development server provided with `create-react-app`.
+        To learn about bundling TinyMCE using a module loader (such as Webpack and Browserify), see: [Usage with module loaders]({{site.baseurl}}/advanced/usage-with-module-loaders/).
 
-```
-$ npm start
-```
+7. Test the application using the Node.js development server.
+    * To start the development server, navigate to the `tinymce-react-demo` directory and run:
 
-## deploy to a http server
+        ```
+        $ npm run start
+        ```
 
-npm run build
+    * To stop the development server, select on the command line or command prompt and press _Ctrl+C_.
 
-copy contents of build folder to the root directory of the web server
+## Deploying the application to a HTTP server.
+The application will require further configuration before if can be deployed to a production environment. For information on configuring the application for deployment, see: [Create React App - Deployment](https://create-react-app.dev/docs/deployment).
 
-## 6. Next Steps
+To deploy the application to a local HTTP Server:
 
-https://create-react-app.dev/docs/deployment
+1. Navigate to the `tinymce-react-demo` directory and run:
 
-https://reactjs.org/docs/getting-started.html
+    ```
+    $ npm run build
+    ```
 
-This was just a simple guide on how to get started. For configuration information, see: [the React documentation](https://reactjs.org/docs/getting-started.html).
+2. Copy the contents of the `tinymce-react-demo/build` directory to the root directory of the web server.
+
+The application has now been deployed on the web server.
+
+> **Note:** Additional configuration is required to deploy the application outside the web server root directory, such as http://localhost:<port>/my_react_application.
+
+## Next Steps
+
+* For examples of the TinyMCE integration, see: [the tinymce-react storybook](https://tinymce.github.io/tinymce-react/).
+* For information on customizing:
+
+    * TinyMCE, see: [Basic setup]({{site.baseurl}}/general-configuration-guide/basic-setup/).
+    * The React application, see: [Create React App](https://create-react-app.dev/docs/getting-started) or [the React documentation](https://reactjs.org/docs/getting-started.html).

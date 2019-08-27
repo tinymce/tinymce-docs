@@ -37,9 +37,9 @@ For example:
 2. Insert a TinyMCE source script into the `<head>` of the page.
   * For Tiny Cloud deployments:
 ```html
-<script src='https://cdn.tiny.cloud/1/my-api-key/tinymce/5/tinymce.min.js' referrerpolicy='origin'></script>
+<script src='https://cdn.tiny.cloud/1/your-api-key/tinymce/5/tinymce.min.js' referrerpolicy='origin'></script>
 ```
-Replace `my-api-key` with your [Tiny Cloud API key](https://apps.tiny.cloud/?add-to-cart=197933).
+Replace `your-api-key` with your [Tiny Cloud API key](https://apps.tiny.cloud/?add-to-cart=197933).
   * For Self-hosted TinyMCE deployments:
 ```html
 <script src='/path/to/tinymce/base/directory/tinymce.min.js'></script>

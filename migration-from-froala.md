@@ -212,7 +212,7 @@ Unordered list | `formatUL` | `bullist`
 
 ### Update the `plugin` option as required
 
-The list of plugins may need updating, as indicated in [Updating the list of Plugins]({{site.baseurl}}/migration-from-froala/#UpdatingthelistofPluginswhenmigratingfromFroala). For example, the TinyMCE toolbar items; `numlist` and `bullist`, require the `lists` plugin.
+The list of plugins may need updating, as indicated in [Updating the list of Plugins]({{site.baseurl}}/migration-from-froala/#updatingthelistofplugins). For example, the TinyMCE toolbar items; `numlist` and `bullist`, require the `lists` plugin.
 
 For a list of toolbar items with the required plugins, see: [Editor control identifiers: Toolbar controls]({{site.baseurl}}/advanced/editor-control-identifiers/#toolbarcontrols).
 

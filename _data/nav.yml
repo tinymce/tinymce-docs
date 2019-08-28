@@ -605,6 +605,24 @@
   - url: "vue"
   - url: "wordpress"
 
+- url: "migration-from-4x"
+  pages:
+  - url: "#Editor-Core"
+  - url: "#Themes"
+  - url: "#Mobile support"
+  - url: "#Components"
+  - url: "#Plugins"
+  - url: "#Other removed component configuration settings"
+
+- url: "migration-from-froala"
+  pages:
+  - url: "#Migrating a Basic Froala Configuration to TinyMCE"
+  - url: "#Updating the list of Plugins"
+  - url: "#Migrating a Custom Toolbar Layout"
+  - url: "#Configuring Inline Mode"
+  - url: "#Migrating Custom Buttons"
+  - url: "#Migrating Custom Drop-down Toolbar Buttons"
+
 - url: "release-notes"
   pages:
   - url: "release-notes5014"
@@ -668,24 +686,6 @@
     - url: "#New features"
     - url: "#Removed & deprecated features"
     - url: "#Known issues"
-
-- url: "migration-from-4x"
-  pages:
-  - url: "#Editor-Core"
-  - url: "#Themes"
-  - url: "#Mobile support"
-  - url: "#Components"
-  - url: "#Plugins"
-  - url: "#Other removed component configuration settings"
-
-- url: "migration-from-froala"
-  pages:
-  - url: "#Migrating a Basic Froala Configuration to TinyMCE"
-  - url: "#Updating the list of Plugins"
-  - url: "#Migrating a Custom Toolbar Layout"
-  - url: "#Configuring Inline Mode"
-  - url: "#Migrating Custom Buttons"
-  - url: "#Migrating Custom Drop-down Toolbar Buttons"
 
 - url: "changelog"
   pages:

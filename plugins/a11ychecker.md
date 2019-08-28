@@ -131,6 +131,52 @@ tinymce.init({
 });
 ```
 
+### `a11ychecker_html_version`
+
+This configuration option sets the HTML version to use when checking issues.
+
+For example, setting the version to HTML 4 will trigger the rule "Complex tables should have summaries" as summary is a valid attribute and is required for tables, however in HTML 5 the attribute is deprecated, so the rule won't be triggered.
+
+**Type:** `String`
+
+**Default value:** `html4`
+
+**Possible Values:** `html4`, `html5`
+
+#### Example:
+
+```js
+tinymce.init({
+    selector: "textarea",
+    plugins: "a11ychecker",
+    toolbar: "a11ycheck",
+    a11ychecker_html_version: 'html5'
+});
+```
+
+### `a11ychecker_level`
+
+This configuration option sets the [WCAG level](https://www.w3.org/TR/WCAG20/#conformance) to use when checking issues.
+
+For example, the "Text must have a contrast ratio of at least ..." rule when using **AA** will trigger when the contrast ratio is less than 4.5:1, however when using **AAA** the rule will trigger when the ratio is less than 7.0:1.
+
+**Type:** `String`
+
+**Default value:** `aa`
+
+**Possible Values:** `a`, `aa`, `aaa`
+
+#### Example:
+
+```js
+tinymce.init({
+    selector: "textarea",
+    plugins: "a11ychecker",
+    toolbar: "a11ycheck",
+    a11ychecker_level: 'aaa'
+});
+```
+
 ### API
 
 Accessibility Checker exposes couple of methods that can be called directly.

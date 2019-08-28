@@ -1,18 +1,20 @@
 ---
 layout: default
-title: Angular 2+ integration
-title_nav: Angular 2+
-description: Using TinyMCE together with Angular 2+ with the @tinymce/tinymce-angular component
-keywords: integration integrate angular2 angular4 angular6 angular3 angular5 angularjs
+title: Angular 4+ integration
+title_nav: Angular 4+
+description: Using TinyMCE together with Angular with the @tinymce/tinymce-angular component
+keywords: integration integrate angular
 ---
 
-The easiest way to get started using TinyMCE with Angular 2+ is with our official [@tinymce/tinymce-angular](https://github.com/tinymce/tinymce-angular) component!
+The easiest way to get started using TinyMCE with Angular is with our official [@tinymce/tinymce-angular](https://github.com/tinymce/tinymce-angular) component!
 
 ## Installation
 
 ```sh
 $ npm install @tinymce/tinymce-angular
 ```
+
+This package is for Angular 5+. For Angular 4, use `@tinymce/tinymce-angular-legacy`
 
 ## Usage
 

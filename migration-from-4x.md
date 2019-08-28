@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Migrating from TinyMCE 4.x to TinyMCE 5.0.
-title_nav: Migration from V4
+title_nav: Migrating from TinyMCE 4
 description: Instructions for migrating from TinyMCE 4.x to TinyMCE 5.0.
 keywords: migration considerations premigration pre-migration
 ---

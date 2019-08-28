@@ -200,6 +200,11 @@
 - url: "plugins"
   pages:
   - url: "a11ychecker"
+    pages:
+    - url: "#a11ychecker_allow_decorative_images"
+    - url: "#a11ychecker_html_version"
+    - url: "#a11ychecker_level"
+    - url: "#API"
   - url: "advcode"
   - url: "advlist"
     pages:
@@ -259,6 +264,8 @@
   - url: "hr"
   - url: "image"
     pages:
+    - url: "#file_picker_callback"
+    - url: "#file_picker_types"
     - url: "#image_caption"
     - url: "#image_list"
     - url: "#image_advtab"
@@ -268,6 +275,11 @@
     - url: "#image_prepend_url"
     - url: "#image_title"
     - url: "#image_uploadtab"
+    - url: "#images_upload_base_path"
+    - url: "#images_upload_credentials"
+    - url: "#images_upload_handler"
+    - url: "#images_upload_url"
+    - url: "#typeahead_urls"
   - url: "imagetools"
     pages:
     - url: "#imagetools_cors_hosts"
@@ -327,7 +339,7 @@
     - url: "#mentions_menu_hover"
     - url: "#mentions_selector"
     - url: "#mentions_select"
-    - url: "#api"
+    - url: "#API"
   - url: "moxiemanager"
   - url: "nonbreaking"
     pages:
@@ -582,7 +594,7 @@
 - url: "integrations"
   pages:
   - url: "angularjs"
-  - url: "angular2"
+  - url: "angular"
   - url: "bootstrap"
   - url: "dojo"
   - url: "jquery"
@@ -602,24 +614,36 @@
   - url: "#Plugins"
   - url: "#Other removed component configuration settings"
 
+- url: "migration-from-froala"
+  pages:
+  - url: "#Migrating a Basic Froala Configuration to TinyMCE"
+  - url: "#Updating the list of Plugins"
+  - url: "#Migrating a Custom Toolbar Layout"
+  - url: "#Configuring Inline Mode"
+  - url: "#Migrating Custom Buttons"
+  - url: "#Migrating Custom Drop-down Toolbar Buttons"
+
 - url: "release-notes"
   pages:
+  - url: "release-notes5014"
+    pages:
+    - url: "#Overview"
+    - url: "#New features"
+    - url: "#Updates and enhancements"
+    - url: "#Bug Fixes"
+    - url: "#Known issues"
   - url: "release-notes5013"
     pages:
     - url: "#Overview"
     - url: "#New features"
     - url: "#Updates and enhancements"
     - url: "#Known issues"
-  - url: "premium-plugins-errata509"
-    pages:
-    - url: "#Overview"
-    - url: "#Tiny Comments"
-    - url: "#PowerPaste"
   - url: "release-notes509"
     pages:
     - url: "#Overview"
     - url: "#New features"
     - url: "#Updates and enhancements"
+    - url: "#Errata: TinyMCE 5.0.9 Premium Plugins"
   - url: "release-notes507"
     pages:
     - url: "#Overview"

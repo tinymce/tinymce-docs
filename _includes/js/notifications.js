@@ -19,13 +19,14 @@
     var newsLink = $(".tiny-news-link");
     newsLink.attr("href", latest.url);
     newsLink.text(latest.urlText);
-    var prefix = $(".tiny-news-prefix");
-    prefix.text("TINY " + latest.type.toUpperCase());
-    prefix.attr("href", getPrefixURL(latest.type));
+    if (latest.type !== undefined) {
+      var prefix = $(".tiny-news-prefix");
+      prefix.text("TINY " + latest.type.toUpperCase());
+      prefix.attr("href", getPrefixURL(latest.type));
+    }
   }
 
   function fetchLatestNews() {
-    console.log("fetch latest news");
     var url = "https://cdn.jsdelivr.net/npm/contentful@latest/dist/contentful.browser.min.js";
     $.getScript( url, function() {
       var client = contentful.createClient({

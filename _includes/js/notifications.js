@@ -21,7 +21,7 @@
     newsLink.text(latest.urlText);
     if (latest.type !== undefined) {
       var prefix = $(".tiny-news-prefix");
-      prefix.text("TINY " + latest.type.toUpperCase());
+      prefix.text("TINY " + latest.type.toUpperCase() + " > ");
       prefix.attr("href", getPrefixURL(latest.type));
     }
   }

@@ -11,6 +11,18 @@ These styles are useful for previewing content as it appears outside the editor.
 ```js
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  content_style: "div {margin: 10px; border: 5px solid red; padding: 3px}"
+  content_style: 'div { margin: 10px; border: 5px solid red; padding: 3px; }'
+});
+```
+
+To add two more styles with this option, provide the styles as a single string.
+
+##### Example
+
+```js
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  content_style: 'div { margin: 10px; border: 5px solid red; padding: 3px; }' +
+    '.blue { color: blue; } .red { color: red; }'
 });
 ```

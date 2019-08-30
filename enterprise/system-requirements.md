@@ -1,9 +1,9 @@
 ---
 layout: default
-title: Supported Configurations - Premium TinyMCE
-title_nav: Supported Configurations - Premium
-description: Consolidated system requirements for TinyMCE and TinyMCE premium features.
-keywords: support supported browser browsers windows osx linux ie11 chrome firefox safari
+title: Supported Premium Versions and Platforms
+title_nav: Supported Premium Versions<br/>&nbsp;&nbsp;&nbsp;&nbsp;and Platforms
+description: Supported versions and platforms for TinyMCE and TinyMCE premium features.
+keywords: support supported browser browsers windows osx linux ie11 chrome firefox safari mobile premium self-hosted selfhosted
 ---
 
 {% include misc/supported_versions.md %}

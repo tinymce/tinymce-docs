@@ -88,7 +88,7 @@ The `casechange_title_case_minors` option is used to customize the rules while u
 
 ##### **Example**
 
-```
+```js
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "casechange",

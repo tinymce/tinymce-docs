@@ -73,7 +73,7 @@ This option controls the default state of the **Paste as text** menu item, which
 
 The supported values are `true` and `false`. The default is `false`.
 
-##### Example
+##### Example: paste_as_text
 
 ```js
 tinymce.init({
@@ -137,16 +137,37 @@ For example, browsers do not allow PowerPaste to access the file system. If your
 
 **Default value:** `false`
 
-**Possible values:**  `true`, `false`
+**Possible values:** `true`, `false`
 
-##### Example
+##### Example: powerpaste_keep_unsupported_src
 
 ```js
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "powerpaste",
-  powerpaste_word_import: "clean",
-  powerpaste_html_import: "merge"
+  powerpaste_keep_unsupported_src: true
+});
+```
+
+### powerpaste_invalid_inline_elements
+
+This setting allows for configuration of PowerPaste's **"clean"** paste filters for inline elements. These filters are run when `powerpaste_word_import` or `powerpaste_html_import` are set to `"clean"` or when a user clicks the **"Remove formatting"** button on the paste prompt dialog.
+
+The list of inline elements that should be removed on paste can be specified by setting `powerpaste_invalid_inline_elements` to a comma-separated string of inline element tags. If set to `true`, the filter will fall back to a default list of inline element tags. This is the equivalent of setting `powerpaste_invalid_inline_elements` to `"strong, em, b, i, u, strike, sup, sub, font"`.
+
+**Default value:** `false`
+
+**Possible values:** `true`, `false` or a comma-separated string
+
+##### Example: powerpaste_invalid_inline_elements
+
+```js
+tinymce.init({
+  selector: "textarea",  // change this value according to your HTML
+  plugins: "powerpaste",
+  powerpaste_word_import: "clean", // optional
+  powerpaste_html_import: "clean", // optional
+  powerpaste_invalid_inline_elements: "strong, em, b, i, u"
 });
 ```
 

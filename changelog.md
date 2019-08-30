@@ -9,8 +9,8 @@ class: changelog
 {% capture changelog %}
 
 ## Version 5.0.15 September 2, 2019
-* Added a dark content_css styles to go with the dark skin.
-* Changed so the enabled state on toolbar buttons doesn't get the hover effect.
+* Added a dark `content_css` skin to go with the dark UI skin.
+* Changed the enabled state on toolbar buttons so they don't get the hover effect.
 * Fixed missing CSS active state on toolbar buttons.
 * Fixed `onChange` callback not firing for the colorinput dialog component.
 * Fixed context toolbars not showing in fullscreen mode.

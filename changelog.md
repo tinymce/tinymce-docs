@@ -8,6 +8,13 @@ class: changelog
 
 {% capture changelog %}
 
+## Version 5.0.15 September 2, 2019
+* Added a dark `content_css` skin to go with the dark UI skin.
+* Changed the enabled state on toolbar buttons so they don't get the hover effect.
+* Fixed missing CSS active state on toolbar buttons.
+* Fixed `onChange` callback not firing for the colorinput dialog component.
+* Fixed context toolbars not showing in fullscreen mode.
+
 ## Version 5.0.14 August 19, 2019
 * Added an API to reload the autocompleter menu with additional fetch metadata.
 * Fixed missing toolbar button border styling options.

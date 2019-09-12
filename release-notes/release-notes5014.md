@@ -59,20 +59,20 @@ release of TinyMCE.
 
 This errata documents updates to the TinyMCE 5.0.14 Premium Plugins, and was released on the 12th September, 2019. Future releases of TinyMCE will also include these changes.
 
-### Updates and enhancements
+### Errata&#58; updates and enhancements
 
 #### PowerPaste
 
+PowerPaste 5.1.0 includes a significant update to how tables are handled when pasted from Microsoft Word or Excel. The new version produces cleaner table HTML which better conforms with HTML5 standards. 
 
-
-### Bug Fixes
+### Errata&#58; Bug Fixes
 
 #### Enhanced Media Embed
 
-**Enhanced Media Embed** 2.2.3 addresses an issue where embedded snippet were not created when inputting links and pressing the Enter Key in Firefox.
+**Enhanced Media Embed** 2.2.3 addresses an issue where embedded snippets were not created when inputting links and pressing the Enter Key in Firefox.
 
 For information on **Enhanced Media Embed** refer to the [documentation]({{site.baseurl}}/plugins/mediaembed/).
 
 #### PowerPaste
 
-
+PowerPaste 5.1.0 fixes a bug introduced in 5.0.0 regarding image handling. This resulted in images being pasted as base64 encoded images, rather than as image blob. This also affected the functionality of `images_upload_handler`.

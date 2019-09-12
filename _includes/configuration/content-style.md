@@ -15,7 +15,7 @@ tinymce.init({
 });
 ```
 
-To add two more styles with this option, provide the styles as a single string.
+To add two or more styles with this option, provide the styles as a single string.
 
 ##### Example
 

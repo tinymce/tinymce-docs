@@ -55,7 +55,9 @@ When using an editor larger than the size of the screen, the find and replace di
 of the screen and users will need to scroll back up to find the next match in the content. A fix will be provided in an upcoming
 release of TinyMCE.
 
-## Errata
+## Errata&#58; TinyMCE 5.0.14 Premium Plugins
+
+This errata documents updates to the TinyMCE 5.0.14 Premium Plugins, and was released on the 12th September, 2019. Future releases of TinyMCE will also include these changes.
 
 ### Updates and enhancements
 
@@ -67,6 +69,9 @@ release of TinyMCE.
 
 #### Enhanced Media Embed
 
+**Enhanced Media Embed** 2.2.3 addresses an issue where embedded snippet were not created when inputting links and pressing the Enter Key in Firefox.
+
+For information on **Enhanced Media Embed** refer to the [documentation]({{site.baseurl}}/plugins/mediaembed/).
 
 #### PowerPaste
 

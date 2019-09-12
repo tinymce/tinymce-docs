@@ -58,7 +58,7 @@ of the screen and users will need to scroll back up to find the next match in th
 
 This errata documents updates to the TinyMCE 5.0.14 Premium Plugins, and was released on the 12th September, 2019. Future releases of TinyMCE will also include these changes.
 
-### Errata&#58; updates and enhancements
+### Errata&#58; Updates and enhancements
 
 #### PowerPaste
 

@@ -54,3 +54,20 @@ For a list of bug fixes included in this release, see: [Changelog - Version 5.0.
 When using an editor larger than the size of the screen, the find and replace dialog may disappear off the top
 of the screen and users will need to scroll back up to find the next match in the content. A fix will be provided in an upcoming
 release of TinyMCE.
+
+## Errata
+
+### Updates and enhancements
+
+#### PowerPaste
+
+
+
+### Bug Fixes
+
+#### Enhanced Media Embed
+
+
+#### PowerPaste
+
+

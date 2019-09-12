@@ -52,8 +52,7 @@ For a list of bug fixes included in this release, see: [Changelog - Version 5.0.
 #### Search and replace plugin
 
 When using an editor larger than the size of the screen, the find and replace dialog may disappear off the top
-of the screen and users will need to scroll back up to find the next match in the content. A fix will be provided in an upcoming
-release of TinyMCE.
+of the screen and users will need to scroll back up to find the next match in the content. A fix will be provided in an upcoming release of TinyMCE.
 
 ## Errata&#58; TinyMCE 5.0.14 Premium Plugins
 
@@ -63,15 +62,16 @@ This errata documents updates to the TinyMCE 5.0.14 Premium Plugins, and was rel
 
 #### PowerPaste
 
-PowerPaste 5.1.0 includes a significant update to how tables are handled when pasted from Microsoft Word or Excel. The new version produces cleaner table HTML which better conforms with HTML5 standards. 
+PowerPaste 5.1.0 includes a significant update to how tables are handled when pasted from Microsoft Word or Excel. The new version produces cleaner table HTML which better conforms with HTML5 standards and tables produced by the TinyMCE tables plugin.
+These changes solve bugs with TinyMCE table functionality behaving unexpectedly on tables added using PowerPaste.
 
 ### Errata&#58; Bug Fixes
 
 #### Enhanced Media Embed
 
-**Enhanced Media Embed** 2.2.3 addresses an issue where embedded snippets were not created when inputting links and pressing the Enter Key in Firefox.
+Enhanced Media Embed 2.2.3 addresses an issue where embedded snippets were not created when inputting links and pressing the Enter Key in Firefox.
 
-For information on **Enhanced Media Embed** refer to the [documentation]({{site.baseurl}}/plugins/mediaembed/).
+For information on Enhanced Media Embed refer to the [documentation]({{site.baseurl}}/plugins/mediaembed/).
 
 #### PowerPaste
 

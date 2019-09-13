@@ -149,17 +149,17 @@ tinymce.init({
 });
 ```
 
-### powerpaste_invalid_inline_elements
+### powerpaste_clean_filtered_inline_elements
 
 This setting allows for configuration of PowerPaste's **"clean"** paste filters for inline elements. These filters are run when `powerpaste_word_import` or `powerpaste_html_import` are set to `"clean"` or when a user clicks the **"Remove formatting"** button on the paste prompt dialog.
 
-The list of inline elements that should be removed on paste can be specified by setting `powerpaste_invalid_inline_elements` to a comma-separated string of inline element tags. If set to `true`, the filter will fall back to a default list of inline element tags. This is the equivalent of setting `powerpaste_invalid_inline_elements` to `"strong, em, b, i, u, strike, sup, sub, font"`.
+The list of inline elements that should be removed on paste can be specified by setting `powerpaste_clean_filtered_inline_elements` to a comma-separated string of inline element tags. If set to `true`, the filter will fall back to a default list of inline element tags. This is the equivalent of setting `powerpaste_clean_filtered_inline_elements` to `"strong, em, b, i, u, strike, sup, sub, font"`.
 
 **Default value:** `false`
 
 **Possible values:** `true`, `false` or a comma-separated string
 
-##### Example: powerpaste_invalid_inline_elements
+##### Example: powerpaste_clean_filtered_inline_elements
 
 ```js
 tinymce.init({
@@ -167,7 +167,7 @@ tinymce.init({
   plugins: "powerpaste",
   powerpaste_word_import: "clean", // optional
   powerpaste_html_import: "clean", // optional
-  powerpaste_invalid_inline_elements: "strong, em, b, i, u"
+  powerpaste_clean_filtered_inline_elements: "strong, em, b, i, u"
 });
 ```
 

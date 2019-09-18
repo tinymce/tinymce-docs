@@ -13,9 +13,7 @@ TinyMCE filters out some of the more common XSS content like scripts from the co
 
 ## Q: How do I setup Content Security Policy (CSP) with TinyMCE?
 
-You can use TinyMCE with a [CSP](https://content-security-policy.com/) header, however, there are a few things that need to be enabled for the editor to function properly:
-
-Here is a list of the directives that are required by TinyMCE and why they are required:
+TinyMCE can be used with a [CSP](https://content-security-policy.com/) header. The following directives are **required** for TinyMCE to function:
 
 | Directives | Requirements |
 |------------|--------------|
@@ -25,13 +23,13 @@ Here is a list of the directives that are required by TinyMCE and why they are r
 | style-src 'self' 'unsafe-inline';        | Styles are used on dialogs and menus to position them relative to other elements.
 | font-src 'self' *.tiny.cloud;            | Fonts are used for icons in the UI and is loaded from external files.
 
-You can use this CSP header when served from the cloud:
+Use this CSP header when using the Tiny Cloud:
 
 ```html
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' *.tinymce.com *.tiny.cloud; connect-src 'self' *.tinymce.com *.tiny.cloud; img-src 'self' *.tinymce.com *.tiny.cloud data: blob:; style-src 'self' 'unsafe-inline' *.tinymce.com *.tiny.cloud; font-src 'self' *.tinymce.com *.tiny.cloud;" />
 ```
 
-You can use this CSP header when served from a local domain excludes the *.tinymce.com domain:
+Use this CSP header when self-hosting TinyMCE from a local domain (excludes the *.tiny.cloud domain):
 
 ```html
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; connect-src 'self'; img-src 'self' data: blob:; style-src 'self' 'unsafe-inline'; font-src 'self';" />

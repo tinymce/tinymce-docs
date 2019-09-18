@@ -19,11 +19,11 @@ Here is a list of the directives that are required by TinyMCE and why they are r
 
 | Directives | Requirements |
 |------------|--------------|
-| script-src 'self' *.tinymce.com; | Scripts are sometimes loaded as script element with an src attribute.
-| connect-src 'self' *.tinymce.com; | XMLHttpRequest are required by some services such as spellchecking.
-| img-src 'self' *.tinymce.com data: blob:; | Images within the editor are sometimes base64 encoded or blob URLs or proxied through the cloud service.
-| style-src 'self' 'unsafe-inline'; | Styles are used on dialogs/menus to position them relative to other elements.
-| font-src 'self' *.tinymce.com; | Fonts are used for icons in the UI and is loaded from external files.
+| script-src 'self' *.tiny.cloud;          | Scripts are sometimes loaded as script element with an src attribute.
+| connect-src 'self' *.tiny.cloud;         | XMLHttpRequest are required by some services such as spellchecking.
+| img-src 'self' *.tiny.cloud data: blob:; | Images within the editor are sometimes base64 encoded, blob URLs, or proxied through the cloud service.
+| style-src 'self' 'unsafe-inline';        | Styles are used on dialogs and menus to position them relative to other elements.
+| font-src 'self' *.tiny.cloud;            | Fonts are used for icons in the UI and is loaded from external files.
 
 You can use this CSP header when served from the cloud:
 

@@ -215,7 +215,7 @@ This option changes the behaviour of the `CTRL + K` shortcut. By default, pressi
 
 **Type:** `Boolean`
 
-**Default Value:** `true`
+**Default Value:** `false`
 
 **Possible Values:** `true`, `false`
 
@@ -227,7 +227,7 @@ tinymce.init({
   plugins: "link",
   menubar: "insert",
   toolbar: "link",
-  link_quicklink: false
+  link_quicklink: true
 });
 ```
 

@@ -13,26 +13,35 @@ TinyMCE filters out some of the more common XSS content like scripts etc. from t
 
 ## Q: How do I setup Content Security Policy (CSP) with tinymce?
 
-You can use TinyMCE with a [CSP](https://content-security-policy.com/) header, but there are a few things that need to be enabled for the editor to function properly:
-
-Here is a list of the directives that are required by TinyMCE and why they are required:
+TinyMCE can be used with a [CSP](https://content-security-policy.com/) header. When using a CSP, the following directives are **required** for TinyMCE to function:
 
 | Directives | Requirements |
 |------------|--------------|
-| script-src 'self' *.tinymce.com; | Scripts are sometimes loaded as script element with an src attribute.
-| connect-src 'self' *.tinymce.com; | XMLHttpRequest are required by some services such as spellchecking.
-| img-src 'self' *.tinymce.com data: blob:; | Images within the editor are sometimes base64 encoded or blob URLs or proxied through the cloud service.
-| style-src 'self' 'unsafe-inline'; | Styles are used on dialogs/menus to position them relative to other elements.
-| font-src 'self' *.tinymce.com; | Fonts are used for icons in the UI and is loaded from external files.
+| script-src 'self' *.tinymce.com *.tiny.cloud;          | Scripts are sometimes loaded as script element with an src attribute.
+| connect-src 'self' *.tinymce.com *.tiny.cloud blob:;         | XMLHttpRequest are required by some services such as spellchecking and PowerPaste.
+| img-src 'self' *.tinymce.com *.tiny.cloud data: blob:; | Images within the editor are sometimes base64 encoded, blob URLs, or proxied through the cloud service.
+| style-src 'self' 'unsafe-inline' *.tinymce.com *.tiny.cloud;        | Styles are used for inline formatting (such as underline, font colors, etc.) and the positioning of user interface elements.
+| font-src 'self' *.tinymce.com *.tiny.cloud;            | Fonts are used for icons in the UI and is loaded from external files.
 
-You can use this CSP header when served from the cloud:
+> **Important**: These directives will prevent all content loading from external sources.
+> To allow content from specific sources, add the source domains to the relevant directives. For example, to allow YouTube videos:
+>  ```html
+>  media-src 'self' *.youtube.com;
+>  ```
+>  To allow content from any source, use the (&#42;) wildcard. Allowing all sources (using &#42;) negates the security policy for the source type. For example:
+>  ```html
+>  media-src *;
+>  ```
+> For information on Content Security Policies, see: [MDN Web Docs - Content Security Policy (CSP)](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP).
+
+When using the Tiny Cloud, use this CSP header :
 
 ```html
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' *.tinymce.com; connect-src 'self' *.tinymce.com; img-src 'self' *.tinymce.com data: blob:; style-src 'self' 'unsafe-inline' *.tinymce.com; font-src 'self' *.tinymce.com;" />
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' *.tinymce.com *.tiny.cloud; connect-src 'self' *.tinymce.com *.tiny.cloud blob:; img-src 'self' *.tinymce.com *.tiny.cloud data: blob:; style-src 'self' 'unsafe-inline' *.tinymce.com *.tiny.cloud; font-src 'self' *.tinymce.com *.tiny.cloud;" />
 ```
 
-You can use this CSP header when served from a local domain excludes the *.tinymce.com domain:
+When self-hosting TinyMCE from a local domain, use this CSP header (excludes the &#42;.tiny.cloud domain):
 
 ```html
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; connect-src 'self'; img-src 'self' data: blob:; style-src 'self' 'unsafe-inline'; font-src 'self';" />
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; connect-src 'self' blob:; img-src 'self' data: blob:; style-src 'self' 'unsafe-inline'; font-src 'self';" />
 ```

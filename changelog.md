@@ -8,6 +8,9 @@ class: changelog
 
 {% capture changelog %}
 
+## Version 4.9.6 September 2, 2019
+* Fixed image browse button sometimes displaying the browse window twice on mobile.
+
 ## Version 4.9.5 July 2, 2019
 * Changed annotations navigation to work the same as inline boundaries.
 * Fixed the print plugin printing from the wrong window in IE11.

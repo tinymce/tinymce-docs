@@ -6,19 +6,19 @@ The editor accepts the following properties:
 
 ```xml
 <Editor
-  apiKey= 'your-api-key';
-  cloudChannel= '5-stable';
-  disabled= {false};
-  id= 'uuid';
-  init= {% raw %}{{{% endraw %}  {% raw %}}}{% endraw %};
-  initialValue= '';
-  inline= {false};
-  onEditorChange= {''};
-  plugins= '';
-  tagName= 'div';
-  textareaName= '';
-  toolbar= '';
-  value= '';
+  apiKey='your-api-key'
+  cloudChannel='5-stable'
+  disabled={false}
+  id='uuid'
+  init= {% raw %}{{{% endraw %}  {% raw %}}}{% endraw %}
+  initialValue=''
+  inline={false}
+  onEditorChange={}
+  plugins=''
+  tagName='div'
+  textareaName=''
+  toolbar=''
+  value=''
 />
 ```
 
@@ -37,7 +37,7 @@ To register for a Tiny Cloud API key, visit the [sign-up page](https://www.tiny.
 
 ```xml
 <Editor
-  apiKey= 'your-api-key';
+  apiKey='your-api-key'
 />
 ```
 
@@ -71,7 +71,7 @@ The `disabled` property can dynamically switch the editor between a "disabled" (
 
 ```xml
 <Editor
-  disabled= {true};
+  disabled={true}
 />
 ```
 
@@ -86,7 +86,7 @@ An id for the editor. Used for retrieving the editor instance using the `tinymce
 
 ```xml
 <Editor
-  id= 'uuid';
+  id='uuid'
 />
 ```
 
@@ -103,13 +103,13 @@ For information on the TinyMCE selector (`tinymce.init`), see: [Basic setup]({{s
 
 ```xml
 <Editor
-  init= {% raw %}{{{% endraw %}
+  init={% raw %}{{{% endraw %}
     selector: 'textarea#myTextArea',
     plugins: [
      'lists link image paste help wordcount'
     ],
     toolbar: 'undo redo | formatselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | help'
-  {% raw %}}}{% endraw %};
+  {% raw %}}}{% endraw %}
 />
 ```
 
@@ -124,12 +124,12 @@ Initial content of the editor when the editor is initialized.
 
 ```xml
 <Editor
-  initialValue= 'Once upon a time...';
+  initialValue='Once upon a time...'
 />
 ```
 
 #### `inline`
-Used to set the editor to inline mode. Using `<Editor inline: true />` is the same as setting `{inline: true}` in the TinyMCE selector (`tinymce.init`).
+Used to set the editor to inline mode. Using `<Editor inline={true} />` is the same as setting `{inline: true}` in the TinyMCE selector (`tinymce.init`).
 
 For information on inline mode, see: [User interface options - `inline`]({{site.baseurl}}/configure/editor-appearance/#inline) and [Setup inline editing mode]({{site.baseurl}}/general-configuration-guide/use-tinymce-inline/).
 
@@ -141,7 +141,7 @@ For information on inline mode, see: [User interface options - `inline`]({{site.
 
 ```xml
 <Editor
-  inline= {true};
+  inline={true}
 />
 ```
 
@@ -153,7 +153,7 @@ For more information, see: [Using the TinyMCE React component as a controlled co
 **Type:** EventHandler
 
 #### `plugins`
-Used to include plugins for the editor. Using `<Editor plugins: 'lists' />` is the same as setting `{plugins: 'lists'}` in the TinyMCE selector (`tinymce.init`).
+Used to include plugins for the editor. Using `<Editor plugins='lists' />` is the same as setting `{plugins: 'lists'}` in the TinyMCE selector (`tinymce.init`).
 
 For information on adding plugins to TinyMCE, see: [Add plugins to TinyMCE]({{site.baseurl}}/plugins/).
 
@@ -163,12 +163,12 @@ For information on adding plugins to TinyMCE, see: [Add plugins to TinyMCE]({{si
 
 ```xml
 <Editor
-  plugins= 'lists code';
+  plugins='lists code'
 />
 ```
 
 #### `tagName`
-Only valid when [`<Editor inline: true />`](#inline). Used to define the HTML element for the editor in inline mode.
+Only valid when [`<Editor inline={true} />`](#inline). Used to define the HTML element for the editor in inline mode.
 
 **Default value:** `div`
 
@@ -178,8 +178,8 @@ Only valid when [`<Editor inline: true />`](#inline). Used to define the HTML el
 
 ```xml
 <Editor
-  inline= {true};
-  tagName= 'myTextArea';
+  inline={true}
+  tagName='myTextArea'
 />
 ```
 
@@ -194,15 +194,15 @@ Sets the `name` attribute for the `textarea` element used for the editor in form
 
 ```xml
 <Editor
-  init= {% raw %}{{{% endraw %}
+  init={% raw %}{{{% endraw %}
     selector: 'textarea'
-  {% raw %}}}{% endraw %};
-  textareaName= 'myTextArea';
+  {% raw %}}}{% endraw %}
+  textareaName='myTextArea'
 />
 ```
 
 #### `toolbar`
-Used to set the toolbar for the editor. Using `<Editor toolbar: 'bold' />` is the same as setting `{toolbar: 'bold'}` in the TinyMCE selector (`tinymce.init`).
+Used to set the toolbar for the editor. Using `<Editor toolbar='bold' />` is the same as setting `{toolbar: 'bold'}` in the TinyMCE selector (`tinymce.init`).
 
 For information setting the toolbar for TinyMCE, see: [User interface options - toolbar]({{site.baseurl}}/configure/editor-appearance/#toolbar).
 
@@ -216,8 +216,8 @@ For information setting the toolbar for TinyMCE, see: [User interface options - 
 
 ```xml
 <Editor
-  plugins= 'code';
-  toolbar= 'bold italic underline code';
+  plugins='code'
+  toolbar='bold italic underline code'
 />
 ```
 
@@ -260,7 +260,7 @@ For information on controlled components in React, see: [React Docs - Controlled
 Functions can be bound to editor events, such as:
 
 ```xml
-<Editor onSelectionChange="this.handlerFunction" />
+<Editor onSelectionChange={this.handlerFunction} />
 ```
 
 Where the `handlerFunction` is triggered with the event, in this case `onSelectionChange`.

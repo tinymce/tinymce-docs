@@ -72,7 +72,7 @@ This procedure requires:
 
     export default App;
     ```
-    This JavaScript file will create the class `App` containing a TinyMCE editor configured to replicate the example on the [Basic example page]({{site.baseurl}}/docs/demo/basic-example/).
+    This JavaScript file will create the class `App` containing a TinyMCE editor configured to replicate the example on the [Basic example page]({{site.baseurl}}/demo/basic-example/).
 6. Provide access to TinyMCE using Tiny Cloud or by self-hosting TinyMCE.
 
     * **Tiny Cloud**

@@ -13,7 +13,7 @@ TinyMCE filters out some of the more common XSS content like scripts from the co
 
 ## Q: How do I setup Content Security Policy (CSP) with TinyMCE?
 
-TinyMCE can be used with a [CSP](https://content-security-policy.com/) header. The following directives are **required** for TinyMCE to function:
+TinyMCE can be used with a [CSP](https://content-security-policy.com/) header. When using a CSP, the following directives are **required** for TinyMCE to function:
 
 | Directives | Requirements |
 |------------|--------------|
@@ -23,13 +23,24 @@ TinyMCE can be used with a [CSP](https://content-security-policy.com/) header. T
 | style-src 'self' 'unsafe-inline' *.tinymce.com *.tiny.cloud;        | Styles are used on dialogs and menus to position them relative to other elements.
 | font-src 'self' *.tinymce.com *.tiny.cloud;            | Fonts are used for icons in the UI and is loaded from external files.
 
-Use this CSP header when using the Tiny Cloud:
+> **Important**: These directives will prevent all content loading from external sources.
+> To allow content from specific sources, add the source domains to the relevant directives. For example, to allow YouTube videos:
+>  ```html
+>  media-src 'self' *.youtube.com;
+>  ```
+>  To allow content from any source, use the (&#42;) wildcard. Allowing all sources (using &#42;) negates the security policy for the source type. For example:
+>  ```html
+>  media-src *;
+>  ```
+> For information on Content Security Policies, see: [MDN Web Docs - Content Security Policy (CSP)](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP).
+
+When using the Tiny Cloud, use this CSP header :
 
 ```html
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' *.tinymce.com *.tiny.cloud; connect-src 'self' *.tinymce.com *.tiny.cloud blob:; img-src 'self' *.tinymce.com *.tiny.cloud data: blob:; style-src 'self' 'unsafe-inline' *.tinymce.com *.tiny.cloud; font-src 'self' *.tinymce.com *.tiny.cloud;" />
 ```
 
-Use this CSP header when self-hosting TinyMCE from a local domain (excludes the *.tiny.cloud domain):
+When self-hosting TinyMCE from a local domain, use this CSP header (excludes the &#42;.tiny.cloud domain):
 
 ```html
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; connect-src 'self' blob:; img-src 'self' data: blob:; style-src 'self' 'unsafe-inline'; font-src 'self';" />

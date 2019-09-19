@@ -4,21 +4,21 @@
 
 The editor accepts the following properties:
 
-```html
+```xml
 <Editor
-  apiKey: 'your-api-key';
-  cloudChannel: '5-stable';
-  disabled: false;
-  id: 'uuid';
-  init: {% raw %}{{{% endraw %}  {% raw %}}}{% endraw %};
-  initialValue: '';
-  inline: false;
-  onEditorChange: '';
-  plugins: '';
-  tagName: 'div';
-  textareaName: '';
-  toolbar: '';
-  value: '';
+  apiKey= 'your-api-key';
+  cloudChannel= '5-stable';
+  disabled= {false};
+  id= 'uuid';
+  init= {% raw %}{{{% endraw %}  {% raw %}}}{% endraw %};
+  initialValue= '';
+  inline= {false};
+  onEditorChange= {''};
+  plugins= '';
+  tagName= 'div';
+  textareaName= '';
+  toolbar= '';
+  value= '';
 />
 ```
 
@@ -35,9 +35,9 @@ To register for a Tiny Cloud API key, visit the [sign-up page](https://www.tiny.
 
 ##### Example: `apiKey`
 
-```html
+```xml
 <Editor
-  apiKey: 'your-api-key';
+  apiKey= 'your-api-key';
 />
 ```
 
@@ -69,9 +69,9 @@ The `disabled` property can dynamically switch the editor between a "disabled" (
 
 ##### Example: `disabled`
 
-```html
+```xml
 <Editor
-  disabled: true;
+  disabled= {true};
 />
 ```
 
@@ -84,9 +84,9 @@ An id for the editor. Used for retrieving the editor instance using the `tinymce
 
 ##### Example: `id`
 
-```html
+```xml
 <Editor
-  id: 'uuid';
+  id= 'uuid';
 />
 ```
 
@@ -101,9 +101,9 @@ For information on the TinyMCE selector (`tinymce.init`), see: [Basic setup]({{s
 
 ##### Example: `init`
 
-```html
+```xml
 <Editor
-  init: {% raw %}{{{% endraw %}
+  init= {% raw %}{{{% endraw %}
     selector: 'textarea#myTextArea',
     plugins: [
      'lists link image paste help wordcount'
@@ -122,9 +122,9 @@ Initial content of the editor when the editor is initialized.
 
 ##### Example: `initialValue`
 
-```html
+```xml
 <Editor
-  initialValue: 'Once upon a time...';
+  initialValue= 'Once upon a time...';
 />
 ```
 
@@ -139,9 +139,9 @@ For information on inline mode, see: [User interface options - `inline`]({{site.
 
 ##### Example: `inline`
 
-```html
+```xml
 <Editor
-  inline: true;
+  inline= {true};
 />
 ```
 
@@ -161,9 +161,9 @@ For information on adding plugins to TinyMCE, see: [Add plugins to TinyMCE]({{si
 
 ##### Example: `plugins`
 
-```html
+```xml
 <Editor
-  plugins: 'lists code';
+  plugins= 'lists code';
 />
 ```
 
@@ -176,10 +176,10 @@ Only valid when [`<Editor inline: true />`](#inline). Used to define the HTML el
 
 ##### Example: ``
 
-```html
+```xml
 <Editor
-  inline: true;
-  tagName: 'myTextArea';
+  inline= {true};
+  tagName= 'myTextArea';
 />
 ```
 
@@ -192,12 +192,12 @@ Sets the `name` attribute for the `textarea` element used for the editor in form
 
 ##### Example: `textareaName`
 
-```html
+```xml
 <Editor
-  init: {% raw %}{{{% endraw %}
+  init= {% raw %}{{{% endraw %}
     selector: 'textarea'
   {% raw %}}}{% endraw %};
-  textareaName: 'myTextArea';
+  textareaName= 'myTextArea';
 />
 ```
 
@@ -214,10 +214,10 @@ For information setting the toolbar for TinyMCE, see: [User interface options - 
 
 ##### Example: `toolbar`
 
-```html
+```xml
 <Editor
-  plugins: 'code';
-  toolbar: 'bold italic underline code';
+  plugins= 'code';
+  toolbar= 'bold italic underline code';
 />
 ```
 
@@ -259,7 +259,7 @@ For information on controlled components in React, see: [React Docs - Controlled
 
 Functions can be bound to editor events, such as:
 
-```html
+```xml
 <Editor onSelectionChange="this.handlerFunction" />
 ```
 

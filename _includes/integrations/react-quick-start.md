@@ -73,7 +73,7 @@ This procedure requires:
     export default App;
     ```
     This JavaScript file will create the class `App` containing a TinyMCE editor configured to replicate the example on the [Basic example page]({{site.baseurl}}/docs/demo/basic-example/).
-6. Provide access to TinyMCE using Tiny Cloud, TinyMCE Self-hosted or by bundling TinyMCE using a module loader.
+6. Provide access to TinyMCE using Tiny Cloud or by self-hosting TinyMCE.
 
     * **Tiny Cloud**
 
@@ -87,18 +87,22 @@ This procedure requires:
 
     * **TinyMCE Self-hosted**
 
-        To load a self-hosted deployment of TinyMCE, add a script to either the `<head>` or the end of the `<body>` of the HTML file, such as:
+      TinyMCE can be self-hosted by: deploying TinyMCE independent of the React application, or bundling TinyMCE with the React application.
+
+      * **Deploy TinyMCE independent of the React application**
+
+        To use an independent deployment of TinyMCE, add a script to either the `<head>` or the end of the `<body>` of the HTML file, such as:
         ```html
         <script src="/path/to/tinymce.min.js"></script>
         ```
 
-        To use a self-hosted deployment of TinyMCE with this React application, add the script to `/path/to/tinymce-react-demo/public/index.html`.
+        To use an independent deployment of TinyMCE with the create a React application, add the script to `/path/to/tinymce-react-demo/public/index.html`.
 
         For information on self-hosting TinyMCE, see: [Advanced installation choices]({{site.baseurl}}/general-configuration-guide/advanced-install/).
 
-    * **Bundling TinyMCE using a module loader**
+      * **Bundling TinyMCE with the React application using a module loader**
 
-        To learn about bundling TinyMCE using a module loader (such as Webpack and Browserify), see: [Usage with module loaders]({{site.baseurl}}/advanced/usage-with-module-loaders/).
+          To bundle TinyMCE using a module loader (such as Webpack and Browserify), see: [Usage with module loaders]({{site.baseurl}}/advanced/usage-with-module-loaders/).
 
 7. Test the application using the Node.js development server.
     * To start the development server, navigate to the `tinymce-react-demo` directory and run:

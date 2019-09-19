@@ -17,11 +17,11 @@ TinyMCE can be used with a [CSP](https://content-security-policy.com/) header. T
 
 | Directives | Requirements |
 |------------|--------------|
-| script-src 'self' *.tiny.cloud;          | Scripts are sometimes loaded as script element with an src attribute.
-| connect-src 'self' *.tiny.cloud;         | XMLHttpRequest are required by some services such as spellchecking.
-| img-src 'self' *.tiny.cloud data: blob:; | Images within the editor are sometimes base64 encoded, blob URLs, or proxied through the cloud service.
-| style-src 'self' 'unsafe-inline';        | Styles are used on dialogs and menus to position them relative to other elements.
-| font-src 'self' *.tiny.cloud;            | Fonts are used for icons in the UI and is loaded from external files.
+| script-src 'self' *.tinymce.com *.tiny.cloud;          | Scripts are sometimes loaded as script element with an src attribute.
+| connect-src 'self' *.tinymce.com *.tiny.cloud;         | XMLHttpRequest are required by some services such as spellchecking.
+| img-src 'self' *.tinymce.com *.tiny.cloud data: blob:; | Images within the editor are sometimes base64 encoded, blob URLs, or proxied through the cloud service.
+| style-src 'self' 'unsafe-inline' *.tinymce.com *.tiny.cloud;        | Styles are used on dialogs and menus to position them relative to other elements.
+| font-src 'self' *.tinymce.com *.tiny.cloud;            | Fonts are used for icons in the UI and is loaded from external files.
 
 Use this CSP header when using the Tiny Cloud:
 

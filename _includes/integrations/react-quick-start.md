@@ -77,7 +77,7 @@ This procedure requires:
 
     * **Tiny Cloud**
 
-        Include the `apiKey` option in the editor element and include your [TinyMCE API key]({{site.baseurl}}/signup/).
+        Include the `apiKey` option in the editor element and include your [TinyMCE API key]({{site.shared_baseurl}}/signup/).
 
         Such as:
 

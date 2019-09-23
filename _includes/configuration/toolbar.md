@@ -48,6 +48,25 @@ tinymce.init({
 });
 ```
 
+### Enabling Sticky Toolbars
+
+A Sticky Toolbar (or Docking Toolbar), docks the toolbar to the top of the screen when scrolling down a web page until the editor is no longer visible. To enable Stick toolbars declare `toolbar_sticky` as `true` in the `tinymce.init` script. To see a demo of sticky toolbar, see the [Full featured demo]({{ site.baseurl }}/demo/full-featured/).
+
+**Type:** `Boolean`
+
+**Default Value:** `false`
+
+**Possible Values:** `true`, `false`
+
+##### Example
+
+```js
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  toolbar_sticky: true
+});
+```
+
 ### Disabling the toolbar
 
 To disable the toolbar, the toolbar option should be provided a boolean value of `false`.

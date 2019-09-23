@@ -54,7 +54,7 @@ A Sticky Toolbar (or Docking Toolbar), docks the toolbar and the menu to the top
 
 To enable Sticky Toolbars, set `toolbar_sticky` as `true` in the `tinymce.init` script. To disable Sticky Toolbars, set `toolbar_sticky` as `false`
 
- To see a demo of sticky toolbar, see the [ demo]().
+ To see a demo of sticky toolbar, see the [TinyMCE Sticky Toolbar Demo](https://codepen.io/tinymce/full/qBWLLMP).
 
 **Type:** `Boolean`
 

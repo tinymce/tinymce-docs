@@ -34,4 +34,5 @@ The following plugins are excluded from this example:
 * [Autoresize]({{site.baseurl}}/plugins/autoresize) — Resizes the editor to fit the content.
 * [BBCode]({{site.baseurl}}/plugins/bbcode) — Changes the markup used for the content.
 * [Full Page]({{site.baseurl}}/plugins/fullpage) — Used for modifying HTML `<head>` elements.
+* [Spellchecker]({{site.baseurl}}/plugins/spellchecker) — Requires [Server-Side components]({{site.baseurl}}/enterprise/server/).
 * [Tab Focus]({{site.baseurl}}/plugins/tabfocus) — Changes the behavior of the TAB-key within the editor.

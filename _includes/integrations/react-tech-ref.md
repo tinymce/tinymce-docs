@@ -1,5 +1,35 @@
 ## TinyMCE React technical reference
 
+**Covered in this section:**
+
+- [Installing the TinyMCE React integration using the NPM](#installingthetinymcereactintegrationusingnpm)
+- [Configuring the editor](#configuringtheeditor)
+
+  - [`apiKey`](#apikey)
+  - [`cloudChannel`](#cloudchannel)
+  - [`disabled`](#disabled)
+  - [`id`](#id)
+  - [`init`](#init)
+  - [`initialValue`](#initialvalue)
+  - [`inline`](#inline)
+  - [`onEditorChange`](#oneditorchange)
+  - [`plugins`](#plugins)
+  - [`tagName`](#tagname)
+  - [`textareaName`](#textareaname)
+  - [`toolbar`](#toolbar)
+  - [`value`](#value)
+
+- [Using the TinyMCE React component as a controlled component](#usingthetinymcereactcomponentasacontrolledcomponent)
+- [Event binding](#eventbinding)
+
+### Installing the TinyMCE React integration using NPM
+
+To install the `tinymce-react` package and save it to your `package.json` with `--save`.
+
+    ```
+    $ npm install --save @tinymce/tinymce-react
+    ```
+
 ### Configuring the editor
 
 The editor accepts the following properties:
@@ -174,7 +204,7 @@ Only valid when [`<Editor inline={true} />`](#inline). Used to define the HTML e
 
 **Type:** String
 
-##### Example: ``
+##### Example: `tagName`
 
 ```xml
 <Editor

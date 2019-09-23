@@ -57,7 +57,5 @@ tinymce.init({
   quickbars_selection_toolbar: 'bold italic | quicklink h2 h3 blockquote quickimage quicktable',
   noneditable_noneditable_class: "mceNonEditable",
   toolbar_drawer: 'sliding',
-  content_style: ".mymention{ color: green; }",
   contextmenu: "link image imagetools table",
-  content_style: '.mce-annotation { background: #fff0b7; } .tc-active-annotation {background: #ffe168; color: black; }'
  });

@@ -24,7 +24,7 @@
 
 ### Installing the TinyMCE React integration using NPM
 
-To install the `tinymce-react` package and save it to your `package.json` with `--save`.
+To install the `tinymce-react` package and save it to your `package.json`.
 
     ```
     $ npm install --save @tinymce/tinymce-react

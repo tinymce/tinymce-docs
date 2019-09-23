@@ -14,12 +14,12 @@ This section is about customizing TinyMCE's user interface with skins, toolbar b
 
 ### Skins
 
-Skins control the appearance of TinyMCE such as colors and spacing. The default skin is called **Oxide** and has a `light` and a `dark` version. The default skin is `white`. To get the dark version, use the following config:
+Skins control the appearance of TinyMCE such as colors and spacing. The default skin is called **Oxide** and has a `light` and a `dark` version. The default skin is `oxide`. To get the dark version, use the following config:
 
 ```js
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  skin: 'dark'
+  skin: 'oxide-dark'
 });
 ```
 
@@ -27,7 +27,7 @@ Creating skins for TinyMCE is easy with the TinyMCE Skin tool project. See [Crea
 
 > Note: The  [TinyMCE Skin Creator](http://skin.tinymce.com/) only supports TinyMCE 4.
 
-> Note: Developers often confuse the difference between TinyMCE "themes" and "skins". A **Skin** in Tinymce is used to make changes to the appearance of the editor, for example, colors, margins, paddings, fonts, icons, etc. A **Theme** creates the editor construction (left, top, bottom, or right of the editing area - vertical or horizontal, inline or outside, etc.). A skin usually changes the color scheme of a button, dialog, etc. while the theme applies to the whole editor including its functionality and has child skins to change the appearance.
+> Note: Developers often confuse the difference between TinyMCE "themes" and "skins". A **Skin** in TinyMCE is used to make changes to the appearance of the editor, for example, colors, margins, padding, fonts, icons, etc. A **Theme** creates the editor construction (left, top, bottom, or right of the editing area - vertical or horizontal, inline or outside, etc.). A skin usually changes the color scheme of a button, dialog, etc. while the theme applies to the whole editor including its functionality and has child skins to change the appearance.
 
 ### Changing editor height and width
 
@@ -95,7 +95,7 @@ tinyMCE.init({
 
 See the [content_css]({{ site.baseurl }}/configure/content-appearance/#content_css) customization page for more information about the use of absolute and relative paths as well as and how to use multiple stylesheets.
 
-> Note: We have included two aditional themes for `content_css` to try out: **Document** and **Writer**. Use `content_css: 'document'` or `content_css: 'writer'` to try them out.
+> Note: We have included two additional skins for `content_css` to try out: **Document** and **Writer**. Use `content_css: 'document'` or `content_css: 'writer'` to try them out.
 
 ### Hiding the status bar
 

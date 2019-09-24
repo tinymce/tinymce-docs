@@ -51,13 +51,13 @@ JDK 7 update 55+
 
 PowerPaste (Word copy and paste) is supported on all the browsers supported by {{site.productname}} Enterprise. There is some variances of functionality for different browsers.
 
-|                      | HTML Cleaning | Improved HTML Cleaning | Image Import  |
-|----------------------| :-----------: | :--------------------: | :-----------: |
-| Internet Explorer 11 | {{site.tick}} | {{site.cross}}         | {{site.cross}}|
-| Microsoft Edge       | {{site.tick}} | {{site.tick}}          | {{site.tick}} |
-| Chrome Latest        | {{site.tick}} | {{site.tick}}          | {{site.tick}} |
-| Firefox Latest       | {{site.tick}} | {{site.tick}}          | {{site.tick}} |
-| Safari Latest        | {{site.tick}} | {{site.tick}}          | {{site.cross}}|
+|                       | HTML Cleaning | Improved HTML Cleaning | Image Import  |
+|-----------------------| :-----------: | :--------------------: | :-----------: |
+| Internet Explorer 11  | {{site.tick}} | {{site.cross}}         | {{site.cross}}|
+| Microsoft Edge Latest | {{site.tick}} | {{site.tick}}          | {{site.tick}} |
+| Chrome Latest         | {{site.tick}} | {{site.tick}}          | {{site.tick}} |
+| Firefox Latest        | {{site.tick}} | {{site.tick}}          | {{site.tick}} |
+| Safari Latest         | {{site.tick}} | {{site.tick}}          | {{site.cross}}|
 
 ##### HTML Cleaning
 

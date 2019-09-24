@@ -118,6 +118,10 @@ tinymce.init({
 });
 ```
 
+### Browser support: backward compatibility or quirks mode
+
+TinyMCE 5 does not support browsers running in Quirks or backward compatibility modes.
+
 ## Themes
 
 In TinyMCE 5.0, some themes have been removed and are now combined in a new single responsive theme called **Silver**. In TinyMCE 5.0 `Silver` is enabled by default, if a theme is not specified. The Silver theme contains a set of configurable UI components that could be used to replace the current customizations (modern, inline, and inlite theme).

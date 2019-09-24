@@ -297,5 +297,4 @@ tinymce.init({
   mentions_menu_hover: mentions_menu_hover,
   mentions_menu_complete: mentions_menu_complete,
   mentions_select: mentions_select,
-  content_style: '.mce-annotation { background: #fff0b7; } .tc-active-annotation {background: #ffe168; color: black; }'
  });

@@ -27,9 +27,11 @@
 
 - url: "demo"
   pages:
-  - url: "whats-new"
   - url: "basic-example"
   - url: "full-featured"
+    pages:
+    - url: "#Full Featured: Including Premium Plugins"
+    - url: "#Full Featured: Non-Premium Plugins"
   - url: "casechange"
   - url: "comments-2"
   - url: "checklist"

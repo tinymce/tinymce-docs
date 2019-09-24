@@ -8,6 +8,17 @@ class: changelog
 
 {% capture changelog %}
 
+## Version 5.0.16 September 24, 2019
+* Added new `referrer_policy` setting to add the `referrerpolicy` attribute when loading scripts or stylesheets.
+* Added a slight background color to dialog tab links when focused to aid keyboard navigation.
+* Fixed media poster value not updating on change.
+* Fixed `openlink` was not registered as a toolbar button.
+* Fixed failing to initialize if a script tag was used inside a SVG.
+* Fixed double top border showing on toolbar without menubar when `toolbar_drawer` is enabled.
+* Fixed unable to drag inline dialogs to the bottom of the screen when scrolled.
+* Fixed notifications appearing on top of the toolbar when scrolled in inline mode.
+* Fixed notifications displaying incorrectly on IE 11.
+
 ## Version 5.0.15 September 2, 2019
 * Added a dark `content_css` skin to go with the dark UI skin.
 * Changed the enabled state on toolbar buttons so they don't get the hover effect.

@@ -41,12 +41,15 @@ JDK 7 update 55+
 
 ## Premium Plugin Support
 
-### Word Copy/Paste (PowerPaste)
+### PowerPaste (Word Copy and Paste)
 
-Word copy and paste is supported on all the browsers supported by {{site.productname}} Enterprise. There is some variances of functionality for different browsers. Please see the information below for more details.
+{{site.companyname}} tests and supports using the PowerPaste plugin for copying content from versions of Microsoft Word and Microsoft Excel:
+* Covered by Microsoft Mainstream Support based on the [Microsoft Fixed Lifecycle Policy](https://support.microsoft.com/en-us/help/14085/fixed-lifecycle-policy).
+* Provided by Microsoft Office 365.
 
-#### Feature Matrix and Browser Support
+#### PowerPaste Feature and Browser Support
 
+PowerPaste (Word copy and paste) is supported on all the browsers supported by {{site.productname}} Enterprise. There is some variances of functionality for different browsers.
 
 |                      | HTML Cleaning | Improved HTML Cleaning | Image Import  |
 |----------------------| :-----------: | :--------------------: | :-----------: |

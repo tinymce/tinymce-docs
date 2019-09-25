@@ -1,5 +1,5 @@
 
-/* 
+/*
 ** This is to simulate requesting information from a server.
 **
 ** It has 2 functions:
@@ -146,7 +146,7 @@ var fakeServer = (function () {
       }, 300);
     });
   };
-  
+
   return {
     fetchUsers: fetchUsers,
     fetchUser: fetchUser
@@ -169,7 +169,7 @@ var mentions_fetch = function (query, success) {
     });
 
     users = users.slice(0, 10);
-    
+
     /* Where the user object must contain the properties `id` and `name`
        but you could additionally include anything else you deem useful. */
     success(users);
@@ -186,8 +186,8 @@ var mentions_menu_hover = function (userInfo, success) {
 
     div.innerHTML = (
     '<div class="card">' +
-      '<h1>' + userDetail.fullName + '</h1>' +
       '<img class="avatar" src="' + userDetail.image + '"/>' +
+      '<h1>' + userDetail.fullName + '</h1>' +
       '<p>' + userDetail.description + '</p>' +
     '</div>'
     );
@@ -216,8 +216,8 @@ var mentions_select = function (mention, success) {
     var div = document.createElement('div');
     div.innerHTML = (
       '<div class="card">' +
-      '<h1>' + userDetail.fullName + '</h1>' +
       '<img class="avatar" src="' + userDetail.image + '"/>' +
+      '<h1>' + userDetail.fullName + '</h1>' +
       '<p>' + userDetail.description + '</p>' +
       '</div>'
     );
@@ -228,7 +228,7 @@ var mentions_select = function (mention, success) {
 tinymce.init({
   selector: "textarea#mentions",
   plugins: "mentions",
-  content_style: ".mymention{ color: green; }",
+  content_style: ".mymention{ color: gray; }",
 
   mentions_selector: '.mymention',
   mentions_fetch: mentions_fetch,

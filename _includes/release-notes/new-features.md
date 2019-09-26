@@ -3,13 +3,13 @@ The following new features were added to the TinyMCE 5.0 RC version.
 
 ### Comments 2.0
 
-The [Comments 2.0]({{site.baseurl}}/enterprise/tiny-comments/) is a premium plugin built on the [Annotations API]({{site.baseurl}}/advanced/annotations/) to create comment threads (conversations). Comments 2.0 provides the ability to start or join a conversation by adding comments to the content within the TinyMCE editor. 
+The [Comments 2.0]({{site.baseurl}}/enterprise/tiny-comments/) is a premium plugin built on the [Annotations API]({{site.baseurl}}/advanced/annotations/) to create comment threads (conversations). Comments 2.0 provides the ability to start or join a conversation by adding comments to the content within the TinyMCE editor.
 
 Refer to the [Comments 2.0]({{site.baseurl}}/plugins/comments/) documentation, for more information.
 
 ### Context menu
 
-The [Context menu](https://www.tiny.cloud/docs/plugins/contextmenu/) is no longer a plugin, it is part of the core and always enabled. Where TinyMCE 4.x only supported adding registered menu items, the new context menu also allows plugins to register "sections" of the context menu. These sections are dynamic and may show or hide depending on the cursor position when the context menu is opened. For example, the default context menu config is now `'link image editimage table spelling'` which are all plugin section references, not menu items. 
+The [Context menu](https://www.tiny.cloud/docs/plugins/contextmenu/) is no longer a plugin, it is part of the core and always enabled. Where TinyMCE 4.x only supported adding registered menu items, the new context menu also allows plugins to register "sections" of the context menu. These sections are dynamic and may show or hide depending on the cursor position when the context menu is opened. For example, the default context menu config is now `'link image editimage table spelling'` which are all plugin section references, not menu items.
 
 The context menu supports both individual menu items and dynamic context menu sections. Refer to the [context menu]({{site.baseurl}}/ui-components/contextmenu/) documentation, for more information.
 
@@ -25,7 +25,7 @@ The Custom Menu items configurations options have changed in TinyMCE 5.0. The `a
 
 ### Custom sidebars
 
-Custom sidebars allow developers to add custom tools and widgets to a sidebar within the editor. In TinyMCE 5.0 the configuration has changed slightly. The method for registering custom sidebars is now `editor.ui.registry.addSidebar()` and `onrender` is now `onSetup`. 
+Custom sidebars allow developers to add custom tools and widgets to a sidebar within the editor. In TinyMCE 5.0 the configuration has changed slightly. The method for registering custom sidebars is now `editor.ui.registry.addSidebar()` and `onrender` is now `onSetup`.
 
 Refer to the [Custom sidebars]({{site.baseurl}}/ui-components/customsidebar/) documentation for more information.
 
@@ -47,11 +47,9 @@ TinyMCE is up-to-date with the latest accessibility standards. This includes the
 
 A new experimental feature has been added that allows using the tab across all TinyMCE toolbars, sidebars, content, and footer bar. This allows more granular control to quickly jump to the appropriate editor control and then navigate down to its specific feature sets.
 
-> TinyMCE is the only editor to have this feature!
-
 ### Mentions
 
-The [Mentions]({{site.baseurl}}/enterprise/mentions/) plugin makes it possible for users to send notifications using **@username** in the document. 
+The [Mentions]({{site.baseurl}}/enterprise/mentions/) plugin makes it possible for users to send notifications using **@username** in the document.
 
 Mentions is available for download through [TinyMCE Cloud]({{site.baseurl}}/cloud-deployment-guide/editor-and-features/). Include the mentions parameter in the tinymce.init script. Refer to the [Mentions]({{site.baseurl}}/plugins/mentions/) documentation, for more information on setup and configuration.
 
@@ -101,7 +99,7 @@ Refer to the [Permanent Pen]({{site.baseurl}}/plugins/permanentpen/) documentati
 
 ### Tables
 
-Tables are better in TinyMCE 5.0 editor. Creating and configuring tables in TinyMCE 5.0 is simpler.
+Creating and configuring tables in TinyMCE 5.0 is simpler.
 
 This feature has been enhanced by modifying the code to ensure the styles are correct and consistent. The **Styles** text field has been removed from the advanced table properties dialogs. The dialog configuration is now much less confronting and confusing for non-developers.
 

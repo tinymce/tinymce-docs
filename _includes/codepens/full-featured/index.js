@@ -177,8 +177,8 @@ var mentions_menu_hover = function (userInfo, success) {
 
     div.innerHTML = (
     '<div class="card">' +
-      '<h1>' + userDetail.fullName + '</h1>' +
       '<img class="avatar" src="' + userDetail.image + '"/>' +
+      '<h1>' + userDetail.fullName + '</h1>' +
       '<p>' + userDetail.description + '</p>' +
     '</div>'
     );
@@ -207,8 +207,8 @@ var mentions_select = function (mention, success) {
     var div = document.createElement('div');
     div.innerHTML = (
       '<div class="card">' +
-      '<h1>' + userDetail.fullName + '</h1>' +
       '<img class="avatar" src="' + userDetail.image + '"/>' +
+      '<h1>' + userDetail.fullName + '</h1>' +
       '<p>' + userDetail.description + '</p>' +
       '</div>'
     );
@@ -290,7 +290,7 @@ tinymce.init({
   spellchecker_dialog: true,
   spellchecker_whitelist: ['Ephox', 'Moxiecode'],
   tinycomments_mode: 'embedded',
-  content_style: ".mymention{ color: green; }",
+  content_style: ".mymention{ color: gray; }",
   contextmenu: "link image imagetools table configurepermanentpen",
   mentions_selector: '.mymention',
   mentions_fetch: mentions_fetch,

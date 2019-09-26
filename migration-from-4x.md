@@ -16,12 +16,12 @@ This chapter describes the migration process and workarounds for customers using
 
 ### Cloud Delivery
 
-To serve TinyMCE 5 from the cloud, include this in your html page. Substitute 'no-api-key' with your api key.
+To use TinyMCE 5 from the Tiny Cloud, include this in your HTML page. Replace 'no-api-key' with your api key.
 ```js
 <script src="{{ site.cdnurl }}" referrerpolicy="origin"></script>
 ```
 
-To serve the latest nightlies and testing builds refer to the [cloud deployment guide]({{site.baseurl}}/cloud-deployment-guide/editor-and-features/)
+To use the latest development and testing builds, refer to the [cloud deployment guide]({{site.baseurl}}/cloud-deployment-guide/editor-and-features/).
 
 ```js
 <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5-dev/tinymce.min.js" referrerpolicy="origin"></script>
@@ -128,10 +128,10 @@ In TinyMCE 5.0, some themes have been removed and are now combined in a new sing
 
 | **Removed Theme** | **Replaced by** |
 | ----------------- | --------------  |
-| [Modern](https://www.tiny.cloud/docs-4x/themes/modern/) | Silver |
-| [Modern inline](https://www.tiny.cloud/docs-4x/general-configuration-guide/use-tinymce-inline/) | Silver Inline |
-| [Inlite(Distraction-free Editor)](https://www.tiny.cloud/docs-4x/themes/inlite/) | Silver (distraction free configuration) |
-| [Mobile](https://www.tiny.cloud/docs-4x/themes/mobile/) | Silver (responsive to small screen touch devices)  |
+| [Modern]({{site.url}}/docs-4x/themes/modern/) | Silver |
+| [Modern inline]({{site.url}}/docs-4x/general-configuration-guide/use-tinymce-inline/) | Silver Inline |
+| [Inlite(Distraction-free Editor)]({{site.url}}/docs-4x/themes/inlite/) | Silver (distraction free configuration) |
+| [Mobile]({{site.url}}/docs-4x/themes/mobile/) | Silver (responsive to small screen touch devices)  |
 
 ### Removed themes
 
@@ -151,7 +151,7 @@ This will provide a similar but improved [distraction-free]({{site.baseurl}}/gen
 
 #### Modern
 
-The Modern theme is no longer supported in TinyMCE 5.0.  The modern theme's UI library [`tinymce.ui.*`](https://www.tiny.cloud/docs-4x/api/tinymce.ui/) has also been deleted. This change may impact integrations depending upon the [level of customization]({{site.baseurl}}/migration-from-4x/#initialization).
+The Modern theme is no longer supported in TinyMCE 5.0.  The modern theme's UI library [`tinymce.ui.*`]({{site.url}}/docs-4x/api/tinymce.ui/) has also been deleted. This change may impact integrations depending upon the [level of customization](#initialization).
 
 > Note: For support related issues such as problems while migrating and a workaround, please contact [support](https://support.tiny.cloud/hc/en-us/requests/new). Alternatively, track developer preview issues on GitHub, [here](https://github.com/tinymce/tinymce/labels/5.x).
 
@@ -487,27 +487,9 @@ For more information about the new URL dialog configuration, see the [`URL dialo
 
 Docs are coming soon! -->
 
-### Custom context toolbars
-
-The Context Toolbar accepts toolbar buttons that were previously added to the editor using the editor's `addButton`, `addToggleButton`, `addSplitButton` or a`ddMenuButton` functions. The method for creating custom context toolbars in TinyMCE 5.0 has also been changed from `editor.addContextToolbar()` to `editor.ui.registry.addContextToolbar()`.
-
-For more information on Context Toolbars, see [docs]({{site.baseurl}}/ui-components/contexttoolbar).
-
-### Custom context menus
-
-The [Context menu](https://www.tiny.cloud/docs/plugins/contextmenu/) is no longer a plugin, it is part of the core and always enabled. Where TinyMCE 4.x only supported adding registered menu items, the new context menu also allows plugins to register "sections" of the context menu. These sections are dynamic and may show or hide depending on the cursor position when the context menu is opened. For example, the default context menu config is now `'link image editimage table spelling'` which are all plugin section references, not menu items. See [docs]({{site.baseurl}}/ui-components/contextmenu/)
-
-##### New methods:
-
-| **New method** | **Description** |
-| ----------- | -------------- |
-| editor.ui.registry.addContextMenu() | Adds a custom context menu. |
-
-For more information on Context Menus, see the [docs]({{site.baseurl}}/ui-components/contextmenu).
-
 ### Custom context forms
 
-ContextForm consists of an input field and a series of related buttons. Context forms can be shown wherever a context toolbar can be displayed. Also, when a context form is registered containing a `launch` configuration, a special context toolbar button with name **\`form:${name}\`** is registered which will launch that particular context form. ContextForms are a generalization of the `Insert Link` form that existed in the original [inlite](https://www.tiny.cloud/docs-4x/themes/inlite/#quicklink) theme from TinyMCE 4.
+ContextForm consists of an input field and a series of related buttons. Context forms can be shown wherever a context toolbar can be displayed. Also, when a context form is registered containing a `launch` configuration, a special context toolbar button with name **\`form:${name}\`** is registered which will launch that particular context form. ContextForms are a generalization of the `Insert Link` form that existed in the original [inlite]({{site.url}}/docs-4x/themes/inlite/#quicklink) theme from TinyMCE 4.
 
 ## Plugins
 
@@ -542,9 +524,27 @@ These features have either changed or have been deleted in TinyMCE 5.0.
 
 | **Plugin name** | **Description** |
 | --------------- |  -------------- |
-| [ContextMenu](https://www.tiny.cloud/docs/plugins/contextmenu/) | New API. See [docs]({{site.baseurl}}/ui-components/contextmenu/). |
-| [ColorPicker](https://www.tiny.cloud/docs/plugins/colorpicker/) | Moved to the core. See [docs]({{site.baseurl}}/configure/content-appearance/#color_picker}}). |
-| [Text Color](https://www.tiny.cloud/docs/plugins/textcolor/) | The `textcolor` plugin was removed and this setting is not required in TinyMCE 5.0. |
+| [ContextMenu]({{site.url}}/docs-4x/plugins/contextmenu/) | New API. See the [docs]({{site.baseurl}}/ui-components/contextmenu/). |
+| [ColorPicker]({{site.url}}/docs-4x/plugins/colorpicker/) | Moved to the core. See the [docs]({{site.baseurl}}/configure/content-appearance/#color_picker}}). |
+| [Text Color]({{site.url}}/docs-4x/plugins/textcolor/) | The `textcolor` plugin was removed and this setting is not required in TinyMCE 5.0. |
+
+#### Custom context toolbars
+
+The Context Toolbar accepts toolbar buttons that were previously added to the editor using the editor's `addButton`, `addToggleButton`, `addSplitButton` or a`ddMenuButton` functions. The method for creating custom context toolbars in TinyMCE 5.0 has also been changed from `editor.addContextToolbar()` to `editor.ui.registry.addContextToolbar()`.
+
+For information on Context Toolbars, see the [docs]({{site.baseurl}}/ui-components/contexttoolbar).
+
+#### Custom context menus
+
+The [Context menu]({{site.url}}/docs-4x/plugins/contextmenu/) is no longer a plugin, it is part of the core and always enabled. Where TinyMCE 4.x only supported adding registered menu items, the new context menu also allows plugins to register "sections" of the context menu. These sections are dynamic and may show or hide depending on the cursor position when the context menu is opened. For example, the default context menu config is now `'link image editimage table spelling'` which are all plugin section references, not menu items. For information on using context menus, see: [UI components - Context menu]({{site.baseurl}}/ui-components/contextmenu/).
+
+##### New methods:
+
+| **New method** | **Description** |
+| ----------- | -------------- |
+| editor.ui.registry.addContextMenu() | Adds a custom context menu. |
+
+For more information on Context Menus, see the [docs]({{site.baseurl}}/ui-components/contextmenu).
 
 ### Table
 
@@ -572,5 +572,5 @@ The table below shows UI configurations that have been removed. They are general
 | pack | Emulates flex pack | Use CSS stylesheets for custom styling |
 | no-wrap | Emulates CSS no line wrap | Use CSS stylesheet for custom styling |
 
-Please see the [TinyMCE 4.x docs](https://www.tiny.cloud/docs-4x/) for more information on the above settings.
+Please see the [TinyMCE 4.x docs]({{site.url}}/docs-4x/) for more information on the above settings.
 

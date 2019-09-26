@@ -286,7 +286,7 @@ editor.ui.registry.addButton('myButton', {
 
 `onpostrender` has been removed and replaced with `onSetup` for menu and toolbar components. There are 3 major changes:
 
-* While [`onpostrender`]({{site.baseurl}}/advanced/creating-a-custom-button/#togglebutton) only ran once, when the editor was created, [`onSetup`]({{site.baseurl}}/ui-components/typesoftoolbarbuttons/#basicbuttonexampleandexplanation) runs every time a component is rendered, e.g. for a menu item, every time its menu becomes visible.
+* While [`onpostrender`]({{site.url}}/docs-4x/advanced/creating-a-custom-button/#togglebutton) only ran once, when the editor was created, [`onSetup`]({{site.baseurl}}/ui-components/typesoftoolbarbuttons/#basicbuttonexampleandexplanation) runs every time a component is rendered, e.g. for a menu item, every time its menu becomes visible.
 * `onSetup` now has an API containing some helper functions. Each type of toolbar button has a different API.
 * `onSetup` can be configured to return a function, which will be automatically be called on the teardown of the component, e.g., when a menu item's menu is closed.
     * If some functionality only runs when the editor is first initialized, it should be passed to `editor.on('init', callback)` as the callback function.

@@ -11,187 +11,187 @@ Use the [toolbar]({{ site.baseurl }}/configure/editor-appearance/#toolbar) or th
 
 ## Toolbar controls
 
-| Control     | Core/Plugin    |  Description   |
-|-------------|----------------|----------------|
-| newdocument | core | Creates a new document. |
-| bold | core | Applies the bold format to the current selection. |
-| italic | core |Applies the italic format to the current selection. |
-| underline | core | Applies the underline format to the current selection. |
-| strikethrough | core | Applies strike though format to the current selection. |
-| alignleft | core | Left aligns the current block or image. |
-| aligncenter | core | Left aligns the current block or image. |
-| alignright | core | Right aligns the current block or image. |
-| alignjustify | core | Full aligns the current block or image. |
-| alignnone | core | Removes the alignment of the current block or image. |
-| styleselect | core | Dropdown list with styles to apply to selection. |
-| formatselect | core | Dropdown list with block formats to apply to selection. |
-| fontselect | core | Dropdown list with font families to apply to selection. |
-| fontsizeselect | core | Dropdown list with font sizes to apply to selection. |
-| cut | core | Cuts the current selection into clipboard. |
-| copy | core | Copies the current selection into clipboard. |
-| paste | core | Pastes the current clipboard into the editor. |
-| outdent | core | Outdents the current list item or block element. |
-| indent | core | Indents the current list item or block element. |
-| blockquote | core | Applies block quote format to the current block level element. |
-| undo | core | To undo the last operation. |
-| redo | core | To redo the last undone operation. |
-| removeformat | core | Removes the formatting from the current selection. |
-| subscript | core | Applies subscript format to the current selection. |
-| superscript | core | Applies superscript format to the current selection. |
-| forecolor | core | Applies foreground/text color to selection. |
-| backcolor | core | Applies background color to selection. |
-| visualaid | core | Toggles the visual aids for invisible elements. |
-| h1 | core | Changes current line to the "Heading 1" style. |
-| h2 | core | Changes current line to the "Heading 2" style. |
-| h3 | core | Changes current line to the "Heading 3" style. |
-| h4 | core | Changes current line to the "Heading 4" style. |
-| h5 | core | Changes current line to the "Heading 5" style. |
-| h6 | core | Changes current line to the "Heading 6" style. |
-| remove | core | Removes (deletes) the selected content or the content before the cursor position. |
-| selectall | core | Selects all content in the editor. |
-| hr | [hr]({{ site.baseurl }}/plugins/hr/) | Inserts a horizontal rule into the editor. |
-| bullist | [lists]({{ site.baseurl }}/plugins/lists/) | Formats the current selection as a bullet list. |
-| numlist | [lists]({{ site.baseurl }}/plugins/lists/) | Formats the current selection as a numbered list. |
-| checklist | [checklist]({{ site.baseurl }}/plugins/checklist/) | Creates a checklist. |
-| link | [link]({{ site.baseurl }}/plugins/link/) | Creates/Edits links within the editor. |
-| unlink | [link]({{ site.baseurl }}/plugins/link/) | Removes links from the current selection. |
-| openlink | [link]({{ site.baseurl }}/plugins/link/) | Opens the selected link in a new tab. |
-| image | [image]({{ site.baseurl }}/plugins/image/) | Creates/Edits images within the editor. |
-| charmap | [charmap]({{ site.baseurl }}/plugins/charmap/) | Inserts custom characters into the editor. |
-| pastetext | [paste]({{ site.baseurl }}/plugins/paste/) | Toggles plain text pasting mode on/off. |
-| print | [print]({{ site.baseurl }}/plugins/print/) | Prints the current editor contents. |
-| preview | [preview]({{ site.baseurl }}/plugins/preview/) | Previews the current editor contents. |
-| anchor | [anchor]({{ site.baseurl }}/plugins/anchor/) | Creates/Edits anchor elements. |
-| pagebreak | [pagebreak]({{ site.baseurl }}/plugins/pagebreak/) | Inserts a pagebreak into the editor. |
-| spellchecker | [spellchecker]({{ site.baseurl }}/plugins/spellchecker/) | Spellchecks the current editor contents. |
-| searchreplace | [searchreplace]({{ site.baseurl }}/plugins/searchreplace/) | Searches and/or Replaces contents within the editor. |
-| visualblocks | [visualblocks]({{ site.baseurl }}/plugins/visualblocks/) | Toggles the visibility of block elements. |
-| visualchars | [visualchars]({{ site.baseurl }}/plugins/visualchars/) | Toggles the visibility of non breaking character elements. |
-| code | [code]({{ site.baseurl }}/plugins/code/) | Opens the code dialog |
-| codesample | [codesample]({{ site.baseurl }}/plugins/codesample/) | Inserts code snippets with syntax highlighting. |
-| help | [help]({{ site.baseurl }}/plugins/help/) | Opens the help dialog |
-| fullscreen | [fullscreen]({{ site.baseurl }}/plugins/fullscreen/) | Toggles fullscreen mode |
-| insertdatetime | [insertdatetime]({{ site.baseurl }}/plugins/insertdatetime/) | Inserts the current date/time |
-| media | [media]({{ site.baseurl }}/plugins/media/) | Creates/Edits embedded media elements. |
-| nonbreaking | [nonbreaking]({{ site.baseurl }}/plugins/nonbreaking/) | Inserts a nonbreaking space into the editor. |
-| save | [save]({{ site.baseurl }}/plugins/save/) | Saves the current editor contents to a form or ajax call. |
-| cancel | [save]({{ site.baseurl }}/plugins/save/) | Cancels/Resets the editor contents to it's initial state. |
-| table | [table]({{ site.baseurl }}/plugins/table/) | Creates/Edits table elements. |
-| tableinsertdialog | [table]({{ site.baseurl }}/plugins/table/) | Opens the table properties dialog for creating a new table. |
-| tabledelete | [table]({{ site.baseurl }}/plugins/table/) | Deletes table. |
-| tableprops | [table]({{ site.baseurl }}/plugins/table/) | Opens the table properties dialog. |
-| tablecellprops | [table]({{ site.baseurl }}/plugins/table/) | Opens the Cell properties dialog. |
-| tablemergecells | [table]({{ site.baseurl }}/plugins/table/) | Merges the selected cells. |
-| tablesplitcells | [table]({{ site.baseurl }}/plugins/table/) | Splits the current merged cell. |
-| tableinsertrowbefore | [table]({{ site.baseurl }}/plugins/table/) | Inserts a new row before the current one. |
-| tableinsertrowafter | [table]({{ site.baseurl }}/plugins/table/) | Inserts a new row after the current one. |
-| tabledeleterow | [table]({{ site.baseurl }}/plugins/table/) | Deletes the current row row. |
-| tablerowprops | [table]({{ site.baseurl }}/plugins/table/) | Opens the Row properties dialog. |
-| tablecutrow | [table]({{ site.baseurl }}/plugins/table/) | Cuts the selected rows. |
-| tablecopyrow | [table]({{ site.baseurl }}/plugins/table/) | Copies the selected rows. |
-| tablepasterowbefore | [table]({{ site.baseurl }}/plugins/table/) | Pastes rows before the current one. |
-| tablepasterowafter | [table]({{ site.baseurl }}/plugins/table/) | Pastes rows after the current one. |
-| tableinsertcolbefore | [table]({{ site.baseurl }}/plugins/table/) | Inserts a column before the current one. |
-| tableinsertcolafter | [table]({{ site.baseurl }}/plugins/table/) | Inserts column after the current one. |
-| tabledeletecol | [table]({{ site.baseurl }}/plugins/table/) | Deletes the selected column. |
-| rotateleft | [imagetools]({{ site.baseurl }}/plugins/imagetools/) | Rotates the current image counterclockwise. |
-| rotateright | [imagetools]({{ site.baseurl }}/plugins/imagetools/) | Rotates the current image clockwise. |
-| flipv | [imagetools]({{ site.baseurl }}/plugins/imagetools/) | Flips the current image vertically. |
-| fliph | [imagetools]({{ site.baseurl }}/plugins/imagetools/) | Flips the current image horizontally. |
-| editimage | [imagetools]({{ site.baseurl }}/plugins/imagetools/) | Edits the current image in the image dialog. |
-| imageoptions | [imagetools]({{ site.baseurl }}/plugins/imagetools/) | Opens the image options dialog. |
-| fullpage | [fullpage]({{ site.baseurl }}/plugins/fullpage/) | Documents properties for the full page. |
-| ltr | [directionality]({{ site.baseurl }}/plugins/directionality/) | Sets the directionality of contents to ltr. |
-| rtl | [directionality]({{ site.baseurl }}/plugins/directionality/) | Sets the directionality of contents to rtl. |
-| casechange | [casechange]({{ site.baseurl }}/plugins/casechange/) | Changes the case of text in a block selection to uppercase, lowercase, or title case. |
-| emoticons | [emoticons]({{ site.baseurl }}/plugins/emoticons/) | Opens the emoticons dialog. |
-| template | [template]({{ site.baseurl }}/plugins/template/) | Inserts templates into the editor. |
-| restoredraft | [restoredraft]({{ site.baseurl }}/plugins/autosave/) | Restores to the latest auto saved draft. |
-| insertfile | [moxiemanager]({{ site.baseurl }}/plugins/moxiemanager/) | Opens the MoxieManager dialog. |
-| a11ycheck | [a11ychecker]({{ site.baseurl }}/plugins/a11ychecker/) | Opens the accessibility checker dialog. |
-| addcomment | [comments]({{ site.baseurl }}/plugins/comments/) | Adds a comment at the cursor location or for the selected text. |
-| showcomments | [comments]({{ site.baseurl }}/plugins/comments/) | Shows/hides comments present in the editor. |
-| toc | [toc]({{ site.baseurl }}/plugins/toc/) | Inserts a Table of Contents into the editor. |
-| tocupdate | [toc]({{ site.baseurl }}/plugins/toc/) | Updates the Table of Contents block element. |
-| wordcount | [wordcount]({{ site.baseurl }}/plugins/wordcount/) | Opens a word count dialog showing word and character counts. |
-| pageembed | [pageembed]({{ site.baseurl }}/plugins/pageembed/) | Opens the insert or edit iframe dialog. |
-| formatpainter | [formatpainter]({{ site.baseurl }}/plugins/formatpainter/) | Enables and disables format painting. |
-| permanentpen | [permanentpen]({{ site.baseurl }}/plugins/permanentpen/) | Enables and disables Permanent Pen formatting. |
-| quickimage | [quickbars]({{ site.baseurl }}/plugins/quickbars/) | Inserts an image from the local machine. |
-| quicktable | [quickbars]({{ site.baseurl }}/plugins/quickbars/) | Inserts a table 2x2. |
-| quicklink | [quickbars]({{ site.baseurl }}/plugins/quickbars/) | Inserts a link in a quicker way. |
+| Control              | Core/Plugin                                                  | Description                                                                           |
+| -------------------- | ------------------------------------------------------------ | ------------------------------------------------------------------------------------- |
+| aligncenter          | core                                                         | Left aligns the current block or image.                                               |
+| alignjustify         | core                                                         | Full aligns the current block or image.                                               |
+| alignleft            | core                                                         | Left aligns the current block or image.                                               |
+| alignnone            | core                                                         | Removes the alignment of the current block or image.                                  |
+| alignright           | core                                                         | Right aligns the current block or image.                                              |
+| blockquote           | core                                                         | Applies block quote format to the current block level element.                        |
+| backcolor            | core                                                         | Applies background color to selection.                                                |
+| bold                 | core                                                         | Applies the bold format to the current selection.                                     |
+| copy                 | core                                                         | Copies the current selection into clipboard.                                          |
+| cut                  | core                                                         | Cuts the current selection into clipboard.                                            |
+| fontselect           | core                                                         | Dropdown list with font families to apply to selection.                               |
+| fontsizeselect       | core                                                         | Dropdown list with font sizes to apply to selection.                                  |
+| forecolor            | core                                                         | Applies foreground/text color to selection.                                           |
+| formatselect         | core                                                         | Dropdown list with block formats to apply to selection.                               |
+| h1                   | core                                                         | Changes current line to the "Heading 1" style.                                        |
+| h2                   | core                                                         | Changes current line to the "Heading 2" style.                                        |
+| h3                   | core                                                         | Changes current line to the "Heading 3" style.                                        |
+| h4                   | core                                                         | Changes current line to the "Heading 4" style.                                        |
+| h5                   | core                                                         | Changes current line to the "Heading 5" style.                                        |
+| h6                   | core                                                         | Changes current line to the "Heading 6" style.                                        |
+| indent               | core                                                         | Indents the current list item or block element.                                       |
+| italic               | core                                                         | Applies the italic format to the current selection.                                   |
+| newdocument          | core                                                         | Creates a new document.                                                               |
+| outdent              | core                                                         | Outdents the current list item or block element.                                      |
+| paste                | core                                                         | Pastes the current clipboard into the editor.                                         |
+| redo                 | core                                                         | To redo the last undone operation.                                                    |
+| remove               | core                                                         | Removes (deletes) the selected content or the content before the cursor position.     |
+| removeformat         | core                                                         | Removes the formatting from the current selection.                                    |
+| selectall            | core                                                         | Selects all content in the editor.                                                    |
+| strikethrough        | core                                                         | Applies strike though format to the current selection.                                |
+| styleselect          | core                                                         | Dropdown list with styles to apply to selection.                                      |
+| subscript            | core                                                         | Applies subscript format to the current selection.                                    |
+| superscript          | core                                                         | Applies superscript format to the current selection.                                  |
+| underline            | core                                                         | Applies the underline format to the current selection.                                |
+| undo                 | core                                                         | To undo the last operation.                                                           |
+| visualaid            | core                                                         | Toggles the visual aids for invisible elements.                                       |
+| a11ycheck            | [a11ychecker]({{ site.baseurl }}/plugins/a11ychecker/)       | Opens the accessibility checker dialog.                                               |
+| anchor               | [anchor]({{ site.baseurl }}/plugins/anchor/)                 | Creates/Edits anchor elements.                                                        |
+| casechange           | [casechange]({{ site.baseurl }}/plugins/casechange/)         | Changes the case of text in a block selection to uppercase, lowercase, or title case. |
+| charmap              | [charmap]({{ site.baseurl }}/plugins/charmap/)               | Inserts custom characters into the editor.                                            |
+| checklist            | [checklist]({{ site.baseurl }}/plugins/checklist/)           | Creates a checklist.                                                                  |
+| code                 | [code]({{ site.baseurl }}/plugins/code/)                     | Opens the code dialog                                                                 |
+| codesample           | [codesample]({{ site.baseurl }}/plugins/codesample/)         | Inserts code snippets with syntax highlighting.                                       |
+| addcomment           | [comments]({{ site.baseurl }}/plugins/comments/)             | Adds a comment at the cursor location or for the selected text.                       |
+| showcomments         | [comments]({{ site.baseurl }}/plugins/comments/)             | Shows/hides comments present in the editor.                                           |
+| ltr                  | [directionality]({{ site.baseurl }}/plugins/directionality/) | Sets the directionality of contents to ltr.                                           |
+| rtl                  | [directionality]({{ site.baseurl }}/plugins/directionality/) | Sets the directionality of contents to rtl.                                           |
+| emoticons            | [emoticons]({{ site.baseurl }}/plugins/emoticons/)           | Opens the emoticons dialog.                                                           |
+| formatpainter        | [formatpainter]({{ site.baseurl }}/plugins/formatpainter/)   | Enables and disables format painting.                                                 |
+| fullpage             | [fullpage]({{ site.baseurl }}/plugins/fullpage/)             | Documents properties for the full page.                                               |
+| fullscreen           | [fullscreen]({{ site.baseurl }}/plugins/fullscreen/)         | Toggles fullscreen mode                                                               |
+| help                 | [help]({{ site.baseurl }}/plugins/help/)                     | Opens the help dialog                                                                 |
+| hr                   | [hr]({{ site.baseurl }}/plugins/hr/)                         | Inserts a horizontal rule into the editor.                                            |
+| image                | [image]({{ site.baseurl }}/plugins/image/)                   | Creates/Edits images within the editor.                                               |
+| editimage            | [imagetools]({{ site.baseurl }}/plugins/imagetools/)         | Edits the current image in the image dialog.                                          |
+| fliph                | [imagetools]({{ site.baseurl }}/plugins/imagetools/)         | Flips the current image horizontally.                                                 |
+| flipv                | [imagetools]({{ site.baseurl }}/plugins/imagetools/)         | Flips the current image vertically.                                                   |
+| imageoptions         | [imagetools]({{ site.baseurl }}/plugins/imagetools/)         | Opens the image options dialog.                                                       |
+| rotateleft           | [imagetools]({{ site.baseurl }}/plugins/imagetools/)         | Rotates the current image counterclockwise.                                           |
+| rotateright          | [imagetools]({{ site.baseurl }}/plugins/imagetools/)         | Rotates the current image clockwise.                                                  |
+| insertdatetime       | [insertdatetime]({{ site.baseurl }}/plugins/insertdatetime/) | Inserts the current date/time                                                         |
+| link                 | [link]({{ site.baseurl }}/plugins/link/)                     | Creates/Edits links within the editor.                                                |
+| openlink             | [link]({{ site.baseurl }}/plugins/link/)                     | Opens the selected link in a new tab.                                                 |
+| unlink               | [link]({{ site.baseurl }}/plugins/link/)                     | Removes links from the current selection.                                             |
+| bullist              | [lists]({{ site.baseurl }}/plugins/lists/)                   | Formats the current selection as a bullet list.                                       |
+| numlist              | [lists]({{ site.baseurl }}/plugins/lists/)                   | Formats the current selection as a numbered list.                                     |
+| media                | [media]({{ site.baseurl }}/plugins/media/)                   | Creates/Edits embedded media elements.                                                |
+| nonbreaking          | [nonbreaking]({{ site.baseurl }}/plugins/nonbreaking/)       | Inserts a nonbreaking space into the editor.                                          |
+| pagebreak            | [pagebreak]({{ site.baseurl }}/plugins/pagebreak/)           | Inserts a pagebreak into the editor.                                                  |
+| pageembed            | [pageembed]({{ site.baseurl }}/plugins/pageembed/)           | Opens the insert or edit iframe dialog.                                               |
+| pastetext            | [paste]({{ site.baseurl }}/plugins/paste/)                   | Toggles plain text pasting mode on/off.                                               |
+| permanentpen         | [permanentpen]({{ site.baseurl }}/plugins/permanentpen/)     | Enables and disables Permanent Pen formatting.                                        |
+| preview              | [preview]({{ site.baseurl }}/plugins/preview/)               | Previews the current editor contents.                                                 |
+| print                | [print]({{ site.baseurl }}/plugins/print/)                   | Prints the current editor contents.                                                   |
+| quickimage           | [quickbars]({{ site.baseurl }}/plugins/quickbars/)           | Inserts an image from the local machine.                                              |
+| quicklink            | [quickbars]({{ site.baseurl }}/plugins/quickbars/)           | Inserts a link in a quicker way.                                                      |
+| quicktable           | [quickbars]({{ site.baseurl }}/plugins/quickbars/)           | Inserts a table 2x2.                                                                  |
+| restoredraft         | [restoredraft]({{ site.baseurl }}/plugins/autosave/)         | Restores to the latest auto saved draft.                                              |
+| cancel               | [save]({{ site.baseurl }}/plugins/save/)                     | Cancels/Resets the editor contents to it's initial state.                             |
+| save                 | [save]({{ site.baseurl }}/plugins/save/)                     | Saves the current editor contents to a form or ajax call.                             |
+| searchreplace        | [searchreplace]({{ site.baseurl }}/plugins/searchreplace/)   | Searches and/or Replaces contents within the editor.                                  |
+| spellchecker         | [spellchecker]({{ site.baseurl }}/plugins/spellchecker/)     | Spellchecks the current editor contents.                                              |
+| table                | [table]({{ site.baseurl }}/plugins/table/)                   | Creates/Edits table elements.                                                         |
+| tablecellprops       | [table]({{ site.baseurl }}/plugins/table/)                   | Opens the Cell properties dialog.                                                     |
+| tablecopyrow         | [table]({{ site.baseurl }}/plugins/table/)                   | Copies the selected rows.                                                             |
+| tablecutrow          | [table]({{ site.baseurl }}/plugins/table/)                   | Cuts the selected rows.                                                               |
+| tabledelete          | [table]({{ site.baseurl }}/plugins/table/)                   | Deletes table.                                                                        |
+| tabledeletecol       | [table]({{ site.baseurl }}/plugins/table/)                   | Deletes the selected column.                                                          |
+| tabledeleterow       | [table]({{ site.baseurl }}/plugins/table/)                   | Deletes the current row row.                                                          |
+| tableinsertdialog    | [table]({{ site.baseurl }}/plugins/table/)                   | Opens the table properties dialog for creating a new table.                           |
+| tableinsertcolafter  | [table]({{ site.baseurl }}/plugins/table/)                   | Inserts column after the current one.                                                 |
+| tableinsertcolbefore | [table]({{ site.baseurl }}/plugins/table/)                   | Inserts a column before the current one.                                              |
+| tableinsertrowafter  | [table]({{ site.baseurl }}/plugins/table/)                   | Inserts a new row after the current one.                                              |
+| tableinsertrowbefore | [table]({{ site.baseurl }}/plugins/table/)                   | Inserts a new row before the current one.                                             |
+| tablemergecells      | [table]({{ site.baseurl }}/plugins/table/)                   | Merges the selected cells.                                                            |
+| tablepasterowafter   | [table]({{ site.baseurl }}/plugins/table/)                   | Pastes rows after the current one.                                                    |
+| tablepasterowbefore  | [table]({{ site.baseurl }}/plugins/table/)                   | Pastes rows before the current one.                                                   |
+| tableprops           | [table]({{ site.baseurl }}/plugins/table/)                   | Opens the table properties dialog.                                                    |
+| tablerowprops        | [table]({{ site.baseurl }}/plugins/table/)                   | Opens the Row properties dialog.                                                      |
+| tablesplitcells      | [table]({{ site.baseurl }}/plugins/table/)                   | Splits the current merged cell.                                                       |
+| template             | [template]({{ site.baseurl }}/plugins/template/)             | Inserts templates into the editor.                                                    |
+| toc                  | [toc]({{ site.baseurl }}/plugins/toc/)                       | Inserts a Table of Contents into the editor.                                          |
+| tocupdate            | [toc]({{ site.baseurl }}/plugins/toc/)                       | Updates the Table of Contents block element.                                          |
+| insertfile           | [tinydrive]({{ site.baseurl }}/plugins/drive/)               | Opens the Tiny Drive file selector.                                                   |
+| visualblocks         | [visualblocks]({{ site.baseurl }}/plugins/visualblocks/)     | Toggles the visibility of block elements.                                             |
+| visualchars          | [visualchars]({{ site.baseurl }}/plugins/visualchars/)       | Toggles the visibility of non breaking character elements.                            |
+| wordcount            | [wordcount]({{ site.baseurl }}/plugins/wordcount/)           | Opens a word count dialog showing word and character counts.                          |
 
 
 
 ## Menu controls
 
-| Control     | Core/Plugin    |  Description   |
-|-------------|----------------|----------------|
-| newdocument | core | Creates a new document. |
-| undo | core | To undo the last operation. |
-| redo | core | To redo the last undo-ed operation. |
-| fontformats | core | Dropdown list with font families to apply to selection. |
-| fontsizes | core | Dropdown list with font sizes to apply to selection. |
-| visualaid | core | Toggles visual aids on/off. |
-| cut | core | Cuts the current selection into clipboard. |
-| copy | core | Copies the current selection into clipboard. |
-| paste | core | Pastes the current clipboard contents into editor. |
-| selectall | core | Selects all the editor contents. |
-| bold | core | Applies bold format to current selection. |
-| italic | core | Applies italic format to current selection. |
-| underline | core | Applies underline format to current selection. |
-| strikethrough | core | Applies strikethrough format to current selection. |
-| subscript | core | Applies subscript format to current selection. |
-| superscript | core | Applies superscript format to current selection. |
-| removeformat | core | Removes all formats form the current selection. |
-| codeformat | core | Applies inline code format to current selection. |
-| blockformats | core | Applies block formats to current selection. |
-| align | core | Changes alignment to the current block or selection. |
-| formats | core | Menu of all available formats. |
-| forecolor | core | Applies foreground/text color to selection. |
-| backcolor | core | Applies background color to selection. |
-| link | [link]({{ site.baseurl }}/plugins/link/) | Opens the link dialog. |
-| unlink | [link]({{ site.baseurl }}/plugins/link/) | Removes the hyperlink from the selected text. |
-| openlink | [link]({{ site.baseurl }}/plugins/link/) | Opens the selected link in a new tab. |
-| image | [image]({{ site.baseurl }}/plugins/image/) | Opens the image dialog. |
-| casechange | [casechange]({{ site.baseurl }}/plugins/casechange/) | Changes the case of text in a block selection to uppercase, lowercase, or title case. |
-| charmap | [charmap]({{ site.baseurl }}/plugins/charmap/) | Opens the charmap dialog. |
-| emoticons | [emoticons]({{ site.baseurl }}/plugins/emoticons/) | Opens the emoticons dialog. |
-| pastetext | [paste]({{ site.baseurl }}/plugins/paste/) | Toggles paste as plain text on/off. |
-| a11ycheck | [a11ychecker]({{ site.baseurl }}/plugins/a11ychecker/) | Opens the accessibility checker dialog. |
-| print | [print]({{ site.baseurl }}/plugins/print/) | Prints the current document. |
-| preview | [preview]({{ site.baseurl }}/plugins/preview/) | Previews the current document. |
-| hr | [hr]({{ site.baseurl }}/plugins/hr/) | Inserts a horizontal rule into the editor. |
-| anchor | [anchor]({{ site.baseurl }}/plugins/anchor/) | Inserts an anchor into the editor. |
-| pagebreak | [pagebreak]({{ site.baseurl }}/plugins/pagebreak/) | Inserts a pagebreak into the editor. |
-| spellchecker | [spellchecker]({{ site.baseurl }}/plugins/spellchecker/) | Toggles the spellchecker on/off. |
-| spellcheckerlanguage | [tinymcespellchecker]({{ site.baseurl }}/plugins/tinymcespellchecker/) | Changes the language used for the spell checking process for the document or the currently selected text. |
-| searchreplace | [searchreplace]({{ site.baseurl }}/plugins/searchreplace/) | Opens the search/replace dialog. |
-| visualblocks | [visualblocks]({{ site.baseurl }}/plugins/visualblocks/) | Toggles block visibility on/off. |
-| visualchars | [visualchars]({{ site.baseurl }}/plugins/visualchars/) | Toggles visibility of nonbreaking spaces on/off. |
-| code | [code]({{ site.baseurl }}/plugins/code/) | Opens the code dialog. |
-| codesample | [codesample]({{ site.baseurl }}/plugins/codesample/) | Inserts code snippets with syntax highlighting. |
-| fullscreen | [fullscreen]({{ site.baseurl }}/plugins/fullscreen/) | Toggles fullscreen on/off. |
-| insertdatetime | [insertdatetime]({{ site.baseurl }}/plugins/insertdatetime/) | Inserts the current date/time into the editor. |
-| media | [media]({{ site.baseurl }}/plugins/media/) | Opens the media dialog. |
-| nonbreaking | [nonbreaking]({{ site.baseurl }}/plugins/nonbreaking/) | Inserts a nonbreaking space into the editor. |
-| inserttable | [table]({{ site.baseurl }}/plugins/table/) | Inserts table grid menu. |
-| tableprops | [table]({{ site.baseurl }}/plugins/table/) | Opens the table properties dialog. |
-| deletetable | [table]({{ site.baseurl }}/plugins/table/) | Deletes the current table. |
-| cell | [table]({{ site.baseurl }}/plugins/table/) | Cell menu item with related controls. |
-| row | [table]({{ site.baseurl }}/plugins/table/) | Row menu item with related controls. |
-| column | [table]({{ site.baseurl }}/plugins/table/) | Column menu item with related controls. |
-| inserttabledialog | [table]({{ site.baseurl }}/plugins/table/) | Opens the table properties dialog for creating a new table. |
-| restoredraft | [autosave]({{ site.baseurl }}/plugins/autosave/) | Restores to the latest auto saved draft. |
-| fullpage | [fullpage]({{ site.baseurl }}/plugins/fullpage/) | Documents properties for the full page. |
-| toc | [toc]({{ site.baseurl }}/plugins/toc/) | Inserts a Table of Contents into the editor. |
-| template | [template]({{ site.baseurl }}/plugins/template/) | Inserts templates into the editor. |
-| wordcount | [wordcount]({{ site.baseurl }}/plugins/wordcount/) | Opens a word count dialog showing word and character counts. |
-| addcomment | [comments]({{ site.baseurl }}/plugins/comments/) | Adds a comment at the cursor location or for the selected text. |
-| showcomments | [comments]({{ site.baseurl }}/plugins/comments/) | Shows/hides comments present in the editor. |
-| deleteallconversations | [comments]({{ site.baseurl }}/plugins/comments/) | Deletes all comments from the editor. |
-| pageembed | [pageembed]({{ site.baseurl }}/plugins/pageembed/) | Opens the insert or edit iframe dialog. |
-| permanentpen | [permanentpen]({{ site.baseurl }}/plugins/permanentpen/) | Enables and disables Permanent Pen formatting. |
-| configurepermanentpen | [permanentpen]({{ site.baseurl }}/plugins/permanentpen/) | Opens the Permanent Pen properties dialog. |
-| insertfile | [tinydrive]({{ site.baseurl }}/plugins/drive/) | Opens the Tiny Drive file selector. |
-| help | [help]({{ site.baseurl }}/plugins/help/) | Opens the help dialog. |
+| Control                | Core/Plugin                                                            | [Default Menu Location]({{site.baseurl}}/configure/editor-appearance/#examplethetinymcedefaultmenuitems) | Description                                                                                               |
+| ---------------------- | ---------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
+| align                  | core                                                                   | Format                                                                                                   | Changes alignment to the current block or selection.                                                      |
+| backcolor              | core                                                                   | Format                                                                                                   | Applies background color to selection.                                                                    |
+| blockformats           | core                                                                   | Format                                                                                                   | Applies block formats to current selection.                                                               |
+| bold                   | core                                                                   | Format                                                                                                   | Applies bold format to current selection.                                                                 |
+| codeformat             | core                                                                   | Format                                                                                                   | Applies inline code format to current selection.                                                          |
+| copy                   | core                                                                   | Edit                                                                                                     | Copies the current selection into clipboard.                                                              |
+| cut                    | core                                                                   | Edit                                                                                                     | Cuts the current selection into clipboard.                                                                |
+| forecolor              | core                                                                   | Format                                                                                                   | Applies foreground/text color to selection.                                                               |
+| formats                | core                                                                   | Format                                                                                                   | Menu of all available formats.                                                                            |
+| fontformats            | core                                                                   | Format                                                                                                   | Dropdown list with font families to apply to selection.                                                   |
+| fontsizes              | core                                                                   | Format                                                                                                   | Dropdown list with font sizes to apply to selection.                                                      |
+| italic                 | core                                                                   | Format                                                                                                   | Applies italic format to current selection.                                                               |
+| newdocument            | core                                                                   | File                                                                                                     | Creates a new document.                                                                                   |
+| paste                  | core                                                                   | Edit                                                                                                     | Pastes the current clipboard contents into editor.                                                        |
+| redo                   | core                                                                   | Edit                                                                                                     | To redo the last undo-ed operation.                                                                       |
+| removeformat           | core                                                                   | Format                                                                                                   | Removes all formats form the current selection.                                                           |
+| selectall              | core                                                                   | Edit                                                                                                     | Selects all the editor contents.                                                                          |
+| strikethrough          | core                                                                   | Format                                                                                                   | Applies strikethrough format to current selection.                                                        |
+| subscript              | core                                                                   | Format                                                                                                   | Applies subscript format to current selection.                                                            |
+| superscript            | core                                                                   | Format                                                                                                   | Applies superscript format to current selection.                                                          |
+| underline              | core                                                                   | Format                                                                                                   | Applies underline format to current selection.                                                            |
+| undo                   | core                                                                   | Edit                                                                                                     | To undo the last operation.                                                                               |
+| visualaid              | core                                                                   | View                                                                                                     | Toggles visual aids on/off.                                                                               |
+| a11ycheck              | [a11ychecker]({{ site.baseurl }}/plugins/a11ychecker/)                 | Tools                                                                                                    | Opens the accessibility checker dialog.                                                                   |
+| anchor                 | [anchor]({{ site.baseurl }}/plugins/anchor/)                           | Insert                                                                                                   | Inserts an anchor into the editor.                                                                        |
+| restoredraft           | [autosave]({{ site.baseurl }}/plugins/autosave/)                       | File                                                                                                     | Restores to the latest auto saved draft.                                                                  |
+| casechange             | [casechange]({{ site.baseurl }}/plugins/casechange/)                   | _Not Applicable_                                                                                         | Changes the case of text in a block selection to uppercase, lowercase, or title case.                     |
+| charmap                | [charmap]({{ site.baseurl }}/plugins/charmap/)                         | Insert                                                                                                   | Opens the charmap dialog.                                                                                 |
+| code                   | [code]({{ site.baseurl }}/plugins/code/)                               | View                                                                                                     | Opens the code dialog.                                                                                    |
+| codesample             | [codesample]({{ site.baseurl }}/plugins/codesample/)                   | Insert                                                                                                   | Inserts code snippets with syntax highlighting.                                                           |
+| addcomment             | [comments]({{ site.baseurl }}/plugins/comments/)                       | Insert                                                                                                   | Adds a comment at the cursor location or for the selected text.                                           |
+| deleteallconversations | [comments]({{ site.baseurl }}/plugins/comments/)                       | File                                                                                                     | Deletes all comments from the editor.                                                                     |
+| showcomments           | [comments]({{ site.baseurl }}/plugins/comments/)                       | View                                                                                                     | Shows/hides comments present in the editor.                                                               |
+| emoticons              | [emoticons]({{ site.baseurl }}/plugins/emoticons/)                     | Insert                                                                                                   | Opens the emoticons dialog.                                                                               |
+| fullpage               | [fullpage]({{ site.baseurl }}/plugins/fullpage/)                       | _Not Applicable_                                                                                         | Documents properties for the full page.                                                                   |
+| fullscreen             | [fullscreen]({{ site.baseurl }}/plugins/fullscreen/)                   | View                                                                                                     | Toggles fullscreen on/off.                                                                                |
+| help                   | [help]({{ site.baseurl }}/plugins/help/)                               | Help                                                                                                     | Opens the help dialog.                                                                                    |
+| hr                     | [hr]({{ site.baseurl }}/plugins/hr/)                                   | Insert                                                                                                   | Inserts a horizontal rule into the editor.                                                                |
+| image                  | [image]({{ site.baseurl }}/plugins/image/)                             | Insert                                                                                                   | Opens the image dialog.                                                                                   |
+| insertdatetime         | [insertdatetime]({{ site.baseurl }}/plugins/insertdatetime/)           | Insert                                                                                                   | Inserts the current date/time into the editor.                                                            |
+| link                   | [link]({{ site.baseurl }}/plugins/link/)                               | Insert                                                                                                   | Opens the link dialog.                                                                                    |
+| openlink               | [link]({{ site.baseurl }}/plugins/link/)                               | _Not Applicable_                                                                                         | Opens the selected link in a new tab.                                                                     |
+| unlink                 | [link]({{ site.baseurl }}/plugins/link/)                               | _Not Applicable_                                                                                         | Removes the hyperlink from the selected text.                                                             |
+| media                  | [media]({{ site.baseurl }}/plugins/media/)                             | Insert                                                                                                   | Opens the media dialog.                                                                                   |
+| nonbreaking            | [nonbreaking]({{ site.baseurl }}/plugins/nonbreaking/)                 | Insert                                                                                                   | Inserts a nonbreaking space into the editor.                                                              |
+| pagebreak              | [pagebreak]({{ site.baseurl }}/plugins/pagebreak/)                     | Insert                                                                                                   | Inserts a pagebreak into the editor.                                                                      |
+| pageembed              | [pageembed]({{ site.baseurl }}/plugins/pageembed/)                     | Insert                                                                                                   | Opens the insert or edit iframe dialog.                                                                   |
+| pastetext              | [paste]({{ site.baseurl }}/plugins/paste/)                             | Edit                                                                                                     | Toggles paste as plain text on/off.                                                                       |
+| configurepermanentpen  | [permanentpen]({{ site.baseurl }}/plugins/permanentpen/)               | _Not Applicable_                                                                                         | Opens the Permanent Pen properties dialog.                                                                |
+| permanentpen           | [permanentpen]({{ site.baseurl }}/plugins/permanentpen/)               | _Not Applicable_                                                                                         | Enables and disables Permanent Pen formatting.                                                            |
+| preview                | [preview]({{ site.baseurl }}/plugins/preview/)                         | File                                                                                                     | Previews the current document.                                                                            |
+| print                  | [print]({{ site.baseurl }}/plugins/print/)                             | File                                                                                                     | Prints the current document.                                                                              |
+| searchreplace          | [searchreplace]({{ site.baseurl }}/plugins/searchreplace/)             | Edit                                                                                                     | Opens the search/replace dialog.                                                                          |
+| spellchecker           | [spellchecker]({{ site.baseurl }}/plugins/spellchecker/)               | Tools                                                                                                    | Toggles the spellchecker on/off.                                                                          |
+| cell                   | [table]({{ site.baseurl }}/plugins/table/)                             | Table                                                                                                    | Cell menu item with related controls.                                                                     |
+| column                 | [table]({{ site.baseurl }}/plugins/table/)                             | Table                                                                                                    | Column menu item with related controls.                                                                   |
+| deletetable            | [table]({{ site.baseurl }}/plugins/table/)                             | Table                                                                                                    | Deletes the current table.                                                                                |
+| inserttable            | [table]({{ site.baseurl }}/plugins/table/)                             | Table                                                                                                    | Inserts table grid menu.                                                                                  |
+| inserttabledialog      | [table]({{ site.baseurl }}/plugins/table/)                             | _Not Applicable_                                                                                         | Opens the table properties dialog for creating a new table.                                               |
+| row                    | [table]({{ site.baseurl }}/plugins/table/)                             | Table                                                                                                    | Row menu item with related controls.                                                                      |
+| tableprops             | [table]({{ site.baseurl }}/plugins/table/)                             | Table                                                                                                    | Opens the table properties dialog.                                                                        |
+| template               | [template]({{ site.baseurl }}/plugins/template/)                       | Insert                                                                                                   | Inserts templates into the editor.                                                                        |
+| insertfile             | [tinydrive]({{ site.baseurl }}/plugins/drive/)                         | _Not Applicable_                                                                                         | Opens the Tiny Drive file selector.                                                                       |
+| spellcheckerlanguage   | [tinymcespellchecker]({{ site.baseurl }}/plugins/tinymcespellchecker/) | Tools                                                                                                    | Changes the language used for the spell checking process for the document or the currently selected text. |
+| toc                    | [toc]({{ site.baseurl }}/plugins/toc/)                                 | Insert                                                                                                   | Inserts a Table of Contents into the editor.                                                              |
+| visualblocks           | [visualblocks]({{ site.baseurl }}/plugins/visualblocks/)               | View                                                                                                     | Toggles block visibility on/off.                                                                          |
+| visualchars            | [visualchars]({{ site.baseurl }}/plugins/visualchars/)                 | View                                                                                                     | Toggles visibility of nonbreaking spaces on/off.                                                          |
+| wordcount              | [wordcount]({{ site.baseurl }}/plugins/wordcount/)                     | Tools                                                                                                    | Opens a word count dialog showing word and character counts.                                              |

@@ -524,9 +524,9 @@ These features have either changed or have been deleted in TinyMCE 5.0.
 
 | **Plugin name** | **Description** |
 | --------------- |  -------------- |
-| [ContextMenu]({{site.baseurl}}/plugins/contextmenu/) | New API. See [docs]({{site.baseurl}}/ui-components/contextmenu/). |
-| [ColorPicker]({{site.baseurl}}/plugins/colorpicker/) | Moved to the core. See [docs]({{site.baseurl}}/configure/content-appearance/#color_picker}}). |
-| [Text Color]({{site.baseurl}}/plugins/textcolor/) | The `textcolor` plugin was removed and this setting is not required in TinyMCE 5.0. |
+| [ContextMenu]({{site.url}}/docs-4x/plugins/contextmenu/) | New API. See the [docs]({{site.baseurl}}/ui-components/contextmenu/). |
+| [ColorPicker]({{site.url}}/docs-4x/plugins/colorpicker/) | Moved to the core. See the [docs]({{site.baseurl}}/configure/content-appearance/#color_picker}}). |
+| [Text Color]({{site.url}}/docs-4x/plugins/textcolor/) | The `textcolor` plugin was removed and this setting is not required in TinyMCE 5.0. |
 
 #### Custom context toolbars
 
@@ -536,7 +536,7 @@ For information on Context Toolbars, see the [docs]({{site.baseurl}}/ui-componen
 
 #### Custom context menus
 
-The [Context menu]({{site.baseurl}}/plugins/contextmenu/) is no longer a plugin, it is part of the core and always enabled. Where TinyMCE 4.x only supported adding registered menu items, the new context menu also allows plugins to register "sections" of the context menu. These sections are dynamic and may show or hide depending on the cursor position when the context menu is opened. For example, the default context menu config is now `'link image editimage table spelling'` which are all plugin section references, not menu items. For information on using context menus, see: [UI components - Context menu]({{site.baseurl}}/ui-components/contextmenu/).
+The [Context menu]({{site.url}}/docs-4x/plugins/contextmenu/) is no longer a plugin, it is part of the core and always enabled. Where TinyMCE 4.x only supported adding registered menu items, the new context menu also allows plugins to register "sections" of the context menu. These sections are dynamic and may show or hide depending on the cursor position when the context menu is opened. For example, the default context menu config is now `'link image editimage table spelling'` which are all plugin section references, not menu items. For information on using context menus, see: [UI components - Context menu]({{site.baseurl}}/ui-components/contextmenu/).
 
 ##### New methods:
 

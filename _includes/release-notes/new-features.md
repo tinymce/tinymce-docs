@@ -9,7 +9,7 @@ Refer to the [Comments 2.0]({{site.baseurl}}/plugins/comments/) documentation, f
 
 ### Context menu
 
-The [Context menu](https://www.tiny.cloud/docs/plugins/contextmenu/) is no longer a plugin, it is part of the core and always enabled. Where TinyMCE 4.x only supported adding registered menu items, the new context menu also allows plugins to register "sections" of the context menu. These sections are dynamic and may show or hide depending on the cursor position when the context menu is opened. For example, the default context menu config is now `'link image editimage table spelling'` which are all plugin section references, not menu items.
+The [Context menu]({{site.url}}/docs-4x/plugins/contextmenu/) is no longer a plugin, it is part of the core and always enabled. Where TinyMCE 4.x only supported adding registered menu items, the new context menu also allows plugins to register "sections" of the context menu. These sections are dynamic and may show or hide depending on the cursor position when the context menu is opened. For example, the default context menu config is now `'link image editimage table spelling'` which are all plugin section references, not menu items.
 
 The context menu supports both individual menu items and dynamic context menu sections. Refer to the [context menu]({{site.baseurl}}/ui-components/contextmenu/) documentation, for more information.
 

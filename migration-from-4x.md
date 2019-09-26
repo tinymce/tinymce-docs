@@ -58,9 +58,9 @@ In TinyMCE 5.0, some configurations have been removed because they are no longer
 
 #### Removed settings
 
-* [`file_browser_callback`]({{site.baseurl}}/configure/file-image-upload/#file_browser_callback) - Previously, the `file_browser_callback` option was used to add a file or image browser to TinyMCE. This feature was deprecated in version 4.1.0 and replaced by [`file_picker_callback`]({{site.baseurl}}/configure/file-image-upload/#file_picker_callback). `file_browser_callback` option has been removed from TinyMCE 5.0 owing to the configuration changes in the dialog component.
+* [`file_browser_callback`]({{site.url}}/docs-4x/configure/file-image-upload/#file_browser_callback) - Previously, the `file_browser_callback` option was used to add a file or image browser to TinyMCE. This feature was deprecated in version 4.1.0 and replaced by [`file_picker_callback`]({{site.baseurl}}/configure/file-image-upload/#file_picker_callback). `file_browser_callback` option has been removed from TinyMCE 5.0 owing to the configuration changes in the dialog component.
 
-* [`insert_button_items`]({{site.baseurl}}/configure/editor-appearance/#insert_button_items) - Previously, the `insert_button_items` option was used to specify what to display in the `insert` toolbar button's menu in a space-separated list of menu items control identifiers or `|` for a menu separator. This toolbar button has been removed from TinyMCE 5.0 owing to the changes in the menus and removal of the `context` property. For a workaround, configure a custom toolbar button using the following configurations in the `tinymce.init`:
+* [`insert_button_items`]({{site.url}}/docs-4x/configure/editor-appearance/#insert_button_items) - Previously, the `insert_button_items` option was used to specify what to display in the `insert` toolbar button's menu in a space-separated list of menu items control identifiers or `|` for a menu separator. This toolbar button has been removed from TinyMCE 5.0 owing to the changes in the menus and removal of the `context` property. For a workaround, configure a custom toolbar button using the following configurations in the `tinymce.init`:
 
 ```js
 tinymce.init({
@@ -286,7 +286,7 @@ editor.ui.registry.addButton('myButton', {
 
 `onpostrender` has been removed and replaced with `onSetup` for menu and toolbar components. There are 3 major changes:
 
-* While [`onpostrender`]({{site.baseurl}}/advanced/creating-a-custom-button/#togglebutton) only ran once, when the editor was created, [`onSetup`]({{site.baseurl}}/ui-components/typesoftoolbarbuttons/#basicbuttonexampleandexplanation) runs every time a component is rendered, e.g. for a menu item, every time its menu becomes visible.
+* While [`onpostrender`]({{site.url}}/docs-4x/advanced/creating-a-custom-button/#togglebutton) only ran once, when the editor was created, [`onSetup`]({{site.baseurl}}/ui-components/typesoftoolbarbuttons/#basicbuttonexampleandexplanation) runs every time a component is rendered, e.g. for a menu item, every time its menu becomes visible.
 * `onSetup` now has an API containing some helper functions. Each type of toolbar button has a different API.
 * `onSetup` can be configured to return a function, which will be automatically be called on the teardown of the component, e.g., when a menu item's menu is closed.
     * If some functionality only runs when the editor is first initialized, it should be passed to `editor.on('init', callback)` as the callback function.

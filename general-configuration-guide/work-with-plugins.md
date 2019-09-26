@@ -11,7 +11,7 @@ For most developers, the real power of TinyMCE's functionality is found in its p
 
 Because most people install TinyMCE via TinyMCE Cloud or by downloading a package, they mistakenly think plugins are part of the TinyMCE "core". While all of the plugins (excluding the professional features) are included in those packages, each plugin is in a separate .js file. In fact, if you use the [custom package](https://www.tinymce.com/download/custom-builds/) download option, you're able to select only the plugins you want to be included, or you can exclude all of the plugins built by the TinyMCE team.
 
-In this section, we'll show you how easy it is to activate a plugin by highlighting two of the more popular plugins. 
+In this section, we'll show you how easy it is to activate a plugin by highlighting two of the more popular plugins.
 
 > Note: You must include the plugin in your download options to activate it.
 
@@ -129,20 +129,20 @@ As we noted at the start TinyMCE is an incredibly powerful, flexible, and custom
 
 ## Top 10 plugins
 
-Customizing TinyMCE with the default plugins is that easy. There are 40 default plugins available to developers. Let's take a look at the 10 most popular plugins (by documentation page views).
+Customizing TinyMCE with the default plugins is that easy. There are 60 plugins available to developers. Let's take a look at the 10 most popular plugins (by documentation page views).
 
-| Position | Plugin Name   | Plugin Value |
-|----------|---------------|--------------|
-| **1**    | Image         | [image]({{ site.baseurl }}/plugins/image/) |
-| **2**    | Paste         | [paste]({{ site.baseurl }}/plugins/paste/) |
-| **3**    | Code          | [code]({{ site.baseurl }}/plugins/code/) |
-| **4**    | Image Tools   | [imagetools]({{ site.baseurl }}/plugins/imagetools/) |
-| **5**    | Link          | [link]({{ site.baseurl }}/plugins/link/) |
-| **6**    | Table         | [table]({{ site.baseurl }}/plugins/table/) |
-| **7**    | Advanced Code | [advcode]({{ site.baseurl }}/plugins/advcode/) |
-| **8**    | Media         | [media]({{ site.baseurl }}/plugins/media/) |
+| Position | Plugin Name   | Plugin Value                                         |
+| -------- | ------------- | ---------------------------------------------------- |
+| **1**    | Image         | [image]({{ site.baseurl }}/plugins/image/)           |
+| **2**    | Paste         | [paste]({{ site.baseurl }}/plugins/paste/)           |
+| **3**    | Code          | [code]({{ site.baseurl }}/plugins/code/)             |
+| **4**    | Table         | [table]({{ site.baseurl }}/plugins/table/)           |
+| **5**    | Link          | [link]({{ site.baseurl }}/plugins/link/)             |
+| **6**    | Image Tools   | [imagetools]({{ site.baseurl }}/plugins/imagetools/) |
+| **7**    | Advanced Code | [advcode]({{ site.baseurl }}/plugins/advcode/)       |
+| **8**    | Media         | [media]({{ site.baseurl }}/plugins/media/)           |
 | **9**    | PowerPaste    | [powerpaste]({{ site.baseurl }}/plugins/powerpaste/) |
-| **10**   | Advanced List | [advlist]({{ site.baseurl }}/plugins/advlist/) |
+| **10**   | Code Sample   | [codesample]({{ site.baseurl }}/plugins/codesample/) |
 
 {% assign_page next_page = "/general-configuration-guide/customize-ui/index.html" %}
 {% include next-step.html next=next_page %}

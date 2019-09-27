@@ -12,8 +12,6 @@ description: Learn about some edge case editor behavior.
 
 {% include configuration/end-container-on-empty-block.md %}
 
-{% include configuration/nowrap.md %}
-
 {% include configuration/object-resizing.md %}
 
 {% include configuration/type-ahead-urls.md %}

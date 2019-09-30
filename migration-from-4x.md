@@ -558,17 +558,18 @@ Changes between TinyMCE 4.x and TinyMCE 5.0:
 ### Other removed component configuration settings
 
 All inline style configurations have been removed in TinyMCE 5.0 in favor of modern CSS.  This affects all TinyMCE 4.x UI component configurations.
-The table below shows UI configurations that have been removed. They are generally related to inline CSS settings.
+[Skins]({{site.url}}/advanced/creating-a-skin/) should be used for custom styling in TinyMCE 5.
 
 Removed style settings:
 * `flex`
 * `border`
-* `layout`
+* `layout` - Use the TinyMCE 5 UI components to compose a custom layout.
 * `spacing`
 * `padding`
 * `align`
 * `pack`
 * `no-wrap`
+
 
 ### Other API changes
 

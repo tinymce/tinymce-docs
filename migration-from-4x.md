@@ -560,6 +560,16 @@ Changes between TinyMCE 4.x and TinyMCE 5.0:
 All inline style configurations have been removed in TinyMCE 5.0 in favor of modern CSS.  This affects all TinyMCE 4.x UI component configurations.
 The table below shows UI configurations that have been removed. They are generally related to inline CSS settings.
 
+Removed style settings:
+* `flex`
+* `border`
+* `layout`
+* `spacing`
+* `padding`
+* `align`
+* `pack`
+* `no-wrap`
+
 ### Other API changes
 
 #### tinymce.WindowManager
@@ -579,8 +589,8 @@ A redesign of the dialog API resulted in the following changes:
 
 | Method                                                                                           | Description                 | Change                                     |
 | ------------------------------------------------------------------------------------------------ | --------------------------- | ------------------------------------------ |
-| [`tinymce.WindowManager.alert()`]({{site.baseurl}}/api/tinymce/tinymce.windowmanager/#alert)     | Creates a alert dialog.     | A window object is no-longer returned.     |
-| [`tinymce.WindowManager.confirm()`]({{site.baseurl}}/api/tinymce/tinymce.windowmanager/#confirm) | Creates a confirm dialog.   | A window object is no-longer returned.     |
+| [`tinymce.WindowManager.alert()`]({{site.baseurl}}/api/tinymce/tinymce.windowmanager/#alert)     | Creates an alert dialog.     | A window object is no-longer returned.     |
+| [`tinymce.WindowManager.confirm()`]({{site.baseurl}}/api/tinymce/tinymce.windowmanager/#confirm) | Creates a "confirm" dialog.   | A window object is no-longer returned.     |
 | [`tinymce.WindowManager.close()`]({{site.baseurl}}/api/tinymce/tinymce.windowmanager/#close)     | Closes the top most window. | Only closes dialogs created with `open()`. |
 
 For information on the new Dialog API, see: [UI components - Dialog instance API]({{site.baseurl}}/ui-components/dialog/#dialoginstanceapi).

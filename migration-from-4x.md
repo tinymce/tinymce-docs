@@ -557,19 +557,41 @@ Changes between TinyMCE 4.x and TinyMCE 5.0:
 
 ### Other removed component configuration settings
 
-Some UI configurations in TinyMCE 5.0 have changed due to an updated UI engine. All inline style configurations have been removed in TinyMCE 5.0 in favor of modern CSS.  This affects all TinyMCE 4.x UI component configurations.
-The table below shows UI configurations that have been removed. They are generally related to inline CSS settings.
+All inline style configurations have been removed in TinyMCE 5.0 in favor of modern CSS.  This affects all TinyMCE 4.x UI component configurations.
+[Skins]({{site.url}}/advanced/creating-a-skin/) should be used for custom styling in TinyMCE 5.
 
-| **Old settings** | **Description** | **Alternative** |
-| ---------------- | --------------- | --------------- |
-| `flex` | Sets an inline CSS value for the component | Use CSS stylesheets for custom styling |
-| `border` | Sets an inline CSS border for the component | Use CSS stylesheets for custom styling |
-| `layout` | Defines a layout | Use the new TinyMCE 5.0 UI components to compose a custom layout |
-| `spacing` | Sets spacing for the component | Use CSS stylesheets for custom styling |
-| `padding` | Sets an inline CSS padding value for the component | Use CSS stylesheets for custom styling |
-| `align` | Sets an inline CSS to align property for the component | Use CSS stylesheets for custom styling |
-| `pack` | Emulates flex pack | Use CSS stylesheets for custom styling |
-| `no-wrap` | Emulates CSS no line wrap | Use CSS stylesheet for custom styling |
+Removed style settings:
+* `flex`
+* `border`
+* `layout` - Use the TinyMCE 5 UI components to compose a custom layout.
+* `spacing`
+* `padding`
+* `align`
+* `pack`
+* `no-wrap`
 
-Please see the [TinyMCE 4.x docs]({{site.url}}/docs-4x/) for more information on the above settings.
 
+### Other API changes
+
+#### tinymce.WindowManager
+
+A redesign of the dialog API resulted in the following changes:
+
+**Removed APIs**
+
+| API                                                                                                        | Type     | Description                                                                                                                          |
+| ---------------------------------------------------------------------------------------------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------ |
+| [`tinymce.WindowManager.getParams()`]({{site.url}}/docs-4x/api/tinymce/tinymce.windowmanager/#getparams)   | Method   | Returned the params of the last window open call. This was used in iframe based dialog to get params passed from the tinymce plugin. |
+| [`tinymce.WindowManager.getWindows()`]({{site.url}}/docs-4x/api/tinymce/tinymce.windowmanager/#getwindows) | Method   | Returned the currently opened window objects.                                                                                        |
+| [`tinymce.WindowManager.setParams()`]({{site.url}}/docs-4x/api/tinymce/tinymce.windowmanager/#setparams)   | Method   | Set the params of the last opened window.                                                                                            |
+| `tinymce.WindowManager.windows`                                                                            | Property | Returned an array of opened dialogs.                                                                                                 |
+
+**Changed API Methods**
+
+| Method                                                                                           | Description                 | Change                                     |
+| ------------------------------------------------------------------------------------------------ | --------------------------- | ------------------------------------------ |
+| [`tinymce.WindowManager.alert()`]({{site.baseurl}}/api/tinymce/tinymce.windowmanager/#alert)     | Creates an alert dialog.     | A window object is no-longer returned.     |
+| [`tinymce.WindowManager.confirm()`]({{site.baseurl}}/api/tinymce/tinymce.windowmanager/#confirm) | Creates a "confirm" dialog.   | A window object is no-longer returned.     |
+| [`tinymce.WindowManager.close()`]({{site.baseurl}}/api/tinymce/tinymce.windowmanager/#close)     | Closes the top most window. | Only closes dialogs created with `open()`. |
+
+For information on the new Dialog API, see: [UI components - Dialog instance API]({{site.baseurl}}/ui-components/dialog/#dialoginstanceapi).

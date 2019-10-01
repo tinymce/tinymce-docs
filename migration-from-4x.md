@@ -547,7 +547,7 @@ For more information on Context Menus, see the [docs]({{site.baseurl}}/ui-compon
 
 ### Spellchecker
 
-[`spellchecker_callback`]({{site.baseurl}}/plugins/spellchecker/#spellchecker_callback) has been updated to remove a legacy format for the `success` callback, which accepted an array of suggestions. For example:
+[`spellchecker_callback`]({{site.baseurl}}/plugins/spellchecker/#spellchecker_callback) has been updated to remove a legacy format for the `success` callback, which accepted a mapping object of misspelled words to suggestions. For example:
 
 ```js
 spellchecker_callback: function(method, text, success, failure) {
@@ -562,7 +562,7 @@ spellchecker_callback: function(method, text, success, failure) {
   }
 ```
 
-The `success` callback now requires an object with the `words` keyword with an array of suggestions, such as:
+The `success` callback now requires the mapping object to be wrapped in an object with the `words` key, such as:
 
 ```js
 spellchecker_callback: function(method, text, success, failure) {

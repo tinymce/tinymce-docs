@@ -335,7 +335,33 @@ The following configurations options have changed in the Custom Menu items in Ti
 * `addMenuItem` has a new configuration.
 * A new method `addNestedMenuItem` has been added to the options. The `addNestedMenuItem` is an explicit method for creating menu items that have a submenu with more menu items.
 * A new method `addToggleMenuItem` has been added to the options. The `addToggleMenuItem` is an explicit method for creating toggle menu items similar to the new special [toolbar button methods]({{site.baseurl}}/ui-components/typesoftoolbarbuttons/).
-* The concept of `context` has been removed from menu item configurations.
+* The concept of `context` has been removed from menu item configurations. The [`menu` setting]({{site.baseurl}}/configure/editor-appearance/#menu) provides this functionality for TinyMCE 5.
+
+To add a custom item to a menu, use the `menu` setting. All items in the menu need to be declared in order to appear.
+
+For example:
+
+```js
+tinymce.init({
+  selector: '#editor',
+  plugins: 'help',
+  menu: {
+    help: { title: 'Help', items: 'help | myCustomMenuItem' }
+  },
+  menubar: 'file edit help',
+  setup: (editor) => {
+    editor.ui.registry.addMenuItem('myCustomMenuItem', {
+      text: 'My Custom Menu Item',
+      onAction: () => alert('Menu item clicked')
+    });
+  }
+});
+```
+
+**More information**
+* For information on using the `menu` setting, see: [User interface options - menu]({{site.baseurl}}/configure/editor-appearance/#menu).
+* For an example of the default menu items, see: [User interface options - Example: The TinyMCE Default Menu Items]({{site.baseurl}}/configure/editor-appearance/#examplethetinymcedefaultmenuitems).
+* For a list of the available menu controls provided by TinyMCE and the Tiny Premium Plugins, see: [Editor control identifiers - Menu controls]({{site.baseurl}}/advanced/editor-control-identifiers/#menucontrols).
 
 #### New methods:
 

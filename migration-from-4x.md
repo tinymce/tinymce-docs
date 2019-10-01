@@ -545,6 +545,40 @@ The [Context menu]({{site.url}}/docs-4x/plugins/contextmenu/) is no longer a plu
 
 For more information on Context Menus, see the [docs]({{site.baseurl}}/ui-components/contextmenu).
 
+### Spellchecker
+
+[`spellchecker_callback`]({{site.baseurl}}/plugins/spellchecker/#spellchecker_callback) has been updated to remove a legacy format for the `success` callback, which accepted an array of suggestions. For example:
+
+```js
+spellchecker_callback: function(method, text, success, failure) {
+    var words = text.match(this.getWordCharPattern());
+    if (method == "spellcheck") {
+      var suggestions = {};
+      for (var i = 0; i < words.length; i++) {
+        suggestions[words[i]] = ["First", "Second"];
+      }
+      success(suggestions);
+    }
+  }
+```
+
+The `success` callback now requires an object with the `words` keyword with an array of suggestions, such as:
+
+```js
+spellchecker_callback: function(method, text, success, failure) {
+    var words = text.match(this.getWordCharPattern());
+    if (method == "spellcheck") {
+      var suggestions = {};
+      for (var i = 0; i < words.length; i++) {
+        suggestions[words[i]] = ["First", "Second"];
+      }
+      success({ words: suggestions });
+    }
+  }
+```
+
+For information on the `spellchecker_callback` setting, see: [Spell Checker plugin - spellchecker_callback]({{site.baseurl}}/plugins/spellchecker/#spellchecker_callback)
+
 ### Table
 
 Changes between TinyMCE 4.x and TinyMCE 5.0:

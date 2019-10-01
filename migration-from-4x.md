@@ -337,7 +337,7 @@ The following configurations options have changed in the Custom Menu items in Ti
 * A new method `addToggleMenuItem` has been added to the options. The `addToggleMenuItem` is an explicit method for creating toggle menu items similar to the new special [toolbar button methods]({{site.baseurl}}/ui-components/typesoftoolbarbuttons/).
 * The concept of `context` has been removed from menu item configurations. The [`menu` setting]({{site.baseurl}}/configure/editor-appearance/#menu) provides this functionality for TinyMCE 5.
 
-To add a custom item to a menu, use the `menu` setting. All items in the menu need to be declared in order to appear.
+To add a custom item to a menu, use the `menu` setting. All items in a menu need to be declared in order to appear.
 
 For example:
 

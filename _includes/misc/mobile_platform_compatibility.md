@@ -7,6 +7,8 @@
 | OS        | Browser | Device       |
 |:---------:|:-------:|:------------:|
 | Android 9 | Chrome  | Mobile phone |
+| Android 10| Chrome  | Mobile phone |
 | iOS 12    | Safari  | iPhone/iPad  |
+| iOS 13    | Safari  | iPhone/iPad  |
 
 Please report platform issues and bugs in the [{{site.productname}} issue tracker](https://github.com/tinymce/tinymce/issues).

@@ -8,13 +8,13 @@ keywords: support tiny enterprise client services
 
 ## Overview
 
-Support for TinyMCE Enterprise, is provided online via the Tiny support site.  You can access the support site at: https://support.ephox.com.
+Support for TinyMCE Enterprise, is provided online via the Tiny support site.  You can access the support site at: [https://support.tiny.cloud](https://support.tiny.cloud).
 
-Prior to opening a support ticket, we require all users to register with a valid business email address. You can register on the support site at: https://support.ephox.com/registration. Upon registration you will receive an email requesting that you validate your registration. If you don't receive such a request within 5 minutes please check your spam folder to see if the email ended up there in error. If you never receive the validation email please contact the [TIny Client Services team via email](mailto:clientservices@tiny.cloud).
+Prior to opening a support ticket, we require all users to register with a valid business email address. You can register on the support site at: [https://support.tiny.cloud/registration](https://support.tiny.cloud/registration). Upon registration you will receive an email requesting that you validate your registration. If you don't receive such a request within 5 minutes please check your spam folder to see if the email ended up there in error. If you never receive the validation email please contact the [Tiny Client Services team via email](mailto:clientservices@tiny.cloud).
 
 ### Creating a support ticket
 
-Once you are registered on the site you will be able to interact with the Tiny support team via our support site.  To create a new ticket simply go to the following URL: http://about.tiny.cloud/support/ticket.
+Once you are registered on the site you will be able to interact with the Tiny support team via our support site.  To create a new ticket simply go to the following URL: [https://about.tiny.cloud/support/ticket](https://about.tiny.cloud/support/ticket).
 
 Note that Tiny support requires that you provide the following information along with your ticket:
 

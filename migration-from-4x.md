@@ -1,66 +1,76 @@
 ---
 layout: default
-title: Migrating from TinyMCE 4.x to TinyMCE 5.0.
+title: Migrating from TinyMCE 4 to TinyMCE 5.
 title_nav: Migrating from TinyMCE 4
-description: Instructions for migrating from TinyMCE 4.x to TinyMCE 5.0.
+description: Instructions for migrating from TinyMCE 4 to TinyMCE 5.
 keywords: migration considerations premigration pre-migration
 ---
 
-The new TinyMCE 5.0 editor comes with significant changes to the previous versions. Most configuration changes in TinyMCE 5.0 only affect complex use cases like adding custom components. Setting up a basic TinyMCE 5.0 instance should be the same as TinyMCE 4.x.
+Most configuration changes in TinyMCE 5 only affect complex use cases, such as using custom components. The process for setting up a basic TinyMCE 5 instance is the same as TinyMCE 4.
 
-Tiny has worked on creating a more configurable and modern editor while retaining the familiarity of the user interface from the older versions.
+This chapter describes the migration process and workarounds for customers using TinyMCE version 4. It describes settings that require updating prior to migration; and workaround procedures for deprecated, deleted, and updated features.
 
-This chapter describes the migration process and workarounds for customers using TinyMCE version 4.x. It includes tasks that must be performed before the migration can begin, and different workaround procedures for deprecated, deleted, and updated features.
+> Note: For support related to migration, please contact [Tiny support](https://support.tiny.cloud/hc/en-us/requests/new). Open Source users: Please report issues on the [TinyMCE GitHub Repository](https://github.com/tinymce/tinymce/).
+
+### Contents
+
+* [Editor-Core](#editor-core)
+* [Themes](#themes)
+* [User Interface components](#userinterfacecomponents)
+* [Plugins](#plugins)
 
 ## Editor-Core
 
+To migrate the core TinyMCE editor to TinyMCE 5, review the following sections:
+
+* [Cloud Delivery](#clouddelivery).
+* [Editor: Changes to Methods](#editorchangestomethods).
+* [Editor: Changes to Settings](#editorchangestosettings).
+* [Browser support: backward compatibility or quirks mode](#browsersupportbackwardcompatibilityorquirksmode).
+
 ### Cloud Delivery
 
-To use TinyMCE 5 from the Tiny Cloud, include this in your HTML page. Replace 'no-api-key' with your api key.
-```js
+To use TinyMCE 5 from the Tiny Cloud, include this script in your HTML page. Replace 'no-api-key' with [your API key]({{site.url}}/auth/signup/).
+
+```html
 <script src="{{ site.cdnurl }}" referrerpolicy="origin"></script>
 ```
 
-To use the latest development and testing builds, refer to the [cloud deployment guide]({{site.baseurl}}/cloud-deployment-guide/editor-and-features/).
+To information on using the latest development and testing builds, see the [Cloud deployment guide - Specify editor & plugin versions]({{site.baseurl}}/cloud-deployment-guide/editor-plugin-version/).
 
-```js
-<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5-dev/tinymce.min.js" referrerpolicy="origin"></script>
-```
+### Editor: Changes to Methods
 
-### Initialization
+* All TinyMCE 4 methods for creating UI components have been removed. New methods have been added for TinyMCE 5. For information on creating and customizing UI components, see: [User interface components]({{site.baseurl}}/ui-components/).
+* No core editor methods were removed (such as: `tinymce`, `editor`, `selection`, and `on()`).
 
-The initialization process of TinyMCE 5.0 is the same as TinyMCE 4.x. The bootstrap process and initialization events all remain the same. It still retains a familiar JSON structure. Some `init` configuration in the TinyMCE version 5.0 has been updated to simplify the configuration options, specifically the configuration items for [UI components]({{site.baseurl}}/ui-components/). Please see the [Quick start]({{site.baseurl}}/quick-start) section for more information on setup.
 
-These changes may impact integrations depending upon the level of customization. Refer to the table below for a general guide for understanding the impact on a specific integration scenario:
+### Editor: Changes to Settings
 
-| Customization Level | Description | Impact |
-| ------------------- | ----------- | ------ |
-| Minor | Some custom buttons | No UI fixes required. Updating the `addButton` configuration to TinyMCE 5.0 format. |
-| Moderate | A [dialog]({{site.baseurl}}/ui-components/dialog/#dialoginstanceapi) created using `editor.windowManager.open` configuration objects | Convert TinyMCE 4.x config to TinyMCE 5.0 config. |
-| Major | Completely custom dialogs and extended use of the Modern UI framework | The new TinyMCE 5.0 components may not cover all API use cases. However, Tiny strives to create supported workarounds or if there are sufficient requests, add a new component to resolve the use case. |
+TinyMCE 5 includes the following changes to editor-core settings:
 
-> Note: For support related issues such as problems while migrating and a workaround, please contact [support](https://support.tiny.cloud/hc/en-us/requests/new). Alternatively, track developer preview issues on GitHub, [here](https://github.com/tinymce/tinymce/labels/dev%20preview).
+* [New Editor settings](#neweditorsettings)
+* [Changed Editor settings](#changededitorsettings)
+* [Removed Editor settings](#removededitorsettings)
 
-### Methods
-
-* All TinyMCE 4.x methods for creating UI components have been removed. New methods have been added for TinyMCE 5.0. For more information, see the [docs]({{site.baseurl}}/ui-components/).
-* No core editor methods were removed (tinymce, editor, selection, on(), etc. remain the same).
-
-### Settings
-
-In TinyMCE 5.0, some configurations have been removed because they are no longer necessary or an improved solution has been introduced.
-
-#### Added settings
+#### New Editor settings
 
 | **Setting** | **Description** |
 | ----------- | --------------- |
-| [`custom_colors`]({{site.baseurl}}/configure/content-appearance/#custom_colors) | **custom_colors** is `true` by default. When it is set to `false`, it will turn off the custom color picker in the color swatch. |
+| [`custom_colors`]({{site.baseurl}}/configure/content-appearance/#custom_colors) | **custom_colors** is `true` by default. Setting `custom_colors: false` removes the custom color picker in the color swatch. |
 
-#### Removed settings
+#### Changed Editor settings
 
-* [`file_browser_callback`]({{site.url}}/docs-4x/configure/file-image-upload/#file_browser_callback) - Previously, the `file_browser_callback` option was used to add a file or image browser to TinyMCE. This feature was deprecated in version 4.1.0 and replaced by [`file_picker_callback`]({{site.baseurl}}/configure/file-image-upload/#file_picker_callback). `file_browser_callback` option has been removed from TinyMCE 5.0 owing to the configuration changes in the dialog component.
+| **Setting**                                                      | **TinyMCE 4**                                                                                 | **TinyMCE 5**                                                                                                                                                              |
+| ---------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [`height`]({{site.baseurl}}/configure/editor-appearance/#height) | Set the height of the editable area of the editor.<br/>Only accepted supported number values. | Sets the overall height of the editor, including the menubar, toolbars, and statusbar.<br/>Supports numbers and strings. Assumes strings are a valid CSS value for height. |
+| [`width`]({{site.baseurl}}/configure/editor-appearance/#width)   | Only accepted supported number values.                                                        | Supports numbers and strings. Assumes strings are a valid CSS value for width.                                                                                             |
+| [`resize`]({{site.baseurl}}/configure/editor-appearance/#resize) | `true` by default.                                                                            | `true` by default if the `autoresize` plugin is not enabled.<br/>`false` by default if the `autoresize` plugin is enabled.                                                 |
 
-* [`insert_button_items`]({{site.url}}/docs-4x/configure/editor-appearance/#insert_button_items) - Previously, the `insert_button_items` option was used to specify what to display in the `insert` toolbar button's menu in a space-separated list of menu items control identifiers or `|` for a menu separator. This toolbar button has been removed from TinyMCE 5.0 owing to the changes in the menus and removal of the `context` property. For a workaround, configure a custom toolbar button using the following configurations in the `tinymce.init`:
+#### Removed Editor settings
+
+* The `file_browser_callback` option has been removed for TinyMCE 5. The [`file_browser_callback`]({{site.url}}/docs-4x/configure/file-image-upload/#file_browser_callback) option was used to add a file or image browser to TinyMCE. This option was deprecated in version 4.1.0 and replaced by [`file_picker_callback`]({{site.baseurl}}/configure/file-image-upload/#file_picker_callback).
+
+* [`insert_button_items`]({{site.url}}/docs-4x/configure/editor-appearance/#insert_button_items) - `insert_button_items` option was used to specify the toolbar items to display in the `insert` toolbar button menu. This toolbar button has been removed from TinyMCE 5 owing to the changes in the menus and removal of the `context` property. For a workaround, configure a custom toolbar button using the following configurations in the `tinymce.init`:
 
 ```js
 tinymce.init({
@@ -76,21 +86,13 @@ tinymce.init({
 });
 ```
 
-#### Changed settings
+##### Migrating from `file_browser_callback` to `file_picker_callback`
 
-| **Setting** | **TinyMCE 4.x** | **TinyMCE 5.0** |
-| ----------- | --------------- | --------------- |
-| [`height`]({{site.baseurl}}/configure/editor-appearance/#height) | Set the height of the editable area of the editor.<br/>Only accepts supported number values.| Sets the overall height of the editor, including the menubar, toolbars, and statusbar.<br/>Supports numbers and strings, and assume a string is a valid CSS value for height. |
-| [`width`]({{site.baseurl}}/configure/editor-appearance/#width) | Only accepts supported number values. | Supports numbers and strings, and assume a string is a valid CSS value for width. |
-| [`resize`]({{site.baseurl}}/configure/editor-appearance/#resize) | `true` by default. | `true` by default if the `autoresize` plugin is not enabled.<br/>`false` by default if the `autoresize` plugin is enabled. |
+[`file_picker_callback`]({{site.baseurl}}/configure/file-image-upload/#file_picker_callback) provides a callback function, removing the requirement for an additional function to manually find and update the element or fire events. `file_picker_callback` can also update other fields by passing a second argument to update other fields in the dialog. For information on using `file_picker_callback`, see: [Image & file upload options - `file_picker_callback`]({{site.baseurl}}/configure/file-image-upload/#file_picker_callback).
 
-#### file_browser_callback → file_picker_callback
+The following example shows the difference between the removed `file_browser_callback` setting and `file_picker_callback`, assuming that `browseFiles` is a function that opens an external file picker.
 
-When migrating from using [`file_browser_callback`]({{site.url}}/docs-4x/configure/file-image-upload/#file_browser_callback) to [`file_picker_callback`]({{site.baseurl}}/configure/file-image-upload/#file_picker_callback), there is no longer any need to manually find and update the element or fire events. Instead a callback function is now provided that will update the component with the value passed. In addition to that, it's possible to update other fields by passing a second argument that will update other fields in the dialog. For more information about the `file_picker_callback`, see the [docs]({{site.baseurl}}/configure/file-image-upload/#file_picker_callback).
-
-Below is a basic example showcasing how to migrate from using `file_browser_callback` to `file_picker_callback`, assuming that `browseFiles` is a function that opens an external file picker.
-
-##### TinyMCE 4.x
+###### TinyMCE 4 - `file_browser_callback`
 
 ```js
 tinymce.init({
@@ -103,7 +105,8 @@ tinymce.init({
   }
 });
 ```
-##### TinyMCE 5.0
+
+###### TinyMCE 5 - `file_picker_callback`
 
 ```js
 tinymce.init({
@@ -123,7 +126,7 @@ TinyMCE 5 does not support browsers running in Quirks or backward compatibility 
 
 ## Themes
 
-In TinyMCE 5.0, some themes have been removed and are now combined in a new single responsive theme called **Silver**. In TinyMCE 5.0 `Silver` is enabled by default, if a theme is not specified. The Silver theme contains a set of configurable UI components that could be used to replace the current customizations (modern, inline, and inlite theme).
+Most themes provided with TinyMCE 4 have been removed from TinyMCE 5 and are now combined in a new responsive theme called **Silver**. The `Silver` theme is enabled by default and contains a set of configurable UI components that can be used to replace the functionality of the TinyMCE 4 themes: Modern, Inline, and Inlite.
 
 | **Removed Theme**                                                                     | **Replaced by**                                   |
 | ------------------------------------------------------------------------------------- | ------------------------------------------------- |
@@ -132,12 +135,14 @@ In TinyMCE 5.0, some themes have been removed and are now combined in a new sing
 | [Inlite(Distraction-free Editor)]({{site.url}}/docs-4x/themes/inlite/)                | Silver ([distraction-free]({{site.baseurl}}/general-configuration-guide/use-tinymce-distraction-free/) configuration)           |
 | [Mobile]({{site.url}}/docs-4x/themes/mobile/)                                         | Silver ([responsive to small screen touch devices]({{site.baseurl}}/mobile/)) |
 
-### Removed themes
+### Inlite theme removed
 
-#### Inlite
+The [Inlite]({{site.url}}/docs-4x/themes/inlite/) theme is not supported in TinyMCE 5.
 
-The [Inlite]({{site.url}}/docs-4x/themes/inlite/) theme is no longer supported in TinyMCE 5.0. The features that the Inlite theme used to provide are now available as a plugin. The inlite plugin has been renamed [Quick Toolbar (`quickbars`)]({{site.baseurl}}/plugins/quickbars/). The following is an example of the current quickbars configuration:
-```
+The Inlite theme features are provided by the [Quick Toolbar (`quickbars`)]({{site.baseurl}}/plugins/quickbars/) plugin for TinyMCE 5. The Inlite [`quicklink`]({{site.url}}/docs-4x/themes/inlite/#quicklink) functionality is now provided by [Context Forms]({{site.baseurl}}/ui-components/contextform/).
+
+The following is an example of a TinyMCE 5 quickbars configuration:
+```js
 {
   theme: 'silver',
   inline: true,
@@ -146,36 +151,59 @@ The [Inlite]({{site.url}}/docs-4x/themes/inlite/) theme is no longer supported i
   plugins: [ 'quickbars' ]
 }
  ```
-This will provide a similar but improved [distraction-free]({{site.baseurl}}/general-configuration-guide/use-tinymce-distraction-free/) experience in TinyMCE 5.0.
+This will provide a similar but improved [distraction-free]({{site.baseurl}}/general-configuration-guide/use-tinymce-distraction-free/) experience in TinyMCE 5.
 
-#### Modern
+### Modern theme removed
 
-The [Modern]({{site.url}}/docs-4x/themes/modern/)  theme is no longer supported in TinyMCE 5.0.  The modern theme's UI library [`tinymce.ui.*`]({{site.url}}/docs-4x/api/tinymce.ui/) has also been deleted. This change may impact integrations depending upon the [level of customization](#initialization).
+The [Modern]({{site.url}}/docs-4x/themes/modern/) theme is not supported in TinyMCE 5.  The Modern theme's UI library [`tinymce.ui.*`]({{site.url}}/docs-4x/api/tinymce.ui/) has also been removed. This change may impact integrations depending upon the level of customization.
 
-> Note: For support related issues such as problems while migrating and a workaround, please contact [support](https://support.tiny.cloud/hc/en-us/requests/new). Alternatively, track developer preview issues on GitHub, [here](https://github.com/tinymce/tinymce/labels/5.x).
+> Note: For support related to migration, please contact [Tiny support](https://support.tiny.cloud/hc/en-us/requests/new). Open Source users: Please report issues on the [TinyMCE GitHub Repository](https://github.com/tinymce/tinymce/).
 
-
-### Events
-
-#### Removed events
+### Themes: Removed events
 
 | **Removed event** | **Description**|
 | ----------------- | -------------- |
 | BeforeRenderUi | Fired before the UI was rendered. |
 
 
-## Mobile support
+### Mobile theme
 
-In TinyMCE 4.x, [mobile support]({{site.baseurl}}/mobile/) was introduced bundled with a new theme and configuration settings. TinyMCE 5.0 makes this process seamless where mobile support comes out of the box without any additional configurations. The mobile theme will be automatically loaded if a user views the editor on a mobile phone. TinyMCE 5.0 mobile will be an exciting space to watch.
+The TinyMCE 4 [Mobile theme]({{site.baseurl}}/mobile/) is default behavior for the editor when is loaded on a mobile device.
 
+## User Interface components
 
-## Components
+This section covers migrating UI components to TinyMCE 5
 
-### Method Namespacing changes
+* [Removed UI configuration settings](#removeduiconfigurationsettings)
+* [Changed UI API method namespace](#changeduiapimethodnamespace)
+* [Custom toolbar buttons](#customtoolbarbuttons)
+* [Custom context toolbars](#customcontexttoolbars)
+* [Custom menu items](#custommenuitems)
+* [Custom dialogs](#customdialogs)
+* [Custom URL dialogs](#customurldialogs)
 
-The methods for registering components have moved to a different part of the editor API. They are now in the UI Registry part of the editor API.
+### Removed UI configuration settings
+
+All inline style configurations have been removed in TinyMCE 5 in favor of modern CSS. This affects all TinyMCE 4 UI component configurations.
+[Skins]({{site.baseurl}}/advanced/creating-a-skin/) should be used for custom styling in TinyMCE 5.
+
+Removed style settings:
+* `flex`
+* `border`
+* `layout` - Use the TinyMCE 5 UI component settings to compose a custom layout.
+* `spacing`
+* `padding`
+* `align`
+* `pack`
+* `no-wrap`
+
+### Changed UI API method namespace
+
+The API methods for registering UI components have moved. They are now part of [`tinymce.editor.ui.registry`]({{site.baseurl}}/api/tinymce.editor.ui/tinymce.editor.ui.registry/).
 
 #### Changed methods
+
+The following methods have changed for TinyMCE 5:
 
 | **Old method** | **New method** | **Component** |
 | -------------- | -------------- | ------------- |
@@ -203,11 +231,18 @@ The following new methods have been added for creating and using new components:
 
 ### Custom toolbar buttons
 
-The methods for adding [Custom toolbar buttons]({{site.baseurl}}/ui-components/toolbarbuttons/#howtocreatecustomtoolbarbuttons) have changed significantly between TinyMCE 4.x and TinyMCE 5.0. The methods have been moved from [`editor.*`]({{site.url}}/docs-4x/api/tinymce/tinymce.editor/) to [`editor.ui.registry.*`]({{site.baseurl}}/api/tinymce.editor.ui/tinymce.editor.ui.registry/) Toolbar button types have changed from -  basic, split, listbox, and menu,  to -  basic, toggle, split, and menu. Explicit methods have been added for creating each type of toolbar button.
+The API methods for adding [Custom toolbar buttons]({{site.baseurl}}/ui-components/toolbarbuttons/#howtocreatecustomtoolbarbuttons) have changed for TinyMCE 5. The methods have been moved from [`editor.*`]({{site.url}}/docs-4x/api/tinymce/tinymce.editor/) to [`editor.ui.registry.*`]({{site.baseurl}}/api/tinymce.editor.ui/tinymce.editor.ui.registry/). The toolbar button type `listbox` has been removed and a toogle button type has been added. The button types available in TinyMCE 5 are:
 
-#### Changed methods
+* [Basic button]({{site.baseurl}}/ui-components/typesoftoolbarbuttons/#basicbutton)
+* [Toggle button]({{site.baseurl}}/ui-components/typesoftoolbarbuttons/#togglebutton)
+* [Split button]({{site.baseurl}}/ui-components/typesoftoolbarbuttons/#splitbutton)
+* [Menu button]({{site.baseurl}}/ui-components/typesoftoolbarbuttons/#menubutton)
 
-Some of the methods from TinyMCE 4.x for creating custom toolbar buttons have been moved and re-implemented to use the TinyMCE 5.0 style of configuration. For more information on how these methods have changed, see [docs]({{site.baseurl}}/ui-components/toolbarbuttons/).
+[Listbox]({{site.url}}/docs-4x/demo/custom-toolbar-listbox/) toolbar buttons are not supported in TinyMCE 5. The recommended replacement toolbar button type is the [**Split** button]({{site.baseurl}}/ui-components/typesoftoolbarbuttons/#splitbutton).
+
+#### Changed toolbar button API methods
+
+The following methods for creating custom toolbar buttons have been moved for TinyMCE 5. For information on how to use the new methods, see: [Toolbar buttons]({{site.baseurl}}/ui-components/toolbarbuttons/).
 
 | **Old method** | **New method** |
 | -------------- | -------------- |
@@ -215,9 +250,9 @@ Some of the methods from TinyMCE 4.x for creating custom toolbar buttons have be
 | [`editor.addMenuItem()`]({{site.url}}/docs-4x/api/tinymce/tinymce.editor/#addmenuitem) | [`editor.ui.registry.addMenuItem()`]({{site.baseurl}}/api/tinymce.editor.ui/tinymce.editor.ui.registry/#addmenuitem) |
 
 
-#### New methods
+#### New toolbar button API methods
 
-New methods have been added for creating other common types of toolbar buttons. For example, to create a toggle button In TinyMCE 5.0 `editor.ui.registry.addToggleButton()` is used. Each of these methods takes configurations specific to their type, to simplify implementation.
+New methods have been added for creating common types of toolbar buttons.
 
 | **New method** | **Description** |
 | -------------- | --------------- |
@@ -225,27 +260,23 @@ New methods have been added for creating other common types of toolbar buttons. 
 | `editor.ui.registry.addSplitButton()` | [Adds a custom toolbar split button]({{site.baseurl}}/ui-components/typesoftoolbarbuttons/#splitbutton). |
 | `editor.ui.registry.addMenuButton()` | [Adds a custom toolbar menu button]({{site.baseurl}}/ui-components/typesoftoolbarbuttons/#menubutton). |
 
-For more information on how these methods have changed, see the [docs]({{site.baseurl}}/ui-components/typesoftoolbarbuttons/).
+For information on how to use these methods, see: [Types of toolbar buttons]({{site.baseurl}}/ui-components/typesoftoolbarbuttons/).
 
-### Removed toolbar button types
-
-[Listbox]({{site.url}}/docs-4x/demo/custom-toolbar-listbox/) is no longer a supported toolbar button type in TinyMCE 5.0. Though listbox has been removed, any functionality provided by custom listbox toolbar buttons can be retained by switching to a different kind of toolbar button using the new methods. The recommended toolbar button type to switch to is the [**Split** button]({{site.baseurl}}/ui-components/typesoftoolbarbuttons/#splitbutton).
-
-### Toolbar configuration differences between TinyMCE 4.x and TinyMCE 5.0:
+#### Changed Toolbar API methods
 
 | **Old method** | **New method** | **Description** |
 | -------------- | -------------- | --------------- |
-| [`onclick`]({{site.url}}/docs-4x/advanced/creating-a-custom-button/#basicbutton) | [`onAction`]({{site.baseurl}}/ui-components/typesoftoolbarbuttons/#basicbutton) | `onclick` is now `onAction`. `onAction` now has an API to provide some helper functions to the user. |
+| [`onclick`]({{site.url}}/docs-4x/advanced/creating-a-custom-button/#basicbutton) | [`onAction`]({{site.baseurl}}/ui-components/typesoftoolbarbuttons/#basicbutton) | `onclick` is now `onAction`. `onAction` now has an API to provide helper functions to the user. |
 | [`cmd`]({{site.url}}/docs-4x/advanced/creating-a-custom-button/#buttonoptions) | [`onAction`]({{site.baseurl}}/ui-components/typesoftoolbarbuttons/#basicbutton) | `cmd` has been removed as a configuration option. Commands should be executed through `onAction` now. |
 | [`onpostrender`]({{site.url}}/docs-4x/advanced/creating-a-custom-button/#togglebutton) | [`onSetup`]({{site.baseurl}}/ui-components/typesoftoolbarbuttons/#onsetupexplanation) | `onpostrender` has been replaced with `onSetup`. |
 
-#### onclick → onAction
+##### Migrating onclick to onAction
 
-[`onclick`]({{site.url}}/docs-4x/advanced/creating-a-custom-button/#basicbutton) is now [`onAction`]({{site.baseurl}}/ui-components/typesoftoolbarbuttons/#basicbutton). The callback function given to onAction should take a `buttonApi` argument that's passed to the onAction callback is an object that contains some helper functions. Each type of toolbar button has a different set of API functions. See the [docs]({{site.baseurl}}/ui-components/typesoftoolbarbuttons/) for more information.
+[`onclick`]({{site.url}}/docs-4x/advanced/creating-a-custom-button/#basicbutton) is now [`onAction`]({{site.baseurl}}/ui-components/typesoftoolbarbuttons/#basicbutton). The callback function given to `onAction` accepts a `buttonApi` object that contains helper functions.
 
- Example:
+For example:
 
-##### TinyMCE 4.x:
+###### TinyMCE 4 - `onclick`
 
 ```js
 editor.addButton('mybutton', {
@@ -253,7 +284,7 @@ editor.addButton('mybutton', {
   onclick: () => alert("My Button clicked!")
 });
 ```
-###### TinyMCE 5.0:
+###### TinyMCE 5 - `onAction`
 
 ```js
 editor.ui.registry.addButton('myButton', {
@@ -261,11 +292,16 @@ editor.ui.registry.addButton('myButton', {
   onAction: (buttonApi) => alert('My Button clicked!')
 });
 ```
-#### cmd → onAction
 
-`cmd: string` has been removed as a configuration options, and commands should be executed in `onAction` instead. Example:
+Each type of toolbar button has a different set of API functions. For information using toolbar buttons, see: [Types of toolbar buttons]({{site.baseurl}}/ui-components/typesoftoolbarbuttons/).
 
-##### TinyMCE 4.x:
+##### Migrating cmd to onAction
+
+`cmd: string` has been removed. Commands should be executed using `onAction` instead.
+
+For example:
+
+###### TinyMCE 4 - `cmd`
 
 ```js
 editor.addButton('mybutton', {
@@ -273,7 +309,7 @@ editor.addButton('mybutton', {
   cmd: 'mceSave'
 });
 ```
-##### TinyMCE 5.0:
+###### TinyMCE 5 - `onAction`
 
 ```js
 editor.ui.registry.addButton('myButton', {
@@ -281,21 +317,23 @@ editor.ui.registry.addButton('myButton', {
   onAction: (_) => editor.execCommand('mceSave')
 });
 ```
-#### onpostrender → onSetup
 
-`onpostrender` has been removed and replaced with `onSetup` for menu and toolbar components. There are 3 major changes:
+##### Migrating onpostrender to onSetup
 
-* While [`onpostrender`]({{site.url}}/docs-4x/advanced/creating-a-custom-button/#togglebutton) only ran once, when the editor was created, [`onSetup`]({{site.baseurl}}/ui-components/typesoftoolbarbuttons/#basicbuttonexampleandexplanation) runs every time a component is rendered, e.g. for a menu item, every time its menu becomes visible.
+`onpostrender` has been replaced with `onSetup` for menu and toolbar components.
+
+There are 3 major changes:
+
+* [`onpostrender`]({{site.url}}/docs-4x/advanced/creating-a-custom-button/#togglebutton) was only processed when the editor was created, [`onSetup`]({{site.baseurl}}/ui-components/typesoftoolbarbuttons/#basicbuttonexampleandexplanation) runs every time a component is rendered. For example: `onSetup` for a menu item is processed, every time the menu rendered.
 * `onSetup` now has an API containing some helper functions. Each type of toolbar button has a different API.
-* `onSetup` can be configured to return a function, which will be automatically be called on the teardown of the component, e.g., when a menu item's menu is closed.
-    * If some functionality only runs when the editor is first initialized, it should be passed to `editor.on('init', callback)` as the callback function.
+* `onSetup` can be configured to return a function, which will be automatically be called on the teardown of the component, such as when a menu item's menu is closed.
+    * If a function should only be executed when the editor is first initialized, pass it to `editor.on('init', callback)` as the callback function.
 
-> Caution: If `onSetup` listens to any events using [`editor.on(eventName, callback)`]({{site.baseurl}}/api/tinymce/tinymce.editor/#on) it should return a [`editor.off(eventName, callback)`]({{site.baseurl}}/api/tinymce/tinymce.editor/#off) callback to unbind the event on tear down. Unless the event was `'init'`, `onSetup` should return `(buttonApi) => ed.off(eventName, callback)`.
+> Caution: If `onSetup` listens to any events using [`editor.on(eventName, callback)`]({{site.baseurl}}/api/tinymce/tinymce.editor/#on) it should return a [`editor.off(eventName, callback)`]({{site.baseurl}}/api/tinymce/tinymce.editor/#off) callback to unbind the event on tear down. Unless the event was `'init'`, `onSetup` returns `(buttonApi) => ed.off(eventName, callback)`.
 
+For example:
 
-Example:
-
-#####  TinyMCE 4.x:
+######  TinyMCE 4 - `onpostrender`
 
 ```js
 editor.addButton('currentdate', {
@@ -310,7 +348,7 @@ editor.addButton('currentdate', {
   }
 });
 ```
-#####  TinyMCE 5.0:
+###### TinyMCE 5 - onSetup
 
 In this example, the button's API contains `isDisabled: () => boolean` and `setDisabled: (state: boolean) => void`.
 
@@ -327,14 +365,23 @@ editor.ui.registry.addButton('customDateButton', {
   }
 });
 ```
-> Note: The callback function given to `onSetup` should take a `buttonApi` argument which is an object that contains some helper functions.
+> Note: The callback function given to `onSetup` takes a `buttonApi` argument which is an object that contains some helper functions.
+
+
+### Custom context toolbars
+
+The Context Toolbar accepts toolbar buttons to the editor using the [`addButton`]({{site.baseurl}}/ui-components/typesoftoolbarbuttons/#basicbutton), [`addToggleButton`]({{site.baseurl}}/ui-components/typesoftoolbarbuttons/#togglebutton), [`addSplitButton`]({{site.baseurl}}/ui-components/typesoftoolbarbuttons/#splitbutton), or [`addMenuButton`]({{site.baseurl}}/ui-components/typesoftoolbarbuttons/#menubutton) functions.
+
+The API method for creating custom context toolbars in TinyMCE 5 has changed from [`editor.addContextToolbar()`]({{site.url}}/docs-4x/api/tinymce/tinymce.editor/#addcontexttoolbar) to [`editor.ui.registry.addContextToolbar()`]({{site.baseurl}}/api/tinymce.editor.ui/tinymce.editor.ui.registry/#addcontexttoolbar).
+
+For information on Context Toolbars, see: [Context toolbar]({{site.baseurl}}/ui-components/contexttoolbar).
 
 ### Custom menu items
 
-The following configurations options have changed in the Custom Menu items in TinyMCE 5.0:
-* `addMenuItem` has a new configuration.
-* A new method `addNestedMenuItem` has been added to the options. The `addNestedMenuItem` is an explicit method for creating menu items that have a submenu with more menu items.
-* A new method `addToggleMenuItem` has been added to the options. The `addToggleMenuItem` is an explicit method for creating toggle menu items similar to the new special [toolbar button methods]({{site.baseurl}}/ui-components/typesoftoolbarbuttons/).
+The following configuration options have changed in the custom menu items for TinyMCE 5:
+* [`addMenuItem`]({{site.baseurl}}/api/tinymce.editor.ui/tinymce.editor.ui.registry/#addmenuitem) has a new configuration.
+* A new method [`addNestedMenuItem`]({{site.baseurl}}/api/tinymce.editor.ui/tinymce.editor.ui.registry/#addnestedmenuitem) has been added to the options. The `addNestedMenuItem` is an method for creating menu items that have a sub-menu with one or more menu items.
+* A new method [`addToggleMenuItem`]({{site.baseurl}}/api/tinymce.editor.ui/tinymce.editor.ui.registry/#addtogglemenuitem) has been added to the options. The `addToggleMenuItem` is an method for creating toggle menu items similar to the [toggle toolbar button]({{site.baseurl}}/ui-components/typesoftoolbarbuttons/#togglebutton).
 * The concept of `context` has been removed from menu item configurations. The [`menu` setting]({{site.baseurl}}/configure/editor-appearance/#menu) provides this functionality for TinyMCE 5.
 
 To add a custom item to a menu, use the `menu` setting. All items in a menu need to be declared in order to appear.
@@ -363,23 +410,22 @@ tinymce.init({
 * For an example of the default menu items, see: [User interface options - Example: The TinyMCE Default Menu Items]({{site.baseurl}}/configure/editor-appearance/#examplethetinymcedefaultmenuitems).
 * For a list of the available menu controls provided by TinyMCE and the Tiny Premium Plugins, see: [Editor control identifiers - Menu controls]({{site.baseurl}}/advanced/editor-control-identifiers/#menucontrols).
 
-#### New methods:
+#### New menu item methods
 
 | **New method** | **Description** |
 | -------------- | --------------- |
-| [`editor.ui.registry.addNestedMenuItem()`]({{site.baseurl}}/api/tinymce.editor.ui/tinymce.editor.ui.registry/#addnestedmenuitem) | Adds a menu item that opens a submenu. |
+| [`editor.ui.registry.addNestedMenuItem()`]({{site.baseurl}}/api/tinymce.editor.ui/tinymce.editor.ui.registry/#addnestedmenuitem) | Adds a menu item that opens a sub-menu. |
 | [`editor.ui.registry.addToggleMenuItem()`]({{site.baseurl}}/api/tinymce.editor.ui/tinymce.editor.ui.registry/#addtogglemenuitem) | Adds a custom toggle menu item. |
 
-#### Changed methods:
+#### Changed menu item methods
 
 | **Old method** | **New method** | **Description** |
 | -------------- | -------------- | --------------- |
 | [`editor.addMenuItem: (name, spec)`]({{site.url}}/docs-4x/api/tinymce/tinymce.editor/#addmenuitem) | [`editor.ui.registry.addMenuItem()`]({{site.baseurl}}/api/tinymce.editor.ui/tinymce.editor.ui.registry/#addmenuitem) | Adds a custom basic menu item. |
 
+The following examples show custom menu item configurations in TinyMCE 4 and TinyMCE 5:
 
-The following are examples of Custom Menu Item configurations in TinyMCE 4.x and TinyMCE 5.0:
-
-#### TinyMCE 4.x
+#### TinyMCE 4 - example custom menu item
 
 ```js
 editor.addMenuItem('example', {
@@ -388,7 +434,7 @@ editor.addMenuItem('example', {
  onclick: () => editor.insertContent('Hello world!!');
 });
 ```
-#### TinyMCE 5.0
+#### TinyMCE 5 - example custom menu item
 
 ```js
 editor.ui.registry.addMenuItem('example', {
@@ -397,13 +443,13 @@ editor.ui.registry.addMenuItem('example', {
 });
 ```
 
-For more information on how these methods have changed, see [docs]({{site.baseurl}}/ui-components/menuitems/).
+For information on how to use these methods, see: [Custom menu items]({{site.baseurl}}/ui-components/menuitems/).
 
 ### Custom dialogs
 
 Dialogs are still opened via the `editor.windowManager.open(config)` api, however a number of configuration options have changed.
 
-##### Removed settings:
+##### Removed dialog settings:
 
 | **Removed setting** | **Description** |
 | ------------------- | --------------- |
@@ -413,7 +459,7 @@ Dialogs are still opened via the `editor.windowManager.open(config)` api, howeve
 | `onpostrender` | `onpostrender` has been removed for the dialog configuration. The dialog configuration now includes an `initialData` setting for providing the initial state and an API to fetch or update the data. Refer to [this]({{site.baseurl}}/ui-components/dialog/#interactiveexampleusingredialconfigvoid) section for more information on how to configure `initialData`. |
 | [`url`]({{site.url}}/docs-4x/advanced/creating-custom-dialogs/) | URL dialogs now have their own API. For more information, see [`Custom URL dialogs`](#customurldialogs). |
 
-##### New settings:
+##### New dialog settings:
 
 | **New setting** | **Description** |
 | --------------- | --------------- |
@@ -421,15 +467,15 @@ Dialogs are still opened via the `editor.windowManager.open(config)` api, howeve
 | [`onCancel`]({{site.baseurl}}/ui-components/dialog/#configurationoptions) | A callback that is called when the dialog is cancelled without submitting any changes. |
 | [`onTabChange`]({{site.baseurl}}/ui-components/dialog/#configurationoptions) | A callback that is called when switching tabs in a [TabPanel]({{site.baseurl}}/ui-components/dialogcomponents/#tabpanel). |
 
-##### Changed settings:
+##### Changed dialog settings:
 
 | **Old setting** | **New setting** | **Description** |
 | --------------- | --------------- | --------------- |
 | `onchange` | [`onChange`]({{site.baseurl}}/ui-components/dialog/#configurationoptions) | `onchange` now takes a callback function which is passed an API helper function and data. |
 
-> Note: `onchange`, a callback that was previously used to detect changes on each component, has been removed. The changes are now tracked by a single callback function with the change data. Refer to the [Interactive example using redial(config): void]({{site.baseurl}}/ui-components/dialog/#interactiveexampleusingredialconfigvoid) for more information.
+> Note: The `onchange` callback has been removed. Changes are now tracked using the redial callback function. For information on using redial, see: [Interactive example using redial]({{site.baseurl}}/ui-components/dialog/#interactiveexampleusingredial).
 
-#### TinyMCE 4.x
+#### TinyMCE 4 - `onchange`
 
 ```js
 const config = {
@@ -447,7 +493,8 @@ const config = {
   ]
 };
 ```
-#### TinyMCE 5.0
+
+#### TinyMCE 5 - `onChange`
 
 ```js
 const config = {
@@ -470,26 +517,49 @@ const config = {
 };
 ```
 
-For more information about the new dialog configuration, see the [`Dialog`]({{site.baseurl}}/ui-components/dialog/) and [`Dialog components`]({{site.baseurl}}/ui-components/dialogcomponents/) docs.
+For information about the new dialog configuration, see the [Dialog]({{site.baseurl}}/ui-components/dialog/) and [Dialog components]({{site.baseurl}}/ui-components/dialogcomponents/) documentation.
+
+#### Changes to the Custom dialog API
+
+A redesign of the dialog API resulted in the following changes:
+
+**Removed APIs**
+
+| API                                                                                                        | Type     | Description                                                                                                                          |
+| ---------------------------------------------------------------------------------------------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------ |
+| [`tinymce.WindowManager.getParams()`]({{site.url}}/docs-4x/api/tinymce/tinymce.windowmanager/#getparams)   | Method   | Returned the params of the last window open call. This was used in iframe based dialog to get params passed from the tinymce plugin. |
+| [`tinymce.WindowManager.getWindows()`]({{site.url}}/docs-4x/api/tinymce/tinymce.windowmanager/#getwindows) | Method   | Returned the currently opened window objects.                                                                                        |
+| [`tinymce.WindowManager.setParams()`]({{site.url}}/docs-4x/api/tinymce/tinymce.windowmanager/#setparams)   | Method   | Set the params of the last opened window.                                                                                            |
+| `tinymce.WindowManager.windows`                                                                            | Property | Returned an array of opened dialogs.                                                                                                 |
+
+**Changed API Methods**
+
+| Method                                                                                           | Description                 | Change                                     |
+| ------------------------------------------------------------------------------------------------ | --------------------------- | ------------------------------------------ |
+| [`tinymce.WindowManager.alert()`]({{site.baseurl}}/api/tinymce/tinymce.windowmanager/#alert)     | Creates an alert dialog.     | A window object is no-longer returned.     |
+| [`tinymce.WindowManager.confirm()`]({{site.baseurl}}/api/tinymce/tinymce.windowmanager/#confirm) | Creates a "confirm" dialog.   | A window object is no-longer returned.     |
+| [`tinymce.WindowManager.close()`]({{site.baseurl}}/api/tinymce/tinymce.windowmanager/#close)     | Closes the top most window. | Only closes dialogs created with `open()`. |
+
+For information on the new Dialog API, see: [UI components - Dialog instance API]({{site.baseurl}}/ui-components/dialog/#dialoginstanceapi).
 
 ### Custom URL dialogs
 
-In TinyMCE 4.x, URL dialogs were included as part of the `editor.windowManager.open()` API. However, in TinyMCE 5.0 they've been moved to a new API [`editor.windowManager.openUrl()`]({{site.baseurl}}/api/tinymce/tinymce.windowmanager/#openurl). This allows for clear separation and configuration between the two different types of dialogs in TinyMCE.
+The URL dialogs have moved from the `editor.windowManager.open()` API to the [`editor.windowManager.openUrl()`]({{site.baseurl}}/api/tinymce/tinymce.windowmanager/#openurl) API. This provides clear separation of the two different types of dialogs in TinyMCE.
 
-##### Removed settings:
+##### Removed URL dialog settings:
 
 | **Old setting** | **New setting** | **Description** |
 | --------------- | --------------- | --------------- |
 | `file` | [`url`]({{site.baseurl}}/ui-components/urldialog/#configurationoptions) | The `file` setting has been removed in TinyMCE 5.0 and replaced with `url`. |
 
-##### New settings:
+##### New URL dialog settings:
 
 | **New setting** | **Description** |
 | --------------- | --------------- |
 | [`onCancel`]({{site.baseurl}}/ui-components/urldialog/#configurationoptions) | A callback that is called when the dialog is cancelled without submitting any changes. |
 | [`onMessage`]({{site.baseurl}}/ui-components/urldialog/#configurationoptions) | A callback that is called when the dialog receives a message via the browser `window.postMessage` API. |
 
-#### TinyMCE 4.x
+#### TinyMCE 4 - `windowManager.open()`
 
 ```js
 editor.windowManager.open({
@@ -497,7 +567,8 @@ editor.windowManager.open({
   url: 'http://mysite.com/external-page.html'
 });
 ```
-#### TinyMCE 5.0
+
+#### TinyMCE 5 - `windowManager.openUrl()`
 
 ```js
 editor.windowManager.openUrl({
@@ -506,33 +577,30 @@ editor.windowManager.openUrl({
 });
 ```
 
-For more information about the new URL dialog configuration, see the [`URL dialog`]({{site.baseurl}}/ui-components/urldialog/) docs.
-
-<!-- ### Custom sidebars
-
-Docs are coming soon! -->
-
-### Custom context forms
-
-[ContextForm]({{site.baseurl}}/ui-components/contextform/) consists of an input field and a series of related buttons. Context forms can be shown wherever a context toolbar can be displayed. Also, when a context form is registered containing a `launch` configuration, a special context toolbar button with name **\`form:${name}\`** is registered which will launch that particular context form. ContextForms are a generalization of the `Insert Link` form that existed in the original [inlite]({{site.url}}/docs-4x/themes/inlite/#quicklink) theme from TinyMCE 4.
+For information about the new URL dialog configuration, see: [URL dialog]({{site.baseurl}}/ui-components/urldialog/).
 
 ## Plugins
 
-Each release of TinyMCE adds new features and functionality. Occasionally some features and functionalities are removed because a better option is added.
-Here are the details about the features and functionalities that were removed in TinyMCE 5.0.
+The following section covers the changed and removed plugin features for TinyMCE 5.
 
-### Removed features
+* [Removed plugin settings](#removedpluginsettings)
+* [Changed plugin settings](#changedpluginsettings)
+* [Changed plugins](#changedplugins)
+* [Spellchecker plugin](#spellcheckerplugin)
+* [Table plugin](#tableplugin)
 
-Plugins with dialogs no longer have `height` or `width` settings for their dialogs. The dialog component now uses CSS3 and a predefined `small`, `medium`, and `large` template to specify the dimensions.
+### Removed plugin settings
 
-The following plugins from TinyMCE 4.x do not require height or width options to be specified in TinyMCE 5.0:
+The `height` or `width` settings have been removed for plugin dialogs. The dialog component now uses CSS3 and a predefined `small`, `medium`, and `large` template to specify the dimensions.
+
+The following plugins from TinyMCE 4 do not require height or width options to be specified in TinyMCE 5:
 
 * [Code]({{site.baseurl}}/plugins/code/)
 * [Codesample]({{site.baseurl}}/plugins/codesample/)
 * [Preview]({{site.baseurl}}/plugins/preview/)
 * [Template]({{site.baseurl}}/plugins/template/)
 
-#### Changed plugin settings
+### Changed plugin settings
 
 | **TinyMCE 4.x** | **TinyMCE 5.0** |
 | [`autoresize_min_height`]({{site.url}}/docs-4x/plugins/autoresize/#autoresize_min_height) | [`min_height`]({{site.baseurl}}/configure/editor-appearance/#min_height) |
@@ -540,12 +608,9 @@ The following plugins from TinyMCE 4.x do not require height or width options to
 | [`textcolor_cols`]({{site.url}}/docs-4x/plugins/textcolor/#textcolor_cols) | [`color_cols`]({{site.baseurl}}/configure/content-appearance/#color_cols) |
 | [`textcolor_map`]({{site.url}}/docs-4x/plugins/textcolor/#textcolor_map) | [`color_map`]({{site.baseurl}}/configure/content-appearance/#color_map) |
 
+### Changed plugins
 
-Please read the [docs]({{site.baseurl}}/plugins/) for more information on the Tiny 4.x configuration options.
-
-### Changed features
-
-These features have either changed or have been deleted in TinyMCE 5.0.
+These features have either changed or have been deleted in TinyMCE 5.
 
 | **Plugin name** | **Description** |
 | --------------- |  -------------- |
@@ -553,25 +618,21 @@ These features have either changed or have been deleted in TinyMCE 5.0.
 | [ColorPicker]({{site.url}}/docs-4x/plugins/colorpicker/) | Moved to the core. See the [docs]({{site.baseurl}}/configure/content-appearance/#color_picker}}). |
 | [TextColor]({{site.url}}/docs-4x/plugins/textcolor/) | The `textcolor` plugin was removed and this setting is has been replaced by [`text_color`]({{site.baseurl}}/configure/content-appearance/#text_color) in TinyMCE 5.0. |
 
-#### Custom context toolbars
-
-The Context Toolbar accepts toolbar buttons that were previously added to the editor using the editor's `addButton`, `addToggleButton`, `addSplitButton` or a`ddMenuButton` functions. The method for creating custom context toolbars in TinyMCE 5.0 has also been changed from `editor.addContextToolbar()` to `editor.ui.registry.addContextToolbar()`.
-
-For information on Context Toolbars, see the [docs]({{site.baseurl}}/ui-components/contexttoolbar).
-
 #### Custom context menus
 
-The [Context menu]({{site.url}}/docs-4x/plugins/contextmenu/) is no longer a plugin, it is part of the core and always enabled. Where TinyMCE 4.x only supported adding registered menu items, the new context menu also allows plugins to register "sections" of the context menu. These sections are dynamic and may show or hide depending on the cursor position when the context menu is opened. For example, the default context menu config is now `'link image editimage table spelling'` which are all plugin section references, not menu items. For information on using context menus, see: [UI components - Context menu]({{site.baseurl}}/ui-components/contextmenu/).
+The [Context menus]({{site.url}}/docs-4x/plugins/contextmenu/) are part of the core and enable by default in TinyMCE 5. TinyMCE 5 supports adding registered menu items and allows plugins to register "sections" of the context menu. These sections show or hide depending on the cursor position when the context menu is opened. The default context menu consists of plugin section references, not menu items.
 
-##### New methods:
+For information on using context menus and the default context menu configuration, see: [UI components - Context menu]({{site.baseurl}}/ui-components/contextmenu/).
+
+##### New context menu methods:
 
 | **New method** | **Description** |
 | ----------- | -------------- |
 | [`editor.ui.registry.addContextMenu()`]({{site.baseurl}}/api/tinymce.editor.ui/tinymce.editor.ui.registry/#addcontextmenu) | Adds a custom context menu. |
 
-For more information on Context Menus, see the [docs]({{site.baseurl}}/ui-components/contextmenu).
+For information on Context Menus, see [UI components - Context menu]({{site.baseurl}}/ui-components/contextmenu).
 
-### Spellchecker
+### Spellchecker plugin
 
 [`spellchecker_callback`]({{site.baseurl}}/plugins/spellchecker/#spellchecker_callback) has been updated to remove a legacy format for the `success` callback, which accepted a mapping object of misspelled words to suggestions. For example:
 
@@ -605,53 +666,14 @@ spellchecker_callback: function(method, text, success, failure) {
 
 For information on the `spellchecker_callback` setting, see: [Spell Checker plugin - spellchecker_callback]({{site.baseurl}}/plugins/spellchecker/#spellchecker_callback)
 
-### Table
+### Table plugin
 
-Changes between TinyMCE 4.x and TinyMCE 5.0:
+Changes between TinyMCE 4 and TinyMCE 5:
 
 * The text field for Styles have been removed from the advanced table of the dialogs. This simplifies the dialogs for users and gives the editor a stricter control over the table styles which ensures that the styles are correct.
-* Improved methods for how styles are set and retrieved from tables, rows, and cells to make these operations more reliable.
-* Using CSS for styling, and therefore could remove a few legacy data attributes that were set on tables, rows, and cells which are no longer the good practice. This makes the output HTML cleaner and more modern.
-* When opening a properties dialog with a single table, row, or cell selected, the dialog will autofill with the relevant existing values. If multiple rows or cells are selected to open the relevant properties dialog, TinyMCE 4.x left all the dialog fields blank. TinyMCE 5.0 automatically fills values for all the selected rows or cells which have the same values. The fields which have no existing value or have different values are left empty.
-* `Border` input field in the table properties dialog is now called `Border width` for better clarity.
+* When opening a properties dialog with a single table, row, or cell selected, the dialog will autofill with the relevant existing values. When multiple rows or cells are selected:
 
-### Other removed component configuration settings
+  * If the selected rows or cells have the same values, TinyMCE 5 automatically fills the dialog values.
+  * If the fields which have no existing value or have different values, the dialog fields are left empty.
+* `Border` input field in the table properties dialog is now called `Border width`.
 
-All inline style configurations have been removed in TinyMCE 5.0 in favor of modern CSS.  This affects all TinyMCE 4.x UI component configurations.
-[Skins]({{site.url}}/advanced/creating-a-skin/) should be used for custom styling in TinyMCE 5.
-
-Removed style settings:
-* `flex`
-* `border`
-* `layout` - Use the TinyMCE 5 UI components to compose a custom layout.
-* `spacing`
-* `padding`
-* `align`
-* `pack`
-* `no-wrap`
-
-
-### Other API changes
-
-#### tinymce.WindowManager
-
-A redesign of the dialog API resulted in the following changes:
-
-**Removed APIs**
-
-| API                                                                                                        | Type     | Description                                                                                                                          |
-| ---------------------------------------------------------------------------------------------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------ |
-| [`tinymce.WindowManager.getParams()`]({{site.url}}/docs-4x/api/tinymce/tinymce.windowmanager/#getparams)   | Method   | Returned the params of the last window open call. This was used in iframe based dialog to get params passed from the tinymce plugin. |
-| [`tinymce.WindowManager.getWindows()`]({{site.url}}/docs-4x/api/tinymce/tinymce.windowmanager/#getwindows) | Method   | Returned the currently opened window objects.                                                                                        |
-| [`tinymce.WindowManager.setParams()`]({{site.url}}/docs-4x/api/tinymce/tinymce.windowmanager/#setparams)   | Method   | Set the params of the last opened window.                                                                                            |
-| `tinymce.WindowManager.windows`                                                                            | Property | Returned an array of opened dialogs.                                                                                                 |
-
-**Changed API Methods**
-
-| Method                                                                                           | Description                 | Change                                     |
-| ------------------------------------------------------------------------------------------------ | --------------------------- | ------------------------------------------ |
-| [`tinymce.WindowManager.alert()`]({{site.baseurl}}/api/tinymce/tinymce.windowmanager/#alert)     | Creates an alert dialog.     | A window object is no-longer returned.     |
-| [`tinymce.WindowManager.confirm()`]({{site.baseurl}}/api/tinymce/tinymce.windowmanager/#confirm) | Creates a "confirm" dialog.   | A window object is no-longer returned.     |
-| [`tinymce.WindowManager.close()`]({{site.baseurl}}/api/tinymce/tinymce.windowmanager/#close)     | Closes the top most window. | Only closes dialogs created with `open()`. |
-
-For information on the new Dialog API, see: [UI components - Dialog instance API]({{site.baseurl}}/ui-components/dialog/#dialoginstanceapi).

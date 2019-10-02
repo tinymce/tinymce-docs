@@ -41,7 +41,7 @@ For information on using the latest development and testing builds, see: [Cloud 
 ### Editor: Changes to API Methods
 
 * All TinyMCE 4 API methods for creating UI components have been removed. New methods have been added for TinyMCE 5. For information on creating and customizing UI components, see: [User interface components]({{site.baseurl}}/ui-components/).
-* No core editor methods were removed (such as: `tinymce`, `editor`, `selection`, and `on()`).
+* No core editor API methods were removed.
 
 
 ### Editor: Changes to Settings
@@ -62,8 +62,8 @@ TinyMCE 5 includes the following changes to editor-core settings:
 
 | **Setting**                                                      | **TinyMCE 4**                                                                                 | **TinyMCE 5**                                                                                                                                                              |
 | ---------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [`height`]({{site.baseurl}}/configure/editor-appearance/#height) | Set the height of the editable area of the editor.<br/>Only accepted supported number values. | Sets the overall height of the editor, including the menubar, toolbars, and statusbar.<br/>Supports numbers and strings. Assumes strings are a valid CSS value for height. |
-| [`width`]({{site.baseurl}}/configure/editor-appearance/#width)   | Only accepted supported number values.                                                        | Supports numbers and strings. Assumes strings are a valid CSS value for width.                                                                                             |
+| [`height`]({{site.baseurl}}/configure/editor-appearance/#height) | Set the height of the editable area of the editor.<br/>Supported number values. | Sets the overall height of the editor, including the menubar, toolbars, and statusbar.<br/>Supports numbers and strings. Assumes strings are a valid CSS value for height. |
+| [`width`]({{site.baseurl}}/configure/editor-appearance/#width)   | Supported number values.                                                        | Supports numbers and strings. Assumes strings are a valid CSS value for width.                                                                                             |
 | [`resize`]({{site.baseurl}}/configure/editor-appearance/#resize) | `true` by default.                                                                            | `true` by default if the `autoresize` plugin is not enabled.<br/>`false` by default if the `autoresize` plugin is enabled.                                                 |
 
 #### Removed Editor settings
@@ -137,7 +137,7 @@ Most themes provided with TinyMCE 4 have been removed from TinyMCE 5 and are now
 
 ### Inlite theme removed
 
-The [Inlite]({{site.url}}/docs-4x/themes/inlite/) theme is not supported in TinyMCE 5.
+The [Inlite]({{site.url}}/docs-4x/themes/inlite/) theme has been removed from TinyMCE 5.
 
 The Inlite theme features are provided by the [Quick Toolbar (`quickbars`)]({{site.baseurl}}/plugins/quickbars/) plugin for TinyMCE 5. The Inlite [`quicklink`]({{site.url}}/docs-4x/themes/inlite/#quicklink) functionality is now provided by [Context Forms]({{site.baseurl}}/ui-components/contextform/).
 
@@ -155,7 +155,7 @@ This will provide a similar but improved [distraction-free]({{site.baseurl}}/gen
 
 ### Modern theme removed
 
-The [Modern]({{site.url}}/docs-4x/themes/modern/) theme is not supported in TinyMCE 5.  The Modern theme's UI library [`tinymce.ui.*`]({{site.url}}/docs-4x/api/tinymce.ui/) has also been removed. This change may impact integrations depending upon the level of customization.
+The [Modern]({{site.url}}/docs-4x/themes/modern/) theme has been removed from TinyMCE 5.  The Modern theme's UI library [`tinymce.ui.*`]({{site.url}}/docs-4x/api/tinymce.ui/) has also been removed. This change may impact integrations depending upon the level of customization.
 
 ### Themes: Removed events
 
@@ -166,7 +166,7 @@ The [Modern]({{site.url}}/docs-4x/themes/modern/) theme is not supported in Tiny
 
 ### Mobile theme
 
-The TinyMCE 4 [Mobile theme]({{site.baseurl}}/mobile/) is default behavior for the editor when it is loaded on a mobile device.
+The TinyMCE 4 [Mobile theme]({{site.baseurl}}/mobile/) is the default behavior for the editor when it is loaded on a mobile device.
 
 ## User Interface components
 

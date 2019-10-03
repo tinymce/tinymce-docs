@@ -40,9 +40,7 @@ For information on using the latest development and testing builds, see: [Cloud 
 
 ### Editor: Changes to API Methods
 
-* All TinyMCE 4 API methods for creating UI components have been removed. New methods have been added for TinyMCE 5. For information on creating and customizing UI components, see: [User interface components]({{site.baseurl}}/ui-components/).
-* No core editor API methods were removed.
-
+All TinyMCE 4 API methods for creating UI components have been removed. New methods have been added for TinyMCE 5. For information on creating and customizing UI components, see: [User interface components]({{site.baseurl}}/ui-components/).
 
 ### Editor: Changes to Settings
 
@@ -469,9 +467,9 @@ Dialogs are still opened using the `editor.windowManager.open(config)` api, howe
 
 | **Old setting** | **New setting** | **Description** |
 | --------------- | --------------- | --------------- |
-| `onchange` | [`onChange`]({{site.baseurl}}/ui-components/dialog/#configurationoptions) | `onchange` now takes a callback function which is passed an API helper function and data. |
+| `onchange` | [`onChange`]({{site.baseurl}}/ui-components/dialog/#configurationoptions) | `onChange` now takes a callback function which is passed an API helper function and data. |
 
-> Note: The `onchange` callback has been removed. Changes are now tracked using the redial callback function. For information on using redial, see: [Interactive example using redial]({{site.baseurl}}/ui-components/dialog/#interactiveexampleusingredial).
+> Note: The `onchange` callback function provided within individual components has been removed. A single `onChange` callback function provides the same functionality for all components in TinyMCE 5.
 
 #### TinyMCE 4 - `onchange`
 
@@ -548,7 +546,7 @@ The URL dialogs have moved from the `editor.windowManager.open()` API to the [`e
 
 | **Old setting** | **New setting** | **Description** |
 | --------------- | --------------- | --------------- |
-| `file` | [`url`]({{site.baseurl}}/ui-components/urldialog/#configurationoptions) | The `file` setting has been removed in TinyMCE 5.0 and replaced with `url`. |
+| `file` | [`url`]({{site.baseurl}}/ui-components/urldialog/#configurationoptions) | The `file` setting has been removed in TinyMCE 5 and replaced with `url`. |
 
 ##### New URL dialog settings:
 
@@ -589,9 +587,9 @@ The following section covers the changed and removed plugin features for TinyMCE
 
 ### Removed plugin settings
 
-The `height` or `width` settings have been removed for plugin dialogs. The dialog component now uses CSS3 and a predefined `small`, `medium`, and `large` template to specify the dimensions.
+The `height` and `width` settings have been removed from plugin dialogs. The dialog component now uses CSS3 and a predefined `small`, `medium`, and `large` template to specify the dimensions.
 
-The following plugins from TinyMCE 4 do not require height or width options to be specified in TinyMCE 5:
+The following plugins from TinyMCE 4 do not require height or width options in TinyMCE 5:
 
 * [Code]({{site.baseurl}}/plugins/code/)
 * [Codesample]({{site.baseurl}}/plugins/codesample/)
@@ -600,7 +598,7 @@ The following plugins from TinyMCE 4 do not require height or width options to b
 
 ### Changed plugin settings
 
-| **TinyMCE 4.x**                                                                           | **TinyMCE 5.0**                                                           |
+| **TinyMCE 4**                                                                           | **TinyMCE 5**                                                           |
 | ----------------------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
 | [`autoresize_min_height`]({{site.url}}/docs-4x/plugins/autoresize/#autoresize_min_height) | [`min_height`]({{site.baseurl}}/configure/editor-appearance/#min_height)  |
 | [`autoresize_max_height`]({{site.url}}/docs-4x/plugins/autoresize/#autoresize_max_height) | [`max_height`]({{site.baseurl}}/configure/editor-appearance/#max_height)  |
@@ -615,11 +613,11 @@ These features have either changed or have been deleted in TinyMCE 5.
 | --------------- |  -------------- |
 | [ContextMenu]({{site.url}}/docs-4x/plugins/contextmenu/) | New API. See the [docs]({{site.baseurl}}/ui-components/contextmenu/). |
 | [ColorPicker]({{site.url}}/docs-4x/plugins/colorpicker/) | Moved to the core. See the [docs]({{site.baseurl}}/configure/content-appearance/#color_picker}}). |
-| [TextColor]({{site.url}}/docs-4x/plugins/textcolor/) | The `textcolor` plugin was removed and this setting is has been replaced by [`text_color`]({{site.baseurl}}/configure/content-appearance/#text_color) in TinyMCE 5.0. |
+| [TextColor]({{site.url}}/docs-4x/plugins/textcolor/) | The `textcolor` plugin was removed and this setting is has been replaced by [`text_color`]({{site.baseurl}}/configure/content-appearance/#text_color) in TinyMCE 5. |
 
 #### Custom context menus
 
-The [Context menus]({{site.url}}/docs-4x/plugins/contextmenu/) are part of the core and enable by default in TinyMCE 5. TinyMCE 5 supports adding registered menu items and allows plugins to register "sections" of the context menu. These sections show or hide depending on the cursor position when the context menu is opened. The default context menu consists of plugin section references, not menu items.
+The [Context menus]({{site.url}}/docs-4x/plugins/contextmenu/) are part of the core and enabled by default in TinyMCE 5. TinyMCE 5 supports adding registered menu items and allows plugins to register "sections" of the context menu. These sections show or hide depending on the cursor position when the context menu is opened.
 
 For information on using context menus and the default context menu configuration, see: [UI components - Context menu]({{site.baseurl}}/ui-components/contextmenu/).
 

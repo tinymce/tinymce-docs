@@ -3,7 +3,7 @@ layout: default
 title: Full Page plugin
 title_nav: Full Page
 description: Edit all metadata and document properties such as title, keywords and description.
-keywords: fullpage fullpage_default_doctype fullpage_default_encoding fullpage_default_font_size fullpage_default_font_family fullpage_default_langcode fullpage_default_title fullpage_default_text_color fullpage_default_xml_pi fullpage_hide_in_source_view
+keywords: fullpage fullpage_default_doctype fullpage_default_encoding fullpage_default_font_size fullpage_default_font_family fullpage_default_title fullpage_default_text_color fullpage_default_xml_pi fullpage_hide_in_source_view
 controls: toolbar button, menu item
 ---
 
@@ -89,22 +89,6 @@ tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "fullpage",
   fullpage_default_font_family: "'Times New Roman', Georgia, Serif;"
-});
-```
-
-### `fullpage_default_langcode`
-
-This option enables you to specify the default language codes for the output HTML.
-
-**Type:** `String`
-
-##### Example
-
-```js
-tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "fullpage",
-  fullpage_default_langcode: "en-US"
 });
 ```
 

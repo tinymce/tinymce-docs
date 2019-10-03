@@ -8,10 +8,10 @@ keywords: toolbar toolbarbuttons buttons toolbarbuttonsapi
 
 There are four types of Toolbar Buttons in TinyMCE 5.0:
 
-* Basic button
-* Toggle button
-* Split button
-* Menu button
+* [Basic button](#basicbutton)
+* [Toggle button](#togglebutton)
+* [Split button](#splitbutton)
+* [Menu button](#menubutton)
 
 ### Basic button
 

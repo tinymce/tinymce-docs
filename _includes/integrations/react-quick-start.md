@@ -128,7 +128,7 @@ To deploy the application to a local HTTP Server:
 
 The application has now been deployed on the web server.
 
-> **Note:** Additional configuration is required to deploy the application outside the web server root directory, such as http://localhost:<port>/my_react_application.
+> **Note:** Additional configuration is required to deploy the application outside the web server root directory, such as http://localhost:&#60;port&#62;/my_react_application.
 
 ### Next Steps
 

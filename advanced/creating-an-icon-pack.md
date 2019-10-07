@@ -47,7 +47,7 @@ At this time, TinyMCE expects the SVGs to be shapes, not strokes. SVG files cont
 
 ### 3. Build the icon pack
 
-The icon pack for TinyMCE is built using NPM. Perform these steps to build an icon pack that can be consumed by TinyMCE:
+The icon pack for TinyMCE is built using Gulp. Perform these steps to build an icon pack that can be consumed by TinyMCE:
 
 1. Open a terminal window and navigate to the icon pack's root folder
 2. Build the icon pack using the command `gulp`

@@ -34,7 +34,7 @@ Perform the following steps to create a custom icon pack.
 
 We have put together a icon template project to get you started:
 
-1. Download or `git clone` [Oxide Icon Pack Template from Github](LINK)
+1. Download or `git clone` [Oxide Icon Pack Template from Github](https://github.com/tinymce/oxide-icon-pack-template)
 2. Open a terminal window and navigate to the folder you just downloaded
 3. Run the command `npm install` to install all dependencies.
 4. You will be prompted to enter a name for your icon pack during install. You will use this name with the [icons](https://www.tiny.cloud/docs/configure/editor-appearance/#icons) option later to get the icons into TinyMCE.

@@ -95,7 +95,45 @@ This procedure requires:
 
     * **TinyMCE Self-hosted**
 
-      TinyMCE can be self-hosted by: deploying TinyMCE independent of the Angular application, or bundling TinyMCE with the Angular application.
+      TinyMCE can be self-hosted by: including TinyMCE within the application, deploying TinyMCE independent of the Angular application, or bundling TinyMCE with the Angular application.
+
+      * **Including TinyMCE within the Application**
+
+        To load TinyMCE and TinyMCE-Angular in a project managed by the [Angular CLI Tool](https://angular.io/cli):
+
+        1. Install the `tinymce-angular` package and save it to your `package.json` with `--save`.
+
+            ```
+            $ npm install --save tinymce
+            ```
+        2. Using a text editor, open `angular.json` and add TinyMCE to the *global scripts* tag.
+
+            For example:
+
+            ```json
+            "scripts": [
+              "node_modules/tinymce/tinymce.min.js"
+            ]
+            ```
+        3. Using a text editor; open `angular.json` and add the TinyMCE skins, themes, and plugins to the `assets` property.
+
+            ```json
+            "assets": [
+              { "glob": "**/*", "input": "node_modules/tinymce/skins", "output": "/tinymce/skins/" },
+              { "glob": "**/*", "input": "node_modules/tinymce/themes", "output": "/tinymce/themes/" },
+              { "glob": "**/*", "input": "node_modules/tinymce/plugins", "output": "/tinymce/plugins/" }
+            ]
+            ```
+        4. Update the editor configuration to include the `base_url` and `suffix` options.
+
+            ```html
+            <editor [init]="{
+              base_url: '/tinymce', // Root for resources
+              suffix: '.min',       // Suffix to use when loading resources
+              plugins: 'lists advlist',
+              toolbar: 'undo redo | bold italic | bullist numlist outdent indent'
+            }"></editor>
+            ```
 
       * **Deploy TinyMCE independent of the Angular application**
 
@@ -112,11 +150,7 @@ This procedure requires:
 
         To bundle TinyMCE using a module loader (such as Webpack and Browserify), see: [Usage with module loaders]({{site.baseurl}}/advanced/usage-with-module-loaders/).
 
-      * **Including TinyMCE with the Application**
-
-        For details, see: [Including TinyMCE within the Angular application](#includingtinymcewithintheangularapplication).
-
-7. Test the application using the Angular development server.
+8. Test the application using the Angular development server.
     * To start the development server, navigate to the `tinymce-angular-demo` directory and run:
 
         ```

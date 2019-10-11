@@ -2,7 +2,7 @@
 
 **Covered in this section:**
 
-- [Installing the TinyMCE Angular integration using the NPM](#installingthetinymceangularintegrationusingnpm)
+- [Installing the TinyMCE Angular integration using NPM](#installingthetinymceangularintegrationusingnpm)
 - [Configuring the editor](#configuringtheeditor)
 - [Using the TinyMCE Angular integration](#usingthetinymceangularintegration)
 
@@ -19,7 +19,6 @@
 
 - [Using the `ngModel` directive](#usingthengmodeldirective)
 - [Using with reactive forms](#usingwithreactiveforms)
-- [Including TinyMCE within the Angular application](#includingtinymcewithintheangularapplication)
 - [Event binding](#eventbinding)
 
 ### Installing the TinyMCE Angular integration using NPM
@@ -132,7 +131,7 @@ The `disabled` property can dynamically switch the editor between a "disabled" (
 
 ```html
 <Editor
-  [disabled]=true
+  [disabled]="true"
 />
 ```
 
@@ -278,44 +277,6 @@ To use TinyMCE Angular component with reactive forms:
 
 For information on using reactive forms, see: [Angular documentation - Reactive Forms](https://angular.io/guide/reactive-forms).
 
-### Including TinyMCE within the Angular application
-
-To load TinyMCE and TinyMCE-Angular in a project managed by the [Angular CLI Tool](https://angular.io/cli):
-
-1. Install the `tinymce-angular` package and save it to your `package.json` with `--save`.
-
-    ```
-    $ npm install --save tinymce
-    ```
-2. Using a text editor, open `angular.json` and add TinyMCE to the *global scripts* tag.
-
-    For example:
-
-    ```json
-    "scripts": [
-      "node_modules/tinymce/tinymce.min.js"
-    ]
-    ```
-3. Using a text editor; open `angular.json` and add the TinyMCE skins, themes, and plugins to the `assets` property.
-
-    ```json
-    "assets": [
-      { "glob": "**/*", "input": "node_modules/tinymce/skins", "output": "/tinymce/skins/" },
-      { "glob": "**/*", "input": "node_modules/tinymce/themes", "output": "/tinymce/themes/" },
-      { "glob": "**/*", "input": "node_modules/tinymce/plugins", "output": "/tinymce/plugins/" }
-    ]
-    ```
-4. Update the editor configuration to include the `base_url` and `suffix` options.
-
-    ```html
-    <editor [init]="{
-      base_url: '/tinymce', // Root for resources
-      suffix: '.min',       // Suffix to use when loading resources
-      plugins: 'lists advlist',
-      toolbar: 'undo redo | bold italic | bullist numlist outdent indent'
-    }"></editor>
-    ```
-
 ### Event binding
 
 Functions can be bound to editor events, such as:
@@ -324,7 +285,7 @@ Functions can be bound to editor events, such as:
 <editor (onSelectionChange)="handleEvent($event)"></editor>
 ```
 
-When the handler is called (`handleEvent` in this example), it returns an object containing two properties:
+When the handler is called (`handleEvent` in this example), it is called with two arguements:
 
 * `event` - The event object.
 * `editor` - A reference to the editor.

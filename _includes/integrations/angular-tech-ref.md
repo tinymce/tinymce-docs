@@ -285,7 +285,7 @@ Functions can be bound to editor events, such as:
 <editor (onSelectionChange)="handleEvent($event)"></editor>
 ```
 
-When the handler is called (`handleEvent` in this example), it is called with two arguements:
+When the handler is called (`handleEvent` in this example), it is called with two arguments:
 
 * `event` - The event object.
 * `editor` - A reference to the editor.

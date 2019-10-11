@@ -13,7 +13,7 @@
     - [`init`](#init)
     - [`initial-value`](#initial-value)
     - [`inline`](#inline)
-    - [`modelEvents`](#modelevents)
+    - [`model-events`](#model-events)
     - [`plugins`](#plugins)
     - [`tag-name`](#tag-name)
     - [`toolbar`](#toolbar)
@@ -41,7 +41,7 @@ To install the `tinymce-vue` package and save it to your `package.json`.
         // NOTE: default needed after require
         var Editor = require('@tinymce/tinymce-vue').default;
         ```
-    * To load `tinymce-vue` in a javascript file:
+    * To load `tinymce-vue` in a HTML file:
 
         ```html
         <script src="/path/to/tinymce-vue.min.js"></script>
@@ -79,7 +79,7 @@ The editor accepts the following properties:
   :init= "{% raw %}{{% endraw %}  {% raw %}}{% endraw %}"
   initial-value=""
   :inline=true
-  modelEvents= ""
+  model-events= ""
   plugins=""
   tag-name="div"
   toolbar=""
@@ -209,7 +209,7 @@ For information on inline mode, see: [User interface options - `inline`]({{site.
 />
 ```
 
-#### `modelEvents`
+#### `model-events`
 
 Sets the trigger events for [v-model events](#forminputbindingsv-model).
 
@@ -219,11 +219,11 @@ For a list of available TinyMCE events, see: [Editor events]({{site.baseurl}}/ad
 
 **Type:** String
 
-##### Example: `modelEvents`
+##### Example: `model-events`
 
 ```xml
 <editor
-  modelEvents="change keydown blur focus paste"
+  model-events="change keydown blur focus paste"
 />
 ```
 
@@ -296,7 +296,7 @@ Functions can be bound to editor events, such as:
 <editor @onSelectionChange="handlerFunction"></editor>
 ```
 
-Where the `handlerFunction` is triggered with the event and returns an object containing two properties:
+Where the `handlerFunction` is triggered with the event and is called with two arguments:
 
 * `event` - The event object.
 * `editor` - A reference to the editor.

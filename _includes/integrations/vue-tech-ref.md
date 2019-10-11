@@ -1,89 +1,95 @@
-## TinyMCE Angular technical reference
+## TinyMCE Vue.js technical reference
 
 **Covered in this section:**
 
-- [Installing the TinyMCE Angular integration using NPM](#installingthetinymceangularintegrationusingnpm)
+- [Installing the TinyMCE Vue.js integration using NPM](#installingthetinymcevuejsintegrationusingnpm)
+- [Using the TinyMCE Vue.js integration](#usingthetinymcevuejsintegration)
 - [Configuring the editor](#configuringtheeditor)
-- [Using the TinyMCE Angular integration](#usingthetinymceangularintegration)
 
-  - [`apiKey`](#apikey)
-  - [`cloudChannel`](#cloudchannel)
-  - [`disabled`](#disabled)
-  - [`id`](#id)
-  - [`init`](#init)
-  - [`initialValue`](#initialvalue)
-  - [`inline`](#inline)
-  - [`plugins`](#plugins)
-  - [`tagName`](#tagname)
-  - [`toolbar`](#toolbar)
+    - [`api-key`](#api-key)
+    - [`cloud-channel`](#cloud-channel)
+    - [`disabled`](#disabled)
+    - [`id`](#id)
+    - [`init`](#init)
+    - [`initial-value`](#initial-value)
+    - [`inline`](#inline)
+    - [`model-events`](#model-events)
+    - [`plugins`](#plugins)
+    - [`tag-name`](#tag-name)
+    - [`toolbar`](#toolbar)
 
-- [Using the `ngModel` directive](#usingthengmodeldirective)
-- [Using with reactive forms](#usingwithreactiveforms)
+- [Form Input Bindings: `v-model`](#forminputbindingsv-model)
 - [Event binding](#eventbinding)
 
-### Installing the TinyMCE Angular integration using NPM
+### Installing the TinyMCE Vue.js integration using NPM
 
-To install the `tinymce-angular` package and save it to your `package.json`.
+To install the `tinymce-vue` package and save it to your `package.json`.
 
-```sh
-$ npm install --save @tinymce/tinymce-angular
-```
-
-This package is for Angular 5+. For Angular 4, use `@tinymce/tinymce-angular-legacy`
-
-### Using the TinyMCE Angular integration
-
-1. Import the `EditorModule` from the npm package using:
-
-    ```tsx
-    import { EditorModule } from '@tinymce/tinymce-angular';
     ```
-    Add the `EditorModule` to `@NgModule({imports})`:
+    $ npm install --save @tinymce/tinymce-vue
+    ```
 
-    ```tsx
+### Using the TinyMCE Vue.js integration
+
+1. Load the component.
+    * For bundle loader users (such as `webpack`, `rollup`, or `browserify`):
+
+        ```js
+        // es modules
+        import Editor from '@tinymce/tinymce-vue';
+        // commonjs require
+        // NOTE: default needed after require
+        var Editor = require('@tinymce/tinymce-vue').default;
+        ```
+    * To load `tinymce-vue` in a HTML file:
+
+        ```html
+        <script src="/path/to/tinymce-vue.min.js"></script>
+        ```
+2. Add the editor to the `components` property of the app:
+
+    ```js
     // This might look different depending on how you have set up your app
-    // but the important part is the imports array
-    @NgModule({
-      declarations: [
-        AppComponent
-      ],
-      imports: [
-        BrowserModule,
-        EditorModule // <- Important part
-      ],
-      providers: [],
-      bootstrap: [AppComponent]
+    // but the important part is the components property
+    var app = new Vue({
+      el: '#app',
+      data: { /* Your data */ },
+      components: {
+        'editor': Editor // <- Important part
+      },
+      methods: { /* Your methods */}
     })
     ```
-
-2. Add the editor to the Angular application template, such as:
+3. Add the `<editor>` tag to the `template`
 
     ```html
-    <editor apiKey="test" [init]="{plugins: 'link'}"></editor>
+    <editor api-key="API_KEY" :init="{plugins: 'wordcount'}"></editor>
     ```
 
 ### Configuring the editor
 
 The editor accepts the following properties:
 
-```html
+```xml
 <editor
-  apiKey="no-api-key"
-  cloudChannel="5"
-  [disabled]="false"
-  id=""
-  [init]="{% raw %}{{% endraw %}  {% raw %}}{% endraw %}"
-  initialValue=""
-  [inline]="false"
+  api-key="your-api-key"
+  cloud-channel="5"
+  :disabled=false
+  id="uuid"
+  :init= "{% raw %}{{% endraw %}  {% raw %}}{% endraw %}"
+  initial-value=""
+  :inline=true
+  model-events= ""
   plugins=""
-  tagName="div"
+  tag-name="div"
   toolbar=""
-></editor>
+  value=""
+/>
 ```
 
-None of the configuration properties are **required** for `tinymce-angular` to work. Specify a Tiny Cloud API key using `apiKey` to remove the `This domain is not registered...` warning message.
+None of the configuration properties are **required** for `tinymce-vue` to work. Specify a Tiny Cloud API key using `api-key` to remove the `This domain is not registered...` warning message.
 
-#### `apiKey`
+#### `api-key`
 Tiny API key. Required for deployments using the Tiny Cloud to provide the TinyMCE editor.
 
 To register for a Tiny Cloud API key, visit the [sign-up page](https://www.tiny.cloud/signup/).
@@ -92,15 +98,15 @@ To register for a Tiny Cloud API key, visit the [sign-up page](https://www.tiny.
 
 **Type:** String
 
-##### Example: `apiKey`
+##### Example: `api-key`
 
 ```xml
-<Editor
-  apiKey="your-api-key"
+<editor
+  api-key="your-api-key"
 />
 ```
 
-#### `cloudChannel`
+#### `cloud-channel`
 
 **Default value:** `5`
 
@@ -108,17 +114,16 @@ To register for a Tiny Cloud API key, visit the [sign-up page](https://www.tiny.
 
 Changes the TinyMCE build used for the editor to one of the following cloud channels:
 
-- `5-stable` (**Default**): The current enterprise release of TinyMCE.
+- `5`, `5-stable` (**Default**): The current enterprise release of TinyMCE.
 - `5-testing`: The current release candidate for the next enterprise release of TinyMCE.
 - `5-dev`: The nightly-build version of TinyMCE.
 
 Such as:
 
 ```js
-<Editor apiKey="your-api-key" cloudChannel="5-dev" [init]={% raw %}{{% endraw %} /* your other settings */ {% raw %}}{% endraw %} />
+<editor api-key="your-api-key" cloud-channel="5-dev" :init="{% raw %}{{% endraw %} /* your other settings */ {% raw %}}{% endraw %}" />
 ```
 For information TinyMCE development channels, see: [Specifying the TinyMCE editor version deployed from Cloud - dev, testing, and stable releases]({{site.baseurl}}/cloud-deployment-guide/editor-plugin-version/#devtestingandstablereleases).
-
 
 #### `disabled`
 The `disabled` property can dynamically switch the editor between a "disabled" (read-only) mode (`true`) and the standard editable mode (`false`).
@@ -129,9 +134,9 @@ The `disabled` property can dynamically switch the editor between a "disabled" (
 
 ##### Example: `disabled`
 
-```html
-<Editor
-  [disabled]="true"
+```xml
+<editor
+  :disabled=true
 />
 ```
 
@@ -145,7 +150,7 @@ An id for the editor. Used for retrieving the editor instance using the `tinymce
 ##### Example: `id`
 
 ```xml
-<Editor
+<editor
   id="uuid"
 />
 ```
@@ -155,15 +160,15 @@ Object sent to the `tinymce.init` method used to initialize the editor.
 
 For information on the TinyMCE selector (`tinymce.init`), see: [Basic setup]({{site.baseurl}}/general-configuration-guide/basic-setup/).
 
-**Default value:** `{% raw %}{{% endraw %} {% raw %}}{% endraw %}`
+**Default value:** `"{% raw %}{{% endraw %} {% raw %}}{% endraw %}"`
 
 **Type:** Object
 
 ##### Example: `init`
 
-```html
-<Editor
-  [init]="{% raw %}{{% endraw %}
+```xml
+<editor
+  :init="{% raw %}{{% endraw %}
     plugins: [
      'lists link image paste help wordcount'
     ],
@@ -172,23 +177,23 @@ For information on the TinyMCE selector (`tinymce.init`), see: [Basic setup]({{s
 />
 ```
 
-#### `initialValue`
+#### `initial-value`
 Initial content of the editor when the editor is initialized.
 
-**Default value:** `' '`
+**Default value:** `" "`
 
 **Type:** String
 
-##### Example: `initialValue`
+##### Example: `initial-value`
 
 ```xml
-<Editor
-  initialValue='Once upon a time...'
+<editor
+  initial-value="Once upon a time..."
 />
 ```
 
 #### `inline`
-Used to set the editor to inline mode. Using `<editor [inline]="true"></editor>` is the same as setting `{inline: true}` in the TinyMCE selector (`tinymce.init`).
+Used to set the editor to inline mode. Using `<editor :inline=true />` is the same as setting `{inline: true}` in the TinyMCE selector (`tinymce.init`).
 
 For information on inline mode, see: [User interface options - `inline`]({{site.baseurl}}/configure/editor-appearance/#inline) and [Setup inline editing mode]({{site.baseurl}}/general-configuration-guide/use-tinymce-inline/).
 
@@ -198,14 +203,32 @@ For information on inline mode, see: [User interface options - `inline`]({{site.
 
 ##### Example: `inline`
 
-```html
-<Editor
-  [inline]="true"
+```xml
+<editor
+  :inline=true
+/>
+```
+
+#### `model-events`
+
+Sets the trigger events for [v-model events](#forminputbindingsv-model).
+
+For a list of available TinyMCE events, see: [Editor events]({{site.baseurl}}/advanced/events/#editorevents).
+
+**Default value:** `"change keyup undo redo"`.
+
+**Type:** String
+
+##### Example: `model-events`
+
+```xml
+<editor
+  model-events="change keydown blur focus paste"
 />
 ```
 
 #### `plugins`
-Used to include plugins for the editor. Using `<editor plugins="lists code"></editor>` is the same as setting `{plugins: 'lists code'}` in the TinyMCE selector (`tinymce.init`).
+Used to include plugins for the editor. Using `<editor plugins="lists code" />` is the same as setting `{plugins: 'lists code'}` in the TinyMCE selector (`tinymce.init`).
 
 For information on adding plugins to TinyMCE, see: [Add plugins to TinyMCE]({{site.baseurl}}/plugins/).
 
@@ -214,33 +237,33 @@ For information on adding plugins to TinyMCE, see: [Add plugins to TinyMCE]({{si
 ##### Example: `plugins`
 
 ```xml
-<Editor
+<editor
   plugins="lists code"
 />
 ```
 
-#### `tagName`
-Only valid when [`<editor [inline]="true"></editor>`](#inline). Used to define the HTML element for the editor in inline mode.
+#### `tag-name`
+Only valid when [`<editor :inline=true />`](#inline). Used to define the HTML element for the editor in inline mode.
 
 **Default value:** `div`
 
 **Type:** String
 
-##### Example: `tagName`
+##### Example: `tag-name`
 
-```html
-<Editor
-  [inline]="true"
-  tagName="myTextArea"
+```xml
+<editor
+  :inline=true
+  tag-name='myTextArea'
 />
 ```
 
 #### `toolbar`
-Used to set the toolbar for the editor. Using `<editor toolbar="bold italic"></editor>` is the same as setting `{toolbar: 'bold italic'}` in the TinyMCE selector (`tinymce.init`).
+Used to set the toolbar for the editor. Using `<editor toolbar="bold italic" />` is the same as setting `{toolbar: 'bold italic'}` in the TinyMCE selector (`tinymce.init`).
 
 For information setting the toolbar for TinyMCE, see: [User interface options - toolbar]({{site.baseurl}}/configure/editor-appearance/#toolbar).
 
-**Default value:** `' '`
+**Default value:** `" "`
 
 **Possible values:**  See [Editor control identifiers - Toolbar controls]({{site.baseurl}}/advanced/editor-control-identifiers/).
 
@@ -249,43 +272,31 @@ For information setting the toolbar for TinyMCE, see: [User interface options - 
 ##### Example: `toolbar`
 
 ```xml
-<Editor
+<editor
   plugins="code"
   toolbar="bold italic underline code"
 />
 ```
 
-### Using the `ngModel` directive
+### Form Input Bindings: `v-model`
 
-The `ngModel` directive can be added to use the editor in a form:
+The `v-model` directive can be used to create a two-way data binding. For example:
 
 ```html
-<editor [(ngModel)]="dataModel"></editor>
+<editor v-model="content"></editor>
 ```
 
-For information on using `NgModel`, see: [Angular documentation - NgModel](https://angular.io/api/forms/NgModel).
-
-### Using with reactive forms
-
-To use TinyMCE Angular component with reactive forms:
-1. Include the `<editor>` configuration within the `formGroup`.
-2. Add the `formControlName` directive to the editor configuration. For example:
-
-    ```html
-    <editor [formControlName]="schema.key" [init]="{plugins: 'link'}"></editor>
-    ```
-
-For information on using reactive forms, see: [Angular documentation - Reactive Forms](https://angular.io/guide/reactive-forms).
+For information on `v-model` and form input bindings, see: [Vue.js documentation - Form Input Bindings](https://vuejs.org/v2/guide/forms.html).
 
 ### Event binding
 
 Functions can be bound to editor events, such as:
 
-```xml
-<editor (onSelectionChange)="handleEvent($event)"></editor>
+```html
+<editor @onSelectionChange="handlerFunction"></editor>
 ```
 
-When the handler is called (`handleEvent` in this example), it is called with two arguments:
+Where the `handlerFunction` is triggered with the event and is called with two arguments:
 
 * `event` - The event object.
 * `editor` - A reference to the editor.

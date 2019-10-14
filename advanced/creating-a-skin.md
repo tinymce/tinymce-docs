@@ -119,4 +119,4 @@ For more information on how to specify the location of the skin file, see [this]
 
 ## Modifying the icons
 
-Documentation on how to change the icons will be added here shortly.
+For information on adding custom icons, see: [Create an icon pack for TinyMCE]({{site.baseurl}}/advanced/creating-an-icon-pack.md).

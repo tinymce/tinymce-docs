@@ -1,18 +1,44 @@
+{% if customIconPack != true %}
 ## icons
 
-The **icons** option allows replacing and extending icons through an icon pack. Documentation on how to create an icon pack will be added shortly.
-
-On setup, TinyMCE will attempt to load any icon pack specified by the **icons** option. The set of icons from the icon pack will be merged with TinyMCE's default icons where the icons from the icon pack takes higher precedence. This means that an icon pack may choose to simply replace a few of the default icons and/or extend the total set.
-
-TinyMCE will attempt to load the icon pack from the path `baseURL/icons/${iconPackName}/icons.js` on initialization where baseURL refers to the root directory of TinyMCE. This is similar to how TinyMCE would load a plugin.
+The **icons** option allows the editor icons to be extended or replaced using an icon pack. For information on creating icon packs, see: [Create an icon pack for TinyMCE]({{site.baseurl}}/advanced/creating-an-icon-pack/).
 
 **Type:**  `String`
+{% endif %}
 
-##### Example
+On initialization, TinyMCE will try to load any icon pack specified by the **icons** option. The icons in the icon pack will be merged with [TinyMCE's default icons]({{site.baseurl}}/advanced/editor-icon-identifiers/) and icons in the icon pack will overwrite the default icons with the same identifier.
+
+TinyMCE loads icon packs from the path `TINYMCE_BASE/icons/${iconPackName}/icons.js`;
+where:
+* `TINYMCE_BASE` is the TinyMCE root directory (the directory containing `tinymce.min.js`).
+* `${iconPackName}` is the name of the icon pack.
+
+To use a TinyMCE icon pack:
+1. If required, create a new `icons` directory in `TINYMCE_BASE`.
+1. Copy the icon pack into the `icons` directory.
+{% if customIconPack == true %}
+    For example:
+
+    ```sh
+    $ cp -r  dist/icons/my_icon_pack  TINYMCE_BASE/icons/
+    ```
+{% endif %}
+1. Add the `icons` option to `tinymce.init`
+{% if customIconPack == true %}
+    ```js
+    tinymce.init({
+      selector: 'textarea',  // change this value according to your HTML
+      icons: 'my_icon_pack'  // TINYMCE_BASE/icons/my_icon_pack/icons.js
+    });
+    ```
+{% else %}
+
+##### Example: icons
 
 ```js
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  icons: 'material'      // baseURL/icons/material/icons.js
+  icons: 'material'  // TINYMCE_BASE/icons/material/icons.js
 });
 ```
+{% endif %}

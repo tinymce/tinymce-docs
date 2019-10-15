@@ -22,7 +22,7 @@ A basic button triggers its `onAction` function when clicked.
 | Name | Value | Requirement | Description |
 | ---- | ----- | ----------- | ----------- |
 | text | string | optional | Text to display if no icon is found. |
-| icon | string | optional | Name of the icon to be displayed. Must correspond to an icon in the icon pack. |
+| icon | string | optional | Name of the icon to be displayed. Must correspond to an icon in [icon pack]({{site.baseurl}}/advanced/editor-icon-identifiers/). |
 | tooltip | string | optional | Text for button tooltip.  |
 | disabled | boolean | optional | default: false - Represents the button's state. When true, button is unclickable. Toggled by the button's API. |
 | onSetup | (api) => (api) => void | optional | default: () => () => {} - Function invoked when the button is rendered. |
@@ -60,7 +60,7 @@ A toggle button triggers an action when clicked but also has a concept of state.
 | Name | Value | Requirement | Description |
 |------| ------| ------------| ----------- |
 | text | string | optional | Text to display if no icon is found. |
-| icon | string | optional | Name of the icon to be displayed. Must correspond to an icon in the icon pack. |
+| icon | string | optional | Name of the icon to be displayed. Must correspond to an icon in the [icon pack]({{site.baseurl}}/advanced/editor-icon-identifiers/). |
 | tooltip | string | optional | Text for button tooltip.  |
 | disabled | boolean | optional | default: false - Represents the button's state. When true, button is unclickable. Toggled by the button's API. |
 | active | boolean | optional | default: false - Represents the button's state. When true, button is highlighted. Toggled by the button's API. |
@@ -103,7 +103,7 @@ A split button contains a basic button and a menu button, wrapped up into one to
 | Name | Value | Requirement | Description |
 |------| ------| ------------| ----------- |
 | text | string | optional | Text displayed if no icon is found. |
-| icon | string | optional | Name of the icon to be displayed. Must correspond to an icon in the icon pack. |
+| icon | string | optional | Name of the icon to be displayed. Must correspond to an icon in the [icon pack]({{site.baseurl}}/advanced/editor-icon-identifiers/). |
 | select | (value: string) => boolean  | optional | default: false - Function run on each option to determine if it should be highlighted as active. |
 | columns | string | optional | default: 1 - Number of columns for the list of options. |
 | fetch | (success: (menu) => void) => void  | required | Function that takes a callback which must be passed the list of options for the button's dropdown. |
@@ -145,7 +145,7 @@ A toolbar menu button is a toolbar button that opens a menu when clicked. This m
 | Name | Value | Requirement | Description |
 |------| ------| ------------| ----------- |
 | text | string | optional | Text to display if no icon is found. |
-| icon | string | optional | Name of the icon to be displayed. Must correspond to an icon in the icon pack. |
+| icon | string | optional | Name of the icon to be displayed. Must correspond to an icon in the [icon pack]({{site.baseurl}}/advanced/editor-icon-identifiers/). |
 | tooltip | string | optional | Text for button tooltip. |
 | fetch | (success: (menu) => void) => void  | required | Function that takes a callback which must be passed the list of options for the button's dropdown. |
 | onSetup | (api) => (api) => void | optional | default: () => () => {} - Function that's invoked when the button is rendered. |

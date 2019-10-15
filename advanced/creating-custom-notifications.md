@@ -71,6 +71,8 @@ editor.notificationManager.open({
 });
 ```
 
+For a list of the icon identifiers, see: [Editor icon identifiers]({{site.baseurl}}/advanced/editor-icon-identifiers/).
+
 ## Progress Bar
 
 Set the `progressBar` property type to `True` to display a progress bar to the left of the close button and to the right of the text.

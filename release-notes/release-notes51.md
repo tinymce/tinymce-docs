@@ -13,9 +13,9 @@ keywords: releasenotes newfeatures deleted technologypreview bugfixes knownissue
 
 {% include release-notes/51new-features.md %}
 
-## Removed & deprecated features
+## Deprecated features
 
-{% include release-notes/51deleted.md %}
+{% include release-notes/51deprecated.md %}
 
 ## Known issues
 

@@ -1,6 +1,15 @@
 
 The following new features were added to the TinyMCE 5.1 version.
 
+Added border width field to Table Cell dialog 	TINY-4028		gen	any css value
+Added new platform detection functions to `Env` and deprecated older detection properties 	TINY-4184		gen	os detection/query API changes
+Changed default setting for `toolbar_drawer` to `floating` 	TINY-3634		gen 	docs and info to revert (was false)
+
+Fixed inline dialogs positioning incorrectly when the page is scrolled 	TINY-4018		positioning of dialogs and menus improved
+Fixed inline dialogs and menus not repositioning when resizing 	TINY-3227		positioning of dialogs and menus improved
+Changed visualblocks toolbar button icon and renamed `paragraph` icon to `visualchars` 	TINY-4074		UI change	button to show invisibles icon updated
+
+
 ### Mobile
 
 Legacy mobile experience in provided for TinyMCE 4.7 through TinyMCE 5.0
@@ -14,6 +23,19 @@ Recommend adding the following `meta` tag to the `head` of pages using TinyMCE t
 ```html
 <meta name="viewport" content="width=device-width, initial-scale=1">
 ```
+
+Added touch selector handles for table selections on touch devices 	TINY-4097		mobile	Table multicell selection using selectors
+Added additional padding to split button chevrons on touch devices, to make them easier to interact with 	TINY-4223		mobile	UI improvement
+Added `inputMode` config field to specify inputmode attribute of `input` dialog components 	TINY-4062		mobile	Sets contextual keyboard. Specifies field type (num, str, etc.)
+Added new `inputMode` property to relevant plugins/dialogs 	TINY-4102		mobile	Sets contextual keyboard. Specifies field type (num, str, etc.)
+Changed phones to use the `silver` theme by default 	TINY-3634		mobile	docs and info to revert
+    - `menubar`(phones only) 	TINY-4077		mobile
+    - `table_grid` 	TINY-4075		mobile	Table creating, get a dialog instead
+    - `resize` 	TINY-4157		mobile
+    - `object_resizing` 	TINY-4157		mobile	just not text
+Changed toolbars and context toolbars to sidescroll on mobile 	TINY-3894 	TINY-4107	mobile	UI improvement - no more draw by default
+Changed context menus to render as horizontal menus on touch devices 	TINY-4107		mobile	longpress to open context menus
+Changed the `urlinput` dialog component to use the `url` type attribute 	TINY-4102		mobile	Sets contextual keyboard. Specifies field type (num, str, etc.)
 
 
 ### Sticky Toolbar
@@ -40,14 +62,19 @@ powerpaste_clean_filtered_inline_elements: 'strong,em,b,i,u,strike,sup,sub,font'
 
 Fixed:  PowerPaste- When powerpaste is enabled links that has queries / regex are not resolving when pasted
 
-#### Media Embedded
+#### Page Embed
 
-fixed: media embed will display a video but it can't be played
+Added touch event listener to embeds for mobile #TINY-4093
 
-#### Spellchecker Pro
+#### Format Painter
 
-Fixed: Powerspell flags contraction words as invalid
+Added support for painting on touch devices #FOPA-27
 
-#### Advanced Code
+#### Checklist
 
-Fixed: getContent call does not get the content of inline advcode
+Fixed checklist toggling not working on iPadOS #CHEC-31
+
+#### Mentions
+
+[BUG] Fixed select menu being hidden while changing selection and when hovering. #TINY-3752
+[FEATURE] Added the ability to include "extra" menu items that allow reloading with different search params. #MENTIONS-17

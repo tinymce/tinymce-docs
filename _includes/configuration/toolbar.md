@@ -60,7 +60,7 @@ To enable Sticky Toolbars, set `toolbar_sticky` as `true` in the `tinymce.init` 
 
 **Type:** `Boolean`
 
-**Default Value:** `true`
+**Default Value:** `false`
 
 **Possible Values:** `true`, `false`
 
@@ -69,7 +69,7 @@ To enable Sticky Toolbars, set `toolbar_sticky` as `true` in the `tinymce.init` 
 ```js
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  toolbar_sticky: false
+  toolbar_sticky: true
 });
 ```
 

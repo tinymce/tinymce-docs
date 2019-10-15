@@ -37,7 +37,7 @@ tinymce.init({
   menubar: 'file edit custom',
   setup: (editor) => {
     editor.ui.registry.addMenuItem('myCustomMenuItem', {
-      text: 'My Custom Menu Item', 
+      text: 'My Custom Menu Item',
       onAction: () => alert('Menu item clicked')
     });
   }
@@ -64,7 +64,7 @@ A basic menu item triggers its `onAction` function when clicked.
 | Name | Value | Requirement | Description |
 | ---- | ----- | ----------- | ----------- |
 | text | string | optional | Text to display if no icon is found. |
-| icon | string | optional | Name of the icon to be displayed. Must correspond to an icon in the icon pack. |
+| icon | string | optional | Name of the icon to be displayed. Must correspond to an icon in the [icon pack]({{site.baseurl}}/advanced/editor-icon-identifiers/). |
 | value | string | optional | A value to associate with the menu item. |
 | disabled | boolean | optional | default: false - Represents the menu item's state. When true, the menu item is unclickable. Toggled by the menu item's API. |
 | onSetup | (api) => (api) => void | optional | default: () => () => {} - Function invoked when the menu item is rendered, each time its menu is opened. |
@@ -93,7 +93,7 @@ A nested menu item is a menu item with a submenu. Registering a submenu this way
 | Name | Value | Requirement | Description |
 | ---- | ----- | ----------- | ----------- |
 | text | string | optional | Text to display if no icon is found. |
-| icon | string | optional | Name of the icon to be displayed. Must correspond to an icon in the icon pack. |
+| icon | string | optional | Name of the icon to be displayed. Must correspond to an icon in the [icon pack]({{site.baseurl}}/advanced/editor-icon-identifiers/). |
 | value | string | optional | A value to associate with the menu item. |
 | onSetup | (api) => (api) => void | optional | default: () => () => {} - Function invoked when the menu item is rendered, each time its menu is opened. |
 | getSubmenuItems | () => string or MenuItem[] | required | Function invoked when the menu item is clicked to open its submenu. Must return either a space separated string of registered menu names or an array of basic, toggle or nested menu items specifications. |
@@ -122,13 +122,13 @@ editor.ui.registry.addNestedMenuItem('nesteditem', {
 
 ### Toggle menu items
 
-A toggle menu item triggers its `onAction` when clicked. It also has a concept of state. This means it can be toggled `on` and `off`. A toggle menu item gives the user visual feedback for its state through a checkmark that appears to the left of the menu item's text when it is `on`. 
+A toggle menu item triggers its `onAction` when clicked. It also has a concept of state. This means it can be toggled `on` and `off`. A toggle menu item gives the user visual feedback for its state through a checkmark that appears to the left of the menu item's text when it is `on`.
 
 #### Config options
 
 | Name | Value | Requirement | Description |
 | ---- | ----- | ----------- | ----------- |
-| text | string | optional | Text to display if no icon is found. |
+| text | string | optional | Text to display. |
 | value | string | optional | A value to associate with the menu item. |
 | active | boolean | optional | Initial state value for the toggle menu item |
 | disabled | boolean | optional | default: false - Represents the menu item's state. When true, the menu item is unclickable. Toggled by the menu item's API. |

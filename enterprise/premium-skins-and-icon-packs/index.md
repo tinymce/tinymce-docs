@@ -57,6 +57,8 @@ tinymce.init({
 });
 ```
 
+For information on using the `icons` option, see: [User interface options - `icons`]({{site.baseurl}}/configure/editor-appearance/#icons).
+
 #### Icon pack compatibility matrix
 
 Due to different toolbar button sizes, some icon packs fit better with some skins. Use the below matrix as a guide.

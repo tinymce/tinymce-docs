@@ -42,20 +42,20 @@ To use the TinyMCE icon pack template project:
     - From a terminal or command prompt, use git to clone the GitHub repository, such as:
 
         ```sh
-        $ git clone https://github.com/tinymce/oxide-icon-pack-template.git
+$ git clone https://github.com/tinymce/oxide-icon-pack-template.git
         ```
 2. Open a terminal or command prompt, navigate to the `oxide-icon-pack-template` directory.
 3. Install the project dependencies by executing:
 
     ```sh
-    $ npm install
+$ npm install
     ```
 4. When prompted, enter a name for the icon pack. The icon pack name should only contain:
 
-* Numbers.
-* Letters.
-* Hyphens ( `-` ).
-* Underscores ( `_` ).
+    * Numbers.
+    * Letters.
+    * Hyphens ( `-` ).
+    * Underscores ( `_` ).
 
 The icon pack name will be used with the [icons]({{site.baseurl}}/configure/editor-appearance/#icons) option to apply the icons in TinyMCE.
 
@@ -95,7 +95,7 @@ To build the icon pack using Gulp:
 2. Build the icon pack by executing the `gulp` command:
 
     ```sh
-    $ gulp
+$ gulp
     ```
     A `dist/` directory containing the icon pack will be created.
 3. Using a web browser, open `dist/html/icons.html` to preview the icons.
@@ -107,14 +107,22 @@ The SVG files are optimized during the build process with [SVGO](https://github.
 2. Add the `svgo` option to the `iconPackager` function, such as:
 
     ```js
-    iconPackager({
-      name: 'my-icon-pack',
-      svgo: { floatPrecision: 3 } //Increase the rounding precision
-    })
+iconPackager({
+  name: 'my-icon-pack',
+  svgo: { floatPrecision: 3 } //Increase the rounding precision
+})
     ```
 All user defined options, including SVGO options, will merge with the default options. For information on SVGO options, see: [SVGO on GitHub](https://github.com/svg/svgo).
 
 ## Deploying an icon pack
+An icon pack can be served either:
+
+  * [With TinyMCE](#deploytheiconpackwithtinymce)
+  * [Separate from TinyMCE](#deploytheiconpackandtinymceseparately)
+
+### Deploy the icon pack with TinyMCE
 {% assign customIconPack = true %}
 {% include configuration/icons.md %}
+### Deploy the icon pack and TinyMCE separately
+{% include configuration/icons_url.md %}
 {% assign customIconPack = false %}

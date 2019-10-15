@@ -1,7 +1,23 @@
+{% if customIconPack != true %}
 ## icons_url
 
-If you are using icon packs, this option enables you to specify the location of your icon pack. This is useful if you are loading TinyMCE from one URL, for example a CDN, while loading an icon pack on a local server.
+The **icons_url** option allows the editor icons to be extended or replaced using an icon pack. For information on creating icon packs, see: [Create an icon pack for TinyMCE]({{site.baseurl}}/advanced/creating-an-icon-pack/).
+{% endif %}
 
+On initialization, TinyMCE will try to load any icon pack specified by the **icons_url** option. The icons in the icon pack will be merged with [TinyMCE's default icons]({{site.baseurl}}/advanced/editor-icon-identifiers/) and icons in the icon pack will overwrite the default icons with the same identifier.
+
+`icons_url` is used to specify the location of an icon pack when TinyMCE and the icon pack are loaded from different locations. For example: When loading TinyMCE from Tiny Cloud, the icon pack can be loaded from a different web server.
+{% if customIconPack == true %}
+Such as:
+
+```js
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  icons_url: 'https://www.example.com/icons/my_icon_pack/icons.js', // load icon pack
+  icons: 'my_icon_pack'      // use icon pack
+});
+```
+{% else %}
 **Type:**  `String`
 
 ##### Example
@@ -9,7 +25,8 @@ If you are using icon packs, this option enables you to specify the location of 
 ```js
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  icons_url: '/icons/material/icons.js', // load icon pack
+  icons_url: 'https://www.example.com/icons/material/icons.js', // load icon pack
   icons: 'material'      // use icon pack
 });
 ```
+{% endif %}

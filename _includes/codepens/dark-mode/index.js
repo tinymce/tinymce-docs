@@ -1,7 +1,9 @@
 tinymce.init({
-  selector: 'textarea#basic-example',
+  selector: 'textarea#dark-mode',
   height: 500,
   menubar: false,
+  skin: 'oxide-dark',
+  content_css: 'dark',
   plugins: [
     'advlist autolink lists link image charmap print preview anchor',
     'searchreplace visualblocks code fullscreen',

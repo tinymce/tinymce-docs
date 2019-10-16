@@ -14,6 +14,7 @@ Add the following `meta` tag to the `head` of pages using {{site.productname}} t
 ```
 
 * Added touch selector handles for table selections on touch devices   TINY-4097    mobile  Table multicell selection using selectors
+![Touch selector handles for selecting multiple table cells]({{site.baseurl}}/images/table_cell_touch_selector_handles.png)
 * Added additional padding to split button chevrons on touch devices, to make them easier to interact with   TINY-4223    mobile  UI improvement
 * Added `inputMode` config field to specify inputmode attribute of `input` dialog components   TINY-4062    mobile  Sets contextual keyboard. Specifies field type (num, str, etc.)
 * Added new `inputMode` property to relevant plugins/dialogs   TINY-4102    mobile  Sets contextual keyboard. Specifies field type (num, str, etc.)
@@ -23,6 +24,7 @@ Add the following `meta` tag to the `head` of pages using {{site.productname}} t
     - `resize`   TINY-4157    mobile
     - `object_resizing`   TINY-4157    mobile  just not text
 * Changed toolbars and context toolbars to sidescroll on mobile   TINY-3894   TINY-4107  mobile  UI improvement - no more draw by default
+![Example of the side-scrolling toolbar and contextual toolbar]({{site.baseurl}}/images/side-scrolling-context-toolbar.png)
 * Changed context menus to render as horizontal menus on touch devices   TINY-4107    mobile  longpress to open context menus
 * Changed the `urlinput` dialog component to use the `url` type attribute   TINY-4102    mobile  Sets contextual keyboard. Specifies field type (num, str, etc.)
 
@@ -39,9 +41,25 @@ For information on the Sticky Toolbars, see: [Enabling Sticky Toolbars]({{site.b
 * Added new platform detection functions to `Env` and deprecated older detection properties   TINY-4184    gen  os detection/query API changes
 * added new referrer_policy setting to add the referrerpolicy attribute when loading scripts or stylesheets.
 * added a dark content_css skin to go with the dark UI skin.
+    Enable dark mode in TinyMCE
+    There are two ways to enable dark mode in TinyMCE.
+
+    You can initialize the editor with the following settings:
+```
+    skin: "oxide-dark",
+    content_css: "dark"
+```
+    Alternatively, you can initialize the mode depending on the user’s preference as specified in the operating system:
+```
+    skin: (window.matchMedia("(prefers-color-scheme: dark)").matches ? "oxide-dark" : ""),
+    content_css: (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "")
+```
+{% include codepen.html id="dark-mode" %}
+
 * Added border width field to Table Cell dialog   TINY-4028    gen  any css value
+![Cell Properties Dialog with new Border Width field]({{site.baseurl}}/images/border-width-cell-props.png)
 * Changed default setting for `toolbar_drawer` to `floating`   TINY-3634    gen   docs and info to revert (was false)
-* Changed visualblocks toolbar button icon and renamed `paragraph` icon to `visualchars`   TINY-4074    UI change  button to show invisibles icon updated
+* Changed visualblocks toolbar button icon ![New visualblocks icon]({{site.baseurl}}/images/icons/visualblocks.svg) and renamed `paragraph` ![`paragraph` renamed to `visualchars`]({{site.baseurl}}/images/icons/visualchars.svg) icon to `visualchars`   TINY-4074    UI change  button to show invisibles icon updated
 * Fixed inline dialogs positioning incorrectly when the page is scrolled   TINY-4018    positioning of dialogs and menus improved
 * Fixed inline dialogs and menus not repositioning when resizing   TINY-3227    positioning of dialogs and menus improved
 

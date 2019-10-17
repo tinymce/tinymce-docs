@@ -8,6 +8,52 @@ class: changelog
 
 {% capture changelog %}
 
+## Version 5.1.0 October 17, 2019
+* Added touch selector handles for table selections on touch devices.
+* Added border width field to Table Cell dialog.
+* Added touch event listener to media plugin to make embeds playable.
+* Added oxide styling options to notifications and tweaked the default variables.
+* Added additional padding to split button chevrons on touch devices, to make them easier to interact with.
+* Added new platform detection functions to `Env` and deprecated older detection properties.
+* Added `inputMode` config field to specify inputmode attribute of `input` dialog components.
+* Added new `inputMode` property to relevant plugins/dialogs.
+* Added new `toolbar_sticky` setting to allow the iframe menubar/toolbar to stick to the top of the window when scrolling.
+* Changed default setting for `toolbar_drawer` to `floating`.
+* Changed mobile phones to use the `silver` theme by default.
+* Changed some editor settings to default to `false` on touch devices:
+
+    - `menubar`(phones only).
+    - `table_grid`.
+    - `resize`.
+    - `object_resizing`.
+* Changed toolbars and context toolbars to sidescroll on mobile.
+* Changed context menus to render as horizontal menus on touch devices.
+* Changed the editor to use the `VisualViewport` API of the browser where possible.
+* Changed visualblocks toolbar button icon and renamed `paragraph` icon to `visualchars`.
+* Changed Oxide default for `@toolbar-button-chevron-color` to follow toolbar button icon color.
+* Changed the `urlinput` dialog component to use the `url` type attribute.
+* Fixed Safari desktop visual viewport fires resize on fullscreen breaking the restore function.
+* Fixed scroll issues on mobile devices.
+* Fixed context toolbar unable to refresh position on iOS12.
+* Fixed ctrl+left click not opening links on readonly mode and the preview dialog.
+* Fixed Slider UI component not firing `onChange` event on touch devices.
+* Fixed notifications overlapping instead of stacking.
+* Fixed inline dialogs positioning incorrectly when the page is scrolled.
+* Fixed inline dialogs and menus not repositioning when resizing.
+* Fixed inline toolbar incorrectly stretching to the full width when a width value was provided.
+* Fixed menu chevrons color to follow the menu text color.
+* Fixed table menu selection grid from staying black when using dark skins, now follows border color.
+* Fixed Oxide using the wrong text color variable for menubar button focused state.
+* Fixed the autoresize plugin not keeping the selection in view when resizing.
+* Fixed textpattern plugin throwing exceptions when using `forced_root_block: false`.
+* Fixed missing CSS fill styles for toolbar button icon active state.
+* Fixed an issue where the editor selection could end up inside a short ended element (such as `br`).
+* Fixed browser selection being lost in inline mode when opening split dropdowns.
+* Fixed backspace throwing an exception when using `forced_root_block: false`.
+* Fixed floating toolbar drawer expanding outside the bounds of the editor.
+* Fixed the autocompleter not activating immediately after a `br` or `contenteditable=false` element.
+* Fixed an issue where the autocompleter would incorrectly close on IE 11 in certain edge cases.
+
 ## Version 5.0.16 September 24, 2019
 * Added new `referrer_policy` setting to add the `referrerpolicy` attribute when loading scripts or stylesheets.
 * Added a slight background color to dialog tab links when focused to aid keyboard navigation.

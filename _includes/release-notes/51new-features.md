@@ -3,8 +3,11 @@ The following new features were added to the {{site.productname}} 5.1 version.
 
 ### Mobile
 
-| **Legacy mobile experience**<br />( {{site.productname}} 4.7 through {{site.productname}} 5.0 )              | **New mobile experience**<br />( {{site.productname}} 5.1 + )                              |
-| ---------------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+most Premium Plugins now work on mobile
+
+
+| **Legacy mobile experience**<br />( {{site.productname}} 4.7 through {{site.productname}} 5.0 ) | **New mobile experience**<br />( {{site.productname}} 5.1 + )                              |
+| ----------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ |
 | ![{{site.productname}} legacy mobile experience]({{site.baseurl}}/images/legacy_mobile_exp.png) | ![{{site.productname}} 5.1+ mobile experience]({{site.baseurl}}/images/5_1_mobile_exp.png) |
 
 Add the following `meta` tag to the `head` of pages using {{site.productname}} to ensure the mobile user interface functions as intended.
@@ -14,7 +17,7 @@ Add the following `meta` tag to the `head` of pages using {{site.productname}} t
 ```
 
 * Added touch selector handles for table selections on touch devices   TINY-4097    mobile  Table multicell selection using selectors
-![Touch selector handles for selecting multiple table cells]({{site.baseurl}}/images/table_cell_touch_selector_handles.png)
+<img alt="Touch selector handles for selecting multiple table cells" src="{{site.baseurl}}/images/table_cell_touch_selector_handles.png" style="max-width:50%" />
 * Added additional padding to split button chevrons on touch devices, to make them easier to interact with   TINY-4223    mobile  UI improvement
 * Added `inputMode` config field to specify inputmode attribute of `input` dialog components   TINY-4062    mobile  Sets contextual keyboard. Specifies field type (num, str, etc.)
 * Added new `inputMode` property to relevant plugins/dialogs   TINY-4102    mobile  Sets contextual keyboard. Specifies field type (num, str, etc.)
@@ -24,7 +27,7 @@ Add the following `meta` tag to the `head` of pages using {{site.productname}} t
     - `resize`   TINY-4157    mobile
     - `object_resizing`   TINY-4157    mobile  just not text
 * Changed toolbars and context toolbars to sidescroll on mobile   TINY-3894   TINY-4107  mobile  UI improvement - no more draw by default
-![Example of the side-scrolling toolbar and contextual toolbar]({{site.baseurl}}/images/side-scrolling-context-toolbar.png)
+<img alt="Example of the side-scrolling toolbar and contextual toolbar" src="{{site.baseurl}}/images/side-scrolling-context-toolbar.png" style="max-width:50%" />
 * Changed context menus to render as horizontal menus on touch devices   TINY-4107    mobile  longpress to open context menus
 * Changed the `urlinput` dialog component to use the `url` type attribute   TINY-4102    mobile  Sets contextual keyboard. Specifies field type (num, str, etc.)
 
@@ -39,6 +42,37 @@ For information on the Sticky Toolbars, see: [Enabling Sticky Toolbars]({{site.b
 #### Minor changes
 
 * Added new platform detection functions to `Env` and deprecated older detection properties   TINY-4184    gen  os detection/query API changes
+
+| Property          | Type   | Description                                                   |
+| ----------------- | ------ | ------------------------------------------------------------- |
+| `browser.current` | String | Returns the current browser name.                             |
+| `browser.version` | Object | Returns the current browser major and minor version.          |
+| `os.current`      | String | Returns the current operating system name.                    |
+| `os.version`      | Object | Returns the current operating system major and minor version. |
+
+| Method                 | Type    | Description                                                          |
+| ---------------------- | ------- | -------------------------------------------------------------------- |
+| `browser.isEdge`       | Boolean | Returns `true` if the user's browser is Microsoft Edge.              |
+| `browser.isChrome`     | Boolean | Returns `true` if the user's browser is Google Chrome.               |
+| `browser.isIE`         | Boolean | Returns `true` if the user's browser is Microsoft Internet Explorer. |
+| `browser.isOpera`      | Boolean | Returns `true` if the user's browser is Opera.                       |
+| `browser.isFirefox`    | Boolean | Returns `true` if the user's browser is Firefox.                     |
+| `browser.isSafari`     | Boolean | Returns `true` if the user's browser is Safari.                      |
+| `os.isWindows`         | Boolean | Returns `true` if the user's operating system is Microsoft Windows.  |
+| `os.isiOS`             | Boolean | Returns `true` if the user's operating system is iOS.                |
+| `os.isAndroid`         | Boolean | Returns `true` if the user's operating system is Android.            |
+| `os.isOSX`             | Boolean | Returns `true` if the user's operating system is Mac OS X.           |
+| `os.isLinux`           | Boolean | Returns `true` if the user's operating system is Linux.              |
+| `os.isSolaris`         | Boolean | Returns `true` if the user's operating system is Solaris.            |
+| `os.isFreeBSD`         | Boolean | Returns `true` if the user's operating system is FreeBSD.            |
+| `deviceType.isDesktop` | Boolean | Returns `true` if the user's device is a desktop device.             |
+| `deviceType.isiPad`    | Boolean | Returns `true` if the user's device is an iPad.                      |
+| `deviceType.isiPhone`  | Boolean | Returns `true` if the user's device is an iPhone.                    |
+| `deviceType.isPhone`   | Boolean | Returns `true` if the user's device is a phone.                      |
+| `deviceType.isTablet`  | Boolean | Returns `true` if the user's device is a tablet.                     |
+| `deviceType.isTouch`   | Boolean | Returns `true` if the user's device is a touch device.               |
+| `deviceType.isWebView` | Boolean | Returns `true` if the user's device is a WebView device.             |
+
 * added new referrer_policy setting to add the referrerpolicy attribute when loading scripts or stylesheets.
 * added a dark content_css skin to go with the dark UI skin.
     Enable dark mode in TinyMCE
@@ -57,7 +91,7 @@ For information on the Sticky Toolbars, see: [Enabling Sticky Toolbars]({{site.b
 {% include codepen.html id="dark-mode" %}
 
 * Added border width field to Table Cell dialog   TINY-4028    gen  any css value
-![Cell Properties Dialog with new Border Width field]({{site.baseurl}}/images/border-width-cell-props.png)
+<img alt="Cell Properties Dialog with new Border Width field" src="{{site.baseurl}}/images/border-width-cell-props.png" style="max-width:50%" />
 * Changed default setting for `toolbar_drawer` to `floating`   TINY-3634    gen   docs and info to revert (was false)
 * Changed visualblocks toolbar button icon ![New visualblocks icon]({{site.baseurl}}/images/icons/visualblocks.svg) and renamed `paragraph` ![`paragraph` renamed to `visualchars`]({{site.baseurl}}/images/icons/visualchars.svg) icon to `visualchars`   TINY-4074    UI change  button to show invisibles icon updated
 * Fixed inline dialogs positioning incorrectly when the page is scrolled   TINY-4018    positioning of dialogs and menus improved

@@ -22,6 +22,12 @@ New to Tiny 5, the mobile experience is built in and does not require additional
 
 Tinymce will detect the platform and will show an optimal UI experience given a device type and screensize.
 
+defaults that vary from desktop
+[`menubar`]({{site.baseurl}}/configure/editor-appearance/#menubar) defaults to `false` on mobile phones.
+[`table_grid`]({{site.baseurl}}/plugins/table/#table_grid)   TINY-4075    mobile  Table creating, get a dialog instead
+[`resize`]({{site.baseurl}}/configure/editor-appearance/#resize)   TINY-4157    mobile
+[`object_resizing`]({{site.baseurl}}/configure/advanced-editing-behavior/#object_resizing)  
+
 ## Configuring the Plugins
 
 The plugins supported by mobile are currently limited to the [autosave]({{site.baseurl}}/plugins/autosave/), [autolink]({{site.baseurl}}/plugins/autolink/), and [lists]({{site.baseurl}}/plugins/lists/) plugins. This is by design. TinyMCE Mobile is in the early release cycle and does not include all the plugins available in the desktop version. The developer community is encouraged to provide suggestions about which plugins should be mobile optimized. Please complete this [survey](https://docs.google.com/forms/d/e/1FAIpQLSdWamU5HsZtv-SPqGRyu6Ql1zLqlrCQFP1vSrzx1oHikMFvlw/viewform) to provide feedback.

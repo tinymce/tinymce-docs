@@ -25,7 +25,7 @@ Add the following `meta` tag to the `head` of pages using {{site.productname}} t
     - `menubar`(phones only)   TINY-4077    mobile
     - `table_grid`   TINY-4075    mobile  Table creating, get a dialog instead
     - `resize`   TINY-4157    mobile
-    - `object_resizing`   TINY-4157    mobile  just not text
+    - `object_resizing`   TINY-4157    mobile  just not text (false and not supported on mobile)
 * Changed toolbars and context toolbars to sidescroll on mobile   TINY-3894   TINY-4107  mobile  UI improvement - no more draw by default
 <img alt="Example of the side-scrolling toolbar and contextual toolbar" src="{{site.baseurl}}/images/side-scrolling-context-toolbar.png" style="max-width:50%" />
 * Changed context menus to render as horizontal menus on touch devices   TINY-4107    mobile  longpress to open context menus
@@ -100,7 +100,7 @@ For information on the Sticky Toolbars, see: [Enabling Sticky Toolbars]({{site.b
 ### Premium Plugins
 
 #### PowerPaste
-The {{site.productname}} 5.1 release includes **PowerPaste** 5.1.1.
+The {{site.productname}} 5.1 release includes **PowerPaste** 5.2.0.
 
 **PowerPaste** _5.0_ included a change to the `Remove Formatting` functionality to filter out inline style elements (such as `strong`, `b`, `em`, `i`, and `sub`), in-line with other editor functionality.
 
@@ -127,8 +127,9 @@ The {{site.productname}} 5.1 release includes **Format Painter** 1.2.0.
 The {{site.productname}} 5.1 release includes **Checklist** 1.0.1.
 
 **Checklist** 1.0.1 includes a fix to allow checklist items to be toggled on an iPad.
-
+<!--
 #### Mentions
 The {{site.productname}} 5.1 release includes **Mentions** 2.1.0.
 
 __Needs info__ **Mentions** 2.1.0 adds the ability to include "extra" menu items that allow reloading with different search params.
+-->

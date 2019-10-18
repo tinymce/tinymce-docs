@@ -1,9 +1,9 @@
 
-Some settings have been removed from {{site.productname}} 5.1 to provide an improved solution, or they are no longer required.
+Some API properties have been deprecated in {{site.productname}} 5.1 to provide an improved solution, or they are no longer required.
 
 ### Deprecated API Properties - `tinymce.Env`
 
-* Added new platform detection functions to `Env` and deprecated older detection properties   TINY-4184    gen  os detection/query API changes
+New platform detection functions have been added to the [`Env` API]({{site.baseurl}}/api/tinymce/tinymce.env/), allowing for some older detection properties to be deprecated.
 
 | Deprecated Property | Alternative Property / Reason for Deprecation                                                                                                                                                                                                                        | Type    | Original Description                                                                                   |
 | ------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- | ------------------------------------------------------------------------------------------------------ |

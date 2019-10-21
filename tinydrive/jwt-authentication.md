@@ -16,11 +16,13 @@ JWT is a standard authorization solution for web services and is documented in m
 
 ## Private/public key pair
 
-Tokens used by the TinyMCE cloud services make use of a public/private RSA key-pair. This allows you as an integrator to have full control over the authentication as we don't store the private key. Only you have access to the private key, and only you can produce valid tokens. We can only verify that they are valid and extract user information from that token.
+TinyMCE cloud services tokens use public/private RSA key pairs. The TinyMCE cloud services only store the public key, allowing developers to have full control over the authentication.
 
-The private/public key pair is created in your [Tiny account page](https://apps.tiny.cloud/my-account/jwt-key-manager/), but we only store the public key on our side. The private key is for you to store in your backend.
+The private/public key pair can be created on your [Tiny - My Account page](https://www.tiny.cloud/my-account/jwt/), however we only store the public key on the My Account page. The private key should be downloaded and stored in your backend.
 
-> Keep the private key secure, make sure you do not commit files containing the key to public repositories or similar!
+> **Important**: Keep the private key secure, do not commit files containing the key to public repositories or websites.
+
+For information on generating an RSA key pair locally, see: [Creating a private/public key pair for Tiny Drive](#creatingaprivatepublickeypairfortinydrive).
 
 ## JWT provider URL
 
@@ -177,4 +179,4 @@ If you managed to set this up, you should be good to go with checking out the va
 
 If you need some help, check our [help page]({{site.baseurl}}/tinydrive/get-help/) and if that doesn't work, [submit a support request](https://support.tiny.cloud/hc/en-us/requests/new).
 
-
+{% include configuration/gen-rsa-key-pairs.md %}

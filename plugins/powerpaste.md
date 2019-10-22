@@ -73,7 +73,7 @@ This option controls the default state of the **Paste as text** menu item, which
 
 The supported values are `true` and `false`. The default is `false`.
 
-##### Example
+##### Example: paste_as_text
 
 ```js
 tinymce.init({
@@ -111,6 +111,16 @@ The supported values are:
 * `merge` Preserve the inline formatting and structure of the original document. Invalid and proprietary styles, tags and attributes are still removed ensuring that the HTML is valid while more closely matching the original document formatting.
 * `prompt` - Prompt the user to choose between the clean and merge options after attempting to paste HTML content.
 
+### powerpaste_allow_local_images
+
+When set to `true`, Base64 encoded images using a data URI in the copied content will not be removed after pasting.
+
+**Default value:** `true`
+
+**Possible values:**  `true`, `false`
+
+>***Note:*** *If you configure* ***PowerPaste*** *to allow local images, you can have TinyMCE automatically upload Base64 encoded images for conversion back to a standard image as described on the [image upload documenation]({{ site.baseurl }}/advanced/handle-async-image-uploads/).*
+
 ### powerpaste_block_drop
 
 Due to browser limitations, it is not possible to filter content that is dragged and dropped into the editor. When powerpaste_block_drop is set to true the plugin will disable drag and dropping content into the editor. This prevents the unfiltered content from being introduced. Copy and paste is still enabled.
@@ -119,15 +129,25 @@ Due to browser limitations, it is not possible to filter content that is dragged
 
 **Possible values:**  `true`, `false`
 
-### powerpaste_allow_local_images
+### powerpaste_clean_filtered_inline_elements
 
-When set to true Base64 encoded images using a data URI in the copied content will not be removed after pasting.
+This setting allows for configuration of PowerPaste's **"clean"** paste filters for inline elements. These filters are run when `powerpaste_word_import` or `powerpaste_html_import` are set to `"clean"`; or when a user clicks the **"Remove formatting"** button on the paste prompt dialog.
 
-**Default value:** `true`
+The list of inline elements that should be removed on paste can be specified by setting `powerpaste_clean_filtered_inline_elements` to a comma-separated string of inline element tag names.
 
-**Possible values:**  `true`, `false`
+**Possible values:**  A comma-separated string.
 
->***Note:*** *If you configure* ***PowerPaste*** *to allow local images, you can have TinyMCE automatically upload Base64 encoded images for conversion back to a standard image as described on the [image upload documenation]({{ site.baseurl }}/advanced/handle-async-image-uploads/).*
+##### Example: powerpaste_clean_filtered_inline_elements
+
+```js
+tinymce.init({
+  selector: "textarea",  // change this value according to your HTML
+  plugins: "powerpaste",
+  powerpaste_word_import: "clean", // optional
+  powerpaste_html_import: "clean", // optional
+  powerpaste_clean_filtered_inline_elements: "strong, em, b, i, u, strike, sup, sub, font"
+});
+```
 
 ### powerpaste_keep_unsupported_src
 
@@ -137,16 +157,15 @@ For example, browsers do not allow PowerPaste to access the file system. If your
 
 **Default value:** `false`
 
-**Possible values:**  `true`, `false`
+**Possible values:** `true`, `false`
 
-##### Example
+##### Example: powerpaste_keep_unsupported_src
 
 ```js
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "powerpaste",
-  powerpaste_word_import: "clean",
-  powerpaste_html_import: "merge"
+  powerpaste_keep_unsupported_src: true
 });
 ```
 

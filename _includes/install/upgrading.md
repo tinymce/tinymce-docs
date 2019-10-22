@@ -1,5 +1,5 @@
 ### Upgrade
-The procedure for upgrading to the latest version of {{site.productname}} {{site.productversion}}
+The procedure for upgrading to the latest version of {{site.productname}} {{site.productversion}}.
 #### Cloud
 will be released on 5, 5-dev, 5-testing cloud channels
 

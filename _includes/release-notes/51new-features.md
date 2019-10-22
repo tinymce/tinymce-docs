@@ -16,20 +16,32 @@ Add the following `meta` tag to the `head` of pages using {{site.productname}} t
 <meta name="viewport" content="width=device-width, initial-scale=1">
 ```
 
+#### Table cell selection on mobile
+TinyMCE 5.1 
 * Added touch selector handles for table selections on touch devices   TINY-4097    mobile  Table multicell selection using selectors
 <img alt="Touch selector handles for selecting multiple table cells" src="{{site.baseurl}}/images/table_cell_touch_selector_handles.png" style="max-width:50%" />
+
+#### Touch-friendly split buttons
 * Added additional padding to split button chevrons on touch devices, to make them easier to interact with   TINY-4223    mobile  UI improvement
+
+#### Contextual Keyboard settings
 * Added `inputMode` config field to specify inputmode attribute of `input` dialog components   TINY-4062    mobile  Sets contextual keyboard. Specifies field type (num, str, etc.)
 * Added new `inputMode` property to relevant plugins/dialogs   TINY-4102    mobile  Sets contextual keyboard. Specifies field type (num, str, etc.)
+* Changed the `urlinput` dialog component to use the `url` type attribute   TINY-4102    mobile  Sets contextual keyboard. Specifies field type (num, str, etc.)
+
+#### Mobiles now use the `silver` theme
 * Changed phones to use the `silver` theme by default   TINY-3634    mobile  docs and info to revert
+
+#### New mobile defaults for selected settings
     - `menubar`(phones only)   TINY-4077    mobile
     - `table_grid`   TINY-4075    mobile  Table creating, get a dialog instead
     - `resize`   TINY-4157    mobile
     - `object_resizing`   TINY-4157    mobile  just not text (false and not supported on mobile)
+
+#### Side-scrolling toolbars on mobile
 * Changed toolbars and context toolbars to sidescroll on mobile   TINY-3894   TINY-4107  mobile  UI improvement - no more draw by default
 <img alt="Example of the side-scrolling toolbar and contextual toolbar" src="{{site.baseurl}}/images/side-scrolling-context-toolbar.png" style="max-width:50%" />
 * Changed context menus to render as horizontal menus on touch devices   TINY-4107    mobile  longpress to open context menus
-* Changed the `urlinput` dialog component to use the `url` type attribute   TINY-4102    mobile  Sets contextual keyboard. Specifies field type (num, str, etc.)
 
 > We'll also need to document that iPadOS will not use the `mobile` part of the {{site.productname}} init configuration, since Apple want it to behave similar to a desktop environment. However since it's still a touch device we will change some functionality (eg context toolbars/menus) to behave better for a touch device.
 
@@ -39,10 +51,12 @@ A Sticky Toolbar (or Docking Toolbar), docks the toolbar and the menu to the top
 
 For information on the Sticky Toolbars, see: [Enabling Sticky Toolbars]({{site.baseurl}}/configure/editor-appearance/#toolbar_sticky).
 
-#### Minor changes
+### Minor changes
 
-* Added new platform detection functions to `Env` and deprecated older detection properties   TINY-4184    gen  os detection/query API changes
+#### Changes to the Env API for platform detection
+New platform detection functions have been added to the [`Env` API]({{site.baseurl}}/api/tinymce/tinymce.env/), allowing for some older detection properties to be deprecated.
 
+##### New Env API properties
 | Property          | Type   | Description                                                   |
 | ----------------- | ------ | ------------------------------------------------------------- |
 | `browser.current` | String | Returns the current browser name.                             |
@@ -50,6 +64,7 @@ For information on the Sticky Toolbars, see: [Enabling Sticky Toolbars]({{site.b
 | `os.current`      | String | Returns the current operating system name.                    |
 | `os.version`      | Object | Returns the current operating system major and minor version. |
 
+##### New Env methods
 | Method                 | Type    | Description                                                          |
 | ---------------------- | ------- | -------------------------------------------------------------------- |
 | `browser.isEdge`       | Boolean | Returns `true` if the user's browser is Microsoft Edge.              |
@@ -73,7 +88,12 @@ For information on the Sticky Toolbars, see: [Enabling Sticky Toolbars]({{site.b
 | `deviceType.isTouch`   | Boolean | Returns `true` if the user's device is a touch device.               |
 | `deviceType.isWebView` | Boolean | Returns `true` if the user's device is a WebView device.             |
 
+For a list of deprecated `Env` APIs, see: [Deprecated API Properties - `tinymce.Env`](#deprecatedapiproperties-tinymceenv).
+
+#### Added new `referrer_policy` setting
 * added new referrer_policy setting to add the referrerpolicy attribute when loading scripts or stylesheets.
+
+#### Added a dark TinyMCE skin
 * added a dark content_css skin to go with the dark UI skin.
     Enable dark mode in TinyMCE
     There are two ways to enable dark mode in TinyMCE.
@@ -90,10 +110,17 @@ For information on the Sticky Toolbars, see: [Enabling Sticky Toolbars]({{site.b
 ```
 {% include codepen.html id="dark-mode" %}
 
+#### Added border width to Table cell dialog
 * Added border width field to Table Cell dialog   TINY-4028    gen  any css value
 <img alt="Cell Properties Dialog with new Border Width field" src="{{site.baseurl}}/images/border-width-cell-props.png" style="max-width:50%" />
+
+#### Changed the default `toolbar_drawer` to `floating`
 * Changed default setting for `toolbar_drawer` to `floating`   TINY-3634    gen   docs and info to revert (was false)
+
+#### Icon changes
 * Changed visualblocks toolbar button icon ![New visualblocks icon]({{site.baseurl}}/images/icons/visualblocks.svg) and renamed `paragraph` ![`paragraph` renamed to `visualchars`]({{site.baseurl}}/images/icons/visualchars.svg) icon to `visualchars`   TINY-4074    UI change  button to show invisibles icon updated
+
+#### Fixes to positioning of inline dialogs and menus
 * Fixed inline dialogs positioning incorrectly when the page is scrolled   TINY-4018    positioning of dialogs and menus improved
 * Fixed inline dialogs and menus not repositioning when resizing   TINY-3227    positioning of dialogs and menus improved
 
@@ -127,9 +154,8 @@ The {{site.productname}} 5.1 release includes **Format Painter** 1.2.0.
 The {{site.productname}} 5.1 release includes **Checklist** 1.0.1.
 
 **Checklist** 1.0.1 includes a fix to allow checklist items to be toggled on an iPad.
-<!--
+
 #### Mentions
 The {{site.productname}} 5.1 release includes **Mentions** 2.1.0.
 
 __Needs info__ **Mentions** 2.1.0 adds the ability to include "extra" menu items that allow reloading with different search params.
--->

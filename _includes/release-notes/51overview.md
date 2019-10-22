@@ -9,5 +9,3 @@ Signing up for a free API key provides entitlements to all our free plugins. Thi
 Refer to the [Quick start]({{site.baseurl}}/quick-start) docs for information on getting started with Tiny Cloud.
 
 For information on self-hosting {{site.productname}}, see: [Advanced installation choices]({{site.baseurl}}/general-configuration-guide/advanced-install/).
-
-{% include install/upgrading.md %}

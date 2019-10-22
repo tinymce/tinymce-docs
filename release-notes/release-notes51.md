@@ -21,4 +21,4 @@ keywords: releasenotes newfeatures deleted technologypreview bugfixes knownissue
 
 {% include release-notes/51known-issues.md %}
 
-
+{% include install/upgrading.md %}

@@ -25,9 +25,9 @@
 
 To install the `tinymce-vue` package and save it to your `package.json`.
 
-    ```
-    $ npm install --save @tinymce/tinymce-vue
-    ```
+```
+$ npm install --save @tinymce/tinymce-vue
+```
 
 ### Using the TinyMCE Vue.js integration
 

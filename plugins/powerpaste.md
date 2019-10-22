@@ -113,7 +113,7 @@ The supported values are:
 
 ### powerpaste_allow_local_images
 
-When set to true Base64 encoded images using a data URI in the copied content will not be removed after pasting.
+When set to `true`, Base64 encoded images using a data URI in the copied content will not be removed after pasting.
 
 **Default value:** `true`
 
@@ -135,9 +135,7 @@ This setting allows for configuration of PowerPaste's **"clean"** paste filters 
 
 The list of inline elements that should be removed on paste can be specified by setting `powerpaste_clean_filtered_inline_elements` to a comma-separated string of inline element tag names.
 
-**Default value:** `false`
-
-**Possible values:** `true`, `false` or a comma-separated string
+**Possible values:**  A comma-separated string.
 
 ##### Example: powerpaste_clean_filtered_inline_elements
 

@@ -20,7 +20,6 @@ On a command line, run the following commands to install OpenSSL on:
 
 * Red Hat Enterprise Linux 6 or 7.
 * CentOS 6 or 7.
-* Fedora 17 or earlier.
 
 ```sh
 sudo yum check-update
@@ -125,8 +124,8 @@ To create a private/public key pair on a Microsoft Windows operating system:
 #### Installing OpenSSL on Microsoft Windows
 To install OpenSSL with _Git for Windows_:
 
-1. Download the _Windows_ package from [git Downloads](https://git-scm.com/downloads).
-1. Open the downloaded file `git-<VERSION>-64-bit.exe`, where _`<VERSION>`_ is the latest version of _Git for Windows_.
+1. Download the _Windows_ package from [the Git Downloads page](https://git-scm.com/downloads).
+1. Open the downloaded file `Git-<VERSION>-<ARCH>-bit.exe`, where _`<VERSION>`_ is the latest version of _Git for Windows_ and _`<ARCH>`_ is the architecture, such as _32-bit_ or _64-bit_.
 1. Click **Next** on the _Information_ and _Select Destination Location_ screens.
 1. Select **Check daily for Git for Windows updates** on the *Select Components* screen, then click **Next**.
 1. Click **Next** on the remaining screens to accept the default settings.

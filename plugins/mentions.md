@@ -54,6 +54,40 @@ tinymce.init({
 
 **Note:**  *The values returned in the users array for "id" and "name" all need to be* `String` *values*
 
+Additionally the success callback can be passed an optional array of extra items, that when clicked will reload the menu and pass additional query parameters to the fetch function. The extra items can be used to provide the ability to search with different queries, or show additional results that would normally be slower to fetch, such as a full text search. Each extra item should contain a "text" property for the content to be displayed in the menu and a "meta" property for that will be passed back via the fetch query parameter.
+
+##### Example with extras
+
+```js
+tinymce.init({
+  selector: "textarea",
+  plugins: "mentions",
+  mentions_fetch: function (query, success) {
+    // query.term is the text the user typed after the '@'
+    var url = '/users?query=' + query.term;
+    var isFullTextSearch = query.meta && query.meta.fullTextSearch;
+    if (isFullTextSearch) {
+      url += '&full=true'
+    }
+
+    // Extras are shown at the end of the list and will reload the menu
+    // by passing the meta to the fetch function
+    var extras = isFullTextSearch ? [ ] : [
+      {
+        text: 'Full user search...',
+        meta: { fullTextSearch: true }
+      }
+    ];
+
+    fetch(url).then(function(users) {
+      // Where the user object must contain the properties `id` and `name`
+      // but you could additionally include anything else you deem useful.
+      success(users, extras);
+    });
+  }
+});
+```
+
 ### `mentions_menu_complete`
 
 This option overrides the default logic for inserting the mention into the editor. The callback should return an element created using the editor's document.

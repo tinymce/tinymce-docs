@@ -43,7 +43,7 @@ tinymce.init({
       });
 
       users = users.slice(0, 10);
-      
+
       // Where the user object must contain the properties `id` and `name`
       // but you could additionally include anything else you deem useful.
       success(users);
@@ -54,7 +54,10 @@ tinymce.init({
 
 **Note:**  *The values returned in the users array for "id" and "name" all need to be* `String` *values*
 
-Additionally the success callback can be passed an optional array of extra items, that when clicked will reload the menu and pass additional query parameters to the fetch function. The extra items can be used to provide the ability to search with different queries, or show additional results that would normally be slower to fetch, such as a full text search. Each extra item should contain a "text" property for the content to be displayed in the menu and a "meta" property for that will be passed back via the fetch query parameter.
+The `success` callback can be passed an optional array of extra items. When clicked, the menu reloads and passes additional query parameters to the fetch function. The extra items can be used to search with different queries or show additional results, such as a full text search (which is slower to fetch). Each extra item should contain:
+
+* A "text" property for the content to be displayed in the menu.
+* A "meta" property for that will be passed using the fetch query parameter.
 
 ##### Example with extras
 

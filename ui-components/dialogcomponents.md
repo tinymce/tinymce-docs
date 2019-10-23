@@ -201,7 +201,8 @@ A **button** is a clickable component that can contain text or an icon. There ar
 | text | string | required | Text to display in the button **if icon is not specified**. Also used for the button's `title` attribute. |
 | name | string | optional | A identifier for the button. If not specified, the button will be assigned a randomly generated name.  |
 | icon | string | optional | Name of the icon to be displayed. Must correspond to an icon in the icon pack. **When configured, the button will display the icon instead of text.** |
-| primary | boolean | optional | Whether to style the button as a primary or secondary button. |
+| primary | boolean | optional | default: `false` - Whether to style the button as a primary or secondary button. |
+| borderless | boolean | optional | default: `false` - Whether to style the button without a border and background color. |
 
 > Note: Buttons do not support mixing icons and text at the moment.
 
@@ -211,7 +212,8 @@ A **button** is a clickable component that can contain text or an icon. There ar
   text: 'Alpha',
   primary: true,
   name: 'alpha-button',
-  disabled: true
+  disabled: true,
+  borderless: false
 }
 ```
 
@@ -326,7 +328,8 @@ An **input** is a composite component that renders a label and a single line tex
   name: 'inputA', // identifier
   label: 'Input Label', // text for the label
   placeholder: 'example', // placeholder text for the input
-  disabled: true // disabled state
+  disabled: true, // disabled state
+  maximized: false // grow width to take as much space as possible
 }
 ```
 
@@ -392,7 +395,8 @@ A **textarea** is a multiline text field.
   name: 'text-a', // identifier
   label: 'Text: ',
   placeholder: 'example',
-  disabled: true // disabled state
+  disabled: true, // disabled state
+  maximized: false // grow width to take as much space as possible
 }
 ```
 

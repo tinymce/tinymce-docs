@@ -12,6 +12,8 @@ Use the [toolbar]({{site.baseurl}}/configure/editor-appearance/#toolbar) option 
 
 The drawer settings have to be specified in the `tinymce.init` at the time of configuring the  `toolbar_drawer` option. There are two types of drawer settings - _floating_ and _sliding_.
 
+{{site.differs_for_mobile}}
+
 ### Floating
 
 If the `toolbar_drawer` is configured to `floating`, the toolbar appears under the `toolbar_drawer` icon in a floating shelf format when the `toolbar_drawer` icon ![**Drawer**]({{site.baseurl}}/images/icons/more-drawer.svg) is clicked.

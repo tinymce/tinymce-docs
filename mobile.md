@@ -6,33 +6,53 @@ description: A new mobile-first user experience for rich text editing.
 keywords: mobile tablet
 ---
 
-Why make TinyMCE mobile friendly? Simple. We live in a "mobile-first" world and expect a seamless experience between desktop and mobile. Our goal is to help you achieve this with as little effort as possible.
+{{site.productname}} mobile is designed to run on iOS Safari and Android Chrome.
 
-We're pleased to introduce TinyMCE mobile, available in version 4.7 and later.
-
-TinyMCE mobile is designed to run on iOS Safari and Android Chrome. You'll find a streamlined interface while keeping the most common touch interactions easily to hand.
-
-Configuration is relatively easy, so let's get started.
-
-> Note: Please note that TinyMCE mobile will not work on non-mobile environments.
+> Note: Please note that {{site.productname}} mobile will not work on non-mobile environments.
 
 ## Configuring mobile
 
+Add the following `meta` tag to the `head` of pages using {{site.productname}} to ensure the mobile user interface functions as intended.
+
+```html
+<meta name="viewport" content="width=device-width, initial-scale=1">
+```
+
+> Note: iPads do not use the `mobile` part of the {{site.productname}} init configuration. This is due to a constraint added by Apple to return the environment as a "desktop environment" for iPads. iPads users will receive the other changes to touch functionality, such as context toolbars and context menus.
+
 New to Tiny 5, the mobile experience is built in and does not require additional configuration.
 
-Tinymce will detect the platform and will show an optimal UI experience given a device type and screensize.
+Tinymce will detect the platform and will show an optimal UI experience given a device type and screen size.
 
-defaults that vary from desktop
-[`menubar`]({{site.baseurl}}/configure/editor-appearance/#menubar) defaults to `false` on mobile phones.
-[`table_grid`]({{site.baseurl}}/plugins/table/#table_grid)   TINY-4075    mobile  Table creating, get a dialog instead
-[`resize`]({{site.baseurl}}/configure/editor-appearance/#resize)   TINY-4157    mobile
-[`object_resizing`]({{site.baseurl}}/configure/advanced-editing-behavior/#object_resizing)  
+### Configuration settings with mobile defaults
+Some settings have been updated to include a default value for mobile devices:
 
-## Configuring the Plugins
+* [`menubar`]({{site.baseurl}}/configure/editor-appearance/#menubar) - defaults to `false` on mobile phones.
+* [`toolbar_drawer`]({{site.baseurl}}/configure/editor-appearance/#toolbar_drawer) - defaults to `false` on mobile devices.
+* [`toolbar_sticky`]({{site.baseurl}}/configure/editor-appearance/#toolbar_sticky) - Sticky Toolbar is not supported on mobile devices and defaults to `false`.
+* [`table_grid`]({{site.baseurl}}/plugins/table/#table_grid) - Table grid is not supported on mobile devices and defaults to `false`. When creating tables on mobile, a dialog is shown instead of the table grid.
+* [`resize`]({{site.baseurl}}/configure/editor-appearance/#resize) - Resizing is not supported on mobile devices and defaults to `false`.
+* [`object_resizing`]({{site.baseurl}}/configure/advanced-editing-behavior/#object_resizing) - Object resizing is not supported on mobile devices and defaults to `false`.
 
-The plugins supported by mobile are currently limited to the [autosave]({{site.baseurl}}/plugins/autosave/), [autolink]({{site.baseurl}}/plugins/autolink/), and [lists]({{site.baseurl}}/plugins/lists/) plugins. This is by design. TinyMCE Mobile is in the early release cycle and does not include all the plugins available in the desktop version. The developer community is encouraged to provide suggestions about which plugins should be mobile optimized. Please complete this [survey](https://docs.google.com/forms/d/e/1FAIpQLSdWamU5HsZtv-SPqGRyu6Ql1zLqlrCQFP1vSrzx1oHikMFvlw/viewform) to provide feedback.
+## The legacy mobile theme
 
-Specify which of the plugins should be added by adding a plugin entry to the mobile section as shown in the following example:
+The mobile experience provided for {{site.productname}} 4.7 through {{site.productname}} 5.0 has been deprecated in {{site.productname}} 5.1.
+
+To revert to the legacy mobile theme, add the mobile theme to the {{site.productname}} configuration, such as:
+
+```js
+tinymce.init({
+  mobile: {
+    theme: 'mobile'
+  }
+});
+```
+
+### Legacy mobile theme - configuring the plugins
+
+The plugins supported by legacy mobile theme are limited to the [autosave]({{site.baseurl}}/plugins/autosave/), [autolink]({{site.baseurl}}/plugins/autolink/), and [lists]({{site.baseurl}}/plugins/lists/) plugins.
+
+To add these plugins to the legacy mobile theme, add a plugin entry to the mobile section. For example:
 
 ```js
 tinymce.init({
@@ -40,14 +60,14 @@ tinymce.init({
   theme: 'silver',
   mobile: {
     theme: 'mobile',
-    plugins: [ 'autosave', 'lists', 'autolink' ]
+    plugins: 'autosave lists autolink'
   }
 });
 ```
 
-## Configuring the Toolbar
+### Legacy mobile theme - configuring the Toolbar
 
-TinyMCE mobile supports a small subset of the toolbar items supported by the main mode.
+The legacy TinyMCE theme mobile supports a subset of the toolbar items, which can configured using the `mobile: toolbar` setting, such as:
 
 ```js
 tinymce.init({
@@ -61,7 +81,7 @@ tinymce.init({
 });
 ```
 
-Below are the toolbar items currently supported, with any plugins/configuration required.
+Below are the toolbar items supported for the legacy mobile theme, and the plugins/configuration required.
 
 > Note: The `list` functions require the [lists]({{site.baseurl}}/plugins/lists/) plugin and `styleselect` requires configuring [style_formats]({{site.baseurl}}/configure/editor-appearance/#style_formats).
 

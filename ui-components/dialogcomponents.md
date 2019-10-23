@@ -330,6 +330,24 @@ An **input** is a composite component that renders a label and a single line tex
 }
 ```
 
+#### inputMode
+
+{{site.requires_5_1v}}
+
+Use `inputMode` to set the type of onscreen keyboard provided on mobile devices when a user focuses the input element.
+
+For a list of valid input modes, see: [MDN Web Docs - inputmode](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/inputmode).
+
+```js
+{
+  type: 'input', // component type
+  inputMode: 'text',
+  name: 'inputA', // identifier
+  label: 'Input Label', // text for the label
+  placeholder: 'example' // placeholder text for the input
+}
+```
+
 #### selectbox
 
 A **selectbox** is a composite component with a label and a dropdown list of options for users to select from.

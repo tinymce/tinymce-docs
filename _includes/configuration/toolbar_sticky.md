@@ -14,6 +14,8 @@ To enable Sticky Toolbars, set `toolbar_sticky` as `true` in the `tinymce.init` 
 
 **Possible Values:** `true`, `false`
 
+{{site.differs_for_mobile}}
+
 ##### Example: toolbar_sticky
 
 ```js

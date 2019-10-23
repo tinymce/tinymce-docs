@@ -3,8 +3,22 @@ The following new features were added to the {{site.productname}} 5.1 version.
 
 ### Mobile
 
-most Premium Plugins now work on mobile
 
+
+
+
+
+
+#### Mobiles now use the `silver` theme
+The mobile experience provided for {{site.productname}} 4.7 through {{site.productname}} 5.0 has been deprecated in {{site.productname}} 5.1.
+
+most Premium Plugins now work on mobile
+not:
+* permanent pen
+
+The new mobile experience comes with a number of user interface changes in addition to the {{site.productname}} "desktop" experience:
+
+* [Horizontal contextual menus on mobile]
 
 | **Legacy mobile experience**<br />( {{site.productname}} 4.7 through {{site.productname}} 5.0 ) | **New mobile experience**<br />( {{site.productname}} 5.1 + )                              |
 | ----------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ |
@@ -16,34 +30,65 @@ Add the following `meta` tag to the `head` of pages using {{site.productname}} t
 <meta name="viewport" content="width=device-width, initial-scale=1">
 ```
 
-#### Table cell selection on mobile
-TinyMCE 5.1 
-* Added touch selector handles for table selections on touch devices   TINY-4097    mobile  Table multicell selection using selectors
-<img alt="Touch selector handles for selecting multiple table cells" src="{{site.baseurl}}/images/table_cell_touch_selector_handles.png" style="max-width:50%" />
+To revert to the legacy mobile theme, add the mobile theme to the {{site.productname}} configuration, such as:
+
+```js
+tinymce.init({
+  mobile: {
+    theme: 'mobile'
+  }
+});
+```
+
+For information on:
+* Using the `silver` theme for mobile, see: [TinyMCE Mobile]({{site.baseurl}}/mobile/).
+* Using the legacy `mobile` theme, see: [TinyMCE Mobile - The legacy mobile theme]({{site.baseurl}}/mobile/#thelegacymobiletheme).
+
+#### Horizontal contextual menus on mobile
+Contextual menus are now mobile friendly, with an update to be horizontal on mobile devices. Contextual menus will open when a long-press is used on mobile devices. They also [side-scroll](#side-scrollingtoolbarsonmobile) to allow larger lists of items to be available on mobile devices.
+
+<img alt="Example of the side-scrolling toolbar and contextual toolbar" src="{{site.baseurl}}/images/side-scrolling-context-toolbar.png" style="display:block;margin-left:auto;margin-right:auto;max-width:50%;border: 1px solid #036DD5" />
+
+#### Side-scrolling toolbars on mobile
+Toolbars and [horizontal menus](#horizontalcontextualmenusonmobile) side-scroll using "swipe" gestures on mobile devices. This allows longer toolbars to be used without occupying too much screen space. This feature removes the need for a toolbar drawer on mobile devices.
+
+#### Contextual keyboard settings
+A new `inputMode` configuration setting for dialog components has been added to provide contextual onscreen keyboards on mobile devices. Dialogs in {{site.productname}}, the core {{site.productname}} plugins, and the premium {{site.productname}} plugins have been updated to use `inputMode`.
+
+For information on using `inputMode`, see: [Dialog components - `inputMode`]({{site.baseurl}}/ui-components/dialogcomponents/#inputmode).
+
+#### New mobile defaults for selected settings
+These mobile-specific default values have been set to disable unsupported settings for mobile devices or to provide the best experience without configuration from developers.
+
+The following settings have mobile-specific default values:
+
+* [`menubar`]({{site.baseurl}}/configure/editor-appearance/#menubar) - defaults to `false` on mobile phones.
+* [`toolbar_drawer`]({{site.baseurl}}/configure/editor-appearance/#toolbar_drawer) - defaults to `false` on mobile devices. The toolbar will [side-scroll by default](#sidescrollingtoolbarsonmobile).
+* [`toolbar_sticky`]({{site.baseurl}}/configure/editor-appearance/#toolbar_sticky) - Sticky Toolbar is not supported on mobile devices and defaults to `false`.
+* [`table_grid`]({{site.baseurl}}/plugins/table/#table_grid) - Table grid is not supported on mobile devices and defaults to `false`. When creating tables on mobile, a dialog is shown instead of the table grid.
+* [`resize`]({{site.baseurl}}/configure/editor-appearance/#resize) - Resizing is not supported on mobile devices and defaults to `false`.
+* [`object_resizing`]({{site.baseurl}}/configure/advanced-editing-behavior/#object_resizing) - Object resizing is not supported on mobile devices and defaults to `false`.
+
+To override these mobile defaults, add the setting to the `mobile` configuration, such as:
+
+```js
+tinymce.init({
+  selector: 'textarea',
+  mobile: {
+    menubar: true
+  }
+});
+```
 
 #### Touch-friendly split buttons
 * Added additional padding to split button chevrons on touch devices, to make them easier to interact with   TINY-4223    mobile  UI improvement
 
-#### Contextual Keyboard settings
-* Added `inputMode` config field to specify inputmode attribute of `input` dialog components   TINY-4062    mobile  Sets contextual keyboard. Specifies field type (num, str, etc.)
-* Added new `inputMode` property to relevant plugins/dialogs   TINY-4102    mobile  Sets contextual keyboard. Specifies field type (num, str, etc.)
-* Changed the `urlinput` dialog component to use the `url` type attribute   TINY-4102    mobile  Sets contextual keyboard. Specifies field type (num, str, etc.)
+#### Table cell selection on mobile
+TinyMCE 5.1
+* Added touch selector handles for table selections on touch devices   TINY-4097    mobile  Table multicell selection using selectors
+<img alt="Touch selector handles for selecting multiple table cells" src="{{site.baseurl}}/images/table_cell_touch_selector_handles.png" style="display:block;margin-left:auto;margin-right:auto;max-width:50%;border: 1px solid #036DD5" />
 
-#### Mobiles now use the `silver` theme
-* Changed phones to use the `silver` theme by default   TINY-3634    mobile  docs and info to revert
-
-#### New mobile defaults for selected settings
-    - `menubar`(phones only)   TINY-4077    mobile
-    - `table_grid`   TINY-4075    mobile  Table creating, get a dialog instead
-    - `resize`   TINY-4157    mobile
-    - `object_resizing`   TINY-4157    mobile  just not text (false and not supported on mobile)
-
-#### Side-scrolling toolbars on mobile
-* Changed toolbars and context toolbars to sidescroll on mobile   TINY-3894   TINY-4107  mobile  UI improvement - no more draw by default
-<img alt="Example of the side-scrolling toolbar and contextual toolbar" src="{{site.baseurl}}/images/side-scrolling-context-toolbar.png" style="max-width:50%" />
-* Changed context menus to render as horizontal menus on touch devices   TINY-4107    mobile  longpress to open context menus
-
-> We'll also need to document that iPadOS will not use the `mobile` part of the {{site.productname}} init configuration, since Apple want it to behave similar to a desktop environment. However since it's still a touch device we will change some functionality (eg context toolbars/menus) to behave better for a touch device.
+> Note: iPads do not use the `mobile` part of the {{site.productname}} init configuration. This is due to a constraint added by Apple to return the environment as a "desktop environment" for iPads. iPads users will receive the other changes to touch functionality, such as context toolbars and context menus.
 
 ### Sticky Toolbar
 
@@ -57,6 +102,7 @@ For information on the Sticky Toolbars, see: [Enabling Sticky Toolbars]({{site.b
 New platform detection functions have been added to the [`Env` API]({{site.baseurl}}/api/tinymce/tinymce.env/), allowing for some older detection properties to be deprecated.
 
 ##### New Env API properties
+
 | Property          | Type   | Description                                                   |
 | ----------------- | ------ | ------------------------------------------------------------- |
 | `browser.current` | String | Returns the current browser name.                             |
@@ -65,6 +111,7 @@ New platform detection functions have been added to the [`Env` API]({{site.baseu
 | `os.version`      | Object | Returns the current operating system major and minor version. |
 
 ##### New Env methods
+
 | Method                 | Type    | Description                                                          |
 | ---------------------- | ------- | -------------------------------------------------------------------- |
 | `browser.isEdge`       | Boolean | Returns `true` if the user's browser is Microsoft Edge.              |
@@ -112,7 +159,7 @@ For a list of deprecated `Env` APIs, see: [Deprecated API Properties - `tinymce.
 
 #### Added border width to Table cell dialog
 * Added border width field to Table Cell dialog   TINY-4028    gen  any css value
-<img alt="Cell Properties Dialog with new Border Width field" src="{{site.baseurl}}/images/border-width-cell-props.png" style="max-width:50%" />
+<img alt="Cell Properties Dialog with new Border Width field" src="{{site.baseurl}}/images/border-width-cell-props.png" style="display:block;margin-left:auto;margin-right:auto;max-width:50%;border: 1px solid #036DD5" />
 
 #### Changed the default `toolbar_drawer` to `floating`
 * Changed default setting for `toolbar_drawer` to `floating`   TINY-3634    gen   docs and info to revert (was false)
@@ -158,4 +205,4 @@ The {{site.productname}} 5.1 release includes **Checklist** 1.0.1.
 #### Mentions
 The {{site.productname}} 5.1 release includes **Mentions** 2.1.0.
 
-__Needs info__ **Mentions** 2.1.0 adds the ability to include "extra" menu items that allow reloading with different search params.
+**Mentions** 2.1.0 has been updated to allow for the inclusion of "extra" menu items, such as additional results or search items. For details, see: [Mentions - `mentions_fetch`]({{site.baseurl}}/plugins/mentions/#mentions_fetch).

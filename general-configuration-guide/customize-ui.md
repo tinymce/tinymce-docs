@@ -14,12 +14,23 @@ This section is about customizing TinyMCE's user interface with skins, toolbar b
 
 ### Skins
 
-Skins control the appearance of TinyMCE such as colors and spacing. The default skin is called **Oxide** and has a `light` and a `dark` version. The default skin is `oxide`. To get the dark version, use the following config:
+Skins control the appearance of TinyMCE such as colors and spacing. The default skin is called **Oxide** and has a `light` and a `dark` version. The default skin is `oxide`. To initialize the editor with the dark version of the default skin, use the following configuration:
 
 ```js
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  skin: 'oxide-dark'
+  skin: 'oxide-dark',
+  content_css: 'dark'  // {{site.requires_5_1v}}
+});
+```
+
+To base the skin version on the user’s preference as specified in their operating system, use:
+
+```js
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  skin: (window.matchMedia("(prefers-color-scheme: dark)").matches ? "oxide-dark" : ""),
+  content_css: (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "")
 });
 ```
 
@@ -78,7 +89,7 @@ The editable area can also automatically resize itself as the user enters conten
 
 ### Customizing the editable area with content_css
 
-Use the [`content_css`]({{ site.baseurl }}/configure/content-appearance/#content_css) customization option to ensure that TinyMCE's editable area has the same styling as the surrounding content. 
+Use the [`content_css`]({{ site.baseurl }}/configure/content-appearance/#content_css) customization option to ensure that TinyMCE's editable area has the same styling as the surrounding content.
 
 Use the same `css` file that controls the look and style of the content TinyMCE is integrated into in this setting. The following example includes the file `mycontent.css` in all of the pages to control the site's global appearance. This example ensures the content in the editable area contains the same style as the site.
 
@@ -99,7 +110,7 @@ See the [content_css]({{ site.baseurl }}/configure/content-appearance/#content_c
 
 ### Hiding the status bar
 
-The status bar is the gray bar aligned to the bottom of the editor's editable area. The status bar contains the path information and the resize handle. Removing the status bar disables the ability for users to change the size of the editable area. 
+The status bar is the gray bar aligned to the bottom of the editor's editable area. The status bar contains the path information and the resize handle. Removing the status bar disables the ability for users to change the size of the editable area.
 
 #### Example
 
@@ -130,7 +141,7 @@ tinymce.init({
 
 All of the buttons disappear after the `code` button is added to the toolbar and a new menu called `Tools` with the menu item `Source code` is created. (See [this page]({{ site.baseurl }}/quick-start/) for a basic HTML code block.)
 
-#### Example 
+#### Example
 
 The following example displays the default toolbar in addition to the `code` functionality:
 

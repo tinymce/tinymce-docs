@@ -6,9 +6,28 @@ description: A new mobile-first user experience for rich text editing.
 keywords: mobile tablet
 ---
 
-{{site.productname}} mobile is designed to run on iOS Safari and Android Chrome.
+{{site.productname}} 5.1 provides an improved mobile editor, replacing the existing mobile editor with a touch friendly version on the silver theme.
 
-> Note: Please note that {{site.productname}} mobile will not work on non-mobile environments.
+> Note: iPads do not use the `mobile` part of the {{site.productname}} init configuration. This is due to a constraint added by Apple to return the environment as a "desktop environment" for iPads. iPads users will receive the other changes to touch functionality, such as context toolbars and context menus.
+
+The new mobile experience comes with a number of user interface changes in addition to the {{site.productname}} "desktop" experience:
+
+* Mobile devices now use the `silver` theme.
+* Horizontal contextual menus on mobile.
+* Side-scrolling toolbars  and contextual menus on mobile.
+* Contextual keyboard settings for dialogs using [`inputMode`]({{site.baseurl}}/ui-components/dialogcomponents/#inputmode).
+* [Mobile defaults for selected settings](#mobiledefaultsforselectedsettings).
+* Table cell selection on mobile.
+
+The new mobile experience allows most of the {{site.productname}} plugins to work on mobile devices, except for:
+
+* [Comments]({{site.baseurl}}/plugins/comments/).
+* [Image tools]({{site.baseurl}}/plugins/imagetools/).
+* [MoxieManager]({{site.baseurl}}/plugins/moxiemanager/).
+* [Permanent Pen]({{site.baseurl}}/plugins/permanentpen/).
+* [Print]({{site.baseurl}}/plugins/print/).
+
+{{site.productname}} will detect the platform and will show an optimal UI experience given a device type and screen size.
 
 ## Configuring mobile
 
@@ -18,21 +37,29 @@ Add the following `meta` tag to the `head` of pages using {{site.productname}} t
 <meta name="viewport" content="width=device-width, initial-scale=1">
 ```
 
-> Note: iPads do not use the `mobile` part of the {{site.productname}} init configuration. This is due to a constraint added by Apple to return the environment as a "desktop environment" for iPads. iPads users will receive the other changes to touch functionality, such as context toolbars and context menus.
+### Mobile defaults for selected settings
+These mobile-specific default values have been set to disable unsupported settings for mobile devices or to provide the best experience without configuration from developers.
 
-New to Tiny 5, the mobile experience is built in and does not require additional configuration.
-
-Tinymce will detect the platform and will show an optimal UI experience given a device type and screen size.
-
-### Configuration settings with mobile defaults
-Some settings have been updated to include a default value for mobile devices:
+The following settings have mobile-specific default values:
 
 * [`menubar`]({{site.baseurl}}/configure/editor-appearance/#menubar) - defaults to `false` on mobile phones.
-* [`toolbar_drawer`]({{site.baseurl}}/configure/editor-appearance/#toolbar_drawer) - defaults to `false` on mobile devices.
+* [`toolbar_drawer`]({{site.baseurl}}/configure/editor-appearance/#toolbar_drawer) - defaults to `false` on mobile devices. The toolbar will [side-scroll by default](#sidescrollingtoolbarsonmobile).
 * [`toolbar_sticky`]({{site.baseurl}}/configure/editor-appearance/#toolbar_sticky) - Sticky Toolbar is not supported on mobile devices and defaults to `false`.
 * [`table_grid`]({{site.baseurl}}/plugins/table/#table_grid) - Table grid is not supported on mobile devices and defaults to `false`. When creating tables on mobile, a dialog is shown instead of the table grid.
 * [`resize`]({{site.baseurl}}/configure/editor-appearance/#resize) - Resizing is not supported on mobile devices and defaults to `false`.
 * [`object_resizing`]({{site.baseurl}}/configure/advanced-editing-behavior/#object_resizing) - Object resizing is not supported on mobile devices and defaults to `false`.
+
+To override these mobile defaults, add the setting to the `mobile` configuration, such as:
+
+```js
+tinymce.init({
+  selector: 'textarea',
+  mobile: {
+    menubar: true
+  }
+});
+```
+
 
 ## The legacy mobile theme
 

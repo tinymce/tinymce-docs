@@ -1,6 +1,5 @@
 These Release Notes provide a high-level coverage of: improvements and additions, known issues, important bug fixes & deprecated functionality associated with the release of {{site.productname}} 5.1.
 
-
 ### Get {{site.productname}} 5.1
 {{site.productname}} 5.1 can be deployed by the Tiny Cloud using a Tiny Cloud API key, or {{site.productname}} can be self-hosted.
 

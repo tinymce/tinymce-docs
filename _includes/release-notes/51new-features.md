@@ -3,32 +3,42 @@ The following new features were added to the {{site.productname}} 5.1 version.
 
 ### Mobile
 
-
-
-
-
-
-
-#### Mobiles now use the `silver` theme
-The mobile experience provided for {{site.productname}} 4.7 through {{site.productname}} 5.0 has been deprecated in {{site.productname}} 5.1.
-
-most Premium Plugins now work on mobile
-not:
-* permanent pen
+{{site.productname}} 5.1 provides an improved mobile editor, replacing the existing mobile editor with a touch friendly version on the silver theme.
 
 The new mobile experience comes with a number of user interface changes in addition to the {{site.productname}} "desktop" experience:
 
-* [Horizontal contextual menus on mobile]
+* [Mobile devices now use the `silver` theme](#mobiledevicesnowusethesilvertheme).
+* [Horizontal contextual menus on mobile](#horizontalcontextualmenusonmobile).
+* [Side-scrolling toolbars on mobile](#side-scrollingtoolbarsonmobile).
+* [Contextual keyboard settings](#contextualkeyboardsettings).
+* [New mobile defaults for selected settings](#newmobiledefaultsforselectedsettings).
+* [Table cell selection on mobile](#tablecellselectiononmobile).
+* [Touch-friendly split buttons](#touch-friendlysplitbuttons).
+
+The new mobile experience allows most of the {{site.productname}} plugins to work on mobile devices, except for:
+
+* [Comments]({{site.baseurl}}/plugins/comments/).
+* [Image tools]({{site.baseurl}}/plugins/imagetools/).
+* [MoxieManager]({{site.baseurl}}/plugins/moxiemanager/).
+* [Paste]({{site.baseurl}}/plugins/paste/).
+* [Permanent Pen]({{site.baseurl}}/plugins/permanentpen/).
+* [Print]({{site.baseurl}}/plugins/print/).
+
+To ensure the mobile editor functions as intended, add the following `meta` tag to the `head` of pages using {{site.productname}}.
+
+```html
+<meta name="viewport" content="width=device-width, initial-scale=1">
+```
+
+> Note: iPads do not use the `mobile` part of the {{site.productname}} init configuration. This is due to a constraint added by Apple to return the environment as a "desktop environment" for iPads. iPads users will receive the other changes to touch functionality, such as context toolbars and context menus.
+
+#### Mobile devices now use the `silver` theme
+The mobile experience provided for {{site.productname}} 4.7 through {{site.productname}} 5.0 has been deprecated in {{site.productname}} 5.1.
 
 | **Legacy mobile experience**<br />( {{site.productname}} 4.7 through {{site.productname}} 5.0 ) | **New mobile experience**<br />( {{site.productname}} 5.1 + )                              |
 | ----------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ |
 | ![{{site.productname}} legacy mobile experience]({{site.baseurl}}/images/legacy_mobile_exp.png) | ![{{site.productname}} 5.1+ mobile experience]({{site.baseurl}}/images/5_1_mobile_exp.png) |
 
-Add the following `meta` tag to the `head` of pages using {{site.productname}} to ensure the mobile user interface functions as intended.
-
-```html
-<meta name="viewport" content="width=device-width, initial-scale=1">
-```
 
 To revert to the legacy mobile theme, add the mobile theme to the {{site.productname}} configuration, such as:
 
@@ -40,12 +50,16 @@ tinymce.init({
 });
 ```
 
+> **Note:** No enhancements have been made to the legacy mobile theme. all the changes described in these release notes relate to the `silver` theme on mobile devices.
+
 For information on:
 * Using the `silver` theme for mobile, see: [TinyMCE Mobile]({{site.baseurl}}/mobile/).
 * Using the legacy `mobile` theme, see: [TinyMCE Mobile - The legacy mobile theme]({{site.baseurl}}/mobile/#thelegacymobiletheme).
 
 #### Horizontal contextual menus on mobile
 Contextual menus are now mobile friendly, with an update to be horizontal on mobile devices. Contextual menus will open when a long-press is used on mobile devices. They also [side-scroll](#side-scrollingtoolbarsonmobile) to allow larger lists of items to be available on mobile devices.
+
+For example:
 
 <img alt="Example of the side-scrolling toolbar and contextual toolbar" src="{{site.baseurl}}/images/side-scrolling-context-toolbar.png" style="display:block;margin-left:auto;margin-right:auto;max-width:50%;border: 1px solid #036DD5" />
 
@@ -80,15 +94,16 @@ tinymce.init({
 });
 ```
 
-#### Touch-friendly split buttons
-* Added additional padding to split button chevrons on touch devices, to make them easier to interact with   TINY-4223    mobile  UI improvement
-
 #### Table cell selection on mobile
-TinyMCE 5.1
-* Added touch selector handles for table selections on touch devices   TINY-4097    mobile  Table multicell selection using selectors
+The [table plugin]({{site.baseurl}}/plugins/table/) has been updated to provide _touch selection handles_ on touch devices. The touch selection handles allow users to select a range of table cells on touch devices.
+
+For example:
+
 <img alt="Touch selector handles for selecting multiple table cells" src="{{site.baseurl}}/images/table_cell_touch_selector_handles.png" style="display:block;margin-left:auto;margin-right:auto;max-width:50%;border: 1px solid #036DD5" />
 
-> Note: iPads do not use the `mobile` part of the {{site.productname}} init configuration. This is due to a constraint added by Apple to return the environment as a "desktop environment" for iPads. iPads users will receive the other changes to touch functionality, such as context toolbars and context menus.
+#### Touch-friendly split buttons
+The styling on [split buttons]({{site.baseurl}}/ui-components/typesoftoolbarbuttons/#splitbutton) has been updated to include more padding so they are easier to interact with on touch devices.
+
 
 ### Sticky Toolbar
 
@@ -96,7 +111,7 @@ A Sticky Toolbar (or Docking Toolbar), docks the toolbar and the menu to the top
 
 For information on the Sticky Toolbars, see: [Enabling Sticky Toolbars]({{site.baseurl}}/configure/editor-appearance/#toolbar_sticky).
 
-### Minor changes
+### General changes
 
 #### Changes to the Env API for platform detection
 New platform detection functions have been added to the [`Env` API]({{site.baseurl}}/api/tinymce/tinymce.env/), allowing for some older detection properties to be deprecated.
@@ -138,38 +153,44 @@ New platform detection functions have been added to the [`Env` API]({{site.baseu
 For a list of deprecated `Env` APIs, see: [Deprecated API Properties - `tinymce.Env`](#deprecatedapiproperties-tinymceenv).
 
 #### Added new `referrer_policy` setting
-* added new referrer_policy setting to add the referrerpolicy attribute when loading scripts or stylesheets.
+Used for setting the level referrer information sent when loading plugins and CSS. Referrer policies can be used to:
 
-#### Added a dark TinyMCE skin
-* added a dark content_css skin to go with the dark UI skin.
-    Enable dark mode in TinyMCE
-    There are two ways to enable dark mode in TinyMCE.
+* Improve the privacy of end-users.
+* Assist with server-side filtering of cross-origin requests for {{site.productname}} resources.
 
-    You can initialize the editor with the following settings:
-```
-    skin: "oxide-dark",
-    content_css: "dark"
-```
-    Alternatively, you can initialize the mode depending on the user’s preference as specified in the operating system:
-```
-    skin: (window.matchMedia("(prefers-color-scheme: dark)").matches ? "oxide-dark" : ""),
-    content_css: (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "")
-```
+For information on using the `referrer_policy` setting, see: [Integration and setup options - `referrer_policy`]({{site.baseurl}}/configure/integration-and-setup/#referrer_policy).
+
+#### Added a dark content css skin
+A dark `content_css` skin has been added to compliment the dark user interface skin.
+
+For example:
+
 {% include codepen.html id="dark-mode" %}
 
+For information on using the dark version of the default skin, see: [Customizing the editor UI - Skins]({{site.baseurl}}/general-configuration-guide/customize-ui/#skins).
+
 #### Added border width to Table cell dialog
-* Added border width field to Table Cell dialog   TINY-4028    gen  any css value
+The table plugin has been updated to include a **Border width** field in the table **Cell dialog**. The field will accept any [valid CSS length](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Values_and_units#Lengths).
+
+For example:
+
 <img alt="Cell Properties Dialog with new Border Width field" src="{{site.baseurl}}/images/border-width-cell-props.png" style="display:block;margin-left:auto;margin-right:auto;max-width:50%;border: 1px solid #036DD5" />
 
 #### Changed the default `toolbar_drawer` to `floating`
-* Changed default setting for `toolbar_drawer` to `floating`   TINY-3634    gen   docs and info to revert (was false)
+The default for the `toolbar_drawer` setting has been changed from `false` to `floating`. For information on the `toolbar_drawer` setting, see: [User interface options - `toolbar_drawer`]({{site.baseurl}}/configure/editor-appearance/#toolbar_drawer).
 
 #### Icon changes
-* Changed visualblocks toolbar button icon ![New visualblocks icon]({{site.baseurl}}/images/icons/visualblocks.svg) and renamed `paragraph` ![`paragraph` renamed to `visualchars`]({{site.baseurl}}/images/icons/visualchars.svg) icon to `visualchars`   TINY-4074    UI change  button to show invisibles icon updated
+In {{site.productname}} 5.0, the same icon (`paragraph`) was used for the toolbar buttons `visualchars` and `visualblocks`.
+To improve the user experience:
 
-#### Fixes to positioning of inline dialogs and menus
-* Fixed inline dialogs positioning incorrectly when the page is scrolled   TINY-4018    positioning of dialogs and menus improved
-* Fixed inline dialogs and menus not repositioning when resizing   TINY-3227    positioning of dialogs and menus improved
+* The `paragraph` icon has been renamed `visualchars` and is used for the `visualchars` toolbar button: ![`paragraph` renamed to `visualchars`]({{site.baseurl}}/images/icons/visualchars.svg)
+* A new `visualblocks` icon is used for the `visualblocks` toolbar button: ![New visualblocks icon]({{site.baseurl}}/images/icons/visualblocks.svg)
+
+#### Fixes to the positioning of inline dialogs and menus
+Fixes for inline dialogs and menus have been included to:
+
+* Position inline dialogs correctly when the page is scrolled.
+* Reposition inline dialogs and menus when resizing {{site.productname}}.
 
 ### Premium Plugins
 

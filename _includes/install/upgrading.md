@@ -72,18 +72,27 @@ To upgrade to {{site.productname}} {{site.releaseversion}} using a manually down
 
 1. Extract the downloaded `.zip` file to a temporary location.
 1. (If required) Install the latest language packs from [Get {{site.productname}} - Language Packages](https://www.tiny.cloud/get-tiny/language-packages/).
-1. Copy customizations to the new `{{site.prodnamecode}}/` directory. Ensure that only custom changes are added the new `{{site.prodnamecode}}/` directory, such as:
+1. Copy customizations to the new `{{site.prodnamecode}}/` directory. Ensure that _only custom changes_ are added the new `{{site.prodnamecode}}/` directory, such as:
+
     * Custom icons packs
     * Custom plugins
     * Custom skins
     * Custom themes
 1. Delete the existing `{{site.prodnamecode}}/` directory and replace with the new `{{site.prodnamecode}}/`.
 
-To make upgrades easier in the future,
-[`base_url`]({{site.baseurl}}/configure/integration-and-setup/#base_url)
-[`content_css`]({{site.baseurl}}/configure/content-appearance/#content_css)
-[`external_plugins`]({{site.baseurl}}/configure/integration-and-setup/#external_plugins)
-`icons` -> [`icons_url`]({{site.baseurl}}/configure/editor-appearance/#icons_url)
-`language` -> [`language_url`]({{site.baseurl}}/configure/localization/#language_url)
-`skin` -> [`skin_url`]({{site.baseurl}}/configure/editor-appearance/#skin_url)
-`theme` -> [`theme_url`]({{site.baseurl}}/configure/editor-appearance/#theme_url)
+>To simplify the upgrade process to future versions of {{site.productname}}:
+>
+>1. Host the TinyMCE customizations outside of the `{{site.prodnamecode}}/` directory.
+>1. Update your {{site.productname}} configuration:
+>
+>    **Required**
+>    
+>    * Set the [`base_url`]({{site.baseurl}}/configure/integration-and-setup/#base_url).
+>    
+>    **Where Applicable**
+>    * Set the location of content CSS customizations using [`content_css`]({{site.baseurl}}/configure/content-appearance/#content_css).
+>    * Set the location of custom plugins using [`external_plugins`]({{site.baseurl}}/configure/integration-and-setup/#external_plugins).
+>    * Set the location of custom icon packages using [`icons_url`]({{site.baseurl}}/configure/editor-appearance/#icons_url) instead of `icons`.
+>    * Set the location of custom localization packages using [`language_url`]({{site.baseurl}}/configure/localization/#language_url) instead of `language`.
+>    * Set the location of custom skin packages using [`skin_url`]({{site.baseurl}}/configure/editor-appearance/#skin_url) instead of `skin`.
+>    * Set the location of custom themes using [`theme_url`]({{site.baseurl}}/configure/editor-appearance/#theme_url) instead of `theme`.

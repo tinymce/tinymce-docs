@@ -2,13 +2,12 @@
 layout: default
 title: TinyMCE Mobile
 title_nav: Mobile
-description: A new mobile-first user experience for rich text editing.
+description: The TinyMCE rich text editing experience for mobile devices.
 keywords: mobile tablet
 ---
 
 {{site.productname}} 5.1 provides an improved mobile editor, replacing the existing mobile editor with a touch friendly version on the silver theme.
 
-> Note: iPads do not use the `mobile` part of the {{site.productname}} init configuration. This is due to a constraint added by Apple to return the environment as a "desktop environment" for iPads. iPads users will receive the other changes to touch functionality, such as context toolbars and context menus.
 
 The new mobile experience comes with a number of user interface changes in addition to the {{site.productname}} "desktop" experience:
 
@@ -24,10 +23,13 @@ The new mobile experience allows most of the {{site.productname}} plugins to wor
 * [Comments]({{site.baseurl}}/plugins/comments/).
 * [Image tools]({{site.baseurl}}/plugins/imagetools/).
 * [MoxieManager]({{site.baseurl}}/plugins/moxiemanager/).
+* [Paste]({{site.baseurl}}/plugins/paste/).
 * [Permanent Pen]({{site.baseurl}}/plugins/permanentpen/).
 * [Print]({{site.baseurl}}/plugins/print/).
 
 {{site.productname}} will detect the platform and will show an optimal UI experience given a device type and screen size.
+
+> Note: iPads do not use the `mobile` part of the {{site.productname}} init configuration. This is due to a constraint added by Apple to return the environment as a "desktop environment" for iPads. iPads users will receive the other changes to touch functionality, such as context toolbars and context menus.
 
 ## Configuring mobile
 

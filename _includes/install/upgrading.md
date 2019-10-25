@@ -50,29 +50,40 @@ $ bower install {{site.prodnamecode}}#{{site.releaseversion}} --save
 ### Upgrading TinyMCE Self-hosted manually
 To upgrade to {{site.productname}} {{site.releaseversion}} using a manually downloaded package:
 
-1. Backup the `{{site.prodnamecode}}/` directory.
+1. Backup the `{{site.prodnamecode}}/` directory so any customizations can be restored after the upgrade.
 
-  langs/
-  icons/
-  skins/content/
-  skins/ui/
-  themes/
-  plugins/
+    Customizations for {{site.productname}} are typically stored in the following directories:
 
-    /configure/integration-and-setup/#base_url
-    /configure/content-appearance/#content_css
-    /configure/integration-and-setup/#external_plugins
-    icons -> /configure/editor-appearance/#icons_url
-    language -> /colanguagenfigure/localization/#language_url
-    skin -> /configure/editor-appearance/#skin_url
-    theme -> /configure/editor-appearance/#theme_url
+    ```sh
+    tinymce/
+    ├── icons/
+    ├── langs/
+    ├── plugins/
+    ├── skins/
+    │   ├── content/
+    │   └── ui/
+    └── themes/
+    ```
 
 1. Download the latest version of {{site.productname}}.
 
     * For the {{site.productname}} Community Version, download `{{site.prodnamecode}}_<VERSION>.zip` from [Get {{site.productname}} - Self-hosted releases](https://www.tiny.cloud/get-tiny/self-hosted/), where _`<VERSION>`_ is the latest version of {{site.productname}}.
     * For the {{site.productname}} Enterprise Version, download the **{{site.productname}} Enterprise Bundle** from [My Account > Downloads](https://www.tiny.cloud/my-account/downloads/). The downloaded file will be named `enterprise_latest.zip`.
 
-1. (If required) Download updated language packs from [Get {{site.productname}} - Language Packages](https://www.tiny.cloud/get-tiny/language-packages/).
-1. Extract the downloaded `.zip` file for deployment.
+1. Extract the downloaded `.zip` file to a temporary location.
+1. (If required) Install the latest language packs from [Get {{site.productname}} - Language Packages](https://www.tiny.cloud/get-tiny/language-packages/).
+1. Copy customizations to the new `{{site.prodnamecode}}/` directory. Ensure that only custom changes are added the new `{{site.prodnamecode}}/` directory, such as:
+    * Custom icons packs
+    * Custom plugins
+    * Custom skins
+    * Custom themes
+1. Delete the existing `{{site.prodnamecode}}/` directory and replace with the new `{{site.prodnamecode}}/`.
 
-1. Reapply any customizations
+To make upgrades easier in the future,
+[`base_url`]({{site.baseurl}}/configure/integration-and-setup/#base_url)
+[`content_css`]({{site.baseurl}}/configure/content-appearance/#content_css)
+[`external_plugins`]({{site.baseurl}}/configure/integration-and-setup/#external_plugins)
+`icons` -> [`icons_url`]({{site.baseurl}}/configure/editor-appearance/#icons_url)
+`language` -> [`language_url`]({{site.baseurl}}/configure/localization/#language_url)
+`skin` -> [`skin_url`]({{site.baseurl}}/configure/editor-appearance/#skin_url)
+`theme` -> [`theme_url`]({{site.baseurl}}/configure/editor-appearance/#theme_url)

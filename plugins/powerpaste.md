@@ -196,23 +196,30 @@ Developers can add custom filtering before and after **PowerPaste's** filters ar
 
 ##### paste_preprocess
 
-This setting allows you to run custom filtering on the content from the clipboard before it is run through PowerPaste's filters. The callback is passed two arguments: the PowerPaste plugin instance and an object containing event data. As well as standard event data, this object contains:
+This setting allows you to run custom filtering on the content from the clipboard before it is run through PowerPaste's filters. The callback is passed two arguments: the PowerPaste plugin instance and an object containing event data. This object contains:
 
-- `content` - A string containing the content to be pasted
+- Standard paste event data.
+- `content` - A string containing the content to be pasted.
 - `mode` - A string indicating whether PowerPaste is in `clean` or `merge` mode.
 - `source` - A string indicating which kind of filtering PowerPaste will run based on the source of the content. This will return `html`, `msoffice`, `googledocs`, `image`, `plaintext`, `text` or `invalid`.
 
 Example TinyMCE configuration:
 
 ```js
+const yourCustomFilter = function(content) {
+  // Implement your custom filtering and return the filtered content
+  return content;
+};
+
 tinymce.init({
   selector: "textarea",
   plugins: "powerpaste",
   paste_preprocess: function (pluginApi, data) {
     console.log(data.content, data.mode, data.source);
     // Apply custom filtering by mutating data.content
+    // For example:
     const content = data.content;
-    const newContent = customFilter(content);
+    const newContent = yourCustomFilter(content);
     data.content = newContent;
   }
 });
@@ -220,11 +227,12 @@ tinymce.init({
 
 ##### paste_postprocess
 
-This setting allows you to run custom filtering on the pasted content after it is run through PowerPaste's filters. The callback is passed two arguments: the PowerPaste plugin instance and an object containing event data. As well as standard event data, this object contains:
+This setting allows you to run custom filtering on the pasted content after it is run through PowerPaste's filters. The callback is passed two arguments: the PowerPaste plugin instance and an object containing event data. This object contains:
 
-- `node` - A DOM node containing the DOM structure of the filtered paste content
+- Standard paste event data.
+- `node` - A DOM node containing the DOM structure of the filtered paste content.
 - `mode` - A string indicating whether PowerPaste is in `clean` or `merge` mode.
-- `source` - A string indicating which kind of filtering PowerPaste will run based on the source of the content. This will return `html`, `msoffice`, `googledocs`, `image`, `plaintext`, `text` or `invalid`.
+- `source` - A string indicating which kind of filtering PowerPaste will run based on the source of the content. This will return `html`, `msoffice`, `googledocs`, `image`, `plaintext`, `text`, or `invalid`.
 
 Example TinyMCE configuration:
 
@@ -237,7 +245,7 @@ tinymce.init({
     // Apply custom filtering by mutating data.node
     const additionalNode = document.createElement('div');
     additionalNode.innerHTML = '<p>This will go before the pasted content.</p>';
-    data.node.prepend(additionalNode);
+    data.node.insertBefore(additionalNode, data.node.firstElementChild);
   }
 });
 ```
@@ -254,6 +262,11 @@ The event listeners are passed the same data objects as their equivalent configu
 Example TinyMCE configuration:
 
 ```js
+const yourCustomFilter = function(content) {
+  // Implement your custom filtering and return the filtered content
+  return content;
+};
+
 tinymce.init({
   selector: "textarea",
   plugins: "powerpaste",
@@ -269,9 +282,10 @@ tinymce.init({
     editor.on('PastePostProcess', function(data) {
       console.log(data.node, data.mode, data.source);
       // Apply custom filtering by mutating data.node
+      // For example:
       const additionalNode = document.createElement('div');
       additionalNode.innerHTML = '<p>This will go before the pasted content.</p>';
-      data.node.prepend(additionalNode);
+      data.node.insertBefore(additionalNode, data.node.firstElementChild);
     });
   }
 });

@@ -8,6 +8,12 @@ class: changelog
 
 {% capture changelog %}
 
+## Version 5.1.1 October 28, 2019
+* Fixed font formats containing spaces being wrapped in `&quot;` entities instead of single quotes.
+* Fixed alert and confirm dialogs losing focus when clicked.
+* Fixed clicking outside a modal dialog focusing on the document body.
+* Fixed the context toolbar not hiding when scrolled out of view.
+
 ## Version 5.1.0 October 17, 2019
 * Added touch selector handles for table selections on touch devices.
 * Added border width field to Table Cell dialog.

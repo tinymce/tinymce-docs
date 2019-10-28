@@ -1,8 +1,8 @@
 ---
 layout: default
 title: Advanced table plugin
-title_nav: Advanced table
-description:
+title_nav: Advanced Table
+description: Add sorting functionality to tables.
 keywords: advtable premium
 ---
 

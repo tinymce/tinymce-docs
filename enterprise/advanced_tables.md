@@ -2,12 +2,14 @@
 layout: default
 title: Advanced Tables plugin
 title_nav: Advanced Tables
-description:
+description: Add sorting functionality to tables.
 keywords: sort tables advanced advtable
 ---
 
-![]({{ site.baseurl }}/images/advtable-sort-columns.md)
-![]({{ site.baseurl }}/images/advtable-sort-row.md)
+{% include codepen.html id="advtable-plugin" %}
+
+![]({{ site.baseurl }}/images/advtable-sort-columns.png)
+![]({{ site.baseurl }}/images/advtable-sort-row.png)
 
 ### Getting started
 

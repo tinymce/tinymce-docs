@@ -14,7 +14,7 @@ This section is about customizing TinyMCE's user interface with skins, toolbar b
 
 ### Skins
 
-Skins control the appearance of TinyMCE such as colors and spacing. The default skin is called **Oxide** and has a `light` and a `dark` version. The default skin is `oxide`. To initialize the editor with the dark version of the default skin, use the following configuration:
+Skins control the appearance of TinyMCE such as colors and spacing. The default skin is called **Oxide** (`oxide`) and has a `light` and a `dark` version. To initialize the editor with the dark version of the default skin, use the following configuration:
 
 ```js
 tinymce.init({

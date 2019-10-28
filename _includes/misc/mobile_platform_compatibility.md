@@ -12,3 +12,5 @@
 | iOS 13    | Safari  | iPhone/iPad  |
 
 Please report platform issues and bugs in the [{{site.productname}} issue tracker](https://github.com/tinymce/tinymce/issues).
+
+> Note: iPads do not use the `mobile` part of the {{site.productname}} init configuration. This is due to a constraint added by Apple to return the environment as a "desktop environment" for iPads. iPads users will receive the other changes to touch functionality, such as context toolbars and context menus.

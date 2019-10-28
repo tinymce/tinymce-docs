@@ -186,7 +186,7 @@ The [Modern]({{site.url}}/docs-4x/themes/modern/) theme has been removed from Ti
 
 ### Mobile theme
 
-The {{site.productname}} 4 [Mobile theme]({{site.baseurl}}/mobile/#thelegacymobiletheme) was deprecated in {{site.productname}} 5.1. The mobile-optimized editor is loaded on mobile devices. For information on the new mobile experience, see: [{{site.productname}} mobile}]({{site.baseurl}}/mobile/).
+The {{site.productname}} 4 [Mobile theme]({{site.baseurl}}/mobile/#thelegacymobiletheme) was deprecated in {{site.productname}} 5.1. The mobile-optimized editor is loaded on mobile devices. For information on the new mobile experience, see: [{{site.productname}} mobile]({{site.baseurl}}/mobile/).
 
 ## User Interface components
 

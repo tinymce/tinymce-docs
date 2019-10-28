@@ -192,7 +192,7 @@ Fixes for inline dialogs and menus have been included to:
 * Position inline dialogs correctly when the page is scrolled.
 * Reposition inline dialogs and menus when resizing {{site.productname}}.
 
-## Premium Plugin Changes
+## Premium Plugin changes
 
 ### PowerPaste
 The {{site.productname}} 5.1 release includes **PowerPaste** 5.2.0.

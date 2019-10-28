@@ -186,9 +186,9 @@ tinymce.init({
 
 ## Advanced Config Options
 
-### Pre- and post- filtering callbacks
+### Pre-filtering and post-filtering callbacks
 
-Developers can add custom filtering before and after **PowerPaste's** filters are run using the pre- and post- filtering callbacks. These can be added as init options or at runtime using event listeners.
+Developers can add custom filtering before and after **PowerPaste**'s filters are run using the pre-filtering and post-filtering callbacks. These can be added as init options or at runtime using event listeners.
 
 > Note: These callbacks are also triggered by the core Paste plugin, but when triggered by PowerPaste they are passed more data.
 
@@ -201,7 +201,7 @@ This setting allows you to run custom filtering on the content from the clipboar
 - Standard paste event data.
 - `content` - A string containing the content to be pasted.
 - `mode` - A string indicating whether PowerPaste is in `clean` or `merge` mode.
-- `source` - A string indicating which kind of filtering PowerPaste will run based on the source of the content. This will return `html`, `msoffice`, `googledocs`, `image`, `plaintext`, `text` or `invalid`.
+- `source` - A string indicating which kind of filtering PowerPaste will run based on the source of the content. This will return `html`, `msoffice`, `googledocs`, `image`, `plaintext`, `text`, or `invalid`.
 
 Example TinyMCE configuration:
 

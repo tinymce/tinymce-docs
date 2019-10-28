@@ -275,7 +275,7 @@ tinymce.init({
       console.log(data.content, data.mode, data.source);
       // Apply custom filtering by mutating data.content
       const content = data.content;
-      const newContent = customFilter(content);
+      const newContent = yourCustomFilter(content);
       data.content = newContent;
     });
 

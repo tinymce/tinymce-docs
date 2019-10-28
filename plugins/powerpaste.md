@@ -186,32 +186,94 @@ tinymce.init({
 
 ## Advanced Config Options
 
-### Post filter callback
+### Pre- and post- filtering callbacks
 
-Developers can add customer filtering after **PowerPaste** filters are run using the post filter callback. This can be added as an init option or at runtime by adding the event listener.
+Developers can add custom filtering before and after **PowerPaste's** filters are run using the pre- and post- filtering callbacks. These can be added as init options or at runtime using event listeners.
 
-##### Using the init option
+> Note: These callbacks are also triggered by the core Paste plugin, but when triggered by PowerPaste they are passed more data.
+
+#### Configuration Options
+
+##### paste_preprocess
+
+This setting allows you to run custom filtering on the content from the clipboard before it is run through PowerPaste's filters. The callback is passed two arguments: the PowerPaste plugin instance and an object containing event data. As well as standard event data, this object contains:
+
+- `content` - A string containing the content to be pasted
+- `mode` - A string indicating whether PowerPaste is in `clean` or `merge` mode.
+- `source` - A string indicating which kind of filtering PowerPaste will run based on the source of the content. This will return `html`, `msoffice`, `googledocs`, `image`, `plaintext`, `text` or `invalid`.
+
+Example TinyMCE configuration:
 
 ```js
 tinymce.init({
   selector: "textarea",
   plugins: "powerpaste",
-  paste_postprocess: function(editor, fragment) {
-	// Fragment is a DocumentFragment node containing the DOM structure of the pasted content,
-	// after it has been filtered by the PowerPaste plugin.
-  var textnode = document.createTextNode("Added Text");
-  // Modify the fragment via the argument - do not return a value!
-  fragment.node.appendChild(textnode);
+  paste_preprocess: function (pluginApi, data) {
+    console.log(data.content, data.mode, data.source);
+    // Apply custom filtering by mutating data.content
+    const content = data.content;
+    const newContent = customFilter(content);
+    data.content = newContent;
   }
 });
 ```
 
-##### Using an event listener
+##### paste_postprocess
+
+This setting allows you to run custom filtering on the pasted content after it is run through PowerPaste's filters. The callback is passed two arguments: the PowerPaste plugin instance and an object containing event data. As well as standard event data, this object contains:
+
+- `node` - A DOM node containing the DOM structure of the filtered paste content
+- `mode` - A string indicating whether PowerPaste is in `clean` or `merge` mode.
+- `source` - A string indicating which kind of filtering PowerPaste will run based on the source of the content. This will return `html`, `msoffice`, `googledocs`, `image`, `plaintext`, `text` or `invalid`.
+
+Example TinyMCE configuration:
 
 ```js
-tinymce.get('editorID').('PastePostProcess', function(fragment) {
-  // Fragment is a DocumentFragment node containing the DOM structure of the pasted content,
-  // after it has been filtered by the PowerPaste plugin.
+tinymce.init({
+  selector: "textarea",
+  plugins: "powerpaste",
+  paste_postprocess: function (pluginApi, data) {
+    console.log(data.node, data.mode, data.source);
+    // Apply custom filtering by mutating data.node
+    const additionalNode = document.createElement('div');
+    additionalNode.innerHTML = '<p>This will go before the pasted content.</p>';
+    data.node.prepend(additionalNode);
+  }
+});
+```
+
+#### Event Listeners
+
+Custom paste filtering can also be configured at runtime using event listeners.
+
+- `PastePreProcess` is equivalent to `paste_preprocess`
+- `PastePostProcess` is equivalent to `paste_postprocess`
+
+The event listeners are passed the same data objects as their equivalent configuration options. The event listener callbacks can be configured or changed at any time as long as you have a reference to the Editor API.
+
+Example TinyMCE configuration:
+
+```js
+tinymce.init({
+  selector: "textarea",
+  plugins: "powerpaste",
+  setup: function(editor) {
+    editor.on('PastePreProcess', function(data) {
+      console.log(data.content, data.mode, data.source);
+      // Apply custom filtering by mutating data.content
+      const content = data.content;
+      const newContent = customFilter(content);
+      data.content = newContent;
+    });
+
+    editor.on('PastePostProcess', function(data) {
+      console.log(data.node, data.mode, data.source);
+      // Apply custom filtering by mutating data.node
+      const additionalNode = document.createElement('div');
+      additionalNode.innerHTML = '<p>This will go before the pasted content.</p>';
+      data.node.prepend(additionalNode);
+    });
+  }
 });
 ```
 

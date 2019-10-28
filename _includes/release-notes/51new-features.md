@@ -1,11 +1,11 @@
 
-The following new features were added to the {{site.productname}} 5.1 version.
+The following new features and enhancements were added for the {{site.productname}} 5.1 release.
 
 ### Mobile
 
-{{site.productname}} 5.1 provides an improved mobile editor, replacing the existing mobile editor with a touch friendly version on the silver theme.
+{{site.productname}} 5.1 provides an improved mobile editor, replacing the existing mobile editor with a touch friendly version of the silver theme.
 
-The new mobile experience comes with a number of user interface changes in addition to the {{site.productname}} "desktop" experience:
+The new mobile experience comes with a number of user interface changes, building on the {{site.productname}} desktop experience:
 
 * [Mobile devices now use the `silver` theme](#mobiledevicesnowusethesilvertheme).
 * [Horizontal contextual menus on mobile](#horizontalcontextualmenusonmobile).
@@ -50,18 +50,18 @@ tinymce.init({
 });
 ```
 
-> **Note:** No enhancements have been made to the legacy mobile theme. all the changes described in these release notes relate to the `silver` theme on mobile devices.
+> **Note:** No enhancements have been made to the legacy mobile theme. All the changes described in these release notes relate to the `silver` theme on mobile devices.
 
 For information on:
 * Using the `silver` theme for mobile, see: [TinyMCE Mobile]({{site.baseurl}}/mobile/).
 * Using the legacy `mobile` theme, see: [TinyMCE Mobile - The legacy mobile theme]({{site.baseurl}}/mobile/#thelegacymobiletheme).
 
 #### Horizontal contextual menus on mobile
-Contextual menus are now mobile friendly, with an update to be horizontal on mobile devices. Contextual menus will open when a long-press is used on mobile devices. They also [side-scroll](#side-scrollingtoolbarsonmobile) to allow larger lists of items to be available on mobile devices.
+Contextual menus are now horizontal on mobile devices and open when a long-press is used. They also [side-scroll](#side-scrollingtoolbarsonmobile) to allow larger lists of items to be available on mobile devices.
 
 For example:
 
-<img alt="Example of the side-scrolling toolbar and contextual toolbar" src="{{site.baseurl}}/images/side-scrolling-context-toolbar.png" style="display:block;margin-left:auto;margin-right:auto;max-width:50%;border: 1px solid #036DD5" />
+<img alt="Example of the side-scrolling toolbar and contextual toolbar" src="{{site.baseurl}}/images/side-scrolling-context-toolbar.png" style="width:380px;border: 1px solid #036DD5" />
 
 #### Side-scrolling toolbars on mobile
 Toolbars and [horizontal menus](#horizontalcontextualmenusonmobile) side-scroll using "swipe" gestures on mobile devices. This allows longer toolbars to be used without occupying too much screen space. This feature removes the need for a toolbar drawer on mobile devices.
@@ -99,7 +99,7 @@ The [table plugin]({{site.baseurl}}/plugins/table/) has been updated to provide 
 
 For example:
 
-<img alt="Touch selector handles for selecting multiple table cells" src="{{site.baseurl}}/images/table_cell_touch_selector_handles.png" style="display:block;margin-left:auto;margin-right:auto;max-width:50%;border: 1px solid #036DD5" />
+<img alt="Touch selector handles for selecting multiple table cells" src="{{site.baseurl}}/images/table_cell_touch_selector_handles.png" style="width:380px;border: 1px solid #036DD5" />
 
 #### Touch-friendly split buttons
 The styling on [split buttons]({{site.baseurl}}/ui-components/typesoftoolbarbuttons/#splitbutton) has been updated to include more padding so they are easier to interact with on touch devices.
@@ -107,16 +107,14 @@ The styling on [split buttons]({{site.baseurl}}/ui-components/typesoftoolbarbutt
 
 ### Sticky Toolbar
 
-A Sticky Toolbar (or Docking Toolbar), docks the toolbar and the menu to the top of the screen when scrolling down a web page until the editor is no longer visible.
+The Sticky Toolbar (or Docking Toolbar) docks the toolbar and the menu to the top of the screen when scrolling down a web page. The sticky toolbar will remain docked until the editor is no longer visible. This allows the menu and toolbar to remain in view when editing large text areas.
 
 For information on the Sticky Toolbars, see: [Enabling Sticky Toolbars]({{site.baseurl}}/configure/editor-appearance/#toolbar_sticky).
 
-### General changes
-
-#### Changes to the Env API for platform detection
+### Changes to the Env API for platform detection
 New platform detection functions have been added to the [`Env` API]({{site.baseurl}}/api/tinymce/tinymce.env/), allowing for some older detection properties to be deprecated.
 
-##### New Env API properties
+#### New Env API properties
 
 | Property          | Type   | Description                                                   |
 | ----------------- | ------ | ------------------------------------------------------------- |
@@ -125,7 +123,7 @@ New platform detection functions have been added to the [`Env` API]({{site.baseu
 | `os.current`      | String | Returns the current operating system name.                    |
 | `os.version`      | Object | Returns the current operating system major and minor version. |
 
-##### New Env methods
+#### New Env methods
 
 | Method                 | Type    | Description                                                          |
 | ---------------------- | ------- | -------------------------------------------------------------------- |
@@ -152,16 +150,16 @@ New platform detection functions have been added to the [`Env` API]({{site.baseu
 
 For a list of deprecated `Env` APIs, see: [Deprecated API Properties - `tinymce.Env`](#deprecatedapiproperties-tinymceenv).
 
-#### Added new `referrer_policy` setting
-Used for setting the level referrer information sent when loading plugins and CSS. Referrer policies can be used to:
+### Added new `referrer_policy` setting
+Used for setting the level of referrer information sent when loading plugins and CSS. Referrer policies can be used to:
 
 * Improve the privacy of end-users.
 * Assist with server-side filtering of cross-origin requests for {{site.productname}} resources.
 
 For information on using the `referrer_policy` setting, see: [Integration and setup options - `referrer_policy`]({{site.baseurl}}/configure/integration-and-setup/#referrer_policy).
 
-#### Added a dark content css skin
-A dark `content_css` skin has been added to compliment the dark user interface skin.
+### Added a dark content css skin
+A dark CSS definition for `content_css` has been added to compliment the dark user interface skin.
 
 For example:
 
@@ -169,32 +167,34 @@ For example:
 
 For information on using the dark version of the default skin, see: [Customizing the editor UI - Skins]({{site.baseurl}}/general-configuration-guide/customize-ui/#skins).
 
-#### Added border width to Table cell dialog
-The table plugin has been updated to include a **Border width** field in the table **Cell dialog**. The field will accept any [valid CSS length](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Values_and_units#Lengths).
+### Added border width to Table cell dialog
+The table plugin has been updated to include a **Border width** field in the **Cell Properties** dialog. The field will accept any [valid CSS length](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Values_and_units#Lengths).
 
 For example:
 
-<img alt="Cell Properties Dialog with new Border Width field" src="{{site.baseurl}}/images/border-width-cell-props.png" style="display:block;margin-left:auto;margin-right:auto;max-width:50%;border: 1px solid #036DD5" />
+<img alt="Cell Properties Dialog with new Border Width field" src="{{site.baseurl}}/images/border-width-cell-props.png" style="width:380px;border: 1px solid #036DD5" />
 
-#### Changed the default `toolbar_drawer` to `floating`
+### Changed the default `toolbar_drawer` to `floating`
 The default for the `toolbar_drawer` setting has been changed from `false` to `floating`. For information on the `toolbar_drawer` setting, see: [User interface options - `toolbar_drawer`]({{site.baseurl}}/configure/editor-appearance/#toolbar_drawer).
 
-#### Icon changes
+### Icon changes
 In {{site.productname}} 5.0, the same icon (`paragraph`) was used for the toolbar buttons `visualchars` and `visualblocks`.
 To improve the user experience:
 
 * The `paragraph` icon has been renamed `visualchars` and is used for the `visualchars` toolbar button: ![`paragraph` renamed to `visualchars`]({{site.baseurl}}/images/icons/visualchars.svg)
 * A new `visualblocks` icon is used for the `visualblocks` toolbar button: ![New visualblocks icon]({{site.baseurl}}/images/icons/visualblocks.svg)
 
-#### Fixes to the positioning of inline dialogs and menus
+For the list of icons included in {{site.productname}}, see: [Editor icon identifiers]({{site.baseurl}}/advanced/editor-icon-identifiers/).
+
+### Fixes to the positioning of inline dialogs and menus
 Fixes for inline dialogs and menus have been included to:
 
 * Position inline dialogs correctly when the page is scrolled.
 * Reposition inline dialogs and menus when resizing {{site.productname}}.
 
-### Premium Plugins
+## Premium Plugin Changes
 
-#### PowerPaste
+### PowerPaste
 The {{site.productname}} 5.1 release includes **PowerPaste** 5.2.0.
 
 **PowerPaste** _5.0_ included a change to the `Remove Formatting` functionality to filter out inline style elements (such as `strong`, `b`, `em`, `i`, and `sub`), in-line with other editor functionality.
@@ -208,22 +208,22 @@ powerpaste_clean_filtered_inline_elements: 'strong,em,b,i,u,strike,sup,sub,font'
 
 For information on `powerpaste_clean_filtered_inline_elements`, see: [PowerPaste - `powerpaste_clean_filtered_inline_elements`]({{site.baseurl}}/plugins/powerpaste/#powerpaste_clean_filtered_inline_elements).
 
-#### Page Embed
+### Page Embed
 The {{site.productname}} 5.1 release includes **Page Embed** 1.0.1.
 
 **Page Embed** 1.0.1 has been updated to include a touch event listener to allow embedded media to execute on mobile platforms.
 
-#### Format Painter
+### Format Painter
 The {{site.productname}} 5.1 release includes **Format Painter** 1.2.0.
 
 **Format Painter** 1.2.0 has been updated to support the mobile platforms. The **Format Painter** will now function as expected for mobile users.
 
-#### Checklist
+### Checklist
 The {{site.productname}} 5.1 release includes **Checklist** 1.0.1.
 
 **Checklist** 1.0.1 includes a fix to allow checklist items to be toggled on an iPad.
 
-#### Mentions
+### Mentions
 The {{site.productname}} 5.1 release includes **Mentions** 2.1.0.
 
 **Mentions** 2.1.0 has been updated to allow for the inclusion of "extra" menu items, such as additional results or search items. For details, see: [Mentions - `mentions_fetch`]({{site.baseurl}}/plugins/mentions/#mentions_fetch).

@@ -24,13 +24,15 @@ The new mobile experience allows most of the {{site.productname}} plugins to wor
 * [Permanent Pen]({{site.baseurl}}/plugins/permanentpen/).
 * [Print]({{site.baseurl}}/plugins/print/).
 
+#### Enabling the mobile editor
+
 To ensure the mobile editor functions as intended, add the following `meta` tag to the `head` of pages using {{site.productname}}.
 
 ```html
 <meta name="viewport" content="width=device-width, initial-scale=1">
 ```
 
-> Note: iPads do not use the `mobile` part of the {{site.productname}} init configuration. This is due to a constraint added by Apple to return the environment as a "desktop environment" for iPads. iPads users will receive the other changes to touch functionality, such as context toolbars and context menus.
+> Note: iPads do not use the `mobile` part of the {{site.productname}} init configuration. This is due to a constraint added by Apple, setting the environment as a "desktop environment" for iPads. iPads users will receive the other changes to touch functionality, such as context toolbars and context menus.
 
 #### Mobile devices now use the `silver` theme
 The mobile experience provided for {{site.productname}} 4.7 through {{site.productname}} 5.0 has been deprecated in {{site.productname}} 5.1.
@@ -67,7 +69,7 @@ For example:
 Toolbars and [horizontal menus](#horizontalcontextualmenusonmobile) side-scroll using "swipe" gestures on mobile devices. This allows longer toolbars to be used without occupying too much screen space. This feature removes the need for a toolbar drawer on mobile devices.
 
 #### Contextual keyboard settings
-A new `inputMode` configuration setting for dialog components has been added to provide contextual onscreen keyboards on mobile devices. Dialogs in {{site.productname}}, the core {{site.productname}} plugins, and the premium {{site.productname}} plugins have been updated to use `inputMode`.
+A new `inputMode` configuration setting for dialog input components has been added to provide contextual onscreen keyboards on mobile devices. Dialogs in {{site.productname}}, the core {{site.productname}} plugins, and the premium {{site.productname}} plugins have been updated to use `inputMode`.
 
 For information on using `inputMode`, see: [Dialog components - `inputMode`]({{site.baseurl}}/ui-components/dialogcomponents/#inputmode).
 
@@ -168,7 +170,7 @@ For example:
 For information on using the dark version of the default skin, see: [Customizing the editor UI - Skins]({{site.baseurl}}/general-configuration-guide/customize-ui/#skins).
 
 ### Added border width to Table cell dialog
-The table plugin has been updated to include a **Border width** field in the **Cell Properties** dialog. The field will accept any [valid CSS length](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Values_and_units#Lengths).
+The table plugin has been updated to include a **Border width** field in the **Cell Properties** dialog. The field will accept any [valid CSS units](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Values_and_units#Lengths).
 
 For example:
 
@@ -197,9 +199,11 @@ Fixes for inline dialogs and menus have been included to:
 ### PowerPaste
 The {{site.productname}} 5.1 release includes **PowerPaste** 5.2.0.
 
+#### Changes to `clean` paste and `Remove Formatting` paste
+
 **PowerPaste** _5.0_ included a change to the `Remove Formatting` functionality to filter out inline style elements (such as `strong`, `b`, `em`, `i`, and `sub`), in-line with other editor functionality.
 
-**PowerPaste** _5.1.1_ **reverses the _5.0_ change** and includes a new `powerpaste_clean_filtered_inline_elements` setting. This setting accepts a list of inline style elements to be filtered. These inline elements will be filtered on `clean` or `Remove Formatting` paste.
+**PowerPaste** _5.2_ **reverses the _5.0_ change** and includes a new `powerpaste_clean_filtered_inline_elements` setting. This setting accepts a list of inline style elements to be filtered. These inline elements will be filtered on `clean` or `Remove Formatting` paste.
 
 To retain the _5.0_ default inline style element filter, add the following setting to `tinymce.init`:
 ```js
@@ -207,6 +211,12 @@ powerpaste_clean_filtered_inline_elements: 'strong,em,b,i,u,strike,sup,sub,font'
 ```
 
 For information on `powerpaste_clean_filtered_inline_elements`, see: [PowerPaste - `powerpaste_clean_filtered_inline_elements`]({{site.baseurl}}/plugins/powerpaste/#powerpaste_clean_filtered_inline_elements).
+
+#### Pre-filtering and post-filtering callbacks
+
+**PowerPaste** 5.2 also adds _pre-filtering_ and _post-filtering_ callbacks. Developers can add custom filtering before and after **PowerPaste**'s filters are run using the _pre-filtering_ and _post-filtering_ callbacks. These can be added as init options or at runtime using event listeners.
+
+For information on using the Pre-filtering and Post-filtering callbacks, see: [PowerPaste Plugin - Pre-filtering and post-filtering callbacks]({{site.baseurl}}/plugins/powerpaste/#pre-filtering-and-post-filtering-callbacks)
 
 ### Page Embed
 The {{site.productname}} 5.1 release includes **Page Embed** 1.0.1.

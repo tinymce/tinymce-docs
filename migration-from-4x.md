@@ -49,6 +49,7 @@ TinyMCE 5 includes the following changes to editor-core settings:
 * [New Editor settings](#neweditorsettings)
 * [Changed Editor settings](#changededitorsettings)
 * [Removed Editor settings](#removededitorsettings)
+* [Deprecated Editor settings](#deprecatededitorsettings)
 
 #### New Editor settings
 
@@ -122,6 +123,27 @@ tinymce.init({
 
 TinyMCE 5 does not support browsers running in Quirks or backward compatibility modes.
 
+#### Deprecated Editor settings
+
+New platform detection functions were to the [`Env` API]({{site.baseurl}}/api/tinymce/tinymce.env/) for {{site.productname}} 5.1, allowing for some older detection properties to be deprecated.
+
+| Deprecated Property | Alternative Property / Reason for Deprecation                                                                                                                                                                                                                        | Type    | Original Description                                                                                   |
+| ------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- | ------------------------------------------------------------------------------------------------------ |
+| `opera`             | Use [`browser.isOpera()`]({{site.baseurl}}/api/tinymce/tinymce.env/#browserisopera) instead.                                                                                                                                                                         | Boolean | Constant that is `true` if the browser is Opera.                                                       |
+| `webKit`            | Use [`browser.isSafari()`]({{site.baseurl}}/api/tinymce/tinymce.env/#browserissafari) or [`browser.isChrome()`]({{site.baseurl}}/api/tinymce/tinymce.env/#browserischrome) instead.                                                                                  | Boolean | Constant that is `true` if the browser is WebKit (Safari/Chrome).                                      |
+| `ie`                | Use [`browser.version.major`]({{site.baseurl}}/api/tinymce/tinymce.env/#browserversionmajor) and [`browser.isIE()`]({{site.baseurl}}/api/tinymce/tinymce.env/#browserisie) or [`browser.isEdge()`]({{site.baseurl}}/api/tinymce/tinymce.env/#browserisedge) instead. | Number  | Constant that is greater than zero if the browser is IE.                                               |
+| `gecko`             | Use [`browser.isFirefox()`]({{site.baseurl}}/api/tinymce/tinymce.env/#browserisfirefox) instead.                                                                                                                                                                     | Boolean | Constant that is `true` if the browser is Gecko.                                                       |
+| `mac`               | Use [`os.isOSX()`]({{site.baseurl}}/api/tinymce/tinymce.env/#osisosx) or [`os.isiOS()`]({{site.baseurl}}/api/tinymce/tinymce.env/#osisios) instead.                                                                                                                  | Boolean | Constant that is `true` if the operating system is Mac OS.                                             |
+| `iOS`               | Use [`os.isiOS()`]({{site.baseurl}}/api/tinymce/tinymce.env/#osisios) instead.                                                                                                                                                                                       | Boolean | Constant that is `true` if the operating system is iOS.                                                |
+| `android`           | Use [`os.isAndroid()`]({{site.baseurl}}/api/tinymce/tinymce.env/#osisandroid) instead.                                                                                                                                                                               | Boolean | Constant that is `true` if the operating system is android.                                            |
+| `desktop`           | Use [`deviceType.isDesktop()`]({{site.baseurl}}/api/tinymce/tinymce.env/#devicetypeisdesktop) instead.                                                                                                                                                               | Boolean | Constant that is `true` if the browser is running on a desktop device                                  |
+| `contentEditable`   | All supported browsers now support content editable elements.                                                                                                                                                                                                        | Boolean | Constant that is `true` if the browser supports editing.                                               |
+| `caretAfter`        | All supported browsers now support placing carets after inline blocks.                                                                                                                                                                                               | Boolean | Returns `true`/`false` if the browser can or can't place the caret after a inline block like an image. |
+| `range`             | All supported browsers now support native DOM ranges.                                                                                                                                                                                                                | Boolean | Constant that is `true` if the browser supports native DOM Ranges. IE 9+.                              |
+| `ceFalse`           | All supported browsers now support `contentEditable=false` regions.                                                                                                                                                                                                  | Boolean | Constant that is `true` if the browser supports `contentEditable=false` regions.                       |
+
+
+
 ## Themes
 
 Most themes provided with TinyMCE 4 have been removed from TinyMCE 5 and are now combined in a new responsive theme called **Silver**. The `Silver` theme is enabled by default and contains a set of configurable UI components that can be used to replace the functionality of the TinyMCE 4 themes: Modern, Inline, and Inlite.
@@ -164,7 +186,7 @@ The [Modern]({{site.url}}/docs-4x/themes/modern/) theme has been removed from Ti
 
 ### Mobile theme
 
-The TinyMCE 4 [Mobile theme]({{site.baseurl}}/mobile/) is the default behavior for the editor when it is loaded on a mobile device.
+The {{site.productname}} 4 [Mobile theme]({{site.baseurl}}/mobile/#thelegacymobiletheme) was deprecated in {{site.productname}} 5.1. The mobile-optimized editor is loaded on mobile devices. For information on the new mobile experience, see: [{{site.productname}} mobile]({{site.baseurl}}/mobile/).
 
 ## User Interface components
 

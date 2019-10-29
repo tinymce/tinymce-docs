@@ -10,6 +10,8 @@ This option gives you the ability to disable the resize handle or set it to resi
 
 **Possible Values:** `true`, `false`, `'both'`
 
+{{site.differs_for_mobile}}
+
 ##### Example
 
 ```js

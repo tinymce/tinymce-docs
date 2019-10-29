@@ -93,6 +93,8 @@ However, if `table_grid` is set to `false` the table picker will be replaced by 
 
 **Possible Values:**  `true`, `false`
 
+{{site.differs_for_mobile}}
+
 ##### Example
 
 ```js

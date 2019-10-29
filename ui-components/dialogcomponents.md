@@ -322,16 +322,36 @@ An **input** is a composite component that renders a label and a single line tex
 
 **Events:** Interacting with an **input** component will fire the `onChange` function in the dialog's configuration **as the user types**.
 
+| Property    | Type      | Requirement | Description                                                                                                |
+| ----------- | --------- | ----------- | ---------------------------------------------------------------------------------------------------------- |
+| type        | '`input`' | required    | The component type. Must be `'input'`.                                                                     |
+| name        | string    | required    | A identifier for the input.                                                                               |
+| label       | string    | optional    | String to use for the input's `title` attribute.                                                          |
+| placeholder | string    | optional    | String of placeholder text for the input field.                                                            |
+| disabled    | boolean   | optional    | Allows the field to be disabled. Default is `false`.                                                       |
+| inputMode   | string    | optional    | Allows for the specification of input type for displaying contextual onscreen keyboards on mobile devices. |
+
 ```js
 {
   type: 'input', // component type
   name: 'inputA', // identifier
+  inputMode: 'text',
   label: 'Input Label', // text for the label
   placeholder: 'example', // placeholder text for the input
   disabled: true, // disabled state
   maximized: false // grow width to take as much space as possible
 }
 ```
+
+##### inputMode
+
+{{site.requires_5_1v}}
+
+`inputMode` is a property of `input`.
+
+Use `inputMode` to set the type of onscreen keyboard provided on mobile devices when a user focuses the input element.
+
+For a list of valid input modes, see: [MDN Web Docs - inputmode](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/inputmode).
 
 #### selectbox
 

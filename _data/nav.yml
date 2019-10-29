@@ -73,6 +73,7 @@
     - url: "#hidden_input"
     - url: "#init_instance_callback"
     - url: "#plugins"
+    - url: "#referrer_policy"
     - url: "#selector"
     - url: "#setup"
     - url: "#suffix"
@@ -100,6 +101,7 @@
     - url: "#menubar"
     - url: "#min_height"
     - url: "#min_width"
+    - url: "#mobile"
     - url: "#preview_styles"
     - url: "#quickbars_insert_toolbar"
     - url: "#quickbars_selection_toolbar"
@@ -116,6 +118,7 @@
     - url: "#toolbar"
     - url: "#toolbar(n)"
     - url: "#toolbar_drawer"
+    - url: "#toolbar_sticky"
     - url: "#width"
   - url: "content-appearance"
     pages:
@@ -658,6 +661,14 @@
 
 - url: "release-notes"
   pages:
+  - url: "release-notes51"
+    pages:
+    - url: "#Overview"
+    - url: "#New features and enhancements"
+    - url: "#Premium Plugin changes"
+    - url: "#Deprecated features"
+    - url: "#Known issues"
+    - url: "#Upgrading to the latest version of TinyMCE 5"
   - url: "release-notes5014"
     pages:
     - url: "#Overview"

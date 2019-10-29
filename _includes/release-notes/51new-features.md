@@ -94,7 +94,7 @@ tinymce.init({
 ```
 
 #### Table cell selection on mobile
-The [table plugin]({{site.baseurl}}/plugins/table/) has been updated to provide _touch selection handles_ on touch devices. The touch selection handles allow users to select a range of table cells on touch devices.
+The [table plugin]({{site.baseurl}}/plugins/table/) has been updated to provide _touch selection handles_ on touch devices. The touch selection handles appear when users double-tap a table cell, and allow users to select a range of table cells on touch devices.
 
 For example:
 

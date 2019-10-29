@@ -32,8 +32,6 @@ To ensure the mobile editor functions as intended, add the following `meta` tag 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 ```
 
-> Note: iPads do not use the `mobile` part of the {{site.productname}} init configuration. This is due to a constraint added by Apple, setting the environment as a "desktop environment" for iPads. iPads users will receive the other changes to touch functionality, such as context toolbars and context menus.
-
 #### Mobile devices now use the `silver` theme
 The mobile experience provided for {{site.productname}} 4.7 through {{site.productname}} 5.0 has been deprecated in {{site.productname}} 5.1.
 

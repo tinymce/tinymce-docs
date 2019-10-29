@@ -1,7 +1,7 @@
 ## TinyMCE React integration quick start guide
 
 The [Official TinyMCE React component](https://github.com/tinymce/tinymce-react) integrates TinyMCE into React projects.
-This procedure creates a [basic React application](https://github.com/facebook/create-react-app) containing a TinyMCE editor based on our [Basic example]({{site.baseurl}}/docs/demo/basic-example/).
+This procedure creates a [basic React application](https://github.com/facebook/create-react-app) containing a TinyMCE editor based on our [Basic example]({{site.baseurl}}/demo/basic-example/).
 
 For examples of the TinyMCE integration, visit [the tinymce-react storybook](https://tinymce.github.io/tinymce-react/).
 

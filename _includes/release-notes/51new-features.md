@@ -205,6 +205,16 @@ Fixes for inline dialogs and menus have been included to:
 
 ## Premium Plugin changes
 
+### Advanced Tables
+
+A new Advanced Tables premium plugin has been released with {{site.productname}} 5.1. The Advanced Tables plugin extends the core [`table` plugin]({{site.baseurl}}/plugins/table/) by adding sort options for rows and columns.
+
+For information on this plugin, see:
+
+* [The Advanced Tables product page](https://apps.tiny.cloud/products/advanced-tables/).
+* [The Advanced Tables Premium features page (including demo)]({{site.baseurl}}/enterprise/advanced_tables/).
+* [The Advanced Tables plugin documentation page]({{site.baseurl}}/plugins/advtable/).
+
 ### PowerPaste
 The {{site.productname}} 5.1 release includes **PowerPaste** 5.2.0.
 

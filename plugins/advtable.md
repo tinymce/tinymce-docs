@@ -12,7 +12,7 @@ The `advtable` plugin is a premium plugin that extends the core [`table` plugin]
 
 | Sort columns based on the selected row                   | Sort rows based on the selected column               |
 | -------------------------------------------------------- | ---------------------------------------------------- |
-| ![]({{ site.baseurl }}/images/advtable-sort-columns.png) | ![]({{ site.baseurl }}/images/advtable-sort-row.png) |
+| ![Advanced Tables enhanced contextual menu for sorting columns based on the selected row (Column > Sort ascending).]({{ site.baseurl }}/images/advtable-sort-columns.png) | ![Advanced Tables enhanced contextual menu for sorting rows based on the selected column (Row > Sort ascending).]({{ site.baseurl }}/images/advtable-sort-row.png) |
 
 ## Enabling the Advanced Tables plugin
 To enable the Advanced Tables plugin, add `advtable` to the list of plugins. For example:

@@ -12,7 +12,7 @@ The initial release of Advanced Tables adds table sorting functionality to table
 
 | Sort columns based on the selected row                   | Sort rows based on the selected column               |
 | -------------------------------------------------------- | ---------------------------------------------------- |
-| ![]({{ site.baseurl }}/images/advtable-sort-columns.png) | ![]({{ site.baseurl }}/images/advtable-sort-row.png) |
+| ![Advanced Tables enhanced contextual menu for sorting columns based on the selected row (Column > Sort ascending).]({{ site.baseurl }}/images/advtable-sort-columns.png) | ![Advanced Tables enhanced contextual menu for sorting rows based on the selected column (Row > Sort ascending).]({{ site.baseurl }}/images/advtable-sort-row.png) |
 
 ### Try our Advanced Tables Demo
 {% include codepen.html id="advtable-plugin" %}

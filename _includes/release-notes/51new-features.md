@@ -207,7 +207,7 @@ Fixes for inline dialogs and menus have been included to:
 
 ### Advanced Tables
 
-A new Advanced Tables premium plugin has been released with {{site.productname}} 5.1. The Advanced Tables plugin extends the core [`table` plugin]({{site.baseurl}}/plugins/table/) by adding sort options for rows and columns.
+A new **Advanced Tables** premium plugin has been released with {{site.productname}} 5.1. The **Advanced Tables** plugin extends the core [`table` plugin]({{site.baseurl}}/plugins/table/) by adding sort options for rows and columns.
 
 For information on this plugin, see:
 

@@ -1,7 +1,7 @@
 If you're using Composer package manager, add the following to `composer.json`.
 
 ```
-php composer.phar require "tinymce/tinymce" ">= 4"
+php composer.phar require "tinymce/tinymce" ">= 5"
 ```
 
 ### Step 1: Include the TinyMCE script

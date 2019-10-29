@@ -21,21 +21,15 @@ Open Source Community Edition users can get free access to the [TinyMCE Forum](h
 
 ### Q: The icons are missing when installing on my server?
 
-TinyMCE 4 uses Web fonts for its icons. Some web servers do not support the mime types needed for the font file extensions. Below are the mime types required - the first part is the mime type the second part is the file extension that needs to be mapped. It's in apache mime type format. Other servers might need a different format.
+Some web servers do not support the mime types needed for the font file extensions. Below are the mime types required - the first part is the mime type the second part is the file extension that needs to be mapped. It's in apache mime type format. Other servers might need a different format.
 
 | MIME type                     | File Extension |
 |:------------------------------|:---------------|
-| application/x-font-ttf        | ttf  |
-| application/x-font-otf        | otf  |
-| application/font-woff         | woff |
-| application/vnd.ms-fontobject | eot  |
 | image/svg+xml                 | svg  |
-
-
 
 ### Q: Why do buttons/select boxes have the incorrect size?
 
-You are probably using an old `DOCTYPE` as of TinyMCE 4 a proper HTML5 doctype is required. All web developers should use a standard rendering mode on their web pages. Use a HTML5 doctype like `<!DOCTYPE html>` to properly render the page and the TinyMCE UI.
+You are probably using an old `DOCTYPE`. As of TinyMCE 4, a proper HTML5 doctype is required. All web developers should use a standard rendering mode on their web pages. Use a HTML5 doctype like `<!DOCTYPE html>` to properly render the page and the TinyMCE UI.
 
 ### Q: Is TinyMCE protected against XSS vulnerabilities?
 
@@ -92,25 +86,3 @@ tinymce.init({
 ##### Example
 
 `path2/file.htm >> http://www.site.com/path1/path2/file.htm`
-
-### Q: Where are the advanced image formatting options?
-
-Use the [`Style Formats`]({{ site.baseurl }}/configure/editor-appearance/#style_formats) option instead, which is much more powerful.
-
-```js
-tinymce.init({
-  selector: 'textarea',  // change this value according to your HTML
-  style_formats: [
-    {title: 'Image Left', selector: 'img', styles: {
-      'float' : 'left',
-      'margin': '0 10px 0 10px'
-    }},
-    {title: 'Image Right', selector: 'img', styles: {
-      'float' : 'right',
-      'margin': '0 10px 0 10px'
-    }}
-]
-});
-```
-
-Use the text-align buttons when images are selected to also align the images.

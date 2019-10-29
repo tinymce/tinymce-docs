@@ -114,8 +114,6 @@ tinymce.init({
 
 ### `media_live_embeds`
 
-> Available in TinyMCE version 4.3 onwards.
-
 When you enable this option users will see a live preview of embedded video content within the editable area, rather than a placeholder image. This means that users can play a video clip, such as YouTube, within the editor.
 
 This option is enabled by default and accepts URLs input into the source field or embed field in the dialog box by the user.

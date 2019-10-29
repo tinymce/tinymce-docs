@@ -5,10 +5,6 @@ title_nav: Upload images &amp; files
 keywords: uploader uploadImages image handler
 ---
 
-{% include pardot-px-moxiemanager.html %}
-
-> Note: This image upload feature is available for TinyMCE version 4.3 and above. Alternatively, the [PowerPaste plugin]({{ site.baseurl }}/plugins/powerpaste/) is capable of this functionality in versions of TinyMCE 4.0 and above.
-
 The image uploader is designed to complement the new image editing functionality of TinyMCE. Images that are edited within TinyMCE can be uploaded using this function. Local images that are added through other means, for example drag and drop when using the [paste_data_images]({{ site.baseurl }}/plugins/paste/#paste_data_images) configuration property, or using Tiny's PowerPaste Plugin.
 
 Once uploaded, TinyMCE automatically updates the `<image>` src attribute with the new path to the remote image.

@@ -1,7 +1,7 @@
 ## TinyMCE Vue.js integration quick start guide
 
 The [Official TinyMCE Vue.js component](https://github.com/tinymce/tinymce-vue) integrates TinyMCE into Vue.js projects.
-This procedure creates a [basic Vue.js application](https://cli.vuejs.org/guide/creating-a-project.html#vue-create) containing a TinyMCE editor based on our [Basic example]({{site.baseurl}}/docs/demo/basic-example/).
+This procedure creates a [basic Vue.js application](https://cli.vuejs.org/guide/creating-a-project.html#vue-create) containing a TinyMCE editor based on our [Basic example]({{site.baseurl}}/demo/basic-example/).
 
 For examples of the TinyMCE integration, visit [the tinymce-vue storybook](https://tinymce.github.io/tinymce-vue/).
 

@@ -1,7 +1,7 @@
 ## TinyMCE Angular integration quick start guide
 
 The [Official TinyMCE Angular component](https://github.com/tinymce/tinymce-angular) integrates TinyMCE into Angular projects.
-This procedure creates a [basic Angular application](https://angular.io/guide/setup-local) containing a TinyMCE editor based on our [Basic TinyMCE example]({{site.baseurl}}/docs/demo/basic-example/).
+This procedure creates a [basic Angular application](https://angular.io/guide/setup-local) containing a TinyMCE editor based on our [Basic TinyMCE example]({{site.baseurl}}/demo/basic-example/).
 
 For examples of the TinyMCE Angular integration, visit [the tinymce-angular storybook](https://tinymce.github.io/tinymce-angular/).
 

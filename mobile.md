@@ -23,7 +23,6 @@ The new mobile experience allows most of the {{site.productname}} plugins to wor
 * [Comments]({{site.baseurl}}/plugins/comments/).
 * [Image tools]({{site.baseurl}}/plugins/imagetools/).
 * [MoxieManager]({{site.baseurl}}/plugins/moxiemanager/).
-* [Paste]({{site.baseurl}}/plugins/paste/).
 * [Permanent Pen]({{site.baseurl}}/plugins/permanentpen/).
 * [Print]({{site.baseurl}}/plugins/print/).
 

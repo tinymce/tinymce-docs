@@ -20,7 +20,6 @@ The new mobile experience allows most of the {{site.productname}} plugins to wor
 * [Comments]({{site.baseurl}}/plugins/comments/).
 * [Image tools]({{site.baseurl}}/plugins/imagetools/).
 * [MoxieManager]({{site.baseurl}}/plugins/moxiemanager/).
-* [Paste]({{site.baseurl}}/plugins/paste/).
 * [Permanent Pen]({{site.baseurl}}/plugins/permanentpen/).
 * [Print]({{site.baseurl}}/plugins/print/).
 
@@ -212,7 +211,7 @@ For information on `powerpaste_clean_filtered_inline_elements`, see: [PowerPaste
 
 #### Pre-filtering and post-filtering callbacks
 
-**PowerPaste** 5.2 also adds _pre-filtering_ and _post-filtering_ callbacks. Developers can add custom filtering before and after **PowerPaste**'s filters are run using the _pre-filtering_ and _post-filtering_ callbacks. These can be added as init options or at runtime using event listeners.
+**PowerPaste** 5.2 modifies the _pre-filtering_ and _post-filtering_ callbacks. The callbacks now contain additional data regarding the paste `mode` and the `source` of the content.
 
 For information on using the Pre-filtering and Post-filtering callbacks, see: [PowerPaste Plugin - Pre-filtering and post-filtering callbacks]({{site.baseurl}}/plugins/powerpaste/#pre-filtering-and-post-filtering-callbacks)
 

@@ -83,13 +83,8 @@ To upgrade to {{site.productname}} {{site.releaseversion}} using a manually down
 >To simplify the upgrade process to future versions of {{site.productname}}:
 >
 >1. Host the TinyMCE customizations outside of the `{{site.prodnamecode}}/` directory.
->1. Update your {{site.productname}} configuration:
+>1. Update your {{site.productname}} configuration as required:
 >
->    **Required**
->    
->    * Set the [`base_url`]({{site.baseurl}}/configure/integration-and-setup/#base_url).
->    
->    **Where Applicable**
 >    * Set the location of content CSS customizations using [`content_css`]({{site.baseurl}}/configure/content-appearance/#content_css).
 >    * Set the location of custom plugins using [`external_plugins`]({{site.baseurl}}/configure/integration-and-setup/#external_plugins).
 >    * Set the location of custom icon packages using [`icons_url`]({{site.baseurl}}/configure/editor-appearance/#icons_url) instead of `icons`.

@@ -174,10 +174,22 @@ For example:
 <img alt="Cell Properties Dialog with new Border Width field" src="{{site.baseurl}}/images/border-width-cell-props.png" style="width:380px;border: 1px solid #036DD5" />
 
 ### Changed the default `toolbar_drawer` to `floating`
-The default for the `toolbar_drawer` setting has been changed from `false` to `floating`. For information on the `toolbar_drawer` setting, see: [User interface options - `toolbar_drawer`]({{site.baseurl}}/configure/editor-appearance/#toolbar_drawer).
+The default for the `toolbar_drawer` setting has been changed from `false` to `floating`.
+
+To revert to the {{site.productname}} 5.0 behavior, add `toolbar_drawer: false` to the `tinymce.init`, such as:
+
+```js
+tinymce.init({
+  selection: textarea#myEditor
+  toolbar_drawer: false
+});
+```
+
+For information on the `toolbar_drawer` setting, see: [User interface options - `toolbar_drawer`]({{site.baseurl}}/configure/editor-appearance/#toolbar_drawer).
 
 ### Icon changes
-In {{site.productname}} 5.0, the same icon (`paragraph`) was used for the toolbar buttons `visualchars` and `visualblocks`.
+In {{site.productname}} 5.0, the same icon (`paragraph`) was used for the `visualchars` and `visualblocks` menu items and toolbar buttons.
+
 To improve the user experience:
 
 * The `paragraph` icon has been renamed `visualchars` and is used for the `visualchars` toolbar button: ![`paragraph` renamed to `visualchars`]({{site.baseurl}}/images/icons/visualchars.svg)

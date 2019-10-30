@@ -24,7 +24,6 @@ The new mobile experience allows most of the {{site.productname}} plugins to wor
 * [Image tools]({{site.baseurl}}/plugins/imagetools/).
 * [MoxieManager]({{site.baseurl}}/plugins/moxiemanager/).
 * [Permanent Pen]({{site.baseurl}}/plugins/permanentpen/).
-* [Print]({{site.baseurl}}/plugins/print/).
 
 {{site.productname}} will detect the platform and show an optimal UI experience based on the device type and screen size.
 
@@ -38,6 +37,17 @@ Add the following `meta` tag to the `head` of pages using {{site.productname}} t
 <meta name="viewport" content="width=device-width, initial-scale=1">
 ```
 
+To set mobile specific settings, add the setting to the [`mobile`]({{site.baseurl}}/docs/configure/editor-appearance/#mobile) configuration, such as:
+
+```js
+tinymce.init({
+  selector: 'textarea',
+  mobile: {
+    menubar: true
+  }
+});
+```
+
 ### Mobile defaults for selected settings
 These mobile-specific default values have been set to disable unsupported settings for mobile devices or to provide the best experience without configuration from developers.
 
@@ -49,18 +59,6 @@ The following settings have mobile-specific default values:
 * [`table_grid`]({{site.baseurl}}/plugins/table/#table_grid) - Table grid is not supported on mobile devices and defaults to `false`. When creating tables on mobile, a dialog is shown instead of the table grid.
 * [`resize`]({{site.baseurl}}/configure/editor-appearance/#resize) - Resizing is not supported on mobile devices and defaults to `false`.
 * [`object_resizing`]({{site.baseurl}}/configure/advanced-editing-behavior/#object_resizing) - Object resizing is not supported on mobile devices and defaults to `false`.
-
-To override these mobile defaults, add the setting to the `mobile` configuration, such as:
-
-```js
-tinymce.init({
-  selector: 'textarea',
-  mobile: {
-    menubar: true
-  }
-});
-```
-
 
 ## The legacy mobile theme
 

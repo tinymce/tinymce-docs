@@ -8,10 +8,10 @@ keywords: releasenotes newfeatures deleted technologypreview bugfixes knownissue
 
 These release notes provide a high-level coverage of the changes for {{site.productname}} 5.1, including:
 
-* [New Features and enhancements](#newfeaturesandenhancements).
-* [Deprecated Features](#deprecatedfeatures).
-* [Known Issues](#knownissues).
-* [Upgrading to the latest version of {{site.productname}} 5](#upgradingtothelatestversionoftinymce5).
+* [New Features and enhancements](#newfeaturesandenhancements)
+* [Deprecated Features](#deprecatedfeatures)
+* [Known Issues](#knownissues)
+* [Upgrading to the latest version of {{site.productname}} 5](#upgradingtothelatestversionoftinymce5)
 
 ## New features and enhancements
 

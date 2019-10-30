@@ -93,7 +93,7 @@ Below are some recommended combinations of skins and icon packs:
 
 #### Creating an account
 
-To try out **Premium Skins and Icon Packs** and Tiny Cloud-delivered editor, the first step is to create a free [Tiny account](https://www.tiny.cloud/download/).
+To try out **Premium Skins and Icon Packs** and {{site.cloudname}}-delivered editor, the first step is to create a free [Tiny account](https://www.tiny.cloud/download/).
 
 The free user account provisioned with a free 30-day trial of all Tiny [premium plugins](https://apps.tiny.cloud/product-category/tiny-cloud-extensions/), with no credit card information or commitment required.
 

@@ -11,7 +11,7 @@ This procedure requires:
 * [Node.js (and npm)](https://nodejs.org/).
 * Access to `tinymce.min.js` on either:
 
-    * [Tiny Cloud]({{site.baseurl}}/cloud-deployment-guide/editor-and-features/).
+    * [{{site.cloudname}}]({{site.baseurl}}/cloud-deployment-guide/editor-and-features/).
     * TinyMCE Self-hosted. See [Advanced installation choices]({{site.baseurl}}/general-configuration-guide/advanced-install/) for details on self-hosting TinyMCE.
 
 ### Procedure
@@ -73,9 +73,9 @@ This procedure requires:
     export default App;
     ```
     This JavaScript file will create the class `App` containing a TinyMCE editor configured to replicate the example on the [Basic example page]({{site.baseurl}}/demo/basic-example/).
-6. Provide access to TinyMCE using Tiny Cloud or by self-hosting TinyMCE.
+6. Provide access to TinyMCE using {{site.cloudname}} or by self-hosting TinyMCE.
 
-    * **Tiny Cloud**
+    * **{{site.cloudname}}**
 
         Include the `apiKey` option in the editor element and include your [TinyMCE API key]({{site.shared_baseurl}}/signup/).
 

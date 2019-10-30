@@ -22,7 +22,7 @@ If you configure **PowerPaste** to allow local images (see the [`powerpaste_allo
 
 
 ## Cloud Installation
-To enable the TinyMCE **PowerPaste** plugin with [TinyMCE Cloud]({{ site.baseurl }}/cloud-deployment-guide/editor-and-features/):
+To enable the TinyMCE **PowerPaste** plugin with [{{site.cloudname}}]({{ site.baseurl }}/cloud-deployment-guide/editor-and-features/):
 
 1. If you are currently using the `paste` plugin provided with TinyMCE, disable it by removing it from the `plugins` list.
 2. Add `powerpaste` to the `plugins` list.

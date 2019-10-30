@@ -27,7 +27,7 @@ Tiny Drive allows the following file formats, extensions, and storage options:
 | Preview | Preview images (and video, coming soon) before you select what content to use |
 | Integrations | Integrations with Google Drive and Dropbox allows you to import file from these systems through Tiny Drive |
 
-The storage and bandwidth quota varies based upon the [Tiny Cloud Plan](https://www.tiny.cloud/pricing/) you are subscribed to.
+The storage and bandwidth quota varies based upon the [{{site.cloudname}} Plan](https://www.tiny.cloud/pricing/) you are subscribed to.
 
 ## Demo
 

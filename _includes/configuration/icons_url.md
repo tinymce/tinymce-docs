@@ -6,7 +6,7 @@ The **icons_url** option allows the editor icons to be extended or replaced usin
 
 On initialization, TinyMCE will try to load any icon pack specified by the **icons_url** option. The icons in the icon pack will be merged with [TinyMCE's default icons]({{site.baseurl}}/advanced/editor-icon-identifiers/) and icons in the icon pack will overwrite the default icons with the same identifier.
 
-`icons_url` is used to specify the location of an icon pack when TinyMCE and the icon pack are loaded from different locations. For example: When loading TinyMCE from Tiny Cloud, the icon pack can be loaded from a different web server.
+`icons_url` is used to specify the location of an icon pack when TinyMCE and the icon pack are loaded from different locations. For example: When loading TinyMCE from {{site.cloudname}}, the icon pack can be loaded from a different web server.
 {% if customIconPack == true %}
 Such as:
 

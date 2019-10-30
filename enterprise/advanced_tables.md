@@ -21,7 +21,7 @@ The initial release of Advanced Tables adds table sorting functionality to table
 
 #### Creating an account
 
-To try out **Advanced Tables** and Tiny Cloud-delivered editor, the first step is to create a free [Tiny account](https://www.tiny.cloud/download/).
+To try out **Advanced Tables** and {{site.cloudname}}-delivered editor, the first step is to create a free [Tiny account](https://www.tiny.cloud/download/).
 
 The free user account is provisioned with a free 30-day trial of all Tiny [premium plugins](https://apps.tiny.cloud/product-category/tiny-cloud-extensions/), with no credit card information or commitment required.
 

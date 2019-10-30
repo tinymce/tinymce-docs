@@ -6,9 +6,9 @@ description: Connect to Tiny Cloud within a hybrid deployment in less than 5 min
 keywords: tinymce cloud script textarea apiKey hybrid
 ---
 
-A hybrid deployment of Tiny Cloud allows the loading of premium plugins in a self-hosted environment. Download and install the [TinyMCE Community edition](https://www.tinymce.com/download/) to get started.
+A hybrid deployment of {{site.cloudname}} allows the loading of premium plugins in a self-hosted environment. Download and install the [TinyMCE Community edition](https://www.tinymce.com/download/) to get started.
 
-Sign up for a free API key provides entitlements to premium [Image Tools]({{  site.baseurl }}/plugins/imagetools/) plugin. A cloud image proxy server must already be configured. Premium plugins can be purchased at any time once the API key has been set up.
+Sign up for a free API key provides entitlements to premium [Image Tools]({{  site.baseurl }}/plugins/imagetools/) plugin. A {{site.cloudname}} image proxy server must already be configured. Premium plugins can be purchased at any time once the API key has been set up.
 
 ## Step 1: Insert the custom script tag into the webpage
 
@@ -31,7 +31,7 @@ Extend the [TinyMCE configuration]({{ site.baseurl }}/configure/) to include any
 * [PowerPaste]({{ site.baseurl }}/plugins/powerpaste/)
 * [Spell Checker Pro]({{ site.baseurl }}/plugins/tinymcespellchecker/)
 
-> Note: `spellchecker_rpc_url` is **not** required when enabling this plugin via [TinyMCE Cloud]({{ site.baseurl }}/cloud-deployment-guide/).
+> Note: `spellchecker_rpc_url` is **not** required when enabling this plugin via [{{site.cloudname}}]({{ site.baseurl }}/cloud-deployment-guide/).
 
 * [Image Tools (with configured image proxy)]({{ site.baseurl }}/plugins/imagetools/)
 

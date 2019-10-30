@@ -35,11 +35,11 @@ For example:
     <link href='/path/to/froala-editor/base/directory/css/froala_style.min.css' rel='stylesheet' type='text/css' />
     ```
 2. Insert a TinyMCE source script into the `<head>` of the page.
-  * For Tiny Cloud deployments:
+  * For {{site.cloudname}} deployments:
 ```html
 <script src='https://cdn.tiny.cloud/1/your-api-key/tinymce/5/tinymce.min.js' referrerpolicy='origin'></script>
 ```
-Replace `your-api-key` with your [Tiny Cloud API key](https://apps.tiny.cloud/?add-to-cart=197933).
+Replace `your-api-key` with your [{{site.cloudname}} API key](https://apps.tiny.cloud/?add-to-cart=197933).
   * For Self-hosted TinyMCE deployments:
 ```html
 <script src='/path/to/tinymce/base/directory/tinymce.min.js'></script>

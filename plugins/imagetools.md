@@ -11,7 +11,7 @@ Image Tools (`imagetools`) plugin adds a contextual editing toolbar to the image
 > *Warning:* This feature requires at least Internet Explorer 10, since it makes use of `HTML5 File API`.
 
 ## Cloud Installation
-The Image Tools plugin is provided with all subscriptions to [TinyMCE Cloud]({{ site.baseurl }}/cloud-deployment-guide/editor-and-features/), including an automatically configured image proxy.
+The Image Tools plugin is provided with all subscriptions to [{{site.cloudname}}]({{ site.baseurl }}/cloud-deployment-guide/editor-and-features/), including an automatically configured image proxy.
 Simply add `image` to the `toolbar` list and `image imagetools` to the `plugins` list.
 
 ##### Example
@@ -51,7 +51,7 @@ An array of supported domains for the images (with CORS enabled on them) can be 
 
 > Note: Each string in the array *must* be in the format of `mydomain.com`. Do not include protocols (`http://, https://`) or any trailing slashes in your domains.
 
-> Note: `imagetools_cors_hosts` is **not** required when enabling this plugin via [TinyMCE Cloud]({{ site.baseurl }}/cloud-deployment-guide/editor-and-features/).
+> Note: `imagetools_cors_hosts` is **not** required when enabling this plugin via [{{site.cloudname}}]({{ site.baseurl }}/cloud-deployment-guide/editor-and-features/).
 
 **Type:** `String[]`
 
@@ -113,7 +113,7 @@ Another way of getting images across domains is using local server-side proxy. P
 
 [TinyMCE Enterprise](https://www.tinymce.com/pricing/) subscription also includes proxy service written in Java. Check [Install Server-side Components]({{ site.baseurl }}/enterprise/server/) guide for details.
 
-> Note: `imagetools_proxy` is **not** required when enabling this plugin via [TinyMCE Cloud]({{ site.baseurl }}/cloud-deployment-guide/editor-and-features/)
+> Note: `imagetools_proxy` is **not** required when enabling this plugin via [{{site.cloudname}}]({{ site.baseurl }}/cloud-deployment-guide/editor-and-features/)
 
 **Type:** `String`
 

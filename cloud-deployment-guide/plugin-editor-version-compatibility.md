@@ -21,7 +21,7 @@ to:
 > Ensure the application uses the latest script tag and substitute 'no-api-key' with your api key.
 
 
-> Important: Ensure the plugins are supported in your editor version when deploying premium plugins only[^footnote] via [Tiny Cloud]({{ site.baseurl }}/cloud-deployment-guide/features-only).
+> Important: Ensure the plugins are supported in your editor version when deploying premium plugins only[^footnote] via [{{site.cloudname}}]({{ site.baseurl }}/cloud-deployment-guide/features-only).
 
 
 | **Plugins** | **TinyMCE 4.x** | **TinyMCE 5.x** |

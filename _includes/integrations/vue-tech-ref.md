@@ -87,12 +87,12 @@ The editor accepts the following properties:
 />
 ```
 
-None of the configuration properties are **required** for `tinymce-vue` to work. Specify a Tiny Cloud API key using `api-key` to remove the `This domain is not registered...` warning message.
+None of the configuration properties are **required** for `tinymce-vue` to work. Specify a {{site.cloudname}} API key using `api-key` to remove the `This domain is not registered...` warning message.
 
 #### `api-key`
-Tiny API key. Required for deployments using the Tiny Cloud to provide the TinyMCE editor.
+{{site.cloudname}} API key. Required for deployments using the {{site.cloudname}} to provide the TinyMCE editor.
 
-To register for a Tiny Cloud API key, visit the [sign-up page](https://www.tiny.cloud/signup/).
+To register for a {{site.cloudname}} API key, visit the [sign-up page](https://www.tiny.cloud/signup/).
 
 **Default value:** `no-api-key`
 
@@ -112,7 +112,7 @@ To register for a Tiny Cloud API key, visit the [sign-up page](https://www.tiny.
 
 **Possible values:**  `{{site.productversion}}-stable`, `{{site.productversion}}-testing`, `{{site.productversion}}-dev`
 
-Changes the TinyMCE build used for the editor to one of the following cloud channels:
+Changes the TinyMCE build used for the editor to one of the following {{site.cloudname}} channels:
 
 - `{{site.productversion}}`, `{{site.productversion}}-stable` (**Default**): The current enterprise release of TinyMCE.
 - `{{site.productversion}}-testing`: The current release candidate for the next enterprise release of TinyMCE.

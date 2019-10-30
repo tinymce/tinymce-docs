@@ -41,10 +41,10 @@ When the `<form>` is submitted the TinyMCE editor mimics the behavior of a norma
 
 ### Additional information about using TinyMCE Cloud
 
-There are a few things you need to consider when using TinyMCE Cloud. If you wish to use any local plugins (like [MoxieManager](http://www.moxiemanager.com) for example) you need to load them using the new [`external_plugins`]({{ site.baseurl }}/configure/integration-and-setup/#external_plugins) option.
+There are a few things you need to consider when using {{site.cloudname}}. If you wish to use any local plugins (like [MoxieManager](http://www.moxiemanager.com) for example) you need to load them using the new [`external_plugins`]({{ site.baseurl }}/configure/integration-and-setup/#external_plugins) option.
 
 Also, if you wish to use a custom language, you need to enter the location of the language file into the new [`language_url`]({{ site.baseurl }}/configure/localization/#language_url) option.
 
-You may also want to select a specific version of the editor from TinyMCE Cloud and you should head on over to [Specify editor & plugin versions]({{site.baseurl}}/cloud-deployment-guide/editor-plugin-version) for details on that.
+You may also want to select a specific version of the editor from {{site.cloudname}} and you should head on over to [Specify editor & plugin versions]({{site.baseurl}}/cloud-deployment-guide/editor-plugin-version) for details on that.
 
-> If you have decided to use TinyMCE Cloud, please move on to the next step [working with plugins](../work-with-plugins/) where you'll start customizing TinyMCE. If you'd like to learn about other install options please keep reading.
+> If you have decided to use {{site.cloudname}}, please move on to the next step [working with plugins](../work-with-plugins/) where you'll start customizing TinyMCE. If you'd like to learn about other install options please keep reading.

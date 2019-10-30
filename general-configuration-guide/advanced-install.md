@@ -7,9 +7,9 @@ description: Learn how to install TinyMCE via TinyMCE Cloud, package manager opt
 keywords: npm bower composer nuget
 ---
 
-There are multiple ways to instantiate TinyMCE. Accessing TinyMCE through Tiny Cloud may not be the best use case for different deployment scenarios. This section explains additional installation options including package managers, SDK download, and other custom build options.
+There are multiple ways to instantiate TinyMCE. Accessing TinyMCE through {{site.cloudname}} may not be the best use case for different deployment scenarios. This section explains additional installation options including package managers, SDK download, and other custom build options.
 
-* [TinyMCE Cloud](#cloudinstall)
+* [{{site.cloudname}}](#cloudinstall)
 * [Package Managers](#packagemanagerinstalloptions)
 * [SDK / Download](#sdkinstall)
 * [jQuery](#jqueryinstall)

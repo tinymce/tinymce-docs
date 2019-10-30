@@ -196,7 +196,7 @@ Use the URL query parameters to specify the version of each premium plugin. This
 
 ## Specifying a self-hosted deployment of features/plugins
 
-<!-- Additional configuration is required when serving [only premium plugins from Tiny Cloud]({{ site.baseurl }}/cloud-deployment-guide/features-only) and from a self-hosted installation. URL query parameters and the special version name "SDK" can also be used in the configuration. -->
+<!-- Additional configuration is required when serving [only premium plugins from {{site.cloudname}}]({{ site.baseurl }}/cloud-deployment-guide/features-only) and from a self-hosted installation. URL query parameters and the special version name "SDK" can also be used in the configuration. -->
 
 If you're deploying [only premium plugins from {{site.cloudname}}]({{ site.baseurl }}/cloud-deployment-guide/features-only), you may want to have some features served from {{site.cloudname}} and some features served from your self-hosted installation. This is also possible with URL query parameters and the special version name "SDK".
 

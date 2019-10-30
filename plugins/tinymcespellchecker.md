@@ -9,12 +9,12 @@ keywords: tinymcespellchecker spellchecker_language spellchecker_languages spell
 **Spell Checker Pro** adds spell check as-you-type capabilities to TinyMCE. For information on the supported languages, refer to [this]({{site.baseurl}}/plugins/tinymcespellchecker/#spellchecker_language) section.
 
 ## Cloud Installation
-To enable the TinyMCE Enterprise Spellchecking plugin with [TinyMCE Cloud]({{ site.baseurl }}/cloud-deployment-guide/editor-and-features):
+To enable the TinyMCE Enterprise Spellchecking plugin with [{{site.cloudname}}]({{ site.baseurl }}/cloud-deployment-guide/editor-and-features):
 
 1. If configured, disable the `spellchecker` plugin provided with TinyMCE, by removing it from the `plugins` list.
 2. Add `tinymcespellchecker` to the `plugins` list.
 
-With TinyMCE Cloud the server-side spellchecking component is automatically configured, so the `spellchecker_rpc_url` parameter does not need to be set.
+With {{site.cloudname}} the server-side spellchecking component is automatically configured, so the `spellchecker_rpc_url` parameter does not need to be set.
 
 ##### Example TinyMCE Configuration
 
@@ -54,7 +54,7 @@ The TinyMCE Enterprise Spellchecking plugin activates automatically when users t
 ### `spellchecker_rpc_url`
 This setting enables specifying the URL to be used for the server side ephox-spelling service. Check the [server-side component installation guide]({{site.baseurl}}/enterprise/server/) for details on how to setup a spellchecker server.
 
-**Note:** `spellchecker_rpc_url` is **not** required when enabling this plugin via [TinyMCE Cloud]({{site.baseurl}}/cloud-deployment-guide/editor-and-features/)
+**Note:** `spellchecker_rpc_url` is **not** required when enabling this plugin via [{{site.cloudname}}]({{site.baseurl}}/cloud-deployment-guide/editor-and-features/)
 
 ### `spellchecker_languages`
 This optional setting allows specifying the languages that are available to the user, provided as a comma delimited string. The default value for this setting is:

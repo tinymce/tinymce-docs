@@ -11,13 +11,13 @@ Users can communicate every day using `@username` on social networks and can exp
 
 Mentions is available as a stand-alone plugin or as part of the Pro Bundle. To learn more about all the options, check out the [pricing and plans here](https://www.tiny.cloud/pricing/).
 
-There are two deployment options. One is with TinyMCE Cloud, the other is the more traditional Self-hosted route, requiring an additional [server-side component]({{ site.baseurl }}/enterprise/server/) to be installed and configured.
+There are two deployment options. One is with {{site.cloudname}}, the other is the more traditional Self-hosted route, requiring an additional [server-side component]({{ site.baseurl }}/enterprise/server/) to be installed and configured.
 
 Please note that this feature requires a backend integration with a system to handle listing of users, as well as sending the notifications. Refer to this [example code](https://www.tinymce.com/docs/plugins/mentions/#example) for more information. There are two integration points: getting a user list when `@abc...` is typed, and on submitting the form, sending a notification to the `@username` in the document.
 
 ## Mentions cloud setup
 
-Mentions is available for download through [TinyMCE Cloud]({{ site.baseurl }}/cloud-deployment-guide/editor-and-features/). Include the `mentions` parameter in the `tinymce.init` script. Refer to the [Mentions documentation]({{site.baseurl}}/plugins/mentions/), for more information on setup and configuration.
+Mentions is available for download through [{{site.cloudname}}]({{ site.baseurl }}/cloud-deployment-guide/editor-and-features/). Include the `mentions` parameter in the `tinymce.init` script. Refer to the [Mentions documentation]({{site.baseurl}}/plugins/mentions/), for more information on setup and configuration.
 
 ## Downloading Mentions
 

@@ -16,7 +16,7 @@ JWT is a standard authorization solution for web services and is documented in m
 
 ## Private/public key pair
 
-TinyMCE cloud services tokens use public/private RSA key pairs. The TinyMCE cloud services only store the public key, allowing developers to have full control over the authentication.
+{{site.cloudname}} services tokens use public/private RSA key pairs. The {{site.cloudname}} services only store the public key, allowing developers to have full control over the authentication.
 
 The private/public key pair can be created on your [Tiny - My Account page](https://www.tiny.cloud/my-account/jwt/), however we only store the public key on the My Account page. The private key should be downloaded and stored in your backend.
 
@@ -26,7 +26,7 @@ For information on generating an RSA key pair locally, see: [Creating a private/
 
 ## JWT provider URL
 
-The easiest way to setup JWT authentication against TinyMCE cloud services is to create a JWT provider endpoint. This endpoint takes a JSON HTTP POST request and produces a JSON result with the token that the service will then use for all the HTTP requests.
+The easiest way to setup JWT authentication against {{site.cloudname}} services is to create a JWT provider endpoint. This endpoint takes a JSON HTTP POST request and produces a JSON result with the token that the service will then use for all the HTTP requests.
 
 The following diagram explains the JWT call flow:
 

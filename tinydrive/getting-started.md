@@ -12,7 +12,7 @@ keywords: tinydrive starter projects
 > 3. Store these keys temporarily, you will need them later.
 > Do this before proceeding and it will go a lot smoother
 
-Tiny Drive allows trouble free management of assets such as images and files in the cloud. Tiny Drive is only available in [Tiny Cloud](https://www.tiny.cloud/signup/) and requires registering for an API key.
+Tiny Drive allows trouble free management of assets such as images and files in the cloud. Tiny Drive is only available in [{{site.cloudname}}](https://www.tiny.cloud/signup/) and requires registering for an API key.
 
 To enable this functionality in the TinyMCE editor, add `tinydrive` to the list of plugins in the `tinymce.init` call. The user also needs to be authenticated using a [JSON Web Token (JWT)]({{site.baseurl}}/tinydrive/jwt-authentication/).
 
@@ -23,7 +23,7 @@ Once Drive is enabled, it integrates as the default file picker for the Image, L
 
 To get started quickly and understand how Tiny Drive works, we highly recommend trying one of the starter projects on Github, should get you up and running in no time.
 
-The starter projects have their own procedures to get Tiny Drive up and running. Choose a starter project of a familiar language and follow the steps to setup Tiny Drive. The links will take you to the Github page for the starter project of your choice, where the source code is available for you to view. 
+The starter projects have their own procedures to get Tiny Drive up and running. Choose a starter project of a familiar language and follow the steps to setup Tiny Drive. The links will take you to the Github page for the starter project of your choice, where the source code is available for you to view.
 
 #### Choose a familar language
 
@@ -53,7 +53,7 @@ The next step, after seeing how Tiny Drive works in these starter projects, is t
 
 Go through the following additional resources to figure out how to configure Tiny Drive with a specific system.
 
-- We recommend reading up and trying to understand how [JWT authentication]({{site.baseurl}}/tinydrive/jwt-authentication/) works. 
+- We recommend reading up and trying to understand how [JWT authentication]({{site.baseurl}}/tinydrive/jwt-authentication/) works.
 - [Configuration Options]({{site.baseurl}}/tinydrive/configuration/)
 - [Integrations]({{site.baseurl}}/tinydrive/integrations/)
 

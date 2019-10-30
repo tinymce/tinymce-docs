@@ -6,7 +6,7 @@ description: Add sorting functionality to tables.
 keywords: sort tables advanced advtable
 ---
 
-The initial release of Advanced Tables adds table sorting functionality to tables in {{site.productname}} 5. Tables can be sorted by row or column values using the additional menu and contextual menu items.
+The initial release of Advanced Tables adds table sorting functionality to tables in {{site.productname}} {{site.productversion}}. Tables can be sorted by row or column values using the additional menu and contextual menu items.
 
 **Such as:**
 

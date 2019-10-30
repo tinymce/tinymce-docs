@@ -2,7 +2,7 @@
 layout: default
 title: Page Embed plugin
 title_nav: Page Embed
-description: Easily inserts iframe into the content. (Available post TinyMCE 5.0 GA)
+description: Easily inserts iframe into the content.
 keywords: view Page Embed insert iframe
 controls: toolbar button, menu item
 ---

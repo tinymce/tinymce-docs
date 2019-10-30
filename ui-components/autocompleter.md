@@ -2,7 +2,7 @@
 layout: default
 title: Autocompleter
 title_nav: Autocompleter
-description: Add a custom autocompleter to TinyMCE 5.0.
+description: Add a custom autocompleter to TinyMCE 5.
 keywords: autcomplete
 ---
 

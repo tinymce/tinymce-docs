@@ -61,7 +61,7 @@ This procedure requires:
 6. Using a text editor, open `/path/to/tinymce-angular-demo/src/app/app.component.html` and replace the contents with:
 
     ```html
-    <h1>TinyMCE 5 Angular Demo</h1>
+    <h1>{{site.productname}} {{site.productversion}} Angular Demo</h1>
     <editor
       initialValue="<p>This is the initial content of the editor</p>"
       [init]="{

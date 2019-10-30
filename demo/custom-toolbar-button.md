@@ -7,6 +7,6 @@ description: This example shows you how to add a custom button to the toolbar.
 keywords: example demo custom toolbar button
 ---
 
-This example shows you how to add a custom button to the toolbar in Tiny 5.
+This example shows you how to add a custom button to the toolbar in {{site.productname}} {{site.productversion}}.
 
 {% include codepen.html id="custom-toolbar-button" %}

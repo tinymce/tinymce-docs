@@ -6,11 +6,11 @@ description: Seamlessly integrates TinyMCE into Swing applications.
 keywords: integration integrate swing
 ---
 
-Users can easily configure the TinyMCE editor in Swing through the **TinyMCE for Swing** integration. 
+Users can easily configure the TinyMCE editor in Swing through the **TinyMCE for Swing** integration.
 
 ## Getting the TinyMCE for Swing integration
 
-To start using TinyMCE for Swing as your new rich text editor, the first step is to obtain a copy of the **Integration**. 
+To start using TinyMCE for Swing as your new rich text editor, the first step is to obtain a copy of the **Integration**.
 
 Contact [customer support](https://www.tiny.cloud/contact/) to discuss how to get started with our latest release.
 
@@ -29,7 +29,7 @@ The Swing integration allows the user to select the origin of the TinyMCE code: 
 * Cloud deployments pull the latest release of TinyMCE from the channel of your choice. Use this option by passing your API key and selecting a release channel.
 
   ```
-  final Config myTinyConfiguration = Config.cloud("<my_api_key>", "5-stable");
+  final Config myTinyConfiguration = Config.cloud("<my_api_key>", "{{site.productversion}}-stable");
   ```
 
 * Embedded deployments use the version of TinyMCE prepackaged with the current release of the integration.
@@ -80,7 +80,7 @@ For more examples check the [GitHub repository](https://github.com/tinymce/tinym
   * `license.txt` - This file has all the license details about TinyMCE for Swing as a commercial software.
   * `release-notes.txt` - This file has information about the integrations and enhancements that have been implemented in TinyMCE for Swing integration.
   * `jar` files - The `jar` files that implement the integration can be found under lib/
-  * `javadoc` - The `javadoc` can be found at `docs/javadoc/index.html`. 
+  * `javadoc` - The `javadoc` can be found at `docs/javadoc/index.html`.
 
 #### A note about integrations
 

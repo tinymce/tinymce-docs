@@ -49,7 +49,7 @@ tinymce.init({
 
 ## Types of menu items
 
-There are three types of menu items in TinyMCE 5.0:
+There are three types of menu items in TinyMCE {{site.productversion}}:
 
 * Basic menu items
 * Nested menu items

@@ -37,7 +37,7 @@ The editor accepts the following properties:
 ```xml
 <Editor
   apiKey='your-api-key'
-  cloudChannel='5-stable'
+  cloudChannel='{{site.productversion}}-stable'
   disabled={false}
   id='uuid'
   init= {% raw %}{{{% endraw %}  {% raw %}}}{% endraw %}
@@ -73,20 +73,20 @@ To register for a Tiny Cloud API key, visit the [sign-up page](https://www.tiny.
 
 #### `cloudChannel`
 
-**Default value:** `5-stable`
+**Default value:** `{{site.productversion}}-stable`
 
-**Possible values:**  `5-stable`, `5-testing`, `5-dev`
+**Possible values:**  `{{site.productversion}}-stable`, `{{site.productversion}}-testing`, `{{site.productversion}}-dev`
 
 Changes the TinyMCE build used for the editor to one of the following cloud channels:
 
-- `5-stable` (**Default**): The current enterprise release of TinyMCE.
-- `5-testing`: The current release candidate for the next enterprise release of TinyMCE.
-- `5-dev`: The nightly-build version of TinyMCE.
+- `{{site.productversion}}-stable` (**Default**): The current enterprise release of TinyMCE.
+- `{{site.productversion}}-testing`: The current release candidate for the next enterprise release of TinyMCE.
+- `{{site.productversion}}-dev`: The nightly-build version of TinyMCE.
 
 Such as:
 
 ```js
-<Editor apiKey='your-api-key' cloudChannel='5-dev' init={% raw %}{{{% endraw %} /* your other settings */ {% raw %}}}{% endraw %} />
+<Editor apiKey='your-api-key' cloudChannel='{{site.productversion}}-dev' init={% raw %}{{{% endraw %} /* your other settings */ {% raw %}}}{% endraw %} />
 ```
 For information TinyMCE development channels, see: [Specifying the TinyMCE editor version deployed from Cloud - dev, testing, and stable releases]({{site.baseurl}}/cloud-deployment-guide/editor-plugin-version/#devtestingandstablereleases).
 

@@ -7,8 +7,6 @@ description: A server-side upload handler PHP script suitable for TinyMCE.
 keywords: php_upload_handler php async image upload
 ---
 
-{% include pardot-px-moxiemanager.html %}
-
 The following PHP script creates a server-side upload handler suitable for TinyMCE.
 
 > Note: This script is a reference requires updating to suit the application.

@@ -7,21 +7,20 @@ The following new features and enhancements were added for the {{site.productnam
 
 The new mobile experience comes with a number of user interface changes, building on the {{site.productname}} desktop experience:
 
-* [Mobile devices now use the `silver` theme](#mobiledevicesnowusethesilvertheme).
-* [Horizontal contextual menus on mobile](#horizontalcontextualmenusonmobile).
-* [Side-scrolling toolbars on mobile](#side-scrollingtoolbarsonmobile).
-* [Contextual keyboard settings](#contextualkeyboardsettings).
-* [New mobile defaults for selected settings](#newmobiledefaultsforselectedsettings).
-* [Table cell selection on mobile](#tablecellselectiononmobile).
-* [Touch-friendly split buttons](#touch-friendlysplitbuttons).
+* [Mobile devices now use the `silver` theme](#mobiledevicesnowusethesilvertheme)
+* [Horizontal contextual menus on mobile](#horizontalcontextualmenusonmobile)
+* [Side-scrolling toolbars on mobile](#side-scrollingtoolbarsonmobile)
+* [Contextual keyboard settings](#contextualkeyboardsettings)
+* [New mobile defaults for selected settings](#newmobiledefaultsforselectedsettings)
+* [Table cell selection on mobile](#tablecellselectiononmobile)
+* [Touch-friendly split buttons](#touch-friendlysplitbuttons)
 
 The new mobile experience allows most of the {{site.productname}} plugins to work on mobile devices, except for:
 
-* [Comments]({{site.baseurl}}/plugins/comments/).
-* [Image tools]({{site.baseurl}}/plugins/imagetools/).
-* [MoxieManager]({{site.baseurl}}/plugins/moxiemanager/).
-* [Permanent Pen]({{site.baseurl}}/plugins/permanentpen/).
-* [Print]({{site.baseurl}}/plugins/print/).
+* [Comments]({{site.baseurl}}/plugins/comments/)
+* [Image tools]({{site.baseurl}}/plugins/imagetools/)
+* [MoxieManager]({{site.baseurl}}/plugins/moxiemanager/)
+* [Permanent Pen]({{site.baseurl}}/plugins/permanentpen/)
 
 #### Enabling the mobile editor
 
@@ -81,17 +80,6 @@ The following settings have mobile-specific default values:
 * [`table_grid`]({{site.baseurl}}/plugins/table/#table_grid) - Table grid is not supported on mobile devices and defaults to `false`. When creating tables on mobile, a dialog is shown instead of the table grid.
 * [`resize`]({{site.baseurl}}/configure/editor-appearance/#resize) - Resizing is not supported on mobile devices and defaults to `false`.
 * [`object_resizing`]({{site.baseurl}}/configure/advanced-editing-behavior/#object_resizing) - Object resizing is not supported on mobile devices and defaults to `false`.
-
-To override these mobile defaults, add the setting to the `mobile` configuration, such as:
-
-```js
-tinymce.init({
-  selector: 'textarea',
-  mobile: {
-    menubar: true
-  }
-});
-```
 
 #### Table cell selection on mobile
 The [table plugin]({{site.baseurl}}/plugins/table/) has been updated to provide _touch selection handles_ on touch devices. The touch selection handles appear when users double-tap a table cell, and allow users to select a range of table cells on touch devices.

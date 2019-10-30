@@ -12,18 +12,18 @@ keywords: tinydrive starter projects
 > 3. Store these keys temporarily, you will need them later.
 > Do this before proceeding and it will go a lot smoother
 
-Tiny Drive allows trouble free management of assets such as images and files in the cloud. Tiny Drive is only available in [{{site.cloudname}}](https://www.tiny.cloud/signup/) and requires registering for an API key.
+{{site.cloudfilemanager}} allows trouble free management of assets such as images and files in the cloud. {{site.cloudfilemanager}} is only available in [{{site.cloudname}}](https://www.tiny.cloud/signup/) and requires registering for an API key.
 
 To enable this functionality in the TinyMCE editor, add `tinydrive` to the list of plugins in the `tinymce.init` call. The user also needs to be authenticated using a [JSON Web Token (JWT)]({{site.baseurl}}/tinydrive/jwt-authentication/).
 
-Once Drive is enabled, it integrates as the default file picker for the Image, Link, and Media dialogs and as the default upload handler for local images being pasted or inserted into the document.
+Once {{site.cloudfilemanager}} is enabled, it integrates as the default file picker for the Image, Link, and Media dialogs and as the default upload handler for local images being pasted or inserted into the document.
 
 
 ## Starter projects
 
-To get started quickly and understand how Tiny Drive works, we highly recommend trying one of the starter projects on Github, should get you up and running in no time.
+To get started quickly and understand how {{site.cloudfilemanager}} works, we highly recommend trying one of the starter projects on Github, should get you up and running in no time.
 
-The starter projects have their own procedures to get Tiny Drive up and running. Choose a starter project of a familiar language and follow the steps to setup Tiny Drive. The links will take you to the Github page for the starter project of your choice, where the source code is available for you to view.
+The starter projects have their own procedures to get {{site.cloudfilemanager}} up and running. Choose a starter project of a familiar language and follow the steps to setup {{site.cloudfilemanager}}. The links will take you to the Github page for the starter project of your choice, where the source code is available for you to view.
 
 #### Choose a familar language
 
@@ -47,11 +47,11 @@ The starter projects have their own procedures to get Tiny Drive up and running.
 
 ### Implementing with your system
 
-The next step, after seeing how Tiny Drive works in these starter projects, is trying to implement it with your own system, the [JSON Web Token]({{site.baseurl}}/tinydrive/jwt-authentication/) authentication solution would have to be tied to the login authentication of your system. This usually means integrating the JWT authentication to the existing session authentication so that users automatically login to Tiny Drive and your system at the same time.
+The next step, after seeing how {{site.cloudfilemanager}} works in these starter projects, is trying to implement it with your own system, the [JSON Web Token]({{site.baseurl}}/tinydrive/jwt-authentication/) authentication solution would have to be tied to the login authentication of your system. This usually means integrating the JWT authentication to the existing session authentication so that users automatically login to {{site.cloudfilemanager}} and your system at the same time.
 
 #### Additional resources
 
-Go through the following additional resources to figure out how to configure Tiny Drive with a specific system.
+Go through the following additional resources to figure out how to configure {{site.cloudfilemanager}} with a specific system.
 
 - We recommend reading up and trying to understand how [JWT authentication]({{site.baseurl}}/tinydrive/jwt-authentication/) works.
 - [Configuration Options]({{site.baseurl}}/tinydrive/configuration/)
@@ -59,4 +59,4 @@ Go through the following additional resources to figure out how to configure Tin
 
 ## Need help? ##
 
-Tiny is striving to make Tiny Drive as useful and simple as possible. For support related issues such as problems with JWT authentication and implementing Tiny Drive, check the [help page](/tinydrive/get-help/) or please contact [support](https://support.tiny.cloud/hc/en-us/requests/new).
+Tiny is striving to make {{site.cloudfilemanager}} as useful and simple as possible. For support related issues such as problems with JWT authentication and implementing {{site.cloudfilemanager}}, check the [help page](/tinydrive/get-help/) or please contact [support](https://support.tiny.cloud/hc/en-us/requests/new).

@@ -83,7 +83,7 @@ tinymce.init({
 
 ### Configuring the Insert File toolbar button
 
-Tiny Drive will automatically integrate into the Image, Link, and Media dialogs as a file picker. It can also be configured to insert files directly into any content using the `insertfile` button. To enable this button, add it to the toolbar editor setting.
+{{site.cloudfilemanager}} will automatically integrate into the Image, Link, and Media dialogs as a file picker. It can also be configured to insert files directly into any content using the `insertfile` button. To enable this button, add it to the toolbar editor setting.
 
 The Insert File toolbar button will insert images as `img` elements or other files as links to that file.
 
@@ -103,7 +103,7 @@ tinymce.init({
 
 ### `tinydrive_dropbox_app_key`
 
-This setting enables specifying the Dropbox API key for integrating dropbox into Tiny Drive. For more information on how you obtain this key, refer to the [Dropbox integration guide]({{site.baseurl}}/tinydrive/integrations/dropbox-integration/).
+This setting enables specifying the Dropbox API key for integrating dropbox into {{site.cloudfilemanager}}. For more information on how you obtain this key, refer to the [Dropbox integration guide]({{site.baseurl}}/tinydrive/integrations/dropbox-integration/).
 
 **Type:** `string`
 
@@ -121,7 +121,7 @@ tinymce.init({
 
 ### `tinydrive_google_drive_key`
 
-This setting enables specifying the Google Drive API key for integrating Google Drive into Tiny Drive. For more information on how you obtain this key, refer to the [Google Drive integration guide]({{site.baseurl}}/tinydrive/integrations/googledrive-integration/).
+This setting enables specifying the Google Drive API key for integrating Google Drive into {{site.cloudfilemanager}}. For more information on how you obtain this key, refer to the [Google Drive integration guide]({{site.baseurl}}/tinydrive/integrations/googledrive-integration/).
 
 **Type:** `string`
 
@@ -137,7 +137,7 @@ tinymce.init({
 
 ### `tinydrive_google_drive_client_id`
 
-This setting enables specifying the Google Drive client ID for integrating Google Drive into Tiny Drive. For more information on how you obtain this ID, refer to the [Google Drive integration guide]({{site.baseurl}}/tinydrive/integrations/googledrive-integration/).
+This setting enables specifying the Google Drive client ID for integrating Google Drive into {{site.cloudfilemanager}}. For more information on how you obtain this ID, refer to the [Google Drive integration guide]({{site.baseurl}}/tinydrive/integrations/googledrive-integration/).
 
 **Type:** `string`
 
@@ -153,4 +153,4 @@ tinymce.init({
 
 ## Need help? ##
 
-Tiny is striving to make Tiny Drive as useful and simple as possible. For support related issues such as problems with JWT authentication and implementing Tiny Drive, check the [help page](/tinydrive/get-help/) or please contact [support](https://support.tiny.cloud/hc/en-us/requests/new).
+Tiny is striving to make {{site.cloudfilemanager}} as useful and simple as possible. For support related issues such as problems with JWT authentication and implementing {{site.cloudfilemanager}}, check the [help page](/tinydrive/get-help/) or please contact [support](https://support.tiny.cloud/hc/en-us/requests/new).

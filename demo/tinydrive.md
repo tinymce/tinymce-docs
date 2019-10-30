@@ -9,6 +9,6 @@ keywords: tinydrive .net php relative_urls
 
 ## Live example
 
-This example shows you how to use Tiny Drive for your file and image management. For more information on Tiny Drive, see the [docs]({{site.baseurl}}/tinydrive/).
+This example shows you how to use {{site.cloudfilemanager}} for your file and image management. For more information on {{site.cloudfilemanager}}, see the [docs]({{site.baseurl}}/tinydrive/).
 
 {% include codepen.html id="drive-demo" %}

@@ -14,7 +14,7 @@ This example includes most of the available TinyMCE plugins, including plugins a
 {% include codepen.html id="full-featured" %}
 
 The following plugins are excluded from this example:
-* [MoxieManager (Premium Plugin)]({{site.baseurl}}/plugins/moxiemanager) — [**Tiny Drive**]({{site.baseurl}}/plugins/drive) included instead.
+* [MoxieManager (Premium Plugin)]({{site.baseurl}}/plugins/moxiemanager) — [**{{site.cloudfilemanager}}**]({{site.baseurl}}/plugins/drive) included instead.
 * [Autoresize]({{site.baseurl}}/plugins/autoresize) — Resizes the editor to fit the content.
 * [BBCode]({{site.baseurl}}/plugins/bbcode) — Changes the markup used for the content.
 * [Code]({{site.baseurl}}/plugins/code) — [**Advanced Code Editor**]({{site.baseurl}}/plugins/advcode) included instead.

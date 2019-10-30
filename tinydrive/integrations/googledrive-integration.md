@@ -8,11 +8,11 @@ keywords: google drive
 
 ## Overview
 
-Tiny Drive enables you to import files from any Google Drive account if you setup the google drive integration by providing Google credentials. When the user selects a file from Google Drive, it will instantly be uploaded or imported into the Tiny Drive storage so that it can be viewed online and shared through Tiny Drive. Documents picked from Google Drive will be converted to PDF Files within Tiny Drive.
+{{site.cloudfilemanager}} enables you to import files from any Google Drive account if you setup the google drive integration by providing Google credentials. When the user selects a file from Google Drive, it will instantly be uploaded or imported into the {{site.cloudfilemanager}} storage so that it can be viewed online and shared through {{site.cloudfilemanager}}. Documents picked from Google Drive will be converted to PDF Files within {{site.cloudfilemanager}}.
 
 ## Prerequisites
 
-1. A valid Google Drive user account is required for integrating Google Drive with Tiny Drive. Refer to this [Google Drive](https://support.google.com/drive/answer/2424384?co=GENIE.Platform%3DDesktop&hl=en) link for more information on creating a Google Drive user account.
+1. A valid Google Drive user account is required for integrating Google Drive with {{site.cloudfilemanager}}. Refer to this [Google Drive](https://support.google.com/drive/answer/2424384?co=GENIE.Platform%3DDesktop&hl=en) link for more information on creating a Google Drive user account.
 2. The Google Drive API should be enabled. Refer to this [Google Drive](https://developers.google.com/drive/api/v3/enable-drive-api) link for more information on enabling the Google Drive API.
 3. The Google Picker API should be enabled. Refer to this [Google Drive](https://developers.google.com/picker/docs/) link for more information on enabling the Google Picker API.
 
@@ -30,7 +30,7 @@ You can obtain the Google Drive credentials by following the steps below.
 
 ### 2. Copy the new Google API Key
 
-Copy the generated Google API key this will later be used to configure Tiny Drive:
+Copy the generated Google API key this will later be used to configure {{site.cloudfilemanager}}:
 
 <img src="{{site.baseurl}}/images/tinydrive-googledrive-dump2.png" style="border: 1px solid #BBB">
 
@@ -45,7 +45,7 @@ Click on the `Create credentials` button then on `OAuth client ID` item:
 1. Select `Web application` from `Application type`
 2. Add your domains to `Authorized JavaScript origins`.
 3. Click `create`.
-4. Copy the created `client id` it will be used later to configure Tiny Drive.
+4. Copy the created `client id` it will be used later to configure {{site.cloudfilemanager}}.
 
 <img src="{{site.baseurl}}/images/tinydrive-googledrive-dump4.png" style="border: 1px solid #BBB">
 
@@ -72,22 +72,22 @@ tinymce.init({
 });
 ```
 
-For more information on other TinyDrive config options refer to the [configuration]({{site.baseurl}}/tinydrive/configuration) section of this document.
+For more information on other {{site.cloudfilemanager}} config options refer to the [configuration]({{site.baseurl}}/tinydrive/configuration) section of this document.
 
 ### 7. Tiny Drive UI
 
-1. From the TinyMCE user interface, click on the ![**Insert/edit image**]({{site.baseurl}}/images/insertimage.png) button to access the Tiny Drive user interface.
+1. From the TinyMCE user interface, click on the ![**Insert/edit image**]({{site.baseurl}}/images/insertimage.png) button to access the {{site.cloudfilemanager}} user interface.
 2. Click on the ![Upload/Create]({{site.baseurl}}/images/upload.png) button to select Google Drive from the list of storages.
 3. Select the file to upload/import from Google Drive by clicking on the radio button next to it. Alternatively, to directly insert the file into the editor, double-click on it.
-4. Choose **Save** to upload/import the selected file/files to Tiny Drive.
+4. Choose **Save** to upload/import the selected file/files to {{site.cloudfilemanager}}.
 
-**Result:** You should be able to view the selected files in you Tiny Drive storage.
+**Result:** You should be able to view the selected files in your {{site.cloudfilemanager}} storage.
 
 #### Other file options
 
 The following other options can be performed to the selected file :
 
-1. Follow the steps from 1-3 of the Tiny Drive UI procedure.
+1. Follow the steps from 1-3 of the {{site.cloudfilemanager}} UI procedure.
 2. Choose from the options below as per the requirement:
  * Choose **Star** to flag important files and view the starred file under the **Star** tab in the Google Drive Home tab.
  * Choose **Download** to download the selected file/files.
@@ -97,6 +97,6 @@ Read more about these options [here](https://gsuite.google.com/learning-center/p
 
 ### Live example
 
-Here is a live example of Google Drive enabled on Tiny Drive.
+Here is a live example of Google Drive enabled on {{site.cloudfilemanager}}.
 
 {% include codepen.html id="drive-demo-googledrive" %}

@@ -33,7 +33,7 @@ to:
 | [Mentions]({{site.baseurl}}/plugins/mentions) | Y | Y |
 | [PowerPaste]({{ site.baseurl }}/plugins/powerpaste/) | Y | Y |
 | [Spell Checker Pro]({{ site.baseurl }}/plugins/tinymcespellchecker/) | Y | Y |
-| [Tiny Drive]({{site.baseurl}}/plugins/drive) | Y | Y |
+| [{{site.cloudfilemanager}}]({{site.baseurl}}/plugins/drive) | Y | Y |
 | [Tiny Comments]({{site.baseurl}}/plugins/comments) | Y | Y |
 | [Page Embed]({{site.baseurl}}/plugins/pageembed) | N | Y |
 | [Permanent Pen]({{site.baseurl}}/plugins/permanentpen) | N | Y |

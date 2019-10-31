@@ -173,8 +173,8 @@ tinymce.init({
   menubar: "insert",
   toolbar: "media",
   media_scripts: [
-   {filter: 'http://media1.tinymce.com'},
-   {filter: 'http://media2.tinymce.com', width: 100, height: 200}
+   {filter: 'http://media1.example.com'},
+   {filter: 'http://media2.example.com', width: 100, height: 200}
  ]
 });
 ```

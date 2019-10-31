@@ -6,7 +6,7 @@ description: Add rich media previews inside TinyMCE.
 keywords: video youtube vimeo mp3 mp4 mov movie clip film spotify
 ---
 
-The **Enhanced Media Embed** plugin is a [premium {{site.productname}} plugin](https://tinymce.com/pricing) that will take a URL, send it to a backend service that returns an embeddable snippet of code, and add that code to the editor. That typically takes the form of rich media such as audio, video and social media cards.
+The **Enhanced Media Embed** plugin is a [premium {{site.productname}} plugin]({{site.pricingpage}}) that will take a URL, send it to a backend service that returns an embeddable snippet of code, and add that code to the editor. That typically takes the form of rich media such as audio, video and social media cards.
 
 ## Installation
 
@@ -57,7 +57,7 @@ This optional setting will inline all styles, instead of using CSS classes, when
 
 ### `mediaembed_service_url`
 
-This setting specifies the URL to the service that will handle your requests and return the embeddable snippets used by the **Media Embed** plugin. Please follow these [instructions]({{site.baseurl}}/enterprise/server/#step6setupeditorclientinstancestousetheserver-sidefunctionality) to configure the **WAR** file that you will get as a part of your [{{site.sfenterpriseac}}](https://www.tinymce.com/pricing/).
+This setting specifies the URL to the service that will handle your requests and return the embeddable snippets used by the **Media Embed** plugin. Please follow these [instructions]({{site.baseurl}}/enterprise/server/#step6setupeditorclientinstancestousetheserver-sidefunctionality) to configure the **WAR** file that you will get as a part of your [{{site.sfenterpriseac}}]({{site.pricingpage}}).
 This option is not required for [{{site.cloudname}}]({{site.baseurl}}/cloud-deployment-guide/editor-and-features/).
 
 **Type:** `String`
@@ -70,5 +70,5 @@ This optional setting specifies a maximum width in pixels of the embedded conten
 
 ## Downloading Enhanced Media Embed plugin
 
-A [{{site.sfenterpriseac}}](https://www.tinymce.com/pricing/) includes the ability to download and install the **Media Embed** plugin and a **WAR** file to access the service backend. Please follow these [instructions]({{site.baseurl}}/enterprise/server/#step6setupeditorclientinstancestousetheserver-sidefunctionality) to configure the **WAR** file.
+A [{{site.sfenterpriseac}}]({{site.pricingpage}}) includes the ability to download and install the **Media Embed** plugin and a **WAR** file to access the service backend. Please follow these [instructions]({{site.baseurl}}/enterprise/server/#step6setupeditorclientinstancestousetheserver-sidefunctionality) to configure the **WAR** file.
 

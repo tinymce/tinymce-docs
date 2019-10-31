@@ -1,6 +1,6 @@
 ### Step 1: Download the jQuery package
 
-We have a jQuery plugin [available here](http://archive.tinymce.com/download/custom_package.php) if you'd rather install {{site.productname}} using this method.
+We have a jQuery plugin [available here]({{site.gettiny}}custom-builds/) if you'd rather install {{site.productname}} using this method.
 
 > Note: the above link will take you to the custom package download page. When building your jQuery package, select "{{site.productname}} core (jQuery) under the "Core Elements" section.
 

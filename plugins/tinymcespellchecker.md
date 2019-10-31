@@ -204,6 +204,6 @@ tinymce.init({
 
 ## Downloading Spell Checker Pro
 
-A [{{site.sfenterpriseac}}](https://www.tinymce.com/pricing/) subscription includes the ability to download and install a spell checker as-you-type feature for the editor.
+A [{{site.sfenterpriseac}}]({{site.pricingpage}}) subscription includes the ability to download and install a spell checker as-you-type feature for the editor.
 
 Spell Checker Pro requires both a client-side plugin to be configured and a server-side component to be installed and configured.

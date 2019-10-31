@@ -13,4 +13,4 @@ Before the introduction of this feature users would have to manually check for e
 
 ## Downloading Accessibility Checker
 
-A [{{site.sfenterpriseac}}](https://www.tinymce.com/pricing/) includes the ability to download and install the accessibility feature for the editor.
+A [{{site.sfenterpriseac}}]({{site.pricingpage}}) includes the ability to download and install the accessibility feature for the editor.

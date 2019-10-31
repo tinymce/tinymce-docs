@@ -36,7 +36,7 @@ tinymce.init({
 
 Creating skins for {{site.productname}} is easy with the {{site.productname}} Skin tool project. See [Creating a skin]({{ site.baseurl }}/advanced/creating-a-skin/) for more details.
 
-> Note: The  [{{site.productname}} Skin Creator](http://skin.tinymce.com/) only supports TinyMCE 4.
+> Note: The  [{{site.productname}} Skin Creator](http://skin.tiny.cloud/) only supports TinyMCE 4.
 
 > Note: Developers often confuse the difference between {{site.productname}} "themes" and "skins". A **Skin** in {{site.productname}} is used to make changes to the appearance of the editor, for example, colors, margins, padding, fonts, icons, etc. A **Theme** creates the editor construction (left, top, bottom, or right of the editing area - vertical or horizontal, inline or outside, etc.). A skin usually changes the color scheme of a button, dialog, etc. while the theme applies to the whole editor including its functionality and has child skins to change the appearance.
 

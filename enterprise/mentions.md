@@ -13,7 +13,7 @@ Mentions is available as a stand-alone plugin or as part of the Pro Bundle. To l
 
 There are two deployment options. One is with {{site.cloudname}}, the other is the more traditional Self-hosted route, requiring an additional [server-side component]({{ site.baseurl }}/enterprise/server/) to be installed and configured.
 
-Please note that this feature requires a backend integration with a system to handle listing of users, as well as sending the notifications. Refer to this [example code](https://www.tinymce.com/docs/plugins/mentions/#example) for more information. There are two integration points: getting a user list when `@abc...` is typed, and on submitting the form, sending a notification to the `@username` in the document.
+Please note that this feature requires a backend integration with a system to handle listing of users, as well as sending the notifications. Refer to this [example code]({{site.baseurl}}/docs/plugins/mentions/#example) for more information. There are two integration points: getting a user list when `@abc...` is typed, and on submitting the form, sending a notification to the `@username` in the document.
 
 ## Mentions cloud setup
 
@@ -21,6 +21,6 @@ Mentions is available for download through [{{site.cloudname}}]({{ site.baseurl 
 
 ## Downloading Mentions
 
-A [{{site.sfenterpriseac}}](https://www.tinymce.com/pricing/) includes the ability to download and install the Mentions feature for the editor. For more information on setup and configuration refer to the [Mentions documentation]({{site.baseurl}}/plugins/mentions/).
+A [{{site.sfenterpriseac}}]({{site.pricingpage}}) includes the ability to download and install the Mentions feature for the editor. For more information on setup and configuration refer to the [Mentions documentation]({{site.baseurl}}/plugins/mentions/).
 
 

@@ -70,9 +70,9 @@ Ensure that the following URLs are accessible via this proxy if the network has 
 
 * All URLs where the editor is deployed.
 * All URLs where the plugins are deployed.
-* https://imageproxy.tinymce.com
-* https://hyperlinking.tinymce.com
-* https://spelling.tinymce.com
+* https://imageproxy.tiny.cloud
+* https://hyperlinking.tiny.cloud
+* https://spelling.tiny.cloud
 
 Ensure the `tiny-api-key` and `tinymce-api-key` headers are retained while requesting the list of above URLs.
 

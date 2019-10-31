@@ -207,6 +207,6 @@ var issues = editor.plugins.a11ychecker.getReport();
 
 ## Downloading Accessibility Checker
 
-A [{{site.cloudname}}](https://www.tinymce.com/pricing/) subscription includes the ability to download and install the accessibility checker feature for the editor.
+A [{{site.cloudname}}]({{site.pricingpage}}) subscription includes the ability to download and install the accessibility checker feature for the editor.
 
-Accessibility checker is part of the demo [on the main page of {{site.companyname}} site](https://www.tinymce.com/). For more information about the accessibility checker [see this blog post](https://go.tinymce.com/blog/tinymce-enterprise-update-benefits-accessibility-users-brings-atmentions/).
+Accessibility checker is part of the demo [on the main page of {{site.companyname}} site]({{site.url}}). For more information about the accessibility checker [see this blog post](https://go.tiny.cloud/blog/tinymce-enterprise-update-benefits-accessibility-users-brings-atmentions/).

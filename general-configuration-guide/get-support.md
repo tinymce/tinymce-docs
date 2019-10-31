@@ -10,7 +10,7 @@ keywords: forum forums url absolute relative security xss
 
 
 ## Premium support
-Paid premium support is available as part of [{{site.productname}} Enterprise](https://www.tinymce.com/pricing/). {{site.productname}} Enterprise customers can [review what information you need to gather]({{ site.baseurl }}/enterprise/support/) to submit a case.
+Paid premium support is available as part of [{{site.productname}} Enterprise]({{site.pricingpage}}). {{site.productname}} Enterprise customers can [review what information you need to gather]({{ site.baseurl }}/enterprise/support/) to submit a case.
 
 
 ## Forums

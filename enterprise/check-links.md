@@ -10,7 +10,7 @@ The [Link Checker plugin]({{ site.baseurl }}/plugins/linkchecker/) provides a li
 
 Think of Link Checker as "spell-checking for URLs". But instead of checking spelling, it will let you know if a URL in the editor is valid, invalid or questionable. This is a huge time-saver for anyone who creates content — no more having to double-check URLs, especially in imported content. Not to mention the benefit of no longer frustrating readers with broken hyperlinks.
 
-Link Checker is available as a stand-alone plugin or as part of our Pro Bundle. To learn more about your options, check out our [pricing and plans here](https://www.tinymce.com/pricing/).
+Link Checker is available as a stand-alone plugin or as part of our Pro Bundle. To learn more about your options, check out our [pricing and plans here]({{site.pricingpage}}).
 
 Your have two deployment options. One is super easy with {{site.cloudname}}, the other is to go the more traditional Self-hosted route, requiring an additional [server-side component]({{ site.baseurl }}/enterprise/server/) to be installed and configured.
 

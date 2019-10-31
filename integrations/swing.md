@@ -6,17 +6,17 @@ description: Seamlessly integrates TinyMCE into Swing applications.
 keywords: integration integrate swing
 ---
 
-Users can easily configure the TinyMCE editor in Swing through the **TinyMCE for Swing** integration.
+Users can easily configure the {{site.productname}} editor in Swing through the **{{site.productname}} for Swing** integration.
 
 ## Getting the TinyMCE for Swing integration
 
-To start using TinyMCE for Swing as your new rich text editor, the first step is to obtain a copy of the **Integration**.
+To start using {{site.productname}} for Swing as your new rich text editor, the first step is to obtain a copy of the **Integration**.
 
 Contact [customer support](https://www.tiny.cloud/contact/) to discuss how to get started with our latest release.
 
 ## Get started with our TinyMCE in Swing integration
 
-To include our TinyMCE in Swing integration in your Java project just follow the steps below:
+To include our {{site.productname}} in Swing integration in your Java project just follow the steps below:
 
 ### 1. Copy TinyMCE in Swing libraries
 
@@ -24,27 +24,27 @@ From the release `zip` file, select all the Java libraries under the `lib` folde
 
 ### 2. Select a deployment and create a configuration
 
-The Swing integration allows the user to select the origin of the TinyMCE code: **cloud**, **embedded**, or **external**.
+The Swing integration allows the user to select the origin of the {{site.productname}} code: **cloud**, **embedded**, or **external**.
 
-* Cloud deployments pull the latest release of TinyMCE from the channel of your choice. Use this option by passing your API key and selecting a release channel.
+* Cloud deployments pull the latest release of {{site.productname}} from the channel of your choice. Use this option by passing your API key and selecting a release channel.
 
   ```
   final Config myTinyConfiguration = Config.cloud("<my_api_key>", "{{site.productversion}}-stable");
   ```
 
-* Embedded deployments use the version of TinyMCE prepackaged with the current release of the integration.
+* Embedded deployments use the version of {{site.productname}} prepackaged with the current release of the integration.
 
   ```
   final Config myTinyConfiguration = Config.embedded();
   ```
 
-* External deployments allow to use a local version of TinyMCE by giving the address of the location where TinyMCE is being served.
+* External deployments allow to use a local version of {{site.productname}} by giving the address of the location where {{site.productname}} is being served.
 
   ```
   final Config myTinyConfiguration = Config.external("http://<my_server>/<path>/tinymce.min.js");
   ```
 
-The configuration can be customized via Java or by passing Javascript function that returns a TinyMCE configuration object.
+The configuration can be customized via Java or by passing Javascript function that returns a {{site.productname}} configuration object.
 
 ```
 final HashMap<String, String> tinyProperties = new HashMap<>();
@@ -72,16 +72,16 @@ For more examples check the [GitHub repository](https://github.com/tinymce/tinym
 
 ## Explore other resources
 
-* [GitHub repository](https://github.com/tinymce/tinymce-swing-codesamples) - Refer to this link for examples on how to use TinyMCE for Swing.
+* [GitHub repository](https://github.com/tinymce/tinymce-swing-codesamples) - Refer to this link for examples on how to use {{site.productname}} for Swing.
 
 * An additional set of documentation is shipped with the integration in a `zip` file containing a library of `Javadocs` and API reference guides which help in understanding and applying the concepts. The `zip` file includes the following documents:
 
-  * `readme.txt` - This file has general information about TinyMCE for Swing integration.
-  * `license.txt` - This file has all the license details about TinyMCE for Swing as a commercial software.
-  * `release-notes.txt` - This file has information about the integrations and enhancements that have been implemented in TinyMCE for Swing integration.
+  * `readme.txt` - This file has general information about {{site.productname}} for Swing integration.
+  * `license.txt` - This file has all the license details about {{site.productname}} for Swing as a commercial software.
+  * `release-notes.txt` - This file has information about the integrations and enhancements that have been implemented in {{site.productname}} for Swing integration.
   * `jar` files - The `jar` files that implement the integration can be found under lib/
   * `javadoc` - The `javadoc` can be found at `docs/javadoc/index.html`.
 
 #### A note about integrations
 
-> Note: Tiny references to third-party integrations/code to help users build great products with the TinyMCE editor. For support related issues such as queries about this integration, please [contact support](https://support.tiny.cloud/hc/en-us/requests/new) or join the [TinyMCE Community](https://community.tiny.cloud/).
+> Note: {{site.companyname}} references to third-party integrations/code to help users build great products with the {{site.productname}} editor. For support related issues such as queries about this integration, please [contact support](https://support.tiny.cloud/hc/en-us/requests/new) or join the [{{site.productname}} Community](https://community.tiny.cloud/).

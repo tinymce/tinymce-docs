@@ -6,12 +6,12 @@ description: Check spelling as-you-type in TinyMCE.
 keywords: tinymcespellchecker spellchecker_language spellchecker_languages spellchecker_rpc_url spellchecker_dialog ephox English US UK Danish Dutch Finnish French German Italian Norwegian Portuguese Brazilian European Spanish Swedish
 ---
 
-**Spell Checker Pro** adds spell check as-you-type capabilities to TinyMCE. For information on the supported languages, refer to [this]({{site.baseurl}}/plugins/tinymcespellchecker/#spellchecker_language) section.
+**Spell Checker Pro** adds spell check as-you-type capabilities to {{site.productname}}. For information on the supported languages, refer to [this]({{site.baseurl}}/plugins/tinymcespellchecker/#spellchecker_language) section.
 
 ## Cloud Installation
-To enable the TinyMCE Enterprise Spellchecking plugin with [{{site.cloudname}}]({{ site.baseurl }}/cloud-deployment-guide/editor-and-features):
+To enable the {{site.productname}} Enterprise Spellchecking plugin with [{{site.cloudname}}]({{ site.baseurl }}/cloud-deployment-guide/editor-and-features):
 
-1. If configured, disable the `spellchecker` plugin provided with TinyMCE, by removing it from the `plugins` list.
+1. If configured, disable the `spellchecker` plugin provided with {{site.productname}}, by removing it from the `plugins` list.
 2. Add `tinymcespellchecker` to the `plugins` list.
 
 With {{site.cloudname}} the server-side spellchecking component is automatically configured, so the `spellchecker_rpc_url` parameter does not need to be set.
@@ -27,9 +27,9 @@ tinymce.init({
 ```
 
 ## Self-hosted Installation
-To enable the TinyMCE Enterprise Spellchecking plugin:
+To enable the {{site.productname}} Enterprise Spellchecking plugin:
 
-1. If configured, disable the `spellchecker` plugin provided with TinyMCE, by removing it from the `plugins` list.
+1. If configured, disable the `spellchecker` plugin provided with {{site.productname}}, by removing it from the `plugins` list.
 2. Add `tinymcespellchecker` to the `plugins` list.
 
 For information on installing the server-side component for spell checking, please see the [server-side component installation guide]({{site.baseurl}}/enterprise/server/).
@@ -47,7 +47,7 @@ tinymce.init({
 
 ## Usage
 
-The TinyMCE Enterprise Spellchecking plugin activates automatically when users type content into the editor. To see and select a spelling suggestion after a word has been misspelled, right-click the misspelled red underlined word.
+The {{site.productname}} Enterprise Spellchecking plugin activates automatically when users type content into the editor. To see and select a spelling suggestion after a word has been misspelled, right-click the misspelled red underlined word.
 
 ## Configuration Options
 
@@ -86,7 +86,7 @@ This option helps in deciding if the spellchecker should be initialized as activ
 
 This button allows the user to perform a spellcheck on the entire document. In addition, the drop-down menu attached to this button allows specifying the language that is currently used when spellchecking. For more information about customizing the toolbar, refer to the [Editor appearance section of the documentation]({{site.baseurl}}/configure/editor-appearance/#toolbar).
 
-Example TinyMCE Configuration:
+Example {{site.productname}} Configuration:
 
 ````
 tinymce.init({
@@ -106,7 +106,7 @@ This menu item allows the user to perform a spell check on the entire document.
 #### spellcheckerlanguage
 This menu item allows to change the current language for the spell checking process.
 
-Example TinyMCE Configuration:
+Example {{site.productname}} Configuration:
 
 ````
 tinymce.init({
@@ -204,6 +204,6 @@ tinymce.init({
 
 ## Downloading Spell Checker Pro
 
-A [TinyMCE Enterprise](https://www.tinymce.com/pricing/) subscription includes the ability to download and install a spell checker as-you-type feature for the editor.
+A [{{site.sfenterpriseac}}](https://www.tinymce.com/pricing/) subscription includes the ability to download and install a spell checker as-you-type feature for the editor.
 
 Spell Checker Pro requires both a client-side plugin to be configured and a server-side component to be installed and configured.

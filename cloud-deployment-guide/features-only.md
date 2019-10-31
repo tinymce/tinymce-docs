@@ -6,13 +6,13 @@ description: Connect to Tiny Cloud within a hybrid deployment in less than 5 min
 keywords: tinymce cloud script textarea apiKey hybrid
 ---
 
-A hybrid deployment of {{site.cloudname}} allows the loading of premium plugins in a self-hosted environment. Download and install the [TinyMCE Community edition](https://www.tinymce.com/download/) to get started.
+A hybrid deployment of {{site.cloudname}} allows the loading of premium plugins in a self-hosted environment. Download and install the [{{site.productname}} Community edition](https://www.tinymce.com/download/) to get started.
 
 Sign up for a free API key provides entitlements to premium [Image Tools]({{  site.baseurl }}/plugins/imagetools/) plugin. A {{site.cloudname}} image proxy server must already be configured. Premium plugins can be purchased at any time once the API key has been set up.
 
 ## Step 1: Insert the custom script tag into the webpage
 
-Add the following script in the webpage once the script tag to load TinyMCE has been specified. Be sure to substitute 'no-api-key' with your api key.
+Add the following script in the webpage once the script tag to load {{site.productname}} has been specified. Be sure to substitute 'no-api-key' with your api key.
 
 ```js
 <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/plugins.min.js" referrerpolicy="origin"></script>
@@ -20,7 +20,7 @@ Add the following script in the webpage once the script tag to load TinyMCE has 
 
 ## Step 2: Specify purchased TinyMCE plugins and toolbar buttons
 
-Extend the [TinyMCE configuration]({{ site.baseurl }}/configure/) to include any additional purchased plugins and associated toolbar and menu items. Refer to the following enablement guides for more information:
+Extend the [{{site.productname}} configuration]({{ site.baseurl }}/configure/) to include any additional purchased plugins and associated toolbar and menu items. Refer to the following enablement guides for more information:
 
 * [Mentions]({{ site.baseurl }}/plugins/mentions/)
 * [{{site.cloudfilemanager}}]({{ site.baseurl }}/plugins/drive/)
@@ -43,7 +43,7 @@ Extend the [TinyMCE configuration]({{ site.baseurl }}/configure/) to include any
 * [Enhanced Media Embed]({{ site.baseurl }}/plugins/mediaembed/)
 * [Link Checker]({{ site.baseurl }}/plugins/linkchecker/)
 
-> Note: It may take up to 30 minutes for the purchased plugin to be available to TinyMCE. Clear the browser's cache.
+> Note: It may take up to 30 minutes for the purchased plugin to be available to {{site.productname}}. Clear the browser's cache.
 
 The following is a complete example:
 

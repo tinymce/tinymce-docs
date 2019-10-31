@@ -76,7 +76,7 @@ For more information on other {{site.cloudfilemanager}} config options refer to 
 
 ### 7. Tiny Drive UI
 
-1. From the TinyMCE user interface, click on the ![**Insert/edit image**]({{site.baseurl}}/images/insertimage.png) button to access the {{site.cloudfilemanager}} user interface.
+1. From the {{site.productname}} user interface, click on the ![**Insert/edit image**]({{site.baseurl}}/images/insertimage.png) button to access the {{site.cloudfilemanager}} user interface.
 2. Click on the ![Upload/Create]({{site.baseurl}}/images/upload.png) button to select Google Drive from the list of storages.
 3. Select the file to upload/import from Google Drive by clicking on the radio button next to it. Alternatively, to directly insert the file into the editor, double-click on it.
 4. Choose **Save** to upload/import the selected file/files to {{site.cloudfilemanager}}.

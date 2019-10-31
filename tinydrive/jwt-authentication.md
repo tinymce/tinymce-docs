@@ -18,7 +18,7 @@ JWT is a standard authorization solution for web services and is documented in m
 
 {{site.cloudname}} services tokens use public/private RSA key pairs. The {{site.cloudname}} services only store the public key, allowing developers to have full control over the authentication.
 
-The private/public key pair can be created on your [Tiny - {{site.accountpage}} page](https://www.tiny.cloud/my-account/jwt/), however we only store the public key on the {{site.accountpage}} page. The private key should be downloaded and stored in your backend.
+The private/public key pair can be created on your [{{site.companyname}} - {{site.accountpage}} page](https://www.tiny.cloud/my-account/jwt/), however we only store the public key on the {{site.accountpage}} page. The private key should be downloaded and stored in your backend.
 
 > **Important**: Keep the private key secure, do not commit files containing the key to public repositories or websites.
 
@@ -61,7 +61,7 @@ Follow these steps to set up your own JWT endpoint.
 
 ## Need help?
 
-We recommend reading up and trying to understand how JWT works; you need some necessary skills to implement {{site.cloudfilemanager}}. This can be tricky if you need some help, check our [help page](/tinydrive/get-help/) and if that doesn't work, contact our support.
+We recommend reading up and trying to understand how JWT works; you need some necessary skills to implement {{site.cloudfilemanager}}. This can be tricky if you need some help, check our [help page]({{site.baseurl}}/tinydrive/get-help/) and if that doesn't work, contact our support.
 
 ## PHP token provider endpoint example
 

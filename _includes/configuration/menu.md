@@ -1,8 +1,8 @@
 ## menu
 
-This option allows you to specify which menus should appear on TinyMCE's menu bar and the [items]({{ site.baseurl }}/advanced/editor-control-identifiers/#menucontrols) that should appear within the menus themselves.
+This option allows you to specify which menus should appear on {{site.productname}}'s menu bar and the [items]({{ site.baseurl }}/advanced/editor-control-identifiers/#menucontrols) that should appear within the menus themselves.
 
-To specify the menus that should appear on TinyMCE's menu bar, the menu option should be provided with a JavaScript object containing a property for each menu. These properties should contain a JavaScript object themselves with properties `title` and `items`.
+To specify the menus that should appear on {{site.productname}}'s menu bar, the menu option should be provided with a JavaScript object containing a property for each menu. These properties should contain a JavaScript object themselves with properties `title` and `items`.
 
 The `title` property should contain a string with the name of the `menu`. The `items` field should contain a space separated list of the controls that should populate the `menu`.
 

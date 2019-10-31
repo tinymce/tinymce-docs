@@ -8,7 +8,7 @@ keywords: integration integrate rails
 
 ## Rails asset pipeline integration
 
-Sam Pohlenz has integrated TinyMCE into the Rails asset pipeline. Check out his [integration project on Rubygems](https://rubygems.org/gems/tinymce-rails/versions/4.3.0).
+Sam Pohlenz has integrated {{site.productname}} into the Rails asset pipeline. Check out his [integration project on Rubygems](https://rubygems.org/gems/tinymce-rails/versions/4.3.0).
 
 ### Other resources
 
@@ -17,4 +17,4 @@ Sam Pohlenz has integrated TinyMCE into the Rails asset pipeline. Check out his 
 
 #### A note about integrations
 
-> Note: We are pleased to reference third-party integrations/code to help you build great products with TinyMCE. If you have queries about this integration, please contact the developer directly.
+> Note: We are pleased to reference third-party integrations/code to help you build great products with {{site.productname}}. If you have queries about this integration, please contact the developer directly.

@@ -8,7 +8,7 @@ keywords: enterprise pricing video youtube vimeo mp3 mp4 mov movie clip film lin
 
 The [Enhanced Media Embed plugin]({{ site.baseurl }}/plugins/mediaembed/) makes it easy to add an enhanced content creation experience in your website or app with enriched media previews from the most popular web sources. Facebook, YouTube, Flickr, NY Times, Vimeo, Hulu, Tumblr, CodePen, SlideShare, TechCrunch, WordPress, Twitch, Spotify … and many more!
 
-By easy, we mean easy. The service automatically “looks behind the link” to see whether a URL in the TinyMCE editor points to a rich media source. That URL will resolve into an enhanced media thumbnail whenever possible.
+By easy, we mean easy. The service automatically “looks behind the link” to see whether a URL in the {{site.productname}} editor points to a rich media source. That URL will resolve into an enhanced media thumbnail whenever possible.
 
 It is now as simple as adding a plugin to deliver a modern, content creation experience that everyone takes for granted.
 

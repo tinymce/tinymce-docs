@@ -6,7 +6,7 @@ description: Description of the Tiny Drive standalone api
 keywords: tinydrive api
 ---
 
-{{site.cloudfilemanager}} can be used as a generic file manager separate from TinyMCE this is referred to as standalone mode.
+{{site.cloudfilemanager}} can be used as a generic file manager separate from {{site.productname}} this is referred to as standalone mode.
 
 ## Loading the standalone API script
 

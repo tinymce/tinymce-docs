@@ -6,15 +6,15 @@ description: Community and pro-grade support options.
 keywords: forum forums url absolute relative security xss
 ---
 
-> If you landed here having worked through the [Introduction & getting started]({{  site.baseurl }}/general-configuration-guide/advanced-install) section, congratulations, you are on your way to the TinyMCE ninja hood :-). It's now time to deep-dive into [configuring the editor]({{ site.baseurl }}/configure/) and explore [plugin options]({{ site.baseurl }}/plugins/). We wish you well and welcome you to TinyMCE. If you get stuck, a great place to start is the [TinyMCE Forum](https://community.tiny.cloud/).
+> If you landed here having worked through the [Introduction & getting started]({{  site.baseurl }}/general-configuration-guide/advanced-install) section, congratulations, you are on your way to the {{site.productname}} ninja hood :-). It's now time to deep-dive into [configuring the editor]({{ site.baseurl }}/configure/) and explore [plugin options]({{ site.baseurl }}/plugins/). We wish you well and welcome you to {{site.productname}}. If you get stuck, a great place to start is the [{{site.productname}} Forum](https://community.tiny.cloud/).
 
 
 ## Premium support
-Paid premium support is available as part of [TinyMCE Enterprise](https://www.tinymce.com/pricing/). TinyMCE Enterprise customers can [review what information you need to gather]({{ site.baseurl }}/enterprise/support/) to submit a case.
+Paid premium support is available as part of [{{site.productname}} Enterprise](https://www.tinymce.com/pricing/). {{site.productname}} Enterprise customers can [review what information you need to gather]({{ site.baseurl }}/enterprise/support/) to submit a case.
 
 
 ## Forums
-Open Source Community Edition users can get free access to the [TinyMCE Forum](https://community.tiny.cloud/). Sign up [here](https://community.tiny.cloud/).
+Open Source Community Edition users can get free access to the [{{site.productname}} Forum](https://community.tiny.cloud/). Sign up [here](https://community.tiny.cloud/).
 
 
 ## FAQ & troubleshooting
@@ -29,11 +29,11 @@ Some web servers do not support the mime types needed for the font file extensio
 
 ### Q: Why do buttons/select boxes have the incorrect size?
 
-You are probably using an old `DOCTYPE`. As of TinyMCE 4, a proper HTML5 doctype is required. All web developers should use a standard rendering mode on their web pages. Use a HTML5 doctype like `<!DOCTYPE html>` to properly render the page and the TinyMCE UI.
+You are probably using an old `DOCTYPE`. As of {{site.productname}} 4, a proper HTML5 doctype is required. All web developers should use a standard rendering mode on their web pages. Use a HTML5 doctype like `<!DOCTYPE html>` to properly render the page and the {{site.productname}} UI.
 
 ### Q: Is TinyMCE protected against XSS vulnerabilities?
 
-The server should have protection against XSS attacks implemented. Since if you can submit contents in a form using TinyMCE one could as easily disable all JavaScript and therefore bypass TinyMCE filtering and still submit HTML code with insecure content. You need to properly filter the HTML input on the server using things like [HTML Purifier](http://htmlpurifier.org/).
+The server should have protection against XSS attacks implemented. Since if you can submit contents in a form using {{site.productname}} one could as easily disable all JavaScript and therefore bypass {{site.productname}} filtering and still submit HTML code with insecure content. You need to properly filter the HTML input on the server using things like [HTML Purifier](http://htmlpurifier.org/).
 
 ### Q: How do I convert my URLs to relative, absolute, or absolute with the domain?
 

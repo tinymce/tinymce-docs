@@ -8,17 +8,17 @@ keywords: enterprise tinymcespellchecker spell check checker pro imagetools serv
 ## Server-side component installation
 
 
-Some TinyMCE Enterprise features require a server-side component. If you're using the {{site.cloudname}} solution, we've done all the hard work for you and you can skip this page. Alternatively, if you've purchased our Self-hosted solution then please read on.
+Some {{site.productname}} Enterprise features require a server-side component. If you're using the {{site.cloudname}} solution, we've done all the hard work for you and you can skip this page. Alternatively, if you've purchased our Self-hosted solution then please read on.
 
 Server-side components must be deployed onto a Java Servlet 3.0 compatible application server.  We currently support Jetty, Apache Tomcat, and WebSphere Application Server. To discuss support for additional Java application servers, please contact us at <mailto:sales@tiny.cloud>
 
-The following server-side components are included in the TinyMCE Self-hosted package:
+The following server-side components are included in the {{site.productname}} Self-hosted package:
 
 |Component                      | File							| Description |
 |:-----------------------------	|:-------						|:----------- |
-| [Spellchecking]({{ site.baseurl }}/enterprise/check-spelling/) 				| ephox-spelling.war		|Spell checking service for TinyMCE Enterprise.|
+| [Spellchecking]({{ site.baseurl }}/enterprise/check-spelling/) 				| ephox-spelling.war		|Spell checking service for {{site.productname}} Enterprise.|
 | [Image Tools Proxy]({{ site.baseurl }}/plugins/imagetools/)				| ephox-image-proxy.war		|Image proxy service for the Image Tools plugin.|
-| [Enhanced Media Embed]({{ site.baseurl }}/enterprise/embed-media/), [Link Checker]({{ site.baseurl }}/enterprise/check-links/)				| ephox-hyperlinking.war		|Link Checker and Enhanced Media Embed service for TinyMCE Enterprise.|
+| [Enhanced Media Embed]({{ site.baseurl }}/enterprise/embed-media/), [Link Checker]({{ site.baseurl }}/enterprise/check-links/)				| ephox-hyperlinking.war		|Link Checker and Enhanced Media Embed service for {{site.productname}} Enterprise.|
 
 > **Note:** The "Allowed Origins" service (ephox-allowed-origins.war) has been deprecated. Trusted domains should now be specified directly in the configuration file.
 
@@ -36,7 +36,7 @@ If you don't, pick either [Tomcat](http://tomcat.apache.org/) or [Jetty](http://
 
 ### Step 2. Deploy server-side components
 
-Deploy all the WAR files that came packaged with the TinyMCE Enterprise Self-hosted package to your newly installed Java application server:
+Deploy all the WAR files that came packaged with the {{site.productname}} Enterprise Self-hosted package to your newly installed Java application server:
 
 - ephox-spelling.war
 - ephox-image-proxy.war
@@ -182,15 +182,15 @@ After you've completed the steps on this page to [Deploy server-side components]
 
 ### Step 6: Set up editor client instances to use the server-side functionality
 
-Now that the server-side components deployed and running, you'll need to tell your TinyMCE instances where to find them:
+Now that the server-side components deployed and running, you'll need to tell your {{site.productname}} instances where to find them:
 
-- Set the TinyMCE `spellchecker_rpc_url` configuration property to the URL of the deployed server-side spelling component.
-- Set the TinyMCE `imagetools_proxy` configuration property to the URL of the deployed server-side image proxy component.
-- Set the TinyMCE `mediaembed_service_url` and `linkchecker_service_url` configuration properties to the URL of the deployed server-side linkchecker and media embed component.
+- Set the {{site.productname}} `spellchecker_rpc_url` configuration property to the URL of the deployed server-side spelling component.
+- Set the {{site.productname}} `imagetools_proxy` configuration property to the URL of the deployed server-side image proxy component.
+- Set the {{site.productname}} `mediaembed_service_url` and `linkchecker_service_url` configuration properties to the URL of the deployed server-side linkchecker and media embed component.
 
 This example assume your Java application server is running on port 80 (http) on `yourserver.example.com` and that all the server-side components are deployed to the same Java application server. Replace `yourserver.example.com` with the actual domain name or IP address of your server.
 
-Example of TinyMCE client configuration:
+Example of {{site.productname}} client configuration:
 
 ````
 tinymce.init({

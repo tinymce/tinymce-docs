@@ -1,8 +1,8 @@
 ## menubar
 
-This option allows you to specify which menus should appear and the order that they appear in the menu bar at the top of TinyMCE.
+This option allows you to specify which menus should appear and the order that they appear in the menu bar at the top of {{site.productname}}.
 
-To specify the menus that should appear on TinyMCE's menu bar, the menubar option should be provided with a space separated list of menus.
+To specify the menus that should appear on {{site.productname}}'s menu bar, the menubar option should be provided with a space separated list of menus.
 
 **Type:** `String` _or_ `Boolean`
 

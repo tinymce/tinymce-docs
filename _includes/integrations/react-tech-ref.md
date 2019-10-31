@@ -55,7 +55,7 @@ The editor accepts the following properties:
 None of the configuration properties are **required** for `tinymce-react` to work. Specify a {{site.cloudname}} API key using `apiKey` to remove the `This domain is not registered...` warning message.
 
 #### `apiKey`
-{{site.cloudname}} API key. Required for deployments using the {{site.cloudname}} to provide the TinyMCE editor.
+{{site.cloudname}} API key. Required for deployments using the {{site.cloudname}} to provide the {{site.productname}} editor.
 
 To register for a {{site.cloudname}} API key, visit the [sign-up page](https://www.tiny.cloud/signup/).
 
@@ -77,18 +77,18 @@ To register for a {{site.cloudname}} API key, visit the [sign-up page](https://w
 
 **Possible values:**  `{{site.productversion}}-stable`, `{{site.productversion}}-testing`, `{{site.productversion}}-dev`
 
-Changes the TinyMCE build used for the editor to one of the following {{site.cloudname}} channels:
+Changes the {{site.productname}} build used for the editor to one of the following {{site.cloudname}} channels:
 
-- `{{site.productversion}}-stable` (**Default**): The current enterprise release of TinyMCE.
-- `{{site.productversion}}-testing`: The current release candidate for the next enterprise release of TinyMCE.
-- `{{site.productversion}}-dev`: The nightly-build version of TinyMCE.
+- `{{site.productversion}}-stable` (**Default**): The current enterprise release of {{site.productname}}.
+- `{{site.productversion}}-testing`: The current release candidate for the next enterprise release of {{site.productname}}.
+- `{{site.productversion}}-dev`: The nightly-build version of {{site.productname}}.
 
 Such as:
 
 ```js
 <Editor apiKey='your-api-key' cloudChannel='{{site.productversion}}-dev' init={% raw %}{{{% endraw %} /* your other settings */ {% raw %}}}{% endraw %} />
 ```
-For information TinyMCE development channels, see: [Specifying the TinyMCE editor version deployed from Cloud - dev, testing, and stable releases]({{site.baseurl}}/cloud-deployment-guide/editor-plugin-version/#devtestingandstablereleases).
+For information {{site.productname}} development channels, see: [Specifying the {{site.productname}} editor version deployed from Cloud - dev, testing, and stable releases]({{site.baseurl}}/cloud-deployment-guide/editor-plugin-version/#devtestingandstablereleases).
 
 #### `disabled`
 The `disabled` property can dynamically switch the editor between a "disabled" (read-only) mode (`true`) and the standard editable mode (`false`).
@@ -123,7 +123,7 @@ An id for the editor. Used for retrieving the editor instance using the `tinymce
 #### `init`
 Object sent to the `tinymce.init` method used to initialize the editor.
 
-For information on the TinyMCE selector (`tinymce.init`), see: [Basic setup]({{site.baseurl}}/general-configuration-guide/basic-setup/).
+For information on the {{site.productname}} selector (`tinymce.init`), see: [Basic setup]({{site.baseurl}}/general-configuration-guide/basic-setup/).
 
 **Default value:** `{% raw %}{{{% endraw %} {% raw %}}}{% endraw %}`
 
@@ -159,7 +159,7 @@ Initial content of the editor when the editor is initialized.
 ```
 
 #### `inline`
-Used to set the editor to inline mode. Using `<Editor inline={true} />` is the same as setting `{inline: true}` in the TinyMCE selector (`tinymce.init`).
+Used to set the editor to inline mode. Using `<Editor inline={true} />` is the same as setting `{inline: true}` in the {{site.productname}} selector (`tinymce.init`).
 
 For information on inline mode, see: [User interface options - `inline`]({{site.baseurl}}/configure/editor-appearance/#inline) and [Setup inline editing mode]({{site.baseurl}}/general-configuration-guide/use-tinymce-inline/).
 
@@ -176,16 +176,16 @@ For information on inline mode, see: [User interface options - `inline`]({{site.
 ```
 
 #### `onEditorChange`
-Used to store the state of the editor outside the editor React component. This property is used when using the TinyMCE React component as a controlled component.
+Used to store the state of the editor outside the editor React component. This property is used when using the {{site.productname}} React component as a controlled component.
 
-For more information, see: [Using the TinyMCE React component as a controlled component](#usingthetinymcereactcomponentasacontrolledcomponent).
+For more information, see: [Using the {{site.productname}} React component as a controlled component](#usingthetinymcereactcomponentasacontrolledcomponent).
 
 **Type:** EventHandler
 
 #### `plugins`
-Used to include plugins for the editor. Using `<Editor plugins='lists' />` is the same as setting `{plugins: 'lists'}` in the TinyMCE selector (`tinymce.init`).
+Used to include plugins for the editor. Using `<Editor plugins='lists' />` is the same as setting `{plugins: 'lists'}` in the {{site.productname}} selector (`tinymce.init`).
 
-For information on adding plugins to TinyMCE, see: [Add plugins to TinyMCE]({{site.baseurl}}/plugins/).
+For information on adding plugins to {{site.productname}}, see: [Add plugins to {{site.productname}}]({{site.baseurl}}/plugins/).
 
 **Type:** String or Array
 
@@ -232,9 +232,9 @@ Sets the `name` attribute for the `textarea` element used for the editor in form
 ```
 
 #### `toolbar`
-Used to set the toolbar for the editor. Using `<Editor toolbar='bold' />` is the same as setting `{toolbar: 'bold'}` in the TinyMCE selector (`tinymce.init`).
+Used to set the toolbar for the editor. Using `<Editor toolbar='bold' />` is the same as setting `{toolbar: 'bold'}` in the {{site.productname}} selector (`tinymce.init`).
 
-For information setting the toolbar for TinyMCE, see: [User interface options - toolbar]({{site.baseurl}}/configure/editor-appearance/#toolbar).
+For information setting the toolbar for {{site.productname}}, see: [User interface options - toolbar]({{site.baseurl}}/configure/editor-appearance/#toolbar).
 
 **Default value:** `' '`
 
@@ -254,7 +254,7 @@ For information setting the toolbar for TinyMCE, see: [User interface options - 
 #### `value`
 This property allows the editor to be used as a controlled component by setting the `value` property and using the `onEditorChange` event.
 
-For more information, see: [Using the TinyMCE React component as a controlled component](#usingthetinymcereactcomponentasacontrolledcomponent).
+For more information, see: [Using the {{site.productname}} React component as a controlled component](#usingthetinymcereactcomponentasacontrolledcomponent).
 
 **Type:** String
 

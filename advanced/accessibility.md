@@ -7,7 +7,7 @@ description: Learn how TinyMCE works with screen readers and how screen readers 
 keywords: accessibility wai aria jaws nvda
 ---
 
-TinyMCE is compatible with screen readers such as JAWS and NVDA as it follows the WAI-ARIA specification. Use [NVDA](http://www.nvaccess.org/) together with [Firefox](https://www.mozilla.org/en-US/firefox/products/) for the best Accessibility experience.
+{{site.productname}} is compatible with screen readers such as JAWS and NVDA as it follows the WAI-ARIA specification. Use [NVDA](http://www.nvaccess.org/) together with [Firefox](https://www.mozilla.org/en-US/firefox/products/) for the best Accessibility experience.
 
 ## Keyboard shortcuts
 
@@ -32,6 +32,6 @@ Alternatively, press `Alt+F10` to focus on the toolbars. The first toolbar has f
 
 Dialogs such as Insert/Edit or Image/Video are opened from either the menus or the toolbars. These are multi-page dialogs with at least two tabs at the top. The `Right Arrow` and `Left Arrow` moves between the tabs in the tab list. `Space` makes the current tab active. Tab moves into the panel and through the controls. `Save` accepts changes, `Esc` or `Cancel` discards changes.
 
-You can insert emoticons or change the text and background colors on the toolbars and in the formatting menu. These are panels you open by pressing `Down Arrow` or `Enter` on their respective menu/toolbar items and then use the arrow keys to select the item you want to be applied/inserted. All of these items are screen reader enabled allowing the visually impaired to navigate the toolbars and menu structure. 
+You can insert emoticons or change the text and background colors on the toolbars and in the formatting menu. These are panels you open by pressing `Down Arrow` or `Enter` on their respective menu/toolbar items and then use the arrow keys to select the item you want to be applied/inserted. All of these items are screen reader enabled allowing the visually impaired to navigate the toolbars and menu structure.
 
 

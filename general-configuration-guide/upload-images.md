@@ -5,11 +5,11 @@ title_nav: Upload images &amp; files
 keywords: uploader uploadImages image handler
 ---
 
-The image uploader is designed to complement the new image editing functionality of TinyMCE. Images that are edited within TinyMCE can be uploaded using this function. Local images that are added through other means, for example drag and drop when using the [paste_data_images]({{ site.baseurl }}/plugins/paste/#paste_data_images) configuration property, or using Tiny's PowerPaste Plugin.
+The image uploader is designed to complement the new image editing functionality of {{site.productname}}. Images that are edited within {{site.productname}} can be uploaded using this function. Local images that are added through other means, for example drag and drop when using the [paste_data_images]({{ site.baseurl }}/plugins/paste/#paste_data_images) configuration property, or using {{site.companyname}}'s PowerPaste Plugin.
 
-Once uploaded, TinyMCE automatically updates the `<image>` src attribute with the new path to the remote image.
+Once uploaded, {{site.productname}} automatically updates the `<image>` src attribute with the new path to the remote image.
 
-Local images can be uploaded to TinyMCE through the use of the new `editor.uploadImages()` function. This functionality is handled asynchronously, meaning that it is possible for users to save their content before all images have completed uploading.  If this occurs and no server path to the remote image is available, the images are saved as Base 64.
+Local images can be uploaded to {{site.productname}} through the use of the new `editor.uploadImages()` function. This functionality is handled asynchronously, meaning that it is possible for users to save their content before all images have completed uploading.  If this occurs and no server path to the remote image is available, the images are saved as Base 64.
 
 It is recommended that the `editor.uploadImages()` function be executed before submitting the editor contents to the server, to avoid saving content as Base 64. Once all the images are uploaded, a success callback can be utilized to execute the code.  This success callback can be used to save the editor's content to the server through a `POST`.
 
@@ -65,7 +65,7 @@ There are multiple configuration options that affect the operation of this featu
 | [images_upload_url]({{ site.baseurl }}/configure/file-image-upload/#images_upload_url) | This option lets you specify a URL to where you want images to be uploaded when you call `editor.uploadImages`. |
 | [images_upload_base_path]({{ site.baseurl }}/configure/file-image-upload/#images_upload_base_path) | This option lets you specify a basepath to prepend to urls returned from the configured `images_upload_url` page. |
 | [images_upload_credentials]({{ site.baseurl }}/configure/file-image-upload/#images_upload_credentials) | This option lets you specify if calls to the configured `images_upload_url` should pass along credentials like cookies etc cross domain. This is disabled by default. |
-| [images_upload_handler]({{ site.baseurl }}/configure/file-image-upload/#images_upload_handler) | This option lets you replace TinyMCE's default JavaScript upload handler function with custom logic. The upload handler function takes three arguments, blobInfo, a success callback, and a failure callback. When this option is not set, TinyMCE utilizes an `XMLHttpRequest` to upload images one at a time to the server, and calls the success callback with the location of the remote image. |
+| [images_upload_handler]({{ site.baseurl }}/configure/file-image-upload/#images_upload_handler) | This option lets you replace {{site.productname}}'s default JavaScript upload handler function with custom logic. The upload handler function takes three arguments, blobInfo, a success callback, and a failure callback. When this option is not set, {{site.productname}} utilizes an `XMLHttpRequest` to upload images one at a time to the server, and calls the success callback with the location of the remote image. |
 
 ##### Example of typical setup
 
@@ -80,7 +80,7 @@ tinymce.init({
 
 ## Rolling your image handler
 
-Change the default behavior of TinyMCE's image upload logic by changing the `images_upload_handler` configuration property.
+Change the default behavior of {{site.productname}}'s image upload logic by changing the `images_upload_handler` configuration property.
 
 > Note: Please note that while using this option, other image uploader options are not necessary. Additionally, to replace the <image> tag's src attribute with the remote location, please use the success callback defined in the `image_upload_handler` function with the returned JSON object's location property.
 

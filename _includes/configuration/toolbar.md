@@ -1,10 +1,10 @@
 ## toolbar
 
-This option allows you to specify the [buttons]({{ site.baseurl }}/advanced/editor-control-identifiers/#toolbarcontrols) and the order that they will appear on TinyMCE's toolbar.
+This option allows you to specify the [buttons]({{ site.baseurl }}/advanced/editor-control-identifiers/#toolbarcontrols) and the order that they will appear on {{site.productname}}'s toolbar.
 
 ### Grouping toolbar controls
 
-To specify the controls that should appear on TinyMCE's toolbar, the `toolbar` option should be provided with a space separated list of [toolbar controls]({{ site.baseurl }}/advanced/editor-control-identifiers/#toolbarcontrols). To create groups within this list, please add `|` pipe characters between the groups of controls that you would like to create.
+To specify the controls that should appear on {{site.productname}}'s toolbar, the `toolbar` option should be provided with a space separated list of [toolbar controls]({{ site.baseurl }}/advanced/editor-control-identifiers/#toolbarcontrols). To create groups within this list, please add `|` pipe characters between the groups of controls that you would like to create.
 
 **Type:** `String`
 
@@ -19,7 +19,7 @@ tinymce.init({
 
 ### Adding toolbar group labels
 
-To specify labels to the grouped controls that appear on TinyMCE's toolbar, the `toolbar` option should be provided with an array of objects with `name` and `items` as object properties. The `name` should be a string value that will be set as the `title` attribute on the `div` containing the toolbar group. The `items` should be an array of strings that indicate the controls that should appear within the particular toolbar group.
+To specify labels to the grouped controls that appear on {{site.productname}}'s toolbar, the `toolbar` option should be provided with an array of objects with `name` and `items` as object properties. The `name` should be a string value that will be set as the `title` attribute on the `div` containing the toolbar group. The `items` should be an array of strings that indicate the controls that should appear within the particular toolbar group.
 
 **Type:** `Array`
 

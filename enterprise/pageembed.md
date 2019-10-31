@@ -7,7 +7,7 @@ keywords: view Page Embed insert iframe
 controls: toolbar button, menu item
 ---
 
-The **Page Embed** plugin is a premium plugin from Tiny that embeds a page in the content using an iframe (Inline frames).
+The **Page Embed** plugin is a premium plugin from {{site.companyname}} that embeds a page in the content using an iframe (Inline frames).
 
 The Page Embed plugin allows an external webpage to be embedded in an HTML document and can be inserted anywhere within a webpage layout.
 
@@ -19,7 +19,7 @@ Page Embed provides more flexibility than an inline script and can contain an en
 
 To try out Page Embed and {{site.cloudname}}-delivered editor, the first step is to create a free [{{site.accountpage}}](https://www.tiny.cloud/download/).
 
-> The free {{site.accountpage}} is provisioned with a free 30-day trial of all Tiny [premium plugins](https://apps.tiny.cloud/product-category/tiny-cloud-extensions/), with no credit card information or commitment required.
+> The free {{site.accountpage}} is provisioned with a free 30-day trial of all {{site.cloudname}} [premium plugins](https://apps.tiny.cloud/product-category/tiny-cloud-extensions/), with no credit card information or commitment required.
 
 ### Buy TinyMCE Page Embed
 

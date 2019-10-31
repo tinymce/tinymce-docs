@@ -14,7 +14,7 @@ This project will help you get started with {{site.cloudfilemanager}} and allow 
 
 Before you start your journey with {{site.cloudfilemanager}}, it will go a lot smoother if you have done these steps:
 1. Login/register to [{{site.accountpage}}](https://apps.tiny.cloud/my-account/)
-2. Get a [TinyMCE API Key](https://apps.tiny.cloud/my-account/key-manager/)
+2. Get a [{{site.cloudname}} API Key](https://apps.tiny.cloud/my-account/key-manager/)
 3. Get a [JWT Key](https://apps.tiny.cloud/my-account/jwt-key-manager/)
 
 Store the keys temporarily somewhere as you will need to copy & paste them later.
@@ -65,5 +65,5 @@ Go through the following additional resources to figure out how to configure {{s
 
 ## Need help? ##
 
-We are striving to make {{site.cloudfilemanager}} as useful and as simple as possible. For support related issues such as problems with JWT authentication and implementing {{site.cloudfilemanager}}, check our [help page](/tinydrive/get-help/) or please contact [support](https://support.tiny.cloud/hc/en-us/requests/new).
+We are striving to make {{site.cloudfilemanager}} as useful and as simple as possible. For support related issues such as problems with JWT authentication and implementing {{site.cloudfilemanager}}, check our [help page]({{site.baseurl}}/tinydrive/get-help/) or please contact [support](https://support.tiny.cloud/hc/en-us/requests/new).
 

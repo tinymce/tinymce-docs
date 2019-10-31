@@ -27,7 +27,7 @@ The two arguments these methods take are:
 
 > Note: Some configuration options are common to all types of toolbar buttons, but some toolbar button types also have custom configuration options. Review the relevant documentation for each type of button for more information.
 
-To create a custom toolbar button, define and register the button within the `setup` callback of the TinyMCE configuration. This callback is invoked automatically for every initialized editor instance. UI components must be defined within the `setup` callback because the callback receives a reference to the editor instance as its argument, which is used to access the UI registry API. Once registered, the button can be added to the editor by adding the identifier string it was registered with to the `toolbar` configuration option.
+To create a custom toolbar button, define and register the button within the `setup` callback of the {{site.productname}} configuration. This callback is invoked automatically for every initialized editor instance. UI components must be defined within the `setup` callback because the callback receives a reference to the editor instance as its argument, which is used to access the UI registry API. Once registered, the button can be added to the editor by adding the identifier string it was registered with to the `toolbar` configuration option.
 
 ### Example of adding a basic button that triggers an alert when clicked:
 

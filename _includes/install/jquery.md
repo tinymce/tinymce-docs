@@ -1,10 +1,10 @@
 ### Step 1: Download the jQuery package
 
-We have a jQuery plugin [available here](http://archive.tinymce.com/download/custom_package.php) if you'd rather install TinyMCE using this method.
+We have a jQuery plugin [available here](http://archive.tinymce.com/download/custom_package.php) if you'd rather install {{site.productname}} using this method.
 
-> Note: the above link will take you to the custom package download page. When building your jQuery package, select "TinyMCE core (jQuery) under the "Core Elements" section.
+> Note: the above link will take you to the custom package download page. When building your jQuery package, select "{{site.productname}} core (jQuery) under the "Core Elements" section.
 
-As with the self-hosted [SDK Install](#sdkinstall) option, unzip the package and move the `'path/to/tinymce/'` directory into a web accessible location on your web server (for example, `localhost`).
+As with the self-hosted [SDK Install](#sdkinstall) option, unzip the package and move the `'path/to/{{site.prodnamecode}}/'` directory into a web accessible location on your web server (for example, `localhost`).
 
 ### Step 2: Installation
 
@@ -17,11 +17,11 @@ Include this line of code in the `<head>` of your page:
 
 ### Step 2: Initialize TinyMCE as part of a web form
 
-With the script included, initialize TinyMCE on any element (or elements) in your web page.
+With the script included, initialize {{site.productname}} on any element (or elements) in your web page.
 
-Since TinyMCE lets you identify replaceable elements via a CSS3 selector all you need do is pass an object that contains a selector to `tinymce.init()`.
+Since {{site.productname}} lets you identify replaceable elements via a CSS3 selector all you need do is pass an object that contains a selector to `tinymce.init()`.
 
-In this example, let's replace `<textarea id='mytextarea'>` with a TinyMCE editor instance by passing the selector `'#mytextarea'` to `tinymce.init()`.
+In this example, let's replace `<textarea id='mytextarea'>` with a {{site.productname}} editor instance by passing the selector `'#mytextarea'` to `tinymce.init()`.
 
 ```html
 <!DOCTYPE html>
@@ -37,7 +37,7 @@ In this example, let's replace `<textarea id='mytextarea'>` with a TinyMCE edito
 </head>
 
 <body>
-  <h1>TinyMCE Getting Started Guide</h1>
+  <h1>{{site.productname}} Getting Started Guide</h1>
   <form method="post">
     <textarea id="mytextarea"></textarea>
   </form>
@@ -47,6 +47,6 @@ In this example, let's replace `<textarea id='mytextarea'>` with a TinyMCE edito
 
 ### Step 3: Saving Content with a form POST
 
-When the `form` is submitted the TinyMCE editor mimics the behavior of a normal HTML `<textarea>` during a form `post`. No additional configuration is required.
+When the `form` is submitted the {{site.productname}} editor mimics the behavior of a normal HTML `<textarea>` during a form `post`. No additional configuration is required.
 
-> If you have decided the use the jQuery version, move on to the next step [work with plugins](../work-with-plugins/), where you'll start customizing TinyMCE. If you'd like to learn about other install options please keep reading.
+> If you have decided the use the jQuery version, move on to the next step [work with plugins](../work-with-plugins/), where you'll start customizing {{site.productname}}. If you'd like to learn about other install options please keep reading.

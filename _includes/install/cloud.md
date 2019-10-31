@@ -8,11 +8,11 @@ Include this line of code in the `<head>` of your HTML page:
 
 ### Step 2: Initialize TinyMCE as part of a web form
 
-With the script included, initialize TinyMCE on any element (or elements) in your web page.
+With the script included, initialize {{site.productname}} on any element (or elements) in your web page.
 
-Since TinyMCE lets you identify replaceable elements via a CSS selector, all you need do is pass an object that contains a `selector` to `tinymce.init()`.
+Since {{site.productname}} lets you identify replaceable elements via a CSS selector, all you need do is pass an object that contains a `selector` to `tinymce.init()`.
 
-In this example, let's replace `<textarea id='mytextarea'>` with a TinyMCE editor instance by passing the selector `'#mytextarea'` to `tinymce.init()`.
+In this example, let's replace `<textarea id='mytextarea'>` with a {{site.productname}} editor instance by passing the selector `'#mytextarea'` to `tinymce.init()`.
 
 ```html
 <!DOCTYPE html>
@@ -27,7 +27,7 @@ In this example, let's replace `<textarea id='mytextarea'>` with a TinyMCE edito
 </head>
 
 <body>
-<h1>TinyMCE Quick Start Guide</h1>
+<h1>{{site.productname}} Quick Start Guide</h1>
   <form method="post">
     <textarea id="mytextarea">Hello, World!</textarea>
   </form>
@@ -37,7 +37,7 @@ In this example, let's replace `<textarea id='mytextarea'>` with a TinyMCE edito
 
 ### Step 3: Saving content with a form POST
 
-When the `<form>` is submitted the TinyMCE editor mimics the behavior of a normal HTML `<textarea>` during the `post`. In your form handler you can process the content submitted as if it had come from a regular `<textarea>`.
+When the `<form>` is submitted the {{site.productname}} editor mimics the behavior of a normal HTML `<textarea>` during the `post`. In your form handler you can process the content submitted as if it had come from a regular `<textarea>`.
 
 ### Additional information about using TinyMCE Cloud
 
@@ -47,4 +47,4 @@ Also, if you wish to use a custom language, you need to enter the location of th
 
 You may also want to select a specific version of the editor from {{site.cloudname}} and you should head on over to [Specify editor & plugin versions]({{site.baseurl}}/cloud-deployment-guide/editor-plugin-version) for details on that.
 
-> If you have decided to use {{site.cloudname}}, please move on to the next step [working with plugins](../work-with-plugins/) where you'll start customizing TinyMCE. If you'd like to learn about other install options please keep reading.
+> If you have decided to use {{site.cloudname}}, please move on to the next step [working with plugins](../work-with-plugins/) where you'll start customizing {{site.productname}}. If you'd like to learn about other install options please keep reading.

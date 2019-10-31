@@ -82,7 +82,7 @@ To upgrade to {{site.productname}} {{site.releaseversion}} using a manually down
 
 >To simplify the upgrade process to future versions of {{site.productname}}:
 >
->1. Host the TinyMCE customizations outside of the `{{site.prodnamecode}}/` directory.
+>1. Host the {{site.productname}} customizations outside of the `{{site.prodnamecode}}/` directory.
 >1. Update your {{site.productname}} configuration as required:
 >
 >    * Set the location of content CSS customizations using [`content_css`]({{site.baseurl}}/configure/content-appearance/#content_css).

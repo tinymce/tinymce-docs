@@ -62,7 +62,7 @@ The done callback needs to take an object of the form:
 
 Comments 2.0 uses the conversation `tinycomments_reply` function to reply to a comment.
 
-The `tinycomments_reply` function saves the comment as a reply to an existing conversation and returns via the `done` callback once successful. Unrecoverable errors are communicated to TinyMCE by calling the `fail` callback instead.
+The `tinycomments_reply` function saves the comment as a reply to an existing conversation and returns via the `done` callback once successful. Unrecoverable errors are communicated to {{site.productname}} by calling the `fail` callback instead.
 
 The `tinycomments_reply` function is given a request (req) object as the first parameter, which has these fields:
 
@@ -84,7 +84,7 @@ The done callback needs to take an object of the form:
 
 Comments 2.0 uses the conversation `tinycomments_edit_comment` function to edit a comment.
 
-The `tinycomments_edit_comment` function allows updating or changing original comments and returns via the `done` callback once successful. Unrecoverable errors are communicated to TinyMCE by calling the `fail` callback instead.
+The `tinycomments_edit_comment` function allows updating or changing original comments and returns via the `done` callback once successful. Unrecoverable errors are communicated to {{site.productname}} by calling the `fail` callback instead.
 
 The `tinycomments_edit_comment` function is given a request (req) object as the first parameter, which has these fields:
 
@@ -107,7 +107,7 @@ The done callback needs to take an object of the form:
 
 ### tinycomments_delete
 
-The `tinycomments_delete` function should asynchronously return a flag indicating whether the comment/comment thread was removed using the `done` callback. Unrecoverable errors are communicated to TinyMCE by calling the `fail` callback instead.
+The `tinycomments_delete` function should asynchronously return a flag indicating whether the comment/comment thread was removed using the `done` callback. Unrecoverable errors are communicated to {{site.productname}} by calling the `fail` callback instead.
 
 The `tinycomments_delete` function is given a request (req) object as the first parameter, which has this field:
 
@@ -126,7 +126,7 @@ The done callback needs to take an object of the form:
 
 ### tinycomments_delete_all
 
-The `tinycomments_delete_all` function should asynchronously return a flag indicating whether all the comments in a conversation were removed using the `done` callback. Unrecoverable errors are communicated to TinyMCE by calling the `fail` callback instead.
+The `tinycomments_delete_all` function should asynchronously return a flag indicating whether all the comments in a conversation were removed using the `done` callback. Unrecoverable errors are communicated to {{site.productname}} by calling the `fail` callback instead.
 
 The `tinycomments_delete_all` function is given a request (req) object as the first parameter with no fields.
 
@@ -143,7 +143,7 @@ The done callback needs to take an object of the form:
 
 ### tinycomments_delete_comment
 
-The `tinycomments_delete_comment` function should asynchronously return a flag indicating whether the comment/comment thread was removed using the `done` callback. Unrecoverable errors are communicated to TinyMCE by calling the `fail` callback instead.
+The `tinycomments_delete_comment` function should asynchronously return a flag indicating whether the comment/comment thread was removed using the `done` callback. Unrecoverable errors are communicated to {{site.productname}} by calling the `fail` callback instead.
 
 The `tinycomments_delete_comment` function is given a request (req) object as the first parameter, which has these fields:
 

@@ -7,9 +7,9 @@ description: TinyMCE provides a wide range of configuration options that enable 
 keywords: selector plugin toolbar configuration configure
 ---
 
-This introduction to TinyMCE configuration section details important options used in traditional form-based layouts, useful information for creating streamlined user experiences and examples of using TinyMCE as an inline editor.
+This introduction to {{site.productname}} configuration section details important options used in traditional form-based layouts, useful information for creating streamlined user experiences and examples of using {{site.productname}} as an inline editor.
 
-There are three configuration options that require careful consideration once the TinyMCE script has been added to your page:
+There are three configuration options that require careful consideration once the {{site.productname}} script has been added to your page:
 
 1. [Selector configuration](#selectorconfiguration)
 2. [Plugin configuration](#pluginconfiguration)
@@ -36,11 +36,11 @@ Insert the snippet into your HTML document and replace everything between the `<
 
 ## Selector configuration
 
-Selector configuration is an important configuration option for TinyMCE integration. Selector configuration uses CSS `selector` syntax to determine which elements on the page are editable through TinyMCE.
+Selector configuration is an important configuration option for {{site.productname}} integration. Selector configuration uses CSS `selector` syntax to determine which elements on the page are editable through {{site.productname}}.
 
-> Important: This is where TinyMCE editable areas are specified.
+> Important: This is where {{site.productname}} editable areas are specified.
 
-TinyMCE replaces the selected element with an `iframe` and performs its operations within that `iframe` while in regular editing mode.
+{{site.productname}} replaces the selected element with an `iframe` and performs its operations within that `iframe` while in regular editing mode.
 
 The following example replaces all `textarea` elements on the page:
 
@@ -50,7 +50,7 @@ tinymce.init({
 });
 ```
 
-TinyMCE can also match an `id` attribute.
+{{site.productname}} can also match an `id` attribute.
 
 The following example replaces a `textarea` element with the `id` `'default'` on the page:
 
@@ -60,10 +60,10 @@ tinymce.init({
 });
 ```
 
-Providing a TinyMCE editor with the default configuration, such as:
+Providing a {{site.productname}} editor with the default configuration, such as:
 {% include codepen.html id="default" %}
 
-This selector can be used on any block element while using this option in TinyMCE's [inline editing mode](../use-tinymce-inline/). Inline editing mode edits the content in place instead of replacing the element with an `iframe`.
+This selector can be used on any block element while using this option in {{site.productname}}'s [inline editing mode](../use-tinymce-inline/). Inline editing mode edits the content in place instead of replacing the element with an `iframe`.
 
 The following example uses the `selector` in inline editing mode on a `div` element with `id` `'editable'`:
 
@@ -79,9 +79,9 @@ tinymce.init({
 
 ## Plugin configuration
 
-The `plugins` configuration option enables the plugins functionality within the editor. TinyMCE plugins provide useful features to extend and enhance the TinyMCE experience.
+The `plugins` configuration option enables the plugins functionality within the editor. {{site.productname}} plugins provide useful features to extend and enhance the {{site.productname}} experience.
 
-> Important: Now is the time to consider which plugins to include in TinyMCE
+> Important: Now is the time to consider which plugins to include in {{site.productname}}
 
 Enabling plugin functionality is simple. Simply add the `plugins` key to `tinymce.init()` and provide a comma, space-separated string, or an array of strings as values.
 
@@ -99,11 +99,11 @@ Documentation about configuring plugins are in the relevant sections of the docu
 
 ## Toolbar & menu configuration
 
-TinyMCE provides a default set of toolbar controls, such as bold, italic, and text alignment buttons. TinyMCE provides an easy way to change this toolbar configuration to suit individual deployment scenarios.
+{{site.productname}} provides a default set of toolbar controls, such as bold, italic, and text alignment buttons. {{site.productname}} provides an easy way to change this toolbar configuration to suit individual deployment scenarios.
 
 #### Default toolbar controls
 
-The TinyMCE default toolbar contains the following buttons:
+The {{site.productname}} default toolbar contains the following buttons:
 
 newdocument | bold | italic | underline | strikethrough
 alignleft | aligncenter | alignright | alignjustify | styleselect
@@ -112,13 +112,13 @@ paste | bullist | numlist | outdent | indent
 blockquote | undo | redo | removeformat | subscript
 superscript | | | |
 
-![TinyMCE Default Toolbar & Menubar State]({{ site.baseurl }}/images/tinymce-default-state.png)
+![{{site.productname}} Default Toolbar & Menubar State]({{ site.baseurl }}/images/tinymce-default-state.png)
 
-*Default TinyMCE toolbar & menubar state*
+*Default {{site.productname}} toolbar & menubar state*
 
 The `toolbar` option displays, orders, and groups the toolbar buttons.
 
-Use a space-separated list to specify the buttons that appear in TinyMCE's toolbar. Use `"|"` pipe characters between the groups of buttons to create groups within this list.
+Use a space-separated list to specify the buttons that appear in {{site.productname}}'s toolbar. Use `"|"` pipe characters between the groups of buttons to create groups within this list.
 
 ##### Example
 
@@ -215,11 +215,11 @@ tinymce.init({
 
 ## Basic configuration example
 
-TinyMCE has many other configuration options available that enable further customization and extension of the editor to match the user's requirements.
+{{site.productname}} has many other configuration options available that enable further customization and extension of the editor to match the user's requirements.
 
 The full list of configuration options is in the [Configuration options references]({{ site.baseurl }}/configure/) section. Plugins, their options, and control associations are available in the [Plugins]({{ site.baseurl }}/plugins/) section.
 
-The following example is a walkthrough of a basic TinyMCE configuration.
+The following example is a walkthrough of a basic {{site.productname}} configuration.
 
 ```html
 <!DOCTYPE html>
@@ -257,7 +257,7 @@ Select only the `textarea` with the id `myTextarea`.
 selector: '#myTextarea',
 ```
 
-Choose a Skin such as the dark skin which is included with TinyMCE.
+Choose a Skin such as the dark skin which is included with {{site.productname}}.
 
 ```js
 skin: 'dark',

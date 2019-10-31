@@ -28,7 +28,7 @@ These settings affect the execution of the `media` plugin. Namely the ability to
 
 ### `audio_template_callback`
 
-This option allows you to specify the function that will return the HTML embed code of the audio media that you are attempting to insert into TinyMCE.
+This option allows you to specify the function that will return the HTML embed code of the audio media that you are attempting to insert into {{site.productname}}.
 
 **Type:** `String`
 
@@ -181,7 +181,7 @@ tinymce.init({
 
 ### `media_url_resolver`
 
-This option allows you to specify a function that will be used to replace TinyMCE's default media embed logic with your own, custom logic.
+This option allows you to specify a function that will be used to replace {{site.productname}}'s default media embed logic with your own, custom logic.
 
 The media url resolver function takes three arguments: `data`, a `resolve` callback and a `reject` callback. The `data` argument will be an object with a `url` property on it. In your custom handler function you can then handle the `url` in whatever way you want and return the HTML you want to embed by calling the `resolve` callback and passing it an object with the HTML set on the `html` property, like this: `resolve({html: 'YOUR_HTML'})`.
 
@@ -214,7 +214,7 @@ tinymce.init({
 
 ### `video_template_callback`
 
-This option allows you to specify the function that will return the HTML embed code of the video media that you are attempting to insert into TinyMCE.
+This option allows you to specify the function that will return the HTML embed code of the video media that you are attempting to insert into {{site.productname}}.
 
 **Type:** `String`
 

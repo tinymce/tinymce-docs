@@ -19,13 +19,13 @@ This guide assumes:
 
 ## Preparation
 
-The CSS that goes with a theme is called a skin. The default skin for {{site.productname}} {{site.productversion}} is named Oxide and is written in [Less](http://lesscss.org), a popular CSS preprocessor. With Oxide we introduced a concept we call the **Style API**. This API consists of around 300 variables which you use to modify the appearance of TinyMCE. You never touch the underlying CSS. The benefit of this approach is that improvements we make to the the CSS and HTML won't break your custom skin. This also means that if things don't work as expected, we can provide support and bug fixes, something that was virtually impossible before.
+The CSS that goes with a theme is called a skin. The default skin for {{site.productname}} {{site.productversion}} is named Oxide and is written in [Less](http://lesscss.org), a popular CSS preprocessor. With Oxide we introduced a concept we call the **Style API**. This API consists of around 300 variables which you use to modify the appearance of {{site.productname}}. You never touch the underlying CSS. The benefit of this approach is that improvements we make to the the CSS and HTML won't break your custom skin. This also means that if things don't work as expected, we can provide support and bug fixes, something that was virtually impossible before.
 
 > Important: We do not recommend modifying or overriding CSS rules directly.
 
 To set up the skin development environment, begin with the following steps:
 
-1. Download (or `git clone`) the [TinyMCE source code](https://github.com/tinymce/tinymce).
+1. Download (or `git clone`) the [{{site.productname}} source code](https://github.com/tinymce/tinymce).
 
 2. Open the terminal and navigate to the folder you just downloaded.
 
@@ -45,7 +45,7 @@ You should now be able to open a web browser and point it to the url displayed i
 
 The development environment is set up and ready to work.
 
-![**TinyMCE skin SDK for Silver theme**]({{site.baseurl}}/images/SDKforsilver.png)
+![**{{site.productname}} skin SDK for Silver theme**]({{site.baseurl}}/images/SDKforsilver.png)
 
 If you just need to build the skins without launching a web server, run:
 ```
@@ -66,7 +66,7 @@ The folder `modules/oxide/src/less/theme/` contains the Less files. At the top o
 
 The general workflow is that you look inside the less files within the theme folder and copy the variables you like to change into your skin's `skin.less` file.
 
-> Note: The skin **only** changes the visual presentation of the UI and **not** the placement of elements. Placement of elements is done by the TinyMCE UI framework. This framework makes it possible to do complex UI layouts on all browsers without touching any CSS when plugins are created.
+> Note: The skin **only** changes the visual presentation of the UI and **not** the placement of elements. Placement of elements is done by the {{site.productname}} UI framework. This framework makes it possible to do complex UI layouts on all browsers without touching any CSS when plugins are created.
 
 ### Creating a skin
 
@@ -96,11 +96,11 @@ Your skin.less file should now look like this:
 ```
 Switch to the web browser. Select your skin from the *Skin menu*. It should show a fiery red editor
 
-![**TinyMCE skin SDK for Silver theme**]({{site.baseurl}}/images/SDKforsilverCustomExample.png)
+![**{{site.productname}} skin SDK for Silver theme**]({{site.baseurl}}/images/SDKforsilverCustomExample.png)
 
-This is how you skin TinyMCE: copy variables from the files in the theme folder and paste them into your skin file. There are variables for most things, like spacing between toolbar buttons to letter spacing. Simple yet powerful.
+This is how you skin {{site.productname}}: copy variables from the files in the theme folder and paste them into your skin file. There are variables for most things, like spacing between toolbar buttons to letter spacing. Simple yet powerful.
 
-> Tip: You can change the TinyMCE config in `modules/oxide/src/demo/index.html` to suit your particular use case.
+> Tip: You can change the {{site.productname}} config in `modules/oxide/src/demo/index.html` to suit your particular use case.
 
 ## Creating a content CSS file
 
@@ -112,11 +112,11 @@ To update the appearance of the content within the editor, such as headings, quo
 
 ## Moving the skin into TinyMCE
 
-1. Copy the skin and/or content CSS from `modules/oxide/build/skins/` to the corresponding folders in your production TinyMCE folder.
-2. Update the TinyMCE init function with the [skin]({{site.baseurl}}/configure/editor-appearance/#skin) option and/or the [content_css]({{site.baseurl}}/configure/content-appearance/#content_css) option.
+1. Copy the skin and/or content CSS from `modules/oxide/build/skins/` to the corresponding folders in your production {{site.productname}} folder.
+2. Update the {{site.productname}} init function with the [skin]({{site.baseurl}}/configure/editor-appearance/#skin) option and/or the [content_css]({{site.baseurl}}/configure/content-appearance/#content_css) option.
 
 For more information on how to specify the location of the skin file, see [this]({{site.baseurl}}/configure/editor-appearance/#skin_url) section.
 
 ## Modifying the icons
 
-For information on adding custom icons, see: [Create an icon pack for TinyMCE]({{site.baseurl}}/advanced/creating-an-icon-pack/).
+For information on adding custom icons, see: [Create an icon pack for {{site.productname}}]({{site.baseurl}}/advanced/creating-an-icon-pack/).

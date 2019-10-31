@@ -6,7 +6,7 @@ description: Description of the Tiny Drive plugin api
 keywords: tinydrive api
 ---
 
-The {{site.cloudfilemanager}} TinyMCE plugin has an api that enables access to {{site.cloudfilemanager}} from your custom plugins or TinyMCE specific integration code. This api is available though the `editor.plugins.tinydrive` property.
+The {{site.cloudfilemanager}} {{site.productname}} plugin has an api that enables access to {{site.cloudfilemanager}} from your custom plugins or {{site.productname}} specific integration code. This api is available though the `editor.plugins.tinydrive` property.
 
 ## tinydrive.pick
 

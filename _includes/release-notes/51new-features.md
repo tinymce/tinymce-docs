@@ -51,8 +51,8 @@ tinymce.init({
 > **Note:** No enhancements have been made to the legacy mobile theme. All the changes described in these release notes relate to the `silver` theme on mobile devices.
 
 For information on:
-* Using the `silver` theme for mobile, see: [TinyMCE Mobile]({{site.baseurl}}/mobile/).
-* Using the legacy `mobile` theme, see: [TinyMCE Mobile - The legacy mobile theme]({{site.baseurl}}/mobile/#thelegacymobiletheme).
+* Using the `silver` theme for mobile, see: [{{site.productname}} Mobile]({{site.baseurl}}/mobile/).
+* Using the legacy `mobile` theme, see: [{{site.productname}} Mobile - The legacy mobile theme]({{site.baseurl}}/mobile/#thelegacymobiletheme).
 
 #### Horizontal contextual menus on mobile
 Contextual menus are now horizontal on mobile devices and open when a long-press is used. They also [side-scroll](#side-scrollingtoolbarsonmobile) to allow larger lists of items to be available on mobile devices.
@@ -95,6 +95,8 @@ The styling on [split buttons]({{site.baseurl}}/ui-components/typesoftoolbarbutt
 ### Sticky Toolbar
 
 The Sticky Toolbar (or Docking Toolbar) docks the toolbar and the menu to the top of the screen when scrolling down a web page. The sticky toolbar will remain docked until the editor is no longer visible. This allows the menu and toolbar to remain in view when editing large text areas.
+
+![Sticky Toolbar animation]({{site.baseurl}}/images/sticky-toolbar.gif)
 
 For information on the Sticky Toolbars, see: [Enabling Sticky Toolbars]({{site.baseurl}}/configure/editor-appearance/#toolbar_sticky).
 

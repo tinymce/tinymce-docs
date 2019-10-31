@@ -112,7 +112,7 @@ tinymce.init({
 
 ### `template_mdate_classes`
 
-This option allows you to provide TinyMCE with a list of class names (separated by spaces) whereby any template element with one of the classes will have its content replaced by the 'modified' date (`modifieddate`), formatted according to the `template_mdate_format` option.
+This option allows you to provide {{site.productname}} with a list of class names (separated by spaces) whereby any template element with one of the classes will have its content replaced by the 'modified' date (`modifieddate`), formatted according to the `template_mdate_format` option.
 
 A modified date is one that is updated with each edit.
 
@@ -132,7 +132,7 @@ tinymce.init({
 
 ### `template_mdate_format`
 
-This option allows you to provide TinyMCE with a date/time format that all 'modified' date templates will be replaced with.
+This option allows you to provide {{site.productname}} with a date/time format that all 'modified' date templates will be replaced with.
 
 **Type:** `String`
 
@@ -150,7 +150,7 @@ tinymce.init({
 
 ### `template_replace_values`
 
-This is an array of items that controls content replacement in the inserted templates. 
+This is an array of items that controls content replacement in the inserted templates.
 
 **Type:** `String`
 
@@ -173,9 +173,9 @@ This can then be used in a template or snippet that looks like this:
 
 ```html
 <p>Name: {$username}, StaffID: {$staffid}</p>
-``` 
+```
 
-And that will be changed to: 
+And that will be changed to:
 
 ```html
 <p>Name: Jack Black, StaffID: 991234</p>

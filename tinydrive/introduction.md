@@ -6,13 +6,13 @@ description: Introduction of what Tiny Drive is and its capabilities
 keywords: tinydrive introduction overview
 ---
 
-{{site.cloudfilemanager}} is a premium TinyMCE plugin for cloud-based asset management and storage solution.
+{{site.cloudfilemanager}} is a premium {{site.productname}} plugin for cloud-based asset management and storage solution.
 
 {{site.cloudfilemanager}} allows trouble-free management of assets such as images and files in the cloud. Files can be dragged and dropped to be instantly uploaded to the cloud storage using a CDN to serve the required files and images.
 
 User can manage file uploads, storage, processing, and delivery for your website or app. All components of {{site.cloudfilemanager}} infrastructure seamlessly work as a whole, are easy to configure, and can be extremely flexible when needed.
 
-Developers at Tiny build the upload UI, libs, and APIs for developers. {{site.cloudfilemanager}} integrations are designed to be non-coder ready, easy to configure, and well-covered with documentation and guides.
+Developers at {{site.companyname}} build the upload UI, libs, and APIs for developers. {{site.cloudfilemanager}} integrations are designed to be non-coder ready, easy to configure, and well-covered with documentation and guides.
 
 ## Tiny Drive features
 
@@ -20,7 +20,7 @@ Developers at Tiny build the upload UI, libs, and APIs for developers. {{site.cl
 
 | Feature | Value |
 | ------- | ----- |
-| File upload | Upload files through drag & drop or via upload button. If integrated with TinyMCE, files added via drag & drop or copy & paste in TinyMCE will be uploaded using {{site.cloudfilemanager}} |
+| File upload | Upload files through drag & drop or via upload button. If integrated with {{site.productname}}, files added via drag & drop or copy & paste in {{site.productname}} will be uploaded using {{site.cloudfilemanager}} |
 | CDN | Files are stored in S3 and accessed through Amazons CDN for fast delivery anywhere in the world |
 | File management | Move, copy, delete and organize your online file storage |
 | Search | Search your library of files, star the ones you use often for quick access |
@@ -31,7 +31,7 @@ The storage and bandwidth quota varies based upon the [{{site.cloudname}} Plan](
 
 ## Demo
 
-Here is a quick demo on how {{site.cloudfilemanager}} integrates with TinyMCE.
+Here is a quick demo on how {{site.cloudfilemanager}} integrates with {{site.productname}}.
 
 {% include codepen.html id="drive-demo" %}
 
@@ -46,11 +46,11 @@ It is common to desire to be able to have user specific paths so that each user 
 
 ## Security & performance
 
-Tiny is aware that security is a primary concern when it comes to cloud storage. As a user's assets are passed back and forth between a TinyMCE editor instance and the S3 bucket, {{site.cloudfilemanager}} uses the user's API key and a JSON Web Token (JWT) to authenticate each data transaction. Each {{site.cloudfilemanager}} user will need to create their own JWT.
+{{site.companyname}} is aware that security is a primary concern when it comes to cloud storage. As a user's assets are passed back and forth between a {{site.productname}} editor instance and the S3 bucket, {{site.cloudfilemanager}} uses the user's API key and a JSON Web Token (JWT) to authenticate each data transaction. Each {{site.cloudfilemanager}} user will need to create their own JWT.
 
 ## JWT
 
-Some cloud services for TinyMCE require setting up JWT authentication. This allows verifying that the end users are allowed to access a particular feature. JWT is a common authorization solution for web services and is documented in more detail at the https://jwt.io/ website. For more information, see the [JWT authentication]({{site.baseurl}}/tinydrive/jwt-authentication/) section.
+Some cloud services for {{site.productname}} require setting up JWT authentication. This allows verifying that the end users are allowed to access a particular feature. JWT is a common authorization solution for web services and is documented in more detail at the https://jwt.io/ website. For more information, see the [JWT authentication]({{site.baseurl}}/tinydrive/jwt-authentication/) section.
 
 ## File types
 
@@ -64,6 +64,6 @@ There is a fixed set of file extensions that you can upload and these are placed
 
 ## Starter projects
 
-To get started quickly and understand how {{site.cloudfilemanager}} works, Tiny highly recommends trying one of the starter projects on Github to set up a {{site.cloudfilemanager}} instance by following a few simple steps.
+To get started quickly and understand how {{site.cloudfilemanager}} works, {{site.companyname}} highly recommends trying one of the starter projects on Github to set up a {{site.cloudfilemanager}} instance by following a few simple steps.
 
 The starter projects have their procedures to get {{site.cloudfilemanager}} up and running. Choose a [starter project]({{site.baseurl}}/tinydrive/getting-started/#starterprojects) of a familiar language and follow the steps to set up {{site.cloudfilemanager}}.

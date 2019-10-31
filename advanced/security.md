@@ -9,11 +9,11 @@ keywords: security xss scripting vulnerability hack hacker
 
 ## Q: Is TinyMCE protected against XSS vulnerabilities?
 
-TinyMCE filters out some of the more common XSS content like scripts from the content since it is common that the editor is used in a single page application. For additional security, consider passing it through server-side filters like [HTMLPurifier](http://htmlpurifier.org/).
+{{site.productname}} filters out some of the more common XSS content like scripts from the content since it is common that the editor is used in a single page application. For additional security, consider passing it through server-side filters like [HTMLPurifier](http://htmlpurifier.org/).
 
 ## Q: How do I setup Content Security Policy (CSP) with TinyMCE?
 
-TinyMCE can be used with a [CSP](https://content-security-policy.com/) header. When using a CSP, the following directives are **required** for TinyMCE to function:
+{{site.productname}} can be used with a [CSP](https://content-security-policy.com/) header. When using a CSP, the following directives are **required** for {{site.productname}} to function:
 
 | Directives | Requirements |
 |------------|--------------|
@@ -40,7 +40,7 @@ When using the {{site.cloudname}}, use this CSP header :
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' *.tinymce.com *.tiny.cloud; connect-src 'self' *.tinymce.com *.tiny.cloud blob:; img-src 'self' *.tinymce.com *.tiny.cloud data: blob:; style-src 'self' 'unsafe-inline' *.tinymce.com *.tiny.cloud; font-src 'self' *.tinymce.com *.tiny.cloud;" />
 ```
 
-When self-hosting TinyMCE from a local domain, use this CSP header (excludes the &#42;.tiny.cloud domain):
+When self-hosting {{site.productname}} from a local domain, use this CSP header (excludes the &#42;.tiny.cloud domain):
 
 ```html
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; connect-src 'self' blob:; img-src 'self' data: blob:; style-src 'self' 'unsafe-inline'; font-src 'self';" />

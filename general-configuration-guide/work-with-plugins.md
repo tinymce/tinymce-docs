@@ -7,15 +7,15 @@ description: TinyMCE is an incredibly powerful, flexible and customizable rich t
 keywords: plugin
 ---
 
-For most developers, the real power of TinyMCE's functionality is found in its plugins. [Plugins]({{ site.baseurl }}/plugins/) either extend default editor functionality or add new functionality. For example, the [Advanced List]({{ site.baseurl }}/plugins/advlist/) plugin adds extra options to the toolbar's existing list controls, while the [Code]({{ site.baseurl }}/plugins/code/) plugin adds entirely new functionality.
+For most developers, the real power of {{site.productname}}'s functionality is found in its plugins. [Plugins]({{ site.baseurl }}/plugins/) either extend default editor functionality or add new functionality. For example, the [Advanced List]({{ site.baseurl }}/plugins/advlist/) plugin adds extra options to the toolbar's existing list controls, while the [Code]({{ site.baseurl }}/plugins/code/) plugin adds entirely new functionality.
 
-Because most people install TinyMCE via {{site.cloudname}} or by downloading a package, they mistakenly think plugins are part of the TinyMCE "core". While all of the plugins (excluding the professional features) are included in those packages, each plugin is in a separate .js file. In fact, if you use the [custom package](https://www.tinymce.com/download/custom-builds/) download option, you're able to select only the plugins you want to be included, or you can exclude all of the plugins built by the TinyMCE team.
+Because most people install {{site.productname}} via {{site.cloudname}} or by downloading a package, they mistakenly think plugins are part of the {{site.productname}} "core". While all of the plugins (excluding the professional features) are included in those packages, each plugin is in a separate .js file. In fact, if you use the [custom package](https://www.tinymce.com/download/custom-builds/) download option, you're able to select only the plugins you want to be included, or you can exclude all of the plugins built by the {{site.productname}} team.
 
 In this section, we'll show you how easy it is to activate a plugin by highlighting two of the more popular plugins.
 
 > Note: You must include the plugin in your download options to activate it.
 
-Let's start with a simple code snippet you can paste into an empty `html` file (call it whatever you like, `tinymce.html` works). Save the file locally, open it with your web browser and you'll have a basic, local TinyMCE instance up and running.
+Let's start with a simple code snippet you can paste into an empty `html` file (call it whatever you like, `tinymce.html` works). Save the file locally, open it with your web browser and you'll have a basic, local {{site.productname}} instance up and running.
 
 ```html
 <!DOCTYPE html>
@@ -82,7 +82,7 @@ tinymce.init({
 
 ## Time for one more example
 
-Even if you found the above example quite easy, hang with us we'll show you how to extend TinyMCE's default ordered and unordered lists. If on the other hand that was all a bit new, read this example to help your understanding.
+Even if you found the above example quite easy, hang with us we'll show you how to extend {{site.productname}}'s default ordered and unordered lists. If on the other hand that was all a bit new, read this example to help your understanding.
 
 ### Advanced List
 
@@ -97,7 +97,7 @@ tinymce.init({
 });
 ```
 
-Take a look at your TinyMCE toolbar, and you'll see the list controls now have down arrows attached (to the right of the icon). Click them, and you've now got extra list options.
+Take a look at your {{site.productname}} toolbar, and you'll see the list controls now have down arrows attached (to the right of the icon). Click them, and you've now got extra list options.
 
 There are more customization options if we don't want all of those list options available to the user.
 
@@ -122,14 +122,14 @@ tinymce.init({
 });
 ```
 
-In the above example, we learned how to remove the menubar, add specific list controls to the toolbar while removing others, activate a plugin, and customize the plugin's behavior by controlling which options we wanted to be activated. In 5 lines of code (excluding the `selector` key, which has to be included for TinyMCE to work).
+In the above example, we learned how to remove the menubar, add specific list controls to the toolbar while removing others, activate a plugin, and customize the plugin's behavior by controlling which options we wanted to be activated. In 5 lines of code (excluding the `selector` key, which has to be included for {{site.productname}} to work).
 
-As we noted at the start TinyMCE is an incredibly powerful, flexible, and customizable rich text editor. Once you've finished the Get Started guide, deep dive into the [plugins]({{ site.baseurl }}/plugins/) and [configuration options]({{ site.baseurl }}/configure/).
+As we noted at the start {{site.productname}} is an incredibly powerful, flexible, and customizable rich text editor. Once you've finished the Get Started guide, deep dive into the [plugins]({{ site.baseurl }}/plugins/) and [configuration options]({{ site.baseurl }}/configure/).
 
 
 ## Top 10 plugins
 
-Customizing TinyMCE with the default plugins is that easy. There are 60 plugins available to developers. Let's take a look at the 10 most popular plugins (by documentation page views).
+Customizing {{site.productname}} with the default plugins is that easy. There are 60 plugins available to developers. Let's take a look at the 10 most popular plugins (by documentation page views).
 
 | Position | Plugin Name   | Plugin Value                                         |
 | -------- | ------------- | ---------------------------------------------------- |

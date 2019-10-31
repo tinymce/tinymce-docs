@@ -6,7 +6,7 @@ description: Quickly give TinyMCE a new look.
 keywords: skin skins icon icons material bootstrap customize theme
 ---
 
-The Premium Skins and Icon Packs lets you quickly give TinyMCE a new look. Just choose one of our pre-made skins and icon packs.
+The Premium Skins and Icon Packs lets you quickly give {{site.productname}} a new look. Just choose one of our pre-made skins and icon packs.
 
 ### How to use a premium skin
 
@@ -75,7 +75,7 @@ Due to different toolbar button sizes, some icon packs fit better with some skin
 
 ### Self hosted usage instructions
 
-For the self-hosted version of TinyMCE, Premium Skins and Icon Packs are available as a download, either as part of the Pro bundle or as an individual purchase. All skins and icons packs are included in the bundle.
+For the self-hosted version of {{site.productname}}, Premium Skins and Icon Packs are available as a download, either as part of the Pro bundle or as an individual purchase. All skins and icons packs are included in the bundle.
 
 ### Examples
 
@@ -95,7 +95,7 @@ Below are some recommended combinations of skins and icon packs:
 
 To try out **Premium Skins and Icon Packs** and {{site.cloudname}}-delivered editor, the first step is to create a free [{{site.accountpage}}](https://www.tiny.cloud/download/).
 
-The free {{site.accountpage}} is provisioned with a free 30-day trial of all Tiny [premium plugins](https://apps.tiny.cloud/product-category/tiny-cloud-extensions/), with no credit card information or commitment required.
+The free {{site.accountpage}} is provisioned with a free 30-day trial of all {{site.cloudname}} [premium plugins](https://apps.tiny.cloud/product-category/tiny-cloud-extensions/), with no credit card information or commitment required.
 
 #### Buy Premium Skins and Icon Packs
 

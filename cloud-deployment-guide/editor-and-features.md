@@ -6,7 +6,7 @@ description: Run Tiny Cloud in less than 5 minutes.
 keywords: tinymce cloud script textarea apiKey
 ---
 
-{{site.cloudname}} is the easiest way to integrate TinyMCE and upgrade to premium plugins.
+{{site.cloudname}} is the easiest way to integrate {{site.productname}} and upgrade to premium plugins.
 
 {{site.cloudname}} can be used without an API key. Refer to the [Introduction & getting started ]({{site.baseurl}}/general-configuration-guide) guide for more information. Sign up for an API key and update the script tag to use premium plugins or avoid the in-editor developer warning.
 
@@ -16,7 +16,7 @@ All {{site.accountpage}} include a free, pre-configured {{site.cloudname}} image
 
 ### Step 1: Insert the Tiny Cloud script tag into the webpage
 
-Insert the TinyMCE editor code into the application to load TinyMCE for the first time. The code inserting is done by adding the following script tag into your app, or in the case of a web page the `<head>` of the page:
+Insert the {{site.productname}} editor code into the application to load {{site.productname}} for the first time. The code inserting is done by adding the following script tag into your app, or in the case of a web page the `<head>` of the page:
 
 The following example adds a script tag into the application that inserts the code. Use the `<head>` of the page on a web page. Be sure to substitute 'no-api-key' with your api key.
 
@@ -27,7 +27,7 @@ The following example adds a script tag into the application that inserts the co
 ||Value|Description|
 |---|---|---|
 |1|no-api-key|Replace with your api key|
-|2|origin=|A `referrerpolicy` specifies how much of the current page's URL is sent in the `Referer` header when the browser fetches page resources (for example, the TinyMCE editor). The use of the `Referer` header ensures API keys are only used on domains registered to their owners. We only care about the domain portion however (similar to the operation of `Origin` header), so for improved performance and privacy always set the `referrerpolicy` to `origin` when requesting Tiny resources.|
+|2|origin=|A `referrerpolicy` specifies how much of the current page's URL is sent in the `Referer` header when the browser fetches page resources (for example, the {{site.productname}} editor). The use of the `Referer` header ensures API keys are only used on domains registered to their owners. We only care about the domain portion however (similar to the operation of `Origin` header), so for improved performance and privacy always set the `referrerpolicy` to `origin` when requesting {{site.cloudname}} resources.|
 
 
 
@@ -40,7 +40,7 @@ There are more than 40 open source plugins that enhance the editing experience i
 
 ### Step 3: Specifying purchased TinyMCE plugins and toolbar/menu items
 
-Extend the [TinyMCE configuration]({{ site.baseurl }}/configure/) to include any additional purchased plugins and associated toolbar and menu items. Refer to the following enablement guides for more information:
+Extend the [{{site.productname}} configuration]({{ site.baseurl }}/configure/) to include any additional purchased plugins and associated toolbar and menu items. Refer to the following enablement guides for more information:
 
 * [Mentions]({{ site.baseurl }}/plugins/mentions/)
 * [{{site.cloudfilemanager}}]({{ site.baseurl }}/plugins/drive/)
@@ -63,7 +63,7 @@ Extend the [TinyMCE configuration]({{ site.baseurl }}/configure/) to include any
 * [Enhanced Media Embed]({{ site.baseurl }}/plugins/mediaembed/)
 * [Link Checker]({{ site.baseurl }}/plugins/linkchecker/)
 
-> Note: It may take up to 30 minutes for the purchased plugin to be available to TinyMCE. Clear the browser's cache.
+> Note: It may take up to 30 minutes for the purchased plugin to be available to {{site.productname}}. Clear the browser's cache.
 
 ### Step 4: Forward proxy configuration
 Ensure that the following URLs are accessible via this proxy if the network has a forward proxy that controls access to the internet.
@@ -83,7 +83,7 @@ Ensure the `tiny-api-key` and `tinymce-api-key` headers are retained while reque
 
 ### Step 1: Replace existing reference to tinymce.min.js
 
-Migrating from a self-hosted environment to {{site.cloudname}} is easy. Remove the existing script tag that loads TinyMCE’s JavaScript.
+Migrating from a self-hosted environment to {{site.cloudname}} is easy. Remove the existing script tag that loads {{site.productname}}’s JavaScript.
 
 > Note: The script tag typically references `tinymce.min.js` hosted within the application or available at a legacy CDN.
 
@@ -101,7 +101,7 @@ Reference [external_plugins]({{ site.baseurl }}/configure/integration-and-setup/
 
 ### Step 3: Specify purchased TinyMCE plugins and toolbar buttons
 
-Extend the [TinyMCE configuration]({{ site.baseurl }}/configure/) to include any additional purchased plugins and associated toolbar and menu items. Refer to the following enablement guides for more information:
+Extend the [{{site.productname}} configuration]({{ site.baseurl }}/configure/) to include any additional purchased plugins and associated toolbar and menu items. Refer to the following enablement guides for more information:
 
 * [Mentions]({{ site.baseurl }}/plugins/mentions/)
 * [{{site.cloudfilemanager}}]({{ site.baseurl }}/plugins/drive/)

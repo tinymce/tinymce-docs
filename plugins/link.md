@@ -9,7 +9,7 @@ controls: toolbar button, menu item
 
 The **link** plugin allows a user to link external resources such as website URLs, to selected text in their document.
 
-It adds two toolbar buttons called `link` and `unlink` and three menu items called `link`, `unlink` and `openlink`. The toolbar button and menu item called `link` are included in TinyMCE's default configuration. The `link` menu item can be found in the `Insert` menu.
+It adds two toolbar buttons called `link` and `unlink` and three menu items called `link`, `unlink` and `openlink`. The toolbar button and menu item called `link` are included in {{site.productname}}'s default configuration. The `link` menu item can be found in the `Insert` menu.
 
 The **link** plugin also includes a context menu and context toolbar. The context toolbar can be configured using the [`link_context_toolbar`](#link_context_toolbar) and [`link_quicklink`](#link_quicklink) options documented below.
 
@@ -50,7 +50,7 @@ tinymce.init({
 
 ### `link_assume_external_targets`
 
-Set whether TinyMCE should prepend a `http://` prefix if the supplied URL does not contain a protocol prefix.
+Set whether {{site.productname}} should prepend a `http://` prefix if the supplied URL does not contain a protocol prefix.
 
 - `false`: users are prompted to prepend `http://` when the URL entered starts with `www` and does not have a protocol. Other URLs are added without prompt.
 - `true`: URLs are assumed to be external. Users are prompted to prepend a `http://` prefix when the protocol is not specified.
@@ -156,7 +156,7 @@ tinymce.init({
 
 **Example of a custom asynchronous callback function**
 
-`link_list` can also take a function that is called when the link dialog is opened. TinyMCE passes this function a `success` callback function, which should be passed an array of link items. This allows for asynchronous and dynamic generation of the list of links.
+`link_list` can also take a function that is called when the link dialog is opened. {{site.productname}} passes this function a `success` callback function, which should be passed an array of link items. This allows for asynchronous and dynamic generation of the list of links.
 
 The following is an example of how `link_list` can be used with a callback function. `fetchLinkLists` could be replaced with any function that returns an array of link items. It can be used to generate a list of link items based on:
 
@@ -180,7 +180,7 @@ tinymce.init({
   toolbar: "link",
   link_list: function(success) { // called on link dialog open
     var links = fetchLinkList(); // get link_list data
-    success(links); // pass link_list data to TinyMCE
+    success(links); // pass link_list data to {{site.productname}}
   }
 });
 ```

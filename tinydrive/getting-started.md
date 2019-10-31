@@ -7,14 +7,14 @@ keywords: tinydrive starter projects
 ---
 
 > Requirements
-> 1. Register for an API key at [tiny.cloud](https://www.tiny.cloud/signup/)
-> 2. Generate a JWT key at [tiny.cloud](https://www.tiny.cloud/signup/)
+> 1. Register for an API key at [{{site.accountpage}}](https://www.tiny.cloud/signup/)
+> 2. Generate a JWT key at [{{site.accountpage}}](https://www.tiny.cloud/signup/)
 > 3. Store these keys temporarily, you will need them later.
 > Do this before proceeding and it will go a lot smoother
 
 {{site.cloudfilemanager}} allows trouble free management of assets such as images and files in the cloud. {{site.cloudfilemanager}} is only available in [{{site.cloudname}}](https://www.tiny.cloud/signup/) and requires registering for an API key.
 
-To enable this functionality in the TinyMCE editor, add `tinydrive` to the list of plugins in the `tinymce.init` call. The user also needs to be authenticated using a [JSON Web Token (JWT)]({{site.baseurl}}/tinydrive/jwt-authentication/).
+To enable this functionality in the {{site.productname}} editor, add `tinydrive` to the list of plugins in the `tinymce.init` call. The user also needs to be authenticated using a [JSON Web Token (JWT)]({{site.baseurl}}/tinydrive/jwt-authentication/).
 
 Once {{site.cloudfilemanager}} is enabled, it integrates as the default file picker for the Image, Link, and Media dialogs and as the default upload handler for local images being pasted or inserted into the document.
 
@@ -59,4 +59,4 @@ Go through the following additional resources to figure out how to configure {{s
 
 ## Need help? ##
 
-Tiny is striving to make {{site.cloudfilemanager}} as useful and simple as possible. For support related issues such as problems with JWT authentication and implementing {{site.cloudfilemanager}}, check the [help page](/tinydrive/get-help/) or please contact [support](https://support.tiny.cloud/hc/en-us/requests/new).
+{{site.companyname}} is striving to make {{site.cloudfilemanager}} as useful and simple as possible. For support related issues such as problems with JWT authentication and implementing {{site.cloudfilemanager}}, check the [help page](/tinydrive/get-help/) or please contact [support](https://support.tiny.cloud/hc/en-us/requests/new).

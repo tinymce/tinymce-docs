@@ -4,7 +4,7 @@ The `colorpicker` component adds an HSV color picker dialog to the editor. When 
 
 Since {{site.productname}} 5, the `colorpicker` and `textcolor` plugins are now builtin components, which means there is no need to declare it in the list of plugins.
 
-The plugin hooks into the editor [`color_picker_callback`](#color_picker_callback) api, which is a hook in point reserved for any color picker implementation in TinyMCE.
+The plugin hooks into the editor [`color_picker_callback`](#color_picker_callback) api, which is a hook in point reserved for any color picker implementation in {{site.productname}}.
 
 **Type:** `String`
 

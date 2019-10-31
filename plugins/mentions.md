@@ -242,4 +242,4 @@ console.log(users);
 
 ## Downloading Mentions Plugin
 
-A [TinyMCE Enterprise](https://www.tinymce.com/pricing/) subscription includes the ability to download and install the mentions feature for the editor.
+A [{{site.sfenterpriseac}}](https://www.tinymce.com/pricing/) includes the ability to download and install the mentions feature for the editor.

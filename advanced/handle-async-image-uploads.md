@@ -7,12 +7,12 @@ description: How to manage asynchronous image uploads with jQuery, CORS.
 keywords: asynchronous async paste_data_images image cors
 ---
 
-TinyMCE uploads edited images with the image uploader. This complements TinyMCE's image editing functionality. Local images added through other means can also be uploaded using this functionality. For example, _drag and drop_ using the [paste_data_images]({{ site.baseurl }}/plugins/paste/#paste_data_images) configuration property or using the **PowerPaste** plugin.
+{{site.productname}} uploads edited images with the image uploader. This complements {{site.productname}}'s image editing functionality. Local images added through other means can also be uploaded using this functionality. For example, _drag and drop_ using the [paste_data_images]({{ site.baseurl }}/plugins/paste/#paste_data_images) configuration property or using the **PowerPaste** plugin.
 
 
-TinyMCE automatically updates the `<image>` src attribute with the new path to the remote image.
+{{site.productname}} automatically updates the `<image>` src attribute with the new path to the remote image.
 
-Local images are uploaded to TinyMCE using the `editor.uploadImages()` function.  This functionality makes it possible for users to save their content *before* all images have completed uploading. No server path to the remote image is available if this occurs and the images will be stored as `Base64`.
+Local images are uploaded to {{site.productname}} using the `editor.uploadImages()` function.  This functionality makes it possible for users to save their content *before* all images have completed uploading. No server path to the remote image is available if this occurs and the images will be stored as `Base64`.
 
 > Pro Tip: Execute the `editor.uploadImages()` function _before_ submitting the editor contents to the server to avoid storing the image as Base64. Use a success callback to execute code once all the images are uploaded. This success callback can save the editor's content to the server thorugh a `POST`.
 
@@ -52,7 +52,7 @@ Images are sent to the Image Uploader via HTTP POST with each post containing a 
  * Store the item in a database
  * Store the item in an asset management system
 
-Use a standardized name in the post (e.g. `blobid0`, `blobid1`, `imagetools0`, `imagetools1`) when the image is uploaded. 
+Use a standardized name in the post (e.g. `blobid0`, `blobid1`, `imagetools0`, `imagetools1`) when the image is uploaded.
 
 > Note: Ensure that your upload handler script enerates a unique name for each uploaded file before storing the image. A common method is to append the current time in milliseconds to the end of the file name. This creates file names such as `blobid0-1458428901092.png` or `blobid0-1460405299-0114.png`.  
 
@@ -75,7 +75,7 @@ The operation of this feature is affected by the following configuration options
 | [images_upload_url]({{ site.baseurl }}/configure/file-image-upload/#images_upload_url)                 | Specifies a URL where images are uploaded when `editor.uploadImages` is called. |
 | [images_upload_base_path]({{ site.baseurl }}/configure/file-image-upload/#images_upload_base_path)     | Specifies a basepath to prepend to urls returned from the `configured images_upload_url` page. |
 | [images_upload_credentials]({{ site.baseurl }}/configure/file-image-upload/#images_upload_credentials) | Specifies if calls to the configured `images_upload_url` passes along credentials cross domain, like cookies. This is disabled by default. |
-| [images_upload_handler]({{ site.baseurl }}/configure/file-image-upload/#images_upload_handler)         | This option replaces TinyMCE's default javascript upload handler function with custom logic. The upload handler function takes three arguments: blobInfo, success callback, and failure callback. When this option is not set, TinyMCE utilizes an `XMLHttpRequest` to upload images one at a time to the server, and calls the success callback with the location of the remote image. |
+| [images_upload_handler]({{ site.baseurl }}/configure/file-image-upload/#images_upload_handler)         | This option replaces {{site.productname}}'s default javascript upload handler function with custom logic. The upload handler function takes three arguments: blobInfo, success callback, and failure callback. When this option is not set, {{site.productname}} utilizes an `XMLHttpRequest` to upload images one at a time to the server, and calls the success callback with the location of the remote image. |
 
 The following example is a typical setup:
 
@@ -90,7 +90,7 @@ tinymce.init({
 
 #### Rolling your image handler
 
-Use the `images_upload_handler` configuration property to change TinyMCE's default image upload logic.
+Use the `images_upload_handler` configuration property to change {{site.productname}}'s default image upload logic.
 
 > Note: No other image uploader options are necessary while using this option
 

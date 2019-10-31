@@ -25,7 +25,7 @@ tinymce.init({
 ```
 
 ## Self-hosted Installation
-To enable the TinyMCE Image Tools plugin:
+To enable the {{site.productname}} Image Tools plugin:
 
 1. Add 'image' to the 'toolbar' list and 'image imagetools' to the 'plugins' list
 2. Enable `imagetools_cors_hosts` and `imagetools_proxy` options as needed
@@ -42,7 +42,7 @@ tinymce.init({
 });
 ```
 
-### Options
+## Options
 ### `imagetools_cors_hosts`
 
 Image Tools cannot work with images from another domains due to security measures imposed by browsers on so called cross-origin HTTP requests. To overcome these constraints, Cross-Origin Resource Sharing (CORS) must be explicitly enabled on the specified domain(s) (for more information check [HTTP access control](https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS)).
@@ -109,9 +109,9 @@ tinymce.init({
 
 ### `imagetools_proxy`
 
-Another way of getting images across domains is using local server-side proxy. Proxy is basically a script, that will retrieve remote image and pipe it back to TinyMCE, as if it was local. Example of such proxy (written in PHP) can be found below.
+Another way of getting images across domains is using local server-side proxy. Proxy is basically a script, that will retrieve remote image and pipe it back to {{site.productname}}, as if it was local. Example of such proxy (written in PHP) can be found below.
 
-[TinyMCE Enterprise](https://www.tinymce.com/pricing/) subscription also includes proxy service written in Java. Check [Install Server-side Components]({{ site.baseurl }}/enterprise/server/) guide for details.
+[{{site.cloudname}}](https://www.tinymce.com/pricing/) subscription also includes proxy service written in Java. Check [Install Server-side Components]({{ site.baseurl }}/enterprise/server/) guide for details.
 
 > Note: `imagetools_proxy` is **not** required when enabling this plugin via [{{site.cloudname}}]({{ site.baseurl }}/cloud-deployment-guide/editor-and-features/)
 

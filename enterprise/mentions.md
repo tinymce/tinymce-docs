@@ -21,6 +21,6 @@ Mentions is available for download through [{{site.cloudname}}]({{ site.baseurl 
 
 ## Downloading Mentions
 
-A [TinyMCE Enterprise](https://www.tinymce.com/pricing/) subscription includes the ability to download and install the Mentions feature for the editor. For more information on setup and configuration refer to the [Mentions documentation]({{site.baseurl}}/plugins/mentions/).
+A [{{site.productname}} Enterprise](https://www.tinymce.com/pricing/) subscription includes the ability to download and install the Mentions feature for the editor. For more information on setup and configuration refer to the [Mentions documentation]({{site.baseurl}}/plugins/mentions/).
 
 

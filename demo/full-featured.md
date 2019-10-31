@@ -9,7 +9,7 @@ keywords: example demo custom wysiwyg full-power full-featured plugins non-premi
 
 ## Full Featured: Including Premium Plugins
 
-This example includes most of the available TinyMCE plugins, including plugins available on TinyMCE Cloud premium subscriptions. Please note, it includes [premium plugins](https://www.tiny.cloud/pricing/#demo-enterprise).
+This example includes most of the available {{site.productname}} plugins, including plugins available on {{site.cloudname}} premium subscriptions. Please note, it includes [premium plugins](https://www.tiny.cloud/pricing/#demo-enterprise).
 
 {% include codepen.html id="full-featured" %}
 
@@ -34,5 +34,5 @@ The following plugins are excluded from this example:
 * [Autoresize]({{site.baseurl}}/plugins/autoresize) — Resizes the editor to fit the content.
 * [BBCode]({{site.baseurl}}/plugins/bbcode) — Changes the markup used for the content.
 * [Full Page]({{site.baseurl}}/plugins/fullpage) — Used for modifying HTML `<head>` elements.
-* [Spellchecker]({{site.baseurl}}/plugins/spellchecker) — Requires Server-Side components, see: [Check spelling in TinyMCE]({{site.baseurl}}/general-configuration-guide/spell-checking/).
+* [Spellchecker]({{site.baseurl}}/plugins/spellchecker) — Requires Server-Side components, see: [Check spelling in {{site.productname}}]({{site.baseurl}}/general-configuration-guide/spell-checking/).
 * [Tab Focus]({{site.baseurl}}/plugins/tabfocus) — Changes the behavior of the TAB-key within the editor.

@@ -12,4 +12,4 @@ The team behind {{site.productname}} invests a lot of time in fixing community-r
 
 However, we cannot fix all of the issues that are reported. With 5 million downloads a year we have to triage what impacts the most people.
 
-If your company needs specific issues fixed on a timeline, we suggest you sign up for a {{site.productname}} Enterprise subscription to receive priority support. Again, we cannot guarantee that we can fix all bugs, but this is the way to ensure your issues are at the top of the queue.
+If your company needs specific issues fixed on a timeline, we suggest you sign up for a {{site.sfenterpriseac}} to receive priority support. Again, we cannot guarantee that we can fix all bugs, but this is the way to ensure your issues are at the top of the queue.

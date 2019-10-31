@@ -7,9 +7,9 @@ keywords: enterprise powerpaste power paste powerpaste_word_import powerpaste_ht
 
 ## Improve your productivity & writing experience
 
-[{{site.productname}} PowerPaste](https://about.tiny.cloud/products/powerpaste/) automatically cleans up content from Microsoft Word and other HTML sources to ensure clean, compliant content that matches the look and feel of your site or app.
+[{{site.productname}} PowerPaste]({{site.productpages}}/powerpaste/) automatically cleans up content from Microsoft Word and other HTML sources to ensure clean, compliant content that matches the look and feel of your site or app.
 
-{{site.productname}} PowerPaste is a Premium Plugin from {{site.productname}}. We have flexible purchase options: as a [stand-alone plugin](https://about.tiny.cloud/products/powerpaste/), to [OEM and custom enterprise pricing]({{site.pricingpage}}).
+{{site.productname}} PowerPaste is a Premium Plugin from {{site.productname}}. We have flexible purchase options: as a [stand-alone plugin]({{site.productpages}}/powerpaste/), to [OEM and custom enterprise pricing]({{site.pricingpage}}).
 
 > Customers: we have full documentation explaining how to install and configure {{site.productname}} PowerPaste. [Go to the docs.]({{ site.baseurl }}/plugins/powerpaste/)
 
@@ -41,7 +41,7 @@ It also does the same for images, automatically linking to the source image URL.
 
 ### Buy TinyMCE PowerPaste
 
-Start with our [dedicated product page](https://about.tiny.cloud/products/powerpaste/) to see our flexible pricing options. OEM and enterprise customers should [contact sales directly]({{site.contactpage}}). Still not sure? Check out the demo below.
+Start with our [dedicated product page]({{site.productpages}}/powerpaste/) to see our flexible pricing options. OEM and enterprise customers should [contact sales directly]({{site.contactpage}}). Still not sure? Check out the demo below.
 
 ## PowerPaste demo
 

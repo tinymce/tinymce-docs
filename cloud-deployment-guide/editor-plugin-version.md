@@ -10,7 +10,7 @@ keywords: tinymce cloud script textarea apiKey
 
 Use the URL provided to specify the {{site.productname}} version when deploying via {{site.cloudname}}. Refer to the [{{site.productname}} editor via the {{site.cloudname}}]({{ site.baseurl }}/cloud-deployment-guide/editor-and-features) for more information.
 
-The following example is the default for loading {{site.productname}} {{site.productversion}} via {{site.cloudname}}. Substitute 'no-api-key' with your api key in the examples below.
+The following example is the default for loading {{site.productname}} {{site.productmajorversion}} via {{site.cloudname}}. Substitute 'no-api-key' with your api key in the examples below.
 
 ```js
 <script src="{{ site.cdnurl }}" referrerpolicy="origin"></script>
@@ -20,7 +20,7 @@ This URL specifies the latest and quality assured release of {{site.productname}
 
 ### Selecting specific version numbers
 
-Support for requesting specific versions of {{site.productname}} {{site.productversion}} should work same as {{site.productname}} 4.  In the meantime, there are three release channels available, see the section below.
+Support for requesting specific versions of {{site.productname}} {{site.productmajorversion}} should work same as {{site.productname}} 4.  In the meantime, there are three release channels available, see the section below.
 
 ### dev, testing, and stable releases
 
@@ -50,7 +50,7 @@ This channel deploys the current release candidate for the `stable` channel. The
 
 #### stable release channel
 
-This channel deploys the latest release of {{site.productname}} that has passed our quality assurance process. The current version of {{site.productname}} available through the `/{{site.productversion}}` stable channel can be found [here](https://cdn.tiny.cloud/1/no-api-key/tinymce/5/version.txt). The {{site.productname}} {{site.productversion}} stable channel can be loaded from [this url](https://cdn.tiny.cloud/1/no-api-key/tinymce/5/plugins.min.js).
+This channel deploys the latest release of {{site.productname}} that has passed our quality assurance process. The current version of {{site.productname}} available through the `/{{site.productmajorversion}}` stable channel can be found [here](https://cdn.tiny.cloud/1/no-api-key/tinymce/5/version.txt). The {{site.productname}} {{site.productmajorversion}} stable channel can be loaded from [this url](https://cdn.tiny.cloud/1/no-api-key/tinymce/5/plugins.min.js).
 
 ##### Example
 
@@ -325,4 +325,4 @@ The "SDK" version lets the {{site.productname}} Plugin Manager know that you're 
 
 ### Featuring declared editor and plugin versions
 
-Support for requesting specific versions of {{site.productname}} {{site.productversion}} will work similar to {{site.productname}} 4.  Only the latest version is available via the {{site.cloudname}}.
+Support for requesting specific versions of {{site.productname}} {{site.productmajorversion}} will work similar to {{site.productname}} 4.  Only the latest version is available via the {{site.cloudname}}.

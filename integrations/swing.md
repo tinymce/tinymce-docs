@@ -29,7 +29,7 @@ The Swing integration allows the user to select the origin of the {{site.product
 * Cloud deployments pull the latest release of {{site.productname}} from the channel of your choice. Use this option by passing your API key and selecting a release channel.
 
   ```
-  final Config myTinyConfiguration = Config.cloud("<my_api_key>", "{{site.productversion}}-stable");
+  final Config myTinyConfiguration = Config.cloud("<my_api_key>", "{{site.productmajorversion}}-stable");
   ```
 
 * Embedded deployments use the version of {{site.productname}} prepackaged with the current release of the integration.

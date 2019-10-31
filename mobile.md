@@ -6,7 +6,7 @@ description: The TinyMCE rich text editing experience for mobile devices.
 keywords: mobile tablet
 ---
 
-{{site.productname}} {{site.releaseversion}} provides an improved mobile editor, replacing the existing mobile editor with a touch friendly version on the silver theme.
+{{site.productname}} {{site.productminorversion}} provides an improved mobile editor, replacing the existing mobile editor with a touch friendly version on the silver theme.
 
 
 The new mobile experience comes with a number of user interface changes in addition to the {{site.productname}} "desktop" experience:

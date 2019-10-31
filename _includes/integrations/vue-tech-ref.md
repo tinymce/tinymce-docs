@@ -73,7 +73,7 @@ The editor accepts the following properties:
 ```xml
 <editor
   api-key="your-api-key"
-  cloud-channel="{{site.productversion}}"
+  cloud-channel="{{site.productmajorversion}}"
   :disabled=false
   id="uuid"
   :init= "{% raw %}{{% endraw %}  {% raw %}}{% endraw %}"
@@ -108,20 +108,20 @@ To register for a {{site.cloudname}} API key, visit the [sign-up page](https://w
 
 #### `cloud-channel`
 
-**Default value:** `{{site.productversion}}`
+**Default value:** `{{site.productmajorversion}}`
 
-**Possible values:**  `{{site.productversion}}-stable`, `{{site.productversion}}-testing`, `{{site.productversion}}-dev`
+**Possible values:**  `{{site.productmajorversion}}-stable`, `{{site.productmajorversion}}-testing`, `{{site.productmajorversion}}-dev`
 
 Changes the {{site.productname}} build used for the editor to one of the following {{site.cloudname}} channels:
 
-- `{{site.productversion}}`, `{{site.productversion}}-stable` (**Default**): The current enterprise release of {{site.productname}}.
-- `{{site.productversion}}-testing`: The current release candidate for the next enterprise release of {{site.productname}}.
-- `{{site.productversion}}-dev`: The nightly-build version of {{site.productname}}.
+- `{{site.productmajorversion}}`, `{{site.productmajorversion}}-stable` (**Default**): The current enterprise release of {{site.productname}}.
+- `{{site.productmajorversion}}-testing`: The current release candidate for the next enterprise release of {{site.productname}}.
+- `{{site.productmajorversion}}-dev`: The nightly-build version of {{site.productname}}.
 
 Such as:
 
 ```js
-<editor api-key="your-api-key" cloud-channel="{{site.productversion}}-dev" :init="{% raw %}{{% endraw %} /* your other settings */ {% raw %}}{% endraw %}" />
+<editor api-key="your-api-key" cloud-channel="{{site.productmajorversion}}-dev" :init="{% raw %}{{% endraw %} /* your other settings */ {% raw %}}{% endraw %}" />
 ```
 For information {{site.productname}} development channels, see: [Specifying the {{site.productname}} editor version deployed from Cloud - dev, testing, and stable releases]({{site.baseurl}}/cloud-deployment-guide/editor-plugin-version/#devtestingandstablereleases).
 

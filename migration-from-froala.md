@@ -6,7 +6,7 @@ description: Upgrading your rich text editor from Froala Editor v3 to TinyMCE 5.
 keywords: migration considerations premigration pre-migration froala
 ---
 
-This page covers the basic steps for migrating from Froala Editor 3 to {{site.productname}} {{site.productversion}}.
+This page covers the basic steps for migrating from Froala Editor 3 to {{site.productname}} {{site.productmajorversion}}.
 Procedures and links to our documentation have been included to assist with your migration to {{site.productname}}.
 
 **Covered in this section:**
@@ -19,7 +19,7 @@ Procedures and links to our documentation have been included to assist with your
 
 ## Migrating a Basic Froala Configuration to TinyMCE
 
-To migrate from a basic Froala 3 configuration to a basic {{site.productname}} {{site.productversion}} configuration, you need to:
+To migrate from a basic Froala 3 configuration to a basic {{site.productname}} {{site.productmajorversion}} configuration, you need to:
 
 1. Replace the Froala links and source scripts with a {{site.productname}} source script.
 2. Replace the Froala editor variable assignment with the `tinymce.init` function.
@@ -97,7 +97,7 @@ The following examples show an initial Froala configuration and the migrated {{s
 </html>
 ```
 
-#### TinyMCE {{site.productversion}} - A Basic Configuration
+#### TinyMCE {{site.productmajorversion}} - A Basic Configuration
 
 ```html
 <!DOCTYPE html>
@@ -161,7 +161,7 @@ The following examples show how plugins are included or enabled in the Froala an
 </head>
 ```
 
-#### TinyMCE {{site.productversion}} - Enabling Plugins
+#### TinyMCE {{site.productmajorversion}} - Enabling Plugins
 
 ```html
 <script>
@@ -237,7 +237,7 @@ The following examples show a custom toolbar layout in Froala and the same layou
 </script>
 ```
 
-#### TinyMCE {{site.productversion}} - Creating a Custom Toolbar Layout
+#### TinyMCE {{site.productmajorversion}} - Creating a Custom Toolbar Layout
 
 ```html
 <h2>{{site.productname}} Custom Toolbar</h2>
@@ -288,7 +288,7 @@ The following examples show Froala and {{site.productname}} configured for inlin
 </script>
 ```
 
-#### TinyMCE {{site.productversion}} - Configuring Inline Mode
+#### TinyMCE {{site.productmajorversion}} - Configuring Inline Mode
 
 ```html
 <h3>TinyMCE Inline Mode</h3>
@@ -358,7 +358,7 @@ The following examples show a Froala editor and a {{site.productname}} editor wi
 </script>
 ```
 
-#### TinyMCE {{site.productversion}} - Creating a Custom Toolbar Button
+#### TinyMCE {{site.productmajorversion}} - Creating a Custom Toolbar Button
 
 ```html
 <h2>{{site.productname}} Custom Button</h2>
@@ -436,7 +436,7 @@ The following examples show a Froala editor and a {{site.productname}} editor wi
 </script>
 ```
 
-#### TinyMCE {{site.productversion}} - Creating a Custom Drop-down Button
+#### TinyMCE {{site.productmajorversion}} - Creating a Custom Drop-down Button
 
 ```html
 <h2>{{site.productname}} Custom Drop-down Button</h2>

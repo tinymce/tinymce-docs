@@ -1,5 +1,5 @@
 ## Upgrading to the latest version of TinyMCE 5
-The procedure for upgrading to the latest version of {{site.productname}} {{site.productversion}} depends on the deployment type.
+The procedure for upgrading to the latest version of {{site.productname}} {{site.productmajorversion}} depends on the deployment type.
 
 * [Upgrading Tiny Cloud](#upgradingtinycloud).
 * [Upgrading TinyMCE Self-hosted using a package manager](##upgradingtinymceself-hostedusingapackagemanager).
@@ -18,37 +18,37 @@ Select from the following package managers.
 * [Bower](#bower)
 
 #### Yarn
-To upgrade to {{site.productname}} {{site.releaseversion}} using Yarn, run:
+To upgrade to {{site.productname}} {{site.productminorversion}} using Yarn, run:
 ```sh
 $ yarn upgrade {{site.prodnamecode}}
 ```
 
 #### npm
-To upgrade to {{site.productname}} {{site.releaseversion}} using npm, run:
+To upgrade to {{site.productname}} {{site.productminorversion}} using npm, run:
 ```sh
 $ npm install {{site.prodnamecode}}@latest --save
 ```
 
 #### Composer
-To upgrade to {{site.productname}} {{site.releaseversion}} using Composer, run:
+To upgrade to {{site.productname}} {{site.productminorversion}} using Composer, run:
 ```sh
 $ php composer.phar update "{{site.prodnamecode}}/{{site.prodnamecode}}"
 ```
 
 #### NuGet
-To upgrade to {{site.productname}} {{site.releaseversion}} using NuGet, run:
+To upgrade to {{site.productname}} {{site.productminorversion}} using NuGet, run:
 ```sh
 $ Install-Package {{site.productname}}
 ```
 
 #### Bower
-To upgrade to {{site.productname}} {{site.releaseversion}} using Bower, run:
+To upgrade to {{site.productname}} {{site.productminorversion}} using Bower, run:
 ```sh
-$ bower install {{site.prodnamecode}}#{{site.releaseversion}} --save
+$ bower install {{site.prodnamecode}}#{{site.productminorversion}} --save
 ```
 
 ### Upgrading TinyMCE Self-hosted manually
-To upgrade to {{site.productname}} {{site.releaseversion}} using a manually downloaded package:
+To upgrade to {{site.productname}} {{site.productminorversion}} using a manually downloaded package:
 
 1. Backup the `{{site.prodnamecode}}/` directory so any customizations can be restored after the upgrade.
 

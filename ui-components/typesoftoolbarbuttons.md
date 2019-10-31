@@ -6,7 +6,7 @@ description: This section demonstrates different types of toolbar buttons.
 keywords: toolbar toolbarbuttons buttons toolbarbuttonsapi
 ---
 
-There are four types of Toolbar Buttons in {{site.productname}} {{site.productversion}}:
+There are four types of Toolbar Buttons in {{site.productname}} {{site.productmajorversion}}:
 
 * [Basic button](#basicbutton)
 * [Toggle button](#togglebutton)

@@ -49,7 +49,7 @@ tinymce.init({
 
 ## Types of menu items
 
-There are three types of menu items in {{site.productname}} {{site.productversion}}:
+There are three types of menu items in {{site.productname}} {{site.productmajorversion}}:
 
 * Basic menu items
 * Nested menu items

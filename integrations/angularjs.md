@@ -6,7 +6,7 @@ description: This directive allows you to add a TinyMCE editor to your form elem
 keywords: integration integrate angular angularjs angular1
 ---
 
-Integration with AngularJS is currently done through [angular-ui-tinymce](https://github.com/angular-ui/ui-tinymce) a third party module. This how-to shows you how to setup a project using [AngularJS](https://angularjs.org/) and [{{site.productname}}](/docs/demo/basic-example/).
+Integration with AngularJS is currently done through [angular-ui-tinymce](https://github.com/angular-ui/ui-tinymce) a third party module. This how-to shows you how to setup a project using [AngularJS](https://angularjs.org/) and [{{site.productname}}]({{site.baseurl}}/docs/demo/basic-example/).
 
 ## 1. Setting up the project directory
 

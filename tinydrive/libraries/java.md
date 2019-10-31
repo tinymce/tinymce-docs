@@ -65,5 +65,5 @@ Go through the following additional resources to figure out how to configure {{s
 
 ## Need help? ##
 
-We are striving to make {{site.cloudfilemanager}} as useful and as simple as possible. For support related issues such as problems with JWT authentication and implementing {{site.cloudfilemanager}}, check our [help page](/tinydrive/get-help/) or please contact [support](https://support.tiny.cloud/hc/en-us/requests/new).
+We are striving to make {{site.cloudfilemanager}} as useful and as simple as possible. For support related issues such as problems with JWT authentication and implementing {{site.cloudfilemanager}}, check our [help page]({{site.baseurl}}/tinydrive/get-help/) or please contact [support](https://support.tiny.cloud/hc/en-us/requests/new).
 

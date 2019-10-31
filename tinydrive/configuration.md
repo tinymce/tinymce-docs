@@ -153,4 +153,4 @@ tinymce.init({
 
 ## Need help? ##
 
-Tiny is striving to make {{site.cloudfilemanager}} as useful and simple as possible. For support related issues such as problems with JWT authentication and implementing {{site.cloudfilemanager}}, check the [help page](/tinydrive/get-help/) or please contact [support](https://support.tiny.cloud/hc/en-us/requests/new).
+Tiny is striving to make {{site.cloudfilemanager}} as useful and simple as possible. For support related issues such as problems with JWT authentication and implementing {{site.cloudfilemanager}}, check the [help page]({{site.baseurl}}/tinydrive/get-help/) or please contact [support](https://support.tiny.cloud/hc/en-us/requests/new).

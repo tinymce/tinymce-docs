@@ -14,4 +14,4 @@ Getting started with {{site.cloudfilemanager}} can be tricky if you are new to J
 
 If you haven't tried any of the [Starter projects]({{site.baseurl}}/tinydrive/getting-started/#starterprojects), we recommend you try them before trying to implement your own solution. The source is also available on Github to study.
 
-For support related issues such as problems with JWT authentication and implementing {{site.cloudfilemanager}} [submit a support request](https://support.tiny.cloud/hc/en-us/requests/new).
+For support related issues such as problems with JWT authentication and implementing {{site.cloudfilemanager}} [submit a support request]({{site.supporturl}}).

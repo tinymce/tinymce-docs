@@ -12,7 +12,7 @@ Users can easily configure the {{site.productname}} editor in Swing through the 
 
 To start using {{site.productname}} for Swing as your new rich text editor, the first step is to obtain a copy of the **Integration**.
 
-Contact [customer support](https://www.tiny.cloud/contact/) to discuss how to get started with our latest release.
+Contact [{{site.supportname}}]({{site.supporturl}}) to discuss how to get started with our latest release.
 
 ## Get started with our TinyMCE in Swing integration
 
@@ -84,4 +84,4 @@ For more examples check the [GitHub repository](https://github.com/tinymce/tinym
 
 #### A note about integrations
 
-> Note: {{site.companyname}} references to third-party integrations/code to help users build great products with the {{site.productname}} editor. For support related issues such as queries about this integration, please [contact support](https://support.tiny.cloud/hc/en-us/requests/new) or join the [{{site.productname}} Community](https://community.tiny.cloud/).
+> Note: {{site.companyname}} references to third-party integrations/code to help users build great products with the {{site.productname}} editor. For support related issues such as queries about this integration, please contact [{{site.supportname}}]({{site.supporturl}}) or join the [{{site.productname}} Community](https://community.tiny.cloud/).

@@ -19,11 +19,11 @@ Page Embed provides more flexibility than an inline script and can contain an en
 
 To try out Page Embed and {{site.cloudname}}-delivered editor, the first step is to create a free [{{site.accountpage}}](https://www.tiny.cloud/download/).
 
-> The free {{site.accountpage}} is provisioned with a free 30-day trial of all {{site.cloudname}} [premium plugins](https://apps.tiny.cloud/product-category/tiny-cloud-extensions/), with no credit card information or commitment required.
+> The free {{site.accountpage}} is provisioned with a free 30-day trial of all {{site.cloudname}} [premium plugins]({{site.cloudextensions}}), with no credit card information or commitment required.
 
 ### Buy TinyMCE Page Embed
 
-Start with this [dedicated product page](https://apps.tiny.cloud/products/page-embed/) to see all the flexible pricing options. OEM and enterprise customers should [contact sales directly](https://www.tiny.cloud/contact/).
+Start with this [dedicated product page]({{site.productpages}}/page-embed/) to see all the flexible pricing options. OEM and enterprise customers should [contact sales directly](https://www.tiny.cloud/contact/).
 
 For more information on Page Embed refer to the full [documentation]({{site.baseurl}}/plugins/pageembed/).
 

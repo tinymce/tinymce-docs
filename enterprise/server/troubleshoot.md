@@ -153,4 +153,4 @@ Once downloaded:
 	![Curl on Windows step 4]({{ site.baseurl }}/images/spell-checking-curl-windows-4.png)
 
 ## Need more help?
-If you are still experiencing problems, please contact [{{site.supportname}}](https://support.tiny.cloud).
+If you are still experiencing problems, please contact [{{site.supportname}}]({{site.supporturl}}).

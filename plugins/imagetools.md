@@ -47,7 +47,7 @@ tinymce.init({
 
 Image Tools cannot work with images from another domains due to security measures imposed by browsers on so called cross-origin HTTP requests. To overcome these constraints, Cross-Origin Resource Sharing (CORS) must be explicitly enabled on the specified domain(s) (for more information check [HTTP access control](https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS)).
 
-An array of supported domains for the images (with CORS enabled on them) can be supplied to TinyMCE via `imagetools_cors_hosts` option.
+An array of supported domains for the images (with CORS enabled on them) can be supplied to {{site.productname}} via `imagetools_cors_hosts` option.
 
 > Note: Each string in the array *must* be in the format of `mydomain.com`. Do not include protocols (`http://, https://`) or any trailing slashes in your domains.
 

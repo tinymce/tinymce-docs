@@ -19,11 +19,11 @@ The ability to reuse existing formatting saves the user time and ensures consist
 
 To try out Format Painter and {{site.cloudname}}-delivered editor, the first step is to create a free [{{site.accountpage}}](https://www.tiny.cloud/download/).
 
-> The free {{site.accountpage}} is provisioned with a free 30-day trial of all {{site.cloudname}} [premium plugins](https://apps.tiny.cloud/product-category/tiny-cloud-extensions/), with no credit card information or commitment required.
+> The free {{site.accountpage}} is provisioned with a free 30-day trial of all {{site.cloudname}} [premium plugins]({{site.cloudextensions}}), with no credit card information or commitment required.
 
 ### Buy TinyMCE Format Painter
 
-Start with this [dedicated product page](https://apps.tiny.cloud/products/format-painter/) to see all the flexible pricing options. OEM and enterprise customers should [contact sales directly](https://www.tiny.cloud/contact/).
+Start with this [dedicated product page]({{site.productpages}}/format-painter/) to see all the flexible pricing options. OEM and enterprise customers should [contact sales directly](https://www.tiny.cloud/contact/).
 
 For more information on Format Painter refer to the full [documentation]({{site.baseurl}}/plugins/formatpainter/).
 

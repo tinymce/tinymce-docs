@@ -16,7 +16,7 @@ keywords: tinydrive .net php relative_urls
 
 If you would like to try out {{site.cloudfilemanager}} and the {{site.cloudname}}-delivered editor, the first step is to create a free [{{site.accountpage}}](https://www.tiny.cloud/download/).  When you create a {{site.accountpage}}, you are assigned an API key, which is required for the implementation of {{site.cloudfilemanager}}.
 
-> The API key is also provisioned with a free 30-day trial of all of our [premium plugins](https://apps.tiny.cloud/product-category/tiny-cloud-extensions/), with no credit card information or commitment required.
+> The API key is also provisioned with a free 30-day trial of all of our [premium plugins]({{site.cloudextensions}}), with no credit card information or commitment required.
 
 #### Configuring the editor for Tiny Drive
 

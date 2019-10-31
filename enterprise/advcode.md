@@ -16,4 +16,4 @@ The [Advanced Code Editor]({{ site.baseurl }}/plugins/advcode/) plugin (`advcode
 
 ## How to get the Advanced Code Editor plugin
 
-The Advanced Code feature is a [premium feature](https://www.tinymce.com/pricing/), see the [{{site.productname}} Advanced Code Editor](https://apps.tiny.cloud/products/advanced-code-editor/) page for more information.
+The Advanced Code feature is a [premium feature](https://www.tinymce.com/pricing/), see the [{{site.productname}} Advanced Code Editor]({{site.productpages}}/advanced-code-editor/) page for more information.

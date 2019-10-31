@@ -4,9 +4,9 @@ This option allows you to specify the language that {{site.productname}}'s user 
 
 If you wish to use a language other than English, please follow these steps:
 
-1. Download the language pack you wish to use [from here](https://www.tinymce.com/download/language-packages/).
+1. Download the language pack you wish to use [from here]({{site.gettiny}}/language-packages/).
 2. Unpack the language file into your `tinymce/langs` folder.
-3. Set the [`language`]({{ site.baseurl }}/configure/localization/#language) option in your {{site.productname}} configuration to the language code in the list below (which you'll also find on the language pack [download page](https://www.tinymce.com/download/language-packages/).
+3. Set the [`language`]({{ site.baseurl }}/configure/localization/#language) option in your {{site.productname}} configuration to the language code in the list below (which you'll also find on the language pack [download page]({{site.gettiny}}/language-packages/).
 4. Confirm that the language has been set successfully by loading {{site.productname}}.
 
 Please note, the language code you set in your {{site.productname}} configuration must match the filename of the language file. If the language file is not found, {{site.productname}} will not load.

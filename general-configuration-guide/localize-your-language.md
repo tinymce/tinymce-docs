@@ -15,7 +15,7 @@ This section demonstrates how to change {{site.productname}}'s user interface to
 
 ### Step 1
 
-Go to the [language download page](https://www.tinymce.com/download/language-packages/) to review a list of language packs available for {{site.productname}}.
+Go to the [language download page]({{site.gettiny}}/language-packages/) to review a list of language packs available for {{site.productname}}.
 
 Click the download link on the far right of the table for a single language. Check the box beside each language and then click the download button at the bottom of the table for multiple languages.
 
@@ -40,7 +40,7 @@ Load {{site.productname}} to confirm that the language is set correctly.
 
 The following code snippet sets {{site.productname}}'s language to Chinese and the text directionality from right to left.
 
-[Download the Chinese language](https://www.tinymce.com/download/language-packages/) pack to test this functionality. Install a *local instance* of {{site.productname}} from the [downloads page](https://www.tinymce.com/download/). Follow the [self-hosted install instructions]({{ site.baseurl }}/general-configuration-guide/advanced-install/#sdkinstall).
+[Download the Chinese language]({{site.gettiny}}/language-packages/) pack to test this functionality. Install a *local instance* of {{site.productname}} from the [downloads page]({{site.gettiny}}/). Follow the [self-hosted install instructions]({{ site.baseurl }}/general-configuration-guide/advanced-install/#sdkinstall).
 
 ```html
 <!DOCTYPE html>

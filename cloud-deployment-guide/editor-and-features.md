@@ -10,7 +10,7 @@ keywords: tinymce cloud script textarea apiKey
 
 {{site.cloudname}} can be used without an API key. Refer to the [Introduction & getting started ]({{site.baseurl}}/general-configuration-guide) guide for more information. Sign up for an API key and update the script tag to use premium plugins or avoid the in-editor developer warning.
 
-All {{site.cloudname}} accounts include a free, pre-configured {{site.cloudname}} image proxy service. This setup uses the [Image tools]({{  site.baseurl }}/plugins/imagetools/) plugin.
+All {{site.accountpage}} include a free, pre-configured {{site.cloudname}} image proxy service. This setup uses the [Image tools]({{  site.baseurl }}/plugins/imagetools/) plugin.
 
 ## Integrating TinyMCE for the first time
 

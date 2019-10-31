@@ -42,7 +42,7 @@ If a file is moved or renamed, it will still have the same unique URL, so the re
 
 ## User specific root
 
-It is common to desire to be able to have user specific paths so that each user within a system gets its directory. This can be done by setting the `https://claims.tiny.cloud/drive/root` custom JWT claim to a path within {{site.cloudfilemanager}} account. This path will automatically be constructed when the user is accessing {{site.cloudfilemanager}} using a JWT key with that claim. The user can only see and manage files within that root.
+It is common to desire to be able to have user specific paths so that each user within a system gets its directory. This can be done by setting the `https://claims.tiny.cloud/drive/root` custom JWT claim to a path within {{site.accountpage}}. This path will automatically be constructed when the user is accessing {{site.cloudfilemanager}} using a JWT key with that claim. The user can only see and manage files within that root.
 
 ## Security & performance
 

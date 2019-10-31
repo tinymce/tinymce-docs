@@ -68,7 +68,7 @@ To upgrade to {{site.productname}} {{site.releaseversion}} using a manually down
 1. Download the latest version of {{site.productname}}.
 
     * For the {{site.productname}} Community Version, download `{{site.prodnamecode}}_<VERSION>.zip` from [Get {{site.productname}} - Self-hosted releases](https://www.tiny.cloud/get-tiny/self-hosted/), where _`<VERSION>`_ is the latest version of {{site.productname}}.
-    * For the {{site.productname}} Enterprise Version, download the **{{site.productname}} Enterprise Bundle** from [My Account > Downloads](https://www.tiny.cloud/my-account/downloads/). The downloaded file will be named `enterprise_latest.zip`.
+    * For the {{site.productname}} Enterprise Version, download the **{{site.productname}} Enterprise Bundle** from [{{site.accountpage}} > Downloads](https://www.tiny.cloud/my-account/downloads/). The downloaded file will be named `enterprise_latest.zip`.
 
 1. Extract the downloaded `.zip` file to a temporary location.
 1. (If required) Install the latest language packs from [Get {{site.productname}} - Language Packages](https://www.tiny.cloud/get-tiny/language-packages/).

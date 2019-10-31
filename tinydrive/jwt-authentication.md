@@ -18,7 +18,7 @@ JWT is a standard authorization solution for web services and is documented in m
 
 {{site.cloudname}} services tokens use public/private RSA key pairs. The {{site.cloudname}} services only store the public key, allowing developers to have full control over the authentication.
 
-The private/public key pair can be created on your [Tiny - My Account page](https://www.tiny.cloud/my-account/jwt/), however we only store the public key on the My Account page. The private key should be downloaded and stored in your backend.
+The private/public key pair can be created on your [Tiny - {{site.accountpage}} page](https://www.tiny.cloud/my-account/jwt/), however we only store the public key on the {{site.accountpage}} page. The private key should be downloaded and stored in your backend.
 
 > **Important**: Keep the private key secure, do not commit files containing the key to public repositories or websites.
 
@@ -65,7 +65,7 @@ We recommend reading up and trying to understand how JWT works; you need some ne
 
 ## PHP token provider endpoint example
 
-This example uses the [Firebase JWT library](https://github.com/firebase/php-jwt) provided through the Composer dependency manager. The private key should be the private key that was generated through your Tiny Account.
+This example uses the [Firebase JWT library](https://github.com/firebase/php-jwt) provided through the Composer dependency manager. The private key should be the private key that was generated through your {{site.accountpage}}.
 
 ### jwt.php ###
 

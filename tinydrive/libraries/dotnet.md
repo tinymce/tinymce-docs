@@ -13,7 +13,7 @@ This project will help you get started with {{site.cloudfilemanager}} using .NET
 ## Requirements
 
 Before you start your journey with {{site.cloudfilemanager}}, it will go a lot smoother if you have done these steps:
-1. Login/register to [tiny.cloud](https://apps.tiny.cloud/my-account/)
+1. Login/register to [{{site.accountpage}}](https://apps.tiny.cloud/my-account/)
 2. Get a [TinyMCE API Key](https://apps.tiny.cloud/my-account/key-manager/)
 3. Get a [JWT Key](https://apps.tiny.cloud/my-account/jwt-key-manager/)
 
@@ -35,11 +35,11 @@ $ git clone git@github.com:tinymce/tinydrive-dotnet-starter.git
 
 ### 2. Change the `apiKey` in `tinydrive-dotnet-mvc-starter/appsettings.Development.json`
 
-You get the api key from the `API Key Manager` account manager at http://tiny.cloud.
+You get the api key from the `API Key Manager` {{site.accountpage}} page at http://tiny.cloud.
 
 ### 3. Create a `tinydrive-dotnet-mvc-starter/private.key` file containing your generated private RSA key
 
-You get the private RSA key from the `JWT Key Manager` account manager at http://tiny.cloud.
+You get the private RSA key from the `JWT Key Manager` {{site.accountpage}} page at http://tiny.cloud.
 
 ### 4. Go to the directory and start the dev server
 

@@ -41,7 +41,7 @@ It also does the same for images, automatically linking to the source image URL.
 
 ### Buy TinyMCE PowerPaste
 
-Start with our [dedicated product page](https://about.tiny.cloud/products/powerpaste/) to see our flexible pricing options. OEM and enterprise customers should [contact sales directly]({{site.pricingpage}}). Still not sure? Check out the demo below.
+Start with our [dedicated product page](https://about.tiny.cloud/products/powerpaste/) to see our flexible pricing options. OEM and enterprise customers should [contact sales directly]({{site.contactpage}}). Still not sure? Check out the demo below.
 
 ## PowerPaste demo
 

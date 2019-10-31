@@ -51,7 +51,7 @@ The free {{site.accountpage}} is provisioned with a free 30-day trial of all {{s
 
 #### Buy TinyMCE Case Change
 
-Start with this [dedicated product page]({{site.productpages}}/case-change/) to see all the flexible pricing options. OEM and enterprise customers should [contact sales directly](https://www.tiny.cloud/contact/).
+Start with this [dedicated product page]({{site.productpages}}/case-change/) to see all the flexible pricing options. OEM and enterprise customers should [contact sales directly]({{site.contactpage}}).
 
 For more information on **Case Change** refer to the full [documentation]({{site.baseurl}}/plugins/casechange/).
 

@@ -23,7 +23,7 @@ To try out Page Embed and {{site.cloudname}}-delivered editor, the first step is
 
 ### Buy TinyMCE Page Embed
 
-Start with this [dedicated product page]({{site.productpages}}/page-embed/) to see all the flexible pricing options. OEM and enterprise customers should [contact sales directly](https://www.tiny.cloud/contact/).
+Start with this [dedicated product page]({{site.productpages}}/page-embed/) to see all the flexible pricing options. OEM and enterprise customers should [contact sales directly]({{site.contactpage}}).
 
 For more information on Page Embed refer to the full [documentation]({{site.baseurl}}/plugins/pageembed/).
 

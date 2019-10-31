@@ -41,7 +41,7 @@ Users can easily configure the TinyMCE editor in Swing through the **TinyMCE for
 
 To start using TinyMCE for Swing as your new rich text editor, the first step is to obtain a copy of the **Integration**.
 
-Contact [customer support](https://www.tiny.cloud/contact/) to discuss pricing options for a customized TinyMCE for Swing integration for your specific use case.
+Contact [customer support]({{site.contactpage}}) to discuss pricing options for a customized TinyMCE for Swing integration for your specific use case.
 
 For more information on **TinyMCE for Swing** refer to the full [documentation]({{site.baseurl}}/integrations/swing/).
 

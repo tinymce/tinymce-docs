@@ -99,4 +99,4 @@ The free {{site.accountpage}} is provisioned with a free 30-day trial of all {{s
 
 #### Buy Premium Skins and Icon Packs
 
-Start with this [dedicated product page]({{site.productpages}}/skins-and-icon-packs/) to see all the flexible pricing options. OEM and enterprise customers should [contact sales directly](https://www.tiny.cloud/contact/).
+Start with this [dedicated product page]({{site.productpages}}/skins-and-icon-packs/) to see all the flexible pricing options. OEM and enterprise customers should [contact sales directly]({{site.contactpage}}).

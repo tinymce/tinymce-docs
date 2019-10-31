@@ -22,4 +22,4 @@ The editor demo on the [{{site.companyname}} homepage](https://www.tiny.cloud/) 
 
 ![Demo]({{site.baseurl}}/images/screenshot-tiny-editor.png)
 
-Have questions about this? [Contact us](https://www.tiny.cloud/contact/) for help.
+Have questions about this? [Contact us]({{site.contactpage}}) for help.

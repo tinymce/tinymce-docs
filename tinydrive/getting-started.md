@@ -7,12 +7,12 @@ keywords: tinydrive starter projects
 ---
 
 > Requirements
-> 1. Register for an API key at [{{site.accountpage}}](https://www.tiny.cloud/signup/)
-> 2. Generate a JWT key at [{{site.accountpage}}](https://www.tiny.cloud/signup/)
+> 1. Register for an API key at [{{site.accountpage}}]({{site.accountsignup}})
+> 2. Generate a JWT key at [{{site.accountpage}}]({{site.accountpageurl}})
 > 3. Store these keys temporarily, you will need them later.
 > Do this before proceeding and it will go a lot smoother
 
-{{site.cloudfilemanager}} allows trouble free management of assets such as images and files in the cloud. {{site.cloudfilemanager}} is only available in [{{site.cloudname}}](https://www.tiny.cloud/signup/) and requires registering for an API key.
+{{site.cloudfilemanager}} allows trouble free management of assets such as images and files in the cloud. {{site.cloudfilemanager}} is only available in [{{site.cloudname}}]({{site.accountsignup}}) and requires registering for an API key.
 
 To enable this functionality in the {{site.productname}} editor, add `tinydrive` to the list of plugins in the `tinymce.init` call. The user also needs to be authenticated using a [JSON Web Token (JWT)]({{site.baseurl}}/tinydrive/jwt-authentication/).
 

@@ -17,7 +17,7 @@ The ability to reuse existing formatting saves the user time and ensures consist
 
 #### Creating an account
 
-To try out Format Painter and {{site.cloudname}}-delivered editor, the first step is to create a free [{{site.accountpage}}](https://www.tiny.cloud/download/).
+To try out Format Painter and {{site.cloudname}}-delivered editor, the first step is to create a free [{{site.accountpage}}]({{site.accountsignup}}).
 
 > {{site.accountpage}}s receive a free 30-day trial of all {{site.cloudname}} [premium plugins]({{site.cloudextensions}}), with no credit card information or commitment required.
 

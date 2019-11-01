@@ -14,7 +14,7 @@ keywords: tinydrive .net php relative_urls
 
 #### Creating an account
 
-If you would like to try out {{site.cloudfilemanager}} and the {{site.cloudname}}-delivered editor, the first step is to create a free [{{site.accountpage}}](https://www.tiny.cloud/download/).  When you create a {{site.accountpage}}, you are assigned an API key, which is required for the implementation of {{site.cloudfilemanager}}.
+If you would like to try out {{site.cloudfilemanager}} and the {{site.cloudname}}-delivered editor, the first step is to create a free [{{site.accountpage}}]({{site.accountsignup}}).  When you create a {{site.accountpage}}, you are assigned an API key, which is required for the implementation of {{site.cloudfilemanager}}.
 
 > The API key is also provisioned with a free 30-day trial of all of our [premium plugins]({{site.cloudextensions}}), with no credit card information or commitment required.
 

@@ -86,7 +86,7 @@ None of the configuration properties are **required** for `tinymce-angular` to w
 #### `apiKey`
 {{site.cloudname}} API key. Required for deployments using the {{site.cloudname}} to provide the {{site.productname}} editor.
 
-To register for a {{site.cloudname}} API key, visit the [sign-up page](https://www.tiny.cloud/signup/).
+To register for a {{site.cloudname}} API key, visit the [sign-up page]({{site.accountsignup}}).
 
 **Default value:** `no-api-key`
 

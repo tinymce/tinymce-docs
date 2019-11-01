@@ -38,6 +38,6 @@ We provide a working example for integrating the {{site.productname}} plugin int
 
 ### Buy Comments 2.0
 
-Start with the [pricing](https://www.tiny.cloud/pricing/) page to see our flexible pricing options. Enterprise customers should [contact sales directly]({{site.contactpage}}).
+Start with the [pricing]({{site.pricingpage}}) page to see our flexible pricing options. Enterprise customers should [contact sales directly]({{site.contactpage}}).
 
 Still not sure? Check out the [demo]({{site.baseurl}}/demo/comments-2/) that displays all the features in Comments 2.0.

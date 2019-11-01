@@ -9,7 +9,7 @@ keywords: plugin
 
 For most developers, the real power of {{site.productname}}'s functionality is found in its plugins. [Plugins]({{ site.baseurl }}/plugins/) either extend default editor functionality or add new functionality. For example, the [Advanced List]({{ site.baseurl }}/plugins/advlist/) plugin adds extra options to the toolbar's existing list controls, while the [Code]({{ site.baseurl }}/plugins/code/) plugin adds entirely new functionality.
 
-Because most people install {{site.productname}} via {{site.cloudname}} or by downloading a package, they mistakenly think plugins are part of the {{site.productname}} "core". While all of the plugins (excluding the professional features) are included in those packages, each plugin is in a separate .js file. In fact, if you use the [custom package]({{site.gettiny}}/custom-builds/) download option, you're able to select only the plugins you want to be included, or you can exclude all of the plugins built by the {{site.productname}} team.
+Because most people install {{site.productname}} via {{site.cloudname}} or by downloading a package, they mistakenly think plugins are part of the {{site.productname}} "core". While all of the plugins (excluding the professional features) are included in those packages, each plugin is in a separate .js file. In fact, if you use the [custom package]({{site.gettiny}}/custom-builds/) download option (TinyMCE 4 only), you're able to select only the plugins you want to be included, or you can exclude all of the plugins built by the {{site.productname}} team.
 
 In this section, we'll show you how easy it is to activate a plugin by highlighting two of the more popular plugins.
 

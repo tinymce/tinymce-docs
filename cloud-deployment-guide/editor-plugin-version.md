@@ -62,7 +62,7 @@ This channel deploys the latest release of {{site.productname}} that has passed 
 
 Use the URL query parameters to specify the version of each premium plugin. This is used when deployment is through the [{{site.productname}} editor and premium plugins via {{site.cloudname}}]({{ site.baseurl }}/cloud-deployment-guide/editor-and-features) or deploying [only premium plugins from {{site.cloudname}}]({{ site.baseurl }}/cloud-deployment-guide/features-only).
 
-For information on using Mentions, see:
+#### Mentions
 
 * [Developer documentation]({{ site.baseurl }}/plugins/mentions/)
 * [Supported versions](https://plugins.tinymce.com/versions/mentions)

@@ -49,8 +49,8 @@ The following is a complete example:
 
 The example below has the following:
 
-* The {{site.accountpage}} `API key` has the value *TEST_API_KEY*.
-* The {{site.accountpage}} has the [Spell Checker Pro]({{ site.baseurl }}/plugins/tinymcespellchecker/) plugin enabled.
+* The {{site.cloudname}} `API key` has the value *TEST_API_KEY*.
+* The {{site.cloudname}} has the [Spell Checker Pro]({{ site.baseurl }}/plugins/tinymcespellchecker/) plugin enabled.
 
 ```js
 <html>

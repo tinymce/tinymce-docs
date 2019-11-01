@@ -12,7 +12,6 @@ There are multiple ways to instantiate {{site.productname}}. Accessing {{site.pr
 * [{{site.cloudname}}](#cloudinstall)
 * [Package Managers](#packagemanagerinstalloptions)
 * [SDK / Download](#sdkinstall)
-* [jQuery](#jqueryinstall)
 * [Custom Build](#custombuildinstall)
 
 
@@ -48,11 +47,6 @@ There are multiple ways to instantiate {{site.productname}}. Accessing {{site.pr
 ## SDK Install
 
 {% include install/sdk.md %}
-
-
-## jQuery Install
-
-{% include install/jquery.md %}
 
 
 ## Custom Build Install

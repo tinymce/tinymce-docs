@@ -6,7 +6,7 @@ description: A reference list of all TinyMCE dialog components.
 keywords: dialog dialogapi
 ---
 
-This chapter is a reference list of all TinyMCE dialog components.
+This chapter is a reference list of all {{site.productname}} dialog components.
 
 ## Body components
 

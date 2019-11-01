@@ -9,7 +9,7 @@ controls: toolbar button
 
 ## Live example
 
-This example displays how to add the ability to start or join a conversation by adding comments to the content within the TinyMCE editor.
+This example displays how to add the ability to start or join a conversation by adding comments to the content within the {{site.productname}} editor.
 
 In this example, the features in Comments 2.0 are highlighted, including adding a comment, replying to a comment, and deleting a comment.
 

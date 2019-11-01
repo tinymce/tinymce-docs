@@ -11,7 +11,7 @@ controls: toolbar button, menu item
 
 The **Case Change** plugin is a time saving and handy extension that allows changing the case of text in block selection to uppercase, lowercase, or title case.
 
-**Case Change** is a premium plugin from Tiny. Please see the [Premium features]({{site.baseurl}}/enterprise/casechange/) section for all the buying options.
+**Case Change** is a premium plugin from {{site.companyname}}. Please see the [Premium features]({{site.baseurl}}/enterprise/casechange/) section for all the buying options.
 
 Once you have obtained the **Case Change** plugin, refer to the following instructions for using it.
 

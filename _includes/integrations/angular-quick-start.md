@@ -1,9 +1,9 @@
 ## TinyMCE Angular integration quick start guide
 
-The [Official TinyMCE Angular component](https://github.com/tinymce/tinymce-angular) integrates TinyMCE into Angular projects.
-This procedure creates a [basic Angular application](https://angular.io/guide/setup-local) containing a TinyMCE editor based on our [Basic TinyMCE example]({{site.baseurl}}/demo/basic-example/).
+The [Official {{site.productname}} Angular component](https://github.com/tinymce/tinymce-angular) integrates {{site.productname}} into Angular projects.
+This procedure creates a [basic Angular application](https://angular.io/guide/setup-local) containing a {{site.productname}} editor based on our [Basic {{site.productname}} example]({{site.baseurl}}/demo/basic-example/).
 
-For examples of the TinyMCE Angular integration, visit [the tinymce-angular storybook](https://tinymce.github.io/tinymce-angular/).
+For examples of the {{site.productname}} Angular integration, visit [the tinymce-angular storybook](https://tinymce.github.io/tinymce-angular/).
 
 ### Prerequisites
 
@@ -11,8 +11,8 @@ This procedure requires:
 * [Node.js (and npm)](https://nodejs.org/).
 * Access to `tinymce.min.js` on either:
 
-    * [Tiny Cloud]({{site.baseurl}}/cloud-deployment-guide/editor-and-features/).
-    * TinyMCE Self-hosted. See [Advanced installation choices]({{site.baseurl}}/general-configuration-guide/advanced-install/) for details on self-hosting TinyMCE.
+    * [{{site.cloudname}}]({{site.baseurl}}/cloud-deployment-guide/editor-and-features/).
+    * {{site.productname}} Self-hosted. See [Advanced installation choices]({{site.baseurl}}/general-configuration-guide/advanced-install/) for details on self-hosting {{site.productname}}.
 
 ### Procedure
 
@@ -61,7 +61,7 @@ This procedure requires:
 6. Using a text editor, open `/path/to/tinymce-angular-demo/src/app/app.component.html` and replace the contents with:
 
     ```html
-    <h1>TinyMCE 5 Angular Demo</h1>
+    <h1>{{site.productname}} {{site.productmajorversion}} Angular Demo</h1>
     <editor
       initialValue="<p>This is the initial content of the editor</p>"
       [init]="{
@@ -80,12 +80,12 @@ This procedure requires:
       >
     </editor>
     ```
-    This TinyMCE editor configuration should replicate the example on the [Basic example page]({{site.baseurl}}/demo/basic-example/).
-7. Provide access to TinyMCE using Tiny Cloud or by self-hosting TinyMCE.
+    This {{site.productname}} editor configuration should replicate the example on the [Basic example page]({{site.baseurl}}/demo/basic-example/).
+7. Provide access to {{site.productname}} using {{site.cloudname}} or by self-hosting {{site.productname}}.
 
-    * **Tiny Cloud**
+    * **{{site.cloudname}}**
 
-        Include the `apiKey` option in the editor element and include your [TinyMCE API key]({{site.shared_baseurl}}/signup/).
+        Include the `apiKey` option in the editor element and include your [{{site.cloudname}} API key]({{site.shared_baseurl}}/signup/).
 
         Such as:
 
@@ -93,20 +93,20 @@ This procedure requires:
         <Editor apiKey="your-api-key" [init]={% raw %}{{% endraw %} /* your other settings */ {% raw %}}{% endraw %} />
         ```
 
-    * **TinyMCE Self-hosted**
+    * **{{site.productname}} Self-hosted**
 
-      TinyMCE can be self-hosted by: including TinyMCE within the application, deploying TinyMCE independent of the Angular application, or bundling TinyMCE with the Angular application.
+      {{site.productname}} can be self-hosted by: including {{site.productname}} within the application, deploying {{site.productname}} independent of the Angular application, or bundling {{site.productname}} with the Angular application.
 
-      * **Including TinyMCE within the Application**
+      * **Including {{site.productname}} within the Application**
 
-        To load TinyMCE and TinyMCE-Angular in a project managed by the [Angular CLI Tool](https://angular.io/cli):
+        To load {{site.productname}} and {{site.productname}}-Angular in a project managed by the [Angular CLI Tool](https://angular.io/cli):
 
         1. Install the `tinymce-angular` package and save it to your `package.json` with `--save`.
 
             ```
             $ npm install --save tinymce
             ```
-        2. Using a text editor, open `angular.json` and add TinyMCE to the *global scripts* tag.
+        2. Using a text editor, open `angular.json` and add {{site.productname}} to the *global scripts* tag.
 
             For example:
 
@@ -115,7 +115,7 @@ This procedure requires:
               "node_modules/tinymce/tinymce.min.js"
             ]
             ```
-        3. Using a text editor; open `angular.json` and add the TinyMCE skins, themes, and plugins to the `assets` property.
+        3. Using a text editor; open `angular.json` and add the {{site.productname}} skins, themes, and plugins to the `assets` property.
 
             ```json
             "assets": [
@@ -135,20 +135,20 @@ This procedure requires:
             }"></editor>
             ```
 
-      * **Deploy TinyMCE independent of the Angular application**
+      * **Deploy {{site.productname}} independent of the Angular application**
 
-        To use an independent deployment of TinyMCE, add a script to either the `<head>` or the end of the `<body>` of the HTML file, such as:
+        To use an independent deployment of {{site.productname}}, add a script to either the `<head>` or the end of the `<body>` of the HTML file, such as:
         ```html
         <script src="/path/to/tinymce.min.js"></script>
         ```
 
-        To use an independent deployment of TinyMCE with the create a Angular application, add the script to `/path/to/tinymce-angular-demo/src/app/app.component.html`.
+        To use an independent deployment of {{site.productname}} with the create a Angular application, add the script to `/path/to/tinymce-angular-demo/src/app/app.component.html`.
 
-        For information on self-hosting TinyMCE, see: [Advanced installation choices]({{site.baseurl}}/general-configuration-guide/advanced-install/).
+        For information on self-hosting {{site.productname}}, see: [Advanced installation choices]({{site.baseurl}}/general-configuration-guide/advanced-install/).
 
-      * **Bundling TinyMCE with the Angular application using a module loader**
+      * **Bundling {{site.productname}} with the Angular application using a module loader**
 
-        To bundle TinyMCE using a module loader (such as Webpack and Browserify), see: [Usage with module loaders]({{site.baseurl}}/advanced/usage-with-module-loaders/).
+        To bundle {{site.productname}} using a module loader (such as Webpack and Browserify), see: [Usage with module loaders]({{site.baseurl}}/advanced/usage-with-module-loaders/).
 
 8. Test the application using the Angular development server.
     * To start the development server, navigate to the `tinymce-angular-demo` directory and run:
@@ -178,8 +178,8 @@ The application has now been deployed on the web server.
 
 ### Next Steps
 
-* For examples of the TinyMCE integration, see: [the tinymce-angular storybook](https://tinymce.github.io/tinymce-angular/).
+* For examples of the {{site.productname}} integration, see: [the tinymce-angular storybook](https://tinymce.github.io/tinymce-angular/).
 * For information on customizing:
 
-    * TinyMCE, see: [Basic setup]({{site.baseurl}}/general-configuration-guide/basic-setup/).
+    * {{site.productname}}, see: [Basic setup]({{site.baseurl}}/general-configuration-guide/basic-setup/).
     * The Angular application, see: [the Angular documentation](https://angular.io/docs).

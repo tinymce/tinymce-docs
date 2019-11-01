@@ -7,7 +7,7 @@ keywords: row cell column table_appearance_options table_clone_elements table_gr
 controls: toolbar button, menu item
 ---
 
-The `table` plugin adds table management functionality to TinyMCE. It also adds a new menubar item `Table` with various options in its dropdown including `Insert table` and options to modify cells, rows and columns, and a toolbar button with the same functionality.
+The `table` plugin adds table management functionality to {{site.productname}}. It also adds a new menubar item `Table` with various options in its dropdown including `Insert table` and options to modify cells, rows and columns, and a toolbar button with the same functionality.
 
 **Type:** `String`
 
@@ -28,7 +28,7 @@ These settings affect the execution of the `table` plugin and let you modify the
 
 ### `table_toolbar`
 
-This option allows you to specify the buttons and the order that they will appear on within TinyMCE's inline contextual toolbar for tables. To specify the controls that should appear on TinyMCE's table toolbar, the `table_toolbar` option should be provided with a space separated list of toolbar controls. To create groups within this list, please add `|` pipe characters between the groups of controls that you would like to create. If you want to disable this toolbar simply set the value to an empty string.
+This option allows you to specify the buttons and the order that they will appear on within {{site.productname}}'s inline contextual toolbar for tables. To specify the controls that should appear on {{site.productname}}'s table toolbar, the `table_toolbar` option should be provided with a space separated list of toolbar controls. To create groups within this list, please add `|` pipe characters between the groups of controls that you would like to create. If you want to disable this toolbar simply set the value to an empty string.
 
 **Type:** `String`
 

@@ -9,7 +9,7 @@ keywords: dialog dialogapi api
 
 A dialog is a popup UI element that contains a header, body and footer, each containing specific types of sub-components. Dialogs also have an instance API and several configuration options, including configurable callback functions for certain dialog events.
 
-> Note: TinyMCE also supports [URL dialogs]({{site.baseurl}}/ui-components/urldialog/). Configuring a URL dialog is quite different to configuring a standard TinyMCE dialog.
+> Note: {{site.productname}} also supports [URL dialogs]({{site.baseurl}}/ui-components/urldialog/). Configuring a URL dialog is quite different to configuring a standard {{site.productname}} dialog.
 
 ### Use cases
 
@@ -25,7 +25,7 @@ More complex dialogs can use [tab panels]({{site.baseurl}}/ui-components/dialogc
 ![Special Characters]({{site.baseurl}}/images/specialchars.png)
 
 #### Interactive dialogs
-TinyMCE dialogs can also contain [interactive components]({{site.baseurl}}/ui-components/dialogcomponents/#basiccomponents) such as buttons, checkboxes and input fields.
+{{site.productname}} dialogs can also contain [interactive components]({{site.baseurl}}/ui-components/dialogcomponents/#basiccomponents) such as buttons, checkboxes and input fields.
 
 For example, the [`image`]({{site.baseurl}}/plugins/image) plugin's dialog allows for users to link to or upload an image, input a description, title, class, caption, height and width, then insert it into the editor.
 
@@ -87,13 +87,13 @@ For more information on the `dialogApi` object that is passed to some of the con
 #### Event callback functions
 Each of the event callback functions - `onAction`, `onSubmit`, `onCancel`, `onChange`, `onClose` and `onTabChange` - are shared between all dialog components that may trigger them. For example, **Custom** type footer buttons and dialog panel buttons all trigger `onAction`. Therefore, callback functions that may be triggered by multiple components are passed an object (called `details` above) that contains the `name` of the component that triggered the event.
 
-Any callback function that is not passed a `details` object assumes that the dialog will only contain one component which can trigger it or that it does not matter if the function is triggered by multiple components. For example, `onSubmit` is only triggered when a user clicks on a **Submit** type footer button, and TinyMCE assumes that a dialog will only have one **Submit** type button. In comparison, `onCancel` and `onClose` are both triggered by clicking the `X` button in the top right of a dialog or by clicking a **Cancel** type footer button. These two buttons have the same functionality, and therefore TinyMCE does not differentiate between them.
+Any callback function that is not passed a `details` object assumes that the dialog will only contain one component which can trigger it or that it does not matter if the function is triggered by multiple components. For example, `onSubmit` is only triggered when a user clicks on a **Submit** type footer button, and {{site.productname}} assumes that a dialog will only have one **Submit** type button. In comparison, `onCancel` and `onClose` are both triggered by clicking the `X` button in the top right of a dialog or by clicking a **Cancel** type footer button. These two buttons have the same functionality, and therefore {{site.productname}} does not differentiate between them.
 
 ### Body components
 
 The body of a dialog must be either a [`panel`]({{site.baseurl}}/ui-components/dialogcomponents/#panel) (a single panel) or a [`tabpanel`]({{site.baseurl}}/ui-components/dialogcomponents/#tabpanel) (a collection of panels). Each panel can contain [panel components]({{site.baseurl}}/ui-components/dialogcomponents/#panelcomponents) such as inputs, buttons and text.
 
-> Note: TinyMCE also supports [URL dialogs]({{site.baseurl}}/ui-components/urldialog/). Configuring a URL dialog is quite different to configuring a standard TinyMCE dialog.
+> Note: {{site.productname}} also supports [URL dialogs]({{site.baseurl}}/ui-components/urldialog/). Configuring a URL dialog is quite different to configuring a standard {{site.productname}} dialog.
 
 #### Panel
 
@@ -306,11 +306,11 @@ Redial can be used to change information that is displayed in the dialog, create
 
 The following example demonstrates one way of implementing a multipage form dialog using the `redial()` method. Custom buttons are used to switch between the two pages of the form by calling `redial()` with the appropriate dialog configuration.
 
-To see the output of the code, click on the TinyMCE tab on the fiddle below.
+To see the output of the code, click on the {{site.productname}} tab on the fiddle below.
 
 {% include codepen.html id="redial" height="900" tab="js" %}
 
-The example JavaScript code contains two dialog configurations - `page1Config` and `page2Config`. The TinyMCE initialisation code adds a button to the editor that when clicked calls `editor.windowManager.open(page1Config)` to open a dialog using the first configuration.
+The example JavaScript code contains two dialog configurations - `page1Config` and `page2Config`. The {{site.productname}} initialisation code adds a button to the editor that when clicked calls `editor.windowManager.open(page1Config)` to open a dialog using the first configuration.
 
 The configuration for the first page of the multipage form contains a description of the form and a checkbox. The checkbox, via the dialog's `onChange()` callback function, toggles whether the `next` button is disabled or enabled. The `next` button when clicked fires the `onAction()` callback function, which in turn triggers `redial()` which will replace the `page1Config` dialog with the `page2Config` dialog.
 

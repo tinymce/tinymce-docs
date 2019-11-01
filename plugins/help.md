@@ -12,7 +12,7 @@ The help plugin adds a button and/or menu item that opens a dialog showing two t
 * Handy shortcuts that explains some nice-to-know keyboard shortcuts
 * Plugin list that shows which plugins that have been installed, with links to the relevant documentation pages if available, and a list of available premium plugins.
 
-In the footer of the dialog you can also see which version of TinyMCE you are using.
+In the footer of the dialog you can also see which version of {{site.productname}} you are using.
 
 The help dialog can also be shown by pressing the keyboard shortcut `Alt + 0`.
 
@@ -30,7 +30,7 @@ tinymce.init({
 
 ### `help_tabs`
 
-This option allows you to specify which tabs the Help dialog should show, and in what order. The default TinyMCE tabs are called `shortcuts`, `keyboardnav`, `plugins` and `versions`. These tabs can be overwritten by providing a new [tab panel]({{site.baseurl}}/ui-components/dialogcomponents/#tabpanel) specification with the same `name`, and new tabs can be added by registering a tab panel with a new `name`. New tabs can be registered in the `help_tabs` configuration or at initialisation or runtime using the [`addTab` API method](#api).
+This option allows you to specify which tabs the Help dialog should show, and in what order. The default {{site.productname}} tabs are called `shortcuts`, `keyboardnav`, `plugins` and `versions`. These tabs can be overwritten by providing a new [tab panel]({{site.baseurl}}/ui-components/dialogcomponents/#tabpanel) specification with the same `name`, and new tabs can be added by registering a tab panel with a new `name`. New tabs can be registered in the `help_tabs` configuration or at initialisation or runtime using the [`addTab` API method](#api).
 
 If `help_tabs` is configured, only tabs named in `help_tabs` will be displayed. Any tabs defined using `addTab` that are not named in `help_tabs` will be ignored.
 

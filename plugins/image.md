@@ -6,9 +6,7 @@ description: Insert an image into TinyMCE.
 keywords: photo insert edit style format image_caption image_list image_advtab image_title image_class_list image_prepend_url image_description image_dimensions image_title image_prepend_url
 ---
 
-{% include pardot-px-moxiemanager.html %}
-
-This plugin enables the user to insert an image into TinyMCE's editable area. The plugin also adds a toolbar button and an `Insert/edit image` menu item under the `Insert` menu.
+This plugin enables the user to insert an image into {{site.productname}}'s editable area. The plugin also adds a toolbar button and an `Insert/edit image` menu item under the `Insert` menu.
 
 **Type:** `String`
 
@@ -21,7 +19,7 @@ tinymce.init({
   menubar: "insert",
   toolbar: "image",
   image_list: [
-    {title: 'My image 1', value: 'https://www.tinymce.com/my1.gif'},
+    {title: 'My image 1', value: 'https://www.example.com/my1.gif'},
     {title: 'My image 2', value: 'http://www.moxiecode.com/my2.gif'}
   ]
 });
@@ -71,7 +69,7 @@ Below is an example of the HTML created when a user selects the caption checkbox
 </figure>
 ```
 
-Note that the `figure` element needs some custom CSS added to render properly. This is what we use in the internal `content.css` within TinyMCE, and can be overridden with your own custom [`content_css`]({{ site.baseurl }}/configure/content-appearance/#content_css) stylesheet.
+Note that the `figure` element needs some custom CSS added to render properly. This is what we use in the internal `content.css` within {{site.productname}}, and can be overridden with your own custom [`content_css`]({{ site.baseurl }}/configure/content-appearance/#content_css) stylesheet.
 
 ```css
 figure.image {
@@ -253,7 +251,7 @@ tinymce.init({
   plugins: "image",
   menubar: "insert",
   toolbar: "image",
-  image_prepend_url: "https://www.tinymce.com/images/"
+  image_prepend_url: "https://www.example.com/images/"
 });
 ```
 

@@ -6,13 +6,13 @@ description: The Theme that renders iframe or inline modes using the TinyMCE cor
 keywords: theme classic
 ---
 
-TinyMCE has three main integration modes: 
+{{site.productname}} has three main integration modes:
 
 * "classic" form-based
-* inline editing 
+* inline editing
 * distraction-free
 
-**Classic** mode is the most common TinyMCE integration. **Classic** mode's popularity is due to its familiarity to users and how quickly they identify it as a text editor.
+**Classic** mode is the most common {{site.productname}} integration. **Classic** mode's popularity is due to its familiarity to users and how quickly they identify it as a text editor.
 
 The current default theme `silver` renders the editor in classic mode.
 

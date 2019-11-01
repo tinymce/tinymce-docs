@@ -8,7 +8,7 @@ keywords: enterprise tinymcespellchecker spell check checker pro pricing imageto
 
 > **Note:** Use a plain text editor (such as gedit, vim, emacs or notepad) when creating or editing the `application.conf` file. Do not use word processors like Microsoft Word or Evernote as these can insert extra characters which make the file unreadable to the server-side components.
 
-The TinyMCE server-side components require a configuration file to function correctly. By convention, this file is named `application.conf`.
+The {{site.productname}} server-side components require a configuration file to function correctly. By convention, this file is named `application.conf`.
 
 This configuration file will require you to enter *at least* the following  information:
 
@@ -21,34 +21,34 @@ Some server-side components require additional configuration which can be found 
 
 ### `allowed-origins` (required)
 
-TinyMCE editor instances make use of the server-side components by performing a cross-origin HTTP request. These requests are subject to a form of HTTP access control called Cross-Origin Resource Sharing (CORS). CORS is built into web browsers and is not a feature of TinyMCE's server side components. A detailed explanation of CORS can be found on the [Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS).
+{{site.productname}} editor instances make use of the server-side components by performing a cross-origin HTTP request. These requests are subject to a form of HTTP access control called Cross-Origin Resource Sharing (CORS). CORS is built into web browsers and is not a feature of {{site.productname}}'s server side components. A detailed explanation of CORS can be found on the [Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS).
 
-The `allowed-origins` element configures a list of **all** values that can be expected by the server-side components in a HTTP Origin header from your TinyMCE instances (see the [Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Origin) for more information on the HTTP Origin header). In short, you'll need to supply a list of all the URLs that your TinyMCE instances will be served from without the path information.
+The `allowed-origins` element configures a list of **all** values that can be expected by the server-side components in a HTTP Origin header from your {{site.productname}} instances (see the [Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Origin) for more information on the HTTP Origin header). In short, you'll need to supply a list of all the URLs that your {{site.productname}} instances will be served from without the path information.
 
 This is best illustrated with some examples:
 
-If users load TinyMCE from the following URLs:
+If users load {{site.productname}} from the following URLs:
 
 - `http://server.example.com/editor.php`
 - `http://server.example.com/subpage/editor.php`
 
 Add `http://server.example.com` to the `allowed-origins` list.
 
-If users load TinyMCE from the following URLs:
+If users load {{site.productname}} from the following URLs:
 
 - `https://server.example.com/editor.php`
 - `http://server.example.com/subpage/editor.php`
 
 Add `http://server.example.com` and `https://server.example.com` to the `allowed-origins` list.
 
-If users load TinyMCE from the following URLs:
+If users load {{site.productname}} from the following URLs:
 
 - `https://server.example.com/editor.php`
 - `https://server.example.com/`
 
 Add `https://server.example.com` to the `allowed-origins` list.
 
-If users load TinyMCE from the following URLs:
+If users load {{site.productname}} from the following URLs:
 
 - `http://oneserver.example.com/editor.php`
 - `http://twoserver.example.com/subpage/editor.php`
@@ -57,13 +57,13 @@ Add `http://oneserver.example.com` and `http://twoserver.example.com` to the`all
 
 > **Note:** If some of your URLs include a port then add an entry with and without the port. The value of the `Origin` header may be different across browsers. Add both to be safe.
 
-If users load TinyMCE from the following URLs:
+If users load {{site.productname}} from the following URLs:
 
 - `http://server.example.com:8080/editor.php`
 
 Add `http://server.example.com:8080` and `http://server.example.com` to the `allowed-origins` list.
 
-If users load TinyMCE from the following URLs:
+If users load {{site.productname}} from the following URLs:
 
 - `https://server.example.com:9000/editor.php`
 
@@ -94,7 +94,7 @@ The `*` wildcard character matches any value. Wildcards are supported in the fol
 3. As a prefix of the domain (e.g. `http://*.mydomain.com`).
 4. Any combination of scheme, port, and domain prefix (e.g. `*://*.mydomain.com:*`).
 5. As the only character (e.g. `*`). This will allow **any** Origin to access the server-side components.
-6. As the only character after the scheme (e.g. `https://*`). This will allow **any** Origin serving TinyMCE from a HTTPS page to access the server-side components.
+6. As the only character after the scheme (e.g. `https://*`). This will allow **any** Origin serving {{site.productname}} from a HTTPS page to access the server-side components.
 
 
 > **Note:** Options 5 and 6 allow a broad set of origins access to the server-side components and are NOT recommended for production deployments.
@@ -109,7 +109,7 @@ ephox {
 
 #### Troubleshooting Origins
 
-If you missed an Origin or specified an Origin incorrectly, TinyMCE features that rely on the server-side components will not work from that Origin. If you observe that requests to the server-side components are failing or features are unavailable and you're not sure why, refer to the troubleshooting information about [Using browser tooling to investigate services issues]({{ site.baseurl }}/enterprise/server/troubleshoot/#usingbrowsertoolingtoinvestigateservicesissues).
+If you missed an Origin or specified an Origin incorrectly, {{site.productname}} features that rely on the server-side components will not work from that Origin. If you observe that requests to the server-side components are failing or features are unavailable and you're not sure why, refer to the troubleshooting information about [Using browser tooling to investigate services issues]({{ site.baseurl }}/enterprise/server/troubleshoot/#usingbrowsertoolingtoinvestigateservicesissues).
 
 ### `proxy` (optional)
 
@@ -200,13 +200,13 @@ ephox {
 
 ## Logging
 
-It may be useful to make the TinyMCE server-side components write to their own log file. This can assist in troubleshooting and make it easier to provide logs as part of a support ticket.
+It may be useful to make the {{site.productname}} server-side components write to their own log file. This can assist in troubleshooting and make it easier to provide logs as part of a support ticket.
 
 To write the logs to a specific file, you’ll need to perform the following steps:
 
 ### Step 1. Create a logging configuration XML file
 
-The TinyMCE server-side components use the [Logback](http://logback.qos.ch/manual/configuration.html) logging format.
+The {{site.productname}} server-side components use the [Logback](http://logback.qos.ch/manual/configuration.html) logging format.
 
 Save the snippet below as `logback.xml` after replacing `{$LOG_LOCATION}` with the full path to the destination log file (e.g. /var/log/tinymce_server_components.log).
 
@@ -226,7 +226,7 @@ Save the snippet below as `logback.xml` after replacing `{$LOG_LOCATION}` with t
 	</encoder>
   </appender>
 
-  <!-- The name "com.ephox" refers to all TinyMCE server-side components. -->
+  <!-- The name "com.ephox" refers to all {{site.productname}} server-side components. -->
   <logger name="com.ephox" level="INFO"/>
 
   <root level="INFO">

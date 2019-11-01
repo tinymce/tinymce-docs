@@ -6,7 +6,7 @@ description: Premium plugins compatibility with TinyMCE editor versions.
 keywords: tinymce cloud script textarea apiKey
 ---
 
-Specific versions of TinyMCE are compatible with premium plugins.
+Specific versions of {{site.productname}} are compatible with premium plugins.
 
 Use the following matrix in conjunction with the optional parameters for specifying editor version and [plugin version]({{ site.baseurl }}/cloud-deployment-guide/editor-plugin-version) to ensure compatibility.
 
@@ -21,7 +21,7 @@ to:
 > Ensure the application uses the latest script tag and substitute 'no-api-key' with your api key.
 
 
-> Important: Ensure the plugins are supported in your editor version when deploying premium plugins only[^footnote] via [Tiny Cloud]({{ site.baseurl }}/cloud-deployment-guide/features-only).
+> Important: Ensure the plugins are supported in your editor version when deploying premium plugins only[^footnote] via [{{site.cloudname}}]({{ site.baseurl }}/cloud-deployment-guide/features-only).
 
 
 | **Plugins** | **TinyMCE 4.x** | **TinyMCE 5.x** |
@@ -33,11 +33,11 @@ to:
 | [Mentions]({{site.baseurl}}/plugins/mentions) | Y | Y |
 | [PowerPaste]({{ site.baseurl }}/plugins/powerpaste/) | Y | Y |
 | [Spell Checker Pro]({{ site.baseurl }}/plugins/tinymcespellchecker/) | Y | Y |
-| [Tiny Drive]({{site.baseurl}}/plugins/drive) | Y | Y |
+| [{{site.cloudfilemanager}}]({{site.baseurl}}/plugins/drive) | Y | Y |
 | [Tiny Comments]({{site.baseurl}}/plugins/comments) | Y | Y |
 | [Page Embed]({{site.baseurl}}/plugins/pageembed) | N | Y |
 | [Permanent Pen]({{site.baseurl}}/plugins/permanentpen) | N | Y |
 | [Format Painter]({{site.baseurl}}/plugins/formatpainter) | Y | Y |
 | [MoxieManager]({{site.baseurl}}/plugins/moxiemanager)<br/>(SDK ONLY) | Y | Y |
 
-[^footnote]: For this combination of TinyMCE and Spellchecking, the [spellchecker_dialog mode]({{ site.baseurl }}/plugins/tinymcespellchecker/#spellchecker_dialog) is unavailable.
+[^footnote]: For this combination of {{site.productname}} and Spellchecking, the [spellchecker_dialog mode]({{ site.baseurl }}/plugins/tinymcespellchecker/#spellchecker_dialog) is unavailable.

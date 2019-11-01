@@ -63,17 +63,17 @@ These are the various rules that are checked:
 <a class="anchor" id="I1"></a>
 <h4><a class="anchorable" href="#I1">Image ALT text</a></h4>
 
-**Rule info:** This rule checks that all images have an alt text so screen readers and other assistive technologies can correctly present the content to your users that can't see the images visually. 
+**Rule info:** This rule checks that all images have an alt text so screen readers and other assistive technologies can correctly present the content to your users that can't see the images visually.
 
 <a class="anchor" id="I2"></a>
 <h4><a class="anchorable" href="#I2">Alt text filename</a></h4>
 
-**Rule info:** This rule checks that the alt text of you image isn't just the same as the filename of the image. 
+**Rule info:** This rule checks that the alt text of you image isn't just the same as the filename of the image.
 
 <a class="anchor" id="T1"></a>
 <h4><a class="anchorable" href="#T1">Table caption</a></h4>
 
-**Rule info:** This rule checks that all `table` elements have a caption that describes the data inside of the table to simplify parsing and navigation of the content for users of assistive technologies. 
+**Rule info:** This rule checks that all `table` elements have a caption that describes the data inside of the table to simplify parsing and navigation of the content for users of assistive technologies.
 
 [Link to specification](https://www.w3.org/TR/2016/NOTE-WCAG20-TECHS-20161007/H39).
 
@@ -185,7 +185,7 @@ Accessibility Checker exposes couple of methods that can be called directly.
 
 Triggers accessibility dialog with the results of the audit and options to correct the problems, if any.
 
-#### Example 
+#### Example
 ```js
 editor.plugins.a11ychecker.toggleaudit();
 ```
@@ -207,6 +207,6 @@ var issues = editor.plugins.a11ychecker.getReport();
 
 ## Downloading Accessibility Checker
 
-A [TinyMCE Enterprise](https://www.tinymce.com/pricing/) subscription includes the ability to download and install the accessibility checker feature for the editor.
+A [{{site.sfenterpriseac}}]({{site.pricingpage}}) subscription includes the ability to download and install the accessibility checker feature for the editor.
 
-Accessibility checker is part of the demo [on the main page of TinyMCE site](https://www.tinymce.com/). For more information about the accessibility checker [see this blog post](https://go.tinymce.com/blog/tinymce-enterprise-update-benefits-accessibility-users-brings-atmentions/).
+Accessibility checker is part of the demo [on the main page of {{site.companyname}} site]({{site.url}}). For more information about the accessibility checker [see this blog post](https://go.tiny.cloud/blog/make-your-content-accessible-with-tinymce/).

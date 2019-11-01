@@ -10,7 +10,7 @@ When `content_css_cors` is set to `true`, the editor will add a `crossorigin="an
 ```js
 // File: http://domain.mine/mysite/index.html
 
-tinyMCE.init({
+tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   content_css : 'http://www.somewhere.example/mycontent.css',
   content_css_cors: true

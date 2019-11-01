@@ -1,5 +1,5 @@
 ## Upgrading to the latest version of TinyMCE 5
-The procedure for upgrading to the latest version of {{site.productname}} {{site.productversion}} depends on the deployment type.
+The procedure for upgrading to the latest version of {{site.productname}} {{site.productmajorversion}} depends on the deployment type.
 
 * [Upgrading Tiny Cloud](#upgradingtinycloud).
 * [Upgrading TinyMCE Self-hosted using a package manager](##upgradingtinymceself-hostedusingapackagemanager).
@@ -18,37 +18,37 @@ Select from the following package managers.
 * [Bower](#bower)
 
 #### Yarn
-To upgrade to {{site.productname}} {{site.releaseversion}} using Yarn, run:
+To upgrade to {{site.productname}} {{site.productminorversion}} using Yarn, run:
 ```sh
 $ yarn upgrade {{site.prodnamecode}}
 ```
 
 #### npm
-To upgrade to {{site.productname}} {{site.releaseversion}} using npm, run:
+To upgrade to {{site.productname}} {{site.productminorversion}} using npm, run:
 ```sh
 $ npm install {{site.prodnamecode}}@latest --save
 ```
 
 #### Composer
-To upgrade to {{site.productname}} {{site.releaseversion}} using Composer, run:
+To upgrade to {{site.productname}} {{site.productminorversion}} using Composer, run:
 ```sh
 $ php composer.phar update "{{site.prodnamecode}}/{{site.prodnamecode}}"
 ```
 
 #### NuGet
-To upgrade to {{site.productname}} {{site.releaseversion}} using NuGet, run:
+To upgrade to {{site.productname}} {{site.productminorversion}} using NuGet, run:
 ```sh
 $ Install-Package {{site.productname}}
 ```
 
 #### Bower
-To upgrade to {{site.productname}} {{site.releaseversion}} using Bower, run:
+To upgrade to {{site.productname}} {{site.productminorversion}} using Bower, run:
 ```sh
-$ bower install {{site.prodnamecode}}#{{site.releaseversion}} --save
+$ bower install {{site.prodnamecode}}#{{site.productminorversion}} --save
 ```
 
 ### Upgrading TinyMCE Self-hosted manually
-To upgrade to {{site.productname}} {{site.releaseversion}} using a manually downloaded package:
+To upgrade to {{site.productname}} {{site.productminorversion}} using a manually downloaded package:
 
 1. Backup the `{{site.prodnamecode}}/` directory so any customizations can be restored after the upgrade.
 
@@ -67,11 +67,11 @@ To upgrade to {{site.productname}} {{site.releaseversion}} using a manually down
 
 1. Download the latest version of {{site.productname}}.
 
-    * For the {{site.productname}} Community Version, download `{{site.prodnamecode}}_<VERSION>.zip` from [Get {{site.productname}} - Self-hosted releases](https://www.tiny.cloud/get-tiny/self-hosted/), where _`<VERSION>`_ is the latest version of {{site.productname}}.
-    * For the {{site.productname}} Enterprise Version, download the **{{site.productname}} Enterprise Bundle** from [My Account > Downloads](https://www.tiny.cloud/my-account/downloads/). The downloaded file will be named `enterprise_latest.zip`.
+    * For the {{site.productname}} Community Version, download `{{site.prodnamecode}}_<VERSION>.zip` from [Get {{site.productname}} - Self-hosted releases]({{site.gettiny}}/self-hosted/), where _`<VERSION>`_ is the latest version of {{site.productname}}.
+    * For the {{site.productname}} Enterprise Version, download the **{{site.productname}} Enterprise Bundle** from [{{site.accountpage}} > Downloads]({{site.accountpageurl}}/downloads/). The downloaded file will be named `enterprise_latest.zip`.
 
 1. Extract the downloaded `.zip` file to a temporary location.
-1. (If required) Install the latest language packs from [Get {{site.productname}} - Language Packages](https://www.tiny.cloud/get-tiny/language-packages/).
+1. (If required) Install the latest language packs from [Get {{site.productname}} - Language Packages]({{site.gettiny}}/language-packages/).
 1. Copy customizations to the new `{{site.prodnamecode}}/` directory. Ensure that _only custom changes_ are added the new `{{site.prodnamecode}}/` directory, such as:
 
     * Custom icons packs
@@ -82,7 +82,7 @@ To upgrade to {{site.productname}} {{site.releaseversion}} using a manually down
 
 >To simplify the upgrade process to future versions of {{site.productname}}:
 >
->1. Host the TinyMCE customizations outside of the `{{site.prodnamecode}}/` directory.
+>1. Host the {{site.productname}} customizations outside of the `{{site.prodnamecode}}/` directory.
 >1. Update your {{site.productname}} configuration as required:
 >
 >    * Set the location of content CSS customizations using [`content_css`]({{site.baseurl}}/configure/content-appearance/#content_css).

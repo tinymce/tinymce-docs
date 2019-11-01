@@ -7,7 +7,7 @@ description: Learn how to make custom dialogs with NotificationManager.
 keywords: custom notification notifications cdn notificationmanager
 ---
 
-TinyMCE can display customized notifications.
+{{site.productname}} can display customized notifications.
 
 ## Text
 

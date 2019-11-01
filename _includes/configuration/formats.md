@@ -1,8 +1,8 @@
 ## formats
 
-This option is used to override default TinyMCE **formats** or add custom **formats** to the editor.
+This option is used to override default {{site.productname}} **formats** or add custom **formats** to the editor.
 
-TinyMCE is equipped with a formatting engine that allows you to register a set of styles and attributes as a named **format**. For example, the `bold` format is the style that is applied to text when the bold button is clicked.
+{{site.productname}} is equipped with a formatting engine that allows you to register a set of styles and attributes as a named **format**. For example, the `bold` format is the style that is applied to text when the bold button is clicked.
 
 Check out the [custom formats example]({{ site.baseurl }}/demo/format-custom/) for a demonstration of this option.
 
@@ -26,7 +26,7 @@ Similar elements and styles are merged by default to reduce the output HTML size
 
 ### Built-in formats
 
-TinyMCE has some built in formats that can be overridden. These are:
+{{site.productname}} has some built in formats that can be overridden. These are:
 
 * alignleft
 * aligncenter
@@ -345,7 +345,7 @@ tinymce.init({
 
 ### Example of usage of the formats option
 
-This example overrides some of the built-in formats and tells TinyMCE to apply classes instead of inline styles. It also includes a custom format that produced `h1` elements with a title attribute and a `red` CSS style.
+This example overrides some of the built-in formats and tells {{site.productname}} to apply classes instead of inline styles. It also includes a custom format that produced `h1` elements with a title attribute and a `red` CSS style.
 
 **Type:** `Object`
 
@@ -373,7 +373,7 @@ tinymce.init({
 
 ### Using custom formats
 
-Custom formats can be handled through the TinyMCE API. Here is a basic example of usage for the custom format defined above.
+Custom formats can be handled through the {{site.productname}} API. Here is a basic example of usage for the custom format defined above.
 
 ```js
 // Applying the specified format

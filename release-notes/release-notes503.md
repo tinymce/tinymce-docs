@@ -27,7 +27,7 @@ Currently, there are three types of formats available:
 
 * **Title Case** - The **Title Case** option changes anything other than articles, coordinating conjunctions, or short prepositions to capital letters. The default rule set for **Title Case** is based on [Wikipedia Title Case](https://titlecaseconverter.com/rules/#WP).
 
-To try out **Case Change** start with this [dedicated product page](https://apps.tiny.cloud/products/case-change/) to see all the flexible pricing options.
+To try out **Case Change** start with this [dedicated product page]({{site.productpages}}/case-change/) to see all the flexible pricing options.
 
 For more information on **Case Change** refer to the full [documentation]({{site.baseurl}}/plugins/casechange/).
 
@@ -41,7 +41,7 @@ Users can easily configure the TinyMCE editor in Swing through the **TinyMCE for
 
 To start using TinyMCE for Swing as your new rich text editor, the first step is to obtain a copy of the **Integration**.
 
-Contact [customer support](https://www.tiny.cloud/contact/) to discuss pricing options for a customized TinyMCE for Swing integration for your specific use case.
+Contact [customer support]({{site.contactpage}}) to discuss pricing options for a customized TinyMCE for Swing integration for your specific use case.
 
 For more information on **TinyMCE for Swing** refer to the full [documentation]({{site.baseurl}}/integrations/swing/).
 

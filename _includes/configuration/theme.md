@@ -1,8 +1,8 @@
 ## theme
 
-This option allows you to specify the theme that TinyMCE should use. The default theme included with TinyMCE is called **Silver**.
+This option allows you to specify the theme that {{site.productname}} should use. The default theme included with {{site.productname}} is called **Silver**.
 
-The name of the theme should match the name of the folder within the themes directory of TinyMCE. If the specified theme is not found, TinyMCE will not load.
+The name of the theme should match the name of the folder within the themes directory of {{site.productname}}. If the specified theme is not found, {{site.productname}} will not load.
 
 **Type:** `String`
 

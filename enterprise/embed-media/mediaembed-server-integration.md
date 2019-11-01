@@ -11,7 +11,7 @@ There are three options for enhancing the embeds created for private content by 
 
 * Annotate content with [Open Graph](http://ogp.me/) or other meta tags
 * Develop your own custom endpoint that returns JSON in the oEmbed format
-* Develop your own custom endpoint that returns JSON in the Tiny Enhanced Media Embed format
+* Develop your own custom endpoint that returns JSON in the {{site.productname}} Enhanced Media Embed format
 
 ## A note on cookies & authentication
 
@@ -76,7 +76,7 @@ As an alternative to Open Graph tags, you can include meta tags using the older 
 
 
 ## Custom API
-As an alternative to including meta tags in your content, you can write a custom API that returns JSON in either the oEmbed or Tiny Enhanced Media Embed formats.
+As an alternative to including meta tags in your content, you can write a custom API that returns JSON in either the oEmbed or {{site.productname}} Enhanced Media Embed formats.
 
 See the docs on [configuring a custom endpoint]({{ site.baseurl }}/enterprise/embed-media/mediaembed-server-config/#configureacustomendpoint) for details on getting the Enhanced Media Embed server to utilise your custom API.
 
@@ -94,8 +94,8 @@ This is a popular choice and many CMSs have existing plugins that support oEmbed
 * Must be a separate API rather than just metadata embedded in the content
 * Error messages aren’t defined as part of the spec
 
-### Tiny Enhanced Media Embed endpoint
-The other option for developing a custom API endpoint is to return JSON in the [Tiny Enhanced Media Embed format]({{ site.baseurl }}/enterprise/embed-media/mediaembed-server-integration/#ephoxenhancedmediaembedformat).
+### TinyMCE Enhanced Media Embed endpoint
+The other option for developing a custom API endpoint is to return JSON in the [{{site.productname}} Enhanced Media Embed format]({{ site.baseurl }}/enterprise/embed-media/mediaembed-server-integration/#ephoxenhancedmediaembedformat).
 
 #### Pros
 
@@ -107,9 +107,9 @@ The other option for developing a custom API endpoint is to return JSON in the [
 
 * Must be a separate API rather than just metadata embedded in the content
 * No support from existing plugins
-* The TinyMCE editor does not fully take advantage of this format yet
+* The {{site.productname}} editor does not fully take advantage of this format yet
 
-### Tiny Enhanced Media Embed format
+### TinyMCE Enhanced Media Embed format
 
 #### HTTP response status codes
 
@@ -121,7 +121,7 @@ The other option for developing a custom API endpoint is to return JSON in the [
 #### JSON response objects
 
 ##### `EphoxEmbedObj`
-`rel`, `media` and `html` combine to form the default representation of the embeddable resource that your server has chosen. Clients of the Enhanced Media Embed server (such as the TinyMCE editor) can look for alternative representations in `links`.
+`rel`, `media` and `html` combine to form the default representation of the embeddable resource that your server has chosen. Clients of the Enhanced Media Embed server (such as the {{site.productname}} editor) can look for alternative representations in `links`.
 
 * `title` (optional)
   * String containing the document title.
@@ -150,7 +150,7 @@ The other option for developing a custom API endpoint is to return JSON in the [
 * `media` (optional)
   * [MediaObj]({{ site.baseurl }}/enterprise/embed-media/mediaembed-server-integration/#mediaobj)
 * `html` (optional)
-  * String containing the HTML snippet to be embedded by TinyMCE.
+  * String containing the HTML snippet to be embedded by {{site.productname}}.
 
 #### `RelObj`
 An array of tags describing the primary type of an embed, where it came from and whether there are any technical attributes that you may want to know about (autoplay, ssl, file format (flash, html5, etc)).

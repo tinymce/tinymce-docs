@@ -6,17 +6,17 @@ description: Check for valid hyperlinks inside the editor
 keywords: enterprise pricing video youtube vimeo mp3 mp4 mov movie clip film link linkchecking linkchecker mediaembed media
 ---
 
-The [Link Checker plugin]({{ site.baseurl }}/plugins/linkchecker/) provides a link checking service right within the TinyMCE editor.
+The [Link Checker plugin]({{ site.baseurl }}/plugins/linkchecker/) provides a link checking service right within the {{site.productname}} editor.
 
 Think of Link Checker as "spell-checking for URLs". But instead of checking spelling, it will let you know if a URL in the editor is valid, invalid or questionable. This is a huge time-saver for anyone who creates content — no more having to double-check URLs, especially in imported content. Not to mention the benefit of no longer frustrating readers with broken hyperlinks.
 
-Link Checker is available as a stand-alone plugin or as part of our Pro Bundle. To learn more about your options, check out our [pricing and plans here](https://www.tinymce.com/pricing/).
+Link Checker is available as a stand-alone plugin or as part of our Pro Bundle. To learn more about your options, check out our [pricing and plans here]({{site.pricingpage}}).
 
-Your have two deployment options. One is super easy with TinyMCE Cloud, the other is to go the more traditional Self-hosted route, requiring an additional [server-side component]({{ site.baseurl }}/enterprise/server/) to be installed and configured.
+Your have two deployment options. One is super easy with {{site.cloudname}}, the other is to go the more traditional Self-hosted route, requiring an additional [server-side component]({{ site.baseurl }}/enterprise/server/) to be installed and configured.
 
 ## Link Checker cloud setup
 
-[TinyMCE Cloud]({{ site.baseurl }}/cloud-deployment-guide/editor-and-features/) makes setting up Link Checker a breeze. Simply include the `linkchecker` parameter in your `tinymce.init` and have our Cloud services do the work for you.
+[{{site.cloudname}}]({{ site.baseurl }}/cloud-deployment-guide/editor-and-features/) makes setting up Link Checker a breeze. Simply include the `linkchecker` parameter in your `tinymce.init` and have the {{site.cloudname}} services do the work for you.
 
 ## Link Checker self-hosted quick setup
 

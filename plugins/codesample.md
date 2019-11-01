@@ -9,8 +9,6 @@ controls: toolbar button
 
 The Code Sample plugin (`codesample`) lets a user insert and embed syntax color highlighted code snippets into the editable area. It also adds a button to the toolbar which on click will open a dialog box to accept raw code input.
 
-This plugin demonstrates the support for the new block based `contenteditable=false` elements available in TinyMCE version 4.3 and later.
-
 ##### Example
 
 ```js

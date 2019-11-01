@@ -6,7 +6,7 @@ description: Quickly give TinyMCE a new look.
 keywords: skin skins icon icons material bootstrap customize theme
 ---
 
-The Premium Skins and Icon Packs lets you quickly give TinyMCE a new look. Just choose one of our pre-made skins and icon packs.
+The Premium Skins and Icon Packs lets you quickly give {{site.productname}} a new look. Just choose one of our pre-made skins and icon packs.
 
 ### How to use a premium skin
 
@@ -75,7 +75,7 @@ Due to different toolbar button sizes, some icon packs fit better with some skin
 
 ### Self hosted usage instructions
 
-For the self-hosted version of TinyMCE, Premium Skins and Icon Packs are available as a download, either as part of the Pro bundle or as an individual purchase. All skins and icons packs are included in the bundle.
+For the self-hosted version of {{site.productname}}, Premium Skins and Icon Packs are available as a download, either as part of the Pro bundle or as an individual purchase. All skins and icons packs are included in the bundle.
 
 ### Examples
 
@@ -93,10 +93,10 @@ Below are some recommended combinations of skins and icon packs:
 
 #### Creating an account
 
-To try out **Premium Skins and Icon Packs** and Tiny Cloud-delivered editor, the first step is to create a free [Tiny account](https://www.tiny.cloud/download/).
+To try out **Premium Skins and Icon Packs** and {{site.cloudname}}-delivered editor, the first step is to create a free [{{site.accountpage}}]({{site.accountsignup}}).
 
-The free user account provisioned with a free 30-day trial of all Tiny [premium plugins](https://apps.tiny.cloud/product-category/tiny-cloud-extensions/), with no credit card information or commitment required.
+{{site.accountpage}}s receive a free 30-day trial of all {{site.cloudname}} [premium plugins]({{site.cloudextensions}}), with no credit card information or commitment required.
 
 #### Buy Premium Skins and Icon Packs
 
-Start with this [dedicated product page](https://apps.tiny.cloud/products/skins-and-icon-packs/) to see all the flexible pricing options. OEM and enterprise customers should [contact sales directly](https://www.tiny.cloud/contact/).
+Start with this [dedicated product page]({{site.productpages}}/skins-and-icon-packs/) to see all the flexible pricing options. OEM and enterprise customers should [contact sales directly]({{site.contactpage}}).

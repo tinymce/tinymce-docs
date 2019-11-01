@@ -1,6 +1,6 @@
 ## plugins
 
-This option allows you to specify which plugins TinyMCE will attempt to load when starting up. By default, TinyMCE will not load any plugins.
+This option allows you to specify which plugins {{site.productname}} will attempt to load when starting up. By default, {{site.productname}} will not load any plugins.
 
 **Type:** `String`
 

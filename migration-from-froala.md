@@ -97,7 +97,7 @@ The following examples show an initial Froala configuration and the migrated {{s
 </html>
 ```
 
-#### TinyMCE {{site.productmajorversion}} - A Basic Configuration
+#### TinyMCE 5 - A Basic Configuration
 
 ```html
 <!DOCTYPE html>
@@ -161,7 +161,7 @@ The following examples show how plugins are included or enabled in the Froala an
 </head>
 ```
 
-#### TinyMCE {{site.productmajorversion}} - Enabling Plugins
+#### TinyMCE 5 - Enabling Plugins
 
 ```html
 <script>
@@ -237,7 +237,7 @@ The following examples show a custom toolbar layout in Froala and the same layou
 </script>
 ```
 
-#### TinyMCE {{site.productmajorversion}} - Creating a Custom Toolbar Layout
+#### TinyMCE 5 - Creating a Custom Toolbar Layout
 
 ```html
 <h2>{{site.productname}} Custom Toolbar</h2>
@@ -288,7 +288,7 @@ The following examples show Froala and {{site.productname}} configured for inlin
 </script>
 ```
 
-#### TinyMCE {{site.productmajorversion}} - Configuring Inline Mode
+#### TinyMCE 5 - Configuring Inline Mode
 
 ```html
 <h3>TinyMCE Inline Mode</h3>
@@ -358,7 +358,7 @@ The following examples show a Froala editor and a {{site.productname}} editor wi
 </script>
 ```
 
-#### TinyMCE {{site.productmajorversion}} - Creating a Custom Toolbar Button
+#### TinyMCE 5 - Creating a Custom Toolbar Button
 
 ```html
 <h2>{{site.productname}} Custom Button</h2>
@@ -436,7 +436,7 @@ The following examples show a Froala editor and a {{site.productname}} editor wi
 </script>
 ```
 
-#### TinyMCE {{site.productmajorversion}} - Creating a Custom Drop-down Button
+#### TinyMCE 5 - Creating a Custom Drop-down Button
 
 ```html
 <h2>{{site.productname}} Custom Drop-down Button</h2>

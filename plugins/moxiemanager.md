@@ -10,7 +10,7 @@ MoxieManager is a premium {{site.productname}} plugin and server system that ena
 
 MoxieManager is an application separate from {{site.productname}} that includes .NET or PHP server components. Being built by the team behind {{site.productname}} it has tight integration with the editor via a toolbar control. It is designed to work with {{site.productname}} configuration settings such as `relative_urls`.
 
-MoxieManager is a paid addition to {{site.productname}}. It is included in [{{site.accountpage}} subscriptions]({{site.pricingpage}}).
+MoxieManager is a paid addition to {{site.productname}}. It is included in [{{sfenterpriseac}}s]({{site.pricingpage}}).
 
 Full documentation on MoxieManager, including how to [integrate with {{site.productname}}](http://www.moxiemanager.com/documentation/index.php/TinyMCE_Integration), can be [found](http://www.moxiemanager.com/documentation/) on the MoxieManager website.
 

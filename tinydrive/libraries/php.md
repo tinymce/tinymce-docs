@@ -15,7 +15,7 @@ This project will help you get started with {{site.cloudfilemanager}} and allow 
 Before you start your journey with {{site.cloudfilemanager}}, it will go a lot smoother if you have done these steps:
 1. Login/register to [{{site.accountpage}}]({{site.accountpageurl}}/)
 2. Get a [{{site.cloudname}} API Key]({{site.accountpageurl}}/key-manager/)
-3. Get a [JWT Key]({{site.accountpageurl}}/jwt-key-manager/)
+3. Get a [JWT Key]({{site.accountpageurl}}/jwt/)
 
 Store the keys temporarily somewhere as you will need to copy & paste them later.
 

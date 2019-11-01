@@ -101,8 +101,8 @@ tinymce.init({
   theme: 'silver',
   mobile: {
     theme: 'mobile',
-    plugins: [ 'autosave', 'lists', 'autolink' ],
-    toolbar: [ 'undo', 'bold', 'italic', 'styleselect' ]
+    plugins: 'autosave lists autolink',
+    toolbar: 'undo bold italic styleselect'
   }
 });
 ```

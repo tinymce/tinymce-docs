@@ -47,7 +47,7 @@ The **Title Case** can be used for the following editor elements:
 
 To try out **Case Change** and {{site.cloudname}}-delivered editor, the first step is to create a free [{{site.accountpage}}](https://www.tiny.cloud/download/).
 
-The free {{site.accountpage}} is provisioned with a free 30-day trial of all {{site.companyname}} [premium plugins]({{site.cloudextensions}}), with no credit card information or commitment required.
+{{site.accountpage}}s receive a free 30-day trial of all {{site.companyname}} [premium plugins]({{site.cloudextensions}}), with no credit card information or commitment required.
 
 #### Buy TinyMCE Case Change
 

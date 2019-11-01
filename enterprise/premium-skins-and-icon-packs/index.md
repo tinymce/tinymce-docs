@@ -95,7 +95,7 @@ Below are some recommended combinations of skins and icon packs:
 
 To try out **Premium Skins and Icon Packs** and {{site.cloudname}}-delivered editor, the first step is to create a free [{{site.accountpage}}](https://www.tiny.cloud/download/).
 
-The free {{site.accountpage}} is provisioned with a free 30-day trial of all {{site.cloudname}} [premium plugins]({{site.cloudextensions}}), with no credit card information or commitment required.
+{{site.accountpage}}s receive a free 30-day trial of all {{site.cloudname}} [premium plugins]({{site.cloudextensions}}), with no credit card information or commitment required.
 
 #### Buy Premium Skins and Icon Packs
 

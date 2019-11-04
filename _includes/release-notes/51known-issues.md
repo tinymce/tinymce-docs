@@ -5,6 +5,7 @@ This section describes issues that users of {{site.productname}} 5.1 may encount
 
 ### UI elements may render behind the keyboard on iOS 12 devices
 
+#### Issue
 UI elements may be rendered behind the keyboard on iOS 12 devices. This includes, but is not limited to:
 
 * Dialogs.
@@ -13,6 +14,7 @@ UI elements may be rendered behind the keyboard on iOS 12 devices. This includes
 
 This is due to a limitation of Safari on iOS 12. The silver theme relies on the `VisualViewport` API to determine the area of the page is visible on the device. Unfortunately the `VisualViewport` API is an experimental feature in iOS 12.
 
+#### Workaround
 To workaround this issue, users can either:
 
 * Upgrade to iOS 13 or later
@@ -20,5 +22,10 @@ To workaround this issue, users can either:
 
 **Settings** &#62; **Safari** &#62; **Advanced** &#62; **Experimental Features** &#62; **Visual Viewport API**.
 
+### Toolbar may overflow for inline editors on mobile
 
+#### Issue
+When a {{site.productname}} editor set to `inline: true` is opened on a mobile device, long toolbars will extend beyond the screen edge.
 
+#### Workaround
+Setting the editor [width]({{site.baseurl}}/configure/editor-appearance/#width) will constrain the toolbar width.

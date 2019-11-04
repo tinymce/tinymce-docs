@@ -29,3 +29,28 @@ When a {{site.productname}} editor set to `inline: true` is opened on a mobile d
 
 #### Workaround
 Setting the editor [width]({{site.baseurl}}/configure/editor-appearance/#width) will constrain the toolbar width.
+
+### UI issue with sidebars on mobile
+
+#### Issue
+
+> **Note**: This issue affects the [Comments plugin]({{site.baseurl}}/plugins/comments/).
+
+When opening sidebars on small screens (such as mobile phones), the sidebar may occupy most or all of the text area of the editor.
+
+#### Workaround
+For the comments plugin, the comments sidebar can be collapsed using the `showcomments` toolbar button (![comment.svg]({{ site.baseurl }}/images/icons/comment.svg)).
+
+For other plugins with sidebars, no workaround exists. {{site.companyname}} recommends setting the `plugins` for `mobile` to exclude plugins with sidebars:
+
+For example
+
+```js
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'code hr table comments',
+  mobile: {
+    plugins: 'code hr table'
+  }
+});
+```

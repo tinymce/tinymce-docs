@@ -242,4 +242,4 @@ console.log(users);
 
 ## Downloading Mentions Plugin
 
-A [{{site.sfenterpriseac}}]({{site.pricingpage}}) includes the ability to download and install the mentions feature for the editor.
+A [{{site.enterpriseversion}} subscription]({{site.pricingpage}}) includes the ability to download and install the mentions feature for the editor.

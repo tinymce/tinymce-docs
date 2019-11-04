@@ -57,7 +57,7 @@ This optional setting will inline all styles, instead of using CSS classes, when
 
 ### `mediaembed_service_url`
 
-This setting specifies the URL to the service that will handle your requests and return the embeddable snippets used by the **Media Embed** plugin. Please follow these [instructions]({{site.baseurl}}/enterprise/server/#step6setupeditorclientinstancestousetheserver-sidefunctionality) to configure the **WAR** file that you will get as a part of your [{{site.sfenterpriseac}}]({{site.pricingpage}}).
+This setting specifies the URL to the service that will handle your requests and return the embeddable snippets used by the **Media Embed** plugin. Please follow these [instructions]({{site.baseurl}}/enterprise/server/#step6setupeditorclientinstancestousetheserver-sidefunctionality) to configure the **WAR** file that you will get as a part of your [{{site.enterpriseversion}} subscription]({{site.pricingpage}}).
 This option is not required for [{{site.cloudname}}]({{site.baseurl}}/cloud-deployment-guide/editor-and-features/).
 
 **Type:** `String`
@@ -70,5 +70,5 @@ This optional setting specifies a maximum width in pixels of the embedded conten
 
 ## Downloading Enhanced Media Embed plugin
 
-A [{{site.sfenterpriseac}}]({{site.pricingpage}}) includes the ability to download and install the **Media Embed** plugin and a **WAR** file to access the service backend. Please follow these [instructions]({{site.baseurl}}/enterprise/server/#step6setupeditorclientinstancestousetheserver-sidefunctionality) to configure the **WAR** file.
+A [{{site.enterpriseversion}} subscription]({{site.pricingpage}}) includes the ability to download and install the **Media Embed** plugin and a **WAR** file to access the service backend. Please follow these [instructions]({{site.baseurl}}/enterprise/server/#step6setupeditorclientinstancestousetheserver-sidefunctionality) to configure the **WAR** file.
 

@@ -207,6 +207,6 @@ var issues = editor.plugins.a11ychecker.getReport();
 
 ## Downloading Accessibility Checker
 
-A [{{site.sfenterpriseac}}]({{site.pricingpage}}) subscription includes the ability to download and install the accessibility checker feature for the editor.
+A [{{site.enterpriseversion}} subscription]({{site.pricingpage}}) subscription includes the ability to download and install the accessibility checker feature for the editor.
 
 Accessibility checker is part of the demo [on the main page of {{site.companyname}} site]({{site.url}}). For more information about the accessibility checker [see this blog post](https://go.tiny.cloud/blog/make-your-content-accessible-with-tinymce/).

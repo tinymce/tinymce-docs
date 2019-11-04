@@ -21,6 +21,6 @@ Mentions is available for download through [{{site.cloudname}}]({{ site.baseurl 
 
 ## Downloading Mentions
 
-A [{{site.sfenterpriseac}}]({{site.pricingpage}}) includes the ability to download and install the Mentions feature for the editor. For more information on setup and configuration refer to the [Mentions documentation]({{site.baseurl}}/plugins/mentions/).
+A [{{site.enterpriseversion}} subscription]({{site.pricingpage}}) includes the ability to download and install the Mentions feature for the editor. For more information on setup and configuration refer to the [Mentions documentation]({{site.baseurl}}/plugins/mentions/).
 
 

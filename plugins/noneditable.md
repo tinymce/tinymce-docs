@@ -81,7 +81,7 @@ tinymce.init({
 
 ### `noneditable_regexp`
 
-This option allows you to specify a regular expression or array of regular expressions that TinyMCE will use to determine which areas of content are noneditable when using the `noneditable` plugin. Remember the regexps needs to be global so that all of the matches within the document gets converted.
+This option allows you to specify a regular expression or array of regular expressions that TinyMCE will use to determine which areas of content are noneditable when using the `noneditable` plugin. Remember the regexps needs to be global so that all of the matches within the document gets found. The text content of the matches will get wrapped in spans which means that any structure and styling will not be visible while editing.
 
 **Type:** `String`
 

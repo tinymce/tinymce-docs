@@ -41,16 +41,4 @@ When opening sidebars on small screens (such as mobile phones), the sidebar may 
 #### Workaround
 For the comments plugin, the comments sidebar can be collapsed using the `showcomments` toolbar button (![comment.svg]({{ site.baseurl }}/images/icons/comment.svg)).
 
-For other plugins with sidebars, no workaround exists. {{site.companyname}} recommends setting the `plugins` for `mobile` to exclude plugins with sidebars:
-
-For example
-
-```js
-tinymce.init({
-  selector: 'textarea',
-  plugins: 'code hr table comments',
-  mobile: {
-    plugins: 'code hr table'
-  }
-});
-```
+For other plugins with sidebars, {{site.companyname}} recommends ensuring the sidebar's toolbar button is accessible on the toolbar.

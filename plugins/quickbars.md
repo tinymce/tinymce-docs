@@ -12,7 +12,7 @@ It replaces the capabilities of the `inlite` theme in TinyMCE 4 or earlier.
 
 The Quick Toolbar plugin enables two new context toolbars:
 
-* _Quick Selection_ - shown when text is selected for quick access to formatting commands such as bold, italic and link. 
+* _Quick Selection_ - shown when text is selected for quick access to formatting commands such as bold, italic and link.
 * _Quick Insert_ - shown when a new line is created for the quick insertion of objects such as tables and images.
 
 It also enables three new toolbar controls:
@@ -112,7 +112,8 @@ tinymce.init({
 });
 ```
 
-### Related configuration options
+### Configuration options
 
-* [quickbars_insert_toolbar]({{ site.baseurl }}/configure/editor-appearance/#quickbars_insert_toolbar)
-* [quickbars_selection_toolbar]({{ site.baseurl }}/configure/editor-appearance/#quickbars_selection_toolbar)
+##{% include configuration/insert-toolbar.md %}
+
+##{% include configuration/selection-toolbar.md %}

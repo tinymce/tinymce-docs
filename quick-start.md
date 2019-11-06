@@ -19,9 +19,9 @@ Include the following line of code in the `<head>` of a HTML page.
 
 ## Step 2: Initialize TinyMCE as part of a web form
 
-Initialize {{site.productname}} {{site.productmajorversion}} on any element (or elements) on the web page.
+Initialize {{site.productname}} {{site.productmajorversion}} on any element (or elements) on the web page by passing an object that contains a `selector` value to `tinymce.init()`. The `selector` value can be any valid [CSS selector](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors).
 
-{{site.productname}} enables identifying replaceable elements using a [CSS selector](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors). Specify the element by passing an object that contains a `selector` to `tinymce.init()`, such as:
+For example:
 
 ```html
 <script>
@@ -31,9 +31,9 @@ Initialize {{site.productname}} {{site.productmajorversion}} on any element (or 
 </script>
 ```
 
-**For example**:
-
 To replace `<textarea id='mytextarea'>` with a {{site.productname}} {{site.productmajorversion}} editor instance, pass the selector `'#mytextarea'` to `tinymce.init()`.
+
+For example:
 
 ```html
 <!DOCTYPE html>
@@ -67,7 +67,7 @@ To remove the notice:
 
 <img alt="warning icon" src="{{ site.baseurl }}/images/icons/warning.svg" style="vertical-align:middle;"/>**_This domain is not registered with {{site.cloudname}}..._**
 
-Replace `no-api-key` in the source script (`<script src=...`) with a [{{site.cloudname}} API key]({{site.accountsignup}}).
+Replace `no-api-key` in the source script (`<script src=...`) with a {{site.cloudname}} API key, which is created when signing up to the [{{site.cloudname}}]({{site.accountsignup}}).
 
 Signing up for a {{site.cloudname}} API key will also provide a trial of the [Premium Plugins]({{site.baseurl}}/enterprise/).
 

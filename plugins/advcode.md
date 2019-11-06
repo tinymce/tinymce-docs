@@ -21,4 +21,4 @@ tinymce.init({
 });
 ```
 
-> The Advanced Code Editor plugin is included with a [{{site.sfenterpriseac}}]({{site.pricingpage}}) subscription. Please [click here]({{site.pricingpage}}) to learn more about our flexible subscriptions plans.
+> The Advanced Code Editor plugin is included with a [{{site.enterpriseversion}} subscription]({{site.pricingpage}}) subscription. Please [click here]({{site.pricingpage}}) to learn more about our flexible subscriptions plans.

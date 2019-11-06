@@ -37,8 +37,11 @@ To replace `<textarea id='mytextarea'>` with a {{site.productname}} {{site.produ
 
 ```html
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <script src='{{ site.cdnurl }}' referrerpolicy="origin"></script>
     <script>
       tinymce.init({
@@ -71,9 +74,7 @@ Signing up for a {{site.cloudname}} API key will also provide a trial of the [Pr
 ## Step 3: Saving content with a form POST
 Process the content with a form handler.
 
-When the `<form>` is submitted, the {{site.productname}} {{site.productmajorversion}} editor mimics the behavior of a normal HTML `<textarea>` during the `POST`. The host's form handler can process the submitted content in the same way as content from a regular `<textarea>`.
-
-The HTML elements and inline CSS are also submitted, along with pasted media such as images. Images are submitted as inline content with base64 encoding.
+When the `<form>` is submitted, {{site.productname}} {{site.productmajorversion}} will `POST` the content in the same way as a normal HTML `<textarea>`, including the HTML elements and inline CSS of the editor content. The host's form handler can process the submitted content in the same way as content from a regular `<textarea>`.
 
 ## Next Steps
 For information on:

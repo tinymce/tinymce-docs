@@ -11,7 +11,9 @@ keywords: form inline edit stylesheet
 
 The inline editing mode is useful when creating user experiences where the editing view of the page can be merged with the reading view of the page. This creates a seamless editing experience and true WYSIWYG behavior.
 
-When in inline editing mode the editor does not replace the selected element with its iframe, but instead edits the element's content in place instead. For a sample view of this mode, visit the [Inline Editor]({{ site.baseurl }}/demo/inline) example page.
+When in inline editing mode the editor does not replace the selected element with its iframe, but instead edits the element's content in place instead.
+
+For a sample view of this mode, visit the [Inline Editor]({{ site.baseurl }}/demo/inline) example page.
 
 
 ## Forms-based editing vs. inline editing

@@ -6,7 +6,9 @@ description: Theme that renders a lightweight UI for inline editing.
 keywords: theme inlite distraction-free
 ---
 
-The **Distraction-free** theme renders the editor in lightweight inline mode. This mode provides options to quickly insert links, images, and tables into the content. For a sample view of this mode, see the [Distraction-free editor]({{ site.baseurl }}/demo/editor-dfree/) example page.
+The **Distraction-free** theme renders the editor in lightweight inline mode. This mode provides options to quickly insert links, images, and tables into the content.
+
+For a sample view of this mode, see the [Distraction-free editor]({{ site.baseurl }}/demo/editor-dfree/) example page.
 
 ##### Example:
 
@@ -75,12 +77,14 @@ tinymce.init({
 
 ### Related configuration options
 
-* [quickbars_insert_toolbar]({{ site.baseurl }}/configure/editor-appearance/#quickbars_insert_toolbar)
-* [quickbars_selection_toolbar]({{ site.baseurl }}/configure/editor-appearance/#quickbars_selection_toolbar)
-* [inline]({{ site.baseurl }}/configure/editor-appearance/#inline)
-* [skin]({{ site.baseurl }}/configure/editor-appearance/#skin)
-* [theme]({{ site.baseurl }}/configure/editor-appearance/#theme)
-
+For information on:
+* Configuring a Quick Toolbar; including `quicklink`, `quickimage`, and `quicktable`; see: [Quick Toolbar plugin]({{site.baseurl}}/plugins/quickbars/).
+* Configuring a contextual toolbar, see: [Context Toolbar]({{site.baseurl}}/ui-components/contexttoolbar/).
+* Configuring a contextual menu, see: [Context Menu]({{site.baseurl}}/ui-components/contextmenu/).
+* Disabling the {{site.productname}} menubar, see: [Menubar]({{site.baseurl}}/configure/editor-appearance/#menubar).
+* The `quickbars_insert_toolbar` setting, see: [quickbars_insert_toolbar]({{site.baseurl}}/configure/editor-appearance/#quickbars_insert_toolbar/).
+* The `quickbars_selection_toolbar` setting, see: [quickbars_selection_toolbar]({{ site.baseurl }}/configure/editor-appearance/#quickbars_selection_toolbar).
+* The `inline` setting, see: [inline]({{ site.baseurl }}/configure/editor-appearance/#inline).
 
 {% assign_page next_page = "/general-configuration-guide/multiple-editors/index.html" %}
 {% include next-step.html next=next_page %}

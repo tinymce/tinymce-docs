@@ -27,6 +27,8 @@ The new mobile experience allows most of the {{site.productname}} plugins to wor
 
 {{site.productname}} will detect the platform and show an optimal UI experience based on the device type and screen size.
 
+> Note: iPads do not use the `mobile` part of the {{site.productname}} init configuration. This is due to a constraint added by Apple to return the environment as a "desktop environment" for iPads. iPads users will receive the other changes to touch functionality, such as context toolbars and context menus.
+
 {% include misc/mobile_platform_compatibility.md %}
 
 ## Configuring mobile

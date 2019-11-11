@@ -54,10 +54,12 @@ The following procedure covers downloading, configuring, building and testing th
       }
     }
     ```
-https://www.tiny.cloud/docs/enterprise/check-links/
-https://www.tiny.cloud/docs/enterprise/embed-media/mediaembed-server-config/
-https://www.tiny.cloud/docs/enterprise/server/configure/
-7. Create an `origins.env` file and specify the Hypertext Transfer Protocol (HTTP) and domain name of sites hosting the TinyMCE editor (`allowed-origins`). Up to 99 origins can be added without editing `config/ephox-hyperlinking-docker-env.conf`.
+    For information on the `http` configuration setting, see: [Configure server-side components - `http`]({{site.baseurl}}/enterprise/server/configure/#httpoptional).
+1. _Optional_: Update the link-checking cache configuration, as described in [Link Checker self-hosted quick setup]({{site.baseurl}}/enterprise/check-links/#linkcheckerself-hostedquicksetup).
+1. _Optional_: Configure the Enhanced Media Embed Service, as described in [Configure Enhanced Media Embed Server]({{site.baseurl}}/enterprise/embed-media/mediaembed-server-config/).
+1. _Optional_: Configure the service to use a HTTP proxy by updating `config/ephox-hyperlinking-docker-env.conf`. See:
+[Configure server-side components - proxy]({{site.baseurl}}/enterprise/server/configure/#proxyoptional).
+1. Create an `origins.env` file and specify the Hypertext Transfer Protocol (HTTP) and domain name of sites hosting the TinyMCE editor (`allowed-origins`). Up to 99 origins can be added without editing `config/ephox-hyperlinking-docker-env.conf`.
 
     For example:
 
@@ -67,12 +69,12 @@ https://www.tiny.cloud/docs/enterprise/server/configure/
     ORIGIN2=http://[example.org](<http://example.org//>)
     ```
     For information on `allowed-origins`, see: [Configure server-side components - allowed-origins]({{site.baseurl}}/enterprise/server/configure/#allowed-originsrequired).
-8. As the root user or Administrator, build the {{site.productname}} Hyperlinking Docker image using the following command:
+2. As the root user or Administrator, build the {{site.productname}} Hyperlinking Docker image using the following command:
 
     ```sh
     docker build -t tinymce-hyperlinking-service .
     ```
-9. As the root user or Administrator, deploy the service using the following command:
+3. As the root user or Administrator, deploy the service using the following command:
 
     ```sh
     docker run -d -p 8083:8080 --env-file origins.env tinymce-hyperlinking-service
@@ -80,7 +82,7 @@ https://www.tiny.cloud/docs/enterprise/server/configure/
     Where:
     * `-p 8083:8080` maps the container port `8080` to local port `8083`.
     * `--env-file origins.env` adds the allowed origins to the container.
-10. To verify that the Docker container is deployed and the hyperlinking service is running, execute:
+4.  To verify that the Docker container is deployed and the hyperlinking service is running, execute:
 
     ```sh
     curl http://localhost:8083/ephox-hyperlinking/

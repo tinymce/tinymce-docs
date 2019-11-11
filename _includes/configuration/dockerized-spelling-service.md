@@ -54,7 +54,10 @@ The following procedure covers downloading, configuring, building and testing th
       }
     }
     ```
-1. ?????????_Optional_: Add a custom dictionary [Adding custom dictionaries]({{site.baseurl}}/enterprise/check-spelling/custom/).
+    For information on the `http` configuration setting, see: [Configure server-side components - `http`]({{site.baseurl}}/enterprise/server/configure/#httpoptional).
+1. _Optional_: Configure the service to use a HTTP proxy by updating `config/ephox-spelling-docker-env.conf`. See:
+[Configure server-side components]({{site.baseurl}}/enterprise/server/configure/).
+1. _Optional_: Add a custom dictionary, as described in [Adding custom dictionaries]({{site.baseurl}}/enterprise/check-spelling/custom/).
 7. Create an `origins.env` file and specify the Hypertext Transfer Protocol (HTTP) and domain name of sites hosting the TinyMCE editor (`allowed-origins`). Up to 99 origins can be added without editing `config/ephox-spelling-docker-env.conf`.
 
     For example:

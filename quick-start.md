@@ -31,7 +31,7 @@ For example:
 </script>
 ```
 
-To replace `<textarea id='mytextarea'>` with a {{site.productname}} {{site.productmajorversion}} editor instance, pass the selector `'#mytextarea'` to `tinymce.init()`.
+To replace `<textarea id="mytextarea">` with a {{site.productname}} {{site.productmajorversion}} editor instance, pass the selector `'#mytextarea'` to `tinymce.init()`.
 
 For example:
 
@@ -42,7 +42,7 @@ For example:
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <script src='{{ site.cdnurl }}' referrerpolicy="origin"></script>
+    <script src="{{ site.cdnurl }}" referrerpolicy="origin"></script>
     <script>
       tinymce.init({
         selector: '#mytextarea'

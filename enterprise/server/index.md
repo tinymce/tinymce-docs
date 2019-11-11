@@ -203,3 +203,16 @@ tinymce.init({
 	linkchecker_service_url: 'http://yourserver.example.com/ephox-hyperlinking/'
 });
 ````
+
+## Server-side component installation using Dockerfiles
+The {{site.enterpriseversion}} server-side components can be deployed on Docker orchestration applications such as [Kubernetes](https://kubernetes.io/), [Docker Swarm](https://docs.docker.com/engine/swarm/), or [OpenShift](https://www.openshift.com/). {{site.companyname}} provides packages containing pre-configured [`Dockerfile`](https://docs.docker.com/engine/reference/builder/)s for building and deploying the {{site.enterpriseversion}} server-side components using Docker.
+
+* [The image proxy server-side component](http://localhost:4000/enterprise/server/#deploythetinymceimageproxyserver-sidecomponentusingdocker)
+* [The spelling service server-side component](http://localhost:4000/enterprise/server/#deploythetinymcespellingserviceserver-sidecomponentusingdocker)
+* [The hyperlinking server-side component](http://localhost:4000/enterprise/server/#deploythetinymcehyperlinkingserver-sidecomponentusingdocker)
+
+{% include configuration/dockerized-image-proxy.md %}
+
+{% include configuration/dockerized-spelling-service.md %}
+
+{% include configuration/dockerized-hyperlinking-service.md %}

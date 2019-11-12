@@ -22,8 +22,8 @@ This procedure creates a basic jQuery integration containing a {{site.productnam
 
         To source {{site.productname}} and the {{site.productname}} jQuery integration from the {{site.cloudname}}, add the following `script` elements:
         ```html
-        <script src="{{site.cdnurl}}" referrerpolicy="origin"></script>
-        <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/jquery.tinymce.min.js" referrerpolicy="origin"></script>
+<script src="{{site.cdnurl}}" referrerpolicy="origin"></script>
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/jquery.tinymce.min.js" referrerpolicy="origin"></script>
         ```
         Replace `no-api-key` in the source script (`<script src=...`) with a {{site.cloudname}} API key, which is created when signing up to the [{{site.cloudname}}]({{site.accountsignup}}).
 
@@ -33,8 +33,8 @@ This procedure creates a basic jQuery integration containing a {{site.productnam
 
         To use an independent deployment of {{site.productname}}, add source scripts to either the `<head>` or the end of the `<body>` of the HTML file, such as:
         ```html
-        <script src="/path/to/tinymce.min.js"></script>
-        <script src="/path/to/jquery.tinymce.min.js"></script>
+<script src="/path/to/tinymce.min.js"></script>
+<script src="/path/to/jquery.tinymce.min.js"></script>
         ```
 
         For information on self-hosting {{site.productname}}, see: [Advanced installation choices]({{site.baseurl}}/general-configuration-guide/advanced-install/).
@@ -47,6 +47,7 @@ This procedure creates a basic jQuery integration containing a {{site.productnam
       <textarea id="tiny"></textarea>
     </div>
     ```
+
 4. Add the {{site.productname}} jQuery init script. The {{site.productname}} selector is defined in the jQuery prefix, and any other settings are defined within the `tinymce` object.
 
     ```html

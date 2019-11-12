@@ -217,7 +217,7 @@ The {{site.productname}} 5.1 release includes **Enhanced Media Embed** 2.2.4.
 ### Format Painter
 The {{site.productname}} 5.1 release includes **Format Painter** 1.2.0.
 
-**Format Painter** 1.2.0 has been updated to support the mobile platforms. The **Format Painter** will now function as expected for mobile users.
+**Format Painter** 1.2.0 has been updated to support mobile platforms. The **Format Painter** will now function as expected for mobile users.
 
 This version of **Format Painter** includes a fix to work with the [_Legacy Output_ plugin]({{site.baseurl}}/plugins/legacyoutput/)).
 

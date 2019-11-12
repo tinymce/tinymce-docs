@@ -195,11 +195,11 @@ Fixes for inline dialogs and menus have been included to:
 
 ## Premium Plugin changes
 
-### Advcode
+### Advanced Code Editor
 
-The {{site.productname}} 5.1 release includes **Advanced Code** 2.0.2.
+The {{site.productname}} 5.1 release includes **Advanced Code Editor** 2.0.2.
 
-**Advanced Code** 2.0.2 has been updated to improve performance on mobile devices.
+**Advanced Code Editor** 2.0.2 has been updated to improve performance on mobile devices.
 
 ### Checklist
 The {{site.productname}} 5.1 release includes **Checklist** 1.0.1.

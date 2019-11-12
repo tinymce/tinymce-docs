@@ -19,19 +19,9 @@ Include the following line of code in the `<head>` of a HTML page.
 
 ## Step 2: Initialize TinyMCE as part of a web form
 
-Initialize {{site.productname}} {{site.productmajorversion}} on any element (or elements) on the web page by passing an object that contains a `selector` value to `tinymce.init()`. The `selector` value can be any valid [CSS selector](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors).
+Initialize {{site.productname}} {{site.productmajorversion}} on any element (or elements) on the web page by passing an object containing a `selector` value to `tinymce.init()`. The `selector` value can be any valid [CSS selector](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors).
 
-For example:
-
-```html
-<script>
-  tinymce.init({
-    selector: '#mytextarea'
-  });
-</script>
-```
-
-To replace `<textarea id="mytextarea">` with a {{site.productname}} {{site.productmajorversion}} editor instance, pass the selector `'#mytextarea'` to `tinymce.init()`.
+For example: To replace `<textarea id="mytextarea">` with a {{site.productname}} {{site.productmajorversion}} editor instance, pass the selector `'#mytextarea'` to `tinymce.init()`.
 
 For example:
 
@@ -43,11 +33,13 @@ For example:
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <script src="{{ site.cdnurl }}" referrerpolicy="origin"></script>
+
     <script>
       tinymce.init({
         selector: '#mytextarea'
       });
     </script>
+
   </head>
 
   <body>
@@ -63,6 +55,8 @@ Adding this content to a HTML file and opening it in a web browser will load a T
 
 {% include codepen.html id="default" %}
 
+## Step 3: Add your API key
+
 To remove the notice:
 
 <img alt="warning icon" src="{{ site.baseurl }}/images/icons/warning.svg" style="vertical-align:middle;"/>**_This domain is not registered with {{site.cloudname}}..._**
@@ -71,7 +65,7 @@ Replace `no-api-key` in the source script (`<script src=...`) with a {{site.clou
 
 Signing up for a {{site.cloudname}} API key will also provide a trial of the [Premium Plugins]({{site.baseurl}}/enterprise/).
 
-## Step 3: Saving content with a form POST
+## Step 4: Save the content with a form POST
 Process the content with a form handler.
 
 When the `<form>` is submitted, {{site.productname}} {{site.productmajorversion}} will `POST` the content in the same way as a normal HTML `<textarea>`, including the HTML elements and inline CSS of the editor content. The host's form handler can process the submitted content in the same way as content from a regular `<textarea>`.

@@ -195,28 +195,6 @@ Fixes for inline dialogs and menus have been included to:
 
 ## Premium Plugin changes
 
-### PowerPaste
-The {{site.productname}} 5.1 release includes **PowerPaste** 5.2.0.
-
-#### Changes to `clean` paste and `Remove Formatting` paste
-
-**PowerPaste** _5.0_ included a change to the `Remove Formatting` functionality to filter out inline style elements (such as `strong`, `b`, `em`, `i`, and `sub`), in-line with other editor functionality.
-
-**PowerPaste** _5.2_ **reverses the _5.0_ change** and includes a new `powerpaste_clean_filtered_inline_elements` setting. This setting accepts a list of inline style elements to be filtered. These inline elements will be filtered on `clean` or `Remove Formatting` paste.
-
-To retain the _5.0_ default inline style element filter, add the following setting to `tinymce.init`:
-```js
-powerpaste_clean_filtered_inline_elements: 'strong,em,b,i,u,strike,sup,sub,font'
-```
-
-For information on `powerpaste_clean_filtered_inline_elements`, see: [PowerPaste - `powerpaste_clean_filtered_inline_elements`]({{site.baseurl}}/plugins/powerpaste/#powerpaste_clean_filtered_inline_elements).
-
-#### Pre-filtering and post-filtering callbacks
-
-**PowerPaste** 5.2 modifies the _pre-filtering_ and _post-filtering_ callbacks. The callbacks now contain additional data regarding the paste `mode` and the `source` of the content.
-
-For information on using the Pre-filtering and Post-filtering callbacks, see: [PowerPaste Plugin - Pre-filtering and post-filtering callbacks]({{site.baseurl}}/plugins/powerpaste/#pre-filtering-and-post-filtering-callbacks)
-
 ### Advcode
 
 The {{site.productname}} 5.1 release includes **Advanced Code** 2.0.2.
@@ -252,3 +230,25 @@ The {{site.productname}} 5.1 release includes **Mentions** 2.1.0.
 The {{site.productname}} 5.1 release includes **Page Embed** 1.0.1.
 
 **Page Embed** 1.0.1 has been updated to include a touch event listener to allow embedded media to execute on mobile platforms.
+
+### PowerPaste
+The {{site.productname}} 5.1 release includes **PowerPaste** 5.2.0.
+
+#### Changes to `clean` paste and `Remove Formatting` paste
+
+**PowerPaste** _5.0_ included a change to the `Remove Formatting` functionality to filter out inline style elements (such as `strong`, `b`, `em`, `i`, and `sub`), in-line with other editor functionality.
+
+**PowerPaste** _5.2_ **reverses the _5.0_ change** and includes a new `powerpaste_clean_filtered_inline_elements` setting. This setting accepts a list of inline style elements to be filtered. These inline elements will be filtered on `clean` or `Remove Formatting` paste.
+
+To retain the _5.0_ default inline style element filter, add the following setting to `tinymce.init`:
+```js
+powerpaste_clean_filtered_inline_elements: 'strong,em,b,i,u,strike,sup,sub,font'
+```
+
+For information on `powerpaste_clean_filtered_inline_elements`, see: [PowerPaste - `powerpaste_clean_filtered_inline_elements`]({{site.baseurl}}/plugins/powerpaste/#powerpaste_clean_filtered_inline_elements).
+
+#### Pre-filtering and post-filtering callbacks
+
+**PowerPaste** 5.2 modifies the _pre-filtering_ and _post-filtering_ callbacks. The callbacks now contain additional data regarding the paste `mode` and the `source` of the content.
+
+For information on using the Pre-filtering and Post-filtering callbacks, see: [PowerPaste Plugin - Pre-filtering and post-filtering callbacks]({{site.baseurl}}/plugins/powerpaste/#pre-filtering-and-post-filtering-callbacks)

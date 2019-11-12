@@ -217,22 +217,38 @@ For information on `powerpaste_clean_filtered_inline_elements`, see: [PowerPaste
 
 For information on using the Pre-filtering and Post-filtering callbacks, see: [PowerPaste Plugin - Pre-filtering and post-filtering callbacks]({{site.baseurl}}/plugins/powerpaste/#pre-filtering-and-post-filtering-callbacks)
 
-### Page Embed
-The {{site.productname}} 5.1 release includes **Page Embed** 1.0.1.
+### Advcode
 
-**Page Embed** 1.0.1 has been updated to include a touch event listener to allow embedded media to execute on mobile platforms.
+The {{site.productname}} 5.1 release includes **Advanced Code** 2.0.2.
+
+**Advanced Code** 2.0.2 has been updated to improve performance on mobile devices.
+
+### Checklist
+The {{site.productname}} 5.1 release includes **Checklist** 1.0.1.
+
+**Checklist** 1.0.1 includes:
+* A fix to allow checklist items to be toggled on an iPad.
+* A fix to ensure the checklist toolbar button is toggled when checklist content is selected.
+
+### Enhanced Media Embed
+
+The {{site.productname}} 5.1 release includes **Enhanced Media Embed** 2.2.4.
+
+**Enhanced Media Embed** 2.2.4 has been updated to include a touch event listener to allow embedded media to execute on mobile platforms.
 
 ### Format Painter
 The {{site.productname}} 5.1 release includes **Format Painter** 1.2.0.
 
 **Format Painter** 1.2.0 has been updated to support the mobile platforms. The **Format Painter** will now function as expected for mobile users.
 
-### Checklist
-The {{site.productname}} 5.1 release includes **Checklist** 1.0.1.
-
-**Checklist** 1.0.1 includes a fix to allow checklist items to be toggled on an iPad.
+This version of **Format Painter** includes a fix to work with the [_Legacy Output_ plugin]({{site.baseurl}}/plugins/legacyoutput/)).
 
 ### Mentions
 The {{site.productname}} 5.1 release includes **Mentions** 2.1.0.
 
 **Mentions** 2.1.0 has been updated to allow for the inclusion of "extra" menu items, such as additional results or search items. For details, see: [Mentions - `mentions_fetch`]({{site.baseurl}}/plugins/mentions/#mentions_fetch).
+
+### Page Embed
+The {{site.productname}} 5.1 release includes **Page Embed** 1.0.1.
+
+**Page Embed** 1.0.1 has been updated to include a touch event listener to allow embedded media to execute on mobile platforms.

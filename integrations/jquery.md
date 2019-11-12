@@ -8,8 +8,10 @@ keywords: integration integrate jquery javascript
 
 ## TinyMCE jQuery integration quick start guide
 
-The [Official {{site.productname}} jQuery integration](https://github.com/tinymce/tinymce/blob/master/modules/tinymce/src/core/main/js/JqueryIntegration.js) integrates TinyMCE into jQuery projects.
+The [Official {{site.productname}} jQuery component](https://github.com/tinymce/tinymce/blob/master/modules/tinymce/src/core/main/js/JqueryIntegration.js) integrates TinyMCE into jQuery projects.
 This procedure creates a basic jQuery integration containing a {{site.productname}} editor based on our [Basic example]({{site.baseurl}}/demo/basic-example/).
+
+### Procedure
 
 1. Source jQuery on the page.
 
@@ -18,7 +20,7 @@ This procedure creates a basic jQuery integration containing a {{site.productnam
 
     * **{{site.cloudname}}**
 
-        To source {{site.productname}} and the {{site.productname}} jQuery integration from the {{site.cloudname}}, add the following `script`
+        To source {{site.productname}} and the {{site.productname}} jQuery integration from the {{site.cloudname}}, add the following `script` elements:
         ```html
         <script src="{{site.cdnurl}}" referrerpolicy="origin"></script>
         <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/jquery.tinymce.min.js" referrerpolicy="origin"></script>

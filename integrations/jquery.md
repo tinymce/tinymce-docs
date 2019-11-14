@@ -90,7 +90,7 @@ To load a TinyMCE editor similar to the [Basic example]({{site.baseurl}}/demo/ba
 
 ## TinyMCE in a jQuery UI Dialog
 
-To render {{site.productname}} instances inside jQuery UI dialogs,add the following code:
+To render {{site.productname}} instances inside jQuery UI dialogs, add the following code:
 
 ```js
 // Prevent jQuery UI dialog from blocking focusin

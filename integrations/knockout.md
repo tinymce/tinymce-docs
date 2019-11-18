@@ -42,7 +42,7 @@ Michael Papworth developed the Knockout binding for TinyMCE. For details, see: [
 
 1. Source `tinymce-knockout-binding` (`wysiwyg.js`) on the page.
 
-    If the project loads tinymce-knockout-binding from a Content delivery Network (CDN), use the script provided by the CDN, including any attributes, such as `integrity` and `crossorigin`.
+    If the project loads tinymce-knockout-binding from a Content Delivery Network (CDN), use the script provided by the CDN, including any attributes, such as `integrity` and `crossorigin`.
 
 3. Add an initialization point for {{site.productname}}, such as:
 

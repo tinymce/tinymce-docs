@@ -14,7 +14,7 @@ Michael Papworth developed the Knockout binding for TinyMCE. For details, see: [
 
 ### Procedure
 
-1. Source jQuery and Knockout on the page.
+1. In a HTML file, add source scripts for jQuery and Knockout JS.
 
     If the project loads jQuery or Knockout from a Content delivery Network (CDN), use the script provided by the CDN, including any attributes, such as `integrity` and `crossorigin`.
 2. Source {{site.productname}} and the {{site.productname}} jQuery integration from the {{site.cloudname}} or from a self-hosted location.

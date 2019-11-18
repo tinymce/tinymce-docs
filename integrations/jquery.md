@@ -13,7 +13,7 @@ This procedure creates a basic jQuery integration containing a {{site.productnam
 
 ### Procedure
 
-1. Source jQuery on the page.
+1. In a HTML file, add a source script for source jQuery.
 
     If the project loads jQuery from https://code.jquery.com/, use the script provided by the [jQuery CDN](https://code.jquery.com/), which includes the `integrity` and `crossorigin` attributes.
 2. Source {{site.productname}} and the {{site.productname}} jQuery integration from the {{site.cloudname}} or from a self-hosted location.

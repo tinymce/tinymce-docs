@@ -10,6 +10,24 @@ class: changelog
 
 {% capture changelog %}
 
+## Version 5.1.2 November 19, 2019
+* Fixed desktop touch devices using `mobile` configuration overrides.
+* Fixed unable to disable the new scrolling toolbar feature.
+* Fixed touch events passing through any pop-up items to the content underneath on Android devices.
+* Fixed the table selector handles throwing JavaScript exceptions for non-table selections.
+* Fixed `cut` operations not removing selected content on Android devices when the `paste` plugin is enabled.
+* Fixed inline toolbar not constrained to the window width by default.
+* Fixed context toolbar split button chevrons pointing right when they should be pointing down.
+* Fixed unable to access the dialog footer in tabbed dialogs on small screens.
+* Fixed mobile table selectors were hard to select with touch by increasing the size.
+* Fixed mobile table selectors moving when moving outside the editor.
+* Fixed inline toolbars collapsing when using sliding toolbars.
+* Fixed block textpatterns not treating NBSPs as spaces.
+* Fixed backspace not merging blocks when the last element in the preceding block was a `contenteditable="false"` element.
+* Fixed toolbar buttons that only contain text labels overlapping on mobile devices.
+* Fixed `quickbars` quickimage picker not working on mobile.
+* Fixed fullscreen not resizing in an iOS **WKWebView** component.
+
 ## Version 5.1.1 October 28, 2019
 * Fixed font formats containing spaces being wrapped in `&quot;` entities instead of single quotes.
 * Fixed alert and confirm dialogs losing focus when clicked.

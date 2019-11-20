@@ -7,13 +7,25 @@ The following new features and enhancements were added for the {{site.productnam
 
 The new mobile experience comes with a number of user interface changes, building on the {{site.productname}} desktop experience:
 
-* [Mobile devices now use the `silver` theme](#mobiledevicesnowusethesilvertheme)
-* [Horizontal contextual menus on mobile](#horizontalcontextualmenusonmobile)
-* [Side-scrolling toolbars on mobile](#side-scrollingtoolbarsonmobile)
-* [Contextual keyboard settings](#contextualkeyboardsettings)
-* [New mobile defaults for selected settings](#newmobiledefaultsforselectedsettings)
-* [Table cell selection on mobile](#tablecellselectiononmobile)
-* [Touch-friendly split buttons](#touch-friendlysplitbuttons)
+- [Mobile](#mobile)
+  - [Enabling the mobile editor](#enabling-the-mobile-editor)
+  - [Mobile devices now use the `silver` theme](#mobile-devices-now-use-the-silver-theme)
+  - [Horizontal contextual menus on mobile](#horizontal-contextual-menus-on-mobile)
+  - [Side-scrolling toolbars on mobile](#side-scrolling-toolbars-on-mobile)
+  - [Contextual keyboard settings](#contextual-keyboard-settings)
+  - [New mobile defaults for selected settings](#new-mobile-defaults-for-selected-settings)
+  - [Table cell selection on mobile](#table-cell-selection-on-mobile)
+  - [Touch-friendly split buttons](#touch-friendly-split-buttons)
+- [Sticky Toolbar](#sticky-toolbar)
+- [Changes to the Env API for platform detection](#changes-to-the-env-api-for-platform-detection)
+  - [New Env API properties](#new-env-api-properties)
+  - [New Env methods](#new-env-methods)
+- [Added new `referrer_policy` setting](#added-new-referrerpolicy-setting)
+- [Added a dark content css skin](#added-a-dark-content-css-skin)
+- [Added border width to Table cell dialog](#added-border-width-to-table-cell-dialog)
+- [Changed the default `toolbar_drawer` to `floating`](#changed-the-default-toolbardrawer-to-floating)
+- [Icon changes](#icon-changes)
+- [Fixes to the positioning of inline dialogs and menus](#fixes-to-the-positioning-of-inline-dialogs-and-menus)
 
 The new mobile experience allows most of the {{site.productname}} plugins to work on mobile devices, except for:
 
@@ -192,73 +204,3 @@ Fixes for inline dialogs and menus have been included to:
 
 * Position inline dialogs correctly when the page is scrolled.
 * Reposition inline dialogs and menus when resizing {{site.productname}}.
-
-## Premium Plugin changes
-
-### Advanced Code Editor
-
-The {{site.productname}} 5.1 release includes **Advanced Code Editor** 2.0.2.
-
-**Advanced Code Editor** 2.0.2 has been updated to improve performance on mobile devices.
-
-### Advanced Tables
-
-A new **Advanced Tables** premium plugin has been released with {{site.productname}} 5.1. The **Advanced Tables** plugin extends the core [`table` plugin]({{site.baseurl}}/plugins/table/) by adding sort options for rows and columns.
-
-For information on this plugin, see:
-
-* [The Advanced Tables product page](https://apps.tiny.cloud/products/advanced-tables/).
-* [The Advanced Tables Premium features page (including demo)]({{site.baseurl}}/enterprise/advanced_tables/).
-* [The Advanced Tables plugin documentation page]({{site.baseurl}}/plugins/advtable/).
-
-### Checklist
-The {{site.productname}} 5.1 release includes **Checklist** 1.0.1.
-
-**Checklist** 1.0.1 includes:
-* A fix to allow checklist items to be toggled on an iPad.
-* A fix to ensure the checklist toolbar button is toggled when checklist content is selected.
-
-### Enhanced Media Embed
-
-The {{site.productname}} 5.1 release includes **Enhanced Media Embed** 2.2.4.
-
-**Enhanced Media Embed** 2.2.4 has been updated to include a touch event listener to allow embedded media to execute on mobile platforms.
-
-### Format Painter
-The {{site.productname}} 5.1 release includes **Format Painter** 1.2.0.
-
-**Format Painter** 1.2.0 has been updated to support mobile platforms. The **Format Painter** will now function as expected for mobile users.
-
-This version of **Format Painter** includes a fix to work with the [_Legacy Output_ plugin]({{site.baseurl}}/plugins/legacyoutput/)).
-
-### Mentions
-The {{site.productname}} 5.1 release includes **Mentions** 2.1.0.
-
-**Mentions** 2.1.0 has been updated to allow for the inclusion of "extra" menu items, such as additional results or search items. For details, see: [Mentions - `mentions_fetch`]({{site.baseurl}}/plugins/mentions/#mentions_fetch).
-
-### Page Embed
-The {{site.productname}} 5.1 release includes **Page Embed** 1.0.1.
-
-**Page Embed** 1.0.1 has been updated to include a touch event listener to allow embedded media to execute on mobile platforms.
-
-### PowerPaste
-The {{site.productname}} 5.1 release includes **PowerPaste** 5.2.0.
-
-#### Changes to `clean` paste and `Remove Formatting` paste
-
-**PowerPaste** _5.0_ included a change to the `Remove Formatting` functionality to filter out inline style elements (such as `strong`, `b`, `em`, `i`, and `sub`), in-line with other editor functionality.
-
-**PowerPaste** _5.2_ **reverses the _5.0_ change** and includes a new `powerpaste_clean_filtered_inline_elements` setting. This setting accepts a list of inline style elements to be filtered. These inline elements will be filtered on `clean` or `Remove Formatting` paste.
-
-To retain the _5.0_ default inline style element filter, add the following setting to `tinymce.init`:
-```js
-powerpaste_clean_filtered_inline_elements: 'strong,em,b,i,u,strike,sup,sub,font'
-```
-
-For information on `powerpaste_clean_filtered_inline_elements`, see: [PowerPaste - `powerpaste_clean_filtered_inline_elements`]({{site.baseurl}}/plugins/powerpaste/#powerpaste_clean_filtered_inline_elements).
-
-#### Pre-filtering and post-filtering callbacks
-
-**PowerPaste** 5.2 modifies the _pre-filtering_ and _post-filtering_ callbacks. The callbacks now contain additional data regarding the paste `mode` and the `source` of the content.
-
-For information on using the Pre-filtering and Post-filtering callbacks, see: [PowerPaste Plugin - Pre-filtering and post-filtering callbacks]({{site.baseurl}}/plugins/powerpaste/#pre-filtering-and-post-filtering-callbacks)

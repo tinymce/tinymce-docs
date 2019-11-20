@@ -1,6 +1,6 @@
 ## Supported Premium Plugins
 
-The following table lists the premium plugins supported by {{site.companyname}} and indicates the supported version of TinyMCE required for the plugin.
+The following table lists the premium plugins supported by {{site.companynameformal}} and indicates the supported version of {{site.productname}} required for the plugin.
 
 | Plugin                                                            | TinyMCE 4     | TinyMCE 5     |
 | ----------------------------------------------------------------- | :-----------: | :-----------: |

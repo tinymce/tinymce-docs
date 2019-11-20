@@ -8,14 +8,14 @@ keywords: tinydrive PHP
 
 ## Tiny Drive PHP Starter Project
 
-This project will help you get started with Tiny Drive and allow you to play around with its features.
+This project will help you get started with {{site.cloudfilemanager}} and allow you to play around with its features.
 
 ### Requirements
 
-Before you start your journey with Tiny Drive, it will go a lot smoother if you have done these steps:
-1. Login/register to [tiny.cloud](https://apps.tiny.cloud/my-account/)
-2. Get a [TinyMCE API Key](https://apps.tiny.cloud/my-account/key-manager/)
-3. Get a [JWT Key](https://apps.tiny.cloud/my-account/jwt-key-manager/)
+Before you start your journey with {{site.cloudfilemanager}}, it will go a lot smoother if you have done these steps:
+1. Login/register to [{{site.accountpage}}]({{site.accountpageurl}}/)
+2. Get a [{{site.cloudname}} API Key]({{site.accountpageurl}}/key-manager/)
+3. Get a [JWT Key]({{site.accountpageurl}}/jwt/)
 
 Store the keys temporarily somewhere as you will need to copy & paste them later.
 
@@ -35,11 +35,11 @@ $ git clone git@github.com:tinymce/tinydrive-php-starter.git
 
 #### 2. Change the `apiKey` in `tinydrive-php-starter/config.php`
 
-You get the API key from the `API Key Manager` account manager at http://tiny.cloud.
+You get the API key from the `API Key Manager` {{site.accountpage}} page at http://tiny.cloud.
 
 #### 3. Create a `tinydrive-php-starter/private.key` file containing your generated private RSA key
 
-You get the private RSA key from the `JWT Key Manager` account manager at http://tiny.cloud.
+You get the private RSA key from the `JWT Key Manager` {{site.accountpage}} page at http://tiny.cloud.
 
 #### 4. Go to the directory and start the dev server
 
@@ -52,18 +52,18 @@ $ php -S localhost:3000
 
 ### Implementing with your system
 
-If your specific use case has not been covered by any of the sample [starter projects]({{site.baseurl}}/tinydrive/libraries/), some customizations might be required to be applied to implement Tiny Drive in the specific system. The [JSON Web Token]({{site.baseurl}}/tinydrive/jwt-authentication/) authentication solution would have to be tied to the login authentication of your system. This usually means integrating the JWT authentication to the existing session authentication so that users automatically login to Tiny Drive and your system.
+If your specific use case has not been covered by any of the sample [starter projects]({{site.baseurl}}/tinydrive/libraries/), some customizations might be required to be applied to implement {{site.cloudfilemanager}} in the specific system. The [JSON Web Token]({{site.baseurl}}/tinydrive/jwt-authentication/) authentication solution would have to be tied to the login authentication of your system. This usually means integrating the JWT authentication to the existing session authentication so that users automatically login to {{site.cloudfilemanager}} and your system.
 
 #### Additional resources
 
-Go through the following additional resources to figure out how to configure Tiny Drive with your system.
+Go through the following additional resources to figure out how to configure {{site.cloudfilemanager}} with your system.
 
-- We recommend reading up and trying to understand how [JWT authentication]({{site.baseurl}}/tinydrive/jwt-authentication/) works. In order to implement Tiny Drive you need prior knowledge of JWT in detail, including how they can be used for user authentication and session management in a web application. There will be some coding involved on both the client-side and the server-side to configure JWT as per the instructions in this section.
+- We recommend reading up and trying to understand how [JWT authentication]({{site.baseurl}}/tinydrive/jwt-authentication/) works. In order to implement {{site.cloudfilemanager}} you need prior knowledge of JWT in detail, including how they can be used for user authentication and session management in a web application. There will be some coding involved on both the client-side and the server-side to configure JWT as per the instructions in this section.
 - [Starter projects]({{site.baseurl}}/tinydrive/libraries/)
 - [Configuration Options]({{site.baseurl}}/tinydrive/configuration/)
 - [Integrations]({{site.baseurl}}/tinydrive/integrations/)
 
 ## Need help? ##
 
-We are striving to make Tiny Drive as useful and as simple as possible. For support related issues such as problems with JWT authentication and implementing Tiny Drive, check our [help page](/tinydrive/get-help/) or please contact [support](https://support.tiny.cloud/hc/en-us/requests/new).
+We are striving to make {{site.cloudfilemanager}} as useful and as simple as possible. For support related issues such as problems with JWT authentication and implementing {{site.cloudfilemanager}}, check our [help page]({{site.baseurl}}/tinydrive/get-help/) or please contact [{{site.supportname}}]({{site.supporturl}}).
 

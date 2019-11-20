@@ -1,6 +1,6 @@
 ## remove_trailing_brs
 
-This option allows you to disable TinyMCE's default behavior of removing `<br>` tags at the end of block elements.
+This option allows you to disable {{site.productname}}'s default behavior of removing `<br>` tags at the end of block elements.
 
 [Gecko](https://en.wikipedia.org/wiki/Gecko_(software)) and [WebKit](https://en.wikipedia.org/wiki/WebKit) browsers inject these elements to make it possible to place the caret in empty blocks. This logic attempts to remove these elements while also keeping tags that were intentionally placed by the user.
 

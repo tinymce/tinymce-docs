@@ -5,29 +5,29 @@ title_nav: PowerPaste
 keywords: enterprise powerpaste power paste paste_as_text powerpaste_word_import powerpaste_html_import powerpaste_block_drop powerpaste_allow_local_images microsoft word excel
 ---
 
-The TinyMCE **PowerPaste** plugin automatically cleans up content from Microsoft Word/Excel and HTML sources to ensure clean, compliant content that matches the look and feel of the site.
+The {{site.productname}} **PowerPaste** plugin automatically cleans up content from Microsoft Word/Excel and HTML sources to ensure clean, compliant content that matches the look and feel of the site.
 
 >***Note:*** _Due to limitations in Excel online (part of Office Live) PowerPaste does not support pasting from Excel online.  If you paste content using Excel in Office Live you will get a plain text representation of the content._
 
 
 ## Usage
 
-The **PowerPaste** plugin activates automatically when users paste content into the editor. For basic usage, users are not required to take any action. Simply copy and paste content normally using keyboard shortcuts, the browser's "Paste" menu item (including from the context menu), or the TinyMCE "Paste" toolbar button.
+The **PowerPaste** plugin activates automatically when users paste content into the editor. For basic usage, users are not required to take any action. Simply copy and paste content normally using keyboard shortcuts, the browser's "Paste" menu item (including from the context menu), or the {{site.productname}} "Paste" toolbar button.
 
-To paste clipboard content as plain text, users can click the "Paste As Text" toolbar button or menu item, then paste the content normally. The TinyMCE **PowerPaste** plugin will convert the HTML on the clipboard into plain text.
+To paste clipboard content as plain text, users can click the "Paste As Text" toolbar button or menu item, then paste the content normally. The {{site.productname}} **PowerPaste** plugin will convert the HTML on the clipboard into plain text.
 
-If you configure **PowerPaste** to allow local images (see the [`powerpaste_allow_local_images`](#powerpaste_allow_local_images) setting below), then images copied from Microsoft Word and other sources will appear in TinyMCE as Base64 encoded images. You can have TinyMCE automatically upload Base64 encoded images for reverting back to a standard image as described in the [image upload documentation]({{site.baseurl}}/advanced/handle-async-image-uploads/).
+If you configure **PowerPaste** to allow local images (see the [`powerpaste_allow_local_images`](#powerpaste_allow_local_images) setting below), then images copied from Microsoft Word and other sources will appear in {{site.productname}} as Base64 encoded images. You can have {{site.productname}} automatically upload Base64 encoded images for reverting back to a standard image as described in the [image upload documentation]({{site.baseurl}}/advanced/handle-async-image-uploads/).
 
 >***Note:*** _PowerPaste (when configured to allow local images) will import images from pasted Microsoft Word/Excel content.  When doing this, **PowerPaste** extracts Base64 encoded images from the clipboard.  Images larger than approximately 8.5MB may fail to import based on technical limitations of web browsers._
 
 
 ## Cloud Installation
-To enable the TinyMCE **PowerPaste** plugin with [TinyMCE Cloud]({{ site.baseurl }}/cloud-deployment-guide/editor-and-features/):
+To enable the {{site.productname}} **PowerPaste** plugin with [{{site.cloudname}}]({{ site.baseurl }}/cloud-deployment-guide/editor-and-features/):
 
-1. If you are currently using the `paste` plugin provided with TinyMCE, disable it by removing it from the `plugins` list.
+1. If you are currently using the `paste` plugin provided with {{site.productname}}, disable it by removing it from the `plugins` list.
 2. Add `powerpaste` to the `plugins` list.
 
-Example TinyMCE configuration:
+Example {{site.productname}} configuration:
 
 ```js
 tinymce.init({
@@ -37,13 +37,13 @@ tinymce.init({
 ```
 
 ## Self-hosted Installation
-To enable the TinyMCE **PowerPaste** plugin:
+To enable the {{site.productname}} **PowerPaste** plugin:
 
-1. If you are currently using the `paste` plugin provided with TinyMCE, disable it by removing it from the `plugins` list.
-2. Copy the entire `powerpaste` folder (found in the ZIP that you downloaded) into the `plugins` directory of your TinyMCE installation. This is typically `/tinymce/plugins`.
-3. Add `powerpaste` to the `plugins` list in  your TinyMCE configuration.
+1. If you are currently using the `paste` plugin provided with {{site.productname}}, disable it by removing it from the `plugins` list.
+2. Copy the entire `powerpaste` folder (found in the ZIP that you downloaded) into the `plugins` directory of your {{site.productname}} installation. This is typically `/tinymce/plugins`.
+3. Add `powerpaste` to the `plugins` list in  your {{site.productname}} configuration.
 
-See the example TinyMCE configuration above.
+See the example {{site.productname}} configuration above.
 
 
 ## Using the PowerPaste Plugin with Module Loaders
@@ -101,7 +101,7 @@ The supported values are:
 
 ### powerpaste_html_import
 
-This setting controls how content pasted from sources other than Microsoft Word is filtered. Note that this includes content copied from TinyMCE itself.
+This setting controls how content pasted from sources other than Microsoft Word is filtered. Note that this includes content copied from {{site.productname}} itself.
 
 **Default value:** `clean`
 
@@ -119,7 +119,7 @@ When set to `true`, Base64 encoded images using a data URI in the copied content
 
 **Possible values:**  `true`, `false`
 
->***Note:*** *If you configure* ***PowerPaste*** *to allow local images, you can have TinyMCE automatically upload Base64 encoded images for conversion back to a standard image as described on the [image upload documenation]({{ site.baseurl }}/advanced/handle-async-image-uploads/).*
+>***Note:*** *If you configure* ***PowerPaste*** *to allow local images, you can have {{site.productname}} automatically upload Base64 encoded images for conversion back to a standard image as described on the [image upload documenation]({{ site.baseurl }}/advanced/handle-async-image-uploads/).*
 
 ### powerpaste_block_drop
 
@@ -175,7 +175,7 @@ tinymce.init({
 
 This button allows you to toggle paste as plain text mode on and off. When in plain text mode, all rich content is converted into plain text.
 
-Example TinyMCE Configuration:
+Example {{site.productname}} Configuration:
 
 ```js
 tinymce.init({
@@ -191,7 +191,7 @@ tinymce.init({
 
 This menu item allows you to toggle paste as plain text mode on and off. When in plain text mode, all rich content is converted into plain text.
 
-Example TinyMCE Configuration:
+Example {{site.productname}} Configuration:
 
 ```js
 tinymce.init({
@@ -219,10 +219,12 @@ This setting allows you to run custom filtering on the content from the clipboar
 
 - Standard paste event data.
 - `content` - A string containing the content to be pasted.
-- `mode` - A string indicating whether PowerPaste is in `clean` or `merge` mode.
+- `mode` - A string indicating whether PowerPaste is in `clean`, `merge`, or `auto` mode.
 - `source` - A string indicating which kind of filtering PowerPaste will run based on the source of the content. This will return `html`, `msoffice`, `googledocs`, `image`, `plaintext`, `text`, or `invalid`.
 
-Example TinyMCE configuration:
+> **Note**: The mode 'auto' is used when the content source does not have formatting to "clean" or "merge". For example, when pasting an image with no text or markup content.
+
+Example {{site.productname}} configuration:
 
 ```js
 const yourCustomFilter = function(content) {
@@ -250,10 +252,12 @@ This setting allows you to run custom filtering on the pasted content after it i
 
 - Standard paste event data.
 - `node` - A DOM node containing the DOM structure of the filtered paste content.
-- `mode` - A string indicating whether PowerPaste is in `clean` or `merge` mode.
+- `mode` - A string indicating whether PowerPaste is in `clean`, `merge`, or `auto` mode.
 - `source` - A string indicating which kind of filtering PowerPaste will run based on the source of the content. This will return `html`, `msoffice`, `googledocs`, `image`, `plaintext`, `text`, or `invalid`.
 
-Example TinyMCE configuration:
+> **Note**: The mode 'auto' is used when the content source does not have formatting to "clean" or "merge". For example, when pasting an image with no text or markup content.
+
+Example {{site.productname}} configuration:
 
 ```js
 tinymce.init({
@@ -278,7 +282,7 @@ Custom paste filtering can also be configured at runtime using event listeners.
 
 The event listeners are passed the same data objects as their equivalent configuration options. The event listener callbacks can be configured or changed at any time as long as you have a reference to the Editor API.
 
-Example TinyMCE configuration:
+Example {{site.productname}} configuration:
 
 ```js
 const yourCustomFilter = function(content) {
@@ -312,4 +316,4 @@ tinymce.init({
 
 ## Buy TinyMCE PowerPaste
 
-Start with our [dedicated product page](https://about.tiny.cloud/products/powerpaste/) to see our flexible pricing options. OEM and enterprise customers should [contact sales directly](https://www.tinymce.com/pricing/).
+Start with our [dedicated product page]({{site.productpages}}/powerpaste/) to see our flexible pricing options. OEM and enterprise customers should [contact sales directly]({{site.contactpage}}).

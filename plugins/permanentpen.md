@@ -25,9 +25,9 @@ italic: false,
 underline: false,
 strikethrough: false
 ```
-For more information on TinyMCE formats, refer to the [formats]({{site.baseurl}}/configure/content-formatting/#formats) section.
+For more information on {{site.productname}} formats, refer to the [formats]({{site.baseurl}}/configure/content-formatting/#formats) section.
 
-Permanent Pen is a premium plugin from Tiny. Please see the [Premium features]({{site.baseurl}}/enterprise/permanentpen/) section for all the buying options.
+Permanent Pen is a premium plugin from {{site.companyname}}. Please see the [Premium features]({{site.baseurl}}/enterprise/permanentpen/) section for all the buying options.
 
 Once you have obtained the Permanent Pen plugin, refer to the following instructions for using it.
 
@@ -135,6 +135,6 @@ tinymce.init({
   }
 });
 ```
-For more information on TinyMCE formats, refer to the [formats]({{site.baseurl}}/configure/content-formatting/#formats) section.
+For more information on {{site.productname}} formats, refer to the [formats]({{site.baseurl}}/configure/content-formatting/#formats) section.
 
 Check out the [Permanent Pen demo]({{site.baseurl}}/demo/permanentpen/) to try out this new feature.

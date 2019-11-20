@@ -24,7 +24,7 @@ The two arguments these methods take are:
 * `identifier` - a unique name for the button
 * `configuration` - an object containing your configuration for that button.
 
-Define the custom toolbar button with the `setup` callback of the TinyMCE configuration to add it to the editor. This callback is invoked automatically for every initialized editor instance. Access to the UI registry API occurs when the callback receives a reference to the editor instance as its argument.
+Define the custom toolbar button with the `setup` callback of the {{site.productname}} configuration to add it to the editor. This callback is invoked automatically for every initialized editor instance. Access to the UI registry API occurs when the callback receives a reference to the editor instance as its argument.
 
 ### Example of adding a custom menu item
 
@@ -44,12 +44,12 @@ tinymce.init({
 });
 ```
 
-> Note: The identifier used to create the menu item must be included in the [`menu`]({{site.baseurl}}/configure/editor-appearance/#menu) option in the TinyMCE configuration for it to be added to the menubar's menus. It will not be added to the menubar's menus if `menu` is not configured correctly.
+> Note: The identifier used to create the menu item must be included in the [`menu`]({{site.baseurl}}/configure/editor-appearance/#menu) option in the {{site.productname}} configuration for it to be added to the menubar's menus. It will not be added to the menubar's menus if `menu` is not configured correctly.
 
 
 ## Types of menu items
 
-There are three types of menu items in TinyMCE 5.0:
+There are three types of menu items in {{site.productname}} {{site.productmajorversion}}:
 
 * Basic menu items
 * Nested menu items

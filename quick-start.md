@@ -2,60 +2,82 @@
 layout: default
 title: Quick start
 title_nav: Quick start
-description_short: Setup TinyMCE 5.0 in less than 5 minutes.
+description_short: Setup TinyMCE 5 in less than 5 minutes.
 description: Get an instance of TinyMCE up and running in less than 5 minutes.
 keywords: tinymce script textarea
 ---
 
-TinyMCE 5.0 is a powerful and flexible rich text editor that can be embedded in the user's web application. 
-
-TinyMCE 5.0 is perfect for developers who want to see how the new version of TinyMCE integrates into their ecosystem.
+{{site.productname}} {{site.productmajorversion}} is a powerful and flexible rich text editor that can be embedded in web applications. This quick start covers how to add a {{site.productname}} editor to a web page using the {{site.cloudname}}.
 
 ## Step 1: Include the TinyMCE script
 
-Include this line of code in the `<head>` of the HTML page and link to the tinymce.min.js source file. Substitute 'no-api-key' with your api key.
+Include the following line of code in the `<head>` of a HTML page.
 
 ```html
 <script src="{{ site.cdnurl }}" referrerpolicy="origin"></script>
 ```
 
-> Tip: A complete HTML snippet is provided in Step 2.
-
-
 ## Step 2: Initialize TinyMCE as part of a web form
 
-With the script included, initialize TinyMCE 5.0 on any element (or elements) in the web page.
+Initialize {{site.productname}} {{site.productmajorversion}} on any element (or elements) on the web page by passing an object containing a `selector` value to `tinymce.init()`. The `selector` value can be any valid [CSS selector](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors).
 
-Since TinyMCE enables identifying replaceable elements via a CSS selector, the only requirement is to pass an object that contains a `selector` to `tinymce.init()`.
+For example: To replace `<textarea id="mytextarea">` with a {{site.productname}} {{site.productmajorversion}} editor instance, pass the selector `'#mytextarea'` to `tinymce.init()`.
 
-In this example, replace `<textarea id='mytextarea'>` with a TinyMCE 5.0 editor instance by passing the selector `'#mytextarea'` to `tinymce.init()`.
+For example:
 
 ```html
 <!DOCTYPE html>
-<html>
-<head>
-  <script src='{{ site.cdnurl }}' referrerpolicy="origin"></script>
-  <script>
-  tinymce.init({
-    selector: '#mytextarea'
-  });
-  </script>
-</head>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<body>
-<h1>TinyMCE Quick Start Guide</h1>
-  <form method="post">
-    <textarea id="mytextarea" name="mytextarea">Hello, World!</textarea>
-  </form>
-</body>
+    <script src="{{ site.cdnurl }}" referrerpolicy="origin"></script>
+
+    <script>
+      tinymce.init({
+        selector: '#mytextarea'
+      });
+    </script>
+
+  </head>
+
+  <body>
+  <h1>{{site.productname}} Quick Start Guide</h1>
+    <form method="post">
+      <textarea id="mytextarea">Hello, World!</textarea>
+    </form>
+  </body>
 </html>
 ```
 
+Adding this content to a HTML file and opening it in a web browser will load a TinyMCE editor, such as:
 
-## Step 3: Saving content with a form POST
+{% include codepen.html id="default" %}
 
-When the `<form>` is submitted, the TinyMCE 5.0 editor mimics the behavior of a normal HTML `<textarea>` during the `POST`. In the user's form handler, the content submitted can be processed in the same way as the content created from a regular `<textarea>`.
+## Step 3: Add your API key
 
-That is all there is to it!
+To remove the notice:
 
-To download TinyMCE 5.0 and install it locally, the [More installation choices]({{  site.baseurl }}/general-configuration-guide/advanced-install/#packagemanagerinstalloptions) page in the [Introduction and getting started]({{ site.baseurl }}/general-configuration-guide) guide has instructions. This document also provides information about TinyMCE features such as advanced installation options, working with plugins, learning about content filtering, and spell checking.
+<img alt="warning icon" src="{{ site.baseurl }}/images/icons/warning.svg" style="vertical-align:middle;"/>**_This domain is not registered with {{site.cloudname}}..._**
+
+Replace `no-api-key` in the source script (`<script src=...`) with a {{site.cloudname}} API key, which is created when signing up to the [{{site.cloudname}}]({{site.accountsignup}}).
+
+Signing up for a {{site.cloudname}} API key will also provide a trial of the [Premium Plugins]({{site.baseurl}}/enterprise/).
+
+## Step 4: Save the content with a form POST
+Process the content with a form handler.
+
+When the `<form>` is submitted, {{site.productname}} {{site.productmajorversion}} will `POST` the content in the same way as a normal HTML `<textarea>`, including the HTML elements and inline CSS of the editor content. The host's form handler can process the submitted content in the same way as content from a regular `<textarea>`.
+
+## Next Steps
+For information on:
+
+  * Customizing {{site.productname}}, see: [Basic Setup]({{site.baseurl}}/general-configuration-guide/basic-setup/).
+  * The three editor modes:
+    * [{{site.productname}} classic editing mode]({{site.baseurl}}/general-configuration-guide/use-tinymce-classic/).
+    * [{{site.productname}} inline editing mode]({{site.baseurl}}/general-configuration-guide/use-tinymce-inline/).
+    * [{{site.productname}} distraction-free editing mode]({{site.baseurl}}/general-configuration-guide/use-tinymce-distraction-free/).
+  * Adding {{site.productname}} plugins, see: [Work with plugins to extend TinyMCE]({{site.baseurl}}/general-configuration-guide/work-with-plugins/).
+  * Localizing the {{site.productname}} editor, see: [Localize {{site.productname}}]({{site.baseurl}}/general-configuration-guide/localize-your-language/).
+  * Self-hosting {{site.productname}}, see: [Advanced installation choices]({{site.baseurl}}/general-configuration-guide/advanced-install/).

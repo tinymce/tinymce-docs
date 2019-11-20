@@ -7,7 +7,7 @@ keywords: enterprise tinymcespellchecker spell check checker pro pricing trouble
 
 ## General troubleshooting advice
 
-1. Verify that that your JavaScript configuration is correct for the relevant TinyMCE plugin.
+1. Verify that that your JavaScript configuration is correct for the relevant {{site.productname}} plugin.
 2. Ensure that your firewall has the appropriate ports and rules configured correctly. Be sure that the server the service is running on is accessible from the browser via the port specified in the server configuration
 3. Check the logs of your Java server for information. When making changes to the configuration you will need to restart the application server each time a change is made for that change to take effect. Refresh your browser window and then try the service again.
 
@@ -37,7 +37,7 @@ If the server is not running on a standard HTTP or HTTPS port (80 or 443) then C
 	* Firefox: Tools menu -> Web Developer -> Network.
 	* Safari: Develop -> Show Error Console. Click the Timelines link between Resources and Debugger.
 	* Internet Explorer: Click the cog icon on the top-right side of the browser. Select F12 Developer Tools. Click the Network link (next to the ‘Profiler’ link).
-2. Refresh the webpage featuring an TinyMCE configured with the spelling service. Enter a misspelled word into the editor.
+2. Refresh the webpage featuring an {{site.productname}} configured with the spelling service. Enter a misspelled word into the editor.
 3. Locate the network results that match the following URLs:
 	* `http://YOUR_SERVER:YOUR_PORT/ephox-spelling/1/autocorrect`
 	* `http://YOUR_SERVER:YOUR_PORT/ephox-spelling/1/correction`
@@ -153,4 +153,4 @@ Once downloaded:
 	![Curl on Windows step 4]({{ site.baseurl }}/images/spell-checking-curl-windows-4.png)
 
 ## Need more help?
-If you are still experiencing problems, please contact [Tiny Support](https://support.tiny.cloud).
+If you are still experiencing problems, please contact [{{site.supportname}}]({{site.supporturl}}).

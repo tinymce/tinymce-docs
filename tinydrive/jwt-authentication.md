@@ -8,25 +8,25 @@ keywords: jwt authentication
 
 ## Introduction
 
-Tiny Drive requires you to setup JWT authentication. This is to ensure that the security of your files remains in your control.
+{{site.cloudfilemanager}} requires you to setup JWT authentication. This is to ensure that the security of your files remains in your control.
 
-JWT is a standard authorization solution for web services and is documented in more detail at the [https://jwt.io/](https://jwt.io/) website. The guide aims to show how to setup JWT authentication for Tiny Drive.
+JWT is a standard authorization solution for web services and is documented in more detail at the [https://jwt.io/](https://jwt.io/) website. The guide aims to show how to setup JWT authentication for {{site.cloudfilemanager}}.
 
 > If you haven't tried any of the [Starter projects]({{site.baseurl}}/tinydrive/getting-started/#starterprojects)  yet, we urge you to try them before trying to implement your solution. The source is also available on Github to study.
 
 ## Private/public key pair
 
-TinyMCE cloud services tokens use public/private RSA key pairs. The TinyMCE cloud services only store the public key, allowing developers to have full control over the authentication.
+{{site.cloudname}} services tokens use public/private RSA key pairs. The {{site.cloudname}} services only store the public key, allowing developers to have full control over the authentication.
 
-The private/public key pair can be created on your [Tiny - My Account page](https://www.tiny.cloud/my-account/jwt/), however we only store the public key on the My Account page. The private key should be downloaded and stored in your backend.
+The private/public key pair can be created on your [{{site.companyname}} - {{site.accountpage}} page]({{site.accountpageurl}}/jwt/), however we only store the public key on the {{site.accountpage}}. The private key should be downloaded and stored in your backend.
 
 > **Important**: Keep the private key secure, do not commit files containing the key to public repositories or websites.
 
-For information on generating an RSA key pair locally, see: [Creating a private/public key pair for Tiny Drive](#creatingaprivatepublickeypairfortinydrive).
+For information on generating an RSA key pair locally, see: [Creating a private/public key pair for {{site.cloudfilemanager}}](#creatingaprivatepublickeypairfortinydrive).
 
 ## JWT provider URL
 
-The easiest way to setup JWT authentication against TinyMCE cloud services is to create a JWT provider endpoint. This endpoint takes a JSON HTTP POST request and produces a JSON result with the token that the service will then use for all the HTTP requests.
+The easiest way to setup JWT authentication against {{site.cloudname}} services is to create a JWT provider endpoint. This endpoint takes a JSON HTTP POST request and produces a JSON result with the token that the service will then use for all the HTTP requests.
 
 The following diagram explains the JWT call flow:
 
@@ -43,8 +43,8 @@ Our examples use, and we recommend RS256 algorithm. This is a list of supported 
 These are like options/data you can send with the JWT token.
 
 * **sub** - _(required)_ Unique string to identify the user. This can be a database ID, hashed email address, or similar identifier.
-* **name** - _(required)_ Full name of the user that will be used for presentation inside Tiny Drive. When the user uploads a file, this name is presented as the creator of that file.
-* **https://claims.tiny.cloud/drive/root** - (optional) Full path to a tiny drive specific root for example "/johndoe". The user won't be able to see or manage files outside this configured root path.
+* **name** - _(required)_ Full name of the user that will be used for presentation inside {{site.cloudfilemanager}}. When the user uploads a file, this name is presented as the creator of that file.
+* **https://claims.tiny.cloud/drive/root** - (optional) Full path to a {{site.cloudfilemanager}} specific root for example "/johndoe". The user won't be able to see or manage files outside this configured root path.
 
 > Note: The "sub" value is a case-sensitive string containing a **String** or **URI** value. The `sub` cannot have a `:` *unless* it is a valid URI or else the callback would fail.
 
@@ -61,11 +61,11 @@ Follow these steps to set up your own JWT endpoint.
 
 ## Need help?
 
-We recommend reading up and trying to understand how JWT works; you need some necessary skills to implement Tiny Drive. This can be tricky if you need some help, check our [help page](/tinydrive/get-help/) and if that doesn't work, contact our support.
+We recommend reading up and trying to understand how JWT works; you need some necessary skills to implement {{site.cloudfilemanager}}. This can be tricky if you need some help, check our [help page]({{site.baseurl}}/tinydrive/get-help/) and if that doesn't work, contact our support.
 
 ## PHP token provider endpoint example
 
-This example uses the [Firebase JWT library](https://github.com/firebase/php-jwt) provided through the Composer dependency manager. The private key should be the private key that was generated through your Tiny Account.
+This example uses the [Firebase JWT library](https://github.com/firebase/php-jwt) provided through the Composer dependency manager. The private key should be the private key that was generated through your {{site.accountpage}}.
 
 ### jwt.php ###
 
@@ -175,8 +175,8 @@ tinymce.init({
 ```
 
 ### More configuration
-If you managed to set this up, you should be good to go with checking out the various [configuration options]({{site.baseurl}}/tinydrive/configuration/) for Tiny Drive and how you can customize it. Don't forget to change the JWT Claim's (user id, user name) to get those from your system.
+If you managed to set this up, you should be good to go with checking out the various [configuration options]({{site.baseurl}}/tinydrive/configuration/) for {{site.cloudfilemanager}} and how you can customize it. Don't forget to change the JWT Claim's (user id, user name) to get those from your system.
 
-If you need some help, check our [help page]({{site.baseurl}}/tinydrive/get-help/) and if that doesn't work, [submit a support request](https://support.tiny.cloud/hc/en-us/requests/new).
+If you need some help, check our [help page]({{site.baseurl}}/tinydrive/get-help/) and if that doesn't work, [submit a support request]({{site.supporturl}}).
 
 {% include configuration/gen-rsa-key-pairs.md %}

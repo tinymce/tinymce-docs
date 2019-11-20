@@ -6,7 +6,7 @@ description: The TinyMCE rich text editing experience for mobile devices.
 keywords: mobile tablet
 ---
 
-{{site.productname}} 5.1 provides an improved mobile editor, replacing the existing mobile editor with a touch friendly version on the silver theme.
+{{site.productname}} {{site.productminorversion}} provides an improved mobile editor, replacing the existing mobile editor with a touch friendly version on the silver theme.
 
 
 The new mobile experience comes with a number of user interface changes in addition to the {{site.productname}} "desktop" experience:
@@ -26,6 +26,8 @@ The new mobile experience allows most of the {{site.productname}} plugins to wor
 * [Permanent Pen]({{site.baseurl}}/plugins/permanentpen/).
 
 {{site.productname}} will detect the platform and show an optimal UI experience based on the device type and screen size.
+
+> Note: iPads do not use the `mobile` part of the {{site.productname}} init configuration. This is due to a constraint added by Apple to return the environment as a "desktop environment" for iPads. iPads users will receive the other changes to touch functionality, such as context toolbars and context menus.
 
 {% include misc/mobile_platform_compatibility.md %}
 
@@ -62,7 +64,7 @@ The following settings have mobile-specific default values:
 
 ## The legacy mobile theme
 
-The mobile experience provided for {{site.productname}} 4.7 through {{site.productname}} 5.0 has been deprecated in {{site.productname}} 5.1.
+The mobile experience provided for {{site.productname}} 4.7 through {{site.productname}} 5.0 has been deprecated as of {{site.productname}} 5.1.
 
 To revert to the legacy mobile theme, add the mobile theme to the {{site.productname}} configuration, such as:
 
@@ -101,8 +103,8 @@ tinymce.init({
   theme: 'silver',
   mobile: {
     theme: 'mobile',
-    plugins: [ 'autosave', 'lists', 'autolink' ],
-    toolbar: [ 'undo', 'bold', 'italic', 'styleselect' ]
+    plugins: 'autosave lists autolink',
+    toolbar: 'undo bold italic styleselect'
   }
 });
 ```

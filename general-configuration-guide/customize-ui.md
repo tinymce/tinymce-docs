@@ -6,15 +6,15 @@ description: Learn how to change the appearance of TinyMCE.
 keywords: themes skins statusbar
 ---
 
-This section is about customizing TinyMCE's user interface with skins, toolbar buttons, and manipulating the status bar.
+This section is about customizing {{site.productname}}'s user interface with skins, toolbar buttons, and manipulating the status bar.
 
 ### Themes
 
-**Silver** is TinyMCE's default theme. Users can easily customize the menu or toolbar without having to edit the theme. Theme creation requires a more in depth-knowledge of TinyMCE's API and is beyond the scope of this guide. TinyMCE skins, however, are easier to make.
+**Silver** is {{site.productname}}'s default theme. Users can easily customize the menu or toolbar without having to edit the theme. Theme creation requires a more in depth-knowledge of {{site.productname}}'s API and is beyond the scope of this guide. {{site.productname}} skins, however, are easier to make.
 
 ### Skins
 
-Skins control the appearance of TinyMCE such as colors and spacing. The default skin is called **Oxide** (`oxide`) and has a `light` and a `dark` version. To initialize the editor with the dark version of the default skin, use the following configuration:
+Skins control the appearance of {{site.productname}} such as colors and spacing. The default skin is called **Oxide** (`oxide`) and has a `light` and a `dark` version. To initialize the editor with the dark version of the default skin, use the following configuration:
 
 ```js
 tinymce.init({
@@ -34,15 +34,15 @@ tinymce.init({
 });
 ```
 
-Creating skins for TinyMCE is easy with the TinyMCE Skin tool project. See [Creating a skin]({{ site.baseurl }}/advanced/creating-a-skin/) for more details.
+Creating skins for {{site.productname}} is easy with the {{site.productname}} Skin tool project. See [Creating a skin]({{ site.baseurl }}/advanced/creating-a-skin/) for more details.
 
-> Note: The  [TinyMCE Skin Creator](http://skin.tinymce.com/) only supports TinyMCE 4.
+> Note: The  [{{site.productname}} Skin Creator](http://skin.tiny.cloud/) only supports TinyMCE 4.
 
-> Note: Developers often confuse the difference between TinyMCE "themes" and "skins". A **Skin** in TinyMCE is used to make changes to the appearance of the editor, for example, colors, margins, padding, fonts, icons, etc. A **Theme** creates the editor construction (left, top, bottom, or right of the editing area - vertical or horizontal, inline or outside, etc.). A skin usually changes the color scheme of a button, dialog, etc. while the theme applies to the whole editor including its functionality and has child skins to change the appearance.
+> Note: Developers often confuse the difference between {{site.productname}} "themes" and "skins". A **Skin** in {{site.productname}} is used to make changes to the appearance of the editor, for example, colors, margins, padding, fonts, icons, etc. A **Theme** creates the editor construction (left, top, bottom, or right of the editing area - vertical or horizontal, inline or outside, etc.). A skin usually changes the color scheme of a button, dialog, etc. while the theme applies to the whole editor including its functionality and has child skins to change the appearance.
 
 ### Changing editor height and width
 
-A common UI customization used by developers is changing the height and width of the editable area. The following examples are code snippets that change TinyMCE's height and width.
+A common UI customization used by developers is changing the height and width of the editable area. The following examples are code snippets that change {{site.productname}}'s height and width.
 
 > Note: The links below contain specific details of these customization options.
 
@@ -89,16 +89,16 @@ The editable area can also automatically resize itself as the user enters conten
 
 ### Customizing the editable area with content_css
 
-Use the [`content_css`]({{ site.baseurl }}/configure/content-appearance/#content_css) customization option to ensure that TinyMCE's editable area has the same styling as the surrounding content.
+Use the [`content_css`]({{ site.baseurl }}/configure/content-appearance/#content_css) customization option to ensure that {{site.productname}}'s editable area has the same styling as the surrounding content.
 
-Use the same `css` file that controls the look and style of the content TinyMCE is integrated into in this setting. The following example includes the file `mycontent.css` in all of the pages to control the site's global appearance. This example ensures the content in the editable area contains the same style as the site.
+Use the same `css` file that controls the look and style of the content {{site.productname}} is integrated into in this setting. The following example includes the file `mycontent.css` in all of the pages to control the site's global appearance. This example ensures the content in the editable area contains the same style as the site.
 
 ##### Example using an absolute path
 
 ```js
 // File: http://domain.mine/mysite/index.html
 
-tinyMCE.init({
+tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   content_css : '/mycontent.css'  // resolved to http://domain.mine/mycontent.css
 });
@@ -127,7 +127,7 @@ tinymce.init({
 
 ### Adding the code button plugin
 
-One popular toolbar button that is *not* loaded with the "Silver" theme is the `code` button. Clicking the `code` button displays a dialog box containing the raw HTML hidden behind TinyMCE's interface.
+One popular toolbar button that is *not* loaded with the "Silver" theme is the `code` button. Clicking the `code` button displays a dialog box containing the raw HTML hidden behind {{site.productname}}'s interface.
 
 > Note: Additional functionality may require the inclusion of a plugin
 

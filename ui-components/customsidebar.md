@@ -7,7 +7,7 @@ description: A short introduction to creating sidebars.
 keywords: sidebar
 ---
 
-TinyMCE allows developers to create sidebars and add custom UI widgets inside a constrained and easily accessible area of the editor. The sidebar is designed to allow administrators and plugin developers to provide additional tools that can be accessed by TinyMCE users.
+{{site.productname}} allows developers to create sidebars and add custom UI widgets inside a constrained and easily accessible area of the editor. The sidebar is designed to allow administrators and plugin developers to provide additional tools that can be accessed by {{site.productname}} users.
 
 ## Editor sidebar API
 
@@ -27,7 +27,7 @@ The `tooltip` specifies a tooltip to be displayed when hovering over the sidebar
 
 #### `icon`
 
-The `icon` specifies an icon for the sidebar toggle button. The icon should be the name of an icon provided by the TinyMCE skin or a [custom icon]({{site.baseurl}}/api/tinymce.editor.ui/tinymce.editor.ui.registry/#addicon/).
+The `icon` specifies an icon for the sidebar toggle button. The icon should be the name of an icon provided by the {{site.productname}} skin or a [custom icon]({{site.baseurl}}/api/tinymce.editor.ui/tinymce.editor.ui.registry/#addicon/).
 
 **Type**: `String`
 

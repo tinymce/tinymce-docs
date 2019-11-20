@@ -8,29 +8,31 @@ keywords: tinymce cloud script textarea apiKey
 
 ## Specifying the TinyMCE editor version deployed from Cloud
 
-Use the URL provided to specify the TinyMCE version when deploying via Tiny Cloud. Refer to the [TinyMCE editor via the Tiny Cloud]({{ site.baseurl }}/cloud-deployment-guide/editor-and-features) for more information.
+Use the URL provided to specify the {{site.productname}} version when deploying via {{site.cloudname}}. Refer to the [{{site.productname}} editor via the {{site.cloudname}}]({{ site.baseurl }}/cloud-deployment-guide/editor-and-features) for more information.
 
-The following example is the default for loading TinyMCE 5.0 via Tiny Cloud. Substitute 'no-api-key' with your api key in the examples below.
+The following example is the default for loading {{site.productname}} {{site.productmajorversion}} via {{site.cloudname}}. Substitute 'no-api-key' with your api key in the examples below.
 
 ```js
 <script src="{{ site.cdnurl }}" referrerpolicy="origin"></script>
 ```
 
-This URL specifies the latest and quality assured release of TinyMCE.
+This URL specifies the latest and quality assured release of {{site.productname}}.
 
 ### Selecting specific version numbers
 
-Support for requesting specific versions of TinyMCE 5.0 should work same as Tinymce 4.  In the meantime, there are three release channels available, see the section below.
+> All {{site.cloudname}} channels are based on the {{site.enterpriseversion}} version. For information on the latest version of the {{site.cloudname}} stable channel, see: [{{site.productname}} Release Notes]({{site.baseurl}}/release-notes/). For a list of changes that **may** be present in the {{site.cloudname}} testing channel, see: [{{site.productname}} Changelog]({{site.baseurl}}/changelog/).
+
+Support for requesting specific versions of {{site.productname}} {{site.productmajorversion}} should work same as {{site.productname}} 4.  In the meantime, there are three release channels available, see the section below.
 
 ### dev, testing, and stable releases
 
-Choose from `dev`, `testing`, or `stable` release channels to load the latest version of TinyMCE from Tiny Cloud.
+Choose from `dev`, `testing`, or `stable` release channels to load the latest version of {{site.productname}} from {{site.cloudname}}.
 
-These channels are updated automatically and provide the latest TinyMCE version that matches the criteria below.
+These channels are updated automatically and provide the latest {{site.productname}} version that matches the criteria below.
 
 #### dev release channel
 
-This channel deploys the absolute latest version of TinyMCE as documented in [TinyMCE changelog]({{ site.baseurl }}/changelog/). The current version of TinyMCE available through the `dev` channel [can be found here](https://cdn.tiny.cloud/1/no-api-key/tinymce/5-dev/version.txt).
+This channel deploys the absolute latest version of {{site.productname}} as documented in [{{site.productname}} changelog]({{ site.baseurl }}/changelog/). The current version of {{site.productname}} available through the `dev` channel [can be found here](https://cdn.tiny.cloud/1/no-api-key/tinymce/5-dev/version.txt).
 
 ##### Example
 
@@ -40,7 +42,7 @@ This channel deploys the absolute latest version of TinyMCE as documented in [Ti
 
 #### testing release channel
 
-This channel deploys the current release candidate for the `stable` channel. The TinyMCE release candidate is undergoing quality assurance. The current version of TinyMCE available through the `testing` channel [can be found at here](https://cdn.tiny.cloud/1/no-api-key/tinymce/5-testing/version.txt).
+This channel deploys the current release candidate for the `stable` channel. The {{site.productname}} release candidate is undergoing quality assurance. The current version of {{site.productname}} available through the `testing` channel [can be found at here](https://cdn.tiny.cloud/1/no-api-key/tinymce/5-testing/version.txt).
 
 ##### Example
 
@@ -50,7 +52,7 @@ This channel deploys the current release candidate for the `stable` channel. The
 
 #### stable release channel
 
-This channel deploys the latest release of TinyMCE that has passed our quality assurance process. The current version of TinyMCE available through the `/5` stable channel can be found [here](https://cdn.tiny.cloud/1/no-api-key/tinymce/5/version.txt). The TinyMCE 5 stable channel can be loaded from [this url](https://cdn.tiny.cloud/1/no-api-key/tinymce/5/plugins.min.js).
+This channel deploys the latest release of {{site.productname}} that has passed our quality assurance process. The current version of {{site.productname}} available through the `/{{site.productmajorversion}}` stable channel can be found [here](https://cdn.tiny.cloud/1/no-api-key/tinymce/5/version.txt). The {{site.productname}} {{site.productmajorversion}} stable channel can be loaded from [this url](https://cdn.tiny.cloud/1/no-api-key/tinymce/5/plugins.min.js).
 
 ##### Example
 
@@ -60,7 +62,7 @@ This channel deploys the latest release of TinyMCE that has passed our quality a
 
 ## Specifying the version of features/plugins deployed from Tiny Cloud
 
-Use the URL query parameters to specify the version of each premium plugin. This is used when deployment is through the [TinyMCE editor and premium plugins via Tiny Cloud]({{ site.baseurl }}/cloud-deployment-guide/editor-and-features) or deploying [only premium plugins from Tiny Cloud]({{ site.baseurl }}/cloud-deployment-guide/features-only).
+Use the URL query parameters to specify the version of each premium plugin. This is used when deployment is through the [{{site.productname}} editor and premium plugins via {{site.cloudname}}]({{ site.baseurl }}/cloud-deployment-guide/editor-and-features) or deploying [only premium plugins from {{site.cloudname}}]({{ site.baseurl }}/cloud-deployment-guide/features-only).
 
 #### Mentions
 
@@ -196,11 +198,11 @@ Use the URL query parameters to specify the version of each premium plugin. This
 
 ## Specifying a self-hosted deployment of features/plugins
 
-<!-- Additional configuration is required when serving [only premium plugins from Tiny Cloud]({{ site.baseurl }}/cloud-deployment-guide/features-only) and from a self-hosted installation. URL query parameters and the special version name "SDK" can also be used in the configuration. -->
+<!-- Additional configuration is required when serving [only premium plugins from {{site.cloudname}}]({{ site.baseurl }}/cloud-deployment-guide/features-only) and from a self-hosted installation. URL query parameters and the special version name "SDK" can also be used in the configuration. -->
 
-If you're deploying [only premium plugins from Tiny Cloud]({{ site.baseurl }}/cloud-deployment-guide/features-only), you may want to have some features served from Tiny Cloud and some features served from your self-hosted installation. This is also possible with URL query parameters and the special version name "SDK".
+If you're deploying [only premium plugins from {{site.cloudname}}]({{ site.baseurl }}/cloud-deployment-guide/features-only), you may want to have some features served from {{site.cloudname}} and some features served from your self-hosted installation. This is also possible with URL query parameters and the special version name "SDK".
 
-The "SDK" version lets the TinyMCE Plugin Manager know that you're not using Tiny Cloud version of a particular plugin and that it shouldn't serve the plugin from Tiny Cloud. It also won't display any warning or error messages if you're not entitled to it.
+The "SDK" version lets the {{site.productname}} Plugin Manager know that you're not using {{site.cloudname}} version of a particular plugin and that it shouldn't serve the plugin from {{site.cloudname}}. It also won't display any warning or error messages if you're not entitled to it.
 
 #### Mentions
 
@@ -325,4 +327,4 @@ The "SDK" version lets the TinyMCE Plugin Manager know that you're not using Tin
 
 ### Featuring declared editor and plugin versions
 
-Support for requesting specific versions of TinyMCE 5.0 will work similar to TinyMCE 4.  Only the latest version is available via the cloud.
+Support for requesting specific versions of {{site.productname}} {{site.productmajorversion}} will work similar to {{site.productname}} 4.  Only the latest version is available via the {{site.cloudname}}.

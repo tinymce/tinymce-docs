@@ -7,25 +7,13 @@ The following new features and enhancements were added for the {{site.productnam
 
 The new mobile experience comes with a number of user interface changes, building on the {{site.productname}} desktop experience:
 
-- [Mobile](#mobile)
-  - [Enabling the mobile editor](#enabling-the-mobile-editor)
-  - [Mobile devices now use the `silver` theme](#mobile-devices-now-use-the-silver-theme)
-  - [Horizontal contextual menus on mobile](#horizontal-contextual-menus-on-mobile)
-  - [Side-scrolling toolbars on mobile](#side-scrolling-toolbars-on-mobile)
-  - [Contextual keyboard settings](#contextual-keyboard-settings)
-  - [New mobile defaults for selected settings](#new-mobile-defaults-for-selected-settings)
-  - [Table cell selection on mobile](#table-cell-selection-on-mobile)
-  - [Touch-friendly split buttons](#touch-friendly-split-buttons)
-- [Sticky Toolbar](#sticky-toolbar)
-- [Changes to the Env API for platform detection](#changes-to-the-env-api-for-platform-detection)
-  - [New Env API properties](#new-env-api-properties)
-  - [New Env methods](#new-env-methods)
-- [Added new `referrer_policy` setting](#added-new-referrerpolicy-setting)
-- [Added a dark content css skin](#added-a-dark-content-css-skin)
-- [Added border width to Table cell dialog](#added-border-width-to-table-cell-dialog)
-- [Changed the default `toolbar_drawer` to `floating`](#changed-the-default-toolbardrawer-to-floating)
-- [Icon changes](#icon-changes)
-- [Fixes to the positioning of inline dialogs and menus](#fixes-to-the-positioning-of-inline-dialogs-and-menus)
+* [Mobile devices now use the `silver` theme](#mobiledevicesnowusethesilvertheme)
+* [Horizontal contextual menus on mobile](#horizontalcontextualmenusonmobile)
+* [Side-scrolling toolbars on mobile](#side-scrollingtoolbarsonmobile)
+* [Contextual keyboard settings](#contextualkeyboardsettings)
+* [New mobile defaults for selected settings](#newmobiledefaultsforselectedsettings)
+* [Table cell selection on mobile](#tablecellselectiononmobile)
+* [Touch-friendly split buttons](#touch-friendlysplitbuttons)
 
 The new mobile experience allows most of the {{site.productname}} plugins to work on mobile devices, except for:
 

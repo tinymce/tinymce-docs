@@ -10,7 +10,7 @@ This section describes issues that users of {{site.productname}} 5.1 may encount
 * [Inline toolbar placement issues on mobile devices](#inlinetoolbarplacementissuesonmobiledevices)
 * [Touch selection handle issue on iOS](#touchselectionhandleissueonios)
 * [Text selection context toolbar issue on Android devices](#textselectioncontexttoolbarissueonandroiddevices)
-* [FormatPainter: Limited functionality on iOS devices](#formatpainter:limitedfunctionalityoniosdevices)
+* [FormatPainter: Limited functionality on iOS devices](#formatpainterlimitedfunctionalityoniosdevices)
 
 ### Autocompleter and keypress event issues on Android
 

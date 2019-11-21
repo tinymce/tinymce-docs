@@ -1,7 +1,30 @@
 
 This section describes issues that users of {{site.productname}} 5.1 may encounter, as well as possible workarounds for these issues.
 
-[Track {{site.productname}} issues on GitHub](https://github.com/tinymce/tinymce/labels/5.x).
+**Outline**
+
+* [Autocompleter and keypress event issues on Android](#autocompleterandkeypresseventissuesonandroid)
+* [UI elements may render behind the keyboard on iOS 12 devices](#uielementsmayrenderbehindthekeyboardonios12devices)
+* [UI issue with sidebars on mobile](#uiissuewithsidebarsonmobile)
+* [Find and replace moving out of view in iOS](#findandreplacemovingoutofviewinios)
+* [Inline toolbar placement issues on mobile devices](#inlinetoolbarplacementissuesonmobiledevices)
+* [Touch selection handle issue on iOS](#touchselectionhandleissueonios)
+* [Text selection context toolbar issue on Android devices](#textselectioncontexttoolbarissueonandroiddevices)
+* [FormatPainter: Limited functionality on iOS devices](#formatpainter:limitedfunctionalityoniosdevices)
+
+### Autocompleter and keypress event issues on Android
+
+#### Issue
+
+> **Note**: This issue affects the following plugins:
+> * [Mentions]({{site.baseurl}}/plugins/mentions/).
+> * [Emoticons]({{site.baseurl}}/plugins/emoticons/).
+> * [Character Map]({{site.baseurl}}/plugins/charmap/).
+
+Plugins relying on the [autocompleter API]({{site.baseurl}}/ui-components/autocompleter/) or keypress events do not work on Android. Android intercepts content and processes content prior to insertion into the editor.
+
+#### Workaround
+The only known workaround for the autocompleter at the moment is to press space and then press backspace to trigger the autocompleter to activate.
 
 ### UI elements may render behind the keyboard on iOS 12 devices
 
@@ -22,14 +45,6 @@ To workaround this issue, users can either:
 
 **Settings** &#62; **Safari** &#62; **Advanced** &#62; **Experimental Features** &#62; **Visual Viewport API**.
 
-### Toolbar may overflow for inline editors on mobile
-
-#### Issue
-When a {{site.productname}} editor set to `inline: true` is opened on a mobile device, long toolbars will extend beyond the screen edge.
-
-#### Workaround
-Setting the editor [width]({{site.baseurl}}/configure/editor-appearance/#width) will constrain the toolbar width.
-
 ### UI issue with sidebars on mobile
 
 #### Issue
@@ -42,3 +57,43 @@ When opening sidebars on small screens (such as mobile phones), the sidebar may 
 For the comments plugin, the comments sidebar can be collapsed using the `showcomments` toolbar button (![comment.svg]({{ site.baseurl }}/images/icons/comment.svg)).
 
 For other plugins with sidebars, {{site.companyname}} recommends ensuring the sidebar's toolbar button is accessible on the toolbar.
+
+### Find and replace moving out of view in iOS
+
+#### Issue
+The Find and replace dialog moves outside the screen view on iOS when finding a match offscreen.
+
+#### Workaround
+No known workaround at the time of release.
+
+### Inline toolbar placement issues on mobile devices
+
+#### Issue
+On mobile devices, the inline toolbar can intermittently display in the wrong location when the keyboard is open or when scrolling.
+
+#### Workaround
+No known workaround at the time of release.
+
+### Touch selection handle issue on iOS
+
+#### Issue
+The iOS touch selection handles (lollipops) sometimes remain on screen after the selection changes, resulting in misplaced or multiple selections.
+
+#### Workaround
+This may be an iOS bug, and the is no known workaround at the time of release. To remove the duplicate or multiple selections, restart the Safari app.
+
+### Text selection context toolbar issue on Android devices
+
+#### Issue
+TinyMCE text selection context toolbars do not appear on Android.
+
+#### Workaround
+No known workaround at the time of release.
+
+### FormatPainter: Limited functionality on iOS devices
+
+#### Issue
+Unable to apply formats using a collapsed selection on iOS due to iOS selection placement.
+
+#### Workaround
+No known workaround at the time of release.

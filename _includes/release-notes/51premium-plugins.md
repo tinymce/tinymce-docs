@@ -8,6 +8,12 @@ The {{site.productname}} 5.1 release includes **Advanced Code Editor** 2.0.2.
 
 A new **Advanced Tables** premium plugin has been released with {{site.productname}} 5.1. The **Advanced Tables** plugin extends the core [`table` plugin]({{site.baseurl}}/plugins/table/) by adding sort options for rows and columns.
 
+The plugin is capable of sorting:
+* Numerical data
+* Text data
+
+> **Note**: Currently, the sort function will treat cells with Alphanumeric data as Text data. This includes currency symbols which are text characters.
+
 For information on this plugin, see:
 
 * [The Advanced Tables product page](https://apps.tiny.cloud/products/advanced-tables/).

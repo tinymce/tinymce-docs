@@ -17,6 +17,12 @@ Advanced Tables adds sorting functionality to tables in {{site.productname}}. Ta
 | -------------------------------------------------------- | ---------------------------------------------------- |
 | ![Advanced Tables enhanced contextual menu for sorting rows based on the selected Column (Sort > Sort table by column ascending/descending).]({{ site.baseurl }}/images/advtable_context_menu_sort.png) | ![Advanced Tables sort dialog (Sort > Advanced Sort{{site.ellps}}).]({{ site.baseurl }}/images/advtable_dialog_sort.png) |
 
+The plugin is capable of sorting:
+* Numerical data
+* Text data
+
+> **Note**: Currently, the sort function will treat cells with Alphanumeric data as Text data. This includes currency symbols which are text characters.
+
 ### Try our Advanced Tables Demo
 {% include codepen.html id="advtable" %}
 

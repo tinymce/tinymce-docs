@@ -3,12 +3,13 @@ layout: default
 title: Advanced Tables plugin
 title_nav: Advanced Tables
 description: Add sorting functionality to tables.
-keywords: sort tables advanced advtable
+keywords: sort tables advanced advtable premium
 ---
 
-The initial release of Advanced Tables adds sorting functionality to tables in {{site.productname}}. Tables can be sorted by row or column values using:
+Advanced Tables adds sorting functionality to tables in {{site.productname}}. Tables can be sorted by row or column values using:
 * The **Sort** options in the **Table** menu.
 * The **Sort** options in the table contextual menu.
+* The **Sort** options in the **Table** toolbar menu button.
 
 **For example:**
 
@@ -17,18 +18,18 @@ The initial release of Advanced Tables adds sorting functionality to tables in {
 | ![Advanced Tables enhanced contextual menu for sorting rows based on the selected Column (Sort > Sort table by column ascending/descending).]({{ site.baseurl }}/images/advtable_context_menu_sort.png) | ![Advanced Tables sort dialog (Sort > Advanced Sort{{site.ellps}}).]({{ site.baseurl }}/images/advtable_dialog_sort.png) |
 
 ### Try our Advanced Tables Demo
-{% include codepen.html id="advtable-plugin" %}
+{% include codepen.html id="advtable" %}
 
-### Getting started with {{site.productname}} Advanced Tables
+### Getting started with TinyMCE Advanced Tables
 
 #### Creating an account
 
-To try out **Advanced Tables** and Tiny Cloud-delivered editor, the first step is to create a free [Tiny account](https://www.tiny.cloud/download/).
+To try out **Advanced Tables** and the {{site.cloudname}}, the first step is to create a free [Tiny account](https://www.tiny.cloud/download/).
 
 The free user account is provisioned with a free 30-day trial of all Tiny [premium plugins](https://apps.tiny.cloud/product-category/tiny-cloud-extensions/), with no credit card information or commitment required.
 
 
-#### Buy {{site.productname}} Advanced Tables
+#### Buy TinyMCE Advanced Tables
 
 Start with this [dedicated product page](https://apps.tiny.cloud/products/advanced-tables/) to see all the flexible pricing options. OEM and enterprise customers should [contact sales directly](https://www.tiny.cloud/contact/).
 

@@ -1,5 +1,5 @@
 tinymce.init({
-  selector: 'textarea#advtable-plugin',
+  selector: 'textarea#advtable',
   height: '800px',
   plugins: 'table code advtable lists fullscreen',
   toolbar: 'undo redo | formatselect | bold italic |' +

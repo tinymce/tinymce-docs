@@ -26,7 +26,7 @@ tinymce.init({
 
 | Name | Description |
 |------| ------------|
-| mceInsertTemplate | Insert template html |
+| `mceInsertTemplate` | Insert template html |
 
 ##### Example
 
@@ -36,7 +36,7 @@ tinymce.activeEditor.execCommand('mceInsertTemplate', false, '<p class="cdate">T
 
 There are two types of files the `template` plugin supports: *templates* and *snippets*. We will first review the plugin options before moving on to some examples.
 
-### Config Options
+### Configuration Options
 
 These settings affect the execution of the `template` plugin. Predefined templates for items such as created dates and modified dates can be set here.
 
@@ -86,7 +86,7 @@ tinymce.init({
 
 ### `template_cdate_classes`
 
-This option allows you to provide a list of class names (separated by spaces) whereby any template element with one of the classes will have its content replaced by the 'creation' date (`creationdate`), formatted according to the `template_cdate_format` option.
+When HTML elements in a template are assigned this content class, the content of the element will be replaced with the 'creation' date (`creationdate`), formatted according to the `template_cdate_format` option. This option accepts a list of content classes (separated by spaces).
 
 A creation date is one that is set if no previous date existed within the element. Once set, the original date is stored inside the element in a HTML comment and is designed not to change even with a template change.
 
@@ -102,21 +102,13 @@ tinymce.init({
   plugins: "template",
   menubar: "insert",
   toolbar: "template",
-  template_cdate_format: "%m/%d/%Y : %H:%M",
-  templates: [
-	{title: 'Cdate', description: 'Cdate example', content: '<p class="cdate">This will be replaced with the creation date</p>'}
-  ]
+  template_cdate_classes: "cdate creationdate"
 });
-```
-If the creation date is set as 9:00AM on January 1st 2000, then inserting this template will insert the following into the editor:
-
-```html
-<p class="cdate">01/01/2000 : 09:00</p>
 ```
 
 ### `template_cdate_format`
 
-This option allows you to provide a date format that all 'creation' date templates will be replaced by.
+This option allows you to provide a date format that all 'creation' date templates will use.
 
 **Type:** `String`
 
@@ -130,13 +122,21 @@ tinymce.init({
   plugins: "template",
   menubar: "insert",
   toolbar: "template",
-  template_cdate_format: "%m/%d/%Y : %H:%M:%S"
+  template_cdate_format: "%m/%d/%Y : %H:%M",
+  templates: [
+    {title: 'Cdate', description: 'Cdate example', content: '<p class="cdate">This will be replaced with the creation date</p>'}
+  ]
 });
+```
+If the creation date is set as 9:00AM on January 15th 2000, then inserting this template will insert the following into the editor:
+
+```html
+<p class="cdate">01/15/2000 : 09:00</p>
 ```
 
 ### `template_mdate_classes`
 
-This option allows you to provide TinyMCE with a list of class names (separated by spaces) whereby any template element with one of the classes will have its content replaced by the 'modified' date (`modifieddate`), formatted according to the `template_mdate_format` option.
+When HTML elements in a template are assigned this content class, the content of the element will be replaced with the 'modified' date (`modifieddate`), formatted according to the `template_mdate_format` option. This option accepts a list of content classes (separated by spaces).
 
 A modified date is one that is updated with each edit.
 
@@ -158,7 +158,7 @@ tinymce.init({
 
 ### `template_mdate_format`
 
-This option allows you to provide TinyMCE with a date/time format that all 'modified' date templates will be replaced with.
+This option allows you to provide TinyMCE with a date/time format that all 'modified' date templates will use.
 
 **Type:** `String`
 
@@ -172,8 +172,16 @@ tinymce.init({
   plugins: "template",
   menubar: "insert",
   toolbar: "template",
-  template_mdate_format: "%m/%d/%Y : %H:%M:%S"
+  template_mdate_format: "%m/%d/%Y : %H:%M:%S",
+  templates: [
+    {title: 'Mdate', description: 'Mdate example', content: '<p class="mdate">This will be replaced with the date modified</p>'}
+  ]
 });
+```
+If the date modified is set as 9:00AM on January 15th 2000, then inserting this template will insert the following into the editor:
+
+```html
+<p class="mdate">01/15/2000 : 09:00</p>
 ```
 
 ### `template_replace_values`
@@ -201,9 +209,9 @@ This can then be used in a template or snippet that looks like this:
 
 ```html
 <p>Name: {$username}, StaffID: {$staffid}</p>
-``` 
+```
 
-And that will be changed to: 
+And that will be changed to:
 
 ```html
 <p>Name: Jack Black, StaffID: 991234</p>
@@ -244,9 +252,9 @@ And the preview will look like:
 
 ### `template_selected_content_classes`
 
-This option allows you to provide a list of class names (separated by spaces) whereby any template element with one of the classes will have its content replaced by the selected editor content when first inserted.
+When HTML elements in a template are assigned this content class, the content of the element will be replaced with selected content from the editor. This option accepts a list of content classes (separated by spaces).
 
-*Type:** `String`
+**Type:** `String`
 
 **Default Value:** `selcontent`
 
@@ -256,15 +264,25 @@ This option allows you to provide a list of class names (separated by spaces) wh
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "template",
-  template_selected_content_classes: "selcontent selectedcontent"
+  template_selected_content_classes: "selcontent selectedcontent",
+  templates: [
+    {
+      title: 'My Template',
+      description: 'This is my template.',
+      content: '<p>Hello, <span class="selcontent">this statement will be replaced.</span></p>'
+    }
+  ]
 });
+```
+If the word `world` is selected in the editor and _My Template_ is applied, `world` will be updated to:
+
+```html
+<p>Hello, <span class="selcontent">world</span></p>
 ```
 
 ### Template Plugin Examples
 
-**Type:** `String`
-
-##### Example
+**Example**
 
 ```js
 tinymce.init({
@@ -298,22 +316,7 @@ tinymce.init({
 });
 ```
 
-**Templates example:**
-
-```js
-tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  templates : [
-    {
-      title: "Editor Details",
-      url: "editor_details.htm",
-      description: "Adds Editors Name and Staff ID"
-    }
-  ]
-});
-```
-
-**Example of an external list:**
+**Example of an external list**
 
 This is the contents your backend page should return if you specify a URL in the templates option. A simple array containing each template to present. This URL can be a backend page, for example a PHP file.
 

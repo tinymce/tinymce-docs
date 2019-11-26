@@ -86,7 +86,7 @@ tinymce.init({
 
 ### `template_cdate_classes`
 
-When HTML elements in a template are assigned this content class, the content of the element will be replaced with the 'creation' date (`creationdate`), formatted according to the `template_cdate_format` option. This option accepts a list of content classes (separated by spaces).
+When HTML elements in a template are assigned this class, the content of the element will be replaced with the 'creation' date (`creationdate`), formatted according to the `template_cdate_format` option. This option accepts a list of classes (separated by spaces).
 
 A creation date is one that is set if no previous date existed within the element. Once set, the original date is stored inside the element in a HTML comment and is designed not to change even with a template change.
 
@@ -136,7 +136,7 @@ If the creation date is set as 9:00AM on January 15th 2000, then inserting this 
 
 ### `template_mdate_classes`
 
-When HTML elements in a template are assigned this content class, the content of the element will be replaced with the 'modified' date (`modifieddate`), formatted according to the `template_mdate_format` option. This option accepts a list of content classes (separated by spaces).
+When HTML elements in a template are assigned this class, the content of the element will be replaced with the 'modified' date (`modifieddate`), formatted according to the `template_mdate_format` option. This option accepts a list of classes (separated by spaces).
 
 A modified date is one that is updated with each edit.
 
@@ -252,7 +252,7 @@ And the preview will look like:
 
 ### `template_selected_content_classes`
 
-When HTML elements in a template are assigned this content class, the content of the element will be replaced with selected content from the editor. This option accepts a list of content classes (separated by spaces).
+When HTML elements in a template are assigned this class, the content of the element will be replaced with selected content from the editor. This option accepts a list of classes (separated by spaces).
 
 **Type:** `String`
 

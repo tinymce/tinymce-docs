@@ -18,3 +18,13 @@ tinymce.init({
 ```
 
 Also see [valid_elements]({{ site.baseurl }}/configure/content-filtering/#valid_elements) and [invalid_elements]({{ site.baseurl }}/configure/content-filtering/#invalid_elements) for more configuration options.
+
+### Using extended_valid_elements to allow script elements
+
+> **Warning**: Allowing script elements (`<script>`) in {{site.productname}} exposes users to [cross-site scripting (XSS) attacks](https://developer.mozilla.org/en-US/docs/Glossary/Cross-site_scripting).
+
+To allow script elements in the editor, include the following in the {{site.productname}} configuration:
+
+```js
+extended_valid_elements : "script[src|async|defer|type|charset]"
+```

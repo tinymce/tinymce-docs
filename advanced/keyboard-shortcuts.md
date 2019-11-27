@@ -28,7 +28,7 @@ This is a list of available keyboard shortcuts within the editor body.
 | Paragraph | Alt+Shift+7 | Ctrl+Alt+7 | core |
 | Div | Alt+Shift+8 | Ctrl+Alt+8 | core |
 | Address | Alt+Shift+9 | Ctrl+Alt+9 | core |
-| Focus to menubar | Alt+F9 | Alt+F9 | core |
+| Focus to menu bar | Alt+F9 | Alt+F9 | core |
 | Focus to toolbar | Alt+F10 | Alt+F10 | core |
 | Focus to element path | Alt+F11 | Alt+F11 | core |
 | Focus to contextual toolbar | Ctrl+F9 | Ctrl+F9 | core |

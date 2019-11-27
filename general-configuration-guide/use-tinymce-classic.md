@@ -18,7 +18,7 @@ The current default theme `silver` renders the editor in classic mode.
 
 {% include codepen.html id="default" %}
 
-##### Example
+##### Example: Classic Mode
 
 A basic TinyMCE editor can be added to a `textarea` element with the id `mytextarea` using:
 

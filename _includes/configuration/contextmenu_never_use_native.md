@@ -8,7 +8,7 @@ Type: `Boolean`
 
 Default Value: `false`
 
-#### Example
+#### Example: contextmenu_never_use_native
 
 ```js
 tinymce.init({

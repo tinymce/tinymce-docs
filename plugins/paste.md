@@ -17,7 +17,7 @@ The plugin also adds a menu item `Paste as text` under the `Edit` menu dropdown 
 
 **Type:** `String`
 
-##### Example
+##### Example: Adding the Paste plugin
 
 ```js
 tinymce.init({
@@ -46,7 +46,7 @@ For example, Firefox enables you to paste images directly into any `contentEdita
 
 **Possible Values:** `true`, `false`
 
-##### Example
+##### Example: paste_data_images
 
 ```js
 tinymce.init({
@@ -68,7 +68,7 @@ This option enables you to set the default state of the `Paste as text` menu ite
 
 **Possible Values:** `true`, `false`
 
-##### Example
+##### Example: paste_as_text
 
 ```js
 tinymce.init({
@@ -90,7 +90,7 @@ This option allows you to disable {{site.productname}}'s default paste filters w
 
 **Possible Values:** `true`, `false`
 
-##### Example
+##### Example: paste_enable_default_filters
 
 ```js
 tinymce.init({
@@ -112,7 +112,7 @@ This option allows developers to disable the default drop filters when set to `f
 
 **Possible Values:**  `true`, `false`
 
-##### Example
+##### Example: paste_filter_drop
 
 ```js
 tinymce.init({
@@ -128,7 +128,7 @@ This option enables you to modify the pasted content before it gets inserted int
 
 **Type:** `Function`
 
-##### Example
+##### Example: paste_preprocess
 
 ```js
 tinymce.init({
@@ -149,7 +149,7 @@ This option enables you to modify the pasted content before it gets inserted int
 
 **Type:** `Function`
 
-##### Example
+##### Example: paste_postprocess
 
 ```js
 tinymce.init({
@@ -172,7 +172,7 @@ This option enables you to configure the `valid_elements` specific to MS Office.
 
 **Type:** `String`
 
-##### Example
+##### Example: paste_word_valid_elements
 
 ```js
 tinymce.init({
@@ -190,7 +190,7 @@ This option allows you to specify styles you want to keep when pasting in WebKit
 
 **Type:** `String`
 
-##### Example
+##### Example: paste_webkit_styles
 
 ```js
 tinymce.init({
@@ -208,7 +208,7 @@ This option allows you to specify which styles you want to retain when pasting c
 
 **Type:** `String`
 
-##### Example
+##### Example: paste_retain_style_properties
 
 ```js
 tinymce.init({
@@ -230,7 +230,7 @@ This option enables the merge format feature of the paste plugin. This merges si
 
 **Possible Values:** `true`, `false`
 
-##### Example
+##### Example: paste_merge_formats
 
 ```js
 tinymce.init({
@@ -252,7 +252,7 @@ This option lets you disable the logic that converts list like paragraph structu
 
 **Possible Values:** `true`, `false`
 
-##### Example
+##### Example: paste_convert_word_fake_lists
 
 ```js
 tinymce.init({
@@ -274,7 +274,7 @@ This option allows you to disable {{site.productname}}'s default paste filters f
 
 **Possible Values:** `true`, `false`
 
-##### Example
+##### Example: paste_remove_styles_if_webkit
 
 ```js
 tinymce.init({

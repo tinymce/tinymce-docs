@@ -32,7 +32,7 @@ This option allows you to specify a default `target` value for links inserted by
 
 **Type:** `String`
 
-##### Example
+##### Example: default_link_target
 
 ```js
 tinymce.init({

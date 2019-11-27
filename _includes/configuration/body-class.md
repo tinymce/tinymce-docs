@@ -4,7 +4,7 @@ This option enables you to specify a class for the body of each editor instance.
 
 **Type:** `String`
 
-##### Example
+##### Examples: body_class
 
 This will add the same class to all editors that gets created by the `init` call.
 

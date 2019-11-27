@@ -11,7 +11,7 @@ This plugin enables {{site.productname}}'s spellcheck functionality. It also add
 
 **Type:** `String`
 
-##### Example
+##### Example: Adding the Spell Checker plugin
 
 ```js
 tinymce.init({
@@ -93,7 +93,7 @@ This configuration option lets you set the default language code for the spellch
 
 **Default Value:**  `en`
 
-##### Example
+##### Example: spellchecker_language
 
 ```js
 tinymce.init({
@@ -114,7 +114,7 @@ This option lets you specify a list of languages for the user to select from. Th
 **Default Value:** `'English=en,Danish=da,Dutch=nl,Finnish=fi,French=fr_FR,' +
     'German=de,Italian=it,Polish=pl,Portuguese=pt_BR,Spanish=es,Swedish=sv'`
 
-##### Example
+##### Example: spellchecker_languages
 
 ```js
 tinymce.init({
@@ -132,7 +132,7 @@ This options enables you to specify a custom URL to be used for the spellchecker
 
 **Type:** `String`
 
-##### Example
+##### Example: spellchecker_rpc_url
 
 ```js
 tinymce.init({
@@ -181,7 +181,7 @@ This option enables you to override the matching of characters that are parts of
 
 **Type:** `String`
 
-##### Example
+##### Example: spellchecker_wordchar_pattern
 
 ```js
 tinymce.init({

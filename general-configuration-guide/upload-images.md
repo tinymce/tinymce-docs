@@ -86,7 +86,7 @@ Change the default behavior of {{site.productname}}'s image upload logic by chan
 
 > **Note**: Please note that while using this option, other image uploader options are not necessary. Additionally, to replace the <image> tag's src attribute with the remote location, please use the success callback defined in the `image_upload_handler` function with the returned JSON object's location property.
 
-##### Example
+##### Example image handler
 
 ```js
 tinymce.init({

@@ -12,7 +12,7 @@ If the border of a table is set to `0`, then {{site.productname}} adds a dotted 
 
 **Possible Values:** `true`, `false`
 
-##### Example
+##### Example: visual
 
 ```js
 tinymce.init({

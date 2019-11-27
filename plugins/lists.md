@@ -10,7 +10,7 @@ The `lists` plugin allows you to add numbered and bulleted lists to {{site.produ
 
 The plugin also normalizes list behavior between browsers. Enable it if you have problems with consistency making lists.
 
-##### Example
+##### Example: Adding the Lists plugin
 
 ```js
 tinymce.init({

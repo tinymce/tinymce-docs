@@ -4,7 +4,7 @@ If you are using {{site.productname}} skins, this option enables you to specify 
 
 **Type:** `String`
 
-##### Example
+##### Example: skin_url
 
 ```js
 tinymce.init({

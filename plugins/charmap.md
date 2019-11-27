@@ -11,7 +11,7 @@ This plugin adds a dialog to the editor with a map of special unicode characters
 
 **Type:** `String`
 
-##### Example
+##### Example: Adding the Character Map plugin
 
 ```js
 tinymce.init({
@@ -46,7 +46,7 @@ With this option it is possible to fully override the default character map. Thi
 
 **Type:** `Array`, `Function`
 
-##### Example
+##### Example: charmap
 
 ```js
 tinymce.init({
@@ -66,7 +66,7 @@ This option provides a way to append some additional characters to the default c
 
 **Type:** `Array`, `Function`
 
-##### Example
+##### Example: charmap_append
 
 ```js
 tinymce.init({

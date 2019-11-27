@@ -11,7 +11,7 @@ This plugin adds full screen editing capabilities to {{site.productname}}. When 
 
 **Type:** `String`
 
-##### Example
+##### Example: Full Screen plugin
 
 ```js
 tinymce.init({

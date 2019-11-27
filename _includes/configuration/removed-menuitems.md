@@ -4,7 +4,7 @@ This option allows you to remove items from {{site.productname}}'s drop down men
 
 **Type:** `String`
 
-##### Example
+##### Example: removed_menuitems
 
 ```js
 tinymce.init({

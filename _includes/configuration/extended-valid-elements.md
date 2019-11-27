@@ -8,7 +8,7 @@ The below example replaces the current `img` rule (including the global element 
 
 **Type:** `String`
 
-##### Example
+##### Example: extended_valid_elements
 
 ```js
 tinymce.init({

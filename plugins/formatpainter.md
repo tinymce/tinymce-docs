@@ -17,7 +17,7 @@ Once you have obtained the Format Painter plugin, refer to the following instruc
 
 Use the following script to configure the Format Painter toolbar button:
 
-##### Example
+##### Example: Adding the Format Painter plugin
 
 ```js
 tinymce.init({
@@ -64,7 +64,7 @@ The example below showcases the formats registered automatically by the plugin u
 
 **Type:** `Object`
 
-##### Example
+##### Example: formats
 
 ```js
 tinymce.init({
@@ -96,7 +96,7 @@ This option makes it possible to block the unwanted formats in the format painte
 
 **Default:** `'link,address,removeformat,formatpainter_removeformat'`
 
-##### Example
+##### Example: formatpainter_blacklisted_formats
 
 ```js
 tinymce.init({

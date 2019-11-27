@@ -23,7 +23,7 @@ To specify labels to the grouped controls that appear on {{site.productname}}'s 
 
 **Type:** `Array`
 
-##### Example
+##### Example: Toolbar grouping
 
 ```js
 tinymce.init({
@@ -58,7 +58,7 @@ To disable the toolbar, the toolbar option should be provided a boolean value of
 
 **Possible Values:** `true`, `false`
 
-##### Example
+##### Example: Disabling the toolbar
 
 ```js
 tinymce.init({
@@ -73,7 +73,7 @@ To specify multiple toolbars, the toolbar option should be provided with an arra
 
 **Type:** `Array`
 
-##### Example
+##### Example: Using multiple toolbars
 
 ```js
 tinymce.init({

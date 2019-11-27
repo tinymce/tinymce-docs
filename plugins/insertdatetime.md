@@ -11,7 +11,7 @@ The `insertdatetime` plugin provides a toolbar control and menu item `Insert dat
 
 **Type:** `String`
 
-##### Example
+##### Example: Adding the Insert Date/Time plugin
 
 ```js
 tinymce.init({
@@ -30,7 +30,7 @@ These settings affect the execution of the `insertdatetime` plugin. Formats for 
 
 This option allows you to override the default formatting rule for date formats inserted by the `mceInsertDate` command. This defaults to `%Y-%m-%d` and where the different `%` variables get replaced with various [date format options](#referencedatetimeformats).
 
-##### Example
+##### Example: insertdatetime_dateformat
 
 ```js
 tinymce.init({
@@ -46,7 +46,7 @@ tinymce.init({
 
 Allows you to specify a list of date/time formats to be used in the date menu or date select box. A complete list of formats is available under [date formats](#referencedatetimeformats) below.
 
-##### Example
+##### Example: insertdatetime_formats
 
 ```js
 tinymce.init({
@@ -62,7 +62,7 @@ tinymce.init({
 
 This option allows you to override the default formatting rule for times inserted by the `mceInsertTime` command. This defaults to `%H:%M:%S` and where the different `%` variables get replaced with various [date format options](#referencedatetimeformats).
 
-##### Example
+##### Example: insertdatetime_timeformat
 
 ```js
 tinymce.init({
@@ -82,7 +82,7 @@ When this option is enabled HTML5 time elements gets generated when you insert d
 
 **Possible Values:** `true`, `false`
 
-##### Example
+##### Example: insertdatetime_element
 
 ```js
 tinymce.init({

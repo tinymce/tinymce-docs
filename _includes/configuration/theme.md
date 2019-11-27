@@ -6,7 +6,7 @@ The name of the theme should match the name of the folder within the themes dire
 
 **Type:** `String`
 
-##### Example
+##### Example: theme
 
 ```js
 tinymce.init({

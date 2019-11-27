@@ -12,7 +12,7 @@ To disable the status bar, the `statusbar` option should be provided with a bool
 
 **Possible Values:** `true`, `false`
 
-##### Example
+##### Example: statusbar
 
 ```js
 tinymce.init({

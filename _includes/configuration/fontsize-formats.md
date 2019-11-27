@@ -6,7 +6,7 @@ This option allows you to override the font sizes displayed in the `fontsizesele
 
 **Default Value:** `'11px 12px 14px 16px 18px 24px 36px 48px'`
 
-##### Example
+##### Example: fontsize_formats
 
 ```js
 tinymce.init({

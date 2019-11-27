@@ -28,7 +28,7 @@ Available values for [content_css]({{site.baseurl}}/configure/content-appearance
 - material-outline
 - fabric
 
-##### Example
+##### Example: Using a premium skin
 
 ```js
 tinymce.init({
@@ -48,7 +48,7 @@ Available values for [icon]({{site.baseurl}}/configure/editor-appearance/#icons)
 - small
 - jam
 
-##### Example
+##### Example: Using a premium icon pack
 
 ```js
 tinymce.init({

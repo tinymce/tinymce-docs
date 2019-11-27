@@ -35,7 +35,7 @@ Gets converted into this valid list:
 
 **Possible Values:** `true`, `false`
 
-##### Example
+##### Example: fix_list_elements
 
 ```js
 tinymce.init({

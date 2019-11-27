@@ -8,7 +8,7 @@ The **indentation** option defaults to 30px but can be any value.
 
 **Default Value:** `30px`
 
-##### Example
+##### Example: indentation
 
 ```js
 tinymce.init({
@@ -25,7 +25,7 @@ The **indent_use_margin** option is set if the editor should use margin instead 
 
 **Default Value:** `false`
 
-##### Example
+##### Example: indent_use_margin
 
 ```js
 tinymce.init({

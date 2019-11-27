@@ -17,7 +17,7 @@ This example shows you how to add `style` as a valid child of `body` and remove 
 
 **Type:** `String`
 
-##### Example
+##### Example: valid_children
 
 ```js
 tinymce.init({

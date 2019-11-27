@@ -9,7 +9,7 @@ controls: toolbar button
 
 The Code Sample plugin (`codesample`) lets a user insert and embed syntax color highlighted code snippets into the editable area. It also adds a button to the toolbar which on click will open a dialog box to accept raw code input.
 
-##### Example
+##### Example: Adding the Code Sample plugin
 
 ```js
 tinymce.init({
@@ -41,7 +41,7 @@ You need to add `prism.js` and `prism.css` to your page in order to get the synt
 
 This configuration option enables you to set a list of languages to be displayed in the languages drop down.
 
-#### Example
+#### Example: codesample_languages
 
 ```js
 tinymce.init({

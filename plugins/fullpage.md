@@ -13,7 +13,7 @@ The plugin also adds a `Metadata and Document properties` menu under the `File` 
 
 **Type:** `String`
 
-##### Example
+##### Example: Adding the Full Page plugin
 
 ```js
 tinymce.init({
@@ -34,7 +34,7 @@ This option enables you to specify the default `doctype` for the output HTML.
 
 **Type:** `String`
 
-##### Example
+##### Example: fullpage_default_doctype
 
 ```js
 tinymce.init({
@@ -50,7 +50,7 @@ This option enables you to specify the default encoding for the output HTML.
 
 **Type:** `String`
 
-##### Example
+##### Example: fullpage_default_encoding
 
 ```js
 tinymce.init({
@@ -66,7 +66,7 @@ This option enables you to specify the default font **size** for the `body` elem
 
 **Type:** `String`
 
-##### Example
+##### Example: fullpage_default_font_size
 
 ```js
 tinymce.init({
@@ -82,7 +82,7 @@ This option enables you to specify the default font **family** for the `body` el
 
 **Type:** `String`
 
-##### Example
+##### Example: fullpage_default_font_family
 
 ```js
 tinymce.init({
@@ -98,7 +98,7 @@ This option enables you to specify the default `title` for the output HTML.
 
 **Type:** `String`
 
-##### Example
+##### Example: fullpage_default_title
 
 ```js
 tinymce.init({
@@ -114,7 +114,7 @@ This option enables you to specify the default text color for the `body` element
 
 **Type:** `String`
 
-##### Example
+##### Example: fullpage_default_text_color
 
 ```js
 tinymce.init({
@@ -132,7 +132,7 @@ This option enables you to specify if a XML declaration should be added or not t
 
 **Possible Values:** `true`, `false`
 
-##### Example
+##### Example: fullpage_default_xml_pi
 
 ```js
 tinymce.init({
@@ -150,7 +150,7 @@ This option allows you to specify whether {{site.productname}} should hide the n
 
 **Possible Values:** `true`, `false`
 
-##### Example
+##### Example: fullpage_hide_in_source_view
 
 ```js
 tinymce.init({

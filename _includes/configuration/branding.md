@@ -10,7 +10,7 @@ Use the `branding` option to disable the "**Powered by Tiny**" displayed in the 
 
 **Possible Values:** `true`, `false`
 
-##### Example
+##### Example: branding
 
 ```js
 tinymce.init({

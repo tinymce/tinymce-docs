@@ -4,7 +4,7 @@ The **images_dataimg_filter** option lets you specify a filter predicate functio
 
 **Type:** `JavaScript Function`
 
-##### Example
+##### Example: images_dataimg_filter
 
 ```js
 tinymce.init({

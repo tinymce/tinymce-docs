@@ -8,7 +8,7 @@ keywords: mentions atmentions
 
 The mentions plugin will present a list of users when a user types the "@" symbol followed by the beginnings of a username after it. It will then query your server using the `mentions_fetch` callback.
 
-##### Example
+##### Example: The Mentions plugin
 
 {% include codepen.html id="mentions" height="400" %}
 
@@ -24,7 +24,7 @@ This option lets you request a list of uses from your server that match a search
 
 **Default Value:** `none`
 
-##### Example
+##### Example: mentions_fetch
 
 ```js
 var usersRequest = null;
@@ -99,7 +99,7 @@ This option overrides the default logic for inserting the mention into the edito
 
 **Default Value:** `none`
 
-##### Example
+##### Example: mentions_menu_complete
 
 ```js
 tinymce.init({
@@ -125,7 +125,7 @@ This option enables you to provide an element to present next to the menu item b
 
 **Default Value:** `none`
 
-##### Example
+##### Example: mentions_menu_hover
 
 ```js
 var userRequest = {};
@@ -163,7 +163,7 @@ This option enables you to provide a custom CSS selector that should match the e
 
 **Default Value:** `none`
 
-##### Example
+##### Example: mentions_selector
 
 ```js
 tinymce.init({
@@ -188,7 +188,7 @@ This option enables you to provide an element to be presented below a hovered me
 
 **Default Value:** `none`
 
-##### Example
+##### Example: mentions_select
 
 ```js
 var userRequest = {};
@@ -233,7 +233,7 @@ tinymce.init({
 
 You can retrieve the inserted users by calling `getUsers` on the plugin instance object of an editor. This will return an array of users that the author `@mentioned` in the content, but only the ones currently present in the content and will exclude any existing before the content was created. It will also exclude duplicate inserts by using the `userInfo` objects id property.
 
-##### Example
+##### Example: getUsers API
 
 ```js
 var users = tinymce.activeEditor.plugins.mentions.getUsers();

@@ -11,7 +11,7 @@ The Horizontal Rule (`hr`) plugin allows a user to insert a horizontal rule on t
 
 **Type:** `String`
 
-##### Example
+##### Example: Adding the Horizontal Rule plugin
 
 ```js
 tinymce.init({

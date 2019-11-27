@@ -14,7 +14,7 @@ The base entities `<`, `>`, `&`, `'`, and `"` will always be entity encoded into
 
 **Type:** `String`
 
-##### Example
+##### Example: entity_encoding
 
 ```js
 tinymce.init({

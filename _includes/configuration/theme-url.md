@@ -4,7 +4,7 @@ If you are using {{site.productname}} themes, this option enables you to specify
 
 **Type:** `String`
 
-##### Example
+##### Example: theme_url
 
 ```js
 tinymce.init({

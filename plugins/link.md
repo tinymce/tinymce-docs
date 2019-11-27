@@ -13,7 +13,7 @@ It adds two toolbar buttons called `link` and `unlink` and three menu items call
 
 The **link** plugin also includes a context menu and context toolbar. The context toolbar can be configured using the [`link_context_toolbar`](#link_context_toolbar) and [`link_quicklink`](#link_quicklink) options documented below.
 
-##### Example
+##### Example: Adding the Link plugin
 
 ```js
 tinymce.init({
@@ -36,7 +36,7 @@ This option allows you to set a default `target` value for links when inserting/
 
 **Type:** `String`
 
-##### Example
+##### Example: default_link_target
 
 ```js
 tinymce.init({
@@ -61,7 +61,7 @@ Set whether {{site.productname}} should prepend a `http://` prefix if the suppli
 
 **Possible Values:** `true`, `false`, `'http'`, `'https'`
 
-##### Example
+##### Example: link_assume_external_targets
 
 ```js
 tinymce.init({
@@ -77,7 +77,7 @@ tinymce.init({
 
 The `link_class_list` option allows you to specify a list of classes for the link dialog. These classes will appear in a dropdown menu in the link dialog. Each class must be defined as an object with a `title` and a `value`. For example: `{title: 'Cat', value: 'cat'}`. When the dialog is submitted, the `value` of the selected class item from the dropdown will be set as the link's `class`.
 
-##### Example
+##### Example: link_class_list
 
 ```js
 tinymce.init({
@@ -105,7 +105,7 @@ By default it is not possible to open links directly from the editor. Setting `l
 
 **Possible Values:** `true`, `false`
 
-##### Example
+##### Example: link_context_toolbar
 
 ```js
 tinymce.init({
@@ -195,7 +195,7 @@ This options allows you disable the link `title` input field in the `link` dialo
 
 **Possible Values:** `true`, `false`
 
-##### Example
+##### Example: link_title
 
 ```js
 tinymce.init({
@@ -219,7 +219,7 @@ This option changes the behaviour of the `CTRL + K` shortcut. By default, pressi
 
 **Possible Values:** `true`, `false`
 
-##### Example
+##### Example: link_quicklink
 
 ```js
 tinymce.init({
@@ -235,7 +235,7 @@ tinymce.init({
 
 This option lets you specify a list of `rel` values for the `link` dialog. These values gets applied to the `rel` attribute. Each `rel` item must be defined as an object with a `title` and a `value`. For example: `{title: 'No Referrer', value: 'noreferrer'}`. When the dialog is submitted, the `value` of the selected `rel` item will be set as the link's `rel` attribute.
 
-##### Example
+##### Example: rel_list
 
 ```js
 tinymce.init({
@@ -284,7 +284,7 @@ tinymce.init({
 
 To disable the option dialog set `target_list` to `false`.
 
-##### Example
+##### Example: Disabling the dropdown menu in the link dialog
 
 ```js
 tinymce.init({

@@ -6,7 +6,7 @@ Sometimes there might be already a reference to a DOM element at hand, for examp
 
 **Type:** `Node`
 
-##### Example
+##### Example: target
 
 ```js
 var el = document.createElement('textarea');

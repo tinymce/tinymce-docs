@@ -8,7 +8,7 @@ The upload handler function takes three arguments: `blobInfo`, a `success` callb
 
 **Type:** `JavaScript Function`
 
-##### Example
+##### Example: images_upload_handler
 
 ```js
 tinymce.init({

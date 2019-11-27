@@ -11,7 +11,7 @@ This plugin adds the ability to see invisible characters like `&nbsp;` displayed
 
 **Type:** `String`
 
-##### Example
+##### Example: Adding the Visual Characters plugin
 
 ```js
 tinymce.init({

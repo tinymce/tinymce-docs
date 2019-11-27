@@ -4,11 +4,9 @@ This option allows you to specify a CSS selector for the areas that {{site.produ
 
 When using this option in {{site.productname}}'s regular editing mode, the element will be replaced with an `iframe` that {{site.productname}} will perform all operations within.
 
-### Replace all textarea elements on the page
-
 **Type:** `String`
 
-##### Example
+##### Example: Replace all textarea elements on the page
 
 ```js
 tinymce.init({
@@ -16,11 +14,7 @@ tinymce.init({
 });
 ```
 
-### Replace a textarea element with id 'editable'
-
-**Type:** `String`
-
-##### Example
+##### Example: Replace a textarea element with id 'editable'
 
 ```js
 tinymce.init({
@@ -30,11 +24,7 @@ tinymce.init({
 
 When using this option in {{site.productname}}'s inline editing mode, the selector can be used on any block element and will edit the content in place instead of replacing the element with an `iframe`.
 
-### Inline editing mode on a div element with id 'editable'
-
-**Type:** `String`
-
-##### Example
+##### Example: Inline editing mode on a div element with id 'editable'
 
 ```js
 tinymce.init({

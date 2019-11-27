@@ -8,7 +8,7 @@ This option allows you to specify whether the editor should parse and keep condi
 
 **Possible Values:** `true`, `false`
 
-##### Example
+##### Example: allow_conditional_comments
 
 ```js
 tinymce.init({

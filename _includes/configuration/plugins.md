@@ -4,7 +4,7 @@ This option allows you to specify which plugins {{site.productname}} will attemp
 
 **Type:** `String`
 
-##### Example
+##### Example: plugins
 
 ```js
 tinymce.init({

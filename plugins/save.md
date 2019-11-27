@@ -11,7 +11,7 @@ This plugin adds a save button to the {{site.productname}} toolbar, which will s
 
 **Type:** `String`
 
-##### Example
+##### Example: Adding the Save plugin
 
 ```js
 tinymce.init({
@@ -47,7 +47,7 @@ This option allows you to disable the save button until modifications have been 
 
 **Type:** `Boolean`
 
-##### Example
+##### Example: save_enablewhendirty
 
 ```js
 tinymce.init({
@@ -64,7 +64,7 @@ This option allows you to specify the function that will be executed when the ca
 
 **Type:** `String`
 
-##### Example
+##### Example: save_oncancelcallback
 
 ```js
 tinymce.init({
@@ -81,7 +81,7 @@ This option allows you to specify the function that will be executed when the sa
 
 **Type:** `String`
 
-##### Example
+##### Example: save_onsavecallback
 
 ```js
 tinymce.init({

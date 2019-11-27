@@ -8,7 +8,7 @@ The **keep_styles** option will keep the editor's current text style when a user
 
 **Possible Values:** `true`, `false`
 
-##### Example
+##### Example: keep_styles
 
 ```js
 tinymce.init({

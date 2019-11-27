@@ -19,7 +19,7 @@ Once you have obtained the **Case Change** plugin, refer to the following instru
 
 Use the following script to configure the **Case Change** [split toolbar button]({{site.baseurl}}/ui-components/typesoftoolbarbuttons/#splitbutton):
 
-##### Example
+##### Example: Adding the Case Change plugin
 
 ```js
 tinymce.init({
@@ -33,7 +33,7 @@ tinymce.init({
 
 Use the following script to configure the **Case Change** [menu item]({{site.baseurl}}/ui-components/menuitems/):
 
-##### Example
+##### Example: Add the Case Change menu item
 
 ```js
 tinymce.init({

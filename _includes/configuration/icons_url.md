@@ -20,7 +20,7 @@ tinymce.init({
 {% else %}
 **Type:**  `String`
 
-##### Example
+##### Example: icons_url
 
 ```js
 tinymce.init({

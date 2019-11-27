@@ -6,7 +6,7 @@ This option enables you to specify what types of file pickers you need by a spac
 
 **Possible Values:** `file`, `image`, `media`
 
-##### Example
+##### Example: file_picker_types
 
 ```js
 tinymce.init({

@@ -6,7 +6,7 @@ This option also interacts with the [relative_urls](#relative_urls), [remove_scr
 
 **Type:** `String`
 
-##### Example
+##### Example: document_base_url
 
 ```js
 tinymce.init({

@@ -11,7 +11,7 @@ This plugin adds search/replace dialogs to {{site.productname}}. It also adds a 
 
 **Type:** `String`
 
-##### Example
+##### Example: Adding the Search and Replace plugin
 
 ```js
 tinymce.init({

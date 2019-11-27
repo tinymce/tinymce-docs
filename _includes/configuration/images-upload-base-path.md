@@ -4,7 +4,7 @@ This option lets you specify a `basepath` to prepend to URLs returned from the c
 
 **Type:** `String`
 
-##### Example
+##### Example: images_upload_base_path
 
 ```js
 tinymce.init({

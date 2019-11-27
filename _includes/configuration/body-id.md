@@ -4,7 +4,7 @@ This option enables you to specify an id for the body of each editor instance. T
 
 **Type:** `String`
 
-##### Example
+##### Examples: body_id
 
 This will add the same id to all editors that gets created by the `init` call.
 

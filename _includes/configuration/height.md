@@ -6,7 +6,7 @@
 
 **Type:** `Number` or `String`
 
-##### Example
+##### Example: height
 
 ```js
 tinymce.init({

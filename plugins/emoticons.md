@@ -13,7 +13,7 @@ This plugin adds a dialog to the editor lets users insert emojis into {{site.pro
 
 **Type:** `String`
 
-##### Example
+##### Example: Adding the Emoticons plugin
 
 ```js
 tinymce.init({
@@ -50,7 +50,7 @@ This option provides a way to append some additional emojis to the default emoji
 
 **Type:** `Object`
 
-##### Example
+##### Example: emoticons_append
 
 ```js
 tinymce.init({
@@ -84,7 +84,7 @@ window.tinymce.emoticons_plugin_database = {
 }
 ```
 
-##### Example
+##### Example: emoticons_database_url
 
 ```js
 tinymce.init({

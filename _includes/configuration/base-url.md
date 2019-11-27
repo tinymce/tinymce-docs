@@ -4,7 +4,7 @@ This option lets you specify the base URL for {{site.productname}}. This is usef
 
 **Type:** `String`
 
-##### Example
+##### Example: base_url
 
 ```js
 tinymce.init({

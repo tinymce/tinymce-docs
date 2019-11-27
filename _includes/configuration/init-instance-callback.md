@@ -4,7 +4,7 @@ The **init_instance_callback** option allows you to specify a function name to b
 
 **Type:** `JavaScript Function`
 
-##### Example
+##### Example: init_instance_callback
 
 ```js
 tinymce.init({

@@ -10,7 +10,7 @@ If unset the editor will preview the styles listed in the default value listed b
 
 **Possible Values:** `String`, `false`
 
-##### Example
+##### Examples: preview_styles
 
 No preview of styles:
 

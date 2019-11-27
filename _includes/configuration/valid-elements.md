@@ -39,7 +39,7 @@ Use `*[*]` to include all elements and all attributes. This can be very useful w
 
 **Type:** `String`
 
-##### Example
+##### Example: valid_elements
 
 ```js
 tinymce.init({

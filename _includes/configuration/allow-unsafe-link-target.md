@@ -8,7 +8,7 @@ By default all links with a `target` of *_blank* will get a `rel` attribute of `
 
 **Possible Values:** `true`, `false`
 
-##### Example
+##### Example: allow_unsafe_link_target
 
 ```js
 tinymce.init({

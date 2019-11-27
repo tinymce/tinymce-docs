@@ -40,7 +40,7 @@ If `help_tabs` is not configured, any tabs defined using `addTab` will be displa
 
 **Default Value:** `["shortcuts", "keyboardnav", "plugins", "versions"]`
 
-#### Example
+#### Example: help_tabs
 
 ```js
 tinymce.init({
@@ -115,7 +115,7 @@ tinymce.init({
 |------| ------| ----------- |
 | addTab | tabSpec: [TabPanel]({{site.baseurl}}/ui-components/dialogcomponents/#tabpanel) | Register a tab for the Help dialog |
 
-#### Example
+#### Example: addTab API
 
 ```js
 tinymce.activeEditor.plugins.help.addTab({

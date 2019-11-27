@@ -10,7 +10,7 @@ This option allows you to disable {{site.productname}}'s default behavior of rem
 
 **Possible Values:** `true`, `false`
 
-##### Example
+##### Example: remove_trailing_brs
 
 ```js
 tinymce.init({

@@ -7,11 +7,11 @@ keywords: toc toc_depth toc_class toc_header
 controls: toolbar button, menu item
 ---
 
-`toc` plugin will generate basic *Table of Contents* and insert it into the editor at the current cursor position. Items for the table will be taken from the headers found in the content. 
+`toc` plugin will generate basic *Table of Contents* and insert it into the editor at the current cursor position. Items for the table will be taken from the headers found in the content.
 
 **Type:** `String`
 
-##### Example
+##### Example: Adding the Table of Contents plugin
 
 ```js
 tinymce.init({
@@ -22,7 +22,7 @@ tinymce.init({
 });
 ```
 
-*Table of Contents* will have a simple HTML structure - a wrapper `div` element, a header with *editable* title and unordered nested list with navigation links. Nesting depth is customisable. 
+*Table of Contents* will have a simple HTML structure - a wrapper `div` element, a header with *editable* title and unordered nested list with navigation links. Nesting depth is customisable.
 
 Internally plugin doesn't apply any inline styles. Basic formatting can be added via [Boilerplate Content CSS]({{ site.baseurl }}/advanced/boilerplate-content-css/), that can be customised to your needs.
 
@@ -51,7 +51,7 @@ By default headers in the content will be inspected only three levels deep, so -
 
 **Default Value:** `3`
 
-##### Example
+##### Example: toc_depth
 
 ```js
 tinymce.init({
@@ -70,7 +70,7 @@ Table of contents has a header and by default it will be marked up with `H2` tag
 
 **Default Value:** `H2`
 
-##### Example
+##### Example: toc_header
 
 ```js
 tinymce.init({
@@ -89,7 +89,7 @@ With `toc_class` you can change the class name that gets assigned to the wrapper
 
 **Default Value:** `mce-toc`
 
-##### Example
+##### Example: toc_class
 
 ```js
 tinymce.init({

@@ -77,7 +77,7 @@ A basic menu item triggers its `onAction` function when clicked.
 | isDisabled | () => boolean | Checks if the menu item is disabled. |
 | setDisabled | (state: boolean) => void | Sets the menu item's disabled state. |
 
-#### Example
+#### Example: addMenuItem
 
 ```js
 editor.ui.registry.addMenuItem('basicitem', {
@@ -105,7 +105,7 @@ A nested menu item is a menu item with a submenu. Registering a submenu this way
 | isDisabled | () => boolean | Checks if the menu item is disabled. |
 | setDisabled | (state: boolean) => void | Sets the menu item's disabled state. |
 
-#### Example
+#### Example: addNestedMenuItem
 
 ```js
 editor.ui.registry.addNestedMenuItem('nesteditem', {
@@ -146,7 +146,7 @@ A toggle menu item triggers its `onAction` when clicked. It also has a concept o
 | isDisabled | () => boolean | Checks if the menu item is disabled. |
 | setDisabled | (state: boolean) => void | Sets the menu item's disabled state. |
 
-#### Example
+#### Example: addToggleMenuItem
 
 ```js
 // Menu items are recreated when the menu is closed and opened, so we need

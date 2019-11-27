@@ -7,7 +7,7 @@ This option should contain the number of undo levels to keep in memory. By defau
 
 **Default Value:** `unlimited`
 
-##### Example
+##### Example: custom_undo_redo_levels
 
 ```js
 tinymce.init({

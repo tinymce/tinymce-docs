@@ -4,7 +4,7 @@ The **invalid_elements** option instructs the editor to remove specific elements
 
 **Type:** `String`
 
-##### Example
+##### Example: invalid_elements
 
 ```js
 tinymce.init({

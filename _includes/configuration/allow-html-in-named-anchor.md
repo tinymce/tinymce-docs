@@ -8,7 +8,7 @@ This option allows you to specify whether the editor should parse and keep `html
 
 **Possible Values:** `true`, `false`
 
-##### Example
+##### Example: allow_html_in_named_anchor
 
 ```js
 tinymce.init({

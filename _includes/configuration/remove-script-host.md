@@ -8,7 +8,7 @@ If this option is enabled the protocol and host part of the URLs returned from t
 
 **Possible Values:** `true`, `false`
 
-##### Example
+##### Example: remove_script_host
 
 ```js
 tinymce.init({

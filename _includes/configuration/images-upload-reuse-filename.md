@@ -10,7 +10,7 @@ Setting `images_reuse_filename` to *true* tells {{site.productname}} to use the 
 
 **Possible Values:** `true`, `false`
 
-##### Example
+##### Example: images_reuse_filename
 
 ```js
 tinymce.init({

@@ -9,7 +9,7 @@ The **min_height** option has two kinds of behaviors depending on the state of t
 
 **Type:** `Number`
 
-##### Example
+##### Example: min_height
 
 ```js
 tinymce.init({

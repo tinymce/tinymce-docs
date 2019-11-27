@@ -15,7 +15,7 @@ Please note, the language code you set in your {{site.productname}} configuratio
 
 **Default Value:** `en_US`
 
-##### Example
+##### Example: language
 
 In this example we will set the editor language to Swedish.
 

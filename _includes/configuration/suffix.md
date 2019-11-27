@@ -4,7 +4,7 @@ This option lets you specify the suffix of {{site.productname}}. By default this
 
 **Type:** `String`
 
-##### Example
+##### Example: suffix
 
 ```js
 tinymce.init({

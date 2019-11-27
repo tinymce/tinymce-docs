@@ -98,7 +98,7 @@ Tag name of the block element to use as a wrapper, for example, `h1`. Existing b
 
 **Type:** `String`
 
-##### Example
+##### Example: block format
 
 ```js
 tinymce.init({
@@ -116,7 +116,7 @@ Tag name of the inline element to use as a wrapper, for example, `span` is used 
 
 **Type:** `String`
 
-##### Example
+##### Example: inline format
 
 ```js
 tinymce.init({
@@ -134,7 +134,7 @@ CSS3 selector pattern that is used to find elements within the selection. It can
 
 **Type:** `String`
 
-##### Example
+##### Example: selector format
 
 ```js
 tinymce.init({
@@ -159,7 +159,7 @@ Space-separated list of classes that are applied to the selected or newly create
 
 **Type:** `String`
 
-##### Example
+##### Example: formats - classes
 
 ```js
 tinymce.init({
@@ -177,7 +177,7 @@ Key/value object with CSS styles to apply to the selected or newly created inlin
 
 **Type:** `Object`
 
-##### Example
+##### Example: formats - styles
 
 ```js
 tinymce.init({
@@ -196,7 +196,7 @@ Key/value object with attributes to apply to the selected or newly created inlin
 
 **Type:** `Object`
 
-##### Example
+##### Example: formats - attributes
 
 ```js
 tinymce.init({
@@ -217,7 +217,7 @@ Makes sure that the format is not merged with other wrappers having the same for
 
 **Default:** `false`
 
-##### Example
+##### Example: formats - exact
 
 ```js
 tinymce.init({
@@ -239,7 +239,7 @@ States that the format is a container format for block elements. For example, a 
 
 **Default:** `false`
 
-##### Example
+##### Example: formats - wrapper
 
 ```js
 tinymce.init({
@@ -265,7 +265,7 @@ This can be set to three different modes:
 * **empty**: If the element has no styles, classes, or attributes then the element is removed.
 * **all**: Removes the element regardless of its styles, classes, and or attributes.
 
-##### Example
+##### Example: formats - remove
 
 ```js
 tinymce.init({
@@ -294,7 +294,7 @@ So if the selection is from _a_ to _b_ in this html contents `<h1><b>[a</b></h1>
 
 **Type:** `Boolean`
 
-##### Example
+##### Example: formats - block_expand
 
 ```js
 tinymce.init({
@@ -331,7 +331,7 @@ Enables control for removing the child elements of the matching format. This is 
 
 **Default:** `false` for `selector` formats
 
-##### Example
+##### Example: formats - deep
 
 ```js
 tinymce.init({
@@ -349,7 +349,7 @@ This example overrides some of the built-in formats and tells {{site.productname
 
 **Type:** `Object`
 
-##### Example
+##### Example: formats
 
 ```js
 // Output elements in HTML style
@@ -401,7 +401,7 @@ Use the `removeformat` option to specify how the `clear formatting` feature shou
 
 **Type:** `Array`
 
-##### Example
+##### Example: removeformat
 
 ```js
 tinymce.init({

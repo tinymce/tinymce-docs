@@ -11,7 +11,7 @@ The `media` plugin adds the ability for users to be able to add HTML5 video and 
 
 **Type:** `String`
 
-##### Example
+##### Example: Adding the Media plugin
 
 ```js
 tinymce.init({
@@ -32,7 +32,7 @@ This option allows you to specify the function that will return the HTML embed c
 
 **Type:** `String`
 
-##### Example
+##### Example: audio_template_callback
 
 ```js
 tinymce.init({
@@ -56,7 +56,7 @@ This options allows you disable the `Alternative source` input field in the medi
 
 **Possible Values:** `true`, `false`
 
-##### Example
+##### Example: media_alt_source
 
 ```js
 tinymce.init({
@@ -78,7 +78,7 @@ This options allows you disable the `Dimensions` input fields in the media dialo
 
 **Possible Values:** `true`, `false`
 
-##### Example
+##### Example: media_dimensions
 
 ```js
 tinymce.init({
@@ -100,7 +100,7 @@ This option allows you disable the XSS sanitation filter for video/object elemen
 
 **Possible Values:** `true`, `false`
 
-##### Example
+##### Example: media_filter_html
 
 ```js
 tinymce.init({
@@ -124,7 +124,7 @@ This option is enabled by default and accepts URLs input into the source field o
 
 **Possible Values:** `true`, `false`
 
-##### Example
+##### Example: media_live_embeds
 
 ```js
 tinymce.init({
@@ -146,7 +146,7 @@ This options allows you disable the `Poster` input field in the media dialog.
 
 **Possible Values:** `true`, `false`
 
-##### Example
+##### Example: media_poster
 
 ```js
 tinymce.init({
@@ -164,7 +164,7 @@ This option allows you to embed videos using script elements.
 
 **Type:** `String`
 
-##### Example
+##### Example: media_scripts
 
 ```js
 tinymce.init({
@@ -191,7 +191,7 @@ If something goes wrong in your function and you want to show an error to the us
 
 **Type:** `JavaScript Function`
 
-##### Example
+##### Example: media_url_resolver
 
 The following example simply checks if the url contains some special url and returns an iframe if it does. Otherwise it calls the `resolve` callback with an empty string, falling back to the default media embed logic.
 
@@ -218,7 +218,7 @@ This option allows you to specify the function that will return the HTML embed c
 
 **Type:** `String`
 
-##### Example
+##### Example: video_template_callback
 
 ```js
 tinymce.init({

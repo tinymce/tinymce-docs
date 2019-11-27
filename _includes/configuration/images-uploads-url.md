@@ -10,7 +10,7 @@ Be sure to checkout a demo implementation of the server-side upload handler [her
 
 **Type:** `String`
 
-##### Example
+##### Example: images_upload_url
 
 ```js
 tinymce.init({

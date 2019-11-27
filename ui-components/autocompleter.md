@@ -49,7 +49,7 @@ The `fetch` results should be a list of objects with the following details:
 | hide | () => void | Hides the autocompleter menu. |
 | reload | (fetchOptions: Record<string, any>) => void | Hides the autocompleter menu and fetches new menu items. The  `fetchOptions` will be passed to the autocompleter `fetch` callback. |
 
-## Example
+## Example: Autocompleter
 
 This example shows how the charmap plugin adds the standard autocompleter. The autocompleter will show whenever a `:` character is typed plus at least one additional character.
 

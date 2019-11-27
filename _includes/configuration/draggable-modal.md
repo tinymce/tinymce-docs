@@ -8,7 +8,7 @@ Use the `draggable_modal` option to enable dragging for [modal dialogs]({{site.b
 
 **Possible Values:** `true`, `false`
 
-##### Example
+##### Example: draggable_modal
 
 ```js
 tinymce.init({

@@ -10,7 +10,7 @@ This plugin adds the possibility to tab in/out of {{site.productname}}.
 
 **Type:** `String`
 
-##### Example
+##### Example: Adding the Tab Focus plugin
 
 ```js
 tinymce.init({
@@ -29,7 +29,7 @@ This option enables you to specify an element `ID` to focus when the user presse
 
 **Type:** `String`
 
-##### Example
+##### Example: tabfocus_elements
 
 ```js
 // Move focus to specific element

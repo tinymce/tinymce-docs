@@ -49,7 +49,7 @@ tinymce.init({
 });
 ```
 
-##### Example
+##### Example relative URL
 
 `http://www.site.com/path1/path2/file.htm >> path2/file.htm`
 
@@ -66,7 +66,7 @@ tinymce.init({
 });
 ```
 
-##### Example
+##### Example absolute URL
 
 `path2/file.htm >> /path1/path2/file.htm`
 
@@ -83,6 +83,6 @@ tinymce.init({
 });
 ```
 
-##### Example
+##### Example domain absolute URL
 
 `path2/file.htm >> http://www.site.com/path1/path2/file.htm`

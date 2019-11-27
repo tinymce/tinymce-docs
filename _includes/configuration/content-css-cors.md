@@ -5,7 +5,7 @@ When `content_css_cors` is set to `true`, the editor will add a `crossorigin="an
 
 **Default Value:** `false`
 
-##### Example
+##### Example: content_css_cors
 
 ```js
 // File: http://domain.mine/mysite/index.html

@@ -10,7 +10,7 @@ This option allows you to disable [Gecko](https://en.wikipedia.org/wiki/Gecko_(s
 
 **Possible Values:** `true`, `false`
 
-##### Example
+##### Example: gecko_spellcheck
 
 ```js
 tinymce.init({

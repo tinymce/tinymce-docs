@@ -5,7 +5,7 @@ This option allows you to set whether {{site.productname}} should append custom 
 **Type:** `Boolean`
 **Default:** `false`
 
-##### Example
+##### Example: style_formats_merge
 
 ```js
 tinymce.init({

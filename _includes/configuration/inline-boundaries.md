@@ -1,6 +1,6 @@
 ## inline_boundaries
 
-The **inline_boundaries** option allows you to disable the inline boundaries. For information on how to change the appearance of the inline boundaries see the [Boilerplate Content CSS page]({{ site.baseurl }}/advanced/boilerplate-content-css/). 
+The **inline_boundaries** option allows you to disable the inline boundaries. For information on how to change the appearance of the inline boundaries see the [Boilerplate Content CSS page]({{ site.baseurl }}/advanced/boilerplate-content-css/).
 
 **Type:** `Boolean`
 
@@ -8,7 +8,7 @@ The **inline_boundaries** option allows you to disable the inline boundaries. Fo
 
 **Possible Values:** `true`, `false`
 
-##### Example
+##### Example: inline_boundaries
 
 ```js
 tinymce.init({

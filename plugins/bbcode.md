@@ -9,11 +9,11 @@ keywords: punbb informer
 
 This plugin makes it possible to edit BBCode in a WYSIWYG style by converting tags like `[b]` into `<strong>` and then back, when user submits the content.
 
-> You will need to sacrifice quite a lot of {{site.productname}}'s functionality to use this plugin properly, since BBCode format doesn't support the whole HTML specification. 
+> You will need to sacrifice quite a lot of {{site.productname}}'s functionality to use this plugin properly, since BBCode format doesn't support the whole HTML specification.
 
 **Type:** `String`
 
-##### Example
+##### Example: Adding the BBCode plugin
 
 ```js
 tinymce.init({
@@ -47,7 +47,7 @@ When using PunBB dialect, `codeStyle` and `quoteStyle` will be converted to `[co
 
 **Default Value:** `"punbb"`
 
-##### Example
+##### Example: bbcode_dialect
 
 ```js
 tinymce.init({

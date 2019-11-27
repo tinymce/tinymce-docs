@@ -8,7 +8,7 @@ keywords: a11y accessibility WCAG
 
 The `a11ychecker` plugin enables you to check the HTML for various WCAG & Section 508 accessibility problems. It has an auto repair feature that lets a user fix identified problems.
 
-##### Example:
+##### Example: Adding the a11ychecker plugin
 
 ```js
 tinymce.init({
@@ -120,7 +120,7 @@ This configuration option sets whether the checker should allow decorative image
 
 **Default value:** `false`
 
-#### Example:
+#### Example: a11ychecker_allow_decorative_images
 
 ```js
 tinymce.init({
@@ -143,7 +143,7 @@ For example, setting the version to HTML 4 will trigger the rule "Complex tables
 
 **Possible Values:** `html4`, `html5`
 
-#### Example:
+#### Example: a11ychecker_html_version
 
 ```js
 tinymce.init({
@@ -166,7 +166,7 @@ For example, the "Text must have a contrast ratio of at least ..." rule when usi
 
 **Possible Values:** `a`, `aa`, `aaa`
 
-#### Example:
+#### Example: a11ychecker_level
 
 ```js
 tinymce.init({
@@ -185,7 +185,7 @@ Accessibility Checker exposes couple of methods that can be called directly.
 
 Triggers accessibility dialog with the results of the audit and options to correct the problems, if any.
 
-#### Example
+#### Example: toggleaudit API
 ```js
 editor.plugins.a11ychecker.toggleaudit();
 ```
@@ -199,7 +199,7 @@ Conducts accessibility audit and reports about the results without triggering th
 * **url** - *URL of the details page at W3 dedicated specifically to the given issue*
 * **element** - *DOM element having the issue*
 
-##### Example
+##### Example: getReport API
 
 ```js
 var issues = editor.plugins.a11ychecker.getReport();

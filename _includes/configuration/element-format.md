@@ -8,7 +8,7 @@ This option controls whether elements are output in the HTML or XHTML mode. `xht
 
 **Possible Values:** `xhtml`, `html`
 
-##### Example
+##### Example: element_format
 
 ```js
 // Output elements in HTML style

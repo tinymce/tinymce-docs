@@ -4,7 +4,7 @@ Use the **custom_ui_selector** option to specify the elements that you want {{si
 
 **Type:** `String`
 
-##### Example
+##### Example: custom_ui_selector
 
 ```html
 tinymce.init({

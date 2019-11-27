@@ -9,7 +9,7 @@ The **images_upload_credentials** option lets you specify if calls to the config
 
 **Possible Values:** `true`, `false`
 
-##### Example
+##### Example: images_upload_credentials
 
 ```js
 tinymce.init({

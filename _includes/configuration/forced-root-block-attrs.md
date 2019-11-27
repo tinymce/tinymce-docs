@@ -4,7 +4,7 @@ This option enables you specify attributes for the [forced_root_block](#forced_r
 
 **Type:** `Object`
 
-##### Example
+##### Example: forced_root_block_attrs
 
 ```js
 tinymce.init({

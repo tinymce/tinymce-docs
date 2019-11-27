@@ -8,7 +8,7 @@ A common use case for this setting is to add editor events to {{site.productname
 
 **Type:** `JavaScript Function`
 
-##### Example
+##### Example: setup
 
 ```js
 tinymce.init({

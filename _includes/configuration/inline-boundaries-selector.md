@@ -8,7 +8,7 @@ If you add new elements, you need to add CSS selectors for them in the content C
 
 **Default Value:** `a[href],code`
 
-##### Example
+##### Example: inline_boundaries_selector
 
 ```js
 tinymce.init({

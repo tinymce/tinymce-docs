@@ -6,7 +6,7 @@ This option allows you to set the maximum width that a user can stretch the enti
 
 **Type:** `Number`
 
-##### Example
+##### Example: max_width
 
 ```js
 tinymce.init({

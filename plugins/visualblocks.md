@@ -11,7 +11,7 @@ This plugin allows a user to see block level elements in the editable area. It i
 
 **Type:** `String`
 
-##### Example
+##### Example: Adding the Visual Blocks plugin
 
 ```js
 tinymce.init({

@@ -8,7 +8,7 @@ The **max_height** option has two kinds of behaviors depending on the state of t
 
 **Type:** `Number`
 
-##### Example
+##### Example: max_height
 
 ```js
 tinymce.init({

@@ -4,7 +4,7 @@ The `textcolor` component adds the forecolor/back color button controls that ena
 
 **Type:** `String`
 
-##### Example
+##### Example: text_color
 
 ```js
 tinymce.init({
@@ -28,7 +28,7 @@ This option allows specifying the number of columns that can appear on the grid 
 
 **Default Value:** `"5"`
 
-##### Example
+##### Example: color_cols
 
 ```js
 tinymce.init({
@@ -43,7 +43,7 @@ This option allows specifying a map of the text colors that will appear in the g
 
 **Type:** `Array`
 
-##### Example
+##### Example: color_map
 
 ```js
 tinymce.init({
@@ -102,7 +102,7 @@ This option allows disabling the custom color picker in all color swatches of th
 
 **Default Value:** `true`
 
-##### Example
+##### Example: custom_colors
 
 ```js
 tinymce.init({

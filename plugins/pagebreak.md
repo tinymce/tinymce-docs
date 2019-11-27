@@ -15,7 +15,7 @@ It also adds a toolbar button and a menu item `Page break` under the `Insert` me
 
 **Default Value:** `"<!-- pagebreak -->"`
 
-##### Example
+##### Example: Adding the Page Break plugin
 
 ```js
 tinymce.init({
@@ -34,7 +34,7 @@ These settings affect the execution of the `pagebreak` plugin. They enable you t
 
 **Type:** `String`
 
-##### Example
+##### Example: pagebreak_separator
 
 ```js
 tinymce.init({
@@ -56,7 +56,7 @@ When enabled this option makes it easier to split block elements with a page bre
 
 **Possible Values:** `true`, `false`
 
-##### Example
+##### Example: pagebreak_split_block
 
 ```js
 tinymce.init({

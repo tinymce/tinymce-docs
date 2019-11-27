@@ -14,7 +14,7 @@ Selecting elements from the element path allows users to perform operations on b
 
 **Possible Values:** `true`, `false`
 
-##### Example
+##### Example: elementpath
 
 ```js
 tinymce.init({

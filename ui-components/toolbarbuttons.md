@@ -44,7 +44,7 @@ tinymce.init({
 });
 ```
 
-## Example
+## Example: Toolbar button types
 
 The following example creates different types of toolbar buttons.
 

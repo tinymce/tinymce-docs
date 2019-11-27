@@ -6,7 +6,9 @@ These styles are useful for previewing content as it appears outside the editor.
 
 **Type:** `String`
 
-##### Example
+##### Examples: content_style
+
+To add one style with this option:
 
 ```js
 tinymce.init({
@@ -16,8 +18,6 @@ tinymce.init({
 ```
 
 To add two or more styles with this option, provide the styles as a single string.
-
-##### Example
 
 ```js
 tinymce.init({

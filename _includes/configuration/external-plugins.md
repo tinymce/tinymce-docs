@@ -8,7 +8,7 @@ This value should be set as a JavaScript object that contains a property for eac
 
 **Type:** `Object`
 
-##### Example
+##### Example: external_plugins
 
 ```js
 tinymce.init({

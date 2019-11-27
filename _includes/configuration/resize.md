@@ -12,7 +12,7 @@ This option gives you the ability to disable the resize handle or set it to resi
 
 {{site.differs_for_mobile}}
 
-##### Example
+##### Example: Disabling the resize
 
 ```js
 tinymce.init({
@@ -21,15 +21,7 @@ tinymce.init({
 });
 ```
 
-### Enabling both vertical and horizontal resize
-
-**Type:** `Boolean`
-
-**Default Value:** `true`
-
-**Possible Values:** `true`, `false`, `'both'`
-
-##### Example
+##### Example: Enabling both vertical and horizontal resize
 
 ```js
 tinymce.init({

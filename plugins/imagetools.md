@@ -14,7 +14,7 @@ Image Tools (`imagetools`) plugin adds a contextual editing toolbar to the image
 The Image Tools plugin is provided with all subscriptions to [{{site.cloudname}}]({{ site.baseurl }}/cloud-deployment-guide/editor-and-features/), including an automatically configured image proxy.
 Simply add `image` to the `toolbar` list and `image imagetools` to the `plugins` list.
 
-##### Example
+##### Example: Adding the Image Tools plugin for Tiny Cloud deployments
 
 ```js
 tinymce.init({
@@ -30,7 +30,7 @@ To enable the {{site.productname}} Image Tools plugin:
 1. Add 'image' to the 'toolbar' list and 'image imagetools' to the 'plugins' list
 2. Enable `imagetools_cors_hosts` and `imagetools_proxy` options as needed
 
-##### Example
+##### Example: Adding the Image Tools plugin for self-hosted deployments
 
 ```js
 tinymce.init({
@@ -55,7 +55,7 @@ An array of supported domains for the images (with CORS enabled on them) can be 
 
 **Type:** `String[]`
 
-##### Example
+##### Example: imagetools_cors_hosts
 
 ```js
 tinymce.init({
@@ -72,7 +72,7 @@ This option can be used together with the `imagetools_cors_hosts` option to allo
 
 **Type:** `String[]`
 
-##### Example
+##### Example: imagetools_credentials_hosts
 
 ```js
 tinymce.init({
@@ -90,7 +90,7 @@ This option can be used to define a custom fetch function, which provides anothe
 
 **Type:** `Function`
 
-##### Example
+##### Example: imagetools_fetch_image
 
 ```js
 tinymce.init({
@@ -117,7 +117,7 @@ Another way of getting images across domains is using local server-side proxy. P
 
 **Type:** `String`
 
-##### Example
+##### Example: imagetools_proxy
 
 ```js
 tinymce.init({
@@ -177,7 +177,7 @@ The exact selection of buttons that will appear on the contextual toolbar can be
 
 **Default Value:** `"rotateleft rotateright | flipv fliph | editimage imageoptions"`
 
-##### Example
+##### Example: imagetools_toolbar
 
 ```js
 tinymce.init({

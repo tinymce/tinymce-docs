@@ -128,7 +128,7 @@ The `annotationChanged` listeners should only fire when the state or the uid cha
 annotationChanged: (name: string, callback): void
 ```
 
-## Example
+## Example: Annotate API
 
 Use the following example to create the Annotate API:
 

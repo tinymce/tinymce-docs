@@ -14,7 +14,7 @@ However, this is **not** intended for use in producing normal web content such a
 
 **Type:** `String`
 
-##### Example
+##### Example: Enabling the Legacy Output plugin
 
 ```js
 tinymce.init({

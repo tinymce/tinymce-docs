@@ -8,7 +8,7 @@ The plugin hooks into the editor [`color_picker_callback`](#color_picker_callbac
 
 **Type:** `String`
 
-##### Example
+##### Example: color_picker
 
 In this example, we have activated the toolbar `forecolor` and `backcolor` palettes.
 
@@ -23,7 +23,7 @@ tinymce.init({
 
 This option enables you to provide your own color picker. When your custom color picker returns a color value, our callback code inserts this color into the editor.
 
-##### Example
+##### Example: color_picker_callback
 
 ```js
 tinymce.init({

@@ -8,7 +8,7 @@ This option enables you to control {{site.productname}} to force the color forma
 
 **Possible Values:** `true`, `false`
 
-##### Example
+##### Example: force_hex_style_colors
 
 ```js
 tinymce.init({

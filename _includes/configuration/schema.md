@@ -12,7 +12,7 @@ Also note that all event attributes are excluded by default since it's a bad pra
 
 **Possible Values:** `html5`, `html4`, `html5-strict`
 
-##### Example
+##### Example: schema
 
 ```js
 tinymce.init({

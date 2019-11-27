@@ -10,7 +10,7 @@ The **hidden_input** option can be disabled if you don't need these controls.
 
 **Possible Values:** `true`, `false`
 
-##### Example
+##### Example: hidden_input
 
 ```js
 tinymce.init({

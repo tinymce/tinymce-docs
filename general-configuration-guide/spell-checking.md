@@ -33,7 +33,7 @@ This plugin enables **Enchant** or **PSpell** on the server to spell check conte
 5. Configure the `spellchecker_rpc_url` to `'spellchecker.php'`.
 6. Download word lists and place them in the `/dicts` directory for example "es_ES.dic, es_ES.aff".
 
-##### Example
+##### Example: spellchecker_rpc_url
 
 ```js
 tinymce.init({

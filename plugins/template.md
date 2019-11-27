@@ -11,7 +11,7 @@ The `template` plugin adds support for custom templates. It also adds a menu ite
 
 **Type:** `String`
 
-##### Example
+##### Example: Adding the Template plugin
 
 ```js
 tinymce.init({
@@ -28,7 +28,7 @@ tinymce.init({
 |------| ------------|
 | `mceInsertTemplate` | Insert template html |
 
-##### Example
+##### Example: Using the mceInsertTemplate command
 
 ```js
 tinymce.activeEditor.execCommand('mceInsertTemplate', false, '<p class="cdate">This will be replaced with the creation date.</p>')
@@ -94,7 +94,7 @@ A creation date is one that is set if no previous date existed within the elemen
 
 **Default Value:** `cdate`
 
-##### Example
+##### Example: template_cdate_classes
 
 ```js
 tinymce.init({
@@ -114,7 +114,7 @@ This option allows you to provide a date format that all 'creation' date templat
 
 **Default:** `'%Y-%m-%d'`
 
-##### Example
+##### Example: template_cdate_format
 
 ```js
 tinymce.init({
@@ -144,7 +144,7 @@ A modified date is one that is updated with each edit.
 
 **Default Value:** `mdate`
 
-##### Example
+##### Example: template_mdate_classes
 
 ```js
 tinymce.init({
@@ -164,7 +164,7 @@ This option allows you to provide TinyMCE with a date/time format that all 'modi
 
 **Default:** `'%Y-%m-%d'`
 
-##### Example
+##### Example: template_mdate_format
 
 ```js
 tinymce.init({
@@ -190,7 +190,7 @@ This is an object containing items that will be replaced with their respective s
 
 **Type:** `Object`
 
-##### Example
+##### Example: template_replace_values
 
 ```js
 tinymce.init({
@@ -223,7 +223,7 @@ This is an object containing items that will be replaced with their respective s
 
 **Type:** `Object`
 
-##### Example
+##### Example: template_preview_replace_values
 
 ```js
 tinymce.init({
@@ -258,7 +258,7 @@ When HTML elements in a template are assigned this class, the content of the ele
 
 **Default Value:** `selcontent`
 
-##### Example
+##### Example: template_selected_content_classes
 
 ```js
 tinymce.init({

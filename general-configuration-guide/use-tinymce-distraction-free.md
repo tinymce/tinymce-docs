@@ -10,7 +10,7 @@ The **Distraction-free** mode renders the editor in lightweight inline mode. Thi
 
 To try out a {{site.productname}} editor in distraction-free mode, see the [Distraction-free editor]({{ site.baseurl }}/demo/editor-dfree/) example page.
 
-##### Example:
+##### Example: Enabling Distraction-free mode
 
 ```js
 tinymce.init({
@@ -28,7 +28,7 @@ tinymce.init({
 
 The `quicklink` quickly inserts and edits link inline.
 
-##### Example:
+##### Example: quicklink
 
 ```js
 tinymce.init({
@@ -45,7 +45,7 @@ tinymce.init({
 
 `quickimage` inserts images from the local machine into the editor. These can be automatically uploaded by configuring [image uploading]({{ site.baseurl }}/advanced/handle-async-image-uploads/).
 
-##### Example:
+##### Example: quickimage
 
 ```js
 tinymce.init({
@@ -62,7 +62,7 @@ tinymce.init({
 
 `quicktable` quickly inserts a 2x2 table with 100% width.
 
-##### Example:
+##### Example: quicktable
 
 ```js
 tinymce.init({

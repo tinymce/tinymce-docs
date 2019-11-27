@@ -16,7 +16,7 @@ Once you enable {{site.cloudfilemanager}} it integrates as the default file pick
 
 {% include codepen.html id="drive" %}
 
-### Example
+### Example: Adding the Tiny Drive plugin
 
 ```js
 tinymce.init({

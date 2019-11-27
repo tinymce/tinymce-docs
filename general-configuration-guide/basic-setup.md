@@ -120,7 +120,7 @@ The `toolbar` option displays, orders, and groups the toolbar buttons.
 
 Use a space-separated list to specify the buttons that appear in {{site.productname}}'s toolbar. Use `"|"` pipe characters between the groups of buttons to create groups within this list.
 
-##### Example
+##### Examples: Toolbar configuration
 
 ```js
 tinymce.init({
@@ -139,8 +139,6 @@ tinymce.init({
 ```
 
 The example below specifies multiple toolbars by providing an `array` of space-separated strings.
-
-##### Example
 
 ```js
 tinymce.init({

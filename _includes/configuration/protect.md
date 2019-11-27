@@ -6,7 +6,7 @@ The option takes an array of regular expression that it will match the contents 
 
 **Type:** `Array`
 
-##### Example
+##### Example: protect
 
 ```js
 tinymce.init({

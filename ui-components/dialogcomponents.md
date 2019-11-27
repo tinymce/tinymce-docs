@@ -61,9 +61,9 @@ A dialog can be configured with an [`onTabChange`]({{site.baseurl}}/ui-component
 
 As an example of when this is useful, the `charmap` and `emoticons` plugin dialogs use `newTabName` to change search results to match the character or emoticon category represented by the current tab.
 
-#### Example
+#### Example: onTabChange
 
-Below is a trivial example of how to use `onTabChange` and `showTab()`.
+Below is an example of how to use `onTabChange` and `showTab()`.
 
 ```js
 const dialogConfig = {

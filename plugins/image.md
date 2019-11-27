@@ -10,7 +10,7 @@ This plugin enables the user to insert an image into {{site.productname}}'s edit
 
 **Type:** `String`
 
-##### Example
+##### Example: Adding the Image plugin
 
 ```js
 tinymce.init({
@@ -48,7 +48,7 @@ This option lets users enable captions for images. When this option is enabled t
 
 **Possible Values:** `true`, `false`
 
-##### Example
+##### Example: image_caption
 
 ```js
 tinymce.init({
@@ -103,7 +103,7 @@ This option lets you specify a predefined list of sources for images. `image_lis
 
 **Type:** `String`
 
-##### Example
+##### Example: image_list
 
 ```js
 tinymce.init({
@@ -159,7 +159,7 @@ This option adds an "Advanced" tab to the image dialog allowing you to add custo
 
 **Possible Values:** `true`, `false`
 
-##### Example
+##### Example: image_advtab
 
 ```js
 tinymce.init({
@@ -177,7 +177,7 @@ This option lets you specify a predefined list of classes to add to an image. It
 
 **Type:** `String`
 
-##### Example
+##### Example: image_class_list
 
 ```js
 tinymce.init({
@@ -203,7 +203,7 @@ This options allows you disable the image description input field in the image d
 
 **Possible Values:** `true`, `false`
 
-##### Example
+##### Example: image_description
 
 ```js
 tinymce.init({
@@ -225,7 +225,7 @@ This options allows you disable the image dimensions input field in the image di
 
 **Possible Values:** `true`, `false`
 
-##### Example
+##### Example: image_dimensions
 
 ```js
 tinymce.init({
@@ -243,7 +243,7 @@ This option allows you to specify a URL prefix that will be applied to images wh
 
 **Type:** `String`
 
-##### Example
+##### Example: image_prepend_url
 
 ```js
 tinymce.init({
@@ -265,7 +265,7 @@ This options allows you enable the image title input field in the image dialog.
 
 **Possible Values:** `true`, `false`
 
-##### Example
+##### Example: image_title
 
 ```js
 tinymce.init({
@@ -287,7 +287,7 @@ This option adds an "Upload" tab to the image dialog allowing you to upload loca
 
 **Possible Values:** `true`, `false`
 
-##### Example
+##### Example: image_uploadtab
 
 ```js
 tinymce.init({

@@ -61,7 +61,7 @@ This option sets the author id to be used when creating or replying to comments.
 
 **Default Value:** `"Anon"`
 
-###### Example
+###### Example: tinycomments_author
 
 ```js
 tinymce.init({
@@ -79,7 +79,7 @@ _Optional_ - This option sets the author's display name to be used when creating
 
 **Type:** `String`
 
-###### Example
+###### Example: tinycomments_author_name
 
 ```js
 tinymce.init({
@@ -109,7 +109,7 @@ function (req, done, fail) {
 
 The following example extends the default behavior to allow the author `<Admin user>` to delete other author's comment conversations by adding `|| currentAuthor === "<Admin user>"`.
 
-###### Example
+###### Example: tinycomments_can_delete
 
 ```js
 var currentAuthor = 'embedded_journalist';
@@ -146,7 +146,7 @@ function (req, done, fail) {
 
 The following example extends the default behavior to allow the author `<Admin user>` to delete other author's comments by adding `|| currentAuthor === "<Admin user>"`.
 
-###### Example
+###### Example: tinycomments_can_delete_comment
 
 ```js
 var currentAuthor = 'embedded_journalist';
@@ -181,7 +181,7 @@ function (req, done, fail) {
 
 The following example extends the default behavior to allow the author `<Admin user>` to edit other author's comments by adding `|| currentAuthor === "<Admin user>"`.
 
-###### Example
+###### Example: tinycomments_can_edit_comment
 
 ```js
 var currentAuthor = 'embedded_journalist';

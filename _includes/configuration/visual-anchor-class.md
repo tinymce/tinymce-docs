@@ -4,7 +4,7 @@ This option enables you to configure a custom class to be added to anchors with 
 
 **Type:** `String`
 
-##### Example
+##### Example: visual_anchor_class
 
 ```js
 tinymce.init({

@@ -11,7 +11,7 @@ The `table` plugin adds table management functionality to {{site.productname}}. 
 
 **Type:** `String`
 
-##### Example
+##### Example: Adding the Table plugin
 
 ```js
 tinymce.init({
@@ -36,7 +36,7 @@ This option allows you to specify the buttons and the order that they will appea
 
 **Possible Values:**  `table`, `tablerowprops`, `tablecellprops`
 
-##### Example
+##### Example: table_toolbar
 
 ```js
 tinymce.init({
@@ -55,7 +55,7 @@ This option allows you to disable some of the options available to a user when i
 
 **Possible Values:**  `true`, `false`
 
-##### Example
+##### Example: table_appearance_options
 
 ```js
 tinymce.init({
@@ -71,7 +71,7 @@ This option enables you to specify which elements should be cloned as empty chil
 
 **Type:** `String`
 
-##### Example
+##### Example: table_clone_elements
 ```js
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
@@ -95,7 +95,7 @@ However, if `table_grid` is set to `false` the table picker will be replaced by 
 
 {{site.differs_for_mobile}}
 
-##### Example
+##### Example: table_grid
 
 ```js
 tinymce.init({
@@ -117,7 +117,7 @@ This option enables you to disable the default tab between table cells feature. 
 
 **Possible Values:** `true`, `false`
 
-##### Example
+##### Example: table_tab_navigation
 
 ```js
 tinymce.init({
@@ -137,7 +137,7 @@ This option enables you to specify default attributes for inserted tables.
 
 **Default Value:** `{ border: '1' }`
 
-##### Example
+##### Example: table_default_attributes
 
 ```js
 tinymce.init({
@@ -159,7 +159,7 @@ This option enables you to specify the default styles for inserted tables.
 
 **Default Value:** `{ 'border-collapse': 'collapse', 'width': '100%' }`
 
-##### Example
+##### Example: table_default_styles
 
 ```js
 tinymce.init({
@@ -181,7 +181,7 @@ will force pixel resizing. The default is to automatically detect what the table
 
 **Default Value:** `none`
 
-##### Example
+##### Example: table_responsive_width
 
 ```js
 tinymce.init({
@@ -198,7 +198,7 @@ This option enables you to specify a list of classes to present in the table opt
 
 **Type:** `Array`
 
-##### Example
+##### Example: table_class_list
 
 ```js
 tinymce.init({
@@ -220,7 +220,7 @@ This option enables you to specify a list of classes to present in the table cel
 
 **Type:** `Array`
 
-##### Example
+##### Example: table_cell_class_list
 
 ```js
 tinymce.init({
@@ -241,7 +241,7 @@ This option enables you to specify a list of classes to present in the table row
 
 **Type:** `Array`
 
-##### Example
+##### Example: table_row_class_list
 
 ```js
 tinymce.init({
@@ -266,7 +266,7 @@ This option makes it possible to disable the advanced tab in the table dialog bo
 
 **Possible Values:** `true`, `false`
 
-##### Example
+##### Example: table_advtab
 
 ```js
 tinymce.init({
@@ -287,7 +287,7 @@ This option makes it possible to disable the advanced tab in the table cell dial
 
 **Possible Values:** `true`, `false`
 
-##### Example
+##### Example: table_cell_advtab
 
 ```js
 tinymce.init({
@@ -309,7 +309,7 @@ This option makes it possible to disable the advanced tab in the table row dialo
 
 **Possible Values:** `true`, `false`
 
-##### Example
+##### Example: table_row_advtab
 
 ```js
 tinymce.init({
@@ -331,7 +331,7 @@ This option makes it possible to disable the ability to resize table columns and
 
 **Possible Values:** `true`, `false`
 
-##### Example
+##### Example: table_resize_bars
 
 ```js
 tinymce.init({
@@ -353,7 +353,7 @@ This option enables you to force Table Properties dialog to use HTML5/CSS3 stand
 
 **Possible Values:** `true`, `false`
 
-##### Example
+##### Example: table_style_by_css
 
 ```js
 tinymce.init({
@@ -427,7 +427,7 @@ tinymce.init({
 | mceTablePasteRowAfter | Paste any cut or coped rows into the table after the currently selected row(s)  |
 | mceTableDelete | Delete the currently selected table |
 
-#### Example
+#### Example: Using table commands
 
 ```js
 tinymce.execCommand('mceInsertTable');
@@ -441,7 +441,7 @@ tinymce.execCommand('mceInsertTable');
 | getClipboardRows |  | Returns the data for any rows cut or copied using `mceTableCutRow` or `mceTableCopyRow` |
 | setClipboardRows | rows: HTMLElement[] | Set the data to be used by `mceTablePasteRowBefore` or `mceTablePasteRowAfter` for pasting rows into a table |
 
-#### Example
+#### Example: Using table API
 
 ```js
 tinymce.activeEditor.plugins.table.insertTable(2, 3);

@@ -15,7 +15,7 @@ The `linkchecker` does what it says &ndash; validates URLs, as you type them. UR
 
 If you are using [{{site.cloudname}}]({{ site.baseurl }}/cloud-deployment-guide/editor-and-features/), simply add `"linkchecker"` to your plugins list, and the service will be automatically configured.
 
-##### Example
+##### Example: Adding the Link Checker plugin from the Tiny Cloud
 
 ```js
 tinymce.init({
@@ -28,7 +28,7 @@ tinymce.init({
 
 Customers using a Self-hosted environment will need to provide a URL to their deployment of the link checking service via the `linkchecker_service_url` parameter
 
-##### Example
+##### Example: Adding the Link Checker plugin for self-hosted deployments
 
 ```js
 tinymce.init({
@@ -68,7 +68,7 @@ A URL of the server-side link validation service. This is required option, witho
 
 **Type:** `String`
 
-##### Example
+##### Example: linkchecker_service_url
 
 ```js
 tinymce.init({

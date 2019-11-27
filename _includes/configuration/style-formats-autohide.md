@@ -5,7 +5,7 @@ This option enables auto hiding of styles that can't be applied to the current c
 **Type:** `Boolean`
 **Default:** `false`
 
-##### Example
+##### Example: style_formats_autohide
 
 ```js
 tinymce.init({

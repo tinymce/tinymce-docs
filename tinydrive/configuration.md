@@ -52,7 +52,7 @@ This setting enables changing the default upload path for files that get uploade
 
 **Default Value:** `"/uploads"`
 
-#### Example
+#### Example: tinydrive_upload_path
 
 ```js
 tinymce.init({
@@ -69,7 +69,7 @@ This setting enables constraining the width/height of uploaded images. When this
 
 **Type:** `Number`
 
-#### Example
+#### Example: tinydrive_max_image_dimension
 
 ```js
 tinymce.init({
@@ -87,7 +87,7 @@ tinymce.init({
 
 The Insert File toolbar button will insert images as `img` elements or other files as links to that file.
 
-#### Example
+#### Example: Adding the insertfile toolbar button
 
 This is an example of configuring the 'insertfile' toolbar button.
 
@@ -107,7 +107,7 @@ This setting enables specifying the Dropbox API key for integrating dropbox into
 
 **Type:** `string`
 
-#### Example
+#### Example: tinydrive_dropbox_app_key
 
 ```js
 tinymce.init({
@@ -125,7 +125,7 @@ This setting enables specifying the Google Drive API key for integrating Google 
 
 **Type:** `string`
 
-#### Example
+#### Example: tinydrive_google_drive_key
 
 ```js
 tinymce.init({
@@ -141,7 +141,7 @@ This setting enables specifying the Google Drive client ID for integrating Googl
 
 **Type:** `string`
 
-#### Example
+#### Example: tinydrive_google_drive_client_id
 
 ```js
 tinymce.init({

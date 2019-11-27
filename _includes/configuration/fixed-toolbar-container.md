@@ -6,7 +6,7 @@ Use this option to render the inline toolbar into a fixed positioned HTML elemen
 
 This example takes a CSS 3 selector named `'#mytoolbar'` and renders any inline toolbars into this element.
 
-##### Example
+##### Example: fixed_toolbar_container
 
 ```js
 tinymce.init({

@@ -12,7 +12,7 @@ This plugin enables you to prevent users from being able to edit content within 
 
 **Type:** `String`
 
-##### Example
+##### Example: Adding the Noneditable plugin
 
 ```js
 tinymce.init({
@@ -49,7 +49,7 @@ Note that classes with the `mceItem` prefix are invisible within {{site.productn
 
 **Default Value:** `"mceEditable"`
 
-##### Example
+##### Example: noneditable_editable_class
 
 ```js
 tinymce.init({
@@ -69,7 +69,7 @@ Note that classes with the `mceItem` prefix is invisible within {{site.productna
 
 **Default Value:** `"mceNonEditable"`
 
-##### Example
+##### Example: noneditable_noneditable_class
 
 ```js
 tinymce.init({
@@ -87,7 +87,7 @@ This option is used to specify a regular expression or array of regular expressi
 
 **Type:** `String`
 
-##### Example
+##### Example: noneditable_regexp
 
 ```js
 tinymce.init({

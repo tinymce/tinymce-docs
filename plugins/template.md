@@ -329,9 +329,7 @@ This is the contents your backend page should return if you specify a URL in the
 
 ### Making Templates
 
-A template is a file with a `div` containing the template data. All `html` outside the `div` will simply be presented to the user in the preview frame.
-
-A template has more capabilities than a simple snippet, for example, a template can have dynamic content/smart content that gets updated by functions located in the `template_replace_values` key. These functions will continue to be executed each time a cleanup procedure is performed.
+A template is a _file_ with a `div` containing the template data. All `html` outside the `div` will simply be presented to the user in the preview frame.
 
 Each template needs to be inside of a div with the `mceTmpl` class, like this example:
 
@@ -353,8 +351,27 @@ Each template needs to be inside of a div with the `mceTmpl` class, like this ex
 
 ### Making Snippets
 
-Snippets are `html` code chunks that can be inserted. Replace variables will only be executed upon insert, without being wrapped in a template `div` element. So if you define `somevar1` in `template_replace_values` array it will be replaced on preview and insert.
+Snippets are `html` code chunks that can be inserted. Replace variables will only be executed upon insert, without being wrapped in a template `div` element. So if you define a variable in with [`template_replace_values`](#template_replace_values) it will be replaced on insert.
 
-```html
-This is a simple <strong>snippet</strong>. Will be replaced: {$somevar1}.
+#### Example: Using a snippet
+```js
+tinymce.init({
+  selector: '#mytextarea',
+  plugins: 'template',
+  menubar: 'insert',
+  toolbar: 'template',
+  template_replace_values: {
+    place: 'world',
+    id: '999999',
+    planet: 'earth'
+  },
+  templates: [
+    {
+      title: 'My Snippet',
+      description: 'This is my snippet.',
+      content: '<p>Hello, {$place}</p>'
+    }
+  ]
+});
 ```
+Inserting `My Snippet` from the template dialog will insert `<p>Hello, world</p>` at the current cursor location.

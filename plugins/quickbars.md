@@ -65,7 +65,7 @@ tinymce.init({
 
 The Quick Link (`quicklink`) control lets the user quickly insert/edit links inline. It can only be used in the Quick Selection toolbar.
 
-##### Example: Adding the quicklink to the Quick Selection toolbar
+##### Example: Adding quicklink to the Quick Selection toolbar
 
 ```js
 tinymce.init({
@@ -82,7 +82,7 @@ tinymce.init({
 
 The Quick Image (`quickimage`) control lets you quickly insert images from the local computer into the editor. These can then be automatically uploaded if you configure [image uploading]({{ site.baseurl }}/advanced/handle-async-image-uploads/). It can be used in both the Quick Insert toolbar and other toolbars.
 
-##### Example: Adding the quickimage to the Quick Insert toolbar
+##### Example: Adding quickimage to the Quick Insert toolbar
 
 ```js
 tinymce.init({
@@ -99,7 +99,7 @@ tinymce.init({
 
 The Quick Table (`quicktable`) control lets you quickly insert a 2x2 table with 100% width. It can be used in both the Quick Insert toolbar and other toolbars.
 
-##### Example: Adding the quicktable to the Quick Insert toolbar
+##### Example: Adding quicktable to the Quick Insert toolbar
 
 ```js
 tinymce.init({

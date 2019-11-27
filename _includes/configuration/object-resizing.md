@@ -12,7 +12,7 @@ This options allows you to turn on/off the resizing handles on images, tables or
 
 {{site.differs_for_mobile}}
 
-##### Example: Disable all resizing of images/tables
+##### Example: Disable all resizing of images and tables
 
 ```js
 tinymce.init({

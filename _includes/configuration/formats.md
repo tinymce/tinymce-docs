@@ -349,7 +349,7 @@ This example overrides some of the built-in formats and tells {{site.productname
 
 **Type:** `Object`
 
-##### Example: formats
+##### Example: Using the formats option
 
 ```js
 // Output elements in HTML style

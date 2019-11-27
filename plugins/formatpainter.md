@@ -64,7 +64,7 @@ The example below showcases the formats registered automatically by the plugin u
 
 **Type:** `Object`
 
-##### Example: formats
+##### Example: The Format Painter formats
 
 ```js
 tinymce.init({

@@ -427,7 +427,7 @@ tinymce.init({
 | mceTablePasteRowAfter | Paste any cut or coped rows into the table after the currently selected row(s)  |
 | mceTableDelete | Delete the currently selected table |
 
-#### Example: Using table commands
+#### Example: Using the table commands
 
 ```js
 tinymce.execCommand('mceInsertTable');
@@ -441,7 +441,7 @@ tinymce.execCommand('mceInsertTable');
 | getClipboardRows |  | Returns the data for any rows cut or copied using `mceTableCutRow` or `mceTableCopyRow` |
 | setClipboardRows | rows: HTMLElement[] | Set the data to be used by `mceTablePasteRowBefore` or `mceTablePasteRowAfter` for pasting rows into a table |
 
-#### Example: Using table API
+#### Example: Using the table API
 
 ```js
 tinymce.activeEditor.plugins.table.insertTable(2, 3);

@@ -207,7 +207,7 @@ A custom message is one that contains a `mceAction` not listed in the above-supp
 
 > Note: {{site.productname}} will ignore all messages received that don't contain a `mceAction` property.
 
-## Example Dialog showing an external page
+## Example dialog showing an external page
 
 This example shows a toolbar button that opens an external URL inside a 640px by 640px dialog without any footer buttons. The dialog can be opened by clicking the `{;}` toolbar button.
 

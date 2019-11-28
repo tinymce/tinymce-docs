@@ -77,7 +77,10 @@ Ensure that the following URLs are accessible via this proxy if the network has 
 Ensure the `tiny-api-key` and `tinymce-api-key` headers are retained while requesting the list of above URLs.
 
 ### Step 5: Specifying a translation
-[Download a language pack]({{site.gettiny}}/language-packages/) to enable a language other than English (US). [Specify its location]({{ site.baseurl }}/configure/localization/#language_url) with the `language_url` configuration option.
+
+Extend the TinyMCE configuration to specify the [translation language]({{ site.baseurl }}/configure/localization/#language) with the `language` configuration option.
+
+Alternatively, [download a language pack]({{site.gettiny}}/language-packages/) to enable a language other than English (US). [Specify its location]({{ site.baseurl }}/configure/localization/#language_url) with the `language_url` configuration option.
 
 ## Migrating from a self-hosted environment to Tiny Cloud
 

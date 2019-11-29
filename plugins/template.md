@@ -323,15 +323,13 @@ This is the contents your backend page should return if you specify a URL in the
 ```json
 [
   {"title": "Some title 1", "description": "Some desc 1", "content": "My content"},
-  {"title": "Some title 2", "description": "Some desc 2", "url": "development.html"}
+  {"title": "Some title 2", "description": "Some desc 2", "url": "development.php"}
 ]
 ```
 
-### Making Templates
+### Making Template Files
 
-A template is a _file_ with a `div` containing the template data. All `html` outside the `div` will simply be presented to the user in the preview frame.
-
-Each template needs to be inside of a div with the `mceTmpl` class, like this example:
+When using a template file, the content to be inserted needs to be wrapped in a `div` with the `mceTmpl` class. All HTML content outside the `div` will simply be presented to the user in the preview frame.
 
 ```html
 <!-- This will not be inserted -->
@@ -349,11 +347,30 @@ Each template needs to be inside of a div with the `mceTmpl` class, like this ex
 </div>
 ```
 
-### Making Snippets
+To add a template file to a {{site.productname}} config, provide the `title`, `description` and `url`. For example:
 
-Snippets are `html` code chunks that can be inserted. Replace variables will only be executed upon insert, without being wrapped in a template `div` element. So if you define a variable in with [`template_replace_values`](#template_replace_values) it will be replaced on insert.
+```js
+templates : [{
+  'title': 'Some title',
+  'description': 'Some desc',
+  'url': 'template_file.html'
+}]
+```
 
-#### Example: Using a snippet
+### Making Inline Templates
+
+Inline Templates are short HTML strings that can be inserted. Replace variables defined with [`template_replace_values`](#template_replace_values) will be replaced on insert. To add an inline template to a {{site.productname}} config, provide the `title`, `description` and the `content` string. For example:
+
+```js
+templates: [{
+  title: 'My inline template',
+  description: 'This is my inline template.',
+  content: '<p>Hello, World!</p>'
+}]
+```
+
+#### Example: Using an inline template
+
 ```js
 tinymce.init({
   selector: '#mytextarea',

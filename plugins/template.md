@@ -359,7 +359,7 @@ templates : [{
 
 ### Making Inline Templates
 
-Inline Templates are short HTML strings that can be inserted. Replace variables defined with [`template_replace_values`](#template_replace_values) will be replaced on insert. To add an inline template to a {{site.productname}} config, provide the `title`, `description` and the `content` string. For example:
+Inline Templates are short HTML strings that are defined in the template configuration, not in an external file. Variables defined with [`template_replace_values`](#template_replace_values) will be replaced on insert. To add an inline template to a {{site.productname}} config, provide the `title`, `description` and the `content` string. For example:
 
 ```js
 templates: [{

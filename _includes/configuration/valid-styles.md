@@ -1,6 +1,8 @@
 ## valid_styles
 
-This option enables you specify the available styles for each element. This means you can force ordering and only specific styles will be valid within style attribute values. Specify the element name, then it's styles or `*` for all elements.
+This option allows you to specify the available styles for each element. This option also forces the ordering of the styles. To use this option, specify the element name, then the allowed styles or `*` for all elements.
+
+By default, `valid_styles` is undefined, therefore all styles are valid. If a [`schema`](#schema) is set, `valid_styles` will override relevant parts of the `schema`.
 
 **Type:** `Object`
 

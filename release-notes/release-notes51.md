@@ -26,4 +26,4 @@ These release notes provide a high-level coverage of the changes for {{site.prod
 
 {% include release-notes/51known-issues.md %}
 
-{% include install/upgrading.md %}
+{% include install/upgrading-info.md %}

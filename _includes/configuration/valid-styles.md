@@ -1,6 +1,8 @@
 ## valid_styles
 
-This option enables you specify the available styles for each element. This means you can force ordering and only specific styles will be valid within style attribute values. Specify the element name, then it's styles or `*` for all elements.
+To use this option, specify an object containing a mapping of element names to allowed styles. To specify the allowed styles for all elements, use `*` as the element name.
+
+By default, all styles are allowed unless `valid_styles` or `invalid_styles` is configured.
 
 **Type:** `Object`
 

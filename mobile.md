@@ -62,6 +62,19 @@ The following settings have mobile-specific default values:
 * [`resize`]({{site.baseurl}}/configure/editor-appearance/#resize) - Resizing is not supported on mobile devices and defaults to `false`.
 * [`object_resizing`]({{site.baseurl}}/configure/advanced-editing-behavior/#object_resizing) - Object resizing is not supported on mobile devices and defaults to `false`.
 
+### Unsupported settings for mobile
+
+The following settings are not supported on mobile devices:
+
+* [Inline editing mode]({{site.baseurl}}/general-configuration-guide/use-tinymce-inline/).
+* [Distraction-free editing mode]({{site.baseurl}}/general-configuration-guide/use-tinymce-distraction-free/).
+* [`inline`]({{site.baseurl}}/configure/editor-appearance/#inline).
+* [`toolbar_sticky`]({{site.baseurl}}/configure/editor-appearance/#toolbar_sticky).
+* [`table_grid`]({{site.baseurl}}/plugins/table/#table_grid).
+* [`resize`]({{site.baseurl}}/configure/editor-appearance/#resize).
+* [`object_resizing`]({{site.baseurl}}/configure/advanced-editing-behavior/#object_resizing).
+
+
 ## The legacy mobile theme
 
 The mobile experience provided for {{site.productname}} 4.7 through {{site.productname}} 5.0 has been deprecated as of {{site.productname}} 5.1.

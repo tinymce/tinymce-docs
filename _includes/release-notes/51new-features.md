@@ -14,6 +14,7 @@ The new mobile experience comes with a number of user interface changes, buildin
 * [New mobile defaults for selected settings](#newmobiledefaultsforselectedsettings)
 * [Table cell selection on mobile](#tablecellselectiononmobile)
 * [Touch-friendly split buttons](#touch-friendlysplitbuttons)
+* [Unsupported settings for mobile](#unsupportedsettingsformobile)
 
 The new mobile experience allows most of the {{site.productname}} plugins to work on mobile devices, except for:
 
@@ -90,6 +91,18 @@ For example:
 
 #### Touch-friendly split buttons
 The styling on [split buttons]({{site.baseurl}}/ui-components/typesoftoolbarbuttons/#splitbutton) has been updated to include more padding so they are easier to interact with on touch devices.
+
+#### Unsupported settings for mobile
+
+The following settings are not supported on mobile devices:
+
+* [Inline editing mode]({{site.baseurl}}/general-configuration-guide/use-tinymce-inline/).
+* [Distraction-free editing mode]({{site.baseurl}}/general-configuration-guide/use-tinymce-distraction-free/).
+* [`inline`]({{site.baseurl}}/configure/editor-appearance/#inline).
+* [`toolbar_sticky`]({{site.baseurl}}/configure/editor-appearance/#toolbar_sticky).
+* [`table_grid`]({{site.baseurl}}/plugins/table/#table_grid).
+* [`resize`]({{site.baseurl}}/configure/editor-appearance/#resize).
+* [`object_resizing`]({{site.baseurl}}/configure/advanced-editing-behavior/#object_resizing).
 
 
 ### Sticky Toolbar

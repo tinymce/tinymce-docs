@@ -8,9 +8,9 @@ keywords: legacyoutput filter content cms email flash
 
 The `legacyoutput` plugin changes TinyMCE's output, producing legacy elements such as `font`, `b`, `i`, `u`, `strike`, and use `align` attributes.
 
-> **Important**: This plugin changes the editor content to HTML3. Using this plugin will greatly reduce the functionality of the editor.
+> **Important**: Editor content created while this plugin is active will be formatted using HTML3. Using this plugin will greatly reduce the functionality of the editor.
 
-This plugin can be useful if you want to use {{site.productname}} in an HTML mail client or to render contents to Flash.
+This plugin can be useful if you want to use {{site.productname}} in a legacy HTML mail client.
 
 However, this is **not** intended for use in producing normal web content such as in a CMS. These elements should no longer be used for such purposes since they are deprecated in later XHTML and HTML5 specifications.
 

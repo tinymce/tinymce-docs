@@ -15,6 +15,7 @@ When in inline editing mode the editor does not replace the selected element wit
 
 To try out a {{site.productname}} editor in inline mode, visit the [Inline Editor]({{ site.baseurl }}/demo/inline) example page.
 
+{{site.notonmobile}}
 
 ## Forms-based editing vs. inline editing
 

@@ -10,6 +10,8 @@ The **Distraction-free** mode renders the editor in lightweight inline mode. Thi
 
 To try out a {{site.productname}} editor in distraction-free mode, see the [Distraction-free editor]({{ site.baseurl }}/demo/editor-dfree/) example page.
 
+{{site.notonmobile}}
+
 ##### Example:
 
 ```js

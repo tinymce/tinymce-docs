@@ -8,6 +8,15 @@ class: changelog
 
 {% capture changelog %}
 
+## Version 5.1.3 December 4, 2019
+* Fixed sticky toolbar not undocking when fullscreen mode is activated.
+* Fixed the "Current Window" target not applying when updating links using the link dialog.
+* Fixed disabled menu items not highlighting when focused.
+* Fixed touch events passing through dialog collection items to the content underneath on Android devices.
+* Fixed keyboard navigation of the Help dialog's Keyboard Navigation tab.
+* Fixed search and replace dialog disappearing when finding offscreen matches on iOS devices.
+* Fixed performance issues where sticky toolbar was jumping while scrolling on slower browsers.
+
 ## Version 5.1.2 November 19, 2019
 * Fixed desktop touch devices using `mobile` configuration overrides.
 * Fixed unable to disable the new scrolling toolbar feature.

@@ -19,9 +19,3 @@ tinymce.init({
   plugins: "hr"
 });
 ```
-
-## Commands
-
-The Horizontal Rule plugin provides the following JavaScript command.
-
-{% include commands/hr-cmds.md %}

@@ -1,7 +1,7 @@
 
 | Command       | Description                      |
 | ------------- | -------------------------------- |
-| SearchReplace | Opens the search/replace dialog. |
+| SearchReplace | Opens the search and replace dialog. |
 
 **Example**
 

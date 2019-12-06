@@ -1,7 +1,7 @@
 
 | Command                | Description                                          |
 | ---------------------- | ---------------------------------------------------- |
-| mceEditImage           | Opens the edit image dialog.                         |
+| mceEditImage           | Opens the image tools editing dialog.                         |
 | mceImageRotateRight    | Rotates selected image 90 degrees clockwise.         |
 | mceImageRotateLeft     | Rotates selected image 90 degrees counter clockwise. |
 | mceImageFlipVertical   | Flips selected image vertically.                     |

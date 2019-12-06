@@ -73,13 +73,14 @@ The commands on the following table are provided by the {{site.productname}} edi
 | ToggleSidebar      | Closes the currrent sidebar, or toogles the sidebar if the sidebar name is provided as a value (_`<sidebar-name>`_).                                          |
 | Indent             | Indents the current selection.                                                                                                                                |
 | Outdent            | Outdents the current selection.                                                                                                                               |
+| InsertHorizontalRule | Inserts a horizontal rule at the cursor location or inplace of the current selection. |
 | InsertLineBreak    | Adds a line break `<br/>` at the current cursor or selection.                                                                                                 |
 | mceInsertNewLine   | Adds a new line at the current cursor or selection, such as splitting the current paragraph element.                                                          |
-| mceInsertRawHTML   | Inserts the RAW HTML passed as a value, overwriting the current selection or at the cursor position.                                                          |
-| mceToggleVisualAid | Toggles the visual aids for tables without borders etc.                                                                                                       |
-| SelectAll          | Selects all contents in the editor.                                                                                                                           |
+| mceInsertRawHTML   | Inserts the RAW HTML passed as a value, overwriting the current selection or at the cursor position. **Warning**: This command allows dangerous `<script>` elements to be added to and executed in the editor.                                                         |
+| mceToggleVisualAid | Toggles the visual aids for: tables without borders and anchors.                                                                                                       |
+| SelectAll          | Selects all content in the editor.                                                                                                                           |
 | Delete             | Deletes the current selection from the editor.                                                                                                                |
-| ForwardDelete      | Deletes the current selection or the character to the right of the cursor.                                                                                    |
+| ForwardDelete      | Deletes the current selection or the character to the right of the cursor for a collapsed selection.                                                                                    |
 | mceNewDocument     | Removes all contents of the editor.                                                                                                                           |
 | Redo               | Redoes the last change to the editor.                                                                                                                         |
 | Undo               | Undoes the last change to the editor.                                                                                                                         |
@@ -126,6 +127,7 @@ tinymce.activeEditor.execCommand('ToggleSidebar')  /* OR */
 tinymce.activeEditor.execCommand('ToggleSidebar', false, '<sidebar-name>')
 tinymce.activeEditor.execCommand('Indent')
 tinymce.activeEditor.execCommand('Outdent')
+tinymce.activeEditor.execCommand('InsertHorizontalRule');
 tinymce.activeEditor.execCommand('InsertLineBreak')
 tinymce.activeEditor.execCommand('mceInsertNewLine')
 tinymce.activeEditor.execCommand('mceInsertRawHTML', false, '<p>Hello, World!</p>')
@@ -149,6 +151,7 @@ tinymce.activeEditor.execCommand('mceRemoveNode', false, '<DOM_node>')
 
 Commands are available for the following plugins:
 
+- [Advanced Code](#advancedcode)
 - [Advanced Lists](#advancedlists)
 - [Advanced Tables](#advancedtables)
 - [Anchor](#anchor)
@@ -185,6 +188,12 @@ Commands are available for the following plugins:
 - [Table of Contents](#tableofcontents)
 - [Visual Blocks](#visualblocks)
 - [Visual Characters](#visualcharacters)
+
+### Advanced Code
+
+The following command requires the [Advanced Code (`advcode`)]({{ site.baseurl }}/plugins/advcode/) plugin.
+
+{% include commands/code-cmds.md %}
 
 ### Advanced Lists
 

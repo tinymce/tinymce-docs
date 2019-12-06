@@ -1,7 +1,7 @@
 
 | Command  | Description                    |
 | -------- | ------------------------------ |
-| mceImage | Opens the insert image dialog. |
+| mceImage | Opens the insert/edit image dialog. |
 
 **Example**
 

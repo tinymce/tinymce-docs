@@ -330,3 +330,8 @@ The order that the plugins appear affects the order that the `getContent` hooks 
 
 For a workaround, please ensure that `tinycomments` is listed before `fullpage` in the plugins list. This should result in `tinycomments` working properly.
 
+## Commands
+
+The Comments plugin provides the following JavaScript commands.
+
+{% include commands/comments-cmds.md %}

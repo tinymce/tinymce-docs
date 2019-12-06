@@ -358,3 +358,9 @@ Snippets are `html` code chunks that can be inserted. Replace variables will onl
 ```html
 This is a simple <strong>snippet</strong>. Will be replaced: {$somevar1}.
 ```
+
+## Commands
+
+The Template plugin provides the following JavaScript command.
+
+{% include commands/template-cmds.md %}

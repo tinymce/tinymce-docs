@@ -138,3 +138,9 @@ tinymce.init({
 For more information on {{site.productname}} formats, refer to the [formats]({{site.baseurl}}/configure/content-formatting/#formats) section.
 
 Check out the [Permanent Pen demo]({{site.baseurl}}/demo/permanentpen/) to try out this new feature.
+
+## Commands
+
+The Permanent Pen plugin provides the following JavaScript commands.
+
+{% include commands/permanentpen-cmds.md %}

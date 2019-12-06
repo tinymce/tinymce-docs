@@ -20,6 +20,8 @@ tinymce.init({
 });
 ```
 
+## Commands
 
+The Code plugin provides the following JavaScript command.
 
-
+{% include commands/code-cmds.md %}

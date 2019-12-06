@@ -95,3 +95,9 @@ tinymce.init({
   nonbreaking_wrap: false
 });
 ```
+
+## Commands
+
+The Nonbreaking Space plugin provides the following JavaScript command.
+
+{% include commands/nbsp-cmds.md %}

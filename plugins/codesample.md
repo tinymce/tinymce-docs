@@ -65,3 +65,9 @@ tinymce.init({
 ## Live example
 
 {% include codepen.html id="codesample" %}
+
+## Commands
+
+The Code Sample plugin provides the following JavaScript command.
+
+{% include commands/codesample-cmds.md %}

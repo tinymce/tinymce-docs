@@ -91,3 +91,9 @@ tinymce.init({
   save_onsavecallback: function () { console.log('Saved'); }
 });
 ```
+
+## Commands
+
+The Save plugin provides the following JavaScript commands.
+
+{% include commands/save-cmds.md %}

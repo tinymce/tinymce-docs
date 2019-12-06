@@ -80,3 +80,9 @@ tinymce.init({
   ]
 });
 ```
+
+## Commands
+
+The Character Map plugin provides the following JavaScript command.
+
+{% include commands/charmap-cmds.md %}

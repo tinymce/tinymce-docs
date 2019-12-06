@@ -192,3 +192,9 @@ tinymce.init({
   spellchecker_wordchar_pattern: /[^\s,\.]+/g
 });
 ```
+
+## Commands
+
+The Spell Checker plugin provides the following JavaScript command.
+
+{% include commands/spellchecker-cmds.md %}

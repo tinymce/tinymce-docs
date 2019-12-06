@@ -67,3 +67,9 @@ tinymce.init({
   pagebreak_split_block: true
 });
 ```
+
+## Commands
+
+The Page Break plugin provides the following JavaScript command.
+
+{% include commands/pagebreak-cmds.md %}

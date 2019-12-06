@@ -187,3 +187,9 @@ tinymce.init({
   imagetools_toolbar: "rotateleft rotateright | flipv fliph | editimage imageoptions"
 });
 ```
+
+## Commands
+
+The Image Tools plugin provides the following JavaScript commands.
+
+{% include commands/imagetools-cmds.md %}

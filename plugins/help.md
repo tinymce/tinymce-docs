@@ -134,3 +134,9 @@ tinymce.activeEditor.plugins.help.addTab({
 ## Exposing metadata for the help plugin
 
 For information on how to expose metadata from you custom plugin to add it to the Installed plugins list in the Help plugin, see the  [Creating a Plugin page]({{ site.baseurl }}/advanced/creating-a-plugin/#exposingmetadata).
+
+## Commands
+
+The Help plugin provides the following JavaScript command.
+
+{% include commands/help-cmds.md %}

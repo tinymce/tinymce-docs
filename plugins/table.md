@@ -405,34 +405,6 @@ tinymce.init({
 
 > Note: The advanced tabs of the table, row, and cell properties dialogs use the `colorpicker` to allow for border and background colors to be applied. See docs to use and configure a custom [colorpicker]({{site.baseurl}}/plugins/colorpicker/).
 
-### Commands
-
-| Name | Description |
-|------| ------------|
-| mceInsertTable | Open the table properties dialog. On submit, a table will be inserted at the current cursor location. |
-| mceTableProps | Open the table properties dialog |
-| mceTableRowProps | Open the table row properties dialog |
-| mceTableCellProps | Open the table cell properties dialog |
-| mceTableSplitCells | Split the currently selected cell |
-| mceTableMergeCells | Merge the currently selected cells |
-| mceTableInsertRowBefore | Insert a row before the currently selected row(s) |
-| mceTableInsertRowAfter | Insert a row after the currently selected row(s) |
-| mceTableInsertColBefore | Insert a column before the currently selected column(s) |
-| mceTableInsertColAfter | Insert a column after the currently selected column(s) |
-| mceTableDeleteCol | Delete the currently selected column(s) |
-| mceTableDeleteRow | Delete the currently selected row(s) |
-| mceTableCutRow | Cut the currently selected row(s) to the clipboard |
-| mceTableCopyRow | Copy the currently selected row(s) to the clipboard |
-| mceTablePasteRowBefore | Paste any cut or coped rows into the table before the currently selected row(s) |
-| mceTablePasteRowAfter | Paste any cut or coped rows into the table after the currently selected row(s)  |
-| mceTableDelete | Delete the currently selected table |
-
-#### Example
-
-```js
-tinymce.execCommand('mceInsertTable');
-```
-
 ### API
 
 | Name | Arguments | Description |
@@ -455,3 +427,9 @@ tinymce.activeEditor.plugins.table.insertTable(2, 3);
 | newcell | Fired when a cell is created |
 | ObectResizeStart | Fired when a resize action is started on a table, row, column or cell using the resize bars |
 | ObjectResized | Fired when a resize action is finished on a table, row, column or cell using the resize bars |
+
+## Commands
+
+The Table plugin provides the following JavaScript commands.
+
+{% include commands/table-cmds.md %}

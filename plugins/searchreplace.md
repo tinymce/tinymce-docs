@@ -21,3 +21,9 @@ tinymce.init({
   toolbar: "searchreplace"
 });
 ```
+
+## Commands
+
+The Search and Replace plugin provides the following JavaScript command.
+
+{% include commands/searchreplace-cmds.md %}

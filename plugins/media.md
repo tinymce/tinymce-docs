@@ -231,3 +231,9 @@ tinymce.init({
  }
 });
 ```
+
+## Commands
+
+The Media plugin provides the following JavaScript command.
+
+{% include commands/media-cmds.md %}

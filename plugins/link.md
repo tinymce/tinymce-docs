@@ -295,3 +295,9 @@ tinymce.init({
   target_list: false
 });
 ```
+
+## Commands
+
+The Link plugin provides the following JavaScript command.
+
+{% include commands/link-cmds.md %}

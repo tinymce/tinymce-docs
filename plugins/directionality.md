@@ -22,3 +22,9 @@ tinymce.init({
   toolbar: "ltr rtl"
 });
 ```
+
+## Commands
+
+The Directionality plugin provides the following JavaScript commands.
+
+{% include commands/directionality-cmds.md %}

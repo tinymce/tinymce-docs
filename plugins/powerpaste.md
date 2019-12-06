@@ -314,6 +314,12 @@ tinymce.init({
 });
 ```
 
+## Commands
+
+The PowerPaste plugin provides the following JavaScript command.
+
+{% include commands/powerpaste-cmds.md %}
+
 ## Buy TinyMCE PowerPaste
 
 Start with our [dedicated product page]({{site.productpages}}/powerpaste/) to see our flexible pricing options. OEM and enterprise customers should [contact sales directly]({{site.contactpage}}).

@@ -1,0 +1,12 @@
+
+| Command   | Description                                                                                                                    |
+| --------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| mceCancel | Resets the editor content to the last save point created with `mceSave`, the _save_ toolbar button, or the **Save** menu item. |
+| mceSave   | Saves the current editor contents.                                                                                             |
+
+**Examples**
+
+```js
+tinymce.activeEditor.execCommand('mceCancel');
+tinymce.activeEditor.execCommand('mceSave');
+```

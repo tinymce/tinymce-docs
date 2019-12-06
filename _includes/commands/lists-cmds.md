@@ -9,12 +9,19 @@
 **Examples**
 
 ```js
-tinymce.activeEditor.execCommand('InsertDefinitionList');
+tinymce.activeEditor.execCommand('InsertDefinitionList', false, {
+  'list-item-attributes': {class: 'mylistitemclass'},
+  'list-attributes': {id: 'mylist'}
+});
 tinymce.activeEditor.execCommand('InsertOrderedList', false, {
-  'list-style-type': 'decimal'
+  'list-style-type': 'decimal',
+  'list-item-attributes': {class: 'mylistitemclass'},
+  'list-attributes': {id: 'mylist'}
 });
 tinymce.activeEditor.execCommand('InsertUnorderedList', false, {
-  'list-style-type': 'disc'
+  'list-style-type': 'disc',
+  'list-item-attributes': {class: 'mylistitemclass'},
+  'list-attributes': {id: 'mylist'}
 });
 tinymce.activeEditor.execCommand('RemoveList');
 ```

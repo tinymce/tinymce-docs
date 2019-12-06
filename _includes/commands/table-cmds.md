@@ -1,8 +1,8 @@
 
 | Command                 | Description                                                                |
 | ----------------------- | -------------------------------------------------------------------------- |
-| mceTableSplitCells      | Splits the current merge table cell.                                       |
-| mceTableMergeCells      | Merges the selected cells or opens a dialog if there is no cell selection. |
+| mceTableSplitCells      | Splits the current merged table cell.                                       |
+| mceTableMergeCells      | Merges the selected cells. |
 | mceTableInsertRowBefore | Inserts a row before the current row.                                      |
 | mceTableInsertRowAfter  | Inserts a row after the current row.                                       |
 | mceTableInsertColBefore | Inserts a column before the current column.                                |

@@ -5,8 +5,8 @@
 | mceSortTableAdvanced     | Performs an Advanced Table Sort. See below for details.                                         |
 | mceSortTableByColumnAsc  | Sorts the current table ascending by column based on the current cursor position or selection.  |
 | mceSortTableByColumnDesc | Sorts the current table descending by column based on the current cursor position or selection. |
-| mceSortTableByRowDesc    | Sorts the current table ascending by row based on the current cursor position or selection.     |
-| mceSortTableByRowAsc     | Sorts the current table descending by row based on the current cursor position or selection.    |
+| mceSortTableByRowAsc    | Sorts the current table ascending by row based on the current cursor position or selection.     |
+| mceSortTableByRowDesc     | Sorts the current table descending by row based on the current cursor position or selection.    |
 
 `mceSortTableAdvanced` accepts an object with the following value pairs:
 
@@ -22,6 +22,6 @@ tinymce.activeEditor.execCommand('mceAdvancedTableSort')
 tinymce.activeEditor.execCommand('mceSortTableAdvanced', { sortby: 'row' ; roworcol: '2' ; sort: 'table' ; order: 'ascending' ; })
 tinymce.activeEditor.execCommand('mceSortTableByColumnAsc')
 tinymce.activeEditor.execCommand('mceSortTableByColumnDesc')
-tinymce.activeEditor.execCommand('mceSortTableByRowDesc')
 tinymce.activeEditor.execCommand('mceSortTableByRowAsc')
+tinymce.activeEditor.execCommand('mceSortTableByRowDesc')
 ```

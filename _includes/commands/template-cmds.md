@@ -6,5 +6,5 @@
 **Example**
 
 ```js
-tinymce.activeEditor.execCommand('mceInsertTemplate');
+tinymce.activeEditor.execCommand('mceInsertTemplate', false, '<p>This is my template text.</p>');
 ```

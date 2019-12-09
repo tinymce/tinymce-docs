@@ -2,7 +2,7 @@
 | Command      | Description                                            |
 | ------------ | ------------------------------------------------------ |
 | mceInsertToc | Inserts a Table of Contents into the editor.           |
-| mceUpdateToc | Updates the Table of Contents, if found in the editor. |
+| mceUpdateToc | Updates an existing Table of Contents.                 |
 
 **Examples**
 

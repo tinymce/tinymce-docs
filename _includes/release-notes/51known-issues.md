@@ -4,6 +4,8 @@ This section describes issues that users of {{site.productname}} 5.1 may encount
 **Outline**
 
 * [Autocompleter and keypress event issues on Android](#autocompleterandkeypresseventissuesonandroid)
+* [Text Patterns plugin: Limited functionality on Android devices](#textpatternspluginlimitedfunctionalityonandroiddevices)
+* [Spell Checker Pro plugin: Unexpected behavior on Android devices](#spellcheckerpropluginunexpectedbehavioronandroiddevices)
 * [UI elements may render behind the keyboard on iOS 12 devices](#uielementsmayrenderbehindthekeyboardonios12devices)
 * [UI issue with sidebars on mobile](#uiissuewithsidebarsonmobile)
 * [Find and replace moving out of view in iOS](#findandreplacemovingoutofviewinios)
@@ -25,6 +27,22 @@ Plugins relying on the [autocompleter API]({{site.baseurl}}/ui-components/autoco
 
 #### Workaround
 The only known workaround for the autocompleter at the moment is to press space and then press backspace to trigger the autocompleter to activate.
+
+### Text Patterns plugin: Limited functionality on Android devices
+
+#### Issue
+The text pattern plugin will not to apply bold or italics if the text pattern is immediately followed by a space on Android devices. The Text Patterns plugin relies on the [autocompleter API]({{site.baseurl}}/ui-components/autocompleter/) and keypress events, which do not work on Android. Android intercepts content and processes content prior to insertion into the editor
+
+#### Workaround
+Press _Enter_ or _Return_ immediately after entering the text pattern.
+
+### Spell Checker Pro plugin: Unexpected behavior on Android devices
+
+#### Issue
+When selecting a correction, the original word will be duplicated and inserted at the selection point. Such as `Anddddroid` might be replaced with `Anddd Andddroid droid`.
+
+#### Workaround
+No known workaround at the time of release.
 
 ### UI elements may render behind the keyboard on iOS 12 devices
 
@@ -61,7 +79,7 @@ For other plugins with sidebars, {{site.companyname}} recommends ensuring the si
 ### Find and replace moving out of view in iOS
 
 #### Issue
-The Find and replace dialog moves outside the screen view on iOS when finding a match offscreen.
+The Find and replace dialog moves outside the screen view on iOS when finding a match off-screen.
 
 #### Workaround
 No known workaround at the time of release.
@@ -90,7 +108,7 @@ TinyMCE text selection context toolbars do not appear on Android.
 #### Workaround
 No known workaround at the time of release.
 
-### FormatPainter: Limited functionality on iOS devices
+### Format Painter plugin: Limited functionality on iOS devices
 
 #### Issue
 Unable to apply formats using a collapsed selection on iOS due to iOS selection placement.

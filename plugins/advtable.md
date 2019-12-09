@@ -35,3 +35,8 @@ tinymce.init({
 });
 ```
 
+## Commands
+
+The Table plugin provides the following JavaScript commands.
+
+{% include commands/advtable-cmds.md %}

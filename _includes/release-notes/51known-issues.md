@@ -31,7 +31,7 @@ The only known workaround for the autocompleter at the moment is to press space 
 ### Text Patterns plugin: Limited functionality on Android devices
 
 #### Issue
-The text pattern plugin will not to apply bold or italics if the text pattern is immediately followed by a space on Android devices. The Text Patterns plugin relies on the [autocompleter API]({{site.baseurl}}/ui-components/autocompleter/) and keypress events, which do not work on Android. Android intercepts content and processes content prior to insertion into the editor
+The text pattern plugin will not apply inline patterns if the text pattern is immediately followed by a space on Android devices. The Text Patterns plugin relies on keypress events, which do not work on Android. Android intercepts content and processes content prior to insertion into the editor.
 
 #### Workaround
 Press _Enter_ or _Return_ immediately after entering the text pattern.

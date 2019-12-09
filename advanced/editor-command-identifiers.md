@@ -65,11 +65,11 @@ The commands on the following table are provided by the {{site.productname}} edi
 | mceRemoveTextcolor   | Removes the text color or background color from the current selection. Requires an argument of either `'hilitecolor'` or `'forecolor'`.                                                                                                                                                     |
 | RemoveFormat         | Removes any formats from the current selection.                                                                                                                                                                                                                                             |
 | mceBlockQuote        | Wraps the selected text blocks into a block quote.                                                                                                                                                                                                                                          |
-| FormatBlock          | Toggles the format of the selected block. The value passed in should be the block name. If no format is specified, the paragraph (<`p`>) format will be toggled. For a list of options, see: [FormatBlock and mceToggleFormat format options](#formatblockandmcetoggleformatformatoptions). |
+| FormatBlock          | Toggles the format of the selected block. The value passed in should be the format name. If no format is specified, the paragraph (<`p`>) format will be toggled. For a list of options, see: [Content formatting options - Built-in formats]({{ site.baseurl }}/configure/content-formatting/#built-informats). |
 | mceInsertContent     | Inserts contents at the current selection. The value passed in should be the contents to be inserted.                                                                                                                                                                                       |
 | mceReplaceContent    | Replaces the current selection. The value passed in should be the new content.                                                                                                                                                                                                              |
 | mceSetContent        | Sets the contents of the editor. The value is the contents to set as the editor contents.                                                                                                                                                                                                   |
-| mceToggleFormat      | Toggles a specified format by name. The value is the name of the format to toggle. For a list of options, see: [FormatBlock and mceToggleFormat format options](#formatblockandmcetoggleformatformatoptions).                                                                               |
+| mceToggleFormat      | Toggles a specified format by name. The value is the name of the format to toggle. For a list of options, see: [Content formatting options - Built-in formats]({{ site.baseurl }}/configure/content-formatting/#built-informats).                                                                               |
 | ToggleSidebar        | Closes the currrent sidebar, or toogles the sidebar if the sidebar name is provided as a value (_`<sidebar-name>`_).                                                                                                                                                                        |
 | Indent               | Indents the current selection.                                                                                                                                                                                                                                                              |
 | Outdent              | Outdents the current selection.                                                                                                                                                                                                                                                             |
@@ -146,72 +146,6 @@ tinymce.activeEditor.execCommand('mceSelectNodeDepth', false, 2) // For two node
 tinymce.activeEditor.execCommand('mceRemoveNode') /* OR */
 tinymce.activeEditor.execCommand('mceRemoveNode', false, '<DOM_node>')
 ```
-
-### FormatBlock and mceToggleFormat format options
-
-The following options can be used with the `FormatBlock` and `mceToggleFormat` commands.
-
-**General format options**
-
-The following options will work on most content.
-
-| Format option  | Description                                                                                                                         |
-| -------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
-| alignleft      | Toggles left alignment of the selected content.                                                                                     |
-| aligncenter    | Toggles center alignment of the selected content.                                                                                   |
-| alignright     | Toggles right alignment of the selected content.                                                                                    |
-| alignjustify   | Toggles 'justified' alignment of the selected content.                                                                              |
-| bold           | Toggles bold on the selected content.                                                                                               |
-| italic         | Toggles italic on the selected content.                                                                                             |
-| underline      | Toggles an underline on the selected content.                                                                                       |
-| strikethrough  | Toggles strikethrough on the selected content.                                                                                      |
-| blockquote     | Toggles a blockquote on the selected content.                                                                                       |
-| subscript      | Toggles subscript on the selected content.                                                                                          |
-| superscript    | Toggles superscripts on the selected content.                                                                                       |
-| code           | Toggles a code (`<code>`) block on the selected content.                                                                            |
-| p              | Toggles a paragraph (`<p>`) block on the selected content.                                                                          |
-| h1             | Toggles a level 1 heading (`<h1>`) block on the selected content.                                                                   |
-| h2             | Toggles a level 2 heading (`<h2>`) block on the selected content.                                                                   |
-| h3             | Toggles a level 3 heading (`<h3>`) block on the selected content.                                                                   |
-| h4             | Toggles a level 4 heading (`<h4>`) block on the selected content.                                                                   |
-| h5             | Toggles a level 5 heading (`<h5>`) block on the selected content.                                                                   |
-| h6             | Toggles a level 6 heading (`<h6>`) block on the selected content.                                                                   |
-| div            | Toggles a division (`div>`) block on the selected content.                                                                          |
-| address        | Toggles an address (`<address>`) block on the selected content.                                                                     |
-| pre            | Toggles a preformated (`<pre>`) block on the selected content.                                                                      |
-| samp           | Toggles a sample (`<samp>`) block on the selected content.                                                                          |
-| forecolor      | Toggles a highlight color on the selected content. For example: `execCommand('mceToggleFormat', 'forecolor', '#FF0000')`            |
-| hilitecolor    | Toggles a text color on the selected content. For example: `execCommand('mceToggleFormat', 'hilitecolor', '#FF0000')`               |
-| fontname       | Toggles the specified font on the selected content. For example: `execCommand('mceToggleFormat', 'fontname', 'comic sans')`         |
-| fontsize       | Toggles the specified font size on the selected content. For example: `execCommand('mceToggleFormat', 'fontsize', '30px')`          |
-| fontsize_class | Toggles the specified font size (1-7) on the selected content. For example: `execCommand('mceToggleFormat', 'fontsize_class', '2')` |
-
-**Definition list related format options**
-
-The following options will work within definition lists (`<dl>`).
-
-| Format option | Description                                                        |
-| ------------- | ------------------------------------------------------------------ |
-| dt            | Toggles a definition title (`<dt>`) block on the selected content. |
-| dd            | Toggles a definition data (`<dd>`) block on the selected content.  |
-
-**Link related format options**
-
-The following option will work on links (`<a>`).
-
-| Format option | Description                                           |
-| ------------- | ----------------------------------------------------- |
-| link          | Toggles a link (`<a>`) block on the selected content. |
-
-**Table related format options**
-
-The following options will work within tables on `<td>` and `<th>` elements.
-
-| Format option | Description                                                      |
-| ------------- | ---------------------------------------------------------------- |
-| valigntop     | Toggles alignment of the cell content to the top of the cell.    |
-| valignmiddle  | Toggles alignment of the cell content to the middle of the cell. |
-| valignbottom  | Toggles alignment of the cell content to the bottom of the cell. |
 
 ## Plugin Commands
 

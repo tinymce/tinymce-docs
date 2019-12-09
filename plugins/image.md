@@ -326,3 +326,9 @@ style_formats: [
   }}
 ]
 ```
+
+## Commands
+
+The Image plugin provides the following JavaScript command.
+
+{% include commands/image-cmds.md %}

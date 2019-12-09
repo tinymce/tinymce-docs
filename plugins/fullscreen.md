@@ -21,3 +21,9 @@ tinymce.init({
   toolbar: "fullscreen"
 });
 ```
+
+## Commands
+
+The Full Screen plugin provides the following JavaScript command.
+
+{% include commands/fullscreen-cmds.md %}

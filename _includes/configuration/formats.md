@@ -26,30 +26,7 @@ Similar elements and styles are merged by default to reduce the output HTML size
 
 ### Built-in formats
 
-{{site.productname}} has some built in formats that can be overridden. These are:
-
-* alignleft
-* aligncenter
-* alignright
-* alignjustify
-* bold
-* italic
-* underline
-* strikethrough
-* forecolor
-* hilitecolor
-* fontname
-* fontsize
-* blockquote
-* removeformat
-* p
-* h1, h2, h3, h4, h5, h6
-* div
-* address
-* pre
-* code
-* dt, dd
-* samp
+{% include configuration/builtinformats.md %}
 
 Some built-in formats `fontsize`, `fontname`, `forecolor`, `hilitecolor` use a variable in their definition named `%value`. This gets replaced with the user selected item such as a `color` value. Check the variable substitution section below for details.
 

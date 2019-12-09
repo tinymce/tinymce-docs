@@ -23,3 +23,9 @@ tinymce.init({
   menubar: "insert"
 });
 ```
+
+## Commands
+
+The Anchor plugin provides the following JavaScript command.
+
+{% include commands/anchor-cmds.md %}

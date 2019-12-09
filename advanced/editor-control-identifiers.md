@@ -11,6 +11,12 @@ Use the [toolbar]({{ site.baseurl }}/configure/editor-appearance/#toolbar) or th
 
 ## Toolbar controls
 
+The following table shows all available toolbar items, including items provided by plugins. To retrieve a list from the editor, run the following command from the browser console:
+
+```js
+tinyMCE.activeEditor.ui.registry.getAll().buttons
+```
+
 | Control              | Core/Plugin                                                                                                                        | Description                                                                           |
 | -------------------- | ---------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
 | aligncenter          | core                                                                                                                               | Left aligns the current block or image.                                               |
@@ -124,6 +130,12 @@ Use the [toolbar]({{ site.baseurl }}/configure/editor-appearance/#toolbar) or th
 
 
 ## Menu controls
+
+The following table shows all available menu items, including items provided by plugins. To retrieve a list from the editor, run the following command from the browser console:
+
+```js
+tinyMCE.activeEditor.ui.registry.getAll().menuItems
+```
 
 | Control                | Core/Plugin                                                                                                                        | [Default Menu Location]({{site.baseurl}}/configure/editor-appearance/#examplethetinymcedefaultmenuitems) | Description                                                                                               |
 | ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |

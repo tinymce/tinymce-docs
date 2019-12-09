@@ -45,3 +45,9 @@ tinymce.init({
   visualchars_default_state: true
 });
 ```
+
+## Commands
+
+The Visual Blocks plugin provides the following JavaScript command.
+
+{% include commands/visualchars-cmds.md %}

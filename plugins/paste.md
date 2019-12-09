@@ -285,3 +285,9 @@ tinymce.init({
   paste_remove_styles_if_webkit: false
 });
 ```
+
+## Commands
+
+The Paste plugin provides the following JavaScript command.
+
+{% include commands/paste-cmds.md %}

@@ -159,3 +159,9 @@ tinymce.init({
   fullpage_hide_in_source_view: true
 });
 ```
+
+## Commands
+
+The Full Page plugin provides the following JavaScript command.
+
+{% include commands/fullpage-cmds.md %}

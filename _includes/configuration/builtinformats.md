@@ -9,7 +9,7 @@ The following formats will work on most content.
 | `alignleft`      | Left alignment.                       |
 | `aligncenter`    | Center alignment.                     |
 | `alignright`     | Right alignment.                      |
-| `alignjustify`   | 'Justified' alignment.                |
+| `alignjustify`   | Justified alignment.                |
 | `bold`           | Bold elements or styling.             |
 | `italic`         | Italic elements or styling.           |
 | `underline`      | Underline styling.                    |

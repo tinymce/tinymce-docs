@@ -21,3 +21,9 @@ tinymce.init({
   toolbar: "print"
 });
 ```
+
+## Commands
+
+The Print plugin provides the following JavaScript command.
+
+{% include commands/print-cmds.md %}

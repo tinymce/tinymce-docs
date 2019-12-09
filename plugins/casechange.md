@@ -101,3 +101,9 @@ tinymce.init({
   ]
 });
 ```
+
+## Commands
+
+The Case Change plugin provides the following JavaScript commands.
+
+{% include commands/casechange-cmds.md %}

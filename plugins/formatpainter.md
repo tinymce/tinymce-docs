@@ -106,3 +106,9 @@ tinymce.init({
 });
 ```
 Check out the [Format Painter demo]({{site.baseurl}}/demo/formatpainter/) to try out this new feature.
+
+## Commands
+
+The Format Painter plugin provides the following JavaScript commands.
+
+{% include commands/formatpainter-cmds.md %}

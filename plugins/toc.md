@@ -99,3 +99,9 @@ tinymce.init({
   toc_class: "our-toc"
 });
 ```
+
+## Commands
+
+The Table of Contents plugin provides the following JavaScript commands.
+
+{% include commands/toc-cmds.md %}

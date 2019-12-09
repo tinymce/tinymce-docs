@@ -39,57 +39,57 @@ tinymce.activeEditor.editorCommands.commands.exec;
 
 The commands on the following table are provided by the {{site.productname}} editor and do not require any plugins to be enabled.
 
-| Command            | Description                                                                                                                                                   |
-| ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Bold               | Toggles bold formatting to selection.                                                                                                                         |
-| Italic             | Toggles italic formatting to selection.                                                                                                                       |
-| Underline          | Toggles underline formatting to selection.                                                                                                                    |
-| Strikethrough      | Toggles strikethough formatting to selection.                                                                                                                 |
-| Superscript        | Toggles superscript formatting to selection.                                                                                                                  |
-| Subscript          | Toggles subscript formatting to selection.                                                                                                                    |
-| Cut                | Cuts the selected contents and puts in into users clipboard.                                                                                                  |
-| Copy               | Copies the selected contents and puts in into users clipboard.                                                                                                |
-| Paste              | Pastes the current clipboard contents into the editor.                                                                                                        |
-| mceInsertLink      | Inserts a link at the current selection. The value is the URL to add to the link(s).                                                                          |
-| Unlink             | Removes any links from the current selection.                                                                                                                 |
-| JustifyLeft        | Left aligns the current text block/image.                                                                                                                     |
-| JustifyCenter      | Center aligns the current text block/image.                                                                                                                   |
-| JustifyRight       | Right aligns the current text block/image.                                                                                                                    |
-| JustifyFull        | Full aligns the current text block/image.                                                                                                                     |
-| JustifyNone        | Removes any alignment to the selected text.                                                                                                                   |
-| ForeColor          | Changes the text color of the text. The value passed in should be the color.                                                                                  |
-| HiliteColor        | Changes the background color of the text. The value passed in should be the color.                                                                            |
-| FontName           | Font name to apply to the text. The value passed in should be the font family name.                                                                           |
-| FontSize           | Font size of the text. The value passed in should be a valid CSS font size.                                                                                   |
-| mceApplyTextcolor  | Applies text color or background color to the current selection. Requires an argument of either `'hilitecolor'` or `'forecolor'`, and the value of the color. |
-| mceRemoveTextcolor | Removes the text color or background color from the current selection. Requires an argument of either `'hilitecolor'` or `'forecolor'`.                       |
-| RemoveFormat       | Removes any formats from the current selection.                                                                                                               |
-| mceBlockQuote      | Wraps the selected text blocks into a block quote.                                                                                                            |
-| FormatBlock        | Changes the format of the current block. The value passed in should be the block name. For example: `H1`, `bold`, `code`, or `P`.                             |
-| mceInsertContent   | Inserts contents at the current selection. The value passed in should be the contents to be inserted.                                                         |
-| mceReplaceContent  | Replaces the current selection. The value passed in should be the new content.                                                                                |
-| mceSetContent      | Sets the contents of the editor. The value is the contents to set as the editor contents.                                                                     |
-| mceToggleFormat    | Toggles a specified format by name. The value is the name of the format to toggle.                                                                            |
-| ToggleSidebar      | Closes the currrent sidebar, or toogles the sidebar if the sidebar name is provided as a value (_`<sidebar-name>`_).                                          |
-| Indent             | Indents the current selection.                                                                                                                                |
-| Outdent            | Outdents the current selection.                                                                                                                               |
-| InsertHorizontalRule | Inserts a horizontal rule at the cursor location or inplace of the current selection. |
-| InsertLineBreak    | Adds a line break `<br/>` at the current cursor or selection.                                                                                                 |
-| mceInsertNewLine   | Adds a new line at the current cursor or selection, such as splitting the current paragraph element.                                                          |
-| mceInsertRawHTML   | Inserts the RAW HTML passed as a value, overwriting the current selection or at the cursor position. **Warning**: This command allows dangerous `<script>` elements to be added to and executed in the editor.                                                         |
-| mceToggleVisualAid | Toggles the visual aids for: tables without borders and anchors.                                                                                                       |
-| SelectAll          | Selects all content in the editor.                                                                                                                           |
-| Delete             | Deletes the current selection from the editor.                                                                                                                |
-| ForwardDelete      | Deletes the current selection or the character to the right of the cursor for a collapsed selection.                                                                                    |
-| mceNewDocument     | Removes all contents of the editor.                                                                                                                           |
-| Redo               | Redoes the last change to the editor.                                                                                                                         |
-| Undo               | Undoes the last change to the editor.                                                                                                                         |
-| mceAddUndoLevel    | Adds an undo level.                                                                                                                                           |
-| mceEndUndoLevel    | Adds an undo level.                                                                                                                                           |
-| mceCleanup         | Copies the current editor content and sets the content using the copy.                                                                                        |
-| mceSelectNode      | Selects a node in the editor. The target node is passed as the value (_`<DOM_node>`_).                                                                        |
-| mceSelectNodeDepth | Selects the parent DOM node 'n' levels above the current node.                                                                                                |
-| mceRemoveNode      | Removes the current node or the target node passed as the value (_`<DOM_node>`_).                                                                             |
+| Command              | Description                                                                                                                                                                                                                                                                                 |
+| -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Bold                 | Toggles bold formatting to selection.                                                                                                                                                                                                                                                       |
+| Italic               | Toggles italic formatting to selection.                                                                                                                                                                                                                                                     |
+| Underline            | Toggles underline formatting to selection.                                                                                                                                                                                                                                                  |
+| Strikethrough        | Toggles strikethough formatting to selection.                                                                                                                                                                                                                                               |
+| Superscript          | Toggles superscript formatting to selection.                                                                                                                                                                                                                                                |
+| Subscript            | Toggles subscript formatting to selection.                                                                                                                                                                                                                                                  |
+| Cut                  | Cuts the selected contents and puts in into users clipboard.                                                                                                                                                                                                                                |
+| Copy                 | Copies the selected contents and puts in into users clipboard.                                                                                                                                                                                                                              |
+| Paste                | Pastes the current clipboard contents into the editor.                                                                                                                                                                                                                                      |
+| mceInsertLink        | Inserts a link at the current selection. The value is the URL to add to the link(s).                                                                                                                                                                                                        |
+| Unlink               | Removes any links from the current selection.                                                                                                                                                                                                                                               |
+| JustifyLeft          | Left aligns the current text block/image.                                                                                                                                                                                                                                                   |
+| JustifyCenter        | Center aligns the current text block/image.                                                                                                                                                                                                                                                 |
+| JustifyRight         | Right aligns the current text block/image.                                                                                                                                                                                                                                                  |
+| JustifyFull          | Full aligns the current text block/image.                                                                                                                                                                                                                                                   |
+| JustifyNone          | Removes any alignment to the selected text.                                                                                                                                                                                                                                                 |
+| ForeColor            | Changes the text color of the text. The value passed in should be the color.                                                                                                                                                                                                                |
+| HiliteColor          | Changes the background color of the text. The value passed in should be the color.                                                                                                                                                                                                          |
+| FontName             | Font name to apply to the text. The value passed in should be the font family name.                                                                                                                                                                                                         |
+| FontSize             | Font size of the text. The value passed in should be a valid CSS font size.                                                                                                                                                                                                                 |
+| mceApplyTextcolor    | Applies text color or background color to the current selection. Requires an argument of either `'hilitecolor'` or `'forecolor'`, and the value of the color.                                                                                                                               |
+| mceRemoveTextcolor   | Removes the text color or background color from the current selection. Requires an argument of either `'hilitecolor'` or `'forecolor'`.                                                                                                                                                     |
+| RemoveFormat         | Removes any formats from the current selection.                                                                                                                                                                                                                                             |
+| mceBlockQuote        | Wraps the selected text blocks into a block quote.                                                                                                                                                                                                                                          |
+| FormatBlock          | Toggles the format of the selected block. The value passed in should be the block name. If no format is specified, the paragraph (<`p`>) format will be toggled. For a list of options, see: [FormatBlock and mceToggleFormat format options](#formatblockandmcetoggleformatformatoptions). |
+| mceInsertContent     | Inserts contents at the current selection. The value passed in should be the contents to be inserted.                                                                                                                                                                                       |
+| mceReplaceContent    | Replaces the current selection. The value passed in should be the new content.                                                                                                                                                                                                              |
+| mceSetContent        | Sets the contents of the editor. The value is the contents to set as the editor contents.                                                                                                                                                                                                   |
+| mceToggleFormat      | Toggles a specified format by name. The value is the name of the format to toggle. For a list of options, see: [FormatBlock and mceToggleFormat format options](#formatblockandmcetoggleformatformatoptions).                                                                               |
+| ToggleSidebar        | Closes the currrent sidebar, or toogles the sidebar if the sidebar name is provided as a value (_`<sidebar-name>`_).                                                                                                                                                                        |
+| Indent               | Indents the current selection.                                                                                                                                                                                                                                                              |
+| Outdent              | Outdents the current selection.                                                                                                                                                                                                                                                             |
+| InsertHorizontalRule | Inserts a horizontal rule at the cursor location or inplace of the current selection.                                                                                                                                                                                                       |
+| InsertLineBreak      | Adds a line break `<br/>` at the current cursor or selection.                                                                                                                                                                                                                               |
+| mceInsertNewLine     | Adds a new line at the current cursor or selection, such as splitting the current paragraph element.                                                                                                                                                                                        |
+| mceInsertRawHTML     | Inserts the RAW HTML passed as a value, overwriting the current selection or at the cursor position. **Warning**: This command allows dangerous `<script>` elements to be added to and executed in the editor.                                                                              |
+| mceToggleVisualAid   | Toggles the visual aids for: tables without borders and anchors.                                                                                                                                                                                                                            |
+| SelectAll            | Selects all content in the editor.                                                                                                                                                                                                                                                          |
+| Delete               | Deletes the current selection from the editor.                                                                                                                                                                                                                                              |
+| ForwardDelete        | Deletes the current selection or the character to the right of the cursor for a collapsed selection.                                                                                                                                                                                        |
+| mceNewDocument       | Removes all contents of the editor.                                                                                                                                                                                                                                                         |
+| Redo                 | Redoes the last change to the editor.                                                                                                                                                                                                                                                       |
+| Undo                 | Undoes the last change to the editor.                                                                                                                                                                                                                                                       |
+| mceAddUndoLevel      | Adds an undo level.                                                                                                                                                                                                                                                                         |
+| mceEndUndoLevel      | Adds an undo level.                                                                                                                                                                                                                                                                         |
+| mceCleanup           | Copies the current editor content and sets the content using the copy.                                                                                                                                                                                                                      |
+| mceSelectNode        | Selects a node in the editor. The target node is passed as the value (_`<DOM_node>`_).                                                                                                                                                                                                      |
+| mceSelectNodeDepth   | Selects the parent DOM node 'n' levels above the current node.                                                                                                                                                                                                                              |
+| mceRemoveNode        | Removes the current node or the target node passed as the value (_`<DOM_node>`_).                                                                                                                                                                                                           |
 
 **Examples**
 
@@ -147,6 +147,72 @@ tinymce.activeEditor.execCommand('mceRemoveNode') /* OR */
 tinymce.activeEditor.execCommand('mceRemoveNode', false, '<DOM_node>')
 ```
 
+### FormatBlock and mceToggleFormat format options
+
+The following options can be used with the `FormatBlock` and `mceToggleFormat` commands.
+
+**General format options**
+
+The following options will work on most content.
+
+| Format option  | Description                                                                                                                         |
+| -------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
+| alignleft      | Toggles left alignment of the selected content.                                                                                     |
+| aligncenter    | Toggles center alignment of the selected content.                                                                                   |
+| alignright     | Toggles right alignment of the selected content.                                                                                    |
+| alignjustify   | Toggles 'justified' alignment of the selected content.                                                                              |
+| bold           | Toggles bold on the selected content.                                                                                               |
+| italic         | Toggles italic on the selected content.                                                                                             |
+| underline      | Toggles an underline on the selected content.                                                                                       |
+| strikethrough  | Toggles strikethrough on the selected content.                                                                                      |
+| blockquote     | Toggles a blockquote on the selected content.                                                                                       |
+| subscript      | Toggles subscript on the selected content.                                                                                          |
+| superscript    | Toggles superscripts on the selected content.                                                                                       |
+| code           | Toggles a code (`<code>`) block on the selected content.                                                                            |
+| p              | Toggles a paragraph (`<p>`) block on the selected content.                                                                          |
+| h1             | Toggles a level 1 heading (`<h1>`) block on the selected content.                                                                   |
+| h2             | Toggles a level 2 heading (`<h2>`) block on the selected content.                                                                   |
+| h3             | Toggles a level 3 heading (`<h3>`) block on the selected content.                                                                   |
+| h4             | Toggles a level 4 heading (`<h4>`) block on the selected content.                                                                   |
+| h5             | Toggles a level 5 heading (`<h5>`) block on the selected content.                                                                   |
+| h6             | Toggles a level 6 heading (`<h6>`) block on the selected content.                                                                   |
+| div            | Toggles a division (`div>`) block on the selected content.                                                                          |
+| address        | Toggles an address (`<address>`) block on the selected content.                                                                     |
+| pre            | Toggles a preformated (`<pre>`) block on the selected content.                                                                      |
+| samp           | Toggles a sample (`<samp>`) block on the selected content.                                                                          |
+| forecolor      | Toggles a highlight color on the selected content. For example: `execCommand('mceToggleFormat', 'forecolor', '#FF0000')`            |
+| hilitecolor    | Toggles a text color on the selected content. For example: `execCommand('mceToggleFormat', 'hilitecolor', '#FF0000')`               |
+| fontname       | Toggles the specified font on the selected content. For example: `execCommand('mceToggleFormat', 'fontname', 'comic sans')`         |
+| fontsize       | Toggles the specified font size on the selected content. For example: `execCommand('mceToggleFormat', 'fontsize', '30px')`          |
+| fontsize_class | Toggles the specified font size (1-7) on the selected content. For example: `execCommand('mceToggleFormat', 'fontsize_class', '2')` |
+
+**Definition list related format options**
+
+The following options will work within definition lists (`<dl>`).
+
+| Format option | Description                                                        |
+| ------------- | ------------------------------------------------------------------ |
+| dt            | Toggles a definition title (`<dt>`) block on the selected content. |
+| dd            | Toggles a definition data (`<dd>`) block on the selected content.  |
+
+**Link related format options**
+
+The following option will work on links (`<a>`).
+
+| Format option | Description                                           |
+| ------------- | ----------------------------------------------------- |
+| link          | Toggles a link (`<a>`) block on the selected content. |
+
+**Table related format options**
+
+The following options will work within tables on `<td>` and `<th>` elements.
+
+| Format option | Description                                                      |
+| ------------- | ---------------------------------------------------------------- |
+| valigntop     | Toggles alignment of the cell content to the top of the cell.    |
+| valignmiddle  | Toggles alignment of the cell content to the middle of the cell. |
+| valignbottom  | Toggles alignment of the cell content to the bottom of the cell. |
+
 ## Plugin Commands
 
 Commands are available for the following plugins:
@@ -166,7 +232,6 @@ Commands are available for the following plugins:
 - [Full Page](#fullpage)
 - [Full Screen](#fullscreen)
 - [Help](#help)
-- [Horizontal Rule](#horizontalrule)
 - [Image](#image)
 - [Image Tools](#imagetools)
 - [Insert Date/Time](#insertdatetime)
@@ -279,12 +344,6 @@ The following command requires the [Help (`help`)]({{ site.baseurl }}/plugins/he
 
 {% include commands/help-cmds.md %}
 
-### Horizontal Rule
-
-The following command requires the [Horizontal Rule (`hr`)]({{ site.baseurl }}/plugins/hr/) plugin.
-
-{% include commands/hr-cmds.md %}
-
 ### Image
 
 The following command requires the [Image (`image`)]({{ site.baseurl }}/plugins/image/) plugin.
@@ -338,7 +397,7 @@ The following command requires the [Page Break (`pagebreak`)]({{ site.baseurl }}
 The following commands require the [Paste (`paste`)]({{ site.baseurl }}/plugins/paste/) plugin.
 
 {% include commands/paste-cmds.md %}
-  
+
 ### Permanent Pen
 
 The following commands require the [Permanent Pen (`permanentpen`)]({{ site.baseurl }}/plugins/permanentpen/) plugin.

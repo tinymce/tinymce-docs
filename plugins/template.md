@@ -22,20 +22,6 @@ tinymce.init({
 });
 ```
 
-### Commands
-
-| Name | Description |
-|------| ------------|
-| `mceInsertTemplate` | Insert template html |
-
-##### Example
-
-```js
-tinymce.activeEditor.execCommand('mceInsertTemplate', false, '<p class="cdate">This will be replaced with the creation date.</p>')
-```
-
-There are two types of files the `template` plugin supports: *templates* and *snippets*. We will first review the plugin options before moving on to some examples.
-
 ### Configuration Options
 
 These settings affect the execution of the `template` plugin. Predefined templates for items such as created dates and modified dates can be set here.

@@ -9,7 +9,7 @@ The following formats will work on most content.
 | `alignleft`      | Left alignment.                       |
 | `aligncenter`    | Center alignment.                     |
 | `alignright`     | Right alignment.                      |
-| `alignjustify`   | Justified alignment.                |
+| `alignjustify`   | Justified alignment.                  |
 | `bold`           | Bold elements or styling.             |
 | `italic`         | Italic elements or styling.           |
 | `underline`      | Underline styling.                    |
@@ -25,7 +25,7 @@ The following formats will work on most content.
 | `h4`             | Level 4 heading (`<h4>`) elements.    |
 | `h5`             | Level 5 heading (`<h5>`) elements.    |
 | `h6`             | Level 6 heading (`<h6>`) elements.    |
-| `div`            | Division (`div>`) blocks.             |
+| `div`            | Division (`<div>`) blocks.            |
 | `address`        | Address (`<address>`) elements.       |
 | `pre`            | Preformated (`<pre>`) blocks.         |
 | `samp`           | Sample (`<samp>`) blocks.             |

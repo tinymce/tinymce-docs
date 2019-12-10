@@ -76,3 +76,9 @@ tinymce.init({
   advlist_number_styles: "lower-alpha"  // only include lower alpha in list
 });
 ```
+
+## Commands
+
+The Advanced Lists plugin provides the following JavaScript commands.
+
+{% include commands/advlist-cmds.md %}

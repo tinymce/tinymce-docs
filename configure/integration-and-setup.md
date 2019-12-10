@@ -22,6 +22,8 @@ description: Essential editor configuration, including `selector` and `plugins` 
 
 {% include configuration/plugins.md %}
 
+{% include configuration/referrer_policy.md %}
+
 {% include configuration/selector.md %}
 
 {% include configuration/setup.md %}

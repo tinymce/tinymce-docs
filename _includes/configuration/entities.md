@@ -11,7 +11,7 @@ The base entities `<`, `>`, `&`, `'`, and `"` will always be entity encoded into
 ##### Example
 
 ```js
-tinyMCE.init({
+tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   entities : '160,nbsp,162,cent,8364,euro,163,pound'
 });

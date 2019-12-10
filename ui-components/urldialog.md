@@ -7,9 +7,9 @@ keywords: dialog urldialog api
 ---
 ## Overview
 
-A URL dialog is a special TinyMCE UI component which loads an external web page inside a dialog (sometimes referred to as `modals`). URL dialogs are useful for very complex use cases, where the supported components for TinyMCE's standard dialogs cannot be used. For example, a custom file manager that is loaded inside a TinyMCE dialog would probably require a URL dialog.
+A URL dialog is a special {{site.productname}} UI component which loads an external web page inside a dialog (sometimes referred to as `modals`). URL dialogs are useful for very complex use cases, where the supported components for {{site.productname}}'s standard dialogs cannot be used. For example, a custom file manager that is loaded inside a {{site.productname}} dialog would probably require a URL dialog.
 
-> Note: [Standard TinyMCE dialogs]({{site.baseurl}}/ui-components/dialog/) should suffice for most use cases, and may be simpler to configure.
+> Note: [Standard {{site.productname}} dialogs]({{site.baseurl}}/ui-components/dialog/) should suffice for most use cases, and may be simpler to configure.
 
 ### Basic example
 
@@ -94,7 +94,7 @@ The instance API is a JavaScript object containing methods attached to the dialo
 
 ## URL dialog messaging
 
-When using a URL dialog, there needs to be a way to communicate between TinyMCE and the external page, as the two components are no longer running in the same window. To allow this, TinyMCE makes use of the browsers [`window.postMessage()`](https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage) API to allow sending data across different origins. The following is an example of how to send messages back to TinyMCE from within an external page:
+When using a URL dialog, there needs to be a way to communicate between {{site.productname}} and the external page, as the two components are no longer running in the same window. To allow this, {{site.productname}} makes use of the browsers [`window.postMessage()`](https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage) API to allow sending data across different origins. The following is an example of how to send messages back to {{site.productname}} from within an external page:
 
 ```js
 window.parent.postMessage({
@@ -103,7 +103,7 @@ window.parent.postMessage({
 }, '*');
 ```
 
-Similarly, to send messages from TinyMCE back to the external page, the `sendMessage()` function from the [URL dialog instance API](#urldialoginstanceapi) can be used to send messages, and then in the external page an event listener can be added to receive the messages:
+Similarly, to send messages from {{site.productname}} back to the external page, the `sendMessage()` function from the [URL dialog instance API](#urldialoginstanceapi) can be used to send messages, and then in the external page an event listener can be added to receive the messages:
 
 ```js
 window.addEventListener('message', function (event) {
@@ -115,7 +115,7 @@ window.addEventListener('message', function (event) {
 
 ```
 
-> Note: When sending a message it is recommended to specify the target origin of where TinyMCE is running, instead of using a wildcard (`'*'`). Similarly, when receiving messages, check that `event.origin` matches the origin of where TinyMCE is running. For example, if TinyMCE is running on *http://mysite.com/tinymce.html*, then if `event.origin` doesn't match `http://mysite.com` the message should be ignored.
+> Note: When sending a message it is recommended to specify the target origin of where {{site.productname}} is running, instead of using a wildcard (`'*'`). Similarly, when receiving messages, check that `event.origin` matches the origin of where {{site.productname}} is running. For example, if {{site.productname}} is running on *http://mysite.com/tinymce.html*, then if `event.origin` doesn't match `http://mysite.com` the message should be ignored.
 
 ### Supported message actions
 
@@ -194,7 +194,7 @@ This action unblocks the window/dialog. This is the same as using the `api.unblo
 
 ### Custom message actions
 
-A custom message is one that contains a `mceAction` not listed in the above-supported actions. For example, the following snippet could be used to send a message back to TinyMCE and then be processed via the `onMessage` callback to perform custom actions inside TinyMCE.
+A custom message is one that contains a `mceAction` not listed in the above-supported actions. For example, the following snippet could be used to send a message back to {{site.productname}} and then be processed via the `onMessage` callback to perform custom actions inside {{site.productname}}.
 
 ```js
 {
@@ -205,7 +205,7 @@ A custom message is one that contains a `mceAction` not listed in the above-supp
 }
 ```
 
-> Note: TinyMCE will ignore all messages received that don't contain a `mceAction` property.
+> Note: {{site.productname}} will ignore all messages received that don't contain a `mceAction` property.
 
 ## Example
 

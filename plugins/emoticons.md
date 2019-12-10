@@ -7,7 +7,7 @@ keywords: smiley happy smiling emoji
 controls: toolbar button
 ---
 
-This plugin adds a dialog to the editor lets users insert emojis into TinyMCE's editable area. The dialog can be invoked via a toolbar button - `emoticons` - or a dedicated menu item added as `Insert > Emoticons`.
+This plugin adds a dialog to the editor lets users insert emojis into {{site.productname}}'s editable area. The dialog can be invoked via a toolbar button - `emoticons` - or a dedicated menu item added as `Insert > Emoticons`.
 
 > Note: it doesn't automatically convert text emoticons into graphical smilies.
 

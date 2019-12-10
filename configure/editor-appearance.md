@@ -48,7 +48,7 @@ description: Configure the editor's appearance, including menu and toolbar contr
 
 {% include configuration/min-width.md %}
 
-<!--{% include configuration/mobile.md %}-->
+{% include configuration/mobile.md %}
 
 {% include configuration/preview-styles.md %}
 
@@ -81,5 +81,7 @@ description: Configure the editor's appearance, including menu and toolbar contr
 {% include configuration/toolbar-n.md %}
 
 {% include configuration/toolbar-drawer.md %}
+
+{% include configuration/toolbar_sticky.md %}
 
 {% include configuration/width.md %}

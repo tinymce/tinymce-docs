@@ -5,15 +5,15 @@ title_nav: Upload images &amp; files
 keywords: uploader uploadImages image handler
 ---
 
-{% include pardot-px-moxiemanager.html %}
+The image uploader is designed to complement the new image editing functionality of {{site.productname}}. Images that are edited within {{site.productname}} can be uploaded using this function. Local images that are added through other means, for example drag and drop when using the [paste_data_images]({{ site.baseurl }}/plugins/paste/#paste_data_images) configuration property, or using {{site.companyname}}'s PowerPaste Plugin.
 
 The image uploader is designed to complement the image editing functionality of {{site.productname}}. Images that are edited within {{site.productname}} can be uploaded using this function. Local images that are added through other means are also uploaded using this function, such as images added by drag and drop when using the [paste_data_images]({{ site.baseurl }}/plugins/paste/#paste_data_images) configuration property, or using the {{site.companyname}} [PowerPaste plugin]({{ site.baseurl }}/plugins/powerpaste/).
 
-Once uploaded, TinyMCE automatically updates the `<image>` src attribute with the new path to the remote image.
+> **Note**: Execute the `editor.uploadImages()` function _before_ submitting the editor contents to the server to avoid storing the images as Base64. Use a success callback to execute code once all the images are uploaded. This success callback can save the editor's content to the server through a `POST`.
 
 Local images can be uploaded to {{site.productname}} through the use of the `editor.uploadImages()` function. This functionality is handled asynchronously, meaning that it is possible for users to save their content before all images have completed uploading.  If this occurs and no server path to the remote image is available, the images are saved as Base 64.
 
-> **Note**: Execute the `editor.uploadImages()` function _before_ submitting the editor contents to the server to avoid storing the images as Base64. Use a success callback to execute code once all the images are uploaded. This success callback can save the editor's content to the server through a `POST`.
+It is recommended that the `editor.uploadImages()` function be executed before submitting the editor contents to the server, to avoid saving content as Base 64. Once all the images are uploaded, a success callback can be utilized to execute the code.  This success callback can be used to save the editor's content to the server through a `POST`.
 
 #### Using uploadImages and then posting a form
 
@@ -84,7 +84,7 @@ tinymce.init({
 
 ## Rolling your image handler
 
-Change the default behavior of TinyMCE's image upload logic by changing the `images_upload_handler` configuration property.
+Change the default behavior of {{site.productname}}'s image upload logic by changing the `images_upload_handler` configuration property.
 
 > **Note**: Please note that while using this option, other image uploader options are not necessary. Additionally, to replace the <image> tag's src attribute with the remote location, please use the success callback defined in the `image_upload_handler` function with the returned JSON object's location property.
 

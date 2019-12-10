@@ -114,3 +114,9 @@ tinymce.init({
 | %S   | second as a decimal number (range 00-59) |
 | %p   | either "am" or "pm" according to the given time value |
 | %%   | a literal "%" character |
+
+## Commands
+
+The Insert Date/Time plugin provides the following JavaScript commands.
+
+{% include commands/insertdatetime-cmds.md %}

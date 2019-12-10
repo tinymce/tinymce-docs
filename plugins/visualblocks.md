@@ -9,8 +9,6 @@ controls: toolbar button, menu item
 
 This plugin allows a user to see block level elements in the editable area. It is similar to WYSIWYG hidden character functionality, but at block level. It also adds a toolbar button and a menu item `Show blocks` under the `View` menu dropdown.
 
-It's worth noting that at present the toolbar button icon is the same for both `visualblocks` and `visualchars`.
-
 **Type:** `String`
 
 ##### Example
@@ -47,3 +45,9 @@ tinymce.init({
   visualblocks_default_state: true
 });
 ```
+
+## Commands
+
+The Visual Blocks plugin provides the following JavaScript command.
+
+{% include commands/visualblocks-cmds.md %}

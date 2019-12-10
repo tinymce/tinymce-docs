@@ -43,7 +43,7 @@ JDK 7 update 55+
 
 ### PowerPaste (Word Copy and Paste)
 
-{{site.companyname}} tests and supports using the PowerPaste plugin for copying content from versions of Microsoft Word and Microsoft Excel:
+{{site.companynameformal}} tests and supports using the PowerPaste plugin for copying content from versions of Microsoft Word and Microsoft Excel:
 * Covered by Microsoft Mainstream Support based on the [Microsoft Fixed Lifecycle Policy](https://support.microsoft.com/en-us/help/14085/fixed-lifecycle-policy).
 * Provided by Microsoft Office 365.
 

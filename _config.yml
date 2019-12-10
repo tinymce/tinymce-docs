@@ -10,16 +10,39 @@ tinydrive_codepen_url: "https://cdn.tiny.cloud/1/qagffr3pkuv17a8on1afax661irst1h
 default_meta_keywords: tinymce, documentation, docs, plugins, customizable skins, configuration, examples, html, php, java, javascript, image editor, inline editor, distraction-free editor, classic editor
 # product variables
 productname: TinyMCE
-productversion: 5
-releaseversion: 5.0
-companyname: Tiny Technologies, Inc.
+productmajorversion: 5
+productminorversion: 5.1
+##### product name in codeblock
+prodnamecode: tinymce
+companyname: Tiny
+companynameformal: Tiny Technologies, Inc.
 cloudname: Tiny Cloud
+cloudfilemanager: Tiny Drive
+enterpriseversion: TinyMCE Enterprise
+accountpage: Tiny Account
+supportname: Tiny Support
+## common tiny.cloud URLs
+supporturl: https://support.tiny.cloud
+gettiny: https://www.tiny.cloud/get-tiny
+accountpageurl: https://apps.tiny.cloud/my-account
 accountsignup: https://www.tiny.cloud/auth/signup
+cloudextensions: https://apps.tiny.cloud/product-category/tiny-cloud-extensions/
+productpages: https://apps.tiny.cloud/products
+pricingpage: https://www.tiny.cloud/pricing
+contactpage: https://www.tiny.cloud/contact
 # HMTL entities
 tick: '&#10004;'
 cross: '&#10006;'
 nbsp: '&#160;'
 tab: '&#160;&#160;'
+virt_ellps: '&#8942;'
+ellps: '&#133;'
+
+requires_5_1v: "> **Note**: This feature is only available for TinyMCE 5.1 and later."
+
+notonmobile: "> **Note**: This option is not supported on mobile devices."
+
+differs_for_mobile: "> **Note**: The default option for this setting is different for mobile devices. For information on the default mobile setting, see: [TinyMCE Mobile - Configuration settings with mobile defaults](https://www.tiny.cloud/docs/mobile/#configurationsettingswithmobiledefaults/)."
 
 thirdPartyInteg: "> **Important**: This Integration is maintained by a third-party developer. Tiny Technologies, Inc. bears no responsibility for this integration, which is not covered by the Tiny Self-Hosted Software License Agreement. For issues related to the integration, contact the third-party project directly."
 

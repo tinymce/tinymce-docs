@@ -8,6 +8,7 @@
   - url: "use-tinymce-distraction-free"
   - url: "multiple-editors"
   - url: "advanced-install"
+  - url: "upgrading"
   - url: "work-with-plugins"
   - url: "customize-ui"
   - url: "upload-images"
@@ -20,7 +21,6 @@
     - url: "#Supported TinyMCE versions"
     - url: "#Supported Web Browsers"
     - url: "#Supported Mobile Platforms"
-    - url: "#Supported Plugins"
   - url: "get-support"
 
 - url: "cloud-deployment-guide"
@@ -73,6 +73,7 @@
     - url: "#hidden_input"
     - url: "#init_instance_callback"
     - url: "#plugins"
+    - url: "#referrer_policy"
     - url: "#selector"
     - url: "#setup"
     - url: "#suffix"
@@ -100,6 +101,7 @@
     - url: "#menubar"
     - url: "#min_height"
     - url: "#min_width"
+    - url: "#mobile"
     - url: "#preview_styles"
     - url: "#quickbars_insert_toolbar"
     - url: "#quickbars_selection_toolbar"
@@ -116,6 +118,7 @@
     - url: "#toolbar"
     - url: "#toolbar(n)"
     - url: "#toolbar_drawer"
+    - url: "#toolbar_sticky"
     - url: "#width"
   - url: "content-appearance"
     pages:
@@ -216,6 +219,7 @@
     pages:
     - url: "#advlist_bullet_styles"
     - url: "#advlist_number_styles"
+    - url: "#Commands"
   - url: "anchor"
   - url: "autolink"
   - url: "autoresize"
@@ -225,6 +229,7 @@
     - url: "#autoresize_overflow_padding"
     - url: "#max_height"
     - url: "#min_height"
+    - url: "#Commands"
   - url: "autosave"
     pages:
     - url: "#autosave_ask_before_unload"
@@ -240,6 +245,7 @@
     pages:
     - url: "#charmap"
     - url: "#charmap_append"
+    - url: "#Commands"
   - url: "checklist"
   - url: "code"
   - url: "codesample"
@@ -264,6 +270,7 @@
     - url: "#fullpage_default_text_color"
     - url: "#fullpage_default_xml_pi"
     - url: "#fullpage_hide_in_source_view"
+    - url: "#Commands"
   - url: "fullscreen"
   - url: "help"
   - url: "hr"
@@ -285,6 +292,7 @@
     - url: "#images_upload_handler"
     - url: "#images_upload_url"
     - url: "#typeahead_urls"
+    - url: "#Commands"
   - url: "imagetools"
     pages:
     - url: "#imagetools_cors_hosts"
@@ -292,6 +300,7 @@
     - url: "#imagetools_fetch_image"
     - url: "#imagetools_proxy"
     - url: "#imagetools_toolbar"
+    - url: "#Commands"
   - url: "importcss"
     pages:
     - url: "#importcss_append"
@@ -308,6 +317,7 @@
     - url: "#insertdatetime_formats"
     - url: "#insertdatetime_timeformat"
     - url: "#Reference Date/Time formats"
+    - url: "#Commands"
   - url: "legacyoutput"
   - url: "link"
     pages:
@@ -319,6 +329,7 @@
     - url: "#link_title"
     - url: "#rel_list"
     - url: "#target_list"
+    - url: "#Commands"
   - url: "linkchecker"
     pages:
     - url: "#linkchecker_content_css"
@@ -326,6 +337,7 @@
   - url: "lists"
     pages:
     - url: "#lists_indent_on_tab"
+    - url: "#Commands"
   - url: "media"
     pages:
     - url: "#audio_template_callback"
@@ -337,6 +349,7 @@
     - url: "#media_scripts"
     - url: "#media_url_resolver"
     - url: "#video_template_callback"
+    - url: "#Commands"
   - url: "mentions"
     pages:
     - url: "#mentions_fetch"
@@ -350,6 +363,7 @@
     pages:
     - url: "#nonbreaking_force_tab"
     - url: "#nonbreaking_wrap"
+    - url: "#Commands"
   - url: "noneditable"
     pages:
     - url: "#noneditable_editable_class"
@@ -360,6 +374,7 @@
     pages:
     - url: "#pagebreak_separator"
     - url: "#pagebreak_split_block"
+    - url: "#Commands"
   - url: "pageembed"
     pages:
     - url: "#Creating a Page Embed toolbar button"
@@ -381,13 +396,24 @@
     - url: "#paste_merge_formats"
     - url: "#paste_convert_word_fake_lists"
     - url: "#paste_remove_styles_if_webkit"
+    - url: "#Commands"
   - url: "permanentpen"
     pages:
     - url: "#Configuring the Permanent Pen toolbar button"
     - url: "#Using a Permanent Pen"
     - url: "#Accessing the Permanent Pen properties"
     - url: "#Changing the Permanent Pen properties"
+    - url: "#Commands"
   - url: "powerpaste"
+    pages:
+    - url: "#paste_as_text"
+    - url: "#powerpaste_word_import"
+    - url: "#powerpaste_html_import"
+    - url: "#powerpaste_allow_local_images"
+    - url: "#powerpaste_block_drop"
+    - url: "#powerpaste_clean_filtered_inline_elements"
+    - url: "#powerpaste_keep_unsupported_src"
+    - url: "#Commands"
   - url: "preview"
   - url: "print"
   - url: "quickbars"
@@ -396,6 +422,7 @@
     - url: "#save_enablewhendirty"
     - url: "#save_oncancelcallback"
     - url: "#save_onsavecallback"
+    - url: "#Commands"
   - url: "searchreplace"
   - url: "spellchecker"
     pages:
@@ -404,6 +431,7 @@
     - url: "#spellchecker_languages"
     - url: "#spellchecker_rpc_url"
     - url: "#spellchecker_wordchar_pattern"
+    - url: "#Commands"
   - url: "tinymcespellchecker"
   - url: "tabfocus"
     pages:
@@ -426,9 +454,9 @@
     - url: "#table_row_advtab"
     - url: "#table_resize_bars"
     - url: "#table_style_by_css"
-    - url: "#Commands"
     - url: "#API"
     - url: "#Events"
+    - url: "#Commands"
   - url: "template"
     pages:
     - url: "#templates"
@@ -438,9 +466,10 @@
     - url: "#template_mdate_format"
     - url: "#template_replace_values"
     - url: "#template_selected_content_classes"
-    - url: "#templatepluginexamples"
-    - url: "#makingtemplates"
-    - url: "#makingsnippets"
+    - url: "#Template Plugin Examples"
+    - url: "#Making Templates"
+    - url: "#Making Snippets"
+    - url: "#Commands"
   - url: "textcolor"
   - url: "textpattern"
     pages:
@@ -450,9 +479,11 @@
     - url: "#toc_depth"
     - url: "#toc_header"
     - url: "#toc_class"
+    - url: "#Commands"
   - url: "visualblocks"
     pages:
     - url: "#visualblocks_default_state"
+    - url: "#Commands"
   - url: "visualchars"
   - url: "wordcount"
 
@@ -556,6 +587,7 @@
     - url: "configure"
     - url: "troubleshoot"
   - url: "advcode"
+  - url: "advanced-tables"
   - url: "support"
   - url: "get-tinymce-bugs-fixed"
   - url: "system-requirements"
@@ -565,7 +597,7 @@
     - url: "#Supported Mobile Platforms"
     - url: "#Supported Application Servers: Self-hosted Enterprise"
     - url: "#Premium Plugin Support"
-    - url: "#Supported Plugins"
+    - url: "#Supported Premium Plugins"
 
 - url: "tinydrive"
   pages:
@@ -603,6 +635,11 @@
   - url: "handle-async-image-uploads"
   - url: "php-upload-handler"
   - url: "editor-command-identifiers"
+    pages:
+      - url: "#Editor Management Commands"
+      - url: "#Listing core and plugin editor commands"
+      - url: "#Core Editor commands"
+      - url: "#Plugin Commands"
   - url: "editor-control-identifiers"
   - url: "editor-icon-identifiers"
   - url: "events"
@@ -654,6 +691,14 @@
 
 - url: "release-notes"
   pages:
+  - url: "release-notes51"
+    pages:
+    - url: "#Overview"
+    - url: "#New features and enhancements"
+    - url: "#Premium Plugin changes"
+    - url: "#Deprecated features"
+    - url: "#Known issues"
+    - url: "#Upgrading to the latest version of TinyMCE 5"
   - url: "release-notes5014"
     pages:
     - url: "#Overview"

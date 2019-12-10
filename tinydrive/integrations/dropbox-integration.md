@@ -8,11 +8,11 @@ keywords: dropbox
 
 ## Overview
 
-Tiny Drive enables you to import files from any Dropbox account if you set up the Dropbox integration by providing a Dropbox app key. When the user selects a file from Dropbox, it will instantly be uploaded or imported into the Tiny Drive storage so that it can be viewed online and shared through Tiny Drive.
+{{site.cloudfilemanager}} enables you to import files from any Dropbox account if you set up the Dropbox integration by providing a Dropbox app key. When the user selects a file from Dropbox, it will instantly be uploaded or imported into the {{site.cloudfilemanager}} storage so that it can be viewed online and shared through {{site.cloudfilemanager}}.
 
 ## Prerequisites
 
-A valid Dropbox user account is required for integrating Dropbox with Tiny Drive. Refer to [this](https://help.dropbox.com/account/create-account) link for more information on creating a Dropbox user account.
+A valid Dropbox user account is required for integrating Dropbox with {{site.cloudfilemanager}}. Refer to [this](https://help.dropbox.com/account/create-account) link for more information on creating a Dropbox user account.
 
 ## Obtaining the Dropbox app key
 
@@ -46,21 +46,21 @@ tinymce.init({
 });
 ```
 
-For more information on other Tiny Drive config options refer to the [configuration]({{site.baseurl}}/tinydrive/configuration/#configuringwithdropbox) section of this document.
+For more information on other {{site.cloudfilemanager}} config options refer to the [configuration]({{site.baseurl}}/tinydrive/configuration/#configuringwithdropbox) section of this document.
 
 ### 4. Tiny Drive UI
 
-1. From the TinyMCE user interface, click on the ![**Insert/edit image**]({{site.baseurl}}/images/insertimage.png) button to access the Tiny Drive user interface.
+1. From the {{site.productname}} user interface, click on the ![**Insert/edit image**]({{site.baseurl}}/images/insertimage.png) button to access the {{site.cloudfilemanager}} user interface.
 2. Click on the ![Upload/Create]({{site.baseurl}}/images/upload.png) button to select Dropbox from the list of storages.
 3. Select the file to upload/import from Dropbox by clicking on the radio button next to it and click the **Choose** button to upload or **Cancel** to abort the operation.
 4. Alternatively, files from your local browser can be uploaded to the Dropbox by clicking on the **Upload files** option and selecting the files to upload.
 
-**Result:** You should be able to view the selected files in your Tiny Drive storage.
+**Result:** You should be able to view the selected files in your {{site.cloudfilemanager}} storage.
 
 Read more about more Dropbox options [here](https://www.dropbox.com/guide/business).
 
 ### Live example
 
-Here is a live example of Dropbox-enabled on Tiny Drive.
+Here is a live example of Dropbox-enabled on {{site.cloudfilemanager}}.
 
 {% include codepen.html id="drive-demo-dropbox" %}

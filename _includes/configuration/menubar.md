@@ -1,12 +1,18 @@
 ## menubar
 
-This option allows you to specify which menus should appear and the order that they appear in the menu bar at the top of TinyMCE.
+This option allows you to specify which menus should appear and the order that they appear in the menu bar at the top of {{site.productname}}.
 
-To specify the menus that should appear on TinyMCE's menu bar, the menubar option should be provided with a space separated list of menus.
+To specify the menus that should appear on {{site.productname}}'s menu bar, the menubar option should be provided with a space separated list of menus.
 
-**Type:** `String`
+**Type:** `String` _or_ `Boolean`
 
-##### Example
+**Default Value:** `true`
+
+**Possible Values:** `true`, `false`, or `string` of menus
+
+{{site.differs_for_mobile}}
+
+##### Example: `menubar` string
 
 ```js
 tinymce.init({
@@ -15,14 +21,8 @@ tinymce.init({
 });
 ```
 
+##### Example: `menubar` boolean
 To disable the menu bar, the menubar option should be provided a boolean value of `false`.
-
-**Type:** `Boolean`
-
-**Default Value:** `true`
-
-**Possible Values:** `true`, `false`
-
 ```js
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML

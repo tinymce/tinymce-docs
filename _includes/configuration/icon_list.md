@@ -93,7 +93,6 @@
 | `orientation` | ![orientation.svg]({{ site.baseurl }}/images/icons/orientation.svg) | `orientation.svg` | 
 | `outdent` | ![outdent.svg]({{ site.baseurl }}/images/icons/outdent.svg) | `outdent.svg` | 
 | `page-break` | ![page-break.svg]({{ site.baseurl }}/images/icons/page-break.svg) | `page-break.svg` | 
-| `paragraph` | ![paragraph.svg]({{ site.baseurl }}/images/icons/paragraph.svg) | `paragraph.svg` | 
 | `paste` | ![paste.svg]({{ site.baseurl }}/images/icons/paste.svg) | `paste.svg` | 
 | `paste-text` | ![paste-text.svg]({{ site.baseurl }}/images/icons/paste-text.svg) | `paste-text.svg` | 
 | `permanent-pen` | ![permanent-pen.svg]({{ site.baseurl }}/images/icons/permanent-pen.svg) | `permanent-pen.svg` | 
@@ -152,6 +151,8 @@
 | `unselected` | ![unselected.svg]({{ site.baseurl }}/images/icons/unselected.svg) | `unselected.svg` | 
 | `upload` | ![upload.svg]({{ site.baseurl }}/images/icons/upload.svg) | `upload.svg` | 
 | `user` | ![user.svg]({{ site.baseurl }}/images/icons/user.svg) | `user.svg` | 
+| `visualblocks` | ![visualblocks.svg]({{ site.baseurl }}/images/icons/visualblocks.svg) | `visualblocks.svg` | 
+| `visualchars` | ![visualchars.svg]({{ site.baseurl }}/images/icons/visualchars.svg) | `visualchars.svg` | 
 | `warning` | ![warning.svg]({{ site.baseurl }}/images/icons/warning.svg) | `warning.svg` | 
 | `zoom-in` | ![zoom-in.svg]({{ site.baseurl }}/images/icons/zoom-in.svg) | `zoom-in.svg` | 
 | `zoom-out` | ![zoom-out.svg]({{ site.baseurl }}/images/icons/zoom-out.svg) | `zoom-out.svg` | 

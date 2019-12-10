@@ -5,29 +5,29 @@ title_nav: PowerPaste
 keywords: enterprise powerpaste power paste paste_as_text powerpaste_word_import powerpaste_html_import powerpaste_block_drop powerpaste_allow_local_images microsoft word excel
 ---
 
-The TinyMCE **PowerPaste** plugin automatically cleans up content from Microsoft Word/Excel and HTML sources to ensure clean, compliant content that matches the look and feel of the site.
+The {{site.productname}} **PowerPaste** plugin automatically cleans up content from Microsoft Word/Excel and HTML sources to ensure clean, compliant content that matches the look and feel of the site.
 
 >***Note:*** _Due to limitations in Excel online (part of Office Live) PowerPaste does not support pasting from Excel online.  If you paste content using Excel in Office Live you will get a plain text representation of the content._
 
 
 ## Usage
 
-The **PowerPaste** plugin activates automatically when users paste content into the editor. For basic usage, users are not required to take any action. Simply copy and paste content normally using keyboard shortcuts, the browser's "Paste" menu item (including from the context menu), or the TinyMCE "Paste" toolbar button.
+The **PowerPaste** plugin activates automatically when users paste content into the editor. For basic usage, users are not required to take any action. Simply copy and paste content normally using keyboard shortcuts, the browser's "Paste" menu item (including from the context menu), or the {{site.productname}} "Paste" toolbar button.
 
-To paste clipboard content as plain text, users can click the "Paste As Text" toolbar button or menu item, then paste the content normally. The TinyMCE **PowerPaste** plugin will convert the HTML on the clipboard into plain text.
+To paste clipboard content as plain text, users can click the "Paste As Text" toolbar button or menu item, then paste the content normally. The {{site.productname}} **PowerPaste** plugin will convert the HTML on the clipboard into plain text.
 
-If you configure **PowerPaste** to allow local images (see the [`powerpaste_allow_local_images`](#powerpaste_allow_local_images) setting below), then images copied from Microsoft Word and other sources will appear in TinyMCE as Base64 encoded images. You can have TinyMCE automatically upload Base64 encoded images for reverting back to a standard image as described in the [image upload documentation]({{site.baseurl}}/advanced/handle-async-image-uploads/).
+If you configure **PowerPaste** to allow local images (see the [`powerpaste_allow_local_images`](#powerpaste_allow_local_images) setting below), then images copied from Microsoft Word and other sources will appear in {{site.productname}} as Base64 encoded images. You can have {{site.productname}} automatically upload Base64 encoded images for reverting back to a standard image as described in the [image upload documentation]({{site.baseurl}}/advanced/handle-async-image-uploads/).
 
 >***Note:*** _PowerPaste (when configured to allow local images) will import images from pasted Microsoft Word/Excel content.  When doing this, **PowerPaste** extracts Base64 encoded images from the clipboard.  Images larger than approximately 8.5MB may fail to import based on technical limitations of web browsers._
 
 
 ## Cloud Installation
-To enable the TinyMCE **PowerPaste** plugin with [TinyMCE Cloud]({{ site.baseurl }}/cloud-deployment-guide/editor-and-features/):
+To enable the {{site.productname}} **PowerPaste** plugin with [{{site.cloudname}}]({{ site.baseurl }}/cloud-deployment-guide/editor-and-features/):
 
-1. If you are currently using the `paste` plugin provided with TinyMCE, disable it by removing it from the `plugins` list.
+1. If you are currently using the `paste` plugin provided with {{site.productname}}, disable it by removing it from the `plugins` list.
 2. Add `powerpaste` to the `plugins` list.
 
-Example TinyMCE configuration:
+Example {{site.productname}} configuration:
 
 ```js
 tinymce.init({
@@ -37,13 +37,13 @@ tinymce.init({
 ```
 
 ## Self-hosted Installation
-To enable the TinyMCE **PowerPaste** plugin:
+To enable the {{site.productname}} **PowerPaste** plugin:
 
-1. If you are currently using the `paste` plugin provided with TinyMCE, disable it by removing it from the `plugins` list.
-2. Copy the entire `powerpaste` folder (found in the ZIP that you downloaded) into the `plugins` directory of your TinyMCE installation. This is typically `/tinymce/plugins`.
-3. Add `powerpaste` to the `plugins` list in  your TinyMCE configuration.
+1. If you are currently using the `paste` plugin provided with {{site.productname}}, disable it by removing it from the `plugins` list.
+2. Copy the entire `powerpaste` folder (found in the ZIP that you downloaded) into the `plugins` directory of your {{site.productname}} installation. This is typically `/tinymce/plugins`.
+3. Add `powerpaste` to the `plugins` list in  your {{site.productname}} configuration.
 
-See the example TinyMCE configuration above.
+See the example {{site.productname}} configuration above.
 
 
 ## Using the PowerPaste Plugin with Module Loaders
@@ -73,7 +73,7 @@ This option controls the default state of the **Paste as text** menu item, which
 
 The supported values are `true` and `false`. The default is `false`.
 
-##### Example
+##### Example: paste_as_text
 
 ```js
 tinymce.init({
@@ -101,7 +101,7 @@ The supported values are:
 
 ### powerpaste_html_import
 
-This setting controls how content pasted from sources other than Microsoft Word is filtered. Note that this includes content copied from TinyMCE itself.
+This setting controls how content pasted from sources other than Microsoft Word is filtered. Note that this includes content copied from {{site.productname}} itself.
 
 **Default value:** `clean`
 
@@ -111,6 +111,16 @@ The supported values are:
 * `merge` Preserve the inline formatting and structure of the original document. Invalid and proprietary styles, tags and attributes are still removed ensuring that the HTML is valid while more closely matching the original document formatting.
 * `prompt` - Prompt the user to choose between the clean and merge options after attempting to paste HTML content.
 
+### powerpaste_allow_local_images
+
+When set to `true`, Base64 encoded images using a data URI in the copied content will not be removed after pasting.
+
+**Default value:** `true`
+
+**Possible values:**  `true`, `false`
+
+>***Note:*** *If you configure* ***PowerPaste*** *to allow local images, you can have {{site.productname}} automatically upload Base64 encoded images for conversion back to a standard image as described on the [image upload documenation]({{ site.baseurl }}/advanced/handle-async-image-uploads/).*
+
 ### powerpaste_block_drop
 
 Due to browser limitations, it is not possible to filter content that is dragged and dropped into the editor. When powerpaste_block_drop is set to true the plugin will disable drag and dropping content into the editor. This prevents the unfiltered content from being introduced. Copy and paste is still enabled.
@@ -119,15 +129,25 @@ Due to browser limitations, it is not possible to filter content that is dragged
 
 **Possible values:**  `true`, `false`
 
-### powerpaste_allow_local_images
+### powerpaste_clean_filtered_inline_elements
 
-When set to true Base64 encoded images using a data URI in the copied content will not be removed after pasting.
+This setting allows for configuration of PowerPaste's **"clean"** paste filters for inline elements. These filters are run when `powerpaste_word_import` or `powerpaste_html_import` are set to `"clean"`; or when a user clicks the **"Remove formatting"** button on the paste prompt dialog.
 
-**Default value:** `true`
+The list of inline elements that should be removed on paste can be specified by setting `powerpaste_clean_filtered_inline_elements` to a comma-separated string of inline element tag names.
 
-**Possible values:**  `true`, `false`
+**Possible values:**  A comma-separated string.
 
->***Note:*** *If you configure* ***PowerPaste*** *to allow local images, you can have TinyMCE automatically upload Base64 encoded images for conversion back to a standard image as described on the [image upload documenation]({{ site.baseurl }}/advanced/handle-async-image-uploads/).*
+##### Example: powerpaste_clean_filtered_inline_elements
+
+```js
+tinymce.init({
+  selector: "textarea",  // change this value according to your HTML
+  plugins: "powerpaste",
+  powerpaste_word_import: "clean", // optional
+  powerpaste_html_import: "clean", // optional
+  powerpaste_clean_filtered_inline_elements: "strong, em, b, i, u, strike, sup, sub, font"
+});
+```
 
 ### powerpaste_keep_unsupported_src
 
@@ -137,16 +157,15 @@ For example, browsers do not allow PowerPaste to access the file system. If your
 
 **Default value:** `false`
 
-**Possible values:**  `true`, `false`
+**Possible values:** `true`, `false`
 
-##### Example
+##### Example: powerpaste_keep_unsupported_src
 
 ```js
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "powerpaste",
-  powerpaste_word_import: "clean",
-  powerpaste_html_import: "merge"
+  powerpaste_keep_unsupported_src: true
 });
 ```
 
@@ -156,7 +175,7 @@ tinymce.init({
 
 This button allows you to toggle paste as plain text mode on and off. When in plain text mode, all rich content is converted into plain text.
 
-Example TinyMCE Configuration:
+Example {{site.productname}} Configuration:
 
 ```js
 tinymce.init({
@@ -172,7 +191,7 @@ tinymce.init({
 
 This menu item allows you to toggle paste as plain text mode on and off. When in plain text mode, all rich content is converted into plain text.
 
-Example TinyMCE Configuration:
+Example {{site.productname}} Configuration:
 
 ```js
 tinymce.init({
@@ -186,35 +205,121 @@ tinymce.init({
 
 ## Advanced Config Options
 
-### Post filter callback
+### Pre-filtering and post-filtering callbacks
 
-Developers can add customer filtering after **PowerPaste** filters are run using the post filter callback. This can be added as an init option or at runtime by adding the event listener.
+Developers can add custom filtering before and after **PowerPaste**'s filters are run using the pre-filtering and post-filtering callbacks. These can be added as init options or at runtime using event listeners.
 
-##### Using the init option
+> Note: These callbacks are also triggered by the core Paste plugin, but when triggered by PowerPaste they are passed more data.
+
+#### Configuration Options
+
+##### paste_preprocess
+
+This setting allows you to run custom filtering on the content from the clipboard before it is run through PowerPaste's filters. The callback is passed two arguments: the PowerPaste plugin instance and an object containing event data. This object contains:
+
+- Standard paste event data.
+- `content` - A string containing the content to be pasted.
+- `mode` - A string indicating whether PowerPaste is in `clean`, `merge`, or `auto` mode.
+- `source` - A string indicating which kind of filtering PowerPaste will run based on the source of the content. This will return `html`, `msoffice`, `googledocs`, `image`, `plaintext`, `text`, or `invalid`.
+
+> **Note**: The mode 'auto' is used when the content source does not have formatting to "clean" or "merge". For example, when pasting an image with no text or markup content.
+
+Example {{site.productname}} configuration:
+
+```js
+const yourCustomFilter = function(content) {
+  // Implement your custom filtering and return the filtered content
+  return content;
+};
+
+tinymce.init({
+  selector: "textarea",
+  plugins: "powerpaste",
+  paste_preprocess: function (pluginApi, data) {
+    console.log(data.content, data.mode, data.source);
+    // Apply custom filtering by mutating data.content
+    // For example:
+    const content = data.content;
+    const newContent = yourCustomFilter(content);
+    data.content = newContent;
+  }
+});
+```
+
+##### paste_postprocess
+
+This setting allows you to run custom filtering on the pasted content after it is run through PowerPaste's filters. The callback is passed two arguments: the PowerPaste plugin instance and an object containing event data. This object contains:
+
+- Standard paste event data.
+- `node` - A DOM node containing the DOM structure of the filtered paste content.
+- `mode` - A string indicating whether PowerPaste is in `clean`, `merge`, or `auto` mode.
+- `source` - A string indicating which kind of filtering PowerPaste will run based on the source of the content. This will return `html`, `msoffice`, `googledocs`, `image`, `plaintext`, `text`, or `invalid`.
+
+> **Note**: The mode 'auto' is used when the content source does not have formatting to "clean" or "merge". For example, when pasting an image with no text or markup content.
+
+Example {{site.productname}} configuration:
 
 ```js
 tinymce.init({
   selector: "textarea",
   plugins: "powerpaste",
-  paste_postprocess: function(editor, fragment) {
-	// Fragment is a DocumentFragment node containing the DOM structure of the pasted content,
-	// after it has been filtered by the PowerPaste plugin.
-  var textnode = document.createTextNode("Added Text");
-  // Modify the fragment via the argument - do not return a value!
-  fragment.node.appendChild(textnode);
+  paste_postprocess: function (pluginApi, data) {
+    console.log(data.node, data.mode, data.source);
+    // Apply custom filtering by mutating data.node
+    const additionalNode = document.createElement('div');
+    additionalNode.innerHTML = '<p>This will go before the pasted content.</p>';
+    data.node.insertBefore(additionalNode, data.node.firstElementChild);
   }
 });
 ```
 
-##### Using an event listener
+#### Event Listeners
+
+Custom paste filtering can also be configured at runtime using event listeners.
+
+- `PastePreProcess` is equivalent to `paste_preprocess`
+- `PastePostProcess` is equivalent to `paste_postprocess`
+
+The event listeners are passed the same data objects as their equivalent configuration options. The event listener callbacks can be configured or changed at any time as long as you have a reference to the Editor API.
+
+Example {{site.productname}} configuration:
 
 ```js
-tinymce.get('editorID').('PastePostProcess', function(fragment) {
-  // Fragment is a DocumentFragment node containing the DOM structure of the pasted content,
-  // after it has been filtered by the PowerPaste plugin.
+const yourCustomFilter = function(content) {
+  // Implement your custom filtering and return the filtered content
+  return content;
+};
+
+tinymce.init({
+  selector: "textarea",
+  plugins: "powerpaste",
+  setup: function(editor) {
+    editor.on('PastePreProcess', function(data) {
+      console.log(data.content, data.mode, data.source);
+      // Apply custom filtering by mutating data.content
+      const content = data.content;
+      const newContent = yourCustomFilter(content);
+      data.content = newContent;
+    });
+
+    editor.on('PastePostProcess', function(data) {
+      console.log(data.node, data.mode, data.source);
+      // Apply custom filtering by mutating data.node
+      // For example:
+      const additionalNode = document.createElement('div');
+      additionalNode.innerHTML = '<p>This will go before the pasted content.</p>';
+      data.node.insertBefore(additionalNode, data.node.firstElementChild);
+    });
+  }
 });
 ```
 
+## Commands
+
+The PowerPaste plugin provides the following JavaScript command.
+
+{% include commands/powerpaste-cmds.md %}
+
 ## Buy TinyMCE PowerPaste
 
-Start with our [dedicated product page](https://about.tiny.cloud/products/powerpaste/) to see our flexible pricing options. OEM and enterprise customers should [contact sales directly](https://www.tinymce.com/pricing/).
+Start with our [dedicated product page]({{site.productpages}}/powerpaste/) to see our flexible pricing options. OEM and enterprise customers should [contact sales directly]({{site.contactpage}}).

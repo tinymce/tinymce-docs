@@ -7,7 +7,7 @@ keywords: submit save_enablewhendirty save_oncancelcallback save_onsavecallback
 controls: toolbar button
 ---
 
-This plugin adds a save button to the TinyMCE toolbar, which will submit the form that the editor is within.
+This plugin adds a save button to the {{site.productname}} toolbar, which will submit the form that the editor is within.
 
 **Type:** `String`
 
@@ -91,3 +91,9 @@ tinymce.init({
   save_onsavecallback: function () { console.log('Saved'); }
 });
 ```
+
+## Commands
+
+The Save plugin provides the following JavaScript commands.
+
+{% include commands/save-cmds.md %}

@@ -7,7 +7,7 @@ keywords: searchreplace edit
 controls: toolbar button, menu item
 ---
 
-This plugin adds search/replace dialogs to TinyMCE. It also adds a toolbar button and the menu item `Find and replace` under the `Edit` menu dropdown.
+This plugin adds search/replace dialogs to {{site.productname}}. It also adds a toolbar button and the menu item `Find and replace` under the `Edit` menu dropdown.
 
 **Type:** `String`
 
@@ -21,3 +21,9 @@ tinymce.init({
   toolbar: "searchreplace"
 });
 ```
+
+## Commands
+
+The Search and Replace plugin provides the following JavaScript command.
+
+{% include commands/searchreplace-cmds.md %}

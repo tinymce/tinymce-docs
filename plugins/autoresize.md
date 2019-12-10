@@ -105,3 +105,9 @@ tinymce.init({
   min_height: 350
 });
 ```
+
+## Commands
+
+The Autoresize plugin provides the following JavaScript command.
+
+{% include commands/autoresize-cmds.md %}

@@ -7,7 +7,7 @@ description: How to use the Yeoman generator to bootstrap a new TinyMCE plugin u
 keywords: webpack yeoman generator plugin tinymce
 ---
 
-The TinyMCE Plugin Generator is designed to make it quick and easy to get started creating plugins to extend and enhance your rich-text editing experience.
+The {{site.productname}} Plugin Generator is designed to make it quick and easy to get started creating plugins to extend and enhance your rich-text editing experience.
 
 
 ## Install the generator
@@ -17,7 +17,7 @@ The plugin generator is built with the project scaffolding tool [Yeoman](http://
 npm install --global yo generator-tinymce
 ```
 
-Wait for the install to finish. 
+Wait for the install to finish.
 
 ## Run the generator
 Start the generator with the following command:
@@ -32,7 +32,7 @@ You will then be guided through these questions:
 1. **Plugin name?**  
 The name of the plugin.
 2. **How do you want to write your plugin?**  
-With what technology do you want to write your plugin? ES2015 transpiled with Babel, Typescript or the module system used internally by Tiny called Bolt.
+With what technology do you want to write your plugin? ES2015 transpiled with Babel, Typescript or the module system used internally by {{site.companyname}} called Bolt.
 3. **Use yarn instead of npm?**  
 Use `yarn` instead of `npm` for a speedier install.
 4. **Skip git repo initialization?**  

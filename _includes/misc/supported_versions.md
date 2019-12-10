@@ -2,13 +2,14 @@
 
 Supported versions of {{site.productname}}:
 
-|Version| Release Date      | End of Support   |
-|:-----:|:-----------------:|:----------------:|
-| 5.0   | February 4, 2019  | TBD              |
-| 4.9   | November 27, 2018 | December 31, 2020|
-| 4.8   | July 11, 2018     | January 11, 2020 |
+| Version |   Release Date    |  End of Support   |
+|:-------:|:-----------------:|:-----------------:|
+|   5.1   | November, 2019    |        TBD        |
+|   5.0   | February 4, 2019  |        TBD        |
+|   4.9   | November 27, 2018 | December 31, 2020 |
+|   4.8   |   July 11, 2018   | January 11, 2020  |
 
 
 To view our Software License Agreements, visit: [https://about.tiny.cloud/legal/](https://about.tiny.cloud/legal/).
 
-Support for Partner Plugins is provided by Partner companies and is not the responsibility of {{site.companyname}}. For information on Partner Plugins, see: [https://go.tiny.cloud/partners/](https://go.tiny.cloud/partners/).
+Support for Partner Plugins is provided by Partner companies and is not the responsibility of {{site.companynameformal}}. For information on Partner Plugins, see: [https://go.tiny.cloud/partners/](https://go.tiny.cloud/partners/).

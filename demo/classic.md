@@ -9,6 +9,6 @@ keywords: example demo classic editor
 
 ## Live example
 
-This example shows you how to use TinyMCE Classic Editor.
+This example shows you how to use {{site.productname}} Classic Editor.
 
 {% include codepen.html id="classic" %}

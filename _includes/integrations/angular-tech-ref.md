@@ -69,7 +69,7 @@ The editor accepts the following properties:
 ```html
 <editor
   apiKey="no-api-key"
-  cloudChannel="5"
+  cloudChannel="{{site.productmajorversion}}"
   [disabled]="false"
   id=""
   [init]="{% raw %}{{% endraw %}  {% raw %}}{% endraw %}"
@@ -81,12 +81,12 @@ The editor accepts the following properties:
 ></editor>
 ```
 
-None of the configuration properties are **required** for `tinymce-angular` to work. Specify a Tiny Cloud API key using `apiKey` to remove the `This domain is not registered...` warning message.
+None of the configuration properties are **required** for `tinymce-angular` to work. Specify a {{site.cloudname}} API key using `apiKey` to remove the `This domain is not registered...` warning message.
 
 #### `apiKey`
-Tiny API key. Required for deployments using the Tiny Cloud to provide the TinyMCE editor.
+{{site.cloudname}} API key. Required for deployments using the {{site.cloudname}} to provide the {{site.productname}} editor.
 
-To register for a Tiny Cloud API key, visit the [sign-up page](https://www.tiny.cloud/signup/).
+To register for a {{site.cloudname}} API key, visit the [sign-up page]({{site.accountsignup}}).
 
 **Default value:** `no-api-key`
 
@@ -102,22 +102,22 @@ To register for a Tiny Cloud API key, visit the [sign-up page](https://www.tiny.
 
 #### `cloudChannel`
 
-**Default value:** `5`
+**Default value:** `{{site.productmajorversion}}`
 
-**Possible values:**  `5-stable`, `5-testing`, `5-dev`
+**Possible values:**  `{{site.productmajorversion}}-stable`, `{{site.productmajorversion}}-testing`, `{{site.productmajorversion}}-dev`
 
-Changes the TinyMCE build used for the editor to one of the following cloud channels:
+Changes the {{site.productname}} build used for the editor to one of the following {{site.cloudname}} channels:
 
-- `5-stable` (**Default**): The current enterprise release of TinyMCE.
-- `5-testing`: The current release candidate for the next enterprise release of TinyMCE.
-- `5-dev`: The nightly-build version of TinyMCE.
+- `{{site.productmajorversion}}-stable` (**Default**): The current enterprise release of {{site.productname}}.
+- `{{site.productmajorversion}}-testing`: The current release candidate for the next enterprise release of {{site.productname}}.
+- `{{site.productmajorversion}}-dev`: The nightly-build version of {{site.productname}}.
 
 Such as:
 
 ```js
-<Editor apiKey="your-api-key" cloudChannel="5-dev" [init]={% raw %}{{% endraw %} /* your other settings */ {% raw %}}{% endraw %} />
+<Editor apiKey="your-api-key" cloudChannel="{{site.productmajorversion}}-dev" [init]={% raw %}{{% endraw %} /* your other settings */ {% raw %}}{% endraw %} />
 ```
-For information TinyMCE development channels, see: [Specifying the TinyMCE editor version deployed from Cloud - dev, testing, and stable releases]({{site.baseurl}}/cloud-deployment-guide/editor-plugin-version/#devtestingandstablereleases).
+For information {{site.productname}} development channels, see: [Specifying the {{site.productname}} editor version deployed from Cloud - dev, testing, and stable releases]({{site.baseurl}}/cloud-deployment-guide/editor-plugin-version/#devtestingandstablereleases).
 
 
 #### `disabled`
@@ -153,7 +153,7 @@ An id for the editor. Used for retrieving the editor instance using the `tinymce
 #### `init`
 Object sent to the `tinymce.init` method used to initialize the editor.
 
-For information on the TinyMCE selector (`tinymce.init`), see: [Basic setup]({{site.baseurl}}/general-configuration-guide/basic-setup/).
+For information on the {{site.productname}} selector (`tinymce.init`), see: [Basic setup]({{site.baseurl}}/general-configuration-guide/basic-setup/).
 
 **Default value:** `{% raw %}{{% endraw %} {% raw %}}{% endraw %}`
 
@@ -188,7 +188,7 @@ Initial content of the editor when the editor is initialized.
 ```
 
 #### `inline`
-Used to set the editor to inline mode. Using `<editor [inline]="true"></editor>` is the same as setting `{inline: true}` in the TinyMCE selector (`tinymce.init`).
+Used to set the editor to inline mode. Using `<editor [inline]="true"></editor>` is the same as setting `{inline: true}` in the {{site.productname}} selector (`tinymce.init`).
 
 For information on inline mode, see: [User interface options - `inline`]({{site.baseurl}}/configure/editor-appearance/#inline) and [Setup inline editing mode]({{site.baseurl}}/general-configuration-guide/use-tinymce-inline/).
 
@@ -205,9 +205,9 @@ For information on inline mode, see: [User interface options - `inline`]({{site.
 ```
 
 #### `plugins`
-Used to include plugins for the editor. Using `<editor plugins="lists code"></editor>` is the same as setting `{plugins: 'lists code'}` in the TinyMCE selector (`tinymce.init`).
+Used to include plugins for the editor. Using `<editor plugins="lists code"></editor>` is the same as setting `{plugins: 'lists code'}` in the {{site.productname}} selector (`tinymce.init`).
 
-For information on adding plugins to TinyMCE, see: [Add plugins to TinyMCE]({{site.baseurl}}/plugins/).
+For information on adding plugins to {{site.productname}}, see: [Add plugins to {{site.productname}}]({{site.baseurl}}/plugins/).
 
 **Type:** String or Array
 
@@ -236,9 +236,9 @@ Only valid when [`<editor [inline]="true"></editor>`](#inline). Used to define t
 ```
 
 #### `toolbar`
-Used to set the toolbar for the editor. Using `<editor toolbar="bold italic"></editor>` is the same as setting `{toolbar: 'bold italic'}` in the TinyMCE selector (`tinymce.init`).
+Used to set the toolbar for the editor. Using `<editor toolbar="bold italic"></editor>` is the same as setting `{toolbar: 'bold italic'}` in the {{site.productname}} selector (`tinymce.init`).
 
-For information setting the toolbar for TinyMCE, see: [User interface options - toolbar]({{site.baseurl}}/configure/editor-appearance/#toolbar).
+For information setting the toolbar for {{site.productname}}, see: [User interface options - toolbar]({{site.baseurl}}/configure/editor-appearance/#toolbar).
 
 **Default value:** `' '`
 
@@ -267,7 +267,7 @@ For information on using `NgModel`, see: [Angular documentation - NgModel](https
 
 ### Using with reactive forms
 
-To use TinyMCE Angular component with reactive forms:
+To use {{site.productname}} Angular component with reactive forms:
 1. Include the `<editor>` configuration within the `formGroup`.
 2. Add the `formControlName` directive to the editor configuration. For example:
 

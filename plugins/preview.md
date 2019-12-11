@@ -22,3 +22,8 @@ tinymce.init({
 });
 ```
 
+## Commands
+
+The Preview plugin provides the following JavaScript command.
+
+{% include commands/preview-cmds.md %}

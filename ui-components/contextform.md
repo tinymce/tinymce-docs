@@ -7,7 +7,7 @@ keywords: contextforms context forms contextformsbarapi
 ---
 
 A context form consists of an input field, and a series of related buttons. Context forms can be shown wherever a context toolbar can be shown. Also, when a context form is registered containing a `launch` configuration, a special context toolbar button with name `form:${name}` is registered which will launch that particular context form.
-Context forms are a generalisation of the `Insert Link` form that existed in the original [inlite](https://www.tiny.cloud/docs-4x/themes/inlite/#quicklink) theme from TinyMCE 4.
+Context forms are a generalisation of the `Insert Link` form that existed in the original [inlite]({{site.url}}/docs-4x/themes/inlite/#quicklink) theme from TinyMCE 4.
 
 ### Registering a context form
 
@@ -49,7 +49,7 @@ There are two options for positioning: `selection` or `line`.
 
 ### Form
 
-This relates to the form itself. The form specifications are: 
+This relates to the form itself. The form specifications are:
 
 | Name | Details |
 | ---- | ------- |

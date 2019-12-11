@@ -1,11 +1,12 @@
 ## Supported Premium Plugins
 
-The following table lists the premium plugins supported by {{site.companyname}} and indicates the supported version of TinyMCE required for the plugin.
+The following table lists the premium plugins supported by {{site.companynameformal}} and indicates the supported version of {{site.productname}} required for the plugin.
 
 | Plugin                                                            | TinyMCE 4     | TinyMCE 5     |
 | ----------------------------------------------------------------- | :-----------: | :-----------: |
 | [Accessibility Checker]({{site.baseurl}}/plugins/a11ychecker)     | {{site.tick}} | {{site.tick}} |
 | [Advanced Code Editor]({{site.baseurl}}/plugins/advcode)          | {{site.tick}} | {{site.tick}} |
+| [Advanced Tables]({{site.baseurl}}/plugins/advtable)| {{site.cross}} | Version **5.1.2** and higher |
 | [Case Change]({{site.baseurl}}/plugins/casechange)                | {{site.cross}}| {{site.tick}} |
 | [Checklist]({{site.baseurl}}/plugins/checklist)                   | {{site.cross}}| {{site.tick}} |
 | [Comments]({{site.baseurl}}/plugins/comments)                     | {{site.tick}} | {{site.tick}} |

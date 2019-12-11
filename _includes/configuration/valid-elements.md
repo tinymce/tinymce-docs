@@ -42,17 +42,17 @@ Use `*[*]` to include all elements and all attributes. This can be very useful w
 ##### Example
 
 ```js
-tinyMCE.init({
+tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   valid_elements : 'a[href|target=_blank],strong/b,div[align],br'
 });
 ```
 
-This example string tells TinyMCE to remove all elements that are not a `'a, strong, div or br'` element, convert `'b'` elements to `'strong'` elements, default '`target`' to '`_blank`' and keep the '`href`', '`target`' and '`align`' attributes of the elements.
+This example string tells {{site.productname}} to remove all elements that are not a `'a, strong, div or br'` element, convert `'b'` elements to `'strong'` elements, default '`target`' to '`_blank`' and keep the '`href`', '`target`' and '`align`' attributes of the elements.
 
 ### Duplicate attribute warning
 
-Be careful not to duplicate attributes in the definitions as this may cause TinyMCE to render duplicate attributes in the output. For example, if you have:
+Be careful not to duplicate attributes in the definitions as this may cause {{site.productname}} to render duplicate attributes in the output. For example, if you have:
 
 > ```js
  //bad code: dir and style listed twice

@@ -82,7 +82,7 @@ tinymce.init({
 
 ### `paste_enable_default_filters`
 
-This option allows you to disable TinyMCE's default paste filters when set to false.
+This option allows you to disable {{site.productname}}'s default paste filters when set to false.
 
 **Type:** `Boolean`
 
@@ -266,7 +266,7 @@ tinymce.init({
 
 ### `paste_remove_styles_if_webkit`
 
-This option allows you to disable TinyMCE's default paste filters for webkit styles.
+This option allows you to disable {{site.productname}}'s default paste filters for webkit styles.
 
 **Type:** `Boolean`
 
@@ -285,3 +285,9 @@ tinymce.init({
   paste_remove_styles_if_webkit: false
 });
 ```
+
+## Commands
+
+The Paste plugin provides the following JavaScript command.
+
+{% include commands/paste-cmds.md %}

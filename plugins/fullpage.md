@@ -104,7 +104,7 @@ This option enables you to specify the default `title` for the output HTML.
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "fullpage",
-  fullpage_default_title: "TinyMCE - Configuration:fullpage_default_title"
+  fullpage_default_title: "{{site.productname}} - Configuration:fullpage_default_title"
 });
 ```
 
@@ -144,7 +144,7 @@ tinymce.init({
 
 ### `fullpage_hide_in_source_view`
 
-This option allows you to specify whether TinyMCE should hide the non `body` content from source view.
+This option allows you to specify whether {{site.productname}} should hide the non `body` content from source view.
 
 **Type:** `Boolean`
 
@@ -159,3 +159,9 @@ tinymce.init({
   fullpage_hide_in_source_view: true
 });
 ```
+
+## Commands
+
+The Full Page plugin provides the following JavaScript command.
+
+{% include commands/fullpage-cmds.md %}

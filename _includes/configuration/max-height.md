@@ -2,7 +2,7 @@
 
 The **max_height** option has two kinds of behaviors depending on the state of the [`autoresize`]({{site.baseurl}}/plugins/autoresize/) plugin:
 
-* `autoresize` OFF (Default) : Without the `autoresize` plugin, this option allows you to set the maximum height that a user can stretch the entire TinyMCE interface (by grabbing the dragable area in the bottom right of the editor interface).
+* `autoresize` OFF (Default) : Without the `autoresize` plugin, this option allows you to set the maximum height that a user can stretch the entire {{site.productname}} interface (by grabbing the dragable area in the bottom right of the editor interface).
 
 * `autoresize` ON : With the `autoresize` plugin, this option sets the maximum height the editor can automatically expand to.
 

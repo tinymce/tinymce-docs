@@ -7,12 +7,12 @@ description: How to manage asynchronous image uploads with jQuery, CORS.
 keywords: asynchronous async paste_data_images image cors
 ---
 
-TinyMCE uploads edited images with the image uploader. This complements TinyMCE's image editing functionality. Local images added through other means can also be uploaded using this functionality. For example, _drag and drop_ using the [paste_data_images]({{ site.baseurl }}/plugins/paste/#paste_data_images) configuration property or using the **PowerPaste** plugin.
+{{site.productname}} uploads edited images with the image uploader. This complements {{site.productname}}'s image editing functionality. Local images added through other means can also be uploaded using this functionality. For example, _drag and drop_ using the [paste_data_images]({{ site.baseurl }}/plugins/paste/#paste_data_images) configuration property or using the **PowerPaste** plugin.
 
 
-TinyMCE automatically updates the `<image>` src attribute with the new path to the remote image.
+{{site.productname}} automatically updates the `<image>` src attribute with the new path to the remote image.
 
-Local images are uploaded to TinyMCE using the `editor.uploadImages()` function.  This functionality makes it possible for users to save their content *before* all images have completed uploading. No server path to the remote image is available if this occurs and the images will be stored as `Base64`.
+Local images are uploaded to {{site.productname}} using the `editor.uploadImages()` function.  This functionality makes it possible for users to save their content *before* all images have completed uploading. No server path to the remote image is available if this occurs and the images will be stored as `Base64`.
 
 > **Note**: Execute the `editor.uploadImages()` function _before_ submitting the editor contents to the server to avoid storing the images as Base64. Use a success callback to execute code once all the images are uploaded. This success callback can save the editor's content to the server through a `POST`.
 
@@ -90,7 +90,7 @@ tinymce.init({
 
 ## Rolling your image handler
 
-Use the `images_upload_handler` configuration property to change TinyMCE's default image upload logic.
+Use the `images_upload_handler` configuration property to change {{site.productname}}'s default image upload logic.
 
 > **Note**: No other image uploader options are necessary while using this option
 
@@ -156,3 +156,4 @@ The [PHP Upload Handler Script](../php-upload-handler/) provided here configures
 * [W3C Wiki - CORS Enabled](http://www.w3.org/wiki/CORS_Enabled)
 * [MDN - HTTP access control (CORS)](https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS)
 * [W3C - Cross-Origin Resource Sharing Specification](http://www.w3.org/TR/cors/)
+file_picker_callback

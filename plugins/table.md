@@ -7,7 +7,7 @@ keywords: row cell column table_appearance_options table_clone_elements table_gr
 controls: toolbar button, menu item
 ---
 
-The `table` plugin adds table management functionality to TinyMCE. It also adds a new menubar item `Table` with various options in its dropdown including `Insert table` and options to modify cells, rows and columns, and a toolbar button with the same functionality.
+The `table` plugin adds table management functionality to {{site.productname}}. It also adds a new menubar item `Table` with various options in its dropdown including `Insert table` and options to modify cells, rows and columns, and a toolbar button with the same functionality.
 
 **Type:** `String`
 
@@ -28,7 +28,7 @@ These settings affect the execution of the `table` plugin and let you modify the
 
 ### `table_toolbar`
 
-This option allows you to specify the buttons and the order that they will appear on within TinyMCE's inline contextual toolbar for tables. To specify the controls that should appear on TinyMCE's table toolbar, the `table_toolbar` option should be provided with a space separated list of toolbar controls. To create groups within this list, please add `|` pipe characters between the groups of controls that you would like to create. If you want to disable this toolbar simply set the value to an empty string.
+This option allows you to specify the buttons and the order that they will appear on within {{site.productname}}'s inline contextual toolbar for tables. To specify the controls that should appear on {{site.productname}}'s table toolbar, the `table_toolbar` option should be provided with a space separated list of toolbar controls. To create groups within this list, please add `|` pipe characters between the groups of controls that you would like to create. If you want to disable this toolbar simply set the value to an empty string.
 
 **Type:** `String`
 
@@ -92,6 +92,8 @@ However, if `table_grid` is set to `false` the table picker will be replaced by 
 **Default Value:** `true`
 
 **Possible Values:**  `true`, `false`
+
+{{site.differs_for_mobile}}
 
 ##### Example
 
@@ -403,34 +405,6 @@ tinymce.init({
 
 > Note: The advanced tabs of the table, row, and cell properties dialogs use the `colorpicker` to allow for border and background colors to be applied. See docs to use and configure a custom [colorpicker]({{site.baseurl}}/plugins/colorpicker/).
 
-### Commands
-
-| Name | Description |
-|------| ------------|
-| mceInsertTable | Open the table properties dialog. On submit, a table will be inserted at the current cursor location. |
-| mceTableProps | Open the table properties dialog |
-| mceTableRowProps | Open the table row properties dialog |
-| mceTableCellProps | Open the table cell properties dialog |
-| mceTableSplitCells | Split the currently selected cell |
-| mceTableMergeCells | Merge the currently selected cells |
-| mceTableInsertRowBefore | Insert a row before the currently selected row(s) |
-| mceTableInsertRowAfter | Insert a row after the currently selected row(s) |
-| mceTableInsertColBefore | Insert a column before the currently selected column(s) |
-| mceTableInsertColAfter | Insert a column after the currently selected column(s) |
-| mceTableDeleteCol | Delete the currently selected column(s) |
-| mceTableDeleteRow | Delete the currently selected row(s) |
-| mceTableCutRow | Cut the currently selected row(s) to the clipboard |
-| mceTableCopyRow | Copy the currently selected row(s) to the clipboard |
-| mceTablePasteRowBefore | Paste any cut or coped rows into the table before the currently selected row(s) |
-| mceTablePasteRowAfter | Paste any cut or coped rows into the table after the currently selected row(s)  |
-| mceTableDelete | Delete the currently selected table |
-
-#### Example
-
-```js
-tinymce.execCommand('mceInsertTable');
-```
-
 ### API
 
 | Name | Arguments | Description |
@@ -453,3 +427,9 @@ tinymce.activeEditor.plugins.table.insertTable(2, 3);
 | newcell | Fired when a cell is created |
 | ObectResizeStart | Fired when a resize action is started on a table, row, column or cell using the resize bars |
 | ObjectResized | Fired when a resize action is finished on a table, row, column or cell using the resize bars |
+
+## Commands
+
+The Table plugin provides the following JavaScript commands.
+
+{% include commands/table-cmds.md %}

@@ -6,7 +6,7 @@ description: This directive allows you to add a TinyMCE editor to your form elem
 keywords: integration integrate angular angularjs angular1
 ---
 
-Integration with AngularJS is currently done through [angular-ui-tinymce](https://github.com/angular-ui/ui-tinymce) a third party module. This how-to shows you how to setup a project using [AngularJS](https://angularjs.org/) and [tinymce](/docs/demo/basic-example/).
+Integration with AngularJS is currently done through [angular-ui-tinymce](https://github.com/angular-ui/ui-tinymce) a third party module. This how-to shows you how to setup a project using [AngularJS](https://angularjs.org/) and [{{site.productname}}]({{site.baseurl}}/demo/basic-example/).
 
 ## 1. Setting up the project directory
 
@@ -20,7 +20,7 @@ $ bower init
 
 ## 2. Installation of angular, ui-tinymce and tinymce
 
-We now install the angular-ui-tinymce package this will automatically install angular and tinymce.
+We now install the angular-ui-tinymce package this will automatically install angular and {{site.productname}}.
 
 ```
 $ bower install angular-ui-tinymce --save
@@ -49,7 +49,7 @@ This **demo.html** file has angular properties and two calls to the controller.
 
 ## 4. Creating the app.js file
 
-The **app.js** file shows you how to work with the model that automatically updates tinymce.
+The **app.js** file shows you how to work with the model that automatically updates {{site.productname}}.
 
 ```js
 var myAppModule = angular.module('myApp', ['ui.tinymce']);
@@ -78,4 +78,4 @@ You can now test the application by running the demo.html page in your favorite 
 
 #### A note about integrations
 
-> Note:  We are pleased to reference third-party integrations/code to help you build great products with TinyMCE. If you have queries about this integration, please contact the developer directly.
+> Note:  We are pleased to reference third-party integrations/code to help you build great products with {{site.productname}}. If you have queries about this integration, please contact the developer directly.

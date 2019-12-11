@@ -7,93 +7,399 @@ description: The complete list of exposed editor commands.
 keywords: editorcommands editorcommand execcommand Bold Italic Underline Strikethrough Superscript Subscript Cut Copy Paste Unlink JustifyLeft JustifyCenter JustifyRight JustifyFull JustifyNone InsertUnorderedList InsertOrderedList ForeColor HiliteColor FontName FontSize RemoveFormat mceBlockQuote FormatBlock mceInsertContent mceToggleFormat mceSetContent Indent Outdent InsertHorizontalRule mceToggleVisualAid mceInsertLink selectAll delete mceNewDocument Undo Redo mceAutoResize mceShowCharmap mceCodeEditor mceDirectionLTR mceDirectionRTL mceFullPageProperties mceFullscreen mceImage mceInsertDate mceInsertTime mceInsertDefinitionList mceNonBreaking mcePageBreak mcePreview mcePrint mceSave SearchReplace mceSpellcheck mceInsertTemplate mceVisualBlocks mceVisualChars mceMedia mceAnchor mceTableSplitCells mceTableMergeCells mceTableInsertRowBefore mceTableInsertRowAfter mceTableInsertColBefore mceTableInsertColAfter mceTableDeleteCol mceTableDeleteRow mceTableCutRow mceTableCopyRow mceTablePasteRowBefore mceTablePasteRowAfter mceTableDelete mceInsertTable mceTableRowProps mceTableCellProps mceEditImage mceAddEditor mceRemoveEditor mceToggleEditor
 ---
 
-Here is a list of the currently exposed editor commands. All these commands are provided by `tinymce` and not by the browser's internal commands. These commands can be executed using the [execCommand]({{ site.baseurl }}/api/tinymce/tinymce.editorcommands/#execcommand) function.
+The following tables show the existing editor commands. These commands are provided by `tinymce` and not by the browser's internal commands. These commands can be executed using the [execCommand]({{ site.baseurl }}/api/tinymce/tinymce.editorcommands/#execcommand) function.
 
-| Command     | Core/Plugin      | Description   |
-|-------------|------------------|---------------|
-| mceAddEditor | Core | Converts the specified HTML or DOM element into an editor instance with the specified ID. |
-| mceRemoveEditor | Core | Removes an editor instance with the specified ID.  |
-| mceToggleEditor | Core | Runs mceAddEditor if an editor is not detected for the specified ID, otherwise it runs either [hide]({{ site.baseurl }}/api/tinymce/tinymce.editor/#hide) if the editor is visible or [show]({{ site.baseurl }}/api/tinymce/tinymce.editor/#show) if it is not visible. |
-| Bold | Core  | Toggles bold formatting to selection. |
-| Italic | Core  | Toggles italic formatting to selection. |
-| Underline | Core  | Toggles underline formatting to selection. |
-| Strikethrough | Core  | Toggles strikethough formatting to selection. |
-| Superscript | Core  | Toggles superscript formatting to selection. |
-| Subscript | Core  | Toggles subscript formatting to selection. |
-| Cut | Core  | Cuts the selected contents and puts in into users clipboard. |
-| Copy | Core  | Copies the selected contents and puts in into users clipboard. |
-| Paste | Core  | Pastes the current clipboard contents into the editor. |
-| Unlink | Core  | Removes any links from the current selection. |
-| JustifyLeft | Core  | Left aligns the current text block/image. |
-| JustifyCenter | Core  | Center aligns the current text block/image. |
-| JustifyRight | Core  | Right aligns the current text block/image. |
-| JustifyFull | Core  | Full aligns the current text block/image. |
-| JustifyNone | Core  | Removes any alignment to the selected text. |
-| InsertUnorderedList | Core  | Inserts an unordered list into the editor. |
-| InsertOrderedList | Core  | Inserts and ordered list into the editor. |
-| ForeColor | Core | Changes the text color of the text. The value passed in should be the color. |
-| HiliteColor | Core | Changes the background color of the text. The value passed in should be the color. |
-| FontName | Core | Font name to apply to the text. The value passed in should be the font family name. |
-| FontSize | Core | Font size of the text. The value passed in should be the font size 1-7. |
-| RemoveFormat | Core | Removes any formats from the current selection. |
-| mceBlockQuote | Core | Wraps the selected text blocks into a block quote. |
-| FormatBlock | Core  | Changes the format of the current block. The value passed in should be the block name for example H1 or P. |
-| mceInsertContent | Core  | Inserts contents at the current selection. The value passed in should be the contents to be insterted. |
-| mceToggleFormat | Core  | Toggles a specified format by name. The value is the name of the format to toggle. |
-| mceSetContent | Core  | Sets the contents of the editor. The value is the contents to set as the editor contents. |
-| Indent | Core  | Indents the current selection. |
-| Outdent | Core  | Outdents the current selection. |
-| InsertHorizontalRule | Core  | Inserts a horizontal ruler. |
-| mceToggleVisualAid | Core  | Toggles the visual aids for tables without borders etc. |
-| mceInsertLink | Core  | Inserts a link at the current selection. The value is the URL to add to the link(s). |
-| selectAll | Core  | Selects all contents in the editor. |
-| delete | Core  | Deletes the current selection from the editor. |
-| mceNewDocument | Core  | Removes all contents of the editor. |
-| Undo | Core  | Undoes the last change to the editor. |
-| Redo | Core  | Redoes the last change to the editor. |
-| mceAutoResize | [autoresize]({{ site.baseurl }}/plugins/autoresize/) | Auto resizes the editor to the contents. |
-| mceShowCharmap | [charmap]({{ site.baseurl }}/plugins/charmap/) | Opens the character map dialog. |
-| mceCodeEditor | [code]({{ site.baseurl }}/plugins/code/) | Opens the code editor dialog. |
-| mceDirectionLTR | [directionality]({{ site.baseurl }}/plugins/directionality/) | Changes the directionality to LTR. |
-| mceDirectionRTL | [directionality]({{ site.baseurl }}/plugins/directionality/) | Changes the directionality to RTL. |
-| mceFullPageProperties | [fullpage]({{ site.baseurl }}/plugins/fullpage/) | Opens the fullpage dialog. |
-| mceFullscreen | [fullscreen]({{ site.baseurl }}/plugins/fullscreen/) | Toggles fullscreen mode. |
-| mceImage | [image]({{ site.baseurl }}/plugins/image/) | Opens the insert image dialog. |
-| mceEditImage | [imagetools]({{ site.baseurl }}/plugins/imagetools) | Opens the edit image dialog. |
-| mceImageRotateRight | [imagetools]({{ site.baseurl }}/plugins/imagetools) | Rotates selected image 90 degrees clockwise. |
-| mceImageRotateLeft | [imagetools]({{ site.baseurl }}/plugins/imagetools) | Rotates selected image 90 degrees counter clockwise. |
-| mceImageFlipVertical | [imagetools]({{ site.baseurl }}/plugins/imagetools) | Flips selected image vertically. |
-| mceImageFlipHorizontal | [imagetools]({{ site.baseurl }}/plugins/imagetools) | Flips selected image horizontally. |
-| mceInsertDate | [insertdatetime]({{ site.baseurl }}/plugins/insertdatetime/) | Inserts the current date as a human readable string. |
-| mceInsertTime | [insertdatetime]({{ site.baseurl }}/plugins/insertdatetime/) | Insert the current time as a human readable string. |
-| mceInsertDefinitionList| [lists]({{ site.baseurl }}/plugins/lists/) | Creates a definition list. |
-| mceNonBreaking | [nonbreaking]({{ site.baseurl }}/plugins/nonbreaking/) | Inserts a non breaking space. |
-| mcePageBreak | [pagebreak]({{ site.baseurl }}/plugins/pagebreak/) | Inserts a page break. |
-| mcePreview | [preview]({{ site.baseurl }}/plugins/preview/) | Displays a preview of the editor contents. |
-| mcePrint | [print]({{ site.baseurl }}/plugins/print/) | Prints the current page. |
-| mceSave | [save]({{ site.baseurl }}/plugins/save/) | Saves the current editor contents. |
-| SearchReplace | [searchreplace]({{ site.baseurl }}/plugins/searchreplace/) | Opens the search/replace dialog. |
-| mceSpellcheck | [spellchecker]({{ site.baseurl }}/plugins/spellchecker/) | Toggles spellchecking on/off. |
-| mceInsertTemplate | [template]({{ site.baseurl }}/plugins/template/) | Inserts a template the value should be the template HTML to process and insert. |
-| mceVisualBlocks | [visualblocks]({{ site.baseurl }}/plugins/visualblocks/) | Toggles visual blocks on/off. |
-| mceVisualChars | [visualchars]({{ site.baseurl }}/plugins/visualchars/) | Toggles visual characters on/off. |
-| mceMedia | [media]({{ site.baseurl }}/plugins/media/) | Opens the insert/edit media dialog. |
-| mceAnchor | [anchor]({{ site.baseurl }}/plugins/anchor/) | Opens the insert/edit anchor dialog. |
-| mceTableSplitCells | [table]({{ site.baseurl }}/plugins/table/) | Splits the current merge table cell. |
-| mceTableMergeCells | [table]({{ site.baseurl }}/plugins/table/) | Merges the selected cells or opens a dialog if there is no cell selection. |
-| mceTableInsertRowBefore| [table]({{ site.baseurl }}/plugins/table) | Inserts a row before the current row. |
-| mceTableInsertRowAfter | [table]({{ site.baseurl }}/plugins/table) | Inserts a row after the current row. |
-| mceTableInsertColBefore| [table]({{ site.baseurl }}/plugins/table) | Inserts a column before the current column. |
-| mceTableInsertColAfter | [table]({{ site.baseurl }}/plugins/table) | Inserts a column after the current column. |
-| mceTableDeleteCol | [table]({{ site.baseurl }}/plugins/table) | Deletes the current column. |
-| mceTableDeleteRow | [table]({{ site.baseurl }}/plugins/table) | Deletes the current row. |
-| mceTableCutRow | [table]({{ site.baseurl }}/plugins/table) | Cuts the current row into table clipboard. |
-| mceTableCopyRow | [table]({{ site.baseurl }}/plugins/table) | Copies the current row into table clipboard. |
-| mceTablePasteRowBefore | [table]({{ site.baseurl }}/plugins/table) | Paste the clipboard row before the current row. |
-| mceTablePasteRowAfter  | [table]({{ site.baseurl }}/plugins/table) | Paste the clipboard row after the current row. |
-| mceTableDelete | [table]({{ site.baseurl }}/plugins/table) | Deletes the current table. |
-| mceInsertTable | [table]({{ site.baseurl }}/plugins/table) | Opens the insert table dialog. |
-| mceTableRowProps | [table]({{ site.baseurl }}/plugins/table) | Opens the table row properties dialog. |
-| mceTableCellProps | [table]({{ site.baseurl }}/plugins/table) | Opens the table cell properties dialog. |
-| mceInsertToc | [toc]({{ site.baseurl }}/plugins/toc) | Inserts a Table of Contents into the editor. |
-| mceUpdateToc | [toc]({{ site.baseurl }}/plugins/toc) | Updates the Table of Contents, if found in the editor. |
+## Editor Management Commands
+
+The following commands are used to manage editor instances.
+
+For example:
+
+```js
+tinymce.execCommand('mceAddEditor', false, '<editor_id>');
+tinymce.execCommand('mceRemoveEditor', false, '<editor_id>');
+tinymce.execCommand('mceToggleEditor', false, '<editor_id>');
+```
+
+| Command         | Description                                                                                                                                                                                                                                                             |
+| --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| mceAddEditor    | Converts the specified HTML or DOM element into an editor instance with the specified ID.                                                                                                                                                                               |
+| mceRemoveEditor | Removes an editor instance with the specified ID.                                                                                                                                                                                                                       |
+| mceToggleEditor | Runs mceAddEditor if an editor is not detected for the specified ID, otherwise it runs either [hide]({{ site.baseurl }}/api/tinymce/tinymce.editor/#hide) if the editor is visible or [show]({{ site.baseurl }}/api/tinymce/tinymce.editor/#show) if it is not visible. |
+
+## Listing core and plugin editor commands
+
+To retrieve a list of avaliable commands from the active editor, run the following command from the browser console:
+
+```js
+tinymce.activeEditor.editorCommands.commands.exec;
+```
+
+## Core Editor commands
+
+The commands on the following table are provided by the {{site.productname}} editor and do not require any plugins to be enabled.
+
+| Command              | Description                                                                                                                                                                                                                                                                                 |
+| -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Bold                 | Toggles bold formatting to selection.                                                                                                                                                                                                                                                       |
+| Italic               | Toggles italic formatting to selection.                                                                                                                                                                                                                                                     |
+| Underline            | Toggles underline formatting to selection.                                                                                                                                                                                                                                                  |
+| Strikethrough        | Toggles strikethough formatting to selection.                                                                                                                                                                                                                                               |
+| Superscript          | Toggles superscript formatting to selection.                                                                                                                                                                                                                                                |
+| Subscript            | Toggles subscript formatting to selection.                                                                                                                                                                                                                                                  |
+| Cut                  | Cuts the selected contents and puts in into users clipboard.                                                                                                                                                                                                                                |
+| Copy                 | Copies the selected contents and puts in into users clipboard.                                                                                                                                                                                                                              |
+| Paste                | Pastes the current clipboard contents into the editor.                                                                                                                                                                                                                                      |
+| mceInsertLink        | Inserts a link at the current selection. The value is the URL to add to the link(s).                                                                                                                                                                                                        |
+| Unlink               | Removes any links from the current selection.                                                                                                                                                                                                                                               |
+| JustifyLeft          | Left aligns the current text block/image.                                                                                                                                                                                                                                                   |
+| JustifyCenter        | Center aligns the current text block/image.                                                                                                                                                                                                                                                 |
+| JustifyRight         | Right aligns the current text block/image.                                                                                                                                                                                                                                                  |
+| JustifyFull          | Full aligns the current text block/image.                                                                                                                                                                                                                                                   |
+| JustifyNone          | Removes any alignment to the selected text.                                                                                                                                                                                                                                                 |
+| ForeColor            | Changes the text color of the text. The value passed in should be the color.                                                                                                                                                                                                                |
+| HiliteColor          | Changes the background color of the text. The value passed in should be the color.                                                                                                                                                                                                          |
+| FontName             | Font name to apply to the text. The value passed in should be the font family name.                                                                                                                                                                                                         |
+| FontSize             | Font size of the text. The value passed in should be a valid CSS font size.                                                                                                                                                                                                                 |
+| mceApplyTextcolor    | Applies text color or background color to the current selection. Requires an argument of either `'hilitecolor'` or `'forecolor'`, and the value of the color.                                                                                                                               |
+| mceRemoveTextcolor   | Removes the text color or background color from the current selection. Requires an argument of either `'hilitecolor'` or `'forecolor'`.                                                                                                                                                     |
+| RemoveFormat         | Removes any formats from the current selection.                                                                                                                                                                                                                                             |
+| mceBlockQuote        | Wraps the selected text blocks into a block quote.                                                                                                                                                                                                                                          |
+| FormatBlock          | Toggles the format of the current selection. The value passed in should be the format name. If no format is specified, the paragraph (<`p`>) format will be toggled. For a list of options, see: [Content formatting options - Built-in formats]({{ site.baseurl }}/configure/content-formatting/#built-informats). |
+| mceInsertContent     | Inserts contents at the current selection. The value passed in should be the contents to be inserted.                                                                                                                                                                                       |
+| mceReplaceContent    | Replaces the current selection. The value passed in should be the new content.                                                                                                                                                                                                              |
+| mceSetContent        | Sets the contents of the editor. The value is the contents to set as the editor contents.                                                                                                                                                                                                   |
+| mceToggleFormat      | Toggles a specified format by name. The value is the name of the format to toggle. For a list of options, see: [Content formatting options - Built-in formats]({{ site.baseurl }}/configure/content-formatting/#built-informats).                                                                               |
+| ToggleSidebar        | Closes the currrent sidebar, or toogles the sidebar if the sidebar name is provided as a value (_`<sidebar-name>`_).                                                                                                                                                                        |
+| Indent               | Indents the current selection.                                                                                                                                                                                                                                                              |
+| Outdent              | Outdents the current selection.                                                                                                                                                                                                                                                             |
+| InsertHorizontalRule | Inserts a horizontal rule at the cursor location or inplace of the current selection.                                                                                                                                                                                                       |
+| InsertLineBreak      | Adds a line break `<br/>` at the current cursor or selection.                                                                                                                                                                                                                               |
+| mceInsertNewLine     | Adds a new line at the current cursor or selection, such as splitting the current paragraph element.                                                                                                                                                                                        |
+| mceInsertRawHTML     | Inserts the RAW HTML passed as a value, overwriting the current selection or at the cursor position. **Warning**: This command allows dangerous `<script>` elements to be added to and executed in the editor.                                                                              |
+| mceToggleVisualAid   | Toggles the visual aids for: tables without borders and anchors.                                                                                                                                                                                                                            |
+| SelectAll            | Selects all content in the editor.                                                                                                                                                                                                                                                          |
+| Delete               | Deletes the current selection from the editor.                                                                                                                                                                                                                                              |
+| ForwardDelete        | Deletes the current selection or the character to the right of the cursor for a collapsed selection.                                                                                                                                                                                        |
+| mceNewDocument       | Removes all contents of the editor.                                                                                                                                                                                                                                                         |
+| Redo                 | Redoes the last change to the editor.                                                                                                                                                                                                                                                       |
+| Undo                 | Undoes the last change to the editor.                                                                                                                                                                                                                                                       |
+| mceAddUndoLevel      | Adds an undo level.                                                                                                                                                                                                                                                                         |
+| mceEndUndoLevel      | Adds an undo level.                                                                                                                                                                                                                                                                         |
+| mceCleanup           | Copies the current editor content and sets the content using the copy.                                                                                                                                                                                                                      |
+| mceSelectNode        | Selects a node in the editor. The target node is passed as the value (_`<DOM_node>`_).                                                                                                                                                                                                      |
+| mceSelectNodeDepth   | Selects the parent DOM node 'n' levels above the current node.                                                                                                                                                                                                                              |
+| mceRemoveNode        | Removes the current node or the target node passed as the value (_`<DOM_node>`_).                                                                                                                                                                                                           |
+
+**Examples**
+
+```js
+tinymce.activeEditor.execCommand('Bold')
+tinymce.activeEditor.execCommand('Italic')
+tinymce.activeEditor.execCommand('Underline')
+tinymce.activeEditor.execCommand('Strikethrough')
+tinymce.activeEditor.execCommand('Superscript')
+tinymce.activeEditor.execCommand('Subscript')
+tinymce.activeEditor.execCommand('Cut')
+tinymce.activeEditor.execCommand('Copy')
+tinymce.activeEditor.execCommand('Paste')
+tinymce.activeEditor.execCommand('mceInsertLink' false, 'https://www.tiny.cloud')
+tinymce.activeEditor.execCommand('Unlink')
+tinymce.activeEditor.execCommand('JustifyLeft')
+tinymce.activeEditor.execCommand('JustifyCenter')
+tinymce.activeEditor.execCommand('JustifyRight')
+tinymce.activeEditor.execCommand('JustifyFull')
+tinymce.activeEditor.execCommand('JustifyNone')
+tinymce.activeEditor.execCommand('ForeColor', false, '#FF0000')
+tinymce.activeEditor.execCommand('HiliteColor', false, '#FF0000')
+tinymce.activeEditor.execCommand('FontName', false, 'courier new')
+tinymce.activeEditor.execCommand('FontSize', false, '30px')
+tinymce.activeEditor.execCommand('mceApplyTextcolor', 'hilitecolor', '#FF0000')
+tinymce.activeEditor.execCommand('mceRemoveTextcolor', 'hilitecolor')
+tinymce.activeEditor.execCommand('RemoveFormat')
+tinymce.activeEditor.execCommand('mceBlockQuote')
+tinymce.activeEditor.execCommand('FormatBlock', false, 'bold')
+tinymce.activeEditor.execCommand('mceInsertContent', false, 'My new content')
+tinymce.activeEditor.execCommand('mceReplaceContent', false, 'My replacement content')
+tinymce.activeEditor.execCommand('mceSetContent', false, 'My content')
+tinymce.activeEditor.execCommand('mceToggleFormat', false, 'bold')
+tinymce.activeEditor.execCommand('ToggleSidebar')  /* OR */
+tinymce.activeEditor.execCommand('ToggleSidebar', false, '<sidebar-name>')
+tinymce.activeEditor.execCommand('Indent')
+tinymce.activeEditor.execCommand('Outdent')
+tinymce.activeEditor.execCommand('InsertHorizontalRule');
+tinymce.activeEditor.execCommand('InsertLineBreak')
+tinymce.activeEditor.execCommand('mceInsertNewLine')
+tinymce.activeEditor.execCommand('mceInsertRawHTML', false, '<p>Hello, World!</p>')
+tinymce.activeEditor.execCommand('mceToggleVisualAid')
+tinymce.activeEditor.execCommand('SelectAll')
+tinymce.activeEditor.execCommand('Delete')
+tinymce.activeEditor.execCommand('ForwardDelete')
+tinymce.activeEditor.execCommand('mceNewDocument')
+tinymce.activeEditor.execCommand('Redo')
+tinymce.activeEditor.execCommand('Undo')
+tinymce.activeEditor.execCommand('mceAddUndoLevel')
+tinymce.activeEditor.execCommand('mceEndUndoLevel')
+tinymce.activeEditor.execCommand('mceCleanup')
+tinymce.activeEditor.execCommand('mceSelectNode', false, '<DOM_node>')
+tinymce.activeEditor.execCommand('mceSelectNodeDepth', false, 2) // For two nodes up.
+tinymce.activeEditor.execCommand('mceRemoveNode') /* OR */
+tinymce.activeEditor.execCommand('mceRemoveNode', false, '<DOM_node>')
+```
+
+## Plugin Commands
+
+Commands are available for the following plugins:
+
+- [Advanced Code](#advancedcode)
+- [Advanced Lists](#advancedlists)
+- [Advanced Tables](#advancedtables)
+- [Anchor](#anchor)
+- [Autoresize](#autoresize)
+- [Case Change](#casechange)
+- [Character Map](#charactermap)
+- [Code](#code)
+- [Code Sample](#codesample)
+- [Comments](#comments)
+- [Directionality](#directionality)
+- [Format Painter](#formatpainter)
+- [Full Page](#fullpage)
+- [Full Screen](#fullscreen)
+- [Help](#help)
+- [Image](#image)
+- [Image Tools](#imagetools)
+- [Insert Date/Time](#insertdatetime)
+- [Link](#link)
+- [Lists](#lists)
+- [Media](#media)
+- [Nonbreaking Space](#nonbreakingspace)
+- [Page Break](#pagebreak)
+- [Paste](#pasteorpowerpaste)
+- [Permanent Pen](#permanentpen)
+- [PowerPaste](#powerpaste)
+- [Preview](#preview)
+- [Print](#print)
+- [Save](#save)
+- [Search and Replace](#searchandreplace)
+- [Spell Checker](#spellchecker)
+- [Table](#table)
+- [Template](#template)
+- [Table of Contents](#tableofcontents)
+- [Visual Blocks](#visualblocks)
+- [Visual Characters](#visualcharacters)
+
+### Advanced Code
+
+The following command requires the [Advanced Code (`advcode`)]({{ site.baseurl }}/plugins/advcode/) plugin.
+
+{% include commands/code-cmds.md %}
+
+### Advanced Lists
+
+The following commands require the [Advanced Lists (`advlist`)]({{ site.baseurl }}/plugins/advlist/) plugin.
+
+{% include commands/advlist-cmds.md %}
+
+### Advanced Tables
+
+The following commands require the [Advanced Tables (`advtable`)]({{ site.baseurl }}/plugins/advtable/) plugin.
+
+{% include commands/advtable-cmds.md %}
+
+### Anchor
+
+The following command requires the [Anchor (`anchor`)]({{ site.baseurl }}/plugins/anchor/) plugin.
+
+{% include commands/anchor-cmds.md %}
+
+### Autoresize
+
+The following command requires the [Autoresize (`autoresize`)]({{ site.baseurl }}/plugins/autoresize/) plugin.
+
+{% include commands/autoresize-cmds.md %}
+
+### Case Change
+
+The following commands require the [Case Change (`casechange`)]({{ site.baseurl }}/plugins/casechange/) plugin.
+
+{% include commands/casechange-cmds.md %}
+
+### Character Map
+
+The following command requires the [Character Map (`charmap`)]({{ site.baseurl }}/plugins/charmap/) plugin.
+
+{% include commands/charmap-cmds.md %}
+
+### Code
+
+The following command requires the [Code (`code`)]({{ site.baseurl }}/plugins/code/) plugin.
+
+{% include commands/code-cmds.md %}
+
+### Code Sample
+
+The following command requires the [Code Sample (`codesample`)]({{ site.baseurl }}/plugins/codesample/) plugin.
+
+{% include commands/codesample-cmds.md %}
+
+### Comments
+
+The following commands require the [Comments (`tinycomments`)]({{ site.baseurl }}/plugins/comments/) plugin.
+
+{% include commands/comments-cmds.md %}
+
+### Directionality
+
+The following commands require the [Directionality (`directionality`)]({{ site.baseurl }}/plugins/directionality/) plugin.
+
+{% include commands/directionality-cmds.md %}
+
+### Format Painter
+
+The following commands require the [Format Painter (`formatpainter`)]({{ site.baseurl }}/plugins/comments/) plugin.
+
+{% include commands/formatpainter-cmds.md %}
+
+### Full Page
+
+The following command requires the [Full Page (`fullpage`)]({{ site.baseurl }}/plugins/fullpage/) plugin.
+
+{% include commands/fullpage-cmds.md %}
+
+### Full Screen
+
+The following command requires the [Full Screen (`fullscreen`)]({{ site.baseurl }}/plugins/fullscreen/) plugin.
+
+{% include commands/fullscreen-cmds.md %}
+
+### Help
+
+The following command requires the [Help (`help`)]({{ site.baseurl }}/plugins/help/) plugin.
+
+{% include commands/help-cmds.md %}
+
+### Image
+
+The following command requires the [Image (`image`)]({{ site.baseurl }}/plugins/image/) plugin.
+
+{% include commands/image-cmds.md %}
+
+### Image Tools
+
+The following commands require the [Image Tools (`imagetools`)]({{ site.baseurl }}/plugins/imagetools/) plugin.
+
+{% include commands/imagetools-cmds.md %}
+
+### Insert Date/Time
+
+The following commands require the [Insert Date/Time (`insertdatetime`)]({{ site.baseurl }}/plugins/insertdatetime/) plugin.
+
+{% include commands/insertdatetime-cmds.md %}
+
+### Link
+
+The following command requires the [Link (`link`)]({{ site.baseurl }}/plugins/link/) plugin.
+
+{% include commands/link-cmds.md %}
+
+### Lists
+
+The following commands require the [Lists (`lists`)]({{ site.baseurl }}/plugins/lists/) plugin.
+
+{% include commands/lists-cmds.md %}
+
+### Media
+
+The following command requires the [Media (`media`)]({{ site.baseurl }}/plugins/media/) plugin.
+
+{% include commands/media-cmds.md %}
+
+### Nonbreaking Space
+
+The following command requires the [Nonbreaking Space (`nonbreaking`)]({{ site.baseurl }}/plugins/nonbreaking/) plugin.
+
+{% include commands/nbsp-cmds.md %}
+
+### Page Break
+
+The following command requires the [Page Break (`pagebreak`)]({{ site.baseurl }}/plugins/pagebreak/) plugin.
+
+{% include commands/pagebreak-cmds.md %}
+
+### Paste
+
+The following commands require the [Paste (`paste`)]({{ site.baseurl }}/plugins/paste/) plugin.
+
+{% include commands/paste-cmds.md %}
+
+### Permanent Pen
+
+The following commands require the [Permanent Pen (`permanentpen`)]({{ site.baseurl }}/plugins/permanentpen/) plugin.
+
+{% include commands/permanentpen-cmds.md %}
+
+### PowerPaste
+
+The following command requires the [PowerPaste (`powerpaste`)]({{ site.baseurl }}/plugins/powerpaste/) plugin.
+
+{% include commands/powerpaste-cmds.md %}
+
+### Preview
+
+The following command requires the [Preview (`preview`)]({{ site.baseurl }}/plugins/preview/) plugin.
+
+{% include commands/preview-cmds.md %}
+
+### Print
+
+The following command requires the [Print (`print`)]({{ site.baseurl }}/plugins/print/) plugin.
+
+{% include commands/print-cmds.md %}
+
+### Save
+
+The following commands require the [Save (`save`)]({{ site.baseurl }}/plugins/save/) plugin.
+
+{% include commands/save-cmds.md %}
+
+### Search and Replace
+
+The following command requires the [Search and Replace (`searchreplace`)]({{ site.baseurl }}/plugins/searchreplace/) plugin.
+
+{% include commands/searchreplace-cmds.md %}
+
+### Spell Checker
+
+The following command requires the [Spell Checker (`spellchecker`)]({{ site.baseurl }}/plugins/spellchecker/) plugin.
+
+{% include commands/spellchecker-cmds.md %}
+
+### Table
+
+The following commands require the [Table (`table`)]({{ site.baseurl }}/plugins/table/) plugin.
+
+{% include commands/table-cmds.md %}
+
+### Template
+
+The following command requires the [Template (`template`)]({{ site.baseurl }}/plugins/template/) plugin.
+
+{% include commands/template-cmds.md %}
+
+### Table of Contents
+
+The following commands require the [Table of Contents (`toc`)]({{ site.baseurl }}/plugins/toc) plugin.
+
+{% include commands/toc-cmds.md %}
+
+### Visual Blocks
+
+The following command requires the [Visual Blocks (`visualblocks`)]({{ site.baseurl }}/plugins/visualblocks/) plugin.
+
+{% include commands/visualblocks-cmds.md %}
+
+### Visual Characters
+
+The following command requires the [Visual Characters (`visualchars`)]({{ site.baseurl }}/plugins/visualchars/) plugin.
+
+{% include commands/visualchars-cmds.md %}

@@ -6,7 +6,7 @@ description: A reference list of all TinyMCE dialog components.
 keywords: dialog dialogapi
 ---
 
-This chapter is a reference list of all TinyMCE dialog components.
+This chapter is a reference list of all {{site.productname}} dialog components.
 
 ## Body components
 
@@ -201,7 +201,8 @@ A **button** is a clickable component that can contain text or an icon. There ar
 | text | string | required | Text to display in the button **if icon is not specified**. Also used for the button's `title` attribute. |
 | name | string | optional | A identifier for the button. If not specified, the button will be assigned a randomly generated name.  |
 | icon | string | optional | Name of the icon to be displayed. Must correspond to an icon in the icon pack. **When configured, the button will display the icon instead of text.** |
-| primary | boolean | optional | Whether to style the button as a primary or secondary button. |
+| primary | boolean | optional | default: `false` - Whether to style the button as a primary or secondary button. |
+| borderless | boolean | optional | default: `false` - Whether to style the button without a border and background color. |
 
 > Note: Buttons do not support mixing icons and text at the moment.
 
@@ -211,7 +212,8 @@ A **button** is a clickable component that can contain text or an icon. There ar
   text: 'Alpha',
   primary: true,
   name: 'alpha-button',
-  disabled: true
+  disabled: true,
+  borderless: false
 }
 ```
 
@@ -320,15 +322,36 @@ An **input** is a composite component that renders a label and a single line tex
 
 **Events:** Interacting with an **input** component will fire the `onChange` function in the dialog's configuration **as the user types**.
 
+| Property    | Type      | Requirement | Description                                                                                                |
+| ----------- | --------- | ----------- | ---------------------------------------------------------------------------------------------------------- |
+| type        | '`input`' | required    | The component type. Must be `'input'`.                                                                     |
+| name        | string    | required    | A identifier for the input.                                                                               |
+| label       | string    | optional    | String to use for the input's `title` attribute.                                                          |
+| placeholder | string    | optional    | String of placeholder text for the input field.                                                            |
+| disabled    | boolean   | optional    | Allows the field to be disabled. Default is `false`.                                                       |
+| inputMode   | string    | optional    | Allows for the specification of input type for displaying contextual onscreen keyboards on mobile devices. |
+
 ```js
 {
   type: 'input', // component type
   name: 'inputA', // identifier
+  inputMode: 'text',
   label: 'Input Label', // text for the label
   placeholder: 'example', // placeholder text for the input
-  disabled: true // disabled state
+  disabled: true, // disabled state
+  maximized: false // grow width to take as much space as possible
 }
 ```
+
+##### inputMode
+
+{{site.requires_5_1v}}
+
+`inputMode` is a property of `input`.
+
+Use `inputMode` to set the type of onscreen keyboard provided on mobile devices when a user focuses the input element.
+
+For a list of valid input modes, see: [MDN Web Docs - inputmode](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/inputmode).
 
 #### selectbox
 
@@ -392,7 +415,8 @@ A **textarea** is a multiline text field.
   name: 'text-a', // identifier
   label: 'Text: ',
   placeholder: 'example',
-  disabled: true // disabled state
+  disabled: true, // disabled state
+  maximized: false // grow width to take as much space as possible
 }
 ```
 

@@ -11,6 +11,12 @@ Use the [toolbar]({{ site.baseurl }}/configure/editor-appearance/#toolbar) or th
 
 ## Toolbar controls
 
+The following table shows all available toolbar items, including items provided by plugins. To retrieve a list from the editor, run the following command from the browser console:
+
+```js
+tinyMCE.activeEditor.ui.registry.getAll().buttons
+```
+
 | Control              | Core/Plugin                                                                                                                        | Description                                                                           |
 | -------------------- | ---------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
 | aligncenter          | core                                                                                                                               | Left aligns the current block or image.                                               |
@@ -116,7 +122,7 @@ Use the [toolbar]({{ site.baseurl }}/configure/editor-appearance/#toolbar) or th
 | template             | [template]({{ site.baseurl }}/plugins/template/)                                                                                   | Inserts templates into the editor.                                                    |
 | toc                  | [toc]({{ site.baseurl }}/plugins/toc/)                                                                                             | Inserts a Table of Contents into the editor.                                          |
 | tocupdate            | [toc]({{ site.baseurl }}/plugins/toc/)                                                                                             | Updates the Table of Contents block element.                                          |
-| insertfile           | [tinydrive]({{ site.baseurl }}/plugins/drive/)                                                                                     | Opens the Tiny Drive file selector.                                                   |
+| insertfile           | [tinydrive]({{ site.baseurl }}/plugins/drive/)                                                                                     | Opens the {{site.cloudfilemanager}} file selector.                                                   |
 | visualblocks         | [visualblocks]({{ site.baseurl }}/plugins/visualblocks/)                                                                           | Toggles the visibility of block elements.                                             |
 | visualchars          | [visualchars]({{ site.baseurl }}/plugins/visualchars/)                                                                             | Toggles the visibility of non breaking character elements.                            |
 | wordcount            | [wordcount]({{ site.baseurl }}/plugins/wordcount/)                                                                                 | Opens a word count dialog showing word and character counts.                          |
@@ -124,6 +130,12 @@ Use the [toolbar]({{ site.baseurl }}/configure/editor-appearance/#toolbar) or th
 
 
 ## Menu controls
+
+The following table shows all available menu items, including items provided by plugins. To retrieve a list from the editor, run the following command from the browser console:
+
+```js
+tinyMCE.activeEditor.ui.registry.getAll().menuItems
+```
 
 | Control                | Core/Plugin                                                                                                                        | [Default Menu Location]({{site.baseurl}}/configure/editor-appearance/#examplethetinymcedefaultmenuitems) | Description                                                                                               |
 | ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
@@ -151,6 +163,7 @@ Use the [toolbar]({{ site.baseurl }}/configure/editor-appearance/#toolbar) or th
 | undo                   | core                                                                                                                               | Edit                                                                                                     | To undo the last operation.                                                                               |
 | visualaid              | core                                                                                                                               | View                                                                                                     | Toggles visual aids on/off.                                                                               |
 | a11ycheck              | [a11ychecker]({{ site.baseurl }}/plugins/a11ychecker/)                                                                             | Tools                                                                                                    | Opens the accessibility checker dialog.                                                                   |
+| advtablesort           | [advtable]({{ site.baseurl }}/plugins/advtable/)                                                                                   | Table                                                                                                    | Advanced tables sort menu item with related controls.                                                     |
 | anchor                 | [anchor]({{ site.baseurl }}/plugins/anchor/)                                                                                       | Insert                                                                                                   | Inserts an anchor into the editor.                                                                        |
 | restoredraft           | [autosave]({{ site.baseurl }}/plugins/autosave/)                                                                                   | File                                                                                                     | Restores to the latest auto saved draft.                                                                  |
 | casechange             | [casechange]({{ site.baseurl }}/plugins/casechange/)                                                                               | _Not Applicable_                                                                                         | Changes the case of text in a block selection to uppercase, lowercase, or title case.                     |
@@ -189,7 +202,7 @@ Use the [toolbar]({{ site.baseurl }}/configure/editor-appearance/#toolbar) or th
 | row                    | [table]({{ site.baseurl }}/plugins/table/)                                                                                         | Table                                                                                                    | Row menu item with related controls.                                                                      |
 | tableprops             | [table]({{ site.baseurl }}/plugins/table/)                                                                                         | Table                                                                                                    | Opens the table properties dialog.                                                                        |
 | template               | [template]({{ site.baseurl }}/plugins/template/)                                                                                   | Insert                                                                                                   | Inserts templates into the editor.                                                                        |
-| insertfile             | [tinydrive]({{ site.baseurl }}/plugins/drive/)                                                                                     | _Not Applicable_                                                                                         | Opens the Tiny Drive file selector.                                                                       |
+| insertfile             | [tinydrive]({{ site.baseurl }}/plugins/drive/)                                                                                     | _Not Applicable_                                                                                         | Opens the {{site.cloudfilemanager}} file selector.                                                                       |
 | spellcheckerlanguage   | [tinymcespellchecker]({{ site.baseurl }}/plugins/tinymcespellchecker/)                                                             | Tools                                                                                                    | Changes the language used for the spell checking process for the document or the currently selected text. |
 | toc                    | [toc]({{ site.baseurl }}/plugins/toc/)                                                                                             | Insert                                                                                                   | Inserts a Table of Contents into the editor.                                                              |
 | visualblocks           | [visualblocks]({{ site.baseurl }}/plugins/visualblocks/)                                                                           | View                                                                                                     | Toggles block visibility on/off.                                                                          |

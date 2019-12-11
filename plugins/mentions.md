@@ -43,7 +43,7 @@ tinymce.init({
       });
 
       users = users.slice(0, 10);
-      
+
       // Where the user object must contain the properties `id` and `name`
       // but you could additionally include anything else you deem useful.
       success(users);
@@ -53,6 +53,43 @@ tinymce.init({
 ```
 
 **Note:**  *The values returned in the users array for "id" and "name" all need to be* `String` *values*
+
+The `success` callback can be passed an optional array of extra items. When clicked, the menu reloads and passes additional query parameters to the fetch function. The extra items can be used to search with different queries or show additional results, such as a full text search (which is slower to fetch). Each extra item should contain:
+
+* A "text" property for the content to be displayed in the menu.
+* A "meta" property for that will be passed using the fetch query parameter.
+
+##### Example with extras
+
+```js
+tinymce.init({
+  selector: "textarea",
+  plugins: "mentions",
+  mentions_fetch: function (query, success) {
+    // query.term is the text the user typed after the '@'
+    var url = '/users?query=' + query.term;
+    var isFullTextSearch = query.meta && query.meta.fullTextSearch;
+    if (isFullTextSearch) {
+      url += '&full=true'
+    }
+
+    // Extras are shown at the end of the list and will reload the menu
+    // by passing the meta to the fetch function
+    var extras = isFullTextSearch ? [ ] : [
+      {
+        text: 'Full user search...',
+        meta: { fullTextSearch: true }
+      }
+    ];
+
+    fetch(url).then(function(users) {
+      // Where the user object must contain the properties `id` and `name`
+      // but you could additionally include anything else you deem useful.
+      success(users, extras);
+    });
+  }
+});
+```
 
 ### `mentions_menu_complete`
 
@@ -205,4 +242,4 @@ console.log(users);
 
 ## Downloading Mentions Plugin
 
-A [TinyMCE Enterprise](https://www.tinymce.com/pricing/) subscription includes the ability to download and install the mentions feature for the editor.
+A [{{site.enterpriseversion}} subscription]({{site.pricingpage}}) includes the ability to download and install the mentions feature for the editor.

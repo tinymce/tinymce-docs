@@ -8,15 +8,15 @@ keywords: comments commenting tinycomments
 
 ## Introduction
 
-The Comments 2.0 plugin provides the ability to start or join a conversation by adding comments to the content within the TinyMCE editor. The Comments 2.0 plugin is built upon the [Annotations API]({{site.baseurl}}/advanced/annotations/) and uses annotations to create comment threads (conversations).
+The Comments 2.0 plugin provides the ability to start or join a conversation by adding comments to the content within the {{site.productname}} editor. The Comments 2.0 plugin is built upon the [Annotations API]({{site.baseurl}}/advanced/annotations/) and uses annotations to create comment threads (conversations).
 
-Comments is a premium plugin from Tiny. Please see the [Premium features]({{site.baseurl}}/enterprise/tiny-comments/) section for all the buying options.
+Comments is a premium plugin from {{site.companyname}}. Please see the [Premium features]({{site.baseurl}}/enterprise/tiny-comments/) section for all the buying options.
 
 After obtaining the Comments 2.0 plugin, refer to the following instructions for using it.
 
 ## Add the Comments 2.0 plugin
 
-To add the Comments 2.0 plugin to the TinyMCE editor, use the following script:
+To add the Comments 2.0 plugin to the {{site.productname}} editor, use the following script:
 ```js
 tinymce.init({
   selector: '#tiny-ui .editor',
@@ -248,11 +248,11 @@ Currently, there are three menu items available:
 
 The highlight styles are now a part of the overall content skin and are changed through customizing the skin.
 
-TinyMCE open source project [oxide](https://github.com/tinymce/oxide/blob/master/src/less/theme/content/comments/comments.less) (default skin), defines the variables used for changing the annotation colours.
+{{site.productname}} open source project [oxide](https://github.com/tinymce/oxide/blob/master/src/less/theme/content/comments/comments.less) (default skin), defines the variables used for changing the annotation colours.
 
 Refer to the [documentation]({{site.baseurl}}/advanced/creating-a-skin/#creatingaskin) for building a skin using this repo.
 
-For more information on configuring TinyMCE formats, refer to the [formats]({{site.baseurl}}/configure/content-formatting/#formats) section.
+For more information on configuring {{site.productname}} formats, refer to the [formats]({{site.baseurl}}/configure/content-formatting/#formats) section.
 
 ### Using Comments
 
@@ -330,3 +330,8 @@ The order that the plugins appear affects the order that the `getContent` hooks 
 
 For a workaround, please ensure that `tinycomments` is listed before `fullpage` in the plugins list. This should result in `tinycomments` working properly.
 
+## Commands
+
+The Comments plugin provides the following JavaScript commands.
+
+{% include commands/comments-cmds.md %}

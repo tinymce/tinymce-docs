@@ -9,7 +9,7 @@ keywords: dialog dialogapi api
 
 A dialog is a popup UI element that contains a header, body and footer, each containing specific types of sub-components. Dialogs also have an instance API and several configuration options, including configurable callback functions for certain dialog events.
 
-> Note: TinyMCE also supports [URL dialogs]({{site.baseurl}}/ui-components/urldialog/). Configuring a URL dialog is quite different to configuring a standard TinyMCE dialog.
+> Note: {{site.productname}} also supports [URL dialogs]({{site.baseurl}}/ui-components/urldialog/). Configuring a URL dialog is quite different to configuring a standard {{site.productname}} dialog.
 
 ### Use cases
 
@@ -25,7 +25,7 @@ More complex dialogs can use [tab panels]({{site.baseurl}}/ui-components/dialogc
 ![Special Characters]({{site.baseurl}}/images/specialchars.png)
 
 #### Interactive dialogs
-TinyMCE dialogs can also contain [interactive components]({{site.baseurl}}/ui-components/dialogcomponents/#basiccomponents) such as buttons, checkboxes and input fields.
+{{site.productname}} dialogs can also contain [interactive components]({{site.baseurl}}/ui-components/dialogcomponents/#basiccomponents) such as buttons, checkboxes and input fields.
 
 For example, the [`image`]({{site.baseurl}}/plugins/image) plugin's dialog allows for users to link to or upload an image, input a description, title, class, caption, height and width, then insert it into the editor.
 
@@ -75,7 +75,7 @@ tinymce.activeEditor.windowManager.open({
 | buttons | FooterButton[] | required | An array of [footer buttons](#footerbuttons) to render in the footer of the dialog. |
 | size | `'normal'`, `'medium'` or `'large'` | optional | default: `normal` - Dialog size options. |
 | initialData | object | optional | An object containing initial values for the dialog's panel components. |
-| onAction | `(dialogApi, details) => void` | optional | Function invoked when a user interacts with a `button` type panel component or clicks a **Custom** type footer button. |
+| onAction | `(dialogApi, details) => void` | optional | Function invoked when a user interacts with a `button` type panel component, clicks a **Custom** type footer button, or clicks an item in a **Menu** type footer button. |
 | onSubmit | `(dialogApi) => void` | optional | Function invoked when a **Submit** type footer button is clicked. |
 | onCancel | `(dialogApi) => void` | optional | Function invoked when the dialog is cancelled. The dialog header's close button and a **Cancel** type footer button invoke this function. |
 | onChange | `(dialogApi, details) => void` | optional | Function invoked when the value of an `input` type panel component changes. |
@@ -87,13 +87,13 @@ For more information on the `dialogApi` object that is passed to some of the con
 #### Event callback functions
 Each of the event callback functions - `onAction`, `onSubmit`, `onCancel`, `onChange`, `onClose` and `onTabChange` - are shared between all dialog components that may trigger them. For example, **Custom** type footer buttons and dialog panel buttons all trigger `onAction`. Therefore, callback functions that may be triggered by multiple components are passed an object (called `details` above) that contains the `name` of the component that triggered the event.
 
-Any callback function that is not passed a `details` object assumes that the dialog will only contain one component which can trigger it or that it does not matter if the function is triggered by multiple components. For example, `onSubmit` is only triggered when a user clicks on a **Submit** type footer button, and TinyMCE assumes that a dialog will only have one **Submit** type button. In comparison, `onCancel` and `onClose` are both triggered by clicking the `X` button in the top right of a dialog or by clicking a **Cancel** type footer button. These two buttons have the same functionality, and therefore TinyMCE does not differentiate between them.
+Any callback function that is not passed a `details` object assumes that the dialog will only contain one component which can trigger it or that it does not matter if the function is triggered by multiple components. For example, `onSubmit` is only triggered when a user clicks on a **Submit** type footer button, and {{site.productname}} assumes that a dialog will only have one **Submit** type button. In comparison, `onCancel` and `onClose` are both triggered by clicking the `X` button in the top right of a dialog or by clicking a **Cancel** type footer button. These two buttons have the same functionality, and therefore {{site.productname}} does not differentiate between them.
 
 ### Body components
 
 The body of a dialog must be either a [`panel`]({{site.baseurl}}/ui-components/dialogcomponents/#panel) (a single panel) or a [`tabpanel`]({{site.baseurl}}/ui-components/dialogcomponents/#tabpanel) (a collection of panels). Each panel can contain [panel components]({{site.baseurl}}/ui-components/dialogcomponents/#panelcomponents) such as inputs, buttons and text.
 
-> Note: TinyMCE also supports [URL dialogs]({{site.baseurl}}/ui-components/urldialog/). Configuring a URL dialog is quite different to configuring a standard TinyMCE dialog.
+> Note: {{site.productname}} also supports [URL dialogs]({{site.baseurl}}/ui-components/urldialog/). Configuring a URL dialog is quite different to configuring a standard {{site.productname}} dialog.
 
 #### Panel
 
@@ -136,7 +136,7 @@ The Help plugin's dialog is an example of a tab panel dialog.
 
 ### Footer buttons
 
-A **button** is a clickable component that can contain text or an icon. There are two types of buttons (primary and secondary buttons), though the only difference is that they are styled differently. Primary buttons are intended to stand out. The color will depend on the chosen [skin]({{site.baseurl}}/general-configuration-guide/customize-ui/#skins).
+A **button** is a clickable component that can contain text or an icon. There are three types of buttons (primary, secondary and menu buttons). Primary and secondary buttons will perform an action when clicked, however they are styled differently. Primary buttons are intended to stand out. The color will depend on the chosen [skin]({{site.baseurl}}/general-configuration-guide/customize-ui/#skins). Menu buttons will open a menu with more options when clicked, instead of performing an action.
 
 > Note: Dialog footer buttons are different to [dialog panel buttons]({{site.baseurl}}/ui-components/dialogcomponents/#button).
 
@@ -144,7 +144,7 @@ A **button** is a clickable component that can contain text or an icon. There ar
 
 | Name | Type | Requirement | Description |
 | ---- | ---- | ----------- | ----------- |
-| type | `'submit'` or `'cancel'` or `'custom'` | required | Must be `'submit'`, `'cancel'` or `'custom'` based on the type of callback function that should be invoked when the button is clicked. |
+| type | `'submit'` or `'cancel'` or `'custom'` or `'menu'` | required | Must be `'submit'`, `'cancel'`, `'custom'` or `'menu'` based on the type of callback function that should be invoked when the button is clicked. |
 | text | string | required | Text to display in the button if `icon` is not specified. Also used for the button's `title` attribute. |
 | name | string | optional | An identifier for the button. If not specified, the button will be assigned a randomly generated `name`.  |
 | icon | string | optional | Name of the icon to be displayed. Must correspond to an icon in the icon pack. **When configured, the button will display the icon instead of text.** |
@@ -165,11 +165,11 @@ The different footer button types will invoke different callbacks when clicked:
 * A **Submit** type button will invoke the `onSubmit` callback function provided in the dialog configuration.
 * A **Cancel** type button will invoke the `onCancel` and `onClose` callback functions. These callback functions are also fired when a user clicks the `X` button in the top right of the dialog.
 * A **Custom** type button will invoke the `onAction` callback function, and pass it the button's `name` in the `details` object. This allows developers to create a click handler for each **Custom** type footer button in the dialog. See the [Redial example](#interactiveexampleusingredial) for an example of how to use this.
+* A **Menu** type button will fetch a list of options and display them in a drop-down menu. When a menu button item is clicked, the item `name` is passed to the [_dialog `onAction` callback_](#configurationoptions).  For details, see: [Dialog menu buttons](#dialogmenubuttons).
 
 See the [dialog configuration options](#configurationoptions) documentation for more information.
 
-
-#### Example
+##### Example: Dialog footer button
 
 ```js
 {
@@ -181,6 +181,64 @@ See the [dialog configuration options](#configurationoptions) documentation for 
   primary: true, // style the button as a primary button
   align: 'start' // align the button to the left of the dialog footer
 }
+```
+
+##### Dialog menu buttons
+
+A dialog menu button is a drop-down button that can be used to provide a drop-down list of items in a dialog footer.
+
+When dialog menu items are clicked, a [_dialog `onAction` callback_](#configurationoptions) is triggered. The `name` of the menu item is passed into the onAction callback.
+Clicking on the menu footer button won't trigger any callbacks and will only open the menu of specified items.
+
+###### Dialog menu button
+
+The following options can be specified for a dialog menu button:
+
+| Name     | Value   | Requirement | Description                                                                                                                                           |
+| -------- | ------- | ----------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
+| items    | array   | required    | An array of [dialog menu items](#dialogmenuitems).                                                                                                    |
+| name     | string  | optional    | An identifier for the button. If not specified, the button will be assigned a randomly generated `name`.                                              |
+| text     | string  | optional    | Text to display if no icon is found.                                                                                                                  |
+| icon     | string  | optional    | Name of the icon to be displayed. Must correspond to an icon in the icon pack.                                                                        |
+| tooltip  | string  | optional    | Text for button tooltip.                                                                                                                              |
+
+###### Dialog menu items
+
+The following options can be specified for a dialog menu button _item_:
+
+| Name     | Value   | Requirement | Description                                                                                                                                                                                              |
+| -------- | ------- | ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| name     | string  | required    | Identifier for the dialog menu item which is passed to the [_dialog `onAction` callback_](#configurationoptions). `name` can be used with [initialData](#configurationoptions) to set the initial state. |
+| type     | string  | required    | The type `togglemenuitem` should be used.                                                                                                                                                                |
+| text     | string  | optional    | Text to display if no icon is found.                                                                                                                                                                     |
+| value    | string  | optional    | A value to associate with the menu item.                                                                                                                                                                 |
+
+###### Example: Dialog footer menu button
+
+```js
+buttons: [
+  {
+    type: 'menu', // button type
+    name: 'myMenuButton', // identifying name
+    text: 'My Menu', // text for the button
+    // icon: 'user', // will replace the text if configured
+    disabled: false, // button is active when the dialog opens
+    align: 'start', // align the button to the left of the dialog footer
+    tooltip: 'This is "My" button.',
+    items: [
+      {
+        name: 'dialogMenuButtonItem1',
+        type: 'togglemenuitem',
+        text: 'Item 1.'
+      },
+      {
+        name: 'dialogMenuButtonItem2',
+        type: 'togglemenuitem',
+        text: 'Item 2.'
+      }
+    ]
+  }
+]
 ```
 
 ## Dialog instance API
@@ -248,11 +306,11 @@ Redial can be used to change information that is displayed in the dialog, create
 
 The following example demonstrates one way of implementing a multipage form dialog using the `redial()` method. Custom buttons are used to switch between the two pages of the form by calling `redial()` with the appropriate dialog configuration.
 
-To see the output of the code, click on the TinyMCE tab on the fiddle below.
+To see the output of the code, click on the {{site.productname}} tab on the fiddle below.
 
 {% include codepen.html id="redial" height="900" tab="js" %}
 
-The example JavaScript code contains two dialog configurations - `page1Config` and `page2Config`. The TinyMCE initialisation code adds a button to the editor that when clicked calls `editor.windowManager.open(page1Config)` to open a dialog using the first configuration.
+The example JavaScript code contains two dialog configurations - `page1Config` and `page2Config`. The {{site.productname}} initialisation code adds a button to the editor that when clicked calls `editor.windowManager.open(page1Config)` to open a dialog using the first configuration.
 
 The configuration for the first page of the multipage form contains a description of the form and a checkbox. The checkbox, via the dialog's `onChange()` callback function, toggles whether the `next` button is disabled or enabled. The `next` button when clicked fires the `onAction()` callback function, which in turn triggers `redial()` which will replace the `page1Config` dialog with the `page2Config` dialog.
 

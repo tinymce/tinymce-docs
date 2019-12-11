@@ -9,7 +9,7 @@ This way you can handle non-HTML elements inside an HTML editor. You can prefix 
 **Default Value:** `div` elements
 
 ```js
-tinyMCE.init({
+tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   extended_valid_elements : 'mycustomblock[id],mycustominline',
   custom_elements : 'mycustomblock,~mycustominline' // Notice the ~ prefix to force a span element for the element

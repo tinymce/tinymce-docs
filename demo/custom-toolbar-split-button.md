@@ -7,6 +7,6 @@ description: This example shows you how to add a simple split menu button to Tin
 keywords: example demo custom toolbar menu button
 ---
 
-This example shows you how to add a simple "split" menu button to TinyMCE's toolbar.
+This example shows you how to add a simple "split" menu button to {{site.productname}}'s toolbar.
 
 {% include codepen.html id="custom-toolbar-split-button" %}

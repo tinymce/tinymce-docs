@@ -7,19 +7,19 @@ keywords: annotation annotations annotator
 
 ## Introduction
 
-The TinyMCE Annotations API provides the ability to add, modify, and delete annotations; listen to text selection events and retrieve all annotations with the same annotation name. The Annotations API is a part of the TinyMCE core and functions in the same way as the formatting APIs in TinyMCE core.
+The {{site.productname}} Annotations API provides the ability to add, modify, and delete annotations; listen to text selection events and retrieve all annotations with the same annotation name. The Annotations API is a part of the {{site.productname}} core and functions in the same way as the formatting APIs in {{site.productname}} core.
 
 The primary value that the Annotations API provides is that it tags each annotation with a unique identifier(uid) accessible via `editor.annotator`. This highlights the annotated content and wraps it in annotation markers. These markers can either stay in the content or be removed on `getContent`, depending on the user configuration (`persistent` setting).
 
 ## Using the Annotator
 
-Perform the following procedure to set up the TinyMCE Annotations feature:
+Perform the following procedure to set up the {{site.productname}} Annotations feature:
 
 ### 1. Configure the Annotate Button
 
 To configure the annotate button on your toolbar:
 
-       
+
  ```js
   setup: function(ed) {
     ed.ui.registry.addButton('annotate-alpha', {
@@ -34,8 +34,8 @@ To configure the annotate button on your toolbar:
     })
   }
 ```
-       
-See [Configure TinyMCE]({{ site.baseurl }}/configure/) for more information on how to configure TinyMCE core.
+
+See [Configure {{site.productname}}]({{ site.baseurl }}/configure/) for more information on how to configure {{site.productname}} core.
 
 ### 2. Registering the Annotator
 

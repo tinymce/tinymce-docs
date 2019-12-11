@@ -19,11 +19,11 @@ This guide assumes:
 
 ## How icons work in TinyMCE
 
-A TinyMCE icon pack is a `.js` file containing strings of [SVG's](https://developer.mozilla.org/en-US/docs/Web/SVG). An icon pack can be used: to include one or more custom icons; or to replace some or all of the default TinyMCE icons.
+A {{site.productname}} icon pack is a `.js` file containing strings of [SVG's](https://developer.mozilla.org/en-US/docs/Web/SVG). An icon pack can be used: to include one or more custom icons; or to replace some or all of the default {{site.productname}} icons.
 
-An icon pack only requires the custom icons to be included; the default TinyMCE icons are used as a fallback for icons missing from the custom icon pack.
+An icon pack only requires the custom icons to be included; the default {{site.productname}} icons are used as a fallback for icons missing from the custom icon pack.
 
-> Don't forget to explore our ready-to-use Premium Icon Packs such as 'Material' icons, and a smaller version of our default icons at [Tiny Skins and Icon Packs](https://apps.tiny.cloud/products/skins-and-icon-packs/).
+> Don't forget to explore our ready-to-use Premium Icon Packs such as 'Material' icons, and a smaller version of our default icons at [Tiny Skins and Icon Packs]({{site.productpages}}/skins-and-icon-packs/).
 
 ## Creating a TinyMCE icon pack
 
@@ -34,9 +34,9 @@ To create a custom icon pack:
 
 ### Download and setup the icon pack template
 
-To use the TinyMCE icon pack template project:
+To use the {{site.productname}} icon pack template project:
 
-1. Download the [TinyMCE Oxide Icon Pack Template](https://github.com/tinymce/oxide-icon-pack-template) by either:
+1. Download the [{{site.productname}} Oxide Icon Pack Template](https://github.com/tinymce/oxide-icon-pack-template) by either:
 
     - Downloading the `.zip` file from the [Oxide Icon Pack Template GitHub page](https://github.com/tinymce/oxide-icon-pack-template) and extract the contents.
     - From a terminal or command prompt, use git to clone the GitHub repository, such as:
@@ -57,11 +57,11 @@ $ npm install
     * Hyphens ( `-` ).
     * Underscores ( `_` ).
 
-The icon pack name will be used with the [icons]({{site.baseurl}}/configure/editor-appearance/#icons) option to apply the icons in TinyMCE.
+The icon pack name will be used with the [icons]({{site.baseurl}}/configure/editor-appearance/#icons) option to apply the icons in {{site.productname}}.
 
 ### Add the SVG files
 
-Each SVG files placed in `/src/svg` will be converted to an icon. The file names of the SVG files are used to set the icon identifier used by TinyMCE.
+Each SVG files placed in `/src/svg` will be converted to an icon. The file names of the SVG files are used to set the icon identifier used by {{site.productname}}.
 
 For example: `bold.svg` will have the identifier `bold`. Such as:
 
@@ -83,7 +83,7 @@ tinymce.init({
 
 For a list of the icon identifiers, see: [Editor icon identifiers]({{site.baseurl}}/advanced/editor-icon-identifiers/).
 
-TinyMCE does not resize the SVGs provided, relying on the size defined in the SVG. This allows icons of different sizes to be used in the editor. The Toolbar button sizes are independent of the icon sizes. To change button sizes, a [custom skin]({{site.baseurl}}/advanced/creating-a-skin/) is required.
+{{site.productname}} does not resize the SVGs provided, relying on the size defined in the SVG. This allows icons of different sizes to be used in the editor. The Toolbar button sizes are independent of the icon sizes. To change button sizes, a [custom skin]({{site.baseurl}}/advanced/creating-a-skin/) is required.
 
 > **Note**: Input SVGs must be shapes, not strokes. SVG files containing strokes will not render correctly. If the input files contain strokes, use a graphics program to convert the strokes into shapes.
 
@@ -117,8 +117,8 @@ All user defined options, including SVGO options, will merge with the default op
 ## Deploying an icon pack
 An icon pack can be served either:
 
-  * [With TinyMCE](#deploytheiconpackwithtinymce)
-  * [Separate from TinyMCE](#deploytheiconpackandtinymceseparately)
+  * [With {{site.productname}}](#deploytheiconpackwithtinymce)
+  * [Separate from {{site.productname}}](#deploytheiconpackandtinymceseparately)
 
 ### Deploy the icon pack with TinyMCE
 {% assign customIconPack = true %}

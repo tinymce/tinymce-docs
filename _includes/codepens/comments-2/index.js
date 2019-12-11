@@ -1,6 +1,6 @@
 tinymce.init({
   selector: '#tiny-ui .editor',
-  toolbar: 'bold italic underline | addcomment',
+  toolbar: 'bold italic underline | addcomment showcomments',
   menubar: 'file edit view insert format tools tc',
   menu: {
     tc: {

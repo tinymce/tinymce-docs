@@ -10,6 +10,14 @@ class: changelog
 
 {% capture changelog %}
 
+## Version 5.1.4 December 11, 2019
+* Fixed dialog contents disappearing when clicking a checkbox for right-to-left languages.
+* Fixed the `legacyoutput` plugin registering legacy formats after editor initialization, causing legacy content to be stripped on the initial load.
+* Fixed search and replace not cycling through results when searching using special characters.
+* Fixed the `visualchars` plugin converting HTML-like text to DOM elements in certain cases.
+* Fixed an issue with the `paste` plugin not sanitizing content in some cases.
+* Fixed HTML comments incorrectly being parsed in certain cases.
+
 ## Version 5.1.3 December 4, 2019
 * Fixed sticky toolbar not undocking when fullscreen mode is activated.
 * Fixed the "Current Window" target not applying when updating links using the link dialog.

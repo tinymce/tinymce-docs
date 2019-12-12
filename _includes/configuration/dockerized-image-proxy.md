@@ -1,45 +1,39 @@
-### Deploy the TinyMCE image proxy server-side component using Docker
+### Deploy the TinyMCE image proxy server-side component using Docker (self-hosted enterprise bundle)
+
 The TinyMCE image proxy server-side component can be deployed using Docker or an container orchestration application such as Kubernetes. {{site.companyname}} provides a pre-configured package for creating a Image Proxy Docker image.
 
-> **Warning**: Do not push this docker image to a publicly accessible  container registry. Doing so will constitute as a breach of the [{{site.companyname}} Self-Hosted Software License Agreement](https://about.tiny.cloud/legal/tiny-self-hosted-software-license-agreement-enterprise/).
+> **Warning**: Do not push this docker image to a publicly accessible container registry. Doing so will constitute a breach of the [{{site.companyname}} Self-Hosted Software License Agreement](https://about.tiny.cloud/legal/tiny-self-hosted-software-license-agreement-enterprise/).
 
-#### Prerequisites
-* The [Docker Engine](https://docs.docker.com/engine/docker-overview/) is installed and running.
-* The user has Administrative or Root user access.
-* The user is either:
-  * Using a Linux, Unix or macOS operating system.
-  * Using Windows and has access to unix command line tools using [Git for Windows](https://gitforwindows.org/), [Cygwin](https://www.cygwin.com/), or the [Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10).
+#### Procedure
 
 The following procedure covers downloading, configuring, building and testing the {{site.productname}} Image Proxy Docker image.
 
-1. Download `<filename>.zip` from `<location>` by `<process>`.
-2. Open a command line and navigate to the directory containing `<filename>.zip`. Windows Users should open a Bash command line as the Administrator User.
-3. Extract the contents of `<filename>.zip`, such as:
+> **Note**: This procedure assumes that the **{{ site.productname }} Enterprise Bundle** has been extracted as described in [Download and extract the TinyMCE Enterprise Bundle](#downloadandextractthetinymceenterprisebundle).
+
+
+5. Extract the contents of `ephox-hyperlinking-docker-starter-kit.zip`, such as:
 
     ```sh
-    unzip <filename>.zip
+    unzip ephox-hyperlinking-docker-starter-kit.zip -d hyperlinking-service-dockerfile
     ```
-    The structure of the extracted files will be:
-    ```sh
-    <filename>/
-    ├── config/
-    │   └── ephox-image-proxy-docker-env.conf
-    ├── docker-entrypoint.sh
-    ├── Dockerfile
-    ├── ephox-image-proxy.war
-    └── generate-jetty-start.sh
-    ```
-4. Navigate into the extracted folder.
+
+6. Copy `ephox-hyperlinking.war` into the directory containing the extracted files, such as:
 
     ```sh
-    cd <filename>
+    cp ephox-hyperlinking.war hyperlinking-service-dockerfile/
+    ```
+
+4. Navigate into the `hyperlinking-service-dockerfile` folder.
+
+    ```sh
+    cd hyperlinking-service-dockerfile
     ```
 5. Set the permissions on the extracted files to executable.
 
     ```sh
     chmod +x *.sh
     ```
-6. _Optional_: Edit the `http` configuration settings in `config/ephox-image-proxy-docker-env.conf`. The configurable settings are in the `http` section of the file. For example:
+6. _Optional_: Edit the `http` configuration settings in `ephox-image-proxy-docker-env.conf`. The configurable settings are in the `http` section of the file. For example:
 
     ```
     http {
@@ -55,9 +49,9 @@ The following procedure covers downloading, configuring, building and testing th
     }
     ```
     For information on the `http` configuration setting, see: [Configure server-side components - `http`]({{site.baseurl}}/enterprise/server/configure/#httpoptional).
-1. _Optional_: Configure the service to use a HTTP proxy by updating `config/ephox-image-proxy-docker-env.conf`. See:
+1. _Optional_: Configure the service to use a HTTP proxy by updating `ephox-image-proxy-docker-env.conf`. See:
 [Configure server-side components]({{site.baseurl}}/enterprise/server/configure/).
-7. Create an `origins.env` file and specify the Hypertext Transfer Protocol (HTTP) and domain name of sites hosting the TinyMCE editor (`allowed-origins`). Up to 99 origins can be added without editing `config/ephox-image-proxy-docker-env.conf`.
+7. Create an `origins.env` file and specify the Hypertext Transfer Protocol (HTTP) and domain name of sites hosting the TinyMCE editor (`allowed-origins`). Up to 99 origins can be added without editing `ephox-image-proxy-docker-env.conf`.
 
     For example:
 

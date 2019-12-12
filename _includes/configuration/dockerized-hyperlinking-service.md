@@ -1,29 +1,61 @@
-### Deploy the TinyMCE hyperlinking server-side component using Docker
+{% if shbundledockerfiles == false %}
+### Deploy the TinyMCE hyperlinking server-side component using Docker (individually licensed)
+{% elsif shbundledockerfiles == true %}
+### Deploy the TinyMCE hyperlinking server-side component using Docker (self-hosted enterprise bundle)
+{% endif %}
 The TinyMCE hyperlinking server-side component can be deployed using Docker or an container orchestration application such as Kubernetes. {{site.companyname}} provides a pre-configured package for creating a Hyperlinking Docker image.
 
-> **Warning**: Do not push this docker image to a publicly accessible  container registry. Doing so will constitute as a breach of the [{{site.companyname}} Self-Hosted Software License Agreement](https://about.tiny.cloud/legal/tiny-self-hosted-software-license-agreement-enterprise/).
+> **Warning**: Do not push this docker image to a publicly accessible container registry. Doing so will constitute a breach of the [{{site.companyname}} Self-Hosted Software License Agreement](https://about.tiny.cloud/legal/tiny-self-hosted-software-license-agreement-enterprise/).
+
+{% if shbundledockerfiles == false %}
 
 #### Prerequisites
+
 * The [Docker Engine](https://docs.docker.com/engine/docker-overview/) is installed and running.
 * The user has Administrative or Root user access.
 * The user is either:
   * Using a Linux, Unix or macOS operating system.
   * Using Windows and has access to unix command line tools using [Git for Windows](https://gitforwindows.org/), [Cygwin](https://www.cygwin.com/), or the [Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10).
+{% endif %}
+
+#### Procedure
 
 The following procedure covers downloading, configuring, building and testing the {{site.productname}} Hyperlinking Docker image.
+{% if shbundledockerfiles == true %}
+> **Note**: This procedure assumes that the **{{ site.productname }} Enterprise Bundle** has been extracted as described in [Download and extract the TinyMCE Enterprise Bundle](#downloadandextractthetinymceenterprisebundle).
 
-1. Download `<filename>.zip` from `<location>` by `<process>`.
-2. Open a command line and navigate to the directory containing `<filename>.zip`. Windows Users should open a Bash command line as the Administrator User.
-3. Extract the contents of `<filename>.zip`, such as:
+5. Extract the contents of `ephox-hyperlinking-docker-starter-kit.zip`, such as:
 
     ```sh
-    unzip <filename>.zip
+    unzip ephox-hyperlinking-docker-starter-kit.zip -d hyperlinking-service-dockerfile
+    ```
+
+6. Copy `ephox-hyperlinking.war` into the directory containing the extracted files, such as:
+
+    ```sh
+    cp ephox-hyperlinking.war hyperlinking-service-dockerfile/
+    ```
+
+4. Navigate into the `hyperlinking-service-dockerfile` folder.
+
+    ```sh
+    cd hyperlinking-service-dockerfile
+    ```
+{% elsif shbundledockerfiles == false %}
+1. Go to [{{ site.accountpage }}]({{ site.accountpageurl }}) > My Downloads
+and download either:
+* _Tiny Enhanced Media Embed_, or
+* _Tiny Link Checker_.
+2. Open a command line and navigate to the directory containing `ephox-spelling_<version>.zip`. Windows Users should open a Bash command line as the Administrator User.
+3. Extract the contents of `ephox-spelling_<version>.zip`, such as:
+
+    ```sh
+    unzip ephox-spelling_<version>.zip -d tinymce-hyperlinking-service
     ```
     The structure of the extracted files will be:
     ```sh
-    tinymce/
-    ├── config/
-    │   └── ephox-hyperlinking-docker-env.conf
+    tinymce-hyperlinking-service/
+    ├── ephox-hyperlinking-docker-env.conf
     ├── docker-entrypoint.sh
     ├── Dockerfile
     ├── ephox-hyperlinking.war
@@ -32,14 +64,15 @@ The following procedure covers downloading, configuring, building and testing th
 4. Navigate into the extracted folder.
 
     ```sh
-    cd <filename>
+    cd tinymce-hyperlinking-service
     ```
+{% endif %}
 5. Set the permissions on the extracted files to executable.
 
     ```sh
     chmod +x *.sh
     ```
-6. _Optional_: Edit the `http` configuration settings in `config/ephox-hyperlinking-docker-env.conf`. The configurable settings are in the `http` section of the file. For example:
+6. _Optional_: Edit the `http` configuration settings in `ephox-hyperlinking-docker-env.conf`. The configurable settings are in the `http` section of the file. For example:
 
     ```
     http {
@@ -57,9 +90,9 @@ The following procedure covers downloading, configuring, building and testing th
     For information on the `http` configuration setting, see: [Configure server-side components - `http`]({{site.baseurl}}/enterprise/server/configure/#httpoptional).
 1. _Optional_: Update the link-checking cache configuration, as described in [Link Checker self-hosted quick setup]({{site.baseurl}}/enterprise/check-links/#linkcheckerself-hostedquicksetup).
 1. _Optional_: Configure the Enhanced Media Embed Service, as described in [Configure Enhanced Media Embed Server]({{site.baseurl}}/enterprise/embed-media/mediaembed-server-config/).
-1. _Optional_: Configure the service to use a HTTP proxy by updating `config/ephox-hyperlinking-docker-env.conf`. See:
+1. _Optional_: Configure the service to use a HTTP proxy by updating `ephox-hyperlinking-docker-env.conf`. See:
 [Configure server-side components - proxy]({{site.baseurl}}/enterprise/server/configure/#proxyoptional).
-1. Create an `origins.env` file and specify the Hypertext Transfer Protocol (HTTP) and domain name of sites hosting the TinyMCE editor (`allowed-origins`). Up to 99 origins can be added without editing `config/ephox-hyperlinking-docker-env.conf`.
+1. Create an `origins.env` file and specify the Hypertext Transfer Protocol (HTTP) and domain name of sites hosting the TinyMCE editor (`allowed-origins`). Up to 99 origins can be added without editing `ephox-hyperlinking-docker-env.conf`.
 
     For example:
 

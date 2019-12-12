@@ -1,29 +1,60 @@
-### Deploy the TinyMCE spelling service server-side component using Docker
+{% if shbundledockerfiles == false %}
+### Deploy the TinyMCE spelling service server-side component using Docker (individually licensed)
+{% elsif shbundledockerfiles == true %}
+### Deploy the TinyMCE spelling service server-side component using Docker (self-hosted enterprise bundle)
+{% endif %}
 The TinyMCE spelling service server-side component can be deployed using Docker or an container orchestration application such as Kubernetes. {{site.companyname}} provides a pre-configured package for creating a Spelling Service Docker image.
 
-> **Warning**: Do not push this docker image to a publicly accessible  container registry. Doing so will constitute as a breach of the [{{site.companyname}} Self-Hosted Software License Agreement](https://about.tiny.cloud/legal/tiny-self-hosted-software-license-agreement-enterprise/).
+> **Warning**: Do not push this docker image to a publicly accessible container registry. Doing so will constitute a breach of the [{{site.companyname}} Self-Hosted Software License Agreement](https://about.tiny.cloud/legal/tiny-self-hosted-software-license-agreement-enterprise/).
+
+{% if shbundledockerfiles == false %}
 
 #### Prerequisites
+
 * The [Docker Engine](https://docs.docker.com/engine/docker-overview/) is installed and running.
 * The user has Administrative or Root user access.
 * The user is either:
   * Using a Linux, Unix or macOS operating system.
   * Using Windows and has access to unix command line tools using [Git for Windows](https://gitforwindows.org/), [Cygwin](https://www.cygwin.com/), or the [Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10).
 
-The following procedure covers downloading, configuring, building and testing the {{site.productname}} Spelling Service Docker image.
+{% endif %}
 
-1. Download `<filename>.zip` from `<location>` by `<process>`.
-2. Open a command line and navigate to the directory containing `<filename>.zip`. Windows Users should open a Bash command line as the Administrator User.
-3. Extract the contents of `<filename>.zip`, such as:
+#### Procedure
+
+The following procedure covers downloading, configuring, building and testing the {{site.productname}} Spelling Service Docker image.
+{% if shbundledockerfiles == true %}
+> **Note**: This procedure assumes that the **{{ site.productname }} Enterprise Bundle** has been extracted as described in [Download and extract the TinyMCE Enterprise Bundle](#downloadandextractthetinymceenterprisebundle).
+
+
+5. Extract the contents of `ephox-spelling-docker-starter-kit.zip`, such as:
 
     ```sh
-    unzip <filename>.zip
+    unzip ephox-spelling-docker-starter-kit.zip -d spelling-service-dockerfile
+    ```
+
+6. Copy `ephox-spelling.war` into the directory containing the extracted files, such as:
+
+    ```sh
+    cp ephox-spelling.war spelling-service-dockerfile/
+    ```
+
+4. Navigate into the `spelling-service-dockerfile` folder.
+
+    ```sh
+    cd spelling-service-dockerfile
+    ```
+{% elsif shbundledockerfiles == false %}
+1. Go to **[{{ site.accountpage }}]({{ site.accountpageurl }}) > My Downloads** and download _Tiny Spell Checker Pro_.
+2. Open a command line and navigate to the directory containing `ephox-hyperlinking_<version>.zip`. Windows Users should open a Bash command line as the Administrator User.
+3. Extract the contents of `ephox-hyperlinking_<version>.zip`, such as:
+
+    ```sh
+    unzip ephox-hyperlinking_<version>.zip -d tinymce-spelling-service
     ```
     The structure of the extracted files will be:
     ```sh
-    tinymce/
-    ├── config/
-    │   └── ephox-spelling-docker-env.conf
+    tinymce-spelling-service/
+    ├── ephox-spelling-docker-env.conf
     ├── docker-entrypoint.sh
     ├── Dockerfile
     ├── ephox-spelling.war
@@ -32,14 +63,16 @@ The following procedure covers downloading, configuring, building and testing th
 4. Navigate into the extracted folder.
 
     ```sh
-    cd <filename>
+    cd tinymce-spelling-service
     ```
+{% endif %}
+
 5. Set the permissions on the extracted files to executable.
 
     ```sh
     chmod +x *.sh
     ```
-6. _Optional_: Edit the `http` configuration settings in `config/ephox-spelling-docker-env.conf`. The configurable settings are in the `http` section of the file. For example:
+6. _Optional_: Edit the `http` configuration settings in `ephox-spelling-docker-env.conf`. The configurable settings are in the `http` section of the file. For example:
 
     ```
     http {
@@ -55,10 +88,10 @@ The following procedure covers downloading, configuring, building and testing th
     }
     ```
     For information on the `http` configuration setting, see: [Configure server-side components - `http`]({{site.baseurl}}/enterprise/server/configure/#httpoptional).
-1. _Optional_: Configure the service to use a HTTP proxy by updating `config/ephox-spelling-docker-env.conf`. See:
+1. _Optional_: Configure the service to use a HTTP proxy by updating `ephox-spelling-docker-env.conf`. See:
 [Configure server-side components]({{site.baseurl}}/enterprise/server/configure/).
 1. _Optional_: Add a custom dictionary, as described in [Adding custom dictionaries]({{site.baseurl}}/enterprise/check-spelling/custom/).
-7. Create an `origins.env` file and specify the Hypertext Transfer Protocol (HTTP) and domain name of sites hosting the TinyMCE editor (`allowed-origins`). Up to 99 origins can be added without editing `config/ephox-spelling-docker-env.conf`.
+7. Create an `origins.env` file and specify the Hypertext Transfer Protocol (HTTP) and domain name of sites hosting the TinyMCE editor (`allowed-origins`). Up to 99 origins can be added without editing `ephox-spelling-docker-env.conf`.
 
     For example:
 

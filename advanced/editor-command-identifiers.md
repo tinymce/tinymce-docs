@@ -9,24 +9,6 @@ keywords: editorcommands editorcommand execcommand Bold Italic Underline Striket
 
 The following tables show the existing editor commands. These commands are provided by `tinymce` and not by the browser's internal commands. These commands can be executed using the [execCommand]({{ site.baseurl }}/api/tinymce/tinymce.editorcommands/#execcommand) function.
 
-## Editor Management Commands
-
-The following commands are used to manage editor instances.
-
-For example:
-
-```js
-tinymce.execCommand('mceAddEditor', false, '<editor_id>');
-tinymce.execCommand('mceRemoveEditor', false, '<editor_id>');
-tinymce.execCommand('mceToggleEditor', false, '<editor_id>');
-```
-
-| Command         | Description                                                                                                                                                                                                                                                             |
-| --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| mceAddEditor    | Converts the specified HTML or DOM element into an editor instance with the specified ID.                                                                                                                                                                               |
-| mceRemoveEditor | Removes an editor instance with the specified ID.                                                                                                                                                                                                                       |
-| mceToggleEditor | Runs mceAddEditor if an editor is not detected for the specified ID, otherwise it runs either [hide]({{ site.baseurl }}/api/tinymce/tinymce.editor/#hide) if the editor is visible or [show]({{ site.baseurl }}/api/tinymce/tinymce.editor/#show) if it is not visible. |
-
 ## Listing core and plugin editor commands
 
 To retrieve a list of avaliable commands from the active editor, run the following command from the browser console:
@@ -403,3 +385,21 @@ The following command requires the [Visual Blocks (`visualblocks`)]({{ site.base
 The following command requires the [Visual Characters (`visualchars`)]({{ site.baseurl }}/plugins/visualchars/) plugin.
 
 {% include commands/visualchars-cmds.md %}
+
+## Editor Management Commands
+
+The following commands are used to manage editor instances.
+
+For example:
+
+```js
+tinymce.execCommand('mceAddEditor', false, '<editor_id>');
+tinymce.execCommand('mceRemoveEditor', false, '<editor_id>');
+tinymce.execCommand('mceToggleEditor', false, '<editor_id>');
+```
+
+| Command         | Description                                                                                                                                                                                                                                                             |
+| --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| mceAddEditor    | Converts the specified HTML or DOM element into an editor instance with the specified ID.                                                                                                                                                                               |
+| mceRemoveEditor | Removes an editor instance with the specified ID.                                                                                                                                                                                                                       |
+| mceToggleEditor | Runs mceAddEditor if an editor is not detected for the specified ID, otherwise it runs either [hide]({{ site.baseurl }}/api/tinymce/tinymce.editor/#hide) if the editor is visible or [show]({{ site.baseurl }}/api/tinymce/tinymce.editor/#show) if it is not visible. |

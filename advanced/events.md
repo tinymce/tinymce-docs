@@ -328,7 +328,7 @@ The following event is provided by the [Word Count plugin]({{ site.baseurl }}/pl
 
 ## Editor Manager events
 
-The following events are used for editor management. These events are used differently, as shown in [Examples: Handling Editor Manager events](#exampleshandlingeditormanagerevents).
+The following events are used for editor management. These events are handled using `tinymce.on`, rather than `editor.on` or `editor.fire`, as shown in [Examples: Handling Editor Manager events](#exampleshandlingeditormanagerevents).
 
 | Name         | Data                | Description                                                                                                                                            |
 | ------------ | ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |

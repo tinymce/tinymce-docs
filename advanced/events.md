@@ -9,34 +9,6 @@ keywords: Click DblClick MouseDown MouseUp MouseMove MouseOver MouseOut MouseEnt
 
 {{ site.productname }} supports some browser-native events, and provides additional events for working with the editor and plugins.
 
-## Editor Manager events
-
-The following events are used for editor management.
-
-| Name         | Data                | Description                                                                                                                                            |
-| ------------ | ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| AddEditor    | `{ editor: Editor}` | Fired when a new editor is created.                                                                                                                    |
-| RemoveEditor | `{ editor: Editor}` | Fired when an editor is removed/destroyed.                                                                                                             |
-| BeforeUnload | N/A                 | Fired before the window is closed (same as native [`beforeunload` event](https://developer.mozilla.org/en-US/docs/Web/API/Window/beforeunload_event)). |
-
-### Examples: Handling Editor Manager events
-
-**AddEditor**
-
-```js
-tinymce.on('AddEditor', function(e) {
-  console.log('Added editor with id: ' + e.editor.id);
-});
-```
-
-**RemoveEditor**
-
-```js
-tinymce.on('RemoveEditor', function(e) {
-  console.log('Removed editor with id: ' + e.editor.id);
-});
-```
-
 ## Handling Editor events
 
 The following examples illustrate how to use supported native events, editor core events, and plugin events with {{ site.productname }}.
@@ -352,3 +324,32 @@ The following event is provided by the [Word Count plugin]({{ site.baseurl }}/pl
 | Name            | Data                                                                                    | Description                                  |
 | --------------- | --------------------------------------------------------------------------------------- | -------------------------------------------- |
 | WordCountUpdate | `{ wordCount: { words: number, characters: number, charactersWithoutSpaces: number } }` | Fired when the editor word count is updated. |
+
+
+## Editor Manager events
+
+The following events are used for editor management. These events are used differently, as shown in [Examples: Handling Editor Manager events](#exampleshandlingeditormanagerevents).
+
+| Name         | Data                | Description                                                                                                                                            |
+| ------------ | ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| AddEditor    | `{ editor: Editor}` | Fired when a new editor is created.                                                                                                                    |
+| RemoveEditor | `{ editor: Editor}` | Fired when an editor is removed/destroyed.                                                                                                             |
+| BeforeUnload | N/A                 | Fired before the browser window is closed (same as native [`beforeunload` event](https://developer.mozilla.org/en-US/docs/Web/API/Window/beforeunload_event)). |
+
+### Examples: Handling Editor Manager events
+
+**AddEditor**
+
+```js
+tinymce.on('AddEditor', function(e) {
+  console.log('Added editor with id: ' + e.editor.id);
+});
+```
+
+**RemoveEditor**
+
+```js
+tinymce.on('RemoveEditor', function(e) {
+  console.log('Removed editor with id: ' + e.editor.id);
+});
+```

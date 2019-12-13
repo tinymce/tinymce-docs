@@ -10,6 +10,11 @@ The following procedure covers downloading, configuring, building and testing th
 
 > **Note**: This procedure assumes that the **{{ site.productname }} Enterprise Bundle** has been extracted as described in [Download and extract the TinyMCE Enterprise Bundle](#downloadandextractthetinymceenterprisebundle).
 
+4. Navigate into the `tinymce-services` folder.
+
+    ```sh
+    cd tinymce-enterprise/tinymce-services/
+    ```
 
 5. Extract the contents of `ephox-hyperlinking-docker-starter-kit.zip`, such as:
 

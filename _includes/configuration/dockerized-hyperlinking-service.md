@@ -24,6 +24,12 @@ The following procedure covers downloading, configuring, building and testing th
 {% if shbundledockerfiles == true %}
 > **Note**: This procedure assumes that the **{{ site.productname }} Enterprise Bundle** has been extracted as described in [Download and extract the TinyMCE Enterprise Bundle](#downloadandextractthetinymceenterprisebundle).
 
+4. Navigate into the `tinymce-services` folder.
+
+    ```sh
+    cd tinymce-enterprise/tinymce-services/
+    ```
+
 5. Extract the contents of `ephox-hyperlinking-docker-starter-kit.zip`, such as:
 
     ```sh
@@ -46,11 +52,11 @@ The following procedure covers downloading, configuring, building and testing th
 and download either:
 * _Tiny Enhanced Media Embed_, or
 * _Tiny Link Checker_.
-2. Open a command line and navigate to the directory containing `ephox-spelling_<version>.zip`. Windows Users should open a Bash command line as the Administrator User.
-3. Extract the contents of `ephox-spelling_<version>.zip`, such as:
+2. Open a command line and navigate to the directory containing `ephox-hyperlinking_<version>.zip`. Windows Users should open a Bash command line as the Administrator User.
+3. Extract the contents of `ephox-hyperlinking_<version>.zip`, such as:
 
     ```sh
-    unzip ephox-spelling_<version>.zip -d tinymce-hyperlinking-service
+    unzip ephox-hyperlinking_<version>.zip -d tinymce-hyperlinking-service
     ```
     The structure of the extracted files will be:
     ```sh

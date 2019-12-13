@@ -32,6 +32,7 @@ This is a list of available keyboard shortcuts within the editor body.
 | Focus to toolbar | Alt+F10 | Alt+F10 | core |
 | Focus to element path | Alt+F11 | Alt+F11 | core |
 | Focus to contextual toolbar | Ctrl+F9 | Ctrl+F9 | core |
+| Move focus from the menu bar to the toolbar | Tab | Tab | core |
 | Insert link | Ctrl+K | Command+K | [link]({{ site.baseurl }}/plugins/link/) |
 | Toggle Fullscreen | Ctrl+Shift+F | Ctrl+Shift+F | [fullscreen]({{ site.baseurl }}/plugins/fullscreen/) |
 | Save | Ctrl+S | Command+S | [save]({{ site.baseurl }}/plugins/save/) |

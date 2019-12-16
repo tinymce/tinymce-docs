@@ -3,21 +3,22 @@ layout: default
 title: Basic setup
 title_nav: Basic setup
 description_short: The three most important configuration settings, with examples.
-description: TinyMCE provides a wide range of configuration options that enable you to integrate it tightly with your application.
+description: TinyMCE provides a range of configuration options that allow you to integrate it into your application.
 keywords: selector plugin toolbar configuration configure
 ---
 
-This introduction to {{site.productname}} configuration section details important options used in traditional form-based layouts, useful information for creating streamlined user experiences and examples of using {{site.productname}} as an inline editor.
+This introduction to {{site.productname}} details the options used in traditional form-based layouts, useful information for creating streamlined user experiences, and examples of using {{site.productname}} as an inline editor.
 
-There are three configuration options that require careful consideration once the {{site.productname}} script has been added to your page:
+The four most common configuration options for {{site.productname}} are:
 
-1. [Selector configuration](#selectorconfiguration)
-2. [Plugin configuration](#pluginconfiguration)
-3. [Toolbar & menu configuration](#toolbarmenuconfiguration)
+1. [_(Required)_ The Selector configuration](#selectorconfiguration)
+2. [The Plugin configuration](#pluginconfiguration)
+3. [The Toolbar configuration](#toolbarconfiguration)
+4. [The Menu and Menu Bar configuration](#menuandmenubarconfiguration)
 
 ## A note about code snippet examples
 
-Code snippets are provided as example implementations for each topic in this reference section.
+Code snippets are provided as example implementations throughout the {{ site.productname }} documentation.
 
 Example code snippet:
 
@@ -30,19 +31,17 @@ tinymce.init({
 });
 ```
 
-Snippets regularly include a `selector` with the value `'textarea'`. Adapt the value of the working code block according to the HTML.
+Snippets include the `selector` option, which is described below. Change the value of the working code block according to the HTML.
 
-Insert the snippet into your HTML document and replace everything between the `<script>` tags containing the `tinymce` object (`tinymce.init({})`). Visual changes such as adding a toolbar button or menu item change the editor immediately.
+Insert the snippet into a HTML document between the `<script>` tags and update the selector as described below.
 
 ## Selector configuration
 
-Selector configuration is an important configuration option for {{site.productname}} integration. Selector configuration uses CSS `selector` syntax to determine which elements on the page are editable through {{site.productname}}.
+Selector configuration is required for {{site.productname}} integration. Selector configuration uses [CSS `selector` syntax](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors) to determine which elements on the page are editable through {{site.productname}}.
 
-> Important: This is where {{site.productname}} editable areas are specified.
+{{site.productname}} replaces the selected element with an `iframe` (the editable content area) and the UI elements (such as toolbar, menu bar, and status bar).
 
-{{site.productname}} replaces the selected element with an `iframe` and performs its operations within that `iframe` while in regular editing mode.
-
-The following example replaces all `textarea` elements on the page:
+The following example replaces all `textarea` elements on the page with {{site.productname}} instances:
 
 ```js
 tinymce.init({
@@ -52,7 +51,7 @@ tinymce.init({
 
 {{site.productname}} can also match an `id` attribute.
 
-The following example replaces a `textarea` element with the `id` `'default'` on the page:
+The following example replaces a `textarea` element with the `id="default"` on the page:
 
 ```js
 tinymce.init({
@@ -63,7 +62,7 @@ tinymce.init({
 Providing a {{site.productname}} editor with the default configuration, such as:
 {% include codepen.html id="default" %}
 
-This selector can be used on any block element while using this option in {{site.productname}}'s [inline editing mode](../use-tinymce-inline/). Inline editing mode edits the content in place instead of replacing the element with an `iframe`.
+The selector can target any block element when the editor is used in [inline editing mode](../use-tinymce-inline/). Inline mode edits the content in place, instead of replacing the element with an `iframe`.
 
 The following example uses the `selector` in inline editing mode on a `div` element with `id` `'editable'`:
 
@@ -74,101 +73,63 @@ tinymce.init({
 });
 ```
 
-> Note: For more information on the differences between regular and inline editing modes, see the [Setup inline editing mode](../use-tinymce-inline/) page.
-
+For information on the differences between regular and inline editing modes, see: [Setup inline editing mode](../use-tinymce-inline/).
 
 ## Plugin configuration
 
-The `plugins` configuration option enables the plugins functionality within the editor. {{site.productname}} plugins provide useful features to extend and enhance the {{site.productname}} experience.
+The functionality of {{site.productname}} is extended by using plugins, which are enabled using the `plugins` option.
 
-> Important: Now is the time to consider which plugins to include in {{site.productname}}
-
-Enabling plugin functionality is simple. Simply add the `plugins` key to `tinymce.init()` and provide a comma, space-separated string, or an array of strings as values.
-
-The following example enables plugins.
+The following example enables the lists (`lists`), Advanced Lists (`advlist`), Link (`link`), and Image (`image`) plugins.
 
 ```js
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  plugins : 'advlist autolink link image lists charmap print preview'
+  plugins : 'advlist link image lists'
 });
 ```
 
-Documentation about configuring plugins are in the relevant sections of the documentation.  The full list of plugins, their options, and control associations is [available here]({{ site.baseurl }}/plugins/).
+For a full list of plugins, their options, and control associations, see: [Add plugins to TinyMCE]({{ site.baseurl }}/plugins/).
 
+## Toolbar configuration
 
-## Toolbar & menu configuration
+{{site.productname}} provides a default set of toolbar controls, which can be overridden using the `toolbar` option.
 
-{{site.productname}} provides a default set of toolbar controls, such as bold, italic, and text alignment buttons. {{site.productname}} provides an easy way to change this toolbar configuration to suit individual deployment scenarios.
-
-#### Default toolbar controls
+### Default toolbar controls
 
 The {{site.productname}} default toolbar contains the following buttons:
 
-newdocument | bold | italic | underline | strikethrough
-alignleft | aligncenter | alignright | alignjustify | styleselect
-formatselect | fontselect | fontsizeselect | cut | copy
-paste | bullist | numlist | outdent | indent
-blockquote | undo | redo | removeformat | subscript
-superscript | | | |
-
-![{{site.productname}} Default Toolbar & Menubar State]({{ site.baseurl }}/images/tinymce-default-state.png)
-
-*Default {{site.productname}} toolbar & menubar state*
-
-The `toolbar` option displays, orders, and groups the toolbar buttons.
-
-Use a space-separated list to specify the buttons that appear in {{site.productname}}'s toolbar. Use `"|"` pipe characters between the groups of buttons to create groups within this list.
-
-##### Example
-
 ```js
 tinymce.init({
   selector: 'textarea',  // change this value according to the HTML
-  toolbar: 'undo redo | styleselect | bold italic | link image',
+  toolbar: 'undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | outdent indent',
 });
 ```
 
-Set the boolean value to `false` to disable the toolbar entirely. This example disables the toolbar.
-
-```js
+<script>
 tinymce.init({
-  selector: 'textarea',  // change this value according to the HTML
-  toolbar: false
+  selector: 'textarea.default',
 });
-```
+</script>
+<textarea class="default">Hello, World!</textarea><br/>
 
-The example below specifies multiple toolbars by providing an `array` of space-separated strings.
+The `toolbar` option defines the presence, order, and grouping of toolbar buttons.
 
-##### Example
+Use a space-separated list to specify the toolbar buttons for {{site.productname}}. Create toolbar groups by using the "`|`" pipe character between buttons.
 
-```js
-tinymce.init({
-  selector: 'textarea',  // change this value according to the HTML
-  toolbar: [
-    'undo redo | styleselect | bold italic | link image',
-    'alignleft aligncenter alignright'
-  ]
-});
-```
-> Note: Adding multiple `toolbar` options suffixed with a number i.e. "toolbar1", "toolbar2", "toolbar3" is allowed.
+#### Additional information
 
+* For additional toolbar options, including disabling the toolbar and adding multiple toolbars, see: [User interface options - toolbar]({{site.baseurl}}/configure/editor-appearance/#toolbar).
+* For a list of all available toolbar items, see: [Editor control identifiers - Toolbar controls](https://www.tiny.cloud/docs/advanced/editor-control-identifiers/#toolbarcontrols).
 
-### A quick look at the menu and menubar controls
+## Menu and Menu bar configuration
 
-Just as there is a `toolbar` option, there is also a `menu` option. There  are two menu related options: `menu` and `menubar`. Let's take a quick look at the default menu items. Some of these settings are used in the examples throughout this guide and all of them within the plugins and customization documentation.
+There are two menu options: `menubar` and `menu`.
+`menubar` is used to define the presence and order of _menus_, such as **File**, **Edit**, and **View**.
+`menu` is used to define the presence and order of _menu items_, such as **New Document**, **Select all**, and **Source code**.
 
-#### Default menu controls
+### Menu and Menubar Examples
 
-```js
-newdocument, undo, redo, visualaid, cut, copy, paste, selectall, bold, italic, underline, strikethrough, subscript, superscript, removeformat, formats
-```
-
-`menubar` affects items placed on the menu bar itself and `menu` affects individual items appearing on a menu's drop-down. `menu` also provides granular control of the menus. Customized titles can be created for menu items using `menu`.
-
-The menu bar in the following snippet includes only the menu items `File`, `Edit`, and `View`.
-
-> Note: The example above also loads the default items included in each respective menu. For example, `Edit` loads Undo, Redo, Cut, Copy, Paste, and Select all.
+To display the _File_, _Edit_, and _View_ menus:
 
 ```js
 tinymce.init({
@@ -177,68 +138,83 @@ tinymce.init({
 });
 ```
 
-The following example creates an `Edit` menu that includes only Cut, Copy, and Paste items.
+{% include codepen.html id="menubar" %}
+
+To create an `Edit` menu that only contains the _Undo_, _Redo_, and _Select all_ items.
 
 ```js
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   menu: {
-    view: {title: 'Edit', items: 'cut, copy, paste'}
+    edit: {title: 'Edit', items: 'undo, redo, selectall'}
   }
 });
 ```
 
-Create your menu titles by adding a `title` value. The following example creates a menu titled "Happy". In the snippet below we create a menu with the title "Happy" and includes the "Source code" item.
+{% include codepen.html id="menu1" %}
+
+To create a menu titled "Happy", provide an identifier for the menu and an object with the `title` and `items` for the menu.
+
+For example:
 
 ```js
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   menu: {
-    view: {title: 'Happy', items: 'code'}
+    happy: {title: 'Happy', items: 'code'}
   },
-  plugins: 'code'  // required by the code menu item
+  plugins: 'code',  // required by the code menu item
+  menubar: 'happy'  // adds happy to the menu bar
 });
 ```
 
-Setting the value of `menubar` or `toolbar` to false removes them. The example below removes both the toolbar *and* menubar.
+{% include codepen.html id="menu2" %}
 
-```js
-tinymce.init({
-  selector: 'textarea',  // change this value according to your HTML
-  menubar: false,  // removes the menubar
-  toolbar: false  // removes the toolbar
-});
-```
+### Default menu controls
 
-> Important: Each page in the plugin documentation indicates via an icon if that plugin has toolbar buttons or menu items.
+The default menus are as follows:
 
+{% include configuration/defaultmenuitems.md %}
+
+> **Note**: Some menu items require a plugin, such as the `table` menu and items requires the `table` plugin.
+
+#### Additional information
+
+* For information on the `menu` setting, see: [User interface options - menu]({{site.baseurl}}/configure/editor-appearance/#menu).
+* For information on the `menubar` setting, see: [User interface options - menubar]({{site.baseurl}}/configure/editor-appearance/#menubar).
+* For a list of all available menu items, see: [Editor control identifiers - Menu controls]({{site.baseurl}}/advanced/editor-control-identifiers/#menucontrols).
 
 ## Basic configuration example
 
-{{site.productname}} has many other configuration options available that enable further customization and extension of the editor to match the user's requirements.
-
-The full list of configuration options is in the [Configuration options references]({{ site.baseurl }}/configure/) section. Plugins, their options, and control associations are available in the [Plugins]({{ site.baseurl }}/plugins/) section.
-
-The following example is a walkthrough of a basic {{site.productname}} configuration.
+The following example is a basic {{site.productname}} configuration.
 
 ```html
 <!DOCTYPE html>
 <html>
 <head>
-  <script type="text/javascript" src='{{ site.cdnurl }}' referrerpolicy="origin"></script>
+  <script
+    type="text/javascript"
+    src='{{ site.cdnurl }}'
+    referrerpolicy="origin">
+  </script>
   <script type="text/javascript">
   tinymce.init({
     selector: '#myTextarea',
-    skin: 'dark',
     width: 600,
     height: 300,
     plugins: [
       'advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker',
       'searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking',
-      'save table directionality emoticons template paste'
+      'table emoticons template paste help'
     ],
-    content_css: 'css/content.css',
-    toolbar: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | print preview media fullpage | forecolor backcolor emoticons'
+    toolbar: 'undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify |' +
+      ' bullist numlist outdent indent | link image | print preview media fullpage | ' +
+      'forecolor backcolor emoticons | help',
+    menu: {
+      favs: {title: 'My Favorites', items: 'code visualaid | searchreplace | spellchecker | emoticons'}
+    },
+    menubar: 'favs file edit view insert format tools table help',
+    content_css: 'css/content.css'
   });
   </script>
 </head>
@@ -249,48 +225,61 @@ The following example is a walkthrough of a basic {{site.productname}} configura
 </html>
 ```
 
-#### Breakdown of the above example
+#### Break-down of the basic configuration example
 
-Select only the `textarea` with the id `myTextarea`.
+The following section is a break-down of the options used in the basic configuration example.
+
+Selects the `textarea` with the id `myTextarea` to be replaced by the editor.
 
 ```js
 selector: '#myTextarea',
 ```
 
-Choose a Skin such as the dark skin which is included with {{site.productname}}.
-
-```js
-skin: 'dark',
-```
-
-Set the width and height of the editable area in pixels as numeric values.
+Sets the width and height of the editable area in pixels as numeric values.
 
 ```js
 width: 600,
 height: 300,
 ```
 
-Select the plugins that should be included on load.
+Selects the plugins to be included on load.
 
 ```js
 plugins: [
   'advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker',
   'searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking',
-  'save table directionality emoticons template paste'
+  'table emoticons template paste help'
 ],
 ```
 
-Set the styling of the editable area using `content_css`. The styling should be a simplified version of the website CSS. Use styles for headers (H1-H6), table layouts, margins, paddings around elements (images, paragraphs), etc.
+Selects the toolbar buttons exposed to the user. Use a comma or space as a separator.
+
+```js
+toolbar: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | print preview media fullpage | forecolor backcolor emoticons',
+```
+
+Adds an additonal menu named "My Favorites" with `menu` and add it to the menu bar using `menubar`.
+
+```js
+menu: {
+  favs: {title: 'My Favorites', items: 'code visualaid | searchreplace | spellchecker | emoticons'}
+},
+menubar: 'favs file edit view insert format tools table help',
+```
+
+Sets the styling of the editable area using `content_css`.
 
 ```js
 content_css: 'css/content.css',
 ```
 
-The final step is to select the toolbar buttons exposed to the user. Use a comma or space as a separator.
+{% include codepen.html id="basic-conf" %}
 
-```js
-toolbar: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | print preview media fullpage | forecolor backcolor emoticons',
-```
+#### Additional information
+
+* For a full list of configuration options, see: the [Configuration options reference]({{ site.baseurl }}/configure/).
+* For a full list of Plugins, their options, and control associations, see: [Add plugins to TinyMCE]({{ site.baseurl }}/plugins/).
+* For information on the UI elements, see: [User interface components]({{ site.baseurl }}/ui-components/).
 
 {% assign_page next_page = "/general-configuration-guide/use-tinymce-classic/index.html" %}
 {% include next-step.html next=next_page %}

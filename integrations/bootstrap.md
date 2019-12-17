@@ -38,7 +38,7 @@ This procedure creates a basic Bootstrap integration containing a {{site.product
         <script src="/path/to/tinymce.min.js"></script>
         ```
 
-        For information on self-hosting {{site.productname}}, see: [Advanced installation choices]({{site.baseurl}}/general-configuration-guide/advanced-install/).
+        For information on self-hosting {{site.productname}}, see: [Installing {{ site.productname }}]({{site.baseurl}}/general-configuration-guide/advanced-install/).
 
 
 3. Add an initialization point for {{site.productname}}, such as:

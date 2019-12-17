@@ -46,7 +46,7 @@ Replace `your-api-key` with your [{{site.cloudname}} API key]({{site.accountpage
 ```
 Replace `/path/to/tinymce/base/directory` with the relative path of the `tinymce/` directory containing `tinymce.min.js`.
 
-For information on {{site.productname}} deployment types, see: [Advanced installation choices]({{site.baseurl}}/general-configuration-guide/advanced-install/).
+For information on {{site.productname}} deployment types, see: [Installing {{ site.productname }}]({{site.baseurl}}/general-configuration-guide/advanced-install/).
 
 ### Replace the Froala editor variable assignment with the tinymce.init function
 To insert an editor in the body of the page for a `<textarea>` element such as:
@@ -121,7 +121,7 @@ The following examples show an initial Froala configuration and the migrated {{s
 
 For information on:
 * Getting started with {{site.productname}}, see: [{{site.productname}} Quick Start]({{site.baseurl}}/quick-start).
-* Installing {{site.productname}}, see: [Advanced installation choices]({{site.baseurl}}/general-configuration-guide/advanced-install/).
+* Installing {{site.productname}}, see: [Installing {{ site.productname }}]({{site.baseurl}}/general-configuration-guide/advanced-install/).
 
 ## Updating the list of Plugins
 

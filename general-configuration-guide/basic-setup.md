@@ -39,7 +39,7 @@ Insert the snippet into a HTML document between the `<script>` tags and update t
 
 Selector configuration is required for {{site.productname}} integration. Selector configuration uses [CSS `selector` syntax](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors) to determine which elements on the page are editable through {{site.productname}}.
 
-{{site.productname}} replaces the selected element with an `iframe` (the editable content area) and the UI elements (such as toolbar, menu bar, and status bar).
+{{site.productname}} visually replaces the selected element with an `iframe` (the editable content area) and the UI elements (such as toolbar, menu bar, and status bar).
 
 The following example replaces all `textarea` elements on the page with {{site.productname}} instances:
 
@@ -73,7 +73,7 @@ tinymce.init({
 });
 ```
 
-For information on the differences between regular and inline editing modes, see: [Setup inline editing mode](../use-tinymce-inline/).
+For information on the differences between the classic and inline editing modes, see: [Setup inline editing mode](../use-tinymce-inline/).
 
 ## Plugin configuration
 
@@ -88,7 +88,7 @@ tinymce.init({
 });
 ```
 
-For a full list of plugins, their options, and control associations, see: [Add plugins to TinyMCE]({{ site.baseurl }}/plugins/).
+For a full list of plugins and their options, see: [Add plugins to TinyMCE]({{ site.baseurl }}/plugins/).
 
 ## Toolbar configuration
 
@@ -114,7 +114,7 @@ tinymce.init({
 
 The `toolbar` option defines the presence, order, and grouping of toolbar buttons.
 
-Use a space-separated list to specify the toolbar buttons for {{site.productname}}. Create toolbar groups by using the "`|`" pipe character between buttons.
+Use a space-separated list to specify the toolbar buttons for {{site.productname}}. Create toolbar groups by using the "`|`" pipe character between button names.
 
 #### Additional information
 
@@ -252,7 +252,7 @@ plugins: [
 ],
 ```
 
-Selects the toolbar buttons exposed to the user. Use a comma or space as a separator.
+Selects the toolbar buttons displayed to the user. Use a comma or space as a separator.
 
 ```js
 toolbar: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | print preview media fullpage | forecolor backcolor emoticons',
@@ -278,7 +278,7 @@ content_css: 'css/content.css',
 #### Additional information
 
 * For a full list of configuration options, see: the [Configuration options reference]({{ site.baseurl }}/configure/).
-* For a full list of Plugins, their options, and control associations, see: [Add plugins to TinyMCE]({{ site.baseurl }}/plugins/).
+* For a full list of Plugins and their options, see: [Add plugins to TinyMCE]({{ site.baseurl }}/plugins/).
 * For information on the UI elements, see: [User interface components]({{ site.baseurl }}/ui-components/).
 
 {% assign_page next_page = "/general-configuration-guide/use-tinymce-classic/index.html" %}

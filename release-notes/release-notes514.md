@@ -19,7 +19,7 @@ These release notes provide a high-level coverage of the changes for {{site.prod
 
 - The dialog contents disappearing when clicking a checkbox for right-to-left languages.
 - The `legacyoutput` plugin registering legacy formats after editor initialization, causing legacy content to be stripped on the initial load.
-- The search and replace not cycling through results when searching using special characters.
+- The search and replace plugin not cycling through results when searching using special characters.
 
 ## Security fixes
 

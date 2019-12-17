@@ -51,7 +51,7 @@ tinymce.init({
 
 {{site.productname}} can also match an `id` attribute.
 
-The following example replaces a `textarea` element with the `id="default"` on the page:
+The following example replaces a `textarea` element with the `id` `"default"` on the page:
 
 ```js
 tinymce.init({
@@ -62,7 +62,7 @@ tinymce.init({
 Providing a {{site.productname}} editor with the default configuration, such as:
 {% include codepen.html id="default" %}
 
-The selector can target any block element when the editor is used in [inline editing mode](../use-tinymce-inline/). Inline mode edits the content in place, instead of replacing the element with an `iframe`.
+The selector can target most block elements when the editor is used in [inline editing mode](../use-tinymce-inline/). Inline mode edits the content in place, instead of replacing the element with an `iframe`.
 
 The following example uses the `selector` in inline editing mode on a `div` element with `id` `'editable'`:
 
@@ -127,7 +127,7 @@ There are two menu options: `menubar` and `menu`.
 `menubar` is used to define the presence and order of _menus_, such as **File**, **Edit**, and **View**.
 `menu` is used to define the presence and order of _menu items_, such as **New Document**, **Select all**, and **Source code**.
 
-### Menu and Menubar Examples
+### Menu and Menu bar configuration examples
 
 To display the _File_, _Edit_, and _View_ menus:
 
@@ -258,7 +258,7 @@ Selects the toolbar buttons exposed to the user. Use a comma or space as a separ
 toolbar: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | print preview media fullpage | forecolor backcolor emoticons',
 ```
 
-Adds an additonal menu named "My Favorites" with `menu` and add it to the menu bar using `menubar`.
+Adds an additonal menu named "My Favorites" with `menu`, then adds it to the menu bar using `menubar`.
 
 ```js
 menu: {

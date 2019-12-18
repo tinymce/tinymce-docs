@@ -6,7 +6,7 @@ description: Release notes for TinyMCE 5.1.4
 keywords: releasenotes bugfixes
 ---
 
-These release notes provide a high-level coverage of the changes for {{site.productname}} 5.1.4, including:
+These release notes provide an overview of the changes for {{site.productname}} 5.1.4, including:
 
 - [General bug fixes](#generalbugfixes)
 - [Security fixes](#securityfixes)

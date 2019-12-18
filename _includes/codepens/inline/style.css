@@ -16,6 +16,7 @@
 .demo-inline h1 {
   color: #1976d2;
   font-family: Aileron;
+  text-align: center;
   font-size: 2em;
   font-weight: bold;
   margin: 0 0;
@@ -51,6 +52,9 @@
 }
 .demo-inline a {
   text-decoration: underline;
+}
+.demo-inline img {
+  padding: 0px 10px 10px 10px;
 }
 .demo-inline textarea {
   display: none;

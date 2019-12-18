@@ -21,12 +21,14 @@ var dfreeBodyConfig = {
     'powerpaste',
     'table',
     'image',
-    'quickbars'
+    'quickbars',
+    'codesample',
+    'help'
   ],
   toolbar: false,
-  quickbars_insert_toolbar: 'quicktable image',
-  quickbars_selection_toolbar: 'bold italic | h2 h3 | blockquote quicklink',
-  contextmenu: 'inserttable | cell row column deletetable',
+  quickbars_insert_toolbar: 'quicktable image media codesample',
+  quickbars_selection_toolbar: 'bold italic underline | h2 h3 | blockquote quicklink',
+  contextmenu: 'formats | inserttable | cell row column deletetable | help',
   powerpaste_word_import: 'clean',
   powerpaste_html_import: 'clean'
 };

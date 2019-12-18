@@ -8,13 +8,13 @@ keywords: theme classic
 
 {{site.productname}} has three main integration modes:
 
-* "classic" form-based
-* inline editing
-* distraction-free
+* "classic" form-based mode
+* inline editing mode
+* distraction-free mode
 
-**Classic** mode is the most common {{site.productname}} integration. **Classic** mode's popularity is due to its familiarity to users and how quickly they identify it as a text editor.
+**Classic** mode refers to the standard {{site.productname}} integration. The current default theme `silver` renders the editor in classic mode.
 
-The current default theme `silver` renders the editor in classic mode.
+Such as:
 
 {% include codepen.html id="default" %}
 

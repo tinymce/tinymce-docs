@@ -8,13 +8,18 @@ keywords: theme classic
 
 {{site.productname}} has three main integration modes:
 
-* "classic" form-based mode
+* "classic" full editor mode
 * inline editing mode
 * distraction-free mode
 
-**Classic** mode refers to the standard {{site.productname}} integration. The current default theme `silver` renders the editor in classic mode.
+There are a few important differences between these modes:
 
-Such as:
+- Classic mode embeds an iframe in the page, which sandboxes the content and styles used in the content area.
+- Inline mode does not use an iframe; the editor is run on the selected HTML element.
+- The lack of sandboxing for the inline editor allows page scripts and styles to be used in the editor.
+- Distraction-free mode is an inline editor with additional configuration to provide greater functionality.
+
+**Classic** mode refers to the standard {{site.productname}} integration. Such as:
 
 {% include codepen.html id="default" %}
 

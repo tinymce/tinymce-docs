@@ -6,7 +6,7 @@ description: Mode that renders a lightweight UI for inline editing.
 keywords: Mode inlite distraction-free
 ---
 
-The **Distraction-free** mode renders the editor in inline mode without the menu bar or toolbar. Most of the editor functionality is accessed using: keyboard shortcuts, contextual menus, contextual toolbars, and toolbars provided by the `quickbars` plugin.
+The **Distraction-free** mode renders the editor in inline mode without the menu bar or toolbar. Most of the editor functionality is accessed using: keyboard shortcuts, contextual menus, contextual toolbars, and toolbar functions provided by the `quickbars` plugin.
 
 {{site.notonmobile}}
 

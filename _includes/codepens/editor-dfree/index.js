@@ -27,8 +27,8 @@ var dfreeBodyConfig = {
   ],
   toolbar: false,
   quickbars_insert_toolbar: 'quicktable image media codesample',
-  quickbars_selection_toolbar: 'bold italic underline | h2 h3 | blockquote quicklink',
-  contextmenu: 'formats | inserttable | cell row column deletetable | help',
+  quickbars_selection_toolbar: 'bold italic underline | formatselect | blockquote quicklink',
+  contextmenu: 'undo redo | inserttable | cell row column deletetable | help',
   powerpaste_word_import: 'clean',
   powerpaste_html_import: 'clean'
 };

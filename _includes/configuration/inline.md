@@ -3,7 +3,7 @@
 
 {{site.notonmobile}}
 
-The **inline** option allows you to specify whether {{site.productname}} should initialize in inline mode.
+The **inline** option allows you to specify whether {{site.productname}} should run in inline mode.
 
 The inline editing mode is useful when creating user experiences where you want the editing view of the page to be merged with the reading view of the page. When in inline mode, content is edited within the element the editor was initialized on, not within an iframe. Inline editors are designed to be "hidden" until content is selected and to use the CSS styles of the page where it initializes.
 
@@ -27,9 +27,9 @@ tinymce.init({
 For more information on the differences between the editing modes, please see this page [here]({{ site.baseurl }}/general-configuration-guide/use-tinymce-inline/).
 
 
-### Inline editing and complex stylesheets
+### CSS stylesheets and inline editor content
 
-When using {{site.productname}} in the inline mode, the editor inherits the CSS stylesheet from the page it is embedded in.
+When using {{site.productname}} in inline mode, the editor inherits the CSS stylesheet from the page it is embedded in.
 
 If the editor is used in inline mode, care should be taken when using styling that depends on structures within the editor. For example, if there's a class like this:
 

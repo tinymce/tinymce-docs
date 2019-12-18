@@ -7,16 +7,17 @@ description: Understand the difference between traditional forms-based editing a
 keywords: form inline edit stylesheet
 ---
 
-{{site.productname}} has three main integration modes: a _classic_ form-based mode, an _inline_ editing mode, and a distraction-free mode.
+{{site.productname}} has three main integration modes: a _classic_ full editor mode, an _inline_ editing mode, and a distraction-free mode.
 
 {{site.notonmobile}}
 
-The inline editing mode is used for merging the editing and reading views of the page to a seamless editing experience and true WYSIWYG behavior.
+The inline editing mode is used for merging the editing and reading views of the page for a seamless editing experience and true WYSIWYG behavior.
 
 Inline editing mode does not replace the selected element with an iframe, but instead edits the element's content in-place. Inline editors are designed:
 
-- To be "hidden" until the editable content is selected, and
-- To use the CSS stylesheet of the page where it initializes.
+- To be "hidden" until the editable content is selected,
+- To use the CSS stylesheet of the page where it initializes, and
+- To have minimal UI around the content area to minimize the area occupied by the editor.
 
 
 ## Enabling inline editing mode

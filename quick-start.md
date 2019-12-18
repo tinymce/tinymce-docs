@@ -80,4 +80,4 @@ For information on:
     * [{{site.productname}} distraction-free editing mode]({{site.baseurl}}/general-configuration-guide/use-tinymce-distraction-free/).
   * Adding {{site.productname}} plugins, see: [Work with plugins to extend TinyMCE]({{site.baseurl}}/general-configuration-guide/work-with-plugins/).
   * Localizing the {{site.productname}} editor, see: [Localize {{site.productname}}]({{site.baseurl}}/general-configuration-guide/localize-your-language/).
-  * Self-hosting {{site.productname}}, see: [Advanced installation choices]({{site.baseurl}}/general-configuration-guide/advanced-install/).
+  * Self-hosting {{site.productname}}, see: [Installing {{ site.productname }}]({{site.baseurl}}/general-configuration-guide/advanced-install/).

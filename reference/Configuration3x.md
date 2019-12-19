@@ -19,7 +19,7 @@ All configuration options below are to be placed within the `tinyMCE.init()` Jav
 *   [dialog_type](https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@dialog_type/)
 *   [directionality](https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@directionality/)
 *   [editor_deselector](https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@editor_deselector/)
-*   [editor_selector](.https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@editor_selector/)
+*   [editor_selector](https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@editor_selector/)
 *   [elements](https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@elements/)
 *   [gecko_spellcheck](https://www.tiny.cloud/docs/configure/spelling/#gecko_spellcheck/)
 *   [keep_styles](https://www.tiny.cloud/docs-3x/reference/configuration/Configuration3x@keep_styles/)

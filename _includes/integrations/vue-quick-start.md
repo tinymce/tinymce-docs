@@ -84,7 +84,7 @@ This procedure requires:
 
     * **{{site.cloudname}}**
 
-        Include the `api-key` option in the editor element and include your [{{site.cloudname}} API key]({{site.shared_baseurl}}/signup/).
+        Include the `api-key` option in the editor element and include your [{{site.cloudname}} API key]({{site.accountsignup}}).
 
         Such as:
 

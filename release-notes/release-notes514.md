@@ -29,4 +29,8 @@ These release notes provide a high-level coverage of the changes for {{site.prod
 - The Paste plugin not sanitizing content in some cases.
 - HTML comments incorrectly being parsed in certain cases.
 
+{% assign enterprise = true %}
+
 {% include install/upgrading-info.md %}
+
+{% assign enterprise = false %}

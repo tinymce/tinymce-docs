@@ -8,6 +8,11 @@ class: changelog
 
 {% capture changelog %}
 
+## Version 4.9.7 December 19, 2019
+* Fixed the `visualchars` plugin converting HTML-like text to DOM elements in certain cases.
+* Fixed an issue with the `paste` plugin not sanitizing content in some cases.
+* Fixed HTML comments incorrectly being parsed in certain cases.
+
 ## Version 4.9.6 September 2, 2019
 * Fixed image browse button sometimes displaying the browse window twice on mobile.
 

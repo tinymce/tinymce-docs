@@ -10,6 +10,12 @@ class: changelog
 
 {% capture changelog %}
 
+## Version 5.1.5 December 19, 2019
+* Fixed the UI not working with hybrid devices that accept both touch and mouse events.
+* Fixed a bug with pasting image URLs when _paste as text_ is enabled.
+* Fixed the `charmap` dialog initially focusing the first tab of the dialog instead of the search input field.
+* Fixed an exception being raised when inserting content if the caret was directly before or after a `contenteditable="false"` element.
+
 ## Version 5.1.4 December 11, 2019
 * Fixed dialog contents disappearing when clicking a checkbox for right-to-left languages.
 * Fixed the `legacyoutput` plugin registering legacy formats after editor initialization, causing legacy content to be stripped on the initial load.

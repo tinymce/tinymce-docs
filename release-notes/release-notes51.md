@@ -12,6 +12,7 @@ These release notes provide a high-level coverage of the changes for {{site.prod
 - [Premium Plugin changes](#premiumpluginchanges)
 - [Deprecated features](#deprecatedfeatures)
 - [Known issues](#knownissues)
+- [Upgrading to the latest version of TinyMCE 5](#upgradingtothelatestversionoftinymce5)
 
 > This is the {{site.cloudname}} and {{site.enterpriseversion}} release notes. For information on the latest community version of {{site.productname}}, see: [{{site.productname}} Changelog]({{site.baseurl}}/changelog/).
 
@@ -31,4 +32,8 @@ These release notes provide a high-level coverage of the changes for {{site.prod
 
 {% include release-notes/51known-issues.md %}
 
+{% assign enterprise = true %}
+
 {% include install/upgrading-info.md %}
+
+{% assign enterprise = false %}

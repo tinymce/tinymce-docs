@@ -24,7 +24,7 @@ tinymce.init({
 });
 ```
 
-The demonstration editor below is a distraction-free editor with some customisations.
+The demonstration editor below is a distraction-free editor with some customizations.
 
 {% include codepen.html id="editor-dfree" %}
 

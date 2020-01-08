@@ -50,6 +50,8 @@ description: Configure the editor's appearance, including menu and toolbar contr
 
 {% include configuration/mobile.md %}
 
+{% include configuration/placeholder.md %}
+
 {% include configuration/preview-styles.md %}
 
 {% include configuration/image-toolbar.md %}

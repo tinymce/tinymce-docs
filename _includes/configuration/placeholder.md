@@ -2,7 +2,7 @@
 
 This option adds placeholder content that will be shown when the editor is empty.
 
-Alternatively, the `placeholder` attribute on the original DOM element can be used instead, if the placeholder setting isn't specified.
+> **Note:** If the editor is initialized on a `textarea` element, the placeholder attribute can be used instead.
 
 **Type:** `String`
 

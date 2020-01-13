@@ -52,7 +52,7 @@ tinymce.init({
 
 #### Usage with `table` plugin
 
-When using the `nonbreaking_force_tab` setting together with the `table` plugin it will conflict with the tab navigation between table cells. You can choose which setting you want to use by changing the ordering of the plugins in the init object. If `nonbreaking` is before `table` in the plugins setting you will activate the insert `&nbsp;` functionality, while if `table` is added before `nonbreaking` you will get tab table cell navigation. See examples:
+When using the `nonbreaking_force_tab` setting together with the `table` or `lists` plugins it will conflict with the tab-key functionality. The `table` plugin relies on tab for navigation between table cells and the `lists` plugin for indentation. You can choose which setting you want to use by changing the ordering of the plugins in the init object. If `nonbreaking` is before `table` and/or `lists` in the plugins setting the insert `&nbsp;` functionality will take precedence, while if `table` and/or `lists` is added before `nonbreaking` you will get tab functionality from the respective plugin. See examples with the `table` plugin:
 
 This will activate the insert `&nbsp;` setting:
 

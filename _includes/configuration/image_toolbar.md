@@ -13,7 +13,7 @@ The **quickbars_image_toolbar** option configures the Quick Image toolbar provid
 ```js
 tinymce.init({
   selector: 'div.tinymce',
-  plugins: 'quickbars imagetools',
+  plugins: 'quickbars image imagetools',
   inline: true,
   quickbars_image_toolbar: 'alignleft aligncenter alignright | rotateleft rotateright | imageoptions'
 });

@@ -1,29 +1,26 @@
 ---
 layout: default
-title: Quick Toolbar plugin
-title_nav: Quick Toolbar
+title: Quick Toolbars plugin
+title_nav: Quick Toolbars
 description: User interface controls to create content faster.
 keywords: plugin inlite quickbar
 ---
 
-The Quick Toolbar plugin (`quickbars`) enables new user interface components to help users create content faster. It can be used to create an experience similar to Medium, Quip, and other modern editing tools.
+The Quick Toolbar plugin adds three context toolbars:
 
-It replaces the capabilities of the `inlite` theme in TinyMCE 4 or earlier.
+* A **Quick Selection toolbar** - Shown when text is selected, providing formatting buttons such as: `bold`, `italic`, and `link`.
+* A **Quick Insert toolbar** - Shown when a new line is added, providing buttons for inserting objects such as tables and images.
+* A **Quick Image toolbar** - Shown when an image or figure is selected, providing image formatting buttons such as alignment options.
 
-The Quick Toolbar plugin enables three new context toolbars:
+This plugin also adds three new toolbar buttons:
 
-* _Quick Selection_ - shown when text is selected for quick access to formatting buttons such as bold, italic and link.
-* _Quick Insert_ - shown when a new line is created for the quick insertion of objects such as tables and images.
-* _Quick Image_ - shown when an image or figure is selected for quick access to image formatting buttons such as alignment.
+* **Quick Link** - An inline form for creating and editing links without a dialog.
+* **Quick Image** - Prompts the user to select a local image to upload.
+* **Quick Table** - Inserts a 2x2 table without prompting the user to select the number of rows and columns.
 
-It also enables three new toolbar buttons:
+> **Note**: The Quick Toolbars plugin provides the contextual toolbars found in the `inlite` theme from TinyMCE 4 and earlier.
 
-* _Quick Link_ - an inline form for creating and editing links without a dialog.
-* _Quick Image_ - immediately prompts a user to select a local image to upload.
-* _Quick Table_ - immediately inserts a 2x2 table without prompting the user to select the number of rows and columns.
-
-
-##### Example enabling all context toolbars with their default toolbar buttons:
+#### Example: Enabling all context toolbars with their default toolbar buttons
 
 ```js
 tinymce.init({
@@ -34,7 +31,12 @@ tinymce.init({
     inline: true
 });
 ```
-#### Example disabling the Quick Insert context toolbar:
+
+### Disabling specific quick toolbars
+
+The following examples show how to disable specific quick toolbars for editors where they are not required.
+
+#### Example: Disabling the Quick Insert context toolbar
 
 ```js
 tinymce.init({
@@ -47,7 +49,7 @@ tinymce.init({
 });
 ```
 
-#### Example disabling the Quick Selection context toolbar:
+#### Example: Disabling the Quick Selection context toolbar
 
 ```js
 tinymce.init({
@@ -60,7 +62,9 @@ tinymce.init({
 });
 ```
 
-#### Example disabling the Quick Image context toolbar:
+#### Example: Disabling the Quick Image context toolbar
+
+{{ site.requires_5_2v }}
 
 ```js
 tinymce.init({
@@ -73,13 +77,13 @@ tinymce.init({
 });
 ```
 
-### Plugin-specific toolbar buttons
+## Plugin-specific toolbar buttons
 
-#### Quick Link
+### Quick Link
 
 The Quick Link (`quicklink`) toolbar button lets the user quickly insert/edit links inline. It is included in the Quick Selection context toolbar by default and can be used in other context toolbars.
 
-##### Example using quicklink in a custom context toolbar:
+#### Example: Using quicklink in a custom context toolbar
 
 ```js
 tinymce.init({
@@ -97,13 +101,13 @@ tinymce.init({
 });
 ```
 
-#### Quick Image
+### Quick Image
 
-The Quick Image (`quickimage`) toolbar button helps you quickly insert images from your computer into the editor. It is included in the Quick Insert context toolbar by default and can be used in other toolbars.
+The Quick Image (`quickimage`) toolbar button allows users to quickly insert images from their computer into the editor. It is included in the Quick Insert context toolbar by default and can be used in other toolbars.
 
 > Note: To enable automatic upload of images on insertion, [image upload]({{ site.baseurl }}/advanced/handle-async-image-uploads/) must be configured.
 
-##### Example using quickimage in the editor toolbar:
+#### Example: Using quickimage in the editor toolbar
 
 ```js
 tinymce.init({
@@ -113,11 +117,11 @@ tinymce.init({
 });
 ```
 
-#### Quick Table
+### Quick Table
 
 The Quick Table (`quicktable`) toolbar button inserts a 2x2 table with 100% width. It is included in the Quick Insert context toolbar by default and can be used in other toolbars.
 
-##### Example using quicktable in the editor toolbar:
+#### Example: Using quicktable in the editor toolbar
 
 ```js
 tinymce.init({
@@ -127,10 +131,10 @@ tinymce.init({
 });
 ```
 
-### Configuration options
+## Configuration options
 
-##{% include configuration/image-toolbar.md %}
+{% include configuration/selection-toolbar.md %}
 
-##{% include configuration/insert-toolbar.md %}
+{% include configuration/insert-toolbar.md %}
 
-##{% include configuration/selection-toolbar.md %}
+{% include configuration/image_toolbar.md %}

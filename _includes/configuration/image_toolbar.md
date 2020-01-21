@@ -1,23 +1,29 @@
-## quickbars_image_toolbar
+### quickbars_image_toolbar
 
-The **quickbars_image_toolbar** option enables configuration of the Quick Image toolbar enabled by the [quickbars]({{ site.baseurl }}/plugins/quickbars) plugin. The toolbar can be disabled by setting `quickbars_image_toolbar` to `false`. The toolbar can also be configured to display non-default buttons using a space-separated string of toolbar button names. The Quick Image toolbar is intended for image-related buttons but any [{{site.productname}} toolbar buttons]({{ site.baseurl }}/advanced/editor-control-identifiers/#toolbarcontrols) or [custom toolbar buttons]({{ site.baseurl }}/ui-components/toolbarbuttons) are allowed.
+{{ site.requires_5_2v }}
+
+The **quickbars_image_toolbar** option configures the Quick Image toolbar provided by the [quickbars plugin]({{ site.baseurl }}/plugins/quickbars). To change the buttons on the Quick Image toolbar, provide a space-separated string of [toolbar button names]({{ site.baseurl }}/advanced/editor-control-identifiers/#toolbarcontrols). The Quick Image toolbar is intended for image-related buttons, but any [{{site.productname}} toolbar buttons]({{ site.baseurl }}/advanced/editor-control-identifiers/#toolbarcontrols) or [custom toolbar buttons]({{ site.baseurl }}/ui-components/toolbarbuttons) are allowed.
+
+To disable the Quick Image toolbar, set `quickbars_image_toolbar` to `false`.
 
 **Type:** `String` or `false`
 
 **Defaults:** `alignleft aligncenter alignright`
 
-##### Example customizing the Quick Image toolbar
+#### Example: Customizing the Quick Image toolbar
 
 ```js
 tinymce.init({
   selector: 'div.tinymce',
-  plugins: 'quickbars',
+  plugins: 'quickbars image imagetools',
   inline: true,
-  quickbars_image_toolbar: 'alignleft aligncenter alignright'
+  quickbars_image_toolbar: 'alignleft aligncenter alignright | rotateleft rotateright | imageoptions'
 });
 ```
 
-##### Example disabling the Quick Image toolbar
+#### Example: Disabling the Quick Image toolbar
+
+To disable the Quick Image toolbar, set `quickbars_image_toolbar` to `false`.
 
 ```js
 tinymce.init({

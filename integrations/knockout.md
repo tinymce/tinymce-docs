@@ -38,7 +38,7 @@ Michael Papworth developed the Knockout binding for TinyMCE. For details, see: [
         <script src="/path/to/jquery.tinymce.min.js"></script>
         ```
 
-        For information on self-hosting {{site.productname}}, see: [Advanced installation choices]({{site.baseurl}}/general-configuration-guide/advanced-install/).
+        For information on self-hosting {{site.productname}}, see: [Installing {{ site.productname }}]({{site.baseurl}}/general-configuration-guide/advanced-install/).
 
 1. Source `tinymce-knockout-binding` (`wysiwyg.js`) on the page.
 

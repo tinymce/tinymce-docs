@@ -22,11 +22,13 @@ These settings affect the execution of the `textcolor`. The dimensions and mappi
 
 ### `color_cols`
 
-This option allows specifying the number of columns that can appear on the grid of text colors. The number of rows is calculated based on how many text colors are supplied divided by the specified number of columns.  The `textcolor_cols` and `textcolor_rows` property has been removed in {{site.productname}} 5.
+This option allows for specifying the number of columns for text color grids. The number of rows is calculated based on the number of text colors supplied divided by the specified number of columns. 
 
-**Type:** `String`
+By default, the number of rows and columns is dependent of the number of colors specified using [`color_map`](#color_map). The dimensions of the grid will be calculated by {{site.productname}} to keep the grid a square or a rectangle with a minimum of 5 columns. 
 
-**Default Value:** `"5"`
+> **Note**: The `textcolor_cols` and `textcolor_rows` properties have been removed in {{site.productname}}{{site.nbsp}}5.
+
+**Type:** `Integer`
 
 ##### Example
 

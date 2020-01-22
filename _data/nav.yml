@@ -104,9 +104,6 @@
     - url: "#mobile"
     - url: "#placeholder"
     - url: "#preview_styles"
-    - url: "#quickbars_image_toolbar"
-    - url: "#quickbars_insert_toolbar"
-    - url: "#quickbars_selection_toolbar"
     - url: "#removed_menuitems"
     - url: "#resize"
     - url: "#skin"
@@ -421,6 +418,9 @@
   - url: "preview"
   - url: "print"
   - url: "quickbars"
+    pages:
+    - url: "#Plugin-specific toolbar buttons"
+    - url: "#Configuration options"
   - url: "save"
     pages:
     - url: "#save_enablewhendirty"

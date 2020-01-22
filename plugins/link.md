@@ -117,6 +117,28 @@ tinymce.init({
 });
 ```
 
+### `link_default_protocol`
+
+This option allows you to set a default protocol for links when inserting/editing a link via the link dialog. The protocol will apply to any links where the protocol has not been specified and the prefix prompt has been accepted.
+
+> Note: This option also applies to the [autolink]({{ site.baseurl }}/plugins/autolink) plugin.
+
+**Type:** `String`
+
+**Default Value:** `'http'`
+
+##### Example
+
+```js
+tinymce.init({
+    selector: "textarea",  // change this value according to your HTML
+    plugins: "link",
+    menubar: "insert",
+    toolbar: "link",
+    link_default_protocol: "https"
+});
+```
+
 ### `link_list`
 
 This option lets you specify a predefined list of links for the link dialog. These links are added to a drop-down list in the link dialog. When a list item is selected, the dialog will be populated with the relevant data. This is useful if your users need to regularly link to the same sources.

@@ -11,7 +11,7 @@ The Autolink plugin automatically creates hyperlinks when a user types a valid, 
 
 Note that this option won't convert incomplete URLs. For example `example.com` would remain as unlinked text and URLs must include `www` to be automatically converted.
 
-> Note: Pasted URLs are automatically converted to `a` elements by {{site.productname}}'s core code, not by the autolink plugin. Therefore, behaviour and settings described here do not apply to pasted links.
+> **Note**: Pasted URLs are automatically converted to `a` elements by {{site.productname}}'s core code, not by the autolink plugin. Therefore, behaviour and settings described here do not apply to pasted links.
 
 ##### Autolink plugin example
 
@@ -28,7 +28,7 @@ tinymce.init({
 
 This option allows you to specify a default `target` value for links inserted by the autolink plugin.
 
-> Note: This setting also applies to the [link]({{ site.baseurl }}/plugins/link) plugin.
+> **Note**: This setting also applies to the [link]({{ site.baseurl }}/plugins/link) plugin.
 
 **Type:** `String`
 
@@ -48,7 +48,7 @@ tinymce.init({
 
 This option allows you to set a default protocol for links inserted by the autolink plugin.
 
-> Note: This setting also applies to the [link]({{ site.baseurl }}/plugins/link) plugin.
+> **Note**: This setting also applies to the [link]({{ site.baseurl }}/plugins/link) plugin.
 
 **Type:** `String`
 

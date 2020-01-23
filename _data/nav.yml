@@ -223,6 +223,9 @@
   - url: "advtable"
   - url: "anchor"
   - url: "autolink"
+    pages:
+    - url: "#default_link_target"
+    - url: "#link_default_protocol"
   - url: "autoresize"
     pages:
     - url: "#autoresize_bottom_margin"
@@ -326,6 +329,7 @@
     - url: "#link_assume_external_targets"
     - url: "#link_class_list"
     - url: "#link_context_toolbar"
+    - url: "#link_default_protocol"
     - url: "#link_list"
     - url: "#link_title"
     - url: "#rel_list"

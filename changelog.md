@@ -8,6 +8,10 @@ class: changelog
 
 {% capture changelog %}
 
+## Version 4.9.8 January 28, 2020
+* Fixed the `mobile` theme failing to load due to a bundling issue.
+* Fixed security issue related to parsing HTML comments and CDATA.
+
 ## Version 4.9.7 December 19, 2019
 * Fixed the `visualchars` plugin converting HTML-like text to DOM elements in certain cases.
 * Fixed an issue with the `paste` plugin not sanitizing content in some cases.

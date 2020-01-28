@@ -10,6 +10,15 @@ class: changelog
 
 {% capture changelog %}
 
+## Version 5.1.6 January 28, 2020
+* Fixed `readonly` mode not blocking all clicked links.
+* Fixed legacy font sizes being calculated inconsistently for the `FontSize` query command value.
+* Fixed changing a tables row from `Header` to `Body` incorrectly moving the row to the bottom of the table.
+* Fixed the context menu not showing in certain cases with hybrid devices.
+* Fixed the context menu opening in the wrong location when the target is the editor body.
+* Fixed the `image` plugin not respecting the `automatic_uploads` setting when uploading local images.
+* Fixed security issue related to parsing HTML comments and CDATA.
+
 ## Version 5.1.5 December 19, 2019
 * Fixed the UI not working with hybrid devices that accept both touch and mouse events.
 * Fixed a bug with pasting image URLs when _paste as text_ is enabled.

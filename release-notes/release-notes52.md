@@ -49,7 +49,13 @@ For information on using the `TextSeeker` API, see: [{{site.productname}} APIs -
 
 ### new addGroupToolbarButton API
 
-### Updated the table icons
+### Updated the default TinyMCE table icons
+
+The {{site.productname}} icons for table-related toolbar buttons have been updated to better match the icons used elsewhere in the product.
+
+This change applies to the default {{site.productname}} theme, `silver`.
+
+For an updated list of {{site.productname}} icons, see: [Editor icon identifiers]({{ site.baseurl }}/advanced/editor-icon-identifiers/).
 
 ### Updated the colorinput component visual appearance --- updated color swatches in input fields
 

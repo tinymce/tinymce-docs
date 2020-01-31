@@ -13,6 +13,7 @@
   - [`initialValue`](#initialvalue)
   - [`inline`](#inline)
   - [`onEditorChange`](#oneditorchange)
+  - [`outputFormat`](#outputformat)
   - [`plugins`](#plugins)
   - [`tagName`](#tagname)
   - [`textareaName`](#textareaname)
@@ -176,11 +177,29 @@ For information on inline mode, see: [User interface options - `inline`]({{site.
 ```
 
 #### `onEditorChange`
-Used to store the state of the editor outside the editor React component. This property is used when using the {{site.productname}} React component as a controlled component.
+Used to store the state of the editor outside the editor React component. This property is commonly used when using the {{site.productname}} React component as a controlled component. Use the [`outputFormat`](#outputformat) prop to specify the format of the content emitted.
 
 For more information, see: [Using the {{site.productname}} React component as a controlled component](#usingthetinymcereactcomponentasacontrolledcomponent).
 
 **Type:** EventHandler
+
+#### `outputFormat`
+
+Used to specify the format of the content emitted via the [`onEditorChange`](#oneditorchange) event.
+ 
+**Type:** String
+
+**Default value:** `html`
+
+**Possible values:** `html`, `text`
+
+##### Example: `outputFormat`
+
+```xml
+<Editor
+  outputFormat='text'
+/>
+```
 
 #### `plugins`
 Used to include plugins for the editor. Using `<Editor plugins='lists' />` is the same as setting `{plugins: 'lists'}` in the {{site.productname}} selector (`tinymce.init`).

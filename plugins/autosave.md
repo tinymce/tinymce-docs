@@ -7,7 +7,12 @@ controls: toolbar button, menu item
 keywords: autosave_ask_before_unload autosave_interval autosave_prefix autosave_prefix autosave_restore_when_empty autosave_retention
 ---
 
-The autosave plugin gives the user a warning if they try to close the browser window or tab with unsaved changes in the editor. The autosave plugin adds:
+The autosave plugin gives the user a warning if they have unsaved changes in the editor and either:
+
+- Try to close the browser window or tab, or
+- Try to navigate away from the current page.
+
+The autosave plugin adds:
 
 - A menu item, "Restore last draft" under the `File` menu, and 
 - An optional toolbar button.

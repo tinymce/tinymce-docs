@@ -13,6 +13,7 @@
   - [`init`](#init)
   - [`initialValue`](#initialvalue)
   - [`inline`](#inline)
+  - [`outputFormat`](#outputformat)
   - [`plugins`](#plugins)
   - [`tagName`](#tagname)
   - [`toolbar`](#toolbar)
@@ -220,6 +221,24 @@ For information on adding plugins to {{site.productname}}, see: [Add plugins to 
 <editor
   plugins="lists code"
 ></editor>
+```
+
+#### `outputFormat`
+
+Used to specify the format of the content emitted by the tinymce-angular component when used in conjunction with forms or plain data bindings.
+
+**Type:** String
+
+**Default value:** `html`
+
+**Possible values:** `html`, `text`
+
+##### Example: `outputFormat`
+
+```xml
+<Editor
+  outputFormat="text"
+/>
 ```
 
 #### `tagName`

@@ -14,6 +14,7 @@
     - [`initial-value`](#initial-value)
     - [`inline`](#inline)
     - [`model-events`](#model-events)
+    - [`output-format`](#output-format)
     - [`plugins`](#plugins)
     - [`tag-name`](#tag-name)
     - [`toolbar`](#toolbar)
@@ -228,6 +229,24 @@ For a list of available {{site.productname}} events, see: [Editor events]({{site
 ```xml
 <editor
   model-events="change keydown blur focus paste"
+/>
+```
+
+#### `output-format`
+
+Used to specify the format of the content emitted via the `input` event. This affects the format of the content used in conjunction with data binding.
+
+**Type:** String
+
+**Default value:** `html`
+
+**Possible values:** `html`, `text`
+
+##### Example: `output-format`
+
+```xml
+<editor
+  output-format="text"
 />
 ```
 

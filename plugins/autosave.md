@@ -12,8 +12,6 @@ The autosave plugin gives the user a warning if they try to close the browser wi
 - A menu item, "Restore last draft" under the `File` menu, and 
 - An optional toolbar button.
 
-**Type:** `String`
-
 ##### Example
 
 ```js

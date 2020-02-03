@@ -95,9 +95,9 @@ To register for a {{site.cloudname}} API key, visit the [sign-up page]({{site.ac
 ##### Example: `apiKey`
 
 ```xml
-<Editor
+<editor
   apiKey="your-api-key"
-/>
+></editor>
 ```
 
 #### `cloudChannel`
@@ -115,7 +115,10 @@ Changes the {{site.productname}} build used for the editor to one of the followi
 Such as:
 
 ```js
-<Editor apiKey="your-api-key" cloudChannel="{{site.productmajorversion}}-dev" [init]={% raw %}{{% endraw %} /* your other settings */ {% raw %}}{% endraw %} />
+<editor
+  apiKey="your-api-key"
+  cloudChannel="{{site.productmajorversion}}-dev"
+></editor>
 ```
 For information {{site.productname}} development channels, see: [Specifying the {{site.productname}} editor version deployed from Cloud - dev, testing, and stable releases]({{site.baseurl}}/cloud-deployment-guide/editor-plugin-version/#devtestingandstablereleases).
 
@@ -130,9 +133,9 @@ The `disabled` property can dynamically switch the editor between a "disabled" (
 ##### Example: `disabled`
 
 ```html
-<Editor
+<editor
   [disabled]="true"
-/>
+></editor>
 ```
 
 #### `id`
@@ -145,9 +148,9 @@ An id for the editor. Used for retrieving the editor instance using the `tinymce
 ##### Example: `id`
 
 ```xml
-<Editor
+<editor
   id="uuid"
-/>
+></editor>
 ```
 
 #### `init`
@@ -162,14 +165,14 @@ For information on the {{site.productname}} selector (`tinymce.init`), see: [Bas
 ##### Example: `init`
 
 ```html
-<Editor
+<editor
   [init]="{% raw %}{{% endraw %}
     plugins: [
      'lists link image paste help wordcount'
     ],
     toolbar: 'undo redo | formatselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | help'
   {% raw %}}{% endraw %}"
-/>
+></editor>
 ```
 
 #### `initialValue`
@@ -182,9 +185,9 @@ Initial content of the editor when the editor is initialized.
 ##### Example: `initialValue`
 
 ```xml
-<Editor
-  initialValue='Once upon a time...'
-/>
+<editor
+  initialValue="Once upon a time..."
+></editor>
 ```
 
 #### `inline`
@@ -199,9 +202,9 @@ For information on inline mode, see: [User interface options - `inline`]({{site.
 ##### Example: `inline`
 
 ```html
-<Editor
+<editor
   [inline]="true"
-/>
+></editor>
 ```
 
 #### `plugins`
@@ -214,9 +217,9 @@ For information on adding plugins to {{site.productname}}, see: [Add plugins to 
 ##### Example: `plugins`
 
 ```xml
-<Editor
+<editor
   plugins="lists code"
-/>
+></editor>
 ```
 
 #### `tagName`
@@ -229,18 +232,16 @@ Only valid when [`<editor [inline]="true"></editor>`](#inline). Used to define t
 ##### Example: `tagName`
 
 ```html
-<Editor
+<editor
   [inline]="true"
-  tagName="myTextArea"
-/>
+  tagName="my-custom-tag"
+></editor>
 ```
 
 #### `toolbar`
 Used to set the toolbar for the editor. Using `<editor toolbar="bold italic"></editor>` is the same as setting `{toolbar: 'bold italic'}` in the {{site.productname}} selector (`tinymce.init`).
 
 For information setting the toolbar for {{site.productname}}, see: [User interface options - toolbar]({{site.baseurl}}/configure/editor-appearance/#toolbar).
-
-**Default value:** `' '`
 
 **Possible values:**  See [Editor control identifiers - Toolbar controls]({{site.baseurl}}/advanced/editor-control-identifiers/).
 
@@ -249,10 +250,10 @@ For information setting the toolbar for {{site.productname}}, see: [User interfa
 ##### Example: `toolbar`
 
 ```xml
-<Editor
+<editor
   plugins="code"
   toolbar="bold italic underline code"
-/>
+></editor>
 ```
 
 ### Using the `ngModel` directive
@@ -285,9 +286,9 @@ Functions can be bound to editor events, such as:
 <editor (onSelectionChange)="handleEvent($event)"></editor>
 ```
 
-When the handler is called (`handleEvent` in this example), it is called with two arguments:
+When the handler is called (`handleEvent` in this example), it is called with an event containing two properties:
 
-* `event` - The event object.
+* `event` - The TinyMCE event object.
 * `editor` - A reference to the editor.
 
 The following events are available:

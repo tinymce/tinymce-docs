@@ -16,11 +16,11 @@ These release notes provide an overview of the changes for {{site.productname}} 
 
 ## General bug fixes
 
-{{site.productname}} 5.1.6 provides fixes for the following bugs:
+{{site.productname}} 5.1.6 provides the following bug fixes:
 
-- The editor when in `readonly` mode will now ensure links are properly blocked when clicked.
+- When the editor is in `readonly` mode, it will now ensure links are properly blocked when clicked.
 - The `FontSize` query value command now calculates legacy font sizes consistently with CSS font sizes.
-- Changing a tables row type from `Header` to `Body` incorrectly moved the row to the bottom of the table.
+- Changing a tables row type from `Header` to `Body` no-longer incorrectly moves the row to the bottom of the table.
 - Context menus now open correctly on hybrid devices that support both touch and mouse input.
 - Context menus no longer open in the wrong location when the target was the editor body.
 - The `image` plugin now respects the [`automatic_uploads`]({{site.baseurl}}/configure/file-image-upload/#automatic_uploads) setting when uploading local images.
@@ -37,7 +37,7 @@ These release notes provide an overview of the changes for {{site.productname}} 
 
 The {{site.productname}} 5.1.6 release includes **Advanced Code Editor** 2.0.3.
 
-**Advanced Code Editor** 2.0.3 provides fixes for the following bugs:
+**Advanced Code Editor** 2.0.3 provides the following bug fixes:
 
 - The code editor gutter will no longer render on top of the content in {{site.productname}} 4.
 - The code editor dialog will now resize responsively based on the window size in {{site.productname}} 5.
@@ -46,7 +46,7 @@ The {{site.productname}} 5.1.6 release includes **Advanced Code Editor** 2.0.3.
 
 The {{site.productname}} 5.1.6 release includes **Enhanced Media Embed** 2.2.5.
 
-**Enhanced Media Embed** 2.2.5 provides fixes for the following bugs:
+**Enhanced Media Embed** 2.2.5 provides the following bug fixes:
 
 - The [`mediaembed_max_width`]({{site.baseurl}}/plugins/mediaembed/#mediaembed_max_width) setting will now constrain the max width correctly on Internet Explorer 11.
 

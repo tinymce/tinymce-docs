@@ -222,7 +222,7 @@ For information on adding plugins to {{site.productname}}, see: [Add plugins to 
 
 #### `outputFormat`
 
-Used to specify the format of the content emitted by the tinymce-angular component when used in conjunction with forms or plain data binding.
+Used to specify the format of the content emitted by the tinymce-angular component when used in conjunction with forms or plain data bindings.
 
 **Type:** String
 

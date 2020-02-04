@@ -2,7 +2,9 @@
 
 This option is used if the [`relative_urls`](#relative_urls) option is set to `false` and only applies to links with the same domain as the [`document_base_url`](#document_base_url).
 
-If this option is set to `false`, the `document_base_url` retained for relative links.
+If this option is set to `true`, the protocol and host of the `document_base_url` is _excluded_ for relative links.
+
+If this option is set to `false`, the protocol and host of the `document_base_url` is _added_ for relative links.
 
 **Type:** `Boolean`
 
@@ -10,13 +12,30 @@ If this option is set to `false`, the `document_base_url` retained for relative 
 
 **Possible Values:** `true`, `false`
 
-##### Example
+##### Examples
+
+When `remove_script_host` is set to `true`, such as:
 
 ```js
 tinymce.init({
-  selector: 'textarea',  // change this value according to your HTML
+  selector: 'textarea',
+  document_base_url: 'http://www.example.com/path1/',
+  relative_urls: false,
+  remove_script_host: true
+});
+```
+
+Adding a relative URL such as `test.html`, the editor will convert the URL to: `/path1/test.html`.
+
+When `remove_script_host` is set to `false`, such as:
+
+```js
+tinymce.init({
+  selector: 'textarea',
+  document_base_url: 'http://www.example.com/path1/',
+  relative_urls: false,
   remove_script_host: false
 });
 ```
 
-> If disabled, relative URLs will be returned in this format: `'http://www.example.com/somedir/somefile.htm'` instead of the default format: `'/somedir/somefile.htm'`.
+Adding a relative URL such as `test.html`, the editor will convert the URL to: `http://www.example.com/path1/test.html`.

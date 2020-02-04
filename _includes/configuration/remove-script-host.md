@@ -1,6 +1,8 @@
 ## remove_script_host
 
-If this option is enabled the protocol and host part of the URLs returned from the MCFileManager will be removed. This option is only used if the [relative_urls](#relative_urls) option is set to false.
+This option is used if the [`relative_urls`](#relative_urls) option is set to `false` and only applies to links with the same domain as the [`document_base_url`](#document_base_url).
+
+If this option is set to `false`, the `document_base_url` retained for relative links.
 
 **Type:** `Boolean`
 
@@ -17,4 +19,4 @@ tinymce.init({
 });
 ```
 
-> If disabled, URLs will be returned in this format: `'http://www.example.com/somedir/somefile.htm'` instead of the default format: `'/somedir/somefile.htm'`.
+> If disabled, relative URLs will be returned in this format: `'http://www.example.com/somedir/somefile.htm'` instead of the default format: `'/somedir/somefile.htm'`.

@@ -13,6 +13,7 @@
   - [`initialValue`](#initialvalue)
   - [`inline`](#inline)
   - [`onEditorChange`](#oneditorchange)
+  - [`outputFormat`](#outputformat)
   - [`plugins`](#plugins)
   - [`tagName`](#tagname)
   - [`textareaName`](#textareaname)
@@ -26,9 +27,9 @@
 
 To install the `tinymce-react` package and save it to your `package.json`.
 
-    ```
-    $ npm install --save @tinymce/tinymce-react
-    ```
+```sh
+$ npm install --save @tinymce/tinymce-react
+```
 
 ### Configuring the editor
 
@@ -86,7 +87,11 @@ Changes the {{site.productname}} build used for the editor to one of the followi
 Such as:
 
 ```js
-<Editor apiKey='your-api-key' cloudChannel='{{site.productmajorversion}}-dev' init={% raw %}{{{% endraw %} /* your other settings */ {% raw %}}}{% endraw %} />
+<Editor
+  apiKey='your-api-key'
+  cloudChannel='{{site.productmajorversion}}-dev'
+  init={% raw %}{{{% endraw %} /* your other settings */ {% raw %}}}{% endraw %}
+/>
 ```
 For information {{site.productname}} development channels, see: [Specifying the {{site.productname}} editor version deployed from Cloud - dev, testing, and stable releases]({{site.baseurl}}/cloud-deployment-guide/editor-plugin-version/#devtestingandstablereleases).
 
@@ -176,11 +181,29 @@ For information on inline mode, see: [User interface options - `inline`]({{site.
 ```
 
 #### `onEditorChange`
-Used to store the state of the editor outside the editor React component. This property is used when using the {{site.productname}} React component as a controlled component.
+Used to store the state of the editor outside the editor React component. This property is commonly used when using the {{site.productname}} React component as a controlled component. Use the [`outputFormat`](#outputformat) prop to specify the format of the content emitted.
 
 For more information, see: [Using the {{site.productname}} React component as a controlled component](#usingthetinymcereactcomponentasacontrolledcomponent).
 
 **Type:** EventHandler
+
+#### `outputFormat`
+
+Used to specify the format of the content emitted via the [`onEditorChange`](#oneditorchange) event.
+ 
+**Type:** String
+
+**Default value:** `html`
+
+**Possible values:** `html`, `text`
+
+##### Example: `outputFormat`
+
+```xml
+<Editor
+  outputFormat='text'
+/>
+```
 
 #### `plugins`
 Used to include plugins for the editor. Using `<Editor plugins='lists' />` is the same as setting `{plugins: 'lists'}` in the {{site.productname}} selector (`tinymce.init`).
@@ -209,7 +232,7 @@ Only valid when [`<Editor inline={true} />`](#inline). Used to define the HTML e
 ```xml
 <Editor
   inline={true}
-  tagName='myTextArea'
+  tagName='my-custom-tag'
 />
 ```
 
@@ -224,9 +247,6 @@ Sets the `name` attribute for the `textarea` element used for the editor in form
 
 ```xml
 <Editor
-  init={% raw %}{{{% endraw %}
-    selector: 'textarea'
-  {% raw %}}}{% endraw %}
   textareaName='myTextArea'
 />
 ```
@@ -235,8 +255,6 @@ Sets the `name` attribute for the `textarea` element used for the editor in form
 Used to set the toolbar for the editor. Using `<Editor toolbar='bold' />` is the same as setting `{toolbar: 'bold'}` in the {{site.productname}} selector (`tinymce.init`).
 
 For information setting the toolbar for {{site.productname}}, see: [User interface options - toolbar]({{site.baseurl}}/configure/editor-appearance/#toolbar).
-
-**Default value:** `' '`
 
 **Possible values:**  See [Editor control identifiers - Toolbar controls]({{site.baseurl}}/advanced/editor-control-identifiers/).
 
@@ -277,7 +295,10 @@ class MyComponent extends React.Component {
 
   render() {
     return (
-      <Editor value={this.state.content} onEditorChange={this.handleEditorChange} />
+      <Editor
+        value={this.state.content}
+        onEditorChange={this.handleEditorChange}
+      />
     )
   }
 }
@@ -293,7 +314,10 @@ Functions can be bound to editor events, such as:
 <Editor onSelectionChange={this.handlerFunction} />
 ```
 
-Where the `handlerFunction` is triggered with the event, in this case `onSelectionChange`.
+When the handler is called (**handlerFunction** in this example), it is called with two arguments:
+
+* `event` - The TinyMCE event object.
+* `editor` - A reference to the editor.
 
 The following events are available:
 

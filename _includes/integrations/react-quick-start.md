@@ -43,8 +43,8 @@ This procedure requires:
     import { Editor } from '@tinymce/tinymce-react';
 
     class App extends React.Component {
-      handleEditorChange = (e) => {
-        console.log('Content was updated:', e.target.getContent());
+      handleEditorChange = (content, editor) => {
+        console.log('Content was updated:', content);
       }
 
       render() {
@@ -64,7 +64,7 @@ This procedure requires:
                 alignleft aligncenter alignright alignjustify | \
                 bullist numlist outdent indent | removeformat | help'
             {% raw %}}}{% endraw %}
-            onChange={this.handleEditorChange}
+            onEditorChange={this.handleEditorChange}
           />
         );
       }

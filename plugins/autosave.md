@@ -7,11 +7,15 @@ controls: toolbar button, menu item
 keywords: autosave_ask_before_unload autosave_interval autosave_prefix autosave_prefix autosave_restore_when_empty autosave_retention
 ---
 
-This plugin gives the user a warning if they made modifications to the content within an editor instance but didn't submit the changes. It also adds a menu item "Restore last draft" under the `File` menu. It also adds an optional button to the toolbar, which is useful if you don't intend to use menus.
+The autosave plugin gives the user a warning if they have unsaved changes in the editor and either:
 
-on click will open a dialog box to accept raw code input.
+- Try to close the browser window or tab, or
+- Try to navigate away from the current page.
 
-**Type:** `String`
+The autosave plugin adds:
+
+- A menu item, "Restore last draft" under the `File` menu, and 
+- An optional toolbar button.
 
 ##### Example
 

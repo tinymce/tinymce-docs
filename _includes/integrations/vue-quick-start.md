@@ -50,7 +50,6 @@ This procedure requires:
         <img alt="Vue logo" src="./assets/logo.png">
         <editor
           api-key="no-api-key"
-          initialValue="<p>This is the initial content of the editor</p>"
           :init="{% raw %}{{% endraw %}
             height: 500,
             menubar: false,
@@ -64,7 +63,7 @@ This procedure requires:
               alignleft aligncenter alignright alignjustify | \
               bullist numlist outdent indent | removeformat | help'
           {% raw %}}{% endraw %}"
-          ></editor>
+        />
       </div>
     </template>
 

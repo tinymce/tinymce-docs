@@ -30,7 +30,6 @@ Available values for [content_css]({{site.baseurl}}/configure/content-appearance
 - material-classic
 - material-outline
 - fabric
-- thin
 
 ##### Example
 
@@ -51,6 +50,7 @@ Available values for [icon]({{site.baseurl}}/configure/editor-appearance/#icons)
 - material
 - small
 - jam
+- thin
 
 ##### Example
 

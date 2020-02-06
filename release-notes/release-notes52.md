@@ -67,7 +67,7 @@ The {{site.productname}} 5.2 release includes **Page Embed** 1.1.0.
 
 **Page Embed** 1.1.0 includes:
 
-* adds a new tiny_pageembed_inline_styles setting to inline the styles in the content (similar to the media embed functionality)
+- adds a new tiny_pageembed_inline_styles setting to inline the styles in the content (similar to the media embed functionality)
 
 ### Permanent Pen
 
@@ -81,8 +81,10 @@ The {{site.productname}} 5.2 release includes **Premium Skins and Icon Packs** 1
 
 **Premium Skins and Icon Packs** 1.2 includes:
 
-* 3 new skins available: 'snow', 'naked' and 'outside'
-* 1 new icon pack available: 'thin'
+- 3 new skins: ['naked']({{site.baseurl}}/enterprise/premium-skins-and-icon-packs/naked-demo/), ['outside']({{site.baseurl}}/enterprise/premium-skins-and-icon-packs/outside-demo/), and ['snow']({{site.baseurl}}/enterprise/premium-skins-and-icon-packs/snow-demo/).
+- 1 new icon pack: 'thin'.
+
+For information on using premium skins and icon packs, see: [Premium Skins and Icon Packs]({{site.baseurl}}/enterprise/premium-skins-and-icon-packs/).
 
 ### Spellchecker Pro
 
@@ -90,17 +92,16 @@ The {{site.productname}} 5.2 release includes **Spellchecker Pro** 2.0.
 
 **Spellchecker Pro** 2.0 includes:
 
-* New functionality allowspell check the document in multiple languages
-* there's a number of new menu items/buttons
+- New functionality allowspell check the document in multiple languages
+- there's a number of new menu items/buttons
 
 ## General bug fixes
 
 {{site.productname}} 5.2 provides fixes for the following bugs:
 
-- 
+-
 
 ## Deprecated features
-
 
 ## Known issues
 

@@ -621,6 +621,10 @@
   pages:
   - url: "accessibility"
   - url: "security"
+    pages:
+    - url: "#Reporting TinyMCE security issues"
+    - url: "#What we do to maintain TinyMCEs’ security"
+    - url: "#Potential security risks and mitigation measures"
   - url: "boilerplate-content-css"
   - url: "creating-a-skin"
   - url: "creating-an-icon-pack"

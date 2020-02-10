@@ -37,6 +37,36 @@ You need to add `prism.js` and `prism.css` to your page in order to get the synt
 
 ## Options
 
+### `codesample_global_prismjs`
+
+{{ site.requires_5_2v }}
+
+This configuration option enables the global Prism.js version to be used when highlighting code sample blocks instead of using the Prism.js version bundled inside the `codesample` plugin. This allows for a custom version of Prism.js, including additional languages, to be used.
+
+When using this option, ensure that Prism.js is also loaded on the site, alongside the TinyMCE script:
+
+```html
+<script src="prism.js" data-manual></script>
+<script src="tinymce.js"></script>
+```
+
+**Type:** `Boolean`
+
+**Default value:** `false`
+
+**Possible values:** `true`, `false`
+
+#### Example
+
+```js
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'codesample',
+  toolbar: 'codesample',
+  codesample_global_prismjs: true
+});
+```
+
 ### `codesample_languages`
 
 This configuration option enables you to set a list of languages to be displayed in the languages drop down.
@@ -48,20 +78,21 @@ tinymce.init({
   selector: 'textarea',
   plugins: 'codesample',
   codesample_languages: [
-		{text: 'HTML/XML', value: 'markup'},
-		{text: 'JavaScript', value: 'javascript'},
-		{text: 'CSS', value: 'css'},
-		{text: 'PHP', value: 'php'},
-		{text: 'Ruby', value: 'ruby'},
-		{text: 'Python', value: 'python'},
-		{text: 'Java', value: 'java'},
-		{text: 'C', value: 'c'},
-		{text: 'C#', value: 'csharp'},
-		{text: 'C++', value: 'cpp'}
-	],
+    { text: 'HTML/XML', value: 'markup' },
+    { text: 'JavaScript', value: 'javascript' },
+    { text: 'CSS', value: 'css' },
+    { text: 'PHP', value: 'php' },
+    { text: 'Ruby', value: 'ruby' },
+    { text: 'Python', value: 'python' },
+    { text: 'Java', value: 'java' },
+    { text: 'C', value: 'c' },
+    { text: 'C#', value: 'csharp' },
+    { text: 'C++', value: 'cpp' }
+  ],
   toolbar: 'codesample'
 });
 ```
+
 ## Live example
 
 {% include codepen.html id="codesample" %}

@@ -41,9 +41,9 @@ For information on using the `quickbars_image_toolbar` setting, see: [Quick Tool
 
 ### Use custom Prism versions and languages when highlighting code samples
 
-The `codesample` plugin now has the ability to use a custom Prism.js version and languages when highlighting code samples in the editor. This can be enabled by including the custom Prism.js script and language add-ons on the page and setting the new `codesample_global_prismjs` option to `true`.
+The `codesample` plugin now has the ability to use a custom Prism.js version and a custom languages list when highlighting code samples in the editor. This can be enabled by including the custom Prism.js script and language add-ons on the page and setting the new `codesample_global_prismjs` option to `true`.
 
-For more information on using the `codesample_global_prismjs` setting, see: [Code sample plugin - `codesample_global_prismjs`]({{ site.baseurl }}/plugins/codesample/#codesample_global_prismjs).
+For information on using the `codesample_global_prismjs` setting, see: [Code sample plugin - `codesample_global_prismjs`]({{ site.baseurl }}/plugins/codesample/#codesample_global_prismjs).
 
 ### New `tinymce.dom.TextSeeker` API
 

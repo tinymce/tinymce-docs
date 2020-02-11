@@ -41,9 +41,9 @@ You need to add `prism.js` and `prism.css` to your page in order to get the synt
 
 {{ site.requires_5_2v }}
 
-This configuration option enables the global Prism.js version to be used when highlighting code sample blocks instead of using the Prism.js version bundled inside the `codesample` plugin. This allows for a custom version of Prism.js, including additional languages, to be used.
+This configuration option allows a global Prism.js version to be used when highlighting code sample blocks, instead of using the Prism.js version bundled inside the `codesample` plugin. This allows for a custom version of Prism.js, including additional languages, to be used.
 
-When using this option, ensure that Prism.js is also loaded on the site, alongside the TinyMCE script:
+When using this option, ensure that Prism.js and any language add-ons are loaded on the site, alongside the TinyMCE script:
 
 ```html
 <script src="prism.js" data-manual></script>

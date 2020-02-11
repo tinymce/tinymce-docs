@@ -176,9 +176,9 @@ Use the following demo [here]({{site.baseurl}}/demo/custom-toolbar-menu-button/)
 
 {{ site.requires_5_2v }}
 
-A group toolbar button is a toolbar button that contains a collection of other toolbar buttons that should be displayed in a popup when clicked. The way the groups are displayed will depend on the current [toolbar mode]({{site.baseurl}}/configure/editor-appearance/#toolbarmode). As an example, if `toolbar_mode` is configured to use a `floating` toolbar drawer, then the groups will also appear in a floating shelf.
+A group toolbar button is a toolbar button that contains a collection of other toolbar buttons that are displayed in a pop-up when clicked. The style of toolbar shown is based on the current [toolbar mode]({{site.baseurl}}/configure/editor-appearance/#toolbarmode). For example, if `toolbar_mode` is set to `floating`, the toolbar group pop-up will appear in a floating shelf.
 
-> **Note:** Currently the group toolbar button feature is only supported when using the `floating` toolbar mode. If used with any other toolbar modes, then the button will not be displayed and a warning message will be printed in the console.
+> **Note:** The `toolbar_groups` feature is _only_ supported when using the `floating` toolbar mode. If the `toolbar_groups` option is used with other toolbar modes, the toolbar group button will not be displayed and a warning message will be printed in the console.
 
 #### Config options
 
@@ -187,7 +187,7 @@ A group toolbar button is a toolbar button that contains a collection of other t
 | text | string | optional | Text to display if no icon is found. |
 | icon | string | optional | Name of the icon to be displayed. Must correspond to an icon in the [icon pack]({{site.baseurl}}/advanced/editor-icon-identifiers/). |
 | tooltip | string | optional | Text for button tooltip. |
-| items | string or LabelledToolbar[] | required | A string of space separated toolbar button names, or an array of [labelled toolbar buttons]({{site.baseurl}}/configure/editor-appearance/#addingtoolbargrouplabels) configuration. |
+| items | string or LabelledToolbar[] | required | A string of space separated toolbar button names, or an array of [labelled toolbar buttons]({{site.baseurl}}/configure/editor-appearance/#addingtoolbargrouplabels). |
 | onSetup | (api) => (api) => void | optional | default: () => () => {} - Function that's invoked when the button is rendered. |
 
 > Note: See [below](#onsetupexplanation) for details on how to configure `onSetup`.

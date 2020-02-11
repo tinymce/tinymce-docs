@@ -12,7 +12,7 @@ There are four types of Toolbar Buttons in {{site.productname}} {{site.productma
 * [Toggle button](#togglebutton)
 * [Split button](#splitbutton)
 * [Menu button](#menubutton)
-* [Group button](#groupbutton)
+* [Group toolbar button](#grouptoolbarbutton)
 
 ### Basic button
 
@@ -172,7 +172,7 @@ The `fetch` function is called when the toolbar menu button's menu is opened. It
 
 Use the following demo [here]({{site.baseurl}}/demo/custom-toolbar-menu-button/) for help using the menu toolbar button.
 
-### Group button
+### Group toolbar button
 
 {{ site.requires_5_2v }}
 
@@ -199,7 +199,7 @@ A group toolbar button is a toolbar button that contains a collection of other t
 | isDisabled | ( ) => boolean | Checks if the button is disabled. |
 | setDisabled | (state: boolean) => void | Sets the button's disabled state. |
 
-#### Group button example and explanation
+#### Group toolbar button example and explanation
 
 The following is a simple group toolbar button example:
 

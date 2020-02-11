@@ -12,7 +12,7 @@ tinymce.init({
   setup: function (editor) {
 
     /* example, adding a group toolbar button */
-    editor.ui.registry.addGroupButton('alignment', {
+    editor.ui.registry.addGroupToolbarButton('alignment', {
       icon: 'align-left',
       tooltip: 'Alignment',
       items: 'alignleft aligncenter alignright | alignjustify'

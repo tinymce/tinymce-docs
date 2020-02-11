@@ -53,12 +53,6 @@ For information on using the `TextSeeker` API, see: [{{site.productname}} APIs -
 
 ### Updated the colorinput component visual appearance --- updated color swatches in input fields
 
-### New proportional image resizing setting
-
-When a user resizes an image in the editor, the `resize_img_proportional` setting controls whether image is resized proportionally or freely.
-
-For information on this setting, see: [Advanced editing behaviors - resize_img_proportional]({{site.baseurl}}/configure/advanced-editing-behavior/#resize_img_proportional).
-
 ## Premium Plugin changes
 
 The following premium plugins have been updated for {{site.productname}} 5.2.

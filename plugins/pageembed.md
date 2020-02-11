@@ -131,27 +131,19 @@ If the `tiny_pageembed_classes` setting is left undefined, the default classes w
   width: 100%;
 }
 
-.tiny-pageembed--21by9::before,
-.tiny-pageembed--16by9::before,
-.tiny-pageembed--4by3::before,
-.tiny-pageembed--1by1::before {
-  content: "";
-  display: block;
-}
-
-.tiny-pageembed--21by9::before {
+.tiny-pageembed--21by9 {
   padding-top: 42.857143%;
 }
 
-.tiny-pageembed--16by9::before {
+.tiny-pageembed--16by9 {
   padding-top: 56.25%;
 }
 
-.tiny-pageembed--4by3::before {
+.tiny-pageembed--4by3 {
   padding-top: 75%;
 }
 
-.tiny-pageembed--1by1::before {
+.tiny-pageembed--1by1 {
   padding-top: 100%;
 }
 

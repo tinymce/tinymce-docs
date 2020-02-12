@@ -17,7 +17,7 @@ keywords: security xss scripting vulnerability hack hacker csp mitigation protec
   - [Scripts and XSS vulnerabilities](#scriptsandxssvulnerabilities)
   - [Keeping dependencies up-to-date](#keepingdependenciesup-to-date)
   - [Configuring Content Security Policy (CSP) for TinyMCE](#configuringcontentsecuritypolicycspfortinymce)
-- [Potential security risks and mitigation measures](#potentialsecurityrisksandmitigationmeasures)
+- [General security risks for user input elements](#generalsecurityrisksforuserinputelements)
 
   - [Cross-Site Scripting (XSS)](#cross-sitescriptingxss)
   - [Injection](#injection)

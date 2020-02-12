@@ -66,10 +66,6 @@ For information on using the `addGroupToolbarButton` API, see: [Types of toolbar
 
 ### Updated the colorinput component visual appearance --- updated color swatches in input fields
 
-### Missing resize_img_proportional setting
-
-This controls how images are resized. It requires a boolean value and the default is true (ie images will resize proportionally).
-
 ## Premium Plugin changes
 
 The following premium plugins have been updated for {{site.productname}} 5.2.

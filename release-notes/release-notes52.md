@@ -51,7 +51,13 @@ The TextSeeker class is used for walking across text nodes to match a predicate.
 
 For information on using the `TextSeeker` API, see: [{{site.productname}} APIs - tinymce.dom.TextSeeker]({{ site.baseurl }}/api/tinymce.dom/tinymce.dom.textseeker/).
 
-### renamed toolbar_drawer to toolbar_mode and changed the default to wrap instead of false (both are the same, just wrap is more self explanatory)
+### Changed toolbar_drawer to toolbar_mode
+
+The `toolbar_drawer` option has been deprecated and replaced with the `toolbar_mode` option. `toolbar_mode` provides the same functionality as `toolbar_drawer`. The name change was made to reflect the range of settings available for this option.
+
+The default option for `toolbar_mode` is `'wrap'`, which has the same behavior as the deprecated `toolbar_drawer: false` setting.
+
+For information on the `toolbar_mode` option, see: [User interface options - `toolbar_mode`]({{site.baseurl}}/configure/editor-appearance/#toolbar_mode).
 
 ### New group toolbar button
 
@@ -78,9 +84,7 @@ The following premium plugins have been updated for {{site.productname}} 5.2.
 
 The {{site.productname}} 5.2 release includes **Page Embed** 1.1.0.
 
-**Page Embed** 1.1.0 includes:
-
-* A new `tiny_pageembed_inline_styles` setting which inlines all styles, while also keeping CSS classes, when rendering the embed content. This is useful when the additional CSS classes can't be added to your site.
+**Page Embed** 1.1.0 adds a new `tiny_pageembed_inline_styles` setting which inlines all styles, while also keeping CSS classes, when rendering the embed content. This is useful when the additional CSS classes can't be added to your site.
 
 For information on inlining page embed styles, see: [Page Embed plugin - Inline styles for page embeds]({{site.baseurl}}/plugins/pageembed/#inlinestylesforpageembeds).
 

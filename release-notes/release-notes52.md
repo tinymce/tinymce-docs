@@ -80,7 +80,9 @@ The {{site.productname}} 5.2 release includes **Page Embed** 1.1.0.
 
 **Page Embed** 1.1.0 includes:
 
-- adds a new tiny_pageembed_inline_styles setting to inline the styles in the content (similar to the media embed functionality)
+* A new `tiny_pageembed_inline_styles` setting which inlines all styles, while also keeping CSS classes, when rendering the embed content. This is useful when the additional CSS classes can't be added to your site.
+
+For information on inlining page embed styles, see: [Page Embed plugin - Inline styles for page embeds]({{site.baseurl}}/plugins/pageembed/#inlinestylesforpageembeds).
 
 ### Permanent Pen
 

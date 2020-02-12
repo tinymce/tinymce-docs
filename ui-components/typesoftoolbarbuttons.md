@@ -12,6 +12,7 @@ There are four types of Toolbar Buttons in {{site.productname}} {{site.productma
 * [Toggle button](#togglebutton)
 * [Split button](#splitbutton)
 * [Menu button](#menubutton)
+* [Group toolbar button](#grouptoolbarbutton)
 
 ### Basic button
 
@@ -28,7 +29,7 @@ A basic button triggers its `onAction` function when clicked.
 | onSetup | (api) => (api) => void | optional | default: () => () => {} - Function invoked when the button is rendered. |
 | onAction | (api) => void | required | Function invoked when the button is clicked. |
 
-> Note: See [below]({{site.baseurl}}/ui-components/typesoftoolbarbuttons/#onSetupexplanation) for details on how to configure `onSetup`.
+> Note: See [below](#onsetupexplanation) for details on how to configure `onSetup`.
 
 #### API
 
@@ -67,7 +68,7 @@ A toggle button triggers an action when clicked but also has a concept of state.
 | onSetup | (api) => (api) => void | optional | default: () => () => {} - Function invoked when the button is rendered. |
 | onAction | (api) => void | required | Function invoked when the button is clicked. |
 
-> Note: See [below]({{site.baseurl}}/ui-components/typesoftoolbarbuttons/#onSetupexplanation) for details on how to configure `onSetup`.
+> Note: See [below](#onsetupexplanation) for details on how to configure `onSetup`.
 
 #### API
 
@@ -111,7 +112,7 @@ A split button contains a basic button and a menu button, wrapped up into one to
 | onItemAction | (api, value) => void | required | Function invoked when a dropdown list option is clicked. |
 | onSetup | (api) => (api) => void | optional | default: () => () => {} - Function invoked when the button is rendered. |
 
-> Note: See [below]({{site.baseurl}}/ui-components/typesoftoolbarbuttons/#onSetupexplanation) for details on how to configure `onSetup`.
+> Note: See [below](#onsetupexplanation) for details on how to configure `onSetup`.
 
 #### API
 
@@ -150,7 +151,7 @@ A toolbar menu button is a toolbar button that opens a menu when clicked. This m
 | fetch | (success: (menu) => void) => void  | required | Function that takes a callback which must be passed the list of options for the button's dropdown. |
 | onSetup | (api) => (api) => void | optional | default: () => () => {} - Function that's invoked when the button is rendered. |
 
-> Note: See [below]({{site.baseurl}}/ui-components/typesoftoolbarbuttons/#onSetupexplanation) for details on how to configure `onSetup`.
+> Note: See [below](#onsetupexplanation) for details on how to configure `onSetup`.
 
 #### API
 
@@ -170,6 +171,41 @@ This example configures a toolbar menu button with the label `My Button` that op
 The `fetch` function is called when the toolbar menu button's menu is opened. It is a function that takes a callback and passes it an array of menu items to be rendered in the drop-down menu. This allows for asynchronous fetching of the menu items.
 
 Use the following demo [here]({{site.baseurl}}/demo/custom-toolbar-menu-button/) for help using the menu toolbar button.
+
+### Group toolbar button
+
+{{ site.requires_5_2v }}
+
+A group toolbar button is a toolbar button that contains a collection of other toolbar buttons that are displayed in a pop-up when clicked. The style of toolbar shown is based on the current [toolbar mode]({{site.baseurl}}/configure/editor-appearance/#toolbarmode). For example, if `toolbar_mode` is set to `floating`, the toolbar group pop-up will appear in a floating shelf.
+
+> **Note:** The group toolbar button is _only_ supported when using the `floating` toolbar mode. If the `toolbar_groups` option is used with other toolbar modes, the toolbar group button will not be displayed and a warning message will be printed in the console.
+
+#### Config options
+
+| Name | Value | Requirement | Description |
+|------| ------| ------------| ----------- |
+| text | string | optional | Text to display if no icon is found. |
+| icon | string | optional | Name of the icon to be displayed. Must correspond to an icon in the [icon pack]({{site.baseurl}}/advanced/editor-icon-identifiers/). |
+| tooltip | string | optional | Text for button tooltip. |
+| items | string or LabelledToolbar[] | required | A string of space separated toolbar button names, or an array of [labelled toolbar buttons]({{site.baseurl}}/configure/editor-appearance/#addingtoolbargrouplabels). |
+| onSetup | (api) => (api) => void | optional | default: () => () => {} - Function that's invoked when the button is rendered. |
+
+> Note: See [below](#onsetupexplanation) for details on how to configure `onSetup`.
+
+#### API
+
+| Name | Value | Description |
+|------| ------| ------------|
+| isDisabled | ( ) => boolean | Checks if the button is disabled. |
+| setDisabled | (state: boolean) => void | Sets the button's disabled state. |
+
+#### Group toolbar button example and explanation
+
+The following is a simple group toolbar button example:
+
+{% include codepen.html id="custom-toolbar-group-button" tab="js" %}
+
+The example above configures a custom **alignment** group toolbar button. When clicked the button will show a floating shelf containing the align left, center, right and justify toolbar buttons.
 
 ### `onSetup` explanation
 

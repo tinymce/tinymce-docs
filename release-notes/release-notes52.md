@@ -39,6 +39,12 @@ The **quickbars_image_toolbar** option configures the Quick Image toolbar provid
 
 For information on using the `quickbars_image_toolbar` setting, see: [Quick Toolbars plugin - `quickbars_image_toolbar`]({{ site.baseurl }}/plugins/quickbars/#quickbars_image_toolbar).
 
+### Use custom Prism versions and languages when highlighting code samples
+
+The `codesample` plugin now has the ability to use a custom Prism.js version and a custom languages list when highlighting code samples in the editor. This can be enabled by including the custom Prism.js script and language add-ons on the page and setting the new `codesample_global_prismjs` option to `true`.
+
+For information on using the `codesample_global_prismjs` setting, see: [Code sample plugin - `codesample_global_prismjs`]({{ site.baseurl }}/plugins/codesample/#codesample_global_prismjs).
+
 ### New `tinymce.dom.TextSeeker` API
 
 The TextSeeker class is used for walking across text nodes to match a predicate.
@@ -47,7 +53,14 @@ For information on using the `TextSeeker` API, see: [{{site.productname}} APIs -
 
 ### renamed toolbar_drawer to toolbar_mode and changed the default to wrap instead of false (both are the same, just wrap is more self explanatory)
 
-### new addGroupToolbarButton API
+### New group toolbar button
+
+The new `toolbar_groups` setting and `addGroupToolbarButton` registry API can be used to create a toolbar button that displays a collection of other toolbar buttons in a pop-up.
+
+![**Group toolbar button example**]({{site.baseurl}}/images/toolbar-group-example.png)
+
+For information on using the `toolbar_groups` setting, see: [User interface options - `toolbar_groups`]({{ site.baseurl }}/configure/editor-appearance/#toolbar_groups).
+For information on using the `addGroupToolbarButton` API, see: [Types of toolbar buttons - Group button]({{ site.baseurl }}/ui-components/typesoftoolbarbuttons/#grouptoolbarbutton).
 
 ### Updated the table icons
 
@@ -67,7 +80,7 @@ The {{site.productname}} 5.2 release includes **Page Embed** 1.1.0.
 
 **Page Embed** 1.1.0 includes:
 
-* A new `tiny_pageembed_inline_styles` setting which inlines all styles, instead of using CSS classes, when rendering the embed content. This is useful when the additional CSS classes can't be added to your site.
+* A new `tiny_pageembed_inline_styles` setting which inlines all styles, while also keeping CSS classes, when rendering the embed content. This is useful when the additional CSS classes can't be added to your site.
 
 For information on inlining page embed styles, see: [Page Embed plugin - Inline styles for page embeds]({{site.baseurl}}/plugins/pageembed/#inlinestylesforpageembeds).
 
@@ -83,8 +96,10 @@ The {{site.productname}} 5.2 release includes **Premium Skins and Icon Packs** 1
 
 **Premium Skins and Icon Packs** 1.2 includes:
 
-* 3 new skins available: 'snow', 'naked' and 'outside'
-* 1 new icon pack available: 'thin'
+- 3 new skins: ['naked']({{site.baseurl}}/enterprise/premium-skins-and-icon-packs/naked-demo/), ['outside']({{site.baseurl}}/enterprise/premium-skins-and-icon-packs/outside-demo/), and ['snow']({{site.baseurl}}/enterprise/premium-skins-and-icon-packs/snow-demo/).
+- 1 new icon pack: 'thin'.
+
+For information on using premium skins and icon packs, see: [Premium Skins and Icon Packs]({{site.baseurl}}/enterprise/premium-skins-and-icon-packs/).
 
 ### Spellchecker Pro
 
@@ -92,17 +107,16 @@ The {{site.productname}} 5.2 release includes **Spellchecker Pro** 2.0.
 
 **Spellchecker Pro** 2.0 includes:
 
-* New functionality allowspell check the document in multiple languages
-* there's a number of new menu items/buttons
+- New functionality allowspell check the document in multiple languages
+- there's a number of new menu items/buttons
 
 ## General bug fixes
 
 {{site.productname}} 5.2 provides fixes for the following bugs:
 
-- 
+-
 
 ## Deprecated features
-
 
 ## Known issues
 

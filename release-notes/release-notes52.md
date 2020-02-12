@@ -53,7 +53,14 @@ For information on using the `TextSeeker` API, see: [{{site.productname}} APIs -
 
 ### renamed toolbar_drawer to toolbar_mode and changed the default to wrap instead of false (both are the same, just wrap is more self explanatory)
 
-### new addGroupToolbarButton API
+### New group toolbar button
+
+The new `toolbar_groups` setting and `addGroupToolbarButton` registry API can be used to create a toolbar button that displays a collection of other toolbar buttons in a pop-up.
+
+![**Group toolbar button example**]({{site.baseurl}}/images/toolbar-group-example.png)
+
+For information on using the `toolbar_groups` setting, see: [User interface options - `toolbar_groups`]({{ site.baseurl }}/configure/editor-appearance/#toolbar_groups).
+For information on using the `addGroupToolbarButton` API, see: [Types of toolbar buttons - Group button]({{ site.baseurl }}/ui-components/typesoftoolbarbuttons/#grouptoolbarbutton).
 
 ### Updated the table icons
 

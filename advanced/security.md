@@ -7,12 +7,12 @@ description: Information on reporting security issues, what TinyMCE does to prot
 keywords: security xss scripting vulnerability hack hacker csp mitigation protection protect
 ---
 
-> **Note**: The following is _general_ security advice that may be relevant to website or application using {{site.productname}}.
+> **Note**: The following is _general_ security advice that may be relevant to a website or application using {{site.productname}}.
 
 ## Overview
 
 - [Reporting TinyMCE security issues](#reportingtinymcesecurityissues)
-- [What we do to maintain TinyMCEs' security](#whatwedotomaintaintinymcessecurity)
+- [What we do to maintain security for TinyMCE](#whatwedotomaintainsecurityfortinymce)
 
   - [Scripts and XSS vulnerabilities](#scriptsandxssvulnerabilities)
   - [Keeping dependencies up-to-date](#keepingdependenciesup-to-date)
@@ -30,21 +30,21 @@ keywords: security xss scripting vulnerability hack hacker csp mitigation protec
 
 {{site.companyname}} values the work of security researchers in improving the security of technology products worldwide. We welcome researchers who wish to responsibly disclose vulnerabilities in our products or systems. Note that we do not offer any “bug bounty” program or any form of payment for disclosed vulnerabilities. If you would like to report a vulnerability, please email `infosec@tiny.cloud`.
 
-## What we do to maintain TinyMCEs' security
+## What we do to maintain security for TinyMCE
 
-To protect {{site.productname}}s' users, {{site.companyname}}:
+To protect {{site.productname}} users, {{site.companyname}}:
 
 - Patches Cross-Site Scripting (XSS) vulnerabilities,
-- Keeps {{site.productname}}s' dependencies up to date, and
+- Keeps the {{site.productname}} dependencies up to date, and
 - Provides information how to configure a Content Security Policy that works with {{site.productname}}.
 
 ### Scripts and XSS vulnerabilities
 
-{{site.productname}} filters out most Cross-Site Scripting (XSS) content such as scripts from the editor content. For additional security, {{site.companyname}} recommends passing the editor content through server-side filters such as [HTMLPurifier](http://htmlpurifier.org/).
+{{site.productname}} filters content such as scripts from the editor content, however, client-side applications can be by-passed by attackers. {{site.companyname}} recommends processing received editor content through server-side filters.
 
 ### Keeping dependencies up-to-date
 
-To protect our users, {{site.companyname}} ensures that TinyMCEs' dependencies are updated before the next version (major, minor, or patch) is released.
+To protect our users, {{site.companyname}} ensures that the TinyMCE dependencies are updated before the next version (major or minor) is released.
 
 ### Configuring Content Security Policy (CSP) for TinyMCE
 
@@ -52,11 +52,11 @@ To protect our users, {{site.companyname}} ensures that TinyMCEs' dependencies a
 
 | Directives                                                   | Requirements                                                                                                                 |
 | ------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------- |
-| `script-src 'self' _.tinymce.com _.tiny.cloud;`                | Scripts are sometimes loaded as script element with an src attribute.                                                        |
-| `connect-src 'self' _.tinymce.com _.tiny.cloud blob:;`         | XMLHttpRequest are required by some services such as spellchecking and PowerPaste.                                           |
-| `img-src 'self' _.tinymce.com _.tiny.cloud data: blob:;`       | Images within the editor are sometimes base64 encoded, blob URLs, or proxied through the {{site.cloudname}} service.         |
-| `style-src 'self' 'unsafe-inline' _.tinymce.com _.tiny.cloud;` | Styles are used for inline formatting (such as underline, font colors, etc.) and the positioning of user interface elements. |
-| `font-src 'self' _.tinymce.com _.tiny.cloud;`                  | Fonts are used for icons in the UI and is loaded from external files.                                                        |
+| `script-src 'self' *.tinymce.com *.tiny.cloud;`                | Scripts are sometimes loaded as script element with an src attribute.                                                        |
+| `connect-src 'self' *.tinymce.com *.tiny.cloud blob:;`         | XMLHttpRequest is required by some services such as spellchecking and PowerPaste.                                           |
+| `img-src 'self' *.tinymce.com *.tiny.cloud data: blob:;`       | Images within the editor are sometimes base64 encoded, blob URLs, or proxied through the {{site.cloudname}} service.         |
+| `style-src 'self' 'unsafe-inline' *.tinymce.com *.tiny.cloud;` | Styles are used for inline formatting (such as underline, font colors, etc.) and the positioning of user interface elements. |
+| `font-src 'self' *.tinymce.com *.tiny.cloud;`                  | Fonts are used for icons in the UI and is loaded from external files.                                                        |
 
 > **Important**: These directives will prevent all content loading from external sources.
 > To allow content from specific sources, add the source domains to the relevant directives. For example, to allow YouTube videos:
@@ -91,7 +91,7 @@ When self-hosting {{site.productname}} from a local domain, use this CSP header 
 />
 ```
 
-## Potential security risks and mitigation measures
+## General security risks for user input elements
 
 The following security risks are not {{site.productname}} specific, but are the main security risks associated with websites or applications which allow user inputs. Protecting your services and users from these risks requires server-side handling. Note that attackers will likely bypass any editor and attack the server directly, rather than use the text editor as a vector.
 
@@ -101,7 +101,7 @@ For information on mitigating these risks, see the provided links in each sectio
 
 Cross-Site Scripting (XSS) involves using website or application inputs to inject malicious, client-side code. This code can then be used to attack your users.
 
-Although {{site.productname}} removes most XSS content, precautions should be taken to protect your users, such as enabling a Content Security Policy (CSP) as described in [Configuring Content Security Policy (CSP) for TinyMCE](#configuringcontentsecuritypolicycspfortinymce).
+Although {{site.productname}} filters content such as scripts from the editor content, precautions should be taken to protect your users, such as enabling a Content Security Policy (CSP) and server-side filtering.
 
 For information on Cross-Site Scripting and how to reduce the risk of an attack, see: [OWASP Top Ten 2017 --- Cross-Site Scripting (XSS)](https://owasp.org/www-project-top-ten/OWASP_Top_Ten_2017/Top_10-2017_A7-Cross-Site_Scripting_(XSS)).
 

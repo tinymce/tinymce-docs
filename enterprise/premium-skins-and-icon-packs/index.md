@@ -36,8 +36,8 @@ Available values for [content_css]({{site.baseurl}}/configure/content-appearance
 ```js
 tinymce.init({
   selector: 'textarea',    // change this value according to your HTML
-  skin: "bootstrap",       // Name of the skin
-  content_css: "bootstrap" // Name of the content skin
+  skin: 'fabric',       // Name of the skin
+  content_css: 'fabric' // Name of the content skin
 });
 ```
 

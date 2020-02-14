@@ -55,7 +55,7 @@ For information on using the `TextSeeker` API, see: [{{site.productname}} APIs -
 
 The `toolbar_drawer` option has been deprecated and replaced with the `toolbar_mode` option. `toolbar_mode` provides the same functionality as `toolbar_drawer`. The name change was made to reflect the range of settings available for this option.
 
-The default option for `toolbar_mode` is `'wrap'`, which has the same behavior as the deprecated `toolbar_drawer: false` setting.
+The `toolbar_drawer: false` setting has been deprecated; the behavior is now provided by the `toolbar_mode: 'wrap'` setting.
 
 For information on the `toolbar_mode` option, see: [User interface options - `toolbar_mode`]({{site.baseurl}}/configure/editor-appearance/#toolbar_mode).
 

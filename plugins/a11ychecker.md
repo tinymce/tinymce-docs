@@ -110,6 +110,13 @@ These are the various rules that are checked:
 
 [Link to specification](https://www.w3.org/TR/2016/NOTE-WCAG20-TECHS-20161007/H63).
 
+<a class="anchor" id="H93"></a>
+<h4><a class="anchorable" href="#H93">IDs must be unique</a></h4>
+
+**Rule info:** This rule checks that all `id` attributes are unique in the editor. Duplicate `id` attributes are known to cause problems for assistive technologies when they are trying to parse content.
+
+[Link to specification](https://www.w3.org/TR/WCAG20-TECHS/H93.html).
+
 ### Options
 
 ### `a11ychecker_allow_decorative_images`

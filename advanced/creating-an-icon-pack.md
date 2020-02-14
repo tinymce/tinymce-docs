@@ -14,7 +14,7 @@ TinyMCE 5 introduced icon packs for customizing the editor icons.
 This guide assumes:
 
 * Familiarity with the command line and running commands.
-* [NodeJS](https://nodejs.org/en/), [NPM](https://www.npmjs.com), and [Gulp](https://gulpjs.com/) are already installed.
+* [NodeJS](https://nodejs.org/en/) and [NPM](https://www.npmjs.com) are already installed.
 * Optional: [`git`](https://git-scm.com/) is already installed.
 
 ## How icons work in TinyMCE
@@ -92,10 +92,10 @@ For a list of the icon identifiers, see: [Editor icon identifiers]({{site.baseur
 To build the icon pack using Gulp:
 
 1. Open a terminal or command prompt and navigate to the root directory of the icon pack (such as: `oxide-icon-pack-template/`).
-2. Build the icon pack by executing the `gulp` command:
+2. Build the icon pack by executing the `npx gulp` command:
 
     ```sh
-$ gulp
+$ npx gulp
     ```
     A `dist/` directory containing the icon pack will be created.
 3. Using a web browser, open `dist/html/icons.html` to preview the icons.

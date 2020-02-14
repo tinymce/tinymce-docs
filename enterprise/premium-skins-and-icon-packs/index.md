@@ -21,6 +21,9 @@ Available values for [skins]({{site.baseurl}}/configure/editor-appearance/#skin)
 - borderless
 - small
 - jam
+- naked
+- outside
+- snow
 
 Available values for [content_css]({{site.baseurl}}/configure/content-appearance/#content_css):
 
@@ -47,6 +50,7 @@ Available values for [icon]({{site.baseurl}}/configure/editor-appearance/#icons)
 - material
 - small
 - jam
+- thin
 
 ##### Example
 
@@ -65,11 +69,14 @@ Due to different toolbar button sizes, some icon packs fit better with some skin
 
 | Skin | Compatible Icon pack |
 | --- | --- |
-| material-classic | material, jam, small |
-| material-outline | material, jam, small |
-| bootstrap | material, jam, small |
-| fabric | material, jam, small |
-| borderless | material, jam, small |
+| material-classic | material, jam, small, thin |
+| material-outline | material, jam, small, thin |
+| bootstrap | material, jam, small, thin |
+| fabric | material, jam, small, thin |
+| borderless | material, jam, small, thin |
+| naked | material, jam, small, thin |
+| outside | material, jam, small, thin |
+| snow | material, jam, small, thin |
 | small | jam, small |
 | jam | jam, small |
 
@@ -88,6 +95,9 @@ Below are some recommended combinations of skins and icon packs:
 * [Small skin with Small icon pack]({{site.baseurl}}/enterprise/premium-skins-and-icon-packs/small-demo/)
 * [Small skin with Jam icon pack]({{site.baseurl}}/enterprise/premium-skins-and-icon-packs/jam-demo/)
 * [Borderless editor]({{site.baseurl}}/enterprise/premium-skins-and-icon-packs/borderless-demo/)
+* [Naked editor]({{site.baseurl}}/enterprise/premium-skins-and-icon-packs/naked-demo/)
+* [Outside editor]({{site.baseurl}}/enterprise/premium-skins-and-icon-packs/outside-demo/)
+* [Snow editor]({{site.baseurl}}/enterprise/premium-skins-and-icon-packs/snow-demo/)
 
 ### Getting started
 

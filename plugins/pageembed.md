@@ -91,6 +91,28 @@ tinymce.init({
 });
 ```
 
+### Inline styles for page embeds
+
+The `tiny_pageembed_inline_styles` setting will inline all styles, while also keeping CSS classes, when rendering the embed content. This is useful when the additional CSS classes can't be added to your site. Defaults to `false`.
+
+**Type:** `Boolean`
+
+**Default Value:** `false`
+
+**Possible Values:** `true`, `false`
+
+#### Example: tiny_pageembed_inline_styles
+
+To inline page embed styles:
+
+```js
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'pageembed',
+  tiny_pageembed_inline_styles: true
+});
+```
+
 ### Default CSS
 
 If the `tiny_pageembed_classes` setting is left undefined, the default classes will be used. As a result, a responsive size option can be selected.
@@ -109,27 +131,19 @@ If the `tiny_pageembed_classes` setting is left undefined, the default classes w
   width: 100%;
 }
 
-.tiny-pageembed--21by9::before,
-.tiny-pageembed--16by9::before,
-.tiny-pageembed--4by3::before,
-.tiny-pageembed--1by1::before {
-  content: "";
-  display: block;
-}
-
-.tiny-pageembed--21by9::before {
+.tiny-pageembed--21by9 {
   padding-top: 42.857143%;
 }
 
-.tiny-pageembed--16by9::before {
+.tiny-pageembed--16by9 {
   padding-top: 56.25%;
 }
 
-.tiny-pageembed--4by3::before {
+.tiny-pageembed--4by3 {
   padding-top: 75%;
 }
 
-.tiny-pageembed--1by1::before {
+.tiny-pageembed--1by1 {
   padding-top: 100%;
 }
 

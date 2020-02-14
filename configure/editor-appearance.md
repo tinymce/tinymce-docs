@@ -80,6 +80,8 @@ description: Configure the editor's appearance, including menu and toolbar contr
 
 {% include configuration/toolbar-drawer.md %}
 
+{% include configuration/toolbar-groups.md %}
+
 {% include configuration/toolbar-location.md %}
 
 {% include configuration/toolbar_sticky.md %}

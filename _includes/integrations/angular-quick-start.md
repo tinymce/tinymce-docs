@@ -63,22 +63,20 @@ This procedure requires:
     ```html
     <h1>{{site.productname}} {{site.productmajorversion}} Angular Demo</h1>
     <editor
-      initialValue="<p>This is the initial content of the editor</p>"
       [init]="{
-           height: 500,
-           menubar: false,
-           plugins: [
-             'advlist autolink lists link image charmap print preview anchor',
-             'searchreplace visualblocks code fullscreen',
-             'insertdatetime media table paste code help wordcount'
-           ],
-           toolbar:
-             'undo redo | formatselect | bold italic backcolor | \
-             alignleft aligncenter alignright alignjustify | \
-             bullist numlist outdent indent | removeformat | help'
-         }"
-      >
-    </editor>
+        height: 500,
+        menubar: false,
+        plugins: [
+          'advlist autolink lists link image charmap print preview anchor',
+          'searchreplace visualblocks code fullscreen',
+          'insertdatetime media table paste code help wordcount'
+        ],
+        toolbar:
+          'undo redo | formatselect | bold italic backcolor | \
+          alignleft aligncenter alignright alignjustify | \
+          bullist numlist outdent indent | removeformat | help'
+      }"
+    ></editor>
     ```
     This {{site.productname}} editor configuration should replicate the example on the [Basic example page]({{site.baseurl}}/demo/basic-example/).
 7. Provide access to {{site.productname}} using {{site.cloudname}} or by self-hosting {{site.productname}}.
@@ -90,7 +88,7 @@ This procedure requires:
         Such as:
 
         ```js
-        <Editor apiKey="your-api-key" [init]={% raw %}{{% endraw %} /* your other settings */ {% raw %}}{% endraw %} />
+        <editor apiKey="your-api-key" [init]={% raw %}{{% endraw %} /* your other settings */ {% raw %}}{% endraw %} ></editor>
         ```
 
     * **{{site.productname}} Self-hosted**

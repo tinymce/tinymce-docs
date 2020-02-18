@@ -66,7 +66,7 @@ For information on using the `addGroupToolbarButton` API, see: [Types of toolbar
 
 The {{site.productname}} icons for table-related toolbar buttons have been updated to better match the icons used elsewhere in the product.
 
-This change applies to the default {{site.productname}} theme, `silver`.
+This change applies to the default {{site.productname}} icon pack.
 
 For an updated list of {{site.productname}} icons, see: [Editor icon identifiers]({{ site.baseurl }}/advanced/editor-icon-identifiers/).
 

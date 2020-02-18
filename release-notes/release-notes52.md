@@ -68,7 +68,13 @@ The new `toolbar_groups` setting and `addGroupToolbarButton` registry API can be
 For information on using the `toolbar_groups` setting, see: [User interface options - `toolbar_groups`]({{ site.baseurl }}/configure/editor-appearance/#toolbar_groups).
 For information on using the `addGroupToolbarButton` API, see: [Types of toolbar buttons - Group button]({{ site.baseurl }}/ui-components/typesoftoolbarbuttons/#grouptoolbarbutton).
 
-### Updated the table icons
+### Updated the default TinyMCE table icons
+
+The {{site.productname}} icons for table-related toolbar buttons have been updated to better match the icons used elsewhere in the product.
+
+This change applies to the default {{site.productname}} icon pack.
+
+For an updated list of {{site.productname}} icons, see: [Editor icon identifiers]({{ site.baseurl }}/advanced/editor-icon-identifiers/).
 
 ### Updated the colorinput component visual appearance --- updated color swatches in input fields
 

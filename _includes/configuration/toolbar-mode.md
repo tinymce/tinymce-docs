@@ -1,12 +1,12 @@
 ## toolbar_mode
 {% if site.productminorversion < 6.1 %}
 <a class="anchor" id="toolbar_drawer"></a>
-> **Note**: The `toolbar_drawer` option was deprecated with the release of {{site.productname}} 5.2. The `toolbar_drawer` option was renamed `toolbar_mode`. This change was made to reflect the range of settings available for this option.
+> **Note**: The `toolbar_drawer` option was deprecated with the release of {{site.productname}} 5.2. The `toolbar_drawer` option was renamed to `toolbar_mode`. This change was made to reflect the range of settings available for this option.
 {% endif %}
 
 The `toolbar_mode` option is used to extend the toolbar to accommodate the overflowing toolbar buttons. This option is useful for small screens or small editor frames.
 
-The toolbar modes is not available when using [multiple toolbars]({{site.baseurl}}/configure/editor-appearance/#usingmultipletoolbars) or the [toolbar(n)]({{site.baseurl}}/configure/editor-appearance/#toolbarn) option.
+The toolbar modes are not available when using [multiple toolbars]({{site.baseurl}}/configure/editor-appearance/#usingmultipletoolbars) or the [toolbar(n)]({{site.baseurl}}/configure/editor-appearance/#toolbarn) option.
 
 **Type:** `String`
 

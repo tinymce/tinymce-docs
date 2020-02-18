@@ -119,8 +119,6 @@
 | `selected` | ![selected.svg]({{ site.baseurl }}/images/icons/selected.svg) | `selected.svg` | 
 | `settings` | ![settings.svg]({{ site.baseurl }}/images/icons/settings.svg) | `settings.svg` | 
 | `sharpen` | ![sharpen.svg]({{ site.baseurl }}/images/icons/sharpen.svg) | `sharpen.svg` | 
-| `sort-asc` | ![sort-asc.svg]({{ site.baseurl }}/images/icons/sort-asc.svg) | `sort-asc.svg` | 
-| `sort-dsc` | ![sort-dsc.svg]({{ site.baseurl }}/images/icons/sort-dsc.svg) | `sort-dsc.svg` | 
 | `sourcecode` | ![sourcecode.svg]({{ site.baseurl }}/images/icons/sourcecode.svg) | `sourcecode.svg` | 
 | `spell-check` | ![spell-check.svg]({{ site.baseurl }}/images/icons/spell-check.svg) | `spell-check.svg` | 
 | `strike-through` | ![strike-through.svg]({{ site.baseurl }}/images/icons/strike-through.svg) | `strike-through.svg` | 

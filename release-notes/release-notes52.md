@@ -76,7 +76,12 @@ This change applies to the default {{site.productname}} icon pack.
 
 For an updated list of {{site.productname}} icons, see: [Editor icon identifiers]({{ site.baseurl }}/advanced/editor-icon-identifiers/).
 
-### Updated the colorinput component visual appearance --- updated color swatches in input fields
+### New option for setting the default protocol for the Link and Autolink plugins
+
+A new `link_default_protocol` option has been added to the Autolink and Link plugins. This option allows the default protocol to be prepended to links when a protocol has not been supplied by the user.
+
+- For information on using this setting with the Autolink plugin, see: [Autolink plugin - `link_default_protocol`]({{site.baseurl}}/plugins/autolink/#link_default_protocol).
+- For information on using this setting with the Link plugin, see: [Link plugin - `link_default_protocol`]({{site.baseurl}}/plugins/link/#link_default_protocol).
 
 ## Premium Plugin changes
 

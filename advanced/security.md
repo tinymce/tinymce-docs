@@ -42,6 +42,8 @@ To protect {{site.productname}} users, {{site.companyname}}:
 
 {{site.productname}} filters content such as scripts from the editor content, however, client-side applications can be by-passed by attackers. {{site.companyname}} recommends processing received editor content through server-side filters.
 
+From the 1st of January 2020, Security Advisories for patched XSS vulnerabilities will be published on the [{{site.productname}} GitHub repository Security page](https://github.com/tinymce/tinymce/security/advisories?state=published).
+
 ### Keeping dependencies up-to-date
 
 To protect our users, {{site.companyname}} ensures that the TinyMCE dependencies are updated before the next version (major or minor) is released.

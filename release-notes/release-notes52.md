@@ -33,6 +33,17 @@ The new `placeholder` option adds placeholder content that will be shown when th
 
 For information on using the `placeholder` setting, see: [User interface options - `placeholder`]({{ site.baseurl }}/configure/editor-appearance/#placeholder).
 
+### New option to assist with marking images as decorative for accessibility purposes
+
+The `a11y_advanced_options` setting adds an option to set an image as decorative in the following dialogs:
+- The _Insert/Edit Image_ dialog.
+- The _Accessibility Checker error_ dialog for images without alternative text or the `role="presentation"` attribute.
+
+For information on the `a11y_advanced_options`, including the impact on the `a11ychecker_allow_decorative_images` setting, see: 
+
+- [The Accessibility Checker plugin - `a11y_advanced_options`]({{site.baseurl}}/plugins/a11ychecker/#a11y_advanced_options).
+- [The Image plugin - `a11y_advanced_options`]({{site.baseurl}}/plugins/image/#a11y_advanced_options).
+
 ### Modify the Quick Image toolbar using the `quickbars_image_toolbar` setting
 
 The **quickbars_image_toolbar** option configures the Quick Image toolbar provided by the [quickbars plugin]({{ site.baseurl }}/plugins/quickbars). To change the buttons on the Quick Image toolbar, provide a space-separated string of [toolbar button names]({{ site.baseurl }}/advanced/editor-control-identifiers/#toolbarcontrols). To disable the Quick Image toolbar, set `quickbars_image_toolbar` to `false`.

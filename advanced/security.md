@@ -35,8 +35,8 @@ keywords: security xss scripting vulnerability hack hacker csp mitigation protec
 To protect {{site.productname}} users, {{site.companyname}}:
 
 - Patches Cross-Site Scripting (XSS) vulnerabilities,
-- Keeps the {{site.productname}} dependencies up to date, and
-- Provides information how to configure a Content Security Policy that works with {{site.productname}}.
+- Keeps {{site.productname}} dependencies up to date, and
+- Provides information about how to configure a Content Security Policy that works with {{site.productname}}.
 
 ### Scripts and XSS vulnerabilities
 

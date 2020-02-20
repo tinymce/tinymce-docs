@@ -14,7 +14,7 @@ Common use cases for using a checklist:
 * **Private & Work** - Checklist can help in keeping work and private tasks separate for more efficiency.
 * **Tracking Bills** - Checklists can be created to avoid forgetting payment cycles to pay a bill on time.
 * **Shopping list** - Checklist can help create a grocery list in the browser that can be shared with the other family members to collaborate or act as a reminder while shopping.
-* **Entertainment tracker** - Checklist can help create list of movies & TV series to keep a tab on the movies to watch or set weekly reminders at the right time to avoid missing a show.
+* **Entertainment tracker** - Checklist can help create a list of movies & TV series to keep a tab on the movies to watch or set weekly reminders at the right time to avoid missing a show.
 * **Industry applications** - There are a lot of professional applications of using a Checklist, such as:
 
   * Used in quality assurance of software engineering to check process compliance, code standardization, and error prevention.

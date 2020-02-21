@@ -94,15 +94,15 @@ A new `link_default_protocol` option has been added to the Autolink and Link plu
 - Adds the `loading` attribute to the default schema for `iframe` and `img` . Patch contributed by [ataylor32](https://github.com/ataylor32).
 - Adds new `getNodeFilters` and `getAttributeFilters` functions to the `editor.serializer` API.
 - Adds error message events that fire when a resource loading error occurs.
-- Improved security by changing the default schema to disallow `onchange` for select elements.
+- Improves security by changing the default schema to disallow `onchange` for select elements.
 - Changes iframe mode to set selection on content init if selection doesn't exist.
 - Changes table related icons to align them with the visual style of the other icons.
-- Improved the visual appearance of the color input field.
-- Changed the fake caret container to use `forced_root_block` when possible.
+- Improves the visual appearance of the color input field.
+- Changes the fake caret container to use `forced_root_block` when possible.
 - Changes the `requireLangPack` API to wait until the plugin has been loaded before loading the language pack.
 - Changes the formatter so `style_formats` are registered before the initial content is loaded into the editor.
 - Changes media plugin to use `https` protocol for media urls by default.
-- Improved security by changing the editor parser to treat CDATA nodes as bogus HTML comments to match the HTML parsing specification. A new `preserve_cdata` setting has been added to preserve CDATA nodes if required.
+- Improves security by changing the editor parser to treat CDATA nodes as bogus HTML comments to match the HTML parsing specification. A new `preserve_cdata` setting has been added to preserve CDATA nodes if required.
 
 ## Premium Plugin changes
 

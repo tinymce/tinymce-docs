@@ -98,6 +98,26 @@ A new `link_default_protocol` option has been added to the Autolink and Link plu
 
 The following premium plugins have been updated for {{site.productname}} 5.2.
 
+### Accessibility Checker
+
+The {{site.productname}} 5.2 release includes **Accessibility Checker** 2.1.0.
+
+**Accessibility Checker** 2.1.0 has been updated:
+
+- To include a new check for duplicate `id` values.
+- To improve decorative image checks.
+- To accommodate the `a11y_advanced_options` setting added in {{site.productname}} 5.2.
+
+For information on the `a11y_advanced_options` setting, see: [Accessibility Checker plugin]({{site.baseurl}}/plugins/a11ychecker/#a11y_advanced_options).
+
+### Checklist
+
+The {{site.productname}} 5.2 release includes **Checklist** 1.1.0.
+
+**Checklist** 1.1.0 adds a new optional checklist menu item.
+
+For information on the checklist plugin, see: [Checklist plugin]({{site.baseurl}}/plugins/checklist/).
+
 ### Page Embed
 
 The {{site.productname}} 5.2 release includes **Page Embed** 1.1.0.
@@ -111,6 +131,12 @@ For information on inlining page embed styles, see: [Page Embed plugin - Inline 
 The {{site.productname}} 5.2 release includes **Permanent Pen** 1.1.0.
 
 **Permanent Pen** 1.1.0 adds support for working with [input method editors (IMEs)](https://www.w3.org/TR/ime-api/#IME), which are used for inserting non-ascii characters.
+
+### PowerPaste
+
+The {{site.productname}} 5.2 release includes **PowerPaste** 5.2.1.
+
+**PowerPaste** 5.2.1 provides a fix for PowerPaste not respecting the [`cache_suffix` setting]({{site.baseurl}}/configure/integration-and-setup/#cache_suffix).
 
 ### Premium Skins and Icon Packs
 

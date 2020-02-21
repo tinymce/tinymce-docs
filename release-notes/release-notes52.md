@@ -86,7 +86,11 @@ The following premium plugins have been updated for {{site.productname}} 5.2.
 
 The {{site.productname}} 5.2 release includes **Accessibility Checker** 2.1.0.
 
-**Accessibility Checker** 2.1.0 has been updated to accommodate the `a11y_advanced_options` setting added in {{site.productname}} 5.2.
+**Accessibility Checker** 2.1.0 has been updated:
+
+- To include a new check for duplicate `id` values.
+- To improve decorative image checks.
+- To accommodate the `a11y_advanced_options` setting added in {{site.productname}} 5.2.
 
 For information on the `a11y_advanced_options` setting, see: [Accessibility Checker plugin]({{site.baseurl}}/plugins/a11ychecker/#a11y_advanced_options).
 

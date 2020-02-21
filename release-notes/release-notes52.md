@@ -90,19 +90,19 @@ A new `link_default_protocol` option has been added to the Autolink and Link plu
 
 - Adds the ability to apply formats to spaces.
 - Adds a drop shadow below the toolbar while in sticky mode and introduced Oxide variables to customize it when creating a custom skin.
-- Adds a `quickbars_image_toolbar` setting to allow for the image quickbar to be turned off.
+- Adds a `quickbars_image_toolbar` setting to allow for the image quickbar to be configured or disabled.
 - Adds the `loading` attribute to the default schema for `iframe` and `img` . Patch contributed by [ataylor32](https://github.com/ataylor32).
-- Adds new `getNodeFilters` and `getAttributeFilters` functions to the `editor.serializer` instance.
+- Adds new `getNodeFilters` and `getAttributeFilters` functions to the `editor.serializer` API.
 - Adds error message events that fire when a resource loading error occurs.
-- Changes the default schema to disallow `onchange` for select elements.
+- Improved security by changing the default schema to disallow `onchange` for select elements.
 - Changes iframe mode to set selection on content init if selection doesn't exist.
 - Changes table related icons to align them with the visual style of the other icons.
-- Changes and improved the visual appearance of the color input field.
-- Changes fake caret container to use `forced_root_block` when possible.
+- Improved the visual appearance of the color input field.
+- Changed the fake caret container to use `forced_root_block` when possible.
 - Changes the `requireLangPack` API to wait until the plugin has been loaded before loading the language pack.
 - Changes the formatter so `style_formats` are registered before the initial content is loaded into the editor.
 - Changes media plugin to use `https` protocol for media urls by default.
-- Changes the editor parser to treat CDATA nodes as bogus HTML comments to match the HTML parsing specification. A new `preserve_cdata` setting has been added to preserve CDATA nodes if required.
+- Improved security by changing the editor parser to treat CDATA nodes as bogus HTML comments to match the HTML parsing specification. A new `preserve_cdata` setting has been added to preserve CDATA nodes if required.
 
 ## Premium Plugin changes
 
@@ -150,13 +150,13 @@ The {{site.productname}} 5.2 release includes **Spellchecker Pro** 2.0.
 - Fixed the `quickbars` selection toolbar appearing on non-editable elements.
 - Fixed a bug with alignment toolbar buttons sometimes not changing state correctly.
 - Fixed the `codesample` toolbar button not toggling when selecting code samples other than HTML.
-- Fixed content incorrectly scrolling to the top or bottom when pressing enter when the content was already in view.
-- Fixed the `scrollIntoView` event potentially hiding elements behind the toolbar.
+- Fixed content incorrectly scrolling to the top or bottom when pressing enter if the content was already in view.
+- Fixed the `scrollIntoView` API potentially hiding elements behind the toolbar.
 - Fixed the editor not respecting the `resize_img_proportional` setting due to legacy code.
 - Fixed the floating toolbar drawer flickering in inline mode.
 - Fixed an issue where the `template` plugin dialog would be indefinitely blocked on a failed template load.
 - Fixed the `mscontrolselect` event not being unbound on the Microsoft Internet Explorer and Microsoft Edge browsers.
-- Fixed the "Confirm" dialog footer buttons to only highlight the "Yes" button.
+- Fixed the Confirm dialog footer buttons to only highlight the "Yes" button.
 - Fixed the `file_picker_callback` functionality for the Image, Link and Media plugins.
 - Fixed an issue where the floating toolbar drawer would sometimes break if the editor is resized while the drawer is open.
 - Fixed an incorrect `external_plugins` loading error message.
@@ -166,14 +166,14 @@ The {{site.productname}} 5.2 release includes **Spellchecker Pro** 2.0.
 - Fixed an issue where forced root block attributes were not applied when removing a list.
 - Fixed an issue where the element path was not cleared when there are no parents.
 - Fixed an issue where width and height in svg icons containing `rect` elements were overridden by the CSS reset.
-- Fixed an issue where uploading images with `images_reuse_filename` enabled and that included a query parameter would generate an invalid URL.
+- Fixed an issue where uploading images with a query parameter and the `images_reuse_filename` setting enabled would generate an invalid URL.
 - Fixed the `closeButton` property not working when opening notifications.
 - Fixed keyboard flicker when opening a context menu on mobile.
 - Fixed issue where plus icon svg contained strokes.
 
 ## Deprecated features
 
-The `toolbar_drawer` option has been deprecated with the release of {{site.productname}} 5.2. The `toolbar_drawer` option was renamed to `toolbar_mode`. This change was made to reflect the range of settings available for this option.
+The `toolbar_drawer` option has been deprecated with the release of {{site.productname}} 5.2. The `toolbar_drawer` option was renamed to `toolbar_mode`. This change was made to reflect the range of new settings available for this option.
 
 For information on the `toolbar_mode` option, see: [User interface options - `toolbar_mode`]({{site.baseurl}}/configure/editor-appearance/#toolbar_mode).
 

@@ -116,7 +116,7 @@ tinymce.init({
 
 This option specifies the primary spell checking mode. 
 
-- When set to true, the [`spellcheck` toolbar button](#toolbarbuttons) will open a dialog that will step the user through each potential spelling error in the document. 
+- When set to `true`, the [`spellcheck` toolbar button](#toolbarbuttons) will open a dialog that will step the user through each potential spelling error in the document. 
 - When set to `false`, the [`spellcheck` toolbar button](#toolbarbuttons) will enable or disable as-you-type spell checking and the [`spellcheckdialog` toolbar button](#toolbarbuttons) will open the spell checker dialog.
 
 **Type:** `Boolean`
@@ -201,8 +201,8 @@ The following toolbar buttons are provided by the Spell Checker Pro plugin:
 | Control              | Description                                                                           |
 | -------------------- | ------------------------------------------------------------------------------------- |
 | language             | Sets the spelling checker language for the current selection.                         |
-| spellcheckdialog     | Opens the spelling checker dialog.                                                    |
-| spellchecker         | Spellchecks the current editor contents.                                              |
+| spellcheckdialog     | Opens the spelling checker dialog if `spellchecker_dialog` is `false`, otherwise this button is disabled.                                                    |
+| spellchecker         | Opens the spelling checker dialog if `spellchecker_dialog` is `true`, otherwise this button enables or disables spell checking as-you-type.                                             |
 
 For more information about customizing the toolbar, see: [User interface options --- Toolbar]({{site.baseurl}}/configure/editor-appearance/#toolbar).
 

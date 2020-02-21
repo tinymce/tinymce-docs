@@ -279,6 +279,7 @@ tinymce.init({
   tinycomments_mode: 'embedded',
   content_style: ".mymention{ color: gray; }",
   contextmenu: "link image imagetools table configurepermanentpen",
+  a11y_advanced_options: true,
   mentions_selector: '.mymention',
   mentions_fetch: mentions_fetch,
   mentions_menu_hover: mentions_menu_hover,

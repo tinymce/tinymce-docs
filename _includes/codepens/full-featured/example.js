@@ -57,6 +57,7 @@ tinymce.init({
   tinycomments_mode: 'embedded',
   content_style: ".mymention{ color: gray; }",
   contextmenu: "link image imagetools table configurepermanentpen",
+  a11y_advanced_options: true,
   /* 
   The following settings require more configuration than shown here.
   For information on configuring the mentions plugin, see:

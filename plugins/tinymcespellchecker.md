@@ -49,7 +49,7 @@ tinymce.init({
 
 ## Usage
 
-The {{site.productname}} Enterprise Spellchecking plugin activates automatically when users type content into the editor. To select a spelling suggestion for misspelled word, right-click the misspelled word to open the contextual menu.
+The {{site.productname}} Enterprise Spellchecking plugin activates automatically when users type content into the editor. To select a spelling suggestion for a misspelled word, right-click the misspelled word to open the contextual menu.
 
 ## Configuration Options
 
@@ -114,7 +114,10 @@ tinymce.init({
 
 ### `spellchecker_dialog`
 
-This option enables or disables the spell checker dialog. When set to true, the [`spellcheckdialog` toolbar button](#toolbarbuttons) will open a dialog that will step the user through each potential spelling error in the document.
+This option specifies the primary spell checking mode. 
+
+- When set to true, the [`spellcheck` toolbar button](#toolbarbuttons) will open a dialog that will step the user through each potential spelling error in the document. 
+- When set to `false`, the [`spellcheck` toolbar button](#toolbarbuttons) will enable or disable as-you-type spell checking and the [`spellcheckdialog` toolbar button](#toolbarbuttons) will open the spell checker dialog.
 
 **Type:** `Boolean`
 
@@ -128,7 +131,7 @@ This option enables or disables the spell checker dialog. When set to true, the 
 tinymce.init({
   selector: 'textarea',
   plugins: 'tinymcespellchecker',
-  toolbar: 'spellcheckdialog',
+  toolbar: 'spellchecker',
   spellchecker_dialog: true
 });
 ```
@@ -173,7 +176,7 @@ tinymce.init({
 
 ### `spellchecker_active`
 
-This option enables or disables the spell checker when the editor is loaded. When set to `false`, the spellchecker will not be activate when the editor is initialized. The toolbar button or the menu item will have to be selected by the user to start the spell checker.
+This option enables or disables the spell checker when the editor is loaded. When set to `false`, the spellchecker will not be active when the editor is initialized. The toolbar button or the menu item will have to be selected by the user to start the spell checker.
 
 **Type:** `Boolean`
 
@@ -211,7 +214,7 @@ tinymce.init({
   plugins: 'tinymcespellchecker',
   toolbar: 'spellchecker language spellcheckdialog',
   spellchecker_rpc_url: 'localhost/ephox-spelling',
-  spellchecker_language: 'en'
+  spellchecker_language: 'en_us'
 });
 ````
 

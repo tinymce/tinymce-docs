@@ -117,8 +117,8 @@ tinyMCE.activeEditor.ui.registry.getAll().buttons
 | tablesplitcells      | [table]({{ site.baseurl }}/plugins/table/)                                                                                         | Splits the current merged cell.                                                       |
 | template             | [template]({{ site.baseurl }}/plugins/template/)                                                                                   | Inserts templates into the editor.                                                    |
 | language             | [tinymcespellchecker]({{ site.baseurl }}/plugins/tinymcespellchecker/)                                                             | Sets the spelling checker language for the current selection.                         |
-| spellcheckdialog     | [tinymcespellchecker]({{ site.baseurl }}/plugins/tinymcespellchecker/)                                                             | Opens the spelling checker dialog.                                                    |
-| spellchecker         | [tinymcespellchecker]({{ site.baseurl }}/plugins/tinymcespellchecker/)                                                             | Spellchecks the current editor contents.                                              |
+| spellcheckdialog     | [tinymcespellchecker]({{ site.baseurl }}/plugins/tinymcespellchecker/)                                                             | Opens the spellchecker dialog.                                                    |
+| spellchecker         | [tinymcespellchecker]({{ site.baseurl }}/plugins/tinymcespellchecker/)                                                             | Spellchecks the current editor content.                                              |
 | toc                  | [toc]({{ site.baseurl }}/plugins/toc/)                                                                                             | Inserts a Table of Contents into the editor.                                          |
 | tocupdate            | [toc]({{ site.baseurl }}/plugins/toc/)                                                                                             | Updates the Table of Contents block element.                                          |
 | insertfile           | [tinydrive]({{ site.baseurl }}/plugins/drive/)                                                                                     | Opens the {{site.cloudfilemanager}} file selector.                                    |
@@ -126,10 +126,7 @@ tinyMCE.activeEditor.ui.registry.getAll().buttons
 | visualchars          | [visualchars]({{ site.baseurl }}/plugins/visualchars/)                                                                             | Toggles the visibility of non breaking character elements.                            |
 | wordcount            | [wordcount]({{ site.baseurl }}/plugins/wordcount/)                                                                                 | Opens a word count dialog showing word and character counts.                          |
 
-
-
-## Menu controls
-
+feature/DOC-480
 The following table shows all available menu items, including items provided by plugins. To retrieve a list from the editor, run the following command from the browser console:
 
 ```js
@@ -142,7 +139,7 @@ tinyMCE.activeEditor.ui.registry.getAll().menuItems
 | backcolor              | core                                                                                                                               | Format                                                                                                   | Applies background color to selection.                                                                    |
 | blockformats           | core                                                                                                                               | Format                                                                                                   | Applies block formats to current selection.                                                               |
 | bold                   | core                                                                                                                               | Format                                                                                                   | Applies bold format to current selection.                                                                 |
-| codeformat             | core                                                                                                                               | Format                                                                                                   | Applies inline code format to current selection.                                                          |
+| codeformat             | core                                             feature/DOC-480t selection.                                                          |
 | copy                   | core                                                                                                                               | Edit                                                                                                     | Copies the current selection into clipboard.                                                              |
 | cut                    | core                                                                                                                               | Edit                                                                                                     | Cuts the current selection into clipboard.                                                                |
 | forecolor              | core                                                                                                                               | Format                                                                                                   | Applies foreground/text color to selection.                                                               |

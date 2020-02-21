@@ -153,10 +153,15 @@ For information on using premium skins and icon packs, see: [Premium Skins and I
 
 The {{site.productname}} 5.2 release includes **Spellchecker Pro** 2.0.
 
-**Spellchecker Pro** 2.0 includes:
+**Spellchecker Pro** 2.0:
 
-- New functionality allowspell check the document in multiple languages
-- there's a number of new menu items/buttons
+- Adds new functionality to support spell checking content written in multiple languages.
+- Adds new `language` and `spellcheckdialog` toolbar buttons.
+- Allows the spell checking dialog to be enabled alongside the spell checking as-you-type functionality.
+- Includes a new internal engine to improve the document scanning speed.
+- Removes the `spellchecker_on_load` setting.
+
+For information on the Spell Checker Pro plugin, see: [Spell Checker Pro plugin]({{site.baseurl}}/plugins/tinymcespellchecker/).
 
 ## General bug fixes
 

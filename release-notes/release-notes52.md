@@ -9,8 +9,8 @@ keywords: releasenotes bugfixes
 These release notes provide an overview of the changes for {{site.productname}} 5.2, including:
 
 - [TinyMCE 5.2 new features and enhancements](#tinymce52newfeaturesandenhancements)
-- [Minor changes for TinyMCE 5.2](#minorchangesfortinymce52)
 - [Accompanying Premium Plugin changes](#accompanyingpremiumpluginchanges)
+- [Minor changes for TinyMCE 5.2](#minorchangesfortinymce52)
 - [General bug fixes](#generalbugfixes)
 - [Deprecated features](#deprecatedfeatures)
 - [Known issues](#knownissues)
@@ -27,6 +27,23 @@ The following new features and enhancements were added for the {{site.productnam
 The `toolbar_location` option is used to position the toolbar and menu bar. Setting this option to `bottom` positions the toolbar and menu bar below the content area.
 
 For information on using the `toolbar_location` setting, see: [User interface options - `toolbar_location`]({{ site.baseurl }}/configure/editor-appearance/#toolbar_location).
+
+### Changed toolbar_drawer to toolbar_mode
+
+The `toolbar_drawer` option has been deprecated and replaced with the `toolbar_mode` option. `toolbar_mode` provides the same functionality as `toolbar_drawer`. The name change was made to reflect the range of settings available for this option.
+
+The `toolbar_drawer: false` setting has been deprecated; the behavior is now provided by the `toolbar_mode: 'wrap'` setting.
+
+For information on the `toolbar_mode` option, see: [User interface options - `toolbar_mode`]({{site.baseurl}}/configure/editor-appearance/#toolbar_mode).
+
+### New group toolbar button
+
+The new `toolbar_groups` setting and `addGroupToolbarButton` registry API can be used to create a toolbar button that displays a collection of other toolbar buttons in a pop-up.
+
+![**Group toolbar button example**]({{site.baseurl}}/images/toolbar-group-example.png)
+
+For information on using the `toolbar_groups` setting, see: [User interface options - `toolbar_groups`]({{ site.baseurl }}/configure/editor-appearance/#toolbar_groups).
+For information on using the `addGroupToolbarButton` API, see: [Types of toolbar buttons - Group button]({{ site.baseurl }}/ui-components/typesoftoolbarbuttons/#grouptoolbarbutton).
 
 ### A new placeholder setting
 
@@ -63,23 +80,6 @@ The TextSeeker class is used for walking across text nodes to match a predicate.
 
 For information on using the `TextSeeker` API, see: [{{site.productname}} APIs - tinymce.dom.TextSeeker]({{ site.baseurl }}/api/tinymce.dom/tinymce.dom.textseeker/).
 
-### Changed toolbar_drawer to toolbar_mode
-
-The `toolbar_drawer` option has been deprecated and replaced with the `toolbar_mode` option. `toolbar_mode` provides the same functionality as `toolbar_drawer`. The name change was made to reflect the range of settings available for this option.
-
-The `toolbar_drawer: false` setting has been deprecated; the behavior is now provided by the `toolbar_mode: 'wrap'` setting.
-
-For information on the `toolbar_mode` option, see: [User interface options - `toolbar_mode`]({{site.baseurl}}/configure/editor-appearance/#toolbar_mode).
-
-### New group toolbar button
-
-The new `toolbar_groups` setting and `addGroupToolbarButton` registry API can be used to create a toolbar button that displays a collection of other toolbar buttons in a pop-up.
-
-![**Group toolbar button example**]({{site.baseurl}}/images/toolbar-group-example.png)
-
-For information on using the `toolbar_groups` setting, see: [User interface options - `toolbar_groups`]({{ site.baseurl }}/configure/editor-appearance/#toolbar_groups).
-For information on using the `addGroupToolbarButton` API, see: [Types of toolbar buttons - Group button]({{ site.baseurl }}/ui-components/typesoftoolbarbuttons/#grouptoolbarbutton).
-
 ### Updated the default TinyMCE table icons
 
 The {{site.productname}} icons for table-related toolbar buttons have been updated to better match the icons used elsewhere in the product.
@@ -94,26 +94,6 @@ A new `link_default_protocol` option has been added to the Autolink and Link plu
 
 - For information on using this setting with the Autolink plugin, see: [Autolink plugin - `link_default_protocol`]({{site.baseurl}}/plugins/autolink/#link_default_protocol).
 - For information on using this setting with the Link plugin, see: [Link plugin - `link_default_protocol`]({{site.baseurl}}/plugins/link/#link_default_protocol).
-
-## Minor changes for TinyMCE 5.2
-
-{{site.productname}} 5.2 introduces the following minor changes:
-
-- Adds the ability to apply formats to spaces.
-- Adds a drop shadow below the toolbar while in sticky mode and introduced Oxide variables to customize it when creating a custom skin.
-- Adds a `quickbars_image_toolbar` setting to allow for the image quickbar to be configured or disabled.
-- Adds the `loading` attribute to the default schema for `iframe` and `img` . Patch contributed by [ataylor32](https://github.com/ataylor32).
-- Adds new `getNodeFilters` and `getAttributeFilters` functions to the `editor.serializer` API.
-- Adds error message events that fire when a resource loading error occurs.
-- Improves security by changing the default schema to disallow `onchange` for select elements.
-- Changes iframe mode to set selection on content init if selection doesn't exist.
-- Changes table related icons to align them with the visual style of the other icons.
-- Improves the visual appearance of the color input field.
-- Changes the fake caret container to use `forced_root_block` when possible.
-- Changes the `requireLangPack` API to wait until the plugin has been loaded before loading the language pack.
-- Changes the formatter so `style_formats` are registered before the initial content is loaded into the editor.
-- Changes media plugin to use `https` protocol for media urls by default.
-- Improves security by changing the editor parser to treat CDATA nodes as bogus HTML comments to match the HTML parsing specification. A new `preserve_cdata` setting has been added to preserve CDATA nodes if required.
 
 ## Accompanying Premium Plugin changes
 
@@ -183,6 +163,26 @@ The {{site.productname}} 5.2 release includes an accompanying release of the **S
 - Removes the `spellchecker_on_load` setting.
 
 For information on the Spell Checker Pro plugin, see: [Spell Checker Pro plugin]({{site.baseurl}}/plugins/tinymcespellchecker/).
+
+## Minor changes for TinyMCE 5.2
+
+{{site.productname}} 5.2 introduces the following minor changes:
+
+- Adds the ability to apply formats to spaces.
+- Adds a drop shadow below the toolbar while in sticky mode and introduced Oxide variables to customize it when creating a custom skin.
+- Adds a `quickbars_image_toolbar` setting to allow for the image quickbar to be configured or disabled.
+- Adds the `loading` attribute to the default schema for `iframe` and `img` . Patch contributed by [ataylor32](https://github.com/ataylor32).
+- Adds new `getNodeFilters` and `getAttributeFilters` functions to the `editor.serializer` API.
+- Adds error message events that fire when a resource loading error occurs.
+- Improves security by changing the default schema to disallow `onchange` for select elements.
+- Changes iframe mode to set selection on content init if selection doesn't exist.
+- Changes table related icons to align them with the visual style of the other icons.
+- Improves the visual appearance of the color input field.
+- Changes the fake caret container to use `forced_root_block` when possible.
+- Changes the `requireLangPack` API to wait until the plugin has been loaded before loading the language pack.
+- Changes the formatter so `style_formats` are registered before the initial content is loaded into the editor.
+- Changes media plugin to use `https` protocol for media urls by default.
+- Improves security by changing the editor parser to treat CDATA nodes as bogus HTML comments to match the HTML parsing specification. A new `preserve_cdata` setting has been added to preserve CDATA nodes if required.
 
 ## General bug fixes
 

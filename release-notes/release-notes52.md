@@ -8,7 +8,7 @@ keywords: releasenotes bugfixes
 
 These release notes provide an overview of the changes for {{site.productname}} 5.2, including:
 
-- [New features and enhancements](#tinymce52newfeaturesandenhancements)
+- [TinyMCE 5.2 new features and enhancements](#tinymce52newfeaturesandenhancements)
 - [Minor changes for TinyMCE 5.2](#minorchangesfortinymce52)
 - [Accompanying Premium Plugin changes](#accompanyingpremiumpluginchanges)
 - [General bug fixes](#generalbugfixes)

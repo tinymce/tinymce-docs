@@ -52,7 +52,7 @@ To protect our users, {{site.companyname}} ensures that the TinyMCE dependencies
 
 {{site.productname}} can be used with a [CSP](https://content-security-policy.com/) header. When using a CSP, the following directives are **required** for {{site.productname}} to function:
 
-| Directives                                                   | Requirements                                                                                                                 |
+| Directives                                                   | Reason                                                                                                                 |
 | ------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------- |
 | `script-src 'self' *.tinymce.com *.tiny.cloud;`                | Scripts are sometimes loaded as script element with an src attribute.                                                        |
 | `connect-src 'self' *.tinymce.com *.tiny.cloud blob:;`         | XMLHttpRequest is required by some services such as spellchecking and PowerPaste.                                           |

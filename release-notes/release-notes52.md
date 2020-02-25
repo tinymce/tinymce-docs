@@ -8,9 +8,9 @@ keywords: releasenotes bugfixes
 
 These release notes provide an overview of the changes for {{site.productname}} 5.2, including:
 
-- [New features and enhancements](#newfeaturesandenhancements)
+- [TinyMCE 5.2 new features and enhancements](#tinymce52newfeaturesandenhancements)
 - [Minor changes for TinyMCE 5.2](#minorchangesfortinymce52)
-- [Premium Plugin changes](#premiumpluginchanges)
+- [Accompanying Premium Plugin changes](#accompanyingpremiumpluginchanges)
 - [General bug fixes](#generalbugfixes)
 - [Deprecated features](#deprecatedfeatures)
 - [Known issues](#knownissues)
@@ -18,7 +18,7 @@ These release notes provide an overview of the changes for {{site.productname}} 
 
 > This is the {{site.cloudname}} and {{site.enterpriseversion}} release notes. For information on the latest community version of {{site.productname}}, see: [{{site.productname}} Changelog]({{site.baseurl}}/changelog/).
 
-## New features and enhancements
+## TinyMCE 5.2 new features and enhancements
 
 The following new features and enhancements were added for the {{site.productname}} 5.2 release.
 
@@ -115,13 +115,13 @@ A new `link_default_protocol` option has been added to the Autolink and Link plu
 - Changes media plugin to use `https` protocol for media urls by default.
 - Improves security by changing the editor parser to treat CDATA nodes as bogus HTML comments to match the HTML parsing specification. A new `preserve_cdata` setting has been added to preserve CDATA nodes if required.
 
-## Premium Plugin changes
+## Accompanying Premium Plugin changes
 
 The following premium plugins have been updated for {{site.productname}} 5.2.
 
-### Accessibility Checker
+### Accessibility Checker 2.1.0
 
-The {{site.productname}} 5.2 release includes **Accessibility Checker** 2.1.0.
+The {{site.productname}} 5.2 releaseincludes an accompanying release of the **Accessibility Checker** premium plugin.
 
 **Accessibility Checker** 2.1.0 has been updated:
 
@@ -131,37 +131,37 @@ The {{site.productname}} 5.2 release includes **Accessibility Checker** 2.1.0.
 
 For information on the `a11y_advanced_options` setting, see: [Accessibility Checker plugin]({{site.baseurl}}/plugins/a11ychecker/#a11y_advanced_options).
 
-### Checklist
+### Checklist 1.1.0
 
-The {{site.productname}} 5.2 release includes **Checklist** 1.1.0.
+The {{site.productname}} 5.2 release includes an accompanying release of the **Checklist** premium plugin.
 
 **Checklist** 1.1.0 adds a new optional checklist menu item.
 
 For information on the checklist plugin, see: [Checklist plugin]({{site.baseurl}}/plugins/checklist/).
 
-### Page Embed
+### Page Embed 1.1.0
 
-The {{site.productname}} 5.2 release includes **Page Embed** 1.1.0.
+The {{site.productname}} 5.2 release includes an accompanying release of the **Page Embed** premium plugin.
 
 **Page Embed** 1.1.0 adds a new `tiny_pageembed_inline_styles` setting which inlines all styles, while also keeping CSS classes, when rendering the embed content. This is useful when the additional CSS classes can't be added to your site.
 
 For information on inlining page embed styles, see: [Page Embed plugin - Inline styles for page embeds]({{site.baseurl}}/plugins/pageembed/#inlinestylesforpageembeds).
 
-### Permanent Pen
+### Permanent Pen 1.1.0
 
-The {{site.productname}} 5.2 release includes **Permanent Pen** 1.1.0.
+The {{site.productname}} 5.2 release includes an accompanying release of the **Permanent Pen** premium plugin.
 
 **Permanent Pen** 1.1.0 adds support for working with [input method editors (IMEs)](https://www.w3.org/TR/ime-api/#IME), which are used for inserting non-ascii characters.
 
-### PowerPaste
+### PowerPaste 5.2.1
 
-The {{site.productname}} 5.2 release includes **PowerPaste** 5.2.1.
+The {{site.productname}} 5.2 release includes an accompanying release of the **PowerPaste** premium plugin.
 
 **PowerPaste** 5.2.1 provides a fix for PowerPaste not respecting the [`cache_suffix` setting]({{site.baseurl}}/configure/integration-and-setup/#cache_suffix).
 
-### Premium Skins and Icon Packs
+### Premium Skins and Icon Packs 1.2
 
-The {{site.productname}} 5.2 release includes **Premium Skins and Icon Packs** 1.2.
+The {{site.productname}} 5.2 release includes an accompanying release of the **Premium Skins and Icon Packs** premium plugin.
 
 **Premium Skins and Icon Packs** 1.2 includes:
 
@@ -170,9 +170,9 @@ The {{site.productname}} 5.2 release includes **Premium Skins and Icon Packs** 1
 
 For information on using premium skins and icon packs, see: [Premium Skins and Icon Packs]({{site.baseurl}}/enterprise/premium-skins-and-icon-packs/).
 
-### Spellchecker Pro
+### Spellchecker Pro 2.0
 
-The {{site.productname}} 5.2 release includes **Spellchecker Pro** 2.0.
+The {{site.productname}} 5.2 release includes an accompanying release of the **Spellchecker Pro** premium plugin.
 
 **Spellchecker Pro** 2.0:
 

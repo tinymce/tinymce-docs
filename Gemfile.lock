@@ -45,7 +45,7 @@ GEM
       rb-inotify (~> 0.9, >= 0.9.10)
     mercenary (0.3.6)
     mini_portile2 (2.4.0)
-    nokogiri (1.10.4)
+    nokogiri (1.10.8)
       mini_portile2 (~> 2.4.0)
     pathutil (0.16.2)
       forwardable-extended (~> 2.6)
@@ -71,7 +71,7 @@ DEPENDENCIES
   jekyll-last-modified-at (~> 1.0)
   jekyll-redirect-from (~> 0.13.0)
   jekyll-sitemap (~> 1.2.0)
-  nokogiri (~> 1.10.4)
+  nokogiri (~> 1.10.8)
   redcarpet (~> 3.4.0)
 
 BUNDLED WITH

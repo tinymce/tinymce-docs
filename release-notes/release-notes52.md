@@ -97,7 +97,7 @@ A new `link_default_protocol` option has been added to the Autolink and Link plu
 
 ## Accompanying Premium Plugin changes
 
-The following premium plugins have been updated for {{site.productname}} 5.2.
+The following premium plugins updates were released alongside {{site.productname}} 5.2.
 
 ### Accessibility Checker 2.1.0
 

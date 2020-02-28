@@ -104,16 +104,8 @@ This procedure requires:
             ```
             $ npm install --save tinymce
             ```
-        2. Using a text editor, open `angular.json` and add {{site.productname}} to the *global scripts* tag.
 
-            For example:
-
-            ```json
-            "scripts": [
-              "node_modules/tinymce/tinymce.min.js"
-            ]
-            ```
-        3. Using a text editor; open `angular.json` and add the {{site.productname}} skins, themes, and plugins to the `assets` property.
+        2. Using a text editor; open `angular.json` and add the {{site.productname}} skins, themes, and plugins to the `assets` property.
 
             ```json
             "assets": [
@@ -122,14 +114,40 @@ This procedure requires:
               { "glob": "**/*", "input": "node_modules/tinymce/plugins", "output": "/tinymce/plugins/" }
             ]
             ```
-        4. Update the editor configuration to include the `base_url` and `suffix` options.
+            
+            If you are using tinymce-angular 4.0.0 or later, add the {{site.productname}} core script as well
+            ```json
+            { "input": "node_modules/tinymce/tinymce.min.js", "output": "/tinymce/tinymce.min.js" }
+            ```
+        3a. If you are using tinymce-angular 4.0.0 or later, the recommended approach for providing the {{site.productname}} core script is to have tinymce-angular lazy load it. This is achieved through the usage of dependency injection. Add a dependency provider to your module that imports the EditorModule using the `TINYMCE_SCRIPT_SRC` token. No additional configuration is required as {{site.productname}} will load assets such as plugins relative to this location.
 
+            ```js
+            import { EditorModule, TINYMCE_SCRIPT_SRC } from '@tinymce/tinymce-angular';
+            /* ... */
+            @NgModule({
+              /* ... */
+              imports: [
+                EditorModule
+              ],
+              providers: [
+                { provide: TINYMCE_SCRIPT_SRC, useValue: 'tinymce/tinymce.min.js' }
+              ]
+            })
+            ```
+        3b. If you're using an earlier version of tinymce-angular than 4.0.0, open `angular.json` and add {{site.productname}} to the *global scripts* tag.
+
+            ```json
+            "scripts": [
+              "node_modules/tinymce/tinymce.min.js"
+            ]
+            ```
+
+            Update the editor configuration to include the `base_url` and `suffix` options.
+            
             ```html
             <editor [init]="{
               base_url: '/tinymce', // Root for resources
-              suffix: '.min',       // Suffix to use when loading resources
-              plugins: 'lists advlist',
-              toolbar: 'undo redo | bold italic | bullist numlist outdent indent'
+              suffix: '.min'        // Suffix to use when loading resources
             }"></editor>
             ```
 

@@ -44,4 +44,7 @@ ephox {
 
 You will also find more Self-hosted setup information on the [Link Checker plugin page]({{ site.baseurl }}/plugins/linkchecker/).
 
-> **Important note:** The Link Checker server currently does not support integration with IBM WebSphere Application Server.
+{% assign pluginname = 'Link Checker' %}
+{% assign pluginminimumplan = 'tierthree' %}
+{% assign plugindocspage = 'linkchecker' %}
+{% include misc/purchase-premium-plugins.md %}

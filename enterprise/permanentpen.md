@@ -11,18 +11,11 @@ Permanent Pen is a premium {{site.productname}} plugin for applying a pre-define
 
 This allows the user to add text without modifying the original content.
 
-### Getting started
+### Try our Permanent Pen plugin demo
 
-#### Creating an account
+{% include codepen.html id="permanent-pen" %}
 
-To try out Permanent Pen and {{site.cloudname}}-delivered editor, the first step is to create a free [{{site.accountpage}}]({{site.accountsignup}}).
-
-> {{site.accountpage}}s receive a free 30-day trial of all {{site.cloudname}} [premium plugins]({{site.cloudextensions}}), with no credit card information or commitment required.
-
-### Buy TinyMCE Permanent Pen
-
-Start with this [dedicated product page]({{site.productpages}}/permanent-pen/) to see all the flexible pricing options. OEM and enterprise customers should [contact sales directly]({{site.contactpage}}).
-
-For more information on Permanent Pen refer to the full [documentation]({{site.baseurl}}/plugins/permanentpen/).
-
-There is also a demo provided to explore the Permanent Pen capabilities [here]({{site.baseurl}}/demo/permanentpen/).
+{% assign pluginname = 'Permanent Pen' %}
+{% assign pluginminimumplan = 'tiertwo' %}
+{% assign plugindocspage = 'permanentpen' %}
+{% include misc/purchase-premium-plugins.md %}

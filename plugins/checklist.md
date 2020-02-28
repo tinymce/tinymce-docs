@@ -7,7 +7,7 @@ keywords: lists todo checklist
 controls: toolbar button
 ---
 
-## Overview
+{{site.premiumplugin}}
 
 The **Checklist** plugin helps the user keep track of all required actions by creating a simple, clean, and easy to use TODO list.
 

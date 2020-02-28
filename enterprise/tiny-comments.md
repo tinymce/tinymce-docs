@@ -30,14 +30,11 @@ The Comments 2.0 plugin allows the user to perform the following functions:
 * Lookup a comment
 * Edit a comment
 
-## Comments 2.0 Integration
+## Try our Tiny Comments plugin demo
 
-We provide a working example for integrating the {{site.productname}} plugin into your site.
+{% include codepen.html id="comments-2" %}
 
-> Note: For more information on installing and configuring Comments 2.0, please visit our [documentation]({{ site.baseurl }}/plugins/comments/).
-
-### Buy Comments 2.0
-
-Start with the [pricing]({{site.pricingpage}}) page to see our flexible pricing options. Enterprise customers should [contact sales directly]({{site.contactpage}}).
-
-Still not sure? Check out the [demo]({{site.baseurl}}/demo/comments-2/) that displays all the features in Comments 2.0.
+{% assign pluginname = 'Tiny Comments' %}
+{% assign pluginminimumplan = 'enterprise' %}
+{% assign plugindocspage = 'comments' %}
+{% include misc/purchase-premium-plugins.md %}

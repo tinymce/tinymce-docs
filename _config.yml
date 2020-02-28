@@ -21,12 +21,17 @@ cloudfilemanager: Tiny Drive
 enterpriseversion: TinyMCE Enterprise
 accountpage: Tiny Account
 supportname: Tiny Support
+#### Plan names
+tieroneplan: Tiny Cloud Community Plan
+tiertwoplan: Tiny Cloud Essential Plan
+tierthreeplan: Tiny Cloud Professional Plan
+enterpriseplan: Tiny Cloud Custom Plans
 ## common tiny.cloud URLs
 supporturl: https://support.tiny.cloud
+plugindirectory: https://www.tiny.cloud/apps/
 gettiny: https://www.tiny.cloud/get-tiny
 accountpageurl: https://apps.tiny.cloud/my-account
 accountsignup: https://www.tiny.cloud/auth/signup
-cloudextensions: https://apps.tiny.cloud/product-category/tiny-cloud-extensions/
 productpages: https://apps.tiny.cloud/products
 pricingpage: https://www.tiny.cloud/pricing
 contactpage: https://www.tiny.cloud/contact
@@ -43,7 +48,7 @@ requires_5_1v: "> **Note**: This feature is only available for TinyMCE 5.1 and l
 requires_5_2v: "> **Note**: This feature is only available for TinyMCE 5.2 and later."
 
 notonmobile: "> **Note**: This option is not supported on mobile devices."
-
+premiumplugin: "> **Note**: This plugin is only available for [paid TinyMCE subscriptions](https://www.tiny.cloud/pricing)."
 differs_for_mobile: "> **Note**: The default option for this setting is different for mobile devices. For information on the default mobile setting, see: [TinyMCE Mobile - Configuration settings with mobile defaults](https://www.tiny.cloud/docs/mobile/#configurationsettingswithmobiledefaults/)."
 
 thirdPartyInteg: "> **Important**: This Integration is maintained by a third-party developer. Tiny Technologies, Inc. bears no responsibility for this integration, which is not covered by the Tiny Self-Hosted Software License Agreement. For issues related to the integration, contact the third-party project directly."

@@ -6,6 +6,8 @@ description: Check spelling as-you-type in TinyMCE.
 keywords: tinymcespellchecker spellchecker_language spellchecker_languages spellchecker_rpc_url spellchecker_dialog ephox English US UK Danish Dutch Finnish French German Italian Norwegian Portuguese Brazilian European Spanish Swedish
 ---
 
+{{site.premiumplugin}}
+
 **Spell Checker Pro** adds spell checking as-you-type capabilities to {{site.productname}}. For information on the supported languages, refer to [this]({{site.baseurl}}/plugins/tinymcespellchecker/#spellchecker_language) section.
 
 {% include codepen.html id="spellcheckerpro" %}
@@ -341,7 +343,3 @@ tinymce.init({
   }
 });
 ````
-
-## Downloading Spell Checker Pro
-
-A [{{site.enterpriseversion}} subscription]({{site.pricingpage}}) subscription includes Spell Checker Pro.

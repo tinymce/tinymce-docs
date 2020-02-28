@@ -23,23 +23,11 @@ Common use cases for using a checklist:
   * Checklists are useful for school camps to create emergency survival kits.
   * In professional diving checklists can be used for preparation of equipment for a diving session.
 
-### Example
+### Try our Checklist plugin demo
 
 {% include codepen.html id="checklist" %}
 
-### Getting started
-
-#### Creating an account
-
-To try out **Checklist** and {{site.cloudname}}-delivered editor, the first step is to create a free [{{site.accountpage}}]({{site.accountsignup}}).
-
-{{site.accountpage}}s receive a free 30-day trial of all {{site.cloudname}} [premium plugins]({{site.cloudextensions}}), with no credit card information or commitment required.
-
-
-### Buy TinyMCE Checklist
-
-Start with this [dedicated product page]({{site.productpages}}/checklist/) to see all the flexible pricing options. OEM and enterprise customers should [contact sales directly]({{site.contactpage}}).
-
-For more information on **Checklist** refer to the full [documentation]({{site.baseurl}}/plugins/checklist/).
-
-There is also a demo provided to explore the **Checklist** capabilities [here]({{site.baseurl}}/demo/checklist/).
+{% assign pluginname = 'Checklist' %}
+{% assign pluginminimumplan = 'tiertwo' %}
+{% assign plugindocspage = 'checklist' %}
+{% include misc/purchase-premium-plugins.md %}

@@ -24,4 +24,7 @@ If you'd rather deploy Enhanced Media Embed via the Self-hosted package, you hav
 
 You also need to [integrate]({{ site.baseurl }}/enterprise/embed-media/mediaembed-server-integration/) and [configure]({{ site.baseurl }}/enterprise/embed-media/mediaembed-server-config/) the Enhanced Media Embed server.
 
-> **Important note:** The Enhanced Media Embed server currently does not support integration with IBM WebSphere Application Server.
+{% assign pluginname = 'Enhanced Media Embed' %}
+{% assign pluginminimumplan = 'tiertwo' %}
+{% assign plugindocspage = 'mediaembed' %}
+{% include misc/purchase-premium-plugins.md %}

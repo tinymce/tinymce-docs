@@ -5,6 +5,8 @@ title_nav: PowerPaste
 keywords: enterprise powerpaste power paste paste_as_text powerpaste_word_import powerpaste_html_import powerpaste_block_drop powerpaste_allow_local_images microsoft word excel
 ---
 
+{{site.premiumplugin}}
+
 The {{site.productname}} **PowerPaste** plugin automatically cleans up content from Microsoft Word/Excel and HTML sources to ensure clean, compliant content that matches the look and feel of the site.
 
 >***Note:*** _Due to limitations in Excel online (part of Office Live) PowerPaste does not support pasting from Excel online.  If you paste content using Excel in Office Live you will get a plain text representation of the content._
@@ -40,8 +42,7 @@ tinymce.init({
 To enable the {{site.productname}} **PowerPaste** plugin:
 
 1. If you are currently using the `paste` plugin provided with {{site.productname}}, disable it by removing it from the `plugins` list.
-2. Copy the entire `powerpaste` folder (found in the ZIP that you downloaded) into the `plugins` directory of your {{site.productname}} installation. This is typically `/tinymce/plugins`.
-3. Add `powerpaste` to the `plugins` list in  your {{site.productname}} configuration.
+2. Add `powerpaste` to the `plugins` list in  your {{site.productname}} configuration.
 
 See the example {{site.productname}} configuration above.
 
@@ -63,7 +64,6 @@ tinymce.init({
   }
 });
 ```
-
 
 ## Configuration Options
 
@@ -319,7 +319,3 @@ tinymce.init({
 The PowerPaste plugin provides the following JavaScript command.
 
 {% include commands/powerpaste-cmds.md %}
-
-## Buy TinyMCE PowerPaste
-
-Start with our [dedicated product page]({{site.productpages}}/powerpaste/) to see our flexible pricing options. OEM and enterprise customers should [contact sales directly]({{site.contactpage}}).

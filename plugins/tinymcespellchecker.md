@@ -53,64 +53,25 @@ The {{site.productname}} Enterprise Spellchecking plugin activates automatically
 
 ## Configuration Options
 
-### `spellchecker_rpc_url`
+### `spellchecker_active`
 
-This option specifies the URL of the server-side `ephox-spelling` service. For instructions on how to setup a Spell Checker Pro server-side component, see: the [server-side component installation guide]({{site.baseurl}}/enterprise/server/).
+This option enables or disables the spell checker when the editor is loaded. When set to `false`, the spellchecker will not be active when the editor is initialized. The toolbar button or the menu item will have to be selected by the user to start the spell checker.
 
-> **Note:** `spellchecker_rpc_url` is **not** required when enabling this plugin via [{{site.cloudname}}]({{site.baseurl}}/cloud-deployment-guide/editor-and-features/)
+**Type:** `Boolean`
 
-**Type:** `String`
+**Default Value:** `true`
 
-#### Example: `spellchecker_rpc_url`
+**Possible Values:** `true`, `false`
 
-```js
-tinymce.init({
-  selector: 'textarea',
-  plugins: 'tinymcespellchecker',
-  spellchecker_rpc_url: 'localhost/ephox-spelling'
-});
-```
-
-### `spellchecker_languages`
-
-This option specifies the languages that are available to the user, provided as a comma delimited string.
-
-**Type:** comma-separated `String`
-
-**Default Value:**
-````
-'US English=en_us,UK English=en_gb,Danish=da,Dutch=nl,Finnish=fi,French=fr,German=de,Italian=it,Norwegian=nb,Brazilian Portuguese=pt,Iberian Portuguese=pt_PT,Spanish=es,Swedish=sv'
-````
-
-#### Example: `spellchecker_languages`
+#### Example: `spellchecker_active`
 
 ```js
 tinymce.init({
   selector: 'textarea',
   plugins: 'tinymcespellchecker',
-  spellchecker_languages: 'US English=en_us,UK English=en_gb,Danish=da,Dutch=nl,Finnish=fi,French=fr,German=de,Italian=it,Norwegian=nb,Brazilian Portuguese=pt,Iberian Portuguese=pt_PT,Spanish=es,Swedish=sv'
+  spellchecker_active: true
 });
 ```
-
-### `spellchecker_language`
-
-This option specifies the default language used by Spell Checker Pro.
-
-**Type:** `String`
-
-**Default Value:** `'en_us'`
-
-#### Example: `spellchecker_language`
-
-```js
-tinymce.init({
-  selector: 'textarea',
-  plugins: 'tinymcespellchecker',
-  spellchecker_language: 'en_us'
-});
-```
-
-{% include configuration/languages.md %}
 
 ### `spellchecker_dialog`
 
@@ -136,19 +97,44 @@ tinymce.init({
 });
 ```
 
-### `spellchecker_whitelist`
+### `spellchecker_language`
 
-This option specifies an array of words to be ignored by the spell checker.
+This option specifies the default language used by Spell Checker Pro.
 
-**Type:** `String[]`
+**Type:** `String`
 
-#### Example: `spellchecker_whitelist`
+**Default Value:** `'en_us'`
+
+#### Example: `spellchecker_language`
 
 ```js
 tinymce.init({
   selector: 'textarea',
   plugins: 'tinymcespellchecker',
-  spellchecker_whitelist: ['tinymce','TinyMCE']
+  spellchecker_language: 'en_us'
+});
+```
+
+{% include configuration/languages.md %}
+
+### `spellchecker_languages`
+
+This option specifies the spellchecker languages that are available to the user, provided as a comma delimited string. The specified languages will be available for the spellchecker when using Spell Checker Pro.
+
+**Type:** comma-separated `String`
+
+**Default Value:**
+````
+'US English=en_us,UK English=en_gb,Danish=da,Dutch=nl,Finnish=fi,French=fr,German=de,Italian=it,Norwegian=nb,Brazilian Portuguese=pt,Iberian Portuguese=pt_PT,Spanish=es,Swedish=sv'
+````
+
+#### Example: `spellchecker_languages`
+
+```js
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'tinymcespellchecker',
+  spellchecker_languages: 'US English=en_us,UK English=en_gb,Danish=da,Dutch=nl,Finnish=fi,French=fr,German=de,Italian=it,Norwegian=nb,Brazilian Portuguese=pt,Iberian Portuguese=pt_PT,Spanish=es,Swedish=sv'
 });
 ```
 
@@ -174,23 +160,56 @@ tinymce.init({
 });
 ```
 
-### `spellchecker_active`
+### `spellchecker_rpc_url`
 
-This option enables or disables the spell checker when the editor is loaded. When set to `false`, the spellchecker will not be active when the editor is initialized. The toolbar button or the menu item will have to be selected by the user to start the spell checker.
+This option specifies the URL of the server-side `ephox-spelling` service. For instructions on how to setup a Spell Checker Pro server-side component, see: the [server-side component installation guide]({{site.baseurl}}/enterprise/server/).
 
-**Type:** `Boolean`
+> **Note:** `spellchecker_rpc_url` is **not** required when enabling this plugin via [{{site.cloudname}}]({{site.baseurl}}/cloud-deployment-guide/editor-and-features/)
 
-**Default Value:** `true`
+**Type:** `String`
 
-**Possible Values:** `true`, `false`
-
-#### Example: `spellchecker_active`
+#### Example: `spellchecker_rpc_url`
 
 ```js
 tinymce.init({
   selector: 'textarea',
   plugins: 'tinymcespellchecker',
-  spellchecker_active: true
+  spellchecker_rpc_url: 'localhost/ephox-spelling'
+});
+```
+
+### `spellchecker_select_languages`
+
+This option specifies the languages that can be set for content when working with multi-language content. The specified languages will be available from the [`language` toolbar drop-down menu button](#toolbarbuttons).
+
+**Type:** comma-separated `String`
+
+**Default Value:** `'en,es,fr,de,pt,zh'`
+
+#### Example: `spellchecker_select_languages`
+
+```js
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'tinymcespellchecker',
+  toolbar: 'language',
+  spellchecker_select_languages: 'en,es,fi,fr,da,de,nl,it,nb,pt,sv,zh'
+});
+```
+
+### `spellchecker_whitelist`
+
+This option specifies an array of words to be ignored by the spell checker.
+
+**Type:** `String[]`
+
+#### Example: `spellchecker_whitelist`
+
+```js
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'tinymcespellchecker',
+  spellchecker_whitelist: ['tinymce','TinyMCE']
 });
 ```
 

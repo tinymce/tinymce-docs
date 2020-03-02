@@ -30,11 +30,11 @@ The Comments 2.0 plugin allows the user to perform the following functions:
 * Lookup a comment
 * Edit a comment
 
-## Try our Tiny Comments plugin demo
+## Try our Comments plugin demo
 
 {% include codepen.html id="comments-2" %}
 
-{% assign pluginname = 'Tiny Comments' %}
+{% assign pluginname = 'Comments' %}
 {% assign pluginminimumplan = 'enterprise' %}
 {% assign plugindocspage = 'comments' %}
 {% include misc/purchase-premium-plugins.md %}

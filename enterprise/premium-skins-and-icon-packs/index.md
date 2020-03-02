@@ -80,10 +80,6 @@ Due to different toolbar button sizes, some icon packs fit better with some skin
 | small | jam, small |
 | jam | jam, small |
 
-### Self hosted usage instructions
-
-For the self-hosted version of {{site.productname}}, Premium Skins and Icon Packs are available as a download, either as part of the Pro bundle or as an individual purchase. All skins and icons packs are included in the bundle.
-
 ### Examples
 
 Below are some recommended combinations of skins and icon packs:

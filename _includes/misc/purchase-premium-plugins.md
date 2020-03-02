@@ -6,41 +6,34 @@
 {% else %}
 {% assign isAre = 'is' %}
 {% endif %}
-### Getting started with TinyMCE {{pluginname}}
+## Getting started with {% if pluginname != 'Tiny Drive' %}{{site.productname}}{% endif %} {{pluginname}}
 
-#### Creating an account
+### Creating an account
 
-To try out the **{{pluginname}} {{extensionType}}** and the {{site.cloudname}}, create a free [{{site.accountpage}}]({{site.accountsignup}}). Sign-up for a free {{site.accountpage}} and receive a 30-day trial of the {{site.companyname}} [premium plugins]({{site.plugindirectory}}), skins, and icon packs; with no credit card information or commitment required.
+Try the **{{pluginname}} {{extensionType}}** and the {{site.cloudname}} with a free [{{site.accountpage}}]({{site.accountsignup}}). New accounts receive a 30-day trial of the {{site.companyname}} [premium plugins]({{site.plugindirectory}}), skins, and icon packs; with no credit card information or commitment required.
 
-#### Buy TinyMCE {{pluginname}}
+### Get {% if pluginname != 'Tiny Drive' %}{{site.productname}}{% endif %} {{pluginname}}
 
-{% if pluginminimumplan == 'tierone' %}
+{% if pluginminimumplan != 'enterprise' %}
 The **{{pluginname}} {{extensionType}}** {{isAre}} included in the following {{site.cloudname}} plans:
-
-- The [{{site.tieroneplan}}]({{site.pricingpage}}).
-- The [{{site.tiertwoplan}}]({{site.pricingpage}}).
-- The [{{site.tierthreeplan}}]({{site.pricingpage}}).
-- [{{site.enterpriseplan}}]({{site.pricingpage}}).
-
-{% elsif pluginminimumplan == 'tiertwo' %}
-The **{{pluginname}} {{extensionType}}** {{isAre}} included in the following {{site.cloudname}} plans:
-
-- The [{{site.tiertwoplan}}]({{site.pricingpage}}).
-- The [{{site.tierthreeplan}}]({{site.pricingpage}}).
-- [{{site.enterpriseplan}}]({{site.pricingpage}}).
-
-{% elsif pluginminimumplan == 'tierthree' %}
-The **{{pluginname}} {{extensionType}}** {{isAre}} included in the following {{site.cloudname}} plans:
-
-- The [{{site.tierthreeplan}}]({{site.pricingpage}}).
-- [{{site.enterpriseplan}}]({{site.pricingpage}}).
-
-{% elsif pluginminimumplan == 'enterprise' %}
+{% else %}
 The **{{pluginname}} {{extensionType}}** {{isAre}} included in [{{site.enterpriseplan}}]({{site.pricingpage}}).
-
 {% endif %}
 
-### Further information
+{% case pluginminimumplan %}
+{% when 'tierone' %}- The [{{site.tieroneplan}}]({{site.pricingpage}}).
+{% when 'tierone' or 'tiertwo' %}- The [{{site.tiertwoplan}}]({{site.pricingpage}}).
+{% when 'tierone' or 'tiertwo' or 'tierthree' %}- The [{{site.tierthreeplan}}]({{site.pricingpage}}).
+- [{{site.enterpriseplan}}]({{site.pricingpage}}).
+{% endcase %}
+
+{% if pluginminimumplan == 'tiertwo' or pluginminimumplan == 'tierthree' %}
+A 14-day free trial is also available for the {{site.tiertwoplan}} and the {{site.tierthreeplan}}.
+{% elsif pluginminimumplan == 'tierthree' %}
+A 14-day free trial is available for the {{site.tierthreeplan}}.
+{% endif %}
+
+## Further information
 
 For information on:
 

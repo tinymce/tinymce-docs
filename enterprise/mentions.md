@@ -9,8 +9,6 @@ It is now possible for users to send notifications to other users using the Ment
 
 Users can communicate every day using `@username` on social networks and can expect to be able to use them when creating content too.
 
-Mentions is available as a stand-alone plugin or as part of the Pro Bundle. To learn more about all the options, check out the [pricing and plans here]({{site.pricingpage}}).
-
 There are two deployment options. One is with {{site.cloudname}}, the other is the more traditional Self-hosted route, requiring an additional [server-side component]({{ site.baseurl }}/enterprise/server/) to be installed and configured.
 
 Please note that this feature requires a backend integration with a system to handle listing of users, as well as sending the notifications. Refer to this [example code]({{site.baseurl}}/plugins/mentions/#example) for more information. There are two integration points: getting a user list when `@abc...` is typed, and on submitting the form, sending a notification to the `@username` in the document.

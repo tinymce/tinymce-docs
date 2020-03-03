@@ -119,7 +119,7 @@ tinymce.init({
 
 ### `spellchecker_languages`
 
-This option specifies the spellchecker languages that are available to the user, provided as a comma delimited string. The specified languages will be available for the spellchecker when using Spell Checker Pro.
+This option specifies the spellchecker languages that are available to the user, provided as a comma delimited string. For a list of available languages, see: [Supported languages](#supportedlanguages).
 
 **Type:** comma-separated `String`
 
@@ -162,7 +162,7 @@ tinymce.init({
 
 ### `spellchecker_rpc_url`
 
-This option specifies the URL of the server-side `ephox-spelling` service. For instructions on how to setup a Spell Checker Pro server-side component, see: the [server-side component installation guide]({{site.baseurl}}/enterprise/server/).
+This option specifies the URL of the server-side `ephox-spelling` service. For instructions on how to set up a Spell Checker Pro server-side component, see: the [server-side component installation guide]({{site.baseurl}}/enterprise/server/).
 
 > **Note:** `spellchecker_rpc_url` is **not** required when enabling this plugin via [{{site.cloudname}}]({{site.baseurl}}/cloud-deployment-guide/editor-and-features/)
 
@@ -180,7 +180,7 @@ tinymce.init({
 
 ### `spellchecker_select_languages`
 
-This option specifies the languages that can be set for content when working with multi-language content. The specified languages will be available from the [`language` toolbar drop-down menu button](#toolbarbuttons).
+This option specifies the languages that can be set for content when working with multi-language content. The specified languages will be available from the [`language` toolbar drop-down menu button](#toolbarbuttons).  For a list of available languages, see: [Supported languages](#supportedlanguages).
 
 **Type:** comma-separated `String`
 

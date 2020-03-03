@@ -16,7 +16,7 @@ Your have two deployment options. One is super easy with {{site.cloudname}}, the
 
 ## Enhanced Media Embed self-hosted setup
 
-Once you've got the [server-side component]({{ site.baseurl }}/enterprise/server/) installed, additional configuration to your `application.conf` file is required. (Don't forget to restart the Java application server after updating the configuration.)
+Once you have the [server-side component]({{ site.baseurl }}/enterprise/server/) installed, additional configuration to your `application.conf` file is required. (Don't forget to restart the Java application server after updating the configuration.)
 
 You also need to [integrate]({{ site.baseurl }}/enterprise/embed-media/mediaembed-server-integration/) and [configure]({{ site.baseurl }}/enterprise/embed-media/mediaembed-server-config/) the Enhanced Media Embed server.
 

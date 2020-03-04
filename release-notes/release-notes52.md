@@ -45,6 +45,12 @@ The new `toolbar_groups` setting and `addGroupToolbarButton` registry API can be
 For information on using the `toolbar_groups` setting, see: [User interface options - `toolbar_groups`]({{ site.baseurl }}/configure/editor-appearance/#toolbar_groups).
 For information on using the `addGroupToolbarButton` API, see: [Types of toolbar buttons - Group button]({{ site.baseurl }}/ui-components/typesoftoolbarbuttons/#grouptoolbarbutton).
 
+### Enterprise-grade user interface translations available on Tiny Cloud
+
+{{site.cloudname}} deployments now have access to professionally translated language packs for localizing the {{site.productname}} user interface.
+
+For a list of the available user interface languages, see: [Localization options - `language`](/configure/localization/#language).
+
 ### A new placeholder setting
 
 The new `placeholder` option adds placeholder content that will be shown when the editor is empty.
@@ -222,6 +228,97 @@ For information on the `toolbar_mode` option, see: [User interface options - `to
 ## Known issues
 
 This section describes issues that users of {{site.productname}} 5.2 may encounter, as well as possible workarounds for these issues.
+
+**Outline**
+
+* [Translations missing for new user interface options](#translationsmissingfornewuserinterfaceoptions)
+* [Floating toolbar disconnects from the toolbar in inline mode](#floatingtoolbardisconnectsfromthetoolbarininlinemode)
+* [Microsoft Internet Explorer will incorrectly auto focus the editor when TinyMCE is initialized](#microsoftinternetexplorerwillincorrectlyautofocustheeditorwhentinymceisinitialized)
+* [Incorrect positioning of inline dialogs when using sticky toolbars and the bottom toolbar](#incorrectpositioningofinlinedialogswhenusingstickytoolbarsandthebottomtoolbar)
+
+### Translations missing for new user interface options
+
+#### Issue
+
+New user interface settings do not have translations to other supported languages at this time. This includes text related to:
+
+- The new accessibility settings.
+- The new checklist menu item.
+
+#### Workaround
+
+No known workaround at the time of release.
+
+### Floating toolbar disconnects from the toolbar in inline mode
+
+#### Issue
+
+> **Note**: This issue will be resolved with the release of {{site.productname}} 5.2.1.
+
+If the editor is set to `inline: true`, and `toolbar_drawer` or `toolbar_mode` is set to `'floating'`, such as:
+
+```js
+tinymce.init({
+  selector: 'textarea',
+  inline: true,
+  toolbar_drawer: 'floating'
+});
+```
+
+or
+
+```js
+tinymce.init({
+  selector: 'textarea',
+  inline: true,
+  toolbar_mode: 'floating'
+});
+```
+
+The floating component of the toolbar will disconnect from the primary toolbar when page or editor is scrolled using a mouse or a scrolling touch gesture.
+
+#### Workaround
+
+Set `toolbar_drawer` or `toolbar_mode` to an alternative mode until the issue is resolved. For a list of alternative toolbar modes, see: [User interface options - `toolbar_mode`]({{site.baseurl}}/configure/editor-appearance/#toolbar_mode).
+
+### Microsoft Internet Explorer will incorrectly auto focus the editor when TinyMCE is initialized
+
+#### Issue
+
+> **Note**: This issue will be resolved with the release of {{site.productname}} 5.2.1.
+
+When a webpage containing {{site.productname}} is loaded on Microsoft Internet Explorer, the user's cursor will automatically focus on the editor when the editor is loaded.
+
+#### Workaround
+
+No known workaround at the time of release.
+
+### Incorrect positioning of inline dialogs when using sticky toolbars and the bottom toolbar
+
+#### Issue
+
+Inline dialogs, such as the _Search and Replace dialog_ and the _Accessibility Checker dialog_, will be positioned incorrectly when sticky toolbar and the bottom toolbar are used together. For example:
+
+```js
+tinymce.init({
+  selector: 'textarea',
+  toolbar_sticky: true,
+  toolbar_location: 'bottom'
+});
+```
+
+Custom dialogs using the following API setting are also affected.
+
+```js
+editor.windowManager.open(spec, {inline: 'toolbar'})
+```
+
+#### Workaround
+
+To avoid this issue, either:
+
+- Do not use the new `toolbar_location` option until the issue is resolved.
+- Set `toolbar_sticky` to `false` before setting `toolbar_location: 'bottom'` until the issue is resolved.
 
 {% assign enterprise = true %}
 

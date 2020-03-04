@@ -49,7 +49,7 @@ For information on using the `addGroupToolbarButton` API, see: [Types of toolbar
 
 {{site.cloudname}} deployments now have access to professionally translated language packs for localizing the {{site.productname}} user interface.
 
-For a list of the available user interface languages, see: [Localization options - `language`](/configure/localization/#language).
+For a list of the available user interface languages, see: [Localization options - `language`]({{site.baseurl}}/configure/localization/#language).
 
 ### A new placeholder setting
 
@@ -240,10 +240,10 @@ This section describes issues that users of {{site.productname}} 5.2 may encount
 
 #### Issue
 
-New user interface settings do not have translations to other supported languages at this time. This includes text related to:
+New user interface features do not have translations to other supported languages at this time. This includes text related to:
 
-- The new accessibility settings.
-- The new checklist menu item.
+- [The new accessibility settings](#newoptiontoassistwithmarkingimagesasdecorativeforaccessibilitypurposes).
+- [The new checklist menu item](#checklist110).
 
 #### Workaround
 
@@ -275,7 +275,7 @@ tinymce.init({
 });
 ```
 
-The floating component of the toolbar will disconnect from the primary toolbar when page or editor is scrolled using a mouse or a scrolling touch gesture.
+The floating component of the toolbar will disconnect from the primary toolbar when additional content is added to the editor, causing it to resize (such as adding new lines).
 
 #### Workaround
 
@@ -287,7 +287,7 @@ Set `toolbar_drawer` or `toolbar_mode` to an alternative mode until the issue is
 
 > **Note**: This issue will be resolved with the release of {{site.productname}} 5.2.1.
 
-When a webpage containing {{site.productname}} is loaded on Microsoft Internet Explorer, the user's cursor will automatically focus on the editor when the editor is loaded.
+When a webpage containing {{site.productname}} is loaded on Microsoft Internet Explorer, the web browser focus will automatically move to the editor when the editor is loaded.
 
 #### Workaround
 
@@ -307,11 +307,7 @@ tinymce.init({
 });
 ```
 
-Custom dialogs using the following API setting are also affected.
-
-```js
-editor.windowManager.open(spec, {inline: 'toolbar'})
-```
+Custom inline dialogs are also affected.
 
 #### Workaround
 

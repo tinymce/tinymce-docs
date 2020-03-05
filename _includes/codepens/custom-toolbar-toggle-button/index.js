@@ -1,5 +1,8 @@
+// Initialize the TinyMCE editor
 tinymce.init({
   selector: 'textarea#custom-toolbar-toggle-button',
+  content_css: '//www.tiny.cloud/css/codepen.min.css',
+  menubar: false,
   toolbar: 'customStrikethrough customToggleStrikethrough',
   setup: function (editor) {
     editor.ui.registry.addToggleButton('customStrikethrough', {

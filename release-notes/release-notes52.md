@@ -275,7 +275,7 @@ tinymce.init({
 });
 ```
 
-The floating component of the toolbar will disconnect from the primary toolbar when additional content is added to the editor, causing it to resize (such as adding new lines).
+The floating component of the toolbar will disconnect from the primary toolbar when additional content is added to the editor, causing the content area to resize (such as adding new lines).
 
 #### Workaround
 

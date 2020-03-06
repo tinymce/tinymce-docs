@@ -104,34 +104,48 @@ This procedure requires:
             ```
             $ npm install --save tinymce
             ```
-        2. Using a text editor, open `angular.json` and add {{site.productname}} to the *global scripts* tag.
 
-            For example:
-
-            ```json
-            "scripts": [
-              "node_modules/tinymce/tinymce.min.js"
-            ]
-            ```
-        3. Using a text editor; open `angular.json` and add the {{site.productname}} skins, themes, and plugins to the `assets` property.
+        2. Using a text editor; open `angular.json` and add {{site.productname}} to the `assets` property.
 
             ```json
             "assets": [
-              { "glob": "**/*", "input": "node_modules/tinymce/skins", "output": "/tinymce/skins/" },
-              { "glob": "**/*", "input": "node_modules/tinymce/themes", "output": "/tinymce/themes/" },
-              { "glob": "**/*", "input": "node_modules/tinymce/plugins", "output": "/tinymce/plugins/" }
+              { "glob": "**/*", "input": "node_modules/tinymce", "output": "/tinymce/" }
             ]
             ```
-        4. Update the editor configuration to include the `base_url` and `suffix` options.
+        3. Load TinyMCE. 
+            - To load TinyMCE when the editor is initialized (also known as lazy loading), add a dependency provider to the module using the `TINYMCE_SCRIPT_SRC` token.
+                {% if site.productmajorversion < 6 %}
+                > **Note**: Lazy loading is available for tinymce-angular 3.5.0 or later.
+                {% endif %}
 
-            ```html
-            <editor [init]="{
-              base_url: '/tinymce', // Root for resources
-              suffix: '.min',       // Suffix to use when loading resources
-              plugins: 'lists advlist',
-              toolbar: 'undo redo | bold italic | bullist numlist outdent indent'
-            }"></editor>
-            ```
+                ```js
+                import { EditorModule, TINYMCE_SCRIPT_SRC } from '@tinymce/tinymce-angular';
+                /* ... */
+                @NgModule({
+                  /* ... */
+                  imports: [
+                    EditorModule
+                  ],
+                  providers: [
+                    { provide: TINYMCE_SCRIPT_SRC, useValue: 'tinymce/tinymce.min.js' }
+                  ]
+                })
+                ```
+            - To load TinyMCE when the page or application is loaded, open `angular.json` and add {{site.productname}} to the *global scripts* tag.
+
+                ```json
+                "scripts": [
+                  "node_modules/tinymce/tinymce.min.js"
+                ]
+                ```
+                Update the editor configuration to include the `base_url` and `suffix` options.
+                
+                ```html
+                <editor [init]="{
+                  base_url: '/tinymce', // Root for resources
+                  suffix: '.min'        // Suffix to use when loading resources
+                }"></editor>
+                ```
 
       * **Deploy {{site.productname}} independent of the Angular application**
 

@@ -236,9 +236,9 @@ Used to specify the format of the content emitted by the tinymce-angular compone
 ##### Example: `outputFormat`
 
 ```xml
-<Editor
+<editor
   outputFormat="text"
-/>
+></editor>
 ```
 
 #### `tagName`

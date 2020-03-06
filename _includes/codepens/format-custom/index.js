@@ -2,10 +2,7 @@ tinymce.init({
   selector: 'textarea#format-custom',
   height: 500,
   plugins: 'table wordcount',
-  content_css: [
-    '//fonts.googleapis.com/css?family=Lato:300,300i,400,400i',
-    '//www.tiny.cloud/css/codepen.min.css'
-  ],
+  content_css: '//www.tiny.cloud/css/codepen.min.css',
   content_style: '.left { text-align: left; }' +
     'img.left { float: left; }' +
     'table.left { float: left; }' +

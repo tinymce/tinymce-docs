@@ -22,10 +22,7 @@ tinymce.init({
   autosave_restore_when_empty: false,
   autosave_retention: "2m",
   image_advtab: true,
-  content_css: [
-    '//fonts.googleapis.com/css?family=Lato:300,300i,400,400i',
-    '//www.tiny.cloud/css/codepen.min.css'
-  ],
+  content_css: '//www.tiny.cloud/css/codepen.min.css',
   link_list: [
     { title: 'My page 1', value: 'http://www.tinymce.com' },
     { title: 'My page 2', value: 'http://www.moxiecode.com' }

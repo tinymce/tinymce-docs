@@ -1,12 +1,9 @@
 tinymce.init({
   selector: '#creating-a-custom-button-3',
+  content_css: '//www.tiny.cloud/css/codepen.min.css',
   height: 300,
   plugins: 'code fullpage',
   toolbar: 'undo redo | strikeout | fullpage code',
-  content_css: [
-    '//fonts.googleapis.com/css?family=Lato:300,300i,400,400i',
-    '//www.tiny.cloud/css/codepen.min.css'
-  ],
 
   setup: function (editor) {
     editor.addButton('strikeout', {

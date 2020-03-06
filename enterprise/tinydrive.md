@@ -10,17 +10,9 @@ keywords: tinydrive .net php relative_urls
 
 {{site.cloudfilemanager}} presents a cloud-based asset management and storage solution that provides the ease of use of Google Drive without the server requirements of a self-hosted asset manager such as our own MoxieManager.
 
-### Getting started
+### Configuring the editor for Tiny Drive
 
-#### Creating an account
-
-If you would like to try out {{site.cloudfilemanager}} and the {{site.cloudname}}-delivered editor, the first step is to create a free [{{site.accountpage}}]({{site.accountsignup}}).  When you create a {{site.accountpage}}, you are assigned an API key, which is required for the implementation of {{site.cloudfilemanager}}.
-
-> The API key is also provisioned with a free 30-day trial of all of our [premium plugins]({{site.cloudextensions}}), with no credit card information or commitment required.
-
-#### Configuring the editor for Tiny Drive
-
-Once you have the API key, or if you are a current {{site.cloudname}} user who already has an API key, then you have access to {{site.cloudfilemanager}}.  In order to get the service up and running, you’ll need to complete a few more steps. See our [documentation]({{site.baseurl}}/tinydrive/) for more information.
+Once you have the API key, or if you are a current {{site.cloudname}} user who already has an API key, then you have access to {{site.cloudfilemanager}}. In order to get the service up and running, you’ll need to complete a few more steps. See our [documentation]({{site.baseurl}}/tinydrive/) for more information.
 
 > We are launching the service with a complimentary 100MB of storage and up to 1 GB of bandwidth.
 
@@ -32,6 +24,11 @@ As your assets are passed back and forth between your {{site.productname}} edito
 
 And to make sure your assets are delivered as fast as possible, we utilize the [CloudFront CDN](https://aws.amazon.com/cloudfront/), which is Amazon’s global content delivery network, known for its low latency and high data transfer speeds.
 
-For more information on {{site.cloudfilemanager}} see our full [documentation]({{site.baseurl}}/tinydrive/).
+### Try our Tiny Drive plugin demo
 
-We also have a demo for you to explore the {{site.cloudfilemanager}} capabilities [here]({{site.baseurl}}/tinydrive/introduction/#demo).
+{% include codepen.html id="drive-demo" %}
+
+{% assign pluginname = 'Tiny Drive' %}
+{% assign pluginminimumplan = 'tierone' %}
+{% assign plugindocspage = '../tinydrive' %}
+{% include misc/purchase-premium-plugins.md %}

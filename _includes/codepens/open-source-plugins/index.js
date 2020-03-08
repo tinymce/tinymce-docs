@@ -56,6 +56,6 @@ tinymce.init({
   image_caption: true,
   quickbars_selection_toolbar: 'bold italic | quicklink h2 h3 blockquote quickimage quicktable',
   noneditable_noneditable_class: "mceNonEditable",
-  toolbar_drawer: 'sliding',
+  toolbar_mode: 'sliding',
   contextmenu: "link image imagetools table",
  });

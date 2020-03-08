@@ -14,4 +14,6 @@ description: Learn about some edge case editor behavior.
 
 {% include configuration/object-resizing.md %}
 
+{% include configuration/resize-img-proportional.md %}
+
 {% include configuration/type-ahead-urls.md %}

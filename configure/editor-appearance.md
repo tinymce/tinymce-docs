@@ -50,11 +50,9 @@ description: Configure the editor's appearance, including menu and toolbar contr
 
 {% include configuration/mobile.md %}
 
+{% include configuration/placeholder.md %}
+
 {% include configuration/preview-styles.md %}
-
-{% include configuration/insert-toolbar.md %}
-
-{% include configuration/selection-toolbar.md %}
 
 {% include configuration/removed-menuitems.md %}
 
@@ -80,7 +78,11 @@ description: Configure the editor's appearance, including menu and toolbar contr
 
 {% include configuration/toolbar-n.md %}
 
-{% include configuration/toolbar-drawer.md %}
+{% include configuration/toolbar-mode.md %}
+
+{% include configuration/toolbar-groups.md %}
+
+{% include configuration/toolbar-location.md %}
 
 {% include configuration/toolbar_sticky.md %}
 

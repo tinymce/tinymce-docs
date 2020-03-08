@@ -7,11 +7,9 @@ keywords: formats formatting edit formatpainter_removeformat formatpainter_table
 controls: toolbar button
 ---
 
+{{site.premiumplugin}}
+
 The Format Painter plugin allows a user to copy and paste formatting from one location to another, such as font style and size. The format painter is capable of working with a wide variety of formats such as inline and block formats and styles such as table styles.
-
-Format Painter is a premium plugin from {{site.companyname}}. Please see the [Premium features]({{site.baseurl}}/enterprise/formatpainter/) section for all the buying options.
-
-Once you have obtained the Format Painter plugin, refer to the following instructions for using it.
 
 ### Configuring the Format Painter toolbar button
 

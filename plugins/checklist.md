@@ -7,19 +7,17 @@ keywords: lists todo checklist
 controls: toolbar button
 ---
 
-## Overview
+{{site.premiumplugin}}
 
 The **Checklist** plugin helps the user keep track of all required actions by creating a simple, clean, and easy to use TODO list.
 
 ## Format
 
-![**Checklist**]({{site.baseurl}}/images/checklist.png)
+{% include codepen.html id="checklist" %}
 
 In the {{site.productname}} editor, checklists are presented as lists with small checkboxes on the left hand side of the list items. After the item has been completed, a small tick or check mark is drawn in the box by clicking on it.
 
 **Checklist** is a premium plugin from {{site.companyname}}. Please see the [Premium features]({{site.baseurl}}/enterprise/tiny-comments/) section for all the buying options.
-
-There is also a demo provided to explore the **Checklist** capabilities [here]({{site.baseurl}}/demo/checklist/).
 
 Once you have obtained the **Checklist** plugin, refer to the following instructions for using it.
 
@@ -68,7 +66,7 @@ To make the checklists look correct make sure to include this css on your page:
 Perform the following steps to create a checklist:
 
 1. Place the cursor in the desired location within the {{site.productname}} editor.
-1. Click on the ![**Checklist icon**]({{site.baseurl}}/images/checklisticon.png)(**Checklist icon**) from the toolbar menu. A checkbox will be added in the desired location.
+1. Click the ![**Checklist icon**]({{site.baseurl}}/images/icons/checklist.svg)(**Checklist icon**) on the toolbar or the checklist menu item. A checkbox will be added in the desired location.
 1. Type in the first item and press `Enter` to add another item in the list.
 1. To check items by adding a check mark to them, click on the checkbox next to the desired item from this list.
 

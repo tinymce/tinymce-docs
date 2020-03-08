@@ -18,6 +18,7 @@
     - [`plugins`](#plugins)
     - [`tag-name`](#tag-name)
     - [`toolbar`](#toolbar)
+    - [`tinymce-script-src`](#tinymce-script-src)
 
 - [Form Input Bindings: `v-model`](#forminputbindingsv-model)
 - [Event binding](#eventbinding)
@@ -277,7 +278,7 @@ Only valid when [`<editor :inline=true />`](#inline). Used to define the HTML el
 ```xml
 <editor
   :inline=true
-  tag-name='my-custom-tag'
+  tag-name="my-custom-tag"
 />
 ```
 
@@ -296,6 +297,19 @@ For information setting the toolbar for {{site.productname}}, see: [User interfa
 <editor
   plugins="code"
   toolbar="bold italic underline code"
+/>
+```
+
+#### `tinymce-script-src`
+Use the `tinymce-script-src` prop to specify an external version of TinyMCE to lazy load.
+
+**Type:** String
+
+##### Example: `tinymce-script-src`
+
+```xml
+<editor
+  tinymce-script-src="/path/to/tinymce.min.js"
 />
 ```
 

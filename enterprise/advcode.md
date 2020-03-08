@@ -14,6 +14,7 @@ The [Advanced Code Editor]({{ site.baseurl }}/plugins/advcode/) plugin (`advcode
 * Code folding
 * Multiple selections/carets
 
-## How to get the Advanced Code Editor plugin
-
-The Advanced Code feature is a [premium feature]({{site.pricingpage}}), see the [{{site.productname}} Advanced Code Editor]({{site.productpages}}/advanced-code-editor/) page for more information.
+{% assign pluginname = 'Advanced Code Editor' %}
+{% assign pluginminimumplan = 'tiertwo' %}
+{% assign plugindocspage = 'advcode' %}
+{% include misc/purchase-premium-plugins.md %}

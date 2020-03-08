@@ -18,8 +18,7 @@ _Spell Checker Pro_ adds spell checking as-you-type capabilities to {{site.produ
 ## Custom dictionaries
 Additional dictionaries can be added to Spell Checker Pro to supplement the default vocabulary. See [these instructions]({{ site.baseurl }}/enterprise/check-spelling/custom/) for details.
 
-## Downloading Spell Checker Pro
-
-A [{{site.enterpriseversion}} subscription]({{site.pricingpage}}) includes the ability to download and install a spell check as-you-type feature for the editor.
-
-**Spell Checker Pro** requires a [client-side plugin]({{ site.baseurl }}/plugins/tinymcespellchecker/) to be configured. It also requires an additional [server-side component]({{ site.baseurl }}/enterprise/server/) to be installed and configured.
+{% assign pluginname = 'Spell Checker Pro' %}
+{% assign pluginminimumplan = 'tierthree' %}
+{% assign plugindocspage = 'tinymcespellchecker' %}
+{% include misc/purchase-premium-plugins.md %}

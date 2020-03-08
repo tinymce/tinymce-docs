@@ -13,18 +13,11 @@ The format painter retains the formatting after application making it possible t
 
 The ability to reuse existing formatting saves the user time and ensures consistency across the content.
 
-### Getting started
+### Try our Format Painter plugin demo
 
-#### Creating an account
+{% include codepen.html id="format-painter" %}
 
-To try out Format Painter and {{site.cloudname}}-delivered editor, the first step is to create a free [{{site.accountpage}}]({{site.accountsignup}}).
-
-> {{site.accountpage}}s receive a free 30-day trial of all {{site.cloudname}} [premium plugins]({{site.cloudextensions}}), with no credit card information or commitment required.
-
-### Buy TinyMCE Format Painter
-
-Start with this [dedicated product page]({{site.productpages}}/format-painter/) to see all the flexible pricing options. OEM and enterprise customers should [contact sales directly]({{site.contactpage}}).
-
-For more information on Format Painter refer to the full [documentation]({{site.baseurl}}/plugins/formatpainter/).
-
-There is also a demo provided to explore the Format Painter capabilities [here]({{site.baseurl}}/demo/formatpainter/).
+{% assign pluginname = 'Format Painter' %}
+{% assign pluginminimumplan = 'tiertwo' %}
+{% assign plugindocspage = 'formatpainter' %}
+{% include misc/purchase-premium-plugins.md %}

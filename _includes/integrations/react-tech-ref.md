@@ -18,6 +18,7 @@
   - [`tagName`](#tagname)
   - [`textareaName`](#textareaname)
   - [`toolbar`](#toolbar)
+  - [`tinymceScriptSrc`](#tinymcescriptsrc)
   - [`value`](#value)
 
 - [Using the TinyMCE React component as a controlled component](#usingthetinymcereactcomponentasacontrolledcomponent)
@@ -266,6 +267,19 @@ For information setting the toolbar for {{site.productname}}, see: [User interfa
 <Editor
   plugins='code'
   toolbar='bold italic underline code'
+/>
+```
+
+#### `tinymceScriptSrc`
+Use the `tinymceScriptSrc` prop to specify an external version of TinyMCE to lazy load.
+
+**Type:** String
+
+##### Example: `tinymceScriptSrc`
+
+```xml
+<Editor
+  tinymceScriptSrc='/path/to/tinymce.min.js'
 />
 ```
 

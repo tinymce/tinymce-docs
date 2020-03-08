@@ -7,6 +7,8 @@ keywords: permanent pen copy text format style
 controls: toolbar button, contextmenu, menu item
 ---
 
+{{site.premiumplugin}}
+
 The Permanent Pen allows a user to apply a pre-defined format (for example, color, typeface and type style, font, etc.) to a new content, overriding the default values set for that content area.
 
 The Permanent Pen is useful when a distinct style text needs to be repeatedly added to the content. The user can pre-define the desired style in the Permanent Pen properties. This pre-defined style is applied to all the text entered into the document while the Permanent Pen is enabled. The ability to store information for reuse saves the user time and ensures consistency across the content.
@@ -26,10 +28,6 @@ underline: false,
 strikethrough: false
 ```
 For more information on {{site.productname}} formats, refer to the [formats]({{site.baseurl}}/configure/content-formatting/#formats) section.
-
-Permanent Pen is a premium plugin from {{site.companyname}}. Please see the [Premium features]({{site.baseurl}}/enterprise/permanentpen/) section for all the buying options.
-
-Once you have obtained the Permanent Pen plugin, refer to the following instructions for using it.
 
 ### Configuring the Permanent Pen toolbar button
 

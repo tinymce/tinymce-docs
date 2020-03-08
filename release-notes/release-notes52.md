@@ -99,11 +99,11 @@ A new `link_default_protocol` option has been added to the Autolink and Link plu
 
 The following premium plugins updates were released alongside {{site.productname}} 5.2.
 
-### Accessibility Checker 2.1.0
+### Accessibility Checker 2.2.0
 
 The {{site.productname}} 5.2 releaseincludes an accompanying release of the **Accessibility Checker** premium plugin.
 
-**Accessibility Checker** 2.1.0 has been updated:
+**Accessibility Checker** 2.2.0 has been updated:
 
 - To include a new check for duplicate `id` values.
 - To improve decorative image checks.

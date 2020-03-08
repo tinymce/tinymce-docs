@@ -95,6 +95,7 @@ The following events are provided by the {{ site.productname }} editor.
 | detach                 | N/A                                                                                                                     | Fired after the remove event, before the editor container is detached from the DOM.                                                                                             |
 | init                   | N/A                                                                                                                     | Fired when the editor is fully initialized.                                                                                                                                |
 | ScrollIntoView         | `{ elm: HTMLElement, alignToTop: boolean }`                                                                             | Fired when an element is about to be scrolled into view.                                                                                                                   |
+| AfterScrollIntoView          | `{ elm: HTMLElement, alignToTop: boolean }`                                                                             | Fired when an element has been scrolled into view. {{site.requires_5_2v}}                                                                                                                  |
 | ObjectResized          | `{ target: HTMLElement, width: number, height: number }`                                                                | Fired when an object (such as an image) has finished being resized.                                                                                                                |
 | ObjectResizeStart      | `{ target: HTMLElement, width: number, height: number }`                                                                | Fired when an object (such as an image) is about to be resized.                                                                                                                    |
 | SwitchMode             | `{ mode: string }`                                                                                                      | Fired when the editor mode is changed. The available modes are "design" and "readonly". Additional modes can be registered using {{ site.productname }} API ['tinymce.activeEditor.mode.register()']({{ site.baseurl }}/api/tinymce/tinymce.editormode/#register). |
@@ -136,6 +137,10 @@ The following events are provided by the {{ site.productname }} editor.
 | SetAttrib              | `{ attrElm: Element, attrName: string, attrValue: string }`                                                             | Fired when an attribute is updated using the editor [DOMUtils API]({{ site.baseurl }}/api/tinymce.dom/tinymce.dom.domutils/).                                                                                                          |
 | ResizeEditor           | N/A                                                                                                                     | Fired when the editor is resized, either by the resize handles or the auto-resize plugin.                                                                                  |
 | SkinLoaded             | N/A                                                                                                                     | Fired when the editor skin has been loaded.                                                                                                                                |
+| SkinLoadError          | `{ message: string }`                                                                                                   | Fired when the editor skin fails to load. {{site.requires_5_2v}}                                                                                                           |
+| PluginLoadError        | `{ message: string }`                                                                                                   | Fired when an editor plugin fails to load. {{site.requires_5_2v}}                                                                                                          |
+| IconsLoadError         | `{ message: string }`                                                                                                   | Fired when the editor icon pack fails to load. {{site.requires_5_2v}}                                                                                                     |
+| LanguageLoadError      | `{ message: string }`                                                                                                   | Fired when the editor language pack fails to load. {{site.requires_5_2v}}                                                                                                  |
 | BeforeRenderUI         | N/A                                                                                                                     | Fired before the theme UI is rendered.                                                                                                                                     |
 | TextColorChange        | `{ name: string, color: string }`                                                                                       | Fired when the text color is changed.                                                                                                                                      |
 | ToggleSidebar          | N/A                                                                                                                     | Fired when a sidebar is toggled opened/closed.                                                                                                                             |
@@ -283,15 +288,7 @@ The following events are provided by the [Spell Checker plugin]({{ site.baseurl 
 
 ### Spell Checker Pro events
 
-The following events are provided by the [Spell Checker Pro plugin]({{ site.baseurl }}/plugins/tinymcespellchecker/).
-
-| Name                  | Data                  | Description                                                                    |
-| --------------------- | --------------------- | ------------------------------------------------------------------------------ |
-| SpellcheckerIgnore    | `{ word: string }`    | Fired when a single instance of a word has been marked as ignored.               |
-| SpellcheckerIgnoreAll | `{ word: string }`    | Fired when all instances of a word has been marked as ignored.                 |
-| SpellcheckError       | `{ message: string }` | Fired when a spellchecker error occurs, such as the Spell Checker Pro service can't be reached. |
-| SpellcheckStart       | N/A                   | Fired when spellchecking is enabled.                                           |
-| SpellcheckEnd         | N/A                   | Fired when spellchecking is disabled.                                          |
+{% include events/tinymcespellchecker.md %}
 
 ### Table events
 

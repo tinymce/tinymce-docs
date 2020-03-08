@@ -15,8 +15,6 @@ The **Case Change** plugin is a time saving and handy extension that allows chan
 
 Currently, there are three types of formats available:
 
-![**Case Change**]({{site.baseurl}}/images/casechange.png)
-
 ### lowercase
 
 The **lowercase** option changes all the selected characters to lowercase.
@@ -41,18 +39,11 @@ The **Title Case** can be used for the following editor elements:
 * Titles of reports and lists
 * All technical short descriptions (names of programs, function groups, transactions, CUA statuses, and so on)
 
-### Getting started
+## Try our Case Change demo
 
-#### Creating an account
+{% include codepen.html id="casechange" %}
 
-To try out **Case Change** and {{site.cloudname}}-delivered editor, the first step is to create a free [{{site.accountpage}}]({{site.accountsignup}}).
-
-{{site.accountpage}}s receive a free 30-day trial of all {{site.companyname}} [premium plugins]({{site.cloudextensions}}), with no credit card information or commitment required.
-
-#### Buy TinyMCE Case Change
-
-Start with this [dedicated product page]({{site.productpages}}/case-change/) to see all the flexible pricing options. OEM and enterprise customers should [contact sales directly]({{site.contactpage}}).
-
-For more information on **Case Change** refer to the full [documentation]({{site.baseurl}}/plugins/casechange/).
-
-There is also a demo provided to explore the **Case Change** capabilities [here]({{site.baseurl}}/demo/casechange/).
+{% assign pluginname = 'Case Change' %}
+{% assign pluginminimumplan = 'tiertwo' %}
+{% assign plugindocspage = 'casechange' %}
+{% include misc/purchase-premium-plugins.md %}

@@ -1,24 +1,28 @@
-## quickbars_insert_toolbar
+### quickbars_insert_toolbar
 
-The **quickbars_insert_toolbar** option enables specifying toolbar items to include on the Quick Insert toolbar enabled by the [quickbars]({{ site.baseurl }}/plugins/quickbars) plugin. It is recommended to only have controls in this toolbar related to inserting content. However, nothing is restricting to use any of the available [toolbar controls]({{ site.baseurl }}/advanced/editor-control-identifiers/#toolbarcontrols).
+The **quickbars_insert_toolbar** option configures the Quick Insert toolbar provided by the [quickbars plugin]({{ site.baseurl }}/plugins/quickbars). To change the buttons on the Quick Insert toolbar, provide a space-separated string of [toolbar button names]({{ site.baseurl }}/advanced/editor-control-identifiers/#toolbarcontrols). The Quick Insert toolbar is intended for buttons related to inserting content, but any [{{site.productname}} toolbar buttons]({{ site.baseurl }}/advanced/editor-control-identifiers/#toolbarcontrols) or [custom toolbar buttons]({{ site.baseurl }}/ui-components/toolbarbuttons) are allowed.
+
+To disable the Quick Insert toolbar, set `quickbars_insert_toolbar` to `false`.
 
 **Type:** `String`
 
 **Defaults:** `quickimage quicktable`
 
-##### Example customizing the Quick Insert toolbar
+#### Example: Customizing the Quick Insert toolbar
 
 ```js
 tinymce.init({
   selector: 'div.tinymce',
-  plugins: 'quickbars',
+  plugins: 'quickbars hr pagebreak',
   inline: true,
-  quickbars_insert_toolbar: 'quickimage quicktable'
+  quickbars_insert_toolbar: 'quickimage quicktable | hr pagebreak'
 });
 ```
 
 
-##### Example disabling the Quick Insert toolbar
+#### Example: Disabling the Quick Insert toolbar
+
+To disable the Quick Insert toolbar, set `quickbars_insert_toolbar` to `false`.
 
 ```js
 tinymce.init({

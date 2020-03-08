@@ -6,7 +6,9 @@ description: Checks the contents of the editor for WCAG & Section 508 accessibil
 keywords: a11y accessibility WCAG
 ---
 
-The `a11ychecker` plugin enables you to check the HTML for various WCAG & Section 508 accessibility problems. It has an auto repair feature that lets a user fix identified problems.
+{{site.premiumplugin}}
+
+The `a11ychecker` premuim plugin enables you to check the HTML for various WCAG & Section 508 accessibility problems. It has an auto repair feature that lets a user fix identified problems.
 
 ##### Example:
 
@@ -110,17 +112,53 @@ These are the various rules that are checked:
 
 [Link to specification](https://www.w3.org/TR/2016/NOTE-WCAG20-TECHS-20161007/H63).
 
+<a class="anchor" id="H93"></a>
+<h4><a class="anchorable" href="#H93">IDs must be unique</a></h4>
+
+**Rule info:** This rule checks that all `id` attributes are unique in the editor. Duplicate `id` attributes are known to cause problems for assistive technologies when they are trying to parse content.
+
+[Link to specification](https://www.w3.org/TR/WCAG20-TECHS/H93.html).
+
 ### Options
+
+{% assign includedSection = 'a11yPlugin' %}
+#{% include configuration/a11y_advanced_options.md %}
+{% assign includedSection = false %}
 
 ### `a11ychecker_allow_decorative_images`
 
-This configuration option sets whether the checker should allow decorative images (images with `alt=""` or `role="presentation"`).
+This option sets whether the Accessibility Checker should allow decorative images. When this option is set to `true`, a decorative image must have **both**:
+
+- An empty alternative text attribute.
+- The `role="presentation"` attribute.
+
+For example:
+
+```html
+<img src="my-image.png" role="presentation" alt="" />
+```
+
+If `a11ychecker_allow_decorative_images` is set to `true`, the Accessibility Checker will present an error when:
+
+- An image does not have the alternative text attribute (`alt`).
+- An image has an empty alternative text attribute, but is missing the `role="presentation"` attribute.
+- An image has alternative text and a conflicting `role="presentation"` attribute.
+
+If `a11ychecker_allow_decorative_images` is set to `false`, the Accessibility Checker will present an error when:
+
+- An image does not have the alternative text attribute (`alt`).
+- An image has an empty alternative text attribute.
+- An image has the `role="presentation"` attribute.
+
+> **Note**: If [`a11y_advanced_options`](#a11y_advanced_options) is set to `true`, `a11ychecker_allow_decorative_images` will default to `true`.
 
 **Type:** `boolean`
 
 **Default value:** `false`
 
-#### Example:
+**Possible Values:** `true`, `false`
+
+#### Example: a11ychecker_allow_decorative_images
 
 ```js
 tinymce.init({
@@ -143,7 +181,7 @@ For example, setting the version to HTML 4 will trigger the rule "Complex tables
 
 **Possible Values:** `html4`, `html5`
 
-#### Example:
+#### Example: a11ychecker_html_version
 
 ```js
 tinymce.init({
@@ -166,7 +204,7 @@ For example, the "Text must have a contrast ratio of at least ..." rule when usi
 
 **Possible Values:** `a`, `aa`, `aaa`
 
-#### Example:
+#### Example: a11ychecker_level
 
 ```js
 tinymce.init({
@@ -185,7 +223,7 @@ Accessibility Checker exposes couple of methods that can be called directly.
 
 Triggers accessibility dialog with the results of the audit and options to correct the problems, if any.
 
-#### Example
+#### Example: toggleaudit()
 ```js
 editor.plugins.a11ychecker.toggleaudit();
 ```
@@ -199,14 +237,8 @@ Conducts accessibility audit and reports about the results without triggering th
 * **url** - *URL of the details page at W3 dedicated specifically to the given issue*
 * **element** - *DOM element having the issue*
 
-##### Example
+##### Example: getReport()
 
 ```js
 var issues = editor.plugins.a11ychecker.getReport();
 ```
-
-## Downloading Accessibility Checker
-
-A [{{site.enterpriseversion}} subscription]({{site.pricingpage}}) subscription includes the ability to download and install the accessibility checker feature for the editor.
-
-Accessibility checker is part of the demo [on the main page of {{site.companyname}} site]({{site.url}}). For more information about the accessibility checker [see this blog post](https://go.tiny.cloud/blog/make-your-content-accessible-with-tinymce/).

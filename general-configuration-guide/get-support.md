@@ -6,11 +6,8 @@ description: Community and pro-grade support options.
 keywords: forum forums url absolute relative security xss
 ---
 
-> If you landed here having worked through the [Introduction & getting started]({{  site.baseurl }}/general-configuration-guide/advanced-install) section, congratulations, you are on your way to the {{site.productname}} ninja hood :-). It's now time to deep-dive into [configuring the editor]({{ site.baseurl }}/configure/) and explore [plugin options]({{ site.baseurl }}/plugins/). We wish you well and welcome you to {{site.productname}}. If you get stuck, a great place to start is the [{{site.productname}} Forum](https://community.tiny.cloud/).
-
-
 ## Premium support
-Paid premium support is available as part of [{{site.productname}} Enterprise]({{site.pricingpage}}). {{site.productname}} Enterprise customers can [review what information you need to gather]({{ site.baseurl }}/enterprise/support/) to submit a case.
+Paid premium support is available as part of [{{site.enterpriseversion}} and {{site.cloudname}} subscriptions]({{site.pricingpage}}). {{site.productname}} Enterprise customers can [submit a case support request]({{ site.baseurl }}/enterprise/support/).
 
 
 ## Forums

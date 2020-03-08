@@ -7,7 +7,7 @@ keywords: case capitalization capitalize lowercase uppercase
 controls: toolbar button, menu item
 ---
 
-## Overview
+{{site.premiumplugin}}
 
 The **Case Change** plugin is a time saving and handy extension that allows changing the case of text in block selection to uppercase, lowercase, or title case.
 

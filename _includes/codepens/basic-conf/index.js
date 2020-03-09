@@ -14,5 +14,5 @@ tinymce.init({
   menu: {
     favs: {title: 'My Favorites', items: 'code visualaid | searchreplace | spellchecker | emoticons'}
   },
-  menubar: 'favs file edit view insert format tools table help',
+  menubar: 'favs file edit view insert format tools table help'
 });

@@ -101,13 +101,13 @@ The {{site.productname}} default toolbar contains the following buttons:
 ```js
 tinymce.init({
   selector: 'textarea',  // change this value according to the HTML
-  toolbar: 'undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | outdent indent',
+  toolbar: 'undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | outdent indent'
 });
 ```
 
 <script>
 tinymce.init({
-  selector: 'textarea.default',
+  selector: 'textarea.default'
 });
 </script>
 <textarea class="default">Hello, World!</textarea><br/>

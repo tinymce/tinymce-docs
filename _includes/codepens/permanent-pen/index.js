@@ -7,8 +7,8 @@ tinymce.init({
   menu: {
     format: {
       title: 'Format', 
-      items: 'configurepermanentpen | bold italic underline strikethrough' + 
-        'superscript subscript codeformat | formats blockformats fontformats' + 
+      items: 'configurepermanentpen | bold italic underline strikethrough ' + 
+        'superscript subscript codeformat | formats blockformats fontformats ' + 
         'fontsizes align | forecolor backcolor | removeformat'
     }
   },

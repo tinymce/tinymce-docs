@@ -35,7 +35,7 @@ This procedure creates a [basic Ruby on Rails application](https://guides.rubyon
         ],
           toolbar: 'undo redo | formatselect | ' +
           ' bold italic backcolor | alignleft aligncenter ' +
-          ' alignright alignjustify | bullist numlist outdent indent |' +
+          ' alignright alignjustify | bullist numlist outdent indent | ' +
           ' removeformat | help'
       });
     </script>
@@ -77,7 +77,7 @@ This procedure creates a [basic Ruby on Rails application](https://guides.rubyon
         ],
           toolbar: 'undo redo | formatselect | ' +
           ' bold italic backcolor | alignleft aligncenter ' +
-          ' alignright alignjustify | bullist numlist outdent indent |' +
+          ' alignright alignjustify | bullist numlist outdent indent | ' +
           ' removeformat | help'
       });
     </script>

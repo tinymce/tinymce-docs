@@ -60,6 +60,25 @@ a[data-mce-linkchecker-focus="true"] {
 
 It is possible to replace or extend those styles, by providing a URL to custom stylesheet via `linkchecker_content_css` option.
 
+### `linkchecker_preprocess`
+
+The `linkchecker_preprocess` function is used for adjusting links before performing a link check.
+
+**Type:** `Function`
+
+##### Example: `linkchecker_preprocess`
+
+```js
+tinymce.init({
+  selector: "textarea",  // change this value according to your HTML
+  plugins: "linkchecker",
+  linkchecker_preprocess: function (data) {
+    /* This example will encode or double encode the url */
+    var newUrl = encodeURIComponent(data.url);
+    return { url: newUrl };]
+  }
+});
+```
 
 ### `linkchecker_service_url`
 
@@ -67,7 +86,7 @@ A URL of the server-side link validation service. This is required option, witho
 
 **Type:** `String`
 
-##### Example
+##### Example: `linkchecker_service_url`
 
 ```js
 tinymce.init({

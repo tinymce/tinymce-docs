@@ -125,6 +125,14 @@ The {{site.productname}} 5.2 release includes an accompanying release of the **C
 
 For information on the checklist plugin, see: [Checklist plugin]({{site.baseurl}}/plugins/checklist/).
 
+### Link Checker 2.1.0
+
+The {{site.productname}} 5.2 release includes an accompanying release of the **Link Checker** premium plugin.
+
+**Link Checker** 2.1.0 adds a new `linkchecker_preprocess` function for adjusting links before link checking.
+
+For information on the `linkchecker_preprocess` option, see: [Link Checker plugin - `linkchecker_preprocess`]({{site.baseurl}}/plugins/linkchecker/#linkchecker_preprocess).
+
 ### Page Embed 1.1.0
 
 The {{site.productname}} 5.2 release includes an accompanying release of the **Page Embed** premium plugin.

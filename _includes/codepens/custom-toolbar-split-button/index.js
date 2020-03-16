@@ -1,5 +1,6 @@
 tinymce.init({
   selector: 'textarea#custom-toolbar-split-button',
+  content_css: '//www.tiny.cloud/css/codepen.min.css',
   toolbar: 'myButton',
   menubar: false,
   setup: function (editor) {

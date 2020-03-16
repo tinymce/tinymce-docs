@@ -1,5 +1,6 @@
 tinymce.init({
   selector: 'textarea#local-upload',
+  content_css: '//www.tiny.cloud/css/codepen.min.css',
   plugins: 'image code',
   toolbar: 'undo redo | image code',
 

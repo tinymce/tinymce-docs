@@ -1,12 +1,9 @@
 tinymce.init({
   selector: 'textarea#creating-a-custom-button-2',
+  content_css: '//www.tiny.cloud/css/codepen.min.css',
   height: 300,
   plugins: 'code',
   toolbar: 'undo redo | currentdate',
-  content_css: [
-    '//fonts.googleapis.com/css?family=Lato:300,300i,400,400i',
-    '//www.tiny.cloud/css/codepen.min.css'
-  ],
 
   setup: function (editor) {
 

@@ -24,7 +24,7 @@ Once you enable {{site.cloudfilemanager}} it integrates as the default file pick
 tinymce.init({
   selector: 'textarea',  // change this value according to your html
   plugins: 'tinydrive',
-  tinydrive_token_provider: 'URL_TO_YOUR_TOKEN_PROVIDER',
+  tinydrive_token_provider: 'URL_TO_YOUR_TOKEN_PROVIDER'
 });
 ```
 

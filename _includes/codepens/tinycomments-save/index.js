@@ -90,10 +90,7 @@ function example(contentSelector, commentSelector) {
     selector: contentSelector,
     toolbar: 'bold italic underline | tinycomments',
     plugins: 'tinycomments',
-    content_css: [
-      '//fonts.googleapis.com/css?family=Lato:300,300i,400,400i',
-      '//www.tiny.cloud/css/codepen.min.css'
-    ],
+    content_css: '//www.tiny.cloud/css/codepen.min.css',
     content_style: '.mce-annotation { background: #fff0b7; } .tc-active-annotation {background: #ffe168; color: black; }',
     tinycomments_create: create,
     tinycomments_reply: reply,

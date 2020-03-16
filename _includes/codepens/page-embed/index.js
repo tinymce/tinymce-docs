@@ -8,8 +8,5 @@ tinymce.init({
     { text: 'Small embed', value: 'my-small-class' }
   ],
   height: 500,
-  content_css: [
-    '//fonts.googleapis.com/css?family=Lato:300,300i,400,400i',
-    '//www.tiny.cloud/css/codepen.min.css'
-  ]
+  content_css: '//www.tiny.cloud/css/codepen.min.css'
 });

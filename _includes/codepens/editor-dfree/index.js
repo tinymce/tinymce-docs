@@ -5,7 +5,8 @@ var dfreeHeaderConfig = {
   toolbar: false,
   plugins: [ 'quickbars' ],
   quickbars_insert_toolbar: 'undo redo',
-  quickbars_selection_toolbar: 'italic underline'
+  quickbars_selection_toolbar: 'italic underline',
+  content_css: '//www.tiny.cloud/css/codepen.min.css'
 };
 
 var dfreeBodyConfig = {
@@ -30,7 +31,8 @@ var dfreeBodyConfig = {
   quickbars_selection_toolbar: 'bold italic underline | formatselect | blockquote quicklink',
   contextmenu: 'undo redo | inserttable | cell row column deletetable | help',
   powerpaste_word_import: 'clean',
-  powerpaste_html_import: 'clean'
+  powerpaste_html_import: 'clean',
+  content_css: '//www.tiny.cloud/css/codepen.min.css'
 };
 
 tinymce.init(dfreeHeaderConfig);

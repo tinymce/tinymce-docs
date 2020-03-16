@@ -26,7 +26,7 @@ class: changelog
 * Added the ability to use the window `PrismJS` instance for the `codesample` plugin instead of the bundled version to allow for styling custom languages.
 * Added error message events that fire when a resource loading error occurs.
 * Changed the default schema to disallow `onchange` for select elements.
-* Changed default `toolbar_mode` value from false to `wrap`. The value false has been deprecated.
+* Changed the fallback `toolbar_mode` value from false to `wrap`. The value false has been deprecated.
 * Changed `toolbar_drawer` setting to `toolbar_mode`. `toolbar_drawer` has been deprecated.
 * Changed iframe mode to set selection on content init if selection doesn't exist.
 * Changed table related icons to align them with the visual style of the other icons.

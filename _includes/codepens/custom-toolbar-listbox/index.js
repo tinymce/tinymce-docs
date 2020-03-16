@@ -1,13 +1,10 @@
 tinymce.init({
   selector: 'textarea#custom-toolbar-listbox',
+  content_css: '//www.tiny.cloud/css/codepen.min.css',
   height: 500,
   toolbar: 'mybutton',
   plugins: 'wordcount',
   menubar: false,
-  content_css: [
-    '//fonts.googleapis.com/css?family=Lato:300,300i,400,400i',
-    '//www.tiny.cloud/css/codepen.min.css'
-  ],
 
   setup: function (editor) {
     editor.addButton('mybutton', {

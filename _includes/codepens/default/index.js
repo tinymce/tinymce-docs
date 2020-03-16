@@ -1,3 +1,3 @@
 tinymce.init({
-  selector: 'textarea#default',
+  selector: 'textarea#default'
 });

@@ -101,13 +101,13 @@ The {{site.productname}} default toolbar contains the following buttons:
 ```js
 tinymce.init({
   selector: 'textarea',  // change this value according to the HTML
-  toolbar: 'undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | outdent indent',
+  toolbar: 'undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | outdent indent'
 });
 ```
 
 <script>
 tinymce.init({
-  selector: 'textarea.default',
+  selector: 'textarea.default'
 });
 </script>
 <textarea class="default">Hello, World!</textarea><br/>
@@ -207,8 +207,8 @@ The following example is a basic {{site.productname}} configuration.
       'searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking',
       'table emoticons template paste help'
     ],
-    toolbar: 'undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify |' +
-      ' bullist numlist outdent indent | link image | print preview media fullpage | ' +
+    toolbar: 'undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | ' +
+      'bullist numlist outdent indent | link image | print preview media fullpage | ' +
       'forecolor backcolor emoticons | help',
     menu: {
       favs: {title: 'My Favorites', items: 'code visualaid | searchreplace | spellchecker | emoticons'}

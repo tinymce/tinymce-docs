@@ -29,7 +29,7 @@ A basic TinyMCE editor can be added to a `textarea` element with the id `mytexta
 
 ```js
 tinymce.init({
-    selector: 'textarea#mytextarea',
+    selector: 'textarea#mytextarea'
 });
 ```
 

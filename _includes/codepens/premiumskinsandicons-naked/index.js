@@ -7,4 +7,5 @@ tinymce.init({
   toolbar: 'formatselect | bold italic underline strikethrough bullist link codesample',
   menubar: false,
   statusbar: false,
+  content_css: '//www.tiny.cloud/css/codepen.min.css'
 });

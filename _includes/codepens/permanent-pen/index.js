@@ -7,8 +7,8 @@ tinymce.init({
   menu: {
     format: {
       title: 'Format', 
-      items: 'configurepermanentpen | bold italic underline strikethrough' + 
-        'superscript subscript codeformat | formats blockformats fontformats' + 
+      items: 'configurepermanentpen | bold italic underline strikethrough ' + 
+        'superscript subscript codeformat | formats blockformats fontformats ' + 
         'fontsizes align | forecolor backcolor | removeformat'
     }
   },
@@ -23,8 +23,5 @@ tinymce.init({
     underline: false
   },
   height: 500,
-  content_css: [
-    '//fonts.googleapis.com/css?family=Lato:300,300i,400,400i',
-    '//www.tiny.cloud/css/codepen.min.css'
-  ]
+  content_css: '//www.tiny.cloud/css/codepen.min.css'
 });

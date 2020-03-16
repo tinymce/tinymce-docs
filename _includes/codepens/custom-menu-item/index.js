@@ -1,15 +1,12 @@
 tinymce.init({
   selector: "textarea#custom-menu-item",
+  content_css: '//www.tiny.cloud/css/codepen.min.css',
   height: 500,
   toolbar: false,
   menubar: "custom",
   menu: {
     custom: { title: "Custom menu", items: "basicitem nesteditem toggleitem" }
   },
-  content_css: [
-    '//fonts.googleapis.com/css?family=Lato:300,300i,400,400i',
-    '//www.tiny.cloud/css/codepen.min.css'
-  ],
   setup: function (editor) {
     var toggleState = false;
 

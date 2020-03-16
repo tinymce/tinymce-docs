@@ -23,7 +23,7 @@ tinymce.init({
    tinycomments_delete_all: function (req, done, fail) { ... },
    tinycomments_delete_comment: function (req, done, fail) { ... },
    tinycomments_lookup: function (req, done, fail) { ... },
-   tinycomments_edit_comment: function (req, done, fail) { ... },
+   tinycomments_edit_comment: function (req, done, fail) { ... }
 });
 
 ```

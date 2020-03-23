@@ -11,7 +11,7 @@ class: changelog
 {% capture changelog %}
 
 ## Version 5.2.1 March 25, 2020
-* Fixed the "is decorative" checkbox in the image dialog clearing after certain editor events.
+* Fixed the "is decorative" checkbox in the image dialog clearing after certain dialog events.
 * Fixed possible uncaught exception when a `style` attribute is removed using a content filter on `setContent`.
 * Fixed the table selection not functioning correctly in Microsoft Edge 44 or higher.
 * Fixed the table resize handles not functioning correctly in Microsoft Edge 44 or higher.

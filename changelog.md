@@ -10,6 +10,26 @@ class: changelog
 
 {% capture changelog %}
 
+## Version 5.2.1 March 25, 2020
+* Fixed the "is decorative" checkbox in the image dialog clearing after certain dialog events.
+* Fixed possible uncaught exception when a `style` attribute is removed using a content filter on `setContent`.
+* Fixed the table selection not functioning correctly in Microsoft Edge 44 or higher.
+* Fixed the table resize handles not functioning correctly in Microsoft Edge 44 or higher.
+* Fixed the floating toolbar drawer disconnecting from the toolbar when adding content in inline mode.
+* Fixed `readonly` mode not returning the appropriate boolean value.
+* Fixed the `forced_root_block_attrs` setting not applying attributes to new blocks consistently.
+* Fixed the editor incorrectly stealing focus during initialization in Microsoft Internet Explorer.
+* Fixed dialogs stealing focus when opening an alert or confirm dialog using an `onAction` callback.
+* Fixed inline dialogs incorrectly closing when clicking on an opened alert or confirm dialog.
+* Fixed the context toolbar overlapping the menu bar and toolbar.
+* Fixed notification and inline dialog positioning issues when using `toolbar_location: 'bottom'`.
+* Fixed the `colorinput` popup appearing offscreen on mobile devices.
+* Fixed special characters not being found when searching by "whole words only".
+* Fixed an issue where dragging images could cause them to be duplicated.
+* Fixed context toolbars activating without the editor having focus.
+* Fixed an issue where removing the background color of text did not always work.
+* Fixed an issue where new rows and columns in a table did not retain the style of the previous row or column.
+
 ## Version 5.2.0 February 13, 2020
 * Added the ability to apply formats to spaces.
 * Added new `toolbar_location` setting to allow for positioning the menu and toolbar at the bottom of the editor.

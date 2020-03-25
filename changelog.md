@@ -8,6 +8,12 @@ class: changelog
 
 {% capture changelog %}
 
+## Version 4.9.9 March 25, 2020
+* Fixed the table selection not functioning correctly in Microsoft Edge 44 or higher.
+* Fixed the table resize handles not functioning correctly in Microsoft Edge 44 or higher.
+* Fixed the `forced_root_block_attrs` setting not applying attributes to new blocks consistently.
+* Fixed the editor failing to initialize if a script tag was used inside an SVG.
+
 ## Version 4.9.8 January 28, 2020
 * Fixed the `mobile` theme failing to load due to a bundling issue.
 * Fixed security issue related to parsing HTML comments and CDATA.

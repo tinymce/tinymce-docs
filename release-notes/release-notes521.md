@@ -22,7 +22,7 @@ These release notes provide an overview of the changes for {{site.productname}} 
 
 * Fixed the "is decorative" checkbox in the image dialog clearing after certain editor events.
 * Fixed possible uncaught exception when a `style` attribute is removed using a content filter on `setContent`.
-* Fixed the table selection not functioning correctly in Microsoft Edge 44 or higher.
+* Fixed table selection not functioning correctly in Microsoft Edge 44 or higher.
 * Fixed the table resize handles not functioning correctly in Microsoft Edge 44 or higher.
 * Fixed the floating toolbar drawer disconnecting from the toolbar when adding content in inline mode.
 * Fixed `readonly` mode not returning the appropriate boolean value.

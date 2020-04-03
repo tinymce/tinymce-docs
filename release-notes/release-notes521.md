@@ -6,6 +6,8 @@ description: Release notes for TinyMCE 5.2.1
 keywords: releasenotes bugfixes
 ---
 
+## Overview
+
 These release notes provide an overview of the changes for {{site.productname}} 5.2.1, including:
 
 - [General bug fixes](#generalbugfixes)
@@ -45,15 +47,19 @@ The following premium plugins updates were released alongside {{site.productname
 
 The {{site.productname}} 5.2.1 release includes an accompanying release of the **Case Change** premium plugin.
 
+**Case Change** 1.0.1 has been updated to allow the Case Change plugin to work on multi-cell selections in tables.
+
 ### Comments 2.1.3
 
 The {{site.productname}} 5.2.1 release includes an accompanying release of the **Comments** premium plugin.
+
+**Comments** 2.1.3 provides a fix to only scroll the comments sidebar when focusing on a comment.
 
 ### PowerPaste 5.2.2
 
 The {{site.productname}} 5.2.1 release includes an accompanying release of the **PowerPaste** premium plugin.
 
-**PowerPaste** 5.2.2 provides a fix for PowerPaste not respecting the [`cache_suffix` setting]({{site.baseurl}}/configure/integration-and-setup/#cache_suffix).
+**PowerPaste** 5.2.2 provides a fix to improve handling of the [HTML 4 `align` attribute](https://www.w3.org/TR/html4/present/graphics.html#h-15.1.2). The HTML 4 `align` attribute is still sometimes provided by Microsoft Word.
 
 {% assign enterprise = true %}
 

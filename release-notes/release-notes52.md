@@ -107,7 +107,7 @@ The following premium plugins updates were released alongside {{site.productname
 
 ### Accessibility Checker 2.2.0
 
-The {{site.productname}} 5.2 releaseincludes an accompanying release of the **Accessibility Checker** premium plugin.
+The {{site.productname}} 5.2 release includes an accompanying release of the **Accessibility Checker** premium plugin.
 
 **Accessibility Checker** 2.2.0 has been updated:
 

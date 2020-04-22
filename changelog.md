@@ -8,6 +8,11 @@ class: changelog
 
 {% capture changelog %}
 
+## Version 4.9.10 April xx, 2020
+* Fixed an issue where the editor selection could end up inside a short ended element (eg br).
+* Fixed a security issue related to CDATA sanitization during parsing.
+* Fixed `media` embed content not processing safely in some cases.
+
 ## Version 4.9.9 March 25, 2020
 * Fixed the table selection not functioning correctly in Microsoft Edge 44 or higher.
 * Fixed the table resize handles not functioning correctly in Microsoft Edge 44 or higher.

@@ -23,7 +23,8 @@ These release notes provide an overview of the changes for {{site.productname}} 
 * Fixed an issue where anchors could not be inserted on empty lines.
 * Fixed text decorations (underline, strikethrough) not consistently inheriting the text color.
 * Fixed `format` menu alignment buttons inconsistently applying to images.
-* Fixed the floating toolbar drawer height collapsing when the editor is rendered in modal dialogs.
+* Fixed the floating toolbar drawer height collapsing when the editor is rendered in modal dialogs or floating containers.
+* Fixed `media` embed content not processing safely in some cases.
 
 ## Accompanying Premium Plugin changes
 

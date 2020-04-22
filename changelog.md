@@ -10,7 +10,7 @@ class: changelog
 
 {% capture changelog %}
 
-## Version 5.2.2 April 22, 2020
+## Version 5.2.2 April 23, 2020
 * Fixed an issue where anchors could not be inserted on empty lines.
 * Fixed text decorations (underline, strikethrough) not consistently inheriting the text color.
 * Fixed `format` menu alignment buttons inconsistently applying to images.

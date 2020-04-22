@@ -15,7 +15,7 @@ class: changelog
 * Fixed text decorations (underline, strikethrough) not consistently inheriting the text color.
 * Fixed `format` menu alignment buttons inconsistently applying to images.
 * Fixed the floating toolbar drawer height collapsing when the editor is rendered in modal dialogs or floating containers.
-* Fixed TinyMCE not processing embed content from the `media` plugin safely in some cases.
+* Fixed `media` embed content not processing safely in some cases.
 
 ## Version 5.2.1 March 25, 2020
 * Fixed the "is decorative" checkbox in the image dialog clearing after certain dialog events.

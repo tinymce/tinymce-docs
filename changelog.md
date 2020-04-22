@@ -8,7 +8,7 @@ class: changelog
 
 {% capture changelog %}
 
-## Version 4.9.10 April xx, 2020
+## Version 4.9.10 April 23, 2020
 * Fixed an issue where the editor selection could end up inside a short ended element (eg br).
 * Fixed a security issue related to CDATA sanitization during parsing.
 * Fixed `media` embed content not processing safely in some cases.

@@ -14,7 +14,7 @@ class: changelog
 * Fixed an issue where anchors could not be inserted on empty lines.
 * Fixed text decorations (underline, strikethrough) not consistently inheriting the text color.
 * Fixed `format` menu alignment buttons inconsistently applying to images.
-* Fixed the floating toolbar drawer height collapsing when the editor is rendered in modal dialogs.
+* Fixed the floating toolbar drawer height collapsing when the editor is rendered in modal dialogs or floating containers.
 * Fixed the `media` plugin embed content not being processed safely in some cases.
 
 ## Version 5.2.1 March 25, 2020

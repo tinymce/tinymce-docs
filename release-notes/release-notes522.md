@@ -46,7 +46,10 @@ The {{site.productname}} 5.2.2 release includes an accompanying release of the *
 
 The {{site.productname}} 5.2.2 release includes an accompanying release of the **SpellChecker Pro** premium plugin.
 
-**SpellChecker Pro** 2.0.1 provides a fix for the context menu being incorrectly positioned on a scrolled page in TinyMCE 4.
+**SpellChecker Pro** 2.0.1 provides a fixes for: 
+
+* The context menu being incorrectly positioned on a scrolled page in TinyMCE 4.
+* An unhandled exception thrown when enabling spellchecking in inline mode for TinyMCE 4.
 
 {% assign enterprise = true %}
 

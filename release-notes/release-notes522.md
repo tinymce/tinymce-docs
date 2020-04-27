@@ -11,6 +11,7 @@ keywords: releasenotes bugfixes
 These release notes provide an overview of the changes for {{site.productname}} 5.2.2, including:
 
 - [General bug fixes](#generalbugfixes)
+- [Security fixes](#securityfixes)
 - [Accompanying Premium Plugin changes](#accompanyingpremiumpluginchanges)
 - [Upgrading to the latest version of TinyMCE 5](#upgradingtothelatestversionoftinymce5)
 
@@ -24,6 +25,11 @@ These release notes provide an overview of the changes for {{site.productname}} 
 * Fixed text decorations (underline, strikethrough) not consistently inheriting the text color.
 * Fixed `format` menu alignment buttons inconsistently applying to images.
 * Fixed the floating toolbar drawer height collapsing when the editor is rendered in modal dialogs or floating containers.
+
+## Security fixes
+
+{{site.productname}} 5.2.2 provides fixes for the following security issues:
+
 * Fixed `media` embed content not processing safely in some cases.
 
 ## Accompanying Premium Plugin changes
@@ -32,9 +38,15 @@ The following premium plugins updates were released alongside {{site.productname
 
 ### PowerPaste 5.2.2
 
-The {{site.productname}} 5.2.3 release includes an accompanying release of the **PowerPaste** premium plugin.
+The {{site.productname}} 5.2.2 release includes an accompanying release of the **PowerPaste** premium plugin.
 
 **PowerPaste** 5.2.3 provides a security fix to prevent arbitrary JavaScript from being executed on paste when using specifically crafted content. Replication case provided by Michał Bentkowski.
+
+### SpellChecker Pro 2.0.1
+
+The {{site.productname}} 5.2.2 release includes an accompanying release of the **SpellChecker Pro** premium plugin.
+
+**SpellChecker Pro** 2.0.1 provides a fix for the incorrect positioning of the context menu when scrolling in TinyMCE 4.
 
 {% assign enterprise = true %}
 

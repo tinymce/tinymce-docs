@@ -36,7 +36,7 @@ These release notes provide an overview of the changes for {{site.productname}} 
 
 The following premium plugins updates were released alongside {{site.productname}} 5.2.2.
 
-### PowerPaste 5.2.2
+### PowerPaste 5.2.3
 
 The {{site.productname}} 5.2.2 release includes an accompanying release of the **PowerPaste** premium plugin.
 

@@ -285,8 +285,6 @@ tinymce.init({
     username : "Jack Black",
     staffid : "991234"
   },
-  template_popup_height: "400",
-  template_popup_width: "320",
   templates : [
     {
       title: "Editor Details",

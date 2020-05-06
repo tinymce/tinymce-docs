@@ -1,13 +1,6 @@
----
-layout: default
-title: Contribute to documentation
-title_nav: Contribute to documentation
-description_short: Contribute to TinyMCE's developer documentation.
-description: Contribute to TinyMCE's developer documentation.
-keywords: opensource oss contributors lgpl docs dox
----
+# Contributing to the TinyMCE developer documentation
 
-This page outlines how you can provide feedback and contribute to {{site.productname}} documentation.
+This page outlines how you can provide feedback and contribute to TinyMCE documentation.
 
 ## Contributor Code of Conduct
 
@@ -15,11 +8,11 @@ For our Contributor Code of Conduct, visit our [Contributor Covenant Code of Con
 
 ## How to contribute to TinyMCE's documentation
 
-We welcome people with technical writing experience to help make {{site.productname}}'s docs as useful to our community as possible. Although you don't need to be an expert developer to contribute, a basic understanding of software development is helpful.
+We welcome people with technical writing experience to help make TinyMCE's docs as useful to our community as possible. Although you don't need to be an expert developer to contribute, a basic understanding of software development is helpful.
 
-What is more important is your ability to articulate complex ideas. Our goal is to help developers understand {{site.productname}}'s functionality as quickly as possible.
+What is more important is your ability to articulate complex ideas. Our goal is to help developers understand TinyMCE's functionality as quickly as possible.
 
-Simply branch the [docs GitHub repository](https://github.com/tinymce/tinymce-docs) and submit a PR, or reach out to the [{{site.productname}} docs team](https://github.com/tinymce/tinymce-docs/issues/new?assignees=&labels=question&template=question.md) if you have a specific question.
+Simply branch the [docs GitHub repository](https://github.com/tinymce/tinymce-docs) and submit a PR, or reach out to the [TinyMCE docs team](https://github.com/tinymce/tinymce-docs/issues/new?assignees=&labels=question&template=question.md) if you have a specific question.
 
 ## TinyMCE documentation tech stack
 
@@ -33,7 +26,7 @@ The documentation is written in [kramdown Flavored Markdown](https://kramdown.ge
 
 Code language syntax and associated elements are highlighted using an open and closing backtick. For example, this `object` is actually enclosed with backticks like this: \`object\`.
 
-Highlight words relating specifically to executable parts of software languages. Keys and their values when pertaining to objects and methods (particularly the case with {{site.productname}}) should have backticks. We cannot cover every use case here and contributors need to use their best judgment. What is more important is your ability to articulate complex ideas.
+Highlight words relating specifically to executable parts of software languages. Keys and their values when pertaining to objects and methods (particularly the case with TinyMCE) should have backticks. We cannot cover every use case here and contributors need to use their best judgment. What is more important is your ability to articulate complex ideas.
 
 ### Code snippets
 
@@ -43,7 +36,7 @@ Include any key values pairs and method options that are required to enable a us
 
 For example, this is good:
 
-```js
+```
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'codesample',
@@ -53,7 +46,7 @@ tinymce.init({
 
 This is not:
 
-```js
+```
 tinymce.init({
   ...
   plugins: 'codesample',
@@ -66,7 +59,7 @@ tinymce.init({
 
 Resources to be linked take the form of placing the linked text between brackets and the URL between parenthesis. Linking an external resource looks like this:
 
-```html
+```
 hello, [text to link](http://www.example.com) to the URL example.com.
 ```
 
@@ -75,12 +68,12 @@ hello, [text to link](http://www.example.com) to the URL example.com.
 Codepens can be added to content using the "codepen.html" include, such as:
 
 ```
-{% raw %}{%{% endraw %} include codepen.html id="basic-example" {% raw %}%}{% endraw %}
+{% include codepen.html id="basic-example" %}
 ```
 
-There are several options for this include file, see [`_includes/codepen.html`](https://github.com/tinymce/tinymce-docs/blob/develop/_includes/codepen.html) for details.
+There are several options for this include file - please see `_includes/codepen.html` for details.
 
-The source for each CodePen is store in the [`_includes/codepens/`](https://github.com/tinymce/tinymce-docs/blob/develop/_includes/codepens/) directory.
+The source for each CodePen is store in the `_includes/codepens/` directory.
 
 ### Adding metadata to a page
 

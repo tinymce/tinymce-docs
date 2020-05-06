@@ -1,11 +1,4 @@
----
-layout: default
-title: Contribute to the Docs
-title_nav: Contribute to the Docs
-description_short: Contribute to TinyMCE's developer documentation.
-description: Contribute to TinyMCE's developer documentation.
-keywords: opensource oss contributors lgpl docs dox
----
+# Contributing to the TinyMCE developer documentation
 
 This page outlines how you can provide feedback and contribute to TinyMCE documentation.
 
@@ -27,7 +20,7 @@ The documentation is built with Jekyll. Text files are written in [kramdown](htt
 
 ## Markdown & code syntax
 
-The documentation is written in [kramdown flavored markdown](https://kramdown.gettalong.org/). If you are not familiar with kramdown [read this](https://kramdown.gettalong.org/quickref.html).
+The documentation is written in [kramdown Flavored Markdown](https://kramdown.gettalong.org/). If you are not familiar with kramdown [read this](https://kramdown.gettalong.org/quickref.html).
 
 ### Highlighting
 
@@ -43,7 +36,7 @@ Include any key values pairs and method options that are required to enable a us
 
 For example, this is good:
 
-```js
+```
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'codesample',
@@ -53,7 +46,7 @@ tinymce.init({
 
 This is not:
 
-```js
+```
 tinymce.init({
   ...
   plugins: 'codesample',
@@ -66,9 +59,21 @@ tinymce.init({
 
 Resources to be linked take the form of placing the linked text between brackets and the URL between parenthesis. Linking an external resource looks like this:
 
-```html
+```
 hello, [text to link](http://www.example.com) to the URL example.com.
 ```
+
+### Codepens
+
+Codepens can be added to content using the "codepen.html" include, such as:
+
+```
+{% include codepen.html id="basic-example" %}
+```
+
+There are several options for this include file - please see `_includes/codepen.html` for details.
+
+The source for each CodePen is store in the `_includes/codepens/` directory.
 
 ### Adding metadata to a page
 

@@ -23,7 +23,7 @@ We welcome people with technical writing experience to help make {{site.productn
 
 What is more important is your ability to articulate complex ideas. Our goal is to help developers understand {{site.productname}}'s functionality as quickly as possible.
 
-Simply branch the [docs GitHub repository](https://github.com/tinymce/tinymce-docs) and submit a PR, or reach out to the [{{site.productname}} docs team](mailto:marketing@tiny.cloud) if you have a specific question.
+Simply branch the [docs GitHub repository](https://github.com/tinymce/tinymce-docs) and submit a PR, or reach out to the [{{site.productname}} docs team](https://github.com/tinymce/tinymce-docs/issues/new?assignees=&labels=question&template=question.md) if you have a specific question.
 
 ## TinyMCE documentation tech stack
 

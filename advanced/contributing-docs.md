@@ -11,7 +11,7 @@ This page outlines how you can provide feedback and contribute to TinyMCE docume
 
 ## Contributor Code of Conduct
 
-For our Contributor Code of Conduct, visit our [Contributor Covenant Code of Conduct on GitHub](https://github.com/tinymce/tinymce-docs/blob/develop/CODE_OF_CONDUCT.md#contributor-covenant-code-of-conduct).
+For our Contributor Code of Conduct, visit our [Contributor Covenant Code of Conduct on GitHub](https://github.com/tinymce/tinymce-docs-4x/blob/develop/CODE_OF_CONDUCT.md#contributor-covenant-code-of-conduct).
 
 ## How to contribute to TinyMCE's documentation
 
@@ -23,15 +23,15 @@ We welcome people with technical writing experience to help make TinyMCE's docs 
 
 What is more important is your ability to articulate complex ideas. Our goal is to help developers understand TinyMCE's functionality as quickly as possible.
 
-Simply branch the [docs GitHub repository](https://github.com/tinymce/tinymce-docs) and submit a PR, or reach out to the [TinyMCE docs team](https://github.com/tinymce/tinymce-docs-4x/issues/new?assignees=&labels=question&template=question.md) if you have a specific question.
+Simply branch the [docs GitHub repository](https://github.com/tinymce/tinymce-docs-4x) and submit a PR, or reach out to the [TinyMCE docs team](https://github.com/tinymce/tinymce-docs-4x/issues/new?assignees=&labels=question&template=question.md) if you have a specific question.
 
 ## TinyMCE documentation tech stack
 
-The documentation is built with Jekyll. Text files are written in [Markdown](https://help.github.com/articles/markdown-basics/) and published on [GitHub](https://github.com/tinymce/tinymce-docs). You will find the [repo here](https://github.com/tinymce/tinymce-docs).
+The documentation is built with Jekyll. Text files are written in [kramdown](https://kramdown.gettalong.org/) and published on [GitHub](https://github.com/tinymce/tinymce-docs-4x). You will find the [repo here](https://github.com/tinymce/tinymce-docs-4x).
 
 ## Markdown & code syntax
 
-The documentation is written in [GitHub Flavored Markdown](https://help.github.com/articles/github-flavored-markdown/). If you are not familiar with Markdown [read this](https://help.github.com/articles/markdown-basics/).
+The documentation is written in [kramdown flavored markdown](https://kramdown.gettalong.org/). If you are not familiar with kramdown [read this](https://kramdown.gettalong.org/quickref.html).
 
 ### Highlighting
 

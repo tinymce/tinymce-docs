@@ -8,10 +8,6 @@ For our Contributor Code of Conduct, visit our [Contributor Covenant Code of Con
 
 ## How to contribute to TinyMCE's documentation
 
-**TL;DR** A quick way to improve the docs is to click the "Was this article helpful?" and select "no". Then if you want to help more click the "opening an issue" link and submit a GitHub issue.
-
-## So, how can you help?
-
 We welcome people with technical writing experience to help make TinyMCE's docs as useful to our community as possible. Although you don't need to be an expert developer to contribute, a basic understanding of software development is helpful.
 
 What is more important is your ability to articulate complex ideas. Our goal is to help developers understand TinyMCE's functionality as quickly as possible.

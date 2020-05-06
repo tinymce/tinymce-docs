@@ -20,11 +20,11 @@ Simply branch the [docs GitHub repository](https://github.com/tinymce/tinymce-do
 
 ## TinyMCE documentation tech stack
 
-The documentation is built with Jekyll. Text files are written in [Markdown](https://help.github.com/articles/markdown-basics/) and published on [GitHub](https://github.com/tinymce/tinymce-docs). You will find the [repo here](https://github.com/tinymce/tinymce-docs).
+The documentation is built with Jekyll. Text files are written in [kramdown](https://kramdown.gettalong.org/) and published on [GitHub](https://github.com/tinymce/tinymce-docs). You will find the [repo here](https://github.com/tinymce/tinymce-docs).
 
 ## Markdown & code syntax
 
-The documentation is written in [GitHub Flavored Markdown](https://help.github.com/articles/github-flavored-markdown/). If you are not familiar with Markdown [read this](https://help.github.com/articles/markdown-basics/).
+The documentation is written in [kramdown Flavored Markdown](https://kramdown.gettalong.org/). If you are not familiar with kramdown [read this](https://kramdown.gettalong.org/quickref.html).
 
 ### Highlighting
 

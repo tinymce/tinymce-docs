@@ -3,7 +3,7 @@
 {% elsif shbundledockerfiles == true %}
 ### Deploy the TinyMCE hyperlinking server-side component using Docker (self-hosted enterprise bundles)
 {% endif %}
-The TinyMCE hyperlinking server-side component can be deployed using Docker or an container orchestration application such as Kubernetes. {{site.companyname}} provides a pre-configured package for creating a Hyperlinking Docker image.
+The TinyMCE hyperlinking server-side component can be deployed using Docker or a container orchestration application such as Kubernetes. {{site.companyname}} provides a pre-configured package for creating a Hyperlinking Docker image.
 
 > **Warning**: Do not push this docker image to a publicly accessible container registry. Doing so will constitute a breach of the [{{site.companyname}} Self-Hosted Software License Agreement](https://about.tiny.cloud/legal/tiny-self-hosted-software-license-agreement-enterprise/).
 

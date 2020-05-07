@@ -1,4 +1,4 @@
-### Deploy the TinyMCE image proxy server-side component using Docker (self-hosted enterprise bundle)
+### Deploy the TinyMCE image proxy server-side component using Docker (self-hosted enterprise bundles)
 
 The TinyMCE image proxy server-side component can be deployed using Docker or an container orchestration application such as Kubernetes. {{site.companyname}} provides a pre-configured package for creating a Image Proxy Docker image.
 
@@ -8,37 +8,45 @@ The TinyMCE image proxy server-side component can be deployed using Docker or an
 
 The following procedure covers downloading, configuring, building and testing the {{site.productname}} Image Proxy Docker image.
 
-> **Note**: This procedure assumes that the **{{ site.productname }} Enterprise Bundle** has been extracted as described in [Download and extract the TinyMCE Enterprise Bundle](#downloadandextractthetinymceenterprisebundle).
+> **Note**: This procedure assumes that a {{ site.productname }} self-hosted enterprise bundle has been extracted as described in [Download and extract the TinyMCE Self-hosted Bundle](#downloadandextractthetinymceself-hostedbundle).
 
 4. Navigate into the `tinymce-services` folder.
 
     ```sh
-    cd tinymce-enterprise/tinymce-services/
+    cd tinymce-selfhosted/tinymce-services/
     ```
 
-5. Extract the contents of `ephox-hyperlinking-docker-starter-kit.zip`, such as:
+5. Extract the contents of `ephox-image-proxy-docker-starter-kit.zip`, such as:
 
     ```sh
-    unzip ephox-hyperlinking-docker-starter-kit.zip -d hyperlinking-service-dockerfile
+    unzip ephox-image-proxy-docker-starter-kit.zip -d image-proxy-service-dockerfile
     ```
 
-6. Copy `ephox-hyperlinking.war` into the directory containing the extracted files, such as:
+6. Copy `ephox-image-proxy.war` into the directory containing the extracted files, such as:
 
     ```sh
-    cp ephox-hyperlinking.war hyperlinking-service-dockerfile/
+    cp ephox-image-proxy.war image-proxy-service-dockerfile/
     ```
 
-4. Navigate into the `hyperlinking-service-dockerfile` folder.
+4. Navigate into the `image-proxy-service-dockerfile` folder.
 
     ```sh
-    cd hyperlinking-service-dockerfile
+    cd image-proxy-service-dockerfile
     ```
 5. Set the permissions on the extracted files to executable.
 
     ```sh
     chmod +x *.sh
     ```
-6. _Optional_: Edit the `http` configuration settings in `ephox-image-proxy-docker-env.conf`. The configurable settings are in the `http` section of the file. For example:
+6. _Optional_: Edit the `image-proxy` configuration setting in `ephox-image-proxy-docker-env.conf`. The configurable setting is in the `image-proxy` section of the file. For example:
+
+    ```
+    image-proxy {
+      image-size = 10000000 // 10MB in bytes
+    }
+    ```
+    For information on the `image-proxy` configuration setting, see: [Configure server-side components - `image-proxy`]({{site.baseurl}}/enterprise/server/configure/#image-proxyoptional).
+1. _Optional_: Edit the `http` configuration settings in `ephox-image-proxy-docker-env.conf`. The configurable settings are in the `http` section of the file. For example:
 
     ```
     http {
@@ -61,9 +69,9 @@ The following procedure covers downloading, configuring, building and testing th
     For example:
 
     ```conf
-    ORIGIN0=[example.net](<http://example.net/>)
+    ORIGIN0=example.net
     ORIGIN1=example
-    ORIGIN2=http://[example.org](<http://example.org//>)
+    ORIGIN2=http://example.org
     ```
     For information on `allowed-origins`, see: [Configure server-side components - allowed-origins]({{site.baseurl}}/enterprise/server/configure/#allowed-originsrequired).
 8. As the root user or Administrator, build the {{site.productname}} Image Proxy Docker image using the following command:

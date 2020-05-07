@@ -1,7 +1,7 @@
 {% if shbundledockerfiles == false %}
 ### Deploy the TinyMCE hyperlinking server-side component using Docker (individually licensed)
 {% elsif shbundledockerfiles == true %}
-### Deploy the TinyMCE hyperlinking server-side component using Docker (self-hosted enterprise bundle)
+### Deploy the TinyMCE hyperlinking server-side component using Docker (self-hosted enterprise bundles)
 {% endif %}
 The TinyMCE hyperlinking server-side component can be deployed using Docker or an container orchestration application such as Kubernetes. {{site.companyname}} provides a pre-configured package for creating a Hyperlinking Docker image.
 
@@ -22,12 +22,12 @@ The TinyMCE hyperlinking server-side component can be deployed using Docker or a
 
 The following procedure covers downloading, configuring, building and testing the {{site.productname}} Hyperlinking Docker image.
 {% if shbundledockerfiles == true %}
-> **Note**: This procedure assumes that the **{{ site.productname }} Enterprise Bundle** has been extracted as described in [Download and extract the TinyMCE Enterprise Bundle](#downloadandextractthetinymceenterprisebundle).
+> **Note**: This procedure assumes that a {{ site.productname }} self-hosted enterprise bundle has been extracted as described in [Download and extract the TinyMCE Self-hosted Bundle](#downloadandextractthetinymceself-hostedbundle).
 
 4. Navigate into the `tinymce-services` folder.
 
     ```sh
-    cd tinymce-enterprise/tinymce-services/
+    cd tinymce-selfhosted/tinymce-services/
     ```
 
 5. Extract the contents of `ephox-hyperlinking-docker-starter-kit.zip`, such as:
@@ -61,7 +61,8 @@ and download either:
     The structure of the extracted files will be:
     ```sh
     tinymce-hyperlinking-service/
-    ├── ephox-hyperlinking-docker-env.conf
+    ├── config
+    │   └── ephox-hyperlinking-docker-env.conf
     ├── docker-entrypoint.sh
     ├── Dockerfile
     ├── ephox-hyperlinking.war
@@ -103,9 +104,9 @@ and download either:
     For example:
 
     ```conf
-    ORIGIN0=[example.net](<http://example.net/>)
+    ORIGIN0=example.net
     ORIGIN1=example
-    ORIGIN2=http://[example.org](<http://example.org//>)
+    ORIGIN2=http://example.org
     ```
     For information on `allowed-origins`, see: [Configure server-side components - allowed-origins]({{site.baseurl}}/enterprise/server/configure/#allowed-originsrequired).
 2. As the root user or Administrator, build the {{site.productname}} Hyperlinking Docker image using the following command:

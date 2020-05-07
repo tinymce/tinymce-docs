@@ -15,7 +15,11 @@ The {{site.enterpriseversion}} server-side components can be deployed on Docker 
 
 ## Containerized services for Self-hosted Enterprise deployments
 
-The following sections assist with containerizing the {{ site.productname }} services for users with licenses to the Self-hosted **{{site.productname}} Enterprise Bundle**.
+The following sections assist with containerizing the {{ site.productname }} services for users with licenses to the Self-hosted {{site.productname}} Enterprise bundles:
+
+- The **Self-hosted Essential** bundle.
+- The **Self-hosted Professional** bundle.
+- The **Self-hosted Premium** bundle.
 
 ### Prerequisites
 
@@ -25,23 +29,29 @@ The following sections assist with containerizing the {{ site.productname }} ser
   * Using a Linux, Unix or macOS operating system.
   * Using Windows and has access to unix command line tools using [Git for Windows](https://gitforwindows.org/), [Cygwin](https://www.cygwin.com/), or the [Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10).
 
-### Download and extract the TinyMCE Enterprise Bundle
+### Download and extract the TinyMCE Self-hosted Bundle
 
-1. Go to **[{{ site.accountpage }}]({{ site.accountpageurl }}) > My Downloads** and download the **{{site.productname}} Enterprise Bundle**.
-2. Open a command line and navigate to the directory containing `enterprise_latest.zip`. Windows Users should open a Bash command line as the Administrator User.
-3. Extract the contents of `enterprise_latest.zip`, such as:
+1. Go to **[{{ site.accountpage }}]({{ site.accountpageurl }}) > My Downloads** and download either:
+
+    - The **Self-hosted Essential** bundle.
+    - The **Self-hosted Professional** bundle.
+    - The **Self-hosted Premium** bundle.
+2. Open a command line and navigate to the directory containing the downloaded `.zip` file:
+  
+    - `TinyMCE-Essential_latest.zip` for **Self-hosted Essential** users.
+    - `TinyMCE-Professional_latest.zip` for **Self-hosted Professional** users.
+    - `TinyMCE-Premium_latest.zip` for **Self-hosted Premium** users.
+
+    Windows Users should open a Bash command line as the Administrator User.
+3. Extract the contents of the `.zip` file, such as:
 
     ```sh
-    unzip enterprise_latest.zip -d tinymce-enterprise
+    unzip TinyMCE-Premium_latest.zip -d tinymce-selfhosted
     ```
     The structure of the extracted files will be:
     ```sh
-    tinymce-enterprise/
-    ├── moxiemanager-net/
-    ├── moxiemanager-php/
-    ├── readme.txt
+    tinymce-selfhosted/
     ├── tinymce/
-    ├── tinymce-4/
     └── tinymce-services/
         ├── ephox-hyperlinking-docker-starter-kit.zip
         ├── ephox-hyperlinking.war
@@ -55,14 +65,14 @@ The following sections assist with containerizing the {{ site.productname }} ser
 4. Navigate into the `tinymce-services` folder.
 
     ```sh
-    cd tinymce-enterprise/tinymce-services/
+    cd tinymce-selfhosted/tinymce-services/
     ```
 
 Proceed to setting up and deploying the containerized services:
 
-- For the Enhanced Media Embed and Link Checker service, see: [Deploy the TinyMCE hyperlinking server-side component using Docker (self-hosted enterprise bundle)](#deploythetinymcehyperlinkingserver-sidecomponentusingdockerself-hostedenterprisebundle).
-- For the Image Tools plugin service, see: [Deploy the TinyMCE image proxy server-side component using Docker (self-hosted enterprise bundle)](#deploythetinymceimageproxyserver-sidecomponentusingdockerself-hostedenterprisebundle).
-- For the Spell Checker Pro service, see: [Deploy the TinyMCE spelling service server-side component using Docker (self-hosted enterprise bundle)](#deploythetinymcespellingserviceserver-sidecomponentusingdockerself-hostedenterprisebundle).
+- For the Enhanced Media Embed and Link Checker service, see: [Deploy the TinyMCE hyperlinking server-side component using Docker (self-hosted enterprise bundles)](#deploythetinymcehyperlinkingserver-sidecomponentusingdockerself-hostedenterprisebundles).
+- For the Image Tools plugin service, see: [Deploy the TinyMCE image proxy server-side component using Docker (self-hosted enterprise bundles)](#deploythetinymceimageproxyserver-sidecomponentusingdockerself-hostedenterprisebundles).
+- For the Spell Checker Pro service, see: [Deploy the TinyMCE spelling service server-side component using Docker (self-hosted enterprise bundles)](#deploythetinymcespellingserviceserver-sidecomponentusingdockerself-hostedenterprisebundles).
 
 {% assign shbundledockerfiles = true %}
 

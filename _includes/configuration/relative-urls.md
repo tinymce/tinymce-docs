@@ -1,6 +1,9 @@
 ## relative_urls
 
-If this option is set to true, all URLs returned from the MCFileManager will be relative from the specified [document_base_url](#document_base_url). If it's set to false all URLs will be converted to absolute URLs.
+For URLs with the same domain as the page containing the {{site.productname}} editor. If set to:
+
+- `true` --- All URLs created in {{site.productname}} will be converted to a link relative to the [`document_base_url`](#document_base_url).
+- `false` --- All URLs will be converted to absolute URLs.
 
 **Type:** `Boolean`
 

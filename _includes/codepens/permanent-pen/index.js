@@ -4,6 +4,14 @@ tinymce.init({
   contextmenu: 'configurepermanentpen',
   toolbar: 'permanentpen code',
   menubar: 'file edit view format table tools help',
+  menu: {
+    format: {
+      title: 'Format', 
+      items: 'configurepermanentpen | bold italic underline strikethrough ' + 
+        'superscript subscript codeformat | formats blockformats fontformats ' + 
+        'fontsizes align | forecolor backcolor | removeformat'
+    }
+  },
   permanentpen_properties: {
     fontname: 'arial,helvetica,sans-serif',
     forecolor: '#E74C3C',
@@ -15,8 +23,5 @@ tinymce.init({
     underline: false
   },
   height: 500,
-  content_css: [
-    '//fonts.googleapis.com/css?family=Lato:300,300i,400,400i',
-    '//www.tiny.cloud/css/codepen.min.css'
-  ]
+  content_css: '//www.tiny.cloud/css/codepen.min.css'
 });

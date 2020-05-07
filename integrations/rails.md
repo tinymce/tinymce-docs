@@ -35,7 +35,7 @@ This procedure creates a [basic Ruby on Rails application](https://guides.rubyon
         ],
           toolbar: 'undo redo | formatselect | ' +
           ' bold italic backcolor | alignleft aligncenter ' +
-          ' alignright alignjustify | bullist numlist outdent indent |' +
+          ' alignright alignjustify | bullist numlist outdent indent | ' +
           ' removeformat | help'
       });
     </script>
@@ -76,8 +76,8 @@ This procedure creates a [basic Ruby on Rails application](https://guides.rubyon
           'insertdatetime media table paste code help wordcount'
         ],
           toolbar: 'undo redo | formatselect | ' +
-          ' bold italic backcolor | alignleft aligncenter ' +
-          ' alignright alignjustify | bullist numlist outdent indent |' +
+          'bold italic backcolor | alignleft aligncenter ' +
+          'alignright alignjustify | bullist numlist outdent indent | ' +
           ' removeformat | help'
       });
     </script>
@@ -95,7 +95,7 @@ This procedure creates a [basic Ruby on Rails application](https://guides.rubyon
     ```
 The page containing the {{site.productname}} will be accessible at `http://localhost:<port>/` (default: [http://localhost:3000/](http://localhost:3000/)).
 
-For information on self-hosting {{site.productname}}, see: [Advanced installation choices]({{site.baseurl}}/general-configuration-guide/advanced-install/).
+For information on self-hosting {{site.productname}}, see: [Installing {{ site.productname }}]({{site.baseurl}}/general-configuration-guide/advanced-install/).
 
 ### The third-party TinyMCE Ruby on Rails gem
 

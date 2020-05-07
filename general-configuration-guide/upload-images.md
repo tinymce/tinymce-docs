@@ -5,8 +5,6 @@ title_nav: Upload images &amp; files
 keywords: uploader uploadImages image handler
 ---
 
-The image uploader is designed to complement the new image editing functionality of {{site.productname}}. Images that are edited within {{site.productname}} can be uploaded using this function. Local images that are added through other means, for example drag and drop when using the [paste_data_images]({{ site.baseurl }}/plugins/paste/#paste_data_images) configuration property, or using {{site.companyname}}'s PowerPaste Plugin.
-
 The image uploader is designed to complement the image editing functionality of {{site.productname}}. Images that are edited within {{site.productname}} can be uploaded using this function. Local images that are added through other means are also uploaded using this function, such as images added by drag and drop when using the [paste_data_images]({{ site.baseurl }}/plugins/paste/#paste_data_images) configuration property, or using the {{site.companyname}} [PowerPaste plugin]({{ site.baseurl }}/plugins/powerpaste/).
 
 > **Note**: Execute the `editor.uploadImages()` function _before_ submitting the editor contents to the server to avoid storing the images as Base64. Use a success callback to execute code once all the images are uploaded. This success callback can save the editor's content to the server through a `POST`.

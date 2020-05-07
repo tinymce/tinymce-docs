@@ -1,4 +1,3 @@
-
 /*
 ** This is to simulate requesting information from a server.
 **
@@ -227,6 +226,7 @@ var mentions_select = function (mention, success) {
 
 tinymce.init({
   selector: "textarea#mentions",
+  content_css: '//www.tiny.cloud/css/codepen.min.css',
   plugins: "mentions",
   content_style: ".mymention{ color: gray; }",
 

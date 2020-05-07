@@ -16,16 +16,14 @@ This function should return the converted URL as a string. This option is set to
 ##### Example
 
 ```js
-function myCustomURLConverter(url, node, on_save, name) {
-  // Do some custom URL conversion
-  url = url.substring(3);
-
-  // Return new URL
-  return url;
-}
-
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  urlconverter_callback : 'myCustomURLConverter'
+  urlconverter_callback: function(url, node, on_save, name) {
+    // Do some custom URL conversion
+    url = url.substring(3);
+
+    // Return new URL
+    return url;
+  }
 });
 ```

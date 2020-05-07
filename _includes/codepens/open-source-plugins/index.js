@@ -1,6 +1,6 @@
 tinymce.init({
   selector: 'textarea#full-featured-non-premium',
-  plugins: 'print preview fullpage paste importcss searchreplace autolink autosave save directionality code visualblocks visualchars fullscreen image link media template codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists wordcount imagetools textpattern noneditable help charmap quickbars emoticons',
+  plugins: 'print preview paste importcss searchreplace autolink autosave save directionality code visualblocks visualchars fullscreen image link media template codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists wordcount imagetools textpattern noneditable help charmap quickbars emoticons',
   imagetools_cors_hosts: ['picsum.photos'],
   menubar: 'file edit view insert format tools table help',
   toolbar: 'undo redo | bold italic underline strikethrough | fontselect fontsizeselect formatselect | alignleft aligncenter alignright alignjustify | outdent indent |  numlist bullist | forecolor backcolor removeformat | pagebreak | charmap emoticons | fullscreen  preview save print | insertfile image media template link anchor codesample | ltr rtl',
@@ -11,10 +11,7 @@ tinymce.init({
   autosave_restore_when_empty: false,
   autosave_retention: "2m",
   image_advtab: true,
-  content_css: [
-    '//fonts.googleapis.com/css?family=Lato:300,300i,400,400i',
-    '//www.tiny.cloud/css/codepen.min.css'
-  ],
+  content_css: '//www.tiny.cloud/css/codepen.min.css',
   link_list: [
     { title: 'My page 1', value: 'http://www.tinymce.com' },
     { title: 'My page 2', value: 'http://www.moxiecode.com' }
@@ -56,6 +53,6 @@ tinymce.init({
   image_caption: true,
   quickbars_selection_toolbar: 'bold italic | quicklink h2 h3 blockquote quickimage quicktable',
   noneditable_noneditable_class: "mceNonEditable",
-  toolbar_drawer: 'sliding',
+  toolbar_mode: 'sliding',
   contextmenu: "link image imagetools table",
  });

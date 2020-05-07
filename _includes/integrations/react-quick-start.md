@@ -12,7 +12,7 @@ This procedure requires:
 * Access to `tinymce.min.js` on either:
 
     * [{{site.cloudname}}]({{site.baseurl}}/cloud-deployment-guide/editor-and-features/).
-    * {{site.productname}} Self-hosted. See [Advanced installation choices]({{site.baseurl}}/general-configuration-guide/advanced-install/) for details on self-hosting {{site.productname}}.
+    * {{site.productname}} Self-hosted. See [Installing {{ site.productname }}]({{site.baseurl}}/general-configuration-guide/advanced-install/) for details on self-hosting {{site.productname}}.
 
 ### Procedure
 
@@ -43,8 +43,8 @@ This procedure requires:
     import { Editor } from '@tinymce/tinymce-react';
 
     class App extends React.Component {
-      handleEditorChange = (e) => {
-        console.log('Content was updated:', e.target.getContent());
+      handleEditorChange = (content, editor) => {
+        console.log('Content was updated:', content);
       }
 
       render() {
@@ -64,7 +64,7 @@ This procedure requires:
                 alignleft aligncenter alignright alignjustify | \
                 bullist numlist outdent indent | removeformat | help'
             {% raw %}}}{% endraw %}
-            onChange={this.handleEditorChange}
+            onEditorChange={this.handleEditorChange}
           />
         );
       }
@@ -77,7 +77,7 @@ This procedure requires:
 
     * **{{site.cloudname}}**
 
-        Include the `apiKey` option in the editor element and include your [{{site.cloudname}} API key]({{site.shared_baseurl}}/signup/).
+        Include the `apiKey` option in the editor element and include your [{{site.cloudname}} API key]({{site.accountsignup}}).
 
         Such as:
 
@@ -98,7 +98,7 @@ This procedure requires:
 
         To use an independent deployment of {{site.productname}} with the create a React application, add the script to `/path/to/tinymce-react-demo/public/index.html`.
 
-        For information on self-hosting {{site.productname}}, see: [Advanced installation choices]({{site.baseurl}}/general-configuration-guide/advanced-install/).
+        For information on self-hosting {{site.productname}}, see: [Installing {{ site.productname }}]({{site.baseurl}}/general-configuration-guide/advanced-install/).
 
       * **Bundling {{site.productname}} with the React application using a module loader**
 

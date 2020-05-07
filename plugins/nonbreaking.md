@@ -32,6 +32,8 @@ It's important to note that this does not change the behavior of the menu and to
 
 However, the `true` condition does capture the tab key and contain it within the editable area, whereas when set to its default state of `false` a tab keypress will move the cursor to the next editable area (e.g. a browser url bar or form field on the current page).
 
+> **Note**: Review [Usage with `table` or `lists` plugin](#usagewithtableorlistsplugin) before using this setting.
+
 **Type:** `Boolean`
 
 **Default Value:** `false`
@@ -50,26 +52,29 @@ tinymce.init({
 });
 ```
 
-#### Usage with `table` plugin
+#### Usage with `table` or `lists` plugin
 
-When using the `nonbreaking_force_tab` setting together with the `table` plugin it will conflict with the tab navigation between table cells. You can choose which setting you want to use by changing the ordering of the plugins in the init object. If `nonbreaking` is before `table` in the plugins setting you will activate the insert `&nbsp;` functionality, while if `table` is added before `nonbreaking` you will get tab table cell navigation. See examples:
+The `nonbreaking_force_tab` setting can break the following functionality:
 
-This will activate the insert `&nbsp;` setting:
+- The `table` plugin uses the Tab key for navigating between table cells.
+- The `lists` plugin uses the Tab key for item indentation.
+
+To retain the Tab key functionality of the `lists` or `table` plugins, add the `table` or `lists` plugins before the `nonbreaking` plugin in the init configuration, such as:
 
 ```js
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
-  plugins: "nonbreaking table",
+  plugins: "table lists nonbreaking",
   nonbreaking_force_tab: true
 });
 ```
 
-This will activate the tab table cell navigation:
+To insert a non-breaking space with the Tab key instead of `table` and `lists` Tab functionality, add the `nonbreaking` plugin before the `table` and `lists` plugins in the init configuration, such as:
 
 ```js
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
-  plugins: "table nonbreaking",
+  plugins: "nonbreaking table lists",
   nonbreaking_force_tab: true
 });
 ```

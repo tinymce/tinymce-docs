@@ -6,10 +6,9 @@ description: Validate links, as you type.
 keywords: url urls link linkchecker_service_url linkchecker_content_css
 ---
 
-The `linkchecker` does what it says &ndash; validates URLs, as you type them. URLs considered invalid will be highlighted with red and will have a dedicated context menu with options to either edit the link, try and open it in a separate tab, remove the link, or ignore it.
+{{site.premiumplugin}}
 
-> Please note that Link Checker is a **premium** plugin and relies on a server-side service, which is included as a part of a [{{site.cloudname}}]({{site.pricingpage}}) subscription.
-
+The `linkchecker` plugin does what it says &ndash; validates URLs, as you type them. URLs considered invalid will be highlighted with red and will have a dedicated context menu with options to either edit the link, try and open it in a separate tab, remove the link, or ignore it.
 
 ## Cloud Instructions
 
@@ -61,6 +60,25 @@ a[data-mce-linkchecker-focus="true"] {
 
 It is possible to replace or extend those styles, by providing a URL to custom stylesheet via `linkchecker_content_css` option.
 
+### `linkchecker_preprocess`
+
+The `linkchecker_preprocess` function is used for adjusting links before performing a link check.
+
+**Type:** `Function`
+
+##### Example: `linkchecker_preprocess`
+
+```js
+tinymce.init({
+  selector: "textarea",  // change this value according to your HTML
+  plugins: "linkchecker",
+  linkchecker_preprocess: function (data) {
+    /* This example will encode or double encode the url */
+    var newUrl = encodeURIComponent(data.url);
+    return { url: newUrl };]
+  }
+});
+```
 
 ### `linkchecker_service_url`
 
@@ -68,7 +86,7 @@ A URL of the server-side link validation service. This is required option, witho
 
 **Type:** `String`
 
-##### Example
+##### Example: `linkchecker_service_url`
 
 ```js
 tinymce.init({

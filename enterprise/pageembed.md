@@ -13,18 +13,11 @@ The Page Embed plugin allows an external webpage to be embedded in an HTML docum
 
 Page Embed provides more flexibility than an inline script and can contain an entire webpage. This feature is useful for the purpose of embedding iframes for online advertising and multimedia.
 
-### Getting started
+### Try our Page Embed plugin demo
 
-#### Creating an account
+{% include codepen.html id="page-embed" %}
 
-To try out Page Embed and {{site.cloudname}}-delivered editor, the first step is to create a free [{{site.accountpage}}]({{site.accountsignup}}).
-
-> {{site.accountpage}}s receive a free 30-day trial of all {{site.cloudname}} [premium plugins]({{site.cloudextensions}}), with no credit card information or commitment required.
-
-### Buy TinyMCE Page Embed
-
-Start with this [dedicated product page]({{site.productpages}}/page-embed/) to see all the flexible pricing options. OEM and enterprise customers should [contact sales directly]({{site.contactpage}}).
-
-For more information on Page Embed refer to the full [documentation]({{site.baseurl}}/plugins/pageembed/).
-
-There is also a demo provided to explore the Page Embed capabilities [here]({{site.baseurl}}/demo/pageembed/).
+{% assign pluginname = 'Page Embed' %}
+{% assign pluginminimumplan = 'tiertwo' %}
+{% assign plugindocspage = 'pageembed' %}
+{% include misc/purchase-premium-plugins.md %}

@@ -1,13 +1,16 @@
 ## Upgrading to the latest version of TinyMCE 5
 The procedure for upgrading to the latest version of {{site.productname}} {{site.productmajorversion}} depends on the deployment type.
 
-* [Upgrading Tiny Cloud](#upgradingtinycloud).
-* [Upgrading TinyMCE Self-hosted using a package manager](##upgradingtinymceself-hostedusingapackagemanager).
+* [Upgrading Tiny Cloud](#upgradingtinycloud).{% if enterprise != true %}
+* [Upgrading TinyMCE Self-hosted using a package manager](##upgradingtinymceself-hostedusingapackagemanager).{% endif %}
 * [Upgrading TinyMCE Self-hosted manually](#upgradingtinymceself-hostedmanually).
 
 ### Upgrading Tiny Cloud
 
 {{site.cloudname}} provides the latest enterprise version of {{site.productname}}. For information on configuring {{site.cloudname}}, see: [the Cloud deployment guide]({{site.baseurl}}/cloud-deployment-guide/).
+
+{% if enterprise != true %}
+
 ### Upgrading TinyMCE Self-hosted using a package manager
 Select from the following package managers.
 
@@ -46,6 +49,8 @@ To upgrade to {{site.productname}} {{site.productminorversion}} using Bower, run
 ```sh
 $ bower install {{site.prodnamecode}}#{{site.productminorversion}} --save
 ```
+
+{% endif %}
 
 ### Upgrading TinyMCE Self-hosted manually
 To upgrade to {{site.productname}} {{site.productminorversion}} using a manually downloaded package:

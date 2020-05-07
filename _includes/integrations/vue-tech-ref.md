@@ -14,9 +14,11 @@
     - [`initial-value`](#initial-value)
     - [`inline`](#inline)
     - [`model-events`](#model-events)
+    - [`output-format`](#output-format)
     - [`plugins`](#plugins)
     - [`tag-name`](#tag-name)
     - [`toolbar`](#toolbar)
+    - [`tinymce-script-src`](#tinymce-script-src)
 
 - [Form Input Bindings: `v-model`](#forminputbindingsv-model)
 - [Event binding](#eventbinding)
@@ -63,7 +65,7 @@ $ npm install --save @tinymce/tinymce-vue
 3. Add the `<editor>` tag to the `template`
 
     ```html
-    <editor api-key="API_KEY" :init="{plugins: 'wordcount'}"></editor>
+    <editor api-key="API_KEY" :init="{plugins: 'wordcount'}" />
     ```
 
 ### Configuring the editor
@@ -121,7 +123,11 @@ Changes the {{site.productname}} build used for the editor to one of the followi
 Such as:
 
 ```js
-<editor api-key="your-api-key" cloud-channel="{{site.productmajorversion}}-dev" :init="{% raw %}{{% endraw %} /* your other settings */ {% raw %}}{% endraw %}" />
+<editor
+  api-key="your-api-key"
+  cloud-channel="{{site.productmajorversion}}-dev"
+  :init="{% raw %}{{% endraw %} /* your other settings */ {% raw %}}{% endraw %}"
+/>
 ```
 For information {{site.productname}} development channels, see: [Specifying the {{site.productname}} editor version deployed from Cloud - dev, testing, and stable releases]({{site.baseurl}}/cloud-deployment-guide/editor-plugin-version/#devtestingandstablereleases).
 
@@ -227,6 +233,24 @@ For a list of available {{site.productname}} events, see: [Editor events]({{site
 />
 ```
 
+#### `output-format`
+
+Used to specify the format of the content emitted via the `input` event. This affects the format of the content used in conjunction with data binding.
+
+**Type:** String
+
+**Default value:** `html`
+
+**Possible values:** `html`, `text`
+
+##### Example: `output-format`
+
+```xml
+<editor
+  output-format="text"
+/>
+```
+
 #### `plugins`
 Used to include plugins for the editor. Using `<editor plugins="lists code" />` is the same as setting `{plugins: 'lists code'}` in the {{site.productname}} selector (`tinymce.init`).
 
@@ -254,7 +278,7 @@ Only valid when [`<editor :inline=true />`](#inline). Used to define the HTML el
 ```xml
 <editor
   :inline=true
-  tag-name='myTextArea'
+  tag-name="my-custom-tag"
 />
 ```
 
@@ -262,8 +286,6 @@ Only valid when [`<editor :inline=true />`](#inline). Used to define the HTML el
 Used to set the toolbar for the editor. Using `<editor toolbar="bold italic" />` is the same as setting `{toolbar: 'bold italic'}` in the {{site.productname}} selector (`tinymce.init`).
 
 For information setting the toolbar for {{site.productname}}, see: [User interface options - toolbar]({{site.baseurl}}/configure/editor-appearance/#toolbar).
-
-**Default value:** `" "`
 
 **Possible values:**  See [Editor control identifiers - Toolbar controls]({{site.baseurl}}/advanced/editor-control-identifiers/).
 
@@ -278,12 +300,25 @@ For information setting the toolbar for {{site.productname}}, see: [User interfa
 />
 ```
 
+#### `tinymce-script-src`
+Use the `tinymce-script-src` prop to specify an external version of TinyMCE to lazy load.
+
+**Type:** String
+
+##### Example: `tinymce-script-src`
+
+```xml
+<editor
+  tinymce-script-src="/path/to/tinymce.min.js"
+/>
+```
+
 ### Form Input Bindings: `v-model`
 
 The `v-model` directive can be used to create a two-way data binding. For example:
 
 ```html
-<editor v-model="content"></editor>
+<editor v-model="content" />
 ```
 
 For information on `v-model` and form input bindings, see: [Vue.js documentation - Form Input Bindings](https://vuejs.org/v2/guide/forms.html).
@@ -293,12 +328,12 @@ For information on `v-model` and form input bindings, see: [Vue.js documentation
 Functions can be bound to editor events, such as:
 
 ```html
-<editor @onSelectionChange="handlerFunction"></editor>
+<editor @onSelectionChange="handlerFunction" />
 ```
 
-Where the `handlerFunction` is triggered with the event and is called with two arguments:
+When the handler is called (**handlerFunction** in this example), it is called with two arguments:
 
-* `event` - The event object.
+* `event` - The TinyMCE event object.
 * `editor` - A reference to the editor.
 
 The following events are available:

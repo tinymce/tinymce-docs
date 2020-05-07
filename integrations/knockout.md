@@ -38,7 +38,7 @@ Michael Papworth developed the Knockout binding for TinyMCE. For details, see: [
         <script src="/path/to/jquery.tinymce.min.js"></script>
         ```
 
-        For information on self-hosting {{site.productname}}, see: [Advanced installation choices]({{site.baseurl}}/general-configuration-guide/advanced-install/).
+        For information on self-hosting {{site.productname}}, see: [Installing {{ site.productname }}]({{site.baseurl}}/general-configuration-guide/advanced-install/).
 
 1. Source `tinymce-knockout-binding` (`wysiwyg.js`) on the page.
 
@@ -104,9 +104,9 @@ To load a TinyMCE editor similar to the [Basic example]({{site.baseurl}}/demo/ba
             'searchreplace visualblocks code fullscreen',
             'insertdatetime media table paste code help wordcount'
           ],
-          toolbar: 'undo redo | formatselect | bold italic' +
+          toolbar: 'undo redo | formatselect | bold italic ' +
             'backcolor | alignleft aligncenter alignright ' +
-            'alignjustify | bullist numlist outdent indent |' +
+            'alignjustify | bullist numlist outdent indent | ' +
             'removeformat | help'
         };
 

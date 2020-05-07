@@ -10,6 +10,99 @@ class: changelog
 
 {% capture changelog %}
 
+## Version 5.2.2 April 23, 2020
+* Fixed an issue where anchors could not be inserted on empty lines.
+* Fixed text decorations (underline, strikethrough) not consistently inheriting the text color.
+* Fixed `format` menu alignment buttons inconsistently applying to images.
+* Fixed the floating toolbar drawer height collapsing when the editor is rendered in modal dialogs or floating containers.
+* Fixed `media` embed content not processing safely in some cases.
+
+## Version 5.2.1 March 25, 2020
+* Fixed the "is decorative" checkbox in the image dialog clearing after certain dialog events.
+* Fixed possible uncaught exception when a `style` attribute is removed using a content filter on `setContent`.
+* Fixed the table selection not functioning correctly in Microsoft Edge 44 or higher.
+* Fixed the table resize handles not functioning correctly in Microsoft Edge 44 or higher.
+* Fixed the floating toolbar drawer disconnecting from the toolbar when adding content in inline mode.
+* Fixed `readonly` mode not returning the appropriate boolean value.
+* Fixed the `forced_root_block_attrs` setting not applying attributes to new blocks consistently.
+* Fixed the editor incorrectly stealing focus during initialization in Microsoft Internet Explorer.
+* Fixed dialogs stealing focus when opening an alert or confirm dialog using an `onAction` callback.
+* Fixed inline dialogs incorrectly closing when clicking on an opened alert or confirm dialog.
+* Fixed the context toolbar overlapping the menu bar and toolbar.
+* Fixed notification and inline dialog positioning issues when using `toolbar_location: 'bottom'`.
+* Fixed the `colorinput` popup appearing offscreen on mobile devices.
+* Fixed special characters not being found when searching by "whole words only".
+* Fixed an issue where dragging images could cause them to be duplicated.
+* Fixed context toolbars activating without the editor having focus.
+* Fixed an issue where removing the background color of text did not always work.
+* Fixed an issue where new rows and columns in a table did not retain the style of the previous row or column.
+
+## Version 5.2.0 February 13, 2020
+* Added the ability to apply formats to spaces.
+* Added new `toolbar_location` setting to allow for positioning the menu and toolbar at the bottom of the editor.
+* Added new `toolbar_groups` setting to allow a custom floating toolbar group to be added to the toolbar when using `floating` toolbar mode.
+* Added new `link_default_protocol` setting to `link` and `autolink` plugin to allow a protocol to be used by default.
+* Added new `placeholder` setting to allow a placeholder to be shown when the editor is empty.
+* Added new `tinymce.dom.TextSeeker` API to allow searching text across different DOM nodes.
+* Added a drop shadow below the toolbar while in sticky mode and introduced Oxide variables to customize it when creating a custom skin.
+* Added `quickbars_image_toolbar` setting to allow for the image quickbar to be turned off.
+* Added iframe and img `loading` attribute to the default schema. Patch contributed by ataylor32.
+* Added new `getNodeFilters`/`getAttributeFilters` functions to the `editor.serializer` instance.
+* Added new `a11y_advanced_options` setting to allow additional accessibility options to be added.
+* Added new accessibility options and behaviours to the image dialog using `a11y_advanced_options`.
+* Added the ability to use the window `PrismJS` instance for the `codesample` plugin instead of the bundled version to allow for styling custom languages.
+* Added error message events that fire when a resource loading error occurs.
+* Changed the default schema to disallow `onchange` for select elements.
+* Changed the fallback `toolbar_mode` value from false to `wrap`. The value false has been deprecated.
+* Changed `toolbar_drawer` setting to `toolbar_mode`. `toolbar_drawer` has been deprecated.
+* Changed iframe mode to set selection on content init if selection doesn't exist.
+* Changed table related icons to align them with the visual style of the other icons.
+* Changed and improved the visual appearance of the color input field.
+* Changed fake caret container to use `forced_root_block` when possible.
+* Changed the `requireLangPack` API to wait until the plugin has been loaded before loading the language pack.
+* Changed the formatter so `style_formats` are registered before the initial content is loaded into the editor.
+* Changed media plugin to use https protocol for media urls by default.
+* Changed the parser to treat CDATA nodes as bogus HTML comments to match the HTML parsing spec. A new `preserve_cdata` setting has been added to preserve CDATA nodes if required.
+* Fixed incorrect parsing of malformed/bogus HTML comments.
+* Fixed `quickbars` selection toolbar appearing on non-editable elements.
+* Fixed bug with alignment toolbar buttons sometimes not changing state correctly.
+* Fixed the `codesample` toolbar button not toggling when selecting code samples other than HTML.
+* Fixed content incorrectly scrolling to the top or bottom when pressing enter if when the content was already in view.
+* Fixed `scrollIntoView` potentially hiding elements behind the toolbar.
+* Fixed editor not respecting the `resize_img_proportional` setting due to legacy code.
+* Fixed flickering floating toolbar drawer in inline mode.
+* Fixed an issue where the template plugin dialog would be indefinitely blocked on a failed template load.
+* Fixed the `mscontrolselect` event not being unbound on IE/Edge.
+* Fixed Confirm dialog footer buttons so only the "Yes" button is highlighted.
+* Fixed `file_picker_callback` functionality for Image, Link and Media plugins.
+* Fixed issue where floating toolbar drawer sometimes would break if the editor is resized while the drawer is open.
+* Fixed incorrect `external_plugins` loading error message.
+* Fixed resize handler was not hidden for ARIA purposes. Patch contributed by Parent5446.
+* Fixed an issue where content could be lost if a misspelled word was selected and spellchecking was disabled.
+* Fixed validation errors in the CSS where certain properties had the wrong default value.
+* Fixed an issue where forced root block attributes were not applied when removing a list.
+* Fixed an issue where the element path isn't being cleared when there are no parents.
+* Fixed an issue where width and height in svg icons containing `rect` elements were overridden by the CSS reset.
+* Fixed an issue where uploading images with `images_reuse_filename` enabled and that included a query parameter would generate an invalid URL.
+* Fixed the `closeButton` property not working when opening notifications.
+* Fixed keyboard flicker when opening a context menu on mobile.
+* Fixed issue where plus icon svg contained strokes.
+
+## Version 5.1.6 January 28, 2020
+* Fixed `readonly` mode not blocking all clicked links.
+* Fixed legacy font sizes being calculated inconsistently for the `FontSize` query command value.
+* Fixed changing a tables row from `Header` to `Body` incorrectly moving the row to the bottom of the table.
+* Fixed the context menu not showing in certain cases with hybrid devices.
+* Fixed the context menu opening in the wrong location when the target is the editor body.
+* Fixed the `image` plugin not respecting the `automatic_uploads` setting when uploading local images.
+* Fixed security issue related to parsing HTML comments and CDATA.
+
+## Version 5.1.5 December 19, 2019
+* Fixed the UI not working with hybrid devices that accept both touch and mouse events.
+* Fixed a bug with pasting image URLs when _paste as text_ is enabled.
+* Fixed the `charmap` dialog initially focusing the first tab of the dialog instead of the search input field.
+* Fixed an exception being raised when inserting content if the caret was directly before or after a `contenteditable="false"` element.
+
 ## Version 5.1.4 December 11, 2019
 * Fixed dialog contents disappearing when clicking a checkbox for right-to-left languages.
 * Fixed the `legacyoutput` plugin registering legacy formats after editor initialization, causing legacy content to be stripped on the initial load.

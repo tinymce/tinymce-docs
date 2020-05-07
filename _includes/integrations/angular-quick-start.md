@@ -12,7 +12,7 @@ This procedure requires:
 * Access to `tinymce.min.js` on either:
 
     * [{{site.cloudname}}]({{site.baseurl}}/cloud-deployment-guide/editor-and-features/).
-    * {{site.productname}} Self-hosted. See [Advanced installation choices]({{site.baseurl}}/general-configuration-guide/advanced-install/) for details on self-hosting {{site.productname}}.
+    * {{site.productname}} Self-hosted. See [Installing {{ site.productname }}]({{site.baseurl}}/general-configuration-guide/advanced-install/) for details on self-hosting {{site.productname}}.
 
 ### Procedure
 
@@ -63,34 +63,32 @@ This procedure requires:
     ```html
     <h1>{{site.productname}} {{site.productmajorversion}} Angular Demo</h1>
     <editor
-      initialValue="<p>This is the initial content of the editor</p>"
       [init]="{
-           height: 500,
-           menubar: false,
-           plugins: [
-             'advlist autolink lists link image charmap print preview anchor',
-             'searchreplace visualblocks code fullscreen',
-             'insertdatetime media table paste code help wordcount'
-           ],
-           toolbar:
-             'undo redo | formatselect | bold italic backcolor | \
-             alignleft aligncenter alignright alignjustify | \
-             bullist numlist outdent indent | removeformat | help'
-         }"
-      >
-    </editor>
+        height: 500,
+        menubar: false,
+        plugins: [
+          'advlist autolink lists link image charmap print preview anchor',
+          'searchreplace visualblocks code fullscreen',
+          'insertdatetime media table paste code help wordcount'
+        ],
+        toolbar:
+          'undo redo | formatselect | bold italic backcolor | \
+          alignleft aligncenter alignright alignjustify | \
+          bullist numlist outdent indent | removeformat | help'
+      }"
+    ></editor>
     ```
     This {{site.productname}} editor configuration should replicate the example on the [Basic example page]({{site.baseurl}}/demo/basic-example/).
 7. Provide access to {{site.productname}} using {{site.cloudname}} or by self-hosting {{site.productname}}.
 
     * **{{site.cloudname}}**
 
-        Include the `apiKey` option in the editor element and include your [{{site.cloudname}} API key]({{site.shared_baseurl}}/signup/).
+        Include the `apiKey` option in the editor element and include your [{{site.cloudname}} API key]({{site.accountsignup}}).
 
         Such as:
 
         ```js
-        <Editor apiKey="your-api-key" [init]={% raw %}{{% endraw %} /* your other settings */ {% raw %}}{% endraw %} />
+        <editor apiKey="your-api-key" [init]={% raw %}{{% endraw %} /* your other settings */ {% raw %}}{% endraw %} ></editor>
         ```
 
     * **{{site.productname}} Self-hosted**
@@ -106,34 +104,48 @@ This procedure requires:
             ```
             $ npm install --save tinymce
             ```
-        2. Using a text editor, open `angular.json` and add {{site.productname}} to the *global scripts* tag.
 
-            For example:
-
-            ```json
-            "scripts": [
-              "node_modules/tinymce/tinymce.min.js"
-            ]
-            ```
-        3. Using a text editor; open `angular.json` and add the {{site.productname}} skins, themes, and plugins to the `assets` property.
+        2. Using a text editor; open `angular.json` and add {{site.productname}} to the `assets` property.
 
             ```json
             "assets": [
-              { "glob": "**/*", "input": "node_modules/tinymce/skins", "output": "/tinymce/skins/" },
-              { "glob": "**/*", "input": "node_modules/tinymce/themes", "output": "/tinymce/themes/" },
-              { "glob": "**/*", "input": "node_modules/tinymce/plugins", "output": "/tinymce/plugins/" }
+              { "glob": "**/*", "input": "node_modules/tinymce", "output": "/tinymce/" }
             ]
             ```
-        4. Update the editor configuration to include the `base_url` and `suffix` options.
+        3. Load TinyMCE. 
+            - To load TinyMCE when the editor is initialized (also known as lazy loading), add a dependency provider to the module using the `TINYMCE_SCRIPT_SRC` token.
+                {% if site.productmajorversion < 6 %}
+                > **Note**: Lazy loading is available for tinymce-angular 3.5.0 or later.
+                {% endif %}
 
-            ```html
-            <editor [init]="{
-              base_url: '/tinymce', // Root for resources
-              suffix: '.min',       // Suffix to use when loading resources
-              plugins: 'lists advlist',
-              toolbar: 'undo redo | bold italic | bullist numlist outdent indent'
-            }"></editor>
-            ```
+                ```js
+                import { EditorModule, TINYMCE_SCRIPT_SRC } from '@tinymce/tinymce-angular';
+                /* ... */
+                @NgModule({
+                  /* ... */
+                  imports: [
+                    EditorModule
+                  ],
+                  providers: [
+                    { provide: TINYMCE_SCRIPT_SRC, useValue: 'tinymce/tinymce.min.js' }
+                  ]
+                })
+                ```
+            - To load TinyMCE when the page or application is loaded, open `angular.json` and add {{site.productname}} to the *global scripts* tag.
+
+                ```json
+                "scripts": [
+                  "node_modules/tinymce/tinymce.min.js"
+                ]
+                ```
+                Update the editor configuration to include the `base_url` and `suffix` options.
+                
+                ```html
+                <editor [init]="{
+                  base_url: '/tinymce', // Root for resources
+                  suffix: '.min'        // Suffix to use when loading resources
+                }"></editor>
+                ```
 
       * **Deploy {{site.productname}} independent of the Angular application**
 
@@ -144,7 +156,7 @@ This procedure requires:
 
         To use an independent deployment of {{site.productname}} with the create a Angular application, add the script to `/path/to/tinymce-angular-demo/src/app/app.component.html`.
 
-        For information on self-hosting {{site.productname}}, see: [Advanced installation choices]({{site.baseurl}}/general-configuration-guide/advanced-install/).
+        For information on self-hosting {{site.productname}}, see: [Installing {{ site.productname }}]({{site.baseurl}}/general-configuration-guide/advanced-install/).
 
       * **Bundling {{site.productname}} with the Angular application using a module loader**
 

@@ -8,13 +8,18 @@ keywords: theme classic
 
 {{site.productname}} has three main integration modes:
 
-* "classic" form-based
-* inline editing
-* distraction-free
+* "classic" full editor mode
+* inline editing mode
+* distraction-free mode
 
-**Classic** mode is the most common {{site.productname}} integration. **Classic** mode's popularity is due to its familiarity to users and how quickly they identify it as a text editor.
+There are a few important differences between these modes:
 
-The current default theme `silver` renders the editor in classic mode.
+- Classic mode embeds an iframe in the page, which sandboxes the content and styles used in the content area.
+- Inline mode does not use an iframe; the editor is run on the selected HTML element.
+- The lack of sandboxing for the inline editor allows page scripts and styles to be used in the editor.
+- Distraction-free mode is an inline editor with additional configuration to provide greater functionality.
+
+**Classic** mode refers to the standard {{site.productname}} integration. Such as:
 
 {% include codepen.html id="default" %}
 
@@ -24,7 +29,7 @@ A basic TinyMCE editor can be added to a `textarea` element with the id `mytexta
 
 ```js
 tinymce.init({
-    selector: 'textarea#mytextarea',
+    selector: 'textarea#mytextarea'
 });
 ```
 

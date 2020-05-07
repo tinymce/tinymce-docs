@@ -21,6 +21,9 @@ Available values for [skins]({{site.baseurl}}/configure/editor-appearance/#skin)
 - borderless
 - small
 - jam
+- naked
+- outside
+- snow
 
 Available values for [content_css]({{site.baseurl}}/configure/content-appearance/#content_css):
 
@@ -33,8 +36,8 @@ Available values for [content_css]({{site.baseurl}}/configure/content-appearance
 ```js
 tinymce.init({
   selector: 'textarea',    // change this value according to your HTML
-  skin: "bootstrap",       // Name of the skin
-  content_css: "bootstrap" // Name of the content skin
+  skin: 'fabric',       // Name of the skin
+  content_css: 'fabric' // Name of the content skin
 });
 ```
 
@@ -47,6 +50,7 @@ Available values for [icon]({{site.baseurl}}/configure/editor-appearance/#icons)
 - material
 - small
 - jam
+- thin
 
 ##### Example
 
@@ -65,17 +69,16 @@ Due to different toolbar button sizes, some icon packs fit better with some skin
 
 | Skin | Compatible Icon pack |
 | --- | --- |
-| material-classic | material, jam, small |
-| material-outline | material, jam, small |
-| bootstrap | material, jam, small |
-| fabric | material, jam, small |
-| borderless | material, jam, small |
+| material-classic | material, jam, small, thin |
+| material-outline | material, jam, small, thin |
+| bootstrap | material, jam, small, thin |
+| fabric | material, jam, small, thin |
+| borderless | material, jam, small, thin |
+| naked | material, jam, small, thin |
+| outside | material, jam, small, thin |
+| snow | material, jam, small, thin |
 | small | jam, small |
 | jam | jam, small |
-
-### Self hosted usage instructions
-
-For the self-hosted version of {{site.productname}}, Premium Skins and Icon Packs are available as a download, either as part of the Pro bundle or as an individual purchase. All skins and icons packs are included in the bundle.
 
 ### Examples
 
@@ -88,15 +91,16 @@ Below are some recommended combinations of skins and icon packs:
 * [Small skin with Small icon pack]({{site.baseurl}}/enterprise/premium-skins-and-icon-packs/small-demo/)
 * [Small skin with Jam icon pack]({{site.baseurl}}/enterprise/premium-skins-and-icon-packs/jam-demo/)
 * [Borderless editor]({{site.baseurl}}/enterprise/premium-skins-and-icon-packs/borderless-demo/)
+* [Naked editor]({{site.baseurl}}/enterprise/premium-skins-and-icon-packs/naked-demo/)
+* [Outside editor]({{site.baseurl}}/enterprise/premium-skins-and-icon-packs/outside-demo/)
+* [Snow editor]({{site.baseurl}}/enterprise/premium-skins-and-icon-packs/snow-demo/)
 
-### Getting started
+{% assign pluginname = 'Premium Skins and Icon' %}
+{% assign pluginminimumplan = 'tiertwo' %}
+{% assign plugindocspage = '../configure/editor-appearance/#skin' %}
+{% assign extensionType = 'Packs' %}
+{% assign pluralExtensionType = true %}
+{% include misc/purchase-premium-plugins.md %}
+{% assign extensionType = false %}
+{% assign pluralExtensionType = false %}
 
-#### Creating an account
-
-To try out **Premium Skins and Icon Packs** and {{site.cloudname}}-delivered editor, the first step is to create a free [{{site.accountpage}}]({{site.accountsignup}}).
-
-{{site.accountpage}}s receive a free 30-day trial of all {{site.cloudname}} [premium plugins]({{site.cloudextensions}}), with no credit card information or commitment required.
-
-#### Buy Premium Skins and Icon Packs
-
-Start with this [dedicated product page]({{site.productpages}}/skins-and-icon-packs/) to see all the flexible pricing options. OEM and enterprise customers should [contact sales directly]({{site.contactpage}}).

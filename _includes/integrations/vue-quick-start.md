@@ -12,7 +12,7 @@ This procedure requires:
 * Access to `tinymce.min.js` on either:
 
     * [{{site.cloudname}}]({{site.baseurl}}/cloud-deployment-guide/editor-and-features/).
-    * {{site.productname}} Self-hosted. See [Advanced installation choices]({{site.baseurl}}/general-configuration-guide/advanced-install/) for details on self-hosting {{site.productname}}.
+    * {{site.productname}} Self-hosted. See [Installing {{ site.productname }}]({{site.baseurl}}/general-configuration-guide/advanced-install/) for details on self-hosting {{site.productname}}.
 
 ### Procedure
 
@@ -50,7 +50,6 @@ This procedure requires:
         <img alt="Vue logo" src="./assets/logo.png">
         <editor
           api-key="no-api-key"
-          initialValue="<p>This is the initial content of the editor</p>"
           :init="{% raw %}{{% endraw %}
             height: 500,
             menubar: false,
@@ -64,7 +63,7 @@ This procedure requires:
               alignleft aligncenter alignright alignjustify | \
               bullist numlist outdent indent | removeformat | help'
           {% raw %}}{% endraw %}"
-          ></editor>
+        />
       </div>
     </template>
 
@@ -84,7 +83,7 @@ This procedure requires:
 
     * **{{site.cloudname}}**
 
-        Include the `api-key` option in the editor element and include your [{{site.cloudname}} API key]({{site.shared_baseurl}}/signup/).
+        Include the `api-key` option in the editor element and include your [{{site.cloudname}} API key]({{site.accountsignup}}).
 
         Such as:
 
@@ -105,7 +104,7 @@ This procedure requires:
 
         To use an independent deployment of {{site.productname}} with the create a Vue.js application, add the script to `/path/to/tinymce-vue-demo/public/index.html`.
 
-        For information on self-hosting {{site.productname}}, see: [Advanced installation choices]({{site.baseurl}}/general-configuration-guide/advanced-install/).
+        For information on self-hosting {{site.productname}}, see: [Installing {{ site.productname }}]({{site.baseurl}}/general-configuration-guide/advanced-install/).
 
       * **Bundling {{site.productname}} with the Vue.js application using a module loader**
 

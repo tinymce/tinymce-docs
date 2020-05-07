@@ -14,9 +14,7 @@ var emailHeaderConfig = {
   },
   powerpaste_word_import: 'clean',
   powerpaste_html_import: 'clean',
-  content_css: [
-    '//fonts.googleapis.com/css?family=Lato:300,300i,400,400i'
-  ]
+  content_css: '//www.tiny.cloud/css/codepen.min.css'
 };
 
 var emailBodyConfig = {
@@ -40,9 +38,7 @@ var emailBodyConfig = {
   },
   powerpaste_word_import: 'clean',
   powerpaste_html_import: 'clean',
-  content_css: [
-    '//fonts.googleapis.com/css?family=Lato:300,300i,400,400i'
-  ]
+  content_css: '//www.tiny.cloud/css/codepen.min.css'
 };
 
 tinymce.init(emailHeaderConfig);

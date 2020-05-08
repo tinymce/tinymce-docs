@@ -193,7 +193,7 @@ Example:
 ````
 ephox {
     image-proxy {
-        image-size = 10000000 // 10MB in bytes
+        size-limit = 10000000 // 10MB in bytes
     }
 }
 ````

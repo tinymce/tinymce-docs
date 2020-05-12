@@ -20,7 +20,7 @@ The {{site.productname}} spell checking server-side component requires a Java We
 
 ### Java Development Kit
 
-JDK 7 update 55+
+JDK 8
 
 ### Java (J2EE) Application Servers
 

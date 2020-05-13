@@ -6,7 +6,7 @@ The `toolbar_location` option is used to position the [toolbar]({{site.baseurl}}
 
 Setting this option to `auto`, positions the toolbar and menu bar either:
 * Above the content area by default.
-* Below the content area if there is not enough space to display the toolbar and menubar above.
+* Below the content area if there is not enough space to display the toolbar and menu bar above.
 
 **Type:** `String`
 

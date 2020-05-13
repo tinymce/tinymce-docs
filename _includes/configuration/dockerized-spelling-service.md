@@ -90,7 +90,7 @@ The following procedure covers downloading, configuring, building and testing th
     chmod +x *.sh
     ```
 
-13. _Optional_: Edit the `http` configuration settings in `ephox-spelling-docker-env.conf`. The configurable settings are in the `http` section of the file. For example:
+13. _Optional_: Edit the `http` configuration settings in `config/ephox-spelling-docker-env.conf`. The configurable settings are in the `http` section of the file. For example:
 
     ```
     http {
@@ -108,10 +108,10 @@ The following procedure covers downloading, configuring, building and testing th
 
     For information on the `http` configuration setting, see: [Configure server-side components - `http`]({{site.baseurl}}/enterprise/server/configure/#httpoptional).
 
-14. _Optional_: Configure the service to use a HTTP proxy by updating `ephox-spelling-docker-env.conf`. See:
+14. _Optional_: Configure the service to use a HTTP proxy by updating `config/ephox-spelling-docker-env.conf`. See:
     [Configure server-side components]({{site.baseurl}}/enterprise/server/configure/).
 15. _Optional_: Add a custom dictionary, as described in [Adding custom dictionaries]({{site.baseurl}}/enterprise/check-spelling/custom/).
-16. Create an `origins.env` file and specify the Hypertext Transfer Protocol (HTTP) and domain name of sites hosting the TinyMCE editor (`allowed-origins`). Up to 99 origins can be added without editing `ephox-spelling-docker-env.conf`.
+16. Create an `origins.env` file and specify the Hypertext Transfer Protocol (HTTP) and domain name of sites hosting the TinyMCE editor (`allowed-origins`). Up to 99 origins can be added without editing `config/ephox-spelling-docker-env.conf`.
 
     For example:
 

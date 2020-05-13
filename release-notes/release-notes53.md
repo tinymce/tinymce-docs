@@ -31,10 +31,10 @@ The following premium plugins updates were released alongside {{site.productname
 
 ### Enhanced Media Embed
 
-The {{site.productname}} 5.3 release includes the following accompanying changes affecting **Self-hosted Essential, Professional, Premium, and Enterprise customers only**:
+The {{site.productname}} 5.3 release includes the following accompanying changes affecting **Self-hosted Essential, Professional, and Premium customers only**:
 
 - The Java server-side component (`ephox-hyperlinking.war`) has been updated to version 2.3.0. This version requires Java 8 or higher. For information on the deprecation of Java 7 support, see: [Deprecated features](#deprecatedfeatures).
-- From {{site.productname}} 5.3, premium self-hosted bundles include the files required to deploy the server-side components as Docker containers. For information on Docker deployments of the server-side components, see: [Containerized service deployments]({{site.baseurl}}/enterprise/server/dockerservices/).
+- From {{site.productname}} 5.3, premium self-hosted bundles include the files required to build and deploy the server-side components as Docker containers. For information on Docker deployments of the server-side components, see: [Containerized service deployments]({{site.baseurl}}/enterprise/server/dockerservices/).
 
 For information on:
 
@@ -44,10 +44,10 @@ For information on:
 
 ### Image Tools Proxy
 
-The {{site.productname}} 5.3 release includes the following accompanying changes affecting **Self-hosted Essential, Professional, Premium, and Enterprise customers only**:
+The {{site.productname}} 5.3 release includes the following accompanying changes affecting **Self-hosted Essential, Professional, and Premium customers only**:
 
 - The Java server-side component (`ephox-image-proxy.war`) has been updated to version 2.3.0. This version requires Java 8 or higher. For information on the deprecation of Java 7 support, see: [Deprecated features](#deprecatedfeatures).
-- From {{site.productname}} 5.3, premium self-hosted bundles include the files required to deploy the server-side components as Docker containers. For information on Docker deployments of the server-side components, see: [Containerized service deployments]({{site.baseurl}}/enterprise/server/dockerservices/).
+- From {{site.productname}} 5.3, premium self-hosted bundles include the files required to build and deploy the server-side components as Docker containers. For information on Docker deployments of the server-side components, see: [Containerized service deployments]({{site.baseurl}}/enterprise/server/dockerservices/).
 
 For information on:
 
@@ -57,10 +57,10 @@ For information on:
 
 ### Link Checker
 
-The {{site.productname}} 5.3 release includes the following accompanying changes affecting **Self-hosted Professional, Premium, and Enterprise customers only**:
+The {{site.productname}} 5.3 release includes the following accompanying changes affecting **Self-hosted Professional and Premium customers only**:
 
 - The Java server-side component (`ephox-hyperlinking.war`) has been updated to version 2.3.0. This version requires Java 8 or higher. For information on the deprecation of Java 7 support, see: [Deprecated features](#deprecatedfeatures).
-- From {{site.productname}} 5.3, premium self-hosted bundles include the files required to deploy the server-side components as Docker containers. For information on Docker deployments of the server-side components, see: [Containerized service deployments]({{site.baseurl}}/enterprise/server/dockerservices/).
+- From {{site.productname}} 5.3, premium self-hosted bundles include the files required to build and deploy the server-side components as Docker containers. For information on Docker deployments of the server-side components, see: [Containerized service deployments]({{site.baseurl}}/enterprise/server/dockerservices/).
 
 For information on:
 
@@ -76,16 +76,16 @@ The {{site.productname}} 5.3 release includes an accompanying release of the **P
 
 For information on the PowerPaste plugin, see: [PowerPaste plugin]({{site.baseurl}}/plugins/powerpaste/).
 
-### Spellchecker Pro 2.0.2
+### Spell Checker Pro 2.0.2
 
-The {{site.productname}} 5.3 release includes an accompanying release of the **Spellchecker Pro** premium plugin.
+The {{site.productname}} 5.3 release includes an accompanying release of the **Spell Checker Pro** premium plugin.
 
-**Spellchecker Pro** 2.0.2 
+**Spell Checker Pro** 2.0.2 
 
-The {{site.productname}} 5.3 release includes the following accompanying changes affecting **Self-hosted Professional, Premium, and Enterprise customers only**:
+The {{site.productname}} 5.3 release includes the following accompanying changes affecting **Self-hosted Professional and Premium customers only**:
 
 - The Java server-side component (`ephox-spelling.war`) has been updated to version 2.3.0. This version requires Java 8 or higher. For information on the deprecation of Java 7 support, see: [Deprecated features](#deprecatedfeatures).
-- From {{site.productname}} 5.3, premium self-hosted bundles include the files required to deploy the server-side components as Docker containers. For information on Docker deployments of the server-side components, see: [Containerized service deployments]({{site.baseurl}}/enterprise/server/dockerservices/).
+- From {{site.productname}} 5.3, premium self-hosted bundles include the files required to build and deploy the server-side components as Docker containers. For information on Docker deployments of the server-side components, see: [Containerized service deployments]({{site.baseurl}}/enterprise/server/dockerservices/).
 
 For information on:
 
@@ -107,7 +107,7 @@ For information on:
 
 ## Deprecated features
 
-**Self-hosted Essential, Professional, Premium, and Enterprise customers only**: Java 7 support has been deprecated with this release. The {{site.productname}} Java server-side components now require a minimum of Java 8. From the {{site.productname}} 5.3 release, the `.war` files provided in the self-hosted bundles will not be compatible with Java 7. This change resolves security issues present in the older versions of these services. The following plugins are affected by this change:
+**Self-hosted Essential, Professional, and Premium customers only**: Java 7 support has been deprecated with this release. The {{site.productname}} Java server-side components now require a minimum of Java 8. From the {{site.productname}} 5.3 release, the `.war` files provided in the self-hosted bundles will not be compatible with Java 7. This change resolves security issues present in the older versions of these services. The following plugins are affected by this change:
 
 - SpellChecker Pro (`ephox-spelling.war` has been updated to version 2.3.0)
 - Image Tools (`ephox-image-proxy.war` has been updated to version 2.3.0)

@@ -5,6 +5,8 @@ description: MoxieManager is a premium plugin to manage files & images.
 keywords: moxiemanager .net php relative_urls
 ---
 
+{{site.moxieMNotOnCloud}}
+
 ## File and Image Management Using Moxie Manager
 
 MoxieManager is a premium {{site.productname}} plugin and server system that enables users to insert files located externally to the editor (e.g. on their client desktop) into their document.

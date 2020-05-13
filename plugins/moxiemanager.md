@@ -6,6 +6,8 @@ description: File and image management plugin and service
 keywords: amazon azure premium pro enterprise tiny relative_urls
 ---
 
+{{site.moxieMNotOnCloud}}
+
 MoxieManager is a premium {{site.productname}} plugin and server system that enables users to insert files located externally to the editor (e.g. on their client desktop) into their document.
 
 MoxieManager is an application separate from {{site.productname}} that includes .NET or PHP server components. Being built by the team behind {{site.productname}} it has tight integration with the editor via a toolbar control. It is designed to work with {{site.productname}} configuration settings such as `relative_urls`.

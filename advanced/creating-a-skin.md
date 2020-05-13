@@ -7,7 +7,9 @@ description: Introducing skin creation, less and icon modification.
 keywords: create creator skin icon
 ---
 
-This section provides information on how to create a new skin to customize the appearance of {{site.productname}} {{site.productmajorversion}}.
+This section provides information on how to manually create a new skin to customize the appearance of {{site.productname}} {{site.productmajorversion}}.
+
+The {{site.productname}} Skin Tool provides an interactive method for designing and creating a skin for {{site.productname}}, visit: [http://skin.tiny.cloud/](http://skin.tiny.cloud/).
 
 ## Prerequisites
 

@@ -22,9 +22,9 @@ These release notes provide an overview of the changes for {{site.productname}} 
 
 The following new features and enhancements were added for the {{site.productname}} 5.3 release.
 
-### New default toolbar location setting
+### New toolbar location setting default
 
-{{site.productname}} 5.3 includes a new default, `auto` for the `toolbar_location` option. The `auto` option positions the toolbar and menu bar either:
+{{site.productname}} 5.3 includes a new default, `auto`, for the `toolbar_location` option. The `auto` option positions the toolbar and menu bar either:
 
 - Above the content area by default.
 - Below the content area if there is not enough space to display the toolbar and menubar above.

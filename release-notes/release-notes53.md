@@ -27,7 +27,7 @@ The following new features and enhancements were added for the {{site.productnam
 {{site.productname}} 5.3 includes a new default, `auto`, for the `toolbar_location` option. The `auto` option positions the toolbar and menu bar either:
 
 - Above the content area by default.
-- Below the content area if there is not enough space to display the toolbar and menubar above.
+- Below the content area if there is not enough space to display the toolbar and menu bar above.
 
 This new default setting has been added to improve the user experience for the editor in inline mode.
 

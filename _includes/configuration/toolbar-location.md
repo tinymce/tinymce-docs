@@ -8,6 +8,8 @@ Setting this option to `auto`, positions the toolbar and menu bar either:
 * Above the content area by default.
 * Below the content area if there is not enough space to display the toolbar and menubar above.
 
+> **Note**: `auto` was added in {{site.productname}} 5.3. For {{site.productname}} 5.2 users, the default value is `top`.
+
 **Type:** `String`
 
 **Default Value:** `auto`

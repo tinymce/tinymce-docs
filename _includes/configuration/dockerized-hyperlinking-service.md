@@ -29,24 +29,7 @@ The following procedure covers downloading, configuring, building and testing th
     ```sh
     cd tinymce-selfhosted/tinymce-services/
     ```
-
-5. Extract the contents of `ephox-hyperlinking-docker-starter-kit.zip`, such as:
-
-    ```sh
-    unzip ephox-hyperlinking-docker-starter-kit.zip -d hyperlinking-service-dockerfile
-    ```
-
-6. Copy `ephox-hyperlinking.war` into the directory containing the extracted files, such as:
-
-    ```sh
-    cp ephox-hyperlinking.war hyperlinking-service-dockerfile/
-    ```
-
-4. Navigate into the `hyperlinking-service-dockerfile` folder.
-
-    ```sh
-    cd hyperlinking-service-dockerfile
-    ```
+e
 {% elsif shbundledockerfiles == false %}
 1. Go to [{{ site.accountpage }}]({{ site.accountpageurl }}) > My Downloads
 and download either:
@@ -61,12 +44,11 @@ and download either:
     The structure of the extracted files will be:
     ```sh
     tinymce-hyperlinking-service/
-    ├── config
-    │   └── ephox-hyperlinking-docker-env.conf
-    ├── docker-entrypoint.sh
-    ├── Dockerfile
+    ├── ephox-hyperlinking-docker-starter-kit.zip
     ├── ephox-hyperlinking.war
-    └── generate-jetty-start.sh
+    ├── license.txt
+    ├── readme.txt
+    └── version.txt
     ```
 4. Navigate into the extracted folder.
 
@@ -74,6 +56,34 @@ and download either:
     cd tinymce-hyperlinking-service
     ```
 {% endif %}
+5. Extract the contents of `ephox-hyperlinking-docker-starter-kit.zip`, such as:
+
+    ```sh
+    unzip ephox-hyperlinking-docker-starter-kit.zip -d hyperlinking-service-dockerfile
+    ```
+    
+    The structure of the extracted files will be:
+    ```sh
+    hyperlinking-service-dockerfile/
+    ├── config
+    │   └── ephox-hyperlinking-docker-env.conf
+    ├── docker-entrypoint.sh
+    ├── Dockerfile
+    └── generate-jetty-start.sh
+    ```
+
+6. Copy `ephox-hyperlinking.war` into the directory containing the extracted files, such as:
+
+    ```sh
+    cp ephox-hyperlinking.war hyperlinking-service-dockerfile/
+    ```
+
+4. Navigate into the `hyperlinking-service-dockerfile` folder.
+
+    ```sh
+    cd hyperlinking-service-dockerfile
+    ```
+
 5. Set the permissions on the extracted files to executable.
 
     ```sh

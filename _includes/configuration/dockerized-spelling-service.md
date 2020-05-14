@@ -36,24 +36,6 @@ The following procedure covers downloading, configuring, building and testing th
     cd tinymce-selfhosted/tinymce-services/
     ```
 
-5.  Extract the contents of `ephox-spelling-docker-starter-kit.zip`, such as:
-
-    ```sh
-    unzip ephox-spelling-docker-starter-kit.zip -d spelling-service-dockerfile
-    ```
-
-6.  Copy `ephox-spelling.war` into the directory containing the extracted files, such as:
-
-    ```sh
-    cp ephox-spelling.war spelling-service-dockerfile/
-    ```
-
-7.  Navigate into the `spelling-service-dockerfile` folder.
-
-    ```sh
-    cd spelling-service-dockerfile
-    ```
-
     {% elsif shbundledockerfiles == false %}
 
 8.  Go to **[{{ site.accountpage }}]({{ site.accountpageurl }}) > My Downloads** and download _Tiny Spell Checker Pro_.
@@ -68,12 +50,11 @@ The following procedure covers downloading, configuring, building and testing th
 
     ```sh
     tinymce-spelling-service/
-    ├── config
-    │   └── ephox-spelling-docker-env.conf
-    ├── docker-entrypoint.sh
-    ├── Dockerfile
+    ├── ephox-spelling-docker-starter-kit.zip
     ├── ephox-spelling.war
-    └── generate-jetty-start.sh
+    ├── license.txt
+    ├── readme.txt
+    └── version.txt
     ```
 
 11. Navigate into the extracted folder.
@@ -83,6 +64,34 @@ The following procedure covers downloading, configuring, building and testing th
     ```
 
     {% endif %}
+5.  Extract the contents of `ephox-spelling-docker-starter-kit.zip`, such as:
+
+    ```sh
+    unzip ephox-spelling-docker-starter-kit.zip -d spelling-service-dockerfile
+    ```
+
+    The structure of the extracted files will be:
+
+    ```sh
+    spelling-service-dockerfile/
+    ├── config
+    │   └── ephox-spelling-docker-env.conf
+    ├── docker-entrypoint.sh
+    ├── Dockerfile
+    └── generate-jetty-start.sh
+    ```
+
+6.  Copy `ephox-spelling.war` into the directory containing the extracted files, such as:
+
+    ```sh
+    cp ephox-spelling.war spelling-service-dockerfile/
+    ```
+
+7.  Navigate into the `spelling-service-dockerfile` folder.
+
+    ```sh
+    cd spelling-service-dockerfile
+    ```
 
 12. Set the permissions on the extracted files to executable.
 

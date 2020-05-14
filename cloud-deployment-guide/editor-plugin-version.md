@@ -67,7 +67,7 @@ Use the URL query parameters to specify the version of each premium plugin. This
 #### Mentions
 
 * [Developer documentation]({{ site.baseurl }}/plugins/mentions/)
-* [Supported versions](https://plugins.tinymce.com/versions/mentions)
+* [Supported versions](http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/mentions/available-versions)
 
 ##### Example
 
@@ -78,7 +78,7 @@ Use the URL query parameters to specify the version of each premium plugin. This
 #### Tiny Drive
 
 * [Developer documentation]({{ site.baseurl }}/plugins/drive/)
-* [Supported versions](https://plugins.tinymce.com/versions/tinydrive)
+* [Supported versions](http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/tinydrive/available-versions)
 
 ##### Example
 
@@ -89,7 +89,7 @@ Use the URL query parameters to specify the version of each premium plugin. This
 #### Comments 2.0
 
 * [Developer documentation]({{ site.baseurl }}/plugins/comments/)
-* [Supported versions](https://plugins.tinymce.com/versions/tinycomments)
+* [Supported versions](http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/tinycomments/available-versions)
 
 ##### Example
 
@@ -100,7 +100,7 @@ Use the URL query parameters to specify the version of each premium plugin. This
 #### Page Embed
 
 * [Developer documentation]({{ site.baseurl }}/plugins/pageembed/)
-* [Supported versions](https://plugins.tinymce.com/versions/pageembed)
+* [Supported versions](http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/pageembed/available-versions)
 
 ##### Example
 
@@ -111,7 +111,7 @@ Use the URL query parameters to specify the version of each premium plugin. This
 #### Permanent Pen
 
 * [Developer documentation]({{ site.baseurl }}/plugins/permanentpen/)
-* [Supported versions](https://plugins.tinymce.com/versions/permanentpen)
+* [Supported versions](http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/permanentpen/available-versions)
 
 ##### Example
 
@@ -122,7 +122,7 @@ Use the URL query parameters to specify the version of each premium plugin. This
 #### Format Painter
 
 * [Developer documentation]({{ site.baseurl }}/plugins/formatpainter/)
-* [Supported versions](https://plugins.tinymce.com/versions/formatpainter)
+* [Supported versions](http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/formatpainter/available-versions)
 
 ##### Example
 
@@ -133,7 +133,7 @@ Use the URL query parameters to specify the version of each premium plugin. This
 #### PowerPaste
 
 * [Developer documentation]({{ site.baseurl }}/plugins/powerpaste)
-* [Supported versions](https://plugins.tinymce.com/versions/powerpaste)
+* [Supported versions](http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/powerpaste/available-versions)
 
 ##### Example
 
@@ -144,7 +144,7 @@ Use the URL query parameters to specify the version of each premium plugin. This
 #### Spell Checker Pro
 
 * [Developer documentation]({{ site.baseurl }}/plugins/tinymcespellchecker)
-* [Supported versions](https://plugins.tinymce.com/versions/tinymcespellchecker)
+* [Supported versions](http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/tinymcespellchecker/available-versions)
 
 ##### Example
 
@@ -155,7 +155,7 @@ Use the URL query parameters to specify the version of each premium plugin. This
 #### Accessibility Checker
 
 * [Developer documentation]({{ site.baseurl }}/plugins/a11ychecker)
-* [Supported versions](https://plugins.tinymce.com/versions/a11ychecker)
+* [Supported versions](http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/a11ychecker/available-versions)
 
 ##### Example
 
@@ -166,7 +166,7 @@ Use the URL query parameters to specify the version of each premium plugin. This
 #### Advanced Code Editor
 
 * [Developer documentation]({{ site.baseurl }}/plugins/advcode/)
-* [Supported versions](https://plugins.tinymce.com/versions/advcode)
+* [Supported versions](http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/advcode/available-versions)
 
 ##### Example
 
@@ -177,7 +177,7 @@ Use the URL query parameters to specify the version of each premium plugin. This
 #### Enhanced Media Embed
 
 * [Developer documentation]({{ site.baseurl }}/plugins/mediaembed/)
-* [Supported versions](https://plugins.tinymce.com/versions/mediaembed)
+* [Supported versions](http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/mediaembed/available-versions)
 
 ##### Example
 
@@ -188,7 +188,7 @@ Use the URL query parameters to specify the version of each premium plugin. This
 #### Link Checker
 
 * [Developer documentation]({{ site.baseurl }}/plugins/linkchecker/)
-* [Supported versions](https://plugins.tinymce.com/versions/linkchecker)
+* [Supported versions](http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/linkchecker/available-versions)
 
 ##### Example
 

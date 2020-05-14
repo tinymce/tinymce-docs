@@ -22,6 +22,20 @@ These release notes provide an overview of the changes for {{site.productname}} 
 
 The following new features and enhancements were added for the {{site.productname}} 5.3 release.
 
+### New toolbar location default setting
+
+{{site.productname}} 5.3 includes a new default, `auto`, for the `toolbar_location` option. The `auto` option positions the toolbar and menu bar either:
+
+- Above the content area by default.
+- Below the content area if there is not enough space to display the toolbar and menu bar above.
+
+This new default setting has been added to improve the user experience for the editor in inline mode.
+
+For information on:
+
+- The `toolbar_location` option, see: [User interface options - toolbar_location]({{site.baseurl}}/configure/editor-appearance/#toolbar_location).
+- {{site.productname}} in inline mode, see: [Setup inline editing mode]({{site.baseurl}}/general-configuration-guide/use-tinymce-inline/#enablinginlineeditingmode).
+
 ### Moved the 'enabled' checkmark on toggle menu items to the right-hand side
 
 The checkmark on toggle menu items that indicates that an option is enabled, has been moved. The checkmark will now appear to the right of the menu label. This change provides clearer feedback to users and allows icons to be added to toggle menu items.
@@ -32,9 +46,6 @@ For example:
 | ![Custom toggle menu item with checkmark on the left-hand side of the item label (pre-5.3 behavior)]({{site.baseurl}}/images/old_togglemenuitemchecked.png) | ![Custom toggle menu item with checkmark on the right-hand side of the item label (5.3+ behavior)]({{site.baseurl}}/images/53_togglemenuitemchecked.png) |
 
 For information on toggle menu items, see: [Custom menu items - Toggle menu items]({{site.baseurl}}/ui-components/menuitems/#togglemenuitems).
-
-### 
-
 
 ## Accompanying Premium Plugin changes
 

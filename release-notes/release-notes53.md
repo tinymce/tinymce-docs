@@ -29,6 +29,16 @@ The following new features and enhancements were added for the {{site.productnam
 
 The following premium plugins updates were released alongside {{site.productname}} 5.3.
 
+### Comments 2.1.4
+
+The {{site.productname}} 5.3 release includes an accompanying release of the **Comments** premium plugin.
+
+**Comments** 2.1.4 adds icons for the **Add Comment** (`addcomment`) and **Show Comments** (`showcomments`) menu items.
+
+For information on the Comments plugin, see: [Comments plugin]({{site.baseurl}}/plugins/comments/).
+
+For a list of valid menu items, see: [Editor control identifiers - Menu controls]({{site.baseurl}}/advanced/editor-control-identifiers/#menucontrols).
+
 ### PowerPaste 5.3.0
 
 The {{site.productname}} 5.3 release includes an accompanying release of the **PowerPaste** premium plugin.

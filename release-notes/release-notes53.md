@@ -22,12 +22,33 @@ These release notes provide an overview of the changes for {{site.productname}} 
 
 The following new features and enhancements were added for the {{site.productname}} 5.3 release.
 
+### Moved the 'enabled' checkmark on toggle menu items to the right-hand side
+
+The checkmark on toggle menu items that indicates that an option is enabled, has been moved. The checkmark will now appear to the right of the menu label. This change provides clearer feedback to users and allows icons to be added to toggle menu items.
+For example:
+
+| {{site.productname}} 5.2 toggle menu item checkmark behavior | {{site.productname}} 5.3 toggle menu item checkmark behavior |
+| :-----------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------: |
+| ![Custom toggle menu item with checkmark on the left-hand side of the item label (pre-5.3 behavior)]({{site.baseurl}}/images/old_togglemenuitemchecked.png) | ![Custom toggle menu item with checkmark on the right-hand side of the item label (5.3+ behavior)]({{site.baseurl}}/images/53_togglemenuitemchecked.png) |
+
+For information on toggle menu items, see: [Custom menu items - Toggle menu items]({{site.baseurl}}/ui-components/menuitems/#togglemenuitems).
+
 ### 
 
 
 ## Accompanying Premium Plugin changes
 
 The following premium plugins updates were released alongside {{site.productname}} 5.3.
+
+### Comments 2.1.4
+
+The {{site.productname}} 5.3 release includes an accompanying release of the **Comments** premium plugin.
+
+**Comments** 2.1.4 adds icons for the **Add Comment** (`addcomment`) and **Show Comments** (`showcomments`) menu items.
+
+For information on the Comments plugin, see: [Comments plugin]({{site.baseurl}}/plugins/comments/).
+
+For a list of valid menu items, see: [Editor control identifiers - Menu controls]({{site.baseurl}}/advanced/editor-control-identifiers/#menucontrols).
 
 ### Enhanced Media Embed
 
@@ -72,9 +93,13 @@ For information on:
 
 The {{site.productname}} 5.3 release includes an accompanying release of the **PowerPaste** premium plugin.
 
-**PowerPaste** 5.3.0 
+**PowerPaste** 5.3.0 adds a new `imagedrop` `source` which fires an event when dropping an image file into the editor. This `source` can be used with the PowerPaste `paste_preprocess` and `paste_postprocess` options.
 
-For information on the PowerPaste plugin, see: [PowerPaste plugin]({{site.baseurl}}/plugins/powerpaste/).
+For information on:
+
+- The PowerPaste plugin, see: [PowerPaste plugin]({{site.baseurl}}/plugins/powerpaste/).
+- The PowerPaste `paste_preprocess` option, see: [PowerPaste plugin - `paste_preprocess`]({{site.baseurl}}/plugins/powerpaste/#paste_preprocess).
+- The PowerPaste `paste_postprocess` option, see: [PowerPaste plugin - `paste_postprocess`]({{site.baseurl}}/plugins/powerpaste/#paste_postprocess).
 
 ### Spell Checker Pro 2.0.2
 

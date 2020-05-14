@@ -35,6 +35,16 @@ The following procedure covers downloading, configuring, building and testing th
     ```sh
     unzip ephox-hyperlinking-docker-starter-kit.zip -d hyperlinking-service-dockerfile
     ```
+    
+    The structure of the extracted files will be:
+    ```sh
+    hyperlinking-service-dockerfile/
+    ├── config
+    │   └── ephox-hyperlinking-docker-env.conf
+    ├── docker-entrypoint.sh
+    ├── Dockerfile
+    └── generate-jetty-start.sh
+    ```
 
 6. Copy `ephox-hyperlinking.war` into the directory containing the extracted files, such as:
 
@@ -47,6 +57,7 @@ The following procedure covers downloading, configuring, building and testing th
     ```sh
     cd hyperlinking-service-dockerfile
     ```
+
 {% elsif shbundledockerfiles == false %}
 1. Go to [{{ site.accountpage }}]({{ site.accountpageurl }}) > My Downloads
 and download either:
@@ -58,28 +69,41 @@ and download either:
     ```sh
     unzip ephox-hyperlinking_<version>.zip -d tinymce-hyperlinking-service
     ```
-    The structure of the extracted files will be:
+
+4. Navigate into the extracted folder.
+
+    ```sh
+    cd tinymce-hyperlinking-service
+    ```
+
+5. Extract the contents of `ephox-hyperlinking-docker-starter-kit.zip`, such as:
+
+    ```sh
+    unzip ephox-hyperlinking-docker-starter-kit.zip
+    ```
+    
+    The structure of the current directory (`tinymce-hyperlinking-service/`) will be:
     ```sh
     tinymce-hyperlinking-service/
     ├── config
     │   └── ephox-hyperlinking-docker-env.conf
     ├── docker-entrypoint.sh
     ├── Dockerfile
+    ├── ephox-hyperlinking-docker-starter-kit.zip
     ├── ephox-hyperlinking.war
-    └── generate-jetty-start.sh
-    ```
-4. Navigate into the extracted folder.
-
-    ```sh
-    cd tinymce-hyperlinking-service
+    ├── generate-jetty-start.sh
+    ├── license.txt
+    ├── readme.txt
+    └── version.txt
     ```
 {% endif %}
+
 5. Set the permissions on the extracted files to executable.
 
     ```sh
     chmod +x *.sh
     ```
-6. _Optional_: Edit the `http` configuration settings in `ephox-hyperlinking-docker-env.conf`. The configurable settings are in the `http` section of the file. For example:
+6. _Optional_: Edit the `http` configuration settings in `config/ephox-hyperlinking-docker-env.conf`. The configurable settings are in the `http` section of the file. For example:
 
     ```
     http {
@@ -97,9 +121,9 @@ and download either:
     For information on the `http` configuration setting, see: [Configure server-side components - `http`]({{site.baseurl}}/enterprise/server/configure/#httpoptional).
 1. _Optional_: Update the link-checking cache configuration, as described in [Link Checker self-hosted quick setup]({{site.baseurl}}/enterprise/check-links/#linkcheckerself-hostedquicksetup).
 1. _Optional_: Configure the Enhanced Media Embed Service, as described in [Configure Enhanced Media Embed Server]({{site.baseurl}}/enterprise/embed-media/mediaembed-server-config/).
-1. _Optional_: Configure the service to use a HTTP proxy by updating `ephox-hyperlinking-docker-env.conf`. See:
+1. _Optional_: Configure the service to use a HTTP proxy by updating `config/ephox-hyperlinking-docker-env.conf`. See:
 [Configure server-side components - proxy]({{site.baseurl}}/enterprise/server/configure/#proxyoptional).
-1. Create an `origins.env` file and specify the Hypertext Transfer Protocol (HTTP) and domain name of sites hosting the TinyMCE editor (`allowed-origins`). Up to 99 origins can be added without editing `ephox-hyperlinking-docker-env.conf`.
+1. Create an `origins.env` file in the same directory as the `Dockerfile`, and specify the Hypertext Transfer Protocol (HTTP) and domain name of sites hosting the TinyMCE editor (`allowed-origins`). Up to 99 origins can be added without editing `config/ephox-hyperlinking-docker-env.conf`.
 
     For example:
 

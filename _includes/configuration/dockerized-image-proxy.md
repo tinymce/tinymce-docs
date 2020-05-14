@@ -38,7 +38,7 @@ The following procedure covers downloading, configuring, building and testing th
     ```sh
     chmod +x *.sh
     ```
-6. _Optional_: Edit the `image-proxy` configuration setting in `ephox-image-proxy-docker-env.conf`. The configurable setting is in the `image-proxy` section of the file. For example:
+6. _Optional_: Edit the `image-proxy` configuration setting in `config/ephox-image-proxy-docker-env.conf`. The configurable setting is in the `image-proxy` section of the file. For example:
 
     ```
     image-proxy {
@@ -46,7 +46,7 @@ The following procedure covers downloading, configuring, building and testing th
     }
     ```
     For information on the `image-proxy` configuration setting, see: [Configure server-side components - `image-proxy`]({{site.baseurl}}/enterprise/server/configure/#image-proxyoptional).
-1. _Optional_: Edit the `http` configuration settings in `ephox-image-proxy-docker-env.conf`. The configurable settings are in the `http` section of the file. For example:
+1. _Optional_: Edit the `http` configuration settings in `config/ephox-image-proxy-docker-env.conf`. The configurable settings are in the `http` section of the file. For example:
 
     ```
     http {
@@ -62,9 +62,9 @@ The following procedure covers downloading, configuring, building and testing th
     }
     ```
     For information on the `http` configuration setting, see: [Configure server-side components - `http`]({{site.baseurl}}/enterprise/server/configure/#httpoptional).
-1. _Optional_: Configure the service to use a HTTP proxy by updating `ephox-image-proxy-docker-env.conf`. See:
+1. _Optional_: Configure the service to use a HTTP proxy by updating `config/ephox-image-proxy-docker-env.conf`. See:
 [Configure server-side components]({{site.baseurl}}/enterprise/server/configure/).
-7. Create an `origins.env` file and specify the Hypertext Transfer Protocol (HTTP) and domain name of sites hosting the TinyMCE editor (`allowed-origins`). Up to 99 origins can be added without editing `ephox-image-proxy-docker-env.conf`.
+7. Create an `origins.env` file in the same directory as the `Dockerfile`, and specify the Hypertext Transfer Protocol (HTTP) and domain name of sites hosting the TinyMCE editor (`allowed-origins`). Up to 99 origins can be added without editing `config/ephox-image-proxy-docker-env.conf`.
 
     For example:
 

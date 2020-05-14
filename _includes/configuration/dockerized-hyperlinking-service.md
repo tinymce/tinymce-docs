@@ -29,33 +29,7 @@ The following procedure covers downloading, configuring, building and testing th
     ```sh
     cd tinymce-selfhosted/tinymce-services/
     ```
-e
-{% elsif shbundledockerfiles == false %}
-1. Go to [{{ site.accountpage }}]({{ site.accountpageurl }}) > My Downloads
-and download either:
-* _Tiny Enhanced Media Embed_, or
-* _Tiny Link Checker_.
-2. Open a command line and navigate to the directory containing `ephox-hyperlinking_<version>.zip`. Windows Users should open a Bash command line as the Administrator User.
-3. Extract the contents of `ephox-hyperlinking_<version>.zip`, such as:
 
-    ```sh
-    unzip ephox-hyperlinking_<version>.zip -d tinymce-hyperlinking-service
-    ```
-    The structure of the extracted files will be:
-    ```sh
-    tinymce-hyperlinking-service/
-    ├── ephox-hyperlinking-docker-starter-kit.zip
-    ├── ephox-hyperlinking.war
-    ├── license.txt
-    ├── readme.txt
-    └── version.txt
-    ```
-4. Navigate into the extracted folder.
-
-    ```sh
-    cd tinymce-hyperlinking-service
-    ```
-{% endif %}
 5. Extract the contents of `ephox-hyperlinking-docker-starter-kit.zip`, such as:
 
     ```sh
@@ -83,6 +57,46 @@ and download either:
     ```sh
     cd hyperlinking-service-dockerfile
     ```
+
+{% elsif shbundledockerfiles == false %}
+1. Go to [{{ site.accountpage }}]({{ site.accountpageurl }}) > My Downloads
+and download either:
+* _Tiny Enhanced Media Embed_, or
+* _Tiny Link Checker_.
+2. Open a command line and navigate to the directory containing `ephox-hyperlinking_<version>.zip`. Windows Users should open a Bash command line as the Administrator User.
+3. Extract the contents of `ephox-hyperlinking_<version>.zip`, such as:
+
+    ```sh
+    unzip ephox-hyperlinking_<version>.zip -d tinymce-hyperlinking-service
+    ```
+
+4. Navigate into the extracted folder.
+
+    ```sh
+    cd tinymce-hyperlinking-service
+    ```
+
+5. Extract the contents of `ephox-hyperlinking-docker-starter-kit.zip`, such as:
+
+    ```sh
+    unzip ephox-hyperlinking-docker-starter-kit.zip
+    ```
+    
+    The structure of the current directory (`tinymce-hyperlinking-service/`) will be:
+    ```sh
+    tinymce-hyperlinking-service/
+    ├── config
+    │   └── ephox-hyperlinking-docker-env.conf
+    ├── docker-entrypoint.sh
+    ├── Dockerfile
+    ├── ephox-hyperlinking-docker-starter-kit.zip
+    ├── ephox-hyperlinking.war
+    ├── generate-jetty-start.sh
+    ├── license.txt
+    ├── readme.txt
+    └── version.txt
+    ```
+{% endif %}
 
 5. Set the permissions on the extracted files to executable.
 

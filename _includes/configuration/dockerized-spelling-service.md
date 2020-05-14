@@ -36,34 +36,6 @@ The following procedure covers downloading, configuring, building and testing th
     cd tinymce-selfhosted/tinymce-services/
     ```
 
-    {% elsif shbundledockerfiles == false %}
-
-8.  Go to **[{{ site.accountpage }}]({{ site.accountpageurl }}) > My Downloads** and download _Tiny Spell Checker Pro_.
-9.  Open a command line and navigate to the directory containing `ephox-spelling_<version>.zip`. Windows Users should open a Bash command line as the Administrator User.
-10. Extract the contents of `ephox-spelling_<version>.zip`, such as:
-
-    ```sh
-    unzip ephox-spelling_<version>.zip -d tinymce-spelling-service
-    ```
-
-    The structure of the extracted files will be:
-
-    ```sh
-    tinymce-spelling-service/
-    ├── ephox-spelling-docker-starter-kit.zip
-    ├── ephox-spelling.war
-    ├── license.txt
-    ├── readme.txt
-    └── version.txt
-    ```
-
-11. Navigate into the extracted folder.
-
-    ```sh
-    cd tinymce-spelling-service
-    ```
-
-    {% endif %}
 5.  Extract the contents of `ephox-spelling-docker-starter-kit.zip`, such as:
 
     ```sh
@@ -92,6 +64,46 @@ The following procedure covers downloading, configuring, building and testing th
     ```sh
     cd spelling-service-dockerfile
     ```
+
+    {% elsif shbundledockerfiles == false %}
+
+8.  Go to **[{{ site.accountpage }}]({{ site.accountpageurl }}) > My Downloads** and download _Tiny Spell Checker Pro_.
+9.  Open a command line and navigate to the directory containing `ephox-spelling_<version>.zip`. Windows Users should open a Bash command line as the Administrator User.
+10. Extract the contents of `ephox-spelling_<version>.zip`, such as:
+
+    ```sh
+    unzip ephox-spelling_<version>.zip -d tinymce-spelling-service
+    ```
+
+11. Navigate into the extracted folder.
+
+    ```sh
+    cd tinymce-spelling-service
+    ```
+
+5.  Extract the contents of `ephox-spelling-docker-starter-kit.zip`, such as:
+
+    ```sh
+    unzip ephox-spelling-docker-starter-kit.zip
+    ```
+
+    The structure of the current directory (`tinymce-spelling-service/`) will be:
+
+    ```sh
+    tinymce-spelling-service/
+    ├── config
+    │   └── ephox-spelling-docker-env.conf
+    ├── docker-entrypoint.sh
+    ├── Dockerfile
+    ├── ephox-spelling-docker-starter-kit.zip
+    ├── ephox-spelling.war
+    ├── generate-jetty-start.sh
+    ├── license.txt
+    ├── readme.txt
+    └── version.txt
+    ```
+
+    {% endif %}
 
 12. Set the permissions on the extracted files to executable.
 

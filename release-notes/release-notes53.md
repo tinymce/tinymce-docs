@@ -43,9 +43,13 @@ For a list of valid menu items, see: [Editor control identifiers - Menu controls
 
 The {{site.productname}} 5.3 release includes an accompanying release of the **PowerPaste** premium plugin.
 
-**PowerPaste** 5.3.0 
+**PowerPaste** 5.3.0 adds a new `imagedrop` `source` which fires an event when dropping an image file into the editor. This `source` can be used with the PowerPaste `paste_preprocess` and `paste_postprocess` options.
 
-For information on the PowerPaste plugin, see: [PowerPaste plugin]({{site.baseurl}}/plugins/powerpaste/).
+For information on:
+
+- The PowerPaste plugin, see: [PowerPaste plugin]({{site.baseurl}}/plugins/powerpaste/).
+- The PowerPaste `paste_preprocess` option, see: [PowerPaste plugin - `paste_preprocess`]({{site.baseurl}}/plugins/powerpaste/#paste_preprocess).
+- The PowerPaste `paste_postprocess` option, see: [PowerPaste plugin - `paste_postprocess`]({{site.baseurl}}/plugins/powerpaste/#paste_postprocess).
 
 ### Spellchecker Pro 2.0.2
 

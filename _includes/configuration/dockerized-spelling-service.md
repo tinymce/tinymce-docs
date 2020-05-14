@@ -42,6 +42,17 @@ The following procedure covers downloading, configuring, building and testing th
     unzip ephox-spelling-docker-starter-kit.zip -d spelling-service-dockerfile
     ```
 
+    The structure of the extracted files will be:
+
+    ```sh
+    spelling-service-dockerfile/
+    ├── config
+    │   └── ephox-spelling-docker-env.conf
+    ├── docker-entrypoint.sh
+    ├── Dockerfile
+    └── generate-jetty-start.sh
+    ```
+
 6.  Copy `ephox-spelling.war` into the directory containing the extracted files, such as:
 
     ```sh
@@ -64,7 +75,19 @@ The following procedure covers downloading, configuring, building and testing th
     unzip ephox-spelling_<version>.zip -d tinymce-spelling-service
     ```
 
-    The structure of the extracted files will be:
+11. Navigate into the extracted folder.
+
+    ```sh
+    cd tinymce-spelling-service
+    ```
+
+5.  Extract the contents of `ephox-spelling-docker-starter-kit.zip`, such as:
+
+    ```sh
+    unzip ephox-spelling-docker-starter-kit.zip
+    ```
+
+    The structure of the current directory (`tinymce-spelling-service/`) will be:
 
     ```sh
     tinymce-spelling-service/
@@ -72,14 +95,12 @@ The following procedure covers downloading, configuring, building and testing th
     │   └── ephox-spelling-docker-env.conf
     ├── docker-entrypoint.sh
     ├── Dockerfile
+    ├── ephox-spelling-docker-starter-kit.zip
     ├── ephox-spelling.war
-    └── generate-jetty-start.sh
-    ```
-
-11. Navigate into the extracted folder.
-
-    ```sh
-    cd tinymce-spelling-service
+    ├── generate-jetty-start.sh
+    ├── license.txt
+    ├── readme.txt
+    └── version.txt
     ```
 
     {% endif %}

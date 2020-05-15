@@ -9,7 +9,9 @@ controls: toolbar button
 
 This plugin adds a dialog to the editor lets users insert emojis into {{site.productname}}'s editable area. The dialog can be invoked via a toolbar button - `emoticons` - or a dedicated menu item added as `Insert > Emoticons`.
 
-> Note: it doesn't automatically convert text emoticons into graphical smilies.
+The emoticons plugin provides an autocompleter for adding emoticons without using the toolbar button or menu item. Adding a colon `:`, followed by at least two characters will open an inline dialog showing matching emoticons.
+
+> **Note**: The emoticons plugin does not automatically convert text emoticons into graphical emojis.
 
 **Type:** `String`
 
@@ -17,11 +19,13 @@ This plugin adds a dialog to the editor lets users insert emojis into {{site.pro
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "emoticons",
-  toolbar: "emoticons"
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'emoticons',
+  toolbar: 'emoticons'
 });
 ```
+
+{% include codepen.html id="emoticons" %}
 
 ### Options
 
@@ -32,14 +36,14 @@ Internally, emoticons is defined by an object mapping emoticon names to addition
 ```js
 {
   robot: {
-    keywords: ["computer", "machine", "bot"],
-    char: "🤖",
-    category: "people"
+    keywords: ['computer', 'machine', 'bot'],
+    char: '🤖',
+    category: 'people'
   },
   dog: {
-    keywords: ["animal", "friend", "nature", "woof", "puppy", "pet", "faithful"],
-    char: "🐶",
-    category: "animals_and_nature"
+    keywords: ['animal', 'friend', 'nature', 'woof', 'puppy', 'pet', 'faithful'],
+    char: '🐶',
+    category: 'animals_and_nature'
   }
 }
 ```
@@ -54,13 +58,13 @@ This option provides a way to append some additional emojis to the default emoji
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "emoticons",
-  toolbar: "emoticons",
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'emoticons',
+  toolbar: 'emoticons',
   emoticons_append: {
     custom_mind_explode: {
-      keywords: ["brain", "mind", "explode", "blown"],
-      char: "🤯"
+      keywords: ['brain', 'mind', 'explode', 'blown'],
+      char: '🤯'
     }
   }
 });
@@ -77,9 +81,9 @@ This option provides the default location to load the emoji database from. The d
 ```js
 window.tinymce.emoticons_plugin_database = {
   robot: {
-    keywords: ["computer", "machine", "bot"],
-    char: "🤖",
-    category: "people"
+    keywords: ['computer', 'machine', 'bot'],
+    char: '🤖',
+    category: 'people'
   }
 }
 ```
@@ -88,9 +92,9 @@ window.tinymce.emoticons_plugin_database = {
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "emoticons",
-  toolbar: "emoticons",
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'emoticons',
+  toolbar: 'emoticons',
   emoticons_database_url: '/emojis.js'
 });
 ```

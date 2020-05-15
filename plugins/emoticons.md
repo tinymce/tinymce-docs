@@ -25,8 +25,8 @@ tinymce.init({
 
 ### Browser emoticon support
 
-The emoticon plugin inserts unicode character codes, such as `\ud83d\ude03` for smiley. How emoticons are rendered is dependent on the web browser and operating system of the user. As a result of this, some emoticons may rendered in black and white, or may not render.
-To ensure emoticons render consistently across browsers and operating systems, {{site.companyname}} recommends setting the default fonts to a emoticon-compatible web font using [`content_css`]({{site.baseurl}}/configure/content-appearance/#content_css).
+The emoticon plugin inserts unicode character codes, such as `\ud83d\ude03` for smiley. How emoticons are rendered is dependent on the web browser and operating system of the user. As a result of this, some emoticons may be rendered in black and white, or may not render.
+To ensure emoticons render consistently across browsers and operating systems, {{site.companyname}} recommends adding an emoji-compatible web font to the default font-family using [`content_css`]({{site.baseurl}}/configure/content-appearance/#content_css).
 
 ### Options
 

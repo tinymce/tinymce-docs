@@ -1,0 +1,20 @@
+## Available context menu items
+
+The following table shows all context menu items, including items provided by plugins.
+Any menu item can also be added to the context menu.
+To retrieve a list from the editor, run the following command from the browser console:
+
+```js
+tinymce.activeEditor.ui.registry.getAll().contextMenus
+```
+
+| identifier  | Core/Plugin  | Description  |
+| ----------- | ------------ | ------------ |
+| image | [Image]({{site.baseurl}}/plugins/image/) | Adds the _Image..._ item for opening the **Insert/Edit Image** dialog. |
+| imagetools | [Image Tools]({{site.baseurl}}/plugins/imagetools/) | Adds the _Edit image_ item for opening the **Edit Image** dialog. |
+| link | [Link]({{site.baseurl}}/plugins/link/) | Adds the _Link..._ item for opening the **Insert/Edit Link** dialog. |
+| lists | [Lists]({{site.baseurl}}/plugins/lists/) | Adds the _List properties..._ item for opening the **List Properties** dialog. |
+| spellchecker | [Spell Checker]({{site.baseurl}}/plugins/spellchecker/) | Adds a list suggested corrections, an _Ignore_ item, and an _Ignore all_ item. |
+| table | [Table]({{site.baseurl}}/plugins/table/) | Adds table related context menu items, including Advanced Tables context menu items (if the Advanced Tables plugin is enabled). |
+
+For a list of available menu items that can be added to the context menu, see: [Editor control identifiers - Menu controls]({{site.baseurl}}/advanced/editor-control-identifiers/#menucontrols).

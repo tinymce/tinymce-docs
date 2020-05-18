@@ -20,6 +20,8 @@ The context menu supports both individual menu items and dynamic context menu se
 
 #{% include configuration/contextmenu_never_use_native.md %}
 
+{% include configuration/available-context-menu-items.md %}
+
 ## Registering context menu sections
 
 The structure of context menu sections is a simple query system indexed by name. We strongly recommend using the name of the plugin as the context menu name for ease of configuration.

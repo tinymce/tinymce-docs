@@ -9,7 +9,7 @@ controls: toolbar button
 
 This plugin adds a dialog to the editor lets users insert emojis into {{site.productname}}'s editable area. The dialog can be invoked via a toolbar button - `emoticons` - or a dedicated menu item added as `Insert > Emoticons`.
 
-The emoticons plugin provides an autocompleter for adding emoticons without using the toolbar button or menu item. Adding a colon `:`, followed by at least two characters will open the emoticon picker showing matching emoticons.
+The emoticons plugin provides an autocompleter for adding emoji without using the toolbar button or menu item. Adding a colon `:`, followed by at least two characters will open the emoticon picker showing matching emoji.
 
 > **Note**: The emoticons plugin does not automatically convert text emoticons into graphical emojis.
 

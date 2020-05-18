@@ -9,9 +9,9 @@ The context menu option accepts three styles of item:
 
 If the same name is registered as both a context menu section and a menu item, the context menu section takes preference.
 
-The default configuration includes the context menu items for all plugins that provide a context menu; `link`, `image`, `imagetools`, `table`, and `spellchecker`.
+The default configuration includes the context menu sections for the following plugins: `link`, `image`, `imagetools`, `table`, and `spellchecker`.
 
-Alternatively, the editor's context menu can be disabled by setting this option to `false`.
+To disable the editor's context menu, set this option to `false`.
 
 **Type:** `String` or `false`
 
@@ -27,4 +27,6 @@ tinymce.init({
 });
 ```
 
+{%if page.title != "Context menu" %}
 For information on configuring the `contextmenu` option and creating custom context menu items [context menu examples]({{site.baseurl}}/ui-components/contextmenu/).
+{% endif %}

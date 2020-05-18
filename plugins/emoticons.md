@@ -7,11 +7,11 @@ keywords: smiley happy smiling emoji
 controls: toolbar button
 ---
 
-This plugin adds a dialog to the editor lets users insert emojis into {{site.productname}}'s editable area. The dialog can be invoked via a toolbar button - `emoticons` - or a dedicated menu item added as `Insert > Emoticons`.
+This plugin adds a dialog to the editor lets users insert emoji into {{site.productname}}'s editable area. The dialog can be invoked via a toolbar button - `emoticons` - or a dedicated menu item added as `Insert > Emoticons`.
 
 The emoticons plugin provides an autocompleter for adding emoji without using the toolbar button or menu item. Adding a colon `:`, followed by at least two characters will open the emoticon picker showing matching emoji.
 
-> **Note**: The emoticons plugin does not automatically convert text emoticons into graphical emojis.
+> **Note**: The emoticons plugin does not automatically convert text emoticons into graphical emoji.
 
 **Type:** `String`
 
@@ -29,7 +29,7 @@ tinymce.init({
 
 ### Options
 
-The default database of emojis can be overridden or extended through the options below.
+The default database of emoji can be overridden or extended through the options below.
 
 Internally, emoticons is defined by an object mapping emoticon names to additional details, whereby each entry represents a single emoji. The additional details should contain a unicode character representing the emoji, any keywords that can be used to search for the emoji and a category to place the emoji in. Options are expected to be provided in the same format.
 
@@ -50,7 +50,7 @@ Internally, emoticons is defined by an object mapping emoticon names to addition
 
 ### `emoticons_append`
 
-This option provides a way to append some additional emojis to the default emoji database. This should be an object in the above mentioned format.
+This option provides a way to append some additional emoji to the default emoji database. This should be an object in the above mentioned format.
 
 **Type:** `Object`
 

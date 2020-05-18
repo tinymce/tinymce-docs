@@ -13,4 +13,4 @@ Supported versions of {{site.productname}}:
 
 To view our Software License Agreements, visit: [https://about.tiny.cloud/legal/](https://about.tiny.cloud/legal/).
 
-Support for Partner Plugins is provided by Partner companies and is not the responsibility of {{site.companynameformal}}. For information on Partner Plugins, see: [https://go.tiny.cloud/partners/](https://go.tiny.cloud/partners/).
+Support for Partner Plugins is provided by Partner companies and is not the responsibility of {{site.companynameformal}}. For information on Partner Plugins, see: [https://www.tiny.cloud/partners/]({{site.url}}/partners/).

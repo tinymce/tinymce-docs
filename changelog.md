@@ -32,7 +32,7 @@ class: changelog
 * Fixed resize handlers displaying in the wrong location sometimes for remote images.
 * Fixed table picker breaking in Firefox on low zoom levels.
 * Fixed issue with loading or pasting contents with large base64 encoded images on Safari.
-* Fixed supplementary special characters being truncated when inserted into the editor. Patch contributed by mlitwin..
+* Fixed supplementary special characters being truncated when inserted into the editor. Patch contributed by mlitwin.
 * Fixed toolbar buttons not set to disabled when the editor is in readonly mode.
 * Fixed the editor selection incorrectly changing when removing caret format containers.
 * Fixed bug where title, width, and height would be set to empty string values when updating an image and removing those attributes using the image dialog.

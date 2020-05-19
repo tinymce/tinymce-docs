@@ -116,7 +116,12 @@ For information on:
 
 The {{site.productname}} 5.3 release includes an accompanying release of the **Spell Checker Pro** premium plugin.
 
-**Spell Checker Pro** 2.0.2 
+**Spell Checker Pro** 2.0.2 includes fixes for the following issues:
+
+- Performance issues in large documents with lots of tables.
+- Spellchecking not running while scrolling in inline mode.
+- Spellchecking performance issues when using the `autoresize` plugin.
+- Missing `spell-check` icons on Spell Checker Pro menu items.
 
 The {{site.productname}} 5.3 release includes the following accompanying changes affecting **Self-hosted Professional and Premium customers only**:
 

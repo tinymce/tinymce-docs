@@ -42,6 +42,7 @@ class: changelog
 * Fixed an issue where the editor would fail to load if local storage was disabled.
 * Fixed an issue where an uploaded image would reuse a cached image with a different mime type.
 * Fixed bug where toolbars and dialogs would not show if the body element was replaced (e.g. with Turbolinks). Patch contributed by spohlenz.
+* Fixed an issue where multiple formats would be removed when removing a single format at the end of lines or on empty lines.
 * Fixed zero-width spaces incorrectly included in the `wordcount` plugin character count.
 * Fixed a regression introduced in 5.2.0 whereby the desktop `toolbar_mode` setting would incorrectly override the mobile default setting.
 * Fixed an issue where deleting all content in a single cell table would delete the entire table.

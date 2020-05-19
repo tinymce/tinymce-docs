@@ -13,6 +13,7 @@ This option allows you to set the base direction of directionally neutral text (
 ```js
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
+  plugins: 'directionality',
   directionality : 'ltr'
 });
 ```

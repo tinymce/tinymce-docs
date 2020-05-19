@@ -20,7 +20,7 @@ The context menu supports both individual menu items and dynamic context menu se
 
 #{% include configuration/contextmenu_never_use_native.md %}
 
-{% include configuration/available-context-menu-items.md %}
+{% include configuration/available-context-menu-sections.md %}
 
 ## Registering context menu sections
 

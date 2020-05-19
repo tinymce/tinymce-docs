@@ -1,12 +1,14 @@
-## Available context menu items
+## Available context menu sections
 
-The following table shows all context menu items, including items provided by plugins.
+The following table shows all context menu sections, including sections provided by plugins.
 Any menu item can also be added to the context menu.
 To retrieve a list from the editor, run the following command from the browser console:
 
 ```js
 tinymce.activeEditor.ui.registry.getAll().contextMenus
 ```
+
+The identifier below will add a context menu _section_ containing one or more items. It is not possible to add individual items from the following context menu sections.
 
 | identifier  | Core/Plugin  | Description  |
 | ----------- | ------------ | ------------ |

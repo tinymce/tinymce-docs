@@ -10,7 +10,7 @@ class: changelog
 
 {% capture changelog %}
 
-## Version 5.3.0 May 20, 2020
+## Version 5.3.0 May 21, 2020
 * Added html and body height styles to the default oxide content CSS.
 * Added `uploadUri` and `blobInfo` to the data returned by `editor.uploadImages()`.
 * Added a new function to the `BlobCache` API to lookup a blob based on the base64 data and mime type.

@@ -13,6 +13,7 @@ tinymce.init({
   selector: 'textarea',
   plugins: [ 'code', 'lists' ]
   mobile: {
+    menubar: true,
     plugins: [ 'autosave', 'lists', 'autolink' ],
     toolbar: [ 'undo', 'bold', 'italic', 'styleselect' ]
   }

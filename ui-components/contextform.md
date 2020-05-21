@@ -33,19 +33,7 @@ If a registered context form has a `launch` setting, then it can be launched fro
 
 There is an `editor` event called `contexttoolbar-show` that can be fired to show a context form at the current selection. The event takes a parameter `toolbarKey` which specifies the name of the registered context form or context toolbar to show.
 
-### Context form priority
-
 {% include context/priority.md %}
-
-### Positioning context forms
-
-There are two options for positioning: `selection` or `line`.
-
-* A `selection` position will place the context form above or below the current selection, centred if possible.
-
-* A `line` position will place the context form to the right (or left in Right-to-Left languages) of the current selection.
-
-* A `node` position will place the context form relative to the bounds of a node (e.g. a table or image). It applies to a selected node that does not match the selection due to CSS properties (like float).
 
 ### Form
 

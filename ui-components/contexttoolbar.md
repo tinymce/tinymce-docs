@@ -23,21 +23,7 @@ A context toolbar is registered by calling the `addContextToolbar` API in the re
 
 There is an `editor` event called `contexttoolbar-show` that can be fired to show a context toolbar at the current selection. The event takes a parameter `toolbarKey` which specifies the name of the registered context form or context toolbar to show.
 
-### Context toolbar priority
-
 {% include context/priority.md %}
-
-### Positioning context toolbars
-
-There are three options for positioning are: `selection`, `line`, or `node`.
-
-* A `selection` position will place the context toolbars above or below the current selection, centred if possible.
-
-* A `line` position will place the context toolbars to the right (or left in Right-to-Left languages) of the current selection.
-
-* A `node` position will place the context toolbars relative to the bounds of a node (e.g. a table or image). It applies to a selected node that does not match the selection due to CSS properties (like float).
-
-
 
 ### Example configuration
 

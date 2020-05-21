@@ -12,14 +12,14 @@ There is a **POWERED BY TINY** attribution in the status bar that is enabled by 
 When including attribution, the following requirements must be met:
 
 * "**POWERED BY TINY**" to be stated or the [{{site.companyname}} logo]({{site.url}}/guidelines/#logo) placed in a readily visible location whenever the editor is loaded.
-* The word "**Tiny**" or the {{site.companyname}} logo should have a hyperlink to {{site.url}}.
+* The word "**Tiny**" or the {{site.companyname}} logo should have a hyperlink to [{{site.url}}]({{site.url}}).
 * The location of the product attribution is to be:
 
   * In the right-hand corner of the status bar of the {{site.productname}} editor; or
   * An alternate location adjacent to the {{site.productname}} editor that is no less prominent.
 
-The editor demo on the [{{site.companyname}} homepage]({{site.url}}) displays the status bar product attribution as in the screenshot below:
+For example, the following example shows the status bar product attribution in the bottom, right-hand corner:
 
-![Demo]({{site.baseurl}}/images/screenshot-tiny-editor.png)
+{% include codepen.html id="basic-example" %}
 
 Have questions about this? [Contact us]({{site.contactpage}}) for help.

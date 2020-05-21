@@ -112,7 +112,7 @@ tinymce.init({
 	  success(json.location);
 	};
 	formData = new FormData();
-	formData.append('file', blobInfo.blob(), fileName(blobInfo));
+	formData.append('file', blobInfo.blob(), blobInfo.filename());
 	xhr.send(formData);
   }
 });

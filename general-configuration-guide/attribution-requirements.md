@@ -20,6 +20,6 @@ When including attribution, the following requirements must be met:
 
 The following example shows the status bar product attribution in the bottom, right-hand corner:
 
-{% include codepen.html id="default" %}
+![Screenshot of homepage {{site.productname}} demo including product attribution in the bottom, right-hand corner]({{site.baseurl}}/images/tinymce5-homepage-demo.png)
 
 Have questions about this? [Contact us]({{site.contactpage}}) for help.

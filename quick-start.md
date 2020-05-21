@@ -59,7 +59,7 @@ Adding this content to a HTML file and opening it in a web browser will load a T
 
 To remove the notice:
 
-<img alt="warning icon" src="{{ site.baseurl }}/images/icons/warning.svg" style="vertical-align:middle;"/>**_This domain is not registered with {{site.cloudname}}..._**
+<img alt="warning icon" src="{{ site.baseurl }}/images/icons/warning.svg" style="vertical-align:middle;"/>**This domain is not registered with {{site.cloudname}}. Please see the quick start guide or create an account.**
 
 Replace `no-api-key` in the source script (`<script src=...`) with a {{site.cloudname}} API key, which is created when signing up to the [{{site.cloudname}}]({{site.accountsignup}}).
 

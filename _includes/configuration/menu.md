@@ -14,4 +14,6 @@ If you would like to group these menu items, please insert a `|` pipe character 
 
 {% include configuration/defaultmenuitems.md %}
 
+{{site.differs_for_mobile}}
+
 If all you need is to control which menus are available and/or in what order, see the [menubar parameter](#menubar).

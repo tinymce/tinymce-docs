@@ -10,6 +10,10 @@ class: changelog
 
 {% capture changelog %}
 
+## Version 5.3.1 May 27, 2020
+* Fixed the image upload error alert also incorrectly closing the image dialog.
+* Fixed editor content scrolling incorrectly on focus in Firefox by reverting default content CSS html and body heights added in 5.3.0.
+
 ## Version 5.3.0 May 21, 2020
 * Added html and body height styles to the default oxide content CSS.
 * Added `uploadUri` and `blobInfo` to the data returned by `editor.uploadImages()`.

@@ -122,6 +122,7 @@ The {{site.productname}} 5.3 release includes an accompanying release of the **S
 - Spellchecking not running while scrolling in inline mode.
 - Spellchecking performance issues when using the `autoresize` plugin.
 - Missing `spell-check` icons on Spell Checker Pro menu items.
+- Spellchecking incorrectly moving the editor selection into non-editable elements.
 
 The {{site.productname}} 5.3 release includes the following accompanying changes affecting **Self-hosted Professional and Premium customers only**:
 

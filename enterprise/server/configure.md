@@ -79,9 +79,9 @@ Example:
 
 ````
 ephox {
-	allowed-origins {
-		origins = [ "http://myserver", "http://myserver.example.com", "http://myserver:8080", "http://myotherserver", "http://myotherserver:9090", "https://mysecureserver" ]
-	}
+  allowed-origins {
+    origins = [ "http://myserver", "http://myserver.example.com", "http://myserver:8080", "http://myotherserver", "http://myotherserver:9090", "https://mysecureserver" ]
+  }
 }
 ````
 
@@ -101,11 +101,27 @@ The `*` wildcard character matches any value. Wildcards are supported in the fol
 
 ````
 ephox {
-	allowed-origins {
-		origins = [ "http://myserver:*", "*://myotherserver.example.com", "*://*.mydomain.example.com:*"]
-	}
+  allowed-origins {
+    origins = [ "http://myserver:*", "*://myotherserver.example.com", "*://*.mydomain.example.com:*"]
+  }
 }
 ````
+
+#### `allowed-origins.same-origin` (optional)
+
+The `allowed-origins` `same-origin` option can be used to block all cross-origin requests. This option is set to `false` by default.
+
+Setting the `same-origin` setting to `true` will block all HTTP `OPTIONS` requests and allow all other HTTP methods. When set to `true`, all `origins` specified in `allowed-origins` will be ignored.
+
+For example:
+
+```
+ephox {
+  allowed-origins {
+    same-origin: true
+  }
+}
+```
 
 #### Troubleshooting Origins
 
@@ -214,26 +230,26 @@ Save the snippet below as `logback.xml` after replacing `{$LOG_LOCATION}` with t
 <configuration>
 
   <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
-	<encoder>
-	  <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
-	</encoder>
+    <encoder>
+      <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+    </encoder>
   </appender>
 
   <appender name="FILE" class="ch.qos.logback.core.FileAppender">
-	<file>{$LOG_LOCATION}</file>
-	<encoder>
-	  <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
-	</encoder>
+    <file>{$LOG_LOCATION}</file>
+    <encoder>
+      <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+    </encoder>
   </appender>
 
   <!-- The name "com.ephox" refers to all {{site.productname}} server-side components. -->
   <logger name="com.ephox" level="INFO"/>
 
   <root level="INFO">
-	<appender-ref ref="FILE" />
-	<!-- If you want logging to go to the container as well uncomment
-	the following line -->
-	<!-- <appender-ref ref="STDOUT" /> -->
+    <appender-ref ref="FILE" />
+    <!-- If you want logging to go to the container as well uncomment
+    the following line -->
+    <!-- <appender-ref ref="STDOUT" /> -->
   </root>
 
 </configuration>

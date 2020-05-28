@@ -33,8 +33,6 @@ If a registered context form has a `launch` setting, then it can be launched fro
 
 There is an `editor` event called `contexttoolbar-show` that can be fired to show a context form at the current selection. The event takes a parameter `toolbarKey` which specifies the name of the registered context form or context toolbar to show.
 
-{% include context/priority.md %}
-
 ### Form
 
 This relates to the form itself. The form specifications are:
@@ -48,6 +46,8 @@ This relates to the form itself. The form specifications are:
 | `position` | This controls where the context toolbar will appear with regards to the current cursor. |
 | `scope` | This controls whether the predicate is a `node`-based predicate, or an `editor`-based predicate. See context toolbar proirity for more details. |
 | `commands` | This is a list of the items to show in the context form. They can be either `contextformbutton` or `contextformtogglebutton`. |
+
+{% include context/positioning.md %}
 
 ### Context form buttons
 
@@ -105,3 +105,5 @@ Both `contextformbutton` and `contextformtogglebutton` are passed `formApi` in t
 This example shows how the link plugin adds the standard link context form. The context form will show whenever any content is selected.
 
 {% include codepen.html id="context-form" height="400" tab="js" %}
+
+{% include context/priority.md %}

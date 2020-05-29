@@ -108,7 +108,7 @@ The {{site.productname}} 5.3 release includes accompanying changes affecting the
 - The Link Checker plugin
 - The Spell Checker Pro plugin
 
-The Java server-side components (`ephox-spelling.war`, `ephox-hyperlinking.war`, and `ephox-image-proxy.war`) have been updated to version 2.3.0.
+The Java server-side components (`ephox-spelling.war`, `ephox-hyperlinking.war`, and `ephox-image-proxy.war`) have been updated to **version 2.3.0**.
 
 This version requires Java 8 or higher. For information on the removal of Java 7 support, see: [Removal of Java 7 support](#removalofjava7support).
 
@@ -140,6 +140,12 @@ For information on deploying the server-side components using Docker, see: [Cont
 The new `same-origin` option allows all cross-origin requests to be blocked by the server while allowing all same-origin requests.
 
 For information on configuring the same-origin option, see: [Configure server-side components - allowed-origins.same-origin (optional)]({{site.baseurl}}/enterprise/server/configure/#allowed-originssame-originoptional).
+
+### New alternative http timeout settings
+
+Three new http timeout settings have been added to the server-side components. These new settings provide greater control over the timeout length of requests that the existing `request-timeout-seconds` configuration setting.
+
+For information on configuring the alternative http timeout settings, see: [Configure server-side components - Alternative http timeout settings]({{site.baseurl}}/enterprise/server/configure/#alternativehttptimeoutsettings).
 
 ## Minor changes for TinyMCE 5.3
 

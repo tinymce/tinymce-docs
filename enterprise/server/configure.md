@@ -109,6 +109,8 @@ ephox {
 
 #### `allowed-origins.same-origin` (optional)
 
+{{site.requires_jsscwar_230v}}
+
 The `allowed-origins` `same-origin` option can be used to block all cross-origin requests. This option is set to `false` by default.
 
 Setting the `same-origin` setting to `true` will block all HTTP `OPTIONS` requests and allow all other HTTP methods. When set to `true`, all `origins` specified in `allowed-origins` will be ignored.

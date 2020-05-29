@@ -9,7 +9,7 @@ There are situations where custom context toolbars or custom context forms may c
   - Other custom context toolbars or custom context forms.
 
 {% if site.productmajorversion < 6 %}
-How these conflicts are resolves depends on the {{site.productname}} version.
+How these conflicts are resolved depends on the {{site.productname}} version.
 
 - For {{site.productname}} 5.3 or newer, see: [Determining the display priority of context toolbars and context forms]().
 - For {{site.productname}} 5.0, 5.1, or 5.2; see: [Determining the display priority of context toolbars and context forms (Legacy behavior)]().
@@ -19,8 +19,8 @@ How these conflicts are resolves depends on the {{site.productname}} version.
 
 There are three settings that determine the priority of context toolbars and context forms: `scope`, `predicate`, and `position`.
 
-- `scope` - Sets the context toolbar or form as visible of certain content (`node`) or a general (or global) toolbar or form (`editor`).
-- `predicate` - Sets a function that tests in the current context position against one or more conditions, returning a boolean value.
+- `scope` - Sets the context toolbar or form as: specific to certain types of content (`node`) or a general (global) toolbar or form (`editor`).
+- `predicate` - A function that tests in the current context position against one or more conditions, returning a boolean value.
 - `position` - Sets where the context toolbar or form is rendered, relative to the current section (`selection`, `node`, or `line`).
 
 Generally:
@@ -29,8 +29,8 @@ Generally:
 - Context _forms_ with `scope: 'node'` are prioritized over `scope: 'editor'`.
 - Only one context _form_ can be shown for a selection or cursor position, they cannot be concatenated to another context _form_ or a context _toolbar_.
 - Context _toolbars_ with `position: 'selection'` are prioritized over `position: 'node'`, and `position: 'line'` is given the lowest priority.
-- When the editor concatenate context _toolbars_ where there is more than one context _toolbar_ to display with:
-  
+- The editor concatenates context _toolbars_ when there is more than one context _toolbar_ to display with:
+
     - A matching predicate,
     - The same `scope` and `position` values.
 
@@ -82,7 +82,8 @@ The editor will determine which context toolbars or context form will be shown u
 
     If there any matching **context toolbars**, the editor will prioritize the context toolbars based on the `position` value.
 
-    - All context toolbars with `position: 'selection'` or `position: 'node'` will be concatenated, the concatenated toolbar will be displayed, and the process will end.
+    - If there are context toolbars with `position: 'selection'`, they will be concatenated, the concatenated toolbar will be displayed, and the process will end.
+    - If there are context toolbars with `position: 'node'`, they will be concatenated, the concatenated toolbar will be displayed, and the process will end.
     - Otherwise, all context toolbars with `position: line` will be concatenated, the concatenated toolbar will be displayed, and the process will end.
 
 6. Repeat step 4 and 5 for each successive parent node in the DOM for context toolbars and context forms with `scope: node` until either:

@@ -107,6 +107,24 @@ ephox {
 }
 ````
 
+#### Regular Expressions support
+
+{{site.requires_jsscwar_230v}}
+
+Regular expressions can be used alongside [wildcards](#wildcardsupport) for specifying `allowed-origins.origins`. To use a regular expression, start and end the expression with the forward-slash `'/'` character.
+
+For example:
+
+```
+ephox {
+  allowed-origins {
+    origins = [ "https?://myserver", "/(myserver|myotherserver\.)?example\.com/", "http://myserver:8080" ]
+  }
+}
+```
+
+For a list of valid constructs, see: [Java 8: `java.util.regex` - Summary of regular-expression constructs](https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html#sum).
+
 #### `allowed-origins.same-origin` (optional)
 
 {{site.requires_jsscwar_230v}}

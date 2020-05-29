@@ -135,6 +135,10 @@ From {{site.productname}} 5.3, premium self-hosted bundles include the files req
 
 For information on deploying the server-side components using Docker, see: [Containerized service deployments]({{site.baseurl}}/enterprise/server/dockerservices/).
 
+### Regular Expression support for allowed-origins
+
+Version 2.3.0 of the {{site.productname}} server-side components adds support for using regular expressions to specify `allowed-origins`. For information on using regular expressions for specifying allowed origins, see: [Configure server-side components - Regular Expressions support]({{site.baseurl}}/enterprise/server/configure/#regularexpressionssupport).
+
 ### New configuration option for simplifying same-origin deployments
 
 The new `same-origin` option allows all cross-origin requests to be blocked by the server while allowing all same-origin requests.

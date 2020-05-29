@@ -49,7 +49,7 @@ For information on toggle menu items, see: [Custom menu items - Toggle menu item
 
 ## Accompanying Premium Plugin changes
 
-The following premium plugins updates were released alongside {{site.productname}} 5.3.
+The following premium plugin updates were released alongside {{site.productname}} 5.3.
 
 ### Comments 2.1.4
 

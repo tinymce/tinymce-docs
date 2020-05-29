@@ -19,7 +19,7 @@ How these conflicts are resolved depends on the {{site.productname}} version.
 
 There are three settings that determine the priority of context toolbars and context forms: `scope`, `predicate`, and `position`.
 
-- `scope` - Sets the context toolbar or form as: specific to certain types of content (`node`) or a general (global) toolbar or form (`editor`).
+- `scope` - Sets the context toolbar or form as either: specific to certain types of content (`node`), or a general (global) toolbar or form (`editor`).
 - `predicate` - A function that tests in the current context position against one or more conditions, returning a boolean value.
 - `position` - Sets where the context toolbar or form is rendered, relative to the current section (`selection`, `node`, or `line`).
 

@@ -63,15 +63,15 @@ For a list of valid menu items, see: [Editor control identifiers - Menu controls
 
 ### Enhanced Media Embed
 
-
+The {{site.productname}} 5.3 release includes accompanying changes affecting the {{site.productname}} **self-hosted** **Enhanced Media Embed** service. {{site.cloudname}} users are unaffected. For details, see: [Accompanying premium self-hosted server-side component changes](#accompanyingpremiumself-hostedserver-sidecomponentchanges).
 
 ### Image Tools Proxy
 
-
+The {{site.productname}} 5.3 release includes accompanying changes affecting the {{site.productname}} **self-hosted** **Image Tools Proxy** service. {{site.cloudname}} users are unaffected. For details, see: [Accompanying premium self-hosted server-side component changes](#accompanyingpremiumself-hostedserver-sidecomponentchanges).
 
 ### Link Checker
 
-
+The {{site.productname}} 5.3 release includes accompanying changes affecting the {{site.productname}} **self-hosted** **Link Checker** service. {{site.cloudname}} users are unaffected. For details, see: [Accompanying premium self-hosted server-side component changes](#accompanyingpremiumself-hostedserver-sidecomponentchanges).
 
 ### PowerPaste 5.3.0
 
@@ -96,6 +96,8 @@ The {{site.productname}} 5.3 release includes an accompanying release of the **S
 - Spellchecking performance issues when using the `autoresize` plugin.
 - Missing `spell-check` icons on Spell Checker Pro menu items.
 - Spellchecking incorrectly moving the editor selection into non-editable elements.
+
+The {{site.productname}} **self-hosted** **Spell Checker Pro** service has also been updated. {{site.cloudname}} users are unaffected. For details, see: [Accompanying premium self-hosted server-side component changes](#accompanyingpremiumself-hostedserver-sidecomponentchanges).
 
 For information on Spell Checker Pro plugin, see: [Spell Checker Pro plugin]({{site.baseurl}}/plugins/tinymcespellchecker/).
 
@@ -140,6 +142,12 @@ For information on deploying the server-side components using Docker, see: [Cont
 The new `same-origin` option allows all cross-origin requests to be blocked by the server while allowing all same-origin requests.
 
 For information on configuring the same-origin option, see: [Configure server-side components - allowed-origins.same-origin (optional)]({{site.baseurl}}/enterprise/server/configure/#allowed-originssame-originoptional).
+
+### New `fallback-to-get` setting for the Link Checker service
+
+The new `fallback-to-get` configuration setting allows the Link checker can correctly identify working URLs that return non-standard `HEAD` replies.
+
+For information on configuring the Link Checker service, see: [Configure server-side components - `link-checking`]({{site.baseurl}}/enterprise/server/configure/#link-checkingoptional)
 
 ## Minor changes for TinyMCE 5.3
 

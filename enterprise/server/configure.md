@@ -14,10 +14,7 @@ This configuration file will require you to enter *at least* the following  info
 
 - `allowed-origins` - the domains allowed to communicate with the server-side editor features. This is required by all server-side components.
 
-Some server-side components require additional configuration which can be found in their individual documentation:
-
-- [Enhanced Media Embed]({{ site.baseurl }}/enterprise/embed-media/mediaembed-server-config/)
-- [Link Checker]({{ site.baseurl }}/enterprise/check-links/#linkcheckersdkquicksetup)
+The Enhanced Media Embed server-side component require additional configuration, which can be found on the [Enhanced Media Embed page]({{ site.baseurl }}/enterprise/embed-media/mediaembed-server-config/).
 
 ### `allowed-origins` (required)
 
@@ -213,6 +210,66 @@ ephox {
     }
 }
 ````
+
+### `link-checking` (optional)
+
+The Link checker has three configurable settings:
+
+- `enabled`
+- `fallback-to-get`
+- `link-checking.cache`
+
+#### `enabled` (optional)
+
+Used to enable (`true`) or disable (`false`) the Link-checking service. This setting is `true` by default.
+
+For example:
+
+```
+ephox {
+  link-checking {
+    enabled = true
+  }
+}
+```
+
+#### `fallback-to-get` (optional)
+
+The Link-checker normally relies on the `HEAD` response. If this setting is `true`, the link-checker will fall-back to `GET` responses. When `true`, the Link checker can correctly identify working URLs that return non-standard `HEAD` replies. This setting can lead to performance issues when enabled (`true`) and is set to `false` by default.
+
+For example:
+
+```
+ephox {
+  link-checking {
+    fallback-to-get = true
+  }
+}
+```
+
+#### `cache` (optional)
+
+This element configures the Link Checker service's built-in cache. When a hyperlink is checked and confirmed valid, the result is cached to save unnecessary network traffic in the future.
+
+Default settings are automatically configured, meaning these settings are optional.
+
+- `capacity` - sets the capacity of the cache. The default setting is 500.
+- `timeToLiveInSeconds` - sets the time-to-live of elements of the cache, measured in seconds. This is the maximum total amount of time that an element is allowed to remain in the cache. The default setting is 86400 seconds, which is one day.
+- `timeToIdleInSeconds` - sets the time-to-idle of elements of the cache, measured in seconds. This is the maximum amount of time that an element will remain in the cache if it is not being accessed. The default setting is 3600 seconds, which is one hour.
+
+Example:
+
+```
+ephox {
+  link-checking {
+    cache {
+      capacity = 500
+      timeToLiveInSeconds = 86400
+      timeToIdleInSeconds = 3600
+    }
+  }
+}
+```
 
 ## Logging
 

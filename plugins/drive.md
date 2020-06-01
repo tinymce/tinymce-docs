@@ -6,7 +6,7 @@ description: Cloud-based file and image management for TinyMCE.
 keywords: tinydrive storage media tiny drive
 ---
 
-{{site.premiumplugin}}
+> **Note**: This plugin is only available for [{{site.cloudname}} users]({{site.pricingpage}}).
 
 The [{{site.cloudfilemanager}}]({{site.baseurl}}/tinydrive/introduction/) plugin adds the functionality to upload and manage files and images to the cloud. This plugin is only available in [{{site.cloudname}}]({{site.accountsignup}}) and requires you to register for an API key.
 

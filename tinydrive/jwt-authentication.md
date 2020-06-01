@@ -8,7 +8,7 @@ keywords: jwt authentication
 
 ## Introduction
 
-{{site.cloudfilemanager}} requires you to setup JWT authentication. This is to ensure that the security of your files remains in your control.
+{{site.cloudfilemanager}} requires you to setup JSON Web Token (JWT) authentication. This is to ensure that the security of your files remains in your control.
 
 JWT is a standard authorization solution for web services and is documented in more detail at the [https://jwt.io/](https://jwt.io/) website. The guide aims to show how to setup JWT authentication for {{site.cloudfilemanager}}.
 

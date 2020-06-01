@@ -222,6 +222,8 @@ This setting allows you to run custom filtering on the content from the clipboar
 - `mode` - A string indicating whether PowerPaste is in `clean`, `merge`, or `auto` mode.
 - `source` - A string indicating which kind of filtering PowerPaste will run based on the source of the content. This will return `html`, `msoffice`, `googledocs`, `image`, `imagedrop`, `plaintext`, `text`, or `invalid`.
 
+> **Note**: The `imagedrop` `source` was added in {{site.productname}} 5.3.
+
 > **Note**: The mode 'auto' is used when the content source does not have formatting to "clean" or "merge". For example, when pasting an image with no text or markup content.
 
 Example {{site.productname}} configuration:
@@ -254,6 +256,8 @@ This setting allows you to run custom filtering on the pasted content after it i
 - `node` - A DOM node containing the DOM structure of the filtered paste content.
 - `mode` - A string indicating whether PowerPaste is in `clean`, `merge`, or `auto` mode.
 - `source` - A string indicating which kind of filtering PowerPaste will run based on the source of the content. This will return `html`, `msoffice`, `googledocs`, `image`, `imagedrop`, `plaintext`, `text`, or `invalid`.
+
+> **Note**: The `imagedrop` `source` was added in {{site.productname}} 5.3.
 
 > **Note**: The mode 'auto' is used when the content source does not have formatting to "clean" or "merge". For example, when pasting an image with no text or markup content.
 

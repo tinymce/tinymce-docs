@@ -49,21 +49,21 @@ The editor will determine which context toolbars or context form will be shown u
     - `scope: 'node'`
     - A predicate matching the current selection or cursor position.
 
-    If there any matching **context forms**, the first one found will be displayed in the editor and the process will end.
+    If there are any matching **context forms**, the first one found will be displayed in the editor and the process will end.
 
 2. Find all **context forms** with both:
 
     - `scope: 'editor'`
     - A predicate matching the current selection or cursor position.
 
-    If there any matching **context forms**, the first one found will be displayed in the editor and the process will end.
+    If there are any matching **context forms**, the first one found will be displayed in the editor and the process will end.
 
 3. Find all **context toolbars** with both:
 
     - Any `scope`
     - A predicate matching the current selection or cursor position.
 
-    If there any matching **context toolbars**, the editor will prioritize the context toolbars based on the `position` value.
+    If there are any matching **context toolbars**, the editor will prioritize the context toolbars based on the `position` value.
 
     - All context toolbars with `position: 'selection'` or `position: 'node'` will be concatenated, the concatenated toolbar will be displayed, and the process will end.
     - Otherwise, all context toolbars with `position: line` will be concatenated, the concatenated toolbar will be displayed, and the process will end.
@@ -73,14 +73,14 @@ The editor will determine which context toolbars or context form will be shown u
     - Any `scope`
     - A predicate matching the **parent node** of the current node, selection, or cursor position.
 
-    If there any **context forms** found, the first one found will be displayed in the editor and the process will end.
+    If there are any **context forms** found, the first one found will be displayed in the editor and the process will end.
 
 5. Find all **context toolbars** with both:
 
     - Any `scope`
     - A predicate matching the **parent node** of the current node, selection, or cursor position.
 
-    If there any matching **context toolbars**, the editor will prioritize the context toolbars based on the `position` value.
+    If there are any matching **context toolbars**, the editor will prioritize the context toolbars based on the `position` value.
 
     - If there are context toolbars with `position: 'selection'`, they will be concatenated, the concatenated toolbar will be displayed, and the process will end.
     - If there are context toolbars with `position: 'node'`, they will be concatenated, the concatenated toolbar will be displayed, and the process will end.

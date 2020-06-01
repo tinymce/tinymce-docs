@@ -105,12 +105,12 @@ For information on Spell Checker Pro plugin, see: [Spell Checker Pro plugin]({{s
 
 The {{site.productname}} 5.3 release includes accompanying changes affecting the {{site.productname}} **self-hosted** services for the following plugins:
 
-- The Enhanced Media Embed plugin
-- The Image Tools plugin
-- The Link Checker plugin
-- The Spell Checker Pro plugin
+- The Enhanced Media Embed plugin (`mediaembed`)
+- The Image Tools plugin (`imagetools`)
+- The Link Checker plugin (`linkchecker`)
+- The Spell Checker Pro plugin (`tinymcespellchecker`)
 
-The Java server-side components (`ephox-spelling.war`, `ephox-hyperlinking.war`, and `ephox-image-proxy.war`) have been updated to version 2.3.0.
+The Java server-side components (`ephox-spelling.war`, `ephox-hyperlinking.war`, and `ephox-image-proxy.war`) have been updated to **version 2.3.0**.
 
 This version requires Java 8 or higher. For information on the removal of Java 7 support, see: [Removal of Java 7 support](#removalofjava7support).
 
@@ -126,10 +126,10 @@ For information on:
 
 Java 7 support has been removed with this release. The {{site.productname}} Java server-side components now require a minimum of Java 8. From the {{site.productname}} 5.3 release, the `.war` files provided in the self-hosted bundles will not be compatible with Java 7. This change resolves security issues present in the older versions of these services. The following plugins are affected by this change:
 
-- SpellChecker Pro (`ephox-spelling.war` has been updated to version 2.3.0)
-- Image Tools (`ephox-image-proxy.war` has been updated to version 2.3.0)
-- Enhanced Media Embed (`ephox-hyperlinking.war` has been updated to version 2.3.0)
-- Link Checker (`ephox-hyperlinking.war` has been updated to version 2.3.0)
+- SpellChecker Pro (`tinymcespellchecker`) - `ephox-spelling.war` has been updated to version `2.3.0`.
+- Image Tools (`imagetools`) - `ephox-image-proxy.war` has been updated to version `2.3.0`.
+- Enhanced Media Embed (`mediaembed`) - `ephox-hyperlinking.war` has been updated to version `2.3.0`.
+- Link Checker (`linkchecker`) - `ephox-hyperlinking.war` has been updated to version `2.3.0`.
 
 ### Pre-configured Dockerfiles for containerizing the server-side components
 
@@ -137,11 +137,21 @@ From {{site.productname}} 5.3, premium self-hosted bundles include the files req
 
 For information on deploying the server-side components using Docker, see: [Containerized service deployments]({{site.baseurl}}/enterprise/server/dockerservices/).
 
+### Regular Expression support for allowed-origins
+
+Version 2.3.0 of the {{site.productname}} server-side components adds support for using regular expressions to specify `allowed-origins`. For information on using regular expressions for specifying allowed origins, see: [Configure server-side components - Regular Expressions support]({{site.baseurl}}/enterprise/server/configure/#regularexpressionssupport).
+
 ### New configuration option for simplifying same-origin deployments
 
 The new `same-origin` option allows all cross-origin requests to be blocked by the server while allowing all same-origin requests.
 
 For information on configuring the same-origin option, see: [Configure server-side components - allowed-origins.same-origin (optional)]({{site.baseurl}}/enterprise/server/configure/#allowed-originssame-originoptional).
+
+### New alternative http timeout settings
+
+Three new http timeout settings have been added to the server-side components. These new settings provide greater control over the timeout length of requests that the existing `request-timeout-seconds` configuration setting.
+
+For information on configuring the alternative http timeout settings, see: [Configure server-side components - Alternative http timeout settings]({{site.baseurl}}/enterprise/server/configure/#alternativehttptimeoutsettings).
 
 ### New `fallback-to-get` setting for the Link Checker service
 

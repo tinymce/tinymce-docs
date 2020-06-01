@@ -104,9 +104,29 @@ ephox {
 }
 ````
 
+#### Regular Expressions support
+
+{{site.requires_jsscwar_230v}}
+
+Regular expressions can be used alongside [wildcards](#wildcardsupport) for specifying `allowed-origins.origins`. To use a regular expression, start and end the expression with the forward-slash `'/'` character.
+
+For example:
+
+```
+ephox {
+  allowed-origins {
+    origins = [ "https?://myserver", "/(myserver|myotherserver\.)?example\.com/", "http://myserver:8080" ]
+  }
+}
+```
+
+For a list of valid constructs, see: [Java 8: `java.util.regex` - Summary of regular-expression constructs](https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html#sum).
+
 #### `allowed-origins.same-origin` (optional)
 
 {{site.requires_jsscwar_230v}}
+
+Enabling `same-origin` removes the need to specify the domain origin accessing the service if the service is deployed from the same server.
 
 The `allowed-origins` `same-origin` option can be used to block all cross-origin requests. This option is set to `false` by default.
 
@@ -193,6 +213,30 @@ ephox {
     }
 }
 ````
+
+#### Alternative http timeout settings
+
+{{site.requires_jsscwar_230v}}
+
+When greater control over timeout settings is needed, the following three settings can be used instead of the `request-timeout-seconds` setting:
+
+- `connection-request-timeout-seconds`: The amount of time to wait for a connection from the connection pool.
+- `connect-timeout-seconds`: The amount of time to wait for a connection to be established.
+- `socket-timeout-seconds`: The amount of time to wait in between packets after a connection is established.
+
+If one of these settings are required, remove `request-timeout-seconds` and specify values for all three of these settings.
+
+For example:
+
+```
+ephox {
+    http {
+        connection-request-timeout-seconds = 10
+        connect-timeout-seconds = 5
+        socket-timeout-seconds = 4
+    }
+}
+```
 
 ### `image-proxy` (optional)
 

@@ -215,8 +215,8 @@ For example:
 ephox {
     http {
         connection-request-timeout-seconds = 10
-        connect-timeout-seconds = 10
-        socket-timeout-seconds = 10
+        connect-timeout-seconds = 5
+        socket-timeout-seconds = 4
     }
 }
 ```

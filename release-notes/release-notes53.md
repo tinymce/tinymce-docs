@@ -59,7 +59,7 @@ For information on enabling the Find and Replace dialog, see: [the Search and Re
 
 ## Accompanying Premium Plugin changes
 
-The following premium plugins updates were released alongside {{site.productname}} 5.3.
+The following premium plugin updates were released alongside {{site.productname}} 5.3.
 
 ### Comments 2.1.4
 
@@ -149,13 +149,41 @@ For information on:
 
 {{site.productname}} 5.3 introduces the following minor changes:
 
-- 
+* Added `uploadUri` and `blobInfo` to the data returned by `editor.uploadImages()`.
+* Added a new function to the `BlobCache` API to lookup a blob based on the base64 data and mime type.
+* Added `icon` as an optional config option to the toggle menu item API.
+* Changed the `link`, `image`, and `paste` plugins to use Promises to reduce the bundle size.
+* Changed the default icons to be lazy loaded during initialization.
+* Changed the parsing of content so base64 encoded urls are converted to blob urls.
+* Changed context toolbars so they concatenate when more than one is suitable for the current selection.
+* Changed inline style element formats (strong, b, em, i, u, strike) to convert to a span on format removal if a `style` or `class` attribute is present.
 
 ## General bug fixes
 
 {{site.productname}} 5.3 provides fixes for the following bugs:
 
-- 
+* Fixed the image upload error alert also incorrectly closing the image dialog.
+* Fixed the `selection.setContent()` API not running parser filters.
+* Fixed formats incorrectly applied or removed when table cells were selected.
+* Fixed the `quickimage` button not restricting the file types to images.
+* Fixed search and replace ignoring text in nested contenteditable elements.
+* Fixed resize handlers displaying in the wrong location sometimes for remote images.
+* Fixed table picker breaking in Firefox on low zoom levels.
+* Fixed issue with loading or pasting contents with large base64 encoded images on Safari.
+* Fixed supplementary special characters being truncated when inserted into the editor. Patch contributed by mlitwin.
+* Fixed toolbar buttons not set to disabled when the editor is in readonly mode.
+* Fixed the editor selection incorrectly changing when removing caret format containers.
+* Fixed bug where title, width, and height would be set to empty string values when updating an image and removing those attributes using the image dialog.
+* Fixed `ObjectResized` event firing when an object wasn't resized.
+* Fixed `ObjectResized` and `ObjectResizeStart` events incorrectly fired when adding or removing table rows and columns.
+* Fixed the placeholder not hiding when pasting content into the editor.
+* Fixed an issue where the editor would fail to load if local storage was disabled.
+* Fixed an issue where an uploaded image would reuse a cached image with a different mime type.
+* Fixed bug where toolbars and dialogs would not show if the body element was replaced (e.g. with Turbolinks). Patch contributed by spohlenz.
+* Fixed an issue where multiple formats would be removed when removing a single format at the end of lines or on empty lines.
+* Fixed zero-width spaces incorrectly included in the `wordcount` plugin character count.
+* Fixed a regression introduced in 5.2.0 whereby the desktop `toolbar_mode` setting would incorrectly override the mobile default setting.
+* Fixed an issue where deleting all content in a single cell table would delete the entire table.
 
 ## Deprecated features
 

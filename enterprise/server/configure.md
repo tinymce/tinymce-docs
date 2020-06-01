@@ -239,7 +239,7 @@ ephox {
 
 {{site.requires_jsscwar_230v}}
 
-The Link-checker normally relies on the `HEAD` response. If this setting is `true`, the link-checker will fall-back to `GET` responses. When `true`, the Link checker can correctly identify working URLs that return non-standard `HEAD` replies. This setting can lead to performance issues when enabled (`true`) and is set to `false` by default.
+The Link-checker normally relies on the `HEAD` response. If `fallback-to-get` is `true`, the link-checker may issue a `GET` request in addition to the `HEAD` request to verify a link. When `true`, the Link checker can correctly identify working URLs that return non-standard `HEAD` replies. Enabling the `fallback-to-get` setting can lead to server performance issues and is set to `false` by default.
 
 For example:
 

@@ -207,7 +207,7 @@ When greater control over timeout settings is needed, the following three settin
 - `connect-timeout-seconds`: The amount of time to wait for a connection to be established.
 - `socket-timeout-seconds`: The amount of time to wait in between packets after a connection is established.
 
-If one or more of these three timeout settings are not configured, the services will the timeout length specified by `request-timeout-seconds`.
+If one of these settings are required, remove `request-timeout-seconds` and specify values for all three of these settings.
 
 For example:
 

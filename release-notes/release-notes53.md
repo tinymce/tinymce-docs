@@ -103,10 +103,10 @@ For information on Spell Checker Pro plugin, see: [Spell Checker Pro plugin]({{s
 
 The {{site.productname}} 5.3 release includes accompanying changes affecting the {{site.productname}} **self-hosted** services for the following plugins:
 
-- The Enhanced Media Embed plugin
-- The Image Tools plugin
-- The Link Checker plugin
-- The Spell Checker Pro plugin
+- The Enhanced Media Embed plugin (`mediaembed`)
+- The Image Tools plugin (`imagetools`)
+- The Link Checker plugin (`linkchecker`)
+- The Spell Checker Pro plugin (`tinymcespellchecker`)
 
 The Java server-side components (`ephox-spelling.war`, `ephox-hyperlinking.war`, and `ephox-image-proxy.war`) have been updated to **version 2.3.0**.
 
@@ -124,10 +124,10 @@ For information on:
 
 Java 7 support has been removed with this release. The {{site.productname}} Java server-side components now require a minimum of Java 8. From the {{site.productname}} 5.3 release, the `.war` files provided in the self-hosted bundles will not be compatible with Java 7. This change resolves security issues present in the older versions of these services. The following plugins are affected by this change:
 
-- SpellChecker Pro (`ephox-spelling.war` has been updated to version 2.3.0)
-- Image Tools (`ephox-image-proxy.war` has been updated to version 2.3.0)
-- Enhanced Media Embed (`ephox-hyperlinking.war` has been updated to version 2.3.0)
-- Link Checker (`ephox-hyperlinking.war` has been updated to version 2.3.0)
+- SpellChecker Pro (`tinymcespellchecker`) - `ephox-spelling.war` has been updated to version `2.3.0`.
+- Image Tools (`imagetools`) - `ephox-image-proxy.war` has been updated to version `2.3.0`.
+- Enhanced Media Embed (`mediaembed`) - `ephox-hyperlinking.war` has been updated to version `2.3.0`.
+- Link Checker (`linkchecker`) - `ephox-hyperlinking.war` has been updated to version `2.3.0`.
 
 ### Pre-configured Dockerfiles for containerizing the server-side components
 

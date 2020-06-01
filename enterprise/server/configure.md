@@ -215,6 +215,30 @@ ephox {
 }
 ````
 
+#### Alternative http timeout settings
+
+{{site.requires_jsscwar_230v}}
+
+When greater control over timeout settings is needed, the following three settings can be used instead of the `request-timeout-seconds` setting:
+
+- `connection-request-timeout-seconds`: The amount of time to wait for a connection from the connection pool.
+- `connect-timeout-seconds`: The amount of time to wait for a connection to be established.
+- `socket-timeout-seconds`: The amount of time to wait in between packets after a connection is established.
+
+If one of these settings are required, remove `request-timeout-seconds` and specify values for all three of these settings.
+
+For example:
+
+```
+ephox {
+    http {
+        connection-request-timeout-seconds = 10
+        connect-timeout-seconds = 5
+        socket-timeout-seconds = 4
+    }
+}
+```
+
 ### `image-proxy` (optional)
 
 The [image proxy service]({{ site.baseurl }}/plugins/imagetools/) has some optional configuration to set a maximum size for images proxied. Images beyond this size it will not be proxied. Please note that the `http.request-timeout-seconds` above also applies to requests made by the image proxy service.

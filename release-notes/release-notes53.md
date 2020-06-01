@@ -73,42 +73,15 @@ For a list of valid menu items, see: [Editor control identifiers - Menu controls
 
 ### Enhanced Media Embed
 
-The {{site.productname}} 5.3 release includes the following accompanying changes affecting **Self-hosted Essential, Professional, and Premium customers only**:
-
-- The Java server-side component (`ephox-hyperlinking.war`) has been updated to version 2.3.0. This version requires Java 8 or higher. For information on the deprecation of Java 7 support, see: [Deprecated features](#deprecatedfeatures).
-- From {{site.productname}} 5.3, premium self-hosted bundles include the files required to build and deploy the server-side components as Docker containers. For information on Docker deployments of the server-side components, see: [Containerized service deployments]({{site.baseurl}}/enterprise/server/dockerservices/).
-
-For information on:
-
-- The Enhanced Media Embed plugin, see: [Enhanced Media Embed plugin]({{site.baseurl}}/plugins/mediaembed/).
-- Deploying the server-side component, see: [Server-side component installation]({{site.baseurl}}/enterprise/server/).
-- Docker deployments of the server-side components, see: [Containerized service deployments]({{site.baseurl}}/enterprise/server/dockerservices/).
+The {{site.productname}} 5.3 release includes accompanying changes affecting the {{site.productname}} **self-hosted** **Enhanced Media Embed** service. {{site.cloudname}} users are unaffected. For details, see: [Accompanying premium self-hosted server-side component changes](#accompanyingpremiumself-hostedserver-sidecomponentchanges).
 
 ### Image Tools Proxy
 
-The {{site.productname}} 5.3 release includes the following accompanying changes affecting **Self-hosted Essential, Professional, and Premium customers only**:
-
-- The Java server-side component (`ephox-image-proxy.war`) has been updated to version 2.3.0. This version requires Java 8 or higher. For information on the deprecation of Java 7 support, see: [Deprecated features](#deprecatedfeatures).
-- From {{site.productname}} 5.3, premium self-hosted bundles include the files required to build and deploy the server-side components as Docker containers. For information on Docker deployments of the server-side components, see: [Containerized service deployments]({{site.baseurl}}/enterprise/server/dockerservices/).
-
-For information on:
-
-- The Image Tools plugin, see: [Image Tools plugin]({{site.baseurl}}/plugins/imagetools/).
-- Deploying the server-side component, see: [Server-side component installation]({{site.baseurl}}/enterprise/server/).
-- Docker deployments of the server-side components, see: [Containerized service deployments]({{site.baseurl}}/enterprise/server/dockerservices/).
+The {{site.productname}} 5.3 release includes accompanying changes affecting the {{site.productname}} **self-hosted** **Image Tools Proxy** service. {{site.cloudname}} users are unaffected. For details, see: [Accompanying premium self-hosted server-side component changes](#accompanyingpremiumself-hostedserver-sidecomponentchanges).
 
 ### Link Checker
 
-The {{site.productname}} 5.3 release includes the following accompanying changes affecting **Self-hosted Professional and Premium customers only**:
-
-- The Java server-side component (`ephox-hyperlinking.war`) has been updated to version 2.3.0. This version requires Java 8 or higher. For information on the deprecation of Java 7 support, see: [Deprecated features](#deprecatedfeatures).
-- From {{site.productname}} 5.3, premium self-hosted bundles include the files required to build and deploy the server-side components as Docker containers. For information on Docker deployments of the server-side components, see: [Containerized service deployments]({{site.baseurl}}/enterprise/server/dockerservices/).
-
-For information on:
-
-- The Link Checker plugin, see: [Link Checker plugin]({{site.baseurl}}/plugins/linkchecker/).
-- Deploying the server-side component, see: [Server-side component installation]({{site.baseurl}}/enterprise/server/).
-- Docker deployments of the server-side components, see: [Containerized service deployments]({{site.baseurl}}/enterprise/server/dockerservices/).
+The {{site.productname}} 5.3 release includes accompanying changes affecting the {{site.productname}} **self-hosted** **Link Checker** service. {{site.cloudname}} users are unaffected. For details, see: [Accompanying premium self-hosted server-side component changes](#accompanyingpremiumself-hostedserver-sidecomponentchanges).
 
 ### PowerPaste 5.3.0
 
@@ -134,16 +107,67 @@ The {{site.productname}} 5.3 release includes an accompanying release of the **S
 - Missing `spell-check` icons on Spell Checker Pro menu items.
 - Spellchecking incorrectly moving the editor selection into non-editable elements.
 
-The {{site.productname}} 5.3 release includes the following accompanying changes affecting **Self-hosted Professional and Premium customers only**:
+The {{site.productname}} **self-hosted** **Spell Checker Pro** service has also been updated. {{site.cloudname}} users are unaffected. For details, see: [Accompanying premium self-hosted server-side component changes](#accompanyingpremiumself-hostedserver-sidecomponentchanges).
 
-- The Java server-side component (`ephox-spelling.war`) has been updated to version 2.3.0. This version requires Java 8 or higher. For information on the deprecation of Java 7 support, see: [Deprecated features](#deprecatedfeatures).
-- From {{site.productname}} 5.3, premium self-hosted bundles include the files required to build and deploy the server-side components as Docker containers. For information on Docker deployments of the server-side components, see: [Containerized service deployments]({{site.baseurl}}/enterprise/server/dockerservices/).
+For information on Spell Checker Pro plugin, see: [Spell Checker Pro plugin]({{site.baseurl}}/plugins/tinymcespellchecker/).
+
+## Accompanying premium self-hosted server-side component changes
+
+The {{site.productname}} 5.3 release includes accompanying changes affecting the {{site.productname}} **self-hosted** services for the following plugins:
+
+- The Enhanced Media Embed plugin (`mediaembed`)
+- The Image Tools plugin (`imagetools`)
+- The Link Checker plugin (`linkchecker`)
+- The Spell Checker Pro plugin (`tinymcespellchecker`)
+
+The Java server-side components (`ephox-spelling.war`, `ephox-hyperlinking.war`, and `ephox-image-proxy.war`) have been updated to **version 2.3.0**.
+
+This version requires Java 8 or higher. For information on the removal of Java 7 support, see: [Removal of Java 7 support](#removalofjava7support).
 
 For information on:
 
 - The Spell Checker Pro plugin, see: [Spell Checker Pro plugin]({{site.baseurl}}/plugins/tinymcespellchecker/).
-- Deploying the server-side component, see: [Server-side component installation]({{site.baseurl}}/enterprise/server/).
-- Docker deployments of the server-side components, see: [Containerized service deployments]({{site.baseurl}}/enterprise/server/dockerservices/).
+- The Link Checker plugin, see: [Link Checker plugin]({{site.baseurl}}/plugins/linkchecker/).
+- The Image Tools plugin, see: [Image Tools plugin]({{site.baseurl}}/plugins/imagetools/).
+- The Enhanced Media Embed plugin, see: [Enhanced Media Embed plugin]({{site.baseurl}}/plugins/mediaembed/).
+- Deploying the server-side components, see: [Server-side component installation]({{site.baseurl}}/enterprise/server/).
+
+### Removal of Java 7 support
+
+Java 7 support has been removed with this release. The {{site.productname}} Java server-side components now require a minimum of Java 8. From the {{site.productname}} 5.3 release, the `.war` files provided in the self-hosted bundles will not be compatible with Java 7. This change resolves security issues present in the older versions of these services. The following plugins are affected by this change:
+
+- SpellChecker Pro (`tinymcespellchecker`) - `ephox-spelling.war` has been updated to version `2.3.0`.
+- Image Tools (`imagetools`) - `ephox-image-proxy.war` has been updated to version `2.3.0`.
+- Enhanced Media Embed (`mediaembed`) - `ephox-hyperlinking.war` has been updated to version `2.3.0`.
+- Link Checker (`linkchecker`) - `ephox-hyperlinking.war` has been updated to version `2.3.0`.
+
+### Pre-configured Dockerfiles for containerizing the server-side components
+
+From {{site.productname}} 5.3, premium self-hosted bundles include the files required to build and deploy the server-side components as Docker containers. For information on Docker deployments of the server-side components, see: [Containerized service deployments]({{site.baseurl}}/enterprise/server/dockerservices/).
+
+For information on deploying the server-side components using Docker, see: [Containerized service deployments]({{site.baseurl}}/enterprise/server/dockerservices/).
+
+### Regular Expression support for allowed-origins
+
+Version 2.3.0 of the {{site.productname}} server-side components adds support for using regular expressions to specify `allowed-origins`. For information on using regular expressions for specifying allowed origins, see: [Configure server-side components - Regular Expressions support]({{site.baseurl}}/enterprise/server/configure/#regularexpressionssupport).
+
+### New configuration option for simplifying same-origin deployments
+
+The new `same-origin` option allows all cross-origin requests to be blocked by the server while allowing all same-origin requests.
+
+For information on configuring the same-origin option, see: [Configure server-side components - allowed-origins.same-origin (optional)]({{site.baseurl}}/enterprise/server/configure/#allowed-originssame-originoptional).
+
+### New alternative http timeout settings
+
+Three new http timeout settings have been added to the server-side components. These new settings provide greater control over the timeout length of requests that the existing `request-timeout-seconds` configuration setting.
+
+For information on configuring the alternative http timeout settings, see: [Configure server-side components - Alternative http timeout settings]({{site.baseurl}}/enterprise/server/configure/#alternativehttptimeoutsettings).
+
+### New `fallback-to-get` setting for the Link Checker service
+
+The new `fallback-to-get` configuration setting allows the Link checker can correctly identify working URLs that return non-standard `HEAD` replies.
+
+For information on configuring the Link Checker service, see: [Configure server-side components - `link-checking`]({{site.baseurl}}/enterprise/server/configure/#link-checkingoptional)
 
 ## Minor changes for TinyMCE 5.3
 
@@ -184,17 +208,6 @@ For information on:
 * Fixed zero-width spaces incorrectly included in the `wordcount` plugin character count.
 * Fixed a regression introduced in 5.2.0 whereby the desktop `toolbar_mode` setting would incorrectly override the mobile default setting.
 * Fixed an issue where deleting all content in a single cell table would delete the entire table.
-
-## Deprecated features
-
-**Self-hosted Essential, Professional, and Premium customers only**: Java 7 support has been deprecated with this release. The {{site.productname}} Java server-side components now require a minimum of Java 8. From the {{site.productname}} 5.3 release, the `.war` files provided in the self-hosted bundles will not be compatible with Java 7. This change resolves security issues present in the older versions of these services. The following plugins are affected by this change:
-
-- SpellChecker Pro (`ephox-spelling.war` has been updated to version 2.3.0)
-- Image Tools (`ephox-image-proxy.war` has been updated to version 2.3.0)
-- Enhanced Media Embed (`ephox-hyperlinking.war` has been updated to version 2.3.0)
-- Link Checker (`ephox-hyperlinking.war` has been updated to version 2.3.0)
-
-For information on deploying the server-side components, see: [Server-side component installation]({{site.baseurl}}/enterprise/server/).
 
 ## Known issues
 

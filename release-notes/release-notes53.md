@@ -57,6 +57,15 @@ For example:
 
 For information on enabling the Find and Replace dialog, see: [the Search and Replace plugin]({{site.baseurl}}/plugins/searchreplace/).
 
+### Multiple context toolbars can now be concatenated
+
+In situations where more than one context toolbar could be shown, they will be concatenated instead of prioritizing one of the context toolbars. This includes context toolbars provided by the Quick Toolbars plugin.
+
+For information on:
+
+- The Quick Toolbars plugin, see: [The Quick Toolbars plugin]({{site.baseurl}}/plugins/quickbars/).
+- Creating custom context toolbars, see: [Context toolbars]({{site.baseurl}}/ui-components/contexttoolbar/).
+
 ## Accompanying Premium Plugin changes
 
 The following premium plugin updates were released alongside {{site.productname}} 5.3.

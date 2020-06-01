@@ -8,9 +8,9 @@ keywords: releasenotes bugfixes
 
 These release notes provide an overview of the changes for {{site.productname}} 5.3, including:
 
-- [TinyMCE 5.3 new features and enhancements](#tinymce52newfeaturesandenhancements)
+- [TinyMCE 5.3 new features and enhancements](#tinymce53newfeaturesandenhancements)
 - [Accompanying Premium Plugin changes](#accompanyingpremiumpluginchanges)
-- [Minor changes for TinyMCE 5.3](#minorchangesfortinymce52)
+- [Minor changes for TinyMCE 5.3](#minorchangesfortinymce53)
 - [General bug fixes](#generalbugfixes)
 - [Deprecated features](#deprecatedfeatures)
 - [Known issues](#knownissues)
@@ -46,6 +46,16 @@ For example:
 | ![Custom toggle menu item with checkmark on the left-hand side of the item label (pre-5.3 behavior)]({{site.baseurl}}/images/old_togglemenuitemchecked.png) | ![Custom toggle menu item with checkmark on the right-hand side of the item label (5.3+ behavior)]({{site.baseurl}}/images/53_togglemenuitemchecked.png) |
 
 For information on toggle menu items, see: [Custom menu items - Toggle menu items]({{site.baseurl}}/ui-components/menuitems/#togglemenuitems).
+
+### New find and replace in selection functionality
+
+A new "Find in selection" option has been added to the Find and Replace dialog provided by the Search and Replace plugin.
+
+For example:
+
+![Find and Replace dialog with new "Find in selection" option highlighted]({{site.baseurl}}/images/find-replace-in-selection.png)
+
+For information on enabling the Find and Replace dialog, see: [the Search and Replace plugin]({{site.baseurl}}/plugins/searchreplace/).
 
 ## Accompanying Premium Plugin changes
 

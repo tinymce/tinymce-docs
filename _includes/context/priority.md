@@ -11,8 +11,8 @@ There are situations where custom context toolbars or custom context forms may c
 {% if site.productmajorversion < 6 %}
 How these conflicts are resolved depends on the {{site.productname}} version.
 
-- For {{site.productname}} 5.3 or newer, see: [Determining the display priority of context toolbars and context forms]().
-- For {{site.productname}} 5.0, 5.1, or 5.2; see: [Determining the display priority of context toolbars and context forms (Legacy behavior)]().
+- For {{site.productname}} 5.3 or newer, see: [Determining the display priority of context toolbars and context forms](#determiningthedisplaypriorityofcontexttoolbarsandcontextforms).
+- For {{site.productname}} 5.0, 5.1, or 5.2; see: [Determining the display priority of context toolbars and context forms (Legacy behavior)](#determiningthedisplaypriorityofcontexttoolbarsandcontextformslegacybehavior).
 {% endif %}
 
 #### Determining the display priority of context toolbars and context forms

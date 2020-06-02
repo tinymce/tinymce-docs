@@ -6,8 +6,8 @@ Description of Changes:
 Pre-checks:
 - [ ] Branch prefixed with `feature/` or `hotfix/`
 - [ ] `_data/nav.yml` has been updated (if applicable)
-- [ ] file has been included where required (if applicable)
-- [ ] files removed have been deleted, not just excluded from the build (if applicable)
+- [ ] Files has been included where required (if applicable)
+- [ ] Files removed have been deleted, not just excluded from the build (if applicable)
 
 Review:
 - [ ] Documentation Team Lead has reviewed

@@ -84,13 +84,13 @@ This option provides the default location to load the emoji database from. The d
 **Default:** `${pluginUrl}/js/emojis.js`
 
 ```js
-window.tinymce.emoticons_plugin_database = {
+tinymce.Resource.add('tinymce.plugins.emoticons', {
   robot: {
     keywords: ['computer', 'machine', 'bot'],
     char: '🤖',
     category: 'people'
   }
-}
+})
 ```
 
 ##### Example

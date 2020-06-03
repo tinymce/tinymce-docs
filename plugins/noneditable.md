@@ -81,7 +81,7 @@ tinymce.init({
 
 ### `noneditable_regexp`
 
-This option is used to specify a regular expression or array of regular expressions that {{site.productname}} will use to determine which areas of content are noneditable when using the `noneditable` plugin. The regular expressions needs to be global so that all instances within the document are matched. The text content of the matches will be wrapped in spans, hiding the structure and styling while editing.
+This option is used to specify a regular expression or array of regular expressions that {{site.productname}} will use to determine which areas of content are non-editable when using the `noneditable` plugin. The regular expressions needs to be global so that all instances within the document are matched. The text content of the matches will be wrapped in spans, hiding the structure and styling while editing.
 
 > **Note**: If elements are matched by the regular expression, the elements will be replaced with spans. Use [`noneditable_noneditable_class`](#noneditable_noneditable_class) for elements.
 
@@ -97,37 +97,32 @@ tinymce.init({
 });
 ```
 
-## Making Content Noneditable:
+## Making Content Non-editable
 
 ### Procedure
 
-* Add to `plugins`.
+1. Add `noneditable` to `plugins`. For example:
 
-```js
-tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "noneditable"
-});
-```
+    ```js
+    tinymce.init({
+      selector: "textarea",  // change this value according to your HTML
+      plugins: "code noneditable"
+    });
+    ```
+2. Configure the `noneditable_noneditable_class` option, or the others as necessary in your `tinymce.init`. For example:
 
-* Configure `noneditable_noneditable_class` or the others as necessary in your `tinymce.init` with the class name you want to use for noneditable regions.
-
-```js
-tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "noneditable",
-  noneditable_editable_class: "mceEditable"
-});
-```
-> Note: Replace `mceEditable` with the class name you want for your noneditable regions.
-
-* Select the desired content.
-* In your editor, select `Source code` from the `Tools` menu.
-* Apply the noneditable class to the desired editor content.
+    ```js
+    tinymce.init({
+      selector: "textarea",  // change this value according to your HTML
+      plugins: "noneditable",
+      noneditable_noneditable_class: "mceNonEditable"
+    });
+    ```
+    > **Note**: Replace `mceNonEditable` with the class name you want for your non-editable elements.
+3. Select the desired editor content.
+4. From the menu bar, select `View` > `Source code`.
+5. Add the non-editable class to the desired editor content. For example:
 
 ```html
-<div class="myclass mceEditable">Contents</div>
+<div class="myclass mceNonEditable">Contents</div>
 ```
-
-
-

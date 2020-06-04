@@ -224,18 +224,23 @@ This section describes issues that users of {{site.productname}} 5.3 may encount
 
 **Outline**
 
-* [](#)
+* [Find and replace in selection feature missing content selection for inline editors and IE 11](#findandreplaceinselectionfeaturenotworkingasexpectedforinlineeditorsandie11)
 
 
-### 
+### Find and replace in selection feature missing content selection for inline editors and IE 11
 
 #### Issue
 
+The new find (and replace) in selection feature does not show the content selection when the dialog is open. The find and replace in selection functions will still work, but the selection is not shown.
+
+This issue affects:
+
+- Inline editors (`inline: true`).
+- Any {{site.productname}} 5.3 editor when used on Microsoft Internet Explorer 11.
 
 #### Workaround
 
 No known workaround at the time of release.
-
 
 {% assign enterprise = true %}
 

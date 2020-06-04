@@ -90,7 +90,7 @@ tinymce.Resource.add('tinymce.plugins.emoticons', {
     char: '🤖',
     category: 'people'
   }
-})
+});
 ```
 
 ##### Example

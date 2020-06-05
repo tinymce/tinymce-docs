@@ -1,7 +1,7 @@
 tinymce.init({
   selector: 'textarea#page-embed',
-  plugins: 'pageembed code',
-  toolbar: 'pageembed code',
+  plugins: 'pageembed code preview',
+  toolbar: 'pageembed code preview',
   menubar: "view",
   tiny_pageembed_classes: [
     { text: 'Big embed', value: 'my-big-class' },

@@ -24,7 +24,7 @@ tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "paste",
   menubar: "edit",
-  toolbar: "paste pastetext" // paste corresponds to the `Paste` menu button, pastetext corresponds to the `Paste as text` menu button
+  toolbar: "paste pastetext"
 });
 ```
 

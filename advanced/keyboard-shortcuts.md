@@ -42,20 +42,22 @@ This is a list of available keyboard shortcuts within the editor body.
 
 This is a list of available keyboard shortcuts within the editor user interface.
 
-| Action                                                                           | PC                       | Mac                      |
-|----------------------------------------------------------------------------------|--------------------------|--------------------------|
-| Execute command                                                                  | Enter / Space            | Enter / Space            |
+| Action                                                                                       | PC                       | Mac                      |
+|----------------------------------------------------------------------------------------------|--------------------------|--------------------------|
+| Execute command                                                                              | Enter / Space            | Enter / Space            |
 | Focus on next UI Element<br>(such as: Menu bar, Toolbar, Toolbar Group, Status Bar Item)     | Tab                      | Tab                      |
 | Focus on previous UI Element<br>(such as: Menu bar, Toolbar, Toolbar Group, Status Bar Item) | Shift+Tab                | Shift+Tab                |
-| Focus next Control<br>(such as: toolbar button, menu, or menu item)                  | Right Arrow / Down Arrow | Right Arrow / Down Arrow |
-| Focus previous Control<br>(such as: toolbar button, menu, or menu item)              | Left Arrow / Up Arrow    | Left Arrow / Up Arrow    |
-| Open menu, toolbar menu button, split toolbar button, or group toolbar button    | Down Arrow               | Down Arrow               |
-| Open the popup menu on split toolbar buttons                                     | Shift+Enter              | Shift+Enter              |
-| Open submenu                                                                     | Right Arrow              | Right Arrow              |
-| Close submenu                                                                    | Left Arrow               | Left Arrow               |
-| Close dialog                                                                     | Esc                      | Esc                      |
-| Close menu                                                                       | Esc                      | Esc                      |
-| Move focus back to editor body                                                   | Esc                      | Esc                      |
+| Focus next Control<br>(such as: toolbar button, menu, or menu item)                          | Right Arrow / Down Arrow | Right Arrow / Down Arrow |
+| Focus previous Control<br>(such as: toolbar button, menu, or menu item)                      | Left Arrow / Up Arrow    | Left Arrow / Up Arrow    |
+| Open menu or toolbar menu button                                                             | Down Arrow / Space       | Down Arrow / Space       |
+| Open group toolbar button                                                                    | Space                    | Space                    |
+| Open split toolbar button                                                                    | Down Arrow               | Down Arrow               |
+| Open the popup menu on split toolbar buttons                                                 | Shift+Enter              | Shift+Enter              |
+| Open submenu                                                                                 | Right Arrow              | Right Arrow              |
+| Close submenu                                                                                | Left Arrow / Esc         | Left Arrow / Esc         |
+| Close dialog                                                                                 | Esc                      | Esc                      |
+| Close menu                                                                                   | Esc                      | Esc                      |
+| Move focus back to editor body                                                               | Esc                      | Esc                      |
 
 > Note: Browsers and Screen Readers provide additional shortcuts within the editor context.
 

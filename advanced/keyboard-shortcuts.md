@@ -35,7 +35,7 @@ This is a list of available keyboard shortcuts within the editor body.
 | Open the popup menu on split toolbar buttons | Shift+Enter           | Shift+Enter                 | core                                                       |
 | Open the help dialog                         | Alt+0                 | Option+0                    | [help]({{ site.baseurl }}/plugins/help/)                   |
 | Insert link                                  | Ctrl+K                | Command+K                   | [link]({{ site.baseurl }}/plugins/link/)                   |
-| Toggle Fullscreen                            | Ctrl+Shift+F          | Ctrl+Shift+F                | [fullscreen]({{ site.baseurl }}/plugins/fullscreen/)       |
+| Toggle Fullscreen                            | Ctrl+Shift+F          | Command+Shift+F                | [fullscreen]({{ site.baseurl }}/plugins/fullscreen/)       |
 | Save                                         | Ctrl+S                | Command+S                   | [save]({{ site.baseurl }}/plugins/save/)                   |
 | Find                                         | Ctrl+F                | Command+F                   | [searchreplace]({{ site.baseurl }}/plugins/searchreplace/) |
 

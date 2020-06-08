@@ -44,13 +44,13 @@ This is a list of available keyboard shortcuts within the editor user interface.
 
 | Action                                                                                       | PC                       | Mac                      |
 |----------------------------------------------------------------------------------------------|--------------------------|--------------------------|
-| Execute command                                                                              | Enter / Space            | Enter / Space            |
+| Execute command                                                                              | Enter / Spacebar         | Enter / Spacebar         |
 | Focus on next UI Element<br>(such as: Menu bar, Toolbar, Toolbar Group, Status Bar Item)     | Tab                      | Tab                      |
 | Focus on previous UI Element<br>(such as: Menu bar, Toolbar, Toolbar Group, Status Bar Item) | Shift+Tab                | Shift+Tab                |
 | Focus next Control<br>(such as: toolbar button, menu, or menu item)                          | Right Arrow / Down Arrow | Right Arrow / Down Arrow |
 | Focus previous Control<br>(such as: toolbar button, menu, or menu item)                      | Left Arrow / Up Arrow    | Left Arrow / Up Arrow    |
-| Open menu or toolbar menu button                                                             | Down Arrow / Space       | Down Arrow / Space       |
-| Open group toolbar button                                                                    | Space                    | Space                    |
+| Open menu or toolbar menu button                                                             | Down Arrow / Spacebar    | Down Arrow / Spacebar    |
+| Open group toolbar button                                                                    | Spacebar                 | Spacebar                 |
 | Open split toolbar button                                                                    | Down Arrow               | Down Arrow               |
 | Open the popup menu on split toolbar buttons                                                 | Shift+Enter              | Shift+Enter              |
 | Open submenu                                                                                 | Right Arrow              | Right Arrow              |

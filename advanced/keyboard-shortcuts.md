@@ -45,10 +45,10 @@ This is a list of available keyboard shortcuts within the editor user interface.
 | Focus to toolbar                                                                 | Alt+F10                  | Option+F10               |
 | Focus to element path                                                            | Alt+F11                  | Option+F11               |
 | Focus to contextual toolbar                                                      | Ctrl+F9                  | Ctrl+F9                  |
-| Focus on next UI Element (Menu bar, Toolbar, Toolbar Group, Status Bar Item)     | Tab                      | Tab                      |
-| Focus on previous UI Element (Menu bar, Toolbar, Toolbar Group, Status Bar Item) | Shift+Tab                | Shift+Tab                |
-| Focus next Control (such as toolbar button, menu, or menu item)                  | Right Arrow / Down Arrow | Right Arrow / Down Arrow |
-| Focus previous Control (such as toolbar button, menu, or menu item)              | Left Arrow / Up Arrow    | Left Arrow / Up Arrow    |
+| Focus on next UI Element<br>(such as: Menu bar, Toolbar, Toolbar Group, Status Bar Item)     | Tab                      | Tab                      |
+| Focus on previous UI Element<br>(such as: Menu bar, Toolbar, Toolbar Group, Status Bar Item) | Shift+Tab                | Shift+Tab                |
+| Focus next Control<br>(such as: toolbar button, menu, or menu item)                  | Right Arrow / Down Arrow | Right Arrow / Down Arrow |
+| Focus previous Control<br>(such as: toolbar button, menu, or menu item)              | Left Arrow / Up Arrow    | Left Arrow / Up Arrow    |
 | Open menu, toolbar menu button, split toolbar button, or group toolbar button    | Down Arrow               | Down Arrow               |
 | Open the popup menu on split toolbar buttons                                     | Shift+Enter              | Shift+Enter              |
 | Open submenu                                                                     | Right Arrow              | Right Arrow              |

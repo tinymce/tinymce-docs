@@ -66,9 +66,23 @@ For information on:
 - The Quick Toolbars plugin, see: [The Quick Toolbars plugin]({{site.baseurl}}/plugins/quickbars/).
 - Creating custom context toolbars, see: [Context toolbars]({{site.baseurl}}/ui-components/contexttoolbar/).
 
+### New Greek premium language pack
+
+A Greek (`el`) language pack is now provided for the {{site.productname}} user interface. This language pack is available for {{site.cloudname}} and premium self-hosted deployments.
+
+For information on using the language setting and a list of supported languages for {{site.cloudname}} and premium self-hosted deployments, see: [Localization options - language]({{site.baseurl}}/configure/localization/#language).
+
 ## Accompanying Premium Plugin changes
 
 The following premium plugin updates were released alongside {{site.productname}} 5.3.
+
+### Accessibility Checker 2.2.1
+
+The {{site.productname}} 5.3 release includes an accompanying release of the **Accessibility Checker** premium plugin.
+
+**Accessibility Checker** 2.2.1 adds translations for features added in **Accessibility Checker** 2.2.0.
+
+For information on the Accessibility Checker plugin, see: [Accessibility Checker plugin]({{site.baseurl}}/plugins/a11ychecker/).
 
 ### Comments 2.1.4
 
@@ -225,7 +239,17 @@ This section describes issues that users of {{site.productname}} 5.3 may encount
 **Outline**
 
 * [Find and replace in selection feature missing content selection for inline editors and IE 11](#findandreplaceinselectionfeaturenotworkingasexpectedforinlineeditorsandie11)
+* [Spanish (Mexico) UI text translations missing for features added in 5.2 and 5.3](#spanishmexicouitexttranslationsmissingforfeaturesaddedin52and53)
 
+### Spanish (Mexico) UI text translations missing for features added in 5.2 and 5.3
+
+#### Issue
+
+The Spanish (Mexico) language pack (`es_MX`) provided for {{site.cloudname}} and {{site.productname}} premium self-hosted customers is missing translations for new and changed user interface features added in {{site.productname}} 5.2 and {{site.productname}} 5.3.
+
+#### Workaround
+
+No known workaround at the time of release.
 
 ### Find and replace in selection feature missing content selection for inline editors and IE 11
 

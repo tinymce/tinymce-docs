@@ -4,7 +4,7 @@ Supported versions of {{site.productname}}:
 
 | Version |   Release Date    |  End of Support   |
 |:-------:|:-----------------:|:-----------------:|
-|   5.3   | June 10, 2020     |        TBD        |
+|   5.3   | June 11, 2020     |        TBD        |
 |   5.2   | March 9, 2020     | September 9, 2021 |
 |   5.1   | December 11, 2019 |  June 11, 2021    |
 |   5.0   | February 4, 2019  | August 5, 2020    |

@@ -1,6 +1,10 @@
 ## images_dataimg_filter
 
-The **images_dataimg_filter** option lets you specify a filter predicate function for disabling the logic that converts base64 images into blobs while within the editor. This feature is generally used for very advanced integrations where you handle all base64/blob images with custom logic.
+> **Important**: This option was deprecated with the release of {{site.productname}} 5.3.
+
+The **images_dataimg_filter** option is used to filter `<img>` elements before they are passed to [`image_upload_handler`]({{site.baseurl}}/configure/file-image-upload/#images_upload_handler).
+
+> **Note**: This option can also be used to specify a filter predicate function for disabling the logic that converts base64 images into blobs while within the editor. {{site.companyname}} discourages using `images_dataimg_filter` for this purpose.
 
 **Type:** `JavaScript Function`
 
@@ -10,7 +14,7 @@ The **images_dataimg_filter** option lets you specify a filter predicate functio
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   images_dataimg_filter: function(img) {
-    return img.hasAttribute('internal-blob');
+    return !img.hasAttribute('internal-blob');  // blocks the upload of <img> elements with the attribute "internal-blob".
   }
 });
 ```

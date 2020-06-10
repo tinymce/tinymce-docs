@@ -81,7 +81,7 @@ A toggle button triggers an action when clicked but also has a concept of state.
 
 #### Toggle button example and explanation
 
-{% include codepen.html id="custom-toolbar-toggle-button" %}
+{% include codepen.html id="custom-toolbar-toggle-button" tab="js" %}
 
 The example above adds two custom **strikethrough** buttons with the same `onAction` configuration. The configuration uses `editor.execCommand(command, ui, args)` to execute `mceToggleFormat`. This editor method toggles the specified format on and off, but only works for [formats]({{site.baseurl}}/configure/content-formatting/#formats) that are already registered with the editor. In this example, `strikethrough` is the registered format.
 
@@ -96,8 +96,6 @@ The callback given to `editor.formatter.formatChanged` is a function that takes 
 ### Split button
 
 A split button contains a basic button and a menu button, wrapped up into one toolbar item. Clicking the menu button section opens a dropdown list. The basic button section and the menu items can be configured to trigger different actions when clicked.
-
-> Example: Font select dropdown.
 
 #### Config options
 

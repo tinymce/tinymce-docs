@@ -232,6 +232,16 @@ For information on configuring the Link Checker service, see: [Configure server-
 * Fixed a regression introduced in 5.2.0 whereby the desktop `toolbar_mode` setting would incorrectly override the mobile default setting.
 * Fixed an issue where deleting all content in a single cell table would delete the entire table.
 
+## Deprecated features
+
+The `images_dataimg_filter` option has been deprecated with the release of {{site.productname}} 5.3 and may be removed in a future release of {{site.productname}}. This option can be used for an unintended use-case that will likely be incompatible with the future introduction of real-time collaboration support.
+
+For information on:
+
+- The `images_dataimg_filter` option, see: [Image & file upload options - images_dataimg_filter]({{site.baseurl}}/configure/file-image-upload/#images_dataimg_filter).
+- The future introduction of real-time collaboration, see: [Tiny Blueprint - Collaboration needs a clean Slate]({{site.url}}/blog/real-time-collaborative-editing-slate-js/).
+
+
 ## Known issues
 
 This section describes issues that users of {{site.productname}} 5.3 may encounter, as well as possible workarounds for these issues.

@@ -17,8 +17,7 @@ The `table` plugin adds table management functionality to {{site.productname}}. 
 tinymce.init({
   plugins: "table",
   menubar: "table",
-  toolbar: "table tabledelete | tableprops tablerowprops tablecellprops | tableinsertrowbefore tableinsertrowafter tabledeleterow | tableinsertcolbefore tableinsertcolafter tabledeletecol
-"
+  toolbar: "table tabledelete | tableprops tablerowprops tablecellprops | tableinsertrowbefore tableinsertrowafter tabledeleterow | tableinsertcolbefore tableinsertcolafter tabledeletecol"
 });
 ```
 

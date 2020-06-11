@@ -11,7 +11,7 @@ default_meta_keywords: tinymce, documentation, docs, plugins, customizable skins
 # product variables
 productname: TinyMCE
 productmajorversion: 5
-productminorversion: 5.2
+productminorversion: 5.3
 ##### product name in codeblock
 prodnamecode: tinymce
 companyname: Tiny
@@ -46,12 +46,17 @@ ellps: '&#133;'
 
 requires_5_1v: "> **Note**: This feature is only available for TinyMCE 5.1 and later."
 requires_5_2v: "> **Note**: This feature is only available for TinyMCE 5.2 and later."
+requires_5_3v: "> **Note**: This feature is only available for TinyMCE 5.3 and later."
+
+requires_jsscwar_230v: "> **Note**: This feature is only available for TinyMCE self-hosted server-side components, version 2.3.0 and later. To check the version of a running service, visit _&#60;domain&#62;_/_&#60;service&#62;_/version. Such as `http://localhost:8080/ephox-hyperlinking/version`."
 
 notonmobile: "> **Note**: This option is not supported on mobile devices."
 premiumplugin: "> **Note**: This plugin is only available for [paid TinyMCE subscriptions](https://www.tiny.cloud/pricing)."
 differs_for_mobile: "> **Note**: The default option for this setting is different for mobile devices. For information on the default mobile setting, see: [TinyMCE Mobile - Configuration settings with mobile defaults](https://www.tiny.cloud/docs/mobile/#mobiledefaultsforselectedsettings)."
 
 thirdPartyInteg: "> **Important**: This Integration is maintained by a third-party developer. Tiny Technologies, Inc. bears no responsibility for this integration, which is not covered by the Tiny Self-Hosted Software License Agreement. For issues related to the integration, contact the third-party project directly."
+
+moxieMNotOnCloud: "> **Note**: The MoxieManager plugin is _not_ provided on the Tiny Cloud, and is provided as a self-hosted solution only."
 
 exclude:
   - Dockerfile

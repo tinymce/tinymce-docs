@@ -58,7 +58,7 @@ The available language codes for use with this option are as follows:
 | Georgian (Georgia)            | ka_GE   |                                                                      |
 | German                        | de      | {{ site.tick }}                                                      |
 | German (Austria)              | de_AT   |                                                                      |
-| Greek                         | el      |                                                                      |
+| Greek                         | el      | {{ site.tick }} (Support added in {{site.productname}} 5.3)          |
 | Hebrew (Israel)               | he_IL   | {{ site.tick }}                                                      |
 | Hindi (India)                 | hi_IN   |                                                                      |
 | Hungarian (Hungary)           | hu_HU   | {{ site.tick }}                                                      |

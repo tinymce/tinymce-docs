@@ -248,8 +248,8 @@ This section describes issues that users of {{site.productname}} 5.3 may encount
 
 **Outline**
 
-* [Find and replace in selection feature missing content selection for inline editors and IE 11](#findandreplaceinselectionfeaturenotworkingasexpectedforinlineeditorsandie11)
 * [Spanish (Mexico) UI text translations missing for features added in 5.2 and 5.3](#spanishmexicouitexttranslationsmissingforfeaturesaddedin52and53)
+* [Find and replace in selection feature missing content selection for inline editors and IE 11](#findandreplaceinselectionfeaturenotworkingasexpectedforinlineeditorsandie11)
 
 ### Spanish (Mexico) UI text translations missing for features added in 5.2 and 5.3
 

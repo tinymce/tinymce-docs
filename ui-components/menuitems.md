@@ -35,10 +35,12 @@ tinymce.init({
     custom: { title: 'Custom Menu', items: 'undo redo myCustomMenuItem' }
   },
   menubar: 'file edit custom',
-  setup: (editor) => {
+  setup: function(editor) {
     editor.ui.registry.addMenuItem('myCustomMenuItem', {
       text: 'My Custom Menu Item',
-      onAction: () => alert('Menu item clicked')
+      onAction: function() {
+        alert('Menu item clicked');
+      }
     });
   }
 });
@@ -80,9 +82,22 @@ A basic menu item triggers its `onAction` function when clicked.
 #### Example
 
 ```js
-editor.ui.registry.addMenuItem('basicitem', {
-  text: 'My basic menu item',
-  onAction: () => alert('Menu item clicked')
+tinymce.init({
+  selector: "textarea",
+  menu: {
+    custom: { title: 'Custom Menu', items: 'undo redo basicitem' }
+  },
+  menubar: 'file edit custom',
+
+  setup: function(editor) {
+    editor.ui.registry.addMenuItem('basicitem', {
+      text: 'My basic menu item',
+      onAction: function() {
+        alert('Menu item clicked');
+      }
+    });
+  }
+
 });
 ```
 
@@ -108,34 +123,48 @@ A nested menu item is a menu item with a submenu. Registering a submenu this way
 #### Example
 
 ```js
-editor.ui.registry.addNestedMenuItem('nesteditem', {
-  text: 'My nested menu item',
-  getSubmenuItems: () => {
+tinymce.init({
+  selector: "textarea",
+  menu: {
+    custom: { title: 'Custom Menu', items: 'undo redo nesteditem' }
+  },
+  menubar: 'file edit custom',
+
+  setup: function(editor) {
+    editor.ui.registry.addNestedMenuItem('nesteditem', {
+    text: 'My nested menu item',
+    getSubmenuItems: function() {
     return [{
       type: 'menuitem',
       text: 'My submenu item',
-      onAction: alert('Submenu item clicked')
+      onAction: function() {
+        alert('Submenu item clicked');
+      }
     }];
+    }
+  });
   }
+
 });
 ```
 
 ### Toggle menu items
 
-A toggle menu item triggers its `onAction` when clicked. It also has a concept of state. This means it can be toggled `on` and `off`. A toggle menu item gives the user visual feedback for its state through a checkmark that appears to the left of the menu item's text when it is `on`.
+A toggle menu item triggers its `onAction` when clicked. It also has a concept of state. This means it can be toggled `on` and `off`. A toggle menu item gives the user visual feedback for its state through a checkmark that appears to the right of the menu item's text when it is `on`.
 
 #### Config options
 
 | Name | Value | Requirement | Description |
 | ---- | ----- | ----------- | ----------- |
 | text | string | optional | Text to display. |
+| icon | string | optional | Name of the icon to be displayed. Must correspond to an icon in the [icon pack]({{site.baseurl}}/advanced/editor-icon-identifiers/). |
 | value | string | optional | A value to associate with the menu item. |
 | active | boolean | optional | Initial state value for the toggle menu item |
 | disabled | boolean | optional | default: false - Represents the menu item's state. When true, the menu item is unclickable. Toggled by the menu item's API. |
 | onSetup | (api) => (api) => void | optional | default: () => () => {} - Function invoked when the menu item is rendered, each time its menu is opened. |
 | onAction | (api) => void | required | Function invoked when the menu item is clicked. |
 
-> Note: Toggle menu items do not have icons.
+> **Note**: The `icon` option for Toggle menu items was added in {{site.productname}} 5.3.
 
 #### API
 
@@ -153,15 +182,27 @@ A toggle menu item triggers its `onAction` when clicked. It also has a concept o
 // a variable to store the toggle menu item state.
 var toggleState = false;
 
-editor.ui.registry.addToggleMenuItem('toggleitem', {
-  text: 'My toggle menu item',
-  onAction: () => {
-    toggleState = !toggleState;
-    alert('Toggle menu item clicked');
+tinymce.init({
+  selector: "textarea",
+  menu: {
+    custom: { title: 'Custom Menu', items: 'undo redo toggleitem' }
   },
-  onSetup: (api) => {
-    api.setActive(toggleState);
-    return () => {};
+  menubar: 'file edit custom',
+
+  setup: function(editor) {
+    editor.ui.registry.addToggleMenuItem('toggleitem', {
+      text: 'My toggle menu item',
+      icon: 'home',
+      onAction: function() {
+        toggleState = !toggleState;
+        alert('Toggle menu item clicked');
+      },
+      onSetup: function(api) {
+        api.setActive(toggleState);
+        return function() {};
+      }
+    });
   }
+
 });
 ```

@@ -1,8 +1,17 @@
+{% case page.title %}
+  {% when "Context toolbar" %}
+    {% assign contextItemType = "toolbar" %}
+  {% when "Context forms" %}
+    {% assign contextItemType = "form" %}
+{% endcase %}
+<a class="anchor" id="positioningcontexttoolbars"></a><a class="anchor" id="positioningcontextforms"></a>
 
-There are three options for positioning: `selection`, `line`, or `node`.
+### Positioning of context {{contextItemType}}s
 
-* A `selection` position will place the ContextForm above or below the current selection, centred if possible.
+There are three options for positioning context {{contextItemType}}s: `selection`, `node`, or `line`.
 
-* A `line` position will place the ContextForm to the right (or left in Right-to-Left languages) of the current selection.
+* A `selection` position will place the context {{contextItemType}} above or below the current selection, centered if possible.
 
-* A `node` position will places the ContextForm
+* A `node` position will place the context {{contextItemType}} above or below the bounds of a node (e.g. a table or image).
+
+* A `line` position will place the context {{contextItemType}} to the right (or left in Right-to-Left languages) of the current selection.

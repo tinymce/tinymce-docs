@@ -605,6 +605,7 @@
   - url: "server"
     pages:
     - url: "configure"
+    - url: "dockerservices"
     - url: "troubleshoot"
   - url: "advcode"
   - url: "advanced-tables"
@@ -721,6 +722,16 @@
 
 - url: "release-notes"
   pages:
+  - url: "release-notes53"
+    pages:
+    - url: "#Overview"
+    - url: "#TinyMCE 5.3 new features and enhancements"
+    - url: "#Accompanying Premium Plugin changes"
+    - url: "#Accompanying premium self-hosted server-side component changes"
+    - url: "#Minor changes for TinyMCE 5.3"
+    - url: "#General bug fixes"
+    - url: "#Known issues"
+    - url: "#Upgrading to the latest version of TinyMCE 5"
   - url: "release-notes522"
     pages:
     - url: "#Overview"
@@ -829,6 +840,7 @@
 
 - url: "changelog"
   pages:
+  - url: "#Version 5.3.2 June 10, 2020"
   - url: "#Version 5.3.1 May 27, 2020"
   - url: "#Version 5.3.0 May 21, 2020"
   - url: "#Version 5.2.2 April 23, 2020"

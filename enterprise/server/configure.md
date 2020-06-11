@@ -14,10 +14,7 @@ This configuration file will require you to enter *at least* the following  info
 
 - `allowed-origins` - the domains allowed to communicate with the server-side editor features. This is required by all server-side components.
 
-Some server-side components require additional configuration which can be found in their individual documentation:
-
-- [Enhanced Media Embed]({{ site.baseurl }}/enterprise/embed-media/mediaembed-server-config/)
-- [Link Checker]({{ site.baseurl }}/enterprise/check-links/#linkcheckersdkquicksetup)
+The Enhanced Media Embed server-side component require additional configuration, which can be found on the [Enhanced Media Embed page]({{ site.baseurl }}/enterprise/embed-media/mediaembed-server-config/).
 
 ### `allowed-origins` (required)
 
@@ -79,9 +76,9 @@ Example:
 
 ````
 ephox {
-	allowed-origins {
-		origins = [ "http://myserver", "http://myserver.example.com", "http://myserver:8080", "http://myotherserver", "http://myotherserver:9090", "https://mysecureserver" ]
-	}
+  allowed-origins {
+    origins = [ "http://myserver", "http://myserver.example.com", "http://myserver:8080", "http://myotherserver", "http://myotherserver:9090", "https://mysecureserver" ]
+  }
 }
 ````
 
@@ -101,11 +98,49 @@ The `*` wildcard character matches any value. Wildcards are supported in the fol
 
 ````
 ephox {
-	allowed-origins {
-		origins = [ "http://myserver:*", "*://myotherserver.example.com", "*://*.mydomain.example.com:*"]
-	}
+  allowed-origins {
+    origins = [ "http://myserver:*", "*://myotherserver.example.com", "*://*.mydomain.example.com:*"]
+  }
 }
 ````
+
+#### Regular Expressions support
+
+{{site.requires_jsscwar_230v}}
+
+Regular expressions can be used alongside [wildcards](#wildcardsupport) for specifying `allowed-origins.origins`. To use a regular expression, start and end the expression with the forward-slash `'/'` character.
+
+For example:
+
+```
+ephox {
+  allowed-origins {
+    origins = [ "https?://myserver", "/(myserver|myotherserver\.)?example\.com/", "http://myserver:8080" ]
+  }
+}
+```
+
+For a list of valid constructs, see: [Java 8: `java.util.regex` - Summary of regular-expression constructs](https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html#sum).
+
+#### `allowed-origins.same-origin` (optional)
+
+{{site.requires_jsscwar_230v}}
+
+Enabling `same-origin` removes the need to specify the domain origin accessing the service if the service is deployed from the same server.
+
+The `allowed-origins` `same-origin` option can be used to block all cross-origin requests. This option is set to `false` by default.
+
+Setting the `same-origin` setting to `true` will block all HTTP `OPTIONS` requests and allow all other HTTP methods. When set to `true`, all `origins` specified in `allowed-origins` will be ignored.
+
+For example:
+
+```
+ephox {
+  allowed-origins {
+    same-origin: true
+  }
+}
+```
 
 #### Troubleshooting Origins
 
@@ -179,6 +214,30 @@ ephox {
 }
 ````
 
+#### Alternative http timeout settings
+
+{{site.requires_jsscwar_230v}}
+
+When greater control over timeout settings is needed, the following three settings can be used instead of the `request-timeout-seconds` setting:
+
+- `connection-request-timeout-seconds`: The amount of time to wait for a connection from the connection pool.
+- `connect-timeout-seconds`: The amount of time to wait for a connection to be established.
+- `socket-timeout-seconds`: The amount of time to wait in between packets after a connection is established.
+
+If one of these settings are required, remove `request-timeout-seconds` and specify values for all three of these settings.
+
+For example:
+
+```
+ephox {
+    http {
+        connection-request-timeout-seconds = 10
+        connect-timeout-seconds = 5
+        socket-timeout-seconds = 4
+    }
+}
+```
+
 ### `image-proxy` (optional)
 
 The [image proxy service]({{ site.baseurl }}/plugins/imagetools/) has some optional configuration to set a maximum size for images proxied. Images beyond this size it will not be proxied. Please note that the `http.request-timeout-seconds` above also applies to requests made by the image proxy service.
@@ -193,10 +252,72 @@ Example:
 ````
 ephox {
     image-proxy {
-        image-size = 10000000 // 10MB in bytes
+        size-limit = 10000000 // 10MB in bytes
     }
 }
 ````
+
+### `link-checking` (optional)
+
+The Link checker has three configurable settings:
+
+- `enabled`
+- `fallback-to-get`
+- `link-checking.cache`
+
+#### `enabled` (optional)
+
+Used to enable (`true`) or disable (`false`) the Link-checking service. This setting is `true` by default.
+
+For example:
+
+```
+ephox {
+  link-checking {
+    enabled = true
+  }
+}
+```
+
+#### `fallback-to-get` (optional)
+
+{{site.requires_jsscwar_230v}}
+
+The Link-checker normally relies on the `HEAD` response. If `fallback-to-get` is `true`, the link-checker may issue a `GET` request after receiving a non-standard `HEAD` response to verify a link. When `true`, the Link checker can correctly identify working URLs that return non-standard `HEAD` replies. Enabling the `fallback-to-get` setting can lead to server performance issues and is set to `false` by default.
+
+For example:
+
+```
+ephox {
+  link-checking {
+    fallback-to-get = true
+  }
+}
+```
+
+#### `cache` (optional)
+
+This element configures the Link Checker service's built-in cache. When a hyperlink is checked and confirmed valid, the result is cached to save unnecessary network traffic in the future.
+
+Default settings are automatically configured, meaning these settings are optional.
+
+- `capacity` - sets the capacity of the cache. The default setting is 500.
+- `timeToLiveInSeconds` - sets the time-to-live of elements of the cache, measured in seconds. This is the maximum total amount of time that an element is allowed to remain in the cache. The default setting is 86400 seconds, which is one day.
+- `timeToIdleInSeconds` - sets the time-to-idle of elements of the cache, measured in seconds. This is the maximum amount of time that an element will remain in the cache if it is not being accessed. The default setting is 3600 seconds, which is one hour.
+
+Example:
+
+```
+ephox {
+  link-checking {
+    cache {
+      capacity = 500
+      timeToLiveInSeconds = 86400
+      timeToIdleInSeconds = 3600
+    }
+  }
+}
+```
 
 ## Logging
 
@@ -214,26 +335,26 @@ Save the snippet below as `logback.xml` after replacing `{$LOG_LOCATION}` with t
 <configuration>
 
   <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
-	<encoder>
-	  <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
-	</encoder>
+    <encoder>
+      <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+    </encoder>
   </appender>
 
   <appender name="FILE" class="ch.qos.logback.core.FileAppender">
-	<file>{$LOG_LOCATION}</file>
-	<encoder>
-	  <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
-	</encoder>
+    <file>{$LOG_LOCATION}</file>
+    <encoder>
+      <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+    </encoder>
   </appender>
 
   <!-- The name "com.ephox" refers to all {{site.productname}} server-side components. -->
   <logger name="com.ephox" level="INFO"/>
 
   <root level="INFO">
-	<appender-ref ref="FILE" />
-	<!-- If you want logging to go to the container as well uncomment
-	the following line -->
-	<!-- <appender-ref ref="STDOUT" /> -->
+    <appender-ref ref="FILE" />
+    <!-- If you want logging to go to the container as well uncomment
+    the following line -->
+    <!-- <appender-ref ref="STDOUT" /> -->
   </root>
 
 </configuration>

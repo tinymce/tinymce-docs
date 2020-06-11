@@ -12,29 +12,11 @@ Think of Link Checker as "spell-checking for URLs". But instead of checking spel
 
 Your have two deployment options. One is super easy with {{site.cloudname}}, the other is to go the more traditional Self-hosted route, requiring an additional [server-side component]({{ site.baseurl }}/enterprise/server/) to be installed and configured.
 
-## Link Checker self-hosted quick setup
+## Link Checker self-hosted setup
 
-Once you have the [server-side component]({{ site.baseurl }}/enterprise/server/) installed, additional configuration to your `application.conf` file is required. (Don't forget to restart the Java application server after updating the configuration.)
+Once you have the server-side component installed, additional configuration to your `application.conf` file is required. (Don't forget to restart the Java application server after updating the configuration.)
 
-This element configures the Link Checker service's built-in cache. When a hyperlink is checked and confirmed valid, the result is cached to save unnecessary network traffic in the future.
-
-Default settings are automatically configured, meaning these settings are optional.
-
-- `capacity` - sets the capacity of the cache. The default setting is 500.
-- `timeToLiveInSeconds` - sets the time-to-live of elements of the cache, measured in seconds. This is the maximum total amount of time that an element is allowed to remain in the cache. The default setting is 86400 seconds, which is one day.
-- `timeToIdleInSeconds` - sets the time-to-idle of elements of the cache, measured in seconds. This is the maximum amount of time that an element will remain in the cache if it is not being accessed. The default setting is 3600 seconds, which is one hour.
-
-Example:
-
-```
-ephox {
-  link-checking.cache {
-    capacity = 500
-    timeToLiveInSeconds = 86400
-    timeToIdleInSeconds = 3600
-  }
-}
-```
+For information on configuring the server-side component, see: [Configure server-side components]({{ site.baseurl }}/enterprise/server/).
 
 You will also find more Self-hosted setup information on the [Link Checker plugin page]({{ site.baseurl }}/plugins/linkchecker/).
 

@@ -10,6 +10,9 @@ class: changelog
 
 {% capture changelog %}
 
+## Version 5.3.2 June 10, 2020
+* Fixed a regression introduced in 5.3.0, where `images_dataimg_filter` was no-longer called.
+
 ## Version 5.3.1 May 27, 2020
 * Fixed the image upload error alert also incorrectly closing the image dialog.
 * Fixed editor content scrolling incorrectly on focus in Firefox by reverting default content CSS html and body heights added in 5.3.0.

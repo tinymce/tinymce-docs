@@ -10,6 +10,7 @@ These release notes provide an overview of the changes for {{site.productname}} 
 
 - [TinyMCE 5.3 new features and enhancements](#tinymce53newfeaturesandenhancements)
 - [Accompanying Premium Plugin changes](#accompanyingpremiumpluginchanges)
+- [Accompanying premium self-hosted server-side component changes](#accompanyingpremiumself-hostedserver-sidecomponentchanges)
 - [Minor changes for TinyMCE 5.3](#minorchangesfortinymce53)
 - [General bug fixes](#generalbugfixes)
 - [Deprecated features](#deprecatedfeatures)
@@ -249,7 +250,7 @@ This section describes issues that users of {{site.productname}} 5.3 may encount
 **Outline**
 
 * [Spanish (Mexico) UI text translations missing for features added in 5.2 and 5.3](#spanishmexicouitexttranslationsmissingforfeaturesaddedin52and53)
-* [Find and replace in selection feature missing content selection for inline editors and IE 11](#findandreplaceinselectionfeaturenotworkingasexpectedforinlineeditorsandie11)
+* [Find and replace in selection feature missing content selection for inline editors and IE 11](#findandreplaceinselectionfeaturemissingcontentselectionforinlineeditorsandie11)
 
 ### Spanish (Mexico) UI text translations missing for features added in 5.2 and 5.3
 

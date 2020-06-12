@@ -2,8 +2,20 @@
   {% capture url %}{{page.url}}{{link.url}}/{% endcapture %}
   {% capture path %}{{url}}index.html{% endcapture %}
   {% assign_page link_data = path %}
+  {% if page.url contains "/api/tinymce" %}
+    {% assign sectionPrefix = include.sectionTitle | append: "." %}
+    {% assign titleName = link_data.title_nav | or:link_data.title | replace:sectionPrefix.,"" %}
+  {% else %}
+    {% assign titleName = link_data.title_nav | or:link_data.title %}
+  {% endif %}
+  {% assign itemDescription = link_data.description_short | or:link_data.description %}
+  {% assign itemDescriptionLength = itemDescription | size %}
 <div>
-  <h2><a href="{{ site.baseurl }}{{ url }}">{{ link_data.title_nav | or:link_data.title }}</a></h2>
-  <p>{{ link_data.description_short | or:link_data.description }}</p>
+  <h2><a href="{{ site.baseurl }}{{ url }}">{{ titleName }}</a></h2>
+  {% if itemDescriptionLength > 150 %}
+    <p>{{ itemDescription | truncatewords: 15 }}<a href="{{ site.baseurl }}{{ url }}"></a></p>
+  {% else %}
+    <p>{{ itemDescription }}</p>
+  {% endif %}
 </div>
 {% endfor %}

@@ -13,7 +13,7 @@
 <div>
   <h2><a href="{{ site.baseurl }}{{ url }}">{{ titleName }}</a></h2>
   {% if itemDescriptionLength > 150 %}
-    <p>{{ itemDescription | truncatewords: 15 }}<a href="{{ site.baseurl }}{{ url }}"></a></p>
+    <p>{{ itemDescription | truncatewords: 15 }}</p>
   {% else %}
     <p>{{ itemDescription }}</p>
   {% endif %}

@@ -6,4 +6,5 @@ meta_title: Documentation
 meta_description: Official documentation for the most advanced and widely deployed rich text editor platform.
 ---
 
-{% include index.html links=site.data.nav %}
+{% assign fullNav = site.data.nav | concat: site.data.nav_api %}
+{% include index.html links=fullNav %}

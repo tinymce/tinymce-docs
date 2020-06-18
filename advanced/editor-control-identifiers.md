@@ -197,22 +197,22 @@ tinyMCE.activeEditor.ui.registry.getAll().menuItems
 | tableprops             | [table]({{ site.baseurl }}/plugins/table/)                                                                                         | Table                                                                                                    | Opens the table properties dialog.                                                                        |
 | deletetable            | [table]({{ site.baseurl }}/plugins/table/)                                                                                         | Table                                                                                                    | Deletes the current table.                                                                                |
 | cell                   | [table]({{ site.baseurl }}/plugins/table/)                                                                                         | Table                                                                                                    | Cell menu item with related controls.                                                                     |
-| tablemergecells | [table]({{ site.baseurl }}/plugins/table/)   |  Table                   | Merges all currently selected cells   |
-| tablesplitcells | [table]({{ site.baseurl }}/plugins/table/)   |  Table                   | Splits merged cells   |
-| tablecellprops | [table]({{ site.baseurl }}/plugins/table/)   | Table                   | Opens the cell properties dialog  |
+| tablemergecells | [table]({{ site.baseurl }}/plugins/table/)   |  Table                   | Merges all currently selected cells  {{site.requires_5_4v}} |
+| tablesplitcells | [table]({{ site.baseurl }}/plugins/table/)   |  Table                   | Splits merged cells  {{site.requires_5_4v}} |
+| tablecellprops | [table]({{ site.baseurl }}/plugins/table/)   | Table                   | Opens the cell properties dialog {{site.requires_5_4v}} |
 | column                 | [table]({{ site.baseurl }}/plugins/table/)                                                                                         | Table                                                                                                    | Column menu item with related controls.                                                                   |
-| tableinsertcolumnbefore | [table]({{ site.baseurl }}/plugins/table/)   |  Table                   | Insert column before the currently selected column  |
-| tableinsertcolumnafter | [table]({{ site.baseurl }}/plugins/table/)   | Table                   | Insert column after the currently selected column  |
-| tabledeletecolumn | [table]({{ site.baseurl }}/plugins/table/)   |  Table                   | Deletes curently selected column or columns  |
+| tableinsertcolumnbefore | [table]({{ site.baseurl }}/plugins/table/)   |  Table                   | Insert column before the currently selected column {{site.requires_5_4v}} |
+| tableinsertcolumnafter | [table]({{ site.baseurl }}/plugins/table/)   | Table                   | Insert column after the currently selected column {{site.requires_5_4v}} |
+| tabledeletecolumn | [table]({{ site.baseurl }}/plugins/table/)   |  Table                   | Deletes curently selected column or columns {{site.requires_5_4v}} |
 | row                    | [table]({{ site.baseurl }}/plugins/table/)                                                                                         | Table                                                                                                    | Row menu item with related controls.                                                                      |
-| tableinsertrowbefore | [table]({{ site.baseurl }}/plugins/table/)   | Table                   | Inserts row before the currently selected row |
-| tableinsertrowafter | [table]({{ site.baseurl }}/plugins/table/)   |  Table                   | Inserts row after the currently selected row  |
-| tablecutrow | [table]({{ site.baseurl }}/plugins/table/)   |  Table                   | Cut curently selected row or rows   |
-| tablecopyrow | [table]({{ site.baseurl }}/plugins/table/)   | Table                   | Copy curently selected row or rows   |
-| tablepasterowbefore | [table]({{ site.baseurl }}/plugins/table/)   |  Table                   | Paste row before the currently selected row  |
-| tablepasterowafter | [table]({{ site.baseurl }}/plugins/table/)   | Table                   | Paste row afterthe currently selected row   |
-| tablerowprops | [table]({{ site.baseurl }}/plugins/table/)   |  Table                   | Opens the row properties dialog  |
-| tabledeleterow | [table]({{ site.baseurl }}/plugins/table/)   | Table                   | Deletes curently selected row or rows |
+| tableinsertrowbefore | [table]({{ site.baseurl }}/plugins/table/)   | Table                   | Inserts row before the currently selected row {{site.requires_5_4v}} |
+| tableinsertrowafter | [table]({{ site.baseurl }}/plugins/table/)   |  Table                   | Inserts row after the currently selected row {{site.requires_5_4v}} |
+| tablecutrow | [table]({{ site.baseurl }}/plugins/table/)   |  Table                   | Cut curently selected row or rows {{site.requires_5_4v}}  |
+| tablecopyrow | [table]({{ site.baseurl }}/plugins/table/)   | Table                   | Copy curently selected row or rows {{site.requires_5_4v}}  |
+| tablepasterowbefore | [table]({{ site.baseurl }}/plugins/table/)   |  Table                   | Paste row before the currently selected row {{site.requires_5_4v}} |
+| tablepasterowafter | [table]({{ site.baseurl }}/plugins/table/)   | Table                   | Paste row afterthe currently selected row {{site.requires_5_4v}}  |
+| tablerowprops | [table]({{ site.baseurl }}/plugins/table/)   |  Table                   | Opens the row properties dialog |
+| tabledeleterow | [table]({{ site.baseurl }}/plugins/table/)   | Table                   | Deletes curently selected row or rows {{site.requires_5_4v}} |
 | template               | [template]({{ site.baseurl }}/plugins/template/)                                                                                   | Insert                                                                                                   | Inserts templates into the editor.                                                                        |
 | insertfile             | [tinydrive]({{ site.baseurl }}/plugins/drive/)                                                                                     | _Not Applicable_                                                                                         | Opens the {{site.cloudfilemanager}} file selector.                                                                       |
 | spellchecker           | [tinymcespellchecker]({{ site.baseurl }}/plugins/tinymcespellchecker/)                                                             | Tools                                                                                                    | Toggles the spellchecker on/off.                                                                          |

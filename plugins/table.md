@@ -409,6 +409,8 @@ tinymce.init({
 | Name | Arguments | Description |
 |------| ------| ----------- |
 | insertTable | columns: number, rows: number | Insert a table with the given number of columns and rows at the current cursor location |
+| getClipboardCols |  | Returns the data for any columns cut or copied using `mceTableCutCol` or `mceTableCopyCol`. {{site.requires_5_4v}} |
+| setClipboardCols | cols: HTMLElement[] | Set the data to be used by `mceTablePasteColBefore` or `mceTablePasteColAfter` for pasting columns into a table. {{site.requires_5_4v}} |
 | getClipboardRows |  | Returns the data for any rows cut or copied using `mceTableCutRow` or `mceTableCopyRow` |
 | setClipboardRows | rows: HTMLElement[] | Set the data to be used by `mceTablePasteRowBefore` or `mceTablePasteRowAfter` for pasting rows into a table |
 

@@ -7,7 +7,12 @@ description: Complete list of control identifiers.
 keywords: aligncenter alignjustify alignleft alignright anchor backcolor blockquote bold bullist cancel cell charmap code column controls copy cut deletetable emoticons fontselect fontsizeselect forecolor formats formatselect  fullscreen hr image indent insertdatetime insertfile inserttable italic link ltr media newdocument nonbreaking numlist outdent pagebreak paste pastetext preview print redo removeformat row rtl save searchreplace selectall spellchecker strikethrough styleselect subscript superscript table tableprops template toolbar underline undo unlink visualaid visualblocks visualchars a11ycheck
 ---
 
-Use the [toolbar]({{ site.baseurl }}/configure/editor-appearance/#toolbar) or the [menu]({{ site.baseurl }}/configure/editor-appearance/#menu) configuration options.
+For use with the [toolbar]({{ site.baseurl }}/configure/editor-appearance/#toolbar) or the [menu]({{ site.baseurl }}/configure/editor-appearance/#menu) configuration options.
+
+## Outline
+
+- [Toolbar controls (toolbar button identifiers)](#toolbarcontrols)
+- [Menu controls (menu section and menu item identifiers)](#menucontrols)
 
 ## Toolbar controls
 
@@ -100,9 +105,13 @@ tinyMCE.activeEditor.ui.registry.getAll().buttons
 | cancel               | [save]({{ site.baseurl }}/plugins/save/)                                                                                           | Cancels/Resets the editor contents to it's initial state.                             |
 | save                 | [save]({{ site.baseurl }}/plugins/save/)                                                                                           | Saves the current editor contents to a form or ajax call.                             |
 | searchreplace        | [searchreplace]({{ site.baseurl }}/plugins/searchreplace/)                                                                         | Searches and/or Replaces contents within the editor.                                  |
-| spellchecker         | [spellchecker]({{ site.baseurl }}/plugins/spellchecker/)                                                             | Spellchecks the current editor contents.                                              |
+| spellchecker         | [spellchecker]({{ site.baseurl }}/plugins/spellchecker/)                                                                           | Spellchecks the current editor contents.                                              |
 | table                | [table]({{ site.baseurl }}/plugins/table/)                                                                                         | Creates/Edits table elements.                                                         |
 | tablecellprops       | [table]({{ site.baseurl }}/plugins/table/)                                                                                         | Opens the Cell properties dialog.                                                     |
+| tablecopycol         | [table]({{ site.baseurl }}/plugins/table/)                                                                                         | Copies the current column to the clipboard. {{site.requires_5_4v}}                    |
+| tablecopyrow         | [table]({{ site.baseurl }}/plugins/table/)                                                                                         | Copies the current row to the clipboard. {{site.requires_5_4v}}                       |
+| tablecutcol          | [table]({{ site.baseurl }}/plugins/table/)                                                                                         | Cuts the current column to the clipboard. {{site.requires_5_4v}}                      |
+| tablecutrow          | [table]({{ site.baseurl }}/plugins/table/)                                                                                         | Cuts the current row to the clipboard. {{site.requires_5_4v}}                         |
 | tabledelete          | [table]({{ site.baseurl }}/plugins/table/)                                                                                         | Deletes table.                                                                        |
 | tabledeletecol       | [table]({{ site.baseurl }}/plugins/table/)                                                                                         | Deletes the selected column.                                                          |
 | tabledeleterow       | [table]({{ site.baseurl }}/plugins/table/)                                                                                         | Deletes the current row row.                                                          |
@@ -112,6 +121,10 @@ tinyMCE.activeEditor.ui.registry.getAll().buttons
 | tableinsertrowafter  | [table]({{ site.baseurl }}/plugins/table/)                                                                                         | Inserts a new row after the current one.                                              |
 | tableinsertrowbefore | [table]({{ site.baseurl }}/plugins/table/)                                                                                         | Inserts a new row before the current one.                                             |
 | tablemergecells      | [table]({{ site.baseurl }}/plugins/table/)                                                                                         | Merges the selected cells.                                                            |
+| tablepastecolafter   | [table]({{ site.baseurl }}/plugins/table/)                                                                                         | Pastes the column in the clipboard after the current column. {{site.requires_5_4v}}   |
+| tablepastecolbefore  | [table]({{ site.baseurl }}/plugins/table/)                                                                                         | Pastes the column in the clipboard before the current column. {{site.requires_5_4v}}  |
+| tablepasterowafter   | [table]({{ site.baseurl }}/plugins/table/)                                                                                         | Pastes the row in the clipboard after the current row. {{site.requires_5_4v}}         |
+| tablepasterowbefore  | [table]({{ site.baseurl }}/plugins/table/)                                                                                         | Pastes the row in the clipboard before the current row. {{site.requires_5_4v}}        |
 | tableprops           | [table]({{ site.baseurl }}/plugins/table/)                                                                                         | Opens the table properties dialog.                                                    |
 | tablerowprops        | [table]({{ site.baseurl }}/plugins/table/)                                                                                         | Opens the Row properties dialog.                                                      |
 | tablesplitcells      | [table]({{ site.baseurl }}/plugins/table/)                                                                                         | Splits the current merged cell.                                                       |

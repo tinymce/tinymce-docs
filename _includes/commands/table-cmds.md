@@ -9,12 +9,16 @@
 | mceTableInsertColAfter  | Inserts a column after the current column.      |
 | mceTableDeleteCol       | Deletes the current column.                     |
 | mceTableDeleteRow       | Deletes the current row.                        |
-| mceTableCutRow          | Cuts the current row into the clipboard.      |
-| mceTableCopyRow         | Copies the current row into the clipboard.    |
+| mceTableCutRow          | Cuts the current row into the clipboard.        |
+| mceTableCutCol          | Cuts the current column into the clipboard. {{site.requires_5_4v}}    |
+| mceTableCopyRow         | Copies the current row into the clipboard.      |
+| mceTableCopyCol         | Copies the current column into the clipboard. {{site.requires_5_4v}}  |
 | mceTablePasteRowBefore  | Paste the clipboard row before the current row. |
 | mceTablePasteRowAfter   | Paste the clipboard row after the current row.  |
+| mceTablePasteColBefore  | Paste the clipboard column before the current row. {{site.requires_5_4v}} |
+| mceTablePasteColAfter   | Paste the clipboard column after the current row. {{site.requires_5_4v}} |
 | mceTableDelete          | Deletes the current table.                      |
-| mceInsertTable          | Opens the insert/edit table dialog.                  |
+| mceInsertTable          | Opens the insert/edit table dialog.             |
 | mceTableProps           | Opens the Table Properties dialog.              |
 | mceTableRowProps        | Opens the table row properties dialog.          |
 | mceTableCellProps       | Opens the table cell properties dialog.         |
@@ -31,9 +35,13 @@ tinymce.activeEditor.execCommand('mceTableInsertColAfter');
 tinymce.activeEditor.execCommand('mceTableDeleteCol');
 tinymce.activeEditor.execCommand('mceTableDeleteRow');
 tinymce.activeEditor.execCommand('mceTableCutRow');
+tinymce.activeEditor.execCommand('mceTableCutCol');
 tinymce.activeEditor.execCommand('mceTableCopyRow');
+tinymce.activeEditor.execCommand('mceTableCopyCol');
 tinymce.activeEditor.execCommand('mceTablePasteRowBefore');
 tinymce.activeEditor.execCommand('mceTablePasteRowAfter');
+tinymce.activeEditor.execCommand('mceTablePasteColBefore');
+tinymce.activeEditor.execCommand('mceTablePasteColAfter');
 tinymce.activeEditor.execCommand('mceTableDelete');
 tinymce.activeEditor.execCommand('mceInsertTable');
 tinymce.activeEditor.execCommand('mceTableProps');

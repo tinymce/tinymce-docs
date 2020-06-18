@@ -27,14 +27,13 @@ The following new features and enhancements were added for the {{site.productnam
 
 The {{site.productname}} 5.4 release includes the following improvements for the table (`table`) plugin:
 
-- Adds: commands, APIs, toolbar buttons, icons, and menu items for; cut, copy, and paste columns.
-- Adds toolbar buttons and icons for cut, copy, and paste rows.
+- Adds: commands, APIs, and icons for; cut, copy, and paste columns.
+- Adds toolbar button icons for the cut, copy, and paste rows.
 
 For information on the table plugin, see: [Table plugin]({{site.baseurl}}/plugins/table/).
 
 For a list of:
 
-- Toolbar buttons, including table-related toolbar buttons, see: [Editor control identifiers - Toolbar controls]({{site.baseurl}}/advanced/editor-control-identifiers/#toolbarcontrols).
 - Menu items, including table-related menu items and menu sections, see: [Editor control identifiers - Menu controls]({{site.baseurl}}/advanced/editor-control-identifiers/#menucontrols).
 - Available icons, including table-related icons, see: [Editor icon identifiers]({{site.baseurl}}/advanced/editor-icon-identifiers/).
 - Table plugin APIs, see: [Table plugin - APIs]({{site.baseurl}}/plugins/table/#api).

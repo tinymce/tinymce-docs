@@ -203,10 +203,6 @@ tinyMCE.activeEditor.ui.registry.getAll().menuItems
 | column                 | [table]({{ site.baseurl }}/plugins/table/)                                                                                         | Table                                                                                                    | Column menu item with related controls.                                                                   |
 | tableinsertcolumnbefore | [table]({{ site.baseurl }}/plugins/table/)   |  Table                   | Insert column before the currently selected column  |
 | tableinsertcolumnafter | [table]({{ site.baseurl }}/plugins/table/)   | Table                   | Insert column after the currently selected column  |
-| tablecutcolumn | [table]({{ site.baseurl }}/plugins/table/)   | Table                   | Cuts curently selected column or columns   |
-| tablecopycolumn | [table]({{ site.baseurl }}/plugins/table/)   |  Table                   | Copies curently selected column or columns  |
-| tablepastecolumnbefore | [table]({{ site.baseurl }}/plugins/table/)   | Table                   | Paste column before the currently selected column |
-| tablepastecolumnafter | [table]({{ site.baseurl }}/plugins/table/)   |  Table                   | Paste column after the currently selected column  |
 | tabledeletecolumn | [table]({{ site.baseurl }}/plugins/table/)   |  Table                   | Deletes curently selected column or columns  |
 | row                    | [table]({{ site.baseurl }}/plugins/table/)                                                                                         | Table                                                                                                    | Row menu item with related controls.                                                                      |
 | tableinsertrowbefore | [table]({{ site.baseurl }}/plugins/table/)   | Table                   | Inserts row before the currently selected row |

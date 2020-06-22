@@ -1,4 +1,7 @@
 
+> **Note**: Table row and table column cut, copy, and paste commands work with
+{{site.productname}}'s internal table clipboard, not the user's system clipboard.
+
 | Command                 | Description                                     |
 | ----------------------- | ----------------------------------------------- |
 | mceTableSplitCells      | Splits the current merged table cell.           |
@@ -9,14 +12,14 @@
 | mceTableInsertColAfter  | Inserts a column after the current column.      |
 | mceTableDeleteCol       | Deletes the current column.                     |
 | mceTableDeleteRow       | Deletes the current row.                        |
-| mceTableCutRow          | Cuts the current row into the clipboard.        |
-| mceTableCutCol          | Cuts the current column into the clipboard. {{site.requires_5_4v}}    |
-| mceTableCopyRow         | Copies the current row into the clipboard.      |
-| mceTableCopyCol         | Copies the current column into the clipboard. {{site.requires_5_4v}}  |
-| mceTablePasteRowBefore  | Paste the clipboard row before the current row. |
-| mceTablePasteRowAfter   | Paste the clipboard row after the current row.  |
-| mceTablePasteColBefore  | Paste the clipboard column before the current row. {{site.requires_5_4v}} |
-| mceTablePasteColAfter   | Paste the clipboard column after the current row. {{site.requires_5_4v}} |
+| mceTableCutRow          | Cuts the current row to the {{site.productname}} clipboard.        |
+| mceTableCutCol          | Cuts the current column to the {{site.productname}} clipboard. {{site.requires_5_4v}}    |
+| mceTableCopyRow         | Copies the current row to the {{site.productname}} clipboard.      |
+| mceTableCopyCol         | Copies the current column to the {{site.productname}} clipboard. {{site.requires_5_4v}}  |
+| mceTablePasteRowBefore  | Paste the {{site.productname}} clipboard row before the current row. |
+| mceTablePasteRowAfter   | Paste the {{site.productname}} clipboard row after the current row.  |
+| mceTablePasteColBefore  | Paste the {{site.productname}} clipboard column before the current row. {{site.requires_5_4v}} |
+| mceTablePasteColAfter   | Paste the {{site.productname}} clipboard column after the current row. {{site.requires_5_4v}} |
 | mceTableDelete          | Deletes the current table.                      |
 | mceInsertTable          | Opens the insert/edit table dialog.             |
 | mceTableProps           | Opens the Table Properties dialog.              |

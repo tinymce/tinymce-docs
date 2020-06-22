@@ -8,16 +8,18 @@
     <li>
   {% endif %}
     {% if link.url contains '#' %}
+      {% assign dataId = link.title | or:link.url | remove:'#' | replace: '&amp;', 'and' | replace: ' ', '-' | downcase %}
       {% capture address %}{{ include.preceding_address }}#{{ link.url | anchor }}{% endcapture %}
-      <a class="anchor" href="{{ site.baseurl }}{{ address }}">{{ link.title | or:link.url | remove:'#' }}</a>
+      <a class="anchor" href="{{ site.baseurl }}{{ address }}" data-test-id="navigation-{{ dataId }}">{{ link.title | or:link.url | remove:'#' }}</a>
     {% else %}
       {% capture address %}{{ include.preceding_address }}{{ link.url }}/{% endcapture %}
       {% capture address_index %}{{ address }}index.html{% endcapture %}
       {% assign_page link_data = address_index %}
+      {% assign dataId = link_data.title_nav | or:link_data.title | replace: '&amp;', 'and' | replace: ' ', '-' | downcase %}
       {% if link_data.type == 'folder' %}
-        <span class="folder">{{ link_data.title_nav | or:link_data.title }}</span>
+        <span class="folder" data-test-id="navigation-{{ dataId }}">{{ link_data.title_nav | or:link_data.title }}</span>
       {% else %}
-        <a href="{{ site.baseurl }}{{ address }}">{{ link_data.title_nav | or:link_data.title }}</a>
+        <a href="{{ site.baseurl }}{{ address }}" data-test-id="navigation-{{ dataId }}">{{ link_data.title_nav | or:link_data.title }}</a>
       {% endif %}
     {% endif %}
 

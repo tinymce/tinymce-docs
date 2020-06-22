@@ -10,8 +10,9 @@
   {% endif %}
   {% assign itemDescription = link_data.description_short | or:link_data.description %}
   {% assign itemDescriptionLength = itemDescription | size %}
+  {% assign dataId = titleName | replace: '&amp;', 'and' | replace: ' ', '-' | downcase %}
 <div>
-  <h2><a href="{{ site.baseurl }}{{ url }}">{{ titleName }}</a></h2>
+  <h2><a href="{{ site.baseurl }}{{ url }}" data-test-id="content-{{ dataId }}">{{ titleName }}</a></h2>
   {% if itemDescriptionLength > 150 %}
     <p>{{ itemDescription | truncatewords: 15 }}</p>
   {% else %}

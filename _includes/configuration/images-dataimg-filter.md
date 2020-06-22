@@ -11,6 +11,7 @@ The **images_dataimg_filter** option is used to filter `<img>` elements before t
 ```js
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
+  images_upload_url: 'postAcceptor.php',
   images_dataimg_filter: function(img) {
     return !img.hasAttribute('internal-blob');  // blocks the upload of <img> elements with the attribute "internal-blob".
   }

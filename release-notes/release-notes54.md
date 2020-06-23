@@ -29,6 +29,7 @@ The {{site.productname}} 5.4 release includes the following improvements for the
 
 - Adds: commands, APIs, and icons for; cut, copy, and paste columns.
 - Adds toolbar button icons for the cut, copy, and paste rows.
+- Extends the `mceInsertTable` command for adding tables without the dialog.
 
 For information on the table plugin, see: [Table plugin]({{site.baseurl}}/plugins/table/).
 

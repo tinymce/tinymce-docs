@@ -7,7 +7,7 @@ The upload handler function takes four arguments:
 * `blobInfo`
 * A `success` callback
 * A `failure` callback
-* A `progress` callback (returning a value between 1 and 100)
+* A `progress` callback that takes a value between 1 and 100
 
 When this option is not set, {{site.productname}} utilizes an `XMLHttpRequest` to upload images one at a time to the server and calls the success callback with the location of the remote image.
 
@@ -27,7 +27,7 @@ tinymce.init({
     xhr.withCredentials = false;
     xhr.open('POST', 'postAcceptor.php');
 
-    xhr.upload.onprogress = function(e) {
+    xhr.upload.onprogress = function (e) {
       progress(e.loaded / e.total * 100);
     };
 

@@ -36,9 +36,13 @@
 | `contrast` | ![contrast.svg]({{ site.baseurl }}/images/icons/contrast.svg) | `contrast.svg` | 
 | `copy` | ![copy.svg]({{ site.baseurl }}/images/icons/copy.svg) | `copy.svg` | 
 | `crop` | ![crop.svg]({{ site.baseurl }}/images/icons/crop.svg) | `crop.svg` | 
+| `cut-column` | ![cut-column.svg]({{ site.baseurl }}/images/icons/cut-column.svg) | `cut-column.svg` | 
+| `cut-row` | ![cut-row.svg]({{ site.baseurl }}/images/icons/cut-row.svg) | `cut-row.svg` | 
 | `cut` | ![cut.svg]({{ site.baseurl }}/images/icons/cut.svg) | `cut.svg` | 
 | `document-properties` | ![document-properties.svg]({{ site.baseurl }}/images/icons/document-properties.svg) | `document-properties.svg` | 
 | `drag` | ![drag.svg]({{ site.baseurl }}/images/icons/drag.svg) | `drag.svg` | 
+| `duplicate-column` | ![duplicate-column.svg]({{ site.baseurl }}/images/icons/duplicate-column.svg) | `duplicate-column.svg` | 
+| `duplicate-row` | ![duplicate-row.svg]({{ site.baseurl }}/images/icons/duplicate-row.svg) | `duplicate-row.svg` | 
 | `duplicate` | ![duplicate.svg]({{ site.baseurl }}/images/icons/duplicate.svg) | `duplicate.svg` | 
 | `edit-block` | ![edit-block.svg]({{ site.baseurl }}/images/icons/edit-block.svg) | `edit-block.svg` | 
 | `edit-image` | ![edit-image.svg]({{ site.baseurl }}/images/icons/edit-image.svg) | `edit-image.svg` | 
@@ -95,6 +99,10 @@
 | `outdent` | ![outdent.svg]({{ site.baseurl }}/images/icons/outdent.svg) | `outdent.svg` | 
 | `page-break` | ![page-break.svg]({{ site.baseurl }}/images/icons/page-break.svg) | `page-break.svg` | 
 | `paragraph` | ![paragraph.svg]({{ site.baseurl }}/images/icons/paragraph.svg) | `paragraph.svg` | 
+| `paste-column-after` | ![paste-column-after.svg]({{ site.baseurl }}/images/icons/paste-column-after.svg) | `paste-column-after.svg` | 
+| `paste-column-before` | ![paste-column-before.svg]({{ site.baseurl }}/images/icons/paste-column-before.svg) | `paste-column-before.svg` | 
+| `paste-row-after` | ![paste-row-after.svg]({{ site.baseurl }}/images/icons/paste-row-after.svg) | `paste-row-after.svg` | 
+| `paste-row-before` | ![paste-row-before.svg]({{ site.baseurl }}/images/icons/paste-row-before.svg) | `paste-row-before.svg` | 
 | `paste` | ![paste.svg]({{ site.baseurl }}/images/icons/paste.svg) | `paste.svg` | 
 | `paste-text` | ![paste-text.svg]({{ site.baseurl }}/images/icons/paste-text.svg) | `paste-text.svg` | 
 | `permanent-pen` | ![permanent-pen.svg]({{ site.baseurl }}/images/icons/permanent-pen.svg) | `permanent-pen.svg` | 

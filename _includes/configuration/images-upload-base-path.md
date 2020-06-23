@@ -9,6 +9,7 @@ This option lets you specify a `basepath` to prepend to URLs returned from the c
 ```js
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
+  images_upload_url: 'postAcceptor.php',
   images_upload_base_path: '/some/basepath'
 });
 ```

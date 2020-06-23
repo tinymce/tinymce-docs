@@ -14,6 +14,7 @@ The **images_upload_credentials** option lets you specify if calls to the config
 ```js
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
+  images_upload_url: 'postAcceptor.php',
   images_upload_credentials: true
 });
 ```

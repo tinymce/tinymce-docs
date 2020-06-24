@@ -4,7 +4,7 @@
 
 | Command                 | Description                                     |
 | ----------------------- | ----------------------------------------------- |
-| mceTableApplyCellStyle | Applies the specified styles to the selected cells. The following styles can be changed with this command: `background-color`, `border-color`, `border-style`, and `border-width`. Providing an empty value for a style will remove the style, such as `{ background-color: '' }`. {{site.requires_5_4v}} |
+| mceTableApplyCellStyle | Applies the specified styles to the selected cells. The following styles can be changed with this command: `background-color`, `border-color`, `border-style`, and `border-width`. Providing an empty value for a style will remove the style, such as `{ 'background-color': '' }`. {{site.requires_5_4v}} |
 | mceTableSplitCells      | Splits the current merged table cell.           |
 | mceTableMergeCells      | Merges the selected cells.                      |
 | mceTableInsertRowBefore | Inserts a row before the current row.           |

@@ -30,8 +30,8 @@
 **Examples**
 
 ```js
-tinymce.activeEditor.execCommand('mceTableApplyCellStyle', false, { background-color: 'red', border-color: 'blue' });
-tinymce.activeEditor.execCommand('mceTableApplyCellStyle', false, { background-color: '' }); // removes the current background-color
+tinymce.activeEditor.execCommand('mceTableApplyCellStyle', false, { 'background-color': 'red', 'border-color': 'blue' });
+tinymce.activeEditor.execCommand('mceTableApplyCellStyle', false, { 'background-color': '' }); // removes the current background-color
 tinymce.activeEditor.execCommand('mceTableSplitCells');
 tinymce.activeEditor.execCommand('mceTableMergeCells');
 tinymce.activeEditor.execCommand('mceTableInsertRowBefore');

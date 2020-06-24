@@ -4,6 +4,7 @@
 
 | Command                 | Description                                     |
 | ----------------------- | ----------------------------------------------- |
+| mcetableapplycellstyle | Applies the specified styles to the selected cells. The following styles can be changed with this command: `background-color`, `border-color`, `border-style`, and `border-width`. |
 | mceTableSplitCells      | Splits the current merged table cell.           |
 | mceTableMergeCells      | Merges the selected cells.                      |
 | mceTableInsertRowBefore | Inserts a row before the current row.           |
@@ -29,6 +30,7 @@
 **Examples**
 
 ```js
+tinymce.activeEditor.execCommand('mcetableapplycellstyle', false, { backgroundColor: 'red', borderColor: 'blue' });
 tinymce.activeEditor.execCommand('mceTableSplitCells');
 tinymce.activeEditor.execCommand('mceTableMergeCells');
 tinymce.activeEditor.execCommand('mceTableInsertRowBefore');

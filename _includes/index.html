@@ -10,7 +10,7 @@
   {% endif %}
   {% assign itemDescription = link_data.description_short | or:link_data.description %}
   {% assign itemDescriptionLength = itemDescription | size %}
-  {% assign dataId = titleName | replace: '&amp;', 'and' | replace: ' ', '-' | downcase %}
+  {% assign dataId = titleName | replace: '&amp;', 'and' | slugify %}
 <div>
   <h2><a href="{{ site.baseurl }}{{ url }}" data-test-id="content-{{ dataId }}">{{ titleName }}</a></h2>
   {% if itemDescriptionLength > 150 %}

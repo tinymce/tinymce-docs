@@ -39,6 +39,17 @@ For a list of:
 - Table plugin APIs, see: [Table plugin - APIs]({{site.baseurl}}/plugins/table/#api).
 - Table plugin commands, see: [Table plugin - Commands]({{site.baseurl}}/plugins/table/#commands).
 
+### Icon identifiers are now case-insensitive
+
+To simplify creating custom components and plugins, the icon look-up is now case-insensitive. This will assist with adding icons to custom toolbar buttons, menu sections, and menu items.
+
+For list of icons provided with {{site.productname}}, see: [Editor icon identifiers]({{site.baseurl}}/advanced/editor-icon-identifiers/).
+
+For information on:
+
+- Creating custom UI components, see: [User interface components]({{site.baseurl}}/ui-components/).
+- Creating and adding a custom icon pack, see: [Create an icon pack for TinyMCE]({{site.baseurl}}/advanced/creating-an-icon-pack/).
+
 ## Accompanying Premium Plugin changes
 
 The following premium plugin updates were released alongside {{site.productname}} 5.4.

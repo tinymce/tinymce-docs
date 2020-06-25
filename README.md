@@ -129,7 +129,7 @@ The TinyMCE API documentation is maintained within the [TinyMCE project reposito
 To install MoxieDoc, run:
 
 ```
-npm install -g git://github.com/tinymce/moxiedoc.git
+npm install -g git://github.com/tinymce/moxiedoc.git#feature/tinymcenext
 ```
 
 ##### Run the development version of the documentation for the current TinyMCE version

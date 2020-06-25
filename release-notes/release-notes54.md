@@ -56,23 +56,13 @@ For information on:
 
 The following premium plugin updates were released alongside {{site.productname}} 5.4.
 
-### Accessibility Checker 2.x.x
+### Spell Checker Pro 2.1.0
 
-The {{site.productname}} 5.4 release includes an accompanying release of the **Accessibility Checker** premium plugin.
+The {{site.productname}} 5.4 release includes an accompanying release of the **Spell Checker Pro** premium plugin.
 
-**Accessibility Checker** 2.x.x 
+**Spell Checker Pro** 2.1.0 provides better placement logic to prevent the Spell Checker dialog from covering the highlighted word.
 
-For information on the Accessibility Checker plugin, see: [Accessibility Checker plugin]({{site.baseurl}}/plugins/a11ychecker/).
-
-## Accompanying premium self-hosted server-side component changes
-
-The {{site.productname}} 5.4 release includes accompanying changes affecting the {{site.productname}} **self-hosted** services for the following plugins:
-
-- 
-
-
-### 
-
+For information on Spell Checker Pro plugin, see: [Spell Checker Pro plugin]({{site.baseurl}}/plugins/tinymcespellchecker/).
 
 ## Minor changes for TinyMCE 5.4
 

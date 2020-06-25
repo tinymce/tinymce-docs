@@ -7,24 +7,29 @@ The context menu option accepts three styles of item:
 * A `"|"` pipe character to indicate a separator should be added to delineate a group of menu items.
 * Context menu sections defined by a plugin (usually equal to the plugin name). Separators are automatically inserted between context menu sections.
 
-If the same name is registered as both a context menu section and a menu item, the section takes preference.
+If the same name is registered as both a context menu section and a menu item, the context menu section takes preference.
 
-The default configuration includes all plugins that provide a context menu; `link`, `image`, `imagetools`, `table`, and `spellchecker`.
+The default configuration includes the context menu sections for the following plugins: `link`, `linkchecker` , `image`, `imagetools`, `permanentpen`, `table`, and `spellchecker`.
 
-Alternatively the editors context menu can be disabled by setting this option to `false`.
+To disable the editor's context menu, set this option to `false`.
 
 **Type:** `String` or `false`
 
-> Note: The browsers native context menu can still be accessed by holding the `Ctrl` key while right clicking with the mouse.
-However if the `contextmenu_never_use_native` option is enabled, holding the `Ctrl` key will have no effect.
+**Default Value:** `'link linkchecker image imagetools table spellchecker configurepermanentpen'`
 
-#### Default configuration example
+> **Note**: The browsers native context menu can still be accessed by holding the `Ctrl` key while right clicking with the mouse.
+> However if the `contextmenu_never_use_native` option is enabled, holding the `Ctrl` key will have no effect.
+
+### Example: contextmenu
 
 ```js
 tinymce.init({
-  selector: "textarea",
-  contextmenu: "link image imagetools table spellchecker"
+  selector: 'textarea',
+  plugins: 'link image table',
+  contextmenu: 'link image table'
 });
 ```
 
-Further examples of the `contextmenu` option are available in the [context menu examples]({{site.baseurl}}/ui-components/contextmenu/#liveexample).
+{%if page.title != "Context menu" %}
+For information on configuring the `contextmenu` option and creating custom context menu items [context menu examples]({{site.baseurl}}/ui-components/contextmenu/).
+{% endif %}

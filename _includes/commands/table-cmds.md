@@ -22,7 +22,7 @@
 | mceTablePasteColBefore  | Paste the {{site.productname}} clipboard column before the current row. {{site.requires_5_4v}} |
 | mceTablePasteColAfter   | Paste the {{site.productname}} clipboard column after the current row. {{site.requires_5_4v}} |
 | mceTableDelete          | Deletes the current table.                      |
-| mceInsertTable          | Opens the insert/edit table dialog.             |
+| mceInsertTable          | Opens the insert/edit table dialog or inserts a table without using a dialog if additional arguments are provided (see examples below).             |
 | mceTableProps           | Opens the Table Properties dialog.              |
 | mceTableRowProps        | Opens the table row properties dialog.          |
 | mceTableCellProps       | Opens the table cell properties dialog.         |
@@ -50,6 +50,9 @@ tinymce.activeEditor.execCommand('mceTablePasteColBefore');
 tinymce.activeEditor.execCommand('mceTablePasteColAfter');
 tinymce.activeEditor.execCommand('mceTableDelete');
 tinymce.activeEditor.execCommand('mceInsertTable');
+tinymce.activeEditor.execCommand('mceInsertTable', false, { rows: 2, columns: 2 });
+tinymce.activeEditor.execCommand('mceInsertTable', false, { rows: 3, columns: 2, options: { headerRows: 1 } });
+tinymce.activeEditor.execCommand('mceInsertTable', false, { rows: 3, columns: 2, options: { headerRows: 1, headerColumns: 1 } });
 tinymce.activeEditor.execCommand('mceTableProps');
 tinymce.activeEditor.execCommand('mceTableRowProps');
 tinymce.activeEditor.execCommand('mceTableCellProps');

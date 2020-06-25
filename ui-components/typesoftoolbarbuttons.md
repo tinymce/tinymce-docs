@@ -61,7 +61,7 @@ A toggle button triggers an action when clicked but also has a concept of state.
 | Name | Value | Requirement | Description |
 |------| ------| ------------| ----------- |
 | text | string | optional | Text to display if no icon is found. |
-| icon | string | optional | Name of the icon to be displayed. Must correspond to an icon in the [icon pack]({{site.baseurl}}/advanced/editor-icon-identifiers/). |
+| icon | string | optional | Name of the icon to be displayed. Must correspond to an icon in the [icon pack]({{site.baseurl}}/advanced/editor-icon-identifiers/) or an icon in a [custom icon pack]({{site.baseurl}}/advanced/creating-an-icon-pack/). |
 | tooltip | string | optional | Text for button tooltip.  |
 | disabled | boolean | optional | default: false - Represents the button's state. When true, button is unclickable. Toggled by the button's API. |
 | active | boolean | optional | default: false - Represents the button's state. When true, button is highlighted. Toggled by the button's API. |
@@ -99,16 +99,16 @@ A split button contains a basic button and a menu button, wrapped up into one to
 
 #### Config options
 
-| Name | Value | Requirement | Description |
-|------| ------| ------------| ----------- |
-| text | string | optional | Text displayed if no icon is found. |
-| icon | string | optional | Name of the icon to be displayed. Must correspond to an icon in the [icon pack]({{site.baseurl}}/advanced/editor-icon-identifiers/). |
-| select | (value: string) => boolean  | optional | default: false - Function run on each option to determine if it should be highlighted as active. |
-| columns | string | optional | default: 1 - Number of columns for the list of options. |
-| fetch | (success: (menu) => void) => void  | required | Function that takes a callback which must be passed the list of options for the button's dropdown. |
-| onAction | (api) => void | required | Function invoked when the basic button section is clicked. |
-| onItemAction | (api, value) => void | required | Function invoked when a dropdown list option is clicked. |
-| onSetup | (api) => (api) => void | optional | default: () => () => {} - Function invoked when the button is rendered. |
+| Name         | Value                             | Target component  | Requirement | Description                                                                                                                                                                                                                 |
+|--------------|-----------------------------------| ----------------- |-------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| text         | string                            | Primary button    | optional    | Text displayed if no icon is found.                                                                                                                                                                                         |
+| icon         | string                            | Primary button    | optional    | Name of the icon to be displayed. Must correspond to an icon in the [icon pack]({{site.baseurl}}/advanced/editor-icon-identifiers/) or an icon in a [custom icon pack]({{site.baseurl}}/advanced/creating-an-icon-pack/). |
+| onAction     | (api) => void                     | Primary button    | required    | Function invoked when the basic button section is clicked.                                                                                                                                                                  |
+| select       | (value: string) => boolean        | Primary button    | optional    | default: false - Function run on each option to determine if it should be highlighted as active.                                                                                                                            |
+| columns      | string                            | Drop-down menu    | optional    | default: 1 - Number of columns for the list of options.                                                                                                                                                                     |
+| fetch        | (success: (menu) => void) => void | Drop-down menu    | required    | Function that takes a callback which must be passed the list of options for the button's dropdown.                                                                                                                          |
+| onItemAction | (api, value) => void              | Choice menu items | required    | Function invoked when a dropdown list option is clicked.                                                                                                                                                                    |
+| onSetup      | (api) => (api) => void            | Choice menu items | optional    | default: () => () => {} - Function invoked when the button is rendered.                                                                                                                                                     |
 
 > Note: See [below](#onsetupexplanation) for details on how to configure `onSetup`.
 
@@ -133,6 +133,8 @@ A split button is similar to a basic button in that they both require an `onActi
 
 The `fetch` function is called whenever the split button's drop-down menu is opened. It is a function that takes a callback and passes it an array of menu items to be rendered in the button's drop-down menu. This allows for asynchronous fetching of the menu items.
 
+#{% include components/choice-menu-items.md %}
+
 ### Menu button
 
 A toolbar menu button is a toolbar button that opens a menu when clicked. This menu can also contain submenus. This is useful for grouping together actions that would otherwise be several buttons on the toolbar. It can also be used to reduce visual clutter and save UI space, as menubar menu items and some toolbar buttons could be moved into a toolbar menu button. Potentially, all menubar menu items could be moved into toolbar menu buttons, allowing for the editor to be used without a menubar at all.
@@ -144,7 +146,7 @@ A toolbar menu button is a toolbar button that opens a menu when clicked. This m
 | Name | Value | Requirement | Description |
 |------| ------| ------------| ----------- |
 | text | string | optional | Text to display if no icon is found. |
-| icon | string | optional | Name of the icon to be displayed. Must correspond to an icon in the [icon pack]({{site.baseurl}}/advanced/editor-icon-identifiers/). |
+| icon | string | optional | Name of the icon to be displayed. Must correspond to an icon in the [icon pack]({{site.baseurl}}/advanced/editor-icon-identifiers/) or an icon in a [custom icon pack]({{site.baseurl}}/advanced/creating-an-icon-pack/). |
 | tooltip | string | optional | Text for button tooltip. |
 | fetch | (success: (menu) => void) => void  | required | Function that takes a callback which must be passed the list of options for the button's dropdown. |
 | onSetup | (api) => (api) => void | optional | default: () => () => {} - Function that's invoked when the button is rendered. |
@@ -183,7 +185,7 @@ A group toolbar button is a toolbar button that contains a collection of other t
 | Name | Value | Requirement | Description |
 |------| ------| ------------| ----------- |
 | text | string | optional | Text to display if no icon is found. |
-| icon | string | optional | Name of the icon to be displayed. Must correspond to an icon in the [icon pack]({{site.baseurl}}/advanced/editor-icon-identifiers/). |
+| icon | string | optional | Name of the icon to be displayed. Must correspond to an icon in the [icon pack]({{site.baseurl}}/advanced/editor-icon-identifiers/) or an icon in a [custom icon pack]({{site.baseurl}}/advanced/creating-an-icon-pack/). |
 | tooltip | string | optional | Text for button tooltip. |
 | items | string or LabelledToolbar[] | required | A string of space separated toolbar button names, or an array of [labelled toolbar buttons]({{site.baseurl}}/configure/editor-appearance/#addingtoolbargrouplabels). |
 | onSetup | (api) => (api) => void | optional | default: () => () => {} - Function that's invoked when the button is rendered. |

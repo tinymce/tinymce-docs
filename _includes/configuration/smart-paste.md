@@ -18,7 +18,7 @@ To disable the `smart_paste` functionality, set `smart_paste` to `false`.
 
 **Possible Values:** `true`, `false`
 
-#### Example
+##### Example: `smart_paste`
 
 ```js
 tinymce.init({

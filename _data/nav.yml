@@ -397,6 +397,7 @@
     - url: "#Default CSS"
   - url: "paste"
     pages:
+    - url: "#paste_block_drop"
     - url: "#paste_data_images"
     - url: "#paste_as_text"
     - url: "#paste_enable_default_filters"
@@ -421,6 +422,7 @@
   - url: "powerpaste"
     pages:
     - url: "#paste_as_text"
+    - url: "#paste_merge_formats"
     - url: "#powerpaste_word_import"
     - url: "#powerpaste_html_import"
     - url: "#powerpaste_allow_local_images"
@@ -428,6 +430,8 @@
     - url: "#powerpaste_clean_filtered_inline_elements"
     - url: "#powerpaste_keep_unsupported_src"
     - url: "#smart_paste"
+    - url: "#paste_preprocess"
+    - url: "#paste_postprocess"
     - url: "#Commands"
   - url: "preview"
   - url: "print"

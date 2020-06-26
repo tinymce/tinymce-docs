@@ -1,6 +1,6 @@
 #### Choice menu items
 
-Choice menu items are available as Split toolbar button menu items. For a description of how choice menu items are, see: [Split toolbar buttons]({{site.baseurl}}/ui-components/typesoftoolbarbuttons/#splitbutton).
+Choice menu items are available as split toolbar button menu items. For a description of how choice menu items are, see: [Split toolbar buttons]({{site.baseurl}}/ui-components/typesoftoolbarbuttons/#splitbutton).
 
 ##### Config options
 

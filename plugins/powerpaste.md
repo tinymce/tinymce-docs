@@ -169,6 +169,8 @@ tinymce.init({
 });
 ```
 
+{% include configuration/smart-paste.md %}
+
 ## Toolbar Buttons
 
 #### pastetext

@@ -286,6 +286,8 @@ tinymce.init({
 });
 ```
 
+{% include configuration/smart-paste.md %}
+
 ## Commands
 
 The Paste plugin provides the following JavaScript command.

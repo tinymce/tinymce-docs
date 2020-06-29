@@ -1,8 +1,8 @@
 ---
 layout: default
 title: Cloud deployment of plugins Only
-description_short: Learn how to setup TinyMCE Plugins via the Cloud.
-description: Connect to Tiny Cloud within a hybrid deployment in less than 5 minutes.
+description_short: Learn how to setup TinyMCE Plugins via the Tiny Cloud.
+description: Connect to Tiny Cloud within a hybrid deployment.
 keywords: tinymce cloud script textarea apiKey hybrid
 ---
 

@@ -32,6 +32,7 @@ When the example.js file is present, the link to the external codepen site is di
 
 {% endcomment %}
 
+{% comment %} Add cloud script(s) {% endcomment %}
 {% if include.script_url_override %}
   <script src='{{ include.script_url_override }}'></script>
 {% else %}
@@ -42,18 +43,22 @@ When the example.js file is present, the link to the external codepen site is di
   {% endif %}
 {% endif %}
 
+{% comment %} Assign html to codepen_html {% endcomment %}
 {% capture codepen_html %}
 {% include codepens/{{ include.id }}/index.html %}
 {% endcapture %}
 
+{% comment %} Check if a example.js exists {% endcomment %}
 {% capture hasExampleJS %}
 {% file_exists _includes/codepens/{{ include.id }}/example.js %}
 {% endcapture %}
 
+{% comment %} Assign js to codepen_js {% endcomment %}
 {% capture codepen_js %}
 {% include codepens/{{ include.id }}/index.js %}
 {% endcapture %}
 
+{% comment %} If example.js exists, Assign to example_js else use index.js {% endcomment %}
 {% if hasExampleJS contains "true" %}
 {% capture example_js %}
 {% include codepens/{{ include.id }}/example.js %}
@@ -64,16 +69,19 @@ When the example.js file is present, the link to the external codepen site is di
 {% endcapture %}
 {% endif %}
 
+{% comment %} Check if a style.css exists {% endcomment %}
 {% capture hasCss %}
 {% file_exists _includes/codepens/{{ include.id }}/style.css %}
 {% endcapture %}
 
+{% comment %} If style.css has been provided... {% endcomment %}
 {% if hasCss contains "true" %}
-
+{% comment %} Assign CSS to codepen_css {% endcomment %}
 {% capture codepen_css %}
 {% include codepens/{{ include.id }}/style.css %}
 {% endcapture %}
 
+{% comment %} Create and assign a CSS codeblock to codepen_css_preview {% endcomment %}
 {% capture codepen_css_preview %}
 ```css
 {{ codepen_css }}
@@ -82,38 +90,35 @@ When the example.js file is present, the link to the external codepen site is di
 
 {% endif %}
 
-{% capture script_tag %}
-{% if include.type == 'tinydrive' %}
-{% include tinydrive-script-tag.html %}
-{% else %}
-{% include tinymce-script-tag.html %}
-{% endif %}
-{% endcapture %}
-
+{% comment %} Create and assign a HTML codeblock to codepen_html_preview {% endcomment %}
 {% capture codepen_html_preview %}
 ```html
 {{ codepen_html }}
 ```
 {% endcapture %}
 
+{% comment %} Create and assign a JS codeblock to codepen_js_preview {% endcomment %}
 {% capture codepen_js_preview %}
 ```js
 {{ example_js }}
 ```
 {% endcapture %}
 
+{% comment %} Changes primary tab name where type is provided {% endcomment %}
 {% if include.type == 'tinydrive' %}
     {% assign runText = "Tiny Drive" %}
 {% else %}
     {% assign runText = "TinyMCE" %}
 {% endif %}
 
+{% comment %} Changes initial tab where tab is specified {% endcomment %}
 {% if include.tab %}
     {% assign initialTab = include.tab %}
 {% else %}
     {% assign initialTab = "run" %}
 {% endif %}
 
+{% comment %} Creates the codepen tabs {% endcomment %}
 <div id="codepen_{{ include.id }}" class="codepen" {% if include.height %}style="min-height:{{ include.height }}px;"{% endif %}>
     <div class="codepen_tabs">
         {% for tab in site.data.codepen-tabs %}
@@ -136,6 +141,7 @@ When the example.js file is present, the link to the external codepen site is di
         {% endif %}
     </div>
 
+    {% comment %} Adds style.css to page if provided {% endcomment %}
     <div id="codepen_pane_run_{{ include.id }}" {% if "run" != initialTab %}style="display:none;"{% endif %}>
         {% if hasCss contains "true" %}
             <style type="text/css">
@@ -145,21 +151,25 @@ When the example.js file is present, the link to the external codepen site is di
         {{ codepen_html }}
     </div>
 
+    {% comment %} Adds HTML tab content {% endcomment %}
     <div id="codepen_pane_html_{{ include.id }}" {% if "html" != initialTab %}style="display:none;"{% endif %}>
         {{ codepen_html_preview | markdownify }}
     </div>
 
+    {% comment %} If style.css exists, add CSS tab content {% endcomment %}
     {% if hasCss contains "true" %}
         <div id="codepen_pane_css_{{ include.id }}" {% if "css" != initialTab %}style="display:none;"{% endif %}>
             {{ codepen_css_preview | markdownify }}
         </div>
     {% endif %}
 
+    {% comment %} Add content to JS tab from index.js or example.js {% endcomment %}
     <div id="codepen_pane_js_{{ include.id }}" {% if "js" != initialTab %}style="display:none;"{% endif %}>
         {{ codepen_js_preview | markdownify }}
     </div>
 </div>
 
+{% comment %} Changes initial tab where tab is specified {% endcomment %}
 <form action="https://codepen.io/pen/define" method="POST" target="_blank" id="codepen_form_{{ include.id }}">
     <input type="hidden" name="data" id="codepen_data_{{ include.id }}" />
 </form>
@@ -172,6 +182,7 @@ When the example.js file is present, the link to the external codepen site is di
     }
   })();
 
+  {% comment %} Add index.js to the page (primary tab content) {% endcomment %}
   (function() {
     {{ codepen_js }}
   })();
@@ -180,9 +191,12 @@ When the example.js file is present, the link to the external codepen site is di
     /* TODO: more js, less jekyll */
     var id = "{{ include.id }}";
 
+    {% comment %} Add index.js and HTML to variables {% endcomment %}
     var html = decodeURIComponent("{{ codepen_html | uri_escape }}");
     var js = decodeURIComponent("{{ codepen_js | uri_escape }}");
 
+    {% comment %} If style.css provided, add to variable {% endcomment %}
+    {% comment %} set which tabz are shown in on codepen site {% endcomment %}
     {% if hasCss contains "true" %}
         var css = decodeURIComponent("{{ codepen_css | uri_escape }}");
         var tabNames = ["run","html","css","js"];
@@ -191,6 +205,7 @@ When the example.js file is present, the link to the external codepen site is di
         var tabNames = ["run","html","js"];
     {% endif %}
 
+    {% comment %} Data to send to codepen dot io via form input {% endcomment %}
     /* Note: there are some other fields we could populate here to polish this. */
     /* See: https://blog.codepen.io/documentation/api/prefill/ */
     var data = {
@@ -204,6 +219,7 @@ When the example.js file is present, the link to the external codepen site is di
     };
     document.getElementById("codepen_data_{{ include.id }}").value = JSON.stringify(data);
 
+    {% comment %} Below is just tab selection/change logic {% endcomment %}
     /* TODO: */
     var tabs = tabNames.map(function(t) {
       return {

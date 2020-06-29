@@ -28,7 +28,7 @@ These settings affect the execution of the `table` plugin and let you modify the
 
 ### `table_toolbar`
 
-This option allows you to specify the toolbar buttons shown on the tables contextual toolbar. Provide a space-separated list of toolbar buttons in the order they should be shown. To create groups on the toolbar, use the `|` pipe character to add a separator between toolbar buttons.
+This option allows you to specify the toolbar buttons shown on the contextual toolbar for tables. Provide a space-separated list of toolbar buttons in the order they should be shown. To create groups on the toolbar, use the `|` pipe character to add a separator between toolbar buttons.
 
 To disable the table toolbar, set the value to an empty string.
 

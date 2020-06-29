@@ -5,7 +5,7 @@
 {% endif %}
 ### `paste_merge_formats`
 
-This option enables the merge format feature of the {{plugin}} plugin. This merges similar text formats to reduce the number of HTML elements produced. For example: `<b>abc <b>bold</b> 123</b>` becomes `<b>abc bold 123</b>` since the inner format is redundant. This option is enabled by default but can be disabled if retaining nesting or similar formats is important.
+This option enables the merge format feature of the {{plugin}} plugin. This merges identical text format elements to reduce the number of HTML elements produced. For example: `<b>abc <b>bold</b> 123</b>` becomes `<b>abc bold 123</b>` since the inner format is redundant. This option is enabled by default but can be disabled if retaining nested or identical format elements is important.
 
 **Type:** `Boolean`
 

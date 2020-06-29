@@ -36,7 +36,7 @@ To disable the table toolbar, set the value to an empty string.
 
 **Default Value:** `'tableprops tabledelete | tableinsertrowbefore tableinsertrowafter tabledeleterow | tableinsertcolbefore tableinsertcolafter tabledeletecol'`
 
-**Possible Values:** Any toolbar button. For a list of predefined toolbar buttons, see: [Editor control identifiers - Toolbar controls](https://www.tiny.cloud/docs/advanced/editor-control-identifiers/#toolbarcontrols).
+**Possible Values:** Any toolbar button. For a list of predefined toolbar buttons, see: [Editor control identifiers - Toolbar controls]({{site.baseurl}}/advanced/editor-control-identifiers/#toolbarcontrols).
 
 ##### Example: Default table_toolbar configuration
 

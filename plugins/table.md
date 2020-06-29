@@ -28,7 +28,7 @@ These settings affect the execution of the `table` plugin and let you modify the
 
 ### `table_toolbar`
 
-This option allows you to specify the buttons and the order that they will appear on within {{site.productname}}'s inline contextual toolbar for tables. To specify the controls that should appear on {{site.productname}}'s table toolbar, the `table_toolbar` option should be provided with a space separated list of toolbar controls. To create groups within this list, please add `|` pipe characters between the groups of controls that you would like to create.
+This option allows you to specify the toolbar buttons shown on the tables contextual toolbar. Provide a space-separated list of toolbar buttons in the order they should be shown. To create groups on the toolbar, use the `|` pipe character to add a separator between toolbar buttons.
 
 To disable the table toolbar, set the value to an empty string.
 
@@ -36,7 +36,7 @@ To disable the table toolbar, set the value to an empty string.
 
 **Default Value:** `'tableprops tabledelete | tableinsertrowbefore tableinsertrowafter tabledeleterow | tableinsertcolbefore tableinsertcolafter tabledeletecol'`
 
-**Possible Values:**  `table`, `tablerowprops`, `tablecellprops`, `tableprops`, `tabledelete`, `tableinsertrowbefore`, `tableinsertrowafter` `tabledeleterow`, `tableinsertcolbefore`, `tableinsertcolafter`, `tabledeletecol`
+**Possible Values:** Any toolbar button. For a list of predefined toolbar buttons, see: [Editor control identifiers - Toolbar controls](https://www.tiny.cloud/docs/advanced/editor-control-identifiers/#toolbarcontrols).
 
 ##### Example: Default table_toolbar configuration
 

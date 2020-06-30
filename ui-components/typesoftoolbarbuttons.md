@@ -23,7 +23,7 @@ A basic button triggers its `onAction` function when clicked.
 | Name | Value | Requirement | Description |
 | ---- | ----- | ----------- | ----------- |
 | text | string | optional | Text to display if no icon is found. |
-| icon | string | optional | Name of the icon to be displayed. Must correspond to an icon in [icon pack]({{site.baseurl}}/advanced/editor-icon-identifiers/). |
+| icon | string | optional | {{site.predefinedIconsOnly}} |
 | tooltip | string | optional | Text for button tooltip.  |
 | disabled | boolean | optional | default: false - Represents the button's state. When true, button is unclickable. Toggled by the button's API. |
 | onSetup | (api) => (api) => void | optional | default: () => () => {} - Function invoked when the button is rendered. |
@@ -61,7 +61,7 @@ A toggle button triggers an action when clicked but also has a concept of state.
 | Name | Value | Requirement | Description |
 |------| ------| ------------| ----------- |
 | text | string | optional | Text to display if no icon is found. |
-| icon | string | optional | Name of the icon to be displayed. Must correspond to an icon in the [icon pack]({{site.baseurl}}/advanced/editor-icon-identifiers/) or an icon in a [custom icon pack]({{site.baseurl}}/advanced/creating-an-icon-pack/). |
+| icon | string | optional | {{site.predefinedIconsOnly}} |
 | tooltip | string | optional | Text for button tooltip.  |
 | disabled | boolean | optional | default: false - Represents the button's state. When true, button is unclickable. Toggled by the button's API. |
 | active | boolean | optional | default: false - Represents the button's state. When true, button is highlighted. Toggled by the button's API. |
@@ -99,16 +99,16 @@ A split button contains a basic button and a menu button, wrapped up into one to
 
 #### Config options
 
-| Name         | Value                             | Target component  | Requirement | Description                                                                                                                                                                                                               |
-|--------------|-----------------------------------|-------------------|-------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| text         | string                            | Primary button    | optional    | Text displayed if no icon is found.                                                                                                                                                                                       |
-| icon         | string                            | Primary button    | optional    | Name of the icon to be displayed. Must correspond to an icon in the [icon pack]({{site.baseurl}}/advanced/editor-icon-identifiers/) or an icon in a [custom icon pack]({{site.baseurl}}/advanced/creating-an-icon-pack/). |
-| onAction     | (api) => void                     | Primary button    | required    | Function invoked when the basic button section is clicked.                                                                                                                                                                |
-| select       | (value: string) => boolean        | Choice menu items | optional    | default: false - Function run on each option to determine if it should be highlighted as active.                                                                                                                          |
-| columns      | string                            | Drop-down menu    | optional    | default: 1 - Number of columns for the list of options.                                                                                                                                                                   |
-| fetch        | (success: (menu) => void) => void | Drop-down menu    | required    | Function that takes a callback which must be passed the list of options for the button's dropdown.                                                                                                                        |
-| onItemAction | (api, value) => void              | Choice menu items | required    | Function invoked when a dropdown list option is clicked.                                                                                                                                                                  |
-| onSetup      | (api) => (api) => void            | All               | optional    | default: () => () => {} - Function invoked when the button is rendered.                                                                                                                                                   |
+| Name         | Value                             | Target component  | Requirement | Description                                                                                                                        |
+|--------------|-----------------------------------|-------------------|-------------|------------------------------------------------------------------------------------------------------------------------------------|
+| text         | string                            | Primary button    | optional    | Text displayed if no icon is found.                                                                                                |
+| icon         | string                            | Primary button    | optional    | {{site.predefinedIconsOnly}}                                                                                                       |
+| onAction     | (api) => void                     | Primary button    | required    | Function invoked when the basic button section is clicked.                                                                         |
+| select       | (value: string) => boolean        | Choice menu items | optional    | default: false - Function run on each option when the menu is opened to determine if it should be highlighted as active.           |
+| columns      | string                            | Drop-down menu    | optional    | default: 1 - Number of columns for the list of options. When set to more than 1 column, only the icon for each item will be shown. |
+| fetch        | (success: (menu) => void) => void | Drop-down menu    | required    | A callback function that is passed a list of choice menu items for the dropdown menu.                                              |
+| onItemAction | (api, value) => void              | Choice menu items | required    | Function invoked when a dropdown list option is clicked. The value is defined by the selected choice menu item.                    |
+| onSetup      | (api) => (api) => void            | All               | optional    | default: () => () => {} - Function invoked when the button is rendered.                                                            |
 
 > Note: See [below](#onsetupexplanation) for details on how to configure `onSetup`.
 
@@ -146,7 +146,7 @@ A toolbar menu button is a toolbar button that opens a menu when clicked. This m
 | Name | Value | Requirement | Description |
 |------| ------| ------------| ----------- |
 | text | string | optional | Text to display if no icon is found. |
-| icon | string | optional | Name of the icon to be displayed. Must correspond to an icon in the [icon pack]({{site.baseurl}}/advanced/editor-icon-identifiers/) or an icon in a [custom icon pack]({{site.baseurl}}/advanced/creating-an-icon-pack/). |
+| icon | string | optional | {{site.predefinedIconsOnly}} |
 | tooltip | string | optional | Text for button tooltip. |
 | fetch | (success: (menu) => void) => void  | required | Function that takes a callback which must be passed the list of options for the button's dropdown. |
 | onSetup | (api) => (api) => void | optional | default: () => () => {} - Function that's invoked when the button is rendered. |
@@ -185,7 +185,7 @@ A group toolbar button is a toolbar button that contains a collection of other t
 | Name | Value | Requirement | Description |
 |------| ------| ------------| ----------- |
 | text | string | optional | Text to display if no icon is found. |
-| icon | string | optional | Name of the icon to be displayed. Must correspond to an icon in the [icon pack]({{site.baseurl}}/advanced/editor-icon-identifiers/) or an icon in a [custom icon pack]({{site.baseurl}}/advanced/creating-an-icon-pack/). |
+| icon | string | optional | {{site.predefinedIconsOnly}} |
 | tooltip | string | optional | Text for button tooltip. |
 | items | string or LabelledToolbar[] | required | A string of space separated toolbar button names, or an array of [labelled toolbar buttons]({{site.baseurl}}/configure/editor-appearance/#addingtoolbargrouplabels). |
 | onSetup | (api) => (api) => void | optional | default: () => () => {} - Function that's invoked when the button is rendered. |

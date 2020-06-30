@@ -63,7 +63,7 @@ This is a list of available keyboard shortcuts within the editor user interface.
 
 ## Add custom shortcuts to TinyMCE
 
-> **Important**: Adding a custom shortcut with a keyboard combination that conflicts with an existing shortcut will override the existing shortcut.
+> **Important**: Adding a custom shortcut with a keyboard combination that conflicts with an existing {{site.productname}} or browser shortcut will override the existing shortcut.
 
 To add a custom keyboard shortcut to {{site.productname}}, use either:
 

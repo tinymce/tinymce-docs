@@ -85,6 +85,8 @@ tinymce.init({
 });
 ```
 
+{% include configuration/paste-merge-formats.md %}
+
 ### powerpaste_word_import
 
 This setting controls how content pasted from Microsoft Word is filtered.
@@ -121,13 +123,7 @@ When set to `true`, Base64 encoded images using a data URI in the copied content
 
 >***Note:*** *If you configure* ***PowerPaste*** *to allow local images, you can have {{site.productname}} automatically upload Base64 encoded images for conversion back to a standard image as described on the [image upload documenation]({{ site.baseurl }}/advanced/handle-async-image-uploads/).*
 
-### powerpaste_block_drop
-
-Due to browser limitations, it is not possible to filter content that is dragged and dropped into the editor. When powerpaste_block_drop is set to true the plugin will disable drag and dropping content into the editor. This prevents the unfiltered content from being introduced. Copy and paste is still enabled.
-
-**Default value:** `false`
-
-**Possible values:**  `true`, `false`
+{% include configuration/paste-block-drop.md %}
 
 ### powerpaste_clean_filtered_inline_elements
 
@@ -168,6 +164,8 @@ tinymce.init({
   powerpaste_keep_unsupported_src: true
 });
 ```
+
+{% include configuration/smart-paste.md %}
 
 ## Toolbar Buttons
 

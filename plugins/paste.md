@@ -32,6 +32,8 @@ tinymce.init({
 
 These settings affect the way content is eliminated or preserved when being pasted. In addition, callbacks are available prior to and after content filtration.
 
+{% include configuration/paste-block-drop.md %}
+
 ### `paste_data_images`
 
 This option specifies whether `data:url` images (inline images) should be removed or not from the pasted contents.
@@ -220,27 +222,7 @@ tinymce.init({
 });
 ```
 
-### `paste_merge_formats`
-
-This option enables the merge format feature of the paste plugin. This merges similar text formats to reduce the number of HTML elements produced. For example this `<b>abc <b>bold</b> 123</b>` becomes `<b>abc bold 123</b>` since the inner format is basically redundant. This option is enabled by default but can be disabled if retaining nesting or similar formats is important.
-
-**Type:** `Boolean`
-
-**Default Value:** `true`
-
-**Possible Values:** `true`, `false`
-
-##### Example
-
-```js
-tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "paste",
-  menubar: "edit",
-  toolbar: "paste",
-  paste_merge_formats: false
-});
-```
+{% include configuration/paste-merge-formats.md %}
 
 ### `paste_convert_word_fake_lists`
 
@@ -285,6 +267,8 @@ tinymce.init({
   paste_remove_styles_if_webkit: false
 });
 ```
+
+{% include configuration/smart-paste.md %}
 
 ## Commands
 

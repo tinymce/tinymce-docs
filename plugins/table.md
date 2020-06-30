@@ -15,6 +15,7 @@ The `table` plugin adds table management functionality to {{site.productname}}. 
 
 ```js
 tinymce.init({
+  selector: "textarea",  // change this value according to your HTML
   plugins: "table",
   menubar: "table",
   toolbar: "table tabledelete | tableprops tablerowprops tablecellprops | tableinsertrowbefore tableinsertrowafter tabledeleterow | tableinsertcolbefore tableinsertcolafter tabledeletecol"
@@ -27,20 +28,35 @@ These settings affect the execution of the `table` plugin and let you modify the
 
 ### `table_toolbar`
 
-This option allows you to specify the buttons and the order that they will appear on within {{site.productname}}'s inline contextual toolbar for tables. To specify the controls that should appear on {{site.productname}}'s table toolbar, the `table_toolbar` option should be provided with a space separated list of toolbar controls. To create groups within this list, please add `|` pipe characters between the groups of controls that you would like to create. If you want to disable this toolbar simply set the value to an empty string.
+This option allows you to specify the toolbar buttons shown on the contextual toolbar for tables. Provide a space-separated list of toolbar buttons in the order they should be shown. To create groups on the toolbar, use the `|` pipe character to add a separator between toolbar buttons.
+
+To disable the table toolbar, set the value to an empty string.
 
 **Type:** `String`
 
-**Default Value:** `"tableprops tabledelete | tableinsertrowbefore tableinsertrowafter tabledeleterow | tableinsertcolbefore tableinsertcolafter tabledeletecol"`
+**Default Value:** `'tableprops tabledelete | tableinsertrowbefore tableinsertrowafter tabledeleterow | tableinsertcolbefore tableinsertcolafter tabledeletecol'`
 
-**Possible Values:**  `table`, `tablerowprops`, `tablecellprops`
+**Possible Values:** Any toolbar button. For a list of predefined toolbar buttons, see: [Editor control identifiers - Toolbar controls]({{site.baseurl}}/advanced/editor-control-identifiers/#toolbarcontrols).
 
-##### Example
+##### Example: Default table_toolbar configuration
 
 ```js
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
+  plugins: "table",
   table_toolbar: "tableprops tabledelete | tableinsertrowbefore tableinsertrowafter tabledeleterow | tableinsertcolbefore tableinsertcolafter tabledeletecol"
+});
+```
+
+##### Example: Disable the table toolbar
+
+To disable or remove the contextual table toolbar, set `table_toolbar` to an empty string.
+
+```js
+tinymce.init({
+  selector: "textarea",  // change this value according to your HTML
+  plugins: "table",
+  table_toolbar: ""
 });
 ```
 
@@ -74,6 +90,7 @@ This option enables you to specify which elements should be cloned as empty chil
 ```js
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
+  plugins: "table",
   table_clone_elements: "strong em a"
 });
 ```
@@ -371,6 +388,7 @@ Here are some examples of configuration for common setups.
 
 ```js
 tinymce.init({
+  selector: "textarea",  // change this value according to your HTML
   plugins: "table",
   table_default_attributes: {},
   table_default_styles: {}
@@ -380,6 +398,7 @@ tinymce.init({
 
 ```js
 tinymce.init({
+  selector: "textarea",  // change this value according to your HTML
   plugins: "table",
   table_default_attributes: {},
   table_default_styles: {},
@@ -390,6 +409,7 @@ tinymce.init({
 
 ```js
 tinymce.init({
+  selector: "textarea",  // change this value according to your HTML
   plugins: "table",
   table_default_attributes: {
     'border': '1'

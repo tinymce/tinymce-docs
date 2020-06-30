@@ -10,6 +10,42 @@ class: changelog
 
 {% capture changelog %}
 
+## Version 5.4.0 June 30, 2020
+* Added keyboard navigation support to menus and toolbars when the editor is in a ShadowRoot.
+* Added the ability for menus to be clicked when the editor is in an open shadow root.
+* Added the `Editor.ui.styleSheetLoader` API for loading stylesheets within the Document or ShadowRoot containing the editor UI.
+* Added the `StyleSheetLoader` module to the public API.
+* Added Oxide variables for styling the `select` element and headings in dialog content.
+* Added icons for `table` column and row cut, copy, and paste toolbar buttons.
+* Added all `table` menu items to the UI registry, so they can be used by name in other menus.
+* Added new `mceTableApplyCellStyle` command to the `table` plugin.
+* Added new `table` cut, copy, and paste column editor commands and menu items.
+* Added font related Oxide variables for secondary buttons, allowing for custom styling.
+* Added new `table_header_type` setting to control how table header rows are structured.
+* Added new `table_sizing_mode` setting to replace the `table_responsive_width` setting, which has now been deprecated.
+* Added new `mceTableSizingMode` command for changing the sizing mode of a table.
+* Added new `mceTableRowType`, `mceTableColType`, and `mceTableCellType` commands and value queries.
+* Changed `advlist` toolbar buttons to only show a dropdown list if there is more than one option.
+* Changed `mceInsertTable` command and `insertTable` API method to take optional header rows and columns arguments.
+* Changed stylesheet loading, so that UI skin stylesheets can load in a ShadowRoot if required.
+* Changed the DOM location of menus so that they display correctly when the editor is in a ShadowRoot.
+* Changed the table plugin to correctly detect all valid header row structures.
+* Fixed tables with no defined width being converted to a `fixed` width table when modifying the table.
+* Fixed the `autosave` `isEmpty` API incorrectly detecting non-empty content as empty.
+* Fixed table `Paste row after` and `Paste row before` menu items not disabled when nothing was available to paste.
+* Fixed a selection performance issue with large tables on Microsoft Internet Explorer and Edge.
+* Fixed filters for screening commands from the undo stack to be case-insensitive.
+* Fixed `fullscreen` plugin now removes all classes when the editor is closed.
+* Fixed handling of mixed-case icon identifiers (names) for UI elements.
+* Fixed leading and trailing spaces lost when using `editor.selection.getContent({ format: 'text' })`.
+* Fixed an issue where changing the URL with the quicklink toolbar caused unexpected undo behavior.
+* Fixed an issue where removing formatting within a table cell would cause Internet Explorer 11 to scroll to the end of the table.
+* Fixed an issue where the `allow_html_data_urls` setting was not correctly applied.
+* Fixed the `autolink` feature so that it no longer treats a string with multiple "@" characters as an email address.
+* Fixed an issue where removing the editor would leave unexpected attributes on the target element.
+* Fixed the `link` plugin now suggest `mailto:` when the text contains an '@' and no slashes (`/`).
+* Fixed the `valid_children` check of custom elements now allows a wider range of characters in names.
+
 ## Version 5.3.2 June 10, 2020
 * Fixed a regression introduced in 5.3.0, where `images_dataimg_filter` was no-longer called.
 

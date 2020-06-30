@@ -397,6 +397,7 @@
     - url: "#Default CSS"
   - url: "paste"
     pages:
+    - url: "#paste_block_drop"
     - url: "#paste_data_images"
     - url: "#paste_as_text"
     - url: "#paste_enable_default_filters"
@@ -409,6 +410,7 @@
     - url: "#paste_merge_formats"
     - url: "#paste_convert_word_fake_lists"
     - url: "#paste_remove_styles_if_webkit"
+    - url: "#smart_paste"
     - url: "#Commands"
   - url: "permanentpen"
     pages:
@@ -420,12 +422,16 @@
   - url: "powerpaste"
     pages:
     - url: "#paste_as_text"
+    - url: "#paste_merge_formats"
     - url: "#powerpaste_word_import"
     - url: "#powerpaste_html_import"
     - url: "#powerpaste_allow_local_images"
     - url: "#powerpaste_block_drop"
     - url: "#powerpaste_clean_filtered_inline_elements"
     - url: "#powerpaste_keep_unsupported_src"
+    - url: "#smart_paste"
+    - url: "#paste_preprocess"
+    - url: "#paste_postprocess"
     - url: "#Commands"
   - url: "preview"
   - url: "print"
@@ -848,6 +854,7 @@
 
 - url: "changelog"
   pages:
+  - url: "#Version 5.4.0 June 30, 2020"
   - url: "#Version 5.3.2 June 10, 2020"
   - url: "#Version 5.3.1 May 27, 2020"
   - url: "#Version 5.3.0 May 21, 2020"

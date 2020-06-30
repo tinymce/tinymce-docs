@@ -29,7 +29,7 @@ This guide will help you get these server-side components up and running.
 
 If you've already got a Java application server like Jetty or Tomcat installed, skip to Step 2.
 
-If you don't, pick either [Tomcat](http://tomcat.apache.org/) or [Jetty](http://www.eclipse.org/jetty/) and install one of these with their default settings using the instructions on their website.
+If you don't, pick either [Tomcat](http://tomcat.apache.org/) or [Jetty](https://www.eclipse.org/jetty/) and install one of these with their default settings using the instructions on their website.
 
 > **Memory requirement:** Please ensure that you configure your Java Server (Tomcat/Jetty etc) with a minimum of 4GB. Please refer to [Out of memory errors]({{ site.baseurl }}/enterprise/server/troubleshoot/#outofmemoryerrors) section of the Troubleshoot page if you require instructions on how to explicitly define how much RAM will be allocated to your Java server.
 
@@ -47,7 +47,7 @@ The easiest way to deploy these files is to copy them into the *webapps* directo
 More information can be found in the documentation of your chosen application server:
 
 - [Deploying applications with Tomcat 9.0](https://tomcat.apache.org/tomcat-9.0-doc/deployer-howto.html)
-- [Deploying applications with Jetty](http://www.eclipse.org/jetty/documentation/current/configuring-deployment.html)
+- [Deploying applications with Jetty](https://www.eclipse.org/jetty/documentation/current/configuring-deployment.html)
 
 ### Step 3. Create a configuration file
 
@@ -107,7 +107,7 @@ For other versions of Tomcat on Windows, check the Tomcat documentation for that
 
 ###### From the command line
 
-If you're following the instructions for [Starting Jetty](http://www.eclipse.org/jetty/documentation/current/startup.html) for Jetty 9.4.5, the path to the configuration file can simply be supplied as a command option:
+If you're following the instructions for [Starting Jetty](https://www.eclipse.org/jetty/documentation/current/startup.html) for Jetty 9.4.5, the path to the configuration file can simply be supplied as a command option:
 
     java -D"ephox.config.file=C:\config\file\location\application.conf" -jar C:\jetty\install\directory\start.jar
 
@@ -116,7 +116,7 @@ For other versions of Jetty on Windows, check the Jetty documentation for that v
 
 ###### As a Windows service
 
-Follow the instructions in [Startup via Windows Service](http://www.eclipse.org/jetty/documentation/current/startup-windows-service.html) for Jetty 9.4.5. Remember to append the following snippet to the line beginning with `set PR_JVMOPTIONS` in your `install-jetty-service.bat` script:
+Follow the instructions in [Startup via Windows Service](https://www.eclipse.org/jetty/documentation/current/startup-windows-service.html) for Jetty 9.4.5. Remember to append the following snippet to the line beginning with `set PR_JVMOPTIONS` in your `install-jetty-service.bat` script:
 
     ;-Dephox.config.file="C:\config\file\location\application.conf"
 
@@ -170,7 +170,7 @@ The path to the configuration file can simply be supplied as a command option:
 
 ###### As a Linux service
 
-Assuming you've followed the instructions to [Startup a Unix Service using jetty.sh](http://www.eclipse.org/jetty/documentation/current/startup-unix-service.html) for Jetty 9.4.5, edit `/etc/default/jetty` and add the line:
+Assuming you've followed the instructions to [Startup a Unix Service using jetty.sh](https://www.eclipse.org/jetty/documentation/current/startup-unix-service.html) for Jetty 9.4.5, edit `/etc/default/jetty` and add the line:
 
     JETTY_ARGS=" -Dephox.config.file=/config/file/location/application.conf"
 

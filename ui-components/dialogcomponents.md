@@ -174,7 +174,7 @@ Clicking the icon in the alert banner will fire the `onAction` function in the d
 | type | `'alertbanner'` | required | The component type. Must be `'alertbanner'`. |
 | text | string | required | HTML text to display in the alertbanner. |
 | level | `'info'`, `'warn'`, `'error'` or `'success'` | required | The alertbanner's level, which determines its styling.  |
-| icon | string | required | Name of the icon to be displayed. Must correspond to an icon in the icon pack. |
+| icon | string | required | {{site.predefinedIconsOnly}} |
 | url | string | optional | A URL that is passed to `onAction` when the icon button is clicked. |
 
 ```js
@@ -200,7 +200,7 @@ A **button** is a clickable component that can contain text or an icon. There ar
 | type | `'button'` | required | The component type. Must be `'button'`. |
 | text | string | required | Text to display in the button **if icon is not specified**. Also used for the button's `title` attribute. |
 | name | string | optional | A identifier for the button. If not specified, the button will be assigned a randomly generated name.  |
-| icon | string | optional | Name of the icon to be displayed. Must correspond to an icon in the icon pack. **When configured, the button will display the icon instead of text.** |
+| icon | string | optional | {{site.predefinedIconsOnly}} **When configured, the button will display the icon instead of text.** |
 | primary | boolean | optional | default: `false` - Whether to style the button as a primary or secondary button. |
 | borderless | boolean | optional | default: `false` - Whether to style the button without a border and background color. |
 

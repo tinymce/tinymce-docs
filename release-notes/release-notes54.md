@@ -60,7 +60,7 @@ The following premium plugin updates were released alongside {{site.productname}
 
 The {{site.productname}} 5.4 release includes an accompanying release of the **Accessibility Checker** premium plugin.
 
-**Accessibility Checker** 2.x.x 
+**Accessibility Checker** 2.x.x
 
 For information on the Accessibility Checker plugin, see: [Accessibility Checker plugin]({{site.baseurl}}/plugins/a11ychecker/).
 
@@ -68,25 +68,50 @@ For information on the Accessibility Checker plugin, see: [Accessibility Checker
 
 The {{site.productname}} 5.4 release includes accompanying changes affecting the {{site.productname}} **self-hosted** services for the following plugins:
 
-- 
+-
 
 
-### 
+###
 
 
 ## Minor changes for TinyMCE 5.4
 
 {{site.productname}} 5.4 introduces the following minor changes:
 
+* Added keyboard navigation support to menus and toolbars when the editor is in a ShadowRoot.
+* Added the ability for menus to be clicked when the editor is in an open shadow root.
+* Added the `Editor.ui.styleSheetLoader` API for loading stylesheets within the Document or ShadowRoot containing the editor UI.
+* Added the `StyleSheetLoader` module to the public API.
+* Added Oxide variables for styling the `select` element and headings in dialog content.
+* Added font related Oxide variables for secondary buttons, allowing for custom styling.
+* Changed `advlist` toolbar buttons to only show a dropdown list if there is more than one option.
+* Changed stylesheet loading, so that UI skin stylesheets can load in a ShadowRoot if required.
+* Changed the DOM location of menus so that they display correctly when the editor is in a ShadowRoot.
+* Changed the table plugin to correctly detect all valid header row structures.
 
 ## General bug fixes
 
 {{site.productname}} 5.4 provides fixes for the following bugs:
 
+* Fixed tables with no defined width being converted to a `fixed` width table when modifying the table.
+* Fixed the `autosave` `isEmpty` API incorrectly detecting non-empty content as empty.
+* Fixed table `Paste row after` and `Paste row before` menu items not disabled when nothing was available to paste.
+* Fixed a selection performance issue with large tables on Microsoft Internet Explorer and Edge.
+* Fixed filters for screening commands from the undo stack to be case-insensitive.
+* Fixed `fullscreen` plugin now removes all classes when the editor is closed.
+* Fixed handling of mixed-case icon identifiers (names) for UI elements.
+* Fixed leading and trailing spaces lost when using `editor.selection.getContent({ format: 'text' })`.
+* Fixed an issue where changing the URL with the quicklink toolbar caused unexpected undo behavior.
+* Fixed an issue where removing formatting within a table cell would cause Internet Explorer 11 to scroll to the end of the table.
+* Fixed an issue where the `allow_html_data_urls` setting was not correctly applied.
+* Fixed the `autolink` feature so that it no longer treats a string with multiple "@" characters as an email address.
+* Fixed an issue where removing the editor would leave unexpected attributes on the target element.
+* Fixed the `link` plugin now suggest `mailto:` when the text contains an '@' and no slashes (`/`).
+* Fixed the `valid_children` check of custom elements now allows a wider range of characters in names.
 
 ## Deprecated features
 
-
+The `table_responsive_width` option has been deprecated with the release of {{site.productname}} 5.4. This option has been replaced by [`table_sizing_mode`]({{site.baseurl}}/plugins/table/#table_sizing_mode).
 
 ## Known issues
 
@@ -96,7 +121,7 @@ This section describes issues that users of {{site.productname}} 5.4 may encount
 
 * []()
 
-### 
+###
 
 #### Issue
 

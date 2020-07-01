@@ -7,6 +7,10 @@ description: The complete list of exposed editor commands.
 keywords: editorcommands editorcommand execcommand Bold Italic Underline Strikethrough Superscript Subscript Cut Copy Paste Unlink JustifyLeft JustifyCenter JustifyRight JustifyFull JustifyNone InsertUnorderedList InsertOrderedList ForeColor HiliteColor FontName FontSize RemoveFormat mceBlockQuote FormatBlock mceInsertContent mceToggleFormat mceSetContent Indent Outdent InsertHorizontalRule mceToggleVisualAid mceInsertLink selectAll delete mceNewDocument Undo Redo mceAutoResize mceShowCharmap mceCodeEditor mceDirectionLTR mceDirectionRTL mceFullPageProperties mceFullscreen mceImage mceInsertDate mceInsertTime mceInsertDefinitionList mceNonBreaking mcePageBreak mcePreview mcePrint mceSave SearchReplace mceSpellcheck mceInsertTemplate mceVisualBlocks mceVisualChars mceMedia mceAnchor mceTableSplitCells mceTableMergeCells mceTableInsertRowBefore mceTableInsertRowAfter mceTableInsertColBefore mceTableInsertColAfter mceTableDeleteCol mceTableDeleteRow mceTableCutRow mceTableCopyRow mceTablePasteRowBefore mceTablePasteRowAfter mceTableDelete mceInsertTable mceTableRowProps mceTableCellProps mceEditImage mceAddEditor mceRemoveEditor mceToggleEditor
 ---
 
+{{ site.baseurl }}/api/tinymce/tinymce.editorcommands/#querycommandvalue
+
+## Executable commands
+
 The following tables show the existing editor commands. These commands are provided by `tinymce` and not by the browser's internal commands. These commands can be executed using the [execCommand]({{ site.baseurl }}/api/tinymce/tinymce.editorcommands/#execcommand) function.
 
 ## Listing core and plugin editor commands
@@ -403,3 +407,86 @@ tinymce.execCommand('mceToggleEditor', false, '<editor_id>');
 | mceAddEditor    | Converts the specified HTML or DOM element into an editor instance with the specified ID.                                                                                                                                                                               |
 | mceRemoveEditor | Removes an editor instance with the specified ID.                                                                                                                                                                                                                       |
 | mceToggleEditor | Runs mceAddEditor if an editor is not detected for the specified ID, otherwise it runs either [hide]({{ site.baseurl }}/api/tinymce/tinymce.editor/#hide) if the editor is visible or [show]({{ site.baseurl }}/api/tinymce/tinymce.editor/#show) if it is not visible. |
+
+## Queryable States
+
+The following table shows the existing queryable states. These commands are provided by `tinymce` and not by the browser's internal commands. These commands can be executed using the [execCommand]({{ site.baseurl }}/api/tinymce/tinymce.editorcommands/#execcommand) function.
+
+## Listing the queryable states for the editor core and plugins
+
+To retrieve a list of avaliable commands from the active editor, run the following command from the browser console:
+
+
+```js
+tinymce.activeEditor.editorCommands.commands.state;
+```
+
+| Command                 | Description                                     |
+| ----------------------- | ----------------------------------------------- |
+| bold |  |
+| insertdefinitionlist |  |
+| insertorderedlist |  |
+| insertunorderedlist |  |
+| italic |  |
+| justifycenter |  |
+| justifyfull |  |
+| justifyleft |  |
+| justifyright |  |
+| mceblockquote |  |
+| outdent |  |
+| strikethrough |  |
+| subscript |  |
+| superscript |  |
+| underline |  |
+
+**Examples**
+
+```js
+tinymce.activeEditor.queryCommandState('bold');
+tinymce.activeEditor.queryCommandState('insertdefinitionlist');
+tinymce.activeEditor.queryCommandState('insertorderedlist');
+tinymce.activeEditor.queryCommandState('insertunorderedlist');
+tinymce.activeEditor.queryCommandState('italic');
+tinymce.activeEditor.queryCommandState('justifycenter');
+tinymce.activeEditor.queryCommandState('justifyfull');
+tinymce.activeEditor.queryCommandState('justifyleft');
+tinymce.activeEditor.queryCommandState('justifyright');
+tinymce.activeEditor.queryCommandState('mceblockquote');
+tinymce.activeEditor.queryCommandState('outdent');
+tinymce.activeEditor.queryCommandState('strikethrough');
+tinymce.activeEditor.queryCommandState('subscript');
+tinymce.activeEditor.queryCommandState('superscript');
+tinymce.activeEditor.queryCommandState('underline');
+```
+
+## Queryable values
+
+The following tables show the existing queryable value. These commands are provided by `tinymce` and not by the browser's internal commands. These commands can be executed using the [execCommand]({{ site.baseurl }}/api/tinymce/tinymce.editorcommands/#execcommand) function.
+
+## Listing the queryable value commands for the editor core and plugins
+
+To retrieve a list of queryable values from the active editor, run the following command from the browser console:
+
+```js
+tinymce.activeEditor.editorCommands.commands.value;
+```
+
+| Command                 | Description                                     |
+| ----------------------- | ----------------------------------------------- |
+| fontname |  |​
+| fontsize |  |​
+| togglesidebar |  |
+
+**Examples**
+
+```js
+tinymce.activeEditor.queryCommandValue('fontname');
+tinymce.activeEditor.queryCommandValue('fontsize');
+tinymce.activeEditor.queryCommandValue('togglesidebar');
+```
+
+### Queryable values: Table plugin
+
+The following commands require the [Table (`table`)]({{ site.baseurl }}/plugins/table/) plugin.
+
+{% include commands/table-query-cmds-value.md %}

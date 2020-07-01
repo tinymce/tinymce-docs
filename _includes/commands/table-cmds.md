@@ -26,6 +26,9 @@
 | mceTableProps           | Opens the Table Properties dialog.              |
 | mceTableRowProps        | Opens the table row properties dialog.          |
 | mceTableCellProps       | Opens the table cell properties dialog.         |
+| mceTableRowType       |  type: 'header', 'body', or 'footer'. {{site.requires_5_4v}} |
+| mceTableColType       | type: 'td' or 'th'. {{site.requires_5_4v}} |
+| mceTableCellType       | type: 'td' or 'th'. {{site.requires_5_4v}} |
 
 **Examples**
 
@@ -56,4 +59,9 @@ tinymce.activeEditor.execCommand('mceInsertTable', false, { rows: 3, columns: 2,
 tinymce.activeEditor.execCommand('mceTableProps');
 tinymce.activeEditor.execCommand('mceTableRowProps');
 tinymce.activeEditor.execCommand('mceTableCellProps');
+tinymce.activeEditor.execCommand('mceTableRowType', false, { type: 'header' });
+tinymce.activeEditor.execCommand('mceTableColType', false, { type: 'th' });
+tinymce.activeEditor.execCommand('mceTableCellType', false, { type: 'th' });
 ```
+
+{% include commands/table-query-cmds-value.md %}

@@ -361,7 +361,7 @@ tinymce.init({
 
 ### `table_style_by_css`
 
-This option enables you to force Table Properties dialog to use HTML5/CSS3 standards for setting cell spacing and cellpadding. By default, these are added as attributes to the table element. By setting this to true, cell spacing is applied to the table element as a `border-spacing` style and cell padding is applied to all `td` elements as a `padding` style
+This option enables you to force Table Properties dialog to use HTML5/CSS3 standards for setting cell spacing and cellpadding. By default, these are added as attributes to the table element. By setting this to true, cell spacing is applied to the table element as a `border-spacing` style and cell padding is applied to all `td` elements as a `padding` style.
 
 **Type:** `Boolean`
 
@@ -380,6 +380,94 @@ tinymce.init({
   table_style_by_css: false
 });
 ```
+
+### `table_header_type`
+
+The `table_header_type` option affects how tables are structured when a table row is set as a header row. Note that this setting does not affect header columns.
+
+The `table_header_type` option has four different settings: `'section`', `'cells'`, `'sectionCells'`, and `'auto'`.
+
+- `section` - When a table row is set as a header row, the row (`tr`) is moved to the `thead` element. The cell types (`td` and/or `th`) are unaffected.
+
+  For example:
+
+  ```html
+  <table>
+    <thead>
+      <tr>
+        <td>&nbsp;</td>
+        <th>&nbsp;</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+    </tbody>
+  </table>
+  ```
+
+- `cells` - When a table row is set as a header row, the row (`tr`) moves to the `tbody` element (if in a `thead` element). All table data cell elements (`td`) in the row are changed to table header cell elements (`th`).
+
+  For example:
+
+  ```html
+  <table>
+    <tbody>
+      <tr>
+        <th>&nbsp;</th>
+        <th>&nbsp;</th>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+    </tbody>
+  </table>
+  ```
+
+- `sectionCells` - When a table row is set as a header row, the row (`tr`) is moved to the `thead` element. All cells in the row are changed to table header cell elements (`th`).
+
+  For example:
+
+  ```html
+  <table>
+    <thead>
+      <tr>
+        <th>&nbsp;</th>
+        <th>&nbsp;</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+    </tbody>
+  </table>
+  ```
+
+- `auto` - Finds the first existing header row in the table and uses the same structure. If no other table header row exists, the `section` header type will be applied.
+
+**Type:** `String`
+
+**Default Value:** `'auto'`
+
+**Possible Values:** `'section`', `'cells'`, `'sectionCells'`, `'auto'`
+
+##### Example
+
+```js
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'table',
+  menubar: 'table',
+  toolbar: 'table',
+  table_header_type: 'sectionCells'
+});
+```
+
 ### Examples of various table setups
 
 Here are some examples of configuration for common setups.
@@ -454,3 +542,7 @@ tinymce.activeEditor.plugins.table.insertTable(2, 3);
 The Table plugin provides the following JavaScript commands.
 
 {% include commands/table-cmds.md %}
+
+## Queryable values
+
+{% include commands/table-query-cmds-value.md %}

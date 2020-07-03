@@ -479,6 +479,7 @@
     - url: "#API"
     - url: "#Events"
     - url: "#Commands"
+    - url: "#Queryable values"
   - url: "template"
     pages:
     - url: "#templates"
@@ -666,10 +667,9 @@
   - url: "php-upload-handler"
   - url: "editor-command-identifiers"
     pages:
-      - url: "#Listing core and plugin editor commands"
-      - url: "#Core Editor commands"
-      - url: "#Plugin Commands"
-      - url: "#Editor Management Commands"
+      - url: "#Executable commands"
+      - url: "#Queryable command states"
+      - url: "#Queryable command values"
   - url: "editor-control-identifiers"
   - url: "editor-icon-identifiers"
   - url: "editor-context-menu-identifiers"

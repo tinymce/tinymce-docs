@@ -30,6 +30,8 @@ The {{site.productname}} 5.4 release includes the following improvements for the
 - Adds: commands, APIs, and icons for; cut, copy, and paste columns.
 - Adds toolbar button icons for the cut, copy, and paste rows.
 - Adds a new `mceTableApplyCellStyle`command for applying selected styles to table cells.
+- Adds a new `table_header_type` option for setting the structure used for table header rows.
+- Adds table row, column, and cell type commands and queries.
 - Extends the `mceInsertTable` command for adding tables without the dialog.
 
 For information on the table plugin, see: [Table plugin]({{site.baseurl}}/plugins/table/).
@@ -60,7 +62,7 @@ The following premium plugin updates were released alongside {{site.productname}
 
 The {{site.productname}} 5.4 release includes an accompanying release of the **Accessibility Checker** premium plugin.
 
-**Accessibility Checker** 2.x.x 
+**Accessibility Checker** 2.x.x
 
 For information on the Accessibility Checker plugin, see: [Accessibility Checker plugin]({{site.baseurl}}/plugins/a11ychecker/).
 
@@ -68,10 +70,10 @@ For information on the Accessibility Checker plugin, see: [Accessibility Checker
 
 The {{site.productname}} 5.4 release includes accompanying changes affecting the {{site.productname}} **self-hosted** services for the following plugins:
 
-- 
+-
 
 
-### 
+###
 
 
 ## Minor changes for TinyMCE 5.4
@@ -96,7 +98,7 @@ This section describes issues that users of {{site.productname}} 5.4 may encount
 
 * []()
 
-### 
+###
 
 #### Issue
 

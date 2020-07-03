@@ -63,4 +63,15 @@ This is a list of available keyboard shortcuts within the editor user interface.
 
 ## Add custom shortcuts to TinyMCE
 
-Refer to the [addShortcut]({{site.baseurl}}/api/tinymce/tinymce.editor/#addshortcut) and [tinymce.Shortcuts]({{site.baseurl}}/api/tinymce/tinymce.shortcuts/) sections to add custom keyboard shortcuts to {{site.productname}}.
+> **Important**: Adding a custom shortcut with a keyboard combination that conflicts with an existing {{site.productname}} or browser shortcut will override the existing shortcut.
+
+To add a custom keyboard shortcut to {{site.productname}}, use either:
+
+* [The `tinymce.Editor.addShortcut` API]({{site.baseurl}}/api/tinymce/tinymce.editor/#addshortcut).
+* [The `tinymce.Shortcuts.add` API]({{site.baseurl}}/api/tinymce/tinymce.shortcuts/).
+
+#{% include misc/shortcut-os-mappings.md %}
+
+### Example: Custom keyboard shortcut
+
+{% include codepen.html id="custom-shortcut" tab="js" %}

@@ -15,10 +15,10 @@ The `table` plugin adds table management functionality to {{site.productname}}. 
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "table",
-  menubar: "table",
-  toolbar: "table tabledelete | tableprops tablerowprops tablecellprops | tableinsertrowbefore tableinsertrowafter tabledeleterow | tableinsertcolbefore tableinsertcolafter tabledeletecol"
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'table',
+  menubar: 'table',
+  toolbar: 'table tabledelete | tableprops tablerowprops tablecellprops | tableinsertrowbefore tableinsertrowafter tabledeleterow | tableinsertcolbefore tableinsertcolafter tabledeletecol'
 });
 ```
 
@@ -42,9 +42,9 @@ To disable the table toolbar, set the value to an empty string.
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "table",
-  table_toolbar: "tableprops tabledelete | tableinsertrowbefore tableinsertrowafter tabledeleterow | tableinsertcolbefore tableinsertcolafter tabledeletecol"
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'table',
+  table_toolbar: 'tableprops tabledelete | tableinsertrowbefore tableinsertrowafter tabledeleterow | tableinsertcolbefore tableinsertcolafter tabledeletecol'
 });
 ```
 
@@ -54,9 +54,9 @@ To disable or remove the contextual table toolbar, set `table_toolbar` to an emp
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "table",
-  table_toolbar: ""
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'table',
+  table_toolbar: ''
 });
 ```
 
@@ -74,24 +74,25 @@ This option allows you to disable some of the options available to a user when i
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "table",
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'table',
   table_appearance_options: false
 });
 ```
 
 ### `table_clone_elements`
 
-This option enables you to specify which elements should be cloned as empty children when inserting rows/columns to a table. By default it will clone these "`strong` `em` `b` `i` `span` `font` `h1` `h2` `h3` `h4` `h5` `h6` `p` `div`" into new cells.
+This option enables you to specify which elements should be cloned as empty children when inserting rows/columns to a table. By default it will clone these '`strong` `em` `b` `i` `span` `font` `h1` `h2` `h3` `h4` `h5` `h6` `p` `div`' into new cells.
 
 **Type:** `String`
 
 ##### Example
+
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "table",
-  table_clone_elements: "strong em a"
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'table',
+  table_clone_elements: 'strong em a'
 });
 ```
 
@@ -115,10 +116,10 @@ However, if `table_grid` is set to `false` the table picker will be replaced by 
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "table",
-  menubar: "table",
-  toolbar: "table",
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'table',
+  menubar: 'table',
+  toolbar: 'table',
   table_grid: false
 });
 ```
@@ -137,10 +138,10 @@ This option enables you to disable the default tab between table cells feature. 
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "table",
-  menubar: "table",
-  toolbar: "table",
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'table',
+  menubar: 'table',
+  toolbar: 'table',
   table_tab_navigation: false
 });
 ```
@@ -157,10 +158,10 @@ This option enables you to specify default attributes for inserted tables.
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "table",
-  menubar: "table",
-  toolbar: "table",
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'table',
+  menubar: 'table',
+  toolbar: 'table',
   table_default_attributes: {
     border: '1'
   }
@@ -179,15 +180,16 @@ This option enables you to specify the default styles for inserted tables.
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "table",
-  menubar: "table",
-  toolbar: "table",
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'table',
+  menubar: 'table',
+  toolbar: 'table',
   table_default_styles: {
     width: '50%'
   }
 });
 ```
+
 ### `table_responsive_width`
 
 > **Note**: This option was deprecated with the release of {{site.productname}} 5.4. This option has been replaced by [`table_sizing_mode`](#table_sizing_mode).
@@ -203,13 +205,45 @@ will force pixel resizing. The default is to automatically detect what the table
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "table",
-  menubar: "table",
-  toolbar: "table",
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'table',
+  menubar: 'table',
+  toolbar: 'table',
   table_responsive_width: false
 });
 ```
+
+### `table_sizing_mode`
+
+{{site.requires_5_4v}}
+
+The `table_sizing_mode` option enforces the table sizing method used for new and modified tables (including resizing operations on tables). This option only impacts the _width_ of tables and cells and does not apply to the _height_ of tables and cells.
+
+This option accepts the following options:
+
+- `fixed` - Use pixel-based widths.
+- `relative` - Use percent-based widths.
+- `responsive` - Use no specified widths. **Note**: If a `responsive` table is resized, it will be converted to a `relative` table (a table cannot be resized without widths).
+- `auto` - Detects the table sizing based on the width style or attribute and attempts to keep the current sizing mode.
+
+**Type:** `String`
+
+**Default Value:** `'auto'`
+
+**Possible Values:**  `'fixed'`, `'relative'`, `'responsive'`, `'auto'`
+
+##### Example
+
+```js
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'table',
+  menubar: 'table',
+  toolbar: 'table',
+  table_sizing_mode: 'relative'
+});
+```
+
 ### `table_class_list`
 
 This option enables you to specify a list of classes to present in the table options dialog box. This is useful if you want users to assign predefined classes to table elements.
@@ -220,10 +254,10 @@ This option enables you to specify a list of classes to present in the table opt
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "table",
-  menubar: "table",
-  toolbar: "table",
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'table',
+  menubar: 'table',
+  toolbar: 'table',
   table_class_list: [
     {title: 'None', value: ''},
     {title: 'Dog', value: 'dog'},
@@ -242,10 +276,10 @@ This option enables you to specify a list of classes to present in the table cel
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "table",
-  menubar: "table",
-  toolbar: "table",
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'table',
+  menubar: 'table',
+  toolbar: 'table',
   table_cell_class_list: [
     {title: 'None', value: ''},
     {title: 'Dog', value: 'dog'},
@@ -263,10 +297,10 @@ This option enables you to specify a list of classes to present in the table row
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "table",
-  menubar: "table",
-  toolbar: "table",
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'table',
+  menubar: 'table',
+  toolbar: 'table',
   table_row_class_list: [
     {title: 'None', value: ''},
     {title: 'Dog', value: 'dog'},
@@ -288,10 +322,10 @@ This option makes it possible to disable the advanced tab in the table dialog bo
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "table",
-  menubar: "table",
-  toolbar: "table",
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'table',
+  menubar: 'table',
+  toolbar: 'table',
   table_advtab: false
 });
 ```
@@ -309,10 +343,10 @@ This option makes it possible to disable the advanced tab in the table cell dial
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "table",
-  menubar: "table",
-  toolbar: "table",
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'table',
+  menubar: 'table',
+  toolbar: 'table',
   table_cell_advtab: false
 });
 ```
@@ -331,10 +365,10 @@ This option makes it possible to disable the advanced tab in the table row dialo
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "table",
-  menubar: "table",
-  toolbar: "table",
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'table',
+  menubar: 'table',
+  toolbar: 'table',
   table_row_advtab: false
 });
 ```
@@ -353,10 +387,10 @@ This option makes it possible to disable the ability to resize table columns and
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "table",
-  menubar: "table",
-  toolbar: "table",
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'table',
+  menubar: 'table',
+  toolbar: 'table',
   table_resize_bars: false
 });
 ```
@@ -375,10 +409,10 @@ This option enables you to force Table Properties dialog to use HTML5/CSS3 stand
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "table",
-  menubar: "table",
-  toolbar: "table",
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'table',
+  menubar: 'table',
+  toolbar: 'table',
   table_style_by_css: false
 });
 ```
@@ -390,8 +424,8 @@ Here are some examples of configuration for common setups.
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "table",
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'table',
   table_default_attributes: {},
   table_default_styles: {}
 });
@@ -400,8 +434,8 @@ tinymce.init({
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "table",
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'table',
   table_default_attributes: {},
   table_default_styles: {},
   table_responsive_width: false
@@ -411,8 +445,8 @@ tinymce.init({
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "table",
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'table',
   table_default_attributes: {
     'border': '1'
   },

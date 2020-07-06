@@ -4,6 +4,7 @@
 
 | Command                 | Description                                     |
 | ----------------------- | ----------------------------------------------- |
+| mceTableSizingMode | When `table_sizing_mode` is set to `'auto'`, this command sets the sizing mode of the currently selected table. For information on table sizing modes, see: [Table plugin - `table_sizing_mode`]({{site.baseurl}}/plugins/table/#table_sizing_mode). {{site.requires_5_4v}} |
 | mceTableApplyCellStyle | Applies the specified styles to the selected cells. The following styles can be changed with this command: `background-color`, `border-color`, `border-style`, and `border-width`. Providing an empty value for a style will remove the style, such as `{ 'background-color': '' }`. {{site.requires_5_4v}} |
 | mceTableSplitCells      | Splits the current merged table cell.           |
 | mceTableMergeCells      | Merges the selected cells.                      |
@@ -30,6 +31,9 @@
 **Examples**
 
 ```js
+tinymce.activeEditor.execCommand('mceTableSizingMode', false, 'fixed');
+tinymce.activeEditor.execCommand('mceTableSizingMode', false, 'relative');
+tinymce.activeEditor.execCommand('mceTableSizingMode', false, 'responsive');
 tinymce.activeEditor.execCommand('mceTableApplyCellStyle', false, { 'background-color': 'red', 'border-color': 'blue' });
 tinymce.activeEditor.execCommand('mceTableApplyCellStyle', false, { 'background-color': '' }); // removes the current background-color
 tinymce.activeEditor.execCommand('mceTableSplitCells');

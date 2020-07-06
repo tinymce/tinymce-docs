@@ -21,10 +21,10 @@ keywords: editorcommands editorcommand execcommand Bold Italic Underline Striket
   - [Listing core and plugin queryable command states](#listingcoreandpluginqueryablecommandstates)
   - [Available queryable command states](#availablequeryablecommandstates)
 
-- [Queryable command values](#queryablecommandvalues)
+- [Query value commands](#queryablecommandvalues)
 
-  - [Listing core and plugin queryable command values](#listingcoreandpluginqueryablecommandvalues)
-  - [Available queryable command values](#availablequeryablecommandvalues)
+  - [Listing core and plugin Query value commands](#listingcoreandpluginqueryablecommandvalues)
+  - [Available Query value commands](#availablequeryablecommandvalues)
   - [Queryable values: Table plugin](#queryablevaluestableplugin)
 
 ## Executable commands
@@ -426,11 +426,11 @@ tinymce.execCommand('mceToggleEditor', false, '<editor_id>');
 | mceRemoveEditor | Removes an editor instance with the specified ID.                                                                                                                                                                                                                       |
 | mceToggleEditor | Runs mceAddEditor if an editor is not detected for the specified ID, otherwise it runs either [hide]({{ site.baseurl }}/api/tinymce/tinymce.editor/#hide) if the editor is visible or [show]({{ site.baseurl }}/api/tinymce/tinymce.editor/#show) if it is not visible. |
 
-## Queryable command states
+## Query command states
 
 {{site.productname}} provides the `queryCommandState` API to allow developers to determine the current state of selected content. The query will return `true` if the content is formatted using the same CSS styles and elements used by the corresponding command.
 
-### Listing core and plugin queryable command states
+### Listing core and plugin query command states
 
 To retrieve a list of avaliable queryable states from the active editor, run the following command from the browser console:
 
@@ -438,78 +438,78 @@ To retrieve a list of avaliable queryable states from the active editor, run the
 tinymce.activeEditor.editorCommands.commands.state;
 ```
 
-### Available queryable command states
+### Available query command states
 
 The following command states can be queried using the [queryCommandState]({{ site.baseurl }}/api/tinymce/tinymce.editorcommands/#querycommandstate) API.
 
 | Command              | Description                                                                                                                    |
 | -------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
-| bold                 | Returns `true` if the content is formatted using the same markup as the {{site.productname}} `bold` command.                   |
-| insertdefinitionlist | Returns `true` if the content is formatted using the same markup as the {{site.productname}} `insertdefinitionlist` command.   |
-| insertorderedlist    | Returns `true` if the content is formatted using the same markup as the {{site.productname}} `insertorderedlist` command.      |
-| insertunorderedlist  | Returns `true` if the content is formatted using the same markup as the {{site.productname}} `insertunorderedlist` command.    |
-| italic               | Returns `true` if the content is formatted using the same markup as the {{site.productname}} `italic` command.                 |
-| justifycenter        | Returns `true` if the content is formatted using the same markup as the {{site.productname}} `justifycenter` command.          |
-| justifyfull          | Returns `true` if the content is formatted using the same markup as the {{site.productname}} `justifyfull` command.            |
-| justifyleft          | Returns `true` if the content is formatted using the same markup as the {{site.productname}} `justifyleft` command.            |
-| justifyright         | Returns `true` if the content is formatted using the same markup as the {{site.productname}} `justifyright` command.           |
-| mceblockquote        | Returns `true` if the content is formatted using the same markup as the {{site.productname}} `mceblockquote` command.          |
-| outdent              | Returns `true` if the content is formatted using the same markup as the {{site.productname}} `outdent` command.                |
-| strikethrough        | Returns `true` if the content is formatted using the same markup as the {{site.productname}} `strikethrough` command.          |
-| subscript            | Returns `true` if the content is formatted using the same markup as the {{site.productname}} `subscript` command.              |
-| superscript          | Returns `true` if the content is formatted using the same markup as the {{site.productname}} `superscript` command.            |
-| underline            | Returns `true` if the content is formatted using the same markup as the {{site.productname}} `underline` command.              |
+| Bold                 | Returns `true` if the content is formatted using the same markup as the {{site.productname}} `Bold` command.                   |
+| InsertDefinitionList | Returns `true` if the content is formatted using the same markup as the {{site.productname}} `InsertDefinitionList` command.   |
+| InsertOrderedList    | Returns `true` if the content is formatted using the same markup as the {{site.productname}} `InsertOrderedList` command.      |
+| InsertUnorderedList  | Returns `true` if the content is formatted using the same markup as the {{site.productname}} `InsertUnorderedList` command.    |
+| Italic               | Returns `true` if the content is formatted using the same markup as the {{site.productname}} `Italic` command.                 |
+| JustifyCenter        | Returns `true` if the content is formatted using the same markup as the {{site.productname}} `JustifyCenter` command.          |
+| JustifyFull          | Returns `true` if the content is formatted using the same markup as the {{site.productname}} `JustifyFull` command.            |
+| JustifyLeft          | Returns `true` if the content is formatted using the same markup as the {{site.productname}} `JustifyLeft` command.            |
+| JustifyRight         | Returns `true` if the content is formatted using the same markup as the {{site.productname}} `JustifyRight` command.           |
+| mceBlockQuote        | Returns `true` if the content is formatted using the same markup as the {{site.productname}} `mceBlockQuote` command.          |
+| Outdent              | Returns `true` if the content is formatted using the same markup as the {{site.productname}} `Outdent` command.                |
+| Strikethrough        | Returns `true` if the content is formatted using the same markup as the {{site.productname}} `Strikethrough` command.          |
+| Subscript            | Returns `true` if the content is formatted using the same markup as the {{site.productname}} `Subscript` command.              |
+| Superscript          | Returns `true` if the content is formatted using the same markup as the {{site.productname}} `Superscript` command.            |
+| Underline            | Returns `true` if the content is formatted using the same markup as the {{site.productname}} `Underline` command.              |
 
 **Examples**
 
 ```js
-tinymce.activeEditor.queryCommandState('bold');
-tinymce.activeEditor.queryCommandState('insertdefinitionlist');
-tinymce.activeEditor.queryCommandState('insertorderedlist');
-tinymce.activeEditor.queryCommandState('insertunorderedlist');
-tinymce.activeEditor.queryCommandState('italic');
-tinymce.activeEditor.queryCommandState('justifycenter');
-tinymce.activeEditor.queryCommandState('justifyfull');
-tinymce.activeEditor.queryCommandState('justifyleft');
-tinymce.activeEditor.queryCommandState('justifyright');
-tinymce.activeEditor.queryCommandState('mceblockquote');
-tinymce.activeEditor.queryCommandState('outdent');
-tinymce.activeEditor.queryCommandState('strikethrough');
-tinymce.activeEditor.queryCommandState('subscript');
-tinymce.activeEditor.queryCommandState('superscript');
-tinymce.activeEditor.queryCommandState('underline');
+tinymce.activeEditor.queryCommandState('Bold');
+tinymce.activeEditor.queryCommandState('InsertDefinitionList');
+tinymce.activeEditor.queryCommandState('InsertOrderedList');
+tinymce.activeEditor.queryCommandState('InsertUnorderedList');
+tinymce.activeEditor.queryCommandState('Italic');
+tinymce.activeEditor.queryCommandState('JustifyCenter');
+tinymce.activeEditor.queryCommandState('JustifyFull');
+tinymce.activeEditor.queryCommandState('JustifyLeft');
+tinymce.activeEditor.queryCommandState('JustifyRight');
+tinymce.activeEditor.queryCommandState('mceBlockQuote');
+tinymce.activeEditor.queryCommandState('Outdent');
+tinymce.activeEditor.queryCommandState('Strikethrough');
+tinymce.activeEditor.queryCommandState('Subscript');
+tinymce.activeEditor.queryCommandState('Superscript');
+tinymce.activeEditor.queryCommandState('Underline');
 ```
 
-## Queryable command values
+## Query value commands
 
 {{site.productname}} provides the `queryCommandValue` API to allow developers to determine the current state of selected content. The query will return an object containing the relevant value.
 
-### Listing core and plugin queryable command values
+### Listing core and plugin query value commands
 
-To retrieve a list of avaliable queryable command values from the active editor, run the following command from the browser console:
+To retrieve a list of avaliable query value commands from the active editor, run the following command from the browser console:
 
 ```js
 tinymce.activeEditor.editorCommands.commands.value;
 ```
 
-### Available queryable command values
+### Available query value commands
 
 The following command values can be queried using the [queryCommandValue]({{ site.baseurl }}/api/tinymce/tinymce.editorcommands/#querycommandvalue) API.
 
 | Command       | Description                                            |
 | --------------| ------------------------------------------------------ |
-| fontname      | Returns the font name of the current selection.        |​
-| fontsize      | Returns the font size of the current selection.        |​
-| togglesidebar | Returns the current state of sidebar (open or closed). |
+| FontName      | Returns the font name of the current selection.        |​
+| FontSize      | Returns the font size of the current selection.        |​
+| ToggleSidebar | Returns the current state of sidebar (open or closed). |
 
 **Examples**
 
 ```js
-tinymce.activeEditor.queryCommandValue('fontname');
-tinymce.activeEditor.queryCommandValue('fontsize');
-tinymce.activeEditor.queryCommandValue('togglesidebar');
+tinymce.activeEditor.queryCommandValue('FontName');
+tinymce.activeEditor.queryCommandValue('FontSize');
+tinymce.activeEditor.queryCommandValue('ToggleSidebar');
 ```
 
-### Queryable values: Table plugin
+### Query value commands: Table plugin
 
-{% include commands/table-query-cmds-value.md %}
+{% include commands/table-query-value-cmds.md %}

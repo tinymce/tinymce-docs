@@ -1,6 +1,6 @@
 ## block_unsupported_drop
 
-Enable or disable blocking unsupported images or files being dropped within the editor. An unsupported file is any image or file that is not handled by a plugin and would cause the browser to navigate away from the editor.
+When the `block_unsupported_drop` option is set to `true`, the editor blocks unsupported images and files from being dropped into the editor. If the `block_unsupported_drop` option is set to `false`, dropping an unsupported file into the editor will cause the browser to navigate away from the page containing the editor.
 
 {{site.requires_5_4v}}
 

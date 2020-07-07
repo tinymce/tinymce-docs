@@ -219,7 +219,7 @@ tinymce.init({
 
 The `table_sizing_mode` option enforces the table sizing method used for new and modified tables (including resizing operations on tables). This option only impacts the _width_ of tables and cells and does not apply to the _height_ of tables and cells.
 
-This option accepts the following options:
+This option accepts the following values:
 
 - `fixed` - Use pixel-based widths.
 - `relative` - Use percent-based widths.

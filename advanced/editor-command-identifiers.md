@@ -16,16 +16,16 @@ keywords: editorcommands editorcommand execcommand Bold Italic Underline Striket
   - [Plugin Commands](#plugincommands)
   - [Editor Management Commands](#editormanagementcommands)
 
-- [Queryable command states](#queryablecommandstates)
+- [Query command states](#querycommandstates)
 
-  - [Listing core and plugin queryable command states](#listingcoreandpluginqueryablecommandstates)
-  - [Available queryable command states](#availablequeryablecommandstates)
+  - [Listing core and plugin query command states](#listingcoreandpluginquerycommandstates)
+  - [Available query command states](#availablequerycommandstates)
 
-- [Query value commands](#queryablecommandvalues)
+- [Query command values](#querycommandvalues)
 
-  - [Listing core and plugin Query value commands](#listingcoreandpluginqueryablecommandvalues)
-  - [Available Query value commands](#availablequeryablecommandvalues)
-  - [Queryable values: Table plugin](#queryablevaluestableplugin)
+  - [Listing core and plugin Query command values](#listingcoreandpluginquerycommandvalues)
+  - [Available Query command values](#availablequerycommandvalues)
+  - [Query command values: Table plugin](#querycommandvaluestableplugin)
 
 ## Executable commands
 
@@ -480,19 +480,19 @@ tinymce.activeEditor.queryCommandState('Superscript');
 tinymce.activeEditor.queryCommandState('Underline');
 ```
 
-## Query value commands
+## Query command values
 
 {{site.productname}} provides the `queryCommandValue` API to allow developers to determine the current state of selected content. The query will return an object containing the relevant value.
 
-### Listing core and plugin query value commands
+### Listing core and plugin query command values
 
-To retrieve a list of avaliable query value commands from the active editor, run the following command from the browser console:
+To retrieve a list of avaliable queryable command values from the active editor, run the following command from the browser console:
 
 ```js
 tinymce.activeEditor.editorCommands.commands.value;
 ```
 
-### Available query value commands
+### Available query command values
 
 The following command values can be queried using the [queryCommandValue]({{ site.baseurl }}/api/tinymce/tinymce.editorcommands/#querycommandvalue) API.
 
@@ -510,6 +510,6 @@ tinymce.activeEditor.queryCommandValue('FontSize');
 tinymce.activeEditor.queryCommandValue('ToggleSidebar');
 ```
 
-### Query value commands: Table plugin
+### Query command values: Table plugin
 
-{% include commands/table-query-value-cmds.md %}
+{% include commands/table-query-cmd-values.md %}

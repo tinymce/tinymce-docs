@@ -452,7 +452,7 @@ The `table_header_type` option has four different settings: `'section`', `'cells
 
 **Type:** `String`
 
-**Default Value:** `'auto'`
+**Default Value:** `'section'`
 
 **Possible Values:** `'section`', `'cells'`, `'sectionCells'`, `'auto'`
 
@@ -543,6 +543,6 @@ The Table plugin provides the following JavaScript commands.
 
 {% include commands/table-cmds.md %}
 
-## Query value commands
+## Query command values
 
-{% include commands/table-query-value-cmds.md %}
+{% include commands/table-query-cmd-values.md %}

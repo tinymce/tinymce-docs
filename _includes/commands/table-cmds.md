@@ -26,8 +26,8 @@
 | mceTableProps           | Opens the Table Properties dialog.              |
 | mceTableRowProps        | Opens the table row properties dialog.          |
 | mceTableCellProps       | Opens the table cell properties dialog.         |
-| mceTableRowType       | Changes the current row or rows to the specified type, either: `'header'`, `'body'`, or `'footer'`. {{site.requires_5_4v}} |
-| mceTableColType       | Changes the current column or columns to the specified type, either: `'td'` or `'th'`. {{site.requires_5_4v}} |
+| mceTableRowType       | Changes the current row or rows to the specified type, either: `'header'`, `'body'`, or `'footer'`. The structure of header rows is dependent on the [`table_header_type` option]({{site.baseurl}}/plugins/table/#table_header_type). {{site.requires_5_4v}} |
+| mceTableColType       | Changes all cells in the current column or columns to the specified type, either: `'td'` or `'th'`. {{site.requires_5_4v}} |
 | mceTableCellType       | Changes the current cell or cells to the specified type, either: `'td'` or `'th'`. {{site.requires_5_4v}} |
 
 **Examples**

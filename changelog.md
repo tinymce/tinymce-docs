@@ -10,6 +10,14 @@ class: changelog
 
 {% capture changelog %}
 
+## Version 5.4.1 July 8, 2020
+* Fixed the Search and Replace plugin incorrectly including zero-width caret characters in search results.
+* Fixed dragging and dropping unsupported files navigating the browser away from the editor.
+* Fixed undo levels not created on browser handled drop or paste events.
+* Fixed content in an iframe element parsing as dom elements instead of text content.
+* Fixed Oxide checklist styles not showing when printing.
+* Fixed bug with `scope` attribute not being added to the cells of header rows.
+
 ## Version 5.4.0 June 30, 2020
 * Added keyboard navigation support to menus and toolbars when the editor is in a ShadowRoot.
 * Added the ability for menus to be clicked when the editor is in an open shadow root.

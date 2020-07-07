@@ -14,7 +14,7 @@ class: changelog
 * Fixed the Search and Replace plugin incorrectly including zero-width caret characters in search results.
 * Fixed dragging and dropping unsupported files navigating the browser away from the editor.
 * Fixed undo levels not created on browser handled drop or paste events.
-* Fixed content in an iframe element parsing as dom elements instead of text content.
+* Fixed content in an iframe element parsing as DOM elements instead of text content.
 * Fixed Oxide checklist styles not showing when printing.
 * Fixed bug with `scope` attribute not being added to the cells of header rows.
 

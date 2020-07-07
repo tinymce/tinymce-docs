@@ -120,6 +120,8 @@ If the creation date is set as 9:00AM on January 15th 2000, then inserting this 
 <p class="cdate">01/15/2000 : 09:00</p>
 ```
 
+For a list of available date and time formats, see: [Reference Date/Time formats](#referencedatetimeformats).
+
 ### `template_mdate_classes`
 
 When HTML elements in a template are assigned this class, the content of the element will be replaced with the 'modified' date (`modifieddate`), formatted according to the `template_mdate_format` option. This option accepts a list of classes (separated by spaces).
@@ -169,6 +171,8 @@ If the date modified is set as 9:00AM on January 15th 2000, then inserting this 
 ```html
 <p class="mdate">01/15/2000 : 09:00</p>
 ```
+
+For a list of available date and time formats, see: [Reference Date/Time formats](#referencedatetimeformats).
 
 ### `template_replace_values`
 
@@ -342,6 +346,8 @@ Snippets are `html` code chunks that can be inserted. Replace variables will onl
 ```html
 This is a simple <strong>snippet</strong>. Will be replaced: {$somevar1}.
 ```
+
+{% include configuration/ref-time-date-formats.md %}
 
 ## Commands
 

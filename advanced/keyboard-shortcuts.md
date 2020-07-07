@@ -61,6 +61,8 @@ This is a list of available keyboard shortcuts within the editor user interface.
 
 > Note: Browsers and Screen Readers provide additional shortcuts within the editor context.
 
+{% include misc/advcode-shortcuts.md %}
+
 ## Add custom shortcuts to TinyMCE
 
 > **Important**: Adding a custom shortcut with a keyboard combination that conflicts with an existing {{site.productname}} or browser shortcut will override the existing shortcut.

@@ -10,7 +10,6 @@ These release notes provide an overview of the changes for {{site.productname}} 
 
 - [TinyMCE 5.4 new features and enhancements](#tinymce54newfeaturesandenhancements)
 - [Accompanying Premium Plugin changes](#accompanyingpremiumpluginchanges)
-- [Accompanying premium self-hosted server-side component changes](#accompanyingpremiumself-hostedserver-sidecomponentchanges)
 - [Minor changes for TinyMCE 5.4](#minorchangesfortinymce54)
 - [General bug fixes](#generalbugfixes)
 - [Deprecated features](#deprecatedfeatures)
@@ -56,23 +55,16 @@ For information on:
 
 The following premium plugin updates were released alongside {{site.productname}} 5.4.
 
-### Accessibility Checker 2.x.x
+### Advanced Code Editor 2.1.0
 
-The {{site.productname}} 5.4 release includes an accompanying release of the **Accessibility Checker** premium plugin.
+The {{site.productname}} 5.4 release includes an accompanying release of the **Advanced Code Editor** premium plugin.
 
-**Accessibility Checker** 2.x.x
+**Advanced Code Editor** 2.1.0 provides the following improvements:
 
-For information on the Accessibility Checker plugin, see: [Accessibility Checker plugin]({{site.baseurl}}/plugins/a11ychecker/).
+- Added search/replace support.
+- Fixed the editor `referrer_policy` option not working when loading additional resources.
 
-## Accompanying premium self-hosted server-side component changes
-
-The {{site.productname}} 5.4 release includes accompanying changes affecting the {{site.productname}} **self-hosted** services for the following plugins:
-
--
-
-
-###
-
+For information on the Advanced Code Editor plugin, see: [Advanced Code Editor plugin]({{site.baseurl}}/plugins/advcode/).
 
 ## Minor changes for TinyMCE 5.4
 

@@ -239,7 +239,7 @@ The `images_dataimg_filter` option has been deprecated with the release of {{sit
 
 For information on:
 
-- The `images_dataimg_filter` option, see: [Image & file upload options - images_dataimg_filter]({{site.baseurl}}/configure/file-image-upload/#images_dataimg_filter).
+- The `images_dataimg_filter` option, see: [Image & file options - images_dataimg_filter]({{site.baseurl}}/configure/file-image-upload/#images_dataimg_filter).
 - The future introduction of real-time collaboration, see: [Tiny Blueprint - Collaboration needs a clean Slate]({{site.url}}/blog/real-time-collaborative-editing-slate-js/).
 
 

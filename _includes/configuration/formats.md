@@ -250,7 +250,7 @@ tinymce.init({
   extended_valid_elements: 'span[*]', // Needed to retain spans without attributes these are removed by default
   formats: {
     removeformat: [
-      // Configures `clear formatting` to remove specified elements regardless of it's attributes
+      // Configures `clear formatting` to remove specified elements regardless of its attributes
       { selector: 'b,strong,em,i,font,u,strike', remove: 'all' },
 
       // Configures `clear formatting` to remove the class red from spans and if the element then becomes empty i.e has no attributes it gets removed

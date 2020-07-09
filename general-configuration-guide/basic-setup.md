@@ -258,7 +258,7 @@ Selects the toolbar buttons displayed to the user. Use a comma or space as a sep
 toolbar: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | print preview media fullpage | forecolor backcolor emoticons',
 ```
 
-Adds an additonal menu named "My Favorites" with `menu`, then adds it to the menu bar using `menubar`.
+Adds an additional menu named "My Favorites" with `menu`, then adds it to the menu bar using `menubar`.
 
 ```js
 menu: {

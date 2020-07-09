@@ -85,7 +85,7 @@ tinydrive.start({
 
 ## Generic settings
 
-These settings can be passed to any of the the standalone API methods.
+These settings can be passed to any of the standalone API methods.
 
 ### `token_provider`
 

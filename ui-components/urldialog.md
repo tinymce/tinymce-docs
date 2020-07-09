@@ -59,7 +59,7 @@ A **button** is a clickable component that can contain text or an icon. There ar
 | type | `'cancel'` or `'custom'` | required | Must be `'cancel'` or `'custom'` based on the type of callback function that should be invoked when the button is clicked. |
 | text | string | required | Text to display in the button if `icon` is not specified. Also used for the button's `title` attribute. |
 | name | string | optional | An identifier for the button. If not specified, the button will be assigned a randomly generated `name`.  |
-| icon | string | optional | Name of the icon to be displayed. Must correspond to an icon in the icon pack. **When configured, the button will display the icon instead of text.** |
+| icon | string | optional | {{site.predefinedIconsOnly}} **When configured, the button will display the icon instead of text.** |
 | primary | boolean | optional | default: `false` - Whether to style the button as a primary or secondary button. |
 | disabled | boolean | optional | default: `false` - When `true`, the button will be disabled when the dialog loads. |
 | align | `'end'` or `'start'` | optional | default: `'end'` - When set to `'end'` the button will display on the right-hand side of the dialog. When set to `'start'` the button will display on the left-hand side. |

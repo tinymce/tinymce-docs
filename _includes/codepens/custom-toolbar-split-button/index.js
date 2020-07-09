@@ -6,6 +6,8 @@ tinymce.init({
   setup: function (editor) {
     editor.ui.registry.addSplitButton('myButton', {
       text: 'My Button',
+      icon: 'info',
+      tooltip: 'This is an example split-button',
       onAction: function () {
         editor.insertContent('<p>You clicked the main button</p>');
       },
@@ -16,11 +18,13 @@ tinymce.init({
         var items = [
           {
             type: 'choiceitem',
+            icon: 'notice',
             text: 'Menu item 1',
             value: '&nbsp;<em>You clicked menu item 1!</em>'
           },
           {
             type: 'choiceitem',
+            icon: 'warning',
             text: 'Menu item 2',
             value: '&nbsp;<em>You clicked menu item 2!</em>'
           }

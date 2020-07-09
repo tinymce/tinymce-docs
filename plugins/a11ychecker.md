@@ -8,7 +8,7 @@ keywords: a11y accessibility WCAG
 
 {{site.premiumplugin}}
 
-The `a11ychecker` premuim plugin enables you to check the HTML for various WCAG & Section 508 accessibility problems. It has an auto repair feature that lets a user fix identified problems.
+The `a11ychecker` premium plugin enables you to check the HTML for various WCAG & Section 508 accessibility problems. It has an auto repair feature that lets a user fix identified problems.
 
 ##### Example:
 
@@ -46,7 +46,7 @@ These are the various rules that are checked:
 <a class="anchor" id="D4O"></a>
 <h4><a class="anchorable" href="#D4O">Ordered list structure</a></h4>
 
-**Rule info:** This rule checks that an `ol` element is used for ordered lists. Do not use paragraphs beginning with numbers or roman numverals instead of an actual `ol` element containing `li` items. This is to simplify navigation and parsing of the content for users of assistive technologies.
+**Rule info:** This rule checks that an `ol` element is used for ordered lists. Do not use paragraphs beginning with numbers or roman numerals instead of an actual `ol` element containing `li` items. This is to simplify navigation and parsing of the content for users of assistive technologies.
 
 <a class="anchor" id="D4U"></a>
 <h4><a class="anchorable" href="#D4U">Unordered list structure</a></h4>

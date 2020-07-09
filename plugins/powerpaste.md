@@ -121,7 +121,7 @@ When set to `true`, Base64 encoded images using a data URI in the copied content
 
 **Possible values:**  `true`, `false`
 
->***Note:*** *If you configure* ***PowerPaste*** *to allow local images, you can have {{site.productname}} automatically upload Base64 encoded images for conversion back to a standard image as described on the [image upload documenation]({{ site.baseurl }}/advanced/handle-async-image-uploads/).*
+>***Note:*** *If you configure* ***PowerPaste*** *to allow local images, you can have {{site.productname}} automatically upload Base64 encoded images for conversion back to a standard image as described on the [image upload documentation]({{ site.baseurl }}/advanced/handle-async-image-uploads/).*
 
 {% include configuration/paste-block-drop.md %}
 

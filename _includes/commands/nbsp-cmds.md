@@ -1,7 +1,7 @@
 
 | Command        | Description                                                                              |
 | -------------- | ---------------------------------------------------------------------------------------- |
-| mceNonBreaking | Inserts a non breaking space at the cursor location or inplace of the current selection. |
+| mceNonBreaking | Inserts a non breaking space at the cursor location or overwrites the current selection. |
 
 **Example**
 

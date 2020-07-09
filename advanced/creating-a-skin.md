@@ -21,7 +21,7 @@ This guide assumes:
 
 ## Preparation
 
-The CSS that goes with a theme is called a skin. The default skin for {{site.productname}} {{site.productmajorversion}} is named Oxide and is written in [Less](http://lesscss.org), a popular CSS preprocessor. With Oxide we introduced a concept we call the **Style API**. This API consists of around 300 variables which you use to modify the appearance of {{site.productname}}. You never touch the underlying CSS. The benefit of this approach is that improvements we make to the the CSS and HTML won't break your custom skin. This also means that if things don't work as expected, we can provide support and bug fixes, something that was virtually impossible before.
+The CSS that goes with a theme is called a skin. The default skin for {{site.productname}} {{site.productmajorversion}} is named Oxide and is written in [Less](http://lesscss.org), a popular CSS preprocessor. With Oxide we introduced a concept we call the **Style API**. This API consists of around 300 variables which you use to modify the appearance of {{site.productname}}. You never touch the underlying CSS. The benefit of this approach is that improvements we make to the CSS and HTML won't break your custom skin. This also means that if things don't work as expected, we can provide support and bug fixes, something that was virtually impossible before.
 
 > Important: We do not recommend modifying or overriding CSS rules directly.
 

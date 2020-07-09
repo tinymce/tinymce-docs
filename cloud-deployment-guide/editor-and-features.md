@@ -55,7 +55,7 @@ Extend the [{{site.productname}} configuration]({{ site.baseurl }}/configure/) t
 
 * [Image Tools (with configured image proxy)]({{ site.baseurl }}/plugins/imagetools/)
 
-> Note: Configuration of the `imagetools_cors_hosts` and `imagetools_proxy` properties occurrs automatically.
+> Note: Configuration of the `imagetools_cors_hosts` and `imagetools_proxy` properties occurs automatically.
 
 * [Moxie Manager]({{ site.baseurl }}/plugins/moxiemanager/)
 * [Accessibility Checker]({{ site.baseurl }}/plugins/a11ychecker/)
@@ -119,7 +119,7 @@ Extend the [{{site.productname}} configuration]({{ site.baseurl }}/configure/) t
 
 * [Image tools (with configured image proxy)]({{ site.baseurl }}/plugins/imagetools/)
 
-> Note: Configuration of the `imagetools_cors_hosts` and `imagetools_proxy` properties occurrs automatically.
+> Note: Configuration of the `imagetools_cors_hosts` and `imagetools_proxy` properties occurs automatically.
 
 * [Moxie Manager]({{ site.baseurl }}/plugins/moxiemanager/)
 * [Accessibility Checker]({{ site.baseurl }}/plugins/a11ychecker/)

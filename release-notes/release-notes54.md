@@ -105,19 +105,19 @@ For information on the Advanced Code Editor plugin, see: [Advanced Code Editor p
 
 The following features have been deprecated with the release of {{site.productname}} 5.4:
 
-- [The TinyMCE core Spell Checker plugin](#thetinymcecorespellcheckerplugin).
+- [The TinyMCE free Spell Checker plugin](#thetinymcefreespellcheckerplugin).
 - [The `table_responsive_width` option in the Table plugin](#thetable_responsive_widthoption).
 
-### The TinyMCE core Spell Checker plugin
+### The TinyMCE free Spell Checker plugin
 
-The {{site.productname}} core Spell Checker plugin (`spellchecker`) has been deprecated and will be removed in a future major release of {{site.productname}}. This includes both the editor plugin and the PHP backend program.
+The {{site.productname}} free Spell Checker plugin (`spellchecker`) has been deprecated and will be removed in a future major release of {{site.productname}}. This includes both the editor plugin and the PHP backend program.
 
 This change **_does not_** affect:
 
 - [The Spellchecker Pro premium plugin]({{site.baseurl}}/plugins/tinymcespellchecker/).
 - [Browser-based spell checking in {{site.productname}}]({{site.baseurl}}/general-configuration-guide/spell-checking/#browser-basedspellchecking).
 
-To develop and maintain a new spellchecking plugin based on the {{site.productname}} core Spell Checker plugin:
+To develop and maintain a new spellchecking plugin based on the {{site.productname}} free Spell Checker plugin:
 
 - Fork the PHP backend program from the [_tinymce/tinymce_spellchecker_php_ GitHub repository](https://github.com/tinymce/tinymce_spellchecker_php).
 - Extract the Spell Checker user interface from the [Spellchecker plugin directory in the _tinymce/tinymce_ GitHub repository](https://github.com/tinymce/tinymce/tree/develop/modules/tinymce/src/plugins/spellchecker).

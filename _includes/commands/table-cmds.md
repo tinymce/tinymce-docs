@@ -27,6 +27,9 @@
 | mceTableProps           | Opens the Table Properties dialog.              |
 | mceTableRowProps        | Opens the table row properties dialog.          |
 | mceTableCellProps       | Opens the table cell properties dialog.         |
+| mceTableRowType       | Changes the current row or rows to the specified type, either: `'header'`, `'body'`, or `'footer'`. The structure of header rows is dependent on the [`table_header_type` option]({{site.baseurl}}/plugins/table/#table_header_type). {{site.requires_5_4v}} |
+| mceTableColType       | Changes all cells in the current column or columns to the specified type, either: `'td'` or `'th'`. {{site.requires_5_4v}} |
+| mceTableCellType       | Changes the current cell or cells to the specified type, either: `'td'` or `'th'`. {{site.requires_5_4v}} |
 
 **Examples**
 
@@ -60,4 +63,7 @@ tinymce.activeEditor.execCommand('mceInsertTable', false, { rows: 3, columns: 2,
 tinymce.activeEditor.execCommand('mceTableProps');
 tinymce.activeEditor.execCommand('mceTableRowProps');
 tinymce.activeEditor.execCommand('mceTableCellProps');
+tinymce.activeEditor.execCommand('mceTableRowType', false, { type: 'header' });
+tinymce.activeEditor.execCommand('mceTableColType', false, { type: 'th' });
+tinymce.activeEditor.execCommand('mceTableCellType', false, { type: 'th' });
 ```

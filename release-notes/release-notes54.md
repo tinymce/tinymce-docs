@@ -28,9 +28,11 @@ The {{site.productname}} 5.4 release includes the following improvements for the
 
 - Adds: commands, APIs, and icons for; cut, copy, and paste columns.
 - Adds toolbar button icons for the cut, copy, and paste rows.
-- Adds a new `table_sizing_mode` option and a new `mceTableSizingMode` command for setting the method for measuring table cell width: `fixed`, `relative`, or `responsive`.
-- Adds a new `mceTableApplyCellStyle` command for applying selected styles to table cells.
-- Extends the `mceInsertTable` command for adding tables without the dialog.
+- Adds a new [`mceTableApplyCellStyle`]({{site.baseurl}}/plugins/table/#commands) command for applying selected styles to table cells.
+- Adds a new [`table_header_type`]({{site.baseurl}}/plugins/table/#table_header_type) option for setting the HTML structure used for table header rows.
+- Adds table row, column, and cell type commands and queries.
+- Adds a new [`table_sizing_mode`]({{site.baseurl}}/plugins/table/#table_sizing_mode) option and a new [`mceTableSizingMode`]({{site.baseurl}}/plugins/table/#commands) command for setting the method for measuring table cell width: `fixed`, `relative`, or `responsive`.
+- Extends the [`mceInsertTable`]({{site.baseurl}}/plugins/table/#commands) command for adding tables without the dialog.
 
 For information on the table plugin, see: [Table plugin]({{site.baseurl}}/plugins/table/).
 

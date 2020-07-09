@@ -1,0 +1,26 @@
+<script type="text/javascript">
+  function getEditorStatus (editorId) {
+    return tinymce.get(editorId).mode.get();
+  };
+  function setEditorStatus (editorId, currentStatus) {
+    if (currentStatus === "design") {
+      tinymce.get(editorId).mode.set("readonly");
+    } else {
+      tinymce.get(editorId).mode.set("design");
+    }
+  };
+  function enableDisable (targetEditor,targetElement) {
+    var status = getEditorStatus (targetEditor);
+    var button = document.getElementById(targetElement);
+    setEditorStatus (targetEditor, status);
+    if (status === "design") {
+      button.innerText="Enable editor";
+    } else {
+      button.innerText="Disable editor";
+    };
+  };
+</script>
+
+<textarea id="readonly-demo">Hello, World!</textarea>
+
+<button id="enableDisableButton" class="btn btn-candy link-sushi" onclick="enableDisable('readonly-demo','enableDisableButton')">Enable editor</button>

@@ -653,6 +653,8 @@ For information on Context Menus, see [UI components - Context menu]({{site.base
 
 ### Spellchecker plugin
 
+{{site.deprecate_spellchecker}}
+
 [`spellchecker_callback`]({{site.baseurl}}/plugins/spellchecker/#spellchecker_callback) has been updated to remove a legacy format for the `success` callback, which accepted a mapping object of misspelled words to suggestions. For example:
 
 ```js

@@ -376,6 +376,8 @@ The following command requires the [Search and Replace (`searchreplace`)]({{ sit
 
 The following command requires the [Spell Checker (`spellchecker`)]({{ site.baseurl }}/plugins/spellchecker/) plugin.
 
+{{site.deprecate_spellchecker}}
+
 {% include commands/spellchecker-cmds.md %}
 
 #### Table

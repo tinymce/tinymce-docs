@@ -17,8 +17,7 @@ To disable the editor's context menu, set this option to `false`.
 
 **Default Value:** `'link linkchecker image imagetools table spellchecker configurepermanentpen'`
 
-> **Note**: The browsers native context menu can still be accessed by holding the `Ctrl` key while right clicking with the mouse.
-> However if the `contextmenu_never_use_native` option is enabled, holding the `Ctrl` key will have no effect.
+{{site.ctrl_right_click}}
 
 ### Example: contextmenu
 

@@ -9,14 +9,14 @@
       tinymce.get(editorId).mode.set("design");
     }
   };
-  function enableDisable (targetEditor,targetElement) {
-    var status = getEditorStatus (targetEditor);
+  function enableDisable (targetEditor, targetElement) {
+    var status = getEditorStatus(targetEditor);
     var button = document.getElementById(targetElement);
     setEditorStatus (targetEditor, status);
     if (status === "design") {
-      button.innerText="Enable editor";
+      button.innerText = "Enable editor";
     } else {
-      button.innerText="Disable editor";
+      button.innerText = "Disable editor";
     };
   };
 </script>

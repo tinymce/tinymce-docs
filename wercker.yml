@@ -20,11 +20,6 @@ build:
         name: build
         code: _scripts/build.sh
 
-  after-steps:
-    - slack-notifier:
-        url: $SLACK_WEBHOOK_URL
-
-
 invalidate_cache:
   steps:
     - script:

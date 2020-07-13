@@ -8,6 +8,11 @@ class: changelog
 
 {% capture changelog %}
 
+## Version 4.9.11 July 13, 2020
+* Fixed the `selection.setContent()` API not running parser filters.
+* Fixed content in an iframe element parsing as DOM elements instead of text content.
+* Fixed up and down keyboard navigation not working for inline `contenteditable="false"` elements.
+
 ## Version 4.9.10 April 23, 2020
 * Fixed an issue where the editor selection could end up inside a short ended element (eg br).
 * Fixed a security issue related to CDATA sanitization during parsing.

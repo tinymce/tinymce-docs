@@ -114,6 +114,12 @@ For information on the PowerPaste plugin, see: [PowerPaste plugin]({{site.baseur
 * Fixed an issue where removing the editor would leave unexpected attributes on the target element.
 * Fixed the `link` plugin now suggest `mailto:` when the text contains an '@' and no slashes (`/`).
 * Fixed the `valid_children` check of custom elements now allows a wider range of characters in names.
+* Fixed the Search and Replace plugin incorrectly including zero-width caret characters in search results.
+* Fixed dragging and dropping unsupported files navigating the browser away from the editor.
+* Fixed undo levels not created on browser handled drop or paste events.
+* Fixed content in an iframe element parsing as DOM elements instead of text content.
+* Fixed Oxide checklist styles not showing when printing.
+* Fixed bug with `scope` attribute not being added to the cells of header rows.
 
 ## Deprecated features
 

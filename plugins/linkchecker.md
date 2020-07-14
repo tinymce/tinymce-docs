@@ -75,7 +75,7 @@ tinymce.init({
   linkchecker_preprocess: function (data) {
     /* This example will encode or double encode the url */
     var newUrl = encodeURIComponent(data.url);
-    return { url: newUrl };]
+    return { url: newUrl };
   }
 });
 ```

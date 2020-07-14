@@ -99,6 +99,12 @@ For information on the PowerPaste plugin, see: [PowerPaste plugin]({{site.baseur
 
 {{site.productname}} 5.4 provides fixes for the following bugs:
 
+* Fixed the Search and Replace plugin incorrectly including zero-width caret characters in search results.
+* Fixed dragging and dropping unsupported files navigating the browser away from the editor.
+* Fixed undo levels not created on browser handled drop or paste events.
+* Fixed content in an iframe element parsing as DOM elements instead of text content.
+* Fixed Oxide checklist styles not showing when printing.
+* Fixed bug with `scope` attribute not being added to the cells of header rows.
 * Fixed tables with no defined width being converted to a `fixed` width table when modifying the table.
 * Fixed the `autosave` `isEmpty` API incorrectly detecting non-empty content as empty.
 * Fixed table `Paste row after` and `Paste row before` menu items not disabled when nothing was available to paste.

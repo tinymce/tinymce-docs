@@ -7,7 +7,7 @@ keywords: toc toc_depth toc_class toc_header
 controls: toolbar button, menu item
 ---
 
-`toc` plugin will generate basic *Table of Contents* and insert it into the editor at the current cursor position. Items for the table will be taken from the headers found in the content. 
+`toc` plugin will generate basic *Table of Contents* and insert it into the editor at the current cursor position. Items for the table will be taken from the headers found in the content.
 
 **Type:** `String`
 
@@ -22,23 +22,12 @@ tinymce.init({
 });
 ```
 
-*Table of Contents* will have a simple HTML structure - a wrapper `div` element, a header with *editable* title and unordered nested list with navigation links. Nesting depth is customisable. 
+*Table of Contents* will have a simple HTML structure - a wrapper `div` element, a header with *editable* title and unordered nested list with navigation links. Nesting depth is customisable.
 
-Internally plugin doesn't apply any inline styles. Basic formatting can be added via [Boilerplate Content CSS]({{ site.baseurl }}/advanced/boilerplate-content-css/), that can be customised to your needs.
+Internally plugin doesn't apply any inline styles. Basic formatting can be added via [Boilerplate Content CSS]({{ site.baseurl }}/general-configuration-guide/boilerplate-content-css/), that can be customised to your needs.
 
 ```css
-/* Basic styles for Table of Contents plugin (toc) */
-.mce-toc {
-	border: 1px solid gray;
-}
-
-.mce-toc h2 {
-	margin: 4px;
-}
-
-.mce-toc li {
-	list-style-type: none;
-}
+{% include css-codeblock/toc-plugin-css.md %}
 ```
 
 ## Options
@@ -83,7 +72,7 @@ tinymce.init({
 
 ### `toc_class`
 
-With `toc_class` you can change the class name that gets assigned to the wrapper `div`. Please note that you will have to alter [Boilerplate Content CSS]({{ site.baseurl }}/advanced/boilerplate-content-css/)) accordingly.
+With `toc_class` you can change the class name that gets assigned to the wrapper `div`. Please note that you will have to alter [Boilerplate Content CSS]({{ site.baseurl }}/general-configuration-guide/boilerplate-content-css/)) accordingly.
 
 **Type:** `String`
 

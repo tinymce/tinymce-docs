@@ -1,17 +1,16 @@
----
-layout: default
-title: Use multiple TinyMCE instances in a single page
-title_nav: Multiple editors in a page
-keywords:
----
+= Use multiple TinyMCE instances in a single page
+:keywords:
+:title_nav: Multiple editors in a page
 
 This section is about adding multiple editor instances to a single page. This is a common use case when using {{site.productname}}'s `inline` mode. Breaking content into sections (e.g., titles, paragraphs) allows users to edit them individually.
 
-## Multiple editor instances sharing the same configuration
+[#multiple-editor-instances-sharing-the-same-configuration]
+== Multiple editor instances sharing the same configuration
 
 The following example breaks the page into two separate editable areas. Each area shares a single editor configuration. Each editable `div` is provided the same `class` of `myeditablediv`. {{site.productname}} is loaded just for the content area the user clicks.
 
-```html
+[source,html]
+----
 <!DOCTYPE html>
 <html>
 <head>
@@ -29,21 +28,23 @@ The following example breaks the page into two separate editable areas. Each are
   <form method="post">
     <h1>Multple editors on a page: Section 1</h1>
     <div class="myeditablediv" id="section001">Click here to edit the first section of content!</div>
-  
+
     <h1>Multple editors on a page: Section 2</h1>
     <div class="myeditablediv" id="section002">Click here to edit the second section of content!</div>
   </form>
 </body>
 </html>
-```
-> Note: In the example above, the css selector is a `class` because the `id` must be unique.
+----
 
-## Multiple editor instances, each with a unique configuration
+NOTE: In the example above, the css selector is a `class` because the `id` must be unique.
+
+[#multiple-editor-instances-each-with-a-unique-configuration]
+== Multiple editor instances, each with a unique configuration
 
 The following example loads each editable area with a unique configuration of {{site.productname}}. This is useful when different content areas have different needs, such as providing simple configuration for editing titles and a complete configuration for editing body content. Define a `tinymce.init` object/method for each configuration.
 
-
-```html
+[source,html]
+----
 <!DOCTYPE html>
 <html>
 <head>
@@ -55,7 +56,7 @@ The following example loads each editable area with a unique configuration of {{
     menubar: false,
     toolbar: 'undo redo'
   });
- 
+
   tinymce.init({
     selector: '#myeditable-div',
     inline: true
@@ -73,7 +74,7 @@ The following example loads each editable area with a unique configuration of {{
   </form>
 </body>
 </html>
-```
+----
 
 {% assign_page next_page = "/general-configuration-guide/advanced-install/index.html" %}
 {% include next-step.html next=next_page %}

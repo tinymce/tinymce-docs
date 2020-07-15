@@ -1,18 +1,22 @@
-### Step 1: Download the Self-hosted package
+[#step-1-download-the-self-hosted-package]
+=== Step 1: Download the Self-hosted package
 
-If you'd rather download and install the script manually, get the package from [{{site.productname}} Downloads]({{site.gettiny}}).
+If you'd rather download and install the script manually, get the package from link:{{site.gettiny}}[{{site.productname}} Downloads].
 
 Unzip the package and move the `'path/to/{{site.prodnamecode}}/'` directory into a web accessible location on your web server (for example, `localhost`).
 
-### Step 2: Include the TinyMCE script
+[#step-2-include-the-tinymce-script]
+=== Step 2: Include the TinyMCE script
 
 Include this line of code in the `<head>` of your HTML page:
 
-```html
+[source,html]
+----
 <script src="path/to/tinymce/js/tinymce.min.js"></script>
-```
+----
 
-### Step 3: Initialize TinyMCE as part of a web form
+[#step-3-initialize-tinymce-as-part-of-a-web-form]
+=== Step 3: Initialize TinyMCE as part of a web form
 
 With the script included, initialize {{site.productname}} on any element (or elements) in your web page.
 
@@ -20,7 +24,8 @@ Since {{site.productname}} lets you identify replaceable elements via a CSS sele
 
 In this example, let's replace `<textarea id='mytextarea'>` with a {{site.productname}} editor instance by passing the selector `'#mytextarea'` to `tinymce.init()`.
 
-```html
+[source,html]
+----
 <!DOCTYPE html>
 <html>
 <head>
@@ -39,10 +44,13 @@ In this example, let's replace `<textarea id='mytextarea'>` with a {{site.produc
   </form>
 </body>
 </html>
-```
+----
 
-### Step 4: Saving content with a form POST
+[#step-4-saving-content-with-a-form-post]
+=== Step 4: Saving content with a form POST
 
 When the `<form>` is submitted the {{site.productname}} editor mimics the behavior of a normal HTML `<textarea>` during the `post`. In your form handler you can process the content submitted as if it had come from a regular `<textarea>`.
 
-> If you decided to use the Self-hosted package, move on to the next step [working with plugins](../work-with-plugins/), where you'll start customizing {{site.productname}}. If you'd like to learn about other install options please keep reading.
+____
+If you decided to use the Self-hosted package, move on to the next step link:../work-with-plugins/[working with plugins], where you'll start customizing {{site.productname}}. If you'd like to learn about other install options please keep reading.
+____

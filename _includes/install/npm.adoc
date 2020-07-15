@@ -1,26 +1,19 @@
+----
+npm install tinymce
+----
 
-```
-bower install tinymce
-```
-
-If you'd like to install and build the source manually with Bower use these steps. This approach can be used when debugging or building custom plugins.
-
-```
-bower install tinymce-src=git://github.com/tinymce/tinymce
-cd bower_components/tinymce-src
-npm i
-jake
-```
-
-### Step 1: Include the TinyMCE script
+[#step-1-include-the-tinymce-script]
+=== Step 1: Include the TinyMCE script
 
 Include this line of code in the `<head>` of your HTML page:
 
-```html
+[source,html]
+----
 <script src="/path/to/tinymce.min.js"></script>
-```
+----
 
-### Step 2: Initialize TinyMCE as part of a web form
+[#step-2-initialize-tinymce-as-part-of-a-web-form]
+=== Step 2: Initialize TinyMCE as part of a web form
 
 With the script included, initialize {{site.productname}} on any element (or elements) in your web page.
 
@@ -28,7 +21,8 @@ Since {{site.productname}} lets you identify replaceable elements via a CSS sele
 
 In this example, let's replace `<textarea id='mytextarea'>` with a {{site.productname}} editor instance by passing the selector `'#mytextarea'` to `tinymce.init()`.
 
-```html
+[source,html]
+----
 <!DOCTYPE html>
 <html>
 <head>
@@ -47,17 +41,20 @@ In this example, let's replace `<textarea id='mytextarea'>` with a {{site.produc
   </form>
 </body>
 </html>
-```
+----
 
-### Step 3: Saving content with a form POST
+[#step-3-saving-content-with-a-form-post]
+=== Step 3: Saving content with a form POST
 
 When the `<form>` is submitted the {{site.productname}} editor mimics the behavior of a normal HTML `<textarea>` during the `post`. In your form handler you can process the content submitted as if it had come from a regular `<textarea>`.
 
-#### Use of local plugins & language packs when installing via package managers
+[#use-of-local-plugins-language-packs-when-installing-via-package-managers]
+==== Use of local plugins & language packs when installing via package managers
 
 When using package managers you might have local {{site.productname}} add-ons in your project such as plugins or language packs. Load these from your project location rather than from inside the package using these configuration options:
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',
   language: 'sv',
@@ -67,6 +64,8 @@ tinymce.init({
     'myplugin': '/js/myplugin/plugin.min.js'
   }
 });
-```
+----
 
-> If you have decided to use this package manager, move on to the next step [working with plugins](../work-with-plugins/), where you'll start customizing {{site.productname}}. If you'd like to learn about other install options please keep reading.
+____
+If you have decided to use this package manager, move on to the next step link:../work-with-plugins/[working with plugins], where you'll start customizing {{site.productname}}. If you'd like to learn about other install options please keep reading.
+____

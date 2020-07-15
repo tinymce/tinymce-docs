@@ -3,21 +3,21 @@
 :keywords: enterprise tinymcespellchecker spell check checker pro pricing
 :title_nav: Spell checking as-you-type
 
-_Spell Checker Pro_ adds spell checking as-you-type capabilities to {{site.productname}}. This includes
+_Spell Checker Pro_ adds spell checking as-you-type capabilities to {productname}. This includes
 
 * Inline spell checking.
 * A spell checking dialog that steps the user through each error, offering a list of suggested corrections.
 
 {% include codepen.html id="spellcheckerpro" %}
 
-{% include configuration/languages.md %}
+include::_includes/configuration/languages.adoc[]
 
 [#custom-dictionaries]
 == Custom dictionaries
 
-Additional dictionaries can be added to Spell Checker Pro to supplement the default vocabulary. See link:{{ site.baseurl }}/enterprise/check-spelling/custom/[these instructions] for details.
+Additional dictionaries can be added to Spell Checker Pro to supplement the default vocabulary. See link:{baseurl}/enterprise/check-spelling/custom/[these instructions] for details.
 
-{% assign pluginname = 'Spell Checker Pro' %}
-{% assign pluginminimumplan = 'tierthree' %}
-{% assign plugindocspage = 'tinymcespellchecker' %}
-{% include misc/purchase-premium-plugins.md %}
+:pluginname: Spell Checker Pro
+:pluginminimumplan: tierthree
+:plugindocspage: tinymcespellchecker
+include::_includes/misc/purchase-premium-plugins.adoc[]

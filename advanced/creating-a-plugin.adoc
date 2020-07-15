@@ -4,14 +4,14 @@
 :keywords: plugin plugin.js plugin.min.js tinymce.js
 :title_nav: Create a plugin
 
-{{site.productname}} is designed to make creating plugins simple and to provide choice. Users can employ the link:{{ site.baseurl }}/advanced/yeoman-generator/[Yeoman generator] or you can use the following tutorial that outlines the basic concepts of creating a plugin. Consult the API documentation and review the existing plugins that are shipped with the core editor for additional details.
+{productname} is designed to make creating plugins simple and to provide choice. Users can employ the link:{baseurl}/advanced/yeoman-generator/[Yeoman generator] or you can use the following tutorial that outlines the basic concepts of creating a plugin. Consult the API documentation and review the existing plugins that are shipped with the core editor for additional details.
 
 [#file-structure]
 == File Structure
 
-First create a directory in the {{site.productname}} plugins directory. {{site.productname}} loads the `plugin.js` file when developers use the `tinymce.js` file in the page. Similarly, the `tinymce.min.js` loads the `plugin.min.js` file. The recommended usage is to use the `tinymce.js` file while developing and then use a build script minifying the `plugin.js` into `plugin.min.js` in production.
+First create a directory in the {productname} plugins directory. {productname} loads the `plugin.js` file when developers use the `tinymce.js` file in the page. Similarly, the `tinymce.min.js` loads the `plugin.min.js` file. The recommended usage is to use the `tinymce.js` file while developing and then use a build script minifying the `plugin.js` into `plugin.min.js` in production.
 
-The build scripts that comes with the {{site.productname}} development package automatically builds all plugins including custom ones.
+The build scripts that comes with the {productname} development package automatically builds all plugins including custom ones.
 
 [#example-of-the-plugin-file-structure]
 == Example of the plugin file structure
@@ -125,12 +125,12 @@ tinymce.init({
 [#exposing-metadata]
 == Exposing metadata
 
-Metadata can be exposed from a custom plugin by returning an object with the property `getMetadata` with a function that returns an object with a `name` and `url` property. This metadata is used by the link:{{ site.baseurl }}/plugins/help/[Help Plugin] to show the correct name and link for the plugin in the Plugins installed tab. See the `test` plugin above for example.
+Metadata can be exposed from a custom plugin by returning an object with the property `getMetadata` with a function that returns an object with a `name` and `url` property. This metadata is used by the link:{baseurl}/plugins/help/[Help Plugin] to show the correct name and link for the plugin in the Plugins installed tab. See the `test` plugin above for example.
 
 [#language-localization]
 == Language localization
 
-Create a "langs" directory in the plugin directory for custom translations. {{site.productname}} loads language files based on the specified language code. For example, if the language is "es_ES" it will try to load `'<your plugin>/langs/es_ES.js'`.
+Create a "langs" directory in the plugin directory for custom translations. {productname} loads language files based on the specified language code. For example, if the language is "es_ES" it will try to load `'<your plugin>/langs/es_ES.js'`.
 
 The structure is similar to `.po` files in that the English string left and its corresponding translation on the right.
 
@@ -143,7 +143,7 @@ tinymce.addI18n('es_ES', {
 });
 `
 
-WARNING: A 404 error will load if translations are missing in the plugin that the full {{site.productname}} package contains. Add the following line to the top of the plugin file to avoid this.
+WARNING: A 404 error will load if translations are missing in the plugin that the full {productname} package contains. Add the following line to the top of the plugin file to avoid this.
 
 `js
 tinymce.PluginManager.requireLangPack('example', 'es_ES,de_AT');

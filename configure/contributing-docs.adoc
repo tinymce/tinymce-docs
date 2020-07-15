@@ -4,7 +4,7 @@
 :keywords: opensource oss contributors lgpl docs dox
 :title_nav: Contribute to documentation
 
-This page outlines how you can provide feedback and contribute to {{site.productname}} documentation.
+This page outlines how you can provide feedback and contribute to {productname} documentation.
 
 [#contributor-code-of-conduct]
 == Contributor Code of Conduct
@@ -14,11 +14,11 @@ For our Contributor Code of Conduct, visit our https://github.com/tinymce/tinymc
 [#how-to-contribute-to-tinymces-documentation]
 == How to contribute to TinyMCE's documentation
 
-We welcome people with technical writing experience to help make {{site.productname}}'s docs as useful to our community as possible. Although you don't need to be an expert developer to contribute, a basic understanding of software development is helpful.
+We welcome people with technical writing experience to help make {productname}'s docs as useful to our community as possible. Although you don't need to be an expert developer to contribute, a basic understanding of software development is helpful.
 
-What is more important is your ability to articulate complex ideas. Our goal is to help developers understand {{site.productname}}'s functionality as quickly as possible.
+What is more important is your ability to articulate complex ideas. Our goal is to help developers understand {productname}'s functionality as quickly as possible.
 
-Simply branch the https://github.com/tinymce/tinymce-docs[docs GitHub repository] and submit a PR, or reach out to the https://github.com/tinymce/tinymce-docs/issues/new?assignees=&labels=question&template=question.md[{{site.productname}} docs team] if you have a specific question.
+Simply branch the https://github.com/tinymce/tinymce-docs[docs GitHub repository] and submit a PR, or reach out to the https://github.com/tinymce/tinymce-docs/issues/new?assignees=&labels=question&template=question.md[{productname} docs team] if you have a specific question.
 
 [#tinymce-documentation-tech-stack]
 == TinyMCE documentation tech stack
@@ -35,7 +35,7 @@ The documentation is written in https://kramdown.gettalong.org/[kramdown Flavore
 
 Code language syntax and associated elements are highlighted using an open and closing backtick. For example, this `object` is actually enclosed with backticks like this: `object`.
 
-Highlight words relating specifically to executable parts of software languages. Keys and their values when pertaining to objects and methods (particularly the case with {{site.productname}}) should have backticks. We cannot cover every use case here and contributors need to use their best judgment. What is more important is your ability to articulate complex ideas.
+Highlight words relating specifically to executable parts of software languages. Keys and their values when pertaining to objects and methods (particularly the case with {productname}) should have backticks. We cannot cover every use case here and contributors need to use their best judgment. What is more important is your ability to articulate complex ideas.
 
 [#code-snippets]
 === Code snippets
@@ -80,7 +80,7 @@ hello, [text to link](http://www.example.com) to the URL example.com.
 Codepens can be added to content using the "codepen.html" include, such as:
 
 `
-{% raw %}{%{% endraw %} include codepen.html id="basic-example" {% raw %}%}{% endraw %}
+pass:[{%] include codepen.html id="basic-example" pass:[%}]
 `
 
 There are several options for this include file, see https://github.com/tinymce/tinymce-docs/blob/develop/_includes/codepen.html[`_includes/codepen.html`] for details.

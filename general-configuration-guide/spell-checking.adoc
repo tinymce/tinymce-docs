@@ -2,12 +2,12 @@
 :keywords: spell checker spelling browser_spellcheck gecko_spellcheck
 :title_nav: Spell checking
 
-{{site.productname}} provides several options to bring spell checking capabilities to your users.
+{productname} provides several options to bring spell checking capabilities to your users.
 
 [#browser-based-spell-checking]
 == Browser-based spell checking
 
-Assign the link:{{ site.baseurl }}/configure/spelling/#browser_spellcheck[`browser_spellcheck`] configuration option the value of `true` to utilize the browser's native spell check functionality. Enabling the link:{{ site.baseurl }}/configure/editor-appearance/#contextmenu[`contextmenu`] option _may_ be required depending on the right-click or context usability requirement.
+Assign the link:{baseurl}/configure/spelling/#browser_spellcheck[`browser_spellcheck`] configuration option the value of `true` to utilize the browser's native spell check functionality. Enabling the link:{baseurl}/configure/editor-appearance/#contextmenu[`contextmenu`] option _may_ be required depending on the right-click or context usability requirement.
 
 `js
 tinymce.init({
@@ -20,17 +20,17 @@ tinymce.init({
 [#php-spellchecker-component]
 == PHP Spellchecker component
 
-You can also use {{site.productname}}'s PHP _Spellchecker_ component, that you can http://download.moxiecode.com/spellcheckers/tinymce_spellchecker_php_4.0.zip[download here]. To view the complete changelog history, view this http://archive.tinymce.com/develop/changelog/?type=phpspell[`txt`] file. The {{site.productname}}'s PHP Spellchecker component requires a little more work than the browser-based option, being a server-side script.
+You can also use {productname}'s PHP _Spellchecker_ component, that you can http://download.moxiecode.com/spellcheckers/tinymce_spellchecker_php_4.0.zip[download here]. To view the complete changelog history, view this http://archive.tinymce.com/develop/changelog/?type=phpspell[`txt`] file. The {productname}'s PHP Spellchecker component requires a little more work than the browser-based option, being a server-side script.
 
-This plugin enables *Enchant* or *PSpell* on the server to spell check content within the {{site.productname}} editor.
+This plugin enables *Enchant* or *PSpell* on the server to spell check content within the {productname} editor.
 
 [discrete#installation-steps-for-the-default-enchant-engine]
 ===== Installation steps for the default Enchant engine
 
 . Enable *Enchant* in PHP.
-. Download the *{{site.productname}} Spellchecker* for PHP package. http://download.moxiecode.com/spellcheckers/tinymce_spellchecker_php_4.0.zip[(Direct download)].
+. Download the *{productname} Spellchecker* for PHP package. http://download.moxiecode.com/spellcheckers/tinymce_spellchecker_php_4.0.zip[(Direct download)].
 . Unpack the package in the `/path/to/tinymce/plugins/spellchecker` directory.
-. Configure {{site.productname}} to use the spell checker by enabling the `spellchecker` plugin.
+. Configure {productname} to use the spell checker by enabling the `spellchecker` plugin.
 . Configure the `spellchecker_rpc_url` to `'spellchecker.php'`.
 . Download word lists and place them in the `/dicts` directory for example "es_ES.dic, es_ES.aff".
 
@@ -46,14 +46,12 @@ tinymce.init({
 });
 `
 
-Review the link:{{ site.baseurl }}/plugins/spellchecker/[Spell Checker plugin] for advanced configuration options.
+Review the link:{baseurl}/plugins/spellchecker/[Spell Checker plugin] for advanced configuration options.
 
 [#tinymce-spell-checker-pro-plugin]
 == TinyMCE Spell Checker Pro plugin
 
-Use the link:{{ site.baseurl }}/plugins/tinymcespellchecker/[Spell Checker Pro plugin] for scalable enterprise-grade spell check as-you-type functionality. *Spell Checker Pro* requires both a client-side plugin to be configured and a server-side component to be installed and configured.
+Use the link:{baseurl}/plugins/tinymcespellchecker/[Spell Checker Pro plugin] for scalable enterprise-grade spell check as-you-type functionality. *Spell Checker Pro* requires both a client-side plugin to be configured and a server-side component to be installed and configured.
 
-Review the {{site.productname}} Premium Features link:{{ site.baseurl }}/enterprise/check-spelling/[documentation for Spelling]. Learn more about link:{{site.pricingpage}}[{{site.productname}} Premium Products here].
+Review the {productname} Premium Features link:{baseurl}/enterprise/check-spelling/[documentation for Spelling]. Learn more about link:{pricingpage}[{productname} Premium Products here].
 
-{% assign_page next_page = "/general-configuration-guide/filter-content/index.html" %}
-{% include next-step.html next=next_page %}

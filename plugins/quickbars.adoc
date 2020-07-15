@@ -66,7 +66,7 @@ tinymce.init({
 [#example-disabling-the-quick-image-context-toolbar]
 ==== Example: Disabling the Quick Image context toolbar
 
-{{ site.requires_5_2v }}
+{requires_5_2v}
 
 `js
 tinymce.init({
@@ -111,7 +111,7 @@ tinymce.init({
 
 The Quick Image (`quickimage`) toolbar button allows users to quickly insert images from their computer into the editor. It is included in the Quick Insert context toolbar by default and can be used in other toolbars.
 
-NOTE: To enable automatic upload of images on insertion, link:{{ site.baseurl }}/advanced/handle-async-image-uploads/[image upload] must be configured.
+NOTE: To enable automatic upload of images on insertion, link:{baseurl}/advanced/handle-async-image-uploads/[image upload] must be configured.
 
 [#example-using-quickimage-in-the-editor-toolbar]
 ==== Example: Using quickimage in the editor toolbar
@@ -143,8 +143,8 @@ tinymce.init({
 [#configuration-options]
 == Configuration options
 
-{% include configuration/selection-toolbar.md %}
+include::_includes/configuration/selection-toolbar.adoc[]
 
-{% include configuration/insert-toolbar.md %}
+include::_includes/configuration/insert-toolbar.adoc[]
 
-{% include configuration/image_toolbar.md %}
+include::_includes/configuration/image_toolbar.adoc[]

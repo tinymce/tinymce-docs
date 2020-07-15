@@ -4,7 +4,7 @@
 :keywords: webpack browserify commonjs modules tinymce
 :title_nav: Usage with module loaders
 
-{{site.productname}} can easily be installed with `npm` and used with module loaders such as https://webpack.github.io/[Webpack] and http://browserify.org/[Browserify].
+{productname} can easily be installed with `npm` and used with module loaders such as https://webpack.github.io/[Webpack] and http://browserify.org/[Browserify].
 
 First decide how to load your modules.
 
@@ -14,7 +14,7 @@ First decide how to load your modules.
 If you are using ES2015 modules, a simple example could look something like this.
 
 ```javascript
-// Import {{site.productname}}
+// Import {productname}
 import tinymce from 'tinymce/tinymce';
 
 // Default icons are required for TinyMCE 5.3 or above
@@ -40,7 +40,7 @@ tinymce.init({
 The example is nearly the same if you are using CommonJS modules. However, a different `require` function is used to import the dependencies.
 
 ```javascript
-// Import {{site.productname}}
+// Import {productname}
 var tinymce = require('tinymce/tinymce');
 
 // Default icons are required for TinyMCE 5.3 or above
@@ -63,9 +63,9 @@ tinymce.init({
 [#getting-the-skin]
 == Getting the skin
 
-A *skin* consists of some fonts and CSS files used by the editor and {{site.productname}} will not work without them. By default {{site.productname}} looks for these files in a `/skins` directory located in your root directory. This can  be link:{{ site.baseurl }}/configure/editor-appearance/#skin_url[configured in the init object].
+A *skin* consists of some fonts and CSS files used by the editor and {productname} will not work without them. By default {productname} looks for these files in a `/skins` directory located in your root directory. This can  be link:{baseurl}/configure/editor-appearance/#skin_url[configured in the init object].
 
-The quickest way to get started is to copy the skin that comes packaged with {{site.productname}}. This skin is located in `node_modules/tinymce/skins` - either manually copy the files in finder/file explorer or use the terminal:
+The quickest way to get started is to copy the skin that comes packaged with {productname}. This skin is located in `node_modules/tinymce/skins` - either manually copy the files in finder/file explorer or use the terminal:
 
 *MacOS and Linux*
 
@@ -81,7 +81,7 @@ xcopy /I /E node_modules/tinymce/skins skins
 [#webpack-file-loader]
 === Webpack file-loader
 
-Another option when using Webpack is to use the https://github.com/webpack/file-loader[file loader] together with the https://github.com/webpack/docs/wiki/context[require.context] function to copy the skins directory by adding these lines before the call to the {{site.productname}} `init` function:
+Another option when using Webpack is to use the https://github.com/webpack/file-loader[file loader] together with the https://github.com/webpack/docs/wiki/context[require.context] function to copy the skins directory by adding these lines before the call to the {productname} `init` function:
 
 `javascript
 require.context(
@@ -96,9 +96,9 @@ This copies the skins directory from `node_modules/tinymce` to your output direc
 [#minification-with-uglifyjs2]
 === Minification with UglifyJS2
 
-Another popular JS minification tool, https://github.com/mishoo/UglifyJS2[UglifyJS2], will corrupt {{site.productname}} unless `ascii-only` is set.
+Another popular JS minification tool, https://github.com/mishoo/UglifyJS2[UglifyJS2], will corrupt {productname} unless `ascii-only` is set.
 
-This can happen when it is used directly or through module bundler. In https://webpack.github.io/[Webpack], `-p` CLI option cannot be used to bundle {{site.productname}}, and instead, you'll need to configure minification explicitly:
+This can happen when it is used directly or through module bundler. In https://webpack.github.io/[Webpack], `-p` CLI option cannot be used to bundle {productname}, and instead, you'll need to configure minification explicitly:
 
 `+javascript
 plugins: [

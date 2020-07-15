@@ -24,7 +24,7 @@ Common use cases for using a checklist:
 
 {% include codepen.html id="checklist" %}
 
-{% assign pluginname = 'Checklist' %}
-{% assign pluginminimumplan = 'tiertwo' %}
-{% assign plugindocspage = 'checklist' %}
-{% include misc/purchase-premium-plugins.md %}
+:pluginname: Checklist
+:pluginminimumplan: tiertwo
+:plugindocspage: checklist
+include::_includes/misc/purchase-premium-plugins.adoc[]

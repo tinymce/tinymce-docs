@@ -5,7 +5,7 @@
 
 The *Distraction-free* mode renders the editor in inline mode without the menu bar or toolbar. Most of the editor functionality is accessed using: keyboard shortcuts, contextual menus, contextual toolbars, and toolbar functions provided by the `quickbars` plugin.
 
-{{site.notonmobile}}
+{notonmobile}
 
 [#enabling-distraction-free-mode]
 == Enabling distraction-free mode
@@ -31,11 +31,9 @@ The demonstration editor below is a distraction-free editor with some customizat
 
 For information on:
 
-* Configuring a Quick Toolbar; including `quicklink`, `quickimage`, and `quicktable`; see: link:{{site.baseurl}}/plugins/quickbars/[Quick Toolbar plugin].
-* Configuring a contextual toolbar, see: link:{{site.baseurl}}/ui-components/contexttoolbar/[Context Toolbar].
-* Configuring a contextual menu, see: link:{{site.baseurl}}/ui-components/contextmenu/[Context Menu].
-* Disabling the {{site.productname}} menubar, see: link:{{site.baseurl}}/configure/editor-appearance/#menubar[Menubar].
-* The `inline` setting, see: link:{{ site.baseurl }}/configure/editor-appearance/#inline[inline].
+* Configuring a Quick Toolbar; including `quicklink`, `quickimage`, and `quicktable`; see: link:{baseurl}/plugins/quickbars/[Quick Toolbar plugin].
+* Configuring a contextual toolbar, see: link:{baseurl}/ui-components/contexttoolbar/[Context Toolbar].
+* Configuring a contextual menu, see: link:{baseurl}/ui-components/contextmenu/[Context Menu].
+* Disabling the {productname} menubar, see: link:{baseurl}/configure/editor-appearance/#menubar[Menubar].
+* The `inline` setting, see: link:{baseurl}/configure/editor-appearance/#inline[inline].
 
-{% assign_page next_page = "/general-configuration-guide/multiple-editors/index.html" %}
-{% include next-step.html next=next_page %}

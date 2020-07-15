@@ -4,12 +4,12 @@
 :keywords: Click DblClick MouseDown MouseUp MouseMove MouseOver MouseOut MouseEnter MouseLeave KeyDown KeyPress KeyUp ContextMenu Paste Init Focus Blur BeforeSetContent SetContent GetContent PreProcess PostProcess NodeChange Undo Redo Change Dirty Remove ExecCommand PastePreProcess PastePostProcess
 :title_nav: Editor events
 
-{{ site.productname }} supports some browser-native events, and provides additional events for working with the editor and plugins.
+{productname} supports some browser-native events, and provides additional events for working with the editor and plugins.
 
 [#handling-editor-events]
 == Handling Editor events
 
-The following examples illustrate how to use supported native events, editor core events, and plugin events with {{ site.productname }}.
+The following examples illustrate how to use supported native events, editor core events, and plugin events with {productname}.
 
 The following example uses a function to create a console log entry when the editor has initialized. This is also an example of handling an event which does not return any data.
 
@@ -40,7 +40,7 @@ tinymce.init({
 [#supported-browser-native-events]
 == Supported browser-native events
 
-{{ site.productname }} supports the following browser-native events. Click the event name for details (links open https://developer.mozilla.org/[MDN Web Docs]).
+{productname} supports the following browser-native events. Click the event name for details (links open https://developer.mozilla.org/[MDN Web Docs]).
 
 * https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/beforeinput_event[beforeinput]
 * https://developer.mozilla.org/en-US/docs/Web/API/Element/blur_event[blur]
@@ -85,7 +85,7 @@ tinymce.init({
 [#editor-core-events]
 == Editor core events
 
-The following events are provided by the {{ site.productname }} editor.
+The following events are provided by the {productname} editor.
 
 |===
 | Name | Data | Description
@@ -116,7 +116,7 @@ The following events are provided by the {{ site.productname }} editor.
 
 | AfterScrollIntoView
 | `{ elm: HTMLElement, alignToTop: boolean }`
-| Fired when an element has been scrolled into view. {{site.requires_5_2v}}
+| Fired when an element has been scrolled into view. {requires_5_2v}
 
 | ObjectResized
 | `{ target: HTMLElement, width: number, height: number }`
@@ -128,7 +128,7 @@ The following events are provided by the {{ site.productname }} editor.
 
 | SwitchMode
 | `{ mode: string }`
-| Fired when the editor mode is changed. The available modes are "design" and "readonly". Additional modes can be registered using {{ site.productname }} API link:{{ site.baseurl }}/api/tinymce/tinymce.editormode/#register['tinymce.activeEditor.mode.register()'].
+| Fired when the editor mode is changed. The available modes are "design" and "readonly". Additional modes can be registered using {productname} API link:{baseurl}/api/tinymce/tinymce.editormode/#register['tinymce.activeEditor.mode.register()'].
 
 | ScrollWindow
 | (Same data as the native https://developer.mozilla.org/en-US/docs/Web/API/Element/scroll_event[scroll event])
@@ -260,7 +260,7 @@ The following events are provided by the {{ site.productname }} editor.
 
 | ProgressState
 | `{ state: boolean, time?: number }`
-| Fired when the editor progress state changes using the {{ site.productname }} API link:{{ site.baseurl }}/api/tinymce/tinymce.editor/#setprogressstate[`tinymce.activeEditor.setProgressState()`].
+| Fired when the editor progress state changes using the {productname} API link:{baseurl}/api/tinymce/tinymce.editor/#setprogressstate[`tinymce.activeEditor.setProgressState()`].
 
 | PreProcess
 | `{ node: Element, format: string }`
@@ -272,7 +272,7 @@ The following events are provided by the {{ site.productname }} editor.
 
 | SetAttrib
 | `{ attrElm: Element, attrName: string, attrValue: string }`
-| Fired when an attribute is updated using the editor link:{{ site.baseurl }}/api/tinymce.dom/tinymce.dom.domutils/[DOMUtils API].
+| Fired when an attribute is updated using the editor link:{baseurl}/api/tinymce.dom/tinymce.dom.domutils/[DOMUtils API].
 
 | ResizeEditor
 | N/A
@@ -284,19 +284,19 @@ The following events are provided by the {{ site.productname }} editor.
 
 | SkinLoadError
 | `{ message: string }`
-| Fired when the editor skin fails to load. {{site.requires_5_2v}}
+| Fired when the editor skin fails to load. {requires_5_2v}
 
 | PluginLoadError
 | `{ message: string }`
-| Fired when an editor plugin fails to load. {{site.requires_5_2v}}
+| Fired when an editor plugin fails to load. {requires_5_2v}
 
 | IconsLoadError
 | `{ message: string }`
-| Fired when the editor icon pack fails to load. {{site.requires_5_2v}}
+| Fired when the editor icon pack fails to load. {requires_5_2v}
 
 | LanguageLoadError
 | `{ message: string }`
-| Fired when the editor language pack fails to load. {{site.requires_5_2v}}
+| Fired when the editor language pack fails to load. {requires_5_2v}
 
 | BeforeRenderUI
 | N/A
@@ -313,12 +313,12 @@ The following events are provided by the {{ site.productname }} editor.
 | longpress
 | (Same data as the native https://developer.mozilla.org/en-US/docs/Web/API/Element/touchstart_event[touchstart event])
 | Fired when a long press occurs on a touch device inside the editor. +
-{{ site.requires_5_1v }}
+{requires_5_1v}
 
 | tap
 | (Same data as the native https://developer.mozilla.org/en-US/docs/Web/API/Document/touchend_event[touchend event])
 | Fired when a tap occurs on a touch device inside the editor (simulated event similar to click). +
-{{ site.requires_5_1v }}
+{requires_5_1v}
 
 | ScrollContent
 | (Same data as the native https://developer.mozilla.org/en-US/docs/Web/API/Element/scroll_event[scroll event])
@@ -364,7 +364,7 @@ The following plugins provide events.
 [#autosave-events]
 === Autosave events
 
-The following events are provided by the link:{{ site.baseurl }}/plugins/autosave/[Autosave plugin].
+The following events are provided by the link:{baseurl}/plugins/autosave/[Autosave plugin].
 
 |===
 | Name | Data | Description
@@ -385,7 +385,7 @@ The following events are provided by the link:{{ site.baseurl }}/plugins/autosav
 [#character-map-events]
 === Character Map events
 
-The following event is provided by the link:{{ site.baseurl }}/plugins/charmap/[Character Map plugin].
+The following event is provided by the link:{baseurl}/plugins/charmap/[Character Map plugin].
 
 |===
 | Name | Data | Description
@@ -398,7 +398,7 @@ The following event is provided by the link:{{ site.baseurl }}/plugins/charmap/[
 [#comments-events]
 === Comments events
 
-The following event is provided by the link:{{ site.baseurl }}/plugins/comments/[Comments plugin].
+The following event is provided by the link:{baseurl}/plugins/comments/[Comments plugin].
 
 |===
 | Name | Data | Description
@@ -411,7 +411,7 @@ The following event is provided by the link:{{ site.baseurl }}/plugins/comments/
 [#format-painter-events]
 === Format Painter events
 
-The following event is provided by the link:{{ site.baseurl }}/plugins/formatpainter/[Format Painter plugin].
+The following event is provided by the link:{baseurl}/plugins/formatpainter/[Format Painter plugin].
 
 |===
 | Name | Data | Description
@@ -424,7 +424,7 @@ The following event is provided by the link:{{ site.baseurl }}/plugins/formatpai
 [#fullscreen-events]
 === Fullscreen events
 
-The following event is provided by the link:{{ site.baseurl }}/plugins/fullscreen/[Fullscreen plugin].
+The following event is provided by the link:{baseurl}/plugins/fullscreen/[Fullscreen plugin].
 
 |===
 | Name | Data | Description
@@ -437,7 +437,7 @@ The following event is provided by the link:{{ site.baseurl }}/plugins/fullscree
 [#import-css-events]
 === Import CSS events
 
-The following event is provided by the link:{{ site.baseurl }}/plugins/importcss/[Import CSS plugin].
+The following event is provided by the link:{baseurl}/plugins/importcss/[Import CSS plugin].
 
 |===
 | Name | Data | Description
@@ -450,7 +450,7 @@ The following event is provided by the link:{{ site.baseurl }}/plugins/importcss
 [#link-checker-events]
 === Link checker events
 
-The following event is provided by the link:{{ site.baseurl }}/plugins/link/[Link plugin].
+The following event is provided by the link:{baseurl}/plugins/link/[Link plugin].
 
 |===
 | Name | Data | Description
@@ -463,7 +463,7 @@ The following event is provided by the link:{{ site.baseurl }}/plugins/link/[Lin
 [#lists-events]
 === Lists events
 
-The following event is provided by the link:{{ site.baseurl }}/plugins/lists/[Lists plugin].
+The following event is provided by the link:{baseurl}/plugins/lists/[Lists plugin].
 
 |===
 | Name | Data | Description
@@ -476,7 +476,7 @@ The following event is provided by the link:{{ site.baseurl }}/plugins/lists/[Li
 [#media-embed-events]
 === Media Embed events
 
-The following event is provided by the link:{{ site.baseurl }}/plugins/mediaembed/[Media Embed plugin].
+The following event is provided by the link:{baseurl}/plugins/mediaembed/[Media Embed plugin].
 
 |===
 | Name | Data | Description
@@ -489,7 +489,7 @@ The following event is provided by the link:{{ site.baseurl }}/plugins/mediaembe
 [#paste-events]
 === Paste events
 
-The following events are provided by the link:{{ site.baseurl }}/plugins/paste/[Paste plugin].
+The following events are provided by the link:{baseurl}/plugins/paste/[Paste plugin].
 
 |===
 | Name | Data | Description
@@ -510,7 +510,7 @@ The following events are provided by the link:{{ site.baseurl }}/plugins/paste/[
 [#permanent-pen-events]
 === Permanent Pen events
 
-The following events are provided by the link:{{ site.baseurl }}/plugins/permanentpen/[Permanent Pen plugin].
+The following events are provided by the link:{baseurl}/plugins/permanentpen/[Permanent Pen plugin].
 
 |===
 | Name | Data | Description
@@ -527,7 +527,7 @@ The following events are provided by the link:{{ site.baseurl }}/plugins/permane
 [#powerpaste-events]
 === PowerPaste events
 
-The following events are provided by the link:{{ site.baseurl }}/plugins/powerpaste/[PowerPaste plugin].
+The following events are provided by the link:{baseurl}/plugins/powerpaste/[PowerPaste plugin].
 
 |===
 | Name | Data | Description
@@ -548,7 +548,7 @@ The following events are provided by the link:{{ site.baseurl }}/plugins/powerpa
 [#spell-checker-events]
 === Spell Checker events
 
-The following events are provided by the link:{{ site.baseurl }}/plugins/spellchecker/[Spell Checker plugin].
+The following events are provided by the link:{baseurl}/plugins/spellchecker/[Spell Checker plugin].
 
 |===
 | Name | Data | Description
@@ -565,12 +565,12 @@ The following events are provided by the link:{{ site.baseurl }}/plugins/spellch
 [#spell-checker-pro-events]
 === Spell Checker Pro events
 
-{% include events/tinymcespellchecker.md %}
+include::_includes/events/tinymcespellchecker.adoc[]
 
 [#table-events]
 === Table events
 
-The following event is provided by the link:{{ site.baseurl }}/plugins/table/[Table plugin].
+The following event is provided by the link:{baseurl}/plugins/table/[Table plugin].
 
 |===
 | Name | Data | Description
@@ -578,13 +578,13 @@ The following event is provided by the link:{{ site.baseurl }}/plugins/table/[Ta
 | TableSelectionClear
 | N/A
 | Fired when the table selection is cleared. +
-{{ site.requires_5_1v }}
+{requires_5_1v}
 |===
 
 [#visual-blocks-events]
 === Visual Blocks events
 
-The following event is provided by the link:{{ site.baseurl }}/plugins/visualblocks/[Visual Blocks plugin].
+The following event is provided by the link:{baseurl}/plugins/visualblocks/[Visual Blocks plugin].
 
 |===
 | Name | Data | Description
@@ -597,7 +597,7 @@ The following event is provided by the link:{{ site.baseurl }}/plugins/visualblo
 [#visual-characters-events]
 === Visual Characters events
 
-The following event is provided by the link:{{ site.baseurl }}/plugins/visualchars/[Visual Characters plugin].
+The following event is provided by the link:{baseurl}/plugins/visualchars/[Visual Characters plugin].
 
 |===
 | Name | Data | Description
@@ -610,7 +610,7 @@ The following event is provided by the link:{{ site.baseurl }}/plugins/visualcha
 [#word-count-events]
 === Word Count events
 
-The following event is provided by the link:{{ site.baseurl }}/plugins/wordcount/[Word Count plugin].
+The following event is provided by the link:{baseurl}/plugins/wordcount/[Word Count plugin].
 
 |===
 | Name | Data | Description

@@ -4,7 +4,7 @@
 :keywords: view Page Embed insert iframe
 :title_nav: Page Embed
 
-The *Page Embed* plugin is a premium plugin from {{site.companyname}} that embeds a page in the content using an iframe (Inline frames).
+The *Page Embed* plugin is a premium plugin from {companyname} that embeds a page in the content using an iframe (Inline frames).
 
 The Page Embed plugin allows an external webpage to be embedded in an HTML document and can be inserted anywhere within a webpage layout.
 
@@ -15,7 +15,7 @@ Page Embed provides more flexibility than an inline script and can contain an en
 
 {% include codepen.html id="page-embed" %}
 
-{% assign pluginname = 'Page Embed' %}
-{% assign pluginminimumplan = 'tiertwo' %}
-{% assign plugindocspage = 'pageembed' %}
-{% include misc/purchase-premium-plugins.md %}
+:pluginname: Page Embed
+:pluginminimumplan: tiertwo
+:plugindocspage: pageembed
+include::_includes/misc/purchase-premium-plugins.adoc[]

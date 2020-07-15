@@ -9,7 +9,7 @@ The help plugin adds a button and/or menu item that opens a dialog showing two t
 * Handy shortcuts that explains some nice-to-know keyboard shortcuts
 * Plugin list that shows which plugins that have been installed, with links to the relevant documentation pages if available, and a list of available premium plugins.
 
-In the footer of the dialog you can also see which version of {{site.productname}} you are using.
+In the footer of the dialog you can also see which version of {productname} you are using.
 
 The help dialog can also be shown by pressing the keyboard shortcut `Alt + 0`.
 
@@ -30,7 +30,7 @@ tinymce.init({
 [#]
 === `help_tabs`
 
-This option allows you to specify which tabs the Help dialog should show, and in what order. The default {{site.productname}} tabs are called `shortcuts`, `keyboardnav`, `plugins` and `versions`. These tabs can be overwritten by providing a new link:{{site.baseurl}}/ui-components/dialogcomponents/#tabpanel[tab panel] specification with the same `name`, and new tabs can be added by registering a tab panel with a new `name`. New tabs can be registered in the `help_tabs` configuration or at initialisation or runtime using the <<api,`addTab` API method>>.
+This option allows you to specify which tabs the Help dialog should show, and in what order. The default {productname} tabs are called `shortcuts`, `keyboardnav`, `plugins` and `versions`. These tabs can be overwritten by providing a new link:{baseurl}/ui-components/dialogcomponents/#tabpanel[tab panel] specification with the same `name`, and new tabs can be added by registering a tab panel with a new `name`. New tabs can be registered in the `help_tabs` configuration or at initialisation or runtime using the <<api,`addTab` API method>>.
 
 If `help_tabs` is configured, only tabs named in `help_tabs` will be displayed. Any tabs defined using `addTab` that are not named in `help_tabs` will be ignored.
 
@@ -114,7 +114,7 @@ tinymce.init({
 | Name | Arguments | Description
 
 | addTab
-| tabSpec: link:{{site.baseurl}}/ui-components/dialogcomponents/#tabpanel[TabPanel]
+| tabSpec: link:{baseurl}/ui-components/dialogcomponents/#tabpanel[TabPanel]
 | Register a tab for the Help dialog
 |===
 
@@ -137,11 +137,11 @@ tinymce.activeEditor.plugins.help.addTab({
 [#exposing-metadata-for-the-help-plugin]
 == Exposing metadata for the help plugin
 
-For information on how to expose metadata from you custom plugin to add it to the Installed plugins list in the Help plugin, see the  link:{{ site.baseurl }}/advanced/creating-a-plugin/#exposingmetadata[Creating a Plugin page].
+For information on how to expose metadata from you custom plugin to add it to the Installed plugins list in the Help plugin, see the  link:{baseurl}/advanced/creating-a-plugin/#exposingmetadata[Creating a Plugin page].
 
 [#commands]
 == Commands
 
 The Help plugin provides the following JavaScript command.
 
-{% include commands/help-cmds.md %}
+include::_includes/commands/help-cmds.adoc[]

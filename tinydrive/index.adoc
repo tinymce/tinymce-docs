@@ -3,10 +3,10 @@
 :title_nav: Tiny Drive
 :type: folder
 
-{% assign navigaton = site.data.nav %}
+:navigaton: site.data.nav
 {% for entry in navigaton %}
   {% if entry.url == "tinydrive" %}
-    {% assign links = entry.pages %}
+    :links: entry.pages
   {% endif %}
 {% endfor %}
 

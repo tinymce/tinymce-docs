@@ -3,7 +3,5 @@
 :keywords: npm bower composer nuget update updating upgrade upgrading
 :title_nav: Upgrading TinyMCE
 
-{% include install/upgrading-info.md %}
+include::_includes/install/upgrading-info.adoc[]
 
-{% assign_page next_page = "/general-configuration-guide/work-with-plugins/index.html" %}
-{% include next-step.html next=next_page %}

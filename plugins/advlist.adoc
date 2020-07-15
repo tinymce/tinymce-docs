@@ -5,9 +5,10 @@
 
 The `advlist` plugin extends the core `bullist` and `numlist` toolbar controls by adding CSS `list-style-type` styled number formats and bullet types to the controls.
 
-____
-*Important note:* The link:../lists[Lists] (`lists`) plugin must be activated for the `advlist` plugin to work.
-____
+[IMPORTANT]
+====
+The link:../lists[Lists] (`lists`) plugin must be activated for the `advlist` plugin to work.
+====
 
 *Type:* `String`
 
@@ -87,4 +88,4 @@ tinymce.init({
 
 The Advanced Lists plugin provides the following JavaScript commands.
 
-{% include commands/advlist-cmds.md %}
+include::_includes/commands/advlist-cmds.adoc[]

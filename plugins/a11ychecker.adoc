@@ -3,7 +3,7 @@
 :keywords: a11y accessibility WCAG
 :title_nav: Accessibility Checker
 
-{{site.premiumplugin}}
+{premiumplugin}
 
 The `a11ychecker` premium plugin enables you to check the HTML for various WCAG & Section 508 accessibility problems. It has an auto repair feature that lets a user fix identified problems.
 
@@ -151,9 +151,9 @@ https://www.w3.org/TR/WCAG20-TECHS/H93.html[Link to specification].
 [#options]
 === Options
 
-{% assign includedSection = 'a11yPlugin' %}
-#{% include configuration/a11y_advanced_options.md %}
-{% assign includedSection = false %}
+:includedSection: a11yPlugin
+#include::_includes/configuration/a11y_advanced_options.adoc[]
+:includedSection: false
 
 [#]
 === `a11ychecker_allow_decorative_images`

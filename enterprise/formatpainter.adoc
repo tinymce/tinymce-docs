@@ -15,7 +15,7 @@ The ability to reuse existing formatting saves the user time and ensures consist
 
 {% include codepen.html id="format-painter" %}
 
-{% assign pluginname = 'Format Painter' %}
-{% assign pluginminimumplan = 'tiertwo' %}
-{% assign plugindocspage = 'formatpainter' %}
-{% include misc/purchase-premium-plugins.md %}
+:pluginname: Format Painter
+:pluginminimumplan: tiertwo
+:plugindocspage: formatpainter
+include::_includes/misc/purchase-premium-plugins.adoc[]

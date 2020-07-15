@@ -5,19 +5,19 @@
 [#overview]
 == Overview
 
-{% include release-notes/overview.md %}
+include::_includes/release-notes/overview.adoc[]
 
 [#new-features]
 == New features
 
-{% include release-notes/new-features.md %}
+include::_includes/release-notes/new-features.adoc[]
 
 [#removed-deprecated-features]
 == Removed & deprecated features
 
-{% include release-notes/deleted.md %}
+include::_includes/release-notes/deleted.adoc[]
 
 [#known-issues]
 == Known issues
 
-{% include release-notes/known-issues.md %}
+include::_includes/release-notes/known-issues.adoc[]

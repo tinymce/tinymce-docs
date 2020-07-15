@@ -3,18 +3,18 @@
 :keywords: comments commenting tinycomments
 :title_nav: Comments
 
-{{site.premiumplugin}}
+{premiumplugin}
 
-The Comments 2.0 plugin provides the ability to start or join a conversation by adding comments to the content within the {{site.productname}} editor. The Comments 2.0 plugin is built upon the link:{{site.baseurl}}/advanced/annotations/[Annotations API] and uses annotations to create comment threads (conversations).
+The Comments 2.0 plugin provides the ability to start or join a conversation by adding comments to the content within the {productname} editor. The Comments 2.0 plugin is built upon the link:{baseurl}/advanced/annotations/[Annotations API] and uses annotations to create comment threads (conversations).
 
-Comments is a premium plugin from {{site.companyname}}. Please see the link:{{site.baseurl}}/enterprise/tiny-comments/[Premium features] section for all the buying options.
+Comments is a premium plugin from {companyname}. Please see the link:{baseurl}/enterprise/tiny-comments/[Premium features] section for all the buying options.
 
 After obtaining the Comments 2.0 plugin, refer to the following instructions for using it.
 
 [#add-the-comments-2-0-plugin]
 == Add the Comments 2.0 plugin
 
-To add the Comments 2.0 plugin to the {{site.productname}} editor, use the following script:
+To add the Comments 2.0 plugin to the {productname} editor, use the following script:
 `js
 tinymce.init({
   selector: '#tiny-ui .editor',
@@ -35,7 +35,7 @@ There are two modes available in Comments 2.0 that provide the ability to save c
 [#configuring-comments-2-0-callback-mode]
 === Configuring Comments 2.0 callback mode
 
-Refer to the link:{{site.baseurl}}/advanced/configuring-comments-callbacks/[configuring callbacks for comments] section for more information.
+Refer to the link:{baseurl}/advanced/configuring-comments-callbacks/[configuring callbacks for comments] section for more information.
 
 [#configuring-comments-2-0-embedded-mode]
 === Configuring Comments 2.0 embedded mode
@@ -77,9 +77,10 @@ tinymce.init({
 [#tinycomments_author_name]
 ===== tinycomments_author_name
 
-____
+[NOTE]
+====
 Available in Tiny Comments version 2.1 onwards.
-____
+====
 
 _Optional_ - This option sets the author's display name to be used when creating or replying to comments. If this option is omitted, then the author id is used instead.
 
@@ -214,7 +215,7 @@ tinymce.init({
 })
 +`
 
-*Result*: The *Comments*  image:{{site.baseurl}}/images/comment-disabled.png[**Comments**] toolbar button appears in the toolbar menu. The function of this button is to add comments to the selected text.
+*Result*: The *Comments*  image:{baseurl}/images/comment-disabled.png[**Comments**] toolbar button appears in the toolbar menu. The function of this button is to add comments to the selected text.
 
 [#configuring-the-comments-2-0-showcomments-toolbar-button]
 === Configuring the Comments 2.0 showcomments toolbar button
@@ -230,14 +231,14 @@ tinymce.init({
 })
 +`
 
-*Result*: The *Comments*  image:{{site.baseurl}}/images/comment-disabled.png[**Comments**] toolbar button appears in the toolbar menu. The function of this button is to show comments to for the selected text.
+*Result*: The *Comments*  image:{baseurl}/images/comment-disabled.png[**Comments**] toolbar button appears in the toolbar menu. The function of this button is to show comments to for the selected text.
 
 [#configuring-the-comments-2-0-menu-item]
 === Configuring the Comments 2.0 menu item
 
 By default, when Comments 2.0 is added to the plugin list, the default menus will have entries for `addcomment` (Insert Menu), `showcomments` (View Menu), and `deleteallconversations` (File Menu).
 
-For more information on configuring menu items refer to the link:{{site.baseurl}}/configure/editor-appearance/#toolbar[toolbar] and link:{{site.baseurl}}/configure/editor-appearance/#menu[menu] sections.
+For more information on configuring menu items refer to the link:{baseurl}/configure/editor-appearance/#toolbar[toolbar] and link:{baseurl}/configure/editor-appearance/#menu[menu] sections.
 
 Currently, there are three menu items available:
 
@@ -250,11 +251,11 @@ Currently, there are three menu items available:
 
 The highlight styles are now a part of the overall content skin and are changed through customizing the skin.
 
-{{site.productname}} open source project https://github.com/tinymce/oxide/blob/master/src/less/theme/content/comments/comments.less[oxide] (default skin), defines the variables used for changing the annotation colours.
+{productname} open source project https://github.com/tinymce/oxide/blob/master/src/less/theme/content/comments/comments.less[oxide] (default skin), defines the variables used for changing the annotation colours.
 
-Refer to the link:{{site.baseurl}}/advanced/creating-a-skin/#creatingaskin[documentation] for building a skin using this repo.
+Refer to the link:{baseurl}/advanced/creating-a-skin/#creatingaskin[documentation] for building a skin using this repo.
 
-For more information on configuring {{site.productname}} formats, refer to the link:{{site.baseurl}}/configure/content-formatting/#formats[formats] section.
+For more information on configuring {productname} formats, refer to the link:{baseurl}/configure/content-formatting/#formats[formats] section.
 
 [#using-comments]
 === Using Comments
@@ -263,14 +264,14 @@ For more information on configuring {{site.productname}} formats, refer to the l
 ==== To add a comment
 
 . Select the text from the desired location in the editor body.
-. From the navigation menu, choose *Insert*\-> *Add Comment* or click on the *Comments* image:{{site.baseurl}}/images/comment-disabled.png[**Comments**] toolbar button to add the comment.
+. From the navigation menu, choose *Insert*\-> *Add Comment* or click on the *Comments* image:{baseurl}/images/comment-disabled.png[**Comments**] toolbar button to add the comment.
 . The Comment dialog box appears in the sidebar of the editor instance.
 . Type the comment in the box displaying "_Say something..._" suggested text.
 . Press *Clear* to delete or *Save* to store the input comment.
 
 *Result*: The selected text will be highlighted as per the configured options. The following screen with the option for editing, deleting, and replying to the comment, will appear.
 
-image::{{site.baseurl}}/images/commentedit.png[**Delete Conversation**]
+image::{baseurl}/images/commentedit.png[**Delete Conversation**]
 
 NOTE: The above procedure can be followed for adding multiple comments to the document.
 
@@ -279,7 +280,7 @@ NOTE: The above procedure can be followed for adding multiple comments to the do
 
 Follow this procedure to edit a comment.
 
-. Click on this image:{{site.baseurl}}/images/3dots.png[**3dots**] icon above the comments box to expand the menu.
+. Click on this image:{baseurl}/images/3dots.png[**3dots**] icon above the comments box to expand the menu.
 . Select *Edit* from the menu items.
 . The comment field becomes editable. Make the required changes.
 . Click *Cancel* to discard or *Save* to store the changes.
@@ -289,10 +290,10 @@ Follow this procedure to edit a comment.
 
 Follow this procedure to delete a comment. This option is not available for the first comment in a conversation.
 
-. Click on this image:{{site.baseurl}}/images/3dots.png[**3dots**] icon above the comments box to expand the menu.
+. Click on this image:{baseurl}/images/3dots.png[**3dots**] icon above the comments box to expand the menu.
 . Select *Delete* from the menu items.
 . The following options appear in the comments sidebar: +
-image:{{site.baseurl}}/images/delete.png[**delete comment**]
+image:{baseurl}/images/delete.png[**delete comment**]
 . Click *Cancel* to save or *Delete* to remove the comment from the conversation.
 
 [#delete-conversation]
@@ -300,10 +301,10 @@ image:{{site.baseurl}}/images/delete.png[**delete comment**]
 
 This option is only available for the first comment in a conversation. Once the comment is saved, follow this procedure to delete a conversation.
 
-. Click on this image:{{site.baseurl}}/images/3dots.png[**3dots**] icon above the comments box to expand the menu.
+. Click on this image:{baseurl}/images/3dots.png[**3dots**] icon above the comments box to expand the menu.
 . Select *Delete conversation* from the menu items.
 . The following decision dialog box will appear: +
-image:{{site.baseurl}}/images/decision.png[**delete conversation**]
+image:{baseurl}/images/decision.png[**delete conversation**]
 . Click *Cancel* to save or *Delete* to remove the conversation.
 
 *Result*: The conversation and all its subsequent comments will be deleted.
@@ -314,7 +315,7 @@ image:{{site.baseurl}}/images/decision.png[**delete conversation**]
 Follow this procedure to display the comments sidebar:
 
 . Place the cursor on the desired text in the editor body:
-. From the navigation menu, choose *View* \-> *Show Comment* or click on the *Show Comments*image:{{site.baseurl}}/images/comment-disabled.png[**Comments**] toggle toolbar button to display the comment.
+. From the navigation menu, choose *View* \-> *Show Comment* or click on the *Show Comments*image:{baseurl}/images/comment-disabled.png[**Comments**] toggle toolbar button to display the comment.
 
 *Result*: The comments sidebar will appear and display the corresponding conversation for the highlighted text.
 
@@ -325,19 +326,19 @@ Follow this procedure to delete all conversations in the document:
 
 . From the navigation menu, choose *File* \-> *Delete all conversations* option to delete all the comments in a document.
 . The following decision dialog box will appear: +
-image:{{site.baseurl}}/images/decision2.png[**Delete all conversations**]
+image:{baseurl}/images/decision2.png[**Delete all conversations**]
 . Click *Ok* to remove the all the comments or *Cancel* to dismiss the action.
 
 *Result*: All the comments for the selected document will be deleted.
 
-Check out the link:{{site.baseurl}}/demo/comments-2[Comments demo] to try this new feature.
+Check out the link:{baseurl}/demo/comments-2[Comments demo] to try this new feature.
 
 [#using-comments-2-0-embedded-mode-with-the-full-page-plugin]
 == Using Comments 2.0 embedded mode with the Full Page plugin
 
 Users have to be cautious when deciding the order in which the plugins are added in the plugins list.
 
-Comments can cause an issue if the link:{{site.baseurl}}/plugins/fullpage/[Full Page] plugin `fullpage` appears before Comments 2.0 plugin `tinycomments` in the plugin list, and `tinycomments` is configured to use `embedded mode`.
+Comments can cause an issue if the link:{baseurl}/plugins/fullpage/[Full Page] plugin `fullpage` appears before Comments 2.0 plugin `tinycomments` in the plugin list, and `tinycomments` is configured to use `embedded mode`.
 
 The order that the plugins appear affects the order that the `getContent` hooks are processed in. This creates an issue with `tinycomments` working as expected since the `fullpage` plugin adds outer `<html>` elements before `tinycomments` adds its comment data. This leads to the comment data being in the wrong place. The consequence of this situation is that when a saved document is re-opened, the comment data is lost (but the highlights are still there).
 
@@ -348,4 +349,4 @@ For a workaround, please ensure that `tinycomments` is listed before `fullpage` 
 
 The Comments plugin provides the following JavaScript commands.
 
-{% include commands/comments-cmds.md %}
+include::_includes/commands/comments-cmds.adoc[]

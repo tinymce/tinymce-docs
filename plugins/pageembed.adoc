@@ -4,7 +4,7 @@
 :keywords: view Page Embed insert iframe
 :title_nav: Page Embed
 
-{{site.premiumplugin}}
+{premiumplugin}
 
 The *Page Embed* plugin embeds a page in the content using an iframe (Inline frames). The size of these iframes can be configured to be responsive or another user-defined dimension. The ability to use iframes helps create visually engaging content which is very useful for online courses and learning materials.
 
@@ -22,20 +22,20 @@ tinymce.init({
 });
 `
 
-*Result*: The image:{{site.baseurl}}/images/pageembed.png[**Page Embed**](*Page Embed*) button appears in the toolbar menu.
+*Result*: The image:{baseurl}/images/pageembed.png[**Page Embed**](*Page Embed*) button appears in the toolbar menu.
 
 [#using-page-embed]
 === Using Page Embed
 
 Use the following procedure for embedding an iframe into the content:
 
-. Click on the image:{{site.baseurl}}/images/pageembed.png[**Page Embed**](*Page Embed*) toolbar button.
+. Click on the image:{baseurl}/images/pageembed.png[**Page Embed**](*Page Embed*) toolbar button.
 . The *InsertEdit Iframe* dialog box appears.
-image:{{site.baseurl}}/images/insert-iframes.png[InsertEdit Iframe]
-. In the *General* tab, enter the url in the *Source* field, or click on the image:{{site.baseurl}}/images/source.png[Source](*Source*) icon to upload a file.
+image:{baseurl}/images/insert-iframes.png[InsertEdit Iframe]
+. In the *General* tab, enter the url in the *Source* field, or click on the image:{baseurl}/images/source.png[Source](*Source*) icon to upload a file.
 . For setting the iframe size, select the preferred option from the *Size* drop-down menu.
 * *Inline Value* is used to insert an iframe within a line. To set the dimensions of an inline iframe, provide the values in pixels in the *Width* and *Height* input box.
-     * The default values are *Width* `350px` and *Height* `260px`. Click the image:{{site.baseurl}}/images/constrainprop.png[Constrain Proportions](*Constrain Proportions*) lock icon to change the default values.
+     * The default values are *Width* `350px` and *Height* `260px`. Click the image:{baseurl}/images/constrainprop.png[Constrain Proportions](*Constrain Proportions*) lock icon to change the default values.
 > Note: The *Width* and *Height* fields are only available if the *Inline Value* value option is selected.
 * *Responsive* is used to make embedded content responsive using CSS, so that content such as video and calendars resize with the browser's viewport. There are four options provided to set the responsive iframe size.
 +
@@ -48,7 +48,7 @@ image:{{site.baseurl}}/images/insert-iframes.png[InsertEdit Iframe]
 
 . In the *Advanced* tab, provide a name and title for the iframe in the *Name* and *Title* fields.
 . The *Long description URL* field can be used to describe an iframe by including text in a separate resource when a short text alternative does not adequately convey the function or information provided in the iframe.
-* Click on the image:{{site.baseurl}}/images/source.png[Source](*Long description URL*) icon to upload a description file.
+* Click on the image:{baseurl}/images/source.png[Source](*Long description URL*) icon to upload a description file.
 . Click on the *Show iframe border* radio button to display iframe borders.
 . Click on the *Scrollbar* radio button to add scrollbars to the iframe.
 . Click *Save* to save and exit or *Cancel* to dismiss and exit.
@@ -122,9 +122,10 @@ tinymce.init({
 
 If the `tiny_pageembed_classes` setting is left undefined, the default classes will be used. As a result, a responsive size option can be selected.
 
-____
+[NOTE]
+====
 The following CSS script must be added to the webpage for the default CSS to work correctly.
-____
+====
 
 ```css
 .tiny-pageembed--21by9,
@@ -166,6 +167,6 @@ ____
   width: 100%;
 }
 ```
-For more information on configuring CSS, refer to the link:{{site.baseurl}}/configure/content-appearance/#content_css[content_css] section.
+For more information on configuring CSS, refer to the link:{baseurl}/configure/content-appearance/#content_css[content_css] section.
 
-Check out the link:{{site.baseurl}}/demo/pageembed/[Page Embed demo] to try out this new feature.
+Check out the link:{baseurl}/demo/pageembed/[Page Embed demo] to try out this new feature.

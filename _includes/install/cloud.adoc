@@ -5,24 +5,24 @@ Include this line of code in the `<head>` of your HTML page:
 
 [source,html]
 ----
-<script src="{{ site.cdnurl }}" referrerpolicy="origin"></script>
+<script src="{cdnurl}" referrerpolicy="origin"></script>
 ----
 
 [#step-2-initialize-tinymce-as-part-of-a-web-form]
 === Step 2: Initialize TinyMCE as part of a web form
 
-With the script included, initialize {{site.productname}} on any element (or elements) in your web page.
+With the script included, initialize {productname} on any element (or elements) in your web page.
 
-Since {{site.productname}} lets you identify replaceable elements via a CSS selector, all you need do is pass an object that contains a `selector` to `tinymce.init()`.
+Since {productname} lets you identify replaceable elements via a CSS selector, all you need do is pass an object that contains a `selector` to `tinymce.init()`.
 
-In this example, let's replace `<textarea id='mytextarea'>` with a {{site.productname}} editor instance by passing the selector `'#mytextarea'` to `tinymce.init()`.
+In this example, let's replace `<textarea id='mytextarea'>` with a {productname} editor instance by passing the selector `'#mytextarea'` to `tinymce.init()`.
 
 [source,html]
 ----
 <!DOCTYPE html>
 <html>
 <head>
-  <script src="{{ site.cdnurl }}" referrerpolicy="origin"></script>
+  <script src="{cdnurl}" referrerpolicy="origin"></script>
   <script type="text/javascript">
   tinymce.init({
     selector: '#mytextarea'
@@ -31,7 +31,7 @@ In this example, let's replace `<textarea id='mytextarea'>` with a {{site.produc
 </head>
 
 <body>
-<h1>{{site.productname}} Quick Start Guide</h1>
+<h1>{productname} Quick Start Guide</h1>
   <form method="post">
     <textarea id="mytextarea">Hello, World!</textarea>
   </form>
@@ -42,17 +42,18 @@ In this example, let's replace `<textarea id='mytextarea'>` with a {{site.produc
 [#step-3-saving-content-with-a-form-post]
 === Step 3: Saving content with a form POST
 
-When the `<form>` is submitted the {{site.productname}} editor mimics the behavior of a normal HTML `<textarea>` during the `post`. In your form handler you can process the content submitted as if it had come from a regular `<textarea>`.
+When the `<form>` is submitted the {productname} editor mimics the behavior of a normal HTML `<textarea>` during the `post`. In your form handler you can process the content submitted as if it had come from a regular `<textarea>`.
 
 [#additional-information-about-using-tinymce-cloud]
 === Additional information about using TinyMCE Cloud
 
-There are a few things you need to consider when using {{site.cloudname}}. If you wish to use any local plugins (like http://www.moxiemanager.com[MoxieManager] for example) you need to load them using the new link:{{ site.baseurl }}/configure/integration-and-setup/#external_plugins[`external_plugins`] option.
+There are a few things you need to consider when using {cloudname}. If you wish to use any local plugins (like http://www.moxiemanager.com[MoxieManager] for example) you need to load them using the new link:{baseurl}/configure/integration-and-setup/#external_plugins[`external_plugins`] option.
 
-Also, if you wish to use a custom language, you need to enter the location of the language file into the new link:{{ site.baseurl }}/configure/localization/#language_url[`language_url`] option.
+Also, if you wish to use a custom language, you need to enter the location of the language file into the new link:{baseurl}/configure/localization/#language_url[`language_url`] option.
 
-You may also want to select a specific version of the editor from {{site.cloudname}} and you should head on over to link:{{site.baseurl}}/cloud-deployment-guide/editor-plugin-version[Specify editor & plugin versions] for details on that.
+You may also want to select a specific version of the editor from {cloudname} and you should head on over to link:{baseurl}/cloud-deployment-guide/editor-plugin-version[Specify editor & plugin versions] for details on that.
 
-____
-If you have decided to use {{site.cloudname}}, please move on to the next step link:../work-with-plugins/[working with plugins] where you'll start customizing {{site.productname}}. If you'd like to learn about other install options please keep reading.
-____
+[NOTE]
+====
+If you have decided to use {cloudname}, please move on to the next step link:../work-with-plugins/[working with plugins] where you'll start customizing {productname}. If you'd like to learn about other install options please keep reading.
+====

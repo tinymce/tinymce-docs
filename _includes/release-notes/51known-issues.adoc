@@ -1,4 +1,4 @@
-This section describes issues that users of {{site.productname}} 5.1 may encounter, as well as possible workarounds for these issues.
+This section describes issues that users of {productname} 5.1 may encounter, as well as possible workarounds for these issues.
 
 *Outline*
 
@@ -20,11 +20,11 @@ This section describes issues that users of {{site.productname}} 5.1 may encount
 ==== Issue
 
 NOTE: This issue affects the following plugins:
-* link:{{site.baseurl}}/plugins/mentions/[Mentions].
-* link:{{site.baseurl}}/plugins/emoticons/[Emoticons].
-* link:{{site.baseurl}}/plugins/charmap/[Character Map].
+* link:{baseurl}/plugins/mentions/[Mentions].
+* link:{baseurl}/plugins/emoticons/[Emoticons].
+* link:{baseurl}/plugins/charmap/[Character Map].
 
-Plugins relying on the link:{{site.baseurl}}/ui-components/autocompleter/[autocompleter API] or keypress events do not work on Android. Android intercepts content and processes content prior to insertion into the editor.
+Plugins relying on the link:{baseurl}/ui-components/autocompleter/[autocompleter API] or keypress events do not work on Android. Android intercepts content and processes content prior to insertion into the editor.
 
 [#workaround]
 ==== Workaround
@@ -87,16 +87,16 @@ To workaround this issue, users can either:
 [#issue-2]
 ==== Issue
 
-NOTE: This issue affects the link:{{site.baseurl}}/plugins/comments/[Comments plugin].
+NOTE: This issue affects the link:{baseurl}/plugins/comments/[Comments plugin].
 
 When opening sidebars on small screens (such as mobile phones), the sidebar may occupy most or all of the text area of the editor.
 
 [#workaround-2]
 ==== Workaround
 
-For the comments plugin, the comments sidebar can be collapsed using the `showcomments` toolbar button (image:{{ site.baseurl }}/images/icons/comment.svg[comment.svg]).
+For the comments plugin, the comments sidebar can be collapsed using the `showcomments` toolbar button (image:{baseurl}/images/icons/comment.svg[comment.svg]).
 
-For other plugins with sidebars, {{site.companyname}} recommends ensuring the sidebar's toolbar button is accessible on the toolbar.
+For other plugins with sidebars, {companyname} recommends ensuring the sidebar's toolbar button is accessible on the toolbar.
 
 [#find-and-replace-moving-out-of-view-in-ios]
 === Find and replace moving out of view in iOS

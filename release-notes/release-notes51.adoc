@@ -3,7 +3,7 @@
 :keywords: releasenotes newfeatures deleted technologypreview bugfixes knownissues
 :title_nav: TinyMCE 5.1
 
-These release notes provide a high-level coverage of the changes for {{site.productname}} 5.1, including:
+These release notes provide a high-level coverage of the changes for {productname} 5.1, including:
 
 * <<newfeaturesandenhancements,New features and enhancements>>
 * <<premiumpluginchanges,Premium Plugin changes>>
@@ -11,32 +11,33 @@ These release notes provide a high-level coverage of the changes for {{site.prod
 * <<knownissues,Known issues>>
 * <<upgradingtothelatestversionoftinymce5,Upgrading to the latest version of TinyMCE 5>>
 
-____
-This is the {{site.cloudname}} and {{site.enterpriseversion}} release notes. For information on the latest community version of {{site.productname}}, see: link:{{site.baseurl}}/changelog/[{{site.productname}} Changelog].
-____
+[NOTE]
+====
+This is the {cloudname} and {enterpriseversion} release notes. For information on the latest community version of {productname}, see: link:{baseurl}/changelog/[{productname} Changelog].
+====
 
 [#new-features-and-enhancements]
 == New features and enhancements
 
-{% include release-notes/51new-features.md %}
+include::_includes/release-notes/51new-features.adoc[]
 
 [#premium-plugin-changes]
 == Premium Plugin changes
 
-{% include release-notes/51premium-plugins.md %}
+include::_includes/release-notes/51premium-plugins.adoc[]
 
 [#deprecated-features]
 == Deprecated features
 
-{% include release-notes/51deprecated.md %}
+include::_includes/release-notes/51deprecated.adoc[]
 
 [#known-issues]
 == Known issues
 
-{% include release-notes/51known-issues.md %}
+include::_includes/release-notes/51known-issues.adoc[]
 
-{% assign enterprise = true %}
+:enterprise: true
 
-{% include install/upgrading-info.md %}
+include::_includes/install/upgrading-info.adoc[]
 
-{% assign enterprise = false %}
+:enterprise: false

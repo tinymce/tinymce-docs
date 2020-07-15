@@ -4,7 +4,7 @@
 :keywords: editorcommands editorcommand execcommand Bold Italic Underline Strikethrough Superscript Subscript Cut Copy Paste Unlink JustifyLeft JustifyCenter JustifyRight JustifyFull JustifyNone InsertUnorderedList InsertOrderedList ForeColor HiliteColor FontName FontSize RemoveFormat mceBlockQuote FormatBlock mceInsertContent mceToggleFormat mceSetContent Indent Outdent InsertHorizontalRule mceToggleVisualAid mceInsertLink selectAll delete mceNewDocument Undo Redo mceAutoResize mceShowCharmap mceCodeEditor mceDirectionLTR mceDirectionRTL mceFullPageProperties mceFullscreen mceImage mceInsertDate mceInsertTime mceInsertDefinitionList mceNonBreaking mcePageBreak mcePreview mcePrint mceSave SearchReplace mceSpellcheck mceInsertTemplate mceVisualBlocks mceVisualChars mceMedia mceAnchor mceTableSplitCells mceTableMergeCells mceTableInsertRowBefore mceTableInsertRowAfter mceTableInsertColBefore mceTableInsertColAfter mceTableDeleteCol mceTableDeleteRow mceTableCutRow mceTableCopyRow mceTablePasteRowBefore mceTablePasteRowAfter mceTableDelete mceInsertTable mceTableRowProps mceTableCellProps mceEditImage mceAddEditor mceRemoveEditor mceToggleEditor
 :title_nav: Editor command identifiers
 
-The following tables show the existing editor commands. These commands are provided by `tinymce` and not by the browser's internal commands. These commands can be executed using the link:{{ site.baseurl }}/api/tinymce/tinymce.editorcommands/#execcommand[execCommand] function.
+The following tables show the existing editor commands. These commands are provided by `tinymce` and not by the browser's internal commands. These commands can be executed using the link:{baseurl}/api/tinymce/tinymce.editorcommands/#execcommand[execCommand] function.
 
 [#listing-core-and-plugin-editor-commands]
 == Listing core and plugin editor commands
@@ -18,7 +18,7 @@ tinymce.activeEditor.editorCommands.commands.exec;
 [#core-editor-commands]
 == Core Editor commands
 
-The commands on the following table are provided by the {{site.productname}} editor and do not require any plugins to be enabled.
+The commands on the following table are provided by the {productname} editor and do not require any plugins to be enabled.
 
 |===
 | Command | Description
@@ -96,7 +96,7 @@ The commands on the following table are provided by the {{site.productname}} edi
 | Wraps the selected text blocks into a block quote.
 
 | FormatBlock
-| Toggles the format of the current selection. The value passed in should be the format name. If no format is specified, the paragraph (<``p``>) format will be toggled. For a list of options, see: link:{{ site.baseurl }}/configure/content-formatting/#built-informats[Content formatting options - Built-in formats].
+| Toggles the format of the current selection. The value passed in should be the format name. If no format is specified, the paragraph (<``p``>) format will be toggled. For a list of options, see: link:{baseurl}/configure/content-formatting/#built-informats[Content formatting options - Built-in formats].
 
 | mceInsertContent
 | Inserts contents at the current selection. The value passed in should be the contents to be inserted.
@@ -108,7 +108,7 @@ The commands on the following table are provided by the {{site.productname}} edi
 | Sets the contents of the editor. The value is the contents to set as the editor contents.
 
 | mceToggleFormat
-| Toggles a specified format by name. The value is the name of the format to toggle. For a list of options, see: link:{{ site.baseurl }}/configure/content-formatting/#built-informats[Content formatting options - Built-in formats].
+| Toggles a specified format by name. The value is the name of the format to toggle. For a list of options, see: link:{baseurl}/configure/content-formatting/#built-informats[Content formatting options - Built-in formats].
 
 | ToggleSidebar
 | Closes the currrent sidebar, or toogles the sidebar if the sidebar name is provided as a value (_`<sidebar-name>`_).
@@ -272,254 +272,254 @@ Commands are available for the following plugins:
 [#advanced-code]
 === Advanced Code
 
-The following command requires the link:{{ site.baseurl }}/plugins/advcode/[Advanced Code (`advcode`)] plugin.
+The following command requires the link:{baseurl}/plugins/advcode/[Advanced Code (`advcode`)] plugin.
 
-{% include commands/code-cmds.md %}
+include::_includes/commands/code-cmds.adoc[]
 
 [#advanced-lists]
 === Advanced Lists
 
-The following commands require the link:{{ site.baseurl }}/plugins/advlist/[Advanced Lists (`advlist`)] plugin.
+The following commands require the link:{baseurl}/plugins/advlist/[Advanced Lists (`advlist`)] plugin.
 
-{% include commands/advlist-cmds.md %}
+include::_includes/commands/advlist-cmds.adoc[]
 
 [#advanced-tables]
 === Advanced Tables
 
-The following commands require the link:{{ site.baseurl }}/plugins/advtable/[Advanced Tables (`advtable`)] plugin.
+The following commands require the link:{baseurl}/plugins/advtable/[Advanced Tables (`advtable`)] plugin.
 
-{% include commands/advtable-cmds.md %}
+include::_includes/commands/advtable-cmds.adoc[]
 
 [#anchor]
 === Anchor
 
-The following command requires the link:{{ site.baseurl }}/plugins/anchor/[Anchor (`anchor`)] plugin.
+The following command requires the link:{baseurl}/plugins/anchor/[Anchor (`anchor`)] plugin.
 
-{% include commands/anchor-cmds.md %}
+include::_includes/commands/anchor-cmds.adoc[]
 
 [#autoresize]
 === Autoresize
 
-The following command requires the link:{{ site.baseurl }}/plugins/autoresize/[Autoresize (`autoresize`)] plugin.
+The following command requires the link:{baseurl}/plugins/autoresize/[Autoresize (`autoresize`)] plugin.
 
-{% include commands/autoresize-cmds.md %}
+include::_includes/commands/autoresize-cmds.adoc[]
 
 [#case-change]
 === Case Change
 
-The following commands require the link:{{ site.baseurl }}/plugins/casechange/[Case Change (`casechange`)] plugin.
+The following commands require the link:{baseurl}/plugins/casechange/[Case Change (`casechange`)] plugin.
 
-{% include commands/casechange-cmds.md %}
+include::_includes/commands/casechange-cmds.adoc[]
 
 [#character-map]
 === Character Map
 
-The following command requires the link:{{ site.baseurl }}/plugins/charmap/[Character Map (`charmap`)] plugin.
+The following command requires the link:{baseurl}/plugins/charmap/[Character Map (`charmap`)] plugin.
 
-{% include commands/charmap-cmds.md %}
+include::_includes/commands/charmap-cmds.adoc[]
 
 [#code]
 === Code
 
-The following command requires the link:{{ site.baseurl }}/plugins/code/[Code (`code`)] plugin.
+The following command requires the link:{baseurl}/plugins/code/[Code (`code`)] plugin.
 
-{% include commands/code-cmds.md %}
+include::_includes/commands/code-cmds.adoc[]
 
 [#code-sample]
 === Code Sample
 
-The following command requires the link:{{ site.baseurl }}/plugins/codesample/[Code Sample (`codesample`)] plugin.
+The following command requires the link:{baseurl}/plugins/codesample/[Code Sample (`codesample`)] plugin.
 
-{% include commands/codesample-cmds.md %}
+include::_includes/commands/codesample-cmds.adoc[]
 
 [#comments]
 === Comments
 
-The following commands require the link:{{ site.baseurl }}/plugins/comments/[Comments (`tinycomments`)] plugin.
+The following commands require the link:{baseurl}/plugins/comments/[Comments (`tinycomments`)] plugin.
 
-{% include commands/comments-cmds.md %}
+include::_includes/commands/comments-cmds.adoc[]
 
 [#directionality]
 === Directionality
 
-The following commands require the link:{{ site.baseurl }}/plugins/directionality/[Directionality (`directionality`)] plugin.
+The following commands require the link:{baseurl}/plugins/directionality/[Directionality (`directionality`)] plugin.
 
-{% include commands/directionality-cmds.md %}
+include::_includes/commands/directionality-cmds.adoc[]
 
 [#format-painter]
 === Format Painter
 
-The following commands require the link:{{ site.baseurl }}/plugins/comments/[Format Painter (`formatpainter`)] plugin.
+The following commands require the link:{baseurl}/plugins/comments/[Format Painter (`formatpainter`)] plugin.
 
-{% include commands/formatpainter-cmds.md %}
+include::_includes/commands/formatpainter-cmds.adoc[]
 
 [#full-page]
 === Full Page
 
-The following command requires the link:{{ site.baseurl }}/plugins/fullpage/[Full Page (`fullpage`)] plugin.
+The following command requires the link:{baseurl}/plugins/fullpage/[Full Page (`fullpage`)] plugin.
 
-{% include commands/fullpage-cmds.md %}
+include::_includes/commands/fullpage-cmds.adoc[]
 
 [#full-screen]
 === Full Screen
 
-The following command requires the link:{{ site.baseurl }}/plugins/fullscreen/[Full Screen (`fullscreen`)] plugin.
+The following command requires the link:{baseurl}/plugins/fullscreen/[Full Screen (`fullscreen`)] plugin.
 
-{% include commands/fullscreen-cmds.md %}
+include::_includes/commands/fullscreen-cmds.adoc[]
 
 [#help]
 === Help
 
-The following command requires the link:{{ site.baseurl }}/plugins/help/[Help (`help`)] plugin.
+The following command requires the link:{baseurl}/plugins/help/[Help (`help`)] plugin.
 
-{% include commands/help-cmds.md %}
+include::_includes/commands/help-cmds.adoc[]
 
 [#image]
 === Image
 
-The following command requires the link:{{ site.baseurl }}/plugins/image/[Image (`image`)] plugin.
+The following command requires the link:{baseurl}/plugins/image/[Image (`image`)] plugin.
 
-{% include commands/image-cmds.md %}
+include::_includes/commands/image-cmds.adoc[]
 
 [#image-tools]
 === Image Tools
 
-The following commands require the link:{{ site.baseurl }}/plugins/imagetools/[Image Tools (`imagetools`)] plugin.
+The following commands require the link:{baseurl}/plugins/imagetools/[Image Tools (`imagetools`)] plugin.
 
-{% include commands/imagetools-cmds.md %}
+include::_includes/commands/imagetools-cmds.adoc[]
 
 [#insert-datetime]
 === Insert Date/Time
 
-The following commands require the link:{{ site.baseurl }}/plugins/insertdatetime/[Insert Date/Time (`insertdatetime`)] plugin.
+The following commands require the link:{baseurl}/plugins/insertdatetime/[Insert Date/Time (`insertdatetime`)] plugin.
 
-{% include commands/insertdatetime-cmds.md %}
+include::_includes/commands/insertdatetime-cmds.adoc[]
 
 [#link]
 === Link
 
-The following command requires the link:{{ site.baseurl }}/plugins/link/[Link (`link`)] plugin.
+The following command requires the link:{baseurl}/plugins/link/[Link (`link`)] plugin.
 
-{% include commands/link-cmds.md %}
+include::_includes/commands/link-cmds.adoc[]
 
 [#lists]
 === Lists
 
-The following commands require the link:{{ site.baseurl }}/plugins/lists/[Lists (`lists`)] plugin.
+The following commands require the link:{baseurl}/plugins/lists/[Lists (`lists`)] plugin.
 
-{% include commands/lists-cmds.md %}
+include::_includes/commands/lists-cmds.adoc[]
 
 [#media]
 === Media
 
-The following command requires the link:{{ site.baseurl }}/plugins/media/[Media (`media`)] plugin.
+The following command requires the link:{baseurl}/plugins/media/[Media (`media`)] plugin.
 
-{% include commands/media-cmds.md %}
+include::_includes/commands/media-cmds.adoc[]
 
 [#nonbreaking-space]
 === Nonbreaking Space
 
-The following command requires the link:{{ site.baseurl }}/plugins/nonbreaking/[Nonbreaking Space (`nonbreaking`)] plugin.
+The following command requires the link:{baseurl}/plugins/nonbreaking/[Nonbreaking Space (`nonbreaking`)] plugin.
 
-{% include commands/nbsp-cmds.md %}
+include::_includes/commands/nbsp-cmds.adoc[]
 
 [#page-break]
 === Page Break
 
-The following command requires the link:{{ site.baseurl }}/plugins/pagebreak/[Page Break (`pagebreak`)] plugin.
+The following command requires the link:{baseurl}/plugins/pagebreak/[Page Break (`pagebreak`)] plugin.
 
-{% include commands/pagebreak-cmds.md %}
+include::_includes/commands/pagebreak-cmds.adoc[]
 
 [#paste]
 === Paste
 
-The following commands require the link:{{ site.baseurl }}/plugins/paste/[Paste (`paste`)] plugin.
+The following commands require the link:{baseurl}/plugins/paste/[Paste (`paste`)] plugin.
 
-{% include commands/paste-cmds.md %}
+include::_includes/commands/paste-cmds.adoc[]
 
 [#permanent-pen]
 === Permanent Pen
 
-The following commands require the link:{{ site.baseurl }}/plugins/permanentpen/[Permanent Pen (`permanentpen`)] plugin.
+The following commands require the link:{baseurl}/plugins/permanentpen/[Permanent Pen (`permanentpen`)] plugin.
 
-{% include commands/permanentpen-cmds.md %}
+include::_includes/commands/permanentpen-cmds.adoc[]
 
 [#powerpaste]
 === PowerPaste
 
-The following command requires the link:{{ site.baseurl }}/plugins/powerpaste/[PowerPaste (`powerpaste`)] plugin.
+The following command requires the link:{baseurl}/plugins/powerpaste/[PowerPaste (`powerpaste`)] plugin.
 
-{% include commands/powerpaste-cmds.md %}
+include::_includes/commands/powerpaste-cmds.adoc[]
 
 [#preview]
 === Preview
 
-The following command requires the link:{{ site.baseurl }}/plugins/preview/[Preview (`preview`)] plugin.
+The following command requires the link:{baseurl}/plugins/preview/[Preview (`preview`)] plugin.
 
-{% include commands/preview-cmds.md %}
+include::_includes/commands/preview-cmds.adoc[]
 
 [#print]
 === Print
 
-The following command requires the link:{{ site.baseurl }}/plugins/print/[Print (`print`)] plugin.
+The following command requires the link:{baseurl}/plugins/print/[Print (`print`)] plugin.
 
-{% include commands/print-cmds.md %}
+include::_includes/commands/print-cmds.adoc[]
 
 [#save]
 === Save
 
-The following commands require the link:{{ site.baseurl }}/plugins/save/[Save (`save`)] plugin.
+The following commands require the link:{baseurl}/plugins/save/[Save (`save`)] plugin.
 
-{% include commands/save-cmds.md %}
+include::_includes/commands/save-cmds.adoc[]
 
 [#search-and-replace]
 === Search and Replace
 
-The following command requires the link:{{ site.baseurl }}/plugins/searchreplace/[Search and Replace (`searchreplace`)] plugin.
+The following command requires the link:{baseurl}/plugins/searchreplace/[Search and Replace (`searchreplace`)] plugin.
 
-{% include commands/searchreplace-cmds.md %}
+include::_includes/commands/searchreplace-cmds.adoc[]
 
 [#spell-checker]
 === Spell Checker
 
-The following command requires the link:{{ site.baseurl }}/plugins/spellchecker/[Spell Checker (`spellchecker`)] plugin.
+The following command requires the link:{baseurl}/plugins/spellchecker/[Spell Checker (`spellchecker`)] plugin.
 
-{% include commands/spellchecker-cmds.md %}
+include::_includes/commands/spellchecker-cmds.adoc[]
 
 [#table]
 === Table
 
-The following commands require the link:{{ site.baseurl }}/plugins/table/[Table (`table`)] plugin.
+The following commands require the link:{baseurl}/plugins/table/[Table (`table`)] plugin.
 
-{% include commands/table-cmds.md %}
+include::_includes/commands/table-cmds.adoc[]
 
 [#template]
 === Template
 
-The following command requires the link:{{ site.baseurl }}/plugins/template/[Template (`template`)] plugin.
+The following command requires the link:{baseurl}/plugins/template/[Template (`template`)] plugin.
 
-{% include commands/template-cmds.md %}
+include::_includes/commands/template-cmds.adoc[]
 
 [#table-of-contents]
 === Table of Contents
 
-The following commands require the link:{{ site.baseurl }}/plugins/toc[Table of Contents (`toc`)] plugin.
+The following commands require the link:{baseurl}/plugins/toc[Table of Contents (`toc`)] plugin.
 
-{% include commands/toc-cmds.md %}
+include::_includes/commands/toc-cmds.adoc[]
 
 [#visual-blocks]
 === Visual Blocks
 
-The following command requires the link:{{ site.baseurl }}/plugins/visualblocks/[Visual Blocks (`visualblocks`)] plugin.
+The following command requires the link:{baseurl}/plugins/visualblocks/[Visual Blocks (`visualblocks`)] plugin.
 
-{% include commands/visualblocks-cmds.md %}
+include::_includes/commands/visualblocks-cmds.adoc[]
 
 [#visual-characters]
 === Visual Characters
 
-The following command requires the link:{{ site.baseurl }}/plugins/visualchars/[Visual Characters (`visualchars`)] plugin.
+The following command requires the link:{baseurl}/plugins/visualchars/[Visual Characters (`visualchars`)] plugin.
 
-{% include commands/visualchars-cmds.md %}
+include::_includes/commands/visualchars-cmds.adoc[]
 
 [#editor-management-commands]
 == Editor Management Commands
@@ -544,5 +544,5 @@ tinymce.execCommand('mceToggleEditor', false, '<editor_id>');
 | Removes an editor instance with the specified ID.
 
 | mceToggleEditor
-| Runs mceAddEditor if an editor is not detected for the specified ID, otherwise it runs either link:{{ site.baseurl }}/api/tinymce/tinymce.editor/#hide[hide] if the editor is visible or link:{{ site.baseurl }}/api/tinymce/tinymce.editor/#show[show] if it is not visible.
+| Runs mceAddEditor if an editor is not detected for the specified ID, otherwise it runs either link:{baseurl}/api/tinymce/tinymce.editor/#hide[hide] if the editor is visible or link:{baseurl}/api/tinymce/tinymce.editor/#show[show] if it is not visible.
 |===

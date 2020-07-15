@@ -6,9 +6,10 @@
 
 This plugin makes it possible to edit BBCode in a WYSIWYG style by converting tags like `[b]` into `<strong>` and then back, when user submits the content.
 
-____
-You will need to sacrifice quite a lot of {{site.productname}}'s functionality to use this plugin properly, since BBCode format doesn't support the whole HTML specification.
-____
+[NOTE]
+====
+You will need to sacrifice quite a lot of {productname}'s functionality to use this plugin properly, since BBCode format doesn't support the whole HTML specification.
+====
 
 *Type:* `String`
 

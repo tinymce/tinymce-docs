@@ -5,11 +5,11 @@ This option allows you to define custom items for the `styleselect` dropdown too
 
 There are three types of items the array can contain:
 
-* *Style:* The item must have a `title` and either a `format` with refers to a pre-registered editor link:{{ site.baseurl }}/configure/content-formatting/#formats[format] or the necessary fields to link:{{ site.baseurl }}/configure/content-formatting/#formattype[specify a new format]. The item will be rendered in the UI as a clickable item that applies the given format.
+* *Style:* The item must have a `title` and either a `format` with refers to a pre-registered editor link:{baseurl}/configure/content-formatting/#formats[format] or the necessary fields to link:{baseurl}/configure/content-formatting/#formattype[specify a new format]. The item will be rendered in the UI as a clickable item that applies the given format.
 * *Nested menu:* The item must have a `title` and an `items` array that contains other items that will be rendered as a sub-menu.
 * *Group heading:* The item must only have a `title` and will be rendered as a non-clickable heading within the menu. This is useful for grouping items without using nested menus.
 
-To merge custom styles with the default `styles_format` values, set link:{{ site.baseurl }}/configure/editor-appearance/#style_formats_merge[`style_formats_merge`] to `true`.
+To merge custom styles with the default `styles_format` values, set link:{baseurl}/configure/editor-appearance/#style_formats_merge[`style_formats_merge`] to `true`.
 
 *Type:* `Array`
 *Default:*
@@ -50,4 +50,4 @@ style_formats: [
 ]
 `
 
-The link:{{ site.baseurl }}/demo/format-custom/[Custom formats] demo contains examples of custom style formats, including how to specify new formats and group headings.
+The link:{baseurl}/demo/format-custom/[Custom formats] demo contains examples of custom style formats, including how to specify new formats and group headings.

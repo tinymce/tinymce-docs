@@ -3,7 +3,7 @@
 :keywords: integration integrate angular angularjs angular1
 :title_nav: AngularJS
 
-Integration with AngularJS is currently done through https://github.com/angular-ui/ui-tinymce[angular-ui-tinymce] a third party module. This how-to shows you how to setup a project using https://angularjs.org/[AngularJS] and link:{{site.baseurl}}/demo/basic-example/[{{site.productname}}].
+Integration with AngularJS is currently done through https://github.com/angular-ui/ui-tinymce[angular-ui-tinymce] a third party module. This how-to shows you how to setup a project using https://angularjs.org/[AngularJS] and link:{baseurl}/demo/basic-example/[{productname}].
 
 [#1-setting-up-the-project-directory]
 == 1. Setting up the project directory
@@ -19,7 +19,7 @@ $ bower init
 [#2-installation-of-angular-ui-tinymce-and-tinymce]
 == 2. Installation of angular, ui-tinymce and tinymce
 
-We now install the angular-ui-tinymce package this will automatically install angular and {{site.productname}}.
+We now install the angular-ui-tinymce package this will automatically install angular and {productname}.
 
 `
 $ bower install angular-ui-tinymce --save
@@ -40,7 +40,7 @@ This *demo.html* file has angular properties and two calls to the controller.
 [#4-creating-the-app-js-file]
 == 4. Creating the app.js file
 
-The *app.js* file shows you how to work with the model that automatically updates {{site.productname}}.
+The *app.js* file shows you how to work with the model that automatically updates {productname}.
 
 ```js
 var myAppModule = angular.module('myApp', ['ui.tinymce']);
@@ -71,4 +71,4 @@ You can now test the application by running the demo.html page in your favorite 
 [discrete#a-note-about-integrations]
 ==== A note about integrations
 
-NOTE:  We are pleased to reference third-party integrations/code to help you build great products with {{site.productname}}. If you have queries about this integration, please contact the developer directly.
+NOTE:  We are pleased to reference third-party integrations/code to help you build great products with {productname}. If you have queries about this integration, please contact the developer directly.

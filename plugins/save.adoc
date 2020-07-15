@@ -4,7 +4,7 @@
 :keywords: submit save_enablewhendirty save_oncancelcallback save_onsavecallback
 :title_nav: Save
 
-This plugin adds a save button to the {{site.productname}} toolbar, which will submit the form that the editor is within.
+This plugin adds a save button to the {productname} toolbar, which will submit the form that the editor is within.
 
 *Type:* `String`
 
@@ -102,4 +102,4 @@ tinymce.init({
 
 The Save plugin provides the following JavaScript commands.
 
-{% include commands/save-cmds.md %}
+include::_includes/commands/save-cmds.adoc[]

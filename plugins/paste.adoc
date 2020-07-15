@@ -4,9 +4,10 @@
 :keywords: microsoft word excel cut copy paste_data_images paste_as_text paste_enable_default_filters paste_filter_drop paste_preprocess paste_postprocess paste_word_valid_elements paste_webkit_styles paste_retain_style_properties paste_merge_formats paste_convert_word_fake_lists paste_remove_styles_if_webkit
 :title_nav: Paste
 
-____
-Looking for more advanced Microsoft Word importing and pasting? Try the link:{{site.baseurl}}/plugins/powerpaste/[PowerPaste] plugin.
-____
+[NOTE]
+====
+Looking for more advanced Microsoft Word importing and pasting? Try the link:{baseurl}/plugins/powerpaste/[PowerPaste] plugin.
+====
 
 This plugin will filter/cleanup content pasted from Microsoft Word. The power of the plugin is in its options, so please take the time to learn more about them below.
 
@@ -33,7 +34,7 @@ tinymce.init({
 
 These settings affect the way content is eliminated or preserved when being pasted. In addition, callbacks are available prior to and after content filtration.
 
-{% include configuration/paste-block-drop.md %}
+include::_includes/configuration/paste-block-drop.adoc[]
 
 [#]
 === `paste_data_images`
@@ -90,7 +91,7 @@ tinymce.init({
 [#-2]
 === `paste_enable_default_filters`
 
-This option allows you to disable {{site.productname}}'s default paste filters when set to false.
+This option allows you to disable {productname}'s default paste filters when set to false.
 
 *Type:* `Boolean`
 
@@ -184,7 +185,7 @@ tinymce.init({
 
 This option enables you to configure the `valid_elements` specific to MS Office. Word produces a lot of junk HTML, so when users paste things from Word we do extra restrictive filtering on it to remove as much of this as possible. This option enables you to specify which elements and attributes you want to include when Word contents are intercepted.
 
-NOTE: To access this feature, you need to set the value of link:{{site.baseurl}}/plugins/paste/#paste_enable_default_filters[paste_enable_default_filters] to `"false"` in your configuration.
+NOTE: To access this feature, you need to set the value of link:{baseurl}/plugins/paste/#paste_enable_default_filters[paste_enable_default_filters] to `"false"` in your configuration.
 
 *Type:* `String`
 
@@ -241,7 +242,7 @@ tinymce.init({
 });
 `
 
-{% include configuration/paste-merge-formats.md %}
+include::_includes/configuration/paste-merge-formats.adoc[]
 
 [#-2]
 === `paste_convert_word_fake_lists`
@@ -270,7 +271,7 @@ tinymce.init({
 [#-2]
 === `paste_remove_styles_if_webkit`
 
-This option allows you to disable {{site.productname}}'s default paste filters for webkit styles.
+This option allows you to disable {productname}'s default paste filters for webkit styles.
 
 *Type:* `Boolean`
 
@@ -291,11 +292,11 @@ tinymce.init({
 });
 `
 
-{% include configuration/smart-paste.md %}
+include::_includes/configuration/smart-paste.adoc[]
 
 [#commands]
 == Commands
 
 The Paste plugin provides the following JavaScript command.
 
-{% include commands/paste-cmds.md %}
+include::_includes/commands/paste-cmds.adoc[]

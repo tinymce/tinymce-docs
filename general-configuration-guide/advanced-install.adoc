@@ -4,9 +4,9 @@
 :keywords: npm bower composer nuget
 :title_nav: Options for installing TinyMCE
 
-There are multiple ways to instantiate {{site.productname}}. Accessing {{site.productname}} through {{site.cloudname}} may not be the best use case for different deployment scenarios. This section explains additional installation options including package managers, self-hosted download, and other custom build options.
+There are multiple ways to instantiate {productname}. Accessing {productname} through {cloudname} may not be the best use case for different deployment scenarios. This section explains additional installation options including package managers, self-hosted download, and other custom build options.
 
-* <<cloudinstall,{{site.cloudname}}>>
+* <<cloudinstall,{cloudname}>>
 * <<packagemanagerinstalloptions,Package Managers>>
 * <<self-hostedinstall,Self-Hosted Download / Install>>
 * <<custombuildinstall,Custom Build>>
@@ -14,7 +14,7 @@ There are multiple ways to instantiate {{site.productname}}. Accessing {{site.pr
 [#cloud-install]
 == Cloud Install
 
-{% include install/cloud.md %}
+include::_includes/install/cloud.adoc[]
 
 [#package-manager-install-options]
 == Package Manager Install Options
@@ -27,32 +27,30 @@ There are multiple ways to instantiate {{site.productname}}. Accessing {{site.pr
 [#npm]
 == NPM
 
-{% include install/npm.md %}
+include::_includes/install/npm.adoc[]
 
 [#bower]
 == Bower
 
-{% include install/bower.md %}
+include::_includes/install/bower.adoc[]
 
 [#composer]
 == Composer
 
-{% include install/composer.md %}
+include::_includes/install/composer.adoc[]
 
 [#nuget]
 == NuGet
 
-{% include install/nuget.md %}
+include::_includes/install/nuget.adoc[]
 
 [#self-hosted-install]
 == Self-Hosted Install
 
-{% include install/sdk.md %}
+include::_includes/install/sdk.adoc[]
 
 [#custom-build-install]
 == Custom Build Install
 
-{% include install/custom.md %}
+include::_includes/install/custom.adoc[]
 
-{% assign_page next_page = "/general-configuration-guide/work-with-plugins/index.html" %}
-{% include next-step.html next=next_page %}

@@ -19,9 +19,10 @@ tinymce.init({
 
 By default, `codesample` uses `+http://prismjs.com/+` to embed the code samples within the editor and works out of the box. That is, when a user copies valid code syntax into the editable area the code will be automatically formatted according to Prism default CSS rules.
 
-____
+[NOTE]
+====
 Prism.js and prism.css need to be added to a page for syntax highlighting to work. See the instructions below to learn how to do this.
-____
+====
 
 [#using-prism-js-on-your-web-page]
 === Using Prism.js on your web page
@@ -46,7 +47,7 @@ You need to add `prism.js` and `prism.css` to your page in order to get the synt
 [#]
 === `codesample_global_prismjs`
 
-{{ site.requires_5_2v }}
+{requires_5_2v}
 
 This configuration option allows a global Prism.js version to be used when highlighting code sample blocks, instead of using the Prism.js version bundled inside the `codesample` plugin. This allows for a custom version of Prism.js, including additional languages, to be used.
 
@@ -113,4 +114,4 @@ tinymce.init({
 
 The Code Sample plugin provides the following JavaScript command.
 
-{% include commands/codesample-cmds.md %}
+include::_includes/commands/codesample-cmds.adoc[]

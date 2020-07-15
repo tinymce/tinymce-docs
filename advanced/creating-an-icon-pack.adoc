@@ -18,13 +18,14 @@ This guide assumes:
 [#how-icons-work-in-tinymce]
 == How icons work in TinyMCE
 
-A {{site.productname}} icon pack is a `.js` file containing strings of https://developer.mozilla.org/en-US/docs/Web/SVG[SVG's]. An icon pack can be used: to include one or more custom icons; or to replace some or all of the default {{site.productname}} icons.
+A {productname} icon pack is a `.js` file containing strings of https://developer.mozilla.org/en-US/docs/Web/SVG[SVG's]. An icon pack can be used: to include one or more custom icons; or to replace some or all of the default {productname} icons.
 
-An icon pack only requires the custom icons to be included; the default {{site.productname}} icons are used as a fallback for icons missing from the custom icon pack.
+An icon pack only requires the custom icons to be included; the default {productname} icons are used as a fallback for icons missing from the custom icon pack.
 
-____
-Don't forget to explore our ready-to-use Premium Icon Packs such as 'Material' icons, and a smaller version of our default icons at link:{{site.productpages}}/skins-and-icon-packs/[Tiny Skins and Icon Packs].
-____
+[NOTE]
+====
+Don't forget to explore our ready-to-use Premium Icon Packs such as 'Material' icons, and a smaller version of our default icons at link:{productpages}/skins-and-icon-packs/[Tiny Skins and Icon Packs].
+====
 
 [#creating-a-tinymce-icon-pack]
 == Creating a TinyMCE icon pack
@@ -37,9 +38,9 @@ To create a custom icon pack:
 [#download-and-setup-the-icon-pack-template]
 === Download and setup the icon pack template
 
-To use the {{site.productname}} icon pack template project:
+To use the {productname} icon pack template project:
 
-. Download the https://github.com/tinymce/oxide-icon-pack-template[{{site.productname}} Oxide Icon Pack Template] by either:
+. Download the https://github.com/tinymce/oxide-icon-pack-template[{productname} Oxide Icon Pack Template] by either:
  ** Downloading the `.zip` file from the https://github.com/tinymce/oxide-icon-pack-template[Oxide Icon Pack Template GitHub page] and extract the contents.
  ** From a terminal or command prompt, use git to clone the GitHub repository, such as:
 +
@@ -59,12 +60,12 @@ $ npm install
  ** Hyphens ( `-` ).
  ** Underscores ( `_` ).
 
-The icon pack name will be used with the link:{{site.baseurl}}/configure/editor-appearance/#icons[icons] option to apply the icons in {{site.productname}}.
+The icon pack name will be used with the link:{baseurl}/configure/editor-appearance/#icons[icons] option to apply the icons in {productname}.
 
 [#add-the-svg-files]
 === Add the SVG files
 
-Each SVG files placed in `/src/svg` will be converted to an icon. The file names of the SVG files are used to set the icon identifier used by {{site.productname}}.
+Each SVG files placed in `/src/svg` will be converted to an icon. The file names of the SVG files are used to set the icon identifier used by {productname}.
 
 For example: `bold.svg` will have the identifier `bold`. Such as:
 
@@ -84,9 +85,9 @@ tinymce.init({
 });
 +`
 
-For a list of the icon identifiers, see: link:{{site.baseurl}}/advanced/editor-icon-identifiers/[Editor icon identifiers].
+For a list of the icon identifiers, see: link:{baseurl}/advanced/editor-icon-identifiers/[Editor icon identifiers].
 
-{{site.productname}} does not resize the SVGs provided, relying on the size defined in the SVG. This allows icons of different sizes to be used in the editor. The Toolbar button sizes are independent of the icon sizes. To change button sizes, a link:{{site.baseurl}}/advanced/creating-a-skin/[custom skin] is required.
+{productname} does not resize the SVGs provided, relying on the size defined in the SVG. This allows icons of different sizes to be used in the editor. The Toolbar button sizes are independent of the icon sizes. To change button sizes, a link:{baseurl}/advanced/creating-a-skin/[custom skin] is required.
 
 NOTE: Input SVGs must be shapes, not strokes. SVG files containing strokes will not render correctly. If the input files contain strokes, use a graphics program to convert the strokes into shapes.
 
@@ -126,14 +127,14 @@ All user defined options, including SVGO options, will merge with the default op
 
 An icon pack can be served either:
 
-* <<deploytheiconpackwithtinymce,With {{site.productname}}>>
-* <<deploytheiconpackandtinymceseparately,Separate from {{site.productname}}>>
+* <<deploytheiconpackwithtinymce,With {productname}>>
+* <<deploytheiconpackandtinymceseparately,Separate from {productname}>>
 
 [#deploy-the-icon-pack-with-tinymce]
 === Deploy the icon pack with TinyMCE
 
-{% assign customIconPack = true %}
-{% include configuration/icons.md %}
+:customIconPack: true
+include::_includes/configuration/icons.adoc[]
 ### Deploy the icon pack and TinyMCE separately
-{% include configuration/icons_url.md %}
-{% assign customIconPack = false %}
+include::_includes/configuration/icons_url.adoc[]
+:customIconPack: false

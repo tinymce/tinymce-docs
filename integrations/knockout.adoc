@@ -3,9 +3,9 @@
 :keywords: integration integrate knockout knockoutjs
 :title_nav: Knockout
 
-{{site.productname}} can be added to a Knockout project using the third-party TinyMCE Knockout integration.
+{productname} can be added to a Knockout project using the third-party TinyMCE Knockout integration.
 
-{{site.thirdPartyInteg}}
+{thirdPartyInteg}
 
 Michael Papworth developed the Knockout binding for TinyMCE. For details, see: https://github.com/michaelpapworth/tinymce-knockout-binding[the tinymce-knockout-binding project].
 
@@ -16,24 +16,24 @@ Michael Papworth developed the Knockout binding for TinyMCE. For details, see: h
 +
 If the project loads jQuery or Knockout from a Content delivery Network (CDN), use the script provided by the CDN, including any attributes, such as `integrity` and `crossorigin`.
 
-. Source {{site.productname}} and the {{site.productname}} jQuery integration from the {{site.cloudname}} or from a self-hosted location.
- ** *{{site.cloudname}}*
+. Source {productname} and the {productname} jQuery integration from the {cloudname} or from a self-hosted location.
+ ** *{cloudname}*
 +
-To source {{site.productname}} and the {{site.productname}} jQuery integration from the {{site.cloudname}}, add the following `script` elements:
+To source {productname} and the {productname} jQuery integration from the {cloudname}, add the following `script` elements:
 +
 [source,html]
 ----
-  <script src="{{site.cdnurl}}" referrerpolicy="origin"></script>
+  <script src="{cdnurl}" referrerpolicy="origin"></script>
   <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/jquery.tinymce.min.js" referrerpolicy="origin"></script>
 ----
 +
-Replace `no-api-key` in the source script (`+<script src=...+`) with a {{site.cloudname}} API key, which is created when signing up to the link:{{site.accountsignup}}[{{site.cloudname}}].
+Replace `no-api-key` in the source script (`+<script src=...+`) with a {cloudname} API key, which is created when signing up to the link:{accountsignup}[{cloudname}].
 +
-Signing up for a {{site.cloudname}} API key will also provide a trial of the link:{{site.baseurl}}/enterprise/[Premium Plugins].
+Signing up for a {cloudname} API key will also provide a trial of the link:{baseurl}/enterprise/[Premium Plugins].
 
- ** *{{site.productname}} self-hosted*
+ ** *{productname} self-hosted*
 +
-To use an independent deployment of {{site.productname}}, add source scripts to either the `<head>` or the end of the `<body>` of the HTML file, such as:
+To use an independent deployment of {productname}, add source scripts to either the `<head>` or the end of the `<body>` of the HTML file, such as:
 +
 [source,html]
 ----
@@ -41,12 +41,12 @@ To use an independent deployment of {{site.productname}}, add source scripts to 
   <script src="/path/to/jquery.tinymce.min.js"></script>
 ----
 +
-For information on self-hosting {{site.productname}}, see: link:{{site.baseurl}}/general-configuration-guide/advanced-install/[Installing {{ site.productname }}].
+For information on self-hosting {productname}, see: link:{baseurl}/general-configuration-guide/advanced-install/[Installing {productname}].
 . Source `tinymce-knockout-binding` (`wysiwyg.js`) on the page.
 +
 If the project loads tinymce-knockout-binding from a Content Delivery Network (CDN), use the script provided by the CDN, including any attributes, such as `integrity` and `crossorigin`.
 
-. Add an initialization point for {{site.productname}}, such as:
+. Add an initialization point for {productname}, such as:
 +
 [source,html]
 ----
@@ -56,7 +56,7 @@ If the project loads tinymce-knockout-binding from a Content Delivery Network (C
  </div>
 ----
 
-. Add the {{site.productname}} Knockout init script. The {{site.productname}} settings are defined within the `defaults` object.
+. Add the {productname} Knockout init script. The {productname} settings are defined within the `defaults` object.
 +
 [source,html]
 ----
@@ -82,7 +82,7 @@ If the project loads tinymce-knockout-binding from a Content Delivery Network (C
 [#example-knockout-integration]
 === Example Knockout integration
 
-To load a TinyMCE editor similar to the link:{{site.baseurl}}/demo/basic-example/[Basic example], add the following code to an empty HTML file.
+To load a TinyMCE editor similar to the link:{baseurl}/demo/basic-example/[Basic example], add the following code to an empty HTML file.
 
 [source,html]
 ----

@@ -111,27 +111,27 @@ This is a list of available keyboard shortcuts within the editor body.
 | Open the help dialog
 | Alt+0
 | Option+0
-| link:{{ site.baseurl }}/plugins/help/[help]
+| link:{baseurl}/plugins/help/[help]
 
 | Insert link
 | Ctrl+K
 | Command+K
-| link:{{ site.baseurl }}/plugins/link/[link]
+| link:{baseurl}/plugins/link/[link]
 
 | Toggle Fullscreen
 | Ctrl+Shift+F
 | Command+Shift+F
-| link:{{ site.baseurl }}/plugins/fullscreen/[fullscreen]
+| link:{baseurl}/plugins/fullscreen/[fullscreen]
 
 | Save
 | Ctrl+S
 | Command+S
-| link:{{ site.baseurl }}/plugins/save/[save]
+| link:{baseurl}/plugins/save/[save]
 
 | Find
 | Ctrl+F
 | Command+F
-| link:{{ site.baseurl }}/plugins/searchreplace/[searchreplace]
+| link:{baseurl}/plugins/searchreplace/[searchreplace]
 |===
 
 [#accessibility-keyboard-shortcuts]
@@ -208,15 +208,15 @@ NOTE: Browsers and Screen Readers provide additional shortcuts within the editor
 [#add-custom-shortcuts-to-tinymce]
 == Add custom shortcuts to TinyMCE
 
-IMPORTANT: Adding a custom shortcut with a keyboard combination that conflicts with an existing {{site.productname}} or browser shortcut will override the existing shortcut.
+IMPORTANT: Adding a custom shortcut with a keyboard combination that conflicts with an existing {productname} or browser shortcut will override the existing shortcut.
 
-To add a custom keyboard shortcut to {{site.productname}}, use either:
+To add a custom keyboard shortcut to {productname}, use either:
 
-* link:{{site.baseurl}}/api/tinymce/tinymce.editor/#addshortcut[The `tinymce.Editor.addShortcut` API].
-* link:{{site.baseurl}}/api/tinymce/tinymce.shortcuts/[The `tinymce.Shortcuts.add` API].
+* link:{baseurl}/api/tinymce/tinymce.editor/#addshortcut[The `tinymce.Editor.addShortcut` API].
+* link:{baseurl}/api/tinymce/tinymce.shortcuts/[The `tinymce.Shortcuts.add` API].
 
 [#include-miscshortcut-os-mappings-md]
-= {% include misc/shortcut-os-mappings.md %}
+= include::_includes/misc/shortcut-os-mappings.adoc[]
 
 [discrete#example-custom-keyboard-shortcut]
 === Example: Custom keyboard shortcut

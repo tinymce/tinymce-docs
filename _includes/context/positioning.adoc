@@ -1,8 +1,8 @@
 {% case page.title %}
   {% when "Context toolbar" %}
-    {% assign contextItemType = "toolbar" %}
+    :contextItemType: toolbar
   {% when "Context forms" %}
-    {% assign contextItemType = "form" %}
+    :contextItemType: form
 {% endcase %}
 +++<a class="anchor" id="positioningcontexttoolbars">++++++</a>++++++<a class="anchor" id="positioningcontextforms">++++++</a>+++
 

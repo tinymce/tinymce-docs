@@ -6,7 +6,7 @@
 
 The *link* plugin allows a user to link external resources such as website URLs, to selected text in their document.
 
-It adds two toolbar buttons called `link` and `unlink` and three menu items called `link`, `unlink` and `openlink`. The toolbar button and menu item called `link` are included in {{site.productname}}'s default configuration. The `link` menu item can be found in the `Insert` menu.
+It adds two toolbar buttons called `link` and `unlink` and three menu items called `link`, `unlink` and `openlink`. The toolbar button and menu item called `link` are included in {productname}'s default configuration. The `link` menu item can be found in the `Insert` menu.
 
 The *link* plugin also includes a context menu and context toolbar. The context toolbar can be configured using the <<link_context_toolbar,`link_context_toolbar`>> and <<link_quicklink,`link_quicklink`>> options documented below.
 
@@ -32,7 +32,7 @@ These settings affect the execution of the `link` plugin. Predefined links, targ
 
 This option allows you to set a default `target` value for links when inserting/editing a link via the link dialog. If the value of `default_link_target` matches a value specified by the <<target_list,`target_list`>> option, that item will be set as the default item for the targets dropdown in the link dialog.
 
-NOTE: This option also applies to the link:{{ site.baseurl }}/plugins/autolink[autolink] plugin.
+NOTE: This option also applies to the link:{baseurl}/plugins/autolink[autolink] plugin.
 
 *Type:* `String`
 
@@ -52,7 +52,7 @@ tinymce.init({
 [#-2]
 === `link_assume_external_targets`
 
-Set whether {{site.productname}} should prepend a `http://` prefix if the supplied URL does not contain a protocol prefix.
+Set whether {productname} should prepend a `http://` prefix if the supplied URL does not contain a protocol prefix.
 
 * `false`: users are prompted to prepend `http://` when the URL entered starts with `www` and does not have a protocol. Other URLs are added without prompt.
 * `true`: URLs are assumed to be external. Users are prompted to prepend a `http://` prefix when the protocol is not specified.
@@ -129,7 +129,7 @@ tinymce.init({
 
 This option allows you to set a default protocol for links when inserting/editing a link via the link dialog. The protocol will apply to any links where the protocol has not been specified and the prefix prompt has been accepted.
 
-NOTE: This option also applies to the link:{{ site.baseurl }}/plugins/autolink[autolink] plugin.
+NOTE: This option also applies to the link:{baseurl}/plugins/autolink[autolink] plugin.
 
 *Type:* `String`
 
@@ -188,7 +188,7 @@ tinymce.init({
 
 *Example of a custom asynchronous callback function*
 
-`link_list` can also take a function that is called when the link dialog is opened. {{site.productname}} passes this function a `success` callback function, which should be passed an array of link items. This allows for asynchronous and dynamic generation of the list of links.
+`link_list` can also take a function that is called when the link dialog is opened. {productname} passes this function a `success` callback function, which should be passed an array of link items. This allows for asynchronous and dynamic generation of the list of links.
 
 The following is an example of how `link_list` can be used with a callback function. `fetchLinkLists` could be replaced with any function that returns an array of link items. It can be used to generate a list of link items based on:
 
@@ -211,7 +211,7 @@ tinymce.init({
   toolbar: "link",
   link_list: function(success) { // called on link dialog open
     var links = fetchLinkList(); // get link_list data
-    success(links); // pass link_list data to {{site.productname}}
+    success(links); // pass link_list data to {productname}
   }
 });
 ```
@@ -340,4 +340,4 @@ tinymce.init({
 
 The Link plugin provides the following JavaScript command.
 
-{% include commands/link-cmds.md %}
+include::_includes/commands/link-cmds.adoc[]

@@ -3,7 +3,7 @@
 :experimental:
 :keywords: enterprise tinymcespellchecker spell check checker pro imagetools server
 
-The {{site.enterpriseversion}} server-side components can be deployed on Docker orchestration applications such as https://kubernetes.io/[Kubernetes], https://docs.docker.com/engine/swarm/[Docker Swarm], or https://www.openshift.com/[OpenShift]. {{site.companyname}} provides packages containing pre-configured https://docs.docker.com/engine/reference/builder/[`Dockerfiles`] for building and deploying the {{site.enterpriseversion}} server-side components using Docker.
+The {enterpriseversion} server-side components can be deployed on Docker orchestration applications such as https://kubernetes.io/[Kubernetes], https://docs.docker.com/engine/swarm/[Docker Swarm], or https://www.openshift.com/[OpenShift]. {companyname} provides packages containing pre-configured https://docs.docker.com/engine/reference/builder/[`Dockerfiles`] for building and deploying the {enterpriseversion} server-side components using Docker.
 
 *Outline*
 
@@ -13,7 +13,7 @@ The {{site.enterpriseversion}} server-side components can be deployed on Docker 
 [#containerized-services-for-self-hosted-enterprise-deployments]
 == Containerized services for Self-hosted Enterprise deployments
 
-The following sections assist with containerizing the {{ site.productname }} services for users with licenses to the Self-hosted {{site.productname}} Enterprise bundles:
+The following sections assist with containerizing the {productname} services for users with licenses to the Self-hosted {productname} Enterprise bundles:
 
 * The *Self-hosted Essential* bundle.
 * The *Self-hosted Professional* bundle.
@@ -31,7 +31,7 @@ The following sections assist with containerizing the {{ site.productname }} ser
 [#download-and-extract-the-tinymce-self-hosted-bundle]
 === Download and extract the TinyMCE Self-hosted Bundle
 
-. Go to menu:link:{{ site.accountpageurl }}[{{ site.accountpage }}][My Downloads] and download either:
+. Go to menu:link:{accountpageurl}[{accountpage}][My Downloads] and download either:
  ** The *Self-hosted Essential* bundle.
  ** The *Self-hosted Professional* bundle.
  ** The *Self-hosted Premium* bundle.
@@ -73,20 +73,20 @@ Proceed to setting up and deploying the containerized services:
 * For the Image Tools plugin service, see: <<deploythetinymceimageproxyserver-sidecomponentusingdockerself-hostedenterprisebundles,Deploy the TinyMCE image proxy server-side component using Docker (self-hosted enterprise bundles)>>.
 * For the Spell Checker Pro service, see: <<deploythetinymcespellingserviceserver-sidecomponentusingdockerself-hostedenterprisebundles,Deploy the TinyMCE spelling service server-side component using Docker (self-hosted enterprise bundles)>>.
 
-{% assign shbundledockerfiles = true %}
+:shbundledockerfiles: true
 
-{% include configuration/dockerized-hyperlinking-service.md %}
+include::_includes/configuration/dockerized-hyperlinking-service.adoc[]
 
-{% include configuration/dockerized-image-proxy.md %}
+include::_includes/configuration/dockerized-image-proxy.adoc[]
 
-{% include configuration/dockerized-spelling-service.md %}
+include::_includes/configuration/dockerized-spelling-service.adoc[]
 
-{% assign shbundledockerfiles = false %}
+:shbundledockerfiles: false
 
 [#containerized-services-for-individually-licensed-premium-plugins]
 == Containerized services for individually licensed premium plugins
 
-The following sections assist with containerizing the {{ site.productname }} services for users with licenses to self-hosted versions of:
+The following sections assist with containerizing the {productname} services for users with licenses to self-hosted versions of:
 
 * https://apps.tiny.cloud/products/enhanced-media-embed/[_Tiny Enhanced Media Embed_]
 * https://apps.tiny.cloud/products/link-checker/[_Tiny Link Checker_]
@@ -97,6 +97,6 @@ Select from the following:
 * For the Tiny Enhanced Media Embed and Tiny Link Checker service, see: <<deploythetinymcehyperlinkingserver-sidecomponentusingdockerindividuallylicensed,Deploy the TinyMCE hyperlinking server-side component using Docker (individually licensed)>>.
 * For the Tiny Spell Checker Pro service, see: <<deploythetinymcespellingserviceserver-sidecomponentusingdockerindividuallylicensed,Deploy the TinyMCE spelling service server-side component using Docker (individually licensed)>>.
 
-{% include configuration/dockerized-hyperlinking-service.md %}
+include::_includes/configuration/dockerized-hyperlinking-service.adoc[]
 
-{% include configuration/dockerized-spelling-service.md %}
+include::_includes/configuration/dockerized-spelling-service.adoc[]

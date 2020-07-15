@@ -3,50 +3,50 @@
 :description_short: Learn how to create clean, maintainable and readable content.
 :title_nav: Content filtering options
 
-{% include configuration/allow-conditional-comments.md %}
+include::_includes/configuration/allow-conditional-comments.adoc[]
 
-{% include configuration/allow-html-in-named-anchor.md %}
+include::_includes/configuration/allow-html-in-named-anchor.adoc[]
 
-{% include configuration/allow-unsafe-link-target.md %}
+include::_includes/configuration/allow-unsafe-link-target.adoc[]
 
-{% include configuration/convert-fonts-to-spans.md %}
+include::_includes/configuration/convert-fonts-to-spans.adoc[]
 
-{% include configuration/custom-elements.md %}
+include::_includes/configuration/custom-elements.adoc[]
 
-{% include configuration/doctype.md %}
+include::_includes/configuration/doctype.adoc[]
 
-{% include configuration/element-format.md %}
+include::_includes/configuration/element-format.adoc[]
 
-{% include configuration/encoding.md %}
+include::_includes/configuration/encoding.adoc[]
 
-{% include configuration/entities.md %}
+include::_includes/configuration/entities.adoc[]
 
-{% include configuration/entity-encoding.md %}
+include::_includes/configuration/entity-encoding.adoc[]
 
-{% include configuration/extended-valid-elements.md %}
+include::_includes/configuration/extended-valid-elements.adoc[]
 
-{% include configuration/fix-list-elements.md %}
+include::_includes/configuration/fix-list-elements.adoc[]
 
-{% include configuration/forced-root-block.md %}
+include::_includes/configuration/forced-root-block.adoc[]
 
-{% include configuration/forced-root-block-attrs.md %}
+include::_includes/configuration/forced-root-block-attrs.adoc[]
 
-{% include configuration/invalid-elements.md %}
+include::_includes/configuration/invalid-elements.adoc[]
 
-{% include configuration/invalid-styles.md %}
+include::_includes/configuration/invalid-styles.adoc[]
 
-{% include configuration/keep-styles.md %}
+include::_includes/configuration/keep-styles.adoc[]
 
-{% include configuration/protect.md %}
+include::_includes/configuration/protect.adoc[]
 
-{% include configuration/remove-trailing-brs.md %}
+include::_includes/configuration/remove-trailing-brs.adoc[]
 
-{% include configuration/schema.md %}
+include::_includes/configuration/schema.adoc[]
 
-{% include configuration/valid-children.md %}
+include::_includes/configuration/valid-children.adoc[]
 
-{% include configuration/valid-classes.md %}
+include::_includes/configuration/valid-classes.adoc[]
 
-{% include configuration/valid-elements.md %}
+include::_includes/configuration/valid-elements.adoc[]
 
-{% include configuration/valid-styles.md %}
+include::_includes/configuration/valid-styles.adoc[]

@@ -1,16 +1,16 @@
 [#language]
 == language
 
-This option allows you to specify the language that {{site.productname}}'s user interface will appear in. That is, the toolbar buttons and menu items. By default, {{site.productname}} will use US English as the language of the interface.
+This option allows you to specify the language that {productname}'s user interface will appear in. That is, the toolbar buttons and menu items. By default, {productname} will use US English as the language of the interface.
 
 If you wish to use a language other than English, please follow these steps:
 
-. Download the language pack you wish to use link:{{site.gettiny}}/language-packages/[from here].
+. Download the language pack you wish to use link:{gettiny}/language-packages/[from here].
 . Unpack the language file into your `tinymce/langs` folder.
-. Set the link:{{ site.baseurl }}/configure/localization/#language[`language`] option in your {{site.productname}} configuration to the language code in the list below (which you'll also find on the language pack link:{{site.gettiny}}/language-packages/[download page].
-. Confirm that the language has been set successfully by loading {{site.productname}}.
+. Set the link:{baseurl}/configure/localization/#language[`language`] option in your {productname} configuration to the language code in the list below (which you'll also find on the language pack link:{gettiny}/language-packages/[download page].
+. Confirm that the language has been set successfully by loading {productname}.
 
-Please note, the language code you set in your {{site.productname}} configuration must match the filename of the language file. If the language file is not found, {{site.productname}} will not load.
+Please note, the language code you set in your {productname} configuration must match the filename of the language file. If the language file is not found, {productname} will not load.
 
 *Type:* `String`
 
@@ -32,11 +32,11 @@ The available language codes for use with this option are as follows:
 
 [cols="<,^,^"]
 |===
-| Language | Code | {{ site.cloudname }} /{{ site.newline }}{{ site.enterpriseversion }}
+| Language | Code | {cloudname} /{newline}{enterpriseversion}
 
 | Arabic
 | ar
-| {{ site.tick }}
+| {tick}
 
 | Arabic (Saudi Arabia)
 | ar_SA
@@ -52,7 +52,7 @@ The available language codes for use with this option are as follows:
 
 | Basque
 | eu
-| {{ site.tick }}
+| {tick}
 
 | Belarusian
 | be
@@ -68,31 +68,31 @@ The available language codes for use with this option are as follows:
 
 | Bulgarian (Bulgaria)
 | bg_BG
-| {{ site.tick }}
+| {tick}
 
 | Catalan
 | ca
-| {{ site.tick }}
+| {tick}
 
 | Chinese (China)
 | zh_CN
-| {{ site.tick }}
+| {tick}
 
 | Chinese (Taiwan)
 | zh_TW
-| {{ site.tick }}
+| {tick}
 
 | Croatian
 | hr
-| {{ site.tick }}
+| {tick}
 
 | Czech
 | cs
-| {{ site.tick }}
+| {tick}
 
 | Danish
 | da
-| {{ site.tick }}
+| {tick}
 
 | Divehi
 | dv
@@ -100,7 +100,7 @@ The available language codes for use with this option are as follows:
 
 | Dutch
 | nl
-| {{ site.tick }}
+| {tick}
 
 | English (Canada)
 | en_CA
@@ -120,11 +120,11 @@ The available language codes for use with this option are as follows:
 
 | Finnish
 | fi
-| {{ site.tick }}
+| {tick}
 
 | French (France)
 | fr_FR
-| {{ site.tick }}
+| {tick}
 
 | Gaelic, Scottish
 | gd
@@ -140,7 +140,7 @@ The available language codes for use with this option are as follows:
 
 | German
 | de
-| {{ site.tick }}
+| {tick}
 
 | German (Austria)
 | de_AT
@@ -148,11 +148,11 @@ The available language codes for use with this option are as follows:
 
 | Greek
 | el
-| {{ site.tick }} (Support added in {{site.productname}} 5.3)
+| {tick} (Support added in {productname} 5.3)
 
 | Hebrew (Israel)
 | he_IL
-| {{ site.tick }}
+| {tick}
 
 | Hindi (India)
 | hi_IN
@@ -160,7 +160,7 @@ The available language codes for use with this option are as follows:
 
 | Hungarian (Hungary)
 | hu_HU
-| {{ site.tick }}
+| {tick}
 
 | Icelandic (Iceland)
 | is_IS
@@ -168,15 +168,15 @@ The available language codes for use with this option are as follows:
 
 | Indonesian
 | id
-| {{ site.tick }}
+| {tick}
 
 | Italian
 | it
-| {{ site.tick }}
+| {tick}
 
 | Japanese
 | ja
-| {{ site.tick }}
+| {tick}
 
 | Kabyle
 | kab
@@ -184,7 +184,7 @@ The available language codes for use with this option are as follows:
 
 | Kazakh
 | kk
-| {{ site.tick }}
+| {tick}
 
 | Khmer (Cambodia)
 | km_KH
@@ -192,7 +192,7 @@ The available language codes for use with this option are as follows:
 
 | Korean (Korea)
 | ko_KR
-| {{ site.tick }}
+| {tick}
 
 | Kurdish
 | ku
@@ -228,11 +228,11 @@ The available language codes for use with this option are as follows:
 
 | Norwegian Bokmål (Norway)
 | nb_NO
-| {{ site.tick }}
+| {tick}
 
 | Persian
 | fa
-| {{ site.tick }}
+| {tick}
 
 | Persian (Iran)
 | fa_IR
@@ -240,23 +240,23 @@ The available language codes for use with this option are as follows:
 
 | Polish
 | pl
-| {{ site.tick }}
+| {tick}
 
 | Portuguese (Brazil)
 | pt_BR
-| {{ site.tick }}
+| {tick}
 
 | Portuguese (Portugal)
 | pt_PT
-| {{ site.tick }}
+| {tick}
 
 | Romanian
 | ro
-| {{ site.tick }}
+| {tick}
 
 | Russian
 | ru
-| {{ site.tick }}
+| {tick}
 
 | Serbian
 | sr
@@ -268,23 +268,23 @@ The available language codes for use with this option are as follows:
 
 | Slovak
 | sk
-| {{ site.tick }}
+| {tick}
 
 | Slovenian (Slovenia)
 | sl_SI
-| {{ site.tick }}
+| {tick}
 
 | Spanish
 | es
-| {{ site.tick }}
+| {tick}
 
 | Spanish (Mexico)
 | es_MX
-| {{ site.tick }}
+| {tick}
 
 | Swedish (Sweden)
 | sv_SE
-| {{ site.tick }}
+| {tick}
 
 | Tajik
 | tg
@@ -304,11 +304,11 @@ The available language codes for use with this option are as follows:
 
 | Thai (Thailand)
 | th_TH
-| {{ site.tick }}
+| {tick}
 
 | Turkish
 | tr
-| {{ site.tick }}
+| {tick}
 
 | Turkish (Turkey)
 | tr_TR
@@ -320,7 +320,7 @@ The available language codes for use with this option are as follows:
 
 | Ukrainian
 | uk
-| {{ site.tick }}
+| {tick}
 
 | Ukrainian (Ukraine)
 | uk_UA
@@ -339,4 +339,4 @@ The available language codes for use with this option are as follows:
 |
 |===
 
-If a language you need is not available, you may wish to translate it yourself. To contribute to translating {{site.productname}}, go to our https://www.transifex.com/projects/p/tinymce/[Transifex translation] page and sign up, then request to join a team or create a new team if your language are not listed.
+If a language you need is not available, you may wish to translate it yourself. To contribute to translating {productname}, go to our https://www.transifex.com/projects/p/tinymce/[Transifex translation] page and sign up, then request to join a team or create a new team if your language are not listed.

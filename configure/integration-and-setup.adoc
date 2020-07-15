@@ -3,30 +3,30 @@
 :description_short:
 :title_nav: Integration options
 
-{% include configuration/auto-focus.md %}
+include::_includes/configuration/auto-focus.adoc[]
 
-{% include configuration/base-url.md %}
+include::_includes/configuration/base-url.adoc[]
 
-{% include configuration/cache-suffix.md %}
+include::_includes/configuration/cache-suffix.adoc[]
 
-{% include configuration/content-security-policy.md %}
+include::_includes/configuration/content-security-policy.adoc[]
 
-{% include configuration/external-plugins.md %}
+include::_includes/configuration/external-plugins.adoc[]
 
-{% include configuration/hidden-input.md %}
+include::_includes/configuration/hidden-input.adoc[]
 
-{% include configuration/init-instance-callback.md %}
+include::_includes/configuration/init-instance-callback.adoc[]
 
-{% include configuration/plugins.md %}
+include::_includes/configuration/plugins.adoc[]
 
-{% include configuration/readonly.md %}
+include::_includes/configuration/readonly.adoc[]
 
-{% include configuration/referrer_policy.md %}
+include::_includes/configuration/referrer_policy.adoc[]
 
-{% include configuration/selector.md %}
+include::_includes/configuration/selector.adoc[]
 
-{% include configuration/setup.md %}
+include::_includes/configuration/setup.adoc[]
 
-{% include configuration/suffix.md %}
+include::_includes/configuration/suffix.adoc[]
 
-{% include configuration/target.md %}
+include::_includes/configuration/target.adoc[]

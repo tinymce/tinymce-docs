@@ -26,7 +26,7 @@ tinymce.init({
 [#]
 === `nonbreaking_force_tab`
 
-This option allows you to force {{site.productname}} to insert three `+&nbsp;+` entities when the user presses the keyboard `tab` key.
+This option allows you to force {productname} to insert three `+&nbsp;+` entities when the user presses the keyboard `tab` key.
 
 It's important to note that this does not change the behavior of the menu and toolbar controls, which will continue to insert a single `&nbsp` entity when `nonbreaking_force_tab` value is `true`.
 
@@ -84,7 +84,7 @@ tinymce.init({
 [#-2]
 === `nonbreaking_wrap`
 
-This option allows you to force {{site.productname}} to wrap non-breaking space characters inserted by the plugin in a `<span class="mce-nbsp-wrap"></span>` element. This will prevent the non-breaking space being replaced by the editor or browser when typing additional spaces.
+This option allows you to force {productname} to wrap non-breaking space characters inserted by the plugin in a `<span class="mce-nbsp-wrap"></span>` element. This will prevent the non-breaking space being replaced by the editor or browser when typing additional spaces.
 
 *Type:* `Boolean`
 
@@ -110,4 +110,4 @@ tinymce.init({
 
 The Nonbreaking Space plugin provides the following JavaScript command.
 
-{% include commands/nbsp-cmds.md %}
+include::_includes/commands/nbsp-cmds.adoc[]

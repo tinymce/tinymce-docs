@@ -4,9 +4,9 @@
 :keywords: code advcode codemirror
 :title_nav: Advanced Code Editor
 
-{{site.premiumplugin}}
+{premiumplugin}
 
-This plugin adds a toolbar button that allows a user to edit the HTML code using a more advanced link:{{ site.baseurl }}/enterprise/advcode/[code editor] than the default textarea.
+This plugin adds a toolbar button that allows a user to edit the HTML code using a more advanced link:{baseurl}/enterprise/advcode/[code editor] than the default textarea.
 
 If you are using Advanced Code Editor `advcode` plugin, make sure you do not use Code `code` plugin.
 
@@ -26,4 +26,4 @@ tinymce.init({
 
 The Advanced Code plugin provides the following JavaScript command.
 
-{% include commands/code-cmds.md %}
+include::_includes/commands/code-cmds.adoc[]

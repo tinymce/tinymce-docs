@@ -101,11 +101,11 @@ tinymce.init({
 });
 `
 
-{% include configuration/ref-time-date-formats.md %}
+include::_includes/configuration/ref-time-date-formats.adoc[]
 
 [#commands]
 == Commands
 
 The Insert Date/Time plugin provides the following JavaScript commands.
 
-{% include commands/insertdatetime-cmds.md %}
+include::_includes/commands/insertdatetime-cmds.adoc[]

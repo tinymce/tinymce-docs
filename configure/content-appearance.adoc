@@ -3,24 +3,24 @@
 :description_short:
 :title_nav: Content appearance options
 
-{% include configuration/body-class.md %}
+include::_includes/configuration/body-class.adoc[]
 
-{% include configuration/body-id.md %}
+include::_includes/configuration/body-id.adoc[]
 
-{% include configuration/content-css.md %}
+include::_includes/configuration/content-css.adoc[]
 
-{% include configuration/content-css-cors.md %}
+include::_includes/configuration/content-css-cors.adoc[]
 
-{% include configuration/content-style.md %}
+include::_includes/configuration/content-style.adoc[]
 
-{% include configuration/inline-boundaries.md %}
+include::_includes/configuration/inline-boundaries.adoc[]
 
-{% include configuration/inline-boundaries-selector.md %}
+include::_includes/configuration/inline-boundaries-selector.adoc[]
 
-{% include configuration/text-color.md %}
+include::_includes/configuration/text-color.adoc[]
 
-{% include configuration/visual.md %}
+include::_includes/configuration/visual.adoc[]
 
-{% include configuration/visual-anchor-class.md %}
+include::_includes/configuration/visual-anchor-class.adoc[]
 
-{% include configuration/visual-table-class.md %}
+include::_includes/configuration/visual-table-class.adoc[]

@@ -3,20 +3,20 @@
 :description_short:
 :title_nav: Image &amp; file upload options
 
-{% include configuration/automatic-uploads.md %}
+include::_includes/configuration/automatic-uploads.adoc[]
 
-{% include configuration/file-picker-callback.md %}
+include::_includes/configuration/file-picker-callback.adoc[]
 
-{% include configuration/file-picker-types.md %}
+include::_includes/configuration/file-picker-types.adoc[]
 
-{% include configuration/images-dataimg-filter.md %}
+include::_includes/configuration/images-dataimg-filter.adoc[]
 
-{% include configuration/images-upload-reuse-filename.md %}
+include::_includes/configuration/images-upload-reuse-filename.adoc[]
 
-{% include configuration/images-upload-base-path.md %}
+include::_includes/configuration/images-upload-base-path.adoc[]
 
-{% include configuration/images-upload-credentials.md %}
+include::_includes/configuration/images-upload-credentials.adoc[]
 
-{% include configuration/images-upload-handler.md %}
+include::_includes/configuration/images-upload-handler.adoc[]
 
-{% include configuration/images-uploads-url.md %}
+include::_includes/configuration/images-uploads-url.adoc[]

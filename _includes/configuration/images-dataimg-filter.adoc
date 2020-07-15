@@ -1,9 +1,9 @@
 [#images_dataimg_filter]
 == images_dataimg_filter
 
-IMPORTANT: This option was deprecated with the release of {{site.productname}} 5.3. `images_dataimg_filter` may be removed in a future release of {{site.productname}}.
+IMPORTANT: This option was deprecated with the release of {productname} 5.3. `images_dataimg_filter` may be removed in a future release of {productname}.
 
-The *images_dataimg_filter* option is used to filter `<img>` elements before they are passed to link:{{site.baseurl}}/configure/file-image-upload/#images_upload_handler[`image_upload_handler`] or link:{{site.baseurl}}/configure/file-image-upload/#images_upload_url[`images_upload_url`]. If the callback function provided returns `false` for an image, the image will not be uploaded.
+The *images_dataimg_filter* option is used to filter `<img>` elements before they are passed to link:{baseurl}/configure/file-image-upload/#images_upload_handler[`image_upload_handler`] or link:{baseurl}/configure/file-image-upload/#images_upload_url[`images_upload_url`]. If the callback function provided returns `false` for an image, the image will not be uploaded.
 
 *Type:* `JavaScript Function`
 
@@ -20,4 +20,4 @@ tinymce.init({
 });
 `
 
-NOTE: The `images_dataimg_filter` option can also be used to specify a filter predicate function for disabling the logic that converts base64 images into blobs while within the editor. {{site.companyname}} discourages using `images_dataimg_filter` for this purpose.
+NOTE: The `images_dataimg_filter` option can also be used to specify a filter predicate function for disabling the logic that converts base64 images into blobs while within the editor. {companyname} discourages using `images_dataimg_filter` for this purpose.

@@ -4,7 +4,7 @@
 :title_nav: Context forms
 
 A context form consists of an input field, and a series of related buttons. Context forms can be shown wherever a context toolbar can be shown. Also, when a context form is registered containing a `launch` configuration, a special context toolbar button with name `+form:${name}+` is registered which will launch that particular context form.
-Context forms are a generalisation of the `Insert Link` form that existed in the original link:{{site.url}}/docs-4x/themes/inlite/#quicklink[inlite] theme from TinyMCE 4.
+Context forms are a generalisation of the `Insert Link` form that existed in the original link:{url}/docs-4x/themes/inlite/#quicklink[inlite] theme from TinyMCE 4.
 
 [#registering-a-context-form]
 === Registering a context form
@@ -67,7 +67,7 @@ This relates to the form itself. The form specifications are:
 | This is a list of the items to show in the context form. They can be either `contextformbutton` or `contextformtogglebutton`.
 |===
 
-{% include context/positioning.md %}
+include::_includes/context/positioning.adoc[]
 
 [#context-form-buttons]
 === Context form buttons
@@ -118,7 +118,7 @@ The definition of a context form button is very similar to the definition of a n
 | icon
 | string;
 | Optional
-| {{site.predefinedIconsOnly}}
+| {predefinedIconsOnly}
 
 | onSetup
 | (togglebuttonApi) \=> (togglebuttonApi) \=> void;
@@ -172,7 +172,7 @@ The context form toggle button is very similar to the a normal toolbar toggle bu
 | icon
 | string;
 | Optional
-| {{site.predefinedIconsOnly}}
+| {predefinedIconsOnly}
 
 | onSetup
 | (togglebuttonApi) \=> (togglebuttonApi) \=> void;
@@ -204,4 +204,4 @@ This example shows how the link plugin adds the standard link context form. The 
 
 {% include codepen.html id="context-form" height="400" tab="js" %}
 
-{% include context/priority.md %}
+include::_includes/context/priority.adoc[]

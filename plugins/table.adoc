@@ -4,7 +4,7 @@
 :keywords: row cell column table_appearance_options table_clone_elements table_grid table_tab_navigation table_default_attributes table_default_styles table_class_list table_cell_class_list table_row_class_list table_advtab table_cell_advtab table_row_advtab
 :title_nav: Table
 
-The `table` plugin adds table management functionality to {{site.productname}}. It also adds a new menubar item `Table` with various options in its dropdown including `Insert table` and options to modify cells, rows and columns, and a toolbar button with the same functionality.
+The `table` plugin adds table management functionality to {productname}. It also adds a new menubar item `Table` with various options in its dropdown including `Insert table` and options to modify cells, rows and columns, and a toolbar button with the same functionality.
 
 *Type:* `String`
 
@@ -36,7 +36,7 @@ To disable the table toolbar, set the value to an empty string.
 
 *Default Value:* `'tableprops tabledelete | tableinsertrowbefore tableinsertrowafter tabledeleterow | tableinsertcolbefore tableinsertcolafter tabledeletecol'`
 
-*Possible Values:* Any toolbar button. For a list of predefined toolbar buttons, see: link:{{site.baseurl}}/advanced/editor-control-identifiers/#toolbarcontrols[Editor control identifiers - Toolbar controls].
+*Possible Values:* Any toolbar button. For a list of predefined toolbar buttons, see: link:{baseurl}/advanced/editor-control-identifiers/#toolbarcontrols[Editor control identifiers - Toolbar controls].
 
 [discrete#example-default-table_toolbar-configuration]
 ===== Example: Default table_toolbar configuration
@@ -109,7 +109,7 @@ This option allows you to disable the grid-like table picker in the Table menu. 
 
 However, if `table_grid` is set to `false` the table picker will be replaced by a menu item that opens a dialog that users can use to insert a table. This dialog allows users to set various parameters such as the number of columns and rows, width, height, cell spacing and padding, border width, alignment, and whether to display a caption. There are also advanced style options available if `table_advtab` is set to `true`.
 
-NOTE: To configure the Table menu to include both the table picker and the table dialog menu items, set `table_grid` to `true` and configure link:{{ site.baseurl}}/configure/editor-appearance/#menu[`menu`] to include both the `inserttable` and `inserttabledialog` menu items.
+NOTE: To configure the Table menu to include both the table picker and the table dialog menu items, set `table_grid` to `true` and configure link:{baseurl}/configure/editor-appearance/#menu[`menu`] to include both the `inserttable` and `inserttabledialog` menu items.
 
 *Type:* `Boolean`
 
@@ -117,7 +117,7 @@ NOTE: To configure the Table menu to include both the table picker and the table
 
 *Possible Values:*  `true`, `false`
 
-{{site.differs_for_mobile}}
+{differs_for_mobile}
 
 [discrete#example-2]
 ===== Example
@@ -451,7 +451,7 @@ tinymce.init({
 });
 `
 
-NOTE: The advanced tabs of the table, row, and cell properties dialogs use the `colorpicker` to allow for border and background colors to be applied. See docs to use and configure a custom link:{{site.baseurl}}/plugins/colorpicker/[colorpicker].
+NOTE: The advanced tabs of the table, row, and cell properties dialogs use the `colorpicker` to allow for border and background colors to be applied. See docs to use and configure a custom link:{baseurl}/plugins/colorpicker/[colorpicker].
 
 [#api]
 === API
@@ -503,4 +503,4 @@ tinymce.activeEditor.plugins.table.insertTable(2, 3);
 
 The Table plugin provides the following JavaScript commands.
 
-{% include commands/table-cmds.md %}
+include::_includes/commands/table-cmds.adoc[]

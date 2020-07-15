@@ -3,6 +3,6 @@
 :description_short: Learn how to create clean, maintainable and readable content.
 :title_nav: Content formatting options
 
-{% include configuration/formats.md %}
+include::_includes/configuration/formats.adoc[]
 
-{% include configuration/indentation.md %}
+include::_includes/configuration/indentation.adoc[]

@@ -3,5 +3,5 @@
 :meta_title: Documentation
 :type: index
 
-{% assign fullNav = site.data.nav | concat: site.data.nav_api %}
+:fullNav: site.data.nav | concat: site.data.nav_api
 {% include index.html links=fullNav %}

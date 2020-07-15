@@ -5,16 +5,16 @@
 [#overview]
 == Overview
 
-Support for {{site.productname}} Enterprise, is provided online via the {{site.supportname}} site.  You can access the support site at: link:{{site.supporturl}}[{{site.supporturl}}].
+Support for {productname} Enterprise, is provided online via the {supportname} site.  You can access the support site at: link:{supporturl}[{supporturl}].
 
-Prior to opening a support ticket, we require all users to register with a valid business email address. You can register on the support site at: link:{{site.supporturl}}/registration[{{site.supporturl}}/registration]. Upon registration you will receive an email requesting that you validate your registration. If you don't receive such a request within 5 minutes please check your spam folder to see if the email ended up there in error. If you never receive the validation email please contact the link:mailto:clientservices@tiny.cloud[{{site.companyname}} Client Services team via email].
+Prior to opening a support ticket, we require all users to register with a valid business email address. You can register on the support site at: link:{supporturl}/registration[{supporturl}/registration]. Upon registration you will receive an email requesting that you validate your registration. If you don't receive such a request within 5 minutes please check your spam folder to see if the email ended up there in error. If you never receive the validation email please contact the link:mailto:clientservices@tiny.cloud[{companyname} Client Services team via email].
 
 [#creating-a-support-ticket]
 === Creating a support ticket
 
-Once you are registered on the site you will be able to interact with the {{site.supportname}} team via our support site.  To create a new ticket simply go to the following URL: link:{{site.supporturl}}[{{site.supporturl}}].
+Once you are registered on the site you will be able to interact with the {supportname} team via our support site.  To create a new ticket simply go to the following URL: link:{supporturl}[{supporturl}].
 
-Note that {{site.supportname}} requires that you provide the following information along with your ticket:
+Note that {supportname} requires that you provide the following information along with your ticket:
 
 [#tinymce-enterprise-editor-client-issues]
 ==== TinyMCE Enterprise Editor Client Issues
@@ -27,4 +27,4 @@ Note that {{site.supportname}} requires that you provide the following informati
 ==== TinyMCE Enterprise Server Components Issues
 
 * Server type and version (eg. Jetty, Tomcat)
-* Server log - This will be available either on the system.out log for the server or in a separate file if you've configured the optional logging parameters for {{site.productname}} Enterprise on you server(s).
+* Server log - This will be available either on the system.out log for the server or in a separate file if you've configured the optional logging parameters for {productname} Enterprise on you server(s).

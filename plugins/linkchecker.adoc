@@ -3,14 +3,14 @@
 :keywords: url urls link linkchecker_service_url linkchecker_content_css
 :title_nav: Link Checker
 
-{{site.premiumplugin}}
+{premiumplugin}
 
 The `linkchecker` plugin does what it says &ndash; validates URLs, as you type them. URLs considered invalid will be highlighted with red and will have a dedicated context menu with options to either edit the link, try and open it in a separate tab, remove the link, or ignore it.
 
 [#cloud-instructions]
 == Cloud Instructions
 
-If you are using link:{{ site.baseurl }}/cloud-deployment-guide/editor-and-features/[{{site.cloudname}}], simply add `"linkchecker"` to your plugins list, and the service will be automatically configured.
+If you are using link:{baseurl}/cloud-deployment-guide/editor-and-features/[{cloudname}], simply add `"linkchecker"` to your plugins list, and the service will be automatically configured.
 
 [discrete#example]
 ===== Example

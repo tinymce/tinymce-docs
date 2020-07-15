@@ -4,7 +4,7 @@
 :keywords: sidebar
 :title_nav: Custom sidebar
 
-{{site.productname}} allows developers to create sidebars and add custom UI widgets inside a constrained and easily accessible area of the editor. The sidebar is designed to allow administrators and plugin developers to provide additional tools that can be accessed by {{site.productname}} users.
+{productname} allows developers to create sidebars and add custom UI widgets inside a constrained and easily accessible area of the editor. The sidebar is designed to allow administrators and plugin developers to provide additional tools that can be accessed by {productname} users.
 
 [#editor-sidebar-api]
 == Editor sidebar API
@@ -13,7 +13,7 @@ The sidebar API allows developers to add sidebars on editor instances in a simil
 
 This is the syntax for the addSidebar function: `editor.ui.registry.addSidebar(name:String, spec:Object)`
 
-When a new sidebar is registered, a corresponding toolbar button for toggling the sidebar open and close is also created using the same name. This button can then be included in the toolbar by adding the sidebar name to the link:{{site.baseurl}}/configure/editor-appearance/#toolbar/[`toolbar`] option.
+When a new sidebar is registered, a corresponding toolbar button for toggling the sidebar open and close is also created using the same name. This button can then be included in the toolbar by adding the sidebar name to the link:{baseurl}/configure/editor-appearance/#toolbar/[`toolbar`] option.
 
 [#specification-object]
 === Specification object
@@ -28,7 +28,7 @@ The `tooltip` specifies a tooltip to be displayed when hovering over the sidebar
 [#-2]
 ==== `icon`
 
-The `icon` specifies an icon for the sidebar toggle button. The icon should be the name of an icon provided by the {{site.productname}} skin or a link:{{site.baseurl}}/api/tinymce.editor.ui/tinymce.editor.ui.registry/#addicon/[custom icon].
+The `icon` specifies an icon for the sidebar toggle button. The icon should be the name of an icon provided by the {productname} skin or a link:{baseurl}/api/tinymce.editor.ui/tinymce.editor.ui.registry/#addicon/[custom icon].
 
 *Type*: `String`
 

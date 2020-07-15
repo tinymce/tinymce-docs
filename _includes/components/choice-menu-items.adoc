@@ -1,7 +1,7 @@
 [#choice-menu-items]
 ==== Choice menu items
 
-Choice menu items are a special type of menu item used for split toolbar button menu items. For information on split buttons, see: link:{{site.baseurl}}/ui-components/typesoftoolbarbuttons/#splitbutton[Split toolbar buttons].
+Choice menu items are a special type of menu item used for split toolbar button menu items. For information on split buttons, see: link:{baseurl}/ui-components/typesoftoolbarbuttons/#splitbutton[Split toolbar buttons].
 
 [#config-options]
 ===== Config options
@@ -17,7 +17,7 @@ Choice menu items are a special type of menu item used for split toolbar button 
 | icon
 | string
 | optional
-| {{site.predefinedIconsOnly}}
+| {predefinedIconsOnly}
 
 | value
 | string
@@ -35,10 +35,10 @@ Choice menu items are a special type of menu item used for split toolbar button 
 | Sets a keyboard shortcut for activating the menu item, such as: `shortcut: 'Ctrl+Alt+Delete'`. For information on available shortcut modifiers, see: <<shortcutmodifierkeymappings,Shortcut modifier key mappings>>.
 |===
 
-NOTE: The `icon` option for choice menu items was added in {{site.productname}} 5.3.
+NOTE: The `icon` option for choice menu items was added in {productname} 5.3.
 
 [#include-miscshortcut-os-mappings-md]
-==== {% include misc/shortcut-os-mappings.md %}
+==== include::_includes/misc/shortcut-os-mappings.adoc[]
 
 [#api]
 ===== API
@@ -63,4 +63,4 @@ NOTE: The `icon` option for choice menu items was added in {{site.productname}} 
 | Sets the menu item's disabled state.
 |===
 
-For an example of how choice menu items are used in split toolbar buttons, see: link:{{site.baseurl}}/ui-components/typesoftoolbarbuttons/#splitbuttonexampleandexplanation[Split button example and explanation].
+For an example of how choice menu items are used in split toolbar buttons, see: link:{baseurl}/ui-components/typesoftoolbarbuttons/#splitbuttonexampleandexplanation[Split button example and explanation].

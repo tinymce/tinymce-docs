@@ -3,8 +3,8 @@
 :description_short:
 :title_nav: Spelling options
 
-{% include configuration/spell-checker-pro.md %}
+include::_includes/configuration/spell-checker-pro.adoc[]
 
-{% include configuration/browser-spellcheck.md %}
+include::_includes/configuration/browser-spellcheck.adoc[]
 
-{% include configuration/gecko-spellcheck.md %}
+include::_includes/configuration/gecko-spellcheck.adoc[]

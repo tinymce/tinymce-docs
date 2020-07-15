@@ -17,12 +17,12 @@ The context menu supports both individual menu items and dynamic context menu se
 == Options
 
 [#include-configurationcontextmenu-md]
-= {% include configuration/contextmenu.md %}
+= include::_includes/configuration/contextmenu.adoc[]
 
 [#include-configurationcontextmenu_never_use_native-md]
-= {% include configuration/contextmenu_never_use_native.md %}
+= include::_includes/configuration/contextmenu_never_use_native.adoc[]
 
-{% include configuration/available-context-menu-sections.md %}
+include::_includes/configuration/available-context-menu-sections.adoc[]
 
 [#registering-context-menu-sections]
 == Registering context menu sections

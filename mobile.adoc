@@ -3,40 +3,40 @@
 :keywords: mobile tablet
 :title_nav: Mobile
 
-{{site.productname}} {{site.productminorversion}} provides an improved mobile editor, replacing the existing mobile editor with a touch friendly version on the silver theme.
+{productname} {productminorversion} provides an improved mobile editor, replacing the existing mobile editor with a touch friendly version on the silver theme.
 
-The new mobile experience comes with a number of user interface changes in addition to the {{site.productname}} "desktop" experience:
+The new mobile experience comes with a number of user interface changes in addition to the {productname} "desktop" experience:
 
 * Mobile devices now use the `silver` theme.
 * Horizontal contextual menus on mobile.
 * Side-scrolling toolbars  and contextual menus on mobile.
-* Contextual keyboard settings for dialogs using link:{{site.baseurl}}/ui-components/dialogcomponents/#inputmode[`inputMode`].
+* Contextual keyboard settings for dialogs using link:{baseurl}/ui-components/dialogcomponents/#inputmode[`inputMode`].
 * <<mobiledefaultsforselectedsettings,Mobile defaults for selected settings>>.
 * Table cell selection on mobile.
 
-The new mobile experience allows most of the {{site.productname}} plugins to work on mobile devices, except for:
+The new mobile experience allows most of the {productname} plugins to work on mobile devices, except for:
 
-* link:{{site.baseurl}}/plugins/comments/[Comments].
-* link:{{site.baseurl}}/plugins/imagetools/[Image tools].
-* link:{{site.baseurl}}/plugins/moxiemanager/[MoxieManager].
-* link:{{site.baseurl}}/plugins/permanentpen/[Permanent Pen].
+* link:{baseurl}/plugins/comments/[Comments].
+* link:{baseurl}/plugins/imagetools/[Image tools].
+* link:{baseurl}/plugins/moxiemanager/[MoxieManager].
+* link:{baseurl}/plugins/permanentpen/[Permanent Pen].
 
-{{site.productname}} will detect the platform and show an optimal UI experience based on the device type and screen size.
+{productname} will detect the platform and show an optimal UI experience based on the device type and screen size.
 
-NOTE: iPads do not use the `mobile` part of the {{site.productname}} init configuration. This is due to a constraint added by Apple to return the environment as a "desktop environment" for iPads. iPads users will receive the other changes to touch functionality, such as context toolbars and context menus.
+NOTE: iPads do not use the `mobile` part of the {productname} init configuration. This is due to a constraint added by Apple to return the environment as a "desktop environment" for iPads. iPads users will receive the other changes to touch functionality, such as context toolbars and context menus.
 
-{% include misc/mobile_platform_compatibility.md %}
+include::_includes/misc/mobile_platform_compatibility.adoc[]
 
 [#configuring-mobile]
 == Configuring mobile
 
-Add the following `meta` tag to the `head` of pages using {{site.productname}} to ensure the mobile user interface functions as intended.
+Add the following `meta` tag to the `head` of pages using {productname} to ensure the mobile user interface functions as intended.
 
 ```html+++<meta name="viewport" content="width=device-width, initial-scale=1">++++++</meta>+++
 
 ```
 
-To set mobile specific settings, add the setting to the link:{{site.baseurl}}/docs/configure/editor-appearance/#mobile[`mobile`] configuration, such as:
+To set mobile specific settings, add the setting to the link:{baseurl}/docs/configure/editor-appearance/#mobile[`mobile`] configuration, such as:
 
 `js
 tinymce.init({
@@ -54,32 +54,32 @@ These mobile-specific default values have been set to disable unsupported settin
 
 The following settings have mobile-specific default values:
 
-* link:{{site.baseurl}}/configure/editor-appearance/#menubar[`menubar`] - defaults to `false` on mobile phones.
-* link:{{site.baseurl}}/configure/editor-appearance/#toolbar_mode[`toolbar_mode`] - defaults to `scrolling` on mobile devices. The toolbar will <<sidescrollingtoolbarsonmobile,side-scroll by default>>.
-* link:{{site.baseurl}}/configure/editor-appearance/#toolbar_sticky[`toolbar_sticky`] - Sticky Toolbar is not supported on mobile devices and defaults to `false`.
-* link:{{site.baseurl}}/plugins/table/#table_grid[`table_grid`] - Table grid is not supported on mobile devices and defaults to `false`. When creating tables on mobile, a dialog is shown instead of the table grid.
-* link:{{site.baseurl}}/configure/editor-appearance/#resize[`resize`] - Resizing is not supported on mobile devices and defaults to `false`.
-* link:{{site.baseurl}}/configure/advanced-editing-behavior/#object_resizing[`object_resizing`] - Object resizing is not supported on mobile devices and defaults to `false`.
+* link:{baseurl}/configure/editor-appearance/#menubar[`menubar`] - defaults to `false` on mobile phones.
+* link:{baseurl}/configure/editor-appearance/#toolbar_mode[`toolbar_mode`] - defaults to `scrolling` on mobile devices. The toolbar will <<sidescrollingtoolbarsonmobile,side-scroll by default>>.
+* link:{baseurl}/configure/editor-appearance/#toolbar_sticky[`toolbar_sticky`] - Sticky Toolbar is not supported on mobile devices and defaults to `false`.
+* link:{baseurl}/plugins/table/#table_grid[`table_grid`] - Table grid is not supported on mobile devices and defaults to `false`. When creating tables on mobile, a dialog is shown instead of the table grid.
+* link:{baseurl}/configure/editor-appearance/#resize[`resize`] - Resizing is not supported on mobile devices and defaults to `false`.
+* link:{baseurl}/configure/advanced-editing-behavior/#object_resizing[`object_resizing`] - Object resizing is not supported on mobile devices and defaults to `false`.
 
 [#unsupported-settings-for-mobile]
 === Unsupported settings for mobile
 
 The following settings are not supported on mobile devices:
 
-* link:{{site.baseurl}}/general-configuration-guide/use-tinymce-inline/[Inline editing mode].
-* link:{{site.baseurl}}/general-configuration-guide/use-tinymce-distraction-free/[Distraction-free editing mode].
-* link:{{site.baseurl}}/configure/editor-appearance/#inline[`inline`].
-* link:{{site.baseurl}}/configure/editor-appearance/#toolbar_sticky[`toolbar_sticky`].
-* link:{{site.baseurl}}/plugins/table/#table_grid[`table_grid`].
-* link:{{site.baseurl}}/configure/editor-appearance/#resize[`resize`].
-* link:{{site.baseurl}}/configure/advanced-editing-behavior/#object_resizing[`object_resizing`].
+* link:{baseurl}/general-configuration-guide/use-tinymce-inline/[Inline editing mode].
+* link:{baseurl}/general-configuration-guide/use-tinymce-distraction-free/[Distraction-free editing mode].
+* link:{baseurl}/configure/editor-appearance/#inline[`inline`].
+* link:{baseurl}/configure/editor-appearance/#toolbar_sticky[`toolbar_sticky`].
+* link:{baseurl}/plugins/table/#table_grid[`table_grid`].
+* link:{baseurl}/configure/editor-appearance/#resize[`resize`].
+* link:{baseurl}/configure/advanced-editing-behavior/#object_resizing[`object_resizing`].
 
 [#the-legacy-mobile-theme]
 == The legacy mobile theme
 
-The mobile experience provided for {{site.productname}} 4.7 through {{site.productname}} 5.0 has been deprecated as of {{site.productname}} 5.1.
+The mobile experience provided for {productname} 4.7 through {productname} 5.0 has been deprecated as of {productname} 5.1.
 
-To revert to the legacy mobile theme, add the mobile theme to the {{site.productname}} configuration, such as:
+To revert to the legacy mobile theme, add the mobile theme to the {productname} configuration, such as:
 
 `js
 tinymce.init({
@@ -92,7 +92,7 @@ tinymce.init({
 [#legacy-mobile-theme-configuring-the-plugins]
 === Legacy mobile theme - configuring the plugins
 
-The plugins supported by legacy mobile theme are limited to the link:{{site.baseurl}}/plugins/autosave/[autosave], link:{{site.baseurl}}/plugins/autolink/[autolink], and link:{{site.baseurl}}/plugins/lists/[lists] plugins.
+The plugins supported by legacy mobile theme are limited to the link:{baseurl}/plugins/autosave/[autosave], link:{baseurl}/plugins/autolink/[autolink], and link:{baseurl}/plugins/lists/[lists] plugins.
 
 To add these plugins to the legacy mobile theme, add a plugin entry to the mobile section. For example:
 
@@ -126,7 +126,7 @@ tinymce.init({
 
 Below are the toolbar items supported for the legacy mobile theme, and the plugins/configuration required.
 
-NOTE: The `list` functions require the link:{{site.baseurl}}/plugins/lists/[lists] plugin and `styleselect` requires configuring link:{{site.baseurl}}/configure/editor-appearance/#style_formats[style_formats].
+NOTE: The `list` functions require the link:{baseurl}/plugins/lists/[lists] plugin and `styleselect` requires configuring link:{baseurl}/configure/editor-appearance/#style_formats[style_formats].
 
 |===
 | Name | Function | Plugins Required | Configuration
@@ -173,12 +173,12 @@ NOTE: The `list` functions require the link:{{site.baseurl}}/plugins/lists/[list
 
 | bullist
 | Insert an unordered list
-| link:{{ site.baseurl }}/plugins/lists[lists]
+| link:{baseurl}/plugins/lists[lists]
 |
 
 | numlist
 | Insert an ordered list
-| link:{{ site.baseurl }}/plugins/lists[lists]
+| link:{baseurl}/plugins/lists[lists]
 |
 
 | fontsizeselect
@@ -194,7 +194,7 @@ NOTE: The `list` functions require the link:{{site.baseurl}}/plugins/lists/[list
 | styleselect
 | Apply a custom style
 |
-| link:{{ site.baseurl }}/configure/editor-appearance/#style_formats[style_formats]
+| link:{baseurl}/configure/editor-appearance/#style_formats[style_formats]
 
 | removeformat
 | Removes any inline formatting

@@ -2,6 +2,3 @@
 :meta_description: Official documentation for the most advanced and widely deployed rich text editor platform.
 :meta_title: Documentation
 :type: index
-
-:fullNav: site.data.nav | concat: site.data.nav_api
-{% include index.html links=fullNav %}

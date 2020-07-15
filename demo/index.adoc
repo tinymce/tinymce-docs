@@ -3,12 +3,3 @@
 :redirect_from: ["/example/", "/examples/", "/tutorial/", "/tutorials/", "/example-tutorial/", "/try-tinymce/"]
 :title_nav: Examples
 :type: folder
-
-:navigaton: site.data.nav
-{% for entry in navigaton %}
-  {% if entry.url == "demo" %}
-    :links: entry.pages
-  {% endif %}
-{% endfor %}
-
-{% include index.html links=links %}

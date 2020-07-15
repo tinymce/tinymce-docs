@@ -2,12 +2,3 @@
 :keywords: releasenotes newfeatures deleted technologypreview bugfixes knownissues
 :title_nav: Release notes for TinyMCE 5
 :type: folder
-
-:navigaton: site.data.nav
-{% for entry in navigaton %}
-  {% if entry.url == "release-notes" %}
-    :links: entry.pages
-  {% endif %}
-{% endfor %}
-
-{% include index.html links=links %}

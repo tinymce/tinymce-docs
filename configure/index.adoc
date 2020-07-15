@@ -4,11 +4,3 @@
 :title_nav: Configuration reference
 :type: folder
 
-:navigaton: site.data.nav
-{% for entry in navigaton %}
-  {% if entry.url == "configure" %}
-    :links: entry.pages
-  {% endif %}
-{% endfor %}
-
-{% include index.html links=links %}

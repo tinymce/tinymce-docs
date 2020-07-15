@@ -1,0 +1,149 @@
+[#tinymce-react-integration-quick-start-guide]
+== TinyMCE React integration quick start guide
+
+The https://github.com/tinymce/tinymce-react[Official {{site.productname}} React component] integrates {{site.productname}} into React projects.
+This procedure creates a https://github.com/facebook/create-react-app[basic React application] containing a {{site.productname}} editor based on our link:{{site.baseurl}}/demo/basic-example/[Basic example].
+
+For examples of the {{site.productname}} integration, visit https://tinymce.github.io/tinymce-react/[the tinymce-react storybook].
+
+[#prerequisites]
+=== Prerequisites
+
+This procedure requires:
+* https://nodejs.org/[Node.js (and npm)].
+* Access to `tinymce.min.js` on either:
+
+....
+* [{{site.cloudname}}]({{site.baseurl}}/cloud-deployment-guide/editor-and-features/).
+* {{site.productname}} Self-hosted. See [Installing {{ site.productname }}]({{site.baseurl}}/general-configuration-guide/advanced-install/) for details on self-hosting {{site.productname}}.
+....
+
+[#procedure]
+=== Procedure
+
+. On a command line or command prompt, install the https://github.com/facebook/create-react-app[Create React App] package.
++
+`
+ $ npm install -g create-react-app
+`
+
+. Create a new React project named `tinymce-react-demo`.
++
+`
+ $ create-react-app tinymce-react-demo
+`
+
+. Change into the newly created directory.
++
+`
+ $ cd tinymce-react-demo
+`
+
+. Install the `tinymce-react` package and save it to your `package.json` with `--save`.
++
+`
+ $ npm install --save @tinymce/tinymce-react
+`
+
+. Using a text editor, open `/path/to/tinymce-react-demo/src/App.js` and replace the contents with:
++
+```js
+ import React from 'react';
+ import { Editor } from '@tinymce/tinymce-react';
++
+class App extends React.Component {
+   handleEditorChange = (content, editor) \=> {
+     console.log('Content was updated:', content);
+   }
++
+render() {
+     return (
+       <Editor
+         initialValue="<p>This is the initial content of the editor</p>"
+         init={% raw %}{{{% endraw %}
+           height: 500,
+           menubar: false,
+           plugins: [
+             'advlist autolink lists link image charmap print preview anchor',
+             'searchreplace visualblocks code fullscreen',
+             'insertdatetime media table paste code help wordcount'
+           ],
+           toolbar:
+             'undo redo | formatselect | bold italic backcolor | \
+             alignleft aligncenter alignright alignjustify | \
+             bullist numlist outdent indent | removeformat | help'
+         {% raw %}}}{% endraw %}
+         onEditorChange={this.handleEditorChange}
+       />
+     );
+   }
+ }
++
+export default App;
+ ```
+ This JavaScript file will create the class `App` containing a {{site.productname}} editor configured to replicate the example on the link:{{site.baseurl}}/demo/basic-example/[Basic example page].
+
+. Provide access to {{site.productname}} using {{site.cloudname}} or by self-hosting {{site.productname}}.
+ ** *{{site.cloudname}}*
++
+Include the `apiKey` option in the editor element and include your link:{{site.accountsignup}}[{{site.cloudname}} API key].
++
+Such as:
++
+`js
+  <Editor apiKey='your-api-key' init={% raw %}{{{% endraw %} /* your other settings */ {% raw %}}}{% endraw %} />
+ `
+
+ ** *{{site.productname}} Self-hosted*
++
+{{site.productname}} can be self-hosted by: deploying {{site.productname}} independent of the React application, or bundling {{site.productname}} with the React application.
+
+  *** *Deploy {{site.productname}} independent of the React application*
++
+To use an independent deployment of {{site.productname}}, add a script to either the `<head>` or the end of the `<body>` of the HTML file, such as:
+`html
+<script src="/path/to/tinymce.min.js"></script>
+`
++
+To use an independent deployment of {{site.productname}} with the create a React application, add the script to `/path/to/tinymce-react-demo/public/index.html`.
++
+For information on self-hosting {{site.productname}}, see: link:{{site.baseurl}}/general-configuration-guide/advanced-install/[Installing {{ site.productname }}].
+
+  *** *Bundling {{site.productname}} with the React application using a module loader*
++
+To bundle {{site.productname}} using a module loader (such as Webpack and Browserify), see: link:{{site.baseurl}}/advanced/usage-with-module-loaders/[Usage with module loaders].
+. Test the application using the Node.js development server.
+ ** To start the development server, navigate to the `tinymce-react-demo` directory and run:
++
+`
+  $ npm run start
+ `
+
+ ** To stop the development server, select on the command line or command prompt and press _Ctrl+C_.
+
+[#deploying-the-application-to-a-http-server]
+=== Deploying the application to a HTTP server.
+
+The application will require further configuration before it can be deployed to a production environment. For information on configuring the application for deployment, see: https://create-react-app.dev/docs/deployment[Create React App - Deployment].
+
+To deploy the application to a local HTTP Server:
+
+. Navigate to the `tinymce-react-demo` directory and run:
++
+`
+ $ npm run build
+`
+
+. Copy the contents of the `tinymce-react-demo/build` directory to the root directory of the web server.
+
+The application has now been deployed on the web server.
+
+NOTE: Additional configuration is required to deploy the application outside the web server root directory, such as \http://localhost:<port>/my_react_application.
+
+[#next-steps]
+=== Next Steps
+
+* For examples of the {{site.productname}} integration, see: https://tinymce.github.io/tinymce-react/[the tinymce-react storybook].
+* For information on customizing:
+ ** {{site.productname}}, see: link:{{site.baseurl}}/general-configuration-guide/basic-setup/[Basic setup].
+ ** The React application, see: https://create-react-app.dev/docs/getting-started[Create React App] or https://reactjs.org/docs/getting-started.html[the React documentation].

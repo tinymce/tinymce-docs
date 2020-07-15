@@ -1,0 +1,18 @@
+[#color_picker_callback]
+== color_picker_callback
+
+This option enables you to provide your own color picker.
+
+*Type:* `JavaScript Function`
+
+[discrete#example]
+===== Example
+
+`js
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  color_picker_callback: function(callback, value) {
+    callback('#FF00FF');
+  }
+});
+`

@@ -1,0 +1,43 @@
+[#fix_list_elements]
+== fix_list_elements
+
+This option enables you to specify that list elements (`ul`, `ol`) should be converted to valid XHTML. This option is disabled by default since it causes some glitches with a few browsers.
+
+This invalid list:
+
+```html
+
+. a
+ .. b
+ .. c
+
+. e
+
+```
+
+Gets converted into this valid list:
+
+```html
+
+. a
+ .. b
+ .. c
+. e
+
+```
+
+*Type:* `Boolean`
+
+*Default Value:* `false`
+
+*Possible Values:* `true`, `false`
+
+[discrete#example]
+===== Example
+
+`js
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  fix_list_elements : true
+});
+`

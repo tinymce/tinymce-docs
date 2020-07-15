@@ -1,0 +1,58 @@
+= Installing TinyMCE
+:description: Learn how to install TinyMCE via TinyMCE Cloud, package manager options, Self-hosted, jQuery and custom build options.
+:description_short: Cloud, package managers, Self-hosted, jQuery and custom builds.
+:keywords: npm bower composer nuget
+:title_nav: Options for installing TinyMCE
+
+There are multiple ways to instantiate {{site.productname}}. Accessing {{site.productname}} through {{site.cloudname}} may not be the best use case for different deployment scenarios. This section explains additional installation options including package managers, self-hosted download, and other custom build options.
+
+* <<cloudinstall,{{site.cloudname}}>>
+* <<packagemanagerinstalloptions,Package Managers>>
+* <<self-hostedinstall,Self-Hosted Download / Install>>
+* <<custombuildinstall,Custom Build>>
+
+[#cloud-install]
+== Cloud Install
+
+{% include install/cloud.md %}
+
+[#package-manager-install-options]
+== Package Manager Install Options
+
+* <<npm,NPM>>
+* <<bower,Bower>>
+* <<composer,Composer>>
+* <<nuget,NuGet>>
+
+[#npm]
+== NPM
+
+{% include install/npm.md %}
+
+[#bower]
+== Bower
+
+{% include install/bower.md %}
+
+[#composer]
+== Composer
+
+{% include install/composer.md %}
+
+[#nuget]
+== NuGet
+
+{% include install/nuget.md %}
+
+[#self-hosted-install]
+== Self-Hosted Install
+
+{% include install/sdk.md %}
+
+[#custom-build-install]
+== Custom Build Install
+
+{% include install/custom.md %}
+
+{% assign_page next_page = "/general-configuration-guide/work-with-plugins/index.html" %}
+{% include next-step.html next=next_page %}

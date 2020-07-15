@@ -1,0 +1,47 @@
+{% if extensionType != 'Packs' %}
+{% assign extensionType = 'plugin' %}
+{% endif %}
+{% if pluralExtensionType == true %}
+{% assign isAre = 'are' %}
+{% else %}
+{% assign isAre = 'is' %}
+{% endif %}
+## Getting started with {% if pluginname != 'Tiny Drive' %}{{site.productname}}{% endif %} {\{pluginname}}
+
+[#creating-an-account]
+=== Creating an account
+
+Try the *{\{pluginname}} {\{extensionType}}* and the {{site.cloudname}} with a free link:{{site.accountsignup}}[{{site.accountpage}}]. New accounts receive a 30-day trial of the {{site.companyname}} link:{{site.plugindirectory}}[premium plugins], skins, and icon packs; with no credit card information or commitment required.
+
+[#get-if-pluginname-tiny-drive-site-productname-endif-pluginname]
+=== Get {% if pluginname != 'Tiny Drive' %}{{site.productname}}{% endif %} {\{pluginname}}
+
+{% if pluginminimumplan != 'enterprise' %}
+The *{\{pluginname}} {\{extensionType}}* {\{isAre}} included in the following {{site.cloudname}} plans:
+{% else %}
+The *{\{pluginname}} {\{extensionType}}* {\{isAre}} included in link:{{site.pricingpage}}[{{site.enterpriseplan}}].
+{% endif %}
+
+{% case pluginminimumplan %}
+{% when 'tierone' %}- The link:{{site.pricingpage}}[{{site.tieroneplan}}].
+{% when 'tierone' or 'tiertwo' %}- The link:{{site.pricingpage}}[{{site.tiertwoplan}}].
+{% when 'tierone' or 'tiertwo' or 'tierthree' %}- The link:{{site.pricingpage}}[{{site.tierthreeplan}}].
+- link:{{site.pricingpage}}[{{site.enterpriseplan}}].
+{% endcase %}
+
+{% if pluginminimumplan == 'tiertwo' or pluginminimumplan == 'tierthree' %}
+A 14-day free trial is also available for the {{site.tiertwoplan}} and the {{site.tierthreeplan}}.
+{% elsif pluginminimumplan == 'tierthree' %}
+A 14-day free trial is available for the {{site.tierthreeplan}}.
+{% endif %}
+
+[#further-information]
+== Further information
+
+For information on:
+
+* {{site.cloudname}} plans, see: link:{{site.pricingpage}}[{{site.companyname}} Pricing Plans].{% if extensionType == 'Packs' %}
+* Enabling premium skins, see: link:{{site.baseurl}}/configure/editor-appearance/#skin[The `skin` setting].
+* Enabling premium icon packs, see: link:{{site.baseurl}}/configure/editor-appearance/#icons[The `icons` setting].{% else %}
+* Configuring the *{\{pluginname}} {\{extensionType}}*, see: link:{{site.baseurl}}/plugins/{{plugindocspage}}/[The {\{pluginname}} {\{extensionType}} documentation].
+{% endif %}

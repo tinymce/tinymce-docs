@@ -1,0 +1,47 @@
+= Lists plugin
+:description: Normalizes list behavior between browsers.
+:keywords: list lists browser normalize
+:title_nav: Lists
+
+The `lists` plugin allows you to add numbered and bulleted lists to {{site.productname}}. To enable advanced lists (e.g. alpha numbered lists, square bullets) you should also enable the link:../advlist/[Advanced List] (`advlist`) plugin.
+
+The plugin also normalizes list behavior between browsers. Enable it if you have problems with consistency making lists.
+
+[#example]
+===== Example
+
+`js
+tinymce.init({
+  selector: "textarea",  // change this value according to your HTML
+  plugins: "lists",
+  toolbar: "numlist bullist"
+});
+`
+
+[#options]
+== Options
+
+These settings affect the execution of the `lists` plugin.
+
+[#]
+=== `lists_indent_on_tab`
+
+This boolean option allows to disable the indent on tab key functionality. Its default value is set to `true`.
+
+For example:
+
+`js
+tinymce.init({
+  selector: "textarea",  // change this value according to your HTML
+  plugins: "lists",
+  toolbar: "numlist bullist",
+  lists_indent_on_tab: false
+});
+`
+
+[#commands]
+== Commands
+
+The Lists plugin provides the following JavaScript commands.
+
+{% include commands/lists-cmds.md %}

@@ -1,0 +1,20 @@
+[#inline_boundaries]
+== inline_boundaries
+
+The *inline_boundaries* option allows you to disable the inline boundaries. For information on how to change the appearance of the inline boundaries see the link:{{ site.baseurl }}/advanced/boilerplate-content-css/[Boilerplate Content CSS page].
+
+*Type:* `Boolean`
+
+*Default Value:* `true`
+
+*Possible Values:* `true`, `false`
+
+[discrete#example]
+===== Example
+
+`js
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  inline_boundaries: false
+});
+`

@@ -1,0 +1,16 @@
+= Comments 2.0 Demo
+:controls: toolbar button
+:description: Tiny Comments provides the ability to add comments to the content and collaborate with other users for content editing.
+:keywords: comments commenting tinycomments
+:title_nav: Comments 2.0
+
+[#live-example]
+== Live example
+
+This example displays how to add the ability to start or join a conversation by adding comments to the content within the {{site.productname}} editor.
+
+In this example, the features in Comments 2.0 are highlighted, including adding a comment, replying to a comment, and deleting a comment.
+
+For more information on the other Comments 2.0 configuration options, see the link:{{ site.baseurl }}/plugins/comments/[docs].
+
+{% include codepen.html id="comments-2" %}

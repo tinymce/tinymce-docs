@@ -1,0 +1,120 @@
+= Format Painter
+:controls: toolbar button
+:description: Quickly apply formats to multiple pieces of text.
+:keywords: formats formatting edit formatpainter_removeformat formatpainter_tableformats formatpainter_blacklisted_formats format painter configuration
+:title_nav: Format Painter
+
+{{site.premiumplugin}}
+
+The Format Painter plugin allows a user to copy and paste formatting from one location to another, such as font style and size. The format painter is capable of working with a wide variety of formats such as inline and block formats and styles such as table styles.
+
+[#configuring-the-format-painter-toolbar-button]
+=== Configuring the Format Painter toolbar button
+
+Use the following script to configure the Format Painter toolbar button:
+
+[discrete#example]
+===== Example
+
+`js
+tinymce.init({
+  selector: "textarea",  // change this value according to your HTML
+  plugins: "formatpainter",
+  toolbar: "formatpainter"
+});
+`
+*Result*:
+The image:{{site.baseurl}}/images/fp-disabled.png[**Format Painter**](*Format Painter*) button appears in the toolbar menu.
+
+[#using-format-painter]
+== Using Format Painter
+
+The format painter is accessed using either keyboard shortcuts or a toolbar button.
+
+The format painter operates in two modes, one for retrieval and one for application of formatting. The usage of the keyboard is slightly different from the usage of the toolbar buttons.
+
+*Usage with toolbar button*
+
+. Position the cursor at the source content to retrieve the formatting.
+. Enable the *Format Painter* button to copy the formatting. The *Format Painter* toolbar button background color changes to _grey_ image:{{site.baseurl}}/images/fp-enabled.png[**Format Painter**].
+. Select the goal content to apply the formatting.
+
+*Result*: The formatting from the source content is applied to the goal content.
+
+*Usage with keyboard*
+
+. Position the cursor at the source content to retrieve formatting.
+. Press the `Ctrl+Alt+C` keys to read the formatting.
+. Select the goal content to apply the formatting.
+. Press the `Ctrl+Alt+V` keys to apply the formatting.
+
+____
+The format painter retains the formatting after application making it possible to apply the same formatting multiple times by using the `Ctrl+Alt+V` keyboard shortcut.
+____
+
+[#options]
+== Options
+
+The format painter acts upon all link:{{ site.baseurl }}/configure/content-formatting/#formats[`formats`] registered in the editor. In addition to any standard formatting, it will treat *lists* as a block format whenever the link:{{ site.baseurl }}/plugins/lists/[`lists plugin`] is made available.
+
+[#]
+=== `formats`
+
+The format painter plugin will register many formats upon initialization. To override these formats, use the link:{{ site.baseurl }}/configure/content-formatting/#exampleofusageoftheformatsoption[`formats`] option.
+ +
+The example below showcases the formats registered automatically by the plugin upon initialization. The `formatpainter_removeformat` is used to clear any existing formats before applying the new ones. It is similar to the link:{{ site.baseurl }}/configure/content-formatting/#removingaformat[`removeformat`] format.
+
+*Type:* `Object`
+
+[discrete#example-2]
+===== Example
+
+`js
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'formatpainter',
+  formats: {
+    formatpainter_checklist: { selector: 'ul', classes: 'tox-checklist' },
+    formatpainter_liststyletype: { selector: 'ul,ol', styles: { listStyleType: '%value' } },
+    formatpainter_borderstyle: { selector: 'td,th', styles: { borderTopStyle: '%valueTop', borderRightStyle: '%valueRight', borderBottomStyle: '%valueBottom', borderLeftStyle: '%valueLeft', }, remove_similar: true },
+    formatpainter_bordercolor: { selector: 'td,th', styles: { borderTopColor: '%valueTop', borderRightColor: '%valueRight', borderBottomColor: '%valueBottom', borderLeftColor: '%valueLeft' }, remove_similar: true },
+    formatpainter_backgroundcolor: { selector: 'td,th', styles: { backgroundColor: '%value' }, remove_similar: true },
+    formatpainter_removeformat: [
+      {
+        selector: 'b,strong,em,i,font,u,strike,sub,sup,dfn,code,samp,kbd,var,cite,mark,q,del,ins',
+        remove: 'all', split: true, expand: false, block_expand: true, deep: true
+      },
+      { selector: 'span', attributes: ['style', 'class'], remove: 'empty', split: true, expand: false, deep: true },
+      { selector: '*:not(tr,td,th,table)', attributes: ['style', 'class'], split: false, expand: false, deep: true }
+    ]
+  }
+});
+`
+
+[#-2]
+=== `formatpainter_blacklisted_formats`
+
+This option makes it possible to block the unwanted formats in the format painter.
+
+*Type:* `String`
+
+*Default:* `'link,address,removeformat,formatpainter_removeformat'`
+
+[discrete#example-2]
+===== Example
+
+`js
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'formatpainter',
+  formatpainter_blacklisted_formats: 'link,address,removeformat,formatpainter_removeformat'
+});
+`
+Check out the link:{{site.baseurl}}/demo/formatpainter/[Format Painter demo] to try out this new feature.
+
+[#commands]
+== Commands
+
+The Format Painter plugin provides the following JavaScript commands.
+
+{% include commands/formatpainter-cmds.md %}

@@ -1,0 +1,162 @@
+= Rails integration
+:description: Seamlessly integrates TinyMCE into the Rails asset pipeline.
+:keywords: integration integrate rails
+:title_nav: Rails
+
+{{site.productname}} can be added to a Ruby on Rails project using either:
+
+* <<tinymce-in-ruby-on-rails-using-the-tiny-cloud,TinyMCE in Ruby on Rails using the Tiny Cloud>>
+* <<tinymce-in-ruby-on-rails-using-tinymce-self-hosted,TinyMCE in Ruby on Rails using TinyMCE self-hosted>>
+* <<the-third-party-tinymce-ruby-on-rails-gem,The third-party TinyMCE Ruby on Rails gem>>
+
+[#tinymce-in-ruby-on-rails-using-the-tiny-cloud]
+=== TinyMCE in Ruby on Rails using the Tiny Cloud
+
+The {{site.cloudname}} can be used to integrate {{site.productname}} into Ruby on Rails projects.
+This procedure creates a https://guides.rubyonrails.org/getting_started.html[basic Ruby on Rails application] containing a {{site.productname}} editor based on our link:{{site.baseurl}}/demo/basic-example/[Basic example].
+
+{% include integrations/rails-basic-proj.md %}
+
+. Add the following lines within the `<head>` element of `app/views/layouts/application.html.erb` to automatically include {{site.productname}} on pages using the `application` layout:
++
+`html
+ <script src="{{ site.cdnurl }}" referrerpolicy="origin"></script>
+ <script>
+   tinymce.init({
+     selector: '.tinymce',
+     height: 500,
+     menubar: false,
+     plugins: [
+       'advlist autolink lists link image charmap print preview anchor',
+       'searchreplace visualblocks code fullscreen',
+       'insertdatetime media table paste code help wordcount'
+     ],
+       toolbar: 'undo redo | formatselect | ' +
+       ' bold italic backcolor | alignleft aligncenter ' +
+       ' alignright alignjustify | bullist numlist outdent indent | ' +
+       ' removeformat | help'
+   });
+ </script>
+`
+
+. Create a `<textarea>` with the initial content `Hello, World!` for {{site.productname}} by adding the following lines to `app/views/welcome/index.html.erb`:
++
+`+html
+ <%= text_area_tag :content, "Hello, World!", :class => "tinymce" %>
++`
+
+. On a command line, from the project's root directory, start the Ruby on Rails server.
+ `sh
+ rails server
+`
+
+The page containing the {{site.productname}} will be accessible at `+http://localhost:<port>/+` (default: http://localhost:3000/[\http://localhost:3000/]).
+
+[#tinymce-in-ruby-on-rails-using-tinymce-self-hosted]
+=== TinyMCE in Ruby on Rails using TinyMCE self-hosted
+
+Self-hosted instances of {{site.productname}} can be integrated into Ruby on Rails projects.
+This procedure creates a https://guides.rubyonrails.org/getting_started.html[basic Ruby on Rails application] containing a {{site.productname}} editor based on our link:{{site.baseurl}}/demo/basic-example/[Basic example].
+
+{% include integrations/rails-basic-proj.md %}
+
+. Add the following lines within the `<head>` element of `app/views/layouts/application.html.erb` to automatically include {{site.productname}} on pages using the `application` layout:
++
+`html
+ <script src="/path/to/tinymce.min.js"></script>
+ <script>
+   tinymce.init({
+     selector: '.tinymce',
+     height: 500,
+     menubar: false,
+     plugins: [
+       'advlist autolink lists link image charmap print preview anchor',
+       'searchreplace visualblocks code fullscreen',
+       'insertdatetime media table paste code help wordcount'
+     ],
+       toolbar: 'undo redo | formatselect | ' +
+       'bold italic backcolor | alignleft aligncenter ' +
+       'alignright alignjustify | bullist numlist outdent indent | ' +
+       ' removeformat | help'
+   });
+ </script>
+`
+
+. Create a `<textarea>` with the initial content `Hello, World!` for {{site.productname}} by adding the following lines to `app/views/welcome/index.html.erb`:
++
+`+html
+ <%= text_area_tag :content, "Hello, World!", :class => "tinymce" %>
++`
+
+. On a command line, from the project's root directory, start the Ruby on Rails server.
+ `sh
+ rails server
+`
+The page containing the {{site.productname}} will be accessible at `+http://localhost:<port>/+` (default: http://localhost:3000/[\http://localhost:3000/]).
+
+For information on self-hosting {{site.productname}}, see: link:{{site.baseurl}}/general-configuration-guide/advanced-install/[Installing {{ site.productname }}].
+
+[#the-third-party-tinymce-ruby-on-rails-gem]
+=== The third-party TinyMCE Ruby on Rails gem
+
+{{site.thirdPartyInteg}}
+
+Sam Pohlenz maintains the https://github.com/spohlenz/tinymce-rails[{{site.productname}} Ruby on Rails gem] for integrating {{site.productname}} into the Ruby on Rails asset pipeline.
+This procedure creates a https://guides.rubyonrails.org/getting_started.html[basic Ruby on Rails application] containing a {{site.productname}} editor based on our link:{{site.baseurl}}/demo/basic-example/[Basic example].
+
+{% include integrations/rails-basic-proj.md %}
+
+. Using a text editor, open the project `Gemfile` and add the line:
++
+`conf
+ gem 'tinymce-rails'
+`
+ Do not add this line within a `group` - `end` element.
+
+. Install the `tinymce-rails` gem using `bundle`:
++
+`sh
+ bundle install
+`
+
+. Create a {{site.productname}} configuration file.
+ .. Create the `config/tinymce.yml` file:
++
+`sh
+touch config/tinymce.yml
+`
+
+ .. Add a {{site.productname}} configuration. The configuration must be in the https://yaml.org/spec/1.2/spec.html[YAML format], such as:
++
+`yml
+height: 500
+menubar: false
+toolbar:
+  - undo redo | formatselect | bold italic backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | help
+plugins:
+  - advlist autolink lists link image charmap print preview anchor
+  - searchreplace visualblocks code fullscreen
+  - insertdatetime media table paste code help wordcount
+`
+. Add the following lines within the `<head>` element of `app/views/layouts/application.html.erb` to automatically include {{site.productname}} on pages using the `application` layout:
++
+`html
+ <%= tinymce_assets %>
+ <script type="text/javascript" src="/assets/tinymce.js"></script>
+`
+
+. Create a `<textarea>` with the initial content `Hello, World!` for {{site.productname}} by adding the following lines to `app/views/welcome/index.html.erb`:
++
+`+html
+ <%= text_area_tag :content, "Hello, World!", :class => "tinymce" %>
+ <%= tinymce %>
++`
+
+. On a command line, from the project's root directory, start the Ruby on Rails server.
+ `sh
+ rails server
+`
+
+The page containing the {{site.productname}} will be accessible at `+http://localhost:<port>/+` (default: http://localhost:3000/[\http://localhost:3000/]).
+
+For information on creating advanced configurations for the third-party TinyMCE Ruby on Rails integration, visit the project on GitHub: https://github.com/spohlenz/tinymce-rails[Rails Integration for TinyMCE].

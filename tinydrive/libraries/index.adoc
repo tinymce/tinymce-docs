@@ -1,0 +1,8 @@
+= Tiny Drive Starter projects
+:description: Starter projects to make your Tiny Drive experience smooth with the technologies you use.
+:keywords: tinydrive .net node.js php java
+:title_nav: Starter projects
+:type: folder
+
+{% assign links = site.data | where_exp:"nav", "nav.url == 'libraries'" | first | map: "pages" %}
+{% include index.html links=links %}

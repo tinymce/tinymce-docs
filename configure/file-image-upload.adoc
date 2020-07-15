@@ -1,0 +1,22 @@
+= Image &amp; file upload options
+:description: These settings affect TinyMCE's image and file upload capabilities.
+:description_short:
+:title_nav: Image &amp; file upload options
+
+{% include configuration/automatic-uploads.md %}
+
+{% include configuration/file-picker-callback.md %}
+
+{% include configuration/file-picker-types.md %}
+
+{% include configuration/images-dataimg-filter.md %}
+
+{% include configuration/images-upload-reuse-filename.md %}
+
+{% include configuration/images-upload-base-path.md %}
+
+{% include configuration/images-upload-credentials.md %}
+
+{% include configuration/images-upload-handler.md %}
+
+{% include configuration/images-uploads-url.md %}

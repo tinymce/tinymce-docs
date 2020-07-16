@@ -1,0 +1,54 @@
+= Visual Blocks plugin
+:controls: toolbar button, menu item
+:description: Allows a user to see block level elements such as paragraphs.
+:keywords: visualblocks wysiwyg hidden view visualblocks_default_state
+:title_nav: Visual Blocks
+
+This plugin allows a user to see block level elements in the editable area. It is similar to WYSIWYG hidden character functionality, but at block level. It also adds a toolbar button and a menu item `Show blocks` under the `View` menu dropdown.
+
+*Type:* `String`
+
+[#example]
+===== Example
+
+`js
+tinymce.init({
+  selector: "textarea",  // change this value according to your HTML
+  plugins: "visualblocks",
+  menubar: "view",
+  toolbar: "visualblocks"
+});
+`
+
+[#options]
+=== Options
+
+This setting affects the execution of the `visualblocks` plugin. You may specify whether blocks are visible by default here.
+
+[#]
+=== `visualblocks_default_state`
+
+This option enables you to specify the default state of the Visual Blocks plugin.
+
+*Type:* `Boolean`
+
+*Default Value:* `false`
+
+*Possible Values:* `true`, `false`
+
+`js
+tinymce.init({
+  selector: "textarea",  // change this value according to your HTML
+  plugins: "visualblocks",
+  menubar: "view",
+  toolbar: "visualblocks",
+  visualblocks_default_state: true
+});
+`
+
+[#commands]
+== Commands
+
+The Visual Blocks plugin provides the following JavaScript command.
+
+include::{includeDir}/commands/visualblocks-cmds.adoc[]

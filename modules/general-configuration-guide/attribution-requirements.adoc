@@ -1,0 +1,22 @@
+= Logo &amp; attribution requirements
+:description: TinyMCE Terms of Service.
+:keywords: legal attribution requirements logo branding
+:title_nav: Logo attribution
+
+{cloudname} is available to anyone wanting to integrate {productname} into their own website or application. Use of {cloudname} is governed by the https://about.tiny.cloud/legal/tiny-cloud-services-subscription-agreement/[Terms of Service]. Among other things, these terms require adhering to specific guidelines on how branding for {companyname} must be handled. The purpose of this document is to highlight these requirements.
+
+There is a *POWERED BY TINY* attribution in the status bar that is enabled by default for all {cloudname} users. The {tieroneplan} is meant to support small projects and give back to the community. This option cannot be disabled on a free {accountpage}. However, it is *optional* for users on other paid tiers to include attribution and link back to {companyname} via a logo or text to let the world know that their editor is powered by {companyname}.
+
+When including attribution, the following requirements must be met:
+
+* "*POWERED BY TINY*" to be stated or the link:{url}/guidelines/#logo[{companyname} logo] placed in a readily visible location whenever the editor is loaded.
+* The word "*Tiny*" or the {companyname} logo should have a hyperlink to link:{url}[{url}].
+* The location of the product attribution is to be:
+ ** In the right-hand corner of the status bar of the {productname} editor; or
+ ** An alternate location adjacent to the {productname} editor that is no less prominent.
+
+The following example shows the status bar product attribution in the bottom, right-hand corner:
+
+image::{modulesDir}/images/tinymce5-homepage-demo.png[Screenshot of homepage {productname} demo including product attribution in the bottom, right-hand corner]
+
+Have questions about this? link:{contactpage}[Contact us] for help.

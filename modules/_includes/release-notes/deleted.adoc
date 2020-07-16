@@ -1,0 +1,52 @@
+In TinyMCE 5.0, some configurations have been removed because they are no longer necessary or an improved solution has been introduced. Refer to the link:{modulesDir}/migration-from-4x/[Migration Guide], for more information.
+
+[#editor-core-removed-settings]
+=== Editor-Core removed settings
+
+|===
+| *Setting* | *Description*
+
+| https://www.tiny.cloud/docs-4x/configure/editor-appearance/#fixed_toolbar_container[`fixed_toolbar_container`]
+| Owing to the enhancements to the new inline toolbar behaviour, `fixed_toolbar_container` is not required in TinyMCE 5.0.
+
+| https://www.tiny.cloud/docs-4x/configure/editor-appearance/#insert_button_items[`insert_button_items`]
+| Owing to the changes in the menus and removal of the `context` property, `insert_button_items` is not required in TinyMCE 5.0. Refer to the link:{modulesDir}/migration-from-4x/#removedsettings[Migration guide] for a workaround.
+|===
+
+[#removed-themes]
+=== Removed themes
+
+* link:{modulesDir}/migration-from-4x/#inlite[Inlite]
+* link:{modulesDir}/migration-from-4x/#modern[Modern]
+
+[#removed-events]
+=== Removed events
+
+|===
+| *Removed event* | *Description*
+
+| BeforeRenderUi
+| Fired before the UI was rendered.
+|===
+
+[#removed-toolbar-button-types]
+=== Removed toolbar button types
+
+https://www.tiny.cloud/docs-4x/demo/custom-toolbar-listbox/[Listbox] is no longer a supported toolbar button type in TinyMCE 5.0. Though listbox has been removed, any functionality provided by custom listbox toolbar buttons can be retained by switching to a different kind of toolbar button using the new methods. The recommended toolbar button type to switch to is the *Split* button.
+
+[#removed-features]
+=== Removed features
+
+The following plugins from TinyMCE 4.x do not require height or width options to be specified in TinyMCE 5.0:
+
+* link:{modulesDir}/plugins/code/[Code]
+* link:{modulesDir}/plugins/codesample/[Codesample]
+* link:{modulesDir}/plugins/preview/[Preview]
+* link:{modulesDir}/plugins/template/[Template]
+
+Refer to the link:{modulesDir}/migration-from-4x/[Migration Guide], for more information.
+
+[#other-removed-component-configuration-settings]
+=== Other removed component configuration settings
+
+Some UI configurations in TinyMCE 5.0 have changed due to an updated UI engine. Please see this link:{modulesDir}/migration-from-4x/#otherremovedcomponentconfigurationsettings[section] of the Migration Guide for more information.

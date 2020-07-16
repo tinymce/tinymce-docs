@@ -1,0 +1,50 @@
+[#available-context-menu-sections]
+== Available context menu sections
+
+The following table shows all context menu sections, including sections provided by plugins.
+Any menu item can also be added to the context menu.
+To retrieve a list from the editor, run the following command from the browser console:
+
+`js
+tinymce.activeEditor.ui.registry.getAll().contextMenus
+`
+
+The identifier below will add a context menu _section_ containing one or more items. It is not possible to add individual items from the following context menu sections.
+
+|===
+| identifier | Core/Plugin | Description
+
+| image
+| link:{modulesDir}/plugins/image/[Image]
+| Adds the _Image..._ item for opening the *Insert/Edit Image* dialog.
+
+| imagetools
+| link:{modulesDir}/plugins/imagetools/[Image Tools]
+| Adds the _Edit image_ item for opening the *Edit Image* dialog.
+
+| link
+| link:{modulesDir}/plugins/link/[Link]
+| Adds the _Link..._ item for opening the *Insert/Edit Link* dialog.
+
+| linkchecker
+| link:{modulesDir}/plugins/linkchecker/[Link Checker]
+| Adds the _Ignore_ item on links marked as broken, allowing the user to instruct linkchecker to ignore the link.
+
+| lists
+| link:{modulesDir}/plugins/lists/[Lists]
+| Adds the _List properties..._ item for opening the *List Properties* dialog.
+
+| configurepermanentpen
+| link:{modulesDir}/plugins/permanentpen/[Permanent Pen]
+| Adds the _Permanent pen properties..._ item for opening the *Permanent Pen Properties* dialog when the permanent pen is in use.
+
+| spellchecker
+| link:{modulesDir}/plugins/spellchecker/[Spell Checker]
+| Adds a list suggested corrections, an _Ignore_ item, and an _Ignore all_ item.
+
+| table
+| link:{modulesDir}/plugins/table/[Table]
+| Adds table related context menu items, including Advanced Tables context menu items (if the Advanced Tables plugin is enabled).
+|===
+
+For a list of available menu items that can be added to the context menu, see: link:{modulesDir}/advanced/editor-control-identifiers/#menucontrols[Editor control identifiers - Menu controls].

@@ -1,0 +1,141 @@
+= KnockoutJS integration
+:description: A custom binding that applies a TinyMCE Editor to the bound HTML element.
+:keywords: integration integrate knockout knockoutjs
+:title_nav: Knockout
+
+{productname} can be added to a Knockout project using the third-party TinyMCE Knockout integration.
+
+{thirdPartyInteg}
+
+Michael Papworth developed the Knockout binding for TinyMCE. For details, see: https://github.com/michaelpapworth/tinymce-knockout-binding[the tinymce-knockout-binding project].
+
+[#procedure]
+=== Procedure
+
+. In a HTML file, add source scripts for jQuery and Knockout JS.
++
+If the project loads jQuery or Knockout from a Content delivery Network (CDN), use the script provided by the CDN, including any attributes, such as `integrity` and `crossorigin`.
+
+. Source {productname} and the {productname} jQuery integration from the {cloudname} or from a self-hosted location.
+ ** *{cloudname}*
++
+To source {productname} and the {productname} jQuery integration from the {cloudname}, add the following `script` elements:
++
+[source,html]
+----
+  <script src="{cdnurl}" referrerpolicy="origin"></script>
+  <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/jquery.tinymce.min.js" referrerpolicy="origin"></script>
+----
++
+Replace `no-api-key` in the source script (`+<script src=...+`) with a {cloudname} API key, which is created when signing up to the link:{accountsignup}[{cloudname}].
++
+Signing up for a {cloudname} API key will also provide a trial of the link:{modulesDir}/enterprise/[Premium Plugins].
+
+ ** *{productname} self-hosted*
++
+To use an independent deployment of {productname}, add source scripts to either the `<head>` or the end of the `<body>` of the HTML file, such as:
++
+[source,html]
+----
+  <script src="/path/to/tinymce.min.js"></script>
+  <script src="/path/to/jquery.tinymce.min.js"></script>
+----
++
+For information on self-hosting {productname}, see: link:{modulesDir}/general-configuration-guide/advanced-install/[Installing {productname}].
+. Source `tinymce-knockout-binding` (`wysiwyg.js`) on the page.
++
+If the project loads tinymce-knockout-binding from a Content Delivery Network (CDN), use the script provided by the CDN, including any attributes, such as `integrity` and `crossorigin`.
+
+. Add an initialization point for {productname}, such as:
++
+[source,html]
+----
+ <div>
+   <textarea data-bind="wysiwyg: content, wysiwygConfig: {  }">
+   </textarea>
+ </div>
+----
+
+. Add the {productname} Knockout init script. The {productname} settings are defined within the `defaults` object.
++
+[source,html]
+----
+ <script>
+   (function( $, ko ) {
+
+     ko.bindingHandlers['wysiwyg'].defaults = {
+     };
+
+     function ViewModel( content ) {
+       var self = this;
+       self.content = ko.observable( content );
+     };
+
+     $( document ).ready( function() {
+       ko.applyBindings( new ViewModel( '<p>Hello, World!</p>' ) );
+     });
+
+   }( jQuery, ko ));
+ </script>
+----
+
+[#example-knockout-integration]
+=== Example Knockout integration
+
+To load a TinyMCE editor similar to the link:{modulesDir}/demo/basic-example/[Basic example], add the following code to an empty HTML file.
+
+[source,html]
+----
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Load jquery -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <!-- Load knockoutjs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.0/knockout-min.js" integrity="sha256-Tjl7WVgF1hgGMgUKZZfzmxOrtoSf8qltZ9wMujjGNQk=" crossorigin="anonymous"></script>
+    <!-- Load TinyMCE and the TinyMCE jQuery integration -->
+    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/jquery.tinymce.min.js" referrerpolicy="origin"></script>
+    <!-- Load tinymce-knockout-binding (wysiwyg.js) -->
+    <script src="https://cdn.jsdelivr.net/npm/tinymce-knockout-binding@1.1.1/src/wysiwyg.js" integrity="sha256-ZG6uOMw+SZjWjCa+SDh1FkcdpVBHjg2elNToi46xLNo=" crossorigin="anonymous"></script>
+    <!-- Script to initialize a TinyMCE editor -->
+    <script>
+      (function( $, ko ) {
+
+        ko.bindingHandlers['wysiwyg'].defaults = {
+          height: 500,
+          menubar: false,
+          plugins: [
+            'advlist autolink lists link image charmap print preview anchor',
+            'searchreplace visualblocks code fullscreen',
+            'insertdatetime media table paste code help wordcount'
+          ],
+          toolbar: 'undo redo | formatselect | bold italic ' +
+            'backcolor | alignleft aligncenter alignright ' +
+            'alignjustify | bullist numlist outdent indent | ' +
+            'removeformat | help'
+        };
+
+        function ViewModel( content ) {
+          var self = this;
+          self.content = ko.observable( content );
+        };
+
+        $( document ).ready( function() {
+          ko.applyBindings( new ViewModel( '<p>Hello, World!</p>' ) );
+        });
+
+      }( jQuery, ko ));
+    </script>
+  </head>
+  <body>
+    <div>
+      <textarea data-bind="wysiwyg: content, wysiwygConfig: {  }"></textarea>
+    </div>
+  </body>
+</html>
+----
+
+For information on creating advanced configurations for the third-party TinyMCE Knockout integration, visit the project on GitHub: https://github.com/michaelpapworth/tinymce-knockout-binding[tinymce-knockout-binding].

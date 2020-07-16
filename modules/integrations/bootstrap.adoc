@@ -1,0 +1,76 @@
+= Bootstrap integration
+:description: How to override the built-in block on `focusin` in Bootstrap dialogs when using TinyMCE.
+:keywords: integration integrate bootstrap
+:title_nav: Bootstrap
+
+[#tinymce-bootstrap-integration-quick-start-guide]
+== TinyMCE Bootstrap integration quick start guide
+
+Using {productname} with bootstrap does not require any special configuration.
+
+The {productname} jQuery integration can be used with bootstrap. For information on using the jQuery integration, see: link:{modulesDir}/integrations/jquery/[jQuery integration]
+
+This procedure creates a basic Bootstrap integration containing a {productname} editor based on our link:{modulesDir}/demo/basic-example/[Basic example].
+
+[#procedure]
+=== Procedure
+
+. In a HTML file, add a source script for Bootstrap JS.
++
+If the project loads Bootstrap from \https://www.bootstrapcdn.com/, use the script provided by the https://www.bootstrapcdn.com/[Bootstrap CDN], which includes the `integrity` and `crossorigin` attributes.
+
+. Source {productname} from the {cloudname} or from a self-hosted location.
+ ** *{cloudname}*
++
+To source {productname} from the {cloudname}, add the following `script` element to the `<head>` of the document:
+  `html
+  <script src="{cdnurl}" referrerpolicy="origin"></script>
+ `
+  Replace `no-api-key` in the source script (`+<script src=...+`) with a {cloudname} API key, which is created when signing up to the link:{accountsignup}[{cloudname}].
++
+Signing up for a {cloudname} API key will also provide a trial of the link:{modulesDir}/enterprise/[Premium Plugins].
+
+ ** *{productname} self-hosted*
++
+To use an independent deployment of {productname}, add the following source script to either the `<head>` or the end of the `<body>` of the HTML file, such as:
+  `html
+  <script src="/path/to/tinymce.min.js"></script>
+ `
++
+For information on self-hosting {productname}, see: link:{modulesDir}/general-configuration-guide/advanced-install/[Installing {productname}].
+. Add an initialization point for {productname}, such as:
++
+```html+++<div>++++++<textarea id="tiny">++++++</textarea>++++++</div>+++
++
+```
+
+. Add the {productname} init script.
++
+`html
+ <script>
+   tinymce.init({
+     selector: 'textarea#tiny'
+   });
+ </script>
+`
+
+[#using-tinymce-in-a-bootstrap-dialog]
+== Using TinyMCE in a Bootstrap dialog
+
+To render {productname} instances inside Bootstrap UI dialogs, add the following code:
+
+`js
+// Prevent Bootstrap dialog from blocking focusin
+$(document).on('focusin', function(e) {
+  if ($(e.target).closest(".tox-tinymce-aux, .moxman-window, .tam-assetmanager-root").length) {
+    e.stopImmediatePropagation();
+  }
+});
+`
+
+This code is required because Bootstrap blocks all `focusin` calls from elements outside the dialog. For a working example, http://fiddle.tinymce.com/gRgaab[try this {productname} fiddle].
+
+[discrete#a-note-about-integrations]
+==== A note about integrations
+
+NOTE: We are pleased to provide integrations/code guidance to help you build great products with {productname}. If you have queries about this integration, please join the https://community.tiny.cloud/[{productname} Community].

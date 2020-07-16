@@ -1,0 +1,389 @@
+= Specify editor & plugin versions
+:description: Specifying editor and plugin versions for Tiny Cloud deployments.
+:description_short: Specifying editor and plugin versions for Tiny Cloud deployments.
+:keywords: tinymce cloud script textarea apiKey
+
+[#specifying-the-tinymce-editor-version-deployed-from-cloud]
+== Specifying the TinyMCE editor version deployed from Cloud
+
+Use the URL provided to specify the {productname} version when deploying via {cloudname}. Refer to the link:{modulesDir}/cloud-deployment-guide/editor-and-features[{productname} editor via the {cloudname}] for more information.
+
+The following example is the default for loading {productname} {productmajorversion} via {cloudname}. Substitute 'no-api-key' with your api key in the examples below.
+
+`js
+<script src="{cdnurl}" referrerpolicy="origin"></script>
+`
+
+This URL specifies the latest and quality assured release of {productname}.
+
+[#selecting-specific-version-numbers]
+=== Selecting specific version numbers
+
+[NOTE]
+====
+All {cloudname} channels are based on the {enterpriseversion} version. For information on the latest version of the {cloudname} stable channel, see: link:{modulesDir}/release-notes/[{productname} Release Notes]. For a list of changes that *may* be present in the {cloudname} testing channel, see: link:{modulesDir}/changelog/[{productname} Changelog].
+====
+
+Support for requesting specific versions of {productname} {productmajorversion} should work same as {productname} 4.  In the meantime, there are three release channels available, see the section below.
+
+[#dev-testing-and-stable-releases]
+=== dev, testing, and stable releases
+
+Choose from `dev`, `testing`, or `stable` release channels to load the latest version of {productname} from {cloudname}.
+
+These channels are updated automatically and provide the latest {productname} version that matches the criteria below.
+
+[#dev-release-channel]
+==== dev release channel
+
+This channel deploys the absolute latest version of {productname} as documented in link:{modulesDir}/changelog/[{productname} changelog]. The current version of {productname} available through the `dev` channel https://cdn.tiny.cloud/1/no-api-key/tinymce/5-dev/version.txt[can be found here].
+
+[#example]
+===== Example
+
+`+js
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5-dev/tinymce.min.js" referrerpolicy="origin"></script>
++`
+
+[#testing-release-channel]
+==== testing release channel
+
+This channel deploys the current release candidate for the `stable` channel. The {productname} release candidate is undergoing quality assurance. The current version of {productname} available through the `testing` channel https://cdn.tiny.cloud/1/no-api-key/tinymce/5-testing/version.txt[can be found at here].
+
+[#example-2]
+===== Example
+
+`+js
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5-testing/tinymce.min.js" referrerpolicy="origin"></script>
++`
+
+[#stable-release-channel]
+==== stable release channel
+
+This channel deploys the latest release of {productname} that has passed our quality assurance process. The current version of {productname} available through the `/{productmajorversion}` stable channel can be found https://cdn.tiny.cloud/1/no-api-key/tinymce/5/version.txt[here]. The {productname} {productmajorversion} stable channel can be loaded from https://cdn.tiny.cloud/1/no-api-key/tinymce/5/plugins.min.js[this url].
+
+[#example-2]
+===== Example
+
+`js
+<script src="{cdnurl}" referrerpolicy="origin"></script>
+`
+
+[#specifying-the-version-of-featuresplugins-deployed-from-tiny-cloud]
+== Specifying the version of features/plugins deployed from Tiny Cloud
+
+Use the URL query parameters to specify the version of each premium plugin. This is used when deployment is through the link:{modulesDir}/cloud-deployment-guide/editor-and-features[{productname} editor and premium plugins via {cloudname}] or deploying link:{modulesDir}/cloud-deployment-guide/features-only[only premium plugins from {cloudname}].
+
+[discrete#mentions]
+==== Mentions
+
+* link:{modulesDir}/plugins/mentions/[Developer documentation]
+* http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/mentions/available-versions[Supported versions]
+
+[discrete#example-2]
+===== Example
+
+`+js
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/plugins.min.js?mentions=2.0.0" referrerpolicy="origin"></script>
++`
+
+[discrete#tiny-drive]
+==== Tiny Drive
+
+* link:{modulesDir}/plugins/drive/[Developer documentation]
+* http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/tinydrive/available-versions[Supported versions]
+
+[discrete#example-2]
+===== Example
+
+`+js
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/plugins.min.js?tinydrive=1.1.0" referrerpolicy="origin"></script>
++`
+
+[discrete#comments-2-0]
+==== Comments 2.0
+
+* link:{modulesDir}/plugins/comments/[Developer documentation]
+* http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/tinycomments/available-versions[Supported versions]
+
+[discrete#example-2]
+===== Example
+
+`+js
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/plugins.min.js?tinycomments=2.0.0" referrerpolicy="origin"></script>
++`
+
+[discrete#page-embed]
+==== Page Embed
+
+* link:{modulesDir}/plugins/pageembed/[Developer documentation]
+* http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/pageembed/available-versions[Supported versions]
+
+[discrete#example-2]
+===== Example
+
+`+js
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/plugins.min.js?pageembed=1.0.0" referrerpolicy="origin"></script>
++`
+
+[discrete#permanent-pen]
+==== Permanent Pen
+
+* link:{modulesDir}/plugins/permanentpen/[Developer documentation]
+* http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/permanentpen/available-versions[Supported versions]
+
+[discrete#example-2]
+===== Example
+
+`+js
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/plugins.min.js?permanentpen=1.0.0" referrerpolicy="origin"></script>
++`
+
+[discrete#format-painter]
+==== Format Painter
+
+* link:{modulesDir}/plugins/formatpainter/[Developer documentation]
+* http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/formatpainter/available-versions[Supported versions]
+
+[discrete#example-2]
+===== Example
+
+`+js
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/plugins.min.js?formatpainter=1.0.0" referrerpolicy="origin"></script>
++`
+
+[discrete#powerpaste]
+==== PowerPaste
+
+* link:{modulesDir}/plugins/powerpaste[Developer documentation]
+* http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/powerpaste/available-versions[Supported versions]
+
+[discrete#example-2]
+===== Example
+
+`+js
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/plugins.min.js?powerpaste=4.0.0" referrerpolicy="origin"></script>
++`
+
+[discrete#spell-checker-pro]
+==== Spell Checker Pro
+
+* link:{modulesDir}/plugins/tinymcespellchecker[Developer documentation]
+* http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/tinymcespellchecker/available-versions[Supported versions]
+
+[discrete#example-2]
+===== Example
+
+`+js
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/plugins.min.js?tinymcespellchecker=1.0.0" referrerpolicy="origin"></script>
++`
+
+[discrete#accessibility-checker]
+==== Accessibility Checker
+
+* link:{modulesDir}/plugins/a11ychecker[Developer documentation]
+* http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/a11ychecker/available-versions[Supported versions]
+
+[discrete#example-2]
+===== Example
+
+`+js
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/plugins.min.js?a11ychecker=2.0.0" referrerpolicy="origin"></script>
++`
+
+[discrete#advanced-code-editor]
+==== Advanced Code Editor
+
+* link:{modulesDir}/plugins/advcode/[Developer documentation]
+* http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/advcode/available-versions[Supported versions]
+
+[discrete#example-2]
+===== Example
+
+`+js
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/plugins.min.js?advcode=2.0.0" referrerpolicy="origin"></script>
++`
+
+[discrete#enhanced-media-embed]
+==== Enhanced Media Embed
+
+* link:{modulesDir}/plugins/mediaembed/[Developer documentation]
+* http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/mediaembed/available-versions[Supported versions]
+
+[discrete#example-2]
+===== Example
+
+`+js
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/plugins.min.js?mediaembed=2.0.0" referrerpolicy="origin"></script>
++`
+
+[discrete#link-checker]
+==== Link Checker
+
+* link:{modulesDir}/plugins/linkchecker/[Developer documentation]
+* http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/linkchecker/available-versions[Supported versions]
+
+[discrete#example-2]
+===== Example
+
+`+js
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/plugins.min.js?linkchecker=2.0.0" referrerpolicy="origin"></script>
++`
+
+[#specifying-a-self-hosted-deployment-of-featuresplugins]
+== Specifying a self-hosted deployment of features/plugins
+
+// Additional configuration is required when serving [only premium plugins from {cloudname}]({modulesDir}/cloud-deployment-guide/features-only) and from a self-hosted installation. URL query parameters and the special version name "SDK" can also be used in the configuration.
+
+If you're deploying link:{modulesDir}/cloud-deployment-guide/features-only[only premium plugins from {cloudname}], you may want to have some features served from {cloudname} and some features served from your self-hosted installation. This is also possible with URL query parameters and the special version name "SDK".
+
+The "SDK" version lets the {productname} Plugin Manager know that you're not using {cloudname} version of a particular plugin and that it shouldn't serve the plugin from {cloudname}. It also won't display any warning or error messages if you're not entitled to it.
+
+[discrete#mentions-2]
+==== Mentions
+
+* link:{modulesDir}/plugins/mentions/[Developer documentation]
+
+[discrete#example-2]
+===== Example
+
+`+js
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/plugins.min.js?mentions=sdk" referrerpolicy="origin"></script>
++`
+
+[discrete#tiny-drive-2]
+==== Tiny Drive
+
+* link:{modulesDir}/plugins/drive/[Developer documentation]
+
+[discrete#example-2]
+===== Example
+
+`+js
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/plugins.min.js?tinydrive=sdk" referrerpolicy="origin"></script>
++`
+
+[discrete#comments-2-0-2]
+==== Comments 2.0
+
+* link:{modulesDir}/plugins/comments/[Developer documentation]
+
+[discrete#example-2]
+===== Example
+
+`+js
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/plugins.min.js?tinycomments=sdk" referrerpolicy="origin"></script>
++`
+
+[discrete#page-embed-2]
+==== Page Embed
+
+* link:{modulesDir}/plugins/pageembed/[Developer documentation]
+
+[discrete#example-2]
+===== Example
+
+`+js
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/plugins.min.js?pageembed=sdk" referrerpolicy="origin"></script>
++`
+
+[discrete#permanent-pen-2]
+==== Permanent Pen
+
+* link:{modulesDir}/plugins/permanentpen/[Developer documentation]
+
+[discrete#example-2]
+===== Example
+
+`+js
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/plugins.min.js?permanentpen=sdk" referrerpolicy="origin"></script>
++`
+
+[discrete#format-painter-2]
+==== Format Painter
+
+* link:{modulesDir}/plugins/formatpainter/[Developer documentation]
+
+[discrete#example-2]
+===== Example
+
+`+js
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/plugins.min.js?formatpainter=sdk" referrerpolicy="origin"></script>
++`
+
+[discrete#powerpaste-2]
+==== PowerPaste
+
+* link:{modulesDir}/plugins/powerpaste[Developer documentation]
+
+[discrete#example-2]
+===== Example
+
+`+js
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/plugins.min.js?powerpaste=sdk" referrerpolicy="origin"></script>
++`
+
+[discrete#spell-checker-pro-2]
+==== Spell Checker Pro
+
+* link:{modulesDir}/plugins/tinymcespellchecker[Developer documentation]
+
+[discrete#example-2]
+===== Example
+
+`+js
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/plugins.min.js?tinymcespellchecker=sdk" referrerpolicy="origin"></script>
++`
+
+[discrete#accessibility-checker-2]
+==== Accessibility Checker
+
+* link:{modulesDir}/plugins/a11ychecker[Developer documentation]
+
+[discrete#example-2]
+===== Example
+
+`+js
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/plugins.min.js?a11ychecker=sdk" referrerpolicy="origin"></script>
++`
+
+[discrete#advanced-code-editor-2]
+==== Advanced Code Editor
+
+* link:{modulesDir}/plugins/advcode/[Developer documentation]
+
+[discrete#example-2]
+===== Example
+
+`+js
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/plugins.min.js?advcode=sdk" referrerpolicy="origin"></script>
++`
+
+[discrete#enhanced-media-embed-2]
+==== Enhanced Media Embed
+
+* link:{modulesDir}/plugins/mediaembed/[Developer documentation]
+
+[discrete#example-2]
+===== Example
+
+`+js
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/plugins.min.js?mediaembed=sdk" referrerpolicy="origin"></script>
++`
+
+[discrete#link-checker-2]
+==== Link Checker
+
+* link:{modulesDir}/plugins/linkchecker/[Developer documentation]
+
+[discrete#example-2]
+===== Example
+
+`+js
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/plugins.min.js?linkchecker=sdk" referrerpolicy="origin"></script>
++`
+
+[#featuring-declared-editor-and-plugin-versions]
+=== Featuring declared editor and plugin versions
+
+Support for requesting specific versions of {productname} {productmajorversion} will work similar to {productname} 4.  Only the latest version is available via the {cloudname}.

@@ -1,0 +1,109 @@
+[#toolbar_mode]
+== toolbar_mode
+
+{% if site.productminorversion < 6.1 %}
++++<a class="anchor" id="toolbar_drawer">++++++</a>+++
+> *Note*: The `toolbar_drawer` option was deprecated with the release of {productname} 5.2. The `toolbar_drawer` option was renamed to `toolbar_mode`. This change was made to reflect the range of settings available for this option.
+{% endif %}
+
+The `toolbar_mode` option is used to extend the toolbar to accommodate the overflowing toolbar buttons. This option is useful for small screens or small editor frames.
+
+The toolbar modes are not available when using link:{modulesDir}/configure/editor-appearance/#usingmultipletoolbars[multiple toolbars] or the link:{modulesDir}/configure/editor-appearance/#toolbarn[toolbar(n)] option.
+
+*Type:* `String`
+
+*Default Value:* `'floating'`
+
+*Possible Values:* `'floating'`, `'sliding'`, `'scrolling'`, or `'wrap'`
+
+{differs_for_mobile}
+
+[#settings]
+=== Settings
+
+The toolbar mode is specified in the `tinymce.init`. There are four toolbar modes:
+
+* <<floating,Floating>>
+* <<sliding,Sliding>>
+* <<scrolling,Scrolling>>
+* <<wrap,Wrap>>
+
+[#floating]
+==== Floating
+
+If the `toolbar_mode` is configured to `floating`, the toolbar appears under the toolbar overflow icon in a floating shelf format when the toolbar overflow icon image:{imagesDir}icons/more-drawer.svg[**Drawer**] is clicked.
+
+image::{modulesDir}/images/floating_toolbar.png[**Floating Toolbar**]
+
+[#configuring-a-floating-toolbar]
+===== Configuring a Floating toolbar
+
+Use the following settings to configure a Floating toolbar:
+
+`js
+tinymce.init({
+    selector: "textarea",
+    toolbar_mode: 'floating'
+});
+`
+
+[#sliding]
+==== Sliding
+
+If the `toolbar_mode` is configured to `sliding`, the toolbar appears as a fixed toolbar under the first toolbar when the toolbar overflow icon image:{imagesDir}icons/more-drawer.svg[**Drawer**] is clicked.
+
+image::{modulesDir}/images/sliding_toolbar.png[**Sliding Toolbar**]
+
+[#configuring-a-sliding-toolbar]
+===== Configuring a Sliding toolbar
+
+Use the following settings to configure a Sliding toolbar:
+
+`js
+tinymce.init({
+    selector: "textarea",
+    toolbar_mode: 'sliding'
+});
+`
+
+[#scrolling]
+==== Scrolling
+
+The scrolling toolbar mode is intended for touch screen devices.
+
+If the `toolbar_mode` is configured to `scrolling`, the overflow toolbar buttons will remain on the toolbar, but will be hidden from view. To access the overflow toolbar buttons, scroll the toolbar. To scroll the toolbar on a touch screen, use a swiping action. To scroll on a desktop device, hold shift and scroll with a mouse.
+
+A scrollbar will be shown on the toolbar on desktop devices and hybrid devices in desktop mode.
+
+image::{modulesDir}/images/scrolling_toolbar.png[**Scrolling Toolbar**]
+
+[#configuring-a-scrolling-toolbar]
+===== Configuring a Scrolling toolbar
+
+Use the following settings to configure a Scrolling toolbar:
+
+`js
+tinymce.init({
+    selector: "textarea",
+    toolbar_mode: 'scrolling'
+});
+`
+
+[#wrap]
+==== Wrap
+
+If the `toolbar_mode` is configured to `wrap`, the overflow toolbar buttons will be shown on one or more toolbars below the primary toolbar.
+
+image::{modulesDir}/images/wrapped_toolbar.png[**Wrapped Toolbar**]
+
+[#configuring-a-wrapped-toolbar]
+===== Configuring a Wrapped toolbar
+
+Use the following settings to configure a wrapped toolbar:
+
+`js
+tinymce.init({
+    selector: "textarea",
+    toolbar_mode: 'wrap'
+});
+`

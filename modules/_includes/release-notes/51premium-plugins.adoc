@@ -1,0 +1,88 @@
+[#advanced-code-editor]
+=== Advanced Code Editor
+
+The {productname} 5.1 release includes *Advanced Code Editor* 2.0.2.
+
+*Advanced Code Editor* 2.0.2 has been updated to improve performance on mobile devices.
+
+[#advanced-tables]
+=== Advanced Tables
+
+A new *Advanced Tables* premium plugin has been released with {productname} 5.1. The *Advanced Tables* plugin extends the core link:{modulesDir}/plugins/table/[`table` plugin] by adding sort options for rows and columns.
+
+The plugin is capable of sorting:
+* Numerical data
+* Text data
+
+NOTE: Currently, the sort function will treat cells with Alphanumeric data as Text data. This includes currency symbols which are text characters.
+
+For information on this plugin, see:
+
+* https://apps.tiny.cloud/products/advanced-tables/[The Advanced Tables product page].
+* link:{modulesDir}/enterprise/advanced-tables/[The Advanced Tables Premium features page (including demo)].
+* link:{modulesDir}/plugins/advtable/[The Advanced Tables plugin documentation page].
+
+[#checklist]
+=== Checklist
+
+The {productname} 5.1 release includes *Checklist* 1.0.1.
+
+*Checklist* 1.0.1 includes:
+* A fix to allow checklist items to be toggled on an iPad.
+* A fix to ensure the checklist toolbar button is toggled when checklist content is selected.
+
+[#enhanced-media-embed]
+=== Enhanced Media Embed
+
+The {productname} 5.1 release includes *Enhanced Media Embed* 2.2.4.
+
+*Enhanced Media Embed* 2.2.4 has been updated to include a touch event listener to allow embedded media to execute on mobile platforms.
+
+[#format-painter]
+=== Format Painter
+
+The {productname} 5.1 release includes *Format Painter* 1.2.0.
+
+*Format Painter* 1.2.0 has been updated to support mobile platforms. The *Format Painter* will now function as expected for mobile users.
+
+This version of *Format Painter* includes a fix to work with the link:{modulesDir}/plugins/legacyoutput/[_Legacy Output_ plugin]).
+
+[#mentions]
+=== Mentions
+
+The {productname} 5.1 release includes *Mentions* 2.1.0.
+
+*Mentions* 2.1.0 has been updated to allow for the inclusion of "extra" menu items, such as additional results or search items. For details, see: link:{modulesDir}/plugins/mentions/#mentions_fetch[Mentions - `mentions_fetch`].
+
+[#page-embed]
+=== Page Embed
+
+The {productname} 5.1 release includes *Page Embed* 1.0.1.
+
+*Page Embed* 1.0.1 has been updated to include a touch event listener to allow embedded media to execute on mobile platforms.
+
+[#powerpaste]
+=== PowerPaste
+
+The {productname} 5.1 release includes *PowerPaste* 5.2.0.
+
+[#changes-to-paste-and-paste]
+==== Changes to `clean` paste and `Remove Formatting` paste
+
+*PowerPaste* _5.0_ included a change to the `Remove Formatting` functionality to filter out inline style elements (such as `strong`, `b`, `em`, `i`, and `sub`), in-line with other editor functionality.
+
+*PowerPaste* _5.2_ *reverses the _5.0_ change* and includes a new `powerpaste_clean_filtered_inline_elements` setting. This setting accepts a list of inline style elements to be filtered. These inline elements will be filtered on `clean` or `Remove Formatting` paste.
+
+To retain the _5.0_ default inline style element filter, add the following setting to `tinymce.init`:
+`js
+powerpaste_clean_filtered_inline_elements: 'strong,em,b,i,u,strike,sup,sub,font'
+`
+
+For information on `powerpaste_clean_filtered_inline_elements`, see: link:{modulesDir}/plugins/powerpaste/#powerpaste_clean_filtered_inline_elements[PowerPaste - `powerpaste_clean_filtered_inline_elements`].
+
+[#pre-filtering-and-post-filtering-callbacks]
+==== Pre-filtering and post-filtering callbacks
+
+*PowerPaste* 5.2 modifies the _pre-filtering_ and _post-filtering_ callbacks. The callbacks now contain additional data regarding the paste `mode` and the `source` of the content.
+
+For information on using the Pre-filtering and Post-filtering callbacks, see: link:{modulesDir}/plugins/powerpaste/#pre-filtering-and-post-filtering-callbacks[PowerPaste Plugin - Pre-filtering and post-filtering callbacks]

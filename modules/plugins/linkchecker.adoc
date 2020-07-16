@@ -1,3 +1,7 @@
+:modulesDir: ../
+:includeDir: {modulesDir}_includes/
+:imagesDir: {modulesDir}images/
+include::{modulesDir}_attributes.adoc[]
 = Link Checker plugin
 :description: Validate links, as you type.
 :keywords: url urls link linkchecker_service_url linkchecker_content_css

@@ -1,3 +1,7 @@
+:modulesDir: ../
+:includeDir: {modulesDir}_includes/
+:imagesDir: {modulesDir}images/
+include::{modulesDir}_attributes.adoc[]
 = Editor icon identifiers
 :description: Complete list of icon identifiers.
 :description_short: Complete list of icon identifiers.

@@ -1,3 +1,7 @@
+:modulesDir: ../
+:includeDir: {modulesDir}_includes/
+:imagesDir: {modulesDir}images/
+include::{modulesDir}_attributes.adoc[]
 = Integration and setup options
 :description: Essential editor configuration, including `selector` and `plugins` keys.
 :description_short:

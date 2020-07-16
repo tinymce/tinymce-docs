@@ -1,3 +1,7 @@
+:modulesDir: ../
+:includeDir: {modulesDir}_includes/
+:imagesDir: {modulesDir}images/
+include::{modulesDir}_attributes.adoc[]
 = Basic setup
 :title_nav: Basic setup
 :description_short: The three most important configuration settings, with examples.

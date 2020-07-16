@@ -1,3 +1,7 @@
+:modulesDir: ../
+:includeDir: {modulesDir}_includes/
+:imagesDir: {modulesDir}images/
+include::{modulesDir}_attributes.adoc[]
 = Preview plugin
 :controls: toolbar button, menu item
 :description: Shows a popup of the current content in read-only format.

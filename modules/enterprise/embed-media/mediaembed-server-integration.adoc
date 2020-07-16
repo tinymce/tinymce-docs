@@ -1,3 +1,7 @@
+:modulesDir: ../../
+:includeDir: {modulesDir}_includes/
+:imagesDir: {modulesDir}images/
+include::{modulesDir}_attributes.adoc[]
 = Integrate Enhanced Media Embed Server
 :description: Using the Enhanced Media Embed server with non-public content such as a corporate CMS.
 :keywords: enterprise pricing video youtube vimeo mp3 mp4 mov movie clip film link linkchecking linkchecker mediaembed media

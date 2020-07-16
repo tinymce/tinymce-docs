@@ -1,3 +1,7 @@
+:modulesDir: ../
+:includeDir: {modulesDir}_includes/
+:imagesDir: {modulesDir}images/
+include::{modulesDir}_attributes.adoc[]
 = Tiny Drive
 :description: Tiny Drive. A premium plugin to manage files & images.
 :description_short: Tiny Drive

@@ -1,3 +1,7 @@
+:modulesDir: ../
+:includeDir: {modulesDir}_includes/
+:imagesDir: {modulesDir}images/
+include::{modulesDir}_attributes.adoc[]
 = Toolbar buttons
 :description: Add a custom buttons to the TinyMCE 5 toolbar.
 :keywords: toolbar toolbarbuttons buttons toolbarbuttonsapi
@@ -51,4 +55,3 @@ tinymce.init({
 The following example creates different types of toolbar buttons.
 
 {% include codepen.html id="toolbar-button" height="400" %}
-

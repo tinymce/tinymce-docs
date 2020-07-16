@@ -1,3 +1,7 @@
+:modulesDir: ../
+:includeDir: {modulesDir}_includes/
+:imagesDir: {modulesDir}images/
+include::{modulesDir}_attributes.adoc[]
 = Configuring callbacks for Comments 2.0
 :description: Instructions for configuring callbacks for Comments 2.0
 :keywords: comments commenting tinycomments callback

@@ -1,3 +1,7 @@
+:modulesDir: ../
+:includeDir: {modulesDir}_includes/
+:imagesDir: {modulesDir}images/
+include::{modulesDir}_attributes.adoc[]
 = Dojo integration
 :description: This integration adds any parameter to an instance of TinyMCE 4 in Dojo.
 :keywords: integration integrate dojo

@@ -1,3 +1,7 @@
+:modulesDir: ../
+:includeDir: {modulesDir}_includes/
+:imagesDir: {modulesDir}images/
+include::{modulesDir}_attributes.adoc[]
 = Cloud deployment of editor & plugins
 :description: Learn how to set up the TinyMCE editor via the Cloud or migrate from a self-hosted environment.
 :description_short: Learn how to set up the TinyMCE editor via the Cloud or migrate from a self-hosted environment.

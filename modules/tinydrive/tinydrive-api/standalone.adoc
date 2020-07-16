@@ -1,3 +1,7 @@
+:modulesDir: ../../
+:includeDir: {modulesDir}_includes/
+:imagesDir: {modulesDir}images/
+include::{modulesDir}_attributes.adoc[]
 = Tiny Drive Standalone API
 :description: Description of the Tiny Drive standalone api
 :keywords: tinydrive api

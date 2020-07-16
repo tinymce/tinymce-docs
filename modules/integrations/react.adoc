@@ -1,3 +1,7 @@
+:modulesDir: ../
+:includeDir: {modulesDir}_includes/
+:imagesDir: {modulesDir}images/
+include::{modulesDir}_attributes.adoc[]
 = React integration
 :description: React TinyMCE component.
 :keywords: integration integrate react reactjs create-react-app tinymce-react

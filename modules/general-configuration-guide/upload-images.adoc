@@ -1,3 +1,7 @@
+:modulesDir: ../
+:includeDir: {modulesDir}_includes/
+:imagesDir: {modulesDir}images/
+include::{modulesDir}_attributes.adoc[]
 = Handling image uploads
 :description: How to manage asynchronous image uploads.
 :description_short: How to manage asynchronous image uploads.

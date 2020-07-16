@@ -1,3 +1,7 @@
+:modulesDir: ../
+:includeDir: {modulesDir}_includes/
+:imagesDir: {modulesDir}images/
+include::{modulesDir}_attributes.adoc[]
 = Supported Premium Versions and Platforms
 :description: Supported versions and platforms for TinyMCE and TinyMCE premium features.
 :keywords: support supported browser browsers windows osx linux ie11 chrome firefox safari mobile premium self-hosted selfhosted

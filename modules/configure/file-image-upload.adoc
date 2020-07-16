@@ -1,3 +1,7 @@
+:modulesDir: ../
+:includeDir: {modulesDir}_includes/
+:imagesDir: {modulesDir}images/
+include::{modulesDir}_attributes.adoc[]
 = Image &amp; file upload options
 :description: These settings affect TinyMCE's image and file upload capabilities.
 :description_short:

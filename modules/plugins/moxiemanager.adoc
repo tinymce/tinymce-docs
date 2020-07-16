@@ -1,3 +1,7 @@
+:modulesDir: ../
+:includeDir: {modulesDir}_includes/
+:imagesDir: {modulesDir}images/
+include::{modulesDir}_attributes.adoc[]
 = MoxieManager plugin
 :description: File and image management plugin and service
 :keywords: amazon azure premium pro enterprise tiny relative_urls

@@ -1,3 +1,7 @@
+:modulesDir: ../
+:includeDir: {modulesDir}_includes/
+:imagesDir: {modulesDir}images/
+include::{modulesDir}_attributes.adoc[]
 = Insert Date/Time plugin
 :controls: toolbar button, menu item
 :description: Insert the current date and/or time into TinyMCE.

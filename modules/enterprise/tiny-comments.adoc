@@ -1,3 +1,7 @@
+:modulesDir: ../
+:includeDir: {modulesDir}_includes/
+:imagesDir: {modulesDir}images/
+include::{modulesDir}_attributes.adoc[]
 = Commenting &amp; collaboration
 :description: Comments 2.0 provides the ability to add comments to the content and collaborate with other users for content editing.
 :keywords: enterprise pricing comment commenting

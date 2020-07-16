@@ -1,3 +1,7 @@
+:modulesDir: ../
+:includeDir: {modulesDir}_includes/
+:imagesDir: {modulesDir}images/
+include::{modulesDir}_attributes.adoc[]
 = Basic local file picker
 :description: This example shows how to add a local file picker to the Image dialog.
 :keywords: example demo image local-file-picker file_picker_callback

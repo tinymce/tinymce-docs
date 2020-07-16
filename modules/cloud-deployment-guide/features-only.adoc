@@ -1,3 +1,7 @@
+:modulesDir: ../
+:includeDir: {modulesDir}_includes/
+:imagesDir: {modulesDir}images/
+include::{modulesDir}_attributes.adoc[]
 = Cloud deployment of plugins Only
 :description: Connect to Tiny Cloud within a hybrid deployment.
 :description_short: Learn how to setup TinyMCE Plugins via the Tiny Cloud.

@@ -1,3 +1,7 @@
+:modulesDir: ../
+:includeDir: {modulesDir}_includes/
+:imagesDir: {modulesDir}images/
+include::{modulesDir}_attributes.adoc[]
 = Get TinyMCE bugs fixed
 :description: TinyMCE Enterprise customers get priority fixes of bugs.
 :keywords: enterprise bug bugs patch patches

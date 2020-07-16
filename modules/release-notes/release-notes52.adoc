@@ -1,3 +1,7 @@
+:modulesDir: ../
+:includeDir: {modulesDir}_includes/
+:imagesDir: {modulesDir}images/
+include::{modulesDir}_attributes.adoc[]
 = TinyMCE 5.2
 :description: Release notes for TinyMCE 5.2
 :keywords: releasenotes bugfixes

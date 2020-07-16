@@ -1,3 +1,7 @@
+:modulesDir: ../
+:includeDir: {modulesDir}_includes/
+:imagesDir: {modulesDir}images/
+include::{modulesDir}_attributes.adoc[]
 = Installing TinyMCE
 :description: Learn how to install TinyMCE via TinyMCE Cloud, package manager options, Self-hosted, jQuery and custom build options.
 :description_short: Cloud, package managers, Self-hosted, jQuery and custom builds.
@@ -53,4 +57,3 @@ include::{includeDir}/install/sdk.adoc[]
 == Custom Build Install
 
 include::{includeDir}/install/custom.adoc[]
-

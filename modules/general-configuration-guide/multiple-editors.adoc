@@ -1,3 +1,7 @@
+:modulesDir: ../
+:includeDir: {modulesDir}_includes/
+:imagesDir: {modulesDir}images/
+include::{modulesDir}_attributes.adoc[]
 = Use multiple TinyMCE instances in a single page
 :keywords:
 :title_nav: Multiple editors in a page
@@ -75,4 +79,3 @@ The following example loads each editable area with a unique configuration of {p
 </body>
 </html>
 ----
-

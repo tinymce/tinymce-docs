@@ -1,3 +1,7 @@
+:modulesDir: ../
+:includeDir: {modulesDir}_includes/
+:imagesDir: {modulesDir}images/
+include::{modulesDir}_attributes.adoc[]
 = Text Pattern plugin
 :description: Matches special patterns in the text and applies formats or executed commands on these patterns.
 :keywords: textpattern textpattern_patterns format cmd

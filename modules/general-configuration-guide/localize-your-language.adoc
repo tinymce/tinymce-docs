@@ -1,3 +1,7 @@
+:modulesDir: ../
+:includeDir: {modulesDir}_includes/
+:imagesDir: {modulesDir}images/
+include::{modulesDir}_attributes.adoc[]
 = Localize TinyMCE
 :description: Localize TinyMCE with global language capabilities.
 :keywords: internationalization localization languages
@@ -67,4 +71,3 @@ link:{gettiny}/language-packages/[Download the Chinese language] pack to test th
 </body>
 </html>
 ----
-

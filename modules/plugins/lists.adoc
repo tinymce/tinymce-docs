@@ -1,3 +1,7 @@
+:modulesDir: ../
+:includeDir: {modulesDir}_includes/
+:imagesDir: {modulesDir}images/
+include::{modulesDir}_attributes.adoc[]
 = Lists plugin
 :description: Normalizes list behavior between browsers.
 :keywords: list lists browser normalize

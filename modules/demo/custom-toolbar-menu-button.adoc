@@ -1,3 +1,7 @@
+:modulesDir: ../
+:includeDir: {modulesDir}_includes/
+:imagesDir: {modulesDir}images/
+include::{modulesDir}_attributes.adoc[]
 = Custom toolbar menu button
 :description: This example shows you how to add a simple menu button to TinyMCE's toolbar.
 :description_short: Add a custom menu button to the toolbar.

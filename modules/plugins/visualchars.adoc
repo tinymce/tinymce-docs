@@ -1,3 +1,7 @@
+:modulesDir: ../
+:includeDir: {modulesDir}_includes/
+:imagesDir: {modulesDir}images/
+include::{modulesDir}_attributes.adoc[]
 = Visual Characters plugin
 :controls: toolbar button, menu item
 :description: See invisible characters like non-breaking spaces.

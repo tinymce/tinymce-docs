@@ -1,3 +1,7 @@
+:modulesDir: ../
+:includeDir: {modulesDir}_includes/
+:imagesDir: {modulesDir}images/
+include::{modulesDir}_attributes.adoc[]
 = Create an icon pack for TinyMCE
 :description: How to make your own icon pack.
 :description_short: Introducing icon pack creation.

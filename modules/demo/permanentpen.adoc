@@ -1,3 +1,7 @@
+:modulesDir: ../
+:includeDir: {modulesDir}_includes/
+:imagesDir: {modulesDir}images/
+include::{modulesDir}_attributes.adoc[]
 = Permanent Pen plugin
 :controls: toolbar button, contextmenu, menu item
 :description: Apply formats while typing.

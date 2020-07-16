@@ -1,3 +1,7 @@
+:modulesDir: ../
+:includeDir: {modulesDir}_includes/
+:imagesDir: {modulesDir}images/
+include::{modulesDir}_attributes.adoc[]
 = Create a skin for TinyMCE
 :description: Introducing skin creation, less and icon modification.
 :description_short: Introducing skin creation.

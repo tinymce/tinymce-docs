@@ -1,3 +1,7 @@
+:modulesDir: ../
+:includeDir: {modulesDir}_includes/
+:imagesDir: {modulesDir}images/
+include::{modulesDir}_attributes.adoc[]
 = Context Menu plugin
 :description: Right-click to perform actions in TinyMCE
 :keywords: contextmenu inserttable deletetable contextmenu_never_use_native

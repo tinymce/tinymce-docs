@@ -1,3 +1,7 @@
+:modulesDir: ../
+:includeDir: {modulesDir}_includes/
+:imagesDir: {modulesDir}images/
+include::{modulesDir}_attributes.adoc[]
 = Customizing the editor UI
 :description: Learn how to change the appearance of TinyMCE.
 :keywords: themes skins statusbar
@@ -160,4 +164,3 @@ tinymce.init({
 `
 
 The ability to customize the user interface is an integral part of ensuring an integrated and complete user experience.
-

@@ -1,3 +1,7 @@
+:modulesDir: ../
+:includeDir: {modulesDir}_includes/
+:imagesDir: {modulesDir}images/
+include::{modulesDir}_attributes.adoc[]
 = Table of Contents plugin
 :controls: toolbar button, menu item
 :description: Insert a simple Table of Contents into TinyMCE editor

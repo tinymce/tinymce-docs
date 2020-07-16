@@ -1,3 +1,7 @@
+:modulesDir: ./
+:includeDir: {modulesDir}_includes/
+:imagesDir: {modulesDir}images/
+include::{modulesDir}_attributes.adoc[]
 = Quick start
 :description: Get an instance of TinyMCE 5 up and running using the Tiny Cloud.
 :description_short: Setup a basic TinyMCE 5 editor using the Tiny Cloud.

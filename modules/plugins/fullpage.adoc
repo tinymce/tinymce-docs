@@ -1,3 +1,7 @@
+:modulesDir: ../
+:includeDir: {modulesDir}_includes/
+:imagesDir: {modulesDir}images/
+include::{modulesDir}_attributes.adoc[]
 = Full Page plugin
 :controls: toolbar button, menu item
 :description: Edit all metadata and document properties such as title, keywords and description.

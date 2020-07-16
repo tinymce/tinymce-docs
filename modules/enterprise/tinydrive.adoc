@@ -1,3 +1,7 @@
+:modulesDir: ../
+:includeDir: {modulesDir}_includes/
+:imagesDir: {modulesDir}images/
+include::{modulesDir}_attributes.adoc[]
 = Cloud-based file management
 :description: Tiny Drive - a premium plugin to manage files & images.
 :keywords: tinydrive .net php relative_urls

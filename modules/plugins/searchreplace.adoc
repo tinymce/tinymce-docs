@@ -1,3 +1,7 @@
+:modulesDir: ../
+:includeDir: {modulesDir}_includes/
+:imagesDir: {modulesDir}images/
+include::{modulesDir}_attributes.adoc[]
 = Search and Replace plugin
 :controls: toolbar button, menu item
 :description: Find and replace content in TinyMCE.

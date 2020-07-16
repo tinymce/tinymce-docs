@@ -1,3 +1,7 @@
+:modulesDir: ../
+:includeDir: {modulesDir}_includes/
+:imagesDir: {modulesDir}images/
+include::{modulesDir}_attributes.adoc[]
 = Comments 2.0 Demo
 :controls: toolbar button
 :description: Tiny Comments provides the ability to add comments to the content and collaborate with other users for content editing.

@@ -1,3 +1,7 @@
+:modulesDir: ../
+:includeDir: {modulesDir}_includes/
+:imagesDir: {modulesDir}images/
+include::{modulesDir}_attributes.adoc[]
 = Get help
 :description: Details on how to get help if you get stuck in getting Tiny Drive up and running
 :keywords: help

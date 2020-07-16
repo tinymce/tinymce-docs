@@ -1,3 +1,7 @@
+:modulesDir: ../
+:includeDir: {modulesDir}_includes/
+:imagesDir: {modulesDir}images/
+include::{modulesDir}_attributes.adoc[]
 = Dialog components
 :description: A reference list of all TinyMCE dialog components.
 :keywords: dialog dialogapi

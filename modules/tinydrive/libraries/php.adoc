@@ -1,3 +1,7 @@
+:modulesDir: ../../
+:includeDir: {modulesDir}_includes/
+:imagesDir: {modulesDir}images/
+include::{modulesDir}_attributes.adoc[]
 = PHP
 :description: PHP
 :keywords: tinydrive PHP

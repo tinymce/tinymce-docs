@@ -1,3 +1,7 @@
+:modulesDir: ../../
+:includeDir: {modulesDir}_includes/
+:imagesDir: {modulesDir}images/
+include::{modulesDir}_attributes.adoc[]
 = Node.js
 :description: Node.js
 :keywords: tinydrive node.js

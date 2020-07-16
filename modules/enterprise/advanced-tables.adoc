@@ -1,3 +1,7 @@
+:modulesDir: ../
+:includeDir: {modulesDir}_includes/
+:imagesDir: {modulesDir}images/
+include::{modulesDir}_attributes.adoc[]
 = Advanced Tables plugin
 :description: Add sorting functionality to tables.
 :keywords: sort tables advanced advtable premium

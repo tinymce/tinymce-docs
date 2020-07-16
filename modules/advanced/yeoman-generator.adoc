@@ -1,3 +1,7 @@
+:modulesDir: ../
+:includeDir: {modulesDir}_includes/
+:imagesDir: {modulesDir}images/
+include::{modulesDir}_attributes.adoc[]
 = TinyMCE plugin Yeoman generator
 :description: How to use the Yeoman generator to bootstrap a new TinyMCE plugin using ES2015/Babel or TypeScript.
 :description_short: How to use the Yeoman generator to bootstrap a new TinyMCE plugin

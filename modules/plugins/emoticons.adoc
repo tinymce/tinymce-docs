@@ -1,3 +1,7 @@
+:modulesDir: ../
+:includeDir: {modulesDir}_includes/
+:imagesDir: {modulesDir}images/
+include::{modulesDir}_attributes.adoc[]
 = Emoticons plugin
 :controls: toolbar button
 :description: Bring a smiley to your content.
@@ -26,7 +30,7 @@ tinymce.init({
 [#browser-emoji-support]
 === Browser emoji support
 
-The emoticon plugin inserts unicode character codes, such as `\ud83d\ude03` for the smiley emoji. How emoji are rendered is dependent on the web browser and operating system of the user. As a result of this, some emoji may be rendered in black and white, or may not render.
+The emoticon plugin inserts unicode character codes, such as `í ½í¸ƒ` for the smiley emoji. How emoji are rendered is dependent on the web browser and operating system of the user. As a result of this, some emoji may be rendered in black and white, or may not render.
 To ensure emoji render consistently across browsers and operating systems, {companyname} recommends adding an emoji-compatible web font to the default font-family using link:{modulesDir}/configure/content-appearance/#content_css[`content_css`].
 
 {% include codepen.html id="emoticons" %}

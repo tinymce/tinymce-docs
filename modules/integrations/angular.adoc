@@ -1,3 +1,7 @@
+:modulesDir: ../
+:includeDir: {modulesDir}_includes/
+:imagesDir: {modulesDir}images/
+include::{modulesDir}_attributes.adoc[]
 = Angular 4+ integration
 :description: Using TinyMCE together with Angular with the @tinymce/tinymce-angular component
 :keywords: integration integrate angular

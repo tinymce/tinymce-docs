@@ -1,3 +1,7 @@
+:modulesDir: ../
+:includeDir: {modulesDir}_includes/
+:imagesDir: {modulesDir}images/
+include::{modulesDir}_attributes.adoc[]
 = Bootstrap integration
 :description: How to override the built-in block on `focusin` in Bootstrap dialogs when using TinyMCE.
 :keywords: integration integrate bootstrap

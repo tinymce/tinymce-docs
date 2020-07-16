@@ -1,3 +1,7 @@
+:modulesDir: ../
+:includeDir: {modulesDir}_includes/
+:imagesDir: {modulesDir}images/
+include::{modulesDir}_attributes.adoc[]
 = Setup inline editing mode
 :description: Understand the difference between traditional forms-based editing and advanced inline editing.
 :description_short: Learn about forms-based editing v. inline editing.
@@ -50,4 +54,3 @@ The following demonstration is using four {productname} editors in inline mode, 
 {% include codepen.html id="inline" %}
 
 For information on inline mode and the `inline` setting, see: link:{modulesDir}/configure/editor-appearance/#inline[User interface options - inline].
-

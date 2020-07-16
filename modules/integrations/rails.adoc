@@ -1,3 +1,7 @@
+:modulesDir: ../
+:includeDir: {modulesDir}_includes/
+:imagesDir: {modulesDir}images/
+include::{modulesDir}_attributes.adoc[]
 = Rails integration
 :description: Seamlessly integrates TinyMCE into the Rails asset pipeline.
 :keywords: integration integrate rails

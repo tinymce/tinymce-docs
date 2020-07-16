@@ -1,3 +1,7 @@
+:modulesDir: ../
+:includeDir: {modulesDir}_includes/
+:imagesDir: {modulesDir}images/
+include::{modulesDir}_attributes.adoc[]
 = Inline editor example
 :description: This example shows you the inline editing capabilities of TinyMCE.
 :description_short: See how inline editor works.

@@ -1,3 +1,7 @@
+:modulesDir: ../
+:includeDir: {modulesDir}_includes/
+:imagesDir: {modulesDir}images/
+include::{modulesDir}_attributes.adoc[]
 = Tiny Drive plugin
 :description: Cloud-based file and image management for TinyMCE.
 :keywords: tinydrive storage media tiny drive

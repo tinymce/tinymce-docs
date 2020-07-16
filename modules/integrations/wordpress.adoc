@@ -1,3 +1,7 @@
+:modulesDir: ../
+:includeDir: {modulesDir}_includes/
+:imagesDir: {modulesDir}images/
+include::{modulesDir}_attributes.adoc[]
 = WordPress integration
 :keywords: integration integrate wordpress advanced
 :title_nav: WordPress

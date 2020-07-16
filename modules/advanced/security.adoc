@@ -1,3 +1,7 @@
+:modulesDir: ../
+:includeDir: {modulesDir}_includes/
+:imagesDir: {modulesDir}images/
+include::{modulesDir}_attributes.adoc[]
 = Security
 :description: Information on reporting security issues, what TinyMCE does to protect users, and what you can do to protect your users.
 :description_short: Security information for TinyMCE.

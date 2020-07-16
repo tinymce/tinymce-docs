@@ -1,3 +1,7 @@
+:modulesDir: ../
+:includeDir: {modulesDir}_includes/
+:imagesDir: {modulesDir}images/
+include::{modulesDir}_attributes.adoc[]
 = Create a plugin for TinyMCE
 :description: A short introduction to creating plugins for TinyMCE along with an example plugin.
 :description_short: Introducing plugin creation, with an example.

@@ -1,3 +1,7 @@
+:modulesDir: ../
+:includeDir: {modulesDir}_includes/
+:imagesDir: {modulesDir}images/
+include::{modulesDir}_attributes.adoc[]
 = Full featured examples
 :description: These examples display all of the plugins available with TinyMCE Cloud premium subscriptions.
 :description_short: Every TinyMCE plugin in action.

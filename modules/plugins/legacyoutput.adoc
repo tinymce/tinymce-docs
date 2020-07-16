@@ -1,3 +1,7 @@
+:modulesDir: ../
+:includeDir: {modulesDir}_includes/
+:imagesDir: {modulesDir}images/
+include::{modulesDir}_attributes.adoc[]
 = Legacy Output plugin
 :description: Changes HTML output to old HTML syntax such as font, b and i
 :keywords: legacyoutput filter content cms email flash

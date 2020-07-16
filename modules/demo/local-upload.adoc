@@ -1,3 +1,7 @@
+:modulesDir: ../
+:includeDir: {modulesDir}_includes/
+:imagesDir: {modulesDir}images/
+include::{modulesDir}_attributes.adoc[]
 = Local upload
 :description: This example demonstrates the local file upload feature.
 :keywords: example demo image local-upload

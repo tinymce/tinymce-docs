@@ -1,3 +1,7 @@
+:modulesDir: ../
+:includeDir: {modulesDir}_includes/
+:imagesDir: {modulesDir}images/
+include::{modulesDir}_attributes.adoc[]
 = Accessibility checking
 :description: WCAG & Section 508 compliant accessibility checking.
 :keywords: a11y accessibility

@@ -1,3 +1,7 @@
+:modulesDir: ../../
+:includeDir: {modulesDir}_includes/
+:imagesDir: {modulesDir}images/
+include::{modulesDir}_attributes.adoc[]
 = Dropbox integration
 :description: Guide for setting up Tiny Drive with Dropbox.
 :keywords: dropbox

@@ -1,3 +1,7 @@
+:modulesDir: ../
+:includeDir: {modulesDir}_includes/
+:imagesDir: {modulesDir}images/
+include::{modulesDir}_attributes.adoc[]
 = Get Support &amp; FAQ
 :description: Community and pro-grade support options.
 :keywords: forum forums url absolute relative security xss

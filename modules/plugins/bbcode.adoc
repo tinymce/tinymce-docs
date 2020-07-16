@@ -1,3 +1,7 @@
+:modulesDir: ../
+:includeDir: {modulesDir}_includes/
+:imagesDir: {modulesDir}images/
+include::{modulesDir}_attributes.adoc[]
 = BBCode plugin
 :description: Add basic BBCode input/output support to TinyMCE.
 :description_short: Add basic BBCode input/output to TinyMCE.
@@ -66,7 +70,8 @@ This option allows you to specify the BBCode dialect. We only support http://pun
 | Quote
 | `+<span class="quoteStyle">...</span>+`
 
-| `\n`
+| `
+`
 | Newline
 | `<br />`
 |===

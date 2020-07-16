@@ -1,3 +1,7 @@
+:modulesDir: ../
+:includeDir: {modulesDir}_includes/
+:imagesDir: {modulesDir}images/
+include::{modulesDir}_attributes.adoc[]
 = Contribute to TinyMCE development
 :description: Contribute to the open source project. Help build the core, plugins or even write the documentation.
 :description_short: Contribute to the open source project.

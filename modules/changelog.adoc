@@ -1,3 +1,7 @@
+:modulesDir: ./
+:includeDir: {modulesDir}_includes/
+:imagesDir: {modulesDir}images/
+include::{modulesDir}_attributes.adoc[]
 = Changelog
 :class: changelog
 :description: The history of TinyMCE releases.

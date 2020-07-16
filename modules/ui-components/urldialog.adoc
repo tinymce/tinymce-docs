@@ -1,3 +1,7 @@
+:modulesDir: ../
+:includeDir: {modulesDir}_includes/
+:imagesDir: {modulesDir}images/
+include::{modulesDir}_attributes.adoc[]
 = URL dialog
 :description: URL dialogs are a TinyMCE UI component used to display an external page.
 :keywords: dialog urldialog api

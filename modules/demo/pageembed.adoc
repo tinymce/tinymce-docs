@@ -1,3 +1,7 @@
+:modulesDir: ../
+:includeDir: {modulesDir}_includes/
+:imagesDir: {modulesDir}images/
+include::{modulesDir}_attributes.adoc[]
 = Page Embed plugin
 :controls: toolbar button, menu item
 :description: Easily inserts iframe into the content.

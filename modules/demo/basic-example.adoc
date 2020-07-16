@@ -1,3 +1,7 @@
+:modulesDir: ../
+:includeDir: {modulesDir}_includes/
+:imagesDir: {modulesDir}images/
+include::{modulesDir}_attributes.adoc[]
 = Basic example
 :description: This example contains the plugins needed for the most common use cases.
 :description_short: See how we built a commonly used TinyMCE instance.

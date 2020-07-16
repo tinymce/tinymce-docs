@@ -1,3 +1,7 @@
+:modulesDir: ../
+:includeDir: {modulesDir}_includes/
+:imagesDir: {modulesDir}images/
+include::{modulesDir}_attributes.adoc[]
 = TinyMCE distraction-free editing mode
 :description: Mode that renders a lightweight UI for inline editing.
 :keywords: Mode inlite distraction-free
@@ -36,4 +40,3 @@ For information on:
 * Configuring a contextual menu, see: link:{modulesDir}/ui-components/contextmenu/[Context Menu].
 * Disabling the {productname} menubar, see: link:{modulesDir}/configure/editor-appearance/#menubar[Menubar].
 * The `inline` setting, see: link:{modulesDir}/configure/editor-appearance/#inline[inline].
-

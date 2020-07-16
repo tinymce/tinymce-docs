@@ -1,3 +1,7 @@
+:modulesDir: ../
+:includeDir: {modulesDir}_includes/
+:imagesDir: {modulesDir}images/
+include::{modulesDir}_attributes.adoc[]
 = Work with plugins to extend TinyMCE
 :description: TinyMCE is an incredibly powerful, flexible and customizable rich text editor. This section demonstrates the power of plugins with several working examples.
 :description_short: Learn about TinyMCE's plugin functionality and discover our Top 10 plugins.
@@ -181,4 +185,3 @@ Customizing {productname} with the default plugins is that easy. There are 60 pl
 | Code Sample
 | link:{modulesDir}/plugins/codesample/[codesample]
 |===
-

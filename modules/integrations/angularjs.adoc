@@ -1,3 +1,7 @@
+:modulesDir: ../
+:includeDir: {modulesDir}_includes/
+:imagesDir: {modulesDir}images/
+include::{modulesDir}_attributes.adoc[]
 = AngularJS integration
 :description: This directive allows you to add a TinyMCE editor to your form elements.
 :keywords: integration integrate angular angularjs angular1

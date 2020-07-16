@@ -1,3 +1,7 @@
+:modulesDir: ../
+:includeDir: {modulesDir}_includes/
+:imagesDir: {modulesDir}images/
+include::{modulesDir}_attributes.adoc[]
 = Save plugin
 :controls: toolbar button
 :description: Adds a save button to the TinyMCE toolbar.

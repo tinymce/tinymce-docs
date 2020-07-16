@@ -1,3 +1,7 @@
+:modulesDir: ../
+:includeDir: {modulesDir}_includes/
+:imagesDir: {modulesDir}images/
+include::{modulesDir}_attributes.adoc[]
 = Visual Blocks plugin
 :controls: toolbar button, menu item
 :description: Allows a user to see block level elements such as paragraphs.

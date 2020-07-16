@@ -1,3 +1,7 @@
+:modulesDir: ../
+:includeDir: {modulesDir}_includes/
+:imagesDir: {modulesDir}images/
+include::{modulesDir}_attributes.adoc[]
 = Directionality plugin
 :controls: toolbar button
 :description: Toolbar buttons for setting the left-to-right or right-to-left direction of content.

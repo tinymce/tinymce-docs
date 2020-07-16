@@ -1,3 +1,7 @@
+:modulesDir: ../
+:includeDir: {modulesDir}_includes/
+:imagesDir: {modulesDir}images/
+include::{modulesDir}_attributes.adoc[]
 = Accessibility Checker plugin
 :description: Checks the contents of the editor for WCAG & Section 508 accessibility problems.
 :keywords: a11y accessibility WCAG

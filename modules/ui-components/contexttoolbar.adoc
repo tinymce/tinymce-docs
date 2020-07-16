@@ -1,3 +1,7 @@
+:modulesDir: ../
+:includeDir: {modulesDir}_includes/
+:imagesDir: {modulesDir}images/
+include::{modulesDir}_attributes.adoc[]
 = Context toolbar
 :description: Context toolbar overview
 :keywords: contexttoolbar context toolbar contexttoolbarapi

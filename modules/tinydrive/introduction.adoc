@@ -1,3 +1,7 @@
+:modulesDir: ../
+:includeDir: {modulesDir}_includes/
+:imagesDir: {modulesDir}images/
+include::{modulesDir}_attributes.adoc[]
 = Tiny Drive Introduction
 :description: Introduction of what Tiny Drive is and its capabilities
 :keywords: tinydrive introduction overview

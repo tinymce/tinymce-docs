@@ -1,3 +1,7 @@
+:modulesDir: ../
+:includeDir: {modulesDir}_includes/
+:imagesDir: {modulesDir}images/
+include::{modulesDir}_attributes.adoc[]
 = Color Picker plugin
 :description: Select a color from a pallete.
 :keywords: colorpicker color color_picker_callback

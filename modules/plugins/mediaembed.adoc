@@ -1,3 +1,7 @@
+:modulesDir: ../
+:includeDir: {modulesDir}_includes/
+:imagesDir: {modulesDir}images/
+include::{modulesDir}_attributes.adoc[]
 = Enhanced Media Embed plugin
 :description: Add rich media previews inside TinyMCE.
 :keywords: video youtube vimeo mp3 mp4 mov movie clip film spotify

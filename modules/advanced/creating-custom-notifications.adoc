@@ -1,3 +1,7 @@
+:modulesDir: ../
+:includeDir: {modulesDir}_includes/
+:imagesDir: {modulesDir}images/
+include::{modulesDir}_attributes.adoc[]
 = Create custom notifications
 :description: Learn how to make custom dialogs with NotificationManager.
 :description_short: Learn how to make custom notifications.

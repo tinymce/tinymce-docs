@@ -1,3 +1,7 @@
+:modulesDir: ../
+:includeDir: {modulesDir}_includes/
+:imagesDir: {modulesDir}images/
+include::{modulesDir}_attributes.adoc[]
 = Quick Toolbars plugin
 :description: User interface controls to create content faster.
 :keywords: plugin inlite quickbar

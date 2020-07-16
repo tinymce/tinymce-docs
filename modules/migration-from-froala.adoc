@@ -1,3 +1,7 @@
+:modulesDir: ./
+:includeDir: {modulesDir}_includes/
+:imagesDir: {modulesDir}images/
+include::{modulesDir}_attributes.adoc[]
 = Migrating from Froala to TinyMCE
 :description: Upgrading your rich text editor from Froala Editor v3 to TinyMCE 5.
 :keywords: migration considerations premigration pre-migration froala

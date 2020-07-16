@@ -1,3 +1,7 @@
+:modulesDir: ../
+:includeDir: {modulesDir}_includes/
+:imagesDir: {modulesDir}images/
+include::{modulesDir}_attributes.adoc[]
 = Version compatibility reference
 :description: Premium plugins compatibility with TinyMCE editor versions.
 :description_short: Matrix of compatibility between TinyMCE editor versions and premium plugins.

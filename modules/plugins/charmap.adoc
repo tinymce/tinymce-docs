@@ -1,3 +1,7 @@
+:modulesDir: ../
+:includeDir: {modulesDir}_includes/
+:imagesDir: {modulesDir}images/
+include::{modulesDir}_attributes.adoc[]
 = Character Map plugin
 :controls: toolbar button, menu item
 :description: Insert special characters into TinyMCE.

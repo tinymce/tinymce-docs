@@ -1,3 +1,7 @@
+:modulesDir: ../
+:includeDir: {modulesDir}_includes/
+:imagesDir: {modulesDir}images/
+include::{modulesDir}_attributes.adoc[]
 = User interface options
 :description: Configure the editor's appearance, including menu and toolbar controls.
 :description_short:

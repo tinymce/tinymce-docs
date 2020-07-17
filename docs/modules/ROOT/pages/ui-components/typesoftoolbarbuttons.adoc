@@ -1,5 +1,5 @@
 :modulesDir: ../
-:includeDir: {modulesDir}_includes
+:partialsDir: {modulesDir}partials/
 :imagesDir: {modulesDir}images/
 include::{modulesDir}_attributes.adoc[]
 = Types of toolbar buttons
@@ -273,7 +273,7 @@ A split button is similar to a basic button in that they both require an `onActi
 
 The `fetch` function is called whenever the split button's drop-down menu is opened. It is a function that takes a callback and passes it an array of menu items to be rendered in the button's drop-down menu. This allows for asynchronous fetching of the menu items.
 
-include::{includeDir}/components/choice-menu-items.adoc[leveloffset=+1]
+include::{partialsDir}components/choice-menu-items.adoc[leveloffset=+1]
 
 [discrete#menu-button]
 === Menu button
@@ -417,4 +417,4 @@ The example above configures a custom *alignment* group toolbar button. When cli
 [discrete#explanation]
 === `onSetup` explanation
 
-include::{includeDir}/release-notes/onSetup.adoc[]
+include::{partialsDir}release-notes/onSetup.adoc[]

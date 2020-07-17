@@ -1,5 +1,5 @@
 :modulesDir: ../
-:includeDir: {modulesDir}_includes
+:partialsDir: {modulesDir}partials/
 :imagesDir: {modulesDir}images/
 include::{modulesDir}_attributes.adoc[]
 = Context forms
@@ -71,7 +71,7 @@ This relates to the form itself. The form specifications are:
 | This is a list of the items to show in the context form. They can be either `contextformbutton` or `contextformtogglebutton`.
 |===
 
-include::{includeDir}/context/positioning.adoc[]
+include::{partialsDir}context/positioning.adoc[]
 
 [#context-form-buttons]
 === Context form buttons
@@ -208,4 +208,4 @@ This example shows how the link plugin adds the standard link context form. The 
 
 {% include codepen.html id="context-form" height="400" tab="js" %}
 
-include::{includeDir}/context/priority.adoc[]
+include::{partialsDir}context/priority.adoc[]

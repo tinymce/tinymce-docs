@@ -1,5 +1,5 @@
 :modulesDir: ../
-:includeDir: {modulesDir}_includes
+:partialsDir: {modulesDir}partials/
 :imagesDir: {modulesDir}images/
 include::{modulesDir}_attributes.adoc[]
 = Checklist plugin
@@ -31,4 +31,4 @@ Common use cases for using a checklist:
 :pluginname: Checklist
 :pluginminimumplan: tiertwo
 :plugindocspage: checklist
-include::{includeDir}/misc/purchase-premium-plugins.adoc[]
+include::{partialsDir}misc/purchase-premium-plugins.adoc[]

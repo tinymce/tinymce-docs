@@ -1,5 +1,5 @@
 :modulesDir: ../
-:includeDir: {modulesDir}_includes
+:partialsDir: {modulesDir}partials/
 :imagesDir: {modulesDir}images/
 include::{modulesDir}_attributes.adoc[]
 = Custom menu items
@@ -108,7 +108,7 @@ A basic menu item triggers its `onAction` function when clicked.
 | Sets a keyboard shortcut for activating the menu item, such as: `shortcut: 'Ctrl+Alt+Delete'`. For information on available shortcut modifiers, see: <<shortcutmodifierkeymappings,Shortcut modifier key mappings>>.
 |===
 
-include::{includeDir}/misc/shortcut-os-mappings.adoc[leveloffset=+1]
+include::{partialsDir}misc/shortcut-os-mappings.adoc[leveloffset=+1]
 
 [#api]
 ==== API
@@ -188,7 +188,7 @@ A nested menu item is a menu item with a submenu. Registering a submenu this way
 |===
 
 +++<a class="anchor" id="shortcutmodifierkeymappings2">++++++</a>+++
-###include::{includeDir}/misc/shortcut-os-mappings.adoc[]
+###include::{partialsDir}misc/shortcut-os-mappings.adoc[]
 
 [#api-2]
 ==== API

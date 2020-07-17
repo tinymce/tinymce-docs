@@ -1,5 +1,5 @@
 :modulesDir: ../
-:includeDir: {modulesDir}_includes
+:partialsDir: {modulesDir}partials/
 :imagesDir: {modulesDir}images/
 include::{modulesDir}_attributes.adoc[]
 = Editor icon identifiers
@@ -12,4 +12,4 @@ The following table contains the default icons provided with {productname}. For 
 * link:{modulesDir}/advanced/creating-an-icon-pack/[Create an icon pack for {productname}].
 * link:{modulesDir}/api/tinymce.editor.ui/tinymce.editor.ui.registry/#addicon[{productname} API: `tinymce.editor.ui.Registry.addIcon`].
 
-include::{includeDir}/configuration/icon_list.adoc[]
+include::{partialsDir}configuration/icon_list.adoc[]

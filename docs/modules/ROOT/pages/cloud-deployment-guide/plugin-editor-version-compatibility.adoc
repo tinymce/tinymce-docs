@@ -1,5 +1,5 @@
 :modulesDir: ../
-:includeDir: {modulesDir}_includes
+:partialsDir: {modulesDir}partials/
 :imagesDir: {modulesDir}images/
 include::{modulesDir}_attributes.adoc[]
 = Version compatibility reference
@@ -24,6 +24,6 @@ to:
 +`
 Ensure the application uses the latest script tag and substitute 'no-api-key' with your api key.
 
-include::{includeDir}/misc/plugin_support_table.adoc[]
+include::{partialsDir}misc/plugin_support_table.adoc[]
 
 IMPORTANT: Ensure the plugins are supported in your editor version when deploying premium plugins only using link:{modulesDir}/cloud-deployment-guide/features-only[{cloudname}].

@@ -1,5 +1,5 @@
 :modulesDir: ../
-:includeDir: {modulesDir}_includes
+:partialsDir: {modulesDir}partials/
 :imagesDir: {modulesDir}images/
 include::{modulesDir}_attributes.adoc[]
 = Commenting &amp; collaboration
@@ -40,4 +40,4 @@ The Comments 2.0 plugin allows the user to perform the following functions:
 :pluginname: Comments
 :pluginminimumplan: enterprise
 :plugindocspage: comments
-include::{includeDir}/misc/purchase-premium-plugins.adoc[]
+include::{partialsDir}misc/purchase-premium-plugins.adoc[]

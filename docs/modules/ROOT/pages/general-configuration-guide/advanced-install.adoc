@@ -1,5 +1,5 @@
 :modulesDir: ../
-:includeDir: {modulesDir}_includes
+:partialsDir: {modulesDir}partials/
 :imagesDir: {modulesDir}images/
 include::{modulesDir}_attributes.adoc[]
 = Installing TinyMCE
@@ -18,7 +18,7 @@ There are multiple ways to instantiate {productname}. Accessing {productname} th
 [#cloud-install]
 == Cloud Install
 
-include::{includeDir}/install/cloud.adoc[]
+include::{partialsDir}install/cloud.adoc[]
 
 [#package-manager-install-options]
 == Package Manager Install Options
@@ -31,29 +31,29 @@ include::{includeDir}/install/cloud.adoc[]
 [#npm]
 == NPM
 
-include::{includeDir}/install/npm.adoc[]
+include::{partialsDir}install/npm.adoc[]
 
 [#bower]
 == Bower
 
-include::{includeDir}/install/bower.adoc[]
+include::{partialsDir}install/bower.adoc[]
 
 [#composer]
 == Composer
 
-include::{includeDir}/install/composer.adoc[]
+include::{partialsDir}install/composer.adoc[]
 
 [#nuget]
 == NuGet
 
-include::{includeDir}/install/nuget.adoc[]
+include::{partialsDir}install/nuget.adoc[]
 
 [#self-hosted-install]
 == Self-Hosted Install
 
-include::{includeDir}/install/sdk.adoc[]
+include::{partialsDir}install/sdk.adoc[]
 
 [#custom-build-install]
 == Custom Build Install
 
-include::{includeDir}/install/custom.adoc[]
+include::{partialsDir}install/custom.adoc[]

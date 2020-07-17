@@ -1,5 +1,5 @@
 :modulesDir: ../
-:includeDir: {modulesDir}_includes
+:partialsDir: {modulesDir}partials/
 :imagesDir: {modulesDir}images/
 include::{modulesDir}_attributes.adoc[]
 = Permanent Pen Plugin
@@ -20,4 +20,4 @@ This allows the user to add text without modifying the original content.
 :pluginname: Permanent Pen
 :pluginminimumplan: tiertwo
 :plugindocspage: permanentpen
-include::{includeDir}/misc/purchase-premium-plugins.adoc[]
+include::{partialsDir}misc/purchase-premium-plugins.adoc[]

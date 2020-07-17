@@ -1,5 +1,5 @@
 :modulesDir: ../
-:includeDir: {modulesDir}_includes
+:partialsDir: {modulesDir}partials/
 :imagesDir: {modulesDir}images/
 include::{modulesDir}_attributes.adoc[]
 = TinyMCE 5.1.6
@@ -61,6 +61,6 @@ The {productname} 5.1.6 release includes *Enhanced Media Embed* 2.2.5.
 
 :enterprise: true
 
-include::{includeDir}/install/upgrading-info.adoc[]
+include::{partialsDir}install/upgrading-info.adoc[]
 
 :enterprise: false

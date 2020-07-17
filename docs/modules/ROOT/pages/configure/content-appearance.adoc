@@ -1,5 +1,5 @@
 :modulesDir: ../
-:includeDir: {modulesDir}_includes
+:partialsDir: {modulesDir}partials/
 :imagesDir: {modulesDir}images/
 include::{modulesDir}_attributes.adoc[]
 = Content appearance options
@@ -7,24 +7,24 @@ include::{modulesDir}_attributes.adoc[]
 :description_short:
 :title_nav: Content appearance options
 
-include::{includeDir}/configuration/body-class.adoc[]
+include::{partialsDir}configuration/body-class.adoc[]
 
-include::{includeDir}/configuration/body-id.adoc[]
+include::{partialsDir}configuration/body-id.adoc[]
 
-include::{includeDir}/configuration/content-css.adoc[]
+include::{partialsDir}configuration/content-css.adoc[]
 
-include::{includeDir}/configuration/content-css-cors.adoc[]
+include::{partialsDir}configuration/content-css-cors.adoc[]
 
-include::{includeDir}/configuration/content-style.adoc[]
+include::{partialsDir}configuration/content-style.adoc[]
 
-include::{includeDir}/configuration/inline-boundaries.adoc[]
+include::{partialsDir}configuration/inline-boundaries.adoc[]
 
-include::{includeDir}/configuration/inline-boundaries-selector.adoc[]
+include::{partialsDir}configuration/inline-boundaries-selector.adoc[]
 
-include::{includeDir}/configuration/text-color.adoc[]
+include::{partialsDir}configuration/text-color.adoc[]
 
-include::{includeDir}/configuration/visual.adoc[]
+include::{partialsDir}configuration/visual.adoc[]
 
-include::{includeDir}/configuration/visual-anchor-class.adoc[]
+include::{partialsDir}configuration/visual-anchor-class.adoc[]
 
-include::{includeDir}/configuration/visual-table-class.adoc[]
+include::{partialsDir}configuration/visual-table-class.adoc[]

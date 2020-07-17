@@ -1,5 +1,5 @@
 :modulesDir: ../
-:includeDir: {modulesDir}_includes
+:partialsDir: {modulesDir}partials/
 :imagesDir: {modulesDir}images/
 include::{modulesDir}_attributes.adoc[]
 = Integration and setup options
@@ -7,30 +7,30 @@ include::{modulesDir}_attributes.adoc[]
 :description_short:
 :title_nav: Integration options
 
-include::{includeDir}/configuration/auto-focus.adoc[]
+include::{partialsDir}configuration/auto-focus.adoc[]
 
-include::{includeDir}/configuration/base-url.adoc[]
+include::{partialsDir}configuration/base-url.adoc[]
 
-include::{includeDir}/configuration/cache-suffix.adoc[]
+include::{partialsDir}configuration/cache-suffix.adoc[]
 
-include::{includeDir}/configuration/content-security-policy.adoc[]
+include::{partialsDir}configuration/content-security-policy.adoc[]
 
-include::{includeDir}/configuration/external-plugins.adoc[]
+include::{partialsDir}configuration/external-plugins.adoc[]
 
-include::{includeDir}/configuration/hidden-input.adoc[]
+include::{partialsDir}configuration/hidden-input.adoc[]
 
-include::{includeDir}/configuration/init-instance-callback.adoc[]
+include::{partialsDir}configuration/init-instance-callback.adoc[]
 
-include::{includeDir}/configuration/plugins.adoc[]
+include::{partialsDir}configuration/plugins.adoc[]
 
-include::{includeDir}/configuration/readonly.adoc[]
+include::{partialsDir}configuration/readonly.adoc[]
 
-include::{includeDir}/configuration/referrer_policy.adoc[]
+include::{partialsDir}configuration/referrer_policy.adoc[]
 
-include::{includeDir}/configuration/selector.adoc[]
+include::{partialsDir}configuration/selector.adoc[]
 
-include::{includeDir}/configuration/setup.adoc[]
+include::{partialsDir}configuration/setup.adoc[]
 
-include::{includeDir}/configuration/suffix.adoc[]
+include::{partialsDir}configuration/suffix.adoc[]
 
-include::{includeDir}/configuration/target.adoc[]
+include::{partialsDir}configuration/target.adoc[]

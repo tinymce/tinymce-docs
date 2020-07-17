@@ -1,5 +1,5 @@
 :modulesDir: ../
-:includeDir: {modulesDir}_includes
+:partialsDir: {modulesDir}partials/
 :imagesDir: {modulesDir}images/
 include::{modulesDir}_attributes.adoc[]
 = Case Change
@@ -119,4 +119,4 @@ tinymce.init({
 
 The Case Change plugin provides the following JavaScript commands.
 
-include::{includeDir}/commands/casechange-cmds.adoc[]
+include::{partialsDir}commands/casechange-cmds.adoc[]

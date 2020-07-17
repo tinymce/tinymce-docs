@@ -1,5 +1,5 @@
 :modulesDir: ../
-:includeDir: {modulesDir}_includes
+:partialsDir: {modulesDir}partials/
 :imagesDir: {modulesDir}images/
 include::{modulesDir}_attributes.adoc[]
 = Advanced List plugin
@@ -92,4 +92,4 @@ tinymce.init({
 
 The Advanced Lists plugin provides the following JavaScript commands.
 
-include::{includeDir}/commands/advlist-cmds.adoc[]
+include::{partialsDir}commands/advlist-cmds.adoc[]

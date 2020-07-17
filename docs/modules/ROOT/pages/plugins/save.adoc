@@ -1,5 +1,5 @@
 :modulesDir: ../
-:includeDir: {modulesDir}_includes
+:partialsDir: {modulesDir}partials/
 :imagesDir: {modulesDir}images/
 include::{modulesDir}_attributes.adoc[]
 = Save plugin
@@ -106,4 +106,4 @@ tinymce.init({
 
 The Save plugin provides the following JavaScript commands.
 
-include::{includeDir}/commands/save-cmds.adoc[]
+include::{partialsDir}commands/save-cmds.adoc[]

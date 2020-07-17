@@ -1,5 +1,5 @@
 :modulesDir: ../
-:includeDir: {modulesDir}_includes
+:partialsDir: {modulesDir}partials/
 :imagesDir: {modulesDir}images/
 include::{modulesDir}_attributes.adoc[]
 = Full Page plugin
@@ -184,4 +184,4 @@ tinymce.init({
 
 The Full Page plugin provides the following JavaScript command.
 
-include::{includeDir}/commands/fullpage-cmds.adoc[]
+include::{partialsDir}commands/fullpage-cmds.adoc[]

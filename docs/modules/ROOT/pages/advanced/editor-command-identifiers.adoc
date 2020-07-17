@@ -1,5 +1,5 @@
 :modulesDir: ../
-:includeDir: {modulesDir}_includes
+:partialsDir: {modulesDir}partials/
 :imagesDir: {modulesDir}images/
 include::{modulesDir}_attributes.adoc[]
 = Editor command identifiers
@@ -278,252 +278,252 @@ Commands are available for the following plugins:
 
 The following command requires the link:{modulesDir}/plugins/advcode/[Advanced Code (`advcode`)] plugin.
 
-include::{includeDir}/commands/code-cmds.adoc[]
+include::{partialsDir}commands/code-cmds.adoc[]
 
 [#advanced-lists]
 === Advanced Lists
 
 The following commands require the link:{modulesDir}/plugins/advlist/[Advanced Lists (`advlist`)] plugin.
 
-include::{includeDir}/commands/advlist-cmds.adoc[]
+include::{partialsDir}commands/advlist-cmds.adoc[]
 
 [#advanced-tables]
 === Advanced Tables
 
 The following commands require the link:{modulesDir}/plugins/advtable/[Advanced Tables (`advtable`)] plugin.
 
-include::{includeDir}/commands/advtable-cmds.adoc[]
+include::{partialsDir}commands/advtable-cmds.adoc[]
 
 [#anchor]
 === Anchor
 
 The following command requires the link:{modulesDir}/plugins/anchor/[Anchor (`anchor`)] plugin.
 
-include::{includeDir}/commands/anchor-cmds.adoc[]
+include::{partialsDir}commands/anchor-cmds.adoc[]
 
 [#autoresize]
 === Autoresize
 
 The following command requires the link:{modulesDir}/plugins/autoresize/[Autoresize (`autoresize`)] plugin.
 
-include::{includeDir}/commands/autoresize-cmds.adoc[]
+include::{partialsDir}commands/autoresize-cmds.adoc[]
 
 [#case-change]
 === Case Change
 
 The following commands require the link:{modulesDir}/plugins/casechange/[Case Change (`casechange`)] plugin.
 
-include::{includeDir}/commands/casechange-cmds.adoc[]
+include::{partialsDir}commands/casechange-cmds.adoc[]
 
 [#character-map]
 === Character Map
 
 The following command requires the link:{modulesDir}/plugins/charmap/[Character Map (`charmap`)] plugin.
 
-include::{includeDir}/commands/charmap-cmds.adoc[]
+include::{partialsDir}commands/charmap-cmds.adoc[]
 
 [#code]
 === Code
 
 The following command requires the link:{modulesDir}/plugins/code/[Code (`code`)] plugin.
 
-include::{includeDir}/commands/code-cmds.adoc[]
+include::{partialsDir}commands/code-cmds.adoc[]
 
 [#code-sample]
 === Code Sample
 
 The following command requires the link:{modulesDir}/plugins/codesample/[Code Sample (`codesample`)] plugin.
 
-include::{includeDir}/commands/codesample-cmds.adoc[]
+include::{partialsDir}commands/codesample-cmds.adoc[]
 
 [#comments]
 === Comments
 
 The following commands require the link:{modulesDir}/plugins/comments/[Comments (`tinycomments`)] plugin.
 
-include::{includeDir}/commands/comments-cmds.adoc[]
+include::{partialsDir}commands/comments-cmds.adoc[]
 
 [#directionality]
 === Directionality
 
 The following commands require the link:{modulesDir}/plugins/directionality/[Directionality (`directionality`)] plugin.
 
-include::{includeDir}/commands/directionality-cmds.adoc[]
+include::{partialsDir}commands/directionality-cmds.adoc[]
 
 [#format-painter]
 === Format Painter
 
 The following commands require the link:{modulesDir}/plugins/comments/[Format Painter (`formatpainter`)] plugin.
 
-include::{includeDir}/commands/formatpainter-cmds.adoc[]
+include::{partialsDir}commands/formatpainter-cmds.adoc[]
 
 [#full-page]
 === Full Page
 
 The following command requires the link:{modulesDir}/plugins/fullpage/[Full Page (`fullpage`)] plugin.
 
-include::{includeDir}/commands/fullpage-cmds.adoc[]
+include::{partialsDir}commands/fullpage-cmds.adoc[]
 
 [#full-screen]
 === Full Screen
 
 The following command requires the link:{modulesDir}/plugins/fullscreen/[Full Screen (`fullscreen`)] plugin.
 
-include::{includeDir}/commands/fullscreen-cmds.adoc[]
+include::{partialsDir}commands/fullscreen-cmds.adoc[]
 
 [#help]
 === Help
 
 The following command requires the link:{modulesDir}/plugins/help/[Help (`help`)] plugin.
 
-include::{includeDir}/commands/help-cmds.adoc[]
+include::{partialsDir}commands/help-cmds.adoc[]
 
 [#image]
 === Image
 
 The following command requires the link:{modulesDir}/plugins/image/[Image (`image`)] plugin.
 
-include::{includeDir}/commands/image-cmds.adoc[]
+include::{partialsDir}commands/image-cmds.adoc[]
 
 [#image-tools]
 === Image Tools
 
 The following commands require the link:{modulesDir}/plugins/imagetools/[Image Tools (`imagetools`)] plugin.
 
-include::{includeDir}/commands/imagetools-cmds.adoc[]
+include::{partialsDir}commands/imagetools-cmds.adoc[]
 
 [#insert-datetime]
 === Insert Date/Time
 
 The following commands require the link:{modulesDir}/plugins/insertdatetime/[Insert Date/Time (`insertdatetime`)] plugin.
 
-include::{includeDir}/commands/insertdatetime-cmds.adoc[]
+include::{partialsDir}commands/insertdatetime-cmds.adoc[]
 
 [#link]
 === Link
 
 The following command requires the link:{modulesDir}/plugins/link/[Link (`link`)] plugin.
 
-include::{includeDir}/commands/link-cmds.adoc[]
+include::{partialsDir}commands/link-cmds.adoc[]
 
 [#lists]
 === Lists
 
 The following commands require the link:{modulesDir}/plugins/lists/[Lists (`lists`)] plugin.
 
-include::{includeDir}/commands/lists-cmds.adoc[]
+include::{partialsDir}commands/lists-cmds.adoc[]
 
 [#media]
 === Media
 
 The following command requires the link:{modulesDir}/plugins/media/[Media (`media`)] plugin.
 
-include::{includeDir}/commands/media-cmds.adoc[]
+include::{partialsDir}commands/media-cmds.adoc[]
 
 [#nonbreaking-space]
 === Nonbreaking Space
 
 The following command requires the link:{modulesDir}/plugins/nonbreaking/[Nonbreaking Space (`nonbreaking`)] plugin.
 
-include::{includeDir}/commands/nbsp-cmds.adoc[]
+include::{partialsDir}commands/nbsp-cmds.adoc[]
 
 [#page-break]
 === Page Break
 
 The following command requires the link:{modulesDir}/plugins/pagebreak/[Page Break (`pagebreak`)] plugin.
 
-include::{includeDir}/commands/pagebreak-cmds.adoc[]
+include::{partialsDir}commands/pagebreak-cmds.adoc[]
 
 [#paste]
 === Paste
 
 The following commands require the link:{modulesDir}/plugins/paste/[Paste (`paste`)] plugin.
 
-include::{includeDir}/commands/paste-cmds.adoc[]
+include::{partialsDir}commands/paste-cmds.adoc[]
 
 [#permanent-pen]
 === Permanent Pen
 
 The following commands require the link:{modulesDir}/plugins/permanentpen/[Permanent Pen (`permanentpen`)] plugin.
 
-include::{includeDir}/commands/permanentpen-cmds.adoc[]
+include::{partialsDir}commands/permanentpen-cmds.adoc[]
 
 [#powerpaste]
 === PowerPaste
 
 The following command requires the link:{modulesDir}/plugins/powerpaste/[PowerPaste (`powerpaste`)] plugin.
 
-include::{includeDir}/commands/powerpaste-cmds.adoc[]
+include::{partialsDir}commands/powerpaste-cmds.adoc[]
 
 [#preview]
 === Preview
 
 The following command requires the link:{modulesDir}/plugins/preview/[Preview (`preview`)] plugin.
 
-include::{includeDir}/commands/preview-cmds.adoc[]
+include::{partialsDir}commands/preview-cmds.adoc[]
 
 [#print]
 === Print
 
 The following command requires the link:{modulesDir}/plugins/print/[Print (`print`)] plugin.
 
-include::{includeDir}/commands/print-cmds.adoc[]
+include::{partialsDir}commands/print-cmds.adoc[]
 
 [#save]
 === Save
 
 The following commands require the link:{modulesDir}/plugins/save/[Save (`save`)] plugin.
 
-include::{includeDir}/commands/save-cmds.adoc[]
+include::{partialsDir}commands/save-cmds.adoc[]
 
 [#search-and-replace]
 === Search and Replace
 
 The following command requires the link:{modulesDir}/plugins/searchreplace/[Search and Replace (`searchreplace`)] plugin.
 
-include::{includeDir}/commands/searchreplace-cmds.adoc[]
+include::{partialsDir}commands/searchreplace-cmds.adoc[]
 
 [#spell-checker]
 === Spell Checker
 
 The following command requires the link:{modulesDir}/plugins/spellchecker/[Spell Checker (`spellchecker`)] plugin.
 
-include::{includeDir}/commands/spellchecker-cmds.adoc[]
+include::{partialsDir}commands/spellchecker-cmds.adoc[]
 
 [#table]
 === Table
 
 The following commands require the link:{modulesDir}/plugins/table/[Table (`table`)] plugin.
 
-include::{includeDir}/commands/table-cmds.adoc[]
+include::{partialsDir}commands/table-cmds.adoc[]
 
 [#template]
 === Template
 
 The following command requires the link:{modulesDir}/plugins/template/[Template (`template`)] plugin.
 
-include::{includeDir}/commands/template-cmds.adoc[]
+include::{partialsDir}commands/template-cmds.adoc[]
 
 [#table-of-contents]
 === Table of Contents
 
 The following commands require the link:{modulesDir}/plugins/toc[Table of Contents (`toc`)] plugin.
 
-include::{includeDir}/commands/toc-cmds.adoc[]
+include::{partialsDir}commands/toc-cmds.adoc[]
 
 [#visual-blocks]
 === Visual Blocks
 
 The following command requires the link:{modulesDir}/plugins/visualblocks/[Visual Blocks (`visualblocks`)] plugin.
 
-include::{includeDir}/commands/visualblocks-cmds.adoc[]
+include::{partialsDir}commands/visualblocks-cmds.adoc[]
 
 [#visual-characters]
 === Visual Characters
 
 The following command requires the link:{modulesDir}/plugins/visualchars/[Visual Characters (`visualchars`)] plugin.
 
-include::{includeDir}/commands/visualchars-cmds.adoc[]
+include::{partialsDir}commands/visualchars-cmds.adoc[]
 
 [#editor-management-commands]
 == Editor Management Commands

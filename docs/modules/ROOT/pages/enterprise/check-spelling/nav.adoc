@@ -1,5 +1,5 @@
 :modulesDir: ../../
-:includeDir: {modulesDir}_includes
+:partialsDir: {modulesDir}partials/
 :imagesDir: {modulesDir}images/
 include::{modulesDir}_attributes.adoc[]
 = Check Spelling As-You-Type
@@ -14,7 +14,7 @@ _Spell Checker Pro_ adds spell checking as-you-type capabilities to {productname
 
 {% include codepen.html id="spellcheckerpro" %}
 
-include::{includeDir}/configuration/languages.adoc[]
+include::{partialsDir}configuration/languages.adoc[]
 
 [#custom-dictionaries]
 == Custom dictionaries
@@ -24,4 +24,4 @@ Additional dictionaries can be added to Spell Checker Pro to supplement the defa
 :pluginname: Spell Checker Pro
 :pluginminimumplan: tierthree
 :plugindocspage: tinymcespellchecker
-include::{includeDir}/misc/purchase-premium-plugins.adoc[]
+include::{partialsDir}misc/purchase-premium-plugins.adoc[]

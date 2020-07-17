@@ -1,5 +1,5 @@
 :modulesDir: ../
-:includeDir: {modulesDir}_includes
+:partialsDir: {modulesDir}partials/
 :imagesDir: {modulesDir}images/
 include::{modulesDir}_attributes.adoc[]
 = Accessibility checking
@@ -15,4 +15,4 @@ Before the introduction of this feature users would have to manually check for e
 :pluginname: Accessibility Checker
 :pluginminimumplan: tierthree
 :plugindocspage: a11ychecker
-include::{includeDir}/misc/purchase-premium-plugins.adoc[]
+include::{partialsDir}misc/purchase-premium-plugins.adoc[]

@@ -1,5 +1,5 @@
 :modulesDir: ../
-:includeDir: {modulesDir}_includes
+:partialsDir: {modulesDir}partials/
 :imagesDir: {modulesDir}images/
 include::{modulesDir}_attributes.adoc[]
 = Supported Versions and Platforms
@@ -7,10 +7,10 @@ include::{modulesDir}_attributes.adoc[]
 :keywords: browser compatibility explorer ie safari firefox chrome edge mobile
 :title_nav: Supported Versions and Platforms
 
-include::{includeDir}/misc/supported_versions.adoc[]
+include::{partialsDir}misc/supported_versions.adoc[]
 
-include::{includeDir}/misc/browser_compatibility.adoc[]
+include::{partialsDir}misc/browser_compatibility.adoc[]
 
-include::{includeDir}/misc/mobile_platform_compatibility.adoc[]
+include::{partialsDir}misc/mobile_platform_compatibility.adoc[]
 
 Visit link:{modulesDir}/mobile[{productname} mobile documentation] for information on {productname} mobile setup and configuration.

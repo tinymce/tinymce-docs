@@ -1,5 +1,5 @@
 :modulesDir: ../
-:includeDir: {modulesDir}_includes
+:partialsDir: {modulesDir}partials/
 :imagesDir: {modulesDir}images/
 include::{modulesDir}_attributes.adoc[]
 = Format Painter
@@ -122,4 +122,4 @@ Check out the link:{modulesDir}/demo/formatpainter/[Format Painter demo] to try 
 
 The Format Painter plugin provides the following JavaScript commands.
 
-include::{includeDir}/commands/formatpainter-cmds.adoc[]
+include::{partialsDir}commands/formatpainter-cmds.adoc[]

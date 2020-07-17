@@ -1,5 +1,5 @@
 :modulesDir: ../
-:includeDir: {modulesDir}_includes
+:partialsDir: {modulesDir}partials/
 :imagesDir: {modulesDir}images/
 include::{modulesDir}_attributes.adoc[]
 = Vue integration
@@ -7,6 +7,6 @@ include::{modulesDir}_attributes.adoc[]
 :keywords: integration integrate vue vuejs
 :title_nav: Vue
 
-include::{includeDir}/integrations/vue-quick-start.adoc[]
+include::{partialsDir}integrations/vue-quick-start.adoc[]
 
-include::{includeDir}/integrations/vue-tech-ref.adoc[]
+include::{partialsDir}integrations/vue-tech-ref.adoc[]

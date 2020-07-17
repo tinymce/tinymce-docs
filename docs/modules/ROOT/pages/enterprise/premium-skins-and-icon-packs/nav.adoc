@@ -1,5 +1,5 @@
 :modulesDir: ../../
-:includeDir: {modulesDir}_includes
+:partialsDir: {modulesDir}partials/
 :imagesDir: {modulesDir}images/
 include::{modulesDir}_attributes.adoc[]
 = Premium Skins and Icon Packs
@@ -128,6 +128,6 @@ Below are some recommended combinations of skins and icon packs:
 :plugindocspage: ../configure/editor-appearance/#skin
 :extensionType: Packs
 :pluralExtensionType: true
-include::{includeDir}/misc/purchase-premium-plugins.adoc[]
+include::{partialsDir}misc/purchase-premium-plugins.adoc[]
 :extensionType: false
 :pluralExtensionType: false

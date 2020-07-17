@@ -1,5 +1,5 @@
 :modulesDir: ../../
-:includeDir: {modulesDir}_includes
+:partialsDir: {modulesDir}partials/
 :imagesDir: {modulesDir}images/
 include::{modulesDir}_attributes.adoc[]
 = Containerized service deployments
@@ -79,11 +79,11 @@ Proceed to setting up and deploying the containerized services:
 
 :shbundledockerfiles: true
 
-include::{includeDir}/configuration/dockerized-hyperlinking-service.adoc[]
+include::{partialsDir}configuration/dockerized-hyperlinking-service.adoc[]
 
-include::{includeDir}/configuration/dockerized-image-proxy.adoc[]
+include::{partialsDir}configuration/dockerized-image-proxy.adoc[]
 
-include::{includeDir}/configuration/dockerized-spelling-service.adoc[]
+include::{partialsDir}configuration/dockerized-spelling-service.adoc[]
 
 :shbundledockerfiles: false
 
@@ -101,6 +101,6 @@ Select from the following:
 * For the Tiny Enhanced Media Embed and Tiny Link Checker service, see: <<deploythetinymcehyperlinkingserver-sidecomponentusingdockerindividuallylicensed,Deploy the TinyMCE hyperlinking server-side component using Docker (individually licensed)>>.
 * For the Tiny Spell Checker Pro service, see: <<deploythetinymcespellingserviceserver-sidecomponentusingdockerindividuallylicensed,Deploy the TinyMCE spelling service server-side component using Docker (individually licensed)>>.
 
-include::{includeDir}/configuration/dockerized-hyperlinking-service.adoc[]
+include::{partialsDir}configuration/dockerized-hyperlinking-service.adoc[]
 
-include::{includeDir}/configuration/dockerized-spelling-service.adoc[]
+include::{partialsDir}configuration/dockerized-spelling-service.adoc[]

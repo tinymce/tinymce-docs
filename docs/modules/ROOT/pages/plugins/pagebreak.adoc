@@ -1,5 +1,5 @@
 :modulesDir: ../
-:includeDir: {modulesDir}_includes
+:partialsDir: {modulesDir}partials/
 :imagesDir: {modulesDir}images/
 include::{modulesDir}_attributes.adoc[]
 = Page Break plugin
@@ -80,4 +80,4 @@ tinymce.init({
 
 The Page Break plugin provides the following JavaScript command.
 
-include::{includeDir}/commands/pagebreak-cmds.adoc[]
+include::{partialsDir}commands/pagebreak-cmds.adoc[]

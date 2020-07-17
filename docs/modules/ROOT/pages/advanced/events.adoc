@@ -1,5 +1,5 @@
 :modulesDir: ../
-:includeDir: {modulesDir}_includes
+:partialsDir: {modulesDir}partials/
 :imagesDir: {modulesDir}images/
 include::{modulesDir}_attributes.adoc[]
 = Editor events
@@ -569,7 +569,7 @@ The following events are provided by the link:{modulesDir}/plugins/spellchecker/
 [#spell-checker-pro-events]
 === Spell Checker Pro events
 
-include::{includeDir}/events/tinymcespellchecker.adoc[]
+include::{partialsDir}events/tinymcespellchecker.adoc[]
 
 [#table-events]
 === Table events

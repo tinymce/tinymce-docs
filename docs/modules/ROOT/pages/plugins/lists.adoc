@@ -1,5 +1,5 @@
 :modulesDir: ../
-:includeDir: {modulesDir}_includes
+:partialsDir: {modulesDir}partials/
 :imagesDir: {modulesDir}images/
 include::{modulesDir}_attributes.adoc[]
 = Lists plugin
@@ -48,4 +48,4 @@ tinymce.init({
 
 The Lists plugin provides the following JavaScript commands.
 
-include::{includeDir}/commands/lists-cmds.adoc[]
+include::{partialsDir}commands/lists-cmds.adoc[]

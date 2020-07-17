@@ -1,5 +1,5 @@
 :modulesDir: ../
-:includeDir: {modulesDir}_includes
+:partialsDir: {modulesDir}partials/
 :imagesDir: {modulesDir}images/
 include::{modulesDir}_attributes.adoc[]
 = Create an icon pack for TinyMCE
@@ -138,7 +138,7 @@ An icon pack can be served either:
 === Deploy the icon pack with TinyMCE
 
 :customIconPack: true
-include::{includeDir}/configuration/icons.adoc[]
+include::{partialsDir}configuration/icons.adoc[]
 ### Deploy the icon pack and TinyMCE separately
-include::{includeDir}/configuration/icons_url.adoc[]
+include::{partialsDir}configuration/icons_url.adoc[]
 :customIconPack: false

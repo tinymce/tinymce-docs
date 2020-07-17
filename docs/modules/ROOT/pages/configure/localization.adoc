@@ -1,13 +1,13 @@
 :modulesDir: ../
-:includeDir: {modulesDir}_includes
+:partialsDir: {modulesDir}partials/
 :imagesDir: {modulesDir}images/
 include::{modulesDir}_attributes.adoc[]
 = Localization options
 :description: These settings configure TinyMCE's language capabilities, including right-to-left support and language Localization.
 :description_short: Localize TinyMCE for your language, including directionality.
 
-include::{includeDir}/configuration/directionality.adoc[]
+include::{partialsDir}configuration/directionality.adoc[]
 
-include::{includeDir}/configuration/language.adoc[]
+include::{partialsDir}configuration/language.adoc[]
 
-include::{includeDir}/configuration/language-url.adoc[]
+include::{partialsDir}configuration/language-url.adoc[]

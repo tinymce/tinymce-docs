@@ -1,5 +1,5 @@
 :modulesDir: ../
-:includeDir: {modulesDir}_includes
+:partialsDir: {modulesDir}partials/
 :imagesDir: {modulesDir}images/
 include::{modulesDir}_attributes.adoc[]
 = Image &amp; file upload options
@@ -7,20 +7,20 @@ include::{modulesDir}_attributes.adoc[]
 :description_short:
 :title_nav: Image &amp; file upload options
 
-include::{includeDir}/configuration/automatic-uploads.adoc[]
+include::{partialsDir}configuration/automatic-uploads.adoc[]
 
-include::{includeDir}/configuration/file-picker-callback.adoc[]
+include::{partialsDir}configuration/file-picker-callback.adoc[]
 
-include::{includeDir}/configuration/file-picker-types.adoc[]
+include::{partialsDir}configuration/file-picker-types.adoc[]
 
-include::{includeDir}/configuration/images-dataimg-filter.adoc[]
+include::{partialsDir}configuration/images-dataimg-filter.adoc[]
 
-include::{includeDir}/configuration/images-upload-reuse-filename.adoc[]
+include::{partialsDir}configuration/images-upload-reuse-filename.adoc[]
 
-include::{includeDir}/configuration/images-upload-base-path.adoc[]
+include::{partialsDir}configuration/images-upload-base-path.adoc[]
 
-include::{includeDir}/configuration/images-upload-credentials.adoc[]
+include::{partialsDir}configuration/images-upload-credentials.adoc[]
 
-include::{includeDir}/configuration/images-upload-handler.adoc[]
+include::{partialsDir}configuration/images-upload-handler.adoc[]
 
-include::{includeDir}/configuration/images-uploads-url.adoc[]
+include::{partialsDir}configuration/images-uploads-url.adoc[]

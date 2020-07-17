@@ -1,5 +1,5 @@
 :modulesDir: ../
-:includeDir: {modulesDir}_includes
+:partialsDir: {modulesDir}partials/
 :imagesDir: {modulesDir}images/
 include::{modulesDir}_attributes.adoc[]
 = Tiny Drive JWT Authentication
@@ -201,4 +201,4 @@ If you managed to set this up, you should be good to go with checking out the va
 
 If you need some help, check our link:{modulesDir}/tinydrive/get-help/[help page] and if that doesn't work, link:{supporturl}[submit a support request].
 
-include::{includeDir}/configuration/gen-rsa-key-pairs.adoc[]
+include::{partialsDir}configuration/gen-rsa-key-pairs.adoc[]

@@ -1,5 +1,5 @@
 :modulesDir: ../
-:includeDir: {modulesDir}_includes
+:partialsDir: {modulesDir}partials/
 :imagesDir: {modulesDir}images/
 include::{modulesDir}_attributes.adoc[]
 = Insert Date/Time plugin
@@ -105,11 +105,11 @@ tinymce.init({
 });
 `
 
-include::{includeDir}/configuration/ref-time-date-formats.adoc[]
+include::{partialsDir}configuration/ref-time-date-formats.adoc[]
 
 [#commands]
 == Commands
 
 The Insert Date/Time plugin provides the following JavaScript commands.
 
-include::{includeDir}/commands/insertdatetime-cmds.adoc[]
+include::{partialsDir}commands/insertdatetime-cmds.adoc[]

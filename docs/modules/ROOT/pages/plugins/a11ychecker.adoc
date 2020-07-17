@@ -1,5 +1,5 @@
 :modulesDir: ../
-:includeDir: {modulesDir}_includes
+:partialsDir: {modulesDir}partials/
 :imagesDir: {modulesDir}images/
 include::{modulesDir}_attributes.adoc[]
 = Accessibility Checker plugin
@@ -156,7 +156,7 @@ https://www.w3.org/TR/WCAG20-TECHS/H93.html[Link to specification].
 === Options
 
 :includedSection: a11yPlugin
-#include::{includeDir}/configuration/a11y_advanced_options.adoc[]
+#include::{partialsDir}configuration/a11y_advanced_options.adoc[]
 :includedSection: false
 
 [#]

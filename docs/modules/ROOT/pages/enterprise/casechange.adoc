@@ -1,5 +1,5 @@
 :modulesDir: ../
-:includeDir: {modulesDir}_includes
+:partialsDir: {modulesDir}partials/
 :imagesDir: {modulesDir}images/
 include::{modulesDir}_attributes.adoc[]
 = Case Change
@@ -53,4 +53,4 @@ The *Title Case* can be used for the following editor elements:
 :pluginname: Case Change
 :pluginminimumplan: tiertwo
 :plugindocspage: casechange
-include::{includeDir}/misc/purchase-premium-plugins.adoc[]
+include::{partialsDir}misc/purchase-premium-plugins.adoc[]

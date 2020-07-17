@@ -1,5 +1,5 @@
 :modulesDir: ../
-:includeDir: {modulesDir}_includes
+:partialsDir: {modulesDir}partials/
 :imagesDir: {modulesDir}images/
 include::{modulesDir}_attributes.adoc[]
 = Advanced editing behaviors
@@ -7,14 +7,14 @@ include::{modulesDir}_attributes.adoc[]
 :description_short:
 :title_nav: Advanced editing options
 
-include::{includeDir}/configuration/br-in-pre.adoc[]
+include::{partialsDir}configuration/br-in-pre.adoc[]
 
-include::{includeDir}/configuration/custom-undo-redo-levels.adoc[]
+include::{partialsDir}configuration/custom-undo-redo-levels.adoc[]
 
-include::{includeDir}/configuration/end-container-on-empty-block.adoc[]
+include::{partialsDir}configuration/end-container-on-empty-block.adoc[]
 
-include::{includeDir}/configuration/object-resizing.adoc[]
+include::{partialsDir}configuration/object-resizing.adoc[]
 
-include::{includeDir}/configuration/resize-img-proportional.adoc[]
+include::{partialsDir}configuration/resize-img-proportional.adoc[]
 
-include::{includeDir}/configuration/type-ahead-urls.adoc[]
+include::{partialsDir}configuration/type-ahead-urls.adoc[]

@@ -1,5 +1,5 @@
 :modulesDir: ../
-:includeDir: {modulesDir}_includes
+:partialsDir: {modulesDir}partials/
 :imagesDir: {modulesDir}images/
 include::{modulesDir}_attributes.adoc[]
 = Advanced source code editing
@@ -18,4 +18,4 @@ The link:{modulesDir}/plugins/advcode/[Advanced Code Editor] plugin (`advcode`) 
 :pluginname: Advanced Code Editor
 :pluginminimumplan: tiertwo
 :plugindocspage: advcode
-include::{includeDir}/misc/purchase-premium-plugins.adoc[]
+include::{partialsDir}misc/purchase-premium-plugins.adoc[]

@@ -1,5 +1,5 @@
 :modulesDir: ../
-:includeDir: {modulesDir}_includes
+:partialsDir: {modulesDir}partials/
 :imagesDir: {modulesDir}images/
 include::{modulesDir}_attributes.adoc[]
 = Media plugin
@@ -263,4 +263,4 @@ tinymce.init({
 
 The Media plugin provides the following JavaScript command.
 
-include::{includeDir}/commands/media-cmds.adoc[]
+include::{partialsDir}commands/media-cmds.adoc[]

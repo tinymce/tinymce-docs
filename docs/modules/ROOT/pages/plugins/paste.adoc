@@ -1,5 +1,5 @@
 :modulesDir: ../
-:includeDir: {modulesDir}_includes
+:partialsDir: {modulesDir}partials/
 :imagesDir: {modulesDir}images/
 include::{modulesDir}_attributes.adoc[]
 = Paste plugin
@@ -38,7 +38,7 @@ tinymce.init({
 
 These settings affect the way content is eliminated or preserved when being pasted. In addition, callbacks are available prior to and after content filtration.
 
-include::{includeDir}/configuration/paste-block-drop.adoc[]
+include::{partialsDir}configuration/paste-block-drop.adoc[]
 
 [#]
 === `paste_data_images`
@@ -246,7 +246,7 @@ tinymce.init({
 });
 `
 
-include::{includeDir}/configuration/paste-merge-formats.adoc[]
+include::{partialsDir}configuration/paste-merge-formats.adoc[]
 
 [#-2]
 === `paste_convert_word_fake_lists`
@@ -296,11 +296,11 @@ tinymce.init({
 });
 `
 
-include::{includeDir}/configuration/smart-paste.adoc[]
+include::{partialsDir}configuration/smart-paste.adoc[]
 
 [#commands]
 == Commands
 
 The Paste plugin provides the following JavaScript command.
 
-include::{includeDir}/commands/paste-cmds.adoc[]
+include::{partialsDir}commands/paste-cmds.adoc[]

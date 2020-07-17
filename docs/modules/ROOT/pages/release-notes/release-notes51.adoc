@@ -1,5 +1,5 @@
 :modulesDir: ../
-:includeDir: {modulesDir}_includes
+:partialsDir: {modulesDir}partials/
 :imagesDir: {modulesDir}images/
 include::{modulesDir}_attributes.adoc[]
 = TinyMCE 5.1
@@ -23,25 +23,25 @@ This is the {cloudname} and {enterpriseversion} release notes. For information o
 [#new-features-and-enhancements]
 == New features and enhancements
 
-include::{includeDir}/release-notes/51new-features.adoc[]
+include::{partialsDir}release-notes/51new-features.adoc[]
 
 [#premium-plugin-changes]
 == Premium Plugin changes
 
-include::{includeDir}/release-notes/51premium-plugins.adoc[]
+include::{partialsDir}release-notes/51premium-plugins.adoc[]
 
 [#deprecated-features]
 == Deprecated features
 
-include::{includeDir}/release-notes/51deprecated.adoc[]
+include::{partialsDir}release-notes/51deprecated.adoc[]
 
 [#known-issues]
 == Known issues
 
-include::{includeDir}/release-notes/51known-issues.adoc[]
+include::{partialsDir}release-notes/51known-issues.adoc[]
 
 :enterprise: true
 
-include::{includeDir}/install/upgrading-info.adoc[]
+include::{partialsDir}install/upgrading-info.adoc[]
 
 :enterprise: false

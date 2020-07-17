@@ -1,5 +1,5 @@
 :modulesDir: ../
-:includeDir: {modulesDir}_includes
+:partialsDir: {modulesDir}partials/
 :imagesDir: {modulesDir}images/
 include::{modulesDir}_attributes.adoc[]
 = Supported Premium Versions and Platforms
@@ -7,11 +7,11 @@ include::{modulesDir}_attributes.adoc[]
 :keywords: support supported browser browsers windows osx linux ie11 chrome firefox safari mobile premium self-hosted selfhosted
 :title_nav: Supported Premium Versions<br/>&nbsp;&nbsp;&nbsp;&nbsp;and Platforms
 
-include::{includeDir}/misc/supported_versions.adoc[]
+include::{partialsDir}misc/supported_versions.adoc[]
 
-include::{includeDir}/misc/browser_compatibility.adoc[]
+include::{partialsDir}misc/browser_compatibility.adoc[]
 
-include::{includeDir}/misc/mobile_platform_compatibility.adoc[]
+include::{partialsDir}misc/mobile_platform_compatibility.adoc[]
 
 Visit link:{modulesDir}/mobile[{productname} mobile documentation] for information on {productname} mobile setup and configuration.
 
@@ -105,4 +105,4 @@ On browsers that support HTML5 APIs, PowerPaste is able to use improved HTML cle
 
 On browsers that support HTML5, PowerPaste is able to import images embedded in the content (e.g. from Microsoft Word) into the editor.  These images can then be uploaded via a HTTP post as required.
 
-include::{includeDir}/misc/plugin_support_table.adoc[]
+include::{partialsDir}misc/plugin_support_table.adoc[]

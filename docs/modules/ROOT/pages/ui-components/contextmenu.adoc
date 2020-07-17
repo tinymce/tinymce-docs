@@ -1,5 +1,5 @@
 :modulesDir: ../
-:includeDir: {modulesDir}_includes
+:partialsDir: {modulesDir}partials/
 :imagesDir: {modulesDir}images/
 include::{modulesDir}_attributes.adoc[]
 = Context menu
@@ -20,11 +20,11 @@ The context menu supports both individual menu items and dynamic context menu se
 [#options]
 == Options
 
-include::{includeDir}/configuration/contextmenu.adoc[leveloffset=+1]
+include::{partialsDir}configuration/contextmenu.adoc[leveloffset=+1]
 
-include::{includeDir}/configuration/contextmenu_never_use_native.adoc[leveloffset=+1]
+include::{partialsDir}configuration/contextmenu_never_use_native.adoc[leveloffset=+1]
 
-include::{includeDir}/configuration/available-context-menu-sections.adoc[]
+include::{partialsDir}configuration/available-context-menu-sections.adoc[]
 
 [#registering-context-menu-sections]
 == Registering context menu sections

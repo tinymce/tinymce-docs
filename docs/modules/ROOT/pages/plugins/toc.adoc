@@ -1,5 +1,5 @@
 :modulesDir: ../
-:includeDir: {modulesDir}_includes
+:partialsDir: {modulesDir}partials/
 :imagesDir: {modulesDir}images/
 include::{modulesDir}_attributes.adoc[]
 = Table of Contents plugin
@@ -114,4 +114,4 @@ tinymce.init({
 
 The Table of Contents plugin provides the following JavaScript commands.
 
-include::{includeDir}/commands/toc-cmds.adoc[]
+include::{partialsDir}commands/toc-cmds.adoc[]

@@ -1,5 +1,5 @@
 :modulesDir: ../
-:includeDir: {modulesDir}_includes
+:partialsDir: {modulesDir}partials/
 :imagesDir: {modulesDir}images/
 include::{modulesDir}_attributes.adoc[]
 = URL handling options
@@ -48,11 +48,11 @@ document_base_url : "http://www.example.com/path1/"
 
 Example: path2/file.htm >> \http://www.example.com/path1/path2/file.htm
 
-include::{includeDir}/configuration/anchor-bottom.adoc[]
-include::{includeDir}/configuration/anchor-top.adoc[]
-include::{includeDir}/configuration/allow-script-urls.adoc[]
-include::{includeDir}/configuration/convert-urls.adoc[]
-include::{includeDir}/configuration/document-base-url.adoc[]
-include::{includeDir}/configuration/relative-urls.adoc[]
-include::{includeDir}/configuration/remove-script-host.adoc[]
-include::{includeDir}/configuration/urlconverter-callback.adoc[]
+include::{partialsDir}configuration/anchor-bottom.adoc[]
+include::{partialsDir}configuration/anchor-top.adoc[]
+include::{partialsDir}configuration/allow-script-urls.adoc[]
+include::{partialsDir}configuration/convert-urls.adoc[]
+include::{partialsDir}configuration/document-base-url.adoc[]
+include::{partialsDir}configuration/relative-urls.adoc[]
+include::{partialsDir}configuration/remove-script-host.adoc[]
+include::{partialsDir}configuration/urlconverter-callback.adoc[]

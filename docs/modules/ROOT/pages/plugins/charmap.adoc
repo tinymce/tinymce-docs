@@ -1,5 +1,5 @@
 :modulesDir: ../
-:includeDir: {modulesDir}_includes
+:partialsDir: {modulesDir}partials/
 :imagesDir: {modulesDir}images/
 include::{modulesDir}_attributes.adoc[]
 = Character Map plugin
@@ -93,4 +93,4 @@ tinymce.init({
 
 The Character Map plugin provides the following JavaScript command.
 
-include::{includeDir}/commands/charmap-cmds.adoc[]
+include::{partialsDir}commands/charmap-cmds.adoc[]

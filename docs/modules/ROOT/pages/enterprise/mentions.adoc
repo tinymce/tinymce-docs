@@ -1,5 +1,5 @@
 :modulesDir: ../
-:includeDir: {modulesDir}_includes
+:partialsDir: {modulesDir}partials/
 :imagesDir: {modulesDir}images/
 include::{modulesDir}_attributes.adoc[]
 = Mentions
@@ -27,4 +27,4 @@ Mentions is available for download through link:{modulesDir}/cloud-deployment-gu
 :pluginname: Mentions
 :pluginminimumplan: enterprise
 :plugindocspage: mentions
-include::{includeDir}/misc/purchase-premium-plugins.adoc[]
+include::{partialsDir}misc/purchase-premium-plugins.adoc[]

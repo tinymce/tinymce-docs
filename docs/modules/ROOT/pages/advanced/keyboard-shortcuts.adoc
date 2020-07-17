@@ -1,5 +1,5 @@
 :modulesDir: ../
-:includeDir: {modulesDir}_includes
+:partialsDir: {modulesDir}partials/
 :imagesDir: {modulesDir}images/
 include::{modulesDir}_attributes.adoc[]
 = Keyboard shortcuts
@@ -219,7 +219,7 @@ To add a custom keyboard shortcut to {productname}, use either:
 * link:{modulesDir}/api/tinymce/tinymce.editor/#addshortcut[The `tinymce.Editor.addShortcut` API].
 * link:{modulesDir}/api/tinymce/tinymce.shortcuts/[The `tinymce.Shortcuts.add` API].
 
-include::{includeDir}/misc/shortcut-os-mappings.adoc[leveloffset=+1]
+include::{partialsDir}misc/shortcut-os-mappings.adoc[leveloffset=+1]
 
 [discrete#example-custom-keyboard-shortcut]
 === Example: Custom keyboard shortcut

@@ -1,5 +1,5 @@
 :modulesDir: ../
-:includeDir: {modulesDir}_includes
+:partialsDir: {modulesDir}partials/
 :imagesDir: {modulesDir}images/
 include::{modulesDir}_attributes.adoc[]
 = Format Painter
@@ -22,4 +22,4 @@ The ability to reuse existing formatting saves the user time and ensures consist
 :pluginname: Format Painter
 :pluginminimumplan: tiertwo
 :plugindocspage: formatpainter
-include::{includeDir}/misc/purchase-premium-plugins.adoc[]
+include::{partialsDir}misc/purchase-premium-plugins.adoc[]

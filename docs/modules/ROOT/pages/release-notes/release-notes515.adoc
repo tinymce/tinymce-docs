@@ -1,5 +1,5 @@
 :modulesDir: ../
-:includeDir: {modulesDir}_includes
+:partialsDir: {modulesDir}partials/
 :imagesDir: {modulesDir}images/
 include::{modulesDir}_attributes.adoc[]
 = TinyMCE 5.1.5
@@ -28,6 +28,6 @@ This is the {cloudname} and {enterpriseversion} release notes. For information o
 
 :enterprise: true
 
-include::{includeDir}/install/upgrading-info.adoc[]
+include::{partialsDir}install/upgrading-info.adoc[]
 
 :enterprise: false

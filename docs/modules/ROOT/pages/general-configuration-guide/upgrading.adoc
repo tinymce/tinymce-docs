@@ -1,5 +1,5 @@
 :modulesDir: ../
-:includeDir: {modulesDir}_includes
+:partialsDir: {modulesDir}partials/
 :imagesDir: {modulesDir}images/
 include::{modulesDir}_attributes.adoc[]
 = Upgrading TinyMCE
@@ -7,4 +7,4 @@ include::{modulesDir}_attributes.adoc[]
 :keywords: npm bower composer nuget update updating upgrade upgrading
 :title_nav: Upgrading TinyMCE
 
-include::{includeDir}/install/upgrading-info.adoc[]
+include::{partialsDir}install/upgrading-info.adoc[]

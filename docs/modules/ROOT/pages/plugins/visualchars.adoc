@@ -1,5 +1,5 @@
 :modulesDir: ../
-:includeDir: {modulesDir}_includes
+:partialsDir: {modulesDir}partials/
 :imagesDir: {modulesDir}images/
 include::{modulesDir}_attributes.adoc[]
 = Visual Characters plugin
@@ -55,4 +55,4 @@ tinymce.init({
 
 The Visual Blocks plugin provides the following JavaScript command.
 
-include::{includeDir}/commands/visualchars-cmds.adoc[]
+include::{partialsDir}commands/visualchars-cmds.adoc[]

@@ -1,5 +1,5 @@
 :modulesDir: ../
-:includeDir: {modulesDir}_includes
+:partialsDir: {modulesDir}partials/
 :imagesDir: {modulesDir}images/
 include::{modulesDir}_attributes.adoc[]
 = TinyMCE 5.2.1
@@ -73,6 +73,6 @@ The {productname} 5.2.1 release includes an accompanying release of the *PowerPa
 
 :enterprise: true
 
-include::{includeDir}/install/upgrading-info.adoc[]
+include::{partialsDir}install/upgrading-info.adoc[]
 
 :enterprise: false

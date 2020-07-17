@@ -1,5 +1,5 @@
 :modulesDir: ../
-:includeDir: {modulesDir}_includes
+:partialsDir: {modulesDir}partials/
 :imagesDir: {modulesDir}images/
 include::{modulesDir}_attributes.adoc[]
 = User interface options
@@ -7,84 +7,84 @@ include::{modulesDir}_attributes.adoc[]
 :description_short:
 :title_nav: User interface options
 
-include::{includeDir}/configuration/block-formats.adoc[]
+include::{partialsDir}configuration/block-formats.adoc[]
 
-include::{includeDir}/configuration/branding.adoc[]
+include::{partialsDir}configuration/branding.adoc[]
 
-include::{includeDir}/configuration/contextmenu.adoc[]
+include::{partialsDir}configuration/contextmenu.adoc[]
 
-include::{includeDir}/configuration/contextmenu_never_use_native.adoc[]
+include::{partialsDir}configuration/contextmenu_never_use_native.adoc[]
 
-include::{includeDir}/configuration/custom-ui-selector.adoc[]
+include::{partialsDir}configuration/custom-ui-selector.adoc[]
 
-include::{includeDir}/configuration/draggable-modal.adoc[]
+include::{partialsDir}configuration/draggable-modal.adoc[]
 
-include::{includeDir}/configuration/elementpath.adoc[]
+include::{partialsDir}configuration/elementpath.adoc[]
 
-include::{includeDir}/configuration/event-root.adoc[]
+include::{partialsDir}configuration/event-root.adoc[]
 
-include::{includeDir}/configuration/fixed-toolbar-container.adoc[]
+include::{partialsDir}configuration/fixed-toolbar-container.adoc[]
 
-include::{includeDir}/configuration/font-formats.adoc[]
+include::{partialsDir}configuration/font-formats.adoc[]
 
-include::{includeDir}/configuration/fontsize-formats.adoc[]
+include::{partialsDir}configuration/fontsize-formats.adoc[]
 
-include::{includeDir}/configuration/height.adoc[]
+include::{partialsDir}configuration/height.adoc[]
 
-include::{includeDir}/configuration/icons.adoc[]
+include::{partialsDir}configuration/icons.adoc[]
 
-include::{includeDir}/configuration/icons_url.adoc[]
+include::{partialsDir}configuration/icons_url.adoc[]
 
-include::{includeDir}/configuration/inline.adoc[]
+include::{partialsDir}configuration/inline.adoc[]
 
-include::{includeDir}/configuration/max-height.adoc[]
+include::{partialsDir}configuration/max-height.adoc[]
 
-include::{includeDir}/configuration/max-width.adoc[]
+include::{partialsDir}configuration/max-width.adoc[]
 
-include::{includeDir}/configuration/menu.adoc[]
+include::{partialsDir}configuration/menu.adoc[]
 
-include::{includeDir}/configuration/menubar.adoc[]
+include::{partialsDir}configuration/menubar.adoc[]
 
-include::{includeDir}/configuration/min-height.adoc[]
+include::{partialsDir}configuration/min-height.adoc[]
 
-include::{includeDir}/configuration/min-width.adoc[]
+include::{partialsDir}configuration/min-width.adoc[]
 
-include::{includeDir}/configuration/mobile.adoc[]
+include::{partialsDir}configuration/mobile.adoc[]
 
-include::{includeDir}/configuration/placeholder.adoc[]
+include::{partialsDir}configuration/placeholder.adoc[]
 
-include::{includeDir}/configuration/preview-styles.adoc[]
+include::{partialsDir}configuration/preview-styles.adoc[]
 
-include::{includeDir}/configuration/removed-menuitems.adoc[]
+include::{partialsDir}configuration/removed-menuitems.adoc[]
 
-include::{includeDir}/configuration/resize.adoc[]
+include::{partialsDir}configuration/resize.adoc[]
 
-include::{includeDir}/configuration/skin.adoc[]
+include::{partialsDir}configuration/skin.adoc[]
 
-include::{includeDir}/configuration/skin-url.adoc[]
+include::{partialsDir}configuration/skin-url.adoc[]
 
-include::{includeDir}/configuration/statusbar.adoc[]
+include::{partialsDir}configuration/statusbar.adoc[]
 
-include::{includeDir}/configuration/style-formats.adoc[]
+include::{partialsDir}configuration/style-formats.adoc[]
 
-include::{includeDir}/configuration/style-formats-autohide.adoc[]
+include::{partialsDir}configuration/style-formats-autohide.adoc[]
 
-include::{includeDir}/configuration/style-formats-merge.adoc[]
+include::{partialsDir}configuration/style-formats-merge.adoc[]
 
-include::{includeDir}/configuration/theme.adoc[]
+include::{partialsDir}configuration/theme.adoc[]
 
-include::{includeDir}/configuration/theme-url.adoc[]
+include::{partialsDir}configuration/theme-url.adoc[]
 
-include::{includeDir}/configuration/toolbar.adoc[]
+include::{partialsDir}configuration/toolbar.adoc[]
 
-include::{includeDir}/configuration/toolbar-n.adoc[]
+include::{partialsDir}configuration/toolbar-n.adoc[]
 
-include::{includeDir}/configuration/toolbar-mode.adoc[]
+include::{partialsDir}configuration/toolbar-mode.adoc[]
 
-include::{includeDir}/configuration/toolbar-groups.adoc[]
+include::{partialsDir}configuration/toolbar-groups.adoc[]
 
-include::{includeDir}/configuration/toolbar-location.adoc[]
+include::{partialsDir}configuration/toolbar-location.adoc[]
 
-include::{includeDir}/configuration/toolbar_sticky.adoc[]
+include::{partialsDir}configuration/toolbar_sticky.adoc[]
 
-include::{includeDir}/configuration/width.adoc[]
+include::{partialsDir}configuration/width.adoc[]

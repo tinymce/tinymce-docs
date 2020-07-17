@@ -1,5 +1,5 @@
 :modulesDir: ../
-:includeDir: {modulesDir}_includes
+:partialsDir: {modulesDir}partials/
 :imagesDir: {modulesDir}images/
 include::{modulesDir}_attributes.adoc[]
 = Link plugin
@@ -344,4 +344,4 @@ tinymce.init({
 
 The Link plugin provides the following JavaScript command.
 
-include::{includeDir}/commands/link-cmds.adoc[]
+include::{partialsDir}commands/link-cmds.adoc[]

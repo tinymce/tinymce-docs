@@ -1,5 +1,5 @@
 :modulesDir:
-:includeDir: {modulesDir}_includes
+:partialsDir: {modulesDir}partials/
 :imagesDir: {modulesDir}images/
 include::{modulesDir}_attributes.adoc[]
 = TinyMCE Mobile
@@ -29,7 +29,7 @@ The new mobile experience allows most of the {productname} plugins to work on mo
 
 NOTE: iPads do not use the `mobile` part of the {productname} init configuration. This is due to a constraint added by Apple to return the environment as a "desktop environment" for iPads. iPads users will receive the other changes to touch functionality, such as context toolbars and context menus.
 
-include::{includeDir}/misc/mobile_platform_compatibility.adoc[]
+include::{partialsDir}misc/mobile_platform_compatibility.adoc[]
 
 [#configuring-mobile]
 == Configuring mobile

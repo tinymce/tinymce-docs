@@ -1,5 +1,5 @@
 :modulesDir: ../
-:includeDir: {modulesDir}_includes
+:partialsDir: {modulesDir}partials/
 :imagesDir: {modulesDir}images/
 include::{modulesDir}_attributes.adoc[]
 = Code Sample plugin
@@ -118,4 +118,4 @@ tinymce.init({
 
 The Code Sample plugin provides the following JavaScript command.
 
-include::{includeDir}/commands/codesample-cmds.adoc[]
+include::{partialsDir}commands/codesample-cmds.adoc[]

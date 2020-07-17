@@ -1,5 +1,5 @@
 :modulesDir: ../
-:includeDir: {modulesDir}_includes
+:partialsDir: {modulesDir}partials/
 :imagesDir: {modulesDir}images/
 include::{modulesDir}_attributes.adoc[]
 = Permanent Pen Plugin
@@ -154,4 +154,4 @@ Check out the link:{modulesDir}/demo/permanentpen/[Permanent Pen demo] to try ou
 
 The Permanent Pen plugin provides the following JavaScript commands.
 
-include::{includeDir}/commands/permanentpen-cmds.adoc[]
+include::{partialsDir}commands/permanentpen-cmds.adoc[]

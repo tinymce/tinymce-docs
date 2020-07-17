@@ -1,5 +1,5 @@
 :modulesDir: ../
-:includeDir: {modulesDir}_includes
+:partialsDir: {modulesDir}partials/
 :imagesDir: {modulesDir}images/
 include::{modulesDir}_attributes.adoc[]
 = Image plugin
@@ -41,11 +41,11 @@ These configuration options affect the execution of the `image` plugin. Many of 
 
 If you wish to align the image, you can also use the text align buttons while images are selected.
 :includedSection: imagePlugin
-include::{includeDir}/configuration/a11y_advanced_options.adoc[leveloffset=+1]
+include::{partialsDir}configuration/a11y_advanced_options.adoc[leveloffset=+1]
 :includedSection: false
-include::{includeDir}/configuration/file-picker-callback.adoc[leveloffset=+1]
+include::{partialsDir}configuration/file-picker-callback.adoc[leveloffset=+1]
 
-include::{includeDir}/configuration/file-picker-types.adoc[leveloffset=+1]
+include::{partialsDir}configuration/file-picker-types.adoc[leveloffset=+1]
 
 [discrete#]
 === `image_caption`
@@ -323,15 +323,15 @@ tinymce.init({
 });
 `
 
-include::{includeDir}/configuration/images-upload-base-path.adoc[leveloffset=+1]
+include::{partialsDir}configuration/images-upload-base-path.adoc[leveloffset=+1]
 
-include::{includeDir}/configuration/images-upload-credentials.adoc[leveloffset=+1]
+include::{partialsDir}configuration/images-upload-credentials.adoc[leveloffset=+1]
 
-include::{includeDir}/configuration/images-upload-handler.adoc[leveloffset=+1]
+include::{partialsDir}configuration/images-upload-handler.adoc[leveloffset=+1]
 
-include::{includeDir}/configuration/images-uploads-url.adoc[leveloffset=+1]
+include::{partialsDir}configuration/images-uploads-url.adoc[leveloffset=+1]
 
-include::{includeDir}/configuration/type-ahead-urls.adoc[leveloffset=+1]
+include::{partialsDir}configuration/type-ahead-urls.adoc[leveloffset=+1]
 
 [#q-where-are-the-advanced-image-options]
 == Q: Where are the advanced image options?
@@ -356,4 +356,4 @@ style_formats: [
 
 The Image plugin provides the following JavaScript command.
 
-include::{includeDir}/commands/image-cmds.adoc[]
+include::{partialsDir}commands/image-cmds.adoc[]

@@ -1,5 +1,5 @@
 :modulesDir: ../
-:includeDir: {modulesDir}_includes
+:partialsDir: {modulesDir}partials/
 :imagesDir: {modulesDir}images/
 include::{modulesDir}_attributes.adoc[]
 = Spell Checker Pro plugin
@@ -132,7 +132,7 @@ tinymce.init({
 });
 `
 
-include::{includeDir}/configuration/languages.adoc[]
+include::{partialsDir}configuration/languages.adoc[]
 
 [#-2]
 === `spellchecker_languages`
@@ -310,7 +310,7 @@ tinymce.init({
 [#events]
 == Events
 
-include::{includeDir}/events/tinymcespellchecker.adoc[]
+include::{partialsDir}events/tinymcespellchecker.adoc[]
 
 [#spellcheckerignore-event]
 === SpellcheckerIgnore event

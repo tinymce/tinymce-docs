@@ -1,5 +1,5 @@
 :modulesDir: ../
-:includeDir: {modulesDir}_includes
+:partialsDir: {modulesDir}partials/
 :imagesDir: {modulesDir}images/
 include::{modulesDir}_attributes.adoc[]
 = Context toolbar
@@ -30,7 +30,7 @@ A context toolbar is registered by calling the `addContextToolbar` API in the re
 | A list of strings which represent either a registered toolbar button, or a registered context form launcher.
 |===
 
-include::{includeDir}/context/positioning.adoc[]
+include::{partialsDir}context/positioning.adoc[]
 
 [#example-configuration]
 === Example configuration
@@ -44,4 +44,4 @@ This example shows how the quickbars plugin adds the standard selection context 
 
 There is an `editor` event called `contexttoolbar-show` that can be fired to show a context toolbar at the current selection. The event takes a parameter `toolbarKey` which specifies the name of the registered context form or context toolbar to show.
 
-include::{includeDir}/context/priority.adoc[]
+include::{partialsDir}context/priority.adoc[]

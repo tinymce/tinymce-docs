@@ -1,5 +1,5 @@
 :modulesDir: ../
-:includeDir: {modulesDir}_includes
+:partialsDir: {modulesDir}partials/
 :imagesDir: {modulesDir}images/
 include::{modulesDir}_attributes.adoc[]
 = Spell Checker plugin
@@ -223,4 +223,4 @@ tinymce.init({
 
 The Spell Checker plugin provides the following JavaScript command.
 
-include::{includeDir}/commands/spellchecker-cmds.adoc[]
+include::{partialsDir}commands/spellchecker-cmds.adoc[]

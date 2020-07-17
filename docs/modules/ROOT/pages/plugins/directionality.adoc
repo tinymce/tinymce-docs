@@ -1,5 +1,5 @@
 :modulesDir: ../
-:includeDir: {modulesDir}_includes
+:partialsDir: {modulesDir}partials/
 :imagesDir: {modulesDir}images/
 include::{modulesDir}_attributes.adoc[]
 = Directionality plugin
@@ -30,4 +30,4 @@ tinymce.init({
 
 The Directionality plugin provides the following JavaScript commands.
 
-include::{includeDir}/commands/directionality-cmds.adoc[]
+include::{partialsDir}commands/directionality-cmds.adoc[]

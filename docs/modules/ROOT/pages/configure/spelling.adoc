@@ -1,5 +1,5 @@
 :modulesDir: ../
-:includeDir: {modulesDir}_includes
+:partialsDir: {modulesDir}partials/
 :imagesDir: {modulesDir}images/
 include::{modulesDir}_attributes.adoc[]
 = Spelling options
@@ -7,8 +7,8 @@ include::{modulesDir}_attributes.adoc[]
 :description_short:
 :title_nav: Spelling options
 
-include::{includeDir}/configuration/spell-checker-pro.adoc[]
+include::{partialsDir}configuration/spell-checker-pro.adoc[]
 
-include::{includeDir}/configuration/browser-spellcheck.adoc[]
+include::{partialsDir}configuration/browser-spellcheck.adoc[]
 
-include::{includeDir}/configuration/gecko-spellcheck.adoc[]
+include::{partialsDir}configuration/gecko-spellcheck.adoc[]

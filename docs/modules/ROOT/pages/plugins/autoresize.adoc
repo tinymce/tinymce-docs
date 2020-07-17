@@ -1,5 +1,5 @@
 :modulesDir: ../
-:includeDir: {modulesDir}_includes
+:partialsDir: {modulesDir}partials/
 :imagesDir: {modulesDir}images/
 include::{modulesDir}_attributes.adoc[]
 = Autoresize plugin
@@ -124,4 +124,4 @@ tinymce.init({
 
 The Autoresize plugin provides the following JavaScript command.
 
-include::{includeDir}/commands/autoresize-cmds.adoc[]
+include::{partialsDir}commands/autoresize-cmds.adoc[]

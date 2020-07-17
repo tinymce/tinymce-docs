@@ -1,5 +1,5 @@
 :modulesDir: ../
-:includeDir: {modulesDir}_includes
+:partialsDir: {modulesDir}partials/
 :imagesDir: {modulesDir}images/
 include::{modulesDir}_attributes.adoc[]
 = Anchor plugin
@@ -30,4 +30,4 @@ tinymce.init({
 
 The Anchor plugin provides the following JavaScript command.
 
-include::{includeDir}/commands/anchor-cmds.adoc[]
+include::{partialsDir}commands/anchor-cmds.adoc[]

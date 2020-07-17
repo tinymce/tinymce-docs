@@ -1,5 +1,5 @@
 :modulesDir: ../
-:includeDir: {modulesDir}_includes
+:partialsDir: {modulesDir}partials/
 :imagesDir: {modulesDir}images/
 include::{modulesDir}_attributes.adoc[]
 = Image Tools plugin
@@ -211,4 +211,4 @@ tinymce.init({
 
 The Image Tools plugin provides the following JavaScript commands.
 
-include::{includeDir}/commands/imagetools-cmds.adoc[]
+include::{partialsDir}commands/imagetools-cmds.adoc[]

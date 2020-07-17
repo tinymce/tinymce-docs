@@ -1,5 +1,5 @@
 :modulesDir: ../
-:includeDir: {modulesDir}_includes
+:partialsDir: {modulesDir}partials/
 :imagesDir: {modulesDir}images/
 include::{modulesDir}_attributes.adoc[]
 = Content filtering options
@@ -7,50 +7,50 @@ include::{modulesDir}_attributes.adoc[]
 :description_short: Learn how to create clean, maintainable and readable content.
 :title_nav: Content filtering options
 
-include::{includeDir}/configuration/allow-conditional-comments.adoc[]
+include::{partialsDir}configuration/allow-conditional-comments.adoc[]
 
-include::{includeDir}/configuration/allow-html-in-named-anchor.adoc[]
+include::{partialsDir}configuration/allow-html-in-named-anchor.adoc[]
 
-include::{includeDir}/configuration/allow-unsafe-link-target.adoc[]
+include::{partialsDir}configuration/allow-unsafe-link-target.adoc[]
 
-include::{includeDir}/configuration/convert-fonts-to-spans.adoc[]
+include::{partialsDir}configuration/convert-fonts-to-spans.adoc[]
 
-include::{includeDir}/configuration/custom-elements.adoc[]
+include::{partialsDir}configuration/custom-elements.adoc[]
 
-include::{includeDir}/configuration/doctype.adoc[]
+include::{partialsDir}configuration/doctype.adoc[]
 
-include::{includeDir}/configuration/element-format.adoc[]
+include::{partialsDir}configuration/element-format.adoc[]
 
-include::{includeDir}/configuration/encoding.adoc[]
+include::{partialsDir}configuration/encoding.adoc[]
 
-include::{includeDir}/configuration/entities.adoc[]
+include::{partialsDir}configuration/entities.adoc[]
 
-include::{includeDir}/configuration/entity-encoding.adoc[]
+include::{partialsDir}configuration/entity-encoding.adoc[]
 
-include::{includeDir}/configuration/extended-valid-elements.adoc[]
+include::{partialsDir}configuration/extended-valid-elements.adoc[]
 
-include::{includeDir}/configuration/fix-list-elements.adoc[]
+include::{partialsDir}configuration/fix-list-elements.adoc[]
 
-include::{includeDir}/configuration/forced-root-block.adoc[]
+include::{partialsDir}configuration/forced-root-block.adoc[]
 
-include::{includeDir}/configuration/forced-root-block-attrs.adoc[]
+include::{partialsDir}configuration/forced-root-block-attrs.adoc[]
 
-include::{includeDir}/configuration/invalid-elements.adoc[]
+include::{partialsDir}configuration/invalid-elements.adoc[]
 
-include::{includeDir}/configuration/invalid-styles.adoc[]
+include::{partialsDir}configuration/invalid-styles.adoc[]
 
-include::{includeDir}/configuration/keep-styles.adoc[]
+include::{partialsDir}configuration/keep-styles.adoc[]
 
-include::{includeDir}/configuration/protect.adoc[]
+include::{partialsDir}configuration/protect.adoc[]
 
-include::{includeDir}/configuration/remove-trailing-brs.adoc[]
+include::{partialsDir}configuration/remove-trailing-brs.adoc[]
 
-include::{includeDir}/configuration/schema.adoc[]
+include::{partialsDir}configuration/schema.adoc[]
 
-include::{includeDir}/configuration/valid-children.adoc[]
+include::{partialsDir}configuration/valid-children.adoc[]
 
-include::{includeDir}/configuration/valid-classes.adoc[]
+include::{partialsDir}configuration/valid-classes.adoc[]
 
-include::{includeDir}/configuration/valid-elements.adoc[]
+include::{partialsDir}configuration/valid-elements.adoc[]
 
-include::{includeDir}/configuration/valid-styles.adoc[]
+include::{partialsDir}configuration/valid-styles.adoc[]

@@ -1,5 +1,5 @@
 :modulesDir: ../
-:includeDir: {modulesDir}_includes
+:partialsDir: {modulesDir}partials/
 :imagesDir: {modulesDir}images/
 include::{modulesDir}_attributes.adoc[]
 = Template plugin
@@ -360,11 +360,11 @@ Snippets are `html` code chunks that can be inserted. Replace variables will onl
 This is a simple <strong>snippet</strong>. Will be replaced: {$somevar1}.
 `
 
-include::{includeDir}/configuration/ref-time-date-formats.adoc[]
+include::{partialsDir}configuration/ref-time-date-formats.adoc[]
 
 [#commands]
 == Commands
 
 The Template plugin provides the following JavaScript command.
 
-include::{includeDir}/commands/template-cmds.adoc[]
+include::{partialsDir}commands/template-cmds.adoc[]

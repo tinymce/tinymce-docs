@@ -1,5 +1,5 @@
 :modulesDir: ../
-:includeDir: {modulesDir}_includes
+:partialsDir: {modulesDir}partials/
 :imagesDir: {modulesDir}images/
 include::{modulesDir}_attributes.adoc[]
 = Table plugin
@@ -507,4 +507,4 @@ tinymce.activeEditor.plugins.table.insertTable(2, 3);
 
 The Table plugin provides the following JavaScript commands.
 
-include::{includeDir}/commands/table-cmds.adoc[]
+include::{partialsDir}commands/table-cmds.adoc[]

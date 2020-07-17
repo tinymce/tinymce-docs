@@ -1,5 +1,5 @@
 :modulesDir: ../
-:includeDir: {modulesDir}_includes
+:partialsDir: {modulesDir}partials/
 :imagesDir: {modulesDir}images/
 include::{modulesDir}_attributes.adoc[]
 = Cloud-based file management
@@ -38,4 +38,4 @@ And to make sure your assets are delivered as fast as possible, we utilize the h
 :pluginname: Tiny Drive
 :pluginminimumplan: tierone
 :plugindocspage: ../tinydrive
-include::{includeDir}/misc/purchase-premium-plugins.adoc[]
+include::{partialsDir}misc/purchase-premium-plugins.adoc[]

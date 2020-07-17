@@ -1,5 +1,5 @@
 :modulesDir: ../
-:includeDir: {modulesDir}_includes
+:partialsDir: {modulesDir}partials/
 :imagesDir: {modulesDir}images/
 include::{modulesDir}_attributes.adoc[]
 = Handling image uploads
@@ -90,17 +90,17 @@ Optional:
 * <<images_upload_credentials,`images_upload_credentials`>>
 * <<images_reuse_filename,`images_reuse_filename`>>
 
-include::{includeDir}/configuration/images-uploads-url.adoc[leveloffset=+1]
+include::{partialsDir}configuration/images-uploads-url.adoc[leveloffset=+1]
 
-include::{includeDir}/configuration/images-upload-handler.adoc[leveloffset=+1]
+include::{partialsDir}configuration/images-upload-handler.adoc[leveloffset=+1]
 
-include::{includeDir}/configuration/images-upload-base-path.adoc[leveloffset=+1]
+include::{partialsDir}configuration/images-upload-base-path.adoc[leveloffset=+1]
 
-include::{includeDir}/configuration/images-upload-credentials.adoc[leveloffset=+1]
+include::{partialsDir}configuration/images-upload-credentials.adoc[leveloffset=+1]
 
-include::{includeDir}/configuration/images-upload-reuse-filename.adoc[leveloffset=+1]
+include::{partialsDir}configuration/images-upload-reuse-filename.adoc[leveloffset=+1]
 
-include::{includeDir}/configuration/images-dataimg-filter.adoc[leveloffset=+1]
+include::{partialsDir}configuration/images-dataimg-filter.adoc[leveloffset=+1]
 
 [#cors-considerations]
 == CORS considerations

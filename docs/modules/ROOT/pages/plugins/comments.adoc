@@ -1,5 +1,5 @@
 :modulesDir: ../
-:includeDir: {modulesDir}_includes
+:partialsDir: {modulesDir}partials/
 :imagesDir: {modulesDir}images/
 include::{modulesDir}_attributes.adoc[]
 = Comments 2.0
@@ -353,4 +353,4 @@ For a workaround, please ensure that `tinycomments` is listed before `fullpage` 
 
 The Comments plugin provides the following JavaScript commands.
 
-include::{includeDir}/commands/comments-cmds.adoc[]
+include::{partialsDir}commands/comments-cmds.adoc[]

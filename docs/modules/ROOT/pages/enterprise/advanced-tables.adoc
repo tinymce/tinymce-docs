@@ -1,5 +1,5 @@
 :modulesDir: ../
-:includeDir: {modulesDir}_includes
+:partialsDir: {modulesDir}partials/
 :imagesDir: {modulesDir}images/
 include::{modulesDir}_attributes.adoc[]
 = Advanced Tables plugin
@@ -37,4 +37,4 @@ NOTE: Currently, the sort function will treat cells with Alphanumeric data as Te
 :pluginname: Advanced Tables
 :pluginminimumplan: tiertwo
 :plugindocspage: advtable
-include::{includeDir}/misc/purchase-premium-plugins.adoc[]
+include::{partialsDir}misc/purchase-premium-plugins.adoc[]

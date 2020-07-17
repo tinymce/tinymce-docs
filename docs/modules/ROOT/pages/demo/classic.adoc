@@ -1,0 +1,16 @@
+:modulesDir: ../
+:includeDir: {modulesDir}_includes
+:imagesDir: {modulesDir}images/
+include::{modulesDir}_attributes.adoc[]
+= Classic editor example
+:description: This example shows you how to use TinyMCE classic editor.
+:description_short: Configure TinyMCE classic editor.
+:keywords: example demo classic editor
+:title_nav: Classic editor mode
+
+[#live-example]
+== Live example
+
+This example shows you how to use {productname} Classic Editor.
+
+{% include codepen.html id="classic" %}

@@ -1,0 +1,40 @@
+:modulesDir: ../
+:includeDir: {modulesDir}_includes
+:imagesDir: {modulesDir}images/
+include::{modulesDir}_attributes.adoc[]
+= Advanced Tables plugin
+:description: Add sorting functionality to tables.
+:keywords: sort tables advanced advtable premium
+:title_nav: Advanced Tables
+
+{requires_5_1v}
+
+Advanced Tables adds sorting functionality to tables in {productname}. Tables can be sorted by row or column values using:
+* The *Sort* options in the *Table* menu.
+* The *Sort* options in the table contextual menu.
+* The *Sort* options in the *Table* toolbar menu button.
+
+*For example:*
+
+|===
+| Sort rows based on the selected column | Advanced Sort Dialog
+
+| image:{imagesDir}advtable_context_menu_sort.png[Advanced Tables enhanced contextual menu for sorting rows based on the selected Column (Sort > Sort table by column ascending/descending).]
+| image:{imagesDir}advtable_dialog_sort.png[Advanced Tables sort dialog (Sort > Advanced Sort{ellps}).]
+|===
+
+The plugin is capable of sorting:
+* Numerical data
+* Text data
+
+NOTE: Currently, the sort function will treat cells with Alphanumeric data as Text data. This includes currency symbols which are text characters.
+
+[#try-our-advanced-tables-demo]
+=== Try our Advanced Tables Demo
+
+{% include codepen.html id="advtable" %}
+
+:pluginname: Advanced Tables
+:pluginminimumplan: tiertwo
+:plugindocspage: advtable
+include::{includeDir}/misc/purchase-premium-plugins.adoc[]

@@ -1,0 +1,41 @@
+:modulesDir: ../
+:includeDir: {modulesDir}_includes
+:imagesDir: {modulesDir}images/
+include::{modulesDir}_attributes.adoc[]
+= Full featured examples
+:description: These examples display all of the plugins available with TinyMCE Cloud premium subscriptions.
+:description_short: Every TinyMCE plugin in action.
+:keywords: example demo custom wysiwyg full-power full-featured plugins non-premium
+:title_nav: Full featured
+
+[#full-featured-including-premium-plugins]
+== Full Featured: Including Premium Plugins
+
+This example includes most of the available {productname} plugins, including plugins available on {cloudname} premium subscriptions. Please note, it includes link:{plugindirectory}[premium plugins].
+
+{% include codepen.html id="full-featured" %}
+
+The following plugins are excluded from this example:
+* link:{modulesDir}/plugins/moxiemanager[MoxieManager (Premium Plugin)] -- link:{modulesDir}/plugins/drive[*{cloudfilemanager}*] included instead.
+* link:{modulesDir}/plugins/autoresize[Autoresize] -- Resizes the editor to fit the content.
+* link:{modulesDir}/plugins/bbcode[BBCode] -- Changes the markup used for the content.
+* link:{modulesDir}/plugins/code[Code] -- link:{modulesDir}/plugins/advcode[*Advanced Code Editor*] included instead.
+* link:{modulesDir}/plugins/fullpage[Full Page] -- Used for modifying HTML `<head>` elements.
+* link:{modulesDir}/plugins/paste[Paste] -- link:{modulesDir}/plugins/powerpaste[*PowerPaste*] included instead.
+* link:{modulesDir}/plugins/spellchecker[Spellchecker] -- link:{modulesDir}/plugins/tinymcespellchecker[*Spell Checker Pro*] included instead.
+* link:{modulesDir}/plugins/tabfocus[Tab Focus] -- Changes the behavior of the TAB-key within the editor.
+
+[#full-featured-non-premium-plugins]
+== Full Featured: Non-Premium Plugins
+
+This example includes only non-premium plugins. These plugins are also used in the <<fullfeaturedincludingpremiumplugins,Full Featured: Including Premium Plugins Demo above>>.
+
+{% include codepen.html id="open-source-plugins" %}
+
+The following plugins are excluded from this example:
+* link:{plugindirectory}[All premium plugins].
+* link:{modulesDir}/plugins/autoresize[Autoresize] -- Resizes the editor to fit the content.
+* link:{modulesDir}/plugins/bbcode[BBCode] -- Changes the markup used for the content.
+* link:{modulesDir}/plugins/fullpage[Full Page] -- Used for modifying HTML `<head>` elements.
+* link:{modulesDir}/plugins/spellchecker[Spellchecker] -- Requires Server-Side components, see: link:{modulesDir}/general-configuration-guide/spell-checking/[Check spelling in {productname}].
+* link:{modulesDir}/plugins/tabfocus[Tab Focus] -- Changes the behavior of the TAB-key within the editor.

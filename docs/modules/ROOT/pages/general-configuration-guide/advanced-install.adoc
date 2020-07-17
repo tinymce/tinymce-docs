@@ -1,0 +1,59 @@
+:modulesDir: ../
+:includeDir: {modulesDir}_includes
+:imagesDir: {modulesDir}images/
+include::{modulesDir}_attributes.adoc[]
+= Installing TinyMCE
+:description: Learn how to install TinyMCE via TinyMCE Cloud, package manager options, Self-hosted, jQuery and custom build options.
+:description_short: Cloud, package managers, Self-hosted, jQuery and custom builds.
+:keywords: npm bower composer nuget
+:title_nav: Options for installing TinyMCE
+
+There are multiple ways to instantiate {productname}. Accessing {productname} through {cloudname} may not be the best use case for different deployment scenarios. This section explains additional installation options including package managers, self-hosted download, and other custom build options.
+
+* <<cloudinstall,{cloudname}>>
+* <<packagemanagerinstalloptions,Package Managers>>
+* <<self-hostedinstall,Self-Hosted Download / Install>>
+* <<custombuildinstall,Custom Build>>
+
+[#cloud-install]
+== Cloud Install
+
+include::{includeDir}/install/cloud.adoc[]
+
+[#package-manager-install-options]
+== Package Manager Install Options
+
+* <<npm,NPM>>
+* <<bower,Bower>>
+* <<composer,Composer>>
+* <<nuget,NuGet>>
+
+[#npm]
+== NPM
+
+include::{includeDir}/install/npm.adoc[]
+
+[#bower]
+== Bower
+
+include::{includeDir}/install/bower.adoc[]
+
+[#composer]
+== Composer
+
+include::{includeDir}/install/composer.adoc[]
+
+[#nuget]
+== NuGet
+
+include::{includeDir}/install/nuget.adoc[]
+
+[#self-hosted-install]
+== Self-Hosted Install
+
+include::{includeDir}/install/sdk.adoc[]
+
+[#custom-build-install]
+== Custom Build Install
+
+include::{includeDir}/install/custom.adoc[]

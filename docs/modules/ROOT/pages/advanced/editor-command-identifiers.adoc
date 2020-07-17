@@ -1,0 +1,552 @@
+:modulesDir: ../
+:includeDir: {modulesDir}_includes
+:imagesDir: {modulesDir}images/
+include::{modulesDir}_attributes.adoc[]
+= Editor command identifiers
+:description: The complete list of exposed editor commands.
+:description_short: Complete list of editor commands.
+:keywords: editorcommands editorcommand execcommand Bold Italic Underline Strikethrough Superscript Subscript Cut Copy Paste Unlink JustifyLeft JustifyCenter JustifyRight JustifyFull JustifyNone InsertUnorderedList InsertOrderedList ForeColor HiliteColor FontName FontSize RemoveFormat mceBlockQuote FormatBlock mceInsertContent mceToggleFormat mceSetContent Indent Outdent InsertHorizontalRule mceToggleVisualAid mceInsertLink selectAll delete mceNewDocument Undo Redo mceAutoResize mceShowCharmap mceCodeEditor mceDirectionLTR mceDirectionRTL mceFullPageProperties mceFullscreen mceImage mceInsertDate mceInsertTime mceInsertDefinitionList mceNonBreaking mcePageBreak mcePreview mcePrint mceSave SearchReplace mceSpellcheck mceInsertTemplate mceVisualBlocks mceVisualChars mceMedia mceAnchor mceTableSplitCells mceTableMergeCells mceTableInsertRowBefore mceTableInsertRowAfter mceTableInsertColBefore mceTableInsertColAfter mceTableDeleteCol mceTableDeleteRow mceTableCutRow mceTableCopyRow mceTablePasteRowBefore mceTablePasteRowAfter mceTableDelete mceInsertTable mceTableRowProps mceTableCellProps mceEditImage mceAddEditor mceRemoveEditor mceToggleEditor
+:title_nav: Editor command identifiers
+
+The following tables show the existing editor commands. These commands are provided by `tinymce` and not by the browser's internal commands. These commands can be executed using the link:{modulesDir}/api/tinymce/tinymce.editorcommands/#execcommand[execCommand] function.
+
+[#listing-core-and-plugin-editor-commands]
+== Listing core and plugin editor commands
+
+To retrieve a list of avaliable commands from the active editor, run the following command from the browser console:
+
+`js
+tinymce.activeEditor.editorCommands.commands.exec;
+`
+
+[#core-editor-commands]
+== Core Editor commands
+
+The commands on the following table are provided by the {productname} editor and do not require any plugins to be enabled.
+
+|===
+| Command | Description
+
+| Bold
+| Toggles bold formatting to selection.
+
+| Italic
+| Toggles italic formatting to selection.
+
+| Underline
+| Toggles underline formatting to selection.
+
+| Strikethrough
+| Toggles strikethough formatting to selection.
+
+| Superscript
+| Toggles superscript formatting to selection.
+
+| Subscript
+| Toggles subscript formatting to selection.
+
+| Cut
+| Cuts the selected contents and puts in into users clipboard.
+
+| Copy
+| Copies the selected contents and puts in into users clipboard.
+
+| Paste
+| Pastes the current clipboard contents into the editor.
+
+| mceInsertLink
+| Inserts a link at the current selection. The value is the URL to add to the link(s).
+
+| Unlink
+| Removes any links from the current selection.
+
+| JustifyLeft
+| Left aligns the current text block/image.
+
+| JustifyCenter
+| Center aligns the current text block/image.
+
+| JustifyRight
+| Right aligns the current text block/image.
+
+| JustifyFull
+| Full aligns the current text block/image.
+
+| JustifyNone
+| Removes any alignment to the selected text.
+
+| ForeColor
+| Changes the text color of the text. The value passed in should be the color.
+
+| HiliteColor
+| Changes the background color of the text. The value passed in should be the color.
+
+| FontName
+| Font name to apply to the text. The value passed in should be the font family name.
+
+| FontSize
+| Font size of the text. The value passed in should be a valid CSS font size.
+
+| mceApplyTextcolor
+| Applies text color or background color to the current selection. Requires an argument of either `'hilitecolor'` or `'forecolor'`, and the value of the color.
+
+| mceRemoveTextcolor
+| Removes the text color or background color from the current selection. Requires an argument of either `'hilitecolor'` or `'forecolor'`.
+
+| RemoveFormat
+| Removes any formats from the current selection.
+
+| mceBlockQuote
+| Wraps the selected text blocks into a block quote.
+
+| FormatBlock
+| Toggles the format of the current selection. The value passed in should be the format name. If no format is specified, the paragraph (<``p``>) format will be toggled. For a list of options, see: link:{modulesDir}/configure/content-formatting/#built-informats[Content formatting options - Built-in formats].
+
+| mceInsertContent
+| Inserts contents at the current selection. The value passed in should be the contents to be inserted.
+
+| mceReplaceContent
+| Replaces the current selection. The value passed in should be the new content.
+
+| mceSetContent
+| Sets the contents of the editor. The value is the contents to set as the editor contents.
+
+| mceToggleFormat
+| Toggles a specified format by name. The value is the name of the format to toggle. For a list of options, see: link:{modulesDir}/configure/content-formatting/#built-informats[Content formatting options - Built-in formats].
+
+| ToggleSidebar
+| Closes the currrent sidebar, or toogles the sidebar if the sidebar name is provided as a value (_`<sidebar-name>`_).
+
+| Indent
+| Indents the current selection.
+
+| Outdent
+| Outdents the current selection.
+
+| InsertHorizontalRule
+| Inserts a horizontal rule at the cursor location or inplace of the current selection.
+
+| InsertLineBreak
+| Adds a line break `<br/>` at the current cursor or selection.
+
+| mceInsertNewLine
+| Adds a new line at the current cursor or selection, such as splitting the current paragraph element.
+
+| mceInsertRawHTML
+| Inserts the RAW HTML passed as a value, overwriting the current selection or at the cursor position. *Warning*: This command allows dangerous `<script>` elements to be added to and executed in the editor.
+
+| mceToggleVisualAid
+| Toggles the visual aids for: tables without borders and anchors.
+
+| SelectAll
+| Selects all content in the editor.
+
+| Delete
+| Deletes the current selection from the editor.
+
+| ForwardDelete
+| Deletes the current selection or the character to the right of the cursor for a collapsed selection.
+
+| mceNewDocument
+| Removes all contents of the editor.
+
+| Redo
+| Redoes the last change to the editor.
+
+| Undo
+| Undoes the last change to the editor.
+
+| mceAddUndoLevel
+| Adds an undo level.
+
+| mceEndUndoLevel
+| Adds an undo level.
+
+| mceCleanup
+| Copies the current editor content and sets the content using the copy.
+
+| mceSelectNode
+| Selects a node in the editor. The target node is passed as the value (_`<DOM_node>`_).
+
+| mceSelectNodeDepth
+| Selects the parent DOM node 'n' levels above the current node.
+
+| mceRemoveNode
+| Removes the current node or the target node passed as the value (_`<DOM_node>`_).
+|===
+
+*Examples*
+
+`+js
+tinymce.activeEditor.execCommand('Bold')
+tinymce.activeEditor.execCommand('Italic')
+tinymce.activeEditor.execCommand('Underline')
+tinymce.activeEditor.execCommand('Strikethrough')
+tinymce.activeEditor.execCommand('Superscript')
+tinymce.activeEditor.execCommand('Subscript')
+tinymce.activeEditor.execCommand('Cut')
+tinymce.activeEditor.execCommand('Copy')
+tinymce.activeEditor.execCommand('Paste')
+tinymce.activeEditor.execCommand('mceInsertLink' false, 'https://www.tiny.cloud')
+tinymce.activeEditor.execCommand('Unlink')
+tinymce.activeEditor.execCommand('JustifyLeft')
+tinymce.activeEditor.execCommand('JustifyCenter')
+tinymce.activeEditor.execCommand('JustifyRight')
+tinymce.activeEditor.execCommand('JustifyFull')
+tinymce.activeEditor.execCommand('JustifyNone')
+tinymce.activeEditor.execCommand('ForeColor', false, '#FF0000')
+tinymce.activeEditor.execCommand('HiliteColor', false, '#FF0000')
+tinymce.activeEditor.execCommand('FontName', false, 'courier new')
+tinymce.activeEditor.execCommand('FontSize', false, '30px')
+tinymce.activeEditor.execCommand('mceApplyTextcolor', 'hilitecolor', '#FF0000')
+tinymce.activeEditor.execCommand('mceRemoveTextcolor', 'hilitecolor')
+tinymce.activeEditor.execCommand('RemoveFormat')
+tinymce.activeEditor.execCommand('mceBlockQuote')
+tinymce.activeEditor.execCommand('FormatBlock', false, 'bold')
+tinymce.activeEditor.execCommand('mceInsertContent', false, 'My new content')
+tinymce.activeEditor.execCommand('mceReplaceContent', false, 'My replacement content')
+tinymce.activeEditor.execCommand('mceSetContent', false, 'My content')
+tinymce.activeEditor.execCommand('mceToggleFormat', false, 'bold')
+tinymce.activeEditor.execCommand('ToggleSidebar')  /* OR */
+tinymce.activeEditor.execCommand('ToggleSidebar', false, '<sidebar-name>')
+tinymce.activeEditor.execCommand('Indent')
+tinymce.activeEditor.execCommand('Outdent')
+tinymce.activeEditor.execCommand('InsertHorizontalRule');
+tinymce.activeEditor.execCommand('InsertLineBreak')
+tinymce.activeEditor.execCommand('mceInsertNewLine')
+tinymce.activeEditor.execCommand('mceInsertRawHTML', false, '<p>Hello, World!</p>')
+tinymce.activeEditor.execCommand('mceToggleVisualAid')
+tinymce.activeEditor.execCommand('SelectAll')
+tinymce.activeEditor.execCommand('Delete')
+tinymce.activeEditor.execCommand('ForwardDelete')
+tinymce.activeEditor.execCommand('mceNewDocument')
+tinymce.activeEditor.execCommand('Redo')
+tinymce.activeEditor.execCommand('Undo')
+tinymce.activeEditor.execCommand('mceAddUndoLevel')
+tinymce.activeEditor.execCommand('mceEndUndoLevel')
+tinymce.activeEditor.execCommand('mceCleanup')
+tinymce.activeEditor.execCommand('mceSelectNode', false, '<DOM_node>')
+tinymce.activeEditor.execCommand('mceSelectNodeDepth', false, 2) // For two nodes up.
+tinymce.activeEditor.execCommand('mceRemoveNode') /* OR */
+tinymce.activeEditor.execCommand('mceRemoveNode', false, '<DOM_node>')
++`
+
+[#plugin-commands]
+== Plugin Commands
+
+Commands are available for the following plugins:
+
+* <<advancedcode,Advanced Code>>
+* <<advancedlists,Advanced Lists>>
+* <<advancedtables,Advanced Tables>>
+* <<anchor,Anchor>>
+* <<autoresize,Autoresize>>
+* <<casechange,Case Change>>
+* <<charactermap,Character Map>>
+* <<code,Code>>
+* <<codesample,Code Sample>>
+* <<comments,Comments>>
+* <<directionality,Directionality>>
+* <<formatpainter,Format Painter>>
+* <<fullpage,Full Page>>
+* <<fullscreen,Full Screen>>
+* <<help,Help>>
+* <<image,Image>>
+* <<imagetools,Image Tools>>
+* <<insertdatetime,Insert Date/Time>>
+* <<link,Link>>
+* <<lists,Lists>>
+* <<media,Media>>
+* <<nonbreakingspace,Nonbreaking Space>>
+* <<pagebreak,Page Break>>
+* <<pasteorpowerpaste,Paste>>
+* <<permanentpen,Permanent Pen>>
+* <<powerpaste,PowerPaste>>
+* <<preview,Preview>>
+* <<print,Print>>
+* <<save,Save>>
+* <<searchandreplace,Search and Replace>>
+* <<spellchecker,Spell Checker>>
+* <<table,Table>>
+* <<template,Template>>
+* <<tableofcontents,Table of Contents>>
+* <<visualblocks,Visual Blocks>>
+* <<visualcharacters,Visual Characters>>
+
+[#advanced-code]
+=== Advanced Code
+
+The following command requires the link:{modulesDir}/plugins/advcode/[Advanced Code (`advcode`)] plugin.
+
+include::{includeDir}/commands/code-cmds.adoc[]
+
+[#advanced-lists]
+=== Advanced Lists
+
+The following commands require the link:{modulesDir}/plugins/advlist/[Advanced Lists (`advlist`)] plugin.
+
+include::{includeDir}/commands/advlist-cmds.adoc[]
+
+[#advanced-tables]
+=== Advanced Tables
+
+The following commands require the link:{modulesDir}/plugins/advtable/[Advanced Tables (`advtable`)] plugin.
+
+include::{includeDir}/commands/advtable-cmds.adoc[]
+
+[#anchor]
+=== Anchor
+
+The following command requires the link:{modulesDir}/plugins/anchor/[Anchor (`anchor`)] plugin.
+
+include::{includeDir}/commands/anchor-cmds.adoc[]
+
+[#autoresize]
+=== Autoresize
+
+The following command requires the link:{modulesDir}/plugins/autoresize/[Autoresize (`autoresize`)] plugin.
+
+include::{includeDir}/commands/autoresize-cmds.adoc[]
+
+[#case-change]
+=== Case Change
+
+The following commands require the link:{modulesDir}/plugins/casechange/[Case Change (`casechange`)] plugin.
+
+include::{includeDir}/commands/casechange-cmds.adoc[]
+
+[#character-map]
+=== Character Map
+
+The following command requires the link:{modulesDir}/plugins/charmap/[Character Map (`charmap`)] plugin.
+
+include::{includeDir}/commands/charmap-cmds.adoc[]
+
+[#code]
+=== Code
+
+The following command requires the link:{modulesDir}/plugins/code/[Code (`code`)] plugin.
+
+include::{includeDir}/commands/code-cmds.adoc[]
+
+[#code-sample]
+=== Code Sample
+
+The following command requires the link:{modulesDir}/plugins/codesample/[Code Sample (`codesample`)] plugin.
+
+include::{includeDir}/commands/codesample-cmds.adoc[]
+
+[#comments]
+=== Comments
+
+The following commands require the link:{modulesDir}/plugins/comments/[Comments (`tinycomments`)] plugin.
+
+include::{includeDir}/commands/comments-cmds.adoc[]
+
+[#directionality]
+=== Directionality
+
+The following commands require the link:{modulesDir}/plugins/directionality/[Directionality (`directionality`)] plugin.
+
+include::{includeDir}/commands/directionality-cmds.adoc[]
+
+[#format-painter]
+=== Format Painter
+
+The following commands require the link:{modulesDir}/plugins/comments/[Format Painter (`formatpainter`)] plugin.
+
+include::{includeDir}/commands/formatpainter-cmds.adoc[]
+
+[#full-page]
+=== Full Page
+
+The following command requires the link:{modulesDir}/plugins/fullpage/[Full Page (`fullpage`)] plugin.
+
+include::{includeDir}/commands/fullpage-cmds.adoc[]
+
+[#full-screen]
+=== Full Screen
+
+The following command requires the link:{modulesDir}/plugins/fullscreen/[Full Screen (`fullscreen`)] plugin.
+
+include::{includeDir}/commands/fullscreen-cmds.adoc[]
+
+[#help]
+=== Help
+
+The following command requires the link:{modulesDir}/plugins/help/[Help (`help`)] plugin.
+
+include::{includeDir}/commands/help-cmds.adoc[]
+
+[#image]
+=== Image
+
+The following command requires the link:{modulesDir}/plugins/image/[Image (`image`)] plugin.
+
+include::{includeDir}/commands/image-cmds.adoc[]
+
+[#image-tools]
+=== Image Tools
+
+The following commands require the link:{modulesDir}/plugins/imagetools/[Image Tools (`imagetools`)] plugin.
+
+include::{includeDir}/commands/imagetools-cmds.adoc[]
+
+[#insert-datetime]
+=== Insert Date/Time
+
+The following commands require the link:{modulesDir}/plugins/insertdatetime/[Insert Date/Time (`insertdatetime`)] plugin.
+
+include::{includeDir}/commands/insertdatetime-cmds.adoc[]
+
+[#link]
+=== Link
+
+The following command requires the link:{modulesDir}/plugins/link/[Link (`link`)] plugin.
+
+include::{includeDir}/commands/link-cmds.adoc[]
+
+[#lists]
+=== Lists
+
+The following commands require the link:{modulesDir}/plugins/lists/[Lists (`lists`)] plugin.
+
+include::{includeDir}/commands/lists-cmds.adoc[]
+
+[#media]
+=== Media
+
+The following command requires the link:{modulesDir}/plugins/media/[Media (`media`)] plugin.
+
+include::{includeDir}/commands/media-cmds.adoc[]
+
+[#nonbreaking-space]
+=== Nonbreaking Space
+
+The following command requires the link:{modulesDir}/plugins/nonbreaking/[Nonbreaking Space (`nonbreaking`)] plugin.
+
+include::{includeDir}/commands/nbsp-cmds.adoc[]
+
+[#page-break]
+=== Page Break
+
+The following command requires the link:{modulesDir}/plugins/pagebreak/[Page Break (`pagebreak`)] plugin.
+
+include::{includeDir}/commands/pagebreak-cmds.adoc[]
+
+[#paste]
+=== Paste
+
+The following commands require the link:{modulesDir}/plugins/paste/[Paste (`paste`)] plugin.
+
+include::{includeDir}/commands/paste-cmds.adoc[]
+
+[#permanent-pen]
+=== Permanent Pen
+
+The following commands require the link:{modulesDir}/plugins/permanentpen/[Permanent Pen (`permanentpen`)] plugin.
+
+include::{includeDir}/commands/permanentpen-cmds.adoc[]
+
+[#powerpaste]
+=== PowerPaste
+
+The following command requires the link:{modulesDir}/plugins/powerpaste/[PowerPaste (`powerpaste`)] plugin.
+
+include::{includeDir}/commands/powerpaste-cmds.adoc[]
+
+[#preview]
+=== Preview
+
+The following command requires the link:{modulesDir}/plugins/preview/[Preview (`preview`)] plugin.
+
+include::{includeDir}/commands/preview-cmds.adoc[]
+
+[#print]
+=== Print
+
+The following command requires the link:{modulesDir}/plugins/print/[Print (`print`)] plugin.
+
+include::{includeDir}/commands/print-cmds.adoc[]
+
+[#save]
+=== Save
+
+The following commands require the link:{modulesDir}/plugins/save/[Save (`save`)] plugin.
+
+include::{includeDir}/commands/save-cmds.adoc[]
+
+[#search-and-replace]
+=== Search and Replace
+
+The following command requires the link:{modulesDir}/plugins/searchreplace/[Search and Replace (`searchreplace`)] plugin.
+
+include::{includeDir}/commands/searchreplace-cmds.adoc[]
+
+[#spell-checker]
+=== Spell Checker
+
+The following command requires the link:{modulesDir}/plugins/spellchecker/[Spell Checker (`spellchecker`)] plugin.
+
+include::{includeDir}/commands/spellchecker-cmds.adoc[]
+
+[#table]
+=== Table
+
+The following commands require the link:{modulesDir}/plugins/table/[Table (`table`)] plugin.
+
+include::{includeDir}/commands/table-cmds.adoc[]
+
+[#template]
+=== Template
+
+The following command requires the link:{modulesDir}/plugins/template/[Template (`template`)] plugin.
+
+include::{includeDir}/commands/template-cmds.adoc[]
+
+[#table-of-contents]
+=== Table of Contents
+
+The following commands require the link:{modulesDir}/plugins/toc[Table of Contents (`toc`)] plugin.
+
+include::{includeDir}/commands/toc-cmds.adoc[]
+
+[#visual-blocks]
+=== Visual Blocks
+
+The following command requires the link:{modulesDir}/plugins/visualblocks/[Visual Blocks (`visualblocks`)] plugin.
+
+include::{includeDir}/commands/visualblocks-cmds.adoc[]
+
+[#visual-characters]
+=== Visual Characters
+
+The following command requires the link:{modulesDir}/plugins/visualchars/[Visual Characters (`visualchars`)] plugin.
+
+include::{includeDir}/commands/visualchars-cmds.adoc[]
+
+[#editor-management-commands]
+== Editor Management Commands
+
+The following commands are used to manage editor instances.
+
+For example:
+
+`js
+tinymce.execCommand('mceAddEditor', false, '<editor_id>');
+tinymce.execCommand('mceRemoveEditor', false, '<editor_id>');
+tinymce.execCommand('mceToggleEditor', false, '<editor_id>');
+`
+
+|===
+| Command | Description
+
+| mceAddEditor
+| Converts the specified HTML or DOM element into an editor instance with the specified ID.
+
+| mceRemoveEditor
+| Removes an editor instance with the specified ID.
+
+| mceToggleEditor
+| Runs mceAddEditor if an editor is not detected for the specified ID, otherwise it runs either link:{modulesDir}/api/tinymce/tinymce.editor/#hide[hide] if the editor is visible or link:{modulesDir}/api/tinymce/tinymce.editor/#show[show] if it is not visible.
+|===

@@ -1,0 +1,23 @@
+:modulesDir: ../
+:includeDir: {modulesDir}_includes
+:imagesDir: {modulesDir}images/
+include::{modulesDir}_attributes.adoc[]
+= Permanent Pen Plugin
+:controls: toolbar button, contextmenu, menu item
+:description: Apply formats while typing.
+:keywords: permanent pen copy text format style
+:title_nav: Permanent Pen
+
+Permanent Pen is a premium {productname} plugin for applying a pre-defined format (for example, color, typeface and type style, font, etc.) to a desired section of content. The ability to store information for reuse saves the user time and ensures consistency across the content.
+
+This allows the user to add text without modifying the original content.
+
+[#try-our-permanent-pen-plugin-demo]
+=== Try our Permanent Pen plugin demo
+
+{% include codepen.html id="permanent-pen" %}
+
+:pluginname: Permanent Pen
+:pluginminimumplan: tiertwo
+:plugindocspage: permanentpen
+include::{includeDir}/misc/purchase-premium-plugins.adoc[]

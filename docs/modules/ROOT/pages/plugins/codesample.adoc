@@ -1,0 +1,121 @@
+:modulesDir: ../
+:includeDir: {modulesDir}_includes
+:imagesDir: {modulesDir}images/
+include::{modulesDir}_attributes.adoc[]
+= Code Sample plugin
+:controls: toolbar button
+:description: Insert and embed syntax highlighted code snippets.
+:keywords: syntax highlight codesample code contenteditable codesample_languages
+:title_nav: Code Sample
+
+The Code Sample plugin (`codesample`) lets a user insert and embed syntax color highlighted code snippets into the editable area. It also adds a button to the toolbar which on click will open a dialog box to accept raw code input.
+
+[#example]
+===== Example
+
+`js
+tinymce.init({
+  selector: "textarea",  // change this value according to your HTML
+  plugins: "codesample",
+  toolbar: "codesample"
+});
+`
+
+By default, `codesample` uses `+http://prismjs.com/+` to embed the code samples within the editor and works out of the box. That is, when a user copies valid code syntax into the editable area the code will be automatically formatted according to Prism default CSS rules.
+
+[NOTE]
+====
+Prism.js and prism.css need to be added to a page for syntax highlighting to work. See the instructions below to learn how to do this.
+====
+
+[#using-prism-js-on-your-web-page]
+=== Using Prism.js on your web page
+
+You need to add `prism.js` and `prism.css` to your page in order to get the syntax highlighted code samples on your webpage (as created by the Code Sample plugin). The Code Sample plugin uses the following languages: markup, javascript, css, php, ruby, python, java, c, csharp and cpp. You can generate the `prism.js` and `prism.css` files on the http://prismjs.com/download.html[download] page at the Prism website.
+
+[#example-of-using-the-prism-js-script]
+==== Example of using the Prism.js script
+
+```html+++<link rel="stylesheet" type="text/css" href="prism.css">++++++</link>++++++<script src="prism.js">++++++</script>+++
+
+[source,markup]
+----
+...
+----
+
+```
+
+[#options]
+== Options
+
+[#]
+=== `codesample_global_prismjs`
+
+{requires_5_2v}
+
+This configuration option allows a global Prism.js version to be used when highlighting code sample blocks, instead of using the Prism.js version bundled inside the `codesample` plugin. This allows for a custom version of Prism.js, including additional languages, to be used.
+
+When using this option, ensure that Prism.js and any language add-ons are loaded on the site, alongside the TinyMCE script:
+
+`html
+<script src="prism.js" data-manual></script>
+<script src="tinymce.js"></script>
+`
+
+*Type:* `Boolean`
+
+*Default value:* `false`
+
+*Possible values:* `true`, `false`
+
+[#example-2]
+==== Example
+
+`js
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'codesample',
+  toolbar: 'codesample',
+  codesample_global_prismjs: true
+});
+`
+
+[#-2]
+=== `codesample_languages`
+
+This configuration option enables you to set a list of languages to be displayed in the languages drop down.
+
+[#example-2]
+==== Example
+
+`pass:c[js
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'codesample',
+  codesample_languages: [
+    { text: 'HTML/XML', value: 'markup' },
+    { text: 'JavaScript', value: 'javascript' },
+    { text: 'CSS', value: 'css' },
+    { text: 'PHP', value: 'php' },
+    { text: 'Ruby', value: 'ruby' },
+    { text: 'Python', value: 'python' },
+    { text: 'Java', value: 'java' },
+    { text: 'C', value: 'c' },
+    { text: 'C#', value: 'csharp' },
+    { text: 'C++', value: 'cpp' }
+  ],
+  toolbar: 'codesample'
+});
+]`
+
+[#live-example]
+== Live example
+
+{% include codepen.html id="codesample" %}
+
+[#commands]
+== Commands
+
+The Code Sample plugin provides the following JavaScript command.
+
+include::{includeDir}/commands/codesample-cmds.adoc[]

@@ -1,0 +1,83 @@
+:modulesDir: ../
+:includeDir: {modulesDir}_includes
+:imagesDir: {modulesDir}images/
+include::{modulesDir}_attributes.adoc[]
+= Page Break plugin
+:controls: toolbar button, menu item
+:description: Add a page break.
+:keywords: pagebreak insert pagebreak_separator pagebreak_split_block
+:title_nav: Page Break
+
+This plugin adds page break support and enables a user to insert page breaks in the editable area. This is useful where a CMS uses a special separator to break content into pages.
+
+It also adds a toolbar button and a menu item `Page break` under the `Insert` menu dropdown.
+
+*Type:* `String`
+
+*Default Value:* `+"<!-- pagebreak -->"+`
+
+[#example]
+===== Example
+
+`js
+tinymce.init({
+  selector: "textarea",  // change this value according to your html
+  plugins: "pagebreak",
+  menubar: "insert",
+  toolbar: "pagebreak"
+});
+`
+
+[#options]
+=== Options
+
+These settings affect the execution of the `pagebreak` plugin. They enable you to specify how the page break should be generated in the HTML source code and determine whether the page break element(s) should be wrapped in ``<p>``tags``</p>``.
+
+[#]
+=== `pagebreak_separator`
+
+*Type:* `String`
+
+[discrete#example-2]
+===== Example
+
+`+js
+tinymce.init({
+  selector: "textarea",  // change this value according to your HTML
+  plugins: "pagebreak",
+  menubar: "insert",
+  toolbar: "pagebreak",
+  pagebreak_separator: "<!-- my page break -->"
+});
++`
+
+[#-2]
+=== `pagebreak_split_block`
+
+When enabled this option makes it easier to split block elements with a page break.
+
+*Type:* `Boolean`
+
+*Default Value:* `false`
+
+*Possible Values:* `true`, `false`
+
+[discrete#example-2]
+===== Example
+
+`js
+tinymce.init({
+  selector: "textarea",  // change this value according to your HTML
+  plugins: "pagebreak",
+  menubar: "insert",
+  toolbar: "pagebreak",
+  pagebreak_split_block: true
+});
+`
+
+[#commands]
+== Commands
+
+The Page Break plugin provides the following JavaScript command.
+
+include::{includeDir}/commands/pagebreak-cmds.adoc[]

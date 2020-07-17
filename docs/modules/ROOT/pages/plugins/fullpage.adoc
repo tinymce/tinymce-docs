@@ -1,0 +1,187 @@
+:modulesDir: ../
+:includeDir: {modulesDir}_includes
+:imagesDir: {modulesDir}images/
+include::{modulesDir}_attributes.adoc[]
+= Full Page plugin
+:controls: toolbar button, menu item
+:description: Edit all metadata and document properties such as title, keywords and description.
+:keywords: fullpage fullpage_default_doctype fullpage_default_encoding fullpage_default_font_size fullpage_default_font_family fullpage_default_title fullpage_default_text_color fullpage_default_xml_pi fullpage_hide_in_source_view
+:title_nav: Full Page
+
+This plugin allows user to edit certain metadata and document properties such as `title`, `keywords`, and `description`. This is done via a dialog box which appears after pressing a control added to the toolbar. If the `code` plugin is enabled `fullpage` exposes `<head>`, `<body>` and various `meta` tags in source code view.
+
+The plugin also adds a `Metadata and Document properties` menu under the `File` menu and button to the toolbar.
+
+*Type:* `String`
+
+[#example]
+===== Example
+
+`js
+tinymce.init({
+  selector: "textarea",  // change this value according to your HTML
+  plugins: "fullpage",
+  menubar: "file",
+  toolbar: "fullpage"
+});
+`
+
+[#options]
+=== Options
+
+These settings affect the execution of the `fullpage` plugin. Many of the settings allow you to specify default values for the full page editing process.
+
+[#]
+=== `fullpage_default_doctype`
+
+This option enables you to specify the default `doctype` for the output HTML.
+
+*Type:* `String`
+
+[discrete#example-2]
+===== Example
+
+`js
+tinymce.init({
+  selector: "textarea",  // change this value according to your HTML
+  plugins: "fullpage",
+  fullpage_default_doctype: "<!DOCTYPE html>"
+});
+`
+
+[#-2]
+=== `fullpage_default_encoding`
+
+This option enables you to specify the default encoding for the output HTML.
+
+*Type:* `String`
+
+[discrete#example-2]
+===== Example
+
+`js
+tinymce.init({
+  selector: "textarea",  // change this value according to your HTML
+  plugins: "fullpage",
+  fullpage_default_encoding: "UTF-8"
+});
+`
+
+[#-2]
+=== `fullpage_default_font_size`
+
+This option enables you to specify the default font *size* for the `body` element.
+
+*Type:* `String`
+
+[discrete#example-2]
+===== Example
+
+`js
+tinymce.init({
+  selector: "textarea",  // change this value according to your HTML
+  plugins: "fullpage",
+  fullpage_default_font_size: "14px"
+});
+`
+
+[#-2]
+=== `fullpage_default_font_family`
+
+This option enables you to specify the default font *family* for the `body` element.
+
+*Type:* `String`
+
+[discrete#example-2]
+===== Example
+
+`js
+tinymce.init({
+  selector: "textarea",  // change this value according to your HTML
+  plugins: "fullpage",
+  fullpage_default_font_family: "'Times New Roman', Georgia, Serif;"
+});
+`
+
+[#-2]
+=== `fullpage_default_title`
+
+This option enables you to specify the default `title` for the output HTML.
+
+*Type:* `String`
+
+[discrete#example-2]
+===== Example
+
+`js
+tinymce.init({
+  selector: "textarea",  // change this value according to your HTML
+  plugins: "fullpage",
+  fullpage_default_title: "{productname} - Configuration:fullpage_default_title"
+});
+`
+
+[#-2]
+=== `fullpage_default_text_color`
+
+This option enables you to specify the default text color for the `body` element.
+
+*Type:* `String`
+
+[discrete#example-2]
+===== Example
+
+`js
+tinymce.init({
+  selector: "textarea",  // change this value according to your HTML
+  plugins: "fullpage",
+  fullpage_default_text_color: "blue"
+});
+`
+
+[#-2]
+=== `fullpage_default_xml_pi`
+
+This option enables you to specify if a XML declaration should be added or not true/false option.
+
+*Type:* `Boolean`
+
+*Possible Values:* `true`, `false`
+
+[discrete#example-2]
+===== Example
+
+`js
+tinymce.init({
+  selector: "textarea",  // change this value according to your HTML
+  plugins: "fullpage",
+  fullpage_default_xml_pi: true
+});
+`
+
+[#-2]
+=== `fullpage_hide_in_source_view`
+
+This option allows you to specify whether {productname} should hide the non `body` content from source view.
+
+*Type:* `Boolean`
+
+*Possible Values:* `true`, `false`
+
+[discrete#example-2]
+===== Example
+
+`js
+tinymce.init({
+  selector: "textarea",  // change this value according to your HTML
+  plugins: "fullpage",
+  fullpage_hide_in_source_view: true
+});
+`
+
+[#commands]
+== Commands
+
+The Full Page plugin provides the following JavaScript command.
+
+include::{includeDir}/commands/fullpage-cmds.adoc[]

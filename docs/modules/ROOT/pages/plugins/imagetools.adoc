@@ -1,0 +1,214 @@
+:modulesDir: ../
+:includeDir: {modulesDir}_includes
+:imagesDir: {modulesDir}images/
+include::{modulesDir}_attributes.adoc[]
+= Image Tools plugin
+:description: Image editing features for TinyMCE.
+:keywords: imagetools rotate rotateleft rotateright flip flipv fliph editimage imageoptions
+:title_nav: Image Tools
+
+Image Tools (`imagetools`) plugin adds a contextual editing toolbar to the images in the editor. If toolbar is not appearing on image click, it might be that you need to enable `imagetools_cors_hosts` or `imagetools_proxy` (see below).
+
+WARNING: This feature requires at least Internet Explorer 10, since it makes use of `HTML5 File API`.
+
+[#cloud-installation]
+== Cloud Installation
+
+The Image Tools plugin is provided with all subscriptions to link:{modulesDir}/cloud-deployment-guide/editor-and-features/[{cloudname}], including an automatically configured image proxy.
+Simply add `image` to the `toolbar` list and `image imagetools` to the `plugins` list.
+
+[discrete#example]
+===== Example
+
+`js
+tinymce.init({
+  selector: "textarea",  // change this value according to your HTML
+  toolbar: "image",
+  plugins: "image imagetools"
+});
+`
+
+[#self-hosted-installation]
+== Self-hosted Installation
+
+To enable the {productname} Image Tools plugin:
+
+. Add 'image' to the 'toolbar' list and 'image imagetools' to the 'plugins' list
+. Enable `imagetools_cors_hosts` and `imagetools_proxy` options as needed
+
+[discrete#example-2]
+===== Example
+
+`js
+tinymce.init({
+  selector: "textarea",  // change this value according to your HTML
+  toolbar: "image",
+  plugins: "image imagetools",
+  imagetools_cors_hosts: ['mydomain.com', 'otherdomain.com'],
+  imagetools_proxy: 'proxy.php'
+});
+`
+
+[#options]
+== Options
+
+### `imagetools_cors_hosts`
+
+Image Tools cannot work with images from another domains due to security measures imposed by browsers on so called cross-origin HTTP requests. To overcome these constraints, Cross-Origin Resource Sharing (CORS) must be explicitly enabled on the specified domain(s) (for more information check https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS[HTTP access control]).
+
+An array of supported domains for the images (with CORS enabled on them) can be supplied to {productname} via `imagetools_cors_hosts` option.
+
+NOTE: Each string in the array _must_ be in the format of `mydomain.com`. Do not include protocols (`http://, https://`) or any trailing slashes in your domains.
+
+NOTE: `imagetools_cors_hosts` is *not* required when enabling this plugin via link:{modulesDir}/cloud-deployment-guide/editor-and-features/[{cloudname}].
+
+*Type:* `String[]`
+
+[discrete#example-2]
+===== Example
+
+`js
+tinymce.init({
+  selector: "textarea",  // change this value according to your HTML
+  toolbar: "image",
+  plugins: "image imagetools",
+  imagetools_cors_hosts: ['mydomain.com', 'otherdomain.com']
+});
+`
+
+[#]
+=== `imagetools_credentials_hosts`
+
+This option can be used together with the `imagetools_cors_hosts` option to allow credentials to be sent to the CORS host. This is not enabled by default since the server needs to have proper CORS headers to support this.
+
+*Type:* `String[]`
+
+[discrete#example-2]
+===== Example
+
+`js
+tinymce.init({
+  selector: "textarea",  // change this value according to your HTML
+  toolbar: "image",
+  plugins: "image imagetools",
+  imagetools_cors_hosts: ['mydomain.com', 'otherdomain.com'],
+  imagetools_credentials_hosts: ['mydomain.com', 'otherdomain.com']
+});
+`
+
+[#-2]
+=== `imagetools_fetch_image`
+
+This option can be used to define a custom fetch function, which provides another way to access images in complex situations. The function will be passed the HTML element of the image to be fetched and should return a `Promise` containing a `Blob` representation of the image.
+
+*Type:* `Function`
+
+[discrete#example-2]
+===== Example
+
+`+js
+tinymce.init({
+  selector: "textarea",  // change this value according to your HTML
+  toolbar: "image",
+  plugins: "image imagetools",
+  imagetools_fetch_image: function (img) {
+    return new tinymce.util.Promise(function (resolve) {
+      // Fetch the image and return a blob containing the image content
+      ...
+      resolve(new Blob(...));
+    });
+  }
+});
++`
+
+[#-2]
+=== `imagetools_proxy`
+
+Another way of getting images across domains is using local server-side proxy. Proxy is basically a script, that will retrieve remote image and pipe it back to {productname}, as if it was local. Example of such proxy (written in PHP) can be found below.
+
+link:{pricingpage}[{cloudname}] subscription also includes proxy service written in Java. Check link:{modulesDir}/enterprise/server/[Install Server-side Components] guide for details.
+
+NOTE: `imagetools_proxy` is *not* required when enabling this plugin via link:{modulesDir}/cloud-deployment-guide/editor-and-features/[{cloudname}]
+
+*Type:* `String`
+
+[discrete#example-2]
+===== Example
+
+`js
+tinymce.init({
+  selector: "textarea",  // change this value according to your HTML
+  toolbar: "image",
+  plugins: "image imagetools",
+  imagetools_proxy: 'proxy.php'
+});
+`
+
+*Example of a proxy.php script*
+
+```php
+<?php
+// We recommend to extend this script with authentication logic
+// so it can be used only by an authorized user
+$validMimeTypes = array("image/gif", "image/jpeg", "image/png");
+
+if (!isset($_GET["url"]) || !trim($_GET["url"])) {
+    header("HTTP/1.0 500 Url parameter missing or empty.");
+    return;
+}
+
+$scheme = parse_url($_GET["url"], PHP_URL_SCHEME);
+if ($scheme === false || in_array($scheme, array("http", "https")) === false) {
+    header("HTTP/1.0 500 Invalid protocol.");
+    return;
+}
+
+$content = file_get_contents($_GET["url"]);
+$info = getimagesizefromstring($content);
+
+if ($info === false || in_array($info["mime"], $validMimeTypes) === false) {
+    header("HTTP/1.0 500 Url doesn't seem to be a valid image.");
+    return;
+}
+
+header('Content-Type:' . $info["mime"]);
+echo $content;
+?>
+```
+
+[#-2]
+=== `imagetools_toolbar`
+
+The exact selection of buttons that will appear on the contextual toolbar can be controlled via `imagetools_toolbar` option.
+
+*Possible Values:*
+
+* `rotateleft`
+* `rotateright`
+* `flipv`
+* `fliph`
+* `editimage`
+* `imageoptions`
+
+*Type:* `String`
+
+*Default Value:* `"rotateleft rotateright | flipv fliph | editimage imageoptions"`
+
+[discrete#example-2]
+===== Example
+
+`js
+tinymce.init({
+  selector: "textarea",  // change this value according to your HTML
+  toolbar: "image",
+  plugins: "image imagetools",
+  imagetools_toolbar: "rotateleft rotateright | flipv fliph | editimage imageoptions"
+});
+`
+
+[#commands]
+== Commands
+
+The Image Tools plugin provides the following JavaScript commands.
+
+include::{includeDir}/commands/imagetools-cmds.adoc[]

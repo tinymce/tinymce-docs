@@ -1,0 +1,33 @@
+:modulesDir: ../
+:includeDir: {modulesDir}_includes
+:imagesDir: {modulesDir}images/
+include::{modulesDir}_attributes.adoc[]
+= TinyMCE 5.1.5
+:description: Release notes for TinyMCE 5.1.5
+:keywords: releasenotes bugfixes
+:title_nav: TinyMCE 5.1.5
+
+These release notes provide an overview of the changes for {productname} 5.1.5, including:
+
+* <<generalbugfixes,General bug fixes>>
+
+[NOTE]
+====
+This is the {cloudname} and {enterpriseversion} release notes. For information on the latest community version of {productname}, see: link:{modulesDir}/changelog/[{productname} Changelog].
+====
+
+[#general-bug-fixes]
+== General bug fixes
+
+{productname} 5.1.5 provides fixes for the following bugs:
+
+* The editor user interface was unresponsive on "hybrid" devices that accepted both `touch` and `mouse` events.
+* The `paste` plugin incorrectly pasting images when _paste as text_ was enabled.
+* The `charmap` plugin focusing the first tab instead of the search input field.
+* The editor throwing an exception when inserting content if the caret was directly before or after a `contenteditable="false"` element.
+
+:enterprise: true
+
+include::{includeDir}/install/upgrading-info.adoc[]
+
+:enterprise: false

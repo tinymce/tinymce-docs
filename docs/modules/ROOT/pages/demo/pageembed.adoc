@@ -1,0 +1,16 @@
+:modulesDir: ../
+:includeDir: {modulesDir}_includes
+:imagesDir: {modulesDir}images/
+include::{modulesDir}_attributes.adoc[]
+= Page Embed plugin
+:controls: toolbar button, menu item
+:description: Easily inserts iframe into the content.
+:keywords: view Page Embed insert iframe
+:title_nav: Page Embed
+
+[#live-example]
+== Live example
+
+This example shows how to use the Page Embed plugin to embed a page in the content in a responsive or exactly sized iframe.For more information on the Page Embed plugin, see the link:{modulesDir}/plugins/pageembed/[docs].
+
+{% include codepen.html id="page-embed" %}

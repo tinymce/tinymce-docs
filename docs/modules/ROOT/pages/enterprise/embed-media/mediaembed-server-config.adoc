@@ -16,7 +16,7 @@ When you insert media into your content, the service will do the following (in o
 . If Iframely is configured, query the Iframely API. If Iframely is not configured,
 . Create a summary card.
 
-[#use-your-own-iframely-account]
+[[use-your-own-iframely-account]]
 == Use your own Iframely account
 
 To use your own Iframely account, provide the following configuration items:
@@ -51,7 +51,7 @@ ephox {
 }
 `
 
-[#configure-a-custom-endpoint]
+[[configure-a-custom-endpoint]]
 == Configure a custom endpoint
 
 The service can be configured to hit a specific oEmbed endpoint when media from a URL matching a provided pattern is inserted into your content.
@@ -289,7 +289,7 @@ ephox {
    }
  ]   } } ````
 
-[#combining-iframely-and-custom-endpoints]
+[[combining-iframely-and-custom-endpoints]]
 == Combining Iframely and custom endpoints
 
 It is also possible to configure Iframely with custom oEmbed endpoints. For example, you may want to use Iframely to embed media from the Internet and an internal oEmbed server to embed media from an Intranet.
@@ -314,7 +314,7 @@ ephox {
    }
  ]   } } ````
 
-[#summary-cards]
+[[summary-cards]]
 == Summary cards
 
 If neither Iframely or an oEmbed endpoint is configured for a given URL, a summary card will be created.

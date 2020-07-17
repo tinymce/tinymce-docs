@@ -12,12 +12,12 @@ The context menu is a configurable component that appears when the user right cl
 
 The context menu supports both individual menu items and dynamic context menu sections.
 
-[#live-example]
+[[live-example]]
 == Live example
 
 {% include codepen.html id="context-menu" %}
 
-[#options]
+[[options]]
 == Options
 
 include::{partialsDir}configuration/contextmenu.adoc[leveloffset=+1]
@@ -26,7 +26,7 @@ include::{partialsDir}configuration/contextmenu_never_use_native.adoc[leveloffse
 
 include::{partialsDir}configuration/available-context-menu-sections.adoc[]
 
-[#registering-context-menu-sections]
+[[registering-context-menu-sections]]
 == Registering context menu sections
 
 The structure of context menu sections is a simple query system indexed by name. We strongly recommend using the name of the plugin as the context menu name for ease of configuration.
@@ -88,7 +88,7 @@ tinymce.init({
 -
 ////
 
-[#defining-a-context-menu-section]
+[[defining-a-context-menu-section]]
 == Defining a context menu section
 
 This example shows how the image plugin dynamically adds the standard image menu section to the context menu. The image context menu section is empty unless the selected element is an image.

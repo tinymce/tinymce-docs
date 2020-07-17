@@ -1,6 +1,6 @@
 The following new features and enhancements were added for the {productname} 5.1 release.
 
-[#mobile]
+[[mobile]]
 === Mobile
 
 {productname} 5.1 provides an improved mobile editor, replacing the existing mobile editor with a touch friendly version of the silver theme.
@@ -23,7 +23,7 @@ The new mobile experience allows most of the {productname} plugins to work on mo
 * link:{rootDir}plugins/moxiemanager.html[MoxieManager]
 * link:{rootDir}plugins/permanentpen.html[Permanent Pen]
 
-[#enabling-the-mobile-editor]
+[[enabling-the-mobile-editor]]
 ==== Enabling the mobile editor
 
 To ensure the mobile editor functions as intended, add the following `meta` tag to the `head` of pages using {productname}.
@@ -32,7 +32,7 @@ To ensure the mobile editor functions as intended, add the following `meta` tag 
 
 ```
 
-[#mobile-devices-now-use-the-theme]
+[[mobile-devices-now-use-the-theme]]
 ==== Mobile devices now use the `silver` theme
 
 The mobile experience provided for {productname} 4.7 through {productname} 5.0 has been deprecated in {productname} 5.1.
@@ -62,7 +62,7 @@ For information on:
 * Using the `silver` theme for mobile, see: link:{rootDir}mobile.html[{productname} Mobile].
 * Using the legacy `mobile` theme, see: link:{rootDir}mobile.html#thelegacymobiletheme[{productname} Mobile - The legacy mobile theme].
 
-[#horizontal-contextual-menus-on-mobile]
+[[horizontal-contextual-menus-on-mobile]]
 ==== Horizontal contextual menus on mobile
 
 Contextual menus are now horizontal on mobile devices and open when a long-press is used. They also <<side-scrollingtoolbarsonmobile,side-scroll>> to allow larger lists of items to be available on mobile devices.
@@ -71,19 +71,19 @@ For example:
 
 image::{rootDir}/images/side-scrolling-context-toolbar.png[Example of the side-scrolling toolbar and contextual toolbar,380]
 
-[#side-scrolling-toolbars-on-mobile]
+[[side-scrolling-toolbars-on-mobile]]
 ==== Side-scrolling toolbars on mobile
 
 Toolbars and <<horizontalcontextualmenusonmobile,horizontal menus>> side-scroll using "swipe" gestures on mobile devices. This allows longer toolbars to be used without occupying too much screen space. This feature removes the need for a toolbar drawer on mobile devices.
 
-[#contextual-keyboard-settings]
+[[contextual-keyboard-settings]]
 ==== Contextual keyboard settings
 
 A new `inputMode` configuration setting for dialog input components has been added to provide contextual onscreen keyboards on mobile devices. Dialogs in {productname}, the core {productname} plugins, and the premium {productname} plugins have been updated to use `inputMode`.
 
 For information on using `inputMode`, see: link:{rootDir}ui-components/dialogcomponents.html#inputmode[Dialog components - `inputMode`].
 
-[#new-mobile-defaults-for-selected-settings]
+[[new-mobile-defaults-for-selected-settings]]
 ==== New mobile defaults for selected settings
 
 These mobile-specific default values have been set to disable unsupported settings for mobile devices or to provide the best experience without configuration from developers.
@@ -97,7 +97,7 @@ The following settings have mobile-specific default values:
 * link:{rootDir}configure/editor-appearance.html#resize[`resize`] - Resizing is not supported on mobile devices and defaults to `false`.
 * link:{rootDir}configure/advanced-editing-behavior.html#object_resizing[`object_resizing`] - Object resizing is not supported on mobile devices and defaults to `false`.
 
-[#table-cell-selection-on-mobile]
+[[table-cell-selection-on-mobile]]
 ==== Table cell selection on mobile
 
 The link:{rootDir}plugins/table.html[table plugin] has been updated to provide _touch selection handles_ on touch devices. The touch selection handles appear when users double-tap a table cell, and allow users to select a range of table cells on touch devices.
@@ -106,12 +106,12 @@ For example:
 
 image::{rootDir}/images/table_cell_touch_selector_handles.png[Touch selector handles for selecting multiple table cells,380]
 
-[#touch-friendly-split-buttons]
+[[touch-friendly-split-buttons]]
 ==== Touch-friendly split buttons
 
 The styling on link:{rootDir}ui-components/typesoftoolbarbuttons.html#splitbutton[split buttons] has been updated to include more padding so they are easier to interact with on touch devices.
 
-[#unsupported-settings-for-mobile]
+[[unsupported-settings-for-mobile]]
 ==== Unsupported settings for mobile
 
 The following settings are not supported on mobile devices:
@@ -124,7 +124,7 @@ The following settings are not supported on mobile devices:
 * link:{rootDir}configure/editor-appearance.html#resize[`resize`].
 * link:{rootDir}configure/advanced-editing-behavior.html#object_resizing[`object_resizing`].
 
-[#sticky-toolbar]
+[[sticky-toolbar]]
 === Sticky Toolbar
 
 The Sticky Toolbar (or Docking Toolbar) docks the toolbar and the menu to the top of the screen when scrolling down a web page. The sticky toolbar will remain docked until the editor is no longer visible. This allows the menu and toolbar to remain in view when editing large text areas.
@@ -133,12 +133,12 @@ image::{rootDir}/images/sticky-toolbar.gif[Sticky Toolbar animation]
 
 For information on the Sticky Toolbars, see: link:{rootDir}configure/editor-appearance.html#toolbar_sticky[Enabling Sticky Toolbars].
 
-[#changes-to-the-env-api-for-platform-detection]
+[[changes-to-the-env-api-for-platform-detection]]
 === Changes to the Env API for platform detection
 
 New platform detection functions have been added to the link:{rootDir}api/tinymce/tinymce.env.html[`Env` API], allowing for some older detection properties to be deprecated.
 
-[#new-env-api-properties]
+[[new-env-api-properties]]
 ==== New Env API properties
 
 |===
@@ -161,7 +161,7 @@ New platform detection functions have been added to the link:{rootDir}api/tinymc
 | Returns the current operating system major and minor version.
 |===
 
-[#new-env-methods]
+[[new-env-methods]]
 ==== New Env methods
 
 |===
@@ -250,7 +250,7 @@ New platform detection functions have been added to the link:{rootDir}api/tinymc
 
 For a list of deprecated `Env` APIs, see: <<deprecatedapiproperties-tinymceenv,Deprecated API Properties - `tinymce.Env`>>.
 
-[#added-new-setting]
+[[added-new-setting]]
 === Added new `referrer_policy` setting
 
 Used for setting the level of referrer information sent when loading plugins and CSS. Referrer policies can be used to:
@@ -260,7 +260,7 @@ Used for setting the level of referrer information sent when loading plugins and
 
 For information on using the `referrer_policy` setting, see: link:{rootDir}configure/integration-and-setup.html#referrer_policy[Integration and setup options - `referrer_policy`].
 
-[#added-a-dark-content-css-skin]
+[[added-a-dark-content-css-skin]]
 === Added a dark content css skin
 
 A dark CSS definition for `content_css` has been added to compliment the dark user interface skin.
@@ -271,7 +271,7 @@ For example:
 
 For information on using the dark version of the default skin, see: link:{rootDir}general-configuration-guide/customize-ui.html#skins[Customizing the editor UI - Skins].
 
-[#added-border-width-to-table-cell-dialog]
+[[added-border-width-to-table-cell-dialog]]
 === Added border width to Table cell dialog
 
 The table plugin has been updated to include a *Border width* field in the *Cell Properties* dialog. The field will accept any https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Values_and_units#Lengths[valid CSS units].
@@ -280,7 +280,7 @@ For example:
 
 image::{rootDir}/images/border-width-cell-props.png[Cell Properties Dialog with new Border Width field,380]
 
-[#changed-the-default-to]
+[[changed-the-default-to]]
 === Changed the default `toolbar_drawer` to `floating`
 
 The default for the `toolbar_drawer` setting has been changed from `false` to `floating`.
@@ -296,7 +296,7 @@ tinymce.init({
 
 For information on the `toolbar_drawer` setting, see: link:{rootDir}configure/editor-appearance.html#toolbar_drawer[User interface options - `toolbar_drawer`].
 
-[#icon-changes]
+[[icon-changes]]
 === Icon changes
 
 In {productname} 5.0, the same icon (`paragraph`) was used for the `visualchars` and `visualblocks` menu items and toolbar buttons.
@@ -308,7 +308,7 @@ To improve the user experience:
 
 For the list of icons included in {productname}, see: link:{rootDir}advanced/editor-icon-identifiers.html[Editor icon identifiers].
 
-[#fixes-to-the-positioning-of-inline-dialogs-and-menus]
+[[fixes-to-the-positioning-of-inline-dialogs-and-menus]]
 === Fixes to the positioning of inline dialogs and menus
 
 Fixes for inline dialogs and menus have been included to:

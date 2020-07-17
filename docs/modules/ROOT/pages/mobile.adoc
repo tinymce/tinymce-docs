@@ -31,7 +31,7 @@ NOTE: iPads do not use the `mobile` part of the {productname} init configuration
 
 include::{partialsDir}misc/mobile_platform_compatibility.adoc[]
 
-[#configuring-mobile]
+[[configuring-mobile]]
 == Configuring mobile
 
 Add the following `meta` tag to the `head` of pages using {productname} to ensure the mobile user interface functions as intended.
@@ -51,7 +51,7 @@ tinymce.init({
 });
 `
 
-[#mobile-defaults-for-selected-settings]
+[[mobile-defaults-for-selected-settings]]
 === Mobile defaults for selected settings
 
 These mobile-specific default values have been set to disable unsupported settings for mobile devices or to provide the best experience without configuration from developers.
@@ -65,7 +65,7 @@ The following settings have mobile-specific default values:
 * link:{rootDir}configure/editor-appearance.html#resize[`resize`] - Resizing is not supported on mobile devices and defaults to `false`.
 * link:{rootDir}configure/advanced-editing-behavior.html#object_resizing[`object_resizing`] - Object resizing is not supported on mobile devices and defaults to `false`.
 
-[#unsupported-settings-for-mobile]
+[[unsupported-settings-for-mobile]]
 === Unsupported settings for mobile
 
 The following settings are not supported on mobile devices:
@@ -78,7 +78,7 @@ The following settings are not supported on mobile devices:
 * link:{rootDir}configure/editor-appearance.html#resize[`resize`].
 * link:{rootDir}configure/advanced-editing-behavior.html#object_resizing[`object_resizing`].
 
-[#the-legacy-mobile-theme]
+[[the-legacy-mobile-theme]]
 == The legacy mobile theme
 
 The mobile experience provided for {productname} 4.7 through {productname} 5.0 has been deprecated as of {productname} 5.1.
@@ -93,7 +93,7 @@ tinymce.init({
 });
 `
 
-[#legacy-mobile-theme-configuring-the-plugins]
+[[legacy-mobile-theme-configuring-the-plugins]]
 === Legacy mobile theme - configuring the plugins
 
 The plugins supported by legacy mobile theme are limited to the link:{rootDir}plugins/autosave.html[autosave], link:{rootDir}plugins/autolink.html[autolink], and link:{rootDir}plugins/lists.html[lists] plugins.
@@ -111,7 +111,7 @@ tinymce.init({
 });
 `
 
-[#legacy-mobile-theme-configuring-the-toolbar]
+[[legacy-mobile-theme-configuring-the-toolbar]]
 === Legacy mobile theme - configuring the Toolbar
 
 The legacy TinyMCE theme mobile supports a subset of the toolbar items, which can configured using the `mobile: toolbar` setting, such as:

@@ -1,9 +1,9 @@
-[#toolbar]
+[[toolbar]]
 == toolbar
 
 This option allows you to specify the link:{rootDir}advanced/editor-control-identifiers.html#toolbarcontrols[buttons] and the order that they will appear on {productname}'s toolbar.
 
-[#grouping-toolbar-controls]
+[[grouping-toolbar-controls]]
 === Grouping toolbar controls
 
 To specify the controls that should appear on {productname}'s toolbar, the `toolbar` option should be provided with a space separated list of link:{rootDir}advanced/editor-control-identifiers.html#toolbarcontrols[toolbar controls]. To create groups within this list, please add `|` pipe characters between the groups of controls that you would like to create.
@@ -20,7 +20,7 @@ tinymce.init({
 });
 `
 
-[#adding-toolbar-group-labels]
+[[adding-toolbar-group-labels]]
 === Adding toolbar group labels
 
 To specify labels to the grouped controls that appear on {productname}'s toolbar, the `toolbar` option should be provided with an array of objects with `name` and `items` as object properties. The `name` should be a string value that will be set as the `title` attribute on the `div` containing the toolbar group. The `items` should be an array of strings that indicate the controls that should appear within the particular toolbar group.
@@ -53,7 +53,7 @@ tinymce.init({
 });
 `
 
-[#disabling-the-toolbar]
+[[disabling-the-toolbar]]
 === Disabling the toolbar
 
 To disable the toolbar, the toolbar option should be provided a boolean value of `false`.
@@ -74,7 +74,7 @@ tinymce.init({
 });
 `
 
-[#using-multiple-toolbars]
+[[using-multiple-toolbars]]
 === Using multiple toolbars
 
 To specify multiple toolbars, the toolbar option should be provided with an array of space separated strings.

@@ -17,7 +17,7 @@ These release notes provide an overview of the changes for {productname} 5.1.4, 
 This is the {cloudname} and {enterpriseversion} release notes. For information on the latest community version of {productname}, see: link:{rootDir}changelog.html[{productname} Changelog].
 ====
 
-[#general-bug-fixes]
+[[general-bug-fixes]]
 == General bug fixes
 
 {productname} 5.1.4 provides fixes for the following bugs:
@@ -26,7 +26,7 @@ This is the {cloudname} and {enterpriseversion} release notes. For information o
 * The `legacyoutput` plugin registering legacy formats after editor initialization, causing legacy content to be stripped on the initial load.
 * The search and replace plugin not cycling through results when searching using special characters.
 
-[#security-fixes]
+[[security-fixes]]
 == Security fixes
 
 {productname} 5.1.4 provides fixes for the following security issues:

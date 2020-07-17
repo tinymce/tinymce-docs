@@ -2,7 +2,7 @@ The Release Notes provide high-level coverage of the improvements and additions 
 
 TinyMCE 5.0 has an ARIA https://www.w3.org/WAI/standards-guidelines/wcag/[WCAG 2.1 standards] compliant user interface to make the user interface controls and dynamic content more accessible. In TinyMCE 5.0, more complex controls or dialogs can be written in the new API style while keeping the more straightforward methods of adding buttons and windows.
 
-[#get-tinymce-5-0]
+[[get-tinymce-5-0]]
 === Get TinyMCE 5.0
 
 Include this line of code in the <head> of the HTML page and link to the tinymce.min.js source file. Substitute 'no-api-key' with your api key.
@@ -15,7 +15,7 @@ Signing up for a free API key provides entitlements to all our free plugins. Thi
 
 Refer to the link:{rootDir}quick-start[Quick start] docs for more information.
 
-[#upgrade]
+[[upgrade]]
 === Upgrade
 
 Developers can upgrade their TinyMCE 4.x instances to TinyMCE 5.0 with little or no fuss. For instructions on how to migrate, refer to the link:{rootDir}migration-from-4x.html[Migration guide].
@@ -24,7 +24,7 @@ NOTE:  An instance of TinyMCE with heavy customizations could take longer to upg
 
 Try out TinyMCE 5.0 demo to explore the new UI.
 
-[#tinymce-5-0-demo]
+[[tinymce-5-0-demo]]
 === TinyMCE 5.0 demo
 
 {% include codepen.html id="full-featured" height="750" %}

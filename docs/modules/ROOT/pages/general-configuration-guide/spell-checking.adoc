@@ -8,7 +8,7 @@ include::{rootDir}_attributes.adoc[]
 
 {productname} provides several options to bring spell checking capabilities to your users.
 
-[#browser-based-spell-checking]
+[[browser-based-spell-checking]]
 == Browser-based spell checking
 
 Assign the link:{rootDir}configure/spelling.html#browser_spellcheck[`browser_spellcheck`] configuration option the value of `true` to utilize the browser's native spell check functionality. Enabling the link:{rootDir}configure/editor-appearance.html#contextmenu[`contextmenu`] option _may_ be required depending on the right-click or context usability requirement.
@@ -21,7 +21,7 @@ tinymce.init({
 });
 `
 
-[#php-spellchecker-component]
+[[php-spellchecker-component]]
 == PHP Spellchecker component
 
 You can also use {productname}'s PHP _Spellchecker_ component, that you can http://download.moxiecode.com/spellcheckers/tinymce_spellchecker_php_4.0.zip[download here]. To view the complete changelog history, view this http://archive.tinymce.com/develop/changelog/?type=phpspell[`txt`] file. The {productname}'s PHP Spellchecker component requires a little more work than the browser-based option, being a server-side script.
@@ -52,7 +52,7 @@ tinymce.init({
 
 Review the link:{rootDir}plugins/spellchecker.html[Spell Checker plugin] for advanced configuration options.
 
-[#tinymce-spell-checker-pro-plugin]
+[[tinymce-spell-checker-pro-plugin]]
 == TinyMCE Spell Checker Pro plugin
 
 Use the link:{rootDir}plugins/tinymcespellchecker.html[Spell Checker Pro plugin] for scalable enterprise-grade spell check as-you-type functionality. *Spell Checker Pro* requires both a client-side plugin to be configured and a server-side component to be installed and configured.

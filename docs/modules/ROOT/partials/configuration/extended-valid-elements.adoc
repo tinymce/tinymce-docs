@@ -1,4 +1,4 @@
-[#extended_valid_elements]
+[[extended_valid_elements]]
 == extended_valid_elements
 
 This option is very similar to link:{rootDir}configure/content-filtering.html#valid_elements[`valid_elements`]. The only difference between this option and `valid_elements` is that this one gets added to the existing rule set. This can be very useful if the existing rule set is fine but you want to add some specific elements that also should be valid. The default rule set is controlled by the link:{rootDir}configure/content-filtering.html#schema[`schema`] option.
@@ -21,7 +21,7 @@ tinymce.init({
 
 Also see link:{rootDir}configure/content-filtering.html#valid_elements[valid_elements] and link:{rootDir}configure/content-filtering.html#invalid_elements[invalid_elements] for more configuration options.
 
-[#using-extended_valid_elements-to-allow-script-elements]
+[[using-extended_valid_elements-to-allow-script-elements]]
 === Using extended_valid_elements to allow script elements
 
 WARNING: Allowing script elements (`<script>`) in {productname} exposes users to https://developer.mozilla.org/en-US/docs/Glossary/Cross-site_scripting[cross-site scripting (XSS) attacks].

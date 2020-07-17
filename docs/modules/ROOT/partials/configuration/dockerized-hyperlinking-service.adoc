@@ -9,7 +9,7 @@ WARNING: Do not push this docker image to a publicly accessible container regist
 
 {% if shbundledockerfiles == false %}
 
-[#prerequisites]
+[[prerequisites]]
 ==== Prerequisites
 
 * The https://docs.docker.com/engine/docker-overview/[Docker Engine] is installed and running.
@@ -19,7 +19,7 @@ WARNING: Do not push this docker image to a publicly accessible container regist
  ** Using Windows and has access to unix command line tools using https://gitforwindows.org/[Git for Windows], https://www.cygwin.com/[Cygwin], or the https://docs.microsoft.com/en-us/windows/wsl/install-win10[Windows Subsystem for Linux].
 {% endif %}
 
-[#procedure]
+[[procedure]]
 ==== Procedure
 
 The following procedure covers downloading, configuring, building and testing the {productname} Hyperlinking Docker image.

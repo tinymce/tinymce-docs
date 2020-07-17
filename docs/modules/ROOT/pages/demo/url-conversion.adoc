@@ -10,27 +10,27 @@ include::{rootDir}_attributes.adoc[]
 
 This example shows you how to setup {productname} to produce different results for its URLs in images and links. You can read more about these config options in the link:{rootDir}general-configuration-guide/get-support.html[{productname} FAQ].
 
-[#absolute-urls-on-links-and-images]
+[[absolute-urls-on-links-and-images]]
 === Absolute URLs on links and images
 
 {% include codepen.html id="url-conversion-absolute-1" height="400" %}
 
-[#absolute-urls-and-including-domain-on-links-and-images]
+[[absolute-urls-and-including-domain-on-links-and-images]]
 === Absolute URLs and including domain on links and images
 
 {% include codepen.html id="url-conversion-absolute-2" height="400" %}
 
-[#relative-urls-on-links-and-images]
+[[relative-urls-on-links-and-images]]
 === Relative URLs on links and images
 
 {% include codepen.html id="url-conversion-relative-1" height="400" %}
 
-[#relative-urls-on-links-and-images-to-a-specific-page]
+[[relative-urls-on-links-and-images-to-a-specific-page]]
 === Relative URLs on links and images to a specific page
 
 {% include codepen.html id="url-conversion-relative-2" height="400" %}
 
-[#no-url-conversion]
+[[no-url-conversion]]
 === No URL conversion
 
 {% include codepen.html id="url-conversion-none" height="400" %}

@@ -17,7 +17,7 @@ In the footer of the dialog you can also see which version of {productname} you 
 
 The help dialog can also be shown by pressing the keyboard shortcut `Alt + 0`.
 
-[#example-setup]
+[[example-setup]]
 ===== Example setup
 
 `js
@@ -28,10 +28,10 @@ tinymce.init({
 });
 `
 
-[#config-options]
+[[config-options]]
 == Config Options
 
-[#]
+[[]]
 === `help_tabs`
 
 This option allows you to specify which tabs the Help dialog should show, and in what order. The default {productname} tabs are called `shortcuts`, `keyboardnav`, `plugins` and `versions`. These tabs can be overwritten by providing a new link:{rootDir}ui-components/dialogcomponents.html#tabpanel[tab panel] specification with the same `name`, and new tabs can be added by registering a tab panel with a new `name`. New tabs can be registered in the `help_tabs` configuration or at initialisation or runtime using the <<api,`addTab` API method>>.
@@ -44,7 +44,7 @@ If `help_tabs` is not configured, any tabs defined using `addTab` will be displa
 
 *Default Value:* `["shortcuts", "keyboardnav", "plugins", "versions"]`
 
-[#example]
+[[example]]
 ==== Example
 
 ```js
@@ -111,7 +111,7 @@ tinymce.init({
    }
  });   } }); ```
 
-[#api]
+[[api]]
 == API
 
 |===
@@ -138,12 +138,12 @@ tinymce.activeEditor.plugins.help.addTab({
 });
 `
 
-[#exposing-metadata-for-the-help-plugin]
+[[exposing-metadata-for-the-help-plugin]]
 == Exposing metadata for the help plugin
 
 For information on how to expose metadata from you custom plugin to add it to the Installed plugins list in the Help plugin, see the  link:{rootDir}advanced/creating-a-plugin.html#exposingmetadata[Creating a Plugin page].
 
-[#commands]
+[[commands]]
 == Commands
 
 The Help plugin provides the following JavaScript command.

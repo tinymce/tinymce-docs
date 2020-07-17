@@ -6,19 +6,19 @@ include::{rootDir}_attributes.adoc[]
 :description: TinyMCE Annotations provides the ability to describe particular features or add general information to a piece of content and creates identifiers for each added annotation.
 :keywords: annotation annotations annotator
 
-[#introduction]
+[[introduction]]
 == Introduction
 
 The {productname} Annotations API provides the ability to add, modify, and delete annotations; listen to text selection events and retrieve all annotations with the same annotation name. The Annotations API is a part of the {productname} core and functions in the same way as the formatting APIs in {productname} core.
 
 The primary value that the Annotations API provides is that it tags each annotation with a unique identifier(uid) accessible via `editor.annotator`. This highlights the annotated content and wraps it in annotation markers. These markers can either stay in the content or be removed on `getContent`, depending on the user configuration (`persistent` setting).
 
-[#using-the-annotator]
+[[using-the-annotator]]
 == Using the Annotator
 
 Perform the following procedure to set up the {productname} Annotations feature:
 
-[#1-configure-the-annotate-button]
+[[1-configure-the-annotate-button]]
 === 1. Configure the Annotate Button
 
 To configure the annotate button on your toolbar:
@@ -40,7 +40,7 @@ To configure the annotate button on your toolbar:
 
 See link:{rootDir}configure.html[Configure {productname}] for more information on how to configure {productname} core.
 
-[#2-registering-the-annotator]
+[[2-registering-the-annotator]]
 === 2. Registering the Annotator
 
 The annotator API supports multiple annotation functions. Each annotation function must be registered with the annotator (`editor.annotator`).
@@ -66,7 +66,7 @@ This will register an annotation with the name `alpha`. In our example, when an 
 NOTE: The data passed through here is the same as the data specified when calling the annotate API. `decorate` is used to turn the annotation data into a document object model (DOM) representation.
 The uid passed through to `decorate` is either the uid field in the data object (if it exists), or a randomly generated uid if it does not. Annotator will be responsible for putting the uid on the span. The user does not need to do that part.
 
-[#3-making-the-annotator-available]
+[[3-making-the-annotator-available]]
 === 3. Making the Annotator Available
 
 For adding the annotate tool to the toolbar that is registered with `alpha` set the value of the toolbar to:
@@ -75,7 +75,7 @@ For adding the annotate tool to the toolbar that is registered with `alpha` set 
   toolbar: "annotate-alpha"
 `
 
-[#4-applying-annotations]
+[[4-applying-annotations]]
 === 4. Applying Annotations
 
 After registering an annotation, use it by applying it to the current selection.
@@ -100,7 +100,7 @@ Example of specifying your own `uid`:
   });
 `
 
-[#5-listening-to-selection-events]
+[[5-listening-to-selection-events]]
 === 5. Listening to Selection Events
 
 The Annotator API notifies the user when the selection cursor moves in or out of a specified annotation. For example, for the `alpha` scenario:
@@ -135,14 +135,14 @@ The `annotationChanged` listeners should only fire when the state or the uid cha
 annotationChanged: (name: string, callback): void
 +`
 
-[#example]
+[[example]]
 == Example
 
 Use the following example to create the Annotate API:
 
 {% include codepen.html id="annotations" height="750" %}
 
-[#retrieving-all-annotations-for-a-particular-annotation-name]
+[[retrieving-all-annotations-for-a-particular-annotation-name]]
 == Retrieving All Annotations for a Particular Annotation Name
 
 The Annotator API allows retrieving an object of all of the uids for a particular annotation type (e.g. alpha), and the nodes associated with those uids. For example, to retrieve all `alpha` annotations, this code is used:
@@ -165,7 +165,7 @@ Assuming that there is a uid called `first-uid`, the above code shows how to acc
 getAll: (name)
 +`
 
-[#deleting-an-annotation]
+[[deleting-an-annotation]]
 == Deleting an Annotation
 
 Use the `remove` API to delete a particular annotation at the cursor. It will remove the closest annotation that matches the name. For example,

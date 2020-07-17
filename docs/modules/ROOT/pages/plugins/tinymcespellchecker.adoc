@@ -13,7 +13,7 @@ include::{rootDir}_attributes.adoc[]
 
 {% include codepen.html id="spellcheckerpro" %}
 
-[#cloud-installation]
+[[cloud-installation]]
 == Cloud Installation
 
 To enable the {productname} Enterprise Spellchecking plugin with link:{rootDir}cloud-deployment-guide/editor-and-features[{cloudname}]:
@@ -34,7 +34,7 @@ tinymce.init({
 });
 `
 
-[#self-hosted-installation]
+[[self-hosted-installation]]
 == Self-hosted Installation
 
 To enable the {productname} Enterprise Spellchecking plugin:
@@ -56,15 +56,15 @@ tinymce.init({
 });
 `
 
-[#usage]
+[[usage]]
 == Usage
 
 The {productname} Enterprise Spellchecking plugin activates automatically when users type content into the editor. To select a spelling suggestion for a misspelled word, right-click the misspelled word to open the contextual menu.
 
-[#configuration-options]
+[[configuration-options]]
 == Configuration Options
 
-[#]
+[[]]
 === `spellchecker_active`
 
 This option enables or disables the spell checker when the editor is loaded. When set to `false`, the spellchecker will not be active when the editor is initialized. The toolbar button or the menu item will have to be selected by the user to start the spell checker.
@@ -75,7 +75,7 @@ This option enables or disables the spell checker when the editor is loaded. Whe
 
 *Possible Values:* `true`, `false`
 
-[#example]
+[[example]]
 ==== Example: `spellchecker_active`
 
 `js
@@ -86,7 +86,7 @@ tinymce.init({
 });
 `
 
-[#-2]
+[[-2]]
 === `spellchecker_dialog`
 
 This option specifies the primary spell checking mode.
@@ -100,7 +100,7 @@ This option specifies the primary spell checking mode.
 
 *Possible Values:* `true`, `false`
 
-[#example-2]
+[[example-2]]
 ==== Example: `spellchecker_dialog`
 
 `js
@@ -112,7 +112,7 @@ tinymce.init({
 });
 `
 
-[#-2]
+[[-2]]
 === `spellchecker_language`
 
 This option specifies the default language used by Spell Checker Pro.
@@ -121,7 +121,7 @@ This option specifies the default language used by Spell Checker Pro.
 
 *Default Value:* `'en_us'`
 
-[#example-2]
+[[example-2]]
 ==== Example: `spellchecker_language`
 
 `js
@@ -134,7 +134,7 @@ tinymce.init({
 
 include::{partialsDir}configuration/languages.adoc[]
 
-[#-2]
+[[-2]]
 === `spellchecker_languages`
 
 This option specifies the spellchecker languages that are available to the user, provided as a comma delimited string. For a list of available languages, see: <<supportedlanguages,Supported languages>>.
@@ -146,7 +146,7 @@ This option specifies the spellchecker languages that are available to the user,
 'US English=en_us,UK English=en_gb,Danish=da,Dutch=nl,Finnish=fi,French=fr,German=de,Italian=it,Norwegian=nb,Brazilian Portuguese=pt,Iberian Portuguese=pt_PT,Spanish=es,Swedish=sv'
 `
 
-[#example-2]
+[[example-2]]
 ==== Example: `spellchecker_languages`
 
 `js
@@ -157,7 +157,7 @@ tinymce.init({
 });
 `
 
-[#-2]
+[[-2]]
 === `spellchecker_on_load`
 
 NOTE: Removed in Spell Checker Pro 2.0 (TinyMCE 5.2). Spell Checker Pro will now always run on editor initialization. To disable Spell Checker Pro on load, use <<spellchecker_active,`spellchecker_active`>>.
@@ -170,7 +170,7 @@ This option runs the spellchecker when the contents of the editor is loaded.
 
 *Possible Values:* `true`, `false`
 
-[#example-2]
+[[example-2]]
 ==== Example: `spellchecker_on_load`
 
 `js
@@ -181,7 +181,7 @@ tinymce.init({
 });
 `
 
-[#-2]
+[[-2]]
 === `spellchecker_rpc_url`
 
 This option specifies the URL of the server-side `ephox-spelling` service. For instructions on how to set up a Spell Checker Pro server-side component, see: the link:{rootDir}enterprise/server.html[server-side component installation guide].
@@ -190,7 +190,7 @@ NOTE: `spellchecker_rpc_url` is *not* required when enabling this plugin via lin
 
 *Type:* `String`
 
-[#example-2]
+[[example-2]]
 ==== Example: `spellchecker_rpc_url`
 
 `js
@@ -201,7 +201,7 @@ tinymce.init({
 });
 `
 
-[#-2]
+[[-2]]
 === `spellchecker_select_languages`
 
 This option specifies the languages that can be set for content when working with multi-language content. The specified languages will be available from the <<toolbarbuttons,`language` toolbar drop-down menu button>>.  For a list of available languages, see: <<supportedlanguages,Supported languages>>.
@@ -210,7 +210,7 @@ This option specifies the languages that can be set for content when working wit
 
 *Default Value:* `'en,es,fr,de,pt,zh'`
 
-[#example-2]
+[[example-2]]
 ==== Example: `spellchecker_select_languages`
 
 `js
@@ -222,14 +222,14 @@ tinymce.init({
 });
 `
 
-[#-2]
+[[-2]]
 === `spellchecker_whitelist`
 
 This option specifies an array of words to be ignored by the spell checker.
 
 *Type:* `String[]`
 
-[#example-2]
+[[example-2]]
 ==== Example: `spellchecker_whitelist`
 
 `js
@@ -240,7 +240,7 @@ tinymce.init({
 });
 `
 
-[#toolbar-buttons]
+[[toolbar-buttons]]
 == Toolbar Buttons
 
 The following toolbar buttons are provided by the Spell Checker Pro plugin:
@@ -273,7 +273,7 @@ tinymce.init({
 });
 `
 
-[#menu-items]
+[[menu-items]]
 === Menu items
 
 The following menu items are provided by the Spell Checker Pro plugin:
@@ -292,7 +292,7 @@ The following menu items are provided by the Spell Checker Pro plugin:
 
 For more information about customizing the toolbar, see: link:{rootDir}configure/editor-appearance.html#menu[User interface options -- Menu].
 
-[#example-spell-checker-pro-menu-items]
+[[example-spell-checker-pro-menu-items]]
 ==== Example: Spell Checker Pro menu items
 
 `js
@@ -307,17 +307,17 @@ tinymce.init({
 });
 `
 
-[#events]
+[[events]]
 == Events
 
 include::{partialsDir}events/tinymcespellchecker.adoc[]
 
-[#spellcheckerignore-event]
+[[spellcheckerignore-event]]
 === SpellcheckerIgnore event
 
 This event triggers when the user selects *Ignore* on a misspelled word.
 
-[#example-the-spellcheckerignore-event]
+[[example-the-spellcheckerignore-event]]
 ==== Example: The SpellcheckerIgnore event
 
 `js
@@ -333,12 +333,12 @@ tinymce.init({
 });
 `
 
-[#spellcheckerignoreall-event]
+[[spellcheckerignoreall-event]]
 === SpellcheckerIgnoreAll event
 
 This event triggers when the user selects *Ignore All* on a misspelled word.
 
-[#example-the-spellcheckerignoreall-event]
+[[example-the-spellcheckerignoreall-event]]
 ==== Example: The SpellcheckerIgnoreAll event
 
 `js
@@ -354,12 +354,12 @@ tinymce.init({
 });
 `
 
-[#spellcheckstart-event]
+[[spellcheckstart-event]]
 === SpellcheckStart event
 
 This event triggers when the user *enables* the `spellchecker`.
 
-[#example-the-spellcheckstart-event]
+[[example-the-spellcheckstart-event]]
 ==== Example: The SpellcheckStart event
 
 `js
@@ -375,12 +375,12 @@ tinymce.init({
 });
 `
 
-[#spellcheckend-event]
+[[spellcheckend-event]]
 === SpellcheckEnd event
 
 This event triggers when the user *disables* the `spellchecker`.
 
-[#example-the-spellcheckend-event]
+[[example-the-spellcheckend-event]]
 ==== Example: The SpellcheckEnd event
 
 `js
@@ -396,12 +396,12 @@ tinymce.init({
 });
 `
 
-[#spellcheckerror-event]
+[[spellcheckerror-event]]
 === SpellcheckError event
 
 This event triggers when a spellchecker error occurs, such as the Spell Checker Pro service can't be reached.
 
-[#example-the-spellcheckerror-event]
+[[example-the-spellcheckerror-event]]
 ==== Example: The SpellcheckError event
 
 `js

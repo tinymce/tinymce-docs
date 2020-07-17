@@ -7,10 +7,10 @@ include::{rootDir}_attributes.adoc[]
 :keywords: url urls relative absolute domain document_base_url
 :title_nav: URL handling options
 
-[#q-how-do-i-convert-my-urls-to-relative-absolute-or-absolute-with-domain]
+[[q-how-do-i-convert-my-urls-to-relative-absolute-or-absolute-with-domain]]
 == Q: How do I convert my URLs to relative, absolute, or absolute with domain?
 
-[#relative-urls]
+[[relative-urls]]
 === Relative URLs
 
 This will convert all URLs within the same domain to relative URLs. The URLs will be relative from the <<document_base_url,document_base_url>>.
@@ -22,7 +22,7 @@ document_base_url : "http://www.example.com/path1/"
 
 Example: `+http://www.example.com/path1/path2/file.htm+` >> `path2/file.htm`
 
-[#absolute-urls]
+[[absolute-urls]]
 === Absolute URLs
 
 This will convert all relative URLs to absolute URLs. The URLs will be absolute based on the [document_base_url].
@@ -35,7 +35,7 @@ document_base_url : "http://www.example.com/path1/"
 
 Example: path2/file.htm >> /path1/path2/file.htm
 
-[#domain-absolute-urls]
+[[domain-absolute-urls]]
 === Domain absolute URLs
 
 This will convert all relative URLs to absolute URLs. The URLs will be absolute based on the [document_base_url] with domain.

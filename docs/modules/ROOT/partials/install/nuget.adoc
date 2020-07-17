@@ -2,7 +2,7 @@
 Install-Package TinyMCE
 ----
 
-[#step-1-include-the-tinymce-script]
+[[step-1-include-the-tinymce-script]]
 === Step 1: Include the TinyMCE script
 
 Include this line of code in the `<head>` of your HTML page:
@@ -12,7 +12,7 @@ Include this line of code in the `<head>` of your HTML page:
 <script src="/path/to/tinymce.min.js"></script>
 ----
 
-[#step-2-initialize-tinymce-as-part-of-a-web-form]
+[[step-2-initialize-tinymce-as-part-of-a-web-form]]
 === Step 2: Initialize TinyMCE as part of a web form
 
 With the script included, initialize {productname} on any element (or elements) in your web page.
@@ -43,12 +43,12 @@ In this example, let's replace `<textarea id='mytextarea'>` with a {productname}
 </html>
 ----
 
-[#step-3-saving-content-with-a-form-post]
+[[step-3-saving-content-with-a-form-post]]
 === Step 3: Saving content with a form POST
 
 When the `<form>` is submitted the {productname} editor mimics the behavior of a normal HTML `<textarea>` during the `post`. In your form handler you can process the content submitted as if it had come from a regular `<textarea>`.
 
-[#use-of-local-plugins-language-packs-when-installing-via-package-managers]
+[[use-of-local-plugins-language-packs-when-installing-via-package-managers]]
 ==== Use of local plugins & language packs when installing via package managers
 
 When using package managers you might have local {productname} add-ons in your project such as plugins or language packs. Load these from your project location rather than from inside the package using these configuration options:

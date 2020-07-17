@@ -13,7 +13,7 @@ The default pattern is similar to markdown syntax, so the user can type `# text`
 
 *Type:* `String`
 
-[#example]
+[[example]]
 ===== Example
 
 `js
@@ -23,12 +23,12 @@ tinymce.init({
 });
 `
 
-[#options]
+[[options]]
 === Options
 
 This setting affects the execution of the `textpattern` plugin. Text patterns that are matched by the editor can be changed here.
 
-[#]
+[[]]
 === `textpattern_patterns`
 
 This option allows configuring the text patterns that get matched by the `textpattern` plugin. By default, it has basic markdown patterns.
@@ -57,7 +57,7 @@ NOTE: Formats and commands must be already registered with the editor. See the l
 ]
 +`
 
-[#inline-patterns]
+[[inline-patterns]]
 ==== Inline patterns
 
 Inline patterns must have the following:
@@ -69,7 +69,7 @@ This allows for patterns to be used to either apply a format or execute a comman
 
 NOTE: Inline patterns are executed on either pressing the *spacebar* or the *Enter* key.
 
-[#example-2]
+[[example-2]]
 ===== Example
 
 `+js
@@ -89,7 +89,7 @@ Using the configuration in this example:
 * `+{start: '**', end: '**', format: 'bold'}+` - Entering text between``+**+`` and then pressing the *spacebar* will result in the `bold` format being applied.
 * `+{start: '~', end: '~', cmd: 'createLink', value: 'https://tiny.cloud'}+` - This executes `+editor.execCommand('createLink', false, 'https://tiny.cloud')+`, which will wrap the text between the `~` symbols in a link that points to `+https://tiny.cloud+`.
 
-[#block-patterns]
+[[block-patterns]]
 ==== Block patterns
 
 Block patterns must have the following:
@@ -101,7 +101,7 @@ The block patterns do not have an `end` property. This allows for patterns to be
 
 NOTE: Block patterns are only executed on *Enter*, *not* on pressing the *spacebar*.
 
-[#example-2]
+[[example-2]]
 ===== Example
 
 `js
@@ -131,7 +131,7 @@ Using the configuration in this example:
 * `{start: '#', format: 'h1'}` - Typing `#`, some text, and then pressing `Enter` will convert the text to a `h1` heading.
 * Typing `1. `, some text, and then pressing `Enter` will convert the text into an ordered list, with the original text as the first list item, and the new line as the second list item. Since we have specified `value`, this pattern will execute `editor.execCommand('InsertOrderedList', false, { 'list-style-type': 'decimal'})`.
 
-[#replacements-patterns]
+[[replacements-patterns]]
 ==== Replacements patterns
 
 Replacement patterns must have the following:
@@ -142,7 +142,7 @@ Whether a replacement pattern inserts a block or inline element depends on what 
 
 NOTE: Replacement patterns are executed on either pressing the *spacebar* or the *Enter* key.
 
-[#example-2]
+[[example-2]]
 ===== Example
 
 `js

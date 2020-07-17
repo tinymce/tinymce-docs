@@ -10,7 +10,7 @@ include::{rootDir}_attributes.adoc[]
 
 {productname} is an open source software project. We encourage developers to contribute patches and code to include in {productname}. However, there are a few rules and limitations:
 
-[#basic-rules]
+[[basic-rules]]
 == Basic rules
 
 * Contributed code will be licensed under the LGPL license, but not limited to LGPL.
@@ -20,12 +20,12 @@ include::{rootDir}_attributes.adoc[]
 
 These basic rules make it possible for us to manage the {productname} project and to ensure that the code remains open source and under the LGPL license.
 
-[#how-to-contribute]
+[[how-to-contribute]]
 == How to contribute
 
 The {productname} source code is https://github.com/tinymce/tinymce[hosted on Github]. Through Github, you can submit _pull requests_ and log new bugs and feature requests.
 
-[#contributing-to-the-documentation]
+[[contributing-to-the-documentation]]
 == Contributing to the documentation
 
 If you would like to contribute to {productname}'s documentation, please see our link:../contributing-docs/[contribute to documentation page and style guide].

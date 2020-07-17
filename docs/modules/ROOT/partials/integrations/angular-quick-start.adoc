@@ -1,6 +1,6 @@
 :doctype: book
 
-[#tinymce-angular-integration-quick-start-guide]
+[[tinymce-angular-integration-quick-start-guide]]
 == TinyMCE Angular integration quick start guide
 
 The https://github.com/tinymce/tinymce-angular[Official {productname} Angular component] integrates {productname} into Angular projects.
@@ -8,7 +8,7 @@ This procedure creates a https://angular.io/guide/setup-local[basic Angular appl
 
 For examples of the {productname} Angular integration, visit https://tinymce.github.io/tinymce-angular/[the tinymce-angular storybook].
 
-[#prerequisites]
+[[prerequisites]]
 === Prerequisites
 
 This procedure requires:
@@ -20,7 +20,7 @@ This procedure requires:
 * {productname} Self-hosted. See [Installing {productname}]({rootDir}/general-configuration-guide/advanced-install/) for details on self-hosting {productname}.
 ....
 
-[#procedure]
+[[procedure]]
 === Procedure
 
 . On a command line or command prompt, install the https://angular.io/cli[Angular CLI Tool] package.
@@ -73,7 +73,7 @@ This procedure requires:
 +
 ```html
 +
-[#site-productname-site-productmajorversion-angular-demo]
+[[site-productname-site-productmajorversion-angular-demo]]
 = {productname} {productmajorversion} Angular Demo
 +
 <editor

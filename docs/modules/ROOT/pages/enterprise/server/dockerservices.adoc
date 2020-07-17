@@ -14,7 +14,7 @@ The {enterpriseversion} server-side components can be deployed on Docker orchest
 * <<containerizedservicesforself-hostedenterprisedeployments,Containerized services for Self-hosted Enterprise deployments>>
 * <<containerizedservicesforindividuallylicensedpremiumplugins,Containerized services for individually licensed premium plugins>>
 
-[#containerized-services-for-self-hosted-enterprise-deployments]
+[[containerized-services-for-self-hosted-enterprise-deployments]]
 == Containerized services for Self-hosted Enterprise deployments
 
 The following sections assist with containerizing the {productname} services for users with licenses to the Self-hosted {productname} Enterprise bundles:
@@ -23,7 +23,7 @@ The following sections assist with containerizing the {productname} services for
 * The *Self-hosted Professional* bundle.
 * The *Self-hosted Premium* bundle.
 
-[#prerequisites]
+[[prerequisites]]
 === Prerequisites
 
 * The https://docs.docker.com/engine/docker-overview/[Docker Engine] is installed and running.
@@ -32,7 +32,7 @@ The following sections assist with containerizing the {productname} services for
  ** Using a Linux, Unix or macOS operating system.
  ** Using Windows and has access to unix command line tools using https://gitforwindows.org/[Git for Windows], https://www.cygwin.com/[Cygwin], or the https://docs.microsoft.com/en-us/windows/wsl/install-win10[Windows Subsystem for Linux].
 
-[#download-and-extract-the-tinymce-self-hosted-bundle]
+[[download-and-extract-the-tinymce-self-hosted-bundle]]
 === Download and extract the TinyMCE Self-hosted Bundle
 
 . Go to menu:link:{accountpageurl}[{accountpage}][My Downloads] and download either:
@@ -87,7 +87,7 @@ include::{partialsDir}configuration/dockerized-spelling-service.adoc[]
 
 :shbundledockerfiles: false
 
-[#containerized-services-for-individually-licensed-premium-plugins]
+[[containerized-services-for-individually-licensed-premium-plugins]]
 == Containerized services for individually licensed premium plugins
 
 The following sections assist with containerizing the {productname} services for users with licenses to self-hosted versions of:

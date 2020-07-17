@@ -14,7 +14,7 @@ This plugin adds directionality controls to the toolbar, enabling {productname} 
 
 *Possible Values:* `ltr`, `rtl`
 
-[#directionality-plugin-example]
+[[directionality-plugin-example]]
 ===== Directionality plugin example
 
 `js
@@ -25,7 +25,7 @@ tinymce.init({
 });
 `
 
-[#commands]
+[[commands]]
 == Commands
 
 The Directionality plugin provides the following JavaScript commands.

@@ -14,12 +14,12 @@ There are two deployment options. One is with {cloudname}, the other is the more
 
 Please note that this feature requires a backend integration with a system to handle listing of users, as well as sending the notifications. Refer to this link:{rootDir}plugins/mentions.html#example[example code] for more information. There are two integration points: getting a user list when `+@abc...+` is typed, and on submitting the form, sending a notification to the `@username` in the document.
 
-[#mentions-cloud-setup]
+[[mentions-cloud-setup]]
 == Mentions cloud setup
 
 Mentions is available for download through link:{rootDir}cloud-deployment-guide/editor-and-features.html[{cloudname}]. Include the `mentions` parameter in the `tinymce.init` script. Refer to the link:{rootDir}plugins/mentions.html[Mentions documentation], for more information on setup and configuration.
 
-[#try-our-mentions-plugin-demo]
+[[try-our-mentions-plugin-demo]]
 === Try our Mentions plugin demo
 
 {% include codepen.html id="mentions" height="400" %}

@@ -16,7 +16,7 @@ The link:../lists[Lists] (`lists`) plugin must be activated for the `advlist` pl
 
 *Type:* `String`
 
-[#advanced-list-plugin-example]
+[[advanced-list-plugin-example]]
 ===== Advanced List plugin example
 
 `js
@@ -26,12 +26,12 @@ tinymce.init({
 });
 `
 
-[#options]
+[[options]]
 == Options
 
 These settings affect the execution of the `advlist` plugin by providing more granular control of list styles.
 
-[#]
+[[]]
 === `advlist_bullet_styles`
 
 This option allows you to include specific unordered list item markers in the default `bullist` toolbar control.
@@ -47,7 +47,7 @@ This option allows you to include specific unordered list item markers in the de
 * `disc`: a filled circle
 * `square`: a filled square
 
-[#example]
+[[example]]
 ==== Example:
 
 `js
@@ -58,7 +58,7 @@ tinymce.init({
 });
 `
 
-[#-2]
+[[-2]]
 === `advlist_number_styles`
 
 This option allows you to include specific ordered list item markers in the default `numlist` toolbar control.
@@ -76,7 +76,7 @@ This option allows you to include specific ordered list item markers in the defa
 * `upper-alpha`: uppercase ASCII letters, e.g. A, B, C, ... Z
 * `upper-roman`: uppercase roman numerals, e.g. I, II, III, IV, V ...
 
-[#example-2]
+[[example-2]]
 ==== Example:
 
 `js
@@ -87,7 +87,7 @@ tinymce.init({
 });
 `
 
-[#commands]
+[[commands]]
 == Commands
 
 The Advanced Lists plugin provides the following JavaScript commands.

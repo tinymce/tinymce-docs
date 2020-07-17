@@ -13,7 +13,7 @@ include::{rootDir}_attributes.adoc[]
 * <<tinymce-in-ruby-on-rails-using-tinymce-self-hosted,TinyMCE in Ruby on Rails using TinyMCE self-hosted>>
 * <<the-third-party-tinymce-ruby-on-rails-gem,The third-party TinyMCE Ruby on Rails gem>>
 
-[#tinymce-in-ruby-on-rails-using-the-tiny-cloud]
+[[tinymce-in-ruby-on-rails-using-the-tiny-cloud]]
 === TinyMCE in Ruby on Rails using the Tiny Cloud
 
 The {cloudname} can be used to integrate {productname} into Ruby on Rails projects.
@@ -56,7 +56,7 @@ include::{partialsDir}integrations/rails-basic-proj.adoc[]
 
 The page containing the {productname} will be accessible at `+http://localhost:<port>/+` (default: http://localhost:3000/[\http://localhost:3000/]).
 
-[#tinymce-in-ruby-on-rails-using-tinymce-self-hosted]
+[[tinymce-in-ruby-on-rails-using-tinymce-self-hosted]]
 === TinyMCE in Ruby on Rails using TinyMCE self-hosted
 
 Self-hosted instances of {productname} can be integrated into Ruby on Rails projects.
@@ -100,7 +100,7 @@ The page containing the {productname} will be accessible at `+http://localhost:<
 
 For information on self-hosting {productname}, see: link:{rootDir}general-configuration-guide/advanced-install.html[Installing {productname}].
 
-[#the-third-party-tinymce-ruby-on-rails-gem]
+[[the-third-party-tinymce-ruby-on-rails-gem]]
 === The third-party TinyMCE Ruby on Rails gem
 
 {thirdPartyInteg}

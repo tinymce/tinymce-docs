@@ -10,7 +10,7 @@ include::{rootDir}_attributes.adoc[]
 
 Use the link:{rootDir}configure/editor-appearance.html#toolbar[toolbar] or the link:{rootDir}configure/editor-appearance.html#menu[menu] configuration options.
 
-[#toolbar-controls]
+[[toolbar-controls]]
 == Toolbar controls
 
 The following table shows all available toolbar items, including items provided by plugins. To retrieve a list from the editor, run the following command from the browser console:
@@ -447,7 +447,7 @@ tinyMCE.activeEditor.ui.registry.getAll().buttons
 | Opens a word count dialog showing word and character counts.
 |===
 
-[#menu-controls]
+[[menu-controls]]
 == Menu controls
 
 The following table shows all available menu items, including items provided by plugins. To retrieve a list from the editor, run the following command from the browser console:

@@ -12,7 +12,7 @@ This plugin enables the user to insert an image into {productname}'s editable ar
 
 *Type:* `String`
 
-[#example]
+[[example]]
 ===== Example
 
 ```js
@@ -34,7 +34,7 @@ tinymce.init({
 This is not drag-drop functionality and the user is required to enter the path to the image. Optionally the user can also enter the image description, dimensions, and whether image proportions should be constrained (selected via a checkbox). Some of these settings can be preset using the plugin's configuration options.
 ====
 
-[#options]
+[[options]]
 == Options
 
 These configuration options affect the execution of the `image` plugin. Many of the settings here will disable dialog box features used to insert or edit images. A predefined list of images can also be provided to enable quick insertion of those images.
@@ -333,7 +333,7 @@ include::{partialsDir}configuration/images-uploads-url.adoc[leveloffset=+1]
 
 include::{partialsDir}configuration/type-ahead-urls.adoc[leveloffset=+1]
 
-[#q-where-are-the-advanced-image-options]
+[[q-where-are-the-advanced-image-options]]
 == Q: Where are the advanced image options?
 
 Use the `Style Formats` option instead, which is much more powerful.
@@ -351,7 +351,7 @@ style_formats: [
 ]
 `
 
-[#commands]
+[[commands]]
 == Commands
 
 The Image plugin provides the following JavaScript command.

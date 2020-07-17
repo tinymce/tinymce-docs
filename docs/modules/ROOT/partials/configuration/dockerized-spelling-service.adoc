@@ -2,12 +2,12 @@
 
 {% if shbundledockerfiles == false %}
 
-[#deploy-the-tinymce-spelling-service-server-side-component-using-docker-individually-licensed]
+[[deploy-the-tinymce-spelling-service-server-side-component-using-docker-individually-licensed]]
 === Deploy the TinyMCE spelling service server-side component using Docker (individually licensed)
 
 {% elsif shbundledockerfiles == true %}
 
-[#deploy-the-tinymce-spelling-service-server-side-component-using-docker-self-hosted-enterprise-bundles]
+[[deploy-the-tinymce-spelling-service-server-side-component-using-docker-self-hosted-enterprise-bundles]]
 === Deploy the TinyMCE spelling service server-side component using Docker (self-hosted enterprise bundles)
 
 {% endif %}
@@ -17,7 +17,7 @@ WARNING: Do not push this docker image to a publicly accessible container regist
 
 {% if shbundledockerfiles == false %}
 
-[#prerequisites]
+[[prerequisites]]
 ==== Prerequisites
 
 * The https://docs.docker.com/engine/docker-overview/[Docker Engine] is installed and running.
@@ -28,7 +28,7 @@ WARNING: Do not push this docker image to a publicly accessible container regist
 
 {% endif %}
 
-[#procedure]
+[[procedure]]
 ==== Procedure
 
 The following procedure covers downloading, configuring, building and testing the {productname} Spelling Service Docker image.

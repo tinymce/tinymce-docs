@@ -1,11 +1,11 @@
 The community was invited to test the TinyMCE 5.0 editor and report bugs and issues in the Developers Preview release. The following issues have been fixed in the TinyMCE 5.0 Beta version.
 
-[#editor-core]
+[[editor-core]]
 === Editor-Core
 
 The new TinyMCE 5.0 editor comes with significant changes to the previous versions. Tiny has created a more configurable and modern editor. Improved solutions have been introduced for unnecessary and obsolete configuration options. Please see the link:{rootDir}migration-from-4x/#editor-core[Editor-Core] section in the Migration Guide for more information.
 
-[#alloy]
+[[alloy]]
 ==== Alloy
 
 [cols=2*]
@@ -50,7 +50,7 @@ The new TinyMCE 5.0 editor comes with significant changes to the previous versio
 | Add types to Jax
 |===
 
-[#browser]
+[[browser]]
 ==== Browser
 
 The following browser related issues were reported during the developer's preview and are now fixed in the TinyMCE 5.0 BETA version.
@@ -79,7 +79,7 @@ The following browser related issues were reported during the developer's previe
 | IE11 Issue with SVG icons
 |===
 
-[#colorpicker]
+[[colorpicker]]
 ==== Colorpicker
 
 The following Colorpicker related issues were reported during the developer's preview and are now fixed in the TinyMCE 5.0 BETA version. Please see the link:{rootDir}configure/content-appearance.html#color_picker[Colorpicker] docs for more information.
@@ -123,7 +123,7 @@ The following Colorpicker related issues were reported during the developer's pr
 | ColorInput gives an error saying the panel is an unknown component.
 |===
 
-[#editor]
+[[editor]]
 ==== Editor
 
 The following editor related issues were reported during the developer's preview and are now fixed in the TinyMCE 5.0 BETA version.
@@ -275,12 +275,12 @@ The following editor related issues were reported during the developer's preview
 | Update Chain/Step `.log(message)` to write to the TestLogs and added `.label(message, c)` and fix types
 |===
 
-[#user-interface]
+[[user-interface]]
 === User Interface
 
 TinyMCE 5.0 has an ARIA WCAG 2.1 standards compliant user interface to make the user interface controls and dynamic content more accessible. The user interface logic has been changed entirely in TinyMCE 5.0. Refer to the link:{rootDir}migration-from-4x[Migration Guide], for more information on the UI changes.
 
-[#ui]
+[[ui]]
 ==== UI
 
 [cols=2*]
@@ -301,7 +301,7 @@ TinyMCE 5.0 has an ARIA WCAG 2.1 standards compliant user interface to make the 
 | importcss_append configuration is not working as expected
 |===
 
-[#css]
+[[css]]
 ==== CSS
 
 The following CSS related issues were reported during the developer's preview and are now fixed in the TinyMCE 5.0 BETA version.
@@ -330,7 +330,7 @@ The following CSS related issues were reported during the developer's preview an
 | TinyMCE 5 DP doesn't support css values in height option
 |===
 
-[#skin]
+[[skin]]
 ==== Skin
 
 The following Skin related issues were reported during the developer's preview and are now fixed in the TinyMCE 5.0 BETA version.
@@ -362,7 +362,7 @@ The following Skin related issues were reported during the developer's preview a
 | Dialog headings (the titles) are styled wrong. Apply correct classes or update
 |===
 
-[#theme]
+[[theme]]
 ==== Theme
 
 The following theme related issues were reported during the developer's preview and are now fixed in the TinyMCE 5.0 BETA version.
@@ -391,10 +391,10 @@ The following theme related issues were reported during the developer's preview 
 | Update Mobile theme to work (maybe: pull into silver)
 |===
 
-[#components]
+[[components]]
 === Components
 
-[#context-form]
+[[context-form]]
 ==== Context Form
 
 The following Context Form related issues were reported during the developer's preview and are now fixed in the TinyMCE 5.0 BETA version. Please see the link:{rootDir}ui-components/contextform.html[Context Form] docs for more information.
@@ -414,7 +414,7 @@ The following Context Form related issues were reported during the developer's p
 |
 |===
 
-[#context-menus]
+[[context-menus]]
 ==== Context menus
 
 The following Context Menu related issues were reported during the developer's preview and are now fixed in the TinyMCE 5.0 BETA version. Please see the link:{rootDir}ui-components/contextmenu.html[Context Menu] docs for more information.
@@ -437,7 +437,7 @@ The following Context Menu related issues were reported during the developer's p
 | Spike a new context menu for apollo that works similar to tbio
 |===
 
-[#context-toolbar]
+[[context-toolbar]]
 ==== Context toolbar
 
 The following Context Toolbar related issues were reported during the developer's preview and are now fixed in the TinyMCE 5.0 BETA version. Please see the link:{rootDir}ui-components/contexttoolbar.html[Context Toolbar] docs for more information.
@@ -466,7 +466,7 @@ The following Context Toolbar related issues were reported during the developer'
 | Update context toolbar position on editor resize
 |===
 
-[#dialog]
+[[dialog]]
 ==== Dialog
 
 The following Dialog related issues were reported during the developer's preview and are now fixed in the TinyMCE 5.0 BETA version. Please see the link:{rootDir}ui-components/dialog.html[Dialog] docs for more information.
@@ -633,7 +633,7 @@ The following Dialog related issues were reported during the developer's preview
 | tabbed dialogs shrinking when no results returned
 |===
 
-[#menu]
+[[menu]]
 ==== Menu
 
 The following Menu related issues were reported during the developer's preview and are now fixed in the TinyMCE 5.0 BETA version.
@@ -653,7 +653,7 @@ The following Menu related issues were reported during the developer's preview a
 | Menu check marks should be on the left
 |===
 
-[#toolbar-buttons]
+[[toolbar-buttons]]
 ==== Toolbar buttons
 
 The following Toolbar Buttons related issues were reported during the developer's preview and are now fixed in the TinyMCE 5.0 BETA version. Please see the link:{rootDir}ui-components/toolbarbuttons.html[Toolbar Buttons] docs for more information.
@@ -757,7 +757,7 @@ The following Toolbar Buttons related issues were reported during the developer'
 | Filter out empty toolbar groups
 |===
 
-[#url]
+[[url]]
 ==== URL
 
 The following URL related issues were reported during the developer's preview and are now fixed in the TinyMCE 5.0 BETA version. Please see the link:{rootDir}configure/url-handling.html[URL] docs for more information.
@@ -786,10 +786,10 @@ The following URL related issues were reported during the developer's preview an
 | Pressing +++<escape>+++and +++<enter>+++in a URL input should not be swallowed by the URL input+++</enter>++++++</escape>+++
 |===
 
-[#premium-features]
+[[premium-features]]
 === Premium features
 
-[#comments]
+[[comments]]
 ==== Comments
 
 The following issues were reported against the Comments premium plugin during the developer's preview and are now fixed in the TinyMCE 5.0 BETA version. Please see the link:{rootDir}plugins/comments.html[Comments] docs for more information.
@@ -803,7 +803,7 @@ The following issues were reported against the Comments premium plugin during th
 | Tiny comments (premium)
 |===
 
-[#dialog-2]
+[[dialog-2]]
 ==== Dialog
 
 The following issues were reported against the dialogs in the premium plugin during the developer's preview and are now fixed in the TinyMCE 5.0 BETA version. Please see our link:{rootDir}enterprise.html[Premium Features] docs for more information.
@@ -826,7 +826,7 @@ The following issues were reported against the dialogs in the premium plugin dur
 | [dialog L] Clerk (premium plugin)
 |===
 
-[#mentions]
+[[mentions]]
 ==== Mentions
 
 The following issues were reported against the Mentions premium plugin during the developer's preview and are now fixed in the TinyMCE 5.0 BETA version. Please see the link:{rootDir}plugins/mentions.html[Mentions] docs for more information.
@@ -840,10 +840,10 @@ The following issues were reported against the Mentions premium plugin during th
 | Mentions
 |===
 
-[#plugins]
+[[plugins]]
 ==== Plugins
 
-[#accessibility-checker]
+[[accessibility-checker]]
 ==== Accessibility checker
 
 The following Accessibility Checker related issues were reported during the developer's preview and are now fixed in the TinyMCE 5.0 BETA version. Please see the link:{rootDir}plugins/a11ychecker.html[Accessibility Checker] docs for more information.
@@ -869,7 +869,7 @@ The following Accessibility Checker related issues were reported during the deve
 | Accessibility checker does not work without a toolbar
 |===
 
-[#advlist]
+[[advlist]]
 ==== Advlist
 
 The following Advlist related issues were reported during the developer's preview and are now fixed in the TinyMCE 5.0 BETA version. Please see the link:{rootDir}plugins/aadvlist.html[Advlist] docs for more information.
@@ -883,7 +883,7 @@ The following Advlist related issues were reported during the developer's previe
 | Unable to customize advlist plugin
 |===
 
-[#anchors]
+[[anchors]]
 ==== Anchors
 
 The following Anchors related issues were reported during the developer's preview and are now fixed in the TinyMCE 5.0 BETA version. Please see the link:{rootDir}plugins/anchor.html[Anchors] docs for more information.
@@ -906,7 +906,7 @@ The following Anchors related issues were reported during the developer's previe
 | Turn resize handler off when autoresize is enabled
 |===
 
-[#charmap]
+[[charmap]]
 ==== CharMap
 
 The following CharMap related issues were reported during the developer's preview and are now fixed in the TinyMCE 5.0 BETA version. Please see the link:{rootDir}plugins/charmap.html[CharMap] docs for more information.
@@ -935,7 +935,7 @@ The following CharMap related issues were reported during the developer's previe
 | Character map entries do not have the active class added on mouse over
 |===
 
-[#directionality]
+[[directionality]]
 ==== Directionality
 
 The following Directionality related issues were reported during the developer's preview and are now fixed in the TinyMCE 5.0 BETA version. Please see the link:{rootDir}plugins/directionality.html[Directionality] docs for more information.
@@ -949,7 +949,7 @@ The following Directionality related issues were reported during the developer's
 | Directionality ltr/rtl not implemented
 |===
 
-[#emoticons]
+[[emoticons]]
 ==== Emoticons
 
 The following Emoticons related issues were reported during the developer's preview and are now fixed in the TinyMCE 5.0 BETA version. Please see the link:{rootDir}plugins/emoticons.html[Emoticons] docs for more information.
@@ -969,7 +969,7 @@ The following Emoticons related issues were reported during the developer's prev
 | Emoji dialog intermittent failing tests
 |===
 
-[#image-tools]
+[[image-tools]]
 ==== Image tools
 
 The following Image Tools related issues were reported during the developer's preview and are now fixed in the TinyMCE 5.0 BETA version. Please see the link:{rootDir}plugins/imagetools.html[Image Tools] docs for more information.
@@ -992,7 +992,7 @@ The following Image Tools related issues were reported during the developer's pr
 | Image - context menu not appearing when image has caption
 |===
 
-[#link]
+[[link]]
 ==== Link
 
 The following Link related issues were reported during the developer's preview and are now fixed in the TinyMCE 5.0 BETA version. Please see the link:{rootDir}plugins/link.html[Link] docs for more information.
@@ -1018,7 +1018,7 @@ The following Link related issues were reported during the developer's preview a
 | Link context form is incorrectly styled
 |===
 
-[#media]
+[[media]]
 ==== Media
 
 The following Media related issues were reported during the developer's preview and are now fixed in the TinyMCE 5.0 BETA version. Please see the link:{rootDir}plugins/media.html[Media] docs for more information.
@@ -1035,7 +1035,7 @@ The following Media related issues were reported during the developer's preview 
 | Media Embed premium plugin (pillow)
 |===
 
-[#numbullist]
+[[numbullist]]
 ==== Num/Bullist
 
 The following Lists related issues were reported during the developer's preview and are now fixed in the TinyMCE 5.0 BETA version. Please see the link:{rootDir}plugins/lists.html[Lists] docs for more information.
@@ -1055,7 +1055,7 @@ The following Lists related issues were reported during the developer's preview 
 | Num/Bullist - not reflecting the selection on toolbar
 |===
 
-[#search-and-replace]
+[[search-and-replace]]
 ==== Search and replace
 
 The following Search and Replace related issues were reported during the developer's preview and are now fixed in the TinyMCE 5.0 BETA version. Please see the link:{rootDir}plugins/searchreplace.html[Search and Replace] docs for more information.
@@ -1069,7 +1069,7 @@ The following Search and Replace related issues were reported during the develop
 | Find and Replace - "Match case" should not be selected by default, title and button label needs correction
 |===
 
-[#table]
+[[table]]
 ==== Table
 
 The following Table related issues were reported during the developer's preview and are now fixed in the TinyMCE 5.0 BETA version. Please see the link:{rootDir}plugins/table.html[Table] docs for more information.
@@ -1101,7 +1101,7 @@ The following Table related issues were reported during the developer's preview 
 | Table style attribute should retain "border-collapse: collapse;" when border is set to 0
 |===
 
-[#table-of-contents]
+[[table-of-contents]]
 ==== Table of contents
 
 The following Table of Contents related issues were reported during the developer's preview and are now fixed in the TinyMCE 5.0 BETA version. Please see the link:{rootDir}plugins/toc.html[Table of Contents] docs for more information.
@@ -1115,7 +1115,7 @@ The following Table of Contents related issues were reported during the develope
 | By default table of contents (toc) should be disabled on toolbar and should be only enabled if editor content has headings, Table of contents - contextmenu should be displayed in center not top right corner
 |===
 
-[#documentation]
+[[documentation]]
 === Documentation
 
 The following documentation related issues were reported during the developer's preview and are now fixed in the TinyMCE 5.0 BETA version. Refer to the latest https://www.tiny.cloud/docs/[Documentation] for more information.
@@ -1210,7 +1210,7 @@ The following documentation related issues were reported during the developer's 
 | Update nginx redirect rules for new documentation structure
 |===
 
-[#qa]
+[[qa]]
 === QA
 
 The following Quality Assurance related issues that were carried out during the developer's preview. We have tested and fixed these issues in the TinyMCE 5.0 BETA version.

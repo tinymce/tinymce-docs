@@ -10,7 +10,7 @@ include::{rootDir}_attributes.adoc[]
 
 The Code Sample plugin (`codesample`) lets a user insert and embed syntax color highlighted code snippets into the editable area. It also adds a button to the toolbar which on click will open a dialog box to accept raw code input.
 
-[#example]
+[[example]]
 ===== Example
 
 `js
@@ -28,12 +28,12 @@ By default, `codesample` uses `+http://prismjs.com/+` to embed the code samples 
 Prism.js and prism.css need to be added to a page for syntax highlighting to work. See the instructions below to learn how to do this.
 ====
 
-[#using-prism-js-on-your-web-page]
+[[using-prism-js-on-your-web-page]]
 === Using Prism.js on your web page
 
 You need to add `prism.js` and `prism.css` to your page in order to get the syntax highlighted code samples on your webpage (as created by the Code Sample plugin). The Code Sample plugin uses the following languages: markup, javascript, css, php, ruby, python, java, c, csharp and cpp. You can generate the `prism.js` and `prism.css` files on the http://prismjs.com/download.html[download] page at the Prism website.
 
-[#example-of-using-the-prism-js-script]
+[[example-of-using-the-prism-js-script]]
 ==== Example of using the Prism.js script
 
 ```html+++<link rel="stylesheet" type="text/css" href="prism.css">++++++</link>++++++<script src="prism.js">++++++</script>+++
@@ -45,10 +45,10 @@ You need to add `prism.js` and `prism.css` to your page in order to get the synt
 
 ```
 
-[#options]
+[[options]]
 == Options
 
-[#]
+[[]]
 === `codesample_global_prismjs`
 
 {requires_5_2v}
@@ -68,7 +68,7 @@ When using this option, ensure that Prism.js and any language add-ons are loaded
 
 *Possible values:* `true`, `false`
 
-[#example-2]
+[[example-2]]
 ==== Example
 
 `js
@@ -80,12 +80,12 @@ tinymce.init({
 });
 `
 
-[#-2]
+[[-2]]
 === `codesample_languages`
 
 This configuration option enables you to set a list of languages to be displayed in the languages drop down.
 
-[#example-2]
+[[example-2]]
 ==== Example
 
 `pass:c[js
@@ -108,12 +108,12 @@ tinymce.init({
 });
 ]`
 
-[#live-example]
+[[live-example]]
 == Live example
 
 {% include codepen.html id="codesample" %}
 
-[#commands]
+[[commands]]
 == Commands
 
 The Code Sample plugin provides the following JavaScript command.

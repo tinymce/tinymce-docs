@@ -12,7 +12,7 @@ This plugin allows a user to see block level elements in the editable area. It i
 
 *Type:* `String`
 
-[#example]
+[[example]]
 ===== Example
 
 `js
@@ -24,12 +24,12 @@ tinymce.init({
 });
 `
 
-[#options]
+[[options]]
 === Options
 
 This setting affects the execution of the `visualblocks` plugin. You may specify whether blocks are visible by default here.
 
-[#]
+[[]]
 === `visualblocks_default_state`
 
 This option enables you to specify the default state of the Visual Blocks plugin.
@@ -50,7 +50,7 @@ tinymce.init({
 });
 `
 
-[#commands]
+[[commands]]
 == Commands
 
 The Visual Blocks plugin provides the following JavaScript command.

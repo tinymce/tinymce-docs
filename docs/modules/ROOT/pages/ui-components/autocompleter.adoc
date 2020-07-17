@@ -7,12 +7,12 @@ include::{rootDir}_attributes.adoc[]
 :keywords: autcomplete
 :title_nav: Autocompleter
 
-[#overview]
+[[overview]]
 == Overview
 
 An `autocompleter` enables users to quickly find and select from a pre-populated list of values as they type, leveraging searching and filtering. It provides suggestions to insert while the user is typing into the content. For example, with the link:{rootDir}plugins/charmap.html[charmap] plugin enabled, typing *:amp* should show the ampersand item in the menu. Pressing `esc` should close the autocomplete menu.
 
-[#how-to-create-custom-autocompleters]
+[[how-to-create-custom-autocompleters]]
 == How to create custom autocompleters
 
 The method for adding a custom autocompleter is in the *UI Registry* part of the editor API `editor.ui.registry`:
@@ -24,7 +24,7 @@ The two arguments this method take are:
 * `name` - A unique name for the autocompleter.
 * `configuration` - An object containing the user's configuration.
 
-[#configuration-options]
+[[configuration-options]]
 === Configuration options
 
 |===
@@ -75,7 +75,7 @@ The `fetch` results should be a list of objects with the following details:
 
 NOTE: If two or more autocompleters use the same trigger character, then the fetched results will be merged together before being displayed.
 
-[#api]
+[[api]]
 === API
 
 |===
@@ -90,7 +90,7 @@ NOTE: If two or more autocompleters use the same trigger character, then the fet
 | Hides the autocompleter menu and fetches new menu items. The  `fetchOptions` will be passed to the autocompleter `fetch` callback.
 |===
 
-[#example]
+[[example]]
 == Example
 
 This example shows how the charmap plugin adds the standard autocompleter. The autocompleter will show whenever a `:` character is typed plus at least one additional character.

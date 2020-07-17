@@ -10,7 +10,7 @@ include::{rootDir}_attributes.adoc[]
 
 {productname} {productmajorversion} is a powerful and flexible rich text editor that can be embedded in web applications. This quick start covers how to add a {productname} editor to a web page using the {cloudname}.
 
-[#step-1-include-the-tinymce-script]
+[[step-1-include-the-tinymce-script]]
 == Step 1: Include the TinyMCE script
 
 Include the following line of code in the `<head>` of a HTML page.
@@ -20,7 +20,7 @@ Include the following line of code in the `<head>` of a HTML page.
 <script src="{cdnurl}" referrerpolicy="origin"></script>
 ----
 
-[#step-2-initialize-tinymce-as-part-of-a-web-form]
+[[step-2-initialize-tinymce-as-part-of-a-web-form]]
 == Step 2: Initialize TinyMCE as part of a web form
 
 Initialize {productname} {productmajorversion} on any element (or elements) on the web page by passing an object containing a `selector` value to `tinymce.init()`. The `selector` value can be any valid https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors[CSS selector].
@@ -60,7 +60,7 @@ Adding this content to a HTML file and opening it in a web browser will load a T
 
 {% include codepen.html id="default" %}
 
-[#step-3-add-your-api-key]
+[[step-3-add-your-api-key]]
 == Step 3: Add your API key
 
 To remove the notice:
@@ -71,14 +71,14 @@ Replace `no-api-key` in the source script (`+<script src=...+`) with a {cloudnam
 
 Signing up for a {cloudname} API key will also provide a trial of the link:{rootDir}enterprise.html[Premium Plugins].
 
-[#step-4-save-the-content-with-a-form-post]
+[[step-4-save-the-content-with-a-form-post]]
 == Step 4: Save the content with a form POST
 
 Process the content with a form handler.
 
 When the `<form>` is submitted, {productname} {productmajorversion} will `POST` the content in the same way as a normal HTML `<textarea>`, including the HTML elements and inline CSS of the editor content. The host's form handler can process the submitted content in the same way as content from a regular `<textarea>`.
 
-[#next-steps]
+[[next-steps]]
 == Next Steps
 
 For information on:

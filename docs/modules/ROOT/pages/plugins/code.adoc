@@ -10,7 +10,7 @@ include::{rootDir}_attributes.adoc[]
 
 This plugin adds a toolbar button that allows a user to edit the HTML code hidden by the WYSIWYG view. It also adds the menu item `Source code` under the `Tools` menu.
 
-[#example]
+[[example]]
 ===== Example
 
 `js
@@ -22,7 +22,7 @@ tinymce.init({
 });
 `
 
-[#commands]
+[[commands]]
 == Commands
 
 The Code plugin provides the following JavaScript command.

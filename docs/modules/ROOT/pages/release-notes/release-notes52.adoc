@@ -22,19 +22,19 @@ These release notes provide an overview of the changes for {productname} 5.2, in
 This is the {cloudname} and {enterpriseversion} release notes. For information on the latest community version of {productname}, see: link:{rootDir}changelog.html[{productname} Changelog].
 ====
 
-[#tinymce-5-2-new-features-and-enhancements]
+[[tinymce-5-2-new-features-and-enhancements]]
 == TinyMCE 5.2 new features and enhancements
 
 The following new features and enhancements were added for the {productname} 5.2 release.
 
-[#alternative-toolbar-and-menu-bar-placement-with-the-setting]
+[[alternative-toolbar-and-menu-bar-placement-with-the-setting]]
 === Alternative toolbar and menu bar placement with the `toolbar_location` setting
 
 The `toolbar_location` option is used to position the toolbar and menu bar. Setting this option to `bottom` positions the toolbar and menu bar below the content area.
 
 For information on using the `toolbar_location` setting, see: link:{rootDir}configure/editor-appearance.html#toolbar_location[User interface options - `toolbar_location`].
 
-[#changed-toolbar_drawer-to-toolbar_mode]
+[[changed-toolbar_drawer-to-toolbar_mode]]
 === Changed toolbar_drawer to toolbar_mode
 
 The `toolbar_drawer` option has been deprecated and replaced with the `toolbar_mode` option. `toolbar_mode` provides the same functionality as `toolbar_drawer`. The name change was made to reflect the range of settings available for this option.
@@ -43,7 +43,7 @@ The `toolbar_drawer: false` setting has been deprecated; the behavior is now pro
 
 For information on the `toolbar_mode` option, see: link:{rootDir}configure/editor-appearance.html#toolbar_mode[User interface options - `toolbar_mode`].
 
-[#new-group-toolbar-button]
+[[new-group-toolbar-button]]
 === New group toolbar button
 
 The new `toolbar_groups` setting and `addGroupToolbarButton` registry API can be used to create a toolbar button that displays a collection of other toolbar buttons in a pop-up.
@@ -53,21 +53,21 @@ image::{rootDir}/images/toolbar-group-example.png[**Group toolbar button example
 For information on using the `toolbar_groups` setting, see: link:{rootDir}configure/editor-appearance.html#toolbar_groups[User interface options - `toolbar_groups`].
 For information on using the `addGroupToolbarButton` API, see: link:{rootDir}ui-components/typesoftoolbarbuttons.html#grouptoolbarbutton[Types of toolbar buttons - Group button].
 
-[#enterprise-grade-user-interface-translations-available-on-tiny-cloud]
+[[enterprise-grade-user-interface-translations-available-on-tiny-cloud]]
 === Enterprise-grade user interface translations available on Tiny Cloud
 
 {cloudname} deployments now have access to professionally translated language packs for localizing the {productname} user interface.
 
 For a list of the available user interface languages, see: link:{rootDir}configure/localization.html#language[Localization options - `language`].
 
-[#a-new-placeholder-setting]
+[[a-new-placeholder-setting]]
 === A new placeholder setting
 
 The new `placeholder` option adds placeholder content that will be shown when the editor is empty.
 
 For information on using the `placeholder` setting, see: link:{rootDir}configure/editor-appearance.html#placeholder[User interface options - `placeholder`].
 
-[#new-option-to-assist-with-marking-images-as-decorative-for-accessibility-purposes]
+[[new-option-to-assist-with-marking-images-as-decorative-for-accessibility-purposes]]
 === New option to assist with marking images as decorative for accessibility purposes
 
 The `a11y_advanced_options` setting adds an option to set an image as decorative in the following dialogs:
@@ -79,28 +79,28 @@ For information on the `a11y_advanced_options`, including the impact on the `a11
 * link:{rootDir}plugins/a11ychecker.html#a11y_advanced_options[The Accessibility Checker plugin - `a11y_advanced_options`].
 * link:{rootDir}plugins/image.html#a11y_advanced_options[The Image plugin - `a11y_advanced_options`].
 
-[#modify-the-quick-image-toolbar-using-the-setting]
+[[modify-the-quick-image-toolbar-using-the-setting]]
 === Modify the Quick Image toolbar using the `quickbars_image_toolbar` setting
 
 The *quickbars_image_toolbar* option configures the Quick Image toolbar provided by the link:{rootDir}plugins/quickbars[quickbars plugin]. To change the buttons on the Quick Image toolbar, provide a space-separated string of link:{rootDir}advanced/editor-control-identifiers.html#toolbarcontrols[toolbar button names]. To disable the Quick Image toolbar, set `quickbars_image_toolbar` to `false`.
 
 For information on using the `quickbars_image_toolbar` setting, see: link:{rootDir}plugins/quickbars.html#quickbars_image_toolbar[Quick Toolbars plugin - `quickbars_image_toolbar`].
 
-[#use-custom-prism-versions-and-languages-when-highlighting-code-samples]
+[[use-custom-prism-versions-and-languages-when-highlighting-code-samples]]
 === Use custom Prism versions and languages when highlighting code samples
 
 The `codesample` plugin now has the ability to use a custom Prism.js version and a custom languages list when highlighting code samples in the editor. This can be enabled by including the custom Prism.js script and language add-ons on the page and setting the new `codesample_global_prismjs` option to `true`.
 
 For information on using the `codesample_global_prismjs` setting, see: link:{rootDir}plugins/codesample.html#codesample_global_prismjs[Code sample plugin - `codesample_global_prismjs`].
 
-[#new-api]
+[[new-api]]
 === New `tinymce.dom.TextSeeker` API
 
 The TextSeeker class is used for walking across text nodes to match a predicate.
 
 For information on using the `TextSeeker` API, see: link:{rootDir}api/tinymce.dom/tinymce.dom.textseeker.html[{productname} APIs - tinymce.dom.TextSeeker].
 
-[#updated-the-default-tinymce-table-icons]
+[[updated-the-default-tinymce-table-icons]]
 === Updated the default TinyMCE table icons
 
 The {productname} icons for table-related toolbar buttons have been updated to better match the icons used elsewhere in the product.
@@ -109,7 +109,7 @@ This change applies to the default {productname} icon pack.
 
 For an updated list of {productname} icons, see: link:{rootDir}advanced/editor-icon-identifiers.html[Editor icon identifiers].
 
-[#new-option-for-setting-the-default-protocol-for-the-link-and-autolink-plugins]
+[[new-option-for-setting-the-default-protocol-for-the-link-and-autolink-plugins]]
 === New option for setting the default protocol for the Link and Autolink plugins
 
 A new `link_default_protocol` option has been added to the Autolink and Link plugins. This option allows the default protocol to be set for links where a protocol has not been supplied by the user.
@@ -117,12 +117,12 @@ A new `link_default_protocol` option has been added to the Autolink and Link plu
 * For information on using this setting with the Autolink plugin, see: link:{rootDir}plugins/autolink.html#link_default_protocol[Autolink plugin - `link_default_protocol`].
 * For information on using this setting with the Link plugin, see: link:{rootDir}plugins/link.html#link_default_protocol[Link plugin - `link_default_protocol`].
 
-[#accompanying-premium-plugin-changes]
+[[accompanying-premium-plugin-changes]]
 == Accompanying Premium Plugin changes
 
 The following premium plugins updates were released alongside {productname} 5.2.
 
-[#accessibility-checker-2-2-0]
+[[accessibility-checker-2-2-0]]
 === Accessibility Checker 2.2.0
 
 The {productname} 5.2 release includes an accompanying release of the *Accessibility Checker* premium plugin.
@@ -135,7 +135,7 @@ The {productname} 5.2 release includes an accompanying release of the *Accessibi
 
 For information on the `a11y_advanced_options` setting, see: link:{rootDir}plugins/a11ychecker.html#a11y_advanced_options[Accessibility Checker plugin].
 
-[#checklist-1-1-0]
+[[checklist-1-1-0]]
 === Checklist 1.1.0
 
 The {productname} 5.2 release includes an accompanying release of the *Checklist* premium plugin.
@@ -144,7 +144,7 @@ The {productname} 5.2 release includes an accompanying release of the *Checklist
 
 For information on the checklist plugin, see: link:{rootDir}plugins/checklist.html[Checklist plugin].
 
-[#link-checker-2-1-0]
+[[link-checker-2-1-0]]
 === Link Checker 2.1.0
 
 The {productname} 5.2 release includes an accompanying release of the *Link Checker* premium plugin.
@@ -153,7 +153,7 @@ The {productname} 5.2 release includes an accompanying release of the *Link Chec
 
 For information on the `linkchecker_preprocess` option, see: link:{rootDir}plugins/linkchecker.html#linkchecker_preprocess[Link Checker plugin - `linkchecker_preprocess`].
 
-[#page-embed-1-1-0]
+[[page-embed-1-1-0]]
 === Page Embed 1.1.0
 
 The {productname} 5.2 release includes an accompanying release of the *Page Embed* premium plugin.
@@ -162,21 +162,21 @@ The {productname} 5.2 release includes an accompanying release of the *Page Embe
 
 For information on inlining page embed styles, see: link:{rootDir}plugins/pageembed.html#inlinestylesforpageembeds[Page Embed plugin - Inline styles for page embeds].
 
-[#permanent-pen-1-1-0]
+[[permanent-pen-1-1-0]]
 === Permanent Pen 1.1.0
 
 The {productname} 5.2 release includes an accompanying release of the *Permanent Pen* premium plugin.
 
 *Permanent Pen* 1.1.0 adds support for working with https://www.w3.org/TR/ime-api/#IME[input method editors (IMEs)], which are used for inserting non-ascii characters.
 
-[#powerpaste-5-2-1]
+[[powerpaste-5-2-1]]
 === PowerPaste 5.2.1
 
 The {productname} 5.2 release includes an accompanying release of the *PowerPaste* premium plugin.
 
 *PowerPaste* 5.2.1 provides a fix for PowerPaste not respecting the link:{rootDir}configure/integration-and-setup.html#cache_suffix[`cache_suffix` setting].
 
-[#premium-skins-and-icon-packs-1-2]
+[[premium-skins-and-icon-packs-1-2]]
 === Premium Skins and Icon Packs 1.2
 
 The {productname} 5.2 release includes an accompanying release of the *Premium Skins and Icon Packs* premium plugin.
@@ -188,7 +188,7 @@ The {productname} 5.2 release includes an accompanying release of the *Premium S
 
 For information on using premium skins and icon packs, see: link:{rootDir}enterprise/premium-skins-and-icon-packs.html[Premium Skins and Icon Packs].
 
-[#spellchecker-pro-2-0]
+[[spellchecker-pro-2-0]]
 === Spellchecker Pro 2.0
 
 The {productname} 5.2 release includes an accompanying release of the *Spellchecker Pro* premium plugin.
@@ -203,7 +203,7 @@ The {productname} 5.2 release includes an accompanying release of the *Spellchec
 
 For information on the Spell Checker Pro plugin, see: link:{rootDir}plugins/tinymcespellchecker.html[Spell Checker Pro plugin].
 
-[#minor-changes-for-tinymce-5-2]
+[[minor-changes-for-tinymce-5-2]]
 == Minor changes for TinyMCE 5.2
 
 {productname} 5.2 introduces the following minor changes:
@@ -224,7 +224,7 @@ For information on the Spell Checker Pro plugin, see: link:{rootDir}plugins/tiny
 * Changes media plugin to use `https` protocol for media urls by default.
 * Improves security by changing the editor parser to treat CDATA nodes as bogus HTML comments to match the HTML parsing specification. A new `preserve_cdata` setting has been added to preserve CDATA nodes if required.
 
-[#general-bug-fixes]
+[[general-bug-fixes]]
 == General bug fixes
 
 {productname} 5.2 provides fixes for the following bugs:
@@ -254,14 +254,14 @@ For information on the Spell Checker Pro plugin, see: link:{rootDir}plugins/tiny
 * Fixed keyboard flicker when opening a context menu on mobile.
 * Fixed issue where plus icon svg contained strokes.
 
-[#deprecated-features]
+[[deprecated-features]]
 == Deprecated features
 
 The `toolbar_drawer` option has been deprecated with the release of {productname} 5.2. The `toolbar_drawer` option was renamed to `toolbar_mode`. This change was made to reflect the range of new settings available for this option.
 
 For information on the `toolbar_mode` option, see: link:{rootDir}configure/editor-appearance.html#toolbar_mode[User interface options - `toolbar_mode`].
 
-[#known-issues]
+[[known-issues]]
 == Known issues
 
 This section describes issues that users of {productname} 5.2 may encounter, as well as possible workarounds for these issues.
@@ -273,10 +273,10 @@ This section describes issues that users of {productname} 5.2 may encounter, as 
 * <<microsoftinternetexplorerwillincorrectlyautofocustheeditorwhentinymceisinitialized,Microsoft Internet Explorer will incorrectly auto focus the editor when TinyMCE is initialized>>
 * <<incorrectpositioningofinlinedialogswhenusingstickytoolbarsandthebottomtoolbar,Incorrect positioning of inline dialogs when using sticky toolbars and the bottom toolbar>>
 
-[#translations-missing-for-new-user-interface-options]
+[[translations-missing-for-new-user-interface-options]]
 === Translations missing for new user interface options
 
-[#issue]
+[[issue]]
 ==== Issue
 
 New user interface features do not have translations to other supported languages at this time. This includes text related to:
@@ -284,15 +284,15 @@ New user interface features do not have translations to other supported language
 * <<newoptiontoassistwithmarkingimagesasdecorativeforaccessibilitypurposes,The new accessibility settings>>.
 * <<checklist110,The new checklist menu item>>.
 
-[#workaround]
+[[workaround]]
 ==== Workaround
 
 No known workaround at the time of release.
 
-[#floating-toolbar-disconnects-from-the-toolbar-in-inline-mode]
+[[floating-toolbar-disconnects-from-the-toolbar-in-inline-mode]]
 === Floating toolbar disconnects from the toolbar in inline mode
 
-[#issue-2]
+[[issue-2]]
 ==== Issue
 
 NOTE: This issue will be resolved with the release of {productname} 5.2.1.
@@ -319,30 +319,30 @@ tinymce.init({
 
 The floating component of the toolbar will disconnect from the primary toolbar when additional content is added to the editor, causing the content area to resize (such as adding new lines).
 
-[#workaround-2]
+[[workaround-2]]
 ==== Workaround
 
 Set `toolbar_drawer` or `toolbar_mode` to an alternative mode until the issue is resolved. For a list of alternative toolbar modes, see: link:{rootDir}configure/editor-appearance.html#toolbar_mode[User interface options - `toolbar_mode`].
 
-[#microsoft-internet-explorer-will-incorrectly-auto-focus-the-editor-when-tinymce-is-initialized]
+[[microsoft-internet-explorer-will-incorrectly-auto-focus-the-editor-when-tinymce-is-initialized]]
 === Microsoft Internet Explorer will incorrectly auto focus the editor when TinyMCE is initialized
 
-[#issue-2]
+[[issue-2]]
 ==== Issue
 
 NOTE: This issue will be resolved with the release of {productname} 5.2.1.
 
 When a webpage containing {productname} is loaded on Microsoft Internet Explorer, the web browser focus will automatically move to the editor when the editor is loaded.
 
-[#workaround-2]
+[[workaround-2]]
 ==== Workaround
 
 No known workaround at the time of release.
 
-[#incorrect-positioning-of-inline-dialogs-when-using-sticky-toolbars-and-the-bottom-toolbar]
+[[incorrect-positioning-of-inline-dialogs-when-using-sticky-toolbars-and-the-bottom-toolbar]]
 === Incorrect positioning of inline dialogs when using sticky toolbars and the bottom toolbar
 
-[#issue-2]
+[[issue-2]]
 ==== Issue
 
 Inline dialogs, such as the _Search and Replace dialog_ and the _Accessibility Checker dialog_, will be positioned incorrectly when sticky toolbar and the bottom toolbar are used together. For example:
@@ -357,7 +357,7 @@ tinymce.init({
 
 Custom inline dialogs are also affected.
 
-[#workaround-2]
+[[workaround-2]]
 ==== Workaround
 
 To avoid this issue, either:

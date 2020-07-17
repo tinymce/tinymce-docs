@@ -6,17 +6,17 @@ include::{rootDir}_attributes.adoc[]
 :keywords: releasenotes newfeatures deleted technologypreview bugfixes knownissues
 :title_nav: TinyMCE 5.0.3
 
-[#overview]
+[[overview]]
 == Overview
 
 The Release Notes provide high-level coverage of the improvements and additions that have been implemented in TinyMCE 5.0.3 and document known problems in this release, as well as notable bug fixes, deprecated functionality, and other details.
 
 TinyMCE 5.0.3 release adds improvements to the TinyMCE editor to improve the overall user experience.
 
-[#new-features]
+[[new-features]]
 == New features
 
-[#case-change]
+[[case-change]]
 === Case Change
 
 TinyMCE 5.0.3 introduces the *Case Change* plugin that allows changing the case of text in block selection to uppercase, lowercase, or title case.
@@ -35,12 +35,12 @@ For more information on *Case Change* refer to the full link:{rootDir}plugins/ca
 
 There is also a demo provided to explore the *Case Change* capabilities link:{rootDir}demo/casechange.html[here].
 
-[#tinymce-for-swing-integration]
+[[tinymce-for-swing-integration]]
 === TinyMCE for Swing integration
 
 Users can easily configure the TinyMCE editor in Swing through the *TinyMCE for Swing* integration. TinyMCE for Swing is an integration of the TinyMCE web-based rich text editor into the Java Swing UI toolkit. A Java API is provided, allowing a developer to configure, instantiate and interact with TinyMCE as a Swing component.
 
-[#buy-tinymce-for-swing-integration]
+[[buy-tinymce-for-swing-integration]]
 ==== Buy TinyMCE for Swing integration
 
 To start using TinyMCE for Swing as your new rich text editor, the first step is to obtain a copy of the *Integration*.
@@ -51,7 +51,7 @@ For more information on *TinyMCE for Swing* refer to the full link:{rootDir}inte
 
 Refer to this https://github.com/tinymce/tinymce-swing-codesamples[GitHub repo] for examples on how to use TinyMCE for Swing.
 
-[#updates-and-enhancements]
+[[updates-and-enhancements]]
 == Updates and enhancements
 
 The new TinyMCE 5.0.3 editor comes with significant changes to the previous versions. Improved solutions have been introduced for unnecessary and obsolete configuration options. A comprehensive list of the updates and fixed issues is available in the link:{rootDir}changelog.html#version503march192019[Changelog].

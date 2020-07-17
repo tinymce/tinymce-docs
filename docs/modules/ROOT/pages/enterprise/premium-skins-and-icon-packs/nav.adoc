@@ -9,7 +9,7 @@ include::{rootDir}_attributes.adoc[]
 
 The Premium Skins and Icon Packs lets you quickly give {productname} a new look. Just choose one of our pre-made skins and icon packs.
 
-[#how-to-use-a-premium-skin]
+[[how-to-use-a-premium-skin]]
 === How to use a premium skin
 
 Use the link:{rootDir}configure/editor-appearance.html#skin[skin] option, in combination with the link:{rootDir}configure/content-appearance.html#content_css[content_css] option and the values listed below.
@@ -44,7 +44,7 @@ tinymce.init({
 });
 `
 
-[#how-to-use-an-icon-pack]
+[[how-to-use-an-icon-pack]]
 === How to use an icon pack
 
 Use the link:{rootDir}configure/editor-appearance.html#icons[icons] option with any of the values listed below.
@@ -68,7 +68,7 @@ tinymce.init({
 
 For information on using the `icons` option, see: link:{rootDir}configure/editor-appearance.html#icons[User interface options - `icons`].
 
-[#icon-pack-compatibility-matrix]
+[[icon-pack-compatibility-matrix]]
 ==== Icon pack compatibility matrix
 
 Due to different toolbar button sizes, some icon packs fit better with some skins. Use the below matrix as a guide.
@@ -107,7 +107,7 @@ Due to different toolbar button sizes, some icon packs fit better with some skin
 | jam, small
 |===
 
-[#examples]
+[[examples]]
 === Examples
 
 Below are some recommended combinations of skins and icon packs:

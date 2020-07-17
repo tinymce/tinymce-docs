@@ -8,7 +8,7 @@ include::{rootDir}_attributes.adoc[]
 :keywords: example demo custom wysiwyg full-power full-featured plugins non-premium
 :title_nav: Full featured
 
-[#full-featured-including-premium-plugins]
+[[full-featured-including-premium-plugins]]
 == Full Featured: Including Premium Plugins
 
 This example includes most of the available {productname} plugins, including plugins available on {cloudname} premium subscriptions. Please note, it includes link:{plugindirectory}[premium plugins].
@@ -25,7 +25,7 @@ The following plugins are excluded from this example:
 * link:{rootDir}plugins/spellchecker[Spellchecker] -- link:{rootDir}plugins/tinymcespellchecker[*Spell Checker Pro*] included instead.
 * link:{rootDir}plugins/tabfocus[Tab Focus] -- Changes the behavior of the TAB-key within the editor.
 
-[#full-featured-non-premium-plugins]
+[[full-featured-non-premium-plugins]]
 == Full Featured: Non-Premium Plugins
 
 This example includes only non-premium plugins. These plugins are also used in the <<fullfeaturedincludingpremiumplugins,Full Featured: Including Premium Plugins Demo above>>.

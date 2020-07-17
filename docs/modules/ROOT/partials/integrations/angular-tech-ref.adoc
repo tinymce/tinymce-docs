@@ -1,4 +1,4 @@
-[#tinymce-angular-technical-reference]
+[[tinymce-angular-technical-reference]]
 == TinyMCE Angular technical reference
 
 *Covered in this section:*
@@ -21,7 +21,7 @@
 * <<usingwithreactiveforms,Using with reactive forms>>
 * <<eventbinding,Event binding>>
 
-[#installing-the-tinymce-angular-integration-using-npm]
+[[installing-the-tinymce-angular-integration-using-npm]]
 === Installing the TinyMCE Angular integration using NPM
 
 To install the `tinymce-angular` package and save it to your `package.json`.
@@ -32,7 +32,7 @@ $ npm install --save @tinymce/tinymce-angular
 
 This package is for Angular 5+. For Angular 4, use `@tinymce/tinymce-angular-legacy`
 
-[#using-the-tinymce-angular-integration]
+[[using-the-tinymce-angular-integration]]
 === Using the TinyMCE Angular integration
 
 . Import the `EditorModule` from the npm package using:
@@ -64,7 +64,7 @@ This package is for Angular 5+. For Angular 4, use `@tinymce/tinymce-angular-leg
  <editor apiKey="test" [init]="{plugins: 'link'}"></editor>
 `
 
-[#configuring-the-editor]
+[[configuring-the-editor]]
 === Configuring the editor
 
 The editor accepts the following properties:
@@ -86,7 +86,7 @@ The editor accepts the following properties:
 
 None of the configuration properties are *required* for `tinymce-angular` to work. Specify a {cloudname} API key using `apiKey` to remove the `+This domain is not registered...+` warning message.
 
-[#]
+[[]]
 ==== `apiKey`
 
 {cloudname} API key. Required for deployments using the {cloudname} to provide the {productname} editor.
@@ -97,14 +97,14 @@ To register for a {cloudname} API key, visit the link:{accountsignup}[sign-up pa
 
 *Type:* String
 
-[#example]
+[[example]]
 ===== Example: `apiKey`
 
 ```xml+++<editor apiKey="your-api-key">++++++</editor>+++
 
 ```
 
-[#-2]
+[[-2]]
 ==== `cloudChannel`
 
 *Default value:* `{productmajorversion}`
@@ -124,7 +124,7 @@ Such as:
 ```
 For information {productname} development channels, see: link:{rootDir}cloud-deployment-guide/editor-plugin-version.html#devtestingandstablereleases[Specifying the {productname} editor version deployed from Cloud - dev, testing, and stable releases].
 
-[#-2]
+[[-2]]
 ==== `disabled`
 
 The `disabled` property can dynamically switch the editor between a "disabled" (read-only) mode (`true`) and the standard editable mode (`false`).
@@ -133,7 +133,7 @@ The `disabled` property can dynamically switch the editor between a "disabled" (
 
 *Possible values:*  `true`, `false`
 
-[#example-2]
+[[example-2]]
 ===== Example: `disabled`
 
 `html
@@ -142,7 +142,7 @@ The `disabled` property can dynamically switch the editor between a "disabled" (
 ></editor>
 `
 
-[#-2]
+[[-2]]
 ==== `id`
 
 An id for the editor. Used for retrieving the editor instance using the `tinymce.get('ID')` method. Defaults to an automatically generated https://tools.ietf.org/html/rfc4122[UUID].
@@ -151,14 +151,14 @@ An id for the editor. Used for retrieving the editor instance using the `tinymce
 
 *Type:* String
 
-[#example-2]
+[[example-2]]
 ===== Example: `id`
 
 ```xml+++<editor id="uuid">++++++</editor>+++
 
 ```
 
-[#-2]
+[[-2]]
 ==== `init`
 
 Object sent to the `tinymce.init` method used to initialize the editor.
@@ -169,7 +169,7 @@ For information on the {productname} selector (`tinymce.init`), see: link:{rootD
 
 *Type:* Object
 
-[#example-2]
+[[example-2]]
 ===== Example: `init`
 
 `html
@@ -183,7 +183,7 @@ For information on the {productname} selector (`tinymce.init`), see: link:{rootD
 ></editor>
 `
 
-[#-2]
+[[-2]]
 ==== `initialValue`
 
 Initial content of the editor when the editor is initialized.
@@ -192,14 +192,14 @@ Initial content of the editor when the editor is initialized.
 
 *Type:* String
 
-[#example-2]
+[[example-2]]
 ===== Example: `initialValue`
 
 ```xml+++<editor initialValue="Once upon a time...">++++++</editor>+++
 
 ```
 
-[#-2]
+[[-2]]
 ==== `inline`
 
 Used to set the editor to inline mode. Using `<editor [inline]="true"></editor>` is the same as setting `{inline: true}` in the {productname} selector (`tinymce.init`).
@@ -210,7 +210,7 @@ For information on inline mode, see: link:{rootDir}configure/editor-appearance.h
 
 *Possible values:*  `true`, `false`
 
-[#example-2]
+[[example-2]]
 ===== Example: `inline`
 
 `html
@@ -219,7 +219,7 @@ For information on inline mode, see: link:{rootDir}configure/editor-appearance.h
 ></editor>
 `
 
-[#-2]
+[[-2]]
 ==== `plugins`
 
 Used to include plugins for the editor. Using `<editor plugins="lists code"></editor>` is the same as setting `{plugins: 'lists code'}` in the {productname} selector (`tinymce.init`).
@@ -228,14 +228,14 @@ For information on adding plugins to {productname}, see: link:{rootDir}plugins.h
 
 *Type:* String or Array
 
-[#example-2]
+[[example-2]]
 ===== Example: `plugins`
 
 ```xml+++<editor plugins="lists code">++++++</editor>+++
 
 ```
 
-[#-2]
+[[-2]]
 ==== `outputFormat`
 
 Used to specify the format of the content emitted by the tinymce-angular component when used in conjunction with forms or plain data bindings.
@@ -246,14 +246,14 @@ Used to specify the format of the content emitted by the tinymce-angular compone
 
 *Possible values:* `html`, `text`
 
-[#example-2]
+[[example-2]]
 ===== Example: `outputFormat`
 
 ```xml+++<editor outputFormat="text">++++++</editor>+++
 
 ```
 
-[#-2]
+[[-2]]
 ==== `tagName`
 
 Only valid when <<inline,`<editor [inline]="true"></editor>`>>. Used to define the HTML element for the editor in inline mode.
@@ -262,7 +262,7 @@ Only valid when <<inline,`<editor [inline]="true"></editor>`>>. Used to define t
 
 *Type:* String
 
-[#example-2]
+[[example-2]]
 ===== Example: `tagName`
 
 `html
@@ -272,7 +272,7 @@ Only valid when <<inline,`<editor [inline]="true"></editor>`>>. Used to define t
 ></editor>
 `
 
-[#-2]
+[[-2]]
 ==== `toolbar`
 
 Used to set the toolbar for the editor. Using `<editor toolbar="bold italic"></editor>` is the same as setting `{toolbar: 'bold italic'}` in the {productname} selector (`tinymce.init`).
@@ -283,14 +283,14 @@ For information setting the toolbar for {productname}, see: link:{rootDir}config
 
 *Type:* String
 
-[#example-2]
+[[example-2]]
 ===== Example: `toolbar`
 
 ```xml+++<editor plugins="code" toolbar="bold italic underline code">++++++</editor>+++
 
 ```
 
-[#using-the-directive]
+[[using-the-directive]]
 === Using the `ngModel` directive
 
 The `ngModel` directive can be added to use the editor in a form:
@@ -301,7 +301,7 @@ The `ngModel` directive can be added to use the editor in a form:
 
 For information on using `NgModel`, see: https://angular.io/api/forms/NgModel[Angular documentation - NgModel].
 
-[#using-with-reactive-forms]
+[[using-with-reactive-forms]]
 === Using with reactive forms
 
 To use {productname} Angular component with reactive forms:
@@ -314,7 +314,7 @@ To use {productname} Angular component with reactive forms:
 
 For information on using reactive forms, see: https://angular.io/guide/reactive-forms[Angular documentation - Reactive Forms].
 
-[#event-binding]
+[[event-binding]]
 === Event binding
 
 Functions can be bound to editor events, such as:

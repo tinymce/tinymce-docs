@@ -9,12 +9,12 @@ include::{rootDir}_attributes.adoc[]
 
 This chapter is a reference list of all {productname} dialog components.
 
-[#body-components]
+[[body-components]]
 == Body components
 
 The body of a dialog must be either a `panel` (a single panel) or a `tabpanel` (a collection of panels). Each panel can contain panel components, which are either <<layoutcomponents,layout components>> or <<basiccomponents,basic components>> such as inputs, buttons and text.
 
-[#panel]
+[[panel]]
 === panel
 
 The basic dialog type is a *panel* dialog. A panel is a container for <<panelcomponents,interactive panel components>>. A panel type dialog only has one panel.
@@ -26,7 +26,7 @@ The basic dialog type is a *panel* dialog. A panel is a container for <<panelcom
 }
 +`
 
-[#tabpanel]
+[[tabpanel]]
 === tabpanel
 
 A *tabpanel* dialog contains multiple panels, and a tab navigation menu on the left-hand side of the dialog to allow for switching between panels. Each panel can contain different <<panelcomponents,panel components>>, allowing for complex dialogs.
@@ -68,19 +68,19 @@ NOTE: Panel components in different tabs with the same `name` will use the same 
 }
 +`
 
-[#dialog-instance-api-methods]
+[[dialog-instance-api-methods]]
 ==== Dialog instance API methods
 
 The link:{rootDir}ui-components/dialog.html#dialoginstanceapi[dialog instance API] contains the `showTab("tabName")` method, which allows for programmatic tab switching using the registered `name` of a tab.
 
-[#dialog-configuration-event-callbacks]
+[[dialog-configuration-event-callbacks]]
 ==== Dialog configuration event callbacks
 
 A dialog can be configured with an link:{rootDir}ui-components/dialog.html#configurationoptions[`onTabChange`] callback. This function is called when the user changes tabs. It is passed the dialog instance API and a `details` object which contains `newTabName` and `oldTabName`.
 
 As an example of when this is useful, the `charmap` and `emoticons` plugin dialogs use `newTabName` to change search results to match the character or emoticon category represented by the current tab.
 
-[#example]
+[[example]]
 ==== Example
 
 Below is a trivial example of how to use `onTabChange` and `showTab()`.
@@ -101,19 +101,19 @@ const dialogConfig = {
  // switch back to the old tab
  dialogApi.showTab(details.oldTabName);   } }; ```
 
-[#panel-components]
+[[panel-components]]
 == Panel components
 
 Panels can contain <<layoutcomponents,layout components>> and <<basiccomponents,basic components>>, which include components for displaying information and user interaction and input.
 
 NOTE: Panel components in different tabs with the same `name` will use the same value in the link:{rootDir}ui-components/dialog.html#dialogdataandstate[dialog's data object]. This allows for transference of data between tabs. For example, the `charmap` and `emoticons` plugin dialogs contain a search input field in each tab. By assigning the same name to all the search fields, user data entered on one tab will be transferred when the user changes tabs.
 
-[#layout-components]
+[[layout-components]]
 === Layout components
 
 Some panel components can be used to apply a layout to an array of other panel components.
 
-[#bar]
+[[bar]]
 ==== bar
 
 A *bar* is a layout component that creates a single row of items in the dialog body.
@@ -125,7 +125,7 @@ A *bar* is a layout component that creates a single row of items in the dialog b
 }
 +`
 
-[#collection]
+[[collection]]
 ==== collection
 
 A *collection* is a layout component that creates a panel containing a collection of small buttons in the dialog body. For example, this component is used in the dialogs for the link:{rootDir}plugins/charmap[`charmap`] and link:{rootDir}plugins/emoticons[`emoticons`] plugins.
@@ -151,7 +151,7 @@ To populate the collection with collection items, specify an array of items in t
 ]
 +`
 
-[#grid]
+[[grid]]
 ==== grid
 
 A *grid* is a layout component that creates columns in the dialog body.
@@ -164,7 +164,7 @@ A *grid* is a layout component that creates columns in the dialog body.
 }
 +`
 
-[#label]
+[[label]]
 ==== label
 
 A *label* is a layout component that wraps other components and adds a label above the group of components.
@@ -177,12 +177,12 @@ A *label* is a layout component that wraps other components and adds a label abo
 }
 +`
 
-[#basic-components]
+[[basic-components]]
 === Basic components
 
 These panel components are used either to display information or to allow for user interaction and input.
 
-[#alertbanner]
+[[alertbanner]]
 ==== alertbanner
 
 An *alertbanner* is a coloured banner designed to notify users of important information. There are four "levels" of alert banner which each display in a different color. The levels are:
@@ -233,7 +233,7 @@ Clicking the icon in the alert banner will fire the `onAction` function in the d
 }
 +`
 
-[#button]
+[[button]]
 ==== button
 
 A *button* is a clickable component that can contain text or an icon. There are two types of buttons (primary and secondary buttons), though the only difference is that they are styled differently. Primary buttons are intended to stand out. The color will depend on the chosen link:{rootDir}general-configuration-guide/customize-ui.html#skins[skin].
@@ -289,7 +289,7 @@ NOTE: Buttons do not support mixing icons and text at the moment.
 }
 `
 
-[#checkbox]
+[[checkbox]]
 ==== checkbox
 
 A *checkbox* is a composite component with a checkbox and a label, and with `on` and `off` states.
@@ -305,7 +305,7 @@ A *checkbox* is a composite component with a checkbox and a label, and with `on`
 }
 `
 
-[#colorinput]
+[[colorinput]]
 ==== colorinput
 
 A *colorinput* is a specialized composite component with a label, an input field and button which opens a color swatch popup on click. Users can either type a hex color code into the input, or use the color swatch to choose a color. The color swatch button will change color to reflect the selected color.
@@ -318,7 +318,7 @@ A *colorinput* is a specialized composite component with a label, an input field
 }
 `
 
-[#colorpicker]
+[[colorpicker]]
 ==== colorpicker
 
 A *colorpicker* component is an intuitive color picker tool similar to that found in modern image editors. It allows for a color to be chosen using a RGB colour slider, or for a color to be entered as either an RGB or hex color value.
@@ -330,7 +330,7 @@ A *colorpicker* component is an intuitive color picker tool similar to that foun
 }
 `
 
-[#dropzone]
+[[dropzone]]
 ==== dropzone
 
 A *dropzone* is a composite component that catches drag and drops items or lets the user browse that can send a list of files for processing and receive the result. A text label is also rendered above the dropzone.
@@ -345,7 +345,7 @@ A *dropzone* is a composite component that catches drag and drops items or lets 
 }
 `
 
-[#htmlpanel]
+[[htmlpanel]]
 ==== htmlpanel
 
 A *htmlpanel* component takes any valid HTML and renders it in the dialog.
@@ -359,7 +359,7 @@ NOTE: Despite the name a htmlpanel can not be used as a body component like `pan
 }
 `
 
-[#iframe]
+[[iframe]]
 ==== iframe
 
 An *iframe* component takes a HTML document as a string and displays it in the dialog within an iframe.
@@ -411,7 +411,7 @@ dialogApi.setData({
 })
 `
 
-[#input]
+[[input]]
 ==== input
 
 An *input* is a composite component that renders a label and a single line text input field.
@@ -464,7 +464,7 @@ An *input* is a composite component that renders a label and a single line text 
 }
 `
 
-[#inputmode]
+[[inputmode]]
 ===== inputMode
 
 {requires_5_1v}
@@ -475,7 +475,7 @@ Use `inputMode` to set the type of onscreen keyboard provided on mobile devices 
 
 For a list of valid input modes, see: https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/inputmode[MDN Web Docs - inputmode].
 
-[#selectbox]
+[[selectbox]]
 ==== selectbox
 
 A *selectbox* is a composite component with a label and a dropdown list of options for users to select from.
@@ -496,7 +496,7 @@ A *selectbox* is a composite component with a label and a dropdown list of optio
 }
 `
 
-[#sizeinput]
+[[sizeinput]]
 ==== sizeinput
 
 A *sizeinput* is a specialized composite component with two input fields labelled "Width" and "Height" and a "ratio lock" button. It should be used for setting dimensions on content elements.
@@ -512,7 +512,7 @@ A *sizeinput* is a specialized composite component with two input fields labelle
 }
 `
 
-[#table]
+[[table]]
 ==== table
 
 A *table* is a layout component that renders a simple table.
@@ -528,7 +528,7 @@ A *table* is a layout component that renders a simple table.
 }
 `
 
-[#textarea]
+[[textarea]]
 ==== textarea
 
 A *textarea* is a multiline text field.
@@ -546,7 +546,7 @@ A *textarea* is a multiline text field.
 }
 `
 
-[#urlinput]
+[[urlinput]]
 ==== urlinput
 
 A *urlinput* is a specialized composite component for URL input or file upload. It has a label, a text input field and an optional filepicker button. The urlinput component also includes a *typeahead* dropdown that will display previously-entered URLs that match the current input text and update as the user types.
@@ -584,7 +584,7 @@ NOTE: The filepicker button will only appear if link:{rootDir}configure/file-ima
 | default: `false` - Whether the component should initially be disabled.
 |===
 
-[#urlinput-examples]
+[[urlinput-examples]]
 ===== urlinput examples
 
 *urlinput for links*

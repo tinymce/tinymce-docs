@@ -7,13 +7,13 @@ include::{rootDir}_attributes.adoc[]
 :keywords: integration integrate jquery javascript
 :title_nav: jQuery
 
-[#tinymce-jquery-integration-quick-start-guide]
+[[tinymce-jquery-integration-quick-start-guide]]
 == TinyMCE jQuery integration quick start guide
 
 The https://github.com/tinymce/tinymce/blob/master/modules/tinymce/src/core/main/js/JqueryIntegration.js[Official {productname} jQuery component] integrates TinyMCE into jQuery projects.
 This procedure creates a basic jQuery integration containing a {productname} editor based on our link:{rootDir}demo/basic-example.html[Basic example].
 
-[#procedure]
+[[procedure]]
 === Procedure
 
 . In a HTML file, add a source script for source jQuery.
@@ -64,7 +64,7 @@ For information on self-hosting {productname}, see: link:{rootDir}general-config
  </script>
 ----
 
-[#example-jquery-integration]
+[[example-jquery-integration]]
 === Example jQuery integration
 
 To load a TinyMCE editor similar to the link:{rootDir}demo/basic-example.html[Basic example], add the following code to an empty HTML file.
@@ -100,7 +100,7 @@ To load a TinyMCE editor similar to the link:{rootDir}demo/basic-example.html[Ba
 </html>
 ----
 
-[#tinymce-in-a-jquery-ui-dialog]
+[[tinymce-in-a-jquery-ui-dialog]]
 == TinyMCE in a jQuery UI Dialog
 
 To render {productname} instances inside jQuery UI dialogs, add the following code:

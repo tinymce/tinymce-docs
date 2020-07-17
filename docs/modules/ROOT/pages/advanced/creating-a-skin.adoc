@@ -12,7 +12,7 @@ This section provides information on how to manually create a new skin to custom
 
 The {productname} Skin Tool provides an interactive method for designing and creating a skin for {productname}, visit: http://skin.tiny.cloud/[\http://skin.tiny.cloud/].
 
-[#prerequisites]
+[[prerequisites]]
 == Prerequisites
 
 This guide assumes:
@@ -21,7 +21,7 @@ This guide assumes:
 * https://nodejs.org/en/[NodeJS], https://yarnpkg.com/en/[Yarn] and https://gulpjs.com[Gulp] are already installed.
 * Basic understanding of http://lesscss.org[Less], the CSS preprocessor we use to build the skins. More specifically, http://lesscss.org/features/#variables-feature[read the section about variables].
 
-[#preparation]
+[[preparation]]
 == Preparation
 
 The CSS that goes with a theme is called a skin. The default skin for {productname} {productmajorversion} is named Oxide and is written in http://lesscss.org[Less], a popular CSS preprocessor. With Oxide we introduced a concept we call the *Style API*. This API consists of around 300 variables which you use to modify the appearance of {productname}. You never touch the underlying CSS. The benefit of this approach is that improvements we make to the CSS and HTML won't break your custom skin. This also means that if things don't work as expected, we can provide support and bug fixes, something that was virtually impossible before.
@@ -55,12 +55,12 @@ If you just need to build the skins without launching a web server, run:
 yarn oxide-build
 `
 
-[#making-or-editing-a-skin]
+[[making-or-editing-a-skin]]
 == Making or editing a skin
 
 Make sure you have performed the preparation steps above.
 
-[#overview]
+[[overview]]
 === Overview
 
 Navigate to `modules/oxide/src/less/skins/`. There are two folders in this location:
@@ -73,7 +73,7 @@ The general workflow is that you look inside the less files within the theme fol
 
 NOTE: The skin *only* changes the visual presentation of the UI and *not* the placement of elements. Placement of elements is done by the {productname} UI framework. This framework makes it possible to do complex UI layouts on all browsers without touching any CSS when plugins are created.
 
-[#creating-a-skin]
+[[creating-a-skin]]
 === Creating a skin
 
 . Begin by duplicating the `default` folder located in `modules/oxide/src/less/skins/ui/` and rename it to the name of your skin.
@@ -108,7 +108,7 @@ This is how you skin {productname}: copy variables from the files in the theme f
 
 TIP: You can change the {productname} config in `modules/oxide/src/demo/index.html` to suit your particular use case.
 
-[#creating-a-content-css-file]
+[[creating-a-content-css-file]]
 == Creating a content CSS file
 
 To update the appearance of the content within the editor, such as headings, quotes, lists, etc... you create a content css. These are located in `modules/oxide/src/less/skin/content/`
@@ -117,7 +117,7 @@ To update the appearance of the content within the editor, such as headings, quo
 . Start the development server using the terminal command yarn oxide-start. If you already have the server running, you need to restart it to make it recognize your new skin using ctrl-c and then start it again.
 . Add the relevant element selectors for the desired use case such as `h1` to `h6`, `a`, `blockquote`, `code`, `table`, etc...
 
-[#moving-the-skin-into-tinymce]
+[[moving-the-skin-into-tinymce]]
 == Moving the skin into TinyMCE
 
 . Copy the skin and/or content CSS from `modules/oxide/build/skins/` to the corresponding folders in your production {productname} folder.
@@ -125,7 +125,7 @@ To update the appearance of the content within the editor, such as headings, quo
 
 For more information on how to specify the location of the skin file, see link:{rootDir}configure/editor-appearance.html#skin_url[this] section.
 
-[#modifying-the-icons]
+[[modifying-the-icons]]
 == Modifying the icons
 
 For information on adding custom icons, see: link:{rootDir}advanced/creating-an-icon-pack.html[Create an icon pack for {productname}].

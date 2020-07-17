@@ -10,7 +10,7 @@ include::{rootDir}_attributes.adoc[]
 
 These settings enable developers to control content styling features that are available to users such as font formats, font sizes, and text indentation. This section focuses on 1 of 32 content filtering options available in {productname}. There are additional configuration options concerning the complex parsing of text. Those options are beyond the scope of the General Configuration Guide. Refer to the link:{rootDir}configure/content-filtering.html[Content filtering options] section to learn more.
 
-[#roll-your-style-formats]
+[[roll-your-style-formats]]
 == Roll your style formats
 
 This section is about the link:{rootDir}configure/content-formatting.html#formats[formats] configuration option. This options lets developers override {productname} defaults and adds custom *formats* to the editor.
@@ -19,12 +19,12 @@ This section is about the link:{rootDir}configure/content-formatting.html#format
 
 Check out the link:{rootDir}demo/format-custom.html[custom formats example] for a demonstration of this option.
 
-[#style-merging]
+[[style-merging]]
 === Style merging
 
 Similar elements and styles are merged by default to reduce the output HTML size. For example, instead of assigning one `span` element for font size and another `span` element for font face, {productname} merges the two styles into a sing `span` element.
 
-[#built-in-formats]
+[[built-in-formats]]
 === Built-in formats
 
 {productname} contains built-in formats that can be overridden. More information about these default controls is in the link:../basic-setup[Basic setup] part of this guide.
@@ -55,7 +55,7 @@ Similar elements and styles are merged by default to reduce the output HTML size
 
 Some built-in formats `fontsize`, `fontname`, `forecolor`, `hilitecolor` use a variable in their definition named `%value`. This gets replaced with the user selected item such as a `color` value. Check the variable substitution section below for details.
 
-[#format-parameters]
+[[format-parameters]]
 === Format parameters
 
 The table of format parameters below explores some more advanced topics.
@@ -97,7 +97,7 @@ The table of format parameters below explores some more advanced topics.
 | Enables control for removing the child elements of the matching format.
 |===
 
-[#example-of-usage-of-the-formats-option]
+[[example-of-usage-of-the-formats-option]]
 === Example of usage of the formats option
 
 This example overrides some of the built-in formats and tells {productname} to apply classes instead of inline styles. It includes a custom format that produces `h1` elements with a title attribute and a `red` `css` style.
@@ -122,7 +122,7 @@ tinymce.init({
 });
 `
 
-[#power-user-bonus]
+[[power-user-bonus]]
 === Power user bonus
 
 The `schema` option enables the switch between the HTML4 and HTML5 schema. This controls the valid elements and attributes that can be placed in the HTML. This value can either be the default `html5`, `html4`, or `html5-strict`.

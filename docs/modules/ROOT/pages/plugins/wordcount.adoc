@@ -11,7 +11,7 @@ The Word Count plugin adds the functionality for counting words to the {productn
 
 *Type:* `String`
 
-[#example]
+[[example]]
 ===== Example
 
 `js
@@ -22,7 +22,7 @@ tinymce.init({
 });
 `
 
-[#api]
+[[api]]
 == API
 
 The Word Count plugin exposes an API for retrieving the word and character count of either the whole document or the current editor selection. Following is an example of how to retrieve each property.

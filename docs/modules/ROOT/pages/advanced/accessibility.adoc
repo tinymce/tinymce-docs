@@ -10,7 +10,7 @@ include::{rootDir}_attributes.adoc[]
 
 {productname} is compatible with screen readers such as JAWS and NVDA as it follows the WAI-ARIA specification. Use http://www.nvaccess.org/[NVDA] together with https://www.mozilla.org/en-US/firefox/products/[Firefox] for the best Accessibility experience.
 
-[#keyboard-shortcuts]
+[[keyboard-shortcuts]]
 == Keyboard shortcuts
 
 The `Alt+key` shortcut assumes that you are currently in the content area of the editor.
@@ -34,7 +34,7 @@ The `Alt+key` shortcut assumes that you are currently in the content area of the
 | Navigate left/right through menu/toolbar
 |===
 
-[#how-to-work-with-the-editor]
+[[how-to-work-with-the-editor]]
 == How to work with the editor
 
 The content area has initial focus when you navigate into an editor instance. `Up Arrow` and `Down Arrow` gives you paragraphs,

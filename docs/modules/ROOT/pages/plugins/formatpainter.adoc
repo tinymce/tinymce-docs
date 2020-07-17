@@ -12,7 +12,7 @@ include::{rootDir}_attributes.adoc[]
 
 The Format Painter plugin allows a user to copy and paste formatting from one location to another, such as font style and size. The format painter is capable of working with a wide variety of formats such as inline and block formats and styles such as table styles.
 
-[#configuring-the-format-painter-toolbar-button]
+[[configuring-the-format-painter-toolbar-button]]
 === Configuring the Format Painter toolbar button
 
 Use the following script to configure the Format Painter toolbar button:
@@ -30,7 +30,7 @@ tinymce.init({
 *Result*:
 The image:{imagesDir}fp-disabled.png[**Format Painter**](*Format Painter*) button appears in the toolbar menu.
 
-[#using-format-painter]
+[[using-format-painter]]
 == Using Format Painter
 
 The format painter is accessed using either keyboard shortcuts or a toolbar button.
@@ -57,12 +57,12 @@ The format painter operates in two modes, one for retrieval and one for applicat
 The format painter retains the formatting after application making it possible to apply the same formatting multiple times by using the `Ctrl+Alt+V` keyboard shortcut.
 ====
 
-[#options]
+[[options]]
 == Options
 
 The format painter acts upon all link:{rootDir}configure/content-formatting.html#formats[`formats`] registered in the editor. In addition to any standard formatting, it will treat *lists* as a block format whenever the link:{rootDir}plugins/lists.html[`lists plugin`] is made available.
 
-[#]
+[[]]
 === `formats`
 
 The format painter plugin will register many formats upon initialization. To override these formats, use the link:{rootDir}configure/content-formatting.html#exampleofusageoftheformatsoption[`formats`] option.
@@ -96,7 +96,7 @@ tinymce.init({
 });
 `
 
-[#-2]
+[[-2]]
 === `formatpainter_blacklisted_formats`
 
 This option makes it possible to block the unwanted formats in the format painter.
@@ -117,7 +117,7 @@ tinymce.init({
 `
 Check out the link:{rootDir}demo/formatpainter.html[Format Painter demo] to try out this new feature.
 
-[#commands]
+[[commands]]
 == Commands
 
 The Format Painter plugin provides the following JavaScript commands.

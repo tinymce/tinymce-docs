@@ -6,39 +6,39 @@ include::{rootDir}_attributes.adoc[]
 :keywords: releasenotes newfeatures deleted technologypreview bugfixes knownissues
 :title_nav: TinyMCE 5.0.5
 
-[#overview]
+[[overview]]
 == Overview
 
 The Release Notes provide high-level coverage of the improvements and additions that have been implemented in TinyMCE 5.0.5 and document known problems in this release, as well as important bug fixes, deprecated functionality, and other details.
 
 TinyMCE 5.0.5 release adds improvements to the TinyMCE editor to improve the overall user experience.
 
-[#new-features]
+[[new-features]]
 == New features
 
-[#text-color-menu-items]
+[[text-color-menu-items]]
 === Text color menu items
 
 In TinyMCE 5.0.5 the `forecolor` and `backcolor` toolbar buttons can now be used in link:{rootDir}configure/editor-appearance.html#menu[menus]. The new menu items have also been added to the default `Formats` menu.
 
 For more information on `forecolor` and `backcolor`, refer to the link:{rootDir}configure/content-appearance.html#text_color[documentation].
 
-[#right-to-left-styles]
+[[right-to-left-styles]]
 === Right to left styles
 
 When the editor is configured to use a right to left language, such as Arabic, TinyMCE 5.0.5 will now style the UI to display in right to left mode. Additionally when a right to left language is configured, TinyMCE will now set the default directionality of the editor to match the language directionality.
 
 For more information on configuring the editors `language` and `directionality`, refer to the link:{rootDir}configure/localization.html[documentation].
 
-[#updates-and-enhancements]
+[[updates-and-enhancements]]
 == Updates and enhancements
 
-[#tinymce]
+[[tinymce]]
 === TinyMCE
 
 The new TinyMCE 5.0.5 editor comes with significant changes to the previous versions. Improved solutions have been introduced for unnecessary and obsolete configuration options. A comprehensive list of the updates and fixed issues is available in the link:{rootDir}changelog.html#version505may92019[Changelog].
 
-[#tiny-drive]
+[[tiny-drive]]
 === Tiny Drive
 
 *Tiny Drive* 1.2.1 comes with numerous bug fixes to the previous versions. A comprehensive list of the updates and fixed issues is available in the link:{rootDir}tinydrive/changelog.html[Changelog].
@@ -49,7 +49,7 @@ For more information on *Tiny Drive* refer to the full link:{rootDir}tinydrive.h
 
 There is also a demo provided to explore the *Tiny Drive* capabilities link:{rootDir}tinydrive/introduction.html#demo[here].
 
-[#link-checker]
+[[link-checker]]
 === Link Checker
 
 *Link Checker* 2.0.2 comes with numerous bug fixes to the previous versions. A number of improvements have been made for accessibility and an issue has been fixed where the linkchecker context menu items weren't appearing in TinyMCE 5.

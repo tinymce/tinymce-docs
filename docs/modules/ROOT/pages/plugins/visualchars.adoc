@@ -12,7 +12,7 @@ This plugin adds the ability to see invisible characters like `+&nbsp;+` display
 
 *Type:* `String`
 
-[#example]
+[[example]]
 ===== Example
 
 `js
@@ -24,12 +24,12 @@ tinymce.init({
 });
 `
 
-[#options]
+[[options]]
 === Options
 
 This setting affects the execution of the `visualchars` plugin. Characters can be configured to be visible by default using this option.
 
-[#]
+[[]]
 === `visualchars_default_state`
 
 This option enables specifying the default state of the Visual Blocks plugin.
@@ -50,7 +50,7 @@ tinymce.init({
 });
 `
 
-[#commands]
+[[commands]]
 == Commands
 
 The Visual Blocks plugin provides the following JavaScript command.

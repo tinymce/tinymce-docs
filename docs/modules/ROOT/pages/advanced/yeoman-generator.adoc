@@ -10,7 +10,7 @@ include::{rootDir}_attributes.adoc[]
 
 The {productname} Plugin Generator is designed to make it quick and easy to get started creating plugins to extend and enhance your rich-text editing experience.
 
-[#install-the-generator]
+[[install-the-generator]]
 == Install the generator
 
 The plugin generator is built with the project scaffolding tool http://yeoman.io/[Yeoman]. To get started install both `yo` (the yeoman command) and the generator with the following command:
@@ -21,7 +21,7 @@ npm install --global yo generator-tinymce
 
 Wait for the install to finish.
 
-[#run-the-generator]
+[[run-the-generator]]
 == Run the generator
 
 Start the generator with the following command:
@@ -55,7 +55,7 @@ Yeoman installs the needed dependencies, and the project is bootstrapped and rea
 npm start
 `
 
-[#create-distribution-ready-build]
+[[create-distribution-ready-build]]
 == Create distribution ready build
 
 Run the following command as root once you have completed development of the plugin:

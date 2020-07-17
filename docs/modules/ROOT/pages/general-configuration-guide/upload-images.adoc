@@ -21,7 +21,7 @@ NOTE: Execute the `editor.uploadImages()` function _before_ submitting the edito
 
 Review the examples below:
 
-[#using-uploadimages-and-then-posting-a-form]
+[[using-uploadimages-and-then-posting-a-form]]
 ==== Using uploadImages and then posting a form
 
 `js
@@ -30,7 +30,7 @@ tinymce.activeEditor.uploadImages(function(success) {
 });
 `
 
-[#using-uploadimages-with-jquery]
+[[using-uploadimages-with-jquery]]
 ==== Using uploadImages with jQuery
 
 `js
@@ -41,7 +41,7 @@ tinymce.activeEditor.uploadImages(function(success) {
 });
 `
 
-[#image-uploader-requirements]
+[[image-uploader-requirements]]
 == Image Uploader requirements
 
 A server-side upload handler script uploads local images to a remote server. The script must:
@@ -71,7 +71,7 @@ This server-side upload handler script must return a JSON object containing a "l
 { location : '/uploaded/image/path/image.png' }
 `
 
-[#image-upload-options]
+[[image-upload-options]]
 == Image upload options
 
 Set the `images_upload_url` _or_ `images_upload_handler` option for image uploads to function. The other options shown here are optional.
@@ -102,7 +102,7 @@ include::{partialsDir}configuration/images-upload-reuse-filename.adoc[leveloffse
 
 include::{partialsDir}configuration/images-dataimg-filter.adoc[leveloffset=+1]
 
-[#cors-considerations]
+[[cors-considerations]]
 == CORS considerations
 
 Configure http://en.wikipedia.org/wiki/Cross-origin_resource_sharing[Cross-origin resource sharing (CORS)] to upload image data to a separate domain and to comply with JavaScript "same origin" restrictions.
@@ -119,7 +119,7 @@ All supported browsers print messages to the JavaScript console if there is a CO
 
 The link:{rootDir}advanced/php-upload-handler.html[PHP Upload Handler Script] provided here configures CORS in the `$accepted_origins` variable. Configure CORS at the http://www.w3.org/wiki/CORS_Enabled#At_the_Web_Application_level...[web application layer] or the http://www.w3.org/wiki/CORS_Enabled#At_the_HTTP_Server_level...[HTTP server layer].
 
-[#further-reading-on-cors]
+[[further-reading-on-cors]]
 === Further reading on CORS
 
 * http://www.w3.org/wiki/CORS_Enabled[W3C Wiki - CORS Enabled]

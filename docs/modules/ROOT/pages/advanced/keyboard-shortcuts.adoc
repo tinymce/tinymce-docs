@@ -9,7 +9,7 @@ include::{rootDir}_attributes.adoc[]
 :keywords: keyboard shortcuts
 :title_nav: Keyboard shortcuts
 
-[#editor-keyboard-shortcuts]
+[[editor-keyboard-shortcuts]]
 == Editor keyboard shortcuts
 
 This is a list of available keyboard shortcuts within the editor body.
@@ -138,7 +138,7 @@ This is a list of available keyboard shortcuts within the editor body.
 | link:{rootDir}plugins/searchreplace.html[searchreplace]
 |===
 
-[#accessibility-keyboard-shortcuts]
+[[accessibility-keyboard-shortcuts]]
 == Accessibility keyboard shortcuts
 
 This is a list of available keyboard shortcuts within the editor user interface.
@@ -209,7 +209,7 @@ This is a list of available keyboard shortcuts within the editor user interface.
 
 NOTE: Browsers and Screen Readers provide additional shortcuts within the editor context.
 
-[#add-custom-shortcuts-to-tinymce]
+[[add-custom-shortcuts-to-tinymce]]
 == Add custom shortcuts to TinyMCE
 
 IMPORTANT: Adding a custom shortcut with a keyboard combination that conflicts with an existing {productname} or browser shortcut will override the existing shortcut.

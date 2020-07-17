@@ -16,7 +16,7 @@ This section demonstrates how to change {productname}'s user interface to the us
 Language settings can be controlled in these configuration options: link:{rootDir}configure/localization.html#directionality[directionality], link:{rootDir}configure/localization.html#language[language] and  link:{rootDir}configure/localization.html#language_url[language_url]. There is also a link:{rootDir}plugins/directionality.html[Directionality plugin] that adds a toolbar button to control `ltr-rtl` behavior.
 ====
 
-[#step-1]
+[[step-1]]
 === Step 1
 
 Go to the link:{gettiny}/language-packages/[language download page] to review a list of language packs available for {productname}.
@@ -25,24 +25,24 @@ Click the download link on the far right of the table for a single language. Che
 
 IMPORTANT: The {productname} community translation project provides the language packs on our language download page.
 
-[#step-2]
+[[step-2]]
 === Step 2
 
 Unpack the language `js` file(s) into the `path/to/tinymce/langs/` folder.
 
 IMPORTANT: The language settings will not work unless the language pack is placed in `langs/` directory. The link:{rootDir}configure/localization.html#language_url[language_url] configuration option is another method to enable additional language settings.
 
-[#step-3]
+[[step-3]]
 === Step 3
 
 Set the language option in {productname}'s configuration to the language code in the list on link:{rootDir}configure/localization.html#language[this page].
 
-[#step-4]
+[[step-4]]
 === Step 4
 
 Load {productname} to confirm that the language is set correctly.
 
-[#a-working-example]
+[[a-working-example]]
 == A working example
 
 The following code snippet sets {productname}'s language to Chinese and the text directionality from right to left.

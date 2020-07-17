@@ -7,10 +7,10 @@ include::{rootDir}_attributes.adoc[]
 :keywords: tinydrive configuration
 :title_nav: Configuration options
 
-[#configuring-with-tinymce]
+[[configuring-with-tinymce]]
 == Configuring with TinyMCE
 
-[#]
+[[]]
 === `tinydrive_token_provider`
 
 This setting could take one of the following two forms:
@@ -24,7 +24,7 @@ For more information on how to create these tokens, refer to the link:{rootDir}t
 
 *Required:* yes
 
-[#example-using-a-jwt-provider-url]
+[[example-using-a-jwt-provider-url]]
 ==== Example Using a JWT Provider URL
 
 `js
@@ -35,7 +35,7 @@ tinymce.init({
 });
 `
 
-[#example-using-a-jwt-provider-callback]
+[[example-using-a-jwt-provider-callback]]
 ==== Example Using a JWT Provider Callback
 
 `js
@@ -49,7 +49,7 @@ tinymce.init({
 });
 `
 
-[#-2]
+[[-2]]
 === `tinydrive_upload_path`
 
 This setting enables changing the default upload path for files that get uploaded when pasted into the editor, uploaded directly through the Image dialog, or when an image is dragged-and-dropped into the editor. It will produce a date-based structure within this path like this `+/uploads/{year}{month}{day}+`. This is to avoid having thousands of files in the same directory.
@@ -58,7 +58,7 @@ This setting enables changing the default upload path for files that get uploade
 
 *Default Value:* `"/uploads"`
 
-[#example]
+[[example]]
 ==== Example
 
 `js
@@ -69,14 +69,14 @@ tinymce.init({
 });
 `
 
-[#-2]
+[[-2]]
 === `tinydrive_max_image_dimension`
 
 This setting enables constraining the width/height of uploaded images. When this is enabled any images with a higher width or height than the specified amount would be proportionally resized down to the specified maximum dimension.
 
 *Type:* `Number`
 
-[#example-2]
+[[example-2]]
 ==== Example
 
 `js
@@ -87,17 +87,17 @@ tinymce.init({
 });
 `
 
-[#configuring-the-tiny-drive-ui]
+[[configuring-the-tiny-drive-ui]]
 == Configuring the Tiny Drive UI
 
-[#configuring-the-insert-file-toolbar-button]
+[[configuring-the-insert-file-toolbar-button]]
 === Configuring the Insert File toolbar button
 
 {cloudfilemanager} will automatically integrate into the Image, Link, and Media dialogs as a file picker. It can also be configured to insert files directly into any content using the `insertfile` button. To enable this button, add it to the toolbar editor setting.
 
 The Insert File toolbar button will insert images as `img` elements or other files as links to that file.
 
-[#example-2]
+[[example-2]]
 ==== Example
 
 This is an example of configuring the 'insertfile' toolbar button.
@@ -110,17 +110,17 @@ tinymce.init({
 });
 `
 
-[#configuring-with-dropbox]
+[[configuring-with-dropbox]]
 == Configuring with Dropbox
 
-[#-2]
+[[-2]]
 === `tinydrive_dropbox_app_key`
 
 This setting enables specifying the Dropbox API key for integrating dropbox into {cloudfilemanager}. For more information on how you obtain this key, refer to the link:{rootDir}tinydrive/integrations/dropbox-integration.html[Dropbox integration guide].
 
 *Type:* `string`
 
-[#example-2]
+[[example-2]]
 ==== Example
 
 `js
@@ -131,17 +131,17 @@ tinymce.init({
 });
 `
 
-[#configuring-with-google-drive]
+[[configuring-with-google-drive]]
 == Configuring with Google Drive
 
-[#-2]
+[[-2]]
 === `tinydrive_google_drive_key`
 
 This setting enables specifying the Google Drive API key for integrating Google Drive into {cloudfilemanager}. For more information on how you obtain this key, refer to the link:{rootDir}tinydrive/integrations/googledrive-integration.html[Google Drive integration guide].
 
 *Type:* `string`
 
-[#example-2]
+[[example-2]]
 ==== Example
 
 `js
@@ -152,14 +152,14 @@ tinymce.init({
 });
 `
 
-[#-2]
+[[-2]]
 === `tinydrive_google_drive_client_id`
 
 This setting enables specifying the Google Drive client ID for integrating Google Drive into {cloudfilemanager}. For more information on how you obtain this ID, refer to the link:{rootDir}tinydrive/integrations/googledrive-integration.html[Google Drive integration guide].
 
 *Type:* `string`
 
-[#example-2]
+[[example-2]]
 ==== Example
 
 `js
@@ -170,7 +170,7 @@ tinymce.init({
 });
 `
 
-[#need-help]
+[[need-help]]
 == Need help?
 
 Tiny is striving to make {cloudfilemanager} as useful and simple as possible. For support related issues such as problems with JWT authentication and implementing {cloudfilemanager}, check the link:{rootDir}tinydrive/get-help.html[help page] or please contact link:{supporturl}[{supportname}].

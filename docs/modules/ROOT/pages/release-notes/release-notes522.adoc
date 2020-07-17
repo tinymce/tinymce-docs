@@ -7,7 +7,7 @@ include::{rootDir}_attributes.adoc[]
 :keywords: releasenotes bugfixes
 :title_nav: TinyMCE 5.2.2
 
-[#overview]
+[[overview]]
 == Overview
 
 These release notes provide an overview of the changes for {productname} 5.2.2, including:
@@ -22,7 +22,7 @@ These release notes provide an overview of the changes for {productname} 5.2.2, 
 This is the {cloudname} and {enterpriseversion} release notes. For information on the latest community version of {productname}, see: link:{rootDir}changelog.html[{productname} Changelog].
 ====
 
-[#general-bug-fixes]
+[[general-bug-fixes]]
 == General bug fixes
 
 {productname} 5.2.2 provides fixes for the following bugs:
@@ -32,26 +32,26 @@ This is the {cloudname} and {enterpriseversion} release notes. For information o
 * Fixed `format` menu alignment buttons inconsistently applying to images.
 * Fixed the floating toolbar drawer height collapsing when the editor is rendered in modal dialogs or floating containers.
 
-[#security-fixes]
+[[security-fixes]]
 == Security fixes
 
 {productname} 5.2.2 provides fixes for the following security issues:
 
 * Fixed `media` embed content not processing safely in some cases.
 
-[#accompanying-premium-plugin-changes]
+[[accompanying-premium-plugin-changes]]
 == Accompanying Premium Plugin changes
 
 The following premium plugins updates were released alongside {productname} 5.2.2.
 
-[#powerpaste-5-2-3]
+[[powerpaste-5-2-3]]
 === PowerPaste 5.2.3
 
 The {productname} 5.2.2 release includes an accompanying release of the *PowerPaste* premium plugin.
 
 *PowerPaste* 5.2.3 provides a security fix to prevent arbitrary JavaScript from being executed on paste when using specifically crafted content. Replication case provided by Michał Bentkowski.
 
-[#spellchecker-pro-2-0-1]
+[[spellchecker-pro-2-0-1]]
 === SpellChecker Pro 2.0.1
 
 The {productname} 5.2.2 release includes an accompanying release of the *SpellChecker Pro* premium plugin.

@@ -15,47 +15,47 @@ include::{partialsDir}misc/mobile_platform_compatibility.adoc[]
 
 Visit link:{rootDir}mobile[{productname} mobile documentation] for information on {productname} mobile setup and configuration.
 
-[#supported-application-servers-self-hosted-enterprise]
+[[supported-application-servers-self-hosted-enterprise]]
 == Supported Application Servers: Self-hosted Enterprise
 
 The {productname} spell checking server-side component requires a Java Web Application Server that supports Servlet Implementation API 3.0.
 
-[#java-development-kit]
+[[java-development-kit]]
 === Java Development Kit
 
 JDK 8
 
-[#java-j2ee-application-servers]
+[[java-j2ee-application-servers]]
 === Java (J2EE) Application Servers
 
 * Tomcat 7+
 * Jetty 8+
 * WebSphere Application Server (WAS) 8+
 
-[#operating-systems]
+[[operating-systems]]
 === Operating Systems
 
 * Windows Server 2008 SP2
 * Red Hat Enterprise Linux v6
 * Red Hat Enterprise Linux v5
 
-[#minimum-hardware-requirements]
+[[minimum-hardware-requirements]]
 === Minimum Hardware Requirements
 
 * CPU:  Dual Core Processor ~ 2Ghz. For higher loads, a quad core or higher is recommended.
 * RAM: 4 Gigabytes of RAM available for services
 
-[#premium-plugin-support]
+[[premium-plugin-support]]
 == Premium Plugin Support
 
-[#powerpaste-word-copy-and-paste]
+[[powerpaste-word-copy-and-paste]]
 === PowerPaste (Word Copy and Paste)
 
 {companynameformal} tests and supports using the PowerPaste plugin for copying content from versions of Microsoft Word and Microsoft Excel:
 * Covered by Microsoft Mainstream Support based on the https://support.microsoft.com/en-us/help/14085/fixed-lifecycle-policy[Microsoft Fixed Lifecycle Policy].
 * Provided by Microsoft Office 365.
 
-[#powerpaste-feature-and-browser-support]
+[[powerpaste-feature-and-browser-support]]
 ==== PowerPaste Feature and Browser Support
 
 PowerPaste (Word copy and paste) is supported on all the browsers supported by {productname} Enterprise. There is some variances of functionality for different browsers.
@@ -90,17 +90,17 @@ PowerPaste (Word copy and paste) is supported on all the browsers supported by {
 | {cross}
 |===
 
-[#html-cleaning]
+[[html-cleaning]]
 ===== HTML Cleaning
 
 On all browsers, PowerPaste provides basic HTML cleaning. For browsers where HTML5 support is not available, PowerPaste uses the browser DOM to import and clean HTML. This mechanism is the primary cleaning method on browsers where HTML5 clipboard APIs are not available. While the resulting content is clean HTML the direct conversion to a browser DOM can result in some loss of content structure and/or formatting information.
 
-[#improved-html-cleaning]
+[[improved-html-cleaning]]
 ===== Improved HTML Cleaning
 
 On browsers that support HTML5 APIs, PowerPaste is able to use improved HTML cleaning techniques.  Improved HTML cleaning uses the HTML5 clipboard APIs to access the clipboard directly. The original document structure and formatting (when importing formatting) is more likely to be preserved. Where available this approach gives the highest fidelity copy and paste from Microsoft Word to HTML.
 
-[#image-import]
+[[image-import]]
 ===== Image Import
 
 On browsers that support HTML5, PowerPaste is able to import images embedded in the content (e.g. from Microsoft Word) into the editor.  These images can then be uploaded via a HTTP post as required.

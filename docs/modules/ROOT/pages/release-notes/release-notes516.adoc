@@ -18,7 +18,7 @@ These release notes provide an overview of the changes for {productname} 5.1.6, 
 This is the {cloudname} and {enterpriseversion} release notes. For information on the latest community version of {productname}, see: link:{rootDir}changelog.html[{productname} Changelog].
 ====
 
-[#general-bug-fixes]
+[[general-bug-fixes]]
 == General bug fixes
 
 {productname} 5.1.6 provides the following bug fixes:
@@ -30,17 +30,17 @@ This is the {cloudname} and {enterpriseversion} release notes. For information o
 * Context menus no longer open in the wrong location when the target was the editor body.
 * The `image` plugin now respects the link:{rootDir}configure/file-image-upload.html#automatic_uploads[`automatic_uploads`] setting when uploading local images.
 
-[#security-fixes]
+[[security-fixes]]
 == Security fixes
 
 {productname} 5.1.6 provides fixes for the following security issues:
 
 * CDATA parsing and sanitization has been improved to address a cross-site scripting (XSS) vulnerability.
 
-[#premium-plugin-changes]
+[[premium-plugin-changes]]
 == Premium Plugin changes
 
-[#advanced-code-editor]
+[[advanced-code-editor]]
 === Advanced Code Editor
 
 The {productname} 5.1.6 release includes *Advanced Code Editor* 2.0.3.
@@ -50,7 +50,7 @@ The {productname} 5.1.6 release includes *Advanced Code Editor* 2.0.3.
 * The code editor gutter will no longer render on top of the content in {productname} 4.
 * The code editor dialog will now resize responsively based on the window size in {productname} 5.
 
-[#enhanced-media-embed]
+[[enhanced-media-embed]]
 === Enhanced Media Embed
 
 The {productname} 5.1.6 release includes *Enhanced Media Embed* 2.2.5.

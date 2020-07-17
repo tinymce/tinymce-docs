@@ -1,4 +1,4 @@
-[#text_color]
+[[text_color]]
 == text_color
 
 The `textcolor` component adds the forecolor/back color button controls that enables selecting colors from a color picker and applying them to text. It adds a toolbar button and menu item to allow this functionality.
@@ -18,12 +18,12 @@ tinymce.init({
 });
 `
 
-[#options]
+[[options]]
 === Options
 
 These settings affect the execution of the `textcolor`. The dimensions and mapping of the grid of text colors can be set here.
 
-[#]
+[[]]
 === `color_cols`
 
 This option allows for specifying the number of columns for text color grids. The number of rows is calculated based on the number of text colors supplied divided by the specified number of columns.
@@ -69,7 +69,7 @@ tinymce.init({
 });
 `
 
-[#the-default-color_map]
+[[the-default-color_map]]
 ==== The default color_map
 
 ```js
@@ -103,7 +103,7 @@ color_map: [
 ]
 ```
 
-[#-2]
+[[-2]]
 === `custom_colors`
 
 This option allows disabling the custom color picker in all color swatches of the editor.

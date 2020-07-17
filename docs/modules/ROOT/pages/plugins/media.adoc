@@ -12,7 +12,7 @@ The `media` plugin adds the ability for users to be able to add HTML5 video and 
 
 *Type:* `String`
 
-[#example]
+[[example]]
 ===== Example
 
 `js
@@ -24,12 +24,12 @@ tinymce.init({
 });
 `
 
-[#options]
+[[options]]
 === Options
 
 These settings affect the execution of the `media` plugin. Namely the ability to disable parts of the media dialog box when inserting/editing media items. In addition, the user may disable the cross-site scripting sanitation filter for video/object elements here.
 
-[#]
+[[]]
 === `audio_template_callback`
 
 This option allows you to specify the function that will return the HTML embed code of the audio media that you are attempting to insert into {productname}.
@@ -53,7 +53,7 @@ tinymce.init({
 });
 `
 
-[#-2]
+[[-2]]
 === `media_alt_source`
 
 This options allows you disable the `Alternative source` input field in the media dialog.
@@ -77,7 +77,7 @@ tinymce.init({
 });
 `
 
-[#-2]
+[[-2]]
 === `media_dimensions`
 
 This options allows you disable the `Dimensions` input fields in the media dialog.
@@ -101,7 +101,7 @@ tinymce.init({
 });
 `
 
-[#-2]
+[[-2]]
 === `media_filter_html`
 
 This option allows you disable the XSS sanitation filter for video/object elements. Scripts, conditional comments, etc, can't be used within these elements by default for security reasons. If you want to include that and have server side sanitizers or if you trust your users, then you can disable this feature.
@@ -125,7 +125,7 @@ tinymce.init({
 });
 `
 
-[#-2]
+[[-2]]
 === `media_live_embeds`
 
 When you enable this option users will see a live preview of embedded video content within the editable area, rather than a placeholder image. This means that users can play a video clip, such as YouTube, within the editor.
@@ -151,7 +151,7 @@ tinymce.init({
 });
 `
 
-[#-2]
+[[-2]]
 === `media_poster`
 
 This options allows you disable the `Poster` input field in the media dialog.
@@ -175,7 +175,7 @@ tinymce.init({
 });
 `
 
-[#-2]
+[[-2]]
 === `media_scripts`
 
 This option allows you to embed videos using script elements.
@@ -198,7 +198,7 @@ tinymce.init({
 });
 +`
 
-[#-2]
+[[-2]]
 === `media_url_resolver`
 
 This option allows you to specify a function that will be used to replace {productname}'s default media embed logic with your own, custom logic.
@@ -233,7 +233,7 @@ tinymce.init({
 });
 `
 
-[#-2]
+[[-2]]
 === `video_template_callback`
 
 This option allows you to specify the function that will return the HTML embed code of the video media that you are attempting to insert into {productname}.
@@ -258,7 +258,7 @@ tinymce.init({
 });
 `
 
-[#commands]
+[[commands]]
 == Commands
 
 The Media plugin provides the following JavaScript command.

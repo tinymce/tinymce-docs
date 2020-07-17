@@ -1,6 +1,6 @@
 The following formats are provided by {productname}.
 
-[#general-built-in-formats]
+[[general-built-in-formats]]
 ==== General built-in formats
 
 The following formats will work on most content.
@@ -100,7 +100,7 @@ NOTE: The `mceToggleFormat` and `FormatBlock` link:{rootDir}advanced/editor-comm
 * `fontsize`
 * `fontsize_class`
 
-[#definition-list-related-formats]
+[[definition-list-related-formats]]
 ==== Definition list related formats
 
 The following formats work within definition lists (`<dl>`).
@@ -115,7 +115,7 @@ The following formats work within definition lists (`<dl>`).
 | Definition data (`<dd>`) elements.
 |===
 
-[#link-related-formats]
+[[link-related-formats]]
 ==== Link related formats
 
 The following formats will work on links (`<a>`).
@@ -127,7 +127,7 @@ The following formats will work on links (`<a>`).
 | Link (`<a>`) elements.
 |===
 
-[#table-related-formats]
+[[table-related-formats]]
 ==== Table related formats
 
 The following formats will work within tables on `<td>` and `<th>` elements.

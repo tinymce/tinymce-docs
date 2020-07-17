@@ -10,7 +10,7 @@ include::{rootDir}_attributes.adoc[]
 
 {productname} supports some browser-native events, and provides additional events for working with the editor and plugins.
 
-[#handling-editor-events]
+[[handling-editor-events]]
 == Handling Editor events
 
 The following examples illustrate how to use supported native events, editor core events, and plugin events with {productname}.
@@ -41,7 +41,7 @@ tinymce.init({
 });
 `
 
-[#supported-browser-native-events]
+[[supported-browser-native-events]]
 == Supported browser-native events
 
 {productname} supports the following browser-native events. Click the event name for details (links open https://developer.mozilla.org/[MDN Web Docs]).
@@ -86,7 +86,7 @@ tinymce.init({
 * https://developer.mozilla.org/en-US/docs/Web/API/Element/touchstart_event[touchstart]
 * https://developer.mozilla.org/en-US/docs/Web/API/Element/wheel_event[wheel]
 
-[#editor-core-events]
+[[editor-core-events]]
 == Editor core events
 
 The following events are provided by the {productname} editor.
@@ -341,7 +341,7 @@ The following events are provided by the {productname} editor.
 | (iframe mode only) Fired when the editor tries to resolve the name of an element to render the status bar path.
 |===
 
-[#plugin-events]
+[[plugin-events]]
 == Plugin events
 
 The following plugins provide events.
@@ -365,7 +365,7 @@ The following plugins provide events.
 * <<visualcharactersevents,Visual Characters events>>
 * <<wordcountevents,Word Count events>>
 
-[#autosave-events]
+[[autosave-events]]
 === Autosave events
 
 The following events are provided by the link:{rootDir}plugins/autosave.html[Autosave plugin].
@@ -386,7 +386,7 @@ The following events are provided by the link:{rootDir}plugins/autosave.html[Aut
 | Fired when a draft has been removed from memory.
 |===
 
-[#character-map-events]
+[[character-map-events]]
 === Character Map events
 
 The following event is provided by the link:{rootDir}plugins/charmap.html[Character Map plugin].
@@ -399,7 +399,7 @@ The following event is provided by the link:{rootDir}plugins/charmap.html[Charac
 | Fired before a special character is inserted into the editor.
 |===
 
-[#comments-events]
+[[comments-events]]
 === Comments events
 
 The following event is provided by the link:{rootDir}plugins/comments.html[Comments plugin].
@@ -412,7 +412,7 @@ The following event is provided by the link:{rootDir}plugins/comments.html[Comme
 | Fired when a comment is updated.
 |===
 
-[#format-painter-events]
+[[format-painter-events]]
 === Format Painter events
 
 The following event is provided by the link:{rootDir}plugins/formatpainter.html[Format Painter plugin].
@@ -425,7 +425,7 @@ The following event is provided by the link:{rootDir}plugins/formatpainter.html[
 | Fired when the format painter state changes.
 |===
 
-[#fullscreen-events]
+[[fullscreen-events]]
 === Fullscreen events
 
 The following event is provided by the link:{rootDir}plugins/fullscreen.html[Fullscreen plugin].
@@ -438,7 +438,7 @@ The following event is provided by the link:{rootDir}plugins/fullscreen.html[Ful
 | Fired when the fullscreen state changes.
 |===
 
-[#import-css-events]
+[[import-css-events]]
 === Import CSS events
 
 The following event is provided by the link:{rootDir}plugins/importcss.html[Import CSS plugin].
@@ -451,7 +451,7 @@ The following event is provided by the link:{rootDir}plugins/importcss.html[Impo
 | Fired during editor initialization when the style modifications are parsed from the CSS.
 |===
 
-[#link-checker-events]
+[[link-checker-events]]
 === Link checker events
 
 The following event is provided by the link:{rootDir}plugins/link.html[Link plugin].
@@ -464,7 +464,7 @@ The following event is provided by the link:{rootDir}plugins/link.html[Link plug
 | Fired when a link checker error occurs, such as the Link Checker service can't be reached.
 |===
 
-[#lists-events]
+[[lists-events]]
 === Lists events
 
 The following event is provided by the link:{rootDir}plugins/lists.html[Lists plugin].
@@ -477,7 +477,7 @@ The following event is provided by the link:{rootDir}plugins/lists.html[Lists pl
 | Fired when a list is toggled on/off.
 |===
 
-[#media-embed-events]
+[[media-embed-events]]
 === Media Embed events
 
 The following event is provided by the link:{rootDir}plugins/mediaembed.html[Media Embed plugin].
@@ -490,7 +490,7 @@ The following event is provided by the link:{rootDir}plugins/mediaembed.html[Med
 | Fired when a media embed error occurs, such as the Media Embed service can't be reached.
 |===
 
-[#paste-events]
+[[paste-events]]
 === Paste events
 
 The following events are provided by the link:{rootDir}plugins/paste.html[Paste plugin].
@@ -511,7 +511,7 @@ The following events are provided by the link:{rootDir}plugins/paste.html[Paste 
 | Fired when the plain text paste mode state changes.
 |===
 
-[#permanent-pen-events]
+[[permanent-pen-events]]
 === Permanent Pen events
 
 The following events are provided by the link:{rootDir}plugins/permanentpen.html[Permanent Pen plugin].
@@ -528,7 +528,7 @@ The following events are provided by the link:{rootDir}plugins/permanentpen.html
 | Fired when the permanent pen properties are changed.
 |===
 
-[#powerpaste-events]
+[[powerpaste-events]]
 === PowerPaste events
 
 The following events are provided by the link:{rootDir}plugins/powerpaste.html[PowerPaste plugin].
@@ -549,7 +549,7 @@ The following events are provided by the link:{rootDir}plugins/powerpaste.html[P
 | Fired when the plain text paste mode state changes.
 |===
 
-[#spell-checker-events]
+[[spell-checker-events]]
 === Spell Checker events
 
 The following events are provided by the link:{rootDir}plugins/spellchecker.html[Spell Checker plugin].
@@ -566,12 +566,12 @@ The following events are provided by the link:{rootDir}plugins/spellchecker.html
 | Fired when spellchecking is disabled.
 |===
 
-[#spell-checker-pro-events]
+[[spell-checker-pro-events]]
 === Spell Checker Pro events
 
 include::{partialsDir}events/tinymcespellchecker.adoc[]
 
-[#table-events]
+[[table-events]]
 === Table events
 
 The following event is provided by the link:{rootDir}plugins/table.html[Table plugin].
@@ -585,7 +585,7 @@ The following event is provided by the link:{rootDir}plugins/table.html[Table pl
 {requires_5_1v}
 |===
 
-[#visual-blocks-events]
+[[visual-blocks-events]]
 === Visual Blocks events
 
 The following event is provided by the link:{rootDir}plugins/visualblocks.html[Visual Blocks plugin].
@@ -598,7 +598,7 @@ The following event is provided by the link:{rootDir}plugins/visualblocks.html[V
 | Fired when the Visual Blocks state changes.
 |===
 
-[#visual-characters-events]
+[[visual-characters-events]]
 === Visual Characters events
 
 The following event is provided by the link:{rootDir}plugins/visualchars.html[Visual Characters plugin].
@@ -611,7 +611,7 @@ The following event is provided by the link:{rootDir}plugins/visualchars.html[Vi
 | Fired when the Visual Characters state changes.
 |===
 
-[#word-count-events]
+[[word-count-events]]
 === Word Count events
 
 The following event is provided by the link:{rootDir}plugins/wordcount.html[Word Count plugin].
@@ -624,7 +624,7 @@ The following event is provided by the link:{rootDir}plugins/wordcount.html[Word
 | Fired when the editor word count is updated.
 |===
 
-[#editor-manager-events]
+[[editor-manager-events]]
 == Editor Manager events
 
 The following events are used for editor management. These events are handled using `tinymce.on`, rather than `editor.on` or `editor.fire`, as shown in <<exampleshandlingeditormanagerevents,Examples: Handling Editor Manager events>>.
@@ -645,7 +645,7 @@ The following events are used for editor management. These events are handled us
 | Fired before the browser window is closed (same as native https://developer.mozilla.org/en-US/docs/Web/API/Window/beforeunload_event[`beforeunload` event]).
 |===
 
-[#examples-handling-editor-manager-events]
+[[examples-handling-editor-manager-events]]
 === Examples: Handling Editor Manager events
 
 *AddEditor*

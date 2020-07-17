@@ -12,7 +12,7 @@ include::{rootDir}_attributes.adoc[]
 
 The *Checklist* plugin helps the user keep track of all required actions by creating a simple, clean, and easy to use TODO list.
 
-[#format]
+[[format]]
 == Format
 
 {% include codepen.html id="checklist" %}
@@ -23,7 +23,7 @@ In the {productname} editor, checklists are presented as lists with small checkb
 
 Once you have obtained the *Checklist* plugin, refer to the following instructions for using it.
 
-[#configuring-the-checklist-toolbar-button]
+[[configuring-the-checklist-toolbar-button]]
 === Configuring the Checklist toolbar button
 
 Use the following script to add the *Checklist* link:{rootDir}ui-components/toolbarbuttons.html[toolbar button]:
@@ -38,7 +38,7 @@ tinymce.init({
 
 NOTE: The *Checklist* plugin has to be used together with the link:{rootDir}plugins/lists.html[Lists] plugin to work.
 
-[#css]
+[[css]]
 === CSS
 
 To make the checklists look correct make sure to include this css on your page:
@@ -65,7 +65,7 @@ To make the checklists look correct make sure to include this css on your page:
 }
 +`
 
-[#creating-a-checklist]
+[[creating-a-checklist]]
 === Creating a Checklist
 
 Perform the following steps to create a checklist:
@@ -75,12 +75,12 @@ Perform the following steps to create a checklist:
 . Type in the first item and press `Enter` to add another item in the list.
 . To check items by adding a check mark to them, click on the checkbox next to the desired item from this list.
 
-[#result]
+[[result]]
 ==== Result
 
 A checklist will be created. If some items were selected, a check mark will appear in the adjacent checkbox.
 
-[#toggling-checklist-items]
+[[toggling-checklist-items]]
 === Toggling checklist items
 
 The state of the check marks of checklist items can be toggled to be empty or checked. This is done by clicking the checkbox. If using the keyboard, the check marks can be toggled by placing the cursor on the desired Checklist item and pressing the `Ctrl+Enter` (`Command+Enter` if you are a Mac user) key combination.

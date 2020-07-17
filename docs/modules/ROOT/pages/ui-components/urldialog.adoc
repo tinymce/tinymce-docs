@@ -7,14 +7,14 @@ include::{rootDir}_attributes.adoc[]
 :keywords: dialog urldialog api
 :title_nav: URL dialog
 
-[#overview]
+[[overview]]
 == Overview
 
 A URL dialog is a special {productname} UI component which loads an external web page inside a dialog (sometimes referred to as `modals`). URL dialogs are useful for very complex use cases, where the supported components for {productname}'s standard dialogs cannot be used. For example, a custom file manager that is loaded inside a {productname} dialog would probably require a URL dialog.
 
 NOTE: link:{rootDir}ui-components/dialog.html[Standard {productname} dialogs] should suffice for most use cases, and may be simpler to configure.
 
-[#basic-example]
+[[basic-example]]
 === Basic example
 
 The configuration for a basic URL dialog might look like this:
@@ -26,7 +26,7 @@ tinymce.activeEditor.windowManager.openUrl({
 });
 +`
 
-[#url-dialog-configuration]
+[[url-dialog-configuration]]
 == URL dialog configuration
 
 A URL Dialog configuration has three main parts to match the three main parts of the dialog's UI:
@@ -35,7 +35,7 @@ A URL Dialog configuration has three main parts to match the three main parts of
 * *URL:* The URL of the external page to load inside the dialog.
 * *Buttons:* (Optional) An array of <<footerbuttons,footer buttons>> that are displayed in the dialog's footer.
 
-[#configuration-options]
+[[configuration-options]]
 === Configuration options
 
 |===
@@ -89,12 +89,12 @@ A URL Dialog configuration has three main parts to match the three main parts of
 
 For more information on the `dialogApi` object that is passed to some of the configuration options, see the <<urldialoginstanceapi,URL dialog instance API>> documentation.
 
-[#footer-buttons]
+[[footer-buttons]]
 === Footer buttons
 
 A *button* is a clickable component that can contain text or an icon. There are two types of buttons (primary and secondary buttons), though the only difference is that they are styled differently. Primary buttons are intended to stand out. The color will depend on the chosen link:{rootDir}general-configuration-guide/customize-ui.html#skins[skin].
 
-[#configuration]
+[[configuration]]
 ==== Configuration
 
 |===
@@ -138,7 +138,7 @@ A *button* is a clickable component that can contain text or an icon. There are 
 
 NOTE: Buttons do not support mixing icons and text at the moment.
 
-[#button-types-and-event-callbacks]
+[[button-types-and-event-callbacks]]
 ==== Button types and event callbacks
 
 The different footer button types will invoke different callbacks when clicked:
@@ -150,14 +150,14 @@ NOTE: Unlike link:{rootDir}ui-components/dialog.html[standard dialogs], URL dial
 
 See the <<configurationoptions,URL dialog configuration options>> documentation for more information on event callbacks.
 
-[#url-dialog-instance-api]
+[[url-dialog-instance-api]]
 == URL dialog instance API
 
 When a URL dialog is created, a dialog instance API is returned. For example, `const instanceApi = editor.windowManager.openUrl(config);`. The URL dialog API instance is also passed to some of the <<configurationoptions,dialog configuration options>>.
 
 The instance API is a JavaScript object containing methods attached to the dialog instance. When the dialog is closed, the instance API is destroyed.
 
-[#instance-api-methods]
+[[instance-api-methods]]
 === Instance API methods
 
 |===
@@ -176,7 +176,7 @@ The instance API is a JavaScript object containing methods attached to the dialo
 | Calling the `sendMessage()` method will attempt to send a message to the external page via `window.postMesssage()`.
 |===
 
-[#url-dialog-messaging]
+[[url-dialog-messaging]]
 == URL dialog messaging
 
 When using a URL dialog, there needs to be a way to communicate between {productname} and the external page, as the two components are no longer running in the same window. To allow this, {productname} makes use of the browsers https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage[`window.postMessage()`] API to allow sending data across different origins. The following is an example of how to send messages back to {productname} from within an external page:
@@ -202,7 +202,7 @@ window.addEventListener('message', function (event) {
 
 NOTE: When sending a message it is recommended to specify the target origin of where {productname} is running, instead of using a wildcard (`'*'`). Similarly, when receiving messages, check that `event.origin` matches the origin of where {productname} is running. For example, if {productname} is running on _\http://mysite.com/tinymce.html_, then if `event.origin` doesn't match `+http://mysite.com+` the message should be ignored.
 
-[#supported-message-actions]
+[[supported-message-actions]]
 === Supported message actions
 
 These actions are built into the URL dialog functionality and will perform an action inside the editor based on the `mceAction` specified. The actions supported are:
@@ -282,7 +282,7 @@ This action unblocks the window/dialog. This is the same as using the `api.unblo
 }
 `
 
-[#custom-message-actions]
+[[custom-message-actions]]
 === Custom message actions
 
 A custom message is one that contains a `mceAction` not listed in the above-supported actions. For example, the following snippet could be used to send a message back to {productname} and then be processed via the `onMessage` callback to perform custom actions inside {productname}.
@@ -298,7 +298,7 @@ A custom message is one that contains a `mceAction` not listed in the above-supp
 
 NOTE: {productname} will ignore all messages received that don't contain a `mceAction` property.
 
-[#example]
+[[example]]
 == Example
 
 This example shows a toolbar button that opens an external URL inside a 640px by 640px dialog without any footer buttons. The dialog can be opened by clicking the `{;}` toolbar button.

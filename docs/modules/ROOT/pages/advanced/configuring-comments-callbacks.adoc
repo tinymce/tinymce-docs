@@ -7,12 +7,12 @@ include::{rootDir}_attributes.adoc[]
 :keywords: comments commenting tinycomments callback
 :title_nav: Configuring callbacks for Comments 2.0
 
-[#introduction]
+[[introduction]]
 == Introduction
 
 *Callback mode* is the default mode for link:{rootDir}plugins/comments.html[Comments 2.0]. In the callback mode, the user needs to configure storage to be able to save comments on the server. The Comments functions (create, reply, edit, delete comment, delete all conversations, and lookup) are configured differently depending upon the server-side storage configuration.
 
-[#required-settings]
+[[required-settings]]
 === Required settings
 
 Comments 2.0 requires the following functions to be defined:
@@ -40,7 +40,7 @@ Most (create, reply, and edit) functions require configuring the *current author
 
 * *Current author* - Comments 2.0 does not know the name of the current user. After a user comments (triggering `tinycomments_create` for the first comment, or `tinycomments_reply` for subsequent comments), Comments 2.0 requests the updated conversation via `tinycomments_lookup`, which should now contain the additional comment with the proper author. Determining the current user and storing the comment related to that user, has to be configured by the user.
 
-[#tinycomments_create]
+[[tinycomments_create]]
 === tinycomments_create
 
 Comments 2.0 uses the conversation `tinycomments_create` function to create a comment.
@@ -60,7 +60,7 @@ The done callback needs to take an object of the form:
 }
 `
 
-[#tinycomments_reply]
+[[tinycomments_reply]]
 === tinycomments_reply
 
 Comments 2.0 uses the conversation `tinycomments_reply` function to reply to a comment.
@@ -81,7 +81,7 @@ The done callback needs to take an object of the form:
 }
 `
 
-[#tinycomments_edit_comment]
+[[tinycomments_edit_comment]]
 === tinycomments_edit_comment
 
 Comments 2.0 uses the conversation `tinycomments_edit_comment` function to edit a comment.
@@ -104,7 +104,7 @@ The done callback needs to take an object of the form:
 }
 `
 
-[#tinycomments_delete]
+[[tinycomments_delete]]
 === tinycomments_delete
 
 The `tinycomments_delete` function should asynchronously return a flag indicating whether the comment/comment thread was removed using the `done` callback. Unrecoverable errors are communicated to {productname} by calling the `fail` callback instead.
@@ -124,7 +124,7 @@ The done callback needs to take an object of the form:
 
 NOTE: Failure to delete due to permissions or business rules is indicated by "false", while unexpected errors should be indicated using the "fail" callback.
 
-[#tinycomments_delete_all]
+[[tinycomments_delete_all]]
 === tinycomments_delete_all
 
 The `tinycomments_delete_all` function should asynchronously return a flag indicating whether all the comments in a conversation were removed using the `done` callback. Unrecoverable errors are communicated to {productname} by calling the `fail` callback instead.
@@ -142,7 +142,7 @@ The done callback needs to take an object of the form:
 
 NOTE: Failure to delete due to permissions or business rules is indicated by "false", while unexpected errors should be indicated using the "fail" callback.
 
-[#tinycomments_delete_comment]
+[[tinycomments_delete_comment]]
 === tinycomments_delete_comment
 
 The `tinycomments_delete_comment` function should asynchronously return a flag indicating whether the comment/comment thread was removed using the `done` callback. Unrecoverable errors are communicated to {productname} by calling the `fail` callback instead.
@@ -163,7 +163,7 @@ The done callback needs to take an object of the form:
 
 NOTE: Failure to delete due to permissions or business rules is indicated by "false", while unexpected errors should be indicated using the "fail" callback.
 
-[#tinycomments_lookup]
+[[tinycomments_lookup]]
 === tinycomments_lookup
 
 Comments 2.0 uses the Conversation `tinycomments_lookup` function to retrieve an existing conversation via a conversation unique ID.

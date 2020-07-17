@@ -13,7 +13,7 @@ include::{rootDir}_attributes.adoc[]
 
 Michael Papworth developed the Knockout binding for TinyMCE. For details, see: https://github.com/michaelpapworth/tinymce-knockout-binding[the tinymce-knockout-binding project].
 
-[#procedure]
+[[procedure]]
 === Procedure
 
 . In a HTML file, add source scripts for jQuery and Knockout JS.
@@ -83,7 +83,7 @@ If the project loads tinymce-knockout-binding from a Content Delivery Network (C
  </script>
 ----
 
-[#example-knockout-integration]
+[[example-knockout-integration]]
 === Example Knockout integration
 
 To load a TinyMCE editor similar to the link:{rootDir}demo/basic-example.html[Basic example], add the following code to an empty HTML file.

@@ -12,7 +12,7 @@ include::{rootDir}_attributes.adoc[]
 
 The *Page Embed* plugin embeds a page in the content using an iframe (Inline frames). The size of these iframes can be configured to be responsive or another user-defined dimension. The ability to use iframes helps create visually engaging content which is very useful for online courses and learning materials.
 
-[#creating-a-page-embed-toolbar-button]
+[[creating-a-page-embed-toolbar-button]]
 === Creating a Page Embed toolbar button
 
 Use the following script to create a Page Embed toolbar button:
@@ -28,7 +28,7 @@ tinymce.init({
 
 *Result*: The image:{imagesDir}pageembed.png[**Page Embed**](*Page Embed*) button appears in the toolbar menu.
 
-[#using-page-embed]
+[[using-page-embed]]
 === Using Page Embed
 
 Use the following procedure for embedding an iframe into the content:
@@ -61,10 +61,10 @@ image:{imagesDir}insert-iframes.png[InsertEdit Iframe]
 
 NOTE: Not all pages allow embedding, as the X-Frame-Options header can be set to block embedding. See https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options[this page] for more information.
 
-[#options-to-configure-the-page-embed-properties]
+[[options-to-configure-the-page-embed-properties]]
 === Options to configure the Page Embed properties
 
-[#create-custom-classes]
+[[create-custom-classes]]
 === Create custom classes
 
 The `tiny_pageembed_classes` takes an array of objects with `text` and `value` properties that will populate the size selection fields in the plugin dialog. Use the following script to create custom classes using the `tiny_pageembed_classes` option:
@@ -82,7 +82,7 @@ tinymce.init({
 });
 `
 
-[#disable-select]
+[[disable-select]]
 === Disable select
 
 When the `tiny_pageembed_classes` value is set to an empty array, the size selection fields are not available and only exact sizes can be set. Use the following script to disable `select` using the `tiny_pageembed_classes` option:
@@ -97,7 +97,7 @@ tinymce.init({
 });
 `
 
-[#inline-styles-for-page-embeds]
+[[inline-styles-for-page-embeds]]
 === Inline styles for page embeds
 
 The `tiny_pageembed_inline_styles` setting will inline all styles, while also keeping CSS classes, when rendering the embed content. This is useful when the additional CSS classes can't be added to your site. Defaults to `false`.
@@ -108,7 +108,7 @@ The `tiny_pageembed_inline_styles` setting will inline all styles, while also ke
 
 *Possible Values:* `true`, `false`
 
-[#example-tiny_pageembed_inline_styles]
+[[example-tiny_pageembed_inline_styles]]
 ==== Example: tiny_pageembed_inline_styles
 
 To inline page embed styles:
@@ -121,7 +121,7 @@ tinymce.init({
 });
 `
 
-[#default-css]
+[[default-css]]
 === Default CSS
 
 If the `tiny_pageembed_classes` setting is left undefined, the default classes will be used. As a result, a responsive size option can be selected.

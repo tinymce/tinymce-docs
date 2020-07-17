@@ -10,7 +10,7 @@ include::{rootDir}_attributes.adoc[]
 
 The following tables show the existing editor commands. These commands are provided by `tinymce` and not by the browser's internal commands. These commands can be executed using the link:{rootDir}api/tinymce/tinymce.editorcommands.html#execcommand[execCommand] function.
 
-[#listing-core-and-plugin-editor-commands]
+[[listing-core-and-plugin-editor-commands]]
 == Listing core and plugin editor commands
 
 To retrieve a list of avaliable commands from the active editor, run the following command from the browser console:
@@ -19,7 +19,7 @@ To retrieve a list of avaliable commands from the active editor, run the followi
 tinymce.activeEditor.editorCommands.commands.exec;
 `
 
-[#core-editor-commands]
+[[core-editor-commands]]
 == Core Editor commands
 
 The commands on the following table are provided by the {productname} editor and do not require any plugins to be enabled.
@@ -231,7 +231,7 @@ tinymce.activeEditor.execCommand('mceRemoveNode') /* OR */
 tinymce.activeEditor.execCommand('mceRemoveNode', false, '<DOM_node>')
 +`
 
-[#plugin-commands]
+[[plugin-commands]]
 == Plugin Commands
 
 Commands are available for the following plugins:
@@ -273,259 +273,259 @@ Commands are available for the following plugins:
 * <<visualblocks,Visual Blocks>>
 * <<visualcharacters,Visual Characters>>
 
-[#advanced-code]
+[[advanced-code]]
 === Advanced Code
 
 The following command requires the link:{rootDir}plugins/advcode.html[Advanced Code (`advcode`)] plugin.
 
 include::{partialsDir}commands/code-cmds.adoc[]
 
-[#advanced-lists]
+[[advanced-lists]]
 === Advanced Lists
 
 The following commands require the link:{rootDir}plugins/advlist.html[Advanced Lists (`advlist`)] plugin.
 
 include::{partialsDir}commands/advlist-cmds.adoc[]
 
-[#advanced-tables]
+[[advanced-tables]]
 === Advanced Tables
 
 The following commands require the link:{rootDir}plugins/advtable.html[Advanced Tables (`advtable`)] plugin.
 
 include::{partialsDir}commands/advtable-cmds.adoc[]
 
-[#anchor]
+[[anchor]]
 === Anchor
 
 The following command requires the link:{rootDir}plugins/anchor.html[Anchor (`anchor`)] plugin.
 
 include::{partialsDir}commands/anchor-cmds.adoc[]
 
-[#autoresize]
+[[autoresize]]
 === Autoresize
 
 The following command requires the link:{rootDir}plugins/autoresize.html[Autoresize (`autoresize`)] plugin.
 
 include::{partialsDir}commands/autoresize-cmds.adoc[]
 
-[#case-change]
+[[case-change]]
 === Case Change
 
 The following commands require the link:{rootDir}plugins/casechange.html[Case Change (`casechange`)] plugin.
 
 include::{partialsDir}commands/casechange-cmds.adoc[]
 
-[#character-map]
+[[character-map]]
 === Character Map
 
 The following command requires the link:{rootDir}plugins/charmap.html[Character Map (`charmap`)] plugin.
 
 include::{partialsDir}commands/charmap-cmds.adoc[]
 
-[#code]
+[[code]]
 === Code
 
 The following command requires the link:{rootDir}plugins/code.html[Code (`code`)] plugin.
 
 include::{partialsDir}commands/code-cmds.adoc[]
 
-[#code-sample]
+[[code-sample]]
 === Code Sample
 
 The following command requires the link:{rootDir}plugins/codesample.html[Code Sample (`codesample`)] plugin.
 
 include::{partialsDir}commands/codesample-cmds.adoc[]
 
-[#comments]
+[[comments]]
 === Comments
 
 The following commands require the link:{rootDir}plugins/comments.html[Comments (`tinycomments`)] plugin.
 
 include::{partialsDir}commands/comments-cmds.adoc[]
 
-[#directionality]
+[[directionality]]
 === Directionality
 
 The following commands require the link:{rootDir}plugins/directionality.html[Directionality (`directionality`)] plugin.
 
 include::{partialsDir}commands/directionality-cmds.adoc[]
 
-[#format-painter]
+[[format-painter]]
 === Format Painter
 
 The following commands require the link:{rootDir}plugins/comments.html[Format Painter (`formatpainter`)] plugin.
 
 include::{partialsDir}commands/formatpainter-cmds.adoc[]
 
-[#full-page]
+[[full-page]]
 === Full Page
 
 The following command requires the link:{rootDir}plugins/fullpage.html[Full Page (`fullpage`)] plugin.
 
 include::{partialsDir}commands/fullpage-cmds.adoc[]
 
-[#full-screen]
+[[full-screen]]
 === Full Screen
 
 The following command requires the link:{rootDir}plugins/fullscreen.html[Full Screen (`fullscreen`)] plugin.
 
 include::{partialsDir}commands/fullscreen-cmds.adoc[]
 
-[#help]
+[[help]]
 === Help
 
 The following command requires the link:{rootDir}plugins/help.html[Help (`help`)] plugin.
 
 include::{partialsDir}commands/help-cmds.adoc[]
 
-[#image]
+[[image]]
 === Image
 
 The following command requires the link:{rootDir}plugins/image.html[Image (`image`)] plugin.
 
 include::{partialsDir}commands/image-cmds.adoc[]
 
-[#image-tools]
+[[image-tools]]
 === Image Tools
 
 The following commands require the link:{rootDir}plugins/imagetools.html[Image Tools (`imagetools`)] plugin.
 
 include::{partialsDir}commands/imagetools-cmds.adoc[]
 
-[#insert-datetime]
+[[insert-datetime]]
 === Insert Date/Time
 
 The following commands require the link:{rootDir}plugins/insertdatetime.html[Insert Date/Time (`insertdatetime`)] plugin.
 
 include::{partialsDir}commands/insertdatetime-cmds.adoc[]
 
-[#link]
+[[link]]
 === Link
 
 The following command requires the link:{rootDir}plugins/link.html[Link (`link`)] plugin.
 
 include::{partialsDir}commands/link-cmds.adoc[]
 
-[#lists]
+[[lists]]
 === Lists
 
 The following commands require the link:{rootDir}plugins/lists.html[Lists (`lists`)] plugin.
 
 include::{partialsDir}commands/lists-cmds.adoc[]
 
-[#media]
+[[media]]
 === Media
 
 The following command requires the link:{rootDir}plugins/media.html[Media (`media`)] plugin.
 
 include::{partialsDir}commands/media-cmds.adoc[]
 
-[#nonbreaking-space]
+[[nonbreaking-space]]
 === Nonbreaking Space
 
 The following command requires the link:{rootDir}plugins/nonbreaking.html[Nonbreaking Space (`nonbreaking`)] plugin.
 
 include::{partialsDir}commands/nbsp-cmds.adoc[]
 
-[#page-break]
+[[page-break]]
 === Page Break
 
 The following command requires the link:{rootDir}plugins/pagebreak.html[Page Break (`pagebreak`)] plugin.
 
 include::{partialsDir}commands/pagebreak-cmds.adoc[]
 
-[#paste]
+[[paste]]
 === Paste
 
 The following commands require the link:{rootDir}plugins/paste.html[Paste (`paste`)] plugin.
 
 include::{partialsDir}commands/paste-cmds.adoc[]
 
-[#permanent-pen]
+[[permanent-pen]]
 === Permanent Pen
 
 The following commands require the link:{rootDir}plugins/permanentpen.html[Permanent Pen (`permanentpen`)] plugin.
 
 include::{partialsDir}commands/permanentpen-cmds.adoc[]
 
-[#powerpaste]
+[[powerpaste]]
 === PowerPaste
 
 The following command requires the link:{rootDir}plugins/powerpaste.html[PowerPaste (`powerpaste`)] plugin.
 
 include::{partialsDir}commands/powerpaste-cmds.adoc[]
 
-[#preview]
+[[preview]]
 === Preview
 
 The following command requires the link:{rootDir}plugins/preview.html[Preview (`preview`)] plugin.
 
 include::{partialsDir}commands/preview-cmds.adoc[]
 
-[#print]
+[[print]]
 === Print
 
 The following command requires the link:{rootDir}plugins/print.html[Print (`print`)] plugin.
 
 include::{partialsDir}commands/print-cmds.adoc[]
 
-[#save]
+[[save]]
 === Save
 
 The following commands require the link:{rootDir}plugins/save.html[Save (`save`)] plugin.
 
 include::{partialsDir}commands/save-cmds.adoc[]
 
-[#search-and-replace]
+[[search-and-replace]]
 === Search and Replace
 
 The following command requires the link:{rootDir}plugins/searchreplace.html[Search and Replace (`searchreplace`)] plugin.
 
 include::{partialsDir}commands/searchreplace-cmds.adoc[]
 
-[#spell-checker]
+[[spell-checker]]
 === Spell Checker
 
 The following command requires the link:{rootDir}plugins/spellchecker.html[Spell Checker (`spellchecker`)] plugin.
 
 include::{partialsDir}commands/spellchecker-cmds.adoc[]
 
-[#table]
+[[table]]
 === Table
 
 The following commands require the link:{rootDir}plugins/table.html[Table (`table`)] plugin.
 
 include::{partialsDir}commands/table-cmds.adoc[]
 
-[#template]
+[[template]]
 === Template
 
 The following command requires the link:{rootDir}plugins/template.html[Template (`template`)] plugin.
 
 include::{partialsDir}commands/template-cmds.adoc[]
 
-[#table-of-contents]
+[[table-of-contents]]
 === Table of Contents
 
 The following commands require the link:{rootDir}plugins/toc[Table of Contents (`toc`)] plugin.
 
 include::{partialsDir}commands/toc-cmds.adoc[]
 
-[#visual-blocks]
+[[visual-blocks]]
 === Visual Blocks
 
 The following command requires the link:{rootDir}plugins/visualblocks.html[Visual Blocks (`visualblocks`)] plugin.
 
 include::{partialsDir}commands/visualblocks-cmds.adoc[]
 
-[#visual-characters]
+[[visual-characters]]
 === Visual Characters
 
 The following command requires the link:{rootDir}plugins/visualchars.html[Visual Characters (`visualchars`)] plugin.
 
 include::{partialsDir}commands/visualchars-cmds.adoc[]
 
-[#editor-management-commands]
+[[editor-management-commands]]
 == Editor Management Commands
 
 The following commands are used to manage editor instances.

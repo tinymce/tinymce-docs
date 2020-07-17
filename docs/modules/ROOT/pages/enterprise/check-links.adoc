@@ -13,7 +13,7 @@ Think of Link Checker as "spell-checking for URLs". But instead of checking spel
 
 Your have two deployment options. One is super easy with {cloudname}, the other is to go the more traditional Self-hosted route, requiring an additional link:{rootDir}enterprise/server.html[server-side component] to be installed and configured.
 
-[#link-checker-self-hosted-setup]
+[[link-checker-self-hosted-setup]]
 == Link Checker self-hosted setup
 
 Once you have the server-side component installed, additional configuration to your `application.conf` file is required. (Don't forget to restart the Java application server after updating the configuration.)
@@ -22,7 +22,7 @@ For information on configuring the server-side component, see: link:{rootDir}ent
 
 You will also find more Self-hosted setup information on the link:{rootDir}plugins/linkchecker.html[Link Checker plugin page].
 
-[#link-checker-cloud-setup]
+[[link-checker-cloud-setup]]
 == Link Checker cloud setup
 
 link:{rootDir}cloud-deployment-guide/editor-and-features.html[{cloudname}] makes setting up Link Checker a breeze. Simply include the `linkchecker` parameter in your `tinymce.init` and have the {cloudname} services do the work for you.

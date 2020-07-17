@@ -1,4 +1,4 @@
-[#quickbars_insert_toolbar]
+[[quickbars_insert_toolbar]]
 === quickbars_insert_toolbar
 
 The *quickbars_insert_toolbar* option configures the Quick Insert toolbar provided by the link:{rootDir}plugins/quickbars[quickbars plugin]. To change the buttons on the Quick Insert toolbar, provide a space-separated string of link:{rootDir}advanced/editor-control-identifiers.html#toolbarcontrols[toolbar button names]. The Quick Insert toolbar is intended for buttons related to inserting content, but any link:{rootDir}advanced/editor-control-identifiers.html#toolbarcontrols[{productname} toolbar buttons] or link:{rootDir}ui-components/toolbarbuttons[custom toolbar buttons] are allowed.
@@ -9,7 +9,7 @@ To disable the Quick Insert toolbar, set `quickbars_insert_toolbar` to `false`.
 
 *Defaults:* `quickimage quicktable`
 
-[#example-customizing-the-quick-insert-toolbar]
+[[example-customizing-the-quick-insert-toolbar]]
 ==== Example: Customizing the Quick Insert toolbar
 
 `js
@@ -21,7 +21,7 @@ tinymce.init({
 });
 `
 
-[#example-disabling-the-quick-insert-toolbar]
+[[example-disabling-the-quick-insert-toolbar]]
 ==== Example: Disabling the Quick Insert toolbar
 
 To disable the Quick Insert toolbar, set `quickbars_insert_toolbar` to `false`.

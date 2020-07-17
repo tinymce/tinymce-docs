@@ -15,7 +15,7 @@ User can manage file uploads, storage, processing, and delivery for your website
 
 Developers at {companyname} build the upload UI, libs, and APIs for developers. {cloudfilemanager} integrations are designed to be non-coder ready, easy to configure, and well-covered with documentation and guides.
 
-[#tiny-drive-features]
+[[tiny-drive-features]]
 == Tiny Drive features
 
 {cloudfilemanager} allows the following file formats, extensions, and storage options:
@@ -44,35 +44,35 @@ Developers at {companyname} build the upload UI, libs, and APIs for developers. 
 
 The storage and bandwidth quota varies based upon the link:{pricingpage}[{cloudname} Plan] you are subscribed to.
 
-[#demo]
+[[demo]]
 == Demo
 
 Here is a quick demo on how {cloudfilemanager} integrates with {productname}.
 
 {% include codepen.html id="drive-demo" %}
 
-[#upload-files-url]
+[[upload-files-url]]
 == Upload files URL
 
 The URL format for each file is `+https://drive.tiny.cloud/1/{your-api-key}/{uuid}+` and gets generated when a file is uploaded.
 If a file is moved or renamed, it will still have the same unique URL, so the restructuring of the files using {cloudfilemanager} won't affect where they are being used. However, deleting a file will mark the URL as being unused, and the URL will not continue to work.
 
-[#user-specific-root]
+[[user-specific-root]]
 == User specific root
 
 It is common to desire to be able to have user specific paths so that each user within a system gets its directory. This can be done by setting the `+https://claims.tiny.cloud/drive/root+` custom JWT claim to a path within {accountpage}. This path will automatically be constructed when the user is accessing {cloudfilemanager} using a JWT key with that claim. The user can only see and manage files within that root.
 
-[#security-performance]
+[[security-performance]]
 == Security & performance
 
 {companyname} is aware that security is a primary concern when it comes to cloud storage. As a user's assets are passed back and forth between a {productname} editor instance and the S3 bucket, {cloudfilemanager} uses the user's API key and a JSON Web Token (JWT) to authenticate each data transaction. Each {cloudfilemanager} user will need to create their own JWT.
 
-[#jwt]
+[[jwt]]
 == JWT
 
 Some cloud services for {productname} require setting up JWT authentication. This allows verifying that the end users are allowed to access a particular feature. JWT is a common authorization solution for web services and is documented in more detail at the \https://jwt.io/ website. For more information, see the link:{rootDir}tinydrive/jwt-authentication.html[JWT authentication] section.
 
-[#file-types]
+[[file-types]]
 == File types
 
 There is a fixed set of file extensions that you can upload and these are placed in the file type categories below. We constantly expand these sets with new file extensions. We don't allow any file type to be uploaded since some extensions are problematic from a security perspective.
@@ -83,7 +83,7 @@ There is a fixed set of file extensions that you can upload and these are placed
 * `image` - gif, jpeg, jpg, png, tif, tiff, bmp
 * `archive` - zip
 
-[#starter-projects]
+[[starter-projects]]
 == Starter projects
 
 To get started quickly and understand how {cloudfilemanager} works, {companyname} highly recommends trying one of the starter projects on Github to set up a {cloudfilemanager} instance by following a few simple steps.

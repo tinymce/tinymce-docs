@@ -1,6 +1,6 @@
 +++<a class="anchor" id="contexttoolbarpriority">++++++</a>++++++<a class="anchor" id="contextformpriority">++++++</a>+++
 
-[#troubleshooting-context-toolbar-and-context-form-conflicts]
+[[troubleshooting-context-toolbar-and-context-form-conflicts]]
 === Troubleshooting context toolbar and context form conflicts
 
 There are situations where custom context toolbars or custom context forms may conflict with:
@@ -16,7 +16,7 @@ How these conflicts are resolved depends on the {productname} version.
 * For {productname} 5.0, 5.1, or 5.2; see: <<determiningthedisplaypriorityofcontexttoolbarsandcontextformslegacybehavior,Determining the display priority of context toolbars and context forms (Legacy behavior)>>.
 {% endif %}
 
-[#determining-the-display-priority-of-context-toolbars-and-context-forms]
+[[determining-the-display-priority-of-context-toolbars-and-context-forms]]
 ==== Determining the display priority of context toolbars and context forms
 
 There are three settings that determine the priority of context toolbars and context forms: `scope`, `predicate`, and `position`.
@@ -39,7 +39,7 @@ Generally:
 Concatenated toolbars may contain duplicate toolbar items.
 * If no matching context toolbars or context forms are found for the selection or cursor position, then editor will recursively search for matches on the parent node of the current node, until it reaches the root node of the editor content.
 
-[#description-of-how-context-toolbars-and-context-forms-are-prioritized]
+[[description-of-how-context-toolbars-and-context-forms-are-prioritized]]
 ===== Description of how context toolbars and context forms are prioritized
 
 The following description can be used for troubleshooting the behavior of context toolbars and context forms.

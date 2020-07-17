@@ -1,4 +1,4 @@
-[#upgrading-to-the-latest-version-of-tinymce-5]
+[[upgrading-to-the-latest-version-of-tinymce-5]]
 == Upgrading to the latest version of TinyMCE 5
 
 The procedure for upgrading to the latest version of {productname} {productmajorversion} depends on the deployment type.
@@ -7,14 +7,14 @@ The procedure for upgrading to the latest version of {productname} {productmajor
 * <<#upgradingtinymceself-hostedusingapackagemanager,Upgrading TinyMCE Self-hosted using a package manager>>.{% endif %}
 * <<upgradingtinymceself-hostedmanually,Upgrading TinyMCE Self-hosted manually>>.
 
-[#upgrading-tiny-cloud]
+[[upgrading-tiny-cloud]]
 === Upgrading Tiny Cloud
 
 {cloudname} provides the latest enterprise version of {productname}. For information on configuring {cloudname}, see: link:{rootDir}cloud-deployment-guide.html[the Cloud deployment guide].
 
 {% if enterprise != true %}
 
-[#upgrading-tinymce-self-hosted-using-a-package-manager]
+[[upgrading-tinymce-self-hosted-using-a-package-manager]]
 === Upgrading TinyMCE Self-hosted using a package manager
 
 Select from the following package managers.
@@ -25,7 +25,7 @@ Select from the following package managers.
 * <<nuget,NuGet>>
 * <<bower,Bower>>
 
-[#yarn]
+[[yarn]]
 ==== Yarn
 
 To upgrade to {productname} {productminorversion} using Yarn, run:
@@ -33,7 +33,7 @@ To upgrade to {productname} {productminorversion} using Yarn, run:
 $ yarn upgrade {prodnamecode}
 `
 
-[#npm]
+[[npm]]
 ==== npm
 
 To upgrade to {productname} {productminorversion} using npm, run:
@@ -41,7 +41,7 @@ To upgrade to {productname} {productminorversion} using npm, run:
 $ npm install {prodnamecode}@latest --save
 `
 
-[#composer]
+[[composer]]
 ==== Composer
 
 To upgrade to {productname} {productminorversion} using Composer, run:
@@ -49,7 +49,7 @@ To upgrade to {productname} {productminorversion} using Composer, run:
 $ php composer.phar update "{prodnamecode}/{prodnamecode}"
 `
 
-[#nuget]
+[[nuget]]
 ==== NuGet
 
 To upgrade to {productname} {productminorversion} using NuGet, run:
@@ -57,7 +57,7 @@ To upgrade to {productname} {productminorversion} using NuGet, run:
 $ Install-Package {productname}
 `
 
-[#bower]
+[[bower]]
 ==== Bower
 
 To upgrade to {productname} {productminorversion} using Bower, run:
@@ -67,7 +67,7 @@ $ bower install {prodnamecode}#{productminorversion} --save
 
 {% endif %}
 
-[#upgrading-tinymce-self-hosted-manually]
+[[upgrading-tinymce-self-hosted-manually]]
 === Upgrading TinyMCE Self-hosted manually
 
 To upgrade to {productname} {productminorversion} using a manually downloaded package:

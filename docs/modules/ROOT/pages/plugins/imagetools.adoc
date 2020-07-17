@@ -11,7 +11,7 @@ Image Tools (`imagetools`) plugin adds a contextual editing toolbar to the image
 
 WARNING: This feature requires at least Internet Explorer 10, since it makes use of `HTML5 File API`.
 
-[#cloud-installation]
+[[cloud-installation]]
 == Cloud Installation
 
 The Image Tools plugin is provided with all subscriptions to link:{rootDir}cloud-deployment-guide/editor-and-features.html[{cloudname}], including an automatically configured image proxy.
@@ -28,7 +28,7 @@ tinymce.init({
 });
 `
 
-[#self-hosted-installation]
+[[self-hosted-installation]]
 == Self-hosted Installation
 
 To enable the {productname} Image Tools plugin:
@@ -49,7 +49,7 @@ tinymce.init({
 });
 `
 
-[#options]
+[[options]]
 == Options
 
 ### `imagetools_cors_hosts`
@@ -76,7 +76,7 @@ tinymce.init({
 });
 `
 
-[#]
+[[]]
 === `imagetools_credentials_hosts`
 
 This option can be used together with the `imagetools_cors_hosts` option to allow credentials to be sent to the CORS host. This is not enabled by default since the server needs to have proper CORS headers to support this.
@@ -96,7 +96,7 @@ tinymce.init({
 });
 `
 
-[#-2]
+[[-2]]
 === `imagetools_fetch_image`
 
 This option can be used to define a custom fetch function, which provides another way to access images in complex situations. The function will be passed the HTML element of the image to be fetched and should return a `Promise` containing a `Blob` representation of the image.
@@ -121,7 +121,7 @@ tinymce.init({
 });
 +`
 
-[#-2]
+[[-2]]
 === `imagetools_proxy`
 
 Another way of getting images across domains is using local server-side proxy. Proxy is basically a script, that will retrieve remote image and pipe it back to {productname}, as if it was local. Example of such proxy (written in PHP) can be found below.
@@ -176,7 +176,7 @@ echo $content;
 ?>
 ```
 
-[#-2]
+[[-2]]
 === `imagetools_toolbar`
 
 The exact selection of buttons that will appear on the contextual toolbar can be controlled via `imagetools_toolbar` option.
@@ -206,7 +206,7 @@ tinymce.init({
 });
 `
 
-[#commands]
+[[commands]]
 == Commands
 
 The Image Tools plugin provides the following JavaScript commands.

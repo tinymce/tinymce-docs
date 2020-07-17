@@ -12,7 +12,7 @@ include::{rootDir}_attributes.adoc[]
 
 First decide how to load your modules.
 
-[#es2015-modules]
+[[es2015-modules]]
 === ES2015 modules
 
 If you are using ES2015 modules, a simple example could look something like this.
@@ -38,7 +38,7 @@ tinymce.init({
 });
 ```
 
-[#commonjs-modules]
+[[commonjs-modules]]
 === CommonJS modules
 
 The example is nearly the same if you are using CommonJS modules. However, a different `require` function is used to import the dependencies.
@@ -64,7 +64,7 @@ tinymce.init({
 });
 ```
 
-[#getting-the-skin]
+[[getting-the-skin]]
 == Getting the skin
 
 A *skin* consists of some fonts and CSS files used by the editor and {productname} will not work without them. By default {productname} looks for these files in a `/skins` directory located in your root directory. This can  be link:{rootDir}configure/editor-appearance.html#skin_url[configured in the init object].
@@ -82,7 +82,7 @@ cp -r node_modules/tinymce/skins skins
 xcopy /I /E node_modules/tinymce/skins skins
 `
 
-[#webpack-file-loader]
+[[webpack-file-loader]]
 === Webpack file-loader
 
 Another option when using Webpack is to use the https://github.com/webpack/file-loader[file loader] together with the https://github.com/webpack/docs/wiki/context[require.context] function to copy the skins directory by adding these lines before the call to the {productname} `init` function:
@@ -97,7 +97,7 @@ require.context(
 
 This copies the skins directory from `node_modules/tinymce` to your output directory as defined in your Webpack configuration. This is useful as you can easily move the output directory of your build without having to copy over the skins folder manually - webpack will take care of it for you.
 
-[#minification-with-uglifyjs2]
+[[minification-with-uglifyjs2]]
 === Minification with UglifyJS2
 
 Another popular JS minification tool, https://github.com/mishoo/UglifyJS2[UglifyJS2], will corrupt {productname} unless `ascii-only` is set.

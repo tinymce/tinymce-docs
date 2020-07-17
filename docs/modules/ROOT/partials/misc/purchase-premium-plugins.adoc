@@ -8,12 +8,12 @@
 {% endif %}
 ## Getting started with {% if pluginname != 'Tiny Drive' %}{productname}{% endif %} {\{pluginname}}
 
-[#creating-an-account]
+[[creating-an-account]]
 === Creating an account
 
 Try the *{\{pluginname}} {\{extensionType}}* and the {cloudname} with a free link:{accountsignup}[{accountpage}]. New accounts receive a 30-day trial of the {companyname} link:{plugindirectory}[premium plugins], skins, and icon packs; with no credit card information or commitment required.
 
-[#get-if-pluginname-tiny-drive-site-productname-endif-pluginname]
+[[get-if-pluginname-tiny-drive-site-productname-endif-pluginname]]
 === Get {% if pluginname != 'Tiny Drive' %}{productname}{% endif %} {\{pluginname}}
 
 {% if pluginminimumplan != 'enterprise' %}
@@ -35,7 +35,7 @@ A 14-day free trial is also available for the {tiertwoplan} and the {tierthreepl
 A 14-day free trial is available for the {tierthreeplan}.
 {% endif %}
 
-[#further-information]
+[[further-information]]
 == Further information
 
 For information on:

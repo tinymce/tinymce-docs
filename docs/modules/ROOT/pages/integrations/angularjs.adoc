@@ -9,7 +9,7 @@ include::{rootDir}_attributes.adoc[]
 
 Integration with AngularJS is currently done through https://github.com/angular-ui/ui-tinymce[angular-ui-tinymce] a third party module. This how-to shows you how to setup a project using https://angularjs.org/[AngularJS] and link:{rootDir}demo/basic-example.html[{productname}].
 
-[#1-setting-up-the-project-directory]
+[[1-setting-up-the-project-directory]]
 == 1. Setting up the project directory
 
 First, we create a directory for the project called "tinymce-angular-demo". After that, we run "bower init"in the new directory, this will set up a new empty bower project.
@@ -20,7 +20,7 @@ $ cd tinymce-angular-demo
 $ bower init
 `
 
-[#2-installation-of-angular-ui-tinymce-and-tinymce]
+[[2-installation-of-angular-ui-tinymce-and-tinymce]]
 == 2. Installation of angular, ui-tinymce and tinymce
 
 We now install the angular-ui-tinymce package this will automatically install angular and {productname}.
@@ -29,7 +29,7 @@ We now install the angular-ui-tinymce package this will automatically install an
 $ bower install angular-ui-tinymce --save
 `
 
-[#3-creating-the-demo-html-file]
+[[3-creating-the-demo-html-file]]
 == 3. Creating the demo.html file
 
 This *demo.html* file has angular properties and two calls to the controller.
@@ -41,7 +41,7 @@ This *demo.html* file has angular properties and two calls to the controller.
 
 ```
 
-[#4-creating-the-app-js-file]
+[[4-creating-the-app-js-file]]
 == 4. Creating the app.js file
 
 The *app.js* file shows you how to work with the model that automatically updates {productname}.
@@ -67,7 +67,7 @@ $scope.tinymceOptions = {
 });
 ```
 
-[#5-testing-the-application]
+[[5-testing-the-application]]
 == 5. Testing the application
 
 You can now test the application by running the demo.html page in your favorite browser.

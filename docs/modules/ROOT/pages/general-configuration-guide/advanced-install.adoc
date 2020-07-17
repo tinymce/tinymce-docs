@@ -15,12 +15,12 @@ There are multiple ways to instantiate {productname}. Accessing {productname} th
 * <<self-hostedinstall,Self-Hosted Download / Install>>
 * <<custombuildinstall,Custom Build>>
 
-[#cloud-install]
+[[cloud-install]]
 == Cloud Install
 
 include::{partialsDir}install/cloud.adoc[]
 
-[#package-manager-install-options]
+[[package-manager-install-options]]
 == Package Manager Install Options
 
 * <<npm,NPM>>
@@ -28,32 +28,32 @@ include::{partialsDir}install/cloud.adoc[]
 * <<composer,Composer>>
 * <<nuget,NuGet>>
 
-[#npm]
+[[npm]]
 == NPM
 
 include::{partialsDir}install/npm.adoc[]
 
-[#bower]
+[[bower]]
 == Bower
 
 include::{partialsDir}install/bower.adoc[]
 
-[#composer]
+[[composer]]
 == Composer
 
 include::{partialsDir}install/composer.adoc[]
 
-[#nuget]
+[[nuget]]
 == NuGet
 
 include::{partialsDir}install/nuget.adoc[]
 
-[#self-hosted-install]
+[[self-hosted-install]]
 == Self-Hosted Install
 
 include::{partialsDir}install/sdk.adoc[]
 
-[#custom-build-install]
+[[custom-build-install]]
 == Custom Build Install
 
 include::{partialsDir}install/custom.adoc[]

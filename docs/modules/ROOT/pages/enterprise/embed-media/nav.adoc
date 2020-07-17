@@ -15,14 +15,14 @@ It is now as simple as adding a plugin to deliver a modern, content creation exp
 
 Your have two deployment options. One is super easy with {cloudname}, the other is to go the more traditional Self-hosted route, requiring an additional link:{rootDir}enterprise/server.html[server-side component] to be installed and configured.
 
-[#enhanced-media-embed-self-hosted-setup]
+[[enhanced-media-embed-self-hosted-setup]]
 == Enhanced Media Embed self-hosted setup
 
 Once you have the link:{rootDir}enterprise/server.html[server-side component] installed, additional configuration to your `application.conf` file is required. (Don't forget to restart the Java application server after updating the configuration.)
 
 You also need to link:{rootDir}enterprise/embed-media/mediaembed-server-integration.html[integrate] and link:{rootDir}enterprise/embed-media/mediaembed-server-config.html[configure] the Enhanced Media Embed server.
 
-[#enhanced-media-embed-cloud-setup]
+[[enhanced-media-embed-cloud-setup]]
 == Enhanced Media Embed cloud setup
 
 link:{rootDir}cloud-deployment-guide/editor-and-features.html[{cloudname}] makes setting up Enhanced Media Embed a breeze. Simply include the `mediaembed` parameter in your `tinymce.init` and have the {cloudname} services do the work for you.

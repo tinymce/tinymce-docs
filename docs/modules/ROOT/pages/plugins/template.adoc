@@ -12,7 +12,7 @@ The `template` plugin adds support for custom templates. It also adds a menu ite
 
 *Type:* `String`
 
-[#example]
+[[example]]
 ===== Example
 
 `js
@@ -24,12 +24,12 @@ tinymce.init({
 });
 `
 
-[#configuration-options]
+[[configuration-options]]
 === Configuration Options
 
 These settings affect the execution of the `template` plugin. Predefined templates for items such as created dates and modified dates can be set here.
 
-[#]
+[[]]
 === `templates`
 
 This option lets you specify a predefined list of templates to be inserted by the user into the editable area. It is structured as an array with each item having a `title`, `description` and `content`/`url`.
@@ -74,7 +74,7 @@ tinymce.init({
 ]
 `
 
-[#-2]
+[[-2]]
 === `template_cdate_classes`
 
 When HTML elements in a template are assigned this class, the content of the element will be replaced with the 'creation' date (`creationdate`), formatted according to the `template_cdate_format` option. This option accepts a list of classes (separated by spaces).
@@ -98,7 +98,7 @@ tinymce.init({
 });
 `
 
-[#-2]
+[[-2]]
 === `template_cdate_format`
 
 This option allows you to provide a date format that all 'creation' date templates will use.
@@ -130,7 +130,7 @@ If the creation date is set as 9:00AM on January 15th 2000, then inserting this 
 
 For a list of available date and time formats, see: <<referencedatetimeformats,Reference Date/Time formats>>.
 
-[#-2]
+[[-2]]
 === `template_mdate_classes`
 
 When HTML elements in a template are assigned this class, the content of the element will be replaced with the 'modified' date (`modifieddate`), formatted according to the `template_mdate_format` option. This option accepts a list of classes (separated by spaces).
@@ -154,7 +154,7 @@ tinymce.init({
 });
 `
 
-[#-2]
+[[-2]]
 === `template_mdate_format`
 
 This option allows you to provide TinyMCE with a date/time format that all 'modified' date templates will use.
@@ -186,7 +186,7 @@ If the date modified is set as 9:00AM on January 15th 2000, then inserting this 
 
 For a list of available date and time formats, see: <<referencedatetimeformats,Reference Date/Time formats>>.
 
-[#-2]
+[[-2]]
 === `template_replace_values`
 
 This is an object containing items that will be replaced with their respective string values when a template is inserted into the editor content.
@@ -221,7 +221,7 @@ And that will be changed to:
 
 Name: Jack Black, StaffID: 991234```
 
-[#-2]
+[[-2]]
 === `template_preview_replace_values`
 
 This is an object containing items that will be replaced with their respective string values in the template preview shown in the template dialog.
@@ -256,7 +256,7 @@ And the preview will look like:
 
 Name: Jack Black, StaffID: 991234```
 
-[#-2]
+[[-2]]
 === `template_selected_content_classes`
 
 When HTML elements in a template are assigned this class, the content of the element will be replaced with selected content from the editor. This option accepts a list of classes (separated by spaces).
@@ -288,7 +288,7 @@ If the word `world` is selected in the editor and _My Template_ is applied, `wor
 
 Hello, [.selcontent]#world#```
 
-[#template-plugin-examples]
+[[template-plugin-examples]]
 === Template Plugin Examples
 
 *Example*
@@ -334,7 +334,7 @@ This is the contents your backend page should return if you specify a URL in the
 ]
 `
 
-[#making-templates]
+[[making-templates]]
 === Making Templates
 
 A template is a file with a `div` containing the template data. All `html` outside the `div` will simply be presented to the user in the preview frame.
@@ -351,7 +351,7 @@ Each template needs to be inside of a div with the `mceTmpl` class, like this ex
 
 ```
 
-[#making-snippets]
+[[making-snippets]]
 === Making Snippets
 
 Snippets are `html` code chunks that can be inserted. Replace variables will only be executed upon insert, without being wrapped in a template `div` element. So if you define `somevar1` in `template_replace_values` array it will be replaced on preview and insert.
@@ -362,7 +362,7 @@ This is a simple <strong>snippet</strong>. Will be replaced: {$somevar1}.
 
 include::{partialsDir}configuration/ref-time-date-formats.adoc[]
 
-[#commands]
+[[commands]]
 == Commands
 
 The Template plugin provides the following JavaScript command.

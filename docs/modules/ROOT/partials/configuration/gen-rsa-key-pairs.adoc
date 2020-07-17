@@ -1,4 +1,4 @@
-[#creating-a-privatepublic-key-pair-for-tiny-drive]
+[[creating-a-privatepublic-key-pair-for-tiny-drive]]
 == Creating a private/public key pair for Tiny Drive
 
 The procedure for creating a key pair depends on the operating system of the host machine.
@@ -7,7 +7,7 @@ The procedure for creating a key pair depends on the operating system of the hos
 * <<applemacos,Apple macOS procedure>>.
 * <<microsoftwindows,Microsoft Windows procedure>>.
 
-[#linux]
+[[linux]]
 === Linux
 
 To create a private/public key pair on a Linux operating system:
@@ -16,12 +16,12 @@ To create a private/public key pair on a Linux operating system:
 . <<createaprivatepublickeypaironlinux,Create a private/public key pair>>.
 . <<retrievethepublickeyonlinux,Retrieve the public key>>.
 
-[#installing-openssl-on-linux]
+[[installing-openssl-on-linux]]
 ==== Installing OpenSSL on Linux
 
 The procedure for installing OpenSSL on Linux distributions varies. The installation commands for common Linux distributions have been provided here.
 
-[#red-hat-enterprise-linux-7-or-centos-7]
+[[red-hat-enterprise-linux-7-or-centos-7]]
 ===== Red Hat Enterprise Linux 7 or CentOS 7
 
 On a command line, run the following commands to install OpenSSL on:
@@ -34,7 +34,7 @@ sudo yum check-update
 sudo yum install openssl
 `
 
-[#red-hat-enterprise-linux-8-fedora-or-centos-8]
+[[red-hat-enterprise-linux-8-fedora-or-centos-8]]
 ===== Red Hat Enterprise Linux 8+, Fedora, or CentOS 8+
 
 On a command line, run the following commands to install OpenSSL on:
@@ -48,7 +48,7 @@ sudo dnf check-update
 sudo dnf install openssl
 `
 
-[#debian-ubuntu-linux-mint-or-other-debian-based-distributions]
+[[debian-ubuntu-linux-mint-or-other-debian-based-distributions]]
 ===== Debian, Ubuntu, Linux Mint, or other Debian-based distributions
 
 On a command line, run the following commands to install OpenSSL on Debian-based operating systems (such as: Debian, Ubuntu, and Linux Mint).
@@ -58,7 +58,7 @@ sudo apt update
 sudo apt install openssl
 `
 
-[#suse-linux-enterprise-server-or-opensuse]
+[[suse-linux-enterprise-server-or-opensuse]]
 ===== SUSE Linux Enterprise Server or openSUSE
 
 On a command line, run the following commands to install OpenSSL on openSUSE-based operating systems (such as: openSUSE and SUSE Linux Enterprise Server).
@@ -68,7 +68,7 @@ sudo zypper refresh
 sudo zypper install openssl
 `
 
-[#create-a-privatepublic-key-pair-on-linux]
+[[create-a-privatepublic-key-pair-on-linux]]
 ==== Create a private/public key pair on Linux
 
 To create a private/public key pair:
@@ -87,7 +87,7 @@ Two files will be created in the current directory:
 * `<MY_TINY_DRIVE_KEY>` - The private key.
 * `<MY_TINY_DRIVE_KEY>.pub` - The public key.
 
-[#retrieve-the-public-key-on-linux]
+[[retrieve-the-public-key-on-linux]]
 ==== Retrieve the public key on Linux
 
 To retrieve the public key, on a command line, run:
@@ -98,7 +98,7 @@ openssl rsa -in <MY_TINY_DRIVE_KEY> -outform DER -pubout | base64 -w0
 
 The public key for the `<MY_TINY_DRIVE_KEY>` key pair will be printed on the command line with base64 encoding.
 
-[#apple-macos]
+[[apple-macos]]
 === Apple macOS
 
 To create a private/public key pair on a macOS operating system:
@@ -106,7 +106,7 @@ To create a private/public key pair on a macOS operating system:
 . <<createaprivatepublickeypaironmacos,Create a private/public key pair>>.
 . <<retrievethepublickeyonmacos,Retrieve the public key>>.
 
-[#create-a-privatepublic-key-pair-on-macos]
+[[create-a-privatepublic-key-pair-on-macos]]
 ==== Create a private/public key pair on macOS
 
 To create a private/public key pair:
@@ -126,7 +126,7 @@ Two files will be created in the current directory:
 * `<MY_TINY_DRIVE_KEY>` - The private key.
 * `<MY_TINY_DRIVE_KEY>.pub` - The public key.
 
-[#retrieve-the-public-key-on-macos]
+[[retrieve-the-public-key-on-macos]]
 ==== Retrieve the public key on macOS
 
 To retrieve the public key, on a terminal, run:
@@ -137,7 +137,7 @@ openssl rsa -in <MY_TINY_DRIVE_KEY> -outform DER -pubout | base64 -
 
 The public key for the `<MY_TINY_DRIVE_KEY>` key pair will be printed on the terminal with base64 encoding.
 
-[#microsoft-windows]
+[[microsoft-windows]]
 === Microsoft Windows
 
 To create a private/public key pair on a Microsoft Windows operating system:
@@ -146,7 +146,7 @@ To create a private/public key pair on a Microsoft Windows operating system:
 . <<createaprivatepublickeypaironwindows,Create a private/public key pair>>.
 . <<retrievethepublickeyonwindows,Retrieve the public key>>.
 
-[#installing-openssl-on-microsoft-windows]
+[[installing-openssl-on-microsoft-windows]]
 ==== Installing OpenSSL on Microsoft Windows
 
 To install OpenSSL with _Git for Windows_:
@@ -158,7 +158,7 @@ To install OpenSSL with _Git for Windows_:
 . Click *Next* on the remaining screens to accept the default settings.
 . Once the installation is complete, click *Finish*.
 
-[#create-a-privatepublic-key-pair-on-windows]
+[[create-a-privatepublic-key-pair-on-windows]]
 ==== Create a private/public key pair on Windows
 
 To create a private/public key pair:
@@ -178,7 +178,7 @@ Two files will be created in the current directory:
 * `<MY_TINY_DRIVE_KEY>` - The private key.
 * `<MY_TINY_DRIVE_KEY>.pub` - The public key.
 
-[#retrieve-the-public-key-on-windows]
+[[retrieve-the-public-key-on-windows]]
 ==== Retrieve the public key on Windows
 
 To retrieve the public key, on a _Git bash_ command line, run:

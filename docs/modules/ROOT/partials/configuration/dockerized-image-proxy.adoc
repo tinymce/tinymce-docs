@@ -1,11 +1,11 @@
-[#deploy-the-tinymce-image-proxy-server-side-component-using-docker-self-hosted-enterprise-bundles]
+[[deploy-the-tinymce-image-proxy-server-side-component-using-docker-self-hosted-enterprise-bundles]]
 === Deploy the TinyMCE image proxy server-side component using Docker (self-hosted enterprise bundles)
 
 The TinyMCE image proxy server-side component can be deployed using Docker or a container orchestration application such as Kubernetes. {companyname} provides a pre-configured package for creating a Image Proxy Docker image.
 
 WARNING: Do not push this docker image to a publicly accessible container registry. Doing so will constitute a breach of the https://about.tiny.cloud/legal/tiny-self-hosted-software-license-agreement-enterprise/[{companyname} Self-Hosted Software License Agreement].
 
-[#procedure]
+[[procedure]]
 ==== Procedure
 
 The following procedure covers downloading, configuring, building and testing the {productname} Image Proxy Docker image.

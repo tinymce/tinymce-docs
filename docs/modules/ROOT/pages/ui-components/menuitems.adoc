@@ -7,13 +7,13 @@ include::{rootDir}_attributes.adoc[]
 :keywords: menu menuitem menuitems
 :title_nav: Custom menu items
 
-[#use-cases]
+[[use-cases]]
 == Use Cases
 
 * Create a shortcut for an action or a series of actions that the user repeatedly does.
 * Create a button for custom behavior.
 
-[#how-to-create-custom-menu-items]
+[[how-to-create-custom-menu-items]]
 == How to create custom menu items
 
 The methods for adding custom menu items are in the UI Registry part of the editor API editor.ui.registry. The API has three methods for adding menu items:
@@ -29,7 +29,7 @@ The two arguments these methods take are:
 
 Define the custom toolbar button with the `setup` callback of the {productname} configuration to add it to the editor. This callback is invoked automatically for every initialized editor instance. Access to the UI registry API occurs when the callback receives a reference to the editor instance as its argument.
 
-[#example-of-adding-a-custom-menu-item]
+[[example-of-adding-a-custom-menu-item]]
 === Example of adding a custom menu item
 
 `js
@@ -52,7 +52,7 @@ tinymce.init({
 
 NOTE: The identifier used to create the menu item must be included in the link:{rootDir}configure/editor-appearance.html#menu[`menu`] option in the {productname} configuration for it to be added to the menubar's menus. It will not be added to the menubar's menus if `menu` is not configured correctly.
 
-[#types-of-menu-items]
+[[types-of-menu-items]]
 == Types of menu items
 
 There are three types of menu items in {productname} {productmajorversion}:
@@ -61,12 +61,12 @@ There are three types of menu items in {productname} {productmajorversion}:
 * Nested menu items
 * Toggle menu items
 
-[#basic-menu-items]
+[[basic-menu-items]]
 === Basic menu items
 
 A basic menu item triggers its `onAction` function when clicked.
 
-[#config-options]
+[[config-options]]
 ==== Config options
 
 |===
@@ -110,7 +110,7 @@ A basic menu item triggers its `onAction` function when clicked.
 
 include::{partialsDir}misc/shortcut-os-mappings.adoc[leveloffset=+1]
 
-[#api]
+[[api]]
 ==== API
 
 |===
@@ -125,7 +125,7 @@ include::{partialsDir}misc/shortcut-os-mappings.adoc[leveloffset=+1]
 | Sets the menu item's disabled state.
 |===
 
-[#example]
+[[example]]
 ==== Example
 
 ```js
@@ -148,7 +148,7 @@ setup: function(editor) {
 });
 ```
 
-[#nested-menu-items]
+[[nested-menu-items]]
 === Nested menu items
 
 A nested menu item is a menu item with a submenu. Registering a submenu this way allows it to be reused in menubar menus and toolbar button menus without having to define the submenu twice. The submenu can contain any combination of basic menu items and toggle menu items.
@@ -190,7 +190,7 @@ A nested menu item is a menu item with a submenu. Registering a submenu this way
 +++<a class="anchor" id="shortcutmodifierkeymappings2">++++++</a>+++
 ###include::{partialsDir}misc/shortcut-os-mappings.adoc[]
 
-[#api-2]
+[[api-2]]
 ==== API
 
 |===
@@ -205,7 +205,7 @@ A nested menu item is a menu item with a submenu. Registering a submenu this way
 | Sets the menu item's disabled state.
 |===
 
-[#example-2]
+[[example-2]]
 ==== Example
 
 ```js
@@ -234,12 +234,12 @@ setup: function(editor) {
 });
 ```
 
-[#toggle-menu-items]
+[[toggle-menu-items]]
 === Toggle menu items
 
 A toggle menu item triggers its `onAction` when clicked. It also has a concept of state. This means it can be toggled `on` and `off`. A toggle menu item gives the user visual feedback for its state through a checkmark that appears to the right of the menu item's text when it is `on`.
 
-[#config-options-2]
+[[config-options-2]]
 ==== Config options
 
 |===
@@ -283,7 +283,7 @@ A toggle menu item triggers its `onAction` when clicked. It also has a concept o
 
 NOTE: The `icon` option for Toggle menu items was added in {productname} 5.3.
 
-[#api-2]
+[[api-2]]
 ==== API
 
 |===
@@ -306,7 +306,7 @@ NOTE: The `icon` option for Toggle menu items was added in {productname} 5.3.
 | Sets the menu item's disabled state.
 |===
 
-[#example-2]
+[[example-2]]
 ==== Example
 
 ```js

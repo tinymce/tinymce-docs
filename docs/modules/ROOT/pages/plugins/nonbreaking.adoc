@@ -12,7 +12,7 @@ This plugin adds a button for inserting nonbreaking space entities `+&nbsp;+` at
 
 *Type:* `String`
 
-[#example]
+[[example]]
 ===== Example
 
 `js
@@ -24,10 +24,10 @@ tinymce.init({
 });
 `
 
-[#options]
+[[options]]
 === Options
 
-[#]
+[[]]
 === `nonbreaking_force_tab`
 
 This option allows you to force {productname} to insert three `+&nbsp;+` entities when the user presses the keyboard `tab` key.
@@ -57,7 +57,7 @@ tinymce.init({
 });
 `
 
-[#usage-with-or-plugin]
+[[usage-with-or-plugin]]
 ==== Usage with `table` or `lists` plugin
 
 The `nonbreaking_force_tab` setting can break the following functionality:
@@ -85,7 +85,7 @@ tinymce.init({
 });
 `
 
-[#-2]
+[[-2]]
 === `nonbreaking_wrap`
 
 This option allows you to force {productname} to wrap non-breaking space characters inserted by the plugin in a `<span class="mce-nbsp-wrap"></span>` element. This will prevent the non-breaking space being replaced by the editor or browser when typing additional spaces.
@@ -109,7 +109,7 @@ tinymce.init({
 });
 `
 
-[#commands]
+[[commands]]
 == Commands
 
 The Nonbreaking Space plugin provides the following JavaScript command.

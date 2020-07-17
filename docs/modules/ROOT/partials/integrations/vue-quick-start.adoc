@@ -1,4 +1,4 @@
-[#tinymce-vue-js-integration-quick-start-guide]
+[[tinymce-vue-js-integration-quick-start-guide]]
 == TinyMCE Vue.js integration quick start guide
 
 The https://github.com/tinymce/tinymce-vue[Official {productname} Vue.js component] integrates {productname} into Vue.js projects.
@@ -6,7 +6,7 @@ This procedure creates a https://cli.vuejs.org/guide/creating-a-project.html#vue
 
 For examples of the {productname} integration, visit https://tinymce.github.io/tinymce-vue/[the tinymce-vue storybook].
 
-[#prerequisites]
+[[prerequisites]]
 === Prerequisites
 
 This procedure requires:
@@ -16,7 +16,7 @@ This procedure requires:
  ** link:{rootDir}cloud-deployment-guide/editor-and-features.html[{cloudname}].
  ** {productname} Self-hosted. See link:{rootDir}general-configuration-guide/advanced-install.html[Installing {productname}] for details on self-hosting {productname}.
 
-[#procedure]
+[[procedure]]
 === Procedure
 
 . On a command line or command prompt, install the https://cli.vuejs.org/#getting-started[Vue CLI Tool] package.
@@ -129,12 +129,12 @@ To bundle {productname} using a module loader (such as Webpack and Browserify), 
 
  ** To stop the development server, select on the command line or command prompt and press _Ctrl+C_.
 
-[#deploying-the-application-to-a-http-server]
+[[deploying-the-application-to-a-http-server]]
 === Deploying the application to a HTTP server.
 
 The application will require further configuration before it can be deployed to a production environment. For information on configuring the application for deployment, see: https://vuejs.org/v2/guide/deployment.html[Vue.js - Production Deployment].
 
-[#next-steps]
+[[next-steps]]
 === Next Steps
 
 * For examples of the {productname} integration, see: https://tinymce.github.io/tinymce-vue/[the tinymce-vue storybook].

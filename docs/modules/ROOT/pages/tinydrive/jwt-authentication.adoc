@@ -7,7 +7,7 @@ include::{rootDir}_attributes.adoc[]
 :keywords: jwt authentication
 :title_nav: JWT Authentication
 
-[#introduction]
+[[introduction]]
 == Introduction
 
 {cloudfilemanager} requires you to setup JSON Web Token (JWT) authentication. This is to ensure that the security of your files remains in your control.
@@ -19,7 +19,7 @@ JWT is a standard authorization solution for web services and is documented in m
 If you haven't tried any of the link:{rootDir}tinydrive/getting-started.html#starterprojects[Starter projects]  yet, we urge you to try them before trying to implement your solution. The source is also available on Github to study.
 ====
 
-[#privatepublic-key-pair]
+[[privatepublic-key-pair]]
 == Private/public key pair
 
 {cloudname} services tokens use public/private RSA key pairs. The {cloudname} services only store the public key, allowing developers to have full control over the authentication.
@@ -30,7 +30,7 @@ IMPORTANT: Keep the private key secure, do not commit files containing the key t
 
 For information on generating an RSA key pair locally, see: <<creatingaprivatepublickeypairfortinydrive,Creating a private/public key pair for {cloudfilemanager}>>.
 
-[#jwt-provider-url]
+[[jwt-provider-url]]
 == JWT provider URL
 
 The easiest way to setup JWT authentication against {cloudname} services is to create a JWT provider endpoint. This endpoint takes a JSON HTTP POST request and produces a JSON result with the token that the service will then use for all the HTTP requests.
@@ -39,15 +39,15 @@ The following diagram explains the JWT call flow:
 
 image::{rootDir}/images/jwt-call-flow.png[JSON Web Token Call Flow]
 
-[#jwt-requirements]
+[[jwt-requirements]]
 == JWT requirements
 
-[#algorithm]
+[[algorithm]]
 === Algorithm
 
 Our examples use, and we recommend RS256 algorithm. This is a list of supported ones: RS256, RS384, RS512, PS256, PS384, PS512
 
-[#claims]
+[[claims]]
 === Claims
 
 These are like options/data you can send with the JWT token.
@@ -58,7 +58,7 @@ These are like options/data you can send with the JWT token.
 
 NOTE: The "sub" value is a case-sensitive string containing a *String* or *URI* value. The `sub` cannot have a `:` _unless_ it is a valid URI or else the callback would fail.
 
-[#jwt-endpoint-setup-procedure]
+[[jwt-endpoint-setup-procedure]]
 == JWT endpoint setup procedure
 
 Follow these steps to set up your own JWT endpoint.
@@ -73,17 +73,17 @@ Follow these steps to set up your own JWT endpoint.
 The JWT Endpoint should examine your systems sessions to verify your user has access to your system.
 ====
 
-[#need-help]
+[[need-help]]
 == Need help?
 
 We recommend reading up and trying to understand how JWT works; you need some necessary skills to implement {cloudfilemanager}. This can be tricky if you need some help, check our link:{rootDir}tinydrive/get-help.html[help page] and if that doesn't work, contact our support.
 
-[#php-token-provider-endpoint-example]
+[[php-token-provider-endpoint-example]]
 == PHP token provider endpoint example
 
 This example uses the https://github.com/firebase/php-jwt[Firebase JWT library] provided through the Composer dependency manager. The private key should be the private key that was generated through your {accountpage}.
 
-[#jwt-php]
+[[jwt-php]]
 === jwt.php
 
 ```php
@@ -134,12 +134,12 @@ tinymce.init({
 });
 ```
 
-[#node-token-provider-endpoint-example]
+[[node-token-provider-endpoint-example]]
 == Node token provider endpoint example
 
 This example shows you how to set up a Node.js express handler that produces the tokens. It requires you to install the Express web framework and the `jsonwebtoken` Node modules.
 
-[#jwt]
+[[jwt]]
 === /jwt
 
 ```js
@@ -194,7 +194,7 @@ tinymce.init({
 });
 ```
 
-[#more-configuration]
+[[more-configuration]]
 === More configuration
 
 If you managed to set this up, you should be good to go with checking out the various link:{rootDir}tinydrive/configuration.html[configuration options] for {cloudfilemanager} and how you can customize it. Don't forget to change the JWT Claim's (user id, user name) to get those from your system.

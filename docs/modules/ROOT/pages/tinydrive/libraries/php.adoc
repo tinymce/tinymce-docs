@@ -7,12 +7,12 @@ include::{rootDir}_attributes.adoc[]
 :keywords: tinydrive PHP
 :title_nav: PHP
 
-[#tiny-drive-php-starter-project]
+[[tiny-drive-php-starter-project]]
 == Tiny Drive PHP Starter Project
 
 This project will help you get started with {cloudfilemanager} and allow you to play around with its features.
 
-[#requirements]
+[[requirements]]
 === Requirements
 
 Before you start your journey with {cloudfilemanager}, it will go a lot smoother if you have done these steps:
@@ -22,34 +22,34 @@ Before you start your journey with {cloudfilemanager}, it will go a lot smoother
 
 Store the keys temporarily somewhere as you will need to copy & paste them later.
 
-[#prerequisites]
+[[prerequisites]]
 === Prerequisites
 
 * PHP 7.0+ on any supported platform.
 
-[#procedure]
+[[procedure]]
 === Procedure
 
 These are the steps needed to get this project running on your machine:
 
-[#1-clone-this-repo-to-your-local-machine-using]
+[[1-clone-this-repo-to-your-local-machine-using]]
 ==== 1. Clone this repo to your local machine using
 
 `
 $ git clone git@github.com:tinymce/tinydrive-php-starter.git
 `
 
-[#2-change-the-in]
+[[2-change-the-in]]
 ==== 2. Change the `apiKey` in `tinydrive-php-starter/config.php`
 
 You get the API key from the `API Key Manager` {accountpage} page at \http://tiny.cloud.
 
-[#3-create-a-file-containing-your-generated-private-rsa-key]
+[[3-create-a-file-containing-your-generated-private-rsa-key]]
 ==== 3. Create a `tinydrive-php-starter/private.key` file containing your generated private RSA key
 
 You get the private RSA key from the `JWT Key Manager` {accountpage} page at \http://tiny.cloud.
 
-[#4-go-to-the-directory-and-start-the-dev-server]
+[[4-go-to-the-directory-and-start-the-dev-server]]
 ==== 4. Go to the directory and start the dev server
 
 `
@@ -57,15 +57,15 @@ $ cd tinydrive-php-starter
 $ php -S localhost:3000
 `
 
-[#5-open-the-example-project-at-httplocalhost3000]
+[[5-open-the-example-project-at-httplocalhost3000]]
 ==== 5. Open the example project at \http://localhost:3000
 
-[#implementing-with-your-system]
+[[implementing-with-your-system]]
 === Implementing with your system
 
 If your specific use case has not been covered by any of the sample link:{rootDir}tinydrive/libraries.html[starter projects], some customizations might be required to be applied to implement {cloudfilemanager} in the specific system. The link:{rootDir}tinydrive/jwt-authentication.html[JSON Web Token] authentication solution would have to be tied to the login authentication of your system. This usually means integrating the JWT authentication to the existing session authentication so that users automatically login to {cloudfilemanager} and your system.
 
-[#additional-resources]
+[[additional-resources]]
 ==== Additional resources
 
 Go through the following additional resources to figure out how to configure {cloudfilemanager} with your system.
@@ -75,7 +75,7 @@ Go through the following additional resources to figure out how to configure {cl
 * link:{rootDir}tinydrive/configuration.html[Configuration Options]
 * link:{rootDir}tinydrive/integrations.html[Integrations]
 
-[#need-help]
+[[need-help]]
 == Need help?
 
 We are striving to make {cloudfilemanager} as useful and as simple as possible. For support related issues such as problems with JWT authentication and implementing {cloudfilemanager}, check our link:{rootDir}tinydrive/get-help.html[help page] or please contact link:{supporturl}[{supportname}].

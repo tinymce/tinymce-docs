@@ -15,7 +15,7 @@ Comments is a premium plugin from {companyname}. Please see the link:{rootDir}en
 
 After obtaining the Comments 2.0 plugin, refer to the following instructions for using it.
 
-[#add-the-comments-2-0-plugin]
+[[add-the-comments-2-0-plugin]]
 == Add the Comments 2.0 plugin
 
 To add the Comments 2.0 plugin to the {productname} editor, use the following script:
@@ -28,7 +28,7 @@ tinymce.init({
 });
 `
 
-[#modes]
+[[modes]]
 === Modes
 
 There are two modes available in Comments 2.0 that provide the ability to save comments. These modes are configured in the Comments 2.0 settings.
@@ -36,12 +36,12 @@ There are two modes available in Comments 2.0 that provide the ability to save c
 * *Callback Mode* - This is the default mode in Comments. This mode is used to configure storage and save comments on the user's server. This option gives the user a choice of configuring the storage settings to either persist comments immediately or save them at the same time as the content. Additional callbacks must be configured to use Comments in callback mode.
 * *Embedded Mode* - This mode allows the user to store the comments within the content. No additional callbacks are required to be configured to use this mode.
 
-[#configuring-comments-2-0-callback-mode]
+[[configuring-comments-2-0-callback-mode]]
 === Configuring Comments 2.0 callback mode
 
 Refer to the link:{rootDir}advanced/configuring-comments-callbacks.html[configuring callbacks for comments] section for more information.
 
-[#configuring-comments-2-0-embedded-mode]
+[[configuring-comments-2-0-embedded-mode]]
 === Configuring Comments 2.0 embedded mode
 
 To configure Comments 2.0 to use the embedded mode use the following script:
@@ -55,10 +55,10 @@ tinymce.init({
 })
 +`
 
-[#embedded-mode-options]
+[[embedded-mode-options]]
 ==== Embedded mode options
 
-[#tinycomments_author]
+[[tinycomments_author]]
 ===== tinycomments_author
 
 This option sets the author id to be used when creating or replying to comments.
@@ -67,7 +67,7 @@ This option sets the author id to be used when creating or replying to comments.
 
 *Default Value:* `"Anon"`
 
-[#example]
+[[example]]
 ====== Example
 
 `js
@@ -78,7 +78,7 @@ tinymce.init({
 })
 `
 
-[#tinycomments_author_name]
+[[tinycomments_author_name]]
 ===== tinycomments_author_name
 
 [NOTE]
@@ -90,7 +90,7 @@ _Optional_ - This option sets the author's display name to be used when creating
 
 *Type:* `String`
 
-[#example-2]
+[[example-2]]
 ====== Example
 
 `js
@@ -102,7 +102,7 @@ tinymce.init({
 })
 `
 
-[#tinycomments_can_delete]
+[[tinycomments_can_delete]]
 ===== tinycomments_can_delete
 
 _Optional_ - This option sets the author permissions for _deleting comment conversations_. If the `tinycomments_can_delete` option is not included, the current author (`tinycomments_author`) cannot delete comment conversations created by other authors.
@@ -122,7 +122,7 @@ function (req, done, fail) {
 
 The following example extends the default behavior to allow the author `<Admin user>` to delete other author's comment conversations by adding `|| currentAuthor === "<Admin user>"`.
 
-[#example-2]
+[[example-2]]
 ====== Example
 
 ```js
@@ -137,7 +137,7 @@ tinymce.init({
     done({
       canDelete: allowed || currentAuthor === "+++<Admin user="">+++" }); } }); ```+++</Admin>+++
 
-[#tinycomments_can_delete_comment]
+[[tinycomments_can_delete_comment]]
 ===== tinycomments_can_delete_comment
 
 _Optional_ - This option sets the author permissions for _deleting comments_. If the `tinycomments_can_delete_comment` option is not included, the current author (`tinycomments_author`) cannot delete comments added by other authors.
@@ -156,7 +156,7 @@ function (req, done, fail) {
 
 The following example extends the default behavior to allow the author `<Admin user>` to delete other author's comments by adding `|| currentAuthor === "<Admin user>"`.
 
-[#example-2]
+[[example-2]]
 ====== Example
 
 ```js
@@ -170,7 +170,7 @@ tinymce.init({
     done({
       canDelete: allowed || currentAuthor === "+++<Admin user="">+++" }); } }); ```+++</Admin>+++
 
-[#tinycomments_can_edit_comment]
+[[tinycomments_can_edit_comment]]
 ===== tinycomments_can_edit_comment
 
 _Optional_ - This option sets the author permissions for _editing comments_. If the `tinycomments_can_edit_comment` option is not included, the current author (`tinycomments_author`) cannot edit comments added by other authors.
@@ -189,7 +189,7 @@ function (req, done, fail) {
 
 The following example extends the default behavior to allow the author `<Admin user>` to edit other author's comments by adding `|| currentAuthor === "<Admin user>"`.
 
-[#example-2]
+[[example-2]]
 ====== Example
 
 ```js
@@ -203,7 +203,7 @@ tinymce.init({
     done({
       canEdit: allowed || currentAuthor === "+++<Admin user="">+++" }); } }); ```+++</Admin>+++
 
-[#configuring-the-comments-2-0-addcomment-toolbar-button]
+[[configuring-the-comments-2-0-addcomment-toolbar-button]]
 === Configuring the Comments 2.0 addcomment toolbar button
 
 The `addcomment` toolbar button provides the ability to add comments.
@@ -221,7 +221,7 @@ tinymce.init({
 
 *Result*: The *Comments*  image:{imagesDir}comment-disabled.png[**Comments**] toolbar button appears in the toolbar menu. The function of this button is to add comments to the selected text.
 
-[#configuring-the-comments-2-0-showcomments-toolbar-button]
+[[configuring-the-comments-2-0-showcomments-toolbar-button]]
 === Configuring the Comments 2.0 showcomments toolbar button
 
 The `showcomments` toolbar button provides the ability to display comments field for the selected text. It is a toggle button and is used to hide the comments sidebar as well.
@@ -237,7 +237,7 @@ tinymce.init({
 
 *Result*: The *Comments*  image:{imagesDir}comment-disabled.png[**Comments**] toolbar button appears in the toolbar menu. The function of this button is to show comments to for the selected text.
 
-[#configuring-the-comments-2-0-menu-item]
+[[configuring-the-comments-2-0-menu-item]]
 === Configuring the Comments 2.0 menu item
 
 By default, when Comments 2.0 is added to the plugin list, the default menus will have entries for `addcomment` (Insert Menu), `showcomments` (View Menu), and `deleteallconversations` (File Menu).
@@ -250,7 +250,7 @@ Currently, there are three menu items available:
 * `showcomments`- Provides the ability to display comments field for the selected text. It is a toggle button and is used to hide the comments as well. By default, this option can be accessed through *View* \-> *Show comment* menu bar item.
 * `deleteallconversations`- Provides the ability to delete all the comments in the content. By default, this option can be accessed through *File* \-> *Delete all conversations* menu bar item.
 
-[#configuring-the-commented-text-properties]
+[[configuring-the-commented-text-properties]]
 === Configuring the commented text properties
 
 The highlight styles are now a part of the overall content skin and are changed through customizing the skin.
@@ -261,10 +261,10 @@ Refer to the link:{rootDir}advanced/creating-a-skin.html#creatingaskin[documenta
 
 For more information on configuring {productname} formats, refer to the link:{rootDir}configure/content-formatting.html#formats[formats] section.
 
-[#using-comments]
+[[using-comments]]
 === Using Comments
 
-[#to-add-a-comment]
+[[to-add-a-comment]]
 ==== To add a comment
 
 . Select the text from the desired location in the editor body.
@@ -279,7 +279,7 @@ image::{rootDir}/images/commentedit.png[**Delete Conversation**]
 
 NOTE: The above procedure can be followed for adding multiple comments to the document.
 
-[#editing-a-comment]
+[[editing-a-comment]]
 ==== Editing a comment
 
 Follow this procedure to edit a comment.
@@ -289,7 +289,7 @@ Follow this procedure to edit a comment.
 . The comment field becomes editable. Make the required changes.
 . Click *Cancel* to discard or *Save* to store the changes.
 
-[#delete-a-comment]
+[[delete-a-comment]]
 ==== Delete a comment
 
 Follow this procedure to delete a comment. This option is not available for the first comment in a conversation.
@@ -300,7 +300,7 @@ Follow this procedure to delete a comment. This option is not available for the 
 image:{imagesDir}delete.png[**delete comment**]
 . Click *Cancel* to save or *Delete* to remove the comment from the conversation.
 
-[#delete-conversation]
+[[delete-conversation]]
 ==== Delete conversation
 
 This option is only available for the first comment in a conversation. Once the comment is saved, follow this procedure to delete a conversation.
@@ -313,7 +313,7 @@ image:{imagesDir}decision.png[**delete conversation**]
 
 *Result*: The conversation and all its subsequent comments will be deleted.
 
-[#show-comment]
+[[show-comment]]
 ==== Show comment
 
 Follow this procedure to display the comments sidebar:
@@ -323,7 +323,7 @@ Follow this procedure to display the comments sidebar:
 
 *Result*: The comments sidebar will appear and display the corresponding conversation for the highlighted text.
 
-[#delete-all-conversations]
+[[delete-all-conversations]]
 ==== Delete all conversations
 
 Follow this procedure to delete all conversations in the document:
@@ -337,7 +337,7 @@ image:{imagesDir}decision2.png[**Delete all conversations**]
 
 Check out the link:{rootDir}demo/comments-2[Comments demo] to try this new feature.
 
-[#using-comments-2-0-embedded-mode-with-the-full-page-plugin]
+[[using-comments-2-0-embedded-mode-with-the-full-page-plugin]]
 == Using Comments 2.0 embedded mode with the Full Page plugin
 
 Users have to be cautious when deciding the order in which the plugins are added in the plugins list.
@@ -348,7 +348,7 @@ The order that the plugins appear affects the order that the `getContent` hooks 
 
 For a workaround, please ensure that `tinycomments` is listed before `fullpage` in the plugins list. This should result in `tinycomments` working properly.
 
-[#commands]
+[[commands]]
 == Commands
 
 The Comments plugin provides the following JavaScript commands.

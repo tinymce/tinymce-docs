@@ -10,7 +10,7 @@ include::{rootDir}_attributes.adoc[]
 
 TinyMCE 5 introduced icon packs for customizing the editor icons.
 
-[#prerequisites]
+[[prerequisites]]
 === Prerequisites
 
 This guide assumes:
@@ -19,7 +19,7 @@ This guide assumes:
 * https://nodejs.org/en/[NodeJS] and https://www.npmjs.com[NPM] are already installed.
 * Optional: https://git-scm.com/[`git`] is already installed.
 
-[#how-icons-work-in-tinymce]
+[[how-icons-work-in-tinymce]]
 == How icons work in TinyMCE
 
 A {productname} icon pack is a `.js` file containing strings of https://developer.mozilla.org/en-US/docs/Web/SVG[SVG's]. An icon pack can be used: to include one or more custom icons; or to replace some or all of the default {productname} icons.
@@ -31,7 +31,7 @@ An icon pack only requires the custom icons to be included; the default {product
 Don't forget to explore our ready-to-use Premium Icon Packs such as 'Material' icons, and a smaller version of our default icons at link:{productpages}/skins-and-icon-packs/[Tiny Skins and Icon Packs].
 ====
 
-[#creating-a-tinymce-icon-pack]
+[[creating-a-tinymce-icon-pack]]
 == Creating a TinyMCE icon pack
 
 To create a custom icon pack:
@@ -39,7 +39,7 @@ To create a custom icon pack:
 * <<addthesvgfiles,Add the SVG files>>
 * <<buildtheiconpack,Build the icon pack>>
 
-[#download-and-setup-the-icon-pack-template]
+[[download-and-setup-the-icon-pack-template]]
 === Download and setup the icon pack template
 
 To use the {productname} icon pack template project:
@@ -66,7 +66,7 @@ $ npm install
 
 The icon pack name will be used with the link:{rootDir}configure/editor-appearance.html#icons[icons] option to apply the icons in {productname}.
 
-[#add-the-svg-files]
+[[add-the-svg-files]]
 === Add the SVG files
 
 Each SVG files placed in `/src/svg` will be converted to an icon. The file names of the SVG files are used to set the icon identifier used by {productname}.
@@ -95,7 +95,7 @@ For a list of the icon identifiers, see: link:{rootDir}advanced/editor-icon-iden
 
 NOTE: Input SVGs must be shapes, not strokes. SVG files containing strokes will not render correctly. If the input files contain strokes, use a graphics program to convert the strokes into shapes.
 
-[#build-the-icon-pack]
+[[build-the-icon-pack]]
 === Build the icon pack
 
 To build the icon pack using Gulp:
@@ -110,7 +110,7 @@ $ npx gulp
 
 . Using a web browser, open `dist/html/icons.html` to preview the icons.
 
-[#troubleshooting-information-for-building-icon-packs]
+[[troubleshooting-information-for-building-icon-packs]]
 ==== Troubleshooting information for building icon packs
 
 The SVG files are optimized during the build process with https://github.com/svg/svgo[SVGO]. The optimization can result in distorted graphics due to rounding errors. The graphics may be fixed by providing new SVGO options. To change the SVGO options used:
@@ -126,7 +126,7 @@ iconPackager({
 `
 All user defined options, including SVGO options, will merge with the default options. For information on SVGO options, see: https://github.com/svg/svgo[SVGO on GitHub].
 
-[#deploying-an-icon-pack]
+[[deploying-an-icon-pack]]
 == Deploying an icon pack
 
 An icon pack can be served either:
@@ -134,7 +134,7 @@ An icon pack can be served either:
 * <<deploytheiconpackwithtinymce,With {productname}>>
 * <<deploytheiconpackandtinymceseparately,Separate from {productname}>>
 
-[#deploy-the-icon-pack-with-tinymce]
+[[deploy-the-icon-pack-with-tinymce]]
 === Deploy the icon pack with TinyMCE
 
 :customIconPack: true

@@ -9,12 +9,12 @@ include::{rootDir}_attributes.adoc[]
 
 This section is about customizing {productname}'s user interface with skins, toolbar buttons, and manipulating the status bar.
 
-[#themes]
+[[themes]]
 === Themes
 
 *Silver* is {productname}'s default theme. Users can easily customize the menu or toolbar without having to edit the theme. Theme creation requires a more in depth-knowledge of {productname}'s API and is beyond the scope of this guide. {productname} skins, however, are easier to make.
 
-[#skins]
+[[skins]]
 === Skins
 
 Skins control the appearance of {productname} such as colors and spacing. The default skin is called *Oxide* (`oxide`) and has a `light` and a `dark` version. To initialize the editor with the dark version of the default skin, use the following configuration:
@@ -41,7 +41,7 @@ To create a skin interactively, visit http://skin.tiny.cloud/t5/[the {productnam
 
 NOTE: Developers often confuse the difference between {productname} "themes" and "skins". A *Skin* in {productname} is used to make changes to the appearance of the editor, for example, colors, margins, padding, fonts, icons, etc. A *Theme* creates the editor construction (left, top, bottom, or right of the editing area - vertical or horizontal, inline or outside, etc.). A skin usually changes the color scheme of a button, dialog, etc. while the theme applies to the whole editor including its functionality and has child skins to change the appearance.
 
-[#changing-editor-height-and-width]
+[[changing-editor-height-and-width]]
 === Changing editor height and width
 
 A common UI customization used by developers is changing the height and width of the editable area. The following examples are code snippets that change {productname}'s height and width.
@@ -91,7 +91,7 @@ See the link:{rootDir}configure/editor-appearance.html#max_height[max_height], l
 
 The editable area can also automatically resize itself as the user enters content into the iframe with the link:{rootDir}plugins/autoresize.html[Autoresize plugin]. Users can resize the editor on both the horizontal and vertical access by dragging the status bar handle with the link:{rootDir}configure/editor-appearance.html#resize[resize] configuration option.
 
-[#customizing-the-editable-area-with-content_css]
+[[customizing-the-editable-area-with-content_css]]
 === Customizing the editable area with content_css
 
 Use the link:{rootDir}configure/content-appearance.html#content_css[`content_css`] customization option to ensure that {productname}'s editable area has the same styling as the surrounding content.
@@ -114,12 +114,12 @@ See the link:{rootDir}configure/content-appearance.html#content_css[content_css]
 
 NOTE: We have included two additional skins for `content_css` to try out: *Document* and *Writer*. Use `content_css: 'document'` or `content_css: 'writer'` to try them out.
 
-[#hiding-the-status-bar]
+[[hiding-the-status-bar]]
 === Hiding the status bar
 
 The status bar is the gray bar aligned to the bottom of the editor's editable area. The status bar contains the path information and the resize handle. Removing the status bar disables the ability for users to change the size of the editable area.
 
-[#example]
+[[example]]
 ==== Example
 
 The following example disables the status bar.
@@ -133,7 +133,7 @@ tinymce.init({
 
 NOTE: Refer to the plugins and advanced configuration options documentation for more information on how to restrict whether the resize handle can be dragged.
 
-[#adding-the-code-button-plugin]
+[[adding-the-code-button-plugin]]
 === Adding the code button plugin
 
 One popular toolbar button that is _not_ loaded with the "Silver" theme is the `code` button. Clicking the `code` button displays a dialog box containing the raw HTML hidden behind {productname}'s interface.
@@ -150,7 +150,7 @@ tinymce.init({
 
 All of the buttons disappear after the `code` button is added to the toolbar and a new menu called `Tools` with the menu item `Source code` is created. (See link:{rootDir}quick-start.html[this page] for a basic HTML code block.)
 
-[#example-2]
+[[example-2]]
 ==== Example
 
 The following example displays the default toolbar in addition to the `code` functionality:

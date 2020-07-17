@@ -1,11 +1,11 @@
-[#advanced-code-editor]
+[[advanced-code-editor]]
 === Advanced Code Editor
 
 The {productname} 5.1 release includes *Advanced Code Editor* 2.0.2.
 
 *Advanced Code Editor* 2.0.2 has been updated to improve performance on mobile devices.
 
-[#advanced-tables]
+[[advanced-tables]]
 === Advanced Tables
 
 A new *Advanced Tables* premium plugin has been released with {productname} 5.1. The *Advanced Tables* plugin extends the core link:{rootDir}plugins/table.html[`table` plugin] by adding sort options for rows and columns.
@@ -22,7 +22,7 @@ For information on this plugin, see:
 * link:{rootDir}enterprise/advanced-tables.html[The Advanced Tables Premium features page (including demo)].
 * link:{rootDir}plugins/advtable.html[The Advanced Tables plugin documentation page].
 
-[#checklist]
+[[checklist]]
 === Checklist
 
 The {productname} 5.1 release includes *Checklist* 1.0.1.
@@ -31,14 +31,14 @@ The {productname} 5.1 release includes *Checklist* 1.0.1.
 * A fix to allow checklist items to be toggled on an iPad.
 * A fix to ensure the checklist toolbar button is toggled when checklist content is selected.
 
-[#enhanced-media-embed]
+[[enhanced-media-embed]]
 === Enhanced Media Embed
 
 The {productname} 5.1 release includes *Enhanced Media Embed* 2.2.4.
 
 *Enhanced Media Embed* 2.2.4 has been updated to include a touch event listener to allow embedded media to execute on mobile platforms.
 
-[#format-painter]
+[[format-painter]]
 === Format Painter
 
 The {productname} 5.1 release includes *Format Painter* 1.2.0.
@@ -47,26 +47,26 @@ The {productname} 5.1 release includes *Format Painter* 1.2.0.
 
 This version of *Format Painter* includes a fix to work with the link:{rootDir}plugins/legacyoutput.html[_Legacy Output_ plugin]).
 
-[#mentions]
+[[mentions]]
 === Mentions
 
 The {productname} 5.1 release includes *Mentions* 2.1.0.
 
 *Mentions* 2.1.0 has been updated to allow for the inclusion of "extra" menu items, such as additional results or search items. For details, see: link:{rootDir}plugins/mentions.html#mentions_fetch[Mentions - `mentions_fetch`].
 
-[#page-embed]
+[[page-embed]]
 === Page Embed
 
 The {productname} 5.1 release includes *Page Embed* 1.0.1.
 
 *Page Embed* 1.0.1 has been updated to include a touch event listener to allow embedded media to execute on mobile platforms.
 
-[#powerpaste]
+[[powerpaste]]
 === PowerPaste
 
 The {productname} 5.1 release includes *PowerPaste* 5.2.0.
 
-[#changes-to-paste-and-paste]
+[[changes-to-paste-and-paste]]
 ==== Changes to `clean` paste and `Remove Formatting` paste
 
 *PowerPaste* _5.0_ included a change to the `Remove Formatting` functionality to filter out inline style elements (such as `strong`, `b`, `em`, `i`, and `sub`), in-line with other editor functionality.
@@ -80,7 +80,7 @@ powerpaste_clean_filtered_inline_elements: 'strong,em,b,i,u,strike,sup,sub,font'
 
 For information on `powerpaste_clean_filtered_inline_elements`, see: link:{rootDir}plugins/powerpaste.html#powerpaste_clean_filtered_inline_elements[PowerPaste - `powerpaste_clean_filtered_inline_elements`].
 
-[#pre-filtering-and-post-filtering-callbacks]
+[[pre-filtering-and-post-filtering-callbacks]]
 ==== Pre-filtering and post-filtering callbacks
 
 *PowerPaste* 5.2 modifies the _pre-filtering_ and _post-filtering_ callbacks. The callbacks now contain additional data regarding the paste `mode` and the `source` of the content.

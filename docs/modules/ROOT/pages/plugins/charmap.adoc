@@ -12,7 +12,7 @@ This plugin adds a dialog to the editor with a map of special unicode characters
 
 *Type:* `String`
 
-[#example]
+[[example]]
 ===== Example
 
 `js
@@ -24,7 +24,7 @@ tinymce.init({
 });
 `
 
-[#options]
+[[options]]
 === Options
 
 The default map of unicode characters can be overridden or extended through the options below.
@@ -43,7 +43,7 @@ Internally, character map is defined by the array of arrays, where each sub-arra
 ];
 +`
 
-[#]
+[[]]
 === `charmap`
 
 With this option it is possible to fully override the default character map. This can be an array or a function that returns an array in the above mentioned format.
@@ -65,7 +65,7 @@ tinymce.init({
 });
 `
 
-[#-2]
+[[-2]]
 === `charmap_append`
 
 This option provides a way to append some additional characters to the default character map. This can be array or a function that returns an array in the above mentioned format.
@@ -88,7 +88,7 @@ tinymce.init({
 });
 `
 
-[#commands]
+[[commands]]
 == Commands
 
 The Character Map plugin provides the following JavaScript command.

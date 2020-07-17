@@ -12,7 +12,7 @@ The `table` plugin adds table management functionality to {productname}. It also
 
 *Type:* `String`
 
-[#example]
+[[example]]
 ===== Example
 
 `js
@@ -24,12 +24,12 @@ tinymce.init({
 });
 `
 
-[#config-options]
+[[config-options]]
 === Config Options
 
 These settings affect the execution of the `table` plugin and let you modify the default styles and attributes for tables, preset class lists, and table behavior.
 
-[#]
+[[]]
 === `table_toolbar`
 
 This option allows you to specify the toolbar buttons shown on the contextual toolbar for tables. Provide a space-separated list of toolbar buttons in the order they should be shown. To create groups on the toolbar, use the `|` pipe character to add a separator between toolbar buttons.
@@ -66,7 +66,7 @@ tinymce.init({
 });
 `
 
-[#-2]
+[[-2]]
 === `table_appearance_options`
 
 This option allows you to disable some of the options available to a user when inserting or editing a table. When set to `false` the following fields will not appear: Cell spacing, Cell padding, Border and Caption.
@@ -88,7 +88,7 @@ tinymce.init({
 });
 `
 
-[#-2]
+[[-2]]
 === `table_clone_elements`
 
 This option enables you to specify which elements should be cloned as empty children when inserting rows/columns to a table. By default it will clone these "``strong`` `em` `b` `i` `span` `font` `h1` `h2` `h3` `h4` `h5` `h6` `p` ``div``" into new cells.
@@ -106,7 +106,7 @@ tinymce.init({
 });
 `
 
-[#-2]
+[[-2]]
 === `table_grid`
 
 This option allows you to disable the grid-like table picker in the Table menu. The grid feature (which is enabled by default) consists of a dragable matrix that a user can interact with to automatically create a table of x-rows by x-columns based upon their input.
@@ -136,7 +136,7 @@ tinymce.init({
 });
 `
 
-[#-2]
+[[-2]]
 === `table_tab_navigation`
 
 This option enables you to disable the default tab between table cells feature. By default, when a user presses tab the cursor will move between cells within the table. By setting the `table_tab_navigation` value to `false` the cursor will tab between browser elements (such as the URL bar or form fields, etc).
@@ -160,7 +160,7 @@ tinymce.init({
 });
 `
 
-[#-2]
+[[-2]]
 === `table_default_attributes`
 
 This option enables you to specify default attributes for inserted tables.
@@ -184,7 +184,7 @@ tinymce.init({
 });
 `
 
-[#-2]
+[[-2]]
 === `table_default_styles`
 
 This option enables you to specify the default styles for inserted tables.
@@ -251,7 +251,7 @@ tinymce.init({
 });
 `
 
-[#-2]
+[[-2]]
 === `table_cell_class_list`
 
 This option enables you to specify a list of classes to present in the table cell options dialog box. This is useful if you want users to assign predefined classes to table cells.
@@ -341,7 +341,7 @@ tinymce.init({
 });
 `
 
-[#-2]
+[[-2]]
 === `table_row_advtab`
 
 This option makes it possible to disable the advanced tab in the table row dialog box. The advanced tab allows a user to input `style`, `border color` and `background color` values.
@@ -365,7 +365,7 @@ tinymce.init({
 });
 `
 
-[#-2]
+[[-2]]
 === `table_resize_bars`
 
 This option makes it possible to disable the ability to resize table columns and rows by dragging the border between two columns or rows.
@@ -389,7 +389,7 @@ tinymce.init({
 });
 `
 
-[#-2]
+[[-2]]
 === `table_style_by_css`
 
 This option enables you to force Table Properties dialog to use HTML5/CSS3 standards for setting cell spacing and cellpadding. By default, these are added as attributes to the table element. By setting this to true, cell spacing is applied to the table element as a `border-spacing` style and cell padding is applied to all `td` elements as a `padding` style
@@ -457,7 +457,7 @@ tinymce.init({
 
 NOTE: The advanced tabs of the table, row, and cell properties dialogs use the `colorpicker` to allow for border and background colors to be applied. See docs to use and configure a custom link:{rootDir}plugins/colorpicker.html[colorpicker].
 
-[#api]
+[[api]]
 === API
 
 |===
@@ -476,14 +476,14 @@ NOTE: The advanced tabs of the table, row, and cell properties dialogs use the `
 | Set the data to be used by `mceTablePasteRowBefore` or `mceTablePasteRowAfter` for pasting rows into a table
 |===
 
-[#example-2]
+[[example-2]]
 ==== Example
 
 `js
 tinymce.activeEditor.plugins.table.insertTable(2, 3);
 `
 
-[#events]
+[[events]]
 === Events
 
 |===
@@ -502,7 +502,7 @@ tinymce.activeEditor.plugins.table.insertTable(2, 3);
 | Fired when a resize action is finished on a table, row, column or cell using the resize bars
 |===
 
-[#commands]
+[[commands]]
 == Commands
 
 The Table plugin provides the following JavaScript commands.

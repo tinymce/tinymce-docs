@@ -14,7 +14,7 @@ This plugin enables {productname}'s spellcheck functionality. It also adds a too
 
 *Type:* `String`
 
-[#example]
+[[example]]
 ===== Example
 
 `js
@@ -27,12 +27,12 @@ tinymce.init({
 });
 `
 
-[#options]
+[[options]]
 == Options
 
 These settings affect the execution of the `spellchecker` plugin by modifying how spellchecking is handled. If you need an introduction to setting up server-side spell checking with {productname} please link:{rootDir}general-configuration-guide/spell-checking.html[refer to this section] in the General Configuration Guide.
 
-[#]
+[[]]
 === `spellchecker_callback`
 
 This option lets you override the default server side request/communication logic for the spellchecker.
@@ -92,7 +92,7 @@ tinymce.init({
 });
 `
 
-[#-2]
+[[-2]]
 === `spellchecker_language`
 
 This configuration option lets you set the default language code for the spellchecker. This defaults to "en".
@@ -114,7 +114,7 @@ tinymce.init({
 });
 `
 
-[#-2]
+[[-2]]
 === `spellchecker_languages`
 
 This option lets you specify a list of languages for the user to select from. The list is added to the spellcheck toolbar icon. The format is based on the 3.x `spellchecker` format.
@@ -138,7 +138,7 @@ tinymce.init({
 });
 `
 
-[#-2]
+[[-2]]
 === `spellchecker_rpc_url`
 
 This options enables you to specify a custom URL to be used for the spellchecker. This can be the `spellchecker` URL provided by the {productname} `spellchecker` packages or a URL to a page that you have in your system. The URL is *relative* to the `spellchecker` plugin.
@@ -158,7 +158,7 @@ tinymce.init({
 });
 `
 
-[#spellchecker-request-format]
+[[spellchecker-request-format]]
 === Spellchecker request format
 
 The request is a HTTP POST with URL encoded parameters described below.
@@ -176,7 +176,7 @@ The request is a HTTP POST with URL encoded parameters described below.
 | The currently selected language code for example "en" or "sv_SE".
 |===
 
-[#spellchecker-response-format]
+[[spellchecker-response-format]]
 === Spellchecker response format
 
 The response of a successful spellcheck request should like this:
@@ -198,7 +198,7 @@ And if there was an error:
 }
 `
 
-[#-2]
+[[-2]]
 === `spellchecker_wordchar_pattern`
 
 This option enables you to override the matching of characters that are parts of words. By default it will treat anything that isn't a space, comma, dot, dash, quote, etc, as parts of a word. For some languages or environments it might be useful to override this behavior.
@@ -218,7 +218,7 @@ tinymce.init({
 });
 +`
 
-[#commands]
+[[commands]]
 == Commands
 
 The Spell Checker plugin provides the following JavaScript command.

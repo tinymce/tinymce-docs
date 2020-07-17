@@ -6,44 +6,44 @@ include::{rootDir}_attributes.adoc[]
 :keywords: releasenotes newfeatures deleted technologypreview bugfixes knownissues
 :title_nav: TinyMCE 5.0.6
 
-[#overview]
+[[overview]]
 == Overview
 
 The Release Notes provide high-level coverage of the improvements and additions that have been implemented in TinyMCE 5.0.6 and document known problems in this release, as well as important bug fixes, deprecated functionality, and other details.
 
 TinyMCE 5.0.6 release adds improvements to the TinyMCE editor to improve the overall user experience.
 
-[#new-features]
+[[new-features]]
 == New features
 
-[#readonly-mode]
+[[readonly-mode]]
 === Readonly mode
 
 TinyMCE's readonly mode has been extended so that it now works with inline editors. Additionally the editor has been fixed to allow users to select and copy content while in readonly mode.
 
-[#image-upload-tab]
+[[image-upload-tab]]
 === Image upload tab
 
 TinyMCE 5.0.6 adds a new configuration option `image_uploadtab` that can be used to disable the `Upload` tab in the insert image dialog.
 
 For more information on `image_uploadtab`, refer to the link:{rootDir}plugins/image.html#image_uploadtab[documentation].
 
-[#word-count-plugin-api]
+[[word-count-plugin-api]]
 === Word Count plugin api
 
 TinyMCE 5.0.6 adds a new API for the Word Count plugin. The API exposes the functionality used by the Word Count dialog and allows developers to retrieve details about how many words or characters are used inside the editor content.
 
 For more information on the new API, refer to the link:{rootDir}plugins/wordcount.html#api[documentation].
 
-[#updates-and-enhancements]
+[[updates-and-enhancements]]
 == Updates and enhancements
 
-[#tinymce]
+[[tinymce]]
 === TinyMCE
 
 The new TinyMCE 5.0.6 editor comes with significant changes to the previous versions. Improved solutions have been introduced for unnecessary and obsolete configuration options. A comprehensive list of the updates and fixed issues is available in the link:{rootDir}changelog.html#version506may222019[changelog].
 
-[#powerpaste]
+[[powerpaste]]
 === PowerPaste
 
 PowerPaste 5.0.0 comes with significant changes to the previous versions. Refer to the changelog below for a full list of the changes in PowerPaste 5.0.0.

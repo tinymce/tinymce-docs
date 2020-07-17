@@ -24,7 +24,7 @@ There are a few important differences between these modes:
 
 {% include codepen.html id="default" %}
 
-[#example]
+[[example]]
 ===== Example
 
 A basic TinyMCE editor can be added to a `textarea` element with the id `mytextarea` using:
@@ -35,7 +35,7 @@ tinymce.init({
 });
 `
 
-[#related-configuration-options]
+[[related-configuration-options]]
 === Related configuration options
 
 * For information on using editor customization options, see: link:{rootDir}general-configuration-guide/customize-ui.html[Customizing the editor UI].

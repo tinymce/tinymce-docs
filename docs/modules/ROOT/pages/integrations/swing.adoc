@@ -9,24 +9,24 @@ include::{rootDir}_attributes.adoc[]
 
 Users can easily configure the {productname} editor in Swing through the *{productname} for Swing* integration.
 
-[#getting-the-tinymce-for-swing-integration]
+[[getting-the-tinymce-for-swing-integration]]
 == Getting the TinyMCE for Swing integration
 
 To start using {productname} for Swing as your new rich text editor, the first step is to obtain a copy of the *Integration*.
 
 Contact link:{supporturl}[{supportname}] to discuss how to get started with our latest release.
 
-[#get-started-with-our-tinymce-in-swing-integration]
+[[get-started-with-our-tinymce-in-swing-integration]]
 == Get started with our TinyMCE in Swing integration
 
 To include our {productname} in Swing integration in your Java project just follow the steps below:
 
-[#1-copy-tinymce-in-swing-libraries]
+[[1-copy-tinymce-in-swing-libraries]]
 === 1. Copy TinyMCE in Swing libraries
 
 From the release `zip` file, select all the Java libraries under the `lib` folder and import them into your project. This libraries contain everything needed to run our integration.
 
-[#2-select-a-deployment-and-create-a-configuration]
+[[2-select-a-deployment-and-create-a-configuration]]
 === 2. Select a deployment and create a configuration
 
 The Swing integration allows the user to select the origin of the {productname} code: *cloud*, *embedded*, or *external*.
@@ -59,7 +59,7 @@ tinyProperties.put("toolbar", "undo redo | formatselect | bold italic backcolor 
 final Config myConfig = Config.embedded().addProperties(tinyProperties);
 `
 
-[#3-create-the-editor-and-add-it-to-your-view]
+[[3-create-the-editor-and-add-it-to-your-view]]
 === 3. Create the editor and add it to your view
 
 Create the editor by passing a configuration object. The editor initialization is asynchronous so starting a new editor will return a future value that can be accessed as a normal future value.
@@ -76,7 +76,7 @@ Once the editor has been extracted from the future value you can use its compone
 
 For more examples check the https://github.com/tinymce/tinymce-swing-codesamples[GitHub repository].
 
-[#explore-other-resources]
+[[explore-other-resources]]
 == Explore other resources
 
 * https://github.com/tinymce/tinymce-swing-codesamples[GitHub repository] - Refer to this link for examples on how to use {productname} for Swing.

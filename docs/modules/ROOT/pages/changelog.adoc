@@ -14,7 +14,7 @@ This is the {productname} Community version changelog. For information about the
 
 {% capture changelog %}
 
-[#version-5-4-1-july-8-2020]
+[[version-5-4-1-july-8-2020]]
 == Version 5.4.1 July 8, 2020
 
 * Fixed the Search and Replace plugin incorrectly including zero-width caret characters in search results.
@@ -24,7 +24,7 @@ This is the {productname} Community version changelog. For information about the
 * Fixed Oxide checklist styles not showing when printing.
 * Fixed bug with `scope` attribute not being added to the cells of header rows.
 
-[#version-5-4-0-june-30-2020]
+[[version-5-4-0-june-30-2020]]
 == Version 5.4.0 June 30, 2020
 
 * Added keyboard navigation support to menus and toolbars when the editor is in a ShadowRoot.
@@ -62,18 +62,18 @@ This is the {productname} Community version changelog. For information about the
 * Fixed the `link` plugin now suggest `mailto:` when the text contains an '@' and no slashes (`/`).
 * Fixed the `valid_children` check of custom elements now allows a wider range of characters in names.
 
-[#version-5-3-2-june-10-2020]
+[[version-5-3-2-june-10-2020]]
 == Version 5.3.2 June 10, 2020
 
 * Fixed a regression introduced in 5.3.0, where `images_dataimg_filter` was no-longer called.
 
-[#version-5-3-1-may-27-2020]
+[[version-5-3-1-may-27-2020]]
 == Version 5.3.1 May 27, 2020
 
 * Fixed the image upload error alert also incorrectly closing the image dialog.
 * Fixed editor content scrolling incorrectly on focus in Firefox by reverting default content CSS html and body heights added in 5.3.0.
 
-[#version-5-3-0-may-21-2020]
+[[version-5-3-0-may-21-2020]]
 == Version 5.3.0 May 21, 2020
 
 * Added html and body height styles to the default oxide content CSS.
@@ -112,7 +112,7 @@ This is the {productname} Community version changelog. For information about the
 * Fixed a regression introduced in 5.2.0 whereby the desktop `toolbar_mode` setting would incorrectly override the mobile default setting.
 * Fixed an issue where deleting all content in a single cell table would delete the entire table.
 
-[#version-5-2-2-april-23-2020]
+[[version-5-2-2-april-23-2020]]
 == Version 5.2.2 April 23, 2020
 
 * Fixed an issue where anchors could not be inserted on empty lines.
@@ -121,7 +121,7 @@ This is the {productname} Community version changelog. For information about the
 * Fixed the floating toolbar drawer height collapsing when the editor is rendered in modal dialogs or floating containers.
 * Fixed `media` embed content not processing safely in some cases.
 
-[#version-5-2-1-march-25-2020]
+[[version-5-2-1-march-25-2020]]
 == Version 5.2.1 March 25, 2020
 
 * Fixed the "is decorative" checkbox in the image dialog clearing after certain dialog events.
@@ -143,7 +143,7 @@ This is the {productname} Community version changelog. For information about the
 * Fixed an issue where removing the background color of text did not always work.
 * Fixed an issue where new rows and columns in a table did not retain the style of the previous row or column.
 
-[#version-5-2-0-february-13-2020]
+[[version-5-2-0-february-13-2020]]
 == Version 5.2.0 February 13, 2020
 
 * Added the ability to apply formats to spaces.
@@ -196,7 +196,7 @@ This is the {productname} Community version changelog. For information about the
 * Fixed keyboard flicker when opening a context menu on mobile.
 * Fixed issue where plus icon svg contained strokes.
 
-[#version-5-1-6-january-28-2020]
+[[version-5-1-6-january-28-2020]]
 == Version 5.1.6 January 28, 2020
 
 * Fixed `readonly` mode not blocking all clicked links.
@@ -207,7 +207,7 @@ This is the {productname} Community version changelog. For information about the
 * Fixed the `image` plugin not respecting the `automatic_uploads` setting when uploading local images.
 * Fixed security issue related to parsing HTML comments and CDATA.
 
-[#version-5-1-5-december-19-2019]
+[[version-5-1-5-december-19-2019]]
 == Version 5.1.5 December 19, 2019
 
 * Fixed the UI not working with hybrid devices that accept both touch and mouse events.
@@ -215,7 +215,7 @@ This is the {productname} Community version changelog. For information about the
 * Fixed the `charmap` dialog initially focusing the first tab of the dialog instead of the search input field.
 * Fixed an exception being raised when inserting content if the caret was directly before or after a `contenteditable="false"` element.
 
-[#version-5-1-4-december-11-2019]
+[[version-5-1-4-december-11-2019]]
 == Version 5.1.4 December 11, 2019
 
 * Fixed dialog contents disappearing when clicking a checkbox for right-to-left languages.
@@ -225,7 +225,7 @@ This is the {productname} Community version changelog. For information about the
 * Fixed an issue with the `paste` plugin not sanitizing content in some cases.
 * Fixed HTML comments incorrectly being parsed in certain cases.
 
-[#version-5-1-3-december-4-2019]
+[[version-5-1-3-december-4-2019]]
 == Version 5.1.3 December 4, 2019
 
 * Fixed sticky toolbar not undocking when fullscreen mode is activated.
@@ -236,7 +236,7 @@ This is the {productname} Community version changelog. For information about the
 * Fixed search and replace dialog disappearing when finding offscreen matches on iOS devices.
 * Fixed performance issues where sticky toolbar was jumping while scrolling on slower browsers.
 
-[#version-5-1-2-november-19-2019]
+[[version-5-1-2-november-19-2019]]
 == Version 5.1.2 November 19, 2019
 
 * Fixed desktop touch devices using `mobile` configuration overrides.
@@ -256,7 +256,7 @@ This is the {productname} Community version changelog. For information about the
 * Fixed `quickbars` quickimage picker not working on mobile.
 * Fixed fullscreen not resizing in an iOS *WKWebView* component.
 
-[#version-5-1-1-october-28-2019]
+[[version-5-1-1-october-28-2019]]
 == Version 5.1.1 October 28, 2019
 
 * Fixed font formats containing spaces being wrapped in `+&quot;+` entities instead of single quotes.
@@ -264,7 +264,7 @@ This is the {productname} Community version changelog. For information about the
 * Fixed clicking outside a modal dialog focusing on the document body.
 * Fixed the context toolbar not hiding when scrolled out of view.
 
-[#version-5-1-0-october-17-2019]
+[[version-5-1-0-october-17-2019]]
 == Version 5.1.0 October 17, 2019
 
 * Added touch selector handles for table selections on touch devices.
@@ -311,7 +311,7 @@ This is the {productname} Community version changelog. For information about the
 * Fixed the autocompleter not activating immediately after a `br` or `contenteditable=false` element.
 * Fixed an issue where the autocompleter would incorrectly close on IE 11 in certain edge cases.
 
-[#version-5-0-16-september-24-2019]
+[[version-5-0-16-september-24-2019]]
 == Version 5.0.16 September 24, 2019
 
 * Added new `referrer_policy` setting to add the `referrerpolicy` attribute when loading scripts or stylesheets.
@@ -324,7 +324,7 @@ This is the {productname} Community version changelog. For information about the
 * Fixed notifications appearing on top of the toolbar when scrolled in inline mode.
 * Fixed notifications displaying incorrectly on IE 11.
 
-[#version-5-0-15-september-2-2019]
+[[version-5-0-15-september-2-2019]]
 == Version 5.0.15 September 2, 2019
 
 * Added a dark `content_css` skin to go with the dark UI skin.
@@ -333,7 +333,7 @@ This is the {productname} Community version changelog. For information about the
 * Fixed `onChange` callback not firing for the colorinput dialog component.
 * Fixed context toolbars not showing in fullscreen mode.
 
-[#version-5-0-14-august-19-2019]
+[[version-5-0-14-august-19-2019]]
 == Version 5.0.14 August 19, 2019
 
 * Added an API to reload the autocompleter menu with additional fetch metadata.
@@ -345,7 +345,7 @@ This is the {productname} Community version changelog. For information about the
 * Fixed focus not returning to the dialog after pressing the "Replace all" button in the search and replace dialog.
 * Removed Oxide variable `@menubar-select-disabled-border-color` and replaced it with `@menubar-select-disabled-border`.
 
-[#version-5-0-13-august-6-2019]
+[[version-5-0-13-august-6-2019]]
 == Version 5.0.13 August 6, 2019
 
 * Changed modal dialogs to prevent dragging by default and added new `draggable_modal` setting to restore dragging.
@@ -364,7 +364,7 @@ This is the {productname} Community version changelog. For information about the
 * Fixed dialogs being able to be dragged outside the window viewport.
 * Fixed inline dialogs appearing above modal dialogs.
 
-[#version-5-0-12-july-18-2019]
+[[version-5-0-12-july-18-2019]]
 == Version 5.0.12 July 18, 2019
 
 * Added ability to utilize UI dialog panels inside other panels.
@@ -380,14 +380,14 @@ This is the {productname} Community version changelog. For information about the
 * Fixed the context toolbar overlapping the toolbar in various conditions.
 * Fixed IE11 edge case where items were being inserted into the wrong location.
 
-[#version-5-0-11-july-4-2019]
+[[version-5-0-11-july-4-2019]]
 == Version 5.0.11 July 4, 2019
 
 * Fixed packaging errors caused by a rollup treeshaking https://github.com/rollup/rollup/issues/2970[bug].
 * Fixed the customeditor component not able to get data from the dialog api.
 * Fixed collection component tooltips not being translated.
 
-[#version-5-0-10-july-2-2019]
+[[version-5-0-10-july-2-2019]]
 == Version 5.0.10 July 2, 2019
 
 * Added support for all HTML color formats in `color_map` setting.
@@ -411,12 +411,12 @@ This is the {productname} Community version changelog. For information about the
 * Fixed exception being thrown when creating relative URIs.
 * Fixed focus is no longer set to the editor content during mode changes unless the editor already had focus.
 
-[#version-5-0-9-june-26-2019]
+[[version-5-0-9-june-26-2019]]
 == Version 5.0.9 June 26, 2019
 
 * Fixed print plugin not working in Firefox.
 
-[#version-5-0-8-june-18-2019]
+[[version-5-0-8-june-18-2019]]
 == Version 5.0.8 June 18, 2019
 
 * Added back support for multiple toolbars.
@@ -440,7 +440,7 @@ This is the {productname} Community version changelog. For information about the
 * Fixed native context menu not showing with images in IE11.
 * Fixed inconsistent browser context menu image selection.
 
-[#version-5-0-7-june-5-2019]
+[[version-5-0-7-june-5-2019]]
 == Version 5.0.7 June 5, 2019
 
 * Added new toolbar button and menu item for inserting tables via dialog.
@@ -464,7 +464,7 @@ This is the {productname} Community version changelog. For information about the
 * Fixed the autocompleter menu showing up after a selection had been made.
 * Fixed an exception being thrown when a file or number input has focus during initialization. Patch contributed by t00.
 
-[#version-5-0-6-may-22-2019]
+[[version-5-0-6-may-22-2019]]
 == Version 5.0.6 May 22, 2019
 
 * Added `icons_url` editor settings to enable icon packs to be loaded from a custom url.
@@ -481,7 +481,7 @@ This is the {productname} Community version changelog. For information about the
 * Fixed `mceInsertLink` command inserting spaces instead of url encoded characters.
 * Fixed text content floating on top of dialogs in IE11.
 
-[#version-5-0-5-may-9-2019]
+[[version-5-0-5-may-9-2019]]
 == Version 5.0.5 May 9, 2019
 
 * Added menu items to match the *forecolor/backcolor* toolbar buttons.
@@ -492,7 +492,7 @@ This is the {productname} Community version changelog. For information about the
 * Fixed submenu anchoring hiding overflowed content.
 * Removed unused and hidden validation icons to avoid displaying phantom tooltips.
 
-[#version-5-0-4-april-23-2019]
+[[version-5-0-4-april-23-2019]]
 == Version 5.0.4 April 23, 2019
 
 * Added back URL dialog functionality, which is now available via `editor.windowManager.openUrl()`.
@@ -514,7 +514,7 @@ This is the {productname} Community version changelog. For information about the
 * Fixed `disabled` menu items displaying as `active` when hovered.
 * Removed redundant mobile wrapper.
 
-[#version-5-0-3-march-19-2019]
+[[version-5-0-3-march-19-2019]]
 == Version 5.0.3 March 19, 2019
 
 * Changed empty nested-menu items within the style formats menu to be disabled or hidden if the value of `style_formats_autohide` is `true`.
@@ -533,7 +533,7 @@ This is the {productname} Community version changelog. For information about the
 * Fixed the `link` plugin context toolbar missing the open link button.
 * Fixed inconsistent dialog component spacing.
 
-[#version-5-0-2-march-5-2019]
+[[version-5-0-2-march-5-2019]]
 == Version 5.0.2 March 5, 2019
 
 * Added presentation and document presets to `htmlpanel` dialog component.
@@ -557,7 +557,7 @@ This is the {productname} Community version changelog. For information about the
 * Fixed the resize icon floating left when all status bar elements were disabled.
 * Fixed the resize handle to not show in fullscreen mode.
 
-[#version-5-0-1-february-21-2019]
+[[version-5-0-1-february-21-2019]]
 == Version 5.0.1 February 21, 2019
 
 * Added H1-H6 toggle button registration to the silver theme.
@@ -582,7 +582,7 @@ This is the {productname} Community version changelog. For information about the
 * Fixed an issue that caused the inline editor to fail to render when the target element already had focus.
 * Removed paste as text notification banner and `paste_plaintext_inform` setting.
 
-[#version-5-0-0-february-4-2019]
+[[version-5-0-0-february-4-2019]]
 == Version 5.0.0 February 4, 2019
 
 * Added links and registered names with `*` to denote premium plugins in Plugins tab of Help dialog.
@@ -598,7 +598,7 @@ This is the {productname} Community version changelog. For information about the
 * Fixed `charmap` and emoticons dialogs not having a primary button.
 * Fixed an issue where resizing wouldn't work correctly depending on the box-sizing model.
 
-[#version-5-0-0-rc-2-january-22-2019]
+[[version-5-0-0-rc-2-january-22-2019]]
 == Version 5.0.0-rc-2 January 22, 2019
 
 * Added screen reader accessibility for sidebar and status bar.
@@ -613,7 +613,7 @@ This is the {productname} Community version changelog. For information about the
 * Fixed blank rel_list values throwing an exception in the link plugin.
 * Removed unnecessary 'flex' and unused 'colspan' properties from the new dialog APIs.
 
-[#version-5-0-0-rc-1-january-8-2019]
+[[version-5-0-0-rc-1-january-8-2019]]
 == Version 5.0.0-rc-1 January 8, 2019
 
 * Added editor settings functionality to specify title attributes for toolbar groups.
@@ -633,7 +633,7 @@ This is the {productname} Community version changelog. For information about the
 * Fixed an issue where preview wouldn't show anything in Edge under certain circumstances.
 * Fixed the height being incorrectly calculated for the `autoresize` plugin.
 
-[#version-5-0-0-beta-1-november-30-2018]
+[[version-5-0-0-beta-1-november-30-2018]]
 == Version 5.0.0-beta-1 November 30, 2018
 
 * Added a new `addNestedMenuItem()` UI registry function and changed all nested menu items to use the new registry functions.
@@ -652,7 +652,7 @@ This is the {productname} Community version changelog. For information about the
 * Fixed an issue in IE 11 where calling `selection.getContent()` would return an empty string when the editor didn't have focus.
 * Removed compat3x plugin.
 
-[#version-5-0-0-preview-4-november-12-2018]
+[[version-5-0-0-preview-4-november-12-2018]]
 == Version 5.0.0-preview-4 November 12, 2018
 
 * Added width and height placeholder text to image and media dialog dimensions input.
@@ -686,7 +686,7 @@ This is the {productname} Community version changelog. For information about the
 * Fixed the editor not displaying as fullscreen when toggled.
 * Removed the tox-custom-editor class that was added to the wrapping element of codemirror.
 
-[#version-5-0-0-preview-3-october-18-2018]
+[[version-5-0-0-preview-3-october-18-2018]]
 == Version 5.0.0-preview-3 October 18, 2018
 
 * Changed editor layout to use modern CSS properties over manually calculating dimensions.
@@ -701,7 +701,7 @@ This is the {productname} Community version changelog. For information about the
 * Fixed vertical alignment of toolbar icons.
 * Fixed toolbar icons not appearing on IE11.
 
-[#version-5-0-0-preview-2-october-10-2018]
+[[version-5-0-0-preview-2-october-10-2018]]
 == Version 5.0.0-preview-2 October 10, 2018
 
 * Added swatch is now shown for `colorinput` fields, instead of the `colorpicker` directly.
@@ -718,7 +718,7 @@ This is the {productname} Community version changelog. For information about the
 * Removed `colorpicker` plugin, it is now in the theme.
 * Removed `textcolor` plugin, it is now in the theme.
 
-[#version-5-0-0-preview-1-october-1-2018]
+[[version-5-0-0-preview-1-october-1-2018]]
 == Version 5.0.0-preview-1 October 1, 2018
 
 * Developer preview 1

@@ -1,4 +1,4 @@
-[#toolbar_mode]
+[[toolbar_mode]]
 == toolbar_mode
 
 {% if site.productminorversion < 6.1 %}
@@ -18,7 +18,7 @@ The toolbar modes are not available when using link:{rootDir}configure/editor-ap
 
 {differs_for_mobile}
 
-[#settings]
+[[settings]]
 === Settings
 
 The toolbar mode is specified in the `tinymce.init`. There are four toolbar modes:
@@ -28,14 +28,14 @@ The toolbar mode is specified in the `tinymce.init`. There are four toolbar mode
 * <<scrolling,Scrolling>>
 * <<wrap,Wrap>>
 
-[#floating]
+[[floating]]
 ==== Floating
 
 If the `toolbar_mode` is configured to `floating`, the toolbar appears under the toolbar overflow icon in a floating shelf format when the toolbar overflow icon image:{imagesDir}icons/more-drawer.svg[**Drawer**] is clicked.
 
 image::{rootDir}/images/floating_toolbar.png[**Floating Toolbar**]
 
-[#configuring-a-floating-toolbar]
+[[configuring-a-floating-toolbar]]
 ===== Configuring a Floating toolbar
 
 Use the following settings to configure a Floating toolbar:
@@ -47,14 +47,14 @@ tinymce.init({
 });
 `
 
-[#sliding]
+[[sliding]]
 ==== Sliding
 
 If the `toolbar_mode` is configured to `sliding`, the toolbar appears as a fixed toolbar under the first toolbar when the toolbar overflow icon image:{imagesDir}icons/more-drawer.svg[**Drawer**] is clicked.
 
 image::{rootDir}/images/sliding_toolbar.png[**Sliding Toolbar**]
 
-[#configuring-a-sliding-toolbar]
+[[configuring-a-sliding-toolbar]]
 ===== Configuring a Sliding toolbar
 
 Use the following settings to configure a Sliding toolbar:
@@ -66,7 +66,7 @@ tinymce.init({
 });
 `
 
-[#scrolling]
+[[scrolling]]
 ==== Scrolling
 
 The scrolling toolbar mode is intended for touch screen devices.
@@ -77,7 +77,7 @@ A scrollbar will be shown on the toolbar on desktop devices and hybrid devices i
 
 image::{rootDir}/images/scrolling_toolbar.png[**Scrolling Toolbar**]
 
-[#configuring-a-scrolling-toolbar]
+[[configuring-a-scrolling-toolbar]]
 ===== Configuring a Scrolling toolbar
 
 Use the following settings to configure a Scrolling toolbar:
@@ -89,14 +89,14 @@ tinymce.init({
 });
 `
 
-[#wrap]
+[[wrap]]
 ==== Wrap
 
 If the `toolbar_mode` is configured to `wrap`, the overflow toolbar buttons will be shown on one or more toolbars below the primary toolbar.
 
 image::{rootDir}/images/wrapped_toolbar.png[**Wrapped Toolbar**]
 
-[#configuring-a-wrapped-toolbar]
+[[configuring-a-wrapped-toolbar]]
 ===== Configuring a Wrapped toolbar
 
 Use the following settings to configure a wrapped toolbar:

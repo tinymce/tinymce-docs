@@ -16,7 +16,7 @@ NOTE: The emoticons plugin does not automatically convert text emoticons into gr
 
 *Type:* `String`
 
-[#example]
+[[example]]
 ===== Example
 
 `js
@@ -27,7 +27,7 @@ tinymce.init({
 });
 `
 
-[#browser-emoji-support]
+[[browser-emoji-support]]
 === Browser emoji support
 
 The emoticon plugin inserts unicode character codes, such as `������` for the smiley emoji. How emoji are rendered is dependent on the web browser and operating system of the user. As a result of this, some emoji may be rendered in black and white, or may not render.
@@ -35,7 +35,7 @@ To ensure emoji render consistently across browsers and operating systems, {comp
 
 {% include codepen.html id="emoticons" %}
 
-[#options]
+[[options]]
 === Options
 
 The default database of emoji can be overridden or extended through the options below.
@@ -57,7 +57,7 @@ Internally, emoticons is defined by an object mapping emoticon names to addition
 }
 `
 
-[#]
+[[]]
 === `emoticons_append`
 
 This option provides a way to append some additional emoji to the default emoji database. This should be an object in the above mentioned format.
@@ -81,7 +81,7 @@ tinymce.init({
 });
 `
 
-[#-2]
+[[-2]]
 === `emoticons_database_url`
 
 This option provides the default location to load the emoji database from. The database should be an external JavaScript file, that assigns an object in the above format, to the `window.tinymce.emoticons_plugin_database` variable.

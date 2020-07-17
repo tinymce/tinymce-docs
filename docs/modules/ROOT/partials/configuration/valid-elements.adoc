@@ -1,4 +1,4 @@
-[#valid_elements]
+[[valid_elements]]
 == valid_elements
 
 The valid_elements option defines which elements will remain in the edited text when the editor saves. You can use this to limit the returned HTML to a subset.
@@ -7,7 +7,7 @@ This option contains a comma separated list of element conversion chunks. Each c
 
 If you just want to add or change some behavior for a few items, use the link:{rootDir}configure/content-filtering.html#extended_valid_elements[extended_valid_elements] option
 
-[#control-characters]
+[[control-characters]]
 === Control characters:
 
 |===
@@ -61,7 +61,7 @@ If you just want to add or change some behavior for a few items, use the link:{r
 
 Wildcards such as `*`,`+`,`?` may be used in element or attribute name matching.
 
-[#special-variables]
+[[special-variables]]
 === Special variables
 
 |===
@@ -87,7 +87,7 @@ tinymce.init({
 
 This example string tells {productname} to remove all elements that are not a `'a, strong, div or br'` element, convert `'b'` elements to `'strong'` elements, default '[.code]``target``' to '[.code]``_blank``' and keep the '[.code]``href``', '[.code]``target``' and '[.code]``align``' attributes of the elements.
 
-[#duplicate-attribute-warning]
+[[duplicate-attribute-warning]]
 === Duplicate attribute warning
 
 Be careful not to duplicate attributes in the definitions as this may cause {productname} to render duplicate attributes in the output. For example, if you have:

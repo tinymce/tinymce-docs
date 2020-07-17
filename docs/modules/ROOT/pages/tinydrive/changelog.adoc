@@ -10,7 +10,7 @@ include::{rootDir}_attributes.adoc[]
 
 {% capture changelog %}
 
-[#version-1-3-0-2019-06-03]
+[[version-1-3-0-2019-06-03]]
 == Version 1.3.0 (2019-06-03)
 
 * Added new standalone api functions pick, browse, start and upload.
@@ -21,7 +21,7 @@ include::{rootDir}_attributes.adoc[]
 * Added client side validation of min characters for search field.
 * Fixed bug where IE 11 would render the toolbar icons at incorrect positions.
 
-[#version-1-2-1-2019-04-24]
+[[version-1-2-1-2019-04-24]]
 == Version 1.2.1 (2019-04-24)
 
 * Added new dropbox/google drive icons.
@@ -30,7 +30,7 @@ include::{rootDir}_attributes.adoc[]
 * Fixed various async issues with the ui not being updated correctly.
 * Fixed an issue where it would scroll the file list to top if new files where added while scrolling.
 
-[#version-1-2-0-2019-03-28]
+[[version-1-2-0-2019-03-28]]
 == Version 1.2.0 (2019-03-28)
 
 * Added new google drive and dropbox file pickers
@@ -40,13 +40,13 @@ include::{rootDir}_attributes.adoc[]
 * Fixed an issue where concurrent async list operations could result in duplicate files
 * Fixed an issue where it wasn't possible to upload some file extension mp4, m4v, keynote, csv
 
-[#version-1-1-0-2018-11-26]
+[[version-1-1-0-2018-11-26]]
 == Version 1.1.0 (2018-11-26)
 
 * Added setting to allow user specific root through JWT payload
 * Fixed issue where backdrop wasn't displayed for preview menu
 
-[#version-1-0-0-2018-09-18]
+[[version-1-0-0-2018-09-18]]
 == Version 1.0.0 (2018-09-18)
 
 * Initial release

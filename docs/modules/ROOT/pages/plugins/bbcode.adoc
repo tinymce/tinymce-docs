@@ -17,7 +17,7 @@ You will need to sacrifice quite a lot of {productname}'s functionality to use t
 
 *Type:* `String`
 
-[#example]
+[[example]]
 ===== Example
 
 `js
@@ -27,10 +27,10 @@ tinymce.init({
 });
 `
 
-[#options]
+[[options]]
 === Options
 
-[#]
+[[]]
 === `bbcode_dialect`
 
 This option allows you to specify the BBCode dialect. We only support http://punbb.informer.com/[PunBB] at the moment but hope to add more dialects in the future. Suported tags are listed in the table below:
@@ -93,7 +93,7 @@ tinymce.init({
 });
 `
 
-[#live-example]
+[[live-example]]
 == Live example
 
 {% include codepen.html id="bbcode" %}

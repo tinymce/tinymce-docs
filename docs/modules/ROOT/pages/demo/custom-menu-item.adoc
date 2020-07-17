@@ -1,7 +1,7 @@
-:modulesDir: ../
-:partialsDir: {modulesDir}partials/
-:imagesDir: {modulesDir}images/
-include::{modulesDir}_attributes.adoc[]
+:rootDir: ../
+:partialsDir: {rootDir}partials/
+:imagesDir: {rootDir}images/
+include::{rootDir}_attributes.adoc[]
 = Custom menu item
 :description: This example shows you how to add simple menu items to a new custom menu.
 :description_short: Add simple menu items to a new custom menu.

@@ -133,11 +133,11 @@ http {
 }
 `
 +
-For information on the `http` configuration setting, see: link:{modulesDir}/enterprise/server/configure/#httpoptional[Configure server-side components - `http`].
+For information on the `http` configuration setting, see: link:{rootDir}enterprise/server/configure.html#httpoptional[Configure server-side components - `http`].
 
 . _Optional_: Configure the service to use a HTTP proxy by updating `config/ephox-spelling-docker-env.conf`. See:
-link:{modulesDir}/enterprise/server/configure/[Configure server-side components].
-. _Optional_: Add a custom dictionary, as described in link:{modulesDir}/enterprise/check-spelling/custom/[Adding custom dictionaries].
+link:{rootDir}enterprise/server/configure.html[Configure server-side components].
+. _Optional_: Add a custom dictionary, as described in link:{rootDir}enterprise/check-spelling/custom.html[Adding custom dictionaries].
 . Create an `origins.env` file in the same directory as the `Dockerfile`, and specify the Hypertext Transfer Protocol (HTTP) and domain name of sites hosting the TinyMCE editor (`allowed-origins`). Up to 99 origins can be added without editing `config/ephox-spelling-docker-env.conf`.
 +
 For example:
@@ -148,7 +148,7 @@ ORIGIN1=example
 ORIGIN2=http://example.org
 +`
 +
-For information on `allowed-origins`, see: link:{modulesDir}/enterprise/server/configure/#allowed-originsrequired[Configure server-side components - allowed-origins].
+For information on `allowed-origins`, see: link:{rootDir}enterprise/server/configure/#allowed-originsrequired[Configure server-side components - allowed-origins].
 
 . As the root user or Administrator, build the {productname} Spelling Service Docker image using the following command:
 +

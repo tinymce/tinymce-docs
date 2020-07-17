@@ -1,7 +1,7 @@
-:modulesDir: ../
-:partialsDir: {modulesDir}partials/
-:imagesDir: {modulesDir}images/
-include::{modulesDir}_attributes.adoc[]
+:rootDir: ../
+:partialsDir: {rootDir}partials/
+:imagesDir: {rootDir}images/
+include::{rootDir}_attributes.adoc[]
 = Autolink plugin
 :description: Automatically create hyperlinks.
 :keywords: link url urls
@@ -31,7 +31,7 @@ tinymce.init({
 
 This option allows you to specify a default `target` value for links inserted by the autolink plugin.
 
-NOTE: This setting also applies to the link:{modulesDir}/plugins/link[link] plugin.
+NOTE: This setting also applies to the link:{rootDir}plugins/link[link] plugin.
 
 *Type:* `String`
 
@@ -53,7 +53,7 @@ tinymce.init({
 
 This option allows you to set a default protocol for links inserted by the autolink plugin.
 
-NOTE: This setting also applies to the link:{modulesDir}/plugins/link[link] plugin.
+NOTE: This setting also applies to the link:{rootDir}plugins/link[link] plugin.
 
 *Type:* `String`
 

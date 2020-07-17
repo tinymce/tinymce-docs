@@ -1,7 +1,7 @@
-:modulesDir: ../
-:partialsDir: {modulesDir}partials/
-:imagesDir: {modulesDir}images/
-include::{modulesDir}_attributes.adoc[]
+:rootDir: ../
+:partialsDir: {rootDir}partials/
+:imagesDir: {rootDir}images/
+include::{rootDir}_attributes.adoc[]
 = Self-hosted file management
 :description: MoxieManager is a premium plugin to manage files & images.
 :keywords: moxiemanager .net php relative_urls
@@ -19,4 +19,4 @@ MoxieManager is a paid addition to {productname}. It is included in link:{pricin
 
 Full documentation on MoxieManager, including how to http://www.moxiemanager.com/documentation/index.php/TinyMCE_Integration[integrate with {productname}], can be http://www.moxiemanager.com/documentation/[found] on the MoxieManager website.
 
-// We also have a demo for you to explore the MoxieManager capabilities [here]({modulesDir}/demo/moxie-manager/).
+// We also have a demo for you to explore the MoxieManager capabilities [here]({rootDir}/demo/moxie-manager/).

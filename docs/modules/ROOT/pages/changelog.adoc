@@ -1,7 +1,7 @@
-:modulesDir:
-:partialsDir: {modulesDir}partials/
-:imagesDir: {modulesDir}images/
-include::{modulesDir}_attributes.adoc[]
+:rootDir:
+:partialsDir: {rootDir}partials/
+:imagesDir: {rootDir}images/
+include::{rootDir}_attributes.adoc[]
 = Changelog
 :class: changelog
 :description: The history of TinyMCE releases.
@@ -9,7 +9,7 @@ include::{modulesDir}_attributes.adoc[]
 
 [NOTE]
 ====
-This is the {productname} Community version changelog. For information about the latest {cloudname} or {enterpriseversion} Release, see: link:{modulesDir}/release-notes/[{productname} Release Notes].
+This is the {productname} Community version changelog. For information about the latest {cloudname} or {enterpriseversion} Release, see: link:{rootDir}release-notes.html[{productname} Release Notes].
 ====
 
 {% capture changelog %}

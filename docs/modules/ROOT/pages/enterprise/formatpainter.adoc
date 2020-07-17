@@ -1,7 +1,7 @@
-:modulesDir: ../
-:partialsDir: {modulesDir}partials/
-:imagesDir: {modulesDir}images/
-include::{modulesDir}_attributes.adoc[]
+:rootDir: ../
+:partialsDir: {rootDir}partials/
+:imagesDir: {rootDir}images/
+include::{rootDir}_attributes.adoc[]
 = Format Painter
 :controls: toolbar button
 :description: Quickly apply formats to multiple pieces of text.

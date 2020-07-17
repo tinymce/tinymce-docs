@@ -1,7 +1,7 @@
-:modulesDir: ../
-:partialsDir: {modulesDir}partials/
-:imagesDir: {modulesDir}images/
-include::{modulesDir}_attributes.adoc[]
+:rootDir: ../
+:partialsDir: {rootDir}partials/
+:imagesDir: {rootDir}images/
+include::{rootDir}_attributes.adoc[]
 = Permanent Pen Plugin
 :controls: toolbar button, contextmenu, menu item
 :description: Apply formats while typing.
@@ -28,7 +28,7 @@ italic: false,
 underline: false,
 strikethrough: false
 `
-For more information on {productname} formats, refer to the link:{modulesDir}/configure/content-formatting/#formats[formats] section.
+For more information on {productname} formats, refer to the link:{rootDir}configure/content-formatting.html#formats[formats] section.
 
 [#configuring-the-permanent-pen-toolbar-button]
 === Configuring the Permanent Pen toolbar button
@@ -73,7 +73,7 @@ There are two ways to access the Permanent Pen properties:
 [#from-the-menubar]
 ==== From the menubar
 
-Add the Permanent pen properties option to the menu bar with the link:{modulesDir}/configure/editor-appearance/#menu[menu] configuration.
+Add the Permanent pen properties option to the menu bar with the link:{rootDir}configure/editor-appearance.html#menu[menu] configuration.
 
 `js
 tinymce.init({
@@ -93,7 +93,7 @@ tinymce.init({
 . Right-click anywhere from inside the text area.
 . Choose the *Permanent Pen* option.
 
-image::{modulesDir}/images/right-click.png[Right-click]
+image::{rootDir}/images/right-click.png[Right-click]
 
 *Result*:
 The *Permanent Pen Properties* dialog box appears.
@@ -145,9 +145,9 @@ tinymce.init({
   }
 });
 `
-For more information on {productname} formats, refer to the link:{modulesDir}/configure/content-formatting/#formats[formats] section.
+For more information on {productname} formats, refer to the link:{rootDir}configure/content-formatting.html#formats[formats] section.
 
-Check out the link:{modulesDir}/demo/permanentpen/[Permanent Pen demo] to try out this new feature.
+Check out the link:{rootDir}demo/permanentpen.html[Permanent Pen demo] to try out this new feature.
 
 [#commands]
 == Commands

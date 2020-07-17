@@ -18,10 +18,10 @@ The new mobile experience comes with a number of user interface changes, buildin
 
 The new mobile experience allows most of the {productname} plugins to work on mobile devices, except for:
 
-* link:{modulesDir}/plugins/comments/[Comments]
-* link:{modulesDir}/plugins/imagetools/[Image tools]
-* link:{modulesDir}/plugins/moxiemanager/[MoxieManager]
-* link:{modulesDir}/plugins/permanentpen/[Permanent Pen]
+* link:{rootDir}plugins/comments.html[Comments]
+* link:{rootDir}plugins/imagetools.html[Image tools]
+* link:{rootDir}plugins/moxiemanager.html[MoxieManager]
+* link:{rootDir}plugins/permanentpen.html[Permanent Pen]
 
 [#enabling-the-mobile-editor]
 ==== Enabling the mobile editor
@@ -59,8 +59,8 @@ tinymce.init({
 NOTE: No enhancements have been made to the legacy mobile theme. All the changes described in these release notes relate to the `silver` theme on mobile devices.
 
 For information on:
-* Using the `silver` theme for mobile, see: link:{modulesDir}/mobile/[{productname} Mobile].
-* Using the legacy `mobile` theme, see: link:{modulesDir}/mobile/#thelegacymobiletheme[{productname} Mobile - The legacy mobile theme].
+* Using the `silver` theme for mobile, see: link:{rootDir}mobile.html[{productname} Mobile].
+* Using the legacy `mobile` theme, see: link:{rootDir}mobile.html#thelegacymobiletheme[{productname} Mobile - The legacy mobile theme].
 
 [#horizontal-contextual-menus-on-mobile]
 ==== Horizontal contextual menus on mobile
@@ -69,7 +69,7 @@ Contextual menus are now horizontal on mobile devices and open when a long-press
 
 For example:
 
-image::{modulesDir}/images/side-scrolling-context-toolbar.png[Example of the side-scrolling toolbar and contextual toolbar,380]
+image::{rootDir}/images/side-scrolling-context-toolbar.png[Example of the side-scrolling toolbar and contextual toolbar,380]
 
 [#side-scrolling-toolbars-on-mobile]
 ==== Side-scrolling toolbars on mobile
@@ -81,7 +81,7 @@ Toolbars and <<horizontalcontextualmenusonmobile,horizontal menus>> side-scroll 
 
 A new `inputMode` configuration setting for dialog input components has been added to provide contextual onscreen keyboards on mobile devices. Dialogs in {productname}, the core {productname} plugins, and the premium {productname} plugins have been updated to use `inputMode`.
 
-For information on using `inputMode`, see: link:{modulesDir}/ui-components/dialogcomponents/#inputmode[Dialog components - `inputMode`].
+For information on using `inputMode`, see: link:{rootDir}ui-components/dialogcomponents.html#inputmode[Dialog components - `inputMode`].
 
 [#new-mobile-defaults-for-selected-settings]
 ==== New mobile defaults for selected settings
@@ -90,53 +90,53 @@ These mobile-specific default values have been set to disable unsupported settin
 
 The following settings have mobile-specific default values:
 
-* link:{modulesDir}/configure/editor-appearance/#menubar[`menubar`] - defaults to `false` on mobile phones.
-* link:{modulesDir}/configure/editor-appearance/#toolbar_drawer[`toolbar_drawer`] - defaults to `false` on mobile devices. The toolbar will <<sidescrollingtoolbarsonmobile,side-scroll by default>>.
-* link:{modulesDir}/configure/editor-appearance/#toolbar_sticky[`toolbar_sticky`] - Sticky Toolbar is not supported on mobile devices and defaults to `false`.
-* link:{modulesDir}/plugins/table/#table_grid[`table_grid`] - Table grid is not supported on mobile devices and defaults to `false`. When creating tables on mobile, a dialog is shown instead of the table grid.
-* link:{modulesDir}/configure/editor-appearance/#resize[`resize`] - Resizing is not supported on mobile devices and defaults to `false`.
-* link:{modulesDir}/configure/advanced-editing-behavior/#object_resizing[`object_resizing`] - Object resizing is not supported on mobile devices and defaults to `false`.
+* link:{rootDir}configure/editor-appearance.html#menubar[`menubar`] - defaults to `false` on mobile phones.
+* link:{rootDir}configure/editor-appearance.html#toolbar_drawer[`toolbar_drawer`] - defaults to `false` on mobile devices. The toolbar will <<sidescrollingtoolbarsonmobile,side-scroll by default>>.
+* link:{rootDir}configure/editor-appearance.html#toolbar_sticky[`toolbar_sticky`] - Sticky Toolbar is not supported on mobile devices and defaults to `false`.
+* link:{rootDir}plugins/table.html#table_grid[`table_grid`] - Table grid is not supported on mobile devices and defaults to `false`. When creating tables on mobile, a dialog is shown instead of the table grid.
+* link:{rootDir}configure/editor-appearance.html#resize[`resize`] - Resizing is not supported on mobile devices and defaults to `false`.
+* link:{rootDir}configure/advanced-editing-behavior.html#object_resizing[`object_resizing`] - Object resizing is not supported on mobile devices and defaults to `false`.
 
 [#table-cell-selection-on-mobile]
 ==== Table cell selection on mobile
 
-The link:{modulesDir}/plugins/table/[table plugin] has been updated to provide _touch selection handles_ on touch devices. The touch selection handles appear when users double-tap a table cell, and allow users to select a range of table cells on touch devices.
+The link:{rootDir}plugins/table.html[table plugin] has been updated to provide _touch selection handles_ on touch devices. The touch selection handles appear when users double-tap a table cell, and allow users to select a range of table cells on touch devices.
 
 For example:
 
-image::{modulesDir}/images/table_cell_touch_selector_handles.png[Touch selector handles for selecting multiple table cells,380]
+image::{rootDir}/images/table_cell_touch_selector_handles.png[Touch selector handles for selecting multiple table cells,380]
 
 [#touch-friendly-split-buttons]
 ==== Touch-friendly split buttons
 
-The styling on link:{modulesDir}/ui-components/typesoftoolbarbuttons/#splitbutton[split buttons] has been updated to include more padding so they are easier to interact with on touch devices.
+The styling on link:{rootDir}ui-components/typesoftoolbarbuttons.html#splitbutton[split buttons] has been updated to include more padding so they are easier to interact with on touch devices.
 
 [#unsupported-settings-for-mobile]
 ==== Unsupported settings for mobile
 
 The following settings are not supported on mobile devices:
 
-* link:{modulesDir}/general-configuration-guide/use-tinymce-inline/[Inline editing mode].
-* link:{modulesDir}/general-configuration-guide/use-tinymce-distraction-free/[Distraction-free editing mode].
-* link:{modulesDir}/configure/editor-appearance/#inline[`inline`].
-* link:{modulesDir}/configure/editor-appearance/#toolbar_sticky[`toolbar_sticky`].
-* link:{modulesDir}/plugins/table/#table_grid[`table_grid`].
-* link:{modulesDir}/configure/editor-appearance/#resize[`resize`].
-* link:{modulesDir}/configure/advanced-editing-behavior/#object_resizing[`object_resizing`].
+* link:{rootDir}general-configuration-guide/use-tinymce-inline.html[Inline editing mode].
+* link:{rootDir}general-configuration-guide/use-tinymce-distraction-free.html[Distraction-free editing mode].
+* link:{rootDir}configure/editor-appearance.html#inline[`inline`].
+* link:{rootDir}configure/editor-appearance.html#toolbar_sticky[`toolbar_sticky`].
+* link:{rootDir}plugins/table.html#table_grid[`table_grid`].
+* link:{rootDir}configure/editor-appearance.html#resize[`resize`].
+* link:{rootDir}configure/advanced-editing-behavior.html#object_resizing[`object_resizing`].
 
 [#sticky-toolbar]
 === Sticky Toolbar
 
 The Sticky Toolbar (or Docking Toolbar) docks the toolbar and the menu to the top of the screen when scrolling down a web page. The sticky toolbar will remain docked until the editor is no longer visible. This allows the menu and toolbar to remain in view when editing large text areas.
 
-image::{modulesDir}/images/sticky-toolbar.gif[Sticky Toolbar animation]
+image::{rootDir}/images/sticky-toolbar.gif[Sticky Toolbar animation]
 
-For information on the Sticky Toolbars, see: link:{modulesDir}/configure/editor-appearance/#toolbar_sticky[Enabling Sticky Toolbars].
+For information on the Sticky Toolbars, see: link:{rootDir}configure/editor-appearance.html#toolbar_sticky[Enabling Sticky Toolbars].
 
 [#changes-to-the-env-api-for-platform-detection]
 === Changes to the Env API for platform detection
 
-New platform detection functions have been added to the link:{modulesDir}/api/tinymce/tinymce.env/[`Env` API], allowing for some older detection properties to be deprecated.
+New platform detection functions have been added to the link:{rootDir}api/tinymce/tinymce.env.html[`Env` API], allowing for some older detection properties to be deprecated.
 
 [#new-env-api-properties]
 ==== New Env API properties
@@ -258,7 +258,7 @@ Used for setting the level of referrer information sent when loading plugins and
 * Improve the privacy of end-users.
 * Assist with server-side filtering of cross-origin requests for {productname} resources.
 
-For information on using the `referrer_policy` setting, see: link:{modulesDir}/configure/integration-and-setup/#referrer_policy[Integration and setup options - `referrer_policy`].
+For information on using the `referrer_policy` setting, see: link:{rootDir}configure/integration-and-setup.html#referrer_policy[Integration and setup options - `referrer_policy`].
 
 [#added-a-dark-content-css-skin]
 === Added a dark content css skin
@@ -269,7 +269,7 @@ For example:
 
 {% include codepen.html id="dark-mode" %}
 
-For information on using the dark version of the default skin, see: link:{modulesDir}/general-configuration-guide/customize-ui/#skins[Customizing the editor UI - Skins].
+For information on using the dark version of the default skin, see: link:{rootDir}general-configuration-guide/customize-ui.html#skins[Customizing the editor UI - Skins].
 
 [#added-border-width-to-table-cell-dialog]
 === Added border width to Table cell dialog
@@ -278,7 +278,7 @@ The table plugin has been updated to include a *Border width* field in the *Cell
 
 For example:
 
-image::{modulesDir}/images/border-width-cell-props.png[Cell Properties Dialog with new Border Width field,380]
+image::{rootDir}/images/border-width-cell-props.png[Cell Properties Dialog with new Border Width field,380]
 
 [#changed-the-default-to]
 === Changed the default `toolbar_drawer` to `floating`
@@ -294,7 +294,7 @@ tinymce.init({
 });
 `
 
-For information on the `toolbar_drawer` setting, see: link:{modulesDir}/configure/editor-appearance/#toolbar_drawer[User interface options - `toolbar_drawer`].
+For information on the `toolbar_drawer` setting, see: link:{rootDir}configure/editor-appearance.html#toolbar_drawer[User interface options - `toolbar_drawer`].
 
 [#icon-changes]
 === Icon changes
@@ -306,7 +306,7 @@ To improve the user experience:
 * The `paragraph` icon has been renamed `visualchars` and is used for the `visualchars` toolbar button: image:{imagesDir}icons/visualchars.svg[`paragraph` renamed to `visualchars`]
 * A new `visualblocks` icon is used for the `visualblocks` toolbar button: image:{imagesDir}icons/visualblocks.svg[New visualblocks icon]
 
-For the list of icons included in {productname}, see: link:{modulesDir}/advanced/editor-icon-identifiers/[Editor icon identifiers].
+For the list of icons included in {productname}, see: link:{rootDir}advanced/editor-icon-identifiers.html[Editor icon identifiers].
 
 [#fixes-to-the-positioning-of-inline-dialogs-and-menus]
 === Fixes to the positioning of inline dialogs and menus

@@ -1,7 +1,7 @@
-:modulesDir: ../
-:partialsDir: {modulesDir}partials/
-:imagesDir: {modulesDir}images/
-include::{modulesDir}_attributes.adoc[]
+:rootDir: ../
+:partialsDir: {rootDir}partials/
+:imagesDir: {rootDir}images/
+include::{rootDir}_attributes.adoc[]
 = Advanced Tables plugin
 :description: Add sorting functionality to tables.
 :keywords: sort tables advanced advtable premium
@@ -11,7 +11,7 @@ include::{modulesDir}_attributes.adoc[]
 
 {premiumplugin}
 
-The `advtable` plugin is a premium plugin that extends the core link:{modulesDir}/plugins/table/[`table` plugin] by adding sort options for rows and columns. Tables can be sorted by row or column values using:
+The `advtable` plugin is a premium plugin that extends the core link:{rootDir}plugins/table.html[`table` plugin] by adding sort options for rows and columns. Tables can be sorted by row or column values using:
 * The *Sort* options in the *Table* menu.
 * The *Sort* options in the table contextual menu.
 * The *Sort* options in the *Table* toolbar menu button.

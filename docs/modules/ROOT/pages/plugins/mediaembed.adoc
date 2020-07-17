@@ -1,7 +1,7 @@
-:modulesDir: ../
-:partialsDir: {modulesDir}partials/
-:imagesDir: {modulesDir}images/
-include::{modulesDir}_attributes.adoc[]
+:rootDir: ../
+:partialsDir: {rootDir}partials/
+:imagesDir: {rootDir}images/
+include::{rootDir}_attributes.adoc[]
 = Enhanced Media Embed plugin
 :description: Add rich media previews inside TinyMCE.
 :keywords: video youtube vimeo mp3 mp4 mov movie clip film spotify
@@ -22,7 +22,7 @@ For the moment the *Enhanced Media Embed* plugin has to be used in conjunction w
 [#example-cloud-configuration]
 === Example Cloud Configuration
 
-The service URL is already configured with link:{modulesDir}/cloud-deployment-guide/editor-and-features/[{cloudname}].
+The service URL is already configured with link:{rootDir}cloud-deployment-guide/editor-and-features.html[{cloudname}].
 Simply specify the `media` and `mediaembed` plugins, and optionally a `mediaembed_max_width`
 
 `js
@@ -50,7 +50,7 @@ tinymce.init({
 [#css]
 === CSS
 
-To make the embeddable snippets display correctly on your site, be sure to add the required link:{modulesDir}/enterprise/embed-media/mediaembed-server-integration/#summarycards[summary card] CSS.
+To make the embeddable snippets display correctly on your site, be sure to add the required link:{rootDir}enterprise/embed-media/mediaembed-server-integration.html#summarycards[summary card] CSS.
 
 [#usage]
 == Usage
@@ -70,8 +70,8 @@ This optional setting will inline all styles, instead of using CSS classes, when
 [#-2]
 === `mediaembed_service_url`
 
-This setting specifies the URL to the service that will handle your requests and return the embeddable snippets used by the *Media Embed* plugin. Please follow these link:{modulesDir}/enterprise/server/#step6setupeditorclientinstancestousetheserver-sidefunctionality[instructions] to configure the *WAR* file that you will get as a part of your link:{pricingpage}[{enterpriseversion} subscription].
-This option is not required for link:{modulesDir}/cloud-deployment-guide/editor-and-features/[{cloudname}].
+This setting specifies the URL to the service that will handle your requests and return the embeddable snippets used by the *Media Embed* plugin. Please follow these link:{rootDir}enterprise/server/#step6setupeditorclientinstancestousetheserver-sidefunctionality[instructions] to configure the *WAR* file that you will get as a part of your link:{pricingpage}[{enterpriseversion} subscription].
+This option is not required for link:{rootDir}cloud-deployment-guide/editor-and-features.html[{cloudname}].
 
 *Type:* `String`
 
@@ -85,4 +85,4 @@ This optional setting specifies a maximum width in pixels of the embedded conten
 [#downloading-enhanced-media-embed-plugin]
 == Downloading Enhanced Media Embed plugin
 
-A link:{pricingpage}[{enterpriseversion} subscription] includes the ability to download and install the *Media Embed* plugin and a *WAR* file to access the service backend. Please follow these link:{modulesDir}/enterprise/server/#step6setupeditorclientinstancestousetheserver-sidefunctionality[instructions] to configure the *WAR* file.
+A link:{pricingpage}[{enterpriseversion} subscription] includes the ability to download and install the *Media Embed* plugin and a *WAR* file to access the service backend. Please follow these link:{rootDir}enterprise/server/#step6setupeditorclientinstancestousetheserver-sidefunctionality[instructions] to configure the *WAR* file.

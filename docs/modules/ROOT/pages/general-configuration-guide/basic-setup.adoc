@@ -1,7 +1,7 @@
-:modulesDir: ../
-:partialsDir: {modulesDir}partials/
-:imagesDir: {modulesDir}images/
-include::{modulesDir}_attributes.adoc[]
+:rootDir: ../
+:partialsDir: {rootDir}partials/
+:imagesDir: {rootDir}images/
+include::{rootDir}_attributes.adoc[]
 = Basic setup
 :title_nav: Basic setup
 :description_short: The three most important configuration settings, with examples.
@@ -95,7 +95,7 @@ tinymce.init({
 });
 ----
 
-For a full list of plugins and their options, see: link:{modulesDir}/plugins/[Add plugins to TinyMCE].
+For a full list of plugins and their options, see: link:{rootDir}plugins.html[Add plugins to TinyMCE].
 
 == Toolbar configuration
 
@@ -121,7 +121,7 @@ Use a space-separated list to specify the toolbar buttons for {productname}. Cre
 
 ==== Additional information
 
-* For additional toolbar options, including disabling the toolbar and adding multiple toolbars, see: link:{modulesDir}/configure/editor-appearance/#toolbar[User interface options - toolbar].
+* For additional toolbar options, including disabling the toolbar and adding multiple toolbars, see: link:{rootDir}configure/editor-appearance.html#toolbar[User interface options - toolbar].
 * For a list of all available toolbar items, see: https://www.tiny.cloud/docs/advanced/editor-control-identifiers/#toolbarcontrols[Editor control identifiers - Toolbar controls].
 
 == Menu and Menu bar configuration
@@ -187,9 +187,9 @@ Some menu items require a plugin, such as the `+table+` menu and items requires 
 
 ==== Additional information
 
-* For information on the `+menu+` setting, see: link:{modulesDir}/configure/editor-appearance/#menu[User interface options - menu].
-* For information on the `+menubar+` setting, see: link:{modulesDir}/configure/editor-appearance/#menubar[User interface options - menubar].
-* For a list of all available menu items, see: link:{modulesDir}/advanced/editor-control-identifiers/#menucontrols[Editor control identifiers - Menu controls].
+* For information on the `+menu+` setting, see: link:{rootDir}configure/editor-appearance.html#menu[User interface options - menu].
+* For information on the `+menubar+` setting, see: link:{rootDir}configure/editor-appearance.html#menubar[User interface options - menubar].
+* For a list of all available menu items, see: link:{rootDir}advanced/editor-control-identifiers.html#menucontrols[Editor control identifiers - Menu controls].
 
 == Basic configuration example
 
@@ -291,6 +291,6 @@ content_css: 'css/content.css',
 
 === Additional information
 
-* For a full list of configuration options, see: the link:{modulesDir}/configure/[Configuration options reference].
-* For a full list of Plugins and their options, see: link:{modulesDir}/plugins/[Add plugins to TinyMCE].
-* For information on the UI elements, see: link:{modulesDir}/ui-components/[User interface components].
+* For a full list of configuration options, see: the link:{rootDir}configure.html[Configuration options reference].
+* For a full list of Plugins and their options, see: link:{rootDir}plugins.html[Add plugins to TinyMCE].
+* For information on the UI elements, see: link:{rootDir}ui-components.html[User interface components].

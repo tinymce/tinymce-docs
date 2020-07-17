@@ -1,7 +1,7 @@
-:modulesDir: ../
-:partialsDir: {modulesDir}partials/
-:imagesDir: {modulesDir}images/
-include::{modulesDir}_attributes.adoc[]
+:rootDir: ../
+:partialsDir: {rootDir}partials/
+:imagesDir: {rootDir}images/
+include::{rootDir}_attributes.adoc[]
 = TinyMCE 5.0.9
 :keywords: releasenotes newfeatures deleted technologypreview bugfixes knownissues
 :title_nav: TinyMCE 5.0.9
@@ -28,9 +28,9 @@ NOTE: TinyMCE 5.0.8 community was not released to enterprise due to issues found
 
 TinyMCE 5.0.9 adds back the ability to include multiple toolbars in the editor, similar to TinyMCE 4.x. Multiple toolbars can be configured by using the toolbar array or toolbar1, toolbar2, etc... configuration options.
 
-image::{modulesDir}/images/multiple-toolbars.png[Multiple toolbars]
+image::{rootDir}/images/multiple-toolbars.png[Multiple toolbars]
 
-For more information on multiple toolbars refer to the link:{modulesDir}/configure/editor-appearance/#usingmultipletoolbars[documentation].
+For more information on multiple toolbars refer to the link:{rootDir}configure/editor-appearance.html#usingmultipletoolbars[documentation].
 
 NOTE: If multiple toolbars are used, the toolbar drawer will be disabled as toolbar drawers aren't compatible with multiple toolbars.
 
@@ -39,14 +39,14 @@ NOTE: If multiple toolbars are used, the toolbar drawer will be disabled as tool
 
 TinyMCE 5.0.9 adds two new configuration options: `base_url` and `suffix`. These new options provide an easier way to provide the editor manager `baseURL` and `suffix` properties.
 
-For more information on the new options refer to the link:{modulesDir}/configure/integration-and-setup/#base_url[base_url] and link:{modulesDir}/configure/integration-and-setup/#suffix[suffix] documentation.
+For more information on the new options refer to the link:{rootDir}configure/integration-and-setup.html#base_url[base_url] and link:{rootDir}configure/integration-and-setup.html#suffix[suffix] documentation.
 
 [#media-plugin-m4a-file-support]
 ==== Media plugin m4a file support
 
 The *Media* plugin now supports the `M4A` audio format. Inserting a m4a file will now be embedded using a HTML5 `<audio>` element.
 
-For more information on the media plugin refer to the link:{modulesDir}/plugins/media/[documentation].
+For more information on the media plugin refer to the link:{rootDir}plugins/media.html[documentation].
 
 [#updates-and-enhancements]
 == Updates and enhancements
@@ -54,7 +54,7 @@ For more information on the media plugin refer to the link:{modulesDir}/plugins/
 [#tinymce-2]
 === TinyMCE
 
-The new TinyMCE 5.0.9 editor comes with numerous changes to the previous versions. A comprehensive list of the updates and fixed issues is available in the link:{modulesDir}/changelog/#version509june262019[changelog].
+The new TinyMCE 5.0.9 editor comes with numerous changes to the previous versions. A comprehensive list of the updates and fixed issues is available in the link:{rootDir}changelog.html#version509june262019[changelog].
 
 [#iframe-dialog-component]
 ==== Iframe dialog component
@@ -73,21 +73,21 @@ TinyMCE 5.0.9 has addressed an issue where trying to press the space key at the 
 
 The *Legacy Output* plugin comes with numerous bug fixes and improvements. Issues have been addressed so that the correct font size will be shown in the font size selector, images can be center aligned and removing text colors will work as expected.
 
-For more information on *Legacy Output* refer to the link:{modulesDir}/plugins/legacyoutput/[documentation].
+For more information on *Legacy Output* refer to the link:{rootDir}plugins/legacyoutput.html[documentation].
 
 [#enhanced-media-embed]
 === Enhanced Media Embed
 
 *Enhanced Media Embed* 2.2.1 has addressed an issue where pressing the enter key after multiple links, separated by `<br>` elements, could cause the links to disappear.
 
-For more information on *Enhanced Media Embed* refer to the link:{modulesDir}/plugins/mediaembed/[documentation].
+For more information on *Enhanced Media Embed* refer to the link:{rootDir}plugins/mediaembed.html[documentation].
 
 [#linkchecker]
 === LinkChecker
 
 *LinkChecker* 2.0.3 has addressed an issue where empty or blank links were incorrectly sent for validation and marked as invalid.
 
-For more information on *Link Checker* refer to the link:{modulesDir}/plugins/linkchecker/[documentation].
+For more information on *Link Checker* refer to the link:{rootDir}plugins/linkchecker.html[documentation].
 
 [#errata-tinymce-5-0-9-premium-plugins]
 == Errata&#58; TinyMCE 5.0.9 Premium Plugins
@@ -106,7 +106,7 @@ These settings can resolve permission issues related to duplicate user names by 
 
 NOTE: If these settings are not used, *Tiny Comments* reverts to using the `tinycomments_author` option or `author` property for the display name.
 
-For information on *Tiny Comments*, refer to the link:{modulesDir}/plugins/comments/[*Tiny Comments* documentation].
+For information on *Tiny Comments*, refer to the link:{rootDir}plugins/comments.html[*Tiny Comments* documentation].
 
 [#powerpaste]
 === PowerPaste
@@ -124,4 +124,4 @@ The new version of PowerPaste 5.0.1 includes bug fixes. Refer to the changelog b
 * Fixed: issue where the wrong error notification was displayed when images failed to import.
 * Fixed: leading, trailing and sequential spaces being lost when pasting plain text.
 
-For information on *PowerPaste*, refer to the link:{modulesDir}/plugins/powerpaste/[*PowerPaste* documentation].
+For information on *PowerPaste*, refer to the link:{rootDir}plugins/powerpaste.html[*PowerPaste* documentation].

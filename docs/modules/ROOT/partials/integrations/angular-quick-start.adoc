@@ -4,7 +4,7 @@
 == TinyMCE Angular integration quick start guide
 
 The https://github.com/tinymce/tinymce-angular[Official {productname} Angular component] integrates {productname} into Angular projects.
-This procedure creates a https://angular.io/guide/setup-local[basic Angular application] containing a {productname} editor based on our link:{modulesDir}/demo/basic-example/[Basic {productname} example].
+This procedure creates a https://angular.io/guide/setup-local[basic Angular application] containing a {productname} editor based on our link:{rootDir}demo/basic-example.html[Basic {productname} example].
 
 For examples of the {productname} Angular integration, visit https://tinymce.github.io/tinymce-angular/[the tinymce-angular storybook].
 
@@ -16,8 +16,8 @@ This procedure requires:
 * Access to `tinymce.min.js` on either:
 
 ....
-* [{cloudname}]({modulesDir}/cloud-deployment-guide/editor-and-features/).
-* {productname} Self-hosted. See [Installing {productname}]({modulesDir}/general-configuration-guide/advanced-install/) for details on self-hosting {productname}.
+* [{cloudname}]({rootDir}/cloud-deployment-guide/editor-and-features/).
+* {productname} Self-hosted. See [Installing {productname}]({rootDir}/general-configuration-guide/advanced-install/) for details on self-hosting {productname}.
 ....
 
 [#procedure]
@@ -92,7 +92,7 @@ This procedure requires:
    }"
  ></editor>
  ```
- This {productname} editor configuration should replicate the example on the link:{modulesDir}/demo/basic-example/[Basic example page].
+ This {productname} editor configuration should replicate the example on the link:{rootDir}demo/basic-example.html[Basic example page].
 
 . Provide access to {productname} using {cloudname} or by self-hosting {productname}.
  ** *{cloudname}*
@@ -172,11 +172,11 @@ To use an independent deployment of {productname}, add a script to either the `<
 +
 To use an independent deployment of {productname} with the create a Angular application, add the script to `/path/to/tinymce-angular-demo/src/app/app.component.html`.
 +
-For information on self-hosting {productname}, see: link:{modulesDir}/general-configuration-guide/advanced-install/[Installing {productname}].
+For information on self-hosting {productname}, see: link:{rootDir}general-configuration-guide/advanced-install.html[Installing {productname}].
 
   *** *Bundling {productname} with the Angular application using a module loader*
 +
-To bundle {productname} using a module loader (such as Webpack and Browserify), see: link:{modulesDir}/advanced/usage-with-module-loaders/[Usage with module loaders].
+To bundle {productname} using a module loader (such as Webpack and Browserify), see: link:{rootDir}advanced/usage-with-module-loaders.html[Usage with module loaders].
 . Test the application using the Angular development server.
  ** To start the development server, navigate to the `tinymce-angular-demo` directory and run:
 +
@@ -210,5 +210,5 @@ NOTE: Additional configuration is required to deploy the application outside the
 
 * For examples of the {productname} integration, see: https://tinymce.github.io/tinymce-angular/[the tinymce-angular storybook].
 * For information on customizing:
- ** {productname}, see: link:{modulesDir}/general-configuration-guide/basic-setup/[Basic setup].
+ ** {productname}, see: link:{rootDir}general-configuration-guide/basic-setup.html[Basic setup].
  ** The Angular application, see: https://angular.io/docs[the Angular documentation].

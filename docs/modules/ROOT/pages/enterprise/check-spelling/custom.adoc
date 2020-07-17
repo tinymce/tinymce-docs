@@ -1,7 +1,7 @@
-:modulesDir: ../../
-:partialsDir: {modulesDir}partials/
-:imagesDir: {modulesDir}images/
-include::{modulesDir}_attributes.adoc[]
+:rootDir: ../../
+:partialsDir: {rootDir}partials/
+:imagesDir: {rootDir}images/
+include::{rootDir}_attributes.adoc[]
 = Adding custom dictionaries
 :description: Custom dictionaries can be added to Spell Checker Pro
 :keywords: enterprise tinymcespellchecker spell check checker pro
@@ -26,10 +26,10 @@ ephox {
 [#creating-custom-dictionary-files]
 === Creating custom dictionary files
 
-One custom dictionary can be created for each language supported by the spell checker (see link:{modulesDir}/enterprise/check-spelling/[supported languages]), as well as an additional "global" dictionary that contains words that are valid across all languages, such as trademarks.
+One custom dictionary can be created for each language supported by the spell checker (see link:{rootDir}enterprise/check-spelling.html[supported languages]), as well as an additional "global" dictionary that contains words that are valid across all languages, such as trademarks.
 
 A dictionary file for a particular language must be named with the language code of the language (see
-link:{modulesDir}/enterprise/check-spelling/[supported languages] for language codes), plus the suffix `.txt`:
+link:{rootDir}enterprise/check-spelling.html[supported languages] for language codes), plus the suffix `.txt`:
 E.g. `en.txt`, `en_gb.txt`, `fr.txt`, `de.txt` etc.
 
 The "global" dictionary file for language-independent words must be called "global.txt".

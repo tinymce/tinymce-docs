@@ -1,13 +1,13 @@
-:modulesDir: ../
-:partialsDir: {modulesDir}partials/
-:imagesDir: {modulesDir}images/
-include::{modulesDir}_attributes.adoc[]
+:rootDir: ../
+:partialsDir: {rootDir}partials/
+:imagesDir: {rootDir}images/
+include::{rootDir}_attributes.adoc[]
 = Valid elements example
 :description: This example shows you how to use the extended_valid_elements option, enabling you to specify valid elements and attributes.
 :description_short: Explore how valid_elements cleans up raw HTML output.
 :keywords: example demo custom valid elements valid_elements
 :title_nav: Valid elements
 
-This example shows you how to use the link:{modulesDir}/configure/content-filtering/#extended_valid_elements[extended_valid_elements] option. This option enables you to specify valid elements and attributes.
+This example shows you how to use the link:{rootDir}configure/content-filtering.html#extended_valid_elements[extended_valid_elements] option. This option enables you to specify valid elements and attributes.
 
 {% include codepen.html id="valid-elements" %}

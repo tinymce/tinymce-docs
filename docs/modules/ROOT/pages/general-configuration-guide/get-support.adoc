@@ -1,7 +1,7 @@
-:modulesDir: ../
-:partialsDir: {modulesDir}partials/
-:imagesDir: {modulesDir}images/
-include::{modulesDir}_attributes.adoc[]
+:rootDir: ../
+:partialsDir: {rootDir}partials/
+:imagesDir: {rootDir}images/
+include::{rootDir}_attributes.adoc[]
 = Get Support &amp; FAQ
 :description: Community and pro-grade support options.
 :keywords: forum forums url absolute relative security xss
@@ -10,7 +10,7 @@ include::{modulesDir}_attributes.adoc[]
 [#premium-support]
 == Premium support
 
-Paid premium support is available as part of link:{pricingpage}[{enterpriseversion} and {cloudname} subscriptions]. {productname} Enterprise customers can link:{modulesDir}/enterprise/support/[submit a case support request].
+Paid premium support is available as part of link:{pricingpage}[{enterpriseversion} and {cloudname} subscriptions]. {productname} Enterprise customers can link:{rootDir}enterprise/support.html[submit a case support request].
 
 [#forums]
 == Forums

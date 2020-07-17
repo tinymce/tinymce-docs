@@ -1,7 +1,7 @@
-:modulesDir: ../
-:partialsDir: {modulesDir}partials/
-:imagesDir: {modulesDir}images/
-include::{modulesDir}_attributes.adoc[]
+:rootDir: ../
+:partialsDir: {rootDir}partials/
+:imagesDir: {rootDir}images/
+include::{rootDir}_attributes.adoc[]
 = TinyMCE classic editing mode
 :description: The Theme that renders iframe or inline modes using the TinyMCE core UI framework.
 :keywords: theme classic
@@ -38,6 +38,6 @@ tinymce.init({
 [#related-configuration-options]
 === Related configuration options
 
-* For information on using editor customization options, see: link:{modulesDir}/general-configuration-guide/customize-ui/[Customizing the editor UI].
-* For information on localizing {productname}, see: link:{modulesDir}/general-configuration-guide/localize-your-language/[Localize TinyMCE].
-* For information on all {productname} configuration settings, see: link:{modulesDir}/configure/[Configuration options reference].
+* For information on using editor customization options, see: link:{rootDir}general-configuration-guide/customize-ui.html[Customizing the editor UI].
+* For information on localizing {productname}, see: link:{rootDir}general-configuration-guide/localize-your-language.html[Localize TinyMCE].
+* For information on all {productname} configuration settings, see: link:{rootDir}configure.html[Configuration options reference].

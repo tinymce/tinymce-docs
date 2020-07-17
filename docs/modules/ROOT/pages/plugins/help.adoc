@@ -1,7 +1,7 @@
-:modulesDir: ../
-:partialsDir: {modulesDir}partials/
-:imagesDir: {modulesDir}images/
-include::{modulesDir}_attributes.adoc[]
+:rootDir: ../
+:partialsDir: {rootDir}partials/
+:imagesDir: {rootDir}images/
+include::{rootDir}_attributes.adoc[]
 = Help plugin
 :controls: toolbar button, menu item
 :description: Shows the help dialog.
@@ -34,7 +34,7 @@ tinymce.init({
 [#]
 === `help_tabs`
 
-This option allows you to specify which tabs the Help dialog should show, and in what order. The default {productname} tabs are called `shortcuts`, `keyboardnav`, `plugins` and `versions`. These tabs can be overwritten by providing a new link:{modulesDir}/ui-components/dialogcomponents/#tabpanel[tab panel] specification with the same `name`, and new tabs can be added by registering a tab panel with a new `name`. New tabs can be registered in the `help_tabs` configuration or at initialisation or runtime using the <<api,`addTab` API method>>.
+This option allows you to specify which tabs the Help dialog should show, and in what order. The default {productname} tabs are called `shortcuts`, `keyboardnav`, `plugins` and `versions`. These tabs can be overwritten by providing a new link:{rootDir}ui-components/dialogcomponents.html#tabpanel[tab panel] specification with the same `name`, and new tabs can be added by registering a tab panel with a new `name`. New tabs can be registered in the `help_tabs` configuration or at initialisation or runtime using the <<api,`addTab` API method>>.
 
 If `help_tabs` is configured, only tabs named in `help_tabs` will be displayed. Any tabs defined using `addTab` that are not named in `help_tabs` will be ignored.
 
@@ -118,7 +118,7 @@ tinymce.init({
 | Name | Arguments | Description
 
 | addTab
-| tabSpec: link:{modulesDir}/ui-components/dialogcomponents/#tabpanel[TabPanel]
+| tabSpec: link:{rootDir}ui-components/dialogcomponents.html#tabpanel[TabPanel]
 | Register a tab for the Help dialog
 |===
 
@@ -141,7 +141,7 @@ tinymce.activeEditor.plugins.help.addTab({
 [#exposing-metadata-for-the-help-plugin]
 == Exposing metadata for the help plugin
 
-For information on how to expose metadata from you custom plugin to add it to the Installed plugins list in the Help plugin, see the  link:{modulesDir}/advanced/creating-a-plugin/#exposingmetadata[Creating a Plugin page].
+For information on how to expose metadata from you custom plugin to add it to the Installed plugins list in the Help plugin, see the  link:{rootDir}advanced/creating-a-plugin.html#exposingmetadata[Creating a Plugin page].
 
 [#commands]
 == Commands

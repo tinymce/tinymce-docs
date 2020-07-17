@@ -1,12 +1,12 @@
 [#toolbar]
 == toolbar
 
-This option allows you to specify the link:{modulesDir}/advanced/editor-control-identifiers/#toolbarcontrols[buttons] and the order that they will appear on {productname}'s toolbar.
+This option allows you to specify the link:{rootDir}advanced/editor-control-identifiers.html#toolbarcontrols[buttons] and the order that they will appear on {productname}'s toolbar.
 
 [#grouping-toolbar-controls]
 === Grouping toolbar controls
 
-To specify the controls that should appear on {productname}'s toolbar, the `toolbar` option should be provided with a space separated list of link:{modulesDir}/advanced/editor-control-identifiers/#toolbarcontrols[toolbar controls]. To create groups within this list, please add `|` pipe characters between the groups of controls that you would like to create.
+To specify the controls that should appear on {productname}'s toolbar, the `toolbar` option should be provided with a space separated list of link:{rootDir}advanced/editor-control-identifiers.html#toolbarcontrols[toolbar controls]. To create groups within this list, please add `|` pipe characters between the groups of controls that you would like to create.
 
 *Type:* `String`
 

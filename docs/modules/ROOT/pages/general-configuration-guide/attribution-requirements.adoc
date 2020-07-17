@@ -1,7 +1,7 @@
-:modulesDir: ../
-:partialsDir: {modulesDir}partials/
-:imagesDir: {modulesDir}images/
-include::{modulesDir}_attributes.adoc[]
+:rootDir: ../
+:partialsDir: {rootDir}partials/
+:imagesDir: {rootDir}images/
+include::{rootDir}_attributes.adoc[]
 = Logo &amp; attribution requirements
 :description: TinyMCE Terms of Service.
 :keywords: legal attribution requirements logo branding
@@ -21,6 +21,6 @@ When including attribution, the following requirements must be met:
 
 The following example shows the status bar product attribution in the bottom, right-hand corner:
 
-image::{modulesDir}/images/tinymce5-homepage-demo.png[Screenshot of homepage {productname} demo including product attribution in the bottom, right-hand corner]
+image::{rootDir}/images/tinymce5-homepage-demo.png[Screenshot of homepage {productname} demo including product attribution in the bottom, right-hand corner]
 
 Have questions about this? link:{contactpage}[Contact us] for help.

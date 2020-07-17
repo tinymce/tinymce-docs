@@ -1,7 +1,7 @@
-:modulesDir: ../
-:partialsDir: {modulesDir}partials/
-:imagesDir: {modulesDir}images/
-include::{modulesDir}_attributes.adoc[]
+:rootDir: ../
+:partialsDir: {rootDir}partials/
+:imagesDir: {rootDir}images/
+include::{rootDir}_attributes.adoc[]
 = KnockoutJS integration
 :description: A custom binding that applies a TinyMCE Editor to the bound HTML element.
 :keywords: integration integrate knockout knockoutjs
@@ -33,7 +33,7 @@ To source {productname} and the {productname} jQuery integration from the {cloud
 +
 Replace `no-api-key` in the source script (`+<script src=...+`) with a {cloudname} API key, which is created when signing up to the link:{accountsignup}[{cloudname}].
 +
-Signing up for a {cloudname} API key will also provide a trial of the link:{modulesDir}/enterprise/[Premium Plugins].
+Signing up for a {cloudname} API key will also provide a trial of the link:{rootDir}enterprise.html[Premium Plugins].
 
  ** *{productname} self-hosted*
 +
@@ -45,7 +45,7 @@ To use an independent deployment of {productname}, add source scripts to either 
   <script src="/path/to/jquery.tinymce.min.js"></script>
 ----
 +
-For information on self-hosting {productname}, see: link:{modulesDir}/general-configuration-guide/advanced-install/[Installing {productname}].
+For information on self-hosting {productname}, see: link:{rootDir}general-configuration-guide/advanced-install.html[Installing {productname}].
 . Source `tinymce-knockout-binding` (`wysiwyg.js`) on the page.
 +
 If the project loads tinymce-knockout-binding from a Content Delivery Network (CDN), use the script provided by the CDN, including any attributes, such as `integrity` and `crossorigin`.
@@ -86,7 +86,7 @@ If the project loads tinymce-knockout-binding from a Content Delivery Network (C
 [#example-knockout-integration]
 === Example Knockout integration
 
-To load a TinyMCE editor similar to the link:{modulesDir}/demo/basic-example/[Basic example], add the following code to an empty HTML file.
+To load a TinyMCE editor similar to the link:{rootDir}demo/basic-example.html[Basic example], add the following code to an empty HTML file.
 
 [source,html]
 ----

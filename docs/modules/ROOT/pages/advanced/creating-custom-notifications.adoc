@@ -1,7 +1,7 @@
-:modulesDir: ../
-:partialsDir: {modulesDir}partials/
-:imagesDir: {modulesDir}images/
-include::{modulesDir}_attributes.adoc[]
+:rootDir: ../
+:partialsDir: {rootDir}partials/
+:imagesDir: {rootDir}images/
+include::{rootDir}_attributes.adoc[]
 = Create custom notifications
 :description: Learn how to make custom dialogs with NotificationManager.
 :description_short: Learn how to make custom notifications.
@@ -77,7 +77,7 @@ editor.notificationManager.open({
 });
 `
 
-For a list of the icon identifiers, see: link:{modulesDir}/advanced/editor-icon-identifiers/[Editor icon identifiers].
+For a list of the icon identifiers, see: link:{rootDir}advanced/editor-icon-identifiers.html[Editor icon identifiers].
 
 [#progress-bar]
 == Progress Bar

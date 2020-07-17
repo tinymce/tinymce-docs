@@ -1,7 +1,7 @@
-:modulesDir: ../
-:partialsDir: {modulesDir}partials/
-:imagesDir: {modulesDir}images/
-include::{modulesDir}_attributes.adoc[]
+:rootDir: ../
+:partialsDir: {rootDir}partials/
+:imagesDir: {rootDir}images/
+include::{rootDir}_attributes.adoc[]
 = Table plugin
 :controls: toolbar button, menu item
 :description: Table editing features.
@@ -40,7 +40,7 @@ To disable the table toolbar, set the value to an empty string.
 
 *Default Value:* `'tableprops tabledelete | tableinsertrowbefore tableinsertrowafter tabledeleterow | tableinsertcolbefore tableinsertcolafter tabledeletecol'`
 
-*Possible Values:* Any toolbar button. For a list of predefined toolbar buttons, see: link:{modulesDir}/advanced/editor-control-identifiers/#toolbarcontrols[Editor control identifiers - Toolbar controls].
+*Possible Values:* Any toolbar button. For a list of predefined toolbar buttons, see: link:{rootDir}advanced/editor-control-identifiers.html#toolbarcontrols[Editor control identifiers - Toolbar controls].
 
 [discrete#example-default-table_toolbar-configuration]
 ===== Example: Default table_toolbar configuration
@@ -113,7 +113,7 @@ This option allows you to disable the grid-like table picker in the Table menu. 
 
 However, if `table_grid` is set to `false` the table picker will be replaced by a menu item that opens a dialog that users can use to insert a table. This dialog allows users to set various parameters such as the number of columns and rows, width, height, cell spacing and padding, border width, alignment, and whether to display a caption. There are also advanced style options available if `table_advtab` is set to `true`.
 
-NOTE: To configure the Table menu to include both the table picker and the table dialog menu items, set `table_grid` to `true` and configure link:{modulesDir}/configure/editor-appearance/#menu[`menu`] to include both the `inserttable` and `inserttabledialog` menu items.
+NOTE: To configure the Table menu to include both the table picker and the table dialog menu items, set `table_grid` to `true` and configure link:{rootDir}configure/editor-appearance.html#menu[`menu`] to include both the `inserttable` and `inserttabledialog` menu items.
 
 *Type:* `Boolean`
 
@@ -455,7 +455,7 @@ tinymce.init({
 });
 `
 
-NOTE: The advanced tabs of the table, row, and cell properties dialogs use the `colorpicker` to allow for border and background colors to be applied. See docs to use and configure a custom link:{modulesDir}/plugins/colorpicker/[colorpicker].
+NOTE: The advanced tabs of the table, row, and cell properties dialogs use the `colorpicker` to allow for border and background colors to be applied. See docs to use and configure a custom link:{rootDir}plugins/colorpicker.html[colorpicker].
 
 [#api]
 === API

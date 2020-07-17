@@ -1,7 +1,7 @@
-:modulesDir: ../
-:partialsDir: {modulesDir}partials/
-:imagesDir: {modulesDir}images/
-include::{modulesDir}_attributes.adoc[]
+:rootDir: ../
+:partialsDir: {rootDir}partials/
+:imagesDir: {rootDir}images/
+include::{rootDir}_attributes.adoc[]
 = Rails integration
 :description: Seamlessly integrates TinyMCE into the Rails asset pipeline.
 :keywords: integration integrate rails
@@ -17,7 +17,7 @@ include::{modulesDir}_attributes.adoc[]
 === TinyMCE in Ruby on Rails using the Tiny Cloud
 
 The {cloudname} can be used to integrate {productname} into Ruby on Rails projects.
-This procedure creates a https://guides.rubyonrails.org/getting_started.html[basic Ruby on Rails application] containing a {productname} editor based on our link:{modulesDir}/demo/basic-example/[Basic example].
+This procedure creates a https://guides.rubyonrails.org/getting_started.html[basic Ruby on Rails application] containing a {productname} editor based on our link:{rootDir}demo/basic-example.html[Basic example].
 
 include::{partialsDir}integrations/rails-basic-proj.adoc[]
 
@@ -60,7 +60,7 @@ The page containing the {productname} will be accessible at `+http://localhost:<
 === TinyMCE in Ruby on Rails using TinyMCE self-hosted
 
 Self-hosted instances of {productname} can be integrated into Ruby on Rails projects.
-This procedure creates a https://guides.rubyonrails.org/getting_started.html[basic Ruby on Rails application] containing a {productname} editor based on our link:{modulesDir}/demo/basic-example/[Basic example].
+This procedure creates a https://guides.rubyonrails.org/getting_started.html[basic Ruby on Rails application] containing a {productname} editor based on our link:{rootDir}demo/basic-example.html[Basic example].
 
 include::{partialsDir}integrations/rails-basic-proj.adoc[]
 
@@ -98,7 +98,7 @@ include::{partialsDir}integrations/rails-basic-proj.adoc[]
 `
 The page containing the {productname} will be accessible at `+http://localhost:<port>/+` (default: http://localhost:3000/[\http://localhost:3000/]).
 
-For information on self-hosting {productname}, see: link:{modulesDir}/general-configuration-guide/advanced-install/[Installing {productname}].
+For information on self-hosting {productname}, see: link:{rootDir}general-configuration-guide/advanced-install.html[Installing {productname}].
 
 [#the-third-party-tinymce-ruby-on-rails-gem]
 === The third-party TinyMCE Ruby on Rails gem
@@ -106,7 +106,7 @@ For information on self-hosting {productname}, see: link:{modulesDir}/general-co
 {thirdPartyInteg}
 
 Sam Pohlenz maintains the https://github.com/spohlenz/tinymce-rails[{productname} Ruby on Rails gem] for integrating {productname} into the Ruby on Rails asset pipeline.
-This procedure creates a https://guides.rubyonrails.org/getting_started.html[basic Ruby on Rails application] containing a {productname} editor based on our link:{modulesDir}/demo/basic-example/[Basic example].
+This procedure creates a https://guides.rubyonrails.org/getting_started.html[basic Ruby on Rails application] containing a {productname} editor based on our link:{rootDir}demo/basic-example.html[Basic example].
 
 include::{partialsDir}integrations/rails-basic-proj.adoc[]
 

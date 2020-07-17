@@ -1,7 +1,7 @@
-:modulesDir: ../
-:partialsDir: {modulesDir}partials/
-:imagesDir: {modulesDir}images/
-include::{modulesDir}_attributes.adoc[]
+:rootDir: ../
+:partialsDir: {rootDir}partials/
+:imagesDir: {rootDir}images/
+include::{rootDir}_attributes.adoc[]
 = Comments 2.0 Demo
 :controls: toolbar button
 :description: Tiny Comments provides the ability to add comments to the content and collaborate with other users for content editing.
@@ -15,6 +15,6 @@ This example displays how to add the ability to start or join a conversation by 
 
 In this example, the features in Comments 2.0 are highlighted, including adding a comment, replying to a comment, and deleting a comment.
 
-For more information on the other Comments 2.0 configuration options, see the link:{modulesDir}/plugins/comments/[docs].
+For more information on the other Comments 2.0 configuration options, see the link:{rootDir}plugins/comments.html[docs].
 
 {% include codepen.html id="comments-2" %}

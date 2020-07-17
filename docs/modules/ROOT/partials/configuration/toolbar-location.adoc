@@ -3,7 +3,7 @@
 
 {requires_5_2v}
 
-The `toolbar_location` option is used to position the link:{modulesDir}/configure/editor-appearance/#toolbar[toolbar] and link:{modulesDir}/configure/editor-appearance/#menubar[menubar]. The default behavior is to position the toolbar and menu bar above the content area. Setting this option to `bottom` positions the toolbar and menu bar below the content area. This option works in link:{modulesDir}/general-configuration-guide/use-tinymce-classic/[classic editor] (Iframe) mode and inline mode.
+The `toolbar_location` option is used to position the link:{rootDir}configure/editor-appearance.html#toolbar[toolbar] and link:{rootDir}configure/editor-appearance.html#menubar[menubar]. The default behavior is to position the toolbar and menu bar above the content area. Setting this option to `bottom` positions the toolbar and menu bar below the content area. This option works in link:{rootDir}general-configuration-guide/use-tinymce-classic.html[classic editor] (Iframe) mode and inline mode.
 
 Setting this option to `auto`, positions the toolbar and menu bar either:
 * Above the content area by default.

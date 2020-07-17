@@ -1,7 +1,7 @@
-:modulesDir: ../
-:partialsDir: {modulesDir}partials/
-:imagesDir: {modulesDir}images/
-include::{modulesDir}_attributes.adoc[]
+:rootDir: ../
+:partialsDir: {rootDir}partials/
+:imagesDir: {rootDir}images/
+include::{rootDir}_attributes.adoc[]
 = Annotations
 :description: TinyMCE Annotations provides the ability to describe particular features or add general information to a piece of content and creates identifiers for each added annotation.
 :keywords: annotation annotations annotator
@@ -38,7 +38,7 @@ To configure the annotate button on your toolbar:
   }
 `
 
-See link:{modulesDir}/configure/[Configure {productname}] for more information on how to configure {productname} core.
+See link:{rootDir}configure.html[Configure {productname}] for more information on how to configure {productname} core.
 
 [#2-registering-the-annotator]
 === 2. Registering the Annotator

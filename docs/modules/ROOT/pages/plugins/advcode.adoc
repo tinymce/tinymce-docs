@@ -1,7 +1,7 @@
-:modulesDir: ../
-:partialsDir: {modulesDir}partials/
-:imagesDir: {modulesDir}images/
-include::{modulesDir}_attributes.adoc[]
+:rootDir: ../
+:partialsDir: {rootDir}partials/
+:imagesDir: {rootDir}images/
+include::{rootDir}_attributes.adoc[]
 = Advanced Code Editor plugin
 :controls: toolbar button, menu item
 :description: How to setup TinyMCE's Advanced Code Editor plugin.
@@ -10,7 +10,7 @@ include::{modulesDir}_attributes.adoc[]
 
 {premiumplugin}
 
-This plugin adds a toolbar button that allows a user to edit the HTML code using a more advanced link:{modulesDir}/enterprise/advcode/[code editor] than the default textarea.
+This plugin adds a toolbar button that allows a user to edit the HTML code using a more advanced link:{rootDir}enterprise/advcode.html[code editor] than the default textarea.
 
 If you are using Advanced Code Editor `advcode` plugin, make sure you do not use Code `code` plugin.
 

@@ -1,7 +1,7 @@
-:modulesDir: ../
-:partialsDir: {modulesDir}partials/
-:imagesDir: {modulesDir}images/
-include::{modulesDir}_attributes.adoc[]
+:rootDir: ../
+:partialsDir: {rootDir}partials/
+:imagesDir: {rootDir}images/
+include::{rootDir}_attributes.adoc[]
 = Toolbar buttons
 :description: Add a custom buttons to the TinyMCE 5 toolbar.
 :keywords: toolbar toolbarbuttons buttons toolbarbuttonsapi

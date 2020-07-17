@@ -1,7 +1,7 @@
-:modulesDir: ../
-:partialsDir: {modulesDir}partials/
-:imagesDir: {modulesDir}images/
-include::{modulesDir}_attributes.adoc[]
+:rootDir: ../
+:partialsDir: {rootDir}partials/
+:imagesDir: {rootDir}images/
+include::{rootDir}_attributes.adoc[]
 = Editor events
 :description: List of common editor events
 :description_short: List of common editor events
@@ -132,7 +132,7 @@ The following events are provided by the {productname} editor.
 
 | SwitchMode
 | `{ mode: string }`
-| Fired when the editor mode is changed. The available modes are "design" and "readonly". Additional modes can be registered using {productname} API link:{modulesDir}/api/tinymce/tinymce.editormode/#register['tinymce.activeEditor.mode.register()'].
+| Fired when the editor mode is changed. The available modes are "design" and "readonly". Additional modes can be registered using {productname} API link:{rootDir}api/tinymce/tinymce.editormode.html#register['tinymce.activeEditor.mode.register()'].
 
 | ScrollWindow
 | (Same data as the native https://developer.mozilla.org/en-US/docs/Web/API/Element/scroll_event[scroll event])
@@ -264,7 +264,7 @@ The following events are provided by the {productname} editor.
 
 | ProgressState
 | `{ state: boolean, time?: number }`
-| Fired when the editor progress state changes using the {productname} API link:{modulesDir}/api/tinymce/tinymce.editor/#setprogressstate[`tinymce.activeEditor.setProgressState()`].
+| Fired when the editor progress state changes using the {productname} API link:{rootDir}api/tinymce/tinymce.editor.html#setprogressstate[`tinymce.activeEditor.setProgressState()`].
 
 | PreProcess
 | `{ node: Element, format: string }`
@@ -276,7 +276,7 @@ The following events are provided by the {productname} editor.
 
 | SetAttrib
 | `{ attrElm: Element, attrName: string, attrValue: string }`
-| Fired when an attribute is updated using the editor link:{modulesDir}/api/tinymce.dom/tinymce.dom.domutils/[DOMUtils API].
+| Fired when an attribute is updated using the editor link:{rootDir}api/tinymce.dom/tinymce.dom.domutils.html[DOMUtils API].
 
 | ResizeEditor
 | N/A
@@ -368,7 +368,7 @@ The following plugins provide events.
 [#autosave-events]
 === Autosave events
 
-The following events are provided by the link:{modulesDir}/plugins/autosave/[Autosave plugin].
+The following events are provided by the link:{rootDir}plugins/autosave.html[Autosave plugin].
 
 |===
 | Name | Data | Description
@@ -389,7 +389,7 @@ The following events are provided by the link:{modulesDir}/plugins/autosave/[Aut
 [#character-map-events]
 === Character Map events
 
-The following event is provided by the link:{modulesDir}/plugins/charmap/[Character Map plugin].
+The following event is provided by the link:{rootDir}plugins/charmap.html[Character Map plugin].
 
 |===
 | Name | Data | Description
@@ -402,7 +402,7 @@ The following event is provided by the link:{modulesDir}/plugins/charmap/[Charac
 [#comments-events]
 === Comments events
 
-The following event is provided by the link:{modulesDir}/plugins/comments/[Comments plugin].
+The following event is provided by the link:{rootDir}plugins/comments.html[Comments plugin].
 
 |===
 | Name | Data | Description
@@ -415,7 +415,7 @@ The following event is provided by the link:{modulesDir}/plugins/comments/[Comme
 [#format-painter-events]
 === Format Painter events
 
-The following event is provided by the link:{modulesDir}/plugins/formatpainter/[Format Painter plugin].
+The following event is provided by the link:{rootDir}plugins/formatpainter.html[Format Painter plugin].
 
 |===
 | Name | Data | Description
@@ -428,7 +428,7 @@ The following event is provided by the link:{modulesDir}/plugins/formatpainter/[
 [#fullscreen-events]
 === Fullscreen events
 
-The following event is provided by the link:{modulesDir}/plugins/fullscreen/[Fullscreen plugin].
+The following event is provided by the link:{rootDir}plugins/fullscreen.html[Fullscreen plugin].
 
 |===
 | Name | Data | Description
@@ -441,7 +441,7 @@ The following event is provided by the link:{modulesDir}/plugins/fullscreen/[Ful
 [#import-css-events]
 === Import CSS events
 
-The following event is provided by the link:{modulesDir}/plugins/importcss/[Import CSS plugin].
+The following event is provided by the link:{rootDir}plugins/importcss.html[Import CSS plugin].
 
 |===
 | Name | Data | Description
@@ -454,7 +454,7 @@ The following event is provided by the link:{modulesDir}/plugins/importcss/[Impo
 [#link-checker-events]
 === Link checker events
 
-The following event is provided by the link:{modulesDir}/plugins/link/[Link plugin].
+The following event is provided by the link:{rootDir}plugins/link.html[Link plugin].
 
 |===
 | Name | Data | Description
@@ -467,7 +467,7 @@ The following event is provided by the link:{modulesDir}/plugins/link/[Link plug
 [#lists-events]
 === Lists events
 
-The following event is provided by the link:{modulesDir}/plugins/lists/[Lists plugin].
+The following event is provided by the link:{rootDir}plugins/lists.html[Lists plugin].
 
 |===
 | Name | Data | Description
@@ -480,7 +480,7 @@ The following event is provided by the link:{modulesDir}/plugins/lists/[Lists pl
 [#media-embed-events]
 === Media Embed events
 
-The following event is provided by the link:{modulesDir}/plugins/mediaembed/[Media Embed plugin].
+The following event is provided by the link:{rootDir}plugins/mediaembed.html[Media Embed plugin].
 
 |===
 | Name | Data | Description
@@ -493,7 +493,7 @@ The following event is provided by the link:{modulesDir}/plugins/mediaembed/[Med
 [#paste-events]
 === Paste events
 
-The following events are provided by the link:{modulesDir}/plugins/paste/[Paste plugin].
+The following events are provided by the link:{rootDir}plugins/paste.html[Paste plugin].
 
 |===
 | Name | Data | Description
@@ -514,7 +514,7 @@ The following events are provided by the link:{modulesDir}/plugins/paste/[Paste 
 [#permanent-pen-events]
 === Permanent Pen events
 
-The following events are provided by the link:{modulesDir}/plugins/permanentpen/[Permanent Pen plugin].
+The following events are provided by the link:{rootDir}plugins/permanentpen.html[Permanent Pen plugin].
 
 |===
 | Name | Data | Description
@@ -531,7 +531,7 @@ The following events are provided by the link:{modulesDir}/plugins/permanentpen/
 [#powerpaste-events]
 === PowerPaste events
 
-The following events are provided by the link:{modulesDir}/plugins/powerpaste/[PowerPaste plugin].
+The following events are provided by the link:{rootDir}plugins/powerpaste.html[PowerPaste plugin].
 
 |===
 | Name | Data | Description
@@ -552,7 +552,7 @@ The following events are provided by the link:{modulesDir}/plugins/powerpaste/[P
 [#spell-checker-events]
 === Spell Checker events
 
-The following events are provided by the link:{modulesDir}/plugins/spellchecker/[Spell Checker plugin].
+The following events are provided by the link:{rootDir}plugins/spellchecker.html[Spell Checker plugin].
 
 |===
 | Name | Data | Description
@@ -574,7 +574,7 @@ include::{partialsDir}events/tinymcespellchecker.adoc[]
 [#table-events]
 === Table events
 
-The following event is provided by the link:{modulesDir}/plugins/table/[Table plugin].
+The following event is provided by the link:{rootDir}plugins/table.html[Table plugin].
 
 |===
 | Name | Data | Description
@@ -588,7 +588,7 @@ The following event is provided by the link:{modulesDir}/plugins/table/[Table pl
 [#visual-blocks-events]
 === Visual Blocks events
 
-The following event is provided by the link:{modulesDir}/plugins/visualblocks/[Visual Blocks plugin].
+The following event is provided by the link:{rootDir}plugins/visualblocks.html[Visual Blocks plugin].
 
 |===
 | Name | Data | Description
@@ -601,7 +601,7 @@ The following event is provided by the link:{modulesDir}/plugins/visualblocks/[V
 [#visual-characters-events]
 === Visual Characters events
 
-The following event is provided by the link:{modulesDir}/plugins/visualchars/[Visual Characters plugin].
+The following event is provided by the link:{rootDir}plugins/visualchars.html[Visual Characters plugin].
 
 |===
 | Name | Data | Description
@@ -614,7 +614,7 @@ The following event is provided by the link:{modulesDir}/plugins/visualchars/[Vi
 [#word-count-events]
 === Word Count events
 
-The following event is provided by the link:{modulesDir}/plugins/wordcount/[Word Count plugin].
+The following event is provided by the link:{rootDir}plugins/wordcount.html[Word Count plugin].
 
 |===
 | Name | Data | Description

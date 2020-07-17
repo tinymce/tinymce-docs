@@ -1,7 +1,7 @@
-:modulesDir: ../
-:partialsDir: {modulesDir}partials/
-:imagesDir: {modulesDir}images/
-include::{modulesDir}_attributes.adoc[]
+:rootDir: ../
+:partialsDir: {rootDir}partials/
+:imagesDir: {rootDir}images/
+include::{rootDir}_attributes.adoc[]
 = Keyboard shortcuts
 :description: Complete list of keyboard shortcuts.
 :description_short: Complete list of keyboard shortcuts.
@@ -115,27 +115,27 @@ This is a list of available keyboard shortcuts within the editor body.
 | Open the help dialog
 | Alt+0
 | Option+0
-| link:{modulesDir}/plugins/help/[help]
+| link:{rootDir}plugins/help.html[help]
 
 | Insert link
 | Ctrl+K
 | Command+K
-| link:{modulesDir}/plugins/link/[link]
+| link:{rootDir}plugins/link.html[link]
 
 | Toggle Fullscreen
 | Ctrl+Shift+F
 | Command+Shift+F
-| link:{modulesDir}/plugins/fullscreen/[fullscreen]
+| link:{rootDir}plugins/fullscreen.html[fullscreen]
 
 | Save
 | Ctrl+S
 | Command+S
-| link:{modulesDir}/plugins/save/[save]
+| link:{rootDir}plugins/save.html[save]
 
 | Find
 | Ctrl+F
 | Command+F
-| link:{modulesDir}/plugins/searchreplace/[searchreplace]
+| link:{rootDir}plugins/searchreplace.html[searchreplace]
 |===
 
 [#accessibility-keyboard-shortcuts]
@@ -216,8 +216,8 @@ IMPORTANT: Adding a custom shortcut with a keyboard combination that conflicts w
 
 To add a custom keyboard shortcut to {productname}, use either:
 
-* link:{modulesDir}/api/tinymce/tinymce.editor/#addshortcut[The `tinymce.Editor.addShortcut` API].
-* link:{modulesDir}/api/tinymce/tinymce.shortcuts/[The `tinymce.Shortcuts.add` API].
+* link:{rootDir}api/tinymce/tinymce.editor.html#addshortcut[The `tinymce.Editor.addShortcut` API].
+* link:{rootDir}api/tinymce/tinymce.shortcuts.html[The `tinymce.Shortcuts.add` API].
 
 include::{partialsDir}misc/shortcut-os-mappings.adoc[leveloffset=+1]
 

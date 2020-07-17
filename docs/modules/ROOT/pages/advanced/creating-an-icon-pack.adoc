@@ -1,7 +1,7 @@
-:modulesDir: ../
-:partialsDir: {modulesDir}partials/
-:imagesDir: {modulesDir}images/
-include::{modulesDir}_attributes.adoc[]
+:rootDir: ../
+:partialsDir: {rootDir}partials/
+:imagesDir: {rootDir}images/
+include::{rootDir}_attributes.adoc[]
 = Create an icon pack for TinyMCE
 :description: How to make your own icon pack.
 :description_short: Introducing icon pack creation.
@@ -64,7 +64,7 @@ $ npm install
  ** Hyphens ( `-` ).
  ** Underscores ( `_` ).
 
-The icon pack name will be used with the link:{modulesDir}/configure/editor-appearance/#icons[icons] option to apply the icons in {productname}.
+The icon pack name will be used with the link:{rootDir}configure/editor-appearance.html#icons[icons] option to apply the icons in {productname}.
 
 [#add-the-svg-files]
 === Add the SVG files
@@ -89,9 +89,9 @@ tinymce.init({
 });
 +`
 
-For a list of the icon identifiers, see: link:{modulesDir}/advanced/editor-icon-identifiers/[Editor icon identifiers].
+For a list of the icon identifiers, see: link:{rootDir}advanced/editor-icon-identifiers.html[Editor icon identifiers].
 
-{productname} does not resize the SVGs provided, relying on the size defined in the SVG. This allows icons of different sizes to be used in the editor. The Toolbar button sizes are independent of the icon sizes. To change button sizes, a link:{modulesDir}/advanced/creating-a-skin/[custom skin] is required.
+{productname} does not resize the SVGs provided, relying on the size defined in the SVG. This allows icons of different sizes to be used in the editor. The Toolbar button sizes are independent of the icon sizes. To change button sizes, a link:{rootDir}advanced/creating-a-skin.html[custom skin] is required.
 
 NOTE: Input SVGs must be shapes, not strokes. SVG files containing strokes will not render correctly. If the input files contain strokes, use a graphics program to convert the strokes into shapes.
 

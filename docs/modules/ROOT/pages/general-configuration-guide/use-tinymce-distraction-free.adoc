@@ -1,7 +1,7 @@
-:modulesDir: ../
-:partialsDir: {modulesDir}partials/
-:imagesDir: {modulesDir}images/
-include::{modulesDir}_attributes.adoc[]
+:rootDir: ../
+:partialsDir: {rootDir}partials/
+:imagesDir: {rootDir}images/
+include::{rootDir}_attributes.adoc[]
 = TinyMCE distraction-free editing mode
 :description: Mode that renders a lightweight UI for inline editing.
 :keywords: Mode inlite distraction-free
@@ -35,8 +35,8 @@ The demonstration editor below is a distraction-free editor with some customizat
 
 For information on:
 
-* Configuring a Quick Toolbar; including `quicklink`, `quickimage`, and `quicktable`; see: link:{modulesDir}/plugins/quickbars/[Quick Toolbar plugin].
-* Configuring a contextual toolbar, see: link:{modulesDir}/ui-components/contexttoolbar/[Context Toolbar].
-* Configuring a contextual menu, see: link:{modulesDir}/ui-components/contextmenu/[Context Menu].
-* Disabling the {productname} menubar, see: link:{modulesDir}/configure/editor-appearance/#menubar[Menubar].
-* The `inline` setting, see: link:{modulesDir}/configure/editor-appearance/#inline[inline].
+* Configuring a Quick Toolbar; including `quicklink`, `quickimage`, and `quicktable`; see: link:{rootDir}plugins/quickbars.html[Quick Toolbar plugin].
+* Configuring a contextual toolbar, see: link:{rootDir}ui-components/contexttoolbar.html[Context Toolbar].
+* Configuring a contextual menu, see: link:{rootDir}ui-components/contextmenu.html[Context Menu].
+* Disabling the {productname} menubar, see: link:{rootDir}configure/editor-appearance.html#menubar[Menubar].
+* The `inline` setting, see: link:{rootDir}configure/editor-appearance.html#inline[inline].

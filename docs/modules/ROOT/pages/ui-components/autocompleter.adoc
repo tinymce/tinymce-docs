@@ -1,7 +1,7 @@
-:modulesDir: ../
-:partialsDir: {modulesDir}partials/
-:imagesDir: {modulesDir}images/
-include::{modulesDir}_attributes.adoc[]
+:rootDir: ../
+:partialsDir: {rootDir}partials/
+:imagesDir: {rootDir}images/
+include::{rootDir}_attributes.adoc[]
 = Autocompleter
 :description: Add a custom autocompleter to TinyMCE 5.
 :keywords: autcomplete
@@ -10,7 +10,7 @@ include::{modulesDir}_attributes.adoc[]
 [#overview]
 == Overview
 
-An `autocompleter` enables users to quickly find and select from a pre-populated list of values as they type, leveraging searching and filtering. It provides suggestions to insert while the user is typing into the content. For example, with the link:{modulesDir}/plugins/charmap/[charmap] plugin enabled, typing *:amp* should show the ampersand item in the menu. Pressing `esc` should close the autocomplete menu.
+An `autocompleter` enables users to quickly find and select from a pre-populated list of values as they type, leveraging searching and filtering. It provides suggestions to insert while the user is typing into the content. For example, with the link:{rootDir}plugins/charmap.html[charmap] plugin enabled, typing *:amp* should show the ampersand item in the menu. Pressing `esc` should close the autocomplete menu.
 
 [#how-to-create-custom-autocompleters]
 == How to create custom autocompleters

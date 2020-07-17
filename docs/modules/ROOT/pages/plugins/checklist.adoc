@@ -1,7 +1,7 @@
-:modulesDir: ../
-:partialsDir: {modulesDir}partials/
-:imagesDir: {modulesDir}images/
-include::{modulesDir}_attributes.adoc[]
+:rootDir: ../
+:partialsDir: {rootDir}partials/
+:imagesDir: {rootDir}images/
+include::{rootDir}_attributes.adoc[]
 = Checklist plugin
 :controls: toolbar button
 :description: Add checklists to your content.
@@ -19,14 +19,14 @@ The *Checklist* plugin helps the user keep track of all required actions by crea
 
 In the {productname} editor, checklists are presented as lists with small checkboxes on the left hand side of the list items. After the item has been completed, a small tick or check mark is drawn in the box by clicking on it.
 
-*Checklist* is a premium plugin from {companyname}. Please see the link:{modulesDir}/enterprise/tiny-comments/[Premium features] section for all the buying options.
+*Checklist* is a premium plugin from {companyname}. Please see the link:{rootDir}enterprise/tiny-comments.html[Premium features] section for all the buying options.
 
 Once you have obtained the *Checklist* plugin, refer to the following instructions for using it.
 
 [#configuring-the-checklist-toolbar-button]
 === Configuring the Checklist toolbar button
 
-Use the following script to add the *Checklist* link:{modulesDir}/ui-components/toolbarbuttons/[toolbar button]:
+Use the following script to add the *Checklist* link:{rootDir}ui-components/toolbarbuttons.html[toolbar button]:
 
 `js
 tinymce.init({
@@ -36,7 +36,7 @@ tinymce.init({
 });
 `
 
-NOTE: The *Checklist* plugin has to be used together with the link:{modulesDir}/plugins/lists/[Lists] plugin to work.
+NOTE: The *Checklist* plugin has to be used together with the link:{rootDir}plugins/lists.html[Lists] plugin to work.
 
 [#css]
 === CSS

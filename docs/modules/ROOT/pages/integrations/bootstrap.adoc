@@ -1,7 +1,7 @@
-:modulesDir: ../
-:partialsDir: {modulesDir}partials/
-:imagesDir: {modulesDir}images/
-include::{modulesDir}_attributes.adoc[]
+:rootDir: ../
+:partialsDir: {rootDir}partials/
+:imagesDir: {rootDir}images/
+include::{rootDir}_attributes.adoc[]
 = Bootstrap integration
 :description: How to override the built-in block on `focusin` in Bootstrap dialogs when using TinyMCE.
 :keywords: integration integrate bootstrap
@@ -12,9 +12,9 @@ include::{modulesDir}_attributes.adoc[]
 
 Using {productname} with bootstrap does not require any special configuration.
 
-The {productname} jQuery integration can be used with bootstrap. For information on using the jQuery integration, see: link:{modulesDir}/integrations/jquery/[jQuery integration]
+The {productname} jQuery integration can be used with bootstrap. For information on using the jQuery integration, see: link:{rootDir}integrations/jquery.html[jQuery integration]
 
-This procedure creates a basic Bootstrap integration containing a {productname} editor based on our link:{modulesDir}/demo/basic-example/[Basic example].
+This procedure creates a basic Bootstrap integration containing a {productname} editor based on our link:{rootDir}demo/basic-example.html[Basic example].
 
 [#procedure]
 === Procedure
@@ -32,7 +32,7 @@ To source {productname} from the {cloudname}, add the following `script` element
  `
   Replace `no-api-key` in the source script (`+<script src=...+`) with a {cloudname} API key, which is created when signing up to the link:{accountsignup}[{cloudname}].
 +
-Signing up for a {cloudname} API key will also provide a trial of the link:{modulesDir}/enterprise/[Premium Plugins].
+Signing up for a {cloudname} API key will also provide a trial of the link:{rootDir}enterprise.html[Premium Plugins].
 
  ** *{productname} self-hosted*
 +
@@ -41,7 +41,7 @@ To use an independent deployment of {productname}, add the following source scri
   <script src="/path/to/tinymce.min.js"></script>
  `
 +
-For information on self-hosting {productname}, see: link:{modulesDir}/general-configuration-guide/advanced-install/[Installing {productname}].
+For information on self-hosting {productname}, see: link:{rootDir}general-configuration-guide/advanced-install.html[Installing {productname}].
 . Add an initialization point for {productname}, such as:
 +
 ```html+++<div>++++++<textarea id="tiny">++++++</textarea>++++++</div>+++

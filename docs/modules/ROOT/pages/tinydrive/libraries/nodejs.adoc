@@ -1,7 +1,7 @@
-:modulesDir: ../../
-:partialsDir: {modulesDir}partials/
-:imagesDir: {modulesDir}images/
-include::{modulesDir}_attributes.adoc[]
+:rootDir: ../../
+:partialsDir: {rootDir}partials/
+:imagesDir: {rootDir}images/
+include::{rootDir}_attributes.adoc[]
 = Node.js
 :description: Node.js
 :keywords: tinydrive node.js
@@ -64,19 +64,19 @@ $ npm run start
 [#implementing-with-your-system]
 === Implementing with your system
 
-If your specific use case has not been covered by any of the sample link:{modulesDir}/tinydrive/libraries/[starter projects], some customizations might be required to be applied to implement {cloudfilemanager} in the specific system. The link:{modulesDir}/tinydrive/jwt-authentication/[JSON Web Token] authentication solution would have to be tied to the login authentication of your system. This usually means integrating the JWT authentication to the existing session authentication so that users automatically login to {cloudfilemanager} and your system.
+If your specific use case has not been covered by any of the sample link:{rootDir}tinydrive/libraries.html[starter projects], some customizations might be required to be applied to implement {cloudfilemanager} in the specific system. The link:{rootDir}tinydrive/jwt-authentication.html[JSON Web Token] authentication solution would have to be tied to the login authentication of your system. This usually means integrating the JWT authentication to the existing session authentication so that users automatically login to {cloudfilemanager} and your system.
 
 [#additional-resources]
 ==== Additional resources
 
 Go through the following additional resources to figure out how to configure {cloudfilemanager} with your system.
 
-* We recommend reading up and trying to understand how link:{modulesDir}/tinydrive/jwt-authentication/[JWT authentication] works. In order to implement {cloudfilemanager} you need prior knowledge of JWT in detail, including how they can be used for user authentication and session management in a web application. There will be some coding involved on both the client-side and the server-side to configure JWT as per the instructions in this section.
-* link:{modulesDir}/tinydrive/libraries/[Starter projects]
-* link:{modulesDir}/tinydrive/configuration/[Configuration Options]
-* link:{modulesDir}/tinydrive/integrations/[Integrations]
+* We recommend reading up and trying to understand how link:{rootDir}tinydrive/jwt-authentication.html[JWT authentication] works. In order to implement {cloudfilemanager} you need prior knowledge of JWT in detail, including how they can be used for user authentication and session management in a web application. There will be some coding involved on both the client-side and the server-side to configure JWT as per the instructions in this section.
+* link:{rootDir}tinydrive/libraries.html[Starter projects]
+* link:{rootDir}tinydrive/configuration.html[Configuration Options]
+* link:{rootDir}tinydrive/integrations.html[Integrations]
 
 [#need-help]
 == Need help?
 
-We are striving to make {cloudfilemanager} as useful and as simple as possible. For support related issues such as problems with JWT authentication and implementing {cloudfilemanager}, check our link:{modulesDir}/tinydrive/get-help/[help page] or please contact link:{supporturl}[{supportname}].
+We are striving to make {cloudfilemanager} as useful and as simple as possible. For support related issues such as problems with JWT authentication and implementing {cloudfilemanager}, check our link:{rootDir}tinydrive/get-help.html[help page] or please contact link:{supporturl}[{supportname}].

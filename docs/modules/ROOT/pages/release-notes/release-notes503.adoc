@@ -1,7 +1,7 @@
-:modulesDir: ../
-:partialsDir: {modulesDir}partials/
-:imagesDir: {modulesDir}images/
-include::{modulesDir}_attributes.adoc[]
+:rootDir: ../
+:partialsDir: {rootDir}partials/
+:imagesDir: {rootDir}images/
+include::{rootDir}_attributes.adoc[]
 = TinyMCE 5.0.3
 :keywords: releasenotes newfeatures deleted technologypreview bugfixes knownissues
 :title_nav: TinyMCE 5.0.3
@@ -23,7 +23,7 @@ TinyMCE 5.0.3 introduces the *Case Change* plugin that allows changing the case 
 
 Currently, there are three types of formats available:
 
-image::{modulesDir}/images/casechange.png[**Case Change**]
+image::{rootDir}/images/casechange.png[**Case Change**]
 
 * *lowercase* - The *lowercase* option changes all the selected characters to lowercase.
 * *UPPERCASE* - The *UPPERCASE* option changes all the selected characters to uppercase.
@@ -31,9 +31,9 @@ image::{modulesDir}/images/casechange.png[**Case Change**]
 
 To try out *Case Change* start with this link:{productpages}/case-change/[dedicated product page] to see all the flexible pricing options.
 
-For more information on *Case Change* refer to the full link:{modulesDir}/plugins/casechange/[documentation].
+For more information on *Case Change* refer to the full link:{rootDir}plugins/casechange.html[documentation].
 
-There is also a demo provided to explore the *Case Change* capabilities link:{modulesDir}/demo/casechange/[here].
+There is also a demo provided to explore the *Case Change* capabilities link:{rootDir}demo/casechange.html[here].
 
 [#tinymce-for-swing-integration]
 === TinyMCE for Swing integration
@@ -47,11 +47,11 @@ To start using TinyMCE for Swing as your new rich text editor, the first step is
 
 Contact link:{contactpage}[customer support] to discuss pricing options for a customized TinyMCE for Swing integration for your specific use case.
 
-For more information on *TinyMCE for Swing* refer to the full link:{modulesDir}/integrations/swing/[documentation].
+For more information on *TinyMCE for Swing* refer to the full link:{rootDir}integrations/swing.html[documentation].
 
 Refer to this https://github.com/tinymce/tinymce-swing-codesamples[GitHub repo] for examples on how to use TinyMCE for Swing.
 
 [#updates-and-enhancements]
 == Updates and enhancements
 
-The new TinyMCE 5.0.3 editor comes with significant changes to the previous versions. Improved solutions have been introduced for unnecessary and obsolete configuration options. A comprehensive list of the updates and fixed issues is available in the link:{modulesDir}/changelog/#version503march192019[Changelog].
+The new TinyMCE 5.0.3 editor comes with significant changes to the previous versions. Improved solutions have been introduced for unnecessary and obsolete configuration options. A comprehensive list of the updates and fixed issues is available in the link:{rootDir}changelog.html#version503march192019[Changelog].

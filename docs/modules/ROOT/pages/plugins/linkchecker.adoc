@@ -1,7 +1,7 @@
-:modulesDir: ../
-:partialsDir: {modulesDir}partials/
-:imagesDir: {modulesDir}images/
-include::{modulesDir}_attributes.adoc[]
+:rootDir: ../
+:partialsDir: {rootDir}partials/
+:imagesDir: {rootDir}images/
+include::{rootDir}_attributes.adoc[]
 = Link Checker plugin
 :description: Validate links, as you type.
 :keywords: url urls link linkchecker_service_url linkchecker_content_css
@@ -14,7 +14,7 @@ The `linkchecker` plugin does what it says &ndash; validates URLs, as you type t
 [#cloud-instructions]
 == Cloud Instructions
 
-If you are using link:{modulesDir}/cloud-deployment-guide/editor-and-features/[{cloudname}], simply add `"linkchecker"` to your plugins list, and the service will be automatically configured.
+If you are using link:{rootDir}cloud-deployment-guide/editor-and-features.html[{cloudname}], simply add `"linkchecker"` to your plugins list, and the service will be automatically configured.
 
 [discrete#example]
 ===== Example

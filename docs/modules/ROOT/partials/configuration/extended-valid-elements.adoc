@@ -1,9 +1,9 @@
 [#extended_valid_elements]
 == extended_valid_elements
 
-This option is very similar to link:{modulesDir}/configure/content-filtering/#valid_elements[`valid_elements`]. The only difference between this option and `valid_elements` is that this one gets added to the existing rule set. This can be very useful if the existing rule set is fine but you want to add some specific elements that also should be valid. The default rule set is controlled by the link:{modulesDir}/configure/content-filtering/#schema[`schema`] option.
+This option is very similar to link:{rootDir}configure/content-filtering.html#valid_elements[`valid_elements`]. The only difference between this option and `valid_elements` is that this one gets added to the existing rule set. This can be very useful if the existing rule set is fine but you want to add some specific elements that also should be valid. The default rule set is controlled by the link:{rootDir}configure/content-filtering.html#schema[`schema`] option.
 
-When adding a new attribute by specifying an existing element rule (e.g. `img`), the entire rule for that element is over-ridden so be sure to include all valid attributes not just the one you wish to add. See link:{modulesDir}/configure/content-filtering/#valid_elements[`valid_elements`] for default rules.
+When adding a new attribute by specifying an existing element rule (e.g. `img`), the entire rule for that element is over-ridden so be sure to include all valid attributes not just the one you wish to add. See link:{rootDir}configure/content-filtering.html#valid_elements[`valid_elements`] for default rules.
 
 The below example replaces the current `img` rule (including the global element rules).
 
@@ -19,7 +19,7 @@ tinymce.init({
 });
 `
 
-Also see link:{modulesDir}/configure/content-filtering/#valid_elements[valid_elements] and link:{modulesDir}/configure/content-filtering/#invalid_elements[invalid_elements] for more configuration options.
+Also see link:{rootDir}configure/content-filtering.html#valid_elements[valid_elements] and link:{rootDir}configure/content-filtering.html#invalid_elements[invalid_elements] for more configuration options.
 
 [#using-extended_valid_elements-to-allow-script-elements]
 === Using extended_valid_elements to allow script elements

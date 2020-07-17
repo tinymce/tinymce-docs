@@ -1,7 +1,7 @@
-:modulesDir: ../
-:partialsDir: {modulesDir}partials/
-:imagesDir: {modulesDir}images/
-include::{modulesDir}_attributes.adoc[]
+:rootDir: ../
+:partialsDir: {rootDir}partials/
+:imagesDir: {rootDir}images/
+include::{rootDir}_attributes.adoc[]
 = Spell Checker Pro plugin
 :description: Check spelling as-you-type in TinyMCE.
 :keywords: tinymcespellchecker spellchecker_language spellchecker_languages spellchecker_rpc_url spellchecker_dialog ephox English US UK Danish Dutch Finnish French German Italian Norwegian Portuguese Brazilian European Spanish Swedish
@@ -9,14 +9,14 @@ include::{modulesDir}_attributes.adoc[]
 
 {premiumplugin}
 
-*Spell Checker Pro* adds spell checking as-you-type capabilities to {productname}. For information on the supported languages, refer to link:{modulesDir}/plugins/tinymcespellchecker/#spellchecker_language[this] section.
+*Spell Checker Pro* adds spell checking as-you-type capabilities to {productname}. For information on the supported languages, refer to link:{rootDir}plugins/tinymcespellchecker.html#spellchecker_language[this] section.
 
 {% include codepen.html id="spellcheckerpro" %}
 
 [#cloud-installation]
 == Cloud Installation
 
-To enable the {productname} Enterprise Spellchecking plugin with link:{modulesDir}/cloud-deployment-guide/editor-and-features[{cloudname}]:
+To enable the {productname} Enterprise Spellchecking plugin with link:{rootDir}cloud-deployment-guide/editor-and-features[{cloudname}]:
 
 . If configured, disable the `spellchecker` plugin provided with {productname}, by removing it from the `plugins` list.
 . Add `tinymcespellchecker` to the `plugins` list.
@@ -42,7 +42,7 @@ To enable the {productname} Enterprise Spellchecking plugin:
 . If configured, disable the `spellchecker` plugin provided with {productname}, by removing it from the `plugins` list.
 . Add `tinymcespellchecker` to the `plugins` list.
 
-For information on installing the server-side component for spell checking, please see the link:{modulesDir}/enterprise/server/[server-side component installation guide].
+For information on installing the server-side component for spell checking, please see the link:{rootDir}enterprise/server.html[server-side component installation guide].
 
 [discrete#example-tinymce-self-hosted-installation]
 ==== Example: TinyMCE Self-hosted Installation
@@ -184,9 +184,9 @@ tinymce.init({
 [#-2]
 === `spellchecker_rpc_url`
 
-This option specifies the URL of the server-side `ephox-spelling` service. For instructions on how to set up a Spell Checker Pro server-side component, see: the link:{modulesDir}/enterprise/server/[server-side component installation guide].
+This option specifies the URL of the server-side `ephox-spelling` service. For instructions on how to set up a Spell Checker Pro server-side component, see: the link:{rootDir}enterprise/server.html[server-side component installation guide].
 
-NOTE: `spellchecker_rpc_url` is *not* required when enabling this plugin via link:{modulesDir}/cloud-deployment-guide/editor-and-features/[{cloudname}]
+NOTE: `spellchecker_rpc_url` is *not* required when enabling this plugin via link:{rootDir}cloud-deployment-guide/editor-and-features.html[{cloudname}]
 
 *Type:* `String`
 
@@ -258,7 +258,7 @@ The following toolbar buttons are provided by the Spell Checker Pro plugin:
 | Opens the spelling checker dialog if `spellchecker_dialog` is `true`, otherwise this button enables or disables spell checking as-you-type.
 |===
 
-For more information about customizing the toolbar, see: link:{modulesDir}/configure/editor-appearance/#toolbar[User interface options -- Toolbar].
+For more information about customizing the toolbar, see: link:{rootDir}configure/editor-appearance.html#toolbar[User interface options -- Toolbar].
 
 [discrete#example-spell-checker-pro-toolbar-buttons]
 ==== Example: Spell Checker Pro toolbar buttons
@@ -279,7 +279,7 @@ tinymce.init({
 The following menu items are provided by the Spell Checker Pro plugin:
 
 |===
-| Control | link:{modulesDir}/configure/editor-appearance/#examplethetinymcedefaultmenuitems[Default Menu Location] | Description
+| Control | link:{rootDir}configure/editor-appearance.html#examplethetinymcedefaultmenuitems[Default Menu Location] | Description
 
 | spellchecker
 | Tools
@@ -290,7 +290,7 @@ The following menu items are provided by the Spell Checker Pro plugin:
 | Changes the language used for the spell checking process for the document or the currently selected text.
 |===
 
-For more information about customizing the toolbar, see: link:{modulesDir}/configure/editor-appearance/#menu[User interface options -- Menu].
+For more information about customizing the toolbar, see: link:{rootDir}configure/editor-appearance.html#menu[User interface options -- Menu].
 
 [#example-spell-checker-pro-menu-items]
 ==== Example: Spell Checker Pro menu items

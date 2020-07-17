@@ -1,7 +1,7 @@
-:modulesDir: ../
-:partialsDir: {modulesDir}partials/
-:imagesDir: {modulesDir}images/
-include::{modulesDir}_attributes.adoc[]
+:rootDir: ../
+:partialsDir: {rootDir}partials/
+:imagesDir: {rootDir}images/
+include::{rootDir}_attributes.adoc[]
 = Full featured examples
 :description: These examples display all of the plugins available with TinyMCE Cloud premium subscriptions.
 :description_short: Every TinyMCE plugin in action.
@@ -16,14 +16,14 @@ This example includes most of the available {productname} plugins, including plu
 {% include codepen.html id="full-featured" %}
 
 The following plugins are excluded from this example:
-* link:{modulesDir}/plugins/moxiemanager[MoxieManager (Premium Plugin)] -- link:{modulesDir}/plugins/drive[*{cloudfilemanager}*] included instead.
-* link:{modulesDir}/plugins/autoresize[Autoresize] -- Resizes the editor to fit the content.
-* link:{modulesDir}/plugins/bbcode[BBCode] -- Changes the markup used for the content.
-* link:{modulesDir}/plugins/code[Code] -- link:{modulesDir}/plugins/advcode[*Advanced Code Editor*] included instead.
-* link:{modulesDir}/plugins/fullpage[Full Page] -- Used for modifying HTML `<head>` elements.
-* link:{modulesDir}/plugins/paste[Paste] -- link:{modulesDir}/plugins/powerpaste[*PowerPaste*] included instead.
-* link:{modulesDir}/plugins/spellchecker[Spellchecker] -- link:{modulesDir}/plugins/tinymcespellchecker[*Spell Checker Pro*] included instead.
-* link:{modulesDir}/plugins/tabfocus[Tab Focus] -- Changes the behavior of the TAB-key within the editor.
+* link:{rootDir}plugins/moxiemanager[MoxieManager (Premium Plugin)] -- link:{rootDir}plugins/drive[*{cloudfilemanager}*] included instead.
+* link:{rootDir}plugins/autoresize[Autoresize] -- Resizes the editor to fit the content.
+* link:{rootDir}plugins/bbcode[BBCode] -- Changes the markup used for the content.
+* link:{rootDir}plugins/code[Code] -- link:{rootDir}plugins/advcode[*Advanced Code Editor*] included instead.
+* link:{rootDir}plugins/fullpage[Full Page] -- Used for modifying HTML `<head>` elements.
+* link:{rootDir}plugins/paste[Paste] -- link:{rootDir}plugins/powerpaste[*PowerPaste*] included instead.
+* link:{rootDir}plugins/spellchecker[Spellchecker] -- link:{rootDir}plugins/tinymcespellchecker[*Spell Checker Pro*] included instead.
+* link:{rootDir}plugins/tabfocus[Tab Focus] -- Changes the behavior of the TAB-key within the editor.
 
 [#full-featured-non-premium-plugins]
 == Full Featured: Non-Premium Plugins
@@ -34,8 +34,8 @@ This example includes only non-premium plugins. These plugins are also used in t
 
 The following plugins are excluded from this example:
 * link:{plugindirectory}[All premium plugins].
-* link:{modulesDir}/plugins/autoresize[Autoresize] -- Resizes the editor to fit the content.
-* link:{modulesDir}/plugins/bbcode[BBCode] -- Changes the markup used for the content.
-* link:{modulesDir}/plugins/fullpage[Full Page] -- Used for modifying HTML `<head>` elements.
-* link:{modulesDir}/plugins/spellchecker[Spellchecker] -- Requires Server-Side components, see: link:{modulesDir}/general-configuration-guide/spell-checking/[Check spelling in {productname}].
-* link:{modulesDir}/plugins/tabfocus[Tab Focus] -- Changes the behavior of the TAB-key within the editor.
+* link:{rootDir}plugins/autoresize[Autoresize] -- Resizes the editor to fit the content.
+* link:{rootDir}plugins/bbcode[BBCode] -- Changes the markup used for the content.
+* link:{rootDir}plugins/fullpage[Full Page] -- Used for modifying HTML `<head>` elements.
+* link:{rootDir}plugins/spellchecker[Spellchecker] -- Requires Server-Side components, see: link:{rootDir}general-configuration-guide/spell-checking.html[Check spelling in {productname}].
+* link:{rootDir}plugins/tabfocus[Tab Focus] -- Changes the behavior of the TAB-key within the editor.

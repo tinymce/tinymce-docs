@@ -1,7 +1,7 @@
-:modulesDir: ../
-:partialsDir: {modulesDir}partials/
-:imagesDir: {modulesDir}images/
-include::{modulesDir}_attributes.adoc[]
+:rootDir: ../
+:partialsDir: {rootDir}partials/
+:imagesDir: {rootDir}images/
+include::{rootDir}_attributes.adoc[]
 = Supported Premium Versions and Platforms
 :description: Supported versions and platforms for TinyMCE and TinyMCE premium features.
 :keywords: support supported browser browsers windows osx linux ie11 chrome firefox safari mobile premium self-hosted selfhosted
@@ -13,7 +13,7 @@ include::{partialsDir}misc/browser_compatibility.adoc[]
 
 include::{partialsDir}misc/mobile_platform_compatibility.adoc[]
 
-Visit link:{modulesDir}/mobile[{productname} mobile documentation] for information on {productname} mobile setup and configuration.
+Visit link:{rootDir}mobile[{productname} mobile documentation] for information on {productname} mobile setup and configuration.
 
 [#supported-application-servers-self-hosted-enterprise]
 == Supported Application Servers: Self-hosted Enterprise

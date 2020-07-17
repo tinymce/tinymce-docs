@@ -1,7 +1,7 @@
-:modulesDir: ../
-:partialsDir: {modulesDir}partials/
-:imagesDir: {modulesDir}images/
-include::{modulesDir}_attributes.adoc[]
+:rootDir: ../
+:partialsDir: {rootDir}partials/
+:imagesDir: {rootDir}images/
+include::{rootDir}_attributes.adoc[]
 = Content formatting options
 :description: These settings change the way the editor handles the input and output of content. This will help you to create clean, maintainable and readable content.
 :description_short: Learn how to create clean, maintainable and readable content.

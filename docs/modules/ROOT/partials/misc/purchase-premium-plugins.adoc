@@ -41,7 +41,7 @@ A 14-day free trial is available for the {tierthreeplan}.
 For information on:
 
 * {cloudname} plans, see: link:{pricingpage}[{companyname} Pricing Plans].{% if extensionType == 'Packs' %}
-* Enabling premium skins, see: link:{modulesDir}/configure/editor-appearance/#skin[The `skin` setting].
-* Enabling premium icon packs, see: link:{modulesDir}/configure/editor-appearance/#icons[The `icons` setting].{% else %}
-* Configuring the *{\{pluginname}} {\{extensionType}}*, see: link:{modulesDir}/plugins/{plugindocspage}/[The {\{pluginname}} {\{extensionType}} documentation].
+* Enabling premium skins, see: link:{rootDir}configure/editor-appearance.html#skin[The `skin` setting].
+* Enabling premium icon packs, see: link:{rootDir}configure/editor-appearance.html#icons[The `icons` setting].{% else %}
+* Configuring the *{\{pluginname}} {\{extensionType}}*, see: link:{rootDir}plugins/{plugindocspage}.html[The {\{pluginname}} {\{extensionType}} documentation].
 {% endif %}

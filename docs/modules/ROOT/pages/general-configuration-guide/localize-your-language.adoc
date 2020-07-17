@@ -1,7 +1,7 @@
-:modulesDir: ../
-:partialsDir: {modulesDir}partials/
-:imagesDir: {modulesDir}images/
-include::{modulesDir}_attributes.adoc[]
+:rootDir: ../
+:partialsDir: {rootDir}partials/
+:imagesDir: {rootDir}images/
+include::{rootDir}_attributes.adoc[]
 = Localize TinyMCE
 :description: Localize TinyMCE with global language capabilities.
 :keywords: internationalization localization languages
@@ -13,7 +13,7 @@ This section demonstrates how to change {productname}'s user interface to the us
 
 [TIP]
 ====
-Language settings can be controlled in these configuration options: link:{modulesDir}/configure/localization/#directionality[directionality], link:{modulesDir}/configure/localization/#language[language] and  link:{modulesDir}/configure/localization/#language_url[language_url]. There is also a link:{modulesDir}/plugins/directionality/[Directionality plugin] that adds a toolbar button to control `ltr-rtl` behavior.
+Language settings can be controlled in these configuration options: link:{rootDir}configure/localization.html#directionality[directionality], link:{rootDir}configure/localization.html#language[language] and  link:{rootDir}configure/localization.html#language_url[language_url]. There is also a link:{rootDir}plugins/directionality.html[Directionality plugin] that adds a toolbar button to control `ltr-rtl` behavior.
 ====
 
 [#step-1]
@@ -30,12 +30,12 @@ IMPORTANT: The {productname} community translation project provides the language
 
 Unpack the language `js` file(s) into the `path/to/tinymce/langs/` folder.
 
-IMPORTANT: The language settings will not work unless the language pack is placed in `langs/` directory. The link:{modulesDir}/configure/localization/#language_url[language_url] configuration option is another method to enable additional language settings.
+IMPORTANT: The language settings will not work unless the language pack is placed in `langs/` directory. The link:{rootDir}configure/localization.html#language_url[language_url] configuration option is another method to enable additional language settings.
 
 [#step-3]
 === Step 3
 
-Set the language option in {productname}'s configuration to the language code in the list on link:{modulesDir}/configure/localization/#language[this page].
+Set the language option in {productname}'s configuration to the language code in the list on link:{rootDir}configure/localization.html#language[this page].
 
 [#step-4]
 === Step 4
@@ -47,7 +47,7 @@ Load {productname} to confirm that the language is set correctly.
 
 The following code snippet sets {productname}'s language to Chinese and the text directionality from right to left.
 
-link:{gettiny}/language-packages/[Download the Chinese language] pack to test this functionality. Install a _local instance_ of {productname} from the link:{gettiny}[downloads page]. Follow the link:{modulesDir}/general-configuration-guide/advanced-install/#self-hostedinstall[self-hosted install instructions].
+link:{gettiny}/language-packages/[Download the Chinese language] pack to test this functionality. Install a _local instance_ of {productname} from the link:{gettiny}[downloads page]. Follow the link:{rootDir}general-configuration-guide/advanced-install/#self-hostedinstall[self-hosted install instructions].
 
 [source,html]
 ----

@@ -1,7 +1,7 @@
-:modulesDir: ../
-:partialsDir: {modulesDir}partials/
-:imagesDir: {modulesDir}images/
-include::{modulesDir}_attributes.adoc[]
+:rootDir: ../
+:partialsDir: {rootDir}partials/
+:imagesDir: {rootDir}images/
+include::{rootDir}_attributes.adoc[]
 = URL dialog
 :description: URL dialogs are a TinyMCE UI component used to display an external page.
 :keywords: dialog urldialog api
@@ -12,7 +12,7 @@ include::{modulesDir}_attributes.adoc[]
 
 A URL dialog is a special {productname} UI component which loads an external web page inside a dialog (sometimes referred to as `modals`). URL dialogs are useful for very complex use cases, where the supported components for {productname}'s standard dialogs cannot be used. For example, a custom file manager that is loaded inside a {productname} dialog would probably require a URL dialog.
 
-NOTE: link:{modulesDir}/ui-components/dialog/[Standard {productname} dialogs] should suffice for most use cases, and may be simpler to configure.
+NOTE: link:{rootDir}ui-components/dialog.html[Standard {productname} dialogs] should suffice for most use cases, and may be simpler to configure.
 
 [#basic-example]
 === Basic example
@@ -92,7 +92,7 @@ For more information on the `dialogApi` object that is passed to some of the con
 [#footer-buttons]
 === Footer buttons
 
-A *button* is a clickable component that can contain text or an icon. There are two types of buttons (primary and secondary buttons), though the only difference is that they are styled differently. Primary buttons are intended to stand out. The color will depend on the chosen link:{modulesDir}/general-configuration-guide/customize-ui/#skins[skin].
+A *button* is a clickable component that can contain text or an icon. There are two types of buttons (primary and secondary buttons), though the only difference is that they are styled differently. Primary buttons are intended to stand out. The color will depend on the chosen link:{rootDir}general-configuration-guide/customize-ui.html#skins[skin].
 
 [#configuration]
 ==== Configuration
@@ -144,9 +144,9 @@ NOTE: Buttons do not support mixing icons and text at the moment.
 The different footer button types will invoke different callbacks when clicked:
 
 * A *Cancel* type button will invoke the `onCancel` and `onClose` callback functions provided in the dialog configuration. These callback functions are also fired when a user clicks the `X` button in the top right of the dialog.
-* A *Custom* type button will invoke the `onAction` callback function provided in the dialog configuration, and pass it the button's `name` in the `details` object. This allows developers to create a click handler for each *Custom* type footer button in the dialog. See the link:{modulesDir}/ui-components/dialog/#interactiveexampleusingredialconfigvoid[Redial example] for an example of how to use this with standard dialogs.
+* A *Custom* type button will invoke the `onAction` callback function provided in the dialog configuration, and pass it the button's `name` in the `details` object. This allows developers to create a click handler for each *Custom* type footer button in the dialog. See the link:{rootDir}ui-components/dialog.html#interactiveexampleusingredialconfigvoid[Redial example] for an example of how to use this with standard dialogs.
 
-NOTE: Unlike link:{modulesDir}/ui-components/dialog/[standard dialogs], URL dialogs do not have a *Submit* type footer button, and therefore do not have an `onSubmit` callback.
+NOTE: Unlike link:{rootDir}ui-components/dialog.html[standard dialogs], URL dialogs do not have a *Submit* type footer button, and therefore do not have an `onSubmit` callback.
 
 See the <<configurationoptions,URL dialog configuration options>> documentation for more information on event callbacks.
 

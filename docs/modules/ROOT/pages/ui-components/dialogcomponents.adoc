@@ -1,7 +1,7 @@
-:modulesDir: ../
-:partialsDir: {modulesDir}partials/
-:imagesDir: {modulesDir}images/
-include::{modulesDir}_attributes.adoc[]
+:rootDir: ../
+:partialsDir: {rootDir}partials/
+:imagesDir: {rootDir}images/
+include::{rootDir}_attributes.adoc[]
 = Dialog components
 :description: A reference list of all TinyMCE dialog components.
 :keywords: dialog dialogapi
@@ -52,7 +52,7 @@ Each tab panel is defined using the following configuration options:
 | An array of <<panelcomponents,panel components>> to display inside the panel.
 |===
 
-NOTE: Panel components in different tabs with the same `name` will use the same value in the link:{modulesDir}/ui-components/dialog/#dialogdataandstate[dialog's data object]. This allows for transference of data between tabs. For example, the `charmap` and `emoticons` plugin dialogs contain a search input field in each tab. By assigning the same name to all the search fields, user data entered on one tab will be transferred when the user changes tabs.
+NOTE: Panel components in different tabs with the same `name` will use the same value in the link:{rootDir}ui-components/dialog.html#dialogdataandstate[dialog's data object]. This allows for transference of data between tabs. For example, the `charmap` and `emoticons` plugin dialogs contain a search input field in each tab. By assigning the same name to all the search fields, user data entered on one tab will be transferred when the user changes tabs.
 
 `+js
 {
@@ -71,12 +71,12 @@ NOTE: Panel components in different tabs with the same `name` will use the same 
 [#dialog-instance-api-methods]
 ==== Dialog instance API methods
 
-The link:{modulesDir}/ui-components/dialog/#dialoginstanceapi[dialog instance API] contains the `showTab("tabName")` method, which allows for programmatic tab switching using the registered `name` of a tab.
+The link:{rootDir}ui-components/dialog.html#dialoginstanceapi[dialog instance API] contains the `showTab("tabName")` method, which allows for programmatic tab switching using the registered `name` of a tab.
 
 [#dialog-configuration-event-callbacks]
 ==== Dialog configuration event callbacks
 
-A dialog can be configured with an link:{modulesDir}/ui-components/dialog/#configurationoptions[`onTabChange`] callback. This function is called when the user changes tabs. It is passed the dialog instance API and a `details` object which contains `newTabName` and `oldTabName`.
+A dialog can be configured with an link:{rootDir}ui-components/dialog.html#configurationoptions[`onTabChange`] callback. This function is called when the user changes tabs. It is passed the dialog instance API and a `details` object which contains `newTabName` and `oldTabName`.
 
 As an example of when this is useful, the `charmap` and `emoticons` plugin dialogs use `newTabName` to change search results to match the character or emoticon category represented by the current tab.
 
@@ -106,7 +106,7 @@ const dialogConfig = {
 
 Panels can contain <<layoutcomponents,layout components>> and <<basiccomponents,basic components>>, which include components for displaying information and user interaction and input.
 
-NOTE: Panel components in different tabs with the same `name` will use the same value in the link:{modulesDir}/ui-components/dialog/#dialogdataandstate[dialog's data object]. This allows for transference of data between tabs. For example, the `charmap` and `emoticons` plugin dialogs contain a search input field in each tab. By assigning the same name to all the search fields, user data entered on one tab will be transferred when the user changes tabs.
+NOTE: Panel components in different tabs with the same `name` will use the same value in the link:{rootDir}ui-components/dialog.html#dialogdataandstate[dialog's data object]. This allows for transference of data between tabs. For example, the `charmap` and `emoticons` plugin dialogs contain a search input field in each tab. By assigning the same name to all the search fields, user data entered on one tab will be transferred when the user changes tabs.
 
 [#layout-components]
 === Layout components
@@ -128,7 +128,7 @@ A *bar* is a layout component that creates a single row of items in the dialog b
 [#collection]
 ==== collection
 
-A *collection* is a layout component that creates a panel containing a collection of small buttons in the dialog body. For example, this component is used in the dialogs for the link:{modulesDir}/plugins/charmap[`charmap`] and link:{modulesDir}/plugins/emoticons[`emoticons`] plugins.
+A *collection* is a layout component that creates a panel containing a collection of small buttons in the dialog body. For example, this component is used in the dialogs for the link:{rootDir}plugins/charmap[`charmap`] and link:{rootDir}plugins/emoticons[`emoticons`] plugins.
 
 `js
 {
@@ -138,7 +138,7 @@ A *collection* is a layout component that creates a panel containing a collectio
 }
 `
 
-To populate the collection with collection items, specify an array of items in the dialog's link:{modulesDir}/ui-components/dialog/#dialogdataandstate[`initialData`] property. To update the items in the collection, use the link:{modulesDir}/ui-components/dialog/#dialoginstanceapi[dialog API's] `setData()` method. Each item should contain a `text`, `value`, and `icon` property. For example:
+To populate the collection with collection items, specify an array of items in the dialog's link:{rootDir}ui-components/dialog.html#dialogdataandstate[`initialData`] property. To update the items in the collection, use the link:{rootDir}ui-components/dialog.html#dialoginstanceapi[dialog API's] `setData()` method. Each item should contain a `text`, `value`, and `icon` property. For example:
 
 `+js
 [
@@ -236,9 +236,9 @@ Clicking the icon in the alert banner will fire the `onAction` function in the d
 [#button]
 ==== button
 
-A *button* is a clickable component that can contain text or an icon. There are two types of buttons (primary and secondary buttons), though the only difference is that they are styled differently. Primary buttons are intended to stand out. The color will depend on the chosen link:{modulesDir}/general-configuration-guide/customize-ui/#skins[skin].
+A *button* is a clickable component that can contain text or an icon. There are two types of buttons (primary and secondary buttons), though the only difference is that they are styled differently. Primary buttons are intended to stand out. The color will depend on the chosen link:{rootDir}general-configuration-guide/customize-ui.html#skins[skin].
 
-NOTE: Panel buttons are different to link:{modulesDir}/ui-components/dialog/#footerbuttons[dialog footer buttons].
+NOTE: Panel buttons are different to link:{rootDir}ui-components/dialog.html#footerbuttons[dialog footer buttons].
 
 *Events:* Interacting with a *button* component will fire the `onAction` function in the dialog's configuration, and pass it the button's `name` in the `details` object. This allows developers to create a click handler for each button.
 
@@ -364,7 +364,7 @@ NOTE: Despite the name a htmlpanel can not be used as a body component like `pan
 
 An *iframe* component takes a HTML document as a string and displays it in the dialog within an iframe.
 
-NOTE: To replace the entire dialog body with an iframe that loads its content from a URL, use a link:{modulesDir}/ui-components/urldialog[URL dialog].
+NOTE: To replace the entire dialog body with an iframe that loads its content from a URL, use a link:{rootDir}ui-components/urldialog[URL dialog].
 
 |===
 | Name | Type | Requirement | Description
@@ -399,7 +399,7 @@ NOTE: To replace the entire dialog body with an iframe that loads its content fr
 }
 `
 
-To set the iframe's content on dialog open, specify document HTML as a string in the dialog's link:{modulesDir}/ui-components/dialog/#dialogdataandstate[`initialData`] property. To update the iframe's content, use the link:{modulesDir}/ui-components/dialog/#dialoginstanceapi[dialog API's] `setData()` method. For example:
+To set the iframe's content on dialog open, specify document HTML as a string in the dialog's link:{rootDir}ui-components/dialog.html#dialogdataandstate[`initialData`] property. To update the iframe's content, use the link:{rootDir}ui-components/dialog.html#dialoginstanceapi[dialog API's] `setData()` method. For example:
 
 `js
 dialogApi.setData({
@@ -551,7 +551,7 @@ A *textarea* is a multiline text field.
 
 A *urlinput* is a specialized composite component for URL input or file upload. It has a label, a text input field and an optional filepicker button. The urlinput component also includes a *typeahead* dropdown that will display previously-entered URLs that match the current input text and update as the user types.
 
-NOTE: The filepicker button will only appear if link:{modulesDir}/configure/file-image-upload/#file_picker_callback[`file_picker_callback`] is configured.
+NOTE: The filepicker button will only appear if link:{rootDir}configure/file-image-upload.html#file_picker_callback[`file_picker_callback`] is configured.
 
 *Events:* Interacting with a *selectbox* component will fire the `onChange` function in the dialog's configuration *when the user clicks away from the component*.
 

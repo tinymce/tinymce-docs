@@ -1,7 +1,7 @@
-:modulesDir: ../../
-:partialsDir: {modulesDir}partials/
-:imagesDir: {modulesDir}images/
-include::{modulesDir}_attributes.adoc[]
+:rootDir: ../../
+:partialsDir: {rootDir}partials/
+:imagesDir: {rootDir}images/
+include::{rootDir}_attributes.adoc[]
 = Configure server-side components
 :keywords: enterprise tinymcespellchecker spell check checker pro pricing imagetools server configuration configure
 
@@ -16,7 +16,7 @@ This configuration file will require you to enter _at least_ the following  info
 
 * `allowed-origins` - the domains allowed to communicate with the server-side editor features. This is required by all server-side components.
 
-The Enhanced Media Embed server-side component require additional configuration, which can be found on the link:{modulesDir}/enterprise/embed-media/mediaembed-server-config/[Enhanced Media Embed page].
+The Enhanced Media Embed server-side component require additional configuration, which can be found on the link:{rootDir}enterprise/embed-media/mediaembed-server-config.html[Enhanced Media Embed page].
 
 [#required]
 === `allowed-origins` (required)
@@ -156,7 +156,7 @@ ephox {
 [#troubleshooting-origins]
 ==== Troubleshooting Origins
 
-If you missed an Origin or specified an Origin incorrectly, {productname} features that rely on the server-side components will not work from that Origin. If you observe that requests to the server-side components are failing or features are unavailable and you're not sure why, refer to the troubleshooting information about link:{modulesDir}/enterprise/server/troubleshoot/#usingbrowsertoolingtoinvestigateservicesissues[Using browser tooling to investigate services issues].
+If you missed an Origin or specified an Origin incorrectly, {productname} features that rely on the server-side components will not work from that Origin. If you observe that requests to the server-side components are failing or features are unavailable and you're not sure why, refer to the troubleshooting information about link:{rootDir}enterprise/server/troubleshoot.html#usingbrowsertoolingtoinvestigateservicesissues[Using browser tooling to investigate services issues].
 
 [#optional-2]
 === `proxy` (optional)
@@ -290,7 +290,7 @@ ephox {
 [#optional-2]
 === `image-proxy` (optional)
 
-The link:{modulesDir}/plugins/imagetools/[image proxy service] has some optional configuration to set a maximum size for images proxied. Images beyond this size it will not be proxied. Please note that the `http.request-timeout-seconds` above also applies to requests made by the image proxy service.
+The link:{rootDir}plugins/imagetools.html[image proxy service] has some optional configuration to set a maximum size for images proxied. Images beyond this size it will not be proxied. Please note that the `http.request-timeout-seconds` above also applies to requests made by the image proxy service.
 
 |===
 |  |  |
@@ -410,7 +410,7 @@ If you want logging to go to the container as well uncomment
 [#step-2-pass-the-configuration-file-to-the-java-application-server]
 === Step 2. Pass the configuration file to the Java application server
 
-Assuming you've saved your `logback.xml` file in `/etc/opt/tinymce`, follow link:{modulesDir}/enterprise/server/#step4passtheconfigurationfiletothejavaapplicationserver[step 4] and link:{modulesDir}/enterprise/server/#step5restartthejavaapplicationserver[step 5] on the _Install Server-side Components_ page to set the following JVM system property on your Java application server:
+Assuming you've saved your `logback.xml` file in `/etc/opt/tinymce`, follow link:{rootDir}enterprise/server.html#step4passtheconfigurationfiletothejavaapplicationserver[step 4] and link:{rootDir}enterprise/server.html#step5restartthejavaapplicationserver[step 5] on the _Install Server-side Components_ page to set the following JVM system property on your Java application server:
 
 `
 -Dlogback.configurationFile=/etc/opt/tinymce/logback.xml

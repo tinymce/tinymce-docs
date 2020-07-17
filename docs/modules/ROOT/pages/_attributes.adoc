@@ -50,10 +50,10 @@
 
 :notonmobile: [NOTE] This option is not supported on mobile devices.
 :premiumplugin: [NOTE] This plugin is only available for link:{pricingpage}[paid {productname} subscriptions].
-:differs_for_mobile: [NOTE] The default option for this setting is different for mobile devices. For information on the default mobile setting, see: link:{modulesDir}/mobile/#mobiledefaultsforselectedsettings[{productname} Mobile - Configuration settings with mobile defaults].
+:differs_for_mobile: [NOTE] The default option for this setting is different for mobile devices. For information on the default mobile setting, see: link:{rootDir}mobile.html#mobiledefaultsforselectedsettings[{productname} Mobile - Configuration settings with mobile defaults].
 
 :thirdPartyInteg: [IMPORTANT] This Integration is maintained by a third-party developer. {companynameformal} bears no responsibility for this integration, which is not covered by the {companyname} Self-Hosted Software License Agreement. For issues related to the integration, contact the third-party project directly.
 
 :moxieMNotOnCloud: [NOTE] The MoxieManager plugin is _not_ provided on the {cloudname}, and is provided as a self-hosted solution only.
 
-:predefinedIconsOnly: Name of the icon to be displayed. Must correspond to an icon: in the link:{modulesDir}/advanced/editor-icon-identifiers/[icon pack], in a link:{modulesDir}/advanced/creating-an-icon-pack/[custom icon pack], or added using the link:{modulesDir}/api/tinymce.editor.ui/tinymce.editor.ui.registry/#addicon[`addIcon` API].
+:predefinedIconsOnly: Name of the icon to be displayed. Must correspond to an icon: in the link:{rootDir}advanced/editor-icon-identifiers.html[icon pack], in a link:{rootDir}advanced/creating-an-icon-pack.html[custom icon pack], or added using the link:{rootDir}api/tinymce.editor.ui/tinymce.editor.ui.registry.html#addicon[`addIcon` API].

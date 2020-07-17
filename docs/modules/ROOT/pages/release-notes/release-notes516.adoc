@@ -1,7 +1,7 @@
-:modulesDir: ../
-:partialsDir: {modulesDir}partials/
-:imagesDir: {modulesDir}images/
-include::{modulesDir}_attributes.adoc[]
+:rootDir: ../
+:partialsDir: {rootDir}partials/
+:imagesDir: {rootDir}images/
+include::{rootDir}_attributes.adoc[]
 = TinyMCE 5.1.6
 :description: Release notes for TinyMCE 5.1.6
 :keywords: releasenotes bugfixes
@@ -15,7 +15,7 @@ These release notes provide an overview of the changes for {productname} 5.1.6, 
 
 [NOTE]
 ====
-This is the {cloudname} and {enterpriseversion} release notes. For information on the latest community version of {productname}, see: link:{modulesDir}/changelog/[{productname} Changelog].
+This is the {cloudname} and {enterpriseversion} release notes. For information on the latest community version of {productname}, see: link:{rootDir}changelog.html[{productname} Changelog].
 ====
 
 [#general-bug-fixes]
@@ -28,7 +28,7 @@ This is the {cloudname} and {enterpriseversion} release notes. For information o
 * Changing a tables row type from `Header` to `Body` no-longer incorrectly moves the row to the bottom of the table.
 * Context menus now open correctly on hybrid devices that support both touch and mouse input.
 * Context menus no longer open in the wrong location when the target was the editor body.
-* The `image` plugin now respects the link:{modulesDir}/configure/file-image-upload/#automatic_uploads[`automatic_uploads`] setting when uploading local images.
+* The `image` plugin now respects the link:{rootDir}configure/file-image-upload.html#automatic_uploads[`automatic_uploads`] setting when uploading local images.
 
 [#security-fixes]
 == Security fixes
@@ -57,7 +57,7 @@ The {productname} 5.1.6 release includes *Enhanced Media Embed* 2.2.5.
 
 *Enhanced Media Embed* 2.2.5 provides the following bug fixes:
 
-* The link:{modulesDir}/plugins/mediaembed/#mediaembed_max_width[`mediaembed_max_width`] setting will now constrain the max width correctly on Internet Explorer 11.
+* The link:{rootDir}plugins/mediaembed.html#mediaembed_max_width[`mediaembed_max_width`] setting will now constrain the max width correctly on Internet Explorer 11.
 
 :enterprise: true
 

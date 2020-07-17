@@ -1,14 +1,14 @@
-:modulesDir: ../
-:partialsDir: {modulesDir}partials/
-:imagesDir: {modulesDir}images/
-include::{modulesDir}_attributes.adoc[]
+:rootDir: ../
+:partialsDir: {rootDir}partials/
+:imagesDir: {rootDir}images/
+include::{rootDir}_attributes.adoc[]
 = Work with plugins to extend TinyMCE
 :description: TinyMCE is an incredibly powerful, flexible and customizable rich text editor. This section demonstrates the power of plugins with several working examples.
 :description_short: Learn about TinyMCE's plugin functionality and discover our Top 10 plugins.
 :keywords: plugin
 :title_nav: Using plugins to extend TinyMCE
 
-For most developers, the real power of {productname}'s functionality is found in its plugins. link:{modulesDir}/plugins/[Plugins] either extend default editor functionality or add new functionality. For example, the link:{modulesDir}/plugins/advlist/[Advanced List] plugin adds extra options to the toolbar's existing list controls, while the link:{modulesDir}/plugins/code/[Code] plugin adds entirely new functionality.
+For most developers, the real power of {productname}'s functionality is found in its plugins. link:{rootDir}plugins.html[Plugins] either extend default editor functionality or add new functionality. For example, the link:{rootDir}plugins/advlist.html[Advanced List] plugin adds extra options to the toolbar's existing list controls, while the link:{rootDir}plugins/code.html[Code] plugin adds entirely new functionality.
 
 Because most people install {productname} via {cloudname} or by downloading a package, they mistakenly think plugins are part of the {productname} "core". While all of the plugins (excluding the professional features) are included in those packages, each plugin is in a separate .js file. In fact, if you use the link:{gettiny}/custom-builds/[custom package] download option (TinyMCE 4 only), you're able to select only the plugins you want to be included, or you can exclude all of the plugins built by the {productname} team.
 
@@ -47,7 +47,7 @@ The code we want to work with is in the second `<script>` element. Specifically 
 [#code-plugin]
 === Code plugin
 
-The link:{modulesDir}/plugins/code/[Code] plugin is one of the more popular plugins because it can expose the editable area's raw `html` to the user. It also provides an excellent example because it adds a menu item and toolbar button as well as having advanced customization options.
+The link:{rootDir}plugins/code.html[Code] plugin is one of the more popular plugins because it can expose the editable area's raw `html` to the user. It also provides an excellent example because it adds a menu item and toolbar button as well as having advanced customization options.
 
 The first thing we need to do is include the actual `plugins` key and assign it a value. Since we're starting with the `code` plugin that value is going to be ``'code'``for this example.
 
@@ -94,7 +94,7 @@ Even if you found the above example quite easy, hang with us we'll show you how 
 [#advanced-list]
 === Advanced List
 
-The link:{modulesDir}/plugins/advlist/[Advanced List] plugin extends the default unordered and ordered list toolbar controls by adding CSS `list-style-type` styled number formats and bullet types to the controls.
+The link:{rootDir}plugins/advlist.html[Advanced List] plugin extends the default unordered and ordered list toolbar controls by adding CSS `list-style-type` styled number formats and bullet types to the controls.
 
 As before, let's start by adding the `plugins` key and giving it the Advanced List value of `'advlist'`.
 
@@ -117,7 +117,7 @@ The `advlist` plugin has two options which provide more granular control of list
 
 Many plugin options have more than one possible value. The `advlist_bullet_styles` option has possible values of `circle`, `disc`, and `square`. While the `advlist_number_styles` has possible values of `lower-alpha`, `lower-greek`, `lower-roman`, `upper-alpha`, and `upper-roman`.
 
-Don't worry if you can't remember all these values. The link:{modulesDir}/plugins/[plugins section] goes into great detail explaining all the plugins options, toolbars, and menu controls.
+Don't worry if you can't remember all these values. The link:{rootDir}plugins.html[plugins section] goes into great detail explaining all the plugins options, toolbars, and menu controls.
 
 Let's add the Advanced List options and give them some of the available options.
 
@@ -135,7 +135,7 @@ tinymce.init({
 
 In the above example, we learned how to remove the menubar, add specific list controls to the toolbar while removing others, activate a plugin, and customize the plugin's behavior by controlling which options we wanted to be activated. In 5 lines of code (excluding the `selector` key, which has to be included for {productname} to work).
 
-As we noted at the start {productname} is an incredibly powerful, flexible, and customizable rich text editor. Once you have finished the Get Started guide, deep dive into the link:{modulesDir}/plugins/[plugins] and link:{modulesDir}/configure/[configuration options].
+As we noted at the start {productname} is an incredibly powerful, flexible, and customizable rich text editor. Once you have finished the Get Started guide, deep dive into the link:{rootDir}plugins.html[plugins] and link:{rootDir}configure.html[configuration options].
 
 [#top-10-plugins]
 == Top 10 plugins
@@ -147,41 +147,41 @@ Customizing {productname} with the default plugins is that easy. There are 60 pl
 
 | *1*
 | Image
-| link:{modulesDir}/plugins/image/[image]
+| link:{rootDir}plugins/image.html[image]
 
 | *2*
 | Paste
-| link:{modulesDir}/plugins/paste/[paste]
+| link:{rootDir}plugins/paste.html[paste]
 
 | *3*
 | Code
-| link:{modulesDir}/plugins/code/[code]
+| link:{rootDir}plugins/code.html[code]
 
 | *4*
 | Table
-| link:{modulesDir}/plugins/table/[table]
+| link:{rootDir}plugins/table.html[table]
 
 | *5*
 | Link
-| link:{modulesDir}/plugins/link/[link]
+| link:{rootDir}plugins/link.html[link]
 
 | *6*
 | Image Tools
-| link:{modulesDir}/plugins/imagetools/[imagetools]
+| link:{rootDir}plugins/imagetools.html[imagetools]
 
 | *7*
 | Advanced Code
-| link:{modulesDir}/plugins/advcode/[advcode]
+| link:{rootDir}plugins/advcode.html[advcode]
 
 | *8*
 | Media
-| link:{modulesDir}/plugins/media/[media]
+| link:{rootDir}plugins/media.html[media]
 
 | *9*
 | PowerPaste
-| link:{modulesDir}/plugins/powerpaste/[powerpaste]
+| link:{rootDir}plugins/powerpaste.html[powerpaste]
 
 | *10*
 | Code Sample
-| link:{modulesDir}/plugins/codesample/[codesample]
+| link:{rootDir}plugins/codesample.html[codesample]
 |===

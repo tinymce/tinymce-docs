@@ -1,7 +1,7 @@
-:modulesDir: ../
-:partialsDir: {modulesDir}partials/
-:imagesDir: {modulesDir}images/
-include::{modulesDir}_attributes.adoc[]
+:rootDir: ../
+:partialsDir: {rootDir}partials/
+:imagesDir: {rootDir}images/
+include::{rootDir}_attributes.adoc[]
 = Cloud deployment of plugins Only
 :description: Connect to Tiny Cloud within a hybrid deployment.
 :description_short: Learn how to setup TinyMCE Plugins via the Tiny Cloud.
@@ -9,7 +9,7 @@ include::{modulesDir}_attributes.adoc[]
 
 A hybrid deployment of {cloudname} allows the loading of premium plugins in a self-hosted environment. Download and install the link:{gettiny}[{productname} Community edition] to get started.
 
-Sign up for a free API key provides entitlements to premium link:{modulesDir}/plugins/imagetools/[Image Tools] plugin. A {cloudname} image proxy server must already be configured. Premium plugins can be purchased at any time once the API key has been set up.
+Sign up for a free API key provides entitlements to premium link:{rootDir}plugins/imagetools.html[Image Tools] plugin. A {cloudname} image proxy server must already be configured. Premium plugins can be purchased at any time once the API key has been set up.
 
 [#step-1-insert-the-custom-script-tag-into-the-webpage]
 == Step 1: Insert the custom script tag into the webpage
@@ -24,28 +24,28 @@ Add the following script in the webpage once the script tag to load {productname
 [#step-2-specify-purchased-tinymce-plugins-and-toolbar-buttons]
 == Step 2: Specify purchased TinyMCE plugins and toolbar buttons
 
-Extend the link:{modulesDir}/configure/[{productname} configuration] to include any additional purchased plugins and associated toolbar and menu items. Refer to the following enablement guides for more information:
+Extend the link:{rootDir}configure.html[{productname} configuration] to include any additional purchased plugins and associated toolbar and menu items. Refer to the following enablement guides for more information:
 
-* link:{modulesDir}/plugins/mentions/[Mentions]
-* link:{modulesDir}/plugins/drive/[{cloudfilemanager}]
-* link:{modulesDir}/plugins/comments/[Comments 2.0]
-* link:{modulesDir}/plugins/pageembed/[Page Embed]
-* link:{modulesDir}/plugins/permanentpen/[Permanent Pen]
-* link:{modulesDir}/plugins/formatpainter/[Format Painter]
-* link:{modulesDir}/plugins/powerpaste/[PowerPaste]
-* link:{modulesDir}/plugins/tinymcespellchecker/[Spell Checker Pro]
+* link:{rootDir}plugins/mentions.html[Mentions]
+* link:{rootDir}plugins/drive.html[{cloudfilemanager}]
+* link:{rootDir}plugins/comments.html[Comments 2.0]
+* link:{rootDir}plugins/pageembed.html[Page Embed]
+* link:{rootDir}plugins/permanentpen.html[Permanent Pen]
+* link:{rootDir}plugins/formatpainter.html[Format Painter]
+* link:{rootDir}plugins/powerpaste.html[PowerPaste]
+* link:{rootDir}plugins/tinymcespellchecker.html[Spell Checker Pro]
 
-NOTE: `spellchecker_rpc_url` is *not* required when enabling this plugin via link:{modulesDir}/cloud-deployment-guide/[{cloudname}].
+NOTE: `spellchecker_rpc_url` is *not* required when enabling this plugin via link:{rootDir}cloud-deployment-guide.html[{cloudname}].
 
-* link:{modulesDir}/plugins/imagetools/[Image Tools (with configured image proxy)]
+* link:{rootDir}plugins/imagetools.html[Image Tools (with configured image proxy)]
 
 NOTE: Configuration of the `imagetools_cors_hosts` and `imagetools_proxy` properties occurrs automatically.
 
-* link:{modulesDir}/plugins/moxiemanager/[Moxie Manager]
-* link:{modulesDir}/plugins/a11ychecker/[Accessibility Checker]
-* link:{modulesDir}/plugins/advcode/[Advanced Code Editor]
-* link:{modulesDir}/plugins/mediaembed/[Enhanced Media Embed]
-* link:{modulesDir}/plugins/linkchecker/[Link Checker]
+* link:{rootDir}plugins/moxiemanager.html[Moxie Manager]
+* link:{rootDir}plugins/a11ychecker.html[Accessibility Checker]
+* link:{rootDir}plugins/advcode.html[Advanced Code Editor]
+* link:{rootDir}plugins/mediaembed.html[Enhanced Media Embed]
+* link:{rootDir}plugins/linkchecker.html[Link Checker]
 
 NOTE: It may take up to 30 minutes for the purchased plugin to be available to {productname}. Clear the browser's cache.
 
@@ -54,7 +54,7 @@ The following is a complete example:
 The example below has the following:
 
 * The {cloudname} `API key` has the value _TEST_API_KEY_.
-* The {cloudname} has the link:{modulesDir}/plugins/tinymcespellchecker/[Spell Checker Pro] plugin enabled.
+* The {cloudname} has the link:{rootDir}plugins/tinymcespellchecker.html[Spell Checker Pro] plugin enabled.
 
 [source,js]
 ----

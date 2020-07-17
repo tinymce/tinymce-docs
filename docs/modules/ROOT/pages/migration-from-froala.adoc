@@ -1,7 +1,7 @@
-:modulesDir:
-:partialsDir: {modulesDir}partials/
-:imagesDir: {modulesDir}images/
-include::{modulesDir}_attributes.adoc[]
+:rootDir:
+:partialsDir: {rootDir}partials/
+:imagesDir: {rootDir}images/
+include::{rootDir}_attributes.adoc[]
 = Migrating from Froala to TinyMCE
 :description: Upgrading your rich text editor from Froala Editor v3 to TinyMCE 5.
 :keywords: migration considerations premigration pre-migration froala
@@ -12,12 +12,12 @@ Procedures and links to our documentation have been included to assist with your
 
 *Covered in this section:*
 
-* link:{modulesDir}/migration-from-froala/#migratingabasicfroalaconfigurationtotinymce[Migrating a Basic Froala Configuration to {productname}]
-* link:{modulesDir}/migration-from-froala/#updatingthelistofplugins[Updating the list of Plugins]
-* link:{modulesDir}/migration-from-froala/#migratingacustomtoolbarlayout[Migrating a Custom Toolbar Layout]
-* link:{modulesDir}/migration-from-froala/#configuringinlinemode[Configuring Inline Mode]
-* link:{modulesDir}/migration-from-froala/#migratingcustombuttons[Migrating Custom Buttons]
-* link:{modulesDir}/migration-from-froala/#migratingcustomdrop-downtoolbarbuttons[Migrating Custom Drop-down Toolbar Buttons]
+* link:{rootDir}migration-from-froala.html#migratingabasicfroalaconfigurationtotinymce[Migrating a Basic Froala Configuration to {productname}]
+* link:{rootDir}migration-from-froala.html#updatingthelistofplugins[Updating the list of Plugins]
+* link:{rootDir}migration-from-froala.html#migratingacustomtoolbarlayout[Migrating a Custom Toolbar Layout]
+* link:{rootDir}migration-from-froala.html#configuringinlinemode[Configuring Inline Mode]
+* link:{rootDir}migration-from-froala.html#migratingcustombuttons[Migrating Custom Buttons]
+* link:{rootDir}migration-from-froala/#migratingcustomdrop-downtoolbarbuttons[Migrating Custom Drop-down Toolbar Buttons]
 
 [#migrating-a-basic-froala-configuration-to-tinymce]
 == Migrating a Basic Froala Configuration to TinyMCE
@@ -59,7 +59,7 @@ Replace `your-api-key` with your link:{accountpageurl}[{cloudname} API key].
 +
 Replace `/path/to/tinymce/base/directory` with the relative path of the `tinymce/` directory containing `tinymce.min.js`.
 
-For information on {productname} deployment types, see: link:{modulesDir}/general-configuration-guide/advanced-install/[Installing {productname}].
+For information on {productname} deployment types, see: link:{rootDir}general-configuration-guide/advanced-install.html[Installing {productname}].
 
 [#replace-the-froala-editor-variable-assignment-with-the-tinymce-init-function]
 === Replace the Froala editor variable assignment with the tinymce.init function
@@ -91,7 +91,7 @@ To insert an editor in the body of the page for a `<textarea>` element such as:
 </script>
 ----
 
-For information on configuring the `selector` setting, see: link:{modulesDir}/general-configuration-guide/basic-setup/[Basic Setup].
+For information on configuring the `selector` setting, see: link:{rootDir}general-configuration-guide/basic-setup.html[Basic Setup].
 
 [#examples-basic-configuration]
 === Examples: Basic Configuration
@@ -149,20 +149,20 @@ The following examples show an initial Froala configuration and the migrated {pr
 
 For information on:
 
-* Getting started with {productname}, see: link:{modulesDir}/quick-start[{productname} Quick Start].
-* Installing {productname}, see: link:{modulesDir}/general-configuration-guide/advanced-install/[Installing {productname}].
+* Getting started with {productname}, see: link:{rootDir}quick-start[{productname} Quick Start].
+* Installing {productname}, see: link:{rootDir}general-configuration-guide/advanced-install.html[Installing {productname}].
 
 [#updating-the-list-of-plugins]
 == Updating the list of Plugins
 
-Some _Froala core functionality_ is implemented by link:{modulesDir}/plugins/[plugins for {productname}]; and some _Froala plugin-provided functionality_ is {productname} core functionality.
+Some _Froala core functionality_ is implemented by link:{rootDir}plugins.html[plugins for {productname}]; and some _Froala plugin-provided functionality_ is {productname} core functionality.
 
 For Example:
 
 * Froala includes ordered lists as part of the core functionality, but the `lists` plugin provides ordered lists for {productname}.
 * Adding a font size option in Froala requires a plugin, but `fontsize` is core functionality for {productname}.
 
-To include a plugin for a {productname} editor, add a `plugins` option and provide a link:{modulesDir}/configure/integration-and-setup/#plugins[space-delimited list of the plugins to include], as shown below. You should delete any Froala sourcing scripts and Froala links from the page.
+To include a plugin for a {productname} editor, add a `plugins` option and provide a link:{rootDir}configure/integration-and-setup.html#plugins[space-delimited list of the plugins to include], as shown below. You should delete any Froala sourcing scripts and Froala links from the page.
 
 [#examples-enabling-plugins]
 === Examples: Enabling Plugins
@@ -212,8 +212,8 @@ The following examples show how plugins are included or enabled in the Froala an
 [#additional-information-on-plugins]
 === Additional Information on Plugins
 
-* For information on enabling plugins for {productname}, see: link:{modulesDir}/configure/integration-and-setup/#plugins[Integration and setup options: plugins].
-* For a list of {productname} plugins, see: link:{modulesDir}/plugins/[Add plugins to {productname}].
+* For information on enabling plugins for {productname}, see: link:{rootDir}configure/integration-and-setup.html#plugins[Integration and setup options: plugins].
+* For a list of {productname} plugins, see: link:{rootDir}plugins.html[Add plugins to {productname}].
 
 [#migrating-a-custom-toolbar-layout]
 == Migrating a Custom Toolbar Layout
@@ -274,9 +274,9 @@ Replace the names of toolbar items with the {productname} names. For example:
 [#update-the-option-as-required]
 === Update the `plugin` option as required
 
-The list of plugins may need updating, as indicated in link:{modulesDir}/migration-from-froala/#updatingthelistofplugins[Updating the list of Plugins]. For example, the {productname} toolbar items; `numlist` and `bullist`, require the `lists` plugin.
+The list of plugins may need updating, as indicated in link:{rootDir}migration-from-froala.html#updatingthelistofplugins[Updating the list of Plugins]. For example, the {productname} toolbar items; `numlist` and `bullist`, require the `lists` plugin.
 
-For a list of toolbar items with the required plugins, see: link:{modulesDir}/advanced/editor-control-identifiers/#toolbarcontrols[Editor control identifiers: Toolbar controls].
+For a list of toolbar items with the required plugins, see: link:{rootDir}advanced/editor-control-identifiers.html#toolbarcontrols[Editor control identifiers: Toolbar controls].
 
 [#examples-custom-toolbar-layouts]
 === Examples: Custom Toolbar Layouts
@@ -325,18 +325,18 @@ The following examples show a custom toolbar layout in Froala and the same layou
 [#additional-information-on-customizing-toolbars]
 === Additional Information on Customizing Toolbars
 
-* For information on customizing the {productname} Toolbar, see: link:{modulesDir}/configure/editor-appearance/#toolbar[User interface options: Toolbar].
-* For a list of toolbar items, see: link:{modulesDir}/advanced/editor-control-identifiers/#toolbarcontrols[Editor control identifiers: Toolbar controls].
+* For information on customizing the {productname} Toolbar, see: link:{rootDir}configure/editor-appearance.html#toolbar[User interface options: Toolbar].
+* For a list of toolbar items, see: link:{rootDir}advanced/editor-control-identifiers.html#toolbarcontrols[Editor control identifiers: Toolbar controls].
 
 [#configuring-inline-mode]
 == Configuring Inline Mode
 
 When migrating from Froala to {productname}, the `toolbarInline` option changes to `inline`. Some additional settings you should consider include:
 
-* link:{modulesDir}/plugins/quickbars/[The Quick Toolbar plugin].
-* link:{modulesDir}/ui-components/contexttoolbar/[Context Toolbars].
-* link:{modulesDir}/ui-components/contextmenu/[Context Menus].
-* link:{modulesDir}/configure/editor-appearance/#menubar[Disabling the {productname} menubar].
+* link:{rootDir}plugins/quickbars.html[The Quick Toolbar plugin].
+* link:{rootDir}ui-components/contexttoolbar.html[Context Toolbars].
+* link:{rootDir}ui-components/contextmenu.html[Context Menus].
+* link:{rootDir}configure/editor-appearance.html#menubar[Disabling the {productname} menubar].
 
 [#examples-enabling-inline-mode]
 === Examples: Enabling Inline Mode
@@ -382,19 +382,19 @@ The following examples show Froala and {productname} configured for inline mode.
 
 For information on:
 
-* The inline editing mode, see: link:{modulesDir}/general-configuration-guide/use-tinymce-inline/[Setup inline editing mode].
-* Configuring a Quick Toolbar, see: link:{modulesDir}/plugins/quickbars/[Quick Toolbar plugin].
-* Configuring a contextual toolbar, see: link:{modulesDir}/ui-components/contexttoolbar/[Context Toolbar].
-* Configuring a contextual menu, see: link:{modulesDir}/ui-components/contextmenu/[Context Menu].
-* Disabling the {productname} menubar, see: link:{modulesDir}/configure/editor-appearance/#menubar[User interface options: Menubar].
-* The {productname} distraction-free editing mode, see: link:{modulesDir}/general-configuration-guide/use-tinymce-distraction-free/[{productname} distraction-free editing mode].
+* The inline editing mode, see: link:{rootDir}general-configuration-guide/use-tinymce-inline.html[Setup inline editing mode].
+* Configuring a Quick Toolbar, see: link:{rootDir}plugins/quickbars.html[Quick Toolbar plugin].
+* Configuring a contextual toolbar, see: link:{rootDir}ui-components/contexttoolbar.html[Context Toolbar].
+* Configuring a contextual menu, see: link:{rootDir}ui-components/contextmenu.html[Context Menu].
+* Disabling the {productname} menubar, see: link:{rootDir}configure/editor-appearance.html#menubar[User interface options: Menubar].
+* The {productname} distraction-free editing mode, see: link:{rootDir}general-configuration-guide/use-tinymce-distraction-free.html[{productname} distraction-free editing mode].
 
 [#migrating-custom-buttons]
 == Migrating Custom Buttons
 
 The {productname} `addButton` option is used in place of the Froala `RegisterCommand` option.
 
-For information on getting started with the `addButton` option, see: link:{modulesDir}/ui-components/toolbarbuttons/#howtocreatecustomtoolbarbuttons[Toolbar buttons].
+For information on getting started with the `addButton` option, see: link:{rootDir}ui-components/toolbarbuttons.html#howtocreatecustomtoolbarbuttons[Toolbar buttons].
 
 [#examples-custom-toolbar-buttons]
 === Examples: Custom Toolbar Buttons
@@ -473,15 +473,15 @@ The following examples show a Froala editor and a {productname} editor with a ba
 [#additional-information-on-custom-toolbar-buttons]
 === Additional Information on Custom Toolbar Buttons
 
-* For an overview on creating custom toolbar buttons, see: link:{modulesDir}/ui-components/toolbarbuttons/#howtocreatecustomtoolbarbuttons[Toolbar buttons].
-* For information on the available types of toolbar buttons and examples of custom toolbar buttons, see: link:{modulesDir}/ui-components/typesoftoolbarbuttons/[Types of toolbar buttons].
+* For an overview on creating custom toolbar buttons, see: link:{rootDir}ui-components/toolbarbuttons.html#howtocreatecustomtoolbarbuttons[Toolbar buttons].
+* For information on the available types of toolbar buttons and examples of custom toolbar buttons, see: link:{rootDir}ui-components/typesoftoolbarbuttons.html[Types of toolbar buttons].
 
 [#migrating-custom-drop-down-toolbar-buttons]
 == Migrating Custom Drop-down Toolbar Buttons
 
 The {productname} `addMenuButton` option is used in place of the Froala `RegisterCommand` `type: dropdown` option.
 
-For information on getting started with the `addMenuButton` option, see: link:{modulesDir}/ui-components/toolbarbuttons/#howtocreatecustomtoolbarbuttons[Toolbar buttons] and link:{modulesDir}/ui-components/typesoftoolbarbuttons/#menubutton[Types of toolbar buttons: Menu button].
+For information on getting started with the `addMenuButton` option, see: link:{rootDir}ui-components/toolbarbuttons.html#howtocreatecustomtoolbarbuttons[Toolbar buttons] and link:{rootDir}ui-components/typesoftoolbarbuttons.html#menubutton[Types of toolbar buttons: Menu button].
 
 [#examples-custom-drop-down-buttons]
 === Examples: Custom Drop-down Buttons
@@ -570,4 +570,4 @@ The following examples show a Froala editor and a {productname} editor with a ba
 [#additional-information-on-drop-down-buttons]
 === Additional Information on Drop-down Buttons
 
-For information on creating drop-down buttons, see: link:{modulesDir}/ui-components/typesoftoolbarbuttons/#menubutton[Types of toolbar buttons: Menu button].
+For information on creating drop-down buttons, see: link:{rootDir}ui-components/typesoftoolbarbuttons.html#menubutton[Types of toolbar buttons: Menu button].

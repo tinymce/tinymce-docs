@@ -47,11 +47,11 @@ When the `<form>` is submitted the {productname} editor mimics the behavior of a
 [#additional-information-about-using-tinymce-cloud]
 === Additional information about using TinyMCE Cloud
 
-There are a few things you need to consider when using {cloudname}. If you wish to use any local plugins (like http://www.moxiemanager.com[MoxieManager] for example) you need to load them using the new link:{modulesDir}/configure/integration-and-setup/#external_plugins[`external_plugins`] option.
+There are a few things you need to consider when using {cloudname}. If you wish to use any local plugins (like http://www.moxiemanager.com[MoxieManager] for example) you need to load them using the new link:{rootDir}configure/integration-and-setup.html#external_plugins[`external_plugins`] option.
 
-Also, if you wish to use a custom language, you need to enter the location of the language file into the new link:{modulesDir}/configure/localization/#language_url[`language_url`] option.
+Also, if you wish to use a custom language, you need to enter the location of the language file into the new link:{rootDir}configure/localization.html#language_url[`language_url`] option.
 
-You may also want to select a specific version of the editor from {cloudname} and you should head on over to link:{modulesDir}/cloud-deployment-guide/editor-plugin-version[Specify editor & plugin versions] for details on that.
+You may also want to select a specific version of the editor from {cloudname} and you should head on over to link:{rootDir}cloud-deployment-guide/editor-plugin-version[Specify editor & plugin versions] for details on that.
 
 [NOTE]
 ====

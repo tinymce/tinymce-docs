@@ -1,7 +1,7 @@
-:modulesDir: ../
-:partialsDir: {modulesDir}partials/
-:imagesDir: {modulesDir}images/
-include::{modulesDir}_attributes.adoc[]
+:rootDir: ../
+:partialsDir: {rootDir}partials/
+:imagesDir: {rootDir}images/
+include::{rootDir}_attributes.adoc[]
 = Quick Toolbars plugin
 :description: User interface controls to create content faster.
 :keywords: plugin inlite quickbar
@@ -115,7 +115,7 @@ tinymce.init({
 
 The Quick Image (`quickimage`) toolbar button allows users to quickly insert images from their computer into the editor. It is included in the Quick Insert context toolbar by default and can be used in other toolbars.
 
-NOTE: To enable automatic upload of images on insertion, link:{modulesDir}/advanced/handle-async-image-uploads/[image upload] must be configured.
+NOTE: To enable automatic upload of images on insertion, link:{rootDir}advanced/handle-async-image-uploads.html[image upload] must be configured.
 
 [#example-using-quickimage-in-the-editor-toolbar]
 ==== Example: Using quickimage in the editor toolbar

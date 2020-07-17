@@ -1,7 +1,7 @@
-:modulesDir: ../
-:partialsDir: {modulesDir}partials/
-:imagesDir: {modulesDir}images/
-include::{modulesDir}_attributes.adoc[]
+:rootDir: ../
+:partialsDir: {rootDir}partials/
+:imagesDir: {rootDir}images/
+include::{rootDir}_attributes.adoc[]
 = PowerPaste plugin
 :keywords: enterprise powerpaste power paste paste_as_text powerpaste_word_import powerpaste_html_import powerpaste_block_drop powerpaste_allow_local_images microsoft word excel
 :title_nav: PowerPaste
@@ -22,7 +22,7 @@ The *PowerPaste* plugin activates automatically when users paste content into th
 
 To paste clipboard content as plain text, users can click the "Paste As Text" toolbar button or menu item, then paste the content normally. The {productname} *PowerPaste* plugin will convert the HTML on the clipboard into plain text.
 
-If you configure *PowerPaste* to allow local images (see the <<powerpaste_allow_local_images,`powerpaste_allow_local_images`>> setting below), then images copied from Microsoft Word and other sources will appear in {productname} as Base64 encoded images. You can have {productname} automatically upload Base64 encoded images for reverting back to a standard image as described in the link:{modulesDir}/advanced/handle-async-image-uploads/[image upload documentation].
+If you configure *PowerPaste* to allow local images (see the <<powerpaste_allow_local_images,`powerpaste_allow_local_images`>> setting below), then images copied from Microsoft Word and other sources will appear in {productname} as Base64 encoded images. You can have {productname} automatically upload Base64 encoded images for reverting back to a standard image as described in the link:{rootDir}advanced/handle-async-image-uploads.html[image upload documentation].
 
 [NOTE]
 ====
@@ -32,7 +32,7 @@ PowerPaste (when configured to allow local images) will import images from paste
 [#cloud-installation]
 == Cloud Installation
 
-To enable the {productname} *PowerPaste* plugin with link:{modulesDir}/cloud-deployment-guide/editor-and-features/[{cloudname}]:
+To enable the {productname} *PowerPaste* plugin with link:{rootDir}cloud-deployment-guide/editor-and-features.html[{cloudname}]:
 
 . If you are currently using the `paste` plugin provided with {productname}, disable it by removing it from the `plugins` list.
 . Add `powerpaste` to the `plugins` list.
@@ -59,10 +59,10 @@ See the example {productname} configuration above.
 [#using-the-powerpaste-plugin-with-module-loaders]
 == Using the PowerPaste Plugin with Module Loaders
 
-To enable the *PowerPaste* plugin when using a link:{modulesDir}/advanced/usage-with-module-loaders/[module loader], follow these instructions:
+To enable the *PowerPaste* plugin when using a link:{rootDir}advanced/usage-with-module-loaders.html[module loader], follow these instructions:
 
 . Make the PowerPaste plugin folder available over http.
-. Add the path to the PowerPaste plugin folder to the link:{modulesDir}/configure/integration-and-setup/#external_plugins[external plugins] option in `tinymce.init()`.
+. Add the path to the PowerPaste plugin folder to the link:{rootDir}configure/integration-and-setup.html#external_plugins[external plugins] option in `tinymce.init()`.
 
 Example:
 
@@ -142,7 +142,7 @@ When set to `true`, Base64 encoded images using a data URI in the copied content
 
 [NOTE]
 ====
-If you configure *_PowerPaste_* to allow local images, you can have {productname} automatically upload Base64 encoded images for conversion back to a standard image as described on the link:{modulesDir}/advanced/handle-async-image-uploads/[image upload documentation].
+If you configure *_PowerPaste_* to allow local images, you can have {productname} automatically upload Base64 encoded images for conversion back to a standard image as described on the link:{rootDir}advanced/handle-async-image-uploads.html[image upload documentation].
 ====
 
 include::{partialsDir}configuration/paste-block-drop.adoc[]

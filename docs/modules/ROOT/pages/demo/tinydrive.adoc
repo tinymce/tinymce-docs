@@ -1,7 +1,7 @@
-:modulesDir: ../
-:partialsDir: {modulesDir}partials/
-:imagesDir: {modulesDir}images/
-include::{modulesDir}_attributes.adoc[]
+:rootDir: ../
+:partialsDir: {rootDir}partials/
+:imagesDir: {rootDir}images/
+include::{rootDir}_attributes.adoc[]
 = Tiny Drive
 :description: Tiny Drive. A premium plugin to manage files & images.
 :description_short: Tiny Drive
@@ -11,6 +11,6 @@ include::{modulesDir}_attributes.adoc[]
 [#live-example]
 == Live example
 
-This example shows you how to use {cloudfilemanager} for your file and image management. For more information on {cloudfilemanager}, see the link:{modulesDir}/tinydrive/[docs].
+This example shows you how to use {cloudfilemanager} for your file and image management. For more information on {cloudfilemanager}, see the link:{rootDir}tinydrive.html[docs].
 
 {% include codepen.html id="drive-demo" %}

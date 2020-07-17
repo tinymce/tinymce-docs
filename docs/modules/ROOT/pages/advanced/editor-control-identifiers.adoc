@@ -1,14 +1,14 @@
-:modulesDir: ../
-:partialsDir: {modulesDir}partials/
-:imagesDir: {modulesDir}images/
-include::{modulesDir}_attributes.adoc[]
+:rootDir: ../
+:partialsDir: {rootDir}partials/
+:imagesDir: {rootDir}images/
+include::{rootDir}_attributes.adoc[]
 = Editor control identifiers
 :description: Complete list of control identifiers.
 :description_short: Complete list of control identifiers.
 :keywords: aligncenter alignjustify alignleft alignright anchor backcolor blockquote bold bullist cancel cell charmap code column controls copy cut deletetable emoticons fontselect fontsizeselect forecolor formats formatselect  fullscreen hr image indent insertdatetime insertfile inserttable italic link ltr media newdocument nonbreaking numlist outdent pagebreak paste pastetext preview print redo removeformat row rtl save searchreplace selectall spellchecker strikethrough styleselect subscript superscript table tableprops template toolbar underline undo unlink visualaid visualblocks visualchars a11ycheck
 :title_nav: Editor control identifiers
 
-Use the link:{modulesDir}/configure/editor-appearance/#toolbar[toolbar] or the link:{modulesDir}/configure/editor-appearance/#menu[menu] configuration options.
+Use the link:{rootDir}configure/editor-appearance.html#toolbar[toolbar] or the link:{rootDir}configure/editor-appearance.html#menu[menu] configuration options.
 
 [#toolbar-controls]
 == Toolbar controls
@@ -167,283 +167,283 @@ tinyMCE.activeEditor.ui.registry.getAll().buttons
 | Toggles the visual aids for invisible elements.
 
 | a11ycheck
-| link:{modulesDir}/plugins/a11ychecker/[a11ychecker]
+| link:{rootDir}plugins/a11ychecker.html[a11ychecker]
 | Opens the accessibility checker dialog.
 
 | anchor
-| link:{modulesDir}/plugins/anchor/[anchor]
+| link:{rootDir}plugins/anchor.html[anchor]
 | Creates/Edits anchor elements.
 
 | casechange
-| link:{modulesDir}/plugins/casechange/[casechange]
+| link:{rootDir}plugins/casechange.html[casechange]
 | Changes the case of text in a block selection to uppercase, lowercase, or title case.
 
 | charmap
-| link:{modulesDir}/plugins/charmap/[charmap]
+| link:{rootDir}plugins/charmap.html[charmap]
 | Inserts custom characters into the editor.
 
 | checklist
-| link:{modulesDir}/plugins/checklist/[checklist]
+| link:{rootDir}plugins/checklist.html[checklist]
 | Creates a checklist.
 
 | code
-| link:{modulesDir}/plugins/code/[code]
+| link:{rootDir}plugins/code.html[code]
 | Opens the code dialog
 
 | codesample
-| link:{modulesDir}/plugins/codesample/[codesample]
+| link:{rootDir}plugins/codesample.html[codesample]
 | Inserts code snippets with syntax highlighting.
 
 | addcomment
-| link:{modulesDir}/plugins/comments/[comments]
+| link:{rootDir}plugins/comments.html[comments]
 | Adds a comment at the cursor location or for the selected text.
 
 | showcomments
-| link:{modulesDir}/plugins/comments/[comments]
+| link:{rootDir}plugins/comments.html[comments]
 | Shows/hides comments present in the editor.
 
 | ltr
-| link:{modulesDir}/plugins/directionality/[directionality]
+| link:{rootDir}plugins/directionality.html[directionality]
 | Sets the directionality of contents to ltr.
 
 | rtl
-| link:{modulesDir}/plugins/directionality/[directionality]
+| link:{rootDir}plugins/directionality.html[directionality]
 | Sets the directionality of contents to rtl.
 
 | emoticons
-| link:{modulesDir}/plugins/emoticons/[emoticons]
+| link:{rootDir}plugins/emoticons.html[emoticons]
 | Opens the emoticons dialog.
 
 | formatpainter
-| link:{modulesDir}/plugins/formatpainter/[formatpainter]
+| link:{rootDir}plugins/formatpainter.html[formatpainter]
 | Enables and disables format painting.
 
 | fullpage
-| link:{modulesDir}/plugins/fullpage/[fullpage]
+| link:{rootDir}plugins/fullpage.html[fullpage]
 | Documents properties for the full page.
 
 | fullscreen
-| link:{modulesDir}/plugins/fullscreen/[fullscreen]
+| link:{rootDir}plugins/fullscreen.html[fullscreen]
 | Toggles fullscreen mode
 
 | help
-| link:{modulesDir}/plugins/help/[help]
+| link:{rootDir}plugins/help.html[help]
 | Opens the help dialog
 
 | hr
-| link:{modulesDir}/plugins/hr/[hr]
+| link:{rootDir}plugins/hr.html[hr]
 | Inserts a horizontal rule into the editor.
 
 | image
-| link:{modulesDir}/plugins/image/[image]
+| link:{rootDir}plugins/image.html[image]
 | Creates/Edits images within the editor.
 
 | editimage
-| link:{modulesDir}/plugins/imagetools/[imagetools]
+| link:{rootDir}plugins/imagetools.html[imagetools]
 | Edits the current image in the image dialog.
 
 | fliph
-| link:{modulesDir}/plugins/imagetools/[imagetools]
+| link:{rootDir}plugins/imagetools.html[imagetools]
 | Flips the current image horizontally.
 
 | flipv
-| link:{modulesDir}/plugins/imagetools/[imagetools]
+| link:{rootDir}plugins/imagetools.html[imagetools]
 | Flips the current image vertically.
 
 | imageoptions
-| link:{modulesDir}/plugins/imagetools/[imagetools]
+| link:{rootDir}plugins/imagetools.html[imagetools]
 | Opens the image options dialog.
 
 | rotateleft
-| link:{modulesDir}/plugins/imagetools/[imagetools]
+| link:{rootDir}plugins/imagetools.html[imagetools]
 | Rotates the current image counterclockwise.
 
 | rotateright
-| link:{modulesDir}/plugins/imagetools/[imagetools]
+| link:{rootDir}plugins/imagetools.html[imagetools]
 | Rotates the current image clockwise.
 
 | insertdatetime
-| link:{modulesDir}/plugins/insertdatetime/[insertdatetime]
+| link:{rootDir}plugins/insertdatetime.html[insertdatetime]
 | Inserts the current date/time
 
 | link
-| link:{modulesDir}/plugins/link/[link]
+| link:{rootDir}plugins/link.html[link]
 | Creates/Edits links within the editor.
 
 | openlink
-| link:{modulesDir}/plugins/link/[link]
+| link:{rootDir}plugins/link.html[link]
 | Opens the selected link in a new tab.
 
 | unlink
-| link:{modulesDir}/plugins/link/[link]
+| link:{rootDir}plugins/link.html[link]
 | Removes links from the current selection.
 
 | bullist
-| link:{modulesDir}/plugins/lists/[lists]
+| link:{rootDir}plugins/lists.html[lists]
 | Formats the current selection as a bullet list.
 
 | numlist
-| link:{modulesDir}/plugins/lists/[lists]
+| link:{rootDir}plugins/lists.html[lists]
 | Formats the current selection as a numbered list.
 
 | media
-| link:{modulesDir}/plugins/media/[media]
+| link:{rootDir}plugins/media.html[media]
 | Creates/Edits embedded media elements.
 
 | nonbreaking
-| link:{modulesDir}/plugins/nonbreaking/[nonbreaking]
+| link:{rootDir}plugins/nonbreaking.html[nonbreaking]
 | Inserts a nonbreaking space into the editor.
 
 | pagebreak
-| link:{modulesDir}/plugins/pagebreak/[pagebreak]
+| link:{rootDir}plugins/pagebreak.html[pagebreak]
 | Inserts a pagebreak into the editor.
 
 | pageembed
-| link:{modulesDir}/plugins/pageembed/[pageembed]
+| link:{rootDir}plugins/pageembed.html[pageembed]
 | Opens the insert or edit iframe dialog.
 
 | pastetext
-| link:{modulesDir}/plugins/paste/[paste]
+| link:{rootDir}plugins/paste.html[paste]
 | Toggles plain text pasting mode on/off.
 
 | permanentpen
-| link:{modulesDir}/plugins/permanentpen/[permanentpen]
+| link:{rootDir}plugins/permanentpen.html[permanentpen]
 | Enables and disables Permanent Pen formatting.
 
 | preview
-| link:{modulesDir}/plugins/preview/[preview]
+| link:{rootDir}plugins/preview.html[preview]
 | Previews the current editor contents.
 
 | print
-| link:{modulesDir}/plugins/print/[print]
+| link:{rootDir}plugins/print.html[print]
 | Prints the current editor contents.
 
 | quickimage
-| link:{modulesDir}/plugins/quickbars/[quickbars]
+| link:{rootDir}plugins/quickbars.html[quickbars]
 | Inserts an image from the local machine.
 
 | quicklink
-| link:{modulesDir}/plugins/quickbars/[quickbars]
+| link:{rootDir}plugins/quickbars.html[quickbars]
 | Inserts a link in a quicker way.
 
 | quicktable
-| link:{modulesDir}/plugins/quickbars/[quickbars]
+| link:{rootDir}plugins/quickbars.html[quickbars]
 | Inserts a table 2x2.
 
 | restoredraft
-| link:{modulesDir}/plugins/autosave/[restoredraft]
+| link:{rootDir}plugins/autosave.html[restoredraft]
 | Restores to the latest auto saved draft.
 
 | cancel
-| link:{modulesDir}/plugins/save/[save]
+| link:{rootDir}plugins/save.html[save]
 | Cancels/Resets the editor contents to it's initial state.
 
 | save
-| link:{modulesDir}/plugins/save/[save]
+| link:{rootDir}plugins/save.html[save]
 | Saves the current editor contents to a form or ajax call.
 
 | searchreplace
-| link:{modulesDir}/plugins/searchreplace/[searchreplace]
+| link:{rootDir}plugins/searchreplace.html[searchreplace]
 | Searches and/or Replaces contents within the editor.
 
 | spellchecker
-| link:{modulesDir}/plugins/spellchecker/[spellchecker]
+| link:{rootDir}plugins/spellchecker.html[spellchecker]
 | Spellchecks the current editor contents.
 
 | table
-| link:{modulesDir}/plugins/table/[table]
+| link:{rootDir}plugins/table.html[table]
 | Creates/Edits table elements.
 
 | tablecellprops
-| link:{modulesDir}/plugins/table/[table]
+| link:{rootDir}plugins/table.html[table]
 | Opens the Cell properties dialog.
 
 | tabledelete
-| link:{modulesDir}/plugins/table/[table]
+| link:{rootDir}plugins/table.html[table]
 | Deletes table.
 
 | tabledeletecol
-| link:{modulesDir}/plugins/table/[table]
+| link:{rootDir}plugins/table.html[table]
 | Deletes the selected column.
 
 | tabledeleterow
-| link:{modulesDir}/plugins/table/[table]
+| link:{rootDir}plugins/table.html[table]
 | Deletes the current row row.
 
 | tableinsertdialog
-| link:{modulesDir}/plugins/table/[table]
+| link:{rootDir}plugins/table.html[table]
 | Opens the table properties dialog for creating a new table.
 
 | tableinsertcolafter
-| link:{modulesDir}/plugins/table/[table]
+| link:{rootDir}plugins/table.html[table]
 | Inserts column after the current one.
 
 | tableinsertcolbefore
-| link:{modulesDir}/plugins/table/[table]
+| link:{rootDir}plugins/table.html[table]
 | Inserts a column before the current one.
 
 | tableinsertrowafter
-| link:{modulesDir}/plugins/table/[table]
+| link:{rootDir}plugins/table.html[table]
 | Inserts a new row after the current one.
 
 | tableinsertrowbefore
-| link:{modulesDir}/plugins/table/[table]
+| link:{rootDir}plugins/table.html[table]
 | Inserts a new row before the current one.
 
 | tablemergecells
-| link:{modulesDir}/plugins/table/[table]
+| link:{rootDir}plugins/table.html[table]
 | Merges the selected cells.
 
 | tableprops
-| link:{modulesDir}/plugins/table/[table]
+| link:{rootDir}plugins/table.html[table]
 | Opens the table properties dialog.
 
 | tablerowprops
-| link:{modulesDir}/plugins/table/[table]
+| link:{rootDir}plugins/table.html[table]
 | Opens the Row properties dialog.
 
 | tablesplitcells
-| link:{modulesDir}/plugins/table/[table]
+| link:{rootDir}plugins/table.html[table]
 | Splits the current merged cell.
 
 | template
-| link:{modulesDir}/plugins/template/[template]
+| link:{rootDir}plugins/template.html[template]
 | Inserts templates into the editor.
 
 | language
-| link:{modulesDir}/plugins/tinymcespellchecker/[tinymcespellchecker]
+| link:{rootDir}plugins/tinymcespellchecker.html[tinymcespellchecker]
 | Sets the spellchecker language for the current selection.
 
 | spellcheckdialog
-| link:{modulesDir}/plugins/tinymcespellchecker/[tinymcespellchecker]
+| link:{rootDir}plugins/tinymcespellchecker.html[tinymcespellchecker]
 | Opens the spelling checker dialog if `spellchecker_dialog` is `false`, otherwise this button is disabled.
 
 | spellchecker
-| link:{modulesDir}/plugins/tinymcespellchecker/[tinymcespellchecker]
+| link:{rootDir}plugins/tinymcespellchecker.html[tinymcespellchecker]
 | Opens the spelling checker dialog if `spellchecker_dialog` is `true`, otherwise this button enables or disables spell checking as-you-type.
 
 | toc
-| link:{modulesDir}/plugins/toc/[toc]
+| link:{rootDir}plugins/toc.html[toc]
 | Inserts a Table of Contents into the editor.
 
 | tocupdate
-| link:{modulesDir}/plugins/toc/[toc]
+| link:{rootDir}plugins/toc.html[toc]
 | Updates the Table of Contents block element.
 
 | insertfile
-| link:{modulesDir}/plugins/drive/[tinydrive]
+| link:{rootDir}plugins/drive.html[tinydrive]
 | Opens the {cloudfilemanager} file selector.
 
 | visualblocks
-| link:{modulesDir}/plugins/visualblocks/[visualblocks]
+| link:{rootDir}plugins/visualblocks.html[visualblocks]
 | Toggles the visibility of block elements.
 
 | visualchars
-| link:{modulesDir}/plugins/visualchars/[visualchars]
+| link:{rootDir}plugins/visualchars.html[visualchars]
 | Toggles the visibility of non breaking character elements.
 
 | wordcount
-| link:{modulesDir}/plugins/wordcount/[wordcount]
+| link:{rootDir}plugins/wordcount.html[wordcount]
 | Opens a word count dialog showing word and character counts.
 |===
 
@@ -457,7 +457,7 @@ tinyMCE.activeEditor.ui.registry.getAll().menuItems
 `
 
 |===
-| Control | Core/Plugin | link:{modulesDir}/configure/editor-appearance/#examplethetinymcedefaultmenuitems[Default Menu Location] | Description
+| Control | Core/Plugin | link:{rootDir}configure/editor-appearance.html#examplethetinymcedefaultmenuitems[Default Menu Location] | Description
 
 | align
 | core
@@ -575,242 +575,242 @@ tinyMCE.activeEditor.ui.registry.getAll().menuItems
 | Toggles visual aids on/off.
 
 | a11ycheck
-| link:{modulesDir}/plugins/a11ychecker/[a11ychecker]
+| link:{rootDir}plugins/a11ychecker.html[a11ychecker]
 | Tools
 | Opens the accessibility checker dialog.
 
 | advtablesort
-| link:{modulesDir}/plugins/advtable/[advtable]
+| link:{rootDir}plugins/advtable.html[advtable]
 | Table
 | Advanced tables sort menu item with related controls.
 
 | anchor
-| link:{modulesDir}/plugins/anchor/[anchor]
+| link:{rootDir}plugins/anchor.html[anchor]
 | Insert
 | Inserts an anchor into the editor.
 
 | restoredraft
-| link:{modulesDir}/plugins/autosave/[autosave]
+| link:{rootDir}plugins/autosave.html[autosave]
 | File
 | Restores to the latest auto saved draft.
 
 | casechange
-| link:{modulesDir}/plugins/casechange/[casechange]
+| link:{rootDir}plugins/casechange.html[casechange]
 | _Not Applicable_
 | Changes the case of text in a block selection to uppercase, lowercase, or title case.
 
 | charmap
-| link:{modulesDir}/plugins/charmap/[charmap]
+| link:{rootDir}plugins/charmap.html[charmap]
 | Insert
 | Opens the charmap dialog.
 
 | checklist
-| link:{modulesDir}/plugins/checklist/[checklist]
+| link:{rootDir}plugins/checklist.html[checklist]
 | Creates a checklist.
 |
 
 | code
-| link:{modulesDir}/plugins/code/[code]
+| link:{rootDir}plugins/code.html[code]
 | View
 | Opens the code dialog.
 
 | codesample
-| link:{modulesDir}/plugins/codesample/[codesample]
+| link:{rootDir}plugins/codesample.html[codesample]
 | Insert
 | Inserts code snippets with syntax highlighting.
 
 | addcomment
-| link:{modulesDir}/plugins/comments/[comments]
+| link:{rootDir}plugins/comments.html[comments]
 | Insert
 | Adds a comment at the cursor location or for the selected text.
 
 | deleteallconversations
-| link:{modulesDir}/plugins/comments/[comments]
+| link:{rootDir}plugins/comments.html[comments]
 | File
 | Deletes all comments from the editor.
 
 | showcomments
-| link:{modulesDir}/plugins/comments/[comments]
+| link:{rootDir}plugins/comments.html[comments]
 | View
 | Shows/hides comments present in the editor.
 
 | emoticons
-| link:{modulesDir}/plugins/emoticons/[emoticons]
+| link:{rootDir}plugins/emoticons.html[emoticons]
 | Insert
 | Opens the emoticons dialog.
 
 | fullpage
-| link:{modulesDir}/plugins/fullpage/[fullpage]
+| link:{rootDir}plugins/fullpage.html[fullpage]
 | _Not Applicable_
 | Documents properties for the full page.
 
 | fullscreen
-| link:{modulesDir}/plugins/fullscreen/[fullscreen]
+| link:{rootDir}plugins/fullscreen.html[fullscreen]
 | View
 | Toggles fullscreen on/off.
 
 | help
-| link:{modulesDir}/plugins/help/[help]
+| link:{rootDir}plugins/help.html[help]
 | Help
 | Opens the help dialog.
 
 | hr
-| link:{modulesDir}/plugins/hr/[hr]
+| link:{rootDir}plugins/hr.html[hr]
 | Insert
 | Inserts a horizontal rule into the editor.
 
 | image
-| link:{modulesDir}/plugins/image/[image]
+| link:{rootDir}plugins/image.html[image]
 | Insert
 | Opens the image dialog.
 
 | insertdatetime
-| link:{modulesDir}/plugins/insertdatetime/[insertdatetime]
+| link:{rootDir}plugins/insertdatetime.html[insertdatetime]
 | Insert
 | Inserts the current date/time into the editor.
 
 | link
-| link:{modulesDir}/plugins/link/[link]
+| link:{rootDir}plugins/link.html[link]
 | Insert
 | Opens the link dialog.
 
 | openlink
-| link:{modulesDir}/plugins/link/[link]
+| link:{rootDir}plugins/link.html[link]
 | _Not Applicable_
 | Opens the selected link in a new tab.
 
 | unlink
-| link:{modulesDir}/plugins/link/[link]
+| link:{rootDir}plugins/link.html[link]
 | _Not Applicable_
 | Removes the hyperlink from the selected text.
 
 | media
-| link:{modulesDir}/plugins/media/[media]
+| link:{rootDir}plugins/media.html[media]
 | Insert
 | Opens the media dialog.
 
 | nonbreaking
-| link:{modulesDir}/plugins/nonbreaking/[nonbreaking]
+| link:{rootDir}plugins/nonbreaking.html[nonbreaking]
 | Insert
 | Inserts a nonbreaking space into the editor.
 
 | pagebreak
-| link:{modulesDir}/plugins/pagebreak/[pagebreak]
+| link:{rootDir}plugins/pagebreak.html[pagebreak]
 | Insert
 | Inserts a pagebreak into the editor.
 
 | pageembed
-| link:{modulesDir}/plugins/pageembed/[pageembed]
+| link:{rootDir}plugins/pageembed.html[pageembed]
 | Insert
 | Opens the insert or edit iframe dialog.
 
 | pastetext
-| link:{modulesDir}/plugins/paste/[paste]
+| link:{rootDir}plugins/paste.html[paste]
 | Edit
 | Toggles paste as plain text on/off.
 
 | configurepermanentpen
-| link:{modulesDir}/plugins/permanentpen/[permanentpen]
+| link:{rootDir}plugins/permanentpen.html[permanentpen]
 | _Not Applicable_
 | Opens the Permanent Pen properties dialog.
 
 | permanentpen
-| link:{modulesDir}/plugins/permanentpen/[permanentpen]
+| link:{rootDir}plugins/permanentpen.html[permanentpen]
 | _Not Applicable_
 | Enables and disables Permanent Pen formatting.
 
 | preview
-| link:{modulesDir}/plugins/preview/[preview]
+| link:{rootDir}plugins/preview.html[preview]
 | File
 | Previews the current document.
 
 | print
-| link:{modulesDir}/plugins/print/[print]
+| link:{rootDir}plugins/print.html[print]
 | File
 | Prints the current document.
 
 | searchreplace
-| link:{modulesDir}/plugins/searchreplace/[searchreplace]
+| link:{rootDir}plugins/searchreplace.html[searchreplace]
 | Edit
 | Opens the search/replace dialog.
 
 | spellchecker
-| link:{modulesDir}/plugins/spellchecker/[spellchecker]
+| link:{rootDir}plugins/spellchecker.html[spellchecker]
 | Tools
 | Toggles the spellchecker on/off.
 
 | cell
-| link:{modulesDir}/plugins/table/[table]
+| link:{rootDir}plugins/table.html[table]
 | Table
 | Cell menu item with related controls.
 
 | column
-| link:{modulesDir}/plugins/table/[table]
+| link:{rootDir}plugins/table.html[table]
 | Table
 | Column menu item with related controls.
 
 | deletetable
-| link:{modulesDir}/plugins/table/[table]
+| link:{rootDir}plugins/table.html[table]
 | Table
 | Deletes the current table.
 
 | inserttable
-| link:{modulesDir}/plugins/table/[table]
+| link:{rootDir}plugins/table.html[table]
 | Table
 | Inserts table grid menu.
 
 | inserttabledialog
-| link:{modulesDir}/plugins/table/[table]
+| link:{rootDir}plugins/table.html[table]
 | _Not Applicable_
 | Opens the table properties dialog for creating a new table.
 
 | row
-| link:{modulesDir}/plugins/table/[table]
+| link:{rootDir}plugins/table.html[table]
 | Table
 | Row menu item with related controls.
 
 | tableprops
-| link:{modulesDir}/plugins/table/[table]
+| link:{rootDir}plugins/table.html[table]
 | Table
 | Opens the table properties dialog.
 
 | template
-| link:{modulesDir}/plugins/template/[template]
+| link:{rootDir}plugins/template.html[template]
 | Insert
 | Inserts templates into the editor.
 
 | insertfile
-| link:{modulesDir}/plugins/drive/[tinydrive]
+| link:{rootDir}plugins/drive.html[tinydrive]
 | _Not Applicable_
 | Opens the {cloudfilemanager} file selector.
 
 | spellchecker
-| link:{modulesDir}/plugins/tinymcespellchecker/[tinymcespellchecker]
+| link:{rootDir}plugins/tinymcespellchecker.html[tinymcespellchecker]
 | Tools
 | Toggles the spellchecker on/off.
 
 | spellcheckerlanguage
-| link:{modulesDir}/plugins/tinymcespellchecker/[tinymcespellchecker]
+| link:{rootDir}plugins/tinymcespellchecker.html[tinymcespellchecker]
 | Tools
 | Changes the language used for the spell checking process for the document or the currently selected text.
 
 | toc
-| link:{modulesDir}/plugins/toc/[toc]
+| link:{rootDir}plugins/toc.html[toc]
 | Insert
 | Inserts a Table of Contents into the editor.
 
 | visualblocks
-| link:{modulesDir}/plugins/visualblocks/[visualblocks]
+| link:{rootDir}plugins/visualblocks.html[visualblocks]
 | View
 | Toggles block visibility on/off.
 
 | visualchars
-| link:{modulesDir}/plugins/visualchars/[visualchars]
+| link:{rootDir}plugins/visualchars.html[visualchars]
 | View
 | Toggles visibility of nonbreaking spaces on/off.
 
 | wordcount
-| link:{modulesDir}/plugins/wordcount/[wordcount]
+| link:{rootDir}plugins/wordcount.html[wordcount]
 | Tools
 | Opens a word count dialog showing word and character counts.
 |===

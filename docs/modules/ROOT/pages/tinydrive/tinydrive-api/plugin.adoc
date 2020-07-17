@@ -1,7 +1,7 @@
-:modulesDir: ../../
-:partialsDir: {modulesDir}partials/
-:imagesDir: {modulesDir}images/
-include::{modulesDir}_attributes.adoc[]
+:rootDir: ../../
+:partialsDir: {rootDir}partials/
+:imagesDir: {rootDir}images/
+include::{rootDir}_attributes.adoc[]
 = Tiny Drive Plugin API
 :description: Description of the Tiny Drive plugin api
 :keywords: tinydrive api
@@ -72,7 +72,7 @@ These settings are available for the <<tinydrivepick,tinydrive.pick>> / <<tinydr
 [#]
 === `filetypes`
 
-This setting enables restricting what types of files you want do display based on link:{modulesDir}/tinydrive/introduction/#filetypes[file type] categories. For example if your app needs to insert images only then you can specify `['image']` in the file types array.
+This setting enables restricting what types of files you want do display based on link:{rootDir}tinydrive/introduction.html#filetypes[file type] categories. For example if your app needs to insert images only then you can specify `['image']` in the file types array.
 
 *Type:* `Array<string>`
 

@@ -1,7 +1,7 @@
-:modulesDir: ../../
-:partialsDir: {modulesDir}partials/
-:imagesDir: {modulesDir}images/
-include::{modulesDir}_attributes.adoc[]
+:rootDir: ../../
+:partialsDir: {rootDir}partials/
+:imagesDir: {rootDir}images/
+include::{rootDir}_attributes.adoc[]
 = Check Spelling As-You-Type
 :description: Spell Checker Pro is a premium plugin and server to check spelling as-you-type.
 :keywords: enterprise tinymcespellchecker spell check checker pro pricing
@@ -19,7 +19,7 @@ include::{partialsDir}configuration/languages.adoc[]
 [#custom-dictionaries]
 == Custom dictionaries
 
-Additional dictionaries can be added to Spell Checker Pro to supplement the default vocabulary. See link:{modulesDir}/enterprise/check-spelling/custom/[these instructions] for details.
+Additional dictionaries can be added to Spell Checker Pro to supplement the default vocabulary. See link:{rootDir}enterprise/check-spelling/custom.html[these instructions] for details.
 
 :pluginname: Spell Checker Pro
 :pluginminimumplan: tierthree

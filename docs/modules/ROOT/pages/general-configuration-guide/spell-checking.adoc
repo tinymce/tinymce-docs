@@ -1,7 +1,7 @@
-:modulesDir: ../
-:partialsDir: {modulesDir}partials/
-:imagesDir: {modulesDir}images/
-include::{modulesDir}_attributes.adoc[]
+:rootDir: ../
+:partialsDir: {rootDir}partials/
+:imagesDir: {rootDir}images/
+include::{rootDir}_attributes.adoc[]
 = Check spelling in TinyMCE
 :keywords: spell checker spelling browser_spellcheck gecko_spellcheck
 :title_nav: Spell checking
@@ -11,7 +11,7 @@ include::{modulesDir}_attributes.adoc[]
 [#browser-based-spell-checking]
 == Browser-based spell checking
 
-Assign the link:{modulesDir}/configure/spelling/#browser_spellcheck[`browser_spellcheck`] configuration option the value of `true` to utilize the browser's native spell check functionality. Enabling the link:{modulesDir}/configure/editor-appearance/#contextmenu[`contextmenu`] option _may_ be required depending on the right-click or context usability requirement.
+Assign the link:{rootDir}configure/spelling.html#browser_spellcheck[`browser_spellcheck`] configuration option the value of `true` to utilize the browser's native spell check functionality. Enabling the link:{rootDir}configure/editor-appearance.html#contextmenu[`contextmenu`] option _may_ be required depending on the right-click or context usability requirement.
 
 `js
 tinymce.init({
@@ -50,11 +50,11 @@ tinymce.init({
 });
 `
 
-Review the link:{modulesDir}/plugins/spellchecker/[Spell Checker plugin] for advanced configuration options.
+Review the link:{rootDir}plugins/spellchecker.html[Spell Checker plugin] for advanced configuration options.
 
 [#tinymce-spell-checker-pro-plugin]
 == TinyMCE Spell Checker Pro plugin
 
-Use the link:{modulesDir}/plugins/tinymcespellchecker/[Spell Checker Pro plugin] for scalable enterprise-grade spell check as-you-type functionality. *Spell Checker Pro* requires both a client-side plugin to be configured and a server-side component to be installed and configured.
+Use the link:{rootDir}plugins/tinymcespellchecker.html[Spell Checker Pro plugin] for scalable enterprise-grade spell check as-you-type functionality. *Spell Checker Pro* requires both a client-side plugin to be configured and a server-side component to be installed and configured.
 
-Review the {productname} Premium Features link:{modulesDir}/enterprise/check-spelling/[documentation for Spelling]. Learn more about link:{pricingpage}[{productname} Premium Products here].
+Review the {productname} Premium Features link:{rootDir}enterprise/check-spelling.html[documentation for Spelling]. Learn more about link:{pricingpage}[{productname} Premium Products here].

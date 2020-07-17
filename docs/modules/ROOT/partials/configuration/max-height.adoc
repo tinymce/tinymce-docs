@@ -1,7 +1,7 @@
 [#max_height]
 == max_height
 
-The *max_height* option has two kinds of behaviors depending on the state of the link:{modulesDir}/plugins/autoresize/[`autoresize`] plugin:
+The *max_height* option has two kinds of behaviors depending on the state of the link:{rootDir}plugins/autoresize.html[`autoresize`] plugin:
 
 * `autoresize` OFF (Default) : Without the `autoresize` plugin, this option allows you to set the maximum height that a user can stretch the entire {productname} interface (by grabbing the dragable area in the bottom right of the editor interface).
 * `autoresize` ON : With the `autoresize` plugin, this option sets the maximum height the editor can automatically expand to.

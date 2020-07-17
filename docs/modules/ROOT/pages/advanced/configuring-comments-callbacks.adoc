@@ -1,7 +1,7 @@
-:modulesDir: ../
-:partialsDir: {modulesDir}partials/
-:imagesDir: {modulesDir}images/
-include::{modulesDir}_attributes.adoc[]
+:rootDir: ../
+:partialsDir: {rootDir}partials/
+:imagesDir: {rootDir}images/
+include::{rootDir}_attributes.adoc[]
 = Configuring callbacks for Comments 2.0
 :description: Instructions for configuring callbacks for Comments 2.0
 :keywords: comments commenting tinycomments callback
@@ -10,7 +10,7 @@ include::{modulesDir}_attributes.adoc[]
 [#introduction]
 == Introduction
 
-*Callback mode* is the default mode for link:{modulesDir}/plugins/comments/[Comments 2.0]. In the callback mode, the user needs to configure storage to be able to save comments on the server. The Comments functions (create, reply, edit, delete comment, delete all conversations, and lookup) are configured differently depending upon the server-side storage configuration.
+*Callback mode* is the default mode for link:{rootDir}plugins/comments.html[Comments 2.0]. In the callback mode, the user needs to configure storage to be able to save comments on the server. The Comments functions (create, reply, edit, delete comment, delete all conversations, and lookup) are configured differently depending upon the server-side storage configuration.
 
 [#required-settings]
 === Required settings
@@ -208,4 +208,4 @@ The done callback needs to take an object of the form:
 
 NOTE: The dates should use https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString[ISO 8601 format]. This can be generated in JavaScript with: `new Date().toISOString()`.
 
-For more information on the Comments commercial feature, visit our link:{modulesDir}/enterprise/tiny-comments/[Premium Features] page.
+For more information on the Comments commercial feature, visit our link:{rootDir}enterprise/tiny-comments.html[Premium Features] page.

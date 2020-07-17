@@ -1,7 +1,7 @@
-:modulesDir: ../
-:partialsDir: {modulesDir}partials/
-:imagesDir: {modulesDir}images/
-include::{modulesDir}_attributes.adoc[]
+:rootDir: ../
+:partialsDir: {rootDir}partials/
+:imagesDir: {rootDir}images/
+include::{rootDir}_attributes.adoc[]
 = Case Change
 :controls: toolbar button, menu item
 :description: Change the case of text.
@@ -11,6 +11,6 @@ include::{modulesDir}_attributes.adoc[]
 [#live-example]
 == Live example
 
-This example shows how to use the *Case Change* plugin to change the case of text in block selection to uppercase, lowercase, or title case. For more information on the *Case Change* plugin, see the link:{modulesDir}/plugins/casechange/[docs].
+This example shows how to use the *Case Change* plugin to change the case of text in block selection to uppercase, lowercase, or title case. For more information on the *Case Change* plugin, see the link:{rootDir}plugins/casechange.html[docs].
 
 {% include codepen.html id="casechange" %}

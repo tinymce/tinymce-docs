@@ -3,7 +3,7 @@ The community was invited to test the TinyMCE 5.0 editor and report bugs and iss
 [#editor-core]
 === Editor-Core
 
-The new TinyMCE 5.0 editor comes with significant changes to the previous versions. Tiny has created a more configurable and modern editor. Improved solutions have been introduced for unnecessary and obsolete configuration options. Please see the link:{modulesDir}/migration-from-4x/#editor-core[Editor-Core] section in the Migration Guide for more information.
+The new TinyMCE 5.0 editor comes with significant changes to the previous versions. Tiny has created a more configurable and modern editor. Improved solutions have been introduced for unnecessary and obsolete configuration options. Please see the link:{rootDir}migration-from-4x/#editor-core[Editor-Core] section in the Migration Guide for more information.
 
 [#alloy]
 ==== Alloy
@@ -82,7 +82,7 @@ The following browser related issues were reported during the developer's previe
 [#colorpicker]
 ==== Colorpicker
 
-The following Colorpicker related issues were reported during the developer's preview and are now fixed in the TinyMCE 5.0 BETA version. Please see the link:{modulesDir}/configure/content-appearance/#color_picker[Colorpicker] docs for more information.
+The following Colorpicker related issues were reported during the developer's preview and are now fixed in the TinyMCE 5.0 BETA version. Please see the link:{rootDir}configure/content-appearance.html#color_picker[Colorpicker] docs for more information.
 
 [cols=2*]
 |===
@@ -278,7 +278,7 @@ The following editor related issues were reported during the developer's preview
 [#user-interface]
 === User Interface
 
-TinyMCE 5.0 has an ARIA WCAG 2.1 standards compliant user interface to make the user interface controls and dynamic content more accessible. The user interface logic has been changed entirely in TinyMCE 5.0. Refer to the link:{modulesDir}/migration-from-4x[Migration Guide], for more information on the UI changes.
+TinyMCE 5.0 has an ARIA WCAG 2.1 standards compliant user interface to make the user interface controls and dynamic content more accessible. The user interface logic has been changed entirely in TinyMCE 5.0. Refer to the link:{rootDir}migration-from-4x[Migration Guide], for more information on the UI changes.
 
 [#ui]
 ==== UI
@@ -397,7 +397,7 @@ The following theme related issues were reported during the developer's preview 
 [#context-form]
 ==== Context Form
 
-The following Context Form related issues were reported during the developer's preview and are now fixed in the TinyMCE 5.0 BETA version. Please see the link:{modulesDir}/ui-components/contextform/[Context Form] docs for more information.
+The following Context Form related issues were reported during the developer's preview and are now fixed in the TinyMCE 5.0 BETA version. Please see the link:{rootDir}ui-components/contextform.html[Context Form] docs for more information.
 
 [cols=3*]
 |===
@@ -417,7 +417,7 @@ The following Context Form related issues were reported during the developer's p
 [#context-menus]
 ==== Context menus
 
-The following Context Menu related issues were reported during the developer's preview and are now fixed in the TinyMCE 5.0 BETA version. Please see the link:{modulesDir}/ui-components/contextmenu/[Context Menu] docs for more information.
+The following Context Menu related issues were reported during the developer's preview and are now fixed in the TinyMCE 5.0 BETA version. Please see the link:{rootDir}ui-components/contextmenu.html[Context Menu] docs for more information.
 
 [cols=2*]
 |===
@@ -440,7 +440,7 @@ The following Context Menu related issues were reported during the developer's p
 [#context-toolbar]
 ==== Context toolbar
 
-The following Context Toolbar related issues were reported during the developer's preview and are now fixed in the TinyMCE 5.0 BETA version. Please see the link:{modulesDir}/ui-components/contexttoolbar/[Context Toolbar] docs for more information.
+The following Context Toolbar related issues were reported during the developer's preview and are now fixed in the TinyMCE 5.0 BETA version. Please see the link:{rootDir}ui-components/contexttoolbar.html[Context Toolbar] docs for more information.
 
 [cols=2*]
 |===
@@ -469,7 +469,7 @@ The following Context Toolbar related issues were reported during the developer'
 [#dialog]
 ==== Dialog
 
-The following Dialog related issues were reported during the developer's preview and are now fixed in the TinyMCE 5.0 BETA version. Please see the link:{modulesDir}/ui-components/dialog/[Dialog] docs for more information.
+The following Dialog related issues were reported during the developer's preview and are now fixed in the TinyMCE 5.0 BETA version. Please see the link:{rootDir}ui-components/dialog.html[Dialog] docs for more information.
 
 [cols=2*]
 |===
@@ -656,7 +656,7 @@ The following Menu related issues were reported during the developer's preview a
 [#toolbar-buttons]
 ==== Toolbar buttons
 
-The following Toolbar Buttons related issues were reported during the developer's preview and are now fixed in the TinyMCE 5.0 BETA version. Please see the link:{modulesDir}/ui-components/toolbarbuttons/[Toolbar Buttons] docs for more information.
+The following Toolbar Buttons related issues were reported during the developer's preview and are now fixed in the TinyMCE 5.0 BETA version. Please see the link:{rootDir}ui-components/toolbarbuttons.html[Toolbar Buttons] docs for more information.
 
 [cols=2*]
 |===
@@ -760,7 +760,7 @@ The following Toolbar Buttons related issues were reported during the developer'
 [#url]
 ==== URL
 
-The following URL related issues were reported during the developer's preview and are now fixed in the TinyMCE 5.0 BETA version. Please see the link:{modulesDir}/configure/url-handling/[URL] docs for more information.
+The following URL related issues were reported during the developer's preview and are now fixed in the TinyMCE 5.0 BETA version. Please see the link:{rootDir}configure/url-handling.html[URL] docs for more information.
 
 [cols=2*]
 |===
@@ -792,7 +792,7 @@ The following URL related issues were reported during the developer's preview an
 [#comments]
 ==== Comments
 
-The following issues were reported against the Comments premium plugin during the developer's preview and are now fixed in the TinyMCE 5.0 BETA version. Please see the link:{modulesDir}/plugins/comments/[Comments] docs for more information.
+The following issues were reported against the Comments premium plugin during the developer's preview and are now fixed in the TinyMCE 5.0 BETA version. Please see the link:{rootDir}plugins/comments.html[Comments] docs for more information.
 
 [cols=2*]
 |===
@@ -806,7 +806,7 @@ The following issues were reported against the Comments premium plugin during th
 [#dialog-2]
 ==== Dialog
 
-The following issues were reported against the dialogs in the premium plugin during the developer's preview and are now fixed in the TinyMCE 5.0 BETA version. Please see our link:{modulesDir}/enterprise/[Premium Features] docs for more information.
+The following issues were reported against the dialogs in the premium plugin during the developer's preview and are now fixed in the TinyMCE 5.0 BETA version. Please see our link:{rootDir}enterprise.html[Premium Features] docs for more information.
 
 [cols=2*]
 |===
@@ -829,7 +829,7 @@ The following issues were reported against the dialogs in the premium plugin dur
 [#mentions]
 ==== Mentions
 
-The following issues were reported against the Mentions premium plugin during the developer's preview and are now fixed in the TinyMCE 5.0 BETA version. Please see the link:{modulesDir}/plugins/mentions/[Mentions] docs for more information.
+The following issues were reported against the Mentions premium plugin during the developer's preview and are now fixed in the TinyMCE 5.0 BETA version. Please see the link:{rootDir}plugins/mentions.html[Mentions] docs for more information.
 
 [cols=2*]
 |===
@@ -846,7 +846,7 @@ The following issues were reported against the Mentions premium plugin during th
 [#accessibility-checker]
 ==== Accessibility checker
 
-The following Accessibility Checker related issues were reported during the developer's preview and are now fixed in the TinyMCE 5.0 BETA version. Please see the link:{modulesDir}/plugins/a11ychecker/[Accessibility Checker] docs for more information.
+The following Accessibility Checker related issues were reported during the developer's preview and are now fixed in the TinyMCE 5.0 BETA version. Please see the link:{rootDir}plugins/a11ychecker.html[Accessibility Checker] docs for more information.
 
 [cols=2*]
 |===
@@ -872,7 +872,7 @@ The following Accessibility Checker related issues were reported during the deve
 [#advlist]
 ==== Advlist
 
-The following Advlist related issues were reported during the developer's preview and are now fixed in the TinyMCE 5.0 BETA version. Please see the link:{modulesDir}/plugins/aadvlist/[Advlist] docs for more information.
+The following Advlist related issues were reported during the developer's preview and are now fixed in the TinyMCE 5.0 BETA version. Please see the link:{rootDir}plugins/aadvlist.html[Advlist] docs for more information.
 
 [cols=2*]
 |===
@@ -886,7 +886,7 @@ The following Advlist related issues were reported during the developer's previe
 [#anchors]
 ==== Anchors
 
-The following Anchors related issues were reported during the developer's preview and are now fixed in the TinyMCE 5.0 BETA version. Please see the link:{modulesDir}/plugins/anchor/[Anchors] docs for more information.
+The following Anchors related issues were reported during the developer's preview and are now fixed in the TinyMCE 5.0 BETA version. Please see the link:{rootDir}plugins/anchor.html[Anchors] docs for more information.
 
 [cols=2*]
 |===
@@ -909,7 +909,7 @@ The following Anchors related issues were reported during the developer's previe
 [#charmap]
 ==== CharMap
 
-The following CharMap related issues were reported during the developer's preview and are now fixed in the TinyMCE 5.0 BETA version. Please see the link:{modulesDir}/plugins/charmap/[CharMap] docs for more information.
+The following CharMap related issues were reported during the developer's preview and are now fixed in the TinyMCE 5.0 BETA version. Please see the link:{rootDir}plugins/charmap.html[CharMap] docs for more information.
 
 [cols=2*]
 |===
@@ -938,7 +938,7 @@ The following CharMap related issues were reported during the developer's previe
 [#directionality]
 ==== Directionality
 
-The following Directionality related issues were reported during the developer's preview and are now fixed in the TinyMCE 5.0 BETA version. Please see the link:{modulesDir}/plugins/directionality/[Directionality] docs for more information.
+The following Directionality related issues were reported during the developer's preview and are now fixed in the TinyMCE 5.0 BETA version. Please see the link:{rootDir}plugins/directionality.html[Directionality] docs for more information.
 
 [cols=2*]
 |===
@@ -952,7 +952,7 @@ The following Directionality related issues were reported during the developer's
 [#emoticons]
 ==== Emoticons
 
-The following Emoticons related issues were reported during the developer's preview and are now fixed in the TinyMCE 5.0 BETA version. Please see the link:{modulesDir}/plugins/emoticons/[Emoticons] docs for more information.
+The following Emoticons related issues were reported during the developer's preview and are now fixed in the TinyMCE 5.0 BETA version. Please see the link:{rootDir}plugins/emoticons.html[Emoticons] docs for more information.
 
 [cols=2*]
 |===
@@ -972,7 +972,7 @@ The following Emoticons related issues were reported during the developer's prev
 [#image-tools]
 ==== Image tools
 
-The following Image Tools related issues were reported during the developer's preview and are now fixed in the TinyMCE 5.0 BETA version. Please see the link:{modulesDir}/plugins/imagetools/[Image Tools] docs for more information.
+The following Image Tools related issues were reported during the developer's preview and are now fixed in the TinyMCE 5.0 BETA version. Please see the link:{rootDir}plugins/imagetools.html[Image Tools] docs for more information.
 
 [cols=2*]
 |===
@@ -995,7 +995,7 @@ The following Image Tools related issues were reported during the developer's pr
 [#link]
 ==== Link
 
-The following Link related issues were reported during the developer's preview and are now fixed in the TinyMCE 5.0 BETA version. Please see the link:{modulesDir}/plugins/link/[Link] docs for more information.
+The following Link related issues were reported during the developer's preview and are now fixed in the TinyMCE 5.0 BETA version. Please see the link:{rootDir}plugins/link.html[Link] docs for more information.
 
 [cols=2*]
 |===
@@ -1021,7 +1021,7 @@ The following Link related issues were reported during the developer's preview a
 [#media]
 ==== Media
 
-The following Media related issues were reported during the developer's preview and are now fixed in the TinyMCE 5.0 BETA version. Please see the link:{modulesDir}/plugins/media/[Media] docs for more information.
+The following Media related issues were reported during the developer's preview and are now fixed in the TinyMCE 5.0 BETA version. Please see the link:{rootDir}plugins/media.html[Media] docs for more information.
 
 [cols=2*]
 |===
@@ -1038,7 +1038,7 @@ The following Media related issues were reported during the developer's preview 
 [#numbullist]
 ==== Num/Bullist
 
-The following Lists related issues were reported during the developer's preview and are now fixed in the TinyMCE 5.0 BETA version. Please see the link:{modulesDir}/plugins/lists/[Lists] docs for more information.
+The following Lists related issues were reported during the developer's preview and are now fixed in the TinyMCE 5.0 BETA version. Please see the link:{rootDir}plugins/lists.html[Lists] docs for more information.
 
 [cols=2*]
 |===
@@ -1058,7 +1058,7 @@ The following Lists related issues were reported during the developer's preview 
 [#search-and-replace]
 ==== Search and replace
 
-The following Search and Replace related issues were reported during the developer's preview and are now fixed in the TinyMCE 5.0 BETA version. Please see the link:{modulesDir}/plugins/searchreplace/[Search and Replace] docs for more information.
+The following Search and Replace related issues were reported during the developer's preview and are now fixed in the TinyMCE 5.0 BETA version. Please see the link:{rootDir}plugins/searchreplace.html[Search and Replace] docs for more information.
 
 [cols=2*]
 |===
@@ -1072,7 +1072,7 @@ The following Search and Replace related issues were reported during the develop
 [#table]
 ==== Table
 
-The following Table related issues were reported during the developer's preview and are now fixed in the TinyMCE 5.0 BETA version. Please see the link:{modulesDir}/plugins/table/[Table] docs for more information.
+The following Table related issues were reported during the developer's preview and are now fixed in the TinyMCE 5.0 BETA version. Please see the link:{rootDir}plugins/table.html[Table] docs for more information.
 
 [cols=2*]
 |===
@@ -1104,7 +1104,7 @@ The following Table related issues were reported during the developer's preview 
 [#table-of-contents]
 ==== Table of contents
 
-The following Table of Contents related issues were reported during the developer's preview and are now fixed in the TinyMCE 5.0 BETA version. Please see the link:{modulesDir}/plugins/toc/[Table of Contents] docs for more information.
+The following Table of Contents related issues were reported during the developer's preview and are now fixed in the TinyMCE 5.0 BETA version. Please see the link:{rootDir}plugins/toc.html[Table of Contents] docs for more information.
 
 [cols=2*]
 |===

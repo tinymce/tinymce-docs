@@ -1,7 +1,7 @@
-:modulesDir:
-:partialsDir: {modulesDir}partials/
-:imagesDir: {modulesDir}images/
-include::{modulesDir}_attributes.adoc[]
+:rootDir:
+:partialsDir: {rootDir}partials/
+:imagesDir: {rootDir}images/
+include::{rootDir}_attributes.adoc[]
 = Quick start
 :description: Get an instance of TinyMCE 5 up and running using the Tiny Cloud.
 :description_short: Setup a basic TinyMCE 5 editor using the Tiny Cloud.
@@ -69,7 +69,7 @@ image:{imagesDir}icons/warning.svg[warning icon]*This domain is not registered w
 
 Replace `no-api-key` in the source script (`+<script src=...+`) with a {cloudname} API key, which is created when signing up to the link:{accountsignup}[{cloudname}].
 
-Signing up for a {cloudname} API key will also provide a trial of the link:{modulesDir}/enterprise/[Premium Plugins].
+Signing up for a {cloudname} API key will also provide a trial of the link:{rootDir}enterprise.html[Premium Plugins].
 
 [#step-4-save-the-content-with-a-form-post]
 == Step 4: Save the content with a form POST
@@ -83,11 +83,11 @@ When the `<form>` is submitted, {productname} {productmajorversion} will `POST` 
 
 For information on:
 
-* Customizing {productname}, see: link:{modulesDir}/general-configuration-guide/basic-setup/[Basic Setup].
+* Customizing {productname}, see: link:{rootDir}general-configuration-guide/basic-setup.html[Basic Setup].
 * The three editor modes:
- ** link:{modulesDir}/general-configuration-guide/use-tinymce-classic/[{productname} classic editing mode].
- ** link:{modulesDir}/general-configuration-guide/use-tinymce-inline/[{productname} inline editing mode].
- ** link:{modulesDir}/general-configuration-guide/use-tinymce-distraction-free/[{productname} distraction-free editing mode].
-* Adding {productname} plugins, see: link:{modulesDir}/general-configuration-guide/work-with-plugins/[Work with plugins to extend TinyMCE].
-* Localizing the {productname} editor, see: link:{modulesDir}/general-configuration-guide/localize-your-language/[Localize {productname}].
-* Self-hosting {productname}, see: link:{modulesDir}/general-configuration-guide/advanced-install/[Installing {productname}].
+ ** link:{rootDir}general-configuration-guide/use-tinymce-classic.html[{productname} classic editing mode].
+ ** link:{rootDir}general-configuration-guide/use-tinymce-inline.html[{productname} inline editing mode].
+ ** link:{rootDir}general-configuration-guide/use-tinymce-distraction-free.html[{productname} distraction-free editing mode].
+* Adding {productname} plugins, see: link:{rootDir}general-configuration-guide/work-with-plugins.html[Work with plugins to extend TinyMCE].
+* Localizing the {productname} editor, see: link:{rootDir}general-configuration-guide/localize-your-language.html[Localize {productname}].
+* Self-hosting {productname}, see: link:{rootDir}general-configuration-guide/advanced-install.html[Installing {productname}].

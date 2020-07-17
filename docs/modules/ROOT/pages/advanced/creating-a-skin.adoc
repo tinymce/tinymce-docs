@@ -1,7 +1,7 @@
-:modulesDir: ../
-:partialsDir: {modulesDir}partials/
-:imagesDir: {modulesDir}images/
-include::{modulesDir}_attributes.adoc[]
+:rootDir: ../
+:partialsDir: {rootDir}partials/
+:imagesDir: {rootDir}images/
+include::{rootDir}_attributes.adoc[]
 = Create a skin for TinyMCE
 :description: Introducing skin creation, less and icon modification.
 :description_short: Introducing skin creation.
@@ -48,7 +48,7 @@ You should now be able to open a web browser and point it to the url displayed i
 
 The development environment is set up and ready to work.
 
-image::{modulesDir}/images/SDKforsilver.png[**{productname} skin SDK for Silver theme**]
+image::{rootDir}/images/SDKforsilver.png[**{productname} skin SDK for Silver theme**]
 
 If you just need to build the skins without launching a web server, run:
 `
@@ -102,7 +102,7 @@ Your skin.less file should now look like this:
 ```
 Switch to the web browser. Select your skin from the _Skin menu_. It should show a fiery red editor
 
-image::{modulesDir}/images/SDKforsilverCustomExample.png[**{productname} skin SDK for Silver theme**]
+image::{rootDir}/images/SDKforsilverCustomExample.png[**{productname} skin SDK for Silver theme**]
 
 This is how you skin {productname}: copy variables from the files in the theme folder and paste them into your skin file. There are variables for most things, like spacing between toolbar buttons to letter spacing. Simple yet powerful.
 
@@ -121,11 +121,11 @@ To update the appearance of the content within the editor, such as headings, quo
 == Moving the skin into TinyMCE
 
 . Copy the skin and/or content CSS from `modules/oxide/build/skins/` to the corresponding folders in your production {productname} folder.
-. Update the {productname} init function with the link:{modulesDir}/configure/editor-appearance/#skin[skin] option and/or the link:{modulesDir}/configure/content-appearance/#content_css[content_css] option.
+. Update the {productname} init function with the link:{rootDir}configure/editor-appearance.html#skin[skin] option and/or the link:{rootDir}configure/content-appearance.html#content_css[content_css] option.
 
-For more information on how to specify the location of the skin file, see link:{modulesDir}/configure/editor-appearance/#skin_url[this] section.
+For more information on how to specify the location of the skin file, see link:{rootDir}configure/editor-appearance.html#skin_url[this] section.
 
 [#modifying-the-icons]
 == Modifying the icons
 
-For information on adding custom icons, see: link:{modulesDir}/advanced/creating-an-icon-pack/[Create an icon pack for {productname}].
+For information on adding custom icons, see: link:{rootDir}advanced/creating-an-icon-pack.html[Create an icon pack for {productname}].

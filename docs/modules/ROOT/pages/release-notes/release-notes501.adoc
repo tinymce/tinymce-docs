@@ -1,7 +1,7 @@
-:modulesDir: ../
-:partialsDir: {modulesDir}partials/
-:imagesDir: {modulesDir}images/
-include::{modulesDir}_attributes.adoc[]
+:rootDir: ../
+:partialsDir: {rootDir}partials/
+:imagesDir: {rootDir}images/
+include::{rootDir}_attributes.adoc[]
 = TinyMCE 5.0.1
 :keywords: releasenotes newfeatures deleted technologypreview bugfixes knownissues
 :title_nav: TinyMCE 5.0.1
@@ -16,4 +16,4 @@ TinyMCE 5.0.1 release adds improvements to the TinyMCE editor to improve the ove
 [#updates-and-enhancements]
 == Updates and enhancements
 
-The new TinyMCE 5.0.1 editor comes with significant changes to the previous versions. Tiny has created a more configurable and modern editor. Improved solutions have been introduced for unnecessary and obsolete configuration options. A comprehensive list of the updates and fixed issues is available in the link:{modulesDir}/changelog/#version501february212019[Changelog].
+The new TinyMCE 5.0.1 editor comes with significant changes to the previous versions. Tiny has created a more configurable and modern editor. Improved solutions have been introduced for unnecessary and obsolete configuration options. A comprehensive list of the updates and fixed issues is available in the link:{rootDir}changelog.html#version501february212019[Changelog].

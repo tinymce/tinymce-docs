@@ -1,7 +1,7 @@
-:modulesDir: ../
-:partialsDir: {modulesDir}partials/
-:imagesDir: {modulesDir}images/
-include::{modulesDir}_attributes.adoc[]
+:rootDir: ../
+:partialsDir: {rootDir}partials/
+:imagesDir: {rootDir}images/
+include::{rootDir}_attributes.adoc[]
 = TinyMCE 5.1.4
 :description: Release notes for TinyMCE 5.1.4
 :keywords: releasenotes bugfixes
@@ -14,7 +14,7 @@ These release notes provide an overview of the changes for {productname} 5.1.4, 
 
 [NOTE]
 ====
-This is the {cloudname} and {enterpriseversion} release notes. For information on the latest community version of {productname}, see: link:{modulesDir}/changelog/[{productname} Changelog].
+This is the {cloudname} and {enterpriseversion} release notes. For information on the latest community version of {productname}, see: link:{rootDir}changelog.html[{productname} Changelog].
 ====
 
 [#general-bug-fixes]

@@ -1,7 +1,7 @@
-:modulesDir: ../
-:partialsDir: {modulesDir}partials/
-:imagesDir: {modulesDir}images/
-include::{modulesDir}_attributes.adoc[]
+:rootDir: ../
+:partialsDir: {rootDir}partials/
+:imagesDir: {rootDir}images/
+include::{rootDir}_attributes.adoc[]
 = Tiny Drive JWT Authentication
 :description: Guide on how to setup JWT Authentication for Tiny Drive
 :keywords: jwt authentication
@@ -16,7 +16,7 @@ JWT is a standard authorization solution for web services and is documented in m
 
 [NOTE]
 ====
-If you haven't tried any of the link:{modulesDir}/tinydrive/getting-started/#starterprojects[Starter projects]  yet, we urge you to try them before trying to implement your solution. The source is also available on Github to study.
+If you haven't tried any of the link:{rootDir}tinydrive/getting-started.html#starterprojects[Starter projects]  yet, we urge you to try them before trying to implement your solution. The source is also available on Github to study.
 ====
 
 [#privatepublic-key-pair]
@@ -37,7 +37,7 @@ The easiest way to setup JWT authentication against {cloudname} services is to c
 
 The following diagram explains the JWT call flow:
 
-image::{modulesDir}/images/jwt-call-flow.png[JSON Web Token Call Flow]
+image::{rootDir}/images/jwt-call-flow.png[JSON Web Token Call Flow]
 
 [#jwt-requirements]
 == JWT requirements
@@ -76,7 +76,7 @@ The JWT Endpoint should examine your systems sessions to verify your user has ac
 [#need-help]
 == Need help?
 
-We recommend reading up and trying to understand how JWT works; you need some necessary skills to implement {cloudfilemanager}. This can be tricky if you need some help, check our link:{modulesDir}/tinydrive/get-help/[help page] and if that doesn't work, contact our support.
+We recommend reading up and trying to understand how JWT works; you need some necessary skills to implement {cloudfilemanager}. This can be tricky if you need some help, check our link:{rootDir}tinydrive/get-help.html[help page] and if that doesn't work, contact our support.
 
 [#php-token-provider-endpoint-example]
 == PHP token provider endpoint example
@@ -197,8 +197,8 @@ tinymce.init({
 [#more-configuration]
 === More configuration
 
-If you managed to set this up, you should be good to go with checking out the various link:{modulesDir}/tinydrive/configuration/[configuration options] for {cloudfilemanager} and how you can customize it. Don't forget to change the JWT Claim's (user id, user name) to get those from your system.
+If you managed to set this up, you should be good to go with checking out the various link:{rootDir}tinydrive/configuration.html[configuration options] for {cloudfilemanager} and how you can customize it. Don't forget to change the JWT Claim's (user id, user name) to get those from your system.
 
-If you need some help, check our link:{modulesDir}/tinydrive/get-help/[help page] and if that doesn't work, link:{supporturl}[submit a support request].
+If you need some help, check our link:{rootDir}tinydrive/get-help.html[help page] and if that doesn't work, link:{supporturl}[submit a support request].
 
 include::{partialsDir}configuration/gen-rsa-key-pairs.adoc[]

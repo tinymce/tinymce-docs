@@ -1,7 +1,7 @@
-:modulesDir: ../
-:partialsDir: {modulesDir}partials/
-:imagesDir: {modulesDir}images/
-include::{modulesDir}_attributes.adoc[]
+:rootDir: ../
+:partialsDir: {rootDir}partials/
+:imagesDir: {rootDir}images/
+include::{rootDir}_attributes.adoc[]
 = Page Embed plugin
 :controls: toolbar button, menu item
 :description: Easily inserts iframe into the content.
@@ -171,6 +171,6 @@ The following CSS script must be added to the webpage for the default CSS to wor
   width: 100%;
 }
 ```
-For more information on configuring CSS, refer to the link:{modulesDir}/configure/content-appearance/#content_css[content_css] section.
+For more information on configuring CSS, refer to the link:{rootDir}configure/content-appearance.html#content_css[content_css] section.
 
-Check out the link:{modulesDir}/demo/pageembed/[Page Embed demo] to try out this new feature.
+Check out the link:{rootDir}demo/pageembed.html[Page Embed demo] to try out this new feature.

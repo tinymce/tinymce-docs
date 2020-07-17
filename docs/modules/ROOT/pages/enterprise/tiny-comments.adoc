@@ -1,13 +1,13 @@
-:modulesDir: ../
-:partialsDir: {modulesDir}partials/
-:imagesDir: {modulesDir}images/
-include::{modulesDir}_attributes.adoc[]
+:rootDir: ../
+:partialsDir: {rootDir}partials/
+:imagesDir: {rootDir}images/
+include::{rootDir}_attributes.adoc[]
 = Commenting &amp; collaboration
 :description: Comments 2.0 provides the ability to add comments to the content and collaborate with other users for content editing.
 :keywords: enterprise pricing comment commenting
 :title_nav: Commenting &amp; collaboration
 
-{productname} editor now has a highly desirable functionality, link:{modulesDir}/demo/comments-2/[Comments 2.0].
+{productname} editor now has a highly desirable functionality, link:{rootDir}demo/comments-2.html[Comments 2.0].
 
 The Comments 2.0 plugin provides an ability to start or join a conversation by adding comments to the content within the {productname} editor.
 

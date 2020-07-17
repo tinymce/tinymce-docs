@@ -1,10 +1,10 @@
-:modulesDir: ../
-:partialsDir: {modulesDir}partials/
-:imagesDir: {modulesDir}images/
-include::{modulesDir}_attributes.adoc[]
+:rootDir: ../
+:partialsDir: {rootDir}partials/
+:imagesDir: {rootDir}images/
+include::{rootDir}_attributes.adoc[]
 = Context Menu plugin
 :description: Right-click to perform actions in TinyMCE
 :keywords: contextmenu inserttable deletetable contextmenu_never_use_native
 :title_nav: Context Menu
 
-With the release TinyMCE 5 the context menu plugin has been combined into the editor core. Accordingly the link:{modulesDir}/ui-components/contextmenu/[Context Menu documentation] has been moved into the core as well.
+With the release TinyMCE 5 the context menu plugin has been combined into the editor core. Accordingly the link:{rootDir}ui-components/contextmenu.html[Context Menu documentation] has been moved into the core as well.

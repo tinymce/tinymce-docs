@@ -1,13 +1,13 @@
-:modulesDir: ../
-:partialsDir: {modulesDir}partials/
-:imagesDir: {modulesDir}images/
-include::{modulesDir}_attributes.adoc[]
+:rootDir: ../
+:partialsDir: {rootDir}partials/
+:imagesDir: {rootDir}images/
+include::{rootDir}_attributes.adoc[]
 = Import CSS plugin
 :description: Automatically populate CSS class names into the Format dropdown.
 :keywords: importcss content_css importcss_append importcss_file_filter importcss_selector_filter importcss_groups importcss_merge_classes importcss_selector_converter importcss_exclusive
 :title_nav: Import CSS
 
-The `importcss` plugin adds the ability to automatically import CSS classes from the CSS file specified in the link:{modulesDir}/configure/content-appearance/#content_css[`content_css`] configuration setting.
+The `importcss` plugin adds the ability to automatically import CSS classes from the CSS file specified in the link:{rootDir}configure/content-appearance.html#content_css[`content_css`] configuration setting.
 
 By default selectors like `".my-class"`, `".my-class1.my-class2"` and `"p.my-class"` get imported as format rules.
 

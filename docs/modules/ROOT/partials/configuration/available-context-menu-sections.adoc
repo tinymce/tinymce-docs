@@ -15,36 +15,36 @@ The identifier below will add a context menu _section_ containing one or more it
 | identifier | Core/Plugin | Description
 
 | image
-| link:{modulesDir}/plugins/image/[Image]
+| link:{rootDir}plugins/image.html[Image]
 | Adds the _Image..._ item for opening the *Insert/Edit Image* dialog.
 
 | imagetools
-| link:{modulesDir}/plugins/imagetools/[Image Tools]
+| link:{rootDir}plugins/imagetools.html[Image Tools]
 | Adds the _Edit image_ item for opening the *Edit Image* dialog.
 
 | link
-| link:{modulesDir}/plugins/link/[Link]
+| link:{rootDir}plugins/link.html[Link]
 | Adds the _Link..._ item for opening the *Insert/Edit Link* dialog.
 
 | linkchecker
-| link:{modulesDir}/plugins/linkchecker/[Link Checker]
+| link:{rootDir}plugins/linkchecker.html[Link Checker]
 | Adds the _Ignore_ item on links marked as broken, allowing the user to instruct linkchecker to ignore the link.
 
 | lists
-| link:{modulesDir}/plugins/lists/[Lists]
+| link:{rootDir}plugins/lists.html[Lists]
 | Adds the _List properties..._ item for opening the *List Properties* dialog.
 
 | configurepermanentpen
-| link:{modulesDir}/plugins/permanentpen/[Permanent Pen]
+| link:{rootDir}plugins/permanentpen.html[Permanent Pen]
 | Adds the _Permanent pen properties..._ item for opening the *Permanent Pen Properties* dialog when the permanent pen is in use.
 
 | spellchecker
-| link:{modulesDir}/plugins/spellchecker/[Spell Checker]
+| link:{rootDir}plugins/spellchecker.html[Spell Checker]
 | Adds a list suggested corrections, an _Ignore_ item, and an _Ignore all_ item.
 
 | table
-| link:{modulesDir}/plugins/table/[Table]
+| link:{rootDir}plugins/table.html[Table]
 | Adds table related context menu items, including Advanced Tables context menu items (if the Advanced Tables plugin is enabled).
 |===
 
-For a list of available menu items that can be added to the context menu, see: link:{modulesDir}/advanced/editor-control-identifiers/#menucontrols[Editor control identifiers - Menu controls].
+For a list of available menu items that can be added to the context menu, see: link:{rootDir}advanced/editor-control-identifiers.html#menucontrols[Editor control identifiers - Menu controls].

@@ -20,11 +20,11 @@ This section describes issues that users of {productname} 5.1 may encounter, as 
 ==== Issue
 
 NOTE: This issue affects the following plugins:
-* link:{modulesDir}/plugins/mentions/[Mentions].
-* link:{modulesDir}/plugins/emoticons/[Emoticons].
-* link:{modulesDir}/plugins/charmap/[Character Map].
+* link:{rootDir}plugins/mentions.html[Mentions].
+* link:{rootDir}plugins/emoticons.html[Emoticons].
+* link:{rootDir}plugins/charmap.html[Character Map].
 
-Plugins relying on the link:{modulesDir}/ui-components/autocompleter/[autocompleter API] or keypress events do not work on Android. Android intercepts content and processes content prior to insertion into the editor.
+Plugins relying on the link:{rootDir}ui-components/autocompleter.html[autocompleter API] or keypress events do not work on Android. Android intercepts content and processes content prior to insertion into the editor.
 
 [#workaround]
 ==== Workaround
@@ -87,7 +87,7 @@ To workaround this issue, users can either:
 [#issue-2]
 ==== Issue
 
-NOTE: This issue affects the link:{modulesDir}/plugins/comments/[Comments plugin].
+NOTE: This issue affects the link:{rootDir}plugins/comments.html[Comments plugin].
 
 When opening sidebars on small screens (such as mobile phones), the sidebar may occupy most or all of the text area of the editor.
 

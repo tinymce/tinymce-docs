@@ -1,13 +1,13 @@
-:modulesDir: ../
-:partialsDir: {modulesDir}partials/
-:imagesDir: {modulesDir}images/
-include::{modulesDir}_attributes.adoc[]
+:rootDir: ../
+:partialsDir: {rootDir}partials/
+:imagesDir: {rootDir}images/
+include::{rootDir}_attributes.adoc[]
 = AngularJS integration
 :description: This directive allows you to add a TinyMCE editor to your form elements.
 :keywords: integration integrate angular angularjs angular1
 :title_nav: AngularJS
 
-Integration with AngularJS is currently done through https://github.com/angular-ui/ui-tinymce[angular-ui-tinymce] a third party module. This how-to shows you how to setup a project using https://angularjs.org/[AngularJS] and link:{modulesDir}/demo/basic-example/[{productname}].
+Integration with AngularJS is currently done through https://github.com/angular-ui/ui-tinymce[angular-ui-tinymce] a third party module. This how-to shows you how to setup a project using https://angularjs.org/[AngularJS] and link:{rootDir}demo/basic-example.html[{productname}].
 
 [#1-setting-up-the-project-directory]
 == 1. Setting up the project directory

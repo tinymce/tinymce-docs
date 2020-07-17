@@ -1,14 +1,14 @@
-:modulesDir: ../
-:partialsDir: {modulesDir}partials/
-:imagesDir: {modulesDir}images/
-include::{modulesDir}_attributes.adoc[]
+:rootDir: ../
+:partialsDir: {rootDir}partials/
+:imagesDir: {rootDir}images/
+include::{rootDir}_attributes.adoc[]
 = Create a plugin for TinyMCE
 :description: A short introduction to creating plugins for TinyMCE along with an example plugin.
 :description_short: Introducing plugin creation, with an example.
 :keywords: plugin plugin.js plugin.min.js tinymce.js
 :title_nav: Create a plugin
 
-{productname} is designed to make creating plugins simple and to provide choice. Users can employ the link:{modulesDir}/advanced/yeoman-generator/[Yeoman generator] or you can use the following tutorial that outlines the basic concepts of creating a plugin. Consult the API documentation and review the existing plugins that are shipped with the core editor for additional details.
+{productname} is designed to make creating plugins simple and to provide choice. Users can employ the link:{rootDir}advanced/yeoman-generator.html[Yeoman generator] or you can use the following tutorial that outlines the basic concepts of creating a plugin. Consult the API documentation and review the existing plugins that are shipped with the core editor for additional details.
 
 [#file-structure]
 == File Structure
@@ -129,7 +129,7 @@ tinymce.init({
 [#exposing-metadata]
 == Exposing metadata
 
-Metadata can be exposed from a custom plugin by returning an object with the property `getMetadata` with a function that returns an object with a `name` and `url` property. This metadata is used by the link:{modulesDir}/plugins/help/[Help Plugin] to show the correct name and link for the plugin in the Plugins installed tab. See the `test` plugin above for example.
+Metadata can be exposed from a custom plugin by returning an object with the property `getMetadata` with a function that returns an object with a `name` and `url` property. This metadata is used by the link:{rootDir}plugins/help.html[Help Plugin] to show the correct name and link for the plugin in the Plugins installed tab. See the `test` plugin above for example.
 
 [#language-localization]
 == Language localization

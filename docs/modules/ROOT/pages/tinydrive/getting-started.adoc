@@ -1,7 +1,7 @@
-:modulesDir: ../
-:partialsDir: {modulesDir}partials/
-:imagesDir: {modulesDir}images/
-include::{modulesDir}_attributes.adoc[]
+:rootDir: ../
+:partialsDir: {rootDir}partials/
+:imagesDir: {rootDir}images/
+include::{rootDir}_attributes.adoc[]
 = Getting started
 :description: Getting started with Tiny Drive
 :keywords: tinydrive starter projects
@@ -16,7 +16,7 @@ Do this before proceeding and it will go a lot smoother
 
 {cloudfilemanager} allows trouble free management of assets such as images and files in the cloud. {cloudfilemanager} is only available in link:{accountsignup}[{cloudname}] and requires registering for an API key.
 
-To enable this functionality in the {productname} editor, add `tinydrive` to the list of plugins in the `tinymce.init` call. The user also needs to be authenticated using a link:{modulesDir}/tinydrive/jwt-authentication/[JSON Web Token (JWT)].
+To enable this functionality in the {productname} editor, add `tinydrive` to the list of plugins in the `tinymce.init` call. The user also needs to be authenticated using a link:{rootDir}tinydrive/jwt-authentication.html[JSON Web Token (JWT)].
 
 Once {cloudfilemanager} is enabled, it integrates as the default file picker for the Image, Link, and Media dialogs and as the default upload handler for local images being pasted or inserted into the document.
 
@@ -46,18 +46,18 @@ The starter projects have their own procedures to get {cloudfilemanager} up and 
 [#implementing-with-your-system]
 === Implementing with your system
 
-The next step, after seeing how {cloudfilemanager} works in these starter projects, is trying to implement it with your own system, the link:{modulesDir}/tinydrive/jwt-authentication/[JSON Web Token] authentication solution would have to be tied to the login authentication of your system. This usually means integrating the JWT authentication to the existing session authentication so that users automatically login to {cloudfilemanager} and your system at the same time.
+The next step, after seeing how {cloudfilemanager} works in these starter projects, is trying to implement it with your own system, the link:{rootDir}tinydrive/jwt-authentication.html[JSON Web Token] authentication solution would have to be tied to the login authentication of your system. This usually means integrating the JWT authentication to the existing session authentication so that users automatically login to {cloudfilemanager} and your system at the same time.
 
 [#additional-resources]
 ==== Additional resources
 
 Go through the following additional resources to figure out how to configure {cloudfilemanager} with a specific system.
 
-* We recommend reading up and trying to understand how link:{modulesDir}/tinydrive/jwt-authentication/[JWT authentication] works.
-* link:{modulesDir}/tinydrive/configuration/[Configuration Options]
-* link:{modulesDir}/tinydrive/integrations/[Integrations]
+* We recommend reading up and trying to understand how link:{rootDir}tinydrive/jwt-authentication.html[JWT authentication] works.
+* link:{rootDir}tinydrive/configuration.html[Configuration Options]
+* link:{rootDir}tinydrive/integrations.html[Integrations]
 
 [#need-help]
 == Need help?
 
-{companyname} is striving to make {cloudfilemanager} as useful and simple as possible. For support related issues such as problems with JWT authentication and implementing {cloudfilemanager}, check the link:{modulesDir}/tinydrive/get-help/[help page] or please contact link:{supporturl}[{supportname}].
+{companyname} is striving to make {cloudfilemanager} as useful and simple as possible. For support related issues such as problems with JWT authentication and implementing {cloudfilemanager}, check the link:{rootDir}tinydrive/get-help.html[help page] or please contact link:{supporturl}[{supportname}].

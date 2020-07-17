@@ -1,13 +1,13 @@
-:modulesDir: ../
-:partialsDir: {modulesDir}partials/
-:imagesDir: {modulesDir}images/
-include::{modulesDir}_attributes.adoc[]
+:rootDir: ../
+:partialsDir: {rootDir}partials/
+:imagesDir: {rootDir}images/
+include::{rootDir}_attributes.adoc[]
 = Context toolbar
 :description: Context toolbar overview
 :keywords: contexttoolbar context toolbar contexttoolbarapi
 :title_nav: Context toolbar
 
-A context toolbar can only contain either buttons that are defined for a normal toolbar, or buttons specifically registered for launching a link:{modulesDir}/ui-components/contextform/[ContextForm]. The buttons comes as a list of strings, where each string is a registered name of a button.
+A context toolbar can only contain either buttons that are defined for a normal toolbar, or buttons specifically registered for launching a link:{rootDir}ui-components/contextform.html[ContextForm]. The buttons comes as a list of strings, where each string is a registered name of a button.
 
 [#registering-a-context-toolbar]
 === Registering a context toolbar

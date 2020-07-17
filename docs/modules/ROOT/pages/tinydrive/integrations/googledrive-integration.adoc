@@ -1,7 +1,7 @@
-:modulesDir: ../../
-:partialsDir: {modulesDir}partials/
-:imagesDir: {modulesDir}images/
-include::{modulesDir}_attributes.adoc[]
+:rootDir: ../../
+:partialsDir: {rootDir}partials/
+:imagesDir: {rootDir}images/
+include::{rootDir}_attributes.adoc[]
 = Google Drive integration
 :description: Guide for setting up Tiny Drive with Google Drive.
 :keywords: google drive
@@ -31,21 +31,21 @@ You can obtain the Google Drive credentials by following the steps below.
 . Click on the `Create credentials` button.
 . Click on the `API key` item.
 
-image::{modulesDir}/images/tinydrive-googledrive-dump1.png[]
+image::{rootDir}/images/tinydrive-googledrive-dump1.png[]
 
 [#2-copy-the-new-google-api-key]
 === 2. Copy the new Google API Key
 
 Copy the generated Google API key this will later be used to configure {cloudfilemanager}:
 
-image::{modulesDir}/images/tinydrive-googledrive-dump2.png[]
+image::{rootDir}/images/tinydrive-googledrive-dump2.png[]
 
 [#3-create-the-oauth-client-id]
 === 3. Create the OAuth client ID
 
 Click on the `Create credentials` button then on `OAuth client ID` item:
 
-image::{modulesDir}/images/tinydrive-googledrive-dump3.png[]
+image::{rootDir}/images/tinydrive-googledrive-dump3.png[]
 
 [#4-fill-in-the-oauth-details]
 === 4. Fill in the OAuth details
@@ -55,7 +55,7 @@ image::{modulesDir}/images/tinydrive-googledrive-dump3.png[]
 . Click `create`.
 . Copy the created `client id` it will be used later to configure {cloudfilemanager}.
 
-image::{modulesDir}/images/tinydrive-googledrive-dump4.png[]
+image::{rootDir}/images/tinydrive-googledrive-dump4.png[]
 
 [#5-restrict-client-id-api-access]
 === 5. Restrict Client ID api access
@@ -66,12 +66,12 @@ image::{modulesDir}/images/tinydrive-googledrive-dump4.png[]
 . Select `Google Picker API` from the dropdown
 . Click `Save`
 
-image::{modulesDir}/images/tinydrive-googledrive-dump5.png[]
+image::{rootDir}/images/tinydrive-googledrive-dump5.png[]
 
 [#6-configure-tinydrive-to-use-the-new-google-drive-credentials]
 === 6. Configure tinydrive to use the new Google Drive credentials
 
-You configure the Google drive api key by setting the link:{modulesDir}/tinydrive/configuration/#tinydrive_google_drive_key[tinydrive_google_drive_key] and the Google OAuth client ID by setting the link:{modulesDir}/tinydrive/configuration/#tinydrive_google_drive_client_id[tinydrive_google_drive_client_id].
+You configure the Google drive api key by setting the link:{rootDir}tinydrive/configuration.html#tinydrive_google_drive_key[tinydrive_google_drive_key] and the Google OAuth client ID by setting the link:{rootDir}tinydrive/configuration.html#tinydrive_google_drive_client_id[tinydrive_google_drive_client_id].
 
 `js
 tinymce.init({
@@ -82,7 +82,7 @@ tinymce.init({
 });
 `
 
-For more information on other {cloudfilemanager} config options refer to the link:{modulesDir}/tinydrive/configuration[configuration] section of this document.
+For more information on other {cloudfilemanager} config options refer to the link:{rootDir}tinydrive/configuration[configuration] section of this document.
 
 [#7-tiny-drive-ui]
 === 7. Tiny Drive UI

@@ -14,15 +14,15 @@ The following server-side components are included in the {productname} Self-host
 |===
 | Component | File | Description
 
-| link:{modulesDir}/enterprise/check-spelling/[Spellchecking]
+| link:{rootDir}enterprise/check-spelling.html[Spellchecking]
 | ephox-spelling.war
 | Spell checking service for {productname} Enterprise.
 
-| link:{modulesDir}/plugins/imagetools/[Image Tools Proxy]
+| link:{rootDir}plugins/imagetools.html[Image Tools Proxy]
 | ephox-image-proxy.war
 | Image proxy service for the Image Tools plugin.
 
-| link:{modulesDir}/enterprise/embed-media/[Enhanced Media Embed], link:{modulesDir}/enterprise/check-links/[Link Checker]
+| link:{rootDir}enterprise/embed-media.html[Enhanced Media Embed], link:{rootDir}enterprise/check-links.html[Link Checker]
 | ephox-hyperlinking.war
 | Link Checker and Enhanced Media Embed service for {productname} Enterprise.
 |===
@@ -40,7 +40,7 @@ If you don't, pick either http://tomcat.apache.org/[Tomcat] or https://www.eclip
 
 [IMPORTANT]
 ====
-*Memory requirement:* Please ensure that you configure your Java Server (Tomcat/Jetty etc) with a minimum of 4GB. Please refer to link:{modulesDir}/enterprise/server/troubleshoot/#outofmemoryerrors[Out of memory errors] section of the Troubleshoot page if you require instructions on how to explicitly define how much RAM will be allocated to your Java server.
+*Memory requirement:* Please ensure that you configure your Java Server (Tomcat/Jetty etc) with a minimum of 4GB. Please refer to link:{rootDir}enterprise/server/troubleshoot.html#outofmemoryerrors[Out of memory errors] section of the Troubleshoot page if you require instructions on how to explicitly define how much RAM will be allocated to your Java server.
 ====
 
 [#step-2-deploy-server-side-components]
@@ -62,14 +62,14 @@ More information can be found in the documentation of your chosen application se
 [#step-3-create-a-configuration-file]
 === Step 3. Create a configuration file
 
-Refer to the link:{modulesDir}/enterprise/server/configure/[Configure] page for the details and come back here when you're done.
+Refer to the link:{rootDir}enterprise/server/configure.html[Configure] page for the details and come back here when you're done.
 
 [#step-4-pass-the-configuration-file-to-the-java-application-server]
 === Step 4. Pass the configuration file to the Java application server
 
 [IMPORTANT]
 ====
-*HTTP proxy:* If you are relying on an HTTP proxy for outgoing HTTP/HTTPS connections to the Internet, consider configuring use of the proxy by the application server by setting JVM system properties at this point. These can be set in the same manner as `ephox.config.file` using the instructions below (using the `-D` option to the `java` command). Please refer to http://docs.oracle.com/javase/8/docs/api/java/net/doc-files/net-properties.html[Networking Properties for Java] for details on the relevant proxy system properties. The system properties `http.proxyHost`, `http.proxyPort`, `http.nonProxyHosts`, `https.proxyHost`, `https.proxyPort` are recognized as well as `http.proxyUser` and `http.proxyPassword` to support authenticating proxies. Alternatively, use of a proxy for server-side components can be set directly in their configuration file as discussed on the link:{modulesDir}/enterprise/server/configure/#proxyoptional[Configure] page.
+*HTTP proxy:* If you are relying on an HTTP proxy for outgoing HTTP/HTTPS connections to the Internet, consider configuring use of the proxy by the application server by setting JVM system properties at this point. These can be set in the same manner as `ephox.config.file` using the instructions below (using the `-D` option to the `java` command). Please refer to http://docs.oracle.com/javase/8/docs/api/java/net/doc-files/net-properties.html[Networking Properties for Java] for details on the relevant proxy system properties. The system properties `http.proxyHost`, `http.proxyPort`, `http.nonProxyHosts`, `https.proxyHost`, `https.proxyPort` are recognized as well as `http.proxyUser` and `http.proxyPassword` to support authenticating proxies. Alternatively, use of a proxy for server-side components can be set directly in their configuration file as discussed on the link:{rootDir}enterprise/server/configure.html#proxyoptional[Configure] page.
 ====
 
 Tell the services about the configuration file by setting the `ephox.config.file` JVM system property to the absolute path of the configuration file. The exact method for doing this varies depending on your operating system, application server and whether the application server is being run as a system service. The authoritative reference for configuring any application server is the vendor documentation, but we'll do our best to get you started below.
@@ -204,7 +204,7 @@ There should only be a single line in this file defining the `JETTY_ARGS` variab
 [#step-5-restart-the-java-application-server]
 === Step 5: Restart the Java application server
 
-After you've completed the steps on this page to link:{modulesDir}/enterprise/server/#step2deployserver-sidecomponents[Deploy server-side components], link:{modulesDir}/enterprise/server/#step3createaconfigurationfile[Create a configuration file] and link:{modulesDir}/enterprise/server/#step4passtheconfigurationfiletothejavaapplicationserver[Pass the configuration file to the Java application server], the application server may need to be restarted to pick up all your changes. Turn it off and on again now, just to be safe.
+After you've completed the steps on this page to link:{rootDir}enterprise/server/#step2deployserver-sidecomponents[Deploy server-side components], link:{rootDir}enterprise/server.html#step3createaconfigurationfile[Create a configuration file] and link:{rootDir}enterprise/server.html#step4passtheconfigurationfiletothejavaapplicationserver[Pass the configuration file to the Java application server], the application server may need to be restarted to pick up all your changes. Turn it off and on again now, just to be safe.
 
 [#step-6-set-up-editor-client-instances-to-use-the-server-side-functionality]
 === Step 6: Set up editor client instances to use the server-side functionality

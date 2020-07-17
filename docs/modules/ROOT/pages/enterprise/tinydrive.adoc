@@ -1,7 +1,7 @@
-:modulesDir: ../
-:partialsDir: {modulesDir}partials/
-:imagesDir: {modulesDir}images/
-include::{modulesDir}_attributes.adoc[]
+:rootDir: ../
+:partialsDir: {rootDir}partials/
+:imagesDir: {rootDir}images/
+include::{rootDir}_attributes.adoc[]
 = Cloud-based file management
 :description: Tiny Drive - a premium plugin to manage files & images.
 :keywords: tinydrive .net php relative_urls
@@ -14,7 +14,7 @@ include::{modulesDir}_attributes.adoc[]
 [#configuring-the-editor-for-tiny-drive]
 === Configuring the editor for Tiny Drive
 
-Once you have the API key, or if you are a current {cloudname} user who already has an API key, then you have access to {cloudfilemanager}. In order to get the service up and running, you'll need to complete a few more steps. See our link:{modulesDir}/tinydrive/[documentation] for more information.
+Once you have the API key, or if you are a current {cloudname} user who already has an API key, then you have access to {cloudfilemanager}. In order to get the service up and running, you'll need to complete a few more steps. See our link:{rootDir}tinydrive.html[documentation] for more information.
 
 [NOTE]
 ====
@@ -26,7 +26,7 @@ We are launching the service with a complimentary 100MB of storage and up to 1 G
 
 We know security is a primary concern when it comes to cloud storage.  {cloudfilemanager} uses an https://aws.amazon.com/s3/[Amazon Web Services S3] bucket, the same storage solution used by companies like Netflix, Thomson Reuters, and Zillow.  (You can read about Amazon's comprehensive security approach https://aws.amazon.com/security/[here].)
 
-As your assets are passed back and forth between your {productname} editor instance and the S3 bucket, {cloudfilemanager} uses both your API key and a https://jwt.io/introduction/[JSON Web Token] (JWT) to authenticate each data transaction.  Each {cloudfilemanager} user will need to create their own JWT, and we walk you through the whole process link:{modulesDir}/tinydrive/jwt-authentication/[here].
+As your assets are passed back and forth between your {productname} editor instance and the S3 bucket, {cloudfilemanager} uses both your API key and a https://jwt.io/introduction/[JSON Web Token] (JWT) to authenticate each data transaction.  Each {cloudfilemanager} user will need to create their own JWT, and we walk you through the whole process link:{rootDir}tinydrive/jwt-authentication.html[here].
 
 And to make sure your assets are delivered as fast as possible, we utilize the https://aws.amazon.com/cloudfront/[CloudFront CDN], which is Amazon's global content delivery network, known for its low latency and high data transfer speeds.
 

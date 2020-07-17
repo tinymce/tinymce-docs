@@ -1,7 +1,7 @@
-:modulesDir: ../
-:partialsDir: {modulesDir}partials/
-:imagesDir: {modulesDir}images/
-include::{modulesDir}_attributes.adoc[]
+:rootDir: ../
+:partialsDir: {rootDir}partials/
+:imagesDir: {rootDir}images/
+include::{rootDir}_attributes.adoc[]
 = Types of toolbar buttons
 :description: This section demonstrates different types of toolbar buttons.
 :doctype: book
@@ -82,11 +82,11 @@ The following example adds two buttons to the toolbar:
 
 {% include codepen.html id="custom-toolbar-button" tab="js" %}
 
-The first button inserts "It's my button!" into the editor when clicked. The second button is an example of how `onSetup` works. This button inserts a `time` element containing the current date into the editor using a `toTimeHtml()` helper function - a simplified version of {productname}'s link:{modulesDir}/plugins/insertdatetime/[insertdatetime] plugin.
+The first button inserts "It's my button!" into the editor when clicked. The second button is an example of how `onSetup` works. This button inserts a `time` element containing the current date into the editor using a `toTimeHtml()` helper function - a simplified version of {productname}'s link:{rootDir}plugins/insertdatetime.html[insertdatetime] plugin.
 
 In this example an icon from the `insertdatetime` plugin is used to demonstrate how to use a registered icon. `disabled` is set to `true` so that the button is disabled when it is first rendered.
 
-`onSetup` is used to listen to the editor's link:{modulesDir}/advanced/events/#nodechange[`NodeChange` event] to disable the button when the cursor is inside a `time` element (or "node"). This ensures it is not possible to insert a `time` element into another `time` element.
+`onSetup` is used to listen to the editor's link:{rootDir}advanced/events.html#nodechange[`NodeChange` event] to disable the button when the cursor is inside a `time` element (or "node"). This ensures it is not possible to insert a `time` element into another `time` element.
 
 [#toggle-button]
 === Toggle button
@@ -165,7 +165,7 @@ NOTE: See <<onsetupexplanation,below>> for details on how to configure `onSetup`
 
 {% include codepen.html id="custom-toolbar-toggle-button" tab="js" %}
 
-The example above adds two custom *strikethrough* buttons with the same `onAction` configuration. The configuration uses `editor.execCommand(command, ui, args)` to execute `mceToggleFormat`. This editor method toggles the specified format on and off, but only works for link:{modulesDir}/configure/content-formatting/#formats[formats] that are already registered with the editor. In this example, `strikethrough` is the registered format.
+The example above adds two custom *strikethrough* buttons with the same `onAction` configuration. The configuration uses `editor.execCommand(command, ui, args)` to execute `mceToggleFormat`. This editor method toggles the specified format on and off, but only works for link:{rootDir}configure/content-formatting.html#formats[formats] that are already registered with the editor. In this example, `strikethrough` is the registered format.
 
 The first button applies and removes strikethrough formatting, and its state toggles on click using `api.setActive(!api.isActive())`. However, the expected behaviour is that the button's state will reflect whether the selected content has strikethrough formatting. For example, if the cursor is moved into editor content that has strikethrough formatting the button will become *active* and if it is moved into content that does not have strikethrough formatting the button will become *inactive*. The first button in the example does not do this, since its state only toggles when the button is clicked.
 
@@ -345,14 +345,14 @@ This example configures a toolbar menu button with the label `My Button` that op
 
 The `fetch` function is called when the toolbar menu button's menu is opened. It is a function that takes a callback and passes it an array of menu items to be rendered in the drop-down menu. This allows for asynchronous fetching of the menu items.
 
-Use the following demo link:{modulesDir}/demo/custom-toolbar-menu-button/[here] for help using the menu toolbar button.
+Use the following demo link:{rootDir}demo/custom-toolbar-menu-button.html[here] for help using the menu toolbar button.
 
 [discrete#group-toolbar-button]
 === Group toolbar button
 
 {requires_5_2v}
 
-A group toolbar button is a toolbar button that contains a collection of other toolbar buttons that are displayed in a pop-up when clicked. The style of toolbar shown is based on the current link:{modulesDir}/configure/editor-appearance/#toolbarmode[toolbar mode]. For example, if `toolbar_mode` is set to `floating`, the toolbar group pop-up will appear in a floating shelf.
+A group toolbar button is a toolbar button that contains a collection of other toolbar buttons that are displayed in a pop-up when clicked. The style of toolbar shown is based on the current link:{rootDir}configure/editor-appearance.html#toolbarmode[toolbar mode]. For example, if `toolbar_mode` is set to `floating`, the toolbar group pop-up will appear in a floating shelf.
 
 NOTE: The group toolbar button is _only_ supported when using the `floating` toolbar mode. If the `toolbar_groups` option is used with other toolbar modes, the toolbar group button will not be displayed and a warning message will be printed in the console.
 
@@ -380,7 +380,7 @@ NOTE: The group toolbar button is _only_ supported when using the `floating` too
 | items
 | string or LabelledToolbar[]
 | required
-| A string of space separated toolbar button names, or an array of link:{modulesDir}/configure/editor-appearance/#addingtoolbargrouplabels[labelled toolbar buttons].
+| A string of space separated toolbar button names, or an array of link:{rootDir}configure/editor-appearance.html#addingtoolbargrouplabels[labelled toolbar buttons].
 
 | onSetup
 | (api) \=> (api) \=> void

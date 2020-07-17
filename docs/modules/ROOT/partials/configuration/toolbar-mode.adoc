@@ -8,7 +8,7 @@
 
 The `toolbar_mode` option is used to extend the toolbar to accommodate the overflowing toolbar buttons. This option is useful for small screens or small editor frames.
 
-The toolbar modes are not available when using link:{modulesDir}/configure/editor-appearance/#usingmultipletoolbars[multiple toolbars] or the link:{modulesDir}/configure/editor-appearance/#toolbarn[toolbar(n)] option.
+The toolbar modes are not available when using link:{rootDir}configure/editor-appearance.html#usingmultipletoolbars[multiple toolbars] or the link:{rootDir}configure/editor-appearance.html#toolbarn[toolbar(n)] option.
 
 *Type:* `String`
 
@@ -33,7 +33,7 @@ The toolbar mode is specified in the `tinymce.init`. There are four toolbar mode
 
 If the `toolbar_mode` is configured to `floating`, the toolbar appears under the toolbar overflow icon in a floating shelf format when the toolbar overflow icon image:{imagesDir}icons/more-drawer.svg[**Drawer**] is clicked.
 
-image::{modulesDir}/images/floating_toolbar.png[**Floating Toolbar**]
+image::{rootDir}/images/floating_toolbar.png[**Floating Toolbar**]
 
 [#configuring-a-floating-toolbar]
 ===== Configuring a Floating toolbar
@@ -52,7 +52,7 @@ tinymce.init({
 
 If the `toolbar_mode` is configured to `sliding`, the toolbar appears as a fixed toolbar under the first toolbar when the toolbar overflow icon image:{imagesDir}icons/more-drawer.svg[**Drawer**] is clicked.
 
-image::{modulesDir}/images/sliding_toolbar.png[**Sliding Toolbar**]
+image::{rootDir}/images/sliding_toolbar.png[**Sliding Toolbar**]
 
 [#configuring-a-sliding-toolbar]
 ===== Configuring a Sliding toolbar
@@ -75,7 +75,7 @@ If the `toolbar_mode` is configured to `scrolling`, the overflow toolbar buttons
 
 A scrollbar will be shown on the toolbar on desktop devices and hybrid devices in desktop mode.
 
-image::{modulesDir}/images/scrolling_toolbar.png[**Scrolling Toolbar**]
+image::{rootDir}/images/scrolling_toolbar.png[**Scrolling Toolbar**]
 
 [#configuring-a-scrolling-toolbar]
 ===== Configuring a Scrolling toolbar
@@ -94,7 +94,7 @@ tinymce.init({
 
 If the `toolbar_mode` is configured to `wrap`, the overflow toolbar buttons will be shown on one or more toolbars below the primary toolbar.
 
-image::{modulesDir}/images/wrapped_toolbar.png[**Wrapped Toolbar**]
+image::{rootDir}/images/wrapped_toolbar.png[**Wrapped Toolbar**]
 
 [#configuring-a-wrapped-toolbar]
 ===== Configuring a Wrapped toolbar

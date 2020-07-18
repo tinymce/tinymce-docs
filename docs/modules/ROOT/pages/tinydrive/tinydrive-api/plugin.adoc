@@ -42,7 +42,7 @@ The modification date for the file in ISO 8601 format for example `2019-02-24T15
 [[demo]]
 === Demo
 
-{% include codepen.html id="drive-plugin-pick" %}
+codepen::drive-plugin-pick[]
 
 [[tinydrive-browse]]
 == tinydrive.browse
@@ -52,7 +52,7 @@ The `tinydrive.browse` method enables you to browse your files stored in {cloudf
 [[demo-2]]
 === Demo
 
-{% include codepen.html id="drive-plugin-browse" %}
+codepen::drive-plugin-browse[]
 
 [[tinydrive-upload]]
 == tinydrive.upload
@@ -62,7 +62,7 @@ The `tinydrive.upload` method enables directly upload blobs to your {cloudfilema
 [[demo-2]]
 === Demo
 
-{% include codepen.html id="drive-plugin-upload" %}
+codepen::drive-plugin-upload[]
 
 [[picker-settings]]
 == Picker settings
@@ -79,7 +79,7 @@ This setting enables restricting what types of files you want do display based o
 [[demo-2]]
 ==== Demo
 
-{% include codepen.html id="drive-plugin-pick-images" %}
+codepen::drive-plugin-pick-images[]
 
 [[-2]]
 === `max_image_dimension`

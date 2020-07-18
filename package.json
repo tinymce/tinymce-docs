@@ -1,0 +1,28 @@
+{
+  "name": "tinymce-docs",
+  "version": "1.0.0",
+  "description": "[[tinymce-documentation]] = TinyMCE documentation :pp: {plus}{plus}",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "antora antora-playbook.yml"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tinymce/tinymce-docs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tinymce/tinymce-docs/issues"
+  },
+  "homepage": "https://github.com/tinymce/tinymce-docs#readme",
+  "devDependencies": {
+    "@antora/cli": "^2.3.3",
+    "@antora/site-generator-default": "^2.3.3",
+    "liquidjs": "^9.14.1"
+  }
+}

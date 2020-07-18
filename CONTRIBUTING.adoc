@@ -77,7 +77,7 @@ hello, [text to link](http://www.example.com) to the URL example.com.
 Codepens can be added to content using the "codepen.html" include, such as:
 
 `
-{% include codepen.html id="basic-example" %}
+codepen::basic-example[]
 `
 
 There are several options for this include file - please see `_includes/codepen.html` for details.

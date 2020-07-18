@@ -63,7 +63,7 @@ The modification date for the file in ISO 8601 format for example `2019-02-24T15
 [[demo]]
 === Demo
 
-{% include codepen.html id="drive-standalone-pick" type="tinydrive" %}
+codepen::drive-standalone-pick[type=tinydrive]
 
 [[tinydrive-browse]]
 == tinydrive.browse
@@ -73,7 +73,7 @@ The `tinydrive.browse` method enables you to browse your files stored in {cloudf
 [[demo-2]]
 === Demo
 
-{% include codepen.html id="drive-standalone-browse" type="tinydrive" %}
+codepen::drive-standalone-browse[type=tinydrive]
 
 [[tinydrive-upload]]
 == tinydrive.upload
@@ -83,7 +83,7 @@ The `tinydrive.upload` method enables directly upload blobs to your {cloudfilema
 [[demo-2]]
 === Demo
 
-{% include codepen.html id="drive-standalone-upload" type="tinydrive" %}
+codepen::drive-standalone-upload[type=tinydrive[]
 
 [[tinydrive-start]]
 == tinydrive.start

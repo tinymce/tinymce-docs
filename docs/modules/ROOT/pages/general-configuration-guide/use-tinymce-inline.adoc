@@ -51,6 +51,6 @@ To enable inline mode, set the `inline` option to `true`. For example:
 
 The following demonstration is using four {productname} editors in inline mode, two for the headings, and two for the body text.
 
-{% include codepen.html id="inline" %}
+codepen::inline[]
 
 For information on inline mode and the `inline` setting, see: link:{rootDir}configure/editor-appearance.html#inline[User interface options - inline].

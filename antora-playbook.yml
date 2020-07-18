@@ -1,0 +1,16 @@
+site:
+  title: TinyMCE 5 Documentation
+  url: https://tiny.cloud
+  start_page: tinymce::index.adoc
+content:
+  sources:
+  - url: ./
+    branches: spike/asciidoctor-conversion
+    start_path: docs
+ui:
+  bundle:
+    url: https://gitlab.com/antora/antora-ui-default/-/jobs/artifacts/master/raw/build/ui-bundle.zip?job=bundle-stable
+    snapshot: true
+asciidoc:
+  extensions:
+    - ./plugins/codepen.js

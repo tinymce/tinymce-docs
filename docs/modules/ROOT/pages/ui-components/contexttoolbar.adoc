@@ -37,7 +37,7 @@ include::{partialsDir}context/positioning.adoc[]
 
 This example shows how the quickbars plugin adds the standard selection context toolbar and an example of a custom toolbar for image alignment. The context toolbar will show whenever any content is selected.
 
-{% include codepen.html id="context-toolbar" height="600" tab="js" %}
+codepen::context-toolbar[height=600,tab=js]
 
 [[launching-a-context-toolbar-programmatically]]
 === Launching a context toolbar programmatically

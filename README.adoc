@@ -175,7 +175,7 @@ NOTE: The development server does not need to be stopped prior to running the `a
 Codepens can be added to content using the "codepen.html" include, such as:
 
 `
-{% include codepen.html id="basic-example" %}
+codepen::basic-example[]
 `
 
 There are several options for this include file - please see codepen.html for details.
@@ -197,12 +197,12 @@ To help with this, there are two mechanisms for overriding the tinymce.min.js UR
  ** This will override the `codepen_url` setting in `config.yml`.
  ** This file is _not_ intended to be checked in.
  ** This option changes the URL for all codepens.
-. Set the `script_url_override` setting when including `codepen.html`.
+. Set the `script_url_override` setting when including `codepen.adoc`.
  ** This is useful if you want to deploy the develop branch for a feature only in the 'dev' channel.
  ** This only overrides the URL for one codepen.
  ** Don't use this in more than one codepen on a page.
  ** Don't use this long-term - when the feature is fully rolled-out, use the standard channel.
- ** See `codepen.html` for details.
+ ** See `codepen.adoc` for details.
 
 NOTE: Jekyll is pretty bad at automatically reloading code when you're playing with include files.
 Sometimes you need to restart the server.

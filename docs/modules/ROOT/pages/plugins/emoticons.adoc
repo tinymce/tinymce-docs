@@ -33,7 +33,7 @@ tinymce.init({
 The emoticon plugin inserts unicode character codes, such as `������` for the smiley emoji. How emoji are rendered is dependent on the web browser and operating system of the user. As a result of this, some emoji may be rendered in black and white, or may not render.
 To ensure emoji render consistently across browsers and operating systems, {companyname} recommends adding an emoji-compatible web font to the default font-family using link:{rootDir}configure/content-appearance.html#content_css[`content_css`].
 
-{% include codepen.html id="emoticons" %}
+codepen::emoticons[]
 
 [[options]]
 === Options

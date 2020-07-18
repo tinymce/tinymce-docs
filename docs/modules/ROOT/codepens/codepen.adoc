@@ -1,4 +1,5 @@
-////
+++++
+{% comment %}
 
 Makes an embedded editor example with tabs, including an "Edit on CodePen" tab.
 
@@ -10,9 +11,9 @@ type (optional) - Specifies if the example is `tinymce` or `tinydrive` specific 
 tab (optional - default to "run"), "run", "html", "css" or "js". The first tab to open.
 height (optional - no default). min-height in pixels.
 script_url_override (optional - no default).
-  - Override the full tinymce.min.js URL, including api key.
-  - Useful for testing things that aren't in the main channel, yet.
-  - Remove this setting once the feature is in the main channel.
+- Override the full tinymce.min.js URL, including api key.
+- Useful for testing things that aren't in the main channel, yet.
+- Remove this setting once the feature is in the main channel.
 
 Files required under _includes/codepens/id/
 
@@ -28,154 +29,127 @@ when the file is present the codepen js will display the contents of example.js,
 Useful for when we want to hide actual api-keys or tokens: 'example-token'.
 When the example.js file is present, the link to the external codepen site is disabled
 
-////
+{% endcomment %}
 
-https://asciidoctor.org/docs/user-manual/#pass-blocks
-
-// Add cloud script(s)
-[subs=attributes]
-++++
+{% comment %} Add cloud script(s) {% endcomment %}
 {% if include.script_url_override %}
-  <script src='{{ include.script_url_override }}'></script>
+<script src='{{ include.script_url_override }}'></script>
 {% else %}
-  {% if include.type == 'tinydrive' %}
-    {% include tinydrive-script-tag-once.html %}
-  {% else %}
-    {% include tinymce-script-tag-once.html %}
-  {% endif %}
+{% if include.type == 'tinydrive' %}
+{% include 'tinydrive-script-tag-once.html' %}
+{% else %}
+{% include 'tinymce-script-tag-once.html' %}
 {% endif %}
-++++
-// Assign html to codepen_html
-[subs=attributes]
-++++
+{% endif %}
+
+{% comment %} Assign html to codepen_html {% endcomment %}
 {% capture codepen_html %}
-{% include codepens/{{ include.id }}/index.html %}
+{% include '{{ include.id }}/index.html' %}
 {% endcapture %}
-++++
 
-// Check if a example.js exists
-[subs=attributes]
-++++
+{% comment %} Check if a example.js exists {% endcomment %}
 {% capture hasExampleJS %}
-{% file_exists _includes/codepens/{{ include.id }}/example.js %}
+{% file_exists '{{ include.id }}/example.js' %}
 {% endcapture %}
-++++
 
-// Assign js to codepen_js
-[subs=attributes]
-++++
+{% comment %} Assign js to codepen_js {% endcomment %}
 {% capture codepen_js %}
-{% include codepens/{{ include.id }}/index.js %}
+{% include '{{ include.id }}/index.js' %}
 {% endcapture %}
-++++
 
-// If example.js exists, Assign to example_js else use index.js
-[subs=attributes]
-++++
+{% comment %} If example.js exists, Assign to example_js else use index.js {% endcomment %}
 {% if hasExampleJS contains "true" %}
 {% capture example_js %}
-{% include codepens/{{ include.id }}/example.js %}
+{% include '{{ include.id }}/example.js' %}
 {% endcapture %}
 {% else %}
 {% capture example_js %}
-{% include codepens/{{ include.id }}/index.js %}
+{% include '{{ include.id }}/index.js' %}
 {% endcapture %}
 {% endif %}
-++++
 
-// Check if a style.css exists
-[subs=attributes]
-++++
+{% comment %} Check if a style.css exists {% endcomment %}
 {% capture hasCss %}
-{% file_exists _includes/codepens/{{ include.id }}/style.css %}
+{% file_exists '{{ include.id }}/style.css' %}
 {% endcapture %}
-++++
 
-// If style.css has been provided...
-[subs=attributes]
-++++
+{% comment %} If style.css has been provided... {% endcomment %}
 {% if hasCss contains "true" %}
-// Assign CSS to codepen_css
+{% comment %} Assign CSS to codepen_css {% endcomment %}
 {% capture codepen_css %}
-{% include codepens/{{ include.id }}/style.css %}
+{% include '{{ include.id }}/style.css' %}
 {% endcapture %}
 
-// Create and assign a CSS codeblock to codepen_css_preview
+{% comment %} Create and assign a CSS codeblock to codepen_css_preview {% endcomment %}
 {% capture codepen_css_preview %}
-```css
+++++
+[source,css]
+----
 {{ codepen_css }}
-```
+----
+++++
 {% endcapture %}
 
 {% endif %}
-++++
 
-[subs=attributes]
-++++
-// Create and assign a HTML codeblock to codepen_html_preview
+{% comment %} Create and assign a HTML codeblock to codepen_html_preview {% endcomment %}
 {% capture codepen_html_preview %}
-```html
+++++
+[source,html]
+----
 {{ codepen_html }}
-```
+----
+++++
 {% endcapture %}
-++++
 
-// Create and assign a JS codeblock to codepen_js_preview
-[subs=attributes]
-++++
+{% comment %} Create and assign a JS codeblock to codepen_js_preview {% endcomment %}
 {% capture codepen_js_preview %}
-```js
+++++
+[source,js]
+----
 {{ example_js }}
-```
+----
+++++
 {% endcapture %}
-++++
 
-// Changes primary tab name where type is provided
-[subs=attributes]
-++++
+{% comment %} Changes primary tab name where type is provided {% endcomment %}
 {% if include.type == 'tinydrive' %}
-    {% assign runText = "Tiny Drive" %}
+{% assign runText = "Tiny Drive" %}
 {% else %}
-    {% assign runText = "TinyMCE" %}
+{% assign runText = "TinyMCE" %}
 {% endif %}
-++++
 
-// Changes initial tab where tab is specified
-[subs=attributes]
-++++
+{% comment %} Changes initial tab where tab is specified {% endcomment %}
 {% if include.tab %}
-    {% assign initialTab = include.tab %}
+{% assign initialTab = include.tab %}
 {% else %}
-    {% assign initialTab = "run" %}
+{% assign initialTab = "run" %}
 {% endif %}
-++++
 
-// Creates the codepen tabs
-[subs=attributes]
-++++
+{% comment %} Creates the codepen tabs {% endcomment %}
 <div id="codepen_{{ include.id }}" class="codepen" {% if include.height %}style="min-height:{{ include.height }}px;"{% endif %}>
-    <div class="codepen_tabs">
-        {% for tab in site.data.codepen-tabs %}
-            {% if tab.name == initialTab %}
-                {% assign class="codepen_tab_selected" %}
-            {% else %}
-                {% assign class="codepen_tab_deselected" %}
-            {% endif %}
-            {% if tab.name != "css" or hasCss contains "true" %}
-                {% if tab.name == "run" %}
-                    <a href="#" id="codepen_tab_{{ tab.name }}_{{ include.id }}" class="{{ class }}">{{ runText }}</a>
-                {% else %}
-                    <a href="#" id="codepen_tab_{{ tab.name }}_{{ include.id }}" class="{{ class }}">{{ tab.text }}</a>
-                {% endif %}
-            {% endif %}
-        {% endfor %}
+<div class="codepen_tabs">
+{% for tab in site.data.codepen-tabs %}
+{% if tab.name == initialTab %}
+{% assign class="codepen_tab_selected" %}
+{% else %}
+{% assign class="codepen_tab_deselected" %}
+{% endif %}
+{% if tab.name != "css" or hasCss contains "true" %}
+{% if tab.name == "run" %}
+<a href="#" id="codepen_tab_{{ tab.name }}_{{ include.id }}" class="{{ class }}">{{ runText }}</a>
+{% else %}
+<a href="#" id="codepen_tab_{{ tab.name }}_{{ include.id }}" class="{{ class }}">{{ tab.text }}</a>
+{% endif %}
+{% endif %}
+{% endfor %}
 
         {% if hasExampleJS contains 'false' %}
         <a href="#" id="codepen_tab_codepen_{{ include.id }}" class="codepen_tab_deselected ie11_optional">Edit on CodePen</a>
         {% endif %}
     </div>
 
-    // Adds style.css to page if provided
+    {% comment %} Adds style.css to page if provided {% endcomment %}
     <div id="codepen_pane_run_{{ include.id }}" {% if "run" != initialTab %}style="display:none;"{% endif %}>
         {% if hasCss contains "true" %}
             <style type="text/css">
@@ -185,41 +159,38 @@ https://asciidoctor.org/docs/user-manual/#pass-blocks
         {{ codepen_html }}
     </div>
 
-    // Adds HTML tab content
+    {% comment %} Adds HTML tab content {% endcomment %}
     <div id="codepen_pane_html_{{ include.id }}" {% if "html" != initialTab %}style="display:none;"{% endif %}>
-        {{ codepen_html_preview | markdownify }}
+{{ codepen_html_preview }}
     </div>
 
-    // If style.css exists, add CSS tab content
+    {% comment %} If style.css exists, add CSS tab content {% endcomment %}
     {% if hasCss contains "true" %}
         <div id="codepen_pane_css_{{ include.id }}" {% if "css" != initialTab %}style="display:none;"{% endif %}>
-            {{ codepen_css_preview | markdownify }}
+{{ codepen_css_preview }}
         </div>
     {% endif %}
 
-    // Add content to JS tab from index.js or example.js
+    {% comment %} Add content to JS tab from index.js or example.js {% endcomment %}
     <div id="codepen_pane_js_{{ include.id }}" {% if "js" != initialTab %}style="display:none;"{% endif %}>
-        {{ codepen_js_preview | markdownify }}
+{{ codepen_js_preview }}
     </div>
 </div>
-++++
 
-// Changes initial tab where tab is specified
-[subs=attributes]
-++++
+{% comment %} Changes initial tab where tab is specified {% endcomment %}
 <form action="https://codepen.io/pen/define" method="POST" target="_blank" id="codepen_form_{{ include.id }}">
-    <input type="hidden" name="data" id="codepen_data_{{ include.id }}" />
+<input type="hidden" name="data" id="codepen_data_{{ include.id }}" />
 </form>
 
 <script>
-  (function() {
-    var isIE = !!window.MSInputMethodContext && !!document.documentMode;
-    if (isIE && document.getElementsByClassName("ie11_optional")[0] !== undefined) {
-        document.getElementsByClassName("ie11_optional")[0].style.display = 'none';
-    }
-  })();
+(function() {
+var isIE = !!window.MSInputMethodContext && !!document.documentMode;
+if (isIE && document.getElementsByClassName("ie11_optional")[0] !== undefined) {
+document.getElementsByClassName("ie11_optional")[0].style.display = 'none';
+}
+})();
 
-  // Add index.js to the page (primary tab content)
+  {% comment %} Add index.js to the page (primary tab content) {% endcomment %}
   (function() {
     {{ codepen_js }}
   })();
@@ -228,12 +199,12 @@ https://asciidoctor.org/docs/user-manual/#pass-blocks
     /* TODO: more js, less jekyll */
     var id = "{{ include.id }}";
 
-    // Add index.js and HTML to variables
+    {% comment %} Add index.js and HTML to variables {% endcomment %}
     var html = decodeURIComponent("{{ codepen_html | uri_escape }}");
     var js = decodeURIComponent("{{ codepen_js | uri_escape }}");
 
-    // If style.css provided, add to variable
-    // set which tabz are shown in on codepen site
+    {% comment %} If style.css provided, add to variable {% endcomment %}
+    {% comment %} set which tabz are shown in on codepen site {% endcomment %}
     {% if hasCss contains "true" %}
         var css = decodeURIComponent("{{ codepen_css | uri_escape }}");
         var tabNames = ["run","html","css","js"];
@@ -242,7 +213,7 @@ https://asciidoctor.org/docs/user-manual/#pass-blocks
         var tabNames = ["run","html","js"];
     {% endif %}
 
-    // Data to send to codepen dot io via form input
+    {% comment %} Data to send to codepen dot io via form input {% endcomment %}
     /* Note: there are some other fields we could populate here to polish this. */
     /* See: https://blog.codepen.io/documentation/api/prefill/ */
     var data = {
@@ -256,7 +227,7 @@ https://asciidoctor.org/docs/user-manual/#pass-blocks
     };
     document.getElementById("codepen_data_{{ include.id }}").value = JSON.stringify(data);
 
-    // Below is just tab selection/change logic
+    {% comment %} Below is just tab selection/change logic {% endcomment %}
     /* TODO: */
     var tabs = tabNames.map(function(t) {
       return {

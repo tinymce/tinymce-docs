@@ -19,7 +19,7 @@ In order to use {cloudfilemanager} in standalone mode you will need to add a scr
 [[example]]
 === Example
 
-`+html
+```html
 <script src="https://cdn.tiny.cloud/1/<your api key>/tinydrive/stable/tinydrive.min.js" referrerpolicy="origin"></script>
 <script>
 tinydrive.pick({
@@ -28,7 +28,7 @@ tinydrive.pick({
   console.log(result.files);
 });
 </script>
-+`
+```
 
 [[tinydrive-pick]]
 == tinydrive.pick
@@ -93,11 +93,11 @@ Start is similar to pick and browse, the main difference is that method doesn't 
 [[example-2]]
 === Example
 
-`js
+```js
 tinydrive.start({
   token_provider: '/your-local/jwt-provider'
 });
-`
+```
 
 [[generic-settings]]
 == Generic settings
@@ -121,16 +121,16 @@ For more information on how to create these tokens, refer to the link:{rootDir}t
 [[example-using-a-jwt-provider-url]]
 ==== Example Using a JWT Provider URL
 
-`js
+```js
 tinydrive.pick({
   token_provider: '/jwt' // this can be a page or endpoint like this
 });
-`
+```
 
 [[example-using-a-jwt-provider-callback]]
 ==== Example Using a JWT Provider Callback
 
-`+js
+```js
 tinydrive.pick({
   token_provider: function (success, failure) {
      success({ token: 'jwt-token' });
@@ -139,7 +139,7 @@ tinydrive.pick({
 }).then((result) => {
   console.log(result.files);
 });
-+`
+```
 
 [[picker-settings]]
 == Picker settings
@@ -156,14 +156,14 @@ This setting enables specifying the Dropbox API key for integrating dropbox into
 [[example-2]]
 ==== Example
 
-`+js
+```js
 tinydrive.pick({
   dropbox_app_key: '<your dropbox app key>',
   token_provider: '/your-local/jwt-provider'
 }).then((result) => {
   console.log(result.files);
 });
-+`
+```
 
 [[-2]]
 === `filetypes`
@@ -175,14 +175,14 @@ This setting enables restricting what types of files you want do display based o
 [[example-2]]
 ==== Example
 
-`+js
+```js
 tinydrive.pick({
   filetypes: ['image'],
   token_provider: '/your-local/jwt-provider'
 }).then((result) => {
   console.log(result.files);
 });
-+`
+```
 
 [[-2]]
 === `google_drive_client_id`
@@ -194,14 +194,14 @@ This setting enables specifying the Google Drive client ID for integrating Googl
 [[example-2]]
 ==== Example
 
-`+js
+```js
 tinydrive.pick({
   google_drive_client_id: '<your google drive client id>',
   token_provider: '/your-local/jwt-provider'
 }).then((result) => {
   console.log(result.files);
 });
-+`
+```
 
 [[-2]]
 === `google_drive_key`
@@ -213,14 +213,14 @@ This setting enables specifying the Google Drive API key for integrating Google 
 [[example-2]]
 ==== Example
 
-`+js
+```js
 tinydrive.pick({
   google_drive_key: '<your google drive api key>',
   token_provider: '/your-local/jwt-provider'
 }).then((result) => {
   console.log(result.files);
 });
-+`
+```
 
 [[-2]]
 === `max_image_dimension`
@@ -232,14 +232,14 @@ This setting enables constraining the width/height of uploaded images. When this
 [[example-2]]
 ==== Example
 
-`+js
+```js
 tinydrive.pick({
   max_image_dimension: 1024,
   token_provider: '/your-local/jwt-provider'
 }).then((result) => {
   console.log(result.files);
 });
-+`
+```
 
 [[-2]]
 === `target`
@@ -252,8 +252,16 @@ This setting enables you to render {cloudfilemanager} within a target element by
 ==== Example
 
 ```html
-+++<script>+++tinydrive.pick({ target: '.my-custom-div', token_provider: '/your-local/jwt-provider' }).then((result) \=> { console.log(result.files); });+++</script>++++++<div class="my-custom-div" style="display: flex; width: 800px; height: 600px">++++++</div>+++
-
+<script>
+tinydrive.pick({
+  target: '.my-custom-div',
+  token_provider: '/your-local/jwt-provider'
+}).then((result) => {
+  console.log(result.files);
+});
+</script>
+<div class="my-custom-div" style="display: flex; width: 800px; height: 600px">
+</div>
 ```
 
 [[standalone-api-interfaces]]
@@ -263,12 +271,16 @@ Here is a complete API reference as TypeScript types for developers used to Type
 
 ```tsx
 interface StandaloneApi
-  pick: (settings: StandalonePickerApiSettings) \=> Promise+++<PickerResult>+++; browse: (settings: StandalonePickerApiSettings) \=> Promise+++<void>+++; start: (settings: StandalonePickerApiSettings) \=> Promise+++<void>+++; upload: (settings: StandaloneUploadApiSettings) \=> Promise+++<UploadResult>+++; }+++</UploadResult>++++++</void>++++++</void>++++++</PickerResult>+++
+  pick: (settings: StandalonePickerApiSettings) => Promise<PickerResult>;
+  browse: (settings: StandalonePickerApiSettings) => Promise<void>;
+  start: (settings: StandalonePickerApiSettings) => Promise<void>;
+  upload: (settings: StandaloneUploadApiSettings) => Promise<UploadResult>;
+}
 
 type TokenProviderCallback = (
-  success: (result: TokenResult) \=> void,
-  failure: (error: string) \=> void
-) \=> void;
+  success: (result: TokenResult) => void,
+  failure: (error: string) => void
+) => void;
 
 interface CommonStandaloneApiSettings {
   token_provider: string | TokenProviderCallback;
@@ -287,7 +299,7 @@ interface StandaloneUploadApiSettings extends CommonStandaloneApiSettings {
   path?: string;
   name: string;
   blob: Blob;
-  onprogress?: (details: UploadProgress) \=> void;
+  onprogress?: (details: UploadProgress) => void;
   max_image_dimension?: number;
 }
 

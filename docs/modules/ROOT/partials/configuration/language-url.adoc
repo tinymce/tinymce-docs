@@ -8,11 +8,11 @@ When using the <<language,`language`>> option to set the user interface language
 [discrete#example]
 ===== Example
 
-`js
+```js
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   language_url : '/languages/fi.js'  // site absolute URL
 });
-`
+```
 
 You can find and download languages link:{gettiny}/language-packages/[here].

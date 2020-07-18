@@ -36,9 +36,9 @@ To migrate the core TinyMCE editor to TinyMCE 5, review the following sections:
 
 To use TinyMCE 5 from the {cloudname}, include this script in your HTML page. Replace 'no-api-key' with link:{accountsignup}[your API key].
 
-`html
+```html
 <script src="{cdnurl}" referrerpolicy="origin"></script>
-`
+```
 
 For information on using the latest development and testing builds, see: link:{rootDir}cloud-deployment-guide/editor-plugin-version.html[Cloud deployment guide - Specify editor & plugin versions].
 
@@ -95,7 +95,7 @@ Supports numbers and strings. Assumes strings are a valid CSS value for height.
 * The `file_browser_callback` option has been removed for TinyMCE 5. The link:{url}/docs-4x/configure/file-image-upload/#file_browser_callback[`file_browser_callback`] option was used to add a file or image browser to TinyMCE. This option was deprecated in version 4.1.0 and replaced by link:{rootDir}configure/file-image-upload.html#file_picker_callback[`file_picker_callback`].
 * link:{url}/docs-4x/configure/editor-appearance/#insert_button_items[`insert_button_items`] - the `insert_button_items` option was used to specify the toolbar items to display in the `insert` toolbar button menu. This toolbar button has been removed from TinyMCE 5. For a workaround, configure a custom toolbar button using the following configurations in the `tinymce.init`:
 
-`+js
+```js
 tinymce.init({
   ...
   toolbar: 'insert',
@@ -107,7 +107,7 @@ tinymce.init({
     });
   }
 });
-+`
+```
 
 [[migrating-from-to]]
 ===== Migrating from `file_browser_callback` to `file_picker_callback`
@@ -119,7 +119,7 @@ The following example shows the difference between the removed `file_browser_cal
 [[tinymce-4]]
 ====== TinyMCE 4 - `file_browser_callback`
 
-`+js
+```js
 tinymce.init({
   ...
   file_browser_callback_types: 'file image media',
@@ -129,12 +129,12 @@ tinymce.init({
     });
   }
 });
-+`
+```
 
 [[tinymce-5]]
 ====== TinyMCE 5 - `file_picker_callback`
 
-`+js
+```js
 tinymce.init({
   ...
   file_picker_types: 'file image media',
@@ -144,7 +144,7 @@ tinymce.init({
     });
   }
 });
-+`
+```
 
 [[browser-support-backward-compatibility-or-quirks-mode]]
 === Browser support: backward compatibility or quirks mode
@@ -249,7 +249,7 @@ The link:{url}/docs-4x/themes/inlite/[Inlite] theme has been removed from TinyMC
 The Inlite theme features are provided by the link:{rootDir}plugins/quickbars.html[Quick Toolbar (`quickbars`)] plugin for TinyMCE 5. The Inlite link:{url}/docs-4x/themes/inlite/#quicklink[`quicklink`] functionality is now provided by link:{rootDir}ui-components/contextform.html[Context Forms].
 
 The following is an example of a TinyMCE 5 quickbars configuration:
-`js
+```js
 {
   theme: 'silver',
   inline: true,
@@ -257,7 +257,7 @@ The following is an example of a TinyMCE 5 quickbars configuration:
   menubar: false,
   plugins: [ 'quickbars' ]
 }
-`
+```
 This will provide a similar but improved link:{rootDir}general-configuration-guide/use-tinymce-distraction-free.html[distraction-free] experience in TinyMCE 5.
 
 [[modern-theme-removed]]
@@ -454,20 +454,22 @@ For example:
 [[tinymce-4-2]]
 ====== TinyMCE 4 - `onclick`
 
-`+js
+```js
 editor.addButton('mybutton', {
   text: "My Button",
   onclick: () => alert("My Button clicked!")
 });
-+`
-###### TinyMCE 5 - `onAction`
+```
 
-`+js
+[[tinymce-5-2]]
+====== TinyMCE 5 - `onAction`
+
+```js
 editor.ui.registry.addButton('myButton', {
   text: 'My Button',
   onAction: (buttonApi) => alert('My Button clicked!')
 });
-+`
+```
 
 Each type of toolbar button has a different set of API functions. For information using toolbar buttons, see: link:{rootDir}ui-components/typesoftoolbarbuttons.html[Types of toolbar buttons].
 
@@ -481,20 +483,22 @@ For example:
 [[tinymce-4-2]]
 ====== TinyMCE 4 - `cmd`
 
-`js
+```js
 editor.addButton('mybutton', {
   text: "My Button",
   cmd: 'mceSave'
 });
-`
-###### TinyMCE 5 - `onAction`
+```
 
-`+js
+[[tinymce-5-2]]
+====== TinyMCE 5 - `onAction`
+
+```js
 editor.ui.registry.addButton('myButton', {
   text: 'My Button',
   onAction: (_) => editor.execCommand('mceSave')
 });
-+`
+```
 
 [[migrating-onpostrender-to-onsetup]]
 ===== Migrating onpostrender to onSetup
@@ -515,7 +519,7 @@ For example:
 [[tinymce-4-2]]
 ====== TinyMCE 4 - `onpostrender`
 
-`js
+```js
 editor.addButton('currentdate', {
   icon: 'insertdatetime',
   tooltip: "Insert Current Date",
@@ -527,12 +531,14 @@ editor.addButton('currentdate', {
     });
   }
 });
-`
-###### TinyMCE 5 - onSetup
+```
+
+[[tinymce-5-2]]
+====== TinyMCE 5 - `onSetup`
 
 In this example, the button's API contains `+isDisabled: () => boolean+` and `+setDisabled: (state: boolean) => void+`.
 
-`+js
+```js
 editor.ui.registry.addButton('customDateButton', {
   icon: 'insert-time',
   tooltip: 'Insert Current Date',
@@ -544,8 +550,9 @@ editor.ui.registry.addButton('customDateButton', {
     return (buttonApi) => editor.off('NodeChange', editorEventCallback);
   }
 });
-+`
-> Note: The callback function given to `onSetup` takes a `buttonApi` argument which is an object that contains helper functions.
+```
+
+NOTE: The callback function given to `onSetup` takes a `buttonApi` argument which is an object that contains helper functions.
 
 [[custom-context-toolbars]]
 === Custom context toolbars
@@ -569,7 +576,7 @@ To add a custom item to a menu, use the `menu` setting. All items in a menu need
 
 For example:
 
-`+js
+```js
 tinymce.init({
   selector: '#editor',
   plugins: 'help',
@@ -584,7 +591,7 @@ tinymce.init({
     });
   }
 });
-+`
+```
 
 *More information*
 * For information on using the `menu` setting, see: link:{rootDir}configure/editor-appearance.html#menu[User interface options - menu].
@@ -620,21 +627,23 @@ The following examples show custom menu item configurations in TinyMCE 4 and Tin
 [[tinymce-4-example-custom-menu-item]]
 ==== TinyMCE 4 - example custom menu item
 
-`+js
+```js
 editor.addMenuItem('example', {
  text: 'My menu item',
  context: 'tools',
  onclick: () => editor.insertContent('Hello world!!');
 });
-+`
-#### TinyMCE 5 - example custom menu item
+```
 
-`+js
+[[tinymce-5-example-custom-menu-item]]
+==== TinyMCE 5 - example custom menu item
+
+```js
 editor.ui.registry.addMenuItem('example', {
  text: 'My menu item',
  onAction: () => editor.insertContent('Hello world!!');
 });
-+`
+```
 
 For information on how to use these methods, see: link:{rootDir}ui-components/menuitems.html[Custom menu items].
 
@@ -697,7 +706,7 @@ NOTE: The `onchange` callback function provided within individual components has
 [[tinymce-4-2]]
 ==== TinyMCE 4 - `onchange`
 
-`js
+```js
 const config = {
   title: 'Insert Link',
   body: [
@@ -712,12 +721,12 @@ const config = {
     }
   ]
 };
-`
+```
 
 [[tinymce-5-2]]
 ==== TinyMCE 5 - `onChange`
 
-`js
+```js
 const config = {
   title: 'Insert Link',
   body: {
@@ -736,7 +745,7 @@ const config = {
     }
   }
 };
-`
+```
 
 For information about the new dialog configuration, see the link:{rootDir}ui-components/dialog.html[Dialog] and link:{rootDir}ui-components/dialogcomponents.html[Dialog components] documentation.
 
@@ -821,22 +830,22 @@ The URL dialogs have moved from the `editor.windowManager.open()` API to the lin
 [[tinymce-4-2]]
 ==== TinyMCE 4 - `windowManager.open()`
 
-`+js
+```js
 editor.windowManager.open({
   title: 'URL Dialog Demo',
   url: 'http://mysite.com/external-page.html'
 });
-+`
+```
 
 [[tinymce-5-2]]
 ==== TinyMCE 5 - `windowManager.openUrl()`
 
-`+js
+```js
 editor.windowManager.openUrl({
   title: 'URL Dialog Demo',
   url: 'http://mysite.com/external-page.html'
 });
-+`
+```
 
 For information about the new URL dialog configuration, see: link:{rootDir}ui-components/urldialog.html[URL dialog].
 

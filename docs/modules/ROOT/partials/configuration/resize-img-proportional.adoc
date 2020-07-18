@@ -17,9 +17,9 @@ When a user resizes an image in the editor, this option controls whether image i
 
 To disable proportional image resizing:
 
-`js
+```js
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   resize_img_proportional: false
 });
-`
+```

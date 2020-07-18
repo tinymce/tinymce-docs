@@ -19,12 +19,12 @@ If you are using link:{rootDir}cloud-deployment-guide/editor-and-features.html[{
 [discrete#example]
 ===== Example
 
-`js
+```js
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "linkchecker"
 });
-`
+```
 
 [[self-hosted-instructions]]
 == Self-hosted Instructions
@@ -34,20 +34,20 @@ Customers using a Self-hosted environment will need to provide a URL to their de
 [discrete#example-2]
 ===== Example
 
-`+js
+```js
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "linkchecker",
   linkchecker_service_url: "http://mydomain.com/linkchecker"
 });
-+`
+```
 
 [[options]]
 == Options
 
 Link Checker has the following settings.
 
-[[]]
+[[linkchecker_content_css]]
 === `linkchecker_content_css`
 
 After a link is checked for validity, a result of the validation is added to it via `data-mce-linkchecker-status` attribute. There are three possible outcomes of the validation: `valid`, `invalid` and `unknown`. Link Checker visually reflects `invalid` outcome by injecting the following CSS styles into the editor:
@@ -67,7 +67,7 @@ a[data-mce-linkchecker-focus="true"] {
 
 It is possible to replace or extend those styles, by providing a URL to custom stylesheet via `linkchecker_content_css` option.
 
-[[-2]]
+[[linkchecker_preprocess]]
 === `linkchecker_preprocess`
 
 The `linkchecker_preprocess` function is used for adjusting links before performing a link check.
@@ -77,7 +77,7 @@ The `linkchecker_preprocess` function is used for adjusting links before perform
 [discrete#example-2]
 ===== Example: `linkchecker_preprocess`
 
-`js
+```js
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "linkchecker",
@@ -87,9 +87,9 @@ tinymce.init({
     return { url: newUrl };
   }
 });
-`
+```
 
-[[-2]]
+[[linkchecker_service_url]]
 === `linkchecker_service_url`
 
 A URL of the server-side link validation service. This is required option, without it plugin will fail to operate and will throw a corresponding warning on the screen.
@@ -99,10 +99,10 @@ A URL of the server-side link validation service. This is required option, witho
 [discrete#example-2]
 ===== Example: `linkchecker_service_url`
 
-`+js
+```js
 tinymce.init({
     selector: "textarea",
     plugins: "linkchecker",
     linkchecker_service_url: "http://mydomain.com/linkchecker"
 });
-+`
+```

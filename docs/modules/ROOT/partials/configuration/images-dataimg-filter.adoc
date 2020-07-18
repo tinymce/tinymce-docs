@@ -10,7 +10,7 @@ The *images_dataimg_filter* option is used to filter `<img>` elements before the
 [discrete#example]
 ===== Example
 
-`js
+```js
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   images_upload_url: 'postAcceptor.php',
@@ -18,6 +18,6 @@ tinymce.init({
     return !img.hasAttribute('internal-blob');  // blocks the upload of <img> elements with the attribute "internal-blob".
   }
 });
-`
+```
 
 NOTE: The `images_dataimg_filter` option can also be used to specify a filter predicate function for disabling the logic that converts base64 images into blobs while within the editor. {companyname} discourages using `images_dataimg_filter` for this purpose.

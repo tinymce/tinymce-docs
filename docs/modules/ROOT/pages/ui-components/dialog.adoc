@@ -54,7 +54,7 @@ A dialog configuration has three main parts to match the three main parts of the
 
 The configuration for a basic dialog that displays HTML information might look like this:
 
-`js
+```js
 tinymce.activeEditor.windowManager.open({
   title: 'Dialog Title', // The dialog's title - displayed in the dialog header
   body: {
@@ -73,7 +73,7 @@ tinymce.activeEditor.windowManager.open({
     }
   ]
 });
-`
+```
 
 [[configuration-options]]
 === Configuration options
@@ -158,12 +158,12 @@ NOTE: {productname} also supports link:{rootDir}ui-components/urldialog.html[URL
 
 The basic dialog type is a *panel* dialog. A panel is a container for link:{rootDir}ui-components/dialogcomponents.html#panelcomponents[panel components]. A panel type dialog only has one panel.
 
-`+js
+```js
 {
   type: 'panel',
   items: [ ... ] // array of panel components
 }
-+`
+```
 
 [[tabpanel]]
 ==== TabPanel
@@ -172,7 +172,7 @@ A *tabpanel* dialog contains multiple panels, and a tab navigation menu on the l
 
 See the link:{rootDir}ui-components/dialogcomponents.html#tabpanel[tab panel component reference] for tab panel configuration options.
 
-`+js
+```js
 {
   type: 'tabpanel',
   tabs: [ // array of tab panel specifications
@@ -184,7 +184,7 @@ See the link:{rootDir}ui-components/dialogcomponents.html#tabpanel[tab panel com
     ...
   ]
 }
-+`
+```
 
 The `name` of the panel can be used with the <<dialogapimethods,`dialogApi.showTab('tabName')`>> method to programmatically switch tabs. It is also passed to <<configurationoptions,`onTabChange`>> as part of the `details` object.
 
@@ -266,7 +266,7 @@ See the <<configurationoptions,dialog configuration options>> documentation for 
 [[example-dialog-footer-button]]
 ===== Example: Dialog footer button
 
-`js
+```js
 {
   type: 'submit', // button type
   name: 'submitButton', // identifying name
@@ -276,7 +276,7 @@ See the <<configurationoptions,dialog configuration options>> documentation for 
   primary: true, // style the button as a primary button
   align: 'start' // align the button to the left of the dialog footer
 }
-`
+```
 
 [[dialog-menu-buttons]]
 ===== Dialog menu buttons
@@ -352,7 +352,7 @@ The following options can be specified for a dialog menu button _item_:
 [[example-dialog-footer-menu-button]]
 ====== Example: Dialog footer menu button
 
-`js
+```js
 buttons: [
   {
     type: 'menu', // button type
@@ -376,7 +376,7 @@ buttons: [
     ]
   }
 ]
-`
+```
 
 [[dialog-instance-api]]
 == Dialog instance API

@@ -16,20 +16,20 @@ If unset the editor will preview the styles listed in the default value listed b
 
 No preview of styles:
 
-`js
+```js
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   mode: 'textareas',
   preview_styles: false
 });
-`
+```
 
 Preview of only font-size and color:
 
-`js
+```js
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   mode: 'textareas',
   preview_styles: 'font-size color'
 });
-`
+```

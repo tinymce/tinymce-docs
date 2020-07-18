@@ -13,8 +13,7 @@ This section is about adding multiple editor instances to a single page. This is
 
 The following example breaks the page into two separate editable areas. Each area shares a single editor configuration. Each editable `div` is provided the same `class` of `myeditablediv`. {productname} is loaded just for the content area the user clicks.
 
-[source,html]
-----
+```html
 <!DOCTYPE html>
 <html>
 <head>
@@ -38,7 +37,7 @@ The following example breaks the page into two separate editable areas. Each are
   </form>
 </body>
 </html>
-----
+```
 
 NOTE: In the example above, the css selector is a `class` because the `id` must be unique.
 
@@ -47,8 +46,7 @@ NOTE: In the example above, the css selector is a `class` because the `id` must 
 
 The following example loads each editable area with a unique configuration of {productname}. This is useful when different content areas have different needs, such as providing simple configuration for editing titles and a complete configuration for editing body content. Define a `tinymce.init` object/method for each configuration.
 
-[source,html]
-----
+```html
 <!DOCTYPE html>
 <html>
 <head>
@@ -78,4 +76,4 @@ The following example loads each editable area with a unique configuration of {p
   </form>
 </body>
 </html>
-----
+```

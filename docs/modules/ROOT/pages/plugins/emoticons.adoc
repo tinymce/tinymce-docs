@@ -19,16 +19,16 @@ NOTE: The emoticons plugin does not automatically convert text emoticons into gr
 [[example]]
 ===== Example
 
-`js
+```js
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'emoticons',
   toolbar: 'emoticons'
 });
-`
+```
 
 [[browser-emoji-support]]
-=== Browser emoji support
+== Browser emoji support
 
 The emoticon plugin inserts unicode character codes, such as `������` for the smiley emoji. How emoji are rendered is dependent on the web browser and operating system of the user. As a result of this, some emoji may be rendered in black and white, or may not render.
 To ensure emoji render consistently across browsers and operating systems, {companyname} recommends adding an emoji-compatible web font to the default font-family using link:{rootDir}configure/content-appearance.html#content_css[`content_css`].
@@ -36,13 +36,13 @@ To ensure emoji render consistently across browsers and operating systems, {comp
 codepen::emoticons[]
 
 [[options]]
-=== Options
+== Options
 
 The default database of emoji can be overridden or extended through the options below.
 
 Internally, emoticons is defined by an object mapping emoticon names to additional details, whereby each entry represents a single emoji. The additional details should contain a unicode character representing the emoji, any keywords that can be used to search for the emoji and a category to place the emoji in. Options are expected to be provided in the same format.
 
-`js
+```js
 {
   robot: {
     keywords: ['computer', 'machine', 'bot'],
@@ -55,9 +55,9 @@ Internally, emoticons is defined by an object mapping emoticon names to addition
     category: 'animals_and_nature'
   }
 }
-`
+```
 
-[[]]
+[[emoticons_append]]
 === `emoticons_append`
 
 This option provides a way to append some additional emoji to the default emoji database. This should be an object in the above mentioned format.
@@ -67,7 +67,7 @@ This option provides a way to append some additional emoji to the default emoji 
 [discrete#example-2]
 ===== Example
 
-`js
+```js
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'emoticons',
@@ -79,9 +79,9 @@ tinymce.init({
     }
   }
 });
-`
+```
 
-[[-2]]
+[[emoticons_database_url]]
 === `emoticons_database_url`
 
 This option provides the default location to load the emoji database from. The database should be an external JavaScript file, that assigns an object in the above format, to the `window.tinymce.emoticons_plugin_database` variable.
@@ -90,7 +90,7 @@ This option provides the default location to load the emoji database from. The d
 
 *Default:* `+${pluginUrl}/js/emojis.js+`
 
-`js
+```js
 tinymce.Resource.add('tinymce.plugins.emoticons', {
   robot: {
     keywords: ['computer', 'machine', 'bot'],
@@ -98,16 +98,16 @@ tinymce.Resource.add('tinymce.plugins.emoticons', {
     category: 'people'
   }
 });
-`
+```
 
 [discrete#example-2]
 ===== Example
 
-`js
+```js
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'emoticons',
   toolbar: 'emoticons',
   emoticons_database_url: '/emojis.js'
 });
-`
+```

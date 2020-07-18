@@ -25,27 +25,27 @@ For the moment the *Enhanced Media Embed* plugin has to be used in conjunction w
 The service URL is already configured with link:{rootDir}cloud-deployment-guide/editor-and-features.html[{cloudname}].
 Simply specify the `media` and `mediaembed` plugins, and optionally a `mediaembed_max_width`
 
-`js
+```js
 tinymce.init({
   selector: "textarea",
   plugins: "media mediaembed",
   mediaembed_max_width: 450
 });
-`
+```
 
 [[example-self-hosted-configuration]]
 === Example Self-hosted Configuration
 
 In a Self-hosted installation, please ensure you configure the URL to the service with the `mediaembed_service_url` parameter.
 
-`js
+```js
 tinymce.init({
   selector: "textarea",
   plugins: "media mediaembed",
   mediaembed_service_url: "SERVICE_URL",
   mediaembed_max_width: 450
 });
-`
+```
 
 [[css]]
 === CSS
@@ -60,14 +60,14 @@ The plugin can be used in two ways, either by simply entering a URL on an empty 
 [[configuration-options]]
 == Configuration Options
 
-[[]]
+[[mediaembed_inline_styles]]
 === `mediaembed_inline_styles`
 
 This optional setting will inline all styles, instead of using CSS classes, when rendering the embedded snippet. This is useful when the additional CSS classes can't be added to your site. Defaults to `false`.
 
 *Type:* `Boolean`
 
-[[-2]]
+[[mediaembed_service_url]]
 === `mediaembed_service_url`
 
 This setting specifies the URL to the service that will handle your requests and return the embeddable snippets used by the *Media Embed* plugin. Please follow these link:{rootDir}enterprise/server/#step6setupeditorclientinstancestousetheserver-sidefunctionality[instructions] to configure the *WAR* file that you will get as a part of your link:{pricingpage}[{enterpriseversion} subscription].
@@ -75,7 +75,7 @@ This option is not required for link:{rootDir}cloud-deployment-guide/editor-and-
 
 *Type:* `String`
 
-[[-2]]
+[[mediaembed_max_width]]
 === `mediaembed_max_width`
 
 This optional setting specifies a maximum width in pixels of the embedded content. Defaults to `650`.

@@ -28,16 +28,16 @@
 
 To install the `tinymce-react` package and save it to your `package.json`.
 
-`sh
+```js
 $ npm install --save @tinymce/tinymce-react
-`
+```
 
 [[configuring-the-editor]]
 === Configuring the editor
 
 The editor accepts the following properties:
 
-`+xml
+```xml
 <Editor
   apiKey='your-api-key'
   cloudChannel='{productmajorversion}-stable'
@@ -53,11 +53,11 @@ The editor accepts the following properties:
   toolbar=''
   value=''
 />
-+`
+```
 
 None of the configuration properties are *required* for `tinymce-react` to work. Specify a {cloudname} API key using `apiKey` to remove the `+This domain is not registered...+` warning message.
 
-[[]]
+[[apikey]]
 ==== `apiKey`
 
 {cloudname} API key. Required for deployments using the {cloudname} to provide the {productname} editor.
@@ -71,11 +71,13 @@ To register for a {cloudname} API key, visit the link:{accountsignup}[sign-up pa
 [[example]]
 ===== Example: `apiKey`
 
-```xml+++<Editor apiKey="your-api-key">++++++</Editor>+++
-
+```xml
+<Editor
+  apiKey='your-api-key'
+/>
 ```
 
-[[-2]]
+[[cloudChannel]]
 ==== `cloudChannel`
 
 *Default value:* `{productmajorversion}-stable`
@@ -90,16 +92,16 @@ Changes the {productname} build used for the editor to one of the following {clo
 
 Such as:
 
-`js
+```js
 <Editor
   apiKey='your-api-key'
   cloudChannel='{productmajorversion}-dev'
   init=pass:[{{] /* your other settings */ pass:[}}]
 />
-`
+```
 For information {productname} development channels, see: link:{rootDir}cloud-deployment-guide/editor-plugin-version.html#devtestingandstablereleases[Specifying the {productname} editor version deployed from Cloud - dev, testing, and stable releases].
 
-[[-2]]
+[[disabled]]
 ==== `disabled`
 
 The `disabled` property can dynamically switch the editor between a "disabled" (read-only) mode (`true`) and the standard editable mode (`false`).
@@ -111,13 +113,13 @@ The `disabled` property can dynamically switch the editor between a "disabled" (
 [[example-2]]
 ===== Example: `disabled`
 
-`+xml
+```xml
 <Editor
   disabled={true}
 />
-+`
+```
 
-[[-2]]
+[[id]]
 ==== `id`
 
 An id for the editor. Used for retrieving the editor instance using the `tinymce.get('ID')` method. Defaults to an automatically generated https://tools.ietf.org/html/rfc4122[UUID].
@@ -129,37 +131,39 @@ An id for the editor. Used for retrieving the editor instance using the `tinymce
 [[example-2]]
 ===== Example: `id`
 
-```xml+++<Editor id="uuid">++++++</Editor>+++
-
+```xml
+<Editor
+  id='uuid'
+/>
 ```
 
-[[-2]]
+[[init]]
 ==== `init`
 
 Object sent to the `tinymce.init` method used to initialize the editor.
 
 For information on the {productname} selector (`tinymce.init`), see: link:{rootDir}general-configuration-guide/basic-setup.html[Basic setup].
 
-*Default value:* `pass:[{{] pass:[}}]`
+*Default value:* `+{{ }}+`
 
 *Type:* Object
 
 [[example-2]]
 ===== Example: `init`
 
-`xml
+```xml
 <Editor
-  init=pass:[{{]
+  init={{
     selector: 'textarea#myTextArea',
     plugins: [
      'lists link image paste help wordcount'
     ],
     toolbar: 'undo redo | formatselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | help'
-  pass:[}}]
+  }}
 />
-`
+```
 
-[[-2]]
+[[initialvalue]]
 ==== `initialValue`
 
 Initial content of the editor when the editor is initialized.
@@ -171,11 +175,13 @@ Initial content of the editor when the editor is initialized.
 [[example-2]]
 ===== Example: `initialValue`
 
-```xml+++<Editor initialValue="Once upon a time...">++++++</Editor>+++
-
+```xml
+<Editor
+  initialValue='Once upon a time...'
+/>
 ```
 
-[[-2]]
+[[inline]]
 ==== `inline`
 
 Used to set the editor to inline mode. Using `+<Editor inline={true} />+` is the same as setting `{inline: true}` in the {productname} selector (`tinymce.init`).
@@ -189,13 +195,13 @@ For information on inline mode, see: link:{rootDir}configure/editor-appearance.h
 [[example-2]]
 ===== Example: `inline`
 
-`+xml
+```xml
 <Editor
   inline={true}
 />
-+`
+```
 
-[[-2]]
+[[oneditorchange]]
 ==== `onEditorChange`
 
 Used to store the state of the editor outside the editor React component. This property is commonly used when using the {productname} React component as a controlled component. Use the <<outputformat,`outputFormat`>> prop to specify the format of the content emitted.
@@ -204,7 +210,7 @@ For more information, see: <<usingthetinymcereactcomponentasacontrolledcomponent
 
 *Type:* EventHandler
 
-[[-2]]
+[[outputformat]]
 ==== `outputFormat`
 
 Used to specify the format of the content emitted via the <<oneditorchange,`onEditorChange`>> event.
@@ -218,11 +224,13 @@ Used to specify the format of the content emitted via the <<oneditorchange,`onEd
 [[example-2]]
 ===== Example: `outputFormat`
 
-```xml+++<Editor outputFormat="text">++++++</Editor>+++
-
+```xml
+<Editor
+  outputFormat='text'
+/>
 ```
 
-[[-2]]
+[[plugins]]
 ==== `plugins`
 
 Used to include plugins for the editor. Using `<Editor plugins='lists' />` is the same as setting `{plugins: 'lists'}` in the {productname} selector (`tinymce.init`).
@@ -234,11 +242,13 @@ For information on adding plugins to {productname}, see: link:{rootDir}plugins.h
 [[example-2]]
 ===== Example: `plugins`
 
-```xml+++<Editor plugins="lists code">++++++</Editor>+++
-
+```xml
+<Editor
+  plugins='lists code'
+/>
 ```
 
-[[-2]]
+[[tagname]]
 ==== `tagName`
 
 Only valid when <<inline,`+<Editor inline={true} />+`>>. Used to define the HTML element for the editor in inline mode.
@@ -250,14 +260,14 @@ Only valid when <<inline,`+<Editor inline={true} />+`>>. Used to define the HTML
 [[example-2]]
 ===== Example: `tagName`
 
-`+xml
+```xml
 <Editor
   inline={true}
   tagName='my-custom-tag'
 />
-+`
+```
 
-[[-2]]
+[[textareaname]]
 ==== `textareaName`
 
 Sets the `name` attribute for the `textarea` element used for the editor in forms.
@@ -269,11 +279,13 @@ Sets the `name` attribute for the `textarea` element used for the editor in form
 [[example-2]]
 ===== Example: `textareaName`
 
-```xml+++<Editor textareaName="myTextArea">++++++</Editor>+++
-
+```xml
+<Editor
+  textareaName='myTextArea'
+/>
 ```
 
-[[-2]]
+[[toolbar]]
 ==== `toolbar`
 
 Used to set the toolbar for the editor. Using `<Editor toolbar='bold' />` is the same as setting `{toolbar: 'bold'}` in the {productname} selector (`tinymce.init`).
@@ -287,11 +299,14 @@ For information setting the toolbar for {productname}, see: link:{rootDir}config
 [[example-2]]
 ===== Example: `toolbar`
 
-```xml+++<Editor plugins="code" toolbar="bold italic underline code">++++++</Editor>+++
-
+```xml
+<Editor
+  plugins='code'
+  toolbar='bold italic underline code'
+/>
 ```
 
-[[-2]]
+[[tinymcescriptsrc]]
 ==== `tinymceScriptSrc`
 
 Use the `tinymceScriptSrc` prop to specify an external version of TinyMCE to lazy load.
@@ -301,11 +316,13 @@ Use the `tinymceScriptSrc` prop to specify an external version of TinyMCE to laz
 [[example-2]]
 ===== Example: `tinymceScriptSrc`
 
-```xml+++<Editor tinymceScriptSrc="/path/to/tinymce.min.js">++++++</Editor>+++
-
+```xml
+<Editor
+  tinymceScriptSrc='/path/to/tinymce.min.js'
+/>
 ```
 
-[[-2]]
+[[value]]
 ==== `value`
 
 This property allows the editor to be used as a controlled component by setting the `value` property and using the `onEditorChange` event.
@@ -324,14 +341,15 @@ class MyComponent extends React.Component {
   constructor(props) {
     super(props);
 
- this.state = { content: '' };
- this.handleEditorChange = this.handleEditorChange.bind(this);   }
+    this.state = { content: '' };
+    this.handleEditorChange = this.handleEditorChange.bind(this);
+  }
 
-handleEditorChange(content, editor) {
+  handleEditorChange(content, editor) {
     this.setState({ content });
   }
 
-render() {
+  render() {
     return (
       <Editor
         value={this.state.content}
@@ -349,9 +367,9 @@ For information on controlled components in React, see: https://reactjs.org/docs
 
 Functions can be bound to editor events, such as:
 
-`xml
+```xml
 <Editor onSelectionChange={this.handlerFunction} />
-`
+```
 
 When the handler is called (*handlerFunction* in this example), it is called with two arguments:
 

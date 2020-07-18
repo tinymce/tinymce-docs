@@ -12,9 +12,9 @@ Default Value: `false`
 [discrete#example]
 ==== Example
 
-`js
+```js
 tinymce.init({
   selector: "textarea",
   contextmenu_never_use_native: true
 });
-`
+```

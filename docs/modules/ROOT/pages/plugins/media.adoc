@@ -15,21 +15,21 @@ The `media` plugin adds the ability for users to be able to add HTML5 video and 
 [[example]]
 ===== Example
 
-`js
+```js
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "media",
   menubar: "insert",
   toolbar: "media"
 });
-`
+```
 
 [[options]]
-=== Options
+== Options
 
 These settings affect the execution of the `media` plugin. Namely the ability to disable parts of the media dialog box when inserting/editing media items. In addition, the user may disable the cross-site scripting sanitation filter for video/object elements here.
 
-[[]]
+[[audio_template_callback]]
 === `audio_template_callback`
 
 This option allows you to specify the function that will return the HTML embed code of the audio media that you are attempting to insert into {productname}.
@@ -39,7 +39,7 @@ This option allows you to specify the function that will return the HTML embed c
 [discrete#example-2]
 ===== Example
 
-`js
+```js
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "media",
@@ -51,9 +51,9 @@ tinymce.init({
 ' + '</audio>';
  }
 });
-`
+```
 
-[[-2]]
+[[media_alt_source]]
 === `media_alt_source`
 
 This options allows you disable the `Alternative source` input field in the media dialog.
@@ -67,7 +67,7 @@ This options allows you disable the `Alternative source` input field in the medi
 [discrete#example-2]
 ===== Example
 
-`js
+```js
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "media",
@@ -75,9 +75,9 @@ tinymce.init({
   toolbar: "media",
   media_alt_source: false
 });
-`
+```
 
-[[-2]]
+[[media_dimensions]]
 === `media_dimensions`
 
 This options allows you disable the `Dimensions` input fields in the media dialog.
@@ -91,7 +91,7 @@ This options allows you disable the `Dimensions` input fields in the media dialo
 [discrete#example-2]
 ===== Example
 
-`js
+```js
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "media",
@@ -99,9 +99,9 @@ tinymce.init({
   toolbar: "media",
   media_dimensions: false
 });
-`
+```
 
-[[-2]]
+[[media_filter_html]]
 === `media_filter_html`
 
 This option allows you disable the XSS sanitation filter for video/object elements. Scripts, conditional comments, etc, can't be used within these elements by default for security reasons. If you want to include that and have server side sanitizers or if you trust your users, then you can disable this feature.
@@ -115,7 +115,7 @@ This option allows you disable the XSS sanitation filter for video/object elemen
 [discrete#example-2]
 ===== Example
 
-`js
+```js
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "media",
@@ -123,9 +123,9 @@ tinymce.init({
   toolbar: "media",
   media_filter_html: false
 });
-`
+```
 
-[[-2]]
+[[media_live_embeds]]
 === `media_live_embeds`
 
 When you enable this option users will see a live preview of embedded video content within the editable area, rather than a placeholder image. This means that users can play a video clip, such as YouTube, within the editor.
@@ -141,7 +141,7 @@ This option is enabled by default and accepts URLs input into the source field o
 [discrete#example-2]
 ===== Example
 
-`js
+```js
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "media",
@@ -149,9 +149,9 @@ tinymce.init({
   toolbar: "media",
   media_live_embeds: true
 });
-`
+```
 
-[[-2]]
+[[media_poster]]
 === `media_poster`
 
 This options allows you disable the `Poster` input field in the media dialog.
@@ -165,7 +165,7 @@ This options allows you disable the `Poster` input field in the media dialog.
 [discrete#example-2]
 ===== Example
 
-`js
+```js
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "media",
@@ -173,9 +173,9 @@ tinymce.init({
   toolbar: "media",
   media_poster: false
 });
-`
+```
 
-[[-2]]
+[[media_scripts]]
 === `media_scripts`
 
 This option allows you to embed videos using script elements.
@@ -185,7 +185,7 @@ This option allows you to embed videos using script elements.
 [discrete#example-2]
 ===== Example
 
-`+js
+```js
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "media",
@@ -196,9 +196,9 @@ tinymce.init({
    {filter: 'http://media2.example.com', width: 100, height: 200}
  ]
 });
-+`
+```
 
-[[-2]]
+[[media_url_resolver]]
 === `media_url_resolver`
 
 This option allows you to specify a function that will be used to replace {productname}'s default media embed logic with your own, custom logic.
@@ -216,7 +216,7 @@ If something goes wrong in your function and you want to show an error to the us
 
 The following example simply checks if the url contains some special url and returns an iframe if it does. Otherwise it calls the `resolve` callback with an empty string, falling back to the default media embed logic.
 
-`js
+```js
 tinymce.init({
   selector: "textarea.tinymce",
   plugins: "media",
@@ -231,9 +231,9 @@ tinymce.init({
     }
   }
 });
-`
+```
 
-[[-2]]
+[[video_template_callback]]
 === `video_template_callback`
 
 This option allows you to specify the function that will return the HTML embed code of the video media that you are attempting to insert into {productname}.
@@ -243,7 +243,7 @@ This option allows you to specify the function that will return the HTML embed c
 [discrete#example-2]
 ===== Example
 
-`js
+```js
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "media",
@@ -256,7 +256,7 @@ tinymce.init({
 ' : '') + '</video>';
  }
 });
-`
+```
 
 [[commands]]
 == Commands

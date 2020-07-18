@@ -54,11 +54,11 @@ The `tinycomments_create` function is given a request (req) object as the first 
 
 The done callback needs to take an object of the form:
 
-`js
+```js
 {
   conversationUid: string // the new conversation uid
 }
-`
+```
 
 [[tinycomments_reply]]
 === tinycomments_reply
@@ -75,11 +75,11 @@ The `tinycomments_reply` function is given a request (req) object as the first p
 
 The done callback needs to take an object of the form:
 
-`js
+```js
 {
   commentUid: string // the value of the new comment uid
 }
-`
+```
 
 [[tinycomments_edit_comment]]
 === tinycomments_edit_comment
@@ -97,12 +97,12 @@ The `tinycomments_edit_comment` function is given a request (req) object as the 
 
 The done callback needs to take an object of the form:
 
-`js
+```js
 {
   canEdit: boolean, // whether or not the Edit succeeded
   reason: string? // an optional string explaining why the edit was not allowed (if canEdit is false)
 }
-`
+```
 
 [[tinycomments_delete]]
 === tinycomments_delete
@@ -115,12 +115,12 @@ The `tinycomments_delete` function is given a request (req) object as the first 
 
 The done callback needs to take an object of the form:
 
-`js
+```js
 {
   canDelete: boolean // whether or not the conversation can be deleted
   reason: string? // an optional string explaining why the delete was not allowed (if canDelete is false)
 }
-`
+```
 
 NOTE: Failure to delete due to permissions or business rules is indicated by "false", while unexpected errors should be indicated using the "fail" callback.
 
@@ -133,12 +133,12 @@ The `tinycomments_delete_all` function is given a request (req) object as the fi
 
 The done callback needs to take an object of the form:
 
-`js
+```js
 {
   canDelete: boolean, // whether or not all conversations can be deleted
   reason: string? // an optional string explaining why the deleteAll was not allowed (if canDelete is false)
 }
-`
+```
 
 NOTE: Failure to delete due to permissions or business rules is indicated by "false", while unexpected errors should be indicated using the "fail" callback.
 
@@ -154,12 +154,12 @@ The `tinycomments_delete_comment` function is given a request (req) object as th
 
 The done callback needs to take an object of the form:
 
-`js
+```js
 {
   canDelete: boolean, // whether or not an individual comment can be deleted
   reason: string? // an optional reason explaining why the delete was not allowed (if canDelete is false)
 }
-`
+```
 
 NOTE: Failure to delete due to permissions or business rules is indicated by "false", while unexpected errors should be indicated using the "fail" callback.
 
@@ -180,7 +180,7 @@ The `tinycomments_lookup` function is given a request (req) object as the first 
 
 The done callback needs to take an object of the form:
 
-`js
+```js
 {
  conversation: {
    uid: string, // the uid of the conversation,
@@ -204,7 +204,7 @@ The done callback needs to take an object of the form:
   ]
  }
 }
-`
+```
 
 NOTE: The dates should use https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString[ISO 8601 format]. This can be generated in JavaScript with: `new Date().toISOString()`.
 

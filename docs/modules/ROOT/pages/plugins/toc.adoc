@@ -15,14 +15,14 @@ include::{rootDir}_attributes.adoc[]
 [[example]]
 ===== Example
 
-`js
+```js
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "toc",
   toolbar: "toc",
   menubar: "insert"
 });
-`
+```
 
 _Table of Contents_ will have a simple HTML structure - a wrapper `div` element, a header with _editable_ title and unordered nested list with navigation links. Nesting depth is customisable.
 
@@ -46,7 +46,7 @@ Internally plugin doesn't apply any inline styles. Basic formatting can be added
 [[options]]
 == Options
 
-[[]]
+[[toc_depth]]
 === `toc_depth`
 
 By default headers in the content will be inspected only three levels deep, so - `H1` through `H3`. But it is possible to change this behaviour by setting `toc_depth` to any number in 1-9 range, therefore matching all the headers beginning with `H1` and all the way down to `H9`.
@@ -58,16 +58,16 @@ By default headers in the content will be inspected only three levels deep, so -
 [discrete#example-2]
 ===== Example
 
-`js
+```js
 tinymce.init({
   selector: "textarea",
   plugins: "toc",
   toolbar: "toc",
   toc_depth: 3
 });
-`
+```
 
-[[-2]]
+[[toc_header]]
 === `toc_header`
 
 Table of contents has a header and by default it will be marked up with `H2` tag. With `toc_header` option you can change it to some other tag.
@@ -79,16 +79,16 @@ Table of contents has a header and by default it will be marked up with `H2` tag
 [discrete#example-2]
 ===== Example
 
-`js
+```js
 tinymce.init({
   selector: "textarea",
   plugins: "toc",
   toolbar: "toc",
   toc_header: "div" // case doesn't matter
 });
-`
+```
 
-[[-2]]
+[[toc_class]]
 === `toc_class`
 
 With `toc_class` you can change the class name that gets assigned to the wrapper `div`. Please note that you will have to alter link:{rootDir}advanced/boilerplate-content-css.html[Boilerplate Content CSS]) accordingly.
@@ -100,14 +100,14 @@ With `toc_class` you can change the class name that gets assigned to the wrapper
 [discrete#example-2]
 ===== Example
 
-`js
+```js
 tinymce.init({
   selector: "textarea",
   plugins: "toc",
   toolbar: "toc",
   toc_class: "our-toc"
 });
-`
+```
 
 [[commands]]
 == Commands

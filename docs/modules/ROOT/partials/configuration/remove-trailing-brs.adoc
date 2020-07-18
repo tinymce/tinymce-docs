@@ -14,9 +14,9 @@ https://en.wikipedia.org/wiki/Gecko_(software)[Gecko] and https://en.wikipedia.o
 [discrete#example]
 ===== Example
 
-`js
+```js
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   remove_trailing_brs: false
 });
-`
+```

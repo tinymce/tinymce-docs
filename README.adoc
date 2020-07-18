@@ -37,29 +37,33 @@ The following procedure assists with building (or compiling) the documentation l
 You need the following programs installed on your computer:
 
 * Ruby version 2 or later. To verify the installed version, run:
-`
++
+```
 ruby --version
-`
+```
 
 . Install git, g{pp}, `make`, and the zlib development files. For example:
  ** On Fedora, run:
 +
-`pass:c[
+```
 sudo dnf install git-all gcc-c++ make zlib-devel
-]`
+```
 
  ** On Ubuntu, Debian or their derivatives, run:
-`
++
+```
 sudo apt install git gcc cpp make zlib1g-dev
-`
+```
 . Install Ruby Nokogiri: \https://nokogiri.org/
- `
++
+```
  sudo gem install nokogiri
-`
+```
 . Install Ruby Bundler. Install using:
- `
++
+```
  sudo gem install bundler
-`
+```
 . (optional) Docker
 
 [[windows-users]]
@@ -70,21 +74,25 @@ If you are a Windows user, follow these steps to work on TinyMCE documentation:
 . Install https://gitforwindows.org/[git for Windows].
 . Install https://rubyinstaller.org/downloads/[Ruby+Devkit].
 . Run the following command on a command prompt to install Ruby Bundler:
- `
++
+```
  gem install bundler
-`
+```
 
 [[mac-os-users]]
 ===== Mac OS users
 
 . Ruby version 2 or later is required. Verify the pre-installed version, using:
- `
++
+```
  ruby --version
-`
+```
+
 . Install Ruby Bundler, using:
- `
++
+```
  gem install bundler
-`
+```
 
 [[first-time-set-up]]
 ==== First time set up
@@ -92,26 +100,30 @@ If you are a Windows user, follow these steps to work on TinyMCE documentation:
 Once you have installed any missing prerequisites, in a terminal or on a command prompt:
 
 . Clone the git repository:
- `
++
+```
  git clone git@github.com:tinymce/tinymce-docs.git
-`
+```
+
 . Change directory into the cloned git repository:
- `
++
+```
  cd tinymce-docs
-`
+```
+
 . Run the initialization script to install dependencies and create the required local files in the git repository:
- `
++
+```
  ./_scripts/init.sh
-`
+```
 
 [[run-the-development-version-of-the-documentation]]
 ==== Run the development version of the documentation
 
 To create a development version of the documentation, run:
-
-`
+```
 ./_scripts/serve.sh
-`
+```
 
 Allow the `serve.sh` script to run in the background while you are working on the TinyMCE documentation.
 
@@ -135,48 +147,56 @@ The TinyMCE API documentation is maintained within the https://github.com/tinymc
 
 To install MoxieDoc, run:
 
-`
+```
 npm install -g git://github.com/tinymce/moxiedoc.git
-`
+```
 
 [[run-the-development-version-of-the-documentation-for-the-current-tinymce-version]]
 ===== Run the development version of the documentation for the current TinyMCE version
 
 . Download the TinyMCE version in the `.api-version` file in this project's root directory and extract the API documentation using:
-`
++
+```
  ./_scripts/api-reference.sh
-`
+```
+
 . Start the development server using:
-`
++
+```
  ./_scripts/serve.sh
-`
+```
 
 [[run-the-development-version-of-the-documentation-for-a-local-tinymce-repository]]
 ===== Run the development version of the documentation for a local TinyMCE repository
 
 . Extract the API documentation from a local copy of the TinyMCE repository using:
-`
++
+```
  ./_scripts/api-reference-local.sh <path/to/the/tinymce/repo>
-`
+```
+
 . Start the development server using:
-`
++
+```
  ./_scripts/serve.sh
-`
+```
+
 . To include updates made to the TinyMCE API documentation in the TinyMCE repository, run the `api-reference-local` script:
-`
++
+```
  ./_scripts/api-reference-local.sh <path/to/the/tinymce/repo>
-`
+```
 
 NOTE: The development server does not need to be stopped prior to running the `api-reference-local` script.
 
 [[codepens]]
 === Codepens
 
-Codepens can be added to content using the "codepen.html" include, such as:
+Codepens can be added to content using the "codepen" macro, such as:
 
-`
+```
 codepen::basic-example[]
-`
+```
 
 There are several options for this include file - please see codepen.html for details.
 

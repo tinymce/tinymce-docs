@@ -639,7 +639,7 @@ This is the {productname} Community version changelog. For information about the
 * Added a new `addNestedMenuItem()` UI registry function and changed all nested menu items to use the new registry functions.
 * Added `title` attribute to color swatch colors.
 * Added `anchorbar` component to anchor inline toolbar dialogs to instead of the toolbar.
-* Added support for **toolbar+++<n>+++** and **toolbar array** config options to be squashed into a single toolbar and not create multiple toolbars.+++</n>+++
+* Added support for **toolbar<n>** and **toolbar array** config options to be squashed into a single toolbar and not create multiple toolbars.
 * Added error handling for when `forced_root_block` config option is set to `true`.
 * Added functionality for the `removed_menuitems` config option.
 * Added the ability to use a string to reference menu items in menu buttons and submenu items.

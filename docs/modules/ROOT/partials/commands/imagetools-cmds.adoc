@@ -19,10 +19,10 @@
 
 *Examples*
 
-`js
+```js
 tinymce.activeEditor.execCommand('mceEditImage');
 tinymce.activeEditor.execCommand('mceImageRotateRight');
 tinymce.activeEditor.execCommand('mceImageRotateLeft');
 tinymce.activeEditor.execCommand('mceImageFlipVertical');
 tinymce.activeEditor.execCommand('mceImageFlipHorizontal');
-`
+```

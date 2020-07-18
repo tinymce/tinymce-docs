@@ -27,9 +27,9 @@
 
 To install the `tinymce-vue` package and save it to your `package.json`.
 
-`
+```
 $ npm install --save @tinymce/tinymce-vue
-`
+```
 
 [[using-the-tinymce-vue-js-integration]]
 === Using the TinyMCE Vue.js integration
@@ -37,38 +37,38 @@ $ npm install --save @tinymce/tinymce-vue
 . Load the component.
  ** For bundle loader users (such as `webpack`, `rollup`, or `browserify`):
 +
-`js
-  // es modules
-  import Editor from '@tinymce/tinymce-vue';
-  // commonjs require
-  // NOTE: default needed after require
-  var Editor = require('@tinymce/tinymce-vue').default;
- `
+```js
+// es modules
+import Editor from '@tinymce/tinymce-vue';
+// commonjs require
+// NOTE: default needed after require
+var Editor = require('@tinymce/tinymce-vue').default;
+```
 
  ** To load `tinymce-vue` in a HTML file:
 +
-`html
-  <script src="/path/to/tinymce-vue.min.js"></script>
- `
+```html
+<script src="/path/to/tinymce-vue.min.js"></script>
+```
 . Add the editor to the `components` property of the app:
 +
-`+js
- // This might look different depending on how you have set up your app
- // but the important part is the components property
- var app = new Vue({
-   el: '#app',
-   data: { /* Your data */ },
-   components: {
-     'editor': Editor // <- Important part
-   },
-   methods: { /* Your methods */}
- })
-+`
+```js
+// This might look different depending on how you have set up your app
+// but the important part is the components property
+var app = new Vue({
+  el: '#app',
+  data: { /* Your data */ },
+  components: {
+    'editor': Editor // <- Important part
+  },
+  methods: { /* Your methods */}
+})
+```
 
 . Add the `<editor>` tag to the `template`
 +
-```html+++<editor api-key="API_KEY" :init="{plugins: 'wordcount'}">++++++</editor>+++
-+
+```html
+<editor api-key="API_KEY" :init="{plugins: 'wordcount'}" />
 ```
 
 [[configuring-the-editor]]
@@ -76,7 +76,7 @@ $ npm install --save @tinymce/tinymce-vue
 
 The editor accepts the following properties:
 
-`xml
+```xml
 <editor
   api-key="your-api-key"
   cloud-channel="{productmajorversion}"
@@ -91,11 +91,11 @@ The editor accepts the following properties:
   toolbar=""
   value=""
 />
-`
+```
 
 None of the configuration properties are *required* for `tinymce-vue` to work. Specify a {cloudname} API key using `api-key` to remove the `+This domain is not registered...+` warning message.
 
-[[]]
+[[api-key]]
 ==== `api-key`
 
 {cloudname} API key. Required for deployments using the {cloudname} to provide the {productname} editor.
@@ -109,11 +109,13 @@ To register for a {cloudname} API key, visit the link:{accountsignup}[sign-up pa
 [[example]]
 ===== Example: `api-key`
 
-```xml+++<editor api-key="your-api-key">++++++</editor>+++
-
+```xml
+<editor
+  api-key="your-api-key"
+/>
 ```
 
-[[-2]]
+[[cloud-channel]]
 ==== `cloud-channel`
 
 *Default value:* `{productmajorversion}`
@@ -128,12 +130,17 @@ Changes the {productname} build used for the editor to one of the following {clo
 
 Such as:
 
-```js+++<editor api-key="your-api-key" cloud-channel="{productmajorversion}-dev" :init="pass:[{] /* your other settings */ pass:[}]">++++++</editor>+++
-
+```js
+<editor
+  api-key="your-api-key"
+  cloud-channel="{{site.productmajorversion}}-dev"
+  :init="{ /* your other settings */ }"
+/>
 ```
+
 For information {productname} development channels, see: link:{rootDir}cloud-deployment-guide/editor-plugin-version.html#devtestingandstablereleases[Specifying the {productname} editor version deployed from Cloud - dev, testing, and stable releases].
 
-[[-2]]
+[[disabled]]
 ==== `disabled`
 
 The `disabled` property can dynamically switch the editor between a "disabled" (read-only) mode (`true`) and the standard editable mode (`false`).
@@ -145,13 +152,13 @@ The `disabled` property can dynamically switch the editor between a "disabled" (
 [[example-2]]
 ===== Example: `disabled`
 
-`xml
+```xml
 <editor
   :disabled=true
 />
-`
+```
 
-[[-2]]
+[[id]]
 ==== `id`
 
 An id for the editor. Used for retrieving the editor instance using the `tinymce.get('ID')` method. Defaults to an automatically generated https://tools.ietf.org/html/rfc4122[UUID].
@@ -163,34 +170,38 @@ An id for the editor. Used for retrieving the editor instance using the `tinymce
 [[example-2]]
 ===== Example: `id`
 
-```xml+++<editor id="uuid">++++++</editor>+++
-
+```xml
+<editor
+  id="uuid"
+/>
 ```
 
-[[-2]]
+[[init]]
 ==== `init`
 
 Object sent to the `tinymce.init` method used to initialize the editor.
 
 For information on the {productname} selector (`tinymce.init`), see: link:{rootDir}general-configuration-guide/basic-setup.html[Basic setup].
 
-*Default value:* `"pass:[{] pass:[}]"`
+*Default value:* `+"{ }"+`
 
 *Type:* Object
 
 [[example-2]]
 ===== Example: `init`
 
-```xml+++<editor :init="pass:[{]
+```xml
+<editor
+  :init="{
     plugins: [
      'lists link image paste help wordcount'
     ],
     toolbar: 'undo redo | formatselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | help'
-  pass:[}]">++++++</editor>+++
-
+  }"
+/>
 ```
 
-[[-2]]
+[[initial-value]]
 ==== `initial-value`
 
 Initial content of the editor when the editor is initialized.
@@ -202,11 +213,13 @@ Initial content of the editor when the editor is initialized.
 [[example-2]]
 ===== Example: `initial-value`
 
-```xml+++<editor initial-value="Once upon a time...">++++++</editor>+++
-
+```xml
+<editor
+  initial-value="Once upon a time..."
+/>
 ```
 
-[[-2]]
+[[inline]]
 ==== `inline`
 
 Used to set the editor to inline mode. Using `<editor :inline=true />` is the same as setting `{inline: true}` in the {productname} selector (`tinymce.init`).
@@ -220,13 +233,13 @@ For information on inline mode, see: link:{rootDir}configure/editor-appearance.h
 [[example-2]]
 ===== Example: `inline`
 
-`xml
+```xml
 <editor
   :inline=true
 />
-`
+```
 
-[[-2]]
+[[model-events]]
 ==== `model-events`
 
 Sets the trigger events for <<forminputbindingsv-model,v-model events>>.
@@ -240,11 +253,13 @@ For a list of available {productname} events, see: link:{rootDir}advanced/events
 [[example-2]]
 ===== Example: `model-events`
 
-```xml+++<editor model-events="change keydown blur focus paste">++++++</editor>+++
-
+```xml
+<editor
+  model-events="change keydown blur focus paste"
+/>
 ```
 
-[[-2]]
+[[output-format]]
 ==== `output-format`
 
 Used to specify the format of the content emitted via the `input` event. This affects the format of the content used in conjunction with data binding.
@@ -258,11 +273,13 @@ Used to specify the format of the content emitted via the `input` event. This af
 [[example-2]]
 ===== Example: `output-format`
 
-```xml+++<editor output-format="text">++++++</editor>+++
-
+```xml
+<editor
+  output-format="text"
+/>
 ```
 
-[[-2]]
+[[plugins]]
 ==== `plugins`
 
 Used to include plugins for the editor. Using `<editor plugins="lists code" />` is the same as setting `{plugins: 'lists code'}` in the {productname} selector (`tinymce.init`).
@@ -274,11 +291,13 @@ For information on adding plugins to {productname}, see: link:{rootDir}plugins.h
 [[example-2]]
 ===== Example: `plugins`
 
-```xml+++<editor plugins="lists code">++++++</editor>+++
-
+```xml
+<editor
+  plugins="lists code"
+/>
 ```
 
-[[-2]]
+[[tag-name]]
 ==== `tag-name`
 
 Only valid when <<inline,`<editor :inline=true />`>>. Used to define the HTML element for the editor in inline mode.
@@ -290,14 +309,14 @@ Only valid when <<inline,`<editor :inline=true />`>>. Used to define the HTML el
 [[example-2]]
 ===== Example: `tag-name`
 
-`xml
+```xml
 <editor
   :inline=true
   tag-name="my-custom-tag"
 />
-`
+```
 
-[[-2]]
+[[toolbar]]
 ==== `toolbar`
 
 Used to set the toolbar for the editor. Using `<editor toolbar="bold italic" />` is the same as setting `{toolbar: 'bold italic'}` in the {productname} selector (`tinymce.init`).
@@ -311,11 +330,14 @@ For information setting the toolbar for {productname}, see: link:{rootDir}config
 [[example-2]]
 ===== Example: `toolbar`
 
-```xml+++<editor plugins="code" toolbar="bold italic underline code">++++++</editor>+++
-
+```xml
+<editor
+  plugins="code"
+  toolbar="bold italic underline code"
+/>
 ```
 
-[[-2]]
+[[tinymce-script-src]]
 ==== `tinymce-script-src`
 
 Use the `tinymce-script-src` prop to specify an external version of TinyMCE to lazy load.
@@ -325,8 +347,10 @@ Use the `tinymce-script-src` prop to specify an external version of TinyMCE to l
 [[example-2]]
 ===== Example: `tinymce-script-src`
 
-```xml+++<editor tinymce-script-src="/path/to/tinymce.min.js">++++++</editor>+++
-
+```xml
+<editor
+  tinymce-script-src="/path/to/tinymce.min.js"
+/>
 ```
 
 [[form-input-bindings]]
@@ -334,8 +358,8 @@ Use the `tinymce-script-src` prop to specify an external version of TinyMCE to l
 
 The `v-model` directive can be used to create a two-way data binding. For example:
 
-```html+++<editor v-model="content">++++++</editor>+++
-
+```html
+<editor v-model="content" />
 ```
 
 For information on `v-model` and form input bindings, see: https://vuejs.org/v2/guide/forms.html[Vue.js documentation - Form Input Bindings].
@@ -345,9 +369,9 @@ For information on `v-model` and form input bindings, see: https://vuejs.org/v2/
 
 Functions can be bound to editor events, such as:
 
-`html
+```html
 <editor @onSelectionChange="handlerFunction" />
-`
+```
 
 When the handler is called (*handlerFunction* in this example), it is called with two arguments:
 

@@ -1,10 +1,9 @@
 [[toolbar_mode]]
-== toolbar_mode
+== toolbar_mode [[toolbar_drawer]]
 
-{% if site.productminorversion < 6.1 %}
-+++<a class="anchor" id="toolbar_drawer">++++++</a>+++
-> *Note*: The `toolbar_drawer` option was deprecated with the release of {productname} 5.2. The `toolbar_drawer` option was renamed to `toolbar_mode`. This change was made to reflect the range of settings available for this option.
-{% endif %}
+ifeval::[{productminorversion} < 6.1]
+NOTE: The `toolbar_drawer` option was deprecated with the release of {productname} 5.2. The `toolbar_drawer` option was renamed to `toolbar_mode`. This change was made to reflect the range of settings available for this option.
+endif::[]
 
 The `toolbar_mode` option is used to extend the toolbar to accommodate the overflowing toolbar buttons. This option is useful for small screens or small editor frames.
 
@@ -40,12 +39,12 @@ image::{rootDir}/images/floating_toolbar.png[**Floating Toolbar**]
 
 Use the following settings to configure a Floating toolbar:
 
-`js
+```js
 tinymce.init({
     selector: "textarea",
     toolbar_mode: 'floating'
 });
-`
+```
 
 [[sliding]]
 ==== Sliding
@@ -59,12 +58,12 @@ image::{rootDir}/images/sliding_toolbar.png[**Sliding Toolbar**]
 
 Use the following settings to configure a Sliding toolbar:
 
-`js
+```js
 tinymce.init({
     selector: "textarea",
     toolbar_mode: 'sliding'
 });
-`
+```
 
 [[scrolling]]
 ==== Scrolling
@@ -82,12 +81,12 @@ image::{rootDir}/images/scrolling_toolbar.png[**Scrolling Toolbar**]
 
 Use the following settings to configure a Scrolling toolbar:
 
-`js
+```js
 tinymce.init({
     selector: "textarea",
     toolbar_mode: 'scrolling'
 });
-`
+```
 
 [[wrap]]
 ==== Wrap
@@ -101,9 +100,9 @@ image::{rootDir}/images/wrapped_toolbar.png[**Wrapped Toolbar**]
 
 Use the following settings to configure a wrapped toolbar:
 
-`js
+```js
 tinymce.init({
     selector: "textarea",
     toolbar_mode: 'wrap'
 });
-`
+```

@@ -8,12 +8,12 @@ The *invalid_elements* option instructs the editor to remove specific elements w
 [discrete#example]
 ===== Example
 
-`js
+```js
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   invalid_elements : 'strong,em'
 });
-`
+```
 
 CAUTION: This option doesn't accept attributes in the list, only elements.
 

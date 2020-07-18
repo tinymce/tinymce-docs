@@ -22,27 +22,29 @@ IMPORTANT: When `a11y_advanced_options` is set to `true`, link:{rootDir}plugins/
 [discrete#example-a11y_advanced_options]
 ==== Example: a11y_advanced_options
 
-{% if includedSection == 'imagePlugin' %}
-`js
+ifeval::["{includedSection}" == "imagePlugin"]
+```js
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'image',
   a11y_advanced_options: true
 });
-`
-{% elsif includedSection == 'a11yPlugin' %}
-`js
+```
+endif::[]
+ifeval::["{includedSection}" == "a11yPlugin"]
+```js
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'a11ychecker',
   a11y_advanced_options: true
 });
-`
-{% else %}
-`js
+```
+endif::[]
+ifndef::includedSection[]
+```js
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   a11y_advanced_options: true
 });
-`
-{% endif %}
+```
+endif::[]

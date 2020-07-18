@@ -83,10 +83,9 @@ When the example.js file is present, the link to the external codepen site is di
 {% comment %} Create and assign a CSS codeblock to codepen_css_preview {% endcomment %}
 {% capture codepen_css_preview %}
 ++++
-[source,css]
-----
+```css
 {{ codepen_css }}
-----
+```
 ++++
 {% endcapture %}
 
@@ -95,20 +94,18 @@ When the example.js file is present, the link to the external codepen site is di
 {% comment %} Create and assign a HTML codeblock to codepen_html_preview {% endcomment %}
 {% capture codepen_html_preview %}
 ++++
-[source,html]
-----
+```html
 {{ codepen_html }}
-----
+```
 ++++
 {% endcapture %}
 
 {% comment %} Create and assign a JS codeblock to codepen_js_preview {% endcomment %}
 {% capture codepen_js_preview %}
 ++++
-[source,js]
-----
+```js
 {{ example_js }}
-----
+```
 ++++
 {% endcapture %}
 

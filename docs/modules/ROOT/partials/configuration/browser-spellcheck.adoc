@@ -11,11 +11,11 @@ This option configures {productname} to use the browser's native spell checker.
 
 *Possible Values:* `true`, `false`
 
-`js
+```js
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   browser_spellcheck: true
 });
-`
+```
 
 For more information about spell checking in {productname}, see link:{rootDir}general-configuration-guide/spell-checking.html[this page] in the General-configuration-guide/ guide.

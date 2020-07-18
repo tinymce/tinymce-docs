@@ -9,9 +9,9 @@ This option enables you to control whether {productname} is to be smart and rest
 
 *Possible Values:* `true`, `false`
 
-`js
+```js
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   convert_urls: false
 });
-`
+```

@@ -49,8 +49,7 @@ The following code snippet sets {productname}'s language to Chinese and the text
 
 link:{gettiny}/language-packages/[Download the Chinese language] pack to test this functionality. Install a _local instance_ of {productname} from the link:{gettiny}[downloads page]. Follow the link:{rootDir}general-configuration-guide/advanced-install/#self-hostedinstall[self-hosted install instructions].
 
-[source,html]
-----
+```html
 <!DOCTYPE html>
 <html>
 <head>
@@ -70,4 +69,4 @@ link:{gettiny}/language-packages/[Download the Chinese language] pack to test th
   </form>
 </body>
 </html>
-----
+```

@@ -16,10 +16,9 @@ jake
 
 Include this line of code in the `<head>` of your HTML page:
 
-[source,html]
-----
+```html
 <script src="/path/to/tinymce.min.js"></script>
-----
+```
 
 [[step-2-initialize-tinymce-as-part-of-a-web-form]]
 === Step 2: Initialize TinyMCE as part of a web form
@@ -30,8 +29,7 @@ Since {{site.productname}} lets you identify replaceable elements via a CSS sele
 
 In this example, let's replace `<textarea id='mytextarea'>` with a {{site.productname}} editor instance by passing the selector `'#mytextarea'` to `tinymce.init()`.
 
-[source,html]
-----
+```html
 <!DOCTYPE html>
 <html>
 <head>
@@ -50,7 +48,7 @@ In this example, let's replace `<textarea id='mytextarea'>` with a {{site.produc
   </form>
 </body>
 </html>
-----
+```
 
 [[step-3-saving-content-with-a-form-post]]
 === Step 3: Saving content with a form POST
@@ -62,8 +60,7 @@ When the `<form>` is submitted the {{site.productname}} editor mimics the behavi
 
 When using package managers you might have local {{site.productname}} add-ons in your project such as plugins or language packs. Load these from your project location rather than from inside the package using these configuration options:
 
-[source,js]
-----
+```js
 tinymce.init({
   selector: 'textarea',
   language: 'sv',
@@ -73,7 +70,7 @@ tinymce.init({
     'myplugin': '/js/myplugin/plugin.min.js'
   }
 });
-----
+```
 
 [NOTE]
 ====

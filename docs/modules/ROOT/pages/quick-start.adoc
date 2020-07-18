@@ -15,10 +15,9 @@ include::{rootDir}_attributes.adoc[]
 
 Include the following line of code in the `<head>` of a HTML page.
 
-[source,html]
-----
+```html
 <script src="{cdnurl}" referrerpolicy="origin"></script>
-----
+```
 
 [[step-2-initialize-tinymce-as-part-of-a-web-form]]
 == Step 2: Initialize TinyMCE as part of a web form
@@ -29,8 +28,7 @@ For example: To replace `<textarea id="mytextarea">` with a {productname} {produ
 
 For example:
 
-[source,html]
-----
+```html
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -54,7 +52,7 @@ For example:
     </form>
   </body>
 </html>
-----
+```
 
 Adding this content to a HTML file and opening it in a web browser will load a TinyMCE editor, such as:
 

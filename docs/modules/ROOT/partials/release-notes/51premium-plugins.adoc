@@ -74,9 +74,9 @@ The {productname} 5.1 release includes *PowerPaste* 5.2.0.
 *PowerPaste* _5.2_ *reverses the _5.0_ change* and includes a new `powerpaste_clean_filtered_inline_elements` setting. This setting accepts a list of inline style elements to be filtered. These inline elements will be filtered on `clean` or `Remove Formatting` paste.
 
 To retain the _5.0_ default inline style element filter, add the following setting to `tinymce.init`:
-`js
+```js
 powerpaste_clean_filtered_inline_elements: 'strong,em,b,i,u,strike,sup,sub,font'
-`
+```
 
 For information on `powerpaste_clean_filtered_inline_elements`, see: link:{rootDir}plugins/powerpaste.html#powerpaste_clean_filtered_inline_elements[PowerPaste - `powerpaste_clean_filtered_inline_elements`].
 

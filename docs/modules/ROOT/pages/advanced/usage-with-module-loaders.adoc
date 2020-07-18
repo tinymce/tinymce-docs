@@ -73,27 +73,27 @@ The quickest way to get started is to copy the skin that comes packaged with {pr
 
 *MacOS and Linux*
 
-`
+```
 cp -r node_modules/tinymce/skins skins
-`
+```
+
 *Windows*
 
-`
+```
 xcopy /I /E node_modules/tinymce/skins skins
-`
+```
 
 [[webpack-file-loader]]
 === Webpack file-loader
 
 Another option when using Webpack is to use the https://github.com/webpack/file-loader[file loader] together with the https://github.com/webpack/docs/wiki/context[require.context] function to copy the skins directory by adding these lines before the call to the {productname} `init` function:
-
-`javascript
+```javascript
 require.context(
   'file-loader?name=[path][name].[ext]&context=node_modules/tinymce!tinymce/skins',
   true,
   /.*/
 );
-`
+```
 
 This copies the skins directory from `node_modules/tinymce` to your output directory as defined in your Webpack configuration. This is useful as you can easily move the output directory of your build without having to copy over the skins folder manually - webpack will take care of it for you.
 
@@ -104,7 +104,7 @@ Another popular JS minification tool, https://github.com/mishoo/UglifyJS2[Uglify
 
 This can happen when it is used directly or through module bundler. In https://webpack.github.io/[Webpack], `-p` CLI option cannot be used to bundle {productname}, and instead, you'll need to configure minification explicitly:
 
-`+javascript
+```+javascript
 plugins: [
   new webpack.optimize.UglifyJsPlugin({
       /*...*/
@@ -113,4 +113,4 @@ plugins: [
       }
   })
 ]
-+`
+```

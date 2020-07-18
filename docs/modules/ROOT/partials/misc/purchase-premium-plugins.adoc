@@ -1,47 +1,73 @@
-{% if extensionType != 'Packs' %}
+ifeval::["{extensionType}" != "Packs"]
 :extensionType: plugin
-{% endif %}
-{% if pluralExtensionType == true %}
+endif::[]
+ifeval::[{pluralExtensionType} == true]
 :isAre: are
-{% else %}
+endif::[]
+ifeval::[{pluralExtensionType} != true]
 :isAre: is
-{% endif %}
-## Getting started with {% if pluginname != 'Tiny Drive' %}{productname}{% endif %} {\{pluginname}}
+endif::[]
+
+ifeval::["{pluginname}" != "Tiny Drive"]
+== Getting started with {productname} {pluginname}
+endif::[]
+ifeval::["{pluginname}" == "Tiny Drive"]
+== Getting started with {pluginname}
+endif::[]
 
 [[creating-an-account]]
 === Creating an account
 
-Try the *{\{pluginname}} {\{extensionType}}* and the {cloudname} with a free link:{accountsignup}[{accountpage}]. New accounts receive a 30-day trial of the {companyname} link:{plugindirectory}[premium plugins], skins, and icon packs; with no credit card information or commitment required.
+Try the *{pluginname} {extensionType}* and the {cloudname} with a free link:{accountsignup}[{accountpage}]. New accounts receive a 30-day trial of the {companyname} link:{plugindirectory}[premium plugins], skins, and icon packs; with no credit card information or commitment required.
 
-[[get-if-pluginname-tiny-drive-site-productname-endif-pluginname]]
-=== Get {% if pluginname != 'Tiny Drive' %}{productname}{% endif %} {\{pluginname}}
+ifeval::["{pluginname}" != "Tiny Drive"]
+=== Get {productname} {pluginname}
+endif::[]
+ifeval::["{pluginname}" == "Tiny Drive"]
+=== Get {pluginname}
+endif::[]
 
-{% if pluginminimumplan != 'enterprise' %}
-The *{\{pluginname}} {\{extensionType}}* {\{isAre}} included in the following {cloudname} plans:
-{% else %}
-The *{\{pluginname}} {\{extensionType}}* {\{isAre}} included in link:{pricingpage}[{enterpriseplan}].
-{% endif %}
+ifeval::["{pluginminimumplan}" != "enterprise"]
+The *{pluginname} {extensionType}* {isAre} included in the following {cloudname} plans:
+endif::[]
+ifeval::["{pluginminimumplan}" == "enterprise"]
+The *{pluginname} {extensionType}* {isAre} included in link:{pricingpage}[{enterpriseplan}].
+endif::[]
 
-{% case pluginminimumplan %}
-{% when 'tierone' %}- The link:{pricingpage}[{tieroneplan}].
-{% when 'tierone' or 'tiertwo' %}- The link:{pricingpage}[{tiertwoplan}].
-{% when 'tierone' or 'tiertwo' or 'tierthree' %}- The link:{pricingpage}[{tierthreeplan}].
-- link:{pricingpage}[{enterpriseplan}].
-{% endcase %}
+ifeval::["{pluginminimumplan}" == "tierone"]
+* The link:{pricingpage}[{tieroneplan}].
+* The link:{pricingpage}[{tiertwoplan}].
+* The link:{pricingpage}[{tierthreeplan}].
+* link:{pricingpage}[{enterpriseplan}].
+endif::[]
+ifeval::["{pluginminimumplan}" == "tiertwo"]
+* The link:{pricingpage}[{tiertwoplan}].
+* The link:{pricingpage}[{tierthreeplan}].
+* link:{pricingpage}[{enterpriseplan}].
+endif::[]
+ifeval::["{pluginminimumplan}" == "tierthree"]
+* The link:{pricingpage}[{tierthreeplan}].
+* link:{pricingpage}[{enterpriseplan}].
+endif::[]
 
-{% if pluginminimumplan == 'tiertwo' or pluginminimumplan == 'tierthree' %}
+
+ifeval::["{pluginminimumplan}" == "tiertwo"]
 A 14-day free trial is also available for the {tiertwoplan} and the {tierthreeplan}.
-{% elsif pluginminimumplan == 'tierthree' %}
-A 14-day free trial is available for the {tierthreeplan}.
-{% endif %}
+endif::[]
+ifeval::["{pluginminimumplan}" == "tierthree"]
+A 14-day free trial is also available for the {tiertwoplan} and the {tierthreeplan}.
+endif::[]
 
 [[further-information]]
 == Further information
 
 For information on:
 
-* {cloudname} plans, see: link:{pricingpage}[{companyname} Pricing Plans].{% if extensionType == 'Packs' %}
+* {cloudname} plans, see: link:{pricingpage}[{companyname} Pricing Plans].
+ifeval::["{extensionType}" == "Packs"]
 * Enabling premium skins, see: link:{rootDir}configure/editor-appearance.html#skin[The `skin` setting].
-* Enabling premium icon packs, see: link:{rootDir}configure/editor-appearance.html#icons[The `icons` setting].{% else %}
-* Configuring the *{\{pluginname}} {\{extensionType}}*, see: link:{rootDir}plugins/{plugindocspage}.html[The {\{pluginname}} {\{extensionType}} documentation].
-{% endif %}
+* Enabling premium icon packs, see: link:{rootDir}configure/editor-appearance.html#icons[The `icons` setting].
+endif::[]
+ifeval::["{extensionType}" != "Packs"]
+* Configuring the *{pluginname} {extensionType}*, see: link:{rootDir}plugins/{plugindocspage}.html[The {pluginname} {extensionType} documentation].
+endif::[]

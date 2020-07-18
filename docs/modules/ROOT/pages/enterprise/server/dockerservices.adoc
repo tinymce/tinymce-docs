@@ -48,11 +48,13 @@ The following sections assist with containerizing the {productname} services for
 Windows Users should open a Bash command line as the Administrator User.
 . Extract the contents of the `.zip` file, such as:
 +
-`sh
- unzip TinyMCE-Premium_latest.zip -d tinymce-selfhosted
-`
- The structure of the extracted files will be:
- `sh
+```js
+unzip TinyMCE-Premium_latest.zip -d tinymce-selfhosted
+```
++
+The structure of the extracted files will be:
++
+```sh
  tinymce-selfhosted/
  ├── tinymce/
  └── tinymce-services/
@@ -63,13 +65,13 @@ Windows Users should open a Bash command line as the Administrator User.
      ├── ephox-spelling-docker-starter-kit.zip
      ├── ephox-spelling.war
      └── version.txt
-`
+```
 
 . Navigate into the `tinymce-services` folder.
 +
-`sh
- cd tinymce-selfhosted/tinymce-services/
-`
+```js
+cd tinymce-selfhosted/tinymce-services/
+```
 
 Proceed to setting up and deploying the containerized services:
 

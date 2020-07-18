@@ -15,13 +15,13 @@ This plugin adds a save button to the {productname} toolbar, which will submit t
 [[example]]
 ===== Example
 
-`js
+```js
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "save",
   toolbar: "save"
 });
-`
+```
 
 *Error messages*
 
@@ -29,22 +29,22 @@ The `"Error: Form submit field collision."` error message will appear if you cal
 
 So replace this:
 
-```html+++<form>++++++<button name="submit">++++++</button>++++++</form>+++
-
+```html
+<form><button name="submit"></button></form>
 ```
 
 With this:
 
-```html+++<form>++++++<button name="submitbtn">++++++</button>++++++</form>+++
-
+```html
+<form><button name="submitbtn"></button></form>
 ```
 
 [[options]]
-=== Options
+== Options
 
 These settings affect the execution of the `save` plugin. Callbacks that will execute after saving the content or canceling saving the content are included in this section. In addition, a setting that will disable the save button when no modifications have been made to the content is available here.
 
-[[]]
+[[save_enablewhendirty]]
 === `save_enablewhendirty`
 
 This option allows you to disable the save button until modifications have been made to the content of the editor. This option is enabled by default.
@@ -54,16 +54,16 @@ This option allows you to disable the save button until modifications have been 
 [discrete#example-2]
 ===== Example
 
-`js
+```js
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "save",
   toolbar: "save",
   save_enablewhendirty: true
 });
-`
+```
 
-[[-2]]
+[[save_oncancelcallback]]
 === `save_oncancelcallback`
 
 This option allows you to specify the function that will be executed when the cancel button/command is invoked.
@@ -73,16 +73,16 @@ This option allows you to specify the function that will be executed when the ca
 [discrete#example-2]
 ===== Example
 
-`js
+```js
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "save",
   toolbar: "save",
   save_oncancelcallback: function () { console.log('Save canceled'); }
 });
-`
+```
 
-[[-2]]
+[[save_onsavecallback]]
 === `save_onsavecallback`
 
 This option allows you to specify the function that will be executed when the save button/command is invoked.
@@ -92,14 +92,14 @@ This option allows you to specify the function that will be executed when the sa
 [discrete#example-2]
 ===== Example
 
-`js
+```js
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "save",
   toolbar: "save",
   save_onsavecallback: function () { console.log('Saved'); }
 });
-`
+```
 
 [[commands]]
 == Commands

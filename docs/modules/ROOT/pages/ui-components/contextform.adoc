@@ -11,12 +11,12 @@ A context form consists of an input field, and a series of related buttons. Cont
 Context forms are a generalisation of the `Insert Link` form that existed in the original link:{url}/docs-4x/themes/inlite/#quicklink[inlite] theme from TinyMCE 4.
 
 [[registering-a-context-form]]
-=== Registering a context form
+== Registering a context form
 
 A context form is registered by calling the `addContextForm` API in the registry. The specification of a context form is separated into two parts:
 
 [[launch]]
-=== Launch
+== Launch
 
 The button strings for launching a context form is `+form:${name}+` where name is the registered name of the context form (e.g. form:link).
 
@@ -32,17 +32,17 @@ The Launch specification. This relates to what the button that launches this for
 |===
 
 [[launching-context-forms-from-a-context-toolbar]]
-==== Launching context forms from a context toolbar
+=== Launching context forms from a context toolbar
 
 If a registered context form has a `launch` setting, then it can be launched from a context toolbar. The name of item will be `+form:${name}+` (e.g. 'form:link'). When the user presses this button, the toolbar will change into the specified context form. If you the user presses `Esc` in a context form that was launched through a context toolbar, they will be returned to the original context toolbar.
 
 [[launching-a-context-form-programmatically]]
-==== Launching a context form programmatically
+=== Launching a context form programmatically
 
 There is an `editor` event called `contexttoolbar-show` that can be fired to show a context form at the current selection. The event takes a parameter `toolbarKey` which specifies the name of the registered context form or context toolbar to show.
 
 [[form]]
-=== Form
+== Form
 
 This relates to the form itself. The form specifications are:
 
@@ -71,20 +71,21 @@ This relates to the form itself. The form specifications are:
 | This is a list of the items to show in the context form. They can be either `contextformbutton` or `contextformtogglebutton`.
 |===
 
+:contextItemType: form
 include::{partialsDir}context/positioning.adoc[]
 
 [[context-form-buttons]]
-=== Context form buttons
+== Context form buttons
 
 Unlike normal context toolbar buttons, Context form buttons are not registered beforehand. Instead, you need to define each button completely in the `commands` section.
 
 [[contextformbutton]]
-==== contextformbutton
+=== Context form button
 
 The definition of a context form button is very similar to the definition of a normal toolbar button. The main difference is that the action is slightly different (as it will relate to the form), and the type is `contextformbutton` instead of `button`. The following is the full list of options:
 
 [[type-contextformtogglebutton]]
-===== type: 'contextformtogglebutton';
+==== type: 'contextformtogglebutton';
 
 |===
 | Name | Value | Requirement | Description
@@ -92,7 +93,7 @@ The definition of a context form button is very similar to the definition of a n
 | primary
 | boolean;
 | Optional
-| This will activate the button on +++<enter>+++in the input form.+++</enter>+++
+| This will activate the button on <enter> in the input form.
 
 | onAction
 | (formApi, togglebuttonApi) \=> void;
@@ -133,12 +134,12 @@ The definition of a context form button is very similar to the definition of a n
 Where the `buttonApi` is the same as a regular toolbar button and `FormApi` has (getValue: () \=> string, hide: () \=> void)
 
 [[context-form-toggle-button]]
-==== Context form toggle button
+=== Context form toggle button
 
 The context form toggle button is very similar to the a normal toolbar toggle button. The main difference is that the action is slightly different (as it will relate to the form), and the type is `contextformtogglebutton`, instead of `togglebutton`. The following is the full list of options:
 
 [[type-contextformtoggleutton]]
-===== type: 'contextformtoggleutton';
+==== type: 'contextformtoggleutton';
 
 |===
 | Name | Value | Requirement | Description
@@ -146,7 +147,7 @@ The context form toggle button is very similar to the a normal toolbar toggle bu
 | primary
 | boolean;
 | Optional
-| This will activate the button on +++<enter>+++in the input form.+++</enter>+++
+| This will activate the button on <enter> in the input form.
 
 | onAction
 | (formApi, togglebuttonApi) \=> void;
@@ -187,7 +188,7 @@ The context form toggle button is very similar to the a normal toolbar toggle bu
 Where the `toggleButtonApi` is the same as a regular toolbar toggle button.
 
 [[formapi]]
-==== formApi
+== Form API
 
 Both `contextformbutton` and `contextformtogglebutton` are passed `formApi` in their `onAction` callback. The `formApi` has two functions:
 
@@ -202,7 +203,7 @@ Both `contextformbutton` and `contextformtogglebutton` are passed `formApi` in t
 |===
 
 [[example-configuration]]
-=== Example configuration
+== Example configuration
 
 This example shows how the link plugin adds the standard link context form. The context form will show whenever any content is selected.
 

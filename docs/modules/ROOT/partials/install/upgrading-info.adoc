@@ -3,8 +3,10 @@
 
 The procedure for upgrading to the latest version of {productname} {productmajorversion} depends on the deployment type.
 
-* <<upgradingtinycloud,Upgrading Tiny Cloud>>.{% if enterprise != true %}
-* <<#upgradingtinymceself-hostedusingapackagemanager,Upgrading TinyMCE Self-hosted using a package manager>>.{% endif %}
+* <<upgradingtinycloud,Upgrading Tiny Cloud>>.
+ifndef::enterprise[]
+* <<#upgradingtinymceself-hostedusingapackagemanager,Upgrading TinyMCE Self-hosted using a package manager>>.
+endif::[]
 * <<upgradingtinymceself-hostedmanually,Upgrading TinyMCE Self-hosted manually>>.
 
 [[upgrading-tiny-cloud]]
@@ -12,7 +14,7 @@ The procedure for upgrading to the latest version of {productname} {productmajor
 
 {cloudname} provides the latest enterprise version of {productname}. For information on configuring {cloudname}, see: link:{rootDir}cloud-deployment-guide.html[the Cloud deployment guide].
 
-{% if enterprise != true %}
+ifndef::enterprise[]
 
 [[upgrading-tinymce-self-hosted-using-a-package-manager]]
 === Upgrading TinyMCE Self-hosted using a package manager
@@ -29,43 +31,48 @@ Select from the following package managers.
 ==== Yarn
 
 To upgrade to {productname} {productminorversion} using Yarn, run:
-`sh
+[source,js,subs="+attributes"]
+----
 $ yarn upgrade {prodnamecode}
-`
+----
 
 [[npm]]
 ==== npm
 
 To upgrade to {productname} {productminorversion} using npm, run:
-`sh
+[source,js,subs="+attributes"]
+----
 $ npm install {prodnamecode}@latest --save
-`
+----
 
 [[composer]]
 ==== Composer
 
 To upgrade to {productname} {productminorversion} using Composer, run:
-`sh
+[source,js,subs="+attributes"]
+----
 $ php composer.phar update "{prodnamecode}/{prodnamecode}"
-`
+----
 
 [[nuget]]
 ==== NuGet
 
 To upgrade to {productname} {productminorversion} using NuGet, run:
-`sh
+[source,js,subs="+attributes"]
+----
 $ Install-Package {productname}
-`
+----
 
 [[bower]]
 ==== Bower
 
 To upgrade to {productname} {productminorversion} using Bower, run:
-`sh
+[source,js,subs="+attributes"]
+----
 $ bower install {prodnamecode}#{productminorversion} --save
-`
+----
 
-{% endif %}
+endif::[]
 
 [[upgrading-tinymce-self-hosted-manually]]
 === Upgrading TinyMCE Self-hosted manually
@@ -76,16 +83,16 @@ To upgrade to {productname} {productminorversion} using a manually downloaded pa
 +
 Customizations for {productname} are typically stored in the following directories:
 +
-`sh
- tinymce/
- ├── icons/
- ├── langs/
- ├── plugins/
- ├── skins/
- │   ├── content/
- │   └── ui/
- └── themes/
-`
+```sh
+tinymce/
+├── icons/
+├── langs/
+├── plugins/
+├── skins/
+│   ├── content/
+│   └── ui/
+└── themes/
+```
 
 . Download the latest version of {productname}.
  ** For the {productname} Community Version, download `{prodnamecode}_<VERSION>.zip` from link:{gettiny}/self-hosted/[Get {productname} - Self-hosted releases], where _`<VERSION>`_ is the latest version of {productname}.

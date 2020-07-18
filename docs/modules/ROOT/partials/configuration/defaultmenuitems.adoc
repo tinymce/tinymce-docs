@@ -1,4 +1,4 @@
-`js
+```js
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   menu: {
@@ -12,4 +12,4 @@ tinymce.init({
     help: { title: 'Help', items: 'help' }
   }
 });
-`
+```

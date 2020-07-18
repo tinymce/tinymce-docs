@@ -13,8 +13,8 @@
 
 *Examples*
 
-`js
+```js
 tinymce.activeEditor.execCommand('mceRetrieveFormats');
 tinymce.activeEditor.execCommand('mcePaintFormats');
 tinymce.activeEditor.execCommand('mceToggleFormatPainter');
-`
+```

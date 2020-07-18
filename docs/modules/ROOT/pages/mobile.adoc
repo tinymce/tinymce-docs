@@ -36,20 +36,20 @@ include::{partialsDir}misc/mobile_platform_compatibility.adoc[]
 
 Add the following `meta` tag to the `head` of pages using {productname} to ensure the mobile user interface functions as intended.
 
-```html+++<meta name="viewport" content="width=device-width, initial-scale=1">++++++</meta>+++
-
+```html
+<meta name="viewport" content="width=device-width, initial-scale=1">
 ```
 
 To set mobile specific settings, add the setting to the link:{rootDir}docs/configure/editor-appearance.html#mobile[`mobile`] configuration, such as:
 
-`js
+```js
 tinymce.init({
   selector: 'textarea',
   mobile: {
     menubar: true
   }
 });
-`
+```
 
 [[mobile-defaults-for-selected-settings]]
 === Mobile defaults for selected settings
@@ -85,13 +85,13 @@ The mobile experience provided for {productname} 4.7 through {productname} 5.0 h
 
 To revert to the legacy mobile theme, add the mobile theme to the {productname} configuration, such as:
 
-`js
+```js
 tinymce.init({
   mobile: {
     theme: 'mobile'
   }
 });
-`
+```
 
 [[legacy-mobile-theme-configuring-the-plugins]]
 === Legacy mobile theme - configuring the plugins
@@ -100,7 +100,7 @@ The plugins supported by legacy mobile theme are limited to the link:{rootDir}pl
 
 To add these plugins to the legacy mobile theme, add a plugin entry to the mobile section. For example:
 
-`js
+```js
 tinymce.init({
   selector: 'textarea',
   theme: 'silver',
@@ -109,14 +109,14 @@ tinymce.init({
     plugins: 'autosave lists autolink'
   }
 });
-`
+```
 
 [[legacy-mobile-theme-configuring-the-toolbar]]
 === Legacy mobile theme - configuring the Toolbar
 
 The legacy TinyMCE theme mobile supports a subset of the toolbar items, which can configured using the `mobile: toolbar` setting, such as:
 
-`js
+```js
 tinymce.init({
   selector: 'textarea',
   theme: 'silver',
@@ -126,7 +126,7 @@ tinymce.init({
     toolbar: 'undo bold italic styleselect'
   }
 });
-`
+```
 
 Below are the toolbar items supported for the legacy mobile theme, and the plugins/configuration required.
 

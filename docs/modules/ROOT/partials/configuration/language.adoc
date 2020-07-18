@@ -21,12 +21,12 @@ Please note, the language code you set in your {productname} configuration must 
 
 In this example we will set the editor language to Swedish.
 
-`js
+```js
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   language: 'sv_SE'
 });
-`
+```
 
 The available language codes for use with this option are as follows:
 

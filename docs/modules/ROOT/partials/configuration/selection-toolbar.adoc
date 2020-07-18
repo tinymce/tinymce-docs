@@ -12,25 +12,25 @@ To disable the Quick Selection toolbar, set `quickbars_selection_toolbar` to `fa
 [[example-customizing-the-quick-selection-toolbar]]
 ==== Example: Customizing the Quick Selection toolbar
 
-`js
+```js
 tinymce.init({
   selector: 'div.tinymce',
   plugins: 'quickbars',
   inline: true,
   quickbars_selection_toolbar: 'bold italic | formatselect | quicklink blockquote'
 });
-`
+```
 
 [[example-disabling-the-quick-selection-toolbar]]
 ==== Example: Disabling the Quick Selection toolbar
 
 To disable the Quick Selection toolbar, set `quickbars_selection_toolbar` to `false`.
 
-`js
+```js
 tinymce.init({
   selector: 'div.tinymce',
   plugins: 'quickbars',
   inline: true,
   quickbars_selection_toolbar: false
 });
-`
+```

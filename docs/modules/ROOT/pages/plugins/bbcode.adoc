@@ -20,17 +20,17 @@ You will need to sacrifice quite a lot of {productname}'s functionality to use t
 [[example]]
 ===== Example
 
-`js
+```js
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "bbcode"
 });
-`
+```
 
 [[options]]
-=== Options
+== Options
 
-[[]]
+[[bbcode_dialect]]
 === `bbcode_dialect`
 
 This option allows you to specify the BBCode dialect. We only support http://punbb.informer.com/[PunBB] at the moment but hope to add more dialects in the future. Suported tags are listed in the table below:
@@ -70,8 +70,7 @@ This option allows you to specify the BBCode dialect. We only support http://pun
 | Quote
 | `+<span class="quoteStyle">...</span>+`
 
-| `
-`
+| `+\n+`
 | Newline
 | `<br />`
 |===
@@ -85,13 +84,13 @@ When using PunBB dialect, `codeStyle` and `quoteStyle` will be converted to `[co
 [discrete#example-2]
 ===== Example
 
-`js
+```js
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "bbcode",
   bbcode_dialect: "punbb"
 });
-`
+```
 
 [[live-example]]
 == Live example

@@ -26,9 +26,9 @@ The base entities `<`, `>`, `&`, `'`, and `"` will always be entity encoded into
 [discrete#example]
 ===== Example
 
-`js
+```js
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   entity_encoding : "raw"
 });
-`
+```

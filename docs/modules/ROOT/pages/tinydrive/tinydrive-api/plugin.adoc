@@ -91,13 +91,13 @@ This setting enables constraining the width/height of uploaded images. When this
 [[example]]
 ==== Example
 
-`+js
+```js
 tinydrive.pick({
   max_image_dimension: 1024
 }).then((result) => {
   console.log(result.files);
 });
-+`
+```
 
 [[plugin-api-interfaces]]
 === Plugin api interfaces
@@ -106,7 +106,10 @@ Here is a complete api reference as TypeScript types for developers used to Type
 
 ```tsx
 interface PluginApi {
-  pick: (settings: PluginPickerApiSettings) \=> Promise+++<PickerResult>+++; browse: (settings: PluginPickerApiSettings) \=> Promise+++<void>+++; upload: (settings: PluginUploadApiSettings) \=> Promise+++<UploadResult>+++; }+++</UploadResult>++++++</void>++++++</PickerResult>+++
+  pick: (settings: PluginPickerApiSettings) => Promise<PickerResult>;
+  browse: (settings: PluginPickerApiSettings) => Promise<void>;
+  upload: (settings: PluginUploadApiSettings) => Promise<UploadResult>;
+}
 
 interface PluginPickerApiSettings {
   filetypes?: string[];
@@ -116,7 +119,7 @@ interface PluginUploadApiSettings {
   path?: string;
   name: string;
   blob: Blob;
-  onprogress?: (details: UploadProgress) \=> void;
+  onprogress?: (details: UploadProgress) => void;
   max_image_dimension?: number;
 }
 

@@ -20,18 +20,18 @@ The help dialog can also be shown by pressing the keyboard shortcut `Alt + 0`.
 [[example-setup]]
 ===== Example setup
 
-`js
+```js
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "help",
   toolbar: "help"
 });
-`
+```
 
 [[config-options]]
 == Config Options
 
-[[]]
+[[help_tabs]]
 === `help_tabs`
 
 This option allows you to specify which tabs the Help dialog should show, and in what order. The default {productname} tabs are called `shortcuts`, `keyboardnav`, `plugins` and `versions`. These tabs can be overwritten by providing a new link:{rootDir}ui-components/dialogcomponents.html#tabpanel[tab panel] specification with the same `name`, and new tabs can be added by registering a tab panel with a new `name`. New tabs can be registered in the `help_tabs` configuration or at initialisation or runtime using the <<api,`addTab` API method>>.
@@ -94,22 +94,25 @@ tinymce.init({
       );
     });
 
- // add a toolbar button that when clicked adds a tab called custom3
- editor.ui.registry.addButton('addTab', {
-   text: 'Add tab',
-   onAction: function() {
-     editor.plugins.help.addTab({
-       name: 'custom3',
-       title: 'Custom Tab 3',
-       items: [
-         {
-           type: 'htmlpanel',
-           html: '<p>This is yet another custom tab</p>',
-         }
-       ]
-     });
-   }
- });   } }); ```
+    // add a toolbar button that when clicked adds a tab called custom3
+    editor.ui.registry.addButton('addTab', {
+      text: 'Add tab',
+      onAction: function() {
+        editor.plugins.help.addTab({
+          name: 'custom3',
+          title: 'Custom Tab 3',
+          items: [
+            {
+              type: 'htmlpanel',
+              html: '<p>This is yet another custom tab</p>',
+            }
+          ]
+        });
+      }
+    });
+  }
+});
+```
 
 [[api]]
 == API
@@ -125,7 +128,7 @@ tinymce.init({
 [discrete#example-2]
 ==== Example
 
-`js
+```js
 tinymce.activeEditor.plugins.help.addTab({
   name: 'custom',
   title: 'My Custom Tab',
@@ -136,7 +139,7 @@ tinymce.activeEditor.plugins.help.addTab({
     }
   ]
 });
-`
+```
 
 [[exposing-metadata-for-the-help-plugin]]
 == Exposing metadata for the help plugin

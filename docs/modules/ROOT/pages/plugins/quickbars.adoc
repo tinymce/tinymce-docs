@@ -24,7 +24,7 @@ NOTE: The Quick Toolbars plugin provides the contextual toolbars found in the `i
 [[example-enabling-all-context-toolbars-with-their-default-toolbar-buttons]]
 ==== Example: Enabling all context toolbars with their default toolbar buttons
 
-`js
+```js
 tinymce.init({
     selector: "div.tinymce",
     plugins: [ 'quickbars' ],
@@ -32,7 +32,7 @@ tinymce.init({
     menubar: false,
     inline: true
 });
-`
+```
 
 [[disabling-specific-quick-toolbars]]
 === Disabling specific quick toolbars
@@ -42,7 +42,7 @@ The following examples show how to disable specific quick toolbars for editors w
 [[example-disabling-the-quick-insert-context-toolbar]]
 ==== Example: Disabling the Quick Insert context toolbar
 
-`js
+```js
 tinymce.init({
     selector: "div.tinymce",
     plugins: [ 'quickbars' ],
@@ -51,12 +51,12 @@ tinymce.init({
     inline: true,
     quickbars_insert_toolbar: false
 });
-`
+```
 
 [[example-disabling-the-quick-selection-context-toolbar]]
 ==== Example: Disabling the Quick Selection context toolbar
 
-`js
+```js
 tinymce.init({
     selector: "div.tinymce",
     plugins: [ 'quickbars' ],
@@ -65,14 +65,14 @@ tinymce.init({
     inline: true,
     quickbars_selection_toolbar: false
 });
-`
+```
 
 [[example-disabling-the-quick-image-context-toolbar]]
 ==== Example: Disabling the Quick Image context toolbar
 
 {requires_5_2v}
 
-`js
+```js
 tinymce.init({
     selector: "div.tinymce",
     plugins: [ 'quickbars' ],
@@ -81,7 +81,7 @@ tinymce.init({
     inline: true,
     quickbars_image_toolbar: false
 });
-`
+```
 
 [[plugin-specific-toolbar-buttons]]
 == Plugin-specific toolbar buttons
@@ -94,7 +94,7 @@ The Quick Link (`quicklink`) toolbar button lets the user quickly insert/edit li
 [[example-using-quicklink-in-a-custom-context-toolbar]]
 ==== Example: Using quicklink in a custom context toolbar
 
-`js
+```js
 tinymce.init({
     selector: "div.tinymce",
     plugins: [ 'quickbars' ],
@@ -108,7 +108,7 @@ tinymce.init({
         });
     }
 });
-`
+```
 
 [[quick-image]]
 === Quick Image
@@ -120,13 +120,13 @@ NOTE: To enable automatic upload of images on insertion, link:{rootDir}advanced/
 [[example-using-quickimage-in-the-editor-toolbar]]
 ==== Example: Using quickimage in the editor toolbar
 
-`js
+```js
 tinymce.init({
     selector: "div.tinymce",
     plugins: [ 'quickbars' ],
     toolbar: 'quickimage'
 });
-`
+```
 
 [[quick-table]]
 === Quick Table
@@ -136,13 +136,13 @@ The Quick Table (`quicktable`) toolbar button inserts a 2x2 table with 100% widt
 [[example-using-quicktable-in-the-editor-toolbar]]
 ==== Example: Using quicktable in the editor toolbar
 
-`js
+```js
 tinymce.init({
     selector: "div.tinymce",
     plugins: [ 'quickbars' ],
     toolbar: 'quicktable'
 });
-`
+```
 
 [[configuration-options]]
 == Configuration options

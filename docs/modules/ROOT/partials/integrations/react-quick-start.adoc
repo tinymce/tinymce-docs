@@ -10,78 +10,77 @@ For examples of the {productname} integration, visit https://tinymce.github.io/t
 === Prerequisites
 
 This procedure requires:
+
 * https://nodejs.org/[Node.js (and npm)].
 * Access to `tinymce.min.js` on either:
-
-....
-* [{cloudname}]({rootDir}/cloud-deployment-guide/editor-and-features/).
-* {productname} Self-hosted. See [Installing {productname}]({rootDir}/general-configuration-guide/advanced-install/) for details on self-hosting {productname}.
-....
+** link:{rootDir}cloud-deployment-guide/editor-and-features/[{cloudname}].
+** {productname} Self-hosted. See link:{rootDir}general-configuration-guide/advanced-install/[Installing {productname}] for details on self-hosting {productname}.
 
 [[procedure]]
 === Procedure
 
 . On a command line or command prompt, install the https://github.com/facebook/create-react-app[Create React App] package.
 +
-`
- $ npm install -g create-react-app
-`
+```sh
+$ npm install -g create-react-app
+```
 
 . Create a new React project named `tinymce-react-demo`.
 +
-`
- $ create-react-app tinymce-react-demo
-`
+```sh
+$ create-react-app tinymce-react-demo
+```
 
 . Change into the newly created directory.
 +
-`
- $ cd tinymce-react-demo
-`
+```sh
+$ cd tinymce-react-demo
+```
 
 . Install the `tinymce-react` package and save it to your `package.json` with `--save`.
 +
-`
- $ npm install --save @tinymce/tinymce-react
-`
+```sh
+$ npm install --save @tinymce/tinymce-react
+```
 
 . Using a text editor, open `/path/to/tinymce-react-demo/src/App.js` and replace the contents with:
 +
 ```js
- import React from 'react';
- import { Editor } from '@tinymce/tinymce-react';
-+
+import React from 'react';
+import { Editor } from '@tinymce/tinymce-react';
+
 class App extends React.Component {
-   handleEditorChange = (content, editor) \=> {
-     console.log('Content was updated:', content);
-   }
-+
-render() {
-     return (
-       <Editor
-         initialValue="<p>This is the initial content of the editor</p>"
-         init=pass:[{{]
-           height: 500,
-           menubar: false,
-           plugins: [
-             'advlist autolink lists link image charmap print preview anchor',
-             'searchreplace visualblocks code fullscreen',
-             'insertdatetime media table paste code help wordcount'
-           ],
-           toolbar:
-             'undo redo | formatselect | bold italic backcolor | \
-             alignleft aligncenter alignright alignjustify | \
-             bullist numlist outdent indent | removeformat | help'
-         pass:[}}]
-         onEditorChange={this.handleEditorChange}
-       />
-     );
-   }
- }
-+
+  handleEditorChange = (content, editor) => {
+    console.log('Content was updated:', content);
+  }
+
+  render() {
+    return (
+      <Editor
+        initialValue="<p>This is the initial content of the editor</p>"
+        init={{
+          height: 500,
+          menubar: false,
+          plugins: [
+            'advlist autolink lists link image charmap print preview anchor',
+            'searchreplace visualblocks code fullscreen',
+            'insertdatetime media table paste code help wordcount'
+          ],
+          toolbar:
+            'undo redo | formatselect | bold italic backcolor | \
+            alignleft aligncenter alignright alignjustify | \
+            bullist numlist outdent indent | removeformat | help'
+        }}
+        onEditorChange={this.handleEditorChange}
+      />
+    );
+  }
+}
+
 export default App;
- ```
- This JavaScript file will create the class `App` containing a {productname} editor configured to replicate the example on the link:{rootDir}demo/basic-example.html[Basic example page].
+```
++
+This JavaScript file will create the class `App` containing a {productname} editor configured to replicate the example on the link:{rootDir}demo/basic-example.html[Basic example page].
 
 . Provide access to {productname} using {cloudname} or by self-hosting {productname}.
  ** *{cloudname}*
@@ -90,9 +89,9 @@ Include the `apiKey` option in the editor element and include your link:{account
 +
 Such as:
 +
-`js
-  <Editor apiKey='your-api-key' init=pass:[{{] /* your other settings */ pass:[}}] />
- `
+```js
+<Editor apiKey='your-api-key' init={{ /* your other settings */ }} />
+```
 
  ** *{productname} Self-hosted*
 +
@@ -101,9 +100,10 @@ Such as:
   *** *Deploy {productname} independent of the React application*
 +
 To use an independent deployment of {productname}, add a script to either the `<head>` or the end of the `<body>` of the HTML file, such as:
-`html
++
+```html
 <script src="/path/to/tinymce.min.js"></script>
-`
+```
 +
 To use an independent deployment of {productname} with the create a React application, add the script to `/path/to/tinymce-react-demo/public/index.html`.
 +
@@ -115,9 +115,9 @@ To bundle {productname} using a module loader (such as Webpack and Browserify), 
 . Test the application using the Node.js development server.
  ** To start the development server, navigate to the `tinymce-react-demo` directory and run:
 +
-`
-  $ npm run start
- `
+```
+$ npm run start
+```
 
  ** To stop the development server, select on the command line or command prompt and press _Ctrl+C_.
 
@@ -130,9 +130,9 @@ To deploy the application to a local HTTP Server:
 
 . Navigate to the `tinymce-react-demo` directory and run:
 +
-`
- $ npm run build
-`
+```
+$ npm run build
+```
 
 . Copy the contents of the `tinymce-react-demo/build` directory to the root directory of the web server.
 

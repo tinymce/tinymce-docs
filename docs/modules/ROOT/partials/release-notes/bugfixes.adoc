@@ -70,7 +70,7 @@ The following browser related issues were reported during the developer's previe
 | Safari: Unable to select all using keys when there are anchors in the text editor
 
 | AP-248
-| Firefox: Cannot use +++<space>+++to toggle off locks in sizeinput+++</space>+++
+| Firefox: Cannot use <space> to toggle off locks in sizeinput
 
 | AP-269
 | Incorrect display of IFrame border (Chrome/Safari)
@@ -188,7 +188,7 @@ The following editor related issues were reported during the developer's preview
 | Standardise test code format
 
 | AP-151
-| Update TransformFind types to return Option+++<b>+++instead of Option+++<Element>++++++</Element>++++++</b>+++
+| Update TransformFind types to return Option<b> instead of Option<Element>
 
 | AP-172
 | Get menus working from init config
@@ -783,7 +783,7 @@ The following URL related issues were reported during the developer's preview an
 | Wire up button on URL Input
 
 | AP-153
-| Pressing +++<escape>+++and +++<enter>+++in a URL input should not be swallowed by the URL input+++</enter>++++++</escape>+++
+| Pressing <escape> and <enter> in a URL input should not be swallowed by the URL input
 |===
 
 [[premium-features]]

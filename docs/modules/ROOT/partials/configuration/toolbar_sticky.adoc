@@ -20,9 +20,9 @@ To see a demo of sticky toolbar, see the https://codepen.io/tinymce/full/qBWLLMP
 [discrete#example-toolbar_sticky]
 ===== Example: toolbar_sticky
 
-`js
+```js
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   toolbar_sticky: true
 });
-`
+```

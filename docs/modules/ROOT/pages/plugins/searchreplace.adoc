@@ -15,14 +15,14 @@ This plugin adds search/replace dialogs to {productname}. It also adds a toolbar
 [[example]]
 ===== Example
 
-`js
+```js
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "searchreplace",
   menubar: "edit",
   toolbar: "searchreplace"
 });
-`
+```
 
 [[commands]]
 == Commands

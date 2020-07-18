@@ -21,20 +21,20 @@ The autosave plugin adds:
 [[example]]
 ===== Example
 
-`js
+```js
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "autosave",
   toolbar: "restoredraft"
 });
-`
+```
 
 [[options]]
-=== Options
+== Options
 
 These settings affect the execution of the `autosave` plugin. The settings described here will affect the interval, duration and behavior of locally stored drafts of the current editor instance.
 
-[[]]
+[[autosave_ask_before_unload]]
 === `autosave_ask_before_unload`
 
 This option allows you to set whether the editor should prompt the user to advise them that they have unsaved changes when attempting to close the current window. By default this option is enabled and an example of disabling this setting is included below.
@@ -48,15 +48,15 @@ This option allows you to set whether the editor should prompt the user to advis
 [discrete#example-2]
 ===== Example
 
-`js
+```js
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "autosave",
   autosave_ask_before_unload: false
 });
-`
+```
 
-[[-2]]
+[[autosave_interval]]
 === `autosave_interval`
 
 This option enables you to specify the time the editor should wait between taking snapshots of the current content and saving them to local storage. The syntax is to append the letter `s` to the end of a number value. For example, "30s" for 30 seconds.
@@ -68,14 +68,14 @@ This option enables you to specify the time the editor should wait between takin
 [discrete#example-2]
 ===== Example:
 
-`js
+```js
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   autosave_interval: "20s"
 });
-`
+```
 
-[[-2]]
+[[autosave_prefix]]
 === `autosave_prefix`
 
 This option allows you to set the prefix that is used for local storage keys.
@@ -87,15 +87,15 @@ This option allows you to set the prefix that is used for local storage keys.
 [discrete#example-2]
 ===== Example:
 
-`+js
+```js
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "autosave",
   autosave_prefix: "tinymce-autosave-{path}{query}-{id}-"
 });
-+`
+```
 
-[[-2]]
+[[autosave_restore_when_empty]]
 === `autosave_restore_when_empty`
 
 This option enables you to specify if {productname} should automatically restore the content stored in local storage when the editor is empty on initialization. This can be useful for users who don't know that they can restore lost work if the browser crashed by selecting `Restore last draft` from the `File` menu.
@@ -109,15 +109,15 @@ This option enables you to specify if {productname} should automatically restore
 [discrete#example-2]
 ===== Example:
 
-`js
+```js
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "autosave",
   autosave_restore_when_empty: true
 });
-`
+```
 
-[[-2]]
+[[autosave_retention]]
 === `autosave_retention`
 
 This option lets you to specify the duration editor content should remain in local storage. Content older than the set time will be ignored. The syntax is to append the letter `m` to the end of a number value. For example, "20m" for 20 minutes.
@@ -129,10 +129,10 @@ This option lets you to specify the duration editor content should remain in loc
 [discrete#example-2]
 ===== Example:
 
-`js
+```js
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "autosave",
   autosave_retention: "30m"
 });
-`
+```

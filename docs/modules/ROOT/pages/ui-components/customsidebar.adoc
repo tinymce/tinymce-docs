@@ -70,7 +70,7 @@ The `element():HTMLElement` function returns the root element of the sidebar pan
 [[example-inside-the-tinymce-init]]
 == Example inside the tinymce.init
 
-`+js
+```js
 tinymce.init({
   ...
   toolbar: "mysidebar",
@@ -91,12 +91,12 @@ tinymce.init({
     });
   }
 });
-+`
+```
 
 [[example-inside-a-tinymce-plugin]]
 == Example inside a TinyMCE plugin
 
-`js
+```js
 tinymce.PluginManager.add('myplugin', function (editor) {
   editor.ui.registry.addSidebar('mysidebar', {
     tooltip: 'My sidebar',
@@ -113,4 +113,4 @@ tinymce.PluginManager.add('myplugin', function (editor) {
     }
   });
 });
-`
+```

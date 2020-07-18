@@ -10,9 +10,9 @@ NOTE: If a number is provided, {productname} sets the height in pixels. If a str
 [discrete#example]
 ===== Example
 
-`js
+```js
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   height: 300
 });
-`
+```

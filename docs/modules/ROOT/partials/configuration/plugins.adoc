@@ -8,12 +8,12 @@ This option allows you to specify which plugins {productname} will attempt to lo
 [discrete#example]
 ===== Example
 
-`js
+```js
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins : 'advlist autolink link image lists charmap print preview'
 });
-`
+```
 
 [NOTE]
 ====

@@ -20,9 +20,9 @@ NOTE: `auto` was added and set as the default in {productname} 5.3. For {product
 [discrete#example]
 ===== Example
 
-`js
+```js
 tinymce.init({
   selector: 'textarea',  // change this value according to your html
   toolbar_location: 'bottom'
 });
-`
+```

@@ -15,14 +15,14 @@ This plugin adds a preview button to the toolbar. Pressing the button opens a di
 [[example]]
 ===== Example
 
-`js
+```js
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "preview",
   menubar: "view",
   toolbar: "preview"
 });
-`
+```
 
 [[commands]]
 == Commands

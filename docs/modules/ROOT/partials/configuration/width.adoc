@@ -10,9 +10,9 @@ NOTE: {productname} sets the width in pixels if a number is provided. However, i
 [discrete#example]
 ===== Example
 
-`js
+```js
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   width : 300
 });
-`
+```

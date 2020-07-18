@@ -23,9 +23,9 @@ Insert the {productname} editor code into the application to load {productname} 
 
 The following example adds a script tag into the application that inserts the code. Use the `<head>` of the page on a web page. Be sure to substitute 'no-api-key' with your api key.
 
-`js
+```js
 <script src="{cdnurl}" referrerpolicy="origin"></script>
-`
+```
 
 |===
 |  | Value | Description
@@ -59,11 +59,11 @@ Extend the link:{rootDir}configure.html[{productname} configuration] to include 
 * link:{rootDir}plugins/formatpainter.html[Format Painter]
 * link:{rootDir}plugins/powerpaste.html[PowerPaste]
 * link:{rootDir}plugins/tinymcespellchecker.html[Spell Checker Pro]
-
++
 NOTE: `spellchecker_rpc_url` is *not* required when enabling this plugin via link:{rootDir}cloud-deployment-guide.html[{cloudname}].
 
 * link:{rootDir}plugins/imagetools.html[Image Tools (with configured image proxy)]
-
++
 NOTE: Configuration of the `imagetools_cors_hosts` and `imagetools_proxy` properties occurs automatically.
 
 * link:{rootDir}plugins/moxiemanager.html[Moxie Manager]
@@ -106,9 +106,9 @@ NOTE: The script tag typically references `tinymce.min.js` hosted within the app
 
 Replace the script tag with the following:
 
-`js
+```js
 <script src="{cdnurl}" referrerpolicy="origin"></script>
-`
+```
 
 [[step-2-update-custom-plugin-paths]]
 === Step 2: Update custom plugin paths
@@ -133,11 +133,11 @@ Extend the link:{rootDir}configure.html[{productname} configuration] to include 
 * link:{rootDir}plugins/formatpainter.html[Format Painter]
 * link:{rootDir}plugins/powerpaste.html[Powerpaste]
 * link:{rootDir}plugins/tinymcespellchecker.html[Spell Checker Pro]
-
++
 NOTE: `spellchecker_rpc_url` is *not* required when enabling this plugin via link:{rootDir}cloud-deployment-guide.html[{cloudname}].
 
 * link:{rootDir}plugins/imagetools.html[Image tools (with configured image proxy)]
-
++
 NOTE: Configuration of the `imagetools_cors_hosts` and `imagetools_proxy` properties occurs automatically.
 
 * link:{rootDir}plugins/moxiemanager.html[Moxie Manager]

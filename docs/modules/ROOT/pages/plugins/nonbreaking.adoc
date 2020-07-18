@@ -15,19 +15,19 @@ This plugin adds a button for inserting nonbreaking space entities `+&nbsp;+` at
 [[example]]
 ===== Example
 
-`js
+```js
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "nonbreaking",
   menubar: "insert",
   toolbar: "nonbreaking"
 });
-`
+```
 
 [[options]]
-=== Options
+== Options
 
-[[]]
+[[nonbreaking_force_tab]]
 === `nonbreaking_force_tab`
 
 This option allows you to force {productname} to insert three `+&nbsp;+` entities when the user presses the keyboard `tab` key.
@@ -47,7 +47,7 @@ NOTE: Review <<usagewithtableorlistsplugin,Usage with `table` or `lists` plugin>
 [discrete#example-2]
 ===== Example
 
-`js
+```js
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "nonbreaking",
@@ -55,7 +55,7 @@ tinymce.init({
   toolbar: "nonbreaking",
   nonbreaking_force_tab: true
 });
-`
+```
 
 [[usage-with-or-plugin]]
 ==== Usage with `table` or `lists` plugin
@@ -67,25 +67,25 @@ The `nonbreaking_force_tab` setting can break the following functionality:
 
 To retain the Tab key functionality of the `lists` or `table` plugins, add the `table` or `lists` plugins before the `nonbreaking` plugin in the init configuration, such as:
 
-`js
+```js
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "table lists nonbreaking",
   nonbreaking_force_tab: true
 });
-`
+```
 
 To insert a non-breaking space with the Tab key instead of `table` and `lists` Tab functionality, add the `nonbreaking` plugin before the `table` and `lists` plugins in the init configuration, such as:
 
-`js
+```js
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "nonbreaking table lists",
   nonbreaking_force_tab: true
 });
-`
+```
 
-[[-2]]
+[[nonbreaking_wrap]]
 === `nonbreaking_wrap`
 
 This option allows you to force {productname} to wrap non-breaking space characters inserted by the plugin in a `<span class="mce-nbsp-wrap"></span>` element. This will prevent the non-breaking space being replaced by the editor or browser when typing additional spaces.
@@ -99,7 +99,7 @@ This option allows you to force {productname} to wrap non-breaking space charact
 [discrete#example-2]
 ===== Example
 
-`js
+```js
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "nonbreaking",
@@ -107,7 +107,7 @@ tinymce.init({
   toolbar: "nonbreaking",
   nonbreaking_wrap: false
 });
-`
+```
 
 [[commands]]
 == Commands

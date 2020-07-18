@@ -45,13 +45,13 @@ image::{rootDir}/images/tinydrive-dropbox-dump2.png[]
 
 You configure the Dropbox API key by setting the link:{rootDir}tinydrive/configuration.html#tinydrive_dropbox_app_key[tinydrive_dropbox_app_key] like in the example below.
 
-`js
+```js
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "tinydrive",
   tinydrive_dropbox_app_key: '<your dropbox app key>'
 });
-`
+```
 
 For more information on other {cloudfilemanager} config options refer to the link:{rootDir}tinydrive/configuration.html#configuringwithdropbox[configuration] section of this document.
 

@@ -12,7 +12,7 @@ A common use case for this setting is to add editor events to {productname}. For
 [discrete#example]
 ===== Example
 
-`js
+```js
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   setup: function(editor) {
@@ -21,4 +21,4 @@ tinymce.init({
     });
   }
 });
-`
+```

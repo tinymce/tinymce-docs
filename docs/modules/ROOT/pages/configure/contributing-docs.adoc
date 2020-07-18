@@ -50,38 +50,38 @@ Include any key values pairs and method options that are required to enable a us
 
 For example, this is good:
 
-`js
+```js
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'codesample',
   toolbar: 'codesample'
 });
-`
+```
 
 This is not:
 
-`+js
+```js
 tinymce.init({
   ...
   plugins: 'codesample',
   toolbar: 'codesample'
   ...
 });
-+`
+```
 
 [[urls-and-links]]
 === URLs and links
 
 Resources to be linked take the form of placing the linked text between brackets and the URL between parenthesis. Linking an external resource looks like this:
 
-`+html
+```html
 hello, [text to link](http://www.example.com) to the URL example.com.
-+`
+```
 
 [[codepens]]
 === Codepens
 
-Codepens can be added to content using the "codepen.html" include, such as:
+Codepens can be added to content using the "codepen" macro, such as:
 
 ```
 codepen::basic-example[]
@@ -96,7 +96,7 @@ The source for each CodePen is store in the https://github.com/tinymce/tinymce-d
 
 Every page should have a meta section starting at line 1 containing information that is both informative and system critical. If you are creating a page or editing one that currently has inadequate meta information, please read the comments next to the default meta fields below.
 
-`
+```
 ---                // Three dashes at the start and end of the meta section, must be included.
 layout: default    // In most cases leave this as 'default'.
 title:             // The nav.yml references this so it must be included and it should be brief.
@@ -105,7 +105,7 @@ description_short: // Short description for the grid layouts.
 description:       // Detailed description at page level for the header section under the title.
 keywords:          // Space-separated list of keywords in the content.
 ---
-`
+```
 
 [[style-guide]]
 == Style Guide

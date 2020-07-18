@@ -32,7 +32,7 @@ Define the custom toolbar button with the `setup` callback of the {productname} 
 [[example-of-adding-a-custom-menu-item]]
 === Example of adding a custom menu item
 
-`js
+```js
 tinymce.init({
   selector: '#editor',
   menu: {
@@ -48,7 +48,7 @@ tinymce.init({
     });
   }
 });
-`
+```
 
 NOTE: The identifier used to create the menu item must be included in the link:{rootDir}configure/editor-appearance.html#menu[`menu`] option in the {productname} configuration for it to be added to the menubar's menus. It will not be added to the menubar's menus if `menu` is not configured correctly.
 
@@ -108,7 +108,7 @@ A basic menu item triggers its `onAction` function when clicked.
 | Sets a keyboard shortcut for activating the menu item, such as: `shortcut: 'Ctrl+Alt+Delete'`. For information on available shortcut modifiers, see: <<shortcutmodifierkeymappings,Shortcut modifier key mappings>>.
 |===
 
-include::{partialsDir}misc/shortcut-os-mappings.adoc[leveloffset=+1]
+include::{partialsDir}misc/shortcut-os-mappings.adoc[leveloffset=+2]
 
 [[api]]
 ==== API
@@ -187,8 +187,7 @@ A nested menu item is a menu item with a submenu. Registering a submenu this way
 | Sets a keyboard shortcut for activating the menu item, such as: `shortcut: 'Ctrl+Alt+Delete'`. For information on available shortcut modifiers, see: <<shortcutmodifierkeymappings2,Shortcut modifier key mappings>>.
 |===
 
-+++<a class="anchor" id="shortcutmodifierkeymappings2">++++++</a>+++
-###include::{partialsDir}misc/shortcut-os-mappings.adoc[]
+include::{partialsDir}misc/shortcut-os-mappings.adoc[leveloffset=+2]
 
 [[api-2]]
 ==== API

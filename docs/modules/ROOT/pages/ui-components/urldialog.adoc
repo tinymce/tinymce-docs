@@ -19,12 +19,12 @@ NOTE: link:{rootDir}ui-components/dialog.html[Standard {productname} dialogs] sh
 
 The configuration for a basic URL dialog might look like this:
 
-`+js
+```js
 tinymce.activeEditor.windowManager.openUrl({
    title: 'Just a title',
    url: 'http://www.tiny.cloud/example.html'
 });
-+`
+```
 
 [[url-dialog-configuration]]
 == URL dialog configuration
@@ -181,12 +181,12 @@ The instance API is a JavaScript object containing methods attached to the dialo
 
 When using a URL dialog, there needs to be a way to communicate between {productname} and the external page, as the two components are no longer running in the same window. To allow this, {productname} makes use of the browsers https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage[`window.postMessage()`] API to allow sending data across different origins. The following is an example of how to send messages back to {productname} from within an external page:
 
-`js
+```js
 window.parent.postMessage({
   mceAction: 'insertContent',
   content: 'Some content'
 }, '*');
-`
+```
 
 Similarly, to send messages from {productname} back to the external page, the `sendMessage()` function from the <<urldialoginstanceapi,URL dialog instance API>> can be used to send messages, and then in the external page an event listener can be added to receive the messages:
 
@@ -212,24 +212,24 @@ These actions are built into the URL dialog functionality and will perform an ac
 
 This action inserts content into the editor at the current selection. The `content` property specifies what content should be inserted into the editor.
 
-`js
+```js
 {
   mceAction: 'setContent',
   content: 'My custom content'
 }
-`
+```
 
 [discrete#setcontent]
 ===== setContent
 
 This action is used to set the editors content. The `content` property specifies what content should be set inside the editor.
 
-`js
+```js
 {
   mceAction: 'setContent',
   content: 'My custom content'
 }
-`
+```
 
 [discrete#execcommand]
 ===== execCommand
@@ -240,61 +240,61 @@ This action executes a command inside the editor. The options available for this
 * `ui`: An optional boolean to specify if a UI (dialog) should be presented or not.
 * `value`: An optional value to be used by the command.
 
-`+js
+```js
 {
   mceAction: 'execCommand',
   cmd: 'mceInsertLink',
   value: 'https://www.tiny.cloud'
 }
-+`
+```
 
 [discrete#close]
 ===== close
 
 This action closes the open URL dialog. This is the same as using the `api.close()` function.
 
-`js
+```js
 {
   mceAction: 'close'
 }
-`
+```
 
 [discrete#block]
 ===== block
 
 This action disables the entire dialog window and shows a loading image. This is the same as using the `api.block(message)` function.
 
-`js
+```js
 {
   mceAction: 'block',
   message: 'Loading…'
 }
-`
+```
 
 [discrete#unblock]
 ===== unblock
 
 This action unblocks the window/dialog. This is the same as using the `api.unblock()` function.
 
-`js
+```js
 {
   mceAction: 'unblock'
 }
-`
+```
 
 [[custom-message-actions]]
 === Custom message actions
 
 A custom message is one that contains a `mceAction` not listed in the above-supported actions. For example, the following snippet could be used to send a message back to {productname} and then be processed via the `onMessage` callback to perform custom actions inside {productname}.
 
-`js
+```js
 {
   mceAction: 'customAction',
   data: {
     customField: 'custom value'
   }
 }
-`
+```
 
 NOTE: {productname} will ignore all messages received that don't contain a `mceAction` property.
 

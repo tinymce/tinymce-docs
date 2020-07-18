@@ -9,7 +9,7 @@ This option allows you to set whether {productname} should append custom styles 
 [discrete#example]
 ===== Example
 
-`js
+```js
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   style_formats: [
@@ -18,4 +18,4 @@ tinymce.init({
   ],
   style_formats_merge: true
 });
-`
+```

@@ -1,16 +1,8 @@
-{% case page.title %}
-  {% when "Context toolbar" %}
-    :contextItemType: toolbar
-  {% when "Context forms" %}
-    :contextItemType: form
-{% endcase %}
-+++<a class="anchor" id="positioningcontexttoolbars">++++++</a>++++++<a class="anchor" id="positioningcontextforms">++++++</a>+++
+[id="positioning-of-context-{contextItemType}s"]
+== Positioning of context {contextItemType}s
 
-[[positioning-of-context-contextitemtypes]]
-=== Positioning of context {\{contextItemType}}s
+There are three options for positioning context {contextItemType}s: `selection`, `node`, or `line`.
 
-There are three options for positioning context {\{contextItemType}}s: `selection`, `node`, or `line`.
-
-* A `selection` position will place the context {\{contextItemType}} above or below the current selection, centered if possible.
-* A `node` position will place the context {\{contextItemType}} above or below the bounds of a node (e.g. a table or image).
-* A `line` position will place the context {\{contextItemType}} to the right (or left in Right-to-Left languages) of the current selection.
+* A `selection` position will place the context {contextItemType} above or below the current selection, centered if possible.
+* A `node` position will place the context {contextItemType} above or below the bounds of a node (e.g. a table or image).
+* A `line` position will place the context {contextItemType} to the right (or left in Right-to-Left languages) of the current selection.

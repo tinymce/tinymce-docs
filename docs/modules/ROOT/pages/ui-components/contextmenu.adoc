@@ -35,7 +35,7 @@ In the menu shown to the user, sections are delineated by separators. Sections c
 
 ```typescript
 type ContextMenuApi = {
-  update: (element: Element) \=> string | Array+++<ContextMenuContents>+++}+++</ContextMenuContents>+++
+  update: (element: Element) => string | Array<ContextMenuContents>}
 
 editor.ui.registry.addContextMenu(name: string, feature: ContextMenuApi);
 ```
@@ -49,13 +49,13 @@ type ContextMenuItem = {
   type?: 'item';
   text: string;
   icon?: string;
-  onAction: () \=> void;
+  onAction: () => void;
 }
 type ContextSubMenu = {
   type: 'submenu';
   text: string;
   icon?: string;
-  getSubmenuItems: () \=> string | Array+++<ContextMenuContents>+++; }+++</ContextMenuContents>+++
+  getSubmenuItems: () => string | Array<ContextMenuContents>; }
 
 type SeparatorMenuItemApi = {
   type: 'separator'

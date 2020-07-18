@@ -12,9 +12,9 @@ NOTE: Not using `p` elements as root block can severely cripple the functionalit
 [discrete#example]
 ===== Example
 
-`js
+```js
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   forced_root_block : 'p'
 });
-`
+```

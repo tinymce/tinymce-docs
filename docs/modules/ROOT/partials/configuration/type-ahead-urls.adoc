@@ -12,9 +12,9 @@ This option allows disable the type ahead url field feature.
 [discrete#example]
 ===== Example
 
-`js
+```js
 tinymce.init({
   selector: 'textarea',
   typeahead_urls: false
 });
-`
+```

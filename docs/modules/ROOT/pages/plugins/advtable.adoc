@@ -26,6 +26,7 @@ The `advtable` plugin is a premium plugin that extends the core link:{rootDir}pl
 |===
 
 The plugin is capable of sorting:
+
 * Numerical data
 * Text data
 
@@ -36,12 +37,12 @@ NOTE: Currently, the sort function will treat cells with Alphanumeric data as Te
 
 To enable the Advanced Tables plugin, add `advtable` to the list of plugins. For example:
 
-`js
+```js
 tinymce.init({
   plugins: 'table advtable',
   menubar: 'table'
 });
-`
+```
 
 [[commands]]
 == Commands

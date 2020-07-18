@@ -12,12 +12,12 @@ The *indentation* option defaults to 30px but can be any value.
 [discrete#example]
 ===== Example
 
-`js
+```js
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   indentation : '20pt'
 });
-`
+```
 
 [[indent_use_margin]]
 == indent_use_margin
@@ -31,10 +31,10 @@ The *indent_use_margin* option is set if the editor should use margin instead of
 [discrete#example-2]
 ===== Example
 
-`js
+```js
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   indentation : '20pt',
   indent_use_margin: true
 });
-`
+```

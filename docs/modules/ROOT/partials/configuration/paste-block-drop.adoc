@@ -1,10 +1,5 @@
-{% if page.title == "Paste plugin" %}
-  :plugin: paste
-### paste_block_drop
-{% else %}
-  :plugin: powerpaste
-### powerpaste_block_drop
-{% endif %}
+[id="{plugin}_block_drop"]
+=== {plugin}_block_drop
 
 Due to browser limitations, it is not possible to filter content that is dragged and dropped into the editor. When `+{plugin}_block_drop+` is set to true the plugin will disable drag and dropping content into the editor. This prevents the unfiltered content from being introduced. Copy and paste is still enabled.
 
@@ -12,16 +7,14 @@ Due to browser limitations, it is not possible to filter content that is dragged
 
 *Possible values:*  `true`, `false`
 
-{% if page.title == "Paste plugin" %}
-##### Example: `paste_block_drop`
-{% else %}
-##### Example: `powerpaste_block_drop`
-{% endif %}
+[discrete#example]
+===== Example: `{plugin}_block_drop`
 
-`+js
+[source,js,subs="+attributes"]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: '{plugin}',
   {plugin}_block_drop: false
 });
-+`
+----

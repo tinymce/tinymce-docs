@@ -15,9 +15,9 @@ The following tables show the existing editor commands. These commands are provi
 
 To retrieve a list of avaliable commands from the active editor, run the following command from the browser console:
 
-`js
+```js
 tinymce.activeEditor.editorCommands.commands.exec;
-`
+```
 
 [[core-editor-commands]]
 == Core Editor commands
@@ -177,7 +177,7 @@ The commands on the following table are provided by the {productname} editor and
 
 *Examples*
 
-`+js
+```js
 tinymce.activeEditor.execCommand('Bold')
 tinymce.activeEditor.execCommand('Italic')
 tinymce.activeEditor.execCommand('Underline')
@@ -229,7 +229,7 @@ tinymce.activeEditor.execCommand('mceSelectNode', false, '<DOM_node>')
 tinymce.activeEditor.execCommand('mceSelectNodeDepth', false, 2) // For two nodes up.
 tinymce.activeEditor.execCommand('mceRemoveNode') /* OR */
 tinymce.activeEditor.execCommand('mceRemoveNode', false, '<DOM_node>')
-+`
+```
 
 [[plugin-commands]]
 == Plugin Commands
@@ -532,11 +532,11 @@ The following commands are used to manage editor instances.
 
 For example:
 
-`js
+```js
 tinymce.execCommand('mceAddEditor', false, '<editor_id>');
 tinymce.execCommand('mceRemoveEditor', false, '<editor_id>');
 tinymce.execCommand('mceToggleEditor', false, '<editor_id>');
-`
+```
 
 |===
 | Command | Description

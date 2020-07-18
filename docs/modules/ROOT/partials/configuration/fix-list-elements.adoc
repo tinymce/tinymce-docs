@@ -35,9 +35,9 @@ Gets converted into this valid list:
 [discrete#example]
 ===== Example
 
-`js
+```js
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   fix_list_elements : true
 });
-`
+```

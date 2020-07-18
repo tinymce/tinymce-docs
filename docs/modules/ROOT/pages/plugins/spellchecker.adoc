@@ -17,7 +17,7 @@ This plugin enables {productname}'s spellcheck functionality. It also adds a too
 [[example]]
 ===== Example
 
-`js
+```js
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "spellchecker",
@@ -25,21 +25,21 @@ tinymce.init({
   toolbar: "spellchecker",
   spellchecker_rpc_url: 'spellchecker.php'
 });
-`
+```
 
 [[options]]
 == Options
 
 These settings affect the execution of the `spellchecker` plugin by modifying how spellchecking is handled. If you need an introduction to setting up server-side spell checking with {productname} please link:{rootDir}general-configuration-guide/spell-checking.html[refer to this section] in the General Configuration Guide.
 
-[[]]
+[[spellchecker_callback]]
 === `spellchecker_callback`
 
 This option lets you override the default server side request/communication logic for the spellchecker.
 
 *Example of a basic override without using a server*
 
-`pass:c[js
+```js
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "spellchecker",
@@ -59,11 +59,11 @@ tinymce.init({
     }
   }
 });
-]`
+```
 
 *Example of fallback for the older JSON-RPC based format*
 
-`js
+```js
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "spellchecker",
@@ -90,9 +90,9 @@ tinymce.init({
     }
   }
 });
-`
+```
 
-[[-2]]
+[[spellchecker_language]]
 === `spellchecker_language`
 
 This configuration option lets you set the default language code for the spellchecker. This defaults to "en".
@@ -104,7 +104,7 @@ This configuration option lets you set the default language code for the spellch
 [discrete#example-2]
 ===== Example
 
-`js
+```js
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "spellchecker",
@@ -112,9 +112,9 @@ tinymce.init({
   toolbar: "spellchecker",
   spellchecker_language: 'sv_SE'
 });
-`
+```
 
-[[-2]]
+[[spellchecker_languages]]
 === `spellchecker_languages`
 
 This option lets you specify a list of languages for the user to select from. The list is added to the spellcheck toolbar icon. The format is based on the 3.x `spellchecker` format.
@@ -127,7 +127,7 @@ This option lets you specify a list of languages for the user to select from. Th
 [discrete#example-2]
 ===== Example
 
-`js
+```js
 tinymce.init({
   selector: "textarea",  // change this value according to your html
   plugins: "spellchecker",
@@ -136,9 +136,9 @@ tinymce.init({
   spellchecker_languages: 'English=en,Danish=da,Dutch=nl,Finnish=fi,French=fr_FR,' +
     'German=de,Italian=it,Polish=pl,Portuguese=pt_BR,Spanish=es,Swedish=sv'
 });
-`
+```
 
-[[-2]]
+[[spellchecker_rpc_url]]
 === `spellchecker_rpc_url`
 
 This options enables you to specify a custom URL to be used for the spellchecker. This can be the `spellchecker` URL provided by the {productname} `spellchecker` packages or a URL to a page that you have in your system. The URL is *relative* to the `spellchecker` plugin.
@@ -148,7 +148,7 @@ This options enables you to specify a custom URL to be used for the spellchecker
 [discrete#example-2]
 ===== Example
 
-`js
+```js
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "spellchecker",
@@ -156,10 +156,10 @@ tinymce.init({
   toolbar: "spellchecker",
   spellchecker_rpc_url: 'spellchecker.php'
 });
-`
+```
 
 [[spellchecker-request-format]]
-=== Spellchecker request format
+==== Spellchecker request format
 
 The request is a HTTP POST with URL encoded parameters described below.
 
@@ -177,28 +177,28 @@ The request is a HTTP POST with URL encoded parameters described below.
 |===
 
 [[spellchecker-response-format]]
-=== Spellchecker response format
+==== Spellchecker response format
 
 The response of a successful spellcheck request should like this:
 
-`js
+```js
 {
   "words": {
      "misspelled1": ["suggestion1", "suggestion2"],
      "misspelled2": ["suggestion1", "suggestion2"]
   }
 }
-`
+```
 
 And if there was an error:
 
-`js
+```js
 {
   "error": "Error message"
 }
-`
+```
 
-[[-2]]
+[[spellchecker_wordchar_pattern]]
 === `spellchecker_wordchar_pattern`
 
 This option enables you to override the matching of characters that are parts of words. By default it will treat anything that isn't a space, comma, dot, dash, quote, etc, as parts of a word. For some languages or environments it might be useful to override this behavior.
@@ -208,7 +208,7 @@ This option enables you to override the matching of characters that are parts of
 [discrete#example-2]
 ===== Example
 
-`+js
+```js
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "spellchecker",
@@ -216,7 +216,7 @@ tinymce.init({
   toolbar: "spellchecker",
   spellchecker_wordchar_pattern: /[^\s,\.]+/g
 });
-+`
+```
 
 [[commands]]
 == Commands

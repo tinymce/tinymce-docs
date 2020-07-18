@@ -5,6 +5,8 @@ include::{rootDir}_attributes.adoc[]
 = PowerPaste plugin
 :keywords: enterprise powerpaste power paste paste_as_text powerpaste_word_import powerpaste_html_import powerpaste_block_drop powerpaste_allow_local_images microsoft word excel
 :title_nav: PowerPaste
+:plugin: powerpaste
+:pluginname: PowerPaste
 
 {premiumplugin}
 
@@ -39,12 +41,12 @@ To enable the {productname} *PowerPaste* plugin with link:{rootDir}cloud-deploym
 
 Example {productname} configuration:
 
-`js
+```js
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "powerpaste"
 });
-`
+```
 
 [[self-hosted-installation]]
 == Self-hosted Installation
@@ -66,14 +68,14 @@ To enable the *PowerPaste* plugin when using a link:{rootDir}advanced/usage-with
 
 Example:
 
-`+js
+```js
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   external_plugins: {
     'powerpaste': 'http://www.server.com/application/external_plugins/powerpaste/plugin.js'
   }
 });
-+`
+```
 
 [[configuration-options]]
 == Configuration Options
@@ -88,7 +90,7 @@ The supported values are `true` and `false`. The default is `false`.
 [discrete#example-paste_as_text]
 ===== Example: paste_as_text
 
-`js
+```js
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "powerpaste",
@@ -96,7 +98,7 @@ tinymce.init({
   toolbar: "pastetext",
   paste_as_text: true
 });
-`
+```
 
 include::{partialsDir}configuration/paste-merge-formats.adoc[]
 
@@ -159,7 +161,7 @@ The list of inline elements that should be removed on paste can be specified by 
 [discrete#example-powerpaste_clean_filtered_inline_elements]
 ===== Example: powerpaste_clean_filtered_inline_elements
 
-`js
+```js
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "powerpaste",
@@ -167,7 +169,7 @@ tinymce.init({
   powerpaste_html_import: "clean", // optional
   powerpaste_clean_filtered_inline_elements: "strong, em, b, i, u, strike, sup, sub, font"
 });
-`
+```
 
 [[powerpaste_keep_unsupported_src]]
 === powerpaste_keep_unsupported_src
@@ -183,13 +185,13 @@ For example, browsers do not allow PowerPaste to access the file system. If your
 [discrete#example-powerpaste_keep_unsupported_src]
 ===== Example: powerpaste_keep_unsupported_src
 
-`js
+```js
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "powerpaste",
   powerpaste_keep_unsupported_src: true
 });
-`
+```
 
 include::{partialsDir}configuration/smart-paste.adoc[]
 
@@ -203,13 +205,13 @@ This button allows you to toggle paste as plain text mode on and off. When in pl
 
 Example {productname} Configuration:
 
-`js
+```js
 tinymce.init({
   selector: "textarea",
   plugins: "powerpaste",
   toolbar: "pastetext"
 });
-`
+```
 
 [[menu-items]]
 == Menu Items
@@ -221,7 +223,7 @@ This menu item allows you to toggle paste as plain text mode on and off. When in
 
 Example {productname} Configuration:
 
-`js
+```js
 tinymce.init({
   selector: "textarea",
   plugins: "powerpaste",
@@ -229,7 +231,7 @@ tinymce.init({
 	edit: {title: "edit", items: "pastetext"}
   }
 });
-`
+```
 
 [[advanced-config-options]]
 == Advanced Config Options
@@ -296,7 +298,7 @@ NOTE: The mode 'auto' is used when the content source does not have formatting t
 
 Example {productname} configuration:
 
-`js
+```js
 tinymce.init({
   selector: "textarea",
   plugins: "powerpaste",
@@ -308,7 +310,7 @@ tinymce.init({
     data.node.insertBefore(additionalNode, data.node.firstElementChild);
   }
 });
-`
+```
 
 [[event-listeners]]
 ==== Event Listeners
@@ -340,14 +342,17 @@ tinymce.init({
       data.content = newContent;
     });
 
- editor.on('PastePostProcess', function(data) {
-   console.log(data.node, data.mode, data.source);
-   // Apply custom filtering by mutating data.node
-   // For example:
-   const additionalNode = document.createElement('div');
-   additionalNode.innerHTML = '<p>This will go before the pasted content.</p>';
-   data.node.insertBefore(additionalNode, data.node.firstElementChild);
- });   } }); ```
+    editor.on('PastePostProcess', function(data) {
+      console.log(data.node, data.mode, data.source);
+      // Apply custom filtering by mutating data.node
+      // For example:
+      const additionalNode = document.createElement('div');
+      additionalNode.innerHTML = '<p>This will go before the pasted content.</p>';
+      data.node.insertBefore(additionalNode, data.node.firstElementChild);
+    });
+  }
+});
+```
 
 [[commands]]
 == Commands

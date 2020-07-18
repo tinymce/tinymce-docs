@@ -10,7 +10,7 @@ include::{rootDir}_attributes.adoc[]
 
 This section provides information on how to manually create a new skin to customize the appearance of {productname} {productmajorversion}.
 
-The {productname} Skin Tool provides an interactive method for designing and creating a skin for {productname}, visit: http://skin.tiny.cloud/[\http://skin.tiny.cloud/].
+The {productname} Skin Tool provides an interactive method for designing and creating a skin for {productname}, visit: http://skin.tiny.cloud/[http://skin.tiny.cloud/].
 
 [[prerequisites]]
 == Prerequisites
@@ -34,15 +34,15 @@ To set up the skin development environment, begin with the following steps:
 . Open the terminal and navigate to the folder you just downloaded.
 . Install dependencies with the command:
 +
-`
+```
  yarn install
-`
+```
 
 . Launch the web server to preview the skins using the command:
 +
-`
+```
 yarn oxide-start
-`
+```
 
 You should now be able to open a web browser and point it to the url displayed in the terminal, usually `+http://localhost:3000+`.
 
@@ -51,9 +51,9 @@ The development environment is set up and ready to work.
 image::{rootDir}/images/SDKforsilver.png[**{productname} skin SDK for Silver theme**]
 
 If you just need to build the skins without launching a web server, run:
-`
+```
 yarn oxide-build
-`
+```
 
 [[making-or-editing-a-skin]]
 == Making or editing a skin
@@ -84,7 +84,7 @@ NOTE: The skin *only* changes the visual presentation of the UI and *not* the pl
 
 Your skin.less file should now look like this:
 
-```
+```less
 /**
  * Copyright (c) Tiny Technologies, Inc. All rights reserved.
  * Licensed under the LGPL or a commercial license.

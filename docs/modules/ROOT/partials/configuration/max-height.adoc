@@ -11,12 +11,12 @@ The *max_height* option has two kinds of behaviors depending on the state of the
 [discrete#example]
 ===== Example
 
-`js
+```js
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   max_height: 500
 });
-`
+```
 
 [TIP]
 ====

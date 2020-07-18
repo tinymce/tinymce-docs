@@ -55,7 +55,7 @@
 
 *Examples*
 
-`js
+```js
 tinymce.activeEditor.execCommand('mceTableSplitCells');
 tinymce.activeEditor.execCommand('mceTableMergeCells');
 tinymce.activeEditor.execCommand('mceTableInsertRowBefore');
@@ -73,4 +73,4 @@ tinymce.activeEditor.execCommand('mceInsertTable');
 tinymce.activeEditor.execCommand('mceTableProps');
 tinymce.activeEditor.execCommand('mceTableRowProps');
 tinymce.activeEditor.execCommand('mceTableCellProps');
-`
+```

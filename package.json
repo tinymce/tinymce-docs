@@ -1,21 +1,19 @@
 {
   "name": "tinymce-docs",
   "version": "1.0.0",
-  "description": "[[tinymce-documentation]] = TinyMCE documentation :pp: {plus}{plus}",
-  "main": "index.js",
-  "directories": {
-    "doc": "docs"
-  },
+  "description": "TinyMCE documentation",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "antora antora-playbook.yml"
+    "build": "antora antora-playbook.yml",
+    "watch": "watch --interval=10 \"yarn build\" docs",
+    "server": "http-server build/site/ --port 4000",
+    "serve": "npm-run-all -p watch server"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/tinymce/tinymce-docs.git"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Tiny Technologies",
+  "license": "CC-BY-NC-SA-3.0",
   "bugs": {
     "url": "https://github.com/tinymce/tinymce-docs/issues"
   },
@@ -23,6 +21,9 @@
   "devDependencies": {
     "@antora/cli": "^2.3.3",
     "@antora/site-generator-default": "^2.3.3",
-    "liquidjs": "^9.14.1"
+    "http-server": "^0.12.3",
+    "liquidjs": "^9.14.1",
+    "npm-run-all": "^4.1.5",
+    "watch": "^1.0.2"
   }
 }

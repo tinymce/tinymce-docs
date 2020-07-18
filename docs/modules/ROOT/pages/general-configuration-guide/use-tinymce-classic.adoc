@@ -29,11 +29,11 @@ codepen::default[]
 
 A basic TinyMCE editor can be added to a `textarea` element with the id `mytextarea` using:
 
-`js
+```js
 tinymce.init({
     selector: 'textarea#mytextarea'
 });
-`
+```
 
 [[related-configuration-options]]
 === Related configuration options

@@ -9,9 +9,9 @@ If you set this option to `true`, {productname} will convert all `font` elements
 
 *Possible Values:* `true`, `false`
 
-`js
+```js
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   convert_fonts_to_spans : false
 });
-`
+```

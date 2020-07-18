@@ -44,33 +44,35 @@ To use an independent deployment of {productname}, add the following source scri
 For information on self-hosting {productname}, see: link:{rootDir}general-configuration-guide/advanced-install.html[Installing {productname}].
 . Add an initialization point for {productname}, such as:
 +
-```html+++<div>++++++<textarea id="tiny">++++++</textarea>++++++</div>+++
-+
+```html
+<div>
+  <textarea id="tiny"></textarea>
+</div>
 ```
 
 . Add the {productname} init script.
 +
-`html
- <script>
-   tinymce.init({
-     selector: 'textarea#tiny'
-   });
- </script>
-`
+```html
+<script>
+  tinymce.init({
+    selector: 'textarea#tiny'
+  });
+</script>
+```
 
 [[using-tinymce-in-a-bootstrap-dialog]]
 == Using TinyMCE in a Bootstrap dialog
 
 To render {productname} instances inside Bootstrap UI dialogs, add the following code:
 
-`js
+```js
 // Prevent Bootstrap dialog from blocking focusin
 $(document).on('focusin', function(e) {
   if ($(e.target).closest(".tox-tinymce-aux, .moxman-window, .tam-assetmanager-root").length) {
     e.stopImmediatePropagation();
   }
 });
-`
+```
 
 This code is required because Bootstrap blocks all `focusin` calls from elements outside the dialog. For a working example, http://fiddle.tinymce.com/gRgaab[try this {productname} fiddle].
 

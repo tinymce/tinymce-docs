@@ -28,8 +28,8 @@ The new mobile experience allows most of the {productname} plugins to work on mo
 
 To ensure the mobile editor functions as intended, add the following `meta` tag to the `head` of pages using {productname}.
 
-```html+++<meta name="viewport" content="width=device-width, initial-scale=1">++++++</meta>+++
-
+```html
+<meta name="viewport" content="width=device-width, initial-scale=1">
 ```
 
 [[mobile-devices-now-use-the-theme]]
@@ -48,17 +48,18 @@ The mobile experience provided for {productname} 4.7 through {productname} 5.0 h
 
 To revert to the legacy mobile theme, add the mobile theme to the {productname} configuration, such as:
 
-`js
+```js
 tinymce.init({
   mobile: {
     theme: 'mobile'
   }
 });
-`
+```
 
 NOTE: No enhancements have been made to the legacy mobile theme. All the changes described in these release notes relate to the `silver` theme on mobile devices.
 
 For information on:
+
 * Using the `silver` theme for mobile, see: link:{rootDir}mobile.html[{productname} Mobile].
 * Using the legacy `mobile` theme, see: link:{rootDir}mobile.html#thelegacymobiletheme[{productname} Mobile - The legacy mobile theme].
 
@@ -287,12 +288,12 @@ The default for the `toolbar_drawer` setting has been changed from `false` to `f
 
 To revert to the {productname} 5.0 behavior, add `toolbar_drawer: false` to the `tinymce.init`, such as:
 
-`js
+```js
 tinymce.init({
   selection: textarea#myEditor
   toolbar_drawer: false
 });
-`
+```
 
 For information on the `toolbar_drawer` setting, see: link:{rootDir}configure/editor-appearance.html#toolbar_drawer[User interface options - `toolbar_drawer`].
 

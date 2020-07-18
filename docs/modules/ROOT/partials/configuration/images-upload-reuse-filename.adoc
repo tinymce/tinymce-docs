@@ -14,11 +14,11 @@ Setting `images_reuse_filename` to _true_ tells {productname} to use the actual 
 [discrete#example]
 ===== Example
 
-`js
+```js
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   automatic_uploads: true,
   images_upload_url: 'postAcceptor.php',
   images_reuse_filename: true
 });
-`
+```

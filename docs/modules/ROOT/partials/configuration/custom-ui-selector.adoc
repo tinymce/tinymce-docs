@@ -13,7 +13,7 @@ tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   custom_ui_selector: '.my-custom-button'
 });
-...+++<textarea>++++++</textarea>+++
-
-+++<button class="my-custom-button">+++Button+++</button>+++
+...
+<textarea></textarea>
+<button class="my-custom-button">Button</button>
 ```

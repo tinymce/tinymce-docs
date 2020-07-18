@@ -123,9 +123,12 @@ try {
   echo $e\->getMessage();
 }
 ?>
-`
-### TinyMCE example with jwt.php Endpoint
-`
+```
+
+[[tinymce-example-with-jwtphp-endpoint]]
+=== TinyMCE example with jwt.php Endpoint
+
+```js
 tinymce.init({
   selector: 'textarea',
   plugins: 'image media link tinydrive code imagetools',
@@ -151,9 +154,9 @@ const app = express();
 app.use(cors());
 
 const privateKey = `
-----BEGIN PRIVATE KEY----
+-----BEGIN PRIVATE KEY-----
 ....
-----END PRIVATE KEY----
+-----END PRIVATE KEY-----
 `;
 
 app.post('/jwt', function (req, res) {
@@ -162,14 +165,13 @@ app.post('/jwt', function (req, res) {
     sub: '123', // Unique user id string
     name: 'John Doe', // Full name of user
 
-....
-// Optional custom user root path
-// 'https://claims.tiny.cloud/drive/root': '/johndoe',
+    // Optional custom user root path
+    // 'https://claims.tiny.cloud/drive/root': '/johndoe',
 
-exp: Math.floor(Date.now() / 1000) + (60 * 10) // 10 minutes expiration   };
-....
+    exp: Math.floor(Date.now() / 1000) + (60 * 10) // 10 minutes expiration
+  };
 
-try {
+  try {
     const token = jwt.sign(payload, privateKey, { algorithm: 'RS256'});
     res.set('content-type', 'application/json');
     res.status(200);
@@ -183,9 +185,12 @@ try {
 });
 
 app.listen(3000);
-`
-### TinyMCE example with /jwt endpoint
-`
+```
+
+[[tinymce-example-with-jwt-endpoint]]
+=== TinyMCE example with /jwt endpoint
+
+```js
 tinymce.init({
   selector: 'textarea',
   plugins: 'image media link tinydrive code imagetools',

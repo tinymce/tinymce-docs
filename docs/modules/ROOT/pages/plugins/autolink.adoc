@@ -16,17 +16,17 @@ NOTE: Pasted URLs are automatically converted to `a` elements by {productname}'s
 [[autolink-plugin-example]]
 ===== Autolink plugin example
 
-`js
+```js
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "autolink"
 });
-`
+```
 
 [[options]]
 == Options
 
-[[]]
+[[default_link_target]]
 === `default_link_target`
 
 This option allows you to specify a default `target` value for links inserted by the autolink plugin.
@@ -38,7 +38,7 @@ NOTE: This setting also applies to the link:{rootDir}plugins/link[link] plugin.
 [discrete#example]
 ===== Example
 
-`js
+```js
 tinymce.init({
     selector: "textarea",  // change this value according to your HTML
     plugins: "autolink link",
@@ -46,9 +46,9 @@ tinymce.init({
     toolbar: "link",
     default_link_target: "_blank"
 });
-`
+```
 
-[[-2]]
+[[link_default_protocol]]
 === `link_default_protocol`
 
 This option allows you to set a default protocol for links inserted by the autolink plugin.
@@ -62,7 +62,7 @@ NOTE: This setting also applies to the link:{rootDir}plugins/link[link] plugin.
 [discrete#example-2]
 ===== Example
 
-`js
+```js
 tinymce.init({
     selector: "textarea",  // change this value according to your HTML
     plugins: "autolink link",
@@ -70,4 +70,4 @@ tinymce.init({
     toolbar: "link",
     link_default_protocol: "https"
 });
-`
+```

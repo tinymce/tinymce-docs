@@ -1,6 +1,26 @@
 const fs = require('fs');
 const path = require('path');
-const { Liquid } = require('liquidjs');
+const { Liquid, Tokenizer } = require('liquidjs');
+
+const codepenTabs = {
+  'codepen-tabs': [
+    {
+      name: 'run'
+    },
+    {
+      name: 'html',
+      text: 'HTML'
+    },
+    {
+      name: 'css',
+      text: 'CSS'
+    },
+    {
+      name: 'js',
+      text: 'JS'
+    }
+  ]
+};
 
 const codepenLiquidPlugin = function() {
   this.registerTag('file_exists', {
@@ -13,6 +33,20 @@ const codepenLiquidPlugin = function() {
     }
   });
 
+  // Pulled from the builtin assign, but modified to set the variables on the global property instead
+  this.registerTag('assign', {
+    parse (token) {
+      const tokenizer = new Tokenizer(token.args);
+      this.key = tokenizer.readWord().content;
+      tokenizer.skipBlank();
+      tokenizer.advance();
+      this.value = tokenizer.remaining();
+    },
+    render (ctx) {
+      ctx.globals[this.key] = this.liquid.evalValueSync(this.value, ctx);
+    }
+  });
+
   this.registerFilter('uri_escape', (url) => encodeURIComponent(url));
 };
 
@@ -20,6 +54,7 @@ module.exports = function() {
   this.blockMacro(function () {
     const engine = new Liquid({
       root: 'docs/modules/ROOT/codepens/',
+      globals: {}
     });
     engine.plugin(codepenLiquidPlugin);
 
@@ -30,25 +65,7 @@ module.exports = function() {
       const renderedContent = engine.renderFileSync('codepen.adoc', {
         site: {
           ...docAttrs,
-          data: {
-            'codepen-tabs': [
-              {
-                name: 'run'
-              },
-              {
-                name: 'html',
-                text: 'HTML'
-              },
-              {
-                name: 'css',
-                text: 'CSS'
-              },
-              {
-                name: 'js',
-                text: 'JS'
-              }
-            ]
-          }
+          data: { ...codepenTabs }
         },
         include: {
           ...attrs,

@@ -1,6 +1,5 @@
 :rootDir: ../
 :partialsDir: {rootDir}partials/
-:imagesDir: {rootDir}images/
 include::{rootDir}_attributes.adoc[]
 = Usage with module loaders
 :description: How to use TinyMCE in a project using a module bundler like Webpack or Browserify

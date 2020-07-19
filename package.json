@@ -4,7 +4,7 @@
   "description": "TinyMCE documentation",
   "scripts": {
     "build": "antora antora-playbook.yml",
-    "watch": "watch --interval=10 \"yarn build\" docs",
+    "watch": "watch --interval=15 \"yarn build\" docs",
     "server": "http-server build/site/ --port 4000",
     "serve": "npm-run-all -p watch server"
   },

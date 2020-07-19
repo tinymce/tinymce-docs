@@ -1,6 +1,5 @@
 :rootDir: ../
 :partialsDir: {rootDir}partials/
-:imagesDir: {rootDir}images/
 include::{rootDir}_attributes.adoc[]
 = Accessibility Checker plugin
 :description: Checks the contents of the editor for WCAG & Section 508 accessibility problems.

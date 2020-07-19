@@ -1,6 +1,5 @@
 :rootDir: ../
 :partialsDir: {rootDir}partials/
-:imagesDir: {rootDir}images/
 include::{rootDir}_attributes.adoc[]
 = Text Pattern plugin
 :description: Matches special patterns in the text and applies formats or executed commands on these patterns.

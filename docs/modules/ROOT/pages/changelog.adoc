@@ -12,8 +12,6 @@ include::{rootDir}_attributes.adoc[]
 This is the {productname} Community version changelog. For information about the latest {cloudname} or {enterpriseversion} Release, see: link:{rootDir}release-notes.html[{productname} Release Notes].
 ====
 
-{% capture changelog %}
-
 [[version-5-4-1-july-8-2020]]
 == Version 5.4.1 July 8, 2020
 
@@ -722,11 +720,3 @@ This is the {productname} Community version changelog. For information about the
 == Version 5.0.0-preview-1 October 1, 2018
 
 * Developer preview 1
-
-{% endcapture %}
-
-[cols=2*]
-|===
-| {{ changelog
-| pretty_changelog }}
-|===

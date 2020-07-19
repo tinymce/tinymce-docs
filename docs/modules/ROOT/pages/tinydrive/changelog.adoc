@@ -8,8 +8,6 @@ include::{rootDir}_attributes.adoc[]
 :keywords: changelog
 :title_nav: Changelog
 
-{% capture changelog %}
-
 [[version-1-3-0-2019-06-03]]
 == Version 1.3.0 (2019-06-03)
 
@@ -50,11 +48,3 @@ include::{rootDir}_attributes.adoc[]
 == Version 1.0.0 (2018-09-18)
 
 * Initial release
-
-{% endcapture %}
-
-[cols=2*]
-|===
-| {{ changelog
-| pretty_changelog }}
-|===

@@ -15,12 +15,13 @@ This plugin automatically resizes the editor to the content inside it. It is typ
 [[autoresize-plugin-example]]
 ===== Autoresize plugin example
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "autoresize"
 });
-```
+----
 
 [[options]]
 == Options
@@ -37,13 +38,14 @@ This option allows you to specify the size of the `padding` at the bottom of the
 [discrete#example]
 ===== Example
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "autoresize",
   autoresize_bottom_margin: 50
 });
-```
+----
 
 [[autoresize_on_init]]
 === `autoresize_on_init`
@@ -59,13 +61,14 @@ This option allows you to set whether the editor will attempt to resize itself u
 [discrete#example-2]
 ===== Example
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "autoresize",
   autoresize_on_init: false
 });
-```
+----
 
 [[autoresize_overflow_padding]]
 === `autoresize_overflow_padding`
@@ -77,13 +80,14 @@ This option allows you to specify the size of the `padding` at the sides of the 
 [discrete#example-2]
 ===== Example
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "autoresize",
   autoresize_overflow_padding: 50
 });
-```
+----
 
 [[max_height]]
 === `max_height`
@@ -95,12 +99,13 @@ This option enables you to specify the *maximum* `height` that the editor will a
 [discrete#example-2]
 ===== Example
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   max_height: 500
 });
-```
+----
 
 [[min_height]]
 === `min_height`
@@ -112,12 +117,13 @@ This option enables you to specify the *minimum* `height` of the editor when it'
 [discrete#example-2]
 ===== Example
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   min_height: 350
 });
-```
+----
 
 [[commands]]
 == Commands

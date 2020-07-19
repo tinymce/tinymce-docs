@@ -19,28 +19,31 @@ This plugin enables you to prevent users from being able to edit content within 
 [[example]]
 ===== Example
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "noneditable"
 });
-```
+----
 
 When you have existing classes that cannot be removed, you may combine MCE classes with the existing class in the following manner:
 
 [[non-editable-div-example]]
 ===== Non-editable div example
 
-```html
+[source,html]
+----
 <div class="myclass mceNonEditable">Contents</div>
-```
+----
 
 [[editable-div-example]]
 ===== Editable div example
 
-```html
+[source,html]
+----
 <div class="myclass mceEditable">Contents</div>
-```
+----
 
 [[options]]
 == Options
@@ -61,13 +64,14 @@ Note that classes with the `mceItem` prefix are invisible within {productname}.
 [discrete#example-2]
 ===== Example
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "noneditable",
   noneditable_editable_class: "mceEditable"
 });
-```
+----
 
 [[noneditable_noneditable_class]]
 === `noneditable_noneditable_class`
@@ -83,13 +87,14 @@ Note that classes with the `mceItem` prefix is invisible within {productname}.
 [discrete#example-2]
 ===== Example
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "noneditable",
   noneditable_noneditable_class: "mceNonEditable"
 });
-```
+----
 
 [[noneditable_regexp]]
 === `noneditable_regexp`
@@ -103,13 +108,14 @@ NOTE: If elements are matched by the regular expression, the elements will be re
 [discrete#example-2]
 ===== Example
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "noneditable",
   noneditable_regexp: /\d{3}-\d{3}-\d{3}/g // matches 123-456-789
 });
-```
+----
 
 [[making-content-non-editable]]
 == Making Content Non-editable
@@ -118,22 +124,24 @@ tinymce.init({
 
 . Add `noneditable` to `plugins`. For example:
 +
-```js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "code noneditable"
 });
-```
+----
 
 . Configure the `noneditable_noneditable_class` option, or the others as necessary in your `tinymce.init`. For example:
 +
-```js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "noneditable",
   noneditable_noneditable_class: "mceNonEditable"
 });
-```
+----
 +
 NOTE: Replace `mceNonEditable` with the class name you want for your non-editable elements.
 
@@ -141,6 +149,7 @@ NOTE: Replace `mceNonEditable` with the class name you want for your non-editabl
 . From the menu bar, select `View` > `Source code`.
 . Add the non-editable class to the desired editor content. For example:
 
-```html
+[source,html]
+----
 <div class="myclass mceNonEditable">Contents</div>
-```
+----

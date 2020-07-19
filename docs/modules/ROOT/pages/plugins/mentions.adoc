@@ -33,7 +33,8 @@ This option lets you request a list of uses from your server that match a search
 [discrete#example-2]
 ===== Example
 
-```js
+[source,js]
+----
 var usersRequest = null;
 tinymce.init({
   selector: "textarea",
@@ -57,7 +58,7 @@ tinymce.init({
     });
   }
 });
-```
+----
 
 NOTE: _The values returned in the users array for "id" and "name" all need to be_ `String` _values_
 
@@ -69,7 +70,8 @@ The `success` callback can be passed an optional array of extra items. When clic
 [discrete#example-with-extras]
 ===== Example with extras
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",
   plugins: "mentions",
@@ -97,7 +99,7 @@ tinymce.init({
     });
   }
 });
-```
+----
 
 [[mentions_menu_complete]]
 === `mentions_menu_complete`
@@ -111,7 +113,8 @@ This option overrides the default logic for inserting the mention into the edito
 [discrete#example-2]
 ===== Example
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",
   plugins: "mentions",
@@ -125,7 +128,7 @@ tinymce.init({
     return span;
   }
 });
-```
+----
 
 [[mentions_menu_hover]]
 === `mentions_menu_hover`
@@ -139,7 +142,8 @@ This option enables you to provide an element to present next to the menu item b
 [discrete#example-2]
 ===== Example
 
-```js
+[source,js]
+----
 var userRequest = {};
 tinymce.init({
   selector: "textarea",
@@ -165,7 +169,7 @@ tinymce.init({
     });
   }
 });
-```
+----
 
 [[mentions_selector]]
 === `mentions_selector`
@@ -179,7 +183,8 @@ This option enables you to provide a custom CSS selector that should match the e
 [discrete#example-2]
 ===== Example
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",
   plugins: "mentions",
@@ -192,7 +197,7 @@ tinymce.init({
     return span;
   }
 });
-```
+----
 
 [[mentions_select]]
 === `mentions_select`
@@ -206,7 +211,8 @@ This option enables you to provide an element to be presented below a hovered me
 [discrete#example-2]
 ===== Example
 
-```js
+[source,js]
+----
 var userRequest = {};
 tinymce.init({
   selector: "textarea",
@@ -241,7 +247,7 @@ tinymce.init({
     });
   }
 });
-```
+----
 
 [[api]]
 == API
@@ -254,7 +260,8 @@ You can retrieve the inserted users by calling `getUsers` on the plugin instance
 [discrete#example-2]
 ===== Example
 
-```js
+[source,js]
+----
 var users = tinymce.activeEditor.plugins.mentions.getUsers();
 console.log(users);
-```
+----

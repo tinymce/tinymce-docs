@@ -18,7 +18,8 @@ _The following example demonstrates how you can use `file_picker_callback` API, 
 [discrete#example]
 ===== Example
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   file_picker_callback: function(callback, value, meta) {
@@ -38,4 +39,4 @@ tinymce.init({
     }
   }
 });
-```
+----

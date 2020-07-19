@@ -8,7 +8,8 @@ Use the *custom_ui_selector* option to specify the elements that you want {produ
 [discrete#example]
 ===== Example
 
-```html
+[source,html]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   custom_ui_selector: '.my-custom-button'
@@ -16,4 +17,4 @@ tinymce.init({
 ...
 <textarea></textarea>
 <button class="my-custom-button">Button</button>
-```
+----

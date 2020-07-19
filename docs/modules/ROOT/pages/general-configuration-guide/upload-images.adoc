@@ -24,22 +24,24 @@ Review the examples below:
 [[using-uploadimages-and-then-posting-a-form]]
 ==== Using uploadImages and then posting a form
 
-```js
+[source,js]
+----
 tinymce.activeEditor.uploadImages(function(success) {
   document.forms[0].submit();
 });
-```
+----
 
 [[using-uploadimages-with-jquery]]
 ==== Using uploadImages with jQuery
 
-```js
+[source,js]
+----
 tinymce.activeEditor.uploadImages(function(success) {
   $.post('ajax/post.php', tinymce.activeEditor.getContent()).done(function() {
     console.log("Uploaded images and posted content as an ajax request.");
   });
 });
-```
+----
 
 [[image-uploader-requirements]]
 == Image Uploader requirements

@@ -19,13 +19,14 @@ NOTE: The emoticons plugin does not automatically convert text emoticons into gr
 [[example]]
 ===== Example
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'emoticons',
   toolbar: 'emoticons'
 });
-```
+----
 
 [[browser-emoji-support]]
 == Browser emoji support
@@ -42,7 +43,8 @@ The default database of emoji can be overridden or extended through the options 
 
 Internally, emoticons is defined by an object mapping emoticon names to additional details, whereby each entry represents a single emoji. The additional details should contain a unicode character representing the emoji, any keywords that can be used to search for the emoji and a category to place the emoji in. Options are expected to be provided in the same format.
 
-```js
+[source,js]
+----
 {
   robot: {
     keywords: ['computer', 'machine', 'bot'],
@@ -55,7 +57,7 @@ Internally, emoticons is defined by an object mapping emoticon names to addition
     category: 'animals_and_nature'
   }
 }
-```
+----
 
 [[emoticons_append]]
 === `emoticons_append`
@@ -67,7 +69,8 @@ This option provides a way to append some additional emoji to the default emoji 
 [discrete#example-2]
 ===== Example
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'emoticons',
@@ -79,7 +82,7 @@ tinymce.init({
     }
   }
 });
-```
+----
 
 [[emoticons_database_url]]
 === `emoticons_database_url`
@@ -90,7 +93,8 @@ This option provides the default location to load the emoji database from. The d
 
 *Default:* `+${pluginUrl}/js/emojis.js+`
 
-```js
+[source,js]
+----
 tinymce.Resource.add('tinymce.plugins.emoticons', {
   robot: {
     keywords: ['computer', 'machine', 'bot'],
@@ -98,16 +102,17 @@ tinymce.Resource.add('tinymce.plugins.emoticons', {
     category: 'people'
   }
 });
-```
+----
 
 [discrete#example-2]
 ===== Example
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'emoticons',
   toolbar: 'emoticons',
   emoticons_database_url: '/emojis.js'
 });
-```
+----

@@ -10,9 +10,10 @@ This option is disabled by default.
 [discrete#example]
 ===== Example
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   encoding: 'xml'
 });
-```
+----

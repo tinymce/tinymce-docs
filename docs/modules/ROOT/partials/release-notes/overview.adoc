@@ -7,9 +7,10 @@ TinyMCE 5.0 has an ARIA https://www.w3.org/WAI/standards-guidelines/wcag/[WCAG 2
 
 Include this line of code in the <head> of the HTML page and link to the tinymce.min.js source file. Substitute 'no-api-key' with your api key.
 
-```js
+[source,html,subs="+attributes"]
+----
 <script src="{cdnurl}" referrerpolicy="origin"></script>
-```
+----
 
 Signing up for a free API key provides entitlements to all our free plugins. This includes advanced functionality such as the link:{rootDir}plugins/imagetools.html[Image tools] plugin, which requires a cloud image proxy server to already be configured. Premium plugins can be purchased at any time once the API key has been set up.
 

@@ -25,10 +25,11 @@ If the project loads jQuery or Knockout from a Content delivery Network (CDN), u
 +
 To source {productname} and the {productname} jQuery integration from the {cloudname}, add the following `script` elements:
 +
-```html
+[source,html,subs="+attributes"]
+----
 <script src="{cdnurl}" referrerpolicy="origin"></script>
-  <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/jquery.tinymce.min.js" referrerpolicy="origin"></script>
-```
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/jquery.tinymce.min.js" referrerpolicy="origin"></script>
+----
 +
 Replace `no-api-key` in the source script (`+<script src=...+`) with a {cloudname} API key, which is created when signing up to the link:{accountsignup}[{cloudname}].
 +
@@ -38,10 +39,11 @@ Signing up for a {cloudname} API key will also provide a trial of the link:{root
 +
 To use an independent deployment of {productname}, add source scripts to either the `<head>` or the end of the `<body>` of the HTML file, such as:
 +
-```html
+[source,html]
+----
 <script src="/path/to/tinymce.min.js"></script>
-  <script src="/path/to/jquery.tinymce.min.js"></script>
-```
+<script src="/path/to/jquery.tinymce.min.js"></script>
+----
 +
 For information on self-hosting {productname}, see: link:{rootDir}general-configuration-guide/advanced-install.html[Installing {productname}].
 . Source `tinymce-knockout-binding` (`wysiwyg.js`) on the page.
@@ -50,16 +52,18 @@ If the project loads tinymce-knockout-binding from a Content Delivery Network (C
 
 . Add an initialization point for {productname}, such as:
 +
-```html
+[source,html]
+----
 <div>
    <textarea data-bind="wysiwyg: content, wysiwygConfig: {  }">
    </textarea>
  </div>
-```
+----
 
 . Add the {productname} Knockout init script. The {productname} settings are defined within the `defaults` object.
 +
-```html
+[source,html]
+----
 <script>
    (function( $, ko ) {
 
@@ -77,14 +81,15 @@ If the project loads tinymce-knockout-binding from a Content Delivery Network (C
 
    }( jQuery, ko ));
  </script>
-```
+----
 
 [[example-knockout-integration]]
 === Example Knockout integration
 
 To load a TinyMCE editor similar to the link:{rootDir}demo/basic-example.html[Basic example], add the following code to an empty HTML file.
 
-```html
+[source,html,subs="+attributes"]
+----
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -95,8 +100,8 @@ To load a TinyMCE editor similar to the link:{rootDir}demo/basic-example.html[Ba
     <!-- Load knockoutjs -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.0/knockout-min.js" integrity="sha256-Tjl7WVgF1hgGMgUKZZfzmxOrtoSf8qltZ9wMujjGNQk=" crossorigin="anonymous"></script>
     <!-- Load TinyMCE and the TinyMCE jQuery integration -->
-    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
-    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/jquery.tinymce.min.js" referrerpolicy="origin"></script>
+    <script src="{cdnurl}" referrerpolicy="origin"></script>
+    <script src="{basecdnurl}jquery.tinymce.min.js" referrerpolicy="origin"></script>
     <!-- Load tinymce-knockout-binding (wysiwyg.js) -->
     <script src="https://cdn.jsdelivr.net/npm/tinymce-knockout-binding@1.1.1/src/wysiwyg.js" integrity="sha256-ZG6uOMw+SZjWjCa+SDh1FkcdpVBHjg2elNToi46xLNo=" crossorigin="anonymous"></script>
     <!-- Script to initialize a TinyMCE editor -->
@@ -135,6 +140,6 @@ To load a TinyMCE editor similar to the link:{rootDir}demo/basic-example.html[Ba
     </div>
   </body>
 </html>
-```
+----
 
 For information on creating advanced configurations for the third-party TinyMCE Knockout integration, visit the project on GitHub: https://github.com/michaelpapworth/tinymce-knockout-binding[tinymce-knockout-binding].

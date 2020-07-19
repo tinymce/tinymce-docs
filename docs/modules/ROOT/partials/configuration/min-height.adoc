@@ -11,12 +11,13 @@ The *min_height* option has two kinds of behaviors depending on the state of the
 [discrete#example]
 ===== Example
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   min_height: 100
 });
-```
+----
 
 [TIP]
 ====

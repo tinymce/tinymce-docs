@@ -20,13 +20,14 @@ The help dialog can also be shown by pressing the keyboard shortcut `Alt + 0`.
 [[example-setup]]
 ===== Example setup
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "help",
   toolbar: "help"
 });
-```
+----
 
 [[config-options]]
 == Config Options
@@ -47,7 +48,8 @@ If `help_tabs` is not configured, any tabs defined using `addTab` will be displa
 [[example]]
 ==== Example
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',
   plugins: 'help link table paste code emoticons',
@@ -112,7 +114,7 @@ tinymce.init({
     });
   }
 });
-```
+----
 
 [[api]]
 == API
@@ -128,7 +130,8 @@ tinymce.init({
 [discrete#example-2]
 ==== Example
 
-```js
+[source,js]
+----
 tinymce.activeEditor.plugins.help.addTab({
   name: 'custom',
   title: 'My Custom Tab',
@@ -139,7 +142,7 @@ tinymce.activeEditor.plugins.help.addTab({
     }
   ]
 });
-```
+----
 
 [[exposing-metadata-for-the-help-plugin]]
 == Exposing metadata for the help plugin

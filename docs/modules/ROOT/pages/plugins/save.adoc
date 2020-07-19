@@ -15,13 +15,14 @@ This plugin adds a save button to the {productname} toolbar, which will submit t
 [[example]]
 ===== Example
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "save",
   toolbar: "save"
 });
-```
+----
 
 *Error messages*
 
@@ -29,15 +30,17 @@ The `"Error: Form submit field collision."` error message will appear if you cal
 
 So replace this:
 
-```html
+[source,html]
+----
 <form><button name="submit"></button></form>
-```
+----
 
 With this:
 
-```html
+[source,html]
+----
 <form><button name="submitbtn"></button></form>
-```
+----
 
 [[options]]
 == Options

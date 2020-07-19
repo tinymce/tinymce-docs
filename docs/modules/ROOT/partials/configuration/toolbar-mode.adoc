@@ -39,12 +39,13 @@ image::{rootDir}/images/floating_toolbar.png[**Floating Toolbar**]
 
 Use the following settings to configure a Floating toolbar:
 
-```js
+[source,js]
+----
 tinymce.init({
     selector: "textarea",
     toolbar_mode: 'floating'
 });
-```
+----
 
 [[sliding]]
 ==== Sliding
@@ -58,12 +59,13 @@ image::{rootDir}/images/sliding_toolbar.png[**Sliding Toolbar**]
 
 Use the following settings to configure a Sliding toolbar:
 
-```js
+[source,js]
+----
 tinymce.init({
     selector: "textarea",
     toolbar_mode: 'sliding'
 });
-```
+----
 
 [[scrolling]]
 ==== Scrolling
@@ -81,12 +83,13 @@ image::{rootDir}/images/scrolling_toolbar.png[**Scrolling Toolbar**]
 
 Use the following settings to configure a Scrolling toolbar:
 
-```js
+[source,js]
+----
 tinymce.init({
     selector: "textarea",
     toolbar_mode: 'scrolling'
 });
-```
+----
 
 [[wrap]]
 ==== Wrap
@@ -100,9 +103,10 @@ image::{rootDir}/images/wrapped_toolbar.png[**Wrapped Toolbar**]
 
 Use the following settings to configure a wrapped toolbar:
 
-```js
+[source,js]
+----
 tinymce.init({
     selector: "textarea",
     toolbar_mode: 'wrap'
 });
-```
+----

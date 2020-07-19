@@ -20,36 +20,40 @@ The build scripts that comes with the {productname} development package automati
 [[example-of-the-plugin-file-structure]]
 == Example of the plugin file structure
 
-```
+[source]
+----
 /tinymce/plugins/example/plugin.js
 /tinymce/plugins/example/plugin.min.js
-```
+----
 
 This new example plugin can be loaded using the `tinymce.init` plugins option.
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',
   plugins: 'example'
 });
-```
+----
 
 Developers can designate the location of the plugins by loading the `plugin.js` or `plugin.min.js` files directly after the `tinymce.js` or `tinymce.min.js`.
 
 [[example-of-loading-the-plugin-from-another-url]]
 == Example of loading the plugin from another URL
 
-```html
+[source,html]
+----
 <script src="/tinymce/js/tinymce.min.js"></script>
 <script src="/scripts/my.tinymce.plugin.js"></script>
-```
+----
 
 [[example-plugin]]
 == Example plugin
 
 This example plugin demonstrates how to add a simple toolbar button and menu item. This button opens a dialog that allows a title to be entered into the editor. The menu item will open the same dialog as the button.
 
-```js
+[source,js]
+----
 tinymce.PluginManager.add('example', function(editor, url) {
   var openDialog = function () {
     return editor.windowManager.open({
@@ -106,25 +110,26 @@ tinymce.PluginManager.add('example', function(editor, url) {
     getMetadata: function () {
       return  {
         name: "Example plugin",
-        url: "\http://exampleplugindocsurl.com"
+        url: "http://exampleplugindocsurl.com"
       };
     }
   };
 });
-```
+----
 
 [[example-init]]
 == Example init
 
 The following is an example of how to use the new toolbar button.
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',
   plugins: 'example',
   toolbar: 'example'
 });
-```
+----
 
 [[exposing-metadata]]
 == Exposing metadata
@@ -141,14 +146,16 @@ The structure is similar to `.po` files in that the English string left and its 
 [[example-of-a-spanish-translation-for-the-dialog-title]]
 == Example of a Spanish translation for the dialog title
 
-```js
+[source,js]
+----
 tinymce.addI18n('es_ES', {
   'Example plugin': 'Example plugin'
 });
-```
+----
 
 WARNING: A 404 error will load if translations are missing in the plugin that the full {productname} package contains. Add the following line to the top of the plugin file to avoid this.
 
-```js
+[source,js]
+----
 tinymce.PluginManager.requireLangPack('example', 'es_ES,de_AT');
-```
+----

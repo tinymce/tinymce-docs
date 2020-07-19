@@ -33,16 +33,18 @@ The structure of context menu sections is a simple query system indexed by name.
 
 In the menu shown to the user, sections are delineated by separators. Sections can return an empty array of menu items to indicate that section has no applicable items to the current context and should not be shown.
 
-```typescript
+[source,ts]
+----
 type ContextMenuApi = {
   update: (element: Element) => string | Array<ContextMenuContents>}
 
 editor.ui.registry.addContextMenu(name: string, feature: ContextMenuApi);
-```
+----
 
 Every time the user opens the context menu, the selected element is passed to the update function which must return either a space separated string or an array of items to display. The types of the items returned are as follows:
 
-```typescript
+[source,ts]
+----
 type ContextMenuContents = string | ContextMenuItem | SeparatorMenuItemApi | ContextSubMenu
 
 type ContextMenuItem = {
@@ -60,7 +62,7 @@ type ContextSubMenu = {
 type SeparatorMenuItemApi = {
   type: 'separator'
 }
-```
+----
 
 The most common type to use is `string`, which references an existing registered menu item.
 
@@ -79,12 +81,13 @@ This example creates a menu with a mixture of dynamic and static menu items. Whi
 
 The other item names are all menu items and will appear on the context menu regardless of cursor position. A separator is used to distinguish the table edit features from the table insert feature. As `link` is a context menu section, a separator will automatically be inserted after it so it is not necessary to specify one in the configuration.
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",
   contextmenu: "link bold italic inserttable | cell row column deletetable"
 });
-```
+----
 -
 ////
 

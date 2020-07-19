@@ -23,9 +23,10 @@ Insert the {productname} editor code into the application to load {productname} 
 
 The following example adds a script tag into the application that inserts the code. Use the `<head>` of the page on a web page. Be sure to substitute 'no-api-key' with your api key.
 
-```js
+[source,html,subs="+attributes"]
+----
 <script src="{cdnurl}" referrerpolicy="origin"></script>
-```
+----
 
 |===
 |  | Value | Description
@@ -106,9 +107,10 @@ NOTE: The script tag typically references `tinymce.min.js` hosted within the app
 
 Replace the script tag with the following:
 
-```js
+[source,html,subs="+attributes"]
+----
 <script src="{cdnurl}" referrerpolicy="origin"></script>
-```
+----
 
 [[step-2-update-custom-plugin-paths]]
 === Step 2: Update custom plugin paths

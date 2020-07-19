@@ -12,11 +12,12 @@ For information on available list types, see: https://developer.mozilla.org/en-U
 
 *Examples*
 
-```js
+[source,js]
+----
 tinymce.activeEditor.execCommand('ApplyOrderedListStyle', false, {
   'list-style-type': 'disc'
 });
 tinymce.activeEditor.execCommand('ApplyUnorderedListStyle', false, {
   'list-style-type': 'decimal'
 });
-```
+----

@@ -9,9 +9,10 @@ php composer.phar require "tinymce/tinymce" ">= {productmajorversion}"
 
 Include this line of code in the `<head>` of your HTML page:
 
-```html
+[source,html]
+----
 <script src="/path/to/tinymce.min.js"></script>
-```
+----
 
 [[step-2-initialize-tinymce-as-part-of-a-web-form]]
 === Step 2: Initialize TinyMCE as part of a web form
@@ -22,7 +23,8 @@ Since {productname} lets you identify replaceable elements via a CSS selector, a
 
 In this example, let's replace `<textarea id='mytextarea'>` with a {productname} editor instance by passing the selector `'#mytextarea'` to `tinymce.init()`.
 
-```html
+[source,html,subs="+attributes"]
+----
 <!DOCTYPE html>
 <html>
 <head>
@@ -41,7 +43,7 @@ In this example, let's replace `<textarea id='mytextarea'>` with a {productname}
   </form>
 </body>
 </html>
-```
+----
 
 [[step-3-saving-content-with-a-form-post]]
 === Step 3: Saving content with a form POST
@@ -53,7 +55,8 @@ When the `<form>` is submitted the {productname} editor mimics the behavior of a
 
 When using package managers you might have local {productname} add-ons in your project such as plugins or language packs. Load these from your project location rather than from inside the package using these configuration options:
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',
   language: 'sv',
@@ -63,7 +66,7 @@ tinymce.init({
     'myplugin': '/js/myplugin/plugin.min.js'
   }
 });
-```
+----
 
 [NOTE]
 ====

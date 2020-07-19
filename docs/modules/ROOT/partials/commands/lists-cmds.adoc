@@ -16,7 +16,8 @@
 
 *Examples*
 
-```js
+[source,js]
+----
 tinymce.activeEditor.execCommand('InsertDefinitionList', false, {
   'list-item-attributes': {class: 'mylistitemclass'},
   'list-attributes': {id: 'mylist'}
@@ -32,4 +33,4 @@ tinymce.activeEditor.execCommand('InsertUnorderedList', false, {
   'list-attributes': {id: 'mylist'}
 });
 tinymce.activeEditor.execCommand('RemoveList');
-```
+----

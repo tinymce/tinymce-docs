@@ -10,9 +10,10 @@
 
 *Examples*
 
-```js
+[source,js]
+----
 tinymce.activeEditor.execCommand('mceInsertClipboardContent', false, {
   content: '<p>Hello, World!</p>'
 });
 tinymce.activeEditor.execCommand('mceTogglePlainTextPaste');
-```
+----

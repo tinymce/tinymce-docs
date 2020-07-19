@@ -9,7 +9,8 @@ This option enables auto hiding of styles that can't be applied to the current c
 [discrete#example]
 ===== Example
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',
   style_formats: [
@@ -18,4 +19,4 @@ tinymce.init({
   ],
   style_formats_autohide: true
 });
-```
+----

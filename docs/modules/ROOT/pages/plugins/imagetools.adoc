@@ -20,13 +20,14 @@ Simply add `image` to the `toolbar` list and `image imagetools` to the `plugins`
 [discrete#example]
 ===== Example
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   toolbar: "image",
   plugins: "image imagetools"
 });
-```
+----
 
 [[self-hosted-installation]]
 == Self-hosted Installation
@@ -39,7 +40,8 @@ To enable the {productname} Image Tools plugin:
 [discrete#example-2]
 ===== Example
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   toolbar: "image",
@@ -47,7 +49,7 @@ tinymce.init({
   imagetools_cors_hosts: ['mydomain.com', 'otherdomain.com'],
   imagetools_proxy: 'proxy.php'
 });
-```
+----
 
 [[options]]
 == Options
@@ -68,14 +70,15 @@ NOTE: `imagetools_cors_hosts` is *not* required when enabling this plugin via li
 [discrete#example-2]
 ===== Example
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   toolbar: "image",
   plugins: "image imagetools",
   imagetools_cors_hosts: ['mydomain.com', 'otherdomain.com']
 });
-```
+----
 
 [[imagetools_credentials_hosts]]
 === `imagetools_credentials_hosts`
@@ -87,7 +90,8 @@ This option can be used together with the `imagetools_cors_hosts` option to allo
 [discrete#example-2]
 ===== Example
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   toolbar: "image",
@@ -95,7 +99,7 @@ tinymce.init({
   imagetools_cors_hosts: ['mydomain.com', 'otherdomain.com'],
   imagetools_credentials_hosts: ['mydomain.com', 'otherdomain.com']
 });
-```
+----
 
 [[imagetools_fetch_image]]
 === `imagetools_fetch_image`
@@ -107,7 +111,8 @@ This option can be used to define a custom fetch function, which provides anothe
 [discrete#example-2]
 ===== Example
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   toolbar: "image",
@@ -120,7 +125,7 @@ tinymce.init({
     });
   }
 });
-```
+----
 
 [[imagetools_proxy]]
 === `imagetools_proxy`
@@ -136,18 +141,20 @@ NOTE: `imagetools_proxy` is *not* required when enabling this plugin via link:{r
 [discrete#example-2]
 ===== Example
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   toolbar: "image",
   plugins: "image imagetools",
   imagetools_proxy: 'proxy.php'
 });
-```
+----
 
 *Example of a proxy.php script*
 
-```php
+[source,php]
+----
 <?php
 // We recommend to extend this script with authentication logic
 // so it can be used only by an authorized user
@@ -175,7 +182,7 @@ if ($info === false || in_array($info["mime"], $validMimeTypes) === false) {
 header('Content-Type:' . $info["mime"]);
 echo $content;
 ?>
-```
+----
 
 [[imagetools_toolbar]]
 === `imagetools_toolbar`
@@ -198,14 +205,15 @@ The exact selection of buttons that will appear on the contextual toolbar can be
 [discrete#example-2]
 ===== Example
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   toolbar: "image",
   plugins: "image imagetools",
   imagetools_toolbar: "rotateleft rotateright | flipv fliph | editimage imageoptions"
 });
-```
+----
 
 [[commands]]
 == Commands

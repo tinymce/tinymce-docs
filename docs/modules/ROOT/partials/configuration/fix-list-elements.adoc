@@ -5,7 +5,8 @@ This option enables you to specify that list elements (`ul`, `ol`) should be con
 
 This invalid list:
 
-```html
+[source,html]
+----
 
 . a
  .. b
@@ -13,18 +14,19 @@ This invalid list:
 
 . e
 
-```
+----
 
 Gets converted into this valid list:
 
-```html
+[source,html]
+----
 
 . a
  .. b
  .. c
 . e
 
-```
+----
 
 *Type:* `Boolean`
 
@@ -35,9 +37,10 @@ Gets converted into this valid list:
 [discrete#example]
 ===== Example
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   fix_list_elements : true
 });
-```
+----

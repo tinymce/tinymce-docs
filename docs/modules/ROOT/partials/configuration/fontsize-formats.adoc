@@ -10,10 +10,11 @@ This option allows you to override the font sizes displayed in the `fontsizesele
 [discrete#example]
 ===== Example
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   toolbar: 'fontsizeselect',
   fontsize_formats: '11px 12px 14px 16px 18px 24px 36px 48px'
 });
-```
+----

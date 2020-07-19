@@ -21,13 +21,14 @@ The autosave plugin adds:
 [[example]]
 ===== Example
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "autosave",
   toolbar: "restoredraft"
 });
-```
+----
 
 [[options]]
 == Options
@@ -48,13 +49,14 @@ This option allows you to set whether the editor should prompt the user to advis
 [discrete#example-2]
 ===== Example
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "autosave",
   autosave_ask_before_unload: false
 });
-```
+----
 
 [[autosave_interval]]
 === `autosave_interval`
@@ -68,12 +70,13 @@ This option enables you to specify the time the editor should wait between takin
 [discrete#example-2]
 ===== Example:
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   autosave_interval: "20s"
 });
-```
+----
 
 [[autosave_prefix]]
 === `autosave_prefix`
@@ -87,13 +90,14 @@ This option allows you to set the prefix that is used for local storage keys.
 [discrete#example-2]
 ===== Example:
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "autosave",
   autosave_prefix: "tinymce-autosave-{path}{query}-{id}-"
 });
-```
+----
 
 [[autosave_restore_when_empty]]
 === `autosave_restore_when_empty`
@@ -109,13 +113,14 @@ This option enables you to specify if {productname} should automatically restore
 [discrete#example-2]
 ===== Example:
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "autosave",
   autosave_restore_when_empty: true
 });
-```
+----
 
 [[autosave_retention]]
 === `autosave_retention`
@@ -129,10 +134,11 @@ This option lets you to specify the duration editor content should remain in loc
 [discrete#example-2]
 ===== Example:
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "autosave",
   autosave_retention: "30m"
 });
-```
+----

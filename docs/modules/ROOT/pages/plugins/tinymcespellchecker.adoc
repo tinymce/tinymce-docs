@@ -26,13 +26,14 @@ With {cloudname} the server-side spellchecking component is automatically config
 [discrete#example-tinymce-cloud-installation]
 ==== Example: TinyMCE Cloud Installation
 
-```js
+[source,js]
+----
 tinymce.init({
 	selector: 'textarea',
 	plugins: 'tinymcespellchecker',
 	spellchecker_language: 'en'
 });
-```
+----
 
 [[self-hosted-installation]]
 == Self-hosted Installation
@@ -47,14 +48,15 @@ For information on installing the server-side component for spell checking, plea
 [discrete#example-tinymce-self-hosted-installation]
 ==== Example: TinyMCE Self-hosted Installation
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',
   plugins: 'tinymcespellchecker',
   spellchecker_rpc_url: 'localhost/ephox-spelling',
   spellchecker_language: 'en'
 });
-```
+----
 
 [[usage]]
 == Usage
@@ -78,13 +80,14 @@ This option enables or disables the spell checker when the editor is loaded. Whe
 [[example]]
 ==== Example: `spellchecker_active`
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',
   plugins: 'tinymcespellchecker',
   spellchecker_active: true
 });
-```
+----
 
 [[spellchecker_dialog]]
 === `spellchecker_dialog`
@@ -103,14 +106,15 @@ This option specifies the primary spell checking mode.
 [[example-2]]
 ==== Example: `spellchecker_dialog`
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',
   plugins: 'tinymcespellchecker',
   toolbar: 'spellchecker',
   spellchecker_dialog: true
 });
-```
+----
 
 [[spellchecker_language]]
 === `spellchecker_language`
@@ -124,13 +128,14 @@ This option specifies the default language used by Spell Checker Pro.
 [[example-2]]
 ==== Example: `spellchecker_language`
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',
   plugins: 'tinymcespellchecker',
   spellchecker_language: 'en_us'
 });
-```
+----
 
 include::{partialsDir}configuration/languages.adoc[leveloffset=+2]
 
@@ -142,19 +147,23 @@ This option specifies the spellchecker languages that are available to the user,
 *Type:* comma-separated `String`
 
 *Default Value:*
-```
+
+[source]
+----
 'US English=en_us,UK English=en_gb,Danish=da,Dutch=nl,Finnish=fi,French=fr,German=de,Italian=it,Norwegian=nb,Brazilian Portuguese=pt,Iberian Portuguese=pt_PT,Spanish=es,Swedish=sv'
-```
+----
 
 [[example-2]]
 ==== Example: `spellchecker_languages`
-```js
+
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',
   plugins: 'tinymcespellchecker',
   spellchecker_languages: 'US English=en_us,UK English=en_gb,Danish=da,Dutch=nl,Finnish=fi,French=fr,German=de,Italian=it,Norwegian=nb,Brazilian Portuguese=pt,Iberian Portuguese=pt_PT,Spanish=es,Swedish=sv'
 });
-```
+----
 
 [[spellchecker_on_load]]
 === `spellchecker_on_load`
@@ -172,13 +181,14 @@ This option runs the spellchecker when the contents of the editor is loaded.
 [[example-2]]
 ==== Example: `spellchecker_on_load`
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',
   plugins: 'tinymcespellchecker',
   spellchecker_on_load: true
 });
-```
+----
 
 [[spellchecker_rpc_url]]
 === `spellchecker_rpc_url`
@@ -192,13 +202,14 @@ NOTE: `spellchecker_rpc_url` is *not* required when enabling this plugin via lin
 [[example-2]]
 ==== Example: `spellchecker_rpc_url`
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',
   plugins: 'tinymcespellchecker',
   spellchecker_rpc_url: 'localhost/ephox-spelling'
 });
-```
+----
 
 [[spellchecker_select_languages]]
 === `spellchecker_select_languages`
@@ -212,14 +223,15 @@ This option specifies the languages that can be set for content when working wit
 [[example-2]]
 ==== Example: `spellchecker_select_languages`
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',
   plugins: 'tinymcespellchecker',
   toolbar: 'language',
   spellchecker_select_languages: 'en,es,fi,fr,da,de,nl,it,nb,pt,sv,zh'
 });
-```
+----
 
 [[spellchecker_whitelist]]
 === `spellchecker_whitelist`
@@ -231,13 +243,14 @@ This option specifies an array of words to be ignored by the spell checker.
 [[example-2]]
 ==== Example: `spellchecker_whitelist`
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',
   plugins: 'tinymcespellchecker',
   spellchecker_whitelist: ['tinymce','TinyMCE']
 });
-```
+----
 
 [[toolbar-buttons]]
 == Toolbar Buttons
@@ -262,7 +275,8 @@ For more information about customizing the toolbar, see: link:{rootDir}configure
 [discrete#example-spell-checker-pro-toolbar-buttons]
 ==== Example: Spell Checker Pro toolbar buttons
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',
   plugins: 'tinymcespellchecker',
@@ -270,7 +284,7 @@ tinymce.init({
   spellchecker_rpc_url: 'localhost/ephox-spelling',
   spellchecker_language: 'en_us'
 });
-```
+----
 
 [[menu-items]]
 === Menu items
@@ -294,7 +308,8 @@ For more information about customizing the toolbar, see: link:{rootDir}configure
 [[example-spell-checker-pro-menu-items]]
 ==== Example: Spell Checker Pro menu items
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',
   plugins: 'tinymcespellchecker',
@@ -304,7 +319,7 @@ tinymce.init({
   spellchecker_rpc_url: 'localhost/ephox-spelling',
   spellchecker_language: 'en'
 });
-```
+----
 
 [[events]]
 == Events
@@ -319,7 +334,8 @@ This event triggers when the user selects *Ignore* on a misspelled word.
 [[example-the-spellcheckerignore-event]]
 ==== Example: The SpellcheckerIgnore event
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',
   plugins: 'tinymcespellchecker',
@@ -330,7 +346,7 @@ tinymce.init({
     });
   }
 });
-```
+----
 
 [[spellcheckerignoreall-event]]
 === SpellcheckerIgnoreAll event
@@ -340,7 +356,8 @@ This event triggers when the user selects *Ignore All* on a misspelled word.
 [[example-the-spellcheckerignoreall-event]]
 ==== Example: The SpellcheckerIgnoreAll event
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',
   plugins: 'tinymcespellchecker',
@@ -351,7 +368,7 @@ tinymce.init({
     });
   }
 });
-```
+----
 
 [[spellcheckstart-event]]
 === SpellcheckStart event
@@ -361,7 +378,8 @@ This event triggers when the user *enables* the `spellchecker`.
 [[example-the-spellcheckstart-event]]
 ==== Example: The SpellcheckStart event
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',
   plugins: 'tinymcespellchecker',
@@ -372,7 +390,7 @@ tinymce.init({
     });
   }
 });
-```
+----
 
 [[spellcheckend-event]]
 === SpellcheckEnd event
@@ -382,7 +400,8 @@ This event triggers when the user *disables* the `spellchecker`.
 [[example-the-spellcheckend-event]]
 ==== Example: The SpellcheckEnd event
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',
   plugins: 'tinymcespellchecker',
@@ -393,7 +412,7 @@ tinymce.init({
     });
   }
 });
-```
+----
 
 [[spellcheckerror-event]]
 === SpellcheckError event
@@ -403,7 +422,8 @@ This event triggers when a spellchecker error occurs, such as the Spell Checker 
 [[example-the-spellcheckerror-event]]
 ==== Example: The SpellcheckError event
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',
   plugins: 'tinymcespellchecker',
@@ -414,4 +434,4 @@ tinymce.init({
     });
   }
 });
-```
+----

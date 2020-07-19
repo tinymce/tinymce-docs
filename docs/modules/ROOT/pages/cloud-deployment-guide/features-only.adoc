@@ -16,9 +16,10 @@ Sign up for a free API key provides entitlements to premium link:{rootDir}plugin
 
 Add the following script in the webpage once the script tag to load {productname} has been specified. Be sure to substitute 'no-api-key' with your api key.
 
-```js
-<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/plugins.min.js" referrerpolicy="origin"></script>
-```
+[source,html,subs="+attributes"]
+----
+<script src="{baseurl}plugins.min.js" referrerpolicy="origin"></script>
+----
 
 [[step-2-specify-purchased-tinymce-plugins-and-toolbar-buttons]]
 == Step 2: Specify purchased TinyMCE plugins and toolbar buttons
@@ -55,11 +56,12 @@ The example below has the following:
 * The {cloudname} `API key` has the value _TEST_API_KEY_.
 * The {cloudname} has the link:{rootDir}plugins/tinymcespellchecker.html[Spell Checker Pro] plugin enabled.
 
-```js
+[source,js,subs="+attributes"]
+----
 <html>
    <head>
       <script src="https://your_server/tinymce.min.js"></script>
-      <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/plugins.min.js" referrerpolicy="origin"></script>
+      <script src="{basecdnurl}plugins.min.js" referrerpolicy="origin"></script>
    </head>
    <body>
       <textarea><p>test textarea</p></textarea>
@@ -74,7 +76,7 @@ The example below has the following:
       </script>
    </body>
 <html>
-```
+----
 
 [[step-3-forward-proxy-configuration]]
 == Step 3: Forward proxy configuration

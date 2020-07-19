@@ -346,7 +346,8 @@ No additional fields when `type` is `unbounded`.
 
 When the Enhanced Media Embed server generates a summary card of a URL (using the title, thumbnail, description and website), it returns a HTML snippet like the following. You should apply styles to the document style to suit these to your preference.
 
-```html
+[source,html]
+----
 <div class="ephox-summary-card">
   <a class="ephox-summary-card-url-thumbnail" href="http://www.imdb.com/title/tt0117500/">
     <img class="ephox-summary-card-thumbnail" src="https://images-na.ssl-images-amazon.com/images/M/MV5BZDJjOTE0N2EtMmRlZS00NzU0LWE0ZWQtM2Q3MWMxNjcwZjBhXkEyXkFqcGdeQXVyNDk3NzU2MTQ@._V1_UY1200_CR90,0,630,1200_AL_.jpg">
@@ -357,13 +358,13 @@ When the Enhanced Media Embed server generates a summary card of a URL (using th
     <span class="ephox-summary-card-website">IMDb</span>
   </a>
 </div>
-
-```
+----
 
 [discrete#recommended-css]
 ==== Recommended CSS
 
-```css
+[source,css]
+----
 .ephox-summary-card {
     border: 1px solid #AAA;
     box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
@@ -409,4 +410,4 @@ When the Enhanced Media Embed server generates a summary card of a URL (using th
     margin-top: 0.5em;
     display: block;
 }
-```
+----

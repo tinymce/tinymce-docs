@@ -13,13 +13,14 @@ The Code Sample plugin (`codesample`) lets a user insert and embed syntax color 
 [[example]]
 ===== Example
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "codesample",
   toolbar: "codesample"
 });
-```
+----
 
 By default, `codesample` uses `+http://prismjs.com/+` to embed the code samples within the editor and works out of the box. That is, when a user copies valid code syntax into the editable area the code will be automatically formatted according to Prism default CSS rules.
 
@@ -36,11 +37,12 @@ You need to add `prism.js` and `prism.css` to your page in order to get the synt
 [[example-of-using-the-prism-js-script]]
 ==== Example of using the Prism.js script
 
-```html
+[source,html]
+----
 <link rel="stylesheet" type="text/css" href="prism.css">
 <script src="prism.js"></script>
 <pre class="language-markup"><code>...</code></pre>
-```
+----
 
 [[options]]
 == Options
@@ -54,10 +56,11 @@ This configuration option allows a global Prism.js version to be used when highl
 
 When using this option, ensure that Prism.js and any language add-ons are loaded on the site, alongside the TinyMCE script:
 
-```html
+[source,html]
+----
 <script src="prism.js" data-manual></script>
 <script src="tinymce.js"></script>
-```
+----
 
 *Type:* `Boolean`
 
@@ -68,14 +71,15 @@ When using this option, ensure that Prism.js and any language add-ons are loaded
 [[example-2]]
 ==== Example
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',
   plugins: 'codesample',
   toolbar: 'codesample',
   codesample_global_prismjs: true
 });
-```
+----
 
 [[codesample_languages]]
 === `codesample_languages`
@@ -85,7 +89,8 @@ This configuration option enables you to set a list of languages to be displayed
 [[example-2]]
 ==== Example
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',
   plugins: 'codesample',
@@ -103,7 +108,7 @@ tinymce.init({
   ],
   toolbar: 'codesample'
 });
-```
+----
 
 [[live-example]]
 == Live example

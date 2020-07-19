@@ -20,12 +20,13 @@ You will need to sacrifice quite a lot of {productname}'s functionality to use t
 [[example]]
 ===== Example
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "bbcode"
 });
-```
+----
 
 [[options]]
 == Options
@@ -84,13 +85,14 @@ When using PunBB dialect, `codeStyle` and `quoteStyle` will be converted to `[co
 [discrete#example-2]
 ===== Example
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "bbcode",
   bbcode_dialect: "punbb"
 });
-```
+----
 
 [[live-example]]
 == Live example

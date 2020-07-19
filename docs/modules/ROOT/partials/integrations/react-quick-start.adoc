@@ -21,31 +21,36 @@ This procedure requires:
 
 . On a command line or command prompt, install the https://github.com/facebook/create-react-app[Create React App] package.
 +
-```sh
+[source,sh]
+----
 $ npm install -g create-react-app
-```
+----
 
 . Create a new React project named `tinymce-react-demo`.
 +
-```sh
+[source,sh]
+----
 $ create-react-app tinymce-react-demo
-```
+----
 
 . Change into the newly created directory.
 +
-```sh
+[source,sh]
+----
 $ cd tinymce-react-demo
-```
+----
 
 . Install the `tinymce-react` package and save it to your `package.json` with `--save`.
 +
-```sh
+[source,sh]
+----
 $ npm install --save @tinymce/tinymce-react
-```
+----
 
 . Using a text editor, open `/path/to/tinymce-react-demo/src/App.js` and replace the contents with:
 +
-```js
+[source,jsx]
+----
 import React from 'react';
 import { Editor } from '@tinymce/tinymce-react';
 
@@ -78,7 +83,7 @@ class App extends React.Component {
 }
 
 export default App;
-```
+----
 +
 This JavaScript file will create the class `App` containing a {productname} editor configured to replicate the example on the link:{rootDir}demo/basic-example.html[Basic example page].
 
@@ -89,9 +94,10 @@ Include the `apiKey` option in the editor element and include your link:{account
 +
 Such as:
 +
-```js
+[source,jsx]
+----
 <Editor apiKey='your-api-key' init={{ /* your other settings */ }} />
-```
+----
 
  ** *{productname} Self-hosted*
 +
@@ -101,9 +107,10 @@ Such as:
 +
 To use an independent deployment of {productname}, add a script to either the `<head>` or the end of the `<body>` of the HTML file, such as:
 +
-```html
+[source,html]
+----
 <script src="/path/to/tinymce.min.js"></script>
-```
+----
 +
 To use an independent deployment of {productname} with the create a React application, add the script to `/path/to/tinymce-react-demo/public/index.html`.
 +
@@ -115,9 +122,10 @@ To bundle {productname} using a module loader (such as Webpack and Browserify), 
 . Test the application using the Node.js development server.
  ** To start the development server, navigate to the `tinymce-react-demo` directory and run:
 +
-```
+[source,sh]
+----
 $ npm run start
-```
+----
 
  ** To stop the development server, select on the command line or command prompt and press _Ctrl+C_.
 
@@ -130,9 +138,10 @@ To deploy the application to a local HTTP Server:
 
 . Navigate to the `tinymce-react-demo` directory and run:
 +
-```
+[source,sh]
+----
 $ npm run build
-```
+----
 
 . Copy the contents of the `tinymce-react-demo/build` directory to the root directory of the web server.
 

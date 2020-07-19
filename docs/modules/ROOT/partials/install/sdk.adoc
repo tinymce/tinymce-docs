@@ -10,9 +10,10 @@ Unzip the package and move the `'path/to/{prodnamecode}/'` directory into a web 
 
 Include this line of code in the `<head>` of your HTML page:
 
-```html
+[source,html]
+----
 <script src="path/to/tinymce/js/tinymce.min.js"></script>
-```
+----
 
 [[step-3-initialize-tinymce-as-part-of-a-web-form]]
 === Step 3: Initialize TinyMCE as part of a web form
@@ -23,7 +24,8 @@ Since {productname} lets you identify replaceable elements via a CSS selector, a
 
 In this example, let's replace `<textarea id='mytextarea'>` with a {productname} editor instance by passing the selector `'#mytextarea'` to `tinymce.init()`.
 
-```html
+[source,html,subs="+attributes"]
+----
 <!DOCTYPE html>
 <html>
 <head>
@@ -42,7 +44,7 @@ In this example, let's replace `<textarea id='mytextarea'>` with a {productname}
   </form>
 </body>
 </html>
-```
+----
 
 [[step-4-saving-content-with-a-form-post]]
 === Step 4: Saving content with a form POST

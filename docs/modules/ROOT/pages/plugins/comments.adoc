@@ -19,14 +19,16 @@ After obtaining the Comments 2.0 plugin, refer to the following instructions for
 == Add the Comments 2.0 plugin
 
 To add the Comments 2.0 plugin to the {productname} editor, use the following script:
-```js
+
+[source,js]
+----
 tinymce.init({
   selector: '#tiny-ui .editor',
   plugins: 'paste tinycomments',
   tinycomments_mode: 'embedded',
   tinycomments_author: 'Author'
 });
-```
+----
 
 [[modes]]
 === Modes
@@ -45,7 +47,9 @@ Refer to the link:{rootDir}advanced/configuring-comments-callbacks.html[configur
 == Configuring Comments 2.0 embedded mode
 
 To configure Comments 2.0 to use the embedded mode use the following script:
-```js
+
+[source,js]
+----
 tinymce.init({
   selector: "#textarea",
   tinycomments_author: 'embedded_journalist',
@@ -53,7 +57,7 @@ tinymce.init({
   tinycomments_mode: 'embedded'
   ...
 })
-```
+----
 
 [[embedded-mode-options]]
 === Embedded mode options
@@ -70,13 +74,14 @@ This option sets the author id to be used when creating or replying to comments.
 [[example]]
 ====== Example
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: "#textarea",
   tinycomments_author: 'embedded_journalist',
   tinycomments_mode: 'embedded'
 })
-```
+----
 
 [[tinycomments_author_name]]
 ==== tinycomments_author_name
@@ -93,14 +98,15 @@ _Optional_ - This option sets the author's display name to be used when creating
 [[example-2]]
 ===== Example
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: "#textarea",
   tinycomments_author: 'embedded_journalist',
   tinycomments_author_name: 'Embedded Journalist',
   tinycomments_mode: 'embedded'
 })
-```
+----
 
 [[tinycomments_can_delete]]
 ==== tinycomments_can_delete
@@ -110,7 +116,9 @@ _Optional_ - This option sets the author permissions for _deleting comment conve
 *Type:* `Function`
 
 *Default Function*
-```js
+
+[source,js]
+----
 function (req, done, fail) {
   var allowed = req.comments.length > 0 &&
                 req.comments[0].author === <Current_tinycomments_author>;
@@ -118,14 +126,15 @@ function (req, done, fail) {
     canDelete: allowed
   });
 }
-```
+----
 
 The following example extends the default behavior to allow the author `<Admin user>` to delete other author's comment conversations by adding `|| currentAuthor === "<Admin user>"`.
 
 [[example-2]]
 ===== Example
 
-```js
+[source,js]
+----
 var currentAuthor = 'embedded_journalist';
 
 tinymce.init({
@@ -139,7 +148,7 @@ tinymce.init({
     });
   }
 });
-```
+----
 
 [[tinycomments_can_delete_comment]]
 ==== tinycomments_can_delete_comment
@@ -149,21 +158,24 @@ _Optional_ - This option sets the author permissions for _deleting comments_. If
 *Type:* `Function`
 
 *Default Function*
-```js
+
+[source,js]
+----
 function (req, done, fail) {
   var allowed = req.comment.author === <Current_tinycomments_author>;
   done({
     canDelete: allowed
   });
 }
-```
+----
 
 The following example extends the default behavior to allow the author `<Admin user>` to delete other author's comments by adding `|| currentAuthor === "<Admin user>"`.
 
 [[example-2]]
 ===== Example
 
-```js
+[source,js]
+----
 var currentAuthor = 'embedded_journalist';
 
 tinymce.init({
@@ -176,7 +188,7 @@ tinymce.init({
     });
   }
 });
-```
+----
 
 [[tinycomments_can_edit_comment]]
 ==== tinycomments_can_edit_comment
@@ -186,21 +198,24 @@ _Optional_ - This option sets the author permissions for _editing comments_. If 
 *Type:* `Function`
 
 *Default Function*
-```js
+
+[source,js]
+----
 function (req, done, fail) {
   var allowed = req.comment.author === <Current_tinycomments_author>;
   done({
     canEdit: allowed
   });
 }
-```
+----
 
 The following example extends the default behavior to allow the author `<Admin user>` to edit other author's comments by adding `|| currentAuthor === "<Admin user>"`.
 
 [[example-2]]
 ===== Example
 
-```js
+[source,js]
+----
 var currentAuthor = 'embedded_journalist';
 
 tinymce.init({
@@ -213,7 +228,7 @@ tinymce.init({
     });
   }
 });
-```
+----
 
 [[configuring-the-comments-2-0-addcomment-toolbar-button]]
 == Configuring the Comments 2.0 addcomment toolbar button
@@ -223,13 +238,15 @@ The `addcomment` toolbar button provides the ability to add comments.
 The *Add comment* toolbar button is available by default if the toolbar menu is not customized.
 
 In case of a customized toolbar menu, use the following script to configure the Comments 2.0 toolbar button:
-```js
+
+[source,js]
+----
 tinymce.init({
  selector: "#textarea",
  toolbar: 'bold italic underline insertfile | addcomment',
  ...
 })
-```
+----
 
 *Result*: The *Comments*  image:comment-disabled.png[Comments] toolbar button appears in the toolbar menu. The function of this button is to add comments to the selected text.
 
@@ -239,13 +256,15 @@ tinymce.init({
 The `showcomments` toolbar button provides the ability to display comments field for the selected text. It is a toggle button and is used to hide the comments sidebar as well.
 
 Use the following script to configure the Comments 2.0 toolbar button:
-```js
+
+[source,js]
+----
 tinymce.init({
  selector: "#textarea",
  toolbar: 'bold italic underline insertfile | showcomments',
  ...
 })
-```
+----
 
 *Result*: The *Comments*  image:comment-disabled.png[Comments] toolbar button appears in the toolbar menu. The function of this button is to show comments to for the selected text.
 

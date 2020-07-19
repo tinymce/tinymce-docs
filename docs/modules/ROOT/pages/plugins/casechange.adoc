@@ -24,13 +24,14 @@ Use the following script to configure the *Case Change* link:{rootDir}ui-compone
 [discrete#example]
 ===== Example
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "casechange",
   toolbar: "casechange"
 });
-```
+----
 
 [[configuring-the-case-change-menu-item]]
 == Configuring the Case Change menu item
@@ -40,7 +41,8 @@ Use the following script to configure the *Case Change* link:{rootDir}ui-compone
 [discrete#example-2]
 ===== Example
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "casechange",
@@ -48,7 +50,7 @@ tinymce.init({
     format: { title: 'Format', items: 'casechange' }
   }
 });
-```
+----
 
 [[types-of-formats]]
 == Types of Formats
@@ -100,7 +102,8 @@ The `casechange_title_case_minors` option is used to customize the rules while u
 [discrete#example-2]
 ===== *Example*
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "casechange",
@@ -112,7 +115,7 @@ tinymce.init({
     'for', 'and', 'nor', 'but', 'or', 'yet', 'so', 'an', 'a', 'some', 'the'
   ]
 });
-```
+----
 
 [[commands]]
 == Commands

@@ -25,10 +25,11 @@ If the project loads jQuery from \https://code.jquery.com/, use the script provi
 +
 To source {productname} and the {productname} jQuery integration from the {cloudname}, add the following `script` elements:
 +
-```html
+[source,html,subs="+attributes"]
+----
 <script src="{cdnurl}" referrerpolicy="origin"></script>
-<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/jquery.tinymce.min.js" referrerpolicy="origin"></script>
-```
+<script src="{basecdnurl}jquery.tinymce.min.js" referrerpolicy="origin"></script>
+----
 +
 Replace `no-api-key` in the source script (`+<script src=...+`) with a {cloudname} API key, which is created when signing up to the link:{accountsignup}[{cloudname}].
 +
@@ -38,34 +39,38 @@ Signing up for a {cloudname} API key will also provide a trial of the link:{root
 +
 To use an independent deployment of {productname}, add source scripts to either the `<head>` or the end of the `<body>` of the HTML file, such as:
 +
-```html
+[source,html]
+----
 <script src="/path/to/tinymce.min.js"></script>
 <script src="/path/to/jquery.tinymce.min.js"></script>
-```
+----
 +
 For information on self-hosting {productname}, see: link:{rootDir}general-configuration-guide/advanced-install.html[Installing {productname}].
 . Add an initialization point for {productname}, such as:
 +
-```html
+[source,html]
+----
  <div>
    <textarea id="tiny"></textarea>
  </div>
-```
+----
 
 . Add the {productname} jQuery init script. The {productname} selector is defined in the jQuery prefix, and any other settings are defined within the `tinymce` object.
 +
-```html
+[source,html]
+----
 <script>
    $('textarea#tiny').tinymce({    });
  </script>
-```
+----
 
 [[example-jquery-integration]]
 === Example jQuery integration
 
 To load a TinyMCE editor similar to the link:{rootDir}demo/basic-example.html[Basic example], add the following code to an empty HTML file.
 
-```html
+[source,html,subs="+attributes"]
+----
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -73,7 +78,7 @@ To load a TinyMCE editor similar to the link:{rootDir}demo/basic-example.html[Ba
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="{cdnurl}" referrerpolicy="origin"></script>
-    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/jquery.tinymce.min.js" referrerpolicy="origin"></script>
+    <script src="{basecdnurl}jquery.tinymce.min.js" referrerpolicy="origin"></script>
   </head>
   <body>
     <div>
@@ -93,21 +98,22 @@ To load a TinyMCE editor similar to the link:{rootDir}demo/basic-example.html[Ba
     </script>
   </body>
 </html>
-```
+----
 
 [[tinymce-in-a-jquery-ui-dialog]]
 == TinyMCE in a jQuery UI Dialog
 
 To render {productname} instances inside jQuery UI dialogs, add the following code:
 
-```js
+[source,js]
+----
 // Prevent jQuery UI dialog from blocking focusin
 $(document).on('focusin', function(e) {
   if ($(e.target).closest(".tox-tinymce-aux, .moxman-window, .tam-assetmanager-root").length) {
     e.stopImmediatePropagation();
   }
 });
-```
+----
 
 This code is required because jQuery blocks all `focusin` calls from elements outside the dialog. For a working example, http://fiddle.tinymce.com/rsdaab/840[try this {productname} fiddle].
 

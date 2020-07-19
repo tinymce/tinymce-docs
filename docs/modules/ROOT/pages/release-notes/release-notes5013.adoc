@@ -76,7 +76,8 @@ image::color-map-updated.png[Color map]
 
 To use the old default colors instead of the new colors, add the following to your TinyMCE configuration:
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',
   color_map: [
@@ -108,7 +109,7 @@ tinymce.init({
     { type: choiceItem, text: 'White', value: '#ffffff' }
   ]
 })
-```
+----
 
 [[dialog-improvements]]
 ==== Dialog improvements

@@ -16,14 +16,15 @@ By default selectors like `".my-class"`, `".my-class1.my-class2"` and `"p.my-cla
 [[example]]
 ===== Example
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "importcss",
   menubar: "format",
   content_css: "/my-styles.css"
 });
-```
+----
 
 [[options]]
 == Options
@@ -42,7 +43,8 @@ If set to `true` this option will append the imported styles to the end of the `
 [discrete#example-2]
 ===== Example
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "importcss",
@@ -50,7 +52,7 @@ tinymce.init({
   content_css: "/my-styles.css",
   importcss_append: true
 });
-```
+----
 
 [[importcss_exclusive]]
 === `importcss_exclusive`
@@ -61,7 +63,8 @@ If set to `false` then selectors will not be globally exclusive meaning they can
 
 *Default Value:* `true`
 
-```
+[source]
+----
 // Sample compressed stylesheet:
 
 /* Normalize */
@@ -76,9 +79,10 @@ article, aside, footer, header, main, nav, section {display: block;}
 .myCustomStyleEnd {display:none;}
 
 /* Any other possible styles afterward ... */
-```
+----
 
-```js
+[source,js]
+----
 var keepSelector = false;
 tinymce.init({
   importcss_selector_converter: function(selector) {
@@ -94,7 +98,7 @@ tinymce.init({
     return this.convertSelectorToFormat(selector);
   }
 });
-```
+----
 
 [[importcss_file_filter]]
 === `importcss_file_filter`
@@ -106,7 +110,8 @@ This option enables you to add the CSS files that should be used for populating 
 [discrete#example-2]
 ===== Example
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "importcss",
@@ -114,7 +119,7 @@ tinymce.init({
   content_css: "/my-styles.css",
   importcss_file_filter: "/my-styles.css"
 });
-```
+----
 
 [[importcss_groups]]
 === `importcss_groups`
@@ -123,7 +128,8 @@ This option enables group matching selectors into submenus in the `Formats` menu
 
 *Example of usage with string filter*
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "importcss"
@@ -135,7 +141,7 @@ tinymce.init({
     {title: 'Other styles'} // The rest
   ]
 });
-```
+----
 
 [[importcss_merge_classes]]
 === `importcss_merge_classes`
@@ -147,7 +153,8 @@ This option is used in cases where the class attribute should be replaced or mer
 [discrete#example-2]
 ===== Example
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your html
   plugins: "importcss"
@@ -155,7 +162,7 @@ tinymce.init({
   menubar: "format",
   importcss_merge_classes: false
 });
-```
+----
 
 [[importcss_selector_converter]]
 === `importcss_selector_converter`
@@ -167,7 +174,8 @@ This option allows you to override the default selector to format converter func
 [discrete#example-2]
 ===== Example
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "importcss"
@@ -177,7 +185,7 @@ tinymce.init({
     // Custom logic
   }
 });
-```
+----
 
 [[importcss_selector_filter]]
 === `importcss_selector_filter`
@@ -188,7 +196,8 @@ This option enables you to only import classes from selectors matching the filte
 
 *Example of usage with string filter:*
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "importcss",
@@ -196,11 +205,12 @@ tinymce.init({
   content_css: "/my-styles.css",
   importcss_selector_filter: ".my-prefix-"
 });
-```
+----
 
 *Example of usage with RegExp filter*
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "importcss",
@@ -208,11 +218,12 @@ tinymce.init({
   content_css: "/my-styles.css",
   importcss_selector_filter: /\.prefix|\.otherprefix/
 });
-```
+----
 
 *Example of usage with function filter*
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "importcss",
@@ -222,4 +233,4 @@ tinymce.init({
     return selector.indexOf('myprefix') !== -1;
   }
 });
-```
+----

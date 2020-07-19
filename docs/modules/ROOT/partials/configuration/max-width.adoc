@@ -10,12 +10,13 @@ NOTE: This behavior is different than the link:{rootDir}plugins/autoresize.html[
 [discrete#example]
 ===== Example
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   max_width: 500
 });
-```
+----
 
 [TIP]
 ====

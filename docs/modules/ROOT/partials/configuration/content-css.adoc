@@ -12,46 +12,50 @@ NOTE: If you specify a relative path, it is resolved in relation to the URL of t
 [discrete#absolute-path-example]
 ===== Absolute path example
 
-```js
-// File: \http://domain.mine/mysite/index.html
+[source,js]
+----
+// File: http://domain.mine/mysite/index.html
 
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  content_css : '/myLayout.css'  // resolved to \http://domain.mine/myLayout.css
+  content_css : '/myLayout.css'  // resolved to http://domain.mine/myLayout.css
 });
-```
+----
 
 [discrete#relative-path-example]
 ===== Relative path example
 
-```js
-// File: \http://domain.mine/mysite/index.html
+[source,js]
+----
+// File: http://domain.mine/mysite/index.html
 
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  content_css : 'mycontent.css'  // resolved to \http://domain.mine/mysite/mycontent.css
+  content_css : 'mycontent.css'  // resolved to http://domain.mine/mysite/mycontent.css
 });
-```
+----
 
 [discrete#using-multiple-stylesheets-example]
 ===== Using multiple stylesheets example
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   content_css : 'mycontent.css,mycontent2.css'  // includes both CSS files in header
 });
-```
+----
 
 [discrete#using-multiple-stylesheets-as-array-example]
 ===== Using multiple stylesheets as array example
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   content_css: ['mycontent.css', 'mycontent2.css']  // includes both CSS files in header, ability to have CSS with `,` in URL
 });
-```
+----
 
 [discrete#browser-caching]
 ==== Browser caching
@@ -60,16 +64,18 @@ Browser caching might cause {productname} to not read the contents of a changed 
 
 One solution is to manually clear the browser cache when the file for `content_css` or `editor_css` has changed. Another solution is to use an old hack which adds a bogus parameter to the URL containing a present time stamp like "myFile.css?bogus=10023561235". Possible solutions could look like this:
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   content_css: 'path/myfile.css?' + new Date().getTime()
 });
-```
+----
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   content_css: 'path/myscript.php?myParam=myValue&bogus=' + new Date().getTime()
 });
-```
+----

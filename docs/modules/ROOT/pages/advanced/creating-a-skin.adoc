@@ -34,15 +34,17 @@ To set up the skin development environment, begin with the following steps:
 . Open the terminal and navigate to the folder you just downloaded.
 . Install dependencies with the command:
 +
-```
+[source]
+----
  yarn install
-```
+----
 
 . Launch the web server to preview the skins using the command:
 +
-```
+[source]
+----
 yarn oxide-start
-```
+----
 
 You should now be able to open a web browser and point it to the url displayed in the terminal, usually `+http://localhost:3000+`.
 
@@ -51,9 +53,11 @@ The development environment is set up and ready to work.
 image::SDKforsilver.png[{productname} skin SDK for Silver theme]
 
 If you just need to build the skins without launching a web server, run:
-```
+
+[source]
+----
 yarn oxide-build
-```
+----
 
 [[making-or-editing-a-skin]]
 == Making or editing a skin
@@ -84,12 +88,13 @@ NOTE: The skin *only* changes the visual presentation of the UI and *not* the pl
 
 Your skin.less file should now look like this:
 
-```less
+[source,less]
+----
 /**
  * Copyright (c) Tiny Technologies, Inc. All rights reserved.
  * Licensed under the LGPL or a commercial license.
  * For LGPL see License.txt in the project root for license information.
- * For commercial licenses see \https://www.tiny.cloud/
+ * For commercial licenses see https://www.tiny.cloud/
  */
 
 @import 'src/less/theme/theme';
@@ -99,7 +104,7 @@ Your skin.less file should now look like this:
 //
 
 @background-color: red;
-```
+----
 Switch to the web browser. Select your skin from the _Skin menu_. It should show a fiery red editor
 
 image::SDKforsilverCustomExample.png[{productname} skin SDK for Silver theme]

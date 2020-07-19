@@ -8,9 +8,10 @@ If you are using {productname} skins, this option enables you to specify the loc
 [discrete#example]
 ===== Example
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   skin_url: '/css/my{prodnamecode}skin'
 });
-```
+----

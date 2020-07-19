@@ -27,52 +27,60 @@ If the project loads Bootstrap from \https://www.bootstrapcdn.com/, use the scri
  ** *{cloudname}*
 +
 To source {productname} from the {cloudname}, add the following `script` element to the `<head>` of the document:
-  `html
-  <script src="{cdnurl}" referrerpolicy="origin"></script>
- `
-  Replace `no-api-key` in the source script (`+<script src=...+`) with a {cloudname} API key, which is created when signing up to the link:{accountsignup}[{cloudname}].
++
+[source,html,subs="+attributes"]
+----
+<script src="{cdnurl}" referrerpolicy="origin"></script>
+----
++
+Replace `no-api-key` in the source script (`+<script src=...+`) with a {cloudname} API key, which is created when signing up to the link:{accountsignup}[{cloudname}].
 +
 Signing up for a {cloudname} API key will also provide a trial of the link:{rootDir}enterprise.html[Premium Plugins].
 
  ** *{productname} self-hosted*
 +
 To use an independent deployment of {productname}, add the following source script to either the `<head>` or the end of the `<body>` of the HTML file, such as:
-  `html
-  <script src="/path/to/tinymce.min.js"></script>
- `
++
+[source,html]
+----
+<script src="/path/to/tinymce.min.js"></script>
+----
 +
 For information on self-hosting {productname}, see: link:{rootDir}general-configuration-guide/advanced-install.html[Installing {productname}].
 . Add an initialization point for {productname}, such as:
 +
-```html
+[source,html]
+----
 <div>
   <textarea id="tiny"></textarea>
 </div>
-```
+----
 
 . Add the {productname} init script.
 +
-```html
+[source,html]
+----
 <script>
   tinymce.init({
     selector: 'textarea#tiny'
   });
 </script>
-```
+----
 
 [[using-tinymce-in-a-bootstrap-dialog]]
 == Using TinyMCE in a Bootstrap dialog
 
 To render {productname} instances inside Bootstrap UI dialogs, add the following code:
 
-```js
+[source,js]
+----
 // Prevent Bootstrap dialog from blocking focusin
 $(document).on('focusin', function(e) {
   if ($(e.target).closest(".tox-tinymce-aux, .moxman-window, .tam-assetmanager-root").length) {
     e.stopImmediatePropagation();
   }
 });
-```
+----
 
 This code is required because Bootstrap blocks all `focusin` calls from elements outside the dialog. For a working example, http://fiddle.tinymce.com/gRgaab[try this {productname} fiddle].
 

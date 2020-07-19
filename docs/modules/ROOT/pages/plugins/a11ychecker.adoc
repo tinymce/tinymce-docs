@@ -14,13 +14,14 @@ The `a11ychecker` premium plugin enables you to check the HTML for various WCAG 
 [[example]]
 ===== Example:
 
-```js
+[source,js]
+----
 tinymce.init({
     selector: "textarea",
     plugins: "a11ychecker",
     toolbar: "a11ycheck"
 });
-```
+----
 
 [[rules]]
 == Rules
@@ -137,9 +138,10 @@ This option sets whether the Accessibility Checker should allow decorative image
 
 For example:
 
-```html
+[source,html]
+----
 <img src="my-image.png" role="presentation" alt="" />
-```
+----
 
 If `a11ychecker_allow_decorative_images` is set to `true`, the Accessibility Checker will present an error when:
 
@@ -164,14 +166,15 @@ NOTE: If <<a11y_advanced_options,`a11y_advanced_options`>> is set to `true`, `a1
 [[example-a11ychecker_allow_decorative_images]]
 ==== Example: a11ychecker_allow_decorative_images
 
-```js
+[source,js]
+----
 tinymce.init({
-    selector: "textarea",
-    plugins: "a11ychecker",
-    toolbar: "a11ycheck",
-    a11ychecker_allow_decorative_images: true
+  selector: "textarea",
+  plugins: "a11ychecker",
+  toolbar: "a11ycheck",
+  a11ychecker_allow_decorative_images: true
 });
-```
+----
 
 [[a11ychecker_html_version]]
 === `a11ychecker_html_version`
@@ -189,14 +192,15 @@ For example, setting the version to HTML 4 will trigger the rule "Complex tables
 [[example-a11ychecker_html_version]]
 ==== Example: a11ychecker_html_version
 
-```js
+[source,js]
+----
 tinymce.init({
-    selector: "textarea",
-    plugins: "a11ychecker",
-    toolbar: "a11ycheck",
-    a11ychecker_html_version: 'html5'
+  selector: "textarea",
+  plugins: "a11ychecker",
+  toolbar: "a11ycheck",
+  a11ychecker_html_version: 'html5'
 });
-```
+----
 
 [[a11ychecker_level]]
 === `a11ychecker_level`
@@ -214,14 +218,15 @@ For example, the "Text must have a contrast ratio of at least ..." rule when usi
 [[example-a11ychecker_level]]
 ==== Example: a11ychecker_level
 
-```js
+[source,js]
+----
 tinymce.init({
-    selector: "textarea",
-    plugins: "a11ychecker",
-    toolbar: "a11ycheck",
-    a11ychecker_level: 'aaa'
+  selector: "textarea",
+  plugins: "a11ychecker",
+  toolbar: "a11ycheck",
+  a11ychecker_level: 'aaa'
 });
-```
+----
 
 [[api]]
 == API
@@ -236,9 +241,10 @@ Triggers accessibility dialog with the results of the audit and options to corre
 [[example-toggleaudit]]
 ==== Example: toggleaudit()
 
-```js
+[source,js]
+----
 editor.plugins.a11ychecker.toggleaudit();
-```
+----
 
 [[getreport]]
 === `getReport()`
@@ -253,6 +259,7 @@ Conducts accessibility audit and reports about the results without triggering th
 [discrete#example-getreport]
 ===== Example: getReport()
 
-```js
+[source,js]
+----
 var issues = editor.plugins.a11ychecker.getReport();
-```
+----

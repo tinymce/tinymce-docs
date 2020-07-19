@@ -14,7 +14,8 @@ This option accepts an object, mapping the button name to the group configuratio
 [discrete#example-toolbar_groups]
 ===== Example: toolbar_groups
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   toolbar: 'formatting | alignleft aligncenter alignright',
@@ -26,4 +27,4 @@ tinymce.init({
     }
   }
 });
-```
+----

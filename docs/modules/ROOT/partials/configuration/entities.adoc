@@ -12,9 +12,10 @@ _This setting will only encode characters higher than \u007E (126 in unicode)._
 [discrete#example]
 ===== Example
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   entities : '160,nbsp,162,cent,8364,euro,163,pound'
 });
-```
+----

@@ -12,9 +12,10 @@ The *inline_boundaries* option allows you to disable the inline boundaries. For 
 [discrete#example]
 ===== Example
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   inline_boundaries: false
 });
-```
+----

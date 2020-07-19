@@ -23,28 +23,31 @@ IMPORTANT: When `a11y_advanced_options` is set to `true`, link:{rootDir}plugins/
 ==== Example: a11y_advanced_options
 
 ifeval::["{includedSection}" == "imagePlugin"]
-```js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'image',
   a11y_advanced_options: true
 });
-```
+----
 endif::[]
 ifeval::["{includedSection}" == "a11yPlugin"]
-```js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'a11ychecker',
   a11y_advanced_options: true
 });
-```
+----
 endif::[]
 ifndef::includedSection[]
-```js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   a11y_advanced_options: true
 });
-```
+----
 endif::[]

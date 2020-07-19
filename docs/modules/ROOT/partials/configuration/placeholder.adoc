@@ -12,9 +12,10 @@ NOTE: If the editor is initialized on a `textarea` element, the placeholder attr
 [discrete#example]
 ===== Example
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   placeholder: 'Type here...'
 });
-```
+----

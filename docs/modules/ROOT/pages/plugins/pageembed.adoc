@@ -17,14 +17,15 @@ The *Page Embed* plugin embeds a page in the content using an iframe (Inline fra
 
 Use the following script to create a Page Embed toolbar button:
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "pageembed",
   menubar: "view",
   toolbar: "pageembed"
 });
-```
+----
 
 *Result*: The image:pageembed.png[Page Embed](*Page Embed*) button appears in the toolbar menu.
 
@@ -72,7 +73,8 @@ NOTE: Not all pages allow embedding, as the X-Frame-Options header can be set to
 
 The `tiny_pageembed_classes` takes an array of objects with `text` and `value` properties that will populate the size selection fields in the plugin dialog. Use the following script to create custom classes using the `tiny_pageembed_classes` option:
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "pageembed",
@@ -83,14 +85,15 @@ tinymce.init({
     { text: 'Small embed', value: 'my-small-class' }
   ]
 });
-```
+----
 
 [[disable-select]]
 == Disable select
 
 When the `tiny_pageembed_classes` value is set to an empty array, the size selection fields are not available and only exact sizes can be set. Use the following script to disable `select` using the `tiny_pageembed_classes` option:
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "pageembed",
@@ -98,7 +101,7 @@ tinymce.init({
   toolbar: "pageembed",
   tiny_pageembed_classes: [ ]
 });
-```
+----
 
 [[inline-styles-for-page-embeds]]
 == Inline styles for page embeds
@@ -116,13 +119,14 @@ The `tiny_pageembed_inline_styles` setting will inline all styles, while also ke
 
 To inline page embed styles:
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'pageembed',
   tiny_pageembed_inline_styles: true
 });
-```
+----
 
 [[default-css]]
 == Default CSS
@@ -134,7 +138,8 @@ If the `tiny_pageembed_classes` setting is left undefined, the default classes w
 The following CSS script must be added to the webpage for the default CSS to work correctly.
 ====
 
-```css
+[source,css]
+----
 .tiny-pageembed--21by9,
 .tiny-pageembed--16by9,
 .tiny-pageembed--4by3,
@@ -173,7 +178,7 @@ The following CSS script must be added to the webpage for the default CSS to wor
   top: 0;
   width: 100%;
 }
-```
+----
 For more information on configuring CSS, refer to the link:{rootDir}configure/content-appearance.html#content_css[content_css] section.
 
 Check out the link:{rootDir}demo/pageembed.html[Page Embed demo] to try out this new feature.

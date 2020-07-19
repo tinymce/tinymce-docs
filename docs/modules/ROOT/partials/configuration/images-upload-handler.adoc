@@ -19,7 +19,8 @@ NOTE: To replace the `<img>` tag's `src` attribute with the remote location, ple
 [discrete#example]
 ===== Example
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   images_upload_handler: function (blobInfo, success, failure, progress) {
@@ -61,4 +62,4 @@ tinymce.init({
     xhr.send(formData);
   }
 });
-```
+----

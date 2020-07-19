@@ -16,9 +16,10 @@ To disable the status bar, the `statusbar` option should be provided with a bool
 [discrete#example]
 ===== Example
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   statusbar: false
 });
-```
+----

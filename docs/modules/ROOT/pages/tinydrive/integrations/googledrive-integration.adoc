@@ -73,14 +73,15 @@ image::tinydrive-googledrive-dump5.png[]
 
 You configure the Google drive api key by setting the link:{rootDir}tinydrive/configuration.html#tinydrive_google_drive_key[tinydrive_google_drive_key] and the Google OAuth client ID by setting the link:{rootDir}tinydrive/configuration.html#tinydrive_google_drive_client_id[tinydrive_google_drive_client_id].
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "tinydrive",
   tinydrive_google_drive_key: '<your google api key>',
   tinydrive_google_drive_client_id: '<your google drive OAuth client ID>'
 });
-```
+----
 
 For more information on other {cloudfilemanager} config options refer to the link:{rootDir}tinydrive/configuration[configuration] section of this document.
 

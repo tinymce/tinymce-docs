@@ -48,30 +48,33 @@ The following sections assist with containerizing the {productname} services for
 Windows Users should open a Bash command line as the Administrator User.
 . Extract the contents of the `.zip` file, such as:
 +
-```js
+[source,sh]
+----
 unzip TinyMCE-Premium_latest.zip -d tinymce-selfhosted
-```
+----
 +
 The structure of the extracted files will be:
 +
-```sh
- tinymce-selfhosted/
- ├── tinymce/
- └── tinymce-services/
-     ├── ephox-hyperlinking-docker-starter-kit.zip
-     ├── ephox-hyperlinking.war
-     ├── ephox-image-proxy-docker-starter-kit.zip
-     ├── ephox-image-proxy.war
-     ├── ephox-spelling-docker-starter-kit.zip
-     ├── ephox-spelling.war
-     └── version.txt
-```
+[source,sh]
+----
+tinymce-selfhosted/
+├── tinymce/
+└── tinymce-services/
+    ├── ephox-hyperlinking-docker-starter-kit.zip
+    ├── ephox-hyperlinking.war
+    ├── ephox-image-proxy-docker-starter-kit.zip
+    ├── ephox-image-proxy.war
+    ├── ephox-spelling-docker-starter-kit.zip
+    ├── ephox-spelling.war
+    └── version.txt
+----
 
 . Navigate into the `tinymce-services` folder.
 +
-```js
+[source,sh]
+----
 cd tinymce-selfhosted/tinymce-services/
-```
+----
 
 Proceed to setting up and deploying the containerized services:
 

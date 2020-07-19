@@ -21,27 +21,31 @@ This procedure requires:
 
 . On a command line or command prompt, install the https://cli.vuejs.org/#getting-started[Vue CLI Tool] package.
 +
-```sh
+[source,sh]
+----
 $ npm install -g @vue/cli
-```
+----
 
 . Create a new Vue.js project named `tinymce-vue-demo`.
 +
-```sh
+[source,sh]
+----
 $ vue create --default tinymce-vue-demo
-```
+----
 
 . Change into the newly created directory.
 +
-```sh
+[source,sh]
+----
 $ cd tinymce-vue-demo
-```
+----
 
 . Install the `tinymce-vue` package and save it to your `package.json` with `--save`.
 +
-```sh
+[source,sh]
+----
 $ npm install --save @tinymce/tinymce-vue
-```
+----
 
 . Using a text editor, open `/path/to/tinymce-vue-demo/src/App.vue`.
 +
@@ -53,13 +57,14 @@ $ npm install --save @tinymce/tinymce-vue
 +
 For example:
 +
-```xml
+[source,html]
+----
 <template>
    <div id="app">
      <img alt="Vue logo" src="./assets/logo.png">
      <editor
        api-key="no-api-key"
-       :init="pass:[{]
+       :init="{
          height: 500,
          menubar: false,
          plugins: [
@@ -71,7 +76,7 @@ For example:
            'undo redo | formatselect | bold italic backcolor | \
            alignleft aligncenter alignright alignjustify | \
            bullist numlist outdent indent | removeformat | help'
-       pass:[}]"
+       }"
      />
    </div>
  </template>
@@ -86,7 +91,7 @@ For example:
    }
  }
  </script>
-```
+----
 +
 This {productname} editor configuration should replicate the example on the link:{rootDir}demo/basic-example.html[Basic example page].
 . Provide access to {productname} using {cloudname} or by self-hosting {productname}.
@@ -96,9 +101,10 @@ Include the `api-key` option in the editor element and include your link:{accoun
 +
 Such as:
 +
-```js
-<editor api-key='your-api-key' :init="pass:[{] /* your other settings */ pass:[}]" />
-```
+[source,html]
+----
+<editor api-key='your-api-key' :init="{ /* your other settings */ }" />
+----
 
  ** *{productname} Self-hosted*
 +
@@ -108,9 +114,10 @@ Such as:
 +
 To use an independent deployment of {productname}, add a script to either the `<head>` or the end of the `<body>` of the HTML file, such as:
 +
-```html
+[source,html]
+----
 <script src="/path/to/tinymce.min.js"></script>
-```
+----
 +
 To use an independent deployment of {productname} with the create a Vue.js application, add the script to `/path/to/tinymce-vue-demo/public/index.html`.
 +
@@ -122,9 +129,10 @@ To bundle {productname} using a module loader (such as Webpack and Browserify), 
 . Test the application using the Node.js development server.
  ** To start the development server, navigate to the `tinymce-vue-demo` directory and run:
 +
-```
+[source,sh]
+----
 $ npm run serve
-```
+----
 
  ** To stop the development server, select on the command line or command prompt and press _Ctrl+C_.
 

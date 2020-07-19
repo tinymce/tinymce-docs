@@ -14,13 +14,14 @@ The Word Count plugin adds the functionality for counting words to the {productn
 [[example]]
 ===== Example
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "wordcount",
   toolbar: "wordcount"
 });
-```
+----
 
 [[api]]
 == API
@@ -30,7 +31,8 @@ The Word Count plugin exposes an API for retrieving the word and character count
 [discrete#example-2]
 ===== Example
 
-```js
+[source,js]
+----
 var wordcount = tinymce.activeEditor.plugins.wordcount;
 
 console.log(wordcount.body.getWordCount());
@@ -40,4 +42,4 @@ console.log(wordcount.body.getCharacterCountWithoutSpaces());
 console.log(wordcount.selection.getWordCount());
 console.log(wordcount.selection.getCharacterCount());
 console.log(wordcount.selection.getCharacterCountWithoutSpaces());
-```
+----

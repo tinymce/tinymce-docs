@@ -17,14 +17,15 @@ The *link* plugin also includes a context menu and context toolbar. The context 
 [[example]]
 ===== Example
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "link",
   menubar: "insert",
   toolbar: "link"
 });
-```
+----
 
 [[options]]
 == Options
@@ -43,7 +44,8 @@ NOTE: This option also applies to the link:{rootDir}plugins/autolink[autolink] p
 [discrete#example-2]
 ===== Example
 
-```js
+[source,js]
+----
 tinymce.init({
     selector: "textarea",  // change this value according to your HTML
     plugins: "link",
@@ -51,7 +53,7 @@ tinymce.init({
     toolbar: "link",
     default_link_target: "_blank"
 });
-```
+----
 
 [[link_assume_external_targets]]
 === `link_assume_external_targets`
@@ -70,7 +72,8 @@ Set whether {productname} should prepend a `http://` prefix if the supplied URL 
 [discrete#example-2]
 ===== Example
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "link",
@@ -78,7 +81,7 @@ tinymce.init({
   toolbar: "link",
   link_assume_external_targets: true
 });
-```
+----
 
 [[link_class_list]]
 === `link_class_list`
@@ -88,7 +91,8 @@ The `link_class_list` option allows you to specify a list of classes for the lin
 [discrete#example-2]
 ===== Example
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "link",
@@ -100,7 +104,7 @@ tinymce.init({
     {title: 'Cat', value: 'cat'}
   ]
 });
-```
+----
 
 [[link_context_toolbar]]
 === `link_context_toolbar`
@@ -118,7 +122,8 @@ NOTE: This context toolbar is the same as the context toolbar mentioned in the <
 [discrete#example-2]
 ===== Example
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "link",
@@ -126,7 +131,7 @@ tinymce.init({
   toolbar: "link",
   link_context_toolbar: true
 });
-```
+----
 
 [[link_default_protocol]]
 === `link_default_protocol`
@@ -142,15 +147,16 @@ NOTE: This option also applies to the link:{rootDir}plugins/autolink[autolink] p
 [discrete#example-2]
 ===== Example
 
-```js
+[source,js]
+----
 tinymce.init({
-    selector: "textarea",  // change this value according to your HTML
-    plugins: "link",
-    menubar: "insert",
-    toolbar: "link",
-    link_default_protocol: "https"
+  selector: "textarea",  // change this value according to your HTML
+  plugins: "link",
+  menubar: "insert",
+  toolbar: "link",
+  link_default_protocol: "https"
 });
-```
+----
 
 [[link_list]]
 === `link_list`
@@ -163,7 +169,8 @@ There are multiple ways to specify how to get the data for the link list, but al
 
 *Example of an array of link items*
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "link",
@@ -174,13 +181,14 @@ tinymce.init({
     {title: 'My page 2', value: 'https://about.tiny.cloud'}
   ]
 });
-```
+----
 
 *Example of a JSON URL that returns an array of link items*
 
 You can also configure a URL with JSON data. The JSON data must use the same format as above.
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "link",
@@ -188,7 +196,7 @@ tinymce.init({
   toolbar: "link",
   link_list: "/mylist.php"
 });
-```
+----
 
 *Example of a custom asynchronous callback function*
 
@@ -200,11 +208,12 @@ The following is an example of how `link_list` can be used with a callback funct
 * The current editor content.
 * The current user.
 
-```js
+[source,js,subs="+attributes"]
+----
 var fetchLinkLists = function() {
   return [
-    {title: 'My page 1', value: '\https://www.tiny.cloud'},
-    {title: 'My page 2', value: '\https://about.tiny.cloud'}
+    {title: 'My page 1', value: 'https://www.tiny.cloud'},
+    {title: 'My page 2', value: 'https://about.tiny.cloud'}
   ]
 };
 
@@ -218,7 +227,7 @@ tinymce.init({
     success(links); // pass link_list data to {productname}
   }
 });
-```
+----
 
 [[link_title]]
 === `link_title`
@@ -234,7 +243,8 @@ This options allows you disable the link `title` input field in the `link` dialo
 [discrete#example-2]
 ===== Example
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "link",
@@ -242,7 +252,7 @@ tinymce.init({
   toolbar: "link",
   link_title: false
 });
-```
+----
 
 [[link_quicklink]]
 === `link_quicklink`
@@ -260,7 +270,8 @@ NOTE: This context toolbar is the same as the context toolbar mentioned in the <
 [discrete#example-2]
 ===== Example
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "link",
@@ -268,7 +279,7 @@ tinymce.init({
   toolbar: "link",
   link_quicklink: true
 });
-```
+----
 
 [[rel_list]]
 === `rel_list`
@@ -278,7 +289,8 @@ This option lets you specify a list of `rel` values for the `link` dialog. These
 [discrete#example-2]
 ===== Example
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "link",
@@ -289,7 +301,7 @@ tinymce.init({
     {title: 'External Link', value: 'external'}
   ]
 });
-```
+----
 
 [[target_list]]
 === `target_list`
@@ -300,16 +312,18 @@ If <<default_link_target,`default_link_target`>> is also configured and its valu
 
 *Default:*
 
-```js
+[source,js]
+----
 [
   { text: 'Current window', value: '' },
   { text: 'New window', value: '_blank' }
 ]
-```
+----
 
 *Example, adding a `_parent` target to the dropdown list*
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "link",
@@ -322,14 +336,15 @@ tinymce.init({
     {title: 'Parent frame', value: '_parent'}
   ]
 });
-```
+----
 
 To disable the option dialog set `target_list` to `false`.
 
 [discrete#example-2]
 ===== Example
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "link",
@@ -337,7 +352,7 @@ tinymce.init({
   toolbar: "link",
   target_list: false
 });
-```
+----
 
 [[commands]]
 == Commands

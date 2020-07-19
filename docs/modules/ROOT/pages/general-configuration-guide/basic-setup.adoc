@@ -23,14 +23,15 @@ Code snippets are provided as example implementations throughout the {productnam
 
 Example code snippet:
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugin: 'a_tinymce_plugin',
   a_plugin_option: true,
   a_configuration_option: 400
 });
-```
+----
 
 Snippets include the `+selector+` option, which is described below. Change the value of the working code block according to the HTML.
 
@@ -44,21 +45,23 @@ Selector configuration is required for {productname} integration. Selector confi
 
 The following example replaces all `+textarea+` elements on the page with {productname} instances:
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea'
 });
-```
+----
 
 {productname} can also match an `+id+` attribute.
 
 The following example replaces a `+textarea+` element with the `+id+` `+"default"+` on the page:
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea#default'
 });
-```
+----
 
 Providing a {productname} editor with the default configuration, such as:
 
@@ -68,12 +71,13 @@ The selector can target most block elements when the editor is used in link:../u
 
 The following example uses the `+selector+` in inline editing mode on a `+div+` element with `+id+` `+'editable'+`:
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: 'div#editable',
   inline: true
 });
-```
+----
 
 For information on the differences between the classic and inline editing modes, see: link:../use-tinymce-inline/[Setup inline editing mode].
 
@@ -83,12 +87,13 @@ The functionality of {productname} is extended by using plugins, which are enabl
 
 The following example enables the lists (`+lists+`), Advanced Lists (`+advlist+`), Link (`+link+`), and Image (`+image+`) plugins.
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  plugins : 'advlist link image lists'
+  plugins: 'advlist link image lists'
 });
-```
+----
 
 For a full list of plugins and their options, see: link:{rootDir}plugins.html[Add plugins to TinyMCE].
 
@@ -100,12 +105,13 @@ For a full list of plugins and their options, see: link:{rootDir}plugins.html[Ad
 
 The {productname} default toolbar contains the following buttons:
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to the HTML
   toolbar: 'undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | outdent indent'
 });
-```
+----
 
 Hello, World!
 
@@ -126,25 +132,27 @@ There are two menu options: `+menubar+` and `+menu+`. `+menubar+` is used to def
 
 To display the _File_, _Edit_, and _View_ menus:
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   menubar: 'file edit view'
 });
-```
+----
 
 codepen::menubar[]
 
 To create an `+Edit+` menu that only contains the _Undo_, _Redo_, and _Select all_ items.
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   menu: {
     edit: {title: 'Edit', items: 'undo, redo, selectall'}
   }
 });
-```
+----
 
 codepen::menu1[]
 
@@ -152,7 +160,8 @@ To create a menu titled "Happy", provide an identifier for the menu and an objec
 
 For example:
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   menu: {
@@ -161,7 +170,7 @@ tinymce.init({
   plugins: 'code',  // required by the code menu item
   menubar: 'happy'  // adds happy to the menu bar
 });
-```
+----
 
 codepen::menu2[]
 
@@ -186,13 +195,14 @@ Some menu items require a plugin, such as the `+table+` menu and items requires 
 
 The following example is a basic {productname} configuration.
 
-```html
+[source,html,subs="+attributes"]
+----
 <!DOCTYPE html>
 <html>
 <head>
   <script
     type="text/javascript"
-    src='{cdnurl}'
+    src="{cdnurl}"
     referrerpolicy="origin">
   </script>
   <script type="text/javascript">
@@ -221,7 +231,7 @@ The following example is a basic {productname} configuration.
   <textarea id="myTextarea"></textarea>
 </body>
 </html>
-```
+----
 
 === Break-down of the basic configuration example
 
@@ -229,47 +239,53 @@ The following section is a break-down of the options used in the basic configura
 
 Selects the `+textarea+` with the id `+myTextarea+` to be replaced by the editor.
 
-```js
+[source,js]
+----
 selector: '#myTextarea',
-```
+----
 
 Sets the width and height of the editable area in pixels as numeric values.
 
-```js
+[source,js]
+----
 width: 600,
 height: 300,
-```
+----
 
 Selects the plugins to be included on load.
 
-```js
+[source,js]
+----
 plugins: [
   'advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker',
   'searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking',
   'table emoticons template paste help'
 ],
-```
+----
 
 Selects the toolbar buttons displayed to the user. Use a comma or space as a separator.
 
-```js
+[source,js]
+----
 toolbar: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | print preview media fullpage | forecolor backcolor emoticons',
-```
+----
 
 Adds an additional menu named "My Favorites" with `+menu+`, then adds it to the menu bar using `+menubar+`.
 
-```js
+[source,js]
+----
 menu: {
   favs: {title: 'My Favorites', items: 'code visualaid | searchreplace | spellchecker | emoticons'}
 },
 menubar: 'favs file edit view insert format tools table help',
-```
+----
 
 Sets the styling of the editable area using `+content_css+`.
 
-```js
+[source,js]
+----
 content_css: 'css/content.css',
-```
+----
 
 codepen::basic-conf[]
 

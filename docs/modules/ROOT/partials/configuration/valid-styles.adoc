@@ -10,7 +10,8 @@ By default, all styles are allowed unless `valid_styles` or `invalid_styles` is 
 [discrete#example]
 ===== Example
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   valid_styles: {
@@ -18,4 +19,4 @@ tinymce.init({
     'div': 'width,height'
   }
 });
-```
+----

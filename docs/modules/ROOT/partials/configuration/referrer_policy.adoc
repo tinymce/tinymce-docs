@@ -17,9 +17,10 @@ For a list of valid referrer policies (directives), see: https://developer.mozil
 [discrete#example]
 ===== Example
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   referrer_policy: 'strict-origin-when-cross-origin'
 });
-```
+----

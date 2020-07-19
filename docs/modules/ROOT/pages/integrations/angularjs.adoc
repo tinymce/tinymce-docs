@@ -14,26 +14,30 @@ Integration with AngularJS is currently done through https://github.com/angular-
 
 First, we create a directory for the project called "tinymce-angular-demo". After that, we run "bower init"in the new directory, this will set up a new empty bower project.
 
-```
+[source]
+----
 $ mkdir tinymce-angular-demo
 $ cd tinymce-angular-demo
 $ bower init
-```
+----
 
 [[2-installation-of-angular-ui-tinymce-and-tinymce]]
 == 2. Installation of angular, ui-tinymce and tinymce
 
 We now install the angular-ui-tinymce package this will automatically install angular and {productname}.
 
-```
+[source]
+----
 $ bower install angular-ui-tinymce --save
-```
+----
 
 [[3-creating-the-demo-html-file]]
 == 3. Creating the demo.html file
 
 This *demo.html* file has angular properties and two calls to the controller.
-```html
+
+[source,html]
+----
 <!DOCTYPE html>
 <head>
   <script type="text/javascript" src="bower_components/tinymce/tinymce.js"></script>
@@ -48,14 +52,15 @@ This *demo.html* file has angular properties and two calls to the controller.
     <button ng-click="setContent()">Set content</button>
   </form>
 </body>
-```
+----
 
 [[4-creating-the-app-js-file]]
 == 4. Creating the app.js file
 
 The *app.js* file shows you how to work with the model that automatically updates {productname}.
 
-```js
+[source,js]
+----
 var myAppModule = angular.module('myApp', ['ui.tinymce']);
 
 myAppModule.controller('TinyMceController', function($scope) {
@@ -74,7 +79,7 @@ $scope.tinymceOptions = {
     toolbar: 'undo redo | bold italic | alignleft aligncenter alignright | code'
   };
 });
-```
+----
 
 [[5-testing-the-application]]
 == 5. Testing the application

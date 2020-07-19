@@ -12,9 +12,10 @@ The *keep_styles* option will keep the editor's current text style when a user p
 [discrete#example]
 ===== Example
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   keep_styles: false
 });
-```
+----

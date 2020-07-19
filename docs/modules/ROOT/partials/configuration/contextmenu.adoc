@@ -24,13 +24,14 @@ However if the `contextmenu_never_use_native` option is enabled, holding the `Ct
 [[example-contextmenu]]
 === Example: contextmenu
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',
   plugins: 'link image table',
   contextmenu: 'link image table'
 });
-```
+----
 
 {%if page.title != "Context menu" %}
 For information on configuring the `contextmenu` option and creating custom context menu items link:{rootDir}ui-components/contextmenu.html[context menu examples].

@@ -18,9 +18,10 @@ Selecting elements from the element path allows users to perform operations on b
 [discrete#example]
 ===== Example
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   elementpath: false
 });
-```
+----

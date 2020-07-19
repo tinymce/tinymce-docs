@@ -23,31 +23,36 @@ This procedure requires:
 
 . On a command line or command prompt, install the https://angular.io/cli[Angular CLI Tool] package.
 +
-```sh
+[source,sh]
+----
 $ npm install -g @angular/cli
-```
+----
 
 . Create a new Angular project named `tinymce-angular-demo`.
 +
-```sh
+[source,sh]
+----
 $ ng new --defaults --skip-git tinymce-angular-demo
-```
+----
 
 . Change into the newly created directory.
 +
-```sh
+[source,sh]
+----
 $ cd tinymce-angular-demo
-```
+----
 
 . Install the `tinymce-angular` package and save it to your `package.json` with `--save`.
 +
-```sh
+[source,sh]
+----
 $ npm install --save @tinymce/tinymce-angular
-```
+----
 
 . Using a text editor, open `/path/to/tinymce-angular-demo/src/app/app.module.ts` and replace the contents with:
 +
-```js
+[source,js]
+----
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { EditorModule } from '@tinymce/tinymce-angular';
@@ -65,12 +70,13 @@ import { AppComponent } from './app.component';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-```
+----
 
 . Using a text editor, open `/path/to/tinymce-angular-demo/src/app/app.component.html` and replace the contents with:
 +
-```html
-<h1>{{site.productname}} {{site.productmajorversion}} Angular Demo</h1>
+[source,html,subs="+attributes"]
+----
+<h1>{productname} {productmajorversion} Angular Demo</h1>
 <editor
   [init]="{
     height: 500,
@@ -86,7 +92,7 @@ export class AppModule { }
       bullist numlist outdent indent | removeformat | help'
   }"
 ></editor>
-```
+----
 +
 This {productname} editor configuration should replicate the example on the link:{rootDir}demo/basic-example.html[Basic example page].
 
@@ -97,9 +103,10 @@ Include the `apiKey` option in the editor element and include your link:{account
 +
 Such as:
 +
-```js
+[source,html]
+----
 <editor apiKey="your-api-key" [init]={ /* your other settings */ } ></editor>
-```
+----
 
  ** *{productname} Self-hosted*
 +
@@ -111,17 +118,19 @@ To load {productname} and {productname}-Angular in a project managed by the http
 
    .... Install the `tinymce-angular` package and save it to your `package.json` with `--save`.
 +
-```
- $ npm install --save tinymce
-```
+[source,sh]
+----
+$ npm install --save tinymce
+----
 
    .... Using a text editor; open `angular.json` and add {productname} to the `assets` property.
 +
-```json
+[source,json]
+----
 "assets": [
    { "glob": "**/*", "input": "node_modules/tinymce", "output": "/tinymce/" }
  ]
-```
+----
 
    .... Load TinyMCE.
     ***** To load TinyMCE when the editor is initialized (also known as lazy loading), add a dependency provider to the module using the `TINYMCE_SCRIPT_SRC` token.
@@ -130,7 +139,8 @@ ifeval::[{productmajorversion} < 6]
 NOTE: Lazy loading is available for tinymce-angular 3.5.0 or later.
 endif::[]
 +
-```js
+[source,js]
+----
 import { EditorModule, TINYMCE_SCRIPT_SRC } from '@tinymce/tinymce-angular';
 /* ... */
 @NgModule({
@@ -142,32 +152,35 @@ import { EditorModule, TINYMCE_SCRIPT_SRC } from '@tinymce/tinymce-angular';
     { provide: TINYMCE_SCRIPT_SRC, useValue: 'tinymce/tinymce.min.js' }
   ]
 })
-```
+----
 
     ***** To load TinyMCE when the page or application is loaded, open `angular.json` and add {productname} to the _global scripts_ tag.
 +
-```json
+[source,json]
+----
 "scripts": [
   "node_modules/tinymce/tinymce.min.js"
 ]
-```
+----
 +
 Update the editor configuration to include the `base_url` and `suffix` options.
 +
-```html
+[source,html]
+----
 <editor [init]="{
   base_url: '/tinymce', // Root for resources
   suffix: '.min'        // Suffix to use when loading resources
 }"></editor>
-```
+----
 
   *** *Deploy {productname} independent of the Angular application*
 +
 To use an independent deployment of {productname}, add a script to either the `<head>` or the end of the `<body>` of the HTML file, such as:
 +
-```html
+[source,html]
+----
 <script src="/path/to/tinymce.min.js"></script>
-```
+----
 +
 To use an independent deployment of {productname} with the create a Angular application, add the script to `/path/to/tinymce-angular-demo/src/app/app.component.html`.
 +
@@ -180,9 +193,10 @@ To bundle {productname} using a module loader (such as Webpack and Browserify), 
 . Test the application using the Angular development server.
  ** To start the development server, navigate to the `tinymce-angular-demo` directory and run:
 +
-```
+[source,sh]
+----
 $ ng serve --open
-```
+----
 
  ** To stop the development server, select on the command line or command prompt and press _Ctrl+C_.
 
@@ -195,9 +209,10 @@ To deploy the application to a local HTTP Server:
 
 . Navigate to the `tinymce-angular-demo` directory and run:
 +
-```
- $ ng build
-```
+[source,sh]
+----
+$ ng build
+----
 
 . Copy the contents of the `tinymce-angular-demo/dist` directory to the root directory of the web server.
 

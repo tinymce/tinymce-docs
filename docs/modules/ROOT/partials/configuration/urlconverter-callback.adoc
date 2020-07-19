@@ -17,7 +17,8 @@ This function should return the converted URL as a string. This option is set to
 [discrete#example]
 ===== Example
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   urlconverter_callback: function(url, node, on_save, name) {
@@ -28,4 +29,4 @@ tinymce.init({
     return url;
   }
 });
-```
+----

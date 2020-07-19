@@ -23,30 +23,33 @@ ifeval::[{customIconPack} == true]
 +
 For example:
 +
-```sh
+[source,sh]
+----
 $ cp -r  dist/icons/my_icon_pack  TINYMCE_BASE/icons/
-```
+----
 endif::[]
 
 . Add the `icons` option to `tinymce.init`
 ifeval::[{customIconPack} == true]
 +
-```js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   icons: 'my_icon_pack'  // TINYMCE_BASE/icons/my_icon_pack/icons.js
 });
-```
+----
 endif::[]
 
 ifeval::[{customIconPack} != true]
 [[example-icons]]
 ===== Example: icons
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   icons: 'material'  // TINYMCE_BASE/icons/material/icons.js
 });
-```
+----
 endif::[]

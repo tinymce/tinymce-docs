@@ -16,9 +16,10 @@ If the border of a table is set to `0`, then {productname} adds a dotted line ar
 [discrete#example]
 ===== Example
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HRML
   visual: false
 });
-```
+----

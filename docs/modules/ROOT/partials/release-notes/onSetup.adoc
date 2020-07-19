@@ -2,15 +2,16 @@
 
 To clarify, in code `onSetup` may look like this:
 
-```
-onSetup: (api) \=> {
+[source,js]
+----
+onSetup: (api) => {
   // Do something here on component render, like set component properties or bind an event listener
 
-return (api) \=> {
+  return (api) => {
     // Do something here on teardown, like unbind an event listener
   };
 };
-```
+----
 
 To bind a callback function to an editor event use `editor.on(eventName, callback)`. To unbind an event listener use `editor.off(eventName, callback)`. Any event listeners _should_ be unbound in the teardown callback. The only editor event which does not need to be unbound is `init` e.g. `editor.on('init', callback)`.
 

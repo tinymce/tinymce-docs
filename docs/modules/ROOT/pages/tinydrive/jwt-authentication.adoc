@@ -12,7 +12,7 @@ include::{rootDir}_attributes.adoc[]
 
 {cloudfilemanager} requires you to setup JSON Web Token (JWT) authentication. This is to ensure that the security of your files remains in your control.
 
-JWT is a standard authorization solution for web services and is documented in more detail at the https://jwt.io/[\https://jwt.io/] website. The guide aims to show how to setup JWT authentication for {cloudfilemanager}.
+JWT is a standard authorization solution for web services and is documented in more detail at the https://jwt.io/[https://jwt.io/] website. The guide aims to show how to setup JWT authentication for {cloudfilemanager}.
 
 [NOTE]
 ====
@@ -86,7 +86,8 @@ This example uses the https://github.com/firebase/php-jwt[Firebase JWT library] 
 [[jwt-php]]
 === jwt.php
 
-```php
+[source,php]
+----
 <?php
 require 'vendor/autoload.php';
 use \Firebase\JWT\JWT;
@@ -123,19 +124,20 @@ try {
   echo $e->getMessage();
 }
 ?>
-```
+----
 
 [[tinymce-example-with-jwtphp-endpoint]]
 === TinyMCE example with jwt.php Endpoint
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',
   plugins: 'image media link tinydrive code imagetools',
   tinydrive_token_provider: 'jwt.php',
   toolbar: 'insertfile image link | code'
 });
-```
+----
 
 [[node-token-provider-endpoint-example]]
 == Node token provider endpoint example
@@ -145,7 +147,8 @@ This example shows you how to set up a Node.js express handler that produces the
 [[jwt]]
 === /jwt
 
-```js
+[source,js]
+----
 const express = require('express');
 const jwt = require('jsonwebtoken');
 const cors = require('cors');
@@ -185,19 +188,20 @@ app.post('/jwt', function (req, res) {
 });
 
 app.listen(3000);
-```
+----
 
 [[tinymce-example-with-jwt-endpoint]]
 === TinyMCE example with /jwt endpoint
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',
   plugins: 'image media link tinydrive code imagetools',
   tinydrive_token_provider: '/jwt',
   toolbar: 'insertfile image link | code'
 });
-```
+----
 
 [[more-configuration]]
 === More configuration

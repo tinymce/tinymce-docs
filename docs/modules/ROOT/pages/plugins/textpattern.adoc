@@ -16,12 +16,13 @@ The default pattern is similar to markdown syntax, so the user can type `# text`
 [[example]]
 ===== Example
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",
   plugins: "textpattern"
 });
-```
+----
 
 [[options]]
 == Options
@@ -41,7 +42,8 @@ NOTE: Formats and commands must be already registered with the editor. See the l
 
 *Default Value:*
 
-```js
+[source,js]
+----
 [
   {start: '*', end: '*', format: 'italic'},
   {start: '**', end: '**', format: 'bold'},
@@ -55,7 +57,7 @@ NOTE: Formats and commands must be already registered with the editor. See the l
   {start: '* ', cmd: 'InsertUnorderedList'},
   {start: '- ', cmd: 'InsertUnorderedList' }
 ]
-```
+----
 
 [[inline-patterns]]
 ==== Inline patterns
@@ -72,7 +74,8 @@ NOTE: Inline patterns are executed on either pressing the *spacebar* or the *Ent
 [[example-2]]
 ===== Example
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugin: 'textpattern',
@@ -82,7 +85,7 @@ tinymce.init({
     {start: '~', end: '~', cmd: 'createLink', value: 'https://tiny.cloud'}
   ]
 });
-```
+----
 
 Using the configuration in this example:
 * `{start: '*', end: '*', format: 'italic'}` - Entering text between``*`` and then pressing the *spacebar* will result in the `italic` format being applied to the text between the `*` symbols.
@@ -105,7 +108,8 @@ NOTE: Block patterns are only executed on *Enter*, *not* on pressing the *spaceb
 [[example-2]]
 ===== Example
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugin: 'textpattern lists',
@@ -126,7 +130,7 @@ tinymce.init({
     {start: 'i) ', cmd: 'InsertOrderedList', value: { 'list-style-type': 'lower-roman' }}
   ]
 });
-```
+----
 
 Using the configuration in this example:
 * `{start: '#', format: 'h1'}` - Typing `#`, some text, and then pressing `Enter` will convert the text to a `h1` heading.
@@ -146,7 +150,8 @@ NOTE: Replacement patterns are executed on either pressing the *spacebar* or the
 [[example-2]]
 ===== Example
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugin: 'textpattern',
@@ -159,7 +164,7 @@ tinymce.init({
     {start: '//heading', replacement: '<h1 style="color: blue">Heading here</h1> <h2>Author: Name here</h2> <p><em>Date: 01/01/2000</em></p> <hr />'},
   ]
 });
-```
+----
 
 Using the configuration in this example:
 

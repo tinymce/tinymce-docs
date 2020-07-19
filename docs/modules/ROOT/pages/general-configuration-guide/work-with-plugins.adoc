@@ -18,7 +18,8 @@ NOTE: You must include the plugin in your download options to activate it.
 
 Let's start with a simple code snippet you can paste into an empty `html` file (call it whatever you like, `tinymce.html` works). Save the file locally, open it with your web browser and you'll have a basic, local {productname} instance up and running.
 
-```html
+[source,html,subs="+attributes"]
+----
 <!DOCTYPE html>
 <html>
 <head>
@@ -36,7 +37,7 @@ Let's start with a simple code snippet you can paste into an empty `html` file (
   </form>
 </body>
 </html>
-```
+----
 
 [[lets-play-with-plugins]]
 == Let's play with plugins
@@ -50,37 +51,40 @@ The link:{rootDir}plugins/code.html[Code] plugin is one of the more popular plug
 
 The first thing we need to do is include the actual `plugins` key and assign it a value. Since we're starting with the `code` plugin that value is going to be ``'code'``for this example.
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',  // note the comma at the end of the line!
   plugins: 'code'
 });
-```
+----
 
 Add `plugins: 'code'` to your `tinymce.html` file, save the file, refresh your browser and you'll see some magic. A "Tools" menu automatically appears in the menubar, and it has a "Source code" item in the drop-down. Click it and _voila_, you can now edit the HTML hidden by the WYSIWYG interface.
 
 Let's also add a toolbar control so that our users can more easily activate this functionality.
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',  // note the comma at the end of the line!
   plugins: 'code',  // note the comma at the end of the line!
   toolbar: 'code'
 });
-```
+----
 
 Impressive! We now have a button on the toolbar users can click to get into source code mode, but we lost our default toolbar controls. We explained why this happens back in the link:../basic-setup/[Basic setup], so if this behavior surprises you, please re-read that section.
 
 Let's quickly take our minimal design one step further by deleting the menubar entirely.
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',  // note the comma at the end of the line!
   plugins: 'code',  // note the comma at the end of the line!
   toolbar: 'code',  // last reminder, note the comma!
   menubar: false
 });
-```
+----
 
 [[time-for-one-more-example]]
 == Time for one more example
@@ -94,12 +98,13 @@ The link:{rootDir}plugins/advlist.html[Advanced List] plugin extends the default
 
 As before, let's start by adding the `plugins` key and giving it the Advanced List value of `'advlist'`.
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'advlist'
 });
-```
+----
 
 Take a look at your {productname} toolbar, and you'll see the list controls now have down arrows attached (to the right of the icon). Click them, and you've now got extra list options.
 
@@ -116,7 +121,8 @@ Don't worry if you can't remember all these values. The link:{rootDir}plugins.ht
 
 Let's add the Advanced List options and give them some of the available options.
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   menubar: false,
@@ -125,7 +131,7 @@ tinymce.init({
   advlist_bullet_styles: 'square',
   advlist_number_styles: 'lower-alpha,lower-roman,upper-alpha,upper-roman'
 });
-```
+----
 
 In the above example, we learned how to remove the menubar, add specific list controls to the toolbar while removing others, activate a plugin, and customize the plugin's behavior by controlling which options we wanted to be activated. In 5 lines of code (excluding the `selector` key, which has to be included for {productname} to work).
 

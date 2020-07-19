@@ -19,12 +19,13 @@ The link:../lists[Lists] (`lists`) plugin must be activated for the `advlist` pl
 [[advanced-list-plugin-example]]
 ===== Advanced List plugin example
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: "textarea", // change this value according to your HTML
   plugins: "advlist"
 });
-```
+----
 
 [[options]]
 == Options
@@ -50,13 +51,14 @@ This option allows you to include specific unordered list item markers in the de
 [[example]]
 ==== Example:
 
-```js
+[source,js]
+----
 tinymce.init({
-    selector: "textarea",  // change this value according to your html
-    plugins: "advlist",
-    advlist_bullet_styles: "square"  // only include square bullets in list
+  selector: "textarea",  // change this value according to your html
+  plugins: "advlist",
+  advlist_bullet_styles: "square"  // only include square bullets in list
 });
-```
+----
 
 [[advlist_number_styles]]
 === `advlist_number_styles`
@@ -79,13 +81,14 @@ This option allows you to include specific ordered list item markers in the defa
 [[example-2]]
 ==== Example:
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "advlist",
   advlist_number_styles: "lower-alpha"  // only include lower alpha in list
 });
-```
+----
 
 [[commands]]
 == Commands

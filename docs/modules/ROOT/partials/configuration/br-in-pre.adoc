@@ -21,9 +21,10 @@ NOTE: when set to `false`, `shift+enter` will insert a `br` tag.
 [discrete#example]
 ===== Example
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   br_in_pre: false
 });
-```
+----

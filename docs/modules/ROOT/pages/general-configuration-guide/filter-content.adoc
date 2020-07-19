@@ -102,7 +102,8 @@ The table of format parameters below explores some more advanced topics.
 
 This example overrides some of the built-in formats and tells {productname} to apply classes instead of inline styles. It includes a custom format that produces `h1` elements with a title attribute and a `red` `css` style.
 
-```js
+[source,js]
+----
 // Output elements in HTML style
 tinymce.init({
   selector: 'textarea',  // change this value according to your html
@@ -120,7 +121,7 @@ tinymce.init({
     custom_format: {block : 'h1', attributes : {title : 'Header'}, styles : {color : 'red'}}
   }
 });
-```
+----
 
 [[power-user-bonus]]
 === Power user bonus
@@ -131,9 +132,10 @@ The `html5` schema is the full HTML5 specification including the older HTML4 ele
 
 The options above are examples of the type of configuration options in the link:{rootDir}configure/content-filtering.html[Content filtering] configuration documentation.
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your html
   schema: 'html5'
 });
-```
+----

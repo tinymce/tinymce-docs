@@ -16,12 +16,13 @@ NOTE: Pasted URLs are automatically converted to `a` elements by {productname}'s
 [[autolink-plugin-example]]
 ===== Autolink plugin example
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "autolink"
 });
-```
+----
 
 [[options]]
 == Options
@@ -38,15 +39,16 @@ NOTE: This setting also applies to the link:{rootDir}plugins/link[link] plugin.
 [discrete#example]
 ===== Example
 
-```js
+[source,js]
+----
 tinymce.init({
-    selector: "textarea",  // change this value according to your HTML
-    plugins: "autolink link",
-    menubar: "insert",
-    toolbar: "link",
-    default_link_target: "_blank"
+  selector: "textarea",  // change this value according to your HTML
+  plugins: "autolink link",
+  menubar: "insert",
+  toolbar: "link",
+  default_link_target: "_blank"
 });
-```
+----
 
 [[link_default_protocol]]
 === `link_default_protocol`
@@ -62,12 +64,13 @@ NOTE: This setting also applies to the link:{rootDir}plugins/link[link] plugin.
 [discrete#example-2]
 ===== Example
 
-```js
+[source,js]
+----
 tinymce.init({
-    selector: "textarea",  // change this value according to your HTML
-    plugins: "autolink link",
-    menubar: "insert",
-    toolbar: "link",
-    link_default_protocol: "https"
+  selector: "textarea",  // change this value according to your HTML
+  plugins: "autolink link",
+  menubar: "insert",
+  toolbar: "link",
+  link_default_protocol: "https"
 });
-```
+----

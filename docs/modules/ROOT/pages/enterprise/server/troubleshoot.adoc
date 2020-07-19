@@ -80,10 +80,11 @@ For example, if you are using Tomcat, you can view how much memory is being cons
 
 On a vanilla install this is done by editing the file /tomcat/install/directory/conf/tomcat-users.xml adding these lines in:
 
-```xml
+[source,xml]
+----
 <role rolename="manager-gui" />
 <user username="tomcat" password="password" roles="manager-gui"/>
-```
+----
 
 Then, restart the server and go to a browser and open the default tomcat page `+http://localhost:8080+`. On the top right hand side are three buttons, the first of which should be "Server Status". Click that link, login with the details you set above and you should be able to see the memory consumption (see the figure below for an example).
 
@@ -99,20 +100,22 @@ Edit the setenv.sh (Unix) or setenv.bat (Windows) to read as follows:
 
 On Windows, please prefix each line with 'set' and remove the quotes . So the configuration would look like:
 
-```
+[source]
+----
 set CATALINA_OPTS= -Dephox.config.file=/config/file/location/application.conf
 set JAVA_OPTS= -Xms2048m -Xmx2048m -XX:PermSize=64m -XX:MaxPermSize=512m -Dfile.encoding=utf-8 -Djava.awt.headless=true -XX:+UseParallelGC -XX:MaxGCPauseMillis=100
 
 CATALINA_OPTS=" -Dephox.config.file=/config/file/location/application.conf
 JAVA_OPTS=" -Xms2048m -Xmx2048m -XX:PermSize=64m -XX:MaxPermSize=512m -Dfile.encoding=utf-8 -Djava.awt.headless=true -XX:+UseParallelGC -XX:MaxGCPauseMillis=100"
-```
+----
 
 [[jetty]]
 ==== Jetty
 
 Edit the start.ini file to read as follows:
 
-```
+[source]
+----
 #===========================================================
 # Jetty start.jar arguments
 # Each line of this file is prepended to the command line
@@ -120,7 +123,7 @@ Edit the start.ini file to read as follows:
 # java -jar start.jar [arg...]
 #===========================================================
 -Xms2048m -Xmx2048m -XX:PermSize=64m -XX:MaxPermSize=512m -Dephox.config.file=/config/file/location/application.conf
-```
+----
 
 Restart the service and confirm the settings have been applied like so:
 

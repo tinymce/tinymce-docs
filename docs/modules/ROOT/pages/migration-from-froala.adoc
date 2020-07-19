@@ -33,26 +33,29 @@ To migrate from a basic Froala 3 configuration to a basic {productname} {product
 . Remove the Froala links and source script, located in the `<head>` of the target HTML page.
 For example:
 +
-```html
+[source,html]
+----
 <link href='/path/to/froala-editor/base/directory/css/froala_editor.pkgd.min.css' rel='stylesheet' type='text/css' />
- <script type='text/javascript' src='/path/to/froala-editor/base/directory/js/froala_editor.pkgd.min.js'></script>
- <link href='/path/to/froala-editor/base/directory/css/froala_style.min.css' rel='stylesheet' type='text/css' />
-```
+<script type='text/javascript' src='/path/to/froala-editor/base/directory/js/froala_editor.pkgd.min.js'></script>
+<link href='/path/to/froala-editor/base/directory/css/froala_style.min.css' rel='stylesheet' type='text/css' />
+----
 
 . Insert a {productname} source script into the `<head>` of the page.
  ** For {cloudname} deployments:
 +
-```html
-<script src='https://cdn.tiny.cloud/1/your-api-key/tinymce/5/tinymce.min.js' referrerpolicy='origin'></script>
-```
+[source,html,subs="+attributes"]
+----
+<script src='{cdnurl}' referrerpolicy='origin'></script>
+----
 +
 Replace `your-api-key` with your link:{accountpageurl}[{cloudname} API key].
 
  ** For Self-hosted {productname} deployments:
 +
-```html
+[source,html]
+----
 <script src='/path/to/tinymce/base/directory/tinymce.min.js'></script>
-```
+----
 +
 Replace `/path/to/tinymce/base/directory` with the relative path of the `tinymce/` directory containing `tinymce.min.js`.
 
@@ -63,27 +66,30 @@ For information on {productname} deployment types, see: link:{rootDir}general-co
 
 To insert an editor in the body of the page for a `<textarea>` element such as:
 
-```html
+[source,html]
+----
 <form method='post'>
   <textarea id='myeditor'>Enter your comment here!</textarea>
 </form>
-```
+----
 
 . Remove the Froala editor variable assignment script.
 +
-```html
+[source,html]
+----
 <script>
   var editor = new FroalaEditor('textarea#myeditor')
 </script>
-```
+----
 
 . Add a `tinymce.init` function.
 +
-```html
+[source,html]
+----
 <script>
   tinymce.init({ selector: '#myeditor' });
 </script>
-```
+----
 
 For information on configuring the `selector` setting, see: link:{rootDir}general-configuration-guide/basic-setup.html[Basic Setup].
 
@@ -95,7 +101,8 @@ The following examples show an initial Froala configuration and the migrated {pr
 [[froala-3-a-basic-configuration]]
 ==== Froala 3 - A Basic Configuration
 
-```html
+[source,html]
+----
 <!DOCTYPE html>
 <html>
   <head>
@@ -113,12 +120,13 @@ The following examples show an initial Froala configuration and the migrated {pr
     </script>
   </body>
 </html>
-```
+----
 
 [[tinymce-5-a-basic-configuration]]
 ==== TinyMCE 5 - A Basic Configuration
 
-```html
+[source,html]
+----
 <!DOCTYPE html>
 <html>
   <head>
@@ -134,7 +142,7 @@ The following examples show an initial Froala configuration and the migrated {pr
     </script>
   </body>
 </html>
-```
+----
 
 [[additional-information]]
 === Additional Information
@@ -164,7 +172,8 @@ The following examples show how plugins are included or enabled in the Froala an
 [[froala-3-enabling-plugins]]
 ==== Froala 3 - Enabling Plugins
 
-```html
+[source,html]
+----
 <head>
   <meta charset='utf-8'>
   <link href='/path/to/froala-editor/base/directory/css/froala_editor.pkgd.min.css' rel='stylesheet' type='text/css' />
@@ -185,19 +194,20 @@ The following examples show how plugins are included or enabled in the Froala an
   <script type='text/javascript' src='/path/to/froala-editor/base/directory/js/plugins/help.min.js'></script>
   <link href='/path/to/froala-editor/base/directory/css/plugins/help.min.css ' rel='stylesheet' type='text/css' />
 </head>
-```
+----
 
 [[tinymce-5-enabling-plugins]]
 ==== TinyMCE 5 - Enabling Plugins
 
-```html
+[source,html]
+----
 <script>
   tinymce.init({
     selector: '#tiny_editor',
     plugins: 'emoticons wordcount help code lists'
   });
 </script>
-```
+----
 
 [[additional-information-on-plugins]]
 === Additional Information on Plugins
@@ -226,20 +236,22 @@ Froala and {productname} use different formats for listing toolbar items.
 
 Froala accepts the list of toolbar buttons as a two-dimensional array of strings, with each array defining a group of toolbar items. For example:
 
-```js
+[source,js]
+----
 toolbarButtons: [['undo', 'redo'], ['paragraphFormat'], ['bold', 'italic'],
 ['alignLeft', 'alignCenter', 'alignRight', 'alignJustify'],
 ['formatOL', 'formatUL'], ['indent', 'outdent']]
-```
+----
 
 {productname} accepts a space-delimited string with horizontal bars (` | `) for grouping items.
 For example:
 
-```js
+[source,js]
+----
 toolbar: 'undo redo | formatselect | bold italic
 | alignleft aligncenter alignright alignjustify
 | numlist bullist | outdent indent'
-```
+----
 
 Replace the names of toolbar items with the {productname} names. For example:
 
@@ -274,7 +286,8 @@ The following examples show a custom toolbar layout in Froala and the same layou
 [[froala-3-creating-a-custom-toolbar-layout]]
 ==== Froala 3 - Creating a Custom Toolbar Layout
 
-```html
+[source,html]
+----
 <h2>Froala Custom Toolbar</h2>
   <form method='post'>
     <textarea id=froala_custom_toolbar>Hello, World! I'm a froala editor!</textarea>
@@ -287,12 +300,13 @@ The following examples show a custom toolbar layout in Froala and the same layou
     ['formatOL', 'formatUL'], ['indent', 'outdent']]
   })
 </script>
-```
+----
 
 [[tinymce-5-creating-a-custom-toolbar-layout]]
 ==== TinyMCE 5 - Creating a Custom Toolbar Layout
 
-```html
+[source,html,subs="+attributes"]
+----
 <h2>{productname} Custom Toolbar</h2>
   <form method='post'>
     <textarea id='tiny_custom_toolbar'>Hello, World! I'm a tiny editor!</textarea>
@@ -306,7 +320,7 @@ The following examples show a custom toolbar layout in Froala and the same layou
       | numlist bullist | outdent indent',
   });
 </script>
-```
+----
 
 [[additional-information-on-customizing-toolbars]]
 === Additional Information on Customizing Toolbars
@@ -332,7 +346,8 @@ The following examples show Froala and {productname} configured for inline mode.
 [[froala-3-configuring-inline-mode]]
 ==== Froala 3 - Configuring Inline Mode
 
-```html
+[source,html]
+----
 <h3>Froala Inline Mode</h3>
   <form method='post'>
     <div id=froala_custom_inline_toolbar>Hello, World! I'm a froala editor!</div>
@@ -343,13 +358,14 @@ The following examples show Froala and {productname} configured for inline mode.
     charCounterCount: false
   })
 </script>
-```
+----
 
 [[tinymce-5-configuring-inline-mode]]
 ==== TinyMCE 5 - Configuring Inline Mode
 
-```html
-<h3>TinyMCE Inline Mode</h3>
+[source,html,subs="+attributes"]
+----
+<h3>{productname} Inline Mode</h3>
   <form method='post'>
     <div id='tiny_custom_inline_toolbar'>Hello, World! I'm a tiny editor!</div>
   </form>
@@ -359,7 +375,7 @@ The following examples show Froala and {productname} configured for inline mode.
     inline: true
   });
 </script>
-```
+----
 
 [[additional-information-for-inline-mode]]
 === Additional Information for Inline Mode
@@ -388,7 +404,8 @@ The following examples show a Froala editor and a {productname} editor with a ba
 [[froala-3-creating-a-custom-toolbar-button]]
 ==== Froala 3 - Creating a Custom Toolbar Button
 
-```html
+[source,html]
+----
 <h2>Froala Custom Button</h2>
   <form method='post'>
     <textarea id=froala_custom_button>Hello, World! I'm a froala editor!</textarea>
@@ -419,12 +436,13 @@ The following examples show a Froala editor and a {productname} editor with a ba
     toolbarButtons: [['mybutton1'],['My&#160;Button']]
   })
 </script>
-```
+----
 
 [[tinymce-5-creating-a-custom-toolbar-button]]
 ==== TinyMCE 5 - Creating a Custom Toolbar Button
 
-```html
+[source,html,subs="+attributes"]
+----
 <h2>{productname} Custom Button</h2>
   <form method='post'>
     <textarea id='tiny_custom_button'>Hello, World! I'm a tiny editor!</textarea>
@@ -450,7 +468,7 @@ The following examples show a Froala editor and a {productname} editor with a ba
     }
   });
 </script>
-```
+----
 
 [[additional-information-on-custom-toolbar-buttons]]
 === Additional Information on Custom Toolbar Buttons
@@ -473,7 +491,8 @@ The following examples show a Froala editor and a {productname} editor with a ba
 [[froala-3-creating-a-custom-drop-down-button]]
 ==== Froala 3 - Creating a Custom Drop-down Button
 
-```html
+[source,html]
+----
 <h2>Froala Custom Drop-down Button</h2>
   <form method='post'>
     <textarea id='froala_custom_button_menu'>Hello, World! I'm a froala editor!</textarea>
@@ -502,12 +521,13 @@ The following examples show a Froala editor and a {productname} editor with a ba
     toolbarButtons: [['mybuttonmenu']]
   })
 </script>
-```
+----
 
 [[tinymce-5-creating-a-custom-drop-down-button]]
 ==== TinyMCE 5 - Creating a Custom Drop-down Button
 
-```html
+[source,html,subs="+attributes"]
+----
 <h2>{productname} Custom Drop-down Button</h2>
   <form method='post'>
     <textarea id='tiny_custom_button_menu'>Hello, World! I'm a tiny editor!</textarea>
@@ -545,7 +565,7 @@ The following examples show a Froala editor and a {productname} editor with a ba
     }
   });
 </script>
-```
+----
 
 [[additional-information-on-drop-down-buttons]]
 === Additional Information on Drop-down Buttons

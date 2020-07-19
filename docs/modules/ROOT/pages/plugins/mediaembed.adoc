@@ -25,27 +25,29 @@ For the moment the *Enhanced Media Embed* plugin has to be used in conjunction w
 The service URL is already configured with link:{rootDir}cloud-deployment-guide/editor-and-features.html[{cloudname}].
 Simply specify the `media` and `mediaembed` plugins, and optionally a `mediaembed_max_width`
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",
   plugins: "media mediaembed",
   mediaembed_max_width: 450
 });
-```
+----
 
 [[example-self-hosted-configuration]]
 === Example Self-hosted Configuration
 
 In a Self-hosted installation, please ensure you configure the URL to the service with the `mediaembed_service_url` parameter.
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",
   plugins: "media mediaembed",
   mediaembed_service_url: "SERVICE_URL",
   mediaembed_max_width: 450
 });
-```
+----
 
 [[css]]
 === CSS

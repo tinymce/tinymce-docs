@@ -28,22 +28,24 @@
 
 To install the `tinymce-react` package and save it to your `package.json`.
 
-```js
+[source,sh]
+----
 $ npm install --save @tinymce/tinymce-react
-```
+----
 
 [[configuring-the-editor]]
 === Configuring the editor
 
 The editor accepts the following properties:
 
-```xml
+[source,jsx,subs="+attributes"]
+----
 <Editor
   apiKey='your-api-key'
   cloudChannel='{productmajorversion}-stable'
   disabled={false}
   id='uuid'
-  init= pass:[{{]  pass:[}}]
+  init={{  }}
   initialValue=''
   inline={false}
   onEditorChange={}
@@ -53,7 +55,7 @@ The editor accepts the following properties:
   toolbar=''
   value=''
 />
-```
+----
 
 None of the configuration properties are *required* for `tinymce-react` to work. Specify a {cloudname} API key using `apiKey` to remove the `+This domain is not registered...+` warning message.
 
@@ -71,11 +73,12 @@ To register for a {cloudname} API key, visit the link:{accountsignup}[sign-up pa
 [[example]]
 ===== Example: `apiKey`
 
-```xml
+[source,jsx]
+----
 <Editor
   apiKey='your-api-key'
 />
-```
+----
 
 [[cloudChannel]]
 ==== `cloudChannel`
@@ -92,13 +95,14 @@ Changes the {productname} build used for the editor to one of the following {clo
 
 Such as:
 
-```js
+[source,jsx,subs="+attributes"]
+----
 <Editor
   apiKey='your-api-key'
   cloudChannel='{productmajorversion}-dev'
-  init=pass:[{{] /* your other settings */ pass:[}}]
+  init={{ /* your other settings */ }}
 />
-```
+----
 For information {productname} development channels, see: link:{rootDir}cloud-deployment-guide/editor-plugin-version.html#devtestingandstablereleases[Specifying the {productname} editor version deployed from Cloud - dev, testing, and stable releases].
 
 [[disabled]]
@@ -113,11 +117,12 @@ The `disabled` property can dynamically switch the editor between a "disabled" (
 [[example-2]]
 ===== Example: `disabled`
 
-```xml
+[source,jsx]
+----
 <Editor
   disabled={true}
 />
-```
+----
 
 [[id]]
 ==== `id`
@@ -131,11 +136,12 @@ An id for the editor. Used for retrieving the editor instance using the `tinymce
 [[example-2]]
 ===== Example: `id`
 
-```xml
+[source,jsx]
+----
 <Editor
   id='uuid'
 />
-```
+----
 
 [[init]]
 ==== `init`
@@ -151,7 +157,8 @@ For information on the {productname} selector (`tinymce.init`), see: link:{rootD
 [[example-2]]
 ===== Example: `init`
 
-```xml
+[source,jsx]
+----
 <Editor
   init={{
     selector: 'textarea#myTextArea',
@@ -161,7 +168,7 @@ For information on the {productname} selector (`tinymce.init`), see: link:{rootD
     toolbar: 'undo redo | formatselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | help'
   }}
 />
-```
+----
 
 [[initialvalue]]
 ==== `initialValue`
@@ -175,11 +182,12 @@ Initial content of the editor when the editor is initialized.
 [[example-2]]
 ===== Example: `initialValue`
 
-```xml
+[source,jsx]
+----
 <Editor
   initialValue='Once upon a time...'
 />
-```
+----
 
 [[inline]]
 ==== `inline`
@@ -195,11 +203,12 @@ For information on inline mode, see: link:{rootDir}configure/editor-appearance.h
 [[example-2]]
 ===== Example: `inline`
 
-```xml
+[source,jsx]
+----
 <Editor
   inline={true}
 />
-```
+----
 
 [[oneditorchange]]
 ==== `onEditorChange`
@@ -224,11 +233,12 @@ Used to specify the format of the content emitted via the <<oneditorchange,`onEd
 [[example-2]]
 ===== Example: `outputFormat`
 
-```xml
+[source,jsx]
+----
 <Editor
   outputFormat='text'
 />
-```
+----
 
 [[plugins]]
 ==== `plugins`
@@ -242,11 +252,12 @@ For information on adding plugins to {productname}, see: link:{rootDir}plugins.h
 [[example-2]]
 ===== Example: `plugins`
 
-```xml
+[source,jsx]
+----
 <Editor
   plugins='lists code'
 />
-```
+----
 
 [[tagname]]
 ==== `tagName`
@@ -260,12 +271,13 @@ Only valid when <<inline,`+<Editor inline={true} />+`>>. Used to define the HTML
 [[example-2]]
 ===== Example: `tagName`
 
-```xml
+[source,jsx]
+----
 <Editor
   inline={true}
   tagName='my-custom-tag'
 />
-```
+----
 
 [[textareaname]]
 ==== `textareaName`
@@ -279,11 +291,12 @@ Sets the `name` attribute for the `textarea` element used for the editor in form
 [[example-2]]
 ===== Example: `textareaName`
 
-```xml
+[source,jsx]
+----
 <Editor
   textareaName='myTextArea'
 />
-```
+----
 
 [[toolbar]]
 ==== `toolbar`
@@ -299,12 +312,13 @@ For information setting the toolbar for {productname}, see: link:{rootDir}config
 [[example-2]]
 ===== Example: `toolbar`
 
-```xml
+[source,jsx]
+----
 <Editor
   plugins='code'
   toolbar='bold italic underline code'
 />
-```
+----
 
 [[tinymcescriptsrc]]
 ==== `tinymceScriptSrc`
@@ -316,11 +330,12 @@ Use the `tinymceScriptSrc` prop to specify an external version of TinyMCE to laz
 [[example-2]]
 ===== Example: `tinymceScriptSrc`
 
-```xml
+[source,jsx]
+----
 <Editor
   tinymceScriptSrc='/path/to/tinymce.min.js'
 />
-```
+----
 
 [[value]]
 ==== `value`
@@ -336,7 +351,8 @@ For more information, see: <<usingthetinymcereactcomponentasacontrolledcomponent
 
 To use the editor as a https://reactjs.org/docs/forms.html#controlled-components[controlled component], use the `onEditorChange` event instead of the `onChange` event, such as:
 
-```js
+[source,jsx]
+----
 class MyComponent extends React.Component {
   constructor(props) {
     super(props);
@@ -358,7 +374,7 @@ class MyComponent extends React.Component {
     )
   }
 }
-```
+----
 
 For information on controlled components in React, see: https://reactjs.org/docs/forms.html#controlled-components[React Docs - Controlled Components].
 
@@ -367,9 +383,10 @@ For information on controlled components in React, see: https://reactjs.org/docs
 
 Functions can be bound to editor events, such as:
 
-```xml
+[source,jsx]
+----
 <Editor onSelectionChange={this.handlerFunction} />
-```
+----
 
 When the handler is called (*handlerFunction* in this example), it is called with two arguments:
 

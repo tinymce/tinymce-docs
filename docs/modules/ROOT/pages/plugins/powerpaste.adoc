@@ -41,12 +41,13 @@ To enable the {productname} *PowerPaste* plugin with link:{rootDir}cloud-deploym
 
 Example {productname} configuration:
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "powerpaste"
 });
-```
+----
 
 [[self-hosted-installation]]
 == Self-hosted Installation
@@ -68,14 +69,15 @@ To enable the *PowerPaste* plugin when using a link:{rootDir}advanced/usage-with
 
 Example:
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   external_plugins: {
     'powerpaste': 'http://www.server.com/application/external_plugins/powerpaste/plugin.js'
   }
 });
-```
+----
 
 [[configuration-options]]
 == Configuration Options
@@ -90,7 +92,8 @@ The supported values are `true` and `false`. The default is `false`.
 [discrete#example-paste_as_text]
 ===== Example: paste_as_text
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "powerpaste",
@@ -98,7 +101,7 @@ tinymce.init({
   toolbar: "pastetext",
   paste_as_text: true
 });
-```
+----
 
 include::{partialsDir}configuration/paste-merge-formats.adoc[]
 
@@ -161,7 +164,8 @@ The list of inline elements that should be removed on paste can be specified by 
 [discrete#example-powerpaste_clean_filtered_inline_elements]
 ===== Example: powerpaste_clean_filtered_inline_elements
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "powerpaste",
@@ -169,7 +173,7 @@ tinymce.init({
   powerpaste_html_import: "clean", // optional
   powerpaste_clean_filtered_inline_elements: "strong, em, b, i, u, strike, sup, sub, font"
 });
-```
+----
 
 [[powerpaste_keep_unsupported_src]]
 === powerpaste_keep_unsupported_src
@@ -185,13 +189,14 @@ For example, browsers do not allow PowerPaste to access the file system. If your
 [discrete#example-powerpaste_keep_unsupported_src]
 ===== Example: powerpaste_keep_unsupported_src
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "powerpaste",
   powerpaste_keep_unsupported_src: true
 });
-```
+----
 
 include::{partialsDir}configuration/smart-paste.adoc[]
 
@@ -205,13 +210,14 @@ This button allows you to toggle paste as plain text mode on and off. When in pl
 
 Example {productname} Configuration:
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",
   plugins: "powerpaste",
   toolbar: "pastetext"
 });
-```
+----
 
 [[menu-items]]
 == Menu Items
@@ -223,7 +229,8 @@ This menu item allows you to toggle paste as plain text mode on and off. When in
 
 Example {productname} Configuration:
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",
   plugins: "powerpaste",
@@ -231,7 +238,7 @@ tinymce.init({
 	edit: {title: "edit", items: "pastetext"}
   }
 });
-```
+----
 
 [[advanced-config-options]]
 == Advanced Config Options
@@ -262,7 +269,8 @@ NOTE: The mode 'auto' is used when the content source does not have formatting t
 
 Example {productname} configuration:
 
-```js
+[source,js]
+----
 const yourCustomFilter = function(content) {
   // Implement your custom filtering and return the filtered content
   return content;
@@ -280,7 +288,7 @@ tinymce.init({
     data.content = newContent;
   }
 });
-```
+----
 
 [[paste_postprocess]]
 ===== paste_postprocess
@@ -298,7 +306,8 @@ NOTE: The mode 'auto' is used when the content source does not have formatting t
 
 Example {productname} configuration:
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",
   plugins: "powerpaste",
@@ -310,7 +319,7 @@ tinymce.init({
     data.node.insertBefore(additionalNode, data.node.firstElementChild);
   }
 });
-```
+----
 
 [[event-listeners]]
 ==== Event Listeners
@@ -324,7 +333,8 @@ The event listeners are passed the same data objects as their equivalent configu
 
 Example {productname} configuration:
 
-```js
+[source,js]
+----
 const yourCustomFilter = function(content) {
   // Implement your custom filtering and return the filtered content
   return content;
@@ -352,7 +362,7 @@ tinymce.init({
     });
   }
 });
-```
+----
 
 [[commands]]
 == Commands

@@ -7,11 +7,12 @@ This option allows you to specify the skin that {productname} should use. The de
 
 The name of the skin should match the name of the folder within the skins directory of {productname}. If the specified skin is not found, {productname} will not load.
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   skin: "oxide"
 });
-```
+----
 
 If you would like to create your own skin, please see the guide link:{rootDir}advanced/creating-a-skin.html[here].

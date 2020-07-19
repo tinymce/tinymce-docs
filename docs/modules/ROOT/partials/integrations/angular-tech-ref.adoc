@@ -26,9 +26,10 @@
 
 To install the `tinymce-angular` package and save it to your `package.json`.
 
-```js
+[source,sh]
+----
 $ npm install --save @tinymce/tinymce-angular
-```
+----
 
 This package is for Angular 5+. For Angular 4, use `@tinymce/tinymce-angular-legacy`
 
@@ -37,13 +38,15 @@ This package is for Angular 5+. For Angular 4, use `@tinymce/tinymce-angular-leg
 
 . Import the `EditorModule` from the npm package using:
 +
-```tsx
+[source,js]
+----
 import { EditorModule } from '@tinymce/tinymce-angular';
-```
+----
 +
 Add the `EditorModule` to `+@NgModule({imports})+`:
 +
-```tsx
+[source,js]
+----
 // This might look different depending on how you have set up your app
 // but the important part is the imports array
 @NgModule({
@@ -57,33 +60,35 @@ Add the `EditorModule` to `+@NgModule({imports})+`:
   providers: [],
   bootstrap: [AppComponent]
 })
-```
+----
 
 . Add the editor to the Angular application template, such as:
 +
-```html
+[source,html]
+----
 <editor apiKey="test" [init]="{plugins: 'link'}"></editor>
-```
+----
 
 [[configuring-the-editor]]
 === Configuring the editor
 
 The editor accepts the following properties:
 
-```html
+[source,html,subs="+attributes"]
+----
 <editor
   apiKey="no-api-key"
   cloudChannel="{productmajorversion}"
   [disabled]="false"
   id=""
-  [init]="pass:[{]  pass:[}]"
+  [init]="{  }"
   initialValue=""
   [inline]="false"
   plugins=""
   tagName="div"
   toolbar=""
 ></editor>
-```
+----
 
 None of the configuration properties are *required* for `tinymce-angular` to work. Specify a {cloudname} API key using `apiKey` to remove the `+This domain is not registered...+` warning message.
 
@@ -101,11 +106,12 @@ To register for a {cloudname} API key, visit the link:{accountsignup}[sign-up pa
 [[example]]
 ===== Example: `apiKey`
 
-```xml
+[source,html]
+----
 <editor
   apiKey="your-api-key"
 ></editor>
-```
+----
 
 [[cloudchannel]]
 ==== `cloudChannel`
@@ -122,12 +128,13 @@ Changes the {productname} build used for the editor to one of the following {clo
 
 Such as:
 
-```js
+[source,html,subs="+attributes"]
+----
 <editor
   apiKey="your-api-key"
-  cloudChannel="{{site.productmajorversion}}-dev"
+  cloudChannel="{productmajorversion}-dev"
 ></editor>
-```
+----
 For information {productname} development channels, see: link:{rootDir}cloud-deployment-guide/editor-plugin-version.html#devtestingandstablereleases[Specifying the {productname} editor version deployed from Cloud - dev, testing, and stable releases].
 
 [[disabled]]
@@ -142,11 +149,12 @@ The `disabled` property can dynamically switch the editor between a "disabled" (
 [[example-2]]
 ===== Example: `disabled`
 
-```html
+[source,html]
+----
 <editor
   [disabled]="true"
 ></editor>
-```
+----
 
 [[id]]
 ==== `id`
@@ -160,11 +168,12 @@ An id for the editor. Used for retrieving the editor instance using the `tinymce
 [[example-2]]
 ===== Example: `id`
 
-```xml
+[source,html]
+----
 <editor
   id="uuid"
 ></editor>
-```
+----
 
 [[init]]
 ==== `init`
@@ -173,23 +182,24 @@ Object sent to the `tinymce.init` method used to initialize the editor.
 
 For information on the {productname} selector (`tinymce.init`), see: link:{rootDir}general-configuration-guide/basic-setup.html[Basic setup].
 
-*Default value:* `pass:[{] pass:[}]`
+*Default value:* `+{ }+`
 
 *Type:* Object
 
 [[example-2]]
 ===== Example: `init`
 
-```html
+[source,html]
+----
 <editor
-  [init]="pass:[{]
+  [init]="{
     plugins: [
      'lists link image paste help wordcount'
     ],
     toolbar: 'undo redo | formatselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | help'
-  pass:[}]"
+  }"
 ></editor>
-```
+----
 
 [[initialvalue]]
 ==== `initialValue`
@@ -203,11 +213,12 @@ Initial content of the editor when the editor is initialized.
 [[example-2]]
 ===== Example: `initialValue`
 
-```xml
+[source,html]
+----
 <editor
   initialValue="Once upon a time..."
 ></editor>
-```
+----
 
 [[inline]]
 ==== `inline`
@@ -223,11 +234,12 @@ For information on inline mode, see: link:{rootDir}configure/editor-appearance.h
 [[example-2]]
 ===== Example: `inline`
 
-```html
+[source,html]
+----
 <editor
   [inline]="true"
 ></editor>
-```
+----
 
 [[plugins]]
 ==== `plugins`
@@ -241,11 +253,12 @@ For information on adding plugins to {productname}, see: link:{rootDir}plugins.h
 [[example-2]]
 ===== Example: `plugins`
 
-```xml
+[source,html]
+----
 <editor
   plugins="lists code"
 ></editor>
-```
+----
 
 [[outputformat]]
 ==== `outputFormat`
@@ -261,11 +274,12 @@ Used to specify the format of the content emitted by the tinymce-angular compone
 [[example-2]]
 ===== Example: `outputFormat`
 
-```xml
+[source,html]
+----
 <editor
   outputFormat="text"
 ></editor>
-```
+----
 
 [[tagName]]
 ==== `tagName`
@@ -279,12 +293,13 @@ Only valid when <<inline,`<editor [inline]="true"></editor>`>>. Used to define t
 [[example-2]]
 ===== Example: `tagName`
 
-```html
+[source,html]
+----
 <editor
   [inline]="true"
   tagName="my-custom-tag"
 ></editor>
-```
+----
 
 [[toolbar]]
 ==== `toolbar`
@@ -300,21 +315,23 @@ For information setting the toolbar for {productname}, see: link:{rootDir}config
 [[example-2]]
 ===== Example: `toolbar`
 
-```xml
+[source,html]
+----
 <editor
   plugins="code"
   toolbar="bold italic underline code"
 ></editor>
-```
+----
 
 [[using-the-directive]]
 === Using the `ngModel` directive
 
 The `ngModel` directive can be added to use the editor in a form:
 
-```html
+[source,html]
+----
 <editor [(ngModel)]="dataModel"></editor>
-```
+----
 
 For information on using `NgModel`, see: https://angular.io/api/forms/NgModel[Angular documentation - NgModel].
 
@@ -326,9 +343,10 @@ To use {productname} Angular component with reactive forms:
 . Include the `<editor>` configuration within the `formGroup`.
 . Add the `formControlName` directive to the editor configuration. For example:
 +
-```html
+[source,html]
+----
 <editor [formControlName]="schema.key" [init]="{plugins: 'link'}"></editor>
-```
+----
 
 For information on using reactive forms, see: https://angular.io/guide/reactive-forms[Angular documentation - Reactive Forms].
 
@@ -337,9 +355,10 @@ For information on using reactive forms, see: https://angular.io/guide/reactive-
 
 Functions can be bound to editor events, such as:
 
-```xml
+[source,html]
+----
 <editor (onSelectionChange)="handleEvent($event)"></editor>
-```
+----
 
 When the handler is called (`handleEvent` in this example), it is called with an event containing two properties:
 

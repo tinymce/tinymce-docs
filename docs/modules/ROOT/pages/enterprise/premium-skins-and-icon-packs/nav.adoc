@@ -36,13 +36,14 @@ Available values for link:{rootDir}configure/content-appearance.html#content_css
 [discrete#example]
 ===== Example
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',    // change this value according to your HTML
   skin: 'fabric',       // Name of the skin
   content_css: 'fabric' // Name of the content skin
 });
-```
+----
 
 [[how-to-use-an-icon-pack]]
 === How to use an icon pack
@@ -59,12 +60,13 @@ Available values for link:{rootDir}configure/editor-appearance.html#icons[icon] 
 [discrete#example-2]
 ===== Example
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   icons: 'material'      // Name of icon pack
 });
-```
+----
 
 For information on using the `icons` option, see: link:{rootDir}configure/editor-appearance.html#icons[User interface options - `icons`].
 

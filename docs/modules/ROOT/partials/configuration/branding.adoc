@@ -14,9 +14,10 @@ NOTE: The "*Powered by Tiny*" product attribution is required for users on the l
 [discrete#example]
 ===== Example
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   branding: false
 });
-```
+----

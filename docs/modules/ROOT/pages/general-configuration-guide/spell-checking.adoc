@@ -13,13 +13,14 @@ include::{rootDir}_attributes.adoc[]
 
 Assign the link:{rootDir}configure/spelling.html#browser_spellcheck[`browser_spellcheck`] configuration option the value of `true` to utilize the browser's native spell check functionality. Enabling the link:{rootDir}configure/editor-appearance.html#contextmenu[`contextmenu`] option _may_ be required depending on the right-click or context usability requirement.
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   browser_spellcheck: true,
   contextmenu: false
 });
-```
+----
 
 [[php-spellchecker-component]]
 == PHP Spellchecker component
@@ -41,14 +42,15 @@ This plugin enables *Enchant* or *PSpell* on the server to spell check content w
 [discrete#example]
 ===== Example
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'spellchecker',
   toolbar: 'spellchecker',
   spellchecker_rpc_url: 'spellchecker.php'
 });
-```
+----
 
 Review the link:{rootDir}plugins/spellchecker.html[Spell Checker plugin] for advanced configuration options.
 

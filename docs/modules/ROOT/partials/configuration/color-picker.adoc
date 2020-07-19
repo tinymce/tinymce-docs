@@ -14,12 +14,13 @@ The plugin hooks into the editor <<color_picker_callback,`color_picker_callback`
 
 In this example, we have activated the toolbar `forecolor` and `backcolor` palettes.
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",
   toolbar: "forecolor backcolor"
 });
-```
+----
 
 [[]]
 === `color_picker_callback`
@@ -29,7 +30,8 @@ This option enables you to provide your own color picker. When your custom color
 [discrete#example-2]
 ===== Example
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",
   toolbar: "forecolor backcolor"
@@ -37,4 +39,4 @@ tinymce.init({
     callback('#FF00FF');
   }
 });
-```
+----

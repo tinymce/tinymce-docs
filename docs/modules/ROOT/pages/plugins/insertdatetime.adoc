@@ -15,14 +15,15 @@ The `insertdatetime` plugin provides a toolbar control and menu item `Insert dat
 [[example]]
 ===== Example
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "insertdatetime",
   menubar: "insert",
   toolbar: "insertdatetime"
 });
-```
+----
 
 [[options]]
 == Options
@@ -37,15 +38,16 @@ This option allows you to override the default formatting rule for date formats 
 [discrete#example-2]
 ===== Example
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "insertdatetime",
   menubar: "insert",
-  toolbar: "insertdatetime"
+  toolbar: "insertdatetime",
   insertdatetime_dateformat: "%Y-%m-%d"
 });
-```
+----
 
 [[insertdatetime_formats]]
 === `insertdatetime_formats`
@@ -55,7 +57,8 @@ Allows you to specify a list of date/time formats to be used in the date menu or
 [discrete#example-2]
 ===== Example
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "insertdatetime",
@@ -63,7 +66,7 @@ tinymce.init({
   toolbar: "insertdatetime"
   insertdatetime_formats: ["%H:%M:%S", "%Y-%m-%d", "%I:%M:%S %p", "%D"]
 });
-```
+----
 
 [[insertdatetime_timeformat]]
 === `insertdatetime_timeformat`
@@ -73,15 +76,16 @@ This option allows you to override the default formatting rule for times inserte
 [discrete#example-2]
 ===== Example
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "insertdatetime",
   menubar: "insert",
-  toolbar: "insertdatetime"
+  toolbar: "insertdatetime",
   insertdatetime_timeformat: "%H:%M:%S"
 });
-```
+----
 
 [[insertdatetime_element]]
 === `insertdatetime_element`
@@ -95,15 +99,16 @@ When this option is enabled HTML5 time elements gets generated when you insert d
 [discrete#example-2]
 ===== Example
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "insertdatetime",
   menubar: "insert",
-  toolbar: "insertdatetime"
+  toolbar: "insertdatetime",
   insertdatetime_element: true
 });
-```
+----
 
 include::{partialsDir}configuration/ref-time-date-formats.adoc[]
 

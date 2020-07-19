@@ -83,7 +83,8 @@ To upgrade to {productname} {productminorversion} using a manually downloaded pa
 +
 Customizations for {productname} are typically stored in the following directories:
 +
-```sh
+[source,sh]
+----
 tinymce/
 ├── icons/
 ├── langs/
@@ -92,7 +93,7 @@ tinymce/
 │   ├── content/
 │   └── ui/
 └── themes/
-```
+----
 
 . Download the latest version of {productname}.
  ** For the {productname} Community Version, download `{prodnamecode}_<VERSION>.zip` from link:{gettiny}/self-hosted/[Get {productname} - Self-hosted releases], where _`<VERSION>`_ is the latest version of {productname}.

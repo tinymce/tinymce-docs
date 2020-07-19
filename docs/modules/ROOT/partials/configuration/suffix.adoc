@@ -8,9 +8,10 @@ This option lets you specify the suffix of {productname}. By default this value 
 [discrete#example]
 ===== Example
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   suffix: '.min'
 });
-```
+----

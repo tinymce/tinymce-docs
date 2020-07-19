@@ -14,13 +14,14 @@ The plugin also normalizes list behavior between browsers. Enable it if you have
 [[example]]
 ===== Example
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "lists",
   toolbar: "numlist bullist"
 });
-```
+----
 
 [[options]]
 == Options
@@ -34,14 +35,15 @@ This boolean option allows to disable the indent on tab key functionality. Its d
 
 For example:
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "lists",
   toolbar: "numlist bullist",
   lists_indent_on_tab: false
 });
-```
+----
 
 [[commands]]
 == Commands

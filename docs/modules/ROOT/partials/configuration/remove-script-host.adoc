@@ -18,26 +18,28 @@ If this option is set to `false`, the protocol and host of the `document_base_ur
 
 When `remove_script_host` is set to `true`, such as:
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',
   document_base_url: 'http://www.example.com/path1/',
   relative_urls: false,
   remove_script_host: true
 });
-```
+----
 
 Adding a relative URL such as `test.html`, the editor will convert the URL to: `/path1/test.html`.
 
 When `remove_script_host` is set to `false`, such as:
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',
   document_base_url: 'http://www.example.com/path1/',
   relative_urls: false,
   remove_script_host: false
 });
-```
+----
 
 Adding a relative URL such as `test.html`, the editor will convert the URL to: `+http://www.example.com/path1/test.html+`.

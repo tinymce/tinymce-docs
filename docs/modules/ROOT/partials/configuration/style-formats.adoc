@@ -16,7 +16,8 @@ To merge custom styles with the default `styles_format` values, set link:{rootDi
 
 The following is the default value for `style_formats`:
 
-```js
+[source,js]
+----
 style_formats: [
   { title: 'Headings', items: [
     { title: 'Heading 1', format: 'h1' },
@@ -48,6 +49,6 @@ style_formats: [
     { title: 'Justify', format: 'alignjustify' }
   ]}
 ]
-```
+----
 
 The link:{rootDir}demo/format-custom.html[Custom formats] demo contains examples of custom style formats, including how to specify new formats and group headings.

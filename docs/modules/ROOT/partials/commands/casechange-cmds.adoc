@@ -13,8 +13,9 @@
 
 *Examples*
 
-```js
+[source,js]
+----
 tinymce.activeEditor.execCommand('mceLowerCase');
 tinymce.activeEditor.execCommand('mceTitleCase');
 tinymce.activeEditor.execCommand('mceUpperCase');
-```
+----

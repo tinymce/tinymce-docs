@@ -69,7 +69,7 @@ codepen::drive-plugin-upload[]
 
 These settings are available for the <<tinydrivepick,tinydrive.pick>> / <<tinydrivebrowse,tinydrive.browse>> api methods.
 
-[[]]
+[[filetypes]]
 === `filetypes`
 
 This setting enables restricting what types of files you want do display based on link:{rootDir}tinydrive/introduction.html#filetypes[file type] categories. For example if your app needs to insert images only then you can specify `['image']` in the file types array.
@@ -91,20 +91,22 @@ This setting enables constraining the width/height of uploaded images. When this
 [[example]]
 ==== Example
 
-```js
+[source,js]
+----
 tinydrive.pick({
   max_image_dimension: 1024
 }).then((result) => {
   console.log(result.files);
 });
-```
+----
 
 [[plugin-api-interfaces]]
 === Plugin api interfaces
 
 Here is a complete api reference as TypeScript types for developers used to TypeScript syntax.
 
-```tsx
+[source,ts]
+----
 interface PluginApi {
   pick: (settings: PluginPickerApiSettings) => Promise<PickerResult>;
   browse: (settings: PluginPickerApiSettings) => Promise<void>;
@@ -143,4 +145,4 @@ interface UploadProgress {
 interface UploadResult {
   file: DriveFile;
 }
-```
+----

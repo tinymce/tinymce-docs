@@ -35,9 +35,10 @@ Store the keys temporarily somewhere as you will need to copy & paste them later
 
 These are the steps needed to get this project running on your machine:
 
-```
+[source]
+----
 $ git clone git@github.com:tinymce/tinydrive-nodejs-starter.git
-```
+----
 
 [[2-change-the-in]]
 ==== 2. Change the `apiKey` in `tinydrive-nodejs-starter/config.js`
@@ -52,11 +53,12 @@ You get the private RSA key from the `JWT Key Manager` {accountpage} page at \ht
 [[4-go-to-the-directory-and-install-npm-packages-and-then-start-the-dev-server]]
 ==== 4. Go to the directory and install npm packages and then start the dev server
 
-```
+[source]
+----
 $ cd tinydrive-nodejs-starter
 $ npm i
 $ npm run start
-```
+----
 
 [[5-open-the-example-project-at-httplocalhost3000]]
 ==== 5. Open the example project at \http://localhost:3000

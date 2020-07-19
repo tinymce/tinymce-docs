@@ -14,10 +14,11 @@ WARNING: Note that, this option will do nothing if `images_upload_url` is not sp
 [discrete#example]
 ===== Example
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   images_upload_url: 'postAcceptor.php',
   automatic_uploads: false
 });
-```
+----

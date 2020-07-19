@@ -93,12 +93,12 @@ A basic menu item triggers its `onAction` function when clicked.
 | default: false - Represents the menu item's state. When true, the menu item is unclickable. Toggled by the menu item's API.
 
 | onSetup
-| (api) \=> (api) \=> void
+| `+(api) => (api) => void+`
 | optional
-| default: () \=> () \=> {} - Function invoked when the menu item is rendered, each time its menu is opened.
+| default: `+() => () => {}+` - Function invoked when the menu item is rendered, each time its menu is opened.
 
 | onAction
-| (api) \=> void
+| `+(api) => void+`
 | required
 | Function invoked when the menu item is clicked.
 
@@ -117,11 +117,11 @@ include::{partialsDir}misc/shortcut-os-mappings.adoc[leveloffset=+2]
 | Name | Value | Description
 
 | isDisabled
-| () \=> boolean
+| `+() => boolean+`
 | Checks if the menu item is disabled.
 
 | setDisabled
-| (state: boolean) \=> void
+| `+(state: boolean) => void+`
 | Sets the menu item's disabled state.
 |===
 
@@ -136,7 +136,7 @@ tinymce.init({
   },
   menubar: 'file edit custom',
 
-setup: function(editor) {
+  setup: function(editor) {
     editor.ui.registry.addMenuItem('basicitem', {
       text: 'My basic menu item',
       onAction: function() {
@@ -172,12 +172,12 @@ A nested menu item is a menu item with a submenu. Registering a submenu this way
 | A value to associate with the menu item.
 
 | onSetup
-| (api) \=> (api) \=> void
+| `+(api) => (api) => void+`
 | optional
-| default: () \=> () \=> {} - Function invoked when the menu item is rendered, each time its menu is opened.
+| default: `+() => () => {}+` - Function invoked when the menu item is rendered, each time its menu is opened.
 
 | getSubmenuItems
-| () \=> string or MenuItem[]
+| `+() => string+` or `MenuItem[]`
 | required
 | Function invoked when the menu item is clicked to open its submenu. Must return either a space separated string of registered menu names or an array of basic, toggle or nested menu items specifications.
 
@@ -196,11 +196,11 @@ include::{partialsDir}misc/shortcut-os-mappings.adoc[leveloffset=+2]
 | Name | Value | Description
 
 | isDisabled
-| () \=> boolean
+| `+() => boolean+`
 | Checks if the menu item is disabled.
 
 | setDisabled
-| (state: boolean) \=> void
+| `+(state: boolean) => void+`
 | Sets the menu item's disabled state.
 |===
 
@@ -215,19 +215,19 @@ tinymce.init({
   },
   menubar: 'file edit custom',
 
-setup: function(editor) {
+  setup: function(editor) {
     editor.ui.registry.addNestedMenuItem('nesteditem', {
-    text: 'My nested menu item',
-    getSubmenuItems: function() {
-    return [{
-      type: 'menuitem',
-      text: 'My submenu item',
-      onAction: function() {
-        alert('Submenu item clicked');
+      text: 'My nested menu item',
+      getSubmenuItems: function() {
+        return [{
+          type: 'menuitem',
+          text: 'My submenu item',
+          onAction: function() {
+            alert('Submenu item clicked');
+          }
+        }];
       }
-    }];
-    }
-  });
+    });
   }
 
 });
@@ -270,12 +270,12 @@ A toggle menu item triggers its `onAction` when clicked. It also has a concept o
 | default: false - Represents the menu item's state. When true, the menu item is unclickable. Toggled by the menu item's API.
 
 | onSetup
-| (api) \=> (api) \=> void
+| `+(api) => (api) => void+`
 | optional
-| default: () \=> () \=> {} - Function invoked when the menu item is rendered, each time its menu is opened.
+| default: `+() => () => {}+` - Function invoked when the menu item is rendered, each time its menu is opened.
 
 | onAction
-| (api) \=> void
+| `+(api) => void+`
 | required
 | Function invoked when the menu item is clicked.
 |===
@@ -289,19 +289,19 @@ NOTE: The `icon` option for Toggle menu items was added in {productname} 5.3.
 | Name | Value | Description
 
 | isActive
-| () \=> boolean
+| `+() => boolean+`
 | Checks if the menu item is active.
 
 | setActive
-| (state: boolean) \=> void
+| `+(state: boolean) => void+`
 | Sets the menu item's active state.
 
 | isDisabled
-| () \=> boolean
+| `+() => boolean+`
 | Checks if the menu item is disabled.
 
 | setDisabled
-| (state: boolean) \=> void
+| `+(state: boolean) => void+`
 | Sets the menu item's disabled state.
 |===
 
@@ -320,7 +320,7 @@ tinymce.init({
   },
   menubar: 'file edit custom',
 
-setup: function(editor) {
+  setup: function(editor) {
     editor.ui.registry.addToggleMenuItem('toggleitem', {
       text: 'My toggle menu item',
       icon: 'home',

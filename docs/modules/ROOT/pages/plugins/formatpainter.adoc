@@ -28,7 +28,7 @@ tinymce.init({
 });
 ```
 *Result*:
-The image:{imagesDir}fp-disabled.png[**Format Painter**](*Format Painter*) button appears in the toolbar menu.
+The image:fp-disabled.png[Format Painter](*Format Painter*) button appears in the toolbar menu.
 
 [[using-format-painter]]
 == Using Format Painter
@@ -40,7 +40,7 @@ The format painter operates in two modes, one for retrieval and one for applicat
 *Usage with toolbar button*
 
 . Position the cursor at the source content to retrieve the formatting.
-. Enable the *Format Painter* button to copy the formatting. The *Format Painter* toolbar button background color changes to _grey_ image:{imagesDir}fp-enabled.png[**Format Painter**].
+. Enable the *Format Painter* button to copy the formatting. The *Format Painter* toolbar button background color changes to _grey_ image:fp-enabled.png[Format Painter].
 . Select the goal content to apply the formatting.
 
 *Result*: The formatting from the source content is applied to the goal content.

@@ -48,7 +48,7 @@ For information on the `toolbar_mode` option, see: link:{rootDir}configure/edito
 
 The new `toolbar_groups` setting and `addGroupToolbarButton` registry API can be used to create a toolbar button that displays a collection of other toolbar buttons in a pop-up.
 
-image::{rootDir}/images/toolbar-group-example.png[**Group toolbar button example**]
+image::toolbar-group-example.png[**Group toolbar button example**]
 
 For information on using the `toolbar_groups` setting, see: link:{rootDir}configure/editor-appearance.html#toolbar_groups[User interface options - `toolbar_groups`].
 For information on using the `addGroupToolbarButton` API, see: link:{rootDir}ui-components/typesoftoolbarbuttons.html#grouptoolbarbutton[Types of toolbar buttons - Group button].

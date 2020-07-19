@@ -53,8 +53,8 @@ For example:
 |===
 | {productname} 5.2 toggle menu item checkmark behavior | {productname} 5.3 toggle menu item checkmark behavior
 
-| image:{imagesDir}old_togglemenuitemchecked.png[Custom toggle menu item with checkmark on the left-hand side of the item label (pre-5.3 behavior)]
-| image:{imagesDir}53_togglemenuitemchecked.png[Custom toggle menu item with checkmark on the right-hand side of the item label (5.3+ behavior)]
+| image:old_togglemenuitemchecked.png[Custom toggle menu item with checkmark on the left-hand side of the item label (pre-5.3 behavior)]
+| image:53_togglemenuitemchecked.png[Custom toggle menu item with checkmark on the right-hand side of the item label (5.3+ behavior)]
 |===
 
 For information on toggle menu items, see: link:{rootDir}ui-components/menuitems.html#togglemenuitems[Custom menu items - Toggle menu items].
@@ -66,7 +66,7 @@ A new "Find in selection" option has been added to the Find and Replace dialog p
 
 For example:
 
-image::{rootDir}/images/find-replace-in-selection.png[Find and Replace dialog with new "Find in selection" option highlighted]
+image::find-replace-in-selection.png[Find and Replace dialog with new "Find in selection" option highlighted]
 
 For information on enabling the Find and Replace dialog, see: link:{rootDir}plugins/searchreplace.html[the Search and Replace plugin].
 

@@ -55,7 +55,7 @@ tinymce.init({
 
 Currently, there are three types of formats available:
 
-image::{rootDir}/images/casechange.png[**Case Change**]
+image::casechange.png[**Case Change**]
 
 [[lowercase]]
 === lowercase
@@ -78,7 +78,7 @@ The *Title Case* option changes anything other than articles, coordinating conju
 Perform the following steps to change the case of selected text in a document to lowercase, UPPERCASE, or Title Case:
 
 . Select the desired text to change the case.
-. Click on the image:{imagesDir}casechangeicon.png[**Case Change**] icon in the toolbar.
+. Click on the image:casechangeicon.png[**Case Change**] icon in the toolbar.
 . From the drop-down menu, choose the desired format by clicking on either *lowercase*, *UPPERCASE*, or *Title Case*.
 
 NOTE: The toolbar button will retain the last applied type of case making it simple to apply the same formatting multiple times.

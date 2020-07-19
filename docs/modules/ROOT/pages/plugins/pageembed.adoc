@@ -26,20 +26,20 @@ tinymce.init({
 });
 ```
 
-*Result*: The image:{imagesDir}pageembed.png[**Page Embed**](*Page Embed*) button appears in the toolbar menu.
+*Result*: The image:pageembed.png[Page Embed](*Page Embed*) button appears in the toolbar menu.
 
 [[using-page-embed]]
 == Using Page Embed
 
 Use the following procedure for embedding an iframe into the content:
 
-. Click on the image:{imagesDir}pageembed.png[**Page Embed**](*Page Embed*) toolbar button.
+. Click on the image:pageembed.png[Page Embed](*Page Embed*) toolbar button.
 . The *InsertEdit Iframe* dialog box appears.
-image:{imagesDir}insert-iframes.png[InsertEdit Iframe]
-. In the *General* tab, enter the url in the *Source* field, or click on the image:{imagesDir}source.png[Source](*Source*) icon to upload a file.
+image:insert-iframes.png[InsertEdit Iframe]
+. In the *General* tab, enter the url in the *Source* field, or click on the image:source.png[Source](*Source*) icon to upload a file.
 . For setting the iframe size, select the preferred option from the *Size* drop-down menu.
 * *Inline Value* is used to insert an iframe within a line. To set the dimensions of an inline iframe, provide the values in pixels in the *Width* and *Height* input box.
-     * The default values are *Width* `350px` and *Height* `260px`. Click the image:{imagesDir}constrainprop.png[Constrain Proportions](*Constrain Proportions*) lock icon to change the default values.
+     * The default values are *Width* `350px` and *Height* `260px`. Click the image:constrainprop.png[Constrain Proportions](*Constrain Proportions*) lock icon to change the default values.
 +
 NOTE: The *Width* and *Height* fields are only available if the *Inline Value* value option is selected.
 * *Responsive* is used to make embedded content responsive using CSS, so that content such as video and calendars resize with the browser's viewport. There are four options provided to set the responsive iframe size.
@@ -55,7 +55,7 @@ NOTE: The **Responsive** option has pre-defined width and height values. The **W
 
 . In the *Advanced* tab, provide a name and title for the iframe in the *Name* and *Title* fields.
 . The *Long description URL* field can be used to describe an iframe by including text in a separate resource when a short text alternative does not adequately convey the function or information provided in the iframe.
-* Click on the image:{imagesDir}source.png[Source](*Long description URL*) icon to upload a description file.
+* Click on the image:source.png[Source](*Long description URL*) icon to upload a description file.
 . Click on the *Show iframe border* radio button to display iframe borders.
 . Click on the *Scrollbar* radio button to add scrollbars to the iframe.
 . Click *Save* to save and exit or *Cancel* to dismiss and exit.

@@ -136,7 +136,7 @@ The other option for developing a custom API endpoint is to return JSON in the l
 [[json-response-objects]]
 ==== JSON response objects
 
-[[]]
+[[ephoxembedobj]]
 ===== `EphoxEmbedObj`
 
 `rel`, `media` and `html` combine to form the default representation of the embeddable resource that your server has chosen. Clients of the Enhanced Media Embed server (such as the {productname} editor) can look for alternative representations in `links`.
@@ -170,7 +170,7 @@ The other option for developing a custom API endpoint is to return JSON in the l
 * `html` (optional)
  ** String containing the HTML snippet to be embedded by {productname}.
 
-[[-2]]
+[[relobj]]
 ==== `RelObj`
 
 An array of tags describing the primary type of an embed, where it came from and whether there are any technical attributes that you may want to know about (autoplay, ssl, file format (flash, html5, etc)).
@@ -182,7 +182,7 @@ An array of tags describing the primary type of an embed, where it came from and
 * `source` (required)
  ** Array of link:{rootDir}enterprise/embed-media/mediaembed-server-integration.html#sourcerel[SourceRel]s
 
-[[-2]]
+[[primaryrel]]
 ==== `PrimaryRel`
 
 A string describing the primary type of an embed containing one of the following values:
@@ -199,7 +199,7 @@ A string describing the primary type of an embed containing one of the following
 * `logo`
 * `promo`
 
-[[-2]]
+[[technicalrel]]
 ==== `TechnicalRel`
 
 A string describing technical attributes of an embed containing one of the following values:
@@ -211,7 +211,7 @@ A string describing technical attributes of an embed containing one of the follo
 * `ssl`
 * `autoplay`
 
-[[-2]]
+[[sourcerel]]
 ==== `SourceRel`
 
 A string describing the source of an embed containing one of the following values:
@@ -225,7 +225,7 @@ A string describing the source of an embed containing one of the following value
 * `script_censor` : The original embed (from Iframely or oEmbed) had a script in it and has been converted to a summary card.
 * `smartframe_censor` : The original embed had an Iframely smart frame and has been censored into a summary card to avoid a content dependency on Iframely.
 
-[[-2]]
+[[linksobj]]
 ==== `LinksObj`
 
 Represents all of the possible representations of this resource.
@@ -253,7 +253,7 @@ Represents all of the possible representations of this resource.
 * `files` (required)
  ** Array of link:{rootDir}enterprise/embed-media/mediaembed-server-integration.html#linkobj[LinkObj]s
 
-[[-2]]
+[[linkobj]]
 ==== `LinkObj`
 
 This represents a representation that you could link to / embed.
@@ -269,7 +269,7 @@ This represents a representation that you could link to / embed.
 * `html` (required)
  ** String containing the embeddable HTML snippet.
 
-[[-2]]
+[[mediaobj]]
 ==== `MediaObj`
 
 The media object describes the bounds of the embed. It can either be *responsive* or *fixed*.
@@ -297,7 +297,7 @@ Fields when `type` is `responsive`:
 * `height` (required)
  ** link:{rootDir}enterprise/embed-media/mediaembed-server-integration.html#dimensionboundobj[DimensionBoundObj]
 
-[[-2]]
+[[dimensionboundobj]]
 ==== `DimensionBoundObj`
 
 The dimension bounds define the height or width of a responsive embed.
@@ -319,7 +319,7 @@ Fields when `type` is `constrained`:
 
 No additional fields when `type` is `unbounded`.
 
-[[-2]]
+[[errorobj]]
 ==== `ErrorObj`
 
 * `code` (required)
@@ -347,12 +347,16 @@ No additional fields when `type` is `unbounded`.
 When the Enhanced Media Embed server generates a summary card of a URL (using the title, thumbnail, description and website), it returns a HTML snippet like the following. You should apply styles to the document style to suit these to your preference.
 
 ```html
-
-http://www.imdb.com/title/tt0117500/[image:https://images-na.ssl-images-amazon.com/images/M/MV5BZDJjOTE0N2EtMmRlZS00NzU0LWE0ZWQtM2Q3MWMxNjcwZjBhXkEyXkFqcGdeQXVyNDk3NzU2MTQ@._V1_UY1200_CR90,0,630,1200_AL_.jpg[\]] http://www.imdb.com/title/tt0117500/[[.ephox-summary-card-title\]#The Rock (1996)# +
- +
-[.ephox-summary-card-description\]#Directed by Michael Bay. With Sean Connery, Nicolas Cage, Ed Harris, John Spencer. A mild-mannered chemist and an ex-con must lead the counterstrike when a rogue group of military men, led by a renegade general, threaten a nerve gas attack from Alcatraz against San Francisco.# +
- +
-[.ephox-summary-card-website\]#IMDb#]
+<div class="ephox-summary-card">
+  <a class="ephox-summary-card-url-thumbnail" href="http://www.imdb.com/title/tt0117500/">
+    <img class="ephox-summary-card-thumbnail" src="https://images-na.ssl-images-amazon.com/images/M/MV5BZDJjOTE0N2EtMmRlZS00NzU0LWE0ZWQtM2Q3MWMxNjcwZjBhXkEyXkFqcGdeQXVyNDk3NzU2MTQ@._V1_UY1200_CR90,0,630,1200_AL_.jpg">
+  </a>
+  <a class="ephox-summary-card-link" href="http://www.imdb.com/title/tt0117500/">
+    <span class="ephox-summary-card-title">The Rock (1996)</span><br><br>
+    <span class="ephox-summary-card-description">Directed by Michael Bay.  With Sean Connery, Nicolas Cage, Ed Harris, John Spencer. A mild-mannered chemist and an ex-con must lead the counterstrike when a rogue group of military men, led by a renegade general, threaten a nerve gas attack from Alcatraz against San Francisco.</span><br><br>
+    <span class="ephox-summary-card-website">IMDb</span>
+  </a>
+</div>
 
 ```
 

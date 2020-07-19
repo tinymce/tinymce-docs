@@ -37,7 +37,7 @@ The easiest way to setup JWT authentication against {cloudname} services is to c
 
 The following diagram explains the JWT call flow:
 
-image::{rootDir}/images/jwt-call-flow.png[JSON Web Token Call Flow]
+image::jwt-call-flow.png[JSON Web Token Call Flow]
 
 [[jwt-requirements]]
 == JWT requirements
@@ -103,24 +103,24 @@ EOD;
 // NOTE: Before you proceed with the TOKEN, verify your users session or access.
 
 $payload = array(
-  "sub" \=> "123", // unique user id string
-  "name" \=> "John Doe", // full name of user
+  "sub" => "123", // unique user id string
+  "name" => "John Doe", // full name of user
 
 // Optional custom user root path
-  // "\https://claims.tiny.cloud/drive/root" \=> "/johndoe",
+  // "https://claims.tiny.cloud/drive/root" => "/johndoe",
 
-"exp" \=> time() + 60 * 10 // 10 minute expiration
+"exp" => time() + 60 * 10 // 10 minute expiration
 );
 
 try {
   $token = JWT::encode($payload, $privateKey, 'RS256');
   http_response_code(200);
   header('Content-Type: application/json');
-  echo json_encode(array("token" \=> $token));
+  echo json_encode(array("token" => $token));
 } catch (Exception $e) {
   http_response_code(500);
   header('Content-Type: application/json');
-  echo $e\->getMessage();
+  echo $e->getMessage();
 }
 ?>
 ```

@@ -22,14 +22,14 @@ NOTE: {productname} also supports link:{rootDir}ui-components/urldialog.html[URL
 
 The link:{rootDir}plugins/code[`code`] plugin's dialog is an example of a simple dialog. It contains only one body panel component that displays the HTML code from the content.
 
-image::{rootDir}/images/sourcecode.png[Source Code]
+image::sourcecode.png[Source Code]
 
 [[display-complex-information]]
 ==== Display complex information
 
 More complex dialogs can use link:{rootDir}ui-components/dialogcomponents.html#tabpanel[tab panels] and various link:{rootDir}ui-components/dialogcomponents.html#layoutcomponents[layouts] to categorise and organise information displayed to the user. For example, the link:{rootDir}plugins/help[`help`] and link:{rootDir}plugins/charmap[`character map`] plugins use dialogs with tabbed panels to categorise and separate information.
 
-image::{rootDir}/images/specialchars.png[Special Characters]
+image::specialchars.png[Special Characters]
 
 [[interactive-dialogs]]
 ==== Interactive dialogs
@@ -38,7 +38,7 @@ image::{rootDir}/images/specialchars.png[Special Characters]
 
 For example, the link:{rootDir}plugins/image[`image`] plugin's dialog allows for users to link to or upload an image, input a description, title, class, caption, height and width, then insert it into the editor.
 
-image::{rootDir}/images/interactive.png[Insert/Edit images]
+image::interactive.png[Insert/Edit images]
 
 [[dialog-configuration]]
 == Dialog configuration
@@ -92,7 +92,7 @@ tinymce.activeEditor.windowManager.open({
 | The specification for the <<bodycomponents,body component>>.
 
 | buttons
-| FooterButton[]
+| `FooterButton[]`
 | required
 | An array of <<footerbuttons,footer buttons>> to render in the footer of the dialog.
 
@@ -132,7 +132,7 @@ tinymce.activeEditor.windowManager.open({
 | Function invoked when the dialog is closed. The dialog header's close button, a *Cancel* type footer button and the dialog instance API's `close()` method invoke this function.
 
 | onTabChange
-| `(dialogApi, details)` \=> void
+| `+(dialogApi, details) => void+`
 | optional
 | *This method only applies to link:{rootDir}ui-components/dialogcomponents.html#tabpanel[tab panel] dialogs.* Function invoked when the user changes tabs. `details` is an object that contains `newTabName` and `oldTabName`.
 |===
@@ -193,7 +193,7 @@ The `name` of the panel can be used with the <<dialogapimethods,`dialogApi.showT
 
 The Help plugin's dialog is an example of a tab panel dialog.
 
-image::{rootDir}/images/help.png[Help Button]
+image::help.png[Help Button]
 
 [[footer-buttons]]
 === Footer buttons

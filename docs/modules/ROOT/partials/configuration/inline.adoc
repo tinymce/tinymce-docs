@@ -48,10 +48,7 @@ This would make the phrase "bold text" bold and orange in the content:
 
 [source,html]
 ----
-
-[[this-text-is-bold-text-in-a-heading]]
-= This text is *bold text* in a heading
-
+<h1>This text is <strong>bold text</strong> in a heading</h1>
 ----
 
 If the user changed the heading to a paragraph or a different heading level, then the text color of the bold text would change for the user. While this is entirely correct behavior according to the stylesheet, it is entirely unexpected from the user's perspective.

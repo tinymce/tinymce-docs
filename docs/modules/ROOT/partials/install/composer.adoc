@@ -1,5 +1,6 @@
 If you're using Composer package manager, add the following to `composer.json`.
 
+[source,sh,subs="+attributes"]
 ----
 php composer.phar require "tinymce/tinymce" ">= {productmajorversion}"
 ----

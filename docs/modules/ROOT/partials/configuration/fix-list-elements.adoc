@@ -7,25 +7,29 @@ This invalid list:
 
 [source,html]
 ----
-
-. a
- .. b
- .. c
-
-. e
-
+<ol>
+  <li>a</li>
+    <ol>
+      <li>b</li>
+      <li>c</li>
+   </ol>
+    <li>e</li>
+</ol>
 ----
 
 Gets converted into this valid list:
 
 [source,html]
 ----
-
-. a
- .. b
- .. c
-. e
-
+<ol>
+  <li>a
+    <ol>
+      <li>b</li>
+      <li>c</li>
+    </ol>
+  </li>
+  <li>e</li>
+</ol>
 ----
 
 *Type:* `Boolean`

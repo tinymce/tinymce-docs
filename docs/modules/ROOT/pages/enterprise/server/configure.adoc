@@ -406,7 +406,7 @@ The {productname} server-side components use the http://logback.qos.ch/manual/co
 
 Save the snippet below as `logback.xml` after replacing `{$LOG_LOCATION}` with the full path to the destination log file (e.g. /var/log/tinymce_server_components.log).
 
-[source,xml]
+[source,xml,subs="+attributes"]
 ----
 <configuration>
 
@@ -423,7 +423,7 @@ Save the snippet below as `logback.xml` after replacing `{$LOG_LOCATION}` with t
     </encoder>
   </appender>
 
-  <!-- The name "com.ephox" refers to all {{site.productname}} server-side components. -->
+  <!-- The name "com.ephox" refers to all {productname} server-side components. -->
   <logger name="com.ephox" level="INFO"/>
 
   <root level="INFO">

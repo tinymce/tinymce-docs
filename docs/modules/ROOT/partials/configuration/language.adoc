@@ -31,9 +31,10 @@ tinymce.init({
 
 The available language codes for use with this option are as follows:
 
-[cols="<,^,^"]
+[cols="<.^40,^.^40,^.^20",options="header"]
 |===
-| Language | Code | {cloudname} /{newline}{enterpriseversion}
+| Language | Code | {cloudname} / +
+{enterpriseversion}
 
 | Arabic
 | ar
@@ -149,7 +150,8 @@ The available language codes for use with this option are as follows:
 
 | Greek
 | el
-| {tick} (Support added in {productname} 5.3)
+| {tick} +
+(Support added in {productname} 5.3)
 
 | Hebrew (Israel)
 | he_IL

@@ -30,9 +30,9 @@ The toolbar mode is specified in the `tinymce.init`. There are four toolbar mode
 [[floating]]
 ==== Floating
 
-If the `toolbar_mode` is configured to `floating`, the toolbar appears under the toolbar overflow icon in a floating shelf format when the toolbar overflow icon image:{imagesDir}icons/more-drawer.svg[**Drawer**] is clicked.
+If the `toolbar_mode` is configured to `floating`, the toolbar appears under the toolbar overflow icon in a floating shelf format when the toolbar overflow icon image:icons/more-drawer.svg[Drawer] is clicked.
 
-image::{rootDir}/images/floating_toolbar.png[**Floating Toolbar**]
+image::floating_toolbar.png[**Floating Toolbar**]
 
 [[configuring-a-floating-toolbar]]
 ===== Configuring a Floating toolbar
@@ -42,17 +42,17 @@ Use the following settings to configure a Floating toolbar:
 [source,js]
 ----
 tinymce.init({
-    selector: "textarea",
-    toolbar_mode: 'floating'
+  selector: "textarea",
+  toolbar_mode: 'floating'
 });
 ----
 
 [[sliding]]
 ==== Sliding
 
-If the `toolbar_mode` is configured to `sliding`, the toolbar appears as a fixed toolbar under the first toolbar when the toolbar overflow icon image:{imagesDir}icons/more-drawer.svg[**Drawer**] is clicked.
+If the `toolbar_mode` is configured to `sliding`, the toolbar appears as a fixed toolbar under the first toolbar when the toolbar overflow icon image:icons/more-drawer.svg[Drawer] is clicked.
 
-image::{rootDir}/images/sliding_toolbar.png[**Sliding Toolbar**]
+image::sliding_toolbar.png[**Sliding Toolbar**]
 
 [[configuring-a-sliding-toolbar]]
 ===== Configuring a Sliding toolbar
@@ -62,8 +62,8 @@ Use the following settings to configure a Sliding toolbar:
 [source,js]
 ----
 tinymce.init({
-    selector: "textarea",
-    toolbar_mode: 'sliding'
+  selector: "textarea",
+  toolbar_mode: 'sliding'
 });
 ----
 
@@ -76,7 +76,7 @@ If the `toolbar_mode` is configured to `scrolling`, the overflow toolbar buttons
 
 A scrollbar will be shown on the toolbar on desktop devices and hybrid devices in desktop mode.
 
-image::{rootDir}/images/scrolling_toolbar.png[**Scrolling Toolbar**]
+image::scrolling_toolbar.png[**Scrolling Toolbar**]
 
 [[configuring-a-scrolling-toolbar]]
 ===== Configuring a Scrolling toolbar
@@ -86,8 +86,8 @@ Use the following settings to configure a Scrolling toolbar:
 [source,js]
 ----
 tinymce.init({
-    selector: "textarea",
-    toolbar_mode: 'scrolling'
+  selector: "textarea",
+  toolbar_mode: 'scrolling'
 });
 ----
 
@@ -96,7 +96,7 @@ tinymce.init({
 
 If the `toolbar_mode` is configured to `wrap`, the overflow toolbar buttons will be shown on one or more toolbars below the primary toolbar.
 
-image::{rootDir}/images/wrapped_toolbar.png[**Wrapped Toolbar**]
+image::wrapped_toolbar.png[**Wrapped Toolbar**]
 
 [[configuring-a-wrapped-toolbar]]
 ===== Configuring a Wrapped toolbar
@@ -106,7 +106,7 @@ Use the following settings to configure a wrapped toolbar:
 [source,js]
 ----
 tinymce.init({
-    selector: "textarea",
-    toolbar_mode: 'wrap'
+  selector: "textarea",
+  toolbar_mode: 'wrap'
 });
 ----

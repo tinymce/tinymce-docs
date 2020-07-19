@@ -43,8 +43,8 @@ The mobile experience provided for {productname} 4.7 through {productname} 5.0 h
 ( {productname} 4.7 through {productname} 5.0 ) | *New mobile experience* +
 ( {productname} 5.1 + )
 
-| image:{imagesDir}legacy_mobile_exp.png[{productname} legacy mobile experience]
-| image:{imagesDir}5_1_mobile_exp.png[{productname} 5.1+ mobile experience]
+| image:legacy_mobile_exp.png[{productname} legacy mobile experience]
+| image:5_1_mobile_exp.png[{productname} 5.1+ mobile experience]
 |===
 
 To revert to the legacy mobile theme, add the mobile theme to the {productname} configuration, such as:
@@ -72,7 +72,7 @@ Contextual menus are now horizontal on mobile devices and open when a long-press
 
 For example:
 
-image::{rootDir}/images/side-scrolling-context-toolbar.png[Example of the side-scrolling toolbar and contextual toolbar,380]
+image::side-scrolling-context-toolbar.png[Example of the side-scrolling toolbar and contextual toolbar,380]
 
 [[side-scrolling-toolbars-on-mobile]]
 ==== Side-scrolling toolbars on mobile
@@ -107,7 +107,7 @@ The link:{rootDir}plugins/table.html[table plugin] has been updated to provide _
 
 For example:
 
-image::{rootDir}/images/table_cell_touch_selector_handles.png[Touch selector handles for selecting multiple table cells,380]
+image::table_cell_touch_selector_handles.png[Touch selector handles for selecting multiple table cells,380]
 
 [[touch-friendly-split-buttons]]
 ==== Touch-friendly split buttons
@@ -132,7 +132,7 @@ The following settings are not supported on mobile devices:
 
 The Sticky Toolbar (or Docking Toolbar) docks the toolbar and the menu to the top of the screen when scrolling down a web page. The sticky toolbar will remain docked until the editor is no longer visible. This allows the menu and toolbar to remain in view when editing large text areas.
 
-image::{rootDir}/images/sticky-toolbar.gif[Sticky Toolbar animation]
+image::sticky-toolbar.gif[Sticky Toolbar animation]
 
 For information on the Sticky Toolbars, see: link:{rootDir}configure/editor-appearance.html#toolbar_sticky[Enabling Sticky Toolbars].
 
@@ -281,7 +281,7 @@ The table plugin has been updated to include a *Border width* field in the *Cell
 
 For example:
 
-image::{rootDir}/images/border-width-cell-props.png[Cell Properties Dialog with new Border Width field,380]
+image::border-width-cell-props.png[Cell Properties Dialog with new Border Width field,380]
 
 [[changed-the-default-to]]
 === Changed the default `toolbar_drawer` to `floating`
@@ -307,8 +307,8 @@ In {productname} 5.0, the same icon (`paragraph`) was used for the `visualchars`
 
 To improve the user experience:
 
-* The `paragraph` icon has been renamed `visualchars` and is used for the `visualchars` toolbar button: image:{imagesDir}icons/visualchars.svg[`paragraph` renamed to `visualchars`]
-* A new `visualblocks` icon is used for the `visualblocks` toolbar button: image:{imagesDir}icons/visualblocks.svg[New visualblocks icon]
+* The `paragraph` icon has been renamed `visualchars` and is used for the `visualchars` toolbar button: image:icons/visualchars.svg[paragraph renamed to visualchars]
+* A new `visualblocks` icon is used for the `visualblocks` toolbar button: image:icons/visualblocks.svg[New visualblocks icon]
 
 For the list of icons included in {productname}, see: link:{rootDir}advanced/editor-icon-identifiers.html[Editor icon identifiers].
 

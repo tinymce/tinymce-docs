@@ -9,7 +9,7 @@ keywords: contextforms context forms contextformsbarapi
 A context form consists of an input field, and a series of related buttons. Context forms can be shown wherever a context toolbar can be shown. Also, when a context form is registered containing a `launch` configuration, a special context toolbar button with name `form:${name}` is registered which will launch that particular context form.
 Context forms are a generalisation of the `Insert Link` form that existed in the original [inlite]({{site.url}}/docs-4x/themes/inlite/#quicklink) theme from TinyMCE 4.
 
-### Registering a context form
+## Registering a context form
 
 A context form is registered by calling the `addContextForm` API in the registry. The specification of a context form is separated into two parts:
 
@@ -49,11 +49,11 @@ This relates to the form itself. The form specifications are:
 
 {% include context/positioning.md %}
 
-### Context form buttons
+## Context form buttons
 
 Unlike normal context toolbar buttons, Context form buttons are not registered beforehand. Instead, you need to define each button completely in the `commands` section.
 
-#### contextformbutton
+### Context form button
 
 The definition of a context form button is very similar to the definition of a normal toolbar button. The main difference is that the action is slightly different (as it will relate to the form), and the type is `contextformbutton` instead of `button`. The following is the full list of options:
 
@@ -61,18 +61,18 @@ The definition of a context form button is very similar to the definition of a n
 
 | Name | Value | Requirement | Description |
 | ---- | ----- | ----------- | ----------- |
-| primary | boolean; | Optional | This will activate the button on <enter> in the input form. |
-| onAction | (formApi, togglebuttonApi) => void; | Required | This decides what happens when the user clicks the button. |
-| active | boolean; | Optional | default:false |
-| disabled | boolean; | Optional | default: false - Represents button state. Is toggled by the button's API |
-| tooltip | string; | Optional | Text for button tooltip. |
-| text | string; | Optional | Text to display if no icon is found. |
-| icon | string; | Optional | {{site.predefinedIconsOnly}} |
-| onSetup | (togglebuttonApi) => (togglebuttonApi) => void; | Optional | default: () => () => {} - Function that's invoked when the button is rendered. |
+| primary | boolean | Optional | This will activate the button on &lt;enter&gt; in the input form. |
+| onAction | `(formApi, togglebuttonApi) => void` | Required | This decides what happens when the user clicks the button. |
+| active | boolean | Optional | default:false |
+| disabled | boolean | Optional | default: false - Represents button state. Is toggled by the button's API |
+| tooltip | string | Optional | Text for button tooltip. |
+| text | string | Optional | Text to display if no icon is found. |
+| icon | string | Optional | {{site.predefinedIconsOnly}} |
+| onSetup | `(togglebuttonApi) => (togglebuttonApi) => void` | Optional | default: `() => () => {}` - Function that's invoked when the button is rendered. |
 
 Where the `buttonApi` is the same as a regular toolbar button and `FormApi` has (getValue: () => string, hide: () => void)
 
-#### Context form toggle button
+### Context form toggle button
 
 The context form toggle button is very similar to the a normal toolbar toggle button. The main difference is that the action is slightly different (as it will relate to the form), and the type is `contextformtogglebutton`, instead of `togglebutton`. The following is the full list of options:
 
@@ -80,18 +80,18 @@ The context form toggle button is very similar to the a normal toolbar toggle bu
 
 | Name | Value | Requirement | Description |
 | ---- | ----- | ----------- | ----------- |
-| primary | boolean; | Optional | This will activate the button on <enter> in the input form. |
-| onAction | (formApi, togglebuttonApi) => void; | Required | This decides what happens when the user clicks the button. |
-| active | boolean; | Optional | default:false |
-| disabled | boolean; | Optional | default: false - Represents button state. Is toggled by the button's API |
-| tooltip | string; | Optional | Text for button tooltip. |
-| text | string; | Optional | Text to display if no icon is found. |
-| icon | string; | Optional | {{site.predefinedIconsOnly}} |
-| onSetup | (togglebuttonApi) => (togglebuttonApi) => void; | Optional | default: () => () => {} - Function that's invoked when the button is rendered. |
+| primary | boolean | Optional | This will activate the button on &lt;enter&gt; in the input form. |
+| onAction | `(formApi, togglebuttonApi) => void` | Required | This decides what happens when the user clicks the button. |
+| active | boolean | Optional | default:false |
+| disabled | boolean | Optional | default: false - Represents button state. Is toggled by the button's API |
+| tooltip | string | Optional | Text for button tooltip. |
+| text | string | Optional | Text to display if no icon is found. |
+| icon | string | Optional | {{site.predefinedIconsOnly}} |
+| onSetup | `(togglebuttonApi) => (togglebuttonApi) => void` | Optional | default: `() => () => {}` - Function that's invoked when the button is rendered. |
 
 Where the `toggleButtonApi` is the same as a regular toolbar toggle button.
 
-#### formApi
+### formApi
 
 Both `contextformbutton` and `contextformtogglebutton` are passed `formApi` in their `onAction` callback. The `formApi` has two functions:
 
@@ -100,7 +100,7 @@ Both `contextformbutton` and `contextformtogglebutton` are passed `formApi` in t
 |`hide` | This will hide the form. By default, no button hides the form. It is the responsibility of the developer to hide the form in the `onAction` handler of buttons that require that the context form close after the action. |
 | `getValue` | This will retrieve the value current typed in the input field. |
 
-### Example configuration
+## Example configuration
 
 This example shows how the link plugin adds the standard link context form. The context form will show whenever any content is selected.
 

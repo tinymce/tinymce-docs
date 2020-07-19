@@ -43,6 +43,7 @@ tinymce.init({
 ```
 
 ## Options
+
 ### `imagetools_cors_hosts`
 
 Image Tools cannot work with images from another domains due to security measures imposed by browsers on so called cross-origin HTTP requests. To overcome these constraints, Cross-Origin Resource Sharing (CORS) must be explicitly enabled on the specified domain(s) (for more information check [HTTP access control](https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS)).

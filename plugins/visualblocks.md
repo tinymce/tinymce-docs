@@ -22,7 +22,7 @@ tinymce.init({
 });
 ```
 
-### Options
+## Options
 
 This setting affects the execution of the `visualblocks` plugin. You may specify whether blocks are visible by default here.
 

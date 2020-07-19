@@ -13,7 +13,7 @@ The {{site.productname}} Plugin Generator is designed to make it quick and easy 
 ## Install the generator
 The plugin generator is built with the project scaffolding tool [Yeoman](http://yeoman.io/). To get started install both `yo` (the yeoman command) and the generator with the following command:
 
-```bash
+```sh
 npm install --global yo generator-tinymce
 ```
 
@@ -23,7 +23,7 @@ Wait for the install to finish.
 Start the generator with the following command:
 
 
-```bash
+```sh
 yo tinymce
 ```
 
@@ -48,7 +48,7 @@ Choose the license for the plugin.
 
 Yeoman installs the needed dependencies, and the project is bootstrapped and ready. `cd` into the plugin directory and run the following command to start the auto-reloading development server:
 
-```bash
+```sh
 npm start
 ```
 
@@ -57,7 +57,7 @@ npm start
 
 Run the following command as root once you have completed development of the plugin:
 
-```bash
+```sh
 npm run build
 ```
 

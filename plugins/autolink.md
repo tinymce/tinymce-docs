@@ -35,11 +35,11 @@ This option allows you to specify a default `target` value for links inserted by
 
 ```js
 tinymce.init({
-    selector: "textarea",  // change this value according to your HTML
-    plugins: "autolink link",
-    menubar: "insert",
-    toolbar: "link",
-    default_link_target: "_blank"
+  selector: "textarea",  // change this value according to your HTML
+  plugins: "autolink link",
+  menubar: "insert",
+  toolbar: "link",
+  default_link_target: "_blank"
 });
 ```
 
@@ -57,10 +57,10 @@ This option allows you to set a default protocol for links inserted by the autol
 
 ```js
 tinymce.init({
-    selector: "textarea",  // change this value according to your HTML
-    plugins: "autolink link",
-    menubar: "insert",
-    toolbar: "link",
-    link_default_protocol: "https"
+  selector: "textarea",  // change this value according to your HTML
+  plugins: "autolink link",
+  menubar: "insert",
+  toolbar: "link",
+  link_default_protocol: "https"
 });
 ```

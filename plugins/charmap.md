@@ -22,7 +22,7 @@ tinymce.init({
 });
 ```
 
-### Options
+## Options
 
 The default map of unicode characters can be overridden or extended through the options below.
 

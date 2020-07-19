@@ -14,6 +14,7 @@ This example includes most of the available {{site.productname}} plugins, includ
 {% include codepen.html id="full-featured" %}
 
 The following plugins are excluded from this example:
+
 * [MoxieManager (Premium Plugin)]({{site.baseurl}}/plugins/moxiemanager) — [**{{site.cloudfilemanager}}**]({{site.baseurl}}/plugins/drive) included instead.
 * [Autoresize]({{site.baseurl}}/plugins/autoresize) — Resizes the editor to fit the content.
 * [BBCode]({{site.baseurl}}/plugins/bbcode) — Changes the markup used for the content.
@@ -30,6 +31,7 @@ This example includes only non-premium plugins. These plugins are also used in t
 {% include codepen.html id="open-source-plugins" %}
 
 The following plugins are excluded from this example:
+
 * [All premium plugins]({{site.plugindirectory}}).
 * [Autoresize]({{site.baseurl}}/plugins/autoresize) — Resizes the editor to fit the content.
 * [BBCode]({{site.baseurl}}/plugins/bbcode) — Changes the markup used for the content.

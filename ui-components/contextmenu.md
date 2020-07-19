@@ -28,7 +28,7 @@ The structure of context menu sections is a simple query system indexed by name.
 
 In the menu shown to the user, sections are delineated by separators. Sections can return an empty array of menu items to indicate that section has no applicable items to the current context and should not be shown.
 
-```typescript
+```ts
 type ContextMenuApi = {
   update: (element: Element) => string | Array<ContextMenuContents>
 }
@@ -38,7 +38,7 @@ editor.ui.registry.addContextMenu(name: string, feature: ContextMenuApi);
 
 Every time the user opens the context menu, the selected element is passed to the update function which must return either a space separated string or an array of items to display. The types of the items returned are as follows:
 
-```typescript
+```ts
 type ContextMenuContents = string | ContextMenuItem | SeparatorMenuItemApi | ContextSubMenu
 
 type ContextMenuItem = {

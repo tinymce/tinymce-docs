@@ -76,57 +76,57 @@ The commands on the following table are provided by the {{site.productname}} edi
 **Examples**
 
 ```js
-tinymce.activeEditor.execCommand('Bold')
-tinymce.activeEditor.execCommand('Italic')
-tinymce.activeEditor.execCommand('Underline')
-tinymce.activeEditor.execCommand('Strikethrough')
-tinymce.activeEditor.execCommand('Superscript')
-tinymce.activeEditor.execCommand('Subscript')
-tinymce.activeEditor.execCommand('Cut')
-tinymce.activeEditor.execCommand('Copy')
-tinymce.activeEditor.execCommand('Paste')
-tinymce.activeEditor.execCommand('mceInsertLink' false, 'https://www.tiny.cloud')
-tinymce.activeEditor.execCommand('Unlink')
-tinymce.activeEditor.execCommand('JustifyLeft')
-tinymce.activeEditor.execCommand('JustifyCenter')
-tinymce.activeEditor.execCommand('JustifyRight')
-tinymce.activeEditor.execCommand('JustifyFull')
-tinymce.activeEditor.execCommand('JustifyNone')
-tinymce.activeEditor.execCommand('ForeColor', false, '#FF0000')
-tinymce.activeEditor.execCommand('HiliteColor', false, '#FF0000')
-tinymce.activeEditor.execCommand('FontName', false, 'courier new')
-tinymce.activeEditor.execCommand('FontSize', false, '30px')
-tinymce.activeEditor.execCommand('mceApplyTextcolor', 'hilitecolor', '#FF0000')
-tinymce.activeEditor.execCommand('mceRemoveTextcolor', 'hilitecolor')
-tinymce.activeEditor.execCommand('RemoveFormat')
-tinymce.activeEditor.execCommand('mceBlockQuote')
-tinymce.activeEditor.execCommand('FormatBlock', false, 'bold')
-tinymce.activeEditor.execCommand('mceInsertContent', false, 'My new content')
-tinymce.activeEditor.execCommand('mceReplaceContent', false, 'My replacement content')
-tinymce.activeEditor.execCommand('mceSetContent', false, 'My content')
-tinymce.activeEditor.execCommand('mceToggleFormat', false, 'bold')
-tinymce.activeEditor.execCommand('ToggleSidebar')  /* OR */
-tinymce.activeEditor.execCommand('ToggleSidebar', false, '<sidebar-name>')
-tinymce.activeEditor.execCommand('Indent')
-tinymce.activeEditor.execCommand('Outdent')
+tinymce.activeEditor.execCommand('Bold');
+tinymce.activeEditor.execCommand('Italic');
+tinymce.activeEditor.execCommand('Underline');
+tinymce.activeEditor.execCommand('Strikethrough');
+tinymce.activeEditor.execCommand('Superscript');
+tinymce.activeEditor.execCommand('Subscript');
+tinymce.activeEditor.execCommand('Cut');
+tinymce.activeEditor.execCommand('Copy');
+tinymce.activeEditor.execCommand('Paste');
+tinymce.activeEditor.execCommand('mceInsertLink', false, 'https://www.tiny.cloud');
+tinymce.activeEditor.execCommand('Unlink');
+tinymce.activeEditor.execCommand('JustifyLeft');
+tinymce.activeEditor.execCommand('JustifyCenter');
+tinymce.activeEditor.execCommand('JustifyRight');
+tinymce.activeEditor.execCommand('JustifyFull');
+tinymce.activeEditor.execCommand('JustifyNone');
+tinymce.activeEditor.execCommand('ForeColor', false, '#FF0000');
+tinymce.activeEditor.execCommand('HiliteColor', false, '#FF0000');
+tinymce.activeEditor.execCommand('FontName', false, 'courier new');
+tinymce.activeEditor.execCommand('FontSize', false, '30px');
+tinymce.activeEditor.execCommand('mceApplyTextcolor', 'hilitecolor', '#FF0000');
+tinymce.activeEditor.execCommand('mceRemoveTextcolor', 'hilitecolor');
+tinymce.activeEditor.execCommand('RemoveFormat');
+tinymce.activeEditor.execCommand('mceBlockQuote');
+tinymce.activeEditor.execCommand('FormatBlock', false, 'bold');
+tinymce.activeEditor.execCommand('mceInsertContent', false, 'My new content');
+tinymce.activeEditor.execCommand('mceReplaceContent', false, 'My replacement content');
+tinymce.activeEditor.execCommand('mceSetContent', false, 'My content');
+tinymce.activeEditor.execCommand('mceToggleFormat', false, 'bold');
+tinymce.activeEditor.execCommand('ToggleSidebar');  /* OR */
+tinymce.activeEditor.execCommand('ToggleSidebar', false, '<sidebar-name>');
+tinymce.activeEditor.execCommand('Indent');
+tinymce.activeEditor.execCommand('Outdent');
 tinymce.activeEditor.execCommand('InsertHorizontalRule');
-tinymce.activeEditor.execCommand('InsertLineBreak')
-tinymce.activeEditor.execCommand('mceInsertNewLine')
-tinymce.activeEditor.execCommand('mceInsertRawHTML', false, '<p>Hello, World!</p>')
-tinymce.activeEditor.execCommand('mceToggleVisualAid')
-tinymce.activeEditor.execCommand('SelectAll')
-tinymce.activeEditor.execCommand('Delete')
-tinymce.activeEditor.execCommand('ForwardDelete')
-tinymce.activeEditor.execCommand('mceNewDocument')
-tinymce.activeEditor.execCommand('Redo')
-tinymce.activeEditor.execCommand('Undo')
-tinymce.activeEditor.execCommand('mceAddUndoLevel')
-tinymce.activeEditor.execCommand('mceEndUndoLevel')
-tinymce.activeEditor.execCommand('mceCleanup')
-tinymce.activeEditor.execCommand('mceSelectNode', false, '<DOM_node>')
-tinymce.activeEditor.execCommand('mceSelectNodeDepth', false, 2) // For two nodes up.
-tinymce.activeEditor.execCommand('mceRemoveNode') /* OR */
-tinymce.activeEditor.execCommand('mceRemoveNode', false, '<DOM_node>')
+tinymce.activeEditor.execCommand('InsertLineBreak');
+tinymce.activeEditor.execCommand('mceInsertNewLine');
+tinymce.activeEditor.execCommand('mceInsertRawHTML', false, '<p>Hello, World!</p>');
+tinymce.activeEditor.execCommand('mceToggleVisualAid');
+tinymce.activeEditor.execCommand('SelectAll');
+tinymce.activeEditor.execCommand('Delete');
+tinymce.activeEditor.execCommand('ForwardDelete');
+tinymce.activeEditor.execCommand('mceNewDocument');
+tinymce.activeEditor.execCommand('Redo');
+tinymce.activeEditor.execCommand('Undo');
+tinymce.activeEditor.execCommand('mceAddUndoLevel');
+tinymce.activeEditor.execCommand('mceEndUndoLevel');
+tinymce.activeEditor.execCommand('mceCleanup');
+tinymce.activeEditor.execCommand('mceSelectNode', false, '<DOM_node>');
+tinymce.activeEditor.execCommand('mceSelectNodeDepth', false, 2); // For two nodes up.
+tinymce.activeEditor.execCommand('mceRemoveNode'); /* OR */
+tinymce.activeEditor.execCommand('mceRemoveNode', false, '<DOM_node>');
 ```
 
 ## Plugin Commands

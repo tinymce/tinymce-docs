@@ -28,7 +28,7 @@ tinymce.init({
 });
 ```
 
-### Options
+## Options
 
 These settings affect the way content is eliminated or preserved when being pasted. In addition, callbacks are available prior to and after content filtration.
 

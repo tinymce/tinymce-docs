@@ -39,6 +39,7 @@ tinymce.init({
   color_cols: "5"
 });
 ```
+
 ### `color_map`
 
 This option allows specifying a map of the text colors that will appear in the grid.

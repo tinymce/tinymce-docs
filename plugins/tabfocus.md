@@ -19,7 +19,7 @@ tinymce.init({
 });
 ```
 
-### Options
+## Options
 
 This setting affects the execution of the `tabfocus` plugin. This setting can be used to change the focus behavior of the editor when the tab key has been pressed inside the editable area.
 

@@ -23,7 +23,7 @@ By default, `codesample` uses `http://prismjs.com/` to embed the code samples wi
 
 > Prism.js and prism.css need to be added to a page for syntax highlighting to work. See the instructions below to learn how to do this.
 
-### Using Prism.js on your web page
+## Using Prism.js on your web page
 
 You need to add `prism.js` and `prism.css` to your page in order to get the syntax highlighted code samples on your webpage (as created by the Code Sample plugin). The Code Sample plugin uses the following languages: markup, javascript, css, php, ruby, python, java, c, csharp and cpp. You can generate the `prism.js` and `prism.css` files on the [download](http://prismjs.com/download.html) page at the Prism website.
 

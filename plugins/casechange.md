@@ -15,7 +15,7 @@ The **Case Change** plugin is a time saving and handy extension that allows chan
 
 Once you have obtained the **Case Change** plugin, refer to the following instructions for using it.
 
-### Configuring the Case Change split toolbar button
+## Configuring the Case Change split toolbar button
 
 Use the following script to configure the **Case Change** [split toolbar button]({{site.baseurl}}/ui-components/typesoftoolbarbuttons/#splitbutton):
 
@@ -29,7 +29,7 @@ tinymce.init({
 });
 ```
 
-### Configuring the Case Change menu item
+## Configuring the Case Change menu item
 
 Use the following script to configure the **Case Change** [menu item]({{site.baseurl}}/ui-components/menuitems/):
 
@@ -46,11 +46,9 @@ tinymce.init({
 ```
 
 
-### Types of Formats
+## Types of Formats
 
 Currently, there are three types of formats available:
-
-![**Case Change**]({{site.baseurl}}/images/casechange.png)
 
 ### lowercase
 
@@ -64,21 +62,21 @@ The **UPPERCASE** option changes all the selected characters to uppercase. This 
 
 The **Title Case** option changes anything other than articles, coordinating conjunctions, or short prepositions to capital letters. The default rule set for **Title Case** is based on [Wikipedia Title Case](https://titlecaseconverter.com/rules/#WP).
 
-### Changing the case of selected text
+## Changing the case of selected text
 
 Perform the following steps to change the case of selected text in a document to lowercase, UPPERCASE, or Title Case:
 
 1. Select the desired text to change the case.
-2. Click on the ![**Case Change**]({{site.baseurl}}/images/casechangeicon.png) icon in the toolbar.
+2. Click on the ![Case Change]({{site.baseurl}}/images/casechangeicon.png) icon in the toolbar.
 3. From the drop-down menu, choose the desired format by clicking on either **lowercase**, **UPPERCASE**, or **Title Case**.
 
 > Note: The toolbar button will retain the last applied type of case making it simple to apply the same formatting multiple times.
 
-### **Title Case options**
+## Title Case options
 
 **Title Case** can be customized to create user defined rule sets by using the following options:
 
-##### **casechange_title_case_minors**
+### casechange_title_case_minors
 
 The `casechange_title_case_minors` option is used to customize the rules while using **Title Case.** This option makes it possible to configure what words not to capitalize. All other words not specified by this rule set will be capitalized overriding the default **Title Case** rule set.
 

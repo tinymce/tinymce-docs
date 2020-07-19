@@ -35,7 +35,7 @@ When you have existing classes that cannot be removed, you may combine MCE class
 <div class="myclass mceEditable">Contents</div>
 ```
 
-### Options
+## Options
 
 These settings affect the execution of the `noneditable` plugin. These settings help determine which areas of the editor's editable area will remain editable and which will be converted to non-editable status.
 

@@ -24,11 +24,11 @@ This plugin also adds three new toolbar buttons:
 
 ```js
 tinymce.init({
-    selector: "div.tinymce",
-    plugins: [ 'quickbars' ],
-    toolbar: false,
-    menubar: false,
-    inline: true
+  selector: "div.tinymce",
+  plugins: [ 'quickbars' ],
+  toolbar: false,
+  menubar: false,
+  inline: true
 });
 ```
 
@@ -40,12 +40,12 @@ The following examples show how to disable specific quick toolbars for editors w
 
 ```js
 tinymce.init({
-    selector: "div.tinymce",
-    plugins: [ 'quickbars' ],
-    toolbar: false,
-    menubar: false,
-    inline: true,
-    quickbars_insert_toolbar: false
+  selector: "div.tinymce",
+  plugins: [ 'quickbars' ],
+  toolbar: false,
+  menubar: false,
+  inline: true,
+  quickbars_insert_toolbar: false
 });
 ```
 
@@ -53,12 +53,12 @@ tinymce.init({
 
 ```js
 tinymce.init({
-    selector: "div.tinymce",
-    plugins: [ 'quickbars' ],
-    toolbar: false,
-    menubar: false,
-    inline: true,
-    quickbars_selection_toolbar: false
+  selector: "div.tinymce",
+  plugins: [ 'quickbars' ],
+  toolbar: false,
+  menubar: false,
+  inline: true,
+  quickbars_selection_toolbar: false
 });
 ```
 
@@ -68,12 +68,12 @@ tinymce.init({
 
 ```js
 tinymce.init({
-    selector: "div.tinymce",
-    plugins: [ 'quickbars' ],
-    toolbar: false,
-    menubar: false,
-    inline: true,
-    quickbars_image_toolbar: false
+  selector: "div.tinymce",
+  plugins: [ 'quickbars' ],
+  toolbar: false,
+  menubar: false,
+  inline: true,
+  quickbars_image_toolbar: false
 });
 ```
 
@@ -87,17 +87,17 @@ The Quick Link (`quicklink`) toolbar button lets the user quickly insert/edit li
 
 ```js
 tinymce.init({
-    selector: "div.tinymce",
-    plugins: [ 'quickbars' ],
-    setup: function(editor) {
-        editor.ui.registry.addContextToolbar('imageselection', {
-            predicate: function(node) {
-                return node.nodeName === 'P';
-            },
-            items: 'quicklink',
-            position: 'node'
-        });
-    }
+  selector: "div.tinymce",
+  plugins: [ 'quickbars' ],
+  setup: function(editor) {
+    editor.ui.registry.addContextToolbar('imageselection', {
+      predicate: function(node) {
+        return node.nodeName === 'P';
+      },
+      items: 'quicklink',
+      position: 'node'
+    });
+  }
 });
 ```
 
@@ -111,9 +111,9 @@ The Quick Image (`quickimage`) toolbar button allows users to quickly insert ima
 
 ```js
 tinymce.init({
-    selector: "div.tinymce",
-    plugins: [ 'quickbars' ],
-    toolbar: 'quickimage'
+  selector: "div.tinymce",
+  plugins: [ 'quickbars' ],
+  toolbar: 'quickimage'
 });
 ```
 
@@ -125,9 +125,9 @@ The Quick Table (`quicktable`) toolbar button inserts a 2x2 table with 100% widt
 
 ```js
 tinymce.init({
-    selector: "div.tinymce",
-    plugins: [ 'quickbars' ],
-    toolbar: 'quicktable'
+  selector: "div.tinymce",
+  plugins: [ 'quickbars' ],
+  toolbar: 'quicktable'
 });
 ```
 

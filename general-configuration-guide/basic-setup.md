@@ -84,7 +84,7 @@ The following example enables the lists (`lists`), Advanced Lists (`advlist`), L
 ```js
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  plugins : 'advlist link image lists'
+  plugins: 'advlist link image lists'
 });
 ```
 

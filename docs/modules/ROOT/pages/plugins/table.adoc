@@ -444,7 +444,7 @@ tinymce.init({
 
 Here are some examples of configuration for common setups.
 
-[discrete#no-default-attributes-or-styles-on-tables]
+[[no-default-attributes-or-styles-on-tables]]
 ==== No default attributes or styles on tables
 
 [source,js]
@@ -531,7 +531,7 @@ tinymce.activeEditor.plugins.table.insertTable(2, 3);
 | newcell
 | Fired when a cell is created
 
-| ObectResizeStart
+| ObjectResizeStart
 | Fired when a resize action is started on a table, row, column or cell using the resize bars
 
 | ObjectResized

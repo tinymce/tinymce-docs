@@ -30,46 +30,37 @@ Store the keys temporarily somewhere as you will need to copy & paste them later
 [[procedure]]
 === Procedure
 
-[[1-clone-this-repo-to-your-local-machine-using]]
-==== 1. Clone this repo to your local machine using
-
 These are the steps needed to get this project running on your machine:
 
-[source]
+. Clone this repo to your local machine using.
++
+[source,sh]
 ----
 $ git clone git@github.com:tinymce/tinydrive-nodejs-starter.git
 ----
 
-[[2-change-the-in]]
-==== 2. Change the `apiKey` in `tinydrive-nodejs-starter/config.js`
+. Change the `apiKey` in `tinydrive-nodejs-starter/config.js`. You get the API key from the `API Key Manager` {accountpage} page at http://tiny.cloud.
 
-You get the API key from the `API Key Manager` {accountpage} page at \http://tiny.cloud.
+. Create a `tinydrive-nodejs-starter/private.key` file containing your generated private RSA key. You get the private RSA key from the `JWT Key Manager` {accountpage} page at http://tiny.cloud.
 
-[[3-create-a-file-containing-your-generated-private-rsa-key]]
-==== 3. Create a `tinydrive-nodejs-starter/private.key` file containing your generated private RSA key
-
-You get the private RSA key from the `JWT Key Manager` {accountpage} page at \http://tiny.cloud.
-
-[[4-go-to-the-directory-and-install-npm-packages-and-then-start-the-dev-server]]
-==== 4. Go to the directory and install npm packages and then start the dev server
-
-[source]
+. Go to the directory and install npm packages and then start the dev server.
++
+[source,sh]
 ----
 $ cd tinydrive-nodejs-starter
 $ npm i
 $ npm run start
 ----
 
-[[5-open-the-example-project-at-httplocalhost3000]]
-==== 5. Open the example project at \http://localhost:3000
+. Open the example project at http://localhost:3000.
 
 [[implementing-with-your-system]]
-=== Implementing with your system
+== Implementing with your system
 
 If your specific use case has not been covered by any of the sample link:{rootDir}tinydrive/libraries.html[starter projects], some customizations might be required to be applied to implement {cloudfilemanager} in the specific system. The link:{rootDir}tinydrive/jwt-authentication.html[JSON Web Token] authentication solution would have to be tied to the login authentication of your system. This usually means integrating the JWT authentication to the existing session authentication so that users automatically login to {cloudfilemanager} and your system.
 
 [[additional-resources]]
-==== Additional resources
+=== Additional resources
 
 Go through the following additional resources to figure out how to configure {cloudfilemanager} with your system.
 

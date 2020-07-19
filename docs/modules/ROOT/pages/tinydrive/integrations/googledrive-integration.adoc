@@ -24,7 +24,7 @@ include::{rootDir}_attributes.adoc[]
 
 You can obtain the Google Drive credentials by following the steps below.
 
-[[1-create-the-google-api-key]]
+[id="1-create-the-google-api-key"]
 === 1. Create the Google API Key
 
 . Open the https://console.developers.google.com/apis/credentials[Google Console Credentials] page
@@ -33,21 +33,21 @@ You can obtain the Google Drive credentials by following the steps below.
 
 image::tinydrive-googledrive-dump1.png[]
 
-[[2-copy-the-new-google-api-key]]
+[id="2-copy-the-new-google-api-key"]
 === 2. Copy the new Google API Key
 
 Copy the generated Google API key this will later be used to configure {cloudfilemanager}:
 
 image::tinydrive-googledrive-dump2.png[]
 
-[[3-create-the-oauth-client-id]]
+[id="3-create-the-oauth-client-id"]
 === 3. Create the OAuth client ID
 
 Click on the `Create credentials` button then on `OAuth client ID` item:
 
 image::tinydrive-googledrive-dump3.png[]
 
-[[4-fill-in-the-oauth-details]]
+[id="4-fill-in-the-oauth-details"]
 === 4. Fill in the OAuth details
 
 . Select `Web application` from `Application type`
@@ -57,7 +57,7 @@ image::tinydrive-googledrive-dump3.png[]
 
 image::tinydrive-googledrive-dump4.png[]
 
-[[5-restrict-client-id-api-access]]
+[id="5-restrict-client-id-api-access"]
 === 5. Restrict Client ID api access
 
 . Click the edit icons for the Client ID you created
@@ -68,7 +68,7 @@ image::tinydrive-googledrive-dump4.png[]
 
 image::tinydrive-googledrive-dump5.png[]
 
-[[6-configure-tinydrive-to-use-the-new-google-drive-credentials]]
+[id="6-configure-tinydrive-to-use-the-new-google-drive-credentials"]
 === 6. Configure tinydrive to use the new Google Drive credentials
 
 You configure the Google drive api key by setting the link:{rootDir}tinydrive/configuration.html#tinydrive_google_drive_key[tinydrive_google_drive_key] and the Google OAuth client ID by setting the link:{rootDir}tinydrive/configuration.html#tinydrive_google_drive_client_id[tinydrive_google_drive_client_id].
@@ -85,7 +85,7 @@ tinymce.init({
 
 For more information on other {cloudfilemanager} config options refer to the link:{rootDir}tinydrive/configuration[configuration] section of this document.
 
-[[7-tiny-drive-ui]]
+[id="7-tiny-drive-ui"]
 === 7. Tiny Drive UI
 
 . From the {productname} user interface, click on the image:insertimage.png[Insert/edit image] button to access the {cloudfilemanager} user interface.
@@ -109,7 +109,7 @@ The following other options can be performed to the selected file :
 Read more about these options https://gsuite.google.com/learning-center/products/drive/get-started/#!/[here].
 
 [[live-example]]
-=== Live example
+== Live example
 
 Here is a live example of Google Drive enabled on {cloudfilemanager}.
 

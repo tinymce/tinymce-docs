@@ -13,7 +13,6 @@ The below example replaces the current `img` rule (including the global element 
 ===== Example
 
 [source,js]
-[source]
 -----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
@@ -31,7 +30,6 @@ WARNING: Allowing script elements (`<script>`) in {productname} exposes users to
 To allow script elements in the editor, include the following in the {productname} configuration:
 
 [source,js]
-[source]
 -----
 extended_valid_elements : "script[src|async|defer|type|charset]"
 -----

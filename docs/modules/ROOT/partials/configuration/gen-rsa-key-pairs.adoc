@@ -79,11 +79,12 @@ To create a private/public key pair:
 
 . On a command line, run:
 +
-[source,js]
+[source,sh]
 ----
 ssh-keygen -m PEM -t rsa -b 2048 -f <MY_TINY_DRIVE_KEY>
 ----
- Where _`<MY_TINY_DRIVE_KEY>`_ should be replaced with a name for the key pair.
++
+Where `_<MY_TINY_DRIVE_KEY>_` should be replaced with a name for the key pair.
 
 . Enter a passphrase for accessing the key.
 
@@ -97,7 +98,7 @@ Two files will be created in the current directory:
 
 To retrieve the public key, on a command line, run:
 
-[source,js]
+[source,sh]
 ----
 openssl rsa -in <MY_TINY_DRIVE_KEY> -outform DER -pubout | base64 -w0
 ----
@@ -120,11 +121,12 @@ To create a private/public key pair:
 . Using *Finder*, open a *Terminal*.
 . On a terminal, run:
 +
-[source,js]
+[source,sh]
 ----
 ssh-keygen -m PEM -t rsa -b 2048 -f <MY_TINY_DRIVE_KEY>
 ----
- Where _`<MY_TINY_DRIVE_KEY>`_ should be replaced with a name for the key pair.
++
+Where `_<MY_TINY_DRIVE_KEY>_` should be replaced with a name for the key pair.
 
 . Enter a passphrase for accessing the key.
 
@@ -138,7 +140,7 @@ Two files will be created in the current directory:
 
 To retrieve the public key, on a terminal, run:
 
-[source,js]
+[source,sh]
 ----
 openssl rsa -in <MY_TINY_DRIVE_KEY> -outform DER -pubout | base64 -
 ----
@@ -174,11 +176,12 @@ To create a private/public key pair:
 . Open the *Start* menu (or _Windows_ menu) and open *Git Bash*.
 . On the _Git bash_ command line, run:
 +
-[source,js]
+[source,sh]
 ----
 ssh-keygen -m PEM -t rsa -b 2048 -f <MY_TINY_DRIVE_KEY>
 ----
- Where _`<MY_TINY_DRIVE_KEY>`_ should be replaced with a name for the key pair.
++
+Where `_<MY_TINY_DRIVE_KEY>_` should be replaced with a name for the key pair.
 
 . Enter a passphrase for accessing the key.
 
@@ -192,7 +195,7 @@ Two files will be created in the current directory:
 
 To retrieve the public key, on a _Git bash_ command line, run:
 
-[source,js]
+[source,sh]
 ----
 openssl rsa -in <MY_TINY_DRIVE_KEY> -outform DER -pubout | base64 -w0
 ----

@@ -31,7 +31,7 @@ tinymce.init({
 ----
 
 [[modes]]
-=== Modes
+== Modes
 
 There are two modes available in Comments 2.0 that provide the ability to save comments. These modes are configured in the Comments 2.0 settings.
 
@@ -39,12 +39,12 @@ There are two modes available in Comments 2.0 that provide the ability to save c
 * *Embedded Mode* - This mode allows the user to store the comments within the content. No additional callbacks are required to be configured to use this mode.
 
 [[configuring-comments-2-0-callback-mode]]
-== Configuring Comments 2.0 callback mode
+=== Configuring Comments 2.0 callback mode
 
 Refer to the link:{rootDir}advanced/configuring-comments-callbacks.html[configuring callbacks for comments] section for more information.
 
 [[configuring-comments-2-0-embedded-mode]]
-== Configuring Comments 2.0 embedded mode
+=== Configuring Comments 2.0 embedded mode
 
 To configure Comments 2.0 to use the embedded mode use the following script:
 
@@ -60,10 +60,10 @@ tinymce.init({
 ----
 
 [[embedded-mode-options]]
-=== Embedded mode options
+==== Embedded mode options
 
 [[tinycomments_author]]
-==== tinycomments_author
+===== tinycomments_author
 
 This option sets the author id to be used when creating or replying to comments.
 
@@ -84,7 +84,7 @@ tinymce.init({
 ----
 
 [[tinycomments_author_name]]
-==== tinycomments_author_name
+===== tinycomments_author_name
 
 [NOTE]
 ====
@@ -96,7 +96,7 @@ _Optional_ - This option sets the author's display name to be used when creating
 *Type:* `String`
 
 [[example-2]]
-===== Example
+====== Example
 
 [source,js]
 ----
@@ -109,7 +109,7 @@ tinymce.init({
 ----
 
 [[tinycomments_can_delete]]
-==== tinycomments_can_delete
+===== tinycomments_can_delete
 
 _Optional_ - This option sets the author permissions for _deleting comment conversations_. If the `tinycomments_can_delete` option is not included, the current author (`tinycomments_author`) cannot delete comment conversations created by other authors.
 
@@ -131,7 +131,7 @@ function (req, done, fail) {
 The following example extends the default behavior to allow the author `<Admin user>` to delete other author's comment conversations by adding `|| currentAuthor === "<Admin user>"`.
 
 [[example-2]]
-===== Example
+====== Example
 
 [source,js]
 ----
@@ -151,7 +151,7 @@ tinymce.init({
 ----
 
 [[tinycomments_can_delete_comment]]
-==== tinycomments_can_delete_comment
+===== tinycomments_can_delete_comment
 
 _Optional_ - This option sets the author permissions for _deleting comments_. If the `tinycomments_can_delete_comment` option is not included, the current author (`tinycomments_author`) cannot delete comments added by other authors.
 
@@ -172,7 +172,7 @@ function (req, done, fail) {
 The following example extends the default behavior to allow the author `<Admin user>` to delete other author's comments by adding `|| currentAuthor === "<Admin user>"`.
 
 [[example-2]]
-===== Example
+====== Example
 
 [source,js]
 ----
@@ -191,7 +191,7 @@ tinymce.init({
 ----
 
 [[tinycomments_can_edit_comment]]
-==== tinycomments_can_edit_comment
+===== tinycomments_can_edit_comment
 
 _Optional_ - This option sets the author permissions for _editing comments_. If the `tinycomments_can_edit_comment` option is not included, the current author (`tinycomments_author`) cannot edit comments added by other authors.
 
@@ -212,7 +212,7 @@ function (req, done, fail) {
 The following example extends the default behavior to allow the author `<Admin user>` to edit other author's comments by adding `|| currentAuthor === "<Admin user>"`.
 
 [[example-2]]
-===== Example
+====== Example
 
 [source,js]
 ----

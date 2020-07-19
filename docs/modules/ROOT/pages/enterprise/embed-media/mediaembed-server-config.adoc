@@ -6,13 +6,13 @@ include::{rootDir}_attributes.adoc[]
 :description: Instructions for getting the Enhanced Media Embed server configured.
 :keywords: enterprise pricing video youtube vimeo mp3 mp4 mov movie clip film link linkchecking linkchecker mediaembed media
 
-Once you have the link:{rootDir}enterprise/server.html[server-side component] installed, additional configuration to your `application.conf` file is required.(Don't forget to restart the Java application server after updating the configuration.)
+Once you have the link:{rootDir}enterprise/server.html[server-side component] installed, additional configuration to your `application.conf` file is required. (Don't forget to restart the Java application server after updating the configuration.)
 
 The Enhanced Media Embed service allows you to choose between using your own https://iframely.com/[Iframely] account, configuring custom http://oembed.com/[oEmbed] endpoints or using a combination of both.
 
 When you insert media into your content, the service will do the following (in order):
 
-. Check if the URL matches any custom oEmbed configuration.If that fails,
+. Check if the URL matches any custom oEmbed configuration. If that fails,
 . If Iframely is configured, query the Iframely API. If Iframely is not configured,
 . Create a summary card.
 
@@ -59,9 +59,9 @@ ephox {
 The service can be configured to hit a specific oEmbed endpoint when media from a URL matching a provided pattern is inserted into your content.
 
 * `endpoint` - the URL of the oEmbed endpoint that should be consulted when inserting media with a URL that matches an entry in `schemes`.
-* `schemes` - a list of schemes as defined in http://oembed.com/#section2.1[Section 2.1. Configuration] of the oEmbed specification.Note that HTTP and HTTPS are two separate schemes.
+* `schemes` - a list of schemes as defined in http://oembed.com/#section2.1[Section 2.1. Configuration] of the oEmbed specification. Note that HTTP and HTTPS are two separate schemes.
 
-*Example note:* This configuration is provided as an example only.The Enhanced Media Embed service converts an oEmbed response into an embeddable snippet of code.The content and quality of the snippet is dependent on the oEmbed response.
+*Example note:* This configuration is provided as an example only. The Enhanced Media Embed service converts an oEmbed response into an embeddable snippet of code. The content and quality of the snippet is dependent on the oEmbed response.
 
 Example:
 

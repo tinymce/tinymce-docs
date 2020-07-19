@@ -37,14 +37,14 @@ NOTE: This procedure assumes that a {productname} self-hosted enterprise bundle 
 
 . Navigate into the `tinymce-services` folder.
 +
-[source,js]
+[source,sh]
 ----
 cd tinymce-selfhosted/tinymce-services/
 ----
 
 . Extract the contents of `ephox-spelling-docker-starter-kit.zip`, such as:
 +
-[source,js]
+[source,sh]
 ----
 unzip ephox-spelling-docker-starter-kit.zip -d spelling-service-dockerfile
 ----
@@ -63,14 +63,14 @@ spelling-service-dockerfile/
 
 . Copy `ephox-spelling.war` into the directory containing the extracted files, such as:
 +
-[source,js]
+[source,sh]
 ----
 cp ephox-spelling.war spelling-service-dockerfile/
 ----
 
 . Navigate into the `spelling-service-dockerfile` folder.
 +
-[source,js]
+[source,sh]
 ----
 cd spelling-service-dockerfile
 ----
@@ -82,21 +82,21 @@ ifeval::[{shbundledockerfiles} == false]
 . Open a command line and navigate to the directory containing `ephox-spelling_<version>.zip`. Windows Users should open a Bash command line as the Administrator User.
 . Extract the contents of `ephox-spelling_<version>.zip`, such as:
 +
-[source,js]
+[source,sh]
 ----
 unzip ephox-spelling_<version>.zip -d tinymce-spelling-service
 ----
 
 . Navigate into the extracted folder.
 +
-[source,js]
+[source,sh]
 ----
 cd tinymce-spelling-service
 ----
 
 . Extract the contents of `ephox-spelling-docker-starter-kit.zip`, such as:
 +
-[source,js]
+[source,sh]
 ----
 unzip ephox-spelling-docker-starter-kit.zip
 ----
@@ -122,7 +122,7 @@ endif::[]
 
 . Set the permissions on the extracted files to executable.
 +
-[source,js]
+[source,sh]
 ----
 chmod +x *.sh
 ----
@@ -164,14 +164,14 @@ For information on `allowed-origins`, see: link:{rootDir}enterprise/server/confi
 
 . As the root user or Administrator, build the {productname} Spelling Service Docker image using the following command:
 +
-[source,js]
+[source,sh]
 ----
 docker build -t tinymce-spelling-service .
 ----
 
 . As the root user or Administrator, deploy the service using the following command:
 +
-[source,js]
+[source,sh]
 ----
 docker run -d -p 8082:8080 --env-file origins.env tinymce-spelling-service
 ----

@@ -8,7 +8,7 @@ include::{rootDir}_attributes.adoc[]
 :keywords: row cell column table_appearance_options table_clone_elements table_grid table_tab_navigation table_default_attributes table_default_styles table_class_list table_cell_class_list table_row_class_list table_advtab table_cell_advtab table_row_advtab
 :title_nav: Table
 
-The `table` plugin adds table management functionality to {productname}.It also adds a new menubar item `Table` with various options in its dropdown including `Insert table` and options to modify cells, rows and columns, and a toolbar button with the same functionality.
+The `table` plugin adds table management functionality to {productname}. It also adds a new menubar item `Table` with various options in its dropdown including `Insert table` and options to modify cells, rows and columns, and a toolbar button with the same functionality.
 
 *Type:* `String`
 
@@ -294,7 +294,7 @@ tinymce.init({
 [[table_row_class_list]]
 === `table_row_class_list`
 
-This option enables you to specify a list of classes to present in the table row options dialog.This is useful if you want users to assign predefined classes to table rows.
+This option enables you to specify a list of classes to present in the table row options dialog. This is useful if you want users to assign predefined classes to table rows.
 
 *Type:* `Array`
 
@@ -319,7 +319,7 @@ tinymce.init({
 [[table_advtab]]
 === `table_advtab`
 
-This option makes it possible to disable the advanced tab in the table dialog box.The advanced tab allows a user to input `style`, `border color` and `background color` values.
+This option makes it possible to disable the advanced tab in the table dialog box. The advanced tab allows a user to input `style`, `border color` and `background color` values.
 
 *Type:* `Boolean`
 
@@ -344,7 +344,7 @@ tinymce.init({
 [[table_cell_advtab]]
 === `table_cell_advtab`
 
-This option makes it possible to disable the advanced tab in the table cell dialog box.The advanced tab allows a user to input `style`, `border color` and `background color` values.
+This option makes it possible to disable the advanced tab in the table cell dialog box. The advanced tab allows a user to input `style`, `border color` and `background color` values.
 
 *Type:* `Boolean`
 
@@ -446,7 +446,7 @@ tinymce.init({
 Here are some examples of configuration for common setups.
 
 [discrete#no-default-attributes-or-styles-on-tables]
-===== No default attributes or styles on tables
+==== No default attributes or styles on tables
 
 [source,js]
 ----
@@ -491,7 +491,7 @@ tinymce.init({
 });
 ----
 
-NOTE: The advanced tabs of the table, row, and cell properties dialogs use the `colorpicker` to allow for border and background colors to be applied.See docs to use and configure a custom link:{rootDir}plugins/colorpicker.html[colorpicker].
+NOTE: The advanced tabs of the table, row, and cell properties dialogs use the `colorpicker` to allow for border and background colors to be applied. See docs to use and configure a custom link:{rootDir}plugins/colorpicker.html[colorpicker].
 
 [[api]]
 == API

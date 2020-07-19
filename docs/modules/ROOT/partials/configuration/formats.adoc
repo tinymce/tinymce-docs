@@ -3,13 +3,13 @@
 
 This option is used to override default {productname} *formats* or add custom *formats* to the editor.
 
-{productname} is equipped with a formatting engine that allows you to register a set of styles and attributes as a named *format*.For example, the `bold` format is the style that is applied to text when the bold button is clicked.
+{productname} is equipped with a formatting engine that allows you to register a set of styles and attributes as a named *format*. For example, the `bold` format is the style that is applied to text when the bold button is clicked.
 
 Check out the link:{rootDir}demo/format-custom.html[custom formats example] for a demonstration of this option.
 
-The `formats` configuration option takes an object of format name and format specification pairs.Each format specification must be defined as an object where the value is either an object of format options or an array of such objects.
+The `formats` configuration option takes an object of format name and format specification pairs. Each format specification must be defined as an object where the value is either an object of format options or an array of such objects.
 
-If a format is specified with an array of variants, when the format is applied only the first item in the array will be used.However, when trying to match the format to remove or update the UI, the other variants in the array will be considered as well.So the first format is a kind of primary format, and the rest are secondary formats.
+If a format is specified with an array of variants, when the format is applied only the first item in the array will be used. However, when trying to match the format to remove or update the UI, the other variants in the array will be considered as well. So the first format is a kind of primary format, and the rest are secondary formats.
 
 The following is an example of an array of format specification that contains three variants:
 
@@ -25,14 +25,14 @@ bold: [
 [[style-merging]]
 === Style merging
 
-Similar elements and styles are merged by default to reduce the output HTML size.So for example, if a font size and font face are selected for a word, it merges these two styles into one `span` element instead of one `span` for *each format type*.
+Similar elements and styles are merged by default to reduce the output HTML size. So for example, if a font size and font face are selected for a word, it merges these two styles into one `span` element instead of one `span` for *each format type*.
 
 [[built-in-formats]]
 === Built-in formats
 
 include::{partialsDir}configuration/builtinformats.adoc[]
 
-Some built-in formats `fontsize`, `fontname`, `forecolor`, `hilitecolor` use a variable in their definition named `%value`.This gets replaced with the user selected item such as a `color` value.Check the variable substitution section below for details.
+Some built-in formats `fontsize`, `fontname`, `forecolor`, `hilitecolor` use a variable in their definition named `%value`. This gets replaced with the user selected item such as a `color` value. Check the variable substitution section below for details.
 
 [[format-type]]
 === Format Type
@@ -43,7 +43,7 @@ There are three types of formats:
 * Inline format
 * Selector format
 
-All three format types can be used with the `formats` configuration option.They can also be used to specify a new format item in the link:{rootDir}configure/editor-appearance.html#style_formats[`style_formats`] configuration option.However, a format that is specified using `formats` is then registered with the editor, and can be referred to by name in `style_formats` rather than needing to specify the format again.
+All three format types can be used with the `formats` configuration option. They can also be used to specify a new format item in the link:{rootDir}configure/editor-appearance.html#style_formats[`style_formats`] configuration option. However, a format that is specified using `formats` is then registered with the editor, and can be referred to by name in `style_formats` rather than needing to specify the format again.
 
 For example, these two configurations are equivalent:
 
@@ -73,12 +73,12 @@ tinymce.init({
 });
 ----
 
-A registered format can also be used by name with the built-in link:{rootDir}api/tinymce/tinymce.formatter[formatter] methods.See link:{rootDir}configure/content-formatting.html#usingcustomformats[/configure/content-formatting/#usingcustomformats] for an example.
+A registered format can also be used by name with the built-in link:{rootDir}api/tinymce/tinymce.formatter[formatter] methods. See link:{rootDir}configure/content-formatting.html#usingcustomformats[/configure/content-formatting/#usingcustomformats] for an example.
 
 [[block]]
 ==== block
 
-Tag name of the block element to use as a wrapper, for example, `h1`.Existing block elements within the selection are replaced with this block element.
+Tag name of the block element to use as a wrapper, for example, `h1`. Existing block elements within the selection are replaced with this block element.
 
 *Type:* `String`
 
@@ -120,7 +120,7 @@ tinymce.init({
 [[selector]]
 ==== selector
 
-CSS3 selector pattern that is used to find elements within the selection.It can be used to apply classes to specific elements only, for example only to odd rows in a table.
+CSS3 selector pattern that is used to find elements within the selection. It can be used to apply classes to specific elements only, for example only to odd rows in a table.
 
 *Type:* `String`
 
@@ -212,7 +212,7 @@ tinymce.init({
 [[exact]]
 ==== exact
 
-Makes sure that the format is not merged with other wrappers having the same format.We use it to avoid conflicts between text-decorations for `underline` and `strikethrough` formats.
+Makes sure that the format is not merged with other wrappers having the same format. We use it to avoid conflicts between text-decorations for `underline` and `strikethrough` formats.
 
 *Type:* `Boolean`
 
@@ -236,7 +236,7 @@ tinymce.init({
 [[wrapper]]
 ==== wrapper
 
-States that the format is a container format for block elements.For example, a `div` wrapper or `blockquote`.
+States that the format is a container format for block elements. For example, a `div` wrapper or `blockquote`.
 
 *Type:* `Boolean`
 

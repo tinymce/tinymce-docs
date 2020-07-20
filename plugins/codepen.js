@@ -105,7 +105,7 @@ const loadContent = (engine, root, id, docAttrs) => {
 
     // If the file exists, then render the content
     if (fs.existsSync(path.join(root, filePath))) {
-      data[type] = engine.renderFileSync(filePath, { site: docAttrs });
+      data[type] = engine.renderFileSync(filePath, { site: docAttrs }, { root: root });
       data[hasKey] = true;
     } else {
       data[hasKey] = false;
@@ -120,12 +120,9 @@ const loadContent = (engine, root, id, docAttrs) => {
 };
 
 module.exports = function() {
-  const rootDir = 'docs/modules/ROOT/codepens/';
   this.blockMacro(function() {
-    const engine = new Liquid({ root: rootDir });
-    engine.plugin(function() {
-      this.registerFilter('uri_escape', (url) => encodeURIComponent(url))
-    });
+    const engine = new Liquid();
+    engine.registerFilter('uri_escape', (url) => encodeURIComponent(url));
     const scriptsLoaded = {};
 
     const self = this;
@@ -133,8 +130,9 @@ module.exports = function() {
     this.process((parent, target, attrs) => {
       // Get the data to pass to the template
       const docAttrs = parent.document.getAttributes();
+      const rootCodepenDir = path.join(docAttrs['page-origin-start-path'], 'modules', docAttrs['page-module'], 'codepens');
       const type = attrs.type || 'tinymce';
-      const contentData = loadContent(engine, rootDir, target, docAttrs);
+      const contentData = loadContent(engine, rootCodepenDir, target, docAttrs);
       const initialTab = attrs.tab || 'run';
       const scriptUrl = attrs.script_url_override || getScript(type, docAttrs);
 
@@ -155,7 +153,7 @@ module.exports = function() {
           },
           tabs: getTabs(type, contentData, initialTab)
         }
-      });
+      }, { root: rootCodepenDir });
       scriptsLoaded[scriptUrl] = true;
 
       // Parse the content using AsciiDoctor

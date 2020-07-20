@@ -20,7 +20,7 @@ const transformListItem = (li) => {
 };
 
 module.exports = function() {
-  this.treeProcessor(function () {
+  this.treeProcessor(function() {
     this.process((doc) => {
       if (doc.getAttribute('docfile').endsWith('changelog.adoc')) {
         doc.setAttribute('docrole', doc.getAttribute('class') || 'changelog');

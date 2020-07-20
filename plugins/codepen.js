@@ -1,77 +1,164 @@
 const fs = require('fs');
 const path = require('path');
-const { Liquid, Tokenizer } = require('liquidjs');
+const { Liquid } = require('liquidjs');
 
-const codepenTabs = {
-  'codepen-tabs': [
-    {
-      name: 'run'
-    },
-    {
-      name: 'html',
-      text: 'HTML'
-    },
-    {
-      name: 'css',
-      text: 'CSS'
-    },
-    {
-      name: 'js',
-      text: 'JS'
-    }
-  ]
+/**
+ Makes an embedded editor example with tabs, including an "Edit on CodePen" tab.
+
+ params:
+
+ id (required). Picks folder for files, and used in css classes.
+ type (optional) - Specifies if the example is `tinymce` or `tinydrive` specific default is `tinymce`
+ tab (optional - default to "run"), "run", "html", "css" or "js". The first tab to open.
+ height (optional - no default). min-height in pixels.
+ script_url_override (optional - no default).
+ - Override the full tinymce.min.js URL, including api key.
+ - Useful for testing things that aren't in the main channel, yet.
+ - Remove this setting once the feature is in the main channel.
+
+ Files required under codepens/id/
+
+ index.html
+ index.js
+ index.css optional file
+ example.js optional file
+
+ if index.css is omitted, the css tab will not display
+
+ example.js purpose:
+ when the file is present the codepen js will display the contents of example.js, while the real demo code executes with index.js
+ Useful for when we want to hide actual api-keys or tokens: 'example-token'.
+ When the example.js file is present, the link to the external codepen site is disabled
+ */
+
+
+const validContent = {
+  html: 'index.html',
+  js: 'index.js',
+  examplejs: 'example.js',
+  css: 'style.css'
 };
 
-const codepenLiquidPlugin = function() {
-  this.registerTag('file_exists', {
-    parse (token) {
-      this.path = token.args.replace(/^'|'$/g, '').trim();
-    },
-    render (context) {
-      const url = this.liquid.parseAndRenderSync(this.path, context.environments, context.opts);
-      return fs.existsSync(path.join(context.opts.root[0], url)).toString();
+const defaultTabs = [
+  {
+    name: 'run',
+  },
+  {
+    name: 'html',
+    text: 'HTML'
+  },
+  {
+    name: 'css',
+    text: 'CSS'
+  },
+  {
+    name: 'js',
+    text: 'JS'
+  }
+];
+
+const getDemoTitle = (type) => {
+  switch (type) {
+    case 'tinydrive':
+      return 'Tiny Drive';
+    case 'tinymce':
+    default:
+      return 'TinyMCE'
+  }
+};
+
+const getScript = (type, docAttrs) => {
+  switch (type) {
+    case 'tinydrive':
+      return docAttrs['tinydrive_codepen_url'];
+    case 'tinymce':
+    default:
+      return docAttrs['tinymce_codepen_url'];
+  }
+};
+
+const getTabs = (type, contentData, initialTab) => {
+  const tabs = defaultTabs.filter((d) => {
+    return d.name === 'run' || contentData.hasOwnProperty(d.name);
+  }).map((d) => ({
+    ...d,
+    text: d.name === 'run' ? getDemoTitle(type) : d.text,
+    class: initialTab === d.name ? 'codepen_tab_selected' : 'codepen_tab_deselected'
+  }));
+
+  if (!contentData.hasExamplejs) {
+    tabs.push({
+      name: 'codepen',
+      text: 'Edit on CodePen',
+      class: 'codepen_tab_deselected ie11_optional'
+    })
+  }
+
+  return tabs;
+};
+
+const loadContent = (engine, root, id, docAttrs) => {
+  const data = {};
+  Object.entries(validContent).forEach(([type, file]) => {
+    const filePath = path.join(id, file);
+    const hasKey = 'has' + type[0].toUpperCase() + type.slice(1);
+
+    // If the file exists, then render the content
+    if (fs.existsSync(path.join(root, filePath))) {
+      data[type] = engine.renderFileSync(filePath, { site: docAttrs });
+      data[hasKey] = true;
+    } else {
+      data[hasKey] = false;
     }
   });
 
-  // Pulled from the builtin assign, but modified to set the variables on the global property instead
-  this.registerTag('assign', {
-    parse (token) {
-      const tokenizer = new Tokenizer(token.args);
-      this.key = tokenizer.readWord().content;
-      tokenizer.skipBlank();
-      tokenizer.advance();
-      this.value = tokenizer.remaining();
-    },
-    render (ctx) {
-      ctx.globals[this.key] = this.liquid.evalValueSync(this.value, ctx);
-    }
-  });
+  if (!data.hasOwnProperty('examplejs')) {
+    data['examplejs'] = data['js'];
+  }
 
-  this.registerFilter('uri_escape', (url) => encodeURIComponent(url));
+  return data;
 };
 
 module.exports = function() {
-  this.blockMacro(function () {
-    const engine = new Liquid({
-      root: 'docs/modules/ROOT/codepens/',
-      globals: {}
+  const rootDir = 'docs/modules/ROOT/codepens/';
+  this.blockMacro(function() {
+    const engine = new Liquid({ root: rootDir });
+    engine.plugin(function() {
+      this.registerFilter('uri_escape', (url) => encodeURIComponent(url))
     });
-    engine.plugin(codepenLiquidPlugin);
+    const scriptsLoaded = {};
 
     const self = this;
     this.named('codepen');
     this.process((parent, target, attrs) => {
+      // Get the data to pass to the template
       const docAttrs = parent.document.getAttributes();
+      const type = attrs.type || 'tinymce';
+      const contentData = loadContent(engine, rootDir, target, docAttrs);
+      const initialTab = attrs.tab || 'run';
+      const scriptUrl = attrs.script_url_override || getScript(type, docAttrs);
+
+      // Render the template
       const renderedContent = engine.renderFileSync('codepen.adoc', {
         site: {
-          ...docAttrs,
-          data: { ...codepenTabs }
+          ...docAttrs
         },
-        include: {
+        codepen: {
           ...attrs,
-          id: target
+          type: type,
+          id: target,
+          content: contentData,
+          initialTab: initialTab,
+          script: {
+            include: scriptsLoaded[scriptUrl] !== true,
+            url: scriptUrl,
+          },
+          tabs: getTabs(type, contentData, initialTab)
         }
       });
+      scriptsLoaded[scriptUrl] = true;
+
+      // Parse the content using AsciiDoctor
       const wrapper = self.createBlock(parent, 'open', [], {});
       self.parseContent(wrapper, renderedContent, null);
       return wrapper;

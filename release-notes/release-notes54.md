@@ -10,6 +10,7 @@ These release notes provide an overview of the changes for {{site.productname}} 
 
 - [TinyMCE 5.4 new features and enhancements](#tinymce54newfeaturesandenhancements)
 - [Accompanying Premium Plugin changes](#accompanyingpremiumpluginchanges)
+- [Accompanying premium self-hosted server-side component changes](#accompanyingpremiumself-hostedserver-sidecomponentchanges)
 - [Minor changes for TinyMCE 5.4](#minorchangesfortinymce54)
 - [General bug fixes](#generalbugfixes)
 - [Deprecated features](#deprecatedfeatures)
@@ -78,6 +79,43 @@ The {{site.productname}} 5.4 release includes an accompanying release of the **P
 - Fixed the editor `referrer_policy` option not working when loading additional resources.
 
 For information on the PowerPaste plugin, see: [PowerPaste plugin]({{site.baseurl}}/plugins/powerpaste/).
+
+## Accompanying premium self-hosted server-side component changes
+
+The {{site.productname}} 5.4 release includes accompanying changes affecting the {{site.productname}} **self-hosted** services for the following plugins:
+
+- The Enhanced Media Embed plugin (`mediaembed`)
+- The Image Tools plugin (`imagetools`)
+- The Link Checker plugin (`linkchecker`)
+- The Spell Checker Pro plugin (`tinymcespellchecker`)
+
+The Java server-side components (`ephox-spelling.war`, `ephox-hyperlinking.war`, and `ephox-image-proxy.war`) have been updated to **version 2.5.0**.
+
+This version requires Java 8 or higher. For information on the removal of Java 7 support, see: [Removal of Java 7 support for TinyMCE 5.3 and later]({{site.baseurl}}/release-notes/release-notes53/#removalofjava7support).
+
+For information on:
+
+- The Spell Checker Pro plugin, see: [Spell Checker Pro plugin]({{site.baseurl}}/plugins/tinymcespellchecker/).
+- The Link Checker plugin, see: [Link Checker plugin]({{site.baseurl}}/plugins/linkchecker/).
+- The Image Tools plugin, see: [Image Tools plugin]({{site.baseurl}}/plugins/imagetools/).
+- The Enhanced Media Embed plugin, see: [Enhanced Media Embed plugin]({{site.baseurl}}/plugins/mediaembed/).
+- Deploying the server-side components, see: [Server-side component installation]({{site.baseurl}}/enterprise/server/).
+
+### Security update for self-hosted server-side components
+
+Version 2.5.0 provides security updates for the Java-based server-side components. To deploy the updated version of the server-side components:
+
+1. Update your Java Application Server to the new minimum required version:
+
+    - Apache Tomcat 8.0.42 or later
+    - Eclipse Jetty 9.4 or later
+
+2. Replace the existing server-side `.war` files with the version 2.5.0 `.war` files bundled with {{site.productname}} 5.4 or later.
+
+For information on:
+
+- Deploying the server-side components, see: [Server-side component installation]({{site.baseurl}}/enterprise/server/).
+- Deploying the server-side components using Docker, see: [Containerized service deployments]({{site.baseurl}}/enterprise/server/dockerservices/).
 
 ## Minor changes for TinyMCE 5.4
 

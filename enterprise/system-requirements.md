@@ -24,9 +24,9 @@ JDK 8
 
 ### Java (J2EE) Application Servers
 
-* Tomcat 7+
-* Jetty 8+
-* WebSphere Application Server (WAS) 8+
+* Apache Tomcat 8.0.42 or later
+* Eclipse Jetty 9.4 or later
+* WebSphere Application Server (WAS) 8 or later
 
 ### Operating Systems
 

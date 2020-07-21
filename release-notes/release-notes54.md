@@ -107,8 +107,12 @@ Version 2.5.0 provides security updates for the Java-based server-side component
 
 1. Update your Java Application Server to the new minimum required version:
 
-    - Apache Tomcat 8.0.42 or later
     - Eclipse Jetty 9.4 or later
+    - Apache Tomcat:
+        - 9 or later
+        - 8.5.12+
+        - 8.0.42+
+        - 7.0.76+
 
 2. Replace the existing server-side `.war` files with the version 2.5.0 `.war` files bundled with {{site.productname}} 5.4 or later.
 

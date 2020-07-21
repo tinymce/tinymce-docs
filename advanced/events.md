@@ -281,6 +281,8 @@ The following events are provided by the [PowerPaste plugin]({{ site.baseurl }}/
 
 The following events are provided by the [Spell Checker plugin]({{ site.baseurl }}/plugins/spellchecker/).
 
+{{site.deprecate_spellchecker}}
+
 | Name            | Data | Description                           |
 | --------------- | ---- | ------------------------------------- |
 | SpellcheckStart | N/A  | Fired when spellchecking is enabled.  |

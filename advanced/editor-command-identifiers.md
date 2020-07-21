@@ -7,9 +7,31 @@ description: The complete list of exposed editor commands.
 keywords: editorcommands editorcommand execcommand Bold Italic Underline Strikethrough Superscript Subscript Cut Copy Paste Unlink JustifyLeft JustifyCenter JustifyRight JustifyFull JustifyNone InsertUnorderedList InsertOrderedList ForeColor HiliteColor FontName FontSize RemoveFormat mceBlockQuote FormatBlock mceInsertContent mceToggleFormat mceSetContent Indent Outdent InsertHorizontalRule mceToggleVisualAid mceInsertLink selectAll delete mceNewDocument Undo Redo mceAutoResize mceShowCharmap mceCodeEditor mceDirectionLTR mceDirectionRTL mceFullPageProperties mceFullscreen mceImage mceInsertDate mceInsertTime mceInsertDefinitionList mceNonBreaking mcePageBreak mcePreview mcePrint mceSave SearchReplace mceSpellcheck mceInsertTemplate mceVisualBlocks mceVisualChars mceMedia mceAnchor mceTableSplitCells mceTableMergeCells mceTableInsertRowBefore mceTableInsertRowAfter mceTableInsertColBefore mceTableInsertColAfter mceTableDeleteCol mceTableDeleteRow mceTableCutRow mceTableCopyRow mceTablePasteRowBefore mceTablePasteRowAfter mceTableDelete mceInsertTable mceTableRowProps mceTableCellProps mceEditImage mceAddEditor mceRemoveEditor mceToggleEditor
 ---
 
+## Overview
+
+- [Executable commands](#executablecommands)
+
+  - [Listing core and plugin editor commands](#listingcoreandplugineditorcommands)
+  - [Core Editor commands](#coreeditorcommands)
+  - [Plugin Commands](#plugincommands)
+  - [Editor Management Commands](#editormanagementcommands)
+
+- [Query command states](#querycommandstates)
+
+  - [Listing core and plugin query command states](#listingcoreandpluginquerycommandstates)
+  - [Available query command states](#availablequerycommandstates)
+
+- [Query command values](#querycommandvalues)
+
+  - [Listing core and plugin Query command values](#listingcoreandpluginquerycommandvalues)
+  - [Available Query command values](#availablequerycommandvalues)
+  - [Query command values: Table plugin](#querycommandvaluestableplugin)
+
+## Executable commands
+
 The following tables show the existing editor commands. These commands are provided by `tinymce` and not by the browser's internal commands. These commands can be executed using the [execCommand]({{ site.baseurl }}/api/tinymce/tinymce.editorcommands/#execcommand) function.
 
-## Listing core and plugin editor commands
+### Listing core and plugin editor commands
 
 To retrieve a list of avaliable commands from the active editor, run the following command from the browser console:
 
@@ -17,7 +39,7 @@ To retrieve a list of avaliable commands from the active editor, run the followi
 tinymce.activeEditor.editorCommands.commands.exec;
 ```
 
-## Core Editor commands
+### Core Editor commands
 
 The commands on the following table are provided by the {{site.productname}} editor and do not require any plugins to be enabled.
 
@@ -129,7 +151,7 @@ tinymce.activeEditor.execCommand('mceRemoveNode'); /* OR */
 tinymce.activeEditor.execCommand('mceRemoveNode', false, '<DOM_node>');
 ```
 
-## Plugin Commands
+### Plugin Commands
 
 Commands are available for the following plugins:
 
@@ -170,223 +192,225 @@ Commands are available for the following plugins:
 - [Visual Blocks](#visualblocks)
 - [Visual Characters](#visualcharacters)
 
-### Advanced Code
+#### Advanced Code
 
 The following command requires the [Advanced Code (`advcode`)]({{ site.baseurl }}/plugins/advcode/) plugin.
 
 {% include commands/code-cmds.md %}
 
-### Advanced Lists
+#### Advanced Lists
 
 The following commands require the [Advanced Lists (`advlist`)]({{ site.baseurl }}/plugins/advlist/) plugin.
 
 {% include commands/advlist-cmds.md %}
 
-### Advanced Tables
+#### Advanced Tables
 
 The following commands require the [Advanced Tables (`advtable`)]({{ site.baseurl }}/plugins/advtable/) plugin.
 
 {% include commands/advtable-cmds.md %}
 
-### Anchor
+#### Anchor
 
 The following command requires the [Anchor (`anchor`)]({{ site.baseurl }}/plugins/anchor/) plugin.
 
 {% include commands/anchor-cmds.md %}
 
-### Autoresize
+#### Autoresize
 
 The following command requires the [Autoresize (`autoresize`)]({{ site.baseurl }}/plugins/autoresize/) plugin.
 
 {% include commands/autoresize-cmds.md %}
 
-### Case Change
+#### Case Change
 
 The following commands require the [Case Change (`casechange`)]({{ site.baseurl }}/plugins/casechange/) plugin.
 
 {% include commands/casechange-cmds.md %}
 
-### Character Map
+#### Character Map
 
 The following command requires the [Character Map (`charmap`)]({{ site.baseurl }}/plugins/charmap/) plugin.
 
 {% include commands/charmap-cmds.md %}
 
-### Code
+#### Code
 
 The following command requires the [Code (`code`)]({{ site.baseurl }}/plugins/code/) plugin.
 
 {% include commands/code-cmds.md %}
 
-### Code Sample
+#### Code Sample
 
 The following command requires the [Code Sample (`codesample`)]({{ site.baseurl }}/plugins/codesample/) plugin.
 
 {% include commands/codesample-cmds.md %}
 
-### Comments
+#### Comments
 
 The following commands require the [Comments (`tinycomments`)]({{ site.baseurl }}/plugins/comments/) plugin.
 
 {% include commands/comments-cmds.md %}
 
-### Directionality
+#### Directionality
 
 The following commands require the [Directionality (`directionality`)]({{ site.baseurl }}/plugins/directionality/) plugin.
 
 {% include commands/directionality-cmds.md %}
 
-### Format Painter
+#### Format Painter
 
 The following commands require the [Format Painter (`formatpainter`)]({{ site.baseurl }}/plugins/comments/) plugin.
 
 {% include commands/formatpainter-cmds.md %}
 
-### Full Page
+#### Full Page
 
 The following command requires the [Full Page (`fullpage`)]({{ site.baseurl }}/plugins/fullpage/) plugin.
 
 {% include commands/fullpage-cmds.md %}
 
-### Full Screen
+#### Full Screen
 
 The following command requires the [Full Screen (`fullscreen`)]({{ site.baseurl }}/plugins/fullscreen/) plugin.
 
 {% include commands/fullscreen-cmds.md %}
 
-### Help
+#### Help
 
 The following command requires the [Help (`help`)]({{ site.baseurl }}/plugins/help/) plugin.
 
 {% include commands/help-cmds.md %}
 
-### Image
+#### Image
 
 The following command requires the [Image (`image`)]({{ site.baseurl }}/plugins/image/) plugin.
 
 {% include commands/image-cmds.md %}
 
-### Image Tools
+#### Image Tools
 
 The following commands require the [Image Tools (`imagetools`)]({{ site.baseurl }}/plugins/imagetools/) plugin.
 
 {% include commands/imagetools-cmds.md %}
 
-### Insert Date/Time
+#### Insert Date/Time
 
 The following commands require the [Insert Date/Time (`insertdatetime`)]({{ site.baseurl }}/plugins/insertdatetime/) plugin.
 
 {% include commands/insertdatetime-cmds.md %}
 
-### Link
+#### Link
 
 The following command requires the [Link (`link`)]({{ site.baseurl }}/plugins/link/) plugin.
 
 {% include commands/link-cmds.md %}
 
-### Lists
+#### Lists
 
 The following commands require the [Lists (`lists`)]({{ site.baseurl }}/plugins/lists/) plugin.
 
 {% include commands/lists-cmds.md %}
 
-### Media
+#### Media
 
 The following command requires the [Media (`media`)]({{ site.baseurl }}/plugins/media/) plugin.
 
 {% include commands/media-cmds.md %}
 
-### Nonbreaking Space
+#### Nonbreaking Space
 
 The following command requires the [Nonbreaking Space (`nonbreaking`)]({{ site.baseurl }}/plugins/nonbreaking/) plugin.
 
 {% include commands/nbsp-cmds.md %}
 
-### Page Break
+#### Page Break
 
 The following command requires the [Page Break (`pagebreak`)]({{ site.baseurl }}/plugins/pagebreak/) plugin.
 
 {% include commands/pagebreak-cmds.md %}
 
-### Paste
+#### Paste
 
 The following commands require the [Paste (`paste`)]({{ site.baseurl }}/plugins/paste/) plugin.
 
 {% include commands/paste-cmds.md %}
 
-### Permanent Pen
+#### Permanent Pen
 
 The following commands require the [Permanent Pen (`permanentpen`)]({{ site.baseurl }}/plugins/permanentpen/) plugin.
 
 {% include commands/permanentpen-cmds.md %}
 
-### PowerPaste
+#### PowerPaste
 
 The following command requires the [PowerPaste (`powerpaste`)]({{ site.baseurl }}/plugins/powerpaste/) plugin.
 
 {% include commands/powerpaste-cmds.md %}
 
-### Preview
+#### Preview
 
 The following command requires the [Preview (`preview`)]({{ site.baseurl }}/plugins/preview/) plugin.
 
 {% include commands/preview-cmds.md %}
 
-### Print
+#### Print
 
 The following command requires the [Print (`print`)]({{ site.baseurl }}/plugins/print/) plugin.
 
 {% include commands/print-cmds.md %}
 
-### Save
+#### Save
 
 The following commands require the [Save (`save`)]({{ site.baseurl }}/plugins/save/) plugin.
 
 {% include commands/save-cmds.md %}
 
-### Search and Replace
+#### Search and Replace
 
 The following command requires the [Search and Replace (`searchreplace`)]({{ site.baseurl }}/plugins/searchreplace/) plugin.
 
 {% include commands/searchreplace-cmds.md %}
 
-### Spell Checker
+#### Spell Checker
 
 The following command requires the [Spell Checker (`spellchecker`)]({{ site.baseurl }}/plugins/spellchecker/) plugin.
 
+{{site.deprecate_spellchecker}}
+
 {% include commands/spellchecker-cmds.md %}
 
-### Table
+#### Table
 
 The following commands require the [Table (`table`)]({{ site.baseurl }}/plugins/table/) plugin.
 
 {% include commands/table-cmds.md %}
 
-### Template
+#### Template
 
 The following command requires the [Template (`template`)]({{ site.baseurl }}/plugins/template/) plugin.
 
 {% include commands/template-cmds.md %}
 
-### Table of Contents
+#### Table of Contents
 
 The following commands require the [Table of Contents (`toc`)]({{ site.baseurl }}/plugins/toc) plugin.
 
 {% include commands/toc-cmds.md %}
 
-### Visual Blocks
+#### Visual Blocks
 
 The following command requires the [Visual Blocks (`visualblocks`)]({{ site.baseurl }}/plugins/visualblocks/) plugin.
 
 {% include commands/visualblocks-cmds.md %}
 
-### Visual Characters
+#### Visual Characters
 
 The following command requires the [Visual Characters (`visualchars`)]({{ site.baseurl }}/plugins/visualchars/) plugin.
 
 {% include commands/visualchars-cmds.md %}
 
-## Editor Management Commands
+### Editor Management Commands
 
 The following commands are used to manage editor instances.
 
@@ -403,3 +427,91 @@ tinymce.execCommand('mceToggleEditor', false, '<editor_id>');
 | mceAddEditor    | Converts the specified HTML or DOM element into an editor instance with the specified ID.                                                                                                                                                                               |
 | mceRemoveEditor | Removes an editor instance with the specified ID.                                                                                                                                                                                                                       |
 | mceToggleEditor | Runs mceAddEditor if an editor is not detected for the specified ID, otherwise it runs either [hide]({{ site.baseurl }}/api/tinymce/tinymce.editor/#hide) if the editor is visible or [show]({{ site.baseurl }}/api/tinymce/tinymce.editor/#show) if it is not visible. |
+
+## Query command states
+
+{{site.productname}} provides the `queryCommandState` API to allow developers to determine the current state of selected content. The query will return `true` if the content is formatted using the same CSS styles and elements used by the corresponding command.
+
+### Listing core and plugin query command states
+
+To retrieve a list of avaliable queryable states from the active editor, run the following command from the browser console:
+
+```js
+tinymce.activeEditor.editorCommands.commands.state;
+```
+
+### Available query command states
+
+The following command states can be queried using the [queryCommandState]({{ site.baseurl }}/api/tinymce/tinymce.editorcommands/#querycommandstate) API.
+
+| Command              | Description                                                                                                                    |
+| -------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| Bold                 | Returns `true` if the content is formatted using the same markup as the {{site.productname}} `Bold` command.                   |
+| InsertDefinitionList | Returns `true` if the content is formatted using the same markup as the {{site.productname}} `InsertDefinitionList` command.   |
+| InsertOrderedList    | Returns `true` if the content is formatted using the same markup as the {{site.productname}} `InsertOrderedList` command.      |
+| InsertUnorderedList  | Returns `true` if the content is formatted using the same markup as the {{site.productname}} `InsertUnorderedList` command.    |
+| Italic               | Returns `true` if the content is formatted using the same markup as the {{site.productname}} `Italic` command.                 |
+| JustifyCenter        | Returns `true` if the content is formatted using the same markup as the {{site.productname}} `JustifyCenter` command.          |
+| JustifyFull          | Returns `true` if the content is formatted using the same markup as the {{site.productname}} `JustifyFull` command.            |
+| JustifyLeft          | Returns `true` if the content is formatted using the same markup as the {{site.productname}} `JustifyLeft` command.            |
+| JustifyRight         | Returns `true` if the content is formatted using the same markup as the {{site.productname}} `JustifyRight` command.           |
+| mceBlockQuote        | Returns `true` if the content is formatted using the same markup as the {{site.productname}} `mceBlockQuote` command.          |
+| Outdent              | Returns `true` if the content is formatted using the same markup as the {{site.productname}} `Outdent` command.                |
+| Strikethrough        | Returns `true` if the content is formatted using the same markup as the {{site.productname}} `Strikethrough` command.          |
+| Subscript            | Returns `true` if the content is formatted using the same markup as the {{site.productname}} `Subscript` command.              |
+| Superscript          | Returns `true` if the content is formatted using the same markup as the {{site.productname}} `Superscript` command.            |
+| Underline            | Returns `true` if the content is formatted using the same markup as the {{site.productname}} `Underline` command.              |
+
+**Examples**
+
+```js
+tinymce.activeEditor.queryCommandState('Bold');
+tinymce.activeEditor.queryCommandState('InsertDefinitionList');
+tinymce.activeEditor.queryCommandState('InsertOrderedList');
+tinymce.activeEditor.queryCommandState('InsertUnorderedList');
+tinymce.activeEditor.queryCommandState('Italic');
+tinymce.activeEditor.queryCommandState('JustifyCenter');
+tinymce.activeEditor.queryCommandState('JustifyFull');
+tinymce.activeEditor.queryCommandState('JustifyLeft');
+tinymce.activeEditor.queryCommandState('JustifyRight');
+tinymce.activeEditor.queryCommandState('mceBlockQuote');
+tinymce.activeEditor.queryCommandState('Outdent');
+tinymce.activeEditor.queryCommandState('Strikethrough');
+tinymce.activeEditor.queryCommandState('Subscript');
+tinymce.activeEditor.queryCommandState('Superscript');
+tinymce.activeEditor.queryCommandState('Underline');
+```
+
+## Query command values
+
+{{site.productname}} provides the `queryCommandValue` API to allow developers to determine the current state of selected content. The query will return an object containing the relevant value.
+
+### Listing core and plugin query command values
+
+To retrieve a list of avaliable queryable command values from the active editor, run the following command from the browser console:
+
+```js
+tinymce.activeEditor.editorCommands.commands.value;
+```
+
+### Available query command values
+
+The following command values can be queried using the [queryCommandValue]({{ site.baseurl }}/api/tinymce/tinymce.editorcommands/#querycommandvalue) API.
+
+| Command       | Description                                            |
+| --------------| ------------------------------------------------------ |
+| FontName      | Returns the font name of the current selection.        |​
+| FontSize      | Returns the font size of the current selection.        |​
+| ToggleSidebar | Returns the current state of sidebar (open or closed). |
+
+**Examples**
+
+```js
+tinymce.activeEditor.queryCommandValue('FontName');
+tinymce.activeEditor.queryCommandValue('FontSize');
+tinymce.activeEditor.queryCommandValue('ToggleSidebar');
+```
+
+### Query command values: Table plugin
+
+{% include commands/table-query-cmd-values.md %}

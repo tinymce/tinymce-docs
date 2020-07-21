@@ -175,6 +175,7 @@
   - url: "file-image-upload"
     pages:
     - url: "#automatic_uploads"
+    - url: "#block_unsupported_drop"
     - url: "#file_picker_callback"
     - url: "#file_picker_types"
     - url: "#images_dataimg_filter"
@@ -469,6 +470,7 @@
     - url: "#table_default_attributes"
     - url: "#table_default_styles"
     - url: "#table_responsive_width"
+    - url: "#table_sizing_mode"
     - url: "#table_class_list"
     - url: "#table_cell_class_list"
     - url: "#table_row_class_list"
@@ -480,6 +482,7 @@
     - url: "#API"
     - url: "#Events"
     - url: "#Commands"
+    - url: "#Query command values"
   - url: "template"
     pages:
     - url: "#templates"
@@ -668,12 +671,12 @@
   - url: "php-upload-handler"
   - url: "editor-command-identifiers"
     pages:
-      - url: "#Listing core and plugin editor commands"
-      - url: "#Core Editor commands"
-      - url: "#Plugin Commands"
-      - url: "#Editor Management Commands"
+      - url: "#Executable commands"
+      - url: "#Query command states"
+      - url: "#Query command values"
   - url: "editor-control-identifiers"
   - url: "editor-icon-identifiers"
+  - url: "editor-context-menu-identifiers"
   - url: "events"
     pages:
       - url: "#Handling Editor events"
@@ -692,9 +695,7 @@
     - url: "#TinyMCE Angular integration quick start guide"
     - url: "#TinyMCE Angular technical reference"
   - url: "bootstrap"
-  - url: "dojo"
   - url: "jquery"
-  - url: "knockout"
   - url: "rails"
     pages:
     - url: "#TinyMCE in Ruby on Rails using the Tiny Cloud"
@@ -729,6 +730,14 @@
 
 - url: "release-notes"
   pages:
+  - url: "release-notes54"
+    pages:
+    - url: "#Overview"
+    - url: "#TinyMCE 5.4 new features and enhancements"
+    - url: "#Accompanying Premium Plugin changes"
+    - url: "#Minor changes for TinyMCE 5.4"
+    - url: "#General bug fixes"
+    - url: "#Upgrading to the latest version of TinyMCE 5"
   - url: "release-notes53"
     pages:
     - url: "#Overview"

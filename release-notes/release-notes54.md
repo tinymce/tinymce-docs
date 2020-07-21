@@ -10,7 +10,7 @@ These release notes provide an overview of the changes for {{site.productname}} 
 
 - [TinyMCE 5.4 new features and enhancements](#tinymce54newfeaturesandenhancements)
 - [Accompanying Premium Plugin changes](#accompanyingpremiumpluginchanges)
-- [Accompanying premium self-hosted server-side component changes](#accompanyingpremiumself-hostedserver-sidecomponentchanges)
+- [Accompanying Premium self-hosted server-side component changes](#accompanyingpremiumself-hostedserver-sidecomponentchanges)
 - [Minor changes for TinyMCE 5.4](#minorchangesfortinymce54)
 - [General bug fixes](#generalbugfixes)
 - [Deprecated features](#deprecatedfeatures)
@@ -80,7 +80,7 @@ The {{site.productname}} 5.4 release includes an accompanying release of the **P
 
 For information on the PowerPaste plugin, see: [PowerPaste plugin]({{site.baseurl}}/plugins/powerpaste/).
 
-## Accompanying premium self-hosted server-side component changes
+## Accompanying Premium self-hosted server-side component changes
 
 The {{site.productname}} 5.4 release includes accompanying changes affecting the {{site.productname}} **self-hosted** services for the following plugins:
 

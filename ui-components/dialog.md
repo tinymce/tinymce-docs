@@ -72,7 +72,7 @@ tinymce.activeEditor.windowManager.open({
 | ---- | ----- | ----------- | ----------- |
 | title | string | required | The title of the dialog. This will display in the header of the dialog. |
 | body | `panel` or `tabpanel` component | required | The specification for the [body component](#bodycomponents). |
-| buttons | FooterButton[] | required | An array of [footer buttons](#footerbuttons) to render in the footer of the dialog. |
+| buttons | `FooterButton[]` | required | An array of [footer buttons](#footerbuttons) to render in the footer of the dialog. |
 | size | `'normal'`, `'medium'` or `'large'` | optional | default: `normal` - Dialog size options. |
 | initialData | object | optional | An object containing initial values for the dialog's panel components. |
 | onAction | `(dialogApi, details) => void` | optional | Function invoked when a user interacts with a `button` type panel component, clicks a **Custom** type footer button, or clicks an item in a **Menu** type footer button. |
@@ -80,7 +80,7 @@ tinymce.activeEditor.windowManager.open({
 | onCancel | `(dialogApi) => void` | optional | Function invoked when the dialog is cancelled. The dialog header's close button and a **Cancel** type footer button invoke this function. |
 | onChange | `(dialogApi, details) => void` | optional | Function invoked when the value of an `input` type panel component changes. |
 | onClose | `() => void` | optional | Function invoked when the dialog is closed. The dialog header's close button, a **Cancel** type footer button and the dialog instance API's `close()` method invoke this function. |
-| onTabChange | `(dialogApi, details)` => void | optional | **This method only applies to [tab panel]({{site.baseurl}}/ui-components/dialogcomponents/#tabpanel) dialogs.** Function invoked when the user changes tabs. `details` is an object that contains `newTabName` and `oldTabName`. |
+| onTabChange | `(dialogApi, details) => void` | optional | **This method only applies to [tab panel]({{site.baseurl}}/ui-components/dialogcomponents/#tabpanel) dialogs.** Function invoked when the user changes tabs. `details` is an object that contains `newTabName` and `oldTabName`. |
 
 For more information on the `dialogApi` object that is passed to some of the configuration options, see the [dialog instance API](#dialoginstanceapi) documentation.
 

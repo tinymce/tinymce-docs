@@ -1,4 +1,4 @@
-### Reference Date/Time formats
+## Reference Date/Time formats
 
 | Name | Summary         |
 |------|-----------------|

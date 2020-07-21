@@ -66,7 +66,7 @@ tinymce.init({
 
 Resources to be linked take the form of placing the linked text between brackets and the URL between parenthesis. Linking an external resource looks like this:
 
-```html
+```
 hello, [text to link](http://www.example.com) to the URL example.com.
 ```
 

@@ -25,7 +25,7 @@ To use your own Iframely account, provide the following configuration items:
 
 Example with Iframely enabled (replace `xxx` with your Iframely API key):
 
-````
+```
 ephox {
   embed {
     iframely {
@@ -35,11 +35,11 @@ ephox {
     }
   }
 }
-````
+```
 
 Example with Iframely disabled:
 
-````
+```
 ephox {
   embed {
     iframely {
@@ -47,7 +47,7 @@ ephox {
     }
   }
 }
-````
+```
 
 ## Configure a custom endpoint
 The service can be configured to hit a specific oEmbed endpoint when media from a URL matching a provided pattern is inserted into your content.
@@ -59,7 +59,7 @@ The service can be configured to hit a specific oEmbed endpoint when media from 
 
 Example:
 
-````
+```
 ephox {
   embed {
     custom = [
@@ -286,7 +286,7 @@ ephox {
     ]
   }
 }
-````
+```
 
 ## Combining Iframely and custom endpoints
 It is also possible to configure Iframely with custom oEmbed endpoints. For example, you may want to use Iframely to embed media from the Internet and an internal oEmbed server to embed media from an Intranet.
@@ -294,7 +294,7 @@ It is also possible to configure Iframely with custom oEmbed endpoints. For exam
 
 Example (replace `xxx` with your Iframely API key):
 
-````
+```
 ephox {
   embed {
     iframely {
@@ -313,7 +313,7 @@ ephox {
     ]
   }
 }
-````
+```
 
 ## Summary cards
 

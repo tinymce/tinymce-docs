@@ -302,6 +302,7 @@ editor.addButton('mybutton', {
   onclick: () => alert("My Button clicked!")
 });
 ```
+
 ###### TinyMCE 5 - `onAction`
 
 ```js
@@ -327,6 +328,7 @@ editor.addButton('mybutton', {
   cmd: 'mceSave'
 });
 ```
+
 ###### TinyMCE 5 - `onAction`
 
 ```js
@@ -366,6 +368,7 @@ editor.addButton('currentdate', {
   }
 });
 ```
+
 ###### TinyMCE 5 - onSetup
 
 In this example, the button's API contains `isDisabled: () => boolean` and `setDisabled: (state: boolean) => void`.
@@ -452,6 +455,7 @@ editor.addMenuItem('example', {
  onclick: () => editor.insertContent('Hello world!!');
 });
 ```
+
 #### TinyMCE 5 - example custom menu item
 
 ```js
@@ -659,30 +663,30 @@ For information on Context Menus, see [UI components - Context menu]({{site.base
 
 ```js
 spellchecker_callback: function(method, text, success, failure) {
-    var words = text.match(this.getWordCharPattern());
-    if (method == "spellcheck") {
-      var suggestions = {};
-      for (var i = 0; i < words.length; i++) {
-        suggestions[words[i]] = ["First", "Second"];
-      }
-      success(suggestions);
+  var words = text.match(this.getWordCharPattern());
+  if (method == "spellcheck") {
+    var suggestions = {};
+    for (var i = 0; i < words.length; i++) {
+      suggestions[words[i]] = ["First", "Second"];
     }
+    success(suggestions);
   }
+}
 ```
 
 The `success` callback now requires the mapping object to be wrapped in an object with the `words` key, such as:
 
 ```js
 spellchecker_callback: function(method, text, success, failure) {
-    var words = text.match(this.getWordCharPattern());
-    if (method == "spellcheck") {
-      var suggestions = {};
-      for (var i = 0; i < words.length; i++) {
-        suggestions[words[i]] = ["First", "Second"];
-      }
-      success({ words: suggestions });
+  var words = text.match(this.getWordCharPattern());
+  if (method == "spellcheck") {
+    var suggestions = {};
+    for (var i = 0; i < words.length; i++) {
+      suggestions[words[i]] = ["First", "Second"];
     }
+    success({ words: suggestions });
   }
+}
 ```
 
 For information on the `spellchecker_callback` setting, see: [Spell Checker plugin - spellchecker_callback]({{site.baseurl}}/plugins/spellchecker/#spellchecker_callback)

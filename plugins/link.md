@@ -40,11 +40,11 @@ This option allows you to set a default `target` value for links when inserting/
 
 ```js
 tinymce.init({
-    selector: "textarea",  // change this value according to your HTML
-    plugins: "link",
-    menubar: "insert",
-    toolbar: "link",
-    default_link_target: "_blank"
+  selector: "textarea",  // change this value according to your HTML
+  plugins: "link",
+  menubar: "insert",
+  toolbar: "link",
+  default_link_target: "_blank"
 });
 ```
 
@@ -131,11 +131,11 @@ This option allows you to set a default protocol for links when inserting/editin
 
 ```js
 tinymce.init({
-    selector: "textarea",  // change this value according to your HTML
-    plugins: "link",
-    menubar: "insert",
-    toolbar: "link",
-    link_default_protocol: "https"
+  selector: "textarea",  // change this value according to your HTML
+  plugins: "link",
+  menubar: "insert",
+  toolbar: "link",
+  link_default_protocol: "https"
 });
 ```
 

@@ -27,9 +27,9 @@ The toolbar mode is specified in the `tinymce.init`. There are four toolbar mode
 
 #### Floating
 
-If the `toolbar_mode` is configured to `floating`, the toolbar appears under the toolbar overflow icon in a floating shelf format when the toolbar overflow icon ![**Drawer**]({{site.baseurl}}/images/icons/more-drawer.svg) is clicked.
+If the `toolbar_mode` is configured to `floating`, the toolbar appears under the toolbar overflow icon in a floating shelf format when the toolbar overflow icon ![Drawer]({{site.baseurl}}/images/icons/more-drawer.svg) is clicked.
 
-![**Floating Toolbar**]({{site.baseurl}}/images/floating_toolbar.png)
+![Floating Toolbar]({{site.baseurl}}/images/floating_toolbar.png)
 
 ##### Configuring a Floating toolbar
 
@@ -44,9 +44,9 @@ tinymce.init({
 
 #### Sliding
 
-If the `toolbar_mode` is configured to `sliding`, the toolbar appears as a fixed toolbar under the first toolbar when the toolbar overflow icon ![**Drawer**]({{site.baseurl}}/images/icons/more-drawer.svg) is clicked.
+If the `toolbar_mode` is configured to `sliding`, the toolbar appears as a fixed toolbar under the first toolbar when the toolbar overflow icon ![Drawer]({{site.baseurl}}/images/icons/more-drawer.svg) is clicked.
 
-![**Sliding Toolbar**]({{site.baseurl}}/images/sliding_toolbar.png)
+![Sliding Toolbar]({{site.baseurl}}/images/sliding_toolbar.png)
 
 ##### Configuring a Sliding toolbar
 
@@ -67,7 +67,7 @@ If the `toolbar_mode` is configured to `scrolling`, the overflow toolbar buttons
 
 A scrollbar will be shown on the toolbar on desktop devices and hybrid devices in desktop mode.
 
-![**Scrolling Toolbar**]({{site.baseurl}}/images/scrolling_toolbar.png)
+![Scrolling Toolbar]({{site.baseurl}}/images/scrolling_toolbar.png)
 
 ##### Configuring a Scrolling toolbar
 
@@ -75,8 +75,8 @@ Use the following settings to configure a Scrolling toolbar:
 
 ```js
 tinymce.init({
-    selector: "textarea",
-    toolbar_mode: 'scrolling'
+  selector: "textarea",
+  toolbar_mode: 'scrolling'
 });
 ```
 
@@ -84,7 +84,7 @@ tinymce.init({
 
 If the `toolbar_mode` is configured to `wrap`, the overflow toolbar buttons will be shown on one or more toolbars below the primary toolbar.
 
-![**Wrapped Toolbar**]({{site.baseurl}}/images/wrapped_toolbar.png)
+![Wrapped Toolbar]({{site.baseurl}}/images/wrapped_toolbar.png)
 
 ##### Configuring a Wrapped toolbar
 
@@ -92,7 +92,7 @@ Use the following settings to configure a wrapped toolbar:
 
 ```js
 tinymce.init({
-    selector: "textarea",
-    toolbar_mode: 'wrap'
+  selector: "textarea",
+  toolbar_mode: 'wrap'
 });
 ```

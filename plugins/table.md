@@ -287,6 +287,7 @@ tinymce.init({
   ]
 });
 ```
+
 ### `table_row_class_list`
 
 This option enables you to specify a list of classes to present in the table row options dialog. This is useful if you want users to assign predefined classes to table rows.
@@ -308,6 +309,7 @@ tinymce.init({
   ]
 });
 ```
+
 ### `table_advtab`
 
 This option makes it possible to disable the advanced tab in the table dialog box. The advanced tab allows a user to input `style`, `border color` and `background color` values.
@@ -329,6 +331,7 @@ tinymce.init({
   table_advtab: false
 });
 ```
+
 ### `table_cell_advtab`
 
 This option makes it possible to disable the advanced tab in the table cell dialog box. The advanced tab allows a user to input `style`, `border color` and `background color` values.
@@ -508,7 +511,7 @@ tinymce.init({
 
 Here are some examples of configuration for common setups.
 
-##### No default attributes or styles on tables
+#### No default attributes or styles on tables
 
 ```js
 tinymce.init({
@@ -518,7 +521,7 @@ tinymce.init({
   table_default_styles: {}
 });
 ```
-##### Pixel based resizing
+#### Pixel based resizing
 
 ```js
 tinymce.init({
@@ -529,7 +532,7 @@ tinymce.init({
   table_responsive_width: false
 });
 ```
-##### Percentage based resizing
+#### Percentage based resizing
 
 ```js
 tinymce.init({
@@ -548,7 +551,7 @@ tinymce.init({
 
 > Note: The advanced tabs of the table, row, and cell properties dialogs use the `colorpicker` to allow for border and background colors to be applied. See docs to use and configure a custom [colorpicker]({{site.baseurl}}/plugins/colorpicker/).
 
-### API
+## API
 
 | Name | Arguments | Description |
 |------| ------| ----------- |
@@ -564,13 +567,13 @@ tinymce.init({
 tinymce.activeEditor.plugins.table.insertTable(2, 3);
 ```
 
-### Events
+## Events
 
 | Name | Description |
 |------| ----------- |
 | newrow | Fired when a row is created |
 | newcell | Fired when a cell is created |
-| ObectResizeStart | Fired when a resize action is started on a table, row, column or cell using the resize bars |
+| ObjectResizeStart | Fired when a resize action is started on a table, row, column or cell using the resize bars |
 | ObjectResized | Fired when a resize action is finished on a table, row, column or cell using the resize bars |
 
 ## Commands

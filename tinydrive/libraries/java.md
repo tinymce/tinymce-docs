@@ -50,11 +50,11 @@ $ gradle bootRun
 
 #### 5. Open the example project at http://localhost:3000
 
-### Implementing with your system
+## Implementing with your system
 
 If your specific use case has not been covered by any of the sample [starter projects]({{site.baseurl}}/tinydrive/libraries/), some customizations might be required to be applied to implement {{site.cloudfilemanager}} in the specific system. The [JSON Web Token]({{site.baseurl}}/tinydrive/jwt-authentication/) authentication solution would have to be tied to the login authentication of your system. This usually means integrating the JWT authentication to the existing session authentication so that users automatically login to {{site.cloudfilemanager}} and your system.
 
-#### Additional resources
+### Additional resources
 
 Go through the following additional resources to figure out how to configure {{site.cloudfilemanager}} with your system.
 

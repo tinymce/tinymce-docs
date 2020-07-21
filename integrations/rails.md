@@ -108,7 +108,7 @@ This procedure creates a [basic Ruby on Rails application](https://guides.rubyon
 
 1. Using a text editor, open the project `Gemfile` and add the line:
 
-    ```conf
+    ```sh
     gem 'tinymce-rails'
     ```
     Do not add this line within a `group` - `end` element.

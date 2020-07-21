@@ -33,13 +33,13 @@ To set up the skin development environment, begin with the following steps:
 
 3. Install dependencies with the command:
 
-   ```
-    yarn install
+   ```sh
+   yarn install
    ```
 
 4. Launch the web server to preview the skins using the command:
 
-   ```
+   ```sh
    yarn oxide-start
    ```
 
@@ -47,10 +47,10 @@ You should now be able to open a web browser and point it to the url displayed i
 
 The development environment is set up and ready to work.
 
-![**{{site.productname}} skin SDK for Silver theme**]({{site.baseurl}}/images/SDKforsilver.png)
+![{{site.productname}} skin SDK for Silver theme]({{site.baseurl}}/images/SDKforsilver.png)
 
 If you just need to build the skins without launching a web server, run:
-```
+```sh
 yarn oxide-build
 ```
 
@@ -98,7 +98,7 @@ Your skin.less file should now look like this:
 ```
 Switch to the web browser. Select your skin from the *Skin menu*. It should show a fiery red editor
 
-![**{{site.productname}} skin SDK for Silver theme**]({{site.baseurl}}/images/SDKforsilverCustomExample.png)
+![{{site.productname}} skin SDK for Silver theme]({{site.baseurl}}/images/SDKforsilverCustomExample.png)
 
 This is how you skin {{site.productname}}: copy variables from the files in the theme folder and paste them into your skin file. There are variables for most things, like spacing between toolbar buttons to letter spacing. Simple yet powerful.
 

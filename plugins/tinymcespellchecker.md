@@ -126,9 +126,9 @@ This option specifies the spellchecker languages that are available to the user,
 **Type:** comma-separated `String`
 
 **Default Value:**
-````
+```
 'US English=en_us,UK English=en_gb,Danish=da,Dutch=nl,Finnish=fi,French=fr,German=de,Italian=it,Norwegian=nb,Brazilian Portuguese=pt,Iberian Portuguese=pt_PT,Spanish=es,Swedish=sv'
-````
+```
 
 #### Example: `spellchecker_languages`
 
@@ -229,7 +229,7 @@ For more information about customizing the toolbar, see: [User interface options
 
 #### Example: Spell Checker Pro toolbar buttons
 
-````js
+```js
 tinymce.init({
   selector: 'textarea',
   plugins: 'tinymcespellchecker',
@@ -237,7 +237,7 @@ tinymce.init({
   spellchecker_rpc_url: 'localhost/ephox-spelling',
   spellchecker_language: 'en_us'
 });
-````
+```
 
 ### Menu items
 
@@ -252,7 +252,7 @@ For more information about customizing the toolbar, see: [User interface options
 
 #### Example: Spell Checker Pro menu items
 
-````js
+```js
 tinymce.init({
   selector: 'textarea',
   plugins: 'tinymcespellchecker',
@@ -262,7 +262,7 @@ tinymce.init({
   spellchecker_rpc_url: 'localhost/ephox-spelling',
   spellchecker_language: 'en'
 });
-````
+```
 
 ## Events
 
@@ -274,7 +274,7 @@ This event triggers when the user selects **Ignore** on a misspelled word.
 
 #### Example: The SpellcheckerIgnore event
 
-````js
+```js
 tinymce.init({
   selector: 'textarea',
   plugins: 'tinymcespellchecker',
@@ -285,7 +285,7 @@ tinymce.init({
     });
   }
 });
-````
+```
 
 ### SpellcheckerIgnoreAll event
 
@@ -293,7 +293,7 @@ This event triggers when the user selects **Ignore All** on a misspelled word.
 
 #### Example: The SpellcheckerIgnoreAll event
 
-````js
+```js
 tinymce.init({
   selector: 'textarea',
   plugins: 'tinymcespellchecker',
@@ -304,7 +304,7 @@ tinymce.init({
     });
   }
 });
-````
+```
 
 ### SpellcheckStart event
 
@@ -312,7 +312,7 @@ This event triggers when the user __enables__ the `spellchecker`.
 
 #### Example: The SpellcheckStart event
 
-````js
+```js
 tinymce.init({
   selector: 'textarea',
   plugins: 'tinymcespellchecker',
@@ -323,7 +323,7 @@ tinymce.init({
     });
   }
 });
-````
+```
 
 ### SpellcheckEnd event
 
@@ -331,7 +331,7 @@ This event triggers when the user __disables__ the `spellchecker`.
 
 #### Example: The SpellcheckEnd event
 
-````js
+```js
 tinymce.init({
   selector: 'textarea',
   plugins: 'tinymcespellchecker',
@@ -342,7 +342,7 @@ tinymce.init({
     });
   }
 });
-````
+```
 
 ### SpellcheckError event
 
@@ -350,7 +350,7 @@ This event triggers when a spellchecker error occurs, such as the Spell Checker 
 
 #### Example: The SpellcheckError event
 
-````js
+```js
 tinymce.init({
   selector: 'textarea',
   plugins: 'tinymcespellchecker',
@@ -361,4 +361,4 @@ tinymce.init({
     });
   }
 });
-````
+```

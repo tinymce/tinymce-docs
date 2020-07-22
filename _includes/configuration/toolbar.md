@@ -17,7 +17,7 @@ tinymce.init({
 });
 ```
 
-> **Note**: The toolbar buttton groups defined in the `toolbar` setting will affect which toolbar buttons will be shown when the toolbar is wider than the editor. For more information, see: [the `toolbar_mode` setting]({{site.baseurl}}/configure/editor-appearance/#toolbar_mode).
+> **Note**: The size of toolbar groups affects the behavior of the toolbar drawer when the `toolbar_mode` is set to `'floating'` (default value) or `'sliding'`. For more information, see: [the `toolbar_mode` setting]({{site.baseurl}}/configure/editor-appearance/#toolbar_mode).
 
 ### Adding toolbar group labels
 

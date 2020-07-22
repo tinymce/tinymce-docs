@@ -6,6 +6,25 @@
 
 The `toolbar_mode` option is used to extend the toolbar to accommodate the overflowing toolbar buttons. This option is useful for small screens or small editor frames.
 
+The editor will move toolbar buttons to the toolbar drawer based on:
+
+- The defined toolbar groups.
+- The width of the editor.
+
+For example. If the following toolbar configuration is wider than the editor, the toolbar will be split at the group separator (`|`).
+
+```js
+tinymce.init({
+    selector: 'textarea',
+    toolbar: 'undo redo styleselect bold italic alignleft aligncenter alignright alignjustify | bullist numlist outdent indent'
+});
+```
+
+Two situations to consider when organising the toolbar:
+
+- If the first toolbar button group is wider than the editor, the whole toolbar will be shown in the toolbar drawer.
+- If no toolbar button groups are defined, the `toolbar_mode` will default to [the `wrap` toolbar mode](#wrap).
+
 The toolbar modes are not available when using [multiple toolbars]({{site.baseurl}}/configure/editor-appearance/#usingmultipletoolbars) or the [toolbar(n)]({{site.baseurl}}/configure/editor-appearance/#toolbarn) option.
 
 **Type:** `String`

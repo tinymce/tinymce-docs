@@ -225,7 +225,7 @@ tinymce.init({
 });
 ```
 
-For information on the `typeahead_urls` option, see:  [Advanced editing behaviors - `typeahead_urls`]({{site.baseurl}}/configure/advanced-editing-behavior/#typeahead_urls).
+For information on the `typeahead_urls` option, see: [Advanced editing behaviors - `typeahead_urls`]({{site.baseurl}}/configure/advanced-editing-behavior/#typeahead_urls).
 
 {% assign enterprise = true %}
 

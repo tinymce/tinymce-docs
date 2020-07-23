@@ -24,7 +24,7 @@ tinyMCE.activeEditor.ui.registry.getAll().buttons
 
 | Control              | Core/Plugin                                                                                                                        | Description                                                                           |
 | -------------------- | ---------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
-| aligncenter          | core                                                                                                                               | Left aligns the current block or image.                                               |
+| aligncenter          | core                                                                                                                               | Center aligns the current block or image.                                             |
 | alignjustify         | core                                                                                                                               | Full aligns the current block or image.                                               |
 | alignleft            | core                                                                                                                               | Left aligns the current block or image.                                               |
 | alignnone            | core                                                                                                                               | Removes the alignment of the current block or image.                                  |

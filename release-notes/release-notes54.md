@@ -55,6 +55,12 @@ For information on:
 - Creating custom UI components, see: [User interface components]({{site.baseurl}}/ui-components/).
 - Creating and adding a custom icon pack, see: [Create an icon pack for TinyMCE]({{site.baseurl}}/advanced/creating-an-icon-pack/).
 
+### New option for blocking unsupported files from being drag and dropped into the editor
+
+The `block_unsupported_drop` option blocks unsupported images and files from being dropped into the editor. This option is enabled by default. If this option is disabled (`false`), users can drop an unsupported file into the editor, which will cause the browser to navigate away from the page containing the editor.
+
+For information on the `block_unsupported_drop` option, see: [Image & file options - `block_unsupported_drop`]({{site.baseurl}}/configure/file-image-upload/#block_unsupported_drop).
+
 ## Accompanying Premium Plugin changes
 
 The following premium plugin updates were released alongside {{site.productname}} 5.4.

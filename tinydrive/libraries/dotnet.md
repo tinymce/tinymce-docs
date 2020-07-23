@@ -10,7 +10,7 @@ keywords: tinydrive .Net Core
 
 This project will help you get started with {{site.cloudfilemanager}} using .NET and allow you to play around with its features.
 
-## Requirements
+### Requirements
 
 Before you start your journey with {{site.cloudfilemanager}}, it will go a lot smoother if you have done these steps:
 1. Login/register to [{{site.accountpage}}]({{site.accountpageurl}}/)
@@ -19,42 +19,42 @@ Before you start your journey with {{site.cloudfilemanager}}, it will go a lot s
 
 Store the keys temporarily somewhere as you will need to copy & paste them later.
 
-## Prerequisites
+### Prerequisites
 
 * .NET Core 2.0+ on any supported platform.
 
-## Procedure
+### Procedure
 
 These are the steps needed to get this project running on your machine:
 
-### 1. Clone this repo to your local machine using
+#### 1. Clone this repo to your local machine using
 
 ```
 $ git clone git@github.com:tinymce/tinydrive-dotnet-starter.git
 ```
 
-### 2. Change the `apiKey` in `tinydrive-dotnet-mvc-starter/appsettings.Development.json`
+#### 2. Change the `apiKey` in `tinydrive-dotnet-mvc-starter/appsettings.Development.json`
 
 You get the api key from the `API Key Manager` {{site.accountpage}} page at http://tiny.cloud.
 
-### 3. Create a `tinydrive-dotnet-mvc-starter/private.key` file containing your generated private RSA key
+#### 3. Create a `tinydrive-dotnet-mvc-starter/private.key` file containing your generated private RSA key
 
 You get the private RSA key from the `JWT Key Manager` {{site.accountpage}} page at http://tiny.cloud.
 
-### 4. Go to the directory and start the dev server
+#### 4. Go to the directory and start the dev server
 
 ```
 $ cd tinydrive-dotnet-starter
 $ dotnet run
 ```
 
-### 5. Open the example project at http://localhost:3000
+#### 5. Open the example project at http://localhost:3000
 
-### Implementing with your system
+## Implementing with your system
 
 If your specific use case has not been covered by any of the sample [starter projects]({{site.baseurl}}/tinydrive/libraries/), some customizations might be required to be applied to implement {{site.cloudfilemanager}} in the specific system. The [JSON Web Token]({{site.baseurl}}/tinydrive/jwt-authentication/) authentication solution would have to be tied to the login authentication of your system. This usually means integrating the JWT authentication to the existing session authentication so that users automatically login to {{site.cloudfilemanager}} and your system.
 
-#### Additional resources
+### Additional resources
 
 Go through the following additional resources to figure out how to configure {{site.cloudfilemanager}} with your system.
 

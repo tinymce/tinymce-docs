@@ -19,7 +19,7 @@ TinyMCE 5.0.3 introduces the **Case Change** plugin that allows changing the cas
 
 Currently, there are three types of formats available:
 
-![**Case Change**]({{site.baseurl}}/images/casechange.png)
+![Case Change]({{site.baseurl}}/images/casechange.png)
 
 * **lowercase** - The **lowercase** option changes all the selected characters to lowercase.
 

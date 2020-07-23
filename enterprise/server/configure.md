@@ -74,13 +74,13 @@ Add `https://server.example.com:9000` and `https://server.example.com` to the `a
 
 Example:
 
-````
+```
 ephox {
   allowed-origins {
     origins = [ "http://myserver", "http://myserver.example.com", "http://myserver:8080", "http://myotherserver", "http://myotherserver:9090", "https://mysecureserver" ]
   }
 }
-````
+```
 
 #### Wildcard support
 
@@ -96,13 +96,13 @@ The `*` wildcard character matches any value. Wildcards are supported in the fol
 
 > **Note:** Options 5 and 6 allow a broad set of origins access to the server-side components and are NOT recommended for production deployments.
 
-````
+```
 ephox {
   allowed-origins {
     origins = [ "http://myserver:*", "*://myotherserver.example.com", "*://*.mydomain.example.com:*"]
   }
 }
-````
+```
 
 #### Regular Expressions support
 
@@ -168,7 +168,7 @@ This optional proxy element provides an alternative to providing proxy settings 
 
 In the following example, both HTTP and HTTPS connections (except to localhost and the example.com domain) are proxied through someproxy.example.com on port 8080 and someproxy.example.com does not require authentication.
 
-````
+```
 ephox {
     proxy {
         http.proxyHost = "someproxy.example.com"
@@ -178,7 +178,7 @@ ephox {
         http.nonProxyHosts = "localhost|*.example.com"
     }
 }
-````
+```
 
 ### `http` (optional)
 
@@ -194,25 +194,25 @@ This is not recommended for production environments.
 
 Example:
 
-````
+```
 ephox {
     http {
         trust-all-cert = true
     }
 }
-````
+```
 
 The request timeout on outbound HTTP and HTTPS connections can be set. Setting this to a larger value will allow larger files through, but they may take a long time. An example might be if you expect to fetch very large files with the image proxy service.
 
 Example:
 
-````
+```
 ephox {
     http {
         request-timeout-seconds = 15
     }
 }
-````
+```
 
 #### Alternative http timeout settings
 
@@ -249,13 +249,13 @@ The [image proxy service]({{ site.baseurl }}/plugins/imagetools/) has some optio
 
 Example:
 
-````
+```
 ephox {
     image-proxy {
         size-limit = 10000000 // 10MB in bytes
     }
 }
-````
+```
 
 ### `link-checking` (optional)
 
@@ -331,7 +331,7 @@ The {{site.productname}} server-side components use the [Logback](http://logback
 
 Save the snippet below as `logback.xml` after replacing `{$LOG_LOCATION}` with the full path to the destination log file (e.g. /var/log/tinymce_server_components.log).
 
-````
+```xml
 <configuration>
 
   <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
@@ -358,12 +358,12 @@ Save the snippet below as `logback.xml` after replacing `{$LOG_LOCATION}` with t
   </root>
 
 </configuration>
-````
+```
 
 ### Step 2. Pass the configuration file to the Java application server
 
 Assuming you've saved your `logback.xml` file in `/etc/opt/tinymce`, follow [step 4]({{ site.baseurl }}/enterprise/server/#step4passtheconfigurationfiletothejavaapplicationserver) and [step 5]({{ site.baseurl }}/enterprise/server/#step5restartthejavaapplicationserver) on the *Install Server-side Components* page to set the following JVM system property on your Java application server:
 
-````
+```
 -Dlogback.configurationFile=/etc/opt/tinymce/logback.xml
-````
+```

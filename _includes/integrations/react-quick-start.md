@@ -8,9 +8,9 @@ For examples of the {{site.productname}} integration, visit [the tinymce-react s
 ### Prerequisites
 
 This procedure requires:
+
 * [Node.js (and npm)](https://nodejs.org/).
 * Access to `tinymce.min.js` on either:
-
     * [{{site.cloudname}}]({{site.baseurl}}/cloud-deployment-guide/editor-and-features/).
     * {{site.productname}} Self-hosted. See [Installing {{ site.productname }}]({{site.baseurl}}/general-configuration-guide/advanced-install/) for details on self-hosting {{site.productname}}.
 
@@ -18,27 +18,31 @@ This procedure requires:
 
 1. On a command line or command prompt, install the [Create React App](https://github.com/facebook/create-react-app) package.
 
-    ```
+    ```sh
     $ npm install -g create-react-app
     ```
+
 2. Create a new React project named `tinymce-react-demo`.
 
-    ```
+    ```sh
     $ create-react-app tinymce-react-demo
     ```
+
 3. Change into the newly created directory.
 
-    ```
+    ```sh
     $ cd tinymce-react-demo
     ```
+
 4. Install the `tinymce-react` package and save it to your `package.json` with `--save`.
 
-    ```
+    ```sh
     $ npm install --save @tinymce/tinymce-react
     ```
+
 5. Using a text editor, open `/path/to/tinymce-react-demo/src/App.js` and replace the contents with:
 
-    ```js
+    ```jsx
     import React from 'react';
     import { Editor } from '@tinymce/tinymce-react';
 
@@ -73,6 +77,7 @@ This procedure requires:
     export default App;
     ```
     This JavaScript file will create the class `App` containing a {{site.productname}} editor configured to replicate the example on the [Basic example page]({{site.baseurl}}/demo/basic-example/).
+
 6. Provide access to {{site.productname}} using {{site.cloudname}} or by self-hosting {{site.productname}}.
 
     * **{{site.cloudname}}**
@@ -81,7 +86,7 @@ This procedure requires:
 
         Such as:
 
-        ```js
+        ```jsx
         <Editor apiKey='your-api-key' init={% raw %}{{{% endraw %} /* your other settings */ {% raw %}}}{% endraw %} />
         ```
 
@@ -107,7 +112,7 @@ This procedure requires:
 7. Test the application using the Node.js development server.
     * To start the development server, navigate to the `tinymce-react-demo` directory and run:
 
-        ```
+        ```sh
         $ npm run start
         ```
 
@@ -120,7 +125,7 @@ To deploy the application to a local HTTP Server:
 
 1. Navigate to the `tinymce-react-demo` directory and run:
 
-    ```
+    ```sh
     $ npm run build
     ```
 
@@ -134,6 +139,5 @@ The application has now been deployed on the web server.
 
 * For examples of the {{site.productname}} integration, see: [the tinymce-react storybook](https://tinymce.github.io/tinymce-react/).
 * For information on customizing:
-
     * {{site.productname}}, see: [Basic setup]({{site.baseurl}}/general-configuration-guide/basic-setup/).
     * The React application, see: [Create React App](https://create-react-app.dev/docs/getting-started) or [the React documentation](https://reactjs.org/docs/getting-started.html).

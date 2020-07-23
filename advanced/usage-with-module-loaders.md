@@ -15,11 +15,11 @@ First decide how to load your modules.
 
 If you are using ES2015 modules, a simple example could look something like this.
 
-```javascript
+```js
 // Import {{site.productname}}
 import tinymce from 'tinymce/tinymce';
 
-// Default icons are required for TinyMCE 5.3 or above
+// Default icons are required for {{site.productname}} 5.3 or above
 import 'tinymce/icons/default';
 
 // A theme is also required
@@ -40,11 +40,11 @@ tinymce.init({
 
 The example is nearly the same if you are using CommonJS modules. However, a different `require` function is used to import the dependencies.
 
-```javascript
+```js
 // Import {{site.productname}}
 var tinymce = require('tinymce/tinymce');
 
-// Default icons are required for TinyMCE 5.3 or above
+// Default icons are required for {{site.productname}} 5.3 or above
 require('tinymce/icons/default');
 
 // A theme is also required
@@ -69,12 +69,13 @@ The quickest way to get started is to copy the skin that comes packaged with {{s
 
 **MacOS and Linux**
 
-```
+```sh
 cp -r node_modules/tinymce/skins skins
 ```
+
 **Windows**
 
-```
+```sh
 xcopy /I /E node_modules/tinymce/skins skins
 ```
 
@@ -82,7 +83,7 @@ xcopy /I /E node_modules/tinymce/skins skins
 
 Another option when using Webpack is to use the [file loader](https://github.com/webpack/file-loader) together with the [require.context](https://github.com/webpack/docs/wiki/context) function to copy the skins directory by adding these lines before the call to the {{site.productname}} `init` function:
 
-```javascript
+```js
 require.context(
   'file-loader?name=[path][name].[ext]&context=node_modules/tinymce!tinymce/skins',
   true,

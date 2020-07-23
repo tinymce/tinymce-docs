@@ -69,8 +69,8 @@ A basic menu item triggers its `onAction` function when clicked.
 | icon | string | optional | {{site.predefinedIconsOnly}} |
 | value | string | optional | A value to associate with the menu item. |
 | disabled | boolean | optional | default: false - Represents the menu item's state. When true, the menu item is unclickable. Toggled by the menu item's API. |
-| onSetup | (api) => (api) => void | optional | default: () => () => {} - Function invoked when the menu item is rendered, each time its menu is opened. |
-| onAction | (api) => void | required | Function invoked when the menu item is clicked. |
+| onSetup | `(api) => (api) => void` | optional | default: `() => () => {}` - Function invoked when the menu item is rendered, each time its menu is opened. |
+| onAction | `(api) => void` | required | Function invoked when the menu item is clicked. |
 | shortcut | string | optional | Sets a keyboard shortcut for activating the menu item, such as: `shortcut: 'Ctrl+Alt+Delete'`. For information on available shortcut modifiers, see: [Shortcut modifier key mappings](#shortcutmodifierkeymappings). |
 
 ###{% include misc/shortcut-os-mappings.md %}
@@ -79,8 +79,8 @@ A basic menu item triggers its `onAction` function when clicked.
 
 | Name | Value | Description |
 | ---- | ----- | ----------- |
-| isDisabled | () => boolean | Checks if the menu item is disabled. |
-| setDisabled | (state: boolean) => void | Sets the menu item's disabled state. |
+| isDisabled | `() => boolean` | Checks if the menu item is disabled. |
+| setDisabled | `(state: boolean) => void` | Sets the menu item's disabled state. |
 
 #### Example
 
@@ -113,8 +113,8 @@ A nested menu item is a menu item with a submenu. Registering a submenu this way
 | text | string | optional | Text to display if no icon is found. |
 | icon | string | optional | {{site.predefinedIconsOnly}} |
 | value | string | optional | A value to associate with the menu item. |
-| onSetup | (api) => (api) => void | optional | default: () => () => {} - Function invoked when the menu item is rendered, each time its menu is opened. |
-| getSubmenuItems | () => string or MenuItem[] | required | Function invoked when the menu item is clicked to open its submenu. Must return either a space separated string of registered menu names or an array of basic, toggle or nested menu items specifications. |
+| onSetup | `(api) => (api) => void` | optional | default: `() => () => {}` - Function invoked when the menu item is rendered, each time its menu is opened. |
+| getSubmenuItems | `() => string` or `MenuItem[]` | required | Function invoked when the menu item is clicked to open its submenu. Must return either a space separated string of registered menu names or an array of basic, toggle or nested menu items specifications. |
 | shortcut | string | optional | Sets a keyboard shortcut for activating the menu item, such as: `shortcut: 'Ctrl+Alt+Delete'`. For information on available shortcut modifiers, see: [Shortcut modifier key mappings](#shortcutmodifierkeymappings2). |
 
 <a class="anchor" id="shortcutmodifierkeymappings2"></a>
@@ -124,8 +124,8 @@ A nested menu item is a menu item with a submenu. Registering a submenu this way
 
 | Name | Value | Description |
 | ---- | ----- | ----------- |
-| isDisabled | () => boolean | Checks if the menu item is disabled. |
-| setDisabled | (state: boolean) => void | Sets the menu item's disabled state. |
+| isDisabled | `() => boolean` | Checks if the menu item is disabled. |
+| setDisabled | `(state: boolean) => void` | Sets the menu item's disabled state. |
 
 #### Example
 
@@ -168,8 +168,8 @@ A toggle menu item triggers its `onAction` when clicked. It also has a concept o
 | value | string | optional | A value to associate with the menu item. |
 | active | boolean | optional | Initial state value for the toggle menu item |
 | disabled | boolean | optional | default: false - Represents the menu item's state. When true, the menu item is unclickable. Toggled by the menu item's API. |
-| onSetup | (api) => (api) => void | optional | default: () => () => {} - Function invoked when the menu item is rendered, each time its menu is opened. |
-| onAction | (api) => void | required | Function invoked when the menu item is clicked. |
+| onSetup | `(api) => (api) => void` | optional | default: `() => () => {}` - Function invoked when the menu item is rendered, each time its menu is opened. |
+| onAction | `(api) => void` | required | Function invoked when the menu item is clicked. |
 
 > **Note**: The `icon` option for Toggle menu items was added in {{site.productname}} 5.3.
 
@@ -177,10 +177,10 @@ A toggle menu item triggers its `onAction` when clicked. It also has a concept o
 
 | Name | Value | Description |
 | ---- | ----- | ----------- |
-| isActive | () => boolean | Checks if the menu item is active. |
-| setActive | (state: boolean) => void | Sets the menu item's active state. |
-| isDisabled | () => boolean | Checks if the menu item is disabled. |
-| setDisabled | (state: boolean) => void | Sets the menu item's disabled state. |
+| isActive | `() => boolean` | Checks if the menu item is active. |
+| setActive | `(state: boolean) => void` | Sets the menu item's active state. |
+| isDisabled | `() => boolean` | Checks if the menu item is disabled. |
+| setDisabled | `(state: boolean) => void` | Sets the menu item's disabled state. |
 
 #### Example
 

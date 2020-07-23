@@ -26,10 +26,10 @@ The two arguments this method take are:
 | Name | Value | Requirement | Description |
 | ---- | ----- | ----------- | ----------- |
 | ch | string | Required | The character to trigger the autocompleter. |
-| fetch |  (pattern: string, maxResults: number, fetchOptions: Record<string, any>) => Promise<AutocompleterItem[]> | Required | A function that is passed the current matched text pattern, the maximum number of expected results and any additional fetch options. The function should return a promise containing matching results. |
-| onAction | (api, rng: Range, value: string) => void | Required | A function invoked when a fetched item is selected. |
+| fetch | `(pattern: string, maxResults: number, fetchOptions: Record<string, any>) => Promise<AutocompleterItem[]>` | Required | A function that is passed the current matched text pattern, the maximum number of expected results and any additional fetch options. The function should return a promise containing matching results. |
+| onAction | `(api, rng: Range, value: string) => void` | Required | A function invoked when a fetched item is selected. |
 | columns | number or 'auto' | Optional | default: auto - The number of columns to show. If set to `1` column, then icons and text are displayed, otherwise only icons are displayed. |
-| matches | (rng: Range, text: string, pattern: string) => boolean | Optional | default: isStartOfWord - A predicate function that takes a range, the current text node content and the matched text content and returns a boolean indicating if the autocompleter should trigger. |
+| matches | `(rng: Range, text: string, pattern: string) => boolean` | Optional | default: `isStartOfWord` - A predicate function that takes a range, the current text node content and the matched text content and returns a boolean indicating if the autocompleter should trigger. |
 | maxResults | number | Optional | default: 10 - The maximum number of results that should be fetched. |
 | minChars | number | Optional | default: 1 - The minimum number of characters that must be typed before the autocompleter will trigger (excluding the trigger char). |
 
@@ -46,8 +46,8 @@ The `fetch` results should be a list of objects with the following details:
 
 | Name | Value | Description |
 | ---- | ----- | ----------- |
-| hide | () => void | Hides the autocompleter menu. |
-| reload | (fetchOptions: Record<string, any>) => void | Hides the autocompleter menu and fetches new menu items. The  `fetchOptions` will be passed to the autocompleter `fetch` callback. |
+| hide | `() => void` | Hides the autocompleter menu. |
+| reload | `(fetchOptions: Record<string, any>) => void` | Hides the autocompleter menu and fetches new menu items. The  `fetchOptions` will be passed to the autocompleter `fetch` callback. |
 
 ## Example
 

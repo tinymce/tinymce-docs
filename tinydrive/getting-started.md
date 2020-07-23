@@ -25,7 +25,7 @@ To get started quickly and understand how {{site.cloudfilemanager}} works, we hi
 
 The starter projects have their own procedures to get {{site.cloudfilemanager}} up and running. Choose a starter project of a familiar language and follow the steps to setup {{site.cloudfilemanager}}. The links will take you to the Github page for the starter project of your choice, where the source code is available for you to view.
 
-#### Choose a familar language
+#### Choose a familiar language
 
 <table style="text-align: center">
     <tbody>

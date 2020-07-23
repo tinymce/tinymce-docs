@@ -84,7 +84,7 @@ The following example enables the lists (`lists`), Advanced Lists (`advlist`), L
 ```js
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  plugins : 'advlist link image lists'
+  plugins: 'advlist link image lists'
 });
 ```
 
@@ -203,7 +203,7 @@ The following example is a basic {{site.productname}} configuration.
     width: 600,
     height: 300,
     plugins: [
-      'advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker',
+      'advlist autolink link image lists charmap print preview hr anchor pagebreak',
       'searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking',
       'table emoticons template paste help'
     ],
@@ -211,7 +211,7 @@ The following example is a basic {{site.productname}} configuration.
       'bullist numlist outdent indent | link image | print preview media fullpage | ' +
       'forecolor backcolor emoticons | help',
     menu: {
-      favs: {title: 'My Favorites', items: 'code visualaid | searchreplace | spellchecker | emoticons'}
+      favs: {title: 'My Favorites', items: 'code visualaid | searchreplace | emoticons'}
     },
     menubar: 'favs file edit view insert format tools table help',
     content_css: 'css/content.css'
@@ -246,7 +246,7 @@ Selects the plugins to be included on load.
 
 ```js
 plugins: [
-  'advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker',
+  'advlist autolink link image lists charmap print preview hr anchor pagebreak',
   'searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking',
   'table emoticons template paste help'
 ],
@@ -262,7 +262,7 @@ Adds an additional menu named "My Favorites" with `menu`, then adds it to the me
 
 ```js
 menu: {
-  favs: {title: 'My Favorites', items: 'code visualaid | searchreplace | spellchecker | emoticons'}
+  favs: {title: 'My Favorites', items: 'code visualaid | searchreplace | emoticons'}
 },
 menubar: 'favs file edit view insert format tools table help',
 ```

@@ -24,9 +24,13 @@ JDK 8
 
 ### Java (J2EE) Application Servers
 
-* Tomcat 7+
-* Jetty 8+
-* WebSphere Application Server (WAS) 8+
+* Eclipse Jetty 9.4 or later
+* WebSphere Application Server (WAS) 8 or later
+* Apache Tomcat:
+    - 9 or later
+    - 8.5.12+
+    - 8.0.42+
+    - 7.0.76+
 
 ### Operating Systems
 
@@ -44,6 +48,7 @@ JDK 8
 ### PowerPaste (Word Copy and Paste)
 
 {{site.companynameformal}} tests and supports using the PowerPaste plugin for copying content from versions of Microsoft Word and Microsoft Excel:
+
 * Covered by Microsoft Mainstream Support based on the [Microsoft Fixed Lifecycle Policy](https://support.microsoft.com/en-us/help/14085/fixed-lifecycle-policy).
 * Provided by Microsoft Office 365.
 

@@ -1,12 +1,14 @@
 ---
 layout: default
-title: Image &amp; file upload options
-title_nav: Image &amp; file upload options
+title: Image &amp; file options
+title_nav: Image &amp; file options
 description_short:
-description: These settings affect TinyMCE's image and file upload capabilities.
+description: These settings affect TinyMCE's image and file handling capabilities.
 ---
 
 {% include configuration/automatic-uploads.md %}
+
+{% include configuration/block-unsupported-drop.md %}
 
 {% include configuration/file-picker-callback.md %}
 

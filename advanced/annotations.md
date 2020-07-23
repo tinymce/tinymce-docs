@@ -20,19 +20,19 @@ Perform the following procedure to set up the {{site.productname}} Annotations f
 To configure the annotate button on your toolbar:
 
 
- ```js
-  setup: function(ed) {
-    ed.ui.registry.addButton('annotate-alpha', {
-      text: 'Annotate',
-      onAction: function() {
-        var comment = prompt('Comment with?');
-        ed.annotator.annotate('alpha', {
-          comment
-        });
-        ed.focus();
-      }
-    })
-  }
+```js
+setup: function(ed) {
+  ed.ui.registry.addButton('annotate-alpha', {
+    text: 'Annotate',
+    onAction: function() {
+      var comment = prompt('Comment with?');
+      ed.annotator.annotate('alpha', {
+        comment
+      });
+      ed.focus();
+    }
+  })
+}
 ```
 
 See [Configure {{site.productname}}]({{ site.baseurl }}/configure/) for more information on how to configure {{site.productname}} core.
@@ -42,19 +42,19 @@ See [Configure {{site.productname}}]({{ site.baseurl }}/configure/) for more inf
 The annotator API supports multiple annotation functions. Each annotation function must be registered with the annotator (`editor.annotator`).
 
 ```js
-  ed.on('init', function() {
-    editor.annotator.register('alpha', {
-      persistent: true,
-      decorate: function (uid, data) {
-        return {
-          attributes: {
-            'data-mce-comment': data.comment ? data.comment : '',
-            'data-mce-author': data.author ? data.author : 'anonymous'
-          }
-        };
-      }
-    });
+ed.on('init', function() {
+  editor.annotator.register('alpha', {
+    persistent: true,
+    decorate: function (uid, data) {
+      return {
+        attributes: {
+          'data-mce-comment': data.comment ? data.comment : '',
+          'data-mce-author': data.author ? data.author : 'anonymous'
+        }
+      };
+    }
   });
+});
 ```
 
 This will register an annotation with the name `alpha`. In our example, when an `alpha` is being added to the document, a span marker will be created with class `alpha` and a data attribute for the author.
@@ -67,7 +67,7 @@ The uid passed through to `decorate` is either the uid field in the data object 
 For adding the annotate tool to the toolbar that is registered with `alpha` set the value of the toolbar to:
 
 ```js
-  toolbar: "annotate-alpha"
+toolbar: "annotate-alpha"
 ```
 
 ### 4. Applying Annotations
@@ -78,9 +78,9 @@ After registering an annotation, use it by applying it to the current selection.
 The API to apply an annotation is `annotate`.  Annotations can be programmatically applied to selected text using:
 
 ```js
-  editor.annotator.annotate('alpha', {
-    author: 'me'
-  });
+editor.annotator.annotate('alpha', {
+  author: 'me'
+});
 ```
 
 The data passed through `{ author: 'me' }` is passed to the `decorate` function specified during registration for the particular annotation (here: alpha). This data can be any object. In this way, users can tag markers with any attributes/classes they want on a per-annotation basis. Here, we will end up with a span with a `data-author` attribute set to `me`. If the user wants, they can specify a `uid` as part of the data here. This is used instead of a randomly generated `uid` when passing through as the first argument to `decorate`.

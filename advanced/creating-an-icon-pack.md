@@ -28,6 +28,7 @@ An icon pack only requires the custom icons to be included; the default {{site.p
 ## Creating a TinyMCE icon pack
 
 To create a custom icon pack:
+
 * [Download and setup the icon pack template](#downloadandsetuptheiconpacktemplate)
 * [Add the SVG files](#addthesvgfiles)
 * [Build the icon pack](#buildtheiconpack)
@@ -123,6 +124,7 @@ An icon pack can be served either:
 ### Deploy the icon pack with TinyMCE
 {% assign customIconPack = true %}
 {% include configuration/icons.md %}
+
 ### Deploy the icon pack and TinyMCE separately
 {% include configuration/icons_url.md %}
 {% assign customIconPack = false %}

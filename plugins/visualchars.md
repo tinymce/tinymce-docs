@@ -22,7 +22,7 @@ tinymce.init({
 });
 ```
 
-### Options
+## Options
 
 This setting affects the execution of the `visualchars` plugin. Characters can be configured to be visible by default using this option.
 

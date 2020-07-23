@@ -205,7 +205,7 @@ This issue affects the following options:
 - `anchor_top`
 - `anchor_bottom`
 
-When this options are set to `false`, the relevant anchors should not appear as autocomplete options in the link dialog. These anchors will appear in the autocomplete list when these options are set to `false` in {{site.productname}} 5.4.0 and {{site.productname}} 5.4.1.
+When these options are set to `false`, the relevant anchors should not appear as autocomplete options in the link dialog. These anchors will appear in the autocomplete list when these options are set to `false` in {{site.productname}} 5.4.0 and {{site.productname}} 5.4.1.
 
 For information on:
 

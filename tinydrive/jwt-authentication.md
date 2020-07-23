@@ -107,7 +107,9 @@ try {
 }
 ?>
 ```
+
 ### TinyMCE example with jwt.php Endpoint
+
 ```
 tinymce.init({
   selector: 'textarea',
@@ -164,7 +166,9 @@ app.post('/jwt', function (req, res) {
 
 app.listen(3000);
 ```
+
 ### TinyMCE example with /jwt endpoint
+
 ```
 tinymce.init({
   selector: 'textarea',

@@ -13,6 +13,11 @@ The [Advanced Code Editor]({{ site.baseurl }}/plugins/advcode/) plugin (`advcode
 * Bracket matching
 * Code folding
 * Multiple selections/carets
+* Search and Replace
+
+## The difference between the Code and Advanced Code Editor plugins
+
+{% include codepen.html id="advcode" %}
 
 {% assign pluginname = 'Advanced Code Editor' %}
 {% assign pluginminimumplan = 'tiertwo' %}

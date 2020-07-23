@@ -22,7 +22,7 @@ tinymce.init({
 });
 ```
 
-### Configuration Options
+## Configuration Options
 
 These settings affect the execution of the `template` plugin. Predefined templates for items such as created dates and modified dates can be set here.
 
@@ -270,7 +270,7 @@ If the word `world` is selected in the editor and _My Template_ is applied, `wor
 <p>Hello, <span class="selcontent">world</span></p>
 ```
 
-### Template Plugin Examples
+## Template Plugin Examples
 
 **Example**
 
@@ -315,7 +315,7 @@ This is the contents your backend page should return if you specify a URL in the
 ]
 ```
 
-### Making Templates
+## Making Templates
 
 A template is a file with a `div` containing the template data. All `html` outside the `div` will simply be presented to the user in the preview frame.
 
@@ -339,7 +339,7 @@ Each template needs to be inside of a div with the `mceTmpl` class, like this ex
 </div>
 ```
 
-### Making Snippets
+## Making Snippets
 
 Snippets are `html` code chunks that can be inserted. Replace variables will only be executed upon insert, without being wrapped in a template `div` element. So if you define `somevar1` in `template_replace_values` array it will be replaced on preview and insert.
 

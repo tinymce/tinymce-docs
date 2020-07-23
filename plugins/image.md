@@ -33,6 +33,7 @@ tinymce.init({
 These configuration options affect the execution of the `image` plugin. Many of the settings here will disable dialog box features used to insert or edit images. A predefined list of images can also be provided to enable quick insertion of those images.
 
 If you wish to align the image, you can also use the text align buttons while images are selected.
+
 {% assign includedSection = 'imagePlugin' %}
 #{% include configuration/a11y_advanced_options.md %}
 {% assign includedSection = false %}

@@ -86,7 +86,7 @@ tinydrive.pick({
 
 Here is a complete api reference as TypeScript types for developers used to TypeScript syntax.
 
-```tsx
+```ts
 interface PluginApi {
   pick: (settings: PluginPickerApiSettings) => Promise<PickerResult>;
   browse: (settings: PluginPickerApiSettings) => Promise<void>;

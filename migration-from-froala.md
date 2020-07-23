@@ -28,23 +28,24 @@ To migrate from a basic Froala 3 configuration to a basic {{site.productname}} {
 
 1. Remove the Froala links and source script, located in the `<head>` of the target HTML page.
 For example:
-
     ```html
     <link href='/path/to/froala-editor/base/directory/css/froala_editor.pkgd.min.css' rel='stylesheet' type='text/css' />
     <script type='text/javascript' src='/path/to/froala-editor/base/directory/js/froala_editor.pkgd.min.js'></script>
     <link href='/path/to/froala-editor/base/directory/css/froala_style.min.css' rel='stylesheet' type='text/css' />
     ```
+
 2. Insert a {{site.productname}} source script into the `<head>` of the page.
   * For {{site.cloudname}} deployments:
-```html
-<script src='https://cdn.tiny.cloud/1/your-api-key/tinymce/5/tinymce.min.js' referrerpolicy='origin'></script>
-```
-Replace `your-api-key` with your [{{site.cloudname}} API key]({{site.accountpageurl}}).
+    ```html
+    <script src='https://cdn.tiny.cloud/1/your-api-key/tinymce/5/tinymce.min.js' referrerpolicy='origin'></script>
+    ```
+    Replace `your-api-key` with your [{{site.cloudname}} API key]({{site.accountpageurl}}).
+
   * For Self-hosted {{site.productname}} deployments:
-```html
-<script src='/path/to/tinymce/base/directory/tinymce.min.js'></script>
-```
-Replace `/path/to/tinymce/base/directory` with the relative path of the `tinymce/` directory containing `tinymce.min.js`.
+    ```html
+    <script src='/path/to/tinymce/base/directory/tinymce.min.js'></script>
+    ```
+    Replace `/path/to/tinymce/base/directory` with the relative path of the `tinymce/` directory containing `tinymce.min.js`.
 
 For information on {{site.productname}} deployment types, see: [Installing {{ site.productname }}]({{site.baseurl}}/general-configuration-guide/advanced-install/).
 
@@ -57,17 +58,17 @@ To insert an editor in the body of the page for a `<textarea>` element such as:
 ```
 
 1. Remove the Froala editor variable assignment script.
-```html
-<script>
-  var editor = new FroalaEditor('textarea#myeditor')
-</script>
-```
+    ```html
+    <script>
+      var editor = new FroalaEditor('textarea#myeditor')
+    </script>
+    ```
 2. Add a `tinymce.init` function.
-```html
-<script>
-  tinymce.init({ selector: '#myeditor' });
-</script>
-```
+    ```html
+    <script>
+      tinymce.init({ selector: '#myeditor' });
+    </script>
+    ```
 
 For information on configuring the `selector` setting, see: [Basic Setup]({{site.baseurl}}/general-configuration-guide/basic-setup/).
 

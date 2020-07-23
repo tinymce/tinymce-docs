@@ -11,6 +11,7 @@ keywords: sort tables advanced advtable premium
 {{site.premiumplugin}}
 
 The `advtable` plugin is a premium plugin that extends the core [`table` plugin]({{site.baseurl}}/plugins/table/) by adding sort options for rows and columns. Tables can be sorted by row or column values using:
+
 * The **Sort** options in the **Table** menu.
 * The **Sort** options in the table contextual menu.
 * The **Sort** options in the **Table** toolbar menu button.
@@ -22,6 +23,7 @@ The `advtable` plugin is a premium plugin that extends the core [`table` plugin]
 | ![Advanced Tables enhanced contextual menu for sorting rows based on the selected Column (Sort > Sort table by column ascending/descending).]({{ site.baseurl }}/images/advtable_context_menu_sort.png) | ![Advanced Tables sort dialog (Sort > Advanced Sort{{site.ellps}}).]({{ site.baseurl }}/images/advtable_dialog_sort.png) |
 
 The plugin is capable of sorting:
+
 * Numerical data
 * Text data
 

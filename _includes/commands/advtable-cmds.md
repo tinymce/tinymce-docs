@@ -19,7 +19,7 @@
 
 ```js
 tinymce.activeEditor.execCommand('mceAdvancedTableSort')
-tinymce.activeEditor.execCommand('mceSortTableAdvanced', { sortby: 'row' ; roworcol: '2' ; sort: 'table' ; order: 'ascending' ; })
+tinymce.activeEditor.execCommand('mceSortTableAdvanced', false, { sortby: 'row', roworcol: '2', sort: 'table', order: 'ascending' })
 tinymce.activeEditor.execCommand('mceSortTableByColumnAsc')
 tinymce.activeEditor.execCommand('mceSortTableByColumnDesc')
 tinymce.activeEditor.execCommand('mceSortTableByRowAsc')

@@ -2,7 +2,7 @@
 
 To clarify, in code `onSetup` may look like this:
 
-```
+```js
 onSetup: (api) => {
   // Do something here on component render, like set component properties or bind an event listener
 

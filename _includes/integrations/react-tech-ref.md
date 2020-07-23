@@ -36,7 +36,7 @@ $ npm install --save @tinymce/tinymce-react
 
 The editor accepts the following properties:
 
-```xml
+```jsx
 <Editor
   apiKey='your-api-key'
   cloudChannel='{{site.productmajorversion}}-stable'
@@ -67,7 +67,7 @@ To register for a {{site.cloudname}} API key, visit the [sign-up page]({{site.ac
 
 ##### Example: `apiKey`
 
-```xml
+```jsx
 <Editor
   apiKey='your-api-key'
 />
@@ -87,7 +87,7 @@ Changes the {{site.productname}} build used for the editor to one of the followi
 
 Such as:
 
-```js
+```jsx
 <Editor
   apiKey='your-api-key'
   cloudChannel='{{site.productmajorversion}}-dev'
@@ -105,7 +105,7 @@ The `disabled` property can dynamically switch the editor between a "disabled" (
 
 ##### Example: `disabled`
 
-```xml
+```jsx
 <Editor
   disabled={true}
 />
@@ -120,7 +120,7 @@ An id for the editor. Used for retrieving the editor instance using the `tinymce
 
 ##### Example: `id`
 
-```xml
+```jsx
 <Editor
   id='uuid'
 />
@@ -137,7 +137,7 @@ For information on the {{site.productname}} selector (`tinymce.init`), see: [Bas
 
 ##### Example: `init`
 
-```xml
+```jsx
 <Editor
   init={% raw %}{{{% endraw %}
     selector: 'textarea#myTextArea',
@@ -158,7 +158,7 @@ Initial content of the editor when the editor is initialized.
 
 ##### Example: `initialValue`
 
-```xml
+```jsx
 <Editor
   initialValue='Once upon a time...'
 />
@@ -175,7 +175,7 @@ For information on inline mode, see: [User interface options - `inline`]({{site.
 
 ##### Example: `inline`
 
-```xml
+```jsx
 <Editor
   inline={true}
 />
@@ -200,7 +200,7 @@ Used to specify the format of the content emitted via the [`onEditorChange`](#on
 
 ##### Example: `outputFormat`
 
-```xml
+```jsx
 <Editor
   outputFormat='text'
 />
@@ -215,7 +215,7 @@ For information on adding plugins to {{site.productname}}, see: [Add plugins to 
 
 ##### Example: `plugins`
 
-```xml
+```jsx
 <Editor
   plugins='lists code'
 />
@@ -230,7 +230,7 @@ Only valid when [`<Editor inline={true} />`](#inline). Used to define the HTML e
 
 ##### Example: `tagName`
 
-```xml
+```jsx
 <Editor
   inline={true}
   tagName='my-custom-tag'
@@ -246,7 +246,7 @@ Sets the `name` attribute for the `textarea` element used for the editor in form
 
 ##### Example: `textareaName`
 
-```xml
+```jsx
 <Editor
   textareaName='myTextArea'
 />
@@ -263,7 +263,7 @@ For information setting the toolbar for {{site.productname}}, see: [User interfa
 
 ##### Example: `toolbar`
 
-```xml
+```jsx
 <Editor
   plugins='code'
   toolbar='bold italic underline code'
@@ -277,7 +277,7 @@ Use the `tinymceScriptSrc` prop to specify an external version of TinyMCE to laz
 
 ##### Example: `tinymceScriptSrc`
 
-```xml
+```jsx
 <Editor
   tinymceScriptSrc='/path/to/tinymce.min.js'
 />
@@ -294,7 +294,7 @@ For more information, see: [Using the {{site.productname}} React component as a 
 
 To use the editor as a [controlled component](https://reactjs.org/docs/forms.html#controlled-components), use the `onEditorChange` event instead of the `onChange` event, such as:
 
-```js
+```jsx
 class MyComponent extends React.Component {
   constructor(props) {
     super(props);
@@ -324,7 +324,7 @@ For information on controlled components in React, see: [React Docs - Controlled
 
 Functions can be bound to editor events, such as:
 
-```xml
+```jsx
 <Editor onSelectionChange={this.handlerFunction} />
 ```
 

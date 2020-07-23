@@ -40,7 +40,7 @@ For information on the `toolbar_mode` option, see: [User interface options - `to
 
 The new `toolbar_groups` setting and `addGroupToolbarButton` registry API can be used to create a toolbar button that displays a collection of other toolbar buttons in a pop-up.
 
-![**Group toolbar button example**]({{site.baseurl}}/images/toolbar-group-example.png)
+![Group toolbar button example]({{site.baseurl}}/images/toolbar-group-example.png)
 
 For information on using the `toolbar_groups` setting, see: [User interface options - `toolbar_groups`]({{ site.baseurl }}/configure/editor-appearance/#toolbar_groups).
 For information on using the `addGroupToolbarButton` API, see: [Types of toolbar buttons - Group button]({{ site.baseurl }}/ui-components/typesoftoolbarbuttons/#grouptoolbarbutton).
@@ -60,6 +60,7 @@ For information on using the `placeholder` setting, see: [User interface options
 ### New option to assist with marking images as decorative for accessibility purposes
 
 The `a11y_advanced_options` setting adds an option to set an image as decorative in the following dialogs:
+
 - The _Insert/Edit Image_ dialog.
 - The _Accessibility Checker error_ dialog for images without alternative text or the `role="presentation"` attribute.
 

@@ -27,7 +27,7 @@
 
 To install the `tinymce-vue` package and save it to your `package.json`.
 
-```
+```sh
 $ npm install --save @tinymce/tinymce-vue
 ```
 
@@ -72,7 +72,7 @@ $ npm install --save @tinymce/tinymce-vue
 
 The editor accepts the following properties:
 
-```xml
+```html
 <editor
   api-key="your-api-key"
   cloud-channel="{{site.productmajorversion}}"
@@ -102,7 +102,7 @@ To register for a {{site.cloudname}} API key, visit the [sign-up page]({{site.ac
 
 ##### Example: `api-key`
 
-```xml
+```html
 <editor
   api-key="your-api-key"
 />
@@ -122,7 +122,7 @@ Changes the {{site.productname}} build used for the editor to one of the followi
 
 Such as:
 
-```js
+```html
 <editor
   api-key="your-api-key"
   cloud-channel="{{site.productmajorversion}}-dev"
@@ -140,7 +140,7 @@ The `disabled` property can dynamically switch the editor between a "disabled" (
 
 ##### Example: `disabled`
 
-```xml
+```html
 <editor
   :disabled=true
 />
@@ -155,7 +155,7 @@ An id for the editor. Used for retrieving the editor instance using the `tinymce
 
 ##### Example: `id`
 
-```xml
+```html
 <editor
   id="uuid"
 />
@@ -172,7 +172,7 @@ For information on the {{site.productname}} selector (`tinymce.init`), see: [Bas
 
 ##### Example: `init`
 
-```xml
+```html
 <editor
   :init="{% raw %}{{% endraw %}
     plugins: [
@@ -192,7 +192,7 @@ Initial content of the editor when the editor is initialized.
 
 ##### Example: `initial-value`
 
-```xml
+```html
 <editor
   initial-value="Once upon a time..."
 />
@@ -209,7 +209,7 @@ For information on inline mode, see: [User interface options - `inline`]({{site.
 
 ##### Example: `inline`
 
-```xml
+```html
 <editor
   :inline=true
 />
@@ -227,7 +227,7 @@ For a list of available {{site.productname}} events, see: [Editor events]({{site
 
 ##### Example: `model-events`
 
-```xml
+```html
 <editor
   model-events="change keydown blur focus paste"
 />
@@ -245,7 +245,7 @@ Used to specify the format of the content emitted via the `input` event. This af
 
 ##### Example: `output-format`
 
-```xml
+```html
 <editor
   output-format="text"
 />
@@ -260,7 +260,7 @@ For information on adding plugins to {{site.productname}}, see: [Add plugins to 
 
 ##### Example: `plugins`
 
-```xml
+```html
 <editor
   plugins="lists code"
 />
@@ -275,7 +275,7 @@ Only valid when [`<editor :inline=true />`](#inline). Used to define the HTML el
 
 ##### Example: `tag-name`
 
-```xml
+```html
 <editor
   :inline=true
   tag-name="my-custom-tag"
@@ -293,7 +293,7 @@ For information setting the toolbar for {{site.productname}}, see: [User interfa
 
 ##### Example: `toolbar`
 
-```xml
+```html
 <editor
   plugins="code"
   toolbar="bold italic underline code"
@@ -307,7 +307,7 @@ Use the `tinymce-script-src` prop to specify an external version of TinyMCE to l
 
 ##### Example: `tinymce-script-src`
 
-```xml
+```html
 <editor
   tinymce-script-src="/path/to/tinymce.min.js"
 />

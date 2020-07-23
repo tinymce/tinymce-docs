@@ -22,7 +22,7 @@ tinymce.init({
 });
 ```
 
-### Options
+## Options
 
 These settings affect the execution of the `insertdatetime` plugin. Formats for both dates and times can be set in these configuration options.
 
@@ -37,7 +37,7 @@ tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "insertdatetime",
   menubar: "insert",
-  toolbar: "insertdatetime"
+  toolbar: "insertdatetime",
   insertdatetime_dateformat: "%Y-%m-%d"
 });
 ```
@@ -53,7 +53,7 @@ tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "insertdatetime",
   menubar: "insert",
-  toolbar: "insertdatetime"
+  toolbar: "insertdatetime",
   insertdatetime_formats: ["%H:%M:%S", "%Y-%m-%d", "%I:%M:%S %p", "%D"]
 });
 ```
@@ -69,7 +69,7 @@ tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "insertdatetime",
   menubar: "insert",
-  toolbar: "insertdatetime"
+  toolbar: "insertdatetime",
   insertdatetime_timeformat: "%H:%M:%S"
 });
 ```
@@ -89,7 +89,7 @@ tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "insertdatetime",
   menubar: "insert",
-  toolbar: "insertdatetime"
+  toolbar: "insertdatetime",
   insertdatetime_element: true
 });
 ```

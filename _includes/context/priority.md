@@ -1,6 +1,6 @@
 <a class="anchor" id="contexttoolbarpriority"></a><a class="anchor" id="contextformpriority"></a>
 
-### Troubleshooting context toolbar and context form conflicts
+## Troubleshooting context toolbar and context form conflicts
 
 There are situations where custom context toolbars or custom context forms may conflict with:
 
@@ -15,7 +15,7 @@ How these conflicts are resolved depends on the {{site.productname}} version.
 - For {{site.productname}} 5.0, 5.1, or 5.2; see: [Determining the display priority of context toolbars and context forms (Legacy behavior)](#determiningthedisplaypriorityofcontexttoolbarsandcontextformslegacybehavior).
 {% endif %}
 
-#### Determining the display priority of context toolbars and context forms
+### Determining the display priority of context toolbars and context forms
 
 There are three settings that determine the priority of context toolbars and context forms: `scope`, `predicate`, and `position`.
 
@@ -38,7 +38,7 @@ Generally:
 
 - If no matching context toolbars or context forms are found for the selection or cursor position, then editor will recursively search for matches on the parent node of the current node, until it reaches the root node of the editor content.
 
-##### Description of how context toolbars and context forms are prioritized
+#### Description of how context toolbars and context forms are prioritized
 
 The following description can be used for troubleshooting the behavior of context toolbars and context forms.
 
@@ -92,7 +92,7 @@ The editor will determine which context toolbars or context form will be shown u
     - The root node of the editor is reached.
 
 {% if site.productmajorversion < 6 %}
-#### Determining the display priority of context toolbars and context forms (Legacy behavior)
+### Determining the display priority of context toolbars and context forms (Legacy behavior)
 
 There are two settings that determine determine the priority: `predicate` and `scope`. The priority system mirrors the old [inlite]({{site.url}}/docs-4x/themes/inlite/#quicklink) theme from TinyMCE 4. The `predicate` is a function that takes in the current context position and returns a boolean. The `scope` is either `node` or `editor`. The whole priority process works as follows:
 

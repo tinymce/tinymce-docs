@@ -18,7 +18,7 @@ This procedure requires:
 
 1. On a command line or command prompt, install the [Vue CLI Tool](https://cli.vuejs.org/#getting-started) package.
 
-    ```
+    ```sh
     $ npm install -g @vue/cli
     ```
 2. Create a new Vue.js project named `tinymce-vue-demo`.
@@ -28,12 +28,12 @@ This procedure requires:
     ```
 3. Change into the newly created directory.
 
-    ```
+    ```sh
     $ cd tinymce-vue-demo
     ```
 4. Install the `tinymce-vue` package and save it to your `package.json` with `--save`.
 
-    ```
+    ```sh
     $ npm install --save @tinymce/tinymce-vue
     ```
 5. Using a text editor, open `/path/to/tinymce-vue-demo/src/App.vue`.
@@ -44,7 +44,7 @@ This procedure requires:
 
     For example:
 
-    ```xml
+    ```html
     <template>
       <div id="app">
         <img alt="Vue logo" src="./assets/logo.png">
@@ -87,7 +87,7 @@ This procedure requires:
 
         Such as:
 
-        ```js
+        ```html
         <editor api-key='your-api-key' :init="{% raw %}{{% endraw %} /* your other settings */ {% raw %}}{% endraw %}" />
         ```
 
@@ -113,7 +113,7 @@ This procedure requires:
 7. Test the application using the Node.js development server.
     * To start the development server, navigate to the `tinymce-vue-demo` directory and run:
 
-        ```
+        ```sh
         $ npm run serve
         ```
 
@@ -126,6 +126,5 @@ The application will require further configuration before it can be deployed to 
 
 * For examples of the {{site.productname}} integration, see: [the tinymce-vue storybook](https://tinymce.github.io/tinymce-vue/).
 * For information on customizing:
-
     * {{site.productname}}, see: [Basic setup]({{site.baseurl}}/general-configuration-guide/basic-setup/).
     * The Vue.js application, see: [Vue.js Documentation](https://vuejs.org/v2/guide/).

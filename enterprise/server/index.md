@@ -71,17 +71,23 @@ The following assumes you've downloaded the Tomcat 9.0 zip archive from the Tomc
 
 Create or edit the script `.\bin\setenv.bat` to contain the following line:
 
-    set "CATALINA_OPTS= -Dephox.config.file=C:\config\file\location\application.conf"
+```
+set "CATALINA_OPTS= -Dephox.config.file=C:\config\file\location\application.conf"
+```
 
 There should only be a single line in this file defining the `CATALINA_OPTS` environment variable.
 
 You may also need to add another line with the path to your Java Runtime Environment installation (replace with the actual path on your system) such as:
 
-    set "JRE_HOME=C:\Program Files\Java\jre1.8.0_131"
+```
+set "JRE_HOME=C:\Program Files\Java\jre1.8.0_131"
+```
 
 After editing `setenv.bat`, run the following command to start Tomcat:
 
-    .\bin\startup.bat
+```
+.\bin\startup.bat
+```
 
 For further information see the documentation on [running Tomcat 9.0](https://tomcat.apache.org/tomcat-9.0-doc/RUNNING.txt).
 
@@ -109,8 +115,9 @@ For other versions of Tomcat on Windows, check the Tomcat documentation for that
 
 If you're following the instructions for [Starting Jetty](https://www.eclipse.org/jetty/documentation/current/startup.html) for Jetty 9.4.5, the path to the configuration file can simply be supplied as a command option:
 
-    java -D"ephox.config.file=C:\config\file\location\application.conf" -jar C:\jetty\install\directory\start.jar
-
+```
+java -D"ephox.config.file=C:\config\file\location\application.conf" -jar C:\jetty\install\directory\start.jar
+```
 
 For other versions of Jetty on Windows, check the Jetty documentation for that version.
 
@@ -118,7 +125,9 @@ For other versions of Jetty on Windows, check the Jetty documentation for that v
 
 Follow the instructions in [Startup via Windows Service](https://www.eclipse.org/jetty/documentation/current/startup-windows-service.html) for Jetty 9.4.5. Remember to append the following snippet to the line beginning with `set PR_JVMOPTIONS` in your `install-jetty-service.bat` script:
 
-    ;-Dephox.config.file="C:\config\file\location\application.conf"
+```
+;-Dephox.config.file="C:\config\file\location\application.conf"
+```
 
 > **Note:** Check the `install-jetty-service.bat` has the correct paths to your Java installation. The service will fail to start with some rather unhelpful errors if the paths are incorrect.
 
@@ -144,13 +153,17 @@ If you've obtained Tomcat from your distribution's package manager, refer to you
 
 Create or edit the script `/opt/tomcat/bin/setenv.sh` to contain the following line:
 
-    CATALINA_OPTS=" -Dephox.config.file=/config/file/location/application.conf"
+```
+CATALINA_OPTS=" -Dephox.config.file=/config/file/location/application.conf"
+```
 
 There should only be a single line in this file defining the `CATALINA_OPTS` environment variable.
 
 After editing `setenv.sh`, run the following command to start Tomcat:
 
-    /opt/tomcat/bin/startup.sh
+```
+/opt/tomcat/bin/startup.sh
+```
 
 For further information see the documentation on [running Tomcat 9.0](https://tomcat.apache.org/tomcat-9.0-doc/RUNNING.txt).
 
@@ -166,13 +179,17 @@ If you've obtained Jetty from your distribution's package manager, refer to your
 
 The path to the configuration file can simply be supplied as a command option:
 
-    java -Dephox.config.file="/config/file/location/application.conf" -jar /opt/jetty/start.jar
+```
+java -Dephox.config.file="/config/file/location/application.conf" -jar /opt/jetty/start.jar
+```
 
 ###### As a Linux service
 
 Assuming you've followed the instructions to [Startup a Unix Service using jetty.sh](https://www.eclipse.org/jetty/documentation/current/startup-unix-service.html) for Jetty 9.4.5, edit `/etc/default/jetty` and add the line:
 
-    JETTY_ARGS=" -Dephox.config.file=/config/file/location/application.conf"
+```
+JETTY_ARGS=" -Dephox.config.file=/config/file/location/application.conf"
+```
 
 There should only be a single line in this file defining the `JETTY_ARGS` variable.
 
@@ -192,14 +209,14 @@ This example assume your Java application server is running on port 80 (http) on
 
 Example of {{site.productname}} client configuration:
 
-````
+```js
 tinymce.init({
-	selector: 'textarea', // change this value according to your HTML
-	toolbar: 'image',
-	plugins: 'tinymcespellchecker image imagetools media mediaembed',
-	spellchecker_rpc_url: 'http://yourserver.example.com/ephox-spelling/',
-	imagetools_proxy: 'http://yourserver.example.com/ephox-image-proxy/1/image',
-	mediaembed_service_url: 'http://yourserver.example.com/ephox-hyperlinking/',
-	linkchecker_service_url: 'http://yourserver.example.com/ephox-hyperlinking/'
+  selector: 'textarea', // change this value according to your HTML
+  toolbar: 'image',
+  plugins: 'tinymcespellchecker image imagetools media mediaembed',
+  spellchecker_rpc_url: 'http://yourserver.example.com/ephox-spelling/',
+  imagetools_proxy: 'http://yourserver.example.com/ephox-image-proxy/1/image',
+  mediaembed_service_url: 'http://yourserver.example.com/ephox-hyperlinking/',
+  linkchecker_service_url: 'http://yourserver.example.com/ephox-hyperlinking/'
 });
-````
+```

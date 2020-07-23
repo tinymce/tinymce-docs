@@ -36,12 +36,12 @@ This package is for Angular 5+. For Angular 4, use `@tinymce/tinymce-angular-leg
 
 1. Import the `EditorModule` from the npm package using:
 
-    ```tsx
+    ```js
     import { EditorModule } from '@tinymce/tinymce-angular';
     ```
     Add the `EditorModule` to `@NgModule({imports})`:
 
-    ```tsx
+    ```js
     // This might look different depending on how you have set up your app
     // but the important part is the imports array
     @NgModule({
@@ -95,7 +95,7 @@ To register for a {{site.cloudname}} API key, visit the [sign-up page]({{site.ac
 
 ##### Example: `apiKey`
 
-```xml
+```html
 <editor
   apiKey="your-api-key"
 ></editor>
@@ -115,7 +115,7 @@ Changes the {{site.productname}} build used for the editor to one of the followi
 
 Such as:
 
-```js
+```html
 <editor
   apiKey="your-api-key"
   cloudChannel="{{site.productmajorversion}}-dev"
@@ -148,7 +148,7 @@ An id for the editor. Used for retrieving the editor instance using the `tinymce
 
 ##### Example: `id`
 
-```xml
+```html
 <editor
   id="uuid"
 ></editor>
@@ -185,7 +185,7 @@ Initial content of the editor when the editor is initialized.
 
 ##### Example: `initialValue`
 
-```xml
+```html
 <editor
   initialValue="Once upon a time..."
 ></editor>
@@ -217,7 +217,7 @@ For information on adding plugins to {{site.productname}}, see: [Add plugins to 
 
 ##### Example: `plugins`
 
-```xml
+```html
 <editor
   plugins="lists code"
 ></editor>
@@ -235,7 +235,7 @@ Used to specify the format of the content emitted by the tinymce-angular compone
 
 ##### Example: `outputFormat`
 
-```xml
+```html
 <editor
   outputFormat="text"
 ></editor>
@@ -268,7 +268,7 @@ For information setting the toolbar for {{site.productname}}, see: [User interfa
 
 ##### Example: `toolbar`
 
-```xml
+```html
 <editor
   plugins="code"
   toolbar="bold italic underline code"
@@ -301,7 +301,7 @@ For information on using reactive forms, see: [Angular documentation - Reactive 
 
 Functions can be bound to editor events, such as:
 
-```xml
+```html
 <editor (onSelectionChange)="handleEvent($event)"></editor>
 ```
 

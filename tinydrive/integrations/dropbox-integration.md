@@ -50,7 +50,7 @@ For more information on other {{site.cloudfilemanager}} config options refer to 
 
 ### 4. Tiny Drive UI
 
-1. From the {{site.productname}} user interface, click on the ![**Insert/edit image**]({{site.baseurl}}/images/insertimage.png) button to access the {{site.cloudfilemanager}} user interface.
+1. From the {{site.productname}} user interface, click on the ![Insert/edit image]({{site.baseurl}}/images/insertimage.png) button to access the {{site.cloudfilemanager}} user interface.
 2. Click on the ![Upload/Create]({{site.baseurl}}/images/upload.png) button to select Dropbox from the list of storages.
 3. Select the file to upload/import from Dropbox by clicking on the radio button next to it and click the **Choose** button to upload or **Cancel** to abort the operation.
 4. Alternatively, files from your local browser can be uploaded to the Dropbox by clicking on the **Upload files** option and selecting the files to upload.
@@ -59,7 +59,7 @@ For more information on other {{site.cloudfilemanager}} config options refer to 
 
 Read more about more Dropbox options [here](https://www.dropbox.com/guide/business).
 
-### Live example
+## Live example
 
 Here is a live example of Dropbox-enabled on {{site.cloudfilemanager}}.
 

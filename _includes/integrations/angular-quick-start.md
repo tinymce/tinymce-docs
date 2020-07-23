@@ -8,9 +8,9 @@ For examples of the {{site.productname}} Angular integration, visit [the tinymce
 ### Prerequisites
 
 This procedure requires:
+
 * [Node.js (and npm)](https://nodejs.org/).
 * Access to `tinymce.min.js` on either:
-
     * [{{site.cloudname}}]({{site.baseurl}}/cloud-deployment-guide/editor-and-features/).
     * {{site.productname}} Self-hosted. See [Installing {{ site.productname }}]({{site.baseurl}}/general-configuration-guide/advanced-install/) for details on self-hosting {{site.productname}}.
 
@@ -18,7 +18,7 @@ This procedure requires:
 
 1. On a command line or command prompt, install the [Angular CLI Tool](https://angular.io/cli) package.
 
-    ```
+    ```sh
     $ npm install -g @angular/cli
     ```
 2. Create a new Angular project named `tinymce-angular-demo`.
@@ -28,12 +28,12 @@ This procedure requires:
     ```
 3. Change into the newly created directory.
 
-    ```
+    ```sh
     $ cd tinymce-angular-demo
     ```
 4. Install the `tinymce-angular` package and save it to your `package.json` with `--save`.
 
-    ```
+    ```sh
     $ npm install --save @tinymce/tinymce-angular
     ```
 5. Using a text editor, open `/path/to/tinymce-angular-demo/src/app/app.module.ts` and replace the contents with:
@@ -87,7 +87,7 @@ This procedure requires:
 
         Such as:
 
-        ```js
+        ```html
         <editor apiKey="your-api-key" [init]={% raw %}{{% endraw %} /* your other settings */ {% raw %}}{% endraw %} ></editor>
         ```
 
@@ -101,7 +101,7 @@ This procedure requires:
 
         1. Install the `tinymce-angular` package and save it to your `package.json` with `--save`.
 
-            ```
+            ```sh
             $ npm install --save tinymce
             ```
 
@@ -165,7 +165,7 @@ This procedure requires:
 8. Test the application using the Angular development server.
     * To start the development server, navigate to the `tinymce-angular-demo` directory and run:
 
-        ```
+        ```sh
         $ ng serve --open
         ```
 
@@ -178,7 +178,7 @@ To deploy the application to a local HTTP Server:
 
 1. Navigate to the `tinymce-angular-demo` directory and run:
 
-    ```
+    ```sh
     $ ng build
     ```
 

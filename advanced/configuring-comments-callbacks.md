@@ -17,13 +17,13 @@ Comments 2.0 requires the following functions to be defined:
 ```js
 tinymce.init({
   ...
-   tinycomments_create: function (req, done, fail) { ... },
-   tinycomments_reply: function (req, done, fail) { ... },
-   tinycomments_delete: function (req, done, fail) { ... },
-   tinycomments_delete_all: function (req, done, fail) { ... },
-   tinycomments_delete_comment: function (req, done, fail) { ... },
-   tinycomments_lookup: function (req, done, fail) { ... },
-   tinycomments_edit_comment: function (req, done, fail) { ... }
+  tinycomments_create: function (req, done, fail) { ... },
+  tinycomments_reply: function (req, done, fail) { ... },
+  tinycomments_delete: function (req, done, fail) { ... },
+  tinycomments_delete_all: function (req, done, fail) { ... },
+  tinycomments_delete_comment: function (req, done, fail) { ... },
+  tinycomments_lookup: function (req, done, fail) { ... },
+  tinycomments_edit_comment: function (req, done, fail) { ... }
 });
 
 ```

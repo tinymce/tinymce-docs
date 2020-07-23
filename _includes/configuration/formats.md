@@ -14,10 +14,10 @@ The following is an example of an array of format specification that contains th
 
 ```js
 bold: [
-     { inline: 'strong', remove: 'all' },
-     { inline: 'span', styles: { fontWeight: 'bold' } },
-     { inline: 'b', remove: 'all' }
-   ],
+  { inline: 'strong', remove: 'all' },
+  { inline: 'span', styles: { fontWeight: 'bold' } },
+  { inline: 'b', remove: 'all' }
+],
 ```
 
 ### Style merging

@@ -7,6 +7,8 @@ keywords: spellchecker spellchecker_callback spellchecker_language spellchecker_
 controls: toolbar button, menu item
 ---
 
+{{site.deprecate_spellchecker}}
+
 > **Note**: The Spell Checker plugin is self-hosted _only_. The Spell Checker Pro plugin is provided for some {{site.cloudname}} plans. For information on the Spell Checker Pro plugin, see: [Spell Checker Pro plugin]({{site.baseurl}}/plugins/tinymcespellchecker/).
 
 This plugin enables {{site.productname}}'s spellcheck functionality. It also adds a toolbar button and the menu item `Spellcheck` under the `Tools` menu dropdown.

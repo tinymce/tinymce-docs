@@ -11,7 +11,7 @@ controls: toolbar button
 
 The Format Painter plugin allows a user to copy and paste formatting from one location to another, such as font style and size. The format painter is capable of working with a wide variety of formats such as inline and block formats and styles such as table styles.
 
-### Configuring the Format Painter toolbar button
+## Configuring the Format Painter toolbar button
 
 Use the following script to configure the Format Painter toolbar button:
 
@@ -25,7 +25,7 @@ tinymce.init({
 });
 ```
 **Result**:
-The ![**Format Painter**]({{site.baseurl}}/images/fp-disabled.png)(**Format Painter**) button appears in the toolbar menu.
+The ![Format Painter]({{site.baseurl}}/images/fp-disabled.png)(**Format Painter**) button appears in the toolbar menu.
 
 ## Using Format Painter
 
@@ -36,7 +36,7 @@ The format painter operates in two modes, one for retrieval and one for applicat
 **Usage with toolbar button**
 
 1. Position the cursor at the source content to retrieve the formatting.
-2. Enable the **Format Painter** button to copy the formatting. The **Format Painter** toolbar button background color changes to _grey_ ![**Format Painter**]({{site.baseurl}}/images/fp-enabled.png).
+2. Enable the **Format Painter** button to copy the formatting. The **Format Painter** toolbar button background color changes to _grey_ ![Format Painter]({{site.baseurl}}/images/fp-enabled.png).
 3. Select the goal content to apply the formatting.
 
 **Result**: The formatting from the source content is applied to the goal content.

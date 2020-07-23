@@ -205,7 +205,7 @@ This issue affects the following options:
 - `anchor_top`
 - `anchor_bottom`
 
-When this options are set to `false`, the relevant anchors should not appear as autocomplete options in the link dialog. These anchors will appear in the autocomplete list when the relevant options are set to `false` in {{site.productname}} 5.4.0 and {{site.productname}} 5.4.1.
+When this options are set to `false`, the relevant anchors should not appear as autocomplete options in the link dialog. These anchors will appear in the autocomplete list when these options are set to `false` in {{site.productname}} 5.4.0 and {{site.productname}} 5.4.1.
 
 For information on:
 
@@ -214,7 +214,18 @@ For information on:
 
 #### Workaround
 
-No known workaround at the time of release.
+To disable all autocomplete/typeahead URLs in the link dialog, set the `typeahead_urls` option to `false`.
+
+For example:
+
+```js
+tinymce.init({
+  selector: 'textarea',
+  typeahead_urls: false
+});
+```
+
+For information on the `typeahead_urls` option, see:  [Advanced editing behaviors - `typeahead_urls`]({{site.baseurl}}/configure/advanced-editing-behavior/#typeahead_urls).
 
 {% assign enterprise = true %}
 

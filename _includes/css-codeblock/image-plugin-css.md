@@ -1,23 +1,23 @@
 figure.image {
-	display: inline-block;
-	border: 1px solid gray;
-	margin: 0 2px 0 1px;
-	background: #f5f2f0;
+  display: inline-block;
+  border: 1px solid gray;
+  margin: 0 2px 0 1px;
+  background: #f5f2f0;
 }
 
 figure.align-left {
-	float: left;
+  float: left;
 }
 
 figure.align-right {
-	float: right;
+  float: right;
 }
 
 figure.image img {
-	margin: 8px 8px 0 8px;
+  margin: 8px 8px 0 8px;
 }
 
 figure.image figcaption {
-	margin: 6px 8px 6px 8px;
-	text-align: center;
+  margin: 6px 8px 6px 8px;
+  text-align: center;
 }

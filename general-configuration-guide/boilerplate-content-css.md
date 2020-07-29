@@ -7,9 +7,7 @@ description: Learn how to set up CSS for your site to integrate TinyMCE.
 keywords: css content_css
 ---
 
-Some features in {{site.productname}} that require additional CSS to be added to the page that displays the content produced by the editor. In general, to get as clean an output as possible from a rich text editor as well as to use some advanced features like captioned images, use CSS rather than inline styles to render correctly.
-
-This Boilerplate CSS can be used to style these advanced elements. This CSS file can be used within the editor using the [content_css]({{ site.baseurl }}/configure/content-appearance/#content_css) option and also on your page where the saved content is presented.
+Some elements in {{site.productname}} require additional CSS to be added to the page that displays the content produced by the editor. The following CSS styles can be used to style these elements. Add this CSS file to the editor using the [content_css]({{ site.baseurl }}/configure/content-appearance/#content_css) option and add the styles the page where the saved content is presented.
 
 ```css
 /*
@@ -31,11 +29,11 @@ This Boilerplate CSS can be used to style these advanced elements. This CSS file
 */
 
 img.align-left {
-    float: left;
+  float: left;
 }
 
 img.align-right {
-    float: right;
+  float: right;
 }
 
 {% include css-codeblock/toc-plugin-css.md %}

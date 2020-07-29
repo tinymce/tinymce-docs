@@ -1,12 +1,12 @@
 /* Basic styles for Table of Contents plugin (toc) */
 .mce-toc {
-	border: 1px solid gray;
+  border: 1px solid gray;
 }
 
 .mce-toc h2 {
-	margin: 4px;
+  margin: 4px;
 }
 
 .mce-toc li {
-	list-style-type: none;
+  list-style-type: none;
 }

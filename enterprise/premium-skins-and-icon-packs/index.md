@@ -1,12 +1,12 @@
 ---
 layout: default
-title: Premium Skins and Icon Packs
-title_nav: Premium Skins and Icon Packs
+title: Tiny Skins and Icon Packs
+title_nav: Tiny Skins and Icon Packs
 description: Quickly give TinyMCE a new look.
 keywords: skin skins icon icons material bootstrap customize theme
 ---
 
-The Premium Skins and Icon Packs lets you quickly give {{site.productname}} a new look. Just choose one of our pre-made skins and icon packs.
+The {{site.prem_skins_icons}} lets you quickly give {{site.productname}} a new look. Just choose one of our pre-made skins and icon packs.
 
 ### How to use a premium skin
 
@@ -95,7 +95,7 @@ Below are some recommended combinations of skins and icon packs:
 * [Outside editor]({{site.baseurl}}/enterprise/premium-skins-and-icon-packs/outside-demo/)
 * [Snow editor]({{site.baseurl}}/enterprise/premium-skins-and-icon-packs/snow-demo/)
 
-{% assign pluginname = 'Premium Skins and Icon' %}
+{% assign pluginname = 'Tiny Skins and Icon' %}
 {% assign pluginminimumplan = 'tiertwo' %}
 {% assign plugindocspage = '../configure/editor-appearance/#skin' %}
 {% assign extensionType = 'Packs' %}

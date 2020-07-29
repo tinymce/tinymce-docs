@@ -89,7 +89,9 @@ The editable area can also automatically resize itself as the user enters conten
 
 Use the [`content_css`]({{ site.baseurl }}/configure/content-appearance/#content_css) customization option to ensure that {{site.productname}}'s editable area has the same styling as the surrounding content.
 
-Use the same `css` file that controls the look and style of the content {{site.productname}} is integrated into in this setting. The following example includes the file `mycontent.css` in all of the pages to control the site's global appearance. This example ensures the content in the editable area contains the same style as the site.
+{% include configuration/shipped-content-css.md %}
+
+The following example includes the file `mycontent.css` in all of the pages to control the site's global appearance. This example ensures the content in the editable area contains the same style as the site.
 
 ##### Example using an absolute path
 
@@ -103,8 +105,6 @@ tinymce.init({
 ```
 
 See the [content_css]({{ site.baseurl }}/configure/content-appearance/#content_css) customization page for more information about the use of absolute and relative paths as well as and how to use multiple stylesheets.
-
-> Note: We have included two additional skins for `content_css` to try out: **Document** and **Writer**. Use `content_css: 'document'` or `content_css: 'writer'` to try them out.
 
 ### Hiding the status bar
 

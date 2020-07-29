@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Premium Skins and Icon Packs demo
+title: Snow skin demo
 title_nav: Snow Demo
 description: Snow Demo
 keywords: skin skins icon icons customize theme

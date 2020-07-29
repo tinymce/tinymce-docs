@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Premium Skins and Icon Packs demo
+title: Material Outline skin demo
 title_nav: Material Outline Demo
 description: Material Outline Demo
 keywords: skin skins icon icons material customize theme

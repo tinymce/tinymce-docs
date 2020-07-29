@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Premium Skins and Icon Packs demo
+title: Jam icons pack demo
 title_nav: Jam Icons Demo
 description: Jam Icons Demo
 keywords: skin skins icon icons small jam customize theme

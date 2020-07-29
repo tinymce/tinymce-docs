@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Premium Skins and Icon Packs demo
+title: Outside skin demo
 title_nav: Outside Demo
 description: Outside Demo
 keywords: skin skins icon icons customize theme

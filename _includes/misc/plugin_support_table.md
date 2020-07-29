@@ -19,4 +19,4 @@ The following table lists the premium plugins supported by {{site.companynamefor
 | [Permanent Pen]({{site.baseurl}}/plugins/permanentpen)            | {{site.cross}}| {{site.tick}} |
 | [PowerPaste]({{site.baseurl}}/plugins/powerpaste)                 | {{site.tick}} | {{site.tick}} |
 | [Spell Checker Pro]({{site.baseurl}}/plugins/tinymcespellchecker) | {{site.tick}} | {{site.tick}} |
-| [Tiny Skins and Icon Packs]({{site.baseurl}}/enterprise/premium-skins-and-icon-packs/)|{{site.cross}}|{{site.tick}}|
+| [{{site.prem_skins_icons}}]({{site.baseurl}}/enterprise/premium-skins-and-icon-packs/)|{{site.cross}}|{{site.tick}}|

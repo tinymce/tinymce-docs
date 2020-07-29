@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Premium Skins and Icon Packs demo
+title: Material Classic skin demo
 title_nav: Material Classic Demo
 description: Material Classic Demo
 keywords: skin skins icon icons material customize theme

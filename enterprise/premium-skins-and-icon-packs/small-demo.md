@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Premium Skins and Icon Packs demo
+title: Small icons pack demo
 title_nav: Small Icons Demo
 description: Small Icons and Skin demo
 keywords: skin skins icon icons small customize theme

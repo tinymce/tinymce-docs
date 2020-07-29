@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Premium Skins and Icon Packs demo
+title: Borderless skin demo
 title_nav: Borderless Demo
 description: Borderless Demo
 keywords: skin skins icon icons borderless customize theme

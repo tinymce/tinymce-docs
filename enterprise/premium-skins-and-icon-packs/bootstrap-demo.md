@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Premium Skins and Icon Packs demo
+title: Bootstrap skin demo
 title_nav: Bootstrap Demo
 description: Bootstrap Demo
 keywords: skin skins icon icons bootstrap customize theme

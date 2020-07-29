@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Premium Skins and Icon Packs demo
+title: Naked skin demo
 title_nav: Naked Demo
 description: Naked Demo
 keywords: skin skins icon icons customize theme

@@ -75,29 +75,7 @@ Below is an example of the HTML created when a user selects the caption checkbox
 Note that the `figure` element needs some custom CSS added to render properly. This is what we use in the internal `content.css` within {{site.productname}}, and can be overridden with your own custom [`content_css`]({{ site.baseurl }}/configure/content-appearance/#content_css) stylesheet.
 
 ```css
-figure.image {
-	display: inline-block;
-	border: 1px solid gray;
-	margin: 0 2px 0 1px;
-	background: #f5f2f0;
-}
-
-figure.align-left {
-	float: left;
-}
-
-figure.align-right {
-	float: right;
-}
-
-figure.image img {
-	margin: 8px 8px 0 8px;
-}
-
-figure.image figcaption {
-	margin: 6px 8px 6px 8px;
-	text-align: center;
-}
+{% include css-codeblock/image-plugin-css.md %}
 ```
 
 ### `image_list`

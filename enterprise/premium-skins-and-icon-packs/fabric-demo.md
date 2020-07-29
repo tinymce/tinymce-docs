@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Premium Skins and Icon Packs demo
+title: Fabric skin demo
 title_nav: Fabric Demo
 description: Fabric Demo
 keywords: skin skins icon icons borderless fabric microsoft office word customize theme

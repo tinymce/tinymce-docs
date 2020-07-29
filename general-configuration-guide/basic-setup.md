@@ -280,6 +280,7 @@ content_css: 'css/content.css',
 * For a full list of configuration options, see: the [Configuration options reference]({{ site.baseurl }}/configure/).
 * For a full list of Plugins and their options, see: [Add plugins to TinyMCE]({{ site.baseurl }}/plugins/).
 * For information on the UI elements, see: [User interface components]({{ site.baseurl }}/ui-components/).
+* For information on the CSS required to render some {{site.productname}} elements outside of the editor, see: [Boilerplate content CSS]({{site.baseurl}}/general-configuration-guide/boilerplate-content-css/).
 
 {% assign_page next_page = "/general-configuration-guide/use-tinymce-classic/index.html" %}
 {% include next-step.html next=next_page %}

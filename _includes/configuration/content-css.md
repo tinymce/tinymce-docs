@@ -2,7 +2,7 @@
 ## content_css
 It is usually desirable that {{site.productname}}'s editable area has the same styling as the surrounding content. Consistent styling is achieved with the `content_css` option, which enables you to extend external CSS into the editable area.
 
-The CSS file used in this setting should be the same css file that controls the look and style of all your pages. So, let's say you include a file `myLayout.css` in all your pages to control your site's global appearance, then this file must be set as your `content_css` value. Doing this ensures the content in the editable area also has your site's style.
+{% include configuration/shipped-content-css.md %}
 
 > Note: If you specify a relative path, it is resolved in relation to the URL of the (HTML) file that includes {{site.productname}}, not relative to {{site.productname}} itself.
 

@@ -16,7 +16,7 @@ tinymce.init({
 });
 ```
 
-These content CSS files can also be used as a template for creating a custom content CSS file for the editor. For the [LESS files](http://lesscss.org/) used to create these CSS files, see: [{{site.productname}} GitHub Repository - Content CSS LESS files](https://github.com/tinymce/tinymce/tree/develop/modules/oxide/src/less/skins/content).
+These content CSS files can also be used as a template for creating a custom content CSS file for the editor. For the CSS files, see: [{{site.prodnamecode}}-dist GitHub Repository - Content CSS files](https://github.com/tinymce/tinymce-dist/tree/master/skins/content).
 
 {{site.companyname}} also provides content CSS files with the premium skins, for a list of premium content CSS files, see:
 [{{site.prem_skins_icons}}]({{site.baseurl}}/enterprise/premium-skins-and-icon-packs/).

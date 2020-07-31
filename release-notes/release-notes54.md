@@ -13,6 +13,7 @@ These release notes provide an overview of the changes for {{site.productname}} 
 - [Accompanying Premium self-hosted server-side component changes](#accompanyingpremiumself-hostedserver-sidecomponentchanges)
 - [Minor changes for TinyMCE 5.4](#minorchangesfortinymce54)
 - [General bug fixes](#generalbugfixes)
+- [Security fixes](#securityfixes)
 - [Deprecated features](#deprecatedfeatures)
 - [Known issues](#knownissues)
 - [Upgrading to the latest version of TinyMCE 5](#upgradingtothelatestversionoftinymce5)
@@ -165,9 +166,14 @@ For information on:
 * Fixed the Search and Replace plugin incorrectly including zero-width caret characters in search results.
 * Fixed dragging and dropping unsupported files navigating the browser away from the editor.
 * Fixed undo levels not created on browser handled drop or paste events.
-* Fixed content in an iframe element parsing as DOM elements instead of text content.
 * Fixed Oxide checklist styles not showing when printing.
 * Fixed bug with `scope` attribute not being added to the cells of header rows.
+
+## Security fixes
+
+{{site.productname}} 5.4 provides fixes for the following security issues:
+
+* Fixed content in an iframe element parsing as DOM elements instead of text content.
 
 ## Deprecated features
 

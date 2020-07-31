@@ -7,5 +7,14 @@ type: folder
 keywords: tinydrive .net node.js php java
 ---
 
-{% assign links = site.data | where_exp:"nav", "nav.url == 'libraries'" | first | map: "pages" %}
+{% assign navigaton = site.data.nav %}
+{% for entry in navigaton %}
+  {% if entry.url == "tinydrive" %}
+    {% for subentry in entry.pages %}
+      {% if subentry.url == "libraries" %}
+        {% assign links = subentry.pages %}
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+{% endfor %}
 {% include index.html links=links %}

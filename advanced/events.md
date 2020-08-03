@@ -198,7 +198,7 @@ The following event is provided by the [Comments plugin]({{ site.baseurl }}/plug
 
 | Name                    | Data | Description                      |
 | ----------------------- | ---- | -------------------------------- |
-| mce-tinycomments-update | N/A  | Fired when a comment is updated. |
+| mce-tinycomments-update | N/A  | Fired when the comments sidebar is opened or closed. |
 
 ### Format Painter events
 

@@ -1,9 +1,18 @@
 #!/bin/bash
 
+if [ -z $1 ]
+then
+  echo "Provide the path to the TinyMCE source root directory"
+  exit 1
+else
+  tinymce_root=$1
+fi
 # Output markdown file
 list_file='_includes/configuration/icon_list.md'
 # Input directory containing the icon SVGs
 icon_svg_dir='images/icons/'
+rm -rf $icon_svg_dir*
+cp $tinymce_root/modules/oxide-icons-default/src/svg/* $icon_svg_dir
 
 << COMMENT
 IF loop to verify that the markdown file already exists
@@ -32,7 +41,7 @@ echo -e "|Identifier|Preview|Filename|\n|:-----:|:-----:|:-----:|" > $list_file
 
 # Loop to populate the table using the input information
 for svgName in $icon_list
-do 
+do
   iconID=${svgName%%.*} # strip the file extension
   echo -e "| \`$iconID\` | ![$svgName]({{ site.baseurl }}/images/icons/$svgName) | \`$svgName\` | " >> $list_file
 done

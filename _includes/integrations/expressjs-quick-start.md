@@ -36,13 +36,13 @@ This procedure requires:
 
 1. Using a text editor, open `/path/to/my_{{site.prodnamecode}}_app/app.js` and add the following route:
 
-    ```jsx
+    ```js
     app.use('/tinymce', express.static(path.join(__dirname, 'node_modules', 'tinymce')));
     ```
 
     For example:
 
-    ```jsx
+    ```js
     var express = require('express');
     var path = require('path');
     var cookieParser = require('cookie-parser');
@@ -58,6 +58,7 @@ This procedure requires:
     app.use(express.urlencoded({ extended: false }));
     app.use(cookieParser());
     app.use(express.static(path.join(__dirname, 'public')));
+
     /* New Route to the {{site.productname}} Node module */
     app.use('/tinymce', express.static(path.join(__dirname, 'node_modules', 'tinymce')));
 
@@ -69,8 +70,15 @@ This procedure requires:
 
 1. Create a new javascript file containing the {{site.productname}} configuration (`tinymce.init`), such as:
 
+    Linux/macOS/Unix:
+
     ```sh
     $ touch public/javascripts/my-{{site.prodnamecode}}-config.js
+    ```
+
+    Windows:
+    ```sh
+    > type nul >public/javascripts/my-{{site.prodnamecode}}-config.js
     ```
 
 1. Add the {{site.productname}} configuration to the newly created javascript file (`my-{{site.prodnamecode}}-config.js`):
@@ -122,7 +130,7 @@ This procedure requires:
     </html>
     ```
 
-7. Test the application using the Node.js development server.
+1. Test the application using the Node.js development server.
     * To start the development server, navigate to the `my_{{site.prodnamecode}}_app` directory and run:
 
         ```sh

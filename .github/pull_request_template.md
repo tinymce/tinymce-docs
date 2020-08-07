@@ -8,6 +8,7 @@ Pre-checks:
 - [ ] `_data/nav.yml` has been updated (if applicable)
 - [ ] Files has been included where required (if applicable)
 - [ ] Files removed have been deleted, not just excluded from the build (if applicable)
+- [ ] (New product features only) Release Note added
 
 Review:
 - [ ] Documentation Team Lead has reviewed

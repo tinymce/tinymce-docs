@@ -25,7 +25,7 @@ TINYMCE_JS_URL = '{{site.cdnurl}}'
 TINYMCE_COMPRESSOR = False
 ```
 
-## Using a manually downloaded instance TinyMCE with django-tinymce
+## Using self-hosted TinyMCE with django-tinymce
 
 If you'd rather download and install the script manually:
 

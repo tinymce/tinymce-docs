@@ -637,9 +637,9 @@ These features have either changed or have been deleted in TinyMCE 5.
 
 | **Plugin name** | **Description** |
 | --------------- |  -------------- |
-| [ContextMenu]({{site.url}}/docs-4x/plugins/contextmenu/) | New API. See the [docs]({{site.baseurl}}/ui-components/contextmenu/). |
-| [ColorPicker]({{site.url}}/docs-4x/plugins/colorpicker/) | Moved to the core. See the [docs]({{site.baseurl}}/configure/content-appearance/#color_picker}}). |
-| [TextColor]({{site.url}}/docs-4x/plugins/textcolor/) | The `textcolor` plugin was removed and this setting is has been replaced by [`text_color`]({{site.baseurl}}/configure/content-appearance/#text_color) in TinyMCE 5. |
+| [ContextMenu]({{site.url}}/docs-4x/plugins/contextmenu/) | Context menus are now part of the {{site.productname}} core. For information on adding custom context menus, see: [UI components - Context menu]({{site.baseurl}}/ui-components/contextmenu/). |
+| [TextColor]({{site.url}}/docs-4x/plugins/textcolor/) | The text color functionality is now part of the {{site.productname}} core. For information on using and customizing the text color settings, see: [Content appearance options - `text_color`]({{site.baseurl}}/configure/content-appearance/#text_color). |
+| [ColorPicker]({{site.url}}/docs-4x/plugins/colorpicker/) | The color picker is now part of the {{site.productname}} core and is enabled by default. For information on disabling the custom color picker, see: [Content appearance options - `custom_colors`]({{site.baseurl}}/configure/content-appearance/#custom_colors). |
 
 #### Custom context menus
 

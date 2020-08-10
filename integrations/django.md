@@ -42,7 +42,7 @@ If you'd rather download and install the script manually:
         TINYMCE_COMPRESSOR = False
         ```
 
-    *  If you do need the `TINYMCE_COMPRESSOR` (`TINYMCE_COMPRESSOR = TRUE`), add `TINYMCE_JS_ROOT` to the project’s `settings.py` file pointing to `tinymce/tinymce.min.js`.
+    *  If you do need the `TINYMCE_COMPRESSOR` (`TINYMCE_COMPRESSOR = TRUE`), add `TINYMCE_JS_ROOT` to the project’s `settings.py` file pointing to the `tinymce/` root directory.
         Such as:
 
         ```py

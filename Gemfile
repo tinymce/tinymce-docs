@@ -4,9 +4,12 @@
 source 'https://rubygems.org'
 
 group :development, :test do
-  gem 'jekyll', '~> 2.5.3'
-  gem 'jekyll-redirect-from', '~> 0.8.0'
-  gem 'jekyll-sitemap', '~> 0.10.0'
-  gem 'nokogiri', '1.6.6.4'
-  gem "jekyll-last-modified-at", "~> 0.3.4"
+  gem 'jekyll', '~> 3.9.0'
+  gem 'jekyll-redirect-from', '~> 0.16.0'
+  gem 'jekyll-sitemap', '~> 1.4.0'
+  gem 'kramdown', '~> 2.3.0'
+  gem 'kramdown-parser-gfm', '~> 1.1.0'
+  gem 'redcarpet', '~> 3.5'
+  gem 'nokogiri', '~> 1.10.0'
+  gem "jekyll-last-modified-at", "~> 1.3.0"
 end

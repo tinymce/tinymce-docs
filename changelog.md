@@ -10,6 +10,21 @@ class: changelog
 
 {% capture changelog %}
 
+## Version 5.4.2 August 17, 2020
+* Fixed the editor not resizing when resizing the browser window in fullscreen mode.
+* Fixed clicking on notifications causing inline editors to hide.
+* Fixed an issue where link URLs could not be deleted or edited in the link dialog in some cases.
+* Fixed a regression where setting the `anchor_top` or `anchor_bottom` options to `false` was not working.
+* Fixed the `anchor` plugin not supporting the `allow_html_in_named_anchor` option.
+* Fixed an exception thrown when removing inline formats that contained additional styles or classes.
+* Fixed an exception thrown when positioning the context toolbar on Internet Explorer 11 in some edge cases.
+* Fixed inline formats not removed when more than one `removeformat` format rule existed.
+* Fixed an issue where spaces were sometimes removed when removing formating on nearby text.
+* Fixed the list toolbar buttons not showing as active when a list is selected.
+* Fixed an issue where the UI would sometimes not be shown or hidden when calling the show or hide API methods on the editor.
+* Fixed the list type style not retained when copying list items.
+* Fixed the Paste plugin converting tabs in plain text to a single space character. A `paste_tab_spaces` option has been included for setting the number of spaces used to replace a tab character.
+
 ## Version 5.4.1 July 8, 2020
 * Fixed the Search and Replace plugin incorrectly including zero-width caret characters in search results.
 * Fixed dragging and dropping unsupported files navigating the browser away from the editor.

@@ -10,16 +10,11 @@ keywords: releasenotes bugfixes
 
 These release notes provide an overview of the changes for {{site.productname}} 5.4.2, including:
 
-- [TinyMCE 5.4.2 new feature and enhancements](#tinymce542newfeaturesandenhancements)
 - [General bug fixes](#generalbugfixes)
 - [Accompanying Premium Plugin changes](#accompanyingpremiumpluginchanges)
 - [Upgrading to the latest version of TinyMCE 5](#upgradingtothelatestversionoftinymce5)
 
 > This is the {{site.cloudname}} and {{site.enterpriseversion}} release notes. For information on the latest community version of {{site.productname}}, see: [{{site.productname}} Changelog]({{site.baseurl}}/changelog/).
-
-## TinyMCE 5.4.2 new feature and enhancements
-
-
 
 ## General bug fixes
 
@@ -36,6 +31,7 @@ These release notes provide an overview of the changes for {{site.productname}} 
 * Fixed list toolbar buttons not showing as active when a list is selected.
 * Fixed an issue where the UI would sometimes not be shown or hidden when calling show or hide methods on the editor.
 * Fixed the list type style not retained when copying list items.
+* Fixed tabs in plain text converted to a single space and added new [`paste_tab_spaces`]({{site.baseurl}}/plugins/paste/#paste_tab_spaces) setting to control how many spaces are used to represent a tab.
 
 ## Accompanying Premium Plugin changes
 
@@ -51,6 +47,7 @@ The {{site.productname}} 5.4.2 release includes an accompanying release of the *
 * Fixed an issue where lists would become corrupt on IE 11 due to invalid empty font elements.
 * Fixed multiple new lines collapsing into a single new line when pasting plain text.
 * Fixed cut and copy not working with table selections.
+* Fixed tabs in plain text converted to a single space and added new [`paste_tab_spaces`]({{site.baseurl}}/plugins/powerpaste/#paste_tab_spaces) setting to control how many spaces are used to represent a tab.
 
 {% assign enterprise = true %}
 

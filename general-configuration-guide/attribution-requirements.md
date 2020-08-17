@@ -1,3 +1,6 @@
+
+This is an update of the page https://www.tiny.cloud/docs/general-configuration-guide/attribution-requirements/
+
 ---
 layout: default
 title: Logo &amp; attribution requirements
@@ -5,9 +8,20 @@ title_nav: Logo attribution
 description: TinyMCE Terms of Service.
 keywords: legal attribution requirements logo branding
 ---
-{{site.cloudname}} is available to anyone wanting to integrate {{site.productname}} into their own website or application. Use of {{site.cloudname}} is governed by the [Terms of Service](https://about.tiny.cloud/legal/tiny-cloud-services-subscription-agreement/). Among other things, these terms require adhering to specific guidelines on how branding for {{site.companyname}} must be handled. The purpose of this document is to highlight these requirements.
 
-There is a **POWERED BY TINY** attribution in the status bar that is enabled by default for all {{site.cloudname}} users. The {{site.tieroneplan}} is meant to support small projects and give back to the community. This option cannot be disabled on a free {{site.accountpage}}. However, it is **optional** for users on other paid tiers to include attribution and link back to {{site.companyname}} via a logo or text to let the world know that their editor is powered by {{site.companyname}}.
+This article describes your obligations to attribute your use of {{site.productname}} in your project or product.
+
+## Paid Customers
+
+You are not obligated to implement attribution if you are using {{site.productname}} on a paid tier of {{site.cloudname}} or you self-host under an active commercial license agreement.
+
+## Free & Open Source Users
+
+Users on a free tier of {{site.cloudname}} are required by the [Terms of Service](https://about.tiny.cloud/legal/tiny-cloud-services-subscription-agreement/) to have attribution be visible when TinyMCE is shown.
+
+Users of {{site.productname}} under the LGPL v2.1 open source license are required to give prominent notice though implementing attribution.
+
+## Implementing Attribution
 
 When including attribution, the following requirements must be met:
 
@@ -23,3 +37,5 @@ The following example shows the status bar product attribution in the bottom, ri
 ![Screenshot of homepage {{site.productname}} demo including product attribution in the bottom, right-hand corner]({{site.baseurl}}/images/tinymce5-homepage-demo.png)
 
 Have questions about this? [Contact us]({{site.contactpage}}) for help.
+
+

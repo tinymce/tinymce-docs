@@ -11,4 +11,4 @@ keywords: example demo classic editor
 
 This example shows you how to use {{site.productname}} Classic Editor.
 
-{% include codepen.html id="classic" %}
+{% include live-demo.html id="classic" %}

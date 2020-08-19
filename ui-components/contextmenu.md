@@ -12,7 +12,7 @@ The context menu supports both individual menu items and dynamic context menu se
 
 ## Live example
 
-{% include codepen.html id="context-menu" %}
+{% include live-demo.html id="context-menu" %}
 
 ## Options
 
@@ -80,12 +80,12 @@ tinymce.init({
   selector: "textarea",
   contextmenu: "link bold italic inserttable | cell row column deletetable"
 });
-``` 
+```
 --->
 
 ## Defining a context menu section
 
 This example shows how the image plugin dynamically adds the standard image menu section to the context menu. The image context menu section is empty unless the selected element is an image.
 
-{% include codepen.html id="contextmenu-section" height="600" tab="js" %}
+{% include live-demo.html id="contextmenu-section" height="600" tab="js" %}
 

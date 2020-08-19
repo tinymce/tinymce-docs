@@ -17,4 +17,4 @@ tinymce.init({
 });
 ```
 
-{% include codepen.html id="readonly-demo" %}
+{% include live-demo.html id="readonly-demo" %}

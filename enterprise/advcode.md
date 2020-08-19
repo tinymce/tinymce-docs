@@ -17,7 +17,7 @@ The [Advanced Code Editor]({{ site.baseurl }}/plugins/advcode/) plugin (`advcode
 
 ## The difference between the Code and Advanced Code Editor plugins
 
-{% include codepen.html id="advcode" %}
+{% include live-demo.html id="advcode" %}
 
 {% assign pluginname = 'Advanced Code Editor' %}
 {% assign pluginminimumplan = 'tiertwo' %}

@@ -9,4 +9,4 @@ keywords: example demo custom format formats
 
 This example shows you how to override the built in [formats]({{ site.baseurl }}/configure/content-formatting/#formats) and add some custom styles to the `styleselect` dropdown toolbar button and the `formats` menu item using the [style_formats]({{ site.baseurl }}/configure/editor-appearance/#style_formats) configuration option.
 
-{% include codepen.html id="format-custom" %}
+{% include live-demo.html id="format-custom" %}

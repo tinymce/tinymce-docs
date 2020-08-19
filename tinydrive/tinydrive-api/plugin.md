@@ -34,7 +34,7 @@ The modification date for the file in ISO 8601 format for example `2019-02-24T15
 
 ### Demo
 
-{% include codepen.html id="drive-plugin-pick" %}
+{% include live-demo.html id="drive-plugin-pick" %}
 
 ## tinydrive.browse
 
@@ -42,7 +42,7 @@ The `tinydrive.browse` method enables you to browse your files stored in {{site.
 
 ### Demo
 
-{% include codepen.html id="drive-plugin-browse" %}
+{% include live-demo.html id="drive-plugin-browse" %}
 
 ## tinydrive.upload
 
@@ -50,7 +50,7 @@ The `tinydrive.upload` method enables directly upload blobs to your {{site.cloud
 
 ### Demo
 
-{% include codepen.html id="drive-plugin-upload" %}
+{% include live-demo.html id="drive-plugin-upload" %}
 
 ## Picker settings
 
@@ -64,7 +64,7 @@ This setting enables restricting what types of files you want do display based o
 
 #### Demo
 
-{% include codepen.html id="drive-plugin-pick-images" %}
+{% include live-demo.html id="drive-plugin-pick-images" %}
 
 ### `max_image_dimension`
 

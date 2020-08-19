@@ -99,4 +99,4 @@ Read more about these options [here](https://gsuite.google.com/learning-center/p
 
 Here is a live example of Google Drive enabled on {{site.cloudfilemanager}}.
 
-{% include codepen.html id="drive-demo-googledrive" %}
+{% include live-demo.html id="drive-demo-googledrive" %}

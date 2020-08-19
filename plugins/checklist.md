@@ -13,7 +13,7 @@ The **Checklist** plugin helps the user keep track of all required actions by cr
 
 ## Format
 
-{% include codepen.html id="checklist" %}
+{% include live-demo.html id="checklist" %}
 
 In the {{site.productname}} editor, checklists are presented as lists with small checkboxes on the left hand side of the list items. After the item has been completed, a small tick or check mark is drawn in the box by clicking on it.
 

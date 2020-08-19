@@ -79,7 +79,9 @@ tinymce.init({
     editor.ui.registry.addMenuButton('insert', {
       icon: 'plus',
       tooltip: 'Insert',
-      fetch: (callback) => callback('image link | inserttable')
+      fetch: function (callback) {
+        callback('image link | inserttable')
+      }
     });
   }
 });
@@ -299,7 +301,9 @@ For example:
 ```js
 editor.addButton('mybutton', {
   text: "My Button",
-  onclick: () => alert("My Button clicked!")
+  onclick: function () {
+    alert("My Button clicked!")
+  }
 });
 ```
 
@@ -308,7 +312,9 @@ editor.addButton('mybutton', {
 ```js
 editor.ui.registry.addButton('myButton', {
   text: 'My Button',
-  onAction: (buttonApi) => alert('My Button clicked!')
+  onAction: function (buttonApi) {
+    alert('My Button clicked!')
+  }
 });
 ```
 
@@ -334,7 +340,9 @@ editor.addButton('mybutton', {
 ```js
 editor.ui.registry.addButton('myButton', {
   text: 'My Button',
-  onAction: (_) => editor.execCommand('mceSave')
+  onAction: function (_) {
+    editor.execCommand('mceSave')
+  }
 });
 ```
 
@@ -349,7 +357,7 @@ There are 3 major changes:
 * `onSetup` can be configured to return a function, which will be automatically be called on the teardown of the component, such as when a menu item's menu is closed.
     * If a function should only be executed when the editor is first initialized, use the `editor.on('init', callback)` callback function.
 
-> Caution: If `onSetup` listens to any events using [`editor.on(eventName, callback)`]({{site.baseurl}}/api/tinymce/tinymce.editor/#on), it should return a [`editor.off(eventName, callback)`]({{site.baseurl}}/api/tinymce/tinymce.editor/#off) callback to unbind the event on tear down. Unless the event was `'init'`, `onSetup` returns `(buttonApi) => ed.off(eventName, callback)`.
+> Caution: If `onSetup` listens to any events using [`editor.on(eventName, callback)`]({{site.baseurl}}/api/tinymce/tinymce.editor/#on), it should return a [`editor.off(eventName, callback)`]({{site.baseurl}}/api/tinymce/tinymce.editor/#off) callback to unbind the event on tear down. Unless the event was `'init'`, `onSetup` returns `function (buttonApi) { ed.off(eventName, callback) }`.
 
 For example:
 
@@ -378,11 +386,17 @@ editor.ui.registry.addButton('customDateButton', {
   icon: 'insert-time',
   tooltip: 'Insert Current Date',
   disabled: true,
-  onAction: (_) => editor.insertContent(toTimeHtml(new Date())),
-  onSetup: (buttonApi) => {
-    const editorEventCallback = (eventApi) => buttonApi.setDisabled(eventApi.element.nodeName.toLowerCase() === 'time');
+  onAction: function (_) {
+    editor.insertContent(toTimeHtml(new Date()))
+  },
+  onSetup: function (buttonApi) {
+    const editorEventCallback = function (eventApi) {
+      buttonApi.setDisabled(eventApi.element.nodeName.toLowerCase() === 'time');
+    };
     editor.on('NodeChange', editorEventCallback);
-    return (buttonApi) => editor.off('NodeChange', editorEventCallback);
+    return function (buttonApi) {
+      editor.off('NodeChange', editorEventCallback);
+    }
   }
 });
 ```
@@ -417,10 +431,12 @@ tinymce.init({
     help: { title: 'Help', items: 'help | myCustomMenuItem' }
   },
   menubar: 'file edit help',
-  setup: (editor) => {
+  setup: function (editor) {
     editor.ui.registry.addMenuItem('myCustomMenuItem', {
       text: 'My Custom Menu Item',
-      onAction: () => alert('Menu item clicked')
+      onAction: function () {
+        alert('Menu item clicked')
+      }
     });
   }
 });
@@ -450,9 +466,11 @@ The following examples show custom menu item configurations in TinyMCE 4 and Tin
 
 ```js
 editor.addMenuItem('example', {
- text: 'My menu item',
- context: 'tools',
- onclick: () => editor.insertContent('Hello world!!');
+  text: 'My menu item',
+  context: 'tools',
+  onclick: function () {
+    editor.insertContent('Hello world!!');
+  }
 });
 ```
 
@@ -460,8 +478,10 @@ editor.addMenuItem('example', {
 
 ```js
 editor.ui.registry.addMenuItem('example', {
- text: 'My menu item',
- onAction: () => editor.insertContent('Hello world!!');
+  text: 'My menu item',
+  onAction: function () {
+    editor.insertContent('Hello world!!');
+  }
 });
 ```
 

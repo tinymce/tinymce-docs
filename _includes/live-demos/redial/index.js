@@ -31,13 +31,13 @@ var page1Config = {
       disabled: true
     }
   ],
-  onChange: (dialogApi, details) => {
+  onChange: function (dialogApi, details) {
     var data = dialogApi.getData();
     /* Example of enabling and disabling a button, based on the checkbox state. */
     var toggle = data.anyterms ? dialogApi.enable : dialogApi.disable;
     toggle('uniquename');
   },
-  onAction: (dialogApi, details) => {
+  onAction: function (dialogApi, details) {
     if (details.name === 'uniquename') {
       dialogApi.redial(page2Config);
     } else if (details.name === 'doesnothing') {
@@ -78,7 +78,7 @@ var page2Config = {
   initialData: {
     choosydata: ''
   },
-  onAction: (dialogApi, details) => {
+  onAction: function (dialogApi, details) {
     var data = dialogApi.getData();
 
     var result = 'You chose wisely: ' + data.choosydata;
@@ -93,10 +93,10 @@ tinymce.init({
   selector: 'textarea.wizard',
   toolbar: 'wizardExample',
   height: '900px',
-  setup: (editor) => {
+  setup: function (editor) {
     editor.ui.registry.addButton('wizardExample', {
       icon: 'code-sample',
-      onAction: () => {
+      onAction: function () {
         editor.windowManager.open(page1Config)
       }
     })

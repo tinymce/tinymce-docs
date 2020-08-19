@@ -77,7 +77,7 @@ This setting enables constraining the width/height of uploaded images. When this
 ```js
 tinydrive.pick({
   max_image_dimension: 1024
-}).then((result) => {
+}).then( function (result) {
   console.log(result.files);
 });
 ```

@@ -3,10 +3,10 @@
 To clarify, in code `onSetup` may look like this:
 
 ```js
-onSetup: (api) => {
+onSetup: function (api) {
   // Do something here on component render, like set component properties or bind an event listener
 
-  return (api) => {
+  return function (api) {
     // Do something here on teardown, like unbind an event listener
   };
 };
@@ -14,7 +14,7 @@ onSetup: (api) => {
 
 To bind a callback function to an editor event use `editor.on(eventName, callback)`. To unbind an event listener use `editor.off(eventName, callback)`. Any event listeners *should* be unbound in the teardown callback. The only editor event which does not need to be unbound is `init` e.g. `editor.on('init', callback)`.
 
-> Note:
-
-* The callback function for `editor.off()` should be the same function passed to `editor.on()`. For example, if a `editorEventCallback` function is bound to the `NodeChange` event when the button is created, `onSetup` should return `(api) => editor.off('NodeChange', editorEventCallback)`.
-* If `onSetup` does not have any event listeners or only listens to the `init` event, `onSetup` can return an empty function e.g. `return () => {};`.
+> **Note**:
+>
+> * The callback function for `editor.off()` should be the same function passed to `editor.on()`. For example, if a `editorEventCallback` function is bound to the `NodeChange` event when the button is created, `onSetup` should return `function (api) { editor.off('NodeChange', editorEventCallback) }`.
+> * If `onSetup` does not have any event listeners or only listens to the `init` event, `onSetup` can return an empty function e.g. `return function () {};`.

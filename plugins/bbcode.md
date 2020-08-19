@@ -17,8 +17,8 @@ This plugin makes it possible to edit BBCode in a WYSIWYG style by converting ta
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "bbcode"
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'bbcode'
 });
 ```
 
@@ -51,9 +51,9 @@ When using PunBB dialect, `codeStyle` and `quoteStyle` will be converted to `[co
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "bbcode",
-  bbcode_dialect: "punbb"
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'bbcode',
+  bbcode_dialect: 'punbb'
 });
 ```
 

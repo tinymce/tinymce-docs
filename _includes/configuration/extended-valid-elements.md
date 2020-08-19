@@ -26,5 +26,5 @@ Also see [valid_elements]({{ site.baseurl }}/configure/content-filtering/#valid_
 To allow script elements in the editor, include the following in the {{site.productname}} configuration:
 
 ```js
-extended_valid_elements : "script[src|async|defer|type|charset]"
+extended_valid_elements : 'script[src|async|defer|type|charset]'
 ```

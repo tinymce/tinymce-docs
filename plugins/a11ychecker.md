@@ -14,9 +14,9 @@ The `a11ychecker` premium plugin enables you to check the HTML for various WCAG 
 
 ```js
 tinymce.init({
-    selector: "textarea",
-    plugins: "a11ychecker",
-    toolbar: "a11ycheck"
+    selector: 'textarea',
+    plugins: 'a11ychecker',
+    toolbar: 'a11ycheck'
 });
 ```
 
@@ -162,9 +162,9 @@ If `a11ychecker_allow_decorative_images` is set to `false`, the Accessibility Ch
 
 ```js
 tinymce.init({
-    selector: "textarea",
-    plugins: "a11ychecker",
-    toolbar: "a11ycheck",
+    selector: 'textarea',
+    plugins: 'a11ychecker',
+    toolbar: 'a11ycheck',
     a11ychecker_allow_decorative_images: true
 });
 ```
@@ -185,9 +185,9 @@ For example, setting the version to HTML 4 will trigger the rule "Complex tables
 
 ```js
 tinymce.init({
-    selector: "textarea",
-    plugins: "a11ychecker",
-    toolbar: "a11ycheck",
+    selector: 'textarea',
+    plugins: 'a11ychecker',
+    toolbar: 'a11ycheck',
     a11ychecker_html_version: 'html5'
 });
 ```
@@ -208,9 +208,9 @@ For example, the "Text must have a contrast ratio of at least ..." rule when usi
 
 ```js
 tinymce.init({
-    selector: "textarea",
-    plugins: "a11ychecker",
-    toolbar: "a11ycheck",
+    selector: 'textarea',
+    plugins: 'a11ychecker',
+    toolbar: 'a11ycheck',
     a11ychecker_level: 'aaa'
 });
 ```

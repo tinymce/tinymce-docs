@@ -15,10 +15,10 @@ This plugin adds the ability to see invisible characters like `&nbsp;` displayed
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "visualchars",
-  menubar: "view",
-  toolbar: "visualchars"
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'visualchars',
+  menubar: 'view',
+  toolbar: 'visualchars'
 });
 ```
 
@@ -38,10 +38,10 @@ This option enables specifying the default state of the Visual Blocks plugin.
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to the HTML
-  plugins: "visualchars",
-  menubar: "view",
-  toolbar: "visualchars",
+  selector: 'textarea',  // change this value according to the HTML
+  plugins: 'visualchars',
+  menubar: 'view',
+  toolbar: 'visualchars',
   visualchars_default_state: true
 });
 ```

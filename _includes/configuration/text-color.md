@@ -8,11 +8,11 @@ The `textcolor` component adds the forecolor/back color button controls that ena
 
 ```js
 tinymce.init({
-  selector: "textarea",
+  selector: 'textarea',
   menu: {
-    format: { title: "Format", items: "forecolor backcolor" }
+    format: { title: 'Format', items: 'forecolor backcolor' }
   },
-  toolbar: "forecolor backcolor"
+  toolbar: 'forecolor backcolor'
 });
 ```
 
@@ -22,9 +22,9 @@ These settings affect the execution of the `textcolor`. The dimensions and mappi
 
 ### `color_cols`
 
-This option allows for specifying the number of columns for text color grids. The number of rows is calculated based on the number of text colors supplied divided by the specified number of columns. 
+This option allows for specifying the number of columns for text color grids. The number of rows is calculated based on the number of text colors supplied divided by the specified number of columns.
 
-By default, the number of rows and columns is dependent of the number of colors specified using [`color_map`](#color_map). The dimensions of the grid will be calculated by {{site.productname}} to keep the grid a square or a rectangle with a minimum of 5 columns. 
+By default, the number of rows and columns is dependent of the number of colors specified using [`color_map`](#color_map). The dimensions of the grid will be calculated by {{site.productname}} to keep the grid a square or a rectangle with a minimum of 5 columns.
 
 > **Note**: The `textcolor_cols` and `textcolor_rows` properties have been removed in {{site.productname}}{{site.nbsp}}5.
 
@@ -34,9 +34,9 @@ By default, the number of rows and columns is dependent of the number of colors 
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  toolbar: "forecolor backcolor",
-  color_cols: "5"
+  selector: 'textarea',  // change this value according to your HTML
+  toolbar: 'forecolor backcolor',
+  color_cols: '5'
 });
 ```
 
@@ -50,16 +50,16 @@ This option allows specifying a map of the text colors that will appear in the g
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  toolbar: "forecolor backcolor",
+  selector: 'textarea',  // change this value according to your HTML
+  toolbar: 'forecolor backcolor',
   color_map: [
-    "000000", "Black",
-    "808080", "Gray",
-    "FFFFFF", "White",
-    "FF0000", "Red",
-    "FFFF00", "Yellow",
-    "008000", "Green",
-    "0000FF", "Blue"
+    '000000', 'Black',
+    '808080', 'Gray',
+    'FFFFFF', 'White',
+    'FF0000', 'Red',
+    'FFFF00', 'Yellow',
+    '008000', 'Green',
+    '0000FF', 'Blue'
   ]
 });
 ```
@@ -109,8 +109,8 @@ This option allows disabling the custom color picker in all color swatches of th
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  toolbar: "forecolor backcolor",
+  selector: 'textarea',  // change this value according to your HTML
+  toolbar: 'forecolor backcolor',
   custom_colors: false
 });
 ```

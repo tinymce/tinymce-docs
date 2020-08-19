@@ -15,10 +15,10 @@ This plugin adds a button for inserting nonbreaking space entities `&nbsp;` at t
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "nonbreaking",
-  menubar: "insert",
-  toolbar: "nonbreaking"
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'nonbreaking',
+  menubar: 'insert',
+  toolbar: 'nonbreaking'
 });
 ```
 
@@ -44,10 +44,10 @@ However, the `true` condition does capture the tab key and contain it within the
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "nonbreaking",
-  menubar: "insert",
-  toolbar: "nonbreaking",
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'nonbreaking',
+  menubar: 'insert',
+  toolbar: 'nonbreaking',
   nonbreaking_force_tab: true
 });
 ```
@@ -63,8 +63,8 @@ To retain the Tab key functionality of the `lists` or `table` plugins, add the `
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "table lists nonbreaking",
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'table lists nonbreaking',
   nonbreaking_force_tab: true
 });
 ```
@@ -73,8 +73,8 @@ To insert a non-breaking space with the Tab key instead of `table` and `lists` T
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "nonbreaking table lists",
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'nonbreaking table lists',
   nonbreaking_force_tab: true
 });
 ```
@@ -93,10 +93,10 @@ This option allows you to force {{site.productname}} to wrap non-breaking space 
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "nonbreaking",
-  menubar: "insert",
-  toolbar: "nonbreaking",
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'nonbreaking',
+  menubar: 'insert',
+  toolbar: 'nonbreaking',
   nonbreaking_wrap: false
 });
 ```

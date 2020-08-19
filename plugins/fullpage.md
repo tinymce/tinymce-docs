@@ -17,10 +17,10 @@ The plugin also adds a `Metadata and Document properties` menu under the `File` 
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "fullpage",
-  menubar: "file",
-  toolbar: "fullpage"
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'fullpage',
+  menubar: 'file',
+  toolbar: 'fullpage'
 });
 ```
 
@@ -38,9 +38,9 @@ This option enables you to specify the default `doctype` for the output HTML.
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "fullpage",
-  fullpage_default_doctype: "<!DOCTYPE html>"
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'fullpage',
+  fullpage_default_doctype: '<!DOCTYPE html>'
 });
 ```
 
@@ -54,9 +54,9 @@ This option enables you to specify the default encoding for the output HTML.
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "fullpage",
-  fullpage_default_encoding: "UTF-8"
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'fullpage',
+  fullpage_default_encoding: 'UTF-8'
 });
 ```
 
@@ -70,9 +70,9 @@ This option enables you to specify the default font **size** for the `body` elem
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "fullpage",
-  fullpage_default_font_size: "14px"
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'fullpage',
+  fullpage_default_font_size: '14px'
 });
 ```
 
@@ -86,8 +86,8 @@ This option enables you to specify the default font **family** for the `body` el
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "fullpage",
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'fullpage',
   fullpage_default_font_family: "'Times New Roman', Georgia, Serif;"
 });
 ```
@@ -102,9 +102,9 @@ This option enables you to specify the default `title` for the output HTML.
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "fullpage",
-  fullpage_default_title: "{{site.productname}} - Configuration:fullpage_default_title"
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'fullpage',
+  fullpage_default_title: '{{site.productname}} - Configuration:fullpage_default_title'
 });
 ```
 
@@ -118,9 +118,9 @@ This option enables you to specify the default text color for the `body` element
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "fullpage",
-  fullpage_default_text_color: "blue"
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'fullpage',
+  fullpage_default_text_color: 'blue'
 });
 ```
 
@@ -136,8 +136,8 @@ This option enables you to specify if a XML declaration should be added or not t
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "fullpage",
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'fullpage',
   fullpage_default_xml_pi: true
 });
 ```
@@ -154,8 +154,8 @@ This option allows you to specify whether {{site.productname}} should hide the n
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "fullpage",
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'fullpage',
   fullpage_hide_in_source_view: true
 });
 ```

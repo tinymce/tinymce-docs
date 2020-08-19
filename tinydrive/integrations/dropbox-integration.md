@@ -40,8 +40,8 @@ You configure the Dropbox API key by setting the [tinydrive_dropbox_app_key]({{s
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "tinydrive",
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'tinydrive',
   tinydrive_dropbox_app_key: '<your dropbox app key>'
 });
 ```

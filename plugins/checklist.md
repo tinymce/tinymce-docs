@@ -27,9 +27,9 @@ Use the following script to add the **Checklist** [toolbar button]({{site.baseur
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "lists checklist",
-  toolbar: "checklist"
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'lists checklist',
+  toolbar: 'checklist'
 });
 ```
 

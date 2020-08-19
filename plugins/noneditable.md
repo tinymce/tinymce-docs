@@ -16,8 +16,8 @@ This plugin enables you to prevent users from being able to edit content within 
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "noneditable"
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'noneditable'
 });
 ```
 
@@ -47,15 +47,15 @@ Note that classes with the `mceItem` prefix are invisible within {{site.productn
 
 **Type:** `String`
 
-**Default Value:** `"mceEditable"`
+**Default Value:** `'mceEditable'`
 
 ##### Example
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "noneditable",
-  noneditable_editable_class: "mceEditable"
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'noneditable',
+  noneditable_editable_class: 'mceEditable'
 });
 ```
 
@@ -67,15 +67,15 @@ Note that classes with the `mceItem` prefix is invisible within {{site.productna
 
 **Type:** `String`
 
-**Default Value:** `"mceNonEditable"`
+**Default Value:** `'mceNonEditable'`
 
 ##### Example
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "noneditable",
-  noneditable_noneditable_class: "mceNonEditable"
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'noneditable',
+  noneditable_noneditable_class: 'mceNonEditable'
 });
 ```
 
@@ -91,8 +91,8 @@ This option is used to specify a regular expression or array of regular expressi
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "noneditable",
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'noneditable',
   noneditable_regexp: /\d{3}-\d{3}-\d{3}/g // matches 123-456-789
 });
 ```
@@ -105,17 +105,17 @@ tinymce.init({
 
     ```js
     tinymce.init({
-      selector: "textarea",  // change this value according to your HTML
-      plugins: "code noneditable"
+      selector: 'textarea',  // change this value according to your HTML
+      plugins: 'code noneditable'
     });
     ```
 2. Configure the `noneditable_noneditable_class` option, or the others as necessary in your `tinymce.init`. For example:
 
     ```js
     tinymce.init({
-      selector: "textarea",  // change this value according to your HTML
-      plugins: "noneditable",
-      noneditable_noneditable_class: "mceNonEditable"
+      selector: 'textarea',  // change this value according to your HTML
+      plugins: 'noneditable',
+      noneditable_noneditable_class: 'mceNonEditable'
     });
     ```
     > **Note**: Replace `mceNonEditable` with the class name you want for your non-editable elements.

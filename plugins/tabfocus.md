@@ -14,8 +14,8 @@ This plugin adds the possibility to tab in/out of {{site.productname}}.
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "tabfocus"
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'tabfocus'
 });
 ```
 
@@ -34,15 +34,15 @@ This option enables you to specify an element `ID` to focus when the user presse
 ```js
 // Move focus to specific element
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  tabfocus_elements: "somebutton"
+  selector: 'textarea',  // change this value according to your HTML
+  tabfocus_elements: 'somebutton'
 });
 ```
 
 ```js
 // Move focus to next element in DOM
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  tabfocus_elements: ":prev,:next"
+  selector: 'textarea',  // change this value according to your HTML
+  tabfocus_elements: ':prev,:next'
 });
 ```

@@ -67,7 +67,7 @@ The uid passed through to `decorate` is either the uid field in the data object 
 For adding the annotate tool to the toolbar that is registered with `alpha` set the value of the toolbar to:
 
 ```js
-toolbar: "annotate-alpha"
+toolbar: 'annotate-alpha'
 ```
 
 ### 4. Applying Annotations

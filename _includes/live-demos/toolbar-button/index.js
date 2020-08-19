@@ -1,6 +1,5 @@
 tinymce.init({
   selector: 'textarea#toolbar-button',
-  content_css: '//www.tiny.cloud/css/codepen.min.css',
   toolbar: 'basicDateButton selectiveDateButton toggleDateButton splitDateButton menuDateButton',
   setup: function (editor) {
 

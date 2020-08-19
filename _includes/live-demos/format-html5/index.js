@@ -2,7 +2,6 @@ tinymce.init({
   selector: 'textarea#format-hmtl5',
   height: 500,
   plugins: 'visualblocks',
-  content_css: '//www.tiny.cloud/css/codepen.min.css',
   style_formats: [
     { title: 'Headers', items: [
       { title: 'h1', block: 'h1' },

@@ -1,6 +1,5 @@
 tinymce.init({
   selector: 'textarea#context-form',
-  content_css: '//www.tiny.cloud/css/codepen.min.css',
   height: 300,
   setup: function (editor) {
     var isAnchorElement = function (node) {

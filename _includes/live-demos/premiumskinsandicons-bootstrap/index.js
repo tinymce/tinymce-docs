@@ -1,6 +1,5 @@
 tinymce.init({
   selector: 'textarea#premiumskinsandicons-bootstrap',
-  content_css: '//www.tiny.cloud/css/codepen.min.css',
   skin: 'bootstrap',
   plugins: 'image lists link anchor charmap',
   toolbar: 'formatselect | bold italic bullist numlist | link image charmap',

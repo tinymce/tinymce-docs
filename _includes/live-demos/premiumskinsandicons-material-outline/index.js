@@ -2,8 +2,7 @@ tinymce.init({
   selector: 'textarea#premiumskinsandicons-material-outline',
   skin: 'material-outline',
   content_css: [
-    'material-outline',
-    '//www.tiny.cloud/css/codepen.min.css'
+    'material-outline'
   ],
   icons: 'material',
   plugins: 'code image link lists',

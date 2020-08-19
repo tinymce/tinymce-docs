@@ -3,7 +3,6 @@ var settings = {
   toolbar: ['annotate-alpha'],
   menubar: false,
   height: '750px',
-  content_css: '//www.tiny.cloud/css/codepen.min.css',
   content_style: '.mce-annotation { background-color: darkgreen; color: white; }',
 
   setup: function (editor) {

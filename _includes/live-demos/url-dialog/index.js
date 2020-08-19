@@ -1,6 +1,5 @@
 tinymce.init({
   selector: 'textarea.urldialog',
-  content_css: '//www.tiny.cloud/css/codepen.min.css',
   toolbar: 'urldialog',
   height: 300,
   setup: function (editor) {

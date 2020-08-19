@@ -44,7 +44,6 @@ var dialogConfig =  {
 
 tinymce.init({
   selector: 'textarea.petMachine',
-  content_css: '//www.tiny.cloud/css/codepen.min.css',
   toolbar: 'dialog-example-btn',
   setup: function (editor) {
     editor.ui.registry.addButton('dialog-example-btn', {

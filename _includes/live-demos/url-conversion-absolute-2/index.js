@@ -3,6 +3,5 @@ tinymce.init({
   height: 230,
   plugins: 'link image code',
   relative_urls: false,
-  remove_script_host: false,
-  content_css: '//www.tiny.cloud/css/codepen.min.css'
+  remove_script_host: false
 });

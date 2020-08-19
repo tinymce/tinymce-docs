@@ -2,8 +2,7 @@ tinymce.init({
   selector: 'textarea#premiumskinsandicons-material-classic',
   skin: 'material-classic',
   content_css: [
-    'material-classic',
-    '//www.tiny.cloud/css/codepen.min.css'
+    'material-classic'
   ],
   icons: 'material',
   plugins: 'code image link lists',

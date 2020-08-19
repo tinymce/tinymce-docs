@@ -1,6 +1,5 @@
 tinymce.init({
   selector: 'textarea#custom-toolbar-menu-button',
-  content_css: '//www.tiny.cloud/css/codepen.min.css',
   height: 500,
   toolbar: 'mybutton',
 

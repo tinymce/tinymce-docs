@@ -2,7 +2,6 @@ tinymce.init({
   selector: 'textarea#format-custom',
   height: 500,
   plugins: 'table wordcount',
-  content_css: '//www.tiny.cloud/css/codepen.min.css',
   content_style: '.left { text-align: left; } ' +
     'img.left { float: left; } ' +
     'table.left { float: left; } ' +

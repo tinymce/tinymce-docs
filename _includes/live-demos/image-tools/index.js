@@ -6,6 +6,5 @@ tinymce.init({
     "searchreplace visualblocks code fullscreen",
     "insertdatetime media table paste imagetools wordcount"
   ],
-  toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
-  content_css: '//www.tiny.cloud/css/codepen.min.css'
+  toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
 });

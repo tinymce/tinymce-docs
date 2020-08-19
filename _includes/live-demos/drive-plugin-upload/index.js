@@ -25,6 +25,5 @@ tinymce.init({
         });
       }
     });
-  },
-  content_css: '//www.tiny.cloud/css/codepen.min.css'
+  }
 });

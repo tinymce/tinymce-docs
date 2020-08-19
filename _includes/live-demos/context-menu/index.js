@@ -4,6 +4,5 @@ tinymce.init({
   plugins: [
     'link image imagetools table spellchecker lists'
   ],
-  contextmenu: "link image imagetools table spellchecker lists",
-  content_css: '//www.tiny.cloud/css/codepen.min.css'
+  contextmenu: "link image imagetools table spellchecker lists"
 });

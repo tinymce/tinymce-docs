@@ -3,7 +3,8 @@ tinymce.init({
   plugins: 'advcode',
   toolbar: 'code',
 
-  height: 600
+  height: 600,
+  content_style: {{site.liveDemoCSSStyles}}
 });
 
 tinymce.init({
@@ -11,5 +12,6 @@ tinymce.init({
   plugins: 'code',
   toolbar: 'code',
 
-  height: 600
+  height: 600,
+  content_style: {{site.liveDemoCSSStyles}}
 });

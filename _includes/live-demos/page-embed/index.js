@@ -7,5 +7,6 @@ tinymce.init({
     { text: 'Big embed', value: 'my-big-class' },
     { text: 'Small embed', value: 'my-small-class' }
   ],
-  height: 500
+  height: 500,
+  content_style: {{site.liveDemoCSSStyles}}
 });

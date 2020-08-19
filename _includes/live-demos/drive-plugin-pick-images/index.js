@@ -22,5 +22,6 @@ tinymce.init({
         });
       }
     });
-  }
+  },
+  content_style: {{site.liveDemoCSSStyles}}
 });

@@ -65,6 +65,8 @@ moxieMNotOnCloud: "> **Note**: The MoxieManager plugin is _not_ provided on the 
 
 predefinedIconsOnly: "Name of the icon to be displayed. Must correspond to an icon: in the [icon pack](https://www.tiny.cloud/docs/advanced/editor-icon-identifiers/), in a [custom icon pack](https://www.tiny.cloud/docs/advanced/creating-an-icon-pack/), or added using the [`addIcon` API](https://www.tiny.cloud/docs/api/tinymce.editor.ui/tinymce.editor.ui.registry/#addicon)."
 
+liveDemoCSSStyles: "'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'"
+
 exclude:
   - Dockerfile
   - Gemfile

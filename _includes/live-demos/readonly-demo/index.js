@@ -1,4 +1,5 @@
 tinymce.init({
   selector: 'textarea#readonly-demo',
-  readonly: true
+  readonly: true,
+  content_style: {{site.liveDemoCSSStyles}}
 });

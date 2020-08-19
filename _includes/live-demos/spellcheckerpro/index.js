@@ -3,5 +3,6 @@ tinymce.init({
   plugins: 'code tinymcespellchecker link',
   toolbar: 'spellchecker language spellcheckdialog',
   height: 500,
-  spellchecker_language: 'en'
+  spellchecker_language: 'en',
+  content_style: {{site.liveDemoCSSStyles}}
 });

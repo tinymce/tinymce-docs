@@ -12,5 +12,6 @@ tinymce.init({
       /* no matter what you upload, we will turn it into TinyMCE logo :)*/
       success('http://moxiecode.cachefly.net/tinymce/v9/images/logo.png');
     }, 2000);
-  }
+  },
+  content_style: {{site.liveDemoCSSStyles}}
 });

@@ -11,5 +11,6 @@ tinymce.init({
   tinydrive_dropbox_app_key: 'jee1s9eykoh752j',
   tinydrive_google_drive_key: 'AIzaSyAsVRuCBc-BLQ1xNKtnLHB3AeoK-xmOrTc',
   tinydrive_google_drive_client_id: '748627179519-p9vv3va1mppc66fikai92b3ru73mpukf.apps.googleusercontent.com',
-  toolbar: 'insertfile image link | code'
+  toolbar: 'insertfile image link | code',
+  content_style: {{site.liveDemoCSSStyles}}
 });

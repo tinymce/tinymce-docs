@@ -131,5 +131,6 @@ tinymce.init({
         callback(items);
       }
     });
-  }
+  },
+  content_style: {{site.liveDemoCSSStyles}}
 });

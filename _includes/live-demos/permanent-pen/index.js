@@ -22,5 +22,6 @@ tinymce.init({
     strikethrough: false,
     underline: false
   },
-  height: 500
+  height: 500,
+  content_style: {{site.liveDemoCSSStyles}}
 });

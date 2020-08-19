@@ -1,6 +1,6 @@
 ## body_class
 
-Use the `body_class` option to add a class to the body of each editor instance. This class can be used to override the styles added by `content_css`. The `body_class` will be removed if the editor is removed and will not be submitted with the content on a `POST` request.
+Use the `body_class` option to add a class to the body of each editor instance. This class can be used to override the styles added by `content_css`. The `body_class` will be removed if the editor is removed and is not be included on any content retrieved from the editor.
 
 **Type:** `String`
 

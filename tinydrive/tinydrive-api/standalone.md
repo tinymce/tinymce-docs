@@ -53,7 +53,7 @@ The modification date for the file in ISO 8601 format for example `2019-02-24T15
 
 ### Demo
 
-{% include codepen.html id="drive-standalone-pick" type="tinydrive" %}
+{% include live-demo.html id="drive-standalone-pick" type="tinydrive" %}
 
 ## tinydrive.browse
 
@@ -61,7 +61,7 @@ The `tinydrive.browse` method enables you to browse your files stored in {{site.
 
 ### Demo
 
-{% include codepen.html id="drive-standalone-browse" type="tinydrive" %}
+{% include live-demo.html id="drive-standalone-browse" type="tinydrive" %}
 
 ## tinydrive.upload
 
@@ -69,7 +69,7 @@ The `tinydrive.upload` method enables directly upload blobs to your {{site.cloud
 
 ### Demo
 
-{% include codepen.html id="drive-standalone-upload" type="tinydrive" %}
+{% include live-demo.html id="drive-standalone-upload" type="tinydrive" %}
 
 ## tinydrive.start
 

@@ -63,4 +63,4 @@ Read more about more Dropbox options [here](https://www.dropbox.com/guide/busine
 
 Here is a live example of Dropbox-enabled on {{site.cloudfilemanager}}.
 
-{% include codepen.html id="drive-demo-dropbox" %}
+{% include live-demo.html id="drive-demo-dropbox" %}

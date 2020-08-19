@@ -9,4 +9,4 @@ keywords: example demo custom toolbar menu button
 
 This example shows you how to add some simple menu items to a new "custom" menu.
 
-{% include codepen.html id="custom-menu-item" %}
+{% include live-demo.html id="custom-menu-item" %}

@@ -132,7 +132,7 @@ annotationChanged: (name: string, callback): void
 
 Use the following example to create the Annotate API:
 
-{% include codepen.html id="annotations" height="750" %}
+{% include live-demo.html id="annotations" height="750" %}
 
 ## Retrieving All Annotations for a Particular Annotation Name
 

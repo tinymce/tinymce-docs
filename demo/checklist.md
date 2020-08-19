@@ -12,4 +12,4 @@ controls: toolbar button
 
 This example shows how to use the **Checklist** plugin to add interactive checklists to your content. For more information on the **Checklist** plugin, see the [docs]({{site.baseurl}}/plugins/checklist/).
 
-{% include codepen.html id="checklist" %}
+{% include live-demo.html id="checklist" %}

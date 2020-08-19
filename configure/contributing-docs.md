@@ -70,17 +70,17 @@ Resources to be linked take the form of placing the linked text between brackets
 hello, [text to link](http://www.example.com) to the URL example.com.
 ```
 
-### Codepens
+### Live demos
 
-Codepens can be added to content using the "codepen.html" include, such as:
+Live demos can be added to content using the "live-demo.html" include, such as:
 
 ```
-{% raw %}{%{% endraw %} include codepen.html id="basic-example" {% raw %}%}{% endraw %}
+{% raw %}{%{% endraw %} include live-demo.html id="basic-example" {% raw %}%}{% endraw %}
 ```
 
-There are several options for this include file, see [`_includes/codepen.html`](https://github.com/tinymce/tinymce-docs/blob/develop/_includes/codepen.html) for details.
+There are several options for this include file, see [`_includes/live-demo.html`](https://github.com/tinymce/tinymce-docs/blob/develop/_includes/live-demo.html) for details.
 
-The source for each CodePen is store in the [`_includes/codepens/`](https://github.com/tinymce/tinymce-docs/blob/develop/_includes/codepens/) directory.
+The source for each live-demo is store in the [`_includes/live-demos/`](https://github.com/tinymce/tinymce-docs/blob/develop/_includes/live-demos/) directory.
 
 ### Adding metadata to a page
 

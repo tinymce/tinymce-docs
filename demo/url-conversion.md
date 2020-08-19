@@ -11,20 +11,20 @@ This example shows you how to setup {{site.productname}} to produce different re
 
 ### Absolute URLs on links and images
 
-{% include codepen.html id="url-conversion-absolute-1" height="400" %}
+{% include live-demo.html id="url-conversion-absolute-1" height="400" %}
 
 ### Absolute URLs and including domain on links and images
 
-{% include codepen.html id="url-conversion-absolute-2" height="400" %}
+{% include live-demo.html id="url-conversion-absolute-2" height="400" %}
 
 ### Relative URLs on links and images
 
-{% include codepen.html id="url-conversion-relative-1" height="400" %}
+{% include live-demo.html id="url-conversion-relative-1" height="400" %}
 
 ### Relative URLs on links and images to a specific page
 
-{% include codepen.html id="url-conversion-relative-2" height="400" %}
+{% include live-demo.html id="url-conversion-relative-2" height="400" %}
 
 ### No URL conversion
 
-{% include codepen.html id="url-conversion-none" height="400" %}
+{% include live-demo.html id="url-conversion-none" height="400" %}

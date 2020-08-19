@@ -32,7 +32,7 @@ The Comments 2.0 plugin allows the user to perform the following functions:
 
 ## Try our Comments plugin demo
 
-{% include codepen.html id="comments-2" %}
+{% include live-demo.html id="comments-2" %}
 
 {% assign pluginname = 'Comments' %}
 {% assign pluginminimumplan = 'enterprise' %}

@@ -11,4 +11,4 @@ controls: toolbar button, menu item
 
 This example shows how to use the **Case Change** plugin to change the case of text in block selection to uppercase, lowercase, or title case. For more information on the **Case Change** plugin, see the [docs]({{site.baseurl}}/plugins/casechange/).
 
-{% include codepen.html id="casechange" %}
+{% include live-demo.html id="casechange" %}

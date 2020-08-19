@@ -37,7 +37,7 @@ It also does the same for images, automatically linking to the source image URL.
 
 ### Try our PowerPaste plugin demo
 
-{% include codepen.html id="paste-from-word" %}
+{% include live-demo.html id="paste-from-word" %}
 
 {% assign pluginname = 'PowerPaste' %}
 {% assign pluginminimumplan = 'tiertwo' %}

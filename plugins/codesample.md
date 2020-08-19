@@ -95,7 +95,7 @@ tinymce.init({
 
 ## Live example
 
-{% include codepen.html id="codesample" %}
+{% include live-demo.html id="codesample" %}
 
 ## Commands
 

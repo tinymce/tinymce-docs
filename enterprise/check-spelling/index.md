@@ -11,7 +11,7 @@ _Spell Checker Pro_ adds spell checking as-you-type capabilities to {{site.produ
 - Inline spell checking.
 - A spell checking dialog that steps the user through each error, offering a list of suggested corrections.
 
-{% include codepen.html id="spellcheckerpro" %}
+{% include live-demo.html id="spellcheckerpro" %}
 
 {% include configuration/languages.md %}
 

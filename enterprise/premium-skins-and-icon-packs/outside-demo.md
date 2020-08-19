@@ -10,5 +10,5 @@ This demo uses the Outside skin. The Outside skin completely removes outside bor
 
 The example below uses the small icon pack.
 
-{% include codepen.html id="premiumskinsandicons-outside" %}
+{% include live-demo.html id="premiumskinsandicons-outside" %}
 

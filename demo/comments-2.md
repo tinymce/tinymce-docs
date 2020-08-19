@@ -15,4 +15,4 @@ In this example, the features in Comments 2.0 are highlighted, including adding 
 
 For more information on the other Comments 2.0 configuration options, see the [docs]({{ site.baseurl }}/plugins/comments/).
 
-{% include codepen.html id="comments-2" %}
+{% include live-demo.html id="comments-2" %}

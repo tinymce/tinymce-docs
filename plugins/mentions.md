@@ -12,7 +12,7 @@ The mentions plugin will present a list of users when a user types the "@" symbo
 
 ##### Example
 
-{% include codepen.html id="mentions" height="400" %}
+{% include live-demo.html id="mentions" height="400" %}
 
 ## Options
 

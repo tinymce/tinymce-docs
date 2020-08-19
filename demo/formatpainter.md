@@ -12,4 +12,4 @@ controls: toolbar button
 
 This example shows how to use Format Painter Format Painter plugin to copy and paste formatting from one location to another. For more information on the Format Painter plugin, see the [docs]({{site.baseurl}}/plugins/formatpainter/).
 
-{% include codepen.html id="format-painter" %}
+{% include live-demo.html id="format-painter" %}

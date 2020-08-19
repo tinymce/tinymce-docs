@@ -1,7 +1,7 @@
 tinymce.init({
-  selector: "textarea#checklist",
-  plugins: "lists checklist",
-  toolbar: "checklist",
+  selector: 'textarea#checklist',
+  plugins: 'lists checklist',
+  toolbar: 'checklist',
   height: 200,
   width: 350,
   menu: {

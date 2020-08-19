@@ -16,8 +16,8 @@ tinymce.PluginManager.add('my-example-plugin', function (editor) {
 });
 
 tinymce.init({
-  selector: "textarea#contextmenu-section",
-  contextmenu: "image",
+  selector: 'textarea#contextmenu-section',
+  contextmenu: 'image',
   plugins: 'my-example-plugin',
   content_style: {{site.liveDemoCSSStyles}}
 });

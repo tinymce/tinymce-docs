@@ -1,5 +1,5 @@
 tinymce.init({
-  selector: "textarea#custom-shortcut",
+  selector: 'textarea#custom-shortcut',
   height: 300,
   setup: function (editor) {
     editor.addShortcut(

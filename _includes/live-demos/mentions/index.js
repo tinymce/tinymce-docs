@@ -225,9 +225,9 @@ var mentions_select = function (mention, success) {
 };
 
 tinymce.init({
-  selector: "textarea#mentions",
-  plugins: "mentions",
-  content_style: ".mymention{ color: gray; }" +
+  selector: 'textarea#mentions',
+  plugins: 'mentions',
+  content_style: '.mymention{ color: gray; }' +
   {{site.liveDemoCSSStyles}},
 
   mentions_selector: '.mymention',

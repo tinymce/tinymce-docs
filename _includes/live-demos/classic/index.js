@@ -47,31 +47,31 @@ var table2 = '<div> ' +
 '    </div> ';
 
 var demoBaseConfig = {
-  selector: "textarea#classic",
+  selector: 'textarea#classic',
   width: 755,
   height: 500,
   resize: false,
   autosave_ask_before_unload: false,
   powerpaste_allow_local_images: true,
   plugins: [
-    "a11ychecker advcode advlist anchor autolink codesample fullscreen help image imagetools tinydrive",
-    " lists link media noneditable powerpaste preview",
-    " searchreplace table template tinymcespellchecker visualblocks wordcount"
+    'a11ychecker advcode advlist anchor autolink codesample fullscreen help image imagetools tinydrive',
+    ' lists link media noneditable powerpaste preview',
+    ' searchreplace table template tinymcespellchecker visualblocks wordcount'
   ],
   templates: [
     {
-      title: "Non-editable Example",
-      description: "Non-editable example.",
+      title: 'Non-editable Example',
+      description: 'Non-editable example.',
       content: table
     },
     {
-      title: "Simple Table Example",
-      description: "Simple Table example.",
+      title: 'Simple Table Example',
+      description: 'Simple Table example.',
       content: table2
     }
   ],
   toolbar:
-    "insertfile a11ycheck undo redo | bold italic | forecolor backcolor | template codesample | alignleft aligncenter alignright alignjustify | bullist numlist | link image tinydrive",
+    'insertfile a11ycheck undo redo | bold italic | forecolor backcolor | template codesample | alignleft aligncenter alignright alignjustify | bullist numlist | link image tinydrive',
   spellchecker_dialog: true,
   spellchecker_whitelist: ['Ephox', 'Moxiecode'],
   tinydrive_demo_files_url: '{{ site.baseurl }}/demo/tiny-drive-demo/demo_files.json',

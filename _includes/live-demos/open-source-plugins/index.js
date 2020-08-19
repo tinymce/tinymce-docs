@@ -6,10 +6,10 @@ tinymce.init({
   toolbar: 'undo redo | bold italic underline strikethrough | fontselect fontsizeselect formatselect | alignleft aligncenter alignright alignjustify | outdent indent |  numlist bullist | forecolor backcolor removeformat | pagebreak | charmap emoticons | fullscreen  preview save print | insertfile image media template link anchor codesample | ltr rtl',
   toolbar_sticky: true,
   autosave_ask_before_unload: true,
-  autosave_interval: "30s",
-  autosave_prefix: "{path}{query}-{id}-",
+  autosave_interval: '30s',
+  autosave_prefix: '{path}{query}-{id}-',
   autosave_restore_when_empty: false,
-  autosave_retention: "2m",
+  autosave_retention: '2m',
   image_advtab: true,
   link_list: [
     { title: 'My page 1', value: 'http://www.tinymce.com' },
@@ -50,8 +50,8 @@ tinymce.init({
   height: 600,
   image_caption: true,
   quickbars_selection_toolbar: 'bold italic | quicklink h2 h3 blockquote quickimage quicktable',
-  noneditable_noneditable_class: "mceNonEditable",
+  noneditable_noneditable_class: 'mceNonEditable',
   toolbar_mode: 'sliding',
-  contextmenu: "link image imagetools table",
+  contextmenu: 'link image imagetools table',
   content_style: {{site.liveDemoCSSStyles}}
  });

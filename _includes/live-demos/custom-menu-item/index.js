@@ -1,10 +1,10 @@
 tinymce.init({
-  selector: "textarea#custom-menu-item",
+  selector: 'textarea#custom-menu-item',
   height: 500,
   toolbar: false,
-  menubar: "custom",
+  menubar: 'custom',
   menu: {
-    custom: { title: "Custom menu", items: "basicitem nesteditem toggleitem" }
+    custom: { title: 'Custom menu', items: 'basicitem nesteditem toggleitem' }
   },
   setup: function (editor) {
     var toggleState = false;

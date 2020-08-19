@@ -52,6 +52,7 @@ tinymce.init({
         editor.windowManager.open(dialogConfig)
       }
     })
-  }
+  },
+  content_style: {{site.liveDemoCSSStyles}}
 });
 

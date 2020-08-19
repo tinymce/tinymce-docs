@@ -13,5 +13,6 @@ tinymce.init({
       items: 'alignleft aligncenter alignright | alignjustify'
     });
 
-  }
+  },
+  content_style: {{site.liveDemoCSSStyles}}
 });

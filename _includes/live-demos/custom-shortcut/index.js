@@ -6,5 +6,6 @@ tinymce.init({
       'meta+alt+y', 'Add yellow highlight to selected text.', function () {
       editor.execCommand('hilitecolor', false , '#FFFF00');
     });
-  }
+  },
+  content_style: {{site.liveDemoCSSStyles}}
 });

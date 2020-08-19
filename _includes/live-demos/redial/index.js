@@ -100,5 +100,6 @@ tinymce.init({
         editor.windowManager.open(page1Config)
       }
     })
-  }
+  },
+  content_style: {{site.liveDemoCSSStyles}}
 });

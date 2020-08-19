@@ -19,5 +19,6 @@ tinymce.init({
       position: 'selection',
       scope: 'node'
     });
-  }
+  },
+  content_style: {{site.liveDemoCSSStyles}}
 });

@@ -29,5 +29,6 @@ tinymce.init({
       }
     ]
   },
-  height: 500
+  height: 500,
+  content_style: {{site.liveDemoCSSStyles}}
 });

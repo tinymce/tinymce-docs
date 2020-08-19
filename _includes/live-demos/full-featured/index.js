@@ -271,7 +271,8 @@ tinymce.init({
   toolbar_mode: 'sliding',
   spellchecker_whitelist: ['Ephox', 'Moxiecode'],
   tinycomments_mode: 'embedded',
-  content_style: ".mymention{ color: gray; }",
+  content_style: ".mymention{ color: gray; }" +
+  {{site.liveDemoCSSStyles}},
   contextmenu: "link image imagetools table spellchecker configurepermanentpen",
   a11y_advanced_options: true,
   mentions_selector: '.mymention',

@@ -40,5 +40,6 @@ tinymce.init({
         autocompleteApi.hide();
       }
     });
-  }
+  },
+  content_style: {{site.liveDemoCSSStyles}}
 });

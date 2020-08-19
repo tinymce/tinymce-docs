@@ -14,5 +14,6 @@ tinymce.init({
     {text: 'C#', value: 'csharp'},
     {text: 'C++', value: 'cpp'}
   ],
-  toolbar: 'codesample code'
+  toolbar: 'codesample code',
+  content_style: {{site.liveDemoCSSStyles}}
 });

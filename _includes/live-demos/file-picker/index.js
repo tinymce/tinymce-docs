@@ -49,5 +49,6 @@ tinymce.init({
     };
 
     input.click();
-  }
+  },
+  content_style: {{site.liveDemoCSSStyles}}
 });

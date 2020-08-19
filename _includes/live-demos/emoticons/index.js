@@ -10,5 +10,6 @@ tinymce.init({
       keywords: ['brain', 'mind', 'explode', 'blown'],
       char: '🤯'
     }
-  }
+  },
+  content_style: {{site.liveDemoCSSStyles}}
 });

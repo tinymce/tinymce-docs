@@ -65,8 +65,8 @@ You configure the Google drive api key by setting the [tinydrive_google_drive_ke
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "tinydrive",
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'tinydrive',
   tinydrive_google_drive_key: '<your google api key>',
   tinydrive_google_drive_client_id: '<your google drive OAuth client ID>'
 });

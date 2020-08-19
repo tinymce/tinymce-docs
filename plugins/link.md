@@ -17,10 +17,10 @@ The **link** plugin also includes a context menu and context toolbar. The contex
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "link",
-  menubar: "insert",
-  toolbar: "link"
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'link',
+  menubar: 'insert',
+  toolbar: 'link'
 });
 ```
 
@@ -40,11 +40,11 @@ This option allows you to set a default `target` value for links when inserting/
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "link",
-  menubar: "insert",
-  toolbar: "link",
-  default_link_target: "_blank"
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'link',
+  menubar: 'insert',
+  toolbar: 'link',
+  default_link_target: '_blank'
 });
 ```
 
@@ -65,10 +65,10 @@ Set whether {{site.productname}} should prepend a `http://` prefix if the suppli
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "link",
-  menubar: "insert",
-  toolbar: "link",
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'link',
+  menubar: 'insert',
+  toolbar: 'link',
   link_assume_external_targets: true
 });
 ```
@@ -81,10 +81,10 @@ The `link_class_list` option allows you to specify a list of classes for the lin
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "link",
-  menubar: "insert",
-  toolbar: "link",
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'link',
+  menubar: 'insert',
+  toolbar: 'link',
   link_class_list: [
     {title: 'None', value: ''},
     {title: 'Dog', value: 'dog'},
@@ -109,10 +109,10 @@ By default it is not possible to open links directly from the editor. Setting `l
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "link",
-  menubar: "insert",
-  toolbar: "link",
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'link',
+  menubar: 'insert',
+  toolbar: 'link',
   link_context_toolbar: true
 });
 ```
@@ -131,11 +131,11 @@ This option allows you to set a default protocol for links when inserting/editin
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "link",
-  menubar: "insert",
-  toolbar: "link",
-  link_default_protocol: "https"
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'link',
+  menubar: 'insert',
+  toolbar: 'link',
+  link_default_protocol: 'https'
 });
 ```
 
@@ -151,10 +151,10 @@ There are multiple ways to specify how to get the data for the link list, but al
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "link",
-  menubar: "insert",
-  toolbar: "link",
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'link',
+  menubar: 'insert',
+  toolbar: 'link',
   link_list: [
     {title: 'My page 1', value: 'https://www.tiny.cloud'},
     {title: 'My page 2', value: 'https://about.tiny.cloud'}
@@ -168,11 +168,11 @@ You can also configure a URL with JSON data. The JSON data must use the same for
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "link",
-  menubar: "insert",
-  toolbar: "link",
-  link_list: "/mylist.php"
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'link',
+  menubar: 'insert',
+  toolbar: 'link',
+  link_list: '/mylist.php'
 });
 ```
 
@@ -196,10 +196,10 @@ var fetchLinkLists = function() {
 };
 
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "link",
-  menubar: "insert",
-  toolbar: "link",
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'link',
+  menubar: 'insert',
+  toolbar: 'link',
   link_list: function(success) { // called on link dialog open
     var links = fetchLinkList(); // get link_list data
     success(links); // pass link_list data to {{site.productname}}
@@ -221,10 +221,10 @@ This options allows you disable the link `title` input field in the `link` dialo
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "link",
-  menubar: "insert",
-  toolbar: "link",
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'link',
+  menubar: 'insert',
+  toolbar: 'link',
   link_title: false
 });
 ```
@@ -245,10 +245,10 @@ This option changes the behaviour of the `CTRL + K` shortcut. By default, pressi
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "link",
-  menubar: "insert",
-  toolbar: "link",
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'link',
+  menubar: 'insert',
+  toolbar: 'link',
   link_quicklink: true
 });
 ```
@@ -261,10 +261,10 @@ This option lets you specify a list of `rel` values for the `link` dialog. These
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "link",
-  menubar: "insert",
-  toolbar: "link",
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'link',
+  menubar: 'insert',
+  toolbar: 'link',
   rel_list: [
     {title: 'No Referrer', value: 'noreferrer'},
     {title: 'External Link', value: 'external'}
@@ -291,10 +291,10 @@ If [`default_link_target`](#default_link_target) is also configured and its valu
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "link",
-  menubar: "insert",
-  toolbar: "link",
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'link',
+  menubar: 'insert',
+  toolbar: 'link',
   target_list: [
     {title: 'None', value: ''},
     {title: 'Same page', value: '_self'},
@@ -310,10 +310,10 @@ To disable the option dialog set `target_list` to `false`.
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "link",
-  menubar: "insert",
-  toolbar: "link",
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'link',
+  menubar: 'insert',
+  toolbar: 'link',
   target_list: false
 });
 ```

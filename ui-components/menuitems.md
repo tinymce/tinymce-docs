@@ -86,7 +86,7 @@ A basic menu item triggers its `onAction` function when clicked.
 
 ```js
 tinymce.init({
-  selector: "textarea",
+  selector: 'textarea',
   menu: {
     custom: { title: 'Custom Menu', items: 'undo redo basicitem' }
   },
@@ -131,7 +131,7 @@ A nested menu item is a menu item with a submenu. Registering a submenu this way
 
 ```js
 tinymce.init({
-  selector: "textarea",
+  selector: 'textarea',
   menu: {
     custom: { title: 'Custom Menu', items: 'undo redo nesteditem' }
   },
@@ -190,7 +190,7 @@ A toggle menu item triggers its `onAction` when clicked. It also has a concept o
 var toggleState = false;
 
 tinymce.init({
-  selector: "textarea",
+  selector: 'textarea',
   menu: {
     custom: { title: 'Custom Menu', items: 'undo redo toggleitem' }
   },

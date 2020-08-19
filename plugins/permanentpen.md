@@ -17,7 +17,7 @@ The Permanent Pen can also be used to create user notes and other useful comment
 
 The default properties of Permanent Pen are:
 
-```js
+```
 fontname: 'arial,helvetica,sans-serif',
 forecolor: '#E74C3C',
 fontsize: '12pt',
@@ -35,7 +35,7 @@ Use the following script to configure the Permanent Pen toolbar button:
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
+  selector: 'textarea',  // change this value according to your HTML
   plugins: 'permanentpen',
   contextmenu: 'configurepermanentpen',
   toolbar: 'permanentpen'
@@ -70,7 +70,7 @@ Add the Permanent pen properties option to the menu bar with the [menu]({{site.b
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
+  selector: 'textarea',  // change this value according to your HTML
   plugins: 'permanentpen',
   toolbar: 'permanentpen',
   menu: {
@@ -117,7 +117,7 @@ The default formats for Permanent Pen can be specified in the following configur
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
+  selector: 'textarea',  // change this value according to your HTML
   plugins: 'permanentpen',
   contextmenu: 'configurepermanentpen',
   toolbar: 'permanentpen',

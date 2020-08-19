@@ -15,10 +15,10 @@ This plugin adds full screen editing capabilities to {{site.productname}}. When 
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "fullscreen",
-  menubar: "view",
-  toolbar: "fullscreen"
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'fullscreen',
+  menubar: 'view',
+  toolbar: 'fullscreen'
 });
 ```
 

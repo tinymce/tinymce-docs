@@ -43,7 +43,7 @@ Refer to the [configuring callbacks for comments]({{site.baseurl}}/advanced/conf
 To configure Comments 2.0 to use the embedded mode use the following script:
 ```js
 tinymce.init({
-  selector: "#textarea",
+  selector: '#textarea',
   tinycomments_author: 'embedded_journalist',
   tinycomments_author_name: 'Embedded Journalist',
   tinycomments_mode: 'embedded'
@@ -59,13 +59,13 @@ This option sets the author id to be used when creating or replying to comments.
 
 **Type:** `String`
 
-**Default Value:** `"Anon"`
+**Default Value:** `'Anon'`
 
 ###### Example
 
 ```js
 tinymce.init({
-  selector: "#textarea",
+  selector: '#textarea',
   tinycomments_author: 'embedded_journalist',
   tinycomments_mode: 'embedded'
 })
@@ -83,7 +83,7 @@ _Optional_ - This option sets the author's display name to be used when creating
 
 ```js
 tinymce.init({
-  selector: "#textarea",
+  selector: '#textarea',
   tinycomments_author: 'embedded_journalist',
   tinycomments_author_name: 'Embedded Journalist',
   tinycomments_mode: 'embedded'
@@ -107,7 +107,7 @@ function (req, done, fail) {
 }
 ```
 
-The following example extends the default behavior to allow the author `<Admin user>` to delete other author's comment conversations by adding `|| currentAuthor === "<Admin user>"`.
+The following example extends the default behavior to allow the author `<Admin user>` to delete other author's comment conversations by adding `|| currentAuthor === '<Admin user>'`.
 
 ###### Example
 
@@ -115,13 +115,13 @@ The following example extends the default behavior to allow the author `<Admin u
 var currentAuthor = 'embedded_journalist';
 
 tinymce.init({
-  selector: "#textarea",
+  selector: '#textarea',
   tinycomments_author: currentAuthor,
   tinycomments_can_delete: function (req, done, fail) {
     var allowed = req.comments.length > 0 &&
                   req.comments[0].author === currentAuthor;
     done({
-      canDelete: allowed || currentAuthor === "<Admin user>"
+      canDelete: allowed || currentAuthor === '<Admin user>'
     });
   }
 });
@@ -144,7 +144,7 @@ function (req, done, fail) {
 }
 ```
 
-The following example extends the default behavior to allow the author `<Admin user>` to delete other author's comments by adding `|| currentAuthor === "<Admin user>"`.
+The following example extends the default behavior to allow the author `<Admin user>` to delete other author's comments by adding `|| currentAuthor === '<Admin user>'`.
 
 ###### Example
 
@@ -152,12 +152,12 @@ The following example extends the default behavior to allow the author `<Admin u
 var currentAuthor = 'embedded_journalist';
 
 tinymce.init({
-  selector: "#textarea",
+  selector: '#textarea',
   tinycomments_author: currentAuthor,
   tinycomments_can_delete_comment: function (req, done, fail) {
     var allowed = req.comment.author === currentAuthor;
     done({
-      canDelete: allowed || currentAuthor === "<Admin user>"
+      canDelete: allowed || currentAuthor === '<Admin user>'
     });
   }
 });
@@ -179,7 +179,7 @@ function (req, done, fail) {
 }
 ```
 
-The following example extends the default behavior to allow the author `<Admin user>` to edit other author's comments by adding `|| currentAuthor === "<Admin user>"`.
+The following example extends the default behavior to allow the author `<Admin user>` to edit other author's comments by adding `|| currentAuthor === '<Admin user>'`.
 
 ###### Example
 
@@ -187,12 +187,12 @@ The following example extends the default behavior to allow the author `<Admin u
 var currentAuthor = 'embedded_journalist';
 
 tinymce.init({
-  selector: "#textarea",
+  selector: '#textarea',
   tinycomments_author: currentAuthor,
   tinycomments_can_edit_comment: function (req, done, fail) {
     var allowed = req.comment.author === currentAuthor;
     done({
-      canEdit: allowed || currentAuthor === "<Admin user>"
+      canEdit: allowed || currentAuthor === '<Admin user>'
     });
   }
 });
@@ -207,7 +207,7 @@ The **Add comment** toolbar button is available by default if the toolbar menu i
 In case of a customized toolbar menu, use the following script to configure the Comments 2.0 toolbar button:
 ```js
 tinymce.init({
- selector: "#textarea",
+ selector: '#textarea',
  toolbar: 'bold italic underline insertfile | addcomment',
  ...
 })
@@ -222,7 +222,7 @@ The `showcomments` toolbar button provides the ability to display comments field
 Use the following script to configure the Comments 2.0 toolbar button:
 ```js
 tinymce.init({
- selector: "#textarea",
+ selector: '#textarea',
  toolbar: 'bold italic underline insertfile | showcomments',
  ...
 })

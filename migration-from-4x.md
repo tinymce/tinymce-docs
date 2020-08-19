@@ -300,9 +300,9 @@ For example:
 
 ```js
 editor.addButton('mybutton', {
-  text: "My Button",
+  text: 'My Button',
   onclick: function () {
-    alert("My Button clicked!")
+    alert('My Button clicked!')
   }
 });
 ```
@@ -330,7 +330,7 @@ For example:
 
 ```js
 editor.addButton('mybutton', {
-  text: "My Button",
+  text: 'My Button',
   cmd: 'mceSave'
 });
 ```
@@ -366,7 +366,7 @@ For example:
 ```js
 editor.addButton('currentdate', {
   icon: 'insertdatetime',
-  tooltip: "Insert Current Date",
+  tooltip: 'Insert Current Date',
   onclick: insertDate,
   onpostrender: function monitorNodeChange() {
     var btn = this;

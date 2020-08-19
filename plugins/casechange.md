@@ -23,9 +23,9 @@ Use the following script to configure the **Case Change** [split toolbar button]
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "casechange",
-  toolbar: "casechange"
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'casechange',
+  toolbar: 'casechange'
 });
 ```
 
@@ -37,8 +37,8 @@ Use the following script to configure the **Case Change** [menu item]({{site.bas
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "casechange",
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'casechange',
   menu: {
     format: { title: 'Format', items: 'casechange' }
   }
@@ -88,9 +88,9 @@ The `casechange_title_case_minors` option is used to customize the rules while u
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "casechange",
-  toolbar: "casechange",
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'casechange',
+  toolbar: 'casechange',
   casechange_title_case_minors: [
     'at', 'by', 'in', 'of', 'on', 'up', 'to', 'en', 're', 'vs',
     'but', 'off', 'out', 'via', 'bar', 'mid', 'per', 'pro', 'qua', 'til',

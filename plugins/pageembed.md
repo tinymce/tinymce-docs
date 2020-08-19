@@ -17,10 +17,10 @@ Use the following script to create a Page Embed toolbar button:
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "pageembed",
-  menubar: "view",
-  toolbar: "pageembed"
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'pageembed',
+  menubar: 'view',
+  toolbar: 'pageembed'
 });
 ```
 
@@ -74,10 +74,10 @@ The `tiny_pageembed_classes` takes an array of objects with `text` and `value` p
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "pageembed",
-  menubar: "view",
-  toolbar: "pageembed",
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'pageembed',
+  menubar: 'view',
+  toolbar: 'pageembed',
   tiny_pageembed_classes: [
     { text: 'Big embed', value: 'my-big-class' },
     { text: 'Small embed', value: 'my-small-class' }
@@ -91,10 +91,10 @@ When the `tiny_pageembed_classes` value is set to an empty array, the size selec
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "pageembed",
-  menubar: "view",
-  toolbar: "pageembed",
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'pageembed',
+  menubar: 'view',
+  toolbar: 'pageembed',
   tiny_pageembed_classes: [ ]
 });
 ```

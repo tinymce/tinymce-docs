@@ -16,10 +16,10 @@ By default selectors like `".my-class"`, `".my-class1.my-class2"` and `"p.my-cla
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "importcss",
-  menubar: "format",
-  content_css: "/my-styles.css"
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'importcss',
+  menubar: 'format',
+  content_css: '/my-styles.css'
 });
 ```
 
@@ -39,10 +39,10 @@ If set to `true` this option will append the imported styles to the end of the `
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "importcss",
-  menubar: "format",
-  content_css: "/my-styles.css",
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'importcss',
+  menubar: 'format',
+  content_css: '/my-styles.css',
   importcss_append: true
 });
 ```
@@ -100,11 +100,11 @@ This option enables you to add the CSS files that should be used for populating 
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "importcss",
-  menubar: "format",
-  content_css: "/my-styles.css",
-  importcss_file_filter: "/my-styles.css"
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'importcss',
+  menubar: 'format',
+  content_css: '/my-styles.css',
+  importcss_file_filter: '/my-styles.css'
 });
 ```
 
@@ -116,10 +116,10 @@ This option enables group matching selectors into submenus in the `Formats` menu
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "importcss"
-  menubar: "format",
-  content_css: "/my-styles.css",
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'importcss',
+  menubar: 'format',
+  content_css: '/my-styles.css',
   importcss_groups: [
     {title: 'Table styles', filter: /^(td|tr)\./}, // td.class and tr.class
     {title: 'Block styles', filter: /^(div|p)\./}, // div.class and p.class
@@ -138,10 +138,10 @@ This option is used in cases where the class attribute should be replaced or mer
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
-  plugins: "importcss"
-  content_css: "/my-styles.css",
-  menubar: "format",
+  selector: 'textarea',  // change this value according to your html
+  plugins: 'importcss',
+  content_css: '/my-styles.css',
+  menubar: 'format',
   importcss_merge_classes: false
 });
 ```
@@ -156,10 +156,10 @@ This option allows you to override the default selector to format converter func
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "importcss"
-  content_css: "/my-styles.css",
-  menubar: "format",
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'importcss',
+  content_css: '/my-styles.css',
+  menubar: 'format',
   importcss_selector_converter: function(selector) {
     // Custom logic
   }
@@ -176,11 +176,11 @@ This option enables you to only import classes from selectors matching the filte
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "importcss",
-  menubar: "format",
-  content_css: "/my-styles.css",
-  importcss_selector_filter: ".my-prefix-"
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'importcss',
+  menubar: 'format',
+  content_css: '/my-styles.css',
+  importcss_selector_filter: '.my-prefix-'
 });
 ```
 
@@ -188,10 +188,10 @@ tinymce.init({
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "importcss",
-  menubar: "format",
-  content_css: "/my-styles.css",
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'importcss',
+  menubar: 'format',
+  content_css: '/my-styles.css',
   importcss_selector_filter: /\.prefix|\.otherprefix/
 });
 ```
@@ -200,10 +200,10 @@ tinymce.init({
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "importcss",
-  menubar: "format",
-  content_css: "/my-styles.css",
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'importcss',
+  menubar: 'format',
+  content_css: '/my-styles.css',
   importcss_selector_filter: function(selector) {
     return selector.indexOf('myprefix') !== -1;
   }

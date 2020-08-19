@@ -77,8 +77,8 @@ The other item names are all menu items and will appear on the context menu rega
 
 ```js
 tinymce.init({
-  selector: "textarea",
-  contextmenu: "link bold italic inserttable | cell row column deletetable"
+  selector: 'textarea',
+  contextmenu: 'link bold italic inserttable | cell row column deletetable'
 });
 ```
 --->

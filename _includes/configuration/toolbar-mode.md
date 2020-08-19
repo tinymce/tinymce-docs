@@ -56,7 +56,7 @@ Use the following settings to configure a Floating toolbar:
 
 ```js
 tinymce.init({
-    selector: "textarea",
+    selector: 'textarea',
     toolbar_mode: 'floating'
 });
 ```
@@ -73,7 +73,7 @@ Use the following settings to configure a Sliding toolbar:
 
 ```js
 tinymce.init({
-    selector: "textarea",
+    selector: 'textarea',
     toolbar_mode: 'sliding'
 });
 ```
@@ -94,7 +94,7 @@ Use the following settings to configure a Scrolling toolbar:
 
 ```js
 tinymce.init({
-  selector: "textarea",
+  selector: 'textarea',
   toolbar_mode: 'scrolling'
 });
 ```
@@ -111,7 +111,7 @@ Use the following settings to configure a wrapped toolbar:
 
 ```js
 tinymce.init({
-  selector: "textarea",
+  selector: 'textarea',
   toolbar_mode: 'wrap'
 });
 ```

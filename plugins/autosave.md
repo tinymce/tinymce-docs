@@ -14,16 +14,16 @@ The autosave plugin gives the user a warning if they have unsaved changes in the
 
 The autosave plugin adds:
 
-- A menu item, "Restore last draft" under the `File` menu, and 
+- A menu item, "Restore last draft" under the `File` menu, and
 - An optional toolbar button.
 
 ##### Example
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "autosave",
-  toolbar: "restoredraft"
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'autosave',
+  toolbar: 'restoredraft'
 });
 ```
 
@@ -45,8 +45,8 @@ This option allows you to set whether the editor should prompt the user to advis
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "autosave",
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'autosave',
   autosave_ask_before_unload: false
 });
 ```
@@ -57,14 +57,14 @@ This option enables you to specify the time the editor should wait between takin
 
 **Type**: `String`
 
-**Default Value:** `"30s"`
+**Default Value:** `'30s'`
 
 ##### Example:
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  autosave_interval: "20s"
+  selector: 'textarea',  // change this value according to your HTML
+  autosave_interval: '20s'
 });
 ```
 
@@ -74,15 +74,15 @@ This option allows you to set the prefix that is used for local storage keys.
 
 **Type**: `String`
 
-**Default Value**: `"tinymce-autosave-{path}{query}-{id}-"`
+**Default Value**: `'tinymce-autosave-{path}{query}-{id}-'`
 
 ##### Example:
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "autosave",
-  autosave_prefix: "tinymce-autosave-{path}{query}-{id}-"
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'autosave',
+  autosave_prefix: 'tinymce-autosave-{path}{query}-{id}-'
 });
 ```
 
@@ -100,8 +100,8 @@ This option enables you to specify if {{site.productname}} should automatically 
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "autosave",
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'autosave',
   autosave_restore_when_empty: true
 });
 ```
@@ -112,14 +112,14 @@ This option lets you to specify the duration editor content should remain in loc
 
 **Type**: `String`
 
-**Default Value**: "20m"
+**Default Value**: '20m'
 
 ##### Example:
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "autosave",
-  autosave_retention: "30m"
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'autosave',
+  autosave_retention: '30m'
 });
 ```

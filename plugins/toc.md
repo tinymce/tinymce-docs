@@ -15,10 +15,10 @@ controls: toolbar button, menu item
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "toc",
-  toolbar: "toc",
-  menubar: "insert"
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'toc',
+  toolbar: 'toc',
+  menubar: 'insert'
 });
 ```
 
@@ -44,9 +44,9 @@ By default headers in the content will be inspected only three levels deep, so -
 
 ```js
 tinymce.init({
-  selector: "textarea",
-  plugins: "toc",
-  toolbar: "toc",
+  selector: 'textarea',
+  plugins: 'toc',
+  toolbar: 'toc',
   toc_depth: 3
 });
 ```
@@ -63,10 +63,10 @@ Table of contents has a header and by default it will be marked up with `H2` tag
 
 ```js
 tinymce.init({
-  selector: "textarea",
-  plugins: "toc",
-  toolbar: "toc",
-  toc_header: "div" // case doesn't matter
+  selector: 'textarea',
+  plugins: 'toc',
+  toolbar: 'toc',
+  toc_header: 'div' // case doesn't matter
 });
 ```
 
@@ -82,10 +82,10 @@ With `toc_class` you can change the class name that gets assigned to the wrapper
 
 ```js
 tinymce.init({
-  selector: "textarea",
-  plugins: "toc",
-  toolbar: "toc",
-  toc_class: "our-toc"
+  selector: 'textarea',
+  plugins: 'toc',
+  toolbar: 'toc',
+  toc_class: 'our-toc'
 });
 ```
 

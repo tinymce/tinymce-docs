@@ -19,9 +19,9 @@ Use the following script to configure the Format Painter toolbar button:
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "formatpainter",
-  toolbar: "formatpainter"
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'formatpainter',
+  toolbar: 'formatpainter'
 });
 ```
 **Result**:

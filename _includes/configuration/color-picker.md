@@ -14,8 +14,8 @@ In this example, we have activated the toolbar `forecolor` and `backcolor` palet
 
 ```js
 tinymce.init({
-  selector: "textarea",
-  toolbar: "forecolor backcolor"
+  selector: 'textarea',
+  toolbar: 'forecolor backcolor'
 });
 ```
 
@@ -27,8 +27,8 @@ This option enables you to provide your own color picker. When your custom color
 
 ```js
 tinymce.init({
-  selector: "textarea",
-  toolbar: "forecolor backcolor"
+  selector: 'textarea',
+  toolbar: 'forecolor backcolor'
   color_picker_callback: function(callback, value) {
     callback('#FF00FF');
   }

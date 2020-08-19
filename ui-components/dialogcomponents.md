@@ -73,7 +73,7 @@ const dialogConfig = {
     tabs: [ ... ] // array of panel configurations
   },
   buttons: [],
-  onTabChange: (dialogApi, details) => {
+  onTabChange: function (dialogApi, details) {
     // log the contents of details
     console.log(details.newTabName);
     console.log(details.oldTabName);

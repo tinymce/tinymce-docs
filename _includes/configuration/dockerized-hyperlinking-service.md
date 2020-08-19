@@ -5,7 +5,7 @@
 {% endif %}
 The TinyMCE hyperlinking server-side component can be deployed using Docker or a container orchestration application such as Kubernetes. {{site.companyname}} provides a pre-configured package for creating a Hyperlinking Docker image.
 
-> **Warning**: Do not push this docker image to a publicly accessible container registry. Doing so will constitute a breach of the [{{site.companyname}} Self-Hosted Software License Agreement](https://about.tiny.cloud/legal/tiny-self-hosted-software-license-agreement-enterprise/).
+> **Warning**: Do not push this docker image to a publicly accessible container registry. Doing so will constitute a breach of the [{{site.companyname}} Self-Hosted Software License Agreement]({{site.legalpage}}/tiny-self-hosted-software-license-agreement-enterprise/).
 
 {% if shbundledockerfiles == false %}
 
@@ -35,7 +35,7 @@ The following procedure covers downloading, configuring, building and testing th
     ```sh
     unzip ephox-hyperlinking-docker-starter-kit.zip -d hyperlinking-service-dockerfile
     ```
-    
+
     The structure of the extracted files will be:
     ```sh
     hyperlinking-service-dockerfile/
@@ -81,7 +81,7 @@ and download either:
     ```sh
     unzip ephox-hyperlinking-docker-starter-kit.zip
     ```
-    
+
     The structure of the current directory (`tinymce-hyperlinking-service/`) will be:
     ```sh
     tinymce-hyperlinking-service/

@@ -13,6 +13,6 @@ Supported versions of {{site.productname}}:
 |   4.8   |   July 11, 2018   | January 11, 2020  |
 
 
-To view our Software License Agreements, visit: [https://about.tiny.cloud/legal/](https://about.tiny.cloud/legal/).
+To view our Software License Agreements, visit: [{{site.legalpage}}/]({{site.legalpage}}/).
 
 Support for Partner Plugins is provided by Partner companies and is not the responsibility of {{site.companynameformal}}. For information on Partner Plugins, see: [https://www.tiny.cloud/partners/]({{site.url}}/partners/).

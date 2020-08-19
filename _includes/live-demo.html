@@ -215,7 +215,7 @@ When the example.js file is present, the link to the external codepen site is di
       css: css,
       css_external: 'https://www.tiny.cloud/css/codepen.min.css',
       js: js,
-      js_external: '{{ site.tinymce_codepen_url }}'
+      js_external: '{{ site.tinymce_live-demo_url }}'
     };
     document.getElementById("codepen_data_{{ include.id }}").value = JSON.stringify(data);
 

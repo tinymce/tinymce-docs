@@ -1,6 +1,5 @@
 tinymce.init({
   selector: '#editor',
-  content_css: '//www.tiny.cloud/css/codepen.min.css',
   plugins: 'image code',
   toolbar: 'undo redo | link image | code',
   /* enable title field in the Image dialog*/

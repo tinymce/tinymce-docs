@@ -11,7 +11,6 @@ tinymce.init({
   autosave_restore_when_empty: false,
   autosave_retention: "2m",
   image_advtab: true,
-  content_css: '//www.tiny.cloud/css/codepen.min.css',
   link_list: [
     { title: 'My page 1', value: 'http://www.tinymce.com' },
     { title: 'My page 2', value: 'http://www.moxiecode.com' }
@@ -53,5 +52,5 @@ tinymce.init({
   quickbars_selection_toolbar: 'bold italic | quicklink h2 h3 blockquote quickimage quicktable',
   noneditable_noneditable_class: "mceNonEditable",
   toolbar_mode: 'sliding',
-  contextmenu: "link image imagetools table",
+  contextmenu: "link image imagetools table"
  });

@@ -72,7 +72,6 @@ var demoBaseConfig = {
   ],
   toolbar:
     "insertfile a11ycheck undo redo | bold italic | forecolor backcolor | template codesample | alignleft aligncenter alignright alignjustify | bullist numlist | link image tinydrive",
-  content_css: '//www.tiny.cloud/css/codepen.min.css',
   spellchecker_dialog: true,
   spellchecker_whitelist: ['Ephox', 'Moxiecode'],
   tinydrive_demo_files_url: '{{ site.baseurl }}/demo/tiny-drive-demo/demo_files.json',

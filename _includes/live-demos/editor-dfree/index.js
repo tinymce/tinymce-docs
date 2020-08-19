@@ -6,7 +6,6 @@ var dfreeHeaderConfig = {
   plugins: [ 'quickbars' ],
   quickbars_insert_toolbar: 'undo redo',
   quickbars_selection_toolbar: 'italic underline',
-  content_css: '//www.tiny.cloud/css/codepen.min.css'
 };
 
 var dfreeBodyConfig = {
@@ -32,7 +31,6 @@ var dfreeBodyConfig = {
   contextmenu: 'undo redo | inserttable | cell row column deletetable | help',
   powerpaste_word_import: 'clean',
   powerpaste_html_import: 'clean',
-  content_css: '//www.tiny.cloud/css/codepen.min.css'
 };
 
 tinymce.init(dfreeHeaderConfig);

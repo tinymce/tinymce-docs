@@ -2,7 +2,6 @@ tinymce.init({
   selector: 'textarea#drive-demo',
   plugins: 'image media link tinydrive code imagetools',
   api_key: 'fake-key',
-  content_css: '//www.tiny.cloud/css/codepen.min.css',
   height: 600,
   imagetools_cors_hosts: ['picsum.photos'],
   tinydrive_token_provider: function (success, failure) {

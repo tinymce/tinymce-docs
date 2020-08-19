@@ -6,9 +6,9 @@ tinymce.init({
   menubar: 'file edit view format table tools help',
   menu: {
     format: {
-      title: 'Format', 
-      items: 'configurepermanentpen | bold italic underline strikethrough ' + 
-        'superscript subscript codeformat | formats blockformats fontformats ' + 
+      title: 'Format',
+      items: 'configurepermanentpen | bold italic underline strikethrough ' +
+        'superscript subscript codeformat | formats blockformats fontformats ' +
         'fontsizes align | forecolor backcolor | removeformat'
     }
   },
@@ -22,6 +22,5 @@ tinymce.init({
     strikethrough: false,
     underline: false
   },
-  height: 500,
-  content_css: '//www.tiny.cloud/css/codepen.min.css'
+  height: 500
 });

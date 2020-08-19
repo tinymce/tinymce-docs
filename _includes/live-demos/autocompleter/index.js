@@ -11,7 +11,6 @@ var specialChars = [
 
 tinymce.init({
   selector: 'textarea#autocompleter',
-  content_css: '//www.tiny.cloud/css/codepen.min.css',
   height: 250,
   setup: function (editor) {
     /* An autocompleter that allows you to insert special characters */

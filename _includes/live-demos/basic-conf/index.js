@@ -1,6 +1,5 @@
 tinymce.init({
   selector: '#basic-conf',
-  content_css: '//www.tiny.cloud/css/codepen.min.css',
   width: 600,
   height: 300,
   plugins: [

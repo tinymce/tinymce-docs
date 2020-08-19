@@ -91,7 +91,6 @@ var page2Config = {
 
 tinymce.init({
   selector: 'textarea.wizard',
-  content_css: '//www.tiny.cloud/css/codepen.min.css',
   toolbar: 'wizardExample',
   height: '900px',
   setup: (editor) => {

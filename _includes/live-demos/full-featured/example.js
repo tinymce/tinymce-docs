@@ -22,7 +22,6 @@ tinymce.init({
   autosave_restore_when_empty: false,
   autosave_retention: "2m",
   image_advtab: true,
-  content_css: '//www.tiny.cloud/css/codepen.min.css',
   link_list: [
     { title: 'My page 1', value: 'http://www.tinymce.com' },
     { title: 'My page 2', value: 'http://www.moxiecode.com' }
@@ -53,7 +52,7 @@ tinymce.init({
   content_style: ".mymention{ color: gray; }",
   contextmenu: "link image imagetools table configurepermanentpen",
   a11y_advanced_options: true,
-  /* 
+  /*
   The following settings require more configuration than shown here.
   For information on configuring the mentions plugin, see:
   https://www.tiny.cloud/docs/plugins/mentions/.
@@ -62,5 +61,5 @@ tinymce.init({
   mentions_fetch: mentions_fetch,
   mentions_menu_hover: mentions_menu_hover,
   mentions_menu_complete: mentions_menu_complete,
-  mentions_select: mentions_select,
- });
+  mentions_select: mentions_select
+});

@@ -10,8 +10,5 @@ tinymce.init({
       keywords: ['brain', 'mind', 'explode', 'blown'],
       char: '🤯'
     }
-  },
-  content_css: [
-    '//www.tiny.cloud/css/codepen.min.css'
-  ]
+  }
 });

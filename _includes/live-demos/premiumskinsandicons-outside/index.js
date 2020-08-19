@@ -5,6 +5,5 @@ tinymce.init({
   plugins: 'lists code table codesample link image',
   toolbar: 'formatselect | bold italic underline strikethrough | image quote bullist link codesample',
   menubar: false,
-  statusbar: false,
-  content_css: '//www.tiny.cloud/css/codepen.min.css'
+  statusbar: false
 });

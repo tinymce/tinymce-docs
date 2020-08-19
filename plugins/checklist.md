@@ -11,7 +11,7 @@ controls: toolbar button
 
 The **Checklist** plugin helps the user keep track of all required actions by creating a simple, clean, and easy to use TODO list.
 
-## Format
+## Live example
 
 {% include live-demo.html id="checklist" %}
 

@@ -50,4 +50,12 @@ style_formats: [
 ]
 ```
 
-The [Custom formats]({{ site.baseurl }}/demo/format-custom/) demo contains examples of custom style formats, including how to specify new formats and group headings.
+## Live Examples
+
+This example shows you how to override the built in [formats]({{ site.baseurl }}/configure/content-formatting/#formats) and add some custom styles to the `styleselect` dropdown toolbar button and the `formats` menu item using the [style_formats]({{ site.baseurl }}/configure/editor-appearance/#style_formats) configuration option.
+
+{% include live-demo.html id="format-custom" %}
+
+This example shows you how to edit HTML5 content such as sections and articles.
+
+{% include live-demo.html id="format-html5" %}

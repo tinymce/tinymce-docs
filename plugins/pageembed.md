@@ -11,6 +11,10 @@ controls: toolbar button, menu item
 
 The **Page Embed** plugin embeds a page in the content using an iframe (Inline frames). The size of these iframes can be configured to be responsive or another user-defined dimension. The ability to use iframes helps create visually engaging content which is very useful for online courses and learning materials.
 
+### Try our Page Embed plugin demo
+
+{% include live-demo.html id="page-embed" %}
+
 ## Creating a Page Embed toolbar button
 
 Use the following script to create a Page Embed toolbar button:
@@ -24,22 +28,22 @@ tinymce.init({
 });
 ```
 
-**Result**: The ![Page Embed]({{site.baseurl}}/images/pageembed.png)(**Page Embed**) button appears in the toolbar menu.
+**Result**: The ![Page Embed]({{site.baseurl}}/images/icons/embed-page.svg)(**Page Embed**) button appears in the toolbar menu.
 
 ## Using Page Embed
 
 Use the following procedure for embedding an iframe into the content:
 
-1. Click on the ![Page Embed]({{site.baseurl}}/images/pageembed.png)(**Page Embed**) toolbar button.
+1. Click on the ![Page Embed]({{site.baseurl}}/images/icons/embed-page.svg)(**Page Embed**) toolbar button.
 
 2. The **InsertEdit Iframe** dialog box appears.
 ![InsertEdit Iframe]({{site.baseurl}}/images/insert-iframes.png)
 
-3. In the **General** tab, enter the url in the **Source** field, or click on the ![Source]({{site.baseurl}}/images/source.png)(**Source**) icon to upload a file.
+3. In the **General** tab, enter the url in the **Source** field, or click on the ![Source]({{site.baseurl}}/images/icons/browse.svg)(**Source**) icon to upload a file.
 
 4. For setting the iframe size, select the preferred option from the **Size** drop-down menu.
     * **Inline Value** is used to insert an iframe within a line. To set the dimensions of an inline iframe, provide the values in pixels in the **Width** and **Height** input box.
-        * The default values are **Width** `350px` and **Height** `260px`. Click the ![Constrain Proportions]({{site.baseurl}}/images/constrainprop.png)(**Constrain Proportions**) lock icon to change the default values.
+        * The default values are **Width** `350px` and **Height** `260px`. Click the ![Constrain Proportions]({{site.baseurl}}/images/icons/lock.svg)(**Constrain Proportions**) lock icon to change the default values.
 
     > Note: The **Width** and **Height** fields are only available if the **Inline Value** value option is selected.
 
@@ -54,7 +58,7 @@ Use the following procedure for embedding an iframe into the content:
 5. In the **Advanced** tab, provide a name and title for the iframe in the **Name** and **Title** fields.
 
 6. The **Long description URL** field can be used to describe an iframe by including text in a separate resource when a short text alternative does not adequately convey the function or information provided in the iframe.
-    * Click on the ![Source]({{site.baseurl}}/images/source.png)(**Long description URL**) icon to upload a description file.
+    * Click on the ![Source]({{site.baseurl}}/images/icons/browse.svg)(**Long description URL**) icon to upload a description file.
 
 7. Click on the **Show iframe border** radio button to display iframe borders.
 

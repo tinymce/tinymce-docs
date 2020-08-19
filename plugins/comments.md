@@ -10,6 +10,10 @@ keywords: comments commenting tinycomments
 
 The Comments 2.0 plugin provides the ability to start or join a conversation by adding comments to the content within the {{site.productname}} editor. The Comments 2.0 plugin is built upon the [Annotations API]({{site.baseurl}}/advanced/annotations/) and uses annotations to create comment threads (conversations).
 
+## Live example
+
+{% include live-demo.html id="comments-2" %}
+
 Comments is a premium plugin from {{site.companyname}}. Please see the [Premium features]({{site.baseurl}}/enterprise/tiny-comments/) section for all the buying options.
 
 After obtaining the Comments 2.0 plugin, refer to the following instructions for using it.

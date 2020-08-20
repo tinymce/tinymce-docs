@@ -1,6 +1,6 @@
 ## body_class
 
-This option enables you to specify a class for the body of each editor instance. This class can then be used to do {{site.productname}} specific overrides in your `content_css`. There is also a specific `mceForceColors` class that can be used to override the text and background colors to be black and white.
+Use the `body_class` option to add a class to the body of each editor instance. This class can be used to override the styles added by the `content_css` option. The `body_class` will be removed if the editor is removed and will not be included in any content retrieved from the editor.
 
 **Type:** `String`
 

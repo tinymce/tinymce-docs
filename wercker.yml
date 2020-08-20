@@ -28,7 +28,4 @@ deploy:
     - script:
         name: s3 cleanup
         code: _scripts/s3-cleanup.sh
-
-  after-steps:
-    - slack-notifier:
-        url: $SLACK_WEBHOOK_URL
+        

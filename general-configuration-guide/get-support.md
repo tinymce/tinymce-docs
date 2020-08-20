@@ -52,11 +52,11 @@ tinymce.init({
 
 ##### Example: Relative URLs on links and images
 
-{% include live-demo.html id="url-conversion-relative-1" height="400" %}
+{% include live-demo.html id="url-conversion-relative-1" %}
 
 ##### Example: Relative URLs on links and images to a specific page
 
-{% include live-demo.html id="url-conversion-relative-2" height="400" %}
+{% include live-demo.html id="url-conversion-relative-2" %}
 
 #### Absolute URLs
 
@@ -77,11 +77,11 @@ tinymce.init({
 
 ##### Example: Absolute URLs on links and images
 
-{% include live-demo.html id="url-conversion-absolute-1" height="400" %}
+{% include live-demo.html id="url-conversion-absolute-1" %}
 
 ##### Example: Absolute URLs and including domain on links and images
 
-{% include live-demo.html id="url-conversion-absolute-2" height="400" %}
+{% include live-demo.html id="url-conversion-absolute-2" %}
 
 #### Domain absolute URLs
 

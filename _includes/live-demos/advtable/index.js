@@ -5,5 +5,5 @@ tinymce.init({
   toolbar: 'undo redo | formatselect | bold italic | ' +
     'alignleft aligncenter alignright alignjustify | indent outdent | ' +
     'table tableinsertdialog tablecellprops tableprops | fullscreen',
-  content_style: {{site.liveDemoCSSStyles}}
+  content_style: {{site.liveDemoIframeCSSStyles}}
 });

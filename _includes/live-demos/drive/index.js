@@ -9,5 +9,5 @@ tinymce.init({
   },
   tinydrive_demo_files_url: '{{ site.baseurl }}/demo/tiny-drive-demo/demo_files.json',
   toolbar: 'insertfile image link | code',
-  content_style: {{site.liveDemoCSSStyles}}
+  content_style: {{site.liveDemoIframeCSSStyles}}
 });

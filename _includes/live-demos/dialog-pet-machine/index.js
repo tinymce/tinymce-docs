@@ -53,6 +53,6 @@ tinymce.init({
       }
     })
   },
-  content_style: {{site.liveDemoCSSStyles}}
+  content_style: {{site.liveDemoIframeCSSStyles}}
 });
 

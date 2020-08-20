@@ -1,24 +1,8 @@
-## text_color
+<a class="anchorable" href="#text_color"></a>
 
-The `textcolor` component adds the forecolor/back color button controls that enables selecting colors from a color picker and applying them to text. It adds a toolbar button and menu item to allow this functionality.
+## Text color options
 
-**Type:** `String`
-
-##### Example
-
-```js
-tinymce.init({
-  selector: 'textarea',
-  menu: {
-    format: { title: 'Format', items: 'forecolor backcolor' }
-  },
-  toolbar: 'forecolor backcolor'
-});
-```
-
-### Options
-
-These settings affect the execution of the `textcolor`. The dimensions and mapping of the grid of text colors can be set here.
+These options affect the color selector shown when using the `forecolor` (text color) and `backcolor` (text background) toolbar buttons or menu items. The dimensions and mapping of the grid of text colors can be set here.
 
 ### `color_cols`
 
@@ -35,8 +19,11 @@ By default, the number of rows and columns is dependent of the number of colors 
 ```js
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
+  menu: {
+    format: { title: 'Format', items: 'forecolor backcolor' }
+  },
   toolbar: 'forecolor backcolor',
-  color_cols: '5'
+  color_cols: 5
 });
 ```
 
@@ -51,6 +38,9 @@ This option allows specifying a map of the text colors that will appear in the g
 ```js
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
+  menu: {
+    format: { title: 'Format', items: 'forecolor backcolor' }
+  },
   toolbar: 'forecolor backcolor',
   color_map: [
     '000000', 'Black',
@@ -110,6 +100,9 @@ This option allows disabling the custom color picker in all color swatches of th
 ```js
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
+  menu: {
+    format: { title: 'Format', items: 'forecolor backcolor' }
+  },
   toolbar: 'forecolor backcolor',
   custom_colors: false
 });

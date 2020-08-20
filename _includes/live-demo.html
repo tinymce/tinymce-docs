@@ -43,8 +43,8 @@ When the example.js file is present, the link to the external codepen site is di
   {% endif %}
 {% endif %}
 
-{% comment %} Assign html to live-demo_html {% endcomment %}
-{% capture live-demo_html %}
+{% comment %} Assign html to live_demo_html {% endcomment %}
+{% capture live_demo_html %}
 {% include live-demos/{{ include.id }}/index.html %}
 {% endcapture %}
 
@@ -53,8 +53,8 @@ When the example.js file is present, the link to the external codepen site is di
 {% file_exists _includes/live-demos/{{ include.id }}/example.js %}
 {% endcapture %}
 
-{% comment %} Assign js to live-demo_js {% endcomment %}
-{% capture live-demo_js %}
+{% comment %} Assign js to live_demo_js {% endcomment %}
+{% capture live_demo_js %}
 {% include live-demos/{{ include.id }}/index.js %}
 {% endcapture %}
 
@@ -76,29 +76,29 @@ When the example.js file is present, the link to the external codepen site is di
 
 {% comment %} If style.css has been provided... {% endcomment %}
 {% if hasCss contains "true" %}
-{% comment %} Assign CSS to live-demo_css {% endcomment %}
-{% capture live-demo_css %}
+{% comment %} Assign CSS to live_demo_css {% endcomment %}
+{% capture live_demo_css %}
 {% include live-demos/{{ include.id }}/style.css %}
 {% endcapture %}
 
-{% comment %} Create and assign a CSS codeblock to live-demo_css_preview {% endcomment %}
-{% capture live-demo_css_preview %}
+{% comment %} Create and assign a CSS codeblock to live_demo_css_preview {% endcomment %}
+{% capture live_demo_css_preview %}
 ```css
-{{ live-demo_css }}
+{{ live_demo_css }}
 ```
 {% endcapture %}
 
 {% endif %}
 
-{% comment %} Create and assign a HTML codeblock to live-demo_html_preview {% endcomment %}
-{% capture live-demo_html_preview %}
+{% comment %} Create and assign a HTML codeblock to live_demo_html_preview {% endcomment %}
+{% capture live_demo_html_preview %}
 ```html
-{{ live-demo_html }}
+{{ live_demo_html }}
 ```
 {% endcapture %}
 
-{% comment %} Create and assign a JS codeblock to live-demo_js_preview {% endcomment %}
-{% capture live-demo_js_preview %}
+{% comment %} Create and assign a JS codeblock to live_demo_js_preview {% endcomment %}
+{% capture live_demo_js_preview %}
 ```js
 {{ example_js }}
 ```
@@ -119,53 +119,53 @@ When the example.js file is present, the link to the external codepen site is di
 {% endif %}
 
 {% comment %} Creates the live-demo tabs {% endcomment %}
-<div id="live-demo_{{ include.id }}" class="live-demo" {% if include.height %}style="min-height:{{ include.height }}px;"{% endif %}>
-    <div class="live-demo_tabs">
+<div id="live_demo_{{ include.id }}" class="live_demo" {% if include.height %}style="min-height:{{ include.height }}px;"{% endif %}>
+    <div class="live_demo_tabs">
         {% for tab in site.data.live-demo-tabs %}
             {% if tab.name == initialTab %}
-                {% assign class="live-demo_tab_selected" %}
+                {% assign class="live_demo_tab_selected" %}
             {% else %}
-                {% assign class="live-demo_tab_deselected" %}
+                {% assign class="live_demo_tab_deselected" %}
             {% endif %}
             {% if tab.name != "css" or hasCss contains "true" %}
                 {% if tab.name == "run" %}
-                    <a href="#" id="live-demo_tab_{{ tab.name }}_{{ include.id }}" class="{{ class }}">{{ runText }}</a>
+                    <a href="#" id="live_demo_tab_{{ tab.name }}_{{ include.id }}" class="{{ class }}">{{ runText }}</a>
                 {% else %}
-                    <a href="#" id="live-demo_tab_{{ tab.name }}_{{ include.id }}" class="{{ class }}">{{ tab.text }}</a>
+                    <a href="#" id="live_demo_tab_{{ tab.name }}_{{ include.id }}" class="{{ class }}">{{ tab.text }}</a>
                 {% endif %}
             {% endif %}
         {% endfor %}
 
         {% if hasExampleJS contains 'false' %}
-        <a href="#" id="live-demo_tab_codepen_{{ include.id }}" class="live-demo_tab_deselected ie11_optional">Edit on CodePen</a>
+        <a href="#" id="live_demo_tab_codepen_{{ include.id }}" class="live_demo_tab_deselected ie11_optional">Edit on CodePen</a>
         {% endif %}
     </div>
 
     {% comment %} Adds style.css to page if provided {% endcomment %}
-    <div id="live-demo_pane_run_{{ include.id }}" {% if "run" != initialTab %}style="display:none;"{% endif %}>
+    <div id="live_demo_pane_run_{{ include.id }}" {% if "run" != initialTab %}style="display:none;"{% endif %}>
         {% if hasCss contains "true" %}
             <style type="text/css">
-                {{ live-demo_css }}
+                {{ live_demo_css }}
             </style>
         {% endif %}
-        {{ live-demo_html }}
+        {{ live_demo_html }}
     </div>
 
     {% comment %} Adds HTML tab content {% endcomment %}
-    <div id="live-demo_pane_html_{{ include.id }}" {% if "html" != initialTab %}style="display:none;"{% endif %}>
-        {{ live-demo_html_preview | markdownify }}
+    <div id="live_demo_pane_html_{{ include.id }}" {% if "html" != initialTab %}style="display:none;"{% endif %}>
+        {{ live_demo_html_preview | markdownify }}
     </div>
 
     {% comment %} If style.css exists, add CSS tab content {% endcomment %}
     {% if hasCss contains "true" %}
-        <div id="live-demo_pane_css_{{ include.id }}" {% if "css" != initialTab %}style="display:none;"{% endif %}>
-            {{ live-demo_css_preview | markdownify }}
+        <div id="live_demo_pane_css_{{ include.id }}" {% if "css" != initialTab %}style="display:none;"{% endif %}>
+            {{ live_demo_css_preview | markdownify }}
         </div>
     {% endif %}
 
     {% comment %} Add content to JS tab from index.js or example.js {% endcomment %}
-    <div id="live-demo_pane_js_{{ include.id }}" {% if "js" != initialTab %}style="display:none;"{% endif %}>
-        {{ live-demo_js_preview | markdownify }}
+    <div id="live_demo_pane_js_{{ include.id }}" {% if "js" != initialTab %}style="display:none;"{% endif %}>
+        {{ live_demo_js_preview | markdownify }}
     </div>
 </div>
 
@@ -184,7 +184,7 @@ When the example.js file is present, the link to the external codepen site is di
 
   {% comment %} Add index.js to the page (primary tab content) {% endcomment %}
   (function() {
-    {{ live-demo_js }}
+    {{ live_demo_js }}
   })();
 
   (function() {
@@ -192,13 +192,13 @@ When the example.js file is present, the link to the external codepen site is di
     var id = "{{ include.id }}";
 
     {% comment %} Add index.js and HTML to variables {% endcomment %}
-    var html = decodeURIComponent("{{ live-demo_html | uri_escape }}");
-    var js = decodeURIComponent("{{ live-demo_js | uri_escape }}");
+    var html = decodeURIComponent("{{ live_demo_html | uri_escape }}");
+    var js = decodeURIComponent("{{ live_demo_js | uri_escape }}");
 
     {% comment %} If style.css provided, add to variable {% endcomment %}
     {% comment %} set which tabz are shown in on codepen site {% endcomment %}
     {% if hasCss contains "true" %}
-        var css = decodeURIComponent("{{ live-demo_css | uri_escape }}");
+        var css = decodeURIComponent("{{ live_demo_css | uri_escape }}");
         var tabNames = ["run","html","css","js"];
     {% else %}
         var css = "";
@@ -214,7 +214,7 @@ When the example.js file is present, the link to the external codepen site is di
       html: html,
       css: css,
       js: js,
-      js_external: '{{ site.tinymce_live-demo_url }}'
+      js_external: '{{ site.tinymce_live_demo_url }}'
     };
     document.getElementById("codepen_data_{{ include.id }}").value = JSON.stringify(data);
 
@@ -222,8 +222,8 @@ When the example.js file is present, the link to the external codepen site is di
     /* TODO: */
     var tabs = tabNames.map(function(t) {
       return {
-        tab: document.getElementById("live-demo_tab_" + t + "_" + id),
-        pane: document.getElementById("live-demo_pane_" + t + "_" + id)
+        tab: document.getElementById("live_demo_tab_" + t + "_" + id),
+        pane: document.getElementById("live_demo_pane_" + t + "_" + id)
       };
     });
 
@@ -231,14 +231,14 @@ When the example.js file is present, the link to the external codepen site is di
       t.tab.onclick = function(e) {
         tabs.forEach(function(tt) {
           tt.pane.style.display = t === tt ? 'block' : 'none';
-          tt.tab.className = t === tt ? 'live-demo_tab_selected' : 'live-demo_tab_deselected';
+          tt.tab.className = t === tt ? 'live_demo_tab_selected' : 'live_demo_tab_deselected';
         });
         e.preventDefault();
       };
     });
 
-    if (document.getElementById("live-demo_tab_codepen_" + id) !== null) {
-        document.getElementById("live-demo_tab_codepen_" + id).onclick = function() {
+    if (document.getElementById("live_demo_tab_codepen_" + id) !== null) {
+        document.getElementById("live_demo_tab_codepen_" + id).onclick = function() {
             document.getElementById("codepen_form_" + id).submit();
         };
     }

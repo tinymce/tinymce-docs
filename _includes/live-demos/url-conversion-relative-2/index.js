@@ -4,5 +4,5 @@ tinymce.init({
   plugins: 'link image code',
   relative_urls: true,
   document_base_url: '//www.tiny.cloud/demo/',
-  content_style: {{site.liveDemoCSSStyles}}
+  content_style: {{site.liveDemoIframeCSSStyles}}
 });

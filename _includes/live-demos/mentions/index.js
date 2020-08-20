@@ -228,7 +228,7 @@ tinymce.init({
   selector: 'textarea#mentions',
   plugins: 'mentions',
   content_style: '.mymention{ color: gray; }' +
-  {{site.liveDemoCSSStyles}},
+  {{site.liveDemoIframeCSSStyles}},
 
   mentions_selector: '.mymention',
   mentions_fetch: mentions_fetch,

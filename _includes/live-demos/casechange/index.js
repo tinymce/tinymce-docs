@@ -3,5 +3,5 @@ tinymce.init({
   plugins: 'casechange',
   toolbar: 'casechange',
   height: '600px',
-  content_style: {{site.liveDemoCSSStyles}}
+  content_style: {{site.liveDemoIframeCSSStyles}}
 });

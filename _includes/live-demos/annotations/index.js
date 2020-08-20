@@ -3,7 +3,7 @@ var settings = {
   toolbar: ['annotate-alpha'],
   menubar: false,
   height: '750px',
-  content_style: '.mce-annotation { background-color: darkgreen; color: white; }' + {{site.liveDemoCSSStyles}},
+  content_style: '.mce-annotation { background-color: darkgreen; color: white; } ' + {{site.liveDemoIframeCSSStyles}},
 
   setup: function (editor) {
     editor.ui.registry.addButton('annotate-alpha', {

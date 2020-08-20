@@ -29,5 +29,5 @@ tinymce.init({
   ],
   visualblocks_default_state: true,
   end_container_on_empty_block: true,
-  content_style: {{site.liveDemoCSSStyles}}
+  content_style: {{site.liveDemoIframeCSSStyles}}
 });

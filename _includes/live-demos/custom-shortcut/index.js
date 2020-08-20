@@ -7,5 +7,5 @@ tinymce.init({
       editor.execCommand('hilitecolor', false , '#FFFF00');
     });
   },
-  content_style: {{site.liveDemoCSSStyles}}
+  content_style: {{site.liveDemoIframeCSSStyles}}
 });

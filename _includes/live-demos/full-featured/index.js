@@ -272,7 +272,7 @@ tinymce.init({
   spellchecker_whitelist: ['Ephox', 'Moxiecode'],
   tinycomments_mode: 'embedded',
   content_style: '.mymention{ color: gray; }' +
-  {{site.liveDemoCSSStyles}},
+  {{site.liveDemoIframeCSSStyles}},
   contextmenu: 'link image imagetools table spellchecker configurepermanentpen',
   a11y_advanced_options: true,
   mentions_selector: '.mymention',

@@ -19,5 +19,5 @@ tinymce.init({
   selector: 'textarea#contextmenu-section',
   contextmenu: 'image',
   plugins: 'my-example-plugin',
-  content_style: {{site.liveDemoCSSStyles}}
+  content_style: {{site.liveDemoIframeCSSStyles}}
 });

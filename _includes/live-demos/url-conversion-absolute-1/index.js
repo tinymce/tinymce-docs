@@ -3,5 +3,5 @@ tinymce.init({
   height: 300,
   plugins: 'link image code',
   relative_urls: false,
-  content_style: {{site.liveDemoCSSStyles}}
+  content_style: {{site.liveDemoIframeCSSStyles}}
 });

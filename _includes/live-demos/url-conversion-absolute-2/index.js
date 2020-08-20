@@ -4,5 +4,5 @@ tinymce.init({
   plugins: 'link image code',
   relative_urls: false,
   remove_script_host: false,
-  content_style: {{site.liveDemoCSSStyles}}
+  content_style: {{site.liveDemoIframeCSSStyles}}
 });

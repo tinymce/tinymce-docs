@@ -175,7 +175,7 @@ The source for each live demo is store in the `_includes/live-demos/` directory.
 
 #### Overriding the tinymce URL in live demos
 
-All live demos usually get their tinymce.min.js URL from the `tinymce_live-demo_url` setting in the _config.yml file.
+All live demos usually get their tinymce.min.js URL from the `tinymce_live_demo_url` setting in the _config.yml file.
 However, there are some instances where you wish to override this, e.g.
 
  - You want to push/deploy a branch for a new feature that's only on the 'dev' channel.
@@ -183,8 +183,8 @@ However, there are some instances where you wish to override this, e.g.
 
 To help with this, there are two mechanisms for overriding the tinymce.min.js URL.
 
- 1. Set `tinymce_live-demo_url` in `_config-local-override.yml`.
-    - This will override the `tinymce_live-demo_url` setting in `config.yml`.
+ 1. Set `tinymce_live_demo_url` in `_config-local-override.yml`.
+    - This will override the `tinymce_live_demo_url` setting in `config.yml`.
     - This file is *not* intended to be checked in.
     - This option changes the URL for all live demos.
 

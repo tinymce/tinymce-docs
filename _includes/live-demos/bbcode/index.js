@@ -3,5 +3,5 @@ tinymce.init({
   height: 200,
   plugins: 'bbcode code',
   toolbar: 'undo redo | bold italic underline | code',
-  content_style: {{site.liveDemoCSSStyles}}
+  content_style: {{site.liveDemoIframeCSSStyles}}
 });

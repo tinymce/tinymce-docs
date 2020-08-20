@@ -17,7 +17,7 @@ The Permanent Pen can also be used to create user notes and other useful comment
 
 The default properties of Permanent Pen are:
 
-```
+```js
 fontname: 'arial,helvetica,sans-serif',
 forecolor: '#E74C3C',
 fontsize: '12pt',

@@ -52,7 +52,10 @@ style_formats: [
 
 ## Live Examples
 
-This example shows you how to override the built in [formats]({{ site.baseurl }}/configure/content-formatting/#formats) and add some custom styles to the `styleselect` dropdown toolbar button and the `formats` menu item using the [style_formats]({{ site.baseurl }}/configure/editor-appearance/#style_formats) configuration option.
+This example shows you how to:
+
+- Override the built-in [formats]({{ site.baseurl }}/configure/content-formatting/#formats).
+- Add some custom styles to the `styleselect` dropdown toolbar button the `formats` menu item using the [style_formats]({{ site.baseurl }}/configure/editor-appearance/#style_formats) configuration option.
 
 {% include live-demo.html id="format-custom" %}
 

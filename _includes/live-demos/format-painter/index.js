@@ -30,5 +30,5 @@ tinymce.init({
     ]
   },
   height: 500,
-  content_style: {{site.liveDemoCSSStyles}}
+  content_style: {{site.liveDemoIframeCSSStyles}}
 });

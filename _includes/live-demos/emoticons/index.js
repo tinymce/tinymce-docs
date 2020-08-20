@@ -11,5 +11,5 @@ tinymce.init({
       char: '🤯'
     }
   },
-  content_style: {{site.liveDemoCSSStyles}}
+  content_style: {{site.liveDemoIframeCSSStyles}}
 });

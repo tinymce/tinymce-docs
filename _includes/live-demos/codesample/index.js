@@ -15,5 +15,5 @@ tinymce.init({
     {text: 'C++', value: 'cpp'}
   ],
   toolbar: 'codesample code',
-  content_style: {{site.liveDemoCSSStyles}}
+  content_style: {{site.liveDemoIframeCSSStyles}}
 });

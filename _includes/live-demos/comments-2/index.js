@@ -11,5 +11,5 @@ tinymce.init({
   plugins: 'paste tinycomments',
   tinycomments_mode: 'embedded',
   tinycomments_author: 'Author',
-  content_style: {{site.liveDemoCSSStyles}}
+  content_style: {{site.liveDemoIframeCSSStyles}}
 });

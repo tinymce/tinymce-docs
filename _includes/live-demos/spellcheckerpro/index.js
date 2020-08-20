@@ -4,5 +4,5 @@ tinymce.init({
   toolbar: 'spellchecker language spellcheckdialog',
   height: 500,
   spellchecker_language: 'en',
-  content_style: {{site.liveDemoCSSStyles}}
+  content_style: {{site.liveDemoIframeCSSStyles}}
 });

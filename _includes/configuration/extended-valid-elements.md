@@ -31,6 +31,6 @@ extended_valid_elements : 'script[src|async|defer|type|charset]'
 
 ## Live Example
 
-This example shows you how to use the [extended_valid_elements]({{ site.baseurl }}/configure/content-filtering/#extended_valid_elements) option. This option enables you to specify valid elements and attributes.
+This example shows you how to use the [extended_valid_elements]({{ site.baseurl }}/configure/content-filtering/#extended_valid_elements) option. This option is used to add additional valid elements and attributes.
 
 {% include live-demo.html id="valid-elements" %}

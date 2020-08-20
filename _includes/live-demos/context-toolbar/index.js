@@ -20,5 +20,5 @@ tinymce.init({
       scope: 'node'
     });
   },
-  content_style: {{site.liveDemoCSSStyles}}
+  content_style: {{site.liveDemoIframeCSSStyles}}
 });

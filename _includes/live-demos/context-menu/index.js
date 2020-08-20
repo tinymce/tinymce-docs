@@ -5,5 +5,5 @@ tinymce.init({
     'link image imagetools table spellchecker lists'
   ],
   contextmenu: 'link image imagetools table spellchecker lists',
-  content_style: {{site.liveDemoCSSStyles}}
+  content_style: {{site.liveDemoIframeCSSStyles}}
 });

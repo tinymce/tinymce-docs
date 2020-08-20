@@ -4,7 +4,7 @@ tinymce.init({
   toolbar: 'code',
 
   height: 600,
-  content_style: {{site.liveDemoCSSStyles}}
+  content_style: {{site.liveDemoIframeCSSStyles}}
 });
 
 tinymce.init({
@@ -13,5 +13,5 @@ tinymce.init({
   toolbar: 'code',
 
   height: 600,
-  content_style: {{site.liveDemoCSSStyles}}
+  content_style: {{site.liveDemoIframeCSSStyles}}
 });

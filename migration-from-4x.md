@@ -80,7 +80,7 @@ tinymce.init({
       icon: 'plus',
       tooltip: 'Insert',
       fetch: function (callback) {
-        callback('image link | inserttable')
+        callback('image link | inserttable');
       }
     });
   }
@@ -302,7 +302,7 @@ For example:
 editor.addButton('mybutton', {
   text: 'My Button',
   onclick: function () {
-    alert('My Button clicked!')
+    alert('My Button clicked!');
   }
 });
 ```
@@ -313,7 +313,7 @@ editor.addButton('mybutton', {
 editor.ui.registry.addButton('myButton', {
   text: 'My Button',
   onAction: function (buttonApi) {
-    alert('My Button clicked!')
+    alert('My Button clicked!');
   }
 });
 ```
@@ -340,8 +340,8 @@ editor.addButton('mybutton', {
 ```js
 editor.ui.registry.addButton('myButton', {
   text: 'My Button',
-  onAction: function (_) {
-    editor.execCommand('mceSave')
+  onAction: function () {
+    editor.execCommand('mceSave');
   }
 });
 ```
@@ -386,8 +386,8 @@ editor.ui.registry.addButton('customDateButton', {
   icon: 'insert-time',
   tooltip: 'Insert Current Date',
   disabled: true,
-  onAction: function (_) {
-    editor.insertContent(toTimeHtml(new Date()))
+  onAction: function () {
+    editor.insertContent(toTimeHtml(new Date()));
   },
   onSetup: function (buttonApi) {
     const editorEventCallback = function (eventApi) {
@@ -435,7 +435,7 @@ tinymce.init({
     editor.ui.registry.addMenuItem('myCustomMenuItem', {
       text: 'My Custom Menu Item',
       onAction: function () {
-        alert('Menu item clicked')
+        alert('Menu item clicked');
       }
     });
   }

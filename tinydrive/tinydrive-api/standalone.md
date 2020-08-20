@@ -21,7 +21,7 @@ In order to use {{site.cloudfilemanager}} in standalone mode you will need to ad
 <script>
 tinydrive.pick({
   token_provider: '/your-local/jwt-provider'
-}).then( function (result) {
+}).then(function (result) {
   console.log(result.files);
 });
 </script>

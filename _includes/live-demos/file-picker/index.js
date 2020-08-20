@@ -50,5 +50,5 @@ tinymce.init({
 
     input.click();
   },
-  content_style: {{site.liveDemoCSSStyles}}
+  content_style: {{site.liveDemoIframeCSSStyles}}
 });

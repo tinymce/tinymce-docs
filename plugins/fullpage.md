@@ -104,7 +104,7 @@ This option enables you to specify the default `title` for the output HTML.
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'fullpage',
-  fullpage_default_title: '{{site.productname}} - Configuration:fullpage_default_title'
+  fullpage_default_title: 'My default page title'
 });
 ```
 

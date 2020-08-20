@@ -38,6 +38,8 @@ tinymce.activeEditor.uploadImages(function(success) {
 });
 ```
 
+{{site.svgsNotSupported}}
+
 ## Image Uploader requirements
 
 A server-side upload handler script uploads local images to a remote server. The script must:

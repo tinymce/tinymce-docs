@@ -12,7 +12,7 @@ Image Tools (`imagetools`) plugin adds a contextual editing toolbar to the image
 
 {% include live-demo.html id="image-tools" %}
 
-> *Warning:* This feature requires at least Internet Explorer 10, since it makes use of `HTML5 File API`.
+{{site.svgsNotSupported}}
 
 ## Cloud Installation
 The Image Tools plugin is provided with all subscriptions to [{{site.cloudname}}]({{ site.baseurl }}/cloud-deployment-guide/editor-and-features/), including an automatically configured image proxy.

@@ -30,7 +30,7 @@ strikethrough: false
 
 For more information on {{site.productname}} formats, refer to the [formats]({{site.baseurl}}/configure/content-formatting/#formats) section.
 
-## Live example
+## Try our Permanent Pen demo
 
 {% include live-demo.html id="permanent-pen" %}
 

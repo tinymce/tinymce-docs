@@ -209,9 +209,7 @@ Developers can add custom filtering before and after **PowerPaste**'s filters ar
 
 > Note: These callbacks are also triggered by the core Paste plugin, but when triggered by PowerPaste they are passed more data.
 
-#### Configuration Options
-
-##### paste_preprocess
+### paste_preprocess
 
 This setting allows you to run custom filtering on the content from the clipboard before it is run through PowerPaste's filters. The callback is passed two arguments: the PowerPaste plugin instance and an object containing event data. This object contains:
 
@@ -246,7 +244,7 @@ tinymce.init({
 });
 ```
 
-##### paste_postprocess
+### paste_postprocess
 
 This setting allows you to run custom filtering on the pasted content after it is run through PowerPaste's filters. The callback is passed two arguments: the PowerPaste plugin instance and an object containing event data. This object contains:
 
@@ -275,7 +273,7 @@ tinymce.init({
 });
 ```
 
-#### Event Listeners
+## Event Listeners
 
 Custom paste filtering can also be configured at runtime using event listeners.
 

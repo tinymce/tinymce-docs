@@ -19,9 +19,6 @@ By default, the number of rows and columns is dependent of the number of colors 
 ```js
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  menu: {
-    format: { title: 'Format', items: 'forecolor backcolor' }
-  },
   toolbar: 'forecolor backcolor',
   color_cols: 5
 });
@@ -38,9 +35,6 @@ This option allows specifying a map of the text colors that will appear in the g
 ```js
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  menu: {
-    format: { title: 'Format', items: 'forecolor backcolor' }
-  },
   toolbar: 'forecolor backcolor',
   color_map: [
     '000000', 'Black',
@@ -100,9 +94,6 @@ This option allows disabling the custom color picker in all color swatches of th
 ```js
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  menu: {
-    format: { title: 'Format', items: 'forecolor backcolor' }
-  },
   toolbar: 'forecolor backcolor',
   custom_colors: false
 });

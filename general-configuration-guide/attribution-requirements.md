@@ -31,7 +31,7 @@ The following example shows the status bar product attribution in the bottom, ri
 
 If the status bar is removed or not visible on the editor, you can include attribution per the following:
 
-* "**POWERED BY TINY**" or the [{{site.companyname}} logo]({{site.url}}/guidelines/#logo) placed in a readily visible location whenever the editor is loaded.
+* "**POWERED BY TINY**" or the [{{site.companyname}} logo]({{site.url}}/guidelines/#logo) placed in a readily visible location in your application when the editor is loaded.
 * The word "**Tiny**" or the {{site.companyname}} logo should have a hyperlink to [{{site.url}}]({{site.url}}).
 
 The location of the product attribution is to be:

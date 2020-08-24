@@ -63,17 +63,17 @@ Resources to be linked take the form of placing the linked text between brackets
 hello, [text to link](http://www.example.com) to the URL example.com.
 ```
 
-### Codepens
+### Live Demos
 
-Codepens can be added to content using the "codepen.html" include, such as:
+Live demos can be added to content using the "live-demos.html" include, such as:
 
 ```
-{% include codepen.html id="basic-example" %}
+{% include live-demos.html id="basic-example" %}
 ```
 
-There are several options for this include file - please see `_includes/codepen.html` for details.
+There are several options for this include file - please see `_includes/live-demos.html` for details.
 
-The source for each CodePen is store in the `_includes/codepens/` directory.
+The source for each live demo is store in the `_includes/live-demos/` directory.
 
 ### Adding metadata to a page
 

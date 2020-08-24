@@ -41,7 +41,7 @@ The **Title Case** can be used for the following editor elements:
 
 ## Try our Case Change demo
 
-{% include codepen.html id="casechange" %}
+{% include live-demo.html id="casechange" %}
 
 {% assign pluginname = 'Case Change' %}
 {% assign pluginminimumplan = 'tiertwo' %}

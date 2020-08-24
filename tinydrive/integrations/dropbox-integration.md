@@ -40,8 +40,8 @@ You configure the Dropbox API key by setting the [tinydrive_dropbox_app_key]({{s
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "tinydrive",
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'tinydrive',
   tinydrive_dropbox_app_key: '<your dropbox app key>'
 });
 ```
@@ -63,4 +63,4 @@ Read more about more Dropbox options [here](https://www.dropbox.com/guide/busine
 
 Here is a live example of Dropbox-enabled on {{site.cloudfilemanager}}.
 
-{% include codepen.html id="drive-demo-dropbox" %}
+{% include live-demo.html id="drive-demo-dropbox" %}

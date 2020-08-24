@@ -29,8 +29,8 @@ To base the skin version on the user’s preference as specified in their operat
 ```js
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  skin: (window.matchMedia("(prefers-color-scheme: dark)").matches ? "oxide-dark" : ""),
-  content_css: (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "")
+  skin: (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'oxide-dark' : ''),
+  content_css: (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : '')
 });
 ```
 

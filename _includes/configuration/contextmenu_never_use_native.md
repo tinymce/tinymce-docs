@@ -12,7 +12,7 @@ The `contextmenu_never_use_native` option allows you to prevent the browser cont
 
 ```js
 tinymce.init({
-  selector: "textarea",
+  selector: 'textarea',
   contextmenu_never_use_native: true
 });
 ```

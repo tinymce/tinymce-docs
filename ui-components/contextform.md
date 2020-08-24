@@ -104,6 +104,6 @@ Both `contextformbutton` and `contextformtogglebutton` are passed `formApi` in t
 
 This example shows how the link plugin adds the standard link context form. The context form will show whenever any content is selected.
 
-{% include codepen.html id="context-form" height="400" tab="js" %}
+{% include live-demo.html id="context-form" height="400" tab="js" %}
 
 {% include context/priority.md %}

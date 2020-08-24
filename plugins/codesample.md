@@ -13,9 +13,9 @@ The Code Sample plugin (`codesample`) lets a user insert and embed syntax color 
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "codesample",
-  toolbar: "codesample"
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'codesample',
+  toolbar: 'codesample'
 });
 ```
 
@@ -95,7 +95,7 @@ tinymce.init({
 
 ## Live example
 
-{% include codepen.html id="codesample" %}
+{% include live-demo.html id="codesample" %}
 
 ## Commands
 

@@ -14,7 +14,7 @@ This will convert all URLs within the same domain to relative URLs. The URLs wil
 
 ```
 relative_urls : true,
-document_base_url : "http://www.example.com/path1/"
+document_base_url : 'http://www.example.com/path1/'
 ```
 
 Example: `http://www.example.com/path1/path2/file.htm` >> `path2/file.htm`
@@ -26,7 +26,7 @@ This will convert all relative URLs to absolute URLs. The URLs will be absolute 
 ```
 relative_urls : false,
 remove_script_host : true,
-document_base_url : "http://www.example.com/path1/"
+document_base_url : 'http://www.example.com/path1/'
 ```
 
 Example: path2/file.htm >> /path1/path2/file.htm
@@ -38,7 +38,7 @@ This will convert all relative URLs to absolute URLs. The URLs will be absolute 
 ```
 relative_urls : false,
 remove_script_host : false,
-document_base_url : "http://www.example.com/path1/"
+document_base_url : 'http://www.example.com/path1/'
 ```
 
 Example: path2/file.htm >> http://www.example.com/path1/path2/file.htm

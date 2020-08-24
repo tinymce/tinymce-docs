@@ -53,5 +53,5 @@ The `fetch` results should be a list of objects with the following details:
 
 This example shows how the charmap plugin adds the standard autocompleter. The autocompleter will show whenever a `:` character is typed plus at least one additional character.
 
-{% include codepen.html id="autocompleter" height="300" tab="js" %}
+{% include live-demo.html id="autocompleter" height="300" tab="js" %}
 

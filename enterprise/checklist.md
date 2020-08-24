@@ -25,7 +25,7 @@ Common use cases for using a checklist:
 
 ### Try our Checklist plugin demo
 
-{% include codepen.html id="checklist" %}
+{% include live-demo.html id="checklist" %}
 
 {% assign pluginname = 'Checklist' %}
 {% assign pluginminimumplan = 'tiertwo' %}

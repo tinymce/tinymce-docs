@@ -50,6 +50,14 @@ tinymce.init({
 
 `http://www.site.com/path1/path2/file.htm >> path2/file.htm`
 
+##### Example: Relative URLs on links and images
+
+{% include live-demo.html id="url-conversion-relative-1" %}
+
+##### Example: Relative URLs on links and images to a specific page
+
+{% include live-demo.html id="url-conversion-relative-2" %}
+
 #### Absolute URLs
 
 The **Absolute URLs** converts all relative URLs to absolute URLs. The URLs are `absolute` based on the `document_base_url`.
@@ -66,6 +74,14 @@ tinymce.init({
 ##### Example
 
 `path2/file.htm >> /path1/path2/file.htm`
+
+##### Example: Absolute URLs on links and images
+
+{% include live-demo.html id="url-conversion-absolute-1" %}
+
+##### Example: Absolute URLs and including domain on links and images
+
+{% include live-demo.html id="url-conversion-absolute-2" %}
 
 #### Domain absolute URLs
 

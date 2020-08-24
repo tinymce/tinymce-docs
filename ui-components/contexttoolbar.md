@@ -25,7 +25,7 @@ A context toolbar is registered by calling the `addContextToolbar` API in the re
 
 This example shows how the quickbars plugin adds the standard selection context toolbar and an example of a custom toolbar for image alignment. The context toolbar will show whenever any content is selected.
 
-{% include codepen.html id="context-toolbar" height="600" tab="js" %}
+{% include live-demo.html id="context-toolbar" height="600" tab="js" %}
 
 ## Launching a context toolbar programmatically
 

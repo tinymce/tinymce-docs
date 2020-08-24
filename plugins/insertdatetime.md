@@ -15,10 +15,10 @@ The `insertdatetime` plugin provides a toolbar control and menu item `Insert dat
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "insertdatetime",
-  menubar: "insert",
-  toolbar: "insertdatetime"
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'insertdatetime',
+  menubar: 'insert',
+  toolbar: 'insertdatetime'
 });
 ```
 
@@ -34,11 +34,11 @@ This option allows you to override the default formatting rule for date formats 
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "insertdatetime",
-  menubar: "insert",
-  toolbar: "insertdatetime",
-  insertdatetime_dateformat: "%Y-%m-%d"
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'insertdatetime',
+  menubar: 'insert',
+  toolbar: 'insertdatetime',
+  insertdatetime_dateformat: '%Y-%m-%d'
 });
 ```
 
@@ -50,11 +50,11 @@ Allows you to specify a list of date/time formats to be used in the date menu or
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "insertdatetime",
-  menubar: "insert",
-  toolbar: "insertdatetime",
-  insertdatetime_formats: ["%H:%M:%S", "%Y-%m-%d", "%I:%M:%S %p", "%D"]
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'insertdatetime',
+  menubar: 'insert',
+  toolbar: 'insertdatetime',
+  insertdatetime_formats: ['%H:%M:%S', '%Y-%m-%d', '%I:%M:%S %p', '%D']
 });
 ```
 
@@ -66,11 +66,11 @@ This option allows you to override the default formatting rule for times inserte
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "insertdatetime",
-  menubar: "insert",
-  toolbar: "insertdatetime",
-  insertdatetime_timeformat: "%H:%M:%S"
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'insertdatetime',
+  menubar: 'insert',
+  toolbar: 'insertdatetime',
+  insertdatetime_timeformat: '%H:%M:%S'
 });
 ```
 
@@ -86,10 +86,10 @@ When this option is enabled HTML5 time elements gets generated when you insert d
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "insertdatetime",
-  menubar: "insert",
-  toolbar: "insertdatetime",
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'insertdatetime',
+  menubar: 'insert',
+  toolbar: 'insertdatetime',
   insertdatetime_element: true
 });
 ```

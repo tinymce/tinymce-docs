@@ -100,8 +100,8 @@ tinymce.PluginManager.add('example', function(editor, url) {
   return {
     getMetadata: function () {
       return  {
-        name: "Example plugin",
-        url: "http://exampleplugindocsurl.com"
+        name: 'Example plugin',
+        url: 'http://exampleplugindocsurl.com'
       };
     }
   };

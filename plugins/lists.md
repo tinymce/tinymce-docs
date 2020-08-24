@@ -14,9 +14,9 @@ The plugin also normalizes list behavior between browsers. Enable it if you have
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "lists",
-  toolbar: "numlist bullist"
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'lists',
+  toolbar: 'numlist bullist'
 });
 ```
 
@@ -32,9 +32,9 @@ For example:
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "lists",
-  toolbar: "numlist bullist",
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'lists',
+  toolbar: 'numlist bullist',
   lists_indent_on_tab: false
 });
 ```

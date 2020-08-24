@@ -10,5 +10,5 @@ This demo shows an example form using Bootstrap together with {{site.productname
 
 >The focus outline on the editor is not part of the skin. Take a look in the JS tab below for inspiration on how to add it.
 
-{% include codepen.html id="premiumskinsandicons-bootstrap" %}
+{% include live-demo.html id="premiumskinsandicons-bootstrap" %}
 

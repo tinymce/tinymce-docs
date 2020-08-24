@@ -35,8 +35,8 @@ tinymce.init({
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "tinydrive",
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'tinydrive',
   tinydrive_token_provider: function (success, failure) {
      success({ token: 'jwt-token' });
      // failure('Could not create a jwt token')
@@ -56,8 +56,8 @@ This setting enables changing the default upload path for files that get uploade
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "tinydrive",
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'tinydrive',
   tinydrive_upload_path: '/some/other/path'
 });
 ```
@@ -73,8 +73,8 @@ This setting enables constraining the width/height of uploaded images. When this
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "tinydrive",
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'tinydrive',
   tinydrive_max_image_dimension: 1024
 });
 ```
@@ -111,8 +111,8 @@ This setting enables specifying the Dropbox API key for integrating dropbox into
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "tinydrive",
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'tinydrive',
   tinydrive_dropbox_app_key: '<your dropbox app key>'
 });
 ```
@@ -129,8 +129,8 @@ This setting enables specifying the Google Drive API key for integrating Google 
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "tinydrive",
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'tinydrive',
   tinydrive_google_drive_key: '<your google drive api key>'
 });
 ```
@@ -145,8 +145,8 @@ This setting enables specifying the Google Drive client ID for integrating Googl
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "tinydrive",
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'tinydrive',
   tinydrive_google_drive_client_id: '<your google drive client id>'
 });
 ```

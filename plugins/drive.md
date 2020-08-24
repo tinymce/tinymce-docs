@@ -16,7 +16,7 @@ Once you enable {{site.cloudfilemanager}} it integrates as the default file pick
 
 ## Live example
 
-{% include codepen.html id="drive" %}
+{% include live-demo.html id="drive" %}
 
 ### Example
 

@@ -8,6 +8,10 @@ keywords: imagetools rotate rotateleft rotateright flip flipv fliph editimage im
 
 Image Tools (`imagetools`) plugin adds a contextual editing toolbar to the images in the editor. If toolbar is not appearing on image click, it might be that you need to enable `imagetools_cors_hosts` or `imagetools_proxy` (see below).
 
+## Live example
+
+{% include live-demo.html id="image-tools" %}
+
 {{site.svgsNotSupported}}
 
 ## Cloud Installation
@@ -18,9 +22,9 @@ Simply add `image` to the `toolbar` list and `image imagetools` to the `plugins`
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  toolbar: "image",
-  plugins: "image imagetools"
+  selector: 'textarea',  // change this value according to your HTML
+  toolbar: 'image',
+  plugins: 'image imagetools'
 });
 ```
 
@@ -34,9 +38,9 @@ To enable the {{site.productname}} Image Tools plugin:
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  toolbar: "image",
-  plugins: "image imagetools",
+  selector: 'textarea',  // change this value according to your HTML
+  toolbar: 'image',
+  plugins: 'image imagetools',
   imagetools_cors_hosts: ['mydomain.com', 'otherdomain.com'],
   imagetools_proxy: 'proxy.php'
 });
@@ -60,9 +64,9 @@ An array of supported domains for the images (with CORS enabled on them) can be 
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  toolbar: "image",
-  plugins: "image imagetools",
+  selector: 'textarea',  // change this value according to your HTML
+  toolbar: 'image',
+  plugins: 'image imagetools',
   imagetools_cors_hosts: ['mydomain.com', 'otherdomain.com']
 });
 ```
@@ -77,9 +81,9 @@ This option can be used together with the `imagetools_cors_hosts` option to allo
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  toolbar: "image",
-  plugins: "image imagetools",
+  selector: 'textarea',  // change this value according to your HTML
+  toolbar: 'image',
+  plugins: 'image imagetools',
   imagetools_cors_hosts: ['mydomain.com', 'otherdomain.com'],
   imagetools_credentials_hosts: ['mydomain.com', 'otherdomain.com']
 });
@@ -95,9 +99,9 @@ This option can be used to define a custom fetch function, which provides anothe
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  toolbar: "image",
-  plugins: "image imagetools",
+  selector: 'textarea',  // change this value according to your HTML
+  toolbar: 'image',
+  plugins: 'image imagetools',
   imagetools_fetch_image: function (img) {
     return new tinymce.util.Promise(function (resolve) {
       // Fetch the image and return a blob containing the image content
@@ -122,9 +126,9 @@ Another way of getting images across domains is using local server-side proxy. P
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  toolbar: "image",
-  plugins: "image imagetools",
+  selector: 'textarea',  // change this value according to your HTML
+  toolbar: 'image',
+  plugins: 'image imagetools',
   imagetools_proxy: 'proxy.php'
 });
 ```
@@ -176,16 +180,16 @@ The exact selection of buttons that will appear on the contextual toolbar can be
 
 **Type:** `String`
 
-**Default Value:** `"rotateleft rotateright | flipv fliph | editimage imageoptions"`
+**Default Value:** `'rotateleft rotateright | flipv fliph | editimage imageoptions'`
 
 ##### Example
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  toolbar: "image",
-  plugins: "image imagetools",
-  imagetools_toolbar: "rotateleft rotateright | flipv fliph | editimage imageoptions"
+  selector: 'textarea',  // change this value according to your HTML
+  toolbar: 'image',
+  plugins: 'image imagetools',
+  imagetools_toolbar: 'rotateleft rotateright | flipv fliph | editimage imageoptions'
 });
 ```
 

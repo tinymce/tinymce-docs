@@ -19,7 +19,7 @@ Mentions is available for download through [{{site.cloudname}}]({{ site.baseurl 
 
 ### Try our Mentions plugin demo
 
-{% include codepen.html id="mentions" height="400" %}
+{% include live-demo.html id="mentions" height="400" %}
 
 {% assign pluginname = 'Mentions' %}
 {% assign pluginminimumplan = 'enterprise' %}

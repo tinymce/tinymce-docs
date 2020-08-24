@@ -21,7 +21,7 @@ There are a few important differences between these modes:
 
 **Classic** mode refers to the standard {{site.productname}} integration. Such as:
 
-{% include codepen.html id="default" %}
+{% include live-demo.html id="default" %}
 
 ##### Example
 

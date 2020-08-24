@@ -14,10 +14,10 @@ This plugin enables the user to insert an image into {{site.productname}}'s edit
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "image",
-  menubar: "insert",
-  toolbar: "image",
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'image',
+  menubar: 'insert',
+  toolbar: 'image',
   image_list: [
     {title: 'My image 1', value: 'https://www.example.com/my1.gif'},
     {title: 'My image 2', value: 'http://www.moxiecode.com/my2.gif'}
@@ -57,10 +57,10 @@ This option lets users enable captions for images. When this option is enabled t
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "image",
-  menubar: "insert",
-  toolbar: "image",
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'image',
+  menubar: 'insert',
+  toolbar: 'image',
   image_caption: true
 });
 ```
@@ -90,10 +90,10 @@ This option lets you specify a predefined list of sources for images. `image_lis
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "image",
-  menubar: "insert",
-  toolbar: "image",
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'image',
+  menubar: 'insert',
+  toolbar: 'image',
   image_list: [
     {title: 'Dog', value: 'mydog.jpg'},
     {title: 'Cat', value: 'mycat.gif'}
@@ -107,11 +107,11 @@ You can also configure a URL with JSON data. The format of that list is the same
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "image",
-  menubar: "insert",
-  toolbar: "image",
-  image_list: "/mylist.php"
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'image',
+  menubar: 'insert',
+  toolbar: 'image',
+  image_list: '/mylist.php'
 });
 ```
 
@@ -119,10 +119,10 @@ tinymce.init({
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "image",
-  menubar: "insert",
-  toolbar: "image",
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'image',
+  menubar: 'insert',
+  toolbar: 'image',
     image_list: function(success) {
       success([
         {title: 'Dog', value: 'mydog.jpg'},
@@ -146,10 +146,10 @@ This option adds an "Advanced" tab to the image dialog allowing you to add custo
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "image",
-  menubar: "insert",
-  toolbar: "image",
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'image',
+  menubar: 'insert',
+  toolbar: 'image',
   image_advtab: true
 });
 ```
@@ -164,10 +164,10 @@ This option lets you specify a predefined list of classes to add to an image. It
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "image",
-  menubar: "insert",
-  toolbar: "image",
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'image',
+  menubar: 'insert',
+  toolbar: 'image',
   image_class_list: [
     {title: 'None', value: ''},
     {title: 'Dog', value: 'dog'},
@@ -190,10 +190,10 @@ This options allows you disable the image description input field in the image d
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "image",
-  menubar: "insert",
-  toolbar: "image",
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'image',
+  menubar: 'insert',
+  toolbar: 'image',
   image_description: false
 });
 ```
@@ -212,10 +212,10 @@ This options allows you disable the image dimensions input field in the image di
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "image",
-  menubar: "insert",
-  toolbar: "image",
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'image',
+  menubar: 'insert',
+  toolbar: 'image',
   image_dimensions: false
 });
 ```
@@ -230,11 +230,11 @@ This option allows you to specify a URL prefix that will be applied to images wh
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "image",
-  menubar: "insert",
-  toolbar: "image",
-  image_prepend_url: "https://www.example.com/images/"
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'image',
+  menubar: 'insert',
+  toolbar: 'image',
+  image_prepend_url: 'https://www.example.com/images/'
 });
 ```
 
@@ -252,10 +252,10 @@ This options allows you enable the image title input field in the image dialog.
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "image",
-  menubar: "insert",
-  toolbar: "image",
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'image',
+  menubar: 'insert',
+  toolbar: 'image',
   image_title: true
 });
 ```
@@ -274,10 +274,10 @@ This option adds an "Upload" tab to the image dialog allowing you to upload loca
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "image",
-  menubar: "insert",
-  toolbar: "image",
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'image',
+  menubar: 'insert',
+  toolbar: 'image',
   image_uploadtab: false
 });
 ```

@@ -15,10 +15,10 @@ This plugin adds a dialog to the editor with a map of special unicode characters
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "charmap",
-  toolbar: "charmap",
-  menubar: "insert"
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'charmap',
+  toolbar: 'charmap',
+  menubar: 'insert'
 });
 ```
 
@@ -50,10 +50,10 @@ With this option it is possible to fully override the default character map. Thi
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "charmap",
-  toolbar: "charmap",
-  menubar: "insert",
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'charmap',
+  toolbar: 'charmap',
+  menubar: 'insert',
   charmap: [
     [0x2615, 'morning coffee']
   ]
@@ -70,10 +70,10 @@ This option provides a way to append some additional characters to the default c
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "charmap",
-  toolbar: "charmap",
-  menubar: "insert",
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'charmap',
+  toolbar: 'charmap',
+  menubar: 'insert',
   charmap_append: [
     [0x2600, 'sun'],
     [0x2601, 'cloud']

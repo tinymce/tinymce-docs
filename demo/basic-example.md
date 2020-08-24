@@ -11,4 +11,4 @@ keywords: example demo custom common standard normal typical
 
 This example contains the plugins needed for the most common use cases.
 
-{% include codepen.html id="basic-example" %}
+{% include live-demo.html id="basic-example" %}

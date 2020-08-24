@@ -5,8 +5,8 @@ baseurl: ""
 shared_baseurl: ""
 syntax_highlight_theme: "tomorrow-night"
 cdnurl: "https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js"
-tinymce_codepen_url: "https://cdn.tiny.cloud/1/qagffr3pkuv17a8on1afax661irst1hbr4e6tbv888sz91jc/tinymce/5/tinymce.min.js"
-tinydrive_codepen_url: "https://cdn.tiny.cloud/1/qagffr3pkuv17a8on1afax661irst1hbr4e6tbv888sz91jc/tinydrive/stable/tinydrive.min.js"
+tinymce_live_demo_url: "https://cdn.tiny.cloud/1/qagffr3pkuv17a8on1afax661irst1hbr4e6tbv888sz91jc/tinymce/5/tinymce.min.js"
+tinydrive_live_demo_url: "https://cdn.tiny.cloud/1/qagffr3pkuv17a8on1afax661irst1hbr4e6tbv888sz91jc/tinydrive/stable/tinydrive.min.js"
 default_meta_keywords: tinymce, documentation, docs, plugins, customizable skins, configuration, examples, html, php, java, javascript, image editor, inline editor, distraction-free editor, classic editor, wysiwyg
 # product variables
 productname: TinyMCE
@@ -38,6 +38,7 @@ accountsignup: https://www.tiny.cloud/auth/signup
 productpages: https://apps.tiny.cloud/products
 pricingpage: https://www.tiny.cloud/pricing
 contactpage: https://www.tiny.cloud/contact
+legalpage: https://about.tiny.cloud/legal
 # HMTL entities
 tick: '&#10004;'
 cross: '&#10006;'
@@ -63,7 +64,11 @@ thirdPartyInteg: "> **Important**: This Integration is maintained by a third-par
 
 moxieMNotOnCloud: "> **Note**: The MoxieManager plugin is _not_ provided on the Tiny Cloud, and is provided as a self-hosted solution only."
 
+svgsNotSupported: "> **Note**: SVGs (Scalable Vector Graphics) are not supported in TinyMCE to protect our users and their end-users. SVGs can be used to perform both client-side and server-side attacks."
+
 predefinedIconsOnly: "Name of the icon to be displayed. Must correspond to an icon: in the [icon pack](https://www.tiny.cloud/docs/advanced/editor-icon-identifiers/), in a [custom icon pack](https://www.tiny.cloud/docs/advanced/creating-an-icon-pack/), or added using the [`addIcon` API](https://www.tiny.cloud/docs/api/tinymce.editor.ui/tinymce.editor.ui.registry/#addicon)."
+
+liveDemoIframeCSSStyles: "'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'"
 
 exclude:
   - Dockerfile
@@ -76,7 +81,7 @@ exclude:
   - .idea
   - .git
 
-# redcarpet was messing up some of the codepens
+# redcarpet was messing up some of the live demos
 markdown: kramdown
 
 kramdown:

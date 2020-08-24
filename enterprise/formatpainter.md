@@ -15,7 +15,7 @@ The ability to reuse existing formatting saves the user time and ensures consist
 
 ### Try our Format Painter plugin demo
 
-{% include codepen.html id="format-painter" %}
+{% include live-demo.html id="format-painter" %}
 
 {% assign pluginname = 'Format Painter' %}
 {% assign pluginminimumplan = 'tiertwo' %}

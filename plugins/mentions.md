@@ -12,7 +12,7 @@ The mentions plugin will present a list of users when a user types the "@" symbo
 
 ##### Example
 
-{% include codepen.html id="mentions" height="400" %}
+{% include live-demo.html id="mentions" height="400" %}
 
 ## Options
 
@@ -31,8 +31,8 @@ This option lets you request a list of uses from your server that match a search
 ```js
 var usersRequest = null;
 tinymce.init({
-  selector: "textarea",
-  plugins: "mentions",
+  selector: 'textarea',
+  plugins: 'mentions',
   mentions_fetch: function (query, success) {
     // Fetch your full user list from the server and cache locally
     if (usersRequest === null) {
@@ -65,8 +65,8 @@ The `success` callback can be passed an optional array of extra items. When clic
 
 ```js
 tinymce.init({
-  selector: "textarea",
-  plugins: "mentions",
+  selector: 'textarea',
+  plugins: 'mentions',
   mentions_fetch: function (query, success) {
     // query.term is the text the user typed after the '@'
     var url = '/users?query=' + query.term;
@@ -105,8 +105,8 @@ This option overrides the default logic for inserting the mention into the edito
 
 ```js
 tinymce.init({
-  selector: "textarea",
-  plugins: "mentions",
+  selector: 'textarea',
+  plugins: 'mentions',
   mentions_selector: 'span.mymention',
   mentions_menu_complete: function (editor, userInfo) {
     var span = editor.getDoc().createElement('span');
@@ -132,8 +132,8 @@ This option enables you to provide an element to present next to the menu item b
 ```js
 var userRequest = {};
 tinymce.init({
-  selector: "textarea",
-  plugins: "mentions",
+  selector: 'textarea',
+  plugins: 'mentions',
   mentions_menu_hover: function (userInfo, success) {
     // request more information about the user from the server and cache it locally
     if (!userRequest[userInfo.id]) {
@@ -169,8 +169,8 @@ This option enables you to provide a custom CSS selector that should match the e
 
 ```js
 tinymce.init({
-  selector: "textarea",
-  plugins: "mentions",
+  selector: 'textarea',
+  plugins: 'mentions',
   mentions_selector: 'span.mymention',
   mentions_menu_complete: function (editor, userInfo) {
     var span = editor.getDoc().createElement('span');
@@ -195,8 +195,8 @@ This option enables you to provide an element to be presented below a hovered me
 ```js
 var userRequest = {};
 tinymce.init({
-  selector: "textarea",
-  plugins: "mentions",
+  selector: 'textarea',
+  plugins: 'mentions',
   mentions_selector: 'span.mymention',
   mentions_menu_complete: function (editor, userInfo) {
     var span = editor.getDoc().createElement('span');

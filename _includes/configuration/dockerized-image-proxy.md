@@ -2,7 +2,7 @@
 
 The TinyMCE image proxy server-side component can be deployed using Docker or a container orchestration application such as Kubernetes. {{site.companyname}} provides a pre-configured package for creating a Image Proxy Docker image.
 
-> **Warning**: Do not push this docker image to a publicly accessible container registry. Doing so will constitute a breach of the [{{site.companyname}} Self-Hosted Software License Agreement](https://about.tiny.cloud/legal/tiny-self-hosted-software-license-agreement-enterprise/).
+> **Warning**: Do not push this docker image to a publicly accessible container registry. Doing so will constitute a breach of the [{{site.companyname}} Self-Hosted Software License Agreement]({{site.legalpage}}/tiny-self-hosted-software-license-agreement-enterprise/).
 
 #### Procedure
 

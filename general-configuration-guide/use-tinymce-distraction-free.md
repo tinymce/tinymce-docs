@@ -16,7 +16,7 @@ To enable a basic distraction-free editor, use the following configuration.
 
 ```js
 tinymce.init({
-    selector: "div.tinymce",
+    selector: 'div.tinymce',
     plugins: [ 'quickbars' ],
     toolbar: false,
     menubar: false,
@@ -26,7 +26,7 @@ tinymce.init({
 
 The demonstration editor below is a distraction-free editor with some customizations.
 
-{% include codepen.html id="editor-dfree" %}
+{% include live-demo.html id="editor-dfree" %}
 
 ## Related configuration options
 

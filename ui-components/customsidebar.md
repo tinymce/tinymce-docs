@@ -62,7 +62,7 @@ The `element():HTMLElement` function returns the root element of the sidebar pan
 ```js
 tinymce.init({
   ...
-  toolbar: "mysidebar",
+  toolbar: 'mysidebar',
   setup: function (editor) {
     editor.ui.registry.addSidebar('mysidebar', {
       tooltip: 'My sidebar',

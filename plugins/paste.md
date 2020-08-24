@@ -21,10 +21,10 @@ The plugin also adds a menu item `Paste as text` under the `Edit` menu dropdown 
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "paste",
-  menubar: "edit",
-  toolbar: "paste pastetext"
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'paste',
+  menubar: 'edit',
+  toolbar: 'paste pastetext'
 });
 ```
 
@@ -52,10 +52,10 @@ For example, Firefox enables you to paste images directly into any `contentEdita
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "paste",
-  menubar: "edit",
-  toolbar: "paste",
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'paste',
+  menubar: 'edit',
+  toolbar: 'paste',
   paste_data_images: true
 });
 ```
@@ -74,10 +74,10 @@ This option enables you to set the default state of the `Paste as text` menu ite
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "paste",
-  menubar: "edit",
-  toolbar: "paste",
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'paste',
+  menubar: 'edit',
+  toolbar: 'paste',
   paste_as_text: true
 });
 ```
@@ -96,10 +96,10 @@ This option allows you to disable {{site.productname}}'s default paste filters w
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
-  plugins: "paste",
-  menubar: "edit",
-  toolbar: "paste",
+  selector: 'textarea',  // change this value according to your html
+  plugins: 'paste',
+  menubar: 'edit',
+  toolbar: 'paste',
   paste_enable_default_filters: false
 });
 ```
@@ -118,8 +118,8 @@ This option allows developers to disable the default drop filters when set to `f
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "paste",
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'paste',
   paste_filter_drop: false
 });
 ```
@@ -134,10 +134,10 @@ This option enables you to modify the pasted content before it gets inserted int
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "paste",
-  menubar: "edit",
-  toolbar: "paste",
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'paste',
+  menubar: 'edit',
+  toolbar: 'paste',
   paste_preprocess: function(plugin, args) {
     console.log(args.content);
     args.content += ' preprocess';
@@ -155,10 +155,10 @@ This option enables you to modify the pasted content before it gets inserted int
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "paste",
-  menubar: "edit",
-  toolbar: "paste",
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'paste',
+  menubar: 'edit',
+  toolbar: 'paste',
   paste_postprocess: function(plugin, args) {
     console.log(args.node);
     args.node.setAttribute('id', '42');
@@ -178,11 +178,11 @@ This option enables you to configure the `valid_elements` specific to MS Office.
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "paste",
-  menubar: "edit",
-  toolbar: "paste",
-  paste_word_valid_elements: "b,strong,i,em,h1,h2"
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'paste',
+  menubar: 'edit',
+  toolbar: 'paste',
+  paste_word_valid_elements: 'b,strong,i,em,h1,h2'
 });
 ```
 
@@ -196,11 +196,11 @@ This option allows you to specify styles you want to keep when pasting in WebKit
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "paste",
-  menubar: "edit",
-  toolbar: "paste",
-  paste_webkit_styles: "color font-size"
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'paste',
+  menubar: 'edit',
+  toolbar: 'paste',
+  paste_webkit_styles: 'color font-size'
 });
 ```
 
@@ -214,11 +214,11 @@ This option allows you to specify which styles you want to retain when pasting c
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
-  plugins: "paste",
-  menubar: "edit",
-  toolbar: "paste",
-  paste_retain_style_properties: "color font-size"
+  selector: 'textarea',  // change this value according to your html
+  plugins: 'paste',
+  menubar: 'edit',
+  toolbar: 'paste',
+  paste_retain_style_properties: 'color font-size'
 });
 ```
 
@@ -240,10 +240,10 @@ This option lets you disable the logic that converts list like paragraph structu
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "paste",
-  menubar: "edit",
-  toolbar: "paste",
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'paste',
+  menubar: 'edit',
+  toolbar: 'paste',
   paste_convert_word_fake_lists: false
 });
 ```
@@ -262,10 +262,10 @@ This option allows you to disable {{site.productname}}'s default paste filters f
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "paste",
-  menubar: "edit",
-  toolbar: "paste",
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'paste',
+  menubar: 'edit',
+  toolbar: 'paste',
   paste_remove_styles_if_webkit: false
 });
 ```

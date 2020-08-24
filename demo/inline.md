@@ -7,6 +7,6 @@ description: This example shows you the inline editing capabilities of TinyMCE.
 keywords: example demo custom inline
 ---
 
-This example shows you the inline editing capabilities of {{site.productname}}. 
+This example shows you the inline editing capabilities of {{site.productname}}.
 
-{% include codepen.html id="inline" %}
+{% include live-demo.html id="inline" %}

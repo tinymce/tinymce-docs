@@ -27,7 +27,12 @@ italic: false,
 underline: false,
 strikethrough: false
 ```
+
 For more information on {{site.productname}} formats, refer to the [formats]({{site.baseurl}}/configure/content-formatting/#formats) section.
+
+## Try our Permanent Pen demo
+
+{% include live-demo.html id="permanent-pen" %}
 
 ## Configuring the Permanent Pen toolbar button
 
@@ -35,7 +40,7 @@ Use the following script to configure the Permanent Pen toolbar button:
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
+  selector: 'textarea',  // change this value according to your HTML
   plugins: 'permanentpen',
   contextmenu: 'configurepermanentpen',
   toolbar: 'permanentpen'
@@ -70,7 +75,7 @@ Add the Permanent pen properties option to the menu bar with the [menu]({{site.b
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
+  selector: 'textarea',  // change this value according to your HTML
   plugins: 'permanentpen',
   toolbar: 'permanentpen',
   menu: {
@@ -117,7 +122,7 @@ The default formats for Permanent Pen can be specified in the following configur
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
+  selector: 'textarea',  // change this value according to your HTML
   plugins: 'permanentpen',
   contextmenu: 'configurepermanentpen',
   toolbar: 'permanentpen',

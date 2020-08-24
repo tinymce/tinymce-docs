@@ -18,8 +18,8 @@ If you are using [{{site.cloudname}}]({{ site.baseurl }}/cloud-deployment-guide/
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "linkchecker"
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'linkchecker'
 });
 ```
 
@@ -31,9 +31,9 @@ Customers using a Self-hosted environment will need to provide a URL to their de
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "linkchecker",
-  linkchecker_service_url: "http://mydomain.com/linkchecker"
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'linkchecker',
+  linkchecker_service_url: 'http://mydomain.com/linkchecker'
 });
 ```
 
@@ -70,8 +70,8 @@ The `linkchecker_preprocess` function is used for adjusting links before perform
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "linkchecker",
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'linkchecker',
   linkchecker_preprocess: function (data) {
     /* This example will encode or double encode the url */
     var newUrl = encodeURIComponent(data.url);
@@ -90,8 +90,8 @@ A URL of the server-side link validation service. This is required option, witho
 
 ```js
 tinymce.init({
-    selector: "textarea",
-    plugins: "linkchecker",
-    linkchecker_service_url: "http://mydomain.com/linkchecker"
+    selector: 'textarea',
+    plugins: 'linkchecker',
+    linkchecker_service_url: 'http://mydomain.com/linkchecker'
 });
 ```

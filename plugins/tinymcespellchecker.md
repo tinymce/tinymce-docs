@@ -10,7 +10,7 @@ keywords: tinymcespellchecker spellchecker_language spellchecker_languages spell
 
 **Spell Checker Pro** adds spell checking as-you-type capabilities to {{site.productname}}. For information on the supported languages, refer to [this]({{site.baseurl}}/plugins/tinymcespellchecker/#spellchecker_language) section.
 
-{% include codepen.html id="spellcheckerpro" %}
+{% include live-demo.html id="spellcheckerpro" %}
 
 ## Cloud Installation
 To enable the {{site.productname}} Enterprise Spellchecking plugin with [{{site.cloudname}}]({{ site.baseurl }}/cloud-deployment-guide/editor-and-features):
@@ -77,9 +77,9 @@ tinymce.init({
 
 ### `spellchecker_dialog`
 
-This option specifies the primary spell checking mode. 
+This option specifies the primary spell checking mode.
 
-- When set to `true`, the [`spellcheck` toolbar button](#toolbarbuttons) will open a dialog that will step the user through each potential spelling error in the document. 
+- When set to `true`, the [`spellcheck` toolbar button](#toolbarbuttons) will open a dialog that will step the user through each potential spelling error in the document.
 - When set to `false`, the [`spellcheck` toolbar button](#toolbarbuttons) will enable or disable as-you-type spell checking and the [`spellcheckdialog` toolbar button](#toolbarbuttons) will open the spell checker dialog.
 
 **Type:** `Boolean`

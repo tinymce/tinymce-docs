@@ -13,7 +13,7 @@ This allows the user to add text without modifying the original content.
 
 ### Try our Permanent Pen plugin demo
 
-{% include codepen.html id="permanent-pen" %}
+{% include live-demo.html id="permanent-pen" %}
 
 {% assign pluginname = 'Permanent Pen' %}
 {% assign pluginminimumplan = 'tiertwo' %}

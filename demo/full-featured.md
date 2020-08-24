@@ -11,7 +11,7 @@ keywords: example demo custom wysiwyg full-power full-featured plugins non-premi
 
 This example includes most of the available {{site.productname}} plugins, including plugins available on {{site.cloudname}} premium subscriptions. Please note, it includes [premium plugins]({{site.plugindirectory}}).
 
-{% include codepen.html id="full-featured" %}
+{% include live-demo.html id="full-featured" %}
 
 The following plugins are excluded from this example:
 
@@ -28,7 +28,7 @@ The following plugins are excluded from this example:
 
 This example includes only non-premium plugins. These plugins are also used in the [Full Featured: Including Premium Plugins Demo above](#fullfeaturedincludingpremiumplugins).
 
-{% include codepen.html id="open-source-plugins" %}
+{% include live-demo.html id="open-source-plugins" %}
 
 The following plugins are excluded from this example:
 

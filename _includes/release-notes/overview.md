@@ -3,7 +3,7 @@ The Release Notes provide high-level coverage of the improvements and additions 
 
 TinyMCE 5.0 has an ARIA [WCAG 2.1 standards](https://www.w3.org/WAI/standards-guidelines/wcag/) compliant user interface to make the user interface controls and dynamic content more accessible. In TinyMCE 5.0, more complex controls or dialogs can be written in the new API style while keeping the more straightforward methods of adding buttons and windows.
 
-### Get TinyMCE 5.0 
+### Get TinyMCE 5.0
 
 Include this line of code in the <head> of the HTML page and link to the tinymce.min.js source file. Substitute 'no-api-key' with your api key.
 
@@ -25,5 +25,5 @@ Try out TinyMCE 5.0 demo to explore the new UI.
 
 ### TinyMCE 5.0 demo
 
-{% include codepen.html id="full-featured" height="750" %}
+{% include live-demo.html id="full-featured" height="750" %}
 

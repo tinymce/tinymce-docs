@@ -38,3 +38,6 @@ tinymce.init({
 });
 ```
 
+## Live Example
+
+{% include live-demo.html id="file-picker" height="950" %}

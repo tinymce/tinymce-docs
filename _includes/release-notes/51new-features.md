@@ -165,7 +165,7 @@ A dark CSS definition for `content_css` has been added to compliment the dark us
 
 For example:
 
-{% include codepen.html id="dark-mode" %}
+{% include live-demo.html id="dark-mode" %}
 
 For information on using the dark version of the default skin, see: [Customizing the editor UI - Skins]({{site.baseurl}}/general-configuration-guide/customize-ui/#skins).
 

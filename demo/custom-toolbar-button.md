@@ -9,4 +9,4 @@ keywords: example demo custom toolbar button
 
 This example shows you how to add a custom button to the toolbar in {{site.productname}} {{site.productmajorversion}}.
 
-{% include codepen.html id="custom-toolbar-button" %}
+{% include live-demo.html id="custom-toolbar-button" %}

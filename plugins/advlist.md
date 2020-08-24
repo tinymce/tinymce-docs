@@ -8,7 +8,7 @@ keywords: advlist advlist_bullet_styles advlist_number_styles
 
 The `advlist` plugin extends the core `bullist` and `numlist` toolbar controls by adding CSS `list-style-type` styled number formats and bullet types to the controls.
 
-> **Important note:** The [Lists](../lists) (`lists`) plugin must be activated for the `advlist` plugin to work. 
+> **Important note:** The [Lists](../lists) (`lists`) plugin must be activated for the `advlist` plugin to work.
 
 **Type:** `String`
 
@@ -16,8 +16,8 @@ The `advlist` plugin extends the core `bullist` and `numlist` toolbar controls b
 
 ```js
 tinymce.init({
-  selector: "textarea", // change this value according to your HTML
-  plugins: "advlist"
+  selector: 'textarea', // change this value according to your HTML
+  plugins: 'advlist'
 });
 ```
 
@@ -31,7 +31,7 @@ This option allows you to include specific unordered list item markers in the de
 
 **Type:** `String`
 
-**Default Value:** `"default,circle,disc,square"`
+**Default Value:** `'default,circle,disc,square'`
 
 **Possible Values:**
 
@@ -44,9 +44,9 @@ This option allows you to include specific unordered list item markers in the de
 
 ```js
 tinymce.init({
-    selector: "textarea",  // change this value according to your html
-    plugins: "advlist",
-    advlist_bullet_styles: "square"  // only include square bullets in list
+    selector: 'textarea',  // change this value according to your html
+    plugins: 'advlist',
+    advlist_bullet_styles: 'square'  // only include square bullets in list
 });
 ```
 
@@ -56,7 +56,7 @@ This option allows you to include specific ordered list item markers in the defa
 
 **Type:** `String`
 
-**Default Value:** `"default,lower-alpha,lower-greek,lower-roman,upper-alpha,upper-roman"`
+**Default Value:** `'default,lower-alpha,lower-greek,lower-roman,upper-alpha,upper-roman'`
 
 **Possible Values:**
 
@@ -71,9 +71,9 @@ This option allows you to include specific ordered list item markers in the defa
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "advlist",
-  advlist_number_styles: "lower-alpha"  // only include lower alpha in list
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'advlist',
+  advlist_number_styles: 'lower-alpha'  // only include lower alpha in list
 });
 ```
 

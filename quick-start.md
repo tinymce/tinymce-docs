@@ -53,7 +53,7 @@ For example:
 
 Adding this content to a HTML file and opening it in a web browser will load a TinyMCE editor, such as:
 
-{% include codepen.html id="default" %}
+{% include live-demo.html id="default" %}
 
 ## Step 3: Add your API key
 

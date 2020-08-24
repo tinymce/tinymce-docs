@@ -48,6 +48,11 @@ tinymce.init({
 
 > Note: The identifier used to create the menu item must be included in the [`menu`]({{site.baseurl}}/configure/editor-appearance/#menu) option in the {{site.productname}} configuration for it to be added to the menubar's menus. It will not be added to the menubar's menus if `menu` is not configured correctly.
 
+## Live Example
+
+This example shows you how to add some simple menu items to a new "custom" menu.
+
+{% include live-demo.html id="custom-menu-item" %}
 
 ## Types of menu items
 
@@ -86,7 +91,7 @@ A basic menu item triggers its `onAction` function when clicked.
 
 ```js
 tinymce.init({
-  selector: "textarea",
+  selector: 'textarea',
   menu: {
     custom: { title: 'Custom Menu', items: 'undo redo basicitem' }
   },
@@ -131,7 +136,7 @@ A nested menu item is a menu item with a submenu. Registering a submenu this way
 
 ```js
 tinymce.init({
-  selector: "textarea",
+  selector: 'textarea',
   menu: {
     custom: { title: 'Custom Menu', items: 'undo redo nesteditem' }
   },
@@ -190,7 +195,7 @@ A toggle menu item triggers its `onAction` when clicked. It also has a concept o
 var toggleState = false;
 
 tinymce.init({
-  selector: "textarea",
+  selector: 'textarea',
   menu: {
     custom: { title: 'Custom Menu', items: 'undo redo toggleitem' }
   },

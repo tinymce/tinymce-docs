@@ -36,10 +36,12 @@ To create a custom toolbar button, define and register the button within the `se
 tinymce.init({
   selector: '#editor',
   toolbar: 'myCustomToolbarButton',
-  setup: (editor) => {
+  setup: function (editor) {
     editor.ui.registry.addButton('myCustomToolbarButton', {
       text: 'My Custom Button',
-      onAction: () => alert('Button clicked!')
+      onAction: function () {
+        alert('Button clicked!');
+      }
     });
   }
 });
@@ -49,7 +51,7 @@ tinymce.init({
 
 The following example creates different types of toolbar buttons.
 
-{% include codepen.html id="toolbar-button" height="400" %}
+{% include live-demo.html id="toolbar-button" height="400" %}
 
 {% assign_page next_page = "/ui-components/typesoftoolbarbuttons/index.html" %}
 {% include next-step.html next=next_page %}

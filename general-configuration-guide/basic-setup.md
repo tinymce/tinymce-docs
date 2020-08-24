@@ -60,7 +60,7 @@ tinymce.init({
 ```
 
 Providing a {{site.productname}} editor with the default configuration, such as:
-{% include codepen.html id="default" %}
+{% include live-demo.html id="default" %}
 
 The selector can target most block elements when the editor is used in [inline editing mode](../use-tinymce-inline/). Inline mode edits the content in place, instead of replacing the element with an `iframe`.
 
@@ -138,7 +138,7 @@ tinymce.init({
 });
 ```
 
-{% include codepen.html id="menubar" %}
+{% include live-demo.html id="menubar" %}
 
 To create an `Edit` menu that only contains the _Undo_, _Redo_, and _Select all_ items.
 
@@ -151,7 +151,7 @@ tinymce.init({
 });
 ```
 
-{% include codepen.html id="menu1" %}
+{% include live-demo.html id="menu1" %}
 
 To create a menu titled "Happy", provide an identifier for the menu and an object with the `title` and `items` for the menu.
 
@@ -168,7 +168,7 @@ tinymce.init({
 });
 ```
 
-{% include codepen.html id="menu2" %}
+{% include live-demo.html id="menu2" %}
 
 ### Default menu controls
 
@@ -273,7 +273,7 @@ Sets the styling of the editable area using `content_css`.
 content_css: 'css/content.css',
 ```
 
-{% include codepen.html id="basic-conf" %}
+{% include live-demo.html id="basic-conf" %}
 
 #### Additional information
 

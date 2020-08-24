@@ -77,3 +77,7 @@ To add a custom keyboard shortcut to {{site.productname}}, use either:
 ### Example: Custom keyboard shortcut
 
 {% include live-demo.html id="custom-shortcut" tab="js" %}
+
+### Example: Custom menuitem shortcut
+
+{% include live-demo.html id="custom-shortcut-2" tab="js" %}

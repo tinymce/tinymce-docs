@@ -14,8 +14,6 @@ Choice menu items are a special type of menu item used for split toolbar button 
 
 > **Note**: The `icon` option for choice menu items was added in {{site.productname}} 5.3.
 
-####{% include misc/shortcut-os-mappings.md %}
-
 ##### API
 
 | Name | Value | Description |

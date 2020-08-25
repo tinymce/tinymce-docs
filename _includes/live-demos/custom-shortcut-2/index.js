@@ -3,6 +3,10 @@ tinymce.init({
   plugins: 'autolink lists link',
   toolbar: 'undo redo | bold italic link bullist | insertUsername',
   setup: function (editor) {
+    var insertUsername = function () {
+      editor.insertContent(`@username`);
+    };
+
     editor.addShortcut('meta+alt+U', 'Insert username', function () {
       insertUsername();
     });
@@ -25,7 +29,3 @@ tinymce.init({
     });
   }
 });
-
-function insertUsername() {
-  tinymce.activeEditor.insertContent(`@username`);
-}

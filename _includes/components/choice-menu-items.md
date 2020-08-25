@@ -10,7 +10,7 @@ Choice menu items are a special type of menu item used for split toolbar button 
 | icon | string | optional | {{site.predefinedIconsOnly}} |
 | value | string | required | A value that is passed to `onItemAction` when the choice menu item is clicked. |
 | disabled | boolean | optional | default: false - Represents the menu item's state. When true, the menu item is unclickable. Toggled by the menu item's API. |
-| shortcut | string | optional | Sets a keyboard shortcut for activating the menu item, such as: `shortcut: 'Ctrl+Alt+Delete'`. For information on available shortcut modifiers, see: [Shortcut modifier key mappings](#shortcutmodifierkeymappings). |
+| shortcut | string | optional | Text to display in the shortcut label. To register a shortcut, see: [Add custom shortcuts to TinyMCE]({{site.baseurl}}/advanced/keyboard-shortcuts/#addcustomshortcutstotinymce). |
 
 > **Note**: The `icon` option for choice menu items was added in {{site.productname}} 5.3.
 

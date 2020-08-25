@@ -4,6 +4,9 @@ tinymce.init({
   toolbar: 'mybutton',
 
   setup: function (editor) {
+    /* Menu items are recreated when the menu is closed and opened, so we need
+       a variable to store the toggle menu item state. */
+    var toggleState = false;
 
     /* example, adding a toolbar menu button */
     editor.ui.registry.addMenuButton('mybutton', {
@@ -40,6 +43,18 @@ tinymce.init({
                   }
                 }
               ];
+            }
+          },
+          {
+            type: 'togglemenuitem',
+            text: 'Toggle menu item',
+            onAction: function () {
+              toggleState = !toggleState;
+              editor.insertContent('&nbsp;<em>You toggled a menuitem ' + (toggleState ? 'on' : 'off') + '</em>');
+            },
+            onSetup: function (api) {
+              api.setActive(toggleState);
+              return function() {};
             }
           }
         ];

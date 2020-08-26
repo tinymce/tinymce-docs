@@ -224,6 +224,8 @@ tinymce.init({
 
 {% include configuration/paste-merge-formats.md %}
 
+{% include configuration/paste-tab-spaces.md %}
+
 ### `paste_convert_word_fake_lists`
 
 This option lets you disable the logic that converts list like paragraph structures into real semantic HTML lists.

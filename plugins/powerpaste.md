@@ -87,6 +87,8 @@ tinymce.init({
 
 {% include configuration/paste-merge-formats.md %}
 
+{% include configuration/paste-tab-spaces.md %}
+
 ### powerpaste_word_import
 
 This setting controls how content pasted from Microsoft Word is filtered.

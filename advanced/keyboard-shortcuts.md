@@ -78,6 +78,8 @@ To add a custom keyboard shortcut to {{site.productname}}, use either:
 
 {% include live-demo.html id="custom-shortcut" tab="js" %}
 
-### Example: Custom menuitem shortcut
+### Example: Adding a custom shortcut for a menu item
+
+When adding a shortcut for a custom menu item, add both a custom shortcut and a custom menu item. To display the shortcut on a custom menu item, add the `shortcut` configuration option when creating the menu item. 
 
 {% include live-demo.html id="custom-shortcut-2" tab="js" %}

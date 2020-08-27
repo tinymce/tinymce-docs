@@ -21,7 +21,7 @@ Example: `http://www.example.com/path1/path2/file.htm` >> `path2/file.htm`
 
 ### Absolute URLs
 
-This will convert all relative URLs to absolute URLs. The URLs will be absolute based on the [document_base_url].
+This will convert all relative URLs to absolute URLs. The URLs will be absolute based on the [document_base_url](#document_base_url).
 
 ```
 relative_urls : false,
@@ -33,7 +33,7 @@ Example: path2/file.htm >> /path1/path2/file.htm
 
 ### Domain absolute URLs
 
-This will convert all relative URLs to absolute URLs. The URLs will be absolute based on the [document_base_url] with domain.
+This will convert all relative URLs to absolute URLs. The URLs will be absolute based on the [document_base_url](#document_base_url) with domain.
 
 ```
 relative_urls : false,

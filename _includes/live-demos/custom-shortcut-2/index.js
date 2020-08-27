@@ -1,5 +1,6 @@
 tinymce.init({
   selector: '#custom-shortcut-2',
+  height: 300,
   plugins: 'autolink lists link',
   toolbar: 'undo redo | bold italic link bullist | insertUsername',
   setup: function (editor) {
@@ -27,5 +28,6 @@ tinymce.init({
         callback(items);
       }
     });
-  }
+  },
+  content_style: {{site.liveDemoIframeCSSStyles}}
 });

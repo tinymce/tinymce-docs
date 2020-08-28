@@ -222,17 +222,26 @@ When the example.js file is present, the link to the external codepen site is di
     /* TODO: */
     var tabs = tabNames.map(function(t) {
       return {
+        name: t,
         tab: document.getElementById("live_demo_tab_" + t + "_" + id),
         pane: document.getElementById("live_demo_pane_" + t + "_" + id)
       };
     });
-
+    var lastTabName = '{{ initialTab }}';
     tabs.forEach(function(t) {
       t.tab.onclick = function(e) {
         tabs.forEach(function(tt) {
           tt.pane.style.display = t === tt ? 'block' : 'none';
           tt.tab.className = t === tt ? 'live_demo_tab_selected' : 'live_demo_tab_deselected';
         });
+        if (lastTabName !== t.name) {
+          if (t.name === 'run') {
+            tinymce.activeEditor.show();
+          } else if (lastTabName === 'run') {
+            tinymce.activeEditor.hide();
+          }
+          lastTabName = t.name;
+        }
         e.preventDefault();
       };
     });

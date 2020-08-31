@@ -3,6 +3,7 @@
 **Covered in this section:**
 
 - [Installing the web-component integration](#installingthetinymcewebcomponentintegration)
+- [Loading TinyMCE](#loadingtinymce)
 - [Configuring the editor](#configuringtheeditor)
 
   - [Setting the initial content](#settingtheinitialcontent)
@@ -16,6 +17,21 @@
 1. Download the web-component integration
 2. Link it in your page
 3. Insert `<tinymce-editor></tinymce-editor>` into the page.
+
+### Loading TinyMCE
+The integration depends on TinyMCE. When trying to create a web component for
+TinyMCE it will try the following:
+
+1. If the global `tinymce` is available:
+    1. Use the global `tinymce` to initialize the editor.
+2. Otherwise, if the attribute `src` is available:
+    1. Add a script tag for the URL provided in `src` to load TinyMCE;
+    2. Wait for the script to load and create the global `tinymce`;
+    3. Use the global `tinymce` to initialize the editor.
+3. Otherwise:
+    1. Add a script tag for the cloud version of TinyMCE using the attributes `api-key` (default "no-api-key") and `channel` (default "5-stable");
+    2. Wait for the script to load and create the global `tinymce`;
+    3. Use the global `tinymce` to initialize the editor.
 
 ### Configuring the editor
 The editor is configured by setting attributes on the tinymce-editor custom element.

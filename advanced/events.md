@@ -26,14 +26,14 @@ tinymce.init({
 });
 ```
 
-The following example uses a function to create a console log entry when text color is changed in the editor. This is also an example of handling an event that returns data.
+The following example uses a function to create a console log entry when a command is executed in the editor. This is also an example of handling an event that returns data.
 
 ```js
 tinymce.init({
   selector: 'textarea',
   init_instance_callback: function(editor) {
-    editor.on('TextColorChange', function(e) {
-      console.log('The text color of ' + e.name + ' is now:' + e.color);
+    editor.on('ExecCommand', function(e) {
+      console.log('The ' + e.command + ' command was fired.');
     });
   }
 });
@@ -143,7 +143,6 @@ The following events are provided by the {{ site.productname }} editor.
 | IconsLoadError         | `{ message: string }`                                                                                                   | Fired when the editor icon pack fails to load. {{site.requires_5_2v}}                                                                                                     |
 | LanguageLoadError      | `{ message: string }`                                                                                                   | Fired when the editor language pack fails to load. {{site.requires_5_2v}}                                                                                                  |
 | BeforeRenderUI         | N/A                                                                                                                     | Fired before the theme UI is rendered.                                                                                                                                     |
-| TextColorChange        | `{ name: string, color: string }`                                                                                       | Fired when the text color is changed.                                                                                                                                      |
 | ToggleSidebar          | N/A                                                                                                                     | Fired when a sidebar is toggled opened/closed.                                                                                                                             |
 | longpress              | (Same data as the native [touchstart event](https://developer.mozilla.org/en-US/docs/Web/API/Element/touchstart_event)) | Fired when a long press occurs on a touch device inside the editor. <br/>{{ site.requires_5_1v }}                                                                          |
 | tap                    | (Same data as the native [touchend event](https://developer.mozilla.org/en-US/docs/Web/API/Document/touchend_event))    | Fired when a tap occurs on a touch device inside the editor (simulated event similar to click). <br/>{{ site.requires_5_1v }}                                             |

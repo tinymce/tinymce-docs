@@ -26,7 +26,7 @@ tinymce.init({
 });
 ```
 
-The following example uses a function to create a console log entry a command is executed in the editor. This is also an example of handling an event that returns data.
+The following example uses a function to create a console log entry when a command is executed in the editor. This is also an example of handling an event that returns data.
 
 ```js
 tinymce.init({

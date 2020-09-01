@@ -206,7 +206,48 @@ by passing the attribute value as a string.
 
 #### Setting the images upload handler
 ```html
-<tinymce-editor images_upload_handler=""></tinymce-editor>
+<script>
+function uploadHandler(blobInfo, success, failure, progress) {
+    var xhr, formData;
+
+    xhr = new XMLHttpRequest();
+    xhr.withCredentials = false;
+    xhr.open('POST', 'postAcceptor.php');
+
+    xhr.upload.onprogress = function (e) {
+      progress(e.loaded / e.total * 100);
+    };
+
+    xhr.onload = function() {
+      var json;
+
+      if (xhr.status < 200 || xhr.status >= 300) {
+        failure('HTTP Error: ' + xhr.status);
+        return;
+      }
+
+      json = JSON.parse(xhr.responseText);
+
+      if (!json || typeof json.location != 'string') {
+        failure('Invalid JSON: ' + xhr.responseText);
+        return;
+      }
+
+      success(json.location);
+    };
+
+    xhr.onerror = function () {
+      failure('Image upload failed due to a XHR Transport error. Code: ' + xhr.status);
+    };
+
+    formData = new FormData();
+    formData.append('file', blobInfo.blob(), blobInfo.filename());
+
+    xhr.send(formData);
+  }
+}
+</script>
+<tinymce-editor images_upload_handler="uploadHandler"></tinymce-editor>
 ```
 
 Setting the attribute `images_upload_handler` allows configuring the editor

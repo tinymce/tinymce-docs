@@ -37,8 +37,10 @@
 
 ### Installing the TinyMCE web-component integration
 
-1. Download the web-component integration
-2. Link it in your page
+1. Link `@tinymce/tinymce-webcomponent` into your page, either using a script tag linking to a CDN like   
+```<script src="https://cdn.jsdelivr.net/npm/@tinymce/tinymce-webcomponent@1/dist/tinymce-webcomponent.js"></script>```  
+or using a bundler like webpack to put the npm package into the page.
+2. Optionally include a script tag to load TinyMCE into the page (see below for details).
 3. Insert `<tinymce-editor></tinymce-editor>` into the page.
 
 ### Loading TinyMCE

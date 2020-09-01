@@ -2,7 +2,7 @@
 
 **Covered in this section:**
 
-- [Installing the web-component integration](#installingthetinymcewebcomponentintegration)
+- [Installing the web-component integration](#installingthetinymceweb-componentintegration)
 - [Loading TinyMCE](#loadingtinymce)
 - [Configuring the editor](#configuringtheeditor)
 
@@ -14,8 +14,8 @@
   - [Setting toolbar mode](#settingtoolbarmode)
   - [Setting the menubar](#settingthemenubar)
   - [Setting context menu](#settingcontextmenu)
-  - [Setting the quick-bar insert toolbar](#settingthequickbarinserttoolbar)
-  - [Setting the quick-bar selection toolbar](#settingthequickbarselectiontoolbar)
+  - [Setting the quick-bar insert toolbar](#settingthequick-barinserttoolbar)
+  - [Setting the quick-bar selection toolbar](#settingthequick-barselectiontoolbar)
   - [Setting content stylesheets](#settingcontentstylesheets)
   - [Setting content styling](#settingcontentstyling)
   - [Setting Power Paste's word import method](#settingpowerpasteswordimportmethod)

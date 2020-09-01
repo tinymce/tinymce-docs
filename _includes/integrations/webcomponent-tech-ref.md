@@ -182,45 +182,81 @@ function setupEditor(editor) {
 <tinymce-editor setup="setupEditor"></tinymce-editor>
 ```
 
+Setting the attribute `setup` allows configuring the editor
+[setup callback](https://www.tiny.cloud/docs/configure/integration-and-setup/#setup)
+by passing the function with the same name in the global scope.
+
 #### Setting the editor skin
 ```html
 <tinymce-editor skin="oxide"></tinymce-editor>
 ```
 
+Setting the attribute `skin` allows configuring the editor
+[skin](https://www.tiny.cloud/docs/configure/editor-appearance/#skin)
+by passing the attribute value as a string.
+
 #### Setting the images upload URL
 ```html
-<tinymce-editor images_upload_url=""></tinymce-editor>
+<tinymce-editor images_upload_url="postAcceptor.php"></tinymce-editor>
 ```
+
+Setting the attribute `images_upload_url` allows configuring the editor
+[image upload URL](https://www.tiny.cloud/docs/configure/file-image-upload/#images_upload_url)
+by passing the attribute value as a string.
 
 #### Setting the images upload handler
 ```html
 <tinymce-editor images_upload_handler=""></tinymce-editor>
 ```
 
+Setting the attribute `images_upload_handler` allows configuring the editor
+[image upload handler](https://www.tiny.cloud/docs/configure/file-image-upload/#images_upload_handler)
+by passing the function with the same name in the global scope.
+
 #### Setting the images upload base path
 ```html
-<tinymce-editor images_upload_base_path=""></tinymce-editor>
+<tinymce-editor images_upload_base_path="/some/basepath"></tinymce-editor>
 ```
+
+Setting the attribute `images_upload_base_path` allows configuring the editor
+[image upload base path](https://www.tiny.cloud/docs/configure/file-image-upload/#images_upload_base_path)
+by passing the attribute value as a string.
 
 #### Setting the images upload to have credentials
 ```html
 <tinymce-editor images_upload_credentials="false"></tinymce-editor>
 ```
 
+Setting the attribute `images_upload_credentials` allows configuring the editor
+[image upload credentials](https://www.tiny.cloud/docs/configure/file-image-upload/#images_upload_credentials)
+by passing the attribute value with the text `"false"` and `"true"` as a the boolean values `false` and `true` respectively.
+
 #### Setting the images upload to reuse filenames
 ```html
 <tinymce-editor images_reuse_filename="true"></tinymce-editor>
 ```
+
+Setting the attribute `images_reuse_filename` allows configuring the editor
+[image filename reuse](https://www.tiny.cloud/docs/configure/file-image-upload/#images_reuse_filename)
+by passing the attribute value with the text `"false"` and `"true"` as a the boolean values `false` and `true` respectively.
 
 #### Setting the icon pack
 ```html
 <tinymce-editor icons="material"></tinymce-editor>
 ```
 
+Setting the attribute `icons` allows configuring the editor
+[icons](https://www.tiny.cloud/docs/configure/editor-appearance/#icons)
+by passing the attribute value as a string.
+
 #### Setting the icon pack URL
 ```html
-<tinymce-editor icons_url=""></tinymce-editor>
+<tinymce-editor icons_url="https://www.example.com/icons/material/icons.js"></tinymce-editor>
 ```
+
+Setting the attribute `icons_url` allows configuring the editor
+[icons URL](https://www.tiny.cloud/docs/configure/editor-appearance/#icons_url)
+by passing the attribute value as a string.
 
 #### Configuring additional settings
 ```html

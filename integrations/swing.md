@@ -24,44 +24,87 @@ From the release `zip` file, select all the Java libraries under the `lib` folde
 
 ### 2. Select a deployment and create a configuration
 
-The Swing integration allows the user to select the origin of the {{site.productname}} code: **cloud**, **embedded**, or **external**.
+The Swing integration allows the user to select the origin of the {{site.productname}} code: **embedded** (recommended), **cloud** or **external**.
+
+* Embedded deployments use the version of {{site.productname}} prepackaged with the current release of the integration. This is guaranteed to be compatible with the integration specific plugins.
+
+  ```java
+  final Config myTinyConfiguration = Config.embedded();
+  ```
 
 * Cloud deployments pull the latest release of {{site.productname}} from the channel of your choice. Use this option by passing your API key and selecting a release channel.
 
-  ```
+  ```java
   final Config myTinyConfiguration = Config.cloud("<my_api_key>", "{{site.productmajorversion}}-stable");
-  ```
-
-* Embedded deployments use the version of {{site.productname}} prepackaged with the current release of the integration.
-
-  ```
-  final Config myTinyConfiguration = Config.embedded();
   ```
 
 * External deployments allow to use a local version of {{site.productname}} by giving the address of the location where {{site.productname}} is being served.
 
-  ```
+  ```java
   final Config myTinyConfiguration = Config.external("http://<my_server>/<path>/tinymce.min.js");
   ```
 
-The configuration can be customized via Java or by passing Javascript function that returns a {{site.productname}} configuration object.
+The configuration can be customized purely in Java:
 
+```java
+final Path contentPath = Paths.get(System.getProperty("user.home"));
+final Config myConfig = Config.embedded()
+    .setContentPath(contentPath)
+    .setImageSaverLocal(contentPath)
+    .addPlugins(
+      "advcode advlist autolink lists link image imagetools charmap emoticons " +
+      "anchor searchreplace insertdatetime media table powerpaste help wordcount")
+    .putProperty("width", 800)
+    .putProperty("height", 600)
+    .putProperty("menubar", false)
+    .putProperty("toolbar",
+      "undo redo | formatselect | bold italic backcolor | " +
+      "alignleft aligncenter alignright alignjustify | " +
+      "bullist numlist outdent indent | removeformat | link image | help")
+    .putProperty("images_reuse_filename", true);
 ```
-final HashMap<String, String> tinyProperties = new HashMap<>();
-tinyProperties.put("menubar", "false");
-tinyProperties.put("plugins", "advlist autolink lists link image anchor searchreplace visualblocks code insertdatetime media table powerpaste code help");
-tinyProperties.put("toolbar", "undo redo | formatselect | bold italic backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | help");
-final Config myConfig = Config.embedded().addProperties(tinyProperties);
+
+Or by passing Javascript that returns a {{site.productname}} configuration object.
+
+**config.js**:
+```javascript
+(function() {
+  return {
+    width: 800,
+    height: 600,
+    plugins: [
+      'advcode advlist autolink lists link image imagetools charmap emoticons',
+      'anchor searchreplace insertdatetime media table powerpaste help wordcount'
+    ],
+    menubar: false,
+    toolbar: [
+      'undo redo | formatselect | bold italic backcolor | alignleft aligncenter ',
+      'alignright alignjustify | bullist numlist outdent indent | removeformat | ',
+      'link image | help'
+    ].join(''),
+    images_reuse_filename: true
+  };
+})()
+```
+
+Snippet of **Edit.java**:
+```java
+final Path contentPath = Paths.get(System.getProperty("user.home"));
+final Config myConfig = Config.embedded()
+    .setContentPath(contentPath)
+    .setImageSaverLocal(contentPath)
+    .setInitConf(Edit.class, "config.js"); // load config.js using class loader
+
 ```
 
 ### 3. Create the editor and add it to your view
 
 Create the editor by passing a configuration object. The editor initialization is asynchronous so starting a new editor will return a future value that can be accessed as a normal future value.
 
-```
+```java
 final Config myConfig = Config.embedded();
 final TinyMCE editor = TinyMCE.futureEditor(myConfig).get();
-editor.setBody("Hello World!");
+editor.setHtml("<p>Hello World!</p>");
 final JPanel holder = new JPanel(new BorderLayout());
 holder.add(editor.component(), BorderLayout.CENTER);
 ```
@@ -79,7 +122,8 @@ For more examples check the [GitHub repository](https://github.com/tinymce/tinym
   * `readme.txt` - This file has general information about {{site.productname}} for Swing integration.
   * `license.txt` - This file has all the license details about {{site.productname}} for Swing as a commercial software.
   * `release-notes.txt` - This file has information about the integrations and enhancements that have been implemented in {{site.productname}} for Swing integration.
-  * `jar` files - The `jar` files that implement the integration can be found under lib/
+  * `change-log.md` - This file lists all user impacting and major changes for every release of {{site.productname}} for Swing integration.
+  * `jar` files - The `jar` files that implement the integration can be found under `lib/`
   * `javadoc` - The `javadoc` can be found at `docs/javadoc/index.html`.
 
 #### A note about integrations

@@ -24,7 +24,7 @@ From the release `zip` file, select all the Java libraries under the `lib` folde
 
 ### 2. Select a deployment and create a configuration
 
-The Swing integration allows the user to select the origin of the {{site.productname}} code: **embedded** (recommended), **cloud** or **external**.
+The Swing integration allows the user to select the origin of the {{site.productname}} code: **embedded** (recommended), **cloud**, or **external**.
 
 * Embedded deployments use the version of {{site.productname}} prepackaged with the current release of the integration. This is guaranteed to be compatible with the integration specific plugins.
 
@@ -32,11 +32,11 @@ The Swing integration allows the user to select the origin of the {{site.product
   final Config myTinyConfiguration = Config.embedded();
   ```
 
-* Cloud deployments pull the latest release of {{site.productname}} from the channel of your choice. Use this option by passing your API key and selecting a release channel.
+* Cloud deployments pull the latest release of {{site.productname}} from the {{site.cloudname}}. Use this option by passing your API key and [Specifying the TinyMCE editor version deployed from {{site.cloudname}}]({{site.baseurl}}/cloud-deployment-guide/editor-plugin-version/#specifyingthetinymceeditorversiondeployedfromcloud).
 
   ```java
   final Config myTinyConfiguration = Config.cloud("<my_api_key>", "{{site.productmajorversion}}-stable");
-  ```
+  ``` 
 
 * External deployments allow to use a local version of {{site.productname}} by giving the address of the location where {{site.productname}} is being served.
 
@@ -67,7 +67,7 @@ final Config myConfig = Config.embedded()
 Or by passing Javascript that returns a {{site.productname}} configuration object.
 
 **config.js**:
-```javascript
+```js
 (function() {
   return {
     width: 800,

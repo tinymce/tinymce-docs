@@ -28,7 +28,7 @@ These release notes provide an overview of the changes for {{site.productname}} 
 * Fixed an exception thrown when removing inline formats that contained additional styles or classes.
 * Fixed an exception thrown when positioning the context toolbar on Internet Explorer 11 in some edge cases.
 * Fixed inline formats not removed when more than one `removeformat` format rule existed.
-* Fixed an issue where spaces were sometimes removed when removing formating on nearby text.
+* Fixed an issue where spaces were sometimes removed when removing formatting on nearby text.
 * Fixed the list toolbar buttons not showing as active when a list is selected.
 * Fixed an issue where the UI would sometimes not be shown or hidden when calling the show or hide API methods on the editor.
 * Fixed the list type style not retained when copying list items.

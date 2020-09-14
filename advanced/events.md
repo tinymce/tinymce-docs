@@ -26,14 +26,14 @@ tinymce.init({
 });
 ```
 
-The following example uses a function to create a console log entry when text color is changed in the editor. This is also an example of handling an event that returns data.
+The following example uses a function to create a console log entry when a command is executed in the editor. This is also an example of handling an event that returns data.
 
 ```js
 tinymce.init({
   selector: 'textarea',
   init_instance_callback: function(editor) {
-    editor.on('TextColorChange', function(e) {
-      console.log('The text color of ' + e.name + ' is now:' + e.color);
+    editor.on('ExecCommand', function(e) {
+      console.log('The ' + e.command + ' command was fired.');
     });
   }
 });
@@ -124,11 +124,12 @@ The following events are provided by the {{ site.productname }} editor.
 | NewBlock               | `{ newBlock: Element }`                                                                                                 | Fired when a new block is created in the editor, such as when the user presses the enter key.                                                                                                  |
 | ClearUndos             | N/A                                                                                                                     | Fired when the undo levels have been cleared.                                                                                                                              |
 | TypingUndo             | N/A                                                                                                                     | Fired when a new undo level is created by typing content into the editor.                                                                                                |
-| Change                 | `{ level: UndoLevel }`                                                                                                  | Fired when the editor content changes have been commited, such as when moving focus away from the editor.                                                                         |
+| Change                 | `{ level: UndoLevel }`                                                                                                  | Fired when the editor content changes have been committed, such as when moving focus away from the editor.                                                                         |
 | Redo                   | `{ level: UndoLevel }`                                                                                                  | Fired when a change is been re-applied.                                                                                                                                    |
 | Undo                   | `{ level: UndoLevel }`                                                                                                  | Fired when a change has been undone.                                                                                                                                       |
 | BeforeAddUndo          | `{ level: UndoLevel, lastLevel: UndoLevel, originalEvent: Event }`                                                      | Fired before a new undo level is created.                                                                                                                                  |
 | AddUndo                | `{ level: UndoLevel, lastLevel: UndoLevel, originalEvent: Event }`                                                      | Fired after a new undo level has been created.                                                                                                                             |
+| Dirty                  | N/A                                                                                                                     | Fired when the editor transitions from a "pristine" state to a "dirty" state. The editor is "dirty" when [an undo level]({{site.baseurl}}/api/tinymce/tinymce.undomanager/) has been _created_ since initialization or the last saved state. To check if the editor is "dirty", use the [`editor.isDirty` API]({{site.baseurl}}/api/tinymce/tinymce.editor/#isdirty).                                                                                                |
 | CloseWindow            | `{ dialog: DialogApi }`                                                                                                 | Fired when a dialog has been closed.                                                                                                                                       |
 | OpenWindow             | `{ dialog: DialogApi }`                                                                                                 | Fired when a dialog has been opened.                                                                                                                                       |
 | ProgressState          | `{ state: boolean, time?: number }`                                                                                     | Fired when the editor progress state changes using the {{ site.productname }} API [`tinymce.activeEditor.setProgressState()`]({{ site.baseurl }}/api/tinymce/tinymce.editor/#setprogressstate).                                                                                              |
@@ -142,7 +143,6 @@ The following events are provided by the {{ site.productname }} editor.
 | IconsLoadError         | `{ message: string }`                                                                                                   | Fired when the editor icon pack fails to load. {{site.requires_5_2v}}                                                                                                     |
 | LanguageLoadError      | `{ message: string }`                                                                                                   | Fired when the editor language pack fails to load. {{site.requires_5_2v}}                                                                                                  |
 | BeforeRenderUI         | N/A                                                                                                                     | Fired before the theme UI is rendered.                                                                                                                                     |
-| TextColorChange        | `{ name: string, color: string }`                                                                                       | Fired when the text color is changed.                                                                                                                                      |
 | ToggleSidebar          | N/A                                                                                                                     | Fired when a sidebar is toggled opened/closed.                                                                                                                             |
 | longpress              | (Same data as the native [touchstart event](https://developer.mozilla.org/en-US/docs/Web/API/Element/touchstart_event)) | Fired when a long press occurs on a touch device inside the editor. <br/>{{ site.requires_5_1v }}                                                                          |
 | tap                    | (Same data as the native [touchend event](https://developer.mozilla.org/en-US/docs/Web/API/Document/touchend_event))    | Fired when a tap occurs on a touch device inside the editor (simulated event similar to click). <br/>{{ site.requires_5_1v }}                                             |

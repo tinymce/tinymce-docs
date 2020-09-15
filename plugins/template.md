@@ -15,10 +15,10 @@ The `template` plugin adds support for custom templates. It also adds a menu ite
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "template",
-  menubar: "insert",
-  toolbar: "template"
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'template',
+  menubar: 'insert',
+  toolbar: 'template'
 });
 ```
 
@@ -38,10 +38,10 @@ Each item in the list can either be inline using a `content` property or a whole
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "template",
-  menubar: "insert",
-  toolbar: "template",
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'template',
+  menubar: 'insert',
+  toolbar: 'template',
   templates: [
     {title: 'Some title 1', description: 'Some desc 1', content: 'My content'},
     {title: 'Some title 2', description: 'Some desc 2', url: 'development.html'}
@@ -53,11 +53,11 @@ tinymce.init({
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "template",
-  menubar: "insert",
-  toolbar: "template",
-  templates: "/dir/templates.php"
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'template',
+  menubar: 'insert',
+  toolbar: 'template',
+  templates: '/dir/templates.php'
 });
 ```
 
@@ -84,11 +84,11 @@ A creation date is one that is set if no previous date existed within the elemen
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "template",
-  menubar: "insert",
-  toolbar: "template",
-  template_cdate_classes: "cdate creationdate"
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'template',
+  menubar: 'insert',
+  toolbar: 'template',
+  template_cdate_classes: 'cdate creationdate'
 });
 ```
 
@@ -104,11 +104,11 @@ This option allows you to provide a date format that all 'creation' date templat
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "template",
-  menubar: "insert",
-  toolbar: "template",
-  template_cdate_format: "%m/%d/%Y : %H:%M",
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'template',
+  menubar: 'insert',
+  toolbar: 'template',
+  template_cdate_format: '%m/%d/%Y : %H:%M',
   templates: [
     {title: 'Cdate', description: 'Cdate example', content: '<p class="cdate">This will be replaced with the creation date</p>'}
   ]
@@ -136,11 +136,11 @@ A modified date is one that is updated with each edit.
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "template",
-  menubar: "insert",
-  toolbar: "template",
-  template_mdate_classes: "mdate modifieddate"
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'template',
+  menubar: 'insert',
+  toolbar: 'template',
+  template_mdate_classes: 'mdate modifieddate'
 });
 ```
 
@@ -156,11 +156,11 @@ This option allows you to provide TinyMCE with a date/time format that all 'modi
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "template",
-  menubar: "insert",
-  toolbar: "template",
-  template_mdate_format: "%m/%d/%Y : %H:%M:%S",
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'template',
+  menubar: 'insert',
+  toolbar: 'template',
+  template_mdate_format: '%m/%d/%Y : %H:%M:%S',
   templates: [
     {title: 'Mdate', description: 'Mdate example', content: '<p class="mdate">This will be replaced with the date modified</p>'}
   ]
@@ -184,13 +184,13 @@ This is an object containing items that will be replaced with their respective s
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "template",
-  menubar: "insert",
-  toolbar: "template",
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'template',
+  menubar: 'insert',
+  toolbar: 'template',
   template_replace_values: {
-    username: "Jack Black",
-    staffid: "991234"
+    username: 'Jack Black',
+    staffid: '991234'
   }
 });
 ```
@@ -217,13 +217,13 @@ This is an object containing items that will be replaced with their respective s
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "template",
-  menubar: "insert",
-  toolbar: "template",
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'template',
+  menubar: 'insert',
+  toolbar: 'template',
   template_preview_replace_values: {
-    username: "Jack Black",
-    staffid: "991234"
+    username: 'Jack Black',
+    staffid: '991234'
   }
 });
 ```
@@ -252,9 +252,9 @@ When HTML elements in a template are assigned this class, the content of the ele
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "template",
-  template_selected_content_classes: "selcontent selectedcontent",
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'template',
+  template_selected_content_classes: 'selcontent selectedcontent',
   templates: [
     {
       title: 'My Template',
@@ -276,29 +276,29 @@ If the word `world` is selected in the editor and _My Template_ is applied, `wor
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "template",
-  menubar: "insert",
-  toolbar: "template",
-  template_cdate_classes: "cdate creationdate",
-  template_mdate_classes: "mdate modifieddate",
-  template_selected_content_classes: "selcontent",
-  template_cdate_format: "%m/%d/%Y : %H:%M:%S",
-  template_mdate_format: "%m/%d/%Y : %H:%M:%S",
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'template',
+  menubar: 'insert',
+  toolbar: 'template',
+  template_cdate_classes: 'cdate creationdate',
+  template_mdate_classes: 'mdate modifieddate',
+  template_selected_content_classes: 'selcontent',
+  template_cdate_format: '%m/%d/%Y : %H:%M:%S',
+  template_mdate_format: '%m/%d/%Y : %H:%M:%S',
   template_replace_values: {
-    username : "Jack Black",
-    staffid : "991234"
+    username : 'Jack Black',
+    staffid : '991234'
   },
   templates : [
     {
-      title: "Editor Details",
-      url: "editor_details.htm",
-      description: "Adds Editor Name and Staff ID"
+      title: 'Editor Details',
+      url: 'editor_details.htm',
+      description: 'Adds Editor Name and Staff ID'
     },
       {
-        title: "Timestamp",
-        url: "time.htm",
-        description: "Adds an editing timestamp."
+        title: 'Timestamp',
+        url: 'time.htm',
+        description: 'Adds an editing timestamp.'
       }
   ]
 });

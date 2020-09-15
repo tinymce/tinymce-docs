@@ -15,10 +15,10 @@ The `media` plugin adds the ability for users to be able to add HTML5 video and 
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "media",
-  menubar: "insert",
-  toolbar: "media"
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'media',
+  menubar: 'insert',
+  toolbar: 'media'
 });
 ```
 
@@ -36,10 +36,10 @@ This option allows you to specify the function that will return the HTML embed c
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "media",
-  menubar: "insert",
-  toolbar: "media",
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'media',
+  menubar: 'insert',
+  toolbar: 'media',
   audio_template_callback: function(data) {
    return '<audio controls>' + '\n<source src="' + data.source1 + '"' + (data.source1mime ? ' type="' + data.source1mime + '"' : '') + ' />\n' + '</audio>';
  }
@@ -60,10 +60,10 @@ This options allows you disable the `Alternative source` input field in the medi
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "media",
-  menubar: "insert",
-  toolbar: "media",
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'media',
+  menubar: 'insert',
+  toolbar: 'media',
   media_alt_source: false
 });
 ```
@@ -82,10 +82,10 @@ This options allows you disable the `Dimensions` input fields in the media dialo
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "media",
-  menubar: "insert",
-  toolbar: "media",
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'media',
+  menubar: 'insert',
+  toolbar: 'media',
   media_dimensions: false
 });
 ```
@@ -104,10 +104,10 @@ This option allows you disable the XSS sanitation filter for video/object elemen
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "media",
-  menubar: "insert",
-  toolbar: "media",
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'media',
+  menubar: 'insert',
+  toolbar: 'media',
   media_filter_html: false
 });
 ```
@@ -128,10 +128,10 @@ This option is enabled by default and accepts URLs input into the source field o
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "media",
-  menubar: "insert",
-  toolbar: "media",
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'media',
+  menubar: 'insert',
+  toolbar: 'media',
   media_live_embeds: true
 });
 ```
@@ -150,10 +150,10 @@ This options allows you disable the `Poster` input field in the media dialog.
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "media",
-  menubar: "insert",
-  toolbar: "media",
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'media',
+  menubar: 'insert',
+  toolbar: 'media',
   media_poster: false
 });
 ```
@@ -168,10 +168,10 @@ This option allows you to embed videos using script elements.
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "media",
-  menubar: "insert",
-  toolbar: "media",
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'media',
+  menubar: 'insert',
+  toolbar: 'media',
   media_scripts: [
    {filter: 'http://media1.example.com'},
    {filter: 'http://media2.example.com', width: 100, height: 200}
@@ -197,9 +197,9 @@ The following example simply checks if the url contains some special url and ret
 
 ```js
 tinymce.init({
-  selector: "textarea.tinymce",
-  plugins: "media",
-  toolbar: "media",
+  selector: 'textarea.tinymce',
+  plugins: 'media',
+  toolbar: 'media',
   media_url_resolver: function (data, resolve/*, reject*/) {
     if (data.url.indexOf('YOUR_SPECIAL_VIDEO_URL') !== -1) {
       var embedHtml = '<iframe src="' + data.url +
@@ -222,10 +222,10 @@ This option allows you to specify the function that will return the HTML embed c
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "media",
-  menubar: "insert",
-  toolbar: "media",
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'media',
+  menubar: 'insert',
+  toolbar: 'media',
   video_template_callback: function(data) {
    return '<video width="' + data.width + '" height="' + data.height + '"' + (data.poster ? ' poster="' + data.poster + '"' : '') + ' controls="controls">\n' + '<source src="' + data.source1 + '"' + (data.source1mime ? ' type="' + data.source1mime + '"' : '') + ' />\n' + (data.source2 ? '<source src="' + data.source2 + '"' + (data.source2mime ? ' type="' + data.source2mime + '"' : '') + ' />\n' : '') + '</video>';
  }

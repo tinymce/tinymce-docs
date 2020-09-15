@@ -33,8 +33,8 @@ Example {{site.productname}} configuration:
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "powerpaste"
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'powerpaste'
 });
 ```
 
@@ -77,15 +77,17 @@ The supported values are `true` and `false`. The default is `false`.
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "powerpaste",
-  menubar: "edit",
-  toolbar: "pastetext",
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'powerpaste',
+  menubar: 'edit',
+  toolbar: 'pastetext',
   paste_as_text: true
 });
 ```
 
 {% include configuration/paste-merge-formats.md %}
+
+{% include configuration/paste-tab-spaces.md %}
 
 ### powerpaste_word_import
 
@@ -137,11 +139,11 @@ The list of inline elements that should be removed on paste can be specified by 
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "powerpaste",
-  powerpaste_word_import: "clean", // optional
-  powerpaste_html_import: "clean", // optional
-  powerpaste_clean_filtered_inline_elements: "strong, em, b, i, u, strike, sup, sub, font"
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'powerpaste',
+  powerpaste_word_import: 'clean', // optional
+  powerpaste_html_import: 'clean', // optional
+  powerpaste_clean_filtered_inline_elements: 'strong, em, b, i, u, strike, sup, sub, font'
 });
 ```
 
@@ -159,8 +161,8 @@ For example, browsers do not allow PowerPaste to access the file system. If your
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "powerpaste",
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'powerpaste',
   powerpaste_keep_unsupported_src: true
 });
 ```
@@ -177,9 +179,9 @@ Example {{site.productname}} Configuration:
 
 ```js
 tinymce.init({
-  selector: "textarea",
-  plugins: "powerpaste",
-  toolbar: "pastetext"
+  selector: 'textarea',
+  plugins: 'powerpaste',
+  toolbar: 'pastetext'
 });
 ```
 
@@ -193,10 +195,10 @@ Example {{site.productname}} Configuration:
 
 ```js
 tinymce.init({
-  selector: "textarea",
-  plugins: "powerpaste",
+  selector: 'textarea',
+  plugins: 'powerpaste',
   menu: {
-	edit: {title: "edit", items: "pastetext"}
+	edit: {title: 'edit', items: 'pastetext'}
   }
 });
 ```
@@ -209,9 +211,7 @@ Developers can add custom filtering before and after **PowerPaste**'s filters ar
 
 > Note: These callbacks are also triggered by the core Paste plugin, but when triggered by PowerPaste they are passed more data.
 
-#### Configuration Options
-
-##### paste_preprocess
+### paste_preprocess
 
 This setting allows you to run custom filtering on the content from the clipboard before it is run through PowerPaste's filters. The callback is passed two arguments: the PowerPaste plugin instance and an object containing event data. This object contains:
 
@@ -233,8 +233,8 @@ const yourCustomFilter = function(content) {
 };
 
 tinymce.init({
-  selector: "textarea",
-  plugins: "powerpaste",
+  selector: 'textarea',
+  plugins: 'powerpaste',
   paste_preprocess: function (pluginApi, data) {
     console.log(data.content, data.mode, data.source);
     // Apply custom filtering by mutating data.content
@@ -246,7 +246,7 @@ tinymce.init({
 });
 ```
 
-##### paste_postprocess
+### paste_postprocess
 
 This setting allows you to run custom filtering on the pasted content after it is run through PowerPaste's filters. The callback is passed two arguments: the PowerPaste plugin instance and an object containing event data. This object contains:
 
@@ -263,8 +263,8 @@ Example {{site.productname}} configuration:
 
 ```js
 tinymce.init({
-  selector: "textarea",
-  plugins: "powerpaste",
+  selector: 'textarea',
+  plugins: 'powerpaste',
   paste_postprocess: function (pluginApi, data) {
     console.log(data.node, data.mode, data.source);
     // Apply custom filtering by mutating data.node
@@ -275,7 +275,7 @@ tinymce.init({
 });
 ```
 
-#### Event Listeners
+## Event Listeners
 
 Custom paste filtering can also be configured at runtime using event listeners.
 
@@ -293,8 +293,8 @@ const yourCustomFilter = function(content) {
 };
 
 tinymce.init({
-  selector: "textarea",
-  plugins: "powerpaste",
+  selector: 'textarea',
+  plugins: 'powerpaste',
   setup: function(editor) {
     editor.on('PastePreProcess', function(data) {
       console.log(data.content, data.mode, data.source);

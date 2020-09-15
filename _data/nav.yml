@@ -132,7 +132,9 @@
     - url: "#content_style"
     - url: "#inline_boundaries"
     - url: "#inline_boundaries_selector"
-    - url: "#text_color"
+    - url: "#color_cols"
+    - url: "#color_map"
+    - url: "#custom_colors"
     - url: "#visual"
     - url: "#visual_anchor_class"
     - url: "#visual_table_class"
@@ -411,6 +413,7 @@
     - url: "#paste_webkit_styles"
     - url: "#paste_retain_style_properties"
     - url: "#paste_merge_formats"
+    - url: "#paste_tab_spaces"
     - url: "#paste_convert_word_fake_lists"
     - url: "#paste_remove_styles_if_webkit"
     - url: "#smart_paste"
@@ -426,6 +429,7 @@
     pages:
     - url: "#paste_as_text"
     - url: "#paste_merge_formats"
+    - url: "#paste_tab_spaces"
     - url: "#powerpaste_word_import"
     - url: "#powerpaste_html_import"
     - url: "#powerpaste_allow_local_images"
@@ -740,6 +744,12 @@
 
 - url: "release-notes"
   pages:
+  - url: "release-notes542"
+    pages:
+    - url: "#Overview"
+    - url: "#General bug fixes"
+    - url: "#Accompanying Premium Plugin changes"
+    - url: "#Upgrading to the latest version of TinyMCE 5"
   - url: "release-notes54"
     pages:
     - url: "#Overview"
@@ -870,6 +880,7 @@
 
 - url: "changelog"
   pages:
+  - url: "#Version 5.4.2 August 17, 2020"
   - url: "#Version 5.4.1 July 8, 2020"
   - url: "#Version 5.4.0 June 30, 2020"
   - url: "#Version 5.3.2 June 10, 2020"

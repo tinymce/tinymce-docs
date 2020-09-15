@@ -13,4 +13,4 @@ controls: toolbar button, menu item
 
 This example shows how to use the Page Embed plugin to embed a page in the content in a responsive or exactly sized iframe.For more information on the Page Embed plugin, see the [docs]({{site.baseurl}}/plugins/pageembed/).
 
-{% include codepen.html id="page-embed" %}
+{% include live-demo.html id="page-embed" %}

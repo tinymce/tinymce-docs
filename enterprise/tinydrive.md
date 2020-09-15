@@ -26,7 +26,7 @@ And to make sure your assets are delivered as fast as possible, we utilize the [
 
 ### Try our Tiny Drive plugin demo
 
-{% include codepen.html id="drive-demo" %}
+{% include live-demo.html id="drive-demo" %}
 
 {% assign pluginname = 'Tiny Drive' %}
 {% assign pluginminimumplan = 'tierone' %}

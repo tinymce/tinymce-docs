@@ -9,4 +9,4 @@ keywords: example custom format formats html5
 
 This example shows you how to edit HTML5 content such as sections and articles.
 
-{% include codepen.html id="format-html5" %}
+{% include live-demo.html id="format-html5" %}

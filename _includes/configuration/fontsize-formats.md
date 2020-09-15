@@ -4,7 +4,7 @@ This option allows you to override the font sizes displayed in the `fontsizesele
 
 **Type:** `String`
 
-**Default Value:** `'11px 12px 14px 16px 18px 24px 36px 48px'`
+**Default Value:** `'8pt 10pt 12pt 14pt 18pt 24pt 36pt'`
 
 ##### Example
 
@@ -12,6 +12,6 @@ This option allows you to override the font sizes displayed in the `fontsizesele
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   toolbar: 'fontsizeselect',
-  fontsize_formats: '11px 12px 14px 16px 18px 24px 36px 48px'
+  fontsize_formats: '8pt 10pt 12pt 14pt 16pt 18pt 24pt 36pt 48pt'
 });
 ```

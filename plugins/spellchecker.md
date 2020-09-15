@@ -19,10 +19,10 @@ This plugin enables {{site.productname}}'s spellcheck functionality. It also add
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "spellchecker",
-  menubar: "tools",
-  toolbar: "spellchecker",
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'spellchecker',
+  menubar: 'tools',
+  toolbar: 'spellchecker',
   spellchecker_rpc_url: 'spellchecker.php'
 });
 ```
@@ -39,10 +39,10 @@ This option lets you override the default server side request/communication logi
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "spellchecker",
-  menubar: "tools",
-  toolbar: "spellchecker",
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'spellchecker',
+  menubar: 'tools',
+  toolbar: 'spellchecker',
   spellchecker_callback: function (method, text, success, failure) {
     var words = text.match(this.getWordCharPattern());
     if (method === "spellcheck") {
@@ -63,15 +63,15 @@ tinymce.init({
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "spellchecker",
-  menubar: "tools",
-  toolbar: "spellchecker",
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'spellchecker',
+  menubar: 'tools',
+  toolbar: 'spellchecker',
   spellchecker_callback: function (method, text, success, failure) {
-    if (method === "spellcheck") {
+    if (method === 'spellcheck') {
       tinymce.util.JSONRequest.sendRPC({
-        url: "/tinymce/spellchecker.php",
-        method: "spellcheck",
+        url: '/tinymce/spellchecker.php',
+        method: 'spellcheck',
         params: {
           lang: this.getLanguage(),
           words: text.match(this.getWordCharPattern())
@@ -102,10 +102,10 @@ This configuration option lets you set the default language code for the spellch
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "spellchecker",
-  menubar: "tools",
-  toolbar: "spellchecker",
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'spellchecker',
+  menubar: 'tools',
+  toolbar: 'spellchecker',
   spellchecker_language: 'sv_SE'
 });
 ```
@@ -123,10 +123,10 @@ This option lets you specify a list of languages for the user to select from. Th
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
-  plugins: "spellchecker",
-  menubar: "tools",
-  toolbar: "spellchecker",
+  selector: 'textarea',  // change this value according to your html
+  plugins: 'spellchecker',
+  menubar: 'tools',
+  toolbar: 'spellchecker',
   spellchecker_languages: 'English=en,Danish=da,Dutch=nl,Finnish=fi,French=fr_FR,' +
     'German=de,Italian=it,Polish=pl,Portuguese=pt_BR,Spanish=es,Swedish=sv'
 });
@@ -142,10 +142,10 @@ This options enables you to specify a custom URL to be used for the spellchecker
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "spellchecker",
-  menubar: "tools",
-  toolbar: "spellchecker",
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'spellchecker',
+  menubar: 'tools',
+  toolbar: 'spellchecker',
   spellchecker_rpc_url: 'spellchecker.php'
 });
 ```
@@ -164,7 +164,7 @@ The request is a HTTP POST with URL encoded parameters described below.
 
 The response of a successful spellcheck request should like this:
 
-```js
+```json
 {
   "words": {
      "misspelled1": ["suggestion1", "suggestion2"],
@@ -175,7 +175,7 @@ The response of a successful spellcheck request should like this:
 
 And if there was an error:
 
-```js
+```json
 {
   "error": "Error message"
 }
@@ -191,10 +191,10 @@ This option enables you to override the matching of characters that are parts of
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "spellchecker",
-  menubar: "tools",
-  toolbar: "spellchecker",
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'spellchecker',
+  menubar: 'tools',
+  toolbar: 'spellchecker',
   spellchecker_wordchar_pattern: /[^\s,\.]+/g
 });
 ```

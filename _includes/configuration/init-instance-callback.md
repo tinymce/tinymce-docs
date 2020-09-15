@@ -10,7 +10,7 @@ The **init_instance_callback** option allows you to specify a function name to b
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   init_instance_callback : function(editor) {
-    console.log("Editor: " + editor.id + " is now initialized.");
+    console.log('Editor: ' + editor.id + ' is now initialized.');
   }
 });
 ```

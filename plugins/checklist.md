@@ -11,9 +11,9 @@ controls: toolbar button
 
 The **Checklist** plugin helps the user keep track of all required actions by creating a simple, clean, and easy to use TODO list.
 
-## Format
+## Try our Checklist demo
 
-{% include codepen.html id="checklist" %}
+{% include live-demo.html id="checklist" %}
 
 In the {{site.productname}} editor, checklists are presented as lists with small checkboxes on the left hand side of the list items. After the item has been completed, a small tick or check mark is drawn in the box by clicking on it.
 
@@ -27,9 +27,9 @@ Use the following script to add the **Checklist** [toolbar button]({{site.baseur
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "lists checklist",
-  toolbar: "checklist"
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'lists checklist',
+  toolbar: 'checklist'
 });
 ```
 

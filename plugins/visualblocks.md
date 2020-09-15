@@ -15,10 +15,10 @@ This plugin allows a user to see block level elements in the editable area. It i
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "visualblocks",
-  menubar: "view",
-  toolbar: "visualblocks"
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'visualblocks',
+  menubar: 'view',
+  toolbar: 'visualblocks'
 });
 ```
 
@@ -38,10 +38,10 @@ This option enables you to specify the default state of the Visual Blocks plugin
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "visualblocks",
-  menubar: "view",
-  toolbar: "visualblocks",
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'visualblocks',
+  menubar: 'view',
+  toolbar: 'visualblocks',
   visualblocks_default_state: true
 });
 ```

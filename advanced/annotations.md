@@ -67,7 +67,7 @@ The uid passed through to `decorate` is either the uid field in the data object 
 For adding the annotate tool to the toolbar that is registered with `alpha` set the value of the toolbar to:
 
 ```js
-toolbar: "annotate-alpha"
+toolbar: 'annotate-alpha'
 ```
 
 ### 4. Applying Annotations
@@ -132,7 +132,7 @@ annotationChanged: (name: string, callback): void
 
 Use the following example to create the Annotate API:
 
-{% include codepen.html id="annotations" height="750" %}
+{% include live-demo.html id="annotations" height="750" %}
 
 ## Retrieving All Annotations for a Particular Annotation Name
 

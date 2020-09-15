@@ -11,6 +11,10 @@ controls: toolbar button, menu item
 
 The **Case Change** plugin is a time saving and handy extension that allows changing the case of text in block selection to uppercase, lowercase, or title case.
 
+## Try our Case Change demo
+
+{% include live-demo.html id="casechange" %}
+
 **Case Change** is a premium plugin from {{site.companyname}}. Please see the [Premium features]({{site.baseurl}}/enterprise/casechange/) section for all the buying options.
 
 Once you have obtained the **Case Change** plugin, refer to the following instructions for using it.
@@ -23,9 +27,9 @@ Use the following script to configure the **Case Change** [split toolbar button]
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "casechange",
-  toolbar: "casechange"
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'casechange',
+  toolbar: 'casechange'
 });
 ```
 
@@ -37,8 +41,8 @@ Use the following script to configure the **Case Change** [menu item]({{site.bas
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "casechange",
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'casechange',
   menu: {
     format: { title: 'Format', items: 'casechange' }
   }
@@ -88,9 +92,9 @@ The `casechange_title_case_minors` option is used to customize the rules while u
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "casechange",
-  toolbar: "casechange",
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'casechange',
+  toolbar: 'casechange',
   casechange_title_case_minors: [
     'at', 'by', 'in', 'of', 'on', 'up', 'to', 'en', 're', 'vs',
     'but', 'off', 'out', 'via', 'bar', 'mid', 'per', 'pro', 'qua', 'til',

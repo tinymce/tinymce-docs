@@ -48,6 +48,11 @@ tinymce.init({
 
 > Note: The identifier used to create the menu item must be included in the [`menu`]({{site.baseurl}}/configure/editor-appearance/#menu) option in the {{site.productname}} configuration for it to be added to the menubar's menus. It will not be added to the menubar's menus if `menu` is not configured correctly.
 
+## Live Example
+
+This example shows you how to add some simple menu items to a new "custom" menu.
+
+{% include live-demo.html id="custom-menu-item" %}
 
 ## Types of menu items
 
@@ -71,9 +76,7 @@ A basic menu item triggers its `onAction` function when clicked.
 | disabled | boolean | optional | default: false - Represents the menu item's state. When true, the menu item is unclickable. Toggled by the menu item's API. |
 | onSetup | `(api) => (api) => void` | optional | default: `() => () => {}` - Function invoked when the menu item is rendered, each time its menu is opened. |
 | onAction | `(api) => void` | required | Function invoked when the menu item is clicked. |
-| shortcut | string | optional | Sets a keyboard shortcut for activating the menu item, such as: `shortcut: 'Ctrl+Alt+Delete'`. For information on available shortcut modifiers, see: [Shortcut modifier key mappings](#shortcutmodifierkeymappings). |
-
-###{% include misc/shortcut-os-mappings.md %}
+| shortcut | string | optional | Text to display in the shortcut label. To register a shortcut, see: [Add custom shortcuts to TinyMCE]({{site.baseurl}}/advanced/keyboard-shortcuts/#addcustomshortcutstotinymce). |
 
 #### API
 
@@ -86,7 +89,7 @@ A basic menu item triggers its `onAction` function when clicked.
 
 ```js
 tinymce.init({
-  selector: "textarea",
+  selector: 'textarea',
   menu: {
     custom: { title: 'Custom Menu', items: 'undo redo basicitem' }
   },
@@ -115,10 +118,7 @@ A nested menu item is a menu item with a submenu. Registering a submenu this way
 | value | string | optional | A value to associate with the menu item. |
 | onSetup | `(api) => (api) => void` | optional | default: `() => () => {}` - Function invoked when the menu item is rendered, each time its menu is opened. |
 | getSubmenuItems | `() => string` or `MenuItem[]` | required | Function invoked when the menu item is clicked to open its submenu. Must return either a space separated string of registered menu names or an array of basic, toggle or nested menu items specifications. |
-| shortcut | string | optional | Sets a keyboard shortcut for activating the menu item, such as: `shortcut: 'Ctrl+Alt+Delete'`. For information on available shortcut modifiers, see: [Shortcut modifier key mappings](#shortcutmodifierkeymappings2). |
-
-<a class="anchor" id="shortcutmodifierkeymappings2"></a>
-###{% include misc/shortcut-os-mappings.md %}
+| shortcut | string | optional | Text to display in the shortcut label. To register a shortcut, see: [Add custom shortcuts to TinyMCE]({{site.baseurl}}/advanced/keyboard-shortcuts/#addcustomshortcutstotinymce). |
 
 #### API
 
@@ -131,7 +131,7 @@ A nested menu item is a menu item with a submenu. Registering a submenu this way
 
 ```js
 tinymce.init({
-  selector: "textarea",
+  selector: 'textarea',
   menu: {
     custom: { title: 'Custom Menu', items: 'undo redo nesteditem' }
   },
@@ -190,7 +190,7 @@ A toggle menu item triggers its `onAction` when clicked. It also has a concept o
 var toggleState = false;
 
 tinymce.init({
-  selector: "textarea",
+  selector: 'textarea',
   menu: {
     custom: { title: 'Custom Menu', items: 'undo redo toggleitem' }
   },

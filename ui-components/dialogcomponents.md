@@ -67,13 +67,13 @@ Below is a trivial example of how to use `onTabChange` and `showTab()`.
 
 ```js
 const dialogConfig = {
-  title: "Example Dialog",
+  title: 'Example Dialog',
   body: {
     type: 'tabpanel',
     tabs: [ ... ] // array of panel configurations
   },
   buttons: [],
-  onTabChange: (dialogApi, details) => {
+  onTabChange: function (dialogApi, details) {
     // log the contents of details
     console.log(details.newTabName);
     console.log(details.oldTabName);

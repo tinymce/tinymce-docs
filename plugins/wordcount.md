@@ -14,9 +14,9 @@ The Word Count plugin adds the functionality for counting words to the {{site.pr
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "wordcount",
-  toolbar: "wordcount"
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'wordcount',
+  toolbar: 'wordcount'
 });
 ```
 

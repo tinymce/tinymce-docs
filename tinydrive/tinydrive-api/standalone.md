@@ -21,7 +21,7 @@ In order to use {{site.cloudfilemanager}} in standalone mode you will need to ad
 <script>
 tinydrive.pick({
   token_provider: '/your-local/jwt-provider'
-}).then((result) => {
+}).then(function (result) {
   console.log(result.files);
 });
 </script>
@@ -53,7 +53,7 @@ The modification date for the file in ISO 8601 format for example `2019-02-24T15
 
 ### Demo
 
-{% include codepen.html id="drive-standalone-pick" type="tinydrive" %}
+{% include live-demo.html id="drive-standalone-pick" type="tinydrive" %}
 
 ## tinydrive.browse
 
@@ -61,7 +61,7 @@ The `tinydrive.browse` method enables you to browse your files stored in {{site.
 
 ### Demo
 
-{% include codepen.html id="drive-standalone-browse" type="tinydrive" %}
+{% include live-demo.html id="drive-standalone-browse" type="tinydrive" %}
 
 ## tinydrive.upload
 
@@ -69,7 +69,7 @@ The `tinydrive.upload` method enables directly upload blobs to your {{site.cloud
 
 ### Demo
 
-{% include codepen.html id="drive-standalone-upload" type="tinydrive" %}
+{% include live-demo.html id="drive-standalone-upload" type="tinydrive" %}
 
 ## tinydrive.start
 
@@ -116,7 +116,7 @@ tinydrive.pick({
      success({ token: 'jwt-token' });
      // failure('Could not create a jwt token')
   }
-}).then((result) => {
+}).then(function (result) {
   console.log(result.files);
 });
 ```
@@ -137,7 +137,7 @@ This setting enables specifying the Dropbox API key for integrating dropbox into
 tinydrive.pick({
   dropbox_app_key: '<your dropbox app key>',
   token_provider: '/your-local/jwt-provider'
-}).then((result) => {
+}).then(function (result) {
   console.log(result.files);
 });
 ```
@@ -154,7 +154,7 @@ This setting enables restricting what types of files you want do display based o
 tinydrive.pick({
   filetypes: ['image'],
   token_provider: '/your-local/jwt-provider'
-}).then((result) => {
+}).then(function (result) {
   console.log(result.files);
 });
 ```
@@ -171,7 +171,7 @@ This setting enables specifying the Google Drive client ID for integrating Googl
 tinydrive.pick({
   google_drive_client_id: '<your google drive client id>',
   token_provider: '/your-local/jwt-provider'
-}).then((result) => {
+}).then(function (result) {
   console.log(result.files);
 });
 ```
@@ -188,7 +188,7 @@ This setting enables specifying the Google Drive API key for integrating Google 
 tinydrive.pick({
   google_drive_key: '<your google drive api key>',
   token_provider: '/your-local/jwt-provider'
-}).then((result) => {
+}).then(function (result) {
   console.log(result.files);
 });
 ```
@@ -205,7 +205,7 @@ This setting enables constraining the width/height of uploaded images. When this
 tinydrive.pick({
   max_image_dimension: 1024,
   token_provider: '/your-local/jwt-provider'
-}).then((result) => {
+}).then(function (result) {
   console.log(result.files);
 });
 ```
@@ -223,7 +223,7 @@ This setting enables you to render {{site.cloudfilemanager}} within a target ele
 tinydrive.pick({
   target: '.my-custom-div',
   token_provider: '/your-local/jwt-provider'
-}).then((result) => {
+}).then(function (result) {
   console.log(result.files);
 });
 </script>

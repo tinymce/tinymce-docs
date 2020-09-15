@@ -16,8 +16,8 @@ The default pattern is similar to markdown syntax, so the user can type `# text`
 
 ```js
 tinymce.init({
-  selector: "textarea",
-  plugins: "textpattern"
+  selector: 'textarea',
+  plugins: 'textpattern'
 });
 ```
 
@@ -69,7 +69,7 @@ This allows for patterns to be used to either apply a format or execute a comman
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
+  selector: 'textarea',  // change this value according to your HTML
   plugin: 'textpattern',
   textpattern_patterns: [
     {start: '*', end: '*', format: 'italic'},
@@ -81,15 +81,15 @@ tinymce.init({
 
 Using the configuration in this example:
 
-* `{start: '*', end: '*', format: 'italic'}` - Entering text between`*` and then pressing the **spacebar** will result in the `italic` format being applied to the text between the `*` symbols. 
-* `{start: '**', end: '**', format: 'bold'}` - Entering text between`**` and then pressing the **spacebar** will result in the `bold` format being applied. 
+* `{start: '*', end: '*', format: 'italic'}` - Entering text between`*` and then pressing the **spacebar** will result in the `italic` format being applied to the text between the `*` symbols.
+* `{start: '**', end: '**', format: 'bold'}` - Entering text between`**` and then pressing the **spacebar** will result in the `bold` format being applied.
 * `{start: '~', end: '~', cmd: 'createLink', value: 'https://tiny.cloud'}` - This executes `editor.execCommand('createLink', false, 'https://tiny.cloud')`, which will wrap the text between the `~` symbols in a link that points to `https://tiny.cloud`.
 
 #### Block patterns
 
 Block patterns must have the following:
 
-* A `start` 
+* A `start`
 * A `format` or a `cmd`
    * If `cmd` is specified, an optional `value` property is allowed.
 
@@ -101,7 +101,7 @@ The block patterns do not have an `end` property. This allows for patterns to be
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
+  selector: 'textarea',  // change this value according to your HTML
   plugin: 'textpattern lists',
   textpattern_patterns: [
     {start: '#', format: 'h1'},
@@ -124,7 +124,7 @@ tinymce.init({
 
 Using the configuration in this example:
 
-* `{start: '#', format: 'h1'}` - Typing `#`, some text, and then pressing `Enter` will convert the text to a `h1` heading. 
+* `{start: '#', format: 'h1'}` - Typing `#`, some text, and then pressing `Enter` will convert the text to a `h1` heading.
 * Typing `1. `, some text, and then pressing `Enter` will convert the text into an ordered list, with the original text as the first list item, and the new line as the second list item. Since we have specified `value`, this pattern will execute `editor.execCommand('InsertOrderedList', false, { 'list-style-type': 'decimal'})`.
 
 #### Replacements patterns
@@ -143,7 +143,7 @@ Whether a replacement pattern inserts a block or inline element depends on what 
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
+  selector: 'textarea',  // change this value according to your HTML
   plugin: 'textpattern',
   textpattern_patterns: [
     {start: '---', replacement: '<hr/>'},
@@ -159,6 +159,6 @@ tinymce.init({
 Using the configuration in this example:
 
 * Typing `---` and then either pressing the **spacebar** or the **Enter** key will insert a horizontal rule block.
-* Typing `(c)` and then either pressing the **spacebar** or the **Enter** key will insert an inline copyright symbol. 
+* Typing `(c)` and then either pressing the **spacebar** or the **Enter** key will insert an inline copyright symbol.
 
 This is useful for commonly used phrases or symbols and can be leveraged to create content templates. The last pattern is an example of this.

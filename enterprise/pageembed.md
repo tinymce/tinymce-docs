@@ -15,7 +15,7 @@ Page Embed provides more flexibility than an inline script and can contain an en
 
 ### Try our Page Embed plugin demo
 
-{% include codepen.html id="page-embed" %}
+{% include live-demo.html id="page-embed" %}
 
 {% assign pluginname = 'Page Embed' %}
 {% assign pluginminimumplan = 'tiertwo' %}

@@ -288,10 +288,10 @@ No additional fields when `type` is `unbounded`.
 #### `ErrorObj`
 
 * `code` (required)
-  * Integer with the value of `400` (User Input Error) or `503` (Upstream Failure)
+  * Integer with the value of `400` (User Input Error) or `502` (Upstream Failure)
 * `subcode` (required)
   * Integer with one of the following values:
-      * When `code` is **503**:
+      * When `code` is **502**:
           * `1` - Upstream connection issue
           * `2` - Upstream returned not OK
           * `3` - Upstream returned a response that didn’t make sense to the server

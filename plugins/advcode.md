@@ -25,7 +25,7 @@ tinymce.init({
 
 ## The difference between the Code and Advanced Code Editor plugins
 
-{% include codepen.html id="advcode" %}
+{% include live-demo.html id="advcode" %}
 
 {% include misc/advcode-shortcuts.md %}
 

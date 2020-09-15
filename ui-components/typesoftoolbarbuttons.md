@@ -43,7 +43,7 @@ A basic button triggers its `onAction` function when clicked.
 
 The following example adds two buttons to the toolbar:
 
-{% include codepen.html id="custom-toolbar-button" tab="js" %}
+{% include live-demo.html id="custom-toolbar-button" tab="js" %}
 
 The first button inserts "It's my button!" into the editor when clicked. The second button is an example of how `onSetup` works. This button inserts a `time` element containing the current date into the editor using a `toTimeHtml()` helper function - a simplified version of {{site.productname}}'s [insertdatetime]({{site.baseurl}}/plugins/insertdatetime/) plugin.
 
@@ -81,7 +81,7 @@ A toggle button triggers an action when clicked but also has a concept of state.
 
 #### Toggle button example and explanation
 
-{% include codepen.html id="custom-toolbar-toggle-button" tab="js" %}
+{% include live-demo.html id="custom-toolbar-toggle-button" tab="js" %}
 
 The example above adds two custom **strikethrough** buttons with the same `onAction` configuration. The configuration uses `editor.execCommand(command, ui, args)` to execute `mceToggleFormat`. This editor method toggles the specified format on and off, but only works for [formats]({{site.baseurl}}/configure/content-formatting/#formats) that are already registered with the editor. In this example, `strikethrough` is the registered format.
 
@@ -125,7 +125,7 @@ A split button contains a basic button and a menu button, wrapped up into one to
 
 The following example sets up a split button with a text label and a static dropdown menu.
 
-{% include codepen.html id="custom-toolbar-split-button" tab="js" %}
+{% include live-demo.html id="custom-toolbar-split-button" tab="js" %}
 
 A split button is similar to a basic button in that they both require an `onAction` callback. The `onAction` callback function should take the button's API and return nothing. It is called when the basic button section is clicked. In this example, `onAction` calls `editor.insertContent(value)` which inserts the given content into the editor.
 
@@ -164,7 +164,7 @@ A toolbar menu button is a toolbar button that opens a menu when clicked. This m
 
 The following is a simple toolbar menu button example:
 
-{% include codepen.html id="custom-toolbar-menu-button" tab="js" %}
+{% include live-demo.html id="custom-toolbar-menu-button" tab="js" %}
 
 This example configures a toolbar menu button with the label `My Button` that opens the specified menu when clicked. The top-level menu contains two items. The first menu item inserts content when clicked and the second menu item opens a submenu containing two menu items which insert content when clicked.
 
@@ -203,7 +203,7 @@ A group toolbar button is a toolbar button that contains a collection of other t
 
 The following is a simple group toolbar button example:
 
-{% include codepen.html id="custom-toolbar-group-button" tab="js" %}
+{% include live-demo.html id="custom-toolbar-group-button" tab="js" %}
 
 The example above configures a custom **alignment** group toolbar button. When clicked the button will show a floating shelf containing the align left, center, right and justify toolbar buttons.
 

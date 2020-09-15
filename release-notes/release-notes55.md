@@ -23,9 +23,11 @@ These release notes provide an overview of the changes for {{site.productname}} 
 
 The following new features and enhancements were added for the {{site.productname}} 5.5 release.
 
-###
+### New persistent toolbar option for inline mode
 
+A new `toolbar_persist` option has been added for disabling the automatic show and hide behavior of the toolbar and menu bar for inline editors.
 
+For information on the new persistent toolbar option, see: [User interface options - `toolbar_persist`]({{site.baseurl}}/configure/editor-appearance/#toolbar_persist).
 
 ## Accompanying Premium Plugin changes
 

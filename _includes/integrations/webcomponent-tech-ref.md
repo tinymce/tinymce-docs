@@ -1,8 +1,8 @@
-## TinyMCE web-component technical reference
+## TinyMCE Web Component technical reference
 
 **Covered in this section:**
 
-- [Installing the web-component integration](#installingthetinymceweb-componentintegration)
+- [Installing the Web Component integration](#installingthetinymcewebcomponentintegration)
 - [Loading TinyMCE](#loadingtinymce)
 - [Configuring the editor](#configuringtheeditor)
 
@@ -18,9 +18,9 @@
   - [Setting the quick-bar selection toolbar](#settingthequick-barselectiontoolbar)
   - [Setting content stylesheets](#settingcontentstylesheets)
   - [Setting content styling](#settingcontentstyling)
-  - [Setting Power Paste's word import method](#settingpowerpasteswordimportmethod)
-  - [Setting Power Paste's html import method](#settingpowerpasteshtmlimportmethod)
-  - [Setting Power Paste to allow local images](#settingpowerpastetoallowlocalimages)
+  - [Setting PowerPaste's word import method](#settingpowerpasteswordimportmethod)
+  - [Setting PowerPaste's html import method](#settingpowerpasteshtmlimportmethod)
+  - [Setting PowerPaste to allow local images](#settingpowerpastetoallowlocalimages)
   - [Showing resize handles](#showingresizehandles)
   - [Setting the editor setup function](#settingtheeditorsetupfunction)
   - [Setting the editor skin](#settingtheeditorskin)
@@ -35,10 +35,14 @@
 
 - [Event binding](#eventbinding)
 
-### Installing the TinyMCE web-component integration
+### Installing the TinyMCE Web Component integration
 
 1. Link `@tinymce/tinymce-webcomponent` into your page, either using a script tag linking to a CDN like
-```<script src="https://cdn.jsdelivr.net/npm/@tinymce/tinymce-webcomponent@1/dist/tinymce-webcomponent.js"></script>```
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/@tinymce/tinymce-webcomponent@1/dist/tinymce-webcomponent.js"></script>
+```
+
 or using a bundler like webpack to put the npm package into the page.
 2. Optionally include a script tag to load TinyMCE into the page (see below for details).
 3. Insert `<tinymce-editor></tinymce-editor>` into the page.
@@ -61,8 +65,8 @@ TinyMCE it will try the following:
 
 ### Configuring the editor
 
-The editor is configured by setting attributes on the tinymce-editor custom element.
-Note that as all attributes must be represented as strings each attribute may be
+The editor is configured by setting attributes on the `tinymce-editor` custom element.
+All attributes must be represented as strings each attribute may be
 interpreted differently - depending on context they may be understood as booleans,
 numbers or even global functions.
 
@@ -70,7 +74,7 @@ numbers or even global functions.
 
 ```html
 <tinymce-editor>
-&lt;p&gt;This will be the initial content of the editor.&lt;/p&gt;
+  &lt;p&gt;This will be the initial content of the editor.&lt;/p&gt;
 </tinymce-editor>
 ```
 
@@ -191,7 +195,7 @@ Setting the attribute `content_style` allows configuring the editor
 [content styling](https://www.tiny.cloud/docs/configure/content-appearance/#content_style)
 by passing the value as a string.
 
-#### Setting Power Paste's word import method
+#### Setting PowerPaste's word import method
 
 ```html
 <tinymce-editor powerpaste_word_import="merge"></tinymce-editor>
@@ -201,7 +205,7 @@ Setting the attribute `powerpaste_word_import` allows configuring the editor
 [behaviour when pasting word documents](https://www.tiny.cloud/docs/plugins/powerpaste/#powerpaste_word_import)
 by passing the value as a string.
 
-#### Setting Power Paste's html import method
+#### Setting PowerPaste's html import method
 
 ```html
 <tinymce-editor powerpaste_html_import="prompt"></tinymce-editor>
@@ -211,7 +215,7 @@ Setting the attribute `powerpaste_html_import` allows configuring the editor
 [behaviour when pasting HTML documents](https://www.tiny.cloud/docs/plugins/powerpaste/#powerpaste_html_import)
 by passing the attribute value as a string.
 
-#### Setting Power Paste to allow local images
+#### Setting PowerPaste to allow local images
 
 ```html
 <tinymce-editor powerpaste_html_import="prompt"></tinymce-editor>
@@ -236,7 +240,9 @@ by passing the attribute value with the text `"false"` and `"true"` as a the boo
 ```html
 <script>
 function setupEditor(editor) {
-  // setup
+  editor.on('click', function () {
+    console.log('Editor was clicked');
+  });
 }
 </script>
 <tinymce-editor setup="setupEditor"></tinymce-editor>
@@ -337,7 +343,7 @@ window.myConfig = {
   // any additional settings would go here
 };
 </script>
-<tinymce-editor config='myConfig'></tinymce-editor>
+<tinymce-editor config="myConfig"></tinymce-editor>
 ```
 
 Any configuration settings not supported by an attribute can be set using the
@@ -353,8 +359,8 @@ normal way events are added to TinyMCE.
 ```html
 <script>
 function setupEditor(editor) {
-  editor.on('nodeChange', function(evt) {
-    // use event
+  editor.on('click', function () {
+    console.log('Editor was clicked');
   });
 }
 </script>
@@ -373,3 +379,79 @@ function nodeChangeHandler(evt) {
 ```
 
 If these attributes are later removed then the event will be automatically unbound.
+
+#### Supported browser events
+
+Bind the following browser events using the corresponding {{site.productname}} Web Component attribute.
+
+| Browser event     | Attribute            |
+|-------------------|----------------------|
+| `BeforePaste`     | `on-BeforePaste`     |
+| `Blur`            | `on-Blur`            |
+| `Click`           | `on-Click`           |
+| `ContextMenu`     | `on-ContextMenu`     |
+| `Copy`            | `on-Copy`            |
+| `Cut`             | `on-Cut`             |
+| `Dblclick`        | `on-Dblclick`        |
+| `Drag`            | `on-Drag`            |
+| `DragDrop`        | `on-DragDrop`        |
+| `DragEnd`         | `on-DragEnd`         |
+| `DragGesture`     | `on-DragGesture`     |
+| `DragOver`        | `on-DragOver`        |
+| `Drop`            | `on-Drop`            |
+| `Focus`           | `on-Focus`           |
+| `FocusIn`         | `on-FocusIn`         |
+| `FocusOut`        | `on-FocusOut`        |
+| `KeyDown`         | `on-KeyDown`         |
+| `KeyPress`        | `on-KeyPress`        |
+| `KeyUp`           | `on-KeyUp`           |
+| `MouseDown`       | `on-MouseDown`       |
+| `MouseEnter`      | `on-MouseEnter`      |
+| `MouseLeave`      | `on-MouseLeave`      |
+| `MouseMove`       | `on-MouseMove`       |
+| `MouseOut`        | `on-MouseOut`        |
+| `MouseOver`       | `on-MouseOver`       |
+| `MouseUp`         | `on-MouseUp`         |
+| `Paste`           | `on-Paste`           |
+| `SelectionChange` | `on-SelectionChange` |
+
+#### Supported TinyMCE events
+
+Bind the following {{site.productname}} events using the corresponding {{site.productname}} Web Component attribute.
+
+| TinyMCE event       | Attribute              |
+|---------------------|------------------------|
+| `Activate`          | `on-Activate`          |
+| `AddUndo`           | `on-AddUndo`           |
+| `BeforeAddUndo`     | `on-BeforeAddUndo`     |
+| `BeforeExecCommand` | `on-BeforeExecCommand` |
+| `BeforeGetContent`  | `on-BeforeGetContent`  |
+| `BeforeRenderUI`    | `on-BeforeRenderUI`    |
+| `BeforeSetContent`  | `on-BeforeSetContent`  |
+| `Change`            | `on-Change`            |
+| `ClearUndos`        | `on-ClearUndos`        |
+| `Deactivate`        | `on-Deactivate`        |
+| `Dirty`             | `on-Dirty`             |
+| `ExecCommand`       | `on-ExecCommand`       |
+| `GetContent`        | `on-GetContent`        |
+| `Hide`              | `on-Hide`              |
+| `Init`              | `on-Init`              |
+| `LoadContent`       | `on-LoadContent`       |
+| `NodeChange`        | `on-NodeChange`        |
+| `PostProcess`       | `on-PostProcess`       |
+| `PostRender`        | `on-PostRender`        |
+| `PreProcess`        | `on-PreProcess`        |
+| `ProgressState`     | `on-ProgressState`     |
+| `Redo`              | `on-Redo`              |
+| `Remove`            | `on-Remove`            |
+| `Reset`             | `on-Reset`             |
+| `SaveContent`       | `on-SaveContent`       |
+| `SetAttrib`         | `on-SetAttrib`         |
+| `ObjectResizeStart` | `on-ObjectResizeStart` |
+| `ObjectResized`     | `on-ObjectResized`     |
+| `ObjectSelected`    | `on-ObjectSelected`    |
+| `SetContent`        | `on-SetContent`        |
+| `Show`              | `on-Show`              |
+| `Submit`            | `on-Submit`            |
+| `Undo`              | `on-Undo`              |
+| `VisualAid`         | `on-VisualAid`         |

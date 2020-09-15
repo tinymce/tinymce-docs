@@ -1,8 +1,8 @@
 ---
 layout: default
-title: Web-component integration
-title_nav: Web-component
-description: TinyMCE web-component.
+title: The TinyMCE Web Component integration
+title_nav: Web Components
+description: The TinyMCE Web Component integration guide
 keywords: integration integrate web-component
 ---
 

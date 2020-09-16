@@ -17,26 +17,48 @@ tinyMCE.activeEditor.ui.registry.getAll().buttons
 
 {% include toolbar-button-ids/core-toolbar-buttons.md %}
 
+{% assign pluginname="A11yChecker" %}
+{% include misc/plugin-toolbar-button-id-boilerplate.md %}
 {% include toolbar-button-ids/a11ychecker-toolbar-buttons.md %}
 
-{% include toolbar-button-ids/anchor-toolbar-buttons.md %}
-
-{% include toolbar-button-ids/autosave-toolbar-buttons.md %}
-
-{% include toolbar-button-ids/casechange-toolbar-buttons.md %}
-
-{% include toolbar-button-ids/charmap-toolbar-buttons.md %}
-
-{% include toolbar-button-ids/checklist-toolbar-buttons.md %}
-
-{% include toolbar-button-ids/codesample-toolbar-buttons.md %}
-
+{% assign pluginname="Advanced Code Editor" %}
+{% include misc/plugin-toolbar-button-id-boilerplate.md %}
 {% include toolbar-button-ids/code-toolbar-buttons.md %}
 
+{% assign pluginname="Anchor" %}
+{% include misc/plugin-toolbar-button-id-boilerplate.md %}
+{% include toolbar-button-ids/anchor-toolbar-buttons.md %}
+
+{% assign pluginname="Autosave" %}
+{% include misc/plugin-toolbar-button-id-boilerplate.md %}
+{% include toolbar-button-ids/autosave-toolbar-buttons.md %}
+
+{% assign pluginname="Case Change" %}
+{% include misc/plugin-toolbar-button-id-boilerplate.md %}
+{% include toolbar-button-ids/casechange-toolbar-buttons.md %}
+
+{% assign pluginname="Character Map" %}
+{% include misc/plugin-toolbar-button-id-boilerplate.md %}
+{% include toolbar-button-ids/charmap-toolbar-buttons.md %}
+
+{% assign pluginname="Checklist" %}
+{% include misc/plugin-toolbar-button-id-boilerplate.md %}
+{% include toolbar-button-ids/checklist-toolbar-buttons.md %}
+
+{% assign pluginname="Code Sample" %}
+{% include misc/plugin-toolbar-button-id-boilerplate.md %}
+{% include toolbar-button-ids/codesample-toolbar-buttons.md %}
+
+{% assign pluginname="Comments" %}
+{% include misc/plugin-toolbar-button-id-boilerplate.md %}
 {% include toolbar-button-ids/comments-toolbar-buttons.md %}
 
+{% assign pluginname="Directionality" %}
+{% include misc/plugin-toolbar-button-id-boilerplate.md %}
 {% include toolbar-button-ids/directionality-toolbar-buttons.md %}
 
+{% assign pluginname="Emoticons" %}
+{% include misc/plugin-toolbar-button-id-boilerplate.md %}
 {% include toolbar-button-ids/emoticons-toolbar-buttons.md %}
 
 {% include toolbar-button-ids/formatpainter-toolbar-buttons.md %}

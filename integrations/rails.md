@@ -8,9 +8,9 @@ keywords: integration integrate rails
 
 {{site.productname}} can be added to a Ruby on Rails project using either:
 
-- [TinyMCE in Ruby on Rails using the Tiny Cloud](#tinymce-in-ruby-on-rails-using-the-tiny-cloud)
-- [TinyMCE in Ruby on Rails using TinyMCE self-hosted](#tinymce-in-ruby-on-rails-using-tinymce-self-hosted)
-- [The third-party TinyMCE Ruby on Rails gem](#the-third-party-tinymce-ruby-on-rails-gem)
+- [TinyMCE in Ruby on Rails using the Tiny Cloud](#tinymceinrubyonrailsusingthetinycloud)
+- [TinyMCE in Ruby on Rails using TinyMCE self-hosted](#tinymceinrubyonrailsusingtinymceself-hosted)
+- [The third-party TinyMCE Ruby on Rails gem](#thethird-partytinymcerubyonrailsgem)
 
 ### TinyMCE in Ruby on Rails using the Tiny Cloud
 

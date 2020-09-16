@@ -7,6 +7,9 @@ keywords: spellchecker spellchecker_callback spellchecker_language spellchecker_
 controls: toolbar button, menu item
 ---
 
+{% assign pluginname = "Spell Checker" %}
+{% assign plugincode = "spellchecker" %}
+
 {{site.deprecate_spellchecker}}
 
 > **Note**: The Spell Checker plugin is self-hosted _only_. The Spell Checker Pro plugin is provided for some {{site.cloudname}} plans. For information on the Spell Checker Pro plugin, see: [Spell Checker Pro plugin]({{site.baseurl}}/plugins/tinymcespellchecker/).
@@ -198,6 +201,10 @@ tinymce.init({
   spellchecker_wordchar_pattern: /[^\s,\.]+/g
 });
 ```
+
+{% include misc/plugin-toolbar-button-id-boilerplate.md %}
+
+{% include misc/plugin-menu-item-id-boilerplate.md %}
 
 ## Commands
 

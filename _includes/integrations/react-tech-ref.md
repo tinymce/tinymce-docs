@@ -191,7 +191,7 @@ For more information, see: [Using the {{site.productname}} React component as a 
 #### `outputFormat`
 
 Used to specify the format of the content emitted via the [`onEditorChange`](#oneditorchange) event.
- 
+
 **Type:** String
 
 **Default value:** `html`
@@ -257,7 +257,7 @@ Used to set the toolbar for the editor. Using `<Editor toolbar='bold' />` is the
 
 For information setting the toolbar for {{site.productname}}, see: [User interface options - toolbar]({{site.baseurl}}/configure/editor-appearance/#toolbar).
 
-**Possible values:**  See [Editor control identifiers - Toolbar controls]({{site.baseurl}}/advanced/editor-control-identifiers/).
+**Possible values:**  See [Toolbar Buttons Available for {{site.productname}}]({{site.baseurl}}/advanced/available-toolbar-buttons/).
 
 **Type:** String
 

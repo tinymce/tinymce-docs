@@ -119,7 +119,7 @@ Use a space-separated list to specify the toolbar buttons for {{site.productname
 #### Additional information
 
 * For additional toolbar options, including disabling the toolbar and adding multiple toolbars, see: [User interface options - toolbar]({{site.baseurl}}/configure/editor-appearance/#toolbar).
-* For a list of all available toolbar items, see: [Editor control identifiers - Toolbar controls](https://www.tiny.cloud/docs/advanced/editor-control-identifiers/#toolbarcontrols).
+* For a list of all available toolbar items, see: [Toolbar Buttons Available for {{site.productname}}]({{site.baseurl}}/advanced/available-toolbar-buttons/).
 
 ## Menu and Menu bar configuration
 
@@ -182,7 +182,7 @@ The default menus are as follows:
 
 * For information on the `menu` setting, see: [User interface options - menu]({{site.baseurl}}/configure/editor-appearance/#menu).
 * For information on the `menubar` setting, see: [User interface options - menubar]({{site.baseurl}}/configure/editor-appearance/#menubar).
-* For a list of all available menu items, see: [Editor control identifiers - Menu controls]({{site.baseurl}}/advanced/editor-control-identifiers/#menucontrols).
+* For a list of all available menu items, see: [Menu Items Available for {{site.productname}}]({{site.baseurl}}/advanced/available-menu-items/).
 
 ## Basic configuration example
 

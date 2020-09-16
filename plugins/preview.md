@@ -7,6 +7,9 @@ keywords: view preview
 controls: toolbar button, menu item
 ---
 
+{% assign pluginname = "Preview" %}
+{% assign plugincode = "preview" %}
+
 This plugin adds a preview button to the toolbar. Pressing the button opens a dialog box showing the current content in a preview mode. It also adds a menu item `Preview` under the `File` and `View` menu dropdowns.
 
 **Type:** `String`
@@ -21,6 +24,10 @@ tinymce.init({
   toolbar: 'preview'
 });
 ```
+
+{% include misc/plugin-toolbar-button-id-boilerplate.md %}
+
+{% include misc/plugin-menu-item-id-boilerplate.md %}
 
 ## Commands
 

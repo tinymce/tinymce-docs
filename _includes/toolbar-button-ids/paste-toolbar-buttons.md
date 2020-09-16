@@ -1,3 +1,3 @@
-| Toolbar button identifier | Description                             |
-| ------------------------- | --------------------------------------- |
-| `pastetext`               | Toggles plain text pasting mode on/off. |
+| Toolbar button identifier | Description                                                                                                     |
+|---------------------------|-----------------------------------------------------------------------------------------------------------------|
+| `pastetext`               | Toggles plain text pasting mode on/off. When in plain text mode, all rich content is converted into plain text. |

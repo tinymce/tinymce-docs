@@ -15,53 +15,6 @@ tinyMCE.activeEditor.ui.registry.getAll().buttons
 
 {% include misc/toolbar-button-settings.md %}
 
-## Overview
-
-* [Core toolbar buttons](#thecoretoolbarbuttons)
-* [A11yChecker plugin toolbar buttons](#thea11ycheckerplugintoolbarbuttons)
-* [Advanced Code Editor plugin toolbar buttons](#theadvancedcodeeditorplugintoolbarbuttons)
-* [Anchor plugin toolbar buttons](#theanchorplugintoolbarbuttons)
-* [Autosave plugin toolbar buttons](#theautosaveplugintoolbarbuttons)
-* [Case Change plugin toolbar buttons](#thecasechangeplugintoolbarbuttons)
-* [Character Map plugin toolbar buttons](#thecharactermapplugintoolbarbuttons)
-* [Checklist plugin toolbar buttons](#thechecklistplugintoolbarbuttons)
-* [Code plugin toolbar buttons](#thecodeplugintoolbarbuttons)
-* [Code Sample plugin toolbar buttons](#thecodesampleplugintoolbarbuttons)
-* [Comments plugin toolbar buttons](#thecommentsplugintoolbarbuttons)
-* [Directionality plugin toolbar buttons](#thedirectionalityplugintoolbarbuttons)
-* [Emoticons plugin toolbar buttons](#theemoticonsplugintoolbarbuttons)
-* [Format Painter plugin toolbar buttons](#theformatpainterplugintoolbarbuttons)
-* [Full Page plugin toolbar buttons](#thefullpageplugintoolbarbuttons)
-* [Full Screen plugin toolbar buttons](#thefullscreenplugintoolbarbuttons)
-* [Help plugin toolbar buttons](#thehelpplugintoolbarbuttons)
-* [Horizontal Rule plugin toolbar buttons](#thehorizontalruleplugintoolbarbuttons)
-* [Image plugin toolbar buttons](#theimageplugintoolbarbuttons)
-* [Image Tools plugin toolbar buttons](#theimagetoolsplugintoolbarbuttons)
-* [Insert Date/Time plugin toolbar buttons](#theinsertdatetimeplugintoolbarbuttons)
-* [Link plugin toolbar buttons](#thelinkplugintoolbarbuttons)
-* [Lists plugin toolbar buttons](#thelistsplugintoolbarbuttons)
-* [Media plugin toolbar buttons](#themediaplugintoolbarbuttons)
-* [Nonbreaking Space plugin toolbar buttons](#thenonbreakingspaceplugintoolbarbuttons)
-* [Page Break plugin toolbar buttons](#thepagebreakplugintoolbarbuttons)
-* [Page Embed plugin toolbar buttons](#thepageembedplugintoolbarbuttons)
-* [Paste plugin toolbar buttons](#thepasteplugintoolbarbuttons)
-* [Permanent Pen plugin toolbar buttons](#thepermanentpenplugintoolbarbuttons)
-* [PowerPaste plugin toolbar buttons](#thepowerpasteplugintoolbarbuttons)
-* [Preview plugin toolbar buttons](#thepreviewplugintoolbarbuttons)
-* [Print plugin toolbar buttons](#theprintplugintoolbarbuttons)
-* [Quick Toolbars plugin toolbar buttons](#thequicktoolbarsplugintoolbarbuttons)
-* [Save plugin toolbar buttons](#thesaveplugintoolbarbuttons)
-* [Search and Replace plugin toolbar buttons](#thesearchandreplaceplugintoolbarbuttons)
-* [Spell Checker plugin toolbar buttons](#thespellcheckerplugintoolbarbuttons)
-* [Spell Checker Pro plugin toolbar buttons](#thespellcheckerproplugintoolbarbuttons)
-* [Table plugin toolbar buttons](#thetableplugintoolbarbuttons)
-* [Template plugin toolbar buttons](#thetemplateplugintoolbarbuttons)
-* [Tiny Drive plugin toolbar buttons](#thetinydriveplugintoolbarbuttons)
-* [Table of Contents plugin toolbar buttons](#thetableofcontentsplugintoolbarbuttons)
-* [Visual Blocks plugin toolbar buttons](#thevisualblocksplugintoolbarbuttons)
-* [Visual Characters plugin toolbar buttons](#thevisualcharactersplugintoolbarbuttons)
-* [Word Count plugin toolbar buttons](#thewordcountplugintoolbarbuttons)
-
 ## The core toolbar buttons
 
 The following toolbar buttons are available for all {{site.productname}} instances without enabling any plugins:

@@ -1,8 +1,12 @@
 ## toolbar_persist
 
-Use this option to disable the automatic show and hide behaviour of the inline toolbar. Enabling this setting would, by default, always show the inline toolbar and not hide it whenever focus is lost.
+{{site.requires_5_5v}}
+
+This option disables the automatic show and hide behavior of the toolbar and menu bar for inline editors. Enable this option to always show the toolbar and menu bar, and not hide them whenever focus is lost. Use this option to make the toolbar and menu bar persistent for inline editors.
 
 **Type:** `Boolean`
+
+**Default Value:** `false`
 
 ##### Example
 

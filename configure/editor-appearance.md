@@ -12,6 +12,8 @@ description: Configure the editor's appearance, including menu and toolbar contr
 
 {% include configuration/contextmenu.md %}
 
+{% include configuration/contextmenu_avoid_overlap.md %}
+
 {% include configuration/contextmenu_never_use_native.md %}
 
 {% include configuration/custom-ui-selector.md %}

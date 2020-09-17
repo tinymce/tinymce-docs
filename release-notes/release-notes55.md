@@ -33,6 +33,12 @@ For information on the `contextmenu_avoid_overlap` option, see: [User interface 
 
 
 
+### New listbox component for custom dialogs
+
+The new listbox component for custom dialogs is a composite component with a label and a dropdown list of options for users to select from. This component displays a menu-like dropdown and allows nested options to be shown to users.
+
+For information on the listbox dialog component, see: [Dialog components - listbox]({{site.baseurl}}/ui-components/dialogcomponents/#listbox).
+
 ## Accompanying Premium Plugin changes
 
 The following premium plugin updates were released alongside {{site.productname}} 5.5.

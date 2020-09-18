@@ -1,5 +1,5 @@
 {% if page.name == "available-toolbar-buttons.md" %}
-## The {{pluginname}} plugin toolbar buttons
+## {{pluginname}} plugin
 
 The {{pluginname}} plugin provides the following toolbar buttons:
 

@@ -23,9 +23,23 @@ These release notes provide an overview of the changes for {{site.productname}} 
 
 The following new features and enhancements were added for the {{site.productname}} 5.5 release.
 
-###
+### New `contextmenu_avoid_overlap` option for controlling the placement of context menus
 
+The new `contextmenu_avoid_overlap` option can be used to prevent context menus from covering the selected node if the node matches the specified [CSS selector](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors).
 
+For information on the `contextmenu_avoid_overlap` option, see: [User interface options - `contextmenu_avoid_overlap`]({{site.baseurl}}/configure/editor-appearance/#contextmenu_avoid_overlap).
+
+### New persistent toolbar option for inline mode
+
+A new `toolbar_persist` option has been added for disabling the automatic show and hide behavior of the toolbar and menu bar for inline editors.
+
+For information on the new persistent toolbar option, see: [User interface options - `toolbar_persist`]({{site.baseurl}}/configure/editor-appearance/#toolbar_persist).
+
+### New listbox component for custom dialogs
+
+The new listbox component for custom dialogs is a composite component with a label and a dropdown list of options for users to select from. This component displays a menu-like dropdown and allows nested options to be shown to users.
+
+For information on the listbox dialog component, see: [Dialog components - listbox]({{site.baseurl}}/ui-components/dialogcomponents/#listbox).
 
 ## Accompanying Premium Plugin changes
 

@@ -353,9 +353,33 @@ Use `inputMode` to set the type of onscreen keyboard provided on mobile devices 
 
 For a list of valid input modes, see: [MDN Web Docs - inputmode](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/inputmode).
 
+#### listbox
+
+{{site.requires_5_5v}}
+
+A **listbox** is a composite component with a label and a dropdown list of options for users to select from. This component displays a menu-like dropdown and allows nested options to be shown to users.
+
+**Events:** Interacting with a **listbox** component will fire the `onChange` function in the dialog's configuration.
+
+```js
+{
+  type: 'listbox', // component type
+  name: 'ListBoxA', // identifier
+  label: 'ListBox Label',
+  disabled: true, // disabled state
+  items: [
+    { text: 'One', value: 'one' },
+    { text: 'Two', value: 'two' },
+    { text: 'Submenu', items: [
+      { text: 'Three', value: 'three' }
+    ]}
+  ]
+}
+```
+
 #### selectbox
 
-A **selectbox** is a composite component with a label and a dropdown list of options for users to select from.
+A **selectbox** is a composite component with a label and a single dropdown list of options for users to select from.
 
 **Events:** Interacting with a **selectbox** component will fire the `onChange` function in the dialog's configuration.
 

@@ -15,7 +15,7 @@ These release notes provide an overview of the changes for {{site.productname}} 
 - [Accompanying Premium Plugin changes](#accompanyingpremiumpluginchanges)
 - [Upgrading to the latest version of TinyMCE 5](#upgradingtothelatestversionoftinymce5)
 
-> This is the {{site.cloudname}} and {{site.enterpriseversion}} release notes. For information on the latest community version of {{site.productname}}, see: [{{site.productname}} Changelog]({{site.baseurl}}/changelog/).
+{{site.releasenotes_for_stable}}
 
 ## General bug fixes
 
@@ -46,7 +46,7 @@ The {{site.productname}} 5.2.2 release includes an accompanying release of the *
 
 The {{site.productname}} 5.2.2 release includes an accompanying release of the **SpellChecker Pro** premium plugin.
 
-**SpellChecker Pro** 2.0.1 provides a fixes for: 
+**SpellChecker Pro** 2.0.1 provides a fixes for:
 
 * The context menu being incorrectly positioned on a scrolled page in TinyMCE 4.
 * An unhandled exception thrown when enabling spellchecking in inline mode for TinyMCE 4.

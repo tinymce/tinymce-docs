@@ -11,7 +11,7 @@ These release notes provide an overview of the changes for {{site.productname}} 
 - [General bug fixes](#generalbugfixes)
 - [Security fixes](#securityfixes)
 
-> This is the {{site.cloudname}} and {{site.enterpriseversion}} release notes. For information on the latest community version of {{site.productname}}, see: [{{site.productname}} Changelog]({{site.baseurl}}/changelog/).
+{{site.releasenotes_for_stable}}
 
 ## General bug fixes
 

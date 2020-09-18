@@ -16,7 +16,7 @@ These release notes provide an overview of the changes for {{site.productname}} 
 - [Known issues](#knownissues)
 - [Upgrading to the latest version of TinyMCE 5](#upgradingtothelatestversionoftinymce5)
 
-> This is the {{site.cloudname}} and {{site.enterpriseversion}} release notes. For information on the latest community version of {{site.productname}}, see: [{{site.productname}} Changelog]({{site.baseurl}}/changelog/).
+{{site.releasenotes_for_stable}}
 
 ## TinyMCE 5.2 new features and enhancements
 
@@ -64,7 +64,7 @@ The `a11y_advanced_options` setting adds an option to set an image as decorative
 - The _Insert/Edit Image_ dialog.
 - The _Accessibility Checker error_ dialog for images without alternative text or the `role="presentation"` attribute.
 
-For information on the `a11y_advanced_options`, including the impact on the `a11ychecker_allow_decorative_images` setting, see: 
+For information on the `a11y_advanced_options`, including the impact on the `a11ychecker_allow_decorative_images` setting, see:
 
 - [The Accessibility Checker plugin - `a11y_advanced_options`]({{site.baseurl}}/plugins/a11ychecker/#a11y_advanced_options).
 - [The Image plugin - `a11y_advanced_options`]({{site.baseurl}}/plugins/image/#a11y_advanced_options).

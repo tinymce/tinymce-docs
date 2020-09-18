@@ -178,24 +178,6 @@ tinymce.init({
 {% assign altplugincode = "paste" %}
 {% include misc/plugin-menu-item-id-boilerplate.md %}
 
-## Menu Items
-
-#### pastetext
-
-This menu item allows you to toggle paste as plain text mode on and off. When in plain text mode, all rich content is converted into plain text.
-
-Example {{site.productname}} Configuration:
-
-```js
-tinymce.init({
-  selector: 'textarea',
-  plugins: 'powerpaste',
-  menu: {
-	edit: {title: 'edit', items: 'pastetext'}
-  }
-});
-```
-
 ## Advanced Config Options
 
 ### Pre-filtering and post-filtering callbacks

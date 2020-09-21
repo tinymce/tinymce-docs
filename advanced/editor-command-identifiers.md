@@ -75,6 +75,7 @@ The commands on the following table are provided by the {{site.productname}} edi
 | mceSetContent        | Sets the contents of the editor. The value is the contents to set as the editor contents.                                                                                                                                                                                                   |
 | mceToggleFormat      | Toggles a specified format by name. The value is the name of the format to toggle. For a list of options, see: [Content formatting options - Built-in formats]({{ site.baseurl }}/configure/content-formatting/#built-informats).                                                                               |
 | ToggleSidebar        | Closes the currrent sidebar, or toogles the sidebar if the sidebar name is provided as a value (_`<sidebar-name>`_).                                                                                                                                                                        |
+| ToggleToolbarDrawer  | Toggles the toolbar drawer. For information on toolbars, see: [User interface options - Toolbar]({{site.baseurl}}/configure/editor-appearance/#toolbar).                                                                                                                                                                        |
 | Indent               | Indents the current selection.                                                                                                                                                                                                                                                              |
 | Outdent              | Outdents the current selection.                                                                                                                                                                                                                                                             |
 | InsertHorizontalRule | Inserts a horizontal rule at the cursor location or inplace of the current selection.                                                                                                                                                                                                       |
@@ -129,6 +130,7 @@ tinymce.activeEditor.execCommand('mceSetContent', false, 'My content');
 tinymce.activeEditor.execCommand('mceToggleFormat', false, 'bold');
 tinymce.activeEditor.execCommand('ToggleSidebar');  /* OR */
 tinymce.activeEditor.execCommand('ToggleSidebar', false, '<sidebar-name>');
+tinymce.activeEditor.execCommand('ToggleToolbarDrawer');
 tinymce.activeEditor.execCommand('Indent');
 tinymce.activeEditor.execCommand('Outdent');
 tinymce.activeEditor.execCommand('InsertHorizontalRule');
@@ -460,6 +462,7 @@ The following command states can be queried using the [queryCommandState]({{ sit
 | Strikethrough        | Returns `true` if the content is formatted using the same markup as the {{site.productname}} `Strikethrough` command.          |
 | Subscript            | Returns `true` if the content is formatted using the same markup as the {{site.productname}} `Subscript` command.              |
 | Superscript          | Returns `true` if the content is formatted using the same markup as the {{site.productname}} `Superscript` command.            |
+| ToggleToolbarDrawer  | Returns `true` if the toolbar drawer is open. The state can be controlled by the {{site.productname}} `ToggleToolbarDrawer` command. |
 | Underline            | Returns `true` if the content is formatted using the same markup as the {{site.productname}} `Underline` command.              |
 
 **Examples**
@@ -479,6 +482,7 @@ tinymce.activeEditor.queryCommandState('Outdent');
 tinymce.activeEditor.queryCommandState('Strikethrough');
 tinymce.activeEditor.queryCommandState('Subscript');
 tinymce.activeEditor.queryCommandState('Superscript');
+tinymce.activeEditor.queryCommandState('ToggleToolbarDrawer');
 tinymce.activeEditor.queryCommandState('Underline');
 ```
 

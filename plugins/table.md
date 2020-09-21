@@ -80,6 +80,26 @@ tinymce.init({
 });
 ```
 
+### `table_use_colgroups`
+
+This option allows you to set the default type of new tables created by the table plugin to use colgroups. Tables inserted by other means, or already existing tables, will not be changed.
+
+**Type:** `Boolean`
+
+**Default Value:** `false`
+
+**Possible Values:**  `true`, `false`
+
+##### Example
+
+```js
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'table',
+  table_use_colgroups: true
+});
+```
+
 ### `table_clone_elements`
 
 This option enables you to specify which elements should be cloned as empty children when inserting rows/columns to a table. By default it will clone these '`strong` `em` `b` `i` `span` `font` `h1` `h2` `h3` `h4` `h5` `h6` `p` `div`' into new cells.

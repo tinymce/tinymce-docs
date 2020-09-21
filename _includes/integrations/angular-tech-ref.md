@@ -275,6 +275,21 @@ For information setting the toolbar for {{site.productname}}, see: [User interfa
 ></editor>
 ```
 
+#### `modelEvents`
+Used to specify the events that trigger the NgModelChange to emit. By default the wrapper uses `change input undo redo`.
+
+**Possible value:** A space separated list of TinyMCE editor events.
+
+**Type** String
+
+##### Example: `modelEvents`
+
+```html
+<editor
+  modelEvents="change input nodechange undo redo"
+></editor>
+```
+
 #### `allowedEvents`
 Used to whitelist valid events to trigger from the editor to the Angular wrapper. By default, the wrapper will emit all the events in the [Event binding section]().
 
@@ -282,7 +297,7 @@ Used to whitelist valid events to trigger from the editor to the Angular wrapper
 
 **Type** String
 
-##### Example: '`allowedEvents`
+##### Example: `allowedEvents`
 
 ```html
 <editor
@@ -297,7 +312,7 @@ Used to blacklist events from triggering by the Angular wrapper.
 
 **Type** String
 
-##### Example: '`ignoreEvents`
+##### Example: `ignoreEvents`
 
 ```html
 <editor

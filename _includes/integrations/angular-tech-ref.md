@@ -275,6 +275,36 @@ For information setting the toolbar for {{site.productname}}, see: [User interfa
 ></editor>
 ```
 
+#### `allowedEvents`
+Used to whitelist valid events to trigger from the editor to the Angular wrapper. By default, the wrapper will emit all the events in the [Event binding section]().
+
+**Possible values:** A comma separated list of events to allow.
+
+**Type** String
+
+##### Example: '`allowedEvents`
+
+```html
+<editor
+  allowedEvents="onMouseDown,onKeyDown"
+></editor>
+```
+
+#### `ignoreEvents`
+Used to blacklist events from triggering by the Angular wrapper.
+
+**Possible values:** A comma separated list of events to ignore.
+
+**Type** String
+
+##### Example: '`ignoreEvents`
+
+```html
+<editor
+  ignoreEvents="onMouseEnter,onMouseLeave,onMouseOut,onMouseMove"
+></editor>
+```
+
 ### Using the `ngModel` directive
 
 The `ngModel` directive can be added to use the editor in a form:
@@ -374,3 +404,5 @@ The following events are available:
 * `onSubmit`
 * `onUndo`
 * `onVisualAid`
+
+By default, all the available events will trigger from the editor to the Angular wrapper. In order to limit the events triggering in the component, you can whitelist or blacklist events using the `allowedEvents` and `ignoreEvents` properties.

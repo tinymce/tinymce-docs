@@ -52,6 +52,8 @@ tinymce.init({
   content_style: '.mymention{ color: gray; }',
   contextmenu: 'link image imagetools table configurepermanentpen',
   a11y_advanced_options: true,
+  skin: (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'oxide-dark' : ''),
+  content_css: (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : ''),
   /*
   The following settings require more configuration than shown here.
   For information on configuring the mentions plugin, see:

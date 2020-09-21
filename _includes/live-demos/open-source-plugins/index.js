@@ -53,5 +53,7 @@ tinymce.init({
   noneditable_noneditable_class: 'mceNonEditable',
   toolbar_mode: 'sliding',
   contextmenu: 'link image imagetools table',
+  skin: (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'oxide-dark' : ''),
+  content_css: (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : ''),
   content_style: {{site.liveDemoIframeCSSStyles}}
  });

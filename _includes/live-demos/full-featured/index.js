@@ -275,6 +275,8 @@ tinymce.init({
   {{site.liveDemoIframeCSSStyles}},
   contextmenu: 'link image imagetools table spellchecker configurepermanentpen',
   a11y_advanced_options: true,
+  skin: (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'oxide-dark' : ''),
+  content_css: (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : ''),
   mentions_selector: '.mymention',
   mentions_fetch: mentions_fetch,
   mentions_menu_hover: mentions_menu_hover,

@@ -82,7 +82,7 @@ tinymce.init({
 
 ### `table_use_colgroups`
 
-This option allows you to set the default type of new tables created by the table plugin to use colgroups. Tables inserted by other means, or already existing tables, will not be changed.
+This option allows you to set whether `colgroup`s should be added to new tables created by the table plugin. Tables inserted by other means, or already existing tables, will not be changed.
 
 **Type:** `Boolean`
 

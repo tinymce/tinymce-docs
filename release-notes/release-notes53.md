@@ -17,7 +17,7 @@ These release notes provide an overview of the changes for {{site.productname}} 
 - [Known issues](#knownissues)
 - [Upgrading to the latest version of TinyMCE 5](#upgradingtothelatestversionoftinymce5)
 
-> This is the {{site.cloudname}} and {{site.enterpriseversion}} release notes. For information on the latest community version of {{site.productname}}, see: [{{site.productname}} Changelog]({{site.baseurl}}/changelog/).
+{{site.releasenotes_for_stable}}
 
 ## TinyMCE 5.3 new features and enhancements
 

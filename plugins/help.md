@@ -7,6 +7,9 @@ keywords: help
 controls: toolbar button, menu item
 ---
 
+{% assign pluginname = "Help" %}
+{% assign plugincode = "help" %}
+
 The help plugin adds a button and/or menu item that opens a dialog showing two tabs:
 
 * Handy shortcuts that explains some nice-to-know keyboard shortcuts
@@ -134,6 +137,10 @@ tinymce.activeEditor.plugins.help.addTab({
 ## Exposing metadata for the help plugin
 
 For information on how to expose metadata from you custom plugin to add it to the Installed plugins list in the Help plugin, see the  [Creating a Plugin page]({{ site.baseurl }}/advanced/creating-a-plugin/#exposingmetadata).
+
+{% include misc/plugin-toolbar-button-id-boilerplate.md %}
+
+{% include misc/plugin-menu-item-id-boilerplate.md %}
 
 ## Commands
 

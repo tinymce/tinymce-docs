@@ -7,6 +7,9 @@ keywords: url urls insert edit default_link_target link_assume_external_targets 
 controls: toolbar button, menu item
 ---
 
+{% assign pluginname = "Link" %}
+{% assign plugincode = "link" %}
+
 The **link** plugin allows a user to link external resources such as website URLs, to selected text in their document.
 
 It adds two toolbar buttons called `link` and `unlink` and three menu items called `link`, `unlink` and `openlink`. The toolbar button and menu item called `link` are included in {{site.productname}}'s default configuration. The `link` menu item can be found in the `Insert` menu.
@@ -317,6 +320,10 @@ tinymce.init({
   target_list: false
 });
 ```
+
+{% include misc/plugin-toolbar-button-id-boilerplate.md %}
+
+{% include misc/plugin-menu-item-id-boilerplate.md %}
 
 ## Commands
 

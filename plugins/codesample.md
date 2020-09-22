@@ -7,6 +7,9 @@ keywords: syntax highlight codesample code contenteditable codesample_languages
 controls: toolbar button
 ---
 
+{% assign pluginname = "Code Sample" %}
+{% assign plugincode = "codesample" %}
+
 The Code Sample plugin (`codesample`) lets a user insert and embed syntax color highlighted code snippets into the editable area. It also adds a button to the toolbar which on click will open a dialog box to accept raw code input.
 
 ##### Example
@@ -34,6 +37,10 @@ You need to add `prism.js` and `prism.css` to your page in order to get the synt
 <script src="prism.js"></script>
 <pre class="language-markup"><code>...</code></pre>
 ```
+
+## Live example
+
+{% include live-demo.html id="codesample" %}
 
 ## Options
 
@@ -93,9 +100,9 @@ tinymce.init({
 });
 ```
 
-## Live example
+{% include misc/plugin-toolbar-button-id-boilerplate.md %}
 
-{% include live-demo.html id="codesample" %}
+{% include misc/plugin-menu-item-id-boilerplate.md %}
 
 ## Commands
 

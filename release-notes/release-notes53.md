@@ -17,7 +17,7 @@ These release notes provide an overview of the changes for {{site.productname}} 
 - [Known issues](#knownissues)
 - [Upgrading to the latest version of TinyMCE 5](#upgradingtothelatestversionoftinymce5)
 
-> This is the {{site.cloudname}} and {{site.enterpriseversion}} release notes. For information on the latest community version of {{site.productname}}, see: [{{site.productname}} Changelog]({{site.baseurl}}/changelog/).
+{{site.releasenotes_for_stable}}
 
 ## TinyMCE 5.3 new features and enhancements
 
@@ -93,7 +93,7 @@ The {{site.productname}} 5.3 release includes an accompanying release of the **C
 
 For information on the Comments plugin, see: [Comments plugin]({{site.baseurl}}/plugins/comments/).
 
-For a list of valid menu items, see: [Editor control identifiers - Menu controls]({{site.baseurl}}/advanced/editor-control-identifiers/#menucontrols).
+For a list of Comments plugin menu items, see: [Comments plugin - Menu items]({{site.baseurl}}/plugins/comments/#menuitems).
 
 ### Enhanced Media Embed
 

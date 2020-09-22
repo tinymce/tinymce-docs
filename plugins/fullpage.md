@@ -7,6 +7,9 @@ keywords: fullpage fullpage_default_doctype fullpage_default_encoding fullpage_d
 controls: toolbar button, menu item
 ---
 
+{% assign pluginname = "Full Page" %}
+{% assign plugincode = "fullpage" %}
+
 This plugin allows user to edit certain metadata and document properties such as `title`, `keywords`, and `description`. This is done via a dialog box which appears after pressing a control added to the toolbar. If the `code` plugin is enabled `fullpage` exposes `<head>`, `<body>` and various `meta` tags in source code view.
 
 The plugin also adds a `Metadata and Document properties` menu under the `File` menu and button to the toolbar.
@@ -159,6 +162,10 @@ tinymce.init({
   fullpage_hide_in_source_view: true
 });
 ```
+
+{% include misc/plugin-toolbar-button-id-boilerplate.md %}
+
+{% include misc/plugin-menu-item-id-boilerplate.md %}
 
 ## Commands
 

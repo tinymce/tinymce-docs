@@ -89,7 +89,7 @@ To add plugins and extend the functionality of the editor, add a string of plugi
 <tinymce-editor plugins="advlist autolink link image lists charmap print preview"></tinymce-editor>
 ```
 
-For a list of available plugins, see: [Add plugins to TinyMCE]({{site.baseurl}}/plugins/).
+For a list of available plugins, see: [Add plugins to {{site.productname}}]({{site.baseurl}}/plugins/).
 
 #### Setting the editor width
 
@@ -228,69 +228,99 @@ To disable the quick-selection toolbar, set the `quickbars_selection_toolbar` at
 
 #### Setting content stylesheets
 
+To set the CSS for the content area of the editor, use the `content_css` attribute.
+
+For example, to use one of the {{site.productname}} CSS configurations:
+
 ```html
 <tinymce-editor content_css="writer"></tinymce-editor>
 ```
+
+To use a custom CSS file, provide a relative or abolute path to the css file, such as:
 
 ```html
 <tinymce-editor content_css="path/to/mycontent.css"></tinymce-editor>
 ```
 
-Setting the attribute `content_css` allows configuring the editor
-[content stylesheets]({{site.baseurl}}/configure/content-appearance/#content_css)
-by passing the value as a string.
+{{site.companyname}} recommends using:
+
+- The `content_style` option to apply a small set of CSS styles.
+- The `content_css` option for applying large or complex CSS configurations.
+
+For information on the `content_css` option, see: [Content appearance options - `content_css`]({{site.baseurl}}/configure/content-appearance/#content_css).
 
 #### Setting content styling
+
+To apply a small set of CSS styles to the editor, use the `content_style` attribute. For example:
 
 ```html
 <tinymce-editor content_style="div { margin: 10px; border: 5px solid red; padding: 3px; }"></tinymce-editor>
 ```
 
-Setting the attribute `content_style` allows configuring the editor
-[content styling]({{site.baseurl}}/configure/content-appearance/#content_style)
-by passing the value as a string.
+{{site.companyname}} recommends using:
+
+- The `content_style` option to apply a small set of CSS styles.
+- The `content_css` option for applying large or complex CSS configurations.
+
+For information on the `content_style` option, see: [Content appearance options - `content_style`]({{site.baseurl}}/configure/content-appearance/#content_style).
 
 #### Setting PowerPaste's word import method
+
+This setting only applies if the PowerPaste plugin (`powerpaste`) is enabled.
+
+To control how content pasted from Microsoft Word is filtered, use the `powerpaste_word_import` attribute. For example:
 
 ```html
 <tinymce-editor powerpaste_word_import="merge"></tinymce-editor>
 ```
 
-Setting the attribute `powerpaste_word_import` allows configuring the editor
-[behaviour when pasting word documents]({{site.baseurl}}/plugins/powerpaste/#powerpaste_word_import)
-by passing the value as a string.
+For information on the `powerpaste_word_import` option, including supported values, see: [The PowerPaste plugin - `powerpaste_word_import`]({{site.baseurl}}/plugins/powerpaste/#powerpaste_word_import).
 
 #### Setting PowerPaste's html import method
 
+This setting only applies if the PowerPaste plugin (`powerpaste`) is enabled.
+
+To control how content pasted from sources other than Microsoft Word is filtered, use the `powerpaste_html_import` attribute. For example:
+
 ```html
 <tinymce-editor powerpaste_html_import="prompt"></tinymce-editor>
 ```
 
-Setting the attribute `powerpaste_html_import` allows configuring the editor
-[behaviour when pasting HTML documents]({{site.baseurl}}/plugins/powerpaste/#powerpaste_html_import)
-by passing the attribute value as a string.
+For information on the `powerpaste_html_import` option, including supported values, see: [The PowerPaste plugin - `powerpaste_html_import`]({{site.baseurl}}/plugins/powerpaste/#powerpaste_html_import).
 
 #### Setting PowerPaste to allow local images
 
+This setting only applies if the PowerPaste plugin (`powerpaste`) is enabled.
+
+To prevent Base64 encoded images with a data URI from being pasted into the editor, set `powerpaste_allow_local_images` to `false`. For example:
+
 ```html
-<tinymce-editor powerpaste_html_import="prompt"></tinymce-editor>
+<tinymce-editor powerpaste_allow_local_images=false></tinymce-editor>
 ```
 
-Setting the attribute `powerpaste_allow_local_images` allows configuring the editor to
-[include pasted local images]({{site.baseurl}}/plugins/powerpaste/#powerpaste_allow_local_images)
-by passing the attribute value with the text `"false"` and `"true"` as a the boolean values `false` and `true` respectively.
+For information on the `powerpaste_allow_local_images` option, including supported values, see: [The PowerPaste plugin - `powerpaste_allow_local_images`]({{site.baseurl}}/plugins/powerpaste/#powerpaste_allow_local_images).
 
 #### Showing resize handles
 
+The `resize` attribute gives you the ability to disable the resize handle or set it to resize the editor both horizontal and vertically. By default the editor will resize vertically (`resize=true`).
+
+To remove the resize handle and disable resizing of the editor, set the `resize` attribute to `false`. Such as:
+
 ```html
-<tinymce-editor resize="false"></tinymce-editor>
+<tinymce-editor resize=false></tinymce-editor>
 ```
 
-Setting the attribute `resize` allows configuring the editor
-[resize handles]({{site.baseurl}}/configure/editor-appearance/#resize)
-by passing the attribute value with the text `"false"` and `"true"` as a the boolean values `false` and `true` respectively or any other value as a string. boolean or 'both'
+To allow the user to resize the editor both horizontally and vertically, set the `resize` attribute to `"both"`. For example:
+
+```html
+<tinymce-editor resize="both"></tinymce-editor>
+```
+
+For information on the `resize` option, see: [User interface options - `resize`]({{site.baseurl}}/configure/editor-appearance/#resize).
 
 #### Setting the editor setup function
+
+To execute a javascript callback before the editor instance is rendered, use the `setup` attribute. For example:
 
 ```html
 <script>
@@ -303,31 +333,41 @@ function setupEditor(editor) {
 <tinymce-editor setup="setupEditor"></tinymce-editor>
 ```
 
-Setting the attribute `setup` allows configuring the editor
-[setup callback]({{site.baseurl}}/configure/integration-and-setup/#setup)
-by passing the function with the same name in the global scope.
+For information on the `setup` option, see: [Integration and setup options - `setup`]({{site.baseurl}}/configure/integration-and-setup/#setup).
 
 #### Setting the editor skin
 
+To apply a custom skin to the editor, use the `skin` attribute. For example:
+
 ```html
-<tinymce-editor skin="oxide"></tinymce-editor>
+<tinymce-editor skin="borderless"></tinymce-editor>
 ```
 
-Setting the attribute `skin` allows configuring the editor
-[skin]({{site.baseurl}}/configure/editor-appearance/#skin)
-by passing the attribute value as a string.
+For information on:
+
+- Using the `skin` option, see: [User interface options - `skin`]({{site.baseurl}}/configure/editor-appearance/#skin).
+- {{site.companyname}} premium skins, see: [Tiny Skins and Icon Packs]({{site.productname}}/enterprise/premium-skins-and-icon-packs/).
+- Creating a custom skin for {{site.productname}}, see: [Create a skin for {{site.productname}}]({{site.baseurl}}/advanced/creating-a-skin/)
 
 #### Setting the images upload URL
+
+To specify the location of a server-side upload handler, use the `images_upload_url` attribute. For example:
 
 ```html
 <tinymce-editor images_upload_url="postAcceptor.php"></tinymce-editor>
 ```
 
-Setting the attribute `images_upload_url` allows configuring the editor
-[image upload URL]({{site.baseurl}}/configure/file-image-upload/#images_upload_url)
-by passing the attribute value as a string.
+The upload handler should return the location of the uploaded file in the following format:
+
+```json
+{ "location": "folder/sub-folder/new-location.png" }
+```
+
+For information on using the `images_upload_url`, see: [Image & file options - `images_upload_url`]({{site.baseurl}}/configure/file-image-upload/#images_upload_url).
 
 #### Setting the images upload handler
+
+To specify custom image upload handler callback function, use the `images_upload_handler` attribute.
 
 ```html
 <script>
@@ -337,8 +377,7 @@ by passing the attribute value as a string.
 ```
 
 Setting the attribute `images_upload_handler` allows configuring the editor
-[image upload handler]({{site.baseurl}}/configure/file-image-upload/#images_upload_handler)
-by passing the function with the same name in the global scope.
+For information on using the `images_upload_handler` option, see: [Image & file options - `images_upload_handler`]({{site.baseurl}}/configure/file-image-upload/#images_upload_handler).
 
 #### Setting the images upload base path
 

@@ -7,6 +7,9 @@ keywords: insert template_cdate_classes template_cdate_format template_mdate_cla
 controls: toolbar button, menu item
 ---
 
+{% assign pluginname = "Template" %}
+{% assign plugincode = "template" %}
+
 The `template` plugin adds support for custom templates. It also adds a menu item `Insert template` under the `Insert` menu and a toolbar button.
 
 **Type:** `String`
@@ -348,6 +351,10 @@ This is a simple <strong>snippet</strong>. Will be replaced: {$somevar1}.
 ```
 
 {% include configuration/ref-time-date-formats.md %}
+
+{% include misc/plugin-toolbar-button-id-boilerplate.md %}
+
+{% include misc/plugin-menu-item-id-boilerplate.md %}
 
 ## Commands
 

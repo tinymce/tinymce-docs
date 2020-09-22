@@ -7,6 +7,9 @@ controls: toolbar button, menu item
 keywords: autosave_ask_before_unload autosave_interval autosave_prefix autosave_prefix autosave_restore_when_empty autosave_retention
 ---
 
+{% assign pluginname = "Autosave" %}
+{% assign plugincode = "autosave" %}
+
 The autosave plugin gives the user a warning if they have unsaved changes in the editor and either:
 
 - Try to close the browser window or tab, or
@@ -123,3 +126,7 @@ tinymce.init({
   autosave_retention: '30m'
 });
 ```
+
+{% include misc/plugin-toolbar-button-id-boilerplate.md %}
+
+{% include misc/plugin-menu-item-id-boilerplate.md %}

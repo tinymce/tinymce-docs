@@ -7,6 +7,9 @@ keywords: view Page Embed insert iframe
 controls: toolbar button, menu item
 ---
 
+{% assign pluginname = "Page Embed" %}
+{% assign plugincode = "pageembed" %}
+
 {{site.premiumplugin}}
 
 The **Page Embed** plugin embeds a page in the content using an iframe (Inline frames). The size of these iframes can be configured to be responsive or another user-defined dimension. The ability to use iframes helps create visually engaging content which is very useful for online courses and learning materials.
@@ -124,6 +127,10 @@ tinymce.init({
   tiny_pageembed_inline_styles: true
 });
 ```
+
+{% include misc/plugin-toolbar-button-id-boilerplate.md %}
+
+{% include misc/plugin-menu-item-id-boilerplate.md %}
 
 ## Default CSS
 

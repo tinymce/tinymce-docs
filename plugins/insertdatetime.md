@@ -7,6 +7,9 @@ keywords: insertdatetime insertdatetime_dateformat insertdatetime_formats insert
 controls: toolbar button, menu item
 ---
 
+{% assign pluginname = "Insert Date/Time" %}
+{% assign plugincode = "insertdatetime" %}
+
 The `insertdatetime` plugin provides a toolbar control and menu item `Insert date/time` (under the `Insert` menu) that lets a user easily insert the current date and/or time into the editable area at the cursor insertion point.
 
 **Type:** `String`
@@ -95,6 +98,10 @@ tinymce.init({
 ```
 
 {% include configuration/ref-time-date-formats.md %}
+
+{% include misc/plugin-toolbar-button-id-boilerplate.md %}
+
+{% include misc/plugin-menu-item-id-boilerplate.md %}
 
 ## Commands
 

@@ -6,6 +6,9 @@ description: Image editing features for TinyMCE.
 keywords: imagetools rotate rotateleft rotateright flip flipv fliph editimage imageoptions
 ---
 
+{% assign pluginname = "Image Tools" %}
+{% assign plugincode = "imagetools" %}
+
 Image Tools (`imagetools`) plugin adds a contextual editing toolbar to the images in the editor. If toolbar is not appearing on image click, it might be that you need to enable `imagetools_cors_hosts` or `imagetools_proxy` (see below).
 
 ## Live example
@@ -192,6 +195,8 @@ tinymce.init({
   imagetools_toolbar: 'rotateleft rotateright | flipv fliph | editimage imageoptions'
 });
 ```
+
+{% include misc/plugin-toolbar-button-id-boilerplate.md %}
 
 ## Commands
 

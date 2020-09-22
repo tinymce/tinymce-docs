@@ -93,7 +93,7 @@ The {{site.productname}} 5.3 release includes an accompanying release of the **C
 
 For information on the Comments plugin, see: [Comments plugin]({{site.baseurl}}/plugins/comments/).
 
-For a list of valid menu items, see: [Editor control identifiers - Menu controls]({{site.baseurl}}/advanced/editor-control-identifiers/#menucontrols).
+For a list of Comments plugin menu items, see: [Comments plugin - Menu items]({{site.baseurl}}/plugins/comments/#menuitems).
 
 ### Enhanced Media Embed
 

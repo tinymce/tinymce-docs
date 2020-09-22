@@ -7,6 +7,9 @@ keywords: permanent pen copy text format style
 controls: toolbar button, contextmenu, menu item
 ---
 
+{% assign pluginname = "Permanent Pen" %}
+{% assign plugincode = "permanentpen" %}
+
 {{site.premiumplugin}}
 
 The Permanent Pen allows a user to apply a pre-defined format (for example, color, typeface and type style, font, etc.) to a new content, overriding the default values set for that content area.
@@ -141,6 +144,10 @@ tinymce.init({
 For more information on {{site.productname}} formats, refer to the [formats]({{site.baseurl}}/configure/content-formatting/#formats) section.
 
 Check out the [Permanent Pen demo]({{site.baseurl}}/demo/permanentpen/) to try out this new feature.
+
+{% include misc/plugin-toolbar-button-id-boilerplate.md %}
+
+{% include misc/plugin-menu-item-id-boilerplate.md %}
 
 ## Commands
 

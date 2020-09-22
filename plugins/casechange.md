@@ -7,6 +7,9 @@ keywords: case capitalization capitalize lowercase uppercase
 controls: toolbar button, menu item
 ---
 
+{% assign pluginname = "Case Change" %}
+{% assign plugincode = "casechange" %}
+
 {{site.premiumplugin}}
 
 The **Case Change** plugin is a time saving and handy extension that allows changing the case of text in block selection to uppercase, lowercase, or title case.
@@ -48,7 +51,6 @@ tinymce.init({
   }
 });
 ```
-
 
 ## Types of Formats
 
@@ -103,6 +105,10 @@ tinymce.init({
   ]
 });
 ```
+
+{% include misc/plugin-toolbar-button-id-boilerplate.md %}
+
+{% include misc/plugin-menu-item-id-boilerplate.md %}
 
 ## Commands
 

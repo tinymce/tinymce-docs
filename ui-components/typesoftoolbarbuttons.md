@@ -49,7 +49,7 @@ The first button inserts "It's my button!" into the editor when clicked. The sec
 
 In this example an icon from the `insertdatetime` plugin is used to demonstrate how to use a registered icon. `disabled` is set to `true` so that the button is disabled when it is first rendered.
 
-`onSetup` is used to listen to the editor's [`NodeChange` event]({{site.baseurl}}/advanced/events/#nodechange) to disable the button when the cursor is inside a `time` element (or "node"). This ensures it is not possible to insert a `time` element into another `time` element.
+`onSetup` is used to listen to the editor's [`NodeChange` event]({{site.baseurl}}/advanced/events/#editorcoreevents) to disable the button when the cursor is inside a `time` element (or "node"). This ensures it is not possible to insert a `time` element into another `time` element.
 
 
 ### Toggle button

@@ -6,6 +6,9 @@ description: User interface controls to create content faster.
 keywords: plugin inlite quickbar
 ---
 
+{% assign pluginname = "Quick Toolbars" %}
+{% assign plugincode = "quickbars" %}
+
 The Quick Toolbar plugin adds three context toolbars:
 
 * A **Quick Selection toolbar** - Shown when text is selected, providing formatting buttons such as: `bold`, `italic`, and `link`.
@@ -138,3 +141,5 @@ tinymce.init({
 {% include configuration/insert-toolbar.md %}
 
 {% include configuration/image_toolbar.md %}
+
+{% include misc/plugin-toolbar-button-id-boilerplate.md %}

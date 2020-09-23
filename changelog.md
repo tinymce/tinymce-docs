@@ -36,9 +36,9 @@ class: changelog
 * Changed `imagetools` context menu icon for accessing the image dialog to use the `image` icon.
 * Changed the `editor.insertContent()` and `editor.selection.setContent()` APIs to retain leading and trailing whitespace.
 * Changed the `table` plugin `Column` menu to include the cut, copy and paste column menu items.
-* Changed the default table styles to better support the styling options available in the tables dialog.
+* Changed the default table styles in the content CSS files to better support the styling options available in the tables dialog.
 * Deprecated the `Env.experimentalShadowDom` flag.
-* Fixed tables with no borders getting the default styles in the preview dialog.
+* Fixed tables with no borders displaying with the default border styles in the preview dialog.
 * Fixed loss of whitespace when inserting content after a non-breaking space.
 * Fixed the `event.getComposedPath()` function throwing an exception for events fired from the editor.
 * Fixed notifications not appearing when the editor is within a ShadowRoot.

@@ -7,6 +7,9 @@ keywords: smiley happy smiling emoji
 controls: toolbar button
 ---
 
+{% assign pluginname = "Emoticons" %}
+{% assign plugincode = "emoticons" %}
+
 This plugin adds a dialog to the editor lets users insert emoji into {{site.productname}}'s editable area. The dialog can be invoked via a toolbar button - `emoticons` - or a dedicated menu item added as `Insert > Emoticons`.
 
 The emoticons plugin provides an autocompleter for adding emoji without using the toolbar button or menu item. Adding a colon `:`, followed by at least two characters will open the emoticon picker showing matching emoji.
@@ -103,3 +106,7 @@ tinymce.init({
   emoticons_database_url: '/emojis.js'
 });
 ```
+
+{% include misc/plugin-toolbar-button-id-boilerplate.md %}
+
+{% include misc/plugin-menu-item-id-boilerplate.md %}

@@ -6,6 +6,9 @@ description: Check spelling as-you-type in TinyMCE.
 keywords: tinymcespellchecker spellchecker_language spellchecker_languages spellchecker_rpc_url spellchecker_dialog ephox English US UK Danish Dutch Finnish French German Italian Norwegian Portuguese Brazilian European Spanish Swedish
 ---
 
+{% assign pluginname = "Spell Checker Pro" %}
+{% assign plugincode = "tinymcespellchecker" %}
+
 {{site.premiumplugin}}
 
 **Spell Checker Pro** adds spell checking as-you-type capabilities to {{site.productname}}. For information on the supported languages, refer to [this]({{site.baseurl}}/plugins/tinymcespellchecker/#spellchecker_language) section.
@@ -215,54 +218,9 @@ tinymce.init({
 });
 ```
 
-## Toolbar Buttons
+{% include misc/plugin-toolbar-button-id-boilerplate.md %}
 
-The following toolbar buttons are provided by the Spell Checker Pro plugin:
-
-| Control              | Description                                                                           |
-| -------------------- | ------------------------------------------------------------------------------------- |
-| language             | Sets the spelling checker language for the current selection.                         |
-| spellcheckdialog     | Opens the spelling checker dialog if `spellchecker_dialog` is `false`, otherwise this button is disabled.                                                    |
-| spellchecker         | Opens the spelling checker dialog if `spellchecker_dialog` is `true`, otherwise this button enables or disables spell checking as-you-type.                                             |
-
-For more information about customizing the toolbar, see: [User interface options --- Toolbar]({{site.baseurl}}/configure/editor-appearance/#toolbar).
-
-#### Example: Spell Checker Pro toolbar buttons
-
-```js
-tinymce.init({
-  selector: 'textarea',
-  plugins: 'tinymcespellchecker',
-  toolbar: 'spellchecker language spellcheckdialog',
-  spellchecker_rpc_url: 'localhost/ephox-spelling',
-  spellchecker_language: 'en_us'
-});
-```
-
-### Menu items
-
-The following menu items are provided by the Spell Checker Pro plugin:
-
-| Control                | [Default Menu Location]({{site.baseurl}}/configure/editor-appearance/#examplethetinymcedefaultmenuitems) | Description                                                                                               |
-| ---------------------- | -------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
-| spellchecker           | Tools                                                                                                    | Toggles the spellchecker on/off.                                                                          |
-| spellcheckerlanguage   | Tools                                                                                                    | Changes the language used for the spell checking process for the document or the currently selected text. |
-
-For more information about customizing the toolbar, see: [User interface options --- Menu]({{site.baseurl}}/configure/editor-appearance/#menu).
-
-#### Example: Spell Checker Pro menu items
-
-```js
-tinymce.init({
-  selector: 'textarea',
-  plugins: 'tinymcespellchecker',
-  menu: {
-    tools: {title: 'Tools', items: 'spellchecker spellcheckerlanguage'}
-  },
-  spellchecker_rpc_url: 'localhost/ephox-spelling',
-  spellchecker_language: 'en'
-});
-```
+{% include misc/plugin-menu-item-id-boilerplate.md %}
 
 ## Events
 

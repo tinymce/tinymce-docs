@@ -6,6 +6,8 @@ description: Add sorting functionality to tables.
 keywords: sort tables advanced advtable premium
 ---
 
+{% assign pluginname = "Advanced Tables" %}
+{% assign plugincode = "advtable" %}
 {{site.requires_5_1v}}
 
 {{site.premiumplugin}}
@@ -38,6 +40,8 @@ tinymce.init({
   menubar: 'table'
 });
 ```
+
+{% include misc/plugin-menu-item-id-boilerplate.md %}
 
 ## Commands
 

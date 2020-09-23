@@ -6,6 +6,9 @@ description: List of all available Tiny Drive configuration options.
 keywords: tinydrive configuration
 ---
 
+{% assign pluginname = "Tiny Drive" %}
+{% assign plugincode = "tinydrive" %}
+
 ## Configuring with TinyMCE
 
 ### `tinydrive_token_provider`
@@ -150,6 +153,10 @@ tinymce.init({
   tinydrive_google_drive_client_id: '<your google drive client id>'
 });
 ```
+
+{% include misc/plugin-toolbar-button-id-boilerplate.md %}
+
+{% include misc/plugin-menu-item-id-boilerplate.md %}
 
 ## Need help? ##
 

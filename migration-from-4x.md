@@ -445,7 +445,7 @@ tinymce.init({
 **More information**
 * For information on using the `menu` setting, see: [User interface options - menu]({{site.baseurl}}/configure/editor-appearance/#menu).
 * For an example of the default menu items, see: [User interface options - Example: The TinyMCE Default Menu Items]({{site.baseurl}}/configure/editor-appearance/#examplethetinymcedefaultmenuitems).
-* For a list of the available menu controls provided by TinyMCE and the Tiny Premium Plugins, see: [Editor control identifiers - Menu controls]({{site.baseurl}}/advanced/editor-control-identifiers/#menucontrols).
+* For a list of the available menu controls provided by {{site.productname}}, see: [Menu Items Available for {{site.productname}}]({{site.baseurl}}/advanced/available-menu-items/).
 
 #### New menu item methods
 

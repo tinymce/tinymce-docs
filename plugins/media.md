@@ -7,6 +7,9 @@ keywords: video youtube vimeo mp3 mp4 mov movie clip film media_live_embeds audi
 controls: toolbar button, menu item
 ---
 
+{% assign pluginname = "Media" %}
+{% assign plugincode = "media" %}
+
 The `media` plugin adds the ability for users to be able to add HTML5 video and audio elements to the editable area. It also adds the item `Insert/edit video` under the `Insert` menu as well as a toolbar button.
 
 **Type:** `String`
@@ -231,6 +234,10 @@ tinymce.init({
  }
 });
 ```
+
+{% include misc/plugin-toolbar-button-id-boilerplate.md %}
+
+{% include misc/plugin-menu-item-id-boilerplate.md %}
 
 ## Commands
 

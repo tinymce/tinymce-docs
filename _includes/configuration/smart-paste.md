@@ -1,8 +1,3 @@
-{% if page.title == "Paste plugin" %}
-  {% assign plugin = "paste" %}
-{% else %}
-  {% assign plugin = "powerpaste" %}
-{% endif %}
 ### `smart_paste`
 
 The `smart_paste` function will:
@@ -23,7 +18,7 @@ To disable the `smart_paste` functionality, set `smart_paste` to `false`.
 ```js
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  plugins: '{{plugin}}',
+  plugins: '{{plugincode}}',
   menubar: 'edit',
   toolbar: 'paste',
   smart_paste: false

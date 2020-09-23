@@ -48,7 +48,7 @@ class: changelog
 * Fixed an issue where column resizing using the resize bars was inconsistent between fixed and relative table widths.
 * Fixed an issue where dragging and dropping within a table would select table cells.
 * Fixed up and down keyboard navigation not working for inline `contenteditable="false"` elements.
-* Fixed dialog not retrieving `close` icon from oxide icon pack.
+* Fixed dialog not retrieving `close` icon from icon pack.
 * Fixed the `unlink` toolbar button not working when selecting multiple links.
 * Fixed the `link` dialog not showing the "Text to display" field in some valid cases.
 * Fixed the `DOMUtils.split()` API incorrectly removing some content.

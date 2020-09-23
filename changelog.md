@@ -36,7 +36,9 @@ class: changelog
 * Changed `imagetools` context menu icon for accessing the image dialog to use the `image` icon.
 * Changed the `editor.insertContent()` and `editor.selection.setContent()` APIs to retain leading and trailing whitespace.
 * Changed the `table` plugin `Column` menu to include the cut, copy and paste column menu items.
+* Changed the default table styles to better support the styling options available in the tables dialog.
 * Deprecated the `Env.experimentalShadowDom` flag.
+* Fixed tables with no borders getting the default styles in the preview dialog.
 * Fixed loss of whitespace when inserting content after a non-breaking space.
 * Fixed the `event.getComposedPath()` function throwing an exception for events fired from the editor.
 * Fixed notifications not appearing when the editor is within a ShadowRoot.
@@ -46,6 +48,7 @@ class: changelog
 * Fixed an issue where column resizing using the resize bars was inconsistent between fixed and relative table widths.
 * Fixed an issue where dragging and dropping within a table would select table cells.
 * Fixed up and down keyboard navigation not working for inline `contenteditable="false"` elements.
+* Fixed dialog not retrieving `close` icon from icon pack.
 * Fixed the `unlink` toolbar button not working when selecting multiple links.
 * Fixed the `link` dialog not showing the "Text to display" field in some valid cases.
 * Fixed the `DOMUtils.split()` API incorrectly removing some content.

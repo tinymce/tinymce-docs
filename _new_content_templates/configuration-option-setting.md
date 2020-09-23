@@ -7,7 +7,7 @@ What does the option do? Is a plugin required? Why/when use it?
 What is the values you can use and what do they do?
 Is there any risks? (But explain them without saying the word `risk` or similar. Use warnings if needed.)
 
-**Type:** `'String'` `Boolean` `Array` `Function` `Object` `Number`
+**Type:** `String` `Boolean` `Array` `Function` `Object` `Number`
 
 **Default Value:** `'auto'` `true` `0` `JavaScript Function`
 

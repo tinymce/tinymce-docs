@@ -3,7 +3,12 @@
 
 {{ site.requires_5_Yv }} {% comment %} Update or remove {% endcomment %}
 
-What does the option do? Is a plugin required? Why/when use it?
+{%comment%}Is a plugin required? Update ELSE Remove {%endcomment%}
+{% if pluginname != <plugin-required-for-the-option> %}
+> **Note**: The <configuration_option> option requires the <pluginname> plugin.
+{% endif %}
+
+What does the option do? Why/when use it?
 What is the values you can use and what do they do?
 Is there any risks? (But explain them without saying the word `risk` or similar. Use warnings if needed.)
 

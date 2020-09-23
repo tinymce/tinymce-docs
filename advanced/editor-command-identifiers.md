@@ -65,6 +65,7 @@ The commands on the following table are provided by the {{site.productname}} edi
 | HiliteColor          | Changes the background color of the text. The value passed in should be the color.                                                                                                                                                                                                          |
 | FontName             | Font name to apply to the text. The value passed in should be the font family name.                                                                                                                                                                                                         |
 | FontSize             | Font size of the text. The value passed in should be a valid CSS font size.                                                                                                                                                                                                                 |
+| LineHeight           | Sets the line height of the text. The value passed in should be a valid CSS line height. {{ site.requires_5_5v }}                                                                                                                                                                           |
 | mceApplyTextcolor    | Applies text color or background color to the current selection. Requires an argument of either `'hilitecolor'` or `'forecolor'`, and the value of the color.                                                                                                                               |
 | mceRemoveTextcolor   | Removes the text color or background color from the current selection. Requires an argument of either `'hilitecolor'` or `'forecolor'`.                                                                                                                                                     |
 | RemoveFormat         | Removes any formats from the current selection.                                                                                                                                                                                                                                             |
@@ -118,6 +119,7 @@ tinymce.activeEditor.execCommand('ForeColor', false, '#FF0000');
 tinymce.activeEditor.execCommand('HiliteColor', false, '#FF0000');
 tinymce.activeEditor.execCommand('FontName', false, 'courier new');
 tinymce.activeEditor.execCommand('FontSize', false, '30px');
+tinymce.activeEditor.execCommand('LineHeight', false, '1.4');
 tinymce.activeEditor.execCommand('mceApplyTextcolor', 'hilitecolor', '#FF0000');
 tinymce.activeEditor.execCommand('mceRemoveTextcolor', 'hilitecolor');
 tinymce.activeEditor.execCommand('RemoveFormat');
@@ -500,9 +502,11 @@ The following command values can be queried using the [queryCommandValue]({{ sit
 
 | Command       | Description                                            |
 | --------------| ------------------------------------------------------ |
-| FontName      | Returns the font name of the current selection.        |​
-| FontSize      | Returns the font size of the current selection.        |​
+| FontName      | Returns the font name of the current selection.        |
+| FontSize      | Returns the font size of the current selection.        |
 | ToggleSidebar | Returns the current state of sidebar (open or closed). |
+| LineHeight    | Returns the line height of the current selection.      |
+
 
 **Examples**
 
@@ -510,6 +514,7 @@ The following command values can be queried using the [queryCommandValue]({{ sit
 tinymce.activeEditor.queryCommandValue('FontName');
 tinymce.activeEditor.queryCommandValue('FontSize');
 tinymce.activeEditor.queryCommandValue('ToggleSidebar');
+tinymce.activeEditor.queryCommandValue('LineHeight');
 ```
 
 ### Query command values: Table plugin

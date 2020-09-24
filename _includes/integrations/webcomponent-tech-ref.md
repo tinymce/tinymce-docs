@@ -106,12 +106,12 @@ For a list of available plugins, see: [Add plugins to {{site.productname}}]({{si
 
 #### Setting the editor width
 
-To set the width of the editor (content area and user interface), use the `width` attribute. For pixel-based widths, provide a number; otherwise provide a string. For example:
+To set the width of the editor (content area and user interface), use the `width` attribute. For example:
 
 ##### Setting a pixel-based editor width
 
 ```html
-<tinymce-editor width=300></tinymce-editor>
+<tinymce-editor width="300"></tinymce-editor>
 ```
 
 ##### Setting a CSS unit based editor width
@@ -122,12 +122,12 @@ To set the width of the editor (content area and user interface), use the `width
 
 #### Setting the editor height
 
-To set the height of the editor (content area and user interface), use the `height` attribute. For pixel-based height, provide a number; otherwise provide a string. For example:
+To set the height of the editor (content area and user interface), use the `height` attribute. For example:
 
 ##### Setting a pixel-based editor height
 
 ```html
-<tinymce-editor height=300></tinymce-editor>
+<tinymce-editor height="300"></tinymce-editor>
 ```
 
 ##### Setting a CSS unit based height
@@ -148,10 +148,10 @@ The `toolbar` attribute accepts a space-separated string of toolbar buttons with
 
 ##### Disabling the toolbar
 
-To disable the toolbar, set the `toolbar` attribute to `false`. For example:
+To disable the toolbar, set the `toolbar` attribute to `"false"`. For example:
 
 ```html
-<tinymce-editor toolbar=false></tinymce-editor>
+<tinymce-editor toolbar="false"></tinymce-editor>
 ```
 
 #### Setting the toolbar mode
@@ -172,10 +172,10 @@ To set the menus shown on the editor menu bar, add the `menubar` attribute. For 
 <tinymce-editor menubar="file edit insert view format table tools help"></tinymce-editor>
 ```
 
-To disable or remove the menu bar, set the `menubar` attribute to `false`. For example:
+To disable or remove the menu bar, set the `menubar` attribute to `"false"`. For example:
 
 ```html
-<tinymce-editor menubar=false></tinymce-editor>
+<tinymce-editor menubar="false"></tinymce-editor>
 ```
 
 To change the menu items shown in the menus, or define custom menus, set the `menu` configuration option using the `config` attribute.
@@ -194,10 +194,10 @@ To change the context menu sections that can be shown in the editor context menu
 <tinymce-editor plugins="link image table" contextmenu="link image table"></tinymce-editor>
 ```
 
-To disable the context menu, set the `contextmenu` attribute to `false`. For example:
+To disable the context menu, set the `contextmenu` attribute to `"false"`. For example:
 
 ```html
-<tinymce-editor contextmenu=false></tinymce-editor>
+<tinymce-editor contextmenu="false"></tinymce-editor>
 ```
 
 For a list of available context menu sections, see: [Available context menu sections]({{site.baseurl}}/advanced/editor-context-menu-identifiers/).
@@ -215,10 +215,10 @@ To add a quick-insert toolbar, add `"quickbars"` to the `plugins` attribute. To 
 
 The `quickbars_insert_toolbar` attribute accepts a space-separated string of toolbar buttons with pipe characters (`|`) for grouping buttons. For a list of available toolbar buttons, see: [Toolbar Buttons Available for TinyMCE]({{site.baseurl}}/advanced/available-toolbar-buttons/).
 
-To disable the quick-insert toolbar, set the `quickbars_insert_toolbar` attribute to `false`. For example:
+To disable the quick-insert toolbar, set the `quickbars_insert_toolbar` attribute to `"false"`. For example:
 
 ```html
-<tinymce-editor plugins="quickbars" quickbars_insert_toolbar=false></tinymce-editor>
+<tinymce-editor plugins="quickbars" quickbars_insert_toolbar="false"></tinymce-editor>
 ```
 
 #### Setting the quick-selection toolbar
@@ -233,10 +233,10 @@ To add a quick-selection toolbar, add `"quickbars"` to the `plugins` attribute. 
 
 The `quickbars_selection_toolbar` attribute accepts a space-separated string of toolbar buttons with pipe characters (`|`) for grouping buttons. For a list of available toolbar buttons, see: [Toolbar Buttons Available for TinyMCE]({{site.baseurl}}/advanced/available-toolbar-buttons/).
 
-To disable the quick-selection toolbar, set the `quickbars_selection_toolbar` attribute to `false`. For example:
+To disable the quick-selection toolbar, set the `quickbars_selection_toolbar` attribute to `"false"`. For example:
 
 ```html
-<tinymce-editor plugins="quickbars" quickbars_selection_toolbar=false></tinymce-editor>
+<tinymce-editor plugins="quickbars" quickbars_selection_toolbar="false"></tinymce-editor>
 ```
 
 #### Setting content stylesheets
@@ -305,22 +305,22 @@ For information on the `powerpaste_html_import` option, including supported valu
 
 This setting only applies if the PowerPaste plugin (`powerpaste`) is enabled.
 
-To prevent Base64 encoded images with a data URI from being pasted into the editor, set `powerpaste_allow_local_images` to `false`. For example:
+To prevent Base64 encoded images with a data URI from being pasted into the editor, set `powerpaste_allow_local_images` to `"false"`. For example:
 
 ```html
-<tinymce-editor powerpaste_allow_local_images=false></tinymce-editor>
+<tinymce-editor powerpaste_allow_local_images="false"></tinymce-editor>
 ```
 
 For information on the `powerpaste_allow_local_images` option, including supported values, see: [The PowerPaste plugin - `powerpaste_allow_local_images`]({{site.baseurl}}/plugins/powerpaste/#powerpaste_allow_local_images).
 
 #### Showing resize handles
 
-The `resize` attribute gives you the ability to disable the resize handle or set it to resize the editor both horizontal and vertically. By default the editor will resize vertically (`resize=true`).
+The `resize` attribute gives you the ability to disable the resize handle or set it to resize the editor both horizontal and vertically. By default the editor will resize vertically (`resize="true"`).
 
-To remove the resize handle and disable resizing of the editor, set the `resize` attribute to `false`. Such as:
+To remove the resize handle and disable resizing of the editor, set the `resize` attribute to `"false"`. Such as:
 
 ```html
-<tinymce-editor resize=false></tinymce-editor>
+<tinymce-editor resize="false"></tinymce-editor>
 ```
 
 To allow the user to resize the editor both horizontally and vertically, set the `resize` attribute to `"both"`. For example:
@@ -403,17 +403,17 @@ For information on using the `images_upload_base_path` option, see: [Image & fil
 
 #### Setting the images upload to have credentials
 
-To receive credentials (such as cookies, authorization headers, or TLS client certificates) for cross-domain image uploads, set the `images_upload_credentials` attribute to `true`.
+To receive credentials (such as cookies, authorization headers, or TLS client certificates) for cross-domain image uploads, set the `images_upload_credentials` attribute to `"true"`.
 
 ```html
-<tinymce-editor images_upload_url="postAcceptor.php" images_upload_credentials=true></tinymce-editor>
+<tinymce-editor images_upload_url="postAcceptor.php" images_upload_credentials="true"></tinymce-editor>
 ```
 
 For information on using the `images_upload_credentials` option, see: [Image & file options - `images_upload_credentials`]({{site.baseurl}}/configure/file-image-upload/#images_upload_credentials).
 
 #### Setting the images upload to reuse filenames
 
-To force the editor to use the same filename for a given image, regardless of the number of times it is uploaded within a given instance, set the `images_reuse_filename` attribute to `true`.
+To force the editor to use the same filename for a given image, regardless of the number of times it is uploaded within a given instance, set the `images_reuse_filename` attribute to `"true"`.
 
 ```html
 <tinymce-editor images_upload_url="postAcceptor.php" images_reuse_filename="true"></tinymce-editor>

@@ -144,7 +144,7 @@ To set the editor toolbar buttons, use the `toolbar` attribute. For example:
 <tinymce-editor toolbar="undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | outdent indent"></tinymce-editor>
 ```
 
-The `toolbar` attribute accepts a space-separated string of toolbar buttons with pipe characters (`|`) for grouping buttons. For a list of available toolbar buttons, see: [Editor control identifiers - Toolbar controls]({{site.baseurl}}/advanced/editor-control-identifiers/#toolbarcontrols).
+The `toolbar` attribute accepts a space-separated string of toolbar buttons with pipe characters (`|`) for grouping buttons. For a list of available toolbar buttons, see: [Toolbar Buttons Available for TinyMCE]({{site.baseurl}}/advanced/available-toolbar-buttons/).
 
 ##### Disabling the toolbar
 
@@ -213,7 +213,7 @@ To add a quick-insert toolbar, add `"quickbars"` to the `plugins` attribute. To 
 <tinymce-editor plugins="quickbars hr pagebreak" quickbars_insert_toolbar="quickimage quicktable quicklink | hr pagebreak"></tinymce-editor>
 ```
 
-The `quickbars_insert_toolbar` attribute accepts a space-separated string of toolbar buttons with pipe characters (`|`) for grouping buttons. For a list of available toolbar buttons, see: [Editor control identifiers - Toolbar controls]({{site.baseurl}}/advanced/editor-control-identifiers/#toolbarcontrols).
+The `quickbars_insert_toolbar` attribute accepts a space-separated string of toolbar buttons with pipe characters (`|`) for grouping buttons. For a list of available toolbar buttons, see: [Toolbar Buttons Available for TinyMCE]({{site.baseurl}}/advanced/available-toolbar-buttons/).
 
 To disable the quick-insert toolbar, set the `quickbars_insert_toolbar` attribute to `false`. For example:
 
@@ -231,7 +231,7 @@ To add a quick-selection toolbar, add `"quickbars"` to the `plugins` attribute. 
 <tinymce-editor plugins="quickbars" quickbars_selection_toolbar="bold italic | formatselect | quicklink blockquote"></tinymce-editor>
 ```
 
-The `quickbars_selection_toolbar` attribute accepts a space-separated string of toolbar buttons with pipe characters (`|`) for grouping buttons. For a list of available toolbar buttons, see: [Editor control identifiers - Toolbar controls]({{site.baseurl}}/advanced/editor-control-identifiers/#toolbarcontrols).
+The `quickbars_selection_toolbar` attribute accepts a space-separated string of toolbar buttons with pipe characters (`|`) for grouping buttons. For a list of available toolbar buttons, see: [Toolbar Buttons Available for TinyMCE]({{site.baseurl}}/advanced/available-toolbar-buttons/).
 
 To disable the quick-selection toolbar, set the `quickbars_selection_toolbar` attribute to `false`. For example:
 

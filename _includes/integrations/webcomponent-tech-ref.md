@@ -1,71 +1,45 @@
 ## TinyMCE Web Component technical reference
 
-**Covered in this section:**
+### Use a cloud version of the TinyMCE Web Component integration
 
-- [Installing the Web Component integration](#installingthetinymcewebcomponentintegration)
-- [Loading TinyMCE](#loadingtinymce)
-- [Configuring the editor](#configuringtheeditor)
+To use a cloud version of Web Component, the integration is accessable from [JSDelivr](https://www.jsdelivr.com/package/npm/@tinymce/tinymce-webcomponent).
 
-  - [Setting the initial content](#settingtheinitialcontent)
-  - [Loading plugins](#loadingplugins)
-  - [Setting width](#settingwidth)
-  - [Setting height](#settingheight)
-  - [Setting the toolbar](#settingthetoolbar)
-  - [Setting toolbar mode](#settingtoolbarmode)
-  - [Setting the menubar](#settingthemenubar)
-  - [Setting context menu](#settingcontextmenu)
-  - [Setting the quick-bar insert toolbar](#settingthequick-barinserttoolbar)
-  - [Setting the quick-bar selection toolbar](#settingthequick-barselectiontoolbar)
-  - [Setting content stylesheets](#settingcontentstylesheets)
-  - [Setting content styling](#settingcontentstyling)
-  - [Setting PowerPaste's word import method](#settingpowerpasteswordimportmethod)
-  - [Setting PowerPaste's html import method](#settingpowerpasteshtmlimportmethod)
-  - [Setting PowerPaste to allow local images](#settingpowerpastetoallowlocalimages)
-  - [Showing resize handles](#showingresizehandles)
-  - [Setting the editor setup function](#settingtheeditorsetupfunction)
-  - [Setting the editor skin](#settingtheeditorskin)
-  - [Setting the images upload URL](#settingtheimagesuploadurl)
-  - [Setting the images upload handler](#settingtheimagesuploadhandler)
-  - [Setting the images upload base path](#settingtheimagesuploadbasepath)
-  - [Setting the images upload to have credentials](#settingtheimagesuploadtohavecredentials)
-  - [Setting the images upload to reuse filenames](#settingtheimagesuploadtoreusefilenames)
-  - [Setting the icon pack](#settingtheiconpack)
-  - [Setting the icon pack URL](#settingtheiconpackurl)
-  - [Configuring additional settings](#configuringadditionalsettings)
+For example:
 
-- [Event binding](#eventbinding)
+```html
+<script src="{{site.webcomponent_url}}"></script>
+```
 
 ### Installing the TinyMCE Web Component integration
 
-1. Link `@tinymce/tinymce-webcomponent` into your page, either using a script tag linking to a CDN like
+To add the {{site.productname}} Web Component integration to a JavaScript project, on command line or command prompt, run the following:
 
-```html
-<script src="https://cdn.jsdelivr.net/npm/@tinymce/tinymce-webcomponent@1/dist/tinymce-webcomponent.js"></script>
-```
+- NPM users:
 
-or using a bundler like webpack to put the npm package into the page.
-2. Optionally include a script tag to load {{site.productname}} into the page (see below for details).
-3. Insert `<tinymce-editor></tinymce-editor>` into the page.
+    ```sh
+    npm i --save @tinymce/tinymce-webcomponent
+    ```
+
+- Yarn users:
+
+    ```sh
+    yarn add @tinymce/tinymce-webcomponent
+    ```
 
 ### Loading TinyMCE
 
-The integration depends on {{site.productname}}. When trying to create a web component for {{site.productname}} it will try the following:
+The integration requires both the {{site.productname}} Web Component (`tinymce-webcomponent.min.js`) and {{site.productname}} (`tinymce.min.js`).
 
-1. If the global `tinymce` is available:
-    1. Use the global `tinymce` to initialize the editor.
-2. Otherwise, if the attribute `src` is available:
-    1. Add a script tag for the URL provided in `src` to load {{site.productname}};
-    2. Wait for the script to load and create the global `tinymce`;
-    3. Use the global `tinymce` to initialize the editor.
-3. Otherwise:
-    1. Add a script tag for the cloud version of {{site.productname}} using the attributes `api-key` (default "no-api-key") and `channel` (default "5-stable");
-    2. Wait for the script to load and create the global `tinymce`;
-    3. Use the global `tinymce` to initialize the editor.
+If {{site.productname}} is not available for {{site.productname}} Web Component, the latest version of {{site.productname}} will be automatically loaded from the {{site.cloudname}}.
+
+To use {{site.productname}} Web Component with a self-hosted copy of {{site.productname}}, ensure that the self-hosted copy of {{site.productname}} can be loaded in the same location as the {{site.productname}} Web Component (such as the same web page).
+
+To use {{site.productname}} from the {{site.cloudname}}, add the `api-key` attribute to the `tinymce-editor` element with an API from [{{site.accountpage}}]({{site.accountpageurl}}).
 
 ### Configuring the editor
 
 The editor is configured by setting attributes on the `tinymce-editor` custom element.
-All attributes must be represented as strings each attribute may be interpreted differently - depending on context they may be understood as booleans, numbers or even global functions.
+All attributes may be represented as strings, however some attributes will accept boolean or number inputs. Where an array, object, or function is a valid input; examples have been provided.
 
 #### Setting the initial content
 
@@ -346,8 +320,8 @@ To apply a custom skin to the editor, use the `skin` attribute. For example:
 For information on:
 
 - Using the `skin` option, see: [User interface options - `skin`]({{site.baseurl}}/configure/editor-appearance/#skin).
-- {{site.companyname}} premium skins, see: [Tiny Skins and Icon Packs]({{site.productname}}/enterprise/premium-skins-and-icon-packs/).
-- Creating a custom skin for {{site.productname}}, see: [Create a skin for {{site.productname}}]({{site.baseurl}}/advanced/creating-a-skin/)
+- {{site.companyname}} premium skins, see: [Tiny Skins and Icon Packs]({{site.baseurl}}/enterprise/premium-skins-and-icon-packs/).
+- Creating a custom skin for {{site.productname}}, see: [Create a skin for {{site.productname}}]({{site.baseurl}}/advanced/creating-a-skin/).
 
 #### Setting the images upload URL
 
@@ -376,103 +350,129 @@ To specify custom image upload handler callback function, use the `images_upload
 <tinymce-editor images_upload_handler="example_image_upload_handler"></tinymce-editor>
 ```
 
-Setting the attribute `images_upload_handler` allows configuring the editor
 For information on using the `images_upload_handler` option, see: [Image & file options - `images_upload_handler`]({{site.baseurl}}/configure/file-image-upload/#images_upload_handler).
 
 #### Setting the images upload base path
 
+To specify the basepath to prepend to URLs returned from the configured `images_upload_url` script, use the `images_upload_base_path` attribute. For example:
+
 ```html
-<tinymce-editor images_upload_base_path="/some/basepath"></tinymce-editor>
+<tinymce-editor images_upload_url="postAcceptor.php" images_upload_base_path="/some/basepath"></tinymce-editor>
 ```
 
-Setting the attribute `images_upload_base_path` allows configuring the editor
-[image upload base path]({{site.baseurl}}/configure/file-image-upload/#images_upload_base_path)
-by passing the attribute value as a string.
+For information on using the `images_upload_base_path` option, see: [Image & file options - `images_upload_base_path`]({{site.baseurl}}/configure/file-image-upload/#images_upload_base_path).
 
 #### Setting the images upload to have credentials
 
+To receive credentials (such as cookies, authorization headers, or TLS client certificates) for cross-domain image uploads, set the `images_upload_credentials` attribute to `true`.
+
 ```html
-<tinymce-editor images_upload_credentials="false"></tinymce-editor>
+<tinymce-editor images_upload_url="postAcceptor.php" images_upload_credentials=true></tinymce-editor>
 ```
 
-Setting the attribute `images_upload_credentials` allows configuring the editor
-[image upload credentials]({{site.baseurl}}/configure/file-image-upload/#images_upload_credentials)
-by passing the attribute value with the text `"false"` and `"true"` as a the boolean values `false` and `true` respectively.
+For information on using the `images_upload_credentials` option, see: [Image & file options - `images_upload_credentials`]({{site.baseurl}}/configure/file-image-upload/#images_upload_credentials).
 
 #### Setting the images upload to reuse filenames
 
+To force the editor to use the same filename for a given image, regardless of the number of times it is uploaded within a given instance, set the `images_reuse_filename` attribute to `true`.
+
 ```html
-<tinymce-editor images_reuse_filename="true"></tinymce-editor>
+<tinymce-editor images_upload_url="postAcceptor.php" images_reuse_filename="true"></tinymce-editor>
 ```
 
-Setting the attribute `images_reuse_filename` allows configuring the editor
-[image filename reuse]({{site.baseurl}}/configure/file-image-upload/#images_reuse_filename)
-by passing the attribute value with the text `"false"` and `"true"` as a the boolean values `false` and `true` respectively.
+For information on using the `images_reuse_filename` option, see: [Image & file options - `images_reuse_filename`]({{site.baseurl}}/configure/file-image-upload/#images_reuse_filename).
 
 #### Setting the icon pack
+
+To apply a bundled set of custom or premium icons to the editor, use the `icons` attribute. For example:
 
 ```html
 <tinymce-editor icons="material"></tinymce-editor>
 ```
 
-Setting the attribute `icons` allows configuring the editor
-[icons]({{site.baseurl}}/configure/editor-appearance/#icons)
-by passing the attribute value as a string.
+Use this attribute if the icon pack is bundled with {{site.productname}} (including custom icon packs). If the icon pack is hosted on a web site, use the [`icons_url` attribute](#settingtheiconpackurl).
+
+For information on:
+
+- Using the `icons` option, see: [User interface options - `icons`]({{site.baseurl}}/configure/editor-appearance/#icons).
+- {{site.companyname}} premium icon packs, see: [Tiny Skins and Icon Packs]({{site.baseurl}}/enterprise/premium-skins-and-icon-packs/).
+- Creating a custom icon pack for {{site.productname}}, see: [Create an icon pack for {{site.productname}}]({{site.baseurl}}/advanced/creating-an-icon-pack/).
 
 #### Setting the icon pack URL
+
+To apply a hosted set of custom or premium icons to the editor, use the `icons_url` attribute. For example:
 
 ```html
 <tinymce-editor icons_url="https://www.example.com/icons/material/icons.js"></tinymce-editor>
 ```
 
-Setting the attribute `icons_url` allows configuring the editor
-[icons URL]({{site.baseurl}}/configure/editor-appearance/#icons_url)
-by passing the attribute value as a string.
+Use this attribute if the icon pack is hosted on a web site. If the icon pack is bundled with {{site.productname}} (including custom icon packs), use the [`icons` attribute](#settingtheiconpack).
+
+For information on:
+
+- Using the `icons_url` option, see: [User interface options - `icons_url`]({{site.baseurl}}/configure/editor-appearance/#icons_url).
+- {{site.companyname}} premium icon packs, see: [Tiny Skins and Icon Packs]({{site.baseurl}}/enterprise/premium-skins-and-icon-packs/).
+- Creating a custom icon pack for {{site.productname}}, see: [Create an icon pack for {{site.productname}}]({{site.baseurl}}/advanced/creating-an-icon-pack/).
 
 #### Setting additional configuration options
+
+To configure any {{site.productname}} option that does not have a corresponding attribute, use the `config` attribute. For example:
 
 ```html
 <script>
 window.myConfig = {
-  // any additional configuration options would go here
+  height: 500,
+  template_selected_content_classes: 'selcontent',
+  templates: [
+    {
+      title: 'My Template',
+      description: 'This is my template.',
+      content: '<p>Hello, <span class="selcontent">this statement will be replaced.</span></p>'
+    }
+  ],
+  spellchecker_dialog: true,
+  spellchecker_whitelist: ['Ephox', 'Moxiecode']
 };
 </script>
-<tinymce-editor config="myConfig"></tinymce-editor>
+<tinymce-editor
+  config="myConfig"
+  width="50%"
+  toolbar="undo redo | bold italic | forecolor backcolor | template | alignleft aligncenter alignright alignjustify | bullist numlist | link | spellchecker"
+  plugins="lists link noneditable searchreplace table template tinymcespellchecker wordcount"
+></tinymce-editor>
 ```
 
-Any configuration settings not supported by an attribute can be set using the
- `config` attribute which references a global javascript object that contains
- additional settings.
+Configuration options that have an attribute can also be passed to the `config` attribute.
 
 ### Event binding
 
-There are two methods to bind events. The first is to use the setup attribute to
-register a function that should be called when the editor is setup. This is the
-normal way events are added to {{site.productname}}.
+There are two methods to bind events for the TinyMCE Web Component.
 
-```html
-<script>
-function setupEditor(editor) {
-  editor.on('click', function () {
-    console.log('Editor was clicked');
-  });
-}
-</script>
-<tinymce-editor setup="setupEditor"/>
-```
+- The `setup` attribute, as described in [Setting the editor setup function](#settingtheeditorsetupfunction). For example:
 
-The second technique uses any attributes that start with `on-`, for example `on-NodeChange`.
+    ```html
+    <script>
+    function setupEditor(editor) {
+      editor.on('click', function () {
+        console.log('Editor was clicked');
+      });
+    }
+    </script>
+    <tinymce-editor setup="setupEditor"/>
+    ```
 
-```html
-<script>
-function nodeChangeHandler(evt) {
-  // use event
-}
-</script>
-<tinymce-editor on-NodeChange="nodeChangeHandler"/>
-```
+- The `on-` attributes, such as the `on-NodeChange` attribute. For example:
 
-If these attributes are later removed then the event will be automatically unbound.
+    ```html
+    <script>
+    function changeHandler(evt) {
+      console.log('The ' + evt['type'] + ' event was fired.');
+    }
+    </script>
+    <tinymce-editor on-Change="changeHandler"/>
+    ```
+
+    If these attributes are later removed, the event will be automatically unbound. For the full list of supported `on-` attributes, see: [Supported browser events](#supportedbrowserevents) and [Supported TinyMCE events](#supportedtinymceevents).
 
 #### Supported browser events
 
@@ -513,39 +513,39 @@ Bind the following browser events using the corresponding {{site.productname}} W
 
 Bind the following {{site.productname}} events using the corresponding {{site.productname}} Web Component attribute.
 
-| {{site.productname}} event       | Attribute              |
-|---------------------|------------------------|
-| `Activate`          | `on-Activate`          |
-| `AddUndo`           | `on-AddUndo`           |
-| `BeforeAddUndo`     | `on-BeforeAddUndo`     |
-| `BeforeExecCommand` | `on-BeforeExecCommand` |
-| `BeforeGetContent`  | `on-BeforeGetContent`  |
-| `BeforeRenderUI`    | `on-BeforeRenderUI`    |
-| `BeforeSetContent`  | `on-BeforeSetContent`  |
-| `Change`            | `on-Change`            |
-| `ClearUndos`        | `on-ClearUndos`        |
-| `Deactivate`        | `on-Deactivate`        |
-| `Dirty`             | `on-Dirty`             |
-| `ExecCommand`       | `on-ExecCommand`       |
-| `GetContent`        | `on-GetContent`        |
-| `Hide`              | `on-Hide`              |
-| `Init`              | `on-Init`              |
-| `LoadContent`       | `on-LoadContent`       |
-| `NodeChange`        | `on-NodeChange`        |
-| `PostProcess`       | `on-PostProcess`       |
-| `PostRender`        | `on-PostRender`        |
-| `PreProcess`        | `on-PreProcess`        |
-| `ProgressState`     | `on-ProgressState`     |
-| `Redo`              | `on-Redo`              |
-| `Remove`            | `on-Remove`            |
-| `Reset`             | `on-Reset`             |
-| `SaveContent`       | `on-SaveContent`       |
-| `SetAttrib`         | `on-SetAttrib`         |
-| `ObjectResizeStart` | `on-ObjectResizeStart` |
-| `ObjectResized`     | `on-ObjectResized`     |
-| `ObjectSelected`    | `on-ObjectSelected`    |
-| `SetContent`        | `on-SetContent`        |
-| `Show`              | `on-Show`              |
-| `Submit`            | `on-Submit`            |
-| `Undo`              | `on-Undo`              |
-| `VisualAid`         | `on-VisualAid`         |
+| {{site.productname}} event | Attribute              |
+|----------------------------|------------------------|
+| `Activate`                 | `on-Activate`          |
+| `AddUndo`                  | `on-AddUndo`           |
+| `BeforeAddUndo`            | `on-BeforeAddUndo`     |
+| `BeforeExecCommand`        | `on-BeforeExecCommand` |
+| `BeforeGetContent`         | `on-BeforeGetContent`  |
+| `BeforeRenderUI`           | `on-BeforeRenderUI`    |
+| `BeforeSetContent`         | `on-BeforeSetContent`  |
+| `Change`                   | `on-Change`            |
+| `ClearUndos`               | `on-ClearUndos`        |
+| `Deactivate`               | `on-Deactivate`        |
+| `Dirty`                    | `on-Dirty`             |
+| `ExecCommand`              | `on-ExecCommand`       |
+| `GetContent`               | `on-GetContent`        |
+| `Hide`                     | `on-Hide`              |
+| `Init`                     | `on-Init`              |
+| `LoadContent`              | `on-LoadContent`       |
+| `NodeChange`               | `on-NodeChange`        |
+| `PostProcess`              | `on-PostProcess`       |
+| `PostRender`               | `on-PostRender`        |
+| `PreProcess`               | `on-PreProcess`        |
+| `ProgressState`            | `on-ProgressState`     |
+| `Redo`                     | `on-Redo`              |
+| `Remove`                   | `on-Remove`            |
+| `Reset`                    | `on-Reset`             |
+| `SaveContent`              | `on-SaveContent`       |
+| `SetAttrib`                | `on-SetAttrib`         |
+| `ObjectResizeStart`        | `on-ObjectResizeStart` |
+| `ObjectResized`            | `on-ObjectResized`     |
+| `ObjectSelected`           | `on-ObjectSelected`    |
+| `SetContent`               | `on-SetContent`        |
+| `Show`                     | `on-Show`              |
+| `Submit`                   | `on-Submit`            |
+| `Undo`                     | `on-Undo`              |
+| `VisualAid`                | `on-VisualAid`         |

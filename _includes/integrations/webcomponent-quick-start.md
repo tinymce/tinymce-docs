@@ -29,7 +29,7 @@ To add a {{site.productname}} editor to a web page using the {{site.productname}
 3. Add a `script` element sourcing the {{site.productname}} Web Component (`tinymce-webcomponent.js`), such as:
 
     ```html
-    <script src="https://cdn.jsdelivr.net/npm/@tinymce/tinymce-webcomponent@1/dist/tinymce-webcomponent.js"></script>
+    <script src="{{site.webcomponent_url}}"></script>
     ```
 
     The `tinymce-webcomponent` can also be sourced from [npmjs](https://www.npmjs.com/package/@tinymce/tinymce-webcomponent).

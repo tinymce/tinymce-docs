@@ -1,5 +1,44 @@
 ## TinyMCE Web Component technical reference
 
+**Covered in this section:**
+
+- [Use a cloud version of the TinyMCE Web Component integration](#useacloudversionofthetinymcewebcomponentintegration)
+- [Installing the TinyMCE Web Component integration](#installingthetinymcewebcomponentintegration)
+- [Loading TinyMCE](#loadingtinymce)
+- [Configuring the editor](#configuringtheeditor)
+
+  - [Setting the initial content](#settingtheinitialcontent)
+  - [Loading plugins](#loadingplugins)
+  - [Setting the editor width](#settingtheeditorwidth)
+  - [Setting the editor height](#settingtheeditorheight)
+  - [Setting the toolbar](#settingthetoolbar)
+  - [Setting the toolbar mode](#settingthetoolbarmode)
+  - [Setting the menu bar](#settingthemenubar)
+  - [Setting context menu](#settingcontextmenu)
+  - [Setting the quick-insert toolbar](#settingthequick-inserttoolbar)
+  - [Setting the quick-selection toolbar](#settingthequick-selectiontoolbar)
+  - [Setting content stylesheets](#settingcontentstylesheets)
+  - [Setting content styling](#settingcontentstyling)
+  - [Setting PowerPaste’s word import method](#settingpowerpasteswordimportmethod)
+  - [Setting PowerPaste’s html import method](#settingpowerpasteshtmlimportmethod)
+  - [Setting PowerPaste to allow local images](#settingpowerpastetoallowlocalimages)
+  - [Showing resize handles](#showingresizehandles)
+  - [Setting the editor setup function](#settingtheeditorsetupfunction)
+  - [Setting the editor skin](#settingtheeditorskin)
+  - [Setting the images upload URL](#settingtheimagesuploadurl)
+  - [Setting the images upload handler](#settingtheimagesuploadhandler)
+  - [Setting the images upload base path](#settingtheimagesuploadbasepath)
+  - [Setting the images upload to have credentials](#settingtheimagesuploadtohavecredentials)
+  - [Setting the images upload to reuse filenames](#settingtheimagesuploadtoreusefilenames)
+  - [Setting the icon pack](#settingtheiconpack)
+  - [Setting the icon pack URL](#settingtheiconpackurl)
+  - [Setting additional configuration options](#settingadditionalconfigurationoptions)
+
+- [Event binding](#eventbinding)
+
+  - [Supported browser events](#supportedbrowserevents)
+  - [Supported TinyMCE events](#supportedtinymceevents)
+
 ### Use a cloud version of the TinyMCE Web Component integration
 
 To use a cloud version of Web Component, the integration is accessable from [JSDelivr](https://www.jsdelivr.com/package/npm/@tinymce/tinymce-webcomponent).

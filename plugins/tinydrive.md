@@ -1,10 +1,13 @@
 ---
 layout: default
 title: Tiny Drive plugin
-title_nav: Drive
+title_nav: Tiny Drive
 description: Cloud-based file and image management for TinyMCE.
 keywords: tinydrive storage media tiny drive
 ---
+
+{% assign pluginname = "Tiny Drive" %}
+{% assign plugincode = "tinydrive" %}
 
 > **Note**: This plugin is only available for [{{site.cloudname}} users]({{site.pricingpage}}).
 
@@ -31,3 +34,7 @@ tinymce.init({
 ### Configuration
 
 You can read more about the various configuration options for {{site.cloudfilemanager}} in the dedicated [configuration page]({{site.baseurl}}/tinydrive/configuration/).
+
+{% include misc/plugin-toolbar-button-id-boilerplate.md %}
+
+{% include misc/plugin-menu-item-id-boilerplate.md %}

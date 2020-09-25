@@ -82,7 +82,7 @@ tinymce.init({
 });
 ```
 
-For a list of the icon identifiers, see: [Editor icon identifiers]({{site.baseurl}}/advanced/editor-icon-identifiers/).
+For a list of the icon identifiers, see: [Available icons]({{site.baseurl}}/advanced/editor-icon-identifiers/).
 
 {{site.productname}} does not resize the SVGs provided, relying on the size defined in the SVG. This allows icons of different sizes to be used in the editor. The Toolbar button sizes are independent of the icon sizes. To change button sizes, a [custom skin]({{site.baseurl}}/advanced/creating-a-skin/) is required.
 

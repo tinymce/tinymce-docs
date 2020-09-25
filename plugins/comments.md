@@ -6,6 +6,9 @@ description: Tiny Comments provides the ability to add comments to the content a
 keywords: comments commenting tinycomments
 ---
 
+{% assign pluginname = "Comments" %}
+{% assign plugincode = "comments" %}
+
 {{site.premiumplugin}}
 
 The Comments 2.0 plugin provides the ability to start or join a conversation by adding comments to the content within the {{site.productname}} editor. The Comments 2.0 plugin is built upon the [Annotations API]({{site.baseurl}}/advanced/annotations/) and uses annotations to create comment threads (conversations).
@@ -202,51 +205,9 @@ tinymce.init({
 });
 ```
 
-## Configuring the Comments 2.0 addcomment toolbar button
+{% include misc/plugin-toolbar-button-id-boilerplate.md %}
 
-The `addcomment` toolbar button provides the ability to add comments.
-
-The **Add comment** toolbar button is available by default if the toolbar menu is not customized.
-
-In case of a customized toolbar menu, use the following script to configure the Comments 2.0 toolbar button:
-```js
-tinymce.init({
- selector: '#textarea',
- toolbar: 'bold italic underline insertfile | addcomment',
- ...
-})
-```
-
-**Result**: The **Comments**  ![Comments]({{site.baseurl}}/images/comment-disabled.png) toolbar button appears in the toolbar menu. The function of this button is to add comments to the selected text.
-
-## Configuring the Comments 2.0 showcomments toolbar button
-
-The `showcomments` toolbar button provides the ability to display comments field for the selected text. It is a toggle button and is used to hide the comments sidebar as well.
-
-Use the following script to configure the Comments 2.0 toolbar button:
-```js
-tinymce.init({
- selector: '#textarea',
- toolbar: 'bold italic underline insertfile | showcomments',
- ...
-})
-```
-
-**Result**: The **Comments**  ![Comments]({{site.baseurl}}/images/comment-disabled.png) toolbar button appears in the toolbar menu. The function of this button is to show comments to for the selected text.
-
-## Configuring the Comments 2.0 menu item
-
-By default, when Comments 2.0 is added to the plugin list, the default menus will have entries for `addcomment` (Insert Menu), `showcomments` (View Menu), and `deleteallconversations` (File Menu).
-
-For more information on configuring menu items refer to the [toolbar]({{site.baseurl}}/configure/editor-appearance/#toolbar) and [menu]({{site.baseurl}}/configure/editor-appearance/#menu) sections.
-
-Currently, there are three menu items available:
-
-* `addcomment` - Provides the ability to add comments. By default, this option can be accessed through **Insert** -> **Add comment** menu bar item.
-
-* `showcomments`- Provides the ability to display comments field for the selected text. It is a toggle button and is used to hide the comments as well. By default, this option can be accessed through **View** -> **Show comment** menu bar item.
-
-* `deleteallconversations`- Provides the ability to delete all the comments in the content. By default, this option can be accessed through **File** -> **Delete all conversations** menu bar item.
+{% include misc/plugin-menu-item-id-boilerplate.md %}
 
 ## Configuring the commented text properties
 

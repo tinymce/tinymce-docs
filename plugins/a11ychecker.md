@@ -6,6 +6,9 @@ description: Checks the contents of the editor for WCAG & Section 508 accessibil
 keywords: a11y accessibility WCAG
 ---
 
+{% assign pluginname = "A11yChecker" %}
+{% assign plugincode = "a11ychecker" %}
+
 {{site.premiumplugin}}
 
 The `a11ychecker` premium plugin enables you to check the HTML for various WCAG & Section 508 accessibility problems. It has an auto repair feature that lets a user fix identified problems.
@@ -214,6 +217,10 @@ tinymce.init({
     a11ychecker_level: 'aaa'
 });
 ```
+
+{% include misc/plugin-toolbar-button-id-boilerplate.md %}
+
+{% include misc/plugin-menu-item-id-boilerplate.md %}
 
 ## API
 

@@ -71,7 +71,7 @@ For information on the `a11y_advanced_options`, including the impact on the `a11
 
 ### Modify the Quick Image toolbar using the `quickbars_image_toolbar` setting
 
-The **quickbars_image_toolbar** option configures the Quick Image toolbar provided by the [quickbars plugin]({{ site.baseurl }}/plugins/quickbars). To change the buttons on the Quick Image toolbar, provide a space-separated string of [toolbar button names]({{ site.baseurl }}/advanced/editor-control-identifiers/#toolbarcontrols). To disable the Quick Image toolbar, set `quickbars_image_toolbar` to `false`.
+The **quickbars_image_toolbar** option configures the Quick Image toolbar provided by the [quickbars plugin]({{ site.baseurl }}/plugins/quickbars). To change the buttons on the Quick Image toolbar, provide a space-separated string of [toolbar button names]({{ site.baseurl }}/advanced/available-toolbar-buttons/). To disable the Quick Image toolbar, set `quickbars_image_toolbar` to `false`.
 
 For information on using the `quickbars_image_toolbar` setting, see: [Quick Toolbars plugin - `quickbars_image_toolbar`]({{ site.baseurl }}/plugins/quickbars/#quickbars_image_toolbar).
 
@@ -93,7 +93,7 @@ The {{site.productname}} icons for table-related toolbar buttons have been updat
 
 This change applies to the default {{site.productname}} icon pack.
 
-For an updated list of {{site.productname}} icons, see: [Editor icon identifiers]({{ site.baseurl }}/advanced/editor-icon-identifiers/).
+For an updated list of {{site.productname}} icons, see: [Available icons]({{ site.baseurl }}/advanced/editor-icon-identifiers/).
 
 ### New option for setting the default protocol for the Link and Autolink plugins
 

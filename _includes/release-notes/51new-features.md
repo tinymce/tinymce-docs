@@ -198,7 +198,7 @@ To improve the user experience:
 * The `paragraph` icon has been renamed `visualchars` and is used for the `visualchars` toolbar button: ![`paragraph` renamed to `visualchars`]({{site.baseurl}}/images/icons/visualchars.svg)
 * A new `visualblocks` icon is used for the `visualblocks` toolbar button: ![New visualblocks icon]({{site.baseurl}}/images/icons/visualblocks.svg)
 
-For the list of icons included in {{site.productname}}, see: [Editor icon identifiers]({{site.baseurl}}/advanced/editor-icon-identifiers/).
+For the list of icons included in {{site.productname}}, see: [Available icons]({{site.baseurl}}/advanced/editor-icon-identifiers/).
 
 ### Fixes to the positioning of inline dialogs and menus
 Fixes for inline dialogs and menus have been included to:

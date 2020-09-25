@@ -71,7 +71,7 @@ editor.notificationManager.open({
 });
 ```
 
-For a list of the icon identifiers, see: [Editor icon identifiers]({{site.baseurl}}/advanced/editor-icon-identifiers/).
+For a list of the icon identifiers, see: [Available icons]({{site.baseurl}}/advanced/editor-icon-identifiers/).
 
 ## Progress Bar
 

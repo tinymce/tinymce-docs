@@ -7,6 +7,9 @@ keywords: toc toc_depth toc_class toc_header
 controls: toolbar button, menu item
 ---
 
+{% assign pluginname = "Table of Contents" %}
+{% assign plugincode = "toc" %}
+
 `toc` plugin will generate basic *Table of Contents* and insert it into the editor at the current cursor position. Items for the table will be taken from the headers found in the content.
 
 **Type:** `String`
@@ -88,6 +91,10 @@ tinymce.init({
   toc_class: 'our-toc'
 });
 ```
+
+{% include misc/plugin-toolbar-button-id-boilerplate.md %}
+
+{% include misc/plugin-menu-item-id-boilerplate.md %}
 
 ## Commands
 

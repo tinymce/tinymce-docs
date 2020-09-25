@@ -219,7 +219,7 @@ For information on inline mode, see: [User interface options - `inline`]({{site.
 
 Sets the trigger events for [v-model events](#forminputbindingsv-model).
 
-For a list of available {{site.productname}} events, see: [Editor events]({{site.baseurl}}/advanced/events/#editorevents).
+For a list of available {{site.productname}} events, see: [Available Events - Editor events]({{site.baseurl}}/advanced/events/#editorcoreevents).
 
 **Default value:** `"change keyup undo redo"`.
 
@@ -287,7 +287,7 @@ Used to set the toolbar for the editor. Using `<editor toolbar="bold italic" />`
 
 For information setting the toolbar for {{site.productname}}, see: [User interface options - toolbar]({{site.baseurl}}/configure/editor-appearance/#toolbar).
 
-**Possible values:**  See [Editor control identifiers - Toolbar controls]({{site.baseurl}}/advanced/editor-control-identifiers/).
+**Possible values:**  See [Toolbar Buttons Available for {{site.productname}}]({{site.baseurl}}/advanced/available-toolbar-buttons/).
 
 **Type:** String
 

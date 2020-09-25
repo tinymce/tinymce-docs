@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Editor icon identifiers
-title_nav: Editor icon identifiers
+title: Icons Available for TinyMCE
+title_nav: Available Icons
 description_short: Complete list of icon identifiers.
 description: Complete list of icon identifiers.
 keywords: icon icons identifier

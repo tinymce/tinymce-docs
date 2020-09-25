@@ -7,6 +7,9 @@ keywords: charmap symbols
 controls: toolbar button, menu item
 ---
 
+{% assign pluginname = "Character Map" %}
+{% assign plugincode = "charmap" %}
+
 This plugin adds a dialog to the editor with a map of special unicode characters, which cannot be added directly from the keyboard. The dialog can be invoked via a toolbar button - `charmap` - or a dedicated menu item added as `Insert > Special character`.
 
 **Type:** `String`
@@ -80,6 +83,10 @@ tinymce.init({
   ]
 });
 ```
+
+{% include misc/plugin-toolbar-button-id-boilerplate.md %}
+
+{% include misc/plugin-menu-item-id-boilerplate.md %}
 
 ## Commands
 

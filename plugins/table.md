@@ -84,7 +84,7 @@ tinymce.init({
 
 {{ site.requires_5_5v }}
 
-This option allows you to set whether `colgroup`s should be added to new tables created by the table plugin. Tables inserted by other means, or already existing tables, will not be changed.
+This option allows you to use colgroups/cols for columns widths for new tables created by the table plugin. Tables inserted by other means, or already existing tables, will not be changed.
 
 **Type:** `Boolean`
 

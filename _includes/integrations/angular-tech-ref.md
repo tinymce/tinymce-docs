@@ -275,23 +275,11 @@ For information setting the toolbar for {{site.productname}}, see: [User interfa
 ></editor>
 ```
 
-#### `modelEvents` (since v4.0.0)
-Used to specify the events that trigger the NgModelChange to emit. By default the wrapper uses `change input undo redo`.
-
-**Possible value:** A space separated list of TinyMCE editor events.
-
-**Type** String
-
-##### Example: `modelEvents`
-
-```html
-<editor
-  modelEvents="change input nodechange undo redo"
-></editor>
-```
-
 #### `allowedEvents` (since v4.2.0)
-Used to whitelist valid events to trigger from the editor to the Angular wrapper. By default, the wrapper will emit all the events in the [Event binding section]().
+
+> **Note**: This property requires tinymce-angular 4.2.0 or newer
+
+Used to safelist valid events to trigger from the editor to the Angular wrapper. By default, the wrapper will emit all the events in the [Event binding section]().
 
 **Possible values:** A comma separated list of events to allow.
 
@@ -305,8 +293,11 @@ Used to whitelist valid events to trigger from the editor to the Angular wrapper
 ></editor>
 ```
 
-#### `ignoreEvents` (since v4.2.0)
-Used to blacklist events from triggering by the Angular wrapper.
+#### `ignoreEvents`
+
+> **Note**: This property requires tinymce-angular 4.2.0 or newer
+
+Used to blocklist events from triggering by the Angular wrapper.
 
 **Possible values:** A comma separated list of events to ignore.
 
@@ -329,6 +320,24 @@ The `ngModel` directive can be added to use the editor in a form:
 ```
 
 For information on using `NgModel`, see: [Angular documentation - NgModel](https://angular.io/api/forms/NgModel).
+
+#### `modelEvents`
+
+> **Note**: This property requires tinymce-angular 4.0.0 or newer
+
+Used to specify the events that trigger the NgModelChange to emit. By default the wrapper uses `change input undo redo`.
+
+**Possible value:** A space separated list of TinyMCE editor events.
+
+**Type** String
+
+##### Example: `modelEvents`
+
+```html
+<editor
+  modelEvents="change input nodechange undo redo"
+></editor>
+```
 
 ### Using with reactive forms
 
@@ -357,41 +366,27 @@ When the handler is called (`handleEvent` in this example), it is called with an
 
 The following events are available:
 
-* `onActivate`
-* `onAddUndo`
-* `onBeforeAddUndo`
-* `onBeforeExecCommand`
-* `onBeforeGetContent`
-* `onBeforeRenderUI`
-* `onBeforeSetContent`
+#### Supported browser events
+
 * `onBeforePaste`
 * `onBlur`
-* `onChange`
-* `onClearUndos`
 * `onClick`
 * `onContextMenu`
 * `onCopy`
 * `onCut`
 * `onDblclick`
-* `onDeactivate`
-* `onDirty`
 * `onDrag`
 * `onDragDrop`
 * `onDragEnd`
 * `onDragGesture`
 * `onDragOver`
 * `onDrop`
-* `onExecCommand`
 * `onFocus`
 * `onFocusIn`
 * `onFocusOut`
-* `onGetContent`
-* `onHide`
-* `onInit`
 * `onKeyDown`
 * `onKeyPress`
 * `onKeyUp`
-* `onLoadContent`
 * `onMouseDown`
 * `onMouseEnter`
 * `onMouseLeave`
@@ -399,21 +394,42 @@ The following events are available:
 * `onMouseOut`
 * `onMouseOver`
 * `onMouseUp`
-* `onNodeChange`
-* `onObjectResizeStart`
-* `onObjectResized`
-* `onObjectSelected`
 * `onPaste`
+* `onSelectionChange`
+
+#### Supported TinyMCE events
+
+* `onActivate`
+* `onAddUndo`
+* `onBeforeAddUndo`
+* `onBeforeExecCommand`
+* `onBeforeGetContent`
+* `onBeforeRenderUI`
+* `onBeforeSetContent`
+* `onChange`
+* `onClearUndos`
+* `onDeactivate`
+* `onDirty`
+* `onExecCommand`
+* `onGetContent`
+* `onHide`
+* `onInit`
+* `onInitNgModel`
+* `onLoadContent`
+* `onNodeChange`
 * `onPostProcess`
 * `onPostRender`
+* `onPreInit`
 * `onPreProcess`
 * `onProgressState`
 * `onRedo`
 * `onRemove`
 * `onReset`
 * `onSaveContent`
-* `onSelectionChange`
 * `onSetAttrib`
+* `onObjectResizeStart`
+* `onObjectResized`
+* `onObjectSelected`
 * `onSetContent`
 * `onShow`
 * `onSubmit`

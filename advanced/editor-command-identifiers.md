@@ -500,12 +500,12 @@ tinymce.activeEditor.editorCommands.commands.value;
 
 The following command values can be queried using the [queryCommandValue]({{ site.baseurl }}/api/tinymce/tinymce.editorcommands/#querycommandvalue) API.
 
-| Command       | Description                                            |
-| --------------| ------------------------------------------------------ |
-| FontName      | Returns the font name of the current selection.        |
-| FontSize      | Returns the font size of the current selection.        |
-| ToggleSidebar | Returns the current state of sidebar (open or closed). |
-| LineHeight    | Returns the line height of the current selection.      |
+| Command       | Description                                                                |
+| --------------| -------------------------------------------------------------------------- |
+| FontName      | Returns the font name of the current selection.                            |
+| FontSize      | Returns the font size of the current selection.                            |
+| LineHeight    | Returns the line height of the current selection. {{ site.requires_5_5v }} |
+| ToggleSidebar | Returns the current state of sidebar (open or closed).                     |
 
 
 **Examples**
@@ -513,8 +513,8 @@ The following command values can be queried using the [queryCommandValue]({{ sit
 ```js
 tinymce.activeEditor.queryCommandValue('FontName');
 tinymce.activeEditor.queryCommandValue('FontSize');
-tinymce.activeEditor.queryCommandValue('ToggleSidebar');
 tinymce.activeEditor.queryCommandValue('LineHeight');
+tinymce.activeEditor.queryCommandValue('ToggleSidebar');
 ```
 
 ### Query command values: Table plugin

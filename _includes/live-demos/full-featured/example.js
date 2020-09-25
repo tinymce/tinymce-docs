@@ -1,3 +1,5 @@
+var useDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
 tinymce.init({
   selector: 'textarea#full-featured',
   plugins: 'print preview powerpaste casechange importcss tinydrive searchreplace autolink autosave save directionality advcode visualblocks visualchars fullscreen image link media mediaembed template codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists checklist wordcount tinymcespellchecker a11ychecker imagetools textpattern noneditable help formatpainter permanentpen pageembed charmap tinycomments mentions quickbars linkchecker emoticons advtable',
@@ -52,8 +54,8 @@ tinymce.init({
   content_style: '.mymention{ color: gray; }',
   contextmenu: 'link image imagetools table configurepermanentpen',
   a11y_advanced_options: true,
-  skin: (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'oxide-dark' : ''),
-  content_css: (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : ''),
+  skin: useDarkMode ? 'oxide-dark' : 'oxide',
+  content_css: useDarkMode ? 'dark' : 'default',
   /*
   The following settings require more configuration than shown here.
   For information on configuring the mentions plugin, see:

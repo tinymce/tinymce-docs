@@ -11,7 +11,5 @@ tinymce.init({
   'bold italic backcolor | alignleft aligncenter ' +
   'alignright alignjustify | bullist numlist outdent indent | ' +
   'removeformat | help',
-  skin: (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'oxide-dark' : ''),
-  content_css: (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : ''),
   content_style: {{site.liveDemoIframeCSSStyles}}
 });

@@ -43,7 +43,7 @@ For information on the listbox dialog component, see: [Dialog components - listb
 
 ### The toolbar drawer can now be controlled using commands
 
-A new editor command (`execCommand('ToggleToolbarDrawer')`) and editor state query (`queryCommandState('ToggleToolbarDrawer')`) have been added. The command allow the Toolbar Drawer (which holds excess toolbar buttons) to be opened and closed using editor commands. The current state of the Toolbar Drawer can also be queried.
+A new editor command (`execCommand('ToggleToolbarDrawer')`) and editor state query (`queryCommandState('ToggleToolbarDrawer')`) have been added. The command allows the Toolbar Drawer (which holds excess toolbar buttons) to be opened and closed using editor commands. The current state of the Toolbar Drawer can also be queried.
 
 For information on:
 

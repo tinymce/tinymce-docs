@@ -41,6 +41,17 @@ The new listbox component for custom dialogs is a composite component with a lab
 
 For information on the listbox dialog component, see: [Dialog components - listbox]({{site.baseurl}}/ui-components/dialogcomponents/#listbox).
 
+### New line height support in the editor
+
+{{site.productname}} 5.5 now supports adjustable line heights. There is a new `lineheight` button available for toolbars, and a new `lineheight` menu item (included by default in the format menu). There is also a new `LineHeight` editor command to change line height and a `LineHeight` query command value to get the current line height.
+
+For information on:
+
+- The `lineheight` toolbar button, see: [Available Toolbar Buttons - The core toolbar buttons]({{site.baseurl}}/advanced/available-toolbar-buttons/#thecoretoolbarbuttons).
+- The `lineheight` menu item, see: [Available Menu Items - The core menu items]({{site.baseurl}}/advanced/available-menu-items/#the-core-menu-items).
+- The `LineHeight` editor command, see: [Commands available for {{site.productname}} - Core Editor commands]({{site.baseurl}}/advanced/editor-command-identifiers/#coreeditorcommands).
+- The `LineHeight` query command value, see: [Commands available for {{site.productname}} - Available query command values]({{site.baseurl}}/advanced/editor-command-identifiers/#availablequerycommandvalues).
+
 ## Accompanying Premium Plugin changes
 
 The following premium plugin updates were released alongside {{site.productname}} 5.5.

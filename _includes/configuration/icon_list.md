@@ -70,6 +70,7 @@
 | `invert` | ![invert.svg]({{ site.baseurl }}/images/icons/invert.svg) | `invert.svg` | 
 | `italic` | ![italic.svg]({{ site.baseurl }}/images/icons/italic.svg) | `italic.svg` | 
 | `line` | ![line.svg]({{ site.baseurl }}/images/icons/line.svg) | `line.svg` | 
+| `line-height` | ![line-height.svg]({{ site.baseurl }}/images/icons/line-height.svg) | `line-height.svg` |
 | `link` | ![link.svg]({{ site.baseurl }}/images/icons/link.svg) | `link.svg` | 
 | `list-bull-circle` | ![list-bull-circle.svg]({{ site.baseurl }}/images/icons/list-bull-circle.svg) | `list-bull-circle.svg` | 
 | `list-bull-default` | ![list-bull-default.svg]({{ site.baseurl }}/images/icons/list-bull-default.svg) | `list-bull-default.svg` | 

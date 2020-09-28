@@ -13,7 +13,7 @@ To add a {{site.productname}} editor to a web page using the {{site.productname}
     <!DOCTYPE html>
     ```
 
-    The `DOCTYPE` element is required for the editor to function correctly.
+    The `DOCTYPE` declaration is required for the editor to function correctly.
 
 2. Add the following `meta` elements to the head of page:
 
@@ -24,7 +24,7 @@ To add a {{site.productname}} editor to a web page using the {{site.productname}
     </head>
     ```
 
-    The second `meta` element is required for the editor to function correctly on mobile devices.
+    The second `meta` element is required for the editor to function correctly on mobile devices. For information on the viewport `meta` element, see: [MDN Web Docs - Using the viewport meta tag to control layout on mobile browsers](https://developer.mozilla.org/en-US/docs/Mozilla/Mobile/Viewport_meta_tag#Viewport_basics).
 
 3. Add a `script` element sourcing the {{site.productname}} Web Component (`tinymce-webcomponent.js`), such as:
 

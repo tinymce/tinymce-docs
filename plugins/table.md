@@ -87,7 +87,7 @@ tinymce.init({
 
 {{ site.requires_5_5v }}
 
-This option allows you to use colgroups/cols for columns widths for new tables created by the table plugin. Tables inserted by other means, or already existing tables, will not be changed.
+This option adds `colgroups` and `cols` elements to new tables for specifying column widths. Existing tables and tables added using `setContent` or paste are unaffected.
 
 **Type:** `Boolean`
 

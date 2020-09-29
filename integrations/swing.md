@@ -36,7 +36,7 @@ The Swing integration allows the user to select the origin of the {{site.product
 
   ```java
   final Config myTinyConfiguration = Config.cloud("<my_api_key>", "{{site.productmajorversion}}-stable");
-  ``` 
+  ```
 
 * External deployments allow to use a local version of {{site.productname}} by giving the address of the location where {{site.productname}} is being served.
 
@@ -128,4 +128,4 @@ For more examples check the [GitHub repository](https://github.com/tinymce/tinym
 
 #### A note about integrations
 
-> Note: {{site.companyname}} references to third-party integrations/code to help users build great products with the {{site.productname}} editor. For support related issues such as queries about this integration, please contact [{{site.supportname}}]({{site.supporturl}}) or join the [{{site.productname}} Community](https://community.tiny.cloud/).
+> Note: {{site.companyname}} references to third-party integrations/code to help users build great products with the {{site.productname}} editor. For support related issues such as queries about this integration, please contact [{{site.supportname}}]({{site.supporturl}}) or post your question on Stack Overflow using the [`{{site.prodnamecode}}` tag]({{site.communitysupporturl}}).

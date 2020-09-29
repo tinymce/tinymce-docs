@@ -7,6 +7,9 @@ keywords: row cell column table_appearance_options table_clone_elements table_gr
 controls: toolbar button, menu item
 ---
 
+{% assign pluginname = "Table" %}
+{% assign plugincode = "table" %}
+
 The `table` plugin adds table management functionality to {{site.productname}}. It also adds a new menubar item `Table` with various options in its dropdown including `Insert table` and options to modify cells, rows and columns, and a toolbar button with the same functionality.
 
 **Type:** `String`
@@ -36,7 +39,7 @@ To disable the table toolbar, set the value to an empty string.
 
 **Default Value:** `'tableprops tabledelete | tableinsertrowbefore tableinsertrowafter tabledeleterow | tableinsertcolbefore tableinsertcolafter tabledeletecol'`
 
-**Possible Values:** Any toolbar button. For a list of predefined toolbar buttons, see: [Editor control identifiers - Toolbar controls]({{site.baseurl}}/advanced/editor-control-identifiers/#toolbarcontrols).
+**Possible Values:** Any toolbar button. For a list of predefined toolbar buttons, see: [Toolbar Buttons Available for {{site.productname}}]({{site.baseurl}}/advanced/available-toolbar-buttons/).
 
 ##### Example: Default table_toolbar configuration
 
@@ -574,6 +577,10 @@ tinymce.init({
 ```
 
 > Note: The advanced tabs of the table, row, and cell properties dialogs use the `colorpicker` to allow for border and background colors to be applied. See docs to use and configure a custom [colorpicker]({{site.baseurl}}/plugins/colorpicker/).
+
+{% include misc/plugin-toolbar-button-id-boilerplate.md %}
+
+{% include misc/plugin-menu-item-id-boilerplate.md %}
 
 ## API
 

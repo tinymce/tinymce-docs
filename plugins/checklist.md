@@ -7,6 +7,9 @@ keywords: lists todo checklist
 controls: toolbar button
 ---
 
+{% assign pluginname = "Checklist" %}
+{% assign plugincode = "checklist" %}
+
 {{site.premiumplugin}}
 
 The **Checklist** plugin helps the user keep track of all required actions by creating a simple, clean, and easy to use TODO list.
@@ -42,6 +45,10 @@ To make the checklists look correct make sure to include this css on your page:
 ```css
 {% include css-codeblock/checklist-plugin-css.md %}
 ```
+
+{% include misc/plugin-toolbar-button-id-boilerplate.md %}
+
+{% include misc/plugin-menu-item-id-boilerplate.md %}
 
 ## Creating a Checklist
 

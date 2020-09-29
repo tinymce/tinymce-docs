@@ -21,4 +21,4 @@ The identifier below will add a context menu _section_ containing one or more it
 | spellchecker | [Spell Checker]({{site.baseurl}}/plugins/spellchecker/) | Adds a list suggested corrections, an _Ignore_ item, and an _Ignore all_ item. |
 | table | [Table]({{site.baseurl}}/plugins/table/) | Adds table related context menu items, including Advanced Tables context menu items (if the Advanced Tables plugin is enabled). |
 
-For a list of available menu items that can be added to the context menu, see: [Editor control identifiers - Menu controls]({{site.baseurl}}/advanced/editor-control-identifiers/#menucontrols).
+For a list of available menu items that can be added to the context menu, see: [Menu Items Available for {{site.productname}}]({{site.baseurl}}/advanced/available-menu-items/).

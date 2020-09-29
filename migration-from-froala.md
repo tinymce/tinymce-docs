@@ -215,7 +215,7 @@ Unordered list | `formatUL` | `bullist`
 
 The list of plugins may need updating, as indicated in [Updating the list of Plugins]({{site.baseurl}}/migration-from-froala/#updatingthelistofplugins). For example, the {{site.productname}} toolbar items; `numlist` and `bullist`, require the `lists` plugin.
 
-For a list of toolbar items with the required plugins, see: [Editor control identifiers: Toolbar controls]({{site.baseurl}}/advanced/editor-control-identifiers/#toolbarcontrols).
+For a list of toolbar items with the required plugins, see: [Toolbar Buttons Available for {{site.productname}}]({{site.baseurl}}/advanced/available-toolbar-buttons/).
 
 ### Examples: Custom Toolbar Layouts
 
@@ -259,7 +259,7 @@ The following examples show a custom toolbar layout in Froala and the same layou
 ### Additional Information on Customizing Toolbars
 
 * For information on customizing the {{site.productname}} Toolbar, see: [User interface options: Toolbar]({{site.baseurl}}/configure/editor-appearance/#toolbar).
-* For a list of toolbar items, see: [Editor control identifiers: Toolbar controls]({{site.baseurl}}/advanced/editor-control-identifiers/#toolbarcontrols).
+* For a list of toolbar items, see: [Toolbar Buttons Available for {{site.productname}}]({{site.baseurl}}/advanced/available-toolbar-buttons/).
 
 ## Configuring Inline Mode
 

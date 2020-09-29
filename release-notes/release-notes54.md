@@ -40,8 +40,8 @@ For information on the table plugin, see: [Table plugin]({{site.baseurl}}/plugin
 
 For a list of:
 
-- Menu items, including table-related menu items and menu sections, see: [Editor control identifiers - Menu controls]({{site.baseurl}}/advanced/editor-control-identifiers/#menucontrols).
-- Available icons, including table-related icons, see: [Editor icon identifiers]({{site.baseurl}}/advanced/editor-icon-identifiers/).
+- Menu items, including table-related menu items and menu sections, see: [Menu Items Available for {{site.productname}}]({{site.baseurl}}/advanced/available-menu-items/).
+- Available icons, including table-related icons, see: [Available icons]({{site.baseurl}}/advanced/editor-icon-identifiers/).
 - Table plugin APIs, see: [Table plugin - APIs]({{site.baseurl}}/plugins/table/#api).
 - Table plugin commands, see: [Table plugin - Commands]({{site.baseurl}}/plugins/table/#commands).
 
@@ -49,7 +49,7 @@ For a list of:
 
 To simplify creating custom components and plugins, the icon look-up is now case-insensitive. This will assist with adding icons to custom toolbar buttons, menu sections, and menu items.
 
-For list of icons provided with {{site.productname}}, see: [Editor icon identifiers]({{site.baseurl}}/advanced/editor-icon-identifiers/).
+For list of icons provided with {{site.productname}}, see: [Available icons]({{site.baseurl}}/advanced/editor-icon-identifiers/).
 
 For information on:
 

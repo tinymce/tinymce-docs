@@ -5,6 +5,9 @@ title_nav: PowerPaste
 keywords: enterprise powerpaste power paste paste_as_text powerpaste_word_import powerpaste_html_import powerpaste_block_drop powerpaste_allow_local_images microsoft word excel
 ---
 
+{% assign pluginname = "PowerPaste" %}
+{% assign plugincode = "powerpaste" %}
+
 {{site.premiumplugin}}
 
 The {{site.productname}} **PowerPaste** plugin automatically cleans up content from Microsoft Word/Excel and HTML sources to ensure clean, compliant content that matches the look and feel of the site.
@@ -169,39 +172,11 @@ tinymce.init({
 
 {% include configuration/smart-paste.md %}
 
-## Toolbar Buttons
+{% assign altplugincode = "paste" %}
+{% include misc/plugin-toolbar-button-id-boilerplate.md %}
 
-#### pastetext
-
-This button allows you to toggle paste as plain text mode on and off. When in plain text mode, all rich content is converted into plain text.
-
-Example {{site.productname}} Configuration:
-
-```js
-tinymce.init({
-  selector: 'textarea',
-  plugins: 'powerpaste',
-  toolbar: 'pastetext'
-});
-```
-
-## Menu Items
-
-#### pastetext
-
-This menu item allows you to toggle paste as plain text mode on and off. When in plain text mode, all rich content is converted into plain text.
-
-Example {{site.productname}} Configuration:
-
-```js
-tinymce.init({
-  selector: 'textarea',
-  plugins: 'powerpaste',
-  menu: {
-	edit: {title: 'edit', items: 'pastetext'}
-  }
-});
-```
+{% assign altplugincode = "paste" %}
+{% include misc/plugin-menu-item-id-boilerplate.md %}
 
 ## Advanced Config Options
 

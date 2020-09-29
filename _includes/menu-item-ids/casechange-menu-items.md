@@ -1,0 +1,3 @@
+| Menu item identifier | [Default Menu Location]({{site.baseurl}}/configure/editor-appearance/#examplethetinymcedefaultmenuitems) | Description                                                                           |
+| -------------------- | -------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| `casechange`         | _Not Applicable_                                                                                         | Changes the case of text in a block selection to uppercase, lowercase, or title case. |

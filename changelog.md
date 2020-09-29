@@ -10,6 +10,53 @@ class: changelog
 
 {% capture changelog %}
 
+## Version 5.5.0 September 29, 2020
+* Added a TypeScript declaration file to the bundle output for TinyMCE core.
+* Added new `table_column_resizing` setting to control how table columns are resized when using the resize bars.
+* Added the ability to remove images on a failed upload using the `images_upload_handler` failure callback.
+* Added `hasPlugin` function to the editor API to determine if a plugin exists or not.
+* Added new `ToggleToolbarDrawer` command and query state handler to allow the toolbar drawer to be programmatically toggled and the toggle state to be checked.
+* Added the ability to use `colgroup` elements in tables.
+* Added a new setting `table_use_colgroups` for toggling whether colgroups are used in new tables.
+* Added the ability to delete and navigate HTML media elements without the `media` plugin.
+* Added `fullscreen_native` setting to the `fullscreen` plugin to enable use of the entire monitor.
+* Added table related oxide variables to the Style API for more granular control over table cell selection appearance.
+* Added new `toolbar_persist` setting to control the visibility of the inline toolbar.
+* Added new APIs to allow for programmatic control of the inline toolbar visibility.
+* Added the `origin` property to the `ObjectResized` and `ObjectResizeStart` events, to specify which handle the resize was performed on.
+* Added new StyleSheetLoader `unload` and `unloadAll` APIs to allow loaded stylesheets to be removed.
+* Added the `LineHeight` query command and action to the editor.
+* Added the `lineheight` toolbar and menu items, and added `lineheight` to the default format menu.
+* Added a new `contextmenu_avoid_overlap` setting to allow context menus to avoid overlapping matched nodes.
+* Added new listbox dialog UI component for rendering a dropdown that allows nested options.
+* Added back the ability to use nested items in the `image_class_list`, `link_class_list`, `link_list`, `table_class_list`, `table_cell_class_list`, and `table_row_class_list` settings.
+* Changed how CSS manipulates table cells when selecting multiple cells to achieve a semi-transparent selection.
+* Changed the `target` property on fired events to use the native event target. The original target for an open shadow root can be obtained using `event.getComposedPath()`.
+* Changed the editor to clean-up loaded CSS stylesheets when all editors using the stylesheet have been removed.
+* Changed `imagetools` context menu icon for accessing the `image` dialog to use the `image` icon.
+* Changed the `editor.insertContent()` and `editor.selection.setContent()` APIs to retain leading and trailing whitespace.
+* Changed the `table` plugin `Column` menu to include the cut, copy and paste column menu items.
+* Changed the default table styles in the content CSS files to better support the styling options available in the `table` dialog.
+* Deprecated the `Env.experimentalShadowDom` flag.
+* Fixed tables with no borders displaying with the default border styles in the `preview` dialog.
+* Fixed loss of whitespace when inserting content after a non-breaking space.
+* Fixed the `event.getComposedPath()` function throwing an exception for events fired from the editor.
+* Fixed notifications not appearing when the editor is within a ShadowRoot.
+* Fixed focus issues with inline dialogs when the editor is within a ShadowRoot.
+* Fixed the `template` plugin previews missing some content styles.
+* Fixed the `media` plugin not saving the alternative source url in some situations.
+* Fixed an issue where column resizing using the resize bars was inconsistent between fixed and relative table widths.
+* Fixed an issue where dragging and dropping within a table would select table cells.
+* Fixed up and down keyboard navigation not working for inline `contenteditable="false"` elements.
+* Fixed dialog not retrieving `close` icon from icon pack.
+* Fixed the `unlink` toolbar button not working when selecting multiple links.
+* Fixed the `link` dialog not showing the "Text to display" field in some valid cases.
+* Fixed the `DOMUtils.split()` API incorrectly removing some content.
+* Fixed pressing the escape key not focusing the editor when using multiple toolbars.
+* Fixed the `dirty` flag not being correctly set during an `AddUndo` event.
+* Fixed `editor.selection.setCursorLocation` incorrectly placing the cursor outside `pre` elements in some circumstances.
+* Fixed an exception being thrown when pressing the enter key inside pre elements while `br_in_pre` setting is false.
+
 ## Version 5.4.2 August 17, 2020
 * Fixed the editor not resizing when resizing the browser window in fullscreen mode.
 * Fixed clicking on notifications causing inline editors to hide.

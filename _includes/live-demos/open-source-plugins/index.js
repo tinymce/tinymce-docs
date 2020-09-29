@@ -1,3 +1,5 @@
+var useDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
 tinymce.init({
   selector: 'textarea#full-featured-non-premium',
   plugins: 'print preview paste importcss searchreplace autolink autosave save directionality code visualblocks visualchars fullscreen image link media template codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists wordcount imagetools textpattern noneditable help charmap quickbars emoticons',
@@ -53,7 +55,7 @@ tinymce.init({
   noneditable_noneditable_class: 'mceNonEditable',
   toolbar_mode: 'sliding',
   contextmenu: 'link image imagetools table',
-  skin: (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'oxide-dark' : ''),
-  content_css: (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : ''),
+  skin: useDarkMode ? 'oxide-dark' : 'oxide',
+  content_css: useDarkMode ? 'dark' : 'default',
   content_style: {{site.liveDemoIframeCSSStyles}}
  });

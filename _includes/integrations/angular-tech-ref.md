@@ -3,8 +3,8 @@
 **Covered in this section:**
 
 - [Installing the TinyMCE Angular integration using NPM](#installingthetinymceangularintegrationusingnpm)
-- [Configuring the editor](#configuringtheeditor)
 - [Using the TinyMCE Angular integration](#usingthetinymceangularintegration)
+- [Configuring the editor](#configuringtheeditor)
 
   - [`apiKey`](#apikey)
   - [`cloudChannel`](#cloudchannel)
@@ -19,8 +19,16 @@
   - [`toolbar`](#toolbar)
 
 - [Using the `ngModel` directive](#usingthengmodeldirective)
+
+  - [`modelEvents`](#modelevents)
+
 - [Using with reactive forms](#usingwithreactiveforms)
 - [Event binding](#eventbinding)
+
+  - [Supported browser events](#supportedbrowserevents)
+  - [Supported TinyMCE events](#supportedtinymceevents)
+  - [`allowedEvents`](#allowedevents)
+  - [`ignoreEvents`](#ignoreevents)
 
 ### Installing the TinyMCE Angular integration using NPM
 
@@ -225,7 +233,7 @@ For information on adding plugins to {{site.productname}}, see: [Add plugins to 
 
 #### `outputFormat`
 
-Used to specify the format of the content emitted by the tinymce-angular component when used in conjunction with forms or plain data bindings.
+Used to specify the format of the content emitted by the `tinymce-angular` component when used in conjunction with forms or plain data bindings.
 
 **Type:** String
 
@@ -275,42 +283,6 @@ For information setting the toolbar for {{site.productname}}, see: [User interfa
 ></editor>
 ```
 
-#### `allowedEvents` (since v4.2.0)
-
-> **Note**: This property requires tinymce-angular 4.2.0 or newer
-
-Used to safelist valid events to trigger from the editor to the Angular wrapper. By default, the wrapper will emit all the events in the [Event binding section]().
-
-**Possible values:** A comma separated list of events to allow.
-
-**Type** String
-
-##### Example: `allowedEvents`
-
-```html
-<editor
-  allowedEvents="onMouseDown,onKeyDown"
-></editor>
-```
-
-#### `ignoreEvents`
-
-> **Note**: This property requires tinymce-angular 4.2.0 or newer
-
-Used to blocklist events from triggering by the Angular wrapper.
-
-**Possible values:** A comma separated list of events to ignore.
-
-**Type** String
-
-##### Example: `ignoreEvents`
-
-```html
-<editor
-  ignoreEvents="onMouseEnter,onMouseLeave,onMouseOut,onMouseMove"
-></editor>
-```
-
 ### Using the `ngModel` directive
 
 The `ngModel` directive can be added to use the editor in a form:
@@ -323,9 +295,11 @@ For information on using `NgModel`, see: [Angular documentation - NgModel](https
 
 #### `modelEvents`
 
-> **Note**: This property requires tinymce-angular 4.0.0 or newer
+> **Note**: This property requires `tinymce-angular` 4.0.0 or newer
 
-Used to specify the events that trigger the NgModelChange to emit. By default the wrapper uses `change input undo redo`.
+Used to specify the events that trigger the `NgModelChange` to emit.
+
+**Default value:** `"change input undo redo"`.
 
 **Possible value:** A space separated list of TinyMCE editor events.
 
@@ -342,6 +316,7 @@ Used to specify the events that trigger the NgModelChange to emit. By default th
 ### Using with reactive forms
 
 To use {{site.productname}} Angular component with reactive forms:
+
 1. Include the `<editor>` configuration within the `formGroup`.
 2. Add the `formControlName` directive to the editor configuration. For example:
 
@@ -436,4 +411,40 @@ The following events are available:
 * `onUndo`
 * `onVisualAid`
 
-By default, all the available events will trigger from the editor to the Angular wrapper. In order to limit the events triggering in the component, you can whitelist or blacklist events using the `allowedEvents` and `ignoreEvents` properties.
+By default, all the available events will trigger from the editor to the `tinymce-angular` component. To limit the events triggering in the component, use the `allowedEvents` and `ignoreEvents` properties.
+
+#### `allowedEvents`
+
+> **Note**: This property requires `tinymce-angular` 4.2.0 or newer
+
+Used to provide an allow-list of valid events to trigger from the editor to the `tinymce-angular` component. By default, the component will emit all the events listed in the [Event binding section](#eventbinding).
+
+**Possible values:** A comma separated list of events to allow.
+
+**Type** String
+
+##### Example: `allowedEvents`
+
+```html
+<editor
+  allowedEvents="onMouseDown,onKeyDown"
+></editor>
+```
+
+#### `ignoreEvents`
+
+> **Note**: This property requires `tinymce-angular` 4.2.0 or newer
+
+Used to block a list of events from the `tinymce-angular` component.
+
+**Possible values:** A comma separated list of events to ignore.
+
+**Type** String
+
+##### Example: `ignoreEvents`
+
+```html
+<editor
+  ignoreEvents="onMouseEnter,onMouseLeave,onMouseOut,onMouseMove"
+></editor>
+```

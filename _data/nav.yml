@@ -85,6 +85,7 @@
     - url: "#block_formats"
     - url: "#branding"
     - url: "#contextmenu"
+    - url: "#contextmenu_avoid_overlap"
     - url: "#contextmenu_never_use_native"
     - url: "#custom_ui_selector"
     - url: "#draggable_modal"
@@ -97,6 +98,7 @@
     - url: "#icons"
     - url: "#icons_url"
     - url: "#inline"
+    - url: "#lineheight_formats"
     - url: "#max_height"
     - url: "#max_width"
     - url: "#menu"
@@ -121,6 +123,7 @@
     - url: "#toolbar_mode"
     - url: "#toolbar_groups"
     - url: "#toolbar_location"
+    - url: "#toolbar_persist"
     - url: "#toolbar_sticky"
     - url: "#width"
   - url: "content-appearance"
@@ -808,6 +811,17 @@
 
 - url: "release-notes"
   pages:
+  - url: "release-notes55"
+    pages:
+    - url: "#Overview"
+    - url: "#TinyMCE 5.5 new features and enhancements"
+    - url: "#Accompanying Premium Plugin changes"
+    - url: "#Minor changes for TinyMCE 5.5"
+    - url: "#General bug fixes"
+    - url: "#Security fixes"
+    - url: "#Deprecated features"
+    - url: "#Known issues"
+    - url: "#Upgrading to the latest version of TinyMCE 5"
   - url: "release-notes542"
     pages:
     - url: "#Overview"
@@ -944,6 +958,7 @@
 
 - url: "changelog"
   pages:
+  - url: "#Version 5.5.0 September 29, 2020"
   - url: "#Version 5.4.2 August 17, 2020"
   - url: "#Version 5.4.1 July 8, 2020"
   - url: "#Version 5.4.0 June 30, 2020"

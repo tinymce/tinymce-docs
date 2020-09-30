@@ -12,6 +12,8 @@ description: Configure the editor's appearance, including menu and toolbar contr
 
 {% include configuration/contextmenu.md %}
 
+{% include configuration/contextmenu_avoid_overlap.md %}
+
 {% include configuration/contextmenu_never_use_native.md %}
 
 {% include configuration/custom-ui-selector.md %}
@@ -35,6 +37,8 @@ description: Configure the editor's appearance, including menu and toolbar contr
 {% include configuration/icons_url.md %}
 
 {% include configuration/inline.md %}
+
+{% include configuration/lineheight-formats.md %}
 
 {% include configuration/max-height.md %}
 
@@ -83,6 +87,8 @@ description: Configure the editor's appearance, including menu and toolbar contr
 {% include configuration/toolbar-groups.md %}
 
 {% include configuration/toolbar-location.md %}
+
+{% include configuration/toolbar-persist.md %}
 
 {% include configuration/toolbar_sticky.md %}
 

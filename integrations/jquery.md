@@ -106,4 +106,4 @@ This code is required because jQuery blocks all `focusin` calls from elements ou
 
 #### A note about integrations
 
-> Note: We are pleased to provide integrations/code guidance to help you build great products with {{site.productname}}. If you have queries about this integration, please join the [{{site.productname}} Community](https://community.tiny.cloud/).
+> Note: We are pleased to provide integrations/code guidance to help you build great products with {{site.productname}}. If you have queries about this integration, post your question on Stack Overflow using the [`{{site.prodnamecode}}` tag]({{site.communitysupporturl}}).

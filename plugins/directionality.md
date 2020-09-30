@@ -7,6 +7,9 @@ keywords: rtl, ltr, internationalization, internationalisation, localization, lo
 controls: toolbar button
 ---
 
+{% assign pluginname = "Directionality" %}
+{% assign plugincode = "directionality" %}
+
 This plugin adds directionality controls to the toolbar, enabling {{site.productname}} to better handle languages written from right to left. It also adds a toolbar button for each of its values, `ltr` for left-to-right text and `rtl` for right-to-left text.
 
 **Type:** `String`
@@ -22,6 +25,8 @@ tinymce.init({
   toolbar: 'ltr rtl'
 });
 ```
+
+{% include misc/plugin-toolbar-button-id-boilerplate.md %}
 
 ## Commands
 

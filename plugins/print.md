@@ -7,6 +7,9 @@ keywords: file
 controls: toolbar button, menu item
 ---
 
+{% assign pluginname = "Print" %}
+{% assign plugincode = "print" %}
+
 This plugin adds a print button to the toolbar. It also adds a `Print` item to the `File` menu dropdown.
 
 **Type:** `String`
@@ -21,6 +24,10 @@ tinymce.init({
   toolbar: 'print'
 });
 ```
+
+{% include misc/plugin-toolbar-button-id-boilerplate.md %}
+
+{% include misc/plugin-menu-item-id-boilerplate.md %}
 
 ## Commands
 

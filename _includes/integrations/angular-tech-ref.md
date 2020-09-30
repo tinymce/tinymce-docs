@@ -3,8 +3,8 @@
 **Covered in this section:**
 
 - [Installing the TinyMCE Angular integration using NPM](#installingthetinymceangularintegrationusingnpm)
-- [Configuring the editor](#configuringtheeditor)
 - [Using the TinyMCE Angular integration](#usingthetinymceangularintegration)
+- [Configuring the editor](#configuringtheeditor)
 
   - [`apiKey`](#apikey)
   - [`cloudChannel`](#cloudchannel)
@@ -19,8 +19,16 @@
   - [`toolbar`](#toolbar)
 
 - [Using the `ngModel` directive](#usingthengmodeldirective)
+
+  - [`modelEvents`](#modelevents)
+
 - [Using with reactive forms](#usingwithreactiveforms)
 - [Event binding](#eventbinding)
+
+  - [Supported browser events](#supportedbrowserevents)
+  - [Supported TinyMCE events](#supportedtinymceevents)
+  - [`allowedEvents`](#allowedevents)
+  - [`ignoreEvents`](#ignoreevents)
 
 ### Installing the TinyMCE Angular integration using NPM
 
@@ -225,7 +233,7 @@ For information on adding plugins to {{site.productname}}, see: [Add plugins to 
 
 #### `outputFormat`
 
-Used to specify the format of the content emitted by the tinymce-angular component when used in conjunction with forms or plain data bindings.
+Used to specify the format of the content emitted by the `tinymce-angular` component when used in conjunction with forms or plain data bindings.
 
 **Type:** String
 
@@ -262,7 +270,7 @@ Used to set the toolbar for the editor. Using `<editor toolbar="bold italic"></e
 
 For information setting the toolbar for {{site.productname}}, see: [User interface options - toolbar]({{site.baseurl}}/configure/editor-appearance/#toolbar).
 
-**Possible values:**  See [Editor control identifiers - Toolbar controls]({{site.baseurl}}/advanced/editor-control-identifiers/).
+**Possible values:**  See [Toolbar Buttons Available for {{site.productname}}]({{site.baseurl}}/advanced/available-toolbar-buttons/).
 
 **Type:** String
 
@@ -285,9 +293,30 @@ The `ngModel` directive can be added to use the editor in a form:
 
 For information on using `NgModel`, see: [Angular documentation - NgModel](https://angular.io/api/forms/NgModel).
 
+#### `modelEvents`
+
+> **Note**: This property requires `tinymce-angular` 4.0.0 or newer
+
+Used to specify the events that trigger the `NgModelChange` to emit.
+
+**Default value:** `"change input undo redo"`.
+
+**Possible value:** A space separated list of TinyMCE editor events.
+
+**Type** String
+
+##### Example: `modelEvents`
+
+```html
+<editor
+  modelEvents="change input nodechange undo redo"
+></editor>
+```
+
 ### Using with reactive forms
 
 To use {{site.productname}} Angular component with reactive forms:
+
 1. Include the `<editor>` configuration within the `formGroup`.
 2. Add the `formControlName` directive to the editor configuration. For example:
 
@@ -312,41 +341,27 @@ When the handler is called (`handleEvent` in this example), it is called with an
 
 The following events are available:
 
-* `onActivate`
-* `onAddUndo`
-* `onBeforeAddUndo`
-* `onBeforeExecCommand`
-* `onBeforeGetContent`
-* `onBeforeRenderUI`
-* `onBeforeSetContent`
+#### Supported browser events
+
 * `onBeforePaste`
 * `onBlur`
-* `onChange`
-* `onClearUndos`
 * `onClick`
 * `onContextMenu`
 * `onCopy`
 * `onCut`
 * `onDblclick`
-* `onDeactivate`
-* `onDirty`
 * `onDrag`
 * `onDragDrop`
 * `onDragEnd`
 * `onDragGesture`
 * `onDragOver`
 * `onDrop`
-* `onExecCommand`
 * `onFocus`
 * `onFocusIn`
 * `onFocusOut`
-* `onGetContent`
-* `onHide`
-* `onInit`
 * `onKeyDown`
 * `onKeyPress`
 * `onKeyUp`
-* `onLoadContent`
 * `onMouseDown`
 * `onMouseEnter`
 * `onMouseLeave`
@@ -354,23 +369,82 @@ The following events are available:
 * `onMouseOut`
 * `onMouseOver`
 * `onMouseUp`
-* `onNodeChange`
-* `onObjectResizeStart`
-* `onObjectResized`
-* `onObjectSelected`
 * `onPaste`
+* `onSelectionChange`
+
+#### Supported TinyMCE events
+
+* `onActivate`
+* `onAddUndo`
+* `onBeforeAddUndo`
+* `onBeforeExecCommand`
+* `onBeforeGetContent`
+* `onBeforeRenderUI`
+* `onBeforeSetContent`
+* `onChange`
+* `onClearUndos`
+* `onDeactivate`
+* `onDirty`
+* `onExecCommand`
+* `onGetContent`
+* `onHide`
+* `onInit`
+* `onInitNgModel`
+* `onLoadContent`
+* `onNodeChange`
 * `onPostProcess`
 * `onPostRender`
+* `onPreInit`
 * `onPreProcess`
 * `onProgressState`
 * `onRedo`
 * `onRemove`
 * `onReset`
 * `onSaveContent`
-* `onSelectionChange`
 * `onSetAttrib`
+* `onObjectResizeStart`
+* `onObjectResized`
+* `onObjectSelected`
 * `onSetContent`
 * `onShow`
 * `onSubmit`
 * `onUndo`
 * `onVisualAid`
+
+By default, all the available events will trigger from the editor to the `tinymce-angular` component. To limit the events triggering in the component, use the `allowedEvents` and `ignoreEvents` properties.
+
+#### `allowedEvents`
+
+> **Note**: This property requires `tinymce-angular` 4.2.0 or newer
+
+Used to provide an allow-list of valid events to trigger from the editor to the `tinymce-angular` component. By default, the component will emit all the events listed in the [Event binding section](#eventbinding).
+
+**Possible values:** A comma separated list of events to allow.
+
+**Type** String
+
+##### Example: `allowedEvents`
+
+```html
+<editor
+  allowedEvents="onMouseDown,onKeyDown"
+></editor>
+```
+
+#### `ignoreEvents`
+
+> **Note**: This property requires `tinymce-angular` 4.2.0 or newer
+
+Used to block a list of events from the `tinymce-angular` component.
+
+**Possible values:** A comma separated list of events to ignore.
+
+**Type** String
+
+##### Example: `ignoreEvents`
+
+```html
+<editor
+  ignoreEvents="onMouseEnter,onMouseLeave,onMouseOut,onMouseMove"
+></editor>
+```

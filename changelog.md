@@ -10,6 +10,10 @@ class: changelog
 
 {% capture changelog %}
 
+## Version 5.5.1 October 1, 2020
+* Fixed pressing the down key near the end of a document incorrectly raising an exception.
+* Fixed incorrect Typescript types for the `Tools` API.
+
 ## Version 5.5.0 September 29, 2020
 * Added a TypeScript declaration file to the bundle output for TinyMCE core.
 * Added new `table_column_resizing` setting to control how table columns are resized when using the resize bars.

@@ -6,7 +6,8 @@ The upload handler function takes four arguments:
 
 * `blobInfo`
 * A `success` callback
-* A `failure` callback
+* A `failure` callback that takes an error message and an optional object containing:
+    * `remove` - Removes the image from the document, defaults to `false`
 * A `progress` callback that takes a value between 1 and 100
 
 When this option is not set, {{site.productname}} utilizes an `XMLHttpRequest` to upload images one at a time to the server and calls the success callback with the location of the remote image.
@@ -33,6 +34,11 @@ tinymce.init({
 
     xhr.onload = function() {
       var json;
+
+      if (xhr.status === 403) {
+        failure('HTTP Error: ' + xhr.status, { remove: true });
+        return;
+      }
 
       if (xhr.status < 200 || xhr.status >= 300) {
         failure('HTTP Error: ' + xhr.status);

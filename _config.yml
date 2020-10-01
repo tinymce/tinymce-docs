@@ -39,6 +39,7 @@ productpages: https://apps.tiny.cloud/products
 pricingpage: https://www.tiny.cloud/pricing
 contactpage: https://www.tiny.cloud/contact
 legalpage: https://about.tiny.cloud/legal
+communitysupporturl: https://stackoverflow.com/questions/tagged/tinymce
 # HMTL entities
 tick: '&#10004;'
 cross: '&#10006;'
@@ -82,6 +83,7 @@ exclude:
   - .idea
   - .git
   - .github
+  - _new_content_templates
 
 # redcarpet was messing up some of the live demos
 markdown: kramdown

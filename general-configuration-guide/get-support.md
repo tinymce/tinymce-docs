@@ -10,9 +10,8 @@ keywords: forum forums url absolute relative security xss
 Paid premium support is available as part of [{{site.enterpriseversion}} and {{site.cloudname}} subscriptions]({{site.pricingpage}}). {{site.productname}} Enterprise customers can [submit a case support request]({{ site.baseurl }}/enterprise/support/).
 
 
-## Forums
-Open Source Community Edition users can get free access to the [{{site.productname}} Forum](https://community.tiny.cloud/). Sign up [here](https://community.tiny.cloud/).
-
+## Community support
+Open Source Community Edition users can get free help from Stack Overflow using the [`{{site.prodnamecode}}` tag]({{site.communitysupporturl}}).
 
 ## FAQ & troubleshooting
 

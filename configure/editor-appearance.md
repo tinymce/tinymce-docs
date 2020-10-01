@@ -38,6 +38,8 @@ description: Configure the editor's appearance, including menu and toolbar contr
 
 {% include configuration/inline.md %}
 
+{% include configuration/lineheight-formats.md %}
+
 {% include configuration/max-height.md %}
 
 {% include configuration/max-width.md %}

@@ -59,6 +59,12 @@ For information on:
 - The `LineHeight` editor command, see: [Commands available for {{site.productname}} - Core Editor commands]({{site.baseurl}}/advanced/editor-command-identifiers/#coreeditorcommands).
 - The `LineHeight` query command value, see: [Commands available for {{site.productname}} - Available query command values]({{site.baseurl}}/advanced/editor-command-identifiers/#availablequerycommandvalues).
 
+### Added `colgroup` support for tables
+
+A new `table_use_colgroups` option allows `colgroup` and `col` elements to be added to new tables. The `colgroup` and `col` elements can be used to set column widths. Other attributes are not supported in the TinyMCE 5.5 release.
+
+For information on the `table_use_colgroups` option, see: [Table plugin - `table_use_colgroups`]({{site.baseurl}}/plugins/table/#table_use_colgroups).
+
 ## Accompanying Premium Plugin changes
 
 The following premium plugin updates were released alongside {{site.productname}} 5.5.
@@ -82,7 +88,6 @@ For information on the    plugin, see: []().
 * Added the ability to remove images on a failed upload using the `images_upload_handler` failure callback.
 * Added `hasPlugin` function to the editor API to determine if a plugin exists or not.
 * Added the ability to use `colgroup` elements in tables.
-* Added a new setting `table_use_colgroups` for toggling whether colgroups are used in new tables.
 * Added the ability to delete and navigate HTML media elements without the `media` plugin.
 * Added `fullscreen_native` setting to the `fullscreen` plugin to enable use of the entire monitor.
 * Added table related oxide variables to the Style API for more granular control over table cell selection appearance.

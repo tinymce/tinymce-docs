@@ -124,9 +124,9 @@ For information on the    plugin, see: []().
 
 ## Deprecated features
 
-The following features have been deprecated with the release of {{site.productname}} vnumtxt:
+The following features have been deprecated with the release of {{site.productname}} 5.5:
 
-- [](#).
+- [The premium Mexican Spanish language pack has been deprecated](#thepremiummexicanspanishlanguagepackhasbeendeprecated).
 
 ### The premium Mexican Spanish language pack has been deprecated
 

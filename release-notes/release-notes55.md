@@ -73,6 +73,14 @@ The {{site.productname}} 5.5 release includes an accompanying release of the **A
 
 For information on the    plugin, see: []().
 
+### PowerPaste 5.3.3
+
+The {{site.productname}} 5.5 release includes an accompanying release of the **PowerPaste** premium plugin.
+
+**PowerPaste** 5.3.3 fixes missing `bg_BG`, `eu`, and `id` translations.
+
+For information on the PowerPaste plugin, see: [PowerPaste plugin]({{site.baseurl}}/plugins/powerpaste/).
+
 ## Minor changes for TinyMCE 5.5
 
 {{site.productname}} 5.5 introduces the following minor changes:

@@ -212,7 +212,7 @@ And that will be changed to:
 
 ### `template_preview_replace_values`
 
-This is an object containing items that will be replaced with their respective string values in the template preview shown in the template dialog, **but will not replaced when a template is inserted into the editor content**.
+This is an object containing items that will be replaced with their respective string values in the template preview shown in the template dialog, **but will not be replaced when a template is inserted into the editor content**.
 
 **Type:** `Object`
 

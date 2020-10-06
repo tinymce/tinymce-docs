@@ -6,7 +6,7 @@
 > **Note**: The table_column_resizing option requires the `table` plugin.
 {% endif %}
 
-The `table_column_resizing` option sets whether a table is resized when a user resizes a table column.
+The `table_column_resizing` option sets whether a table or other columns are resized when a user resizes a table column.
 
 There are two settings:
 

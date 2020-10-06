@@ -27,7 +27,11 @@ The new `contextmenu_avoid_overlap` option can be used to prevent context menus 
 
 For information on the `contextmenu_avoid_overlap` option, see: [User interface options - `contextmenu_avoid_overlap`]({{site.baseurl}}/configure/editor-appearance/#contextmenu_avoid_overlap).
 
-### New `table_column_resizing` option to control how table columns are resized when using the resize bars
+### New `table_column_resizing` option for controlling table column resizing
+
+A new `table_column_resizing` option sets whether a table or other columns are resized when a user resizes a table column.
+
+For information on the `table_column_resizing` option, see: [Table plugin - `table_column_resizing`]({{site.baseurl}}/plugins/table/#table_column_resizing).
 
 ### New persistent toolbar option for inline mode
 

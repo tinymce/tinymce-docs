@@ -128,9 +128,9 @@ The following features have been deprecated with the release of {{site.productna
 
 - [The premium Mexican Spanish language pack has been deprecated](#thepremiummexicanspanishlanguagepackhasbeendeprecated).
 
-### The premium Mexican Spanish language pack has been deprecated
+### The premium Spanish (Mexico) language pack has been deprecated
 
-With the release of {{site.productname}} 5.5, the premium Mexican Spanish language pack (`es_MX`) has been deprecated and will not be updated in the future. The community-translated Mexican Spanish language pack is unaffected.
+With the release of {{site.productname}} 5.5, the premium Spanish (Mexico) language pack (`es_MX`) has been deprecated and will not be updated in the future. The community-translated Spanish (Mexico) language pack is unaffected.
 
 For information on the community maintained language packs, see: [Localization options - `language`]({{site.baseurl}}/configure/localization/#language).
 

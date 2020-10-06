@@ -3,7 +3,7 @@
 {{ site.requires_5_5v }}
 
 {% if page.dir != "/plugins/table/" %}
-> **Note**: The table_column_resizing option requires the `table` plugin.
+> **Note**: The `table_column_resizing` option requires the `table` plugin.
 {% endif %}
 
 The `table_column_resizing` option sets whether a table or other columns are resized when a user resizes a table column.

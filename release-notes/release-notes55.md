@@ -126,7 +126,7 @@ For information on the    plugin, see: []().
 
 The following features have been deprecated with the release of {{site.productname}} 5.5:
 
-- [The premium Mexican Spanish language pack has been deprecated](#thepremiummexicanspanishlanguagepackhasbeendeprecated).
+- [The premium Spanish (Mexico) language pack has been deprecated](#thepremiumspanishmexicolanguagepackhasbeendeprecated).
 
 ### The premium Spanish (Mexico) language pack has been deprecated
 

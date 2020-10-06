@@ -11,7 +11,7 @@ The `table_column_resizing` option sets whether a table or other columns are res
 There are two settings:
 
 - `preservetable`: The table width is maintained when resizing table columns by changing the size of nearby columns.
-- `resizetable`: The table width is changed when resizing table columns and maintain the size of other columns.
+- `resizetable`: The table width is changed when resizing table columns and the size of other columns is maintained.
 
 **Type:** `String`
 

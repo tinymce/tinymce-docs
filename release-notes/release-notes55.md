@@ -133,6 +133,18 @@ For information on the PowerPaste plugin, see: [PowerPaste plugin]({{site.baseur
 * Fixed `editor.selection.setCursorLocation` incorrectly placing the cursor outside `pre` elements in some circumstances.
 * Fixed an exception being thrown when pressing the enter key inside pre elements while `br_in_pre` setting is false.
 
+## Deprecated features
+
+The following features have been deprecated with the release of {{site.productname}} 5.5:
+
+- [The premium Spanish (Mexico) language pack has been deprecated](#thepremiumspanishmexicolanguagepackhasbeendeprecated).
+
+### The premium Spanish (Mexico) language pack has been deprecated
+
+With the release of {{site.productname}} 5.5, the premium Spanish (Mexico) language pack (`es_MX`) has been deprecated and will not be updated in the future. The community-translated Spanish (Mexico) language pack is unaffected.
+
+For information on the community maintained language packs, see: [Localization options - `language`]({{site.baseurl}}/configure/localization/#language).
+
 ## Known issues
 
 This section describes issues that users of {{site.productname}} 5.5 may encounter, as well as possible workarounds for these issues.

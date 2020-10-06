@@ -69,15 +69,13 @@ For information on the `table_use_colgroups` option, see: [Table plugin - `table
 
 The following premium plugin updates were released alongside {{site.productname}} 5.5.
 
-### Advanced Code Editor X.Y.Z
+### Advanced Code Editor 2.2.0
 
 The {{site.productname}} 5.5 release includes an accompanying release of the **Advanced Code Editor** premium plugin.
 
-**Advanced Code Editor** X.Y.Z provides the following improvements:
+**Advanced Code Editor** 2.2.0 adds support for loading the Advanced Code Editor user interface components when the editor is in a ShadowRoot.
 
--
-
-For information on the    plugin, see: []().
+For information on the Advanced Code Editor plugin, see: [Advanced Code Editor plugin]({{site.baseurl}}/plugins/advcode/).
 
 ## Minor changes for TinyMCE 5.5
 

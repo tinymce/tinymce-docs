@@ -216,6 +216,8 @@ var mentions_select = function (mention, success) {
   });
 };
 
+var useDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
 tinymce.init({
   selector: 'textarea#full-featured',
   plugins: 'print preview powerpaste casechange importcss tinydrive searchreplace autolink autosave save directionality advcode visualblocks visualchars fullscreen image link media mediaembed template codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists checklist wordcount tinymcespellchecker a11ychecker imagetools textpattern noneditable help formatpainter permanentpen pageembed charmap tinycomments mentions quickbars linkchecker emoticons advtable',
@@ -275,6 +277,8 @@ tinymce.init({
   {{site.liveDemoIframeCSSStyles}},
   contextmenu: 'link image imagetools table spellchecker configurepermanentpen',
   a11y_advanced_options: true,
+  skin: useDarkMode ? 'oxide-dark' : 'oxide',
+  content_css: useDarkMode ? 'dark' : 'default',
   mentions_selector: '.mymention',
   mentions_fetch: mentions_fetch,
   mentions_menu_hover: mentions_menu_hover,

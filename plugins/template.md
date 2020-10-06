@@ -25,6 +25,12 @@ tinymce.init({
 });
 ```
 
+## Live example
+
+This example shows how the template plugin can be used to insert custom templates with pre-defined markup and values.
+
+{% include live-demo.html id="template" tab="js" %}
+
 ## Configuration Options
 
 These settings affect the execution of the `template` plugin. Predefined templates for items such as created dates and modified dates can be set here.
@@ -212,7 +218,7 @@ And that will be changed to:
 
 ### `template_preview_replace_values`
 
-This is an object containing items that will be replaced with their respective string values in the template preview shown in the template dialog.
+This is an object containing items that will be replaced with their respective string values in the template preview shown in the template dialog; **but will not be replaced when a template is inserted into the editor content**.
 
 **Type:** `Object`
 
@@ -344,7 +350,7 @@ Each template needs to be inside of a div with the `mceTmpl` class, like this ex
 
 ## Making Snippets
 
-Snippets are `html` code chunks that can be inserted. Replace variables will only be executed upon insert, without being wrapped in a template `div` element. So if you define `somevar1` in `template_replace_values` array it will be replaced on preview and insert.
+Snippets are `html` code chunks that can be inserted. Replace variables will only be executed upon insert, without being wrapped in a template `div` element. So if you define `somevar1` in `template_replace_values` array it will be replaced on insert. If you wish to preview the replacements before inserting, use `template_preview_replace_values`.
 
 ```html
 This is a simple <strong>snippet</strong>. Will be replaced: {$somevar1}.

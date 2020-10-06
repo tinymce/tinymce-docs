@@ -27,6 +27,8 @@ The new `contextmenu_avoid_overlap` option can be used to prevent context menus 
 
 For information on the `contextmenu_avoid_overlap` option, see: [User interface options - `contextmenu_avoid_overlap`]({{site.baseurl}}/configure/editor-appearance/#contextmenu_avoid_overlap).
 
+### New `table_column_resizing` option to control how table columns are resized when using the resize bars
+
 ### New persistent toolbar option for inline mode
 
 A new `toolbar_persist` option has been added for disabling the automatic show and hide behavior of the toolbar and menu bar for inline editors.
@@ -78,7 +80,6 @@ For information on the    plugin, see: []().
 {{site.productname}} 5.5 introduces the following minor changes:
 
 * Added a TypeScript declaration file to the bundle output for TinyMCE core.
-* Added new `table_column_resizing` setting to control how table columns are resized when using the resize bars.
 * Added the ability to remove images on a failed upload using the `images_upload_handler` failure callback.
 * Added `hasPlugin` function to the editor API to determine if a plugin exists or not.
 * Added the ability to use `colgroup` elements in tables.

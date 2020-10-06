@@ -65,19 +65,31 @@ For information on:
 - The `LineHeight` editor command, see: [Commands available for {{site.productname}} - Core Editor commands]({{site.baseurl}}/advanced/editor-command-identifiers/#coreeditorcommands).
 - The `LineHeight` query command value, see: [Commands available for {{site.productname}} - Available query command values]({{site.baseurl}}/advanced/editor-command-identifiers/#availablequerycommandvalues).
 
+### Added `colgroup` support for tables
+
+A new `table_use_colgroups` option allows `colgroup` and `col` elements to be added to new tables. The `colgroup` and `col` elements can be used to set column widths. Other attributes are not supported in the TinyMCE 5.5 release.
+
+For information on the `table_use_colgroups` option, see: [Table plugin - `table_use_colgroups`]({{site.baseurl}}/plugins/table/#table_use_colgroups).
+
 ## Accompanying Premium Plugin changes
 
 The following premium plugin updates were released alongside {{site.productname}} 5.5.
 
-### Advanced Code Editor X.Y.Z
+### Advanced Code Editor 2.2.0
 
 The {{site.productname}} 5.5 release includes an accompanying release of the **Advanced Code Editor** premium plugin.
 
-**Advanced Code Editor** X.Y.Z provides the following improvements:
+**Advanced Code Editor** 2.2.0 adds support for loading the Advanced Code Editor user interface components when the editor is in a ShadowRoot.
 
--
+For information on the Advanced Code Editor plugin, see: [Advanced Code Editor plugin]({{site.baseurl}}/plugins/advcode/).
 
-For information on the    plugin, see: []().
+### PowerPaste 5.3.3
+
+The {{site.productname}} 5.5 release includes an accompanying release of the **PowerPaste** premium plugin.
+
+**PowerPaste** 5.3.3 fixes missing `bg_BG`, `eu`, and `id` translations.
+
+For information on the PowerPaste plugin, see: [PowerPaste plugin]({{site.baseurl}}/plugins/powerpaste/).
 
 ## Minor changes for TinyMCE 5.5
 
@@ -87,7 +99,6 @@ For information on the    plugin, see: []().
 * Added the ability to remove images on a failed upload using the `images_upload_handler` failure callback.
 * Added `hasPlugin` function to the editor API to determine if a plugin exists or not.
 * Added the ability to use `colgroup` elements in tables.
-* Added a new setting `table_use_colgroups` for toggling whether colgroups are used in new tables.
 * Added the ability to delete and navigate HTML media elements without the `media` plugin.
 * Added `fullscreen_native` setting to the `fullscreen` plugin to enable use of the entire monitor.
 * Added table related oxide variables to the Style API for more granular control over table cell selection appearance.
@@ -126,6 +137,18 @@ For information on the    plugin, see: []().
 * Fixed the `dirty` flag not being correctly set during an `AddUndo` event.
 * Fixed `editor.selection.setCursorLocation` incorrectly placing the cursor outside `pre` elements in some circumstances.
 * Fixed an exception being thrown when pressing the enter key inside pre elements while `br_in_pre` setting is false.
+
+## Deprecated features
+
+The following features have been deprecated with the release of {{site.productname}} 5.5:
+
+- [The premium Spanish (Mexico) language pack has been deprecated](#thepremiumspanishmexicolanguagepackhasbeendeprecated).
+
+### The premium Spanish (Mexico) language pack has been deprecated
+
+With the release of {{site.productname}} 5.5, the premium Spanish (Mexico) language pack (`es_MX`) has been deprecated and will not be updated in the future. The community-translated Spanish (Mexico) language pack is unaffected.
+
+For information on the community maintained language packs, see: [Localization options - `language`]({{site.baseurl}}/configure/localization/#language).
 
 ## Known issues
 

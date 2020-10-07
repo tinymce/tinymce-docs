@@ -271,6 +271,8 @@ tinymce.init({
 });
 ```
 
+{% include configuration/table-column-resizing.md %}
+
 ### `table_class_list`
 
 This option enables you to specify a list of classes to present in the table options dialog box. This is useful if you want users to assign predefined classes to table elements.

@@ -17,110 +17,230 @@ The `a11ychecker` premium plugin enables you to check the HTML for various WCAG 
 
 ```js
 tinymce.init({
-    selector: 'textarea',
-    plugins: 'a11ychecker',
-    toolbar: 'a11ycheck'
+  selector: 'textarea',
+  plugins: 'a11ychecker',
+  toolbar: 'a11ycheck'
 });
 ```
 
 ## Rules
 
-These are the various rules that are checked:
+The following checks are performed by the {{pluginname}} plugin.
 
 <a class="anchor" id="D1"></a>
-<h3><a class="anchorable" href="#D1">Usage of paragraphs as headings</a></h3>
 
-**Rule info:** This rule checks that you aren't using `p` tags instead of `h1`-`h6` tags for heading content. Not using correct heading markup will make it more difficult for assistive technologies to visually represent and navigate through your content.
+### D1 - Usage of paragraphs as headings
 
-[Link to specification](https://www.w3.org/TR/2016/NOTE-WCAG20-TECHS-20161007/H42).
+**Rule description:** This rule checks that you aren't using `p` tags instead of `h1`-`h6` tags for heading content. Not using correct heading markup will make it more difficult for assistive technologies to visually represent and navigate through your content.
+
+#### {{pluginname}} rule details - D1
+
+* **Notification level (severity)**: Warning
+* **[WCAG level](https://www.w3.org/TR/WCAG20/#conformance)**: Level A ; Level AA ; Level AAA
+* **[HTML version](#a11ychecker_html_version)**: HTML4 and HTML5
+* **WCAG 2.0 specifications**:
+
+  * [H42: Using h1-h6 to identify headings](https://www.w3.org/WAI/WCAG21/Techniques/html/H42.html).
+  * [H69: Providing heading elements at the beginning of each section of content](https://www.w3.org/WAI/WCAG21/Techniques/html/H69.html).
 
 <a class="anchor" id="D2"></a>
-<h3><a class="anchorable" href="#D2">Sequential headings</a></h3>
 
-**Rule info:** This rule checks that headings are used sequentially, meaning that an `h1` heading should be followed by an `h2` heading, a `h4` heading should be followed by an `h5` heading and so on. You should never skip a level, like following an `h3` heading with an `h6` heading. Using sequential links will make it easier for assistive technology to parse your content.
+### D2 - Sequential headings
+
+**Rule description:** This rule checks that headings are used sequentially, meaning that an `h1` heading should be followed by an `h2` heading, a `h4` heading should be followed by an `h5` heading and so on. You should never skip a level, like following an `h3` heading with an `h6` heading. Using sequential links will make it easier for assistive technology to parse your content.
+
+#### {{pluginname}} rule details - D2
+
+* **Notification level (severity)**: Error
+* **[WCAG level](https://www.w3.org/TR/WCAG20/#conformance)**: Level A ; Level AA ; Level AAA
+* **[HTML version](#a11ychecker_html_version)**: HTML4 and HTML5
+* **WCAG 2.0 specification**: [G141: Organizing a page using headings](https://www.w3.org/WAI/WCAG21/Techniques/general/G141.html).
 
 <a class="anchor" id="D3"></a>
-<h3><a class="anchorable" href="#D3">Adjacent links</a></h3>
 
-**Rule info:** This rule checks that links next to other links do not have the same href. For example if you have an image link and a text link with the same href they should be contained within the same `a` element and not in two different `a` elements. If the image and the text link are put in two separate elements it can be confusing for users of screen readers and other assistive technologies.
+### D3 - Adjacent links
 
-[Link to specification](https://www.w3.org/TR/2016/NOTE-WCAG20-TECHS-20161007/H2).
+**Rule description:** This rule checks that links next to other links do not have the same href. For example if you have an image link and a text link with the same href they should be contained within the same `a` element and not in two different `a` elements. If the image and the text link are put in two separate elements it can be confusing for users of screen readers and other assistive technologies.
+
+#### {{pluginname}} rule details - D3
+
+* **Notification level (severity)**: Error
+* **[WCAG level](https://www.w3.org/TR/WCAG20/#conformance)**: Level A ; Level AA ; Level AAA
+* **[HTML version](#a11ychecker_html_version)**: HTML4 and HTML5
+* **WCAG 2.0 specification**: [H2: Combining adjacent image and text links for the same resource](https://www.w3.org/WAI/WCAG21/Techniques/html/H2.html).
 
 <a class="anchor" id="D4O"></a>
-<h3><a class="anchorable" href="#D4O">Ordered list structure</a></h3>
 
-**Rule info:** This rule checks that an `ol` element is used for ordered lists. Do not use paragraphs beginning with numbers or roman numerals instead of an actual `ol` element containing `li` items. This is to simplify navigation and parsing of the content for users of assistive technologies.
+### D4O - Ordered list structure
+
+**Rule description:** This rule checks that an `ol` element is used for ordered lists. Do not use paragraphs beginning with numbers or roman numerals instead of an actual `ol` element containing `li` items. This is to simplify navigation and parsing of the content for users of assistive technologies.
+
+#### {{pluginname}} rule details - D4O
+
+* **Notification level (severity)**: Error
+* **[WCAG level](https://www.w3.org/TR/WCAG20/#conformance)**: Level A ; Level AA ; Level AAA
+* **[HTML version](#a11ychecker_html_version)**: HTML4 and HTML5
+* **WCAG 2.0 specification**: [H48 - Using ol, ul and dl for lists or groups of links](https://www.w3.org/WAI/WCAG21/Techniques/html/H48.html).
 
 <a class="anchor" id="D4U"></a>
-<h3><a class="anchorable" href="#D4U">Unordered list structure</a></h3>
 
-**Rule info:** This rule checks that a `ul` element is used for unordered lists. Do not use paragraphs beginning with `*` or `-` or some similar character instead of an actual `ol` element containing `li` items. This is to simplify navigation and parsing of the content for users of assistive technologies.
+### D4U - Unordered list structure
+
+**Rule description:** This rule checks that a `ul` element is used for unordered lists. Do not use paragraphs beginning with `*` or `-` or some similar character instead of an actual `ol` element containing `li` items. This is to simplify navigation and parsing of the content for users of assistive technologies.
+
+#### {{pluginname}} rule details - D4U
+
+* **Notification level (severity)**: Error
+* **[WCAG level](https://www.w3.org/TR/WCAG20/#conformance)**: Level A ; Level AA ; Level AAA
+* **[HTML version](#a11ychecker_html_version)**: HTML4 and HTML5
+* **WCAG 2.0 specification**: [H48 - Using ol, ul and dl for lists or groups of links](https://www.w3.org/WAI/WCAG21/Techniques/html/H48.html).
 
 <a class="anchor" id="D5"></a>
 <a class="anchor" id="D5A"></a>
 <a class="anchor" id="D5B"></a>
-<h3><a class="anchorable" href="#D5">Contrast ratio of the text</a></h3>
+<a class="anchor" id="D5C"></a>
 
-**Rule info:** This rule checks that the contrast ratio of the text is above the specified values (4.5:1 for normal text and 3:1 for large text). Text with a low contrast ratio is hard to read, especially for users with an impaired vision.
+### D5 - Contrast ratio of the text (D5A, D5B, and D5C)
 
-[Link to specification](https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html).
+**Rule description:** This rule checks that the contrast ratio of the text is above the specified values (4.5:1 for normal text and 3:1 for large text). Text with a low contrast ratio is hard to read, especially for users with an impaired vision.
 
-<a class="anchor" id="I1"></a>
-<h3><a class="anchorable" href="#I1">Image ALT text</a></h3>
+#### {{pluginname}} rule details - D5A
 
-**Rule info:** This rule checks that all images have an alt text so screen readers and other assistive technologies can correctly present the content to your users that can't see the images visually.
+* **Notification level (severity)**: Error
+* **[WCAG level](https://www.w3.org/TR/WCAG20/#conformance)**: Level AA
+* **[HTML version](#a11ychecker_html_version)**: HTML4 and HTML5
+* **WCAG 2.0 specification**: [Ensuring that a contrast ratio of at least 3:1 exists between text (and images of text) and background behind the text](https://www.w3.org/WAI/WCAG21/Techniques/general/G145.html).
 
-<a class="anchor" id="I2"></a>
-<h3><a class="anchorable" href="#I2">Alt text filename</a></h3>
+#### {{pluginname}} rule details - D5B
 
-**Rule info:** This rule checks that the alt text of you image isn't just the same as the filename of the image.
+* **Notification level (severity)**: Error
+* **[WCAG level](https://www.w3.org/TR/WCAG20/#conformance)**: Level AA
+* **[HTML version](#a11ychecker_html_version)**: HTML4 and HTML5
+* **WCAG 2.0 specification**: [Ensuring that a contrast ratio of at least 4.5:1 exists between text (and images of text) and background behind the text](https://www.w3.org/WAI/WCAG21/Techniques/general/G18.html).
 
-<a class="anchor" id="T1"></a>
-<h3><a class="anchorable" href="#T1">Table caption</a></h3>
+#### {{pluginname}} rule details - D5C
 
-**Rule info:** This rule checks that all `table` elements have a caption that describes the data inside of the table to simplify parsing and navigation of the content for users of assistive technologies.
-
-[Link to specification](https://www.w3.org/TR/2016/NOTE-WCAG20-TECHS-20161007/H39).
-
-<a class="anchor" id="T2"></a>
-<h3><a class="anchorable" href="#T2">Complex table summary</a></h3>
-
-**Rule info:** This rule checks that all complex tables must have a `summary` attribute explaining to users of assistive technologies how to navigate through the data inside of the table. See the specification linked below for examples.
-
-[Link to specification](https://www.w3.org/TR/2016/NOTE-WCAG20-TECHS-20161007/H73).
-
-<a class="anchor" id="T3"></a>
-<h3><a class="anchorable" href="#T3">Table caption and summary</a></h3>
-
-**Rule info:** This rule checks that the table caption and summary does not have the same text content. The caption should explain **what** the table is about while the summary should explain **how** to navigate the data inside of the table.
-
-<a class="anchor" id="T4A"></a>
-<h3><a class="anchorable" href="#T4A">Table markup</a></h3>
-
-**Rule info:** This rule checks that all `tables` contain both `td` and `th` elements.
-
-[Link to specification](https://www.w3.org/TR/2016/NOTE-WCAG20-TECHS-20161007/H51).
-
-<a class="anchor" id="T4B"></a>
-<h3><a class="anchorable" href="#T4B">Table headers</a></h3>
-
-**Rule info:** This rule checks that all `table` elements contain at lease one table header - `th` - element.
-
-[Link to specification](https://www.w3.org/TR/2016/NOTE-WCAG20-TECHS-20161007/F91).
-
-<a class="anchor" id="T4C"></a>
-<h3><a class="anchorable" href="#T4C">Table heading scope</a></h3>
-
-**Rule info:** This rule checks that all table heading - `th` - elements has a `scope` attribute clarifying what scope the heading has inside of the `table`. The allowed values are `row`, `col`, `rowgroup`, and `colgroup`. This is important for users of assistive technologies to be able to parse your table data.
-
-[Link to specification](https://www.w3.org/TR/2016/NOTE-WCAG20-TECHS-20161007/H63).
+* **Notification level (severity)**: Error
+* **[WCAG level](https://www.w3.org/TR/WCAG20/#conformance)**: Level AAA
+* **[HTML version](#a11ychecker_html_version)**: HTML4 and HTML5
+* **WCAG 2.0 specification**: [Ensuring that a contrast ratio of at least 7:1 exists between text (and images of text) and background behind the text](https://www.w3.org/WAI/WCAG21/Techniques/general/G17.html).
 
 <a class="anchor" id="H93"></a>
-<h3><a class="anchorable" href="#H93">IDs must be unique</a></h3>
 
-**Rule info:** This rule checks that all `id` attributes are unique in the editor. Duplicate `id` attributes are known to cause problems for assistive technologies when they are trying to parse content.
+### H93 - IDs must be unique
 
-[Link to specification](https://www.w3.org/TR/WCAG20-TECHS/H93.html).
+**Rule description:** This rule checks that all `id` attributes are unique in the editor. Duplicate `id` attributes are known to cause problems for assistive technologies when they are trying to parse content.
+
+#### {{pluginname}} rule details - H93
+
+* **Notification level (severity)**: Error
+* **[WCAG level](https://www.w3.org/TR/WCAG20/#conformance)**: Level A ; Level AA ; Level AAA
+* **[HTML version](#a11ychecker_html_version)**: HTML4 and HTML5
+* **WCAG 2.0 specification**: [Ensuring that id attributes are unique on a Web page](https://www.w3.org/WAI/WCAG21/Techniques/html/H93.html).
+
+<a class="anchor" id="I1"></a>
+
+### I1 - Image ALT text
+
+**Rule description:** This rule checks that all images have an alt text so screen readers and other assistive technologies can correctly present the content to your users that can't see the images visually.
+
+#### {{pluginname}} rule details - I1
+
+* **Notification level (severity)**: Error
+* **[WCAG level](https://www.w3.org/TR/WCAG20/#conformance)**: Level A ; Level AA ; Level AAA
+* **[HTML version](#a11ychecker_html_version)**: HTML4 and HTML5
+* **WCAG 2.0 specification**: [Providing short text alternatives that provide a brief description of the non-text content](https://www.w3.org/WAI/WCAG21/Techniques/general/G95.html).
+
+<a class="anchor" id="I2"></a>
+
+### I2 - Alt text filename
+
+**Rule description:** This rule checks that the alt text of you image isn't just the same as the filename of the image.
+
+#### {{pluginname}} rule details - I2
+
+* **Notification level (severity)**: Error
+* **[WCAG level](https://www.w3.org/TR/WCAG20/#conformance)**: Level A ; Level AA ; Level AAA
+* **[HTML version](#a11ychecker_html_version)**: HTML4 and HTML5
+* **WCAG 2.0 specification**: [Providing short text alternatives that provide a brief description of the non-text content](https://www.w3.org/WAI/WCAG21/Techniques/general/G95.html).
+
+<a class="anchor" id="T1"></a>
+
+### T1 - Table caption
+
+**Rule description:** This rule checks that all `table` elements have a caption that describes the data inside of the table to simplify parsing and navigation of the content for users of assistive technologies.
+
+#### {{pluginname}} rule details - T1
+
+* **Notification level (severity)**: Error
+* **[WCAG level](https://www.w3.org/TR/WCAG20/#conformance)**: Level A ; Level AA ; Level AAA
+* **[HTML version](#a11ychecker_html_version)**: HTML4 and HTML5
+* **WCAG 2.0 specification**: [Using caption elements to associate data table captions with data tables](https://www.w3.org/WAI/WCAG21/Techniques/html/H39.html).
+
+<a class="anchor" id="T2"></a>
+
+### T2 - Complex table summary
+
+**Rule description:** This rule checks that all complex tables must have a `summary` attribute explaining to users of assistive technologies how to navigate through the data inside of the table. See the specification linked below for examples.
+
+#### {{pluginname}} rule details - T2
+
+* **Notification level (severity)**: Warning
+* **[WCAG level](https://www.w3.org/TR/WCAG20/#conformance)**: Level A ; Level AA ; Level AAA
+* **[HTML version](#a11ychecker_html_version)**: HTML4
+* **WCAG 2.0 specification**: [Using the summary attribute of the table element to give an overview of data tables](https://www.w3.org/WAI/WCAG21/Techniques/html/H73.html).
+
+<a class="anchor" id="T3"></a>
+
+### T3 - Table caption and summary
+
+**Rule description:** This rule checks that the table caption and summary does not have the same text content. The caption should explain **what** the table is about while the summary should explain **how** to navigate the data inside of the table.
+
+#### {{pluginname}} rule details - T3
+
+* **Notification level (severity)**: Error
+* **[WCAG level](https://www.w3.org/TR/WCAG20/#conformance)**: Level A ; Level AA ; Level AAA
+* **[HTML version](#a11ychecker_html_version)**: HTML4 and HTML5
+* **WCAG 2.0 specification**: [Using the summary attribute of the table element to give an overview of data tables](https://www.w3.org/WAI/WCAG21/Techniques/html/H73.html).
+
+<a class="anchor" id="T4A"></a>
+
+### T4A - Table markup
+
+**Rule description:** This rule checks that all `tables` contain both `td` and `th` elements.
+
+#### {{pluginname}} rule details - T4A
+
+* **Notification level (severity)**: Error
+* **[WCAG level](https://www.w3.org/TR/WCAG20/#conformance)**: Level A ; Level AA ; Level AAA
+* **[HTML version](#a11ychecker_html_version)**: HTML4 and HTML5
+* **WCAG 2.0 specification**: [Using table markup to present tabular information](https://www.w3.org/WAI/WCAG21/Techniques/html/H51.html).
+
+<a class="anchor" id="T4B"></a>
+
+### T4B - Table headers
+
+**Rule description:** This rule checks that all `table` elements contain at least one table header - `th` - element.
+
+#### {{pluginname}} rule details - T4B
+
+* **Notification level (severity)**: Error
+* **[WCAG level](https://www.w3.org/TR/WCAG20/#conformance)**: Level A ; Level AA ; Level AAA
+* **[HTML version](#a11ychecker_html_version)**: HTML4 and HTML5
+* **WCAG 2.0 specification**: [Using table markup to present tabular information](https://www.w3.org/WAI/WCAG21/Techniques/html/H51.html).
+
+<a class="anchor" id="T4C"></a>
+
+### T4C - Table heading scope
+
+**Rule description:** This rule checks that all table heading - `th` - elements has a `scope` attribute clarifying what scope the heading has inside of the `table`. The allowed values are `row`, `col`, `rowgroup`, and `colgroup`. This is important for users of assistive technologies to be able to parse your table data.
+
+#### {{pluginname}} rule details - T4C
+
+* **Notification level (severity)**: Error
+* **[WCAG level](https://www.w3.org/TR/WCAG20/#conformance)**: Level A ; Level AA ; Level AAA
+* **[HTML version](#a11ychecker_html_version)**: HTML4 and HTML5
+* **WCAG 2.0 specification**: [Using the scope attribute to associate header cells and data cells in data tables](https://www.w3.org/WAI/WCAG21/Techniques/html/H63.html).
 
 ## Options
 
@@ -165,10 +285,10 @@ If `a11ychecker_allow_decorative_images` is set to `false`, the Accessibility Ch
 
 ```js
 tinymce.init({
-    selector: 'textarea',
-    plugins: 'a11ychecker',
-    toolbar: 'a11ycheck',
-    a11ychecker_allow_decorative_images: true
+  selector: 'textarea',
+  plugins: 'a11ychecker',
+  toolbar: 'a11ycheck',
+  a11ychecker_allow_decorative_images: true
 });
 ```
 
@@ -188,10 +308,10 @@ For example, setting the version to HTML 4 will trigger the rule "Complex tables
 
 ```js
 tinymce.init({
-    selector: 'textarea',
-    plugins: 'a11ychecker',
-    toolbar: 'a11ycheck',
-    a11ychecker_html_version: 'html5'
+  selector: 'textarea',
+  plugins: 'a11ychecker',
+  toolbar: 'a11ycheck',
+  a11ychecker_html_version: 'html5'
 });
 ```
 
@@ -211,10 +331,10 @@ For example, the "Text must have a contrast ratio of at least ..." rule when usi
 
 ```js
 tinymce.init({
-    selector: 'textarea',
-    plugins: 'a11ychecker',
-    toolbar: 'a11ycheck',
-    a11ychecker_level: 'aaa'
+  selector: 'textarea',
+  plugins: 'a11ychecker',
+  toolbar: 'a11ycheck',
+  a11ychecker_level: 'aaa'
 });
 ```
 

@@ -315,11 +315,11 @@ tinymce.init({
 });
 ```
 
-## `a11ychecker_ignored_rules`
+### `a11ychecker_ignored_rules`
 
 {{ site.requires_5_5v }}
 
-{% if pluginname != a11ychecker %}
+{% if pluginname != "A11yChecker" %}
 > **Note**: The a11ychecker_ignored_rules option requires the Accessibility Checker (A11ychecker) plugin.
 {% endif %}
 
@@ -331,7 +331,13 @@ The `a11ychecker_ignored_rules` option prevents specific A11ychecker rules being
 
 **Possible values:** `'D1'`, `'D2'`, `'D3'`, `'D4O'`, `'D4U'`, `'D5A'`, `'D5B'`, `'D5C'`, `'H93'`, `'I1'`, `'I2'`, `'T1'`, `'T2'`, `'T3'`, `'T4A'`, `'T4B'`, `'T4C'`
 
-### Example: Using `a11ychecker_ignored_rules`
+#### Example: Using `a11ychecker_ignored_rules`
+
+This examples shows how to ignore the following checks (rules):
+
+* D2 - Sequential headings
+* I2 - Alt text filename
+* T4B - Table headers
 
 ```js
 tinymce.init({
@@ -339,6 +345,35 @@ tinymce.init({
   plugins: 'a11ychecker',
   toolbar: 'a11ycheck',
   a11ychecker_ignored_rules: 'D2, I2, T4B'
+});
+```
+
+### `a11ychecker_issue_url_callback`
+
+{{ site.requires_5_5v }}
+
+{% if pluginname != "A11yChecker" %}
+> **Note**: The a11ychecker_issue_url_callback option requires the Accessibility Checker (A11ychecker) plugin.
+{% endif %}
+
+The `a11ychecker_issue_url_callback` option is used to change the target URL for the "Click for more info" button (![help icon - a question mark inside a circle]({{site.baseurl}}/images/icons/help.svg)) in the Accessibility Checker dialog. By default, the "more info" links will point to `{{site.baseurl}}/plugins/a11ychecker/#<ruleId>`, such as `{{site.baseurl}}/plugins/a11ychecker/#D1`. This option can be used to set the target URL to a page or pages outside {{site.baseurl}}.
+
+**Type:** `Function`
+
+**Default Value:** `undefined`
+
+#### Example: Using `a11ychecker_issue_url_callback`
+
+This example shows how to change the link for the "Click for more info" button (![help icon - a question mark inside a circle]({{site.baseurl}}/images/icons/help.svg)) on the Accessibility Checker dialog to point to anchors at `www.example.com/tinymce/a11ychecker/more_info`.
+
+```js
+tinymce.init({
+  selector: 'textarea',  // change this value according to your html
+  plugins: 'a11ychecker',
+  toolbar: 'a11ycheck',
+  a11ychecker_issue_url_callback: function (ruleId) {
+    return `https://www.example.com/tinymce/a11ychecker/more_info#${ruleId}`
+  };
 });
 ```
 

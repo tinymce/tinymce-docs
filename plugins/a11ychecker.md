@@ -351,6 +351,7 @@ Accessibility Checker exposes couple of methods that can be called directly.
 Triggers accessibility dialog with the results of the audit and options to correct the problems, if any.
 
 #### Example: toggleaudit()
+
 ```js
 editor.plugins.a11ychecker.toggleaudit();
 ```
@@ -359,12 +360,16 @@ editor.plugins.a11ychecker.toggleaudit();
 
 Conducts accessibility audit and reports about the results without triggering the dialog. The report represents an array of issues, each of which has details about:
 
-* **severity** - *severity of the issue, might be either - info, warning or error*
-* **description** - *brief description of the issue*
-* **url** - *URL of the details page at W3 dedicated specifically to the given issue*
-* **element** - *DOM element having the issue*
+* **id** - The issue identifier used by {{site.productname}}, such as D1, T4A. For a description and other details about the issue, see [Rules](#rules).
+* **description** - A description of the issue.
+* **severity** - The severity of the issue, either:
+  * `info`
+  * `warning`
+  * `error`
+* **element** - The DOM element where the issue was found.
+* **url** - A URL to the W3 WCAG technique that needs to be addressed to clear the issue.
 
-##### Example: getReport()
+#### Example: getReport()
 
 ```js
 var issues = editor.plugins.a11ychecker.getReport();

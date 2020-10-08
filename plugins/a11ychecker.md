@@ -11,9 +11,9 @@ keywords: a11y accessibility WCAG
 
 {{site.premiumplugin}}
 
-The `a11ychecker` premium plugin enables you to check the HTML for various WCAG & Section 508 accessibility problems. It has an auto repair feature that lets a user fix identified problems.
+The `a11ychecker` premium plugin allows you to check the HTML in the editor for various WCAG & Section 508 accessibility problems. It has an auto-repair feature that lets the user fix identified problems.
 
-##### Example:
+##### Example: Enabling the A11yChecker plugin
 
 ```js
 tinymce.init({
@@ -31,7 +31,7 @@ The following checks are performed by the {{pluginname}} plugin.
 
 ### D1 - Usage of paragraphs as headings
 
-**Rule description:** This rule checks that you aren't using `p` tags instead of `h1`-`h6` tags for heading content. Not using correct heading markup will make it more difficult for assistive technologies to visually represent and navigate through your content.
+**Rule description:** This rule checks that `h1`-`h6` tags are used for heading content, not `p` tags. Not using correct heading markup will make it difficult for assistive technologies to visually represent and navigate through your content.
 
 #### {{pluginname}} rule details - D1
 
@@ -47,7 +47,9 @@ The following checks are performed by the {{pluginname}} plugin.
 
 ### D2 - Sequential headings
 
-**Rule description:** This rule checks that headings are used sequentially, meaning that an `h1` heading should be followed by an `h2` heading, a `h4` heading should be followed by an `h5` heading and so on. You should never skip a level, like following an `h3` heading with an `h6` heading. Using sequential links will make it easier for assistive technology to parse your content.
+**Rule description:** This rule checks that headings tags are used sequentially.
+
+For example: A `h1` heading should be followed by A `h2` heading, not a `h3` heading. Using sequential headings will make it easier for assistive technology to parse your content.
 
 #### {{pluginname}} rule details - D2
 
@@ -60,7 +62,9 @@ The following checks are performed by the {{pluginname}} plugin.
 
 ### D3 - Adjacent links
 
-**Rule description:** This rule checks that links next to other links do not have the same href. For example if you have an image link and a text link with the same href they should be contained within the same `a` element and not in two different `a` elements. If the image and the text link are put in two separate elements it can be confusing for users of screen readers and other assistive technologies.
+**Rule description:** This rule checks that links next to other links do not have the same `href` attribute.
+
+For example: If an image link and a text link have the same `href` attribute, both elements should be in the same `a` element. If an image link and a text link point to the same URL but are two separate elements, it can be confusing for users of screen readers and other assistive technologies.
 
 #### {{pluginname}} rule details - D3
 
@@ -73,7 +77,7 @@ The following checks are performed by the {{pluginname}} plugin.
 
 ### D4O - Ordered list structure
 
-**Rule description:** This rule checks that an `ol` element is used for ordered lists. Do not use paragraphs beginning with numbers or roman numerals instead of an actual `ol` element containing `li` items. This is to simplify navigation and parsing of the content for users of assistive technologies.
+**Rule description:** This rule checks that an `ol` element is used for ordered lists. Do not use paragraphs beginning with numbers or roman numerals instead of an `ol` element containing `li` items. This is to simplify navigation and parsing of the content for users of assistive technologies.
 
 #### {{pluginname}} rule details - D4O
 
@@ -86,7 +90,7 @@ The following checks are performed by the {{pluginname}} plugin.
 
 ### D4U - Unordered list structure
 
-**Rule description:** This rule checks that a `ul` element is used for unordered lists. Do not use paragraphs beginning with `*` or `-` or some similar character instead of an actual `ol` element containing `li` items. This is to simplify navigation and parsing of the content for users of assistive technologies.
+**Rule description:** This rule checks that a `ul` element is used for unordered lists. Do not use paragraphs beginning with `*` or `-` or some similar character instead of an `ol` element containing `li` items. This is to simplify navigation and parsing of the content for users of assistive technologies.
 
 #### {{pluginname}} rule details - D4U
 
@@ -102,7 +106,7 @@ The following checks are performed by the {{pluginname}} plugin.
 
 ### D5 - Contrast ratio of the text (D5A, D5B, and D5C)
 
-**Rule description:** This rule checks that the contrast ratio of the text is above the specified values (4.5:1 for normal text and 3:1 for large text). Text with a low contrast ratio is hard to read, especially for users with an impaired vision.
+**Rule description:** This rule checks that the contrast ratio of the text is above the specified values (4.5:1 for normal text and 3:1 for large text). Text with a low contrast ratio is hard to read for users with an impaired vision.
 
 #### {{pluginname}} rule details - D5A
 
@@ -129,7 +133,7 @@ The following checks are performed by the {{pluginname}} plugin.
 
 ### H93 - IDs must be unique
 
-**Rule description:** This rule checks that all `id` attributes are unique in the editor. Duplicate `id` attributes are known to cause problems for assistive technologies when they are trying to parse content.
+**Rule description:** This rule checks that all `id` attributes are unique in the editor. Duplicate `id` attributes are known to cause problems for assistive technologies when parsing the content.
 
 #### {{pluginname}} rule details - H93
 
@@ -142,7 +146,7 @@ The following checks are performed by the {{pluginname}} plugin.
 
 ### I1 - Image ALT text
 
-**Rule description:** This rule checks that all images have an alt text so screen readers and other assistive technologies can correctly present the content to your users that can't see the images visually.
+**Rule description:** This rule checks that all images have alternative (`alt`) text for screen readers and other assistive technologies.
 
 #### {{pluginname}} rule details - I1
 
@@ -155,7 +159,7 @@ The following checks are performed by the {{pluginname}} plugin.
 
 ### I2 - Alt text filename
 
-**Rule description:** This rule checks that the alt text of you image isn't just the same as the filename of the image.
+**Rule description:** This rule checks that the `alt` attribute text of the image is not the filename of the image.
 
 #### {{pluginname}} rule details - I2
 
@@ -168,7 +172,7 @@ The following checks are performed by the {{pluginname}} plugin.
 
 ### T1 - Table caption
 
-**Rule description:** This rule checks that all `table` elements have a caption that describes the data inside of the table to simplify parsing and navigation of the content for users of assistive technologies.
+**Rule description:** This rule checks that all `table` elements have a `caption` element describing the data inside the table to simplify parsing and navigation of the content for users of assistive technologies.
 
 #### {{pluginname}} rule details - T1
 
@@ -181,7 +185,7 @@ The following checks are performed by the {{pluginname}} plugin.
 
 ### T2 - Complex table summary
 
-**Rule description:** This rule checks that all complex tables must have a `summary` attribute explaining to users of assistive technologies how to navigate through the data inside of the table. See the specification linked below for examples.
+**Rule description:** This rule checks that all complex tables must have a `summary` attribute explaining to users of assistive technologies how to navigate through the data inside of the table.
 
 #### {{pluginname}} rule details - T2
 
@@ -220,7 +224,7 @@ The following checks are performed by the {{pluginname}} plugin.
 
 ### T4B - Table headers
 
-**Rule description:** This rule checks that all `table` elements contain at least one table header - `th` - element.
+**Rule description:** This rule checks that all `table` elements contain at least one table header (`th`) element.
 
 #### {{pluginname}} rule details - T4B
 
@@ -233,7 +237,7 @@ The following checks are performed by the {{pluginname}} plugin.
 
 ### T4C - Table heading scope
 
-**Rule description:** This rule checks that all table heading - `th` - elements has a `scope` attribute clarifying what scope the heading has inside of the `table`. The allowed values are `row`, `col`, `rowgroup`, and `colgroup`. This is important for users of assistive technologies to be able to parse your table data.
+**Rule description:** This rule checks that all table header (`th`) elements have a `scope` attribute clarifying what scope the heading has inside of the `table`. The allowed values are `row`, `col`, `rowgroup`, and `colgroup`. This is important for users of assistive technologies to be able to parse table data.
 
 #### {{pluginname}} rule details - T4C
 
@@ -292,11 +296,57 @@ tinymce.init({
 });
 ```
 
+### `a11ychecker_filter_issue`
+
+The `a11ychecker_filter_issue` option allows A11ychecker rules to be removed from the A11ychecker report using a callback function. This option is a flexible alternative to the `a11ychecker_ignored_rules` option.
+
+The function will be passed the result object of the [`getReport()` API](#getreport). To filter issues from the A11yChecker report, the callback needs to return `false` for the issue.
+
+**Type:** `Function`
+
+**Default Value:**
+
+```js
+function(issue) {
+  return true;
+}
+```
+
+#### Example: Using `a11ychecker_filter_issue` filter the A11ychecker T1 rule
+
+The callback function in the following example will return `false` if the issue `id` value is `'T1'`, filtering `'T1'` issues from the A11yChecker report.
+
+```js
+tinymce.init({
+  selector: 'textarea',  // change this value according to your html
+  plugins: 'a11ychecker',
+  toolbar: 'a11ycheck',
+  a11ychecker_filter_issue: function(issue) {
+    return issue.id !== 'T1';
+  }
+});
+```
+
+### Example: Using `a11ychecker_filter_issue` filter all A11ychecker table rules
+
+The callback function in the following example will return `false` if the issue `element` value is `'table'`, filtering all table-related issues from the A11yChecker report.
+
+```js
+tinymce.init({
+  selector: 'textarea',  // change this value according to your html
+  plugins: 'a11ychecker',
+  toolbar: 'a11ycheck',
+  a11ychecker_filter_issue: function(issue) {
+    return issue.element.nodeName.toLowerCase() !== 'table';
+  }
+});
+```
+
 ### `a11ychecker_html_version`
 
 This configuration option sets the HTML version to use when checking issues.
 
-For example, setting the version to HTML 4 will trigger the rule "Complex tables should have summaries" as summary is a valid attribute and is required for tables, however in HTML 5 the attribute is deprecated, so the rule won't be triggered.
+For example: Setting the version to HTML 4 will trigger the rule "Complex tables should have summaries", where `summary` is a valid attribute in HTML 4 but not HTML 5.
 
 **Type:** `String`
 
@@ -316,12 +366,6 @@ tinymce.init({
 ```
 
 ### `a11ychecker_ignored_rules`
-
-{{ site.requires_5_5v }}
-
-{% if pluginname != "A11yChecker" %}
-> **Note**: The a11ychecker_ignored_rules option requires the Accessibility Checker (A11ychecker) plugin.
-{% endif %}
 
 The `a11ychecker_ignored_rules` option prevents specific A11ychecker rules being checked. This feature allows developers to skip rules that flag known issues in content until the issue is fixed.
 
@@ -350,13 +394,7 @@ tinymce.init({
 
 ### `a11ychecker_issue_url_callback`
 
-{{ site.requires_5_5v }}
-
-{% if pluginname != "A11yChecker" %}
-> **Note**: The a11ychecker_issue_url_callback option requires the Accessibility Checker (A11ychecker) plugin.
-{% endif %}
-
-The `a11ychecker_issue_url_callback` option is used to change the target URL for the "Click for more info" button (![help icon - a question mark inside a circle]({{site.baseurl}}/images/icons/help.svg)) in the Accessibility Checker dialog. By default, the "more info" links will point to `{{site.baseurl}}/plugins/a11ychecker/#<ruleId>`, such as `{{site.baseurl}}/plugins/a11ychecker/#D1`. This option can be used to set the target URL to a page or pages outside {{site.baseurl}}.
+The `a11ychecker_issue_url_callback` option is used to change the target URL for the "Click for more info" button (![help icon - a question mark inside a circle]({{site.baseurl}}/images/icons/help.svg)) in the Accessibility Checker dialog. By default, the "more info" links will point to `{{site.url}}/docs/plugins/a11ychecker/#<ruleId>`, such as `{{site.url}}/docs/plugins/a11ychecker/#D1`. This option can be used to set the target URL to a page or pages outside {{site.url}}/docs/.
 
 **Type:** `Function`
 
@@ -381,7 +419,10 @@ tinymce.init({
 
 This configuration option sets the [WCAG level](https://www.w3.org/TR/WCAG20/#conformance) to use when checking issues.
 
-For example, the "Text must have a contrast ratio of at least ..." rule when using **AA** will trigger when the contrast ratio is less than 4.5:1, however when using **AAA** the rule will trigger when the ratio is less than 7.0:1.
+For example, the "Text must have a contrast ratio of at least ..." rule:
+
+* When using **AA**, A11yChecker will check for a contrast ratio of less than 4.5:1.
+* When using **AAA**, A11yChecker will check for a contrast ratio of less than 7.0:1.
 
 **Type:** `String`
 
@@ -406,11 +447,11 @@ tinymce.init({
 
 ## API
 
-Accessibility Checker exposes couple of methods that can be called directly.
+Accessibility Checker exposes two APIs, `toggleaudit` and `getReport`.
 
 ### `toggleaudit()`
 
-Triggers accessibility dialog with the results of the audit and options to correct the problems, if any.
+Opens the accessibility checker dialog with the results of the audit and options to correct the problems, if any.
 
 #### Example: toggleaudit()
 
@@ -420,14 +461,11 @@ editor.plugins.a11ychecker.toggleaudit();
 
 ### `getReport()`
 
-Conducts accessibility audit and reports about the results without triggering the dialog. The report represents an array of issues, each of which has details about:
+Conducts accessibility audit and reports the results without triggering the dialog. The report represents an array of issues, with the following details:
 
 * **id** - The issue identifier used by {{site.productname}}, such as D1, T4A. For a description and other details about the issue, see [Rules](#rules).
 * **description** - A description of the issue.
-* **severity** - The severity of the issue, either:
-  * `info`
-  * `warning`
-  * `error`
+* **severity** - The severity of the issue, either: `info`, `warning`, or `error`.
 * **element** - The DOM element where the issue was found.
 * **url** - A URL to the W3 WCAG technique that needs to be addressed to clear the issue.
 
@@ -435,4 +473,24 @@ Conducts accessibility audit and reports about the results without triggering th
 
 ```js
 var issues = editor.plugins.a11ychecker.getReport();
+
+console.log(issues);
+
+// example result
+[
+  {
+    "id": "D2",
+    "severity": "error",
+    "url": "http://www.w3.org/TR/UNDERSTANDING-WCAG20/content-structure-separation-programmatic.html",
+    "description": "Headings must be applied in sequential order. For example: Heading 1 should be followed by Heading 2, not Heading 3.",
+    "element": {}  // The element value contains the DOM element (<hn>).
+  },
+  {
+    "id": "T1",
+    "severity": "error",
+    "url": "http://www.w3.org/TR/UNDERSTANDING-WCAG20/content-structure-separation-programmatic.html",
+    "description": "Tables must have captions",
+    "element": {}  // The element value contains the DOM element (<table>).
+  }
+]
 ```

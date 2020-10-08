@@ -315,6 +315,33 @@ tinymce.init({
 });
 ```
 
+## `a11ychecker_ignored_rules`
+
+{{ site.requires_5_5v }}
+
+{% if pluginname != a11ychecker %}
+> **Note**: The a11ychecker_ignored_rules option requires the Accessibility Checker (A11ychecker) plugin.
+{% endif %}
+
+The `a11ychecker_ignored_rules` option prevents specific A11ychecker rules being checked. This feature allows developers to skip rules that flag known issues in content until the issue is fixed.
+
+**Type:** `String`
+
+**Default Value:** `''`
+
+**Possible values:** `'D1'`, `'D2'`, `'D3'`, `'D4O'`, `'D4U'`, `'D5A'`, `'D5B'`, `'D5C'`, `'H93'`, `'I1'`, `'I2'`, `'T1'`, `'T2'`, `'T3'`, `'T4A'`, `'T4B'`, `'T4C'`
+
+### Example: Using `a11ychecker_ignored_rules`
+
+```js
+tinymce.init({
+  selector: 'textarea',  // change this value according to your html
+  plugins: 'a11ychecker',
+  toolbar: 'a11ycheck',
+  a11ychecker_ignored_rules: 'D2, I2, T4B'
+});
+```
+
 ### `a11ychecker_level`
 
 This configuration option sets the [WCAG level](https://www.w3.org/TR/WCAG20/#conformance) to use when checking issues.

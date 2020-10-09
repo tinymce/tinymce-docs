@@ -295,7 +295,7 @@ If `a11ychecker_allow_decorative_images` is set to `false`, the Accessibility Ch
 
 **Possible Values:** `true`, `false`
 
-#### Example: a11ychecker_allow_decorative_images
+#### Example: Using `a11ychecker_allow_decorative_images`
 
 ```js
 tinymce.init({
@@ -337,7 +337,7 @@ tinymce.init({
 });
 ```
 
-### Example: Using `a11ychecker_filter_issue` filter all Accessibility Checker table rules
+#### Example: Using `a11ychecker_filter_issue` filter all Accessibility Checker table rules
 
 The callback function in the following example will return `false` if the issue `element` value is `'table'`, filtering all table-related issues from the Accessibility Checker report.
 
@@ -364,7 +364,7 @@ For example: Setting the version to HTML 4 will trigger the rule "Complex tables
 
 **Possible Values:** `html4`, `html5`
 
-#### Example: a11ychecker_html_version
+#### Example: Using `a11ychecker_html_version`
 
 ```js
 tinymce.init({
@@ -440,7 +440,7 @@ For example, the "Text must have a contrast ratio of at least ..." rule:
 
 **Possible Values:** `a`, `aa`, `aaa`
 
-#### Example: a11ychecker_level
+#### Example: Using `a11ychecker_level`
 
 ```js
 tinymce.init({
@@ -463,7 +463,7 @@ The {{pluginname}} plugin provides the following APIs.
 
 Opens the accessibility checker dialog with the results of the audit and options to correct the problems, if any.
 
-#### Example: toggleaudit()
+#### Example: Using `toggleaudit()`
 
 ```js
 editor.plugins.a11ychecker.toggleaudit();
@@ -479,7 +479,7 @@ Conducts accessibility audit and reports the results without triggering the dial
 * **element** - The DOM element where the issue was found.
 * **url** - A URL to the W3 WCAG technique that needs to be addressed to clear the issue.
 
-#### Example: getReport()
+#### Example: Using `getReport()`
 
 ```js
 var issues = editor.plugins.a11ychecker.getReport();

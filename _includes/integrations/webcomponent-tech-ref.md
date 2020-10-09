@@ -41,7 +41,7 @@
 
 ### Use a cloud version of the TinyMCE Web Component integration
 
-To use a cloud version of Web Component, the integration is accessable from [JSDelivr](https://www.jsdelivr.com/package/npm/@tinymce/tinymce-webcomponent).
+To use a cloud version of Web Component, the integration is accessible from [JSDelivr](https://www.jsdelivr.com/package/npm/@tinymce/tinymce-webcomponent).
 
 For example:
 

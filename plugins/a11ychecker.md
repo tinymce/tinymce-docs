@@ -308,9 +308,9 @@ tinymce.init({
 
 ### `a11ychecker_filter_issue`
 
-The `a11ychecker_filter_issue` option allows A11ychecker rules to be removed from the A11ychecker report using a callback function. This option is a flexible alternative to the `a11ychecker_ignored_rules` option.
+The `a11ychecker_filter_issue` option allows Accessibility Checker rules to be removed from the Accessibility Checker report using a callback function. This option is a flexible alternative to the `a11ychecker_ignored_rules` option.
 
-The function will be passed the result object of the [`getReport()` API](#getreport). To filter issues from the A11yChecker report, the callback needs to return `false` for the issue.
+The function will be passed the result object of the [`getReport()` API](#getreport). To filter issues from the Accessibility Checker report, the callback needs to return `false` for the issue.
 
 **Type:** `Function`
 
@@ -322,9 +322,9 @@ function(issue) {
 }
 ```
 
-#### Example: Using `a11ychecker_filter_issue` filter the A11ychecker T1 rule
+#### Example: Using `a11ychecker_filter_issue` filter the Accessibility Checker T1 rule
 
-The callback function in the following example will return `false` if the issue `id` value is `'T1'`, filtering `'T1'` issues from the A11yChecker report.
+The callback function in the following example will return `false` if the issue `id` value is `'T1'`, filtering `'T1'` issues from the Accessibility Checker report.
 
 ```js
 tinymce.init({
@@ -337,9 +337,9 @@ tinymce.init({
 });
 ```
 
-### Example: Using `a11ychecker_filter_issue` filter all A11ychecker table rules
+### Example: Using `a11ychecker_filter_issue` filter all Accessibility Checker table rules
 
-The callback function in the following example will return `false` if the issue `element` value is `'table'`, filtering all table-related issues from the A11yChecker report.
+The callback function in the following example will return `false` if the issue `element` value is `'table'`, filtering all table-related issues from the Accessibility Checker report.
 
 ```js
 tinymce.init({
@@ -377,7 +377,7 @@ tinymce.init({
 
 ### `a11ychecker_ignored_rules`
 
-The `a11ychecker_ignored_rules` option prevents specific A11ychecker rules being checked. This feature allows developers to skip rules that flag known issues in content until the issue is fixed.
+The `a11ychecker_ignored_rules` option prevents specific Accessibility Checker rules being checked. This feature allows developers to skip rules that flag known issues in content until the issue is fixed.
 
 **Type:** `String`
 
@@ -431,8 +431,8 @@ This configuration option sets the [WCAG level](https://www.w3.org/TR/WCAG20/#co
 
 For example, the "Text must have a contrast ratio of at least ..." rule:
 
-* When using **AA**, A11yChecker will check for a contrast ratio of less than 4.5:1.
-* When using **AAA**, A11yChecker will check for a contrast ratio of less than 7.0:1.
+* When using **AA**, Accessibility Checker will check for a contrast ratio of less than 4.5:1.
+* When using **AAA**, Accessibility Checker will check for a contrast ratio of less than 7.0:1.
 
 **Type:** `String`
 

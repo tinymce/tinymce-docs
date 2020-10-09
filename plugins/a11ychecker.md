@@ -13,7 +13,15 @@ keywords: a11y accessibility WCAG
 
 The `a11ychecker` premium plugin allows you to check the HTML in the editor for various WCAG & Section 508 accessibility problems. It has an auto-repair feature that lets the user fix identified problems.
 
-##### Example: Enabling the A11yChecker plugin
+## Live example
+
+{% include live-demo.html id="a11ychecker" %}
+
+## Basic setup
+
+To add the {{pluginname}} plugin to the editor, add `{{plugincode}}` to the `plugins` option in the editor configuration.
+
+For example:
 
 ```js
 tinymce.init({
@@ -23,7 +31,7 @@ tinymce.init({
 });
 ```
 
-## Rules
+## Accessibility Rules
 
 The following checks are performed by the {{pluginname}} plugin.
 
@@ -246,7 +254,9 @@ For example: If an image link and a text link have the same `href` attribute, bo
 * **[HTML version](#a11ychecker_html_version)**: HTML4 and HTML5
 * **WCAG 2.0 specification**: [Using the scope attribute to associate header cells and data cells in data tables](https://www.w3.org/WAI/WCAG21/Techniques/html/H63.html).
 
-## Options
+## Configuration Options
+
+The following configuration options affect the behavior of the {{pluginname}} plugin.
 
 {% assign includedSection = 'a11yPlugin' %}
 #{% include configuration/a11y_advanced_options.md %}
@@ -445,9 +455,9 @@ tinymce.init({
 
 {% include misc/plugin-menu-item-id-boilerplate.md %}
 
-## API
+## APIs
 
-Accessibility Checker exposes two APIs, `toggleaudit` and `getReport`.
+The {{pluginname}} plugin provides the following APIs.
 
 ### `toggleaudit()`
 
@@ -463,7 +473,7 @@ editor.plugins.a11ychecker.toggleaudit();
 
 Conducts accessibility audit and reports the results without triggering the dialog. The report represents an array of issues, with the following details:
 
-* **id** - The issue identifier used by {{site.productname}}, such as D1, T4A. For a description and other details about the issue, see [Rules](#rules).
+* **id** - The issue identifier used by {{site.productname}}, such as D1, T4A. For a description and other details about the issue, see [Accessibility Rules](#accessiblityrules).
 * **description** - A description of the issue.
 * **severity** - The severity of the issue, either: `info`, `warning`, or `error`.
 * **element** - The DOM element where the issue was found.

@@ -13,7 +13,7 @@ keywords: a11y accessibility WCAG
 
 The `a11ychecker` premium plugin allows you to check the HTML in the editor for various WCAG & Section 508 accessibility problems. It has an auto-repair feature that lets the user fix identified problems.
 
-## Live example
+## Interactive example
 
 {% include live-demo.html id="a11ychecker" %}
 

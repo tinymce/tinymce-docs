@@ -70,6 +70,10 @@ The following toolbar buttons are available for all {{site.productname}} instanc
 {% assign plugincode = "emoticons" %}
 {% include misc/plugin-toolbar-button-id-boilerplate.md %}
 
+{% assign pluginname = "Export" %}
+{% assign plugincode = "export" %}
+{% include misc/plugin-toolbar-button-id-boilerplate.md %}
+
 {% assign pluginname = "Format Painter" %}
 {% assign plugincode = "formatpainter" %}
 {% include misc/plugin-toolbar-button-id-boilerplate.md %}

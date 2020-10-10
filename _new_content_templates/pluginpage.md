@@ -22,7 +22,7 @@ keywords: plugin <plugincode> etc.
   See the emoticons, advtable,and advcode demos for examples.
 {% endcomment %}
 
-{% include live-demo.html id={{plugincode}} %}
+{% include live-demo.html id="{{plugincode}}" %}
 
 ## Basic setup
 

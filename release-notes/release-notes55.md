@@ -83,6 +83,14 @@ The {{site.productname}} 5.5 release includes an accompanying release of the **A
 
 For information on the Advanced Code Editor plugin, see: [Advanced Code Editor plugin]({{site.baseurl}}/plugins/advcode/).
 
+### Export 0.1.0
+
+A new **Export** plugin is available as a Technology Preview and provides the ability for users to export content from the editor as a rasterized PDF.
+
+This plugin will be available to all new or existing customers who have purchased a {{site.tiertwoplan}}, {{site.tierthreeplan}}, or {{site.enterpriseplan}}.
+
+For information on the Export plugin, see: [Export plugin]({{site.baseurl}}/plugins/export/).
+
 ### PowerPaste 5.3.3
 
 The {{site.productname}} 5.5 release includes an accompanying release of the **PowerPaste** premium plugin.

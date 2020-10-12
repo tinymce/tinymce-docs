@@ -1,4 +1,4 @@
-## visual
+## `visual`
 
 This true/false option gives you the ability to enable or disable the `visual` aid.
 
@@ -12,7 +12,7 @@ If the border of a table is set to `0`, then {{site.productname}} adds a dotted 
 
 **Possible Values:** `true`, `false`
 
-##### Example
+### Example: Using `visual`
 
 ```js
 tinymce.init({

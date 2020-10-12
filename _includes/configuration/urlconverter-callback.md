@@ -1,4 +1,4 @@
-## urlconverter_callback
+## `urlconverter_callback`
 
 This option enables you to add your own URL converter logic. This option should contain a JavaScript function name.
 
@@ -13,7 +13,7 @@ This function should return the converted URL as a string. This option is set to
 
 **Type:** `Javascript Function`
 
-##### Example
+### Example: Using `urlconverter_callback`
 
 ```js
 tinymce.init({

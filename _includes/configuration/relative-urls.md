@@ -1,4 +1,4 @@
-## relative_urls
+## `relative_urls`
 
 For URLs with the same domain as the page containing the {{site.productname}} editor. If set to:
 
@@ -11,7 +11,7 @@ For URLs with the same domain as the page containing the {{site.productname}} ed
 
 **Possible Values:** `true`, `false`
 
-##### Example
+### Example: Using `relative_urls`
 
 ```js
 tinymce.init({

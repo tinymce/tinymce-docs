@@ -1,4 +1,4 @@
-## resize
+## `resize`
 
 This option gives you the ability to disable the resize handle or set it to resize both horizontal and vertically. The option can be true, false or the string `'both'`. `False` disables the resize, `true` enables vertical resizing only, `'both'` makes it possible to resize in both directions horizontal and vertical.
 
@@ -12,7 +12,7 @@ This option gives you the ability to disable the resize handle or set it to resi
 
 {{site.differs_for_mobile}}
 
-##### Example
+#### Example: Disabling editor resizing
 
 ```js
 tinymce.init({
@@ -29,7 +29,7 @@ tinymce.init({
 
 **Possible Values:** `true`, `false`, `'both'`
 
-##### Example
+#### Example: Enabling vertical and horizontal editor resizing
 
 ```js
 tinymce.init({

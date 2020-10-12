@@ -15,7 +15,7 @@ This option enables the merge format feature of the {{pluginname}} plugin. This 
 
 **Possible Values:** `true`, `false`
 
-##### Example: `paste_merge_formats`
+#### Example: Using `paste_merge_formats`
 
 ```js
 tinymce.init({

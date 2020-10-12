@@ -1,4 +1,4 @@
-## toolbar
+## `toolbar`
 
 This option allows you to specify the [buttons]({{ site.baseurl }}/advanced/available-toolbar-buttons/) and the order that they will appear on {{site.productname}}'s toolbar.
 
@@ -8,7 +8,7 @@ To specify the buttons that should appear on {{site.productname}}'s toolbar, the
 
 **Type:** `String`
 
-##### Example grouped toolbar
+#### Example grouped toolbar
 
 ```js
 tinymce.init({
@@ -19,13 +19,13 @@ tinymce.init({
 
 > **Note**: The size of toolbar groups affects the behavior of the toolbar drawer when the `toolbar_mode` is set to `'floating'` (default value) or `'sliding'`. For more information, see: [the `toolbar_mode` setting]({{site.baseurl}}/configure/editor-appearance/#toolbar_mode).
 
-### Adding toolbar group labels
+#### Adding toolbar group labels
 
 To specify labels to the grouped buttons that appear on {{site.productname}}'s toolbar, the `toolbar` option should be provided with an array of objects with `name` and `items` as object properties. The `name` should be a string value that will be set as the `title` attribute on the `div` containing the toolbar group. The `items` should be an array of strings that indicate the buttons that should appear within the particular toolbar group.
 
 **Type:** `Array`
 
-##### Example
+##### Example: Adding toolbar group labels
 
 ```js
 tinymce.init({
@@ -60,7 +60,7 @@ To disable the toolbar, the toolbar option should be provided a boolean value of
 
 **Possible Values:** `true`, `false`
 
-##### Example
+#### Example: Disabling the toolbar
 
 ```js
 tinymce.init({
@@ -75,7 +75,7 @@ To specify multiple toolbars, the toolbar option should be provided with an arra
 
 **Type:** `Array`
 
-##### Example
+#### Example: Adding multiple toolbars
 
 ```js
 tinymce.init({

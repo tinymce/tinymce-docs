@@ -16,7 +16,7 @@ This plugin adds directionality controls to the toolbar, enabling {{site.product
 
 **Possible Values:** `ltr`, `rtl`
 
-##### Directionality plugin example
+## Basic setup
 
 ```js
 tinymce.init({

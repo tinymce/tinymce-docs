@@ -12,7 +12,7 @@ controls: toolbar button, menu item
 
 This plugin adds a toolbar button that allows a user to edit the HTML code hidden by the WYSIWYG view. It also adds the menu item `Source code` under the `Tools` menu.
 
-##### Example
+## Basic setup
 
 ```js
 tinymce.init({

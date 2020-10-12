@@ -12,7 +12,7 @@ Note that this option won't convert incomplete URLs. For example `example.com` w
 
 > **Note**: Pasted URLs are automatically converted to `a` elements by {{site.productname}}'s core code, not by the autolink plugin. Therefore, behaviour and settings described here do not apply to pasted links.
 
-##### Autolink plugin example
+## Basic setup
 
 ```js
 tinymce.init({
@@ -31,7 +31,7 @@ This option allows you to specify a default `target` value for links inserted by
 
 **Type:** `String`
 
-##### Example
+#### Example: Using `default_link_target`
 
 ```js
 tinymce.init({
@@ -53,7 +53,7 @@ This option allows you to set a default protocol for links inserted by the autol
 
 **Default Value:** `'http'`
 
-##### Example
+#### Example: Using `link_default_protocol`
 
 ```js
 tinymce.init({

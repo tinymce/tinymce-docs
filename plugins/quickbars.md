@@ -23,7 +23,7 @@ This plugin also adds three new toolbar buttons:
 
 > **Note**: The Quick Toolbars plugin provides the contextual toolbars found in the `inlite` theme from TinyMCE 4 and earlier.
 
-#### Example: Enabling all context toolbars with their default toolbar buttons
+## Basic setup
 
 ```js
 tinymce.init({
@@ -108,7 +108,7 @@ tinymce.init({
 
 The Quick Image (`quickimage`) toolbar button allows users to quickly insert images from their computer into the editor. It is included in the Quick Insert context toolbar by default and can be used in other toolbars.
 
-> Note: To enable automatic upload of images on insertion, [image upload]({{ site.baseurl }}/advanced/handle-async-image-uploads/) must be configured.
+> **Note**: To enable automatic upload of images on insertion, [image upload]({{ site.baseurl }}/advanced/handle-async-image-uploads/) must be configured.
 
 #### Example: Using quickimage in the editor toolbar
 

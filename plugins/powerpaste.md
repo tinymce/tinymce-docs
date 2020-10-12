@@ -12,8 +12,7 @@ keywords: enterprise powerpaste power paste paste_as_text powerpaste_word_import
 
 The {{site.productname}} **PowerPaste** plugin automatically cleans up content from Microsoft Word/Excel and HTML sources to ensure clean, compliant content that matches the look and feel of the site.
 
->***Note:*** _Due to limitations in Excel online (part of Office Live) PowerPaste does not support pasting from Excel online.  If you paste content using Excel in Office Live you will get a plain text representation of the content._
-
+> **Note:** Due to limitations in Excel online (part of Office Live) PowerPaste does not support pasting from Excel online.  If you paste content using Excel in Office Live you will get a plain text representation of the content.
 
 ## Usage
 
@@ -23,10 +22,10 @@ To paste clipboard content as plain text, users can click the "Paste As Text" to
 
 If you configure **PowerPaste** to allow local images (see the [`powerpaste_allow_local_images`](#powerpaste_allow_local_images) setting below), then images copied from Microsoft Word and other sources will appear in {{site.productname}} as Base64 encoded images. You can have {{site.productname}} automatically upload Base64 encoded images for reverting back to a standard image as described in the [image upload documentation]({{site.baseurl}}/advanced/handle-async-image-uploads/).
 
->***Note:*** _PowerPaste (when configured to allow local images) will import images from pasted Microsoft Word/Excel content.  When doing this, **PowerPaste** extracts Base64 encoded images from the clipboard.  Images larger than approximately 8.5MB may fail to import based on technical limitations of web browsers._
-
+> **Note:** PowerPaste (when configured to allow local images) will import images from pasted Microsoft Word/Excel content.  When doing this, **PowerPaste** extracts Base64 encoded images from the clipboard.  Images larger than approximately 8.5MB may fail to import based on technical limitations of web browsers.
 
 ## Cloud Installation
+
 To enable the {{site.productname}} **PowerPaste** plugin with [{{site.cloudname}}]({{ site.baseurl }}/cloud-deployment-guide/editor-and-features/):
 
 1. If you are currently using the `paste` plugin provided with {{site.productname}}, disable it by removing it from the `plugins` list.
@@ -42,13 +41,13 @@ tinymce.init({
 ```
 
 ## Self-hosted Installation
+
 To enable the {{site.productname}} **PowerPaste** plugin:
 
 1. If you are currently using the `paste` plugin provided with {{site.productname}}, disable it by removing it from the `plugins` list.
 2. Add `powerpaste` to the `plugins` list in  your {{site.productname}} configuration.
 
 See the example {{site.productname}} configuration above.
-
 
 ## Using the PowerPaste Plugin with Module Loaders
 
@@ -76,7 +75,7 @@ This option controls the default state of the **Paste as text** menu item, which
 
 The supported values are `true` and `false`. The default is `false`.
 
-##### Example: paste_as_text
+#### Example: paste_as_text
 
 ```js
 tinymce.init({
@@ -104,7 +103,7 @@ The supported values are:
 * `merge` - Preserve the inline formatting and structure of the original document. Invalid and proprietary styles, tags and attributes are still removed ensuring that the HTML is valid while more closely matching the original document formatting.
 * `prompt` - Prompt the user to choose between the clean and merge options after attempting to paste word content.
 
->***Note:*** *When using the Windows operating system, copying and pasting content from Word 2013 (or later) in "Protected View" will result in plain, unformatted text. This is due to how Protected View interacts with the clipboard.*
+> **Note:** When using the Windows operating system, copying and pasting content from Word 2013 (or later) in "Protected View" will result in plain, unformatted text. This is due to how Protected View interacts with the clipboard.
 
 ### powerpaste_html_import
 
@@ -126,7 +125,7 @@ When set to `true`, Base64 encoded images using a data URI in the copied content
 
 **Possible values:**  `true`, `false`
 
->***Note:*** *If you configure* ***PowerPaste*** *to allow local images, you can have {{site.productname}} automatically upload Base64 encoded images for conversion back to a standard image as described on the [image upload documentation]({{ site.baseurl }}/advanced/handle-async-image-uploads/).*
+> **Note:** If you configure ***PowerPaste*** to allow local images, you can have {{site.productname}} automatically upload Base64 encoded images for conversion back to a standard image as described on the [image upload documentation]({{ site.baseurl }}/advanced/handle-async-image-uploads/).
 
 {% include configuration/paste-block-drop.md %}
 
@@ -138,7 +137,7 @@ The list of inline elements that should be removed on paste can be specified by 
 
 **Possible values:**  A comma-separated string.
 
-##### Example: powerpaste_clean_filtered_inline_elements
+#### Example: powerpaste_clean_filtered_inline_elements
 
 ```js
 tinymce.init({
@@ -160,7 +159,7 @@ For example, browsers do not allow PowerPaste to access the file system. If your
 
 **Possible values:** `true`, `false`
 
-##### Example: powerpaste_keep_unsupported_src
+#### Example: powerpaste_keep_unsupported_src
 
 ```js
 tinymce.init({
@@ -184,7 +183,7 @@ tinymce.init({
 
 Developers can add custom filtering before and after **PowerPaste**'s filters are run using the pre-filtering and post-filtering callbacks. These can be added as init options or at runtime using event listeners.
 
-> Note: These callbacks are also triggered by the core Paste plugin, but when triggered by PowerPaste they are passed more data.
+> **Note**: These callbacks are also triggered by the core Paste plugin, but when triggered by PowerPaste they are passed more data.
 
 ### paste_preprocess
 

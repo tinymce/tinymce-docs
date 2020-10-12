@@ -14,7 +14,7 @@ This plugin adds the ability to see invisible characters like `&nbsp;` displayed
 
 **Type:** `String`
 
-##### Example
+## Basic setup
 
 ```js
 tinymce.init({
@@ -38,6 +38,8 @@ This option enables specifying the default state of the Visual Blocks plugin.
 **Default Value:** `false`
 
 **Possible Values:** `true`, `false`
+
+#### Example: Using `visualchars_default_state`
 
 ```js
 tinymce.init({

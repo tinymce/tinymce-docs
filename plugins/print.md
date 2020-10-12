@@ -14,7 +14,7 @@ This plugin adds a print button to the toolbar. It also adds a `Print` item to t
 
 **Type:** `String`
 
-##### Example
+## Basic setup
 
 ```js
 tinymce.init({

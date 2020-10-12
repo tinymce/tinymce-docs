@@ -12,7 +12,7 @@ The default pattern is similar to markdown syntax, so the user can type `# text`
 
 **Type:** `String`
 
-##### Example
+## Basic setup
 
 ```js
 tinymce.init({
@@ -21,7 +21,7 @@ tinymce.init({
 });
 ```
 
-### Options
+## Options
 
 This setting affects the execution of the `textpattern` plugin. Text patterns that are matched by the editor can be changed here.
 
@@ -33,9 +33,9 @@ There are three types of patterns: `inline`, `block`, and `replacement` patterns
 
 When using list commands make sure that the [lists plugin]({{ site.baseurl }}/plugins/lists) is registered for normalized behavior across browsers.
 
-> Note: Formats and commands must be already registered with the editor. See the [formats]({{ site.baseurl }}/configure/content-formatting/#formats) and [commands]({{ site.baseurl }}/api/tinymce/tinymce.editorcommands/) documentation for more information.
+> **Note**: Formats and commands must be already registered with the editor. See the [formats]({{ site.baseurl }}/configure/content-formatting/#formats) and [commands]({{ site.baseurl }}/api/tinymce/tinymce.editorcommands/) documentation for more information.
 
-**Default Value:**
+#### The default patterns for the `textpattern` plugin
 
 ```js
 [
@@ -63,9 +63,9 @@ Inline patterns must have the following:
 
 This allows for patterns to be used to either apply a format or execute a command, optionally with the given value.
 
-> Note: Inline patterns are executed on either pressing the **spacebar** or the **Enter** key.
+> **Note**: Inline patterns are executed on either pressing the **spacebar** or the **Enter** key.
 
-##### Example
+##### Example: Using `textpattern` inline patterns
 
 ```js
 tinymce.init({
@@ -95,9 +95,9 @@ Block patterns must have the following:
 
 The block patterns do not have an `end` property. This allows for patterns to be used to either apply a block format or execute a command, optionally, with the given value.
 
-> Note: Block patterns are only executed on **Enter**, **not** on pressing the **spacebar**.
+> **Note**: Block patterns are only executed on **Enter**, **not** on pressing the **spacebar**.
 
-##### Example
+##### Example: Using `textpattern` block patterns
 
 ```js
 tinymce.init({
@@ -136,10 +136,10 @@ Replacement patterns must have the following:
 
 Whether a replacement pattern inserts a block or inline element depends on what the `replacement` string is.
 
-> Note: Replacement patterns are executed on either pressing the **spacebar** or the **Enter** key.
+> **Note**: Replacement patterns are executed on either pressing the **spacebar** or the **Enter** key.
 
 
-##### Example
+##### Example: Using `textpattern` replacement patterns
 
 ```js
 tinymce.init({

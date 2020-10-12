@@ -13,7 +13,7 @@ This plugin enables the user to insert an image into {{site.productname}}'s edit
 
 **Type:** `String`
 
-##### Example
+## Basic setup
 
 ```js
 tinymce.init({
@@ -56,7 +56,7 @@ This option lets users enable captions for images. When this option is enabled t
 
 **Possible Values:** `true`, `false`
 
-##### Example
+#### Example: Using `image_caption`
 
 ```js
 tinymce.init({
@@ -89,7 +89,7 @@ This option lets you specify a predefined list of sources for images. `image_lis
 
 **Type:** `String`
 
-##### Example
+#### Example: Using `image_list`
 
 ```js
 tinymce.init({
@@ -104,7 +104,7 @@ tinymce.init({
 });
 ```
 
-**Example of JSON URL with images**
+#### Example of an external script that returns an json array of images
 
 You can also configure a URL with JSON data. The format of that list is the same as above.
 
@@ -118,7 +118,7 @@ tinymce.init({
 });
 ```
 
-**Example of a custom async function**
+#### Example of a custom async function
 
 ```js
 tinymce.init({
@@ -126,11 +126,11 @@ tinymce.init({
   plugins: 'image',
   menubar: 'insert',
   toolbar: 'image',
-    image_list: function(success) {
-      success([
-        {title: 'Dog', value: 'mydog.jpg'},
-        {title: 'Cat', value: 'mycat.gif'}
-      ]);
+  image_list: function(success) {
+    success([
+      {title: 'Dog', value: 'mydog.jpg'},
+      {title: 'Cat', value: 'mycat.gif'}
+    ]);
   }
 });
 ```
@@ -145,7 +145,7 @@ This option adds an "Advanced" tab to the image dialog allowing you to add custo
 
 **Possible Values:** `true`, `false`
 
-##### Example
+#### Example: Using `image_advtab`
 
 ```js
 tinymce.init({
@@ -163,7 +163,7 @@ This option lets you specify a predefined list of classes to add to an image. It
 
 **Type:** `String`
 
-##### Example
+#### Example: Using `image_class_list`
 
 ```js
 tinymce.init({
@@ -189,7 +189,7 @@ This options allows you disable the image description input field in the image d
 
 **Possible Values:** `true`, `false`
 
-##### Example
+#### Example: Using `image_description`
 
 ```js
 tinymce.init({
@@ -211,7 +211,7 @@ This options allows you disable the image dimensions input field in the image di
 
 **Possible Values:** `true`, `false`
 
-##### Example
+#### Example: Using `image_dimensions`
 
 ```js
 tinymce.init({
@@ -229,7 +229,7 @@ This option allows you to specify a URL prefix that will be applied to images wh
 
 **Type:** `String`
 
-##### Example
+#### Example: Using `image_prepend_url`
 
 ```js
 tinymce.init({
@@ -251,7 +251,7 @@ This options allows you enable the image title input field in the image dialog.
 
 **Possible Values:** `true`, `false`
 
-##### Example
+#### Example: Using `image_title`
 
 ```js
 tinymce.init({
@@ -273,7 +273,7 @@ This option adds an "Upload" tab to the image dialog allowing you to upload loca
 
 **Possible Values:** `true`, `false`
 
-##### Example
+#### Example: Using `image_uploadtab`
 
 ```js
 tinymce.init({

@@ -14,7 +14,7 @@ This plugin allows a user to see block level elements in the editable area. It i
 
 **Type:** `String`
 
-##### Example
+## Basic setup
 
 ```js
 tinymce.init({
@@ -38,6 +38,8 @@ This option enables you to specify the default state of the Visual Blocks plugin
 **Default Value:** `false`
 
 **Possible Values:** `true`, `false`
+
+#### Example: Using `visualblocks_default_state`
 
 ```js
 tinymce.init({

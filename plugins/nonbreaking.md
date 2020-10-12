@@ -14,7 +14,7 @@ This plugin adds a button for inserting nonbreaking space entities `&nbsp;` at t
 
 **Type:** `String`
 
-##### Example
+## Basic setup
 
 ```js
 tinymce.init({
@@ -25,7 +25,7 @@ tinymce.init({
 });
 ```
 
-### Options
+## Options
 
 ### `nonbreaking_force_tab`
 
@@ -43,7 +43,7 @@ However, the `true` condition does capture the tab key and contain it within the
 
 **Possible Values:** `true`, `false`
 
-##### Example
+#### Example: Using `nonbreaking_force_tab`
 
 ```js
 tinymce.init({
@@ -92,7 +92,7 @@ This option allows you to force {{site.productname}} to wrap non-breaking space 
 
 **Possible Values:** `true`, `false`
 
-##### Example
+#### Example: Using `nonbreaking_wrap`
 
 ```js
 tinymce.init({

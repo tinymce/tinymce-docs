@@ -57,7 +57,7 @@ The following checks are performed by the {{pluginname}} plugin.
 
 **Rule description:** This rule checks that headings tags are used sequentially.
 
-For example: A `h1` heading should be followed by A `h2` heading, not a `h3` heading. Using sequential headings will make it easier for assistive technology to parse your content.
+For example: A `h1` heading should be followed by a `h2` heading, not a `h3` heading. Using sequential headings will make it easier for assistive technology to parse your content.
 
 #### {{pluginname}} rule details - D2
 

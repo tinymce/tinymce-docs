@@ -1,4 +1,4 @@
-## element_format
+## `element_format`
 
 This option controls whether elements are output in the HTML or XHTML mode. `xhtml` is the default state for this option. This means that for example `<br />` will be `<br>` if you set this option to `html`.
 
@@ -8,7 +8,7 @@ This option controls whether elements are output in the HTML or XHTML mode. `xht
 
 **Possible Values:** `xhtml`, `html`
 
-##### Example
+### Example: Using `element_format`
 
 ```js
 // Output elements in HTML style

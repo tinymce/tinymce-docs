@@ -1,4 +1,4 @@
-## allow_html_in_named_anchor
+## `allow_html_in_named_anchor`
 
 This option allows you to specify whether the editor should parse and keep `html` within named `anchor` tags.
 
@@ -8,7 +8,7 @@ This option allows you to specify whether the editor should parse and keep `html
 
 **Possible Values:** `true`, `false`
 
-##### Example
+### Example: Using `allow_html_in_named_anchor`
 
 ```js
 tinymce.init({

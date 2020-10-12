@@ -1,4 +1,4 @@
-## content_style
+## `content_style`
 
 This option allows you to set custom CSS styles as a string that is injected into the editor's iframe.
 
@@ -6,7 +6,7 @@ These styles are useful for previewing content as it appears outside the editor.
 
 **Type:** `String`
 
-##### Example
+### Example: Applying one CCS style using `content_style`
 
 ```js
 tinymce.init({
@@ -17,7 +17,7 @@ tinymce.init({
 
 To add two or more styles with this option, provide the styles as a single string.
 
-##### Example
+### Example: Applying two or more CCS styles using `content_style`
 
 ```js
 tinymce.init({

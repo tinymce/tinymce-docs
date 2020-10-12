@@ -1,4 +1,4 @@
-## file_picker_types
+## `file_picker_types`
 
 This option enables you to specify what types of file pickers you need by a space or comma separated list of type names. There are currently three valid types: `file`, `image` and `media`.
 
@@ -6,7 +6,7 @@ This option enables you to specify what types of file pickers you need by a spac
 
 **Possible Values:** `file`, `image`, `media`
 
-##### Example
+### Example: Using `file_picker_types`
 
 ```js
 tinymce.init({

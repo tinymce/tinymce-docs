@@ -1,4 +1,4 @@
-## draggable_modal
+## `draggable_modal`
 
 Use the `draggable_modal` option to enable dragging for [modal dialogs]({{site.baseurl}}/ui-components/dialog/).
 
@@ -8,7 +8,7 @@ Use the `draggable_modal` option to enable dragging for [modal dialogs]({{site.b
 
 **Possible Values:** `true`, `false`
 
-##### Example
+### Example: Using `draggable_modal`
 
 ```js
 tinymce.init({

@@ -431,8 +431,8 @@ This configuration option sets the [WCAG level](https://www.w3.org/TR/WCAG20/#co
 
 For example, the "Text must have a contrast ratio of at least ..." rule:
 
-* When using **AA**, Accessibility Checker will check for a contrast ratio of less than 4.5:1.
-* When using **AAA**, Accessibility Checker will check for a contrast ratio of less than 7.0:1.
+* When using **AA**, Accessibility Checker will check that the contrast ratio is not less than 4.5:1.
+* When using **AAA**, Accessibility Checker will check that the contrast ratio is not less than 7.0:1.
 
 **Type:** `String`
 

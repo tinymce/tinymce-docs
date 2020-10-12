@@ -1,10 +1,10 @@
-## forced_root_block_attrs
+## `forced_root_block_attrs`
 
 This option enables you specify attributes for the [forced_root_block](#forced_root_block).
 
 **Type:** `Object`
 
-##### Example
+### Example: Using `forced_root_block_attrs`
 
 ```js
 tinymce.init({

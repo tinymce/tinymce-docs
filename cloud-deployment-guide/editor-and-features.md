@@ -29,10 +29,7 @@ The following example adds a script tag into the application that inserts the co
 |1|no-api-key|Replace with your api key|
 |2|origin=|A `referrerpolicy` specifies how much of the current page's URL is sent in the `Referer` header when the browser fetches page resources (for example, the {{site.productname}} editor). The use of the `Referer` header ensures API keys are only used on domains registered to their owners. We only care about the domain portion however (similar to the operation of `Origin` header), so for improved performance and privacy always set the `referrerpolicy` to `origin` when requesting {{site.cloudname}} resources.|
 
-
-
 ![Script Tag Description]({{ site.baseurl }}/images/scripttag.png)
-
 
 ### Step 2: Load, customize and interact with TinyMCE
 
@@ -44,18 +41,18 @@ Extend the [{{site.productname}} configuration]({{ site.baseurl }}/configure/) t
 
 * [Mentions]({{ site.baseurl }}/plugins/mentions/)
 * [{{site.cloudfilemanager}}]({{ site.baseurl }}/plugins/drive/)
-* [Comments 2.0]({{ site.baseurl }}/plugins/comments/)
+* [Comments]({{ site.baseurl }}/plugins/comments/)
 * [Page Embed]({{ site.baseurl }}/plugins/pageembed/)
 * [Permanent Pen]({{ site.baseurl }}/plugins/permanentpen/)
 * [Format Painter]({{ site.baseurl }}/plugins/formatpainter/)
 * [PowerPaste]({{ site.baseurl }}/plugins/powerpaste/)
 * [Spell Checker Pro]({{ site.baseurl }}/plugins/tinymcespellchecker/)
 
-> Note: `spellchecker_rpc_url` is **not** required when enabling this plugin via [{{site.cloudname}}]({{ site.baseurl }}/cloud-deployment-guide/).
+> **Note**: `spellchecker_rpc_url` is **not** required when enabling this plugin via [{{site.cloudname}}]({{ site.baseurl }}/cloud-deployment-guide/).
 
 * [Image Tools (with configured image proxy)]({{ site.baseurl }}/plugins/imagetools/)
 
-> Note: Configuration of the `imagetools_cors_hosts` and `imagetools_proxy` properties occurs automatically.
+> **Note**: Configuration of the `imagetools_cors_hosts` and `imagetools_proxy` properties occurs automatically.
 
 * [Moxie Manager]({{ site.baseurl }}/plugins/moxiemanager/)
 * [Accessibility Checker]({{ site.baseurl }}/plugins/a11ychecker/)
@@ -63,9 +60,10 @@ Extend the [{{site.productname}} configuration]({{ site.baseurl }}/configure/) t
 * [Enhanced Media Embed]({{ site.baseurl }}/plugins/mediaembed/)
 * [Link Checker]({{ site.baseurl }}/plugins/linkchecker/)
 
-> Note: It may take up to 30 minutes for the purchased plugin to be available to {{site.productname}}. Clear the browser's cache.
+> **Note**: It may take up to 30 minutes for the purchased plugin to be available to {{site.productname}}. Clear the browser's cache.
 
 ### Step 4: Forward proxy configuration
+
 Ensure that the following URLs are accessible via this proxy if the network has a forward proxy that controls access to the internet.
 
 * All URLs where the editor is deployed.
@@ -88,7 +86,7 @@ Alternatively, [download a language pack]({{site.gettiny}}/language-packages/) t
 
 Migrating from a self-hosted environment to {{site.cloudname}} is easy. Remove the existing script tag that loads {{site.productname}}’s JavaScript.
 
-> Note: The script tag typically references `tinymce.min.js` hosted within the application or available at a legacy CDN.
+> **Note**: The script tag typically references `tinymce.min.js` hosted within the application or available at a legacy CDN.
 
 Replace the script tag with the following:
 
@@ -100,7 +98,7 @@ Replace the script tag with the following:
 
 Reference [external_plugins]({{ site.baseurl }}/configure/integration-and-setup/#external_plugins) to ensure custom plugins or modified plugins continue to function in the {{site.cloudname}} deployment.
 
-> Warning! Do not use the regular [plugins]({{ site.baseurl }}/general-configuration-guide/work-with-plugins/) configuration element.
+> **Warning**: Do not use the regular [plugins]({{ site.baseurl }}/general-configuration-guide/work-with-plugins/) configuration element.
 
 ### Step 3: Specify purchased TinyMCE plugins and toolbar buttons
 
@@ -108,18 +106,18 @@ Extend the [{{site.productname}} configuration]({{ site.baseurl }}/configure/) t
 
 * [Mentions]({{ site.baseurl }}/plugins/mentions/)
 * [{{site.cloudfilemanager}}]({{ site.baseurl }}/plugins/drive/)
-* [Comments 2.0]({{ site.baseurl }}/plugins/comments/)
+* [Comments]({{ site.baseurl }}/plugins/comments/)
 * [Page Embed]({{ site.baseurl }}/plugins/pageembed/)
 * [Permanent Pen]({{ site.baseurl }}/plugins/permanentpen/)
 * [Format Painter]({{ site.baseurl }}/plugins/formatpainter/)
 * [Powerpaste]({{ site.baseurl }}/plugins/powerpaste/)
 * [Spell Checker Pro]({{ site.baseurl }}/plugins/tinymcespellchecker/)
 
-> Note: `spellchecker_rpc_url` is **not** required when enabling this plugin via [{{site.cloudname}}]({{ site.baseurl }}/cloud-deployment-guide/).
+> **Note**: `spellchecker_rpc_url` is **not** required when enabling this plugin via [{{site.cloudname}}]({{ site.baseurl }}/cloud-deployment-guide/).
 
 * [Image tools (with configured image proxy)]({{ site.baseurl }}/plugins/imagetools/)
 
-> Note: Configuration of the `imagetools_cors_hosts` and `imagetools_proxy` properties occurs automatically.
+> **Note**: Configuration of the `imagetools_cors_hosts` and `imagetools_proxy` properties occurs automatically.
 
 * [Moxie Manager]({{ site.baseurl }}/plugins/moxiemanager/)
 * [Accessibility Checker]({{ site.baseurl }}/plugins/a11ychecker/)

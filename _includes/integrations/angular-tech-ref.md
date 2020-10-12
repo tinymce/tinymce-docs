@@ -101,7 +101,7 @@ To register for a {{site.cloudname}} API key, visit the [sign-up page]({{site.ac
 
 **Type:** String
 
-##### Example: `apiKey`
+##### Example: Using `apiKey`
 
 ```html
 <editor
@@ -139,7 +139,7 @@ The `disabled` property can dynamically switch the editor between a "disabled" (
 
 **Possible values:**  `true`, `false`
 
-##### Example: `disabled`
+##### Example: Using `disabled`
 
 ```html
 <editor
@@ -154,7 +154,7 @@ An id for the editor. Used for retrieving the editor instance using the `tinymce
 
 **Type:** String
 
-##### Example: `id`
+##### Example: Using `id`
 
 ```html
 <editor
@@ -171,7 +171,7 @@ For information on the {{site.productname}} selector (`tinymce.init`), see: [Bas
 
 **Type:** Object
 
-##### Example: `init`
+##### Example: Using `init`
 
 ```html
 <editor
@@ -191,7 +191,7 @@ Initial content of the editor when the editor is initialized.
 
 **Type:** String
 
-##### Example: `initialValue`
+##### Example: Using `initialValue`
 
 ```html
 <editor
@@ -208,7 +208,7 @@ For information on inline mode, see: [User interface options - `inline`]({{site.
 
 **Possible values:**  `true`, `false`
 
-##### Example: `inline`
+##### Example: Using `inline`
 
 ```html
 <editor
@@ -223,7 +223,7 @@ For information on adding plugins to {{site.productname}}, see: [Add plugins to 
 
 **Type:** String or Array
 
-##### Example: `plugins`
+##### Example: Using `plugins`
 
 ```html
 <editor
@@ -241,7 +241,7 @@ Used to specify the format of the content emitted by the `tinymce-angular` compo
 
 **Possible values:** `html`, `text`
 
-##### Example: `outputFormat`
+##### Example: Using `outputFormat`
 
 ```html
 <editor
@@ -256,7 +256,7 @@ Only valid when [`<editor [inline]="true"></editor>`](#inline). Used to define t
 
 **Type:** String
 
-##### Example: `tagName`
+##### Example: Using `tagName`
 
 ```html
 <editor
@@ -274,7 +274,7 @@ For information setting the toolbar for {{site.productname}}, see: [User interfa
 
 **Type:** String
 
-##### Example: `toolbar`
+##### Example: Using `toolbar`
 
 ```html
 <editor
@@ -305,7 +305,7 @@ Used to specify the events that trigger the `NgModelChange` to emit.
 
 **Type** String
 
-##### Example: `modelEvents`
+##### Example: Using `modelEvents`
 
 ```html
 <editor
@@ -423,7 +423,7 @@ Used to provide an allow-list of valid events to trigger from the editor to the 
 
 **Type** String
 
-##### Example: `allowedEvents`
+##### Example: Using `allowedEvents`
 
 ```html
 <editor
@@ -441,7 +441,7 @@ Used to block a list of events from the `tinymce-angular` component.
 
 **Type** String
 
-##### Example: `ignoreEvents`
+##### Example: Using `ignoreEvents`
 
 ```html
 <editor

@@ -1,5 +1,5 @@
 
-## inline
+## `inline`
 
 {{site.notonmobile}}
 
@@ -13,7 +13,7 @@ The inline editing mode is useful when creating user experiences where you want 
 
 **Possible Values:** `true`, `false`
 
-##### Example
+### Example: Using `inline`
 
 ```js
 tinymce.init({

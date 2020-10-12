@@ -9,7 +9,7 @@ keywords: create creator skin icon
 
 TinyMCE 5 introduced icon packs for customizing the editor icons.
 
-### Prerequisites
+## Prerequisites
 
 This guide assumes:
 
@@ -102,6 +102,7 @@ $ npx gulp
 3. Using a web browser, open `dist/html/icons.html` to preview the icons.
 
 #### Troubleshooting information for building icon packs
+
 The SVG files are optimized during the build process with [SVGO](https://github.com/svg/svgo). The optimization can result in distorted graphics due to rounding errors. The graphics may be fixed by providing new SVGO options. To change the SVGO options used:
 
 1. Using a text editor, open `gulpfile.js`.

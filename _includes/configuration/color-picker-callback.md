@@ -1,10 +1,10 @@
-## color_picker_callback
+## `color_picker_callback`
 
 This option enables you to provide your own color picker.
 
 **Type:** `JavaScript Function`
 
-##### Example
+### Example: Using `color_picker_callback`
 
 ```js
 tinymce.init({

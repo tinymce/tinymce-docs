@@ -9,22 +9,22 @@ keywords: example demo custom url conversion absolute relative url urls
 
 This example shows you how to setup {{site.productname}} to produce different results for its URLs in images and links. You can read more about these config options in the [{{site.productname}} FAQ]({{ site.baseurl }}/general-configuration-guide/get-support/).
 
-### Absolute URLs on links and images
+## Absolute URLs on links and images
 
 {% include live-demo.html id="url-conversion-absolute-1" %}
 
-### Absolute URLs and including domain on links and images
+## Absolute URLs and including domain on links and images
 
 {% include live-demo.html id="url-conversion-absolute-2" %}
 
-### Relative URLs on links and images
+## Relative URLs on links and images
 
 {% include live-demo.html id="url-conversion-relative-1" %}
 
-### Relative URLs on links and images to a specific page
+## Relative URLs on links and images to a specific page
 
 {% include live-demo.html id="url-conversion-relative-2" %}
 
-### No URL conversion
+## No URL conversion
 
 {% include live-demo.html id="url-conversion-none" %}

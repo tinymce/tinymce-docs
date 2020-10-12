@@ -225,7 +225,7 @@ The following example is a basic {{site.productname}} configuration.
 </html>
 ```
 
-#### Break-down of the basic configuration example
+### Break-down of the basic configuration example
 
 The following section is a break-down of the options used in the basic configuration example.
 
@@ -275,7 +275,7 @@ content_css: 'css/content.css',
 
 {% include live-demo.html id="basic-conf" %}
 
-#### Additional information
+### Additional information
 
 * For a full list of configuration options, see: the [Configuration options reference]({{ site.baseurl }}/configure/).
 * For a full list of Plugins and their options, see: [Add plugins to TinyMCE]({{ site.baseurl }}/plugins/).

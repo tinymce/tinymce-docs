@@ -12,7 +12,7 @@ This plugin enables you to prevent users from being able to edit content within 
 
 **Type:** `String`
 
-##### Example
+## Basic setup
 
 ```js
 tinymce.init({
@@ -23,13 +23,13 @@ tinymce.init({
 
 When you have existing classes that cannot be removed, you may combine MCE classes with the existing class in the following manner:
 
-##### Non-editable div example
+### Non-editable div example
 
 ```html
 <div class="myclass mceNonEditable">Contents</div>
 ```
 
-##### Editable div example
+### Editable div example
 
 ```html
 <div class="myclass mceEditable">Contents</div>
@@ -49,7 +49,7 @@ Note that classes with the `mceItem` prefix are invisible within {{site.productn
 
 **Default Value:** `'mceEditable'`
 
-##### Example
+#### Example: Using `noneditable_editable_class`
 
 ```js
 tinymce.init({
@@ -69,7 +69,7 @@ Note that classes with the `mceItem` prefix is invisible within {{site.productna
 
 **Default Value:** `'mceNonEditable'`
 
-##### Example
+#### Example: Using `noneditable_noneditable_class`
 
 ```js
 tinymce.init({
@@ -87,7 +87,7 @@ This option is used to specify a regular expression or array of regular expressi
 
 **Type:** `String`
 
-##### Example
+#### Example: Using `noneditable_regexp`
 
 ```js
 tinymce.init({
@@ -109,6 +109,7 @@ tinymce.init({
       plugins: 'code noneditable'
     });
     ```
+
 2. Configure the `noneditable_noneditable_class` option, or the others as necessary in your `tinymce.init`. For example:
 
     ```js
@@ -118,7 +119,9 @@ tinymce.init({
       noneditable_noneditable_class: 'mceNonEditable'
     });
     ```
+
     > **Note**: Replace `mceNonEditable` with the class name you want for your non-editable elements.
+
 3. Select the desired editor content.
 4. From the menu bar, select `View` > `Source code`.
 5. Add the non-editable class to the desired editor content. For example:

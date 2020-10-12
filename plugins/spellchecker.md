@@ -18,7 +18,7 @@ This plugin enables {{site.productname}}'s spellcheck functionality. It also add
 
 **Type:** `String`
 
-##### Example
+## Basic setup
 
 ```js
 tinymce.init({
@@ -38,7 +38,7 @@ These settings affect the execution of the `spellchecker` plugin by modifying ho
 
 This option lets you override the default server side request/communication logic for the spellchecker.
 
-**Example of a basic override without using a server**
+#### Example of a basic override without using a server
 
 ```js
 tinymce.init({
@@ -62,7 +62,7 @@ tinymce.init({
 });
 ```
 
-**Example of fallback for the older JSON-RPC based format**
+#### Example of fallback for the older JSON-RPC based format
 
 ```js
 tinymce.init({
@@ -101,7 +101,7 @@ This configuration option lets you set the default language code for the spellch
 
 **Default Value:**  `en`
 
-##### Example
+#### Example: Using `spellchecker_language`
 
 ```js
 tinymce.init({
@@ -119,10 +119,14 @@ This option lets you specify a list of languages for the user to select from. Th
 
 **Type:** `String`
 
-**Default Value:** `'English=en,Danish=da,Dutch=nl,Finnish=fi,French=fr_FR,' +
-    'German=de,Italian=it,Polish=pl,Portuguese=pt_BR,Spanish=es,Swedish=sv'`
+**Default Value:**
 
-##### Example
+```js
+'English=en,Danish=da,Dutch=nl,Finnish=fi,French=fr_FR,' +
+'German=de,Italian=it,Polish=pl,Portuguese=pt_BR,Spanish=es,Swedish=sv'
+```
+
+#### Example: Using `spellchecker_languages`
 
 ```js
 tinymce.init({
@@ -141,7 +145,7 @@ This options enables you to specify a custom URL to be used for the spellchecker
 
 **Type:** `String`
 
-##### Example
+#### Example: Using `spellchecker_rpc_url`
 
 ```js
 tinymce.init({
@@ -153,7 +157,7 @@ tinymce.init({
 });
 ```
 
-### Spellchecker request format
+#### Spellchecker request format
 
 The request is a HTTP POST with URL encoded parameters described below.
 
@@ -163,7 +167,7 @@ The request is a HTTP POST with URL encoded parameters described below.
 | text      | Text to spellcheck this will contain a plain text version of the current editor contents. |
 | lang      | The currently selected language code for example "en" or "sv_SE". |
 
-### Spellchecker response format
+#### Spellchecker response format
 
 The response of a successful spellcheck request should like this:
 
@@ -190,7 +194,7 @@ This option enables you to override the matching of characters that are parts of
 
 **Type:** `String`
 
-##### Example
+#### Example: Using `spellchecker_wordchar_pattern`
 
 ```js
 tinymce.init({

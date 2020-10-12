@@ -1,4 +1,4 @@
-## a11y_advanced_options
+## `a11y_advanced_options`
 
 This option affects the functionality of:
 
@@ -18,7 +18,7 @@ Setting `a11y_advanced_options` to `true`:
 
 **Possible Values:** `true`, `false`
 
-#### Example: a11y_advanced_options
+### Example: Using `a11y_advanced_options`
 
 {% if includedSection == 'imagePlugin' %}
 ```js

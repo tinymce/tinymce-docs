@@ -16,7 +16,7 @@ It adds two toolbar buttons called `link` and `unlink` and three menu items call
 
 The **link** plugin also includes a context menu and context toolbar. The context toolbar can be configured using the [`link_context_toolbar`](#link_context_toolbar) and [`link_quicklink`](#link_quicklink) options documented below.
 
-##### Example
+## Basic setup
 
 ```js
 tinymce.init({
@@ -39,7 +39,7 @@ This option allows you to set a default `target` value for links when inserting/
 
 **Type:** `String`
 
-##### Example
+#### Example: Using `default_link_target`
 
 ```js
 tinymce.init({
@@ -64,7 +64,7 @@ Set whether {{site.productname}} should prepend a `http://` prefix if the suppli
 
 **Possible Values:** `true`, `false`, `'http'`, `'https'`
 
-##### Example
+#### Example: Using `link_assume_external_targets`
 
 ```js
 tinymce.init({
@@ -80,7 +80,7 @@ tinymce.init({
 
 The `link_class_list` option allows you to specify a list of classes for the link dialog. These classes will appear in a dropdown menu in the link dialog. Each class must be defined as an object with a `title` and a `value`. For example: `{title: 'Cat', value: 'cat'}`. When the dialog is submitted, the `value` of the selected class item from the dropdown will be set as the link's `class`.
 
-##### Example
+#### Example: Using `link_class_list`
 
 ```js
 tinymce.init({
@@ -108,7 +108,7 @@ By default it is not possible to open links directly from the editor. Setting `l
 
 **Possible Values:** `true`, `false`
 
-##### Example
+#### Example: Using `link_context_toolbar`
 
 ```js
 tinymce.init({
@@ -130,7 +130,7 @@ This option allows you to set a default protocol for links when inserting/editin
 
 **Default Value:** `'http'`
 
-##### Example
+#### Example: Using `link_default_protocol`
 
 ```js
 tinymce.init({
@@ -150,7 +150,7 @@ There are multiple ways to specify how to get the data for the link list, but al
 
 **Type:** `String` or `Array` or `Function`
 
-**Example of an array of link items**
+#### Example of an array of link items
 
 ```js
 tinymce.init({
@@ -165,7 +165,7 @@ tinymce.init({
 });
 ```
 
-**Example of a JSON URL that returns an array of link items**
+#### Example of an external script that returns a json array of link items
 
 You can also configure a URL with JSON data. The JSON data must use the same format as above.
 
@@ -179,7 +179,7 @@ tinymce.init({
 });
 ```
 
-**Example of a custom asynchronous callback function**
+#### Example of a custom asynchronous callback function
 
 `link_list` can also take a function that is called when the link dialog is opened. {{site.productname}} passes this function a `success` callback function, which should be passed an array of link items. This allows for asynchronous and dynamic generation of the list of links.
 
@@ -188,7 +188,6 @@ The following is an example of how `link_list` can be used with a callback funct
 * Data retrieved from a database.
 * The current editor content.
 * The current user.
-
 
 ```js
 var fetchLinkLists = function() {
@@ -220,7 +219,7 @@ This options allows you disable the link `title` input field in the `link` dialo
 
 **Possible Values:** `true`, `false`
 
-##### Example
+#### Example: Using `link_title`
 
 ```js
 tinymce.init({
@@ -244,7 +243,7 @@ This option changes the behaviour of the `CTRL + K` shortcut. By default, pressi
 
 **Possible Values:** `true`, `false`
 
-##### Example
+#### Example: Using `link_quicklink`
 
 ```js
 tinymce.init({
@@ -260,7 +259,7 @@ tinymce.init({
 
 This option lets you specify a list of `rel` values for the `link` dialog. These values gets applied to the `rel` attribute. Each `rel` item must be defined as an object with a `title` and a `value`. For example: `{title: 'No Referrer', value: 'noreferrer'}`. When the dialog is submitted, the `value` of the selected `rel` item will be set as the link's `rel` attribute.
 
-##### Example
+#### Example: Using `rel_list`
 
 ```js
 tinymce.init({
@@ -290,7 +289,7 @@ If [`default_link_target`](#default_link_target) is also configured and its valu
 ]
 ```
 
-**Example, adding a `_parent` target to the dropdown list**
+#### Example: Adding a `_parent` target to the dropdown list
 
 ```js
 tinymce.init({
@@ -307,9 +306,9 @@ tinymce.init({
 });
 ```
 
-To disable the option dialog set `target_list` to `false`.
+To disable the option dialog, set `target_list` to `false`.
 
-##### Example
+#### Example: Turning off the target list dialog
 
 ```js
 tinymce.init({

@@ -8,7 +8,7 @@ The `contextmenu_never_use_native` option allows you to prevent the browser cont
 
 **Default Value**: `false`
 
-#### Example
+### Example: Using `contextmenu_never_use_native`
 
 ```js
 tinymce.init({

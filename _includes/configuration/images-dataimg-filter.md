@@ -1,4 +1,4 @@
-## images_dataimg_filter
+## `images_dataimg_filter`
 
 > **Important**: This option was deprecated with the release of {{site.productname}} 5.3. `images_dataimg_filter` may be removed in a future release of {{site.productname}}.
 
@@ -6,7 +6,7 @@ The **images_dataimg_filter** option is used to filter `<img>` elements before t
 
 **Type:** `JavaScript Function`
 
-##### Example
+### Example: Using `images_dataimg_filter`
 
 ```js
 tinymce.init({

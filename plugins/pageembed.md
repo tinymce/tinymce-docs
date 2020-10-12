@@ -14,7 +14,7 @@ controls: toolbar button, menu item
 
 The **Page Embed** plugin embeds a page in the content using an iframe (Inline frames). The size of these iframes can be configured to be responsive or another user-defined dimension. The ability to use iframes helps create visually engaging content which is very useful for online courses and learning materials.
 
-### Try our Page Embed plugin demo
+## Try our Page Embed plugin demo
 
 {% include live-demo.html id="page-embed" %}
 
@@ -71,7 +71,7 @@ Use the following procedure for embedding an iframe into the content:
 
 **Result**: An iframe of the configured size is inserted in the desired location within the content.
 
-> Note: Not all pages allow embedding, as the X-Frame-Options header can be set to block embedding. See [this page](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options) for more information.
+> **Note**: Not all pages allow embedding, as the X-Frame-Options header can be set to block embedding. See [this page](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options) for more information.
 
 ## Options to configure the Page Embed properties
 
@@ -116,7 +116,7 @@ The `tiny_pageembed_inline_styles` setting will inline all styles, while also ke
 
 **Possible Values:** `true`, `false`
 
-#### Example: tiny_pageembed_inline_styles
+#### Example: `tiny_pageembed_inline_styles`
 
 To inline page embed styles:
 
@@ -136,12 +136,10 @@ tinymce.init({
 
 If the `tiny_pageembed_classes` setting is left undefined, the default classes will be used. As a result, a responsive size option can be selected.
 
-> The following CSS script must be added to the webpage for the default CSS to work correctly.
+> **Important**: The following CSS script must be added to the webpage for the default CSS to work correctly.
 
 ```css
 {% include css-codeblock/pageembed-plugin-css.md %}
 ```
 
 For more information on configuring CSS, refer to the [content_css]({{site.baseurl}}/configure/content-appearance/#content_css) section.
-
-Check out the [Page Embed demo]({{site.baseurl}}/demo/pageembed/) to try out this new feature.

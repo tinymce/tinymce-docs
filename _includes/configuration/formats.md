@@ -69,13 +69,13 @@ tinymce.init({
 
 A registered format can also be used by name with the built-in [formatter]({{ site.baseurl }}/api/tinymce/tinymce.formatter) methods. See [/configure/content-formatting/#usingcustomformats]({{ site.baseurl }}/configure/content-formatting/#usingcustomformats) for an example.
 
-#### block
+#### `block`
 
 Tag name of the block element to use as a wrapper, for example, `h1`. Existing block elements within the selection are replaced with this block element.
 
 **Type:** `String`
 
-##### Example
+##### Example: Using `block` format
 
 ```js
 tinymce.init({
@@ -87,13 +87,13 @@ tinymce.init({
 });
 ```
 
-#### inline
+#### `inline`
 
 Tag name of the inline element to use as a wrapper, for example, `span` is used to wrap the current selection.
 
 **Type:** `String`
 
-##### Example
+##### Example: Using `inline` format
 
 ```js
 tinymce.init({
@@ -105,13 +105,13 @@ tinymce.init({
 });
 ```
 
-#### selector
+#### `selector`
 
 CSS3 selector pattern that is used to find elements within the selection. It can be used to apply classes to specific elements only, for example only to odd rows in a table.
 
 **Type:** `String`
 
-##### Example
+##### Example: Using `selector` format
 
 ```js
 tinymce.init({
@@ -130,13 +130,13 @@ tinymce.init({
 
 For each format some additional parameters can be specified:
 
-#### classes
+#### `classes`
 
 Space-separated list of classes that are applied to the selected or newly created inline/block element.
 
 **Type:** `String`
 
-##### Example
+##### Example: Using `classes` parameter
 
 ```js
 tinymce.init({
@@ -148,13 +148,13 @@ tinymce.init({
 });
 ```
 
-#### styles
+#### `styles`
 
 Key/value object with CSS styles to apply to the selected or newly created inline/block element (e.g. `color`, `backgroundColor`, `textDecoration`, etc).
 
 **Type:** `Object`
 
-##### Example
+##### Example: Using `styles` parameter
 
 ```js
 tinymce.init({
@@ -166,14 +166,13 @@ tinymce.init({
 });
 ```
 
-
-#### attributes
+#### `attributes`
 
 Key/value object with attributes to apply to the selected or newly created inline/block element.
 
 **Type:** `Object`
 
-##### Example
+##### Example: Using `attributes` parameter
 
 ```js
 tinymce.init({
@@ -185,7 +184,7 @@ tinymce.init({
 });
 ```
 
-#### exact
+#### `exact`
 
 Makes sure that the format is not merged with other wrappers having the same format. We use it to avoid conflicts between text-decorations for `underline` and `strikethrough` formats.
 
@@ -194,7 +193,7 @@ Makes sure that the format is not merged with other wrappers having the same for
 
 **Default:** `false`
 
-##### Example
+##### Example: Using `exact` parameter
 
 ```js
 tinymce.init({
@@ -208,7 +207,7 @@ tinymce.init({
 ```
 
 
-#### wrapper
+#### `wrapper`
 
 States that the format is a container format for block elements. For example, a `div` wrapper or `blockquote`.
 
@@ -216,7 +215,7 @@ States that the format is a container format for block elements. For example, a 
 
 **Default:** `false`
 
-##### Example
+##### Example: Using `wrapper`
 
 ```js
 tinymce.init({
@@ -228,7 +227,7 @@ tinymce.init({
 });
 ```
 
-#### remove
+#### `remove`
 
 Specifies what the remove behavior of the element should be when the format is removed.
 
@@ -242,7 +241,7 @@ This can be set to three different modes:
 * **empty**: If the element has no styles, classes, or attributes then the element is removed.
 * **all**: Removes the element regardless of its styles, classes, and or attributes.
 
-##### Example
+##### Example: Using `remove`
 
 ```js
 tinymce.init({
@@ -263,7 +262,7 @@ tinymce.init({
 });
 ```
 
-#### block_expand
+#### `block_expand`
 
 This option controls if the selection should expand upwards to the closest matching block element. This can be useful when configuring `removeformat` to remove block elements. So if the selection start is at the beginning of a matching block, then that matching block will be included as well. If the end of the selection is at the end of a matching block element then that parent element will be included as well.
 
@@ -271,7 +270,7 @@ So if the selection is from _a_ to _b_ in this html contents `<h1><b>[a</b></h1>
 
 **Type:** `Boolean`
 
-##### Example
+##### Example: Using `block_expand`
 
 ```js
 tinymce.init({
@@ -300,7 +299,7 @@ tinymce.init({
 });
 ```
 
-#### deep
+#### `deep`
 
 Enables control for removing the child elements of the matching format. This is set to `false`  by default on selector formats. As a result, when a class is removed from a selected table class, disabling `deep` retains the class in the child elements within the other nested tables.
 
@@ -308,7 +307,7 @@ Enables control for removing the child elements of the matching format. This is 
 
 **Default:** `false` for `selector` formats
 
-##### Example
+##### Example: Using `deep`
 
 ```js
 tinymce.init({
@@ -326,7 +325,7 @@ This example overrides some of the built-in formats and tells {{site.productname
 
 **Type:** `Object`
 
-##### Example
+#### Example: Using the `formats` option
 
 ```js
 // Output elements in HTML style
@@ -378,7 +377,7 @@ Use the `removeformat` option to specify how the `clear formatting` feature shou
 
 **Type:** `Array`
 
-##### Example
+#### Example: Removing a format
 
 ```js
 tinymce.init({

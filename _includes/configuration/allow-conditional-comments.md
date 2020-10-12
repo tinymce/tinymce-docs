@@ -1,4 +1,4 @@
-## allow_conditional_comments
+## `allow_conditional_comments`
 
 This option allows you to specify whether the editor should parse and keep conditional comments.
 
@@ -8,7 +8,7 @@ This option allows you to specify whether the editor should parse and keep condi
 
 **Possible Values:** `true`, `false`
 
-##### Example
+### Example: Using `allow_conditional_comments`
 
 ```js
 tinymce.init({

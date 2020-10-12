@@ -6,7 +6,7 @@ description: Details on how to get help if you get stuck in getting Tiny Drive u
 keywords: help
 ---
 
-### Get help with Tiny Drive
+## Get help with Tiny Drive
 
 To implement {{site.cloudfilemanager}}, you need prior knowledge of JWT in detail, including how they can be used for user authentication and session management in a web application. There will be some coding involved on both the client-side and the server-side to configure JWT as per the instructions in this section.
 

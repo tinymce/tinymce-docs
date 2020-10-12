@@ -1,4 +1,4 @@
-## contextmenu
+## `contextmenu`
 
 The `contextmenu` option allows you to specify which items appear on the context menu. The format of this option is a space separated list of items in a string.
 
@@ -19,7 +19,7 @@ To disable the editor's context menu, set this option to `false`.
 
 {{site.ctrl_right_click}}
 
-### Example: contextmenu
+### Example: Using `contextmenu`
 
 ```js
 tinymce.init({

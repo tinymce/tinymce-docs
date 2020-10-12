@@ -1,4 +1,4 @@
-## elementpath
+## `elementpath`
 
 This option allows you to disable the _element path_ within the status bar at the bottom of the editor.
 
@@ -14,7 +14,7 @@ Selecting elements from the element path allows users to perform operations on b
 
 **Possible Values:** `true`, `false`
 
-##### Example
+### Example: Using `elementpath`
 
 ```js
 tinymce.init({

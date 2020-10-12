@@ -1,4 +1,4 @@
-## preview_styles
+## `preview_styles`
 
 This option lets you configure the preview of styles in format/style listboxes. Enter a string with the styles that you wish to preview separated by a blankspace, or disable the preview of of all styles by setting it to `false`.
 
@@ -10,7 +10,7 @@ If unset the editor will preview the styles listed in the default value listed b
 
 **Possible Values:** `String`, `false`
 
-##### Example
+### Example: Using `preview_styles`
 
 No preview of styles:
 

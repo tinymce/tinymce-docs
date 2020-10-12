@@ -1,4 +1,4 @@
-## base_url
+## `base_url`
 
 This option lets you specify the base URL for {{site.productname}}. This is useful if you want to load {{site.productname}} from one location and things like the theme and plugins from another.
 
@@ -6,7 +6,7 @@ By default, the `base_url` is the directory containing {{site.productname}} java
 
 **Type:** `String`
 
-##### Example
+### Example: Using `base_url`
 
 ```js
 tinymce.init({

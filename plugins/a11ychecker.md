@@ -356,7 +356,7 @@ tinymce.init({
 
 This configuration option sets the HTML version to use when checking issues.
 
-For example: Setting the version to HTML 4 will trigger the rule "Complex tables should have summaries", where `summary` is a valid attribute in HTML 4 but not HTML 5.
+For example: Setting the version to HTML 4 will enable the rule "Complex tables should have summaries", where `summary` is a valid attribute in HTML 4 but not HTML 5.
 
 **Type:** `String`
 

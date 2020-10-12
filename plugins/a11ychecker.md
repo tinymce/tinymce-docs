@@ -322,7 +322,7 @@ function(issue) {
 }
 ```
 
-#### Example: Using `a11ychecker_filter_issue` filter the Accessibility Checker T1 rule
+#### Example: Using `a11ychecker_filter_issue` to filter out the Accessibility Checker T1 rule
 
 The callback function in the following example will return `false` if the issue `id` value is `'T1'`, filtering `'T1'` issues from the Accessibility Checker report.
 

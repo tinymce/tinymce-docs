@@ -493,7 +493,7 @@ console.log(issues);
     "severity": "error",
     "url": "http://www.w3.org/TR/UNDERSTANDING-WCAG20/content-structure-separation-programmatic.html",
     "description": "Headings must be applied in sequential order. For example: Heading 1 should be followed by Heading 2, not Heading 3.",
-    "element": {}  // The element value contains the DOM element (<hn>).
+    "element": {}  // The element value contains the DOM element (such as <h4>).
   },
   {
     "id": "T1",

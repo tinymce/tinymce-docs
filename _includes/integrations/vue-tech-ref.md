@@ -100,7 +100,7 @@ To register for a {{site.cloudname}} API key, visit the [sign-up page]({{site.ac
 
 **Type:** String
 
-##### Example: `api-key`
+##### Example: Using `api-key`
 
 ```html
 <editor
@@ -138,7 +138,7 @@ The `disabled` property can dynamically switch the editor between a "disabled" (
 
 **Possible values:**  `true`, `false`
 
-##### Example: `disabled`
+##### Example: Using `disabled`
 
 ```html
 <editor
@@ -153,7 +153,7 @@ An id for the editor. Used for retrieving the editor instance using the `tinymce
 
 **Type:** String
 
-##### Example: `id`
+##### Example: Using `id`
 
 ```html
 <editor
@@ -170,7 +170,7 @@ For information on the {{site.productname}} selector (`tinymce.init`), see: [Bas
 
 **Type:** Object
 
-##### Example: `init`
+##### Example: Using `init`
 
 ```html
 <editor
@@ -190,7 +190,7 @@ Initial content of the editor when the editor is initialized.
 
 **Type:** String
 
-##### Example: `initial-value`
+##### Example: Using `initial-value`
 
 ```html
 <editor
@@ -207,7 +207,7 @@ For information on inline mode, see: [User interface options - `inline`]({{site.
 
 **Possible values:**  `true`, `false`
 
-##### Example: `inline`
+##### Example: Using `inline`
 
 ```html
 <editor
@@ -225,7 +225,7 @@ For a list of available {{site.productname}} events, see: [Available Events - Ed
 
 **Type:** String
 
-##### Example: `model-events`
+##### Example: Using `model-events`
 
 ```html
 <editor
@@ -243,7 +243,7 @@ Used to specify the format of the content emitted via the `input` event. This af
 
 **Possible values:** `html`, `text`
 
-##### Example: `output-format`
+##### Example: Using `output-format`
 
 ```html
 <editor
@@ -258,7 +258,7 @@ For information on adding plugins to {{site.productname}}, see: [Add plugins to 
 
 **Type:** String or Array
 
-##### Example: `plugins`
+##### Example: Using `plugins`
 
 ```html
 <editor
@@ -273,7 +273,7 @@ Only valid when [`<editor :inline=true />`](#inline). Used to define the HTML el
 
 **Type:** String
 
-##### Example: `tag-name`
+##### Example: Using `tag-name`
 
 ```html
 <editor
@@ -291,7 +291,7 @@ For information setting the toolbar for {{site.productname}}, see: [User interfa
 
 **Type:** String
 
-##### Example: `toolbar`
+##### Example: Using `toolbar`
 
 ```html
 <editor
@@ -305,7 +305,7 @@ Use the `tinymce-script-src` prop to specify an external version of TinyMCE to l
 
 **Type:** String
 
-##### Example: `tinymce-script-src`
+##### Example: Using `tinymce-script-src`
 
 ```html
 <editor

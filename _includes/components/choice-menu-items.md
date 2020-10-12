@@ -1,8 +1,8 @@
-#### Choice menu items
+### Choice menu items
 
 Choice menu items are a special type of menu item used for split toolbar button menu items. For information on split buttons, see: [Split toolbar buttons]({{site.baseurl}}/ui-components/typesoftoolbarbuttons/#splitbutton).
 
-##### Config options
+#### Config options
 
 | Name | Value | Requirement | Description |
 | ---- | ----- | ----------- | ----------- |
@@ -14,7 +14,7 @@ Choice menu items are a special type of menu item used for split toolbar button 
 
 > **Note**: The `icon` option for choice menu items was added in {{site.productname}} 5.3.
 
-##### API
+#### API
 
 | Name | Value | Description |
 | ---- | ----- | ----------- |

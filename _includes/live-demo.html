@@ -43,14 +43,19 @@ When the example.js file is present, the link to the external codepen site is di
   {% endif %}
 {% endif %}
 
-{% comment %} Assign html to live_demo_html {% endcomment %}
-{% capture live_demo_html %}
-{% include live-demos/{{ include.id }}/index.html %}
-{% endcapture %}
-
 {% comment %} Check if a example.js exists {% endcomment %}
 {% capture hasExampleJS %}
 {% file_exists _includes/live-demos/{{ include.id }}/example.js %}
+{% endcapture %}
+
+{% comment %} Check if a example.html exists {% endcomment %}
+{% capture hasExampleHTML %}
+{% file_exists _includes/live-demos/{{ include.id }}/example.html %}
+{% endcapture %}
+
+{% comment %} Assign html to live_demo_html {% endcomment %}
+{% capture live_demo_html %}
+{% include live-demos/{{ include.id }}/index.html %}
 {% endcapture %}
 
 {% comment %} Assign js to live_demo_js {% endcomment %}
@@ -69,6 +74,17 @@ When the example.js file is present, the link to the external codepen site is di
 {% endcapture %}
 {% endif %}
 
+{% comment %} If example.html exists, Assign to example_html else use index.html {% endcomment %}
+{% if hasExampleHTML contains "true" %}
+{% capture example_html %}
+{% include live-demos/{{ include.id }}/example.html %}
+{% endcapture %}
+{% else %}
+{% capture example_html %}
+{% include live-demos/{{ include.id }}/index.html %}
+{% endcapture %}
+{% endif %}
+
 {% comment %} Check if a style.css exists {% endcomment %}
 {% capture hasCss %}
 {% file_exists _includes/live-demos/{{ include.id }}/style.css %}
@@ -80,20 +96,18 @@ When the example.js file is present, the link to the external codepen site is di
 {% capture live_demo_css %}
 {% include live-demos/{{ include.id }}/style.css %}
 {% endcapture %}
-
 {% comment %} Create and assign a CSS codeblock to live_demo_css_preview {% endcomment %}
 {% capture live_demo_css_preview %}
 ```css
 {{ live_demo_css }}
 ```
 {% endcapture %}
-
 {% endif %}
 
 {% comment %} Create and assign a HTML codeblock to live_demo_html_preview {% endcomment %}
 {% capture live_demo_html_preview %}
 ```html
-{{ live_demo_html }}
+{{ example_html }}
 ```
 {% endcapture %}
 

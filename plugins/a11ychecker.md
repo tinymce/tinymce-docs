@@ -337,7 +337,7 @@ tinymce.init({
 });
 ```
 
-#### Example: Using `a11ychecker_filter_issue` filter all Accessibility Checker table rules
+#### Example: Using `a11ychecker_filter_issue` to filter out all Accessibility Checker table rules
 
 The callback function in the following example will return `false` if the issue `element` value is `'table'`, filtering all table-related issues from the Accessibility Checker report.
 

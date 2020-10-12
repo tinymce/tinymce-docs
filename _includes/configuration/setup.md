@@ -13,8 +13,8 @@ A common use case for this setting is to add editor events to {{site.productname
 ```js
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  setup: function(editor) {
-    editor.on('click', function(e) {
+  setup: function (editor) {
+    editor.on('click', function () {
       console.log('Editor was clicked');
     });
   }

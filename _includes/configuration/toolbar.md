@@ -46,7 +46,7 @@ tinymce.init({
     {
       name: 'indentation', items: [ 'outdent', 'indent' ]
     }
-  ];
+  ]
 });
 ```
 

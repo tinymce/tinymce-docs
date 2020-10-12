@@ -40,4 +40,4 @@ tinymce.init({
 
 ### Interactive example
 
-{% include live-demo.html id="file-picker" height="950" %}
+{% include live-demo.html id="file-picker" %}

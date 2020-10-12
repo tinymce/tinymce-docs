@@ -121,7 +121,7 @@ For example: If an image link and a text link have the same `href` attribute, bo
 * **Notification level (severity)**: Error
 * **[WCAG level](https://www.w3.org/TR/WCAG20/#conformance)**: Level AA
 * **[HTML version](#a11ychecker_html_version)**: HTML4 and HTML5
-* **WCAG 2.0 specification**: [Ensuring that a contrast ratio of at least 3:1 exists between text (and images of text) and background behind the text](https://www.w3.org/WAI/WCAG21/Techniques/general/G145.html).
+* **WCAG 2.0 specification**: [G145 - Ensuring that a contrast ratio of at least 3:1 exists between text (and images of text) and background behind the text](https://www.w3.org/WAI/WCAG21/Techniques/general/G145.html).
 
 #### {{pluginname}} rule details - D5B
 

@@ -15,7 +15,7 @@ keywords: plugin <plugincode> etc.
   Add an introduction. What does the plugin do? Why would I use this plugin? Keep it concise.
 {% endcomment %}
 
-## Live example
+## Interactive example
 
 {% comment %}
   No Lorem Ipsum! Add some content to test on, possibly just a description of how end-users use the feature?

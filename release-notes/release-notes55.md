@@ -91,7 +91,7 @@ The {{site.productname}} 5.5 release includes an accompanying release of the **A
 
 * A new `a11ychecker_ignored_rules` option for filtering Accessibility Checker rules using the rule identifiers. For information on the `a11ychecker_ignored_rules` option, see: [Accessibility Checker plugin - `a11ychecker_ignored_rules`]({{site.baseurl}}/plugins/a11ychecker/#a11ychecker_ignored_rules).
 * A new `a11ychecker_issue_url_callback` option to allow custom URLs to be used for the "more info" links on accessibility checks. For information on the `a11ychecker_issue_url_callback` option, see: [Accessibility Checker plugin - `a11ychecker_issue_url_callback`]({{site.baseurl}}/plugins/a11ychecker/#a11ychecker_issue_url_callback).
-* Adds the rule identifier (`id`) the data returned by the `getReport()` API method. For information on the `getReport()` API method, see: [Accessibility Checker plugin - `getReport()` API method]({{site.baseurl}}/plugins/a11ychecker/#getreport).
+* Adds the rule identifier (`id`) to the data returned by the `getReport()` API method. For information on the `getReport()` API method, see: [Accessibility Checker plugin - `getReport()` API method]({{site.baseurl}}/plugins/a11ychecker/#getreport).
 * A new `a11ychecker_filter_issues` option for filtering Accessibility Checker report results. For information on the `a11ychecker_filter_issues` option, see: [Accessibility Checker plugin - `a11ychecker_filter_issues`]({{site.baseurl}}/plugins/a11ychecker/#a11ychecker_filter_issue).
 
 **Accessibility Checker** 2.3.0 also provides the following bug fixes:

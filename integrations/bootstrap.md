@@ -73,6 +73,6 @@ $(document).on('focusin', function(e) {
 
 This code is required because Bootstrap blocks all `focusin` calls from elements outside the dialog. For a working example, [try this {{site.productname}} fiddle](http://fiddle.tinymce.com/gRgaab).
 
-#### A note about integrations
+## A note about integrations
 
-> Note: We are pleased to provide integrations/code guidance to help you build great products with {{site.productname}}. If you have queries about this integration, post your question on Stack Overflow using the [`{{site.prodnamecode}}` tag]({{site.communitysupporturl}}).
+{{site.thirdPartyInteg}}

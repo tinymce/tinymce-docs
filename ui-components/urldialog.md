@@ -5,13 +5,12 @@ title_nav: URL dialog
 description: URL dialogs are a TinyMCE UI component used to display an external page.
 keywords: dialog urldialog api
 ---
-## Overview
 
 A URL dialog is a special {{site.productname}} UI component which loads an external web page inside a dialog (sometimes referred to as `modals`). URL dialogs are useful for very complex use cases, where the supported components for {{site.productname}}'s standard dialogs cannot be used. For example, a custom file manager that is loaded inside a {{site.productname}} dialog would probably require a URL dialog.
 
-> Note: [Standard {{site.productname}} dialogs]({{site.baseurl}}/ui-components/dialog/) should suffice for most use cases, and may be simpler to configure.
+> **Note**: [Standard {{site.productname}} dialogs]({{site.baseurl}}/ui-components/dialog/) should suffice for most use cases, and may be simpler to configure.
 
-### Basic example
+## Basic example
 
 The configuration for a basic URL dialog might look like this:
 
@@ -32,7 +31,7 @@ A URL Dialog configuration has three main parts to match the three main parts of
 
 * **Buttons:** (Optional) An array of [footer buttons](#footerbuttons) that are displayed in the dialog's footer.
 
-### Configuration options
+## Configuration options
 
 | Name    | Value  | Requirement | Description |
 | ------- | ------ | ----------- | ----------- |
@@ -48,11 +47,11 @@ A URL Dialog configuration has three main parts to match the three main parts of
 
 For more information on the `dialogApi` object that is passed to some of the configuration options, see the [URL dialog instance API](#urldialoginstanceapi) documentation.
 
-### Footer buttons
+## Footer buttons
 
 A **button** is a clickable component that can contain text or an icon. There are two types of buttons (primary and secondary buttons), though the only difference is that they are styled differently. Primary buttons are intended to stand out. The color will depend on the chosen [skin]({{site.baseurl}}/general-configuration-guide/customize-ui/#skins).
 
-#### Configuration
+### Configuration
 
 | Name | Type | Requirement | Description |
 | ---- | ---- | ----------- | ----------- |
@@ -64,16 +63,16 @@ A **button** is a clickable component that can contain text or an icon. There ar
 | disabled | boolean | optional | default: `false` - When `true`, the button will be disabled when the dialog loads. |
 | align | `'end'` or `'start'` | optional | default: `'end'` - When set to `'end'` the button will display on the right-hand side of the dialog. When set to `'start'` the button will display on the left-hand side. |
 
-> Note: Buttons do not support mixing icons and text at the moment.
+> **Note**: Buttons do not support mixing icons and text at the moment.
 
-#### Button types and event callbacks
+### Button types and event callbacks
 
 The different footer button types will invoke different callbacks when clicked:
 
 * A **Cancel** type button will invoke the `onCancel` and `onClose` callback functions provided in the dialog configuration. These callback functions are also fired when a user clicks the `X` button in the top right of the dialog.
 * A **Custom** type button will invoke the `onAction` callback function provided in the dialog configuration, and pass it the button's `name` in the `details` object. This allows developers to create a click handler for each **Custom** type footer button in the dialog. See the [Redial example]({{site.baseurl}}/ui-components/dialog/#interactiveexampleusingredialconfigvoid) for an example of how to use this with standard dialogs.
 
-> Note: Unlike [standard dialogs]({{site.baseurl}}/ui-components/dialog/), URL dialogs do not have a **Submit** type footer button, and therefore do not have an `onSubmit` callback.
+> **Note**: Unlike [standard dialogs]({{site.baseurl}}/ui-components/dialog/), URL dialogs do not have a **Submit** type footer button, and therefore do not have an `onSubmit` callback.
 
 See the [URL dialog configuration options](#configurationoptions) documentation for more information on event callbacks.
 
@@ -115,13 +114,13 @@ window.addEventListener('message', function (event) {
 
 ```
 
-> Note: When sending a message it is recommended to specify the target origin of where {{site.productname}} is running, instead of using a wildcard (`'*'`). Similarly, when receiving messages, check that `event.origin` matches the origin of where {{site.productname}} is running. For example, if {{site.productname}} is running on *http://mysite.com/tinymce.html*, then if `event.origin` doesn't match `http://mysite.com` the message should be ignored.
+> **Note**: When sending a message it is recommended to specify the target origin of where {{site.productname}} is running, instead of using a wildcard (`'*'`). Similarly, when receiving messages, check that `event.origin` matches the origin of where {{site.productname}} is running. For example, if {{site.productname}} is running on *http://mysite.com/tinymce.html*, then if `event.origin` doesn't match `http://mysite.com` the message should be ignored.
 
 ### Supported message actions
 
 These actions are built into the URL dialog functionality and will perform an action inside the editor based on the `mceAction` specified. The actions supported are:
 
-##### insertContent
+#### insertContent
 
 This action inserts content into the editor at the current selection. The `content` property specifies what content should be inserted into the editor.
 
@@ -132,7 +131,7 @@ This action inserts content into the editor at the current selection. The `conte
 }
 ```
 
-##### setContent
+#### setContent
 
 This action is used to set the editors content. The `content` property specifies what content should be set inside the editor.
 
@@ -143,7 +142,7 @@ This action is used to set the editors content. The `content` property specifies
 }
 ```
 
-##### execCommand
+#### execCommand
 
 This action executes a command inside the editor. The options available for this action are:
 
@@ -161,7 +160,7 @@ This action executes a command inside the editor. The options available for this
 }
 ```
 
-##### close
+#### close
 
 This action closes the open URL dialog. This is the same as using the `api.close()` function.
 
@@ -171,7 +170,7 @@ This action closes the open URL dialog. This is the same as using the `api.close
 }
 ```
 
-##### block
+#### block
 
 This action disables the entire dialog window and shows a loading image. This is the same as using the `api.block(message)` function.
 
@@ -182,7 +181,7 @@ This action disables the entire dialog window and shows a loading image. This is
 }
 ```
 
-##### unblock
+#### unblock
 
 This action unblocks the window/dialog. This is the same as using the `api.unblock()` function.
 
@@ -205,12 +204,10 @@ A custom message is one that contains a `mceAction` not listed in the above-supp
 }
 ```
 
-> Note: {{site.productname}} will ignore all messages received that don't contain a `mceAction` property.
+> **Note**: {{site.productname}} will ignore all messages received that don't contain a `mceAction` property.
 
-## Example
+## Interactive example
 
 This example shows a toolbar button that opens an external URL inside a 640px by 640px dialog without any footer buttons. The dialog can be opened by clicking the `{;}` toolbar button.
 
 {% include live-demo.html id="url-dialog" height="300" tab="js" %}
-
-

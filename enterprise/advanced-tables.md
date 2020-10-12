@@ -27,7 +27,8 @@ The plugin is capable of sorting:
 
 > **Note**: Currently, the sort function will treat cells with Alphanumeric data as Text data. This includes currency symbols which are text characters.
 
-### Try our Advanced Tables Demo
+## Try our Advanced Tables Demo
+
 {% include live-demo.html id="advtable" %}
 
 {% assign pluginname = 'Advanced Tables' %}

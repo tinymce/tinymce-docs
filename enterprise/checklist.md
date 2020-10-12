@@ -23,7 +23,7 @@ Common use cases for using a checklist:
   * Checklists are useful for school camps to create emergency survival kits.
   * In professional diving checklists can be used for preparation of equipment for a diving session.
 
-### Try our Checklist plugin demo
+## Try our Checklist plugin demo
 
 {% include live-demo.html id="checklist" %}
 

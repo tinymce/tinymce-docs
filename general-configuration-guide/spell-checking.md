@@ -28,7 +28,7 @@ You can also use {{site.productname}}'s PHP _Spellchecker_ component, that you c
 
 This plugin enables **Enchant** or **PSpell** on the server to spell check content within the {{site.productname}} editor.
 
-##### Installation steps for the default Enchant engine
+### Installation steps for the default Enchant engine
 
 1. Enable **Enchant** in PHP.
 2. Download the **{{site.productname}} Spellchecker** for PHP package. [(Direct download)](http://download.moxiecode.com/spellcheckers/tinymce_spellchecker_php_4.0.zip).
@@ -37,7 +37,7 @@ This plugin enables **Enchant** or **PSpell** on the server to spell check conte
 5. Configure the `spellchecker_rpc_url` to `'spellchecker.php'`.
 6. Download word lists and place them in the `/dicts` directory for example "es_ES.dic, es_ES.aff".
 
-##### Example
+#### Example: Using the PHP spellchecker
 
 ```js
 tinymce.init({

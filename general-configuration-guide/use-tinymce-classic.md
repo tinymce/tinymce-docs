@@ -23,7 +23,7 @@ There are a few important differences between these modes:
 
 {% include live-demo.html id="default" %}
 
-##### Example
+## Example: Replacing a textarea with the default editor
 
 A basic TinyMCE editor can be added to a `textarea` element with the id `mytextarea` using:
 

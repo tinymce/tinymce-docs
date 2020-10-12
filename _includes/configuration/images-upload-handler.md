@@ -18,45 +18,10 @@ When this option is not set, {{site.productname}} utilizes an `XMLHttpRequest` t
 ##### Example
 
 ```js
+{% include misc/images-upload-handler-function.md %}
+
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  images_upload_handler: function (blobInfo, success, failure, progress) {
-    var xhr, formData;
-
-    xhr = new XMLHttpRequest();
-    xhr.withCredentials = false;
-    xhr.open('POST', 'postAcceptor.php');
-
-    xhr.upload.onprogress = function (e) {
-      progress(e.loaded / e.total * 100);
-    };
-
-    xhr.onload = function() {
-      var json;
-
-      if (xhr.status < 200 || xhr.status >= 300) {
-        failure('HTTP Error: ' + xhr.status);
-        return;
-      }
-
-      json = JSON.parse(xhr.responseText);
-
-      if (!json || typeof json.location != 'string') {
-        failure('Invalid JSON: ' + xhr.responseText);
-        return;
-      }
-
-      success(json.location);
-    };
-
-    xhr.onerror = function () {
-      failure('Image upload failed due to a XHR Transport error. Code: ' + xhr.status);
-    };
-
-    formData = new FormData();
-    formData.append('file', blobInfo.blob(), blobInfo.filename());
-
-    xhr.send(formData);
-  }
+  images_upload_handler: example_image_upload_handler
 });
 ```

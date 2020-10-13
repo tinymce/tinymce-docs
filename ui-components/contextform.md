@@ -57,7 +57,7 @@ Unlike normal context toolbar buttons, Context form buttons are not registered b
 
 The definition of a context form button is very similar to the definition of a normal toolbar button. The main difference is that the action is slightly different (as it will relate to the form), and the type is `contextformbutton` instead of `button`. The following is the full list of options:
 
-#### type: 'contextformtogglebutton';
+#### type: 'contextformbutton';
 
 | Name | Value | Requirement | Description |
 | ---- | ----- | ----------- | ----------- |
@@ -76,7 +76,7 @@ Where the `buttonApi` is the same as a regular toolbar button and `FormApi` has 
 
 The context form toggle button is very similar to the a normal toolbar toggle button. The main difference is that the action is slightly different (as it will relate to the form), and the type is `contextformtogglebutton`, instead of `togglebutton`. The following is the full list of options:
 
-#### type: 'contextformtoggleutton';
+#### type: 'contextformtogglebutton';
 
 | Name | Value | Requirement | Description |
 | ---- | ----- | ----------- | ----------- |

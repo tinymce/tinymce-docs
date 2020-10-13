@@ -4,7 +4,7 @@ This option enables you to make sure that any non block elements or text nodes a
 
 If you set this option to `false` it will never produce `p` tags on enter, or, automatically it will instead produce `br` elements and `Shift+Enter` will produce a `p`.
 
-> **Warning**: Not using `p` elements as root block negatively affect the functionality of the editor.
+> **Warning**: Not using `p` elements as the root block will impair the functionality of the editor.
 
 **Type:** `String`
 

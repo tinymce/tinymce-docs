@@ -6,7 +6,7 @@ These styles are useful for previewing content as it appears outside the editor.
 
 **Type:** `String`
 
-### Example: Applying one CCS style using `content_style`
+### Example: Applying one CSS style using `content_style`
 
 ```js
 tinymce.init({
@@ -17,7 +17,7 @@ tinymce.init({
 
 To add two or more styles with this option, provide the styles as a single string.
 
-### Example: Applying two or more CCS styles using `content_style`
+### Example: Applying two or more CSS styles using `content_style`
 
 ```js
 tinymce.init({

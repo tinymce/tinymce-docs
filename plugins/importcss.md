@@ -114,7 +114,7 @@ tinymce.init({
 
 This option enables group matching selectors into submenus in the `Formats` menu dropdown. You can use a `string`, `regexp` or a `function` to filter selectors. You can also omit the filter to get all non-matching ones into a specific group. You can also specify a group specific `selector_converter` so that formats for a specific group are produced by that converter.
 
-#### Example using a string filter with `importcss_groups` 
+#### Example using a string filter with `importcss_groups`
 
 ```js
 tinymce.init({
@@ -174,7 +174,7 @@ This option enables you to only import classes from selectors matching the filte
 
 **Type:** `String`
 
-#### Example of `importcss_selector_filter` using a string filter
+#### Example using a string filter with `importcss_selector_filter`
 
 ```js
 tinymce.init({
@@ -186,7 +186,7 @@ tinymce.init({
 });
 ```
 
-#### Example of `importcss_selector_filter` using a RegExp filter
+#### Example using a RegExp filter with `importcss_selector_filter`
 
 ```js
 tinymce.init({
@@ -198,7 +198,7 @@ tinymce.init({
 });
 ```
 
-#### Example of `importcss_selector_filter` using a function filter
+#### Example using a function filter with `importcss_selector_filter`
 
 ```js
 tinymce.init({

@@ -127,7 +127,7 @@ A nested menu item is a menu item with a submenu. Registering a submenu this way
 | isDisabled | `() => boolean` | Checks if the menu item is disabled. |
 | setDisabled | `(state: boolean) => void` | Sets the menu item's disabled state. |
 
-#### Example: Creating nested menu items
+#### Example: Creating a nested menu item
 
 ```js
 tinymce.init({

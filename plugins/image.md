@@ -104,7 +104,7 @@ tinymce.init({
 });
 ```
 
-#### Example of an external script that returns an json array of images
+#### Example of an external script that returns an JSON array of images
 
 You can also configure a URL with JSON data. The format of that list is the same as above.
 

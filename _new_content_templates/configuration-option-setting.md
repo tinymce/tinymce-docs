@@ -10,7 +10,7 @@
 
 What does the option do? Why/when use it?
 What is the values you can use and what do they do?
-Is there any risks? (But explain them without saying the word `risk` or similar. Use warnings if needed.) For longer, complicated 'risks' and issues, use the limitations section
+Is there any risks? (But explain them without saying the word `risk` or similar. Use warnings if needed.) For longer, complicated 'risks' and issues, use the limitations section.
 
 **Type:** `String` `Boolean` `Array` `Function` `Object` `Number`
 

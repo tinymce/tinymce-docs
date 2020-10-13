@@ -102,7 +102,7 @@ When the Permanent Pen is enabled, it will apply the new settings to the entered
 
 ## Basic setup
 
-Use the following example shows how to add the Permanent Pen toolbar button:
+The following example shows how to add the Permanent Pen toolbar button:
 
 ```js
 tinymce.init({

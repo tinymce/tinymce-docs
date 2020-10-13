@@ -16,9 +16,9 @@ The context menu supports both individual menu items and dynamic context menu se
 
 ## Options
 
-#{% include configuration/contextmenu.md %}
+{% include configuration/contextmenu.md %}
 
-#{% include configuration/contextmenu_never_use_native.md %}
+{% include configuration/contextmenu_never_use_native.md %}
 
 {% include configuration/available-context-menu-sections.md %}
 

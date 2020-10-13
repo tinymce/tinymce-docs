@@ -106,7 +106,6 @@ For information on the PowerPaste plugin, see: [PowerPaste plugin]({{site.baseur
 * Added `hasPlugin` function to the editor API to determine if a plugin exists or not.
 * Added the ability to use `colgroup` elements in tables.
 * Added the ability to delete and navigate HTML media elements without the `media` plugin.
-* Added `fullscreen_native` setting to the `fullscreen` plugin to enable use of the entire monitor.
 * Added table related oxide variables to the Style API for more granular control over table cell selection appearance.
 * Added new APIs to allow for programmatic control of the inline toolbar visibility.
 * Added the `origin` property to the `ObjectResized` and `ObjectResizeStart` events, to specify which handle the resize was performed on.

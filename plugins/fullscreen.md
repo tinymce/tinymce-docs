@@ -14,7 +14,7 @@ This plugin adds full screen editing capabilities to {{site.productname}}. When 
 
 Full screen mode can be toggled using the following keyboard shortcuts:
 
-* MacOS: Command+Shift+F
+* macOS: Command+Shift+F
 * Most other operating systems (such as Windows or Linux): Ctrl+Shift+F
 
 **Type:** `String`

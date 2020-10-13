@@ -165,7 +165,7 @@ tinymce.init({
 });
 ```
 
-#### Example of an external script that returns a json array of link items
+#### Example of an external script that returns a JSON array of link items
 
 You can also configure a URL with JSON data. The JSON data must use the same format as above.
 

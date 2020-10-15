@@ -167,7 +167,7 @@ For example: If an image link and a text link have the same `href` attribute, bo
 
 ### I2 - Alt text filename
 
-**Rule description:** This rule checks that the `alt` attribute text of the image is not the filename of the image.
+**Rule description:** This rule checks that the `alt` attribute text of the image is not the same as the filename of the image.
 
 #### {{pluginname}} rule details - I2
 

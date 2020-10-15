@@ -33,13 +33,22 @@ tinymce.init({
 
 ## Accessibility Rules
 
-The following checks are performed by the {{pluginname}} plugin.
+The following checks are available for the {{pluginname}} plugin. The rules checked depends on:
+
+- The level of compliance (A, AA, or AAA), set using the `a11ychecker_level` option.
+- The HTML version of the content, set using the `a11ychecker_html_version` option.
+
+Each rule has a severity level, which will be one of the following, listed in order of increasing severity:
+
+- Information
+- Warning
+- Error
 
 <a class="anchor" id="D1"></a>
 
 ### D1 - Usage of paragraphs as headings
 
-**Rule description:** This rule checks that `h1`-`h6` tags are used for heading content, not `p` tags. Not using correct heading markup will make it difficult for assistive technologies to visually represent and navigate through your content.
+**Rule description:** This rule checks that `h1`-`h6` tags are used for heading content, not `p` tags. Not using correct heading markup will make it difficult for assistive technologies to represent and navigate through your content.
 
 #### {{pluginname}} rule details - D1
 
@@ -114,7 +123,15 @@ For example: If an image link and a text link have the same `href` attribute, bo
 
 ### D5 - Contrast ratio of the text (D5A, D5B, and D5C)
 
-**Rule description:** This rule checks that the contrast ratio of the text is above the specified values (4.5:1 for normal text and 3:1 for large text). Text with a low contrast ratio is hard to read for users with an impaired vision.
+**Rule description:** This rule checks that the contrast ratio of the text is above the following values:
+
+- When the compliance level is set to AA,
+  - 4.5:1 for normal text
+  - 3:1 for large text
+- When the compliance level is set to AAA,
+  - 7:1 for any text
+
+Text with a low contrast ratio is hard to read for users with impaired vision.
 
 #### {{pluginname}} rule details - D5A
 
@@ -152,7 +169,7 @@ For example: If an image link and a text link have the same `href` attribute, bo
 
 <a class="anchor" id="I1"></a>
 
-### I1 - Image ALT text
+### I1 - Image `alt` text
 
 **Rule description:** This rule checks that all images have alternative (`alt`) text for screen readers and other assistive technologies.
 
@@ -165,7 +182,7 @@ For example: If an image link and a text link have the same `href` attribute, bo
 
 <a class="anchor" id="I2"></a>
 
-### I2 - Alt text filename
+### I2 - Image `alt` text is not the image filename
 
 **Rule description:** This rule checks that the `alt` attribute text of the image is not the same as the filename of the image.
 
@@ -195,6 +212,8 @@ For example: If an image link and a text link have the same `href` attribute, bo
 
 **Rule description:** This rule checks that all complex tables must have a `summary` attribute explaining to users of assistive technologies how to navigate through the data inside of the table.
 
+> **Note**: This rule only applies to HTML 4 content and is not checked when `a11ychecker_html_version` is set to `html5`.
+
 #### {{pluginname}} rule details - T2
 
 * **Notification level (severity)**: Warning
@@ -207,6 +226,8 @@ For example: If an image link and a text link have the same `href` attribute, bo
 ### T3 - Table caption and summary
 
 **Rule description:** This rule checks that the table caption and summary does not have the same text content. The caption should explain **what** the table is about while the summary should explain **how** to navigate the data inside of the table.
+
+> **Note**: The table `summary` attribute was deprecated in HTML 5, both the **what** and **how** information should be moved to the table caption.
 
 #### {{pluginname}} rule details - T3
 
@@ -308,9 +329,9 @@ tinymce.init({
 
 ### `a11ychecker_filter_issue`
 
-The `a11ychecker_filter_issue` option allows Accessibility Checker issues to be removed from the Accessibility Checker report using a callback function. This option is a flexible alternative to the `a11ychecker_ignored_rules` option.
+The `a11ychecker_filter_issue` option allows Accessibility Checker issues to be removed from the Accessibility Checker report using a callback function. This option is a flexible alternative to the `a11ychecker_ignored_rules` option. This option can remove issues from the results shown in the dialog and the `getReport` API.
 
-The function will be passed the result object of the [`getReport()` API](#getreport). To filter an issue from the Accessibility Checker report, the callback needs to return `false` for that particular issue.
+The function will be passed the results of the [`getReport()` API](#getreport). To filter an issue from the Accessibility Checker report, the callback needs to return `false` for that particular issue.
 
 **Type:** `Function`
 
@@ -377,7 +398,7 @@ tinymce.init({
 
 ### `a11ychecker_ignored_rules`
 
-The `a11ychecker_ignored_rules` option prevents specific Accessibility Checker rules from being checked. This feature allows developers to skip rules that they do not wish to check. For example: to skip rules that flag known content issues or custom HTML that should not be checked.
+The `a11ychecker_ignored_rules` option prevents specific Accessibility Checker rules from being checked. This feature allows developers to skip rules that they do not wish to check. For example: To skip rules that flag known content issues or custom HTML that should not be checked.
 
 **Type:** A comma-separated string.
 
@@ -390,7 +411,7 @@ The `a11ychecker_ignored_rules` option prevents specific Accessibility Checker r
 This examples shows how to ignore the following checks (rules):
 
 * D2 - Sequential headings
-* I2 - Alt text filename
+* I2 - Image `alt` text is not the image filename
 * T4B - Table headers
 
 ```js
@@ -461,7 +482,7 @@ The {{pluginname}} plugin provides the following APIs.
 
 ### `toggleaudit()`
 
-Opens the accessibility checker dialog with the results of the audit and options to correct the problems, if any.
+Opens and closes the accessibility checker dialog with the results of the audit and options to correct the problems, if any.
 
 #### Example: Using `toggleaudit()`
 
@@ -500,7 +521,7 @@ console.log(issues);
     "severity": "error",
     "url": "http://www.w3.org/TR/UNDERSTANDING-WCAG20/content-structure-separation-programmatic.html",
     "description": "Tables must have captions",
-    "element": {}  // The element value contains the DOM element (<table>).
+    "element": {}  // The element value contains the DOM element (such as <table>).
   }
 ]
 ```

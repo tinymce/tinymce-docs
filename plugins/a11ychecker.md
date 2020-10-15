@@ -310,7 +310,7 @@ tinymce.init({
 
 The `a11ychecker_filter_issue` option allows Accessibility Checker issues to be removed from the Accessibility Checker report using a callback function. This option is a flexible alternative to the `a11ychecker_ignored_rules` option.
 
-The function will be passed the result object of the [`getReport()` API](#getreport). To filter issues from the Accessibility Checker report, the callback needs to return `false` for the issue.
+The function will be passed the result object of the [`getReport()` API](#getreport). To filter an issue from the Accessibility Checker report, the callback needs to return `false` for that particular issue.
 
 **Type:** `Function`
 

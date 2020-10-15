@@ -85,9 +85,9 @@ For information on the Advanced Code Editor plugin, see: [Advanced Code Editor p
 
 ### Export 0.1.0
 
-A new **Export** plugin is available as a Technology Preview and provides the ability for users to export content from the editor as a rasterized PDF.
+A new **Export** plugin is available beta testing and allows users to export content from the editor as a rasterized PDF.
 
-This plugin will be available to all new or existing customers who have purchased a {{site.tiertwoplan}}, {{site.tierthreeplan}}, or {{site.enterpriseplan}}.
+This plugin will be available to all new and existing customers who have purchased a {{site.tiertwoplan}}, {{site.tierthreeplan}}, or {{site.enterpriseplan}}.
 
 For information on the Export plugin, see: [Export plugin]({{site.baseurl}}/plugins/export/).
 

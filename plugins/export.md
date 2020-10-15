@@ -2,22 +2,27 @@
 layout: default
 title: Export plugin
 title_nav: Export
-description: Export content from TinyMCE, into varying formats.
+description: Export content from TinyMCE, into various formats.
 keywords: plugin export pdf
 ---
 
 {% assign pluginname = "Export" %}
 {% assign plugincode = "export" %}
 
-{{site.techpreview}}
+{% assign beta_feature = "The Export plugin" %}
+{% include misc/beta-note.md %}
 
-{{site.requires_5_5v}}
-
+{{site.requires_5_5v}}<br/>
 {{site.premiumplugin}}
 
-The {{pluginname}} plugin provides the ability to export content from within the editor to a users local machine in varying formats. For the export formats available and for more information on what they support, see the [Exporters](#exporters) section below.
+The {{pluginname}} plugin adds the ability to export content from the editor to a user's local machine in various formats. For a list of available exporters and information on what they support, see the [Exporters section](#exporters).
 
 ## Interactive example
+
+To export the editor content, either:
+
+- From the _File_ menu, click _Export_ and select _PDF_.
+- Click the Export toolbar button (![Export icon: A page with an arrow from the center of the page to the right of the page]({{site.baseurl}}/images/icons/export.svg)) and select _PDF_.
 
 {% include live-demo.html id="export" %}
 
@@ -55,15 +60,16 @@ This exporter has a few limitations or known issues that should be noted:
 - The [Checklist plugin]({{ site.baseurl }}/plugins/checklist/) icons aren't able to be rendered on Internet Explorer 11 due to browser limitations.
 
 Additionally, the following plugins are not currently supported:
-  - [Anchor]({{ site.baseurl }}/plugins/anchor/)
-  - [BBCode]({{ site.baseurl }}/plugins/bbcode/)
-  - [Comments]({{ site.baseurl }}/plugins/comments/)
-  - [Enhanced Media Embed]({{ site.baseurl }}/plugins/mediaembed/)
-  - [Fullpage]({{ site.baseurl }}/plugins/fullpage/)
-  - [Legacy Output]({{ site.baseurl }}/plugins/legacyoutput/)
-  - [Media]({{ site.baseurl }}/plugins/media/)
-  - [Page Embed]({{ site.baseurl }}/plugins/pageembed/)
-  - [Table of Contents]({{ site.baseurl }}/plugins/toc/)
+
+- [Anchor]({{ site.baseurl }}/plugins/anchor/)
+- [BBCode]({{ site.baseurl }}/plugins/bbcode/)
+- [Comments]({{ site.baseurl }}/plugins/comments/)
+- [Enhanced Media Embed]({{ site.baseurl }}/plugins/mediaembed/)
+- [Fullpage]({{ site.baseurl }}/plugins/fullpage/)
+- [Legacy Output]({{ site.baseurl }}/plugins/legacyoutput/)
+- [Media]({{ site.baseurl }}/plugins/media/)
+- [Page Embed]({{ site.baseurl }}/plugins/pageembed/)
+- [Table of Contents]({{ site.baseurl }}/plugins/toc/)
 
 ## Configuration Options
 

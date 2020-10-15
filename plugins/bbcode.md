@@ -26,7 +26,7 @@ tinymce.init({
 
 ### `bbcode_dialect`
 
-This option allows you to specify the BBCode dialect. We only support [PunBB](http://punbb.informer.com/) at the moment but hope to add more dialects in the future. Suported tags are listed in the table below:
+This option allows you to specify the BBCode dialect. We only support [PunBB](http://punbb.informer.com/). Supported tags are listed in the table below:
 
 | BBCode                 | Description    | HTML equivalent                     |
 |------------------------|----------------|-------------------------------------|

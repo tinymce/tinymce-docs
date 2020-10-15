@@ -12,7 +12,7 @@ To specify the menus that should appear on {{site.productname}}'s menu bar, the 
 
 {{site.differs_for_mobile}}
 
-### Example: Using `menubar` string
+### Example: Customizing the menu bar
 
 ```js
 tinymce.init({
@@ -21,7 +21,7 @@ tinymce.init({
 });
 ```
 
-### Example: Using `menubar` boolean
+### Example: Disabling/removing the menu bar
 
 To disable the menu bar, the menubar option should be provided a boolean value of `false`.
 

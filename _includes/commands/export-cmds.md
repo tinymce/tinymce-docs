@@ -3,7 +3,7 @@
 | ----------------------- | ----------------------------------------------------------------------------------------------- |
 | mceExportDownload   | Converts the editor content using the specified exporter format and downloads the converted content.   |
 
-> **Note:** Currently there are no settings that can be provided when exporting Client-side PDFs.
+> **Note:** There are no settings available when using the 'clientpdf' format.
 
 **Examples**
 

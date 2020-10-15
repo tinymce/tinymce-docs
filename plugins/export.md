@@ -49,17 +49,17 @@ The {{pluginname}} plugin provides the following exporters:
 
 ### Client-side PDF (`clientpdf`)
 
-The client-side PDF exporter converts the editor content to a PDF without the need for server-side components. This exporter will resize the content to the relevant PDF page size, add in page breaks, take a snapshot of the HTML and embed the snapshot image within the exported PDF.
+The client-side PDF exporter converts the editor content to a PDF without the need for server-side components. This exporter will resize the content to fit on A4 pages, add page breaks, take a snapshot of the HTML, and embed the snapshot image within the exported PDF.
 
 This exporter has a few limitations or known issues that should be noted:
 
-- The text content in the PDF can't be selected or copied.
-- Content may be cut in half across different pages.
-- Remote images require the use of an image proxy to be rendered due to browser limitations. For more information on proxying remove images, see the [export_image_proxy](#export_image_proxy) option.
-- Right-to-left languages that use cursive scripts (eg Arabic) may not render correctly due to an issue with how the image of the HTML content is rendered.
-- The [Checklist plugin]({{ site.baseurl }}/plugins/checklist/) icons aren't able to be rendered on Internet Explorer 11 due to browser limitations.
+- The text content in the PDF cannot be selected or copied.
+- A single line of content sliced horizontally and distributed across separate pages.
+- Remote images require an image proxy to render due to browser limitations. For information on proxying remote images, see the [export_image_proxy](#export_image_proxy) option.
+- Right-to-left languages that use cursive scripts (such as Arabic) may not render correctly due to an issue with how the image of the HTML content is rendered.
+- The [Checklist plugin]({{ site.baseurl }}/plugins/checklist/) icons will not render for Internet Explorer 11 users due to browser limitations.
 
-Additionally, the following plugins are not currently supported:
+The following plugins are not supported:
 
 - [Anchor]({{ site.baseurl }}/plugins/anchor/)
 - [BBCode]({{ site.baseurl }}/plugins/bbcode/)
@@ -79,7 +79,7 @@ The following configuration options affect the behavior of the {{pluginname}} pl
 
 ### `export_ignore_elements`
 
-This option takes an array of HTML element names and allows specific HTML elements to be excluded when exporting content from the editor. This can be used to exclude HTML elements that may cause issues with exported content, such as video or audio elements.
+This option takes an array of HTML element names and allows specific HTML elements to be excluded from the exported content. This can be used to exclude HTML elements that may cause issues with exported content, such as video or audio elements.
 
 **Type:** `Array`
 

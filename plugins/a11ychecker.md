@@ -377,7 +377,7 @@ tinymce.init({
 
 ### `a11ychecker_ignored_rules`
 
-The `a11ychecker_ignored_rules` option prevents specific Accessibility Checker rules being checked. This feature allows developers to skip rules that flag known issues in content until the issue is fixed.
+The `a11ychecker_ignored_rules` option prevents specific Accessibility Checker rules from being checked. This feature allows developers to skip rules that they do not wish to check. For example: to skip rules that flag known content issues or custom HTML that should not be checked.
 
 **Type:** A comma-separated string.
 

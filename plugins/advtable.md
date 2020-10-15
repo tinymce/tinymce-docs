@@ -8,7 +8,7 @@ keywords: sort tables advanced advtable premium
 
 {% assign pluginname = "Advanced Tables" %}
 {% assign plugincode = "advtable" %}
-{{site.requires_5_5v}}<br/>
+{{site.requires_5_1v}}<br/>
 {{site.premiumplugin}}
 
 The `advtable` plugin is a premium plugin that extends the core [`table` plugin]({{site.baseurl}}/plugins/table/) by adding sort options for rows and columns. Tables can be sorted by row or column values using:

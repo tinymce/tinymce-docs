@@ -21,7 +21,7 @@ The two arguments this method take are:
 * `name` - A unique name for the autocompleter.
 * `configuration` - An object containing the user's configuration.
 
-### Configuration options
+## Configuration options
 
 | Name | Value | Requirement | Description |
 | ---- | ----- | ----------- | ----------- |
@@ -40,16 +40,16 @@ The `fetch` results should be a list of objects with the following details:
 * `text`: Text to display for the item.
 * `icon`: Name of the icon to be displayed. Must be a single unicode character or correspond to an icon in the icon pack.
 
-> Note: If two or more autocompleters use the same trigger character, then the fetched results will be merged together before being displayed.
+> **Note**: If two or more autocompleters use the same trigger character, then the fetched results will be merged together before being displayed.
 
-### API
+## API
 
 | Name | Value | Description |
 | ---- | ----- | ----------- |
 | hide | `() => void` | Hides the autocompleter menu. |
 | reload | `(fetchOptions: Record<string, any>) => void` | Hides the autocompleter menu and fetches new menu items. The  `fetchOptions` will be passed to the autocompleter `fetch` callback. |
 
-## Example
+## Interactive example
 
 This example shows how the charmap plugin adds the standard autocompleter. The autocompleter will show whenever a `:` character is typed plus at least one additional character.
 

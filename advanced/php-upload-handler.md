@@ -9,9 +9,9 @@ keywords: php_upload_handler php async image upload
 
 The following PHP script creates a server-side upload handler suitable for {{site.productname}}.
 
-> Note: This script is a reference requires updating to suit the application.
+> **Note**: This script is a reference requires updating to suit the application.
 
-##### Example postAcceptor.php
+## Example postAcceptor.php
 
 ```php
 <?php

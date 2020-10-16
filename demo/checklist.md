@@ -8,7 +8,7 @@ controls: toolbar button
 ---
 
 
-## Live example
+## Interactive example
 
 This example shows how to use the **Checklist** plugin to add interactive checklists to your content. For more information on the **Checklist** plugin, see the [docs]({{site.baseurl}}/plugins/checklist/).
 

@@ -23,7 +23,7 @@ This guide assumes:
 
 The CSS that goes with a theme is called a skin. The default skin for {{site.productname}} {{site.productmajorversion}} is named Oxide and is written in [Less](http://lesscss.org), a popular CSS preprocessor. With Oxide we introduced a concept we call the **Style API**. This API consists of around 300 variables which you use to modify the appearance of {{site.productname}}. You never touch the underlying CSS. The benefit of this approach is that improvements we make to the CSS and HTML won't break your custom skin. This also means that if things don't work as expected, we can provide support and bug fixes, something that was virtually impossible before.
 
-> Important: We do not recommend modifying or overriding CSS rules directly.
+> **Important**: We do not recommend modifying or overriding CSS rules directly.
 
 To set up the skin development environment, begin with the following steps:
 
@@ -50,6 +50,7 @@ The development environment is set up and ready to work.
 ![{{site.productname}} skin SDK for Silver theme]({{site.baseurl}}/images/SDKforsilver.png)
 
 If you just need to build the skins without launching a web server, run:
+
 ```sh
 yarn oxide-build
 ```
@@ -102,7 +103,7 @@ Switch to the web browser. Select your skin from the *Skin menu*. It should show
 
 This is how you skin {{site.productname}}: copy variables from the files in the theme folder and paste them into your skin file. There are variables for most things, like spacing between toolbar buttons to letter spacing. Simple yet powerful.
 
-> Tip: You can change the {{site.productname}} config in `modules/oxide/src/demo/index.html` to suit your particular use case.
+> **Tip**: You can change the {{site.productname}} config in `modules/oxide/src/demo/index.html` to suit your particular use case.
 
 ## Creating a content CSS file
 

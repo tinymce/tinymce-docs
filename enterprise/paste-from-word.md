@@ -35,7 +35,7 @@ Just as it cleans up rogue formatting from sources like Word, it does the same f
 
 It also does the same for images, automatically linking to the source image URL. Perfect content, every time.
 
-### Try our PowerPaste plugin demo
+## Try our PowerPaste plugin demo
 
 {% include live-demo.html id="paste-from-word" %}
 

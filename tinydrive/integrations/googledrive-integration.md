@@ -95,8 +95,8 @@ The following other options can be performed to the selected file :
 
 Read more about these options [here](https://gsuite.google.com/learning-center/products/drive/get-started/#!/).
 
-## Live example
+## Interactive example
 
-Here is a live example of Google Drive enabled on {{site.cloudfilemanager}}.
+Here is an interactive example of Google Drive enabled on {{site.cloudfilemanager}}.
 
 {% include live-demo.html id="drive-demo-googledrive" %}

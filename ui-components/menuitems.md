@@ -46,9 +46,9 @@ tinymce.init({
 });
 ```
 
-> Note: The identifier used to create the menu item must be included in the [`menu`]({{site.baseurl}}/configure/editor-appearance/#menu) option in the {{site.productname}} configuration for it to be added to the menubar's menus. It will not be added to the menubar's menus if `menu` is not configured correctly.
+> **Note**: The identifier used to create the menu item must be included in the [`menu`]({{site.baseurl}}/configure/editor-appearance/#menu) option in the {{site.productname}} configuration for it to be added to the menubar's menus. It will not be added to the menubar's menus if `menu` is not configured correctly.
 
-## Live Example
+## Interactive example
 
 This example shows you how to add some simple menu items to a new "custom" menu.
 
@@ -85,7 +85,7 @@ A basic menu item triggers its `onAction` function when clicked.
 | isDisabled | `() => boolean` | Checks if the menu item is disabled. |
 | setDisabled | `(state: boolean) => void` | Sets the menu item's disabled state. |
 
-#### Example
+#### Example: Creating a basic menu item
 
 ```js
 tinymce.init({
@@ -127,7 +127,7 @@ A nested menu item is a menu item with a submenu. Registering a submenu this way
 | isDisabled | `() => boolean` | Checks if the menu item is disabled. |
 | setDisabled | `(state: boolean) => void` | Sets the menu item's disabled state. |
 
-#### Example
+#### Example: Creating a nested menu item
 
 ```js
 tinymce.init({
@@ -182,7 +182,7 @@ A toggle menu item triggers its `onAction` when clicked. It also has a concept o
 | isDisabled | `() => boolean` | Checks if the menu item is disabled. |
 | setDisabled | `(state: boolean) => void` | Sets the menu item's disabled state. |
 
-#### Example
+#### Example: Creating a toggle menu item
 
 ```js
 // Menu items are recreated when the menu is closed and opened, so we need

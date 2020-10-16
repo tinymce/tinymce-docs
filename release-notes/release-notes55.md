@@ -65,6 +65,12 @@ For information on:
 - The `LineHeight` editor command, see: [Commands available for {{site.productname}} - Core Editor commands]({{site.baseurl}}/advanced/editor-command-identifiers/#coreeditorcommands).
 - The `LineHeight` query command value, see: [Commands available for {{site.productname}} - Available query command values]({{site.baseurl}}/advanced/editor-command-identifiers/#availablequerycommandvalues).
 
+### Added the ability to use the browser full screen mode with the `fullscreen` plugin
+
+A new `fullscreen_native` option allows the editor to use the browser's full screen mode instead of only filling the browser viewport. When enabled and the user activates full screen mode, the editor will fill the whole screen, the same as full screen mode for online videos.
+
+For information on the `fullscreen_native` option, see: [Full Screen Plugin - `fullscreen_native`]({{site.baseurl}}/plugins/fullscreen/#fullscreen_native).
+
 ### Added `colgroup` support for tables
 
 A new `table_use_colgroups` option allows `colgroup` and `col` elements to be added to new tables. The `colgroup` and `col` elements can be used to set column widths. Other attributes are not supported in the TinyMCE 5.5 release.
@@ -121,7 +127,6 @@ For information on the PowerPaste plugin, see: [PowerPaste plugin]({{site.baseur
 * Added `hasPlugin` function to the editor API to determine if a plugin exists or not.
 * Added the ability to use `colgroup` elements in tables.
 * Added the ability to delete and navigate HTML media elements without the `media` plugin.
-* Added `fullscreen_native` setting to the `fullscreen` plugin to enable use of the entire monitor.
 * Added table related oxide variables to the Style API for more granular control over table cell selection appearance.
 * Added new APIs to allow for programmatic control of the inline toolbar visibility.
 * Added the `origin` property to the `ObjectResized` and `ObjectResizeStart` events, to specify which handle the resize was performed on.
@@ -181,10 +186,9 @@ This section describes issues that users of {{site.productname}} 5.5 may encount
 
 ###
 
-#### Issue
+**Issue**:
 
-
-#### Workaround
+**Workaround**:
 
 
 {% assign enterprise = true %}

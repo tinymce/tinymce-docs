@@ -106,14 +106,6 @@ For a list of available:
 
 The following premium plugin updates were released alongside {{site.productname}} 5.5.
 
-### Advanced Code Editor 2.2.0
-
-The {{site.productname}} 5.5 release includes an accompanying release of the **Advanced Code Editor** premium plugin.
-
-**Advanced Code Editor** 2.2.0 adds support for loading the Advanced Code Editor user interface components when the editor is in a ShadowRoot.
-
-For information on the Advanced Code Editor plugin, see: [Advanced Code Editor plugin]({{site.baseurl}}/plugins/advcode/).
-
 ### Accessibility Checker 2.3.0
 
 The {{site.productname}} 5.5 release includes an accompanying release of the **Accessibility Checker** premium plugin.
@@ -134,6 +126,29 @@ The {{site.productname}} 5.5 release includes an accompanying release of the **A
 * Fixed incorrect strings used for the next/previous button tooltips.
 
 For information on the Accessibility Checker plugin, see: [Accessibility Checker plugin]({{site.baseurl}}/plugins/a11ychecker/).
+
+### Advanced Code Editor 2.2.0
+
+The {{site.productname}} 5.5 release includes an accompanying release of the **Advanced Code Editor** premium plugin.
+
+**Advanced Code Editor** 2.2.0 adds support for loading the Advanced Code Editor user interface components when the editor is in a ShadowRoot.
+
+For information on the Advanced Code Editor plugin, see: [Advanced Code Editor plugin]({{site.baseurl}}/plugins/advcode/).
+
+### Comments 2.2.0
+
+The {{site.productname}} 5.5 release includes an accompanying release of the **Comments** premium plugin.
+
+**Comments** 2.2.0 introduces a localized user interface, allowing the Comments interface to render in different languages.
+
+**Comments** 2.2.0 also provides the following bug fixes:
+
+- Fixed the editor's `referrer_policy` setting not working when loading additional resources to improve bundling of the plugin and improving load times.
+- Fixed elements incorrectly left in the DOM when the editor was removed.
+
+For a list of supported languages, including professionally translated language packs, see: [Localization options - `language`]({{site.baseurl}}/configure/localization/#language).
+
+For information on the Comments plugin, see: [Comments plugin]({{site.baseurl}}/plugins/comments/).
 
 ### Export 0.1.0
 

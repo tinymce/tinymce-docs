@@ -11,7 +11,7 @@ This plugin automatically resizes the editor to the content inside it. It is typ
 
 **Type:** `String`
 
-##### Autoresize plugin example
+## Basic setup
 
 ```js
 tinymce.init({
@@ -30,7 +30,7 @@ This option allows you to specify the size of the `padding` at the bottom of the
 
 **Type:** `Number`
 
-##### Example
+#### Example: Using `autoresize_bottom_margin`
 
 ```js
 tinymce.init({
@@ -50,7 +50,7 @@ This option allows you to set whether the editor will attempt to resize itself u
 
 **Possible Values:** `true`, `false`
 
-##### Example
+#### Example: `autoresize_on_init`
 
 ```js
 tinymce.init({
@@ -66,7 +66,7 @@ This option allows you to specify the size of the `padding` at the sides of the 
 
 **Type:** `Number`
 
-##### Example
+#### Example: `autoresize_overflow_padding`
 
 ```js
 tinymce.init({
@@ -82,7 +82,7 @@ This option enables you to specify the **maximum** `height` that the editor will
 
 **Type:** `Number`
 
-##### Example
+#### Example: `max_height`
 
 ```js
 tinymce.init({
@@ -97,7 +97,7 @@ This option enables you to specify the **minimum** `height` of the editor when i
 
 **Type:** `Number`
 
-##### Example
+#### Example: `min_height`
 
 ```js
 tinymce.init({

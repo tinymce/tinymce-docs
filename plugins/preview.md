@@ -14,7 +14,7 @@ This plugin adds a preview button to the toolbar. Pressing the button opens a di
 
 **Type:** `String`
 
-##### Example
+## Basic setup
 
 ```js
 tinymce.init({

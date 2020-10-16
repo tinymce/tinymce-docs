@@ -14,7 +14,7 @@ The `media` plugin adds the ability for users to be able to add HTML5 video and 
 
 **Type:** `String`
 
-##### Example
+## Basic setup
 
 ```js
 tinymce.init({
@@ -25,7 +25,7 @@ tinymce.init({
 });
 ```
 
-### Options
+## Options
 
 These settings affect the execution of the `media` plugin. Namely the ability to disable parts of the media dialog box when inserting/editing media items. In addition, the user may disable the cross-site scripting sanitation filter for video/object elements here.
 
@@ -35,7 +35,7 @@ This option allows you to specify the function that will return the HTML embed c
 
 **Type:** `String`
 
-##### Example
+#### Example: Using `audio_template_callback`
 
 ```js
 tinymce.init({
@@ -59,7 +59,7 @@ This options allows you disable the `Alternative source` input field in the medi
 
 **Possible Values:** `true`, `false`
 
-##### Example
+#### Example: Using `media_alt_source`
 
 ```js
 tinymce.init({
@@ -81,7 +81,7 @@ This options allows you disable the `Dimensions` input fields in the media dialo
 
 **Possible Values:** `true`, `false`
 
-##### Example
+#### Example: Using `media_dimensions`
 
 ```js
 tinymce.init({
@@ -103,7 +103,7 @@ This option allows you disable the XSS sanitation filter for video/object elemen
 
 **Possible Values:** `true`, `false`
 
-##### Example
+#### Example: Using `media_filter_html`
 
 ```js
 tinymce.init({
@@ -127,7 +127,7 @@ This option is enabled by default and accepts URLs input into the source field o
 
 **Possible Values:** `true`, `false`
 
-##### Example
+#### Example: Using `media_live_embeds`
 
 ```js
 tinymce.init({
@@ -149,7 +149,7 @@ This options allows you disable the `Poster` input field in the media dialog.
 
 **Possible Values:** `true`, `false`
 
-##### Example
+#### Example: Using `media_poster`
 
 ```js
 tinymce.init({
@@ -167,7 +167,7 @@ This option allows you to embed videos using script elements.
 
 **Type:** `String`
 
-##### Example
+#### Example: Using `media_scripts`
 
 ```js
 tinymce.init({
@@ -194,7 +194,7 @@ If something goes wrong in your function and you want to show an error to the us
 
 **Type:** `JavaScript Function`
 
-##### Example
+#### Example: Using `media_url_resolver`
 
 The following example simply checks if the url contains some special url and returns an iframe if it does. Otherwise it calls the `resolve` callback with an empty string, falling back to the default media embed logic.
 
@@ -221,7 +221,7 @@ This option allows you to specify the function that will return the HTML embed c
 
 **Type:** `String`
 
-##### Example
+#### Example: Using `video_template_callback`
 
 ```js
 tinymce.init({

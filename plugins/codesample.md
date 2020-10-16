@@ -12,7 +12,7 @@ controls: toolbar button
 
 The Code Sample plugin (`codesample`) lets a user insert and embed syntax color highlighted code snippets into the editable area. It also adds a button to the toolbar which on click will open a dialog box to accept raw code input.
 
-##### Example
+## Basic setup
 
 ```js
 tinymce.init({
@@ -24,13 +24,13 @@ tinymce.init({
 
 By default, `codesample` uses `http://prismjs.com/` to embed the code samples within the editor and works out of the box. That is, when a user copies valid code syntax into the editable area the code will be automatically formatted according to Prism default CSS rules.
 
-> Prism.js and prism.css need to be added to a page for syntax highlighting to work. See the instructions below to learn how to do this.
+> **Note**: Prism.js and prism.css need to be added to a page for syntax highlighting to work. See the instructions below to learn how to do this.
 
 ## Using Prism.js on your web page
 
 You need to add `prism.js` and `prism.css` to your page in order to get the syntax highlighted code samples on your webpage (as created by the Code Sample plugin). The Code Sample plugin uses the following languages: markup, javascript, css, php, ruby, python, java, c, csharp and cpp. You can generate the `prism.js` and `prism.css` files on the [download](http://prismjs.com/download.html) page at the Prism website.
 
-#### Example of using the Prism.js script
+### Example of using the Prism.js script
 
 ```html
 <link rel="stylesheet" type="text/css" href="prism.css">
@@ -38,7 +38,7 @@ You need to add `prism.js` and `prism.css` to your page in order to get the synt
 <pre class="language-markup"><code>...</code></pre>
 ```
 
-## Live example
+## Interactive example
 
 {% include live-demo.html id="codesample" %}
 
@@ -63,7 +63,7 @@ When using this option, ensure that Prism.js and any language add-ons are loaded
 
 **Possible values:** `true`, `false`
 
-#### Example
+#### Example: Using `codesample_global_prismjs`
 
 ```js
 tinymce.init({
@@ -78,7 +78,7 @@ tinymce.init({
 
 This configuration option enables you to set a list of languages to be displayed in the languages drop down.
 
-#### Example
+#### Example: Using `codesample_languages`
 
 ```js
 tinymce.init({

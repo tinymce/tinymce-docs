@@ -14,7 +14,7 @@ This plugin adds a save button to the {{site.productname}} toolbar, which will s
 
 **Type:** `String`
 
-##### Example
+## Basic setup
 
 ```js
 tinymce.init({
@@ -24,7 +24,7 @@ tinymce.init({
 });
 ```
 
-**Error messages**
+## Save error messages
 
 The `"Error: Form submit field collision."` error message will appear if you call the submit button of your form "submit", which causes a collision with the JS form `submit` function and makes it impossible to submit the form using code. This can easily be avoided by naming the submit button `"submitbtn"` or similar.
 
@@ -40,7 +40,7 @@ With this:
 <form><button name="submitbtn"></button></form>
 ```
 
-### Options
+## Options
 
 These settings affect the execution of the `save` plugin. Callbacks that will execute after saving the content or canceling saving the content are included in this section. In addition, a setting that will disable the save button when no modifications have been made to the content is available here.
 
@@ -50,7 +50,7 @@ This option allows you to disable the save button until modifications have been 
 
 **Type:** `Boolean`
 
-##### Example
+#### Example: Using `save_enablewhendirty`
 
 ```js
 tinymce.init({
@@ -67,7 +67,7 @@ This option allows you to specify the function that will be executed when the ca
 
 **Type:** `String`
 
-##### Example
+#### Example: Using `save_oncancelcallback`
 
 ```js
 tinymce.init({
@@ -84,7 +84,7 @@ This option allows you to specify the function that will be executed when the sa
 
 **Type:** `String`
 
-##### Example
+#### Example: Using `save_onsavecallback`
 
 ```js
 tinymce.init({

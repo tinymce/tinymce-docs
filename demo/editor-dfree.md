@@ -7,7 +7,7 @@ description: Distraction-free editor
 keywords: example distraction-free editor
 ---
 
-## Live example
+## Interactive example
 
 This example shows you how to use {{site.productname}}'s Distraction-free editor.
 

@@ -33,17 +33,23 @@ If the server is not running on a standard HTTP or HTTPS port (80 or 443) then C
 ## Using browser tooling to investigate services issues
 
 1. Open your browser's Console/Network tools:
-	* Chrome: View menu -> Developer -> JavaScript Console. Click the Network tab (located between Elements and Sources).
-	* Firefox: Tools menu -> Web Developer -> Network.
-	* Safari: Develop -> Show Error Console. Click the Timelines link between Resources and Debugger.
-	* Internet Explorer: Click the cog icon on the top-right side of the browser. Select F12 Developer Tools. Click the Network link (next to the ‘Profiler’ link).
+
+    * Chrome: View menu -> Developer -> JavaScript Console. Click the Network tab (located between Elements and Sources).
+    * Firefox: Tools menu -> Web Developer -> Network.
+    * Safari: Develop -> Show Error Console. Click the Timelines link between Resources and Debugger.
+    * Internet Explorer: Click the cog icon on the top-right side of the browser. Select F12 Developer Tools. Click the Network link (next to the ‘Profiler’ link).
+
 2. Refresh the webpage featuring an {{site.productname}} configured with the spelling service. Enter a misspelled word into the editor.
 3. Locate the network results that match the following URLs:
-	* `http://YOUR_SERVER:YOUR_PORT/ephox-spelling/1/autocorrect`
-	* `http://YOUR_SERVER:YOUR_PORT/ephox-spelling/1/correction`
+
+    * `http://YOUR_SERVER:YOUR_PORT/ephox-spelling/1/autocorrect`
+    * `http://YOUR_SERVER:YOUR_PORT/ephox-spelling/1/correction`
+
 4. If the network response for these services is 404, try the following:
-	* Take the service URL displayed as erroneous (example: `http://YOUR_SERVER:YOUR_PORT/ephox-spelling/1/autocorrect`).
-	* Remove everything from the ‘1’ onwards (including the ‘1’) and replace it with /version. (example: Change `http://YOUR_SERVER:YOUR_PORT/ephox-spelling/1/correction` to `http://YOUR_SERVER:YOUT_PORT/ephox-spelling/version`). The response code should be 200 and the body should display the version number.
+
+    * Take the service URL displayed as erroneous (example: `http://YOUR_SERVER:YOUR_PORT/ephox-spelling/1/autocorrect`).
+    * Remove everything from the ‘1’ onwards (including the ‘1’) and replace it with /version. (example: Change `http://YOUR_SERVER:YOUR_PORT/ephox-spelling/1/correction` to `http://YOUR_SERVER:YOUT_PORT/ephox-spelling/version`). The response code should be 200 and the body should display the version number.
+
 5. If the response for the version URL is still 404, it means the service has not been started or installed correctly.
 6. To check the "Origin" value that the browser uses, open the network tools (Chrome in this screenshot) and refresh the page. Then enter a couple of words in the editor and select one of the requests on the bottom left ('correction' in the screen shot) and select the 'Headers' section. Look for the 'Origin' header value.
 
@@ -59,7 +65,6 @@ Sometimes the Origin header is never sent to the services, which results in the 
 2. If you now see an Origin header being sent across, alter your `application.conf` and replace all instances of 'localhost' with the domain name of your machine.
 3. Restart the Tomcat / Jetty service.
 4. Reload the browser page and all should work well.
-
 
 ## Out of memory errors
 
@@ -89,7 +94,7 @@ Edit the setenv.sh (Unix) or setenv.bat (Windows) to read as follows:
 
 On Windows, please prefix each line with 'set' and remove the quotes . So the configuration would look like:
 
-```
+```sh
 set CATALINA_OPTS= -Dephox.config.file=/config/file/location/application.conf
 set JAVA_OPTS= -Xms2048m -Xmx2048m -XX:PermSize=64m -XX:MaxPermSize=512m -Dfile.encoding=utf-8 -Djava.awt.headless=true -XX:+UseParallelGC -XX:MaxGCPauseMillis=100
 
@@ -101,7 +106,7 @@ JAVA_OPTS=" -Xms2048m -Xmx2048m -XX:PermSize=64m -XX:MaxPermSize=512m -Dfile.enc
 
 Edit the start.ini file to read as follows:
 
-```
+```sh
 #===========================================================
 # Jetty start.jar arguments
 # Each line of this file is prepended to the command line
@@ -115,7 +120,6 @@ Restart the service and confirm the settings have been applied like so:
 
 ![Spell Checking Server Settings on Jetty]({{ site.baseurl }}/images/spell-checking-jetty-settings.png)
 
-
 ## Troubleshooting tools: curl
 
 ### Installing curl on Mac
@@ -126,7 +130,7 @@ curl is installed by default on all MacOS X installations. Open the "terminal" a
 
 Use your distribution package manager to install curl. See your distribution documentation for details.
 
-### Installing curl (or equivalent package) on Windows  
+### Installing curl (or equivalent package) on Windows
 
 Download and install the curl package based on your environment:
 
@@ -138,19 +142,20 @@ Once downloaded:
 
 1. Unzip the package like so:
 
-	![Curl on Windows step 1]({{ site.baseurl }}/images/spell-checking-curl-windows-1.png)
+  ![Curl on Windows step 1]({{ site.baseurl }}/images/spell-checking-curl-windows-1.png)
 
 2. Copy the path of the folder to where the 'curl.exe' is in:
 
-	![Curl on Windows step 2]({{ site.baseurl }}/images/spell-checking-curl-windows-2.png)
+  ![Curl on Windows step 2]({{ site.baseurl }}/images/spell-checking-curl-windows-2.png)
 
 3. Open a cmd prompt. Start -> Programs -> Accessories -> cmd (or command prompt). Then change to that directory to the folder where the 'curl.exe' is found.Enter 'cd' (without quotes) and then paste in the path from step 2.
 
-	![Curl on Windows step 3]({{ site.baseurl }}/images/spell-checking-curl-windows-3.png)
+  ![Curl on Windows step 3]({{ site.baseurl }}/images/spell-checking-curl-windows-3.png)
 
 4. Once in the folder enter 'curl --version' (without quotes) and ensure you get a valid version
 
-	![Curl on Windows step 4]({{ site.baseurl }}/images/spell-checking-curl-windows-4.png)
+  ![Curl on Windows step 4]({{ site.baseurl }}/images/spell-checking-curl-windows-4.png)
 
 ## Need more help?
+
 If you are still experiencing problems, please contact [{{site.supportname}}]({{site.supporturl}}).

@@ -5,8 +5,6 @@ description: TinyMCE Annotations provides the ability to describe particular fea
 keywords: annotation annotations annotator
 ---
 
-## Introduction
-
 The {{site.productname}} Annotations API provides the ability to add, modify, and delete annotations; listen to text selection events and retrieve all annotations with the same annotation name. The Annotations API is a part of the {{site.productname}} core and functions in the same way as the formatting APIs in {{site.productname}} core.
 
 The primary value that the Annotations API provides is that it tags each annotation with a unique identifier(uid) accessible via `editor.annotator`. This highlights the annotated content and wraps it in annotation markers. These markers can either stay in the content or be removed on `getContent`, depending on the user configuration (`persistent` setting).
@@ -59,7 +57,7 @@ ed.on('init', function() {
 
 This will register an annotation with the name `alpha`. In our example, when an `alpha` is being added to the document, a span marker will be created with class `alpha` and a data attribute for the author.
 
-> Note: The data passed through here is the same as the data specified when calling the annotate API. `decorate` is used to turn the annotation data into a document object model (DOM) representation.
+> **Note**: The data passed through here is the same as the data specified when calling the annotate API. `decorate` is used to turn the annotation data into a document object model (DOM) representation.
 The uid passed through to `decorate` is either the uid field in the data object (if it exists), or a randomly generated uid if it does not. Annotator will be responsible for putting the uid on the span. The user does not need to do that part.
 
 ### 3. Making the Annotator Available
@@ -74,7 +72,7 @@ toolbar: 'annotate-alpha'
 
 After registering an annotation, use it by applying it to the current selection.
 
-> Note: If the selection is collapsed (single cursor rather than ranged selection) and is within a word, it will first perform a word grab function and then apply the annotation to the resulting word selection.
+> **Note**: If the selection is collapsed (single cursor rather than ranged selection) and is within a word, it will first perform a word grab function and then apply the annotation to the resulting word selection.
 The API to apply an annotation is `annotate`.  Annotations can be programmatically applied to selected text using:
 
 ```js
@@ -128,7 +126,7 @@ The `annotationChanged` listeners should only fire when the state or the uid cha
 annotationChanged: (name: string, callback): void
 ```
 
-## Example
+## Interactive example
 
 Use the following example to create the Annotate API:
 
@@ -176,4 +174,3 @@ This bypasses any other annotations that might be closer to the selection cursor
 */
 remove: (name)
 ```
-

@@ -13,7 +13,7 @@ The format painter retains the formatting after application making it possible t
 
 The ability to reuse existing formatting saves the user time and ensures consistency across the content.
 
-### Try our Format Painter plugin demo
+## Try our Format Painter plugin demo
 
 {% include live-demo.html id="format-painter" %}
 

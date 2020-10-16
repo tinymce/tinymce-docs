@@ -59,7 +59,7 @@ This is a list of available keyboard shortcuts within the editor user interface.
 | Close menu                                                                                   | Esc                      | Esc                      |
 | Move focus back to editor body                                                               | Esc                      | Esc                      |
 
-> Note: Browsers and Screen Readers provide additional shortcuts within the editor context.
+> **Note**: Browsers and Screen Readers provide additional shortcuts within the editor context.
 
 {% include misc/advcode-shortcuts.md %}
 
@@ -80,6 +80,6 @@ To add a custom keyboard shortcut to {{site.productname}}, use either:
 
 ### Example: Adding a custom shortcut for a menu item
 
-When adding a shortcut for a custom menu item, add both a custom shortcut and a custom menu item. To display the shortcut on a custom menu item, add the `shortcut` configuration option when creating the menu item. 
+When adding a shortcut for a custom menu item, add both a custom shortcut and a custom menu item. To display the shortcut on a custom menu item, add the `shortcut` configuration option when creating the menu item.
 
 {% include live-demo.html id="custom-shortcut-2" tab="js" %}

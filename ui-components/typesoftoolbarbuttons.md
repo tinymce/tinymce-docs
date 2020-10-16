@@ -14,11 +14,11 @@ There are four types of Toolbar Buttons in {{site.productname}} {{site.productma
 * [Menu button](#menubutton)
 * [Group toolbar button](#grouptoolbarbutton)
 
-### Basic button
+## Basic button
 
 A basic button triggers its `onAction` function when clicked.
 
-#### Config options
+### Config options
 
 | Name | Value | Requirement | Description |
 | ---- | ----- | ----------- | ----------- |
@@ -29,9 +29,9 @@ A basic button triggers its `onAction` function when clicked.
 | onSetup | (api) => (api) => void | optional | default: () => () => {} - Function invoked when the button is rendered. |
 | onAction | (api) => void | required | Function invoked when the button is clicked. |
 
-> Note: See [below](#onsetupexplanation) for details on how to configure `onSetup`.
+> **Note**: See [below](#onsetupexplanation) for details on how to configure `onSetup`.
 
-#### API
+### API
 
 | Name | Value | Description |
 | ---- | ----- | ----------- |
@@ -39,7 +39,7 @@ A basic button triggers its `onAction` function when clicked.
 | setDisabled | (state: boolean) => void | Sets the button's disabled state. |
 
 
-#### Basic button example and explanation
+### Basic button example and explanation
 
 The following example adds two buttons to the toolbar:
 
@@ -52,11 +52,11 @@ In this example an icon from the `insertdatetime` plugin is used to demonstrate 
 `onSetup` is used to listen to the editor's [`NodeChange` event]({{site.baseurl}}/advanced/events/#editorcoreevents) to disable the button when the cursor is inside a `time` element (or "node"). This ensures it is not possible to insert a `time` element into another `time` element.
 
 
-### Toggle button
+## Toggle button
 
 A toggle button triggers an action when clicked but also has a concept of state. This means it can be toggled `on` and `off`. A toggle button gives the user visual feedback for its state through CSS styling. An example of this behavior is the **Bold** button that is highlighted when the cursor is in a word with bold formatting.
 
-#### Config options
+### Config options
 
 | Name | Value | Requirement | Description |
 |------| ------| ------------| ----------- |
@@ -68,9 +68,9 @@ A toggle button triggers an action when clicked but also has a concept of state.
 | onSetup | (api) => (api) => void | optional | default: () => () => {} - Function invoked when the button is rendered. |
 | onAction | (api) => void | required | Function invoked when the button is clicked. |
 
-> Note: See [below](#onsetupexplanation) for details on how to configure `onSetup`.
+> **Note**: See [below](#onsetupexplanation) for details on how to configure `onSetup`.
 
-#### API
+### API
 
 | Name | Value | Description |
 |------| ------| ------------|
@@ -79,7 +79,7 @@ A toggle button triggers an action when clicked but also has a concept of state.
 | isActive | ( ) => boolean | Checks if the button is `on`. |
 | setActive | (state: boolean) => void | Sets the button's toggle state. |
 
-#### Toggle button example and explanation
+### Toggle button example and explanation
 
 {% include live-demo.html id="custom-toolbar-toggle-button" tab="js" %}
 
@@ -89,15 +89,15 @@ The first button applies and removes strikethrough formatting, and its state tog
 
 To achieve this, the second button uses `onSetup` to register a callback for strikethrough content using `editor.formatter.formatChanged(formatName, callback)`. This method executes the specified callback function when the selected content has the specified formatting.
 
-> Note: The format name given to `mceToggleFormat` via `editor.execCommand(command, ui, args)` and to `editor.formatter.formatChanged(formatName, callback)` is the same.
+> **Note**: The format name given to `mceToggleFormat` via `editor.execCommand(command, ui, args)` and to `editor.formatter.formatChanged(formatName, callback)` is the same.
 
 The callback given to `editor.formatter.formatChanged` is a function that takes a `state` boolean representing whether the currently selected content contains the applied format. This `state` boolean is used to set the button's active state to match if the selected content has the specified formatting by using `api.setActive(state)` from the button's API. This ensures the `customToggleStrikethrough` button is only **active** when the selected content contains the strikethrough formatting.
 
-### Split button
+## Split button
 
 A split button contains a basic button and a menu button, wrapped up into one toolbar item. Clicking the menu button section opens a dropdown list. The basic button section and the menu items can be configured to trigger different actions when clicked.
 
-#### Config options
+### Config options
 
 | Name         | Value                             | Target component  | Requirement | Description                                                                                                                        |
 |--------------|-----------------------------------|-------------------|-------------|------------------------------------------------------------------------------------------------------------------------------------|
@@ -110,9 +110,9 @@ A split button contains a basic button and a menu button, wrapped up into one to
 | onItemAction | (api, value) => void              | Choice menu items | required    | Function invoked when a dropdown list option is clicked. The `value` is passed from the selected choice menu item.                    |
 | onSetup      | (api) => (api) => void            | All               | optional    | default: () => () => {} - Function invoked when the button is rendered.                                                            |
 
-> Note: See [below](#onsetupexplanation) for details on how to configure `onSetup`.
+> **Note**: See [below](#onsetupexplanation) for details on how to configure `onSetup`.
 
-#### API
+### API
 
 | Name | Value | Description |
 |------| ------| ------------|
@@ -121,7 +121,7 @@ A split button contains a basic button and a menu button, wrapped up into one to
 | isActive| ( ) => boolean | Checks the button's toggle state. |
 | setActive | (state: boolean) => void | Sets the button's toggle state. |
 
-#### Split button example and explanation
+### Split button example and explanation
 
 The following example sets up a split button with a text label and a static dropdown menu.
 
@@ -133,15 +133,15 @@ A split button is similar to a basic button in that they both require an `onActi
 
 The `fetch` function is called whenever the split button's drop-down menu is opened. It is a function that takes a callback and passes it an array of menu items to be rendered in the button's drop-down menu. This allows for asynchronous fetching of the menu items.
 
-#{% include components/choice-menu-items.md %}
+{% include components/choice-menu-items.md %}
 
-### Menu button
+## Menu button
 
 A toolbar menu button is a toolbar button that opens a menu when clicked. This menu can also contain submenus. This is useful for grouping together actions that would otherwise be several buttons on the toolbar. It can also be used to reduce visual clutter and save UI space, as menubar menu items and some toolbar buttons could be moved into a toolbar menu button. Potentially, all menubar menu items could be moved into toolbar menu buttons, allowing for the editor to be used without a menubar at all.
 
-> Example: The table plugin's `table` toolbar button opens a menu similar to the menubar Table menu.
+For example: The table plugin's `table` toolbar button opens a menu similar to the menubar Table menu.
 
-#### Config options
+### Config options
 
 | Name | Value | Requirement | Description |
 |------| ------| ------------| ----------- |
@@ -151,16 +151,16 @@ A toolbar menu button is a toolbar button that opens a menu when clicked. This m
 | fetch | (success: (menu) => void) => void  | required | Function that takes a callback which must be passed the list of options for the button's dropdown. |
 | onSetup | (api) => (api) => void | optional | default: () => () => {} - Function that's invoked when the button is rendered. |
 
-> Note: See [below](#onsetupexplanation) for details on how to configure `onSetup`.
+> **Note**: See [below](#onsetupexplanation) for details on how to configure `onSetup`.
 
-#### API
+### API
 
 | Name | Value | Description |
 |------| ------| ------------|
 | isDisabled | ( ) => boolean | Checks if the button is disabled. |
 | setDisabled | (state: boolean) => void | Sets the button's disabled state. |
 
-#### Menu button example and explanation
+### Menu button example and explanation
 
 The following is a simple toolbar menu button example:
 
@@ -172,7 +172,7 @@ The `fetch` function is called when the toolbar menu button's menu is opened. It
 
 Use the following demo [here]({{site.baseurl}}/demo/custom-toolbar-menu-button/) for help using the menu toolbar button.
 
-### Group toolbar button
+## Group toolbar button
 
 {{ site.requires_5_2v }}
 
@@ -180,7 +180,7 @@ A group toolbar button is a toolbar button that contains a collection of other t
 
 > **Note:** The group toolbar button is _only_ supported when using the `floating` toolbar mode. If the `toolbar_groups` option is used with other toolbar modes, the toolbar group button will not be displayed and a warning message will be printed in the console.
 
-#### Config options
+### Config options
 
 | Name | Value | Requirement | Description |
 |------| ------| ------------| ----------- |
@@ -190,16 +190,16 @@ A group toolbar button is a toolbar button that contains a collection of other t
 | items | string or LabelledToolbar[] | required | A string of space separated toolbar button names, or an array of [labelled toolbar buttons]({{site.baseurl}}/configure/editor-appearance/#addingtoolbargrouplabels). |
 | onSetup | (api) => (api) => void | optional | default: () => () => {} - Function that's invoked when the button is rendered. |
 
-> Note: See [below](#onsetupexplanation) for details on how to configure `onSetup`.
+> **Note**: See [below](#onsetupexplanation) for details on how to configure `onSetup`.
 
-#### API
+### API
 
 | Name | Value | Description |
 |------| ------| ------------|
 | isDisabled | ( ) => boolean | Checks if the button is disabled. |
 | setDisabled | (state: boolean) => void | Sets the button's disabled state. |
 
-#### Group toolbar button example and explanation
+### Group toolbar button example and explanation
 
 The following is a simple group toolbar button example:
 
@@ -207,6 +207,6 @@ The following is a simple group toolbar button example:
 
 The example above configures a custom **alignment** group toolbar button. When clicked the button will show a floating shelf containing the align left, center, right and justify toolbar buttons.
 
-### `onSetup` explanation
+## `onSetup` explanation
 
 {% include release-notes/onSetup.md %}

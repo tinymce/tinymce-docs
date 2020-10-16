@@ -76,6 +76,6 @@ myAppModule.controller('TinyMceController', function($scope) {
 
 You can now test the application by running the demo.html page in your favorite browser.
 
-#### A note about integrations
+## A note about integrations
 
-> Note:  We are pleased to reference third-party integrations/code to help you build great products with {{site.productname}}. If you have queries about this integration, please contact the developer directly.
+{{site.thirdPartyInteg}}

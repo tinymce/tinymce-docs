@@ -7,10 +7,11 @@ keywords: forum forums url absolute relative security xss
 ---
 
 ## Premium support
+
 Paid premium support is available as part of [{{site.enterpriseversion}} and {{site.cloudname}} subscriptions]({{site.pricingpage}}). {{site.productname}} Enterprise customers can [submit a case support request]({{ site.baseurl }}/enterprise/support/).
 
-
 ## Community support
+
 Open Source Community Edition users can get free help from Stack Overflow using the [`{{site.prodnamecode}}` tag]({{site.communitysupporturl}}).
 
 ## FAQ & troubleshooting
@@ -45,7 +46,7 @@ tinymce.init({
 });
 ```
 
-##### Example
+##### Example: Relative URLs
 
 `http://www.site.com/path1/path2/file.htm >> path2/file.htm`
 
@@ -70,7 +71,7 @@ tinymce.init({
 });
 ```
 
-##### Example
+##### Example: Absolute URLs
 
 `path2/file.htm >> /path1/path2/file.htm`
 
@@ -95,6 +96,6 @@ tinymce.init({
 });
 ```
 
-##### Example
+##### Example: Domain absolute URLs
 
 `path2/file.htm >> http://www.site.com/path1/path2/file.htm`

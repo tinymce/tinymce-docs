@@ -14,15 +14,15 @@ controls: toolbar button
 
 The Format Painter plugin allows a user to copy and paste formatting from one location to another, such as font style and size. The format painter is capable of working with a wide variety of formats such as inline and block formats and styles such as table styles.
 
-## Live example
+## Interactive example
 
 {% include live-demo.html id="format-painter" %}
 
-## Configuring the Format Painter toolbar button
+## Basic setup
 
-Use the following script to configure the Format Painter toolbar button:
+To add the {{pluginname}} plugin to the editor, add `{{plugincode}}` to the `plugins` option in the editor configuration.
 
-##### Example
+For example:
 
 ```js
 tinymce.init({
@@ -31,8 +31,6 @@ tinymce.init({
   toolbar: 'formatpainter'
 });
 ```
-**Result**:
-The ![Format Painter]({{site.baseurl}}/images/fp-disabled.png)(**Format Painter**) button appears in the toolbar menu.
 
 ## Using Format Painter
 
@@ -43,7 +41,7 @@ The format painter operates in two modes, one for retrieval and one for applicat
 **Usage with toolbar button**
 
 1. Position the cursor at the source content to retrieve the formatting.
-2. Enable the **Format Painter** button to copy the formatting. The **Format Painter** toolbar button background color changes to _grey_ ![Format Painter]({{site.baseurl}}/images/fp-enabled.png).
+2. Enable the **Format Painter** button to copy the formatting. The **Format Painter** toolbar button background color changes to _grey_ ![the Format Painter toolbar button icon]({{site.baseurl}}/images/icons/format-painter.svg).
 3. Select the goal content to apply the formatting.
 
 **Result**: The formatting from the source content is applied to the goal content.
@@ -64,12 +62,12 @@ The format painter acts upon all [`formats`]({{ site.baseurl }}/configure/conten
 ### `formats`
 
 The format painter plugin will register many formats upon initialization. To override these formats, use the [`formats`]({{ site.baseurl }}/configure/content-formatting/#exampleofusageoftheformatsoption) option.
-<br/>
+
 The example below showcases the formats registered automatically by the plugin upon initialization. The `formatpainter_removeformat` is used to clear any existing formats before applying the new ones. It is similar to the [`removeformat`]({{ site.baseurl }}/configure/content-formatting/#removingaformat) format.
 
 **Type:** `Object`
 
-##### Example
+#### Example: Using `formats`
 
 ```js
 tinymce.init({
@@ -101,7 +99,7 @@ This option makes it possible to block the unwanted formats in the format painte
 
 **Default:** `'link,address,removeformat,formatpainter_removeformat'`
 
-##### Example
+#### Example: Using `formatpainter_blacklisted_formats`
 
 ```js
 tinymce.init({
@@ -110,6 +108,7 @@ tinymce.init({
   formatpainter_blacklisted_formats: 'link,address,removeformat,formatpainter_removeformat'
 });
 ```
+
 Check out the [Format Painter demo]({{site.baseurl}}/demo/formatpainter/) to try out this new feature.
 
 {% include misc/plugin-toolbar-button-id-boilerplate.md %}

@@ -17,11 +17,11 @@ To enable this functionality, add `tinydrive` to the list of plugins in the `tin
 
 Once you enable {{site.cloudfilemanager}} it integrates as the default file picker for the Image, Link, and Media dialogs and as the default upload handler for local images being pasted or inserted into the document.
 
-## Live example
+## Interactive example
 
 {% include live-demo.html id="drive" %}
 
-### Example
+## Basic setup
 
 ```js
 tinymce.init({
@@ -31,7 +31,7 @@ tinymce.init({
 });
 ```
 
-### Configuration
+## Configuration
 
 You can read more about the various configuration options for {{site.cloudfilemanager}} in the dedicated [configuration page]({{site.baseurl}}/tinydrive/configuration/).
 

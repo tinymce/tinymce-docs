@@ -8,16 +8,16 @@ keywords: advlist advlist_bullet_styles advlist_number_styles
 
 The `advlist` plugin extends the core `bullist` and `numlist` toolbar controls by adding CSS `list-style-type` styled number formats and bullet types to the controls.
 
-> **Important note:** The [Lists](../lists) (`lists`) plugin must be activated for the `advlist` plugin to work.
+> **Important**: The [Lists](../lists) (`lists`) plugin must be activated for the `advlist` plugin to work.
 
 **Type:** `String`
 
-##### Advanced List plugin example
+## Basic setup
 
 ```js
 tinymce.init({
   selector: 'textarea', // change this value according to your HTML
-  plugins: 'advlist'
+  plugins: 'lists advlist'
 });
 ```
 
@@ -40,7 +40,7 @@ This option allows you to include specific unordered list item markers in the de
   * `disc`: a filled circle
   * `square`: a filled square
 
-#### Example:
+#### Example: Using `advlist_bullet_styles`
 
 ```js
 tinymce.init({
@@ -67,7 +67,7 @@ This option allows you to include specific ordered list item markers in the defa
   * `upper-alpha`: uppercase ASCII letters, e.g. A, B, C, ... Z
   * `upper-roman`: uppercase roman numerals, e.g. I, II, III, IV, V ...
 
-#### Example:
+#### Example: Using `advlist_number_styles`
 
 ```js
 tinymce.init({

@@ -55,7 +55,7 @@ This setting enables changing the default upload path for files that get uploade
 
 **Default Value:** `"/uploads"`
 
-#### Example
+#### Example: Using `tinydrive_upload_path`
 
 ```js
 tinymce.init({
@@ -65,14 +65,13 @@ tinymce.init({
 });
 ```
 
-
 ### `tinydrive_max_image_dimension`
 
 This setting enables constraining the width/height of uploaded images. When this is enabled any images with a higher width or height than the specified amount would be proportionally resized down to the specified maximum dimension.
 
 **Type:** `Number`
 
-#### Example
+#### Example: Using `tinydrive_max_image_dimension`
 
 ```js
 tinymce.init({
@@ -90,7 +89,7 @@ tinymce.init({
 
 The Insert File toolbar button will insert images as `img` elements or other files as links to that file.
 
-#### Example
+#### Example: Adding the `insertfile` toolbar button
 
 This is an example of configuring the 'insertfile' toolbar button.
 
@@ -110,7 +109,7 @@ This setting enables specifying the Dropbox API key for integrating dropbox into
 
 **Type:** `string`
 
-#### Example
+#### Example: Using `tinydrive_dropbox_app_key`
 
 ```js
 tinymce.init({
@@ -128,7 +127,7 @@ This setting enables specifying the Google Drive API key for integrating Google 
 
 **Type:** `string`
 
-#### Example
+#### Example: Using `tinydrive_google_drive_key`
 
 ```js
 tinymce.init({
@@ -144,7 +143,7 @@ This setting enables specifying the Google Drive client ID for integrating Googl
 
 **Type:** `string`
 
-#### Example
+#### Example: Using `tinydrive_google_drive_client_id`
 
 ```js
 tinymce.init({
@@ -158,6 +157,6 @@ tinymce.init({
 
 {% include misc/plugin-menu-item-id-boilerplate.md %}
 
-## Need help? ##
+## Need help?
 
-Tiny is striving to make {{site.cloudfilemanager}} as useful and simple as possible. For support related issues such as problems with JWT authentication and implementing {{site.cloudfilemanager}}, check the [help page]({{site.baseurl}}/tinydrive/get-help/) or please contact [{{site.supportname}}]({{site.supporturl}}).
+{{site.companyname}} is striving to make {{site.cloudfilemanager}} as useful and simple as possible. For support related issues such as problems with JWT authentication and implementing {{site.cloudfilemanager}}, check the [help page]({{site.baseurl}}/tinydrive/get-help/) or please contact [{{site.supportname}}]({{site.supporturl}}).

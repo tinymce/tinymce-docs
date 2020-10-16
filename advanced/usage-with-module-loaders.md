@@ -11,7 +11,7 @@ keywords: webpack browserify commonjs modules tinymce
 
 First decide how to load your modules.
 
-### ES2015 modules
+## ES2015 modules
 
 If you are using ES2015 modules, a simple example could look something like this.
 
@@ -36,7 +36,7 @@ tinymce.init({
 });
 ```
 
-### CommonJS modules
+## CommonJS modules
 
 The example is nearly the same if you are using CommonJS modules. However, a different `require` function is used to import the dependencies.
 

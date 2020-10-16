@@ -1,10 +1,10 @@
-## body_id
+## `body_id`
 
 This option enables you to specify an id for the body of each editor instance. This id can then be used to do {{site.productname}} specific overrides in your `content_css`.
 
 **Type:** `String`
 
-##### Example
+### Example: Using `body_id`
 
 This will add the same id to all editors that gets created by the `init` call.
 

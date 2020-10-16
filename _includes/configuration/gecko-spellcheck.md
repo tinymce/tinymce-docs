@@ -1,4 +1,4 @@
-## gecko_spellcheck
+## `gecko_spellcheck`
 
 > Gecko Spell Check was deprecated in TinyMCE v4.3 (consider using  [#browser_spellcheck](#browser_spellcheck)).
 
@@ -10,7 +10,7 @@ This option allows you to disable [Gecko](https://en.wikipedia.org/wiki/Gecko_(s
 
 **Possible Values:** `true`, `false`
 
-##### Example
+### Example: Using `gecko_spellcheck`
 
 ```js
 tinymce.init({

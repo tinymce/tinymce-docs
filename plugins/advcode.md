@@ -15,7 +15,7 @@ This plugin adds a toolbar button that allows a user to edit the HTML code using
 
 If you are using Advanced Code Editor `advcode` plugin, make sure you do not use Code (`code`) plugin.
 
-##### Example
+## Example: Basic setup
 
 ```js
 tinymce.init({

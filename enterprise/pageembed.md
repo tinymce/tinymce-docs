@@ -13,7 +13,7 @@ The Page Embed plugin allows an external webpage to be embedded in an HTML docum
 
 Page Embed provides more flexibility than an inline script and can contain an entire webpage. This feature is useful for the purpose of embedding iframes for online advertising and multimedia.
 
-### Try our Page Embed plugin demo
+## Try our Page Embed plugin demo
 
 {% include live-demo.html id="page-embed" %}
 

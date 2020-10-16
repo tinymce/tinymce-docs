@@ -1,10 +1,10 @@
-## plugins
+## `plugins`
 
 This option allows you to specify which plugins {{site.productname}} will attempt to load when starting up. By default, {{site.productname}} will not load any plugins.
 
 **Type:** `String`
 
-##### Example
+### Example: Using `plugins`
 
 ```js
 tinymce.init({
@@ -13,6 +13,6 @@ tinymce.init({
 });
 ```
 
-> Note that the plugin entries should be separated by a blank space.
+> **Note**: Each plugin entry should be separated by a blank space.
 
 [Check this documentation page for a list of available plugins]({{ site.baseurl }}/plugins/).

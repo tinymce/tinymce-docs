@@ -1,12 +1,12 @@
-## min_width
+## `min_width`
 
 This option allows you to set the minimum width that a user can stretch the entire {{site.productname}} interface (by grabbing the dragable area in the bottom right of the editor interface) when using the modern theme.
 
-> Note that this behavior is different than the [`autoresize`]({{site.baseurl}}/plugins/autoresize/) plugin, which controls the resizing of the editable area only, not the entire editor.
+> **Note**: This behavior is different from the [`autoresize`]({{site.baseurl}}/plugins/autoresize/) plugin, which controls the resizing of the editable area only, not the entire editor.
 
 **Type:** `Number`
 
-##### Example
+### Example: Using `min_width`
 
 ```js
 tinymce.init({
@@ -15,4 +15,4 @@ tinymce.init({
 });
 ```
 
-> Pro tip: by default the [`resize`](#resize) handle does not allow horizontal dragging and giving this key a value will not result in an observable behavior.
+> **Note**: By default the [`resize`](#resize) handle does not allow horizontal dragging and giving this key a value will not result in an observable behavior.

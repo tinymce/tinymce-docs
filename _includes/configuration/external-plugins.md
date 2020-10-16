@@ -1,4 +1,4 @@
-## external_plugins
+## `external_plugins`
 
 This option allows you to specify a URL based location of plugins outside of the normal {{site.productname}} plugins directory.
 
@@ -14,7 +14,7 @@ The URLs provided can be:
 
 **Type:** `Object`
 
-##### Example
+### Example: Using `external_plugins`
 
 ```js
 tinymce.init({

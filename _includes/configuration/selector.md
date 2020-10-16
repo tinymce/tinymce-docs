@@ -1,4 +1,4 @@
-## selector
+## `selector`
 
 This option allows you to specify a CSS selector for the areas that {{site.productname}} should make editable.
 
@@ -8,7 +8,7 @@ When using this option in {{site.productname}}'s regular editing mode, the eleme
 
 **Type:** `String`
 
-##### Example
+#### Example: Replace all textarea elements with TinyMCE
 
 ```js
 tinymce.init({
@@ -16,11 +16,11 @@ tinymce.init({
 });
 ```
 
-### Replace a textarea element with id 'editable'
+### Replace a textarea element with id "editable"
 
 **Type:** `String`
 
-##### Example
+#### Example: Replace a textarea element with the `id` "editable"
 
 ```js
 tinymce.init({
@@ -30,11 +30,11 @@ tinymce.init({
 
 When using this option in {{site.productname}}'s inline editing mode, the selector can be used on any block element and will edit the content in place instead of replacing the element with an `iframe`.
 
-### Inline editing mode on a div element with id 'editable'
+### Inline editing mode on a div element with id "editable"
 
 **Type:** `String`
 
-##### Example
+#### Example: Add an inline editor on a div with the `id` "editable"
 
 ```js
 tinymce.init({

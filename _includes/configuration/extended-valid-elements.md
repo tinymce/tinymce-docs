@@ -1,4 +1,4 @@
-## extended_valid_elements
+## `extended_valid_elements`
 
 This option is very similar to [`valid_elements`]({{ site.baseurl }}/configure/content-filtering/#valid_elements). The only difference between this option and `valid_elements` is that this one gets added to the existing rule set. This can be very useful if the existing rule set is fine but you want to add some specific elements that also should be valid. The default rule set is controlled by the [`schema`]({{ site.baseurl }}/configure/content-filtering/#schema) option.
 
@@ -8,7 +8,7 @@ The below example replaces the current `img` rule (including the global element 
 
 **Type:** `String`
 
-##### Example
+### Example: Using `extended_valid_elements`
 
 ```js
 tinymce.init({
@@ -29,7 +29,7 @@ To allow script elements in the editor, include the following in the {{site.prod
 extended_valid_elements : 'script[src|async|defer|type|charset]'
 ```
 
-## Live Example
+### Interactive example
 
 This example shows you how to use the [extended_valid_elements]({{ site.baseurl }}/configure/content-filtering/#extended_valid_elements) option. This option is used to add additional valid elements and attributes.
 

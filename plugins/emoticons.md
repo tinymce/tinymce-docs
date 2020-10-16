@@ -18,7 +18,7 @@ The emoticons plugin provides an autocompleter for adding emoji without using th
 
 **Type:** `String`
 
-##### Example
+## Basic setup
 
 ```js
 tinymce.init({
@@ -62,7 +62,7 @@ This option provides a way to append some additional emoji to the default emoji 
 
 **Type:** `Object`
 
-##### Example
+#### Example: Using `emoticons_append`
 
 ```js
 tinymce.init({
@@ -96,7 +96,7 @@ tinymce.Resource.add('tinymce.plugins.emoticons', {
 });
 ```
 
-##### Example
+#### Example: Using `emoticons_database_url`
 
 ```js
 tinymce.init({

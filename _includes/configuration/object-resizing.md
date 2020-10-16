@@ -1,4 +1,4 @@
-## object_resizing
+## `object_resizing`
 
 This options allows you to turn on/off the resizing handles on images, tables or media objects. This option is enabled by default and allows you to resize table and images. You can also specify a CSS3 selector of what you want to enable resizing on.
 
@@ -12,7 +12,7 @@ This options allows you to turn on/off the resizing handles on images, tables or
 
 {{site.differs_for_mobile}}
 
-##### Example
+#### Example: Disable object resizing
 
 ```js
 tinymce.init({
@@ -29,7 +29,7 @@ tinymce.init({
 
 **Possible Values:** `true`, `false`, `img`
 
-##### Example
+#### Example: Enable object resizing for images
 
 ```js
 tinymce.init({

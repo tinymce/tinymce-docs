@@ -1,4 +1,4 @@
-## toolbar_location
+## `toolbar_location`
 
 {{ site.requires_5_2v }}
 
@@ -16,7 +16,7 @@ Setting this option to `auto`, positions the toolbar and menu bar either:
 
 **Possible values:** `auto`, `top`, `bottom`
 
-##### Example
+### Example: Using `toolbar_location`
 
 ```js
 tinymce.init({

@@ -1,10 +1,10 @@
-## init_instance_callback
+## `init_instance_callback`
 
 The **init_instance_callback** option allows you to specify a function name to be executed each time an editor instance is initialized. The format of this function is `initInstance(editor)` where `editor` is the editor instance object reference.
 
 **Type:** `JavaScript Function`
 
-##### Example
+### Example: Using `init_instance_callback`
 
 ```js
 tinymce.init({

@@ -1,4 +1,4 @@
-## resize_img_proportional
+## `resize_img_proportional`
 
 When a user resizes an image in the editor, this option controls whether image is resized proportionally or freely. If set to:
 
@@ -11,7 +11,7 @@ When a user resizes an image in the editor, this option controls whether image i
 
 **Possible Values:** `true`, `false`
 
-##### Example: resize_img_proportional
+### Example: Using `resize_img_proportional`
 
 To disable proportional image resizing:
 

@@ -1,4 +1,4 @@
-## valid_children
+## `valid_children`
 
 The valid_children enables you to control what child elements can exists within specified parent elements.
 
@@ -6,7 +6,7 @@ The valid_children enables you to control what child elements can exists within 
 
 The syntax for this option is a comma separated list of parents with elements that should be added/removed as valid children for that element. So for example `'+body[style]'` would add style as a valid child of body.
 
-**Control characters:**
+### Control characters
 
 | Name | Summary          |
 |------|------------------|
@@ -17,7 +17,7 @@ This example shows you how to add `style` as a valid child of `body` and remove 
 
 **Type:** `String`
 
-##### Example
+### Example: Using `valid_children`
 
 ```js
 tinymce.init({

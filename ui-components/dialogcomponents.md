@@ -35,7 +35,7 @@ Each tab panel is defined using the following configuration options:
 | title | string | required | The title of the tab for the navigation menu. |
 | items | array | required | An array of [panel components](#panelcomponents) to display inside the panel. |
 
-> Note: Panel components in different tabs with the same `name` will use the same value in the [dialog's data object]({{site.baseurl}}/ui-components/dialog/#dialogdataandstate). This allows for transference of data between tabs. For example, the `charmap` and `emoticons` plugin dialogs contain a search input field in each tab. By assigning the same name to all the search fields, user data entered on one tab will be transferred when the user changes tabs.
+> **Note**: Panel components in different tabs with the same `name` will use the same value in the [dialog's data object]({{site.baseurl}}/ui-components/dialog/#dialogdataandstate). This allows for transference of data between tabs. For example, the `charmap` and `emoticons` plugin dialogs contain a search input field in each tab. By assigning the same name to all the search fields, user data entered on one tab will be transferred when the user changes tabs.
 
 ```js
 {
@@ -61,7 +61,7 @@ A dialog can be configured with an [`onTabChange`]({{site.baseurl}}/ui-component
 
 As an example of when this is useful, the `charmap` and `emoticons` plugin dialogs use `newTabName` to change search results to match the character or emoticon category represented by the current tab.
 
-#### Example
+#### Example: Using the dialog API
 
 Below is a trivial example of how to use `onTabChange` and `showTab()`.
 
@@ -88,7 +88,7 @@ const dialogConfig = {
 
 Panels can contain [layout components](#layoutcomponents) and [basic components](#basiccomponents), which include components for displaying information and user interaction and input.
 
-> Note: Panel components in different tabs with the same `name` will use the same value in the [dialog's data object]({{site.baseurl}}/ui-components/dialog/#dialogdataandstate). This allows for transference of data between tabs. For example, the `charmap` and `emoticons` plugin dialogs contain a search input field in each tab. By assigning the same name to all the search fields, user data entered on one tab will be transferred when the user changes tabs.
+> **Note**: Panel components in different tabs with the same `name` will use the same value in the [dialog's data object]({{site.baseurl}}/ui-components/dialog/#dialogdataandstate). This allows for transference of data between tabs. For example, the `charmap` and `emoticons` plugin dialogs contain a search input field in each tab. By assigning the same name to all the search fields, user data entered on one tab will be transferred when the user changes tabs.
 
 ### Layout components
 
@@ -191,7 +191,7 @@ Clicking the icon in the alert banner will fire the `onAction` function in the d
 
 A **button** is a clickable component that can contain text or an icon. There are two types of buttons (primary and secondary buttons), though the only difference is that they are styled differently. Primary buttons are intended to stand out. The color will depend on the chosen [skin]({{site.baseurl}}/general-configuration-guide/customize-ui/#skins).
 
-> Note: Panel buttons are different to [dialog footer buttons]({{site.baseurl}}/ui-components/dialog/#footerbuttons).
+> **Note**: Panel buttons are different to [dialog footer buttons]({{site.baseurl}}/ui-components/dialog/#footerbuttons).
 
 **Events:** Interacting with a **button** component will fire the `onAction` function in the dialog's configuration, and pass it the button's `name` in the `details` object. This allows developers to create a click handler for each button.
 
@@ -204,7 +204,7 @@ A **button** is a clickable component that can contain text or an icon. There ar
 | primary | boolean | optional | default: `false` - Whether to style the button as a primary or secondary button. |
 | borderless | boolean | optional | default: `false` - Whether to style the button without a border and background color. |
 
-> Note: Buttons do not support mixing icons and text at the moment.
+> **Note**: Buttons do not support mixing icons and text at the moment.
 
 ```js
 {
@@ -273,7 +273,7 @@ A **dropzone** is a composite component that catches drag and drops items or let
 
 A **htmlpanel** component takes any valid HTML and renders it in the dialog.
 
-> Note: Despite the name a htmlpanel can not be used as a body component like `panel` and `tabpanel`.
+> **Note**: Despite the name a htmlpanel can not be used as a body component like `panel` and `tabpanel`.
 
 ```js
 {
@@ -286,7 +286,7 @@ A **htmlpanel** component takes any valid HTML and renders it in the dialog.
 
 An **iframe** component takes a HTML document as a string and displays it in the dialog within an iframe.
 
-> Note: To replace the entire dialog body with an iframe that loads its content from a URL, use a [URL dialog]({{site.baseurl}}/ui-components/urldialog).
+> **Note**: To replace the entire dialog body with an iframe that loads its content from a URL, use a [URL dialog]({{site.baseurl}}/ui-components/urldialog).
 
 | Name | Type | Requirement | Description |
 | ---- | ---- | ----------- | ----------- |
@@ -448,7 +448,7 @@ A **textarea** is a multiline text field.
 
 A **urlinput** is a specialized composite component for URL input or file upload. It has a label, a text input field and an optional filepicker button. The urlinput component also includes a **typeahead** dropdown that will display previously-entered URLs that match the current input text and update as the user types.
 
-> Note: The filepicker button will only appear if [`file_picker_callback`]({{site.baseurl}}/configure/file-image-upload/#file_picker_callback) is configured.
+> **Note**: The filepicker button will only appear if [`file_picker_callback`]({{site.baseurl}}/configure/file-image-upload/#file_picker_callback) is configured.
 
 **Events:** Interacting with a **selectbox** component will fire the `onChange` function in the dialog's configuration **when the user clicks away from the component**.
 

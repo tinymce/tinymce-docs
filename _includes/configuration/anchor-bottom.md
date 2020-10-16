@@ -6,7 +6,7 @@ Lets you specify a custom name for the bottom anchor in the url type ahead drop 
 
 **Default:** #bottom
 
-##### Example of custom value
+### Example of custom value
 
 ```js
 tinymce.init({
@@ -15,7 +15,7 @@ tinymce.init({
 });
 ```
 
-##### Example of disabling 
+### Example of disabling
 
 ```js
 tinymce.init({

@@ -1,18 +1,16 @@
 ---
 layout: default
-title: Configuring callbacks for Comments 2.0
-title_nav: Configuring callbacks for Comments 2.0
-description: Instructions for configuring callbacks for Comments 2.0
+title: Configuring callbacks for the Comments plugin
+title_nav: Configuring callbacks for the Comments plugin
+description: Instructions for configuring callbacks for the Comments plugin
 keywords: comments commenting tinycomments callback
 ---
 
-## Introduction
-
-**Callback mode** is the default mode for [Comments 2.0]({{site.baseurl}}/plugins/comments/). In the callback mode, the user needs to configure storage to be able to save comments on the server. The Comments functions (create, reply, edit, delete comment, delete all conversations, and lookup) are configured differently depending upon the server-side storage configuration.
+**Callback mode** is the default mode for [the Comments plugin]({{site.baseurl}}/plugins/comments/). In the callback mode, the user needs to configure storage to be able to save comments on the server. The Comments functions (create, reply, edit, delete comment, delete all conversations, and lookup) are configured differently depending upon the server-side storage configuration.
 
 ### Required settings
 
-Comments 2.0 requires the following functions to be defined:
+The Comments plugin requires the following functions to be defined:
 
 ```js
 tinymce.init({
@@ -36,11 +34,11 @@ All functions incorporate `done` and `fail` callbacks as parameters. The functio
 
 Most (create, reply, and edit) functions require configuring the **current author**:
 
-* **Current author** - Comments 2.0 does not know the name of the current user. After a user comments (triggering `tinycomments_create` for the first comment, or `tinycomments_reply` for subsequent comments), Comments 2.0 requests the updated conversation via `tinycomments_lookup`, which should now contain the additional comment with the proper author. Determining the current user and storing the comment related to that user, has to be configured by the user.
+* **Current author** - the Comments plugin does not know the name of the current user. After a user comments (triggering `tinycomments_create` for the first comment, or `tinycomments_reply` for subsequent comments), Comments requests the updated conversation via `tinycomments_lookup`, which should now contain the additional comment with the proper author. Determining the current user and storing the comment related to that user, has to be configured by the user.
 
-### tinycomments_create
+### `tinycomments_create`
 
-Comments 2.0 uses the conversation `tinycomments_create` function to create a comment.
+The Comments plugin uses the conversation `tinycomments_create` function to create a comment.
 
 The `tinycomments_create` function saves the comment as a new conversation and returns a unique conversation ID via the `done` callback. If an unrecoverable error occurs, it should indicate this with the fail callback.
 
@@ -58,9 +56,9 @@ The done callback needs to take an object of the form:
 }
 ```
 
-### tinycomments_reply
+### `tinycomments_reply`
 
-Comments 2.0 uses the conversation `tinycomments_reply` function to reply to a comment.
+The Comments plugin uses the conversation `tinycomments_reply` function to reply to a comment.
 
 The `tinycomments_reply` function saves the comment as a reply to an existing conversation and returns via the `done` callback once successful. Unrecoverable errors are communicated to {{site.productname}} by calling the `fail` callback instead.
 
@@ -80,9 +78,9 @@ The done callback needs to take an object of the form:
 }
 ```
 
-### tinycomments_edit_comment
+### `tinycomments_edit_comment`
 
-Comments 2.0 uses the conversation `tinycomments_edit_comment` function to edit a comment.
+The Comments plugin uses the conversation `tinycomments_edit_comment` function to edit a comment.
 
 The `tinycomments_edit_comment` function allows updating or changing original comments and returns via the `done` callback once successful. Unrecoverable errors are communicated to {{site.productname}} by calling the `fail` callback instead.
 
@@ -105,7 +103,7 @@ The done callback needs to take an object of the form:
 }
 ```
 
-### tinycomments_delete
+### `tinycomments_delete`
 
 The `tinycomments_delete` function should asynchronously return a flag indicating whether the comment/comment thread was removed using the `done` callback. Unrecoverable errors are communicated to {{site.productname}} by calling the `fail` callback instead.
 
@@ -122,9 +120,9 @@ The done callback needs to take an object of the form:
 }
 ```
 
-> Note: Failure to delete due to permissions or business rules is indicated by "false", while unexpected errors should be indicated using the "fail" callback.
+> **Note**: Failure to delete due to permissions or business rules is indicated by "false", while unexpected errors should be indicated using the "fail" callback.
 
-### tinycomments_delete_all
+### `tinycomments_delete_all`
 
 The `tinycomments_delete_all` function should asynchronously return a flag indicating whether all the comments in a conversation were removed using the `done` callback. Unrecoverable errors are communicated to {{site.productname}} by calling the `fail` callback instead.
 
@@ -139,9 +137,9 @@ The done callback needs to take an object of the form:
 }
 ```
 
-> Note: Failure to delete due to permissions or business rules is indicated by "false", while unexpected errors should be indicated using the "fail" callback.
+> **Note**: Failure to delete due to permissions or business rules is indicated by "false", while unexpected errors should be indicated using the "fail" callback.
 
-### tinycomments_delete_comment
+### `tinycomments_delete_comment`
 
 The `tinycomments_delete_comment` function should asynchronously return a flag indicating whether the comment/comment thread was removed using the `done` callback. Unrecoverable errors are communicated to {{site.productname}} by calling the `fail` callback instead.
 
@@ -159,15 +157,15 @@ The done callback needs to take an object of the form:
 }
 ```
 
-> Note: Failure to delete due to permissions or business rules is indicated by "false", while unexpected errors should be indicated using the "fail" callback.
+> **Note**: Failure to delete due to permissions or business rules is indicated by "false", while unexpected errors should be indicated using the "fail" callback.
 
+### `tinycomments_lookup`
 
-### tinycomments_lookup
-Comments 2.0 uses the Conversation `tinycomments_lookup` function to retrieve an existing conversation via a conversation unique ID.
+The Comments plugin uses the Conversation `tinycomments_lookup` function to retrieve an existing conversation via a conversation unique ID.
 
 The **Display names** configuration must be considered for the `tinycomments_lookup` function:
 
-* **Display names** - Comments 2.0 uses a simple string for the display name. For the `lookup` function, Comments 2.0 expects each comment to contain the author's display name, not a user ID, as Comments 2.0 does not know the user identities. The `lookup` function should be implemented considering this and resolve user identifiers to an appropriate display name.
+* **Display names** - The Comments plugin uses a simple string for the display name. For the `lookup` function, Comments expects each comment to contain the author's display name, not a user ID, as Comments does not know the user identities. The `lookup` function should be implemented considering this and resolve user identifiers to an appropriate display name.
 
 The conventional conversation object structure that should be returned via the `done` callback is as follows:
 
@@ -203,6 +201,6 @@ The done callback needs to take an object of the form:
 }
 ```
 
-> Note: The dates should use [ISO 8601 format](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString). This can be generated in JavaScript with: `new Date().toISOString()`.
+> **Note**: The dates should use [ISO 8601 format](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString). This can be generated in JavaScript with: `new Date().toISOString()`.
 
 For more information on the Comments commercial feature, visit our [Premium Features]({{ site.baseurl }}/enterprise/tiny-comments/) page.

@@ -1,4 +1,4 @@
-## remove_trailing_brs
+## `remove_trailing_brs`
 
 This option allows you to disable {{site.productname}}'s default behavior of removing `<br>` tags at the end of block elements.
 
@@ -10,7 +10,7 @@ This option allows you to disable {{site.productname}}'s default behavior of rem
 
 **Possible Values:** `true`, `false`
 
-##### Example
+### Example: Using `remove_trailing_brs`
 
 ```js
 tinymce.init({

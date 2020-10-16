@@ -12,7 +12,7 @@ By default selectors like `".my-class"`, `".my-class1.my-class2"` and `"p.my-cla
 
 **Type:** `String`
 
-##### Example
+## Basic setup
 
 ```js
 tinymce.init({
@@ -23,7 +23,7 @@ tinymce.init({
 });
 ```
 
-### Options
+## Options
 
 These settings affect the execution of the `importcss` plugin, specifically the way that these operations are handled.
 
@@ -35,7 +35,7 @@ If set to `true` this option will append the imported styles to the end of the `
 
 **Default Value:** `false`
 
-##### Example
+#### Example: Using `importcss_append`
 
 ```js
 tinymce.init({
@@ -55,7 +55,9 @@ If set to `false` then selectors will not be globally exclusive meaning they can
 
 **Default Value:** `true`
 
-```
+#### Example: Using `importcss_exclusive`
+
+```css
 // Sample compressed stylesheet:
 
 /* Normalize */
@@ -96,7 +98,7 @@ This option enables you to add the CSS files that should be used for populating 
 
 **Type:** `String`
 
-##### Example
+#### Example: Using `importcss_file_filter`
 
 ```js
 tinymce.init({
@@ -112,7 +114,7 @@ tinymce.init({
 
 This option enables group matching selectors into submenus in the `Formats` menu dropdown. You can use a `string`, `regexp` or a `function` to filter selectors. You can also omit the filter to get all non-matching ones into a specific group. You can also specify a group specific `selector_converter` so that formats for a specific group are produced by that converter.
 
-**Example of usage with string filter**
+#### Example using a string filter with `importcss_groups`
 
 ```js
 tinymce.init({
@@ -134,7 +136,7 @@ This option is used in cases where the class attribute should be replaced or mer
 
 **Type:** `Boolean`
 
-##### Example
+#### Example: Using `importcss_merge_classes`
 
 ```js
 tinymce.init({
@@ -152,7 +154,7 @@ This option allows you to override the default selector to format converter func
 
 **Type:** `String`
 
-##### Example
+#### Example: Using `importcss_selector_converter`
 
 ```js
 tinymce.init({
@@ -172,7 +174,7 @@ This option enables you to only import classes from selectors matching the filte
 
 **Type:** `String`
 
-**Example of usage with string filter:**
+#### Example using a string filter with `importcss_selector_filter`
 
 ```js
 tinymce.init({
@@ -184,7 +186,7 @@ tinymce.init({
 });
 ```
 
-**Example of usage with RegExp filter**
+#### Example using a RegExp filter with `importcss_selector_filter`
 
 ```js
 tinymce.init({
@@ -196,7 +198,7 @@ tinymce.init({
 });
 ```
 
-**Example of usage with function filter**
+#### Example using a function filter with `importcss_selector_filter`
 
 ```js
 tinymce.init({
@@ -209,4 +211,3 @@ tinymce.init({
   }
 });
 ```
-

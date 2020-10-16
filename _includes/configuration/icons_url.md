@@ -1,5 +1,5 @@
 {% if customIconPack != true %}
-## icons_url
+## `icons_url`
 
 The **icons_url** option allows the editor icons to be extended or replaced using an icon pack. For information on creating icon packs, see: [Create an icon pack for {{site.productname}}]({{site.baseurl}}/advanced/creating-an-icon-pack/).
 {% endif %}
@@ -20,7 +20,7 @@ tinymce.init({
 {% else %}
 **Type:**  `String`
 
-##### Example
+### Example: Using `icons_url`
 
 ```js
 tinymce.init({

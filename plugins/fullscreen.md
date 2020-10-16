@@ -19,7 +19,7 @@ Full screen mode can be toggled using the following keyboard shortcuts:
 
 **Type:** `String`
 
-##### Example
+## Basic setup
 
 ```js
 tinymce.init({

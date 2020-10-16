@@ -4,7 +4,7 @@ This option enables you to restrict the classes that are valid for specific elem
 
 **Type:** `String`, `Object`
 
-##### Example simple global classes
+### Example simple global classes
 
 ```js
 tinymce.init({
@@ -13,7 +13,7 @@ tinymce.init({
 });
 ```
 
-##### Example element specific classes
+### Example element specific classes
 
 ```js
 tinymce.init({

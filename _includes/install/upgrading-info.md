@@ -85,7 +85,7 @@ To upgrade to {{site.productname}} {{site.productminorversion}} using a manually
     * Custom themes
 1. Delete the existing `{{site.prodnamecode}}/` directory and replace with the new `{{site.prodnamecode}}/`.
 
->To simplify the upgrade process to future versions of {{site.productname}}:
+> **Note**: To simplify the upgrade process to future versions of {{site.productname}}:
 >
 >1. Host the {{site.productname}} customizations outside of the `{{site.prodnamecode}}/` directory.
 >1. Update your {{site.productname}} configuration as required:

@@ -12,7 +12,6 @@ The {{site.enterpriseversion}} server-side components can be deployed on Docker 
 - [Containerized services for Self-hosted Enterprise deployments](#containerizedservicesforself-hostedenterprisedeployments)
 - [Containerized services for individually licensed premium plugins](#containerizedservicesforindividuallylicensedpremiumplugins)
 
-
 ## Containerized services for Self-hosted Enterprise deployments
 
 The following sections assist with containerizing the {{ site.productname }} services for users with licenses to the Self-hosted {{site.productname}} Enterprise bundles:
@@ -26,6 +25,7 @@ The following sections assist with containerizing the {{ site.productname }} ser
 * The [Docker Engine](https://docs.docker.com/engine/docker-overview/) is installed and running.
 * The user has Administrative or Root user access.
 * The user is either:
+
   * Using a Linux, Unix or macOS operating system.
   * Using Windows and has access to unix command line tools using [Git for Windows](https://gitforwindows.org/), [Cygwin](https://www.cygwin.com/), or the [Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10).
 
@@ -36,19 +36,23 @@ The following sections assist with containerizing the {{ site.productname }} ser
     - The **Self-hosted Essential** bundle.
     - The **Self-hosted Professional** bundle.
     - The **Self-hosted Premium** bundle.
+
 2. Open a command line and navigate to the directory containing the downloaded `.zip` file:
-  
+
     - `TinyMCE-Essential_latest.zip` for **Self-hosted Essential** users.
     - `TinyMCE-Professional_latest.zip` for **Self-hosted Professional** users.
     - `TinyMCE-Premium_latest.zip` for **Self-hosted Premium** users.
 
     Windows Users should open a Bash command line as the Administrator User.
+
 3. Extract the contents of the `.zip` file, such as:
 
     ```sh
     unzip TinyMCE-Premium_latest.zip -d tinymce-selfhosted
     ```
+
     The structure of the extracted files will be:
+
     ```sh
     tinymce-selfhosted/
     ├── tinymce/

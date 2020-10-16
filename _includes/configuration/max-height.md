@@ -1,6 +1,6 @@
-## max_height
+## `max_height`
 
-The **max_height** option has two kinds of behaviors depending on the state of the [`autoresize`]({{site.baseurl}}/plugins/autoresize/) plugin:
+The `max_height` option has two kinds of behaviors depending on the state of the [`autoresize`]({{site.baseurl}}/plugins/autoresize/) plugin:
 
 * `autoresize` OFF (Default) : Without the `autoresize` plugin, this option allows you to set the maximum height that a user can stretch the entire {{site.productname}} interface (by grabbing the dragable area in the bottom right of the editor interface).
 
@@ -8,7 +8,7 @@ The **max_height** option has two kinds of behaviors depending on the state of t
 
 **Type:** `Number`
 
-##### Example
+### Example: Using `max_height`
 
 ```js
 tinymce.init({
@@ -17,5 +17,4 @@ tinymce.init({
 });
 ```
 
-> Pro tip: If you set the option [`resize`](#resize) to `false` the resize handle will be disabled and a user will not be able to resize the editor (by manual dragging). Note that `resize` defaults to `false` when the `autoresize` plugin is enabled.
-
+> **Note**: If you set the option [`resize`](#resize) to `false` the resize handle will be disabled and a user will not be able to resize the editor (by manual dragging). Note that `resize` defaults to `false` when the `autoresize` plugin is enabled.

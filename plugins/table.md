@@ -14,7 +14,7 @@ The `table` plugin adds table management functionality to {{site.productname}}. 
 
 **Type:** `String`
 
-##### Example
+## Basic setup
 
 ```js
 tinymce.init({
@@ -25,7 +25,7 @@ tinymce.init({
 });
 ```
 
-### Config Options
+## Config Options
 
 These settings affect the execution of the `table` plugin and let you modify the default styles and attributes for tables, preset class lists, and table behavior.
 
@@ -41,7 +41,7 @@ To disable the table toolbar, set the value to an empty string.
 
 **Possible Values:** Any toolbar button. For a list of predefined toolbar buttons, see: [Toolbar Buttons Available for {{site.productname}}]({{site.baseurl}}/advanced/available-toolbar-buttons/).
 
-##### Example: Default table_toolbar configuration
+#### Example: Default table_toolbar configuration
 
 ```js
 tinymce.init({
@@ -51,7 +51,7 @@ tinymce.init({
 });
 ```
 
-##### Example: Disable the table toolbar
+#### Example: Disable the table toolbar
 
 To disable or remove the contextual table toolbar, set `table_toolbar` to an empty string.
 
@@ -73,7 +73,7 @@ This option allows you to disable some of the options available to a user when i
 
 **Possible Values:**  `true`, `false`
 
-##### Example
+#### Example: Using `table_appearance_options`
 
 ```js
 tinymce.init({
@@ -113,7 +113,7 @@ This option enables you to specify which elements should be cloned as empty chil
 
 **Type:** `String`
 
-##### Example
+#### Example: Using `table_clone_elements`
 
 ```js
 tinymce.init({
@@ -129,7 +129,7 @@ This option allows you to disable the grid-like table picker in the Table menu. 
 
 However, if `table_grid` is set to `false` the table picker will be replaced by a menu item that opens a dialog that users can use to insert a table. This dialog allows users to set various parameters such as the number of columns and rows, width, height, cell spacing and padding, border width, alignment, and whether to display a caption. There are also advanced style options available if `table_advtab` is set to `true`.
 
-> Note: To configure the Table menu to include both the table picker and the table dialog menu items, set `table_grid` to `true` and configure [`menu`]({{ site.baseurl}}/configure/editor-appearance/#menu) to include both the `inserttable` and `inserttabledialog` menu items.
+> **Note**: To configure the Table menu to include both the table picker and the table dialog menu items, set `table_grid` to `true` and configure [`menu`]({{ site.baseurl}}/configure/editor-appearance/#menu) to include both the `inserttable` and `inserttabledialog` menu items.
 
 **Type:** `Boolean`
 
@@ -139,7 +139,7 @@ However, if `table_grid` is set to `false` the table picker will be replaced by 
 
 {{site.differs_for_mobile}}
 
-##### Example
+#### Example: Using `table_grid`
 
 ```js
 tinymce.init({
@@ -161,7 +161,7 @@ This option enables you to disable the default tab between table cells feature. 
 
 **Possible Values:** `true`, `false`
 
-##### Example
+#### Example: Using `table_tab_navigation`
 
 ```js
 tinymce.init({
@@ -181,7 +181,7 @@ This option enables you to specify default attributes for inserted tables.
 
 **Default Value:** `{ border: '1' }`
 
-##### Example
+#### Example: Using `table_default_attributes`
 
 ```js
 tinymce.init({
@@ -203,7 +203,7 @@ This option enables you to specify the default styles for inserted tables.
 
 **Default Value:** `{ 'border-collapse': 'collapse', 'width': '100%' }`
 
-##### Example
+#### Example: Using `table_default_styles`
 
 ```js
 tinymce.init({
@@ -228,7 +228,7 @@ will force pixel resizing. The default is to automatically detect what the table
 
 **Default Value:** `none`
 
-##### Example
+#### Example: Using `table_responsive_width`
 
 ```js
 tinymce.init({
@@ -259,7 +259,7 @@ This option accepts the following values:
 
 **Possible Values:**  `'fixed'`, `'relative'`, `'responsive'`, `'auto'`
 
-##### Example
+#### Example: Using `table_sizing_mode`
 
 ```js
 tinymce.init({
@@ -279,7 +279,7 @@ This option enables you to specify a list of classes to present in the table opt
 
 **Type:** `Array`
 
-##### Example
+#### Example: Using `table_class_list`
 
 ```js
 tinymce.init({
@@ -301,7 +301,7 @@ This option enables you to specify a list of classes to present in the table cel
 
 **Type:** `Array`
 
-##### Example
+#### Example: Using `table_cell_class_list`
 
 ```js
 tinymce.init({
@@ -323,7 +323,7 @@ This option enables you to specify a list of classes to present in the table row
 
 **Type:** `Array`
 
-##### Example
+#### Example: Using `table_row_class_list`
 
 ```js
 tinymce.init({
@@ -349,7 +349,7 @@ This option makes it possible to disable the advanced tab in the table dialog bo
 
 **Possible Values:** `true`, `false`
 
-##### Example
+#### Example: Using `table_advtab`
 
 ```js
 tinymce.init({
@@ -371,7 +371,7 @@ This option makes it possible to disable the advanced tab in the table cell dial
 
 **Possible Values:** `true`, `false`
 
-##### Example
+#### Example: Using `table_cell_advtab`
 
 ```js
 tinymce.init({
@@ -393,7 +393,7 @@ This option makes it possible to disable the advanced tab in the table row dialo
 
 **Possible Values:** `true`, `false`
 
-##### Example
+#### Example: Using `table_row_advtab`
 
 ```js
 tinymce.init({
@@ -415,7 +415,7 @@ This option makes it possible to disable the ability to resize table columns and
 
 **Possible Values:** `true`, `false`
 
-##### Example
+#### Example: Using `table_resize_bars`
 
 ```js
 tinymce.init({
@@ -437,7 +437,7 @@ This option enables you to force the Table Properties dialog to use HTML5/CSS3 s
 
 **Possible Values:** `true`, `false`
 
-##### Example
+#### Example: Using `table_style_by_css`
 
 ```js
 tinymce.init({
@@ -526,7 +526,7 @@ The `table_header_type` option has four different settings: `'section`', `'cells
 
 **Possible Values:** `'section`', `'cells'`, `'sectionCells'`, `'auto'`
 
-##### Example
+#### Example: Using `table_header_type`
 
 ```js
 tinymce.init({
@@ -552,6 +552,7 @@ tinymce.init({
   table_default_styles: {}
 });
 ```
+
 #### Pixel based resizing
 
 ```js
@@ -563,6 +564,7 @@ tinymce.init({
   table_responsive_width: false
 });
 ```
+
 #### Percentage based resizing
 
 ```js
@@ -580,7 +582,7 @@ tinymce.init({
 });
 ```
 
-> Note: The advanced tabs of the table, row, and cell properties dialogs use the `colorpicker` to allow for border and background colors to be applied. See docs to use and configure a custom [colorpicker]({{site.baseurl}}/plugins/colorpicker/).
+> **Note**: The advanced tabs of the table, row, and cell properties dialogs use the `colorpicker` to allow for border and background colors to be applied. See docs to use and configure a custom [colorpicker]({{site.baseurl}}/plugins/colorpicker/).
 
 {% include misc/plugin-toolbar-button-id-boilerplate.md %}
 
@@ -596,7 +598,7 @@ tinymce.init({
 | getClipboardRows |  | Returns the data for any rows cut or copied using `mceTableCutRow` or `mceTableCopyRow` |
 | setClipboardRows | rows: HTMLTableRowElement[] | Set the data to be used by `mceTablePasteRowBefore` or `mceTablePasteRowAfter` for pasting rows into a table. |
 
-#### Example
+### Example: Using `table` plugin APIs
 
 ```js
 tinymce.activeEditor.plugins.table.insertTable(2, 3);

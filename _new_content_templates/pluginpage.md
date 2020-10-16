@@ -41,7 +41,7 @@ tinymce.init({
 
 {% comment %} Delete everything not require/relevant from this point on. {% endcomment%}
 
-## Configuration Options
+## Configuration options
 
 The following configuration options affect the behavior of the {{pluginname}} plugin.
 

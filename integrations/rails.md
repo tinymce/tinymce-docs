@@ -12,7 +12,7 @@ keywords: integration integrate rails
 - [TinyMCE in Ruby on Rails using TinyMCE self-hosted](#tinymceinrubyonrailsusingtinymceself-hosted)
 - [The third-party TinyMCE Ruby on Rails gem](#thethird-partytinymcerubyonrailsgem)
 
-### TinyMCE in Ruby on Rails using the Tiny Cloud
+## TinyMCE in Ruby on Rails using the Tiny Cloud
 
 The {{site.cloudname}} can be used to integrate {{site.productname}} into Ruby on Rails projects.
 This procedure creates a [basic Ruby on Rails application](https://guides.rubyonrails.org/getting_started.html) containing a {{site.productname}} editor based on our [Basic example]({{site.baseurl}}/demo/basic-example/).
@@ -54,7 +54,7 @@ This procedure creates a [basic Ruby on Rails application](https://guides.rubyon
 
 The page containing the {{site.productname}} will be accessible at `http://localhost:<port>/` (default: [http://localhost:3000/](http://localhost:3000/)).
 
-### TinyMCE in Ruby on Rails using TinyMCE self-hosted
+## TinyMCE in Ruby on Rails using TinyMCE self-hosted
 
 Self-hosted instances of {{site.productname}} can be integrated into Ruby on Rails projects.
 This procedure creates a [basic Ruby on Rails application](https://guides.rubyonrails.org/getting_started.html) containing a {{site.productname}} editor based on our [Basic example]({{site.baseurl}}/demo/basic-example/).
@@ -90,14 +90,16 @@ This procedure creates a [basic Ruby on Rails application](https://guides.rubyon
     ```
 
 5. On a command line, from the project's root directory, start the Ruby on Rails server.
+
     ```sh
     rails server
     ```
+
 The page containing the {{site.productname}} will be accessible at `http://localhost:<port>/` (default: [http://localhost:3000/](http://localhost:3000/)).
 
 For information on self-hosting {{site.productname}}, see: [Installing {{ site.productname }}]({{site.baseurl}}/general-configuration-guide/advanced-install/).
 
-### The third-party TinyMCE Ruby on Rails gem
+## The third-party TinyMCE Ruby on Rails gem
 
 {{site.thirdPartyInteg}}
 
@@ -111,12 +113,15 @@ This procedure creates a [basic Ruby on Rails application](https://guides.rubyon
     ```sh
     gem 'tinymce-rails'
     ```
+
     Do not add this line within a `group` - `end` element.
+
 1. Install the `tinymce-rails` gem using `bundle`:
 
     ```sh
     bundle install
     ```
+
 2. Create a {{site.productname}} configuration file.
 
    1. Create the `config/tinymce.yml` file:
@@ -124,6 +129,7 @@ This procedure creates a [basic Ruby on Rails application](https://guides.rubyon
       ```sh
       touch config/tinymce.yml
       ```
+
    2. Add a {{site.productname}} configuration. The configuration must be in the [YAML format](https://yaml.org/spec/1.2/spec.html), such as:
 
       ```yml
@@ -152,6 +158,7 @@ This procedure creates a [basic Ruby on Rails application](https://guides.rubyon
     ```
 
 5. On a command line, from the project's root directory, start the Ruby on Rails server.
+
     ```sh
     rails server
     ```

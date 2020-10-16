@@ -1,4 +1,4 @@
-## language
+## `language`
 
 This option allows you to specify the language that {{site.productname}}'s user interface will appear in. That is, the toolbar buttons and menu items. By default, {{site.productname}} will use US English as the language of the interface.
 
@@ -15,7 +15,7 @@ Please note, the language code you set in your {{site.productname}} configuratio
 
 **Default Value:** `en_US`
 
-##### Example
+### Example: Using `language`
 
 In this example we will set the editor language to Swedish.
 

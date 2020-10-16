@@ -14,7 +14,7 @@ The `template` plugin adds support for custom templates. It also adds a menu ite
 
 **Type:** `String`
 
-##### Example
+## Basic setup
 
 ```js
 tinymce.init({
@@ -25,7 +25,7 @@ tinymce.init({
 });
 ```
 
-## Live example
+## Interactive example
 
 This example shows how the template plugin can be used to insert custom templates with pre-defined markup and values.
 
@@ -43,7 +43,7 @@ If this option is a string then it will be requested as a URL that should produc
 
 Each item in the list can either be inline using a `content` property or a whole file using the `url` property.
 
-**Example using templates object:**
+#### Example using templates object
 
 ```js
 tinymce.init({
@@ -58,7 +58,7 @@ tinymce.init({
 });
 ```
 
-**Example using templates URL**
+#### Example using templates URL
 
 ```js
 tinymce.init({
@@ -70,7 +70,7 @@ tinymce.init({
 });
 ```
 
-**Example JSON output of templates.php**
+#### Example JSON output of templates.php
 
 ```json
 [
@@ -89,7 +89,7 @@ A creation date is one that is set if no previous date existed within the elemen
 
 **Default Value:** `cdate`
 
-##### Example
+#### Example: Using `template_cdate_classes`
 
 ```js
 tinymce.init({
@@ -109,7 +109,7 @@ This option allows you to provide a date format that all 'creation' date templat
 
 **Default:** `'%Y-%m-%d'`
 
-##### Example
+#### Example: Using `template_cdate_format`
 
 ```js
 tinymce.init({
@@ -123,6 +123,7 @@ tinymce.init({
   ]
 });
 ```
+
 If the creation date is set as 9:00AM on January 15th 2000, then inserting this template will insert the following into the editor:
 
 ```html
@@ -141,7 +142,7 @@ A modified date is one that is updated with each edit.
 
 **Default Value:** `mdate`
 
-##### Example
+#### Example: Using `template_mdate_classes`
 
 ```js
 tinymce.init({
@@ -161,7 +162,7 @@ This option allows you to provide TinyMCE with a date/time format that all 'modi
 
 **Default:** `'%Y-%m-%d'`
 
-##### Example
+#### Example: Using `template_mdate_format`
 
 ```js
 tinymce.init({
@@ -175,6 +176,7 @@ tinymce.init({
   ]
 });
 ```
+
 If the date modified is set as 9:00AM on January 15th 2000, then inserting this template will insert the following into the editor:
 
 ```html
@@ -189,7 +191,7 @@ This is an object containing items that will be replaced with their respective s
 
 **Type:** `Object`
 
-##### Example
+#### Example: Using `template_replace_values`
 
 ```js
 tinymce.init({
@@ -222,7 +224,7 @@ This is an object containing items that will be replaced with their respective s
 
 **Type:** `Object`
 
-##### Example
+#### Example: Using `template_preview_replace_values`
 
 ```js
 tinymce.init({
@@ -257,7 +259,7 @@ When HTML elements in a template are assigned this class, the content of the ele
 
 **Default Value:** `selcontent`
 
-##### Example
+#### Example: Using `template_selected_content_classes`
 
 ```js
 tinymce.init({
@@ -273,6 +275,7 @@ tinymce.init({
   ]
 });
 ```
+
 If the word `world` is selected in the editor and _My Template_ is applied, `world` will be updated to:
 
 ```html
@@ -281,7 +284,7 @@ If the word `world` is selected in the editor and _My Template_ is applied, `wor
 
 ## Template Plugin Examples
 
-**Example**
+### Example: Using the `template` plugin
 
 ```js
 tinymce.init({
@@ -313,7 +316,7 @@ tinymce.init({
 });
 ```
 
-**Example of an external list**
+### Example of an external template list
 
 This is the contents your backend page should return if you specify a URL in the templates option. A simple array containing each template to present. This URL can be a backend page, for example a PHP file.
 

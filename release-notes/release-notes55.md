@@ -65,6 +65,12 @@ For information on:
 - The `LineHeight` editor command, see: [Commands available for {{site.productname}} - Core Editor commands]({{site.baseurl}}/advanced/editor-command-identifiers/#coreeditorcommands).
 - The `LineHeight` query command value, see: [Commands available for {{site.productname}} - Available query command values]({{site.baseurl}}/advanced/editor-command-identifiers/#availablequerycommandvalues).
 
+### Added the ability to use the browser full screen mode with the `fullscreen` plugin
+
+A new `fullscreen_native` option allows the editor to use the browser's full screen mode instead of only filling the browser viewport. When enabled and the user activates full screen mode, the editor will fill the whole screen, the same as full screen mode for online videos.
+
+For information on the `fullscreen_native` option, see: [Full Screen Plugin - `fullscreen_native`]({{site.baseurl}}/plugins/fullscreen/#fullscreen_native).
+
 ### Added `colgroup` support for tables
 
 A new `table_use_colgroups` option allows `colgroup` and `col` elements to be added to new tables. The `colgroup` and `col` elements can be used to set column widths. Other attributes are not supported in the TinyMCE 5.5 release.
@@ -82,6 +88,27 @@ The {{site.productname}} 5.5 release includes an accompanying release of the **A
 **Advanced Code Editor** 2.2.0 adds support for loading the Advanced Code Editor user interface components when the editor is in a ShadowRoot.
 
 For information on the Advanced Code Editor plugin, see: [Advanced Code Editor plugin]({{site.baseurl}}/plugins/advcode/).
+
+### Accessibility Checker 2.3.0
+
+The {{site.productname}} 5.5 release includes an accompanying release of the **Accessibility Checker** premium plugin.
+
+**Accessibility Checker** 2.3.0 adds the following features:
+
+* A new `a11ychecker_ignored_rules` option for filtering Accessibility Checker rules using the rule identifiers. For information on the `a11ychecker_ignored_rules` option, see: [Accessibility Checker plugin - `a11ychecker_ignored_rules`]({{site.baseurl}}/plugins/a11ychecker/#a11ychecker_ignored_rules).
+* A new `a11ychecker_issue_url_callback` option to allow custom URLs to be used for the "more info" links on accessibility checks. For information on the `a11ychecker_issue_url_callback` option, see: [Accessibility Checker plugin - `a11ychecker_issue_url_callback`]({{site.baseurl}}/plugins/a11ychecker/#a11ychecker_issue_url_callback).
+* Adds the rule identifier (`id`) to the data returned by the `getReport()` API method. For information on the `getReport()` API method, see: [Accessibility Checker plugin - `getReport()` API method]({{site.baseurl}}/plugins/a11ychecker/#getreport).
+* A new `a11ychecker_filter_issues` option for filtering Accessibility Checker report results. For information on the `a11ychecker_filter_issues` option, see: [Accessibility Checker plugin - `a11ychecker_filter_issues`]({{site.baseurl}}/plugins/a11ychecker/#a11ychecker_filter_issue).
+
+**Accessibility Checker** 2.3.0 also provides the following bug fixes:
+
+* Fixed the `toggleAudit` API not accounting for the dialog being closed by dialog buttons or the ESC key.
+* Fixed the error message displayed when the filename of an image clashes with the alt text.
+* Fixed missing `bg_BG`, `eu` and `id` translations.
+* Fixed the editor content scrolling when calling the `getReport` API.
+* Fixed incorrect strings used for the next/previous button tooltips.
+
+For information on the Accessibility Checker plugin, see: [Accessibility Checker plugin]({{site.baseurl}}/plugins/a11ychecker/).
 
 ### Export 0.1.0
 
@@ -108,7 +135,6 @@ For information on the PowerPaste plugin, see: [PowerPaste plugin]({{site.baseur
 * Added `hasPlugin` function to the editor API to determine if a plugin exists or not.
 * Added the ability to use `colgroup` elements in tables.
 * Added the ability to delete and navigate HTML media elements without the `media` plugin.
-* Added `fullscreen_native` setting to the `fullscreen` plugin to enable use of the entire monitor.
 * Added table related oxide variables to the Style API for more granular control over table cell selection appearance.
 * Added new APIs to allow for programmatic control of the inline toolbar visibility.
 * Added the `origin` property to the `ObjectResized` and `ObjectResizeStart` events, to specify which handle the resize was performed on.
@@ -168,10 +194,9 @@ This section describes issues that users of {{site.productname}} 5.5 may encount
 
 ###
 
-#### Issue
+**Issue**:
 
-
-#### Workaround
+**Workaround**:
 
 
 {% assign enterprise = true %}

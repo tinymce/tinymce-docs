@@ -11,17 +11,18 @@ keywords: imagetools rotate rotateleft rotateright flip flipv fliph editimage im
 
 Image Tools (`imagetools`) plugin adds a contextual editing toolbar to the images in the editor. If toolbar is not appearing on image click, it might be that you need to enable `imagetools_cors_hosts` or `imagetools_proxy` (see below).
 
-## Live example
+## Interactive example
 
 {% include live-demo.html id="image-tools" %}
 
 {{site.svgsNotSupported}}
 
 ## Cloud Installation
+
 The Image Tools plugin is provided with all subscriptions to [{{site.cloudname}}]({{ site.baseurl }}/cloud-deployment-guide/editor-and-features/), including an automatically configured image proxy.
 Simply add `image` to the `toolbar` list and `image imagetools` to the `plugins` list.
 
-##### Example
+### Basic setup using Tiny Cloud
 
 ```js
 tinymce.init({
@@ -32,12 +33,13 @@ tinymce.init({
 ```
 
 ## Self-hosted Installation
+
 To enable the {{site.productname}} Image Tools plugin:
 
 1. Add 'image' to the 'toolbar' list and 'image imagetools' to the 'plugins' list
 2. Enable `imagetools_cors_hosts` and `imagetools_proxy` options as needed
 
-##### Example
+### Basic self-hosted setup
 
 ```js
 tinymce.init({
@@ -59,7 +61,7 @@ This option can be used together with the `imagetools_cors_hosts` option to allo
 
 **Type:** `String[]`
 
-##### Example
+#### Example: Using `imagetools_credentials_hosts`
 
 ```js
 tinymce.init({
@@ -77,7 +79,7 @@ This option can be used to define a custom fetch function, which provides anothe
 
 **Type:** `Function`
 
-##### Example
+#### Example: Using `imagetools_fetch_image`
 
 ```js
 tinymce.init({
@@ -113,7 +115,7 @@ The exact selection of buttons that will appear on the contextual toolbar can be
 
 **Default Value:** `'rotateleft rotateright | flipv fliph | editimage imageoptions'`
 
-##### Example
+#### Example: Using `imagetools_toolbar`
 
 ```js
 tinymce.init({

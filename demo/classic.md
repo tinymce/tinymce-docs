@@ -7,7 +7,7 @@ description: This example shows you how to use TinyMCE classic editor.
 keywords: example demo classic editor
 ---
 
-## Live example
+## Interactive example
 
 This example shows you how to use {{site.productname}} Classic Editor.
 

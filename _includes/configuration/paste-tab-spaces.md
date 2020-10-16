@@ -15,7 +15,7 @@ This option controls how many spaces are used to represent a tab character in HT
 
 **Default Value:** `4`
 
-##### Example: `paste_tab_spaces`
+#### Example: Using `paste_tab_spaces`
 
 ```js
 tinymce.init({

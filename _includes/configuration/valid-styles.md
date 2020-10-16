@@ -1,4 +1,4 @@
-## valid_styles
+## `valid_styles`
 
 To use this option, specify an object containing a mapping of element names to allowed styles. To specify the allowed styles for all elements, use `*` as the element name.
 
@@ -6,7 +6,7 @@ By default, all styles are allowed unless `valid_styles` or `invalid_styles` is 
 
 **Type:** `Object`
 
-##### Example
+### Example: Using `valid_styles`
 
 ```js
 tinymce.init({

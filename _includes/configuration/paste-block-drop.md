@@ -13,9 +13,9 @@ Due to browser limitations, it is not possible to filter content that is dragged
 **Possible values:**  `true`, `false`
 
 {% if page.title == "Paste plugin" %}
-##### Example: `paste_block_drop`
+#### Example: Using `paste_block_drop`
 {% else %}
-##### Example: `powerpaste_block_drop`
+#### Example: Using `powerpaste_block_drop`
 {% endif %}
 
 ```js

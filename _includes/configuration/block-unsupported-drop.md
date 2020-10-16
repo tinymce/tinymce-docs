@@ -1,4 +1,4 @@
-## block_unsupported_drop
+## `block_unsupported_drop`
 
 {{site.requires_5_4v}}
 
@@ -10,7 +10,7 @@ When the `block_unsupported_drop` option is set to `true`, the editor blocks uns
 
 **Possible Values:** `true`, `false`
 
-##### Example
+### Example: Using `block_unsupported_drop`
 
 ```js
 tinymce.init({

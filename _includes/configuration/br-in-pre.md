@@ -1,4 +1,4 @@
-## br_in_pre
+## `br_in_pre`
 
 This option allows you to disable {{site.productname}}'s default behavior when pressing the enter key within a `pre` tag. By default, pressing enter within a `pre` tag produces a `br` tag at the insertion point. For example:
 
@@ -9,7 +9,7 @@ However, when `br_in_pre` is set to `false`, rather than inserting a `br` tag {{
 `<pre>This is inside </pre>`
 `<pre>a pre tag.</pre>`
 
-> Note: when set to `false`, `shift+enter` will insert a `br` tag.
+> **Note**: when set to `false`, `shift+enter` will insert a `br` tag.
 
 **Type:** `Boolean`
 
@@ -17,7 +17,7 @@ However, when `br_in_pre` is set to `false`, rather than inserting a `br` tag {{
 
 **Possible Values:** `true`, `false`
 
-##### Example
+### Example: Using `br_in_pre`
 
 ```js
 tinymce.init({

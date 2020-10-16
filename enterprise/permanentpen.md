@@ -11,7 +11,7 @@ Permanent Pen is a premium {{site.productname}} plugin for applying a pre-define
 
 This allows the user to add text without modifying the original content.
 
-### Try our Permanent Pen plugin demo
+## Try our Permanent Pen plugin demo
 
 {% include live-demo.html id="permanent-pen" %}
 

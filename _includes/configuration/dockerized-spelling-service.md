@@ -113,7 +113,7 @@ The following procedure covers downloading, configuring, building and testing th
 
 13. _Optional_: Edit the `http` configuration settings in `config/ephox-spelling-docker-env.conf`. The configurable settings are in the `http` section of the file. For example:
 
-    ```
+    ```conf
     http {
       max-connections = 100
       max-connections-per-host = 10
@@ -169,7 +169,7 @@ The following procedure covers downloading, configuring, building and testing th
 
     The response from the `curl` command should be:
 
-    ```
+    ```sh
     Spelling service is running.
     ```
 

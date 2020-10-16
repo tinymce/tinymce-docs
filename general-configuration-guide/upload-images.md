@@ -9,7 +9,6 @@ keywords: uploader uploadImages image handler asynchronous async paste_data_imag
 
 {{site.productname}} uploads edited images with the image uploader. This complements {{site.productname}}'s image editing functionality.
 
-
 Local images that are added through other means are also uploaded using this function, such as images added by drag and drop when using the [`paste_data_images`]({{ site.baseurl }}/plugins/paste/#paste_data_images) configuration property, or using the {{site.companyname}} [**PowerPaste** plugin]({{ site.baseurl }}/plugins/powerpaste/).
 
 {{site.productname}} automatically updates the `<img>` src attribute with the new path to the remote image.
@@ -20,7 +19,7 @@ Local images are uploaded to {{site.productname}} using the `editor.uploadImages
 
 Review the examples below:
 
-#### Using uploadImages and then posting a form
+## Using uploadImages and then posting a form
 
 ```js
 tinymce.activeEditor.uploadImages(function(success) {
@@ -28,7 +27,7 @@ tinymce.activeEditor.uploadImages(function(success) {
 });
 ```
 
-#### Using uploadImages with jQuery
+## Using uploadImages with jQuery
 
 ```js
 tinymce.activeEditor.uploadImages(function(success) {
@@ -65,7 +64,7 @@ Use a standardized name in the post (e.g. `blobid0`, `blobid1`, `imagetools0`, `
 
 This server-side upload handler script must return a JSON object containing a "location" property. This property represents the remote location and filename of the newly uploaded image.
 
-```
+```js
 { location : '/uploaded/image/path/image.png' }
 ```
 
@@ -87,17 +86,17 @@ Optional:
 * [`images_upload_credentials`](#images_upload_credentials)
 * [`images_reuse_filename`](#images_reuse_filename)
 
-#{% include configuration/images-uploads-url.md %}
+{% include configuration/images-uploads-url.md %}
 
-#{% include configuration/images-upload-handler.md %}
+{% include configuration/images-upload-handler.md %}
 
-#{% include configuration/images-upload-base-path.md %}
+{% include configuration/images-upload-base-path.md %}
 
-#{% include configuration/images-upload-credentials.md %}
+{% include configuration/images-upload-credentials.md %}
 
-#{% include configuration/images-upload-reuse-filename.md %}
+{% include configuration/images-upload-reuse-filename.md %}
 
-#{% include configuration/images-dataimg-filter.md %}
+{% include configuration/images-dataimg-filter.md %}
 
 ## CORS considerations
 
@@ -115,10 +114,8 @@ All supported browsers print messages to the JavaScript console if there is a CO
 
 The [PHP Upload Handler Script]({{ site.baseurl }}/advanced/php-upload-handler/) provided here configures CORS in the `$accepted_origins` variable. Configure CORS at the [web application layer](http://www.w3.org/wiki/CORS_Enabled#At_the_Web_Application_level...) or the [HTTP server layer](http://www.w3.org/wiki/CORS_Enabled#At_the_HTTP_Server_level...).
 
-
 ### Further reading on CORS
 
 * [W3C Wiki - CORS Enabled](http://www.w3.org/wiki/CORS_Enabled)
 * [MDN - HTTP access control (CORS)](https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS)
 * [W3C - Cross-Origin Resource Sharing Specification](https://www.w3.org/wiki/CORS)
-file_picker_callback

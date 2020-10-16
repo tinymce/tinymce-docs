@@ -125,7 +125,3 @@ For more examples check the [GitHub repository](https://github.com/tinymce/tinym
   * `change-log.md` - This file lists all user impacting and major changes for every release of {{site.productname}} for Swing integration.
   * `jar` files - The `jar` files that implement the integration can be found under `lib/`
   * `javadoc` - The `javadoc` can be found at `docs/javadoc/index.html`.
-
-#### A note about integrations
-
-> Note: {{site.companyname}} references to third-party integrations/code to help users build great products with the {{site.productname}} editor. For support related issues such as queries about this integration, please contact [{{site.supportname}}]({{site.supporturl}}) or post your question on Stack Overflow using the [`{{site.prodnamecode}}` tag]({{site.communitysupporturl}}).

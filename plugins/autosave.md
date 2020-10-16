@@ -20,7 +20,7 @@ The autosave plugin adds:
 - A menu item, "Restore last draft" under the `File` menu, and
 - An optional toolbar button.
 
-##### Example
+## Basic setup
 
 ```js
 tinymce.init({
@@ -30,7 +30,7 @@ tinymce.init({
 });
 ```
 
-### Options
+## Options
 
 These settings affect the execution of the `autosave` plugin. The settings described here will affect the interval, duration and behavior of locally stored drafts of the current editor instance.
 
@@ -44,7 +44,7 @@ This option allows you to set whether the editor should prompt the user to advis
 
 **Possible Values:** `true`, `false`
 
-##### Example
+#### Example: Using `autosave_ask_before_unload`
 
 ```js
 tinymce.init({
@@ -62,7 +62,7 @@ This option enables you to specify the time the editor should wait between takin
 
 **Default Value:** `'30s'`
 
-##### Example:
+#### Example: Using `autosave_interval`
 
 ```js
 tinymce.init({
@@ -79,7 +79,7 @@ This option allows you to set the prefix that is used for local storage keys.
 
 **Default Value**: `'tinymce-autosave-{path}{query}-{id}-'`
 
-##### Example:
+#### Example: Using `autosave_prefix`
 
 ```js
 tinymce.init({
@@ -99,7 +99,7 @@ This option enables you to specify if {{site.productname}} should automatically 
 
 **Possible Values**: `true`, `false`
 
-##### Example:
+#### Example: Using `autosave_restore_when_empty`
 
 ```js
 tinymce.init({
@@ -117,7 +117,7 @@ This option lets you to specify the duration editor content should remain in loc
 
 **Default Value**: '20m'
 
-##### Example:
+#### Example: Using `autosave_retention`
 
 ```js
 tinymce.init({

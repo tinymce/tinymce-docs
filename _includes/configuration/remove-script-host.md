@@ -1,4 +1,4 @@
-## remove_script_host
+## `remove_script_host`
 
 This option is used if the [`relative_urls`](#relative_urls) option is set to `false` and only applies to links with the same domain as the [`document_base_url`](#document_base_url).
 
@@ -12,7 +12,7 @@ If this option is set to `false`, the protocol and host of the `document_base_ur
 
 **Possible Values:** `true`, `false`
 
-##### Examples
+### Examples: Using `remove_script_host`
 
 When `remove_script_host` is set to `true`, such as:
 

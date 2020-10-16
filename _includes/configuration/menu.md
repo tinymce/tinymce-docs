@@ -10,7 +10,7 @@ If you would like to group these menu items, please insert a `|` pipe character 
 
 **Type:** `Object`
 
-##### Example: The TinyMCE Default Menu Items
+### Example: The TinyMCE Default Menu Items
 
 {% include configuration/defaultmenuitems.md %}
 

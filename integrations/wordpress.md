@@ -5,6 +5,7 @@ title_nav: WordPress
 keywords: integration integrate wordpress advanced
 ---
 
+{{site.thirdPartyInteg}}
 
 ## Default Visual Editor in Wordpress
 
@@ -26,7 +27,3 @@ To use {{site.productname}} in WordPress, TinyMCE Advanced is a great option.
 * Ability to set Font Family and Font Size
 
 With this plugin, you will also be able to enable the {{site.productname}} menu. It is a convenient way to access a lot of features that are not used frequently.
-
-#### A note about integrations
-
-> Note:  We are pleased to reference third-party integrations/code to help you build great products with {{site.productname}}. If you have queries about this integration, please contact the developer directly.

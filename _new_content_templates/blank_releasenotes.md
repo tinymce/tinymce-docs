@@ -113,12 +113,12 @@ This section describes issues that users of {{site.productname}} vnumtxt may enc
 
 ###
 
-#### Issue
+**Issue**:
 
 This issue affects ....
 <impact>
 
-#### Workaround
+**Workaround**:
 
 There was no known workaround at the time of the release.
 

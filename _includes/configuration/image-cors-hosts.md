@@ -8,9 +8,9 @@ The {{pluginname}} plugin cannot work with images from another domains due to se
 
 An array of supported domains for the images (with CORS enabled on them) can be supplied to {{site.productname}} via the `{{plugincode}}_cors_hosts` option.
 
-> Note: Each string in the array *must* be in the format of `mydomain.com`. Do not include protocols (`http://, https://`) or any trailing slashes in your domains.
+> **Note**: Each string in the array *must* be in the format of `mydomain.com`. Do not include protocols (`http://, https://`) or any trailing slashes in your domains.
 
-> Note: `{{plugincode}}_cors_hosts` is **not** required when enabling this plugin via [{{site.cloudname}}]({{ site.baseurl }}/cloud-deployment-guide/editor-and-features/).
+> **Note**: `{{plugincode}}_cors_hosts` is **not** required when enabling this plugin via [{{site.cloudname}}]({{ site.baseurl }}/cloud-deployment-guide/editor-and-features/).
 
 **Type:** `String[]`
 

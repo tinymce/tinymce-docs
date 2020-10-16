@@ -8,11 +8,11 @@ keywords: themes skins statusbar
 
 This section is about customizing {{site.productname}}'s user interface with skins, toolbar buttons, and manipulating the status bar.
 
-### Themes
+## Themes
 
 **Silver** is {{site.productname}}'s default theme. Users can easily customize the menu or toolbar without having to edit the theme. Theme creation requires a more in depth-knowledge of {{site.productname}}'s API and is beyond the scope of this guide. {{site.productname}} skins, however, are easier to make.
 
-### Skins
+## Skins
 
 Skins control the appearance of {{site.productname}} such as colors and spacing. The default skin is called **Oxide** (`oxide`) and has a `light` and a `dark` version. To initialize the editor with the dark version of the default skin, use the following configuration:
 
@@ -36,15 +36,15 @@ tinymce.init({
 
 To create a skin interactively, visit [the {{site.productname}} 5 Skin Tool](http://skin.tiny.cloud/t5/). For information on manually creating skins for {{site.productname}}, see [Creating a skin]({{ site.baseurl }}/advanced/creating-a-skin/).
 
-> Note: Developers often confuse the difference between {{site.productname}} "themes" and "skins". A **Skin** in {{site.productname}} is used to make changes to the appearance of the editor, for example, colors, margins, padding, fonts, icons, etc. A **Theme** creates the editor construction (left, top, bottom, or right of the editing area - vertical or horizontal, inline or outside, etc.). A skin usually changes the color scheme of a button, dialog, etc. while the theme applies to the whole editor including its functionality and has child skins to change the appearance.
+> **Note**: Developers often confuse the difference between {{site.productname}} "themes" and "skins". A **Skin** in {{site.productname}} is used to make changes to the appearance of the editor, for example, colors, margins, padding, fonts, icons, etc. A **Theme** creates the editor construction (left, top, bottom, or right of the editing area - vertical or horizontal, inline or outside, etc.). A skin usually changes the color scheme of a button, dialog, etc. while the theme applies to the whole editor including its functionality and has child skins to change the appearance.
 
-### Changing editor height and width
+## Changing editor height and width
 
 A common UI customization used by developers is changing the height and width of the editable area. The following examples are code snippets that change {{site.productname}}'s height and width.
 
-> Note: The links below contain specific details of these customization options.
+> **Note**: The links below contain specific details of these customization options.
 
-##### Set the editable area height
+### Set the editable area height
 
 ```js
 tinymce.init({
@@ -55,7 +55,7 @@ tinymce.init({
 
 See the [height option]({{ site.baseurl }}/configure/editor-appearance/#height) for customization details.
 
-##### Set the editable area width
+### Set the editable area width
 
 ```js
 tinymce.init({
@@ -66,8 +66,7 @@ tinymce.init({
 
 See the [width option]({{ site.baseurl }}/configure/editor-appearance/#width) for customization details.
 
-
-##### Set maximum and minimum heights and widths
+### Set maximum and minimum heights and widths
 
 The following code snippets use several options for the maximum and minimum values for heights and widths of the editable area.
 
@@ -85,7 +84,7 @@ See the [max_height]({{ site.baseurl }}/configure/editor-appearance/#max_height)
 
 The editable area can also automatically resize itself as the user enters content into the iframe with the [Autoresize plugin]({{ site.baseurl }}/plugins/autoresize/). Users can resize the editor on both the horizontal and vertical access by dragging the status bar handle with the [resize]({{ site.baseurl }}/configure/editor-appearance/#resize) configuration option.
 
-### Customizing the editable area with content_css
+## Customizing the editable area with content_css
 
 Use the [`content_css`]({{ site.baseurl }}/configure/content-appearance/#content_css) customization option to ensure that {{site.productname}}'s editable area has the same styling as the surrounding content.
 
@@ -93,7 +92,7 @@ Use the [`content_css`]({{ site.baseurl }}/configure/content-appearance/#content
 
 The following example includes the file `mycontent.css` in all of the pages to control the site's global appearance. This example ensures the content in the editable area contains the same style as the site.
 
-##### Example using an absolute path
+### Example using an absolute path
 
 ```js
 // File: http://domain.mine/mysite/index.html
@@ -106,11 +105,11 @@ tinymce.init({
 
 See the [content_css]({{ site.baseurl }}/configure/content-appearance/#content_css) customization page for more information about the use of absolute and relative paths as well as and how to use multiple stylesheets.
 
-### Hiding the status bar
+## Hiding the status bar
 
 The status bar is the gray bar aligned to the bottom of the editor's editable area. The status bar contains the path information and the resize handle. Removing the status bar disables the ability for users to change the size of the editable area.
 
-#### Example
+### Example: Hiding the status bar
 
 The following example disables the status bar.
 
@@ -121,13 +120,13 @@ tinymce.init({
 });
 ```
 
-> Note: Refer to the plugins and advanced configuration options documentation for more information on how to restrict whether the resize handle can be dragged.
+> **Note**: Refer to the plugins and advanced configuration options documentation for more information on how to restrict whether the resize handle can be dragged.
 
-### Adding the code button plugin
+## Adding the code button plugin
 
 One popular toolbar button that is *not* loaded with the "Silver" theme is the `code` button. Clicking the `code` button displays a dialog box containing the raw HTML hidden behind {{site.productname}}'s interface.
 
-> Note: Additional functionality may require the inclusion of a plugin
+> **Note**: Additional functionality may require the inclusion of a plugin
 
 ```js
 tinymce.init({
@@ -139,7 +138,7 @@ tinymce.init({
 
 All of the buttons disappear after the `code` button is added to the toolbar and a new menu called `Tools` with the menu item `Source code` is created. (See [this page]({{ site.baseurl }}/quick-start/) for a basic HTML code block.)
 
-#### Example
+### Example: Adding the code toolbar button
 
 The following example displays the default toolbar in addition to the `code` functionality:
 
@@ -152,8 +151,6 @@ tinymce.init({
 ```
 
 The ability to customize the user interface is an integral part of ensuring an integrated and complete user experience.
-
-
 
 {% assign_page next_page = "/general-configuration-guide/upload-images/index.html" %}
 {% include next-step.html next=next_page %}

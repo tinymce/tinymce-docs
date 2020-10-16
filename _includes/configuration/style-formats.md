@@ -50,7 +50,7 @@ style_formats: [
 ]
 ```
 
-## Live Examples
+## Interactive examples
 
 This example shows you how to:
 

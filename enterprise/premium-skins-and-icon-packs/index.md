@@ -8,7 +8,7 @@ keywords: skin skins icon icons material bootstrap customize theme
 
 The {{site.prem_skins_icons}} lets you quickly give {{site.productname}} a new look. Just choose one of our pre-made skins and icon packs.
 
-### How to use a premium skin
+## How to use a premium skin
 
 Use the [skin]({{site.baseurl}}/configure/editor-appearance/#skin) option, in combination with the [content_css]({{site.baseurl}}/configure/content-appearance/#content_css) option and the values listed below.
 
@@ -31,7 +31,7 @@ Available values for [content_css]({{site.baseurl}}/configure/content-appearance
 - material-outline
 - fabric
 
-##### Example
+### Example: Using a premium skin
 
 ```js
 tinymce.init({
@@ -41,7 +41,7 @@ tinymce.init({
 });
 ```
 
-### How to use an icon pack
+## How to use an icon pack
 
 Use the [icons]({{site.baseurl}}/configure/editor-appearance/#icons) option with any of the values listed below.
 
@@ -52,7 +52,7 @@ Available values for [icon]({{site.baseurl}}/configure/editor-appearance/#icons)
 - jam
 - thin
 
-##### Example
+### Example: Using a premium icon pack
 
 ```js
 tinymce.init({
@@ -63,7 +63,7 @@ tinymce.init({
 
 For information on using the `icons` option, see: [User interface options - `icons`]({{site.baseurl}}/configure/editor-appearance/#icons).
 
-#### Icon pack compatibility matrix
+### Icon pack compatibility matrix
 
 Due to different toolbar button sizes, some icon packs fit better with some skins. Use the below matrix as a guide.
 
@@ -80,7 +80,7 @@ Due to different toolbar button sizes, some icon packs fit better with some skin
 | small | jam, small |
 | jam | jam, small |
 
-### Examples
+## Examples
 
 Below are some recommended combinations of skins and icon packs:
 

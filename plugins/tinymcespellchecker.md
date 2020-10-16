@@ -16,6 +16,7 @@ keywords: tinymcespellchecker spellchecker_language spellchecker_languages spell
 {% include live-demo.html id="spellcheckerpro" %}
 
 ## Cloud Installation
+
 To enable the {{site.productname}} Enterprise Spellchecking plugin with [{{site.cloudname}}]({{ site.baseurl }}/cloud-deployment-guide/editor-and-features):
 
 1. If configured, disable the `spellchecker` plugin provided with {{site.productname}}, by removing it from the `plugins` list.
@@ -23,17 +24,18 @@ To enable the {{site.productname}} Enterprise Spellchecking plugin with [{{site.
 
 With {{site.cloudname}} the server-side spellchecking component is automatically configured, so the `spellchecker_rpc_url` parameter does not need to be set.
 
-#### Example: TinyMCE Cloud Installation
+### Example: TinyMCE Cloud Installation
 
 ```js
 tinymce.init({
-	selector: 'textarea',
-	plugins: 'tinymcespellchecker',
-	spellchecker_language: 'en'
+  selector: 'textarea',
+  plugins: 'tinymcespellchecker',
+  spellchecker_language: 'en'
 });
 ```
 
 ## Self-hosted Installation
+
 To enable the {{site.productname}} Enterprise Spellchecking plugin:
 
 1. If configured, disable the `spellchecker` plugin provided with {{site.productname}}, by removing it from the `plugins` list.
@@ -41,7 +43,7 @@ To enable the {{site.productname}} Enterprise Spellchecking plugin:
 
 For information on installing the server-side component for spell checking, please see the [server-side component installation guide]({{site.baseurl}}/enterprise/server/).
 
-#### Example: TinyMCE Self-hosted Installation
+### Example: TinyMCE Self-hosted Installation
 
 ```js
 tinymce.init({
@@ -68,7 +70,7 @@ This option enables or disables the spell checker when the editor is loaded. Whe
 
 **Possible Values:** `true`, `false`
 
-#### Example: `spellchecker_active`
+#### Example: Using `spellchecker_active`
 
 ```js
 tinymce.init({
@@ -91,7 +93,7 @@ This option specifies the primary spell checking mode.
 
 **Possible Values:** `true`, `false`
 
-#### Example: `spellchecker_dialog`
+#### Example: Using `spellchecker_dialog`
 
 ```js
 tinymce.init({
@@ -110,7 +112,7 @@ This option specifies the default language used by Spell Checker Pro.
 
 **Default Value:** `'en_us'`
 
-#### Example: `spellchecker_language`
+#### Example: Using `spellchecker_language`
 
 ```js
 tinymce.init({
@@ -133,7 +135,7 @@ This option specifies the spellchecker languages that are available to the user,
 'US English=en_us,UK English=en_gb,Danish=da,Dutch=nl,Finnish=fi,French=fr,German=de,Italian=it,Norwegian=nb,Brazilian Portuguese=pt,Iberian Portuguese=pt_PT,Spanish=es,Swedish=sv'
 ```
 
-#### Example: `spellchecker_languages`
+#### Example: Using `spellchecker_languages`
 
 ```js
 tinymce.init({
@@ -155,7 +157,7 @@ This option runs the spellchecker when the contents of the editor is loaded.
 
 **Possible Values:** `true`, `false`
 
-#### Example: `spellchecker_on_load`
+#### Example: Using `spellchecker_on_load`
 
 ```js
 tinymce.init({
@@ -173,7 +175,7 @@ This option specifies the URL of the server-side `ephox-spelling` service. For i
 
 **Type:** `String`
 
-#### Example: `spellchecker_rpc_url`
+#### Example: Using `spellchecker_rpc_url`
 
 ```js
 tinymce.init({
@@ -191,7 +193,7 @@ This option specifies the languages that can be set for content when working wit
 
 **Default Value:** `'en,es,fr,de,pt,zh'`
 
-#### Example: `spellchecker_select_languages`
+#### Example: Using `spellchecker_select_languages`
 
 ```js
 tinymce.init({
@@ -208,7 +210,7 @@ This option specifies an array of words to be ignored by the spell checker.
 
 **Type:** `String[]`
 
-#### Example: `spellchecker_whitelist`
+#### Example: Using `spellchecker_whitelist`
 
 ```js
 tinymce.init({

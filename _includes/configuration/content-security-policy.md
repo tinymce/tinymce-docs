@@ -1,10 +1,10 @@
-## content_security_policy
+## `content_security_policy`
 
 This option allows you to set a custom content security policy for the editor's iframe contents.
 
 **Type:** `String`
 
-##### Example
+### Example: Using `content_security_policy`
 
 ```js
 tinymce.init({

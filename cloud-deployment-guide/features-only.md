@@ -24,7 +24,7 @@ Extend the [{{site.productname}} configuration]({{ site.baseurl }}/configure/) t
 
 * [Mentions]({{ site.baseurl }}/plugins/mentions/)
 * [{{site.cloudfilemanager}}]({{ site.baseurl }}/plugins/drive/)
-* [Comments 2.0]({{ site.baseurl }}/plugins/comments/)
+* [Comments]({{ site.baseurl }}/plugins/comments/)
 * [Page Embed]({{ site.baseurl }}/plugins/pageembed/)
 * [Permanent Pen]({{ site.baseurl }}/plugins/permanentpen/)
 * [Format Painter]({{ site.baseurl }}/plugins/formatpainter/)

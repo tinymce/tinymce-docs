@@ -5,26 +5,27 @@ title_nav: Dialog
 description: An overview of TinyMCE dialogs and how to create custom dialogs.
 keywords: dialog dialogapi api
 ---
-## Overview
 
 A dialog is a popup UI element that contains a header, body and footer, each containing specific types of sub-components. Dialogs also have an instance API and several configuration options, including configurable callback functions for certain dialog events.
 
-> Note: {{site.productname}} also supports [URL dialogs]({{site.baseurl}}/ui-components/urldialog/). Configuring a URL dialog is quite different to configuring a standard {{site.productname}} dialog.
+> **Note**: {{site.productname}} also supports [URL dialogs]({{site.baseurl}}/ui-components/urldialog/). Configuring a URL dialog is quite different to configuring a standard {{site.productname}} dialog.
 
-### Use cases
+## Use cases
 
-#### Display simple information
+### Display simple information
 
 The [`code`]({{site.baseurl}}/plugins/code) plugin's dialog is an example of a simple dialog. It contains only one body panel component that displays the HTML code from the content.
 
 ![Source Code]({{site.baseurl}}/images/sourcecode.png)
 
-#### Display complex information
+### Display complex information
+
 More complex dialogs can use [tab panels]({{site.baseurl}}/ui-components/dialogcomponents/#tabpanel) and various [layouts]({{site.baseurl}}/ui-components/dialogcomponents/#layoutcomponents) to categorise and organise information displayed to the user. For example, the [`help`]({{site.baseurl}}/plugins/help) and [`character map`]({{site.baseurl}}/plugins/charmap) plugins use dialogs with tabbed panels to categorise and separate information.
 
 ![Special Characters]({{site.baseurl}}/images/specialchars.png)
 
-#### Interactive dialogs
+### Interactive dialogs
+
 {{site.productname}} dialogs can also contain [interactive components]({{site.baseurl}}/ui-components/dialogcomponents/#basiccomponents) such as buttons, checkboxes and input fields.
 
 For example, the [`image`]({{site.baseurl}}/plugins/image) plugin's dialog allows for users to link to or upload an image, input a description, title, class, caption, height and width, then insert it into the editor.
@@ -85,6 +86,7 @@ tinymce.activeEditor.windowManager.open({
 For more information on the `dialogApi` object that is passed to some of the configuration options, see the [dialog instance API](#dialoginstanceapi) documentation.
 
 #### Event callback functions
+
 Each of the event callback functions - `onAction`, `onSubmit`, `onCancel`, `onChange`, `onClose` and `onTabChange` - are shared between all dialog components that may trigger them. For example, **Custom** type footer buttons and dialog panel buttons all trigger `onAction`. Therefore, callback functions that may be triggered by multiple components are passed an object (called `details` above) that contains the `name` of the component that triggered the event.
 
 Any callback function that is not passed a `details` object assumes that the dialog will only contain one component which can trigger it or that it does not matter if the function is triggered by multiple components. For example, `onSubmit` is only triggered when a user clicks on a **Submit** type footer button, and {{site.productname}} assumes that a dialog will only have one **Submit** type button. In comparison, `onCancel` and `onClose` are both triggered by clicking the `X` button in the top right of a dialog or by clicking a **Cancel** type footer button. These two buttons have the same functionality, and therefore {{site.productname}} does not differentiate between them.
@@ -93,7 +95,7 @@ Any callback function that is not passed a `details` object assumes that the dia
 
 The body of a dialog must be either a [`panel`]({{site.baseurl}}/ui-components/dialogcomponents/#panel) (a single panel) or a [`tabpanel`]({{site.baseurl}}/ui-components/dialogcomponents/#tabpanel) (a collection of panels). Each panel can contain [panel components]({{site.baseurl}}/ui-components/dialogcomponents/#panelcomponents) such as inputs, buttons and text.
 
-> Note: {{site.productname}} also supports [URL dialogs]({{site.baseurl}}/ui-components/urldialog/). Configuring a URL dialog is quite different to configuring a standard {{site.productname}} dialog.
+> **Note**: {{site.productname}} also supports [URL dialogs]({{site.baseurl}}/ui-components/urldialog/). Configuring a URL dialog is quite different to configuring a standard {{site.productname}} dialog.
 
 #### Panel
 
@@ -138,7 +140,7 @@ The Help plugin's dialog is an example of a tab panel dialog.
 
 A **button** is a clickable component that can contain text or an icon. There are three types of buttons (primary, secondary and menu buttons). Primary and secondary buttons will perform an action when clicked, however they are styled differently. Primary buttons are intended to stand out. The color will depend on the chosen [skin]({{site.baseurl}}/general-configuration-guide/customize-ui/#skins). Menu buttons will open a menu with more options when clicked, instead of performing an action.
 
-> Note: Dialog footer buttons are different to [dialog panel buttons]({{site.baseurl}}/ui-components/dialogcomponents/#button).
+> **Note**: Dialog footer buttons are different to [dialog panel buttons]({{site.baseurl}}/ui-components/dialogcomponents/#button).
 
 #### Configuration
 
@@ -152,7 +154,7 @@ A **button** is a clickable component that can contain text or an icon. There ar
 | disabled | boolean | optional | default: `false` - When `true`, the button will be disabled when the dialog loads. |
 | align | `'end'` or `'start'` | optional | default: `'end'` - When set to `'end'` the button will display on the right-hand side of the dialog. When set to `'start'` the button will display on the left-hand side. |
 
-> Note: Buttons do not support mixing icons and text at the moment.
+> **Note**: Buttons do not support mixing icons and text at the moment.
 
 #### Disabling and enabling buttons
 

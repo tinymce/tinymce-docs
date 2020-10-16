@@ -88,6 +88,20 @@ Four new menu items have been added to the Table plugin to assist with moving an
 
 For information on the Table plugin menu items, see: [Table plugin - Menu items]({{site.baseurl}}/plugins/table/#menuitems).
 
+### Changed the Image Tools context toolbar icon
+
+The icon for the Image Tools _image options_ toolbar button has been changed from an ellipse icon (![Icon consisting of three dots horizontally aligned across the center of the icon]({{site.baseurl}}/images/icons/image-options.svg)) to match the image icon (![Icon consisting of two hills, a sun above and a border representing a picture frame]({{site.baseurl}}/images/icons/image.svg)).
+
+For information on:
+
+- The Image Tools plugin, see: [Image Tools plugin]({{site.baseurl}}/plugins/imagetools/).
+- The Image Tools context toolbar, see: [Image Tools plugin - `imagetools_toolbar`]({{site.baseurl}}/plugins/imagetools/#imagetools_toolbar).
+
+For a list of available:
+
+- Image Tools toolbar buttons, see: [Image Tools plugin - Toolbar buttons]({{site.baseurl}}/imagetools/#toolbarbuttons).
+- {{site.productname}} icons, see: [Icons Available for TinyMCE]({{site.baseurl}}/advanced/editor-icon-identifiers/).
+
 ## Accompanying Premium Plugin changes
 
 The following premium plugin updates were released alongside {{site.productname}} 5.5.
@@ -154,7 +168,6 @@ For information on the PowerPaste plugin, see: [PowerPaste plugin]({{site.baseur
 * Changed how CSS manipulates table cells when selecting multiple cells to achieve a semi-transparent selection.
 * Changed the `target` property on fired events to use the native event target. The original target for an open shadow root can be obtained using `event.getComposedPath()`.
 * Changed the editor to clean-up loaded CSS stylesheets when all editors using the stylesheet have been removed.
-* Changed `imagetools` context menu icon for accessing the `image` dialog to use the `image` icon.
 * Changed the `editor.insertContent()` and `editor.selection.setContent()` APIs to retain leading and trailing whitespace.
 * Changed the default table styles in the content CSS files to better support the styling options available in the `table` dialog.
 * Deprecated the `Env.experimentalShadowDom` flag.

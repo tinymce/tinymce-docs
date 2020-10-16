@@ -10,11 +10,11 @@ This option can be used as a way of getting images across domains using a local 
 
 [Paid TinyMCE subscriptions]({{site.pricingpage}}) also includes a proxy service written in Java. Check the [Install Server-side Components]({{ site.baseurl }}/enterprise/server/) guide for details.
 
-> Note: `{{proxy_setting_name}}` is **not** required when enabling this plugin via [{{site.cloudname}}]({{ site.baseurl }}/cloud-deployment-guide/editor-and-features/)
+> **Note**: `{{proxy_setting_name}}` is **not** required when enabling this plugin via [{{site.cloudname}}]({{ site.baseurl }}/cloud-deployment-guide/editor-and-features/).
 
 **Type:** `String`
 
-##### Example: `{{proxy_setting_name}}`
+#### Example: Using `{{proxy_setting_name}}`
 
 ```js
 tinymce.init({
@@ -25,7 +25,7 @@ tinymce.init({
 });
 ```
 
-**Example of a proxy.php script**
+#### Example of a PHP script for the image proxy
 
 ```php
 <?php

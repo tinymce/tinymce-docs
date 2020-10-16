@@ -6,7 +6,7 @@ Lets you specify a custom name for the top anchor in the url type ahead drop dow
 
 **Default:** #top
 
-##### Example of custom value
+### Example of custom value
 
 ```js
 tinymce.init({
@@ -15,7 +15,7 @@ tinymce.init({
 });
 ```
 
-##### Example of disabling 
+### Example of disabling
 
 ```js
 tinymce.init({

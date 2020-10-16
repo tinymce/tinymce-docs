@@ -1,4 +1,4 @@
-## event_root
+## `event_root`
 
 This option enables you to specify a CSS selector for an element to be used as the event root when the editor is in `inline` mode.
 
@@ -6,7 +6,7 @@ By default all events gets bound to the editable area. But in some implementatio
 
 **Type:** `String`
 
-##### Example
+### Example: Using `event_root`
 
 ```js
 tinymce.init({

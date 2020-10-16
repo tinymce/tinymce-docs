@@ -7,7 +7,7 @@ keywords: permanent pen copy text format style
 controls: toolbar button, contextmenu, menu item
 ---
 
-## Live example
+## Interactive example
 
 This example shows how to use Permanent Pen to apply a pre-defined format (color, typeface and type style, or font) to a desired section of content overriding the default values set for that content area. For more information on the Permanent Pen plugin, see the [docs]({{site.baseurl}}/plugins/permanentpen/).
 

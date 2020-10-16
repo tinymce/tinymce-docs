@@ -124,7 +124,7 @@ tinymce.init({
 
 Below are the toolbar items supported for the legacy mobile theme, and the plugins/configuration required.
 
-> Note: The `list` functions require the [lists]({{site.baseurl}}/plugins/lists/) plugin and `styleselect` requires configuring [style_formats]({{site.baseurl}}/configure/editor-appearance/#style_formats).
+> **Note**: The `list` functions require the [lists]({{site.baseurl}}/plugins/lists/) plugin and `styleselect` requires configuring [style_formats]({{site.baseurl}}/configure/editor-appearance/#style_formats).
 
 | Name | Function | Plugins Required | Configuration |
 |--------|----|-----|-------------|

@@ -9,7 +9,6 @@ description: Learn how to create clean, maintainable and readable content.
 
 These settings enable developers to control content styling features that are available to users such as font formats, font sizes, and text indentation. This section focuses on 1 of 32 content filtering options available in {{site.productname}}. There are additional configuration options concerning the complex parsing of text. Those options are beyond the scope of the General Configuration Guide. Refer to the [Content filtering options]({{ site.baseurl }}/configure/content-filtering/) section to learn more.
 
-
 ## Roll your style formats
 
 This section is about the [formats]({{ site.baseurl }}/configure/content-formatting/#formats) configuration option. This options lets developers override {{site.productname}} defaults and adds custom **formats** to the editor.
@@ -91,22 +90,6 @@ tinymce.init({
     hilitecolor: {inline : 'span', classes : 'hilitecolor', styles : {backgroundColor : '%value'}},
     custom_format: {block : 'h1', attributes : {title : 'Header'}, styles : {color : 'red'}}
   }
-});
-```
-
-
-### Power user bonus
-
-The `schema` option enables the switch between the HTML4 and HTML5 schema. This controls the valid elements and attributes that can be placed in the HTML. This value can either be the default `html5`, `html4`, or `html5-strict`.
-
-The `html5` schema is the full HTML5 specification including the older HTML4 elements for compatibility. The `html5-strict` schema only allows the elements in the current HTML5 specification, excluding things that are removed. The `html4` schema includes the full HTML4 transitional specification.
-
-The options above are examples of the type of configuration options in the [Content filtering]({{ site.baseurl }}/configure/content-filtering/) configuration documentation.
-
-```js
-tinymce.init({
-  selector: 'textarea',  // change this value according to your html
-  schema: 'html5'
 });
 ```
 

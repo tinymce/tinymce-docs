@@ -13,7 +13,7 @@ Because most people install {{site.productname}} via {{site.cloudname}} or by do
 
 In this section, we'll show you how easy it is to activate a plugin by highlighting two of the more popular plugins.
 
-> Note: You must include the plugin in your download options to activate it.
+> **Note**: You must include the plugin in your download options to activate it.
 
 Let's start with a simple code snippet you can paste into an empty `html` file (call it whatever you like, `tinymce.html` works). Save the file locally, open it with your web browser and you'll have a basic, local {{site.productname}} instance up and running.
 
@@ -36,7 +36,6 @@ Let's start with a simple code snippet you can paste into an empty `html` file (
 </body>
 </html>
 ```
-
 
 ## Let's play with plugins
 
@@ -125,7 +124,6 @@ tinymce.init({
 In the above example, we learned how to remove the menubar, add specific list controls to the toolbar while removing others, activate a plugin, and customize the plugin's behavior by controlling which options we wanted to be activated. In 5 lines of code (excluding the `selector` key, which has to be included for {{site.productname}} to work).
 
 As we noted at the start {{site.productname}} is an incredibly powerful, flexible, and customizable rich text editor. Once you have finished the Get Started guide, deep dive into the [plugins]({{ site.baseurl }}/plugins/) and [configuration options]({{ site.baseurl }}/configure/).
-
 
 ## Top 10 plugins
 

@@ -31,15 +31,12 @@ As an example:
 
 If your content is marked up with Open Graph tags and is accessible with a HTTP GET request from the Enhanced Media Embed server, then business card style embeds will be created based on your content.
 
-
 > **Note:** If Iframely is enabled in the configuration, then the Open Graph look up will be performed by Iframely. Iframely requires that the content be publicly accessible on the Internet.
-
 
 At a minimum, you’ll need to define these Open Graph tags:
 
 * `og:title`
 * `og:image`
-
 
 It’s a good idea to also define:
 
@@ -47,13 +44,13 @@ It’s a good idea to also define:
 * `og:description`
 * `og:site_name`
 
-
 Additionally, you can specify a video or audio resource to include in the embed by defining:
 
 * `og:video` & `og:video:type` (only MP4 is supported across all browsers)
 * `og:audio` & `og:audio:type` (only MP3 is supported across all browsers)
 
 ### SEO tags
+
 As an alternative to Open Graph tags, you can include meta tags using the older style recommended by search engines such as Google.
 
 * `<title>...</title>`
@@ -76,11 +73,13 @@ As an alternative to Open Graph tags, you can include meta tags using the older 
 
 
 ## Custom API
+
 As an alternative to including meta tags in your content, you can write a custom API that returns JSON in either the oEmbed or {{site.productname}} Enhanced Media Embed formats.
 
 See the docs on [configuring a custom endpoint]({{ site.baseurl }}/enterprise/embed-media/mediaembed-server-config/#configureacustomendpoint) for details on getting the Enhanced Media Embed server to utilise your custom API.
 
 ### OEmbed endpoint
+
 This is a popular choice and many CMSs have existing plugins that support oEmbed. While you can create custom HTML embeds this way, they cannot contain scripts. If the HTML contains a script, then the Enhanced Media Embed server will embed a [summary card]({{ site.baseurl }}/enterprise/embed-media/mediaembed-server-config/#summarycards).
 
 #### Pros
@@ -95,6 +94,7 @@ This is a popular choice and many CMSs have existing plugins that support oEmbed
 * Error messages aren’t defined as part of the spec
 
 ### TinyMCE Enhanced Media Embed endpoint
+
 The other option for developing a custom API endpoint is to return JSON in the [{{site.productname}} Enhanced Media Embed format]({{ site.baseurl }}/enterprise/embed-media/mediaembed-server-integration/#ephoxenhancedmediaembedformat).
 
 #### Pros
@@ -121,6 +121,7 @@ The other option for developing a custom API endpoint is to return JSON in the [
 #### JSON response objects
 
 ##### `EphoxEmbedObj`
+
 `rel`, `media` and `html` combine to form the default representation of the embeddable resource that your server has chosen. Clients of the Enhanced Media Embed server (such as the {{site.productname}} editor) can look for alternative representations in `links`.
 
 * `title` (optional)
@@ -152,7 +153,8 @@ The other option for developing a custom API endpoint is to return JSON in the [
 * `html` (optional)
   * String containing the HTML snippet to be embedded by {{site.productname}}.
 
-#### `RelObj`
+##### `RelObj`
+
 An array of tags describing the primary type of an embed, where it came from and whether there are any technical attributes that you may want to know about (autoplay, ssl, file format (flash, html5, etc)).
 
 * `primary` (required)
@@ -162,7 +164,8 @@ An array of tags describing the primary type of an embed, where it came from and
 * `source` (required)
   * Array of [SourceRel]({{ site.baseurl }}/enterprise/embed-media/mediaembed-server-integration/#sourcerel)s
 
-#### `PrimaryRel`
+##### `PrimaryRel`
+
 A string describing the primary type of an embed containing one of the following values:
 
 * `player` : A video or audio player
@@ -177,7 +180,8 @@ A string describing the primary type of an embed containing one of the following
 * `logo`
 * `promo`
 
-#### `TechnicalRel`
+##### `TechnicalRel`
+
 A string describing technical attributes of an embed containing one of the following values:
 
 * `flash`
@@ -187,7 +191,8 @@ A string describing technical attributes of an embed containing one of the follo
 * `ssl`
 * `autoplay`
 
-#### `SourceRel`
+##### `SourceRel`
+
 A string describing the source of an embed containing one of the following values:
 
 * `iframely` : From Iframely
@@ -199,7 +204,8 @@ A string describing the source of an embed containing one of the following value
 * `script_censor` : The original embed (from Iframely or oEmbed) had a script in it and has been converted to a summary card.
 * `smartframe_censor` : The original embed had an Iframely smart frame and has been censored into a summary card to avoid a content dependency on Iframely.
 
-#### `LinksObj`
+##### `LinksObj`
+
 Represents all of the possible representations of this resource.
 
 * `players` (required)
@@ -225,7 +231,8 @@ Represents all of the possible representations of this resource.
 * `files` (required)
   * Array of [LinkObj]({{ site.baseurl }}/enterprise/embed-media/mediaembed-server-integration/#linkobj)s
 
-#### `LinkObj`
+##### `LinkObj`
+
 This represents a representation that you could link to / embed.
 
 * `media` (optional)
@@ -239,7 +246,8 @@ This represents a representation that you could link to / embed.
 * `html` (required)
   * String containing the embeddable HTML snippet.
 
-#### `MediaObj`
+##### `MediaObj`
+
 The media object describes the bounds of the embed. It can either be **responsive** or **fixed**.
 
 * `type` (required)
@@ -265,7 +273,8 @@ Fields when `type` is `responsive`:
 * `height` (required)
   * [DimensionBoundObj]({{ site.baseurl }}/enterprise/embed-media/mediaembed-server-integration/#dimensionboundobj)
 
-#### `DimensionBoundObj`
+##### `DimensionBoundObj`
+
 The dimension bounds define the height or width of a responsive embed.
 
 * `type` (required)
@@ -285,7 +294,7 @@ Fields when `type` is `constrained`:
 
 No additional fields when `type` is `unbounded`.
 
-#### `ErrorObj`
+##### `ErrorObj`
 
 * `code` (required)
   * Integer with the value of `400` (User Input Error) or `502` (Upstream Failure)
@@ -308,6 +317,7 @@ No additional fields when `type` is `unbounded`.
   * A string message for developers / support people.
 
 ## Summary cards
+
 When the Enhanced Media Embed server generates a summary card of a URL (using the title, thumbnail, description and website), it returns a HTML snippet like the following. You should apply styles to the document style to suit these to your preference.
 
 ```html
@@ -324,7 +334,8 @@ When the Enhanced Media Embed server generates a summary card of a URL (using th
 
 ```
 
-#### Recommended CSS
+### Recommended CSS
+
 ```css
 {% include css-codeblock/mediaembed-plugin-css.md %}
 ```

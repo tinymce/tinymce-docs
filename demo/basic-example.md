@@ -7,7 +7,7 @@ description: This example contains the plugins needed for the most common use ca
 keywords: example demo custom common standard normal typical
 ---
 
-## Live example
+## Interactive example
 
 This example contains the plugins needed for the most common use cases.
 

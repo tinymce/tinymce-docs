@@ -17,7 +17,7 @@ Please note that this feature requires a backend integration with a system to ha
 
 Mentions is available for download through [{{site.cloudname}}]({{ site.baseurl }}/cloud-deployment-guide/editor-and-features/). Include the `mentions` parameter in the `tinymce.init` script. Refer to the [Mentions documentation]({{site.baseurl}}/plugins/mentions/), for more information on setup and configuration.
 
-### Try our Mentions plugin demo
+## Try our Mentions plugin demo
 
 {% include live-demo.html id="mentions" height="400" %}
 

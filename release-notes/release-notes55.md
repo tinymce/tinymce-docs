@@ -151,6 +151,17 @@ The {{site.productname}} 5.5 release includes an accompanying release of the **P
 
 For information on the PowerPaste plugin, see: [PowerPaste plugin]({{site.baseurl}}/plugins/powerpaste/).
 
+### Spell Checker Pro 2.1.0
+
+The {{site.productname}} 5.5 release includes an accompanying release of the **Spell Checker Pro** premium plugin.
+
+**Spell Checker Pro** 2.1.0 provides:
+
+* An updated the dialog to allow wider buttons for languages with longer strings by removing the _Close_ button (_Cancel_ button in TinyMCE 4).
+* Fixed the `spellcheck_dialog` button incorrectly rendering as a split button in TinyMCE 4.
+
+For information on the Spell Checker Pro plugin, see: [Spell Checker Pro plugin]({{site.baseurl}}/plugins/tinymcespellchecker/).
+
 ## Minor changes for TinyMCE 5.5
 
 {{site.productname}} 5.5 introduces the following minor changes:

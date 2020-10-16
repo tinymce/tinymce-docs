@@ -158,7 +158,7 @@ The following plugins provide events.
   - [Autosave events](#autosaveevents)
   - [Character Map events](#charactermapevents)
   - [Comments events](#commentsevents)
-  - [Export events](#xportevents)
+  - [Export events](#exportevents)
   - [Format Painter events](#formatpainterevents)
   - [Fullscreen events](#fullscreenevents)
   - [Import CSS events](#importcssevents)

@@ -10,7 +10,7 @@ This option accepts an object, mapping the button name to the group configuratio
 
 **Type:** `Object`
 
-##### Example: toolbar_groups
+### Example: toolbar_groups
 
 ```js
 tinymce.init({

@@ -1,4 +1,4 @@
-## indentation
+## `indentation`
 
 The **indentation** option allows specification of the indentation level for indent/outdent buttons in the UI.
 
@@ -8,7 +8,7 @@ The **indentation** option defaults to 30px but can be any value.
 
 **Default Value:** `30px`
 
-##### Example
+### Example: Using `indentation`
 
 ```js
 tinymce.init({
@@ -17,7 +17,7 @@ tinymce.init({
 });
 ```
 
-## indent_use_margin
+## `indent_use_margin`
 
 The **indent_use_margin** option is set if the editor should use margin instead of padding when indenting content.
 
@@ -25,7 +25,7 @@ The **indent_use_margin** option is set if the editor should use margin instead 
 
 **Default Value:** `false`
 
-##### Example
+### Example: Using `indent_use_margin`
 
 ```js
 tinymce.init({

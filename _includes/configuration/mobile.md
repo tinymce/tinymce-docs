@@ -4,7 +4,7 @@ This option allows you specify an alternative configuration for mobile devices. 
 
 **Type:** `Object`
 
-##### Example of mobile specific configuration
+### Example of mobile specific configuration
 
 This example shows how to setup a mobile section to override some of the desktop settings with mobile specific settings.
 

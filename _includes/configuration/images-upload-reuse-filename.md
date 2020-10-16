@@ -1,4 +1,4 @@
-## images_reuse_filename
+## `images_reuse_filename`
 
 By default {{site.productname}} will generate unique filename for each uploaded file (for details refer to [Upload Images]({{ site.baseurl }}/general-configuration-guide/upload-images/#imageuploaderrequirements)). Sometimes this might have undesirable side-effects. For example, ,when `automatic_uploads` is enabled, every manipulation on the image done with [Image Tools]({{ site.baseurl }}/plugins/imagetools) plugin, results in file upload and each time under a different filename, despite the fact that the image stays the same.
 
@@ -10,7 +10,7 @@ Setting `images_reuse_filename` to *true* tells {{site.productname}} to use the 
 
 **Possible Values:** `true`, `false`
 
-##### Example
+### Example: Using `images_reuse_filename`
 
 ```js
 tinymce.init({

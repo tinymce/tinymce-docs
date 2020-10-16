@@ -1,11 +1,11 @@
-## style_formats_merge
+## `style_formats_merge`
 
 This option allows you to set whether {{site.productname}} should append custom styles defined using the [`style_formats`]({{ site.baseurl }}/configure/editor-appearance/#style_formats) setting to the default style formats or completely replace them.
 
 **Type:** `Boolean`
 **Default:** `false`
 
-##### Example
+### Example: Using `style_formats_merge`
 
 ```js
 tinymce.init({

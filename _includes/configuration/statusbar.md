@@ -1,4 +1,4 @@
-## statusbar
+## `statusbar`
 
 This option allows you to specify whether {{site.productname}} should display the status bar at the bottom of the editor.
 
@@ -12,7 +12,7 @@ To disable the status bar, the `statusbar` option should be provided with a bool
 
 **Possible Values:** `true`, `false`
 
-##### Example
+### Example: Using `statusbar`
 
 ```js
 tinymce.init({

@@ -1,4 +1,4 @@
-## min_height
+## `min_height`
 
 The **min_height** option has two kinds of behaviors depending on the state of the [`autoresize`]({{site.baseurl}}/plugins/autoresize/) plugin:
 
@@ -6,10 +6,9 @@ The **min_height** option has two kinds of behaviors depending on the state of t
 
 * `autoresize` ON : With the `autoresize` plugin, this option sets the minimum height the editor can automatically shrink to.
 
-
 **Type:** `Number`
 
-##### Example
+### Example: Using `min_height`
 
 ```js
 tinymce.init({
@@ -18,5 +17,4 @@ tinymce.init({
 });
 ```
 
-> Pro tip: If you set the option [`resize`](#resize) to `false` the resize handle will be disabled and a user will not be able to resize the editor (by manual dragging). Note that `resize` defaults to `false` when the `autoresize` plugin is enabled.
-
+> **Note**: If you set the option [`resize`](#resize) to `false` the resize handle will be disabled and a user will not be able to resize the editor (by manual dragging). Note that `resize` defaults to `false` when the `autoresize` plugin is enabled.

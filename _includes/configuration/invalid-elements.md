@@ -1,10 +1,10 @@
-## invalid_elements
+## `invalid_elements`
 
 The **invalid_elements** option instructs the editor to remove specific elements when {{site.productname}} executes a cleanup. This option should contain a comma-separated list of element names to exclude from the content.
 
 **Type:** `String`
 
-##### Example
+### Example: Using `invalid_elements`
 
 ```js
 tinymce.init({
@@ -13,6 +13,6 @@ tinymce.init({
 });
 ```
 
-> Caution: This option doesn't accept attributes in the list, only elements.
+> **Caution**: This option doesn't accept attributes in the list, only elements.
 
 Also see [valid_elements](#valid_elements) and [extended_valid_elements](#extended_valid_elements) for more configuration options.

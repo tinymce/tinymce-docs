@@ -14,7 +14,7 @@ By default, the number of rows and columns is dependent of the number of colors 
 
 **Type:** `Integer`
 
-##### Example
+#### Example: Using `color_cols`
 
 ```js
 tinymce.init({
@@ -30,7 +30,7 @@ This option allows specifying a map of the text colors that will appear in the g
 
 **Type:** `Array`
 
-##### Example
+#### Example: Using `color_map`
 
 ```js
 tinymce.init({
@@ -89,7 +89,7 @@ This option allows disabling the custom color picker in all color swatches of th
 
 **Default Value:** `true`
 
-##### Example
+#### Example: Using `custom_colors`
 
 ```js
 tinymce.init({

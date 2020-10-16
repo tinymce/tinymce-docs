@@ -1,5 +1,5 @@
 
-## valid_elements
+## `valid_elements`
 
 The valid_elements option defines which elements will remain in the edited text when the editor saves. You can use this to limit the returned HTML to a subset.
 
@@ -7,7 +7,7 @@ This option contains a comma separated list of element conversion chunks. Each c
 
 If you just want to add or change some behavior for a few items, use the [extended_valid_elements]({{ site.baseurl }}/configure/content-filtering/#extended_valid_elements) option
 
-### Control characters:
+### Control characters
 
 | Name     | Summary          |
 |----------|------------------|
@@ -29,7 +29,7 @@ If you just want to add or change some behavior for a few items, use the [extend
 
 Wildcards such as `*`,`+`,`?` may be used in element or attribute name matching.
 
-### Special variables
+### Variables
 
 | Name     |Summary          |
 |----------|-----------------|
@@ -39,7 +39,7 @@ Use `*[*]` to include all elements and all attributes. This can be very useful w
 
 **Type:** `String`
 
-##### Example
+### Example: Using `valid_elements`
 
 ```js
 tinymce.init({
@@ -54,11 +54,11 @@ This example string tells {{site.productname}} to remove all elements that are n
 
 Be careful not to duplicate attributes in the definitions as this may cause {{site.productname}} to render duplicate attributes in the output. For example, if you have:
 
-> ```js
- //bad code: dir and style listed twice
- 'blockquote[dir|style|cite|class|dir<ltr?rtl|id|lang|onclick|ondblclick'
-  +'|onkeydown|onkeypress|onkeyup|onmousedown|onmousemove|onmouseout'
-  +'|onmouseover|onmouseup|style|title]'
- ```
+```js
+//bad code: dir and style listed twice
+'blockquote[dir|style|cite|class|dir<ltr?rtl|id|lang|onclick|ondblclick'
+ +'|onkeydown|onkeypress|onkeyup|onmousedown|onmousemove|onmouseout'
+ +'|onmouseover|onmouseup|style|title]'
+```
 
 then if you happen to have a `<blockquote>` element in your code with `style=` or `dir=` attributes, the editor will cause each of those attributes to be duplicated in the output, which will result in invalid XHTML.

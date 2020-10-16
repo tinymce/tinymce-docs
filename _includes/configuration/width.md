@@ -1,4 +1,4 @@
-## width
+## `width`
 
 Set the width of the editor.
 
@@ -6,7 +6,7 @@ Set the width of the editor.
 
 **Type:** `Number` or `String`
 
-##### Example
+### Example: Using `width`
 
 ```js
 tinymce.init({

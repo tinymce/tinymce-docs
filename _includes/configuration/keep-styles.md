@@ -1,4 +1,4 @@
-## keep_styles
+## `keep_styles`
 
 The **keep_styles** option will keep the editor's current text style when a user presses `enter/return`.
 
@@ -8,7 +8,7 @@ The **keep_styles** option will keep the editor's current text style when a user
 
 **Possible Values:** `true`, `false`
 
-##### Example
+### Example: Using `keep_styles`
 
 ```js
 tinymce.init({

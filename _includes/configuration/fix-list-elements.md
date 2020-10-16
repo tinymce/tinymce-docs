@@ -1,4 +1,4 @@
-## fix_list_elements
+## `fix_list_elements`
 
 This option enables you to specify that list elements (`ul`, `ol`) should be converted to valid XHTML. This option is disabled by default since it causes some glitches with a few browsers.
 
@@ -35,7 +35,7 @@ Gets converted into this valid list:
 
 **Possible Values:** `true`, `false`
 
-##### Example
+### Example: Using `fix_list_elements`
 
 ```js
 tinymce.init({

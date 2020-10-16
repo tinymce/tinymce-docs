@@ -5,7 +5,7 @@ description: Custom dictionaries can be added to Spell Checker Pro
 keywords: enterprise tinymcespellchecker spell check checker pro
 ---
 
-### Configuring the custom dictionary feature
+## Configuring the custom dictionary feature
 
 Additional configuration to your `application.conf` file is required. (Don't forget to restart the Java application server after updating the configuration.)
 
@@ -13,7 +13,7 @@ Adding the `ephox.spelling.custom-dictionaries-path` element activates the custo
 
 Example:
 
-```
+```conf
 ephox {
   spelling {
     custom-dictionaries-path = "/opt/ephox/dictionaries"
@@ -21,7 +21,7 @@ ephox {
 }
 ```
 
-### Creating custom dictionary files
+## Creating custom dictionary files
 
 One custom dictionary can be created for each language supported by the spell checker (see [supported languages]({{ site.baseurl }}/enterprise/check-spelling/)), as well as an additional "global" dictionary that contains words that are valid across all languages, such as trademarks.
 
@@ -53,7 +53,7 @@ If successfully configured, the custom dictionary feature will report dictionari
 
 Example:
 
-```
+```log
 2017-06-12 17:46:00 [main] INFO  com.ephox.ironbark.IronbarkBoot - Starting task (booting Ironbark)
 2017-06-12 17:46:00 [main] INFO  com.ephox.ironbark.IronbarkBoot - using custom dictionary: [global] = 1 words
 2017-06-12 17:46:00 [main] INFO  com.ephox.ironbark.IronbarkBoot - using custom dictionary: "en" = 3 words

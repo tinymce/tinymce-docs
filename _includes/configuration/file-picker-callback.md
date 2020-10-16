@@ -1,4 +1,4 @@
-## file_picker_callback
+## `file_picker_callback`
 
 This hook can be used to add custom file picker to those dialogs that have it. Internally we support this in *Image*, *Media* and *Link* dialogs. This replaces the [`file_browser_callback`]({{site.url}}/docs-4x/configure/file-image-upload/#file_browser_callback) (removed in version {{site.productname}} 5) option. The new `file_picker_callback` provides a way to update values of other fields in the dialog.
 
@@ -12,9 +12,9 @@ It should be noted, that we only provide a hook. It is up to you to implement sp
 
 **Type:** `JavaScript Function`
 
-*The following example demonstrates how you can use `file_picker_callback` API, but doesn't pick any real files. Check [Basic Local File Picker]({{ site.baseurl }}/demo/file-picker) demo for a more functional example.*
+> **Note**: The following example demonstrates how you can use `file_picker_callback` API, but doesn't pick any real files. Check [Basic Local File Picker]({{ site.baseurl }}/demo/file-picker) demo for a more functional example.
 
-##### Example
+### Example: Using `file_picker_callback`
 
 ```js
 tinymce.init({
@@ -38,6 +38,6 @@ tinymce.init({
 });
 ```
 
-## Live Example
+### Interactive example
 
 {% include live-demo.html id="file-picker" %}

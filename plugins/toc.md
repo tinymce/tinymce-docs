@@ -10,11 +10,11 @@ controls: toolbar button, menu item
 {% assign pluginname = "Table of Contents" %}
 {% assign plugincode = "toc" %}
 
-`toc` plugin will generate basic *Table of Contents* and insert it into the editor at the current cursor position. Items for the table will be taken from the headers found in the content.
+The `toc` plugin will generate basic *Table of Contents* and insert it into the editor at the current cursor position. Items for the table will be taken from the headers found in the content.
 
 **Type:** `String`
 
-##### Example
+## Basic setup
 
 ```js
 tinymce.init({
@@ -25,9 +25,9 @@ tinymce.init({
 });
 ```
 
-*Table of Contents* will have a simple HTML structure - a wrapper `div` element, a header with *editable* title and unordered nested list with navigation links. Nesting depth is customisable.
+The *Table of Contents* will have a simple HTML structure - a wrapper `div` element, a header with *editable* title and unordered nested list with navigation links. Nesting depth is customizable.
 
-Internally plugin doesn't apply any inline styles. Basic formatting can be added via [Boilerplate Content CSS]({{ site.baseurl }}/general-configuration-guide/boilerplate-content-css/), that can be customised to your needs.
+Internally plugin doesn't apply any inline styles. Basic formatting can be added via [Boilerplate Content CSS]({{ site.baseurl }}/general-configuration-guide/boilerplate-content-css/), that can be customized to your needs.
 
 ```css
 {% include css-codeblock/toc-plugin-css.md %}
@@ -37,13 +37,13 @@ Internally plugin doesn't apply any inline styles. Basic formatting can be added
 
 ### `toc_depth`
 
-By default headers in the content will be inspected only three levels deep, so - `H1` through `H3`. But it is possible to change this behaviour by setting `toc_depth` to any number in 1-9 range, therefore matching all the headers beginning with `H1` and all the way down to `H9`.
+By default headers in the content will be inspected only three levels deep, so - `H1` through `H3`. But it is possible to change this behavior by setting `toc_depth` to any number in 1-9 range, therefore matching all the headers beginning with `H1` and all the way down to `H9`.
 
 **Type:** `Number`
 
 **Default Value:** `3`
 
-##### Example
+#### Example: Using `toc_depth`
 
 ```js
 tinymce.init({
@@ -62,7 +62,7 @@ Table of contents has a header and by default it will be marked up with `H2` tag
 
 **Default Value:** `H2`
 
-##### Example
+#### Example: Using `toc_header`
 
 ```js
 tinymce.init({
@@ -81,7 +81,7 @@ With `toc_class` you can change the class name that gets assigned to the wrapper
 
 **Default Value:** `mce-toc`
 
-##### Example
+#### Example: Using `toc_class`
 
 ```js
 tinymce.init({

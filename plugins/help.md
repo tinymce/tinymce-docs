@@ -19,7 +19,7 @@ In the footer of the dialog you can also see which version of {{site.productname
 
 The help dialog can also be shown by pressing the keyboard shortcut `Alt + 0`.
 
-##### Example setup
+## Basic setup
 
 ```js
 tinymce.init({
@@ -43,7 +43,7 @@ If `help_tabs` is not configured, any tabs defined using `addTab` will be displa
 
 **Default Value:** `['shortcuts', 'keyboardnav', 'plugins', 'versions']`
 
-#### Example
+#### Example: Using `help_tabs`
 
 ```js
 tinymce.init({
@@ -118,7 +118,7 @@ tinymce.init({
 |------| ------| ----------- |
 | addTab | tabSpec: [TabPanel]({{site.baseurl}}/ui-components/dialogcomponents/#tabpanel) | Register a tab for the Help dialog |
 
-#### Example
+### Example: Using the `addTab` API
 
 ```js
 tinymce.activeEditor.plugins.help.addTab({
@@ -132,7 +132,6 @@ tinymce.activeEditor.plugins.help.addTab({
   ]
 });
 ```
-
 
 ## Exposing metadata for the help plugin
 

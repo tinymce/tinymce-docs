@@ -4,11 +4,11 @@ It is usually desirable that {{site.productname}}'s editable area has the same s
 
 {% include configuration/shipped-content-css.md %}
 
-> Note: If you specify a relative path, it is resolved in relation to the URL of the (HTML) file that includes {{site.productname}}, not relative to {{site.productname}} itself.
+> **Note**: If you specify a relative path, it is resolved in relation to the URL of the (HTML) file that includes {{site.productname}}, not relative to {{site.productname}} itself.
 
 **Type:** `String`, `Array`
 
-##### Absolute path example
+### Absolute path example
 
 ```js
 // File: http://domain.mine/mysite/index.html
@@ -19,7 +19,7 @@ tinymce.init({
 });
 ```
 
-##### Relative path example
+### Relative path example
 
 ```js
 // File: http://domain.mine/mysite/index.html
@@ -30,7 +30,7 @@ tinymce.init({
 });
 ```
 
-##### Using multiple stylesheets example
+### Using multiple stylesheets example
 
 ```js
 tinymce.init({
@@ -39,7 +39,7 @@ tinymce.init({
 });
 ```
 
-##### Using multiple stylesheets as array example
+### Using multiple stylesheets as array example
 
 ```js
 tinymce.init({
@@ -48,7 +48,7 @@ tinymce.init({
 });
 ```
 
-#### Browser caching
+### Browser caching
 
 Browser caching might cause {{site.productname}} to not read the contents of a changed CSS file. You'll see "old" colors & styles.
 

@@ -101,8 +101,8 @@ There are two settings that determine determine the priority: `predicate` and `s
 3. If no predicates (`scope: node`) match the current context position, then all of the `scope: editor` predicates are tried. The first one that matches the editor context wins.
 4. If no `scope: editor` predicates match, then the new context position is calculated by going up the tree one level to the parent node. All `scope: node` predicates are then checked again. As soon as one matches, it *wins* and that ContextForm is shown. If nothing matches, it goes up the tree and tries again.
 
-> Note: Only `scope: node` predicates are checked at this stage. The `scope: editor` predicate is only checked once and that check only happens in (2).
+> **Note**: Only `scope: node` predicates are checked at this stage. The `scope: editor` predicate is only checked once and that check only happens in (2).
 
-> Caution: Since the order in which the ContextForms and ContextToolbars are checked is not specified, try not to have their predicates overlap.
+> **Caution**: Since the order in which the ContextForms and ContextToolbars are checked is not specified, try not to have their predicates overlap.
 
 {% endif %}

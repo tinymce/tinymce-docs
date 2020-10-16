@@ -16,15 +16,18 @@ This procedure creates a basic jQuery integration containing a {{site.productnam
 1. In a HTML file, add a source script for source jQuery.
 
     If the project loads jQuery from https://code.jquery.com/, use the script provided by the [jQuery CDN](https://code.jquery.com/), which includes the `integrity` and `crossorigin` attributes.
+
 2. Source {{site.productname}} and the {{site.productname}} jQuery integration from the {{site.cloudname}} or from a self-hosted location.
 
     * **{{site.cloudname}}**
 
         To source {{site.productname}} and the {{site.productname}} jQuery integration from the {{site.cloudname}}, add the following `script` elements:
+
         ```html
 <script src="{{site.cdnurl}}" referrerpolicy="origin"></script>
 <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/jquery.tinymce.min.js" referrerpolicy="origin"></script>
         ```
+
         Replace `no-api-key` in the source script (`<script src=...`) with a {{site.cloudname}} API key, which is created when signing up to the [{{site.cloudname}}]({{site.accountsignup}}).
 
         Signing up for a {{site.cloudname}} API key will also provide a trial of the [Premium Plugins]({{site.baseurl}}/enterprise/).
@@ -32,6 +35,7 @@ This procedure creates a basic jQuery integration containing a {{site.productnam
     * **{{site.productname}} self-hosted**
 
         To use an independent deployment of {{site.productname}}, add source scripts to either the `<head>` or the end of the `<body>` of the HTML file, such as:
+
         ```html
 <script src="/path/to/tinymce.min.js"></script>
 <script src="/path/to/jquery.tinymce.min.js"></script>
@@ -57,6 +61,7 @@ This procedure creates a basic jQuery integration containing a {{site.productnam
     ```
 
 ### Example jQuery integration
+
 To load a TinyMCE editor similar to the [Basic example]({{site.baseurl}}/demo/basic-example/), add the following code to an empty HTML file.
 
 ```js
@@ -104,6 +109,6 @@ $(document).on('focusin', function(e) {
 
 This code is required because jQuery blocks all `focusin` calls from elements outside the dialog. For a working example, [try this {{site.productname}} fiddle](http://fiddle.tinymce.com/rsdaab/840).
 
-#### A note about integrations
+## A note about integrations
 
-> Note: We are pleased to provide integrations/code guidance to help you build great products with {{site.productname}}. If you have queries about this integration, post your question on Stack Overflow using the [`{{site.prodnamecode}}` tag]({{site.communitysupporturl}}).
+> **Note**: We are pleased to provide integrations/code guidance to help you build great products with {{site.productname}}. If you have queries about this integration, post your question on Stack Overflow using the [`{{site.prodnamecode}}` tag]({{site.communitysupporturl}}).

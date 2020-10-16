@@ -15,8 +15,7 @@ When a user clicks on the anchor button or menu item they will be prompted via a
 
 **Type:** `String`
 
-
-##### Anchor plugin example
+## Basic setup
 
 ```js
 tinymce.init({

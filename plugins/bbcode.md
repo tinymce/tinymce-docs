@@ -13,7 +13,7 @@ This plugin makes it possible to edit BBCode in a WYSIWYG style by converting ta
 
 **Type:** `String`
 
-##### Example
+## Basic setup
 
 ```js
 tinymce.init({
@@ -22,11 +22,11 @@ tinymce.init({
 });
 ```
 
-### Options
+## Options
 
 ### `bbcode_dialect`
 
-This option allows you to specify the BBCode dialect. We only support [PunBB](http://punbb.informer.com/) at the moment but hope to add more dialects in the future. Suported tags are listed in the table below:
+This option allows you to specify the BBCode dialect. We only support [PunBB](http://punbb.informer.com/) at the moment but hope to add more dialects in the future. Supported tags are listed in the table below.
 
 | BBCode                 | Description    | HTML equivalent                     |
 |------------------------|----------------|-------------------------------------|
@@ -40,14 +40,13 @@ This option allows you to specify the BBCode dialect. We only support [PunBB](ht
 | `[quote]...[/quote]`     | Quote          | `<span class="quoteStyle">...</span>` |
 | `\n`                     | Newline        | `<br />`                              |
 
-
 When using PunBB dialect, `codeStyle` and `quoteStyle` will be converted to `[code]` and `[quote]` correspondingly.
 
 **Type:** `String`
 
 **Default Value:** `"punbb"`
 
-##### Example
+#### Example: Using `bbcode_dialect`
 
 ```js
 tinymce.init({
@@ -57,6 +56,6 @@ tinymce.init({
 });
 ```
 
-## Live example
+## Interactive example
 
 {% include live-demo.html id="bbcode" %}

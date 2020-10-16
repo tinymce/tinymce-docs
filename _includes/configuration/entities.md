@@ -1,4 +1,4 @@
-## entities
+## `entities`
 
 This option contains a comma-separated list of entity names that are used instead of characters. Odd items are the character code, and even items are the names of the character code.
 
@@ -8,7 +8,7 @@ The base entities `<`, `>`, `&`, `'`, and `"` will always be entity encoded into
 
 **Type:** `String`
 
-##### Example
+### Example: Using `entities`
 
 ```js
 tinymce.init({

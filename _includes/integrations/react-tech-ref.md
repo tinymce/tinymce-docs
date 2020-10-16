@@ -65,7 +65,7 @@ To register for a {{site.cloudname}} API key, visit the [sign-up page]({{site.ac
 
 **Type:** String
 
-##### Example: `apiKey`
+##### Example: Using `apiKey`
 
 ```jsx
 <Editor
@@ -103,7 +103,7 @@ The `disabled` property can dynamically switch the editor between a "disabled" (
 
 **Possible values:**  `true`, `false`
 
-##### Example: `disabled`
+##### Example: Using `disabled`
 
 ```jsx
 <Editor
@@ -118,7 +118,7 @@ An id for the editor. Used for retrieving the editor instance using the `tinymce
 
 **Type:** String
 
-##### Example: `id`
+##### Example: Using `id`
 
 ```jsx
 <Editor
@@ -135,7 +135,7 @@ For information on the {{site.productname}} selector (`tinymce.init`), see: [Bas
 
 **Type:** Object
 
-##### Example: `init`
+##### Example: Using `init`
 
 ```jsx
 <Editor
@@ -156,7 +156,7 @@ Initial content of the editor when the editor is initialized.
 
 **Type:** String
 
-##### Example: `initialValue`
+##### Example: Using `initialValue`
 
 ```jsx
 <Editor
@@ -173,7 +173,7 @@ For information on inline mode, see: [User interface options - `inline`]({{site.
 
 **Possible values:**  `true`, `false`
 
-##### Example: `inline`
+##### Example: Using `inline`
 
 ```jsx
 <Editor
@@ -198,7 +198,7 @@ Used to specify the format of the content emitted via the [`onEditorChange`](#on
 
 **Possible values:** `html`, `text`
 
-##### Example: `outputFormat`
+##### Example: Using `outputFormat`
 
 ```jsx
 <Editor
@@ -213,7 +213,7 @@ For information on adding plugins to {{site.productname}}, see: [Add plugins to 
 
 **Type:** String or Array
 
-##### Example: `plugins`
+##### Example: Using `plugins`
 
 ```jsx
 <Editor
@@ -228,7 +228,7 @@ Only valid when [`<Editor inline={true} />`](#inline). Used to define the HTML e
 
 **Type:** String
 
-##### Example: `tagName`
+##### Example: Using `tagName`
 
 ```jsx
 <Editor
@@ -244,7 +244,7 @@ Sets the `name` attribute for the `textarea` element used for the editor in form
 
 **Type:** String
 
-##### Example: `textareaName`
+##### Example: Using `textareaName`
 
 ```jsx
 <Editor
@@ -261,7 +261,7 @@ For information setting the toolbar for {{site.productname}}, see: [User interfa
 
 **Type:** String
 
-##### Example: `toolbar`
+##### Example: Using `toolbar`
 
 ```jsx
 <Editor
@@ -275,7 +275,7 @@ Use the `tinymceScriptSrc` prop to specify an external version of TinyMCE to laz
 
 **Type:** String
 
-##### Example: `tinymceScriptSrc`
+##### Example: Using `tinymceScriptSrc`
 
 ```jsx
 <Editor

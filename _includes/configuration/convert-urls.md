@@ -15,6 +15,6 @@ tinymce.init({
 });
 ```
 
-### Example: No URL conversion
+### Interactive example: No URL conversion
 
 {% include live-demo.html id="url-conversion-none" %}

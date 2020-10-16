@@ -59,8 +59,8 @@ For more information on other {{site.cloudfilemanager}} config options refer to 
 
 Read more about more Dropbox options [here](https://www.dropbox.com/guide/business).
 
-## Live example
+## Interactive example
 
-Here is a live example of Dropbox-enabled on {{site.cloudfilemanager}}.
+Here is an interactive example of Dropbox-enabled on {{site.cloudfilemanager}}.
 
 {% include live-demo.html id="drive-demo-dropbox" %}

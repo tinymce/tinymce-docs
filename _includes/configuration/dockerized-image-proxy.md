@@ -33,22 +33,26 @@ The following procedure covers downloading, configuring, building and testing th
     ```sh
     cd image-proxy-service-dockerfile
     ```
+
 5. Set the permissions on the extracted files to executable.
 
     ```sh
     chmod +x *.sh
     ```
+
 6. _Optional_: Edit the `image-proxy` configuration setting in `config/ephox-image-proxy-docker-env.conf`. The configurable setting is in the `image-proxy` section of the file. For example:
 
-    ```
+    ```conf
     image-proxy {
       image-size = 10000000 // 10MB in bytes
     }
     ```
+
     For information on the `image-proxy` configuration setting, see: [Configure server-side components - `image-proxy`]({{site.baseurl}}/enterprise/server/configure/#image-proxyoptional).
+
 1. _Optional_: Edit the `http` configuration settings in `config/ephox-image-proxy-docker-env.conf`. The configurable settings are in the `http` section of the file. For example:
 
-    ```
+    ```conf
     http {
       max-connections = 100
       max-connections-per-host = 10
@@ -61,9 +65,10 @@ The following procedure covers downloading, configuring, building and testing th
       }
     }
     ```
+
     For information on the `http` configuration setting, see: [Configure server-side components - `http`]({{site.baseurl}}/enterprise/server/configure/#httpoptional).
-1. _Optional_: Configure the service to use a HTTP proxy by updating `config/ephox-image-proxy-docker-env.conf`. See:
-[Configure server-side components]({{site.baseurl}}/enterprise/server/configure/).
+
+1. _Optional_: Configure the service to use a HTTP proxy by updating `config/ephox-image-proxy-docker-env.conf`. See: [Configure server-side components]({{site.baseurl}}/enterprise/server/configure/).
 7. Create an `origins.env` file in the same directory as the `Dockerfile`, and specify the Hypertext Transfer Protocol (HTTP) and domain name of sites hosting the TinyMCE editor (`allowed-origins`). Up to 99 origins can be added without editing `config/ephox-image-proxy-docker-env.conf`.
 
     For example:
@@ -73,27 +78,34 @@ The following procedure covers downloading, configuring, building and testing th
     ORIGIN1=example
     ORIGIN2=http://example.org
     ```
+
     For information on `allowed-origins`, see: [Configure server-side components - allowed-origins]({{site.baseurl}}/enterprise/server/configure/#allowed-originsrequired).
+
 8. As the root user or Administrator, build the {{site.productname}} Image Proxy Docker image using the following command:
 
     ```sh
     docker build -t tinymce-image-proxy-service .
     ```
+
 9. As the root user or Administrator, deploy the service using the following command:
 
     ```sh
     docker run -d -p 8081:8080 --env-file origins.env tinymce-image-proxy-service
     ```
+
     Where:
     * `-p 8081:8080` maps the container port `8080` to local port `8081`.
     * `--env-file origins.env` adds the allowed origins to the container.
+
 10. To verify that the Docker container is deployed and the image proxy is running, execute:
 
     ```sh
     curl http://localhost:8081/ephox-image-proxy/
     ```
+
     The response from the `curl` command should be:
-    ```
+
+    ```sh
     Image proxy service is running.
     ```
 

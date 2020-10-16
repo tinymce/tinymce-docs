@@ -10,9 +10,9 @@ Most configuration changes in TinyMCE 5 only affect complex use cases, such as c
 
 This chapter describes the migration process and workarounds for customers using TinyMCE 4. It describes the settings that require updating prior to migration; and workaround procedures for deprecated, deleted, and updated features.
 
-> Note: For support related to migration, please contact [Tiny support](https://support.tiny.cloud/hc/en-us/requests/new). Open Source users: Please report issues on the [TinyMCE GitHub Repository](https://github.com/tinymce/tinymce/).
+> **Note**: For support related to migration, please contact [Tiny support](https://support.tiny.cloud/hc/en-us/requests/new). Open Source users: Please report issues on the [TinyMCE GitHub Repository](https://github.com/tinymce/tinymce/).
 
-### Contents
+## Contents
 
 * [Editor-Core](#editor-core)
 * [Themes](#themes)
@@ -143,8 +143,6 @@ New platform detection functions were to the [`Env` API]({{site.baseurl}}/api/ti
 | `caretAfter`        | All supported browsers now support placing carets after inline blocks.                                                                                                                                                                                               | Boolean | Returns `true`/`false` if the browser can or can't place the caret after a inline block like an image. |
 | `range`             | All supported browsers now support native DOM ranges.                                                                                                                                                                                                                | Boolean | Constant that is `true` if the browser supports native DOM Ranges. IE 9+.                              |
 | `ceFalse`           | All supported browsers now support `contentEditable=false` regions.                                                                                                                                                                                                  | Boolean | Constant that is `true` if the browser supports `contentEditable=false` regions.                       |
-
-
 
 ## Themes
 
@@ -357,7 +355,7 @@ There are 3 major changes:
 * `onSetup` can be configured to return a function, which will be automatically be called on the teardown of the component, such as when a menu item's menu is closed.
     * If a function should only be executed when the editor is first initialized, use the `editor.on('init', callback)` callback function.
 
-> Caution: If `onSetup` listens to any events using [`editor.on(eventName, callback)`]({{site.baseurl}}/api/tinymce/tinymce.editor/#on), it should return a [`editor.off(eventName, callback)`]({{site.baseurl}}/api/tinymce/tinymce.editor/#off) callback to unbind the event on tear down. Unless the event was `'init'`, `onSetup` returns `function (buttonApi) { ed.off(eventName, callback) }`.
+> **Caution**: If `onSetup` listens to any events using [`editor.on(eventName, callback)`]({{site.baseurl}}/api/tinymce/tinymce.editor/#on), it should return a [`editor.off(eventName, callback)`]({{site.baseurl}}/api/tinymce/tinymce.editor/#off) callback to unbind the event on tear down. Unless the event was `'init'`, `onSetup` returns `function (buttonApi) { ed.off(eventName, callback) }`.
 
 For example:
 
@@ -400,8 +398,8 @@ editor.ui.registry.addButton('customDateButton', {
   }
 });
 ```
-> Note: The callback function given to `onSetup` takes a `buttonApi` argument which is an object that contains helper functions.
 
+> **Note**: The callback function given to `onSetup` takes a `buttonApi` argument which is an object that contains helper functions.
 
 ### Custom context toolbars
 
@@ -491,7 +489,7 @@ For information on how to use these methods, see: [Custom menu items]({{site.bas
 
 Dialogs are still opened using the `editor.windowManager.open(config)` api, however a number of configuration options have changed.
 
-##### Removed dialog settings:
+#### Removed dialog settings
 
 | **Removed setting** | **Description** |
 | ------------------- | --------------- |
@@ -501,7 +499,7 @@ Dialogs are still opened using the `editor.windowManager.open(config)` api, howe
 | `onpostrender` | `onpostrender` has been removed for the dialog configuration. The dialog configuration now includes an `initialData` setting for providing the initial state and an API to fetch or update the data. Refer to [this]({{site.baseurl}}/ui-components/dialog/#interactiveexampleusingredialconfigvoid) section for more information on how to configure `initialData`. |
 | [`url`]({{site.url}}/docs-4x/advanced/creating-custom-dialogs/) | URL dialogs now have their own API. For more information, see [`Custom URL dialogs`](#customurldialogs). |
 
-##### New dialog settings:
+#### New dialog settings
 
 | **New setting** | **Description** |
 | --------------- | --------------- |
@@ -509,15 +507,15 @@ Dialogs are still opened using the `editor.windowManager.open(config)` api, howe
 | [`onCancel`]({{site.baseurl}}/ui-components/dialog/#configurationoptions) | A callback that is called when the dialog is cancelled without submitting any changes. |
 | [`onTabChange`]({{site.baseurl}}/ui-components/dialog/#configurationoptions) | A callback that is called when switching tabs in a [TabPanel]({{site.baseurl}}/ui-components/dialogcomponents/#tabpanel). |
 
-##### Changed dialog settings:
+#### Changed dialog settings
 
 | **Old setting** | **New setting** | **Description** |
 | --------------- | --------------- | --------------- |
 | `onchange` | [`onChange`]({{site.baseurl}}/ui-components/dialog/#configurationoptions) | `onChange` now takes a callback function which is passed an API helper function and data. |
 
-> Note: The `onchange` callback function provided within individual components has been removed. A single `onChange` callback function provides the same functionality for all components in TinyMCE 5.
+> **Note**: The `onchange` callback function provided within individual components has been removed. A single `onChange` callback function provides the same functionality for all components in TinyMCE 5.
 
-#### TinyMCE 4 - `onchange`
+##### TinyMCE 4 - `onchange`
 
 ```js
 const config = {
@@ -536,7 +534,7 @@ const config = {
 };
 ```
 
-#### TinyMCE 5 - `onChange`
+##### TinyMCE 5 - `onChange`
 
 ```js
 const config = {
@@ -588,20 +586,20 @@ For information on the new Dialog API, see: [UI components - Dialog instance API
 
 The URL dialogs have moved from the `editor.windowManager.open()` API to the [`editor.windowManager.openUrl()`]({{site.baseurl}}/api/tinymce/tinymce.windowmanager/#openurl) API. This provides clear separation of the two different types of dialogs in TinyMCE.
 
-##### Removed URL dialog settings:
+#### Removed URL dialog settings
 
 | **Old setting** | **New setting** | **Description** |
 | --------------- | --------------- | --------------- |
 | `file` | [`url`]({{site.baseurl}}/ui-components/urldialog/#configurationoptions) | The `file` setting has been removed in TinyMCE 5 and replaced with `url`. |
 
-##### New URL dialog settings:
+#### New URL dialog settings
 
 | **New setting** | **Description** |
 | --------------- | --------------- |
 | [`onCancel`]({{site.baseurl}}/ui-components/urldialog/#configurationoptions) | A callback that is called when the dialog is cancelled without submitting any changes. |
 | [`onMessage`]({{site.baseurl}}/ui-components/urldialog/#configurationoptions) | A callback that is called when the dialog receives a message via the browser `window.postMessage` API. |
 
-#### TinyMCE 4 - `windowManager.open()`
+##### TinyMCE 4 - `windowManager.open()`
 
 ```js
 editor.windowManager.open({
@@ -610,7 +608,7 @@ editor.windowManager.open({
 });
 ```
 
-#### TinyMCE 5 - `windowManager.openUrl()`
+##### TinyMCE 5 - `windowManager.openUrl()`
 
 ```js
 editor.windowManager.openUrl({
@@ -667,7 +665,7 @@ The [Context menus]({{site.url}}/docs-4x/plugins/contextmenu/) are part of the c
 
 For information on using context menus and the default context menu configuration, see: [UI components - Context menu]({{site.baseurl}}/ui-components/contextmenu/).
 
-##### New context menu methods:
+##### New context menu methods
 
 | **New method** | **Description** |
 | ----------- | -------------- |

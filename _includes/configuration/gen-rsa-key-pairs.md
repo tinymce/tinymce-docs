@@ -1,4 +1,5 @@
 ## Creating a private/public key pair for Tiny Drive
+
 The procedure for creating a key pair depends on the operating system of the host machine.
 
 * [Linux procedure](#linux).
@@ -6,6 +7,7 @@ The procedure for creating a key pair depends on the operating system of the hos
 * [Microsoft Windows procedure](#microsoftwindows).
 
 ### Linux
+
 To create a private/public key pair on a Linux operating system:
 
 1. [Install OpenSSL](#installingopensslonlinux).
@@ -13,9 +15,11 @@ To create a private/public key pair on a Linux operating system:
 1. [Retrieve the public key](#retrievethepublickeyonlinux).
 
 #### Installing OpenSSL on Linux
+
 The procedure for installing OpenSSL on Linux distributions varies. The installation commands for common Linux distributions have been provided here.
 
 ##### Red Hat Enterprise Linux 7 or CentOS 7
+
 On a command line, run the following commands to install OpenSSL on:
 
 * Red Hat Enterprise Linux 6 or 7.
@@ -27,6 +31,7 @@ sudo yum install openssl
 ```
 
 ##### Red Hat Enterprise Linux 8+, Fedora, or CentOS 8+
+
 On a command line, run the following commands to install OpenSSL on:
 
 * Red Hat Enterprise Linux 8 or later.
@@ -39,6 +44,7 @@ sudo dnf install openssl
 ```
 
 ##### Debian, Ubuntu, Linux Mint, or other Debian-based distributions
+
 On a command line, run the following commands to install OpenSSL on Debian-based operating systems (such as: Debian, Ubuntu, and Linux Mint).
 
 ```sh
@@ -47,6 +53,7 @@ sudo apt install openssl
 ```
 
 ##### SUSE Linux Enterprise Server or openSUSE
+
 On a command line, run the following commands to install OpenSSL on openSUSE-based operating systems (such as: openSUSE and SUSE Linux Enterprise Server).
 
 ```sh
@@ -55,6 +62,7 @@ sudo zypper install openssl
 ```
 
 #### Create a private/public key pair on Linux
+
 To create a private/public key pair:
 
 1. On a command line, run:
@@ -62,6 +70,7 @@ To create a private/public key pair:
     ```sh
     ssh-keygen -m PEM -t rsa -b 2048 -f <MY_TINY_DRIVE_KEY>
     ```
+
     Where _`<MY_TINY_DRIVE_KEY>`_ should be replaced with a name for the key pair.
 
 2. Enter a passphrase for accessing the key.
@@ -72,6 +81,7 @@ Two files will be created in the current directory:
 * `<MY_TINY_DRIVE_KEY>.pub` - The public key.
 
 #### Retrieve the public key on Linux
+
 To retrieve the public key, on a command line, run:
 
 ```sh
@@ -88,6 +98,7 @@ To create a private/public key pair on a macOS operating system:
 1. [Retrieve the public key](#retrievethepublickeyonmacos).
 
 #### Create a private/public key pair on macOS
+
 To create a private/public key pair:
 
 1. Using **Finder**, open a **Terminal**.
@@ -96,6 +107,7 @@ To create a private/public key pair:
     ```sh
     ssh-keygen -m PEM -t rsa -b 2048 -f <MY_TINY_DRIVE_KEY>
     ```
+
     Where _`<MY_TINY_DRIVE_KEY>`_ should be replaced with a name for the key pair.
 
 1. Enter a passphrase for accessing the key.
@@ -106,6 +118,7 @@ Two files will be created in the current directory:
 * `<MY_TINY_DRIVE_KEY>.pub` - The public key.
 
 #### Retrieve the public key on macOS
+
 To retrieve the public key, on a terminal, run:
 
 ```sh
@@ -115,6 +128,7 @@ openssl rsa -in <MY_TINY_DRIVE_KEY> -outform DER -pubout | base64 -
 The public key for the `<MY_TINY_DRIVE_KEY>` key pair will be printed on the terminal with base64 encoding.
 
 ### Microsoft Windows
+
 To create a private/public key pair on a Microsoft Windows operating system:
 
 1. [Install OpenSSL](#installingopensslonmicrosoftwindows).
@@ -122,6 +136,7 @@ To create a private/public key pair on a Microsoft Windows operating system:
 1. [Retrieve the public key](#retrievethepublickeyonwindows).
 
 #### Installing OpenSSL on Microsoft Windows
+
 To install OpenSSL with _Git for Windows_:
 
 1. Download the _Windows_ package from [the Git Downloads page](https://git-scm.com/downloads).
@@ -132,6 +147,7 @@ To install OpenSSL with _Git for Windows_:
 1. Once the installation is complete, click **Finish**.
 
 #### Create a private/public key pair on Windows
+
 To create a private/public key pair:
 
 1. Open the **Start** menu (or _Windows_ menu) and open **Git Bash**.
@@ -140,6 +156,7 @@ To create a private/public key pair:
     ```sh
     ssh-keygen -m PEM -t rsa -b 2048 -f <MY_TINY_DRIVE_KEY>
     ```
+
     Where _`<MY_TINY_DRIVE_KEY>`_ should be replaced with a name for the key pair.
 
 2. Enter a passphrase for accessing the key.

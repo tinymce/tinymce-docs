@@ -1,4 +1,4 @@
-## entity_encoding
+## `entity_encoding`
 
 This option controls how entities/characters get processed by {{site.productname}}. The value can be set as shown in _Encoding types_ below. You can also mix named and numeric by setting this to "named+numeric" this way it will produce entity names of the ones found in the configured entities and numeric entities for other entities.
 
@@ -14,7 +14,7 @@ The base entities `<`, `>`, `&`, `'`, and `"` will always be entity encoded into
 
 **Type:** `String`
 
-##### Example
+#### Example: Using `entity_encoding`
 
 ```js
 tinymce.init({

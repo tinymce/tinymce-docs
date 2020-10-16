@@ -156,7 +156,6 @@ For information on the PowerPaste plugin, see: [PowerPaste plugin]({{site.baseur
 * Changed the editor to clean-up loaded CSS stylesheets when all editors using the stylesheet have been removed.
 * Changed `imagetools` context menu icon for accessing the `image` dialog to use the `image` icon.
 * Changed the `editor.insertContent()` and `editor.selection.setContent()` APIs to retain leading and trailing whitespace.
-* Changed the `table` plugin `Column` menu to include the cut, copy and paste column menu items.
 * Changed the default table styles in the content CSS files to better support the styling options available in the `table` dialog.
 * Deprecated the `Env.experimentalShadowDom` flag.
 

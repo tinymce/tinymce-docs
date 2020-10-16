@@ -55,6 +55,7 @@ This exporter has a few limitations or known issues that should be noted:
 
 - The text content in the PDF cannot be selected or copied.
 - A single line of content sliced horizontally and distributed across separate pages.
+- Due to browser limitations, there is a limit on the number of pages that be rendered. The number of pages varies between browsers.
 - Remote images require an image proxy to render due to browser limitations. For information on proxying remote images, see the [export_image_proxy](#export_image_proxy) option.
 - Right-to-left languages that use cursive scripts (such as Arabic) may not render correctly due to an issue with how the image of the HTML content is rendered.
 - The [Checklist plugin]({{ site.baseurl }}/plugins/checklist/) icons will not render for Internet Explorer 11 users due to browser limitations.

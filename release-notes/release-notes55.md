@@ -15,7 +15,7 @@ These release notes provide an overview of the changes for {{site.productname}} 
 - [Known issues](#knownissues)
 - [Upgrading to the latest version of TinyMCE 5](#upgradingtothelatestversionoftinymce5)
 
-> This is the {{site.cloudname}} and {{site.enterpriseversion}} release notes. For information on the latest community version of {{site.productname}}, see: [{{site.productname}} Changelog]({{site.baseurl}}/changelog/).
+{{site.releasenotes_for_stable}}
 
 ## TinyMCE 5.5 new features and enhancements
 
@@ -76,6 +76,17 @@ For information on the `fullscreen_native` option, see: [Full Screen Plugin - `f
 A new `table_use_colgroups` option allows `colgroup` and `col` elements to be added to new tables. The `colgroup` and `col` elements can be used to set column widths. Other attributes are not supported in the TinyMCE 5.5 release.
 
 For information on the `table_use_colgroups` option, see: [Table plugin - `table_use_colgroups`]({{site.baseurl}}/plugins/table/#table_use_colgroups).
+
+### Added cut, copy, and paste table column menu items
+
+Four new menu items have been added to the Table plugin to assist with moving and duplicating table columns:
+
+- `tablecutcolumn`
+- `tablecopycolumn`
+- `tablepastecolumnbefore`
+- `tablepastecolumnafter`
+
+For information on the Table plugin menu items, see: [Table plugin - Menu items]({{site.baseurl}}/plugins/table/#menuitems).
 
 ## Accompanying Premium Plugin changes
 

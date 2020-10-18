@@ -91,7 +91,7 @@ This option takes an array of HTML element names and allows specific HTML elemen
 ```js
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  plugins: '{{plugin}}',
+  plugins: '{{plugincode}}',
   export_ignore_elements: [ 'iframe', 'video', 'audio' ]
 });
 ```

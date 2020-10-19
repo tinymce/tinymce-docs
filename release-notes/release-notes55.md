@@ -39,6 +39,16 @@ A new `toolbar_persist` option has been added for disabling the automatic show a
 
 For information on the new persistent toolbar option, see: [User interface options - `toolbar_persist`]({{site.baseurl}}/configure/editor-appearance/#toolbar_persist).
 
+### TinyMCE core Typescript types are now public
+
+The {{site.productname}} core now has a fully-typed programming interface. This will help developers by allowing the {{site.productname}} APIs to be integrated into developer tools. This change can help developers avoid incorrect usage of the {{site.productname}} APIs, reducing the likelihood of bugs in custom UI components and plugins. This will also allow some IDEs to provide autocompletion for plugin and component development.
+
+For information on:
+
+- Creating custom {{site.productname}} user interface components; such as toolbar buttons, menu items, and dialogs; see: [User interface components]({{site.baseurl}}/ui-components/).
+- Creating a plugin for {{site.productname}}, see: [Create a plugin for {{site.productname}}]({{site.productname}}/advanced/creating-a-plugin/).
+- The {{site.productname}} APIs, see: [The {{site.productname}} API Reference]({{site.productname}}/api/).
+
 ### New listbox component for custom dialogs
 
 The new listbox component for custom dialogs is a composite component with a label and a dropdown list of options for users to select from. This component displays a menu-like dropdown and allows nested options to be shown to users.

@@ -98,8 +98,14 @@ tinymce.init({
   menubar: 'insert',
   toolbar: 'image',
   image_list: [
-    {title: 'Dog', value: 'mydog.jpg'},
-    {title: 'Cat', value: 'mycat.gif'}
+    {title: 'Cat', value: 'cat.png'},
+    {title: 'Dogs',
+      menu: [
+        {title: 'Alaskan Husky', value: 'husky.jpg'},
+        {title: 'Dingo', value: 'dingo.png'},
+        {title: 'Swedish Lapphund', value: 'swedish_lapphund.gif'}
+      ]
+    }
   ]
 });
 ```
@@ -128,8 +134,14 @@ tinymce.init({
   toolbar: 'image',
   image_list: function(success) {
     success([
-      {title: 'Dog', value: 'mydog.jpg'},
-      {title: 'Cat', value: 'mycat.gif'}
+      {title: 'Cat', value: 'cat.png'},
+      {title: 'Dogs',
+        menu: [
+          {title: 'Alaskan Husky', value: 'husky.jpg'},
+          {title: 'Dingo', value: 'dingo.png'},
+          {title: 'Swedish Lapphund', value: 'swedish_lapphund.gif'}
+        ]
+      }
     ]);
   }
 });

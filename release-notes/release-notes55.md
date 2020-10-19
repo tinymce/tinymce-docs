@@ -98,6 +98,18 @@ Four new menu items have been added to the Table plugin to assist with moving an
 
 For information on the Table plugin menu items, see: [Table plugin - Menu items]({{site.baseurl}}/plugins/table/#menuitems).
 
+### Leading and trailing whitespace now retained by the `insert` and `setContent` APIs
+
+The following APIs for setting or adding to the editor content have been updated to keep leading and trailing whitespace:
+
+- `editor.insertContent()`
+- `editor.selection.setContent()`
+
+For information on:
+
+- The `editor.insertContent()` API, see: [tinymce.Editor APIs - `insertContent`]({{site.baseurl}}/api/tinymce/tinymce.editor/#insertcontent).
+- The `editor.selection.setContent()` API, see: [tinymce.dom.Selection APIs - `setContent`]({{site.baseurl}}/api/tinymce.dom/tinymce.dom.selection/#setcontent).
+
 ### Changed the Image Tools context toolbar icon
 
 The icon for the Image Tools _image options_ toolbar button has been changed from an ellipse icon (![Icon consisting of three dots horizontally aligned across the center of the icon]({{site.baseurl}}/images/icons/image-options.svg)) to match the image icon (![Icon consisting of two hills, a sun above and a border representing a picture frame]({{site.baseurl}}/images/icons/image.svg)).
@@ -204,10 +216,8 @@ For information on the Spell Checker Pro plugin, see: [Spell Checker Pro plugin]
 
 {{site.productname}} 5.5 introduces the following minor changes:
 
-* Added a TypeScript declaration file to the bundle output for TinyMCE core.
 * Added the ability to remove images on a failed upload using the `images_upload_handler` failure callback.
 * Added `hasPlugin` function to the editor API to determine if a plugin exists or not.
-* Added the ability to use `colgroup` elements in tables.
 * Added the ability to delete and navigate HTML media elements without the `media` plugin.
 * Added table related oxide variables to the Style API for more granular control over table cell selection appearance.
 * Added new APIs to allow for programmatic control of the inline toolbar visibility.
@@ -217,7 +227,6 @@ For information on the Spell Checker Pro plugin, see: [Spell Checker Pro plugin]
 * Changed how CSS manipulates table cells when selecting multiple cells to achieve a semi-transparent selection.
 * Changed the `target` property on fired events to use the native event target. The original target for an open shadow root can be obtained using `event.getComposedPath()`.
 * Changed the editor to clean-up loaded CSS stylesheets when all editors using the stylesheet have been removed.
-* Changed the `editor.insertContent()` and `editor.selection.setContent()` APIs to retain leading and trailing whitespace.
 * Changed the default table styles in the content CSS files to better support the styling options available in the `table` dialog.
 * Deprecated the `Env.experimentalShadowDom` flag.
 

@@ -14,7 +14,7 @@
 | `tablecutcolumn`          | Table                                                                                                    | Cut the currently selected column or columns {{site.requires_5_5v}}           |
 | `tablecopycolumn`         | Table                                                                                                    | Copy the currently selected column or columns {{site.requires_5_5v}}          |
 | `tablepastecolumnbefore`  | Table                                                                                                    | Paste column before the currently selected column {{site.requires_5_5v}}  |
-| `tablepastecolumnafter`   | Table                                                                                                    | Paste column afterthe currently selected column {{site.requires_5_5v}}    |
+| `tablepastecolumnafter`   | Table                                                                                                    | Paste column after the currently selected column {{site.requires_5_5v}}    |
 | `tabledeletecolumn`       | Table                                                                                                    | Deletes the currently selected column or columns {{site.requires_5_4v}}       |
 | `row`                     | Table                                                                                                    | Row menu item with related controls.                                      |
 | `tableinsertrowbefore`    | Table                                                                                                    | Inserts row before the currently selected row {{site.requires_5_4v}}      |

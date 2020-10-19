@@ -289,8 +289,14 @@ tinymce.init({
   toolbar: 'table',
   table_class_list: [
     {title: 'None', value: ''},
-    {title: 'Dog', value: 'dog'},
-    {title: 'Cat', value: 'cat'}
+    {title: 'No Borders', value: 'table_no_borders'},
+    {title: 'Borders',
+      menu: [
+        {title: 'Red borders', value: 'table_red_borders'},
+        {title: 'Blue borders', value: 'table_blue_borders'},
+        {title: 'Green borders', value: 'table_green_borders'}
+      ]
+    }
   ]
 });
 ```
@@ -311,8 +317,14 @@ tinymce.init({
   toolbar: 'table',
   table_cell_class_list: [
     {title: 'None', value: ''},
-    {title: 'Dog', value: 'dog'},
-    {title: 'Cat', value: 'cat'}
+    {title: 'No Border', value: 'table_cell_no_border'},
+    {title: 'Border',
+      menu: [
+        {title: 'Red border', value: 'table_cell_red_border'},
+        {title: 'Blue border', value: 'table_cell_blue_border'},
+        {title: 'Green border', value: 'table_cell_green_border'}
+      ]
+    }
   ]
 });
 ```
@@ -333,8 +345,14 @@ tinymce.init({
   toolbar: 'table',
   table_row_class_list: [
     {title: 'None', value: ''},
-    {title: 'Dog', value: 'dog'},
-    {title: 'Cat', value: 'cat'}
+    {title: 'No Border', value: 'table_row_no_border'},
+    {title: 'Border',
+      menu: [
+        {title: 'Red border', value: 'table_row_red_border'},
+        {title: 'Blue border', value: 'table_row_blue_border'},
+        {title: 'Green border', value: 'table_row_green_border'}
+      ]
+    }
   ]
 });
 ```

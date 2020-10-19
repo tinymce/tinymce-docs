@@ -173,8 +173,14 @@ tinymce.init({
   toolbar: 'image',
   image_class_list: [
     {title: 'None', value: ''},
-    {title: 'Dog', value: 'dog'},
-    {title: 'Cat', value: 'cat'}
+    {title: 'No border', value: 'img_no_border'},
+    {title: 'Borders',
+      menu: [
+        {title: 'Green border', value: 'img_green_border'},
+        {title: 'Blue border', value: 'img_blue_border'},
+        {title: 'Red border', value: 'img_red_border'}
+      ]
+    }
   ]
 });
 ```

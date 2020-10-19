@@ -98,6 +98,48 @@ Four new menu items have been added to the Table plugin to assist with moving an
 
 For information on the Table plugin menu items, see: [Table plugin - Menu items]({{site.baseurl}}/plugins/table/#menuitems).
 
+### Nested menu items for class and link list options
+
+{{site.productname}} 5.5 reintroduces the ability to add nested menu items to the following options:
+
+- `image_class_list`
+- `link_class_list`
+- `link_list`
+- `table_class_list`
+- `table_cell_class_list`
+- `table_row_class_list`
+
+For example:
+
+```js
+tinymce.init({
+  selector: "textarea",  // change this value according to your HTML
+  plugins: "link",
+  menubar: "insert",
+  toolbar: "link",
+  link_list: [
+    {title: '{{site.companyname}} Home Page', value: '{{site.url}}'},
+    {title: '{{site.companyname}} Blog', value: '{{site.url}}/blog'},
+    {title: '{{site.productname}} Support resources',
+      menu: [
+        {title: '{{site.productname}} Documentation', value: '{{site.url}}/docs/'},
+        {title: '{{site.productname}} on Stack Overflow', value: '{{site.communitysupporturl}}'},
+        {title: '{{site.productname}} GitHub', value: 'https://github.com/tinymce/'}
+      ]
+    }
+  ]
+});
+```
+
+For information on using:
+
+- The `image_class_list` option, see: [Image plugin - `image_class_list`]({{site.baseurl}}/plugins/image/#image_class_list).
+- The `link_class_list` option, see: [Link plugin - `link_class_list`]({{site.baseurl}}/plugins/link/#link_class_list).
+- The `link_list` option, see: [Link plugin - `link_list`]({{site.baseurl}}/plugins/link/#link_list).
+- The `table_class_list` option, see: [Table plugin - `table_class_list`]({{site.baseurl}}/plugins/table/#table_class_list).
+- The `table_cell_class_list` option, see: [Table plugin - `table_cell_class_list`]({{site.baseurl}}/plugins/table/#table_cell_class_list).
+- The `table_row_class_list` option, see: [Table plugin - `table_row_class_list`]({{site.baseurl}}/plugins/table/#table_row_class_list).
+
 ### New `hasPlugin` for detecting the availability of plugins
 
 The new `hasPlugin` API method can be used to detect if a plugin is present in the editor configuration or if the plugin has been loaded. This API is useful if custom functionality such as a custom plugin, is dependent on the APIs of a plugin.
@@ -236,7 +278,6 @@ For information on the Spell Checker Pro plugin, see: [Spell Checker Pro plugin]
 * Added table related oxide variables to the Style API for more granular control over table cell selection appearance.
 * Added new APIs to allow for programmatic control of the inline toolbar visibility.
 * Added the `origin` property to the `ObjectResized` and `ObjectResizeStart` events, to specify which handle the resize was performed on.
-* Added back the ability to use nested items in the `image_class_list`, `link_class_list`, `link_list`, `table_class_list`, `table_cell_class_list`, and `table_row_class_list` settings.
 * Changed how CSS manipulates table cells when selecting multiple cells to achieve a semi-transparent selection.
 * Changed the `target` property on fired events to use the native event target. The original target for an open shadow root can be obtained using `event.getComposedPath()`.
 * Changed the editor to clean-up loaded CSS stylesheets when all editors using the stylesheet have been removed.

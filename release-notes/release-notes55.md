@@ -104,6 +104,15 @@ The new `hasPlugin` API method can be used to detect if a plugin is present in t
 
 For information on the `editor.hasPlugin()` API, see: [tinymce.Editor APIs - `hasPlugin`]({{site.baseurl}}/api/tinymce/tinymce.editor/#hasplugin).
 
+### New StyleSheetLoader `unload` and `unloadAll` APIs
+
+Two new APIs have been for unloading CSS files:
+
+- `unload` - Unloads the specified CSS file if it is not in use.
+- `unloadAll` - Unloads all CSS files not in use.
+
+For information on the `unload` and `unloadAll` APIs, see: [tinymce.dom.StyleSheetLoader]({{site.baseurl}}/api/tinymce.dom/tinymce.dom.stylesheetloader/).
+
 ### Leading and trailing whitespace now retained by the `insert` and `setContent` APIs
 
 The following APIs for setting or adding to the editor content have been updated to keep leading and trailing whitespace:
@@ -227,7 +236,6 @@ For information on the Spell Checker Pro plugin, see: [Spell Checker Pro plugin]
 * Added table related oxide variables to the Style API for more granular control over table cell selection appearance.
 * Added new APIs to allow for programmatic control of the inline toolbar visibility.
 * Added the `origin` property to the `ObjectResized` and `ObjectResizeStart` events, to specify which handle the resize was performed on.
-* Added new StyleSheetLoader `unload` and `unloadAll` APIs to allow loaded stylesheets to be removed.
 * Added back the ability to use nested items in the `image_class_list`, `link_class_list`, `link_list`, `table_class_list`, `table_cell_class_list`, and `table_row_class_list` settings.
 * Changed how CSS manipulates table cells when selecting multiple cells to achieve a semi-transparent selection.
 * Changed the `target` property on fired events to use the native event target. The original target for an open shadow root can be obtained using `event.getComposedPath()`.

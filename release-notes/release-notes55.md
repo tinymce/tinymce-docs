@@ -181,6 +181,12 @@ For a list of available:
 - Image Tools toolbar buttons, see: [Image Tools plugin - Toolbar buttons]({{site.baseurl}}/imagetools/#toolbarbuttons).
 - {{site.productname}} icons, see: [Icons Available for TinyMCE]({{site.baseurl}}/advanced/editor-icon-identifiers/).
 
+### Improved navigation and deleting for media elements without the `media` plugin
+
+`video` and `audio` HTML elements in the editor content no-longer cause navigation issues and can be deleted without the `media` plugin.
+
+For information on the `media` plugin, see: [Media plugin]({{site.baseurl}}/plugins/media/).
+
 ## Accompanying Premium Plugin changes
 
 The following premium plugin updates were released alongside {{site.productname}} 5.5.
@@ -274,7 +280,6 @@ For information on the Spell Checker Pro plugin, see: [Spell Checker Pro plugin]
 {{site.productname}} 5.5 introduces the following minor changes:
 
 * Added the ability to remove images on a failed upload using the `images_upload_handler` failure callback.
-* Added the ability to delete and navigate HTML media elements without the `media` plugin.
 * Added table related oxide variables to the Style API for more granular control over table cell selection appearance.
 * Added new APIs to allow for programmatic control of the inline toolbar visibility.
 * Added the `origin` property to the `ObjectResized` and `ObjectResizeStart` events, to specify which handle the resize was performed on.

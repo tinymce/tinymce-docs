@@ -33,6 +33,13 @@ A new `table_column_resizing` option sets whether a table or other columns are r
 
 For information on the `table_column_resizing` option, see: [Table plugin - `table_column_resizing`]({{site.baseurl}}/plugins/table/#table_column_resizing).
 
+### Changes to the default table CSS
+
+The CSS files bundled with {{site.productname}} have been updated to better support the styling options available in the `table` dialog.
+
+- For information on the bundled CSS files, see: [Customizing the editable area with `content_css`]({{site.baseurl}}/general-configuration-guide/customize-ui/#customizingtheeditableareawithcontent_css).
+- To view the CSS files, see: [tinymce-dist GitHub Repository - Content CSS files](https://github.com/tinymce/tinymce-dist/tree/master/skins/content).
+
 ### New persistent toolbar option for inline mode
 
 A new `toolbar_persist` option has been added for disabling the automatic show and hide behavior of the toolbar and menu bar for inline editors.
@@ -283,10 +290,9 @@ For information on the Spell Checker Pro plugin, see: [Spell Checker Pro plugin]
 * Added table related oxide variables to the Style API for more granular control over table cell selection appearance.
 * Added new APIs to allow for programmatic control of the inline toolbar visibility.
 * Added the `origin` property to the `ObjectResized` and `ObjectResizeStart` events, to specify which handle the resize was performed on.
-* Changed how CSS manipulates table cells when selecting multiple cells to achieve a semi-transparent selection.
 * Changed the `target` property on fired events to use the native event target. The original target for an open shadow root can be obtained using `event.getComposedPath()`.
 * Changed the editor to clean-up loaded CSS stylesheets when all editors using the stylesheet have been removed.
-* Changed the default table styles in the content CSS files to better support the styling options available in the `table` dialog.
+* Changed how CSS manipulates table cells when selecting multiple cells to achieve a semi-transparent selection.
 * Deprecated the `Env.experimentalShadowDom` flag.
 
 ## General bug fixes

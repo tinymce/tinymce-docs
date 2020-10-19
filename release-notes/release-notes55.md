@@ -21,55 +21,21 @@ These release notes provide an overview of the changes for {{site.productname}} 
 
 The following new features and enhancements were added for the {{site.productname}} 5.5 release.
 
-### New `contextmenu_avoid_overlap` option for controlling the placement of context menus
-
-The new `contextmenu_avoid_overlap` option can be used to prevent context menus from covering the selected node if the node matches the specified [CSS selector](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors).
-
-For information on the `contextmenu_avoid_overlap` option, see: [User interface options - `contextmenu_avoid_overlap`]({{site.baseurl}}/configure/editor-appearance/#contextmenu_avoid_overlap).
-
-### New `table_column_resizing` option for controlling table column resizing
-
-A new `table_column_resizing` option sets whether a table or other columns are resized when a user resizes a table column.
-
-For information on the `table_column_resizing` option, see: [Table plugin - `table_column_resizing`]({{site.baseurl}}/plugins/table/#table_column_resizing).
-
-### Changes to the default table CSS
-
-The CSS files bundled with {{site.productname}} have been updated to better support the styling options available in the `table` dialog.
-
-- For information on the bundled CSS files, see: [Customizing the editable area with `content_css`]({{site.baseurl}}/general-configuration-guide/customize-ui/#customizingtheeditableareawithcontent_css).
-- To view the CSS files, see: [tinymce-dist GitHub Repository - Content CSS files](https://github.com/tinymce/tinymce-dist/tree/master/skins/content).
-
-### New persistent toolbar option for inline mode
-
-A new `toolbar_persist` option has been added for disabling the automatic show and hide behavior of the toolbar and menu bar for inline editors.
-
-For information on the new persistent toolbar option, see: [User interface options - `toolbar_persist`]({{site.baseurl}}/configure/editor-appearance/#toolbar_persist).
-
 ### TinyMCE core Typescript types are now public
 
 The {{site.productname}} core now has a fully-typed programming interface. This will help developers by allowing the {{site.productname}} APIs to be integrated into developer tools. This change can help developers avoid incorrect usage of the {{site.productname}} APIs, reducing the likelihood of bugs in custom UI components and plugins. This will also allow some IDEs to provide autocompletion for plugin and component development.
+
+For example:
+
+| Example of {{site.productname}} TypeScript autocompletion in<br>Microsoft Visual Studio Code | Example of {{site.productname}} TypeScript configuration option type error in<br>Microsoft Visual Studio Code |
+|:---:|:---:|
+|![Screenshot of code autocompetion for adding a custom user interface component using {{site.productname}} APIs in Microsoft Visual Studio Code]({{site.baseurl}}/images/550-release_notes-vscode-tinymce-autocomplete.png)|![Screenshot of a type error while adding {{site.productname}} configuration options in Microsoft Visual Studio Code]({{site.baseurl}}/images/550-release_notes-vscode-tinymce-inline-type-error.png)|
 
 For information on:
 
 - Creating custom {{site.productname}} user interface components; such as toolbar buttons, menu items, and dialogs; see: [User interface components]({{site.baseurl}}/ui-components/).
 - Creating a plugin for {{site.productname}}, see: [Create a plugin for {{site.productname}}]({{site.productname}}/advanced/creating-a-plugin/).
 - The {{site.productname}} APIs, see: [The {{site.productname}} API Reference]({{site.productname}}/api/).
-
-### New listbox component for custom dialogs
-
-The new listbox component for custom dialogs is a composite component with a label and a dropdown list of options for users to select from. This component displays a menu-like dropdown and allows nested options to be shown to users.
-
-For information on the listbox dialog component, see: [Dialog components - listbox]({{site.baseurl}}/ui-components/dialogcomponents/#listbox).
-
-### The toolbar drawer can now be controlled using commands
-
-A new editor command (`execCommand('ToggleToolbarDrawer')`) and editor state query (`queryCommandState('ToggleToolbarDrawer')`) have been added. The command allows the Toolbar Drawer (which holds excess toolbar buttons) to be opened and closed using editor commands. The current state of the Toolbar Drawer can also be queried.
-
-For information on:
-
-- The Toolbar Drawer, see: [User interface options - `toolbar_mode`]({{site.baseurl}}/configure/editor-appearance/#toolbar_mode).
-- Commands and query commands available in {{site.productname}}, see: [Commands Available for TinyMCE]({{site.baseurl}}/advanced/editor-command-identifiers/).
 
 ### New line height support in the editor
 
@@ -82,28 +48,20 @@ For information on:
 - The `LineHeight` editor command, see: [Commands available for {{site.productname}} - Core Editor commands]({{site.baseurl}}/advanced/editor-command-identifiers/#coreeditorcommands).
 - The `LineHeight` query command value, see: [Commands available for {{site.productname}} - Available query command values]({{site.baseurl}}/advanced/editor-command-identifiers/#availablequerycommandvalues).
 
-### Added the ability to use the browser full screen mode with the `fullscreen` plugin
+### New persistent toolbar option for inline mode
 
-A new `fullscreen_native` option allows the editor to use the browser's full screen mode instead of only filling the browser viewport. When enabled and the user activates full screen mode, the editor will fill the whole screen, the same as full screen mode for online videos.
+A new `toolbar_persist` option has been added for disabling the automatic show and hide behavior of the toolbar and menu bar for inline editors.
 
-For information on the `fullscreen_native` option, see: [Full Screen Plugin - `fullscreen_native`]({{site.baseurl}}/plugins/fullscreen/#fullscreen_native).
+For information on the new persistent toolbar option, see: [User interface options - `toolbar_persist`]({{site.baseurl}}/configure/editor-appearance/#toolbar_persist).
 
-### Added `colgroup` support for tables
+### The toolbar drawer can now be controlled using commands
 
-A new `table_use_colgroups` option allows `colgroup` and `col` elements to be added to new tables. The `colgroup` and `col` elements can be used to set column widths. Other attributes are not supported in the TinyMCE 5.5 release.
+A new editor command (`execCommand('ToggleToolbarDrawer')`) and editor state query (`queryCommandState('ToggleToolbarDrawer')`) have been added. The command allows the Toolbar Drawer (which holds excess toolbar buttons) to be opened and closed using editor commands. The current state of the Toolbar Drawer can also be queried.
 
-For information on the `table_use_colgroups` option, see: [Table plugin - `table_use_colgroups`]({{site.baseurl}}/plugins/table/#table_use_colgroups).
+For information on:
 
-### Added cut, copy, and paste table column menu items
-
-Four new menu items have been added to the Table plugin to assist with moving and duplicating table columns:
-
-- `tablecutcolumn`
-- `tablecopycolumn`
-- `tablepastecolumnbefore`
-- `tablepastecolumnafter`
-
-For information on the Table plugin menu items, see: [Table plugin - Menu items]({{site.baseurl}}/plugins/table/#menuitems).
+- The Toolbar Drawer, see: [User interface options - `toolbar_mode`]({{site.baseurl}}/configure/editor-appearance/#toolbar_mode).
+- Commands and query commands available in {{site.productname}}, see: [Commands Available for TinyMCE]({{site.baseurl}}/advanced/editor-command-identifiers/).
 
 ### Nested menu items for class and link list options
 
@@ -147,6 +105,54 @@ For information on using:
 - The `table_cell_class_list` option, see: [Table plugin - `table_cell_class_list`]({{site.baseurl}}/plugins/table/#table_cell_class_list).
 - The `table_row_class_list` option, see: [Table plugin - `table_row_class_list`]({{site.baseurl}}/plugins/table/#table_row_class_list).
 
+### Added the ability to use the browser full screen mode with the `fullscreen` plugin
+
+A new `fullscreen_native` option allows the editor to use the browser's full screen mode instead of only filling the browser viewport. When enabled and the user activates full screen mode, the editor will fill the whole screen, the same as full screen mode for online videos.
+
+For information on the `fullscreen_native` option, see: [Full Screen Plugin - `fullscreen_native`]({{site.baseurl}}/plugins/fullscreen/#fullscreen_native).
+
+### New `contextmenu_avoid_overlap` option for controlling the placement of context menus
+
+The new `contextmenu_avoid_overlap` option can be used to prevent context menus from covering the selected node if the node matches the specified [CSS selector](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors).
+
+For information on the `contextmenu_avoid_overlap` option, see: [User interface options - `contextmenu_avoid_overlap`]({{site.baseurl}}/configure/editor-appearance/#contextmenu_avoid_overlap).
+
+### Added `colgroup` support for tables
+
+A new `table_use_colgroups` option allows `colgroup` and `col` elements to be added to new tables. The `colgroup` and `col` elements can be used to set column widths. Other attributes are not supported in the TinyMCE 5.5 release.
+
+For information on the `table_use_colgroups` option, see: [Table plugin - `table_use_colgroups`]({{site.baseurl}}/plugins/table/#table_use_colgroups).
+
+### Added cut, copy, and paste table column menu items
+
+Four new menu items have been added to the Table plugin to assist with moving and duplicating table columns:
+
+- `tablecutcolumn`
+- `tablecopycolumn`
+- `tablepastecolumnbefore`
+- `tablepastecolumnafter`
+
+For information on the Table plugin menu items, see: [Table plugin - Menu items]({{site.baseurl}}/plugins/table/#menuitems).
+
+### New `table_column_resizing` option for controlling table column resizing
+
+A new `table_column_resizing` option sets whether a table or other columns are resized when a user resizes a table column.
+
+For information on the `table_column_resizing` option, see: [Table plugin - `table_column_resizing`]({{site.baseurl}}/plugins/table/#table_column_resizing).
+
+### Changes to the default table CSS
+
+The CSS files bundled with {{site.productname}} have been updated to better support the styling options available in the `table` dialog.
+
+- For information on the bundled CSS files, see: [Customizing the editable area with `content_css`]({{site.baseurl}}/general-configuration-guide/customize-ui/#customizingtheeditableareawithcontent_css).
+- To view the CSS files, see: [tinymce-dist GitHub Repository - Content CSS files](https://github.com/tinymce/tinymce-dist/tree/master/skins/content).
+
+### New listbox component for custom dialogs
+
+The new listbox component for custom dialogs is a composite component with a label and a dropdown list of options for users to select from. This component displays a menu-like dropdown and allows nested options to be shown to users.
+
+For information on the listbox dialog component, see: [Dialog components - listbox]({{site.baseurl}}/ui-components/dialogcomponents/#listbox).
+
 ### New `hasPlugin` for detecting the availability of plugins
 
 The new `hasPlugin` API method can be used to detect if a plugin is present in the editor configuration or if the plugin has been loaded. This API is useful if custom functionality such as a custom plugin, is dependent on the APIs of a plugin.
@@ -176,7 +182,7 @@ For information on:
 
 ### Changed the Image Tools context toolbar icon
 
-The icon for the Image Tools _image options_ toolbar button has been changed from an ellipse icon (![Icon consisting of three dots horizontally aligned across the center of the icon]({{site.baseurl}}/images/icons/image-options.svg)) to match the image icon (![Icon consisting of two hills, a sun above and a border representing a picture frame]({{site.baseurl}}/images/icons/image.svg)).
+The icon for the Image Tools _image options_ toolbar button has changed from an ellipse icon (![Icon consisting of three dots horizontally aligned across the center of the icon]({{site.baseurl}}/images/icons/image-options.svg)) to match the image icon (![Icon consisting of two hills, a sun above and a border representing a picture frame]({{site.baseurl}}/images/icons/image.svg)).
 
 For information on:
 
@@ -258,6 +264,17 @@ The {{site.productname}} 5.5 release includes an accompanying release of the **P
 
 For information on the PowerPaste plugin, see: [PowerPaste plugin]({{site.baseurl}}/plugins/powerpaste/).
 
+### Spell Checker Pro 2.1.0
+
+The {{site.productname}} 5.5 release includes an accompanying release of the **Spell Checker Pro** premium plugin.
+
+**Spell Checker Pro** 2.1.0 provides:
+
+* An updated the dialog to allow wider buttons for languages with longer strings by removing the _Close_ button (_Cancel_ button in TinyMCE 4).
+* Fixed the `spellcheck_dialog` button incorrectly rendering as a split button in TinyMCE 4.
+
+For information on the Spell Checker Pro plugin, see: [Spell Checker Pro plugin]({{site.baseurl}}/plugins/tinymcespellchecker/).
+
 ### Tiny Skins and Icon Packs
 
 The {{site.productname}} 5.5 release includes an accompanying release of the **Tiny Skins and Icon Packs**.
@@ -270,17 +287,6 @@ The following icon packs have been updated to include new icons for the line hei
 - Thin
 
 For information on using the {{site.productname}} premium icon packs, see: [Tiny Skins and Icon Packs - How to use an icon pack]({{site.baseurl}}/enterprise/premium-skins-and-icon-packs/#howtouseaniconpack).
-
-### Spell Checker Pro 2.1.0
-
-The {{site.productname}} 5.5 release includes an accompanying release of the **Spell Checker Pro** premium plugin.
-
-**Spell Checker Pro** 2.1.0 provides:
-
-* An updated the dialog to allow wider buttons for languages with longer strings by removing the _Close_ button (_Cancel_ button in TinyMCE 4).
-* Fixed the `spellcheck_dialog` button incorrectly rendering as a split button in TinyMCE 4.
-
-For information on the Spell Checker Pro plugin, see: [Spell Checker Pro plugin]({{site.baseurl}}/plugins/tinymcespellchecker/).
 
 ## Minor changes for TinyMCE 5.5
 

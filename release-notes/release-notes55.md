@@ -63,7 +63,7 @@ For information on:
 - The Toolbar Drawer, see: [User interface options - `toolbar_mode`]({{site.baseurl}}/configure/editor-appearance/#toolbar_mode).
 - Commands and query commands available in {{site.productname}}, see: [Commands Available for TinyMCE]({{site.baseurl}}/advanced/editor-command-identifiers/).
 
-### Nested menu items for class and link list options
+### Nested menu items for class list, link list, and image list options
 
 {{site.productname}} 5.5 reintroduces the ability to add nested menu items to the following options:
 

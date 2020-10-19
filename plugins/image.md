@@ -99,6 +99,27 @@ tinymce.init({
   toolbar: 'image',
   image_list: [
     {title: 'Cat', value: 'cat.png'},
+    {title: 'Dog', value: 'dog.jpg'}
+  ]
+});
+```
+
+#### Example of a nested list of images
+
+{{site.requires_5_5v}}
+
+To create a nested list, replace `value` with `menu` to add the top level of the list, then provide an array of items.
+
+For example:
+
+```js
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'image',
+  menubar: 'insert',
+  toolbar: 'image',
+  image_list: [
+    {title: 'Cat', value: 'cat.png'},
     {title: 'Dogs',
       menu: [
         {title: 'Alaskan Husky', value: 'husky.jpg'},
@@ -134,14 +155,8 @@ tinymce.init({
   toolbar: 'image',
   image_list: function(success) {
     success([
-      {title: 'Cat', value: 'cat.png'},
-      {title: 'Dogs',
-        menu: [
-          {title: 'Alaskan Husky', value: 'husky.jpg'},
-          {title: 'Dingo', value: 'dingo.png'},
-          {title: 'Swedish Lapphund', value: 'swedish_lapphund.gif'}
-        ]
-      }
+      {title: 'Dog', value: 'mydog.jpg'},
+      {title: 'Cat', value: 'mycat.gif'}
     ]);
   }
 });
@@ -176,6 +191,30 @@ This option lets you specify a predefined list of classes to add to an image. It
 **Type:** `String`
 
 #### Example: Using `image_class_list`
+
+```js
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'image',
+  menubar: 'insert',
+  toolbar: 'image',
+  image_class_list: [
+    {title: 'None', value: ''},
+    {title: 'No border', value: 'img_no_border'},
+    {title: 'Green border', value: 'img_green_border'},
+    {title: 'Blue border', value: 'img_blue_border'},
+    {title: 'Red border', value: 'img_red_border'}
+  ]
+});
+```
+
+#### Example of a nested list of image classes
+
+{{site.requires_5_5v}}
+
+To create a nested list, replace `value` with `menu` to add the top level of the list, then provide an array of items.
+
+For example:
 
 ```js
 tinymce.init({

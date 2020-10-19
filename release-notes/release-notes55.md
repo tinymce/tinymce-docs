@@ -67,6 +67,7 @@ For information on:
 
 {{site.productname}} 5.5 reintroduces the ability to add nested menu items to the following options:
 
+- `image_list`
 - `image_class_list`
 - `link_class_list`
 - `link_list`
@@ -98,6 +99,7 @@ tinymce.init({
 
 For information on using:
 
+- The `image_list` option, see: [Image plugin - `image_list`]({{site.baseurl}}/plugins/image/#image_list).
 - The `image_class_list` option, see: [Image plugin - `image_class_list`]({{site.baseurl}}/plugins/image/#image_class_list).
 - The `link_class_list` option, see: [Link plugin - `link_class_list`]({{site.baseurl}}/plugins/link/#link_class_list).
 - The `link_list` option, see: [Link plugin - `link_list`]({{site.baseurl}}/plugins/link/#link_list).

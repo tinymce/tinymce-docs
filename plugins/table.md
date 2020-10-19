@@ -290,6 +290,30 @@ tinymce.init({
   table_class_list: [
     {title: 'None', value: ''},
     {title: 'No Borders', value: 'table_no_borders'},
+    {title: 'Red borders', value: 'table_red_borders'},
+    {title: 'Blue borders', value: 'table_blue_borders'},
+    {title: 'Green borders', value: 'table_green_borders'}
+  ]
+});
+```
+
+#### Example of a nested list of table classes
+
+{{site.requires_5_5v}}
+
+To create a nested list, replace `value` with `menu` to add the top level of the list, then provide an array of items.
+
+For example:
+
+```js
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'table',
+  menubar: 'table',
+  toolbar: 'table',
+  table_class_list: [
+    {title: 'None', value: ''},
+    {title: 'No Borders', value: 'table_no_borders'},
     {title: 'Borders',
       menu: [
         {title: 'Red borders', value: 'table_red_borders'},
@@ -318,6 +342,30 @@ tinymce.init({
   table_cell_class_list: [
     {title: 'None', value: ''},
     {title: 'No Border', value: 'table_cell_no_border'},
+    {title: 'Red border', value: 'table_cell_red_border'},
+    {title: 'Blue border', value: 'table_cell_blue_border'},
+    {title: 'Green border', value: 'table_cell_green_border'}
+  ]
+});
+```
+
+#### Example of a nested list of table cell classes
+
+{{site.requires_5_5v}}
+
+To create a nested list, replace `value` with `menu` to add the top level of the list, then provide an array of items.
+
+For example:
+
+```js
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'table',
+  menubar: 'table',
+  toolbar: 'table',
+  table_cell_class_list: [
+    {title: 'None', value: ''},
+    {title: 'No Border', value: 'table_cell_no_border'},
     {title: 'Border',
       menu: [
         {title: 'Red border', value: 'table_cell_red_border'},
@@ -336,6 +384,30 @@ This option enables you to specify a list of classes to present in the table row
 **Type:** `Array`
 
 #### Example: Using `table_row_class_list`
+
+```js
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'table',
+  menubar: 'table',
+  toolbar: 'table',
+  table_row_class_list: [
+    {title: 'None', value: ''},
+    {title: 'No Border', value: 'table_row_no_border'},
+    {title: 'Red border', value: 'table_row_red_border'},
+    {title: 'Blue border', value: 'table_row_blue_border'},
+    {title: 'Green border', value: 'table_row_green_border'}
+  ]
+});
+```
+
+#### Example of a nested list of table row classes
+
+{{site.requires_5_5v}}
+
+To create a nested list, replace `value` with `menu` to add the top level of the list, then provide an array of items.
+
+For example:
 
 ```js
 tinymce.init({

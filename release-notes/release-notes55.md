@@ -98,6 +98,12 @@ Four new menu items have been added to the Table plugin to assist with moving an
 
 For information on the Table plugin menu items, see: [Table plugin - Menu items]({{site.baseurl}}/plugins/table/#menuitems).
 
+### New `hasPlugin` for detecting the availability of plugins
+
+The new `hasPlugin` API method can be used to detect if a plugin is present in the editor configuration or if the plugin has been loaded. This API is useful if custom functionality such as a custom plugin, is dependent on the APIs of a plugin.
+
+For information on the `editor.hasPlugin()` API, see: [tinymce.Editor APIs - `hasPlugin`]({{site.baseurl}}/api/tinymce/tinymce.editor/#hasplugin).
+
 ### Leading and trailing whitespace now retained by the `insert` and `setContent` APIs
 
 The following APIs for setting or adding to the editor content have been updated to keep leading and trailing whitespace:
@@ -217,7 +223,6 @@ For information on the Spell Checker Pro plugin, see: [Spell Checker Pro plugin]
 {{site.productname}} 5.5 introduces the following minor changes:
 
 * Added the ability to remove images on a failed upload using the `images_upload_handler` failure callback.
-* Added `hasPlugin` function to the editor API to determine if a plugin exists or not.
 * Added the ability to delete and navigate HTML media elements without the `media` plugin.
 * Added table related oxide variables to the Style API for more granular control over table cell selection appearance.
 * Added new APIs to allow for programmatic control of the inline toolbar visibility.

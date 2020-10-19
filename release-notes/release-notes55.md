@@ -196,7 +196,7 @@ For a list of available:
 - Image Tools toolbar buttons, see: [Image Tools plugin - Toolbar buttons]({{site.baseurl}}/imagetools/#toolbarbuttons).
 - {{site.productname}} icons, see: [Icons Available for TinyMCE]({{site.baseurl}}/advanced/editor-icon-identifiers/).
 
-### Improved navigation and deleting for media elements without the `media` plugin
+### Improved navigation and deletion for media elements without the `media` plugin
 
 `video` and `audio` HTML elements in the editor content no-longer cause navigation issues and can be deleted without the `media` plugin.
 

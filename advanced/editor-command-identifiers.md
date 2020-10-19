@@ -170,6 +170,7 @@ Commands are available for the following plugins:
 - [Code Sample](#codesample)
 - [Comments](#comments)
 - [Directionality](#directionality)
+- [Export](#export)
 - [Format Painter](#formatpainter)
 - [Full Page](#fullpage)
 - [Full Screen](#fullscreen)
@@ -262,9 +263,15 @@ The following commands require the [Directionality (`directionality`)]({{ site.b
 
 {% include commands/directionality-cmds.md %}
 
+#### Export
+
+The following commands require the [Export (`export`)]({{ site.baseurl }}/plugins/export/) plugin.
+
+{% include commands/export-cmds.md %}
+
 #### Format Painter
 
-The following commands require the [Format Painter (`formatpainter`)]({{ site.baseurl }}/plugins/comments/) plugin.
+The following commands require the [Format Painter (`formatpainter`)]({{ site.baseurl }}/plugins/formatpainter/) plugin.
 
 {% include commands/formatpainter-cmds.md %}
 

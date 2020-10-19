@@ -70,6 +70,10 @@ The following menu items are available for all {{site.productname}} instances wi
 {% assign plugincode = "emoticons" %}
 {% include misc/plugin-menu-item-id-boilerplate.md %}
 
+{% assign pluginname = "Export" %}
+{% assign plugincode = "export" %}
+{% include misc/plugin-menu-item-id-boilerplate.md %}
+
 {% assign pluginname = "Full Page" %}
 {% assign plugincode = "fullpage" %}
 {% include misc/plugin-menu-item-id-boilerplate.md %}

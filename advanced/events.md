@@ -158,6 +158,7 @@ The following plugins provide events.
   - [Autosave events](#autosaveevents)
   - [Character Map events](#charactermapevents)
   - [Comments events](#commentsevents)
+  - [Export events](#exportevents)
   - [Format Painter events](#formatpainterevents)
   - [Fullscreen events](#fullscreenevents)
   - [Import CSS events](#importcssevents)
@@ -199,6 +200,10 @@ The following event is provided by the [Comments plugin]({{ site.baseurl }}/plug
 | Name                    | Data | Description                      |
 | ----------------------- | ---- | -------------------------------- |
 | mce-tinycomments-update | N/A  | Fired when the comments sidebar is opened or closed. |
+
+### Export events
+
+{% include events/export-events.md %}
 
 ### Format Painter events
 

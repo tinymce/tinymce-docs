@@ -43,7 +43,7 @@ echo -e "|Identifier|Preview|Filename|\n|:-----:|:-----:|:-----:|" > $list_file
 for svgName in $icon_list
 do
   iconID=${svgName%%.*} # strip the file extension
-  echo -e "| \`$iconID\` | ![$svgName]({{ site.baseurl }}/images/icons/$svgName) | \`$svgName\` | " >> $list_file
+  echo -e "| \`$iconID\` | ![$svgName]({{ site.baseurl }}/images/icons/$svgName) | \`$svgName\` |" >> $list_file
 done
 
 echo "completed"

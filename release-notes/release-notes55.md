@@ -176,6 +176,19 @@ The {{site.productname}} 5.5 release includes an accompanying release of the **P
 
 For information on the PowerPaste plugin, see: [PowerPaste plugin]({{site.baseurl}}/plugins/powerpaste/).
 
+### Tiny Skins and Icon Packs
+
+The {{site.productname}} 5.5 release includes an accompanying release of the **Tiny Skins and Icon Packs**.
+
+The following icon packs have been updated to include new icons for the line height (![Line Height icon: Bidirectional arrow pointing up and down beside four horizontal, stacked lines]({{site.baseurl}}/images/icons/line-height.svg)) and export (![Export icon: A page with an arrow from the center of the page to the right of the page]({{site.baseurl}}/images/icons/export.svg)) toolbar buttons:
+
+- Material
+- Small
+- Jam
+- Thin
+
+For information on using the {{site.productname}} premium icon packs, see: [Tiny Skins and Icon Packs - How to use an icon pack]({{site.baseurl}}/enterprise/premium-skins-and-icon-packs/#howtouseaniconpack).
+
 ### Spell Checker Pro 2.1.0
 
 The {{site.productname}} 5.5 release includes an accompanying release of the **Spell Checker Pro** premium plugin.

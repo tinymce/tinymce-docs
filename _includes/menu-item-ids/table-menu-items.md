@@ -22,6 +22,6 @@
 | `tablecutrow`             | Table                                                                                                    | Cut the currently selected row or rows {{site.requires_5_4v}}                 |
 | `tablecopyrow`            | Table                                                                                                    | Copy the currently selected row or rows {{site.requires_5_4v}}                |
 | `tablepasterowbefore`     | Table                                                                                                    | Paste row before the currently selected row {{site.requires_5_4v}}        |
-| `tablepasterowafter`      | Table                                                                                                    | Paste row afterthe currently selected row {{site.requires_5_4v}}          |
+| `tablepasterowafter`      | Table                                                                                                    | Paste row after the currently selected row {{site.requires_5_4v}}          |
 | `tablerowprops`           | Table                                                                                                    | Opens the row properties dialog                                           |
 | `tabledeleterow`          | Table                                                                                                    | Deletes the currently selected row or rows {{site.requires_5_4v}}             |

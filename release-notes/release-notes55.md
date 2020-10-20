@@ -166,7 +166,7 @@ For information on the `editor.hasPlugin()` API, see: [tinymce.Editor APIs - `ha
 Two new APIs have been added for unloading CSS files:
 
 - `unload` - Unloads the specified CSS file if it is not in use.
-- `unloadAll` - Unloads all CSS files not in use.
+- `unloadAll` - Accepts a list of URLs and unloads any CSS files not in use.
 
 For information on the `unload` and `unloadAll` APIs, see: [tinymce.dom.StyleSheetLoader]({{site.baseurl}}/api/tinymce.dom/tinymce.dom.stylesheetloader/).
 

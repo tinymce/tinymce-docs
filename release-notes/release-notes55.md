@@ -163,7 +163,7 @@ For information on the `editor.hasPlugin()` API, see: [tinymce.Editor APIs - `ha
 
 ### New StyleSheetLoader `unload` and `unloadAll` APIs
 
-Two new APIs have been for unloading CSS files:
+Two new APIs have been added for unloading CSS files:
 
 - `unload` - Unloads the specified CSS file if it is not in use.
 - `unloadAll` - Unloads all CSS files not in use.

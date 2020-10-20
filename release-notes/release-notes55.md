@@ -235,6 +235,16 @@ The {{site.productname}} 5.5 release includes an accompanying release of the **A
 
 For information on the Advanced Code Editor plugin, see: [Advanced Code Editor plugin]({{site.baseurl}}/plugins/advcode/).
 
+### Advanced Tables 1.0.1
+
+The {{site.productname}} 5.5 release includes an accompanying release of the **Advanced Tables** premium plugin.
+
+**Advanced Tables** 1.0.1 has been updated to work with the changes made to the `table` plugin.
+
+**Advanced Tables** 1.0.1 is required for TinyMCE 5.5 or higher.
+
+For information on the Advanced Tables plugin, see: [Advanced Tables plugin]({{site.baseurl}}/plugins/advtable/).
+
 ### Comments 2.2.0
 
 The {{site.productname}} 5.5 release includes an accompanying release of the **Comments** premium plugin.

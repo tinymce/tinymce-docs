@@ -31,6 +31,7 @@ The plugin is capable of sorting:
 > **Note**: Currently, the sort function will treat cells with Alphanumeric data as Text data. This includes currency symbols which are text characters.
 
 ## Enabling the Advanced Tables plugin
+
 To enable the Advanced Tables plugin, add `advtable` to the list of plugins. For example:
 
 ```js

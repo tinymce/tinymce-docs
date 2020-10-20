@@ -79,10 +79,10 @@ For example:
 
 ```js
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "link",
-  menubar: "insert",
-  toolbar: "link",
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'link',
+  menubar: 'insert',
+  toolbar: 'link',
   link_list: [
     {title: '{{site.companyname}} Home Page', value: '{{site.url}}'},
     {title: '{{site.companyname}} Blog', value: '{{site.url}}/blog'},
@@ -344,14 +344,23 @@ This section describes issues that users of {{site.productname}} 5.5 may encount
 
 **Outline**
 
-* []()
+* [Difficult to see table cell selections for table cells with a background color](#difficulttoseetablecellselectionsfortablecellswithabackgroundcolor)
 
-###
+### Difficult to see table cell selections for table cells with a background color
 
-**Issue**:
+**Issue**: Due to CSS changes related to table cell selections, it can be difficult to see the which cells are selected if the cells have a background color. This issue is both a usability and an accessibility issue.
 
-**Workaround**:
+**Workaround**: To improve the visibility of cell selections until this issue is fixed, use the `content_style` option to change the table-related cell selection style. For example:
 
+```js
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'table',
+  content_style: '.mce-content-body td[data-mce-selected]::after, .mce-content-body th[data-mce-selected]::after { background-color: rgb(180, 215, 255, .7); }'
+});
+```
+
+{{site.companyname}} recommends removing this workaround from the configuration when the issue has been fixed.
 
 {% assign enterprise = true %}
 

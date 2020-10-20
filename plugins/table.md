@@ -97,7 +97,7 @@ This option adds `colgroup` and `col` elements to new tables for specifying colu
 
 **Possible Values:**  `true`, `false`
 
-##### Example
+#### Example: Enabling `colgroup` support using `table_use_colgroups`
 
 ```js
 tinymce.init({

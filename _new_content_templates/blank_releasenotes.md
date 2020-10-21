@@ -113,14 +113,9 @@ This section describes issues that users of {{site.productname}} vnumtxt may enc
 
 ###
 
-**Issue**:
+**Issue**: This issue affects ....
 
-This issue affects ....
-<impact>
-
-**Workaround**:
-
-There was no known workaround at the time of the release.
+**Workaround**: There was no known workaround at the time of the release.
 
 {% assign enterprise = true %}
 

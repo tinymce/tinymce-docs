@@ -1,22 +1,17 @@
 ---
 layout: default
-title: TinyMCE vnumtxt
-title_nav: TinyMCE vnumtxt
-description: Release notes for TinyMCE vnumtxt
+title: TinyMCE 5.6
+title_nav: TinyMCE 5.6
+description: Release notes for TinyMCE 5.6
 keywords: releasenotes bugfixes
 ---
 
-{% comment %}
-Replace vnumtxt with the version number such as: X.Y.Z
-Replace vnumcode with the version number without points, such as XYZ
-{% endcomment %}
+These release notes provide an overview of the changes for {{site.productname}} 5.6, including:
 
-These release notes provide an overview of the changes for {{site.productname}} vnumtxt, including:
-
-- [TinyMCE vnumtxt new features and enhancements](#tinymcevnumcodenewfeaturesandenhancements)
+- [TinyMCE 5.6 new features and enhancements](#tinymce55newfeaturesandenhancements)
 - [Accompanying Premium Plugin changes](#accompanyingpremiumpluginchanges)
 - [Accompanying Premium self-hosted server-side component changes](#accompanyingpremiumself-hostedserver-sidecomponentchanges)
-- [Minor changes for TinyMCE vnumtxt](#minorchangesfortinymcevnumcode)
+- [Minor changes for TinyMCE 5.6](#minorchangesfortinymce55)
 - [General bug fixes](#generalbugfixes)
 - [Security fixes](#securityfixes)
 - [Deprecated features](#deprecatedfeatures)
@@ -25,19 +20,19 @@ These release notes provide an overview of the changes for {{site.productname}} 
 
 {{site.releasenotes_for_stable}}
 
-## TinyMCE vnumtxt new features and enhancements
+## TinyMCE 5.6 new features and enhancements
 
-The following new features and enhancements were added for the {{site.productname}} vnumtxt release.
+The following new features and enhancements were added for the {{site.productname}} 5.6 release.
 
 ### Improvement Name
 
 ## Accompanying Premium Plugin changes
 
-The following premium plugin updates were released alongside {{site.productname}} vnumtxt.
+The following premium plugin updates were released alongside {{site.productname}} 5.6.
 
 ### Premium Plugin Name X.Y.Z
 
-The {{site.productname}} vnumtxt release includes an accompanying release of the **<<Premium Plugin Name>>** premium plugin.
+The {{site.productname}} 5.6 release includes an accompanying release of the **<<Premium Plugin Name>>** premium plugin.
 
 **<<Premium Plugin Name>>** X.Y.Z provides the following improvements:
 
@@ -47,7 +42,7 @@ For information on the <<Premium Plugin Name>> plugin, see: [<<Premium Plugin Na
 
 ## Accompanying Premium self-hosted server-side component changes
 
-The {{site.productname}} vnumtxt release includes accompanying changes affecting the {{site.productname}} **self-hosted** services for the following plugins:
+The {{site.productname}} 5.6 release includes accompanying changes affecting the {{site.productname}} **self-hosted** services for the following plugins:
 
 - The Enhanced Media Embed plugin (`mediaembed`)
 - The Image Tools plugin (`imagetools`)
@@ -77,27 +72,27 @@ For information on:
 - Deploying the server-side components, see: [Server-side component installation]({{site.baseurl}}/enterprise/server/).
 - Deploying the server-side components using Docker, see: [Containerized service deployments]({{site.baseurl}}/enterprise/server/dockerservices/).
 
-## Minor changes for TinyMCE vnumtxt
+## Minor changes for TinyMCE 5.6
 
-{{site.productname}} vnumtxt introduces the following minor changes:
+{{site.productname}} 5.6 introduces the following minor changes:
 
 - changelog
 
 ## General bug fixes
 
-{{site.productname}} vnumtxt provides fixes for the following bugs:
+{{site.productname}} 5.6 provides fixes for the following bugs:
 
 - changelog
 
 ## Security fixes
 
-{{site.productname}} vnumtxt provides fixes for the following security issues:
+{{site.productname}} 5.6 provides fixes for the following security issues:
 
 - changelog
 
 ## Deprecated features
 
-The following features have been deprecated with the release of {{site.productname}} vnumtxt:
+The following features have been deprecated with the release of {{site.productname}} 5.6:
 
 - [](#).
 
@@ -105,7 +100,7 @@ The following features have been deprecated with the release of {{site.productna
 
 ## Known issues
 
-This section describes issues that users of {{site.productname}} vnumtxt may encounter and possible workarounds for these issues.
+This section describes issues that users of {{site.productname}} 5.6 may encounter and possible workarounds for these issues.
 
 **Outline**
 

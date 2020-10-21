@@ -262,6 +262,9 @@ For information on the Comments plugin, see: [Comments plugin]({{site.baseurl}}/
 
 ### Export 0.1.0
 
+{% assign beta_feature = "The Export plugin" %}
+{% include misc/beta-note.md %}
+
 A new **Export** plugin is available for beta testing and allows users to export content from the editor as a rasterized PDF.
 
 This plugin will be available to all new and existing customers who have purchased a {{site.tiertwoplan}}, {{site.tierthreeplan}}, or {{site.enterpriseplan}}.

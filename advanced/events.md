@@ -96,8 +96,8 @@ The following events are provided by the {{ site.productname }} editor.
 | init                   | N/A                                                                                                                     | Fired when the editor is fully initialized.                                                                                                                                |
 | ScrollIntoView         | `{ elm: HTMLElement, alignToTop: boolean }`                                                                             | Fired when an element is about to be scrolled into view.                                                                                                                   |
 | AfterScrollIntoView          | `{ elm: HTMLElement, alignToTop: boolean }`                                                                             | Fired when an element has been scrolled into view. {{site.requires_5_2v}}                                                                                                                  |
-| ObjectResized          | `{ target: HTMLElement, width: number, height: number }`                                                                | Fired when an object (such as an image) has finished being resized.                                                                                                                |
-| ObjectResizeStart      | `{ target: HTMLElement, width: number, height: number }`                                                                | Fired when an object (such as an image) is about to be resized.                                                                                                                    |
+| ObjectResized          | `{ target: HTMLElement, width: number, height: number, origin: string }`                                                                | Fired when an object (such as an image) has finished being resized.                                                                                                                |
+| ObjectResizeStart      | `{ target: HTMLElement, width: number, height: number, origin: string }`                                                                | Fired when an object (such as an image) is about to be resized.                                                                                                                    |
 | SwitchMode             | `{ mode: string }`                                                                                                      | Fired when the editor mode is changed. The available modes are "design" and "readonly". Additional modes can be registered using {{ site.productname }} API ['tinymce.activeEditor.mode.register()']({{ site.baseurl }}/api/tinymce/tinymce.editormode/#register). |
 | ScrollWindow           | (Same data as the native [scroll event](https://developer.mozilla.org/en-US/docs/Web/API/Element/scroll_event))         | Fired when the window has scrolled.                                                                                                                                   |
 | ResizeWindow           | (Same data as the native [resize event](https://developer.mozilla.org/en-US/docs/Web/API/Window/resize_event))          | Fired when the window is resized.                                                                                                                                          |
@@ -158,6 +158,7 @@ The following plugins provide events.
   - [Autosave events](#autosaveevents)
   - [Character Map events](#charactermapevents)
   - [Comments events](#commentsevents)
+  - [Export events](#exportevents)
   - [Format Painter events](#formatpainterevents)
   - [Fullscreen events](#fullscreenevents)
   - [Import CSS events](#importcssevents)
@@ -199,6 +200,10 @@ The following event is provided by the [Comments plugin]({{ site.baseurl }}/plug
 | Name                    | Data | Description                      |
 | ----------------------- | ---- | -------------------------------- |
 | mce-tinycomments-update | N/A  | Fired when the comments sidebar is opened or closed. |
+
+### Export events
+
+{% include events/export-events.md %}
 
 ### Format Painter events
 

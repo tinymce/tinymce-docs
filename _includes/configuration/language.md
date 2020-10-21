@@ -91,7 +91,7 @@ The available language codes for use with this option are as follows:
 | Slovak                        | sk      | {{ site.tick }}                                                      |
 | Slovenian (Slovenia)          | sl_SI   | {{ site.tick }}                                                      |
 | Spanish                       | es      | {{ site.tick }}                                                      |
-| Spanish (Mexico)              | es_MX   | {{ site.tick }}                                                      |
+| Spanish (Mexico)              | es_MX   | {{ site.tick }} (Premium language pack deprecated in <br>{{site.productname}} 5.5 and newer) |
 | Swedish (Sweden)              | sv_SE   | {{ site.tick }}                                                      |
 | Tajik                         | tg      |                                                                      |
 | Tamil                         | ta      |                                                                      |

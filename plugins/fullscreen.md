@@ -12,6 +12,11 @@ controls: toolbar button, menu item
 
 This plugin adds full screen editing capabilities to {{site.productname}}. When the toolbar button is pressed the editable area will fill the browser's viewport. The plugin adds a toolbar button and a menu item `Fullscreen` under the `View` menu.
 
+Full screen mode can be toggled using the following keyboard shortcuts:
+
+* macOS: Command+Shift+F
+* Most other operating systems (such as Windows or Linux): Ctrl+Shift+F
+
 **Type:** `String`
 
 ## Basic setup
@@ -24,6 +29,12 @@ tinymce.init({
   toolbar: 'fullscreen'
 });
 ```
+
+## Configuration options
+
+The following configuration options affect the behavior of the {{pluginname}} plugin.
+
+{% include configuration/fullscreen-native.md %}
 
 {% include misc/plugin-toolbar-button-id-boilerplate.md %}
 

@@ -8,8 +8,7 @@ keywords: sort tables advanced advtable premium
 
 {% assign pluginname = "Advanced Tables" %}
 {% assign plugincode = "advtable" %}
-{{site.requires_5_1v}}
-
+{{site.requires_5_1v}}<br/>
 {{site.premiumplugin}}
 
 The `advtable` plugin is a premium plugin that extends the core [`table` plugin]({{site.baseurl}}/plugins/table/) by adding sort options for rows and columns. Tables can be sorted by row or column values using:
@@ -32,6 +31,7 @@ The plugin is capable of sorting:
 > **Note**: Currently, the sort function will treat cells with Alphanumeric data as Text data. This includes currency symbols which are text characters.
 
 ## Enabling the Advanced Tables plugin
+
 To enable the Advanced Tables plugin, add `advtable` to the list of plugins. For example:
 
 ```js

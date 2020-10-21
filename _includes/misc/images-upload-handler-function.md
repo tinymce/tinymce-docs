@@ -12,6 +12,11 @@ function example_image_upload_handler (blobInfo, success, failure, progress) {
   xhr.onload = function() {
     var json;
 
+    if (xhr.status === 403) {
+      failure('HTTP Error: ' + xhr.status, { remove: true });
+      return;
+    }
+
     if (xhr.status < 200 || xhr.status >= 300) {
       failure('HTTP Error: ' + xhr.status);
       return;

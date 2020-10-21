@@ -90,8 +90,38 @@ tinymce.init({
   toolbar: 'link',
   link_class_list: [
     {title: 'None', value: ''},
-    {title: 'Dog', value: 'dog'},
-    {title: 'Cat', value: 'cat'}
+    {title: 'External Link', value: 'ext_link'},
+    {title: 'Internal Support Link', value: 'int_sup_link'},
+    {title: 'Internal Marketing Link', value: 'int_mark_link'},
+    {title: 'Other Internal Link', value: 'int_other_link'}
+  ]
+});
+```
+
+#### Example of a nested list of link classes
+
+{{site.requires_5_5v}}
+
+To create a nested list, replace `value` with `menu` to add the top level of the list, then provide an array of items.
+
+For example:
+
+```js
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'link',
+  menubar: 'insert',
+  toolbar: 'link',
+  link_class_list: [
+    {title: 'None', value: ''},
+    {title: 'External Link', value: 'ext_link'},
+    {title: 'Internal Links',
+      menu: [
+        {title: 'Internal Support Link', value: 'int_sup_link'},
+        {title: 'Internal Marketing Link', value: 'int_mark_link'},
+        {title: 'Other Internal Link', value: 'int_other_link'}
+      ]
+    }
   ]
 });
 ```
@@ -159,8 +189,39 @@ tinymce.init({
   menubar: 'insert',
   toolbar: 'link',
   link_list: [
-    {title: 'My page 1', value: 'https://www.tiny.cloud'},
-    {title: 'My page 2', value: 'https://about.tiny.cloud'}
+    {title: '{{site.companyname}} Home Page', value: '{{site.url}}'},
+    {title: '{{site.companyname}} Blog', value: '{{site.url}}/blog'},
+    {title: '{{site.productname}} Documentation', value: '{{site.url}}/docs/'},
+    {title: '{{site.productname}} on Stack Overflow', value: '{{site.communitysupporturl}}'},
+    {title: '{{site.productname}} GitHub', value: 'https://github.com/tinymce/'}
+  ]
+});
+```
+
+#### Example of a nested list of link items
+
+{{site.requires_5_5v}}
+
+To create a nested list, replace `value` with `menu` to add the top level of the list, then provide an array of items.
+
+For example:
+
+```js
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'link',
+  menubar: 'insert',
+  toolbar: 'link',
+  link_list: [
+    {title: '{{site.companyname}} Home Page', value: '{{site.url}}'},
+    {title: '{{site.companyname}} Blog', value: '{{site.url}}/blog'},
+    {title: '{{site.productname}} Support resources',
+      menu: [
+        {title: '{{site.productname}} Documentation', value: '{{site.url}}/docs/'},
+        {title: '{{site.productname}} on Stack Overflow', value: '{{site.communitysupporturl}}'},
+        {title: '{{site.productname}} GitHub', value: 'https://github.com/tinymce/'}
+      ]
+    }
   ]
 });
 ```

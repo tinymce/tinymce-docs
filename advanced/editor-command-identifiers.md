@@ -65,6 +65,7 @@ The commands on the following table are provided by the {{site.productname}} edi
 | HiliteColor          | Changes the background color of the text. The value passed in should be the color.                                                                                                                                                                                                          |
 | FontName             | Font name to apply to the text. The value passed in should be the font family name.                                                                                                                                                                                                         |
 | FontSize             | Font size of the text. The value passed in should be a valid CSS font size.                                                                                                                                                                                                                 |
+| LineHeight           | Sets the line height of the text. The value passed in should be a valid CSS line height. {{ site.requires_5_5v }}                                                                                                                                                                           |
 | mceApplyTextcolor    | Applies text color or background color to the current selection. Requires an argument of either `'hilitecolor'` or `'forecolor'`, and the value of the color.                                                                                                                               |
 | mceRemoveTextcolor   | Removes the text color or background color from the current selection. Requires an argument of either `'hilitecolor'` or `'forecolor'`.                                                                                                                                                     |
 | RemoveFormat         | Removes any formats from the current selection.                                                                                                                                                                                                                                             |
@@ -75,6 +76,7 @@ The commands on the following table are provided by the {{site.productname}} edi
 | mceSetContent        | Sets the contents of the editor. The value is the contents to set as the editor contents.                                                                                                                                                                                                   |
 | mceToggleFormat      | Toggles a specified format by name. The value is the name of the format to toggle. For a list of options, see: [Content formatting options - Built-in formats]({{ site.baseurl }}/configure/content-formatting/#built-informats).                                                                               |
 | ToggleSidebar        | Closes the currrent sidebar, or toogles the sidebar if the sidebar name is provided as a value (_`<sidebar-name>`_).                                                                                                                                                                        |
+| ToggleToolbarDrawer  | Toggles the Toolbar Drawer. For information on toolbars, see: [User interface options - Toolbar]({{site.baseurl}}/configure/editor-appearance/#toolbar). {{site.requires_5_5v}}                                                                                                             |
 | Indent               | Indents the current selection.                                                                                                                                                                                                                                                              |
 | Outdent              | Outdents the current selection.                                                                                                                                                                                                                                                             |
 | InsertHorizontalRule | Inserts a horizontal rule at the cursor location or inplace of the current selection.                                                                                                                                                                                                       |
@@ -118,6 +120,7 @@ tinymce.activeEditor.execCommand('ForeColor', false, '#FF0000');
 tinymce.activeEditor.execCommand('HiliteColor', false, '#FF0000');
 tinymce.activeEditor.execCommand('FontName', false, 'courier new');
 tinymce.activeEditor.execCommand('FontSize', false, '30px');
+tinymce.activeEditor.execCommand('LineHeight', false, '1.4');
 tinymce.activeEditor.execCommand('mceApplyTextcolor', 'hilitecolor', '#FF0000');
 tinymce.activeEditor.execCommand('mceRemoveTextcolor', 'hilitecolor');
 tinymce.activeEditor.execCommand('RemoveFormat');
@@ -129,6 +132,7 @@ tinymce.activeEditor.execCommand('mceSetContent', false, 'My content');
 tinymce.activeEditor.execCommand('mceToggleFormat', false, 'bold');
 tinymce.activeEditor.execCommand('ToggleSidebar');  /* OR */
 tinymce.activeEditor.execCommand('ToggleSidebar', false, '<sidebar-name>');
+tinymce.activeEditor.execCommand('ToggleToolbarDrawer');
 tinymce.activeEditor.execCommand('Indent');
 tinymce.activeEditor.execCommand('Outdent');
 tinymce.activeEditor.execCommand('InsertHorizontalRule');
@@ -166,6 +170,7 @@ Commands are available for the following plugins:
 - [Code Sample](#codesample)
 - [Comments](#comments)
 - [Directionality](#directionality)
+- [Export](#export)
 - [Format Painter](#formatpainter)
 - [Full Page](#fullpage)
 - [Full Screen](#fullscreen)
@@ -258,9 +263,15 @@ The following commands require the [Directionality (`directionality`)]({{ site.b
 
 {% include commands/directionality-cmds.md %}
 
+#### Export
+
+The following commands require the [Export (`export`)]({{ site.baseurl }}/plugins/export/) plugin.
+
+{% include commands/export-cmds.md %}
+
 #### Format Painter
 
-The following commands require the [Format Painter (`formatpainter`)]({{ site.baseurl }}/plugins/comments/) plugin.
+The following commands require the [Format Painter (`formatpainter`)]({{ site.baseurl }}/plugins/formatpainter/) plugin.
 
 {% include commands/formatpainter-cmds.md %}
 
@@ -460,6 +471,7 @@ The following command states can be queried using the [queryCommandState]({{ sit
 | Strikethrough        | Returns `true` if the content is formatted using the same markup as the {{site.productname}} `Strikethrough` command.          |
 | Subscript            | Returns `true` if the content is formatted using the same markup as the {{site.productname}} `Subscript` command.              |
 | Superscript          | Returns `true` if the content is formatted using the same markup as the {{site.productname}} `Superscript` command.            |
+| ToggleToolbarDrawer  | Returns `true` if the Toolbar Drawer is open. The state can be controlled by the {{site.productname}} `ToggleToolbarDrawer` command. {{site.requires_5_5v}} |
 | Underline            | Returns `true` if the content is formatted using the same markup as the {{site.productname}} `Underline` command.              |
 
 **Examples**
@@ -479,6 +491,7 @@ tinymce.activeEditor.queryCommandState('Outdent');
 tinymce.activeEditor.queryCommandState('Strikethrough');
 tinymce.activeEditor.queryCommandState('Subscript');
 tinymce.activeEditor.queryCommandState('Superscript');
+tinymce.activeEditor.queryCommandState('ToggleToolbarDrawer');
 tinymce.activeEditor.queryCommandState('Underline');
 ```
 
@@ -498,17 +511,20 @@ tinymce.activeEditor.editorCommands.commands.value;
 
 The following command values can be queried using the [queryCommandValue]({{ site.baseurl }}/api/tinymce/tinymce.editorcommands/#querycommandvalue) API.
 
-| Command       | Description                                            |
-| --------------| ------------------------------------------------------ |
-| FontName      | Returns the font name of the current selection.        |​
-| FontSize      | Returns the font size of the current selection.        |​
-| ToggleSidebar | Returns the current state of sidebar (open or closed). |
+| Command       | Description                                                                |
+| --------------| -------------------------------------------------------------------------- |
+| FontName      | Returns the font name of the current selection.                            |
+| FontSize      | Returns the font size of the current selection.                            |
+| LineHeight    | Returns the line height of the current selection. {{ site.requires_5_5v }} |
+| ToggleSidebar | Returns the current state of sidebar (open or closed).                     |
+
 
 **Examples**
 
 ```js
 tinymce.activeEditor.queryCommandValue('FontName');
 tinymce.activeEditor.queryCommandValue('FontSize');
+tinymce.activeEditor.queryCommandValue('LineHeight');
 tinymce.activeEditor.queryCommandValue('ToggleSidebar');
 ```
 

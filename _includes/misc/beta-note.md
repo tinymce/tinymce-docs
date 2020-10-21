@@ -1,1 +1,1 @@
-> **Important**: {{beta_feature}} in Open Beta. To learn about our pre-release commitment, please read our [software licence agreement](https://about.tiny.cloud/legal/tiny-self-hosted-software-license-agreement-oem-saas/).
+> **Important**: {{beta_feature}} is in Open Beta. To learn about our pre-release commitment, please read our [software licence agreement](https://about.tiny.cloud/legal/tiny-self-hosted-software-license-agreement-oem-saas/).

@@ -34,8 +34,8 @@ For example:
 For information on:
 
 - Creating custom {{site.productname}} user interface components; such as toolbar buttons, menu items, and dialogs; see: [User interface components]({{site.baseurl}}/ui-components/).
-- Creating a plugin for {{site.productname}}, see: [Create a plugin for {{site.productname}}]({{site.productname}}/advanced/creating-a-plugin/).
-- The {{site.productname}} APIs, see: [The {{site.productname}} API Reference]({{site.productname}}/api/).
+- Creating a plugin for {{site.productname}}, see: [Create a plugin for {{site.productname}}]({{site.baseurl}}/advanced/creating-a-plugin/).
+- The {{site.productname}} APIs, see: [The {{site.productname}} API Reference]({{site.baseurl}}/api/).
 
 ### New line height support in the editor
 
@@ -193,7 +193,7 @@ For information on:
 
 For a list of available:
 
-- Image Tools toolbar buttons, see: [Image Tools plugin - Toolbar buttons]({{site.baseurl}}/imagetools/#toolbarbuttons).
+- Image Tools toolbar buttons, see: [Image Tools plugin - Toolbar buttons]({{site.baseurl}}/plugins/imagetools/#toolbarbuttons).
 - {{site.productname}} icons, see: [Icons Available for TinyMCE]({{site.baseurl}}/advanced/editor-icon-identifiers/).
 
 ### Improved navigation and deletion for media elements without the `media` plugin

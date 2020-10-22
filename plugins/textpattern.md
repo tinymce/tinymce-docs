@@ -71,7 +71,7 @@ This allows for patterns to be used to either apply a format or execute a comman
 ```js
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  plugin: 'textpattern link', // link is needed here for the following example to work correctly
+  plugin: 'textpattern link', // the link plugin is needed here for the following example to work correctly
   textpattern_patterns: [
     {start: '*', end: '*', format: 'italic'},
     {start: '**', end: '**', format: 'bold'},
@@ -103,9 +103,8 @@ The block patterns do not have an `end` property. This allows for patterns to be
 ```js
 tinymce.init({
   selector: 'textarea', // change this value according to your HTML
-  // make sure to have the required plugins here,
-  // in this case lists is necessary for text pattern
-  // on lists to work correctly
+  // make sure to have the required plugins here, in this case lists
+  // is necessary for text pattern on lists to work correctly
   plugin: 'textpattern lists',  
   textpattern_patterns: [
     {start: '#', format: 'h1'},

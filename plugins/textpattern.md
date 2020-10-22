@@ -31,8 +31,9 @@ This option allows configuring the text patterns that get matched by the `textpa
 
 There are three types of patterns: `inline`, `block`, and `replacement` patterns. Inline patterns have a `start` and an `end` text pattern whereas the block and replacement patterns only have a `start`. A user can specify the formats to be applied to the selection, commands to be executed, or text to be replaced.
 
-**When using list commands make sure that the [lists plugin]({{ site.baseurl }}/plugins/lists) is registered for normalized behavior across browsers.**
+> **Note**: When using list commands make sure that the [lists plugin]({{ site.baseurl }}/plugins/lists) is registered for normalized behavior across browsers.
 
+&nbsp;
 > **Note**: Formats and commands must be already registered with the editor. See the [formats]({{ site.baseurl }}/configure/content-formatting/#formats) and [commands]({{ site.baseurl }}/api/tinymce/tinymce.editorcommands/) documentation for more information.
 
 #### The default patterns for the `textpattern` plugin
@@ -47,7 +48,7 @@ There are three types of patterns: `inline`, `block`, and `replacement` patterns
   {start: '####', format: 'h4'},
   {start: '#####', format: 'h5'},
   {start: '######', format: 'h6'},
-  {start: '1. ', cmd: 'InsertOrderedList'}, //these configurations will need list plugin
+  {start: '1. ', cmd: 'InsertOrderedList'}, // these configurations will need list plugin
   {start: '* ', cmd: 'InsertUnorderedList'},
   {start: '- ', cmd: 'InsertUnorderedList' }
 ]
@@ -101,10 +102,13 @@ The block patterns do not have an `end` property. This allows for patterns to be
 
 ```js
 tinymce.init({
-  selector: 'textarea',          // => change this value according to your HTML
-  plugin: 'textpattern lists',  // => make sure to have the required plugins here,
-  textpattern_patterns: [      // in this case lists is necessary for text pattern
-    {start: '#', format: 'h1'},// on lists to work correctly
+  selector: 'textarea', // change this value according to your HTML
+  // make sure to have the required plugins here,
+  // in this case lists is necessary for text pattern
+  // on lists to work correctly
+  plugin: 'textpattern lists',  
+  textpattern_patterns: [
+    {start: '#', format: 'h1'},
     {start: '##', format: 'h2'},
     {start: '###', format: 'h3'},
     {start: '####', format: 'h4'},
@@ -125,7 +129,7 @@ tinymce.init({
 Using the configuration in this example:
 
 * `{start: '#', format: 'h1'}` - Typing `#`, some text, and then pressing `Enter` will convert the text to a `h1` heading.
-* Typing `1.` 'followed by a space' and your desired text, then pressing `Enter` will convert the text into an ordered list, with the original text as the first list item, and the new line as the second list item. Since we have specified `value`, this pattern will execute `editor.execCommand('InsertOrderedList', false, { 'list-style-type': 'decimal'})`.
+* Typing `1.` followed by a space, your desired text, and then pressing `Enter` will convert the text into an ordered list, with the original text as the first list item, and the new line as the second list item. Since we have specified `value`, this pattern will execute `editor.execCommand('InsertOrderedList', false, { 'list-style-type': 'decimal'})`.
 
 #### Replacements patterns
 
@@ -151,7 +155,6 @@ tinymce.init({
     {start: '(c)', replacement: '©'},
     {start: '//brb', replacement: 'Be Right Back'},
     {start: '//heading', replacement: '<h1 style="color: blue">Heading here</h1> <h2>Author: Name here</h2> <p><em>Date: 01/01/2000</em></p> <hr />'},
-    {start: 'div>p*3', replacement: '<div> <p>First</p> <p>Second</p> <p>Third</p> </div>'}, // Emmet like syntax
   ]
 });
 ```

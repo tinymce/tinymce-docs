@@ -48,7 +48,7 @@ There are three types of patterns: `inline`, `block`, and `replacement` patterns
   {start: '####', format: 'h4'},
   {start: '#####', format: 'h5'},
   {start: '######', format: 'h6'},
-  {start: '1. ', cmd: 'InsertOrderedList'}, // these configurations will need list plugin
+  {start: '1. ', cmd: 'InsertOrderedList'}, // these configurations will need the lists plugin
   {start: '* ', cmd: 'InsertUnorderedList'},
   {start: '- ', cmd: 'InsertUnorderedList' }
 ]

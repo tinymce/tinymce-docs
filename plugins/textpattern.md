@@ -31,9 +31,11 @@ This option allows configuring the text patterns that get matched by the `textpa
 
 There are three types of patterns: `inline`, `block`, and `replacement` patterns. Inline patterns have a `start` and an `end` text pattern whereas the block and replacement patterns only have a `start`. A user can specify the formats to be applied to the selection, commands to be executed, or text to be replaced.
 
-> **Note**: When using list commands make sure that the [lists plugin]({{ site.baseurl }}/plugins/lists) is registered for normalized behavior across browsers.
+> **Important**: Any formats or commands used by `textpatterns` need to be registered with the editor when it is initialized. This may include enabling relevant plugins, such as the `lists` plugin.
+> For information on:
 >
-**Note**: Formats and commands must be already registered with the editor. See the [formats]({{ site.baseurl }}/configure/content-formatting/#formats) and [commands]({{ site.baseurl }}/api/tinymce/tinymce.editorcommands/) documentation for more information.
+> - Registering formats for {{site.productname}}, see: [Content formatting options - `formats`]({{site.baseurl}}/configure/content-formatting/#formats).
+> - Registering commands for {{site.productname}}, see: [{{site.productname}} APIs - EditorCommands]({{site.baseurl}}/api/tinymce/tinymce.editorcommands/).
 
 #### The default patterns for the `textpattern` plugin
 

@@ -52,7 +52,11 @@ The done callback needs to take an object of the form:
 
 ```js
 {
-  conversationUid: string // the new conversation uid
+  conversationUid: string, // the new conversation uid
+  // optional error callback which will be executed in case the new conversation could not be created
+  onError: function (err) { ... },
+  // optional success callback which will be executed when the new conversation is successfully created
+  onSuccess: function (uid) { ... }
 }
 ```
 

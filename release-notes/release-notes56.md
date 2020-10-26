@@ -40,6 +40,11 @@ The {{site.productname}} 5.6 release includes an accompanying release of the **<
 
 For information on the <<Premium Plugin Name>> plugin, see: [<<Premium Plugin Name>> plugin]({{site.baseurl}}/plugins/<<Premium Plugin Name>>/).
 
+### Comments 2.3.0
+
+The {{site.productname}} 5.5 release includes an accompanying release of the **Comments** premium plugin.
+
+**Comments** 2.3.0 introduces `onError` and `onSuccess` callbacks for the `tinycomments_create` "done" function
 ## Accompanying Premium self-hosted server-side component changes
 
 The {{site.productname}} 5.6 release includes accompanying changes affecting the {{site.productname}} **self-hosted** services for the following plugins:

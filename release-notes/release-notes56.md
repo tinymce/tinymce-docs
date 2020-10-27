@@ -44,13 +44,13 @@ For information on the <<Premium Plugin Name>> plugin, see: [<<Premium Plugin Na
 
 The {{site.productname}} 5.6 release includes an accompanying release of the **Comments** premium plugin.
 
-**Comments** 2.3.0 introduces `onError` and `onSuccess` callbacks for the `tinycomments_create` "done" function
+**Comments** 2.3.0 introduces `onError` and `onSuccess` callbacks for the `tinycomments_create` "done" function.
 
 **Comments** 2.3.0 also provides the following bug fixes:
 
 - Fixed nested and overlapping comments breaking the content.
 - Fixed long comments getting cut off.
-- Fixed scrollbar appearing in textarea when writing a comment.
+- Fixed a scrollbar appearing in the textarea when writing a comment.
 
 For information on the Comments plugin, see: [Comments plugin]({{site.baseurl}}/plugins/comments/).
 

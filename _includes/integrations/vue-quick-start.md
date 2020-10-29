@@ -3,6 +3,8 @@
 The [Official {{site.productname}} Vue.js component](https://github.com/tinymce/tinymce-vue) integrates {{site.productname}} into Vue.js projects.
 This procedure creates a [basic Vue.js application](https://cli.vuejs.org/guide/creating-a-project.html#vue-create) containing a {{site.productname}} editor based on our [Basic example]({{site.baseurl}}/demo/basic-example/).
 
+Version 4 of the `tinymce-vue` package supports Vue.js 3.x, but does not support Vue.js 2.x. For Vue.js 2.x applications, use `tinymce-vue` version 3.
+
 For examples of the {{site.productname}} integration, visit [the tinymce-vue storybook](https://tinymce.github.io/tinymce-vue/).
 
 ### Prerequisites
@@ -21,21 +23,33 @@ This procedure requires:
     ```sh
     $ npm install -g @vue/cli
     ```
+
 2. Create a new Vue.js project named `tinymce-vue-demo`.
 
-    ```
+    ```sh
     $ vue create --default tinymce-vue-demo
     ```
+
 3. Change into the newly created directory.
 
     ```sh
     $ cd tinymce-vue-demo
     ```
+
 4. Install the `tinymce-vue` package and save it to your `package.json` with `--save`.
 
-    ```sh
-    $ npm install --save @tinymce/tinymce-vue
-    ```
+    * For Vue.js 3.x users:
+
+      ```sh
+      $ npm install --save "@tinymce/tinymce-vue@^4"
+      ```
+
+    * For Vue.js 2.x users:
+
+      ```sh
+      $ npm install --save "@tinymce/tinymce-vue@^3"
+      ```
+
 5. Using a text editor, open `/path/to/tinymce-vue-demo/src/App.vue`.
 
     1. Add a {{site.productname}} configuration to the `<template>` using the `<editor>` tag.
@@ -44,7 +58,7 @@ This procedure requires:
 
     For example:
 
-    ```html
+    ```jsx
     <template>
       <div id="app">
         <img alt="Vue logo" src="./assets/logo.png">
@@ -78,6 +92,7 @@ This procedure requires:
     }
     </script>
     ```
+
     This {{site.productname}} editor configuration should replicate the example on the [Basic example page]({{site.baseurl}}/demo/basic-example/).
 6. Provide access to {{site.productname}} using {{site.cloudname}} or by self-hosting {{site.productname}}.
 
@@ -98,6 +113,7 @@ This procedure requires:
       * **Deploy {{site.productname}} independent of the Vue.js application**
 
         To use an independent deployment of {{site.productname}}, add a script to either the `<head>` or the end of the `<body>` of the HTML file, such as:
+
         ```html
         <script src="/path/to/tinymce.min.js"></script>
         ```

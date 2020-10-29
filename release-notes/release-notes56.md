@@ -11,7 +11,7 @@ These release notes provide an overview of the changes for {{site.productname}} 
 - [TinyMCE 5.6 new features and enhancements](#tinymce56newfeaturesandenhancements)
 - [Accompanying Premium Plugin changes](#accompanyingpremiumpluginchanges)
 - [Accompanying Premium self-hosted server-side component changes](#accompanyingpremiumself-hostedserver-sidecomponentchanges)
-- [Minor changes for TinyMCE 5.6](#minorchangesfortinymce55)
+- [Minor changes for TinyMCE 5.6](#minorchangesfortinymce56)
 - [General bug fixes](#generalbugfixes)
 - [Security fixes](#securityfixes)
 - [Deprecated features](#deprecatedfeatures)
@@ -26,7 +26,7 @@ The following new features and enhancements were added for the {{site.productnam
 
 ### New `format_empty_lines` option for content formatting
 
-A new `format_empty_lines` option allows empty lines to be formatted for mult-line selections when applying an `inline` format such as `bold`.
+A new `format_empty_lines` option allows empty lines to be formatted for mult-line selections when applying an "inline" format such as bold (`<strong>`).
 
 For information on the `format_empty_lines` option, see: [Content Formatting - `format_empty_lines`]({{ site.baseurl }}/configure/content-formatting/#format_empty_lines).
 

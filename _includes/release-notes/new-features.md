@@ -65,7 +65,7 @@ The new UI framework has a stricter API for creating components, which means tha
 
 TinyMCE  5.0 uses a new theme **Silver** and a new skin **Oxide** which uses more modern CSS such as `flexbox`.
 
-A **Skin** in Tinymce is used to make changes to the appearance of the editor, for example, colors, margins, paddings, fonts, icons, etc.
+A **Skin** in TinyMCE is used to make changes to the appearance of the editor, for example, colors, margins, paddings, fonts, icons, etc.
 
 A **Theme** creates the editor construction (left, top, bottom, or right of the editing area - vertical or horizontal, inline or outside, etc.).
 

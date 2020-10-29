@@ -3,7 +3,7 @@ layout: default
 title: Content appearance options
 title_nav: Content appearance options
 description_short:
-description: Configure the appearance of content inside TinyMCe's editable area.
+description: Configure the appearance of content inside TinyMCE's editable area.
 ---
 
 {% include configuration/body-class.md %}

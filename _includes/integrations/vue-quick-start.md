@@ -5,7 +5,30 @@ This procedure creates a [basic Vue.js application](https://cli.vuejs.org/guide/
 
 Version 4 of the `tinymce-vue` package supports Vue.js 3.x, but does not support Vue.js 2.x. For Vue.js 2.x applications, use `tinymce-vue` version 3.
 
-For examples of the {{site.productname}} integration, visit [the tinymce-vue storybook](https://tinymce.github.io/tinymce-vue/).
+### TinyMCE Vue.js integration live examples
+
+For examples of the {{site.productname}} Vue.js 2.x integration, visit: [the tinymce-vue storybook](https://tinymce.github.io/tinymce-vue/).
+
+For examples of the {{site.productname}} Vue.js 3.x integration:
+1. Clone the `tinymce/tinymce-vue` GitHub repository. For example:
+
+    ```sh
+    $ git clone https://github.com/tinymce/tinymce-vue.git
+    ```
+
+2. Install the required packages using `yarn`. For example:
+
+    ```sh
+    $ yarn install
+    ```
+
+3. To start the demo server, run:
+
+    ```sh
+    $ yarn demo
+    ```
+
+The `tinymce-vue` demo is now running. Visit: http://localhost:3001.
 
 ### Prerequisites
 

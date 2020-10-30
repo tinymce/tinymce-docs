@@ -8,4 +8,6 @@ description: These settings change the way the editor handles the input and outp
 
 {% include configuration/formats.md %}
 
+{% include configuration/format-empty-lines.md %}
+
 {% include configuration/indentation.md %}

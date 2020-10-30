@@ -26,7 +26,7 @@ The following new features and enhancements were added for the {{site.productnam
 
 ### New `format_empty_lines` option for content formatting
 
-A new `format_empty_lines` option allows empty lines to be formatted for mult-line selections when applying an "inline" format such as bold (`<strong>`).
+A new `format_empty_lines` option allows empty lines to be formatted for multi-line selections when applying an "inline" format such as bold (`<strong>`).
 
 For information on the `format_empty_lines` option, see: [Content Formatting - `format_empty_lines`]({{ site.baseurl }}/configure/content-formatting/#format_empty_lines).
 

@@ -247,11 +247,11 @@ tinymce.init({
   autosave_retention: '2m',
   image_advtab: true,
   link_list: [
-    { title: 'My page 1', value: 'http://www.tinymce.com' },
+    { title: 'My page 1', value: 'https://www.tiny.cloud' },
     { title: 'My page 2', value: 'http://www.moxiecode.com' }
   ],
   image_list: [
-    { title: 'My page 1', value: 'http://www.tinymce.com' },
+    { title: 'My page 1', value: 'https://www.tiny.cloud' },
     { title: 'My page 2', value: 'http://www.moxiecode.com' }
   ],
   image_class_list: [

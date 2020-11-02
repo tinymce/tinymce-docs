@@ -48,9 +48,9 @@ For example, this is good:
 
 ```js
 tinymce.init({
-  selector: "textarea", // change this value according to your HTML
-  plugins: "codesample",
-  toolbar: "codesample",
+  selector: 'textarea', // change this value according to your HTML
+  plugins: 'codesample',
+  toolbar: 'codesample',
 });
 ```
 

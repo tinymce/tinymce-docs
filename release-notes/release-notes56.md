@@ -30,6 +30,12 @@ A new `format_empty_lines` option allows empty lines to be formatted for multi-l
 
 For information on the `format_empty_lines` option, see: [Content Formatting - `format_empty_lines`]({{ site.baseurl }}/configure/content-formatting/#format_empty_lines).
 
+### New optional `name` field for the style_formats setting
+
+A new optional `name` field that enables you to set a specific name to the format when it's being registered.
+
+For information on the `name` field, see: [User interface - `style_formats`]({{ site.baseurl }}/configure/editor-appearance/#style_formats).
+
 ## Accompanying Premium Plugin changes
 
 The following premium plugin updates were released alongside {{site.productname}} 5.6.

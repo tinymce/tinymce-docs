@@ -15,7 +15,7 @@ To merge custom styles with the default `styles_format` values, set [`style_form
 **Type:** `Array`
 **Default:**
 
-The following is the default value for `style_formats`:
+The following is the default value for `style_formats` where it is using references to existing formats:
 
 ```js
 style_formats: [

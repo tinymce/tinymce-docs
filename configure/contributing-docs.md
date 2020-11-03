@@ -102,7 +102,7 @@ keywords:          // Space-separated list of keywords in the content.
 
 ## Recommended tools
 
-The following tools are recommends for significant edits to the documentation. The warnings and notifications from these tools should only be used as _guides_, not as _rules_.
+The following tools are recommended for significant edits to the documentation. The warnings and notifications from these tools should only be used as _guides_, not as _rules_.
 
 - A Spelling Checker (US English). Note: Some IDE/text editor spelling checkers work well with Pascal-case, Camel-case, and Snake-case.
 - Alex - [Alex.js integrations](https://alexjs.com/#integrations).

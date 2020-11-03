@@ -5,8 +5,8 @@ This option allows you to define custom items for the `styleselect` dropdown too
 
 There are four types of items the array can contain:
 
-* **Style:** The item must have a `title` and an optional `name` to specify what it will be registered as. Then it needs the other necessary fields to [specify a new format]({{ site.baseurl }}/configure/content-formatting/#formattype). If the name is specified it will be prefixed with `custom-` this is to ensure that it doesn't clash with the default editor formats. The item will be rendered in the UI as a clickable item that applies the given format.
-* **Style reference:** The item must have a `title` and a `format` with refers to a pre-registered editor [format]({{ site.baseurl }}/configure/content-formatting/#formats). The item will be rendered in the UI as a clickable item that applies the given format.
+* **Style:** The item must have a `title` and an optional `name` to specify what it will be registered as. Then it needs the other necessary fields to [specify a new format]({{ site.baseurl }}/configure/content-formatting/#formattype). If the name is specified it will be prefixed with `custom-` this is to ensure that it doesn't clash with the default editor formats, if you give it a unique name you can then refer to it using the formatting api. The item will be rendered in the UI as a clickable item that applies the given format.
+* **Style reference:** The item must have a `title` and a `format` which refers to a pre-registered editor [format]({{ site.baseurl }}/configure/content-formatting/#formats). The item will be rendered in the UI as a clickable item that applies the given format.
 * **Nested menu:** The item must have a `title` and an `items` array that contains other items that will be rendered as a sub-menu.
 * **Group heading:** The item must only have a `title` and will be rendered as a non-clickable heading within the menu. This is useful for grouping items without using nested menus.
 

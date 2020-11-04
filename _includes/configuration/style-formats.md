@@ -13,6 +13,7 @@ There are four types of items the array can contain:
 To merge custom styles with the default `styles_format` values, set [`style_formats_merge`]({{ site.baseurl }}/configure/editor-appearance/#style_formats_merge) to `true`.
 
 **Type:** `Array`
+
 **Default:**
 
 The following is the default value for `style_formats` where it is using references to existing formats:

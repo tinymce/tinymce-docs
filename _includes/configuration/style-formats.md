@@ -52,6 +52,23 @@ style_formats: [
 ]
 ```
 
+## Example: Using `style_formats`
+
+This example shows how to append 3 new style formats.
+
+```js
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  style_formats: [
+    {title: 'Bold text', inline: 'b'},
+    {title: 'Red text', inline: 'span', styles: {color: '#ff0000'}},
+    {name: 'my-inline', title: 'My inline', inline: 'span', classes: [ 'my-inline' ]}
+  ],
+  // The following option is used to append style formats rather than overwrite the default style formats.
+  style_formats_merge: true
+});
+```
+
 ## Interactive examples
 
 This example shows you how to:
@@ -59,8 +76,8 @@ This example shows you how to:
 - Override the built-in [formats]({{ site.baseurl }}/configure/content-formatting/#formats).
 - Add some custom styles to the `styleselect` dropdown toolbar button and the `formats` menu item using the [style_formats]({{ site.baseurl }}/configure/editor-appearance/#style_formats) configuration option.
 
-{% include live-demo.html id="format-custom" %}
+{% include live-demo.html id="format-custom" tab="js" %}
 
 This example shows you how to edit HTML5 content such as sections and articles.
 
-{% include live-demo.html id="format-html5" %}
+{% include live-demo.html id="format-html5" tab="js" %}

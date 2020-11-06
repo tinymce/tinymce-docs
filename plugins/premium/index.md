@@ -2,8 +2,8 @@
 layout: default
 title: Premium plugins for TinyMCE
 title_nav: Premium plugins
-description_short: This section will help you configure and extend your editor instance.
-description: TinyMCE is an incredibly powerful, flexible and customizable rich text editor. This section will help you configure and extend your editor instance.
+description_short: TinyMCE premium plugins
+description: This section lists the premium plugins provided by Tiny.
 type: folder
 ---
 

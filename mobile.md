@@ -39,7 +39,7 @@ Add the following `meta` tag to the `head` of pages using {{site.productname}} t
 <meta name="viewport" content="width=device-width, initial-scale=1">
 ```
 
-To set mobile specific settings, add the setting to the [`mobile`]({{site.baseurl}}/docs/configure/editor-appearance/#mobile) configuration, such as:
+To set mobile specific settings, add the setting to the [`mobile`]({{site.baseurl}}/configure/editor-appearance/#mobile) configuration, such as:
 
 ```js
 tinymce.init({
@@ -51,6 +51,7 @@ tinymce.init({
 ```
 
 ### Mobile defaults for selected settings
+
 These mobile-specific default values have been set to disable unsupported settings for mobile devices or to provide the best experience without configuration from developers.
 
 The following settings have mobile-specific default values:

@@ -9,6 +9,8 @@ keywords: plugin <plugincode> etc.
 {% comment %} Replace content in angled brackets (<>) and remove my comments before committing!!! {% endcomment %}
 {% assign pluginname = "<Plugin Name>" %} {% comment %} Official product name as a string. Can be used in content using the {pluginname} variable {% endcomment %}
 {% assign plugincode = "<plugincode>" %} {% comment %} The plugin identifier used to add the plugin to an editor using the `plugin` option. Provide as a string. Can be used in content using the {plugincode} variable {% endcomment %}
+{% assign plugincategory = "premium"|"opensource" %}
+
 {{site.premiumplugin}}
 
 {% comment %}

@@ -2,8 +2,8 @@
 layout: default
 title: Open source for TinyMCE
 title_nav: Open source plugins
-description_short: This section will help you configure and extend your editor instance.
-description: TinyMCE is an incredibly powerful, flexible and customizable rich text editor. This section will help you configure and extend your editor instance.
+description_short: TinyMCE open source plugins
+description: This section lists the open source plugins provided with TinyMCE.
 type: folder
 ---
 

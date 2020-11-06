@@ -271,7 +271,7 @@ tinymce.init({
 });
 ```
 
-#{% include configuration/table-column-resizing.md %}
+{% include configuration/table-column-resizing.md %}
 
 ### `table_class_list`
 

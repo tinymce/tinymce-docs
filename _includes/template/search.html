@@ -1,82 +1,57 @@
 <style>
-.new-search-input {
-  text-align: center;
-  width: 50%;
-}
+    .new-search-input {
+        text-align: center;
+        width: 50%;
+    }
 
-.new-search-input input {
-  background-image: url("{{ site.baseurl }}/images/search.svg");
-  background-repeat: no-repeat;
-  background-position: 670px center;
-  background-size: 20px;
-  background-color: white;
-  display: inline-block;
-  height: 40px;
-  text-align: left;
-  padding: 12px 40px 12px 12px;
-  border-radius: 3px;
-  border: 1px solid #B9B9B9;
-  width: 700px;
-  margin-left: -54px;
-}
+    .new-search-input input {
+        background-image: url("{{ site.baseurl }}/images/search.svg");
+        background-repeat: no-repeat;
+        background-position: 670px center;
+        background-size: 20px;
+        background-color: white;
+        display: inline-block;
+        height: 40px;
+        text-align: left;
+        padding: 12px 40px 12px 12px;
+        border-radius: 3px;
+        border: 1px solid #B9B9B9;
+        width: 700px;
+        margin-left: -54px;
+    }
 
-.modern-header .algolia-autocomplete {
-  width: 100%;
-  direction: rtl !important;
-}
+    .modern-header .algolia-autocomplete {
+        width: 100%;
+        direction: rtl !important;
+    }
 
-.modern-header .algolia-autocomplete .ds-dropdown-menu {
-  max-width: 850px;
-  width: 850px;
-  left: 0 !important;
-  right: 0 !important;
-  margin-left: auto;
-  margin-right: auto;
-}
+    .modern-header .algolia-autocomplete.algolia-autocomplete-right .ds-dropdown-menu {
+        max-width: 850px;
+        width: 850px;
+    }
 
-.modern-header .algolia-docsearch-suggestion--category-header {
-  display: none !important;
-}
+    .modern-header .algolia-docsearch-suggestion--category-header {
+        display: none !important;
+    }
 
-.modern-header .algolia-docsearch-suggestion--title {
-  font-weight: normal !important;
-}
+    .modern-header .algolia-docsearch-suggestion--title {
+        font-weight: normal !important;
+    }
 
-.modern-header .algolia-docsearch-suggestion--subcategory-column-text {
-  color: #000;
-}
+    .modern-header .algolia-docsearch-suggestion--subcategory-column-text {
+        color: #000;
+    }
 
-.algolia-autocomplete .ds-dropdown-menu::before {
-  left: 50%;
-  right: auto !important;
-}
+    .algolia-autocomplete.algolia-autocomplete-right .ds-dropdown-menu::before {
+        left: 50%;
+        right: auto !important;
+    }
 
-@media screen and (max-width: 1126px) {
-  .new-search-input {
-    max-width: 50%;
-    z-index: 1000;
-  }
-  .modern-header .algolia-autocomplete .ds-dropdown-menu {
-    min-width: 300px;
-    max-width: 90vw;
-    width: 90vw;
-  }
-  .new-search-input input {
-    background-image: url("{{ site.baseurl }}/images/search.svg");
-    background-repeat: no-repeat;
-    background-position: right 6px bottom 50%;
-    background-size: 20px;
-    background-color: white;
-    display: inline-block;
-    height: 40px;
-    text-align: left;
-    padding: 6px 30px 6px 6px;
-    border-radius: 3px;
-    border: 1px solid #B9B9B9;
-    width: 95%;
-    margin-left: -54px;
-  }
-}
+    @media screen and (max-width: 1126px) {
+        .new-search-input {
+            display: none;
+        }
+    }
 </style>
 <div class="new-search-input">
     <input type="text" name="seach" value="" id="searchInput" placeholder="Search in documentation" tabindex="1">

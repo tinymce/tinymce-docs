@@ -31,11 +31,9 @@ This option allows configuring the text patterns that get matched by the `textpa
 
 There are three types of patterns: `inline`, `block`, and `replacement` patterns. Inline patterns have a `start` and an `end` text pattern whereas the block and replacement patterns only have a `start`. A user can specify the formats to be applied to the selection, commands to be executed, or text to be replaced.
 
-> **Important**: Any formats or commands used by `textpatterns` need to be registered with the editor when it is initialized. This may include enabling relevant plugins, such as the `lists` plugin.
-> For information on:
->
-> * Registering formats for {{site.productname}}, see: [Content formatting options - `formats`]({{site.baseurl}}/configure/content-formatting/#formats).
-> * Registering commands for {{site.productname}}, see: [{{site.productname}} APIs - EditorCommands]({{site.baseurl}}/api/tinymce/tinymce.editorcommands/).
+When using list commands make sure that the [lists plugin]({{ site.baseurl }}/plugins/lists) is registered for normalized behavior across browsers.
+
+> **Note**: Formats and commands must be already registered with the editor. See the [formats]({{ site.baseurl }}/configure/content-formatting/#formats) and [commands]({{ site.baseurl }}/api/tinymce/tinymce.editorcommands/) documentation for more information.
 
 #### The default patterns for the `textpattern` plugin
 
@@ -49,7 +47,6 @@ There are three types of patterns: `inline`, `block`, and `replacement` patterns
   {start: '####', format: 'h4'},
   {start: '#####', format: 'h5'},
   {start: '######', format: 'h6'},
-  // The following text patterns require the `lists` plugin
   {start: '1. ', cmd: 'InsertOrderedList'},
   {start: '* ', cmd: 'InsertUnorderedList'},
   {start: '- ', cmd: 'InsertUnorderedList' }
@@ -73,8 +70,7 @@ This allows for patterns to be used to either apply a format or execute a comman
 ```js
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  // The `link` plugin is required for the `createLink` command
-  plugin: 'textpattern link',
+  plugin: 'textpattern',
   textpattern_patterns: [
     {start: '*', end: '*', format: 'italic'},
     {start: '**', end: '**', format: 'bold'},
@@ -95,7 +91,7 @@ Block patterns must have the following:
 
 * A `start`
 * A `format` or a `cmd`
-  * If `cmd` is specified, an optional `value` property is allowed.
+   * If `cmd` is specified, an optional `value` property is allowed.
 
 The block patterns do not have an `end` property. This allows for patterns to be used to either apply a block format or execute a command, optionally, with the given value.
 
@@ -105,9 +101,8 @@ The block patterns do not have an `end` property. This allows for patterns to be
 
 ```js
 tinymce.init({
-  selector: 'textarea', // change this value according to your HTML
-  // The `lists` plugin is required for list-related text patterns
-  plugin: 'textpattern lists',  
+  selector: 'textarea',  // change this value according to your HTML
+  plugin: 'textpattern lists',
   textpattern_patterns: [
     {start: '#', format: 'h1'},
     {start: '##', format: 'h2'},
@@ -130,7 +125,7 @@ tinymce.init({
 Using the configuration in this example:
 
 * `{start: '#', format: 'h1'}` - Typing `#`, some text, and then pressing `Enter` will convert the text to a `h1` heading.
-* Typing `1.` followed by a space, the desired text, and then pressing `Enter`; the editor will convert the text into an ordered list, with the original text as the first list item, and the new line as the second list item. Since we have specified `value`, this pattern will execute `editor.execCommand('InsertOrderedList', false, { 'list-style-type': 'decimal'})`.
+* Typing `1. `, some text, and then pressing `Enter` will convert the text into an ordered list, with the original text as the first list item, and the new line as the second list item. Since we have specified `value`, this pattern will execute `editor.execCommand('InsertOrderedList', false, { 'list-style-type': 'decimal'})`.
 
 #### Replacements patterns
 
@@ -142,6 +137,7 @@ Replacement patterns must have the following:
 Whether a replacement pattern inserts a block or inline element depends on what the `replacement` string is.
 
 > **Note**: Replacement patterns are executed on either pressing the **spacebar** or the **Enter** key.
+
 
 ##### Example: Using `textpattern` replacement patterns
 

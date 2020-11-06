@@ -107,7 +107,7 @@ $(document).on('focusin', function(e) {
 });
 ```
 
-This code is required because jQuery blocks all `focusin` calls from elements outside the dialog. For a working example, [try this {{site.productname}} fiddle](http://fiddle.tiny.cloud/rsdaab/840).
+This code is required because jQuery blocks all `focusin` calls from elements outside the dialog. For a working example, [try this {{site.productname}} fiddle](http://fiddle.tinymce.com/rsdaab/840).
 
 ## A note about integrations
 

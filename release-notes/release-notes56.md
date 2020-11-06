@@ -8,10 +8,10 @@ keywords: releasenotes bugfixes
 
 These release notes provide an overview of the changes for {{site.productname}} 5.6, including:
 
-- [TinyMCE 5.6 new features and enhancements](#tinymce55newfeaturesandenhancements)
+- [TinyMCE 5.6 new features and enhancements](#tinymce56newfeaturesandenhancements)
 - [Accompanying Premium Plugin changes](#accompanyingpremiumpluginchanges)
 - [Accompanying Premium self-hosted server-side component changes](#accompanyingpremiumself-hostedserver-sidecomponentchanges)
-- [Minor changes for TinyMCE 5.6](#minorchangesfortinymce55)
+- [Minor changes for TinyMCE 5.6](#minorchangesfortinymce56)
 - [General bug fixes](#generalbugfixes)
 - [Security fixes](#securityfixes)
 - [Deprecated features](#deprecatedfeatures)
@@ -31,6 +31,18 @@ The new `image_file_types` option allows different image file extensions to be r
 For information on the `image_file_types` and `smart_paste` options for the PowerPaste plugin, see: [PowerPaste plugin]({{site.baseurl}}/plugins/powerpaste/).
 
 For information on the `image_file_types` and `smart_paste` options for the Paste plugin, see: [Paste plugin]({{site.baseurl}}/plugins/paste/).
+
+### New `format_empty_lines` option for content formatting
+
+A new `format_empty_lines` option allows empty lines to be formatted for multi-line selections when applying an "inline" format such as bold (`<strong>`).
+
+For information on the `format_empty_lines` option, see: [Content Formatting - `format_empty_lines`]({{ site.baseurl }}/configure/content-formatting/#format_empty_lines).
+
+### New optional `name` field for the `style_formats` option
+
+A new optional `name` field that sets a specific name to the format when it's being registered using the `style_formats` option.
+
+For information on the `name` field, see: [User interface - `style_formats`]({{ site.baseurl }}/configure/editor-appearance/#style_formats).
 
 ## Accompanying Premium Plugin changes
 

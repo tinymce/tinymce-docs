@@ -35,7 +35,7 @@ These settings affect the execution of the `link` plugin. Predefined links, targ
 
 This option allows you to set a default `target` value for links when inserting/editing a link via the link dialog. If the value of `default_link_target` matches a value specified by the [`target_list`](#target_list) option, that item will be set as the default item for the targets dropdown in the link dialog.
 
-> **Note**: This option also applies to the [autolink]({{ site.baseurl }}/plugins/autolink) plugin.
+> **Note**: This option also applies to the [autolink]({{site.baseurl}}/plugins/opensource/autolink) plugin.
 
 **Type:** `String`
 
@@ -154,7 +154,7 @@ tinymce.init({
 
 This option allows you to set a default protocol for links when inserting/editing a link via the link dialog. The protocol will apply to any links where the protocol has not been specified and the prefix prompt has been accepted.
 
-> **Note**: This option also applies to the [autolink]({{ site.baseurl }}/plugins/autolink) plugin.
+> **Note**: This option also applies to the [autolink]({{site.baseurl}}/plugins/opensource/autolink) plugin.
 
 **Type:** `String`
 

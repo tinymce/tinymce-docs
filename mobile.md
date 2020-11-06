@@ -20,10 +20,10 @@ The new mobile experience comes with a number of user interface changes in addit
 
 The new mobile experience allows most of the {{site.productname}} plugins to work on mobile devices, except for:
 
-* [Comments]({{site.baseurl}}/plugins/comments/).
-* [Image tools]({{site.baseurl}}/plugins/imagetools/).
-* [MoxieManager]({{site.baseurl}}/plugins/moxiemanager/).
-* [Permanent Pen]({{site.baseurl}}/plugins/permanentpen/).
+* [Comments]({{site.baseurl}}/plugins/premium/comments/).
+* [Image tools]({{site.baseurl}}/plugins/opensource/imagetools/).
+* [MoxieManager]({{site.baseurl}}/plugins/premium/moxiemanager/).
+* [Permanent Pen]({{site.baseurl}}/plugins/premium/permanentpen/).
 
 {{site.productname}} will detect the platform and show an optimal UI experience based on the device type and screen size.
 
@@ -58,7 +58,7 @@ The following settings have mobile-specific default values:
 * [`menubar`]({{site.baseurl}}/configure/editor-appearance/#menubar) - defaults to `false` on mobile phones.
 * [`toolbar_mode`]({{site.baseurl}}/configure/editor-appearance/#toolbar_mode) - defaults to `scrolling` on mobile devices. The toolbar will [side-scroll by default](#sidescrollingtoolbarsonmobile).
 * [`toolbar_sticky`]({{site.baseurl}}/configure/editor-appearance/#toolbar_sticky) - Sticky Toolbar is not supported on mobile devices and defaults to `false`.
-* [`table_grid`]({{site.baseurl}}/plugins/table/#table_grid) - Table grid is not supported on mobile devices and defaults to `false`. When creating tables on mobile, a dialog is shown instead of the table grid.
+* [`table_grid`]({{site.baseurl}}/plugins/opensource/table/#table_grid) - Table grid is not supported on mobile devices and defaults to `false`. When creating tables on mobile, a dialog is shown instead of the table grid.
 * [`resize`]({{site.baseurl}}/configure/editor-appearance/#resize) - Resizing is not supported on mobile devices and defaults to `false`.
 * [`object_resizing`]({{site.baseurl}}/configure/advanced-editing-behavior/#object_resizing) - Object resizing is not supported on mobile devices and defaults to `false`.
 
@@ -70,7 +70,7 @@ The following settings are not supported on mobile devices:
 * [Distraction-free editing mode]({{site.baseurl}}/general-configuration-guide/use-tinymce-distraction-free/).
 * [`inline`]({{site.baseurl}}/configure/editor-appearance/#inline).
 * [`toolbar_sticky`]({{site.baseurl}}/configure/editor-appearance/#toolbar_sticky).
-* [`table_grid`]({{site.baseurl}}/plugins/table/#table_grid).
+* [`table_grid`]({{site.baseurl}}/plugins/opensource/table/#table_grid).
 * [`resize`]({{site.baseurl}}/configure/editor-appearance/#resize).
 * [`object_resizing`]({{site.baseurl}}/configure/advanced-editing-behavior/#object_resizing).
 
@@ -91,7 +91,7 @@ tinymce.init({
 
 ### Legacy mobile theme - configuring the plugins
 
-The plugins supported by legacy mobile theme are limited to the [autosave]({{site.baseurl}}/plugins/autosave/), [autolink]({{site.baseurl}}/plugins/autolink/), and [lists]({{site.baseurl}}/plugins/lists/) plugins.
+The plugins supported by legacy mobile theme are limited to the [autosave]({{site.baseurl}}/plugins/opensource/autosave/), [autolink]({{site.baseurl}}/plugins/opensource/autolink/), and [lists]({{site.baseurl}}/plugins/opensource/lists/) plugins.
 
 To add these plugins to the legacy mobile theme, add a plugin entry to the mobile section. For example:
 
@@ -124,7 +124,7 @@ tinymce.init({
 
 Below are the toolbar items supported for the legacy mobile theme, and the plugins/configuration required.
 
-> **Note**: The `list` functions require the [lists]({{site.baseurl}}/plugins/lists/) plugin and `styleselect` requires configuring [style_formats]({{site.baseurl}}/configure/editor-appearance/#style_formats).
+> **Note**: The `list` functions require the [lists]({{site.baseurl}}/plugins/opensource/lists/) plugin and `styleselect` requires configuring [style_formats]({{site.baseurl}}/configure/editor-appearance/#style_formats).
 
 | Name | Function | Plugins Required | Configuration |
 |--------|----|-----|-------------|
@@ -136,8 +136,8 @@ Below are the toolbar items supported for the legacy mobile theme, and the plugi
 | link | Insert / Edit a hyperlink |
 | unlink | Remove an existing hyperlink |
 | image | Insert an image |
-| bullist | Insert an unordered list | [lists]({{ site.baseurl }}/plugins/lists) |
-| numlist | Insert an ordered list | [lists]({{ site.baseurl }}/plugins/lists) |
+| bullist | Insert an unordered list | [lists]({{site.baseurl}}/plugins/opensource/lists) |
+| numlist | Insert an ordered list | [lists]({{site.baseurl}}/plugins/opensource/lists) |
 | fontsizeselect | Change the font size
 | forecolor | Apply a foreground color
 | styleselect | Apply a custom style | | [style_formats]({{ site.baseurl }}/configure/editor-appearance/#style_formats) |

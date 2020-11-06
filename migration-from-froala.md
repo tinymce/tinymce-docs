@@ -265,7 +265,7 @@ The following examples show a custom toolbar layout in Froala and the same layou
 
 When migrating from Froala to {{site.productname}}, the `toolbarInline` option changes to `inline`. Some additional settings you should consider include:
 
-* [The Quick Toolbar plugin]({{site.baseurl}}/plugins/quickbars/).
+* [The Quick Toolbar plugin]({{site.baseurl}}/plugins/opensource/quickbars/).
 * [Context Toolbars]({{site.baseurl}}/ui-components/contexttoolbar/).
 * [Context Menus]({{site.baseurl}}/ui-components/contextmenu/).
 * [Disabling the {{site.productname}} menubar]({{site.baseurl}}/configure/editor-appearance/#menubar).
@@ -308,7 +308,7 @@ The following examples show Froala and {{site.productname}} configured for inlin
 
 For information on:
 * The inline editing mode, see: [Setup inline editing mode]({{site.baseurl}}/general-configuration-guide/use-tinymce-inline/).
-* Configuring a Quick Toolbar, see: [Quick Toolbar plugin]({{site.baseurl}}/plugins/quickbars/).
+* Configuring a Quick Toolbar, see: [Quick Toolbar plugin]({{site.baseurl}}/plugins/opensource/quickbars/).
 * Configuring a contextual toolbar, see: [Context Toolbar]({{site.baseurl}}/ui-components/contexttoolbar/).
 * Configuring a contextual menu, see: [Context Menu]({{site.baseurl}}/ui-components/contextmenu/).
 * Disabling the {{site.productname}} menubar, see: [User interface options: Menubar]({{site.baseurl}}/configure/editor-appearance/#menubar).

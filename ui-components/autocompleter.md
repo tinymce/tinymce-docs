@@ -8,7 +8,7 @@ keywords: autcomplete
 
 ## Overview
 
-An `autocompleter` enables users to quickly find and select from a pre-populated list of values as they type, leveraging searching and filtering. It provides suggestions to insert while the user is typing into the content. For example, with the [charmap]({{site.baseurl}}/plugins/charmap/) plugin enabled, typing **:amp** should show the ampersand item in the menu. Pressing `esc` should close the autocomplete menu.
+An `autocompleter` enables users to quickly find and select from a pre-populated list of values as they type, leveraging searching and filtering. It provides suggestions to insert while the user is typing into the content. For example, with the [charmap]({{site.baseurl}}/plugins/opensource/charmap/) plugin enabled, typing **:amp** should show the ampersand item in the menu. Pressing `esc` should close the autocomplete menu.
 
 ## How to create custom autocompleters
 

@@ -11,7 +11,7 @@ keywords: sort tables advanced advtable premium
 {{site.requires_5_1v}}<br/>
 {{site.premiumplugin}}
 
-The `advtable` plugin is a premium plugin that extends the core [`table` plugin]({{site.baseurl}}/plugins/table/) by adding sort options for rows and columns. Tables can be sorted by row or column values using:
+The `advtable` plugin is a premium plugin that extends the core [`table` plugin]({{site.baseurl}}/plugins/opensource/table/) by adding sort options for rows and columns. Tables can be sorted by row or column values using:
 
 * The **Sort** options in the **Table** menu.
 * The **Sort** options in the table contextual menu.

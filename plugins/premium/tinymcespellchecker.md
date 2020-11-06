@@ -11,7 +11,7 @@ keywords: tinymcespellchecker spellchecker_language spellchecker_languages spell
 
 {{site.premiumplugin}}
 
-**Spell Checker Pro** adds spell checking as-you-type capabilities to {{site.productname}}. For information on the supported languages, refer to [this]({{site.baseurl}}/plugins/tinymcespellchecker/#spellchecker_language) section.
+**Spell Checker Pro** adds spell checking as-you-type capabilities to {{site.productname}}. For information on the supported languages, refer to [this]({{site.baseurl}}/plugins/premium/tinymcespellchecker/#spellchecker_language) section.
 
 {% include live-demo.html id="spellcheckerpro" %}
 

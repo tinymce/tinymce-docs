@@ -9,7 +9,7 @@ keywords: uploader uploadImages image handler asynchronous async paste_data_imag
 
 {{site.productname}} uploads edited images with the image uploader. This complements {{site.productname}}'s image editing functionality.
 
-Local images that are added through other means are also uploaded using this function, such as images added by drag and drop when using the [`paste_data_images`]({{ site.baseurl }}/plugins/paste/#paste_data_images) configuration property, or using the {{site.companyname}} [**PowerPaste** plugin]({{ site.baseurl }}/plugins/powerpaste/).
+Local images that are added through other means are also uploaded using this function, such as images added by drag and drop when using the [`paste_data_images`]({{site.baseurl}}/plugins/opensource/paste/#paste_data_images) configuration property, or using the {{site.companyname}} [**PowerPaste** plugin]({{site.baseurl}}/plugins/premium/powerpaste/).
 
 {{site.productname}} automatically updates the `<img>` src attribute with the new path to the remote image.
 

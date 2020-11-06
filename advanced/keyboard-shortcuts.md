@@ -32,11 +32,11 @@ This is a list of available keyboard shortcuts within the editor body.
 | Focus to toolbar            | Alt+F10               | Option+F10                  | core                                                       |
 | Focus to element path       | Alt+F11               | Option+F11                  | core                                                       |
 | Focus to contextual toolbar | Ctrl+F9               | Ctrl+F9                     | core                                                       |
-| Open the help dialog        | Alt+0                 | Option+0                    | [help]({{ site.baseurl }}/plugins/help/)                   |
-| Insert link                 | Ctrl+K                | Command+K                   | [link]({{ site.baseurl }}/plugins/link/)                   |
-| Toggle Fullscreen           | Ctrl+Shift+F          | Command+Shift+F             | [fullscreen]({{ site.baseurl }}/plugins/fullscreen/)       |
-| Save                        | Ctrl+S                | Command+S                   | [save]({{ site.baseurl }}/plugins/save/)                   |
-| Find                        | Ctrl+F                | Command+F                   | [searchreplace]({{ site.baseurl }}/plugins/searchreplace/) |
+| Open the help dialog        | Alt+0                 | Option+0                    | [help]({{site.baseurl}}/plugins/opensource/help/)                   |
+| Insert link                 | Ctrl+K                | Command+K                   | [link]({{site.baseurl}}/plugins/opensource/link/)                   |
+| Toggle Fullscreen           | Ctrl+Shift+F          | Command+Shift+F             | [fullscreen]({{site.baseurl}}/plugins/opensource/fullscreen/)       |
+| Save                        | Ctrl+S                | Command+S                   | [save]({{site.baseurl}}/plugins/opensource/save/)                   |
+| Find                        | Ctrl+F                | Command+F                   | [searchreplace]({{site.baseurl}}/plugins/opensource/searchreplace/) |
 
 ## Accessibility keyboard shortcuts
 

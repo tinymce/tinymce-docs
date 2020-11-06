@@ -4,7 +4,7 @@
 
 | Command                 | Description                                     |
 | ----------------------- | ----------------------------------------------- |
-| mceTableSizingMode | When `table_sizing_mode` is set to `'auto'`, this command sets the sizing mode of the currently selected table. For information on table sizing modes, see: [Table plugin - `table_sizing_mode`]({{site.baseurl}}/plugins/table/#table_sizing_mode). {{site.requires_5_4v}} |
+| mceTableSizingMode | When `table_sizing_mode` is set to `'auto'`, this command sets the sizing mode of the currently selected table. For information on table sizing modes, see: [Table plugin - `table_sizing_mode`]({{site.baseurl}}/plugins/opensource/table/#table_sizing_mode). {{site.requires_5_4v}} |
 | mceTableApplyCellStyle | Applies the specified styles to the selected cells. The following styles can be changed with this command: `background-color`, `border-color`, `border-style`, and `border-width`. Providing an empty value for a style will remove the style, such as `{ 'background-color': '' }`. {{site.requires_5_4v}} |
 | mceTableSplitCells      | Splits the current merged table cell.           |
 | mceTableMergeCells      | Merges the selected cells.                      |
@@ -27,7 +27,7 @@
 | mceTableProps           | Opens the Table Properties dialog.              |
 | mceTableRowProps        | Opens the table row properties dialog.          |
 | mceTableCellProps       | Opens the table cell properties dialog.         |
-| mceTableRowType       | Changes the current row or rows to the specified type, either: `'header'`, `'body'`, or `'footer'`. The structure of header rows is dependent on the [`table_header_type` option]({{site.baseurl}}/plugins/table/#table_header_type). {{site.requires_5_4v}} |
+| mceTableRowType       | Changes the current row or rows to the specified type, either: `'header'`, `'body'`, or `'footer'`. The structure of header rows is dependent on the [`table_header_type` option]({{site.baseurl}}/plugins/opensource/table/#table_header_type). {{site.requires_5_4v}} |
 | mceTableColType       | Changes all cells in the current column or columns to the specified type, either: `'td'` or `'th'`. {{site.requires_5_4v}} |
 | mceTableCellType       | Changes the current cell or cells to the specified type, either: `'td'` or `'th'`. {{site.requires_5_4v}} |
 

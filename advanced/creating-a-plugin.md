@@ -122,7 +122,7 @@ tinymce.init({
 
 ## Exposing metadata
 
-Metadata can be exposed from a custom plugin by returning an object with the property `getMetadata` with a function that returns an object with a `name` and `url` property. This metadata is used by the [Help Plugin]({{ site.baseurl }}/plugins/help/) to show the correct name and link for the plugin in the Plugins installed tab. See the `test` plugin above for example.
+Metadata can be exposed from a custom plugin by returning an object with the property `getMetadata` with a function that returns an object with a `name` and `url` property. This metadata is used by the [Help Plugin]({{site.baseurl}}/plugins/opensource/help/) to show the correct name and link for the plugin in the Plugins installed tab. See the `test` plugin above for example.
 
 ## Language localization
 

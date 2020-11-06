@@ -18,10 +18,10 @@ The new mobile experience comes with a number of user interface changes, buildin
 
 The new mobile experience allows most of the {{site.productname}} plugins to work on mobile devices, except for:
 
-* [Comments]({{site.baseurl}}/plugins/comments/)
-* [Image tools]({{site.baseurl}}/plugins/imagetools/)
-* [MoxieManager]({{site.baseurl}}/plugins/moxiemanager/)
-* [Permanent Pen]({{site.baseurl}}/plugins/permanentpen/)
+* [Comments]({{site.baseurl}}/plugins/premium/comments/)
+* [Image tools]({{site.baseurl}}/plugins/opensource/imagetools/)
+* [MoxieManager]({{site.baseurl}}/plugins/premium/moxiemanager/)
+* [Permanent Pen]({{site.baseurl}}/plugins/premium/permanentpen/)
 
 #### Enabling the mobile editor
 
@@ -78,12 +78,12 @@ The following settings have mobile-specific default values:
 * [`menubar`]({{site.baseurl}}/configure/editor-appearance/#menubar) - defaults to `false` on mobile phones.
 * [`toolbar_drawer`]({{site.baseurl}}/configure/editor-appearance/#toolbar_drawer) - defaults to `false` on mobile devices. The toolbar will [side-scroll by default](#sidescrollingtoolbarsonmobile).
 * [`toolbar_sticky`]({{site.baseurl}}/configure/editor-appearance/#toolbar_sticky) - Sticky Toolbar is not supported on mobile devices and defaults to `false`.
-* [`table_grid`]({{site.baseurl}}/plugins/table/#table_grid) - Table grid is not supported on mobile devices and defaults to `false`. When creating tables on mobile, a dialog is shown instead of the table grid.
+* [`table_grid`]({{site.baseurl}}/plugins/opensource/table/#table_grid) - Table grid is not supported on mobile devices and defaults to `false`. When creating tables on mobile, a dialog is shown instead of the table grid.
 * [`resize`]({{site.baseurl}}/configure/editor-appearance/#resize) - Resizing is not supported on mobile devices and defaults to `false`.
 * [`object_resizing`]({{site.baseurl}}/configure/advanced-editing-behavior/#object_resizing) - Object resizing is not supported on mobile devices and defaults to `false`.
 
 #### Table cell selection on mobile
-The [table plugin]({{site.baseurl}}/plugins/table/) has been updated to provide _touch selection handles_ on touch devices. The touch selection handles appear when users double-tap a table cell, and allow users to select a range of table cells on touch devices.
+The [table plugin]({{site.baseurl}}/plugins/opensource/table/) has been updated to provide _touch selection handles_ on touch devices. The touch selection handles appear when users double-tap a table cell, and allow users to select a range of table cells on touch devices.
 
 For example:
 
@@ -100,7 +100,7 @@ The following settings are not supported on mobile devices:
 * [Distraction-free editing mode]({{site.baseurl}}/general-configuration-guide/use-tinymce-distraction-free/).
 * [`inline`]({{site.baseurl}}/configure/editor-appearance/#inline).
 * [`toolbar_sticky`]({{site.baseurl}}/configure/editor-appearance/#toolbar_sticky).
-* [`table_grid`]({{site.baseurl}}/plugins/table/#table_grid).
+* [`table_grid`]({{site.baseurl}}/plugins/opensource/table/#table_grid).
 * [`resize`]({{site.baseurl}}/configure/editor-appearance/#resize).
 * [`object_resizing`]({{site.baseurl}}/configure/advanced-editing-behavior/#object_resizing).
 

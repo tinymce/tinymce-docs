@@ -24,9 +24,11 @@ These release notes provide an overview of the changes for {{site.productname}} 
 
 The following new features and enhancements were added for the {{site.productname}} 5.6 release.
 
-### New `image_file_types` setting to configure accepted image file extensions
+### New `image_file_types` option for customizing the recognized `smart_paste` image file extensions
 
-The new `image_file_types` setting is used by the [Paste]({{site.baseurl}}/plugins/paste/#image_file_types) and [PowerPaste]({{site.baseurl}}/plugins/powerpaste/#image_file_types) plugins to determine which images file extensions should be used when performing a `smart_paste`.
+The new `image_file_types` option allows different image file extensions to be recognized by the `smart_paste` image URL to embedded image functionality.
+For information on the `image_file_types` and `smart_paste` options for the PowerPaste plugin, see: [PowerPaste plugin]({{site.baseurl}}/plugins/powerpaste/).
+For information on the `image_file_types` and `smart_paste` options for the Paste plugin, see: [Paste plugin]({{site.baseurl}}/plugins/paste/).
 
 ## Accompanying Premium Plugin changes
 

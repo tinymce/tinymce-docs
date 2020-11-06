@@ -12,6 +12,8 @@ These release notes provide an overview of the changes for {{site.productname}} 
 - [Accompanying Premium Plugin changes](#accompanyingpremiumpluginchanges)
 - [Minor changes for TinyMCE 5.5](#minorchangesfortinymce54)
 - [General bug fixes](#generalbugfixes)
+- [Security fixes](#securityfixes)
+- [Deprecated features](#deprecatedfeatures)
 - [Known issues](#knownissues)
 - [Upgrading to the latest version of TinyMCE 5](#upgradingtothelatestversionoftinymce5)
 
@@ -34,8 +36,8 @@ For example:
 For information on:
 
 - Creating custom {{site.productname}} user interface components; such as toolbar buttons, menu items, and dialogs; see: [User interface components]({{site.baseurl}}/ui-components/).
-- Creating a plugin for {{site.productname}}, see: [Create a plugin for {{site.productname}}]({{site.productname}}/advanced/creating-a-plugin/).
-- The {{site.productname}} APIs, see: [The {{site.productname}} API Reference]({{site.productname}}/api/).
+- Creating a plugin for {{site.productname}}, see: [Create a plugin for {{site.productname}}]({{site.baseurl}}/advanced/creating-a-plugin/).
+- The {{site.productname}} APIs, see: [The {{site.productname}} API Reference]({{site.baseurl}}/api/).
 
 ### New line height support in the editor
 
@@ -193,7 +195,7 @@ For information on:
 
 For a list of available:
 
-- Image Tools toolbar buttons, see: [Image Tools plugin - Toolbar buttons]({{site.baseurl}}/imagetools/#toolbarbuttons).
+- Image Tools toolbar buttons, see: [Image Tools plugin - Toolbar buttons]({{site.baseurl}}/plugins/imagetools/#toolbarbuttons).
 - {{site.productname}} icons, see: [Icons Available for TinyMCE]({{site.baseurl}}/advanced/editor-icon-identifiers/).
 
 ### Improved navigation and deletion for media elements without the `media` plugin
@@ -338,6 +340,12 @@ For information on using the {{site.productname}} premium icon packs, see: [Tiny
 * Fixed the `dirty` flag not being correctly set during an `AddUndo` event.
 * Fixed `editor.selection.setCursorLocation` incorrectly placing the cursor outside `pre` elements in some circumstances.
 * Fixed an exception being thrown when pressing the enter key inside pre elements while `br_in_pre` setting is false.
+
+## Security fixes
+
+Accessibility Checker 2.3.0 provides fixes for the following security issues:
+
+* Fixed a Cross-Site Scripting (XSS) vulnerability in the accessibility issue repair function.
 
 ## Deprecated features
 

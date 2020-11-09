@@ -4,7 +4,7 @@
     section.<br />
     See: <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA">MDN Web Docs - ARIA</a>.</dd>
   <dt>add-on</dt>
-  <dd>Do not use <em>add-on</em>. Use <em>“plugin”<em> instead.</dd>
+  <dd>Do not use <em>add-on</em>. Use <em>“plugin”</em> instead.</dd>
   <dt>anchor</dt>
   <dd>Use when describing the Anchor plugin or the technical insertion of an anchor tag into HTML. When talking with a
     business audience, use <em>bookmark</em> or add <em>bookmark</em> as a clarifier.</dd>

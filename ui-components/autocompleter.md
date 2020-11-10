@@ -26,21 +26,136 @@ The two arguments this method take are:
 | Name | Value | Requirement | Description |
 | ---- | ----- | ----------- | ----------- |
 | ch | string | Required | The character to trigger the autocompleter. |
-| fetch | `(pattern: string, maxResults: number, fetchOptions: Record<string, any>) => Promise<AutocompleterItem[]>` | Required | A function that is passed the current matched text pattern, the maximum number of expected results and any additional fetch options. The function should return a promise containing matching results. |
+| fetch | `(pattern: string, maxResults: number, fetchOptions: Record<string, any>) => Promise<AutocompleterContents[]>` | Required | A function that is passed the current matched text pattern, the maximum number of expected results and any additional fetch options. The function should return a promise containing matching results. |
 | onAction | `(api, rng: Range, value: string) => void` | Required | A function invoked when a fetched item is selected. |
 | columns | number or 'auto' | Optional | default: auto - The number of columns to show. If set to `1` column, then icons and text are displayed, otherwise only icons are displayed. |
 | matches | `(rng: Range, text: string, pattern: string) => boolean` | Optional | default: `isStartOfWord` - A predicate function that takes a range, the current text node content and the matched text content and returns a boolean indicating if the autocompleter should trigger. |
 | maxResults | number | Optional | default: 10 - The maximum number of results that should be fetched. |
 | minChars | number | Optional | default: 1 - The minimum number of characters that must be typed before the autocompleter will trigger (excluding the trigger char). |
-
-The `fetch` function is called whenever the trigger `char` is pressed and the `matches` predicate returns `true`. It is a function that takes the matched text pattern and returns a promise containing matching results. This allows for asynchronous fetching of the autocompleter items. The `fetchOptions` passed to the `fetch` function is by default an empty object, however using the [reload](#api) API additional options can be passed to fetch a different set of results.
-
-The `fetch` results should be a list of objects with the following details:
-* `value`: Value of the item. This will be passed to the `onAction` callback when selected.
-* `text`: Text to display for the item.
-* `icon`: Name of the icon to be displayed. Must be a single unicode character or correspond to an icon in the icon pack.
+| highlight | array | Optional | When using [CardMenuItems](#cardmenuitem), use the highlight option in order to specify what [CardText](#cardtext) items to highlight the matched text pattern on. |
 
 > **Note**: If two or more autocompleters use the same trigger character, then the fetched results will be merged together before being displayed.
+
+### Usage of fetch
+
+The `fetch` function is called whenever the trigger `char` is pressed and the `matches` predicate returns `true`. It is a function that takes the matched text pattern and returns a promise containing matching results, specified as either [AutocompleteItems](#autocompleteitem) or [CardMenuItems](#cardmenuitem). This allows for asynchronous fetching of the items. The `fetchOptions` passed to the `fetch` function is by default an empty object, however using the [reload](#api) API additional options can be passed to fetch a different set of results.
+
+There are two types of items:
+
+* [AutocompleteItem](#autocompleteitem)
+* [CardMenuItem](#cardmenuitem)
+
+#### AutocompleteItem
+
+This is the standard item for the autocompleter. If no type is specified, it is assumed to be of type `AutocompleteItem`.
+
+| Name | Value | Requirement | Description |
+| ---- | ----- | ----------- | ----------- |
+| value | string | optional | Value of the item. This will be passed to the `onAction` callback when selected. |
+| text | string | optional | Text to display for the item. |
+| icon | string | optional | Name of the icon to be displayed. Must be a single unicode character or correspond to an icon in the icon pack. |
+
+```js
+{
+  type: 'autocompleteitem',
+  value: 'John Doe',
+  text: 'John Doe',
+  icon: 'my_icon'
+}
+```
+
+<!-- TODO: Move CardMenuItem/subitems specification to menuitems.md once TINY-6593 has been fixed (but keep autocompleter specific notes here) -->
+
+#### CardMenuItem
+
+The `CardMenuItem` allow for customization of layout and content.
+
+| Name | Value | Requirement | Description |
+| ---- | ----- | ----------- | ----------- |
+| value | string | optional | Value of the item. This will be passed to the `onAction` callback when selected. |
+| label | string | optional | Label of the item. Will be used for ARIA purposes. |
+| items | array | required | An array of [CardItems](#carditems) |
+
+```js
+{
+  type: 'cardmenuitem',
+  value: 'John Doe',
+  label: 'John Doe',
+  items: [ // array of card items
+    {
+      type: 'cardimage',
+      src: 'profile-pricture.jpeg'
+    },
+    // more configuration
+  ]
+}
+```
+
+#### CardItems
+
+There are three types of card items:
+* [CardContainer](#cardcontainer)
+* [CardText](#cardtext)
+* [CardImage](#cardimage)
+
+##### CardContainer
+
+A `CardContainer` is a layout component used to apply a layout to an array of card items.
+
+| Name | Value | Requirement | Description |
+| ---- | ----- | ----------- | ----------- |
+| direction | `'vertical'` or `'horizontal'` | optional | default: `horizontal` - directionality of subitems |
+| align | `'left'` or `'right'` | optional | default: `left` - horizontal alignment of subitems |
+| valign | `'top'`, `'middle'` or `'bottom'` | optional | default: `middle` - vertical alignment of subitems |
+| items | array | required | An array of [CardItems](#carditem) |
+
+```js
+{
+  type: 'cardcontainer',
+  direction: 'horizontal',
+  align: 'left',
+  valign: 'middle',
+  items: [ ... ]
+}
+```
+
+##### CardText
+
+`CardText` is a component for displaying text.
+
+| Name | Value | Requirement | Description |
+| ---- | ----- | ----------- | ----------- |
+| text | string | required | Text to display |
+| name | string | optional | Identifier used to reference specific CardText items. The autocompleter will use this when providing extra text-highlight functinoality. |
+| classes | array | required | Array of classes to apply |
+
+```js
+{
+  type: 'cardtext',
+  text: 'John Doe',
+  name: 'my_autocompleter_cardtext',
+  classes: ['my-cardtext-class']
+}
+```
+
+##### CardImage
+
+`CardImage` is a component for displaying an image.
+
+| Name | Value | Requirement | Description |
+| ---- | ----- | ----------- | ----------- |
+| src | string | required | Image source to use |
+| alt | string | required | Image alt text |
+| classes | array | required | Array of classes to apply |
+
+```js
+{
+  type: 'cardimage',
+  src: 'profile-pricture.jpeg',
+  alt: 'My alt text',
+  classes: ['my-cardimage-class']
+}
+```
 
 ## API
 

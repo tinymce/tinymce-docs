@@ -66,7 +66,7 @@ This procedure requires:
       * For Vue.js 2.x users:
 
         ```sh
-        $ vue create --default tinymce-vue-demo
+        $ vue create --inlinePreset '{ "vueVersion": "2", "plugins": {} }' tinymce-vue-demo
         ```
 
 3. Change into the newly created directory.

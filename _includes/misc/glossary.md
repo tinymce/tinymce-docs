@@ -13,6 +13,8 @@
     audience.</dd>
   <dt>asynchronous, async</dt>
   <dd>Use <em>asynchronous</em> Do not use <em>async</em> </dd>
+  <dt>back end, back-end, backend</dt>
+  <dd>Do not use backend. Use <em>back end</em> as a noun. Use back-end as a compound adjective.</dd>
   <dt>bookmark</dt>
   <dd>A common term for a HTML anchor element. Use <em>bookmark</em> instead of anchor in content for a general
     audience. Do not use when referring to the anchor plugin.</dd>

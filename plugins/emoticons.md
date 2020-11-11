@@ -30,7 +30,7 @@ tinymce.init({
 
 ## Browser emoji support
 
-The emoticon plugin inserts unicode character codes, such as `\ud83d\ude03` for the smiley emoji. How emoji are rendered is dependent on the web browser and operating system of the user. As a result of this, some emoji may be rendered in black and white, or may not render.
+The emoticon plugin inserts unicode character codes by default, such as `\ud83d\ude03` for the smiley emoji. How emoji are rendered is dependent on the web browser and operating system of the user. As a result of this, some emoji may be rendered in black and white, or may not render.
 To ensure emoji render consistently across browsers and operating systems, {{site.companyname}} recommends adding an emoji-compatible web font to the default font-family using [`content_css`]({{site.baseurl}}/configure/content-appearance/#content_css).
 
 {% include live-demo.html id="emoticons" %}
@@ -78,9 +78,35 @@ tinymce.init({
 });
 ```
 
+### `emoticons_database`
+
+This option provides the ability to specify which built-in emoji database to use when rendering emojis in the editor. The following built-in emoji databases are available:
+* `emojis` - This database uses unicode characters to represent emoji in the editor content.
+* `emojiimages` - This database uses images provided by Twitter Emoji (twemoji) to represent emoji in the editor content.
+
+{% assign feature = "`emojiimages` database" %}
+{% assign third_party_product = "Twitter Emoji (twemoji) graphics" %}
+{% assign license_agreement_name = "CC-BY 4.0" %}
+{% include misc/under-license.md %}
+
+**Type:** `String`
+
+**Default:** `emojis`
+
+#### Example: Using `emoticons_database`
+
+```js
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'emoticons',
+  toolbar: 'emoticons',
+  emoticons_database: 'emojis'
+});
+```
+
 ### `emoticons_database_url`
 
-This option provides the default location to load the emoji database from. The database should be an external JavaScript file, that assigns an object in the above format, to the `window.tinymce.emoticons_plugin_database` variable.
+This option provides the default location to load the emoji database from. The database should be an external JavaScript file, that registers a `tinymce.plugins.emoticons` resource.
 
 **Type:** `String`
 
@@ -104,6 +130,25 @@ tinymce.init({
   plugins: 'emoticons',
   toolbar: 'emoticons',
   emoticons_database_url: '/emojis.js'
+});
+```
+
+### `emoticons_images_url`
+
+This option provides the base URL for the images used to represent emojis when using the `emojiimages` database.
+
+**Type:** `String`
+
+**Default:** `https://twemoji.maxcdn.com/v/13.0.1/72x72/`
+
+#### Example: Using `emoticons_images_url`
+
+```js
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'emoticons',
+  toolbar: 'emoticons',
+  emoticons_images_url: 'http://my.server/images/emoticons/'
 });
 ```
 

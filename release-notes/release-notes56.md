@@ -44,6 +44,21 @@ A new optional `name` field that sets a specific name to the format when it's be
 
 For information on the `name` field, see: [User interface - `style_formats`]({{ site.baseurl }}/configure/editor-appearance/#style_formats).
 
+### New image emoji database for the Emoticons plugin
+
+A new `emojiimages` database has been added to the Emoticons plugin. This database uses images provided by Twitter Emoji (twemoji) to render emojis in the content.
+
+{% assign feature = "`emojiimages` database" %}
+{% assign third_party_product = "Twitter Emoji (Twemoji) graphics" %}
+{% assign license_agreement_name = "CC-BY 4.0" %}
+{% include misc/under-license.md %}
+
+A new `emoticons_database` option has been added to specify which built-in emoji database to use in the editor. Additionally, a new `emoticons_images_url` option has been added to configure the base URL for images used in the `emojiimages` database.  
+
+For information on the `emojiimages` database and `emoticons_database` option, see: [Emoticons plugin - `emoticons_database`]({{ site.baseurl }}/plugins/emoticons/#emoticons_database).
+
+For information on the `emoticons_images_url` option, see: [Emoticons plugin - `emoticons_images_url`]({{ site.baseurl }}/plugins/emoticons/#emoticons_images_url).
+
 ## Accompanying Premium Plugin changes
 
 The following premium plugin updates were released alongside {{site.productname}} 5.6.

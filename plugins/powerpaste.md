@@ -22,7 +22,7 @@ To paste clipboard content as plain text, users can click the "Paste As Text" to
 
 If you configure **PowerPaste** to allow local images (see the [`powerpaste_allow_local_images`](#powerpaste_allow_local_images) setting below), then images copied from Microsoft Word and other sources will appear in {{site.productname}} as Base64 encoded images. You can have {{site.productname}} automatically upload Base64 encoded images for reverting back to a standard image as described in the [image upload documentation]({{site.baseurl}}/advanced/handle-async-image-uploads/).
 
-> **Note:** PowerPaste (when configured to allow local images) will import images from pasted Microsoft Word/Excel content.  When doing this, **PowerPaste** extracts Base64 encoded images from the clipboard.  Images larger than approximately 8.5MB may fail to import based on technical limitations of web browsers.
+> **Note:** PowerPaste (when configured to allow local images) will import images from pasted Microsoft Word/Excel content. When doing this, **PowerPaste** extracts Base64 encoded images from the clipboard.  Images larger than approximately 8.5MB may fail to import based on technical limitations of web browsers.
 
 ## Cloud Installation
 
@@ -295,3 +295,5 @@ tinymce.init({
 The PowerPaste plugin provides the following JavaScript command.
 
 {% include commands/powerpaste-cmds.md %}
+
+{% include misc/support-powerpaste.md %}

@@ -306,7 +306,7 @@ When content is copied from an application (such as Microsoft Word), the applica
 
 > **Note**: Web browsers and the applications running in them cannot directly access files on the computer for security reasons.
 
-Microsoft Word or Microsoft Excel can create content that does not have equivalent HTML. The HTML provided to the clipboard by the application is the application's "best effort" at representing the content as HTML. Depending on the complexity of the source document, the content pasted into {{site.productname}} using PowerPaste may not be an exact representation of what the content looked like in the original application.
+Microsoft Word or Microsoft Excel can create content that does not have an equivalent in HTML. The HTML provided to the clipboard by the application is the application's "best effort" at representing the content as HTML. Depending on the complexity of the source document, the content pasted into {{site.productname}} using PowerPaste may not be an exact representation of what the content looked like in the original application.
 
 ### Why are some images or elements from Microsoft Word not appearing?
 

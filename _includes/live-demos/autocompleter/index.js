@@ -13,19 +13,29 @@ tinymce.init({
   selector: 'textarea#autocompleter',
   height: 250,
   setup: function (editor) {
+    function onAction (autocompleteApi, rng, value) {
+      editor.selection.setRng(rng);
+      editor.insertContent(value);
+      autocompleteApi.hide();
+    }
+
+    function getMatchedChars (pattern) {
+      return specialChars.filter(function (char) {
+        return char.text.indexOf(pattern) !== -1;
+      });
+    }
+
     /* An autocompleter that allows you to insert special characters */
     editor.ui.registry.addAutocompleter('specialchars', {
       ch: ':',
       minChars: 1,
       columns: 'auto',
+      onAction: onAction,
       fetch: function (pattern) {
-        var matchedChars = specialChars.filter(function (char) {
-          return char.text.indexOf(pattern) !== -1;
-        });
-
         return new tinymce.util.Promise(function (resolve) {
-          var results = matchedChars.map(function (char) {
+          var results = getMatchedChars(pattern).map(function (char) {
             return {
+              type: 'autocompleteitem',
               value: char.value,
               text: char.text,
               icon: char.value
@@ -33,11 +43,47 @@ tinymce.init({
           });
           resolve(results);
         });
-      },
-      onAction: function (autocompleteApi, rng, value) {
-        editor.selection.setRng(rng);
-        editor.insertContent(value);
-        autocompleteApi.hide();
+      }
+    });
+
+    /**
+     * An autocompleter that allows you to insert special characters.
+     * Items are built using the CardMenuItem.
+     */
+    editor.ui.registry.addAutocompleter('specialchars_cardmenuitems', {
+      ch: '-',
+      minChars: 1,
+      columns: 1,
+      highlightOn: ['char_name'],
+      onAction: onAction,
+      fetch: function (pattern) {
+        return new tinymce.util.Promise(function (resolve) {
+          var results = getMatchedChars(pattern).map(function (char) {
+            return {
+              type: 'cardmenuitem',
+              value: char.value,
+              label: char.text,
+              items: [
+                {
+                  type: 'cardcontainer',
+                  direction: 'vertical',
+                  items: [
+                    {
+                      type: 'cardtext',
+                      text: char.text,
+                      name: 'char_name'
+                    },
+                    {
+                      type: 'cardtext',
+                      text: char.value
+                    }
+                  ]
+                }
+              ]
+            }
+          });
+          resolve(results);
+        });
       }
     });
   },

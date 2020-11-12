@@ -164,6 +164,6 @@ A `CardContainer` is a layout component used to apply a layout to an array of ca
 
 ## Interactive example
 
-This example shows how the charmap plugin adds the standard autocompleter. The autocompleter will show whenever a `:` character is typed plus at least one additional character.
+This example shows two examples of how to create a charmap autocompleter. The first autocompleter is constructed using the standard autocompleter item and will show whenever a `:` character is typed plus at least one additional character. The second autocompleter is constructed using [CardMenuItems](#cardmenuitem) and will show whenever a `-` character is typed plus at least one additional character.
 
 {% include live-demo.html id="autocompleter" height="300" tab="js" %}

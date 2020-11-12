@@ -32,13 +32,13 @@ The two arguments this method take are:
 | matches | `(rng: Range, text: string, pattern: string) => boolean` | Optional | default: `isStartOfWord` - A predicate function that takes a range, the current text node content and the matched text content and returns a boolean indicating if the autocompleter should trigger. |
 | maxResults | number | Optional | default: 10 - The maximum number of results that should be fetched. |
 | minChars | number | Optional | default: 1 - The minimum number of characters that must be typed before the autocompleter will trigger (excluding the trigger char). |
-| highlight | array | Optional | When using [CardMenuItems](#cardmenuitem), use the highlight option in order to specify what [CardText](#cardtext) items to highlight the matched text pattern on. |
+| highlight | array | Optional | When using [CardMenuItems](#cardmenuitem), use the highlight option to specify which [CardText](#cardtext) items to highlight the matched text pattern on. |
 
 > **Note**: If two or more autocompleters use the same trigger character, then the fetched results will be merged together before being displayed.
 
 ### Usage of fetch
 
-The `fetch` function is called whenever the trigger `char` is pressed and the `matches` predicate returns `true`. It is a function that takes the matched text pattern and returns a promise containing matching results, specified as either [AutocompleteItems](#autocompleteitem) or [CardMenuItems](#cardmenuitem). This allows for asynchronous fetching of the items. The `fetchOptions` passed to the `fetch` function is by default an empty object, however using the [reload](#api) API additional options can be passed to fetch a different set of results.
+The `fetch` function is called when the trigger `char` is pressed and the `matches` predicate returns `true`. The `fetch` function passed the matched text pattern and returns a [promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) containing matching results, specified as either [AutocompleteItems](#autocompleteitem) or [CardMenuItems](#cardmenuitem). This allows for asynchronous fetching of the items. The `fetchOptions` passed to the `fetch` function is by default an empty object, however using the [reload](#api) API, additional options can be passed to fetch a different set of results.
 
 There are two types of items:
 
@@ -47,13 +47,13 @@ There are two types of items:
 
 #### AutocompleteItem
 
-This is the standard item for the autocompleter. If no type is specified, it is assumed to be of type `AutocompleteItem`.
+This is the standard item for the autocompleter. If no type is specified, autocompeter items are assumed to be of type `AutocompleteItem`.
 
 | Name | Value | Requirement | Description |
 | ---- | ----- | ----------- | ----------- |
 | value | string | optional | Value of the item. This will be passed to the `onAction` callback when selected. |
 | text | string | optional | Text to display for the item. |
-| icon | string | optional | Name of the icon to be displayed. Must be a single unicode character or correspond to an icon in the icon pack. |
+| icon | string | optional | Name of the icon to be displayed. Must be a either single unicode character or an icon from: the [icon pack]({{site.baseurl}}/advanced/editor-icon-identifiers/), a [custom icon pack]({{site.baseurl}}/advanced/creating-an-icon-pack/), or an icon added using the [`addIcon` API]({{site.baseurl}}/api/tinymce.editor.ui/tinymce.editor.ui.registry/#addicon). |
 
 ```js
 {
@@ -73,7 +73,7 @@ The `CardMenuItem` allow for customization of layout and content.
 | Name | Value | Requirement | Description |
 | ---- | ----- | ----------- | ----------- |
 | value | string | optional | Value of the item. This will be passed to the `onAction` callback when selected. |
-| label | string | optional | Label of the item. Will be used for ARIA purposes. |
+| label | string | optional | Label of the item. Will be used for [accessibility purposes](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA). |
 | items | array | required | An array of [CardItems](#carditems) |
 
 ```js
@@ -126,7 +126,7 @@ A `CardContainer` is a layout component used to apply a layout to an array of ca
 | Name | Value | Requirement | Description |
 | ---- | ----- | ----------- | ----------- |
 | text | string | required | Text to display |
-| name | string | optional | Identifier used to reference specific CardText items. The autocompleter will use this when providing extra text-highlight functinoality. |
+| name | string | optional | Identifier used to reference specific CardText items. The autocompleter will use this for the text-highlight functionality. |
 | classes | array | required | Array of classes to apply |
 
 ```js
@@ -169,4 +169,3 @@ A `CardContainer` is a layout component used to apply a layout to an array of ca
 This example shows how the charmap plugin adds the standard autocompleter. The autocompleter will show whenever a `:` character is typed plus at least one additional character.
 
 {% include live-demo.html id="autocompleter" height="300" tab="js" %}
-

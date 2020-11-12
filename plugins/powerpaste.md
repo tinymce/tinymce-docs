@@ -10,9 +10,9 @@ keywords: enterprise powerpaste power paste paste_as_text powerpaste_word_import
 
 {{site.premiumplugin}}
 
-The {{site.productname}} **PowerPaste** plugin automatically cleans up content from Microsoft Word/Excel and HTML sources to ensure clean, compliant content that matches the look and feel of the site.
+The {{site.productname}} **PowerPaste** plugin automatically cleans up content from Microsoft Word, Microsoft Excel, and HTML sources to ensure clean, compliant content that matches the look and feel of the site.
 
-> **Note:** Due to limitations in Excel online (part of Office Live) PowerPaste does not support pasting from Excel online.  If you paste content using Excel in Office Live you will get a plain text representation of the content.
+> **Note:** Due to limitations in Microsoft Excel online (part of Office Live) PowerPaste does not support pasting from Microsoft Excel online.  If you paste content using Microsoft Excel in Office Live you will get a plain text representation of the content.
 
 ## Usage
 
@@ -22,7 +22,7 @@ To paste clipboard content as plain text, users can click the "Paste As Text" to
 
 If you configure **PowerPaste** to allow local images (see the [`powerpaste_allow_local_images`](#powerpaste_allow_local_images) setting below), then images copied from Microsoft Word and other sources will appear in {{site.productname}} as Base64 encoded images. You can have {{site.productname}} automatically upload Base64 encoded images for reverting back to a standard image as described in the [image upload documentation]({{site.baseurl}}/advanced/handle-async-image-uploads/).
 
-> **Note:** PowerPaste (when configured to allow local images) will import images from pasted Microsoft Word/Excel content. When doing this, **PowerPaste** extracts Base64 encoded images from the clipboard.  Images larger than approximately 8.5MB may fail to import based on technical limitations of web browsers.
+> **Note:** PowerPaste (when configured to allow local images) will import images from pasted Microsoft Word and Microsoft Excel content. When doing this, **PowerPaste** extracts Base64 encoded images from the clipboard.  Images larger than approximately 8.5MB may fail to import based on technical limitations of web browsers.
 
 ## Cloud Installation
 
@@ -101,9 +101,9 @@ The supported values are:
 
 * `clean` - Preserve the structure of the content such as headings, tables and lists but remove inline styles and classes. This results in simple content that uses the site's CSS stylesheet while retaining the semantic structure from the original document.
 * `merge` - Preserve the inline formatting and structure of the original document. Invalid and proprietary styles, tags and attributes are still removed ensuring that the HTML is valid while more closely matching the original document formatting.
-* `prompt` - Prompt the user to choose between the clean and merge options after attempting to paste word content.
+* `prompt` - Prompt the user to choose between the clean and merge options after attempting to paste Microsoft Word content.
 
-> **Note:** When using the Windows operating system, copying and pasting content from Word 2013 (or later) in "Protected View" will result in plain, unformatted text. This is due to how Protected View interacts with the clipboard.
+> **Note:** When using the Windows operating system, copying and pasting content from Microsoft Word 2013 (or later) in "Protected View" will result in plain, unformatted text. This is due to how Protected View interacts with the clipboard.
 
 ### powerpaste_html_import
 
@@ -151,7 +151,7 @@ tinymce.init({
 
 ### powerpaste_keep_unsupported_src
 
-Due to browser limitations, PowerPaste is not able to support all image types supported by Word and Excel. When `powerpaste_keep_unsupported_src` is set to `true`, PowerPaste will store the original `src` of unsupported images in a `data-image-src` attribute on the pasted image element. This enables developers to add further image support via post-processing.
+Due to browser limitations, PowerPaste is not able to support all image types supported by Microsoft Word and Microsoft Excel. When `powerpaste_keep_unsupported_src` is set to `true`, PowerPaste will store the original `src` of unsupported images in a `data-image-src` attribute on the pasted image element. This enables developers to add further image support via post-processing.
 
 For example, browsers do not allow PowerPaste to access the file system. If your application has access to the file system, setting `powerpaste_keep_unsupported_src` to `true` may allow you to replace unsupported images during post-processing using the original file paths.
 
@@ -297,3 +297,37 @@ The PowerPaste plugin provides the following JavaScript command.
 {% include commands/powerpaste-cmds.md %}
 
 {% include misc/support-powerpaste.md %}
+
+## Common questions and troubleshooting PowerPaste behavior
+
+### What happens when copy and pasting from Microsoft Word?
+
+When content is copied from an application (such as Microsoft Word), the application places an HTML representation of the copied content onto the computer's clipboard. PowerPaste uses the HTML from the clipboard and cannot access the file directly.
+
+> **Note**: Web browsers and the applications running in them cannot directly access files on the computer for security reasons.
+
+Microsoft Word or Microsoft Excel can create content that does not have equivalent HTML. The HTML provided to the clipboard by the application is the application's "best effort" at representing the content as HTML. Depending on the complexity of the source document, the content pasted into {{site.productname}} using PowerPaste may not be an exact representation of what the content looked like in the original application.
+
+### Why are some images or elements from Microsoft Word not appearing?
+
+Some "images" in Microsoft Word cannot be represented as image files in a HTML document, such as: charts, drawings, and "Word Art". PowerPaste may not be able to paste these items into the {{site.productname}} editor, because they were not represented as HTML-compatible images on the clipboard.
+
+Microsoft Word can also create content that cannot be accurately recreated in HTML, such as columns, page headers and page footers. Some of these elements may not be copied to the clipboard by Microsoft Word, such as page headers and footers.
+
+### How can I see what is on the clipboard?
+
+To view the HTML of content pasted from the clipboard:
+
+* If you are using Microsoft Internet Explorer 11, visit: [{{site.companyname}} Clipboard Viewer for Microsoft Internet Explorer 11](http://static.ephox.com/clipboard/clipboardtestie11.html).
+* If you are using any other browser, visit: [{{site.companyname}} Clipboard Viewer](http://static.ephox.com/clipboard/clipboardtest.html).
+
+### Why would Microsoft Internet Explorer 11 show different results from every other supported browser?
+
+Microsoft Internet Explorer interacts with Microsoft Word content differently than all other browsers. When pasting, Microsoft Internet Explorer transforms and cleans up Microsoft Word content before pasting it into {{site.productname}}. This behavior only occurs when Microsoft content is pasted into Microsoft Internet Explorer and cannot be disabled.
+
+### Why do images not paste when copied with text content in Microsoft Internet Explorer 11?
+
+This issue relates to changes to Microsoft Internet Explorer 11 late in the product’s life. {{site.companyname}} (companies that offer similar products) have reached out to Microsoft to suggest that this change is a defect despite their initial reply that it was intentional and "expected behavior" in Microsoft Internet Explorer 11. Microsoft has made no public statement about addressing the issue specifically, and is no longer making non-security changes to Microsoft Internet Explorer 11. The only recommended workarounds are:
+
+* Paste the images into {{site.productname}} individually.
+* Use a different browser.

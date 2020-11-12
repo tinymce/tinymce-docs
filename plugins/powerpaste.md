@@ -327,7 +327,7 @@ Microsoft Internet Explorer interacts with Microsoft Word content differently th
 
 ### Why do images not paste when copied with text content in Microsoft Internet Explorer 11?
 
-This issue relates to changes to Microsoft Internet Explorer 11 late in the product’s life. {{site.companyname}} (companies that offer similar products) have reached out to Microsoft to suggest that this change is a defect despite their initial reply that it was intentional and "expected behavior" in Microsoft Internet Explorer 11. Microsoft has made no public statement about addressing the issue specifically, and is no longer making non-security changes to Microsoft Internet Explorer 11. The only recommended workarounds are:
+This issue relates to changes to Microsoft Internet Explorer 11 late in the product’s life. {{site.companyname}} (and companies that offer similar products) have reached out to Microsoft to suggest that this change is a defect despite their initial reply that it was intentional and "expected behavior" in Microsoft Internet Explorer 11. Microsoft has made no public statement about addressing the issue specifically, and is no longer making non-security changes to Microsoft Internet Explorer 11. The only recommended workarounds are:
 
 * Paste the images into {{site.productname}} individually.
 * Use a different browser.

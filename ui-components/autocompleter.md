@@ -149,7 +149,7 @@ A `CardContainer` is a layout component used to apply a layout to an array of ca
 ```js
 {
   type: 'cardimage',
-  src: 'profile-pricture.jpeg',
+  src: 'profile-picture.jpeg',
   alt: 'My alt text',
   classes: ['my-cardimage-class']
 }

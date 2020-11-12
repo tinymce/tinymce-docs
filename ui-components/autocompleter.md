@@ -64,11 +64,13 @@ This is the standard item for the autocompleter. If no type is specified, autoco
 }
 ```
 
-<!-- TODO: Move CardMenuItem/subitems specification to menuitems.md once TINY-6593 has been fixed (but keep autocompleter specific notes here) -->
+{% comment %} TODO: DOC-719 and TINY-6593: Move CardMenuItem/subitems specification to menuitems.md {% endcomment %}
 
 #### CardMenuItem
 
-The `CardMenuItem` allow for customization of layout and content.
+{{site.requires_5_6v}}
+
+The `CardMenuItem` allow for customization of layout and content. This is done by constructing an array of subcomponent specifications which will decide the structure of the final item. A classical example of this would be the need to display a "user" item containing a profile picture, a user name, and a description.
 
 | Name | Value | Requirement | Description |
 | ---- | ----- | ----------- | ----------- |
@@ -81,17 +83,13 @@ The `CardMenuItem` allow for customization of layout and content.
   type: 'cardmenuitem',
   value: 'John Doe',
   label: 'John Doe',
-  items: [ // array of card items
-    {
-      type: 'cardimage',
-      src: 'profile-pricture.jpeg'
-    },
-    // more configuration
-  ]
+  items: [ ] // array of card items
 }
 ```
 
 #### CardItems
+
+CardItems are subcomponents for the CardMenuItem. Use these to construct your custom item and display relevant information to the user.
 
 There are three types of card items:
 * [CardContainer](#cardcontainer)

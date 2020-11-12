@@ -135,7 +135,7 @@ tinymce.init({
 
 ### `emoticons_images_url`
 
-This option provides the base URL for the images used to represent emojis when using the `emojiimages` database.
+This option sets the base URL for the images used to represent emojis when using the `emojiimages` database.
 
 **Type:** `String`
 

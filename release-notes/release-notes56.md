@@ -46,7 +46,7 @@ For information on the `name` field, see: [User interface - `style_formats`]({{ 
 
 ### New image emoji database for the Emoticons plugin
 
-A new `emojiimages` database has been added to the Emoticons plugin. This database uses images provided by Twitter Emoji (twemoji) to render emojis in the content.
+A new `emojiimages` database has been added to the Emoticons plugin. This database uses images provided by the Twitter Emoji (twemoji) project to render emojis in the content.
 
 {% assign feature = "`emojiimages` database" %}
 {% assign third_party_product = "Twitter Emoji (Twemoji) graphics" %}

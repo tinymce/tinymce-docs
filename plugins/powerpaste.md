@@ -302,7 +302,7 @@ The PowerPaste plugin provides the following JavaScript command.
 
 ### What happens when copy and pasting from Microsoft Word?
 
-When content is copied from an application (such as Microsoft Word), the application places an HTML representation of the copied content onto the computer's clipboard. PowerPaste uses the HTML from the clipboard and cannot access the file directly.
+When content is copied from an application (such as Microsoft Word), the application places a HTML representation of the copied content onto the computer's clipboard. PowerPaste uses the HTML from the clipboard and cannot access the file directly.
 
 > **Note**: Web browsers and the applications running in them cannot directly access files on the computer for security reasons.
 

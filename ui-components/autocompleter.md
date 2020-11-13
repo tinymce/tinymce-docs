@@ -38,7 +38,7 @@ The two arguments this method take are:
 
 ### Usage of fetch
 
-The `fetch` function is called when the trigger `char` is pressed and the `matches` predicate returns `true`. The `fetch` function passed the matched text pattern and returns a [promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) containing matching results, specified as either [AutocompleteItems](#autocompleteitem) or [CardMenuItems](#cardmenuitem). This allows for asynchronous fetching of the items. The `fetchOptions` passed to the `fetch` function is by default an empty object, however using the [reload](#api) API, additional options can be passed to fetch a different set of results.
+The `fetch` function is called when the trigger `char` is pressed and the `matches` predicate returns `true`. The `fetch` function is passed the matched text pattern and returns a [promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) containing matching results, specified as either [AutocompleteItems](#autocompleteitem) or [CardMenuItems](#cardmenuitem). This allows for asynchronous fetching of the items. The `fetchOptions` parameter passed to the `fetch` function is by default an empty object, however using the [reload](#api) API, additional options can be passed to fetch a different set of results.
 
 There are two types of items:
 
@@ -70,7 +70,7 @@ This is the standard item for the autocompleter. If no type is specified, autoco
 
 {{site.requires_5_6v}}
 
-The `CardMenuItem` allow for customization of layout and content. This is done by constructing an array of subcomponent specifications which will decide the structure of the final item. A classical example of this would be the need to display a "user" item containing a profile picture, a user name, and a description.
+The `CardMenuItem` allows customization of layout and content. This is done by constructing an array of subcomponent specifications which will determine the structure of the final item. A classical example of this would be the need to display a "user" item containing a profile picture, a user name, and a description.
 
 | Name | Value | Requirement | Description |
 | ---- | ----- | ----------- | ----------- |
@@ -164,6 +164,6 @@ A `CardContainer` is a layout component used to apply a layout to an array of ca
 
 ## Interactive example
 
-This example shows two examples of how to create a charmap autocompleter. The first autocompleter is constructed using the standard autocompleter item and will show whenever a `:` character is typed plus at least one additional character. The second autocompleter is constructed using [CardMenuItems](#cardmenuitem) and will show whenever a `-` character is typed plus at least one additional character.
+The following shows two examples of how to create a charmap autocompleter. The first autocompleter is constructed using the standard autocompleter item and will show whenever a `:` character is typed plus at least one additional character. The second autocompleter is constructed using [CardMenuItems](#cardmenuitem) and will show whenever a `-` character is typed plus at least one additional character.
 
 {% include live-demo.html id="autocompleter" height="300" tab="js" %}

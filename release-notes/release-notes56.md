@@ -44,6 +44,10 @@ A new optional `name` field that sets a specific name to the format when it's be
 
 For information on the `name` field, see: [User interface - `style_formats`]({{ site.baseurl }}/configure/editor-appearance/#style_formats).
 
+### Changed behaviour when clicking links in `readonly` mode
+
+Clicking links within the editor when in `readonly` mode will now result in a new tab or window being opened (depending on browser preferences).
+
 ## Accompanying Premium Plugin changes
 
 The following premium plugin updates were released alongside {{site.productname}} 5.6.

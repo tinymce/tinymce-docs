@@ -47,7 +47,7 @@ There are two types of items:
 
 #### AutocompleteItem
 
-This is the standard item for the autocompleter. If no type is specified, autocompeter items are assumed to be of type `AutocompleteItem`.
+This is the standard item for the autocompleter. If no type is specified, autocompleter items are assumed to be of type `AutocompleteItem`.
 
 | Name | Value | Requirement | Description |
 | ---- | ----- | ----------- | ----------- |
@@ -125,7 +125,7 @@ A `CardContainer` is a layout component used to apply a layout to an array of ca
 | ---- | ----- | ----------- | ----------- |
 | text | string | required | Text to display |
 | name | string | optional | Identifier used to reference specific CardText items. The autocompleter will use this for the text-highlight functionality. |
-| classes | array | required | Array of classes to apply |
+| classes | array | required | Array of classes to apply. Note: restrict usage to styles that wont affect the layout, such as `font-style`. |
 
 ```js
 {
@@ -144,7 +144,7 @@ A `CardContainer` is a layout component used to apply a layout to an array of ca
 | ---- | ----- | ----------- | ----------- |
 | src | string | required | Image source to use |
 | alt | string | required | Image alt text |
-| classes | array | required | Array of classes to apply |
+| classes | array | required | Array of classes to apply. Note: restrict usage to styles that wont affect the layout, such as `border-radius`. |
 
 ```js
 {

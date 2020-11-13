@@ -80,6 +80,8 @@ tinymce.init({
 
 ### `emoticons_database`
 
+{{ site.requires_5_6v }}
+
 This option provides the ability to specify which built-in emoji database to use when rendering emojis in the editor. The following built-in emoji databases are available:
 * `emojis` - This database uses Unicode characters to represent emoji in the editor content.
 * `emojiimages` - This database uses images provided by the Twitter Emoji (twemoji) project to represent emoji in the editor content.
@@ -134,6 +136,8 @@ tinymce.init({
 ```
 
 ### `emoticons_images_url`
+
+{{ site.requires_5_6v }}
 
 This option sets the base URL for the images used to represent emojis when using the `emojiimages` database.
 

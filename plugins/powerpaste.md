@@ -310,7 +310,7 @@ Microsoft Word or Microsoft Excel can create content that does not have an equiv
 
 ### Why are some images or elements from Microsoft Word not appearing?
 
-Some "images" in Microsoft Word cannot be represented as image files in a HTML document, such as: charts, drawings, and "Word Art". PowerPaste may not be able to paste these items into the {{site.productname}} editor, because they were not represented as HTML-compatible images on the clipboard.
+Some "images" in Microsoft Word cannot be represented as image files in a HTML document, such as: charts, drawings, and "Word Art". PowerPaste may not be able to paste these items into the {{site.productname}} editor, because they were not represented as HTML-compatible images on the clipboard. Microsoft Word also allows some formats on images that cannot be represented in HTML, such as wrap and inline.
 
 Microsoft Word can also create content that cannot be accurately recreated in HTML, such as columns, page headers and page footers. Some of these elements may not be copied to the clipboard by Microsoft Word, such as page headers and footers.
 
@@ -323,7 +323,7 @@ To view the HTML of content pasted from the clipboard:
 
 ### Why would Microsoft Internet Explorer 11 show different results from every other supported browser?
 
-Microsoft Internet Explorer interacts with Microsoft Word content differently than all other browsers. When pasting, Microsoft Internet Explorer transforms and cleans up Microsoft Word content before pasting it into {{site.productname}}. {{site.productname}} also receives different data from the clipboard on Microsoft Internet Explorer than with any other browser. This behavior only occurs when Microsoft content is pasted into Microsoft Internet Explorer and cannot be disabled.
+Microsoft Internet Explorer interacts with Microsoft Word content differently than all other browsers. When pasting, Microsoft Internet Explorer transforms and cleans up Microsoft Word content before pasting it into {{site.productname}}. Therefore, Microsoft Internet Explorer provides different clipboard data to web applications when compared to browsers. This behavior only occurs when Microsoft content is pasted into Microsoft Internet Explorer and cannot be disabled.
 
 ### Why do images not paste when copied with text content in Microsoft Internet Explorer 11?
 

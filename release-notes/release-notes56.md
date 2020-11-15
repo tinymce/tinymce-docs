@@ -58,6 +58,18 @@ The {{site.productname}} 5.6 release includes an accompanying release of the **<
 
 For information on the <<Premium Plugin Name>> plugin, see: [<<Premium Plugin Name>> plugin]({{site.baseurl}}/plugins/<<Premium Plugin Name>>/).
 
+### Advanced Code Editor 2.3.0
+
+The {{site.productname}} 5.6 release includes an accompanying release of the **Advanced Code Editor** premium plugin.
+
+**Advanced Code Editor** 2.3.0 provides the following improvements:
+
+- Added the ability to maintain the cursor position when opening the code dialog.
+- Fixed the code view not using monospace fonts.
+- Fixed an issue where non-breaking spaces were inserted instead of regular spaces on Safari.
+
+For information on the Advanced Code Editor plugin, see: [Advanced Code Editor plugin]({{site.baseurl}}/plugins/advcode/).
+
 ### Comments 2.3.0
 
 The {{site.productname}} 5.6 release includes an accompanying release of the **Comments** premium plugin.

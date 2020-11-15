@@ -68,7 +68,7 @@ The following PHP script creates a server-side upload handler suitable for {{sit
     move_uploaded_file($temp['tmp_name'], $filetowrite);
 
     // Determine the base URL
-    $protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on'? "https://" : "http://";
+    $protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on' ? "https://" : "http://";
     $baseurl = $protocol . $_SERVER["HTTP_HOST"] . rtrim(dirname($_SERVER['REQUEST_URI']), "/") . "/";
 
     // Respond to the successful upload with JSON.

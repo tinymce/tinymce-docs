@@ -48,6 +48,12 @@ For information on the `name` field, see: [User interface - `style_formats`]({{ 
 
 Clicking links when the editor is in `readonly` mode will open the URL in a new tab or window (depending on browser preferences).
 
+### New card menu item for the autocompleter
+
+A new card menu item has been added to the autocompleter, allowing for greater customization of the autocompleter results displayed to the user.
+
+For information on customizing autocompleter results with `CardMenuItem`, see: [UI components - Autocompleter - `CardMenuItem`]({{ site.baseurl }}/ui-components/autocompleter/#cardmenuitem).
+
 ### New image emoji database for the Emoticons plugin
 
 A new `emojiimages` database has been added to the Emoticons plugin. This database uses images provided by the Twitter Emoji (twemoji) project to render emojis in the content.

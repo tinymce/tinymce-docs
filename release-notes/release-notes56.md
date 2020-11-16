@@ -44,7 +44,7 @@ A new optional `name` field that sets a specific name to the format when it's be
 
 For information on the `name` field, see: [User interface - `style_formats`]({{ site.baseurl }}/configure/editor-appearance/#style_formats).
 
-### Changed behaviour when clicking links in `readonly` mode
+### Clicking a link in `readonly` mode now opens the URL
 
 Clicking links when the editor is in `readonly` mode will open the URL in a new tab or window (depending on browser preferences).
 

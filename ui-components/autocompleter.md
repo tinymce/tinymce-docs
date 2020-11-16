@@ -144,7 +144,7 @@ A `CardContainer` is a layout component used to apply a layout to an array of ca
 | ---- | ----- | ----------- | ----------- |
 | src | string | required | Image source to use |
 | alt | string | required | Image alt text |
-| classes | array | required | Array of classes to apply. Note: restrict usage to styles that wont affect the layout, such as `border-radius`. |
+| classes | array | required | Array of classes to apply. Note: restrict usage to styles that won't affect the layout, such as `border-radius`. |
 
 ```js
 {

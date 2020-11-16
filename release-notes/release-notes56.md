@@ -46,7 +46,7 @@ For information on the `name` field, see: [User interface - `style_formats`]({{ 
 
 ### Changed behaviour when clicking links in `readonly` mode
 
-Clicking links within the editor when in `readonly` mode will now result in a new tab or window being opened (depending on browser preferences).
+Clicking links when the editor is in `readonly` mode will open the URL in a new tab or window (depending on browser preferences).
 
 ## Accompanying Premium Plugin changes
 

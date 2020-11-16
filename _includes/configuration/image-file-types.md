@@ -4,7 +4,7 @@ This option configures which image file formats will be recognized and placed in
 
 **Type:** `String`
 
-**Default Value:** `'jpeg,jpg,jpe,jfi,jfif,png,gif,bmp,webp'`
+**Default Value:** `'jpeg,jpg,jpe,jfi,jif,jfif,png,gif,bmp,webp'`
 
 **Possible Values:** A list of valid web image file extensions. For a list of possible values see: [MDN Web Docs - Image file type and format guide](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Image_types).
 

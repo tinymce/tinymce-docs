@@ -125,7 +125,7 @@ A `CardContainer` is a layout component used to apply a layout to an array of ca
 | ---- | ----- | ----------- | ----------- |
 | text | string | required | Text to display |
 | name | string | optional | Identifier used to reference specific CardText items. The autocompleter will use this for the text-highlight functionality. |
-| classes | array | required | Array of classes to apply. Note: restrict usage to styles that wont affect the layout, such as `font-style`. |
+| classes | array | required | Array of classes to apply. Note: restrict usage to styles that won't affect the layout, such as `font-style`. |
 
 ```js
 {

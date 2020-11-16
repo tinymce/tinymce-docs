@@ -44,6 +44,12 @@ A new optional `name` field that sets a specific name to the format when it's be
 
 For information on the `name` field, see: [User interface - `style_formats`]({{ site.baseurl }}/configure/editor-appearance/#style_formats).
 
+### New `TableModified` event
+
+The new `TableModified` event is fired whenever style or structural changes are made to a table.
+
+For more information on the `TableModified` event, see: [Table - `events`]({{ site.baseurl }}/plugins/table/#events).
+
 ## Accompanying Premium Plugin changes
 
 The following premium plugin updates were released alongside {{site.productname}} 5.6.

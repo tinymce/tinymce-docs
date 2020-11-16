@@ -323,7 +323,7 @@ To view the HTML of content pasted from the clipboard:
 
 ### Why would Microsoft Internet Explorer 11 show different results from every other supported browser?
 
-Microsoft Internet Explorer interacts with Microsoft Word content differently than all other browsers. When pasting, Microsoft Internet Explorer transforms and cleans up Microsoft Word content before pasting it into {{site.productname}}. Therefore, Microsoft Internet Explorer provides different clipboard data to web applications when compared to browsers. This behavior only occurs when Microsoft content is pasted into Microsoft Internet Explorer and cannot be disabled.
+Microsoft Internet Explorer interacts with Microsoft Word content differently than all other browsers. When pasting, Microsoft Internet Explorer transforms and cleans up Microsoft Word content before pasting it into {{site.productname}}. Therefore, Microsoft Internet Explorer provides different clipboard data to web applications when compared to other browsers. This behavior only occurs when Microsoft content is pasted into Microsoft Internet Explorer and cannot be disabled.
 
 ### Why do images not paste when copied with text content in Microsoft Internet Explorer 11?
 

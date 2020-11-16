@@ -46,7 +46,9 @@ For information on the `name` field, see: [User interface - `style_formats`]({{ 
 
 ### New card menu item for the autocompleter
 
-A new card menu item has been added to the autocompleter, allowing for greater customization of the autocompleter results displayed to the user. For information on customizing autocompleter results with `CardMenuItem`, see: [UI components - Autocompleter - `CardMenuItem`]({{ site.baseurl }}/ui-components/autocompleter/#cardmenuitem).
+A new card menu item has been added to the autocompleter, allowing for greater customization of the autocompleter results displayed to the user.
+
+For information on customizing autocompleter results with `CardMenuItem`, see: [UI components - Autocompleter - `CardMenuItem`]({{ site.baseurl }}/ui-components/autocompleter/#cardmenuitem).
 
 ## Accompanying Premium Plugin changes
 

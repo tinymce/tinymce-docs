@@ -13,13 +13,13 @@ tinymce.init({
   selector: 'textarea#autocompleter',
   height: 250,
   setup: function (editor) {
-    function onAction (autocompleteApi, rng, value) {
+    var onAction = function (autocompleteApi, rng, value) {
       editor.selection.setRng(rng);
       editor.insertContent(value);
       autocompleteApi.hide();
     }
 
-    function getMatchedChars (pattern) {
+    var getMatchedChars = function (pattern) {
       return specialChars.filter(function (char) {
         return char.text.indexOf(pattern) !== -1;
       });

@@ -26,7 +26,10 @@ The following new features and enhancements were added for the {{site.productnam
 
 ### New `image_file_types` option for customizing recognized image file extensions
 
-The new `image_file_types` option allows different image file extensions to be recognized by the `smart_paste` image URL to embedded image functionality, as well as image file uploads.
+The new `image_file_types` option allows different image file extensions to be recognized by:
+
+- The `smart_paste` image URL to embedded image functionality
+- The Image plugin to determine allowed file extensions for upload
 
 For information on the `image_file_types` and `smart_paste` options for the PowerPaste plugin, see: [PowerPaste plugin]({{site.baseurl}}/plugins/powerpaste/).
 

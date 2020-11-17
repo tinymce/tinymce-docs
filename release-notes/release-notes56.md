@@ -44,6 +44,10 @@ A new optional `name` field that sets a specific name to the format when it's be
 
 For information on the `name` field, see: [User interface - `style_formats`]({{ site.baseurl }}/configure/editor-appearance/#style_formats).
 
+### Clicking a link in `readonly` mode now opens the URL
+
+Clicking links when the editor is in `readonly` mode will open the URL in a new tab or window (depending on browser preferences).
+
 ### New card menu item for the autocompleter
 
 A new card menu item has been added to the autocompleter, allowing for greater customization of the autocompleter results displayed to the user.
@@ -59,7 +63,7 @@ A new `emojiimages` database has been added to the Emoticons plugin. This databa
 {% assign license_agreement_name = "CC-BY 4.0" %}
 {% include misc/under-license.md %}
 
-A new `emoticons_database` option has been added to specify which built-in emoji database to use in the editor. Additionally, a new `emoticons_images_url` option has been added to configure the base URL for images used in the `emojiimages` database.  
+A new `emoticons_database` option has been added to specify which built-in emoji database to use in the editor. Additionally, a new `emoticons_images_url` option has been added to configure the base URL for images used in the `emojiimages` database.
 
 For information on the `emojiimages` database and `emoticons_database` option, see: [Emoticons plugin - `emoticons_database`]({{ site.baseurl }}/plugins/emoticons/#emoticons_database).
 

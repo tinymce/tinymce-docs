@@ -25,19 +25,25 @@ The following PHP script creates a server-side upload handler suitable for {{sit
    *********************************************/
   $imageFolder = "images/";
 
+  if (isset($_SERVER['HTTP_ORIGIN'])) {
+    // same-origin requests won't set an origin. If the origin is set, it must be valid.
+    if (in_array($_SERVER['HTTP_ORIGIN'], $accepted_origins)) {
+      header('Access-Control-Allow-Origin: ' . $_SERVER['HTTP_ORIGIN']);
+    } else {
+      header("HTTP/1.1 403 Origin Denied");
+      return;
+    }
+  }
+
+  // Don't attempt to process the upload on an OPTIONS request
+  if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
+    header("Access-Control-Allow-Methods: POST, OPTIONS");
+    return;
+  }
+
   reset ($_FILES);
   $temp = current($_FILES);
   if (is_uploaded_file($temp['tmp_name'])){
-    if (isset($_SERVER['HTTP_ORIGIN'])) {
-      // same-origin requests won't set an origin. If the origin is set, it must be valid.
-      if (in_array($_SERVER['HTTP_ORIGIN'], $accepted_origins)) {
-        header('Access-Control-Allow-Origin: ' . $_SERVER['HTTP_ORIGIN']);
-      } else {
-        header("HTTP/1.1 403 Origin Denied");
-        return;
-      }
-    }
-
     /*
       If your script needs to receive cookies, set images_upload_credentials : true in
       the configuration and enable the following two headers.
@@ -61,10 +67,14 @@ The following PHP script creates a server-side upload handler suitable for {{sit
     $filetowrite = $imageFolder . $temp['name'];
     move_uploaded_file($temp['tmp_name'], $filetowrite);
 
+    // Determine the base URL
+    $protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on' ? "https://" : "http://";
+    $baseurl = $protocol . $_SERVER["HTTP_HOST"] . rtrim(dirname($_SERVER['REQUEST_URI']), "/") . "/";
+
     // Respond to the successful upload with JSON.
     // Use a location key to specify the path to the saved image resource.
     // { location : '/your/uploaded/image/file'}
-    echo json_encode(array('location' => $filetowrite));
+    echo json_encode(array('location' => $baseurl . $filetowrite));
   } else {
     // Notify editor that the upload failed
     header("HTTP/1.1 500 Server Error");

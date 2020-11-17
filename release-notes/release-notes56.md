@@ -49,6 +49,31 @@ A new optional `name` field that sets a specific name to the format when it's be
 
 For information on the `name` field, see: [User interface - `style_formats`]({{ site.baseurl }}/configure/editor-appearance/#style_formats).
 
+### Clicking a link in `readonly` mode now opens the URL
+
+Clicking links when the editor is in `readonly` mode will open the URL in a new tab or window (depending on browser preferences).
+
+### New card menu item for the autocompleter
+
+A new card menu item has been added to the autocompleter, allowing for greater customization of the autocompleter results displayed to the user.
+
+For information on customizing autocompleter results with `CardMenuItem`, see: [UI components - Autocompleter - `CardMenuItem`]({{ site.baseurl }}/ui-components/autocompleter/#cardmenuitem).
+
+### New image emoji database for the Emoticons plugin
+
+A new `emojiimages` database has been added to the Emoticons plugin. This database uses images provided by the Twitter Emoji (twemoji) project to render emojis in the content.
+
+{% assign feature = "`emojiimages` database" %}
+{% assign third_party_product = "Twitter Emoji (Twemoji) graphics" %}
+{% assign license_agreement_name = "CC-BY 4.0" %}
+{% include misc/under-license.md %}
+
+A new `emoticons_database` option has been added to specify which built-in emoji database to use in the editor. Additionally, a new `emoticons_images_url` option has been added to configure the base URL for images used in the `emojiimages` database.
+
+For information on the `emojiimages` database and `emoticons_database` option, see: [Emoticons plugin - `emoticons_database`]({{ site.baseurl }}/plugins/emoticons/#emoticons_database).
+
+For information on the `emoticons_images_url` option, see: [Emoticons plugin - `emoticons_images_url`]({{ site.baseurl }}/plugins/emoticons/#emoticons_images_url).
+
 ## Accompanying Premium Plugin changes
 
 The following premium plugin updates were released alongside {{site.productname}} 5.6.
@@ -62,6 +87,18 @@ The {{site.productname}} 5.6 release includes an accompanying release of the **<
 - <Description>
 
 For information on the <<Premium Plugin Name>> plugin, see: [<<Premium Plugin Name>> plugin]({{site.baseurl}}/plugins/<<Premium Plugin Name>>/).
+
+### Advanced Code Editor 2.3.0
+
+The {{site.productname}} 5.6 release includes an accompanying release of the **Advanced Code Editor** premium plugin.
+
+**Advanced Code Editor** 2.3.0 provides the following improvements:
+
+- Added the ability to maintain the cursor position when opening the code dialog.
+- Fixed the code view not using monospace fonts.
+- Fixed an issue where non-breaking spaces were inserted instead of regular spaces on Safari.
+
+For information on the Advanced Code Editor plugin, see: [Advanced Code Editor plugin]({{site.baseurl}}/plugins/advcode/).
 
 ### Comments 2.3.0
 

@@ -49,6 +49,7 @@ For information on the `name` field, see: [User interface - `style_formats`]({{ 
 The new `TableModified` event is fired whenever style or structural changes are made to a table.
 
 For more information on the `TableModified` event, see: [Table - `events`]({{ site.baseurl }}/plugins/table/#events).
+
 ### New image emoji database for the Emoticons plugin
 
 A new `emojiimages` database has been added to the Emoticons plugin. This database uses images provided by the Twitter Emoji (twemoji) project to render emojis in the content.

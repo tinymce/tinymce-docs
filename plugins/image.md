@@ -280,28 +280,6 @@ tinymce.init({
 });
 ```
 
-### `images_file_types`
-
-This option configures which image file formats will be uploaded by the `image` plugin.
-
-**Type:** `String`
-
-**Default Value:** `'jpeg,jpg,jpe,jfi,jif,jfif,png,gif,bmp,webp'`
-
-**Possible Values:** A list of valid web image file extensions. For a list of possible values see: [MDN Web Docs - Image file type and format guide](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Image_types).
-
-#### Example: Using `images_file_types`
-
-```js
-tinymce.init({
-  selector: 'textarea',  // change this value according to your HTML
-  plugins: 'image',
-  menubar: 'insert',
-  toolbar: 'image',
-  images_file_types: 'jpg,svg,webp'
-});
-```
-
 ### `image_prepend_url`
 
 This option allows you to specify a URL prefix that will be applied to images when appropriate.
@@ -361,6 +339,30 @@ tinymce.init({
   menubar: 'insert',
   toolbar: 'image',
   image_uploadtab: false
+});
+```
+
+### `images_file_types`
+
+{{site.requires_5_6v}}
+
+This option configures which image file formats will be uploaded by the `image` plugin.
+
+**Type:** `String`
+
+**Default Value:** `'jpeg,jpg,jpe,jfi,jif,jfif,png,gif,bmp,webp'`
+
+**Possible Values:** A list of valid web image file extensions. For a list of possible values see: [MDN Web Docs - Image file type and format guide](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Image_types).
+
+#### Example: Using `images_file_types`
+
+```js
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'image',
+  menubar: 'insert',
+  toolbar: 'image',
+  images_file_types: 'jpg,svg,webp'
 });
 ```
 

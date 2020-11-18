@@ -10,6 +10,49 @@ class: changelog
 
 {% capture changelog %}
 
+## Version 5.6.0 November 18, 2020
+* Added new `BeforeOpenNotification` and `OpenNotification` events which allow internal notifications to be captured and modified before display.
+* Added support for `block` and `unblock` methods on inline dialogs.
+* Added new `TableModified` event which is fired whenever changes are made to a table.
+* Added new `image_file_types` setting to determine which image file formats will be automatically processed into `img` tags on paste when using the `paste` plugin.
+* Added support for `image_file_types` setting in the image file uploader to determine which image file extensions are valid for upload.
+* Added new `format_empty_lines` setting to control if empty lines are formatted in a ranged selection.
+* Added template support to the `autocompleter` for customizing the autocompleter items.
+* Added new user interface `enable`, `disable`, and `isDisabled` methods.
+* Added new `closest` formatter API to get the closest matching selection format from a set of formats.
+* Added new `emojiimages` emoticons database that uses the twemoji CDN by default.
+* Added new `emoticons_database` setting to configure which emoji database to use.
+* Added new `name` field to the `style_formats` setting object to enable specifying a name for the format.
+* Changed `readonly` mode to allow hyperlinks to be clickable.
+* Fixed the `change` event not firing after a successful image upload.
+* Fixed the type signature for the `entity_encoding` setting not accepting delimited lists.
+* Fixed layout issues when empty `tr` elements were incorrectly removed from tables.
+* Fixed image file extensions lost when uploading an image with an alternative extension, such as `.jfif`.
+* Fixed a security issue where URLs in attributes weren't correctly sanitized.
+* Fixed `DOMUtils.getParents` incorrectly including the shadow root in the array of elements returned.
+* Fixed an issue where the root document could be scrolled while an editor dialog was open inside a shadow root.
+* Fixed `getContent` with text format returning a new line when the editor is empty.
+* Fixed table column and row resizers not respecting the `data-mce-resize` attribute.
+* Fixed inserting a table via the `mceInsertTable` command incorrectly creating 2 undo levels.
+* Fixed nested tables with `colgroup` elements incorrectly always resizing the inner table.
+* Fixed the `visualchars` plugin causing the editor to steal focus when initialized.
+* Fixed `fullpage` plugin altering text content in `editor.getContent()`.
+* Fixed `fullscreen` plugin not working correctly with multiple editors and shadow DOM.
+* Fixed font size keywords such as `medium` not displaying correctly in font size menus.
+* Fixed an issue where some attributes in table cells were not copied over to new rows or columns.
+* Fixed incorrectly removing formatting on adjacent spaces when removing formatting on a ranged selection.
+* Fixed the `Cut` menu item not working in the latest version of Mozilla Firefox.
+* Fixed some incorrect types in the new TypeScript declaration file.
+* Fixed a regression where a fake offscreen selection element was incorrectly created for the editor root node.
+* Fixed an issue where menus would incorrectly collapse in small containers.
+* Fixed an issue where only one table column at a time could be converted to a header.
+* Fixed some minor memory leaks that prevented garbage collection for editor instances.
+* Fixed resizing a `responsive` table not working when using the column resize handles.
+* Fixed incorrectly calculating table `col` widths when resizing responsive tables.
+* Fixed an issue where spaces were not preserved in pre-blocks when getting text content.
+* Fixed a regression that caused the selection to be difficult to see in tables with backgrounds.
+* Fixed content pasted multiple times in the editor when using Microsoft Internet Explorer 11. Patch contributed by mattford.
+
 ## Version 5.5.1 October 1, 2020
 * Fixed pressing the down key near the end of a document incorrectly raising an exception.
 * Fixed incorrect Typescript types for the `Tools` API.

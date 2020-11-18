@@ -280,7 +280,7 @@ tinymce.init({
 });
 ```
 
-### `image_file_types`
+### `images_file_types`
 
 This option configures which image file formats will be uploaded by the `image` plugin.
 
@@ -290,7 +290,7 @@ This option configures which image file formats will be uploaded by the `image` 
 
 **Possible Values:** A list of valid web image file extensions. For a list of possible values see: [MDN Web Docs - Image file type and format guide](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Image_types).
 
-#### Example: Using `image_file_types`
+#### Example: Using `images_file_types`
 
 ```js
 tinymce.init({
@@ -298,7 +298,7 @@ tinymce.init({
   plugins: 'image',
   menubar: 'insert',
   toolbar: 'image',
-  image_file_types: 'jpg,svg,webp'
+  images_file_types: 'jpg,svg,webp'
 });
 ```
 

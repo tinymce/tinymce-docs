@@ -93,6 +93,8 @@ tinymce.init({
 
 ### `mentions_item_type`
 
+{{site.requires_5_6v}}
+
 This option allows you to specify what kind of user interface item to use when displaying the list of users. The `name` item will just display the user's name, while the `profile` item can also display an optional image and description. Depending on what this option is set to, additional properties may be required for the user object provided via [mentions_fetch](#mentions_fetch). Refer to the [User properties](#userproperties) table for more details.
 
 **Type:** `String`
@@ -113,7 +115,7 @@ tinymce.init({
 
 ##### User properties
 
-What properties are required, optional and not available depends on the [mentions_item_type](#mentions_item_type) setting and the [mentions_select](#mentions_select) setting.
+The user properties table describes which properties you may need to define for the user objects provided via the [mentions_fetch](#mentions_fetch) callback. Which properties are required, optional and not available depends on the [mentions_item_type](#mentions_item_type) setting, which may be of type `name` or `profile`, and the [mentions_select](#mentions_select) setting, which may be of type `profile`.
 
 | Name | Value | `name` | `profile` | Description |
 | ---- | ----- | ----------- | ----------- | ----------- |
@@ -123,6 +125,8 @@ What properties are required, optional and not available depends on the [mention
 | description | string | not available | optional | Description to display |
 
 ### `mentions_min_chars`
+
+{{site.requires_5_6v}}
 
 This option makes it possible to specify the number of characters a user need to type after the "@" symbol before the list of users will be displayed.
 
@@ -136,7 +140,7 @@ This option makes it possible to specify the number of characters a user need to
 tinymce.init({
   selector: 'textarea',
   plugins: 'mentions',
-  mentions_min_chars: 0
+  mentions_min_chars: 1
 });
 ```
 
@@ -231,7 +235,14 @@ tinymce.init({
 
 ### `mentions_select`
 
-This option enables you to provide an element to be presented below a hovered mention on the page. This could include more details about the user. If instead the string "profile" is provided, the mentions `profile` item will be used. Refer to the [User properties](#userproperties) table for more details on what user properties are required for this item.
+This option enables you to provide an element to be presented below a hovered mention on the page. This could include more details about the user. You can either create a custom hover element or use a pre-defined one.
+
+#### `mentions_select` `profile`
+
+{{site.requires_5_6v}}
+
+If the string "profile" is provided, the mentions `profile` item will be used. Refer to the [User properties](#userproperties) table for more details on what user properties are required for this item.
+
 
 **Type:** `function` or `String`
 

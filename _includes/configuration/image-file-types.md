@@ -1,5 +1,7 @@
 ### `image_file_types`
 
+{{site.requires_5_6v}}
+
 This option configures which image file formats will be recognized and placed in an `img` element by the [`smart_paste`](#smart_paste) functionality when content is pasted into the editor.
 
 **Type:** `String`

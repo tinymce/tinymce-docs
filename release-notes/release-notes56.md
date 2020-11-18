@@ -46,9 +46,9 @@ For information on the `name` field, see: [User interface - `style_formats`]({{ 
 
 ### New `TableModified` event
 
-The new `TableModified` event is fired whenever style or structural changes are made to a table.
+The new `TableModified` event is fired when style or structural changes are made to a table.
 
-For more information on the `TableModified` event, see: [Table - `events`]({{ site.baseurl }}/plugins/table/#events).
+For information on the `TableModified` event, see: [Table plugin - `events`]({{ site.baseurl }}/plugins/table/#events).
 
 ### Clicking a link in `readonly` mode now opens the URL
 

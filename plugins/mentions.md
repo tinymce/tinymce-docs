@@ -109,7 +109,7 @@ This option allows you to specify what kind of user interface item to use when d
 tinymce.init({
   selector: 'textarea',
   plugins: 'mentions',
-  mentions_item_type: 'profile'
+  mentions_item_type: 'name'
 });
 ```
 

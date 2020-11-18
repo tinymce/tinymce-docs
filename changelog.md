@@ -14,8 +14,8 @@ class: changelog
 * Added new `BeforeOpenNotification` and `OpenNotification` events which allow internal notifications to be captured and modified before display.
 * Added support for `block` and `unblock` methods on inline dialogs.
 * Added new `TableModified` event which is fired whenever changes are made to a table.
-* Added new `image_file_types` setting to determine which image file formats will be automatically processed into `img` tags on paste when using the `paste` plugin.
-* Added support for `image_file_types` setting in the image file uploader to determine which image file extensions are valid for upload.
+* Added new `images_file_types` setting to determine which image file formats will be automatically processed into `img` tags on paste when using the `paste` plugin.
+* Added support for `images_file_types` setting in the image file uploader to determine which image file extensions are valid for upload.
 * Added new `format_empty_lines` setting to control if empty lines are formatted in a ranged selection.
 * Added template support to the `autocompleter` for customizing the autocompleter items.
 * Added new user interface `enable`, `disable`, and `isDisabled` methods.

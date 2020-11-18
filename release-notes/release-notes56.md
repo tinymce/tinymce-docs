@@ -69,6 +69,10 @@ For information on the `emojiimages` database and `emoticons_database` option, s
 
 For information on the `emoticons_images_url` option, see: [Emoticons plugin - `emoticons_images_url`]({{ site.baseurl }}/plugins/emoticons/#emoticons_images_url).
 
+### New Notification events
+
+Added new events that are fired before and after displaying notifications. For more information on editor events, see: [Editor core events]({{ site.baseurl }}/advanced/events/#editorcoreevents).
+
 ## Accompanying Premium Plugin changes
 
 The following premium plugin updates were released alongside {{site.productname}} 5.6.

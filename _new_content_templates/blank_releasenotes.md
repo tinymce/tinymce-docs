@@ -81,19 +81,19 @@ For information on:
 
 {{site.productname}} vnumtxt introduces the following minor changes:
 
-* changelog
+- changelog
 
 ## General bug fixes
 
 {{site.productname}} vnumtxt provides fixes for the following bugs:
 
-* changelog
+- changelog
 
 ## Security fixes
 
 {{site.productname}} vnumtxt provides fixes for the following security issues:
 
-* changelog
+- changelog
 
 ## Deprecated features
 
@@ -109,18 +109,13 @@ This section describes issues that users of {{site.productname}} vnumtxt may enc
 
 **Outline**
 
-* [](#)
+- [](#)
 
 ###
 
-**Issue**:
+**Issue**: This issue affects ....
 
-This issue affects ....
-<impact>
-
-**Workaround**:
-
-There was no known workaround at the time of the release.
+**Workaround**: There was no known workaround at the time of the release.
 
 {% assign enterprise = true %}
 

@@ -170,6 +170,7 @@
   - url: "content-formatting"
     pages:
       - url: "#formats"
+      - url: "#format_empty_lines"
       - url: "#indentation"
       - url: "#indent_use_margin"
   - url: "spelling"
@@ -274,7 +275,9 @@
   - url: "emoticons"
     pages:
     - url: "#emoticons_append"
+    - url: "#emoticons_database"
     - url: "#emoticons_database_url"
+    - url: "#emoticons_images_url"
   - url: "mediaembed"
   - url: "export"
     pages:
@@ -415,6 +418,7 @@
     - url: "#paste_convert_word_fake_lists"
     - url: "#paste_remove_styles_if_webkit"
     - url: "#smart_paste"
+    - url: "#image_file_types"
   - url: "permanentpen"
     pages:
     - url: "#Configuring the Permanent Pen toolbar button"
@@ -433,6 +437,7 @@
     - url: "#powerpaste_clean_filtered_inline_elements"
     - url: "#powerpaste_keep_unsupported_src"
     - url: "#smart_paste"
+    - url: "#image_file_types"
     - url: "#paste_preprocess"
     - url: "#paste_postprocess"
   - url: "preview"
@@ -829,6 +834,16 @@
 
 - url: "release-notes"
   pages:
+  - url: "release-notes56"
+    pages:
+    - url: "#Overview"
+    - url: "#TinyMCE 5.6 new features and enhancements"
+    - url: "#Accompanying Premium Plugin changes"
+    - url: "#Minor changes for TinyMCE 5.6"
+    - url: "#General bug fixes"
+    - url: "#Deprecated features"
+    - url: "#Known issues"
+    - url: "#Upgrading to the latest version of TinyMCE 5"
   - url: "release-notes55"
     pages:
     - url: "#Overview"

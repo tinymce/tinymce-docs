@@ -59,7 +59,7 @@ The `success` callback can be passed an optional array of extra items. When clic
 * A "text" property for the content to be displayed in the menu.
 * A "meta" property for that will be passed using the fetch query parameter.
 
-##### Example with extras
+#### Example with extras
 
 ```js
 tinymce.init({
@@ -242,13 +242,6 @@ tinymce.init({
 
 This option enables an element to be presented below a mention when a user hovers over it on the page. This could include details about the user. A pre-defined template can be specified by name or a custom hover element can be configured using a callback function.
 
-#### `mentions_select` `profile`
-
-{{site.requires_5_6v}}
-
-If the option is set to "profile", the mentions `profile` template will be used. For details on the user properties required for the "profile" setting, see: [User properties](#userproperties).
-
-
 **Type:** `Function` or `String` — where the only valid string at this time is `'profile'`, introduced in {{site.productname}} 5.6.
 
 **Default Value:** `none`
@@ -292,6 +285,12 @@ tinymce.init({
   }
 });
 ```
+
+#### `mentions_select` `profile`
+
+{{site.requires_5_6v}}
+
+If the option is set to "profile", the mentions `profile` template will be used. For details on the user properties required for the "profile" setting, see: [User properties](#userproperties).
 
 ## API
 

@@ -1,6 +1,6 @@
 # TinyMCE documentation
 
-[![wercker status](https://app.wercker.com/status/4d4c743635332430f9d25acae1be5218/s/master "wercker status")](https://app.wercker.com/project/bykey/4d4c743635332430f9d25acae1be5218)
+[![wercker status](https://app.wercker.com/status/4d4c743635332430f9d25acae1be5218/s/main "wercker status")](https://app.wercker.com/project/bykey/4d4c743635332430f9d25acae1be5218)
 
 This project maintains the documentation for TinyMCE at
 [https://www.tiny.cloud/docs](https://www.tiny.cloud/docs). If you have any

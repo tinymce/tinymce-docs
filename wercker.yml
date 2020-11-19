@@ -1,4 +1,8 @@
-box: jointiny/tiny-cloud-docs-build:latest
+box: jointiny/tiny-cloud-docs-build
+  username: $DOCKER_USER
+  password: $DOCKER_PASSWORD
+  tag: latest
+  registry: hub.docker.com
 no-response-timeout: 30
 
 build:
@@ -28,4 +32,4 @@ deploy:
     - script:
         name: s3 cleanup
         code: _scripts/s3-cleanup.sh
-        
+

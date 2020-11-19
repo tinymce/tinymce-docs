@@ -44,7 +44,7 @@ A new optional `name` field that sets a specific name to the format when it's be
 
 For information on the `name` field, see: [User interface - `style_formats`]({{ site.baseurl }}/configure/editor-appearance/#style_formats).
 
-### New Editor events
+### New editor events
 
 - The new `TableModified` event is fired when style or structural changes are made to a table.
 - Two new core events that are fired before and after displaying notifications.

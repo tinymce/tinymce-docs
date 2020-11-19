@@ -115,10 +115,10 @@ The {{site.productname}} 5.6 release includes an accompanying release of the **M
 
 **Mentions** 2.2.0 provides the following improvements:
 
-- Added a new `mentions_item_type` option for specifying what kind of mentions user interface item to use when displaying the list of users.
-- Added a new `mentions_min_chars` option for specifying the  number of characters a user need to type after the “@” symbol before the list of users will be displayed.
+- Added a new `mentions_item_type` option for specifying which mentions user interface item to use when displaying the list of users.
+- Added a new `mentions_min_chars` option for specifying the number of characters required after the “@” symbol before the list of users will be displayed in the editor.
 - Added a new `profile` hover card for usage with the `mentions_select` option.
-- Fixed mentions not converted to contenteditable=false elements when set via `editor.setContent()`
+- Fixed mentions not converted to `contenteditable=false` elements when set using `editor.setContent()`
 
 For information on the Mentions plugin, see: [Mentions plugin]({{site.baseurl}}/plugins/mentions/).
 

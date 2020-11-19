@@ -95,7 +95,12 @@ tinymce.init({
 
 {{site.requires_5_6v}}
 
-This option allows you to specify what kind of user interface item to use when displaying the list of users. The `name` item will just display the user's name, while the `profile` item can also display an optional image and description. Depending on what this option is set to, additional properties may be required for the user object provided via [mentions_fetch](#mentions_fetch). Refer to the [User properties](#userproperties) table for more details.
+This option sets which user interface item type to use when displaying the list of users.
+
+- The `name` item will only display the user's name.
+- The `profile` item will display the user's name and can display an optional image and description.
+
+For information on the properties required for the user object provided to [`mentions_fetch`](#mentions_fetch), see: [User properties](#userproperties).
 
 **Type:** `String`
 
@@ -115,12 +120,12 @@ tinymce.init({
 
 ##### User properties
 
-The user properties table describes which properties you may need to define for the user objects provided via the [mentions_fetch](#mentions_fetch) callback. Which properties are required, optional and not available depends on the [mentions_item_type](#mentions_item_type) setting, which may be of type `name` or `profile`, and the [mentions_select](#mentions_select) setting, which may be of type `profile`.
+The following table describes the properties available for user objects provided to the [`mentions_fetch` callback](#mentions_fetch). Properties may be required, optional, or not available; depending on the [`mentions_item_type`](#mentions_item_type) and [`mentions_select`](#mentions_select) options.
 
 | Name | Value | `name` | `profile` | Description |
 | ---- | ----- | ----------- | ----------- | ----------- |
 | id | string | required | required | Used to identify the user mention in different callbacks |
-| name | string | required | required |  Name to display and highlight search matches on |
+| name | string | required | required |  Name to display and highlight matches |
 | image | string | not available | optional | Image source for user avatar |
 | description | string | not available | optional | Description to display |
 
@@ -128,7 +133,7 @@ The user properties table describes which properties you may need to define for 
 
 {{site.requires_5_6v}}
 
-This option makes it possible to specify the number of characters a user need to type after the "@" symbol before the list of users will be displayed.
+This option specifies the number of characters a user needs to type after the "@" symbol before the list of users will be displayed.
 
 **Type:** `Number`
 
@@ -235,16 +240,16 @@ tinymce.init({
 
 ### `mentions_select`
 
-This option enables you to provide an element to be presented below a hovered mention on the page. This could include more details about the user. You can either create a custom hover element or use a pre-defined one.
+This option enables an element to be presented below a mention when a user hovers over it on the page. This could include details about the user. A pre-defined template can be specified by name or a custom hover element can be configured using a callback function.
 
 #### `mentions_select` `profile`
 
 {{site.requires_5_6v}}
 
-If the string "profile" is provided, the mentions `profile` item will be used. Refer to the [User properties](#userproperties) table for more details on what user properties are required for this item.
+If the option is set to "profile", the mentions `profile` template will be used. For details on the user properties required for the "profile" setting, see: [User properties](#userproperties).
 
 
-**Type:** `function` or `String`
+**Type:** `Function` or `String` — where the only valid string at this time is `'profile'`, introduced in {{site.productname}} 5.6.
 
 **Default Value:** `none`
 

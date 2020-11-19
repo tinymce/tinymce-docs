@@ -1,4 +1,8 @@
-box: jointiny/tiny-cloud-docs-build:latest
+box:
+  id: jointiny/tiny-cloud-docs-build
+  username: $DOCKER_USER
+  password: $DOCKER_PASSWORD
+  tag: latest
 no-response-timeout: 30
 
 build:

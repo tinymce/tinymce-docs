@@ -3,7 +3,6 @@ box:
   username: $DOCKER_USER
   password: $DOCKER_PASSWORD
   tag: latest
-  registry: hub.docker.com
 no-response-timeout: 30
 
 build:

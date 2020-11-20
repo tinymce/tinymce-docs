@@ -106,6 +106,16 @@ The {{site.productname}} 5.6 release includes an accompanying release of the **A
 
 For information on the Advanced Code Editor plugin, see: [Advanced Code Editor plugin]({{site.baseurl}}/plugins/advcode/).
 
+### Acessibility Checker 2.3.1
+
+The {{site.productname}} 5.6 release includes an accompanying release of the **Acessibility Checker** premium plugin.
+
+**Acessibility Checker** 2.3.1 provides the following improvements:
+
+- Fixed an issue where internal TinyMCE elements were not ignored
+
+For information on the Acessibility Checker plugin, see: [Acessibility Checker plugin]({{site.baseurl}}/plugins/advcode/).
+
 ### Comments 2.3.0
 
 The {{site.productname}} 5.6 release includes an accompanying release of the **Comments** premium plugin.

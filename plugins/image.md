@@ -346,7 +346,7 @@ tinymce.init({
 
 {{site.requires_5_6v}}
 
-This option configures which image file formats will be uploaded by the `image` plugin.
+This option configures which image file formats will be accepted in the `image` dialog upload tab.
 
 **Type:** `String`
 

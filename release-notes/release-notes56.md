@@ -28,8 +28,8 @@ The following new features and enhancements were added for the {{site.productnam
 
 The new `images_file_types` option allows different image file extensions to be recognized by:
 
-- The `smart_paste` image URL to embedded image functionality
-- The Image plugin to determine allowed file extensions for upload
+- Smart Paste's image URL to embedded image functionality.
+- Allowed file extensions for the Image plugin.
 
 For information on the `images_file_types` and `smart_paste` options for the PowerPaste plugin, see: [PowerPaste plugin]({{site.baseurl}}/plugins/powerpaste/).
 

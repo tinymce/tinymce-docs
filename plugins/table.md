@@ -696,12 +696,13 @@ tinymce.activeEditor.plugins.table.insertTable(2, 3);
 
 ## Events
 
-| Name | Description |
-|------| ----------- |
-| newrow | Fired when a row is created |
-| newcell | Fired when a cell is created |
-| ObjectResizeStart | Fired when a resize action is started on a table, row, column or cell using the resize bars |
-| ObjectResized | Fired when a resize action is finished on a table, row, column or cell using the resize bars |
+| Name | Data | Description |
+|------| ---- | ----------- |
+| newrow | N/A | Fired when a row is created |
+| newcell | N/A | Fired when a cell is created |
+| ObjectResizeStart | N/A | Fired when a resize action is started on a table, row, column or cell using the resize bars |
+| ObjectResized | N/A | Fired when a resize action is finished on a table, row, column or cell using the resize bars |
+| TableModified | `{ structure?: boolean, style?: boolean }` | Fired when style or structural changes are made to a table. The optional `style` and `structure` parameters describe whether the table style, structure, or both were modified. |
 
 ## Commands
 

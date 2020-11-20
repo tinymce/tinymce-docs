@@ -49,6 +49,12 @@ A new optional `name` field that sets a specific name to the format when it's be
 
 For information on the `name` field, see: [User interface - `style_formats`]({{ site.baseurl }}/configure/editor-appearance/#style_formats).
 
+### New `TableModified` event
+
+The new `TableModified` event is fired when style or structural changes are made to a table.
+
+For information on the `TableModified` event, see: [Table plugin - `events`]({{ site.baseurl }}/plugins/table/#events).
+
 ### Clicking a link in `readonly` mode now opens the URL
 
 Clicking links when the editor is in `readonly` mode will open the URL in a new tab or window (depending on browser preferences).

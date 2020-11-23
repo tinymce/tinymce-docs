@@ -111,7 +111,7 @@ The {{site.productname}} 5.6 release includes an accompanying release of the **P
 
 **PowerPaste** 5.4.0 provides the following improvements:
 
-- Added a new `image_file_types` option to determine which image file types will automatically be converted into `img` tags by the `smart_paste` feature.
+- Added a new `images_file_types` option to determine which image file types will automatically be converted into `img` tags by the `smart_paste` feature.
 - Fixed the `Cut` menu item not working in the latest version of Firefox.
 - Fixed two Cross-Site Scripting (XSS) vulnerability issues. For more information, see: [Security fixes](#security-fixes).
 

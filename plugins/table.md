@@ -702,7 +702,7 @@ tinymce.activeEditor.plugins.table.insertTable(2, 3);
 | newcell | N/A | Fired when a cell is created |
 | ObjectResizeStart | N/A | Fired when a resize action is started on a table, row, column or cell using the resize bars |
 | ObjectResized | N/A | Fired when a resize action is finished on a table, row, column or cell using the resize bars |
-| TableModified | `{ table: HTMLTableElement }` | Fired when style or structural changes are made to a table` |
+| TableModified | `{ table: HTMLTableElement }` | Fired when style or structural changes are made to a table |
 
 ## Commands
 

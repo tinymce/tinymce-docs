@@ -3,7 +3,32 @@
 The [Official {{site.productname}} Vue.js component](https://github.com/tinymce/tinymce-vue) integrates {{site.productname}} into Vue.js projects.
 This procedure creates a [basic Vue.js application](https://cli.vuejs.org/guide/creating-a-project.html#vue-create) containing a {{site.productname}} editor based on our [Basic example]({{site.baseurl}}/demo/basic-example/).
 
-For examples of the {{site.productname}} integration, visit [the tinymce-vue storybook](https://tinymce.github.io/tinymce-vue/).
+Version 4 of the `tinymce-vue` package supports Vue.js 3.x, but does not support Vue.js 2.x. For Vue.js 2.x applications, use `tinymce-vue` version 3.
+
+### TinyMCE Vue.js integration live examples
+
+For examples of the {{site.productname}} Vue.js 2.x integration, visit: [the tinymce-vue storybook](https://tinymce.github.io/tinymce-vue/).
+
+For examples of the {{site.productname}} Vue.js 3.x integration:
+1. Clone the `tinymce/tinymce-vue` GitHub repository. For example:
+
+    ```sh
+    $ git clone https://github.com/tinymce/tinymce-vue.git
+    ```
+
+2. Install the required packages using `yarn`. For example:
+
+    ```sh
+    $ yarn install
+    ```
+
+3. To start the demo server, run:
+
+    ```sh
+    $ yarn demo
+    ```
+
+The `tinymce-vue` demo is now running. Visit: http://localhost:3001.
 
 ### Prerequisites
 
@@ -21,21 +46,49 @@ This procedure requires:
     ```sh
     $ npm install -g @vue/cli
     ```
+
 2. Create a new Vue.js project named `tinymce-vue-demo`.
 
-    ```
-    $ vue create --default tinymce-vue-demo
-    ```
+    * To use the interactive prompt, run:
+
+      ```sh
+      $ vue create tinymce-vue-demo
+      ```
+
+    * To skip the interactive prompt:
+        
+      * For Vue.js 3.x users:
+      
+        ```sh
+        $ vue create --inlinePreset '{ "vueVersion": "3", "plugins": {} }' tinymce-vue-demo
+        ```
+
+      * For Vue.js 2.x users:
+
+        ```sh
+        $ vue create --inlinePreset '{ "vueVersion": "2", "plugins": {} }' tinymce-vue-demo
+        ```
+
 3. Change into the newly created directory.
 
     ```sh
     $ cd tinymce-vue-demo
     ```
+
 4. Install the `tinymce-vue` package and save it to your `package.json` with `--save`.
 
-    ```sh
-    $ npm install --save @tinymce/tinymce-vue
-    ```
+    * For Vue.js 3.x users:
+
+      ```sh
+      $ npm install --save "@tinymce/tinymce-vue@^4"
+      ```
+
+    * For Vue.js 2.x users:
+
+      ```sh
+      $ npm install --save "@tinymce/tinymce-vue@^3"
+      ```
+
 5. Using a text editor, open `/path/to/tinymce-vue-demo/src/App.vue`.
 
     1. Add a {{site.productname}} configuration to the `<template>` using the `<editor>` tag.
@@ -44,7 +97,7 @@ This procedure requires:
 
     For example:
 
-    ```html
+    ```jsx
     <template>
       <div id="app">
         <img alt="Vue logo" src="./assets/logo.png">
@@ -78,6 +131,7 @@ This procedure requires:
     }
     </script>
     ```
+
     This {{site.productname}} editor configuration should replicate the example on the [Basic example page]({{site.baseurl}}/demo/basic-example/).
 6. Provide access to {{site.productname}} using {{site.cloudname}} or by self-hosting {{site.productname}}.
 
@@ -98,6 +152,7 @@ This procedure requires:
       * **Deploy {{site.productname}} independent of the Vue.js application**
 
         To use an independent deployment of {{site.productname}}, add a script to either the `<head>` or the end of the `<body>` of the HTML file, such as:
+
         ```html
         <script src="/path/to/tinymce.min.js"></script>
         ```

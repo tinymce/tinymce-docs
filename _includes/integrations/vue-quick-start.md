@@ -49,9 +49,25 @@ This procedure requires:
 
 2. Create a new Vue.js project named `tinymce-vue-demo`.
 
-    ```sh
-    $ vue create --default tinymce-vue-demo
-    ```
+    * To use the interactive prompt, run:
+
+      ```sh
+      $ vue create tinymce-vue-demo
+      ```
+
+    * To skip the interactive prompt:
+        
+      * For Vue.js 3.x users:
+      
+        ```sh
+        $ vue create --inlinePreset '{ "vueVersion": "3", "plugins": {} }' tinymce-vue-demo
+        ```
+
+      * For Vue.js 2.x users:
+
+        ```sh
+        $ vue create --inlinePreset '{ "vueVersion": "2", "plugins": {} }' tinymce-vue-demo
+        ```
 
 3. Change into the newly created directory.
 

@@ -24,13 +24,18 @@ These release notes provide an overview of the changes for {{site.productname}} 
 
 The following new features and enhancements were added for the {{site.productname}} 5.6 release.
 
-### New `image_file_types` option for customizing the recognized `smart_paste` image file extensions
+### New `images_file_types` option for customizing recognized image file extensions
 
-The new `image_file_types` option allows different image file extensions to be recognized by the `smart_paste` image URL to embedded image functionality.
+The new `images_file_types` option allows different image file extensions to be recognized by:
 
-For information on the `image_file_types` and `smart_paste` options for the PowerPaste plugin, see: [PowerPaste plugin]({{site.baseurl}}/plugins/powerpaste/).
+- Smart Paste's image URL to embedded image functionality.
+- Allowed file extensions for the Image plugin.
 
-For information on the `image_file_types` and `smart_paste` options for the Paste plugin, see: [Paste plugin]({{site.baseurl}}/plugins/paste/).
+For information on the `images_file_types` and `smart_paste` options for the PowerPaste plugin, see: [PowerPaste plugin]({{site.baseurl}}/plugins/powerpaste/).
+
+For information on the `images_file_types` and `smart_paste` options for the Paste plugin, see: [Paste plugin]({{site.baseurl}}/plugins/paste/).
+
+For information on the `images_file_types` option for the Image plugin, see: [Image plugin]({{site.baseurl}}/plugins/image/).
 
 ### New `format_empty_lines` option for content formatting
 
@@ -43,6 +48,16 @@ For information on the `format_empty_lines` option, see: [Content Formatting - `
 A new optional `name` field that sets a specific name to the format when it's being registered using the `style_formats` option.
 
 For information on the `name` field, see: [User interface - `style_formats`]({{ site.baseurl }}/configure/editor-appearance/#style_formats).
+
+### New `TableModified` event
+
+The new `TableModified` event is fired when style or structural changes are made to a table.
+
+For information on the `TableModified` event, see: [Table plugin - `events`]({{ site.baseurl }}/plugins/table/#events).
+
+### Clicking a link in `readonly` mode now opens the URL
+
+Clicking links when the editor is in `readonly` mode will open the URL in a new tab or window (depending on browser preferences).
 
 ### New card menu item for the autocompleter
 
@@ -59,7 +74,7 @@ A new `emojiimages` database has been added to the Emoticons plugin. This databa
 {% assign license_agreement_name = "CC-BY 4.0" %}
 {% include misc/under-license.md %}
 
-A new `emoticons_database` option has been added to specify which built-in emoji database to use in the editor. Additionally, a new `emoticons_images_url` option has been added to configure the base URL for images used in the `emojiimages` database.  
+A new `emoticons_database` option has been added to specify which built-in emoji database to use in the editor. Additionally, a new `emoticons_images_url` option has been added to configure the base URL for images used in the `emojiimages` database.
 
 For information on the `emojiimages` database and `emoticons_database` option, see: [Emoticons plugin - `emoticons_database`]({{ site.baseurl }}/plugins/emoticons/#emoticons_database).
 

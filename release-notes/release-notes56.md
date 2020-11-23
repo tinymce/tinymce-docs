@@ -24,13 +24,18 @@ These release notes provide an overview of the changes for {{site.productname}} 
 
 The following new features and enhancements were added for the {{site.productname}} 5.6 release.
 
-### New `image_file_types` option for customizing the recognized `smart_paste` image file extensions
+### New `images_file_types` option for customizing recognized image file extensions
 
-The new `image_file_types` option allows different image file extensions to be recognized by the `smart_paste` image URL to embedded image functionality.
+The new `images_file_types` option allows different image file extensions to be recognized by:
 
-For information on the `image_file_types` and `smart_paste` options for the PowerPaste plugin, see: [PowerPaste plugin]({{site.baseurl}}/plugins/powerpaste/).
+- Smart Paste's image URL to embedded image functionality.
+- Allowed file extensions for the Image plugin.
 
-For information on the `image_file_types` and `smart_paste` options for the Paste plugin, see: [Paste plugin]({{site.baseurl}}/plugins/paste/).
+For information on the `images_file_types` and `smart_paste` options for the PowerPaste plugin, see: [PowerPaste plugin]({{site.baseurl}}/plugins/powerpaste/).
+
+For information on the `images_file_types` and `smart_paste` options for the Paste plugin, see: [Paste plugin]({{site.baseurl}}/plugins/paste/).
+
+For information on the `images_file_types` option for the Image plugin, see: [Image plugin]({{site.baseurl}}/plugins/image/).
 
 ### New `format_empty_lines` option for content formatting
 
@@ -44,6 +49,22 @@ A new optional `name` field that sets a specific name to the format when it's be
 
 For information on the `name` field, see: [User interface - `style_formats`]({{ site.baseurl }}/configure/editor-appearance/#style_formats).
 
+### New `TableModified` event
+
+The new `TableModified` event is fired when style or structural changes are made to a table.
+
+For information on the `TableModified` event, see: [Table plugin - `events`]({{ site.baseurl }}/plugins/table/#events).
+
+### Clicking a link in `readonly` mode now opens the URL
+
+Clicking links when the editor is in `readonly` mode will open the URL in a new tab or window (depending on browser preferences).
+
+### New card menu item for the autocompleter
+
+A new card menu item has been added to the autocompleter, allowing for greater customization of the autocompleter results displayed to the user.
+
+For information on customizing autocompleter results with `CardMenuItem`, see: [UI components - Autocompleter - `CardMenuItem`]({{ site.baseurl }}/ui-components/autocompleter/#cardmenuitem).
+
 ### New image emoji database for the Emoticons plugin
 
 A new `emojiimages` database has been added to the Emoticons plugin. This database uses images provided by the Twitter Emoji (twemoji) project to render emojis in the content.
@@ -53,7 +74,7 @@ A new `emojiimages` database has been added to the Emoticons plugin. This databa
 {% assign license_agreement_name = "CC-BY 4.0" %}
 {% include misc/under-license.md %}
 
-A new `emoticons_database` option has been added to specify which built-in emoji database to use in the editor. Additionally, a new `emoticons_images_url` option has been added to configure the base URL for images used in the `emojiimages` database.  
+A new `emoticons_database` option has been added to specify which built-in emoji database to use in the editor. Additionally, a new `emoticons_images_url` option has been added to configure the base URL for images used in the `emojiimages` database.
 
 For information on the `emojiimages` database and `emoticons_database` option, see: [Emoticons plugin - `emoticons_database`]({{ site.baseurl }}/plugins/emoticons/#emoticons_database).
 
@@ -98,6 +119,18 @@ The {{site.productname}} 5.6 release includes an accompanying release of the **C
 - Fixed a scrollbar appearing in the textarea when writing a comment.
 
 For information on the Comments plugin, see: [Comments plugin]({{site.baseurl}}/plugins/comments/).
+
+### PowerPaste 5.4.0
+
+The {{site.productname}} 5.6 release includes an accompanying release of the **PowerPaste** premium plugin.
+
+**PowerPaste** 5.4.0 provides the following improvements:
+
+- Added a new `images_file_types` option to determine which image file types will automatically be converted into `img` tags by the `smart_paste` feature.
+- Fixed the `Cut` menu item not working in the latest version of Firefox.
+- Fixed two Cross-Site Scripting (XSS) vulnerability issues. For more information, see: [Security fixes](#security-fixes).
+
+For information on the PowerPaste plugin, see: [PowerPaste plugin]({{site.baseurl}}/plugins/powerpaste/).
 
 ## Accompanying Premium self-hosted server-side component changes
 
@@ -148,6 +181,11 @@ For information on:
 {{site.productname}} 5.6 provides fixes for the following security issues:
 
 - changelog
+
+PowerPaste 5.4.0 provides fixes for the following security issues:
+
+* Fixed a Cross-Site Scripting (XSS) vulnerability where internal HTML content wasn't sanitized in some cases.
+* Fixed a Cross-Site Scripting (XSS) vulnerability where specific HTML comments weren't sanitized in some cases.
 
 ## Deprecated features
 

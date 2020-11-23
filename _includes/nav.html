@@ -17,7 +17,7 @@
       {% assign_page link_data = address_index %}
       {% assign dataId = link_data.title_nav | or:link_data.title | replace: '&amp;', 'and' | slugify %}
       {% if link_data.type == 'folder' %}
-        <span class="folder" data-test-id="navigation-{{ dataId }}">{{ link_data.title_nav | or:link_data.title }}</span>
+        <span class="folder" tabindex="0" data-test-id="navigation-{{ dataId }}">{{ link_data.title_nav | or:link_data.title }}</span>
       {% else %}
         <a href="{{ site.baseurl }}{{ address }}" data-test-id="navigation-{{ dataId }}">{{ link_data.title_nav | or:link_data.title }}</a>
       {% endif %}

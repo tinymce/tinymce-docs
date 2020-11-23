@@ -133,6 +133,18 @@ The {{site.productname}} 5.6 release includes an accompanying release of the **M
 
 For information on the Mentions plugin, see: [Mentions plugin]({{site.baseurl}}/plugins/mentions/).
 
+### PowerPaste 5.4.0
+
+The {{site.productname}} 5.6 release includes an accompanying release of the **PowerPaste** premium plugin.
+
+**PowerPaste** 5.4.0 provides the following improvements:
+
+- Added a new `images_file_types` option to determine which image file types will automatically be converted into `img` tags by the `smart_paste` feature.
+- Fixed the `Cut` menu item not working in the latest version of Firefox.
+- Fixed two Cross-Site Scripting (XSS) vulnerability issues. For more information, see: [Security fixes](#security-fixes).
+
+For information on the PowerPaste plugin, see: [PowerPaste plugin]({{site.baseurl}}/plugins/powerpaste/).
+
 ## Accompanying Premium self-hosted server-side component changes
 
 The {{site.productname}} 5.6 release includes accompanying changes affecting the {{site.productname}} **self-hosted** services for the following plugins:
@@ -182,6 +194,11 @@ For information on:
 {{site.productname}} 5.6 provides fixes for the following security issues:
 
 - changelog
+
+PowerPaste 5.4.0 provides fixes for the following security issues:
+
+* Fixed a Cross-Site Scripting (XSS) vulnerability where internal HTML content wasn't sanitized in some cases.
+* Fixed a Cross-Site Scripting (XSS) vulnerability where specific HTML comments weren't sanitized in some cases.
 
 ## Deprecated features
 

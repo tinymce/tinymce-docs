@@ -51,12 +51,14 @@ For information on the `name` field, see: [User interface - `style_formats`]({{ 
 
 ### New editor events
 
-- The new `TableModified` event is fired when style or structural changes are made to a table.
-- Two new core events that are fired before and after displaying notifications.
+{{site.productname}} 5.6 introduces several new events that integrators can use for custom functionality:
 
-For more information on the `TableModified` event, see: [Table plugin - `events`]({{ site.baseurl }}/plugins/table/#events).
+- A new `TableModified` event which is fired when a style or structural change is made to a table.
+- Two new core events which are fired before and after displaying notifications.
 
-For more information on core editor events, see: [Editor core events]({{ site.baseurl }}/advanced/events/#editorcoreevents).
+For information on the `TableModified` event, see: [Table plugin - `events`]({{ site.baseurl }}/plugins/table/#events).
+
+For information on core editor events, see: [Editor core events]({{ site.baseurl }}/advanced/events/#editorcoreevents).
 
 ### Clicking a link in `readonly` mode now opens the URL
 

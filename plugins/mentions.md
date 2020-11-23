@@ -20,13 +20,13 @@ These configuration options affect the execution of the `mentions` plugin. The m
 
 ### `mentions_fetch`
 
-This option lets you request a list of uses from your server that match a search query. The callback gets passed two parameters: one is the search query object, the other is the success callback to execute with the results. The query object has a term property that contains what the user has typed after the "@" sign. The success call should contain an array of users with the required properties "id" and "name".
+This option lets you request a list of users from your server that match a search query. The callback gets passed two parameters: one is the search query object, the other is the success callback to execute with the results. The query object has a term property that contains what the user has typed after the "@" sign. The success call should contain an array of users. For information on the user properties to pass the success callback for the available mentions item types (`mentions_item_type`), see: [User properties](#userproperties).
 
 **Type:** `function`
 
 **Default Value:** `none`
 
-#### Example: Using`mentions_fetch`
+#### Example: Using `mentions_fetch`
 
 ```js
 var usersRequest = null;
@@ -53,8 +53,6 @@ tinymce.init({
   }
 });
 ```
-
-> **Important:**  The values returned in the users array for "id" and "name" all need to be `String` values.
 
 The `success` callback can be passed an optional array of extra items. When clicked, the menu reloads and passes additional query parameters to the fetch function. The extra items can be used to search with different queries or show additional results, such as a full text search (which is slower to fetch). Each extra item should contain:
 
@@ -90,6 +88,64 @@ tinymce.init({
       success(users, extras);
     });
   }
+});
+```
+
+### `mentions_item_type`
+
+{{site.requires_5_6v}}
+
+This option sets which user interface item type to use when displaying the list of users.
+
+- The `name` item will only display the user's name.
+- The `profile` item will display the user's name and can display an optional image and description.
+
+For information on the properties required for the user object provided to [`mentions_fetch`](#mentions_fetch), see: [User properties](#userproperties).
+
+**Type:** `String`
+
+**Default Value:** `name`
+
+**Possible Values:** `name`, `profile`
+
+#### Example: Using `mentions_item_type`
+
+```js
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'mentions',
+  mentions_item_type: 'name'
+});
+```
+
+##### User properties
+
+The following table describes the properties available for user objects provided to the [`mentions_fetch` callback](#mentions_fetch). Properties may be required, optional, or not available; depending on the [`mentions_item_type`](#mentions_item_type) and [`mentions_select`](#mentions_select) options.
+
+| Name | Value | `name` | `profile` | Description |
+| ---- | ----- | ----------- | ----------- | ----------- |
+| id | string | required | required | Used to identify the user mention in different callbacks |
+| name | string | required | required |  Name to display and highlight matches |
+| image | string | not available | optional | Image source for user avatar |
+| description | string | not available | optional | Description to display |
+
+### `mentions_min_chars`
+
+{{site.requires_5_6v}}
+
+This option specifies the number of characters a user needs to type after the "@" symbol before the list of users will be displayed.
+
+**Type:** `Number`
+
+**Default Value:** 1
+
+#### Example: Using `mentions_min_chars`
+
+```js
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'mentions',
+  mentions_min_chars: 1
 });
 ```
 
@@ -184,9 +240,9 @@ tinymce.init({
 
 ### `mentions_select`
 
-This option enables you to provide an element to be presented below a hovered mention on the page. This could include more details about the user.
+This option enables an element to be presented below a mention when a user hovers over it on the page. This could include details about the user. A pre-defined template can be specified by name or a custom hover element can be configured using a callback function.
 
-**Type:** `function`
+**Type:** `Function` or `String` — where the only valid string at this time is `'profile'`, introduced in {{site.productname}} 5.6.
 
 **Default Value:** `none`
 
@@ -205,6 +261,7 @@ tinymce.init({
     span.appendChild(editor.getDoc().createTextNode('@' + userInfo.name));
     return span;
   },
+  // mentions_select: 'profile', // Use the 'profile' item or customize your own item.
   mentions_select: function (mention, success) {
     // `mention` is the element we previously created with `mentions_menu_complete`
     // in this case we have chosen to store the id as an attribute
@@ -228,6 +285,12 @@ tinymce.init({
   }
 });
 ```
+
+#### `mentions_select` `profile`
+
+{{site.requires_5_6v}}
+
+If the option is set to "profile", the mentions `profile` template will be used. For details on the user properties required for the "profile" setting, see: [User properties](#userproperties).
 
 ## API
 

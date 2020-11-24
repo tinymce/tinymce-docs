@@ -4,19 +4,19 @@ The following table lists the premium plugins supported by {{site.companynamefor
 
 | Plugin                                                            | TinyMCE 4     | TinyMCE 5     |
 | ----------------------------------------------------------------- | :-----------: | :-----------: |
-| [Accessibility Checker]({{site.baseurl}}/plugins/a11ychecker)     | {{site.tick}} | {{site.tick}} |
-| [Advanced Code Editor]({{site.baseurl}}/plugins/advcode)          | {{site.tick}} | {{site.tick}} |
-| [Advanced Tables]({{site.baseurl}}/plugins/advtable)| {{site.cross}} | Version **5.1.2** and higher |
-| [Case Change]({{site.baseurl}}/plugins/casechange)                | {{site.cross}}| {{site.tick}} |
-| [Checklist]({{site.baseurl}}/plugins/checklist)                   | {{site.cross}}| {{site.tick}} |
-| [Comments]({{site.baseurl}}/plugins/comments)                     | {{site.tick}} | {{site.tick}} |
-| [Enhanced Media Embed]({{site.baseurl}}/plugins/mediaembed)       | {{site.tick}} | {{site.tick}} |
-| [Format Painter]({{site.baseurl}}/plugins/formatpainter)          | {{site.tick}} | {{site.tick}} |
-| [Link Checker]({{site.baseurl}}/plugins/linkchecker)              | {{site.tick}} | {{site.tick}} |
-| [AtMentions]({{site.baseurl}}/plugins/mentions)                     | {{site.tick}} | {{site.tick}} |
-| [MoxieManager]({{site.baseurl}}/plugins/moxiemanager)             | {{site.tick}} | {{site.tick}} |
-| [Page Embed]({{site.baseurl}}/plugins/pageembed)                  | {{site.cross}}| {{site.tick}} |
-| [Permanent Pen]({{site.baseurl}}/plugins/permanentpen)            | {{site.cross}}| {{site.tick}} |
-| [PowerPaste]({{site.baseurl}}/plugins/powerpaste)                 | {{site.tick}} | {{site.tick}} |
-| [Spell Checker Pro]({{site.baseurl}}/plugins/tinymcespellchecker) | {{site.tick}} | {{site.tick}} |
+| [Accessibility Checker]({{site.baseurl}}/plugins/premium/a11ychecker)     | {{site.tick}} | {{site.tick}} |
+| [Advanced Code Editor]({{site.baseurl}}/plugins/premium/advcode)          | {{site.tick}} | {{site.tick}} |
+| [Advanced Tables]({{site.baseurl}}/plugins/premium/advtable)| {{site.cross}} | Version **5.1.2** and higher |
+| [Case Change]({{site.baseurl}}/plugins/premium/casechange)                | {{site.cross}}| {{site.tick}} |
+| [Checklist]({{site.baseurl}}/plugins/premium/checklist)                   | {{site.cross}}| {{site.tick}} |
+| [Comments]({{site.baseurl}}/plugins/premium/comments)                     | {{site.tick}} | {{site.tick}} |
+| [Enhanced Media Embed]({{site.baseurl}}/plugins/premium/mediaembed)       | {{site.tick}} | {{site.tick}} |
+| [Format Painter]({{site.baseurl}}/plugins/premium/formatpainter)          | {{site.tick}} | {{site.tick}} |
+| [Link Checker]({{site.baseurl}}/plugins/premium/linkchecker)              | {{site.tick}} | {{site.tick}} |
+| [AtMentions]({{site.baseurl}}/plugins/premium/mentions)                     | {{site.tick}} | {{site.tick}} |
+| [MoxieManager]({{site.baseurl}}/plugins/premium/moxiemanager)             | {{site.tick}} | {{site.tick}} |
+| [Page Embed]({{site.baseurl}}/plugins/premium/pageembed)                  | {{site.cross}}| {{site.tick}} |
+| [Permanent Pen]({{site.baseurl}}/plugins/premium/permanentpen)            | {{site.cross}}| {{site.tick}} |
+| [PowerPaste]({{site.baseurl}}/plugins/premium/powerpaste)                 | {{site.tick}} | {{site.tick}} |
+| [Spell Checker Pro]({{site.baseurl}}/plugins/premium/tinymcespellchecker) | {{site.tick}} | {{site.tick}} |
 | [{{site.prem_skins_icons}}]({{site.baseurl}}/enterprise/premium-skins-and-icon-packs/)|{{site.cross}}|{{site.tick}}|

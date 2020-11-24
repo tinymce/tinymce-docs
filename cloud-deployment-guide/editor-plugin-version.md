@@ -66,7 +66,7 @@ Use the URL query parameters to specify the version of each premium plugin. This
 
 ### Mentions
 
-* [Developer documentation]({{ site.baseurl }}/plugins/mentions/)
+* [Developer documentation]({{site.baseurl}}/plugins/premium/mentions/)
 * [Supported versions](http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/mentions/available-versions)
 
 #### Example: Specifying the Mentions plugin version
@@ -88,7 +88,7 @@ Use the URL query parameters to specify the version of each premium plugin. This
 
 ### Comments
 
-* [Developer documentation]({{ site.baseurl }}/plugins/comments/)
+* [Developer documentation]({{site.baseurl}}/plugins/premium/comments/)
 * [Supported versions](http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/tinycomments/available-versions)
 
 #### Example: Specifying the Comments plugin version
@@ -99,7 +99,7 @@ Use the URL query parameters to specify the version of each premium plugin. This
 
 ### Page Embed
 
-* [Developer documentation]({{ site.baseurl }}/plugins/pageembed/)
+* [Developer documentation]({{site.baseurl}}/plugins/premium/pageembed/)
 * [Supported versions](http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/pageembed/available-versions)
 
 #### Example: Specifying the Page Embed plugin version
@@ -110,7 +110,7 @@ Use the URL query parameters to specify the version of each premium plugin. This
 
 ### Permanent Pen
 
-* [Developer documentation]({{ site.baseurl }}/plugins/permanentpen/)
+* [Developer documentation]({{site.baseurl}}/plugins/premium/permanentpen/)
 * [Supported versions](http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/permanentpen/available-versions)
 
 #### Example: Specifying the Permanent Pen plugin version
@@ -121,7 +121,7 @@ Use the URL query parameters to specify the version of each premium plugin. This
 
 ### Format Painter
 
-* [Developer documentation]({{ site.baseurl }}/plugins/formatpainter/)
+* [Developer documentation]({{site.baseurl}}/plugins/premium/formatpainter/)
 * [Supported versions](http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/formatpainter/available-versions)
 
 #### Example: Specifying the Format Painter plugin version
@@ -132,7 +132,7 @@ Use the URL query parameters to specify the version of each premium plugin. This
 
 ### PowerPaste
 
-* [Developer documentation]({{ site.baseurl }}/plugins/powerpaste)
+* [Developer documentation]({{site.baseurl}}/plugins/premium/powerpaste)
 * [Supported versions](http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/powerpaste/available-versions)
 
 #### Example: Specifying the PowerPaste plugin version
@@ -143,7 +143,7 @@ Use the URL query parameters to specify the version of each premium plugin. This
 
 ### Spell Checker Pro
 
-* [Developer documentation]({{ site.baseurl }}/plugins/tinymcespellchecker)
+* [Developer documentation]({{site.baseurl}}/plugins/premium/tinymcespellchecker)
 * [Supported versions](http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/tinymcespellchecker/available-versions)
 
 #### Example: Specifying the Spell Checker Pro plugin version
@@ -154,7 +154,7 @@ Use the URL query parameters to specify the version of each premium plugin. This
 
 ### Accessibility Checker
 
-* [Developer documentation]({{ site.baseurl }}/plugins/a11ychecker)
+* [Developer documentation]({{site.baseurl}}/plugins/premium/a11ychecker)
 * [Supported versions](http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/a11ychecker/available-versions)
 
 #### Example: Specifying the Accessibility Checker plugin version
@@ -165,7 +165,7 @@ Use the URL query parameters to specify the version of each premium plugin. This
 
 ### Advanced Code Editor
 
-* [Developer documentation]({{ site.baseurl }}/plugins/advcode/)
+* [Developer documentation]({{site.baseurl}}/plugins/premium/advcode/)
 * [Supported versions](http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/advcode/available-versions)
 
 #### Example: Specifying the Advanced Code Editor plugin version
@@ -176,7 +176,7 @@ Use the URL query parameters to specify the version of each premium plugin. This
 
 ### Enhanced Media Embed
 
-* [Developer documentation]({{ site.baseurl }}/plugins/mediaembed/)
+* [Developer documentation]({{site.baseurl}}/plugins/premium/mediaembed/)
 * [Supported versions](http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/mediaembed/available-versions)
 
 #### Example: Specifying the Enhanced Media Embed plugin version
@@ -187,7 +187,7 @@ Use the URL query parameters to specify the version of each premium plugin. This
 
 ### Link Checker
 
-* [Developer documentation]({{ site.baseurl }}/plugins/linkchecker/)
+* [Developer documentation]({{site.baseurl}}/plugins/premium/linkchecker/)
 * [Supported versions](http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/linkchecker/available-versions)
 
 #### Example: Specifying the Link Checker plugin version
@@ -204,7 +204,7 @@ The "SDK" version lets the {{site.productname}} Plugin Manager know that you're 
 
 ### Using the Self-hosted Mentions plugin with Tiny Cloud
 
-* [Developer documentation]({{ site.baseurl }}/plugins/mentions/)
+* [Developer documentation]({{site.baseurl}}/plugins/premium/mentions/)
 
 #### Example: Using the Self-hosted Mentions plugin with Tiny Cloud
 
@@ -224,7 +224,7 @@ The "SDK" version lets the {{site.productname}} Plugin Manager know that you're 
 
 ### Using the Self-hosted Comments plugin with Tiny Cloud
 
-* [Developer documentation]({{ site.baseurl }}/plugins/comments/)
+* [Developer documentation]({{site.baseurl}}/plugins/premium/comments/)
 
 #### Example: Using the Self-hosted Comments plugin with Tiny Cloud
 
@@ -234,7 +234,7 @@ The "SDK" version lets the {{site.productname}} Plugin Manager know that you're 
 
 ### Using the Self-hosted Page Embed plugin with Tiny Cloud
 
-* [Developer documentation]({{ site.baseurl }}/plugins/pageembed/)
+* [Developer documentation]({{site.baseurl}}/plugins/premium/pageembed/)
 
 #### Example: Using the Self-hosted Page Embed plugin with Tiny Cloud
 
@@ -244,7 +244,7 @@ The "SDK" version lets the {{site.productname}} Plugin Manager know that you're 
 
 ### Using the Self-hosted Permanent Pen plugin with Tiny Cloud
 
-* [Developer documentation]({{ site.baseurl }}/plugins/permanentpen/)
+* [Developer documentation]({{site.baseurl}}/plugins/premium/permanentpen/)
 
 #### Example: Using the Self-hosted Permanent Pen plugin with Tiny Cloud
 
@@ -254,7 +254,7 @@ The "SDK" version lets the {{site.productname}} Plugin Manager know that you're 
 
 ### Using the Self-hosted Format Painter plugin with Tiny Cloud
 
-* [Developer documentation]({{ site.baseurl }}/plugins/formatpainter/)
+* [Developer documentation]({{site.baseurl}}/plugins/premium/formatpainter/)
 
 #### Example: Using the Self-hosted Format Painter plugin with Tiny Cloud
 
@@ -264,7 +264,7 @@ The "SDK" version lets the {{site.productname}} Plugin Manager know that you're 
 
 ### Using the Self-hosted PowerPaste plugin with Tiny Cloud
 
-* [Developer documentation]({{ site.baseurl }}/plugins/powerpaste)
+* [Developer documentation]({{site.baseurl}}/plugins/premium/powerpaste)
 
 #### Example: Using the Self-hosted PowerPaste plugin with Tiny Cloud
 
@@ -274,7 +274,7 @@ The "SDK" version lets the {{site.productname}} Plugin Manager know that you're 
 
 ### Using the Self-hosted Spell Checker Pro plugin with Tiny Cloud
 
-* [Developer documentation]({{ site.baseurl }}/plugins/tinymcespellchecker)
+* [Developer documentation]({{site.baseurl}}/plugins/premium/tinymcespellchecker)
 
 #### Example: Using the Self-hosted Spell Checker Pro plugin with Tiny Cloud
 
@@ -284,7 +284,7 @@ The "SDK" version lets the {{site.productname}} Plugin Manager know that you're 
 
 ### Using the Self-hosted Accessibility Checker plugin with Tiny Cloud
 
-* [Developer documentation]({{ site.baseurl }}/plugins/a11ychecker)
+* [Developer documentation]({{site.baseurl}}/plugins/premium/a11ychecker)
 
 #### Example: Using the Self-hosted Accessibility Checker plugin with Tiny Cloud
 
@@ -294,7 +294,7 @@ The "SDK" version lets the {{site.productname}} Plugin Manager know that you're 
 
 ### Using the Self-hosted Advanced Code Editor plugin with Tiny Cloud
 
-* [Developer documentation]({{ site.baseurl }}/plugins/advcode/)
+* [Developer documentation]({{site.baseurl}}/plugins/premium/advcode/)
 
 #### Example: Using the Self-hosted Advanced Code Editor plugin with Tiny Cloud
 
@@ -304,7 +304,7 @@ The "SDK" version lets the {{site.productname}} Plugin Manager know that you're 
 
 ### Using the Self-hosted Enhanced Media Embed plugin with Tiny Cloud
 
-* [Developer documentation]({{ site.baseurl }}/plugins/mediaembed/)
+* [Developer documentation]({{site.baseurl}}/plugins/premium/mediaembed/)
 
 #### Example: Using the Self-hosted Enhanced Media Embed plugin with Tiny Cloud
 
@@ -314,7 +314,7 @@ The "SDK" version lets the {{site.productname}} Plugin Manager know that you're 
 
 ### Using the Self-hosted Link Checker plugin with Tiny Cloud
 
-* [Developer documentation]({{ site.baseurl }}/plugins/linkchecker/)
+* [Developer documentation]({{site.baseurl}}/plugins/premium/linkchecker/)
 
 #### Example: Using the Self-hosted Link Checker plugin with Tiny Cloud
 

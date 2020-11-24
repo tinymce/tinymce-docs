@@ -27,7 +27,7 @@ tinymce.init({
 
 This option allows you to specify a default `target` value for links inserted by the autolink plugin.
 
-> **Note**: This setting also applies to the [link]({{ site.baseurl }}/plugins/link) plugin.
+> **Note**: This setting also applies to the [link]({{site.baseurl}}/plugins/opensource/link) plugin.
 
 **Type:** `String`
 
@@ -47,7 +47,7 @@ tinymce.init({
 
 This option allows you to set a default protocol for links inserted by the autolink plugin.
 
-> **Note**: This setting also applies to the [link]({{ site.baseurl }}/plugins/link) plugin.
+> **Note**: This setting also applies to the [link]({{site.baseurl}}/plugins/opensource/link) plugin.
 
 **Type:** `String`
 

@@ -71,7 +71,7 @@ These changes solve bugs with TinyMCE table functionality behaving unexpectedly 
 
 Enhanced Media Embed 2.2.3 addresses an issue where embedded snippets were not created when inputting links and pressing the Enter Key in Firefox.
 
-For information on Enhanced Media Embed refer to the [documentation]({{site.baseurl}}/plugins/mediaembed/).
+For information on Enhanced Media Embed refer to the [documentation]({{site.baseurl}}/plugins/premium/mediaembed/).
 
 #### PowerPaste
 

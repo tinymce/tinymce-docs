@@ -48,11 +48,11 @@ tinymce.init({
 });
 ```
 
-Review the [Spell Checker plugin]({{ site.baseurl }}/plugins/spellchecker/) for advanced configuration options.
+Review the [Spell Checker plugin]({{site.baseurl}}/plugins/opensource/spellchecker/) for advanced configuration options.
 
 ## TinyMCE Spell Checker Pro plugin
 
-Use the [Spell Checker Pro plugin]({{ site.baseurl }}/plugins/tinymcespellchecker/) for scalable enterprise-grade spell check as-you-type functionality. **Spell Checker Pro** requires both a client-side plugin to be configured and a server-side component to be installed and configured.
+Use the [Spell Checker Pro plugin]({{site.baseurl}}/plugins/premium/tinymcespellchecker/) for scalable enterprise-grade spell check as-you-type functionality. **Spell Checker Pro** requires both a client-side plugin to be configured and a server-side component to be installed and configured.
 
 Review the {{site.productname}} Premium Features [documentation for Spelling]({{ site.baseurl }}/enterprise/check-spelling/). Learn more about [{{site.productname}} Premium Products here]({{site.pricingpage}}).
 

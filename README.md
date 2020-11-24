@@ -197,7 +197,3 @@ To help with this, there are two mechanisms for overriding the tinymce.min.js UR
 
 Note: Jekyll is pretty bad at automatically reloading code when you're playing with include files.
 Sometimes you need to restart the server.
-
-### Why is HTML minification disabled?
-
-It's very slow and the minifier is using regex to parse HTML. We may add a different minifier in the future.

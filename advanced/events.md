@@ -297,15 +297,11 @@ The following events are provided by the [Spell Checker plugin]({{ site.baseurl 
 
 ### Spell Checker Pro events
 
-{% include events/tinymcespellchecker.md %}
+{% include events/tinymcespellchecker-events.md %}
 
 ### Table events
 
-The following event is provided by the [Table plugin]({{ site.baseurl }}/plugins/table/).
-
-| Name                | Data | Description                                                              |
-| ------------------- | ---- | ------------------------------------------------------------------------ |
-| TableSelectionClear | N/A  | Fired when the table selection is cleared. <br/>{{ site.requires_5_1v }} |
+{% include events/table-events.md %}
 
 ### Visual Blocks events
 

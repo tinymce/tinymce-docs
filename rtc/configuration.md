@@ -31,7 +31,7 @@ tinymce.init({
 })
 ```
 
-#### Example Using the document details provider to return a document details from your server
+#### Example Using the document details provider to return document details from your server
 
 ```js
 tinymce.init({
@@ -47,7 +47,7 @@ tinymce.init({
 
 ### `rtc_encryption_provider`
 
-The Tiny RTC plugin uses end-to-end encryption and therefore a key needs to be generated to encrypt the messages. This key is never sent to the server so there is no way for the tinymce rtc service to read your contents since it's encrypted/decrypted in the clients browsers using this shared encryption key. 
+The Tiny RTC plugin uses end-to-end encryption and therefore a key needs to be generated to encrypt the messages. This key is never sent to the server so there is no way for the {{site.productname}} rtc service to read your contents since it's encrypted/decrypted in the browser using this shared encryption key. 
 
 Generate a unique key by creating a function that takes the document ID, session ID and, if this is an existing session, a key hint. How you generate the key is up to you. Secure ways include:
 
@@ -98,7 +98,7 @@ tinymce.init({
 
 ### `rtc_token_provider`
 
-The Tiny RTC plugin and service uses JSON Web Tokens (JWT) to authenticate the user. This token should include a unique user ID. This provider function could be called multiple times to refresh the token if it about to expire.
+The RTC plugin and service uses [JWT]({{site.baseurl}}/rtc/jwt-authentication/) to authenticate the user. This token should include a unique user ID and a relative expiration time. This provider function will be called multiple times to refresh the token if it about to expire. So for production use cases it should be a dynamic request that produces a fresh jwt token with a updated `exp` claim.
 
 **Type:** `Function`
 
@@ -111,7 +111,7 @@ The Tiny RTC plugin and service uses JSON Web Tokens (JWT) to authenticate the u
 
 #### Return fields
 
-* token:string - A generated JWT token.
+* token:string - A generated JWT token this should be signed with the private key.
 
 ### Example of providing a static JWT token
 
@@ -136,7 +136,7 @@ tinymce.init({
 
 ### `rtc_snapshot`
 
-In an RTC session you normally don't have a save button as the session is constantly being stored. A snapshot callback is available, it will be executed at regular intervals with the serialized editor contents. The content is retrieved though a getContent function this is to lazily create the serialized version of the model since that serialization process could be cpu expensive.
+In an RTC session you normally don't have a save button as the session is constantly being stored. A snapshot callback is available, it will be executed at regular intervals with the serialized editor contents. The content is retrieved though a getContent function this is to lazily create the serialized version of the model since that serialization process could be cpu intensive.
 
 **Type:** `Function`
 
@@ -161,7 +161,7 @@ tinymce.init({
 
 ### `rtc_initial_content`
 
-By default the initial contents is retrived from target element that you initialized the editor on but since that content only needs to be retrived when there is no active session opened this optional provider function can be used instead to provide the intial content from your server. This also works better with the various tinymce integrations that doesn't provide access to the target element directly.
+By default the initial contents is retrived from target element that you initialized the editor on but since that content only needs to be retrived when there is no active RTC session opened this optional provider function can be used instead to provide the intial content. This also works better with the various tinymce [integrations]({{site.baseurl}}/integrations/) that doesn't provide access to the target element directly.
 
 **Type:** `Function`
 
@@ -260,7 +260,7 @@ tinymce.init({
 
 ### `rtc_user_connected`
 
-In many applications supporting real-time collaboration, the currently connected users are displayed. This setting enables you to detect when a user enters the session.
+In many applications supporting real-time collaboration, the currently connected users are displayed. This setting enables you to track when a user enters the session.
 
 **Type:** `Function`
 
@@ -284,7 +284,7 @@ tinymce.init({
 
 ### `rtc_user_disconnected`
 
-In many applications supporting real-time collaboration, the currently connected users are displayed. This setting enables you to detect when a user leaves the session.
+In many applications supporting real-time collaboration, the currently connected users are displayed. This setting enables you to track when a user leaves the session.
 
 **Type:** `Function`
 
@@ -294,11 +294,12 @@ In many applications supporting real-time collaboration, the currently connected
 
 - userId:string - This is the unique user ID of the disconnecting user
 - caretNumber:int - The user's caret number (helpful to disambiguate when a user connects multiple times)
+* custom:object - Custom data passed out from the other clients `rtc_custom_user_details` function. If none is provided this will be an empty object.
 
 ### Example of providing custom user details
 
 ```js
 tinymce.init({
-  rtc_user_disconnected: ({userId, caretNumber}) => console.log('Disconnected', userId, caretNumber);
+  rtc_user_disconnected: ({userId, caretNumber, custom}) => console.log('Disconnected', userId, caretNumber);
 })
 ```

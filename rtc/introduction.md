@@ -6,7 +6,7 @@ description: Introduction of what RTC is and its capabilities
 keywords: rtc introduction overview
 ---
 
-RTC is a premium {{site.productname}} plugin for having multiple users collaborating on the same document it uses end-to-end encryption so that your content gets stored and updated in a secure manner. It also has a precense api that enables you to track when users enter/leave the editing session.
+RTC is a premium {{site.productname}} plugin for having multiple users collaborating on the same document. It uses end-to-end encryption so that your content gets stored and updated in a secure manner. It also has a precense api that enables you to track when users enter/leave the editing session.
 
 ### Features
 

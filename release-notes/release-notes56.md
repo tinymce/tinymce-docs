@@ -230,6 +230,8 @@ For information on:
 - Fixed an issue where spaces were not preserved in pre-blocks when getting text content.
 - Fixed a regression that caused the selection to be difficult to see in tables with backgrounds.
 - Fixed content pasted multiple times in the editor when using Microsoft Internet Explorer 11. Patch contributed by mattford.
+- Fixed the `mceTableRowType` and `mceTableCellType` commands not firing the `newCell` event.
+- Fixed the HTML5 `s` element was not recognized when editing or clearing text formatting.
 
 ## Security fixes
 

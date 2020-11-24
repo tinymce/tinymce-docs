@@ -8,7 +8,7 @@ keywords: autcomplete
 
 ## Overview
 
-An `autocompleter` enables users to quickly find and select from a pre-populated list of values as they type, leveraging searching and filtering. It provides suggestions to insert while the user is typing into the content. For example, with the [charmap]({{site.baseurl}}/plugins/charmap/) plugin enabled, typing **:amp** should show the ampersand item in the menu. To activate the `autocompleter` the user must precede the trigger character (colon in this case) with some separator such as space or newline. Pressing `esc` should close the autocomplete menu.
+An `autocompleter` enables users to quickly find and select from a pre-populated list of values as they type, leveraging searching and filtering. It provides suggestions to insert while the user is typing into the content. For example, with the [charmap]({{site.baseurl}}/plugins/charmap/) plugin enabled, typing **:amp** should show the ampersand item in the menu. To activate the `autocompleter`, the user must precede the trigger character (colon in this case) with a separator character, such as a space or a newline. Pressing `esc` should close the autocomplete menu.
 
 ## How to create custom autocompleters
 
@@ -54,4 +54,3 @@ The `fetch` results should be a list of objects with the following details:
 This example shows how the charmap plugin adds the standard autocompleter. The autocompleter will show whenever a `:` character is typed plus at least one additional character.
 
 {% include live-demo.html id="autocompleter" height="300" tab="js" %}
-

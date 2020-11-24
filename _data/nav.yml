@@ -285,6 +285,7 @@
       - url: "#paste_postprocess"
     - url: "tinymcespellchecker"
     - url: "tinydrive"
+    - url: "rtc"
   - url: "opensource"
     pages:
     - url: "advlist"
@@ -654,6 +655,14 @@
       - url: "plugin"
     - url: "changelog"
     - url: "get-help"
+
+- url: "rtc"
+  pages:
+    - url: "introduction"
+    - url: "getting-started"
+    - url: "jwt-authentication"
+    - url: "configuration"
+    - url: "events"
 
 - url: "advanced"
   pages:

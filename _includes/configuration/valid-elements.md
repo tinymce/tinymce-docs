@@ -3,7 +3,7 @@
 
 The valid_elements option defines which elements will remain in the edited text when the editor saves. You can use this to limit the returned HTML to a subset.
 
-This option contains a comma separated list of element conversion chunks. Each chunk contains information about how one element and its attributes should be treated. The default rule set for this option is a mixture of the full [HTML5](http://www.w3.org/html/wg/drafts/html/master/) and [HTML4](http://www.w3.org/TR/REC-html40/) specification or the HTML5 or HTML4 specification depending on the configured [schema]({{ site.baseurl }}/configure/content-filtering/#schema).
+This option contains a comma separated list of element conversion chunks. Each chunk contains information about how one element and its attributes should be treated. The default rule set for this option is a mixture of the full [HTML5](https://html.spec.whatwg.org/) and [HTML4](http://www.w3.org/TR/REC-html40/) specification or the HTML5 or HTML4 specification depending on the configured [schema]({{ site.baseurl }}/configure/content-filtering/#schema).
 
 If you just want to add or change some behavior for a few items, use the [extended_valid_elements]({{ site.baseurl }}/configure/content-filtering/#extended_valid_elements) option
 

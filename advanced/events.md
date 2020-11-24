@@ -231,7 +231,7 @@ The following event is provided by the [Import CSS plugin]({{site.baseurl}}/plug
 
 ### Link checker events
 
-The following event is provided by the [Link plugin]({{site.baseurl}}/plugins/opensource/link/).
+The following event is provided by the [Link Checker plugin]({{site.baseurl}}/plugins/premium/linkchecker/).
 
 | Name             | Data                  | Description                                                                    |
 | ---------------- | --------------------- | ------------------------------------------------------------------------------ |

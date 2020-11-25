@@ -8,6 +8,22 @@ keywords: rtc configuration
 
 ## List of all available RTC configuration options
 
+### `rtc_service_url`
+
+The service url should point to the cloud service and include your api key.
+
+**Type:** `String`
+
+**Required:** yes
+#### Example setting the service url
+
+```js
+tinymce.init({
+  ...
+  rtc_service_url: 'https://rtc.tiny.cloud/1/<your api key>'
+})
+```
+
 ### `rtc_document_details_provider`
 
 The document details includes a document ID. This is the ID you share with other people collaborating on the document so it should be publicly available.

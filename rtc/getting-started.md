@@ -12,9 +12,9 @@ keywords: rtc
 > 3. Store these keys temporarily, you will need them later.
 > Do this before proceeding and it will go a lot smoother
 
-## Simplest form of setup to get RTC up and running
+## Simplest form of setup
 
-This is the most simple way to get the RTC plugin up and running using hard coded values. In a proper setup the document id and secret would be retrieved from your server. This examples also assumes that a JWT provider endpoint exists at '/jwt' see the [JWT authentication]({{site.baseurl}}/rtc/jwt-authentication/) page for details on how to set that up.
+This is the most simple way to get the RTC plugin up and running using hard coded values. In a proper setup the document ID and secret would be retrieved from your server. This examples also assumes that a JWT provider endpoint exists at '/jwt' see the [JWT authentication]({{site.baseurl}}/rtc/jwt-authentication/) page for details on how to set that up.
 
 ```js
 const yourDocumentId = 'some-document-id';
@@ -23,6 +23,7 @@ const yourSecretKey = 'your secret 🔑';
 tinymce.init({
   selector: 'textarea',
   plugin: 'rtc',
+  rtc_service_url: 'https://rtc.tiny.cloud/1/<your api key>',
   rtc_document_details_provider: () => Promise.resolve({ documentId: yourDocumentId }).
   rtc_encryption_provider: ({documentId, sessionId}) => {
     return Promise.resolve({ key: yourSecretKey });

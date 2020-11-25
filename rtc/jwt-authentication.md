@@ -81,7 +81,7 @@ EOD;
 // NOTE: Before you proceed with the TOKEN, verify your users session or access.
 
 $payload = array(
-  "sub" => "123", // unique user id string
+  "sub" => "123", // unique user ID string
   "exp" => time() + 60 * 10 // 10 minute expiration
 );
 
@@ -135,7 +135,7 @@ const privateKey = `
 app.post('/jwt', function (req, res) {
   // NOTE: Before you proceed with the TOKEN, verify your users' session or access.
   const payload = {
-    sub: '123', // Unique user id string
+    sub: '123', // Unique user ID string
     exp: Math.floor(Date.now() / 1000) + (60 * 10) // 10 minutes expiration
   };
 

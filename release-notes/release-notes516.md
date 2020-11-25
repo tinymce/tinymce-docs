@@ -48,7 +48,7 @@ The {{site.productname}} 5.1.6 release includes **Enhanced Media Embed** 2.2.5.
 
 **Enhanced Media Embed** 2.2.5 provides the following bug fixes:
 
-- The [`mediaembed_max_width`]({{site.baseurl}}/plugins/mediaembed/#mediaembed_max_width) setting will now constrain the max width correctly on Internet Explorer 11.
+- The [`mediaembed_max_width`]({{site.baseurl}}/plugins/premium/mediaembed/#mediaembed_max_width) setting will now constrain the max width correctly on Internet Explorer 11.
 
 {% assign enterprise = true %}
 

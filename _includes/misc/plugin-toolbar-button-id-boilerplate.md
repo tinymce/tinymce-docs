@@ -9,7 +9,7 @@ The {{pluginname}} plugin provides the following toolbar buttons:
 {% include toolbar-button-ids/{{plugincode}}-toolbar-buttons.md %}
 {% endif %}
 
-For information on the {{pluginname}} plugin, see: [Plugins - The {{pluginname}} plugin]({{site.baseurl}}/plugins/{{plugincode}}/)
+For information on the {{pluginname}} plugin, see: [Plugins - The {{pluginname}} plugin]({{site.baseurl}}/plugins/{{plugincategory}}/{{plugincode}}/)
 
 {% else %}
 ## Toolbar buttons

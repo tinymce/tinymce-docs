@@ -9,7 +9,7 @@ The {{pluginname}} plugin provides the following menu items:
 {% include menu-item-ids/{{plugincode}}-menu-items.md %}
 {% endif %}
 
-For information on the {{pluginname}} plugin, see: [Plugins - The {{pluginname}} plugin]({{site.baseurl}}/plugins/{{plugincode}}/)
+For information on the {{pluginname}} plugin, see: [Plugins - The {{pluginname}} plugin]({{site.baseurl}}/plugins/{{plugincategory}}/{{plugincode}}/)
 
 {% else %}
 ## Menu items

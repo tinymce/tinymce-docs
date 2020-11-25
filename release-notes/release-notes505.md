@@ -45,4 +45,4 @@ There is also a demo provided to explore the **Tiny Drive** capabilities [here](
 
 **Link Checker** 2.0.2 comes with numerous bug fixes to the previous versions. A number of improvements have been made for accessibility and an issue has been fixed where the linkchecker context menu items weren't appearing in TinyMCE 5.
 
-For more information on **Link Checker** refer to the full [documentation]({{site.baseurl}}/plugins/linkchecker/).
+For more information on **Link Checker** refer to the full [documentation]({{site.baseurl}}/plugins/premium/linkchecker/).

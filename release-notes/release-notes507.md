@@ -19,19 +19,19 @@ TinyMCE 5.0.7 release adds improvements to the TinyMCE editor to improve the ove
 
 The **Help** plugin includes a new `help_tabs` setting and an API to be able to add tabs from within custom plugins. This allows for the default tabs to be enabled/disabled, change the tab order or to add additional tabs to the help dialog.
 
-For more information on the new `help_tabs` setting and API refer to the [documentation]({{site.baseurl}}/plugins/help/).
+For more information on the new `help_tabs` setting and API refer to the [documentation]({{site.baseurl}}/plugins/opensource/help/).
 
 #### Image Tools custom image fetch
 
 The **Image Tools** plugin includes a new `imagetools_fetch_image` setting, which allows a custom function to be used to fetch the image content in complex environments, where extra customization is required, such as authentication.
 
-For more information on `imagetools_fetch_image` refer to the [documentation]({{site.baseurl}}/plugins/imagetools/#imagetools_fetch_image).
+For more information on `imagetools_fetch_image` refer to the [documentation]({{site.baseurl}}/plugins/opensource/imagetools/#imagetools_fetch_image).
 
 #### Insert table dialog
 
 A new dedicated toolbar button `tableinsertdialog` and menu item `inserttabledialog` have been added to the **Table** plugin. This adds the ability to show both the insert table grid and dialog options at the same time.
 
-For more information on new toolbar button and menu item refer to the [documentation]({{site.baseurl}}/plugins/table/#table_grid).
+For more information on new toolbar button and menu item refer to the [documentation]({{site.baseurl}}/plugins/opensource/table/#table_grid).
 
 ### Premium Skins and Icon Packs
 
@@ -55,7 +55,7 @@ There is also a demo provided to explore the **Tiny Drive** capabilities [here](
 
 **Enhanced Media Embed** 2.2.0 adds a new `mediaembed_inline_styles` setting allowing styles to be embedded inline, instead of requiring additional content css to be added to your site.
 
-For more information on **Enhanced Media Embed** refer to the full [documentation]({{site.baseurl}}/plugins/mediaembed/#mediaembed_inline_styles).
+For more information on **Enhanced Media Embed** refer to the full [documentation]({{site.baseurl}}/plugins/premium/mediaembed/#mediaembed_inline_styles).
 
 ## Updates and enhancements
 
@@ -65,7 +65,7 @@ The new TinyMCE 5.0.7 editor comes with significant changes to the previous vers
 
 #### Autocompleter
 
-The autocompleter functionality builtin to TinyMCE and used by the [**Mentions**]({{site.baseurl}}/plugins/mentions/), [**Charmap**]({{site.baseurl}}/plugins/charmap/) and [**Emoticons**]({{site.baseurl}}/plugins/emoticons/) plugins, has been improved to highlight matched text results, search across fragmented text nodes and support matching results that contain one or more spaces.
+The autocompleter functionality builtin to TinyMCE and used by the [**Mentions**]({{site.baseurl}}/plugins/premium/mentions/), [**Charmap**]({{site.baseurl}}/plugins/opensource/charmap/) and [**Emoticons**]({{site.baseurl}}/plugins/opensource/emoticons/) plugins, has been improved to highlight matched text results, search across fragmented text nodes and support matching results that contain one or more spaces.
 
 For more information on the autocompleter refer to the [documentation]({{site.baseurl}}/ui-components/autocompleter/).
 
@@ -73,12 +73,12 @@ For more information on the autocompleter refer to the [documentation]({{site.ba
 
 The **Link** plugin `link_assume_external_targets` setting has been improved to allow two additional values: `http` and `https`. Using one of the new values will automatically set the protocol if not defined when creating a link, instead of asking the user if the protocol should be added.
 
-For more information on the configuration options for `link_assume_external_targets` refer to the [documentation]({{site.baseurl}}/plugins/link/#link_assume_external_targets).
+For more information on the configuration options for `link_assume_external_targets` refer to the [documentation]({{site.baseurl}}/plugins/opensource/link/#link_assume_external_targets).
 
 ## Known issues
 
 ### Premium Skins and Icon Packs
 
-Using the cloud hosted premium content skins, in combination with the [preview]({{site.baseurl}}/plugins/preview/) plugin, will cause nothing to render in the preview dialog. This is because the `Origin` header sent to the server is `null`, due to how the preview dialog is implemented in TinyMCE. This will be fixed in the next release of TinyMCE.
+Using the cloud hosted premium content skins, in combination with the [preview]({{site.baseurl}}/plugins/opensource/preview/) plugin, will cause nothing to render in the preview dialog. This is because the `Origin` header sent to the server is `null`, due to how the preview dialog is implemented in TinyMCE. This will be fixed in the next release of TinyMCE.
 
 > Note: This issue only impacts cloud and does not impact self-hosted installations.

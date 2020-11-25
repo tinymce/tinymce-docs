@@ -6,7 +6,7 @@ description: Check for valid hyperlinks inside the editor
 keywords: enterprise pricing video youtube vimeo mp3 mp4 mov movie clip film link linkchecking linkchecker mediaembed media
 ---
 
-The [Link Checker plugin]({{ site.baseurl }}/plugins/linkchecker/) provides a link checking service right within the {{site.productname}} editor.
+The [Link Checker plugin]({{site.baseurl}}/plugins/premium/linkchecker/) provides a link checking service right within the {{site.productname}} editor.
 
 Think of Link Checker as "spell-checking for URLs". But instead of checking spelling, it will let you know if a URL in the editor is valid, invalid or questionable. This is a huge time-saver for anyone who creates content — no more having to double-check URLs, especially in imported content. Not to mention the benefit of no longer frustrating readers with broken hyperlinks.
 
@@ -18,7 +18,7 @@ Once you have the server-side component installed, additional configuration to y
 
 For information on configuring the server-side component, see: [Configure server-side components]({{ site.baseurl }}/enterprise/server/).
 
-You will also find more Self-hosted setup information on the [Link Checker plugin page]({{ site.baseurl }}/plugins/linkchecker/).
+You will also find more Self-hosted setup information on the [Link Checker plugin page]({{site.baseurl}}/plugins/premium/linkchecker/).
 
 ## Link Checker cloud setup
 

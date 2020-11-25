@@ -240,7 +240,7 @@ ephox {
 
 ### `image-proxy` (optional)
 
-The [image proxy service]({{ site.baseurl }}/plugins/imagetools/) has some optional configuration to set a maximum size for images proxied. Images beyond this size it will not be proxied. Please note that the `http.request-timeout-seconds` above also applies to requests made by the image proxy service.
+The [image proxy service]({{site.baseurl}}/plugins/opensource/imagetools/) has some optional configuration to set a maximum size for images proxied. Images beyond this size it will not be proxied. Please note that the `http.request-timeout-seconds` above also applies to requests made by the image proxy service.
 
 |               |                     |             |
 |---------------|---------------------|-------------|

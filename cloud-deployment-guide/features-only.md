@@ -8,7 +8,7 @@ keywords: tinymce cloud script textarea apiKey hybrid
 
 A hybrid deployment of {{site.cloudname}} allows the loading of premium plugins in a self-hosted environment. Download and install the [{{site.productname}} Community edition]({{site.gettiny}}) to get started.
 
-Sign up for a free API key provides entitlements to premium [Image Tools]({{  site.baseurl }}/plugins/imagetools/) plugin. A {{site.cloudname}} image proxy server must already be configured. Premium plugins can be purchased at any time once the API key has been set up.
+Sign up for a free API key provides entitlements to premium [Image Tools]({{site.baseurl}}/plugins/opensource/imagetools/) plugin. A {{site.cloudname}} image proxy server must already be configured. Premium plugins can be purchased at any time once the API key has been set up.
 
 ## Step 1: Insert the custom script tag into the webpage
 
@@ -22,26 +22,26 @@ Add the following script in the webpage once the script tag to load {{site.produ
 
 Extend the [{{site.productname}} configuration]({{ site.baseurl }}/configure/) to include any additional purchased plugins and associated toolbar and menu items. Refer to the following enablement guides for more information:
 
-* [Mentions]({{ site.baseurl }}/plugins/mentions/)
+* [Mentions]({{site.baseurl}}/plugins/premium/mentions/)
 * [{{site.cloudfilemanager}}]({{ site.baseurl }}/plugins/drive/)
-* [Comments]({{ site.baseurl }}/plugins/comments/)
-* [Page Embed]({{ site.baseurl }}/plugins/pageembed/)
-* [Permanent Pen]({{ site.baseurl }}/plugins/permanentpen/)
-* [Format Painter]({{ site.baseurl }}/plugins/formatpainter/)
-* [PowerPaste]({{ site.baseurl }}/plugins/powerpaste/)
-* [Spell Checker Pro]({{ site.baseurl }}/plugins/tinymcespellchecker/)
+* [Comments]({{site.baseurl}}/plugins/premium/comments/)
+* [Page Embed]({{site.baseurl}}/plugins/premium/pageembed/)
+* [Permanent Pen]({{site.baseurl}}/plugins/premium/permanentpen/)
+* [Format Painter]({{site.baseurl}}/plugins/premium/formatpainter/)
+* [PowerPaste]({{site.baseurl}}/plugins/premium/powerpaste/)
+* [Spell Checker Pro]({{site.baseurl}}/plugins/premium/tinymcespellchecker/)
 
 > Note: `spellchecker_rpc_url` is **not** required when enabling this plugin via [{{site.cloudname}}]({{ site.baseurl }}/cloud-deployment-guide/).
 
-* [Image Tools (with configured image proxy)]({{ site.baseurl }}/plugins/imagetools/)
+* [Image Tools (with configured image proxy)]({{site.baseurl}}/plugins/opensource/imagetools/)
 
 > Note: Configuration of the `imagetools_cors_hosts` and `imagetools_proxy` properties occurrs automatically.
 
-* [Moxie Manager]({{ site.baseurl }}/plugins/moxiemanager/)
-* [Accessibility Checker]({{ site.baseurl }}/plugins/a11ychecker/)
-* [Advanced Code Editor]({{ site.baseurl }}/plugins/advcode/)
-* [Enhanced Media Embed]({{ site.baseurl }}/plugins/mediaembed/)
-* [Link Checker]({{ site.baseurl }}/plugins/linkchecker/)
+* [Moxie Manager]({{site.baseurl}}/plugins/premium/moxiemanager/)
+* [Accessibility Checker]({{site.baseurl}}/plugins/premium/a11ychecker/)
+* [Advanced Code Editor]({{site.baseurl}}/plugins/premium/advcode/)
+* [Enhanced Media Embed]({{site.baseurl}}/plugins/premium/mediaembed/)
+* [Link Checker]({{site.baseurl}}/plugins/premium/linkchecker/)
 
 > Note: It may take up to 30 minutes for the purchased plugin to be available to {{site.productname}}. Clear the browser's cache.
 
@@ -50,7 +50,7 @@ The following is a complete example:
 The example below has the following:
 
 * The {{site.cloudname}} `API key` has the value *TEST_API_KEY*.
-* The {{site.cloudname}} has the [Spell Checker Pro]({{ site.baseurl }}/plugins/tinymcespellchecker/) plugin enabled.
+* The {{site.cloudname}} has the [Spell Checker Pro]({{site.baseurl}}/plugins/premium/tinymcespellchecker/) plugin enabled.
 
 ```js
 <html>

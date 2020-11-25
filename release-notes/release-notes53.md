@@ -56,7 +56,7 @@ For example:
 
 ![Find and Replace dialog with new "Find in selection" option highlighted]({{site.baseurl}}/images/find-replace-in-selection.png)
 
-For information on enabling the Find and Replace dialog, see: [the Search and Replace plugin]({{site.baseurl}}/plugins/searchreplace/).
+For information on enabling the Find and Replace dialog, see: [the Search and Replace plugin]({{site.baseurl}}/plugins/opensource/searchreplace/).
 
 ### Multiple context toolbars can now be concatenated
 
@@ -64,7 +64,7 @@ In situations where more than one context toolbar could be shown, they will be c
 
 For information on:
 
-- The Quick Toolbars plugin, see: [The Quick Toolbars plugin]({{site.baseurl}}/plugins/quickbars/).
+- The Quick Toolbars plugin, see: [The Quick Toolbars plugin]({{site.baseurl}}/plugins/opensource/quickbars/).
 - Creating custom context toolbars, see: [Context toolbars]({{site.baseurl}}/ui-components/contexttoolbar/).
 
 ### New Greek premium language pack
@@ -83,7 +83,7 @@ The {{site.productname}} 5.3 release includes an accompanying release of the **A
 
 **Accessibility Checker** 2.2.1 adds translations for features added in **Accessibility Checker** 2.2.0.
 
-For information on the Accessibility Checker plugin, see: [Accessibility Checker plugin]({{site.baseurl}}/plugins/a11ychecker/).
+For information on the Accessibility Checker plugin, see: [Accessibility Checker plugin]({{site.baseurl}}/plugins/premium/a11ychecker/).
 
 ### Comments 2.1.4
 
@@ -91,9 +91,9 @@ The {{site.productname}} 5.3 release includes an accompanying release of the **C
 
 **Comments** 2.1.4 adds icons for the **Add Comment** (`addcomment`) and **Show Comments** (`showcomments`) menu items.
 
-For information on the Comments plugin, see: [Comments plugin]({{site.baseurl}}/plugins/comments/).
+For information on the Comments plugin, see: [Comments plugin]({{site.baseurl}}/plugins/premium/comments/).
 
-For a list of Comments plugin menu items, see: [Comments plugin - Menu items]({{site.baseurl}}/plugins/comments/#menuitems).
+For a list of Comments plugin menu items, see: [Comments plugin - Menu items]({{site.baseurl}}/plugins/premium/comments/#menuitems).
 
 ### Enhanced Media Embed
 
@@ -115,9 +115,9 @@ The {{site.productname}} 5.3 release includes an accompanying release of the **P
 
 For information on:
 
-- The PowerPaste plugin, see: [PowerPaste plugin]({{site.baseurl}}/plugins/powerpaste/).
-- The PowerPaste `paste_preprocess` option, see: [PowerPaste plugin - `paste_preprocess`]({{site.baseurl}}/plugins/powerpaste/#paste_preprocess).
-- The PowerPaste `paste_postprocess` option, see: [PowerPaste plugin - `paste_postprocess`]({{site.baseurl}}/plugins/powerpaste/#paste_postprocess).
+- The PowerPaste plugin, see: [PowerPaste plugin]({{site.baseurl}}/plugins/premium/powerpaste/).
+- The PowerPaste `paste_preprocess` option, see: [PowerPaste plugin - `paste_preprocess`]({{site.baseurl}}/plugins/premium/powerpaste/#paste_preprocess).
+- The PowerPaste `paste_postprocess` option, see: [PowerPaste plugin - `paste_postprocess`]({{site.baseurl}}/plugins/premium/powerpaste/#paste_postprocess).
 
 ### Spell Checker Pro 2.0.2
 
@@ -133,7 +133,7 @@ The {{site.productname}} 5.3 release includes an accompanying release of the **S
 
 The {{site.productname}} **self-hosted** **Spell Checker Pro** service has also been updated. {{site.cloudname}} users are unaffected. For details, see: [Accompanying premium self-hosted server-side component changes](#accompanyingpremiumself-hostedserver-sidecomponentchanges).
 
-For information on Spell Checker Pro plugin, see: [Spell Checker Pro plugin]({{site.baseurl}}/plugins/tinymcespellchecker/).
+For information on Spell Checker Pro plugin, see: [Spell Checker Pro plugin]({{site.baseurl}}/plugins/premium/tinymcespellchecker/).
 
 ## Accompanying premium self-hosted server-side component changes
 
@@ -150,10 +150,10 @@ This version requires Java 8 or higher. For information on the removal of Java 7
 
 For information on:
 
-- The Spell Checker Pro plugin, see: [Spell Checker Pro plugin]({{site.baseurl}}/plugins/tinymcespellchecker/).
-- The Link Checker plugin, see: [Link Checker plugin]({{site.baseurl}}/plugins/linkchecker/).
-- The Image Tools plugin, see: [Image Tools plugin]({{site.baseurl}}/plugins/imagetools/).
-- The Enhanced Media Embed plugin, see: [Enhanced Media Embed plugin]({{site.baseurl}}/plugins/mediaembed/).
+- The Spell Checker Pro plugin, see: [Spell Checker Pro plugin]({{site.baseurl}}/plugins/premium/tinymcespellchecker/).
+- The Link Checker plugin, see: [Link Checker plugin]({{site.baseurl}}/plugins/premium/linkchecker/).
+- The Image Tools plugin, see: [Image Tools plugin]({{site.baseurl}}/plugins/opensource/imagetools/).
+- The Enhanced Media Embed plugin, see: [Enhanced Media Embed plugin]({{site.baseurl}}/plugins/premium/mediaembed/).
 - Deploying the server-side components, see: [Server-side component installation]({{site.baseurl}}/enterprise/server/).
 
 ### Removal of Java 7 support

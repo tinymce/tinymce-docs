@@ -12,7 +12,7 @@ The **Enhanced Media Embed** plugin is a [premium {{site.productname}} plugin]({
 
 ## Installation
 
-For the moment the **Enhanced Media Embed** plugin has to be used in conjunction with the [media](../media) plugin, so:
+For the moment the **Enhanced Media Embed** plugin has to be used in conjunction with the [media]({{site.baseurl}}/plugins/opensource/media/) plugin, so:
 
 1. Make sure you have the `media` plugin added to the `plugins` list.
 2. Add the `mediaembed` plugin to the `plugins` list.

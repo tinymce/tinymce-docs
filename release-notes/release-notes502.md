@@ -22,7 +22,7 @@ Refer to the [toolbar_drawer]({{site.baseurl}}/configure/editor-appearance/#tool
 
 The new TinyMCE 5.0.2 editor has the ability to add checklists to the content. The **Checklist** plugin helps the user keep track of all required actions by creating a simple, clean, and easy to use TODO list.
 
-For more information on **Checklist** refer to the full [documentation]({{site.baseurl}}/plugins/checklist/).
+For more information on **Checklist** refer to the full [documentation]({{site.baseurl}}/plugins/premium/checklist/).
 
 There is also a demo provided to explore the **Checklist** capabilities [here]({{site.baseurl}}/demo/checklist/).
 

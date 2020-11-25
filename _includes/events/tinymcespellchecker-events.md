@@ -1,4 +1,4 @@
-The following events are provided by the [Spell Checker Pro plugin]({{ site.baseurl }}/plugins/tinymcespellchecker/).
+The following events are provided by the [Spell Checker Pro plugin]({{site.baseurl}}/plugins/premium/tinymcespellchecker/).
 
 | Name                  | Data                  | Description                                                                    |
 | --------------------- | --------------------- | ------------------------------------------------------------------------------ |

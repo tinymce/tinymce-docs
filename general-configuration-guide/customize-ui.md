@@ -82,7 +82,7 @@ tinymce.init({
 
 See the [max_height]({{ site.baseurl }}/configure/editor-appearance/#max_height), [max_width]({{ site.baseurl }}/configure/editor-appearance/#max_width), [min_height]({{ site.baseurl }}/configure/editor-appearance/#min_height), and [min_width]({{ site.baseurl }}/configure/editor-appearance/#min_width) documentation pages to learn more about these customization options.
 
-The editable area can also automatically resize itself as the user enters content into the iframe with the [Autoresize plugin]({{ site.baseurl }}/plugins/autoresize/). Users can resize the editor on both the horizontal and vertical access by dragging the status bar handle with the [resize]({{ site.baseurl }}/configure/editor-appearance/#resize) configuration option.
+The editable area can also automatically resize itself as the user enters content into the iframe with the [Autoresize plugin]({{site.baseurl}}/plugins/opensource/autoresize/). Users can resize the editor on both the horizontal and vertical access by dragging the status bar handle with the [resize]({{ site.baseurl }}/configure/editor-appearance/#resize) configuration option.
 
 ## Customizing the editable area with content_css
 

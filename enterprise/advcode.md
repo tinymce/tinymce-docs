@@ -7,7 +7,7 @@ keywords: code advcode codemirror
 controls: toolbar button, menu item
 ---
 
-The [Advanced Code Editor]({{ site.baseurl }}/plugins/advcode/) plugin (`advcode`) brings a more advanced code editor to {{site.productname}}. This code editor makes it easier to modify the HTML, and it's a very useful add-on for power users. It comes with many features often found in IDEs, all enabled by default:
+The [Advanced Code Editor]({{site.baseurl}}/plugins/premium/advcode/) plugin (`advcode`) brings a more advanced code editor to {{site.productname}}. This code editor makes it easier to modify the HTML, and it's a very useful add-on for power users. It comes with many features often found in IDEs, all enabled by default:
 
 * Syntax color highlighting
 * Bracket matching

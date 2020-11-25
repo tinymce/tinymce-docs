@@ -179,7 +179,7 @@ The following plugins provide events.
 
 ### Autosave events
 
-The following events are provided by the [Autosave plugin]({{ site.baseurl }}/plugins/autosave/).
+The following events are provided by the [Autosave plugin]({{site.baseurl}}/plugins/opensource/autosave/).
 
 | Name         | Data | Description                                      |
 | ------------ | ---- | ------------------------------------------------ |
@@ -189,7 +189,7 @@ The following events are provided by the [Autosave plugin]({{ site.baseurl }}/pl
 
 ### Character Map events
 
-The following event is provided by the [Character Map plugin]({{ site.baseurl }}/plugins/charmap/).
+The following event is provided by the [Character Map plugin]({{site.baseurl}}/plugins/opensource/charmap/).
 
 | Name             | Data              | Description                                                   |
 | ---------------- | ----------------- | ------------------------------------------------------------- |
@@ -197,7 +197,7 @@ The following event is provided by the [Character Map plugin]({{ site.baseurl }}
 
 ### Comments events
 
-The following event is provided by the [Comments plugin]({{ site.baseurl }}/plugins/comments/).
+The following event is provided by the [Comments plugin]({{site.baseurl}}/plugins/premium/comments/).
 
 | Name                    | Data | Description                      |
 | ----------------------- | ---- | -------------------------------- |
@@ -209,7 +209,7 @@ The following event is provided by the [Comments plugin]({{ site.baseurl }}/plug
 
 ### Format Painter events
 
-The following event is provided by the [Format Painter plugin]({{ site.baseurl }}/plugins/formatpainter/).
+The following event is provided by the [Format Painter plugin]({{site.baseurl}}/plugins/premium/formatpainter/).
 
 | Name                | Data                 | Description                                  |
 | ------------------- | -------------------- | -------------------------------------------- |
@@ -217,7 +217,7 @@ The following event is provided by the [Format Painter plugin]({{ site.baseurl }
 
 ### Fullscreen events
 
-The following event is provided by the [Fullscreen plugin]({{ site.baseurl }}/plugins/fullscreen/).
+The following event is provided by the [Fullscreen plugin]({{site.baseurl}}/plugins/opensource/fullscreen/).
 
 | Name                   | Data                 | Description                              |
 | ---------------------- | -------------------- | ---------------------------------------- |
@@ -225,7 +225,7 @@ The following event is provided by the [Fullscreen plugin]({{ site.baseurl }}/pl
 
 ### Import CSS events
 
-The following event is provided by the [Import CSS plugin]({{ site.baseurl }}/plugins/importcss/).
+The following event is provided by the [Import CSS plugin]({{site.baseurl}}/plugins/opensource/importcss/).
 
 | Name                  | Data                                       | Description                                                        |
 | --------------------- | ------------------------------------------ | ------------------------------------------------------------------ |
@@ -233,7 +233,7 @@ The following event is provided by the [Import CSS plugin]({{ site.baseurl }}/pl
 
 ### Link checker events
 
-The following event is provided by the [Link plugin]({{ site.baseurl }}/plugins/link/).
+The following event is provided by the [Link Checker plugin]({{site.baseurl}}/plugins/premium/linkchecker/).
 
 | Name             | Data                  | Description                                                                    |
 | ---------------- | --------------------- | ------------------------------------------------------------------------------ |
@@ -241,7 +241,7 @@ The following event is provided by the [Link plugin]({{ site.baseurl }}/plugins/
 
 ### Lists events
 
-The following event is provided by the [Lists plugin]({{ site.baseurl }}/plugins/lists/).
+The following event is provided by the [Lists plugin]({{site.baseurl}}/plugins/opensource/lists/).
 
 | Name         | Data                                   | Description                          |
 | ------------ | -------------------------------------- | ------------------------------------ |
@@ -249,7 +249,7 @@ The following event is provided by the [Lists plugin]({{ site.baseurl }}/plugins
 
 ### Media Embed events
 
-The following event is provided by the [Media Embed plugin]({{ site.baseurl }}/plugins/mediaembed/).
+The following event is provided by the [Media Embed plugin]({{site.baseurl}}/plugins/premium/mediaembed/).
 
 | Name            | Data                  | Description                                                                   |
 | --------------- | --------------------- | ----------------------------------------------------------------------------- |
@@ -257,7 +257,7 @@ The following event is provided by the [Media Embed plugin]({{ site.baseurl }}/p
 
 ### Paste events
 
-The following events are provided by the [Paste plugin]({{ site.baseurl }}/plugins/paste/).
+The following events are provided by the [Paste plugin]({{site.baseurl}}/plugins/opensource/paste/).
 
 | Name                 | Data                                        | Description                                                                                      |
 | -------------------- | ------------------------------------------- | ------------------------------------------------------------------------------------------------ |
@@ -267,7 +267,7 @@ The following events are provided by the [Paste plugin]({{ site.baseurl }}/plugi
 
 ### Permanent Pen events
 
-The following events are provided by the [Permanent Pen plugin]({{ site.baseurl }}/plugins/permanentpen/).
+The following events are provided by the [Permanent Pen plugin]({{site.baseurl}}/plugins/premium/permanentpen/).
 
 | Name                   | Data                                                                                                                                                         | Description                                          |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------- |
@@ -276,7 +276,7 @@ The following events are provided by the [Permanent Pen plugin]({{ site.baseurl 
 
 ### PowerPaste events
 
-The following events are provided by the [PowerPaste plugin]({{ site.baseurl }}/plugins/powerpaste/).
+The following events are provided by the [PowerPaste plugin]({{site.baseurl}}/plugins/premium/powerpaste/).
 
 | Name                 | Data                                                | Description                                                                                      |
 | -------------------- | --------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
@@ -286,7 +286,7 @@ The following events are provided by the [PowerPaste plugin]({{ site.baseurl }}/
 
 ### Spell Checker events
 
-The following events are provided by the [Spell Checker plugin]({{ site.baseurl }}/plugins/spellchecker/).
+The following events are provided by the [Spell Checker plugin]({{site.baseurl}}/plugins/opensource/spellchecker/).
 
 {{site.deprecate_spellchecker}}
 
@@ -305,7 +305,7 @@ The following events are provided by the [Spell Checker plugin]({{ site.baseurl 
 
 ### Visual Blocks events
 
-The following event is provided by the [Visual Blocks plugin]({{ site.baseurl }}/plugins/visualblocks/).
+The following event is provided by the [Visual Blocks plugin]({{site.baseurl}}/plugins/opensource/visualblocks/).
 
 | Name         | Data                 | Description                                 |
 | ------------ | -------------------- | ------------------------------------------- |
@@ -313,7 +313,7 @@ The following event is provided by the [Visual Blocks plugin]({{ site.baseurl }}
 
 ### Visual Characters events
 
-The following event is provided by the [Visual Characters plugin]({{ site.baseurl }}/plugins/visualchars/).
+The following event is provided by the [Visual Characters plugin]({{site.baseurl}}/plugins/opensource/visualchars/).
 
 | Name        | Data                 | Description                                |
 | ----------- | -------------------- | ------------------------------------------ |
@@ -321,7 +321,7 @@ The following event is provided by the [Visual Characters plugin]({{ site.baseur
 
 ### Word Count events
 
-The following event is provided by the [Word Count plugin]({{ site.baseurl }}/plugins/wordcount/).
+The following event is provided by the [Word Count plugin]({{site.baseurl}}/plugins/opensource/wordcount/).
 
 | Name            | Data                                                                                    | Description                                  |
 | --------------- | --------------------------------------------------------------------------------------- | -------------------------------------------- |

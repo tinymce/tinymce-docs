@@ -15,14 +15,14 @@ This example includes most of the available {{site.productname}} plugins, includ
 
 The following plugins are excluded from this example:
 
-* [MoxieManager (Premium Plugin)]({{site.baseurl}}/plugins/moxiemanager) — [**{{site.cloudfilemanager}}**]({{site.baseurl}}/plugins/drive) included instead.
-* [Autoresize]({{site.baseurl}}/plugins/autoresize) — Resizes the editor to fit the content.
-* [BBCode]({{site.baseurl}}/plugins/bbcode) — Changes the markup used for the content.
-* [Code]({{site.baseurl}}/plugins/code) — [**Advanced Code Editor**]({{site.baseurl}}/plugins/advcode) included instead.
-* [Full Page]({{site.baseurl}}/plugins/fullpage) — Used for modifying HTML `<head>` elements.
-* [Paste]({{site.baseurl}}/plugins/paste) — [**PowerPaste**]({{site.baseurl}}/plugins/powerpaste) included instead.
-* [Spellchecker]({{site.baseurl}}/plugins/spellchecker) — [**Spell Checker Pro**]({{site.baseurl}}/plugins/tinymcespellchecker) included instead.
-* [Tab Focus]({{site.baseurl}}/plugins/tabfocus) — Changes the behavior of the TAB-key within the editor.
+* [MoxieManager (Premium Plugin)]({{site.baseurl}}/plugins/premium/moxiemanager) — [**{{site.cloudfilemanager}}**]({{site.baseurl}}/plugins/drive) included instead.
+* [Autoresize]({{site.baseurl}}/plugins/opensource/autoresize) — Resizes the editor to fit the content.
+* [BBCode]({{site.baseurl}}/plugins/opensource/bbcode) — Changes the markup used for the content.
+* [Code]({{site.baseurl}}/plugins/opensource/code) — [**Advanced Code Editor**]({{site.baseurl}}/plugins/premium/advcode) included instead.
+* [Full Page]({{site.baseurl}}/plugins/opensource/fullpage) — Used for modifying HTML `<head>` elements.
+* [Paste]({{site.baseurl}}/plugins/opensource/paste) — [**PowerPaste**]({{site.baseurl}}/plugins/premium/powerpaste) included instead.
+* [Spellchecker]({{site.baseurl}}/plugins/opensource/spellchecker) — [**Spell Checker Pro**]({{site.baseurl}}/plugins/premium/tinymcespellchecker) included instead.
+* [Tab Focus]({{site.baseurl}}/plugins/opensource/tabfocus) — Changes the behavior of the TAB-key within the editor.
 
 ## Full Featured: Non-Premium Plugins
 
@@ -33,8 +33,8 @@ This example includes only non-premium plugins. These plugins are also used in t
 The following plugins are excluded from this example:
 
 * [All premium plugins]({{site.plugindirectory}}).
-* [Autoresize]({{site.baseurl}}/plugins/autoresize) — Resizes the editor to fit the content.
-* [BBCode]({{site.baseurl}}/plugins/bbcode) — Changes the markup used for the content.
-* [Full Page]({{site.baseurl}}/plugins/fullpage) — Used for modifying HTML `<head>` elements.
-* [Spellchecker]({{site.baseurl}}/plugins/spellchecker) — Requires Server-Side components, see: [Check spelling in {{site.productname}}]({{site.baseurl}}/general-configuration-guide/spell-checking/).
-* [Tab Focus]({{site.baseurl}}/plugins/tabfocus) — Changes the behavior of the TAB-key within the editor.
+* [Autoresize]({{site.baseurl}}/plugins/opensource/autoresize) — Resizes the editor to fit the content.
+* [BBCode]({{site.baseurl}}/plugins/opensource/bbcode) — Changes the markup used for the content.
+* [Full Page]({{site.baseurl}}/plugins/opensource/fullpage) — Used for modifying HTML `<head>` elements.
+* [Spellchecker]({{site.baseurl}}/plugins/opensource/spellchecker) — Requires Server-Side components, see: [Check spelling in {{site.productname}}]({{site.baseurl}}/general-configuration-guide/spell-checking/).
+* [Tab Focus]({{site.baseurl}}/plugins/opensource/tabfocus) — Changes the behavior of the TAB-key within the editor.

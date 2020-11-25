@@ -107,7 +107,7 @@ A **bar** is a layout component that creates a single row of items in the dialog
 
 #### collection
 
-A **collection** is a layout component that creates a panel containing a collection of small buttons in the dialog body. For example, this component is used in the dialogs for the [`charmap`]({{site.baseurl}}/plugins/charmap) and [`emoticons`]({{site.baseurl}}/plugins/emoticons) plugins.
+A **collection** is a layout component that creates a panel containing a collection of small buttons in the dialog body. For example, this component is used in the dialogs for the [`charmap`]({{site.baseurl}}/plugins/opensource/charmap) and [`emoticons`]({{site.baseurl}}/plugins/opensource/emoticons) plugins.
 
 ```js
 {

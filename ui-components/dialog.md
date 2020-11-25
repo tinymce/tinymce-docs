@@ -14,13 +14,13 @@ A dialog is a popup UI element that contains a header, body and footer, each con
 
 ### Display simple information
 
-The [`code`]({{site.baseurl}}/plugins/code) plugin's dialog is an example of a simple dialog. It contains only one body panel component that displays the HTML code from the content.
+The [`code`]({{site.baseurl}}/plugins/opensource/code) plugin's dialog is an example of a simple dialog. It contains only one body panel component that displays the HTML code from the content.
 
 ![Source Code]({{site.baseurl}}/images/sourcecode.png)
 
 ### Display complex information
 
-More complex dialogs can use [tab panels]({{site.baseurl}}/ui-components/dialogcomponents/#tabpanel) and various [layouts]({{site.baseurl}}/ui-components/dialogcomponents/#layoutcomponents) to categorise and organise information displayed to the user. For example, the [`help`]({{site.baseurl}}/plugins/help) and [`character map`]({{site.baseurl}}/plugins/charmap) plugins use dialogs with tabbed panels to categorise and separate information.
+More complex dialogs can use [tab panels]({{site.baseurl}}/ui-components/dialogcomponents/#tabpanel) and various [layouts]({{site.baseurl}}/ui-components/dialogcomponents/#layoutcomponents) to categorise and organise information displayed to the user. For example, the [`help`]({{site.baseurl}}/plugins/opensource/help) and [`character map`]({{site.baseurl}}/plugins/opensource/charmap) plugins use dialogs with tabbed panels to categorise and separate information.
 
 ![Special Characters]({{site.baseurl}}/images/specialchars.png)
 
@@ -28,7 +28,7 @@ More complex dialogs can use [tab panels]({{site.baseurl}}/ui-components/dialogc
 
 {{site.productname}} dialogs can also contain [interactive components]({{site.baseurl}}/ui-components/dialogcomponents/#basiccomponents) such as buttons, checkboxes and input fields.
 
-For example, the [`image`]({{site.baseurl}}/plugins/image) plugin's dialog allows for users to link to or upload an image, input a description, title, class, caption, height and width, then insert it into the editor.
+For example, the [`image`]({{site.baseurl}}/plugins/opensource/image) plugin's dialog allows for users to link to or upload an image, input a description, title, class, caption, height and width, then insert it into the editor.
 
 ![Insert/Edit images]({{site.baseurl}}/images/interactive.png)
 

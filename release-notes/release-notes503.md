@@ -29,7 +29,7 @@ Currently, there are three types of formats available:
 
 To try out **Case Change** start with this [dedicated product page]({{site.productpages}}/case-change/) to see all the flexible pricing options.
 
-For more information on **Case Change** refer to the full [documentation]({{site.baseurl}}/plugins/casechange/).
+For more information on **Case Change** refer to the full [documentation]({{site.baseurl}}/plugins/premium/casechange/).
 
 There is also a demo provided to explore the **Case Change** capabilities [here]({{site.baseurl}}/demo/casechange/).
 

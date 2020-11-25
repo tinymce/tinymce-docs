@@ -107,7 +107,7 @@ The block patterns do not have an `end` property. This allows for patterns to be
 tinymce.init({
   selector: 'textarea', // change this value according to your HTML
   // The `lists` plugin is required for list-related text patterns
-  plugin: 'textpattern lists',  
+  plugin: 'textpattern lists',
   textpattern_patterns: [
     {start: '#', format: 'h1'},
     {start: '##', format: 'h2'},

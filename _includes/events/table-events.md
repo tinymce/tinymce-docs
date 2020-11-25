@@ -1,4 +1,4 @@
-The following events are provided by the [Table plugin]({{ site.baseurl }}/plugins/table/).
+The following events are provided by the [Table plugin]({{ site.baseurl }}/plugins/opensource/table/).
 
 | Name | Data | Description |
 |------| ---- | ----------- |

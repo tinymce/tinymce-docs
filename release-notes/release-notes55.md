@@ -101,19 +101,19 @@ tinymce.init({
 
 For information on using:
 
-- The `image_list` option, see: [Image plugin - `image_list`]({{site.baseurl}}/plugins/image/#image_list).
-- The `image_class_list` option, see: [Image plugin - `image_class_list`]({{site.baseurl}}/plugins/image/#image_class_list).
-- The `link_class_list` option, see: [Link plugin - `link_class_list`]({{site.baseurl}}/plugins/link/#link_class_list).
-- The `link_list` option, see: [Link plugin - `link_list`]({{site.baseurl}}/plugins/link/#link_list).
-- The `table_class_list` option, see: [Table plugin - `table_class_list`]({{site.baseurl}}/plugins/table/#table_class_list).
-- The `table_cell_class_list` option, see: [Table plugin - `table_cell_class_list`]({{site.baseurl}}/plugins/table/#table_cell_class_list).
-- The `table_row_class_list` option, see: [Table plugin - `table_row_class_list`]({{site.baseurl}}/plugins/table/#table_row_class_list).
+- The `image_list` option, see: [Image plugin - `image_list`]({{site.baseurl}}/plugins/opensource/image/#image_list).
+- The `image_class_list` option, see: [Image plugin - `image_class_list`]({{site.baseurl}}/plugins/opensource/image/#image_class_list).
+- The `link_class_list` option, see: [Link plugin - `link_class_list`]({{site.baseurl}}/plugins/opensource/link/#link_class_list).
+- The `link_list` option, see: [Link plugin - `link_list`]({{site.baseurl}}/plugins/opensource/link/#link_list).
+- The `table_class_list` option, see: [Table plugin - `table_class_list`]({{site.baseurl}}/plugins/opensource/table/#table_class_list).
+- The `table_cell_class_list` option, see: [Table plugin - `table_cell_class_list`]({{site.baseurl}}/plugins/opensource/table/#table_cell_class_list).
+- The `table_row_class_list` option, see: [Table plugin - `table_row_class_list`]({{site.baseurl}}/plugins/opensource/table/#table_row_class_list).
 
 ### Added the ability to use the browser full screen mode with the `fullscreen` plugin
 
 A new `fullscreen_native` option allows the editor to use the browser's full screen mode instead of only filling the browser viewport. When enabled and the user activates full screen mode, the editor will fill the whole screen, the same as full screen mode for online videos.
 
-For information on the `fullscreen_native` option, see: [Full Screen Plugin - `fullscreen_native`]({{site.baseurl}}/plugins/fullscreen/#fullscreen_native).
+For information on the `fullscreen_native` option, see: [Full Screen Plugin - `fullscreen_native`]({{site.baseurl}}/plugins/opensource/fullscreen/#fullscreen_native).
 
 ### New `contextmenu_avoid_overlap` option for controlling the placement of context menus
 
@@ -125,7 +125,7 @@ For information on the `contextmenu_avoid_overlap` option, see: [User interface 
 
 A new `table_use_colgroups` option allows `colgroup` and `col` elements to be added to new tables. The `colgroup` and `col` elements can be used to set column widths. Other attributes are not supported in the TinyMCE 5.5 release.
 
-For information on the `table_use_colgroups` option, see: [Table plugin - `table_use_colgroups`]({{site.baseurl}}/plugins/table/#table_use_colgroups).
+For information on the `table_use_colgroups` option, see: [Table plugin - `table_use_colgroups`]({{site.baseurl}}/plugins/opensource/table/#table_use_colgroups).
 
 ### Added cut, copy, and paste table column menu items
 
@@ -136,13 +136,13 @@ Four new menu items have been added to the Table plugin to assist with moving an
 - `tablepastecolumnbefore`
 - `tablepastecolumnafter`
 
-For information on the Table plugin menu items, see: [Table plugin - Menu items]({{site.baseurl}}/plugins/table/#menuitems).
+For information on the Table plugin menu items, see: [Table plugin - Menu items]({{site.baseurl}}/plugins/opensource/table/#menuitems).
 
 ### New `table_column_resizing` option for controlling table column resizing
 
 A new `table_column_resizing` option sets whether a table or other columns are resized when a user resizes a table column.
 
-For information on the `table_column_resizing` option, see: [Table plugin - `table_column_resizing`]({{site.baseurl}}/plugins/table/#table_column_resizing).
+For information on the `table_column_resizing` option, see: [Table plugin - `table_column_resizing`]({{site.baseurl}}/plugins/opensource/table/#table_column_resizing).
 
 ### Changes to the default table CSS
 
@@ -190,19 +190,19 @@ The icon for the Image Tools _image options_ toolbar button has changed from an 
 
 For information on:
 
-- The Image Tools plugin, see: [Image Tools plugin]({{site.baseurl}}/plugins/imagetools/).
-- The Image Tools context toolbar, see: [Image Tools plugin - `imagetools_toolbar`]({{site.baseurl}}/plugins/imagetools/#imagetools_toolbar).
+- The Image Tools plugin, see: [Image Tools plugin]({{site.baseurl}}/plugins/opensource/imagetools/).
+- The Image Tools context toolbar, see: [Image Tools plugin - `imagetools_toolbar`]({{site.baseurl}}/plugins/opensource/imagetools/#imagetools_toolbar).
 
 For a list of available:
 
-- Image Tools toolbar buttons, see: [Image Tools plugin - Toolbar buttons]({{site.baseurl}}/plugins/imagetools/#toolbarbuttons).
+- Image Tools toolbar buttons, see: [Image Tools plugin - Toolbar buttons]({{site.baseurl}}/plugins/opensource/imagetools/#toolbarbuttons).
 - {{site.productname}} icons, see: [Icons Available for TinyMCE]({{site.baseurl}}/advanced/editor-icon-identifiers/).
 
 ### Improved navigation and deletion for media elements without the `media` plugin
 
 `video` and `audio` HTML elements in the editor content no-longer cause navigation issues and can be deleted without the `media` plugin.
 
-For information on the `media` plugin, see: [Media plugin]({{site.baseurl}}/plugins/media/).
+For information on the `media` plugin, see: [Media plugin]({{site.baseurl}}/plugins/opensource/media/).
 
 ## Accompanying Premium Plugin changes
 
@@ -214,10 +214,10 @@ The {{site.productname}} 5.5 release includes an accompanying release of the **A
 
 **Accessibility Checker** 2.3.0 adds the following features:
 
-* A new `a11ychecker_ignored_rules` option for filtering Accessibility Checker rules using the rule identifiers. For information on the `a11ychecker_ignored_rules` option, see: [Accessibility Checker plugin - `a11ychecker_ignored_rules`]({{site.baseurl}}/plugins/a11ychecker/#a11ychecker_ignored_rules).
-* A new `a11ychecker_issue_url_callback` option to allow custom URLs to be used for the "more info" links on accessibility checks. For information on the `a11ychecker_issue_url_callback` option, see: [Accessibility Checker plugin - `a11ychecker_issue_url_callback`]({{site.baseurl}}/plugins/a11ychecker/#a11ychecker_issue_url_callback).
-* Adds the rule identifier (`id`) to the data returned by the `getReport()` API method. For information on the `getReport()` API method, see: [Accessibility Checker plugin - `getReport()` API method]({{site.baseurl}}/plugins/a11ychecker/#getreport).
-* A new `a11ychecker_filter_issues` option for filtering Accessibility Checker report results. For information on the `a11ychecker_filter_issues` option, see: [Accessibility Checker plugin - `a11ychecker_filter_issues`]({{site.baseurl}}/plugins/a11ychecker/#a11ychecker_filter_issue).
+* A new `a11ychecker_ignored_rules` option for filtering Accessibility Checker rules using the rule identifiers. For information on the `a11ychecker_ignored_rules` option, see: [Accessibility Checker plugin - `a11ychecker_ignored_rules`]({{site.baseurl}}/plugins/premium/a11ychecker/#a11ychecker_ignored_rules).
+* A new `a11ychecker_issue_url_callback` option to allow custom URLs to be used for the "more info" links on accessibility checks. For information on the `a11ychecker_issue_url_callback` option, see: [Accessibility Checker plugin - `a11ychecker_issue_url_callback`]({{site.baseurl}}/plugins/premium/a11ychecker/#a11ychecker_issue_url_callback).
+* Adds the rule identifier (`id`) to the data returned by the `getReport()` API method. For information on the `getReport()` API method, see: [Accessibility Checker plugin - `getReport()` API method]({{site.baseurl}}/plugins/premium/a11ychecker/#getreport).
+* A new `a11ychecker_filter_issues` option for filtering Accessibility Checker report results. For information on the `a11ychecker_filter_issues` option, see: [Accessibility Checker plugin - `a11ychecker_filter_issues`]({{site.baseurl}}/plugins/premium/a11ychecker/#a11ychecker_filter_issue).
 
 **Accessibility Checker** 2.3.0 also provides the following bug fixes:
 
@@ -227,7 +227,7 @@ The {{site.productname}} 5.5 release includes an accompanying release of the **A
 * Fixed the editor content scrolling when calling the `getReport` API.
 * Fixed incorrect strings used for the next/previous button tooltips.
 
-For information on the Accessibility Checker plugin, see: [Accessibility Checker plugin]({{site.baseurl}}/plugins/a11ychecker/).
+For information on the Accessibility Checker plugin, see: [Accessibility Checker plugin]({{site.baseurl}}/plugins/premium/a11ychecker/).
 
 ### Advanced Code Editor 2.2.0
 
@@ -235,7 +235,7 @@ The {{site.productname}} 5.5 release includes an accompanying release of the **A
 
 **Advanced Code Editor** 2.2.0 adds support for loading the Advanced Code Editor user interface components when the editor is in a ShadowRoot.
 
-For information on the Advanced Code Editor plugin, see: [Advanced Code Editor plugin]({{site.baseurl}}/plugins/advcode/).
+For information on the Advanced Code Editor plugin, see: [Advanced Code Editor plugin]({{site.baseurl}}/plugins/premium/advcode/).
 
 ### Advanced Tables 1.0.1
 
@@ -245,7 +245,7 @@ The {{site.productname}} 5.5 release includes an accompanying release of the **A
 
 **Advanced Tables** 1.0.1 is required for TinyMCE 5.5 or higher.
 
-For information on the Advanced Tables plugin, see: [Advanced Tables plugin]({{site.baseurl}}/plugins/advtable/).
+For information on the Advanced Tables plugin, see: [Advanced Tables plugin]({{site.baseurl}}/plugins/premium/advtable/).
 
 ### Comments 2.2.0
 
@@ -260,7 +260,7 @@ The {{site.productname}} 5.5 release includes an accompanying release of the **C
 
 For a list of supported languages, including professionally translated language packs, see: [Localization options - `language`]({{site.baseurl}}/configure/localization/#language).
 
-For information on the Comments plugin, see: [Comments plugin]({{site.baseurl}}/plugins/comments/).
+For information on the Comments plugin, see: [Comments plugin]({{site.baseurl}}/plugins/premium/comments/).
 
 ### Export 0.1.0
 
@@ -271,7 +271,7 @@ A new **Export** plugin is available for beta testing and allows users to export
 
 This plugin will be available to all new and existing customers who have purchased a {{site.tiertwoplan}}, {{site.tierthreeplan}}, or {{site.enterpriseplan}}.
 
-For information on the Export plugin, see: [Export plugin]({{site.baseurl}}/plugins/export/).
+For information on the Export plugin, see: [Export plugin]({{site.baseurl}}/plugins/premium/export/).
 
 ### PowerPaste 5.3.3
 
@@ -279,7 +279,7 @@ The {{site.productname}} 5.5 release includes an accompanying release of the **P
 
 **PowerPaste** 5.3.3 fixes missing `bg_BG`, `eu`, and `id` translations.
 
-For information on the PowerPaste plugin, see: [PowerPaste plugin]({{site.baseurl}}/plugins/powerpaste/).
+For information on the PowerPaste plugin, see: [PowerPaste plugin]({{site.baseurl}}/plugins/premium/powerpaste/).
 
 ### Spell Checker Pro 2.1.0
 
@@ -290,7 +290,7 @@ The {{site.productname}} 5.5 release includes an accompanying release of the **S
 * An updated the dialog to allow wider buttons for languages with longer strings by removing the _Close_ button (_Cancel_ button in TinyMCE 4).
 * Fixed the `spellcheck_dialog` button incorrectly rendering as a split button in TinyMCE 4.
 
-For information on the Spell Checker Pro plugin, see: [Spell Checker Pro plugin]({{site.baseurl}}/plugins/tinymcespellchecker/).
+For information on the Spell Checker Pro plugin, see: [Spell Checker Pro plugin]({{site.baseurl}}/plugins/premium/tinymcespellchecker/).
 
 ### Tiny Skins and Icon Packs
 

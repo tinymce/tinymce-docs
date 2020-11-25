@@ -27,10 +27,10 @@ In TinyMCE 5.0, some configurations have been removed because they are no longer
 
 The following plugins from TinyMCE 4.x do not require height or width options to be specified in TinyMCE 5.0:
 
-* [Code]({{site.baseurl}}/plugins/code/)
-* [Codesample]({{site.baseurl}}/plugins/codesample/)
-* [Preview]({{site.baseurl}}/plugins/preview/)
-* [Template]({{site.baseurl}}/plugins/template/)
+* [Code]({{site.baseurl}}/plugins/opensource/code/)
+* [Codesample]({{site.baseurl}}/plugins/opensource/codesample/)
+* [Preview]({{site.baseurl}}/plugins/opensource/preview/)
+* [Template]({{site.baseurl}}/plugins/opensource/template/)
 
 Refer to the [Migration Guide]({{site.baseurl}}/migration-from-4x/), for more information.
 

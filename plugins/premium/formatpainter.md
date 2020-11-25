@@ -57,7 +57,7 @@ The format painter operates in two modes, one for retrieval and one for applicat
 
 ## Options
 
-The format painter acts upon all [`formats`]({{ site.baseurl }}/configure/content-formatting/#formats) registered in the editor. In addition to any standard formatting, it will treat **lists** as a block format whenever the [`lists plugin`]({{ site.baseurl }}/plugins/lists/) is made available.
+The format painter acts upon all [`formats`]({{ site.baseurl }}/configure/content-formatting/#formats) registered in the editor. In addition to any standard formatting, it will treat **lists** as a block format whenever the [`lists plugin`]({{site.baseurl}}/plugins/opensource/lists/) is made available.
 
 ### `formats`
 

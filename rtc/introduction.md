@@ -10,7 +10,7 @@ RTC is a premium {{site.productname}} plugin for having multiple users collabora
 
 ## JWT
 
-Some cloud services for {{site.productname}} require setting up JWT authentication. This allows verifying that the end users are allowed to access a particular feature. JWT is a common authorization solution for web services and is documented in more detail at the https://jwt.io/ website. For more information, see the [JWT authentication]({{site.baseurl}}/rtc/jwt-authentication/) section.
+Some cloud services for {{site.productname}} require setting up JWT authentication. This allows verifying that the end users are allowed to access a particular feature. JWT is a common authorization solution for web services and is documented in more detail at the [https://jwt.io/](https://jwt.io/) website. For more information, see the [JWT authentication]({{site.baseurl}}/rtc/jwt-authentication/) section.
 
 ## Presence API
 

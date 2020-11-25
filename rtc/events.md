@@ -23,7 +23,7 @@ This event is fired when a user enters the session.
 ```js
 tinymce.init({
   setup: (editor) => {
-    editor.on('RtcUserConnected', ({userId, caretNumber, custom) => {
+    editor.on('RtcUserConnected', ({userId, caretNumber, custom}) => {
       console.log(`User connected userId:${userId}`);
     });
   }
@@ -45,7 +45,7 @@ This event is fired when a user leaves the session.
 ```js
 tinymce.init({
   setup: (editor) => {
-    editor.on('RtcUserDisconnected', ({userId, caretNumber, custom) => {
+    editor.on('RtcUserDisconnected', ({userId, caretNumber, custom}) => {
       console.log(`User disconnected userId:${userId}`);
     });
   }

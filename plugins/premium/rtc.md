@@ -1,7 +1,7 @@
 ---
 layout: default
 title: RTC plugin
-title_nav: RTC
+title_nav: RTC (beta)
 description: Real time collaboration.
 keywords: rtc
 ---

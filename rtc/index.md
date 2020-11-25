@@ -1,7 +1,7 @@
 ---
 layout: default
-title: RTC
-title_nav: RTC
+title: RTC (beta)
+title_nav: RTC (beta)
 description: Real Time Collaboration
 type: folder
 ---

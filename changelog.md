@@ -10,6 +10,12 @@ class: changelog
 
 {% capture changelog %}
 
+## Version 5.6.1 November 25, 2020
+* Fixed the `mceTableRowType` and `mceTableCellType` commands were not firing the `newCell` event.
+* Fixed the HTML5 `s` element was not recognized when editing or clearing text formatting.
+* Fixed an issue where copying and pasting table columns resulted in invalid HTML when using colgroups.
+* Fixed an issue where the toolbar would render with the wrong width for inline editors in some situations.
+
 ## Version 5.6.0 November 18, 2020
 * Added new `BeforeOpenNotification` and `OpenNotification` events which allow internal notifications to be captured and modified before display.
 * Added support for `block` and `unblock` methods on inline dialogs.

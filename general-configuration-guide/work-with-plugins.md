@@ -7,7 +7,7 @@ description: TinyMCE is an incredibly powerful, flexible and customizable rich t
 keywords: plugin
 ---
 
-For most developers, the real power of {{site.productname}}'s functionality is found in its plugins. [Plugins]({{ site.baseurl }}/plugins/) either extend default editor functionality or add new functionality. For example, the [Advanced List]({{ site.baseurl }}/plugins/advlist/) plugin adds extra options to the toolbar's existing list controls, while the [Code]({{ site.baseurl }}/plugins/code/) plugin adds entirely new functionality.
+For most developers, the real power of {{site.productname}}'s functionality is found in its plugins. [Plugins]({{ site.baseurl }}/plugins/) either extend default editor functionality or add new functionality. For example, the [Advanced List]({{site.baseurl}}/plugins/opensource/advlist/) plugin adds extra options to the toolbar's existing list controls, while the [Code]({{site.baseurl}}/plugins/opensource/code/) plugin adds entirely new functionality.
 
 Because most people install {{site.productname}} via {{site.cloudname}} or by downloading a package, they mistakenly think plugins are part of the {{site.productname}} "core". While all of the plugins (excluding the professional features) are included in those packages, each plugin is in a separate .js file. In fact, if you use the [custom package]({{site.gettiny}}/custom-builds/) download option (TinyMCE 4 only), you're able to select only the plugins you want to be included, or you can exclude all of the plugins built by the {{site.productname}} team.
 
@@ -43,7 +43,7 @@ The code we want to work with is in the second `<script>` element. Specifically 
 
 ### Code plugin
 
-The [Code]({{ site.baseurl }}/plugins/code/) plugin is one of the more popular plugins because it can expose the editable area's raw `html` to the user. It also provides an excellent example because it adds a menu item and toolbar button as well as having advanced customization options.
+The [Code]({{site.baseurl}}/plugins/opensource/code/) plugin is one of the more popular plugins because it can expose the editable area's raw `html` to the user. It also provides an excellent example because it adds a menu item and toolbar button as well as having advanced customization options.
 
 The first thing we need to do is include the actual `plugins` key and assign it a value. Since we're starting with the `code` plugin that value is going to be `'code'`for this example.
 
@@ -85,7 +85,7 @@ Even if you found the above example quite easy, hang with us we'll show you how 
 
 ### Advanced List
 
-The [Advanced List]({{ site.baseurl }}/plugins/advlist/) plugin extends the default unordered and ordered list toolbar controls by adding CSS `list-style-type` styled number formats and bullet types to the controls.
+The [Advanced List]({{site.baseurl}}/plugins/opensource/advlist/) plugin extends the default unordered and ordered list toolbar controls by adding CSS `list-style-type` styled number formats and bullet types to the controls.
 
 As before, let's start by adding the `plugins` key and giving it the Advanced List value of `'advlist'`.
 
@@ -131,16 +131,16 @@ Customizing {{site.productname}} with the default plugins is that easy. There ar
 
 | Position | Plugin Name   | Plugin Value                                         |
 | -------- | ------------- | ---------------------------------------------------- |
-| **1**    | Image         | [image]({{ site.baseurl }}/plugins/image/)           |
-| **2**    | Paste         | [paste]({{ site.baseurl }}/plugins/paste/)           |
-| **3**    | Code          | [code]({{ site.baseurl }}/plugins/code/)             |
-| **4**    | Table         | [table]({{ site.baseurl }}/plugins/table/)           |
-| **5**    | Link          | [link]({{ site.baseurl }}/plugins/link/)             |
-| **6**    | Image Tools   | [imagetools]({{ site.baseurl }}/plugins/imagetools/) |
-| **7**    | Advanced Code | [advcode]({{ site.baseurl }}/plugins/advcode/)       |
-| **8**    | Media         | [media]({{ site.baseurl }}/plugins/media/)           |
-| **9**    | PowerPaste    | [powerpaste]({{ site.baseurl }}/plugins/powerpaste/) |
-| **10**   | Code Sample   | [codesample]({{ site.baseurl }}/plugins/codesample/) |
+| **1**    | Image         | [image]({{site.baseurl}}/plugins/opensource/image/)           |
+| **2**    | Paste         | [paste]({{site.baseurl}}/plugins/opensource/paste/)           |
+| **3**    | Code          | [code]({{site.baseurl}}/plugins/opensource/code/)             |
+| **4**    | Table         | [table]({{site.baseurl}}/plugins/opensource/table/)           |
+| **5**    | Link          | [link]({{site.baseurl}}/plugins/opensource/link/)             |
+| **6**    | Image Tools   | [imagetools]({{site.baseurl}}/plugins/opensource/imagetools/) |
+| **7**    | Advanced Code | [advcode]({{site.baseurl}}/plugins/premium/advcode/)       |
+| **8**    | Media         | [media]({{site.baseurl}}/plugins/opensource/media/)           |
+| **9**    | PowerPaste    | [powerpaste]({{site.baseurl}}/plugins/premium/powerpaste/) |
+| **10**   | Code Sample   | [codesample]({{site.baseurl}}/plugins/opensource/codesample/) |
 
 {% assign_page next_page = "/general-configuration-guide/customize-ui/index.html" %}
 {% include next-step.html next=next_page %}

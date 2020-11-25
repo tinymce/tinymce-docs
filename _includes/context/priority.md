@@ -5,7 +5,7 @@
 There are situations where custom context toolbars or custom context forms may conflict with:
 
   - Context toolbars or context forms provided by the editor,
-  - Context toolbars or context forms provided by the [Quick Toolbars (`quickbars`) plugin]({{site.baseurl}}/plugins/quickbars/),
+  - Context toolbars or context forms provided by the [Quick Toolbars (`quickbars`) plugin]({{site.baseurl}}/plugins/opensource/quickbars/),
   - Other custom context toolbars or custom context forms.
 
 {% if site.productmajorversion < 6 %}

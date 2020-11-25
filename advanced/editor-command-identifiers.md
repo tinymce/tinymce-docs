@@ -199,193 +199,193 @@ Commands are available for the following plugins:
 
 #### Advanced Code
 
-The following command requires the [Advanced Code (`advcode`)]({{ site.baseurl }}/plugins/advcode/) plugin.
+The following command requires the [Advanced Code (`advcode`)]({{site.baseurl}}/plugins/premium/advcode/) plugin.
 
 {% include commands/code-cmds.md %}
 
 #### Advanced Lists
 
-The following commands require the [Advanced Lists (`advlist`)]({{ site.baseurl }}/plugins/advlist/) plugin.
+The following commands require the [Advanced Lists (`advlist`)]({{site.baseurl}}/plugins/opensource/advlist/) plugin.
 
 {% include commands/advlist-cmds.md %}
 
 #### Advanced Tables
 
-The following commands require the [Advanced Tables (`advtable`)]({{ site.baseurl }}/plugins/advtable/) plugin.
+The following commands require the [Advanced Tables (`advtable`)]({{site.baseurl}}/plugins/premium/advtable/) plugin.
 
 {% include commands/advtable-cmds.md %}
 
 #### Anchor
 
-The following command requires the [Anchor (`anchor`)]({{ site.baseurl }}/plugins/anchor/) plugin.
+The following command requires the [Anchor (`anchor`)]({{site.baseurl}}/plugins/opensource/anchor/) plugin.
 
 {% include commands/anchor-cmds.md %}
 
 #### Autoresize
 
-The following command requires the [Autoresize (`autoresize`)]({{ site.baseurl }}/plugins/autoresize/) plugin.
+The following command requires the [Autoresize (`autoresize`)]({{site.baseurl}}/plugins/opensource/autoresize/) plugin.
 
 {% include commands/autoresize-cmds.md %}
 
 #### Case Change
 
-The following commands require the [Case Change (`casechange`)]({{ site.baseurl }}/plugins/casechange/) plugin.
+The following commands require the [Case Change (`casechange`)]({{site.baseurl}}/plugins/premium/casechange/) plugin.
 
 {% include commands/casechange-cmds.md %}
 
 #### Character Map
 
-The following command requires the [Character Map (`charmap`)]({{ site.baseurl }}/plugins/charmap/) plugin.
+The following command requires the [Character Map (`charmap`)]({{site.baseurl}}/plugins/opensource/charmap/) plugin.
 
 {% include commands/charmap-cmds.md %}
 
 #### Code
 
-The following command requires the [Code (`code`)]({{ site.baseurl }}/plugins/code/) plugin.
+The following command requires the [Code (`code`)]({{site.baseurl}}/plugins/opensource/code/) plugin.
 
 {% include commands/code-cmds.md %}
 
 #### Code Sample
 
-The following command requires the [Code Sample (`codesample`)]({{ site.baseurl }}/plugins/codesample/) plugin.
+The following command requires the [Code Sample (`codesample`)]({{site.baseurl}}/plugins/opensource/codesample/) plugin.
 
 {% include commands/codesample-cmds.md %}
 
 #### Comments
 
-The following commands require the [Comments (`tinycomments`)]({{ site.baseurl }}/plugins/comments/) plugin.
+The following commands require the [Comments (`tinycomments`)]({{site.baseurl}}/plugins/premium/comments/) plugin.
 
 {% include commands/comments-cmds.md %}
 
 #### Directionality
 
-The following commands require the [Directionality (`directionality`)]({{ site.baseurl }}/plugins/directionality/) plugin.
+The following commands require the [Directionality (`directionality`)]({{site.baseurl}}/plugins/opensource/directionality/) plugin.
 
 {% include commands/directionality-cmds.md %}
 
 #### Export
 
-The following commands require the [Export (`export`)]({{ site.baseurl }}/plugins/export/) plugin.
+The following commands require the [Export (`export`)]({{site.baseurl}}/plugins/premium/export/) plugin.
 
 {% include commands/export-cmds.md %}
 
 #### Format Painter
 
-The following commands require the [Format Painter (`formatpainter`)]({{ site.baseurl }}/plugins/formatpainter/) plugin.
+The following commands require the [Format Painter (`formatpainter`)]({{site.baseurl}}/plugins/premium/formatpainter/) plugin.
 
 {% include commands/formatpainter-cmds.md %}
 
 #### Full Page
 
-The following command requires the [Full Page (`fullpage`)]({{ site.baseurl }}/plugins/fullpage/) plugin.
+The following command requires the [Full Page (`fullpage`)]({{site.baseurl}}/plugins/opensource/fullpage/) plugin.
 
 {% include commands/fullpage-cmds.md %}
 
 #### Full Screen
 
-The following command requires the [Full Screen (`fullscreen`)]({{ site.baseurl }}/plugins/fullscreen/) plugin.
+The following command requires the [Full Screen (`fullscreen`)]({{site.baseurl}}/plugins/opensource/fullscreen/) plugin.
 
 {% include commands/fullscreen-cmds.md %}
 
 #### Help
 
-The following command requires the [Help (`help`)]({{ site.baseurl }}/plugins/help/) plugin.
+The following command requires the [Help (`help`)]({{site.baseurl}}/plugins/opensource/help/) plugin.
 
 {% include commands/help-cmds.md %}
 
 #### Image
 
-The following command requires the [Image (`image`)]({{ site.baseurl }}/plugins/image/) plugin.
+The following command requires the [Image (`image`)]({{site.baseurl}}/plugins/opensource/image/) plugin.
 
 {% include commands/image-cmds.md %}
 
 #### Image Tools
 
-The following commands require the [Image Tools (`imagetools`)]({{ site.baseurl }}/plugins/imagetools/) plugin.
+The following commands require the [Image Tools (`imagetools`)]({{site.baseurl}}/plugins/opensource/imagetools/) plugin.
 
 {% include commands/imagetools-cmds.md %}
 
 #### Insert Date/Time
 
-The following commands require the [Insert Date/Time (`insertdatetime`)]({{ site.baseurl }}/plugins/insertdatetime/) plugin.
+The following commands require the [Insert Date/Time (`insertdatetime`)]({{site.baseurl}}/plugins/opensource/insertdatetime/) plugin.
 
 {% include commands/insertdatetime-cmds.md %}
 
 #### Link
 
-The following command requires the [Link (`link`)]({{ site.baseurl }}/plugins/link/) plugin.
+The following command requires the [Link (`link`)]({{site.baseurl}}/plugins/opensource/link/) plugin.
 
 {% include commands/link-cmds.md %}
 
 #### Lists
 
-The following commands require the [Lists (`lists`)]({{ site.baseurl }}/plugins/lists/) plugin.
+The following commands require the [Lists (`lists`)]({{site.baseurl}}/plugins/opensource/lists/) plugin.
 
 {% include commands/lists-cmds.md %}
 
 #### Media
 
-The following command requires the [Media (`media`)]({{ site.baseurl }}/plugins/media/) plugin.
+The following command requires the [Media (`media`)]({{site.baseurl}}/plugins/opensource/media/) plugin.
 
 {% include commands/media-cmds.md %}
 
 #### Nonbreaking Space
 
-The following command requires the [Nonbreaking Space (`nonbreaking`)]({{ site.baseurl }}/plugins/nonbreaking/) plugin.
+The following command requires the [Nonbreaking Space (`nonbreaking`)]({{site.baseurl}}/plugins/opensource/nonbreaking/) plugin.
 
 {% include commands/nbsp-cmds.md %}
 
 #### Page Break
 
-The following command requires the [Page Break (`pagebreak`)]({{ site.baseurl }}/plugins/pagebreak/) plugin.
+The following command requires the [Page Break (`pagebreak`)]({{site.baseurl}}/plugins/opensource/pagebreak/) plugin.
 
 {% include commands/pagebreak-cmds.md %}
 
 #### Paste
 
-The following commands require the [Paste (`paste`)]({{ site.baseurl }}/plugins/paste/) plugin.
+The following commands require the [Paste (`paste`)]({{site.baseurl}}/plugins/opensource/paste/) plugin.
 
 {% include commands/paste-cmds.md %}
 
 #### Permanent Pen
 
-The following commands require the [Permanent Pen (`permanentpen`)]({{ site.baseurl }}/plugins/permanentpen/) plugin.
+The following commands require the [Permanent Pen (`permanentpen`)]({{site.baseurl}}/plugins/premium/permanentpen/) plugin.
 
 {% include commands/permanentpen-cmds.md %}
 
 #### PowerPaste
 
-The following command requires the [PowerPaste (`powerpaste`)]({{ site.baseurl }}/plugins/powerpaste/) plugin.
+The following command requires the [PowerPaste (`powerpaste`)]({{site.baseurl}}/plugins/premium/powerpaste/) plugin.
 
 {% include commands/powerpaste-cmds.md %}
 
 #### Preview
 
-The following command requires the [Preview (`preview`)]({{ site.baseurl }}/plugins/preview/) plugin.
+The following command requires the [Preview (`preview`)]({{site.baseurl}}/plugins/opensource/preview/) plugin.
 
 {% include commands/preview-cmds.md %}
 
 #### Print
 
-The following command requires the [Print (`print`)]({{ site.baseurl }}/plugins/print/) plugin.
+The following command requires the [Print (`print`)]({{site.baseurl}}/plugins/opensource/print/) plugin.
 
 {% include commands/print-cmds.md %}
 
 #### Save
 
-The following commands require the [Save (`save`)]({{ site.baseurl }}/plugins/save/) plugin.
+The following commands require the [Save (`save`)]({{site.baseurl}}/plugins/opensource/save/) plugin.
 
 {% include commands/save-cmds.md %}
 
 #### Search and Replace
 
-The following command requires the [Search and Replace (`searchreplace`)]({{ site.baseurl }}/plugins/searchreplace/) plugin.
+The following command requires the [Search and Replace (`searchreplace`)]({{site.baseurl}}/plugins/opensource/searchreplace/) plugin.
 
 {% include commands/searchreplace-cmds.md %}
 
 #### Spell Checker
 
-The following command requires the [Spell Checker (`spellchecker`)]({{ site.baseurl }}/plugins/spellchecker/) plugin.
+The following command requires the [Spell Checker (`spellchecker`)]({{site.baseurl}}/plugins/opensource/spellchecker/) plugin.
 
 {{site.deprecate_spellchecker}}
 
@@ -393,31 +393,31 @@ The following command requires the [Spell Checker (`spellchecker`)]({{ site.base
 
 #### Table
 
-The following commands require the [Table (`table`)]({{ site.baseurl }}/plugins/table/) plugin.
+The following commands require the [Table (`table`)]({{site.baseurl}}/plugins/opensource/table/) plugin.
 
 {% include commands/table-cmds.md %}
 
 #### Template
 
-The following command requires the [Template (`template`)]({{ site.baseurl }}/plugins/template/) plugin.
+The following command requires the [Template (`template`)]({{site.baseurl}}/plugins/opensource/template/) plugin.
 
 {% include commands/template-cmds.md %}
 
 #### Table of Contents
 
-The following commands require the [Table of Contents (`toc`)]({{ site.baseurl }}/plugins/toc) plugin.
+The following commands require the [Table of Contents (`toc`)]({{site.baseurl}}/plugins/opensource/toc) plugin.
 
 {% include commands/toc-cmds.md %}
 
 #### Visual Blocks
 
-The following command requires the [Visual Blocks (`visualblocks`)]({{ site.baseurl }}/plugins/visualblocks/) plugin.
+The following command requires the [Visual Blocks (`visualblocks`)]({{site.baseurl}}/plugins/opensource/visualblocks/) plugin.
 
 {% include commands/visualblocks-cmds.md %}
 
 #### Visual Characters
 
-The following command requires the [Visual Characters (`visualchars`)]({{ site.baseurl }}/plugins/visualchars/) plugin.
+The following command requires the [Visual Characters (`visualchars`)]({{site.baseurl}}/plugins/opensource/visualchars/) plugin.
 
 {% include commands/visualchars-cmds.md %}
 

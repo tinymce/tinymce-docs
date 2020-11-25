@@ -40,7 +40,7 @@ For more information on the new options refer to the [base_url]({{site.baseurl}}
 
 The **Media** plugin now supports the `M4A` audio format. Inserting a m4a file will now be embedded using a HTML5 `<audio>` element.
 
-For more information on the media plugin refer to the [documentation]({{site.baseurl}}/plugins/media/).
+For more information on the media plugin refer to the [documentation]({{site.baseurl}}/plugins/opensource/media/).
 
 ## Updates and enhancements
 
@@ -62,19 +62,19 @@ TinyMCE 5.0.9 has addressed an issue where trying to press the space key at the 
 
 The **Legacy Output** plugin comes with numerous bug fixes and improvements. Issues have been addressed so that the correct font size will be shown in the font size selector, images can be center aligned and removing text colors will work as expected.
 
-For more information on **Legacy Output** refer to the [documentation]({{site.baseurl}}/plugins/legacyoutput/).
+For more information on **Legacy Output** refer to the [documentation]({{site.baseurl}}/plugins/opensource/legacyoutput/).
 
 ### Enhanced Media Embed
 
 **Enhanced Media Embed** 2.2.1 has addressed an issue where pressing the enter key after multiple links, separated by `<br>` elements, could cause the links to disappear.
 
-For more information on **Enhanced Media Embed** refer to the [documentation]({{site.baseurl}}/plugins/mediaembed/).
+For more information on **Enhanced Media Embed** refer to the [documentation]({{site.baseurl}}/plugins/premium/mediaembed/).
 
 ### LinkChecker
 
 **LinkChecker** 2.0.3 has addressed an issue where empty or blank links were incorrectly sent for validation and marked as invalid.
 
-For more information on **Link Checker** refer to the [documentation]({{site.baseurl}}/plugins/linkchecker/).
+For more information on **Link Checker** refer to the [documentation]({{site.baseurl}}/plugins/premium/linkchecker/).
 
 
 ## Errata&#58; TinyMCE 5.0.9 Premium Plugins
@@ -92,7 +92,7 @@ These settings can resolve permission issues related to duplicate user names by 
 
 > **Note:** If these settings are not used, **Tiny Comments** reverts to using the `tinycomments_author` option or `author` property for the display name.
 
-For information on **Tiny Comments**, refer to the [**Tiny Comments** documentation]({{site.baseurl}}/plugins/comments/).
+For information on **Tiny Comments**, refer to the [**Tiny Comments** documentation]({{site.baseurl}}/plugins/premium/comments/).
 
 ### PowerPaste
 
@@ -108,4 +108,4 @@ The new version of PowerPaste 5.0.1 includes bug fixes. Refer to the changelog b
 * Fixed: issue where the wrong error notification was displayed when images failed to import.
 * Fixed: leading, trailing and sequential spaces being lost when pasting plain text.
 
-For information on **PowerPaste**, refer to the [**PowerPaste** documentation]({{site.baseurl}}/plugins/powerpaste/).
+For information on **PowerPaste**, refer to the [**PowerPaste** documentation]({{site.baseurl}}/plugins/premium/powerpaste/).

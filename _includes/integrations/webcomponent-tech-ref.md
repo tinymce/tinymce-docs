@@ -287,7 +287,7 @@ To control how content pasted from Microsoft Word is filtered, use the `powerpas
 <tinymce-editor powerpaste_word_import="merge"></tinymce-editor>
 ```
 
-For information on the `powerpaste_word_import` option, including supported values, see: [The PowerPaste plugin - `powerpaste_word_import`]({{site.baseurl}}/plugins/powerpaste/#powerpaste_word_import).
+For information on the `powerpaste_word_import` option, including supported values, see: [The PowerPaste plugin - `powerpaste_word_import`]({{site.baseurl}}/plugins/premium/powerpaste/#powerpaste_word_import).
 
 #### Setting PowerPaste's html import method
 
@@ -299,7 +299,7 @@ To control how content pasted from sources other than Microsoft Word is filtered
 <tinymce-editor powerpaste_html_import="prompt"></tinymce-editor>
 ```
 
-For information on the `powerpaste_html_import` option, including supported values, see: [The PowerPaste plugin - `powerpaste_html_import`]({{site.baseurl}}/plugins/powerpaste/#powerpaste_html_import).
+For information on the `powerpaste_html_import` option, including supported values, see: [The PowerPaste plugin - `powerpaste_html_import`]({{site.baseurl}}/plugins/premium/powerpaste/#powerpaste_html_import).
 
 #### Setting PowerPaste to allow local images
 
@@ -311,7 +311,7 @@ To prevent Base64 encoded images with a data URI from being pasted into the edit
 <tinymce-editor powerpaste_allow_local_images="false"></tinymce-editor>
 ```
 
-For information on the `powerpaste_allow_local_images` option, including supported values, see: [The PowerPaste plugin - `powerpaste_allow_local_images`]({{site.baseurl}}/plugins/powerpaste/#powerpaste_allow_local_images).
+For information on the `powerpaste_allow_local_images` option, including supported values, see: [The PowerPaste plugin - `powerpaste_allow_local_images`]({{site.baseurl}}/plugins/premium/powerpaste/#powerpaste_allow_local_images).
 
 #### Showing resize handles
 

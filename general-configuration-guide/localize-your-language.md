@@ -10,7 +10,7 @@ keywords: internationalization localization languages
 
 This section demonstrates how to change {{site.productname}}'s user interface to the user's language preference. These settings change the language in the toolbar, menu items, buttons, and tooltips.
 
-> **Note**: Language settings can be controlled in these configuration options: [directionality]({{ site.baseurl }}/configure/localization/#directionality), [language]({{ site.baseurl }}/configure/localization/#language) and  [language_url]({{ site.baseurl }}/configure/localization/#language_url). There is also a [Directionality plugin]({{ site.baseurl }}/plugins/directionality/) that adds a toolbar button to control `ltr-rtl` behavior.
+> **Note**: Language settings can be controlled in these configuration options: [directionality]({{ site.baseurl }}/configure/localization/#directionality), [language]({{ site.baseurl }}/configure/localization/#language) and  [language_url]({{ site.baseurl }}/configure/localization/#language_url). There is also a [Directionality plugin]({{site.baseurl}}/plugins/opensource/directionality/) that adds a toolbar button to control `ltr-rtl` behavior.
 
 ## Step 1
 

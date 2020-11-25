@@ -7,7 +7,7 @@ Please provide feedback or [contact us](https://support.tiny.cloud/hc/en-us/requ
 
 <!-- ### Format Painter
 
-[Documentation]({{site.baseurl}}/plugins/formatpainter)
+[Documentation]({{site.baseurl}}/plugins/premium/formatpainter)
 
  ### Permanent Pen 1.0
 

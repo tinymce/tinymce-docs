@@ -8,13 +8,13 @@ keywords: support tiny enterprise client services
 
 ## Overview
 
-Support for {{site.productname}} Enterprise, is provided online via the {{site.supportname}} site.  You can access the support site at: [{{site.supporturl}}]({{site.supporturl}}).
+Support for {{site.productname}} Enterprise, is provided online through the {{site.supportname}} site.  You can access the support site at: [{{site.supporturl}}]({{site.supporturl}}).
 
-Prior to opening a support ticket, we require all users to register with a valid business email address. You can register on the support site at: [{{site.supporturl}}/registration]({{site.supporturl}}/registration). Upon registration you will receive an email requesting that you validate your registration. If you don't receive such a request within 5 minutes please check your spam folder to see if the email ended up there in error. If you never receive the validation email please contact the [{{site.companyname}} Client Services team via email](mailto:clientservices@tiny.cloud).
+Prior to opening a support ticket, we require all users to register with a valid business email address. You can register on the support site at: [{{site.supporturl}}/registration]({{site.supporturl}}/registration). Upon registration you will receive an email requesting that you validate your registration. If you don't receive such a request within 5 minutes please check your spam folder to see if the email ended up there in error. If you never receive the validation email please contact the [{{site.companyname}} Client Services team by email](mailto:clientservices@tiny.cloud).
 
 ### Creating a support ticket
 
-Once you are registered on the site you will be able to interact with the {{site.supportname}} team via our support site.  To create a new ticket simply go to the following URL: [{{site.supporturl}}]({{site.supporturl}}).
+Once you are registered on the site you will be able to interact with the {{site.supportname}} team using our support site.  To create a new ticket simply go to the following URL: [{{site.supporturl}}]({{site.supporturl}}).
 
 Note that {{site.supportname}} requires that you provide the following information along with your ticket:
 

@@ -16,7 +16,7 @@ The following server-side components are included in the {{site.productname}} Se
 |Component                      | File							| Description |
 |:-----------------------------	|:-------						|:----------- |
 | [Spellchecking]({{ site.baseurl }}/enterprise/check-spelling/) 				| ephox-spelling.war		|Spell checking service for {{site.productname}} Enterprise.|
-| [Image Tools Proxy]({{ site.baseurl }}/plugins/imagetools/)				| ephox-image-proxy.war		|Image proxy service for the Image Tools plugin.|
+| [Image Tools Proxy]({{site.baseurl}}/plugins/opensource/imagetools/)				| ephox-image-proxy.war		|Image proxy service for the Image Tools plugin.|
 | [Enhanced Media Embed]({{ site.baseurl }}/enterprise/embed-media/), [Link Checker]({{ site.baseurl }}/enterprise/check-links/)				| ephox-hyperlinking.war		|Link Checker and Enhanced Media Embed service for {{site.productname}} Enterprise.|
 
 > **Note:** The "Allowed Origins" service (ephox-allowed-origins.war) has been deprecated. Trusted domains should now be specified directly in the configuration file.

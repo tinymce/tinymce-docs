@@ -49,7 +49,7 @@ tinymce.init({
 });
 ```
 
-> **Note**: The **Checklist** plugin has to be used together with the [Lists]({{site.baseurl}}/plugins/lists/) plugin to work.
+> **Note**: The **Checklist** plugin has to be used together with the [Lists]({{site.baseurl}}/plugins/opensource/lists/) plugin to work.
 
 ## CSS
 

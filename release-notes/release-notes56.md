@@ -31,11 +31,11 @@ The new `images_file_types` option allows different image file extensions to be 
 - Smart Paste's image URL to embedded image functionality.
 - Allowed file extensions for the Image plugin.
 
-For information on the `images_file_types` and `smart_paste` options for the PowerPaste plugin, see: [PowerPaste plugin]({{site.baseurl}}/plugins/powerpaste/).
+For information on the `images_file_types` and `smart_paste` options for the PowerPaste plugin, see: [PowerPaste plugin]({{site.baseurl}}/plugins/premium/powerpaste/).
 
-For information on the `images_file_types` and `smart_paste` options for the Paste plugin, see: [Paste plugin]({{site.baseurl}}/plugins/paste/).
+For information on the `images_file_types` and `smart_paste` options for the Paste plugin, see: [Paste plugin]({{site.baseurl}}/plugins/opensource/paste/).
 
-For information on the `images_file_types` option for the Image plugin, see: [Image plugin]({{site.baseurl}}/plugins/image/).
+For information on the `images_file_types` option for the Image plugin, see: [Image plugin]({{site.baseurl}}/plugins/opensource/image/).
 
 ### New `format_empty_lines` option for content formatting
 
@@ -56,7 +56,7 @@ For information on the `name` field, see: [User interface - `style_formats`]({{ 
 - A new `TableModified` event which is fired when a style or structural change is made to a table.
 - Two new core events which are fired before and after displaying notifications.
 
-For information on the `TableModified` event, see: [Table plugin - `events`]({{ site.baseurl }}/plugins/table/#events).
+For information on the `TableModified` event, see: [Table plugin - `events`]({{ site.baseurl }}/plugins/opensource/table/#events).
 
 For information on core editor events, see: [Editor core events]({{ site.baseurl }}/advanced/events/#editorcoreevents).
 
@@ -81,9 +81,9 @@ A new `emojiimages` database has been added to the Emoticons plugin. This databa
 
 A new `emoticons_database` option has been added to specify which built-in emoji database to use in the editor. Additionally, a new `emoticons_images_url` option has been added to configure the base URL for images used in the `emojiimages` database.
 
-For information on the `emojiimages` database and `emoticons_database` option, see: [Emoticons plugin - `emoticons_database`]({{ site.baseurl }}/plugins/emoticons/#emoticons_database).
+For information on the `emojiimages` database and `emoticons_database` option, see: [Emoticons plugin - `emoticons_database`]({{ site.baseurl }}/plugins/opensource/emoticons/#emoticons_database).
 
-For information on the `emoticons_images_url` option, see: [Emoticons plugin - `emoticons_images_url`]({{ site.baseurl }}/plugins/emoticons/#emoticons_images_url).
+For information on the `emoticons_images_url` option, see: [Emoticons plugin - `emoticons_images_url`]({{ site.baseurl }}/plugins/opensource/emoticons/#emoticons_images_url).
 
 ## Accompanying Premium Plugin changes
 
@@ -109,7 +109,7 @@ The {{site.productname}} 5.6 release includes an accompanying release of the **A
 - Fixed the code view not using monospace fonts.
 - Fixed an issue where non-breaking spaces were inserted instead of regular spaces on Safari.
 
-For information on the Advanced Code Editor plugin, see: [Advanced Code Editor plugin]({{site.baseurl}}/plugins/advcode/).
+For information on the Advanced Code Editor plugin, see: [Advanced Code Editor plugin]({{site.baseurl}}/plugins/premium/advcode/).
 
 ### Accessibility Checker 2.3.1
 
@@ -117,7 +117,7 @@ The {{site.productname}} 5.6 release includes an accompanying release of the **A
 
 **Accessibility Checker** 2.3.1 fixes an issue where internal {{site.productname}} elements were not ignored.
 
-For information on the Accessibility Checker plugin, see: [Accessibility Checker plugin]({{site.baseurl}}/plugins/a11ychecker/).
+For information on the Accessibility Checker plugin, see: [Accessibility Checker plugin]({{site.baseurl}}/plugins/premium/a11ychecker/).
 
 ### Comments 2.3.0
 
@@ -131,7 +131,7 @@ The {{site.productname}} 5.6 release includes an accompanying release of the **C
 - Fixed long comments getting cut off.
 - Fixed a scrollbar appearing in the textarea when writing a comment.
 
-For information on the Comments plugin, see: [Comments plugin]({{site.baseurl}}/plugins/comments/).
+For information on the Comments plugin, see: [Comments plugin]({{site.baseurl}}/plugins/premium/comments/).
 
 ### Mentions 2.2.0
 
@@ -144,7 +144,7 @@ The {{site.productname}} 5.6 release includes an accompanying release of the **M
 - Added a new `profile` hover card for usage with the `mentions_select` option.
 - Fixed mentions not converted to `contenteditable=false` elements when set using `editor.setContent()`
 
-For information on the Mentions plugin, see: [Mentions plugin]({{site.baseurl}}/plugins/mentions/).
+For information on the Mentions plugin, see: [Mentions plugin]({{site.baseurl}}/plugins/premium/mentions/).
 
 ### PowerPaste 5.4.0
 
@@ -156,7 +156,7 @@ The {{site.productname}} 5.6 release includes an accompanying release of the **P
 - Fixed the `Cut` menu item not working in the latest version of Firefox.
 - Fixed two Cross-Site Scripting (XSS) vulnerability issues. For more information, see: [Security fixes](#security-fixes).
 
-For information on the PowerPaste plugin, see: [PowerPaste plugin]({{site.baseurl}}/plugins/powerpaste/).
+For information on the PowerPaste plugin, see: [PowerPaste plugin]({{site.baseurl}}/plugins/premium/powerpaste/).
 
 ## Accompanying Premium self-hosted server-side component changes
 

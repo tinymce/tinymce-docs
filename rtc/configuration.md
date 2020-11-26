@@ -8,6 +8,8 @@ keywords: rtc configuration
 
 ## List of all available RTC configuration options
 
+> **Note**: These configuration options is subject to change based on customer feedback.
+
 ### `rtc_service_url`
 
 The service url should point to the cloud service and include your api key.

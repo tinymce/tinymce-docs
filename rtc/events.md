@@ -8,6 +8,8 @@ keywords: rtc events
 
 ## RTC Events
 
+> **Note**: These events options is subject to change based on customer feedback.
+
 ## `RtcUserConnected`
 
 This event is fired when a user enters the session.

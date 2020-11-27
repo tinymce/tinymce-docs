@@ -164,9 +164,9 @@ tinymce.init({
 }
 ```
 
-### `rtc_initial_content`
+### `rtc_initial_content_provider`
 
-By default the initial contents is retrieved from target element that you initialized the editor on but since that content only needs to be retrieved when there is no active RTC session opened this optional provider function can be used instead to provide the initial content. This also works better with the various tinymce [integrations]({{site.baseurl}}/integrations/) that doesn't provide access to the target element directly.
+By default the initial contents is retrieved from target element that you initialized the editor on but since that content only needs to be retrieved when there is no active RTC session opened this optional provider function can be used instead to provide the initial content. This also works better with the various {{site.productname}} [integrations]({{site.baseurl}}/integrations/) that doesn't provide access to the target element directly.
 
 **Type:** `Function`
 
@@ -180,7 +180,7 @@ By default the initial contents is retrieved from target element that you initia
 
 ```js
 tinymce.init({
-  rtc_initial_content: () => Promise.resolve({ content: "<p>Hello world!</p>" })
+  rtc_initial_content_provider: () => Promise.resolve({ content: "<p>Hello world!</p>" })
 })
 ```
 
@@ -188,7 +188,7 @@ tinymce.init({
 
 ```js
 tinymce.init({
-  rtc_initial_content: () => {
+  rtc_initial_content_provider: () => {
     return fetch('http://yourserver/getContent', {
       method: 'POST',
       headers: {

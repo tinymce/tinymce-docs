@@ -6,8 +6,11 @@ description: List of all available RTC configuration options.
 keywords: rtc configuration
 ---
 
-## List of all available RTC configuration options
-
+{% assign beta_feature = "The RTC plugin" %}
+{% assign pre-release_type = "Closed Beta" %}
+{% include misc/beta-note.md %}
+{{site.requires_5_6v}}<br>
+{{site.premiumplugin}}<br>
 > **Note**: These configuration options is subject to change based on customer feedback.
 
 ### `rtc_service_url`

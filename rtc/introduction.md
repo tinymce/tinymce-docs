@@ -6,7 +6,11 @@ description: Introduction of what RTC is and its capabilities
 keywords: rtc introduction overview
 ---
 
-RTC is a premium {{site.productname}} plugin for having multiple users collaborating on the same document using our cloud services.
+{% assign beta_feature = "The RTC plugin" %}
+{% assign pre-release_type = "Closed Beta" %}
+{% include misc/beta-note.md %}
+{{site.requires_5_6v}}<br>
+{{site.premiumplugin}}<br>
 
 ## JWT
 

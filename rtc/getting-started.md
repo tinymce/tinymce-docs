@@ -6,6 +6,12 @@ description: Getting started with RTC
 keywords: rtc
 ---
 
+{% assign beta_feature = "The RTC plugin" %}
+{% assign pre-release_type = "Closed Beta" %}
+{% include misc/beta-note.md %}
+{{site.requires_5_6v}}<br>
+{{site.premiumplugin}}<br>
+
 > Requirements
 > 1. Register for an API key at [{{site.accountpage}}]({{site.accountsignup}})
 > 2. Generate a JWT key at [{{site.accountpage}}]({{site.accountpageurl}})

@@ -29,7 +29,6 @@ const yourSecretKey = 'your secret 🔑';
 tinymce.init({
   selector: 'textarea',
   plugin: 'rtc',
-  rtc_service_url: 'https://rtc.tiny.cloud/1/<your api key>',
   rtc_document_details_provider: () => Promise.resolve({ documentId: yourDocumentId }).
   rtc_encryption_provider: ({documentId, sessionId}) => {
     return Promise.resolve({ key: yourSecretKey });

@@ -7,6 +7,7 @@ keywords: export pdf premium
 ---
 
 {% assign beta_feature = "The Export plugin" %}
+{% assign pre-release_type = "Open Beta" %}
 {% include misc/beta-note.md %}
 
 {{site.requires_5_5v}}

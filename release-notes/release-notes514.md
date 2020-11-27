@@ -6,7 +6,9 @@ description: Release notes for TinyMCE 5.1.4
 keywords: releasenotes bugfixes
 ---
 
-These release notes provide an overview of the changes for {{site.productname}} 5.1.4, including:
+## Overview
+
+{{site.productname}} 5.1.4 was released for {{site.enterpriseversion}} and {{site.cloudname}} on Wednesday, December 18<sup>th</sup>, 2019. These release notes provide an overview of the changes for {{site.productname}} 5.1.4, including:
 
 - [General bug fixes](#generalbugfixes)
 - [Security fixes](#securityfixes)

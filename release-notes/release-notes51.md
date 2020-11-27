@@ -6,7 +6,9 @@ description: Release notes for TinyMCE 5.1
 keywords: releasenotes newfeatures deleted technologypreview bugfixes knownissues
 ---
 
-These release notes provide a high-level coverage of the changes for {{site.productname}} 5.1, including:
+## Overview
+
+{{site.productname}} 5.1 was released for {{site.enterpriseversion}} and {{site.cloudname}} on Wednesday, December 11<sup>th</sup>, 2019. It includes {{site.productname}} 5.1.3 and additional changes to premium plugins. These release notes provide a high-level coverage of the changes for {{site.productname}} 5.1, including:
 
 - [New features and enhancements](#newfeaturesandenhancements)
 - [Premium Plugin changes](#premiumpluginchanges)

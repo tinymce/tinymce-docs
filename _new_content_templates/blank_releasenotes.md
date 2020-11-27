@@ -11,7 +11,9 @@ Replace vnumtxt with the version number such as: X.Y.Z
 Replace vnumcode with the version number without points, such as XYZ
 {% endcomment %}
 
-These release notes provide an overview of the changes for {{site.productname}} vnumtxt, including:
+## Overview
+
+{{site.productname}} vnumtxt was released for {{site.enterpriseversion}} and {{site.cloudname}} on <<`WEEKDAY`, `MMM` `D`<sup>`st|nd|th`</sup>, `YYYY`>>. It includes {{site.productname}} vnumtxt and additional changes to premium plugins. These release notes provide an overview of the changes for {{site.productname}} vnumtxt, including:
 
 - [TinyMCE vnumtxt new features and enhancements](#tinymcevnumcodenewfeaturesandenhancements)
 - [Accompanying Premium Plugin changes](#accompanyingpremiumpluginchanges)

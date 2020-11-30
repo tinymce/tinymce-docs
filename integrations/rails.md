@@ -52,7 +52,7 @@ This procedure creates a [basic Ruby on Rails application](https://guides.rubyon
     rails server
     ```
 
-The page containing the {{site.productname}} will be accessible at `http://localhost:<port>/` (default: [http://localhost:3000/](http://localhost:3000/)).
+The page containing the {{site.productname}} will be accessible at `http://localhost:<port>/` (default: http://localhost:3000/).
 
 ## TinyMCE in Ruby on Rails using TinyMCE self-hosted
 
@@ -95,7 +95,7 @@ This procedure creates a [basic Ruby on Rails application](https://guides.rubyon
     rails server
     ```
 
-The page containing the {{site.productname}} will be accessible at `http://localhost:<port>/` (default: [http://localhost:3000/](http://localhost:3000/)).
+The page containing the {{site.productname}} will be accessible at `http://localhost:<port>/` (default: http://localhost:3000/).
 
 For information on self-hosting {{site.productname}}, see: [Installing {{ site.productname }}]({{site.baseurl}}/general-configuration-guide/advanced-install/).
 
@@ -163,6 +163,6 @@ This procedure creates a [basic Ruby on Rails application](https://guides.rubyon
     rails server
     ```
 
-The page containing the {{site.productname}} will be accessible at `http://localhost:<port>/` (default: [http://localhost:3000/](http://localhost:3000/)).
+The page containing the {{site.productname}} will be accessible at `http://localhost:<port>/` (default: http://localhost:3000/).
 
 For information on creating advanced configurations for the third-party TinyMCE Ruby on Rails integration, visit the project on GitHub: [Rails Integration for TinyMCE](https://github.com/spohlenz/tinymce-rails).

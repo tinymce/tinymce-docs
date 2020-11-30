@@ -23,7 +23,7 @@ Add the following script in the webpage once the script tag to load {{site.produ
 Extend the [{{site.productname}} configuration]({{ site.baseurl }}/configure/) to include any additional purchased plugins and associated toolbar and menu items. Refer to the following enablement guides for more information:
 
 * [Mentions]({{site.baseurl}}/plugins/premium/mentions/)
-* [{{site.cloudfilemanager}}]({{ site.baseurl }}/plugins/drive/)
+* [{{site.cloudfilemanager}}]({{ site.baseurl }}/plugins/premium/tinydrive/)
 * [Comments]({{site.baseurl}}/plugins/premium/comments/)
 * [Page Embed]({{site.baseurl}}/plugins/premium/pageembed/)
 * [Permanent Pen]({{site.baseurl}}/plugins/premium/permanentpen/)

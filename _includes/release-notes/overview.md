@@ -1,5 +1,5 @@
 
-The Release Notes provide high-level coverage of the improvements and additions that have been implemented in TinyMCE 5.0 and document known problems in this release, as well as notable bug fixes, deprecated functionality, and other details.
+{{site.productname}} 5.0 was released for {{site.enterpriseversion}} and {{site.cloudname}} on Tuesday, February 5<sup>th</sup>, 2019. It includes {{site.productname}} 5.0.0 and additional changes to premium plugins. The Release Notes provide high-level coverage of the improvements and additions that have been implemented in {{site.productname}} 5.0 and document known problems in this release, as well as notable bug fixes, deprecated functionality, and other details.
 
 TinyMCE 5.0 has an ARIA [WCAG 2.1 standards](https://www.w3.org/WAI/standards-guidelines/wcag/) compliant user interface to make the user interface controls and dynamic content more accessible. In TinyMCE 5.0, more complex controls or dialogs can be written in the new API style while keeping the more straightforward methods of adding buttons and windows.
 

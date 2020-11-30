@@ -49,7 +49,7 @@ The **Permanent Pen** toolbar button background color changes to _grey_ ![Perman
 
 ### To disable Permanent Pen
 
-To exit the Permanent Pen, click on the ![Permanent Pen]({{site.baseurl}}/images/pp-enabled.png)(**Permanent Pen**) icon.
+To exit the Permanent Pen, click on the ![Permanent Pen]({{site.baseurl}}/images/icons/permanent-pen.svg)(**Permanent Pen**) icon.
 
 The **Permanent Pen** toolbar button background color changes to _white_ ![Permanent Pen]({{site.baseurl}}/images/icons/permanent-pen.svg).
 

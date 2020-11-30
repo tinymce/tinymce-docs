@@ -672,7 +672,7 @@ tinymce.init({
 });
 ```
 
-> **Note**: The advanced tabs of the table, row, and cell properties dialogs use the `colorpicker` to allow for border and background colors to be applied. See docs to use and configure a custom [colorpicker]({{site.baseurl}}/plugins/colorpicker/).
+> **Note**: The advanced tabs of the table, row, and cell properties dialogs use the `colorpicker` to allow for border and background colors to be applied. See docs to use and configure a custom [colorpicker]({{site.baseurl}}/configure/content-appearance/#textcoloroptions).
 
 {% include misc/plugin-toolbar-button-id-boilerplate.md %}
 

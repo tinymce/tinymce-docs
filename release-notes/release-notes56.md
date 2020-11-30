@@ -8,10 +8,9 @@ keywords: releasenotes bugfixes
 
 These release notes provide an overview of the changes for {{site.productname}} 5.6, including:
 
-- [TinyMCE 5.6 new features and enhancements](#tinymce56newfeaturesandenhancements)
+- [New features](#newfeatures)
+- [Enhancements](#enhancements)
 - [Accompanying Premium Plugin changes](#accompanyingpremiumpluginchanges)
-- [Accompanying Premium self-hosted server-side component changes](#accompanyingpremiumself-hostedserver-sidecomponentchanges)
-- [Minor changes for TinyMCE 5.6](#minorchangesfortinymce56)
 - [General bug fixes](#generalbugfixes)
 - [Security fixes](#securityfixes)
 - [Deprecated features](#deprecatedfeatures)
@@ -20,9 +19,9 @@ These release notes provide an overview of the changes for {{site.productname}} 
 
 {{site.releasenotes_for_stable}}
 
-## TinyMCE 5.6 new features and enhancements
+## New features
 
-The following new features and enhancements were added for the {{site.productname}} 5.6 release.
+The following new features were added for the {{site.productname}} 5.6 release.
 
 ### New `images_file_types` option for customizing recognized image file extensions
 
@@ -71,12 +70,6 @@ For information on:
 - The `TableModified` event, see: [Table plugin - `events`]({{ site.baseurl }}/plugins/opensource/table/#events).
 - Core editor events, see: [Editor core events]({{ site.baseurl }}/advanced/events/#editorcoreevents).
 
-### New optional `name` field for the `style_formats` option
-
-A new optional `name` field that sets a specific name to the format when it's being registered using the `style_formats` option.
-
-For information on the `name` field, see: [User interface - `style_formats`]({{ site.baseurl }}/configure/editor-appearance/#style_formats).
-
 ### New card menu item for the autocompleter
 
 A new card menu item has been added to the autocompleter, allowing for greater customization of the autocompleter results displayed to the user.
@@ -86,6 +79,24 @@ For information on customizing autocompleter results with `CardMenuItem`, see: [
 ### Clicking a link in `readonly` mode now opens the URL
 
 Clicking links when the editor is in `readonly` mode will open the URL in a new tab or window (depending on browser preferences).
+
+### Minor new features
+
+{{site.productname}} 5.6 introduces the following minor new features:
+
+- Added support for `block` and `unblock` methods on inline dialogs.
+- Added new user interface `enable`, `disable`, and `isDisabled` methods.
+- Added new `closest` formatter API to get the closest matching selection format from a set of formats.
+
+## Enhancements
+
+The following enhancements were made for the {{site.productname}} 5.6 release.
+
+### New optional `name` field for the `style_formats` option
+
+A new optional `name` field that sets a specific name to the format when it's being registered using the `style_formats` option.
+
+For information on the `name` field, see: [User interface - `style_formats`]({{ site.baseurl }}/configure/editor-appearance/#style_formats).
 
 ## Accompanying Premium Plugin changes
 
@@ -150,14 +161,6 @@ The {{site.productname}} 5.6 release includes an accompanying release of the **P
 
 For information on the PowerPaste plugin, see: [PowerPaste plugin]({{site.baseurl}}/plugins/premium/powerpaste/).
 
-## Minor changes for TinyMCE 5.6
-
-{{site.productname}} 5.6 introduces the following minor changes:
-
-- Added support for `block` and `unblock` methods on inline dialogs.
-- Added new user interface `enable`, `disable`, and `isDisabled` methods.
-- Added new `closest` formatter API to get the closest matching selection format from a set of formats.
-
 ## General bug fixes
 
 {{site.productname}} 5.6 provides fixes for the following bugs:
@@ -166,7 +169,6 @@ For information on the PowerPaste plugin, see: [PowerPaste plugin]({{site.baseur
 - Fixed the type signature for the `entity_encoding` setting not accepting delimited lists.
 - Fixed layout issues when empty `tr` elements were incorrectly removed from tables.
 - Fixed image file extensions lost when uploading an image with an alternative extension, such as `.jfif`.
-- Fixed a security issue where URLs in attributes weren't correctly sanitized.
 - Fixed `DOMUtils.getParents` incorrectly including the shadow root in the array of elements returned.
 - Fixed an issue where the root document could be scrolled while an editor dialog was open inside a shadow root.
 - Fixed `getContent` with text format returning a new line when the editor is empty.
@@ -194,6 +196,10 @@ For information on the PowerPaste plugin, see: [PowerPaste plugin]({{site.baseur
 - Fixed the HTML5 `s` element was not recognized when editing or clearing text formatting.
 
 ## Security fixes
+
+{{site.productname}} 5.6 provides fixes for the following security issues:
+
+- Fixed a security issue where URLs in attributes weren't correctly sanitized.
 
 PowerPaste 5.4.0 provides fixes for the following security issues:
 

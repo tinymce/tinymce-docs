@@ -13,10 +13,9 @@ Replace vnumcode with the version number without points, such as XYZ
 
 These release notes provide an overview of the changes for {{site.productname}} vnumtxt, including:
 
-- [TinyMCE vnumtxt new features and enhancements](#tinymcevnumcodenewfeaturesandenhancements)
+- [New features](#newfeatures)
+- [Enhancements](#enhancements)
 - [Accompanying Premium Plugin changes](#accompanyingpremiumpluginchanges)
-- [Accompanying Premium self-hosted server-side component changes](#accompanyingpremiumself-hostedserver-sidecomponentchanges)
-- [Minor changes for TinyMCE vnumtxt](#minorchangesfortinymcevnumcode)
 - [General bug fixes](#generalbugfixes)
 - [Security fixes](#securityfixes)
 - [Deprecated features](#deprecatedfeatures)
@@ -25,11 +24,29 @@ These release notes provide an overview of the changes for {{site.productname}} 
 
 {{site.releasenotes_for_stable}}
 
-## TinyMCE vnumtxt new features and enhancements
+## New features
 
-The following new features and enhancements were added for the {{site.productname}} vnumtxt release.
+The following new features were added for the {{site.productname}} vnumtxt release.
 
-### Improvement Name
+### Feature name
+
+### Minor new features
+
+{{site.productname}} vnumtxt introduces the following minor new features:
+
+- changelog
+
+## Enhancements
+
+The following enhancements were made for the {{site.productname}} vnumtxt release.
+
+### Enhancement name
+
+### Minor new features
+
+{{site.productname}} vnumtxt introduces the following minor enhancements:
+
+- changelog
 
 ## Accompanying Premium Plugin changes
 
@@ -76,12 +93,6 @@ For information on:
 
 - Deploying the server-side components, see: [Server-side component installation]({{site.baseurl}}/enterprise/server/).
 - Deploying the server-side components using Docker, see: [Containerized service deployments]({{site.baseurl}}/enterprise/server/dockerservices/).
-
-## Minor changes for TinyMCE vnumtxt
-
-{{site.productname}} vnumtxt introduces the following minor changes:
-
-- changelog
 
 ## General bug fixes
 

@@ -240,9 +240,9 @@ tinymce.init({
 
 ### `mentions_select`
 
-This option enables an element to be presented below a mention when a user hovers over it on the page. This could include details about the user. A pre-defined template can be specified by name or a custom hover element can be configured using a callback function.
+This option enables an element to be presented below a mention when a user hovers over it on the page. This could include details about the user. A custom hover element can be created or a predefined template can be specified.
 
-**Type:** `Function` or `String` — where the only valid string at this time is `'profile'`, introduced in {{site.productname}} 5.6.
+**Type:** `Function`
 
 **Default Value:** `none`
 
@@ -261,7 +261,6 @@ tinymce.init({
     span.appendChild(editor.getDoc().createTextNode('@' + userInfo.name));
     return span;
   },
-  // mentions_select: 'profile', // Use the 'profile' item or customize your own item.
   mentions_select: function (mention, success) {
     // `mention` is the element we previously created with `mentions_menu_complete`
     // in this case we have chosen to store the id as an attribute
@@ -281,16 +280,18 @@ tinymce.init({
         '</div>'
       );
       success(div);
+      // Or simply use the predefined 'profile' template.
+      // success({ type: 'profile', user: userDetail });
     });
   }
 });
 ```
 
-#### `mentions_select` `profile`
+#### `mentions_select` with predefined templates
 
 {{site.requires_5_6v}}
 
-If the option is set to "profile", the mentions `profile` template will be used. For details on the user properties required for the "profile" setting, see: [User properties](#userproperties).
+If `mentions_select` is resolved with an object specifying type and user details, a predefined select template will be used. The only valid template at this time is `'profile'`. For details on the user properties required for the `profile` template, see: [User properties](#userproperties).
 
 ## API
 

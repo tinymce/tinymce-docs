@@ -57,6 +57,6 @@ Go through the following additional resources to figure out how to configure {{s
 - [Configuration Options]({{site.baseurl}}/tinydrive/configuration/)
 - [Integrations]({{site.baseurl}}/tinydrive/integrations/)
 
-## Need help? ##
+## Need help?
 
 {{site.companyname}} is striving to make {{site.cloudfilemanager}} as useful and simple as possible. For support related issues such as problems with JWT authentication and implementing {{site.cloudfilemanager}}, check the [help page]({{site.baseurl}}/tinydrive/get-help/) or please contact [{{site.supportname}}]({{site.supporturl}}).

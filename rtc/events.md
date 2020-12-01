@@ -11,22 +11,26 @@ keywords: rtc events
 {% include misc/beta-note.md %}
 {{site.requires_5_6v}}<br>
 {{site.premiumplugin}}<br>
-> **Note**: These events options is subject to change based on customer feedback.
+> **Note**: These events are subject to change based on customer feedback.
 
 ## `RtcUserConnected`
 
 This event is fired when a user enters the session.
 
-### Event fields
+### Event fields: `RtcUserConnected`
 
-- userId:string - Unique user ID of the connecting user
-- caretNumber:int - Caret number assigned to the user
-- custom:Object - Custom data object provided by the `rtc_custom_user_details` setting on the connecting side.
+| Field | Type | Description |
+|-------|:----:|-------------|
+| `userId` | string | Unique user ID of the connecting user. |
+| `caretNumber` | integer | Caret number assigned to the user. |
+| `custom` | object | Custom data object provided by the `rtc_custom_user_details` option, sent from the connecting user client. |
 
 ### Example of using the RtcUserConnected event
 
 ```js
 tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'rtc',
   setup: (editor) => {
     editor.on('RtcUserConnected', ({userId, caretNumber, custom}) => {
       console.log(`User connected userId:${userId}`);
@@ -39,16 +43,20 @@ tinymce.init({
 
 This event is fired when a user leaves the session.
 
-### Event fields
+### Event fields: `RtcUserDisconnected`
 
-- userId:string - Unique user ID of the disconnecting user
-- caretNumber:int - Caret number assigned to the user
-- custom:Object - Custom data object provided by the `rtc_custom_user_details` setting on the disconnecting side.
+| Field | Type | Description |
+|-------|:----:|-------------|
+| `userId` | string | Unique user ID of the disconnecting user. |
+| `caretNumber` | integer | Caret number assigned to the user. |
+| `custom` | object | Custom data object provided by the `rtc_custom_user_details` option, sent from the disconnecting user client. |
 
 ### Example of using the RtcUserDisconnected event
 
 ```js
 tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'rtc',
   setup: (editor) => {
     editor.on('RtcUserDisconnected', ({userId, caretNumber, custom}) => {
       console.log(`User disconnected userId:${userId}`);

@@ -42,13 +42,13 @@ tinymce.init({
 })
 ```
 
-#### Additional resources
+### Additional resources
 
 Go through the following additional resources to figure out how to configure RTC.
 
 - We recommend reading up and trying to understand how [JWT authentication]({{site.baseurl}}/rtc/jwt-authentication/) works.
 - [Configuration Options]({{site.baseurl}}/rtc/configuration/)
 
-## Need help? ##
+## Need help?
 
 {{site.companyname}} is striving to make RTC as useful and simple as possible. For support related issues such as problems with JWT authentication and implementing RTC contact [{{site.supportname}}]({{site.supporturl}}).

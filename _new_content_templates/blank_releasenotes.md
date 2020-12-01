@@ -42,7 +42,7 @@ The following enhancements were made for the {{site.productname}} vnumtxt releas
 
 ### Enhancement name
 
-### Minor new features
+### Additional enhancements
 
 {{site.productname}} vnumtxt introduces the following minor enhancements:
 

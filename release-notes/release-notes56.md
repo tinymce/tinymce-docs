@@ -164,7 +164,7 @@ For information on the PowerPaste plugin, see: [PowerPaste plugin]({{site.baseur
 
 {{site.productname}} 5.6 provides fixes for the following bugs:
 
-- Added support for `block` and `unblock` methods on inline dialogs.
+- Fixed the `block` and `unblock` dialog APIs not working for inline dialogs.
 - Fixed the `change` event not firing after a successful image upload.
 - Fixed the type signature for the `entity_encoding` setting not accepting delimited lists.
 - Fixed layout issues when empty `tr` elements were incorrectly removed from tables.

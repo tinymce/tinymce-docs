@@ -270,7 +270,7 @@ tinymce.init({
       userRequest[id] = fetch('/user?id=' + id);
     }
     userRequest[id].then(function(userDetail) {
-      // Create a custom select element
+      // Create a custom hover card element
       var div = document.createElement('div');
       div.innerHTML = (
         '<div>' +

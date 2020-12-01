@@ -270,6 +270,7 @@ tinymce.init({
       userRequest[id] = fetch('/user?id=' + id);
     }
     userRequest[id].then(function(userDetail) {
+      // Create a custom select element
       var div = document.createElement('div');
       div.innerHTML = (
         '<div>' +
@@ -280,7 +281,7 @@ tinymce.init({
         '</div>'
       );
       success(div);
-      // Or simply use the predefined 'profile' template.
+      // or simply use the predefined 'profile' template.
       // success({ type: 'profile', user: userDetail });
     });
   }
@@ -291,7 +292,7 @@ tinymce.init({
 
 {{site.requires_5_6v}}
 
-If `mentions_select` is resolved with an object specifying type and user details, a predefined select template will be used. The only valid template at this time is `'profile'`. For details on the user properties required for the `profile` template, see: [User properties](#userproperties).
+If `mentions_select` is resolved with an object specifying the type and user details, a predefined select template will be used. To use the predefined template, set `type` to `'profile'`. See [`Example: Using mentions_select`](#exampleusingmentions_select) for an example of how this is done. For details on the user properties required for the `profile` template, see: [User properties](#userproperties).
 
 ## API
 

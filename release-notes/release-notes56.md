@@ -6,7 +6,9 @@ description: Release notes for TinyMCE 5.6
 keywords: releasenotes bugfixes
 ---
 
-These release notes provide an overview of the changes for {{site.productname}} 5.6, including:
+## Overview
+
+{{site.productname}} 5.6 was released for {{site.enterpriseversion}} and {{site.cloudname}} on Tuesday, December 8<sup>th</sup>, 2020. It includes {{site.productname}} 5.6.1 and additional changes to premium plugins. These release notes provide an overview of the changes for {{site.productname}} 5.6, including:
 
 - [New features](#newfeatures)
 - [Enhancements](#enhancements)

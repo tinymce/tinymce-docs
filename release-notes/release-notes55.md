@@ -6,7 +6,9 @@ description: Release notes for TinyMCE 5.5
 keywords: releasenotes bugfixes
 ---
 
-These release notes provide an overview of the changes for {{site.productname}} 5.5, including:
+## Overview
+
+{{site.productname}} 5.5 was released for {{site.enterpriseversion}} and {{site.cloudname}} on Wednesday, October 21<sup>st</sup>, 2020. It includes {{site.productname}} 5.5.1 and additional changes to premium plugins. These release notes provide an overview of the changes for {{site.productname}} 5.5, including:
 
 - [TinyMCE 5.5 new features and enhancements](#tinymce54newfeaturesandenhancements)
 - [Accompanying Premium Plugin changes](#accompanyingpremiumpluginchanges)

@@ -6,29 +6,17 @@ description: Guide on how to setup JWT Authentication for RTC
 keywords: jwt authentication
 ---
 
+{% assign pluginname = "RTC" %}
+{% assign plugincode = "rtc" %}
 ## Introduction
 
-RTC requires you to setup JSON Web Token (JWT) authentication. This is to ensure that only your authenticated uses will be able to access and collaborate on documents.
+RTC requires you to setup JSON Web Token (JWT) authentication. This is to ensure that only your authenticated users will be able to access and collaborate on documents.
 
 JWT is a standard authorization solution for web services and is documented in more detail at the [https://jwt.io/](https://jwt.io/) website. The guide aims to show how to setup JWT authentication for RTC.
 
-## Private/public key pair
+{% include auth/private-public-key-pairs-for-tiny-cloud-services.md %}
 
-{{site.cloudname}} services tokens use public/private RSA key pairs. The {{site.cloudname}} services only store the public key, allowing developers to have full control over the authentication.
-
-The private/public key pair can be created on your [{{site.companyname}} - {{site.accountpage}} page]({{site.accountpageurl}}), however we only store the public key on the {{site.accountpage}}. The private key should be downloaded and stored in your backend.
-
-> **Important**: Keep the private key secure, do not commit files containing the key to public repositories or websites.
-
-For information on generating an RSA key pair locally, see: [Creating a private/public key pair for RTC](#creatingaprivatepublickeypairforrtc).
-
-## JWT provider URL
-
-The easiest way to setup JWT authentication against {{site.cloudname}} services is to create a JWT provider endpoint. This endpoint takes a JSON HTTP POST request and produces a JSON result with the token that the service will then use for all the HTTP requests.
-
-The following diagram explains the JWT call flow:
-
-![JSON Web Token Call Flow]({{site.baseurl}}/images/jwt-call-flow.png "JSON Web Token Call Flow")
+{% include auth/jwt-provider-endpoint-url.md %}
 
 ## JWT requirements
 
@@ -43,16 +31,7 @@ These are like options/data you can send with the JWT token.
 * **sub** - _(required)_ The unique user ID (i.e. if `sub` is the same for two clients, you should trust them as if they're the same user)
 * **exp** - _(required)_ The timestamp when the token expires
 
-## JWT endpoint setup procedure
-
-Follow these steps to set up your own JWT endpoint.
-
- 1. Setup a JWT endpoint on your server, this could be a simple page using one of the examples below.
- 2. Configure the `rtc_token_provider` to fetch the token from that endpoint.
- 3. Make sure you copy the private key into the example code.
- 4. You should be good to go now.
-
- > The JWT Endpoint should examine your systems sessions to verify your user has access to your system.
+{% include auth/jwt-endpoint-setup-procedure.md %}
 
 ## Need help?
 
@@ -100,7 +79,7 @@ try {
 
 ### TinyMCE example with jwt.php Endpoint
 
-```
+```js
 tinymce.init({
   selector: 'textarea',
   plugins: 'rtc',
@@ -157,7 +136,7 @@ app.listen(3000);
 
 ### TinyMCE example with /jwt endpoint
 
-```
+```js
 tinymce.init({
   selector: 'textarea',
   plugins: 'rtc',
@@ -175,180 +154,4 @@ If you managed to set this up, you should be good to go with checking out the va
 
 If you need some help [submit a support request]({{site.supporturl}}).
 
-## Creating a private/public key pair for RTC
-
-The procedure for creating a key pair depends on the operating system of the host machine.
-
-* [Linux procedure](#linux).
-* [Apple macOS procedure](#applemacos).
-* [Microsoft Windows procedure](#microsoftwindows).
-
-### Linux
-
-To create a private/public key pair on a Linux operating system:
-
-1. [Install OpenSSL](#installingopensslonlinux).
-1. [Create a private/public key pair](#createaprivatepublickeypaironlinux).
-1. [Retrieve the public key](#retrievethepublickeyonlinux).
-
-#### Installing OpenSSL on Linux
-
-The procedure for installing OpenSSL on Linux distributions varies. The installation commands for common Linux distributions have been provided here.
-
-##### Red Hat Enterprise Linux 7 or CentOS 7
-
-On a command line, run the following commands to install OpenSSL on:
-
-* Red Hat Enterprise Linux 6 or 7.
-* CentOS 6 or 7.
-
-```sh
-sudo yum check-update
-sudo yum install openssl
-```
-
-##### Red Hat Enterprise Linux 8+, Fedora, or CentOS 8+
-
-On a command line, run the following commands to install OpenSSL on:
-
-* Red Hat Enterprise Linux 8 or later.
-* CentOS 8 or later.
-* Fedora 18 or later.
-
-```sh
-sudo dnf check-update
-sudo dnf install openssl
-```
-
-##### Debian, Ubuntu, Linux Mint, or other Debian-based distributions
-
-On a command line, run the following commands to install OpenSSL on Debian-based operating systems (such as: Debian, Ubuntu, and Linux Mint).
-
-```sh
-sudo apt update
-sudo apt install openssl
-```
-
-##### SUSE Linux Enterprise Server or openSUSE
-
-On a command line, run the following commands to install OpenSSL on openSUSE-based operating systems (such as: openSUSE and SUSE Linux Enterprise Server).
-
-```sh
-sudo zypper refresh
-sudo zypper install openssl
-```
-
-#### Create a private/public key pair on Linux
-
-To create a private/public key pair:
-
-1. On a command line, run:
-
-    ```sh
-    ssh-keygen -m PEM -t rsa -b 2048 -f <MY_RTC_KEY>
-    ```
-
-    Where _`<MY_RTC_KEY>`_ should be replaced with a name for the key pair.
-
-2. Enter a passphrase for accessing the key.
-
-Two files will be created in the current directory:
-
-* `<MY_RTC_KEY>` - The private key.
-* `<MY_RTC_KEY>.pub` - The public key.
-
-#### Retrieve the public key on Linux
-
-To retrieve the public key, on a command line, run:
-
-```sh
-openssl rsa -in <MY_RTC_KEY> -outform DER -pubout | base64 -w0
-```
-
-The public key for the `<MY_RTC_KEY>` key pair will be printed on the command line with base64 encoding.
-
-### Apple macOS
-
-To create a private/public key pair on a macOS operating system:
-
-1. [Create a private/public key pair](#createaprivatepublickeypaironmacos).
-1. [Retrieve the public key](#retrievethepublickeyonmacos).
-
-#### Create a private/public key pair on macOS
-
-To create a private/public key pair:
-
-1. Using **Finder**, open a **Terminal**.
-1. On a terminal, run:
-
-    ```sh
-    ssh-keygen -m PEM -t rsa -b 2048 -f <MY_RTC_KEY>
-    ```
-
-    Where _`<MY_RTC_KEY>`_ should be replaced with a name for the key pair.
-
-1. Enter a passphrase for accessing the key.
-
-Two files will be created in the current directory:
-
-* `<MY_RTC_KEY>` - The private key.
-* `<MY_RTC_KEY>.pub` - The public key.
-
-#### Retrieve the public key on macOS
-
-To retrieve the public key, on a terminal, run:
-
-```sh
-openssl rsa -in <MY_RTC_KEY> -outform DER -pubout | base64 -
-```
-
-The public key for the `<MY_RTC_KEY>` key pair will be printed on the terminal with base64 encoding.
-
-### Microsoft Windows
-
-To create a private/public key pair on a Microsoft Windows operating system:
-
-1. [Install OpenSSL](#installingopensslonmicrosoftwindows).
-1. [Create a private/public key pair](#createaprivatepublickeypaironwindows).
-1. [Retrieve the public key](#retrievethepublickeyonwindows).
-
-#### Installing OpenSSL on Microsoft Windows
-
-To install OpenSSL with _Git for Windows_:
-
-1. Download the _Windows_ package from [the Git Downloads page](https://git-scm.com/downloads).
-1. Open the downloaded file `Git-<VERSION>-<ARCH>-bit.exe`, where _`<VERSION>`_ is the latest version of _Git for Windows_ and _`<ARCH>`_ is the architecture, such as _32-bit_ or _64-bit_.
-1. Click **Next** on the _Information_ and _Select Destination Location_ screens.
-1. Select **Check daily for Git for Windows updates** on the *Select Components* screen, then click **Next**.
-1. Click **Next** on the remaining screens to accept the default settings.
-1. Once the installation is complete, click **Finish**.
-
-#### Create a private/public key pair on Windows
-
-To create a private/public key pair:
-
-1. Open the **Start** menu (or _Windows_ menu) and open **Git Bash**.
-1. On the _Git bash_ command line, run:
-
-    ```sh
-    ssh-keygen -m PEM -t rsa -b 2048 -f <MY_RTC_KEY>
-    ```
-
-    Where _`<MY_RTC_KEY>`_ should be replaced with a name for the key pair.
-
-2. Enter a passphrase for accessing the key.
-
-Two files will be created in the current directory:
-
-* `<MY_RTC_KEY>` - The private key.
-* `<MY_RTC_KEY>.pub` - The public key.
-
-#### Retrieve the public key on Windows
-
-To retrieve the public key, on a _Git bash_ command line, run:
-
-```sh
-openssl rsa -in <MY_RTC_KEY> -outform DER -pubout | base64 -w0
-```
-
-The public key for the `<MY_RTC_KEY>` key pair will be printed on the command line with base64 encoding.
+{% include auth/gen-rsa-key-pairs.md %}

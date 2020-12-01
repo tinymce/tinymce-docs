@@ -1,4 +1,4 @@
-## Creating a private/public key pair for Tiny Drive
+## Creating a private/public key pair for {{pluginname}}
 
 The procedure for creating a key pair depends on the operating system of the host machine.
 
@@ -68,27 +68,27 @@ To create a private/public key pair:
 1. On a command line, run:
 
     ```sh
-    ssh-keygen -m PEM -t rsa -b 2048 -f <MY_TINY_DRIVE_KEY>
+    ssh-keygen -m PEM -t rsa -b 2048 -f <MY_KEY_PAIR_NAME>
     ```
 
-    Where _`<MY_TINY_DRIVE_KEY>`_ should be replaced with a name for the key pair.
+    Where _`<MY_KEY_PAIR_NAME>`_ should be replaced with a name for the key pair.
 
 2. Enter a passphrase for accessing the key.
 
 Two files will be created in the current directory:
 
-* `<MY_TINY_DRIVE_KEY>` - The private key.
-* `<MY_TINY_DRIVE_KEY>.pub` - The public key.
+* `<MY_KEY_PAIR_NAME>` - The private key.
+* `<MY_KEY_PAIR_NAME>.pub` - The public key.
 
 #### Retrieve the public key on Linux
 
 To retrieve the public key, on a command line, run:
 
 ```sh
-openssl rsa -in <MY_TINY_DRIVE_KEY> -outform DER -pubout | base64 -w0
+openssl rsa -in <MY_KEY_PAIR_NAME> -outform DER -pubout | base64 -w0
 ```
 
-The public key for the `<MY_TINY_DRIVE_KEY>` key pair will be printed on the command line with base64 encoding.
+The public key for the `<MY_KEY_PAIR_NAME>` key pair will be printed on the command line with base64 encoding.
 
 ### Apple macOS
 
@@ -105,27 +105,27 @@ To create a private/public key pair:
 1. On a terminal, run:
 
     ```sh
-    ssh-keygen -m PEM -t rsa -b 2048 -f <MY_TINY_DRIVE_KEY>
+    ssh-keygen -m PEM -t rsa -b 2048 -f <MY_KEY_PAIR_NAME>
     ```
 
-    Where _`<MY_TINY_DRIVE_KEY>`_ should be replaced with a name for the key pair.
+    Where _`<MY_KEY_PAIR_NAME>`_ should be replaced with a name for the key pair.
 
 1. Enter a passphrase for accessing the key.
 
 Two files will be created in the current directory:
 
-* `<MY_TINY_DRIVE_KEY>` - The private key.
-* `<MY_TINY_DRIVE_KEY>.pub` - The public key.
+* `<MY_KEY_PAIR_NAME>` - The private key.
+* `<MY_KEY_PAIR_NAME>.pub` - The public key.
 
 #### Retrieve the public key on macOS
 
 To retrieve the public key, on a terminal, run:
 
 ```sh
-openssl rsa -in <MY_TINY_DRIVE_KEY> -outform DER -pubout | base64 -
+openssl rsa -in <MY_KEY_PAIR_NAME> -outform DER -pubout | base64 -
 ```
 
-The public key for the `<MY_TINY_DRIVE_KEY>` key pair will be printed on the terminal with base64 encoding.
+The public key for the `<MY_KEY_PAIR_NAME>` key pair will be printed on the terminal with base64 encoding.
 
 ### Microsoft Windows
 
@@ -154,24 +154,24 @@ To create a private/public key pair:
 1. On the _Git bash_ command line, run:
 
     ```sh
-    ssh-keygen -m PEM -t rsa -b 2048 -f <MY_TINY_DRIVE_KEY>
+    ssh-keygen -m PEM -t rsa -b 2048 -f <MY_KEY_PAIR_NAME>
     ```
 
-    Where _`<MY_TINY_DRIVE_KEY>`_ should be replaced with a name for the key pair.
+    Where _`<MY_KEY_PAIR_NAME>`_ should be replaced with a name for the key pair.
 
 2. Enter a passphrase for accessing the key.
 
 Two files will be created in the current directory:
 
-* `<MY_TINY_DRIVE_KEY>` - The private key.
-* `<MY_TINY_DRIVE_KEY>.pub` - The public key.
+* `<MY_KEY_PAIR_NAME>` - The private key.
+* `<MY_KEY_PAIR_NAME>.pub` - The public key.
 
 #### Retrieve the public key on Windows
 
 To retrieve the public key, on a _Git bash_ command line, run:
 
 ```sh
-openssl rsa -in <MY_TINY_DRIVE_KEY> -outform DER -pubout | base64 -w0
+openssl rsa -in <MY_KEY_PAIR_NAME> -outform DER -pubout | base64 -w0
 ```
 
-The public key for the `<MY_TINY_DRIVE_KEY>` key pair will be printed on the command line with base64 encoding.
+The public key for the `<MY_KEY_PAIR_NAME>` key pair will be printed on the command line with base64 encoding.

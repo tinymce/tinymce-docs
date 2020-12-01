@@ -30,7 +30,7 @@ The following new features were added for the {{site.productname}} vnumtxt relea
 
 ### Feature name
 
-### Minor new features
+### Additional new features
 
 {{site.productname}} vnumtxt introduces the following minor new features:
 

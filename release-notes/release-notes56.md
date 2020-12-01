@@ -80,7 +80,7 @@ For information on customizing autocompleter results with `CardMenuItem`, see: [
 
 Clicking links when the editor is in `readonly` mode will open the URL in a new tab or window (depending on browser preferences).
 
-### Minor new features
+### Additional new features
 
 {{site.productname}} 5.6 introduces the following minor new features:
 

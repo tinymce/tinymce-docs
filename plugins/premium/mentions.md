@@ -270,7 +270,6 @@ tinymce.init({
       userRequest[id] = fetch('/user?id=' + id);
     }
     userRequest[id].then(function(userDetail) {
-      // Create a custom hover card element
       var div = document.createElement('div');
       div.innerHTML = (
         '<div>' +
@@ -281,8 +280,6 @@ tinymce.init({
         '</div>'
       );
       success(div);
-      // or use the predefined 'profile' template.
-      // success({ type: 'profile', user: userDetail });
     });
   }
 });

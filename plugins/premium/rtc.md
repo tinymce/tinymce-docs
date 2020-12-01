@@ -12,3 +12,5 @@ keywords: rtc
 > **Note**: This plugin is only available for [{{site.cloudname}} users]({{site.pricingpage}}).
 
 The [RTC]({{site.baseurl}}/rtc/introduction/) plugin adds the functionality to have multiple users collaborating on the same document.
+
+For information on the RTC plugin, see [RTC (beta)]({{site.baseurl}}/rtc/).

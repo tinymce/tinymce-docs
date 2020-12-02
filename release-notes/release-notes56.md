@@ -162,6 +162,19 @@ The {{site.productname}} 5.6 release includes an accompanying release of the **P
 
 For information on the PowerPaste plugin, see: [PowerPaste plugin]({{site.baseurl}}/plugins/premium/powerpaste/).
 
+### Spell Checker Pro 2.2.0
+
+The {{site.productname}} 5.6 release includes an accompanying release of the **Spell Checker Pro** premium plugin.
+
+**Spell Checker Pro** 2.2.0 provides the following improvements:
+
+- The spellchecker dialog now opens faster when checking large documents.
+- The spellchecker dialog can now be moved around and does not block access to editor content.
+- Fixed the spellchecker dialog not checking incorrect words outside of the window viewport.
+- Fixed the spellchecker as-you-type functionality interfering with the dialog.
+  
+For information on the Spell Checker Pro plugin, see: [Spell Checker Pro plugin]({{site.baseurl}}/plugins/premium/tinymcespellchecker/).
+
 ## General bug fixes
 
 {{site.productname}} 5.6 provides fixes for the following bugs:

@@ -168,10 +168,10 @@ The {{site.productname}} 5.6 release includes an accompanying release of the **S
 
 **Spell Checker Pro** 2.2.0 provides the following improvements:
 
-- Spellchecking dialog now opens faster when checking large documents
-- Spellchecking dialog can now be moved around and does not block access to text
-- Fixed the spellchecker dialog not checking incorrect words outside of the window viewport
-- Fixed the spellchecker as-you-type functionality interfering with the dialog
+- The spellchecker dialog now opens faster when checking large documents.
+- The spellchecker dialog can now be moved around and does not block access to editor content.
+- Fixed the spellchecker dialog not checking incorrect words outside of the window viewport.
+- Fixed the spellchecker as-you-type functionality interfering with the dialog.
   
 For information on the Spell Checker Pro plugin, see: [Spell Checker Pro plugin]({{site.baseurl}}/plugins/premium/tinymcespellchecker/).
 

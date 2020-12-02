@@ -7,7 +7,7 @@ keywords: releasenotes newfeatures deleted technologypreview bugfixes knownissue
 
 ## Overview
 
-These Release Notes provide high-level coverage of: improvements and additions, known issues, important bug fixes & deprecated functionality associated with the release of TinyMCE 5.0.13.
+{{site.productname}} 5.0.13 was released for {{site.enterpriseversion}} and {{site.cloudname}} on Thursday, August 15<sup>th</sup>, 2019. It includes {{site.productname}} 5.0.13 and additional changes to premium plugins. These Release Notes provide high-level coverage of: improvements and additions, known issues, important bug fixes & deprecated functionality associated with the release of TinyMCE 5.0.13.
 
 > **Note:** TinyMCE 5.0.10, 5.0.11, and 5.0.12 were not released to enterprise due to issues found during QA.
 > TinyMCE 5.0.13 enterprise contains all changes in the TinyMCE 5.0.10 through 5.0.13 community releases.

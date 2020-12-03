@@ -23,7 +23,7 @@ The following options are required for the RTC plugin:
 
 ## `rtc_document_details_provider`
 
-The document details includes a document ID. This is the ID you share with other people collaborating on the document so it should be publicly available.
+The document details include a document ID. This is the ID users share with other people collaborating on the document.
 
 **Type:** `Function`
 
@@ -64,9 +64,14 @@ tinymce.init({
 
 ## `rtc_encryption_provider`
 
-The Tiny RTC plugin uses end-to-end encryption and therefore a key needs to be generated to encrypt the messages. This key is never sent to the server so there is no way for the {{site.productname}} RTC service to read your contents since it's encrypted/decrypted in the browser using this shared encryption key.
+The RTC plugin requires a generated key encrypt messages for end-to-end encryption. This key not sent to the {{site.cloudname}}, preventing the {{site.productname}} RTC service from reading the editor content. The encryption key is used by the user's browser to encrypted and decrypted the editor content between users.
 
-Generate a unique key by creating a function that takes the document ID, session ID and, if this is an existing session, a key hint. How you generate the key is up to you. Secure ways include:
+To generate a unique encryption key, create a function that accepts the following arguments:
+* The document ID
+* The session ID
+* A key hint (only required for existing sessions)
+
+Secure ways to generate an encryption key include:
 
 * Generate and store a random key for each new document session in your database.
 * Generate single random key per document, and salt it _on your server_ with the session ID to provide a different key per session.
@@ -123,7 +128,7 @@ tinymce.init({
 
 ## `rtc_token_provider`
 
-The RTC plugin and service uses [JWT]({{site.baseurl}}/rtc/jwt-authentication/) to authenticate the user. This token should include a unique user ID and a relative expiration time. This provider function will be called multiple times to refresh the token if it about to expire. So for production use cases it should be a dynamic request that produces a fresh JWT token with a updated `exp` claim.
+The RTC plugin and service uses [JWT]({{site.baseurl}}/rtc/jwt-authentication/) to authenticate the user. This token should include a unique user ID and a relative expiration time. This provider function will be called multiple times to refresh the token if it about to expire. For production usage, the token provider should be a dynamic request that produces a new JWT token with a updated `exp` claim.
 
 **Type:** `Function`
 
@@ -169,7 +174,7 @@ tinymce.init({
 
 ## `rtc_snapshot`
 
-In an RTC session you normally don't have a save button as the session is constantly being stored. A snapshot callback is available, it will be executed at regular intervals with the serialized editor contents. The content is retrieved though a getContent function this is to lazily create the serialized version of the model since that serialization process could be CPU intensive.
+Real-time collaboration sessions don't typically have a save button and the session is constantly being stored. A snapshot callback will be executed at regular intervals with the serialized editor contents. The content is retrieved though the [`getContent` API]({{site.baseurl}}/api/tinymce/tinymce.editor/#getcontent) to lazily create the serialized version of the content to reduce the CPU load.
 
 **Type:** `Function`
 
@@ -198,7 +203,7 @@ tinymce.init({
 
 ## `rtc_initial_content_provider`
 
-By default the initial contents is retrieved from target element that you initialized the editor on but since that content only needs to be retrieved when there is no active RTC session opened this optional provider function can be used instead to provide the initial content. This also works better with the various {{site.productname}} [integrations]({{site.baseurl}}/integrations/) that doesn't provide access to the target element directly.
+By default, the initial editor content is retrieved from the target element, as specified using the `selector` option. The RTC plugin provides the `rtc_initial_content_provider` option to allow the initial content be retrieved for a new RTC session. This also works with the various {{site.productname}} [integrations]({{site.baseurl}}/integrations/) that don't provide access to the target element directly.
 
 **Type:** `Function`
 
@@ -240,7 +245,7 @@ tinymce.init({
 
 ## `rtc_user_details_provider`
 
-By default the user ID will be displayed as the name for the remote carets. In order to display a proper full name the user ID needs to be resolved into user details that include the full user name. This provider function will be called for each connecting client if this setting is omitted then the user ID will be presented as name for the remote user if you hover the remote carets.
+By default, the user ID will be displayed as the name on remote carets shown in the editor when there are active collaborators on the editor content. To display an alternative name on the caret, the user ID needs to be resolved into user details that include the full user name. This provider function will be called for each connecting client. If this option is omitted, the user ID will be presented as name for the remote user when a user hovers over the remote carets.
 
 Only `userId` is guaranteed to be authentic as it comes from the JWT. We suggest using `userId` to fetch user data from your server to guarantee authenticity.
 
@@ -258,7 +263,7 @@ Only `userId` is guaranteed to be authentic as it comes from the JWT. We suggest
 
 | Field | Type | Description |
 |-------|:----:|-------------|
-| `fullName` | string | Full name of user for example "John Doe". |
+| `fullName` | string | Full name of user. For example: `"John Doe"`. |
 
 ### Example of providing static user details
 
@@ -291,11 +296,11 @@ tinymce.init({
 
 ## `rtc_custom_user_details`
 
-You might want to provide extra details about the current user to the other connecting clients. This setting enables you to do that. You don't want to pass sensitive information here; the authenticity of user data is not guaranteed.
+The `rtc_custom_user_details` option allows extra details to be provided about the current user to the other connecting clients. This option should not be used to communicate sensitive information; the authenticity of user data cannot not guaranteed.
 
 This API is designed for use in status flags such as "is the user on a mobile device".
 
-An object that must be serializable (`JSON.stringify` will be used to transmit it between clients).
+This option accepts an object that must be serializable (`JSON.stringify` will be used to transmit it between clients).
 
 **Type:** `Object`
 
@@ -313,7 +318,7 @@ tinymce.init({
 
 ## `rtc_user_connected`
 
-In many applications supporting real-time collaboration, the currently connected users are displayed. This setting enables you to track when a user enters the session. There are 8 distinct caret colors so the caret number will be a value from 1-8 if more than 8 people connect numbers will be reused.
+This option allows your application to show when a user enters the RTC session. There are 8 distinct caret colors (given a value from 1 to 8). If more than 8 people connect to a session, the numbers will be reused. This is useful for keeping a list or array of connected users up-to-date.
 
 **Type:** `Function`
 
@@ -323,9 +328,9 @@ In many applications supporting real-time collaboration, the currently connected
 
 | Field | Type | Description |
 |-------|:----:|-------------|
-| `userId` | string | This is the JWT user ID for the connecting or disconnecting user. |
+| `userId` | string | This is the JWT user ID of the connecting user. |
 | `caretNumber` | integer | The user's caret number 1-8 (helpful to disambiguate when a user connects multiple times). |
-| `custom` | object | Custom data passed out from the other clients `rtc_custom_user_details` function. If none is provided this will be an empty object. |
+| `custom` | object | Custom data passed out from the other clients `rtc_custom_user_details` function. If none are provided, this will be an empty object. |
 
 ### Example of providing custom user details for `rtc_user_connected`
 
@@ -341,7 +346,7 @@ tinymce.init({
 
 ## `rtc_user_disconnected`
 
-In many applications supporting real-time collaboration, the currently connected users are displayed. This setting enables you to track when a user leaves the session.
+This option allows your application to track when a user leaves the session. This is useful for keeping a list or array of connected users up-to-date.
 
 **Type:** `Function`
 
@@ -353,7 +358,7 @@ In many applications supporting real-time collaboration, the currently connected
 |-------|:----:|-------------|
 | `userId` | string | This is the unique user ID of the disconnecting user. |
 | `caretNumber` | integer | The user's caret number 1-8 (helpful to disambiguate when a user connects multiple times). |
-| `custom` | object | Custom data passed out from the other clients `rtc_custom_user_details` function. If none is provided this will be an empty object. |
+| `custom` | object | Custom data passed out from the other clients `rtc_custom_user_details` function. If none are provided, this will be an empty object. |
 
 ### Example of providing custom user details for `rtc_user_disconnected`
 

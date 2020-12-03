@@ -20,22 +20,22 @@ JWT is a standard authorization solution for web services and is documented in m
 
 ## JWT requirements
 
-### Algorithm
-
-Our examples use, and we recommend RS256 algorithm. This is a list of supported ones: RS256, RS384, RS512, PS256, PS384, PS512
+{% include auth/jwt-supported-algorithms.md %}
 
 ### Claims
 
 These are like options/data you can send with the JWT token.
 
-* **sub** - _(required)_ The unique user ID (i.e. if `sub` is the same for two clients, you should trust them as if they're the same user)
-* **exp** - _(required)_ The timestamp when the token expires
+| Data | Optional or required | Description |
+|---|:---:|---|
+| `sub` | required | The unique user ID (i.e. if `sub` is the same for two clients, you should trust them as if they're the same user). |
+| `exp` | required | The timestamp when the token expires. |
 
 {% include auth/jwt-endpoint-setup-procedure.md %}
 
 ## Need help?
 
-We recommend reading up and trying to understand how JWT works; you need some necessary skills to implement RTC. This can be tricky if you need some help contact our support.
+We recommend reading up and trying to understand how JWT works; you need some necessary skills to implement RTC. This can be tricky, so if you need some help contact our support.
 
 ## PHP token provider endpoint example
 
@@ -93,7 +93,7 @@ tinymce.init({
 
 ## Node token provider endpoint example
 
-This example shows you how to set up a Node.js express handler that produces the tokens. It requires you to install the Express web framework and the `jsonwebtoken` Node modules.
+This example shows how to set up a Node.js express handler that produces the tokens. It requires you to install the Express web framework and the `jsonwebtoken` Node modules. For instructions on setting up a basic NodeJS Express server and adding {{site.productname}}, see: [Integrating TinyMCE into an Express JS App]({{site.baseurl}}/integrations/expressjs/).
 
 ### /jwt
 
@@ -150,7 +150,7 @@ tinymce.init({
 
 ### More configuration
 
-If you managed to set this up, you should be good to go with checking out the various [configuration options]({{site.baseurl}}/rtc/configuration/) for RTC and how you can customize it. Don't forget to change the JWT Claim's (user id, user name) to get those from your system.
+Once the JWT authentication has been set up, the RTC plugin can be configured further with the options shown on the [RTC configuration options page]({{site.baseurl}}/rtc/configuration/). Don't forget to change the JWT Claim's (user id, user name) to get those from your system.
 
 If you need some help [submit a support request]({{site.supporturl}}).
 

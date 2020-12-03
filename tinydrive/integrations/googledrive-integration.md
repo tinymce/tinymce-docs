@@ -49,7 +49,7 @@ Click on the `Create credentials` button then on `OAuth client ID` item:
 
 <img src="{{site.baseurl}}/images/tinydrive-googledrive-dump4.png" style="border: 1px solid #BBB">
 
-### 5. Restrict Client ID api access
+### 5. Restrict Client ID API access
 
 1. Click the edit icons for the Client ID you created
 2. Click on the `API restrictions` tab
@@ -61,7 +61,7 @@ Click on the `Create credentials` button then on `OAuth client ID` item:
 
 ### 6. Configure tinydrive to use the new Google Drive credentials
 
-You configure the Google drive api key by setting the [tinydrive_google_drive_key]({{site.baseurl}}/tinydrive/configuration/#tinydrive_google_drive_key) and the Google OAuth client ID by setting the [tinydrive_google_drive_client_id]({{site.baseurl}}/tinydrive/configuration/#tinydrive_google_drive_client_id).
+You configure the Google drive API key by setting the [tinydrive_google_drive_key]({{site.baseurl}}/tinydrive/configuration/#tinydrive_google_drive_key) and the Google OAuth client ID by setting the [tinydrive_google_drive_client_id]({{site.baseurl}}/tinydrive/configuration/#tinydrive_google_drive_client_id).
 
 ```js
 tinymce.init({

@@ -12,13 +12,21 @@ keywords: rtc introduction overview
 {{site.requires_5_6v}}<br>
 {{site.premiumplugin}}<br>
 
-## JWT
+## Introduction
 
-Some cloud services for {{site.productname}} require setting up JWT authentication. This allows verifying that the end users are allowed to access a particular feature. JWT is a common authorization solution for web services and is documented in more detail at the [https://jwt.io/](https://jwt.io/) website. For more information, see the [JWT authentication]({{site.baseurl}}/rtc/jwt-authentication/) section.
+{% include misc/rtc-description.md %}
+
+## JSON Web Token based authentication
+
+Some cloud services for {{site.productname}} require setting up JSON Web Token (JWT) authentication. JWTs are a common solution for communicating user authorization for web services. JWTs are used to communicate to {{site.productname}} that the user has been authorized to access a particular editor document.
+
+For general information on JSON Web Tokens, visit: [https://jwt.io/](https://jwt.io/).
+
+For information on using JWT authentication with the RTC plugin, see: [JWT authentication]({{site.baseurl}}/rtc/jwt-authentication/).
 
 ## Presence API
 
-The RTC plugin comes with a presence api that enables you to track when users enter/leave the session. The only user information shared over the wire is the user id stored in the JWT `sub` claim local other user details like full name to be presented for a user is resolved locally so the cloud services will never see who is actually connecting. There are currently 8 distinct caret colors assigned to each connecting user. More than 8 users can still connect but then the colors will be reused.
+The RTC plugin comes with a presence API that enables you to track when users enter/leave the session. The only user information shared over the wire is the user id stored in the JWT `sub` claim local other user details like full name to be presented for a user is resolved locally so the cloud services will never see who is actually connecting. There are currently 8 distinct caret colors assigned to each connecting user. More than 8 users can still connect but then the colors will be reused.
 
 ## End-to-end encryption
 

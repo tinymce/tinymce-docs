@@ -661,8 +661,31 @@
     - url: "introduction"
     - url: "getting-started"
     - url: "jwt-authentication"
+      pages:
+      - url: "#Introduction"
+      - url: "#Private/public key pairs for Tiny Cloud services"
+      - url: "#JWT provider endpoint URL"
+      - url: "#JWT requirements"
+      - url: "#JWT endpoint setup procedure"
+      - url: "#PHP token provider endpoint example"
+      - url: "#Node token provider endpoint example"
+      - url: "#Creating a private/public key pair for RTC"
     - url: "configuration"
+      pages:
+      - url: "#Required options"
+      - url: "#rtc_document_details_provider"
+      - url: "#rtc_encryption_provider"
+      - url: "#rtc_token_provider"
+      - url: "#rtc_snapshot"
+      - url: "#rtc_initial_content_provider"
+      - url: "#rtc_user_details_provider"
+      - url: "#rtc_custom_user_details"
+      - url: "#rtc_user_connected"
+      - url: "#rtc_user_disconnected"
     - url: "events"
+      pages:
+      - url: "#RtcUserConnected"
+      - url: "#RtcUserDisconnected"
 
 - url: "advanced"
   pages:

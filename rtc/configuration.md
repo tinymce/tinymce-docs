@@ -64,7 +64,7 @@ tinymce.init({
 
 ## `rtc_encryption_provider`
 
-The RTC plugin requires a generated key encrypt messages for end-to-end encryption. This key not sent to the {{site.cloudname}}, preventing the {{site.productname}} RTC service from reading the editor content. The encryption key is used by the user's browser to encrypted and decrypted the editor content between users.
+The RTC plugin requires a generated key to encrypt messages for end-to-end encryption. This key not sent to the {{site.cloudname}}, preventing the {{site.productname}} RTC service from reading the editor content. The encryption key is used by the user's browser to encrypt and decrypt the editor content between users.
 
 To generate a unique encryption key, create a function that accepts the following arguments:
 * The document ID
@@ -174,7 +174,7 @@ tinymce.init({
 
 ## `rtc_snapshot`
 
-Real-time collaboration sessions don't typically have a save button and the session is constantly being stored. A snapshot callback will be executed at regular intervals with the serialized editor contents. The content is retrieved though the [`getContent` API]({{site.baseurl}}/api/tinymce/tinymce.editor/#getcontent) to lazily create the serialized version of the content to reduce the CPU load.
+Real-time collaboration sessions don't typically have a save button and the session is constantly being stored. A snapshot callback will be executed at regular intervals with the serialized editor contents. The content is retrieved though a `getContent` function to lazily create the serialized version of the content to reduce the CPU load.
 
 **Type:** `Function`
 

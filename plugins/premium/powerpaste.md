@@ -171,8 +171,6 @@ tinymce.init({
 
 {% include configuration/smart-paste.md %}
 
-{% include configuration/image-file-types.md %}
-
 {% assign altplugincode = "paste" %}
 {% include misc/plugin-toolbar-button-id-boilerplate.md %}
 

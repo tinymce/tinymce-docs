@@ -2,7 +2,9 @@
 
 {{site.requires_5_6v}}
 
-This option configures which image file formats will be recognized and placed in an `img` element by the [`smart_paste`](#smart_paste) functionality when content is pasted into the editor.
+This option configures which image file formats are accepted by the editor. Changing this option will adjust the following editor behaviour:
+  - Which image file formats are allowed to be uploaded in the [Image]({{site.baseurl}}/plugins/opensource/image/) dialog.
+  - Which image file formats are recognized and placed in an `img` element by the [Paste]({{site.baseurl}}/plugins/opensource/paste/) and [PowerPaste]({{site.baseurl}}/plugins/premium/powerpaste/) `smart_paste` functionality.
 
 **Type:** `String`
 
@@ -15,8 +17,7 @@ This option configures which image file formats will be recognized and placed in
 ```js
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  plugins: '{{plugincode}}',
-  smart_paste: true,  // note: default value for smart_paste is true
+  plugins: 'image paste',
   images_file_types: 'jpg,svg,webp'
 });
 ```

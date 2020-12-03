@@ -1,16 +1,16 @@
-{% if include.data.borrows.size > 0 %}
-  <a class="anchor" id="extends"></a>
-  <h2><a class="anchorable" href="#extends">Extends</a></h2>
-  {% for item in include.data.borrows %}
-    <a href="{{ site.baseurl }}/api/{{ item | api_url }}">{{ item }}</a>
-  {% endfor %}
-{% endif %}
-
 {% if include.data.summary.size > 0 %}
   {% for summary in include.data.summary %}
     {% unless include.data.desc contains summary %}
       <p>{{ summary }}</p>
     {% endunless %}
+  {% endfor %}
+{% endif %}
+
+{% if include.data.borrows.size > 0 %}
+  <a class="anchor" id="extends"></a>
+  <h2><a class="anchorable" href="#extends">Extends</a></h2>
+  {% for item in include.data.borrows %}
+    <a href="{{ site.baseurl }}/api/{{ item | api_url }}">{{ item }}</a>
   {% endfor %}
 {% endif %}
 

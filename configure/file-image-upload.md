@@ -16,6 +16,8 @@ description: These settings affect TinyMCE's image and file handling capabilitie
 
 {% include configuration/images-dataimg-filter.md %}
 
+{% include configuration/images-file-types.md %}
+
 {% include configuration/images-upload-reuse-filename.md %}
 
 {% include configuration/images-upload-base-path.md %}

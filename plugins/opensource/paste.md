@@ -275,8 +275,6 @@ tinymce.init({
 
 {% include configuration/smart-paste.md %}
 
-{% include configuration/image-file-types.md %}
-
 {% include misc/plugin-toolbar-button-id-boilerplate.md %}
 
 {% include misc/plugin-menu-item-id-boilerplate.md %}

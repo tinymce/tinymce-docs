@@ -32,11 +32,7 @@ The new `images_file_types` option allows different image file extensions to be 
 - Smart Paste's image URL to embedded image functionality.
 - Allowed file extensions for the Image plugin.
 
-For information on:
-
-- The `images_file_types` and `smart_paste` options for the PowerPaste plugin, see: [PowerPaste plugin]({{site.baseurl}}/plugins/premium/powerpaste/).
-- The `images_file_types` and `smart_paste` options for the Paste plugin, see: [Paste plugin]({{site.baseurl}}/plugins/opensource/paste/).
-- The `images_file_types` option for the Image plugin, see: [Image plugin]({{site.baseurl}}/plugins/opensource/image/).
+For information on the `images_file_types` option, see: [Image & file options - images_file_types]({{site.baseurl}}/configure/file-image-upload/#images_file_types).
 
 ### New image emoji database for the Emoticons plugin
 
@@ -78,10 +74,6 @@ A new card menu item has been added to the autocompleter, allowing for greater c
 
 For information on customizing autocompleter results with `CardMenuItem`, see: [UI components - Autocompleter - `CardMenuItem`]({{ site.baseurl }}/ui-components/autocompleter/#cardmenuitem).
 
-### Clicking a link in `readonly` mode now opens the URL
-
-Clicking links when the editor is in `readonly` mode will open the URL in a new tab or window (depending on browser preferences).
-
 ### Additional new features
 
 {{site.productname}} 5.6 introduces the following minor new features:
@@ -92,6 +84,10 @@ Clicking links when the editor is in `readonly` mode will open the URL in a new 
 ## Enhancements
 
 The following enhancements were made for the {{site.productname}} 5.6 release.
+
+### Clicking a link in `readonly` mode now opens the URL
+
+Clicking links when the editor is in `readonly` mode will open the URL in a new tab or window (depending on browser preferences).
 
 ### New optional `name` field for the `style_formats` option
 

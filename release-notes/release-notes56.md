@@ -115,9 +115,12 @@ For information on the Accessibility Checker plugin, see: [Accessibility Checker
 
 The {{site.productname}} 5.6 release includes an accompanying release of the **Advanced Code Editor** premium plugin.
 
-**Advanced Code Editor** 2.3.0 provides the following improvements:
+**Advanced Code Editor** 2.3.0 adds the following new feature:
 
 - Added the ability to maintain the cursor position when opening the code dialog.
+
+**Advanced Code Editor** 2.3.0 also provides the following bug fixes:
+
 - Fixed the code view not using monospace fonts.
 - Fixed an issue where non-breaking spaces were inserted instead of regular spaces on Safari.
 
@@ -127,7 +130,9 @@ For information on the Advanced Code Editor plugin, see: [Advanced Code Editor p
 
 The {{site.productname}} 5.6 release includes an accompanying release of the **Comments** premium plugin.
 
-**Comments** 2.3.0 introduces `onError` and `onSuccess` callbacks for the `tinycomments_create` "done" function.
+**Comments** 2.3.0 provides the following enhancement:
+
+- Introduces the `onError` and `onSuccess` callbacks for the `tinycomments_create` "done" function.
 
 **Comments** 2.3.0 also provides the following bug fixes:
 
@@ -141,11 +146,14 @@ For information on the Comments plugin, see: [Comments plugin]({{site.baseurl}}/
 
 The {{site.productname}} 5.6 release includes an accompanying release of the **Mentions** premium plugin.
 
-**Mentions** 2.2.0 provides the following improvements:
+**Mentions** 2.2.0 provides the following new features:
 
 - Added a new `mentions_item_type` option for specifying which mentions user interface item to use when displaying the list of users.
 - Added a new `mentions_min_chars` option for specifying the number of characters required after the “@” symbol before the list of users will be displayed in the editor.
 - Added a new `profile` hover card for usage with the `mentions_select` option.
+
+**Mentions** 2.2.0 also provides the following bug fix:
+
 - Fixed mentions not converted to `contenteditable=false` elements when set using `editor.setContent()`
 
 For information on the Mentions plugin, see: [Mentions plugin]({{site.baseurl}}/plugins/premium/mentions/).
@@ -154,9 +162,12 @@ For information on the Mentions plugin, see: [Mentions plugin]({{site.baseurl}}/
 
 The {{site.productname}} 5.6 release includes an accompanying release of the **PowerPaste** premium plugin.
 
-**PowerPaste** 5.4.0 provides the following improvements:
+**PowerPaste** 5.4.0 provides the following enhancement:
 
 - Added a new `images_file_types` option to determine which image file types will automatically be converted into `img` tags by the `smart_paste` feature.
+
+**PowerPaste** 5.4.0 also provides the following bug fixes:
+
 - Fixed the `Cut` menu item not working in the latest version of Firefox.
 - Fixed two Cross-Site Scripting (XSS) vulnerability issues. For more information, see: [Security fixes](#security-fixes).
 
@@ -166,14 +177,17 @@ For information on the PowerPaste plugin, see: [PowerPaste plugin]({{site.baseur
 
 The {{site.productname}} 5.6 release includes an accompanying release of the **Spell Checker Pro** premium plugin.
 
-**Spell Checker Pro** 2.2.0 provides the following improvements:
+**Spell Checker Pro** 2.2.0 provides the following enhancements:
 
 - The spellchecker dialog now opens faster when checking large documents.
 - The spellchecker dialog can now be moved around and does not block access to editor content.
+
+**Spell Checker Pro** 2.2.0 also provides the following bug fixes:
+
 - Fixed the "Ignore All" action throwing an exception on words containing certain characters.
 - Fixed the spellchecker dialog not checking incorrect words outside of the window viewport.
 - Fixed the spellchecker as-you-type functionality interfering with the dialog.
-  
+
 For information on the Spell Checker Pro plugin, see: [Spell Checker Pro plugin]({{site.baseurl}}/plugins/premium/tinymcespellchecker/).
 
 ## General bug fixes

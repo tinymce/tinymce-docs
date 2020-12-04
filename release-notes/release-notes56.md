@@ -166,6 +166,7 @@ The {{site.productname}} 5.6 release includes an accompanying release of the **S
 
 - The spellchecker dialog now opens faster when checking large documents.
 - The spellchecker dialog can now be moved around and does not block access to editor content.
+- Fixed the "Ignore All" action throwing an exception on words containing certain characters.
 - Fixed the spellchecker dialog not checking incorrect words outside of the window viewport.
 - Fixed the spellchecker as-you-type functionality interfering with the dialog.
   

@@ -1,6 +1,6 @@
 ## JWT provider endpoint URL
 
-The easiest way to setup JWT authentication against {{site.cloudname}} services is to create a JWT provider endpoint. This endpoint takes a JSON HTTP POST request and produces a JSON result with the token that the service will then use for all the HTTP requests.
+The easiest way to setup JWT authentication for {{site.cloudname}} services is to create a JWT provider endpoint. This endpoint takes a JSON HTTP POST request and produces a JSON response with the token that the service can then use for all HTTP requests.
 
 The following diagram explains the JWT call flow:
 

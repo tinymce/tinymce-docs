@@ -15,15 +15,15 @@ keywords: rtc
 ## Prerequisites
 
 * A {{site.cloudname}} API key from [{{site.accountpage}}]({{site.accountsignup}}).
-* A JWT key generated at [{{site.accountpageurl}}]({{site.accountpageurl}}). Temporarily store the generated keys for use in the following procedure.
+* A JSON Web Token (JWT) key generated at [{{site.accountpageurl}}]({{site.accountpageurl}}). Temporarily store the generated keys for use in the following procedure.
 
 ## Basic RTC setup
 
-The following example shows how to get the RTC plugin up and running using hard coded values. For a production setup, the document ID and secret would be retrieved from your server. This examples also assumes that a JWT provider endpoint exists at '/jwt'. For information on setting up a JWT endpoint, see: [JWT authentication]({{site.baseurl}}/rtc/jwt-authentication/).
+The following example shows how to get the RTC plugin up and running using hardcoded values. For a production setup, the document ID and secret would be retrieved from your server. This example also assumes that a JWT provider endpoint exists at '/jwt'. For information on setting up a JWT endpoint, see: [JWT authentication]({{site.baseurl}}/rtc/jwt-authentication/).
 
 ```js
 const yourDocumentId = 'some-document-id';
-const yourSecretKey = 'your secret 🔑';
+const yourSecretKey = 'your secret key';
 
 tinymce.init({
   selector: 'textarea',

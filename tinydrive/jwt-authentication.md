@@ -34,7 +34,7 @@ These are like options/data you can send with the JWT token.
 <dt><code>https://claims.tiny.cloud/drive/root</code> <em>(optional)</em></dt><dd>Full path to a {{site.cloudfilemanager}} specific root for example "/johndoe". The user won't be able to see or manage files outside this configured root path.</dd>
 </dl>
 
-> **Note**: The "`sub`" value is a case-sensitive string containing a **String** or **URI** value. The `sub` cannot have a `:` *unless* it is a valid URI or else the callback would fail.
+> **Note**: The "`sub`" claim is a case-sensitive string containing a **String** or **URI** value. The `sub` claim cannot have a `:` *unless* it is a valid URI or else the callback will fail.
 
 {% include auth/jwt-endpoint-setup-procedure.md %}
 

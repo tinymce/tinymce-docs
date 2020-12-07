@@ -33,7 +33,7 @@ The document details include a document ID. This is the ID users share with othe
 
 | Field | Type | Description |
 |-------|:----:|-------------|
-| `documentId` | string | Unique identifier for the document. In a content management system, this could be the resource identifier for the document. |
+| `documentId` | `string` | Unique identifier for the document. In a content management system, this could be the resource identifier for the document. |
 
 ### Example Using the document details provider to return static document details
 

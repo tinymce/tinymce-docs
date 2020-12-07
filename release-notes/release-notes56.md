@@ -16,7 +16,6 @@ keywords: releasenotes bugfixes
 - [General bug fixes](#generalbugfixes)
 - [Security fixes](#securityfixes)
 - [Deprecated features](#deprecatedfeatures)
-- [Known issues](#knownissues)
 - [Upgrading to the latest version of TinyMCE 5](#upgradingtothelatestversionoftinymce5)
 
 {{site.releasenotes_for_stable}}
@@ -231,20 +230,6 @@ PowerPaste 5.4.0 provides fixes for the following security issues:
 
 - Fixed a Cross-Site Scripting (XSS) vulnerability where internal HTML content wasn't sanitized in some cases.
 - Fixed a Cross-Site Scripting (XSS) vulnerability where specific HTML comments weren't sanitized in some cases.
-
-## Known issues
-
-This section describes issues that users of {{site.productname}} 5.6 may encounter and possible workarounds for these issues.
-
-**Outline**
-
-- [](#)
-
-###
-
-**Issue**: This issue affects ....
-
-**Workaround**: There was no known workaround at the time of the release.
 
 {% assign enterprise = true %}
 

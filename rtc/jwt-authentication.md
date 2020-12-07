@@ -10,7 +10,7 @@ keywords: jwt authentication
 {% assign plugincode = "rtc" %}
 ## Introduction
 
-RTC requires you to setup JSON Web Token (JWT) authentication. This is to ensure that only authenticated users will be able to access and collaborate on documents.
+RTC requires setting up JSON Web Token (JWT) authentication. This is to ensure that only authenticated users will be able to access and collaborate on documents.
 
 JWT is a standard authorization solution for web services and is documented in more detail at the [https://jwt.io/](https://jwt.io/) website. This guide aims to show how to setup JWT authentication for RTC.
 

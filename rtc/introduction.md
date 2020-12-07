@@ -26,7 +26,7 @@ For information on using JWT authentication with the RTC plugin, see: [JWT authe
 
 ## Presence API
 
-The RTC plugin comes with a presence API that enables tracking when users enter/leave the session. The only user information shared over the wire is the user id stored in the JWT `sub` claim. Other details like the users full name is resolved locally so the {{site.cloudname}} will never see who is actually connecting. There are currently 8 distinct caret colors assigned to each connecting user. More than 8 users can still connect but then the colors will be reused.
+The RTC plugin comes with a presence API that enables tracking when users enter/leave the session. The only user information shared over the wire is the user id stored in the JWT `sub` claim. Other details such as the user's full name is resolved locally so the {{site.cloudname}} will never see who is actually connecting. There are currently 8 distinct caret colors which can be assigned to a connecting user. More than 8 users can still connect, but then the colors will be reused.
 
 ## End-to-end encryption
 

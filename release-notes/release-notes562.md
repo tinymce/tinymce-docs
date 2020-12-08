@@ -20,11 +20,11 @@ keywords: releasenotes bugfixes
 
 The following premium updates were released alongside {{site.productname}} 5.6.2.
 
-### Enterprise language packs 5.5.1
+### Enterprise language packs
 
 The {{site.productname}} 5.6.2 release includes an accompanying release of the **Enterprise language packs**.
 
-Version 5.5.1 of the **Enterprise language packs** includes the following bug fix:
+The **Enterprise language packs** include the following bug fix:
 
 - Fixes Swedish translations (`sv_SE`).
 

@@ -6,11 +6,6 @@ description: Release notes for TinyMCE 5.6.2
 keywords: releasenotes bugfixes
 ---
 
-{% comment %}
-Replace 5.6.2 with the version number such as: X.Y.Z
-Replace 562 with the version number without points, such as XYZ
-{% endcomment %}
-
 ## Overview
 
 {{site.productname}} 5.6.2 was released for {{site.enterpriseversion}} and {{site.cloudname}} on Wednesday, December 9<sup>th</sup>, 2020. It includes {{site.productname}} 5.6.2 and additional changes to premium plugins. These release notes provide an overview of the changes for {{site.productname}} 5.6.2, including:

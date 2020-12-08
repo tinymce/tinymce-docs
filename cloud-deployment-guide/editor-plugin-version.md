@@ -77,7 +77,7 @@ Use the URL query parameters to specify the version of each premium plugin. This
 
 ### Tiny Drive
 
-* [Developer documentation]({{ site.baseurl }}/plugins/drive/)
+* [Developer documentation]({{ site.baseurl }}/plugins/premium/tinydrive/)
 * [Supported versions](http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/tinydrive/available-versions)
 
 #### Example: Specifying the Tiny Drive plugin version
@@ -214,7 +214,7 @@ The "SDK" version lets the {{site.productname}} Plugin Manager know that you're 
 
 ### Using the Self-hosted Tiny Drive plugin with Tiny Cloud
 
-* [Developer documentation]({{ site.baseurl }}/plugins/drive/)
+* [Developer documentation]({{ site.baseurl }}/plugins/premium/tinydrive/)
 
 #### Example: Using the Self-hosted Tiny Drive plugin with Tiny Cloud
 

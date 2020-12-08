@@ -15,7 +15,6 @@ keywords: releasenotes bugfixes
 - [Accompanying Premium Plugin changes](#accompanyingpremiumpluginchanges)
 - [General bug fixes](#generalbugfixes)
 - [Security fixes](#securityfixes)
-- [Deprecated features](#deprecatedfeatures)
 - [Upgrading to the latest version of TinyMCE 5](#upgradingtothelatestversionoftinymce5)
 
 {{site.releasenotes_for_stable}}

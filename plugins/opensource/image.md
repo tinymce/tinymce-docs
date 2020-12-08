@@ -342,6 +342,8 @@ tinymce.init({
 });
 ```
 
+#{% include configuration/images-file-types.md %}
+
 #{% include configuration/images-upload-base-path.md %}
 
 #{% include configuration/images-upload-credentials.md %}

@@ -1,0 +1,1 @@
+> **Important**: The {{feature}} provided by {{site.companynameformal}} uses {{third_party_product}} under the {{license_agreement_name}} license agreement.

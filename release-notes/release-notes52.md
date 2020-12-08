@@ -6,7 +6,9 @@ description: Release notes for TinyMCE 5.2
 keywords: releasenotes bugfixes
 ---
 
-These release notes provide an overview of the changes for {{site.productname}} 5.2, including:
+## Overview
+
+{{site.productname}} 5.2 was released for {{site.enterpriseversion}} and {{site.cloudname}} on Monday, March 9<sup>th</sup>, 2020. It includes {{site.productname}} 5.2.0 and additional changes to premium plugins. These release notes provide an overview of the changes for {{site.productname}} 5.2, including:
 
 - [TinyMCE 5.2 new features and enhancements](#tinymce52newfeaturesandenhancements)
 - [Accompanying Premium Plugin changes](#accompanyingpremiumpluginchanges)

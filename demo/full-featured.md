@@ -15,7 +15,7 @@ This example includes most of the available {{site.productname}} plugins, includ
 
 The following plugins are excluded from this example:
 
-* [MoxieManager (Premium Plugin)]({{site.baseurl}}/plugins/premium/moxiemanager) — [**{{site.cloudfilemanager}}**]({{site.baseurl}}/plugins/drive) included instead.
+* [MoxieManager (Premium Plugin)]({{site.baseurl}}/plugins/premium/moxiemanager) — [**{{site.cloudfilemanager}}**]({{site.baseurl}}/plugins/premium/tinydrive) included instead.
 * [Autoresize]({{site.baseurl}}/plugins/opensource/autoresize) — Resizes the editor to fit the content.
 * [BBCode]({{site.baseurl}}/plugins/opensource/bbcode) — Changes the markup used for the content.
 * [Code]({{site.baseurl}}/plugins/opensource/code) — [**Advanced Code Editor**]({{site.baseurl}}/plugins/premium/advcode) included instead.

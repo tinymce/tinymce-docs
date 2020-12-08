@@ -672,7 +672,7 @@ tinymce.init({
 });
 ```
 
-> **Note**: The advanced tabs of the table, row, and cell properties dialogs use the `colorpicker` to allow for border and background colors to be applied. See docs to use and configure a custom [colorpicker]({{site.baseurl}}/plugins/colorpicker/).
+> **Note**: The advanced tabs of the table, row, and cell properties dialogs use the `colorpicker` to allow for border and background colors to be applied. See docs to use and configure a custom [colorpicker]({{site.baseurl}}/configure/content-appearance/#textcoloroptions).
 
 {% include misc/plugin-toolbar-button-id-boilerplate.md %}
 
@@ -696,12 +696,7 @@ tinymce.activeEditor.plugins.table.insertTable(2, 3);
 
 ## Events
 
-| Name | Description |
-|------| ----------- |
-| newrow | Fired when a row is created |
-| newcell | Fired when a cell is created |
-| ObjectResizeStart | Fired when a resize action is started on a table, row, column or cell using the resize bars |
-| ObjectResized | Fired when a resize action is finished on a table, row, column or cell using the resize bars |
+{% include events/table-events.md %}
 
 ## Commands
 

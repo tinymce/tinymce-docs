@@ -170,6 +170,7 @@
   - url: "content-formatting"
     pages:
       - url: "#formats"
+      - url: "#format_empty_lines"
       - url: "#indentation"
       - url: "#indent_use_margin"
   - url: "spelling"
@@ -185,6 +186,7 @@
     - url: "#file_picker_callback"
     - url: "#file_picker_types"
     - url: "#images_dataimg_filter"
+    - url: "#images_file_types"
     - url: "#images_reuse_filename"
     - url: "#images_upload_base_path"
     - url: "#images_upload_credentials"
@@ -327,7 +329,9 @@
     - url: "emoticons"
       pages:
       - url: "#emoticons_append"
+      - url: "#emoticons_database"
       - url: "#emoticons_database_url"
+      - url: "#emoticons_images_url"
     - url: "fullpage"
       pages:
       - url: "#fullpage_default_doctype"
@@ -355,6 +359,7 @@
       - url: "#image_prepend_url"
       - url: "#image_title"
       - url: "#image_uploadtab"
+      - url: "#images_file_types"
       - url: "#images_upload_base_path"
       - url: "#images_upload_credentials"
       - url: "#images_upload_handler"
@@ -862,6 +867,16 @@
 
 - url: "release-notes"
   pages:
+  - url: "release-notes56"
+    pages:
+    - url: "#Overview"
+    - url: "#New features"
+    - url: "#Enhancements"
+    - url: "#Accompanying Premium Plugin changes"
+    - url: "#General bug fixes"
+    - url: "#Security fixes"
+    - url: "#Deprecated features"
+    - url: "#Upgrading to the latest version of TinyMCE 5"
   - url: "release-notes55"
     pages:
     - url: "#Overview"
@@ -926,14 +941,17 @@
     - url: "#Upgrading to the latest version of TinyMCE 5"
   - url: "release-notes516"
     pages:
+    - url: "#Overview"
     - url: "#General bug fixes"
     - url: "#Security fixes"
     - url: "#Premium Plugin changes"
   - url: "release-notes515"
     pages:
+    - url: "#Overview"
     - url: "#General bug fixes"
   - url: "release-notes514"
     pages:
+    - url: "#Overview"
     - url: "#General bug fixes"
     - url: "#Security fixes"
   - url: "release-notes51"

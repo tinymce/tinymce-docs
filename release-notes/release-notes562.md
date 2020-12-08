@@ -10,19 +10,19 @@ keywords: releasenotes bugfixes
 
 {{site.productname}} 5.6.2 was released for {{site.enterpriseversion}} and {{site.cloudname}} on Wednesday, December 9<sup>th</sup>, 2020. It includes {{site.productname}} 5.6.2 and additional changes to premium plugins. These release notes provide an overview of the changes for {{site.productname}} 5.6.2, including:
 
-- [Accompanying Premium Plugin changes](#accompanyingpremiumpluginchanges)
+- [Accompanying Premium changes](#accompanyingpremiumchanges)
 - [General bug fixes](#generalbugfixes)
 - [Upgrading to the latest version of TinyMCE 5](#upgradingtothelatestversionoftinymce5)
 
 {{site.releasenotes_for_stable}}
 
-## Accompanying Premium Plugin changes
+## Accompanying Premium changes
 
-The following premium plugin updates were released alongside {{site.productname}} 5.6.2.
+The following premium updates were released alongside {{site.productname}} 5.6.2.
 
 ### Enterprise language packs 5.5.1
 
-The {{site.productname}} 5.6.2 release includes an accompanying release of the **Enterprise language packs** premium plugin.
+The {{site.productname}} 5.6.2 release includes an accompanying release of the **Enterprise language packs**.
 
 **Enterprise language packs** 5.5.1 provides the following improvements:
 

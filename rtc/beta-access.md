@@ -10,19 +10,16 @@ keywords: rtc
 {% assign pre-release_type = "Closed Beta" %}
 
 ## Step by step, beta access
-Follow these steps to make sure you can get into the beta program for Real Time Collaboration (RTC).
+If you’re interested in taking part in the beta for Real Time Collaboration (RTC), we invite you to join the Tiny Insights Program. Our Product team will be in touch as we routinely expand access to our newest beta plugin.
+
+[Join Tiny Insights Program]({{site.baseurl}}/insights-program/)
+
+> Within a day or two we will get in touch regarding availability into the beta program, keep an eye on your inbox.
 
 ## Cloud account required
 The RTC functionality is only available in our cloud deployments for now, this means you need to have a Tiny Cloud account and API key in order to proceed, you do not need to have a paid subscription, just any cloud account will do.
 
 [Get a cloud account here]({{site.baseurl}}/auth/signup/)
-
-## Signup for the Beta program
-This beta is invite only, so this means you have to go through our team to get RTC enabled on your account.
-
-[Request beta access form]({{site.baseurl}}/insights-program/)
-
-> Within a day or so we will get in touch with you around the beta program, have your API key ready.
 
 ## Use the 5-dev channel
 After you get beta access turned on your account, the way to run the beta right now, is to fully use cloud and load TinyMCE via the 5-dev channel.

@@ -1,1 +1,1 @@
-> **Important**: {{beta_feature}} is currently in {{pre-release_type}}. To learn about our pre-release commitment, please read our [software licence agreement](https://about.tiny.cloud/legal/tiny-self-hosted-software-license-agreement-oem-saas/).
+> **Important**: Real Time Collaboration beta is invite only, [follow these steps]({{site.baseurl}}/rtc/beta-access/) to get started.

@@ -150,6 +150,8 @@ The following events are provided by the {{ site.productname }} editor.
 | ResizeContent          | (Same data as the native [resize event](https://developer.mozilla.org/en-US/docs/Web/API/Window/resize_event))          | (iframe mode only) Fired when the iframe window is resized.                                                                                                                |
 | Load                   | N/A                                                                                                                     | (iframe mode only) Fired when the editor iframe content has finished loading.                                                                                              |
 | ResolveName            | `{ name: string, target: Element }`                                                                                     | (iframe mode only) Fired when the editor tries to resolve the name of an element to render the status bar path.                                                            |
+| BeforeOpenNotification | `{ notification: NotificationSpec }`                                                                                    | Fired before a notification is displayed. For information on the Notifications Specification (`NotificationSpec`), see: [Create custom notifications]({{site.baseurl}}/advanced/creating-custom-notifications/). {{site.requires_5_6v}}                       |
+| OpenNotification       | `{ notification: NotificationApi }`                                                                                    | Fired after a notification is displayed. For information on the Notifications API (`NotificationApi`), see: [Create custom notifications]({{site.baseurl}}/advanced/creating-custom-notifications/). {{site.requires_5_6v}}                        |
 
 ## Plugin events
 
@@ -295,15 +297,11 @@ The following events are provided by the [Spell Checker plugin]({{site.baseurl}}
 
 ### Spell Checker Pro events
 
-{% include events/tinymcespellchecker.md %}
+{% include events/tinymcespellchecker-events.md %}
 
 ### Table events
 
-The following event is provided by the [Table plugin]({{site.baseurl}}/plugins/opensource/table/).
-
-| Name                | Data | Description                                                              |
-| ------------------- | ---- | ------------------------------------------------------------------------ |
-| TableSelectionClear | N/A  | Fired when the table selection is cleared. <br/>{{ site.requires_5_1v }} |
+{% include events/table-events.md %}
 
 ### Visual Blocks events
 

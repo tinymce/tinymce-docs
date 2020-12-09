@@ -2,7 +2,7 @@
 layout: default
 title: Tiny Drive Standalone API
 title_nav: Standalone API
-description: Description of the Tiny Drive standalone api
+description: Description of the Tiny Drive standalone API
 keywords: tinydrive api
 ---
 

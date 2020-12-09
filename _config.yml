@@ -12,7 +12,7 @@ default_meta_keywords: tinymce, documentation, docs, plugins, customizable skins
 # product variables
 productname: TinyMCE
 productmajorversion: 5
-productminorversion: 5.5
+productminorversion: 5.6
 ##### product name in codeblock
 prodnamecode: tinymce
 #### more names
@@ -21,6 +21,7 @@ companynameformal: Tiny Technologies, Inc.
 cloudname: Tiny Cloud
 cloudfilemanager: Tiny Drive
 enterpriseversion: TinyMCE Enterprise
+communityname: TinyMCE Community
 accountpage: Tiny Account
 supportname: Tiny Support
 #### some plugin names
@@ -55,6 +56,7 @@ requires_5_2v: "> **Note**: This feature is only available for TinyMCE 5.2 and l
 requires_5_3v: "> **Note**: This feature is only available for TinyMCE 5.3 and later."
 requires_5_4v: "> **Note**: This feature is only available for TinyMCE 5.4 and later."
 requires_5_5v: "> **Note**: This feature is only available for TinyMCE 5.5 and later."
+requires_5_6v: "> **Note**: This feature is only available for TinyMCE 5.6 and later."
 
 requires_jsscwar_230v: "> **Note**: This feature is only available for TinyMCE self-hosted server-side components, version 2.3.0 and later. To check the version of a running service, visit _&#60;domain&#62;_/_&#60;service&#62;_/version. Such as `http://localhost:8080/ephox-hyperlinking/version`."
 deprecate_spellchecker: "> **Important**: The **free** TinyMCE Spell Checker plugin (`spellchecker`) was deprecated with the release of TinyMCE 5.4. For details, see [the free TinyMCE Spell Checker plugin deprecation notice](https://www.tiny.cloud/docs/release-notes/release-notes54/#thefreetinymcespellcheckerplugin)."

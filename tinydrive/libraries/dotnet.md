@@ -35,7 +35,7 @@ $ git clone git@github.com:tinymce/tinydrive-dotnet-starter.git
 
 #### 2. Change the `apiKey` in `tinydrive-dotnet-mvc-starter/appsettings.Development.json`
 
-You get the api key from the `API Key Manager` {{site.accountpage}} page at http://tiny.cloud.
+The API key can be generated using the `API Key Manager` {{site.accountpage}} page at http://tiny.cloud.
 
 #### 3. Create a `tinydrive-dotnet-mvc-starter/private.key` file containing your generated private RSA key
 

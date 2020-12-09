@@ -194,7 +194,7 @@ The following menu items are available for all {{site.productname}} instances wi
 {% include misc/plugin-menu-item-id-boilerplate.md %}
 
 {% assign plugincategory = "premium" %}
-{% assign pluginname = "Tiny Drive" %}
+{% assign pluginname = site.cloudfilemanager %}
 {% assign plugincode = "tinydrive" %}
 {% include misc/plugin-menu-item-id-boilerplate.md %}
 

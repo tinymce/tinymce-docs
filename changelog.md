@@ -10,6 +10,9 @@ class: changelog
 
 {% capture changelog %}
 
+## Version 5.6.2 December 8, 2020
+* Fixed a UI rendering regression when the document body is using `display: flex`.
+
 ## Version 5.6.1 November 25, 2020
 * Fixed the `mceTableRowType` and `mceTableCellType` commands were not firing the `newCell` event.
 * Fixed the HTML5 `s` element was not recognized when editing or clearing text formatting.

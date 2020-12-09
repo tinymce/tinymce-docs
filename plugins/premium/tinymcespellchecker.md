@@ -226,7 +226,7 @@ tinymce.init({
 
 ## Events
 
-{% include events/tinymcespellchecker.md %}
+{% include events/tinymcespellchecker-events.md %}
 
 ### SpellcheckerIgnore event
 

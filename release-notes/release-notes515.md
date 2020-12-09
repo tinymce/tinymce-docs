@@ -6,7 +6,9 @@ description: Release notes for TinyMCE 5.1.5
 keywords: releasenotes bugfixes
 ---
 
-These release notes provide an overview of the changes for {{site.productname}} 5.1.5, including:
+## Overview
+
+{{site.productname}} 5.1.5 was released for {{site.enterpriseversion}} and {{site.cloudname}} on Wednesday, January 15<sup>th</sup>, 2020. These release notes provide an overview of the changes for {{site.productname}} 5.1.5, including:
 
 - [General bug fixes](#generalbugfixes)
 

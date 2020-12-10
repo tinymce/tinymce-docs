@@ -6,7 +6,7 @@ description: Beta specific access and setup
 keywords: rtc
 ---
 
-> **Important**: The Real-Time Collaboration beta is invite only.
+{% include misc/beta-note-rtc.md %}
 
 ## Joining the beta
 

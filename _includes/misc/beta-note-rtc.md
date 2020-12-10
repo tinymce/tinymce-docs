@@ -1,1 +1,1 @@
-> **Important**: The Real-Time Collaboration beta is invite only.
+> **Important**: The Real-Time Collaboration beta is invite only. For information on joining the beta, visit the [RTC beta access page]({{site.baseurl}}/rtc/beta-access/).

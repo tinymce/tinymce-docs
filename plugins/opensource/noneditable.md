@@ -63,7 +63,7 @@ tinymce.init({
 
 This option allows you to specify the class name that {{site.productname}} will use to determine which areas of content are editable when using the `noneditable` plugin. This would be the same as `contenteditable=false`.
 
-Note that classes with the `mceItem` prefix is invisible within {{site.productname}}.
+Note that classes with the `mceItem` prefix are invisible within {{site.productname}}.
 
 **Type:** `String`
 

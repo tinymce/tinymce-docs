@@ -6,38 +6,50 @@ description: Beta specific access and setup
 keywords: rtc
 ---
 
-{% assign beta_feature = "The RTC plugin" %}
-{% assign pre-release_type = "Closed Beta" %}
+> **Important**: The Real-Time Collaboration beta is invite only.
 
-## Step by step, beta access
-If you’re interested in taking part in the beta for Real Time Collaboration (RTC), we invite you to join the Tiny Insights Program. Our Product team will be in touch as we routinely expand access to our newest beta plugin.
+## Joining the beta
 
-[Join Tiny Insights Program]({{site.baseurl}}/insights-program/)
+To register your interest in the beta program for {{site.productname}} Real-Time Collaboration (RTC), join the {{site.betaprogram}}. {{site.companyname}} will contact you with further details.
 
-> Within a day or two we will get in touch regarding availability into the beta program, keep an eye on your inbox.
+To join the {{site.betaprogram}}, visit the [{{site.betaprogram}}]({{site.betaprogramurl}}).
 
-## Cloud account required
-The RTC functionality is only available in our cloud deployments for now, this means you need to have a Tiny Cloud account and API key in order to proceed, you do not need to have a paid subscription, just any cloud account will do.
 
-[Get a cloud account here]({{site.baseurl}}/auth/signup/)
+## Accessing the RTC beta plugin
 
-## Use the 5-dev channel
-After you get beta access turned on your account, the way to run the beta right now, is to fully use cloud and load TinyMCE via the 5-dev channel.
+Once you have been invited into the RTC beta program, to try the RTC beta plugin:
+
+* Set up a {{site.accountpage}}.
+* Configure {{site.productname}} to use the {{site.cloudname}} development channel.
+* Add the RTC plugin and configuration options to {{site.productname}}.
+
+### Set up a {{site.accountpage}}
+
+The RTC beta plugin is only available for {{site.cloudname}} deployments and requires a new or existing {{site.accountpage}} API Key.
+
+To create a {{site.accountpage}}, visit the [{{site.accountpage}} sign-up page]({{site.accountsignup}}).
+
+### Configure {{site.productname}} to use the {{site.cloudname}} development channel
+
+To access the {{site.cloudname}} development channel (`5-dev`), source {{site.productname}} using the following script:
 
 ```js
-<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5-dev/tinymce.min.js" referrerpolicy="origin"></script>
+<script src="{{site.cdnurl_dev}}" referrerpolicy="origin"></script>
 ```
-> Be sure to input your cloud API key into that URL as well.
 
-If you are using any of the React/Angular/Vue [integrations]({{site.baseurl}}/integration/), refer to their documentation on how to change the channel.
+Replace `no-api-key` in the source script (`<script src=...`) with a {{site.accountpage}} API key, which is created when signing up to [{{site.accountpage}}]({{site.accountsignup}}).
 
-## Configure TinyMCE for RTC
-You have gone through the beta specific process now, and can continue to follow a long with the documentation.
+> **Note**: The official React, Angular, and Vue {{site.productname}} integrations use either the `cloudChannel` or `cloud-channel` attribute for specifying the {{site.cloudname}} channel. For information on using the React, Angular, or Vue integrations, see: [TinyMCE Integrations]({{site.baseurl}}/integrations/).
 
-We highly suggest you start by looking into the [introduction]({{site.baseurl}}/rtc/introduction/) documentation to get an overview, then continue to the [getting started]({{site.baseurl}}/rtc/getting-started/) page.
+### Add the RTC plugin and configuration options to {{site.productname}}
 
-> Since this is a closed beta, you will be able to communicate to our devs directly with any issues you might have. We would appreciate ANY feedback you can give us.
+For information on:
+
+* The current state of the RTC beta plugin, including supported features, see: [RTC Beta plugin - Introduction]({{site.baseurl}}/rtc/introduction/).
+* Adding the required RTC configuration options, see: [RTC Beta plugin - Getting started with RTC]({{site.baseurl}}/rtc/getting-started/).
 
 ## Need help?
+
+During the closed beta for the RTC plugin, {{site.companyname}} software developers will work with participants to address support issues. {{site.companyname}} appreciates any feedback provided by users, and we encourage any feedback on improvements for the product and the support provided.
 
 {{site.companyname}} is striving to make RTC as useful and simple as possible. For support related issues, such as problems with JWT authentication and implementing RTC, contact [{{site.supportname}}]({{site.supporturl}}).

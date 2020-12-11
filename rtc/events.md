@@ -6,11 +6,8 @@ description: List of all available RTC specific events.
 keywords: rtc events
 ---
 
-{% assign beta_feature = "The RTC plugin" %}
-{% assign pre-release_type = "Closed Beta" %}
-{% include misc/beta-note.md %}
-{{site.requires_5_6v}}<br>
-{{site.premiumplugin}}<br>
+{% include misc/beta-note-rtc.md %}
+
 > **Note**: These events are subject to change based on customer feedback.
 
 ## `RtcUserConnected`

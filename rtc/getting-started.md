@@ -6,11 +6,7 @@ description: Getting started with RTC
 keywords: rtc
 ---
 
-{% assign beta_feature = "The RTC plugin" %}
-{% assign pre-release_type = "Closed Beta" %}
-{% include misc/beta-note.md %}
-{{site.requires_5_6v}}<br>
-{{site.premiumplugin}}<br>
+{% include misc/beta-note-rtc.md %}
 
 ## Prerequisites
 

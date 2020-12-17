@@ -49,7 +49,7 @@ The following is a complete example:
 
 The example below has the following:
 
-* The {{site.cloudname}} `API key` has the value *TEST_API_KEY*.
+* The {{site.cloudname}} `API key` has the value `no-api-key`.
 * The {{site.cloudname}} has the [Spell Checker Pro]({{site.baseurl}}/plugins/premium/tinymcespellchecker/) plugin enabled.
 
 ```js

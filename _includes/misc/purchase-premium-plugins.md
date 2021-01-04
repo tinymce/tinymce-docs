@@ -40,5 +40,5 @@ For information on:
 - {{site.cloudname}} plans, see: [{{site.companyname}} Pricing Plans]({{site.pricingpage}}).{% if extensionType == 'Packs' %}
 - Enabling premium skins, see: [The `skin` setting]({{site.baseurl}}/configure/editor-appearance/#skin).
 - Enabling premium icon packs, see: [The `icons` setting]({{site.baseurl}}/configure/editor-appearance/#icons).{% else %}
-- Configuring the **{{pluginname}} {{extensionType}}**, see: [The {{pluginname}} {{extensionType}} documentation]({{site.baseurl}}/plugins/{{plugindocspage}}/).
+- Configuring the **{{pluginname}} {{extensionType}}**, see: [The {{pluginname}} {{extensionType}} documentation]({{site.baseurl}}/plugins/premium/{{plugindocspage}}/).
 {% endif %}

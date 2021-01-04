@@ -159,7 +159,7 @@ Most themes provided with TinyMCE 4 have been removed from TinyMCE 5 and are now
 
 The [Inlite]({{site.url}}/docs-4x/themes/inlite/) theme has been removed from TinyMCE 5.
 
-The Inlite theme features are provided by the [Quick Toolbar (`quickbars`)]({{site.baseurl}}/plugins/quickbars/) plugin for TinyMCE 5. The Inlite [`quicklink`]({{site.url}}/docs-4x/themes/inlite/#quicklink) functionality is now provided by [Context Forms]({{site.baseurl}}/ui-components/contextform/).
+The Inlite theme features are provided by the [Quick Toolbar (`quickbars`)]({{site.baseurl}}/plugins/opensource/quickbars/) plugin for TinyMCE 5. The Inlite [`quicklink`]({{site.url}}/docs-4x/themes/inlite/#quicklink) functionality is now provided by [Context Forms]({{site.baseurl}}/ui-components/contextform/).
 
 The following is an example of a TinyMCE 5 quickbars configuration:
 ```js
@@ -635,10 +635,10 @@ The `height` and `width` settings have been removed from plugin dialogs. The dia
 
 The following plugins from TinyMCE 4 do not require height or width options in TinyMCE 5:
 
-* [Code]({{site.baseurl}}/plugins/code/)
-* [Codesample]({{site.baseurl}}/plugins/codesample/)
-* [Preview]({{site.baseurl}}/plugins/preview/)
-* [Template]({{site.baseurl}}/plugins/template/)
+* [Code]({{site.baseurl}}/plugins/opensource/code/)
+* [Codesample]({{site.baseurl}}/plugins/opensource/codesample/)
+* [Preview]({{site.baseurl}}/plugins/opensource/preview/)
+* [Template]({{site.baseurl}}/plugins/opensource/template/)
 
 ### Changed plugin settings
 
@@ -677,7 +677,7 @@ For information on Context Menus, see [UI components - Context menu]({{site.base
 
 {{site.deprecate_spellchecker}}
 
-[`spellchecker_callback`]({{site.baseurl}}/plugins/spellchecker/#spellchecker_callback) has been updated to remove a legacy format for the `success` callback, which accepted a mapping object of misspelled words to suggestions. For example:
+[`spellchecker_callback`]({{site.baseurl}}/plugins/opensource/spellchecker/#spellchecker_callback) has been updated to remove a legacy format for the `success` callback, which accepted a mapping object of misspelled words to suggestions. For example:
 
 ```js
 spellchecker_callback: function(method, text, success, failure) {
@@ -707,7 +707,7 @@ spellchecker_callback: function(method, text, success, failure) {
 }
 ```
 
-For information on the `spellchecker_callback` setting, see: [Spell Checker plugin - spellchecker_callback]({{site.baseurl}}/plugins/spellchecker/#spellchecker_callback)
+For information on the `spellchecker_callback` setting, see: [Spell Checker plugin - spellchecker_callback]({{site.baseurl}}/plugins/opensource/spellchecker/#spellchecker_callback)
 
 ### Table plugin
 

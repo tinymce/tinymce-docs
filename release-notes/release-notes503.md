@@ -7,7 +7,7 @@ keywords: releasenotes newfeatures deleted technologypreview bugfixes knownissue
 
 ## Overview
 
-The Release Notes provide high-level coverage of the improvements and additions that have been implemented in TinyMCE 5.0.3 and document known problems in this release, as well as notable bug fixes, deprecated functionality, and other details.
+{{site.productname}} 5.0.3 was released for {{site.enterpriseversion}} and {{site.cloudname}} on Thursday, March 28<sup>th</sup>, 2019. It includes {{site.productname}} 5.0.3 and additional changes to premium plugins. The Release Notes provide high-level coverage of the improvements and additions that have been implemented in TinyMCE 5.0.3 and document known problems in this release, as well as notable bug fixes, deprecated functionality, and other details.
 
 TinyMCE 5.0.3 release adds improvements to the TinyMCE editor to improve the overall user experience.
 
@@ -19,7 +19,7 @@ TinyMCE 5.0.3 introduces the **Case Change** plugin that allows changing the cas
 
 Currently, there are three types of formats available:
 
-![Case Change]({{site.baseurl}}/images/casechange.png)
+![Case Change]({{site.baseurl}}/images/icons/change-case.svg)
 
 * **lowercase** - The **lowercase** option changes all the selected characters to lowercase.
 
@@ -29,7 +29,7 @@ Currently, there are three types of formats available:
 
 To try out **Case Change** start with this [dedicated product page]({{site.productpages}}/case-change/) to see all the flexible pricing options.
 
-For more information on **Case Change** refer to the full [documentation]({{site.baseurl}}/plugins/casechange/).
+For more information on **Case Change** refer to the full [documentation]({{site.baseurl}}/plugins/premium/casechange/).
 
 There is also a demo provided to explore the **Case Change** capabilities [here]({{site.baseurl}}/demo/casechange/).
 

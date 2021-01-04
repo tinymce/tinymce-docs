@@ -6,7 +6,9 @@ description: Release notes for TinyMCE 5.1.6
 keywords: releasenotes bugfixes
 ---
 
-These release notes provide an overview of the changes for {{site.productname}} 5.1.6, including:
+## Overview
+
+{{site.productname}} 5.1.6 was released for {{site.enterpriseversion}} and {{site.cloudname}} on Wednesday, February 5<sup>th</sup>, 2020. It includes {{site.productname}} 5.1.6 and additional changes to premium plugins. These release notes provide an overview of the changes for {{site.productname}} 5.1.6, including:
 
 - [General bug fixes](#generalbugfixes)
 - [Security fixes](#securityfixes)
@@ -48,7 +50,7 @@ The {{site.productname}} 5.1.6 release includes **Enhanced Media Embed** 2.2.5.
 
 **Enhanced Media Embed** 2.2.5 provides the following bug fixes:
 
-- The [`mediaembed_max_width`]({{site.baseurl}}/plugins/mediaembed/#mediaembed_max_width) setting will now constrain the max width correctly on Internet Explorer 11.
+- The [`mediaembed_max_width`]({{site.baseurl}}/plugins/premium/mediaembed/#mediaembed_max_width) setting will now constrain the max width correctly on Internet Explorer 11.
 
 {% assign enterprise = true %}
 

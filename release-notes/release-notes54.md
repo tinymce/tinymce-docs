@@ -6,7 +6,9 @@ description: Release notes for TinyMCE 5.4
 keywords: releasenotes bugfixes
 ---
 
-These release notes provide an overview of the changes for {{site.productname}} 5.4, including:
+## Overview
+
+{{site.productname}} 5.4 was released for {{site.enterpriseversion}} and {{site.cloudname}} on Thursday, July 23<sup>rd</sup>, 2020. It includes {{site.productname}} 5.4.1 and additional changes to premium plugins. These release notes provide an overview of the changes for {{site.productname}} 5.4, including:
 
 - [TinyMCE 5.4 new features and enhancements](#tinymce54newfeaturesandenhancements)
 - [Accompanying Premium Plugin changes](#accompanyingpremiumpluginchanges)
@@ -30,20 +32,20 @@ The {{site.productname}} 5.4 release includes the following improvements for the
 
 - Adds: commands, APIs, and icons for; cut, copy, and paste columns.
 - Adds toolbar button icons for the cut, copy, and paste rows.
-- Adds a new [`mceTableApplyCellStyle`]({{site.baseurl}}/plugins/table/#commands) command for applying selected styles to table cells.
-- Adds a new [`table_header_type`]({{site.baseurl}}/plugins/table/#table_header_type) option for setting the HTML structure used for table header rows.
+- Adds a new [`mceTableApplyCellStyle`]({{site.baseurl}}/plugins/opensource/table/#commands) command for applying selected styles to table cells.
+- Adds a new [`table_header_type`]({{site.baseurl}}/plugins/opensource/table/#table_header_type) option for setting the HTML structure used for table header rows.
 - Adds table row, column, and cell type commands and queries.
-- Adds a new [`table_sizing_mode`]({{site.baseurl}}/plugins/table/#table_sizing_mode) option and a new [`mceTableSizingMode`]({{site.baseurl}}/plugins/table/#commands) command for setting the method for measuring table cell width: `fixed`, `relative`, or `responsive`.
-- Extends the [`mceInsertTable`]({{site.baseurl}}/plugins/table/#commands) command for adding tables without the dialog.
+- Adds a new [`table_sizing_mode`]({{site.baseurl}}/plugins/opensource/table/#table_sizing_mode) option and a new [`mceTableSizingMode`]({{site.baseurl}}/plugins/opensource/table/#commands) command for setting the method for measuring table cell width: `fixed`, `relative`, or `responsive`.
+- Extends the [`mceInsertTable`]({{site.baseurl}}/plugins/opensource/table/#commands) command for adding tables without the dialog.
 
-For information on the table plugin, see: [Table plugin]({{site.baseurl}}/plugins/table/).
+For information on the table plugin, see: [Table plugin]({{site.baseurl}}/plugins/opensource/table/).
 
 For a list of:
 
 - Menu items, including table-related menu items and menu sections, see: [Menu Items Available for {{site.productname}}]({{site.baseurl}}/advanced/available-menu-items/).
 - Available icons, including table-related icons, see: [Available icons]({{site.baseurl}}/advanced/editor-icon-identifiers/).
-- Table plugin APIs, see: [Table plugin - APIs]({{site.baseurl}}/plugins/table/#api).
-- Table plugin commands, see: [Table plugin - Commands]({{site.baseurl}}/plugins/table/#commands).
+- Table plugin APIs, see: [Table plugin - APIs]({{site.baseurl}}/plugins/opensource/table/#api).
+- Table plugin commands, see: [Table plugin - Commands]({{site.baseurl}}/plugins/opensource/table/#commands).
 
 ### Icon identifiers are now case-insensitive
 
@@ -75,7 +77,7 @@ The {{site.productname}} 5.4 release includes an accompanying release of the **A
 - Added search/replace support.
 - Fixed the editor `referrer_policy` option not working when loading additional resources.
 
-For information on the Advanced Code Editor plugin, see: [Advanced Code Editor plugin]({{site.baseurl}}/plugins/advcode/).
+For information on the Advanced Code Editor plugin, see: [Advanced Code Editor plugin]({{site.baseurl}}/plugins/premium/advcode/).
 
 ### PowerPaste 5.3.1
 
@@ -86,7 +88,7 @@ The {{site.productname}} 5.4 release includes an accompanying release of the **P
 - Fixed PowerPaste not able to load the `wordimport.js` resource when bundled.
 - Fixed the editor `referrer_policy` option not working when loading additional resources.
 
-For information on the PowerPaste plugin, see: [PowerPaste plugin]({{site.baseurl}}/plugins/powerpaste/).
+For information on the PowerPaste plugin, see: [PowerPaste plugin]({{site.baseurl}}/plugins/premium/powerpaste/).
 
 ## Accompanying Premium self-hosted server-side component changes
 
@@ -103,10 +105,10 @@ This version requires Java 8 or higher. For information on the removal of Java 7
 
 For information on:
 
-- The Spell Checker Pro plugin, see: [Spell Checker Pro plugin]({{site.baseurl}}/plugins/tinymcespellchecker/).
-- The Link Checker plugin, see: [Link Checker plugin]({{site.baseurl}}/plugins/linkchecker/).
-- The Image Tools plugin, see: [Image Tools plugin]({{site.baseurl}}/plugins/imagetools/).
-- The Enhanced Media Embed plugin, see: [Enhanced Media Embed plugin]({{site.baseurl}}/plugins/mediaembed/).
+- The Spell Checker Pro plugin, see: [Spell Checker Pro plugin]({{site.baseurl}}/plugins/premium/tinymcespellchecker/).
+- The Link Checker plugin, see: [Link Checker plugin]({{site.baseurl}}/plugins/premium/linkchecker/).
+- The Image Tools plugin, see: [Image Tools plugin]({{site.baseurl}}/plugins/opensource/imagetools/).
+- The Enhanced Media Embed plugin, see: [Enhanced Media Embed plugin]({{site.baseurl}}/plugins/premium/mediaembed/).
 - Deploying the server-side components, see: [Server-side component installation]({{site.baseurl}}/enterprise/server/).
 
 ### Security update for self-hosted server-side components
@@ -188,7 +190,7 @@ The **free** {{site.productname}} Spell Checker plugin (`spellchecker`) has been
 
 This change **_does not_** affect:
 
-- [The Spellchecker Pro premium plugin]({{site.baseurl}}/plugins/tinymcespellchecker/).
+- [The Spellchecker Pro premium plugin]({{site.baseurl}}/plugins/premium/tinymcespellchecker/).
 - [Browser-based spell checking in {{site.productname}}]({{site.baseurl}}/general-configuration-guide/spell-checking/#browser-basedspellchecking).
 
 To develop and maintain a new spellchecking plugin based on the free {{site.productname}} Spell Checker plugin:
@@ -198,7 +200,7 @@ To develop and maintain a new spellchecking plugin based on the free {{site.prod
 
 ### The `table_responsive_width` option
 
-The `table_responsive_width` option has been deprecated with the release of {{site.productname}} 5.4. This option has been replaced by [`table_sizing_mode`]({{site.baseurl}}/plugins/table/#table_sizing_mode).
+The `table_responsive_width` option has been deprecated with the release of {{site.productname}} 5.4. This option has been replaced by [`table_sizing_mode`]({{site.baseurl}}/plugins/opensource/table/#table_sizing_mode).
 
 ## Known issues
 

@@ -7,7 +7,7 @@ keywords: releasenotes newfeatures deleted technologypreview bugfixes knownissue
 
 ## Overview
 
-These Release Notes provide a high-level coverage of: improvements and additions, known issues, important bug fixes & deprecated functionality associated with the release of TinyMCE 5.0.14.
+{{site.productname}} 5.0.14 was released for {{site.enterpriseversion}} and {{site.cloudname}} on Wednesday, August 28<sup>th</sup>, 2019. It includes {{site.productname}} 5.0.14 and additional changes to premium plugins. These Release Notes provide a high-level coverage of: improvements and additions, known issues, important bug fixes & deprecated functionality associated with the release of TinyMCE 5.0.14.
 
 ## New features
 
@@ -71,7 +71,7 @@ These changes solve bugs with TinyMCE table functionality behaving unexpectedly 
 
 Enhanced Media Embed 2.2.3 addresses an issue where embedded snippets were not created when inputting links and pressing the Enter Key in Firefox.
 
-For information on Enhanced Media Embed refer to the [documentation]({{site.baseurl}}/plugins/mediaembed/).
+For information on Enhanced Media Embed refer to the [documentation]({{site.baseurl}}/plugins/premium/mediaembed/).
 
 #### PowerPaste
 

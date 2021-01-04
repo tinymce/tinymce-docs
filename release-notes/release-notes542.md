@@ -8,7 +8,7 @@ keywords: releasenotes bugfixes
 
 ## Overview
 
-These release notes provide an overview of the changes for {{site.productname}} 5.4.2, including:
+{{site.productname}} 5.4.2 was released for {{site.enterpriseversion}} and {{site.cloudname}} on Wednesday, August 26<sup>th</sup>, 2020.  It includes {{site.productname}} 5.4.2 and additional changes to premium plugins. These release notes provide an overview of the changes for {{site.productname}} 5.4.2, including:
 
 - [General bug fixes](#generalbugfixes)
 - [Accompanying Premium Plugin changes](#accompanyingpremiumpluginchanges)
@@ -32,7 +32,7 @@ These release notes provide an overview of the changes for {{site.productname}} 
 * Fixed the list toolbar buttons not showing as active when a list is selected.
 * Fixed an issue where the UI would sometimes not be shown or hidden when calling the show or hide API methods on the editor.
 * Fixed the list type style not retained when copying list items.
-* Fixed the Paste plugin converting tabs in plain text to a single space character. A [`paste_tab_spaces`]({{site.baseurl}}/plugins/paste/#paste_tab_spaces) option has been included for setting the number of spaces used to replace a tab character.
+* Fixed the Paste plugin converting tabs in plain text to a single space character. A [`paste_tab_spaces`]({{site.baseurl}}/plugins/opensource/paste/#paste_tab_spaces) option has been included for setting the number of spaces used to replace a tab character.
 
 ## Accompanying Premium Plugin changes
 
@@ -48,7 +48,7 @@ The {{site.productname}} 5.4.2 release includes an accompanying release of the *
 * Fixed an issue where lists would become corrupt on IE 11 due to invalid empty font elements.
 * Fixed multiple new lines collapsing into a single new line when pasting plain text.
 * Fixed cut and copy not working with table selections.
-* Fixed the PowerPaste plugin converting tabs in plain text to a single space character. A [`paste_tab_spaces`]({{site.baseurl}}/plugins/powerpaste/#paste_tab_spaces) option has been included for setting the number of spaces used to replace a tab character.
+* Fixed the PowerPaste plugin converting tabs in plain text to a single space character. A [`paste_tab_spaces`]({{site.baseurl}}/plugins/premium/powerpaste/#paste_tab_spaces) option has been included for setting the number of spaces used to replace a tab character.
 
 {% assign enterprise = true %}
 

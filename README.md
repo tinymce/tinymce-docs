@@ -1,6 +1,6 @@
 # TinyMCE documentation
 
-[![wercker status](https://app.wercker.com/status/4d4c743635332430f9d25acae1be5218/s/master "wercker status")](https://app.wercker.com/project/bykey/4d4c743635332430f9d25acae1be5218)
+[![wercker status](https://app.wercker.com/status/4d4c743635332430f9d25acae1be5218/s/main "wercker status")](https://app.wercker.com/project/bykey/4d4c743635332430f9d25acae1be5218)
 
 This project maintains the documentation for TinyMCE at
 [https://www.tiny.cloud/docs](https://www.tiny.cloud/docs). If you have any
@@ -38,11 +38,11 @@ You need the following programs installed on your computer:
     - On Fedora, run:
 
       ```
-      sudo dnf install git-all gcc-c++ make zlib-devel
+      sudo dnf install git-all gcc-c++ make zlib-devel ruby-devel
       ```
     - On Ubuntu, Debian or their derivatives, run:
       ```
-      sudo apt install git gcc cpp make zlib1g-dev
+      sudo apt install git gcc cpp make zlib1g-dev ruby-dev
       ```
 
 2. Install Ruby Nokogiri: https://nokogiri.org/
@@ -52,7 +52,7 @@ You need the following programs installed on your computer:
 
 3. Install Ruby Bundler. Install using:
     ```
-    sudo gem install bundler
+    sudo gem install bundler -v 1.17.3
     ```
 
 4. (optional) Docker
@@ -136,27 +136,27 @@ npm install -g git://github.com/tinymce/moxiedoc.git#feature/tinymcenext
 
 1. Download the TinyMCE version in the `.api-version` file in this project's root directory and extract the API documentation using:
 ```
-    ./_scripts/api-reference.sh
+./_scripts/api-reference.sh
 ```
 
 2. Start the development server using:
 ```
-    ./_scripts/serve.sh
+./_scripts/serve.sh
 ```
 
 ##### Run the development version of the documentation for a local TinyMCE repository
 
 1. Extract the API documentation from a local copy of the TinyMCE repository using:
 ```
-    ./_scripts/api-reference-local.sh <path/to/the/tinymce/repo>
+./_scripts/api-reference-local.sh <path/to/the/tinymce/repo>
 ```
 2. Start the development server using:
 ```
-    ./_scripts/serve.sh
+./_scripts/serve.sh
 ```
 3. To include updates made to the TinyMCE API documentation in the TinyMCE repository, run the `api-reference-local` script:
 ```
-    ./_scripts/api-reference-local.sh <path/to/the/tinymce/repo>
+./_scripts/api-reference-local.sh <path/to/the/tinymce/repo>
 ```
 
 >**Note**: The development server does not need to be stopped prior to running the `api-reference-local` script.
@@ -197,7 +197,3 @@ To help with this, there are two mechanisms for overriding the tinymce.min.js UR
 
 Note: Jekyll is pretty bad at automatically reloading code when you're playing with include files.
 Sometimes you need to restart the server.
-
-### Why is HTML minification disabled?
-
-It's very slow and the minifier is using regex to parse HTML. We may add a different minifier in the future.

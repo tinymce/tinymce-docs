@@ -6,7 +6,9 @@ description: Release notes for TinyMCE 5.2
 keywords: releasenotes bugfixes
 ---
 
-These release notes provide an overview of the changes for {{site.productname}} 5.2, including:
+## Overview
+
+{{site.productname}} 5.2 was released for {{site.enterpriseversion}} and {{site.cloudname}} on Monday, March 9<sup>th</sup>, 2020. It includes {{site.productname}} 5.2.0 and additional changes to premium plugins. These release notes provide an overview of the changes for {{site.productname}} 5.2, including:
 
 - [TinyMCE 5.2 new features and enhancements](#tinymce52newfeaturesandenhancements)
 - [Accompanying Premium Plugin changes](#accompanyingpremiumpluginchanges)
@@ -66,20 +68,20 @@ The `a11y_advanced_options` setting adds an option to set an image as decorative
 
 For information on the `a11y_advanced_options`, including the impact on the `a11ychecker_allow_decorative_images` setting, see:
 
-- [The Accessibility Checker plugin - `a11y_advanced_options`]({{site.baseurl}}/plugins/a11ychecker/#a11y_advanced_options).
-- [The Image plugin - `a11y_advanced_options`]({{site.baseurl}}/plugins/image/#a11y_advanced_options).
+- [The Accessibility Checker plugin - `a11y_advanced_options`]({{site.baseurl}}/plugins/premium/a11ychecker/#a11y_advanced_options).
+- [The Image plugin - `a11y_advanced_options`]({{site.baseurl}}/plugins/opensource/image/#a11y_advanced_options).
 
 ### Modify the Quick Image toolbar using the `quickbars_image_toolbar` setting
 
-The **quickbars_image_toolbar** option configures the Quick Image toolbar provided by the [quickbars plugin]({{ site.baseurl }}/plugins/quickbars). To change the buttons on the Quick Image toolbar, provide a space-separated string of [toolbar button names]({{ site.baseurl }}/advanced/available-toolbar-buttons/). To disable the Quick Image toolbar, set `quickbars_image_toolbar` to `false`.
+The **quickbars_image_toolbar** option configures the Quick Image toolbar provided by the [quickbars plugin]({{site.baseurl}}/plugins/opensource/quickbars). To change the buttons on the Quick Image toolbar, provide a space-separated string of [toolbar button names]({{ site.baseurl }}/advanced/available-toolbar-buttons/). To disable the Quick Image toolbar, set `quickbars_image_toolbar` to `false`.
 
-For information on using the `quickbars_image_toolbar` setting, see: [Quick Toolbars plugin - `quickbars_image_toolbar`]({{ site.baseurl }}/plugins/quickbars/#quickbars_image_toolbar).
+For information on using the `quickbars_image_toolbar` setting, see: [Quick Toolbars plugin - `quickbars_image_toolbar`]({{site.baseurl}}/plugins/opensource/quickbars/#quickbars_image_toolbar).
 
 ### Use custom Prism versions and languages when highlighting code samples
 
 The `codesample` plugin now has the ability to use a custom Prism.js version and a custom languages list when highlighting code samples in the editor. This can be enabled by including the custom Prism.js script and language add-ons on the page and setting the new `codesample_global_prismjs` option to `true`.
 
-For information on using the `codesample_global_prismjs` setting, see: [Code sample plugin - `codesample_global_prismjs`]({{ site.baseurl }}/plugins/codesample/#codesample_global_prismjs).
+For information on using the `codesample_global_prismjs` setting, see: [Code sample plugin - `codesample_global_prismjs`]({{site.baseurl}}/plugins/opensource/codesample/#codesample_global_prismjs).
 
 ### New `tinymce.dom.TextSeeker` API
 
@@ -99,8 +101,8 @@ For an updated list of {{site.productname}} icons, see: [Available icons]({{ sit
 
 A new `link_default_protocol` option has been added to the Autolink and Link plugins. This option allows the default protocol to be set for links where a protocol has not been supplied by the user.
 
-- For information on using this setting with the Autolink plugin, see: [Autolink plugin - `link_default_protocol`]({{site.baseurl}}/plugins/autolink/#link_default_protocol).
-- For information on using this setting with the Link plugin, see: [Link plugin - `link_default_protocol`]({{site.baseurl}}/plugins/link/#link_default_protocol).
+- For information on using this setting with the Autolink plugin, see: [Autolink plugin - `link_default_protocol`]({{site.baseurl}}/plugins/opensource/autolink/#link_default_protocol).
+- For information on using this setting with the Link plugin, see: [Link plugin - `link_default_protocol`]({{site.baseurl}}/plugins/opensource/link/#link_default_protocol).
 
 ## Accompanying Premium Plugin changes
 
@@ -116,7 +118,7 @@ The {{site.productname}} 5.2 release includes an accompanying release of the **A
 - To improve decorative image checks.
 - To accommodate the `a11y_advanced_options` setting added in {{site.productname}} 5.2.
 
-For information on the `a11y_advanced_options` setting, see: [Accessibility Checker plugin]({{site.baseurl}}/plugins/a11ychecker/#a11y_advanced_options).
+For information on the `a11y_advanced_options` setting, see: [Accessibility Checker plugin]({{site.baseurl}}/plugins/premium/a11ychecker/#a11y_advanced_options).
 
 ### Checklist 1.1.0
 
@@ -124,7 +126,7 @@ The {{site.productname}} 5.2 release includes an accompanying release of the **C
 
 **Checklist** 1.1.0 adds a new optional checklist menu item.
 
-For information on the checklist plugin, see: [Checklist plugin]({{site.baseurl}}/plugins/checklist/).
+For information on the checklist plugin, see: [Checklist plugin]({{site.baseurl}}/plugins/premium/checklist/).
 
 ### Link Checker 2.1.0
 
@@ -132,7 +134,7 @@ The {{site.productname}} 5.2 release includes an accompanying release of the **L
 
 **Link Checker** 2.1.0 adds a new `linkchecker_preprocess` function for adjusting links before link checking.
 
-For information on the `linkchecker_preprocess` option, see: [Link Checker plugin - `linkchecker_preprocess`]({{site.baseurl}}/plugins/linkchecker/#linkchecker_preprocess).
+For information on the `linkchecker_preprocess` option, see: [Link Checker plugin - `linkchecker_preprocess`]({{site.baseurl}}/plugins/premium/linkchecker/#linkchecker_preprocess).
 
 ### Page Embed 1.1.0
 
@@ -140,7 +142,7 @@ The {{site.productname}} 5.2 release includes an accompanying release of the **P
 
 **Page Embed** 1.1.0 adds a new `tiny_pageembed_inline_styles` setting which inlines all styles, while also keeping CSS classes, when rendering the embed content. This is useful when the additional CSS classes can't be added to your site.
 
-For information on inlining page embed styles, see: [Page Embed plugin - Inline styles for page embeds]({{site.baseurl}}/plugins/pageembed/#inlinestylesforpageembeds).
+For information on inlining page embed styles, see: [Page Embed plugin - Inline styles for page embeds]({{site.baseurl}}/plugins/premium/pageembed/#inlinestylesforpageembeds).
 
 ### Permanent Pen 1.1.0
 
@@ -177,7 +179,7 @@ The {{site.productname}} 5.2 release includes an accompanying release of the **S
 - Includes a new internal engine to improve the document scanning speed.
 - Removes the `spellchecker_on_load` setting.
 
-For information on the Spell Checker Pro plugin, see: [Spell Checker Pro plugin]({{site.baseurl}}/plugins/tinymcespellchecker/).
+For information on the Spell Checker Pro plugin, see: [Spell Checker Pro plugin]({{site.baseurl}}/plugins/premium/tinymcespellchecker/).
 
 ## Minor changes for TinyMCE 5.2
 

@@ -7,7 +7,7 @@ keywords: releasenotes newfeatures deleted technologypreview bugfixes knownissue
 
 ## Overview
 
-These Release Notes provide high-level coverage of: improvements and additions, known issues, important bug fixes & deprecated functionality associated with the release of TinyMCE 5.0.13.
+{{site.productname}} 5.0.13 was released for {{site.enterpriseversion}} and {{site.cloudname}} on Thursday, August 15<sup>th</sup>, 2019. It includes {{site.productname}} 5.0.13 and additional changes to premium plugins. These Release Notes provide high-level coverage of: improvements and additions, known issues, important bug fixes & deprecated functionality associated with the release of TinyMCE 5.0.13.
 
 > **Note:** TinyMCE 5.0.10, 5.0.11, and 5.0.12 were not released to enterprise due to issues found during QA.
 > TinyMCE 5.0.13 enterprise contains all changes in the TinyMCE 5.0.10 through 5.0.13 community releases.
@@ -112,7 +112,7 @@ content on how to use the editor when navigating via a keyboard.
 
 #### Nonbreaking space plugin
 
-TinyMCE 5.0.13 improves the nonbreaking space plugin by wrapping any nonbreaking space characters inserted by the plugin in a span to prevent the character being converted to a regular space while typing. To disable this behavior, add the new [`nonbreaking_wrap: false`]({{site.baseurl}}/plugins/nonbreaking/#nonbreaking_wrap) setting to the TinyMCE init configuration.
+TinyMCE 5.0.13 improves the nonbreaking space plugin by wrapping any nonbreaking space characters inserted by the plugin in a span to prevent the character being converted to a regular space while typing. To disable this behavior, add the new [`nonbreaking_wrap: false`]({{site.baseurl}}/plugins/opensource/nonbreaking/#nonbreaking_wrap) setting to the TinyMCE init configuration.
 
 #### Search and replace plugin
 
@@ -129,7 +129,7 @@ bottom of the document.
 
 **Tiny Comments** 2.1.1 addresses an issue where users could add, edit, and remove comments when the editor mode is set to [read-only]({{site.baseurl}}/api/tinymce/tinymce.editormode/#isreadonly). Comments now correctly listens to the editor mode change and disables comments when the editor is in read-only mode and re-enable when in design mode.
 
-For information on **Tiny Comments** refer to the full [documentation]({{site.baseurl}}/plugins/comments/).
+For information on **Tiny Comments** refer to the full [documentation]({{site.baseurl}}/plugins/premium/comments/).
 
 ## Known issues
 

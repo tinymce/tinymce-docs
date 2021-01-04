@@ -2,11 +2,11 @@
 layout: default
 title: Tiny Drive Plugin API
 title_nav: Plugin API
-description: Description of the Tiny Drive plugin api
+description: Description of the Tiny Drive plugin API
 keywords: tinydrive api
 ---
 
-The {{site.cloudfilemanager}} {{site.productname}} plugin has an api that enables access to {{site.cloudfilemanager}} from your custom plugins or {{site.productname}} specific integration code. This api is available though the `editor.plugins.tinydrive` property.
+The {{site.cloudfilemanager}} {{site.productname}} plugin has an API that enables access to {{site.cloudfilemanager}} from your custom plugins or {{site.productname}} specific integration code. This API is available though the `editor.plugins.tinydrive` property.
 
 ## `tinydrive.pick`
 
@@ -14,7 +14,7 @@ The `tinydrive.pick` method enables you to pick files from {{site.cloudfilemanag
 
 ### File Picker Result Format
 
-The `tinydrive.pick` api method will return a promise with object that has a `files` property. This `files` property is an array of files with the following properties.
+The `tinydrive.pick` API method will return a promise with object that has a `files` property. This `files` property is an array of files with the following properties.
 
 #### name
 
@@ -54,7 +54,7 @@ The `tinydrive.upload` method enables directly upload blobs to your {{site.cloud
 
 ## Picker settings
 
-These settings are available for the [tinydrive.pick](#tinydrivepick) / [tinydrive.browse](#tinydrivebrowse) api methods.
+These settings are available for the [tinydrive.pick](#tinydrivepick) / [tinydrive.browse](#tinydrivebrowse) API methods.
 
 ### `filetypes`
 
@@ -82,9 +82,9 @@ tinydrive.pick({
 });
 ```
 
-### Plugin api interfaces
+### Plugin API interfaces
 
-Here is a complete api reference as TypeScript types for developers used to TypeScript syntax.
+Here is a complete API reference as TypeScript types for developers used to TypeScript syntax.
 
 ```ts
 interface PluginApi {

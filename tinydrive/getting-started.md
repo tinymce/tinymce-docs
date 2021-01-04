@@ -6,11 +6,10 @@ description: Getting started with Tiny Drive
 keywords: tinydrive starter projects
 ---
 
-> Requirements
-> 1. Register for an API key at [{{site.accountpage}}]({{site.accountsignup}})
-> 2. Generate a JWT key at [{{site.accountpage}}]({{site.accountpageurl}})
-> 3. Store these keys temporarily, you will need them later.
-> Do this before proceeding and it will go a lot smoother
+## Prerequisites
+
+* A {{site.cloudname}} API key from [{{site.accountpage}}]({{site.accountsignup}}).
+* A JWT key generated at [{{site.accountpageurl}}]({{site.accountpageurl}}). Temporarily store the generated keys for use in the following procedure.
 
 {{site.cloudfilemanager}} allows trouble free management of assets such as images and files in the cloud. {{site.cloudfilemanager}} is only available in [{{site.cloudname}}]({{site.accountsignup}}) and requires registering for an API key.
 
@@ -57,6 +56,6 @@ Go through the following additional resources to figure out how to configure {{s
 - [Configuration Options]({{site.baseurl}}/tinydrive/configuration/)
 - [Integrations]({{site.baseurl}}/tinydrive/integrations/)
 
-## Need help? ##
+## Need help?
 
 {{site.companyname}} is striving to make {{site.cloudfilemanager}} as useful and simple as possible. For support related issues such as problems with JWT authentication and implementing {{site.cloudfilemanager}}, check the [help page]({{site.baseurl}}/tinydrive/get-help/) or please contact [{{site.supportname}}]({{site.supporturl}}).

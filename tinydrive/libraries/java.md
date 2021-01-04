@@ -35,7 +35,7 @@ $ git clone git@github.com:tinymce/tinydrive-java-spring-starter.git
 
 #### 2. Change the `apiKey` in `tinydrive-java-spring-startersrc/main/resources/application.yml`
 
-You get the api key from the `API Key Manager` {{site.accountpage}} page at http://tiny.cloud.
+The API key can be generated using the `API Key Manager` {{site.accountpage}} page at http://tiny.cloud.
 
 #### 3. Create a `tinydrive-java-spring-starter/src/main/resources/private.key` file containing your generated private RSA key
 
@@ -66,4 +66,3 @@ Go through the following additional resources to figure out how to configure {{s
 ## Need help? ##
 
 We are striving to make {{site.cloudfilemanager}} as useful and as simple as possible. For support related issues such as problems with JWT authentication and implementing {{site.cloudfilemanager}}, check our [help page]({{site.baseurl}}/tinydrive/get-help/) or please contact [{{site.supportname}}]({{site.supporturl}}).
-

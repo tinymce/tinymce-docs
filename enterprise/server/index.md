@@ -15,9 +15,9 @@ The following server-side components are included in the {{site.productname}} Se
 
 |Component                      | File							| Description |
 |:-----------------------------	|:-------						|:----------- |
-| [Spellchecking]({{ site.baseurl }}/enterprise/check-spelling/) 				| ephox-spelling.war		|Spell checking service for {{site.productname}} Enterprise.|
-| [Image Tools Proxy]({{ site.baseurl }}/plugins/imagetools/)				| ephox-image-proxy.war		|Image proxy service for the Image Tools plugin.|
-| [Enhanced Media Embed]({{ site.baseurl }}/enterprise/embed-media/), [Link Checker]({{ site.baseurl }}/enterprise/check-links/)				| ephox-hyperlinking.war		|Link Checker and Enhanced Media Embed service for {{site.productname}} Enterprise.|
+| [Spellchecking]({{site.baseurl}}/enterprise/check-spelling/) 				| ephox-spelling.war		|Spell checking service for {{site.productname}} Enterprise.|
+| [Export]({{site.baseurl}}/plugins/premium/export/), [Image Tools Proxy]({{site.baseurl}}/plugins/opensource/imagetools/)				| ephox-image-proxy.war		|Image proxy service for the Export and Image Tools plugins.|
+| [Enhanced Media Embed]({{site.baseurl}}/enterprise/embed-media/), [Link Checker]({{site.baseurl}}/enterprise/check-links/)				| ephox-hyperlinking.war		|Link Checker and Enhanced Media Embed service for {{site.productname}} Enterprise.|
 
 > **Note:** The "Allowed Origins" service (ephox-allowed-origins.war) has been deprecated. Trusted domains should now be specified directly in the configuration file.
 
@@ -46,7 +46,7 @@ The easiest way to deploy these files is to copy them into the *webapps* directo
 More information can be found in the documentation of your chosen application server:
 
 - [Deploying applications with Tomcat 9.0](https://tomcat.apache.org/tomcat-9.0-doc/deployer-howto.html)
-- [Deploying applications with Jetty](https://www.eclipse.org/jetty/documentation/current/configuring-deployment.html)
+- [Deploying applications with Jetty](https://www.eclipse.org/jetty/documentation/current/#configuring-deployment)
 
 ### Step 3. Create a configuration file
 
@@ -112,7 +112,7 @@ For other versions of Tomcat on Windows, check the Tomcat documentation for that
 
 ###### From the command line
 
-If you're following the instructions for [Starting Jetty](https://www.eclipse.org/jetty/documentation/current/startup.html) for Jetty 9.4.5, the path to the configuration file can simply be supplied as a command option:
+If you're following the instructions for [Starting Jetty](https://www.eclipse.org/jetty/documentation/current/#quickstart-running-jetty) for Jetty 9.4.5, the path to the configuration file can simply be supplied as a command option:
 
 ```
 java -D"ephox.config.file=C:\config\file\location\application.conf" -jar C:\jetty\install\directory\start.jar
@@ -122,7 +122,7 @@ For other versions of Jetty on Windows, check the Jetty documentation for that v
 
 ###### As a Windows service
 
-Follow the instructions in [Startup via Windows Service](https://www.eclipse.org/jetty/documentation/current/startup-windows-service.html) for Jetty 9.4.5. Remember to append the following snippet to the line beginning with `set PR_JVMOPTIONS` in your `install-jetty-service.bat` script:
+Follow the instructions in [Startup via Windows Service](https://www.eclipse.org/jetty/documentation/current/#startup-windows-service) for Jetty 9.4.5. Remember to append the following snippet to the line beginning with `set PR_JVMOPTIONS` in your `install-jetty-service.bat` script:
 
 ```
 ;-Dephox.config.file="C:\config\file\location\application.conf"
@@ -184,7 +184,7 @@ java -Dephox.config.file="/config/file/location/application.conf" -jar /opt/jett
 
 ###### As a Linux service
 
-Assuming you've followed the instructions to [Startup a Unix Service using jetty.sh](https://www.eclipse.org/jetty/documentation/current/startup-unix-service.html) for Jetty 9.4.5, edit `/etc/default/jetty` and add the line:
+Assuming you've followed the instructions to [Startup a Unix Service using jetty.sh](https://www.eclipse.org/jetty/documentation/current/#startup-unix-service) for Jetty 9.4.5, edit `/etc/default/jetty` and add the line:
 
 ```
 JETTY_ARGS=" -Dephox.config.file=/config/file/location/application.conf"

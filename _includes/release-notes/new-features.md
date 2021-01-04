@@ -5,7 +5,7 @@ The following new features were added to the TinyMCE 5.0 RC version.
 
 The [Comments 2.0]({{site.baseurl}}/enterprise/tiny-comments/) is a premium plugin built on the [Annotations API]({{site.baseurl}}/advanced/annotations/) to create comment threads (conversations). Comments 2.0 provides the ability to start or join a conversation by adding comments to the content within the TinyMCE editor.
 
-Refer to the [Comments 2.0]({{site.baseurl}}/plugins/comments/) documentation, for more information.
+Refer to the [Comments 2.0]({{site.baseurl}}/plugins/premium/comments/) documentation, for more information.
 
 ### Context menu
 
@@ -39,7 +39,7 @@ This API supports the use of dynamic content for all aspects and is easily confi
 
 The [Format Painter]({{site.baseurl}}/enterprise/formatpainter/) premium plugin allows copying and pasting formatting (such as font style and size) from one location to another. The Format Painter is capable of working with a wide variety of formats and styles such as inline & block formats and table styles.
 
-The Format Painter may be used through keyboard shortcuts or a toolbar button. Refer to the [Format Painter]({{site.baseurl}}/plugins/formatpainter/) documentation, for more information.
+The Format Painter may be used through keyboard shortcuts or a toolbar button. Refer to the [Format Painter]({{site.baseurl}}/plugins/premium/formatpainter/) documentation, for more information.
 
 ### Keyboard navigation and tooltips improvements
 
@@ -51,7 +51,7 @@ A new experimental feature has been added that allows using the tab across all T
 
 The [Mentions]({{site.baseurl}}/enterprise/mentions/) plugin makes it possible for users to send notifications using **@username** in the document.
 
-Mentions is available for download through [TinyMCE Cloud]({{site.baseurl}}/cloud-deployment-guide/editor-and-features/). Include the mentions parameter in the tinymce.init script. Refer to the [Mentions]({{site.baseurl}}/plugins/mentions/) documentation, for more information on setup and configuration.
+Mentions is available for download through [TinyMCE Cloud]({{site.baseurl}}/cloud-deployment-guide/editor-and-features/). Include the mentions parameter in the tinymce.init script. Refer to the [Mentions]({{site.baseurl}}/plugins/premium/mentions/) documentation, for more information on setup and configuration.
 
 ### Modern codebase
 
@@ -65,7 +65,7 @@ The new UI framework has a stricter API for creating components, which means tha
 
 TinyMCE  5.0 uses a new theme **Silver** and a new skin **Oxide** which uses more modern CSS such as `flexbox`.
 
-A **Skin** in Tinymce is used to make changes to the appearance of the editor, for example, colors, margins, paddings, fonts, icons, etc.
+A **Skin** in TinyMCE is used to make changes to the appearance of the editor, for example, colors, margins, paddings, fonts, icons, etc.
 
 A **Theme** creates the editor construction (left, top, bottom, or right of the editing area - vertical or horizontal, inline or outside, etc.).
 
@@ -83,7 +83,7 @@ Using the Page Embed feature can enable including content like Google maps or a 
 
 The embedded content is an independent HTML document, referenced in the `src` attribute of each element. Hence it is a fully independent resource, referenced from the current document.
 
-Refer to the [Page Embed]({{site.baseurl}}/plugins/pageembed/) documentation, for more information.
+Refer to the [Page Embed]({{site.baseurl}}/plugins/premium/pageembed/) documentation, for more information.
 
 ### Permanent Pen 1.0
 
@@ -95,7 +95,7 @@ Permanent Pen works in standard text content.
 
 For premium users, the Permanent Pen function is available in the toolbar. Click anywhere in the text field to use the Permanent Pen function.
 
-Refer to the [Permanent Pen]({{site.baseurl}}/plugins/permanentpen/) documentation, for more information.
+Refer to the [Permanent Pen]({{site.baseurl}}/plugins/premium/permanentpen/) documentation, for more information.
 
 ### Tables
 
@@ -103,7 +103,7 @@ Creating and configuring tables in TinyMCE 5.0 is simpler.
 
 This feature has been enhanced by modifying the code to ensure the styles are correct and consistent. The **Styles** text field has been removed from the advanced table properties dialogs. The dialog configuration is now much less confronting and confusing for non-developers.
 
-`Border` input field in the table properties dialog is now called `Border width` for clarity. Refer to the [Tables]({{site.baseurl}}/plugins/table/) documentation, for more information. Tables are enriched with the following new additions:
+`Border` input field in the table properties dialog is now called `Border width` for clarity. Refer to the [Tables]({{site.baseurl}}/plugins/opensource/table/) documentation, for more information. Tables are enriched with the following new additions:
 
 * **Using CSS for styling** - TinyMCE 5.0 uses CSS more for styling. Thus few legacy and outdated data attributes that were being configured on tables, rows, and cells and no longer adhered to the industry best practices, were removed. HTML is now cleaner and shorter.
 

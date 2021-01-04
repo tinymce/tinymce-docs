@@ -10,7 +10,7 @@ keywords: tinymce cloud script textarea apiKey
 
 {{site.cloudname}} can be used without an API key. Refer to the [Introduction & getting started ]({{site.baseurl}}/general-configuration-guide) guide for more information. Sign up for an API key and update the script tag to use premium plugins or avoid the in-editor developer warning.
 
-All {{site.cloudname}} accounts include a free, pre-configured {{site.cloudname}} image proxy service. This setup uses the [Image tools]({{  site.baseurl }}/plugins/imagetools/) plugin.
+All {{site.cloudname}} accounts include a free, pre-configured {{site.cloudname}} image proxy service. This setup uses the [Image tools]({{site.baseurl}}/plugins/opensource/imagetools/) plugin.
 
 ## Integrating TinyMCE for the first time
 
@@ -39,26 +39,26 @@ There are more than 40 open source plugins that enhance the editing experience i
 
 Extend the [{{site.productname}} configuration]({{ site.baseurl }}/configure/) to include any additional purchased plugins and associated toolbar and menu items. Refer to the following enablement guides for more information:
 
-* [Mentions]({{ site.baseurl }}/plugins/mentions/)
-* [{{site.cloudfilemanager}}]({{ site.baseurl }}/plugins/drive/)
-* [Comments]({{ site.baseurl }}/plugins/comments/)
-* [Page Embed]({{ site.baseurl }}/plugins/pageembed/)
-* [Permanent Pen]({{ site.baseurl }}/plugins/permanentpen/)
-* [Format Painter]({{ site.baseurl }}/plugins/formatpainter/)
-* [PowerPaste]({{ site.baseurl }}/plugins/powerpaste/)
-* [Spell Checker Pro]({{ site.baseurl }}/plugins/tinymcespellchecker/)
+* [Mentions]({{site.baseurl}}/plugins/premium/mentions/)
+* [{{site.cloudfilemanager}}]({{ site.baseurl }}/plugins/premium/tinydrive/)
+* [Comments]({{site.baseurl}}/plugins/premium/comments/)
+* [Page Embed]({{site.baseurl}}/plugins/premium/pageembed/)
+* [Permanent Pen]({{site.baseurl}}/plugins/premium/permanentpen/)
+* [Format Painter]({{site.baseurl}}/plugins/premium/formatpainter/)
+* [PowerPaste]({{site.baseurl}}/plugins/premium/powerpaste/)
+* [Spell Checker Pro]({{site.baseurl}}/plugins/premium/tinymcespellchecker/)
 
 > **Note**: `spellchecker_rpc_url` is **not** required when enabling this plugin via [{{site.cloudname}}]({{ site.baseurl }}/cloud-deployment-guide/).
 
-* [Image Tools (with configured image proxy)]({{ site.baseurl }}/plugins/imagetools/)
+* [Image Tools (with configured image proxy)]({{site.baseurl}}/plugins/opensource/imagetools/)
 
 > **Note**: Configuration of the `imagetools_cors_hosts` and `imagetools_proxy` properties occurs automatically.
 
-* [Moxie Manager]({{ site.baseurl }}/plugins/moxiemanager/)
-* [Accessibility Checker]({{ site.baseurl }}/plugins/a11ychecker/)
-* [Advanced Code Editor]({{ site.baseurl }}/plugins/advcode/)
-* [Enhanced Media Embed]({{ site.baseurl }}/plugins/mediaembed/)
-* [Link Checker]({{ site.baseurl }}/plugins/linkchecker/)
+* [Moxie Manager]({{site.baseurl}}/plugins/premium/moxiemanager/)
+* [Accessibility Checker]({{site.baseurl}}/plugins/premium/a11ychecker/)
+* [Advanced Code Editor]({{site.baseurl}}/plugins/premium/advcode/)
+* [Enhanced Media Embed]({{site.baseurl}}/plugins/premium/mediaembed/)
+* [Link Checker]({{site.baseurl}}/plugins/premium/linkchecker/)
 
 > **Note**: It may take up to 30 minutes for the purchased plugin to be available to {{site.productname}}. Clear the browser's cache.
 
@@ -104,23 +104,23 @@ Reference [external_plugins]({{ site.baseurl }}/configure/integration-and-setup/
 
 Extend the [{{site.productname}} configuration]({{ site.baseurl }}/configure/) to include any additional purchased plugins and associated toolbar and menu items. Refer to the following enablement guides for more information:
 
-* [Mentions]({{ site.baseurl }}/plugins/mentions/)
-* [{{site.cloudfilemanager}}]({{ site.baseurl }}/plugins/drive/)
-* [Comments]({{ site.baseurl }}/plugins/comments/)
-* [Page Embed]({{ site.baseurl }}/plugins/pageembed/)
-* [Permanent Pen]({{ site.baseurl }}/plugins/permanentpen/)
-* [Format Painter]({{ site.baseurl }}/plugins/formatpainter/)
-* [Powerpaste]({{ site.baseurl }}/plugins/powerpaste/)
-* [Spell Checker Pro]({{ site.baseurl }}/plugins/tinymcespellchecker/)
+* [Mentions]({{site.baseurl}}/plugins/premium/mentions/)
+* [{{site.cloudfilemanager}}]({{ site.baseurl }}/plugins/premium/tinydrive/)
+* [Comments]({{site.baseurl}}/plugins/premium/comments/)
+* [Page Embed]({{site.baseurl}}/plugins/premium/pageembed/)
+* [Permanent Pen]({{site.baseurl}}/plugins/premium/permanentpen/)
+* [Format Painter]({{site.baseurl}}/plugins/premium/formatpainter/)
+* [Powerpaste]({{site.baseurl}}/plugins/premium/powerpaste/)
+* [Spell Checker Pro]({{site.baseurl}}/plugins/premium/tinymcespellchecker/)
 
 > **Note**: `spellchecker_rpc_url` is **not** required when enabling this plugin via [{{site.cloudname}}]({{ site.baseurl }}/cloud-deployment-guide/).
 
-* [Image tools (with configured image proxy)]({{ site.baseurl }}/plugins/imagetools/)
+* [Image tools (with configured image proxy)]({{site.baseurl}}/plugins/opensource/imagetools/)
 
 > **Note**: Configuration of the `imagetools_cors_hosts` and `imagetools_proxy` properties occurs automatically.
 
-* [Moxie Manager]({{ site.baseurl }}/plugins/moxiemanager/)
-* [Accessibility Checker]({{ site.baseurl }}/plugins/a11ychecker/)
-* [Advanced Code Editor]({{ site.baseurl }}/plugins/advcode/)
-* [Enhanced Media Embed]({{ site.baseurl }}/plugins/mediaembed/)
-* [Link Checker]({{ site.baseurl }}/plugins/linkchecker/)
+* [Moxie Manager]({{site.baseurl}}/plugins/premium/moxiemanager/)
+* [Accessibility Checker]({{site.baseurl}}/plugins/premium/a11ychecker/)
+* [Advanced Code Editor]({{site.baseurl}}/plugins/premium/advcode/)
+* [Enhanced Media Embed]({{site.baseurl}}/plugins/premium/mediaembed/)
+* [Link Checker]({{site.baseurl}}/plugins/premium/linkchecker/)

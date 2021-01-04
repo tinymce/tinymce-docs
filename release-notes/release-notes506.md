@@ -7,7 +7,7 @@ keywords: releasenotes newfeatures deleted technologypreview bugfixes knownissue
 
 ## Overview
 
-The Release Notes provide high-level coverage of the improvements and additions that have been implemented in TinyMCE 5.0.6 and document known problems in this release, as well as important bug fixes, deprecated functionality, and other details.
+{{site.productname}} 5.0.6 was released for {{site.enterpriseversion}} and {{site.cloudname}} on Wednesday, June 5<sup>th</sup>, 2019. It includes {{site.productname}} 5.0.6 and additional changes to premium plugins. The Release Notes provide high-level coverage of the improvements and additions that have been implemented in TinyMCE 5.0.6 and document known problems in this release, as well as important bug fixes, deprecated functionality, and other details.
 
 TinyMCE 5.0.6 release adds improvements to the TinyMCE editor to improve the overall user experience.
 
@@ -21,13 +21,13 @@ TinyMCE's readonly mode has been extended so that it now works with inline edito
 
 TinyMCE 5.0.6 adds a new configuration option `image_uploadtab` that can be used to disable the `Upload` tab in the insert image dialog.
 
-For more information on `image_uploadtab`, refer to the [documentation]({{site.baseurl}}/plugins/image/#image_uploadtab).
+For more information on `image_uploadtab`, refer to the [documentation]({{site.baseurl}}/plugins/opensource/image/#image_uploadtab).
 
 ### Word Count plugin api
 
 TinyMCE 5.0.6 adds a new API for the Word Count plugin. The API exposes the functionality used by the Word Count dialog and allows developers to retrieve details about how many words or characters are used inside the editor content.
 
-For more information on the new API, refer to the [documentation]({{site.baseurl}}/plugins/wordcount/#api).
+For more information on the new API, refer to the [documentation]({{site.baseurl}}/plugins/opensource/wordcount/#api).
 
 ## Updates and enhancements
 
@@ -46,4 +46,4 @@ PowerPaste 5.0.0 comes with significant changes to the previous versions. Refer 
 * Improved the `Remove formatting` functionality to also remove inline style elements, such as `strong`, `b`, `em`, `i`, `sup` and `sub`.
 * Fixed an issue where pasting content with external images would lose their image src attribute.
 
-For more information on **PowerPaste** refer to the full [documentation]({{site.baseurl}}/plugins/powerpaste/).
+For more information on **PowerPaste** refer to the full [documentation]({{site.baseurl}}/plugins/premium/powerpaste/).

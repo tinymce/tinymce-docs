@@ -19,9 +19,9 @@ This section describes issues that users of {{site.productname}} 5.1 may encount
 #### Issue
 
 > **Note**: This issue affects the following plugins:
-> * [Mentions]({{site.baseurl}}/plugins/mentions/).
-> * [Emoticons]({{site.baseurl}}/plugins/emoticons/).
-> * [Character Map]({{site.baseurl}}/plugins/charmap/).
+> * [Mentions]({{site.baseurl}}/plugins/premium/mentions/).
+> * [Emoticons]({{site.baseurl}}/plugins/opensource/emoticons/).
+> * [Character Map]({{site.baseurl}}/plugins/opensource/charmap/).
 
 Plugins relying on the [autocompleter API]({{site.baseurl}}/ui-components/autocompleter/) or keypress events do not work on Android. Android intercepts content and processes content prior to insertion into the editor.
 
@@ -67,7 +67,7 @@ To workaround this issue, users can either:
 
 #### Issue
 
-> **Note**: This issue affects the [Comments plugin]({{site.baseurl}}/plugins/comments/).
+> **Note**: This issue affects the [Comments plugin]({{site.baseurl}}/plugins/premium/comments/).
 
 When opening sidebars on small screens (such as mobile phones), the sidebar may occupy most or all of the text area of the editor.
 

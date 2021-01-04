@@ -6,6 +6,8 @@ description: Guide on how to setup JWT Authentication for Tiny Drive
 keywords: jwt authentication
 ---
 
+{% assign pluginname = site.cloudfilemanager %}
+{% assign plugincode = "tinydrive" %}
 ## Introduction
 
 {{site.cloudfilemanager}} requires you to setup JSON Web Token (JWT) authentication. This is to ensure that the security of your files remains in your control.
@@ -14,50 +16,27 @@ JWT is a standard authorization solution for web services and is documented in m
 
 > If you haven't tried any of the [Starter projects]({{site.baseurl}}/tinydrive/getting-started/#starterprojects)  yet, we urge you to try them before trying to implement your solution. The source is also available on Github to study.
 
-## Private/public key pair
+{% include auth/private-public-key-pairs-for-tiny-cloud-services.md %}
 
-{{site.cloudname}} services tokens use public/private RSA key pairs. The {{site.cloudname}} services only store the public key, allowing developers to have full control over the authentication.
-
-The private/public key pair can be created on your [{{site.companyname}} - {{site.accountpage}} page]({{site.accountpageurl}}/jwt/), however we only store the public key on the {{site.accountpage}}. The private key should be downloaded and stored in your backend.
-
-> **Important**: Keep the private key secure, do not commit files containing the key to public repositories or websites.
-
-For information on generating an RSA key pair locally, see: [Creating a private/public key pair for {{site.cloudfilemanager}}](#creatingaprivatepublickeypairfortinydrive).
-
-## JWT provider URL
-
-The easiest way to setup JWT authentication against {{site.cloudname}} services is to create a JWT provider endpoint. This endpoint takes a JSON HTTP POST request and produces a JSON result with the token that the service will then use for all the HTTP requests.
-
-The following diagram explains the JWT call flow:
-
-![JSON Web Token Call Flow]({{site.baseurl}}/images/jwt-call-flow.png "JSON Web Token Call Flow")
+{% include auth/jwt-provider-endpoint-url.md %}
 
 ## JWT requirements
 
-### Algorithm
-
-Our examples use, and we recommend RS256 algorithm. This is a list of supported ones: RS256, RS384, RS512, PS256, PS384, PS512
+{% include auth/jwt-supported-algorithms.md %}
 
 ### Claims
 
 These are like options/data you can send with the JWT token.
 
-* **sub** - _(required)_ Unique string to identify the user. This can be a database ID, hashed email address, or similar identifier.
-* **name** - _(required)_ Full name of the user that will be used for presentation inside {{site.cloudfilemanager}}. When the user uploads a file, this name is presented as the creator of that file.
-* **https://claims.tiny.cloud/drive/root** - (optional) Full path to a {{site.cloudfilemanager}} specific root for example "/johndoe". The user won't be able to see or manage files outside this configured root path.
+<dl>
+<dt><code>sub</code> <em>(required)</em></dt><dd>Unique string to identify the user. This can be a database ID, hashed email address, or similar identifier.</dd>
+<dt><code>name</code> <em>(required)</em></dt><dd>Full name of the user that will be used for presentation inside {{site.cloudfilemanager}}. When the user uploads a file, this name is presented as the creator of that file.</dd>
+<dt><code>https://claims.tiny.cloud/drive/root</code> <em>(optional)</em></dt><dd>Full path to a {{site.cloudfilemanager}} specific root for example "/johndoe". The user won't be able to see or manage files outside this configured root path.</dd>
+</dl>
 
-> **Note**: The "sub" value is a case-sensitive string containing a **String** or **URI** value. The `sub` cannot have a `:` *unless* it is a valid URI or else the callback would fail.
+> **Note**: The "`sub`" claim is a case-sensitive string containing a **String** or **URI** value. The `sub` claim cannot have a `:` *unless* it is a valid URI or else the callback will fail.
 
-## JWT endpoint setup procedure
-
-Follow these steps to set up your own JWT endpoint.
-
- 1. Setup a JWT endpoint on your server, this could be a simple page using one of the examples below.
- 2. Configure the `tinydrive_token_provider` to that endpoint.
- 3. Make sure you copy the private key into the example code.
- 4. You should be good to go now.
-
- > The JWT Endpoint should examine your systems sessions to verify your user has access to your system.
+{% include auth/jwt-endpoint-setup-procedure.md %}
 
 ## Need help?
 
@@ -110,7 +89,7 @@ try {
 
 ### TinyMCE example with jwt.php Endpoint
 
-```
+```js
 tinymce.init({
   selector: 'textarea',
   plugins: 'image media link tinydrive code imagetools',
@@ -169,7 +148,7 @@ app.listen(3000);
 
 ### TinyMCE example with /jwt endpoint
 
-```
+```js
 tinymce.init({
   selector: 'textarea',
   plugins: 'image media link tinydrive code imagetools',
@@ -184,4 +163,4 @@ If you managed to set this up, you should be good to go with checking out the va
 
 If you need some help, check our [help page]({{site.baseurl}}/tinydrive/get-help/) and if that doesn't work, [submit a support request]({{site.supporturl}}).
 
-{% include configuration/gen-rsa-key-pairs.md %}
+{% include auth/gen-rsa-key-pairs.md %}

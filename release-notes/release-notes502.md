@@ -7,7 +7,7 @@ keywords: releasenotes newfeatures deleted technologypreview bugfixes knownissue
 
 ## Overview
 
-The Release Notes provide high-level coverage of the improvements and additions that have been implemented in TinyMCE 5.0.2 and document known problems in this release, as well as notable bug fixes, deprecated functionality, and other details.
+{{site.productname}} 5.0.2 was released for {{site.enterpriseversion}} and {{site.cloudname}} on Monday, March 18<sup>th</sup>, 2019. It includes {{site.productname}} 5.0.2 and additional changes to premium plugins. The Release Notes provide high-level coverage of the improvements and additions that have been implemented in TinyMCE 5.0.2 and document known problems in this release, as well as notable bug fixes, deprecated functionality, and other details.
 
 TinyMCE 5.0.2 release adds improvements to the TinyMCE editor to improve the overall user experience.
 
@@ -22,7 +22,7 @@ Refer to the [toolbar_drawer]({{site.baseurl}}/configure/editor-appearance/#tool
 
 The new TinyMCE 5.0.2 editor has the ability to add checklists to the content. The **Checklist** plugin helps the user keep track of all required actions by creating a simple, clean, and easy to use TODO list.
 
-For more information on **Checklist** refer to the full [documentation]({{site.baseurl}}/plugins/checklist/).
+For more information on **Checklist** refer to the full [documentation]({{site.baseurl}}/plugins/premium/checklist/).
 
 There is also a demo provided to explore the **Checklist** capabilities [here]({{site.baseurl}}/demo/checklist/).
 

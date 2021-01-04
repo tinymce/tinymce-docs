@@ -8,7 +8,7 @@ keywords: releasenotes bugfixes
 
 ## Overview
 
-These release notes provide an overview of the changes for {{site.productname}} 5.2.1, including:
+{{site.productname}} 5.2.1 was released for {{site.enterpriseversion}} and {{site.cloudname}} on Monday, April 6<sup>th</sup>, 2020.  It includes {{site.productname}} 5.2.1 and additional changes to premium plugins. These release notes provide an overview of the changes for {{site.productname}} 5.2.1, including:
 
 - [General bug fixes](#generalbugfixes)
 - [Accompanying Premium Plugin changes](#accompanyingpremiumpluginchanges)

@@ -117,7 +117,7 @@ var fakeServer = (function () {
     userDb[user.id] = user;
   });
 
-  /* This represents getting the complete list of users from the server with only basic details */
+  /* This represents getting the complete list of users from the server with the details required for the mentions "profile" item */
   var fetchUsers = function() {
     return new Promise(function(resolve, _reject) {
       /* simulate a server delay */
@@ -126,6 +126,8 @@ var fakeServer = (function () {
           return {
             id: id,
             name: userDb[id].name,
+            image: userDb[id].image,
+            description: userDb[id].description
           };
         });
         resolve(users);
@@ -234,6 +236,6 @@ tinymce.init({
   mentions_fetch: mentions_fetch,
   mentions_menu_hover: mentions_menu_hover,
   mentions_menu_complete: mentions_menu_complete,
-  mentions_select: mentions_select
-
+  mentions_select: mentions_select,
+  mentions_item_type: 'profile'
 });

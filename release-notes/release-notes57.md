@@ -6,17 +6,13 @@ description: Release notes for TinyMCE 5.7
 keywords: releasenotes bugfixes
 ---
 
-{% comment %}
-Replace 5.7 with the version number such as: X.Y.Z
-Replace 57 with the version number without points, such as XYZ
-{% endcomment %}
+## Overview
 
-These release notes provide an overview of the changes for {{site.productname}} 5.7, including:
+{{site.productname}} 5.7 was released for {{site.enterpriseversion}} and {{site.cloudname}} on <<`WEEKDAY`, `MMM` `D`<sup>`st|nd|th`</sup>, `YYYY`>>. It includes {{site.productname}} 5.7 and additional changes to premium plugins. These release notes provide an overview of the changes for {{site.productname}} 5.7, including:
 
-- [TinyMCE 5.7 new features and enhancements](#tinymce57newfeaturesandenhancements)
+- [New features](#newfeatures)
+- [Enhancements](#enhancements)
 - [Accompanying Premium Plugin changes](#accompanyingpremiumpluginchanges)
-- [Accompanying Premium self-hosted server-side component changes](#accompanyingpremiumself-hostedserver-sidecomponentchanges)
-- [Minor changes for TinyMCE 5.7](#minorchangesfortinymce57)
 - [General bug fixes](#generalbugfixes)
 - [Security fixes](#securityfixes)
 - [Deprecated features](#deprecatedfeatures)
@@ -25,11 +21,29 @@ These release notes provide an overview of the changes for {{site.productname}} 
 
 {{site.releasenotes_for_stable}}
 
-## TinyMCE 5.7 new features and enhancements
+## New features
 
-The following new features and enhancements were added for the {{site.productname}} 5.7 release.
+The following new features were added for the {{site.productname}} 5.7 release.
 
-### Improvement Name
+### Feature name
+
+### Additional new features
+
+{{site.productname}} 5.7 introduces the following minor new features:
+
+- changelog
+
+## Enhancements
+
+The following enhancements were made for the {{site.productname}} 5.7 release.
+
+### Enhancement name
+
+### Additional enhancements
+
+{{site.productname}} 5.7 introduces the following minor enhancements:
+
+- changelog
 
 ## Accompanying Premium Plugin changes
 
@@ -60,10 +74,10 @@ This version requires Java 8 or higher. For information on the removal of Java 7
 
 For information on:
 
-- The Spell Checker Pro plugin, see: [Spell Checker Pro plugin]({{site.baseurl}}/plugins/tinymcespellchecker/).
-- The Link Checker plugin, see: [Link Checker plugin]({{site.baseurl}}/plugins/linkchecker/).
-- The Image Tools plugin, see: [Image Tools plugin]({{site.baseurl}}/plugins/imagetools/).
-- The Enhanced Media Embed plugin, see: [Enhanced Media Embed plugin]({{site.baseurl}}/plugins/mediaembed/).
+- The Spell Checker Pro plugin, see: [Spell Checker Pro plugin]({{site.baseurl}}/plugins/premium/tinymcespellchecker/).
+- The Link Checker plugin, see: [Link Checker plugin]({{site.baseurl}}/plugins/premium/linkchecker/).
+- The Image Tools plugin, see: [Image Tools plugin]({{site.baseurl}}/plugins/opensource/imagetools/).
+- The Enhanced Media Embed plugin, see: [Enhanced Media Embed plugin]({{site.baseurl}}/plugins/premium/mediaembed/).
 - Deploying the server-side components, see: [Server-side component installation]({{site.baseurl}}/enterprise/server/).
 
 ### Security update for self-hosted server-side components
@@ -76,12 +90,6 @@ For information on:
 
 - Deploying the server-side components, see: [Server-side component installation]({{site.baseurl}}/enterprise/server/).
 - Deploying the server-side components using Docker, see: [Containerized service deployments]({{site.baseurl}}/enterprise/server/dockerservices/).
-
-## Minor changes for TinyMCE 5.7
-
-{{site.productname}} 5.7 introduces the following minor changes:
-
-- changelog
 
 ## General bug fixes
 

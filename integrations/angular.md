@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Angular 4+ integration
-title_nav: Angular 4+
+title: Angular 6+ integration
+title_nav: Angular 6+
 description: Using TinyMCE together with Angular with the @tinymce/tinymce-angular component
 keywords: integration integrate angular
 ---

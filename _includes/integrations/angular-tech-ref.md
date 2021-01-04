@@ -2,6 +2,7 @@
 
 **Covered in this section:**
 
+- [Supported Angular versions](#supportangularversion)
 - [Installing the TinyMCE Angular integration using NPM](#installingthetinymceangularintegrationusingnpm)
 - [Using the TinyMCE Angular integration](#usingthetinymceangularintegration)
 - [Configuring the editor](#configuringtheeditor)
@@ -30,6 +31,16 @@
   - [`allowedEvents`](#allowedevents)
   - [`ignoreEvents`](#ignoreevents)
 
+### Supported Angular versions
+
+The following table shows the supported versions of Angular and the required version of the `tinymce-angular` integration package.
+
+| Angular Version | `tinymce-angular` version |
+|:---:|:---:|
+| 9+ | 4.x |
+| 6 to 8 | 3.x |
+| 5 or older | Not Supported |
+
 ### Installing the TinyMCE Angular integration using NPM
 
 To install the `tinymce-angular` package and save it to your `package.json`.
@@ -37,8 +48,6 @@ To install the `tinymce-angular` package and save it to your `package.json`.
 ```sh
 $ npm install --save @tinymce/tinymce-angular
 ```
-
-This package is for Angular 5+. For Angular 4, use `@tinymce/tinymce-angular-legacy`
 
 ### Using the TinyMCE Angular integration
 

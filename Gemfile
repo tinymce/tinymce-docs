@@ -10,6 +10,6 @@ group :development, :test do
   gem 'kramdown', '~> 2.3.0'
   gem 'kramdown-parser-gfm', '~> 1.1.0'
   gem 'redcarpet', '~> 3.5'
-  gem 'nokogiri', '~> 1.10.0'
+  gem 'nokogiri', '~> 1.11.0.rc4'
   gem "jekyll-last-modified-at", "~> 1.3.0"
 end

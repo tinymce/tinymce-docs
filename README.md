@@ -38,11 +38,11 @@ You need the following programs installed on your computer:
     - On Fedora, run:
 
       ```
-      sudo dnf install git-all gcc-c++ make zlib-devel
+      sudo dnf install git-all gcc-c++ make zlib-devel ruby-devel
       ```
     - On Ubuntu, Debian or their derivatives, run:
       ```
-      sudo apt install git gcc cpp make zlib1g-dev
+      sudo apt install git gcc cpp make zlib1g-dev ruby-dev
       ```
 
 2. Install Ruby Nokogiri: https://nokogiri.org/
@@ -52,7 +52,7 @@ You need the following programs installed on your computer:
 
 3. Install Ruby Bundler. Install using:
     ```
-    sudo gem install bundler
+    sudo gem install bundler -v 1.17.3
     ```
 
 4. (optional) Docker

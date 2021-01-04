@@ -36,6 +36,7 @@ To enable the Advanced Tables plugin, add `advtable` to the list of plugins. For
 
 ```js
 tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
   plugins: 'table advtable',
   menubar: 'table'
 });

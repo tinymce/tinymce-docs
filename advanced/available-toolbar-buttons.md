@@ -219,7 +219,7 @@ The following toolbar buttons are available for all {{site.productname}} instanc
 {% include misc/plugin-toolbar-button-id-boilerplate.md %}
 
 {% assign plugincategory = "premium" %}
-{% assign pluginname = "Tiny Drive" %}
+{% assign pluginname = site.cloudfilemanager %}
 {% assign plugincode = "tinydrive" %}
 {% include misc/plugin-toolbar-button-id-boilerplate.md %}
 

@@ -2,7 +2,7 @@
 
 {{ site.requires_5_5v }}
 
-{% if page.dir != "/plugins/table/" %}
+{% if page.dir != "/plugins/opensource/table/" %}
 > **Note**: The `table_column_resizing` option requires the `table` plugin.
 {% endif %}
 

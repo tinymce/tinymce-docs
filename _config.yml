@@ -5,6 +5,7 @@ baseurl: ""
 shared_baseurl: ""
 syntax_highlight_theme: "tomorrow-night"
 cdnurl: "https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js"
+cdnurl_dev: "https://cdn.tiny.cloud/1/no-api-key/tinymce/5-dev/tinymce.min.js"
 tinymce_live_demo_url: "https://cdn.tiny.cloud/1/qagffr3pkuv17a8on1afax661irst1hbr4e6tbv888sz91jc/tinymce/5/tinymce.min.js"
 tinydrive_live_demo_url: "https://cdn.tiny.cloud/1/qagffr3pkuv17a8on1afax661irst1hbr4e6tbv888sz91jc/tinydrive/stable/tinydrive.min.js"
 webcomponent_url: "https://cdn.jsdelivr.net/npm/@tinymce/tinymce-webcomponent@1/dist/tinymce-webcomponent.min.js"
@@ -12,7 +13,7 @@ default_meta_keywords: tinymce, documentation, docs, plugins, customizable skins
 # product variables
 productname: TinyMCE
 productmajorversion: 5
-productminorversion: 5.5
+productminorversion: 5.6
 ##### product name in codeblock
 prodnamecode: tinymce
 #### more names
@@ -21,8 +22,10 @@ companynameformal: Tiny Technologies, Inc.
 cloudname: Tiny Cloud
 cloudfilemanager: Tiny Drive
 enterpriseversion: TinyMCE Enterprise
+communityname: TinyMCE Community
 accountpage: Tiny Account
 supportname: Tiny Support
+betaprogram: Tiny Insights Program
 #### some plugin names
 prem_skins_icons: Tiny Skins and Icon Packs
 #### Plan names
@@ -41,6 +44,7 @@ pricingpage: https://www.tiny.cloud/pricing
 contactpage: https://www.tiny.cloud/contact
 legalpage: https://about.tiny.cloud/legal
 communitysupporturl: https://stackoverflow.com/questions/tagged/tinymce
+betaprogramurl: https://www.tiny.cloud/insights-program/
 # HTML entities
 tick: '&#10004;'
 cross: '&#10006;'
@@ -55,6 +59,7 @@ requires_5_2v: "> **Note**: This feature is only available for TinyMCE 5.2 and l
 requires_5_3v: "> **Note**: This feature is only available for TinyMCE 5.3 and later."
 requires_5_4v: "> **Note**: This feature is only available for TinyMCE 5.4 and later."
 requires_5_5v: "> **Note**: This feature is only available for TinyMCE 5.5 and later."
+requires_5_6v: "> **Note**: This feature is only available for TinyMCE 5.6 and later."
 
 requires_jsscwar_230v: "> **Note**: This feature is only available for TinyMCE self-hosted server-side components, version 2.3.0 and later. To check the version of a running service, visit _&#60;domain&#62;_/_&#60;service&#62;_/version. Such as `http://localhost:8080/ephox-hyperlinking/version`."
 deprecate_spellchecker: "> **Important**: The **free** TinyMCE Spell Checker plugin (`spellchecker`) was deprecated with the release of TinyMCE 5.4. For details, see [the free TinyMCE Spell Checker plugin deprecation notice](https://www.tiny.cloud/docs/release-notes/release-notes54/#thefreetinymcespellcheckerplugin)."

@@ -2,7 +2,7 @@
 
 **Covered in this section:**
 
-- [Supported Angular versions](#supportangularversion)
+- [Supported Angular versions](#supportedangularversions)
 - [Installing the TinyMCE Angular integration using NPM](#installingthetinymceangularintegrationusingnpm)
 - [Using the TinyMCE Angular integration](#usingthetinymceangularintegration)
 - [Configuring the editor](#configuringtheeditor)

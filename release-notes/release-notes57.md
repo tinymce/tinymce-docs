@@ -39,9 +39,15 @@ The following enhancements were made for the {{site.productname}} 5.7 release.
 
 ### The `spellchecker_ignorelist` option now accepts arrays of words per language
 
-It is now possible to specify arrays of words per language to be ignored by Spell Checker Pro using the `spellchecker_ignorelist` option.
+{{site.productname}} 5.7 introduces enhancements to the `spellchecker_ignorelist` (formerly `spellchecker_whitelist`, see: [The `spellchecker_whitelist` option has been renamed](#thespellchecker_whitelistoptionhasbeenrenamed)).
 
-For information on the `spellchecker_ignorelist` option, see: [Spell Checker Pro - `spellchecker_ignorelist`]({{site.baseurl}}/plugins/premium/tinymcespellchecker/#spellchecker_ignorelist).
+- It is now possible to specify arrays of words per language to be ignored by Spell Checker Pro plugin using the `spellchecker_ignorelist` option.
+- A new `addIgnoredWords` API allows words to be ignored at runtime by the Spell Checker Pro plugin.
+
+For information on:
+
+- The `spellchecker_ignorelist` option, see: [Spell Checker Pro - `spellchecker_ignorelist`]({{ site.baseurl }}/plugins/premium/tinymcespellchecker/#spellchecker_ignorelist).
+- The `addIgnoredWords` API, see: [Spell Checker Pro - `API`]({{ site.baseurl }}/plugins/premium/tinymcespellchecker/#api).
 
 ### Additional enhancements
 
@@ -111,17 +117,13 @@ For information on:
 
 The following features have been deprecated with the release of {{site.productname}} 5.7:
 
-- [The spellchecker_whitelist option has been renamed](#thespellcheckerwhitelistoptionhasbeenrenamed).
+- [The `spellchecker_whitelist` option has been renamed](#thespellchecker_whitelistoptionhasbeenrenamed).
 
-### The spellchecker_whitelist option has been renamed
+### The `spellchecker_whitelist` option has been renamed
 
 With the release of {{site.productname}} 5.7, the `spellchecker_whitelist` option has been renamed to `spellchecker_ignorelist`.
 
-For information on the `spellchecker_ignorelist` option, see: [Spell Checker Pro - `spellchecker_ignorelist`]({{site.baseurl}}/plugins/premium/tinymcespellchecker/#spellchecker_ignorelist).
-
-- [](#).
-
-### The...
+For information on the `spellchecker_ignorelist` option, see: [Spell Checker Pro - `spellchecker_ignorelist`]({{ site.baseurl }}/plugins/premium/tinymcespellchecker/#spellchecker_ignorelist).
 
 ## Known issues
 

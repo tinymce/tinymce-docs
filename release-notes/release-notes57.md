@@ -43,7 +43,7 @@ The following enhancements were made for the {{site.productname}} 5.7 release.
 
 {{site.productname}} 5.7 introduces the following minor enhancements:
 
-- changelog
+- The `lists` plugin will now apply list styles to all text blocks within a selection.
 
 ## Accompanying Premium Plugin changes
 

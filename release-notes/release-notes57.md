@@ -37,7 +37,11 @@ The following new features were added for the {{site.productname}} 5.7 release.
 
 The following enhancements were made for the {{site.productname}} 5.7 release.
 
-### Enhancement name
+### The `spellchecker_ignorelist` option now accepts arrays of words per language
+
+It is now possible to specify arrays of words per language to be ignored by Spell Checker Pro using the `spellchecker_ignorelist` option.
+
+For information on the `spellchecker_ignorelist` option, see: [Spell Checker Pro - `spellchecker_ignorelist`]({{site.baseurl}}/plugins/premium/tinymcespellchecker/#spellchecker_ignorelist).
 
 ### Additional enhancements
 
@@ -106,6 +110,14 @@ For information on:
 ## Deprecated features
 
 The following features have been deprecated with the release of {{site.productname}} 5.7:
+
+- [The spellchecker_whitelist option has been renamed](#thespellcheckerwhitelistoptionhasbeenrenamed).
+
+### The spellchecker_whitelist option has been renamed
+
+With the release of {{site.productname}} 5.7, the `spellchecker_whitelist` option has been renamed to `spellchecker_ignorelist`.
+
+For information on the `spellchecker_ignorelist` option, see: [Spell Checker Pro - `spellchecker_ignorelist`]({{site.baseurl}}/plugins/premium/tinymcespellchecker/#spellchecker_ignorelist).
 
 - [](#).
 

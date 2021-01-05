@@ -38,8 +38,8 @@ The following table shows the supported versions of Angular and the required ver
 | Angular Version | `tinymce-angular` version |
 |:---:|:---:|
 | 9+ | 4.x |
-| 6 to 8 | 3.x |
-| 5 or older | Not Supported |
+| 5 to 8 | 3.x |
+| 4 or older | Not Supported |
 
 ### Installing the TinyMCE Angular integration using NPM
 

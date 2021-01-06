@@ -38,6 +38,7 @@ class: changelog
 * Fixed layout issues when empty `tr` elements were incorrectly removed from tables.
 * Fixed image file extensions lost when uploading an image with an alternative extension, such as `.jfif`.
 * Fixed a security issue where URLs in attributes weren't correctly sanitized.
+* Fixed a security issue in the `codesample` plugin by upgrading dependencies.
 * Fixed `DOMUtils.getParents` incorrectly including the shadow root in the array of elements returned.
 * Fixed an issue where the root document could be scrolled while an editor dialog was open inside a shadow root.
 * Fixed `getContent` with text format returning a new line when the editor is empty.

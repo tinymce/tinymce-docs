@@ -224,6 +224,7 @@ For information on the Spell Checker Pro plugin, see: [Spell Checker Pro plugin]
 {{site.productname}} 5.6 provides fixes for the following security issues:
 
 - Fixed a security issue where URLs in attributes weren't correctly sanitized.
+- Fixed a security issue in the `codesample` plugin by upgrading dependencies.
 
 PowerPaste 5.4.0 provides fixes for the following security issues:
 

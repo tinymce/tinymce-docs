@@ -2,8 +2,7 @@ tinymce.init({
   selector: 'textarea#checklist',
   plugins: 'lists checklist',
   toolbar: 'checklist',
-  height: 200,
-  width: 350,
+  height: 250,
   menu: {
     format: {
       title: 'Format',

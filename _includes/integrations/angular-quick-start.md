@@ -12,7 +12,9 @@ This procedure requires:
 * [Node.js (and npm)](https://nodejs.org/).
 * Access to `tinymce.min.js` on either:
     * [{{site.cloudname}}]({{site.baseurl}}/cloud-deployment-guide/editor-and-features/).
-    * {{site.productname}} Self-hosted. See [Installing {{ site.productname }}]({{site.baseurl}}/general-configuration-guide/advanced-install/) for details on self-hosting {{site.productname}}.
+    * {{site.productname}} Self-hosted. See:
+        * [Installing {{ site.productname }} - Package Managers]({{site.baseurl}}/general-configuration-guide/advanced-install/#packagemanagerinstalloptions).
+        * [Installing {{ site.productname }} - Self-Hosted Download / Install]({{site.baseurl}}/general-configuration-guide/advanced-install/#self-hostedinstall).
 
 ### Procedure
 
@@ -79,7 +81,7 @@ This procedure requires:
     ></editor>
     ```
     This {{site.productname}} editor configuration should replicate the example on the [Basic example page]({{site.baseurl}}/demo/basic-example/).
-7. Provide access to {{site.productname}} using {{site.cloudname}} or by self-hosting {{site.productname}}.
+7. Provide access to {{site.productname}} using either {{site.cloudname}} or by self-hosting {{site.productname}}.
 
     * **{{site.cloudname}}**
 
@@ -112,7 +114,7 @@ This procedure requires:
               { "glob": "**/*", "input": "node_modules/tinymce", "output": "/tinymce/" }
             ]
             ```
-        3. Load TinyMCE. 
+        3. Load TinyMCE.
             - To load TinyMCE when the editor is initialized (also known as lazy loading), add a dependency provider to the module using the `TINYMCE_SCRIPT_SRC` token.
                 {% if site.productmajorversion < 6 %}
                 > **Note**: Lazy loading is available for tinymce-angular 3.5.0 or later.
@@ -139,7 +141,7 @@ This procedure requires:
                 ]
                 ```
                 Update the editor configuration to include the `base_url` and `suffix` options.
-                
+
                 ```html
                 <editor [init]="{
                   base_url: '/tinymce', // Root for resources

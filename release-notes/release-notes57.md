@@ -37,13 +37,18 @@ The following new features were added for the {{site.productname}} 5.7 release.
 
 The following enhancements were made for the {{site.productname}} 5.7 release.
 
-### Enhancement name
+### Improved behavior when using `lists` plugin on mixed content
+
+Improved behavior when using the `lists` plugin to add lists to selections containing:
+
+- Multiple text blocks.
+- Mixes of existing lists and text blocks.
 
 ### Additional enhancements
 
 {{site.productname}} 5.7 introduces the following minor enhancements:
 
-- The `lists` plugin will now apply list styles to all text blocks within a selection.
+- changelog
 
 ## Accompanying Premium Plugin changes
 

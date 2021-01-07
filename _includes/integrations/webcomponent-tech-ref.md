@@ -470,7 +470,7 @@ window.myConfig = {
     }
   ],
   spellchecker_dialog: true,
-  spellchecker_ignorelist: ['Ephox', 'Moxiecode']
+  spellchecker_ignore_list: ['Ephox', 'Moxiecode']
 };
 </script>
 <tinymce-editor

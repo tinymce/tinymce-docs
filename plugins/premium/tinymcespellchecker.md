@@ -204,29 +204,32 @@ tinymce.init({
 });
 ```
 
-### `spellchecker_ignorelist`
+<!-- Bookmark for deprecated option name -->
+<a class="anchor" id="spellchecker_whitelist">
 
-This option specifies an array of words to be ignored by the spell checker.
+### `spellchecker_ignore_list`
+
+This option specifies which words should be ignored by the spell checker. If an array of words is provided, the specified words will be ignored for all languages. If an object containing an array of words per language is provided, the specified words will be ignored for the specified languages.
 
 **Type:** `String[]` or `Object`
 
-#### Example: Using `spellchecker_ignorelist`
+#### Example: Using `spellchecker_ignore_list` to ignore words in all languages
 
 ```js
 tinymce.init({
   selector: 'textarea',
   plugins: 'tinymcespellchecker',
-  spellchecker_ignorelist: ['tinymce', 'TinyMCE']
+  spellchecker_ignore_list: ['tinymce', 'TinyMCE']
 });
 ```
 
-#### Example: Using `spellchecker_ignorelist` for specific languages
+#### Example: Using `spellchecker_ignore_list` for specific languages
 
 ```js
 tinymce.init({
   selector: 'textarea',
   plugins: 'tinymcespellchecker',
-  spellchecker_ignorelist: {
+  spellchecker_ignore_list: {
     en_us: ['tinymce', 'TinyMCE'],
     es: ['tinymce']
   }
@@ -336,14 +339,9 @@ tinymce.init({
 });
 ```
 
-## API
 
-| Name | Arguments | Description |
-|------| ------| ----------- |
-| addIgnoredWords | words: `string[]`, lang?: `string` | Add an array of words to the `spellchecker_ignorelist` for a specific language. Add the array of words to all languages by omitting the `lang` parameter. |
+## APIs
 
-### Example: Using `Spell Checker Pro` plugin APIs
+The {{pluginname}} plugin provides the following APIs.
 
-```js
-tinymce.activeEditor.plugins.tinymcespellchecker.addIgnoredWords(['TinyMCE', 'tinymce'], 'en_us');
-```
+{% include plugin-apis/{{plugincode}}-apis.md %}

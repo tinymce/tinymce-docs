@@ -39,7 +39,7 @@ The following enhancements were made for the {{site.productname}} 5.7 release.
 
 ### Improved behavior when using `lists` plugin on mixed content
 
-Improved behavior when using the `lists` plugin to add lists to selections containing:
+The `lists` plugin has been updated to improve the handling of content containing:
 
 - Multiple text blocks.
 - Combinations of existing lists and text blocks.

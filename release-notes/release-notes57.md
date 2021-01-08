@@ -42,7 +42,7 @@ The following enhancements were made for the {{site.productname}} 5.7 release.
 Improved behavior when using the `lists` plugin to add lists to selections containing:
 
 - Multiple text blocks.
-- Mixes of existing lists and text blocks.
+- Combinations of existing lists and text blocks.
 
 ### Additional enhancements
 

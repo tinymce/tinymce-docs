@@ -55,7 +55,7 @@ The {{site.productname}} 5.7 release includes an accompanying release of the **S
 
 **Spell Checker Pro** 2.3.0 provides the following enhancements:
 
-### The `spellchecker_ignore_list` option now accepts arrays of words for specific languages
+#### The `spellchecker_ignore_list` option now accepts arrays of words for specific languages
 
 **Spell Checker Pro** 2.3.0 introduces enhancements to the `spellchecker_ignore_list` (formerly `spellchecker_whitelist`, see: [The `spellchecker_whitelist` option has been renamed](#thespellchecker_whitelistoptionhasbeenrenamed)).
 

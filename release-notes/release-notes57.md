@@ -37,7 +37,9 @@ The following new features were added for the {{site.productname}} 5.7 release.
 
 The following enhancements were made for the {{site.productname}} 5.7 release.
 
-### Enhancement name
+### Table widths are now retained when copying and pasting tables
+
+Tables copied to the clipboard when using the `table` plugin will now retain their width and the width of each column when pasted.
 
 ### Additional enhancements
 

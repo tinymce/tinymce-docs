@@ -39,6 +39,12 @@ The following enhancements were made for the {{site.productname}} 5.7 release.
 
 ### Enhancement name
 
+### Media live embeds now support video and audio elements
+
+The `media_live_embeds` option now supports rendering live embeds of `audio` and `video` elements while editing content. The elements can now also be resized without having to open a dialog to manually change the size.
+
+For information on the `media_live_embeds` option, see: [Media plugin - `media_live_embeds`]({{site.baseurl}}/plugins/opensource/media/#media_live_embeds).
+
 ### Additional enhancements
 
 {{site.productname}} 5.7 introduces the following minor enhancements:

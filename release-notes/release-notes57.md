@@ -39,10 +39,10 @@ The following enhancements were made for the {{site.productname}} 5.7 release.
 
 ### Improved behavior when using `lists` plugin on mixed content
 
-The `lists` plugin has been updated to improve the handling of content containing:
+The `lists` plugin has been updated to improve toggling lists on content containing:
 
-- Multiple text blocks.
-- Combinations of existing lists and text blocks.
+- Multiple blocks of text.
+- Combinations of existing lists and blocks of text.
 
 ### Additional enhancements
 

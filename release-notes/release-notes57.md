@@ -55,15 +55,23 @@ For information on the `media_live_embeds` option, see: [Media plugin - `media_l
 
 The following premium plugin updates were released alongside {{site.productname}} 5.7.
 
-### Premium Plugin Name X.Y.Z
+### Spell Checker Pro 2.3.0
 
-The {{site.productname}} 5.7 release includes an accompanying release of the **<<Premium Plugin Name>>** premium plugin.
+The {{site.productname}} 5.7 release includes an accompanying release of the **Spell Checker Pro** premium plugin.
 
-**<<Premium Plugin Name>>** X.Y.Z provides the following improvements:
+**Spell Checker Pro** 2.3.0 provides the following enhancements:
 
-- <Description>
+#### The `spellchecker_ignore_list` option now accepts arrays of words for specific languages
 
-For information on the <<Premium Plugin Name>> plugin, see: [<<Premium Plugin Name>> plugin]({{site.baseurl}}/plugins/<<Premium Plugin Name>>/).
+**Spell Checker Pro** 2.3.0 introduces enhancements to the `spellchecker_ignore_list` (formerly `spellchecker_whitelist`, see: [The `spellchecker_whitelist` option has been renamed](#thespellchecker_whitelistoptionhasbeenrenamed)).
+
+- It is now possible to specify arrays of words for specific languages to be ignored by Spell Checker Pro plugin using the `spellchecker_ignore_list` option.
+- A new `addIgnoredWords` API allows words to be ignored at runtime by the Spell Checker Pro plugin.
+
+For information on:
+
+- The `spellchecker_ignore_list` option, see: [Spell Checker Pro - `spellchecker_ignore_list`]({{ site.baseurl }}/plugins/premium/tinymcespellchecker/#spellchecker_ignore_list).
+- The `addIgnoredWords` API, see: [Spell Checker Pro - `API`]({{ site.baseurl }}/plugins/premium/tinymcespellchecker/#api).
 
 ## Accompanying Premium self-hosted server-side component changes
 
@@ -113,9 +121,13 @@ For information on:
 
 The following features have been deprecated with the release of {{site.productname}} 5.7:
 
-- [](#).
+- [The `spellchecker_whitelist` option has been renamed](#thespellchecker_whitelistoptionhasbeenrenamed).
 
-### The...
+### The `spellchecker_whitelist` option has been renamed
+
+With the release of {{site.productname}} 5.7, the `spellchecker_whitelist` option has been renamed to `spellchecker_ignore_list`.
+
+For information on the `spellchecker_ignore_list` option, see: [Spell Checker Pro - `spellchecker_ignore_list`]({{ site.baseurl }}/plugins/premium/tinymcespellchecker/#spellchecker_ignore_list).
 
 ## Known issues
 

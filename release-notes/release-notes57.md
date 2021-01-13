@@ -37,7 +37,12 @@ The following new features were added for the {{site.productname}} 5.7 release.
 
 The following enhancements were made for the {{site.productname}} 5.7 release.
 
-### Enhancement name
+### Improved behavior when using `lists` plugin on mixed content
+
+The `lists` plugin has been updated to improve toggling lists on content containing:
+
+- Multiple blocks of text.
+- Combinations of existing lists and blocks of text.
 
 ### Media live embeds now support video and audio elements
 

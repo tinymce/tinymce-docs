@@ -137,7 +137,7 @@ Space-separated list of classes that are:
 - Applied to newly created inline or block elements.
 - Appended to selected existing inline or block elements.
 
-To replace existing classes, use the `class` parameter.
+To replace existing classes, use the `class` attribute.
 
 **Type:** `String`
 
@@ -149,24 +149,6 @@ tinymce.init({
   formats: {
     // Changes the default format for the bold button to produce a span with a bold class
     bold: { inline: 'span', classes: 'bold' }
-  }
-});
-```
-
-#### `class`
-
-A space-separated list of classes that are applied to new or selected existing inline or block elements. The provided class will replace any existing classes on the element when the format is applied.
-
-**Type:** `String`
-
-##### Example: Using `class` parameter
-
-```js
-tinymce.init({
-  selector: 'textarea',
-  formats: {
-    // Changes the default format for the bold button to produce a span with a bold class
-    bold: { inline: 'span', class: 'bold' }
   }
 });
 ```
@@ -203,6 +185,24 @@ tinymce.init({
   formats: {
     // Changes the default format for the bold button to produce a strong with data-style attribute
     bold: { inline: 'strong', attributes: { 'data-style': 'bold' } }
+  }
+});
+```
+
+##### Example: Using `class` in the attributes parameter
+
+To apply a class to new or selected existing elements, add the `'class'` attribute to the `attributes` parameter. The provided class will replace any existing classes on the element when the format is applied.
+
+```js
+tinymce.init({
+  selector: 'textarea',
+  formats: {
+    // Changes the default format for the bold button to produce a span with a bold class
+    bold: {
+      inline: 'span',
+      attributes:
+      { 'class': 'bold' }
+    }
   }
 });
 ```

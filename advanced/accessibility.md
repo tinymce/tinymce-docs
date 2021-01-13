@@ -21,6 +21,8 @@ The **Alt+key** shortcut assumes that the cursor is in the content area of the e
 | Esc       | Close menu/submenu/dialog (also gets you back to editor area) |
 | Tab or Arrow | Navigate left/right through menu/toolbar |
 
+For additional navigation keyboard shortcuts and shortcuts for applying some commonly-used formats, see: [Keyboard shortcuts]({{site.baseurl}}/advanced/keyboard-shortcuts/).
+
 ## How to work with the editor
 
 When navigating to a TinyMCE editor, the keyboard focus (cursor) will be in the content area. The up and down arrow keys navigate between the lines of the editor, such as within and between paragraphs, headings and other items such as links.

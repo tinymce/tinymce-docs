@@ -132,7 +132,12 @@ For each format some additional parameters can be specified:
 
 #### `classes`
 
-Space-separated list of classes that are applied to the selected or newly created inline/block element.
+Space-separated list of classes that are:
+
+- Applied to newly created inline or block elements.
+- Appended to selected existing inline or block elements.
+
+To replace existing classes, use the `class` parameter.
 
 **Type:** `String`
 
@@ -144,6 +149,24 @@ tinymce.init({
   formats: {
     // Changes the default format for the bold button to produce a span with a bold class
     bold: { inline: 'span', classes: 'bold' }
+  }
+});
+```
+
+#### `class`
+
+A space-separated list of classes that are applied to new or selected existing inline or block elements. The provided class will replace any existing classes on the element when the format is applied.
+
+**Type:** `String`
+
+##### Example: Using `class` parameter
+
+```js
+tinymce.init({
+  selector: 'textarea',
+  formats: {
+    // Changes the default format for the bold button to produce a span with a bold class
+    bold: { inline: 'span', class: 'bold' }
   }
 });
 ```

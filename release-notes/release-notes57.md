@@ -67,8 +67,6 @@ For information on:
 - The `spellchecker_ignore_list` option, see: [Spell Checker Pro - `spellchecker_ignore_list`]({{ site.baseurl }}/plugins/premium/tinymcespellchecker/#spellchecker_ignore_list).
 - The `addIgnoredWords` API, see: [Spell Checker Pro - `API`]({{ site.baseurl }}/plugins/premium/tinymcespellchecker/#api).
 
-For information on the Spell Checker Pro plugin, see: [Spell Checker Pro plugin]({{site.baseurl}}/plugins/premium/tinymcespellchecker/).
-
 ## Accompanying Premium self-hosted server-side component changes
 
 The {{site.productname}} 5.7 release includes accompanying changes affecting the {{site.productname}} **self-hosted** services for the following plugins:

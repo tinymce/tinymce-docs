@@ -11,27 +11,34 @@ keywords: accessibility wai aria jaws nvda
 
 ## Keyboard shortcuts
 
-The `Alt+key` shortcut assumes that you are currently in the content area of the editor.
+The **Alt+key** shortcut assumes that the cursor is in the content area of the editor.
 
 | Alt Key   | Result      |
 |-----------|-------------|
-| Alt + F9  | Focus/jump to menu bar |
-| Alt + F10 | Focus/jump to toolbar |
-| Alt + F11 | Focus/jump to element path |
+| Alt+F9  | Focus/jump to menu bar |
+| Alt+F10 | Focus/jump to toolbar |
+| Alt+F11 | Focus/jump to element path |
 | Esc       | Close menu/submenu/dialog (also gets you back to editor area) |
-| Tab/Arrow | Navigate left/right through menu/toolbar |
-
+| Tab or Arrow | Navigate left/right through menu/toolbar |
 
 ## How to work with the editor
 
-The content area has initial focus when you navigate into an editor instance. `Up Arrow` and `Down Arrow` gives you paragraphs,<!-- REQUIRES DEV REVIEW --> headings and other items such as links. Note that NVDA and Firefox treat links as embedded characters, you have actually to navigate into them to read their texts, but they are accessible.
+When navigating to a TinyMCE editor, the keyboard focus (cursor) will be in the content area. The up and down arrow keys navigate between the lines of the editor, such as within and between paragraphs, headings and other items such as links.
 
-Press `Alt+F9` to move focus to the menu bar. `Left Arrow` and `Right Arrow` navigates through the top menu items. `Down Arrow` opens the menu. Press `Esc` once to go back to the top level. `Right Arrow` on a submenu navigate into them while `Esc` backs out.
+### Navigating the menu bar
 
-Alternatively, press `Alt+F10` to focus on the toolbars. The first toolbar has focus and you can `Tab` or arrow through the items<!-- DEV should items be buttons -->. Submenu items and panels are opened with `Down Arrow` and closed with `Esc`. When you reach the end of one toolbar the `Right Arrow` and `Left Arrow` wrap to the next and previous toolbars respectively. `Esc` brings you back into the central content area.
+To focus on the editor menu bar, press **Alt+F9**. The **Left Arrow** and **Right Arrow** keys navigate through the top menu items. The **Down Arrow** opens the highlighted menu and moves focus to the first menu item. To activate or select the highlighted menu item, use the **Enter**, **Return**, or **Spacebar**. Press the **Esc** key to collapse the menu. The **Right Arrow** key opens submenus and the **Esc** key collapses submenus. To return focus to the content area from the menu bar, use the **Esc** key.
 
-Dialogs such as Insert/Edit or Image/Video are opened from either the menus or the toolbars. These are multi-page dialogs with at least two tabs at the top. The `Right Arrow` and `Left Arrow` moves between the tabs in the tab list. `Space` makes the current tab active. Tab moves into the panel and through the controls. `Save` accepts changes, `Esc` or `Cancel` discards changes.
+### Navigating the toolbar
 
-You can insert emoticons or change the text and background colors on the toolbars and in the formatting menu. These are panels you open by pressing `Down Arrow` or `Enter` on their respective menu/toolbar items and then use the arrow keys to select the item you want to be applied/inserted. All of these items are screen reader enabled allowing the visually impaired to navigate the toolbars and menu structure.
+#### General toolbar navigation
 
+To focus on the editor toolbars, press **Alt+F10**; which moves the keyboard focus to the first toolbar button on the first toolbar. To move between toolbar buttons _within_ toolbar groups (visual groups of toolbar buttons), use the **Left Arrow** and **Right Arrow** keys. To move the focus _between_ toolbar groups, use the **Tab** or **Shift+Tab** keys. When you reach the end a toolbar group the **Right Arrow** key will return the focus to the start of the toolbar group. To activate or select the highlighted toolbar button, use the **Enter**, **Return**, or **Spacebar**. To return focus to the content area from the menu bar, use the **Esc** key.
 
+#### Navigating toolbar buttons that contain menus or grids
+
+To open submenus or grid selections on toolbar buttons, use the **Down Arrow** key. To close submenus or grids, use the **Esc** key. Some toolbar buttons with menus will present a grid of options rather than a menu, such as the background color selector. These grids can be navigated with the arrow keys and closed using the **Esc** key.
+
+### Navigating dialogs
+
+Dialogs such as **Insert/Edit Image** are opened from either a menu item or a toolbar button. Some dialogs contain multiple tabs or pages of options. To change tabs or pages, use the arrow keys; the highlighted tab will become active immediately. Use the **Tab** key to navigate between the dialog options on the selected dialog tab. The **Save** dialog button stores the changes, and the **Cancel** dialog button or the **Esc** key discards changes.

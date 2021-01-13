@@ -319,6 +319,40 @@ tinymce.init({
 });
 ```
 
+#### `merge_siblings`
+
+When the `merge_siblings` parameter is set to `false`, two or more similar inline elements will not automatically merge.
+
+When `merge_siblings` is set to `true` the following two HTML elements will be merged automatically.
+
+Before merge:
+
+```html
+<span class="myclass">some</strong><span class="myclass">text</strong>
+```
+
+After merge:
+
+```html
+<span class="myclass">sometext</strong>
+```
+
+**Type:** `Boolean`
+
+**Default:** `true`
+
+##### Example: Using `merge_siblings`
+
+```js
+tinymce.init({
+  selector: 'textarea',
+  formats: {
+    // A custom format that wraps blocks into a div with the specified wrapper class
+    'custom-format': { inline: 'span', classes: 'myclass', merge_siblings: false }
+  }
+});
+```
+
 ### Example of usage of the formats option
 
 This example overrides some of the built-in formats and tells {{site.productname}} to apply classes instead of inline styles. It also includes a custom format that produced `h1` elements with a title attribute and a `red` CSS style.

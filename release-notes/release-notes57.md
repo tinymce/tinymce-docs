@@ -39,7 +39,7 @@ The following enhancements were made for the {{site.productname}} 5.7 release.
 
 ### Table widths are now retained when copying and pasting tables
 
-Tables copied to the clipboard when using the `table` plugin will now retain their width and the width of each column when pasted.
+Tables copied to the clipboard when using the `table` plugin will now correctly retain the width of each column. Additionally, the table width will be correctly adjusted to account for the copied column widths.
 
 ### Additional enhancements
 

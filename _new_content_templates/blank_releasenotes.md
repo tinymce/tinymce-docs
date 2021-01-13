@@ -58,7 +58,15 @@ The following premium plugin updates were released alongside {{site.productname}
 
 The {{site.productname}} vnumtxt release includes an accompanying release of the **<<Premium Plugin Name>>** premium plugin.
 
-**<<Premium Plugin Name>>** X.Y.Z provides the following improvements:
+**<<Premium Plugin Name>>** X.Y.Z adds the following new features:
+
+- <Description>
+
+**<<Premium Plugin Name>>** X.Y.Z introduces the following enhancements:
+
+- <Description>
+
+**<<Premium Plugin Name>>** X.Y.Z provides the following bug fixes:
 
 - <Description>
 

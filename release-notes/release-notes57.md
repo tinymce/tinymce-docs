@@ -37,6 +37,11 @@ The following new features were added for the {{site.productname}} 5.7 release.
 
 The following enhancements were made for the {{site.productname}} 5.7 release.
 
+
+### Table widths are now retained when copying and pasting tables
+
+Tables copied to the clipboard when using the `table` plugin will now correctly retain the width of each column. Additionally, the table width will be correctly adjusted to account for the copied column widths.
+
 ### Improved behavior when using `lists` plugin on mixed content
 
 The `lists` plugin has been updated to improve toggling lists on content containing:

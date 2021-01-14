@@ -124,7 +124,7 @@ Restart the service and confirm the settings have been applied like so:
 
 ### Installing curl on Mac
 
-curl is installed by default on all MacOS X installations. Open the "terminal" application to use it.
+curl is installed by default on all macOS installations. Open the "terminal" application to use it.
 
 ### Installing curl on Linux
 

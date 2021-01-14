@@ -29,7 +29,7 @@ When navigating to a TinyMCE editor, the keyboard focus (cursor) will be in the 
 
 ### Navigating the menu bar
 
-To focus on the editor menu bar, press **Alt+F9**. The **Left Arrow** and **Right Arrow** keys navigate through the top menu items. The **Down Arrow** opens the highlighted menu and moves focus to the first menu item. To activate or select the highlighted menu item, use the **Enter**, **Return**, or **Spacebar**. Press the **Esc** key to collapse the menu. The **Right Arrow** key opens submenus and the **Esc** key collapses submenus. To return focus to the content area from the menu bar, use the **Esc** key.
+To focus on the editor menu bar, press **Alt+F9**. The **Left Arrow** and **Right Arrow** keys navigate through the top menu items. The **Down Arrow** key opens the highlighted menu and moves focus to the first menu item. To activate or select the highlighted menu item, use the **Enter**, **Return**, or **Spacebar** keys. Press the **Esc** key to collapse the menu. The **Right Arrow** key opens submenus and the **Esc** key collapses submenus. To return focus to the content area from the menu bar, use the **Esc** key.
 
 ### Navigating the toolbar
 

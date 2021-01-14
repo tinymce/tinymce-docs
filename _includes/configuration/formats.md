@@ -328,13 +328,13 @@ When `merge_siblings` is set to `true` the following two HTML elements will be m
 Before merge:
 
 ```html
-<span class="myclass">some</strong><span class="myclass">text</strong>
+<span class="myclass">some</span><span class="myclass">text</span>
 ```
 
 After merge:
 
 ```html
-<span class="myclass">sometext</strong>
+<span class="myclass">sometext</span>
 ```
 
 **Type:** `Boolean`

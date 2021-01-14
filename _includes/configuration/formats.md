@@ -200,8 +200,7 @@ tinymce.init({
     // Changes the default format for the bold button to produce a span with a bold class
     bold: {
       inline: 'span',
-      attributes:
-      { 'class': 'bold' }
+      attributes: { class: 'bold' }
     }
   }
 });

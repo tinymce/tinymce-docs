@@ -1,4 +1,4 @@
-# TinyMCE documentation
+# TinyMCE Documentation
 
 This project maintains the documentation for TinyMCE at
 [https://www.tiny.cloud/docs-4x/](https://www.tiny.cloud/docs-4x/). If you have any

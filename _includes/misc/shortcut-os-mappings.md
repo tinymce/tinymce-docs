@@ -2,7 +2,7 @@
 
 When creating shortcuts for {{site.productname}}, the following modifiers can be used. Some modifiers map to different keys, depending on the user's operating system.
 
-| Modifier | PC        | MacOS          |
+| Modifier | PC        | macOS          |
 |----------|-----------|----------------|
 | `Meta`   | Ctrl      | Command        |
 | `Shift`  | Shift     | Shift          |

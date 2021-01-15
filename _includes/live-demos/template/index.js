@@ -21,7 +21,7 @@ tinymce.init({
     {
       title: 'Date modified example',
       description: 'Adds a timestamp indicating the last time the document modified.',
-      content: '<p>Last Modified: <time class="mdate">This will be replaced with the date modied.</time></p>'
+      content: '<p>Last Modified: <time class="mdate">This will be replaced with the date modified.</time></p>'
     },
     {
       title: 'Replace values example',

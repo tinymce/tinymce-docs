@@ -9,7 +9,7 @@ keywords: enterprise tinymcespellchecker spell check checker pro
 
 Additional configuration to your `application.conf` file is required. (Don't forget to restart the Java application server after updating the configuration.)
 
-Adding the `ephox.spelling.custom-dictionaries-path` element activates the custom dictionary feature. It points to a directory on the servier's file system that will contain custom dictionary files and should not contain anything else. It is a good idea to store these files where the `application.conf` file lives, i.e. if `application.conf` is in a directory called `/opt/ephox`, the dictionary files could live in a sub-directory `/opt/ephox/dictionaries`.
+Adding the `ephox.spelling.custom-dictionaries-path` element activates the custom dictionary feature. It points to a directory on the server's file system that will contain custom dictionary files and should not contain anything else. It is a good idea to store these files where the `application.conf` file lives, i.e. if `application.conf` is in a directory called `/opt/ephox`, the dictionary files could live in a sub-directory `/opt/ephox/dictionaries`.
 
 Example:
 

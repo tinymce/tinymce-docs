@@ -134,8 +134,8 @@ For each format some additional parameters can be specified:
 
 Space-separated list of classes that are:
 
-- Applied to newly created inline or block elements.
-- Appended to selected existing inline or block elements.
+- Applied to newly created block or inline elements.
+- Appended to existing classes on block or inline elements.
 
 To replace existing classes, use the `class` attribute.
 

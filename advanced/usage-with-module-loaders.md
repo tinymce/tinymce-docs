@@ -67,7 +67,7 @@ A **skin** consists of some fonts and CSS files used by the editor and {{site.pr
 
 The quickest way to get started is to copy the skin that comes packaged with {{site.productname}}. This skin is located in `node_modules/tinymce/skins` - either manually copy the files in finder/file explorer or use the terminal:
 
-**MacOS and Linux**
+**macOS and Linux**
 
 ```sh
 cp -r node_modules/tinymce/skins skins

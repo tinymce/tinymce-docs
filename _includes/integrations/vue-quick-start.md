@@ -37,7 +37,9 @@ This procedure requires:
 * Access to `tinymce.min.js` on either:
 
     * [{{site.cloudname}}]({{site.baseurl}}/cloud-deployment-guide/editor-and-features/).
-    * {{site.productname}} Self-hosted. See [Installing {{ site.productname }}]({{site.baseurl}}/general-configuration-guide/advanced-install/) for details on self-hosting {{site.productname}}.
+    * {{site.productname}} Self-hosted. See:
+        * [Installing {{ site.productname }} - Package Managers]({{site.baseurl}}/general-configuration-guide/advanced-install/#packagemanagerinstalloptions).
+        * [Installing {{ site.productname }} - Self-Hosted Download / Install]({{site.baseurl}}/general-configuration-guide/advanced-install/#self-hostedinstall).
 
 ### Procedure
 
@@ -56,9 +58,9 @@ This procedure requires:
       ```
 
     * To skip the interactive prompt:
-        
+
       * For Vue.js 3.x users:
-      
+
         ```sh
         $ vue create --inlinePreset '{ "vueVersion": "3", "plugins": {} }' tinymce-vue-demo
         ```
@@ -133,7 +135,7 @@ This procedure requires:
     ```
 
     This {{site.productname}} editor configuration should replicate the example on the [Basic example page]({{site.baseurl}}/demo/basic-example/).
-6. Provide access to {{site.productname}} using {{site.cloudname}} or by self-hosting {{site.productname}}.
+6. Provide access to {{site.productname}} using either {{site.cloudname}} or by self-hosting {{site.productname}}.
 
     * **{{site.cloudname}}**
 

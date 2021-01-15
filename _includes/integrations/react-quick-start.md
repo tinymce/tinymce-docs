@@ -12,7 +12,9 @@ This procedure requires:
 * [Node.js (and npm)](https://nodejs.org/).
 * Access to `tinymce.min.js` on either:
     * [{{site.cloudname}}]({{site.baseurl}}/cloud-deployment-guide/editor-and-features/).
-    * {{site.productname}} Self-hosted. See [Installing {{ site.productname }}]({{site.baseurl}}/general-configuration-guide/advanced-install/) for details on self-hosting {{site.productname}}.
+    * {{site.productname}} Self-hosted. See:
+        * [Installing {{ site.productname }} - Package Managers]({{site.baseurl}}/general-configuration-guide/advanced-install/#packagemanagerinstalloptions).
+        * [Installing {{ site.productname }} - Self-Hosted Download / Install]({{site.baseurl}}/general-configuration-guide/advanced-install/#self-hostedinstall).
 
 ### Procedure
 
@@ -78,7 +80,7 @@ This procedure requires:
     ```
     This JavaScript file will create the class `App` containing a {{site.productname}} editor configured to replicate the example on the [Basic example page]({{site.baseurl}}/demo/basic-example/).
 
-6. Provide access to {{site.productname}} using {{site.cloudname}} or by self-hosting {{site.productname}}.
+6. Provide access to {{site.productname}} using either {{site.cloudname}} or by self-hosting {{site.productname}}.
 
     * **{{site.cloudname}}**
 

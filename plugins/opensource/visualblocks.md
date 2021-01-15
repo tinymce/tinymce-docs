@@ -12,8 +12,6 @@ controls: toolbar button, menu item
 
 This plugin allows a user to see block level elements in the editable area. It is similar to WYSIWYG hidden character functionality, but at block level. It also adds a toolbar button and a menu item `Show blocks` under the `View` menu dropdown.
 
-**Type:** `String`
-
 ## Basic setup
 
 ```js

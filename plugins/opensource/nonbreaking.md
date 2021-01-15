@@ -12,8 +12,6 @@ controls: toolbar button, menu item
 
 This plugin adds a button for inserting nonbreaking space entities `&nbsp;` at the current caret location (cursor insert point). It also adds a menu item `Nonbreaking space` under the `Insert` menu dropdown and a toolbar button.
 
-**Type:** `String`
-
 ## Basic setup
 
 ```js

@@ -12,8 +12,6 @@ controls: toolbar button
 
 This plugin adds a save button to the {{site.productname}} toolbar, which will submit the form that the editor is within.
 
-**Type:** `String`
-
 ## Basic setup
 
 ```js

@@ -9,8 +9,6 @@ keywords: height width max_height min_height autoresize_on_init autoresize_overf
 
 This plugin automatically resizes the editor to the content inside it. It is typically used to prevent the editor from expanding infinitely as a user types into the editable area. For example, by giving the `max_height` option a value the editor will stop resizing when the set value is reached.
 
-**Type:** `String`
-
 ## Basic setup
 
 ```js

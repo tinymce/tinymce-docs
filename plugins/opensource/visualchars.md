@@ -12,8 +12,6 @@ controls: toolbar button, menu item
 
 This plugin adds the ability to see invisible characters like `&nbsp;` displayed in the editable area. It also adds a toolbar control and a menu item `Show invisible characters` under the `View` menu.
 
-**Type:** `String`
-
 ## Basic setup
 
 ```js

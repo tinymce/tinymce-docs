@@ -10,8 +10,6 @@ The `importcss` plugin adds the ability to automatically import CSS classes from
 
 By default selectors like `".my-class"`, `".my-class1.my-class2"` and `"p.my-class"` get imported as format rules.
 
-**Type:** `String`
-
 ## Basic setup
 
 ```js

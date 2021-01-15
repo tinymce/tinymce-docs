@@ -8,8 +8,6 @@ keywords: tabfocus tabfocus_elements prev next
 
 This plugin adds the possibility to tab in/out of {{site.productname}}.
 
-**Type:** `String`
-
 ## Basic setup
 
 ```js

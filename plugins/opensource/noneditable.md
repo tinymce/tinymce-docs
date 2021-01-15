@@ -10,8 +10,6 @@ keywords: noneditable contenteditable editable mceNonEditable noneditable_editab
 
 This plugin enables you to prevent users from being able to edit content within elements assigned the `mceNonEditable` class.
 
-**Type:** `String`
-
 ## Basic setup
 
 ```js

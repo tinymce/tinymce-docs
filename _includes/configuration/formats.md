@@ -132,7 +132,12 @@ For each format some additional parameters can be specified:
 
 #### `classes`
 
-Space-separated list of classes that are applied to the selected or newly created inline/block element.
+Space-separated list of classes that are:
+
+- Applied to newly created block or inline elements.
+- Appended to existing classes on block or inline elements.
+
+To replace existing classes, use the `class` attribute.
 
 **Type:** `String`
 
@@ -180,6 +185,23 @@ tinymce.init({
   formats: {
     // Changes the default format for the bold button to produce a strong with data-style attribute
     bold: { inline: 'strong', attributes: { 'data-style': 'bold' } }
+  }
+});
+```
+
+##### Example: Using `class` in the attributes parameter
+
+To apply a class to new or selected existing elements, add the `'class'` attribute to the `attributes` parameter. The provided class will replace any existing classes on the element when the format is applied.
+
+```js
+tinymce.init({
+  selector: 'textarea',
+  formats: {
+    // Changes the default format for the bold button to produce a span with a bold class
+    bold: {
+      inline: 'span',
+      attributes: { class: 'bold' }
+    }
   }
 });
 ```

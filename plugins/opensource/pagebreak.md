@@ -33,6 +33,8 @@ These settings affect the execution of the `pagebreak` plugin. They enable you t
 
 **Type:** `String`
 
+**Default Value:** `"<!-- pagebreak -->"`
+
 #### Example: Using `pagebreak_separator`
 
 ```js

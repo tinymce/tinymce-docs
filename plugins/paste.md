@@ -75,7 +75,7 @@ tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "paste",
   menubar: "edit",
-  toolbar: "paste"
+  toolbar: "paste",
   paste_as_text: true
 });
 ```

@@ -12,8 +12,6 @@ controls: toolbar button, menu item
 
 The `table` plugin adds table management functionality to {{site.productname}}. It also adds a new menubar item `Table` with various options in its dropdown including `Insert table` and options to modify cells, rows and columns, and a toolbar button with the same functionality.
 
-**Type:** `String`
-
 ## Basic setup
 
 ```js

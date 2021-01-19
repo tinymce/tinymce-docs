@@ -16,8 +16,6 @@ controls: toolbar button, menu item
 
 This plugin enables {{site.productname}}'s spellcheck functionality. It also adds a toolbar button and the menu item `Spellcheck` under the `Tools` menu dropdown.
 
-**Type:** `String`
-
 ## Basic setup
 
 ```js

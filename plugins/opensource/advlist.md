@@ -10,8 +10,6 @@ The `advlist` plugin extends the core `bullist` and `numlist` toolbar controls b
 
 > **Important**: The [Lists](../lists) (`lists`) plugin must be activated for the `advlist` plugin to work.
 
-**Type:** `String`
-
 ## Basic setup
 
 ```js

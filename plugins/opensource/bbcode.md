@@ -11,8 +11,6 @@ This plugin makes it possible to edit BBCode in a WYSIWYG style by converting ta
 
 > You will need to sacrifice quite a lot of {{site.productname}}'s functionality to use this plugin properly, since BBCode format doesn't support the whole HTML specification.
 
-**Type:** `String`
-
 ## Basic setup
 
 ```js

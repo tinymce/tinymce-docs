@@ -12,8 +12,6 @@ controls: toolbar button, menu item
 
 The `template` plugin adds support for custom templates. It also adds a menu item `Insert template` under the `Insert` menu and a toolbar button.
 
-**Type:** `String`
-
 ## Basic setup
 
 ```js

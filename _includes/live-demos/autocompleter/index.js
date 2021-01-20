@@ -8,7 +8,6 @@ var specialChars = [
   { text: 'ampersand', value: '&' },
   { text: 'asterisk', value: '*' }
 ];
-
 tinymce.init({
   selector: 'textarea#autocompleter',
   height: 250,
@@ -17,13 +16,13 @@ tinymce.init({
       editor.selection.setRng(rng);
       editor.insertContent(value);
       autocompleteApi.hide();
-    }
+    };
 
     var getMatchedChars = function (pattern) {
       return specialChars.filter(function (char) {
         return char.text.indexOf(pattern) !== -1;
       });
-    }
+    };
 
     /* An autocompleter that allows you to insert special characters */
     editor.ui.registry.addAutocompleter('specialchars', {

@@ -13,8 +13,6 @@ This plugin adds an anchor/bookmark button to the toolbar that inserts an anchor
 
 When a user clicks on the anchor button or menu item they will be prompted via a dialog box to enter a string. The string will be inserted into the HTML as an anchor id at the location of the cursor. For example, a user places their cursor at the beginning of "Hello World" and clicks on the anchor button and enters "start" in the dialog box. The resulting HTML will take the form of `<p><a id="start"></a>Hello, World!</p>`.
 
-**Type:** `String`
-
 ## Basic setup
 
 ```js

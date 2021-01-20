@@ -12,8 +12,6 @@ controls: toolbar button, menu item
 
 The `media` plugin adds the ability for users to be able to add HTML5 video and audio elements to the editable area. It also adds the item `Insert/edit video` under the `Insert` menu as well as a toolbar button.
 
-**Type:** `String`
-
 ## Basic setup
 
 ```js

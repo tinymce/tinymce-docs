@@ -12,8 +12,6 @@ controls: toolbar button, menu item
 
 This plugin adds search/replace dialogs to {{site.productname}}. It also adds a toolbar button and the menu item `Find and replace` under the `Edit` menu dropdown.
 
-**Type:** `String`
-
 ## Basic setup
 
 ```js

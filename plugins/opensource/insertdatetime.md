@@ -12,8 +12,6 @@ controls: toolbar button, menu item
 
 The `insertdatetime` plugin provides a toolbar control and menu item `Insert date/time` (under the `Insert` menu) that lets a user easily insert the current date and/or time into the editable area at the cursor insertion point.
 
-**Type:** `String`
-
 ## Basic setup
 
 ```js

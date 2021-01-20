@@ -12,8 +12,6 @@ controls: toolbar button, menu item
 
 This plugin adds a print button to the toolbar. It also adds a `Print` item to the `File` menu dropdown.
 
-**Type:** `String`
-
 ## Basic setup
 
 ```js

@@ -14,10 +14,6 @@ This plugin adds page break support and enables a user to insert page breaks in 
 
 It also adds a toolbar button and a menu item `Page break` under the `Insert` menu dropdown.
 
-**Type:** `String`
-
-**Default Value:** `"<!-- pagebreak -->"`
-
 ## Basic setup
 
 ```js
@@ -36,6 +32,8 @@ These settings affect the execution of the `pagebreak` plugin. They enable you t
 ### `pagebreak_separator`
 
 **Type:** `String`
+
+**Default Value:** `"<!-- pagebreak -->"`
 
 #### Example: Using `pagebreak_separator`
 

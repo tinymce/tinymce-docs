@@ -7,7 +7,7 @@ description: A short introduction to creating plugins for TinyMCE along with an 
 keywords: plugin plugin.js plugin.min.js tinymce.js
 ---
 
-{{site.productname}} is designed to be easily extended by custom plugins.
+{{site.productname}} is designed to be easily extended by custom plugins; with APIs for registering custom plugins, and creating and localizing custom UI.
 
 ## Requirements
 
@@ -88,7 +88,9 @@ Due to the range of browser APIs used by {{site.productname}}; when testing {{si
 
 ## Language localization
 
-{{site.productname}} comes with translations for many languages. To add additional strings to a supported language for a custom plugin, use the following procedure:
+If a custom plugin includes any custom UI created using {{site.productname}}'s [UI APIs]({{site.baseurl}}/ui-components), then it may require localization.
+
+{{site.productname}} comes with translations for many strings in many languages. To add additional strings to a supported language for a custom plugin, use the following procedure.
 
 1. Create a "`langs`" directory in the custom plugin's root directory for custom translations.
 2. For each language that the plugin supports, create a translation file.

@@ -16,8 +16,6 @@ The emoticons plugin provides an autocompleter for adding emoji without using th
 
 > **Note**: The emoticons plugin does not automatically convert text emoticons into graphical emoji.
 
-**Type:** `String`
-
 ## Basic setup
 
 ```js

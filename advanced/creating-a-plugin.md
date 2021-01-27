@@ -96,7 +96,7 @@ Due to the range of browser APIs used by {{site.productname}}; when testing {{si
     The files should be JavaScript files and use the relevant language code as the file name. For example: {{site.productname}} will search for a Spanish translation file at `'<your plugin>/langs/es_ES.js'`, where `<your plugin>` is to the directory that contains the plugin's entry point file. For a list of supported languages, see: [Supported languages]({{ site.baseurl }}/configure/localization/#supportedlanguages).
 
 2. In each translation file, add translation strings by passing an object containing key-value pairs of source strings and translation strings to the [`tinymce.addI18n()` API]({{site.baseurl}}/api/tinymce/root_tinymce/#addi18n).
-3. In the plugin's entry point file, call `tinymce.PluginManager.requireLangPack()` and pass it the plugin identifier and a comma deliminated string of the language codes to load.
+3. In the plugin's entry point file, call `tinymce.PluginManager.requireLangPack()` and pass it the plugin identifier and a comma-delimitated string of the language codes to load.
 
 ### Example: The content of a translation file for additional Spanish translations
 

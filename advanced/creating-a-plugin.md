@@ -20,7 +20,7 @@ To be recognised as a plugin by {{site.productname}}, the code for your custom p
 {{site.companyname}} maintains a [Yeoman generator]({{ site.baseurl }}/advanced/yeoman-generator/) to assist with creating plugins for {{site.productname}}. The Yeoman Generator will create the files and boilerplate code required for a custom plugin, and sets up some helpful commands.
 
 ## Registering a custom plugin with {{site.productname}}
-Register a custom plugin with {{site.productname}} using the PluginManager. `PluginManager.add()` takes a string for the plugin identifier and a function that contains the code for initializing the plugin. Optionally return an object containing a function that returns metadata which will be used in the list of plugins in the [Help plugin]({{ site.baseurl }}/plugins/opensource/help) dialog.
+Register a custom plugin with {{site.productname}} using the PluginManager. `PluginManager.add()` takes a string for the plugin identifier and a function that contains the code for initializing the plugin.
 
 The plugin identifier passed to `PluginManager.add()` is used by {{site.productname}} as an identifier string. It should:
 
@@ -30,7 +30,7 @@ The plugin identifier passed to `PluginManager.add()` is used by {{site.productn
 
 If multiple plugins have the same identifier, one will override the others.
 
-The metadata object can contain the following values:
+Optionally, the function passed to `PluginManager.add()` can return an object that contains data that {{ site.productname }} or other plugins can use. {{ site.companyname }} recommends including a `getMetadata` callback that returns an object containing data that can be used to populate the list of plugins in the [Help plugin]({{ site.baseurl }}/plugins/opensource/help) dialog. The metadata object should contain the following values:
 
 - `name`: A string that contains the plugin's name, usually in a human-readable format.
 - `url`: A string that contains a URL, usually used to link to help documentation.

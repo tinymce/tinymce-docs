@@ -11,7 +11,7 @@ keywords: plugin plugin.js plugin.min.js tinymce.js
 
 ## Requirements
 
-To be recognised as a plugin by {{site.productname}}, the code for your custom plugin must have a JavaScript file with a single entry point that registers the plugin with {{site.productname}} using the `PluginManager` API. Any other code or resources can be in separate files and can be loaded in any standard manner. {{site.productname}} also has various APIs for loading [scripts]({{ site.baseurl }}/api/tinymce.dom/tinymce.dom.scriptloader/) and [stylesheets]({{ site.baseurl }}/api/tinymce.dom/tinymce.dom.stylesheetloader/).
+To be recognised as a plugin by {{site.productname}}, the code for a custom plugin must have a JavaScript file with a single entry point that registers the plugin with {{site.productname}} using the `PluginManager` API. Any other code or resources can be in separate files and can be loaded in any standard manner. {{site.productname}} also has various APIs for loading [scripts]({{ site.baseurl }}/api/tinymce.dom/tinymce.dom.scriptloader/) and [stylesheets]({{ site.baseurl }}/api/tinymce.dom/tinymce.dom.stylesheetloader/).
 
 {{site.productname}} does not require any special file structure or tooling apart from these requirements, so custom plugins can be developed using most frameworks and tools.
 
@@ -84,7 +84,7 @@ tinymce.init({
 
 ## Testing {{site.productname}}
 
-Due to the range of browser APIs used by {{site.productname}}; when testing {{site.productname}} or any custom plugins, you must use a testing framework that runs on a real browser. Testing frameworks that mock the browser will not work.
+Due to the range of browser APIs used by {{site.productname}}; when testing {{site.productname}} or any custom plugins, {{site.productname}} requires a testing framework that runs on a real browser. Testing frameworks that mock the browser will not work.
 
 ## Language localization
 

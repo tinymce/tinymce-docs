@@ -52,7 +52,7 @@ tinymce.PluginManager.add('example', function(editor, url) {
       openDialog();
     }
   });
-  /* return the metadata for the help plugin */
+  /* Return the metadata for the help plugin */
   return {
     getMetadata: function () {
       return  {
@@ -64,7 +64,7 @@ tinymce.PluginManager.add('example', function(editor, url) {
 });
 
 /*
-  The following is an example of how to use the new plugin and add the new
+  The following is an example of how to use the new plugin and the new
   toolbar button.
 */
 tinymce.init({

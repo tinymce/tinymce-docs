@@ -86,7 +86,7 @@ For information on:
 
 ## Accompanying Premium Skins and Icon Packs changes
 
-The {{site.productname}} 5.7 release includes an accompanying release of the **Premium Skins and Icon Packs** premium content. Included is a new `bootstrap` icon pack that provides [Bootstrap icons](https://icons.getbootstrap.com/) for {{site.productname}}.
+The {{site.productname}} 5.7 release includes an accompanying release of the **Premium Skins and Icon Packs**. Included is a new `bootstrap` icon pack that provides [Bootstrap icons](https://icons.getbootstrap.com/) for {{site.productname}}.
 
 For information on using premium skins and icon packs, see: [Premium Skins and Icon Packs]({{site.baseurl}}/enterprise/premium-skins-and-icon-packs/).
 

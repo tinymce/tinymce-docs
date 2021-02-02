@@ -13,6 +13,7 @@ keywords: releasenotes bugfixes
 - [New features](#newfeatures)
 - [Enhancements](#enhancements)
 - [Accompanying Premium Plugin changes](#accompanyingpremiumpluginchanges)
+- [Accompanying Premium Skins and Icon Packs changes](#accompanyingpremiumskinsandiconpackschanges)
 - [General bug fixes](#generalbugfixes)
 - [Security fixes](#securityfixes)
 - [Deprecated features](#deprecatedfeatures)
@@ -82,6 +83,12 @@ For information on:
 
 - The `spellchecker_ignore_list` option, see: [Spell Checker Pro - `spellchecker_ignore_list`]({{ site.baseurl }}/plugins/premium/tinymcespellchecker/#spellchecker_ignore_list).
 - The `addIgnoredWords` API, see: [Spell Checker Pro - `API`]({{ site.baseurl }}/plugins/premium/tinymcespellchecker/#api).
+
+## Accompanying Premium Skins and Icon Packs changes
+
+The {{site.productname}} 5.7 release includes an accompanying release of the **Premium Skins and Icon Packs**. Included is a new `bootstrap` icon pack that provides [Bootstrap icons](https://icons.getbootstrap.com/) for {{site.productname}}.
+
+For information on using premium skins and icon packs, see: [Premium Skins and Icon Packs]({{site.baseurl}}/enterprise/premium-skins-and-icon-packs/).
 
 ## Accompanying Premium self-hosted server-side component changes
 

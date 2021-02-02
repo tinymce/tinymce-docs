@@ -157,6 +157,7 @@ The following events are provided by the {{ site.productname }} editor.
 
 The following plugins provide events.
 
+  - [Advanced Tables events](#advancedtablesevents)
   - [Autosave events](#autosaveevents)
   - [Character Map events](#charactermapevents)
   - [Comments events](#commentsevents)
@@ -176,6 +177,10 @@ The following plugins provide events.
   - [Visual Blocks events](#visualblocksevents)
   - [Visual Characters events](#visualcharactersevents)
   - [Word Count events](#wordcountevents)
+
+### Advanced Tables events
+
+{% include events/advtable-events.md %}
 
 ### Autosave events
 

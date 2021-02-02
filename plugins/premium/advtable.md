@@ -44,6 +44,10 @@ tinymce.init({
 
 {% include misc/plugin-menu-item-id-boilerplate.md %}
 
+## Events
+
+{% include events/advtable-events.md %}
+
 ## Commands
 
 The Table plugin provides the following JavaScript commands.

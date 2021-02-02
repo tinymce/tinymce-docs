@@ -8,14 +8,14 @@
   padding: 20px;
 }
 .demo-dfree *[contentEditable="true"]:hover {
-  outline: 1px solid #2276d2;
+  outline: 1px solid {{site.primaryColor}};
 }
 .demo-dfree h1 {
-  color: #1976d2;
+  color: {{site.primaryColor}};
   font-size: 2em;
 }
 .demo-dfree h2 {
-  color: #1976d2;
+  color: {{site.primaryColor}};
   font-size: 2em;
 }
 .demo-dfree h3 {

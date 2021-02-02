@@ -26,6 +26,8 @@ tinymce.init({
 });
 ```
 
+### Supported Languages
+
 The available language codes for use with this option are as follows:
 
 | Language                      |  Code   | {{ site.cloudname }} /{{ site.newline }}{{ site.enterpriseversion }} |

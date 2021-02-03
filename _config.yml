@@ -77,7 +77,8 @@ svgsNotSupported: "> **Note**: SVGs (Scalable Vector Graphics) are not supported
 predefinedIconsOnly: "Name of the icon to be displayed. Must correspond to an icon: in the [icon pack](https://www.tiny.cloud/docs/advanced/editor-icon-identifiers/), in a [custom icon pack](https://www.tiny.cloud/docs/advanced/creating-an-icon-pack/), or added using the [`addIcon` API](https://www.tiny.cloud/docs/api/tinymce.editor.ui/tinymce.editor.ui.registry/#addicon)."
 
 liveDemoIframeCSSStyles: "'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'"
-liveDemoPrimaryColor: "#1976D2"
+
+primaryColor: "#1976D2"
 
 exclude:
   - Dockerfile

@@ -5,7 +5,7 @@
 }
 
 .dummy-header {
-    background-color: #2b579a;
+    background-color: {{site.primaryColor}};
     color: #fff;
     display: flex;
     font-size: 20px;

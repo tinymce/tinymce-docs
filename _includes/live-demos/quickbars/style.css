@@ -1,9 +1,9 @@
 .my-inline-editor:hover {
-  box-shadow: 0 0 4px #1976D2;
+  box-shadow: 0 0 4px {{site.primaryColor}};
   border-radius: 4px;
 }
 .my-inline-editor:focus {
-  box-shadow: 0 0 4px #1976D2;
+  box-shadow: 0 0 4px {{site.primaryColor}};
   border-radius: 4px;
 }
 .my-inline-editor {

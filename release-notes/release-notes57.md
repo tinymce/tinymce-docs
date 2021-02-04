@@ -85,7 +85,7 @@ It is now possible to specify arrays of words for specific languages to be ignor
 - `getLanguage`
 - `setLanguage`
 
-For information on the Spell Checker Pro API, see: [Spell Checker Pro - `API`]({{ site.baseurl }}/plugins/premium/tinymcespellchecker/#api).
+For information on the Spell Checker Pro API, see: [Spell Checker Pro - `API`]({{ site.baseurl }}/plugins/premium/tinymcespellchecker/#apis).
 
 #### New Spell Checker Pro Commands
 

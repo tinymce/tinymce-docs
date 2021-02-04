@@ -391,6 +391,12 @@ The following command requires the [Spell Checker (`spellchecker`)]({{site.baseu
 
 {% include commands/spellchecker-cmds.md %}
 
+#### Spell Checker Pro
+
+The following commands require the [Spell Checker Pro (`spellchecker`)]({{site.baseurl}}/plugins/opensource/spellcheckerpro/) plugin.
+
+{% include commands/tinymcespellchecker-cmds.md %}
+
 #### Table
 
 The following commands require the [Table (`table`)]({{site.baseurl}}/plugins/opensource/table/) plugin.

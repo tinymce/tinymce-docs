@@ -343,6 +343,31 @@ tinymce.init({
 });
 ```
 
+### SpellcheckerLanguageChanged event
+
+This event fires when the spellchecking language is changed.
+
+
+#### Example: The SpellcheckerLanguageChanged event
+
+```js
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'tinymcespellchecker',
+  toolbar: 'spellchecker',
+  init_instance_callback: function (editor) {
+    editor.on('SpellcheckerLanguageChanged', function (e) {
+      console.log('Spelling language changed: ' + e.language + '. Previous language: ' + e.prevLanguage);
+    });
+  }
+});
+```
+
+## Commands
+
+The Spell Checker Pro plugin provides the following commands.
+
+{% include commands/tinymcespellchecker-cmds.md %}
 
 ## APIs
 

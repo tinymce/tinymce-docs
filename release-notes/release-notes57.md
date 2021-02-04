@@ -43,6 +43,15 @@ The following enhancements were made for the {{site.productname}} 5.7 release.
 
 Tables copied to the clipboard when using the `table` plugin will now correctly retain the width of each column. Additionally, the table width will be correctly adjusted to account for the copied column widths.
 
+### Added support for `table_column_resizing` when inserting and deleting table columns
+
+When inserting or deleting table columns, the resizing behavior will now respect the `table_column_resizing` option:
+
+- `table_column_resizing: 'preservetable'` - The columns will resize to fit the width of the table.
+- `table_column_resizing: 'resizetable'` - The table will resize to fit the width of the columns.
+
+For more information on the `table_column_resizing` option, see: [Table plugin - `table_column_resizing`]({{ site.baseurl }}/plugins/opensource/table/#table_column_resizing).
+
 ### Improved behavior when using `lists` plugin on mixed content
 
 The `lists` plugin has been updated to improve toggling lists on content containing:

@@ -345,9 +345,9 @@ tinymce.init({
 
 ### SpellcheckerLanguageChanged event
 
-This event fires when the spellchecking language is changed.
-
 {{ site.requires_5_7v }}
+
+This event fires when the spellchecking language is changed.
 
 #### Example: The SpellcheckerLanguageChanged event
 

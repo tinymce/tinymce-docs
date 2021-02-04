@@ -72,7 +72,9 @@ The {{site.productname}} 5.7 release includes an accompanying release of the **A
 
 **Advanced Tables** 1.0.2 provides the following bug fix:
 
-- Fixed an issue where the `TableModified` event was not fired when sorting a table. For information on the `TableModified` event, see: [Advanced Tables plugin - `events`]({{ site.baseurl }}/plugins/premium/advtable/#events).
+- Fixed an issue where the `TableModified` event was not fired when sorting a table.
+
+For information on the `TableModified` event, see: [Advanced Tables plugin - Events]({{ site.baseurl }}/plugins/premium/advtable/#events).
 
 ### Spell Checker Pro 2.3.0
 

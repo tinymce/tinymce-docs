@@ -76,7 +76,7 @@ The {{site.productname}} 5.7 release includes an accompanying release of the **S
 
 **Spell Checker Pro** 2.3.0 introduces enhancements to the `spellchecker_ignore_list` (formerly `spellchecker_whitelist`, see: [The `spellchecker_whitelist` option has been renamed](#thespellchecker_whitelistoptionhasbeenrenamed)).
 
-It is now possible to specify arrays of words for specific languages to be ignored by Spell Checker Pro plugin using the `spellchecker_ignore_list` option, see: [Spell Checker Pro - `spellchecker_ignore_list`]({{ site.baseurl }}/plugins/premium/tinymcespellchecker/#spellchecker_ignore_list).
+It is now possible to specify arrays of words for specific languages to be ignored by the Spell Checker Pro plugin using the `spellchecker_ignore_list` option, see: [Spell Checker Pro - `spellchecker_ignore_list`]({{ site.baseurl }}/plugins/premium/tinymcespellchecker/#spellchecker_ignore_list).
 
 #### New Spell Checker Pro API
 
@@ -86,7 +86,7 @@ It is now possible to specify arrays of words for specific languages to be ignor
 - `getLanguage`
 - `setLanguage`
 
-For information on the Spell Checker Pro API, see: [Spell Checker Pro - `API`]({{ site.baseurl }}/plugins/premium/tinymcespellchecker/#apis).
+For information on the Spell Checker Pro API, see: [Spell Checker Pro - APIs]({{ site.baseurl }}/plugins/premium/tinymcespellchecker/#apis).
 
 #### New Spell Checker Pro Commands
 
@@ -97,13 +97,13 @@ For information on the Spell Checker Pro API, see: [Spell Checker Pro - `API`]({
 - `mceSpellcheckDialog`
 - `mceSpellcheckDialogClose`
 
-For information on the Spell Checker Pro Commands, see: [Spell Checker Pro - `Commands`]({{ site.baseurl }}/plugins/premium/tinymcespellchecker/#commands).
+For information on the Spell Checker Pro Commands, see: [Spell Checker Pro - Commands]({{ site.baseurl }}/plugins/premium/tinymcespellchecker/#commands).
 
 #### New Spell Checker Pro Event
 
-**Spell Checker Pro** introduces a new `SpellcheckerLanguageChanged` which is fired when the active language is changed.
+**Spell Checker Pro** introduces a new `SpellcheckerLanguageChanged` event which is fired when the active language is changed.
 
-For more information on the Spell Checker Pro Events, see: [Spell Checker Pro - `Events`]({{ site.baseurl }}/plugins/premium/tinymcespellchecker/#events).
+For information on the Spell Checker Pro Events, see: [Spell Checker Pro - `Events`]({{ site.baseurl }}/plugins/premium/tinymcespellchecker/#events).
 
 ## Accompanying Premium Skins and Icon Packs changes
 

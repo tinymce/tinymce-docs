@@ -244,6 +244,12 @@ tinymce.init({
 
 {% include misc/plugin-menu-item-id-boilerplate.md %}
 
+## Commands
+
+The Spell Checker Pro plugin provides the following commands.
+
+{% include commands/tinymcespellchecker-cmds.md %}
+
 ## Events
 
 {% include events/tinymcespellchecker-events.md %}
@@ -363,12 +369,6 @@ tinymce.init({
   }
 });
 ```
-
-## Commands
-
-The Spell Checker Pro plugin provides the following commands.
-
-{% include commands/tinymcespellchecker-cmds.md %}
 
 ## APIs
 

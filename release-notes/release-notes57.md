@@ -13,6 +13,7 @@ keywords: releasenotes bugfixes
 - [New features](#newfeatures)
 - [Enhancements](#enhancements)
 - [Accompanying Premium Plugin changes](#accompanyingpremiumpluginchanges)
+- [Accompanying Premium Skins and Icon Packs changes](#accompanyingpremiumskinsandiconpackschanges)
 - [General bug fixes](#generalbugfixes)
 - [Security fixes](#securityfixes)
 - [Deprecated features](#deprecatedfeatures)
@@ -103,6 +104,12 @@ For information on the Spell Checker Pro Commands, see: [Spell Checker Pro - `Co
 **Spell Checker Pro** introduces a new `SpellcheckerLanguageChanged` which is fired when the active language is changed.
 
 For more information on the Spell Checker Pro Events, see: [Spell Checker Pro - `Events`]({{ site.baseurl }}/plugins/premium/tinymcespellchecker/#events).
+
+## Accompanying Premium Skins and Icon Packs changes
+
+The {{site.productname}} 5.7 release includes an accompanying release of the **Premium Skins and Icon Packs**. Included is a new `bootstrap` icon pack that provides [Bootstrap icons](https://icons.getbootstrap.com/) for {{site.productname}}.
+
+For information on using premium skins and icon packs, see: [Premium Skins and Icon Packs]({{site.baseurl}}/enterprise/premium-skins-and-icon-packs/).
 
 ## Accompanying Premium self-hosted server-side component changes
 

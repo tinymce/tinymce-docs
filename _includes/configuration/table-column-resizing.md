@@ -6,12 +6,12 @@
 > **Note**: The `table_column_resizing` option requires the `table` plugin.
 {% endif %}
 
-The `table_column_resizing` option sets whether a table or other columns are resized when a user resizes a table column.
+The `table_column_resizing` option sets whether a table or other columns are resized when a user resizes, inserts, or deletes a table column.
 
 There are two settings:
 
-- `preservetable`: The table width is maintained when resizing table columns by changing the size of nearby columns.
-- `resizetable`: The table width is changed when resizing table columns and the size of other columns is maintained.
+- `preservetable`: The table width is maintained when manipulating table columns by changing the size of nearby columns.
+- `resizetable`: The table width is changed when manipulating table columns and the size of other columns is maintained.
 
 **Type:** `String`
 

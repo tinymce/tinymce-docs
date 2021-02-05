@@ -75,6 +75,16 @@ For information on the `media_live_embeds` option, see: [Media plugin - `media_l
 
 The following premium plugin updates were released alongside {{site.productname}} 5.7.
 
+### Advanced Tables 1.0.2
+
+The {{site.productname}} 5.7 release includes an accompanying release of the **Advanced Tables** premium plugin.
+
+**Advanced Tables** 1.0.2 provides the following bug fix:
+
+- Fixed an issue where the `TableModified` event was not fired when sorting a table.
+
+For information on the `TableModified` event, see: [Table plugin - Events]({{ site.baseurl }}/plugins/opensource/table/#events).
+
 ### Spell Checker Pro 2.3.0
 
 The {{site.productname}} 5.7 release includes an accompanying release of the **Spell Checker Pro** premium plugin.

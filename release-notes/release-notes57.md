@@ -50,7 +50,7 @@ When inserting or deleting table columns, the resizing behavior will now respect
 - `table_column_resizing: 'preservetable'` - The columns will resize to fit the width of the table.
 - `table_column_resizing: 'resizetable'` - The table will resize to fit the width of the columns.
 
-For more information on the `table_column_resizing` option, see: [Table plugin - `table_column_resizing`]({{ site.baseurl }}/plugins/opensource/table/#table_column_resizing).
+For information on the `table_column_resizing` option, see: [Table plugin - `table_column_resizing`]({{ site.baseurl }}/plugins/opensource/table/#table_column_resizing).
 
 ### Improved behavior when using `lists` plugin on mixed content
 

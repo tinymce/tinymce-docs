@@ -180,7 +180,7 @@ The following plugins provide events.
 
 ### Advanced Tables events
 
-{% include events/advtable-events.md %}
+For events applicable to the Advanced Tables plugin, see: [Table events](#tableevents).
 
 ### Autosave events
 

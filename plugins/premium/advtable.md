@@ -44,12 +44,12 @@ tinymce.init({
 
 {% include misc/plugin-menu-item-id-boilerplate.md %}
 
-## Events
-
-For events applicable to the Advanced Tables plugin, see: [Table plugin - Events]({{ site.baseurl }}/plugins/opensource/table/#events).
-
 ## Commands
 
 The Advanced Tables plugin provides the following JavaScript commands.
 
 {% include commands/advtable-cmds.md %}
+
+## Events
+
+For events applicable to the Advanced Tables plugin, see: [Table plugin - Events]({{ site.baseurl }}/plugins/opensource/table/#events).

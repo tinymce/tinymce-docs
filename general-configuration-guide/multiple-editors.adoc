@@ -16,7 +16,7 @@ In the following example, the page is broken into two separate editable areas, e
 <!DOCTYPE html>
 <html>
 <head>
-  <script src="{{ site.cdnurl }}"></script>
+  <script src="{cdnurl}"></script>
   <script type="text/javascript">
   tinymce.init({
     selector: '.myeditablediv',
@@ -52,7 +52,7 @@ In this next example, each editable area is loaded with an instance of TinyMCE w
 <!DOCTYPE html>
 <html>
 <head>
-  <script src="{{ site.cdnurl }}"></script>
+  <script src="{cdnurl}"></script>
   <script type="text/javascript">
   tinymce.init({
     selector: '#myeditable-h1',

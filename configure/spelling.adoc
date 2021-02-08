@@ -2,8 +2,8 @@
 :description: TinyMCE spell checking
 :description_short:
 
-{% include configuration/spell-checker-pro.md %}
+include::{partialsDir}configuration/spell-checker-pro.adoc[]
 
-{% include configuration/browser-spellcheck.md %}
+include::{partialsDir}configuration/browser-spellcheck.adoc[]
 
-{% include configuration/gecko-spellcheck.md %}
+include::{partialsDir}configuration/gecko-spellcheck.adoc[]

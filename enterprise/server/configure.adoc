@@ -14,8 +14,8 @@ This configuration file will require you to enter _at least_ the following  info
 
 Some server-side components require additional configuration which can be found in their individual documentation:
 
-* link:{{ site.baseurl }}/enterprise/embed-media/mediaembed-server-config/[Enhanced Media Embed]
-* link:{{ site.baseurl }}/enterprise/check-links/#linkcheckersdkquicksetup[Link Checker]
+* link:{baseurl}/enterprise/embed-media/mediaembed-server-config/[Enhanced Media Embed]
+* link:{baseurl}/enterprise/check-links/#linkcheckersdkquicksetup[Link Checker]
 
 === `allowed-origins` (required)
 
@@ -112,7 +112,7 @@ ephox {
 
 ==== Troubleshooting Origins
 
-If you missed an Origin or specified an Origin incorrectly, TinyMCE features that rely on the server-side components will not work from that Origin. If you observe that requests to the server-side components are failing or features are unavailable and you're not sure why, refer to the troubleshooting information about link:{{ site.baseurl }}/enterprise/server/troubleshoot/#usingbrowsertoolingtoinvestigateservicesissues[Using browser tooling to investigate services issues].
+If you missed an Origin or specified an Origin incorrectly, TinyMCE features that rely on the server-side components will not work from that Origin. If you observe that requests to the server-side components are failing or features are unavailable and you're not sure why, refer to the troubleshooting information about link:{baseurl}/enterprise/server/troubleshoot/#usingbrowsertoolingtoinvestigateservicesissues[Using browser tooling to investigate services issues].
 
 === `proxy` (optional)
 
@@ -218,7 +218,7 @@ ephox {
 
 === `image-proxy` (optional)
 
-The link:{{ site.baseurl }}/plugins/imagetools/[image proxy service] has some optional configuration to set a maximum size for images proxied. Images beyond this size it will not be proxied. Please note that the `http.request-timeout-seconds` above also applies to requests made by the image proxy service.
+The link:{baseurl}/plugins/imagetools/[image proxy service] has some optional configuration to set a maximum size for images proxied. Images beyond this size it will not be proxied. Please note that the `http.request-timeout-seconds` above also applies to requests made by the image proxy service.
 
 |===
 |  |  |
@@ -269,7 +269,7 @@ If you want logging to go to the container as well uncomment
 
 === Step 2. Pass the configuration file to the Java application server
 
-Assuming you've saved your `logback.xml` file in `/etc/opt/tinymce`, follow link:{{ site.baseurl }}/enterprise/server/#step4passtheconfigurationfiletothejavaapplicationserver[step 4] and link:{{ site.baseurl }}/enterprise/server/#step5restartthejavaapplicationserver[step 5] on the _Install Server-side Components_ page to set the following JVM system property on your Java application server:
+Assuming you've saved your `logback.xml` file in `/etc/opt/tinymce`, follow link:{baseurl}/enterprise/server/#step4passtheconfigurationfiletothejavaapplicationserver[step 4] and link:{baseurl}/enterprise/server/#step5restartthejavaapplicationserver[step 5] on the _Install Server-side Components_ page to set the following JVM system property on your Java application server:
 
 `
 -Dlogback.configurationFile=/etc/opt/tinymce/logback.xml

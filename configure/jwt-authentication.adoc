@@ -23,7 +23,7 @@ The easiest way to setup JWT authentication against TinyMCE cloud services is to
 
 The following diagram explains the JWT call flow:
 
-image::{{site.baseurl}}/images/jwt-call-flow.png[JSON Web Token Call Flow]
+image::{baseurl}/images/jwt-call-flow.png[JSON Web Token Call Flow]
 
 == JWT requirements
 
@@ -43,7 +43,7 @@ All of these algorithms use the private RSA key to sign the JWT, but vary in how
 === Claims:
 
 * *sub* - _(required)_ Unique string to identify the user. This can be a database ID, hashed email address, or similar identifier.
-* *name* - _(required)_ Full name of the user that will be used for presentation inside Tiny link:{{site.baseurl}}/plugins/drive/[Drive]. When the user uploads a file, this name is presented as the creator of that file.
+* *name* - _(required)_ Full name of the user that will be used for presentation inside Tiny link:{baseurl}/plugins/drive/[Drive]. When the user uploads a file, this name is presented as the creator of that file.
 
 == PHP token provider example
 

@@ -2,54 +2,54 @@
 :description: These settings change the way the editor handles the input and output of content. This will help you to create clean, maintainable and readable content.
 :description_short: Learn how to create clean, maintainable and readable content.
 
-{% include configuration/allow-conditional-comments.md %}
+include::{partialsDir}configuration/allow-conditional-comments.adoc[]
 
-{% include configuration/allow-html-in-named-anchor.md %}
+include::{partialsDir}configuration/allow-html-in-named-anchor.adoc[]
 
-{% include configuration/allow-unsafe-link-target.md %}
+include::{partialsDir}configuration/allow-unsafe-link-target.adoc[]
 
-{% include configuration/convert-fonts-to-spans.md %}
+include::{partialsDir}configuration/convert-fonts-to-spans.adoc[]
 
-{% include configuration/custom-elements.md %}
+include::{partialsDir}configuration/custom-elements.adoc[]
 
-{% include configuration/doctype.md %}
+include::{partialsDir}configuration/doctype.adoc[]
 
-{% include configuration/element-format.md %}
+include::{partialsDir}configuration/element-format.adoc[]
 
-{% include configuration/encoding.md %}
+include::{partialsDir}configuration/encoding.adoc[]
 
-{% include configuration/entities.md %}
+include::{partialsDir}configuration/entities.adoc[]
 
-{% include configuration/entity-encoding.md %}
+include::{partialsDir}configuration/entity-encoding.adoc[]
 
-{% include configuration/extended-valid-elements.md %}
+include::{partialsDir}configuration/extended-valid-elements.adoc[]
 
-{% include configuration/fix-list-elements.md %}
+include::{partialsDir}configuration/fix-list-elements.adoc[]
 
-{% include configuration/force-hex-style-colors.md %}
+include::{partialsDir}configuration/force-hex-style-colors.adoc[]
 
-{% include configuration/force-p-newlines.md %}
+include::{partialsDir}configuration/force-p-newlines.adoc[]
 
-{% include configuration/forced-root-block.md %}
+include::{partialsDir}configuration/forced-root-block.adoc[]
 
-{% include configuration/forced-root-block-attrs.md %}
+include::{partialsDir}configuration/forced-root-block-attrs.adoc[]
 
-{% include configuration/invalid-elements.md %}
+include::{partialsDir}configuration/invalid-elements.adoc[]
 
-{% include configuration/invalid-styles.md %}
+include::{partialsDir}configuration/invalid-styles.adoc[]
 
-{% include configuration/keep-styles.md %}
+include::{partialsDir}configuration/keep-styles.adoc[]
 
-{% include configuration/protect.md %}
+include::{partialsDir}configuration/protect.adoc[]
 
-{% include configuration/remove-trailing-brs.md %}
+include::{partialsDir}configuration/remove-trailing-brs.adoc[]
 
-{% include configuration/schema.md %}
+include::{partialsDir}configuration/schema.adoc[]
 
-{% include configuration/valid-children.md %}
+include::{partialsDir}configuration/valid-children.adoc[]
 
-{% include configuration/valid-classes.md %}
+include::{partialsDir}configuration/valid-classes.adoc[]
 
-{% include configuration/valid-elements.md %}
+include::{partialsDir}configuration/valid-elements.adoc[]
 
-{% include configuration/valid-styles.md %}
+include::{partialsDir}configuration/valid-styles.adoc[]

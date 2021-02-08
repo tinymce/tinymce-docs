@@ -42,7 +42,7 @@ $ npm install --save @tinymce/tinymce-react
 `@tinymce/tinymce-react` requires `tinymce` to be globally available to work, but to make it as easy as possible it will automatically load https://www.tinymce.com/docs/cloud-deployment-guide/editor-and-features/[TinyMCE Cloud] if it can't find TinyMCE available when the component is mounting. To get rid of the `+This domain is not registered...+` warning, sign up for the cloud and enter the api key like this:
 
 `js
-<Editor apiKey='YOUR_API_KEY' init={% raw %}{{{% endraw %} /* your other settings */ {% raw %}}}{% endraw %} />
+<Editor apiKey='YOUR_API_KEY' init=pass:[{{] /* your other settings */ pass:[}}] />
 `
 
 You can also define what cloud channel you want to use out these three
@@ -53,7 +53,7 @@ You can also define what cloud channel you want to use out these three
 So using the `dev` channel would look like this:
 
 `js
-<Editor apiKey='YOUR_API_KEY' cloudChannel='dev' init={% raw %}{{{% endraw %} /* your other settings */ {% raw %}}}{% endraw %} />
+<Editor apiKey='YOUR_API_KEY' cloudChannel='dev' init=pass:[{{] /* your other settings */ pass:[}}] />
 `
 
 For more info on the different channels see the https://www.tinymce.com/docs/cloud-deployment-guide/editor-and-features/editor-plugin-version/#devtestingandstablereleases[documentation].
@@ -63,7 +63,7 @@ For more info on the different channels see the https://www.tinymce.com/docs/clo
 To opt out of using TinyMCE cloud, you have to make TinyMCE globally available yourself. This can be done either by hosting the `tinymce.min.js` file by yourself and adding a script tag to your HTML or, if you are using a module loader, installing TinyMCE with npm. For info on how to get TinyMCE working with module loaders check out https://www.tinymce.com/docs/advanced/usage-with-module-loaders/[this page in the documentation].
 
 `html
-<script src="{{site.cdnurl}}"></script>
+<script src="{cdnurl}"></script>
 `
 
 == 4. Replace the App.js file
@@ -83,10 +83,10 @@ render() {
     return (
       <Editor
         initialValue="<p>This is the initial content of the editor</p>"
-        init={% raw %}{{{% endraw %}
+        init=pass:[{{]
           plugins: 'link image code',
           toolbar: 'undo redo | bold italic | alignleft aligncenter alignright | code'
-        {% raw %}}}{% endraw %}
+        pass:[}}]
         onChange={this.handleEditorChange}
       />
     );

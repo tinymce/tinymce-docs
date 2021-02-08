@@ -26,7 +26,7 @@ In fact, the `identifier`  is the only required argument, but if you want to be 
 
 But let's do something more useful than merely alerting a message. Let's insert something into the editor - a current date, for example.
 
-NOTE:  TinyMCE already ships with *nice* link:{{site.baseurl}}/plugins/insertdatetime/[Insert date/time plugin] (it is hard to find a text editing feature that is not implemented in TinyMCE), but it does a whole lot of complimentary things - adds some commands and shortcuts, inserts *"Insert date/time"* menu, adds support for fancy date formats, i18n, and some more. We won't go into all of that in this tutorial and make our button much simpler. However, `insertdatetime` plugin is a good read if mentioned stuff is something that you would like to familiarise yourself with. Its source code can be found on https://github.com/tinymce/tinymce/blob/master/js/tinymce/plugins/insertdatetime/plugin.js[github].
+NOTE:  TinyMCE already ships with *nice* link:{baseurl}/plugins/insertdatetime/[Insert date/time plugin] (it is hard to find a text editing feature that is not implemented in TinyMCE), but it does a whole lot of complimentary things - adds some commands and shortcuts, inserts *"Insert date/time"* menu, adds support for fancy date formats, i18n, and some more. We won't go into all of that in this tutorial and make our button much simpler. However, `insertdatetime` plugin is a good read if mentioned stuff is something that you would like to familiarise yourself with. Its source code can be found on https://github.com/tinymce/tinymce/blob/master/js/tinymce/plugins/insertdatetime/plugin.js[github].
 
 For our purpose, we will use https://developer.mozilla.org/en-US/docs/Web/HTML/Element/time[`<time>`] tag. `<time>` tag should have an attribute `datetime` - valid date with an optional time string. And as https://developer.mozilla.org/en-US/docs/Web/HTML/Element/time[MDN] states:
 
@@ -81,7 +81,7 @@ Here is the full code (you can experiment on it by clicking _Edit on Codepen_ in
 
 As you see we've supplied identifier of our button in the `toolbar` property, along with `undo` and `redo` (`code` plugin is also included - so that you could see HTML code that gets generated). So whenever the user clicks _Insert Current Date_, the date will be inserted into the editor at the current cursor position. Notice how `undo` button gets enabled after insertion, that's because we handle modification history for you.
 
-Another point is `setup` callback - see how we put all of our code into it? It is the callback that TinyMCE will link:{{ site.baseurl }}/configure/integration-and-setup/#setup[automatically invoke] for every initialised editor instance. It will receive a reference to the instance as the first argument. We can use `setup` callback to customize editor to our taste - here we are adding a button, but we could also add custom keyboard shortcuts, menus and everything that has to be added _before_ the editor is ready.
+Another point is `setup` callback - see how we put all of our code into it? It is the callback that TinyMCE will link:{baseurl}/configure/integration-and-setup/#setup[automatically invoke] for every initialised editor instance. It will receive a reference to the instance as the first argument. We can use `setup` callback to customize editor to our taste - here we are adding a button, but we could also add custom keyboard shortcuts, menus and everything that has to be added _before_ the editor is ready.
 
 == Button options
 
@@ -93,13 +93,13 @@ Button configuration properties:
 * *tooltip* - _tooltip to pop up on hover_
 * *onclick* - _callback to call when button is clicked_
 * *onpostrender* - _callback to call when button is rendered_
-* *cmd* - _editor command to invoke, when button is clicked (command link:{{ site.baseurl }}/api/tinymce/tinymce.editorcommands/#addcommands[should be registered] prior to this, either by editor or by you)_
+* *cmd* - _editor command to invoke, when button is clicked (command link:{baseurl}/api/tinymce/tinymce.editorcommands/#addcommands[should be registered] prior to this, either by editor or by you)_
 
 == Conditionally disable button
 
 You probably do not want your button to be enabled at all times since sometimes it might fall out of context. For example, it would be awkward if we could insert `<time>` tag into another `<time>` tag, right? And you can see in the example above, that it _is_ possible.
 
-So basically we need a way to monitor the cursor position and disable our button when it's inappropriate. For this purpose, we can hook onto a link:{{ site.baseurl }}/advanced/events/#nodechange[NodeChange event], that gets fired when cursor jumps from one node to another.
+So basically we need a way to monitor the cursor position and disable our button when it's inappropriate. For this purpose, we can hook onto a link:{baseurl}/advanced/events/#nodechange[NodeChange event], that gets fired when cursor jumps from one node to another.
 
 ```js
 // ...
@@ -126,7 +126,7 @@ Here's updated demo. Try to click inside and outside the date string:
 
 NOTE:  In reality, it would have been more practical to simply set `contenteditable` attribute to *false* on the `time` tag. But I wanted to demonstrate how you can toggle the button state, depending on various logical conditions.
 
-By the way, notice how the code for our example gets bigger and bigger. It has almost reached the boundaries of simplicity already. This is the moment when you should ask yourself whether it's better to link:{{ site.baseurl }}/advanced/creating-a-plugin/[bundle this feature as a plugin] instead.
+By the way, notice how the code for our example gets bigger and bigger. It has almost reached the boundaries of simplicity already. This is the moment when you should ask yourself whether it's better to link:{baseurl}/advanced/creating-a-plugin/[bundle this feature as a plugin] instead.
 
 == Toggle button
 

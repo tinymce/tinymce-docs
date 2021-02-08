@@ -30,7 +30,7 @@ setup: function(ed) {
    }
 `
 
-See link:{{ site.baseurl }}/configure/[Configure TinyMCE] for more information on how to configure TinyMCE core.
+See link:{baseurl}/configure/[Configure TinyMCE] for more information on how to configure TinyMCE core.
 
 === 2. Registering the Annotator Plugin
 
@@ -175,7 +175,7 @@ ed.on('init', function() {
 
 ```
 
-link:{{ site.baseurl }}/images/annotate.png[Example]
+link:{baseurl}/images/annotate.png[Example]
 
 == Retrieving All Annotations for a Particular Annotation Name
 

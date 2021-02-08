@@ -58,13 +58,13 @@ IMPORTANT: *do not* set `theme` to `mobile` in the top-level of your `init` sett
 
 == Configuring mobile
 
-One way to think about configuring TinyMCE mobile is that it is a subset of config options within your standard `tinymce` init. When on a mobile device, anything included in the link:{{ site.baseurl }}/configure/editor-appearance/#mobile[mobile] section will be used instead of the equivalent values in the top-level of settings of your config.
+One way to think about configuring TinyMCE mobile is that it is a subset of config options within your standard `tinymce` init. When on a mobile device, anything included in the link:{baseurl}/configure/editor-appearance/#mobile[mobile] section will be used instead of the equivalent values in the top-level of settings of your config.
 
 Therefore, the mobile section allows you to have completely different settings for mobile than non-mobile devices. The main configuration options you can change are `plugins` and `toolbar`.
 
 === Configuring the Plugins
 
-The plugins supported by mobile are currently limited to the link:{{ site.baseurl }}/plugins/autosave[autosave], link:{{ site.baseurl }}/plugins/autolink[autolink] and link:{{ site.baseurl }}/plugins/lists[lists] plugins. This is by design. We are in the early release cycle and want to hear from our developer community about which plugins should be mobile optimized. Please https://docs.google.com/forms/d/e/1FAIpQLSdWamU5HsZtv-SPqGRyu6Ql1zLqlrCQFP1vSrzx1oHikMFvlw/viewform[complete our survey] to have your say.
+The plugins supported by mobile are currently limited to the link:{baseurl}/plugins/autosave[autosave], link:{baseurl}/plugins/autolink[autolink] and link:{baseurl}/plugins/lists[lists] plugins. This is by design. We are in the early release cycle and want to hear from our developer community about which plugins should be mobile optimized. Please https://docs.google.com/forms/d/e/1FAIpQLSdWamU5HsZtv-SPqGRyu6Ql1zLqlrCQFP1vSrzx1oHikMFvlw/viewform[complete our survey] to have your say.
 
 Specify which of these plugins you want by adding a plugin entry to the mobile section:
 
@@ -82,7 +82,7 @@ tinymce.init({
 
 === Configuring the Toolbar
 
-TinyMCE mobile supports a small subset of the toolbar items supported by the main mode. The toolbar is specified in the link:{{ site.baseurl }}/configure/editor-appearance/#mobile[mobile] section also.
+TinyMCE mobile supports a small subset of the toolbar items supported by the main mode. The toolbar is specified in the link:{baseurl}/configure/editor-appearance/#mobile[mobile] section also.
 
 [source,js]
 ----
@@ -97,7 +97,7 @@ tinymce.init({
 });
 ----
 
-Below are the toolbar items currently supported, with any plugins/configuration required. Note, that the `list` functions require the link:{{ site.baseurl }}/plugins/lists[lists] plugin and <<,styleselect>> requires configuring link:{{ site.baseurl}}/configure/content-formatting/#style_formats[style_formats].
+Below are the toolbar items currently supported, with any plugins/configuration required. Note, that the `list` functions require the link:{baseurl}/plugins/lists[lists] plugin and <<,styleselect>> requires configuring link:{baseurl}/configure/content-formatting/#style_formats[style_formats].
 
 |===
 | Name | Function | Plugins Required | Configuration
@@ -144,12 +144,12 @@ Below are the toolbar items currently supported, with any plugins/configuration 
 
 | bullist
 | Insert an unordered list
-| link:{{ site.baseurl }}/plugins/lists[lists]
+| link:{baseurl}/plugins/lists[lists]
 |
 
 | numlist
 | Insert an ordered list
-| link:{{ site.baseurl }}/plugins/lists[lists]
+| link:{baseurl}/plugins/lists[lists]
 |
 
 | fontsizeselect
@@ -165,7 +165,7 @@ Below are the toolbar items currently supported, with any plugins/configuration 
 | styleselect
 | Apply a custom style
 |
-| link:{{ site.baseurl }}/configure/content-formatting/#style_formats[style_formats]
+| link:{baseurl}/configure/content-formatting/#style_formats[style_formats]
 
 | removeformat
 | Removes any inline formatting

@@ -2,14 +2,14 @@
 :description: Learn about some edge case editor behavior.
 :description_short:
 
-{% include configuration/br-in-pre.md %}
+include::{partialsDir}configuration/br-in-pre.adoc[]
 
-{% include configuration/custom-undo-redo-levels.md %}
+include::{partialsDir}configuration/custom-undo-redo-levels.adoc[]
 
-{% include configuration/end-container-on-empty-block.md %}
+include::{partialsDir}configuration/end-container-on-empty-block.adoc[]
 
-{% include configuration/nowrap.md %}
+include::{partialsDir}configuration/nowrap.adoc[]
 
-{% include configuration/object-resizing.md %}
+include::{partialsDir}configuration/object-resizing.adoc[]
 
-{% include configuration/type-ahead-urls.md %}
+include::{partialsDir}configuration/type-ahead-urls.adoc[]

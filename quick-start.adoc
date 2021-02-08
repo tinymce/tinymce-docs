@@ -13,7 +13,7 @@ Include this line of code in the `<head>` of your HTML page:
 
 [source,html]
 ----
-<script src='{{ site.cdnurl }}'></script>
+<script src='{cdnurl}'></script>
 ----
 
 TIP: We give you a complete HTML snippet in Step 2.
@@ -31,7 +31,7 @@ In this example, let's replace `<textarea id='mytextarea'>` with a TinyMCE edito
 <!DOCTYPE html>
 <html>
 <head>
-  <script src='{{ site.cdnurl }}'></script>
+  <script src='{cdnurl}'></script>
   <script>
   tinymce.init({
     selector: '#mytextarea'
@@ -54,6 +54,6 @@ When the `<form>` is submitted the TinyMCE editor mimics the behavior of a norma
 
 So that's all there is to it!
 
-If you prefer to download TinyMCE and install it locally the link:{{  site.baseurl }}/general-configuration-guide/advanced-install/#packagemanagerinstalloptions[Advanced Install] page in the link:{{  site.baseurl }}/general-configuration-guide[General Configuration Guide] has instructions. This document also provides information about TinyMCE features such as advanced installation options, working with plugins, learning about content filtering, and spell checking.
+If you prefer to download TinyMCE and install it locally the link:{baseurl}/general-configuration-guide/advanced-install/#packagemanagerinstalloptions[Advanced Install] page in the link:{baseurl}/general-configuration-guide[General Configuration Guide] has instructions. This document also provides information about TinyMCE features such as advanced installation options, working with plugins, learning about content filtering, and spell checking.
 
-You may use TinyMCE Cloud without an API key. However, to avoid the in-editor developer warning or use our premium plugins, sign up for an API key and update the script tag used to load the editor code into your application. Please visit the link:{{  site.baseurl }}/cloud-deployment-guide/[Cloud Deployment Guide] to learn more about the plugins and other features of TinyMCE.
+You may use TinyMCE Cloud without an API key. However, to avoid the in-editor developer warning or use our premium plugins, sign up for an API key and update the script tag used to load the editor code into your application. Please visit the link:{baseurl}/cloud-deployment-guide/[Cloud Deployment Guide] to learn more about the plugins and other features of TinyMCE.

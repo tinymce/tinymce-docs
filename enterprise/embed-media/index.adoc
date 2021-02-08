@@ -2,23 +2,23 @@
 :description: Add rich media previews inside TinyMCE.
 :keywords: enterprise pricing video youtube vimeo mp3 mp4 mov movie clip film link linkchecking linkchecker mediaembed media
 
-The link:{{ site.baseurl }}/plugins/mediaembed/[Enhanced Media Embed plugin] makes it easy to add an enhanced content creation experience in your website or app with enriched media previews from the most popular web sources. Facebook, YouTube, Flickr, NY Times, Vimeo, Hulu, Tumblr, CodePen, SlideShare, TechCrunch, WordPress, Twitch, Spotify ... and many more!
+The link:{baseurl}/plugins/mediaembed/[Enhanced Media Embed plugin] makes it easy to add an enhanced content creation experience in your website or app with enriched media previews from the most popular web sources. Facebook, YouTube, Flickr, NY Times, Vimeo, Hulu, Tumblr, CodePen, SlideShare, TechCrunch, WordPress, Twitch, Spotify ... and many more!
 
 By easy, we mean easy. The service automatically "`looks behind the link`" to see whether a URL in the TinyMCE editor points to a rich media source. That URL will resolve into an enhanced media thumbnail whenever possible.
 
 It is now as simple as adding a plugin to deliver a modern, content creation experience that everyone takes for granted.
 
-Your have two deployment options. One is super easy with TinyMCE Cloud, the other is to go the more traditional Self-hosted route, requiring an additional link:{{ site.baseurl }}/enterprise/server/[server-side component] to be installed and configured.
+Your have two deployment options. One is super easy with TinyMCE Cloud, the other is to go the more traditional Self-hosted route, requiring an additional link:{baseurl}/enterprise/server/[server-side component] to be installed and configured.
 
 == Enhanced Media Embed Cloud Quick Setup
 
-link:{{ site.baseurl }}/cloud-deployment-guide/editor-and-features/[TinyMCE Cloud] makes setting up Enhanced Media Embed a breeze. Simply include the `mediaembed` parameter in your `tinymce.init` and have our Cloud services do the work for you.
+link:{baseurl}/cloud-deployment-guide/editor-and-features/[TinyMCE Cloud] makes setting up Enhanced Media Embed a breeze. Simply include the `mediaembed` parameter in your `tinymce.init` and have our Cloud services do the work for you.
 
 == Enhanced Media Embed Self-hosted Quick Setup
 
-If you'd rather deploy Enhanced Media Embed via the Self-hosted package, you have a little more work to do. Once you've got the link:{{ site.baseurl }}/enterprise/server/[server-side component] installed, additional configuration to your `application.conf` file is required. (Don't forget to restart the Java application server after updating the configuration.)
+If you'd rather deploy Enhanced Media Embed via the Self-hosted package, you have a little more work to do. Once you've got the link:{baseurl}/enterprise/server/[server-side component] installed, additional configuration to your `application.conf` file is required. (Don't forget to restart the Java application server after updating the configuration.)
 
-You also need to link:{{ site.baseurl }}/enterprise/embed-media/mediaembed-server-integration/[integrate] and link:{{ site.baseurl }}/enterprise/embed-media/mediaembed-server-config/[configure] the Enhanced Media Embed server.
+You also need to link:{baseurl}/enterprise/embed-media/mediaembed-server-integration/[integrate] and link:{baseurl}/enterprise/embed-media/mediaembed-server-config/[configure] the Enhanced Media Embed server.
 
 ____
 *Important note:* The Enhanced Media Embed server currently does not support integration with IBM WebSphere Application Server.

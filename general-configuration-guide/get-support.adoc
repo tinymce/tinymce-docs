@@ -3,14 +3,14 @@
 :keywords: forum forums url absolute relative security xss
 
 ____
-If you landed here having worked through the link:{{  site.baseurl }}/general-configuration-guide/advanced-install[General Configuration Guide], congratulations, you are on your way to the TinyMCE ninja hood :-). It's now time to deep-dive into link:{{ site.baseurl }}/configure/[configuring the editor] and explore link:{{ site.baseurl }}/plugins/[plugin options]. We wish you well and welcome you to TinyMCE. If you get stuck, a great place to start is the https://community.tinymce.com/[TinyMCE Forum].
+If you landed here having worked through the link:{baseurl}/general-configuration-guide/advanced-install[General Configuration Guide], congratulations, you are on your way to the TinyMCE ninja hood :-). It's now time to deep-dive into link:{baseurl}/configure/[configuring the editor] and explore link:{baseurl}/plugins/[plugin options]. We wish you well and welcome you to TinyMCE. If you get stuck, a great place to start is the https://community.tinymce.com/[TinyMCE Forum].
 ____
 
 == Premium Support
 
 If your support requirements included guaranteed responses from the TinyMCE Support Team or in-time bug fixes, *paid* premium support is available as part of https://www.tinymce.com/pricing/[TinyMCE Enterprise].
 
-If you are a TinyMCE Enterprise customer in good standing please link:{{ site.baseurl }}/enterprise/support/[review what information you need to gather] to submit a case.
+If you are a TinyMCE Enterprise customer in good standing please link:{baseurl}/enterprise/support/[review what information you need to gather] to submit a case.
 
 == Forums
 
@@ -103,7 +103,7 @@ tinymce.init({
 
 === Q: Where are the advanced image options?
 
-Use the link:{{ site.baseurl }}/configure/content-filtering/#style_formats[`Style Formats`] option instead, which is much more powerful.
+Use the link:{baseurl}/configure/content-filtering/#style_formats[`Style Formats`] option instead, which is much more powerful.
 
 `js
 tinymce.init({

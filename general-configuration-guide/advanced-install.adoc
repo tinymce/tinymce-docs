@@ -15,7 +15,7 @@ On this page you'll find a detailed guide to our installation options:
 
 == Cloud Install
 
-{% include install/cloud.md %}
+include::{partialsDir}install/cloud.adoc[]
 
 == Package Manager Install Options
 
@@ -26,31 +26,31 @@ On this page you'll find a detailed guide to our installation options:
 
 == NPM
 
-{% include install/npm.md %}
+include::{partialsDir}install/npm.adoc[]
 
 == Bower
 
-{% include install/bower.md %}
+include::{partialsDir}install/bower.adoc[]
 
 == Composer
 
-{% include install/composer.md %}
+include::{partialsDir}install/composer.adoc[]
 
 == NuGet
 
-{% include install/nuget.md %}
+include::{partialsDir}install/nuget.adoc[]
 
 == SDK Install
 
-{% include install/sdk.md %}
+include::{partialsDir}install/sdk.adoc[]
 
 == jQuery Install
 
-{% include install/jquery.md %}
+include::{partialsDir}install/jquery.adoc[]
 
 == Custom Build Install
 
-{% include install/custom.md %}
+include::{partialsDir}install/custom.adoc[]
 
 {% assign_page next_page = "/general-configuration-guide/work-with-plugins/index.html" %}
 {% include next-step.html next=next_page %}

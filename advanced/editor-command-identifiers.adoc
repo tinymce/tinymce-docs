@@ -4,7 +4,7 @@
 :keywords: editorcommands editorcommand execcommand Bold Italic Underline Strikethrough Superscript Subscript Cut Copy Paste Unlink JustifyLeft JustifyCenter JustifyRight JustifyFull JustifyNone InsertUnorderedList InsertOrderedList ForeColor HiliteColor FontName FontSize RemoveFormat mceBlockQuote FormatBlock mceInsertContent mceToggleFormat mceSetContent Indent Outdent InsertHorizontalRule mceToggleVisualAid mceInsertLink selectAll delete mceNewDocument Undo Redo mceAutoResize mceShowCharmap mceCodeEditor mceDirectionLTR mceDirectionRTL mceFullPageProperties mceFullscreen mceImage mceInsertDate mceInsertTime mceInsertDefinitionList mceNonBreaking mcePageBreak mcePreview mcePrint mceSave SearchReplace mceSpellcheck mceInsertTemplate mceVisualBlocks mceVisualChars mceMedia mceAnchor mceTableSplitCells mceTableMergeCells mceTableInsertRowBefore mceTableInsertRowAfter mceTableInsertColBefore mceTableInsertColAfter mceTableDeleteCol mceTableDeleteRow mceTableCutRow mceTableCopyRow mceTablePasteRowBefore mceTablePasteRowAfter mceTableDelete mceInsertTable mceTableRowProps mceTableCellProps mceEditImage
 :title_nav: Editor Command Identifiers
 
-Here is a list of the currently exposed editor commands. All these commands are provided by `tinymce` and not by the browser's internal commands. These commands can be executed using the link:{{ site.baseurl }}/api/tinymce/tinymce.editorcommands/#execcommand[execCommand] function.
+Here is a list of the currently exposed editor commands. All these commands are provided by `tinymce` and not by the browser's internal commands. These commands can be executed using the link:{baseurl}/api/tinymce/tinymce.editorcommands/#execcommand[execCommand] function.
 
 |===
 | Command | Core/Plugin | Description
@@ -158,186 +158,186 @@ Here is a list of the currently exposed editor commands. All these commands are 
 | To redo the last change to the editor.
 
 | mceAutoResize
-| link:{{ site.baseurl }}/plugins/autoresize/[autoresize]
+| link:{baseurl}/plugins/autoresize/[autoresize]
 | Auto resizes the editor to the contents.
 
 | mceShowCharmap
-| link:{{ site.baseurl }}/plugins/charmap/[charmap]
+| link:{baseurl}/plugins/charmap/[charmap]
 | Opens the character map dialog.
 
 | mceCodeEditor
-| link:{{ site.baseurl }}/plugins/code/[code]
+| link:{baseurl}/plugins/code/[code]
 | Opens the code editor dialog.
 
 | mceDirectionLTR
-| link:{{ site.baseurl }}/plugins/directionality/[directionality]
+| link:{baseurl}/plugins/directionality/[directionality]
 | Changes the directionality to LTR.
 
 | mceDirectionRTL
-| link:{{ site.baseurl }}/plugins/directionality/[directionality]
+| link:{baseurl}/plugins/directionality/[directionality]
 | Changes the directionality to RTL.
 
 | mceFullPageProperties
-| link:{{ site.baseurl }}/plugins/fullpage/[fullpage]
+| link:{baseurl}/plugins/fullpage/[fullpage]
 | Opens the fullpage dialog.
 
 | mceFullscreen
-| link:{{ site.baseurl }}/plugins/fullscreen/[fullscreen]
+| link:{baseurl}/plugins/fullscreen/[fullscreen]
 | Toggles fullscreen mode.
 
 | mceImage
-| link:{{ site.baseurl }}/plugins/image/[image]
+| link:{baseurl}/plugins/image/[image]
 | Opens the insert image dialog.
 
 | mceEditImage
-| link:{{ site.baseurl }}/plugins/imagetools[imagetools]
+| link:{baseurl}/plugins/imagetools[imagetools]
 | Opens the edit image dialog.
 
 | mceImageRotateRight
-| link:{{ site.baseurl }}/plugins/imagetools[imagetools]
+| link:{baseurl}/plugins/imagetools[imagetools]
 | Rotates selected image 90 degrees clockwise.
 
 | mceImageRotateLeft
-| link:{{ site.baseurl }}/plugins/imagetools[imagetools]
+| link:{baseurl}/plugins/imagetools[imagetools]
 | Rotates selected image 90 degrees counter clockwise.
 
 | mceImageFlipVertical
-| link:{{ site.baseurl }}/plugins/imagetools[imagetools]
+| link:{baseurl}/plugins/imagetools[imagetools]
 | Flips selected image vertically.
 
 | mceImageFlipHorizontal
-| link:{{ site.baseurl }}/plugins/imagetools[imagetools]
+| link:{baseurl}/plugins/imagetools[imagetools]
 | Flips selected image horizontally.
 
 | mceInsertDate
-| link:{{ site.baseurl }}/plugins/insertdatetime/[insertdatetime]
+| link:{baseurl}/plugins/insertdatetime/[insertdatetime]
 | Inserts the current date as a human readable string.
 
 | mceInsertTime
-| link:{{ site.baseurl }}/plugins/insertdatetime/[insertdatetime]
+| link:{baseurl}/plugins/insertdatetime/[insertdatetime]
 | Insert the current time as a human readable string.
 
 | mceInsertDefinitionList
-| link:{{ site.baseurl }}/plugins/lists/[lists]
+| link:{baseurl}/plugins/lists/[lists]
 | Creates a definition list.
 
 | mceNonBreaking
-| link:{{ site.baseurl }}/plugins/nonbreaking/[nonbreaking]
+| link:{baseurl}/plugins/nonbreaking/[nonbreaking]
 | Inserts a non breaking space.
 
 | mcePageBreak
-| link:{{ site.baseurl }}/plugins/pagebreak/[pagebreak]
+| link:{baseurl}/plugins/pagebreak/[pagebreak]
 | Inserts a page break.
 
 | mcePreview
-| link:{{ site.baseurl }}/plugins/preview/[preview]
+| link:{baseurl}/plugins/preview/[preview]
 | Displays a preview of the editor contents.
 
 | mcePrint
-| link:{{ site.baseurl }}/plugins/print/[print]
+| link:{baseurl}/plugins/print/[print]
 | Prints the current page.
 
 | mceSave
-| link:{{ site.baseurl }}/plugins/save/[save]
+| link:{baseurl}/plugins/save/[save]
 | Saves the current editor contents.
 
 | SearchReplace
-| link:{{ site.baseurl }}/plugins/searchreplace/[searchreplace]
+| link:{baseurl}/plugins/searchreplace/[searchreplace]
 | Opens the search/replace dialog.
 
 | mceSpellcheck
-| link:{{ site.baseurl }}/plugins/spellchecker/[spellchecker]
+| link:{baseurl}/plugins/spellchecker/[spellchecker]
 | Toggles spellchecking on/off.
 
 | mceInsertTemplate
-| link:{{ site.baseurl }}/plugins/template/[template]
+| link:{baseurl}/plugins/template/[template]
 | Inserts a template the value should be the template HTML to process and insert.
 
 | mceVisualBlocks
-| link:{{ site.baseurl }}/plugins/visualblocks/[visualblocks]
+| link:{baseurl}/plugins/visualblocks/[visualblocks]
 | Toggles visual blocks on/off.
 
 | mceVisualChars
-| link:{{ site.baseurl }}/plugins/visualchars/[visualchars]
+| link:{baseurl}/plugins/visualchars/[visualchars]
 | Toggles visual characters on/off.
 
 | mceMedia
-| link:{{ site.baseurl }}/plugins/media/[media]
+| link:{baseurl}/plugins/media/[media]
 | Opens the insert/edit media dialog.
 
 | mceAnchor
-| link:{{ site.baseurl }}/plugins/anchor/[anchor]
+| link:{baseurl}/plugins/anchor/[anchor]
 | Opens the insert/edit anchor dialog.
 
 | mceTableSplitCells
-| link:{{ site.baseurl }}/plugins/table/[table]
+| link:{baseurl}/plugins/table/[table]
 | Splits the current merge table cell.
 
 | mceTableMergeCells
-| link:{{ site.baseurl }}/plugins/table/[table]
+| link:{baseurl}/plugins/table/[table]
 | Merges the selected cells or opens a dialog if there is no cell selection.
 
 | mceTableInsertRowBefore
-| link:{{ site.baseurl }}/plugins/table[table]
+| link:{baseurl}/plugins/table[table]
 | Inserts a row before the current row.
 
 | mceTableInsertRowAfter
-| link:{{ site.baseurl }}/plugins/table[table]
+| link:{baseurl}/plugins/table[table]
 | Inserts a row after the current row.
 
 | mceTableInsertColBefore
-| link:{{ site.baseurl }}/plugins/table[table]
+| link:{baseurl}/plugins/table[table]
 | Inserts a column before the current column.
 
 | mceTableInsertColAfter
-| link:{{ site.baseurl }}/plugins/table[table]
+| link:{baseurl}/plugins/table[table]
 | Inserts a column after the current column.
 
 | mceTableDeleteCol
-| link:{{ site.baseurl }}/plugins/table[table]
+| link:{baseurl}/plugins/table[table]
 | Deletes the current column.
 
 | mceTableDeleteRow
-| link:{{ site.baseurl }}/plugins/table[table]
+| link:{baseurl}/plugins/table[table]
 | Deletes the current row.
 
 | mceTableCutRow
-| link:{{ site.baseurl }}/plugins/table[table]
+| link:{baseurl}/plugins/table[table]
 | Cuts the current row into table clipboard.
 
 | mceTableCopyRow
-| link:{{ site.baseurl }}/plugins/table[table]
+| link:{baseurl}/plugins/table[table]
 | Copies the current row into table clipboard.
 
 | mceTablePasteRowBefore
-| link:{{ site.baseurl }}/plugins/table[table]
+| link:{baseurl}/plugins/table[table]
 | Pastes the clipboard row before the current row.
 
 | mceTablePasteRowAfter
-| link:{{ site.baseurl }}/plugins/table[table]
+| link:{baseurl}/plugins/table[table]
 | Pastes the clipboard row after the current row.
 
 | mceTableDelete
-| link:{{ site.baseurl }}/plugins/table[table]
+| link:{baseurl}/plugins/table[table]
 | Deletes the current table.
 
 | mceInsertTable
-| link:{{ site.baseurl }}/plugins/table[table]
+| link:{baseurl}/plugins/table[table]
 | Opens the insert table dialog.
 
 | mceTableRowProps
-| link:{{ site.baseurl }}/plugins/table[table]
+| link:{baseurl}/plugins/table[table]
 | Opens the table row properties dialog.
 
 | mceTableCellProps
-| link:{{ site.baseurl }}/plugins/table[table]
+| link:{baseurl}/plugins/table[table]
 | Opens the table cell properties dialog.
 
 | mceInsertToc
-| link:{{ site.baseurl }}/plugins/toc[toc]
+| link:{baseurl}/plugins/toc[toc]
 | Inserts a Table of Contents into the editor.
 
 | mceUpdateToc
-| link:{{ site.baseurl }}/plugins/toc[toc]
+| link:{baseurl}/plugins/toc[toc]
 | Updates the Table of Contents, if found in the editor.
 |===

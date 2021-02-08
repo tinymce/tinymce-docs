@@ -3,7 +3,7 @@
 :keywords: theme inlite
 :title_nav: Inlite
 
-The `inlite` theme is responsible for rendering the editor lightweight inline mode. The current default theme is called link:{{ site.baseurl }}/themes/modern/[modern] this is an optional more lightweight distraction-free UI for the editor.
+The `inlite` theme is responsible for rendering the editor lightweight inline mode. The current default theme is called link:{baseurl}/themes/modern/[modern] this is an optional more lightweight distraction-free UI for the editor.
 
 ===== Example:
 
@@ -34,7 +34,7 @@ tinymce.init({
 
 ==== quickimage
 
-Lets you quickly insert images from the local machine into the editor. These can then be automatically uploaded if you configure link:{{ site.baseurl }}/advanced/handle-async-image-uploads/[image uploading].
+Lets you quickly insert images from the local machine into the editor. These can then be automatically uploaded if you configure link:{baseurl}/advanced/handle-async-image-uploads/[image uploading].
 
 ===== Example:
 
@@ -64,8 +64,8 @@ tinymce.init({
 
 === Related configuration options
 
-* link:{{ site.baseurl }}/configure/editor-appearance/#insert_toolbar[insert_toolbar]
-* link:{{ site.baseurl }}/configure/editor-appearance/#selection_toolbar[selection_toolbar]
-* link:{{ site.baseurl }}/configure/editor-appearance/#inline[inline]
-* link:{{ site.baseurl }}/configure/editor-appearance/#skin[skin]
-* link:{{ site.baseurl }}/configure/editor-appearance/#theme[theme]
+* link:{baseurl}/configure/editor-appearance/#insert_toolbar[insert_toolbar]
+* link:{baseurl}/configure/editor-appearance/#selection_toolbar[selection_toolbar]
+* link:{baseurl}/configure/editor-appearance/#inline[inline]
+* link:{baseurl}/configure/editor-appearance/#skin[skin]
+* link:{baseurl}/configure/editor-appearance/#theme[theme]

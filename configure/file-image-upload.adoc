@@ -2,24 +2,24 @@
 :description: These settings affect TinyMCE's image and file upload capabilities.
 :description_short:
 
-{% include configuration/file-browser-callback.md %}
+include::{partialsDir}configuration/file-browser-callback.adoc[]
 
-{% include configuration/file-browser-callback-types.md %}
+include::{partialsDir}configuration/file-browser-callback-types.adoc[]
 
-{% include configuration/file-picker-callback.md %}
+include::{partialsDir}configuration/file-picker-callback.adoc[]
 
-{% include configuration/file-picker-types.md %}
+include::{partialsDir}configuration/file-picker-types.adoc[]
 
-{% include configuration/automatic-uploads.md %}
+include::{partialsDir}configuration/automatic-uploads.adoc[]
 
-{% include configuration/images-uploads-url.md %}
+include::{partialsDir}configuration/images-uploads-url.adoc[]
 
-{% include configuration/images-upload-base-path.md %}
+include::{partialsDir}configuration/images-upload-base-path.adoc[]
 
-{% include configuration/images-upload-credentials.md %}
+include::{partialsDir}configuration/images-upload-credentials.adoc[]
 
-{% include configuration/images-upload-handler.md %}
+include::{partialsDir}configuration/images-upload-handler.adoc[]
 
-{% include configuration/images-dataimg-filter.md %}
+include::{partialsDir}configuration/images-dataimg-filter.adoc[]
 
-{% include configuration/images-upload-reuse-filename.md %}
+include::{partialsDir}configuration/images-upload-reuse-filename.adoc[]

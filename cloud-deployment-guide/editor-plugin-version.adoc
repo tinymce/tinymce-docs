@@ -5,13 +5,13 @@
 
 == Specifying the TinyMCE editor version deployed from Cloud
 
-When deploying the link:{{ site.baseurl }}/cloud-deployment-guide/editor-and-features[TinyMCE editor via the Cloud], you're able to specify the editor version via the provided URL.
+When deploying the link:{baseurl}/cloud-deployment-guide/editor-and-features[TinyMCE editor via the Cloud], you're able to specify the editor version via the provided URL.
 
 Our documented default for loading TinyMCE via our Cloud is:
 
 [source,js]
 ----
-<script src="{{ site.cdnurl }}?apiKey=your_API_key"></script>
+<script src="{cdnurl}?apiKey=your_API_key"></script>
 ----
 
 The `stable` in this URL specifies the latest release of TinyMCE that completed our quality assurance testing process, successfully. If you are not using the latest, stable TinyMCE version, you can customize this value. You'll find all https://cloud.tinymce.com/versions/tiny[supported versions here].
@@ -66,7 +66,7 @@ Updates to these channels are automatic, providing you and your users with the l
 
 ==== dev release channel
 
-This channel deploys the absolute latest released TinyMCE version seen in the link:{{ site.baseurl }}/changelog/[TinyMCE changelog]. The current version of TinyMCE available through the `dev` channel https://cloud.tinymce.com/dev/version.txt[can be found at here].
+This channel deploys the absolute latest released TinyMCE version seen in the link:{baseurl}/changelog/[TinyMCE changelog]. The current version of TinyMCE available through the `dev` channel https://cloud.tinymce.com/dev/version.txt[can be found at here].
 
 ===== Example
 
@@ -94,17 +94,17 @@ This channel deploys the latest release of TinyMCE that has passed our quality a
 
 [source,js]
 ----
-<script src="{{ site.cdnurl }}?apiKey=your_API_key"></script>
+<script src="{cdnurl}?apiKey=your_API_key"></script>
 ----
 
 == Specifying the version of features/plugins deployed from the Cloud
 
-Whether you're deploying both the link:{{ site.baseurl }}/cloud-deployment-guide/editor-and-features[TinyMCE editor and premium plugins via the Cloud] or deploying link:{{ site.baseurl }}/cloud-deployment-guide/features-only[only premium plugins from the Cloud], you can use URL query parameters to specify the version of each premium plugin.
+Whether you're deploying both the link:{baseurl}/cloud-deployment-guide/editor-and-features[TinyMCE editor and premium plugins via the Cloud] or deploying link:{baseurl}/cloud-deployment-guide/features-only[only premium plugins from the Cloud], you can use URL query parameters to specify the version of each premium plugin.
 
 [discrete]
 ==== PowerPaste
 
-* link:{{ site.baseurl }}/plugins/powerpaste[Developer documentation]
+* link:{baseurl}/plugins/powerpaste[Developer documentation]
 * https://plugins.tinymce.com/versions/powerpaste[Supported versions]
 
 .Example
@@ -116,7 +116,7 @@ Whether you're deploying both the link:{{ site.baseurl }}/cloud-deployment-guide
 [discrete]
 ==== Spell Checker Pro
 
-* link:{{ site.baseurl }}/plugins/tinymcespellchecker[Developer documentation]
+* link:{baseurl}/plugins/tinymcespellchecker[Developer documentation]
 * https://plugins.tinymce.com/versions/tinymcespellchecker[Supported versions]
 
 .Example
@@ -128,7 +128,7 @@ Whether you're deploying both the link:{{ site.baseurl }}/cloud-deployment-guide
 [discrete]
 ==== Accessibility Checker
 
-* link:{{ site.baseurl }}/plugins/a11ychecker[Developer documentation]
+* link:{baseurl}/plugins/a11ychecker[Developer documentation]
 * https://plugins.tinymce.com/versions/a11ychecker[Supported versions]
 
 .Example
@@ -140,7 +140,7 @@ Whether you're deploying both the link:{{ site.baseurl }}/cloud-deployment-guide
 [discrete]
 ==== Advanced Code Editor
 
-* link:{{ site.baseurl }}/plugins/advcode/[Developer documentation]
+* link:{baseurl}/plugins/advcode/[Developer documentation]
 * https://plugins.tinymce.com/versions/advcode[Supported versions]
 
 .Example
@@ -152,7 +152,7 @@ Whether you're deploying both the link:{{ site.baseurl }}/cloud-deployment-guide
 [discrete]
 ==== Enhanced Media Embed
 
-* link:{{ site.baseurl }}/plugins/mediaembed/[Developer documentation]
+* link:{baseurl}/plugins/mediaembed/[Developer documentation]
 * https://plugins.tinymce.com/versions/mediaembed[Supported versions]
 
 .Example
@@ -164,7 +164,7 @@ Whether you're deploying both the link:{{ site.baseurl }}/cloud-deployment-guide
 [discrete]
 ==== Link Checker
 
-* link:{{ site.baseurl }}/plugins/linkchecker/[Developer documentation]
+* link:{baseurl}/plugins/linkchecker/[Developer documentation]
 * https://plugins.tinymce.com/versions/linkchecker[Supported versions]
 
 .Example
@@ -175,7 +175,7 @@ Whether you're deploying both the link:{{ site.baseurl }}/cloud-deployment-guide
 
 == Specifying a Self-hosted deployment of features/plugins
 
-If you're deploying link:{{ site.baseurl }}/cloud-deployment-guide/features-only[only premium plugins from the Cloud], you may want to have some features served from the Cloud and some features served from your Self-hosted installation. This is also possible with URL query parameters and the special version name "SDK".
+If you're deploying link:{baseurl}/cloud-deployment-guide/features-only[only premium plugins from the Cloud], you may want to have some features served from the Cloud and some features served from your Self-hosted installation. This is also possible with URL query parameters and the special version name "SDK".
 
 The "SDK" version lets the TinyMCE Plugin Manager know that you're not using the Cloud version of a particular plugin and that it shouldn't serve the plugin
 from the Cloud. It also won't display any warning or error messages if you're not entitled to it.
@@ -183,7 +183,7 @@ from the Cloud. It also won't display any warning or error messages if you're no
 [discrete]
 ==== PowerPaste
 
-* link:{{ site.baseurl }}/plugins/powerpaste[Developer documentation]
+* link:{baseurl}/plugins/powerpaste[Developer documentation]
 
 .Example
 [source,js]
@@ -194,7 +194,7 @@ from the Cloud. It also won't display any warning or error messages if you're no
 [discrete]
 ==== Spell Checker Pro
 
-* link:{{ site.baseurl }}/plugins/tinymcespellchecker[Developer documentation]
+* link:{baseurl}/plugins/tinymcespellchecker[Developer documentation]
 
 .Example
 [source,js]
@@ -205,7 +205,7 @@ from the Cloud. It also won't display any warning or error messages if you're no
 [discrete]
 ==== Accessibility Checker
 
-* link:{{ site.baseurl }}/plugins/a11ychecker[Developer documentation]
+* link:{baseurl}/plugins/a11ychecker[Developer documentation]
 
 .Example
 [source,js]
@@ -216,7 +216,7 @@ from the Cloud. It also won't display any warning or error messages if you're no
 [discrete]
 ==== Advanced Code Editor
 
-* link:{{ site.baseurl }}/plugins/advcode/[Developer documentation]
+* link:{baseurl}/plugins/advcode/[Developer documentation]
 
 .Example
 [source,js]
@@ -227,7 +227,7 @@ from the Cloud. It also won't display any warning or error messages if you're no
 [discrete]
 ==== Enhanced Media Embed
 
-* link:{{ site.baseurl }}/plugins/mediaembed/[Developer documentation]
+* link:{baseurl}/plugins/mediaembed/[Developer documentation]
 
 .Example
 [source,js]
@@ -238,7 +238,7 @@ from the Cloud. It also won't display any warning or error messages if you're no
 [discrete]
 ==== Link Checker
 
-* link:{{ site.baseurl }}/plugins/linkchecker/[Developer documentation]
+* link:{baseurl}/plugins/linkchecker/[Developer documentation]
 
 .Example
 [source,js]

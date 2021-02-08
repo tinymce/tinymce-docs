@@ -24,7 +24,7 @@ ____
 
 == Cloud Installation
 
-To enable the TinyMCE *PowerPaste* plugin with link:{{ site.baseurl }}/cloud-deployment-guide/editor-and-features/[TinyMCE Cloud]:
+To enable the TinyMCE *PowerPaste* plugin with link:{baseurl}/cloud-deployment-guide/editor-and-features/[TinyMCE Cloud]:
 
 . If you are currently using the `paste` plugin provided with TinyMCE, disable it by removing it from the `plugins` list.
 . Add `powerpaste` to the `plugins` list.
@@ -50,10 +50,10 @@ See the example TinyMCE configuration above.
 
 == Using the PowerPaste Plugin with Module Loaders
 
-To enable the *PowerPaste* plugin when using a link:{{site.baseurl}}/advanced/usage-with-module-loaders/[module loader], follow these instructions:
+To enable the *PowerPaste* plugin when using a link:{baseurl}/advanced/usage-with-module-loaders/[module loader], follow these instructions:
 
 . Make the PowerPaste plugin folder available over http.
-. Add the path to the PowerPaste plugin folder to the link:{{site.baseurl}}/configure/integration-and-setup/#external_plugins[external plugins] option in `tinymce.init()`.
+. Add the path to the PowerPaste plugin folder to the link:{baseurl}/configure/integration-and-setup/#external_plugins[external plugins] option in `tinymce.init()`.
 
 Example:
 

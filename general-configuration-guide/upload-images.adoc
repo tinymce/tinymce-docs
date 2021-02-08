@@ -4,9 +4,9 @@
 
 {% include pardot-px-moxiemanager.html %}
 
-NOTE: Please note, this image upload feature is available for TinyMCE version 4.3 and above. Alternatively, the link:{{ site.baseurl }}/plugins/powerpaste/[PowerPaste plugin] is capable of this functionality in versions of TinyMCE 4.0 and above.
+NOTE: Please note, this image upload feature is available for TinyMCE version 4.3 and above. Alternatively, the link:{baseurl}/plugins/powerpaste/[PowerPaste plugin] is capable of this functionality in versions of TinyMCE 4.0 and above.
 
-The image uploader is designed to complement the new image editing functionality of TinyMCE 4.3. Images that are edited within TinyMCE can be uploaded using this function. Local images that are added through other means, for example drag and drop when using the link:{{ site.baseurl }}/plugins/paste/#paste_data_images[paste_data_images] configuration property, or using Tiny's PowerPaste Plugin.
+The image uploader is designed to complement the new image editing functionality of TinyMCE 4.3. Images that are edited within TinyMCE can be uploaded using this function. Local images that are added through other means, for example drag and drop when using the link:{baseurl}/plugins/paste/#paste_data_images[paste_data_images] configuration property, or using Tiny's PowerPaste Plugin.
 
 Once uploaded, TinyMCE automatically updates the `<image>` src attribute with the new path to the remote image.
 
@@ -36,7 +36,7 @@ tinymce.activeEditor.uploadImages(function(success) {
 
 To upload local images to the remote server, you need a server-side upload handler script that accepts the images on the server, saves them appropriately, and returns a JSON object containing the location of the saved images.
 
-An example PHP upload handler implementation is available link:{{ site.baseurl }}/advanced/php-upload-handler/[here].
+An example PHP upload handler implementation is available link:{baseurl}/advanced/php-upload-handler/[here].
 
 Images are sent to the Image Uploader via HTTP POST with each post containing a single image. The image handler at the URL referenced in the `images_upload_url` takes care of the process required to "save" the image in your application. Some examples would include:
 
@@ -64,16 +64,16 @@ NOTE: Please note, for image uploads to function correctly, either the `images_u
 |===
 | Image Upload Handling Option | Description
 
-| link:{{ site.baseurl }}/configure/file-image-upload/#images_upload_url[images_upload_url]
+| link:{baseurl}/configure/file-image-upload/#images_upload_url[images_upload_url]
 | This option lets you specify a URL to where you want images to be uploaded when you call editor.uploadImages.
 
-| link:{{ site.baseurl }}/configure/file-image-upload/#images_upload_base_path[images_upload_base_path]
+| link:{baseurl}/configure/file-image-upload/#images_upload_base_path[images_upload_base_path]
 | This option lets you specify a basepath to prepend to urls returned from the configured images_upload_url page.
 
-| link:{{ site.baseurl }}/configure/file-image-upload/#images_upload_credentials[images_upload_credentials]
+| link:{baseurl}/configure/file-image-upload/#images_upload_credentials[images_upload_credentials]
 | This option lets you specify if calls to the configured images_upload_url should pass along credentials like cookies etc cross domain. This is disabled by default.
 
-| link:{{ site.baseurl }}/configure/file-image-upload/#images_upload_handler[images_upload_handler]
+| link:{baseurl}/configure/file-image-upload/#images_upload_handler[images_upload_handler]
 | This option lets you replace TinyMCE's default JavaScript upload handler function with custom logic. The upload handler function takes three arguments, blobInfo, a success callback and a failure callback. When this option is not set, TinyMCE utilizes an XMLHttpRequest to upload images one at a time to the server, and calls the success callback with the location of the remote image.
 |===
 
@@ -141,7 +141,7 @@ The upload script URL origin must exactly match the origin of the URL in the add
 
 All supported browsers print a message to the JavaScript console if there is a CORS error.
 
-The link:{{ site.baseurl }}/advanced/php-upload-handler/[PHP Upload Handler Script] provided here configures CORS in the `$accepted_origins` variable. You may choose to configure CORS at the http://www.w3.org/wiki/CORS_Enabled#At_the_Web_Application_level...[web application layer] or the http://www.w3.org/wiki/CORS_Enabled#At_the_HTTP_Server_level...[HTTP server layer].
+The link:{baseurl}/advanced/php-upload-handler/[PHP Upload Handler Script] provided here configures CORS in the `$accepted_origins` variable. You may choose to configure CORS at the http://www.w3.org/wiki/CORS_Enabled#At_the_Web_Application_level...[web application layer] or the http://www.w3.org/wiki/CORS_Enabled#At_the_HTTP_Server_level...[HTTP server layer].
 
 === Further reading on CORS
 

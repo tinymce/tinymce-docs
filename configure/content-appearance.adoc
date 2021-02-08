@@ -2,22 +2,22 @@
 :description: Configure the appearance of content inside TinyMCe's editable area.
 :description_short:
 
-{% include configuration/body-class.md %}
+include::{partialsDir}configuration/body-class.adoc[]
 
-{% include configuration/body-id.md %}
+include::{partialsDir}configuration/body-id.adoc[]
 
-{% include configuration/content-css.md %}
+include::{partialsDir}configuration/content-css.adoc[]
 
-{% include configuration/content-css-cors.md %}
+include::{partialsDir}configuration/content-css-cors.adoc[]
 
-{% include configuration/content-style.md %}
+include::{partialsDir}configuration/content-style.adoc[]
 
-{% include configuration/inline-boundaries.md %}
+include::{partialsDir}configuration/inline-boundaries.adoc[]
 
-{% include configuration/inline-boundaries-selector.md %}
+include::{partialsDir}configuration/inline-boundaries-selector.adoc[]
 
-{% include configuration/visual-anchor-class.md %}
+include::{partialsDir}configuration/visual-anchor-class.adoc[]
 
-{% include configuration/visual-table-class.md %}
+include::{partialsDir}configuration/visual-table-class.adoc[]
 
-{% include configuration/visual.md %}
+include::{partialsDir}configuration/visual.adoc[]

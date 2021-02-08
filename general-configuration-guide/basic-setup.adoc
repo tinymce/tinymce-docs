@@ -87,7 +87,7 @@ tinymce.init({
 });
 ----
 
-We show you how to configure plugins throughout this guide. The full list of plugins, their options, and control associations is link:{{ site.baseurl }}/plugins/[available here].
+We show you how to configure plugins throughout this guide. The full list of plugins, their options, and control associations is link:{baseurl}/plugins/[available here].
 
 == Toolbar & menu configuration
 
@@ -105,7 +105,7 @@ Before we get to configuring the toolbar, let's have a look at the default toolb
 newdocument, bold, italic, underline, strikethrough, alignleft, aligncenter, alignright, alignjustify, styleselect, formatselect, fontselect, fontsizeselect, cut, copy, paste, bullist, numlist, outdent, indent, blockquote, undo, redo, removeformat, subscript, superscript
 ----
 
-image::{{ site.baseurl }}/images/tinymce-default-state.png[TinyMCE Default Toolbar & Menubar State]
+image::{baseurl}/images/tinymce-default-state.png[TinyMCE Default Toolbar & Menubar State]
 
 _Default TinyMCE toolbar & menubar state_
 
@@ -211,7 +211,7 @@ IMPORTANT: If a menu or toolbar control is associated with plugin functionality,
 
 Using the configuration options above you'll be able to instantiate TinyMCE and perform the initial customizations to match your editor requirements. TinyMCE has many many other configuration options available that enable further customization and extension of the editor.
 
-You will find full list of link:{{ site.baseurl }}/configure/[configuration options here]. Plugins, their options and control associations are link:{{ site.baseurl }}/plugins/[available here].
+You will find full list of link:{baseurl}/configure/[configuration options here]. Plugins, their options and control associations are link:{baseurl}/plugins/[available here].
 
 To help get you started, let's walk through an example of a basic TinyMCE configuration.
 
@@ -220,7 +220,7 @@ To help get you started, let's walk through an example of a basic TinyMCE config
 <!DOCTYPE html>
 <html>
 <head>
-  <script type="text/javascript" src='{{ site.cdnurl }}'></script>
+  <script type="text/javascript" src='{cdnurl}'></script>
   <script type="text/javascript">
   tinymce.init({
     selector: '#myTextarea',

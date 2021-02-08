@@ -2,18 +2,18 @@
 :description: These settings change the way the editor handles the input and output of content. This will help you to create clean, maintainable and readable content.
 :description_short: Learn how to create clean, maintainable and readable content.
 
-{% include configuration/block-formats.md %}
+include::{partialsDir}configuration/block-formats.adoc[]
 
-{% include configuration/font-formats.md %}
+include::{partialsDir}configuration/font-formats.adoc[]
 
-{% include configuration/fontsize-formats.md %}
+include::{partialsDir}configuration/fontsize-formats.adoc[]
 
-{% include configuration/formats.md %}
+include::{partialsDir}configuration/formats.adoc[]
 
-{% include configuration/indentation.md %}
+include::{partialsDir}configuration/indentation.adoc[]
 
-{% include configuration/style-formats.md %}
+include::{partialsDir}configuration/style-formats.adoc[]
 
-{% include configuration/style-formats-autohide.md %}
+include::{partialsDir}configuration/style-formats-autohide.adoc[]
 
-{% include configuration/style-formats-merge.md %}
+include::{partialsDir}configuration/style-formats-merge.adoc[]

@@ -6,7 +6,7 @@ Nobody likes content with spelling errors. Our team at TinyMCE is motivated to h
 
 == Browser-based spell checking
 
-The first and easiest to implement option is to utilize the browser's native spell check functionality by assigning the link:{{ site.baseurl }}/configure/spelling/#browser_spellcheck[`browser_spellcheck`] configuration option the value of `true`. Depending on the right click / context behavior you want, you _may_ need to enable the link:{{ site.baseurl }}/plugins/contextmenu/[`contextmenu`] plugin.
+The first and easiest to implement option is to utilize the browser's native spell check functionality by assigning the link:{baseurl}/configure/spelling/#browser_spellcheck[`browser_spellcheck`] configuration option the value of `true`. Depending on the right click / context behavior you want, you _may_ need to enable the link:{baseurl}/plugins/contextmenu/[`contextmenu`] plugin.
 
 `js
 tinymce.init({
@@ -44,13 +44,13 @@ tinymce.init({
 });
 `
 
-Please see the link:{{ site.baseurl }}/plugins/spellchecker/[Spell Checker Plugin] for advanced configuration options.
+Please see the link:{baseurl}/plugins/spellchecker/[Spell Checker Plugin] for advanced configuration options.
 
 == TinyMCE Spellchecker Pro plugin
 
-For developers requiring a robust enterprise-grade spell check as-you-type functionality, you need the link:{{ site.baseurl }}/plugins/tinymcespellchecker/[Spell Checker Pro plugin]. Spell Checker Pro requires both a client-side plugin to be configured and a server-side component to be installed and configured.
+For developers requiring a robust enterprise-grade spell check as-you-type functionality, you need the link:{baseurl}/plugins/tinymcespellchecker/[Spell Checker Pro plugin]. Spell Checker Pro requires both a client-side plugin to be configured and a server-side component to be installed and configured.
 
-Full documentation can be found in the TinyMCE Enterprise link:{{ site.baseurl }}/enterprise/check-spelling/[documentation for Spelling]. Learn more about https://www.tinymce.com/pricing/[TinyMCE Enterprise here].
+Full documentation can be found in the TinyMCE Enterprise link:{baseurl}/enterprise/check-spelling/[documentation for Spelling]. Learn more about https://www.tinymce.com/pricing/[TinyMCE Enterprise here].
 
 {% assign_page next_page = "/general-configuration-guide/filter-content/index.html" %}
 {% include next-step.html next=next_page %}

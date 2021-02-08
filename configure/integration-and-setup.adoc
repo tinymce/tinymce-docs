@@ -2,22 +2,22 @@
 :description: Essential editor configuration, including `selector` and `plugins` keys.
 :description_short:
 
-{% include configuration/auto-focus.md %}
+include::{partialsDir}configuration/auto-focus.adoc[]
 
-{% include configuration/cache-suffix.md %}
+include::{partialsDir}configuration/cache-suffix.adoc[]
 
-{% include configuration/content-security-policy.md %}
+include::{partialsDir}configuration/content-security-policy.adoc[]
 
-{% include configuration/external-plugins.md %}
+include::{partialsDir}configuration/external-plugins.adoc[]
 
-{% include configuration/hidden-input.md %}
+include::{partialsDir}configuration/hidden-input.adoc[]
 
-{% include configuration/init-instance-callback.md %}
+include::{partialsDir}configuration/init-instance-callback.adoc[]
 
-{% include configuration/plugins.md %}
+include::{partialsDir}configuration/plugins.adoc[]
 
-{% include configuration/selector.md %}
+include::{partialsDir}configuration/selector.adoc[]
 
-{% include configuration/setup.md %}
+include::{partialsDir}configuration/setup.adoc[]
 
-{% include configuration/target.md %}
+include::{partialsDir}configuration/target.adoc[]

@@ -6,7 +6,7 @@
 
 The Format Painter plugin allows a user to copy and paste formatting from one location to another, such as font style and size. The format painter is capable of working with a wide variety of formats such as inline and block formats and styles such as table styles.
 
-Format Painter is a premium plugin from Tiny. Please see the link:{{site.baseurl}}/enterprise/formatpainter/[Premium features] section for all the buying options.
+Format Painter is a premium plugin from Tiny. Please see the link:{baseurl}/enterprise/formatpainter/[Premium features] section for all the buying options.
 
 Once you have obtained the Format Painter plugin, refer to the following instructions for using it.
 
@@ -25,7 +25,7 @@ tinymce.init({
 });
 `
 *Result*:
-The image:{{site.baseurl}}/images/fp-disabled.png[**Format Painter**](*Format Painter*) button appears in the toolbar menu.
+The image:{baseurl}/images/fp-disabled.png[**Format Painter**](*Format Painter*) button appears in the toolbar menu.
 
 == Using Format Painter
 
@@ -36,7 +36,7 @@ The format painter operates in two modes, one for retrieval and one for applicat
 *Usage with toolbar button*
 
 . Position the cursor at the source content to retrieve the formatting.
-. Enable the *Format Painter* button to copy the formatting. The *Format Painter* toolbar button background color changes to _grey_ image:{{site.baseurl}}/images/fp-enabled.png[**Format Painter**].
+. Enable the *Format Painter* button to copy the formatting. The *Format Painter* toolbar button background color changes to _grey_ image:{baseurl}/images/fp-enabled.png[**Format Painter**].
 . Select the goal content to apply the formatting.
 
 *Result*: The formatting from the source content is applied to the goal content.
@@ -54,13 +54,13 @@ ____
 
 == Options
 
-The format painter acts upon all link:{{ site.baseurl }}/configure/content-formatting/#formats[`formats`] registered in the editor. In addition to any standard formatting, it will treat *lists* as a block format whenever the link:{{ site.baseurl }}/plugins/lists/[`lists plugin`] is made available.
+The format painter acts upon all link:{baseurl}/configure/content-formatting/#formats[`formats`] registered in the editor. In addition to any standard formatting, it will treat *lists* as a block format whenever the link:{baseurl}/plugins/lists/[`lists plugin`] is made available.
 
 === `formats`
 
-The format painter plugin will register many formats upon initialization. To override these formats, use the link:{{ site.baseurl }}/configure/content-formatting/#exampleofusageoftheformatsoption[`formats`] option.
+The format painter plugin will register many formats upon initialization. To override these formats, use the link:{baseurl}/configure/content-formatting/#exampleofusageoftheformatsoption[`formats`] option.
  +
-The example below showcases the formats registered automatically by the plugin upon initialization. The `formatpainter_removeformat` is used to clear any existing formats before applying the new ones. It is similar to the link:{{ site.baseurl }}/configure/content-formatting/#removingaformat[`removeformat`] format.
+The example below showcases the formats registered automatically by the plugin upon initialization. The `formatpainter_removeformat` is used to clear any existing formats before applying the new ones. It is similar to the link:{baseurl}/configure/content-formatting/#removingaformat[`removeformat`] format.
 
 *Type:* `Object`
 
@@ -102,4 +102,4 @@ tinymce.init({
   formatpainter_blacklisted_formats: 'link,address,removeformat,formatpainter_removeformat'
 });
 `
-Check out the link:{{site.baseurl}}/demo/formatpainter/[Format Painter demo] to try out this new feature.
+Check out the link:{baseurl}/demo/formatpainter/[Format Painter demo] to try out this new feature.

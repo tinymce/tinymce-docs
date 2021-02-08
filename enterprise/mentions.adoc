@@ -10,14 +10,14 @@ Users can communicate every day using `@username` on social networks and can exp
 
 Mentions is available as a stand-alone plugin or as part of the Pro Bundle. To learn more about all the options, check out the https://apps.tiny.cloud/products/atmention/[pricing and plans here]. OEM and enterprise customers should https://www.tiny.cloud/contact/[contact sales directly].
 
-There are two deployment options. One is with TinyMCE Cloud, the other is the more traditional Self-hosted route, requiring an additional link:{{ site.baseurl }}/enterprise/server/[server-side component] to be installed and configured.
+There are two deployment options. One is with TinyMCE Cloud, the other is the more traditional Self-hosted route, requiring an additional link:{baseurl}/enterprise/server/[server-side component] to be installed and configured.
 
 Please note that this feature requires a backend integration with a system to handle listing of users, as well as sending the notifications. Refer to this https://www.tinymce.com/docs/plugins/mentions/#example[example code] for more information. There are two integration points: getting a user list when `+@abc...+` is typed, and on submitting the form, sending a notification to the `@username` in the document.
 
 == Mentions cloud setup
 
-Mentions is available for download through link:{{ site.baseurl }}/cloud-deployment-guide/editor-and-features/[TinyMCE Cloud]. Include the `mentions` parameter in the `tinymce.init` script. Refer to the link:{{site.baseurl}}/plugins/mentions/[Mentions documentation], for more information on setup and configuration.
+Mentions is available for download through link:{baseurl}/cloud-deployment-guide/editor-and-features/[TinyMCE Cloud]. Include the `mentions` parameter in the `tinymce.init` script. Refer to the link:{baseurl}/plugins/mentions/[Mentions documentation], for more information on setup and configuration.
 
 == Downloading Mentions
 
-A https://www.tinymce.com/pricing/[TinyMCE Enterprise] subscription includes the ability to download and install the Mentions feature for the editor. For more information on setup and configuration refer to the link:{{site.baseurl}}/plugins/mentions/[Mentions documentation].
+A https://www.tinymce.com/pricing/[TinyMCE Enterprise] subscription includes the ability to download and install the Mentions feature for the editor. For more information on setup and configuration refer to the link:{baseurl}/plugins/mentions/[Mentions documentation].

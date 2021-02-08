@@ -16,7 +16,8 @@ The first thing you have to decide is how to load your modules.
 
 If you are using ES2015 modules, a simple example could look something like this.
 
-```javascript
+[source,js]
+----
 // Import TinyMCE
 import tinymce from 'tinymce/tinymce';
 
@@ -32,13 +33,14 @@ tinymce.init({
   selector: '#tiny',
   plugins: ['paste', 'link']
 });
-```
+----
 
 === CommonJS modules
 
 If you are using CommonJS modules, the example looks pretty much the same, only using the different `require` function to import the dependencies.
 
-```javascript
+[source,js]
+----
 // Import TinyMCE
 var tinymce = require('tinymce/tinymce');
 
@@ -54,7 +56,7 @@ tinymce.init({
   selector: '#tiny',
   plugins: ['paste', 'link']
 });
-```
+----
 
 == Getting the skin
 
@@ -64,26 +66,27 @@ No matter where you choose to put it you need a skin, and the quickest way to ge
 
 *MacOS and Linux*
 
-`
+----
 cp -r node_modules/tinymce/skins skins
-`
+----
 *Windows*
 
-`
+----
 xcopy /I /E node_modules/tinymce/skins skins
-`
+----
 
 === Webpack file-loader
 
 If you are using Webpack, another option is to use the https://github.com/webpack/file-loader[file loader] together with the https://github.com/webpack/docs/wiki/context[require.context] function to copy the skins directory by adding these lines before your call to the TinyMCE `init` function:
 
-`javascript
+[source,javascript]
+----
 require.context(
   'file?name=[path][name].[ext]&context=node_modules/tinymce!tinymce/skins',
   true,
   /.*/
 );
-`
+----
 
 What this does is more or less the same thing as the command line stuff above - it copies the skins directory from `node_modules/tinymce` to your output directory as defined in your Webpack configuration. This is handy because you can easily move the output directory of your build without having to copy over the skins folder manually - webpack will take care of it for you.
 
@@ -95,7 +98,8 @@ https://github.com/mishoo/UglifyJS2[UglifyJS2], one of the most popular JS minif
 
 This can happen when it is used directly or through module bundler. In https://webpack.github.io/[Webpack], `-p` CLI option cannot be used to bundle TinyMCE, and instead, you'll need to configure minification explicitly:
 
-`+javascript
+[source,javascript]
+----
 plugins: [
   new webpack.optimize.UglifyJsPlugin({
       /*...*/
@@ -104,4 +108,4 @@ plugins: [
       }
   })
 ]
-+`
+----

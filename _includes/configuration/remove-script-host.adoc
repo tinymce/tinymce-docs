@@ -10,13 +10,15 @@ If this option is enabled the protocol and host part of the URLs returned from t
 
 ===== Example
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   remove_script_host: false
 });
-`
+----
 
-____
+[NOTE]
+====
 If disabled, URLs will be returned in this format: `+'http://www.example.com/somedir/somefile.htm'+` instead of the default format: `'/somedir/somefile.htm'`.
-____
+====

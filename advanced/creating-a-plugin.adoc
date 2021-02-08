@@ -20,34 +20,37 @@ The build scripts that comes with the development package of TinyMCE will automa
 
 == Example of the plugin file structure
 
-`
+----
 /tinymce/plugins/example/plugin.js
 /tinymce/plugins/example/plugin.min.js
-`
+----
 
 This new example plugin can now be loaded using the tinymce.init plugins option.
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',
   plugins: 'example'
 });
-`
+----
 
 You can also have the plugin in any location you want by loading the plugin.js/plugin.min.js files directly after the tinymce.js/tinymce.min.js.
 
 == Example of loading the plugin from another URL
 
-`html
+[source,html]
+----
 <script src="/tinymce/js/tinymce.min.js"></script>
 <script src="/scripts/my.tinymce.plugin.js"></script>
-`
+----
 
 == Example plugin
 
 Here is an example plugin showing how you add a simple toolbar button and menu item. The button opens a dialog that lets you type in a title that gets inserted into the editor. The menu item will open the TinyMCE site in a dialog.
 
-```js
+[source,js]
+----
 tinymce.PluginManager.add('example', function(editor, url) {
   // Add a button that opens a window
   editor.addButton('example', {
@@ -96,19 +99,20 @@ return {
     }
   };
 });
-```
+----
 
 == Example init
 
 Here is an example of how to use the new toolbar button.
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',
   plugins: 'example',
   toolbar: 'example'
 });
-`
+----
 
 == Exposing metadata
 
@@ -122,14 +126,16 @@ This file is similar to .po files it has the English string on the left side and
 
 == Example of a Swedish translation for the dialog title
 
-`js
+[source,js]
+----
 tinymce.addI18n('sv_SE', {
   'Example plugin': 'Example plugin'
 });
-`
+----
 
 Sometimes you don't have all the translations that the full TinyMCE package has this would result in a 404 error while loading the non-existing file. This can be avoided by adding this line to the top of your plugin file.
 
-`js
+[source,js]
+----
 tinymce.PluginManager.requireLangPack('example', 'sv_SE,de_AT');
-`
+----

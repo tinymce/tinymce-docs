@@ -10,19 +10,21 @@ include::{rootDir}_attributes.adoc[]
 
 This plugin adds the ability for users to see invisible characters like `+&nbsp;+` displayed in the editable area. It also adds a toolbar control and a menu item `Show invisible characters` under the `View` menu.
 
-____
+[NOTE]
+====
 It's worth noting that at present the toolbar button icon is the same for both link:../visualblocks/[Visual Blocks] and Visual Characters plugins.
-____
+====
 
 *Type:* `String`
 
 ===== Example
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "visualchars",
   menubar: "view",
   toolbar: "visualchars"
 });
-`
+----

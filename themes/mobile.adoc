@@ -13,7 +13,8 @@ The `mobile` theme is responsible for rendering the editor on mobile devices and
 
 We recommend that you use a link:{baseurl}/configure/editor-appearance/#mobile[mobile section] in the config to load this mobile specific theme but it can be used directly as well.
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',
   theme: 'modern',
@@ -22,7 +23,7 @@ tinymce.init({
     plugins: [ 'autosave', 'lists', 'autolink' ]
   }
 });
-`
+----
 
 === Related configuration options
 

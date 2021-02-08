@@ -14,13 +14,14 @@ If you are using Advanced Code Editor `advcode` plugin, make sure you do not use
 
 ===== Example
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "advcode",
   toolbar: "code"
 });
-`
+----
 
 === Options
 
@@ -34,7 +35,8 @@ Note that the external dimensions of the actual modal will be slightly larger th
 
 ===== Example
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "advcode",
@@ -42,7 +44,7 @@ tinymce.init({
   menubar: "tools",
   code_dialog_height: 200
 });
-`
+----
 
 === `code_dialog_width`
 
@@ -54,15 +56,17 @@ Note that the external dimensions of the actual modal will be slightly larger th
 
 ===== Example
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "advcode",
   toolbar: "code",
   code_dialog_width: 300
 });
-`
+----
 
-____
+[NOTE]
+====
 The Advanced Code Editor plugin is included with a https://www.tinymce.com/pricing/[TinyMCE Enterprise] subscription. Please https://www.tinymce.com/pricing/[click here] to learn more about our flexible subscriptions plans.
-____
+====

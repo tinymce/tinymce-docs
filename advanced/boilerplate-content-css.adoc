@@ -12,7 +12,8 @@ There are a few advanced features in TinyMCE that require some CSS to be added t
 
 This Boilerplate CSS can be used to style these advanced elements. This CSS file can be used within the editor using the link:{baseurl}/configure/content-appearance/#content_css[content_css] option and also on your page where the saved content is presented.
 
-```css
+[source,css]
+----
 /* Image captions using the HTML5 figure element */
 figure.align-left {
     float: left;
@@ -75,4 +76,4 @@ __/
 /* Override styles for the inline boundaries used within the editor _/
 /_ .mce-content-body *[data-mce-selected="inline-boundary"] {...} */
 
-```
+----

@@ -10,7 +10,8 @@ This value should be set as a JavaScript object that contains a property for eac
 
 ===== Example
 
-`+js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   external_plugins: {
@@ -18,4 +19,4 @@ tinymce.init({
     'maths': 'http://www.maths.com/plugin.min.js'
   }
 });
-+`
+----

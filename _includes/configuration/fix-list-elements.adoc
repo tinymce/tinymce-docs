@@ -4,30 +4,32 @@ This option enables you to specify that list elements (`ul`, `ol`) should be con
 
 This invalid list:
 
-____
-```html
-____
-
-. a
- .. b
- .. c
-
-. e
-
-```
+[source,html]
+----
+<ol>
+  <li>a</li>
+    <ol>
+      <li>b</li>
+      <li>c</li>
+   </ol>
+    <li>e</li>
+</ol>
+----
 
 Gets converted into this valid list:
 
-____
-```html
-____
-
-. a
- .. b
- .. c
-. e
-
-```
+[source,html]
+----
+<ol>
+  <li>a
+    <ol>
+      <li>b</li>
+      <li>c</li>
+    </ol>
+  </li>
+  <li>e</li>
+</ol>
+----
 
 *Type:* `Boolean`
 
@@ -37,9 +39,10 @@ ____
 
 ===== Example
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   fix_list_elements : true
 });
-`
+----

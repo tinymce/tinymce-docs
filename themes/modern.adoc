@@ -11,12 +11,13 @@ The `modern` theme is responsible for rendering the editor in iframe or inline m
 
 ===== Example:
 
-`js
+[source,js]
+----
 tinymce.init({
     selector: "textarea.tinymce",
     themes: "modern"
 });
-`
+----
 
 === Related configuration options
 

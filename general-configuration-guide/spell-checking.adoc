@@ -12,13 +12,14 @@ Nobody likes content with spelling errors. Our team at TinyMCE is motivated to h
 
 The first and easiest to implement option is to utilize the browser's native spell check functionality by assigning the link:{baseurl}/configure/spelling/#browser_spellcheck[`browser_spellcheck`] configuration option the value of `true`. Depending on the right click / context behavior you want, you _may_ need to enable the link:{baseurl}/plugins/contextmenu/[`contextmenu`] plugin.
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   browser_spellcheck: true,
   contextmenu: false
 });
-`
+----
 
 == PHP Spellchecker component
 
@@ -37,14 +38,15 @@ This plugin enables you to use *Enchant* or *PSpell* on the backend of your serv
 
 ===== Example
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'spellchecker',
   toolbar: 'spellchecker',
   spellchecker_rpc_url: 'spellchecker.php'
 });
-`
+----
 
 Please see the link:{baseurl}/plugins/spellchecker/[Spell Checker Plugin] for advanced configuration options.
 

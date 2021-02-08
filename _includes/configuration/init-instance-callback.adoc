@@ -6,13 +6,14 @@ The *init_instance_callback* option allows you to specify a function name to be 
 
 ===== Example
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   init_instance_callback : function(editor) {
     console.log("Editor: " + editor.id + " is now initialized.");
   }
 });
-`
+----
 
 You may also want to take a look at the <<setup,setup callback option>> as it can be used to bind events before the editor instance is initialized.

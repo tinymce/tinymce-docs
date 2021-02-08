@@ -14,13 +14,14 @@ This plugin adds a save button to the TinyMCE toolbar, which will submit the for
 
 ===== Example
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "save",
   toolbar: "save"
 });
-`
+----
 
 *Error messages*
 
@@ -28,15 +29,17 @@ The `"Error: Form submit field collision."` error message will appear if you cal
 
 So replace this:
 
-```html+++<form>++++++<button name="submit">++++++</button>++++++</form>+++
-
-```
+[source,html]
+----
+<form><button name="submit"></button></form>
+----
 
 With this:
 
-```html+++<form>++++++<button name="submitbtn">++++++</button>++++++</form>+++
-
-```
+[source,html]
+----
+<form><button name="submitbtn"></button></form>
+----
 
 === Options
 
@@ -50,14 +53,15 @@ This option allows you to disable the save button until modifications have been 
 
 ===== Example
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "save",
   toolbar: "save",
   save_enablewhendirty: true
 });
-`
+----
 
 === `save_oncancelcallback`
 
@@ -67,14 +71,15 @@ This option allows you to specify the function that will be executed when the ca
 
 ===== Example
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "save",
   toolbar: "save",
   save_oncancelcallback: function () { console.log('Save canceled'); }
 });
-`
+----
 
 === `save_onsavecallback`
 
@@ -84,11 +89,12 @@ This option allows you to specify the function that will be executed when the sa
 
 ===== Example
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "save",
   toolbar: "save",
   save_onsavecallback: function () { console.log('Saved'); }
 });
-`
+----

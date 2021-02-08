@@ -12,14 +12,15 @@ This plugin adds a toolbar button that allows a user to edit the HTML code hidde
 
 ===== Example
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "code",
   toolbar: "code",
   menubar: "tools"
 });
-`
+----
 
 === Options
 
@@ -33,7 +34,8 @@ Note that the external dimensions of the actual modal will be slightly larger th
 
 ===== Example
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "code",
@@ -41,7 +43,7 @@ tinymce.init({
   menubar: "tools",
   code_dialog_height: 200
 });
-`
+----
 
 === `code_dialog_width`
 
@@ -53,7 +55,8 @@ Note that the external dimensions of the actual modal will be slightly larger th
 
 ===== Example
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "code",
@@ -61,4 +64,4 @@ tinymce.init({
   menubar: "tools",
   code_dialog_width: 300
 });
-`
+----

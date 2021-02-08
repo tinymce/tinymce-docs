@@ -35,13 +35,14 @@ With TinyMCE Cloud the server-side spellchecking component is automatically conf
 
 ===== Example TinyMCE Configuration
 
-`js
+[source,js]
+----
 tinymce.init({
 	selector: 'textarea',
 	plugins: 'tinymcespellchecker',
 	spellchecker_language: 'en'
 });
-`
+----
 
 == Self-hosted Installation
 
@@ -54,14 +55,15 @@ For information on installing the server-side component for spell checking, plea
 
 ===== Example TinyMCE Configuration
 
-`js
+[source,js]
+----
 tinymce.init({
 	selector: 'textarea',
 	plugins: 'tinymcespellchecker',
 	spellchecker_rpc_url: 'localhost/ephox-spelling',
 	spellchecker_language: 'en'
 });
-`
+----
 
 == Usage
 
@@ -79,9 +81,9 @@ NOTE: `spellchecker_rpc_url` is *not* required when enabling this plugin via lin
 
 This optional setting allows you to specify the languages that are available to the user, provided as a comma delimited string. The default value for this setting is:
 
-`
+----
 'US English=en,UK English=en_gb,Danish=da,Dutch=nl,Finnish=fi,French=fr,German=de,Italian=it,Norwegian=nb,Brazilian Portuguese=pt_BR,Iberian Portuguese=pt_PT,Spanish=es,Swedish=sv'
-`
+----
 
 === `spellchecker_language`
 
@@ -156,7 +158,7 @@ This button allows the user to perform a spellcheck on the entire document. In a
 
 Example TinyMCE Configuration:
 
-`
+----
 tinymce.init({
   selector: 'textarea',
   plugins: 'tinymcespellchecker',
@@ -164,7 +166,7 @@ tinymce.init({
   spellchecker_rpc_url: 'localhost/ephox-spelling',
   spellchecker_language: 'en'
 });
-`
+----
 
 === Menu items
 
@@ -178,7 +180,7 @@ This menu item allows you to change the current language for the spell checking 
 
 Example TinyMCE Configuration:
 
-`
+----
 tinymce.init({
   selector: 'textarea',
   plugins: 'tinymcespellchecker',
@@ -188,7 +190,7 @@ tinymce.init({
   spellchecker_rpc_url: 'localhost/ephox-spelling',
   spellchecker_language: 'en'
 });
-`
+----
 
 == Events
 
@@ -198,7 +200,7 @@ This event gets fired when the user selects ignore word on a misspelled word.
 
 Here is an example of using the event:
 
-`
+----
 tinymce.init({
   selector: 'textarea',
   plugins: 'tinymcespellchecker',
@@ -209,7 +211,7 @@ tinymce.init({
     });
   }
 });
-`
+----
 
 ==== SpellCheckerIgnoreAll event
 
@@ -217,7 +219,7 @@ This event gets fired when the user selects ignore word on a misspelled word.
 
 Here is an example of using the event:
 
-`
+----
 tinymce.init({
   selector: 'textarea',
   plugins: 'tinymcespellchecker',
@@ -228,7 +230,7 @@ tinymce.init({
     });
   }
 });
-`
+----
 
 == Downloading Spell Checker Pro
 

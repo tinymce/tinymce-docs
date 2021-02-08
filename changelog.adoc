@@ -1915,7 +1915,7 @@ include::{rootDir}_attributes.adoc[]
 * Added new package.json to enable easy installation of dependent npm packages used for building.
 * Added new link, image, charmap, anchor, code, hr plugins since these are now moved out of the theme.
 * Rewrote all plugins and themes from scratch so they match the new UI framework.
-* Replaced all events to use the more common +++<target>+++.on/off(+++<event>+++) methods instead of +++<target>+++.+++<event>+++.add/remove.+++</event>++++++</target>++++++</event>++++++</target>+++
+* Replaced all events to use the more common `<target>`.on/off(`<event>`) methods instead of `<target>`.`<event>`.add/remove.`</event>`</target>`</event>`</target>`
 * Rewrote the TinyMCE core to use AMD style modules. Gets compiled to an inline library using amdlc.
 * Rewrote all core logic to pass jshint rules. Each file has specific jshint rules.
 * Removed all IE6 specific logic since 4.x will no longer support such an old browser.

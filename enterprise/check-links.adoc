@@ -32,7 +32,7 @@ Default settings are automatically configured, meaning these settings are option
 
 Example:
 
-`
+----
 ephox {
   link-checking.cache {
     capacity = 500
@@ -40,10 +40,11 @@ ephox {
     timeToIdleInSeconds = 3600
   }
 }
-`
+----
 
 You will also find more Self-hosted setup information on the link:{baseurl}/plugins/linkchecker/[Link Checker plugin page].
 
-____
+[NOTE]
+====
 *Important note:* The Link Checker server currently does not support integration with IBM WebSphere Application Server.
-____
+====

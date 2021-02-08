@@ -20,11 +20,11 @@ If the content or endpoint is on the same domain as the Enhanced Media Embed ser
 
 As an example:
 
-* The Enhanced Media Embed server is accessible at `+http://mydomain.example.com/media+`
-* Your custom oEmbed endpoint is accessible at `+http://mydomain.example.com/endpoint+`
-* You have already signed into your CMS at `+http://mydomain.example.com/cms+`
-* You embed content from `+http://mydomain.example.com/cms/secretcontent+` that normally requires authentication to access
-* Because your content, oEmbed endpoint and Enhanced Media Embed server are all on the same domain, `+http://mydomain.example.com/cms/secretcontent+` is embeddable using cookie passthrough
+* The Enhanced Media Embed server is accessible at `http://mydomain.example.com/media`
+* Your custom oEmbed endpoint is accessible at `http://mydomain.example.com/endpoint`
+* You have already signed into your CMS at `http://mydomain.example.com/cms`
+* You embed content from `http://mydomain.example.com/cms/secretcontent` that normally requires authentication to access
+* Because your content, oEmbed endpoint and Enhanced Media Embed server are all on the same domain, `http://mydomain.example.com/cms/secretcontent` is embeddable using cookie passthrough
 
 == Annotate content with Open Graph or other meta tags
 
@@ -54,9 +54,9 @@ Additionally, you can specify a video or audio resource to include in the embed 
 
 As an alternative to Open Graph tags, you can include meta tags using the older style recommended by search engines such as Google.
 
-* `+<title>...</title>+`
-* `+<meta name=”description”>...</meta>+`
-* `+<link rel=image_src href=”...” />+`
+* `<title>...</title>`
+* `<meta name=”description”>...</meta>`
+* `<link rel=image_src href=”...” />`
 
 ==== Pros
 
@@ -319,19 +319,24 @@ No additional fields when `type` is `unbounded`.
 
 When the Enhanced Media Embed server generates a summary card of a URL (using the title, thumbnail, description and website), it returns a HTML snippet like the following. You should apply styles to the document style to suit these to your preference.
 
-```html
-
-http://www.imdb.com/title/tt0117500/[image:https://images-na.ssl-images-amazon.com/images/M/MV5BZDJjOTE0N2EtMmRlZS00NzU0LWE0ZWQtM2Q3MWMxNjcwZjBhXkEyXkFqcGdeQXVyNDk3NzU2MTQ@._V1_UY1200_CR90,0,630,1200_AL_.jpg[\]] http://www.imdb.com/title/tt0117500/[[.ephox-summary-card-title\]#The Rock (1996)# +
- +
-[.ephox-summary-card-description\]#Directed by Michael Bay. With Sean Connery, Nicolas Cage, Ed Harris, John Spencer. A mild-mannered chemist and an ex-con must lead the counterstrike when a rogue group of military men, led by a renegade general, threaten a nerve gas attack from Alcatraz against San Francisco.# +
- +
-[.ephox-summary-card-website\]#IMDb#]
-
-```
+[source,html]
+----
+<div class="ephox-summary-card">
+  <a class="ephox-summary-card-url-thumbnail" href="http://www.imdb.com/title/tt0117500/">
+    <img class="ephox-summary-card-thumbnail" src="https://images-na.ssl-images-amazon.com/images/M/MV5BZDJjOTE0N2EtMmRlZS00NzU0LWE0ZWQtM2Q3MWMxNjcwZjBhXkEyXkFqcGdeQXVyNDk3NzU2MTQ@._V1_UY1200_CR90,0,630,1200_AL_.jpg">
+  </a>
+  <a class="ephox-summary-card-link" href="http://www.imdb.com/title/tt0117500/">
+    <span class="ephox-summary-card-title">The Rock (1996)</span><br><br>
+    <span class="ephox-summary-card-description">Directed by Michael Bay.  With Sean Connery, Nicolas Cage, Ed Harris, John Spencer. A mild-mannered chemist and an ex-con must lead the counterstrike when a rogue group of military men, led by a renegade general, threaten a nerve gas attack from Alcatraz against San Francisco.</span><br><br>
+    <span class="ephox-summary-card-website">IMDb</span>
+  </a>
+</div>
+----
 
 ==== Recommended CSS
 
-```css
+[source,css]
+----
 .ephox-summary-card {
     border: 1px solid #AAA;
     box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
@@ -377,4 +382,4 @@ http://www.imdb.com/title/tt0117500/[image:https://images-na.ssl-images-amazon.c
     margin-top: 0.5em;
     display: block;
 }
-```
+----

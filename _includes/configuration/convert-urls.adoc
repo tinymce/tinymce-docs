@@ -8,9 +8,10 @@ This option enables you to control whether TinyMCE is to be smart and restore UR
 
 *Possible Values:* `true`, `false`
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   convert_urls: false
 });
-`
+----

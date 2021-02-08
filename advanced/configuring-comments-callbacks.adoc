@@ -15,7 +15,8 @@ include::{rootDir}_attributes.adoc[]
 
 Comments 2.0 requires the following functions to be defined:
 
-```js
+[source,js]
+----
 tinymce.init({
   ...
    tinycomments_create: function (req, done, fail) { ... },
@@ -26,8 +27,7 @@ tinymce.init({
    tinycomments_lookup: function (req, done, fail) { ... },
    tinycomments_edit_comment: function (req, done, fail) { ... },
 });
-
-```
+----
 
 All functions incorporate `done` and `fail` callbacks as parameters. The function return type is not important, but all functions must call exactly one of these two callbacks: `fail` or `done`.
 
@@ -51,11 +51,12 @@ The `tinycomments_create` function is given a request (req) object as the first 
 
 The done callback needs to take an object of the form:
 
-`js
+[source,js]
+----
 {
   conversationUid: the new conversation uid
 }
-`
+----
 
 === tinycomments_reply
 
@@ -71,11 +72,12 @@ The `tinycomments_reply` function is given a request (req) object as the first p
 
 The done callback needs to take an object of the form:
 
-`js
+[source,js]
+----
 {
   commentUid: the value of the new comment uid
 }
-`
+----
 
 === tinycomments_edit_comment
 
@@ -92,12 +94,13 @@ The `tinycomments_edit_comment` function is given a request (req) object as the 
 
 The done callback needs to take an object of the form:
 
-`js
+[source,js]
+----
 {
   canEdit: whether or not the Edit succeeded
   reason: an optional string explaining why the edit was not allowed (if canEdit is false)
 }
-`
+----
 
 === tinycomments_delete
 
@@ -109,12 +112,13 @@ The `tinycomments_delete` function is given a request (req) object as the first 
 
 The done callback needs to take an object of the form:
 
-`js
+[source,js]
+----
 {
   canDelete:boolean
   reason: an optional string explaining why the delete was not allowed (if canDelete is false)
 }
-`
+----
 
 NOTE: Failure to delete due to permissions or business rules is indicated by "false", while unexpected errors should be indicated using the "fail" callback.
 
@@ -126,12 +130,13 @@ The `tinycomments_delete_all` function is given a request (req) object as the fi
 
 The done callback needs to take an object of the form:
 
-`js
+[source,js]
+----
 {
   canDelete:boolean
   reason: an optional string explaining why the deleteAll was not allowed (if canDelete is false)
 }
-`
+----
 
 NOTE: Failure to delete due to permissions or business rules is indicated by "false", while unexpected errors should be indicated using the "fail" callback.
 
@@ -146,12 +151,13 @@ The `tinycomments_delete_comment` function is given a request (req) object as th
 
 The done callback needs to take an object of the form:
 
-`js
+[source,js]
+----
 {
   canDelete:boolean
   reason: an optional reason
 }
-`
+----
 
 NOTE: Failure to delete due to permissions or business rules is indicated by "false", while unexpected errors should be indicated using the "fail" callback.
 
@@ -171,7 +177,8 @@ The `tinycomments_lookup` function is given a request (req) object as the first 
 
 The done callback needs to take an object of the form:
 
-```js
+[source,js]
+----
 {
  comments: [
    {
@@ -193,7 +200,6 @@ The done callback needs to take an object of the form:
 
 ]
 }
-
-```
+----
 
 For more information on Comments commercial feature, visit our link:{baseurl}/enterprise/tiny-comments/[Premium Features] page.

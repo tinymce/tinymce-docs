@@ -12,12 +12,13 @@ This option gives you the ability to disable the resize handle or set it to resi
 
 ===== Example
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   resize: false
 });
-`
+----
 
 === Enabling both vertical and horizontal resize
 
@@ -29,9 +30,10 @@ tinymce.init({
 
 ===== Example
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   resize: 'both'
 });
-`
+----

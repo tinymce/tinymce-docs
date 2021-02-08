@@ -9,9 +9,10 @@ include::{rootDir}_attributes.adoc[]
 
 The `linkchecker` does what it says &ndash; validates URLs, as you type them. URLs considered invalid will be highlighted with red and will have a dedicated context menu with options to either edit the link, try and open it in a separate tab, remove the link, or ignore it.
 
-____
+[NOTE]
+====
 Please note that Link Checker is a *premium* plugin and relies on a server-side service, which is included as a part of a https://www.tinymce.com/pricing/[premium TinyMCE plugin] subscription.
-____
+====
 
 == Cloud Instructions
 
@@ -19,12 +20,13 @@ If you are using link:{baseurl}/cloud-deployment-guide/editor-and-features/[Tiny
 
 ===== Example
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "linkchecker"
 });
-`
+----
 
 == Self-hosted Instructions
 
@@ -32,13 +34,14 @@ Customers using a Self-hosted environment will need to provide a URL to their de
 
 ===== Example
 
-`+js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "linkchecker",
   linkchecker_service_url: "http://mydomain.com/linkchecker"
 });
-+`
+----
 
 == Options
 
@@ -48,7 +51,8 @@ Link Checker has the following settings.
 
 After a link is checked for validity, a result of the validation is added to it via `data-mce-linkchecker-status` attribute. There are three possible outcomes of the validation: `valid`, `invalid` and `unknown`. Link Checker visually reflects `invalid` outcome by injecting the following CSS styles into the editor:
 
-```css
+[source,css]
+----
 a[data-mce-linkchecker-status="invalid"] {
     outline-color: rgba(231, 76, 60, 0.25);
     background-color: rgba(231, 76, 60, 0.25)
@@ -57,7 +61,7 @@ a[data-mce-linkchecker-status="invalid"] {
 a[data-mce-linkchecker-focus="true"] {
     outline: 1px solid rgba(231, 76, 60, 0.75)
 }
-```
+----
 
 `data-mce-linkchecker-focus` attribute is set to _true_ every time a dedicated context menu is shown on a link. This only happens for `invalid` links.
 
@@ -71,10 +75,11 @@ A URL of the server-side link validation service. This is required option, witho
 
 ===== Example
 
-`+js
+[source,js]
+----
 tinymce.init({
     selector: "textarea",
     plugins: "linkchecker",
     linkchecker_service_url: "http://mydomain.com/linkchecker"
 });
-+`
+----

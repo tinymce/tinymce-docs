@@ -14,14 +14,15 @@ This plugin adds a dialog to the editor with a map of special unicode characters
 
 ===== Example
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "charmap",
   toolbar: "charmap",
   menubar: "insert"
 });
-`
+----
 
 === Options
 
@@ -29,7 +30,8 @@ The default map of unicode characters can be overridden or extended through the 
 
 Internally, character map is defined by the array of arrays, where each sub-array represents a single character. The first item in the sub-array is character code. The second is a title that shows up when mouse hovers over the specified character in the map. Character code can be either decimal, octal or hexadecimal (in the case of octal or hexadecimal format, code should be appropriately prefixed with 0 and 0x). Options are expected to be provided in the same format.
 
-`+js
+[source,js]
+----
 [
   [160, 'no-break space'],
   [173, 'soft hyphen'],
@@ -39,7 +41,7 @@ Internally, character map is defined by the array of arrays, where each sub-arra
   [8206, 'left-to-right mark'],
   [8207, 'right-to-left mark']
 ];
-+`
+----
 
 === `charmap`
 
@@ -49,7 +51,8 @@ With this option it is possible to fully override the default character map. Thi
 
 ===== Example
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "code",
@@ -59,7 +62,7 @@ tinymce.init({
     [0x2615, 'morning coffee']
   ]
 });
-`
+----
 
 === `charmap_append`
 
@@ -69,7 +72,8 @@ This option provides a way to append some additional characters to the default c
 
 ===== Example
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "code",
@@ -80,4 +84,4 @@ tinymce.init({
     [0x2601, 'cloud']
   ]
 });
-`
+----

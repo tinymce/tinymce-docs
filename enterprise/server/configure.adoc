@@ -31,45 +31,45 @@ This is best illustrated with some examples:
 
 If users load TinyMCE from the following URLs:
 
-* `+http://server.example.com/editor.php+`
-* `+http://server.example.com/subpage/editor.php+`
+* `http://server.example.com/editor.php`
+* `http://server.example.com/subpage/editor.php`
 
-Add `+http://server.example.com+` to the `allowed-origins` list.
-
-If users load TinyMCE from the following URLs:
-
-* `+https://server.example.com/editor.php+`
-* `+http://server.example.com/subpage/editor.php+`
-
-Add `+http://server.example.com+` and `+https://server.example.com+` to the `allowed-origins` list.
+Add `http://server.example.com` to the `allowed-origins` list.
 
 If users load TinyMCE from the following URLs:
 
-* `+https://server.example.com/editor.php+`
-* `+https://server.example.com/+`
+* `https://server.example.com/editor.php`
+* `http://server.example.com/subpage/editor.php`
 
-Add `+https://server.example.com+` to the `allowed-origins` list.
+Add `http://server.example.com` and `https://server.example.com` to the `allowed-origins` list.
 
 If users load TinyMCE from the following URLs:
 
-* `+http://oneserver.example.com/editor.php+`
-* `+http://twoserver.example.com/subpage/editor.php+`
+* `https://server.example.com/editor.php`
+* `https://server.example.com/`
 
-Add `+http://oneserver.example.com+` and `+http://twoserver.example.com+` to the``allowed-origins`` list.
+Add `https://server.example.com` to the `allowed-origins` list.
+
+If users load TinyMCE from the following URLs:
+
+* `http://oneserver.example.com/editor.php`
+* `http://twoserver.example.com/subpage/editor.php`
+
+Add `http://oneserver.example.com` and `http://twoserver.example.com` to the``allowed-origins`` list.
 
 NOTE: If some of your URLs include a port then add an entry with and without the port. The value of the `Origin` header may be different across browsers. Add both to be safe.
 
 If users load TinyMCE from the following URLs:
 
-* `+http://server.example.com:8080/editor.php+`
+* `http://server.example.com:8080/editor.php`
 
-Add `+http://server.example.com:8080+` and `+http://server.example.com+` to the `allowed-origins` list.
+Add `http://server.example.com:8080` and `http://server.example.com` to the `allowed-origins` list.
 
 If users load TinyMCE from the following URLs:
 
-* `+https://server.example.com:9000/editor.php+`
+* `https://server.example.com:9000/editor.php`
 
-Add `+https://server.example.com:9000+` and `+https://server.example.com+` to the `allowed-origins` list.
+Add `https://server.example.com:9000` and `https://server.example.com` to the `allowed-origins` list.
 
 |===
 |  |  |
@@ -85,20 +85,20 @@ Add `+https://server.example.com:9000+` and `+https://server.example.com+` to th
 
 Example:
 
-`+
+----
 ephox {
 	allowed-origins {
 		origins = [ "http://myserver", "http://myserver.example.com", "http://myserver:8080", "http://myotherserver", "http://myotherserver:9090", "https://mysecureserver" ]
 	}
 }
-+`
+----
 
 ==== Wildcard support
 
 The `*` wildcard character matches any value. Wildcards are supported in the following parts of entries in the `allowed-origin` list:
 
 . The scheme (e.g. `*://mydomain.com`). Omitting the scheme entirely is equivalent (e.g. `mydomain.com`).
-. The port (e.g. `+http://mydomain.com:*+`).
+. The port (e.g. `http://mydomain.com:*`).
 . As a prefix of the domain (e.g. `http://*.mydomain.com`).
 . Any combination of scheme, port, and domain prefix (e.g. `*://*.mydomain.com:*`).
 . As the only character (e.g. `*`). This will allow *any* Origin to access the server-side components.
@@ -106,13 +106,13 @@ The `*` wildcard character matches any value. Wildcards are supported in the fol
 
 NOTE: Options 5 and 6 allow a broad set of origins access to the server-side components and are NOT recommended for production deployments.
 
-`+
+----
 ephox {
 	allowed-origins {
 		origins = [ "http://myserver:*", "*://myotherserver.example.com", "*://*.mydomain.example.com:*"]
 	}
 }
-+`
+----
 
 ==== Troubleshooting Origins
 
@@ -164,7 +164,7 @@ This optional proxy element provides an alternative to providing proxy settings 
 
 In the following example, both HTTP and HTTPS connections (except to localhost and the example.com domain) are proxied through someproxy.example.com on port 8080 and someproxy.example.com does not require authentication.
 
-`
+----
 ephox {
     proxy {
         http.proxyHost = "someproxy.example.com"
@@ -174,7 +174,7 @@ ephox {
         http.nonProxyHosts = "localhost|*.example.com"
     }
 }
-`
+----
 
 === `http` (optional)
 
@@ -200,25 +200,25 @@ This is not recommended for production environments.
 
 Example:
 
-`
+----
 ephox {
     http {
         trust-all-cert = true
     }
 }
-`
+----
 
 The request timeout on outbound HTTP and HTTPS connections can be set. Setting this to a larger value will allow larger files through, but they may take a long time. An example might be if you expect to fetch very large files with the image proxy service.
 
 Example:
 
-`
+----
 ephox {
     http {
         request-timeout-seconds = 15
     }
 }
-`
+----
 
 === `image-proxy` (optional)
 
@@ -238,13 +238,13 @@ The link:{baseurl}/plugins/imagetools/[image proxy service] has some optional co
 
 Example:
 
-`
+----
 ephox {
     image-proxy {
         image-size = 10000000 // 10MB in bytes
     }
 }
-`
+----
 
 == Logging
 
@@ -258,23 +258,40 @@ The TinyMCE server-side components use the http://logback.qos.ch/manual/configur
 
 Save the snippet below as `logback.xml` after replacing `{$LOG_LOCATION}` with the full path to the destination log file (e.g. /var/log/tinymce_server_components.log).
 
-````+++<configuration>++++++<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">++++++<encoder>++++++<pattern>+++%d{HH:mm:ss.SSS} [%thread] %-5level %logger\{36} - %msg%n+++</pattern>++++++</encoder>++++++</appender>+++ +++<appender name="FILE" class="ch.qos.logback.core.FileAppender">++++++<file>+++{$LOG_LOCATION}+++</file>+++ +++<encoder>++++++<pattern>+++%d{HH:mm:ss.SSS} [%thread] %-5level %logger\{36} - %msg%n+++</pattern>++++++</encoder>++++++</appender>+++
+[source,xml]
+----
+<configuration>
 
-// The name "com.ephox" refers to all TinyMCE server-side components. +++<logger name="com.ephox" level="INFO">++++++</logger>+++ +++<root level="INFO">++++++<appender-ref ref="FILE">++++++</appender-ref>+++
+  <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+	<encoder>
+	  <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+	</encoder>
+  </appender>
 
-////
-If you want logging to go to the container as well uncomment
-	the following line
-////
+  <appender name="FILE" class="ch.qos.logback.core.FileAppender">
+	<file>{$LOG_LOCATION}</file>
+	<encoder>
+	  <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+	</encoder>
+  </appender>
 
-// <appender-ref ref="STDOUT" />+++</root>++++++</configuration>+++
+  <!-- The name "com.ephox" refers to all TinyMCE server-side components. -->
+  <logger name="com.ephox" level="INFO"/>
 
-````
+  <root level="INFO">
+	<appender-ref ref="FILE" />
+	<!-- If you want logging to go to the container as well uncomment
+	the following line -->
+	<!-- <appender-ref ref="STDOUT" /> -->
+  </root>
+
+</configuration>
+----
 
 === Step 2. Pass the configuration file to the Java application server
 
 Assuming you've saved your `logback.xml` file in `/etc/opt/tinymce`, follow link:{baseurl}/enterprise/server/#step4passtheconfigurationfiletothejavaapplicationserver[step 4] and link:{baseurl}/enterprise/server/#step5restartthejavaapplicationserver[step 5] on the _Install Server-side Components_ page to set the following JVM system property on your Java application server:
 
-`
+----
 -Dlogback.configurationFile=/etc/opt/tinymce/logback.xml
-`
+----

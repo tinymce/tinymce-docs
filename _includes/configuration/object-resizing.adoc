@@ -12,12 +12,13 @@ This options allows you to turn on/off the resizing handles on images, tables or
 
 ===== Example
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   object_resizing : false
 });
-`
+----
 
 === Enable resizing on images only
 
@@ -29,9 +30,10 @@ tinymce.init({
 
 ===== Example
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   object_resizing : 'img'
 });
-`
+----

@@ -6,11 +6,12 @@ The *images_dataimg_filter* option lets you specify a filter predicate function 
 
 ===== Example
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   images_dataimg_filter: function(img) {
     return img.hasAttribute('internal-blob');
   }
 });
-`
+----

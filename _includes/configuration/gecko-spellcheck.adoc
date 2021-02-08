@@ -1,8 +1,9 @@
 == gecko_spellcheck
 
-____
+[NOTE]
+====
 Gecko Spell Check was deprecated in TinyMCE v4.3 (consider using  <<browser_spellcheck,#browser_spellcheck>>).
-____
+====
 
 This option allows you to disable https://en.wikipedia.org/wiki/Gecko_(software)[Gecko] based browsers' internal spell checker from being used in TinyMCE.
 
@@ -14,9 +15,10 @@ This option allows you to disable https://en.wikipedia.org/wiki/Gecko_(software)
 
 ===== Example
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   gecko_spellcheck: false
 });
-`
+----

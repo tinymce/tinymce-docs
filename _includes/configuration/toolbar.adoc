@@ -10,12 +10,13 @@ To specify the controls that should appear on TinyMCE's toolbar, the `toolbar` o
 
 ===== Example grouped toolbar
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   toolbar: 'undo redo | styleselect | bold italic | link image'
 });
-`
+----
 
 === Disabling the toolbar
 
@@ -29,12 +30,13 @@ To disable the toolbar, the toolbar option should be provided a boolean value of
 
 ===== Example
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
     toolbar: false
 });
-`
+----
 
 === Using multiple toolbars
 
@@ -44,7 +46,8 @@ To specify multiple toolbars, the toolbar option should be provided with an arra
 
 ===== Example
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   toolbar: [
@@ -52,6 +55,6 @@ tinymce.init({
     'alignleft aligncenter alignright'
   ]
 });
-`
+----
 
 Alternatively, you may specify multiple toolbars through the use of the <<toolbarn,toolbar(n)>> option.

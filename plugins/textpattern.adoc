@@ -15,12 +15,13 @@ The default pattern is similar to markdown syntax, so you can type `# text` to p
 
 ===== Example
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",
   plugins: "textpattern"
 });
-`
+----
 
 === Options
 
@@ -34,7 +35,8 @@ There are three types of patterns: inline, block, and replacement patterns. Inli
 
 ===== Example
 
-`+js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugin: 'textpattern',
@@ -53,4 +55,4 @@ tinymce.init({
      {start: '//brb', replacement: 'Be Right Back'}
   ]
 });
-+`
+----

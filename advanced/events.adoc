@@ -12,7 +12,8 @@ include::{rootDir}_attributes.adoc[]
 
 Here is an example of how to bind a handler function to the click event.
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',
   init_instance_callback: function (editor) {
@@ -21,7 +22,7 @@ tinymce.init({
     });
   }
 });
-`
+----
 
 | Event       | Native/Core/Plugin    |  Description   |
 |---------|----------------|-----------|
@@ -63,7 +64,8 @@ tinymce.init({
 
 Here is an example where init events are listened to notice that we bind this on setup.
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',
   setup: function (editor) {
@@ -72,7 +74,7 @@ tinymce.init({
     });
   }
 });
-`
+----
 
 === Focus
 
@@ -80,7 +82,8 @@ Gets fired when the editor is focused.
 
 Here is an example of how to listen for focus events.
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',
   init_instance_callback: function (editor) {
@@ -89,7 +92,7 @@ tinymce.init({
     });
   }
 });
-`
+----
 
 === Blur
 
@@ -97,7 +100,8 @@ Gets fired when the editor is blurred but not when the focus is moved to any of 
 
 Here is an example of how to listen for blur events.
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',
   init_instance_callback: function (editor) {
@@ -106,7 +110,7 @@ tinymce.init({
     });
   }
 });
-`
+----
 
 === BeforeSetContent
 
@@ -119,7 +123,8 @@ Gets fired before the contents are inserted into the editor.
 
 Here is an example of how to alter the contents before inserting into the editor.
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',
   init_instance_callback: function (editor) {
@@ -128,7 +133,7 @@ tinymce.init({
     });
   }
 });
-`
+----
 
 === SetContent
 
@@ -141,7 +146,8 @@ Gets fired after the content has been inserted into the editor.
 
 Here is an example of the content logged to the console in response to the SetContent event.
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',
   init_instance_callback: function (editor) {
@@ -150,7 +156,7 @@ tinymce.init({
     });
   }
 });
-`
+----
 
 === GetContent
 
@@ -162,7 +168,8 @@ This event gets fired when the content is being extracted from the editor.
 
 Here is an example of how to alter the contents before extracting it from the editor.
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',
   init_instance_callback: function (editor) {
@@ -171,7 +178,7 @@ tinymce.init({
     });
   }
 });
-`
+----
 
 === PreProcess
 
@@ -183,7 +190,8 @@ This event gets fired when the contents inside the editor are being serialized t
 
 Here is an example of how to alter the contents before extracting it from the editor.
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',
   init_instance_callback: function (editor) {
@@ -192,7 +200,7 @@ tinymce.init({
     });
   }
 });
-`
+----
 
 === PostProcess
 
@@ -204,7 +212,8 @@ This event gets fired when the contents inside the editor have been serialized t
 
 Here is an example of how to alter the contents when it's being extracted from the editor.
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',
   init_instance_callback: function (editor) {
@@ -213,7 +222,7 @@ tinymce.init({
     });
   }
 });
-`
+----
 
 === NodeChange
 
@@ -226,7 +235,8 @@ This event gets fired when the selection inside the editor is changed.
 
 Here is an example of how to bind the NodeChange event. This event is fired when selection changes within the editor.
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',
   init_instance_callback: function (editor) {
@@ -235,7 +245,7 @@ tinymce.init({
     });
   }
 });
-`
+----
 
 === Undo
 
@@ -247,7 +257,8 @@ This event gets fired when a request to undo is made by the user.
 
 Here is an example of how to bind the Undo event.
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',
   init_instance_callback: function (editor) {
@@ -256,7 +267,7 @@ tinymce.init({
     });
   }
 });
-`
+----
 
 === Redo
 
@@ -268,7 +279,8 @@ This event gets fired when a request to redo is made by the user.
 
 Here is an example of how to bind the Redo event.
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',
   init_instance_callback: function (editor) {
@@ -277,7 +289,7 @@ tinymce.init({
     });
   }
 });
-`
+----
 
 === Change
 
@@ -285,7 +297,8 @@ This event gets fired when changes are made inside the editor that cause an undo
 
 Here is an example of how to listen for editor changes.
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',
   init_instance_callback: function (editor) {
@@ -294,13 +307,14 @@ tinymce.init({
     });
   }
 });
-`
+----
 
 === Dirty
 
 This event gets fired when the editor is considered dirty. This state can be toggled by using: editor.setDirty(false).
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',
   init_instance_callback: function (editor) {
@@ -309,7 +323,7 @@ tinymce.init({
     });
   }
 });
-`
+----
 
 === Remove
 
@@ -317,7 +331,8 @@ This event gets fired when the editor is removed from a textarea/div.
 
 Here is an example of how to detect when editor.remove() was called.
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',
   init_instance_callback: function (editor) {
@@ -326,7 +341,7 @@ tinymce.init({
     });
   }
 });
-`
+----
 
 === ExecCommand
 
@@ -338,7 +353,8 @@ This event is fired when a command like Bold/Italic etc is made by the editor.
 
 Here is an example of how to detect when the bold feature was executed.
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',
   init_instance_callback: function (editor) {
@@ -349,7 +365,7 @@ tinymce.init({
     });
   }
 });
-`
+----
 
 === PastePreProcess
 
@@ -361,7 +377,8 @@ This event is fired when contents from the clipboard are being processed by the 
 
 Here is an example of how to detect when a paste operation is about to begin and how to modify the contents
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',
   init_instance_callback: function (editor) {
@@ -371,7 +388,7 @@ tinymce.init({
     });
   }
 });
-`
+----
 
 === PastePostProcess
 
@@ -383,7 +400,8 @@ This event is fired when contents from the clipboard have been processed by the 
 
 Here is an example of how to log the node being pasted.
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',
   init_instance_callback: function (editor) {
@@ -392,7 +410,7 @@ tinymce.init({
     });
   }
 });
-`
+----
 
 |===
 | Event | Description
@@ -414,11 +432,12 @@ This event is fired when an editor instance is created and added to the EditorMa
 
 Here is an example of how to listen for editor instances being created.
 
-`js
+[source,js]
+----
 tinymce.on('AddEditor', function (e) {
   console.log('Added editor with id: ' + e.editor.id);
 });
-`
+----
 
 === RemoveEditor
 
@@ -430,8 +449,9 @@ This event gets fired when editor instances are removed from the target textarea
 
 Here is an example of how to listen for editor instances being removed.
 
-`js
+[source,js]
+----
 tinymce.on('RemoveEditor', function (e) {
   console.log('Removed editor with id: ' + e.editor.id);
 });
-`
+----

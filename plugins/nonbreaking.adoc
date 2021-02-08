@@ -14,14 +14,15 @@ This plugin adds a button for inserting nonbreaking space entities `+&nbsp;+` at
 
 ===== Example
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "nonbreaking",
   menubar: "insert",
   toolbar: "nonbreaking"
 });
-`
+----
 
 === Options
 
@@ -41,7 +42,8 @@ However, the `true` condition does capture the tab key and contain it within the
 
 ===== Example
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "nonbreaking",
@@ -49,7 +51,7 @@ tinymce.init({
   toolbar: "nonbreaking",
   nonbreaking_force_tab: true
 });
-`
+----
 
 ==== Usage with `table` plugin
 
@@ -57,20 +59,22 @@ When using the `nonbreaking_force_tab` setting together with the `table` plugin 
 
 This will activate the insert `+&nbsp;+` setting:
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "nonbreaking table",
   nonbreaking_force_tab: true
 });
-`
+----
 
 This will activate the tab table cell navigation:
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "table nonbreaking",
   nonbreaking_force_tab: true
 });
-`
+----

@@ -8,18 +8,20 @@ This option enables you to specify an id for the body of each editor instance. T
 
 This will add the same id to all editors that gets created by the `init` call.
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   body_id: 'my_id'
 });
-`
+----
 
 This will set specific ids on the bodies of specific editors.
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   body_id: 'elm1=my_id, elm2=my_id2'
 });
-`
+----

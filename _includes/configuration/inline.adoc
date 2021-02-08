@@ -14,11 +14,12 @@ NOTE: When in inline mode, the editor does not replace the selected element with
 
 ===== Example
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: '#myeditablediv',  // change this value according to your HTML
   inline: true
 });
-`
+----
 
 For more information on the differences between the editing modes, please see this page link:{baseurl}/general-configuration-guide/use-tinymce-inline/[here].

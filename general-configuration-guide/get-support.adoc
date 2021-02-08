@@ -6,9 +6,10 @@ include::{rootDir}_attributes.adoc[]
 :description: Community and pro-grade support options.
 :keywords: forum forums url absolute relative security xss
 
-____
+[NOTE]
+====
 If you landed here having worked through the link:{baseurl}/general-configuration-guide/advanced-install[General Configuration Guide], congratulations, you are on your way to the TinyMCE ninja hood :-). It's now time to deep-dive into link:{baseurl}/configure/[configuring the editor] and explore link:{baseurl}/plugins/[plugin options]. We wish you well and welcome you to TinyMCE. If you get stuck, a great place to start is the https://community.tinymce.com/[TinyMCE Forum].
-____
+====
 
 == Premium Support
 
@@ -59,57 +60,67 @@ The server should have protection against XSS attacks implemented. Since if you 
 
 The *Relative URLs* converts all URLs within the same domain to relative URLs. The URLs are relative from the `document_base_url`.
 
-`+js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   relative_urls : true,
   document_base_url : 'http://www.site.com/path1/'
 });
-+`
+----
 
 ===== Example
 
-`+http://www.site.com/path1/path2/file.htm >> path2/file.htm+`
+----
+http://www.site.com/path1/path2/file.htm >> path2/file.htm
+----
 
 ==== Absolute URLs
 
 The *Absolute URLs* converts all relative URLs to absolute URLs. The URLs are `absolute` based on the `document_base_url`.
 
-`+js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   relative_urls : false,
   remove_script_host : true,
   document_base_url : 'http://www.site.com/path1/'
 });
-+`
+----
 
 ===== Example
 
-`path2/file.htm >> /path1/path2/file.htm`
+----
+path2/file.htm >> /path1/path2/file.htm
+----
 
 ==== Domain absolute URLs
 
 The *Domain absolute URLs* converts all relative URLs to absolute URLs. The URLs are `absolute` based on the `document_base_url` with the domain.
 
-`+js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   relative_urls : false,
   remove_script_host : false,
   document_base_url : 'http://www.site.com/path1/'
 });
-+`
+----
 
 ===== Example
 
-`+path2/file.htm >> http://www.site.com/path1/path2/file.htm+`
+----
+path2/file.htm >> http://www.site.com/path1/path2/file.htm
+----
 
 === Q: Where are the advanced image options?
 
 Use the link:{baseurl}/configure/content-filtering/#style_formats[`Style Formats`] option instead, which is much more powerful.
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   style_formats: [
@@ -123,6 +134,6 @@ tinymce.init({
     }}
 ]
 });
-`
+----
 
 If you wish to align the image, you can also use the text-align buttons when having images selected.

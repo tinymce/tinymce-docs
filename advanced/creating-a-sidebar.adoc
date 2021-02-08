@@ -62,7 +62,8 @@ The `element():DOMElement` function returns the root element of the sidebar pane
 
 == Example inside the tinymce.init
 
-`+js
+[source,js]
+----
 tinymce.init({
   ...
   setup: function (editor) {
@@ -82,11 +83,12 @@ tinymce.init({
     });
   }
 });
-+`
+----
 
 == Example inside a TinyMCE plugin
 
-`js
+[source,js]
+----
 tinymce.PluginManager.add('myplugin', function (editor) {
   editor.addSidebar('mysidebar', {
     tooltip: 'My sidebar',
@@ -103,4 +105,4 @@ tinymce.PluginManager.add('myplugin', function (editor) {
     }
   });
 });
-`
+----

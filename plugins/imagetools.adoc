@@ -20,13 +20,14 @@ Simply add `image` to the `toolbar` list and `image imagetools` to the `plugins`
 
 ===== Example
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   toolbar: "image",
   plugins: "image imagetools"
 });
-`
+----
 
 == Self-hosted Installation
 
@@ -37,7 +38,8 @@ To enable the TinyMCE Image Tools plugin:
 
 ===== Example
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   toolbar: "image",
@@ -45,7 +47,7 @@ tinymce.init({
   imagetools_cors_hosts: ['mydomain.com', 'otherdomain.com'],
   imagetools_proxy: 'proxy.php'
 });
-`
+----
 
 === Options
 
@@ -63,14 +65,15 @@ NOTE: `imagetools_cors_hosts` is *not* required when enabling this plugin via li
 
 ===== Example
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   toolbar: "image",
   plugins: "image imagetools",
   imagetools_cors_hosts: ['mydomain.com', 'otherdomain.com']
 });
-`
+----
 
 === `imagetools_credentials_hosts`
 
@@ -80,7 +83,8 @@ This option can be used together with the `imagetools_cors_hosts` option to allo
 
 ===== Example
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   toolbar: "image",
@@ -88,7 +92,7 @@ tinymce.init({
   imagetools_cors_hosts: ['mydomain.com', 'otherdomain.com'],
   imagetools_credentials_hosts: ['mydomain.com', 'otherdomain.com']
 });
-`
+----
 
 === `imagetools_proxy`
 
@@ -102,18 +106,20 @@ NOTE: `imagetools_proxy` is *not* required when enabling this plugin via link:{b
 
 ===== Example
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   toolbar: "image",
   plugins: "image imagetools",
   imagetools_proxy: 'proxy.php'
 });
-`
+----
 
 *Example of a proxy.php script*
 
-```php
+[source,php]
+----
 <?php
 // We recommend to extend this script with authentication logic
 // so it can be used only by an authorized user
@@ -141,7 +147,7 @@ if ($info === false || in_array($info["mime"], $validMimeTypes) === false) {
 header('Content-Type:' . $info["mime"]);
 echo $content;
 ?>
-```
+----
 
 === `imagetools_toolbar`
 
@@ -162,11 +168,12 @@ The exact selection of buttons that will appear on the contextual toolbar can be
 
 ===== Example
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   toolbar: "image",
   plugins: "image imagetools",
   imagetools_toolbar: "rotateleft rotateright | flipv fliph | editimage imageoptions"
 });
-`
+----

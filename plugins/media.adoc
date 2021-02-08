@@ -14,14 +14,15 @@ The `media` plugin adds the ability for users to be able to add HTML5 video and 
 
 ===== Example
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "media",
   menubar: "insert",
   toolbar: "media"
 });
-`
+----
 
 === Options
 
@@ -29,9 +30,10 @@ These settings affect the execution of the `media` plugin. Namely the ability to
 
 === `media_live_embeds`
 
-____
+[NOTE]
+====
 New in TinyMCE version 4.3!
-____
+====
 
 When you enable this option users will see a live preview of embedded video content within the editable area, rather than a placeholder image. This means that users can play a video clip, such as YouTube, within the editor.
 
@@ -45,7 +47,8 @@ This option is enabled by default and accepts URLs input into the source field o
 
 ===== Example
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "media",
@@ -53,7 +56,7 @@ tinymce.init({
   toolbar: "media",
   media_live_embeds: true
 });
-`
+----
 
 === `audio_template_callback`
 
@@ -63,7 +66,8 @@ This option allows you to specify the function that will return the HTML embed c
 
 ===== Example
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "media",
@@ -75,7 +79,7 @@ tinymce.init({
 ' + '</audio>';
  }
 });
-`
+----
 
 === `media_url_resolver`
 
@@ -93,7 +97,8 @@ If something goes wrong in your function and you want to show an error to the us
 
 The following example simply checks if the url contains some special url and returns an iframe if it does. Otherwise it calls the `resolve` callback with an empty string, falling back to the default media embed logic.
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: "textarea.tinymce",
   plugins: "media",
@@ -108,7 +113,7 @@ tinymce.init({
     }
   }
 });
-`
+----
 
 === `media_alt_source`
 
@@ -122,7 +127,8 @@ This options allows you disable the `Alternative source` input field in the medi
 
 ===== Example
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "media",
@@ -130,7 +136,7 @@ tinymce.init({
   toolbar: "media",
   media_alt_source: false
 });
-`
+----
 
 === `media_poster`
 
@@ -144,7 +150,8 @@ This options allows you disable the `Poster` input field in the media dialog.
 
 ===== Example
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "media",
@@ -152,7 +159,7 @@ tinymce.init({
   toolbar: "media",
   media_poster: false
 });
-`
+----
 
 === `media_dimensions`
 
@@ -166,7 +173,8 @@ This options allows you disable the `Dimensions` input fields in the media dialo
 
 ===== Example
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "media",
@@ -174,7 +182,7 @@ tinymce.init({
   toolbar: "media",
   media_dimensions: false
 });
-`
+----
 
 === `media_filter_html`
 
@@ -188,7 +196,8 @@ This option allows you disable the XSS sanitation filter for video/object elemen
 
 ===== Example
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "media",
@@ -196,7 +205,7 @@ tinymce.init({
   toolbar: "media",
   media_filter_html: false
 });
-`
+----
 
 === `media_scripts`
 
@@ -206,7 +215,8 @@ This option allows you to embed videos using script elements.
 
 ===== Example
 
-`+js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "media",
@@ -217,7 +227,7 @@ tinymce.init({
    {filter: 'http://media2.tinymce.com', width: 100, height: 200}
  ]
 });
-+`
+----
 
 === `video_template_callback`
 
@@ -227,7 +237,8 @@ This option allows you to specify the function that will return the HTML embed c
 
 ===== Example
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "media",
@@ -240,4 +251,4 @@ tinymce.init({
 ' : '') + '</video>';
  }
 });
-`
+----

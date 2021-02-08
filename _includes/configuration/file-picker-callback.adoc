@@ -16,7 +16,8 @@ _The following example demonstrates how you can use `file_picker_callback` API, 
 
 ===== Example
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   file_picker_callback: function(callback, value, meta) {
@@ -34,5 +35,5 @@ if (meta.filetype == 'image') {
 // Provide alternative source and posted for the media dialog
 if (meta.filetype == 'media') {
   callback('movie.mp4', {source2: 'alt.ogg', poster: 'image.jpg'});
-}   } }); ```
-....
+}   } });
+----

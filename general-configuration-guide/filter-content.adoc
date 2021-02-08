@@ -19,9 +19,10 @@ A format is a style that gets applied to text when a user presses the bold butto
 
 === Style merging
 
-____
+[NOTE]
+====
 Pro tip: Similar elements and styles are merged by default to reduce the output HTML size. So for example, if you select a word, a font size, and font face for it, it merges these two styles into one `span` element instead of one `span` for *each format type*.
-____
+====
 
 === Built-in formats
 
@@ -89,7 +90,8 @@ Before we move on to the table of format parameters below, we want to acknowledg
 
 This example overrides some of the built-in formats and tells TinyMCE to apply classes instead of inline styles. It also includes a custom format that produced `h1` elements with a title attribute and a `red` `css` style.
 
-`js
+[source,js]
+----
 // Output elements in HTML style
 tinymce.init({
   selector: 'textarea',  // change this value according to your html
@@ -107,24 +109,26 @@ tinymce.init({
     custom_format: {block : 'h1', attributes : {title : 'Header'}, styles : {color : 'red'}}
   }
 });
-`
+----
 
 === Power user bonus
 
-____
+[NOTE]
+====
 This probably shouldn't be in a Get Started guide, but we wanted to show you an example of the type of configuration options you'll find in the link:{baseurl}/configure/content-filtering/[Content Filtering] configuration docs. Plus it's something you may need to do someday.
-____
+====
 
 The `schema` option enables you to switch between the HTML4 and HTML5 schema. This controls the valid elements and attributes that can be placed in the HTML. This value can either be the default `html5`, `html4` or `html5-strict`.
 
 The `html5` schema is the full HTML5 specification including the older HTML4 elements for compatibility. The `html5-strict` schema only allows the elements in the current HTML5 specification, excluding things that are removed. The `html4` schema includes the full HTML4 transitional specification.
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your html
   schema: 'html5'
 });
-`
+----
 
 {% assign_page next_page = "/general-configuration-guide/localize-your-language/index.html" %}
 {% include next-step.html next=next_page %}

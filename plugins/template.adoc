@@ -14,14 +14,15 @@ The `template` plugin adds support for custom templates. It also adds a menu ite
 
 ===== Example
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "template",
   menubar: "insert",
   toolbar: "template"
 });
-`
+----
 
 There are two types of files the `template` plugin supports: _templates_ and _snippets_. We will first review the plugin options before moving on to some examples.
 
@@ -39,7 +40,8 @@ Each item in the list can either be inline using a `content` property or a whole
 
 *Example using templates object:*
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "template",
@@ -50,11 +52,12 @@ tinymce.init({
     {title: 'Some title 2', description: 'Some desc 2', url: 'development.html'}
   ]
 });
-`
+----
 
 *Example using templates URL*
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "template",
@@ -62,16 +65,17 @@ tinymce.init({
   toolbar: "template",
   templates: "/dir/templates.php"
 });
-`
+----
 
 *Example JSON output of templates.php*
 
-`json
+[source,json]
+----
 [
   {"title": "Some title 1", "description": "Some desc 1", "content": "My content"},
   {"title": "Some title 2", "description": "Some desc 2", "url": "development.html"}
 ]
-`
+----
 
 === `template_cdate_classes`
 
@@ -83,7 +87,8 @@ A creation date is one that is set if no previous date existed within the elemen
 
 ===== Example
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "template",
@@ -91,7 +96,7 @@ tinymce.init({
   toolbar: "template",
   template_cdate_classes: "cdate creationdate"
 });
-`
+----
 
 === `template_cdate_format`
 
@@ -101,7 +106,8 @@ This option allows you to provide a date format that all 'creation' date templat
 
 ===== Example
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "template",
@@ -109,7 +115,7 @@ tinymce.init({
   toolbar: "template",
   template_cdate_format: "%m/%d/%Y : %H:%M:%S"
 });
-`
+----
 
 === `template_mdate_classes`
 
@@ -121,7 +127,8 @@ A modified date is one that is updated with each edit.
 
 ===== Example
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "template",
@@ -129,7 +136,7 @@ tinymce.init({
   toolbar: "template",
   template_mdate_classes: "mdate modifieddate"
 });
-`
+----
 
 === `template_mdate_format`
 
@@ -139,7 +146,8 @@ This option allows you to provide TinyMCE with a date/time format that all 'modi
 
 ===== Example
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "template",
@@ -147,7 +155,7 @@ tinymce.init({
   toolbar: "template",
   template_mdate_format: "%m/%d/%Y : %H:%M:%S"
 });
-`
+----
 
 === `template_popup_height`
 
@@ -159,7 +167,8 @@ This option allows you to specify the height of the template dialog box.
 
 ===== Example
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "template",
@@ -167,7 +176,7 @@ tinymce.init({
   toolbar: "template",
   template_popup_height: "400"
 });
-`
+----
 
 === `template_popup_width`
 
@@ -179,7 +188,8 @@ This option allows you to specify the width of the template dialog box.
 
 ===== Example
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "template",
@@ -187,7 +197,7 @@ tinymce.init({
   toolbar: "template",
   template_popup_width: 300
 });
-`
+----
 
 === `template_replace_values`
 
@@ -197,7 +207,8 @@ This is an array of items that controls content replacement in the inserted temp
 
 ===== Example
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "template",
@@ -208,19 +219,19 @@ tinymce.init({
     staffid: "991234"
   }
 });
-`
+----
 
 This can then be used in a template or snippet that looks like this:
 
-```html
-
-Name: {$username}, StaffID: {$staffid}```
+----
+Name: {$username}, StaffID: {$staffid}
+----
 
 And that will be changed to:
 
-```html
-
-Name: Jack Black, StaffID: 991234```
+----
+Name: Jack Black, StaffID: 991234
+----
 
 === `template_selected_content_classes`
 
@@ -228,13 +239,14 @@ This option allows you to provide a list of class names (separated by spaces) wh
 
 ===== Example
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "template",
   template_selected_content_classes: "selcontent selectedcontent"
 });
-`
+----
 
 === Template Plugin Examples
 
@@ -242,7 +254,8 @@ tinymce.init({
 
 ===== Example
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "template",
@@ -272,11 +285,12 @@ tinymce.init({
       }
   ]
 });
-`
+----
 
 *Templates example:*
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   templates : [
@@ -287,18 +301,19 @@ tinymce.init({
     }
   ]
 });
-`
+----
 
 *Example of an external list:*
 
 This is the contents your backend page should return if you specify a URL in the templates option. A simple array containing each template to present. This URL can be a backend page, for example a PHP file.
 
-`json
+[source,json]
+----
 [
   {"title": "Some title 1", "description": "Some desc 1", "content": "My content"},
   {"title": "Some title 2", "description": "Some desc 2", "url": "development.html"}
 ]
-`
+----
 
 === Making Templates
 
@@ -308,18 +323,28 @@ A template has more capabilities than a simple snippet, for example, a template 
 
 Each template needs to be inside of a div with the `mceTmpl` class, like this example:
 
-```html
-// This will not be inserted+++<div class="mceTmpl">++++++<table width="98%%" border="0" cellspacing="0" cellpadding="0">++++++<tr>++++++<th scope="col">++++++</th>+++
-      +++<th scope="col">++++++</th>++++++</tr>+++
-    +++<tr>++++++<td>++++++</td>+++
-      +++<td>++++++</td>++++++</tr>++++++</table>++++++</div>+++
-
-```
+[source,html]
+----
+<!-- This will not be inserted -->
+<div class="mceTmpl">
+  <table width="98%%"  border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <th scope="col"> </th>
+      <th scope="col"> </th>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </table>
+</div>
+----
 
 === Making Snippets
 
 Snippets are `html` code chunks that can be inserted. Replace variables will only be executed upon insert, without being wrapped in a template `div` element. So if you define `somevar1` in `template_replace_values` array it will be replaced on preview and insert.
 
-`html
+[source,html]
+----
 This is a simple <strong>snippet</strong>. Will be replaced: {$somevar1}.
-`
+----

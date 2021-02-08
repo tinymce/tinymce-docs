@@ -9,10 +9,11 @@ List of fonts to be displayed under `fontselect` dropdown. Each item in the list
 
 ===== Example
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   toolbar: 'fontselect',
   font_formats: 'Arial=arial,helvetica,sans-serif;Courier New=courier new,courier,monospace;AkrutiKndPadmini=Akpdmi-n'
 });
-`
+----

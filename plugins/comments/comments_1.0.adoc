@@ -66,7 +66,8 @@ We have used the following helper functions in our demo above:
 
 Comments 1.0 requires four functions to be defined:
 
-`+js
+[source,js]
+----
 tinymce.init({
   ...
   tinycomments_create: create,
@@ -74,7 +75,7 @@ tinymce.init({
   tinycomments_delete: del,
   tinycomments_lookup: lookup
 });
-+`
+----
 
 All functions incorporate `done` and `fail` callbacks as parameters. The function return type is not important, but all functions must call one of these two callbacks.
 
@@ -104,7 +105,8 @@ The following are examples of how `create` can be implemented if storage setting
 
 Here is an example of how `create` can be implemented using storage configured to persist in real-time:
 
-`+js
+[source,js]
+----
 function create(content, done, fail) {
     fetch(
       'https://api.example/conversations/',
@@ -117,13 +119,14 @@ function create(content, done, fail) {
       fail(new Error('Something has gone wrong...'));
     });
   }
-+`
+----
 
 ==== Example - Storage - persist on content-save
 
 Here is an example of how `create` can be implemented using storage configured to persist on content-save:
 
-`+js
+[source,js]
+----
 var currentAuthorId = ...
 function create(content, done, fail) {
   // `randomString` should be written to produce random strings with a very low
@@ -141,7 +144,7 @@ function create(content, done, fail) {
     fail(new Error('Error creating conversation...'));
   }
 }
-+`
+----
 
 === Reply
 
@@ -155,7 +158,8 @@ The following are examples of how `reply` can be implemented if storage settings
 
 Here is an example of how `reply` can be implemented using storage configured to persist in real-time:
 
-`+js
+[source,js]
+----
 function reply(uid, content, done, fail) {
     fetch(
       'https://api.example/conversations/'+uid,
@@ -168,13 +172,14 @@ function reply(uid, content, done, fail) {
       }
     });
   }
-+`
+----
 
 ==== Example - Storage - persist on content-save
 
 Here is an example of how `reply` can be implemented using storage configured to persist on content-save:
 
-```js
+[source,js]
+----
 var currentAuthorId = ...
 function reply(uid, content, done, fail) {
   try {
@@ -194,8 +199,7 @@ function reply(uid, content, done, fail) {
      fail(new Error('Error replying to conversation...'));
    }
 }
-
-```
+----
 
 === Delete
 
@@ -209,7 +213,8 @@ The following are examples of how `delete` can be implemented if storage setting
 
 Here is an example of how `delete` can be implemented using storage configured to persist in real-time:
 
-`+js
+[source,js]
+----
 function del(uid, done, fail) {
     fetch(
       'https://api.example/conversations/'+uid,
@@ -224,13 +229,14 @@ function del(uid, done, fail) {
       }
     });
   }
-+`
+----
 
 ==== Example - Storage - persist on content-save
 
 Here is an example of how `delete` can be implemented using storage configured to persist on content-save:
 
-`+js
+[source,js]
+----
   function del(uid, done, fail) {
     fetch(
       'https://api.example/conversations/'+uid,
@@ -245,7 +251,7 @@ Here is an example of how `delete` can be implemented using storage configured t
       }
     });
   }
-+`
+----
 
 NOTE: Failure to delete due to permissions or business rules is indicated by "false", while unexpected errors should be indicated using the "fail" callback.
 
@@ -257,6 +263,82 @@ The conventional conversation object structure that should be returned via the `
 
 ==== Conversation object
 
-```js
+[source,js]
+----
 {
- "comments": [+++<comment1>+++, +++<comment2>+++, \... ] } ``` #### Comment object ```js { "author": "Author Display Name", "content": "This is the text of the comment" } ``` The following are examples of how `lookup` can be implemented if storage settings are configured to be either persistent in real time or on content-save. #### Example - Storage - persist in real-time Here is an example of how `lookup` can be implemented using storage configured to persist in real-time: ```js function lookup(uid, done, fail) { fetch('\https://api.example/conversations/'+uid) .then(function(response) { return response.json(); }) .then(function(json) { var conversation = json.comments; return fetch('\https://api.example/users/') .then(function(response) { return response.json(); }) .then(function(json) { var users = json.users; var unknown = { displayName: 'Unknown' }; return conversation.map(function(item) { var user = users.find(function(v) { return v.id == item.user; }); return { author: (user || unknown).displayName, content: item.comment }; }); }); }) .then(function(comments) { done({ comments: comments }); }) .catch(function() { fail(new Error('Something has gone wrong\...')); }) } ``` #### Example - Storage - persist on content-save Here is an example of how `lookup` can be implemented using storage configured to persist on content-save, utilizing an in-memory lookup function to resolve author display names: ```js function lookup(uid, done, fail) { try { var comments = getConversation(uid).map(function(item) { return { author: getAuthorDisplayName(item.user), content: item.comment }; }); done({ comments: comments }); } catch { fail(new Error('Error looking up conversation\...')); } } ``` For more information on Comments 1.0 commercial feature, visit our [Premium Features]({baseurl}/enterprise/tiny-comments/) page.+++</comment2>++++++</comment1>+++
+ "comments": [
+  <comment1>,
+  <comment2>,
+  ...
+ ]
+}
+----
+
+==== Comment object
+
+[source,js]
+----
+{
+  "author": "Author Display Name",
+  "content": "This is the text of the comment"
+}
+----
+
+The following are examples of how `lookup` can be implemented if storage settings are configured to be either persistent in real time or on content-save.
+
+==== Example - Storage - persist in real-time
+
+Here is an example of how `lookup` can be implemented using storage configured to persist in real-time:
+
+[source,js]
+----
+function lookup(uid, done, fail) {
+  fetch('https://api.example/conversations/'+uid)
+    .then(function(response) { return response.json(); })
+    .then(function(json) {
+      var conversation = json.comments;
+      return fetch('https://api.example/users/')
+        .then(function(response) { return response.json(); })
+        .then(function(json) {
+          var users = json.users;
+          var unknown = { displayName: 'Unknown' };
+          return conversation.map(function(item) {
+            var user = users.find(function(v) { return v.id == item.user; });
+            return {
+              author: (user || unknown).displayName,
+              content: item.comment
+            };
+          });
+        });
+    })
+    .then(function(comments) {
+      done({ comments: comments });
+    })
+    .catch(function() {
+      fail(new Error('Something has gone wrong...'));
+    })
+}
+----
+
+==== Example - Storage - persist on content-save
+
+Here is an example of how `lookup` can be implemented using storage configured to persist on content-save, utilizing an in-memory lookup function to resolve author display names:
+
+[source,js]
+----
+function lookup(uid, done, fail) {
+  try {
+    var comments = getConversation(uid).map(function(item) {
+      return {
+        author: getAuthorDisplayName(item.user),
+        content: item.comment
+      };
+    });
+    done({ comments: comments });
+  } catch {
+    fail(new Error('Error looking up conversation...'));
+  }
+}
+----
+
+For more information on Comments 1.0 commercial feature, visit our [Premium Features]({baseurl}/enterprise/tiny-comments/) page.

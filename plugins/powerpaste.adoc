@@ -8,9 +8,7 @@ include::{rootDir}_attributes.adoc[]
 
 The TinyMCE *PowerPaste* plugin automatically cleans up content from Microsoft Word/Excel and HTML sources to ensure clean, compliant content that matches the look and feel of the site.
 
-____
-*_Note:_* _Due to limitations in Excel online (part of Office Live) PowerPaste does not support pasting from Excel online.  If you paste content using Excel in Office Live you will get a plain text representation of the content._
-____
+NOTE: Due to limitations in Excel online (part of Office Live) PowerPaste does not support pasting from Excel online.  If you paste content using Excel in Office Live you will get a plain text representation of the content.
 
 == Usage
 
@@ -22,9 +20,7 @@ If you configure *PowerPaste* to allow local images (see the `powerpaste_allow_l
 
 \https://www.tinymce.com/docs/advanced/handle-async-image-uploads/
 
-____
-*_Note:_* _PowerPaste (when configured to allow local images) will import images from pasted Microsoft Word/Excel content.  When doing this, *PowerPaste* extracts Base64 encoded images from the clipboard.  Images larger than approximately 8.5MB may fail to import based on technical limitations of web browsers._
-____
+NOTE: PowerPaste (when configured to allow local images) will import images from pasted Microsoft Word/Excel content.  When doing this, *PowerPaste* extracts Base64 encoded images from the clipboard.  Images larger than approximately 8.5MB may fail to import based on technical limitations of web browsers.
 
 == Cloud Installation
 
@@ -35,12 +31,13 @@ To enable the TinyMCE *PowerPaste* plugin with link:{baseurl}/cloud-deployment-g
 
 Example TinyMCE configuration:
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "powerpaste"
 });
-`
+----
 
 == Self-hosted Installation
 
@@ -61,14 +58,15 @@ To enable the *PowerPaste* plugin when using a link:{baseurl}/advanced/usage-wit
 
 Example:
 
-`+js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   external_plugins: {
     'powerpaste': 'http://www.server.com/application/external_plugins/powerpaste/plugin.js'
   }
 });
-+`
+----
 
 == Configuration Options
 
@@ -80,9 +78,7 @@ This setting controls how content being pasted from Microsoft Word is filtered. 
 * `merge` - Preserve the inline formatting and structure of the original document. Invalid and proprietary styles, tags and attributes are still removed ensuring that the HTML is valid while more closely matching the original document formatting.
 * `prompt` (Default) - Prompt the user to choose between the clean and merge options after attempting to paste word content.
 
-____
-*_Note:_* _When using the Windows operating system, copying and pasting content from Word 2013 (or later) in "Protected View" will result in plain, unformatted text. This is due to how Protected View interacts with the clipboard._
-____
+NOTE: When using the Windows operating system, copying and pasting content from Word 2013 (or later) in "Protected View" will result in plain, unformatted text. This is due to how Protected View interacts with the clipboard.
 
 === powerpaste_html_import
 
@@ -104,20 +100,19 @@ When set to true Base 64 encoded images using a data URI in the copied content w
 
 The default is `true`.
 
-____
-*_Note:_* _If you configure_ *_PowerPaste_* _to allow local images you can have TinyMCE automatically upload Base64 encoded images for conversion back to a standard image as documented on the following page: \https://www.tinymce.com/docs/advanced/handle-async-image-uploads_
-____
+NOTE: If you configure_ *_PowerPaste_* _to allow local images you can have TinyMCE automatically upload Base64 encoded images for conversion back to a standard image as documented on the following page: \https://www.tinymce.com/docs/advanced/handle-async-image-uploads
 
 ===== Example
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "powerpaste",
   powerpaste_word_import: "clean",
   powerpaste_html_import: "merge"
 });
-`
+----
 
 == Toolbar Buttons
 
@@ -127,13 +122,14 @@ This button allows you to toggle paste as plain text mode on/off. When in plain 
 
 Example TinyMCE Configuration:
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",
   plugins: "powerpaste",
   toolbar: "pastetext"
 });
-`
+----
 
 == Menu Items
 
@@ -143,7 +139,8 @@ This menu item allows you to toggle paste as plain text mode on/off. When in pla
 
 Example TinyMCE Configuration:
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",
   plugins: "powerpaste",
@@ -151,7 +148,7 @@ tinymce.init({
 	edit: {title: "edit", items: "pastetext"}
   }
 });
-`
+----
 
 == Advanced Config Options
 
@@ -161,7 +158,8 @@ Developers can add customer filtering after *PowerPaste* filters are run using t
 
 ===== Using the init option
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",
   plugins: "powerpaste",
@@ -173,16 +171,17 @@ tinymce.init({
   fragment.node.appendChild(textnode);
   }
 });
-`
+----
 
 ===== Using an event listener
 
-`js
+[source,js]
+----
 tinymce.get('editorID').('PastePostProcess', function(fragment) {
   // Fragment is a DocumentFragment node containing the DOM structure of the pasted content,
   // after it has been filtered by the PowerPaste plugin.
 });
-`
+----
 
 == Buy TinyMCE PowerPaste
 

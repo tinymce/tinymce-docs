@@ -16,10 +16,11 @@ NOTE: it doesn't automatically convert text emoticons into graphical smilies.
 
 ===== Example
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "emoticons",
   toolbar: "emoticons"
 });
-`
+----

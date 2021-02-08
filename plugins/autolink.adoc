@@ -15,9 +15,10 @@ Note that this option won't convert incomplete URLs. For example `example.com` w
 
 ===== Autolink plugin example
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "autolink"
 });
-`
+----

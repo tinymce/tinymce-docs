@@ -20,21 +20,23 @@ It is recommended that the `editor.uploadImages()` function be executed before s
 
 ===== Using uploadImages with jQuery
 
-`js
+[source,js]
+----
 tinymce.activeEditor.uploadImages(function(success) {
   $.post('ajax/post.php', tinymce.activeEditor.getContent()).done(function() {
 	console.log("Uploaded images and posted content as an ajax request.");
   });
 });
-`
+----
 
 ===== Using uploadImages and then posting a form
 
-`js
+[source,js]
+----
 tinymce.activeEditor.uploadImages(function(success) {
    document.forms[0].submit();
 });
-`
+----
 
 == Image uploader requirements
 
@@ -55,9 +57,9 @@ NOTE: You need to ensure that your upload handler script takes each uploaded fil
 
 This server-side upload handler must return a JSON object that contains a "location" property. This property should represent the remote location or filename of the newly uploaded image.
 
-`
+----
 { location : '/uploaded/image/path/image.png' }
-`
+----
 
 == Image uploader options
 
@@ -83,24 +85,26 @@ NOTE: Please note, for image uploads to function correctly, either the `images_u
 
 ===== Example of typical setup
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your html
   images_upload_url: 'postAcceptor.php',
   images_upload_base_path: '/some/basepath',
   images_upload_credentials: true
 });
-`
+----
 
 == Rolling your image handler
 
 If the default behavior of TinyMCE's image upload logic is not right for you, you may set your behavior by using the images_upload_handler configuration property.
 
-Please note that while using this option, other image uploader options are not necessary. Additionally, if you would like TinyMCE to replace the +++<image>+++tag's src attribute with the remote location, please use the success callback defined in the image_upload_handler function with the returned JSON object's location property.+++</image>+++
+Please note that while using this option, other image uploader options are not necessary. Additionally, if you would like TinyMCE to replace the `<image>`tag's src attribute with the remote location, please use the success callback defined in the image_upload_handler function with the returned JSON object's location property.`</image>`
 
 ===== Example
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   images_upload_handler: function (blobInfo, success, failure) {
@@ -126,8 +130,8 @@ tinymce.init({
 };
 formData = new FormData();
 formData.append('file', blobInfo.blob(), blobInfo.filename());
-xhr.send(formData);   } }); ```
-....
+xhr.send(formData);   } });
+----
 
 == CORS considerations
 

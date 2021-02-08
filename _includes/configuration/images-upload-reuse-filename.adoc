@@ -12,11 +12,12 @@ Setting `images_reuse_filename` to _true_ tells TinyMCE to use the actual filena
 
 ===== Example
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   automatic_uploads: true,
   images_upload_url: 'postAcceptor.php',
   images_reuse_filename: true
 });
-`
+----

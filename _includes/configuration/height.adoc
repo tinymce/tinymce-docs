@@ -8,9 +8,10 @@ NOTE: *height* sets the height of the editable area only. It does not include th
 
 ===== Example
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   height : 300
 });
-`
+----

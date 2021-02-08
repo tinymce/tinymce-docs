@@ -16,14 +16,15 @@ It also adds a toolbar button and a menu item `Insert/edit link` under the `Inse
 
 ===== Example
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "link",
   menubar: "insert",
   toolbar: "link"
 });
-`
+----
 
 == Options
 
@@ -37,7 +38,8 @@ This option allows you to set a default target for links when inserting/editing 
 
 ===== Example
 
-`js
+[source,js]
+----
 tinymce.init({
     selector: "textarea",  // change this value according to your HTML
     plugins: "link",
@@ -45,7 +47,7 @@ tinymce.init({
     toolbar: "link",
     default_link_target: "_blank"
 });
-`
+----
 
 === `link_context_toolbar`
 
@@ -59,7 +61,8 @@ By default links are defunct in TinyMCE, it is not possible to open them directl
 
 ===== Example
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",
   plugins: "link",
@@ -67,7 +70,7 @@ tinymce.init({
   toolbar: "link",
   link_context_toolbar: true
 });
-`
+----
 
 === `link_assume_external_targets`
 
@@ -83,7 +86,8 @@ With the default setting the user will only be prompted to prepend `http://` if 
 
 ===== Example
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "link",
@@ -91,7 +95,7 @@ tinymce.init({
   toolbar: "link",
   link_assume_external_targets: true
 });
-`
+----
 
 === `link_class_list`
 
@@ -101,7 +105,8 @@ The `link_class_list` plugin adds a predefined `class` dropdown to the `link` di
 
 ===== Example
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "link",
@@ -113,7 +118,7 @@ tinymce.init({
     {title: 'Cat', value: 'cat'}
   ]
 });
-`
+----
 
 === `link_list`
 
@@ -121,7 +126,8 @@ This option lets you specify a predefined list of links for the link dialog. Thi
 
 *Example of an array with links*
 
-`+js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "link",
@@ -132,13 +138,14 @@ tinymce.init({
     {title: 'My page 2', value: 'https://about.tiny.cloud'}
   ]
 });
-+`
+----
 
 *Example of an array with links and sub-menu*
 
 Since TinyMCE 4.0.27 it is now possible to have sub-menus within the link list. A TinyMCE Fiddle http://fiddle.tinymce.com/wleaab[example of nested sub-menus] is available.
 
-`+js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "link",
@@ -153,13 +160,14 @@ tinymce.init({
     ]}
   ]
 });
-+`
+----
 
 *Example of a JSON URL with links*
 
 You can also configure a URL with JSON data. The format of that list is the same as above:
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "link",
@@ -167,11 +175,12 @@ tinymce.init({
   toolbar: "link",
   link_list: "/mylist.php"
 });
-`
+----
 
 *Example of a custom asynchronous function*
 
-`+js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "link",
@@ -184,7 +193,7 @@ tinymce.init({
     ]);
   }
 });
-+`
+----
 
 === `target_list`
 
@@ -194,7 +203,8 @@ The `target_list` lets you specify a predefined list of targets for the `link` d
 
 *Example, adding a `_lightbox` target to the dropdown list*
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "link",
@@ -207,13 +217,14 @@ tinymce.init({
     {title: 'LIghtbox', value: '_lightbox'}
   ]
 });
-`
+----
 
 To disable the option dialog set `target_list` to `false`.
 
 ===== Example
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "link",
@@ -221,7 +232,7 @@ tinymce.init({
   toolbar: "link",
   target_list: false
 });
-`
+----
 
 === `rel_list`
 
@@ -231,7 +242,8 @@ This option lets you specify a predefined list of values for the `link` dialog. 
 
 ===== Example
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "link",
@@ -242,7 +254,7 @@ tinymce.init({
     {title: 'Table of contents', value: 'toc'}
   ]
 });
-`
+----
 
 === `link_title`
 
@@ -256,7 +268,8 @@ This options allows you disable the link `title` input field in the `link` dialo
 
 ===== Example
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "link",
@@ -264,4 +277,4 @@ tinymce.init({
   toolbar: "link",
   link_title: false
 });
-`
+----

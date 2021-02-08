@@ -80,7 +80,8 @@ This example overrides some of the built-in formats and tells TinyMCE to apply c
 
 ===== Example
 
-`js
+[source,js]
+----
 // Output elements in HTML style
 tinymce.init({
   selector: 'textarea',  // change this value according to your html
@@ -98,31 +99,33 @@ tinymce.init({
     custom_format: {block : 'h1', attributes : {title : 'Header'}, styles : {color : 'red'}}
   }
 });
-`
+----
 
 === Using custom formats
 
 Custom formats can be handled through the TinyMCE API. Here is a basic example of usage for the custom format defined above.
 
-```js
+[source,js]
+----
 // Applying the specified format
 tinymce.activeEditor.formatter.apply('custom_format');
 
 // Removing the specified format
 tinymce.activeEditor.formatter.remove('custom_format');
-```
+----
 
 === Variable substitution
 
 You can use variables in your format definition. These variables are then replaced with the ones specified in the call to the apply function. Here is an example of how to use variables within formats.
 
-```js
+[source,js]
+----
 // Registering the special format with a variable
 tinymce.activeEditor.formatter.register('custom_format', {inline : 'span', styles : {color : '%value'}});
 
 // Applying the specified format with the variable specified
 tinymce.activeEditor.formatter.apply('custom_format', {value : 'red'});
-```
+----
 
 === Removing a format
 
@@ -132,7 +135,8 @@ Use the `removeformat` option to remove formats.
 
 ===== Example
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   formats: {
@@ -143,4 +147,4 @@ tinymce.init({
     ]
   }
 });
-`
+----

@@ -8,7 +8,8 @@ It's important to note that the `style_formats` option, while similar in syntax,
 
 ===== Example
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your html
   toolbar: "styleselect",
@@ -22,7 +23,7 @@ tinymce.init({
     {title: 'Table row 1', selector: 'tr', classes: 'tablerow1'}
   ]
 });
-`
+----
 
 Another example, this will add two options to the Formats dropdown, one for aligning an image left and adding a margin, one for putting it on the right side and setting a margin.
 
@@ -30,7 +31,8 @@ Another example, this will add two options to the Formats dropdown, one for alig
 
 ===== Example
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   toolbar: "styleselect",
@@ -53,7 +55,7 @@ tinymce.init({
     }
   ]
 });
-`
+----
 
 A live demo of this option can be found in the link:{baseurl}/demo/format-custom/[custom formats] example.
 
@@ -67,7 +69,8 @@ If you want to merge your styles to the default `styles_format`, you can use the
 
 ===== Example
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   toolbar: "styleselect",
@@ -76,7 +79,7 @@ tinymce.init({
       // Your format as described on this page
   ]
 });
-`
+----
 
 The default is very similar to the following:
 
@@ -84,7 +87,8 @@ The default is very similar to the following:
 
 ===== Example
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   toolbar: "styleselect",
@@ -120,6 +124,6 @@ tinymce.init({
     ]}
   ]
 });
-`
+----
 
 Hopefully we'll have an https://community.tinymce.com/communityQuestion?id=90661000000Mrw1AAC[exact replica of the defaults] soon.

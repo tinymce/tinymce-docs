@@ -7,7 +7,8 @@ This option allows you to set whether TinyMCE should append the styles in the <<
 
 ===== Example
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   style_formats: [
@@ -16,4 +17,4 @@ tinymce.init({
   ],
   style_formats_merge: true
 });
-`
+----

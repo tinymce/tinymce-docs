@@ -10,11 +10,12 @@ The below example replaces the current `img` rule (including the global element 
 
 ===== Example
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   extended_valid_elements : 'img[class|src|border=0|alt|title|hspace|vspace|width|height|align|onmouseover|onmouseout|name]'
 });
-`
+----
 
 Also see link:{baseurl}/configure/content-filtering/#valid_elements[valid_elements] and link:{baseurl}/configure/content-filtering/#invalid_elements[invalid_elements] for more configuration options.

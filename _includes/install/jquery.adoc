@@ -51,6 +51,7 @@ In this example, let's replace `<textarea id='mytextarea'>` with a TinyMCE edito
 
 When the `form` is submitted the TinyMCE editor mimics the behavior of a normal HTML `<textarea>` during a form `post`. No additional configuration is required.
 
-____
+[NOTE]
+====
 If you have decided the use the jQuery version, move on to the next step link:../work-with-plugins/[Work with Plugins], where you'll start customizing TinyMCE. If you'd like to learn about other install options please keep reading.
-____
+====

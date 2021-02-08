@@ -10,7 +10,8 @@ NOTE: Please note that when using this option, no other image uploader options a
 
 ===== Example
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   images_upload_handler: function (blobInfo, success, failure) {
@@ -42,5 +43,5 @@ xhr.onload = function() {
 formData = new FormData();
 formData.append('file', blobInfo.blob(), blobInfo.filename());
 
-xhr.send(formData);   } }); ```
-....
+xhr.send(formData);   } });
+----

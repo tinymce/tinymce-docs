@@ -8,10 +8,11 @@ The *insert_button_items* enables you to specify what to display in the insert b
 
 ===== Example
 
-`+js
+[source,js]
+----
 tinymce.init({
   ...
   toolbar: 'insert',
   insert_button_items: 'image link | inserttable'
 });
-+`
+----

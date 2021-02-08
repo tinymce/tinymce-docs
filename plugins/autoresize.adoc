@@ -14,12 +14,13 @@ This plugin automatically resizes the editor to the content inside it. It is typ
 
 ===== Autoresize plugin example
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "autoresize"
 });
-`
+----
 
 == Options
 
@@ -33,13 +34,14 @@ This option allows you to specify the size of the `padding` at the bottom of the
 
 ===== Example
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "autoresize",
   autoresize_bottom_margin: 50
 });
-`
+----
 
 === `autoresize_max_height`
 
@@ -49,12 +51,13 @@ This option enables you to specify the *maximum* `height` that the editor will a
 
 ===== Example
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   autoresize_max_height: 500
 });
-`
+----
 
 === `autoresize_min_height`
 
@@ -64,12 +67,13 @@ This option enables you to specify the *minimum* `height` of the editor when it'
 
 ===== Example
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   autoresize_min_height: 350
 });
-`
+----
 
 === `autoresize_on_init`
 
@@ -83,13 +87,14 @@ This option allows you to set whether the editor will attempt to resize itself u
 
 ===== Example
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "autoresize",
   autoresize_on_init: false
 });
-`
+----
 
 === `autoresize_overflow_padding`
 
@@ -99,10 +104,11 @@ This option allows you to specify the size of the `padding` at the sides of the 
 
 ===== Example
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "autoresize",
   autoresize_overflow_padding: 50
 });
-`
+----

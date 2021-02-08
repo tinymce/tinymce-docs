@@ -6,7 +6,8 @@ This option enables you specify the available styles for each element. This mean
 
 ===== Example
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   valid_styles: {
@@ -14,4 +15,4 @@ tinymce.init({
     'div': 'width,height'
   }
 });
-`
+----

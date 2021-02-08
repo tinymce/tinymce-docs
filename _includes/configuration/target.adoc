@@ -8,7 +8,8 @@ IMPORTANT: `selector` option has precedence over `target`, so in order for `targ
 
 ===== Example
 
-```js
+[source,js]
+----
 var el = document.createElement('textarea');
 document.body.appendChild(el);
 
@@ -17,4 +18,4 @@ document.body.appendChild(el);
 tinymce.init({
   target: el
 });
-```
+----

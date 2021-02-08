@@ -10,11 +10,12 @@ This option configures TinyMCE to use the browser's native spell checker.
 
 *Possible Values:* `true`, `false`
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   browser_spellcheck: true
 });
-`
+----
 
 For more information about spell checking in TinyMCE, see link:{baseurl}/general-configuration-guide/spell-checking/[this page] in the General-configuration-guide/ guide.

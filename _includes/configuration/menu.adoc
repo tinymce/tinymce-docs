@@ -12,7 +12,8 @@ If you would like to group these menu items, please insert a `|` pipe character 
 
 ===== Example
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   menu: {
@@ -25,6 +26,6 @@ tinymce.init({
     tools: {title: 'Tools', items: 'spellchecker code'}
   }
 });
-`
+----
 
 If all you need is to control which menus are available and/or in what order, see the <<menubar,menubar parameter>>.

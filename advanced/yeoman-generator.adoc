@@ -14,9 +14,10 @@ To make it easy and quick to get started creating your plugins for TinyMCE we ha
 
 The plugin generator is built with http://yeoman.io/[Yeoman], which if you haven't heard about it before is a project scaffolding tool, so to get started you have to install both `yo` (the yeoman command) and the generator with the following command:
 
-`bash
+[source,bash]
+----
 npm install --global yo generator-tinymce
-`
+----
 
 Wait for the install to finish, then let us move on.
 
@@ -24,9 +25,10 @@ Wait for the install to finish, then let us move on.
 
 Start the generator with the following command:
 
-`bash
+[source,bash]
+----
 yo tinymce
-`
+----
 
 You will then be guided through these questions:
 
@@ -49,9 +51,10 @@ Hopefully self-explanatory: decide under what license you want to release you pl
 
 After you have made your way through these prompts yeoman will install the needed dependencies and we are pretty much done: the project is bootstrapped and ready. `cd` into the plugin directory and run the following to start the auto reloading development server and get started:
 
-`bash
+[source,bash]
+----
 npm start
-`
+----
 
 Start hacking and have fun! If you didn't skip it a git repository has also been initialized and an initial commit committed so if it gets too messy you can always go back with a simple `git reset`.
 
@@ -59,9 +62,10 @@ Start hacking and have fun! If you didn't skip it a git repository has also been
 
 When you feel satisfied with your plugin the only thing you need to do is run this command in the project root:
 
-`bash
+[source,bash]
+----
 npm run build
-`
+----
 
 A `dist` directory will be created with a directory in it named the same as your plugin containing three files:
 

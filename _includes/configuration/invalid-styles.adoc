@@ -11,12 +11,13 @@ The *invalid_styles* option enables you to restrict the styles that are valid fo
 
 ===== Example
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   invalid_styles: 'color font-size'
 });
-`
+----
 
 === Element specific classes
 
@@ -24,7 +25,8 @@ tinymce.init({
 
 ===== Example
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   invalid_styles: {
@@ -32,4 +34,4 @@ tinymce.init({
     'a': 'background' // Link specific invalid styles
   }
 });
-`
+----

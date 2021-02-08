@@ -40,8 +40,15 @@ In the snippet below, we use TinyMCE Cloud to instantiate the editor. If you're 
 
 NOTE:  If you're new to TinyMCE Cloud, https://go.tinymce.com/blog/how-to-get-tinymce-cloud-up-in-less-than-5-minutes/[this post] will help you get the editor instantiated quickly.
 
-TIP: Don't forget to add your API key to the `init`:
-`+<script src="https://cloud.tinymce.com/stable/tinymce.min.js?apiKey=your_API_key"></script>+`
+[TIP]
+====
+Don't forget to add your API key to the `init`:
+
+[source,html]
+----
+<script src="https://cloud.tinymce.com/stable/tinymce.min.js?apiKey=your_API_key"></script>
+----
+====
 
 If you have experience using TinyMCE, you'll see in the above example that we added a new parameter called `mobile`. To use mobile mode on touch-only devices, add this to your editor settings, specifying the `theme` as `mobile`:
 
@@ -182,7 +189,3 @@ Below are the toolbar items currently supported, with any plugins/configuration 
 During our initial QA, we tested mobile on the following platforms. If you use other platforms and encounter bugs, please let us know in the https://github.com/tinymce/tinymce/issues[TinyMCE issue tracker].
 
 {% include mobile_platform_compatibility.md %}
-
-____
-To shape the future of mobile editing, https://docs.google.com/forms/d/e/1FAIpQLSdWamU5HsZtv-SPqGRyu6Ql1zLqlrCQFP1vSrzx1oHikMFvlw/viewform[complete our survey] to have your say.
-____

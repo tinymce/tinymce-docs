@@ -9,20 +9,19 @@ include::{rootDir}_attributes.adoc[]
 
 The `advlist` plugin extends the core `bullist` and `numlist` toolbar controls by adding CSS `list-style-type` styled number formats and bullet types to the controls.
 
-____
-*Important note:* The link:../lists[Lists] (`lists`) plugin must be activated for the `advlist` plugin to work.
-____
+IMPORTANT: The link:../lists[Lists] (`lists`) plugin must be activated for the `advlist` plugin to work.
 
 *Type:* `String`
 
 ===== Advanced List plugin example
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: "textarea", // change this value according to your HTML
   plugins: "advlist"
 });
-`
+----
 
 == Options
 
@@ -44,13 +43,14 @@ This option allows you to include specific unordered list item markers in the de
 
 ==== Example:
 
-`js
+[source,js]
+----
 tinymce.init({
     selector: "textarea",  // change this value according to your html
     plugins: "advlist",
     advlist_bullet_styles: "square"  // only include square bullets in list
 });
-`
+----
 
 === `advlist_number_styles`
 
@@ -70,10 +70,11 @@ This option allows you to include specific ordered list item markers in the defa
 
 ==== Example:
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "advlist",
   advlist_number_styles: "lower-alpha"  // only include lower alpha in list
 });
-`
+----

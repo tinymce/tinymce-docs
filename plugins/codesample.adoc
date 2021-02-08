@@ -14,19 +14,21 @@ This plugin demonstrates the support for the new block based `contenteditable=fa
 
 ===== Example
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "codesample",
   toolbar: "codesample"
 });
-`
+----
 
 By default `codesample` uses \http://prismjs.com/ to embed the code samples within the editor and works out of the box. That is, when a user copies valid code syntax into the editable area the code will be automatically formatted according to Prism default CSS rules.
 
-____
+[NOTE]
+====
 Prism.js and prism.css need to be added to a page for syntax highlighting to work. See the instructions below to learn how to do this.
-____
+====
 
 === Options
 
@@ -52,7 +54,8 @@ This option enables you to specify a custom css file to be loaded when codesampl
 
 ===== Example
 
-`pass:c[js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',
   plugins: 'codesample',
@@ -70,7 +73,7 @@ tinymce.init({
 	],
   toolbar: 'codesample'
 });
-]`
+----
 
 ===== Using Prism.js on your web page
 
@@ -78,14 +81,12 @@ You need to add `prism.js` and `prism.css` to your page in order to get the synt
 
 ===== Example of using the Prism.js script
 
-```html+++<link rel="stylesheet" type="text/css" href="prism.css">++++++</link>++++++<script src="prism.js">++++++</script>+++
-
-[source,markup]
+[source,html]
 ----
-...
+<link rel="stylesheet" type="text/css" href="prism.css">
+<script src="prism.js"></script>
+<pre class="language-markup"><code>...</code></pre>
 ----
-
-```
 
 == Live example
 

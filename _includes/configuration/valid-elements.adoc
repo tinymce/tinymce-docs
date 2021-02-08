@@ -74,12 +74,13 @@ Use `*[*]` to include all elements and all attributes. This can be very useful w
 
 ===== Example
 
-`js
+[source,js]
+----
 tinyMCE.init({
   selector: 'textarea',  // change this value according to your HTML
   valid_elements : 'a[href|target=_blank],strong/b,div[align],br'
 });
-`
+----
 
 This example string tells TinyMCE to remove all elements that are not a `'a, strong, div or br'` element, convert `'b'` elements to `'strong'` elements, default '[.code]``target``' to '[.code]``_blank``' and keep the '[.code]``href``', '[.code]``target``' and '[.code]``align``' attributes of the elements.
 
@@ -87,13 +88,12 @@ This example string tells TinyMCE to remove all elements that are not a `'a, str
 
 Be careful not to duplicate attributes in the definitions as this may cause TinyMCE to render duplicate attributes in the output. For example, if you have:
 
-____
-`js
+[source,js]
+----
  //bad code: dir and style listed twice
  'blockquote[dir|style|cite|class|dir<ltr?rtl|id|lang|onclick|ondblclick'
   +'|onkeydown|onkeypress|onkeyup|onmousedown|onmousemove|onmouseout'
   +'|onmouseover|onmouseup|style|title]'
-`
-____
+----
 
 then if you happen to have a `<blockquote>` element in your code with `style=` or `dir=` attributes, the editor will cause each of those attributes to be duplicated in the output, which will result in invalid XHTML.

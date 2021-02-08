@@ -11,9 +11,10 @@ The easiest way to get started using TinyMCE with Angular 2+ is with our officia
 
 == Installation
 
-`sh
+[source,sh]
+----
 $ npm install @tinymce/tinymce-angular
-`
+----
 
 == Usage
 
@@ -21,12 +22,14 @@ $ npm install @tinymce/tinymce-angular
 
 Import the `EditorModule` from the npm package like this:
 
-`js
+[source,js]
+----
 import { EditorModule } from '@tinymce/tinymce-angular';
-`
+----
 And add it to your application module:
 
-`+js
+[source,js]
+----
 // This might look different depending on how you have set up your app
 // but the important part is the imports array
 @NgModule({
@@ -40,15 +43,16 @@ And add it to your application module:
   providers: [],
   bootstrap: [AppComponent]
 })
-+`
+----
 
 === Using the component in your templates
 
 Use the editor in your templates like this:
 
-`tsx
+[source,tsx]
+----
 <editor apiKey="test" [init]="{plugins: 'link'}"></editor>
-`
+----
 
 === Configuring the editor
 
@@ -68,28 +72,101 @@ The editor accepts the following inputs:
 
 You can also use the `ngModel` directive (more info in the https://angular.io/api/forms/NgModel[Angular documentation]) on the editor to simplify using it in a form:
 
-`tsx
+[source,tsx]
+----
 <editor [(ngModel)]="dataModel"></editor>
-`
+----
 
 === Event binding
 
 You can also bind editor events via a shorthand prop on the editor, for example:
-`js
+[source,js]
+----
 <editor (onSelectionChange)="handleEvent($eventObj)"></editor>
-`
+----
 Where the handler gets called with an object containing the properties `event`, which is the event object, and `editor`, which is a reference to the editor.
 
-Here is a full list of the events available:+++<details>++++++<summary>+++All available events+++</summary>+++ * `onActivate` * `onAddUndo` * `onBeforeAddUndo` * `onBeforeExecCommand` * `onBeforeGetContent` * `onBeforeRenderUI` * `onBeforeSetContent` * `onBeforePaste` * `onBlur` * `onChange` * `onClearUndos` * `onClick` * `onContextMenu` * `onCopy` * `onCut` * `onDblclick` * `onDeactivate` * `onDirty` * `onDrag` * `onDragDrop` * `onDragEnd` * `onDragGesture` * `onDragOver` * `onDrop` * `onExecCommand` * `onFocus` * `onFocusIn` * `onFocusOut` * `onGetContent` * `onHide` * `onInit` * `onKeyDown` * `onKeyPress` * `onKeyUp` * `onLoadContent` * `onMouseDown` * `onMouseEnter` * `onMouseLeave` * `onMouseMove` * `onMouseOut` * `onMouseOver` * `onMouseUp` * `onNodeChange` * `onObjectResizeStart` * `onObjectResized` * `onObjectSelected` * `onPaste` * `onPostProcess` * `onPostRender` * `onPreInit` * `onPreProcess` * `onProgressState` * `onRedo` * `onRemove` * `onReset` * `onSaveContent` * `onSelectionChange` * `onSetAttrib` * `onSetContent` * `onShow` * `onSubmit` * `onUndo` * `onVisualAid`+++</details>+++
+Here is a full list of the events available:
+++++
+<details>
+  <summary>All available events</summary>
+  <ul>
+    <li><code>onActivate</code></li>
+    <li><code>onAddUndo</code></li>
+    <li><code>onBeforeAddUndo</code></li>
+    <li><code>onBeforeExecCommand</code></li>
+    <li><code>onBeforeGetContent</code></li>
+    <li><code>onBeforeRenderUI</code></li>
+    <li><code>onBeforeSetContent</code></li>
+    <li><code>onBeforePaste</code></li>
+    <li><code>onBlur</code></li>
+    <li><code>onChange</code></li>
+    <li><code>onClearUndos</code></li>
+    <li><code>onClick</code></li>
+    <li><code>onContextMenu</code></li>
+    <li><code>onCopy</code></li>
+    <li><code>onCut</code></li>
+    <li><code>onDblclick</code></li>
+    <li><code>onDeactivate</code></li>
+    <li><code>onDirty</code></li>
+    <li><code>onDrag</code></li>
+    <li><code>onDragDrop</code></li>
+    <li><code>onDragEnd</code></li>
+    <li><code>onDragGesture</code></li>
+    <li><code>onDragOver</code></li>
+    <li><code>onDrop</code></li>
+    <li><code>onExecCommand</code></li>
+    <li><code>onFocus</code></li>
+    <li><code>onFocusIn</code></li>
+    <li><code>onFocusOut</code></li>
+    <li><code>onGetContent</code></li>
+    <li><code>onHide</code></li>
+    <li><code>onInit</code></li>
+    <li><code>onKeyDown</code></li>
+    <li><code>onKeyPress</code></li>
+    <li><code>onKeyUp</code></li>
+    <li><code>onLoadContent</code></li>
+    <li><code>onMouseDown</code></li>
+    <li><code>onMouseEnter</code></li>
+    <li><code>onMouseLeave</code></li>
+    <li><code>onMouseMove</code></li>
+    <li><code>onMouseOut</code></li>
+    <li><code>onMouseOver</code></li>
+    <li><code>onMouseUp</code></li>
+    <li><code>onNodeChange</code></li>
+    <li><code>onObjectResizeStart</code></li>
+    <li><code>onObjectResized</code></li>
+    <li><code>onObjectSelected</code></li>
+    <li><code>onPaste</code></li>
+    <li><code>onPostProcess</code></li>
+    <li><code>onPostRender</code></li>
+    <li><code>onPreInit</code></li>
+    <li><code>onPreProcess</code></li>
+    <li><code>onProgressState</code></li>
+    <li><code>onRedo</code></li>
+    <li><code>onRemove</code></li>
+    <li><code>onReset</code></li>
+    <li><code>onSaveContent</code></li>
+    <li><code>onSelectionChange</code></li>
+    <li><code>onSetAttrib</code></li>
+    <li><code>onSetContent</code></li>
+    <li><code>onShow</code></li>
+    <li><code>onSubmit</code></li>
+    <li><code>onUndo</code></li>
+    <li><code>onVisualAid</code></li>
+  </ul>
+</details>
+++++
 
 == Loading TinyMCE
 
 ### Auto-loading from TinyMCE Cloud
 The `Editor` component needs TinyMCE to be globally available to work, but to make it as easy as possible it will automatically load https://www.tinymce.com/docs/cloud-deployment-guide/[TinyMCE Cloud] if it can't find TinyMCE available when the component has mounted. To get rid of the `+This domain is not registered...+` warning, sign up for the cloud and enter the api key like this:
 
-`tsx
+[source,tsx]
+----
 <editor apiKey="test" [init]="{/* your settings */}"></editor>
-`
+----
 
 You can also define what cloud channel you want to use out these three
 * `stable` *Default*. The most stable and well-tested version that has passed the Tiny quality assurance process.
@@ -98,14 +175,15 @@ You can also define what cloud channel you want to use out these three
 
 So using the `dev` channel would look like this:
 
-`tsx
+[source,tsx]
+----
 <editor
   apiKey="YOUR_API_KEY"
   cloudChannel="dev"
   [init]="{/* your settings */}"
   >
 </editor>
-`
+----
 
 For more info on the different versions see the https://www.tinymce.com/docs/cloud-deployment-guide/editor-plugin-version/#devtestingandstablereleases[documentation].
 

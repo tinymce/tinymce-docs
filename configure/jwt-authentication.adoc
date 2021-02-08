@@ -53,7 +53,8 @@ All of these algorithms use the private RSA key to sign the JWT, but vary in how
 
 This example uses the https://github.com/firebase/php-jwt[Firebase JWT library] provided through the Composer dependency manager. The private key should be the private key that was generated through the user's Tiny Account. Each service requires different claims to be provided. The following example shows the sub and name claims needed for Tiny Drive.
 
-```php
+[source,php]
+----
 <?php
 require 'vendor/autoload.php';
 use \Firebase\JWT\JWT;
@@ -92,13 +93,14 @@ try {
   echo $e\->getMessage();
 }
 ?>
-```
+----
 
 == Node token provider example
 
 This example shows how to set up a Node.js express handler that produces the tokens. It requires installing the Express web framework and the `jsonwebtoken` Node modules. Each service requires different claims to be provided. The following example shows the sub and name claims needed for Tiny Drive.
 
-```js
+[source,js]
+----
 const express = require('express');
 const jwt = require('jsonwebtoken');
 const cors = require('cors');
@@ -142,7 +144,7 @@ try {
 });
 
 app.listen(3000);
-```
+----
 
 == Tiny Drive specific JWT claims:
 

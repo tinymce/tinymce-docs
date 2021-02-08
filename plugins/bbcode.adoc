@@ -10,20 +10,22 @@ include::{rootDir}_attributes.adoc[]
 
 This plugin makes it possible to edit BBCode in a WYSIWYG style by converting tags like `[b]` into `<strong>` and then back, when user submits the content.
 
-____
+[NOTE]
+====
 You will need to sacrifice quite a lot of TinyMCE's functionality to use this plugin properly, since BBCode format doesn't support the whole HTML specification.
-____
+====
 
 *Type:* `String`
 
 ===== Example
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "bbcode"
 });
-`
+----
 
 === Options
 
@@ -34,40 +36,40 @@ This option allows you to specify the BBCode dialect. We only support http://pun
 |===
 | BBCode | Description | HTML equivalent
 
-| `+[b]...[/b]+`
+| `[b]...[/b]`
 | Bold text
-| `+<strong>...</strong>+`
+| `<strong>...</strong>`
 
-| `+[i]...[/i]+`
+| `[i]...[/i]`
 | Italicize text
-| `+</em>...</em>+`
+| `</em>...</em>`
 
-| `+[u]...[/u]+`
+| `[u]...[/u]`
 | Underline text
-| `+<u>...</u>+`
+| `<u>...</u>`
 
-| `+[url=...]...[/url]+`
+| `[url=...]...[/url]`
 | Link
-| `+<a href="...">...</a>+`
+| `<a href="...">...</a>`
 
-| `+[img]...[/img]+`
+| `[img]...[/img]`
 | Image
-| `+<img src="..." />+`
+| `<img src="..." />`
 
-| `+[color=...]...[/color]+`
+| `[color=...]...[/color]`
 | Color text
-| `+<font color="...">...</font>+`
+| `<font color="...">...</font>`
 
-| `+[code]...[/code]+`
+| `[code]...[/code]`
 | Code
-| `+<span class="codeStyle">...</span>+`
+| `<span class="codeStyle">...</span>`
 
-| `+[quote]...[/quote]+`
+| `[quote]...[/quote]`
 | Quote
-| `+<span class="quoteStyle">...</span>+`
+| `<span class="quoteStyle">...</span>`
 
 | `
-`
+----
 | Newline
 | `<br />`
 |===
@@ -80,13 +82,14 @@ When using PunBB dialect, `codeStyle` and `quoteStyle` will be converted to `[co
 
 ===== Example
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "bbcode",
   bbcode_dialect: "punbb"
 });
-`
+----
 
 == Live example
 

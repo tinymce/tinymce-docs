@@ -13,13 +13,14 @@ This plugin adds the forecolor/backcolor button controls that enable you to pick
 
 ===== Example
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your html
   plugins: "textcolor",
   toolbar: "forecolor backcolor"
 });
-`
+----
 
 === Options
 
@@ -35,14 +36,15 @@ This option allows you to specify how many columns appear on the grid of text co
 
 ===== Example
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "textcolor",
   toolbar: "forecolor backcolor",
   textcolor_cols: "5"
 });
-`
+----
 
 === `textcolor_rows`
 
@@ -54,14 +56,15 @@ This option allows you to specify how many rows appear on the grid of text color
 
 ===== Example
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "textcolor",
   toolbar: "forecolor backcolor",
   textcolor_rows: "4"
 });
-`
+----
 
 === `textcolor_map`
 
@@ -71,7 +74,8 @@ This option allows you to specify a map of the text colors that will appear in t
 
 ===== Example
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "textcolor",
@@ -118,4 +122,4 @@ tinymce.init({
     "CC99FF", "Plum"
   ]
 });
-`
+----

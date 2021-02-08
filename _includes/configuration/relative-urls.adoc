@@ -10,9 +10,10 @@ If this option is set to true, all URLs returned from the MCFileManager will be 
 
 ===== Example
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   relative_urls: false
 });
-`
+----

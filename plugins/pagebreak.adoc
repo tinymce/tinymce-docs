@@ -14,18 +14,19 @@ It also adds a toolbar button and a menu item `Page break` under the `Insert` me
 
 *Type:* `String`
 
-*Default Value:* `+"<!-- pagebreak -->"+`
+*Default Value:* `"<!-- pagebreak -->"`
 
 ===== Example
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your html
   plugins: "pagebreak",
   menubar: "insert",
   toolbar: "pagebreak"
 });
-`
+----
 
 === Options
 
@@ -37,7 +38,8 @@ These settings affect the execution of the `pagebreak` plugin. They enable you t
 
 ===== Example
 
-`+js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "pagebreak",
@@ -45,7 +47,7 @@ tinymce.init({
   toolbar: "pagebreak"
   pagebreak_separator: "<!-- my page break -->"
 });
-+`
+----
 
 === `pagebreak_split_block`
 
@@ -59,7 +61,8 @@ When enabled this option makes it easier to split block elements with a page bre
 
 ===== Example
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "pagebreak",
@@ -67,4 +70,4 @@ tinymce.init({
   toolbar: "pagebreak"
   pagebreak_split_block: true
 });
-`
+----

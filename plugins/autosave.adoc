@@ -16,13 +16,14 @@ on click will open a dialog box to accept raw code input.
 
 ===== Example
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "autosave",
   toolbar: "restoredraft"
 });
-`
+----
 
 === Options
 
@@ -40,13 +41,14 @@ This option allows you to set whether the editor should prompt the user to advis
 
 ===== Example
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "autosave",
   autosave_ask_before_unload: false
 });
-`
+----
 
 === `autosave_interval`
 
@@ -58,12 +60,13 @@ This option enables you to specify the time the editor should wait between takin
 
 ===== Example:
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   autosave_interval: "20s"
 });
-`
+----
 
 === `autosave_prefix`
 
@@ -71,17 +74,18 @@ This option allows you to set the prefix that is used for local storage keys.
 
 *Type*: `String`
 
-*Default Value*: `+"tinymce-autosave-{path}{query}-{id}-"+`
+*Default Value*: `"tinymce-autosave-{path}{query}-{id}-"`
 
 ===== Example:
 
-`+js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "autosave",
   autosave_prefix: "tinymce-autosave-{path}{query}-{id}-"
 });
-+`
+----
 
 === `autosave_restore_when_empty`
 
@@ -95,13 +99,14 @@ This option enables you to specify if TinyMCE should automatically restore the c
 
 ===== Example:
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "autosave",
   autosave_restore_when_empty: false
 });
-`
+----
 
 === `autosave_retention`
 
@@ -113,10 +118,11 @@ This option lets you to specify the duration editor content should remain in loc
 
 ===== Example:
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "autosave",
   autosave_retention: "30m"
 });
-`
+----

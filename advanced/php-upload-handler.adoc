@@ -16,7 +16,8 @@ Please note that this script is provided for your reference - you'll need to upd
 
 ===== Example postAcceptor.php
 
-```php
+[source,php]
+----
 <?php
   /*************************************
    * Only these origins will be allowed to upload images *
@@ -70,5 +71,5 @@ move_uploaded_file($temp['tmp_name'], $filetowrite);
 // { location : '/your/uploaded/image/file'}
 echo json_encode(array('location' => $filetowrite));   } else {
 // Notify editor that the upload failed
-header("HTTP/1.1 500 Server Error");   } ?> ```
-....
+header("HTTP/1.1 500 Server Error");   } ?>
+----

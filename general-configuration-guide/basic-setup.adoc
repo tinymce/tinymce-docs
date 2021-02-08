@@ -73,9 +73,10 @@ tinymce.init({
 });
 ----
 
-____
+[NOTE]
+====
 For more information on the differences between regular and inline editing modes see the link:../use-tinymce-inline/[Using TinyMCE Inline] page.
-____
+====
 
 == Plugin configuration
 
@@ -251,35 +252,28 @@ To help get you started, let's walk through an example of a basic TinyMCE config
 
 First, we want to select only the `textarea` with the id `myTextarea`.
 
-____
 [source,js]
 ----
 selector: '#myTextarea',
 ----
-____
 
 We next choose a theme, in this case, the modern theme (which is the default theme, so this isn't needed. You can, however, create your own themes using the http://skin.tinymce.com/[TinyMCE Skin Creator]).
 
-____
 [source,js]
 ----
 theme: 'modern',
 ----
-____
 
 Here we set the width and height of the editable area in pixels. These must be numeric values.
 
-____
 [source,js]
 ----
 width: 600,
 height: 300,
 ----
-____
 
 Here we select the plugins that should be included on load.
 
-____
 [source,js]
 ----
 plugins: [
@@ -288,25 +282,20 @@ plugins: [
   'save table contextmenu directionality emoticons template paste textcolor'
 ],
 ----
-____
 
 Next, we set the styling of the editable area using `content_css`. The styling should be a (very) stripped down version of your website CSS, with things such as styles for headers (H1-H6), table layouts, margins, paddings around elements (images, paragraphs), and so on.
 
-____
 [source,js]
 ----
 content_css: 'css/content.css',
 ----
-____
 
 Lastly, we want to select the toolbar buttons exposed to the user. You can use a comma or space as a separator.
 
-____
 [source,js]
 ----
 toolbar: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | print preview media fullpage | forecolor backcolor emoticons',
 ----
-____
 
 And we are done. We hope you found the above example helpful in showing not only how powerful TinyMCE is but also how easy it is to customize.
 

@@ -13,12 +13,13 @@ This plugin adds word count functionality to TinyMCE, placing a counter on the r
 
 ===== Example
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "wordcount"
 });
-`
+----
 
 === Options
 
@@ -32,13 +33,14 @@ This option allows you to specify the regular expression that will be used to _s
 
 ===== Example
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "wordcount",
   wordcount_cleanregex: /[0-9.(),;:!?%#$?'"_+=\\/\-]*/g
 });
-`
+----
 
 === `wordcount_countregex`
 
@@ -48,10 +50,11 @@ This option allows you to specify the regular expression that will be used to _c
 
 ===== Example
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "wordcount",
   wordcount_countregex: /[\w’'\-À-῿]+/g
 });
-`
+----

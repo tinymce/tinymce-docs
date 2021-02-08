@@ -19,9 +19,10 @@ All TinyMCE Cloud accounts include a free, pre-configured cloud image proxy serv
 
 To load TinyMCE for the very first time, you need to embed the TinyMCE editor code into your application. The code embedding is done by adding the following script tag into your app, or in the case of a web page the `<head>` of the page:
 
-`js
+[source,js]
+----
 <script src="{cdnurl}?apiKey=your_API_key"></script>
-`
+----
 
 === Step 2: Load, customize and interact with TinyMCE
 
@@ -38,9 +39,10 @@ NOTE: `spellchecker_rpc_url` is *not* required when enabling this plugin via lin
 
 * link:{baseurl}/plugins/imagetools/[Image Tools (with configured image proxy)]
 
-____
+[NOTE]
+====
 Note:``imagetools_cors_hosts`` and `imagetools_proxy` are _not_ required to be configured when enabling this plugin via link:{baseurl}//cloud-deployment-guide[TinyMCE Cloud].
-____
+====
 
 * link:{baseurl}/plugins/a11ychecker/[Accessibility Checker]
 * link:{baseurl}/plugins/advcode/[Advanced Code Editor]
@@ -71,9 +73,10 @@ If you wish to use a language other than English (US), please https://www.tinymc
 
 Migrating from a Self-hosted environment to the Cloud is a relatively straightforward process. Please remove your existing script tag that loads TinyMCE's JavaScript (typically a reference to `tinymce.min.js` either hosted in your application or available via one our legacy CDNs). Now, replace this script tag with the following:
 
-`js
+[source,js]
+----
 <script src="{cdnurl}?apiKey=your_API_key"></script>
-`
+----
 
 === Step 2: Update custom plugin paths
 
@@ -90,9 +93,10 @@ NOTE: `spellchecker_rpc_url` is *not* required when enabling this plugin via lin
 
 * link:{baseurl}/plugins/imagetools/[Image Tools (with configured image proxy)]
 
-____
+[NOTE]
+====
 Note:``imagetools_cors_hosts`` and `imagetools_proxy` are _not_ required to be configured when enabling this plugin via link:{baseurl}//cloud-deployment-guide[TinyMCE Cloud].
-____
+====
 
 * link:{baseurl}/plugins/a11ychecker/[Accessibility Checker]
 * link:{baseurl}/plugins/advcode/[Advanced Code Editor]

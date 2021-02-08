@@ -10,13 +10,14 @@ This function is executed each time a user clicks on the "browse" buttons in var
 
 ===== Example
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   file_browser_callback: function(field_name, url, type, win) {
     win.document.getElementById(field_name).value = 'my browser value';
   }
 });
-`
+----
 
 You can fiddle with this example at the http://fiddle.tinymce.com[fiddle.tinymce.com] site.

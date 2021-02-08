@@ -8,7 +8,8 @@ The option takes an array of regular expression that it will match the contents 
 
 ===== Example
 
-`+js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   protect: [
@@ -17,4 +18,4 @@ tinymce.init({
     /<\?php.*?\?>/g  // Protect php code
   ]
 });
-+`
+----

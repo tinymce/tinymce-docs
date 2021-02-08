@@ -24,14 +24,14 @@ include::{rootDir}_attributes.adoc[]
 
 The file structure was changed in the 4.0 release to more closely match other JavaScript projects. All minified files are suffixed with `.min.js` and `editor_plugin` and `editor_theme` was replaced with `plugin` and `theme`.
 
-`+
+----
 /tiny_mce/tiny_mce.js -> /tinymce/tinymce.min.js
 /tiny_mce/tiny_mce_src.js -> /tinymce/tinymce.js
 /tiny_mce/plugins/<plugin>/editor_plugin.js -> /tinymce/plugins/<plugin>/plugin.min.js
 /tiny_mce/plugins/<plugin>/editor_plugin_src.js -> /tinymce/plugins/<plugin>/plugin.js
 /tiny_mce/theme/<plugin>/editor_template.js -> /tinymce/plugins/<plugin>/theme.min.js
 /tiny_mce/theme/<plugin>/editor_template_src.js -> /tinymce/plugins/<plugin>/theme.js
-+`
+----
 
 == Removed plugins
 
@@ -53,7 +53,8 @@ The new "modern" theme was introduced in 4.0. More themes will be added in the f
 
 TinyMCE 4.0 has a new way of binding events. Instead of the old dispatcher method, it uses the more common "on" and "off" like for example jQuery. It also allows you to bind multiple events and cancel events using the more common preventDefault and stopPropagation. Check the link:{baseurl}/api/tinymce/tinymce.editor/[API documentation] for a full list of events.
 
-```js
+[source,js]
+----
 // Old event
 editor.onInit(editor, args) {
     // Custom logic
@@ -63,7 +64,7 @@ editor.onInit(editor, args) {
 editor.on('init', function(args) {
     // Custom logic
 });
-```
+----
 
 == User interface
 
@@ -73,13 +74,16 @@ The user interface logic has been changed entirely in 4.0. Though the more strai
 
 Each control in TinyMCE 4 is supposed to be a self-contained unit. This enables controls to be created at multiple locations in the UI. So the old controlManager with fixed names has been removed.
 
-`js
+[source,js]
+----
 // This is how control states used to function in the 3.x UI API
 editor.onNodeChange.add(function(editor, controlManager, node) {
     controlManager.setActive('SomeButton', node.nodeName == 'A');
 });
-`
-```js
+----
+
+[source,js]
+----
 // In TinyMCE 4 you can use the simpler stateSelector setting
 editor.addButton('SomeButton', {
     text: 'My button',
@@ -95,13 +99,15 @@ editor.addButton('SomeButton', {
      ed.on('NodeChange', function(e) {
          ctrl.active(e.element.nodeName == 'A');
      });
- } }); ```
+ } });
+----
 
 == Dialogs/Windows
 
 In TinyMCE 3.x all dialogs where HTML files loaded in iframes or separate windows. In 4.x all windows are DIV elements placed onto the same page as the editor. You can however still load pages into iframe based windows.
 
-`js
+[source,js]
+----
 // Open URL based window
 editor.windowManager.open({
     title: 'My dialog',
@@ -111,17 +117,18 @@ editor.windowManager.open({
 }, {
     someArg: 'someValue'
 });
-`
+----
 
 Here are some examples on how to extract parameters passed to windows and closing windows inside your "somepage.html" code.
 
-```js
+[source,js]
+----
 // Get someArg value inside iframe dialog
 var someArg = top.tinymce.activeEditor.windowManager.getParams().someArg;
 
 // Close the top most window
 top.tinymce.activeEditor.windowManager.close();
-```
+----
 
 == HTML5 output
 

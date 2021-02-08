@@ -7,7 +7,8 @@ This option enables auto hiding of styles that doesn't match the current context
 
 ===== Example
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',
   style_formats: [
@@ -16,4 +17,4 @@ tinymce.init({
   ],
   style_formats_autohide: true
 });
-`
+----

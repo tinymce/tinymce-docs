@@ -6,15 +6,17 @@ This option allows you to specify which plugins TinyMCE will attempt to load whe
 
 ===== Example
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins : 'advlist autolink link image lists charmap print preview'
 });
-`
+----
 
-____
+[NOTE]
+====
 Note that the plugin entries should be separated by a blank space.
-____
+====
 
 link:{baseurl}/plugins/[Check this documentation page for a list of available plugins].

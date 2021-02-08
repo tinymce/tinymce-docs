@@ -15,7 +15,8 @@ This plugin enables the user to insert an image into TinyMCE's editable area. Th
 
 ===== Example
 
-```js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "image",
@@ -26,12 +27,12 @@ tinymce.init({
     {title: 'My image 2', value: '\http://www.moxiecode.com/my2.gif'}
   ]
 });
+----
 
-```
-
-____
+[NOTE]
+====
 Note that this is not drag-drop functionality and the user is required to enter the path to the image. Optionally the user can also enter the image description, dimensions, and whether image proportions should be constrained (selected via a checkbox). Some of these settings can be preset using the plugin's configuration options.
-____
+====
 
 === Options
 
@@ -41,9 +42,10 @@ If you wish to align the image, you can also use the text align buttons while im
 
 === `image_caption`
 
-____
+[NOTE]
+====
 New in TinyMCE version 4.3!
-____
+====
 
 This option lets users enable captions for images. When this option is enabled the image dialog will have an extra checkbox called "Caption". When a user checks the checkbox the image will get wrapped in an HTML5 `figure` element with a `figcaption` inside it. The user will then be able to type caption content inside the editor.
 
@@ -55,7 +57,8 @@ This option lets users enable captions for images. When this option is enabled t
 
 ===== Example
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "image",
@@ -63,17 +66,22 @@ tinymce.init({
   toolbar: "image",
   image_caption: true
 });
-`
+----
 
 Below is an example of the HTML created when a user selects the caption checkbox.
 
-```html+++<figure class="image">+++image:url[]+++<figcaption>+++Caption+++</figcaption>++++++</figure>+++
-
-```
+[source,html]
+----
+<figure class="image">
+<img src="url" alt="" />
+<figcaption>Caption</figcaption>
+</figure>
+----
 
 Note that the `figure` element needs some custom CSS added to render properly. This is what we use in the internal `content.css` within TinyMCE, and can be overridden with your own custom link:{baseurl}/configure/content-appearance/#content_css[`content_css`] stylesheet.
 
-```css
+[source,css]
+----
 figure.image {
 	display: inline-block;
 	border: 1px solid gray;
@@ -97,7 +105,7 @@ figure.image figcaption {
 	margin: 6px 8px 6px 8px;
 	text-align: center;
 }
-```
+----
 
 === `image_list`
 
@@ -107,7 +115,8 @@ This option lets you specify a predefined list of sources for images. `image_lis
 
 ===== Example
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "image",
@@ -118,13 +127,14 @@ tinymce.init({
     {title: 'Cat', value: 'mycat.gif'}
   ]
 });
-`
+----
 
 *Example of JSON URL with images*
 
 You can also configure a URL with JSON data. The format of that list is the same as above.
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "image",
@@ -132,11 +142,12 @@ tinymce.init({
   toolbar: "image",
   image_list: "/mylist.php"
 });
-`
+----
 
 *Example of a custom async function*
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "image",
@@ -149,7 +160,7 @@ tinymce.init({
       ]);
   }
 });
-`
+----
 
 === `image_advtab`
 
@@ -163,7 +174,8 @@ This option adds an "Advanced" tab to the image dialog allowing you to add custo
 
 ===== Example
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "image",
@@ -171,7 +183,7 @@ tinymce.init({
   toolbar: "image",
   image_advtab: true
 });
-`
+----
 
 === `image_class_list`
 
@@ -181,7 +193,8 @@ This option lets you specify a predefined list of classes to add to an image. It
 
 ===== Example
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "image",
@@ -193,7 +206,7 @@ tinymce.init({
     {title: 'Cat', value: 'cat'}
   ]
 });
-`
+----
 
 === `image_description`
 
@@ -207,7 +220,8 @@ This options allows you disable the image description input field in the image d
 
 ===== Example
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "image",
@@ -215,7 +229,7 @@ tinymce.init({
   toolbar: "image",
   image_description: false
 });
-`
+----
 
 === `image_dimensions`
 
@@ -229,7 +243,8 @@ This options allows you disable the image dimensions input field in the image di
 
 ===== Example
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "image",
@@ -237,7 +252,7 @@ tinymce.init({
   toolbar: "image",
   image_dimensions: false
 });
-`
+----
 
 === `image_title`
 
@@ -251,7 +266,8 @@ This options allows you enable the image title input field in the image dialog.
 
 ===== Example
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "image",
@@ -259,7 +275,7 @@ tinymce.init({
   toolbar: "image",
   image_title: true
 });
-`
+----
 
 == `image_prepend_url`
 
@@ -269,7 +285,8 @@ This option allows you to specify a URL prefix that will be applied to images wh
 
 ===== Example
 
-`+js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "image",
@@ -277,13 +294,14 @@ tinymce.init({
   toolbar: "image",
   image_prepend_url: "https://www.tinymce.com/images/"
 });
-+`
+----
 
 == Q: Where are the advanced image options?
 
 Use the `Style Formats` option instead, which is much more powerful.
 
-`js
+[source,js]
+----
 style_formats: [
   {title: 'Image Left', selector: 'img', styles: {
     'float' : 'left',
@@ -294,4 +312,4 @@ style_formats: [
     'margin': '0 10px 0 10px'
   }}
 ]
-`
+----

@@ -6,11 +6,12 @@ When using the <<language,`language`>> option to set the user interface language
 
 ===== Example
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   language_url : '/languages/fi.js'  // site absolute URL
 });
-`
+----
 
 You can download the TinyMCE 4 language pack link:/language/tinymce4x_languages.zip[here].

@@ -19,13 +19,14 @@ The help dialog can also be shown by pressing the keyboard shortcut `Alt + 0`.
 
 ===== Example setup
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "help",
   toolbar: "help"
 });
-`
+----
 
 == Exposing metadata for the help plugin
 

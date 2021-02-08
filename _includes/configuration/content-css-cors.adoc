@@ -8,7 +8,8 @@ When setting the `content_css_cors` setting to `true` the editor will add a `cro
 
 ===== Example
 
-```js
+[source,js]
+----
 // File: \http://domain.mine/mysite/index.html
 
 tinyMCE.init({
@@ -16,4 +17,4 @@ tinyMCE.init({
   content_css : '\http://www.somewhere.example/mycontent.css',
   content_css_cors: true
 });
-```
+----

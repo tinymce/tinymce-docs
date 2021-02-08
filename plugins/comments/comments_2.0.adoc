@@ -26,7 +26,8 @@ There are two modes available in Comments 2.0 that provide the ability to save c
 
 To configure Comments 2.0 to use the embedded mode use the following script:
 
-`+js
+[source,js]
+----
 tinymce.init({
   selector: "#textarea",
   menubar: 'file edit view insert format tools tc',
@@ -40,7 +41,7 @@ tinymce.init({
  tinycomments_mode: 'embedded'
  ...
 })
-+`
+----
 
 === Configuring the Comments 2.0 addcomment toolbar button
 
@@ -48,13 +49,14 @@ The `addcomment` toolbar button provides the ability to add comments.
 
 Use the following script to configure the Comments 2.0 toolbar button:
 
-`+js
+[source,js]
+----
 tinymce.init({
  selector: "#textarea",
  toolbar: 'bold italic underline insertfile | addcomment',
  ...
 })
-+`
+----
 
 *Result*: The *Comments*  image:{baseurl}/images/comment-disabled.png[**Comments**] toolbar button appears in the toolbar menu. The function of this button is to add comments to the selected text.
 
@@ -64,13 +66,14 @@ The `showcomments` toolbar button provides the ability to display comments field
 
 Use the following script to configure the Comments 2.0 toolbar button:
 
-`+js
+[source,js]
+----
 tinymce.init({
  selector: "#textarea",
  toolbar: 'bold italic underline insertfile | showcomments',
  ...
 })
-+`
+----
 
 *Result*: The *Comments*  image:{baseurl}/images/comment-disabled.png[**Comments**] toolbar button appears in the toolbar menu. The function of this button is to show comments to for the selected text.
 
@@ -90,7 +93,8 @@ Currently, there are three menu items available:
 
 The editor needs to be configured to highlight the commented text. Replace the value of `background-color` in the following configuration example to change the highlight color of the text that the comment has been added to:
 
-`+js
+[source,js]
+----
 tinymce.init({
 ...
  content_style: '.tox-comments-visible span.tox-comment
@@ -98,7 +102,7 @@ tinymce.init({
  { background-color: cyan; }'
  ...
 })
-+`
+----
 
 *Result*: The commented text will be highlighted yellow.
 image:{baseurl}/images/highlight.png[**Highlighted text**]

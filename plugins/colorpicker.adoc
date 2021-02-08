@@ -17,13 +17,14 @@ The plugin hooks into the <<color_picker_callback,`color_picker_callback`>> so y
 
 In this example you'll note that we have also activated the `textcolor` plugin. This is necessary because in a typical TinyMCE installation `colorpicker` is dependent on activation of `textcolor`. Try it out. Remove `textcolor` and see what happens.
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "textcolor colorpicker",
   toolbar: "forecolor backcolor"
 });
-`
+----
 
 === `color_picker_callback`
 
@@ -31,7 +32,8 @@ This option enables you to provide your own color picker.
 
 ===== Example
 
-`js
+[source,js]
+----
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "textcolor colorpicker",
@@ -40,4 +42,4 @@ tinymce.init({
     callback('#FF00FF');
   }
 });
-`
+----

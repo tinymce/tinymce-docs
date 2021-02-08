@@ -11,13 +11,14 @@ The `inlite` theme is responsible for rendering the editor lightweight inline mo
 
 ===== Example:
 
-`js
+[source,js]
+----
 tinymce.init({
     selector: "div.tinymce",
     theme: "inlite",
     inline: true
 });
-`
+----
 
 === Theme specific controls
 
@@ -27,14 +28,15 @@ Lets you quickly insert/edit links inline.
 
 ===== Example:
 
-`js
+[source,js]
+----
 tinymce.init({
     selector: "div.tinymce",
     theme: "inlite",
     inline: true,
     selection_toolbar: 'bold italic | quicklink h2 h3 blockquote'
 });
-`
+----
 
 ==== quickimage
 
@@ -42,14 +44,15 @@ Lets you quickly insert images from the local machine into the editor. These can
 
 ===== Example:
 
-`js
+[source,js]
+----
 tinymce.init({
     selector: "div.tinymce",
     theme: "inlite",
     inline: true,
     insert_toolbar: 'quickimage quicktable'
 });
-`
+----
 
 ==== quicktable
 
@@ -57,14 +60,15 @@ Lets you quickly insert a table 2x2 with 100% width.
 
 ===== Example:
 
-`js
+[source,js]
+----
 tinymce.init({
     selector: "div.tinymce",
     theme: "inlite",
     inline: true,
     insert_toolbar: 'quickimage quicktable'
 });
-`
+----
 
 === Related configuration options
 

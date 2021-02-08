@@ -44,7 +44,7 @@ If the server is not running on a standard HTTP or HTTPS port (80 or 443) then C
 . If the response for the version URL is still 404, it means the service has not been started or installed correctly.
 . To check the "Origin" value that the browser uses, open the network tools (Chrome in this screenshot) and refresh the page. Then enter a couple of words in the editor and select one of the requests on the bottom left ('correction' in the screen shot) and select the 'Headers' section. Look for the 'Origin' header value.
 
-image::{baseurl}/images/spell-checking-browser-tools.png[Using browser tools to investigate services issues]
+image::/images/spell-checking-browser-tools.png[Using browser tools to investigate services issues]
 
 NOTE: The value of the Origin header sent by the must match the origin specified in the `application.conf` server configuration. If it does not match, you must make the server configuration match the browser.
 
@@ -73,7 +73,7 @@ On a vanilla install this is done by editing the file /tomcat/install/directory/
 
 Then, restart the server and go to a browser and open the default tomcat page `+http://localhost:8080+`. On the top right hand side are three buttons, the first of which should be "Server Status". Click that link, login with the details you set above and you should be able to see the memory consumption (see the figure below for an example).
 
-image::{baseurl}/images/spell-checking-server_status.png[Spell Checking Server Status]
+image::/images/spell-checking-server_status.png[Spell Checking Server Status]
 
 === To increase the amount of memory
 
@@ -107,7 +107,7 @@ Edit the start.ini file to read as follows:
 
 Restart the service and confirm the settings have been applied like so:
 
-image::{baseurl}/images/spell-checking-jetty-settings.png[Spell Checking Server Settings on Jetty]
+image::/images/spell-checking-jetty-settings.png[Spell Checking Server Settings on Jetty]
 
 == Troubleshooting tools: curl
 
@@ -131,19 +131,19 @@ Once downloaded:
 
 . Unzip the package like so:
 +
-image::{baseurl}/images/spell-checking-curl-windows-1.png[Curl on Windows step 1]
+image::/images/spell-checking-curl-windows-1.png[Curl on Windows step 1]
 
 . Copy the path of the folder to where the 'curl.exe' is in:
 +
-image::{baseurl}/images/spell-checking-curl-windows-2.png[Curl on Windows step 2]
+image::/images/spell-checking-curl-windows-2.png[Curl on Windows step 2]
 
 . Open a cmd prompt. Start \-> Programs \-> Accessories \-> cmd (or command prompt). Then change to that directory to the folder where the 'curl.exe' is found.Enter 'cd' (without quotes) and then paste in the path from step 2.
 +
-image::{baseurl}/images/spell-checking-curl-windows-3.png[Curl on Windows step 3]
+image::/images/spell-checking-curl-windows-3.png[Curl on Windows step 3]
 
 . Once in the folder enter 'curl --version' (without quotes) and ensure you get a valid version
 +
-image::{baseurl}/images/spell-checking-curl-windows-4.png[Curl on Windows step 4]
+image::/images/spell-checking-curl-windows-4.png[Curl on Windows step 4]
 
 == Need more help?
 

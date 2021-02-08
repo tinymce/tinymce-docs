@@ -1,3 +1,7 @@
+:rootDir: ../
+:partialsDir: {rootDir}partials/
+:imagesDir: {rootDir}images/
+include::{rootDir}_attributes.adoc[]
 = Drive plugin
 :description: Cloud-based file and image management for TinyMCE.
 :keywords: tinydrive storage media tiny drive

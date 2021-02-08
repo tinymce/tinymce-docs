@@ -1,3 +1,7 @@
+:rootDir: ../
+:partialsDir: {rootDir}partials/
+:imagesDir: {rootDir}images/
+include::{rootDir}_attributes.adoc[]
 = 11. Attribution Requirements
 :description: TinyMCE Terms of Service.
 :keywords: legal attribution requirements logo branding

@@ -1,3 +1,7 @@
+:rootDir: ../
+:partialsDir: {rootDir}partials/
+:imagesDir: {rootDir}images/
+include::{rootDir}_attributes.adoc[]
 = Import CSS Plugin
 :description: Automatically populate CSS class names into the Format dropdown.
 :keywords: importcss content_css importcss_append importcss_file_filter importcss_selector_filter importcss_groups importcss_merge_classes importcss_selector_converter importcss_exclusive

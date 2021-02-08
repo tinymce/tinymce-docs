@@ -1,3 +1,7 @@
+:rootDir: ../
+:partialsDir: {rootDir}partials/
+:imagesDir: {rootDir}images/
+include::{rootDir}_attributes.adoc[]
 = Basic Example
 :description: This example contains the plugins needed for the most common use cases.
 :description_short: See how we built a commonly used TinyMCE instance.

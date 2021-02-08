@@ -1,3 +1,7 @@
+:rootDir: ../
+:partialsDir: {rootDir}partials/
+:imagesDir: {rootDir}images/
+include::{rootDir}_attributes.adoc[]
 = Word Count Plugin
 :description: Show a word count in the TinyMCE status bar.
 :keywords: wordcount wordcount_cleanregex wordcount_countregex
@@ -33,7 +37,7 @@ This option allows you to specify the regular expression that will be used to _s
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "wordcount",
-  wordcount_cleanregex: /[0-9.(),;:!?%#$?\x27\x22_+=\\\/\-]*/g
+  wordcount_cleanregex: /[0-9.(),;:!?%#$?'"_+=\\/\-]*/g
 });
 `
 
@@ -50,6 +54,6 @@ This option allows you to specify the regular expression that will be used to _c
 tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "wordcount",
-  wordcount_countregex: /[\w\u2019\x27\-\u00C0-\u1FFF]+/g
+  wordcount_countregex: /[\w’'\-À-῿]+/g
 });
 `

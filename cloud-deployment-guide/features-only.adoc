@@ -1,3 +1,7 @@
+:rootDir: ../
+:partialsDir: {rootDir}partials/
+:imagesDir: {rootDir}images/
+include::{rootDir}_attributes.adoc[]
 = Cloud Deployment of Plugins Only
 :description: TinyMCE Cloud customers, you'll be up and running in less than 5 minutes.
 :description_short: Learn how to setup TinyMCE Plugins via our Cloud.

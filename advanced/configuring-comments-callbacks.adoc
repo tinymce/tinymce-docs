@@ -1,3 +1,7 @@
+:rootDir: ../
+:partialsDir: {rootDir}partials/
+:imagesDir: {rootDir}images/
+include::{rootDir}_attributes.adoc[]
 = Configuring callbacks for Comments 2.0
 :description: Instructions for configuring callbacks for Comments 2.0
 :keywords: comments commenting tinycomments callback

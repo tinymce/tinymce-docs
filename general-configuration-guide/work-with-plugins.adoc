@@ -1,3 +1,7 @@
+:rootDir: ../
+:partialsDir: {rootDir}partials/
+:imagesDir: {rootDir}images/
+include::{rootDir}_attributes.adoc[]
 = 05. Work With Plugins
 :description: TinyMCE is an incredibly powerful, flexible and customizable rich text editor. In this section, we show you the power of plugins with several working examples.
 :description_short: Learn about TinyMCE's plugin functionality and discover our Top 10 plugins.

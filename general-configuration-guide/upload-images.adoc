@@ -1,3 +1,7 @@
+:rootDir: ../
+:partialsDir: {rootDir}partials/
+:imagesDir: {rootDir}images/
+include::{rootDir}_attributes.adoc[]
 = 07. Upload Images
 :description: Extend TinyMCE with powerful image uploading capabilities.
 :keywords: uploader uploadImages image handler

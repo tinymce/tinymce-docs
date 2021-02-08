@@ -1,3 +1,7 @@
+:rootDir: ../
+:partialsDir: {rootDir}partials/
+:imagesDir: {rootDir}images/
+include::{rootDir}_attributes.adoc[]
 = Create a Skin for TinyMCE
 :description: Introducing skin creation, less and icon modification.
 :description_short: Introducing skin creation.

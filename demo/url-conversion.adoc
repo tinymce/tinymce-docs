@@ -1,3 +1,7 @@
+:rootDir: ../
+:partialsDir: {rootDir}partials/
+:imagesDir: {rootDir}images/
+include::{rootDir}_attributes.adoc[]
 = URL Conversion Example
 :description: This example shows you how to setup TinyMCE to produce different results for URLs in images and links. You can read more about these config options in the FAQ.
 :description_short: Examples of absolute, relative urls and urls with no conversion.

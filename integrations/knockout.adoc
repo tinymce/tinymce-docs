@@ -1,3 +1,7 @@
+:rootDir: ../
+:partialsDir: {rootDir}partials/
+:imagesDir: {rootDir}images/
+include::{rootDir}_attributes.adoc[]
 = KnockoutJS Integration
 :description: A custom binding that applies a TinyMCE Editor to the bound HTML element.
 :keywords: integration integrate knockout knockoutjs

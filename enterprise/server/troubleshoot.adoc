@@ -1,3 +1,7 @@
+:rootDir: ../../
+:partialsDir: {rootDir}partials/
+:imagesDir: {rootDir}images/
+include::{rootDir}_attributes.adoc[]
 = Troubleshoot
 :description: Debug problems with the Enterprise server-side components.
 :keywords: enterprise tinymcespellchecker spell check checker pro pricing troubleshoot

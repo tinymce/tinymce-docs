@@ -1,3 +1,7 @@
+:rootDir: ./
+:partialsDir: {rootDir}partials/
+:imagesDir: {rootDir}images/
+include::{rootDir}_attributes.adoc[]
 = Changelog
 :class: changelog
 :description: The history of TinyMCE releases.

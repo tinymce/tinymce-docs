@@ -1,3 +1,7 @@
+:rootDir: ../
+:partialsDir: {rootDir}partials/
+:imagesDir: {rootDir}images/
+include::{rootDir}_attributes.adoc[]
 = 10. Localize TinyMCE
 :description: Localize TinyMCE with global language capabilities.
 :keywords: internationalization localization languages

@@ -1,3 +1,7 @@
+:rootDir: ../
+:partialsDir: {rootDir}partials/
+:imagesDir: {rootDir}images/
+include::{rootDir}_attributes.adoc[]
 = Rails Integration
 :description: Seamlessly integrates TinyMCE into the Rails asset pipeline introduced in Rails 3.1.
 :keywords: integration integrate angular angularjs

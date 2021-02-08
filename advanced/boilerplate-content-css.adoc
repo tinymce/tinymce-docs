@@ -1,3 +1,7 @@
+:rootDir: ../
+:partialsDir: {rootDir}partials/
+:imagesDir: {rootDir}images/
+include::{rootDir}_attributes.adoc[]
 = Boilerplate Content CSS
 :description: Learn how to set up CSS for your site to integrate TinyMCE.
 :description_short: Learn how to set up CSS for your site to integrate TinyMCE.

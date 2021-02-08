@@ -1,3 +1,7 @@
+:rootDir: ../
+:partialsDir: {rootDir}partials/
+:imagesDir: {rootDir}images/
+include::{rootDir}_attributes.adoc[]
 = Comments
 :description: Tiny Comments. A premium plugin to add comments and collaborate for content editing.
 :keywords: enterprise pricing comment commenting

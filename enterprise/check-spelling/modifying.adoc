@@ -1,3 +1,7 @@
+:rootDir: ../../
+:partialsDir: {rootDir}partials/
+:imagesDir: {rootDir}images/
+include::{rootDir}_attributes.adoc[]
 = Modifying Spellchecking Dictionaries
 :description: Spell Checker Pro dictionaries can be modified to include custom words.
 :keywords: enterprise tinymcespellchecker spell check checker pro pricing
@@ -35,50 +39,4 @@ If, however, you wish to remove the current custom dictionary, then delete this 
 
 *Example*
 
-If the contents of the dictionary .jar file were extracted to c:\customdictionary and the location of the jar command is c:\java\bin\jar, then the following command would create a .jar file called en_us_4_0.jar.
-
-`
-        c:\customdictionary>c:\java\bin\jar cvf en_us_4_0.jar .
-`
-8) Move the newly compiled .jar file back to it's original location, replacing the original file. For the context of this example, you would be replacing your_web_server/ephox-spelling/WEB-INF/classes/dictionaries/en_us_4_0.jar with your updated copy of en_us_4_0.jar.
-
-==== Modifying an Updated Dictionary
-
-1) Perform steps 1 and 2 as above in the +++<link>++++++</link>+++Creating New Updates to a Dictionary</link> section of this document.
-
-2) Open the userdic.tlx file in a plain text editor.
-
-3) For each word that you wish to add to the custom dictionary, list the word in the userdic.tlx file on its own line. Then, one tab spacing from the word, place an i. Thus, lines in the file should appear in the following format:
-
-`
-        customword                i
-`
-4) Repeat step 3 for all the words you wish to add to the custom dictionary. When finished save the userdic.tlx file.
-
-5) After saving the userdic.tlx file the .jar file must be recompiled. This requires using the Java jar command at the command line in the directory where the contents of the original .jar file were extracted. The name of the new spell checker .jar file is specified in this step.
-
-*Example*
-
-If the contents of the dictionary .jar file were extracted to c:\customdictionary and the location of the jar command is c:\java\bin\jar, then the following command would create a jar file called en_us_4_0.jar.
-
-`
-        c:\customdictionary>c:\java\bin\jar cvf en_us_4_0.jar .
-`
-6) Move the newly compiled .jar file back to it's original location, replacing the original file. For the context of this example, you would be replacing your_web_server/ephox-spelling/WEB-INF/classes/dictionaries/en_us_4_0.jar with your updated copy of en_us_4_0.jar.
-
-==== Removing the Modifications from a Dictionary
-
-1) Perform steps 1 and 2 as above in the +++<link>++++++</link>+++Creating New Updates to a Dictionary</link> section of this document.
-
-2) Delete the userdic.tlx file from the directory where the contents of the original .jar file were extracted.
-
-3) After deleting the userdic.tlx file the .jar file must be recompiled. This requires using the Java jar command at the command line in the directory where the contents of the original .jar file were extracted. The name of the new spell checker .jar file is specified in this step.
-
-*Example*
-
-If the contents of the dictionary .jar file were extracted to c:\customdictionary, and the location of the jar command is c:\java\bin\jar, then the following command would create a .jar file called en_us_4_0.jar.
-
-`
-        c:\customdictionary>c:\java\bin\jar cvf en_us_4_0.jar .
-`
-4) Move the newly compiled .jar file back to it's original location, replacing the original file. For the context of this example, you would be replacing your_web_server/ephox-spelling/WEB-INF/classes/dictionaries/en_us_4_0.jar with your updated copy of en_us_4_0.jar.
+If the contents of the dictionary .jar file were extracted to c:

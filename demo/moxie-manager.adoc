@@ -1,3 +1,7 @@
+:rootDir: ../
+:partialsDir: {rootDir}partials/
+:imagesDir: {rootDir}images/
+include::{rootDir}_attributes.adoc[]
 = MoxieManager
 :description: MoxieManager. A premium plugin to manage files & images.
 :description_short: MoxieManager

@@ -1,3 +1,7 @@
+:rootDir: ../
+:partialsDir: {rootDir}partials/
+:imagesDir: {rootDir}images/
+include::{rootDir}_attributes.adoc[]
 = Accessibility Checker
 :description: Checks the contents of the editor for WCAG & Section 508 accessibility problems.
 :keywords: a11y accessibility WCAG

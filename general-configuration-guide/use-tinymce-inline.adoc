@@ -1,3 +1,7 @@
+:rootDir: ../
+:partialsDir: {rootDir}partials/
+:imagesDir: {rootDir}images/
+include::{rootDir}_attributes.adoc[]
 = 02. Use TinyMCE Inline
 :description: Understand the difference between traditional forms-based editing and advanced inline editing.
 :description_short: Learn about forms-based editing v. inline editing.

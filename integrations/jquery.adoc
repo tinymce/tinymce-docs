@@ -1,3 +1,7 @@
+:rootDir: ../
+:partialsDir: {rootDir}partials/
+:imagesDir: {rootDir}images/
+include::{rootDir}_attributes.adoc[]
 = jQuery Integration
 :description: Add custom logic to render TinyMCE inside jQuery dialogs.
 :keywords: integration integrate jquery javascript

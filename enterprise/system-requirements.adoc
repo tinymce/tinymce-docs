@@ -1,3 +1,7 @@
+:rootDir: ../
+:partialsDir: {rootDir}partials/
+:imagesDir: {rootDir}images/
+include::{rootDir}_attributes.adoc[]
 = System Requirements
 :description: Consolidated system requirements for TinyMCE Enterprise features.
 :keywords: support supported browser browsers windows osx linux ie8 chrome firefox safari

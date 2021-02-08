@@ -1,3 +1,7 @@
+:rootDir: ../
+:partialsDir: {rootDir}partials/
+:imagesDir: {rootDir}images/
+include::{rootDir}_attributes.adoc[]
 = Tab Focus Plugin
 :description: Tab into and out of the TinyMCE control in your web form.
 :keywords: tabfocus tabfocus_elements prev next

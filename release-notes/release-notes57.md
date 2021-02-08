@@ -55,6 +55,12 @@ The `media_live_embeds` option now supports rendering live embeds of `audio` and
 
 For information on the `media_live_embeds` option, see: [Media plugin - `media_live_embeds`]({{site.baseurl}}/plugins/opensource/media/#media_live_embeds).
 
+### Enhanced `TableModified` event data
+
+The `TableModified` event now contains additional data which specifies whether the table structure, style, or both were modified.
+
+For information on the `TableModified` event, see: [Table plugin - Events]({{ site.baseurl }}/plugins/opensource/table/#events).
+
 ### Additional enhancements
 
 {{site.productname}} 5.7 introduces the following minor enhancements:

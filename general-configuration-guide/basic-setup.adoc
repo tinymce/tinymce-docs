@@ -99,7 +99,6 @@ TinyMCE comes with a default set of toolbar controls out of the box, such as bol
 
 However, in most integrations, it's desirable to change the toolbar configuration to suit your needs. Fortunately, that's quite easy to do too.
 
-[discrete]
 ==== Default toolbar controls
 
 Before we get to configuring the toolbar, let's have a look at the default toolbar buttons. You can probably work out what they do from their name.
@@ -248,7 +247,6 @@ To help get you started, let's walk through an example of a basic TinyMCE config
 </html>
 ----
 
-[discrete]
 ==== Breakdown of the above example
 
 First, we want to select only the `textarea` with the id `myTextarea`.

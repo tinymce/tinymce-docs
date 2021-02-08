@@ -81,7 +81,6 @@ NOTE: Please note, for image uploads to function correctly, either the `images_u
 | This option lets you replace TinyMCE's default JavaScript upload handler function with custom logic. The upload handler function takes three arguments, blobInfo, a success callback and a failure callback. When this option is not set, TinyMCE utilizes an XMLHttpRequest to upload images one at a time to the server, and calls the success callback with the location of the remote image.
 |===
 
-[discrete]
 ===== Example of typical setup
 
 `js
@@ -99,7 +98,6 @@ If the default behavior of TinyMCE's image upload logic is not right for you, yo
 
 Please note that while using this option, other image uploader options are not necessary. Additionally, if you would like TinyMCE to replace the +++<image>+++tag's src attribute with the remote location, please use the success callback defined in the image_upload_handler function with the returned JSON object's location property.+++</image>+++
 
-[discrete]
 ===== Example
 
 ```js

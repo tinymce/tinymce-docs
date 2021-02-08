@@ -81,7 +81,14 @@ Seriously.
 
 Here is the full code (you can experiment on it by clicking _Edit on Codepen_ in the top right corner).
 
-{% include codepen.html id="XjRWZj" tab="js" height="550" %}
+++++
+<p data-height="550" data-theme-id="0" data-slug-hash="XjRWZj" data-default-tab="js" data-user="tinymce" class="codepen">
+  See the Pen <a href="http://codepen.io/tinymce/pen/XjRWZj/">XjRWZj</a>
+  by TinyMCE (<a href="http://codepen.io/tinymce">@tinymce</a>)
+  on <a href="http://codepen.io">CodePen</a>.
+</p>
+<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+++++
 
 As you see we've supplied identifier of our button in the `toolbar` property, along with `undo` and `redo` (`code` plugin is also included - so that you could see HTML code that gets generated). So whenever the user clicks _Insert Current Date_, the date will be inserted into the editor at the current cursor position. Notice how `undo` button gets enabled after insertion, that's because we handle modification history for you.
 
@@ -126,7 +133,14 @@ We made use of `postrender` option here and attached the callback that will be c
 
 Here's updated demo. Try to click inside and outside the date string:
 
-{% include codepen.html id="qaoXLB" tab="result" height="300" %}
+++++
+<p data-height="300" data-theme-id="0" data-slug-hash="qaoXLB" data-default-tab="result" data-user="tinymce" class="codepen">
+  See the Pen <a href="http://codepen.io/tinymce/pen/qaoXLB/">qaoXLB</a>
+  by TinyMCE (<a href="http://codepen.io/tinymce">@tinymce</a>)
+  on <a href="http://codepen.io">CodePen</a>.
+</p>
+<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+++++
 
 NOTE:  In reality, it would have been more practical to simply set `contenteditable` attribute to *false* on the `time` tag. But I wanted to demonstrate how you can toggle the button state, depending on various logical conditions.
 
@@ -173,4 +187,11 @@ Again we are using `onpostrender` to invoke our code after the button is rendere
 
 Here's a full example:
 
-{% include codepen.html id="wzmAjY" tab="js" height="550" %}
+++++
+<p data-height="550" data-theme-id="0" data-slug-hash="wzmAjY" data-default-tab="js" data-user="tinymce" class="codepen">
+  See the Pen <a href="http://codepen.io/tinymce/pen/wzmAjY/">wzmAjY</a>
+  by TinyMCE (<a href="http://codepen.io/tinymce">@tinymce</a>)
+  on <a href="http://codepen.io">CodePen</a>.
+</p>
+<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+++++

@@ -18,7 +18,6 @@ ____
 
 == Example use cases
 
-[discrete]
 ==== Content from Microsoft Word
 
 If you paste content from Microsoft Word into your app, you probably know the published page usually doesn't match the site's style. Fonts can be different, images missing and formatting not the same as their original document.
@@ -27,7 +26,6 @@ This can be time consuming for users to fix, and usually involves manually editi
 
 TinyMCE PowerPaste automatically "`cleans`" pasted content, fixing these issues. It can also automatically upload images to a server, helping you spend time on more productive tasks.
 
-[discrete]
 ==== Content from Microsoft Excel
 
 TinyMCE PowerPaste also makes light work of pasting Excel content into your app, automatically creating HTML compliant tables in the process.
@@ -36,7 +34,6 @@ While developers are very familiar writing HTML tables, most content creators li
 
 For users of both Word and Excel, PowerPaste will dramatically improve the content production experience you deliver to your clients.
 
-[discrete]
 ==== Content from the internet
 
 If you cut and paste content from the internet into your app -- which includes almost everyone -- PowerPaste also works its auto-magic.
@@ -51,4 +48,11 @@ Start with our https://about.tiny.cloud/products/powerpaste/[dedicated product p
 
 == PowerPaste demo
 
-{% include codepen.html id="Jbaeyr" %}
+++++
+<p data-height="600" data-theme-id="0" data-slug-hash="Jbaeyr" data-default-tab="result" data-user="tinymce" class="codepen">
+  See the Pen <a href="http://codepen.io/tinymce/pen/Jbaeyr/">Jbaeyr</a>
+  by TinyMCE (<a href="http://codepen.io/tinymce">@tinymce</a>)
+  on <a href="http://codepen.io">CodePen</a>.
+</p>
+<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+++++

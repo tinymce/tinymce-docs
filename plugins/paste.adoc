@@ -49,7 +49,6 @@ For example, Firefox enables you to paste images directly into any `contentEdita
 
 *Possible Values:* `true`, `false`
 
-[discrete]
 ===== Example
 
 `js
@@ -72,7 +71,6 @@ This option enables you to set the default state of the `Paste as text` menu ite
 
 *Possbile Values:* `true`, `false`
 
-[discrete]
 ===== Example
 
 `js
@@ -95,7 +93,6 @@ This option allows you to disable TinyMCE's default paste filters when set to fa
 
 *Possible Values:* `true`, `false`
 
-[discrete]
 ===== Example
 
 `js
@@ -118,7 +115,6 @@ This option allows developers to disable the default drop filters when set to `f
 
 *Possible Values:*  `true`, `false`
 
-[discrete]
 ===== Example
 
 `js
@@ -135,7 +131,6 @@ This option enables you to modify the pasted content before it gets inserted int
 
 *Type:* `Function`
 
-[discrete]
 ===== Example
 
 `js
@@ -157,7 +152,6 @@ This option enables you to modify the pasted content before it gets inserted int
 
 *Type:* `Function`
 
-[discrete]
 ===== Example
 
 `js
@@ -181,7 +175,6 @@ NOTE: To access this feature, you need to set the value of link:{baseurl}plugins
 
 *Type:* `String`
 
-[discrete]
 ===== Example
 
 `js
@@ -200,7 +193,6 @@ This option allows you to specify styles you want to keep when pasting in WebKit
 
 *Type:* `String`
 
-[discrete]
 ===== Example
 
 `js
@@ -219,7 +211,6 @@ This option allows you to specify which styles you want to retain when pasting c
 
 *Type:* `String`
 
-[discrete]
 ===== Example
 
 `js
@@ -242,7 +233,6 @@ This option enables the merge format feature of the paste plugin. This merges si
 
 *Possible Values:* `true`, `false`
 
-[discrete]
 ===== Example
 
 `js
@@ -265,7 +255,6 @@ This option lets you disable the logic that converts list like paragraph structu
 
 *Possible Values:* `true`, `false`
 
-[discrete]
 ===== Example
 
 `js
@@ -288,7 +277,6 @@ This option allows you to disable TinyMCE's default paste filters for webkit sty
 
 *Possible Values:* `true`, `false`
 
-[discrete]
 ===== Example
 
 `js

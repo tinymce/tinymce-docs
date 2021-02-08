@@ -81,7 +81,6 @@ A creation date is one that is set if no previous date existed within the elemen
 
 *Type:* `String`
 
-[discrete]
 ===== Example
 
 `js
@@ -100,7 +99,6 @@ This option allows you to provide a date format that all 'creation' date templat
 
 *Type:* `String`
 
-[discrete]
 ===== Example
 
 `js
@@ -121,7 +119,6 @@ A modified date is one that is updated with each edit.
 
 *Type:* `String`
 
-[discrete]
 ===== Example
 
 `js
@@ -140,7 +137,6 @@ This option allows you to provide TinyMCE with a date/time format that all 'modi
 
 *Type:* `String`
 
-[discrete]
 ===== Example
 
 `js
@@ -161,7 +157,6 @@ This option allows you to specify the height of the template dialog box.
 
 *Default Value:* `"500"`
 
-[discrete]
 ===== Example
 
 `js
@@ -182,7 +177,6 @@ This option allows you to specify the width of the template dialog box.
 
 *Default Value:* `"600"`
 
-[discrete]
 ===== Example
 
 `js
@@ -201,7 +195,6 @@ This is an array of items that controls content replacement in the inserted temp
 
 *Type:* `String`
 
-[discrete]
 ===== Example
 
 `js
@@ -233,7 +226,6 @@ Name: Jack Black, StaffID: 991234```
 
 This option allows you to provide a list of class names (separated by spaces) whereby any template element with one of the classes will have its content replaced by the selected editor content when first inserted.
 
-[discrete]
 ===== Example
 
 `js
@@ -248,7 +240,6 @@ tinymce.init({
 
 *Type:* `String`
 
-[discrete]
 ===== Example
 
 `js

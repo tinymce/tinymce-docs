@@ -45,7 +45,6 @@ ____
 We have included links to the source documentation if you want to get into the specific details of these customization options.
 ____
 
-[discrete]
 ===== Set the editable area height
 
 ____
@@ -61,7 +60,6 @@ tinymce.init({
 
 See the link:{baseurl}/configure/editor-appearance/#height[height option] for customization details.
 
-[discrete]
 ===== Set the editable area width
 
 ____
@@ -77,7 +75,6 @@ tinymce.init({
 
 See the link:{baseurl}/configure/editor-appearance/#width[width option] for customization details.
 
-[discrete]
 ===== Set maximum and minimum heights and widths
 
 By now you're fast becoming a TinyMCE pro, so we're going to include several options in this snippet to set the maximum and minimum values for heights and widths of the editable area. See if you can work out what's going on.
@@ -102,7 +99,6 @@ It is usually desirable that TinyMCE's editable area has the same styling as the
 
 The `css` file used in this setting should be the same `css` file that controls the look/style of all your pages. Let's say you include a file `myLayout.css` in all your pages to control your site's global appearance; then this file must be set as your `content_css` value. Doing this ensures the content in the editable area also has your site's style.
 
-[discrete]
 ===== Example using an absolute path
 
 ```js

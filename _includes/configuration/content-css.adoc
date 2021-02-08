@@ -8,7 +8,6 @@ NOTE: If you specify a relative path, it is resolved in relation to the URL of t
 
 *Type:* `String`, `Array`
 
-[discrete]
 ===== Absolute path example
 
 ```js
@@ -20,7 +19,6 @@ tinyMCE.init({
 });
 ```
 
-[discrete]
 ===== Relative path example
 
 ```js
@@ -32,7 +30,6 @@ tinyMCE.init({
 });
 ```
 
-[discrete]
 ===== Using multiple stylesheets example
 
 `js
@@ -42,7 +39,6 @@ tinyMCE.init({
 });
 `
 
-[discrete]
 ===== Using multiple stylesheets as array example
 
 `js
@@ -52,7 +48,6 @@ tinyMCE.init({
 });
 `
 
-[discrete]
 ==== Browser caching
 
 Browser caching might cause TinyMCE to not read the contents of a changed CSS file. You'll see "old" colors & styles.

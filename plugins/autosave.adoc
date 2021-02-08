@@ -38,7 +38,6 @@ This option allows you to set whether the editor should prompt the user to advis
 
 *Possible Values:* `true`, `false`
 
-[discrete]
 ===== Example
 
 `js
@@ -57,7 +56,6 @@ This option enables you to specify the time the editor should wait between takin
 
 *Default Value:* `"30s"`
 
-[discrete]
 ===== Example:
 
 `js
@@ -75,7 +73,6 @@ This option allows you to set the prefix that is used for local storage keys.
 
 *Default Value*: `+"tinymce-autosave-{path}{query}-{id}-"+`
 
-[discrete]
 ===== Example:
 
 `+js
@@ -96,7 +93,6 @@ This option enables you to specify if TinyMCE should automatically restore the c
 
 *Possible Values*: `true`, `false`
 
-[discrete]
 ===== Example:
 
 `js
@@ -115,7 +111,6 @@ This option lets you to specify the duration editor content should remain in loc
 
 *Default Value*: "20m"
 
-[discrete]
 ===== Example:
 
 `js

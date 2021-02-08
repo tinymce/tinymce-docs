@@ -34,7 +34,6 @@ This option allows you to specify the buttons and the order that they will appea
 
 *Default Value:* `"tableprops tabledelete | tableinsertrowbefore tableinsertrowafter tabledeleterow | tableinsertcolbefore tableinsertcolafter tabledeletecol"`
 
-[discrete]
 ===== Example
 
 `js
@@ -54,7 +53,6 @@ This option allows you to disable some of the options available to a user when i
 
 *Possible Values:*  `true`, `false`
 
-[discrete]
 ===== Example
 
 `js
@@ -71,7 +69,6 @@ This option enables you to specify which elements should be cloned as empty chil
 
 *Type:* `String`
 
-[discrete]
 ===== Example
 
 `js
@@ -93,7 +90,6 @@ However, if you set this option to `false` the dragable matrix will be replaced 
 
 *Possible Values:*  `true`, `false`
 
-[discrete]
 ===== Example
 
 `js
@@ -116,7 +112,6 @@ This option enables you to disable the default tab between table cells feature. 
 
 *Possible Values:* `true`, `false`
 
-[discrete]
 ===== Example
 
 `js
@@ -137,7 +132,6 @@ This option enables you to specify default attributes for inserted tables.
 
 *Default Value:* `{ border: '1' }`
 
-[discrete]
 ===== Example
 
 `js
@@ -160,7 +154,6 @@ This option enables you to specify the default styles for inserted tables.
 
 *Default Value:* `{ 'border-collapsed': 'collapse', 'width': '100%' }`
 
-[discrete]
 ===== Example
 
 `js
@@ -184,7 +177,6 @@ will force pixel resizing. The default is to automatically detect what the table
 
 *Default Value:* `none`
 
-[discrete]
 ===== Example
 
 `js
@@ -203,7 +195,6 @@ This option enables you to specify a list of classes to present in the table opt
 
 *Type:* `String`
 
-[discrete]
 ===== Example
 
 `js
@@ -226,7 +217,6 @@ This option enables you to specify a list of classes to present in the table cel
 
 *Type:* `String`
 
-[discrete]
 ===== Example
 
 `js
@@ -249,7 +239,6 @@ This option enables you to specify a list of classes to present in the table row
 
 *Type:* `String`
 
-[discrete]
 ===== Example
 
 `js
@@ -276,7 +265,6 @@ This option makes it possible to disable the advanced tab in the table dialog bo
 
 *Possible Values:* `true`, `false`
 
-[discrete]
 ===== Example
 
 `js
@@ -299,7 +287,6 @@ This option makes it possible to disable the advanced tab in the table cell dial
 
 *Possible Values:* `true`, `false`
 
-[discrete]
 ===== Example
 
 `js
@@ -322,7 +309,6 @@ This option makes it possible to disable the advanced tab in the table row dialo
 
 *Possible Values:* `true`, `false`
 
-[discrete]
 ===== Example
 
 `js
@@ -339,7 +325,6 @@ tinymce.init({
 
 Here are some examples of configuration for common setups.
 
-[discrete]
 ===== No default attributes or styles on tables
 
 `js
@@ -350,7 +335,6 @@ tinymce.init({
 });
 `
 
-[discrete]
 ===== Pixel based resizing
 
 `js
@@ -362,7 +346,6 @@ tinymce.init({
 });
 `
 
-[discrete]
 ===== Percentage based resizing
 
 `js

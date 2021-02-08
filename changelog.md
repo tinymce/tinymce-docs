@@ -10,6 +10,50 @@ class: changelog
 
 {% capture changelog %}
 
+## Version 5.7.0 February 10, 2021
+* Added IPv6 address support to the URI API. Patch contributed by dev7355608.
+* Added new data to the `TableModified` event to describe whether the table's `structure`, `style`, or both were modified.
+* Added a new locked column feature to tables that allows column operations to be prevented on certain columns.
+* Added `video` and `audio` live embed support for the `media` plugin.
+* Added the ability to resize `video` and `iframe` media elements.
+* Added new `font_css` setting for fonts to be added to both containing document and the editor.
+* Added a new `ImageUploader` API to simplify uploading image data to the configured `images_upload_url` or `images_upload_handler`.
+* Added Oxide variable to define the container background color in fullscreen mode.
+* Added a new `AfterProgressState` event that's fired after `editor.setProgressState` calls complete.
+* Added support for `table_column_resizing` when inserting or deleting columns.
+* Changed copying table columns or entire tables will now retain an appropriate width when pasted.
+* Changed the `lists` plugin to apply list styles to all text blocks within a selection.
+* Changed the `advlist` plugin to log a console error message when the `list` plugin isn't enabled.
+* Changed the z-index of the `setProgressState(true)` throbber so it does not hide notifications.
+* Changed the type signature for `editor.selection.getRng()` incorrectly returning `null`.
+* Changed some `SaxParser` regular expressions to improve performance.
+* Changed `editor.setProgressState(true)` to close any open popups.
+* Fixed `codesample` highlighting performance issues for some languages.
+* Fixed an issue where cell widths were lost when merging table cells.
+* Fixed `col` elements incorrectly transformed to `th` elements when converting columns to header columns.
+* Fixed a number of table operations not working when selecting 2 table cells on Mozilla Firefox.
+* Fixed a memory leak by backporting an upstream Sizzle fix.
+* Fixed table width style was removed when copying.
+* Fixed focus lost while typing in the `charmap` or `emoticons` dialogs when the editor is rendered in a shadow root.
+* Fixed base64 URLs used in style attributes were corrupted when parsing HTML.
+* Fixed the order of CSS precedence of `content_style` and `content_css` in the `preview` and `template` plugins. `content_style` now has precedence.
+* Fixed an issue where the image dialog tried to calculate image dimensions for an empty image URL.
+* Fixed an issue where `scope` attributes on table cells would not change as expected when merging or unmerging cells.
+* Fixed the plugin documentation links in the `help` plugin.
+* Fixed events bound using `DOMUtils` not returning the correct result for `isDefaultPrevented` in some cases.
+* Fixed the "Dropped file type is not supported" notification incorrectly showing when using an inline editor.
+* Fixed an issue with external styles bleeding into TinyMCE.
+* Fixed an issue where parsing malformed comments could cause an infinite loop.
+* Fixed incorrect return types on `editor.selection.moveToBookmark`.
+* Fixed the type signature for `editor.selection.setCursorLocation()` incorrectly allowing a node with no `offset`.
+* Fixed incorrect behaviour when editor is destroyed while loading stylesheets.
+* Fixed figure elements incorrectly splitting from a valid parent element when editing the image within.
+* Fixed inserting multiple rows or columns in a table cloning from the incorrect source row or column.
+* Fixed an issue where new lines were not scrolled into view when pressing Shift+Enter.
+* Fixed an issue where list elements would not be removed when outdenting using enter.
+* Fixed an issue where file extensions with uppercase characters were treated as invalid.
+* Fixed dialog block messages unable to be translated.
+
 ## Version 5.6.2 December 8, 2020
 * Fixed a UI rendering regression when the document body is using `display: flex`.
 

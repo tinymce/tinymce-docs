@@ -1,0 +1,24 @@
+= Bootstrap Integration
+:description: How to override the built-in block on `focusin` in Bootstrap dialogs when using TinyMCE.
+:keywords: integration integrate bootstrap
+:title_nav: Bootstrap
+
+== Using TinyMCE in a Bootstrap Dialog
+
+You need to override the built-in block on `focusin` in Bootstrap dialogs when using TinyMCE inside it. See this fiddle for a http://fiddle.tinymce.com/oxdaab[working example].
+
+Bootstrap blocks all focus events on contents within the dialog. Add this script to your page, and it will allow users to click inside the editor.
+
+`js
+// Prevent Bootstrap dialog from blocking focusin
+$(document).on('focusin', function(e) {
+  if ($(e.target).closest(".mce-window").length) {
+    e.stopImmediatePropagation();
+  }
+});
+`
+
+[discrete]
+==== A note about integrations
+
+NOTE:  We are pleased to provide integrations/code guidance to help you build great products with TinyMCE. If you have queries about this integration, please join the https://community.tinymce.com[TinyMCE Community].

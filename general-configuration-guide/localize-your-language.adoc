@@ -1,0 +1,63 @@
+= 10. Localize TinyMCE
+:description: Localize TinyMCE with global language capabilities.
+:keywords: internationalization localization languages
+
+As developers, we all hope our projects reach the wider audience, and for many of us, they do. This is why it is vital that TinyMCE is easy to localize its language.
+
+In this section, we show you how to change TinyMCE's user interface to suit your users' preferred language. The settings discussed in this section change the language that toolbar and menubar items, along with tooltips, are rendered in.
+
+____
+Pro tip: Language settings can be controlled in these configuration options: link:{{ site.baseurl }}/configure/localization/#directionality[directionality], link:{{ site.baseurl }}/configure/localization/#language[language] and  link:{{ site.baseurl }}/configure/localization/#language_url[language_url]. There is also a link:{{ site.baseurl }}/plugins/directionality/[Directionality Plugin] that adds a toolbar button to control `ltr-rtl` behavior.
+____
+
+=== Step 1
+
+Download the link:/language/tinymce4x_languages.zip[Tinymce 4 language pack] (i18n), which contains the fullset of languages supported by TinyMCE 4.
+
+NOTE: The TinyMCE 4 community translation packs are no longer maintained
+
+=== Step 2
+
+Unpack the language `js` file(s) into your `path/to/tinymce/langs/` folder.
+
+IMPORTANT: If you don't put the language pack in `langs/`, the language settings will not work unless you use the link:{{ site.baseurl }}/configure/localization/#language_url[language_url] configuration option.
+
+=== Step 3
+
+Set the language option in your TinyMCE configuration to the language code in the list on link:{{ site.baseurl }}/configure/localization/#language[this page].
+
+=== Step 4
+
+Confirm that the language has been set successfully by loading TinyMCE.
+
+== A working example
+
+We have prepared a code snippet below that would set TinyMCE's language to Chinese and text directionality right-to-left.
+
+If you want to try it for yourself, link:/language/tinymce4x_languages.zip[download the TinyMCE 4 language pack], unzip the file and place the `zh_CN.js` file in your `tinymce/lang` folder. If you don't have TinyMCE setup, you can grab a copy from our https://www.tinymce.com/download/[downloads page]. Follow the link:{{ site.baseurl }}/general-configuration-guide/advanced-install/#sdkinstall[Self-hosted install instructions] if you're not familiar with setting up TinyMCE locally.
+
+[source,html]
+----
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="js/tinymce.min.js"></script>
+  <script type="text/javascript">
+  tinymce.init({
+    selector: 'textarea',
+    language: 'zh_CN',
+    directionality: 'rtl'
+  });
+  </script>
+</head>
+
+<body>
+  <form method="post">
+    <textarea>你好，世界!</textarea>
+  </form>
+</body>
+</html>
+----
+
+{% assign_page next_page = "/general-configuration-guide/system-requirements/index.html" %}
+{% include next-step.html next=next_page %}

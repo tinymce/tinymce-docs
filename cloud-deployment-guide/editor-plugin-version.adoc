@@ -1,0 +1,309 @@
+= Specify Editor & Plugin Versions
+:description: Specifying editor and plugin versions for Cloud deployments.
+:description_short: Specifying editor and plugin versions for Cloud deployments.
+:keywords: tinymce cloud script textarea apiKey
+
+== Specifying the TinyMCE editor version deployed from Cloud
+
+When deploying the link:{{ site.baseurl }}/cloud-deployment-guide/editor-and-features[TinyMCE editor via the Cloud], you're able to specify the editor version via the provided URL.
+
+Our documented default for loading TinyMCE via our Cloud is:
+
+[source,js]
+----
+<script src="{{ site.cdnurl }}?apiKey=your_API_key"></script>
+----
+
+The `stable` in this URL specifies the latest release of TinyMCE that completed our quality assurance testing process, successfully. If you are not using the latest, stable TinyMCE version, you can customize this value. You'll find all https://cloud.tinymce.com/versions/tiny[supported versions here].
+
+=== Selecting specific version numbers
+
+You can specify a _Major_ version number, a _Major.Minor_ version number or a _Major.Minor.Patch_ version number. If the Minor or Patch versions numbers are not present, it has the latest Minor and Patch version released, by default.
+
+[discrete]
+===== Example
+
+Major version number (e.g. "4").
+
+The following would load TinyMCE _4.latest.latest_:
+
+[source,js]
+----
+<script src="https://cloud.tinymce.com/4/tinymce.min.js?apiKey=your_API_key"></script>
+----
+
+[discrete]
+===== Example
+
+Major.Minor version number (e.g. "4.3").
+
+The following would load TinyMCE _4.3.latest_:
+
+[source,js]
+----
+<script src="https://cloud.tinymce.com/4.3/tinymce.min.js?apiKey=your_API_key"></script>
+----
+
+[discrete]
+===== Example
+
+Major.Minor.Patch version number (e.g. "4.3.2").
+
+The following would load TinyMCE _4.3.2_:
+
+[source,js]
+----
+<script src="https://cloud.tinymce.com/4.3.2/tinymce.min.js?apiKey=your_API_key"></script>
+----
+
+If you enter a version that doesn't exist, you get a *HTTP 404* error in response.
+
+=== dev, testing, and stable releases
+
+Rather than specifying a specific TinyMCE version to load from the Cloud, you can choose to select from our `dev`, `testing`, and `stable` release channels.
+
+Updates to these channels are automatic, providing you and your users with the latest TinyMCE version matching the criteria below.
+
+==== dev release channel
+
+This channel deploys the absolute latest released TinyMCE version seen in the link:{{ site.baseurl }}/changelog/[TinyMCE changelog]. The current version of TinyMCE available through the `dev` channel https://cloud.tinymce.com/dev/version.txt[can be found at here].
+
+===== Example
+
+[source,js]
+----
+<script src="https://cloud.tinymce.com/dev/tinymce.min.js?apiKey=your_API_key"></script>
+----
+
+==== testing release channel
+
+This channel deploys the current candidate for release to the `stable` channel. This TinyMCE build is next in line for our quality assurance testing process. The current version of TinyMCE available through the `testing` channel https://cloud.tinymce.com/testing/version.txt[can be found at here].
+
+===== Example
+
+[source,js]
+----
+<script src="https://cloud.tinymce.com/testing/tinymce.min.js?apiKey=your_API_key"></script>
+----
+
+==== stable release channel
+
+This channel deploys the latest release of TinyMCE that has passed our quality assurance process. The current version of TinyMCE available through the `stable` channel https://cloud.tinymce.com/stable/version.txt[can be found here].
+
+===== Example
+
+[source,js]
+----
+<script src="{{ site.cdnurl }}?apiKey=your_API_key"></script>
+----
+
+== Specifying the version of features/plugins deployed from the Cloud
+
+Whether you're deploying both the link:{{ site.baseurl }}/cloud-deployment-guide/editor-and-features[TinyMCE editor and premium plugins via the Cloud] or deploying link:{{ site.baseurl }}/cloud-deployment-guide/features-only[only premium plugins from the Cloud], you can use URL query parameters to specify the version of each premium plugin.
+
+[discrete]
+==== PowerPaste
+
+* link:{{ site.baseurl }}/plugins/powerpaste[Developer documentation]
+* https://plugins.tinymce.com/versions/powerpaste[Supported versions]
+
+.Example
+[source,js]
+----
+<script src="https://cloud.tinymce.com/stable/plugins.min.js?apiKey=your_API_key&powerpaste=2.1.8"></script>
+----
+
+[discrete]
+==== Spell Checker Pro
+
+* link:{{ site.baseurl }}/plugins/tinymcespellchecker[Developer documentation]
+* https://plugins.tinymce.com/versions/tinymcespellchecker[Supported versions]
+
+.Example
+[source,js]
+----
+<script src="https://cloud.tinymce.com/stable/plugins.min.js?apiKey=your_API_key&tinymcespellchecker=0.9.6"></script>
+----
+
+[discrete]
+==== Accessibility Checker
+
+* link:{{ site.baseurl }}/plugins/a11ychecker[Developer documentation]
+* https://plugins.tinymce.com/versions/a11ychecker[Supported versions]
+
+.Example
+[source,js]
+----
+<script src="https://cloud.tinymce.com/stable/plugins.min.js?apiKey=your_API_key&a11ychecker=1.0.2"></script>
+----
+
+[discrete]
+==== Advanced Code Editor
+
+* link:{{ site.baseurl }}/plugins/advcode/[Developer documentation]
+* https://plugins.tinymce.com/versions/advcode[Supported versions]
+
+.Example
+[source,js]
+----
+<script src="https://cloud.tinymce.com/stable/plugins.min.js?apiKey=your_API_key&advcode=1.0.2"></script>
+----
+
+[discrete]
+==== Enhanced Media Embed
+
+* link:{{ site.baseurl }}/plugins/mediaembed/[Developer documentation]
+* https://plugins.tinymce.com/versions/mediaembed[Supported versions]
+
+.Example
+[source,js]
+----
+<script src="https://cloud.tinymce.com/stable/plugins.min.js?apiKey=your_API_key&mediaembed=0.0.1"></script>
+----
+
+[discrete]
+==== Link Checker
+
+* link:{{ site.baseurl }}/plugins/linkchecker/[Developer documentation]
+* https://plugins.tinymce.com/versions/linkchecker[Supported versions]
+
+.Example
+[source,js]
+----
+<script src="https://cloud.tinymce.com/stable/plugins.min.js?apiKey=your_API_key&linkchecker=1.0.0"></script>
+----
+
+== Specifying a Self-hosted deployment of features/plugins
+
+If you're deploying link:{{ site.baseurl }}/cloud-deployment-guide/features-only[only premium plugins from the Cloud], you may want to have some features served from the Cloud and some features served from your Self-hosted installation. This is also possible with URL query parameters and the special version name "SDK".
+
+The "SDK" version lets the TinyMCE Plugin Manager know that you're not using the Cloud version of a particular plugin and that it shouldn't serve the plugin
+from the Cloud. It also won't display any warning or error messages if you're not entitled to it.
+
+[discrete]
+==== PowerPaste
+
+* link:{{ site.baseurl }}/plugins/powerpaste[Developer documentation]
+
+.Example
+[source,js]
+----
+<script src="https://cloud.tinymce.com/stable/plugins.min.js?apiKey=your_API_key&powerpaste=sdk"></script>
+----
+
+[discrete]
+==== Spell Checker Pro
+
+* link:{{ site.baseurl }}/plugins/tinymcespellchecker[Developer documentation]
+
+.Example
+[source,js]
+----
+<script src="https://cloud.tinymce.com/stable/plugins.min.js?apiKey=your_API_key&tinymcespellchecker=sdk"></script>
+----
+
+[discrete]
+==== Accessibility Checker
+
+* link:{{ site.baseurl }}/plugins/a11ychecker[Developer documentation]
+
+.Example
+[source,js]
+----
+<script src="https://cloud.tinymce.com/stable/plugins.min.js?apiKey=your_API_key&a11ychecker=sdk"></script>
+----
+
+[discrete]
+==== Advanced Code Editor
+
+* link:{{ site.baseurl }}/plugins/advcode/[Developer documentation]
+
+.Example
+[source,js]
+----
+<script src="https://cloud.tinymce.com/stable/plugins.min.js?apiKey=your_API_key&advcode=sdk"></script>
+----
+
+[discrete]
+==== Enhanced Media Embed
+
+* link:{{ site.baseurl }}/plugins/mediaembed/[Developer documentation]
+
+.Example
+[source,js]
+----
+<script src="https://cloud.tinymce.com/stable/plugins.min.js?apiKey=your_API_key&mediaembed=sdk"></script>
+----
+
+[discrete]
+==== Link Checker
+
+* link:{{ site.baseurl }}/plugins/linkchecker/[Developer documentation]
+
+.Example
+[source,js]
+----
+<script src="https://cloud.tinymce.com/stable/plugins.min.js?apiKey=your_API_key&linkchecker=sdk"></script>
+----
+
+== Examples
+
+=== Featuring declared editor and plugin versions
+
+The following example would load:
+
+* TinyMCE 4.5.0
+* PowerPaste version 2.1.8
+* Advanced Code Editor 1.0.2
+
+[source,js]
+----
+<html>
+   <head>
+      <script src="https://cloud.tinymce.com/4.5.0/tinymce.min.js?apiKey=your_API_key&powerpaste=2.1.8&advcode=1.0.2"></script>
+   </head>
+   <body>
+      <textarea><p>test textarea</p></textarea>
+      <script>
+         tinymce.init({
+            selector: 'textarea',
+            height: 500,
+            theme: 'modern',
+            plugins: [
+               'advlist autolink lists link image charmap print preview hr anchor pagebreak',
+               'tinymcespellchecker']
+         });
+      </script>
+   </body>
+<html>
+----
+
+=== Featuring a combination of Self-hosted and Cloud features
+
+The following example would load:
+
+* TinyMCE from your Self-hosted installation
+* PowerPaste version 2.1.8 from the Cloud
+* Advanced Code Editor from your Self-hosted installation
+
+[source,js]
+----
+<html>
+   <head>
+      <script src="https://cloud.tinymce.com/stable/plugins.min.js?apiKey=your_API_key&powerpaste=2.1.8&advcode=sdk"></script>
+   </head>
+   <body>
+      <textarea><p>test textarea</p></textarea>
+      <script>
+         tinymce.init({
+            selector: 'textarea',
+            height: 500,
+            theme: 'modern',
+            plugins: [
+               'advlist autolink lists link image charmap print preview hr anchor pagebreak',
+               'tinymcespellchecker']
+         });
+      </script>
+   </body>
+<html>
+----

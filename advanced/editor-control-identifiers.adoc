@@ -1,0 +1,563 @@
+= Editor Control Identifiers
+:description: Complete list of control identifiers.
+:description_short: Complete list of control identifiers.
+:keywords: aligncenter alignjustify alignleft alignright anchor backcolor blockquote bold bullist cancel cell charmap code column controls copy cut deletetable emoticons fontselect fontsizeselect forecolor formats formatselect  fullscreen hr image indent insertdatetime insertfile inserttable italic link ltr media newdocument nonbreaking numlist outdent pagebreak paste pastetext preview print redo removeformat row rtl save searchreplace selectall spellchecker strikethrough styleselect subscript superscript table tableprops template toolbar underline undo unlink visualaid visualblocks visualchars a11ycheck
+:title_nav: Editor Control Identifiers
+
+Here is a list of the toolbar/menu controls that the core and plugins provides. These controls can be configured using the link:{{ site.baseurl }}/configure/editor-appearance/#toolbar[toolbar] or the link:{{ site.baseurl }}/configure/editor-appearance/#menu[menu] config options.
+
+== Toolbar controls
+
+|===
+| Control | Core/Plugin | Description
+
+| newdocument
+| core
+| Creates a new document.
+
+| bold
+| core
+| Applies the bold format to the current selection.
+
+| italic
+| core
+| Applies the italic format to the current selection.
+
+| underline
+| core
+| Applies the underline format to the current selection.
+
+| strikethrough
+| core
+| Applies strike though format to the current selection.
+
+| alignleft
+| core
+| Left aligns the current block or image.
+
+| aligncenter
+| core
+| Left aligns the current block or image.
+
+| alignright
+| core
+| Right aligns the current block or image.
+
+| alignjustify
+| core
+| Full aligns the current block or image.
+
+| alignnone
+| core
+| Removes the alignment of the current block or image.
+
+| styleselect
+| core
+| Dropdown list with styles to apply to selection.
+
+| formatselect
+| core
+| Dropdown list with block formats to apply to selection.
+
+| fontselect
+| core
+| Dropdown list with font families to apply to selection.
+
+| fontsizeselect
+| core
+| Dropdown list with font sizes to apply to selection.
+
+| cut
+| core
+| Cuts the current selection into clipboard.
+
+| copy
+| core
+| Copies the current selection into clipboard.
+
+| paste
+| core
+| Pastes the current clipboard into the editor.
+
+| outdent
+| core
+| Outdents the current list item or block element.
+
+| indent
+| core
+| Indents the current list item or block element.
+
+| blockquote
+| core
+| Applies block quote format to the current block level element.
+
+| undo
+| core
+| To undo the last operation.
+
+| redo
+| core
+| To redo the last undone operation.
+
+| removeformat
+| core
+| Removes the formatting from the current selection.
+
+| subscript
+| core
+| Applies subscript format to the current selection.
+
+| superscript
+| core
+| Applies superscript format to the current selection.
+
+| visualaid
+| core
+| Toggles the visual aids for invisible elements.
+
+| insert
+| core
+| Groups various insert actions into one button.
+
+| hr
+| link:{{ site.baseurl }}/plugins/hr/[hr]
+| Inserts a horizontal rule into the editor.
+
+| bullist
+| link:{{ site.baseurl }}/plugins/lists/[lists]
+| Formats the current selection as a bullet list.
+
+| numlist
+| link:{{ site.baseurl }}/plugins/lists/[lists]
+| Formats the current selection as a numbered list.
+
+| link
+| link:{{ site.baseurl }}/plugins/link/[link]
+| Creates/Edits links within the editor.
+
+| unlink
+| link:{{ site.baseurl }}/plugins/link/[link]
+| Removes links from the current selection.
+
+| openlink
+| link:{{ site.baseurl }}/plugins/link/[link]
+| Opens the selected link in a new tab.
+
+| image
+| link:{{ site.baseurl }}/plugins/image/[image]
+| Creates/Edits images within the editor.
+
+| charmap
+| link:{{ site.baseurl }}/plugins/charmap/[charmap]
+| Inserts custom characters into the editor.
+
+| pastetext
+| link:{{ site.baseurl }}/plugins/paste/[paste]
+| Toggles plain text pasting mode on/off.
+
+| print
+| link:{{ site.baseurl }}/plugins/print/[print]
+| Prints the current editor contents.
+
+| preview
+| link:{{ site.baseurl }}/plugins/preview/[preview]
+| Previews the current editor contents.
+
+| anchor
+| link:{{ site.baseurl }}/plugins/anchor/[anchor]
+| Creates/Edits anchor elements.
+
+| pagebreak
+| link:{{ site.baseurl }}/plugins/pagebreak/[pagebreak]
+| Inserts a pagebreak into the editor.
+
+| spellchecker
+| link:{{ site.baseurl }}/plugins/spellchecker/[spellchecker]
+| Spellchecks the current editor contents.
+
+| searchreplace
+| link:{{ site.baseurl }}/plugins/searchreplace/[searchreplace]
+| Searches and/or Replaces contents within the editor.
+
+| visualblocks
+| link:{{ site.baseurl }}/plugins/visualblocks/[visualblocks]
+| Toggles the visibility of block elements.
+
+| visualchars
+| link:{{ site.baseurl }}/plugins/visualchars/[visualchars]
+| Toggles the visibility of non breaking character elements.
+
+| code
+| link:{{ site.baseurl }}/plugins/code/[code]
+| Opens the code dialog
+
+| help
+| link:{{ site.baseurl }}/plugins/help/[help]
+| Opens the help dialog
+
+| fullscreen
+| link:{{ site.baseurl }}/plugins/fullscreen/[fullscreen]
+| Toggles fullscreen mode
+
+| insertdatetime
+| link:{{ site.baseurl }}/plugins/insertdatetime/[insertdatetime]
+| Inserts the current date/time
+
+| media
+| link:{{ site.baseurl }}/plugins/media/[media]
+| Creates/Edits embedded media elements.
+
+| nonbreaking
+| link:{{ site.baseurl }}/plugins/nonbreaking/[nonbreaking]
+| Inserts a nonbreaking space into the editor.
+
+| save
+| link:{{ site.baseurl }}/plugins/save/[save]
+| Saves the current editor contents to a form or ajax call.
+
+| cancel
+| link:{{ site.baseurl }}/plugins/save/[save]
+| Cancels/Resets the editor contents to it's initial state.
+
+| table
+| link:{{ site.baseurl }}/plugins/table/[table]
+| Creates/Edits table elements.
+
+| tabledelete
+| link:{{ site.baseurl }}/plugins/table/[table]
+| Deletes table.
+
+| tablecellprops
+| link:{{ site.baseurl }}/plugins/table/[table]
+| Opens the Cell properties dialog.
+
+| tablemergecells
+| link:{{ site.baseurl }}/plugins/table/[table]
+| Merges the selected cells.
+
+| tablesplitcells
+| link:{{ site.baseurl }}/plugins/table/[table]
+| Splits the current merged cell.
+
+| tableinsertrowbefore
+| link:{{ site.baseurl }}/plugins/table/[table]
+| Inserts a new row before the current one.
+
+| tableinsertrowafter
+| link:{{ site.baseurl }}/plugins/table/[table]
+| Inserts a new row after the current one.
+
+| tabledeleterow
+| link:{{ site.baseurl }}/plugins/table/[table]
+| Deletes the current row row.
+
+| tablerowprops
+| link:{{ site.baseurl }}/plugins/table/[table]
+| Opens the Row properties dialog.
+
+| tablecutrow
+| link:{{ site.baseurl }}/plugins/table/[table]
+| Cuts the selected rows.
+
+| tablecopyrow
+| link:{{ site.baseurl }}/plugins/table/[table]
+| Copies the selected rows.
+
+| tablepasterowbefore
+| link:{{ site.baseurl }}/plugins/table/[table]
+| Pastes rows before the current one.
+
+| tablepasterowafter
+| link:{{ site.baseurl }}/plugins/table/[table]
+| Pastes rows after the current one.
+
+| tableinsertcolbefore
+| link:{{ site.baseurl }}/plugins/table/[table]
+| Inserts a column before the current one.
+
+| tableinsertcolafter
+| link:{{ site.baseurl }}/plugins/table/[table]
+| Inserts column after the current one.
+
+| tabledeletecol
+| link:{{ site.baseurl }}/plugins/table/[table]
+| Deletes the selected column.
+
+| rotateleft
+| link:{{ site.baseurl }}/plugins/imagetools/[imagetools]
+| Rotates the current image counterclockwise.
+
+| rotateright
+| link:{{ site.baseurl }}/plugins/imagetools/[imagetools]
+| Rotates the current image clockwise.
+
+| flipv
+| link:{{ site.baseurl }}/plugins/imagetools/[imagetools]
+| Flips the current image vertically.
+
+| fliph
+| link:{{ site.baseurl }}/plugins/imagetools/[imagetools]
+| Flips the current image horizontally.
+
+| editimage
+| link:{{ site.baseurl }}/plugins/imagetools/[imagetools]
+| Edits the current image in the image dialog.
+
+| imageoptions
+| link:{{ site.baseurl }}/plugins/imagetools/[imagetools]
+| Opens the image options dialog.
+
+| fullpage
+| link:{{ site.baseurl }}/plugins/fullpage/[fullpage]
+| Documents properties for the full page.
+
+| ltr
+| link:{{ site.baseurl }}/plugins/directionality/[directionality]
+| Sets the directionality of contents to ltr.
+
+| rtl
+| link:{{ site.baseurl }}/plugins/directionality/[directionality]
+| Sets the directionality of contents to rtl.
+
+| emoticons
+| link:{{ site.baseurl }}/plugins/emoticons/[emoticons]
+| Opens the emoticons dialog.
+
+| template
+| link:{{ site.baseurl }}/plugins/template/[template]
+| Inserts templates into the editor.
+
+| forecolor
+| link:{{ site.baseurl }}/plugins/textcolor/[textcolor]
+| Applies foreground/text color to selection.
+
+| backcolor
+| link:{{ site.baseurl }}/plugins/textcolor/[textcolor]
+| Applies background color to selection.
+
+| restoredraft
+| link:{{ site.baseurl }}/plugins/autosave/[restoredraft]
+| Restores to the latest auto saved draft.
+
+| insertfile
+| link:{{ site.baseurl }}/plugins/moxiemanager/[moxiemanager]
+| Opens the MoxieManager dialog.
+
+| a11ycheck
+| link:{{ site.baseurl }}/plugins/a11ychecker/[a11ychecker]
+| Opens the accessibility checker dialog.
+
+| toc
+| link:{{ site.baseurl }}/plugins/toc/[toc]
+| Inserts a Table of Contents into the editor.
+
+| quickimage
+| link:{{ site.baseurl }}/themes/inlite/[inlite]
+| Inserts an image from the local machine.
+
+| quicktable
+| link:{{ site.baseurl }}/themes/inlite/[inlite]
+| Inserts an table 2x2.
+
+| quicklink
+| link:{{ site.baseurl }}/themes/inlite/[inlite]
+| Inserts an link in a quicker way.
+|===
+
+== Menu controls
+
+|===
+| Control | Core/Plugin | Description
+
+| newdocument
+| core
+| Creates a new document.
+
+| undo
+| core
+| To undo the last operation.
+
+| redo
+| core
+| To redo the last undoed operation.
+
+| visualaid
+| core
+| Toggles visual aids on/off.
+
+| cut
+| core
+| Cuts the current selection into clipboard.
+
+| copy
+| core
+| Copies the current selection into clipboard.
+
+| paste
+| core
+| Pastes the current clipboard contents into editor.
+
+| selectall
+| core
+| Selects all the editor contents.
+
+| bold
+| core
+| Applies bold format to current selection.
+
+| italic
+| core
+| Applies italic format to current selection.
+
+| underline
+| core
+| Applies underline format to current selection.
+
+| strikethrough
+| core
+| Applies strikethrough format to current selection.
+
+| subscript
+| core
+| Applies subscript format to current selection.
+
+| superscript
+| core
+| Applies superscript format to current selection.
+
+| removeformat
+| core
+| Removes all formats form the current selection.
+
+| codeformat
+| core
+| Applies inline code format to current selection.
+
+| blockformats
+| core
+| Applies block formats to current selection.
+
+| align
+| core
+| Changes alignment to the current block or selection.
+
+| formats
+| core
+| Menu of all available formats.
+
+| link
+| link:{{ site.baseurl }}/plugins/link/[link]
+| Opens the link dialog.
+
+| openlink
+| link:{{ site.baseurl }}/plugins/link/[link]
+| Opens the selected link in a new tab.
+
+| image
+| link:{{ site.baseurl }}/plugins/image/[image]
+| Opens the image dialog.
+
+| charmap
+| link:{{ site.baseurl }}/plugins/charmap/[charmap]
+| Opens the charmap dialog.
+
+| pastetext
+| link:{{ site.baseurl }}/plugins/paste/[paste]
+| Toggles paste as plain text on/off.
+
+| print
+| link:{{ site.baseurl }}/plugins/print/[print]
+| Prints the current document.
+
+| preview
+| link:{{ site.baseurl }}/plugins/preview/[preview]
+| Previews the current document.
+
+| hr
+| link:{{ site.baseurl }}/plugins/hr/[hr]
+| Inserts a horizontal rule into the editor.
+
+| anchor
+| link:{{ site.baseurl }}/plugins/anchor/[anchor]
+| Inserts an anchor into the editor.
+
+| pagebreak
+| link:{{ site.baseurl }}/plugins/pagebreak/[pagebreak]
+| Inserts a pagebreak into the editor.
+
+| spellchecker
+| link:{{ site.baseurl }}/plugins/spellchecker/[spellchecker]
+| Toggles the spellchecker on/off.
+
+| searchreplace
+| link:{{ site.baseurl }}/plugins/searchreplace/[searchreplace]
+| Opens the search/replace dialog.
+
+| visualblocks
+| link:{{ site.baseurl }}/plugins/visualblocks/[visualblocks]
+| Toggles block visibility on/off.
+
+| visualchars
+| link:{{ site.baseurl }}/plugins/visualchars/[visualchars]
+| Toggles visibility of nonbreaking spaces on/off.
+
+| code
+| link:{{ site.baseurl }}/plugins/code/[code]
+| Opens the code dialog.
+
+| fullscreen
+| link:{{ site.baseurl }}/plugins/fullscreen/[fullscreen]
+| Toggles fullscreen on/off.
+
+| insertdatetime
+| link:{{ site.baseurl }}/plugins/insertdatetime/[insertdatetime]
+| Inserts the current date/time into the editor.
+
+| media
+| link:{{ site.baseurl }}/plugins/media/[media]
+| Opens the media dialog.
+
+| nonbreaking
+| link:{{ site.baseurl }}/plugins/nonbreaking/[nonbreaking]
+| Inserts a nonbreaking space into the editor.
+
+| inserttable
+| link:{{ site.baseurl }}/plugins/table/[table]
+| Inserts table grid menu.
+
+| tableprops
+| link:{{ site.baseurl }}/plugins/table/[table]
+| Opens the table properties dialog.
+
+| deletetable
+| link:{{ site.baseurl }}/plugins/table/[table]
+| Deletes the current table.
+
+| cell
+| link:{{ site.baseurl }}/plugins/table/[table]
+| Cell menu item with related controls.
+
+| row
+| link:{{ site.baseurl }}/plugins/table/[table]
+| Row menu item with related controls.
+
+| column
+| link:{{ site.baseurl }}/plugins/table/[table]
+| Column menu item with related controls.
+
+| restoredraft
+| link:{{ site.baseurl }}/plugins/autosave/[autosave]
+| Restores to the latest auto saved draft.
+
+| fullpage
+| link:{{ site.baseurl }}/plugins/fullpage/[fullpage]
+| Documents properties for the full page.
+
+| toc
+| link:{{ site.baseurl }}/plugins/toc/[toc]
+| Inserts a Table of Contents into the editor.
+
+| help
+| link:{{ site.baseurl }}/plugins/help/[help]
+| Opens the help dialog
+|===

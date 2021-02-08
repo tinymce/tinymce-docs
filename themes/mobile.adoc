@@ -1,0 +1,26 @@
+= Mobile theme
+:description: Theme that renders a mobile-ready user interface.
+:keywords: theme mobile
+:title_nav: Mobile
+
+The `mobile` theme is responsible for rendering the editor on mobile devices and gives you a link:{{ site.baseurl }}/mobile[mobile first experience].
+
+===== Example:
+
+We recommend that you use a link:{{ site.baseurl }}/configure/editor-appearance/#mobile[mobile section] in the config to load this mobile specific theme but it can be used directly as well.
+
+`js
+tinymce.init({
+  selector: 'textarea',
+  theme: 'modern',
+  mobile: {
+    theme: 'mobile',
+    plugins: [ 'autosave', 'lists', 'autolink' ]
+  }
+});
+`
+
+=== Related configuration options
+
+* link:{{ site.baseurl }}/configure/editor-appearance/#mobile[mobile]
+* link:{{ site.baseurl }}/configure/editor-appearance/#toolbar[toolbar]

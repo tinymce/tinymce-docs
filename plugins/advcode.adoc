@@ -1,0 +1,66 @@
+= Advanced Code Editor
+:controls: toolbar button, menu item
+:description: How to setup TinyMCE's Advanced Code Editor plugin.
+:keywords: code advcode codemirror
+:title_nav: Advanced Code Editor
+
+This plugin adds a toolbar button that allows a user to edit the HTML code using a more advanced link:{{ site.baseurl }}/enterprise/advcode/[code editor] than the default textarea.
+
+If you are using Advanced Code Editor `advcode` plugin, make sure you do not use Code `code` plugin.
+
+===== Example
+
+`js
+tinymce.init({
+  selector: "textarea",  // change this value according to your HTML
+  plugins: "advcode",
+  toolbar: "code"
+});
+`
+
+=== Options
+
+=== `code_dialog_height`
+
+This configuration option sets the _internal, editable area_ height of the `code` dialog box.
+
+Note that the external dimensions of the actual modal will be slightly larger than the value set.
+
+*Type:* `String`
+
+[discrete]
+===== Example
+
+`js
+tinymce.init({
+  selector: "textarea",  // change this value according to your HTML
+  plugins: "advcode",
+  toolbar: "code",
+  menubar: "tools",
+  code_dialog_height: 200
+});
+`
+
+=== `code_dialog_width`
+
+This configuration option sets the _internal, editable area_ width of the `code` dialog box.
+
+Note that the external dimensions of the actual modal will be slightly larger than the value set.
+
+*Type:* `String`
+
+[discrete]
+===== Example
+
+`js
+tinymce.init({
+  selector: "textarea",  // change this value according to your HTML
+  plugins: "advcode",
+  toolbar: "code",
+  code_dialog_width: 300
+});
+`
+
+____
+The Advanced Code Editor plugin is included with a https://www.tinymce.com/pricing/[TinyMCE Enterprise] subscription. Please https://www.tinymce.com/pricing/[click here] to learn more about our flexible subscriptions plans.
+____

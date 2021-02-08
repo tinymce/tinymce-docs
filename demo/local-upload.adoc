@@ -1,0 +1,18 @@
+= Local Upload
+:description: This example demonstrates the local file upload feature.
+:keywords: example demo image local-upload
+:title_nav: Local Upload
+
+We've supported link:{{ site.baseurl }}/demo/file-picker[local file picking] and link:{{ site.baseurl }}/general-configuration-guide/upload-images[image uploading] for quite some time already. However making these features functional required some effort on the user's side, while not being immediately obvious, at the same time. Some effort is still required, but we decided to supplement the feature with an intuitive UI.
+
+Once `images_upload_url` is defined in the config, an *Upload* tab appears in the *Image Dialog*.
+
+image::{{ site.baseurl }}/images/demo_local-upload_01.png[Upload tab]
+
+So a setup like this displays a friendly UI simplifying image upload either by picking it up or by dropping it in, directly from the desktop:
+
+{% include codepen.html id="xLPoeV" tab="result" height="400" %}
+
+All link:{{ site.baseurl }}/general-configuration-guide/upload-images/#imageuploaderoptions[image uploading options] are supported, including `images_upload_handler` (a way to define custom file uploader) and `images_upload_credentials`.
+
+For more details check link:{{ site.baseurl }}/general-configuration-guide/upload-images/[Upload Images] tutorial from the General Configuration series.

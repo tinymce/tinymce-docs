@@ -1,0 +1,30 @@
+= Modern theme
+:description: Theme that renders iframe or inline modes using the tinymce core UI framework.
+:keywords: theme modern
+:title_nav: Modern
+
+The `modern` theme is responsible for rendering the editor in iframe or inline mode. This is currently the default theme there is also a lightweight theme called link:{{ site.baseurl }}/themes/inlite/[inlite]
+
+===== Example:
+
+`js
+tinymce.init({
+    selector: "textarea.tinymce",
+    themes: "modern"
+});
+`
+
+=== Related configuration options
+
+* link:{{ site.baseurl }}/configure/editor-appearance/#elementpath[elementpath]
+* link:{{ site.baseurl }}/configure/editor-appearance/#fixed-toolbar-container[fixed-toolbar-container]
+* link:{{ site.baseurl }}/configure/editor-appearance/#inline[inline]
+* link:{{ site.baseurl }}/configure/editor-appearance/#menu[menu]
+* link:{{ site.baseurl }}/configure/editor-appearance/#menubar[menubar]
+* link:{{ site.baseurl }}/configure/editor-appearance/#resize[resize]
+* link:{{ site.baseurl }}/configure/editor-appearance/#skin[skin]
+* link:{{ site.baseurl }}/configure/editor-appearance/#statusbar[statusbar]
+* link:{{ site.baseurl }}/configure/editor-appearance/#theme[theme]
+* link:{{ site.baseurl }}/configure/editor-appearance/#toolbar[toolbar]
+* link:{{ site.baseurl }}/configure/editor-appearance/#toolbar-n[toolbar-n]
+* link:{{ site.baseurl }}/configure/editor-appearance/#height[height]

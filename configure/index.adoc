@@ -1,0 +1,8 @@
+= Configure
+:description: TinyMCE is not only the most advanced rich text editor it's also the most customizable.
+:description_short: The most customizable rich text editor.
+:title_nav: Configure TinyMCE
+:type: folder
+
+{% assign links = site.data.nav[5].pages %}
+{% include index.html links=links %}

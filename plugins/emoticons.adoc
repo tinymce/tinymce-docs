@@ -1,0 +1,21 @@
+= Emoticons Plugin
+:controls: toolbar button
+:description: Bring a smiley to your content.
+:keywords: smiley happy smiling emoji
+:title_nav: Emoticons
+
+The Emoticons plugin adds a toolbar control that lets users insert smiley images into TinyMCE's editable area.
+
+NOTE: it doesn't automatically convert text emoticons into graphical smilies.
+
+*Type:* `String`
+
+===== Example
+
+`js
+tinymce.init({
+  selector: "textarea",  // change this value according to your HTML
+  plugins: "emoticons",
+  toolbar: "emoticons"
+});
+`

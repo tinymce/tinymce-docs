@@ -61,6 +61,12 @@ The `TableModified` event now contains additional data which specifies whether t
 
 For information on the `TableModified` event, see: [Table plugin - Events]({{ site.baseurl }}/plugins/opensource/table/#events).
 
+### Added IPv6 URI parsing support
+
+The {{site.productname}} `URI` API now supports parsing IPv6 URLs. This enhancement was a community contribution by dev7355608.
+
+For information on the `URI` API, see: [URI]({{site.baseurl}}/api/tinymce.util/tinymce.util.uri/).
+
 ### Additional enhancements
 
 {{site.productname}} 5.7 introduces the following minor enhancements:

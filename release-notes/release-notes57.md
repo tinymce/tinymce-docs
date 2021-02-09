@@ -67,15 +67,22 @@ The `TableModified` event now contains additional data which specifies whether t
 
 For information on the `TableModified` event, see: [Table plugin - Events]({{ site.baseurl }}/plugins/opensource/table/#events).
 
+### Added IPv6 URI parsing support
+
+The {{site.productname}} `URI` API now supports parsing IPv6 URLs. This enhancement was a community contribution by dev7355608.
+
+For information on the `URI` API, see: [URI]({{site.baseurl}}/api/tinymce.util/tinymce.util.uri/).
+
 ### Additional enhancements
 
 {{site.productname}} 5.7 introduces the following minor enhancements:
 
 - Added a new `ImageUploader` API to simplify uploading image data to the configured `images_upload_url` or `images_upload_handler`.
 - Added an Oxide variable to define the container background color in fullscreen mode.
+- Added Oxide variables for setting the toolbar background colors for inline and sticky toolbars.
 - Added a new `AfterProgressState` event that is fired after `editor.setProgressState` calls complete.
-- Changed the z-index of the `setProgressState(true)` throbber so it does not hide notifications.
 - Changed the `advlist` plugin to log a console error message when the `list` plugin isn't enabled.
+- Changed the z-index of the `setProgressState(true)` throbber so it does not hide notifications.
 - Changed the type signature for `editor.selection.getRng()` incorrectly returning `null`.
 - Changed some `SaxParser` regular expressions to improve performance.
 
@@ -192,7 +199,7 @@ For information on using premium skins and icon packs, see: [Premium Skins and I
 - Fixed an issue where parsing malformed comments could cause an infinite loop.
 - Fixed incorrect return types on `editor.selection.moveToBookmark`.
 - Fixed the type signature for `editor.selection.setCursorLocation()` incorrectly allowing a node with no `offset`.
-- Fixed incorrect behavior when editor is destroyed while loading stylesheets #INT-2282
+- Fixed incorrect behavior when editor is destroyed while loading stylesheets.
 - Fixed figure elements incorrectly splitting from a valid parent element when editing the image within.
 - Fixed inserting multiple rows or columns in a table cloning from the incorrect source row or column.
 - Fixed an issue where new lines were not scrolled into view when pressing Shift+Enter or Shift+Return.

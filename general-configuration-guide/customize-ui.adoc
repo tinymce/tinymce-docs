@@ -111,11 +111,11 @@ The `css` file used in this setting should be the same `css` file that controls 
 
 [source,js]
 ----
-// File: \http://domain.mine/mysite/index.html
+// File: http://domain.mine/mysite/index.html
 
 tinyMCE.init({
   selector: 'textarea',  // change this value according to your HTML
-  content_css : '/mycontent.css'  // resolved to \http://domain.mine/mycontent.css
+  content_css : '/mycontent.css'  // resolved to http://domain.mine/mycontent.css
 });
 ----
 
@@ -171,6 +171,3 @@ We realize we covered toolbars in an earlier step but they're such an integral p
 ====
 There are ways to restrict whether the resize handle can be dragged, which you'll discover when deep diving into plugins and advanced configuration options.
 ====
-
-{% assign_page next_page = "/general-configuration-guide/upload-images/index.html" %}
-{% include next-step.html next=next_page %}

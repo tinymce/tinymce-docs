@@ -7,8 +7,6 @@ include::{rootDir}_attributes.adoc[]
 :keywords: imagetools rotate rotateleft rotateright flip flipv fliph editimage imageoptions
 :title_nav: Image Tools
 
-{% include pardot-px-moxiemanager.html %}
-
 Image Tools (`imagetools`) plugin adds a contextual editing toolbar to the images in the editor. If toolbar is not appearing on image click, it might be that you need to enable `imagetools_cors_hosts` or `imagetools_proxy` (see below).
 
 WARNING: This feature requires at least Internet Explorer 10, since it makes use of `HTML5 File API`.
@@ -51,7 +49,7 @@ tinymce.init({
 
 === Options
 
-### `imagetools_cors_hosts`
+=== `imagetools_cors_hosts`
 
 Image Tools cannot work with images from another domains due to security measures imposed by browsers on so called cross-origin HTTP requests. To overcome these constraints, Cross-Origin Resource Sharing (CORS) must be explicitly enabled on the specified domain(s) (for more information check https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS[HTTP access control]).
 

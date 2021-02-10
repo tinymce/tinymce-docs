@@ -66,7 +66,7 @@ function toTimeHtml(date) {
 
 editor.addButton('currentdate', {
   icon: 'insertdatetime',
-  //image: '\http://p.yusukekamiyamane.com/icons/search/fugue/icons/calendar-blue.png',
+  //image: 'http://p.yusukekamiyamane.com/icons/search/fugue/icons/calendar-blue.png',
   tooltip: "Insert Current Date",
   onclick: function () {
      var html = toTimeHtml(new Date());

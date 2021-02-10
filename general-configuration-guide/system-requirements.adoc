@@ -12,7 +12,7 @@ We're pleased to introduce https://www.tinymce.com/mobile[TinyMCE mobile], avail
 
 TinyMCE mobile is designed to run on iOS Safari and Android Chrome. You'll find a streamlined interface while keeping the most common touch interactions easily to hand. We tested mobile on the following platforms:
 
-{% include mobile_platform_compatibility.md %}
+include::{partialsDir}mobile_platform_compatibility.adoc[]
 
 Please visit our https://www.tinymce.com/mobile[mobile page] to download the self-hosted package. If you're using TinyMCE Cloud, mobile is available in the `dev` branch.
 
@@ -75,6 +75,3 @@ Please use the https://github.com/tinymce/tinymce/issues[issues tracker on GitHu
 |===
 
 TinyMCE fully supports the most recent version of all supported browsers listed above.  If vendors offer an Extended Support Release (e.g., Firefox) we also officially support the latest ESR from each vendor.  As each browser vendor releases new major versions (e.g. Chrome 61 vs. Chrome 62) we provide support for the prior major version for 60 days after the prior release is superseded.
-
-{% assign_page next_page = "/general-configuration-guide/get-support/index.html" %}
-{% include next-step.html next=next_page %}

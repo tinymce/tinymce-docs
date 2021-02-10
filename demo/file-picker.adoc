@@ -7,8 +7,6 @@ include::{rootDir}_attributes.adoc[]
 :keywords: example demo image local-file-picker file_picker_callback
 :title_nav: Basic Local File Picker
 
-{% include pardot-px-moxiemanager.html %}
-
 While we demonstrate how you can add local file picker to the _Image_ dialog, in order for it to be useful in the real-world scenario, you should also enable link:{baseurl}/general-configuration-guide/upload-images[image uploading functionality] - as a way to transport those local images to a server.
 
 NOTE: The following code relies on `URL.createObjectURL()`. To check the level of support for this feature across modern browsers, visit http://caniuse.com/#search=createObjectURL[this link].

@@ -18,7 +18,7 @@ $ npm install @tinymce/tinymce-angular
 
 == Usage
 
-### Loading the component
+=== Loading the component
 
 Import the `EditorModule` from the npm package like this:
 
@@ -160,8 +160,9 @@ Here is a full list of the events available:
 
 == Loading TinyMCE
 
-### Auto-loading from TinyMCE Cloud
-The `Editor` component needs TinyMCE to be globally available to work, but to make it as easy as possible it will automatically load https://www.tinymce.com/docs/cloud-deployment-guide/[TinyMCE Cloud] if it can't find TinyMCE available when the component has mounted. To get rid of the `+This domain is not registered...+` warning, sign up for the cloud and enter the api key like this:
+=== Auto-loading from TinyMCE Cloud
+
+The `Editor` component needs TinyMCE to be globally available to work, but to make it as easy as possible it will automatically load https://www.tinymce.com/docs/cloud-deployment-guide/[TinyMCE Cloud] if it can't find TinyMCE available when the component has mounted. To get rid of the `This domain is not registered...` warning, sign up for the cloud and enter the api key like this:
 
 [source,tsx]
 ----

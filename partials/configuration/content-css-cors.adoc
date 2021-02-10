@@ -10,11 +10,11 @@ When setting the `content_css_cors` setting to `true` the editor will add a `cro
 
 [source,js]
 ----
-// File: \http://domain.mine/mysite/index.html
+// File: http://domain.mine/mysite/index.html
 
 tinyMCE.init({
   selector: 'textarea',  // change this value according to your HTML
-  content_css : '\http://www.somewhere.example/mycontent.css',
+  content_css : 'http://www.somewhere.example/mycontent.css',
   content_css_cors: true
 });
 ----

@@ -12,11 +12,11 @@ NOTE: If you specify a relative path, it is resolved in relation to the URL of t
 
 [source,js]
 ----
-// File: \http://domain.mine/mysite/index.html
+// File: http://domain.mine/mysite/index.html
 
 tinyMCE.init({
   selector: 'textarea',  // change this value according to your HTML
-  content_css : '/myLayout.css'  // resolved to \http://domain.mine/myLayout.css
+  content_css : '/myLayout.css'  // resolved to http://domain.mine/myLayout.css
 });
 ----
 
@@ -24,11 +24,11 @@ tinyMCE.init({
 
 [source,js]
 ----
-// File: \http://domain.mine/mysite/index.html
+// File: http://domain.mine/mysite/index.html
 
 tinyMCE.init({
   selector: 'textarea',  // change this value according to your HTML
-  content_css : 'mycontent.css'  // resolved to \http://domain.mine/mysite/mycontent.css
+  content_css : 'mycontent.css'  // resolved to http://domain.mine/mysite/mycontent.css
 });
 ----
 

@@ -7,8 +7,6 @@ include::{rootDir}_attributes.adoc[]
 :keywords: photo insert edit style format image_caption image_list image_advtab image_title image_class_list image_prepend_url image_description image_dimensions image_title image_prepend_url
 :title_nav: Image
 
-{% include pardot-px-moxiemanager.html %}
-
 This plugin enables the user to insert an image into TinyMCE's editable area. The plugin also adds a toolbar button and an `Insert/edit image` menu item under the `Insert` menu.
 
 *Type:* `String`
@@ -23,8 +21,8 @@ tinymce.init({
   menubar: "insert",
   toolbar: "image",
   image_list: [
-    {title: 'My image 1', value: '\https://www.tinymce.com/my1.gif'},
-    {title: 'My image 2', value: '\http://www.moxiecode.com/my2.gif'}
+    {title: 'My image 1', value: 'https://www.tinymce.com/my1.gif'},
+    {title: 'My image 2', value: 'http://www.moxiecode.com/my2.gif'}
   ]
 });
 ----

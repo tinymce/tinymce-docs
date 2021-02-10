@@ -27,7 +27,7 @@ The easiest way to setup JWT authentication against TinyMCE cloud services is to
 
 The following diagram explains the JWT call flow:
 
-image::images/jwt-call-flow.png[JSON Web Token Call Flow]
+image::jwt-call-flow.png[JSON Web Token Call Flow]
 
 == JWT requirements
 
@@ -70,27 +70,27 @@ EOD;
 
 $payload = array(
   // Unique user id string
-  "sub" \=> "123",
+  "sub" => "123",
 
 // Full name of user
-  "name" \=> "John Doe",
+  "name" => "John Doe",
 
 // Optional custom user root path
-  // "\https://claims.tiny.cloud/drive/root" \=> "/johndoe",
+  // "https://claims.tiny.cloud/drive/root" => "/johndoe",
 
 // 10 minutes expiration
-  "exp" \=> time() + 60 * 10
+  "exp" => time() + 60 * 10
 );
 
 try {
   $token = JWT::encode($payload, $privateKey, 'RS256');
   http_response_code(200);
   header('Content-Type: application/json');
-  echo json_encode(array("token" \=> $token));
+  echo json_encode(array("token" => $token));
 } catch (Exception $e) {
   http_response_code(500);
   header('Content-Type: application/json');
-  echo $e\->getMessage();
+  echo $e->getMessage();
 }
 ?>
 ----

@@ -8,8 +8,6 @@ include::{rootDir}_attributes.adoc[]
 :keywords: php_upload_handler php async image upload
 :title_nav: PHP Upload Handler
 
-{% include pardot-px-moxiemanager.html %}
-
 The following script creates a server-side upload handler in PHP suitable for use with TinyMCE.
 
 Please note that this script is provided for your reference - you'll need to update this as necessary for your application.
@@ -22,7 +20,7 @@ Please note that this script is provided for your reference - you'll need to upd
   /*************************************
    * Only these origins will be allowed to upload images *
    ************************************/
-  $accepted_origins = array("\http://localhost", "\http://192.168.1.1", "\http://example.com");
+  $accepted_origins = array("http://localhost", "http://192.168.1.1", "http://example.com");
 
 /******************************
    * Change this line to set the upload folder *

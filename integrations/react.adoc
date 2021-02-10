@@ -42,7 +42,8 @@ $ npm install --save @tinymce/tinymce-react
 
 === 3.1 Loading TinyMCE
 
-#### Auto-loading from TinyMCE Cloud
+==== Auto-loading from TinyMCE Cloud
+
 `@tinymce/tinymce-react` requires `tinymce` to be globally available to work, but to make it as easy as possible it will automatically load https://www.tinymce.com/docs/cloud-deployment-guide/editor-and-features/[TinyMCE Cloud] if it can't find TinyMCE available when the component is mounting. To get rid of the `+This domain is not registered...+` warning, sign up for the cloud and enter the api key like this:
 
 [source,js]
@@ -83,7 +84,7 @@ import React from 'react';
 import { Editor } from '@tinymce/tinymce-react';
 
 class App extends React.Component {
-  handleEditorChange = (e) \=> {
+  handleEditorChange = (e) => {
     console.log('Content was updated:', e.target.getContent());
   }
 

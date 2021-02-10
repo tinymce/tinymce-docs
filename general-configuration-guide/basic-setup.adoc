@@ -109,7 +109,7 @@ Before we get to configuring the toolbar, let's have a look at the default toolb
 newdocument, bold, italic, underline, strikethrough, alignleft, aligncenter, alignright, alignjustify, styleselect, formatselect, fontselect, fontsizeselect, cut, copy, paste, bullist, numlist, outdent, indent, blockquote, undo, redo, removeformat, subscript, superscript
 ----
 
-image::/images/tinymce-default-state.png[TinyMCE Default Toolbar & Menubar State]
+image::tinymce-default-state.png[TinyMCE Default Toolbar & Menubar State]
 
 _Default TinyMCE toolbar & menubar state_
 
@@ -299,5 +299,3 @@ toolbar: 'insertfile undo redo | styleselect | bold italic | alignleft aligncent
 
 And we are done. We hope you found the above example helpful in showing not only how powerful TinyMCE is but also how easy it is to customize.
 
-{% assign_page next_page = "/general-configuration-guide/use-tinymce-inline/index.html" %}
-{% include next-step.html next=next_page %}

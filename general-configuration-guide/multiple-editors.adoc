@@ -87,6 +87,3 @@ In this next example, each editable area is loaded with an instance of TinyMCE w
 </body>
 </html>
 ----
-
-{% assign_page next_page = "/general-configuration-guide/advanced-install/index.html" %}
-{% include next-step.html next=next_page %}

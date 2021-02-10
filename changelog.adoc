@@ -7,8 +7,6 @@ include::{rootDir}_attributes.adoc[]
 :description: The history of TinyMCE releases.
 :keywords: changelog
 
-{% capture changelog %}
-
 == Version 4.9.11 July 13, 2020
 
 * Fixed the `selection.setContent()` API not running parser filters.
@@ -1925,11 +1923,3 @@ include::{rootDir}_attributes.adoc[]
 * Removed "simple" theme and added new "modern" theme.
 * Removed advhr, advimage, advlink, iespell, inlinepopups, xhtmlxtras and style plugins.
 * Updated Sizzle to the latest version.
-
-{% endcapture %}
-
-[cols=2*]
-|===
-| {{ changelog
-| pretty_changelog }}
-|===

@@ -38,9 +38,13 @@ The following new features were added for the {{site.productname}} 5.7 release.
 
 The following enhancements were made for the {{site.productname}} 5.7 release.
 
-### Notifications are now shown when the editor is blocked
+### Changes to notifications and popups when the editor is blocked
 
-Notifications opened with the Notifications Api (`NotificatonApi`) will remain visible when the editor's progress state is set to true using the {{ site.productname }} API [`tinymce.activeEditor.setProgressState()`]({{ site.baseurl }}/api/tinymce/tinymce.editor/#setprogressstate). Additionally, popups within the editor will be closed while the editor's progress state is set to true. For information on the Notifications API see [Create custom notifications]({{ site.baseurl }}/advanced/creating-custom-notifications).
+Notifications opened with the Notifications API will now remain visible when the editor's progress state is set to `true` using the {{ site.productname }} `setProgressState()` API. Additionally, popups within the editor will now be closed while the editor's progress state is set to `true`.
+
+For information on the {{ site.productname }} `setProgress()` API, see [Editor API - `setProgressState`]({{ site.baseurl }}/api/tinymce/tinymce.editor/#setprogressstate).
+
+For information on the Notifications API see [Create custom notifications]({{ site.baseurl }}/advanced/creating-custom-notifications).
 
 ### Table widths are now retained when copying and pasting tables
 

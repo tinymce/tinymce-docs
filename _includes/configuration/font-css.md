@@ -3,12 +3,11 @@ The `font_css` option loads the specified font CSS files into both the editable 
 
 Font CSS files should only contain CSS for specifying custom fonts using the `@font-face` and related CSS rules. 
 
-> **Note:** 
-> 
-> - This option is intended for use with {{site.productname}}'s classic mode, as the editable area is sandboxed within an iframe. For inline mode editors, relevant font CSS files should be loaded as part of the webpage {{site.productname}} is rendered in, not using the `font_css` option.
-> - If you specify a relative path, it will be resolved in relation to the URL of the webpage {{site.productname}} is rendered in.
-
 **Type:** `String`, `Array`
+
+> **Note:** This option is intended for use with {{site.productname}}'s classic mode, as the editable area is sandboxed within an iframe. For inline mode editors, relevant font CSS files should be loaded as part of the webpage {{site.productname}} is rendered in, not using the `font_css` option.
+
+If a relative path is specified, it will be resolved in relation to the URL of the webpage {{site.productname}} is rendered in.
 
 ### Absolute path example
 
@@ -31,6 +30,8 @@ tinymce.init({
   font_css : 'myFont.css'  // resolved to http://domain.mine/mysite/myFont.css
 });
 ```
+
+To load multiple font CSS files, provide the paths as either a array of strings or a comma-separated string.
 
 ### Using multiple stylesheets example
 

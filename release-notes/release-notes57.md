@@ -34,6 +34,12 @@ When inserting or deleting table columns, the resizing behavior will now respect
 
 For information on the `table_column_resizing` option, see: [Table plugin - `table_column_resizing`]({{ site.baseurl }}/plugins/opensource/table/#table_column_resizing).
 
+### Added new `font_css` option 
+
+The `font_css` option loads the specified font CSS files into both the editable area and the webpage {{site.productname}} is rendered in. This is useful for ensuring that {{site.productname}} UI uses the correct fonts for font family examples and for content that uses those fonts, or for ensuring {{site.productname}} content and content outside the editor that should use the same fonts renders correctly.
+
+For information on the `font_css` option, see: [Content Appearance - `font_css`]({{ site.baseurl }}/configure/content-appearance/#font-css).
+
 ## Enhancements
 
 The following enhancements were made for the {{site.productname}} 5.7 release.

@@ -168,6 +168,7 @@ It is now possible to specify arrays of words for specific languages to be ignor
 
 - Fixed a bug where it was possible to open multiple instances of the spellchecker dialog.
 - Fixed a regression that caused errors to be thrown if the editor was destroyed while spellchecking.
+- Fixed an issue where the spellchecker would incorrectly check content inside of special elements such as `style`.
 
 For information on the Spell Checker Pro plugin, see: [Spell Checker Pro]({{ site.baseurl }}/plugins/premium/tinymcespellchecker/).
 

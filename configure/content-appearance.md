@@ -16,6 +16,8 @@ description: Configure the appearance of content inside TinyMCE's editable area.
 
 {% include configuration/content-style.md %}
 
+{% include configuration/font-css.md %}
+
 {% include configuration/inline-boundaries.md %}
 
 {% include configuration/inline-boundaries-selector.md %}

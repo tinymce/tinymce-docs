@@ -54,9 +54,7 @@ https://www.w3.org/TR/2016/NOTE-WCAG20-TECHS-20161007/H2[Link to specification].
 *Rule info:* This rule checks that a `ul` element is used for unordered lists. Do not use paragraphs beginning with `*` or `-` or some similar character instead of an actual `ol` element containing `li` items. This is to simplify navigation and parsing of the content for users of assistive technologies.
 
 [[D5]]
-[[D5A]]
-[[D5B]]
-==== <<D5,Contrast ratio of the text>>
+==== <<D5,Contrast ratio of the text>> [[D5A]][[D5B]]
 
 *Rule info:* This rule checks that the contrast ratio of the text is above the specified values (4.5:1 for normal text and 3:1 for large text). Text with a low contrast ratio is hard to read, especially for users with an impaired vision.
 
